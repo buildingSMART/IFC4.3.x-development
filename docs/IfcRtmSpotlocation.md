@@ -1,0 +1,2 @@
+IfcRtmSpotlocation
+==================

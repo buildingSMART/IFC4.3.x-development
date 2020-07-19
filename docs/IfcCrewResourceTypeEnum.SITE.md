@@ -1,0 +1,2 @@
+IfcCrewResourceTypeEnum.SITE
+============================

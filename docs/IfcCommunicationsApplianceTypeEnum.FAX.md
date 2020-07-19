@@ -1,0 +1,2 @@
+IfcCommunicationsApplianceTypeEnum.FAX
+======================================

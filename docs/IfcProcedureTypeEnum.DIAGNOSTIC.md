@@ -1,0 +1,5 @@
+IfcProcedureTypeEnum.DIAGNOSTIC
+===============================
+$
+
+

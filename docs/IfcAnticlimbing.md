@@ -1,0 +1,5 @@
+IfcAnticlimbing
+===============
+protection against climbing
+
+

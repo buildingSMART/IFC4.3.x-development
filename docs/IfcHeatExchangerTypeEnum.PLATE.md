@@ -1,0 +1,2 @@
+IfcHeatExchangerTypeEnum.PLATE
+==============================

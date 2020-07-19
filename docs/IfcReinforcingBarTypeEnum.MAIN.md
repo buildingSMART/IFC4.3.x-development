@@ -1,0 +1,2 @@
+IfcReinforcingBarTypeEnum.MAIN
+==============================

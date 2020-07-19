@@ -1,0 +1,2 @@
+IfcRigidCatenary
+================

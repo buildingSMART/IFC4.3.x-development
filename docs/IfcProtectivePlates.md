@@ -1,0 +1,5 @@
+IfcProtectivePlates
+===================
+Danger indication plate
+
+

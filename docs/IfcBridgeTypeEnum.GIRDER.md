@@ -1,0 +1,2 @@
+IfcBridgeTypeEnum.GIRDER
+========================

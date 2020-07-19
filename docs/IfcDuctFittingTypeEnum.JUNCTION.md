@@ -1,0 +1,2 @@
+IfcDuctFittingTypeEnum.JUNCTION
+===============================

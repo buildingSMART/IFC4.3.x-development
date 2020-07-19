@@ -1,0 +1,2 @@
+IfcLampTypeEnum.TUNGSTENFILAMENT
+================================

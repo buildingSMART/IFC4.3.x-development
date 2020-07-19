@@ -1,0 +1,5 @@
+IfcReferentTypeEnum.STATION
+===========================
+$
+
+

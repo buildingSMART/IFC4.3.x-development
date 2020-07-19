@@ -1,0 +1,2 @@
+IfcElementAssemblyTypeEnum.PIER
+===============================

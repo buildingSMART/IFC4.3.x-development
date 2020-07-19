@@ -1,0 +1,2 @@
+IfcTaskTypeEnum.DISPOSAL
+========================

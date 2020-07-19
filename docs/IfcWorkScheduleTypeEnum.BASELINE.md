@@ -1,0 +1,2 @@
+IfcWorkScheduleTypeEnum.BASELINE
+================================

@@ -1,0 +1,2 @@
+IfcDistributionSystemEnum.VENTILATION
+=====================================

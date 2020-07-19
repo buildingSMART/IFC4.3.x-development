@@ -1,0 +1,10 @@
+IfcPsetCablesegmenttypeconductorsegment
+=======================================
+An electrical conductor is a single linear element with the specific purpose
+to lead electric current. The core of one lead is normally single wired or
+multiwired which are intertwined. According to IEC 60050: IEV 195-01-07, a
+conductor is a conductive part intended to carry a specified electric current.  
+[ _bSI
+Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcelectricaldomain/pset/pset_cablesegmenttypeconductorsegment.htm)
+
+

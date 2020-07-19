@@ -1,0 +1,23 @@
+IfcBoundaryEdgeCondition
+========================
+Describes linearly elastic support conditions or connection conditions.  
+  
+Applicability:  
+  
+* Curve supports and connections.  
+  
+> HISTORY  New entity in IFC2x2.  
+> IFC 2x4 change: Attributes _LinearStiffnessX/Y/Z_ renamed to
+> _TranslationalStiffnessX/Y/Z_.  
+  
+{ .change-ifc2x4}  
+> IFC4 change All attribute data types changed from numeric to SELECT between
+> Boolean and numeric. Stiffnesses may now also be negative, for example to
+> capture destabilizing effects in boundary conditions. The IFC2x3 convention
+> of -1. representing infinite stiffness is no longer valid and must not be
+> used. Infinite stiffness, i.e. fixed supports, are now modeled by the
+> Boolean value TRUE.  
+[ _bSI
+Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcstructuralloadresource/lexical/ifcboundaryedgecondition.htm)
+
+

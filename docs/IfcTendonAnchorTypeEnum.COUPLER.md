@@ -1,0 +1,2 @@
+IfcTendonAnchorTypeEnum.COUPLER
+===============================

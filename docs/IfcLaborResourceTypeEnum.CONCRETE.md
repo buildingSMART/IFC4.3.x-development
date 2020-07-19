@@ -1,0 +1,2 @@
+IfcLaborResourceTypeEnum.CONCRETE
+=================================

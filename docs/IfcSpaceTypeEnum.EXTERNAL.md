@@ -1,0 +1,2 @@
+IfcSpaceTypeEnum.EXTERNAL
+=========================

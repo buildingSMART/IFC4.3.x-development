@@ -1,0 +1,2 @@
+IfcConstructionEquipmentResourceTypeEnum.PAVING
+===============================================

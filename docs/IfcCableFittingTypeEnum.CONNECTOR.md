@@ -1,0 +1,2 @@
+IfcCableFittingTypeEnum.CONNECTOR
+=================================

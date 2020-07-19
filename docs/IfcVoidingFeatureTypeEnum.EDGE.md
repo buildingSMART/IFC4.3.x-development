@@ -1,0 +1,2 @@
+IfcVoidingFeatureTypeEnum.EDGE
+==============================

@@ -1,0 +1,5 @@
+IfcHarmonicFilter
+=================
+BatteryCapacitor
+
+

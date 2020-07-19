@@ -1,0 +1,2 @@
+IfcTaskTypeEnum.CONSTRUCTION
+============================

@@ -1,0 +1,2 @@
+IfcPileTypeEnum.FRICTION
+========================

@@ -1,0 +1,5 @@
+IfcEvaluator
+============
+Centrally located computer.
+
+

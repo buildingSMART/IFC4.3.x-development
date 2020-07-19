@@ -1,0 +1,5 @@
+IfcProfileGate
+==============
+Profile gate.
+
+

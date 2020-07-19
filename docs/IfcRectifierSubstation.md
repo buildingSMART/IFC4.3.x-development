@@ -1,0 +1,5 @@
+IfcRectifierSubstation
+======================
+Rectifier substation
+
+

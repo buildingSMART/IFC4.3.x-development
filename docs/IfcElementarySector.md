@@ -1,0 +1,5 @@
+IfcElementarySector
+===================
+Elementary insolated part
+
+

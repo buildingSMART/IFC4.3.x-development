@@ -58,7 +58,7 @@ def generate_definitions():
         
         stereotype = (c/"properties")[0].stereotype
         if stereotype is not None: 
-            stereotype = stereotype.lower()            
+            stereotype = stereotype.lower()
         
         if stereotype == "enumeration":
         

@@ -1,0 +1,5 @@
+IfcBuildingFoundation
+=====================
+Technical building foundation
+
+

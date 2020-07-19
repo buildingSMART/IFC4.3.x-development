@@ -83,10 +83,12 @@ def generate_definitions():
        
         dd = xmi.by_id[d.idref]
         try:
-            super = [t for t in d/"tag" if t.name == "ExpressDefinition"][0].value            
+            super = [t for t in d/"tag" if t.name == "ExpressDefinition"][0].value
+            super_verbatim = True
         except IndexError as e:
             try:
                 super = xmi.by_id[(dd|"generalization").general].name
+                super_verbatim = False
             except ValueError as ee:
                 # if the type does not have a generalization, let's assume it's one of EXPRESS' native types
                 logging.warning("No generalization found on %s, omitting", d)
@@ -95,7 +97,7 @@ def generate_definitions():
         cs = sorted(d/"constraint", key=lambda cc: float_international(cc.weight))
         constraints = map(lambda cc: "\t%s : %s;" % tuple(map(html.unescape, map(functools.partial(getattr, cc), ("name", "description")))), cs)            
         
-        yield "TYPE", d.name, express.format_simple_type(d.name, super, constraints)
+        yield "TYPE", d.name, express.format_simple_type(d.name, super, constraints, super_verbatim=super_verbatim)
         
     for c in xmi.by_tag_and_type["element"]["uml:Class"]:
     
@@ -232,7 +234,7 @@ def generate_definitions():
             yield "ENTITY", c.name, express.format_entity(c.name, attributes, derived, inverses, constraints_by_type["EXPRESS_WHERE"], constraints_by_type["EXPRESS_UNIQUE"], subtypes, supertypes, is_abstract)
             
 def sort_key(tup):
-    return (EXPRESS_ORDER.index(tup[0]), tup[1])
+    return (EXPRESS_ORDER.index(tup[0]), express.ifc_name(tup[1]))
 
 
 schema_name = xmi.by_tag_and_type["packagedElement"]['uml:Package'][1].name.replace("exp", "").upper()

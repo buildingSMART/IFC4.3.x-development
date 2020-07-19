@@ -12,14 +12,14 @@ def ifc_name(name):
         s = "Ifc" + s
     return s
 
-def format_simple_type(name, super, contraints=[]):
+def format_simple_type(name, super, contraints=[], super_verbatim=False):
     cs_tuple = []
     contraints = list(contraints)
     if len(contraints) != 0:
         cs_tuple.append(" WHERE")
         cs_tuple.extend(contraints)
     return "\n".join((
-        "TYPE %s = %s;" % (ifc_name(name), ifc_name(super)),
+        "TYPE %s = %s;" % (ifc_name(name), super if super_verbatim else ifc_name(super)),
     ) + tuple(cs_tuple) + (
         "END_TYPE;",
     ))

@@ -1,0 +1,102 @@
+IfcRelConnectsPathElements
+==========================
+The _IfcRelConnectsPathElements_ relationship provides the connectivity
+information between two elements, which have path information.  
+  
+The objectified relationship provides the additional information required to
+describe the connection between two path based elements that might have single
+or multiple layers of material. The connection type specifies where at the
+path based element a connection is given (at the start, in the middle or at
+the end).  
+  
+The connection is described by a connection geometry, given within the object
+coordinate systems of the _RelatingElement_ and of the _RelatedElement_. In
+case of _IfcWallStandardCase_ as the _RelatingElement_ and _RelatedElement_
+the connection geometry is provided by the subtype
+_IfcConnectionCurveGeometry_. Both curves indicate the so called "end cap",
+i.e. the curve that trims the wall outer edges (being parallel along the wall
+axis) at the end.  
+  
+  
+  
+![wall connection](../figures/ifcrelconnectspathelements-fig1.png)  
+  
+| Figure 1 shows the application of _IfcRelConnectsPathElements_ with the
+_ConnectionGeometry_ of type _IfcConnectionCurveGeometry_. The example shows
+the connection relationship between two instances of _IfcWallStandardCase_
+using the  
+_IfcRelConnectsPathElements_ relationship. The _ConnectionCurveGeometry_
+defines the _CurveOnReleatingElement_ and  
+_CurveOnRelatedElement_ , both are of type _IfcPolyline_.  
+  
+---|---  
+  
+  
+  
+
+Figure 1 -- Path connection geometry
+
+  
+  
+|  
+  
+  
+  
+  
+  
+  
+  
+![wall connection](../figures/ifcrelconnectspathelements-fig3.png)  
+  
+|  ![wall connection](../figures/ifcrelconnectspathelements-fig2.png)  
+  
+  
+---|---  
+  
+  
+  
+
+Figure 2 -- Path connection T-Type
+
+  
+  
+|  
+
+Figure 3 -- Path connection L-Type
+
+  
+  
+  
+  
+  
+  
+
+Figure 2 illustrates using the _IfcRelConnectsPathElements_ for a "T" type
+connection between two instances of _IfcWallStandardCase_.
+
+  
+  
+|  
+
+Figure 3 illustrates using the _IfcRelConnectsPathElements_ for a "L" type
+connection between two instances of _IfcWallStandardCase_.
+
+  
+  
+  
+  
+  
+  
+> NOTE  The two wall axes connect in each case.  
+  
+  
+  
+> HISTORY  New entity in IFC1.5.  
+  
+{ .change-ifc2x4}  
+> IFC4 CHANGE  The data type of _RelatingPriorities_ and _RelatedPriorities_
+> are restricted to a range o [0..100] to be a normalized ratio measure.  
+[ _bSI
+Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcsharedbldgelements/lexical/ifcrelconnectspathelements.htm)
+
+

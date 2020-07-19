@@ -1,0 +1,2 @@
+IfcPipeSegmentTypeEnum.CULVERT
+==============================

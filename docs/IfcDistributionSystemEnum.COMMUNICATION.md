@@ -1,0 +1,5 @@
+IfcDistributionSystemEnum.COMMUNICATION
+=======================================
+$
+
+

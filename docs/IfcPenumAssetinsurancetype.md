@@ -1,0 +1,12 @@
+IfcPenumAssetinsurancetype
+==========================
+$[ _bSI
+Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema//pset/penum_assetinsurancetype.htm)
+
+
+Attributes
+----------
+| Attribute   | Definition   |
+|-------------|--------------|
+| PERSONAL    |              |
+| REAL        |              |

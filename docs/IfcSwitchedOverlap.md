@@ -1,0 +1,2 @@
+IfcSwitchedOverlap
+==================

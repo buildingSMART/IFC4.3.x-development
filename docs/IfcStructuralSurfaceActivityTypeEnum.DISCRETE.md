@@ -1,0 +1,2 @@
+IfcStructuralSurfaceActivityTypeEnum.DISCRETE
+=============================================

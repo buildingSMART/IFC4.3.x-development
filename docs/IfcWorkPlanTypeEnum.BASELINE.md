@@ -1,0 +1,2 @@
+IfcWorkPlanTypeEnum.BASELINE
+============================

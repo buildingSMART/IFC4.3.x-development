@@ -1,0 +1,2 @@
+IfcDuctSegmentTypeEnum.RIGIDSEGMENT
+===================================

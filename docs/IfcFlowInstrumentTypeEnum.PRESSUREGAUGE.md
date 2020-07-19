@@ -1,0 +1,6 @@
+IfcFlowInstrumentTypeEnum.PRESSUREGAUGE
+=======================================
+A device that reads and displays a pressure value at a point or the pressure
+difference between two points.
+
+

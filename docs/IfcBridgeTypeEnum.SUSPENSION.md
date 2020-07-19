@@ -1,0 +1,5 @@
+IfcBridgeTypeEnum.SUSPENSION
+============================
+$
+
+

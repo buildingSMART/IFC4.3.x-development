@@ -1,0 +1,2 @@
+IfcSpatialZoneTypeEnum.TRANSPORT
+================================

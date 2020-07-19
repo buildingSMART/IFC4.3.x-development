@@ -1,0 +1,2 @@
+IfcBuildingElementProxyTypeEnum.PARTIAL
+=======================================

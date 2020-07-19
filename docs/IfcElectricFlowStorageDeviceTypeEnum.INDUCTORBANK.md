@@ -1,0 +1,5 @@
+IfcElectricFlowStorageDeviceTypeEnum.INDUCTORBANK
+=================================================
+$
+
+

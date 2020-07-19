@@ -3,11 +3,14 @@ import logging
 express_basic_types = {"REAL", "NUMBER", "BINARY", "BOOLEAN", "INTEGER", "STRING", "LOGICAL"}
 
 def ifc_name(name):
-    if "Ifc" in name: return name
+    if name.startswith("Ifc"): return name
     for ebt in express_basic_types: 
         if ebt in name: return name
     name = "".join([" ", c][c.isalnum()] for c in name)
-    return "Ifc" + "".join((s[0:1].upper() + s[1:].lower()) for s in name.split(" "))    
+    s = "".join((s[0:1].upper() + s[1:].lower()) for s in name.split(" "))    
+    if not s.lower().startswith("ifc"):
+        s = "Ifc" + s
+    return s
 
 def format_simple_type(name, super, contraints=[]):
     cs_tuple = []

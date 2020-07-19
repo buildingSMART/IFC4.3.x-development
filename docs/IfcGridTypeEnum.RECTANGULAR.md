@@ -1,0 +1,2 @@
+IfcGridTypeEnum.RECTANGULAR
+===========================

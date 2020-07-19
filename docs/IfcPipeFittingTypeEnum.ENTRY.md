@@ -1,0 +1,2 @@
+IfcPipeFittingTypeEnum.ENTRY
+============================

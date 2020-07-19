@@ -1,0 +1,5 @@
+IfcBridgeTypeEnum.CABLE_STAYED
+==============================
+$
+
+

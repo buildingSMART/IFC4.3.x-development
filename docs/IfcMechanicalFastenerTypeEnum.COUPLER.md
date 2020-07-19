@@ -1,0 +1,2 @@
+IfcMechanicalFastenerTypeEnum.COUPLER
+=====================================

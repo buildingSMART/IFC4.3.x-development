@@ -1,0 +1,5 @@
+IfcLowerpantographSigns
+=======================
+lowerpantograph identification signals
+
+

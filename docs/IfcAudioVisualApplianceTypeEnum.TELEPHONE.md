@@ -1,0 +1,2 @@
+IfcAudioVisualApplianceTypeEnum.TELEPHONE
+=========================================

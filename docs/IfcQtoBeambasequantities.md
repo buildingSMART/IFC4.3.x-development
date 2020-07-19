@@ -1,0 +1,20 @@
+IfcQtoBeambasequantities
+========================
+Base quantities that are common to the definition of all occurrences of beams.  
+[ _bSI
+Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcsharedbldgelements/qset/qto_beambasequantities.htm)
+
+
+Attributes
+----------
+| Attribute        | Definition   |
+|------------------|--------------|
+| CrossSectionArea |              |
+| GrossSurfaceArea |              |
+| GrossVolume      |              |
+| GrossWeight      |              |
+| Length           |              |
+| NetSurfaceArea   |              |
+| NetVolume        |              |
+| NetWeight        |              |
+| OuterSurfaceArea |              |

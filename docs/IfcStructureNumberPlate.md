@@ -1,0 +1,5 @@
+IfcStructureNumberPlate
+=======================
+Identification plate number
+
+

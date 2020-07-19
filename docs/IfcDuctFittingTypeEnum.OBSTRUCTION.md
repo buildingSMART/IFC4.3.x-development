@@ -1,0 +1,2 @@
+IfcDuctFittingTypeEnum.OBSTRUCTION
+==================================

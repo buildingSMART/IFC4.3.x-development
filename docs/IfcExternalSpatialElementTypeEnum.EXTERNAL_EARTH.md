@@ -1,0 +1,2 @@
+IfcExternalSpatialElementTypeEnum.EXTERNAL_EARTH
+================================================

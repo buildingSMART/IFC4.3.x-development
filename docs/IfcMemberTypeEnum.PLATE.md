@@ -1,0 +1,2 @@
+IfcMemberTypeEnum.PLATE
+=======================

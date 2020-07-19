@@ -1,0 +1,5 @@
+IfcBridgePartTypeEnum.PIER_SEGMENT
+==================================
+$
+
+

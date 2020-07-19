@@ -1,0 +1,2 @@
+IfcDistributionPortTypeEnum.CABLE
+=================================

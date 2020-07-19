@@ -1,0 +1,2 @@
+IfcStairFlightTypeEnum.STRAIGHT
+===============================

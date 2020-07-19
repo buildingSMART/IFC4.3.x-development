@@ -1,0 +1,5 @@
+IfcSubSector
+============
+Traction post
+
+

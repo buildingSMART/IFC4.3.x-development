@@ -1,0 +1,5 @@
+IfcBridgePartTypeEnum.DECK_SEGMENT
+==================================
+$
+
+

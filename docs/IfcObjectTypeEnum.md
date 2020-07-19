@@ -1,0 +1,26 @@
+IfcObjectTypeEnum
+=================
+This enumeration defines the applicable object categories. Attached to an
+object, it indicates to which subtype of _IfcObject_ the entity referencing it
+would otherwise comply with.  
+  
+> HISTORY  New entity in IFC1.0.  
+  
+{ .deprecated}  
+> DEPRECATION  The use of this enumeration is deprecated since IFC2x3.  
+[ _bSI
+Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifckernel/lexical/ifcobjecttypeenum.htm)
+
+
+Attributes
+----------
+| Attribute   | Definition   |
+|-------------|--------------|
+| ACTOR       |              |
+| CONTROL     |              |
+| GROUP       |              |
+| NOTDEFINED  |              |
+| PROCESS     |              |
+| PRODUCT     |              |
+| PROJECT     |              |
+| RESOURCE    |              |

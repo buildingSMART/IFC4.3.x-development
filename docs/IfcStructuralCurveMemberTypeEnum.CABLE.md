@@ -1,0 +1,2 @@
+IfcStructuralCurveMemberTypeEnum.CABLE
+======================================

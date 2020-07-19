@@ -1,0 +1,5 @@
+IfcCaissonFoundationTypeEnum.WELL
+=================================
+Open box.
+
+

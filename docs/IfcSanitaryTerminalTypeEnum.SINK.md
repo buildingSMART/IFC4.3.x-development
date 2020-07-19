@@ -1,0 +1,2 @@
+IfcSanitaryTerminalTypeEnum.SINK
+================================

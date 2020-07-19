@@ -1,0 +1,2 @@
+IfcFacilityUsageEnum.VERTICAL
+=============================

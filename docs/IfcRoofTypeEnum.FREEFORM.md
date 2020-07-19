@@ -1,0 +1,2 @@
+IfcRoofTypeEnum.FREEFORM
+========================

@@ -1,0 +1,2 @@
+IfcCondenserTypeEnum.AIRCOOLED
+==============================

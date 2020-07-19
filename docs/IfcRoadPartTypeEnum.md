@@ -1,0 +1,2 @@
+IfcRoadPartTypeEnum
+===================

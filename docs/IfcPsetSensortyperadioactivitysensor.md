@@ -1,0 +1,7 @@
+IfcPsetSensortyperadioactivitysensor
+====================================
+A device that senses or detects atomic decay. HISTORY: Added in IFC4.  
+[ _bSI
+Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcbuildingcontrolsdomain/pset/pset_sensortyperadioactivitysensor.htm)
+
+

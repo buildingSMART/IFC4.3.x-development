@@ -1,0 +1,2 @@
+IfcStructuralCurveActivityTypeEnum.DISCRETE
+===========================================

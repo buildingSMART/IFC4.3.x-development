@@ -1,0 +1,10 @@
+IfcPsetProfilearbitrarydoublet
+==============================
+This is a collection of geometric properties of double-T section profiles of
+precast concrete elements, to be used in conjunction with
+IfcArbitraryProfileDef when profile designation alone does not fulfill the
+information requirements.  
+[ _bSI
+Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcprofileresource/pset/pset_profilearbitrarydoublet.htm)
+
+

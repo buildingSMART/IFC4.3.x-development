@@ -1,0 +1,2 @@
+IfcPermitTypeEnum.WORK
+======================

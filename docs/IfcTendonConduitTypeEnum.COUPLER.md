@@ -1,0 +1,2 @@
+IfcTendonConduitTypeEnum.COUPLER
+================================

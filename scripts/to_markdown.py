@@ -31,14 +31,16 @@ schema_name = re.sub(r"_+", "_", schema_name)
 schema_name = schema_name.strip('_')
 
 def format(s):
-    return html2text.html2text(s.replace('\n', '<br>').replace("$inet://", "").replace("../../../../../../", ""))
+    return html2text.html2text(s.replace('\n', '<br>').replace("$inet://", "").replace("../../../../../../", "../"))
 
 def process(node):
     node_name = express.ifc_name(node.name)
     if "(" in node_name:
         import pdb; pdb.set_trace()
     docs = (node/"properties")[0].documentation
-    mdfn = os.path.join(output, node_name + ".md")
+    mdfn = os.path.join(output, node_name[3], node_name + ".md")
+    if not os.path.exists(os.path.dirname(mdfn)):
+        os.makedirs(os.path.dirname(mdfn))
     with open(mdfn, 'w', encoding='utf-8') as f:
         print(node_name, file=f)
         print('=' * len(node_name), file=f)

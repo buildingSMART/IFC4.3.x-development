@@ -1,0 +1,167 @@
+IfcBlock
+========
+The _IfcBlock_ is a Construction Solid Geometry (CSG) 3D primitive. It is
+defined by a position and a positve distance along the three orthogonal axes.
+The inherited _Position_ attribute has the _IfcAxisPlacement3D_ type and
+provides:  
+  
+* _SELF\\\IfcCsgPrimitive3D.Position_: The location and orientation of the axis system for the primitive.  
+* _SELF\\\IfcCsgPrimitive3D.Position.Location_: The block has one vertex at location and the edges are aligned with the placement axes in the positive sense.  
+  
+The _XLength_, _YLength_, and _ZLength_ attributes define the size of the
+IfcBlock along the three axes.  
+  
+  
+  
+![block](../figures/ifcblock-layout1.png)  
+|  
+
+Figure 1 illustrates geometric parameters of a block where the block
+positioned within its own placement  
+coordinate system. The values for _XLength_ , _YLength_ , and _ZLength_ are
+applied to the positive  
+direction of the X, Y, and Z axis.
+
+  
+  
+  
+---|---  
+  
+  
+  
+
+Figure 1 -- Block geometry
+
+  
+  
+|  
+  
+  
+  
+  
+{ .extDef}  
+> NOTE  Definition according to ISO/CD 10303-42:1992  
+> A block is a solid rectangular parallelepiped, defined with a location and
+> placement coordinate system. The block is specified by the positive lengths
+> x, y, and z along the axes of the placement coordinate system, and has one
+> vertex at the origin of the placement coordinate system.  
+  
+> NOTE  Entity adapted from **block** defined in ISO 10303-42.  
+  
+> HISTORY  New entity in IFC2x3.  
+  
+{ .use-head}  
+Texture definition  
+  
+On each side face, textures are aligned facing upright. On the top and bottom
+faces, textures are aligned facing front-to-back. Textures are stretched or
+repeated to the extent of each face according to _RepeatS_ and _RepeatT_.  
+  
+Figure 2 illustrates default texture mapping with a clamped texture
+(RepeatS=False and RepeatT=False). The image on the left shows the texture
+where the S axis points to the right and the T axis points up. The image on
+the right shows the texture applied to the geometry where the X axis points
+back to the right, the Y axis points back to the left, and the Z axis points
+up.  
+  
+  
+  
+{ .gridtable}  
+  
+  
+![texture](../figures/ifcblock-texture.png)  
+  
+---  
+  
+  
+  
+  
+  
+| Side  
+| Normal  
+| Origin X  
+| Origin Y  
+| Origin Z  
+| S Axis  
+| T Axis  
+  
+---|---|---|---|---|---|---  
+  
+  
+Left  
+| -X  
+| 0  
+| +YLength  
+| 0  
+| -Y  
+| +Z  
+  
+  
+  
+Right  
+| +X  
+| +XLength  
+| 0  
+| 0  
+| +Y  
+| +Z  
+  
+  
+  
+Front  
+| -Y  
+| 0  
+| 0  
+| 0  
+| +X  
+| +Z  
+  
+  
+  
+Back  
+| +Y  
+| +XLength  
+| +YLength  
+| 0  
+| -X  
+| +Z  
+  
+  
+  
+Bottom  
+| -Z  
+| 0  
+| +YLength  
+| 0  
+| +X  
+| -Y  
+  
+  
+  
+Top  
+| +Z  
+| 0  
+| 0  
+| +ZLength  
+| +X  
+| +Y  
+  
+  
+  
+  
+  
+  
+  
+  
+
+Figure 2 -- Block textures
+
+  
+  
+  
+  
+  
+[ _bSI
+Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricmodelresource/lexical/ifcblock.htm)
+
+

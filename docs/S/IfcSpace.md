@@ -92,3 +92,24 @@ HISTORY New entity in IFC1.0
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcproductextension/lexical/ifcspace.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute             | Description                                                                                                                                              |
+|-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ElevationWithFlooring | Level of flooring of this space; the average shall be taken, if the space ground surface is sloping or if there are level differences within this space. |
+
+Formal Propositions
+-------------------
+| Rule                  | Description   |
+|-----------------------|---------------|
+| CorrectPredefinedType |               |
+| CorrectTypeAssigned   |               |
+
+Associations
+------------
+| Attribute      | Description   |
+|----------------|---------------|
+| BoundedBy      |               |
+| PredefinedType |               |
+| HasCoverings   |               |
+

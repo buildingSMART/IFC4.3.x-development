@@ -28,3 +28,15 @@ Informal Propositions:
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifctopologyresource/lexical/ifcpath.htm)
 
 
+Formal Propositions
+-------------------
+| Rule         | Description   |
+|--------------|---------------|
+| IsContinuous |               |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| EdgeList    |               |
+

@@ -1,2 +1,0 @@
-IfcOccupantTypeEnum.OWNER
-=========================

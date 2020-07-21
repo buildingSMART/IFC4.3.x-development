@@ -19,3 +19,16 @@ fulfilment of those requirements.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcconstraintresource/lexical/ifcresourceconstraintrelationship.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute              | Description                                            |
+|------------------------|--------------------------------------------------------|
+| RelatedResourceObjects | The properties to which a constraint is to be related. |
+
+Associations
+------------
+| Attribute              | Description   |
+|------------------------|---------------|
+| RelatingConstraint     |               |
+| RelatedResourceObjects |               |
+

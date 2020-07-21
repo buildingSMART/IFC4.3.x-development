@@ -16,3 +16,15 @@ values by applying the following three rules:
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcdatetimeresource/lexical/ifctimeseriesvalue.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                   |
+|-------------|---------------------------------------------------------------|
+| ListValues  | A list of time-series values. At least one value is required. |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+

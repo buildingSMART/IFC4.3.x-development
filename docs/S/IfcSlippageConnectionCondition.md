@@ -15,3 +15,11 @@ Applicability:
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcstructuralloadresource/lexical/ifcslippageconnectioncondition.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                               |
+|-------------|-----------------------------------------------------------------------------------------------------------|
+| SlippageX   | Slippage in x-direction of the coordinate system defined by the instance which uses this resource object. |
+| SlippageY   | Slippage in y-direction of the coordinate system defined by the instance which uses this resource object. |
+| SlippageZ   | Slippage in z-direction of the coordinate system defined by the instance which uses this resource object. |
+

@@ -22,3 +22,15 @@ _IfcRampFlight_ for supported property sets, materials, and composition.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcsharedbldgelements/lexical/ifcrampflighttype.htm)
 
 
+Formal Propositions
+-------------------
+| Rule                  | Description   |
+|-----------------------|---------------|
+| CorrectPredefinedType |               |
+
+Associations
+------------
+| Attribute      | Description   |
+|----------------|---------------|
+| PredefinedType |               |
+

@@ -10,3 +10,16 @@ A duct segment is used to typically join two sections of duct network.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifchvacdomain/lexical/ifcductsegment.htm)
 
 
+Formal Propositions
+-------------------
+| Rule                  | Description   |
+|-----------------------|---------------|
+| CorrectPredefinedType |               |
+| CorrectTypeAssigned   |               |
+
+Associations
+------------
+| Attribute      | Description   |
+|----------------|---------------|
+| PredefinedType |               |
+

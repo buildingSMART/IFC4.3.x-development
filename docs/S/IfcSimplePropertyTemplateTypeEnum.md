@@ -11,3 +11,9 @@ _Enumerators_, _PrimaryDataType_, _SecondaryDataType_, should be used.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifckernel/lexical/ifcsimplepropertytemplatetypeenum.htm)
 
 
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+

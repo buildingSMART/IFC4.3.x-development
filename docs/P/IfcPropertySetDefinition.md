@@ -27,3 +27,11 @@ within the following relationships:
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifckernel/lexical/ifcpropertysetdefinition.htm)
 
 
+Associations
+------------
+| Attribute         | Description   |
+|-------------------|---------------|
+| DefinesType       |               |
+| IsDefinedBy       |               |
+| DefinesOccurrence |               |
+

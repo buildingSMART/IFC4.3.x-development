@@ -48,3 +48,19 @@ Figure 1 -- Bounding box
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricmodelresource/lexical/ifcboundingbox.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                        |
+|-------------|--------------------------------------------------------------------|
+| XDim        | Length attribute (measured along the edge parallel to the X Axis)  |
+| YDim        | Width attribute (measured along the edge parallel to the Y Axis)   |
+| ZDim        | Height attribute (measured along the edge parallel to the Z Axis). |
+| Dim         | The space dimensionality of this class, it is always 3.            |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| Corner      |               |
+|             |               |
+

@@ -1,2 +1,10 @@
 IfcTrackAssetVersion
 ====================
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+|             |               |
+|             |               |
+

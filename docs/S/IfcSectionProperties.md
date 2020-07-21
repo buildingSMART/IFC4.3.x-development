@@ -14,3 +14,17 @@ profiles are assumed to be used.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcprofileresource/lexical/ifcsectionproperties.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                               |
+|-------------|-----------------------------------------------------------------------------------------------------------|
+| SectionType | An indicator whether a specific piece of a cross section is uniform or tapered in longitudinal direction. |
+
+Associations
+------------
+| Attribute    | Description   |
+|--------------|---------------|
+| EndProfile   |               |
+| StartProfile |               |
+|              |               |
+

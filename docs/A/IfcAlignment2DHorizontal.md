@@ -17,3 +17,16 @@ and Easting values.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricconstraintresource/lexical/ifcalignment2dhorizontal.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute      | Description                                                                                                       |
+|----------------|-------------------------------------------------------------------------------------------------------------------|
+| StartDistAlong | The value of the distance along at the start of the horizontal alignment. If omited (standard) it is set to zero. |
+
+Associations
+------------
+| Attribute        | Description   |
+|------------------|---------------|
+| Segments         |               |
+| ToAlignmentCurve |               |
+

@@ -24,3 +24,15 @@ may be exchanged without being already assigned to occurrences.
 Occurrences of the _IfcRailType_ are represented by instances of _IfcRail_.
 
 
+Attribute definitions
+---------------------
+| Attribute      | Description   |
+|----------------|---------------|
+| PredefinedType |               |
+
+Associations
+------------
+| Attribute      | Description   |
+|----------------|---------------|
+| PredefinedType |               |
+

@@ -21,3 +21,9 @@ of the vertices of the parent edge and the domain of the _parent edge_.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifctopologyresource/lexical/ifcsubedge.htm)
 
 
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| ParentEdge  |               |
+

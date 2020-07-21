@@ -9,3 +9,11 @@ track edge.
   
 
 
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+|             |               |
+|             |               |
+

@@ -11,3 +11,15 @@ The _IfcCartesianPointList_ is the abstract supertype of list of points.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricmodelresource/lexical/ifccartesianpointlist.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                       |
+|-------------|-----------------------------------------------------------------------------------|
+| Dim         | The space dimensionality of this class, either 2 or 3, depending on the sub type. |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+

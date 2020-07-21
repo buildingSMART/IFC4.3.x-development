@@ -79,3 +79,16 @@ used to capture the type of surface annotation, some suggested values are:
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcproductextension/lexical/ifcannotation.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute      | Description   |
+|----------------|---------------|
+| PredefinedType |               |
+
+Associations
+------------
+| Attribute            | Description   |
+|----------------------|---------------|
+| PredefinedType       |               |
+| ContainedInStructure |               |
+

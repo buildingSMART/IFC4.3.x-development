@@ -1,2 +1,0 @@
-IfcWallTypeEnum.POLYGONAL
-=========================

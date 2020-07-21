@@ -41,3 +41,17 @@ Each face of the tessellated face set shall have:
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricmodelresource/lexical/ifctessellatedfaceset.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                     |
+|-------------|---------------------------------------------------------------------------------|
+| Dim         | The space dimensionality of this geometric representation item, it is always 3. |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| Coordinates |               |
+| HasColours  |               |
+| HasTextures |               |
+

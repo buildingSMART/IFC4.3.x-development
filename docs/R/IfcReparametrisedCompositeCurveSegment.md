@@ -31,3 +31,15 @@ _SameSense_ = FALSE;
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometryresource/lexical/ifcreparametrisedcompositecurvesegment.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description   |
+|-------------|---------------|
+| ParamLength | $             |
+
+Formal Propositions
+-------------------
+| Rule                    | Description   |
+|-------------------------|---------------|
+| PositiveLengthParameter |               |
+

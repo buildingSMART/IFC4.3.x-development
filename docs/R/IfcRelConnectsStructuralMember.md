@@ -67,3 +67,19 @@ Figure 1 -- Structural member support lengths
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcstructuralanalysisdomain/lexical/ifcrelconnectsstructuralmember.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute       | Description                                                                               |
+|-----------------|-------------------------------------------------------------------------------------------|
+| SupportedLength | Defines the ''supported length'' of this structural connection. See Fig. for more detail. |
+
+Associations
+------------
+| Attribute                   | Description   |
+|-----------------------------|---------------|
+| ConditionCoordinateSystem   |               |
+| RelatingStructuralMember    |               |
+| AdditionalConditions        |               |
+| RelatedStructuralConnection |               |
+| AppliedCondition            |               |
+

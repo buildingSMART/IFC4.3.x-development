@@ -32,3 +32,9 @@ to the _IfcElement_ that is contained in the spatial structure.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcproductextension/lexical/ifcprojectionelement.htm)
 
 
+Associations
+------------
+| Attribute      | Description   |
+|----------------|---------------|
+| PredefinedType |               |
+

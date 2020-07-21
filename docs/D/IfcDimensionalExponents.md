@@ -25,3 +25,21 @@ IfcDimensionalExponents
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcmeasureresource/lexical/ifcdimensionalexponents.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute                        | Description                                               |
+|----------------------------------|-----------------------------------------------------------|
+| LengthExponent                   | The power of the length base quantity.                    |
+| MassExponent                     | The power of the mass base quantity.                      |
+| TimeExponent                     | The power of the time base quantity.                      |
+| ElectricCurrentExponent          | The power of the electric current base quantity.          |
+| ThermodynamicTemperatureExponent | The power of the thermodynamic temperature base quantity. |
+| AmountOfSubstanceExponent        | The power of the amount of substance base quantity.       |
+| LuminousIntensityExponent        | The power of the luminous intensity base quantity.        |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+

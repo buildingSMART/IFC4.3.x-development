@@ -18,3 +18,16 @@ reference to a document reference, applied to the object(s).
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifckernel/lexical/ifcrelassociatesdocument.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute        | Description                                                        |
+|------------------|--------------------------------------------------------------------|
+| RelatingDocument | Document information or reference which is applied to the objects. |
+
+Associations
+------------
+| Attribute        | Description   |
+|------------------|---------------|
+| RelatingDocument |               |
+| RelatingDocument |               |
+

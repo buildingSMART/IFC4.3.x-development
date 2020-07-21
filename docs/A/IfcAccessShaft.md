@@ -1,2 +1,8 @@
 IfcAccessShaft
 ==============
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+

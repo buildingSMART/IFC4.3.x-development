@@ -7,3 +7,11 @@ Contained physical objects come from common schema (foundation layer, barrier
 layer, ...)  
 
 
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+|             |               |
+|             |               |
+

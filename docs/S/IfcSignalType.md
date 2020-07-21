@@ -7,3 +7,15 @@ A signal is an active device that conveys information or instructions to
 users, by means of an audio, visual signal or a combination of the 2.  
 
 
+Attribute definitions
+---------------------
+| Attribute      | Description                                                                          |
+|----------------|--------------------------------------------------------------------------------------|
+| PredefinedType | Identifies the predefined type of a signal from which the type modelled, may be set. |
+
+Associations
+------------
+| Attribute      | Description   |
+|----------------|---------------|
+| PredefinedType |               |
+

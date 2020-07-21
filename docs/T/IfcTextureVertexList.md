@@ -17,3 +17,15 @@ list, where
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcpresentationappearanceresource/lexical/ifctexturevertexlist.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute     | Description                                                        |
+|---------------|--------------------------------------------------------------------|
+| TexCoordsList | List of texture vertices defined by S-coordinate and T-coordinate. |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+

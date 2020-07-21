@@ -65,3 +65,26 @@ radius shall be greater then the disk _Radius_
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricmodelresource/lexical/ifcsweptdisksolid.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                                                                                                                                                                                                                                                    |
+|-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Radius      | The _Radius_ of the circular disk to be swept along the _directrix_. Denotes the outer radius, if an _InnerRadius_ is applied.                                                                                                                                                                                                 |
+| InnerRadius | This attribute is optional, if present it defines the radius of a circular hole in the centre of the disk.                                                                                                                                                                                                                     |
+| StartParam  | The parameter value on the _Directrix_ at which the sweeping operation commences. If no value is provided the start of the sweeping operation is at the start of the _Directrix_..\X\0D\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  The attribute has been changed to OPTIONAL with upward compatibility for file-based exchange. |
+| EndParam    | The parameter value on the _Directrix_ at which the sweeping operation ends. If no value is provided the end of the sweeping operation is at the end of the _Directrix_..\X\0D\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  The attribute has been changed to OPTIONAL with upward compatibility for file-based exchange.          |
+
+Formal Propositions
+-------------------
+| Rule             | Description   |
+|------------------|---------------|
+| DirectrixDim     |               |
+| InnerRadiusSize  |               |
+| DirectrixBounded |               |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| Directrix   |               |
+

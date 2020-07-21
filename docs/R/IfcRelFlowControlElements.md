@@ -20,3 +20,10 @@ _IfcRelConnectsElements_ should be used.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcsharedbldgserviceelements/lexical/ifcrelflowcontrolelements.htm)
 
 
+Associations
+------------
+| Attribute              | Description   |
+|------------------------|---------------|
+| RelatedControlElements |               |
+| RelatingFlowElement    |               |
+

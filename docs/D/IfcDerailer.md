@@ -5,3 +5,10 @@ and serves to protect a converging line.
 [source: IEC 60050-821]
 
 
+Attribute definitions
+---------------------
+| Attribute             | Description   |
+|-----------------------|---------------|
+| Primary positioning   |               |
+| Secondary positioning |               |
+

@@ -14,3 +14,10 @@ curve.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcstructuralanalysisdomain/lexical/ifcstructurallinearaction.htm)
 
 
+Formal Propositions
+-------------------
+| Rule                | Description   |
+|---------------------|---------------|
+| SuitableLoadType    |               |
+| ConstPredefinedType |               |
+

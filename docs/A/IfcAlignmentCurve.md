@@ -21,3 +21,9 @@ segments composed of various geometry types that are linked together in a
 chain.
 
 
+Attribute definitions
+---------------------
+| Attribute                       | Description                                                                                  |
+|---------------------------------|----------------------------------------------------------------------------------------------|
+| Acceptable tangential tolerance | Parameter used to check if the tangential continuity of two geometric segments is respected. |
+

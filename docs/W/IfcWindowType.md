@@ -76,3 +76,23 @@ way as those for _IfcWindow_ and _IfcWindowStandardCase_
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcsharedbldgelements/lexical/ifcwindowtype.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute                   | Description                                                                                                                                                                                                                                                                                                           |
+|-----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| PartitioningType            | Type defining the general layout of the window type in terms of the partitioning of panels.                                                                                                                                                                                                                           |
+| ParameterTakesPrecedence    | The Boolean value reflects, whether the parameter given in the attached lining and panel properties exactly define the geometry (TRUE), or whether the attached style shape take precedence (FALSE). In the last case the parameter have only informative value. If not provided, no such information can be infered. |
+| UserDefinedPartitioningType | Designator for the user defined partitioning type, shall only be provided, if the value of _PartitioningType_ is set to USERDEFINED.                                                                                                                                                                                  |
+
+Formal Propositions
+-------------------
+| Rule                  | Description   |
+|-----------------------|---------------|
+| CorrectPredefinedType |               |
+
+Associations
+------------
+| Attribute      | Description   |
+|----------------|---------------|
+| PredefinedType |               |
+

@@ -14,3 +14,15 @@ An _IfcBoundaryCurve_ defines a curve acting as the boundary of a surface.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometryresource/lexical/ifcboundarycurve.htm)
 
 
+Formal Propositions
+-------------------
+| Rule     | Description   |
+|----------|---------------|
+| IsClosed |               |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+

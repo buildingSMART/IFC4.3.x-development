@@ -103,3 +103,9 @@ of _IfcObjectPlacement_.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcstructuralanalysisdomain/lexical/ifcstructuralitem.htm)
 
 
+Associations
+------------
+| Attribute                  | Description   |
+|----------------------------|---------------|
+| AssignedStructuralActivity |               |
+

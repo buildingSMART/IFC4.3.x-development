@@ -1,2 +1,11 @@
 IfcDilatationTurnoutAssetVersion
 ================================
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+|             |               |
+|             |               |
+|             |               |
+

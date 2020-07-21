@@ -44,3 +44,9 @@ an independent shape representation.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifckernel/lexical/ifcgroup.htm)
 
 
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| IsGroupedBy |               |
+

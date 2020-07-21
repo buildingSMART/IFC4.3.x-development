@@ -11,3 +11,15 @@ _LightDistributionCurve_ attribute.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcpresentationorganizationresource/lexical/ifclightintensitydistribution.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute              | Description                                                                                                 |
+|------------------------|-------------------------------------------------------------------------------------------------------------|
+| LightDistributionCurve | Standardized light distribution curve used to define the luminous intensity of the light in all directions. |
+
+Associations
+------------
+| Attribute        | Description   |
+|------------------|---------------|
+| DistributionData |               |
+

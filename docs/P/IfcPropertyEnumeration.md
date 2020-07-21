@@ -79,3 +79,25 @@ Table 1 -- Property enumeration with values, measure types and units
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcpropertyresource/lexical/ifcpropertyenumeration.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute         | Description                                                                                                                                                                               |
+|-------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Name              | Name of this enumeration.                                                                                                                                                                 |
+| EnumerationValues | List of values that form the enumeration.                                                                                                                                                 |
+| Unit              | Unit for the enumerator values, if not given, the default value for the measure type (given by the TYPE of nominal value) is used as defined by the global unit assignment at IfcProject. |
+
+Formal Propositions
+-------------------
+| Rule   | Description   |
+|--------|---------------|
+| UR1    |               |
+| WR01   |               |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+|             |               |
+

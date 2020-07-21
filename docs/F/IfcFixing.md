@@ -19,3 +19,16 @@ IfcFixing
   
 
 
+Attribute definitions
+---------------------
+| Attribute             | Description   |
+|-----------------------|---------------|
+| Primary positioning   |               |
+| Secondary positioning |               |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+

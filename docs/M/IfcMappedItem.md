@@ -34,3 +34,10 @@ the same, if the mapping source is a geometric representation item.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometryresource/lexical/ifcmappeditem.htm)
 
 
+Associations
+------------
+| Attribute     | Description   |
+|---------------|---------------|
+| MappingTarget |               |
+| MappingSource |               |
+

@@ -37,3 +37,11 @@ coordinate system (defining when the value is positive or negative):
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricconstraintresource/lexical/ifcconnectionpointeccentricity.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute       | Description                                                                                        |
+|-----------------|----------------------------------------------------------------------------------------------------|
+| EccentricityInX | Distance in x direction between the two points (or vertex points) engaged in the point connection. |
+| EccentricityInY | Distance in y direction between the two points (or vertex points) engaged in the point connection. |
+| EccentricityInZ | Distance in z direction between the two points (or vertex points) engaged in the point connection. |
+

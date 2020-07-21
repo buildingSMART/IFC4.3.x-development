@@ -33,3 +33,9 @@ _IfcStructuralReaction_.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcstructuralanalysisdomain/lexical/ifcstructuralaction.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute         | Description                                                                                                                                       |
+|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
+| DestabilizingLoad | Indicates if this action may cause a stability problem. If it is ''FALSE'', no further investigations regarding stability problems are necessary. |
+

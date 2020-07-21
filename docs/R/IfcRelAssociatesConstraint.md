@@ -9,3 +9,15 @@ to subtypes of _IfcRoot_.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifccontrolextension/lexical/ifcrelassociatesconstraint.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                                                                                                                           |
+|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Intent      | The intent of the constraint usage with regard to its related IfcConstraint and IfcObjects, IfcPropertyDefinitions or IfcRelationships. Typical values can be e.g. RATIONALE or EXPECTED PERFORMANCE. |
+
+Associations
+------------
+| Attribute          | Description   |
+|--------------------|---------------|
+| RelatingConstraint |               |
+

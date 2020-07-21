@@ -29,3 +29,16 @@ _RelatingClassification_ can thereby be applied to one or multiple objects.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifckernel/lexical/ifcrelassociatesclassification.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute              | Description                            |
+|------------------------|----------------------------------------|
+| RelatingClassification | Classification applied to the objects. |
+
+Associations
+------------
+| Attribute              | Description   |
+|------------------------|---------------|
+| RelatingClassification |               |
+| RelatingClassification |               |
+

@@ -38,3 +38,17 @@ of the construction project and any map or other coordinate reference system.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcrepresentationresource/lexical/ifccoordinateoperation.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                           |
+|-------------|-------------------------------------------------------|
+| SourceCRS   | Source coordinate reference system for the operation. |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| TargetCRS   |               |
+| SourceCRS   |               |
+| SourceCRS   |               |
+

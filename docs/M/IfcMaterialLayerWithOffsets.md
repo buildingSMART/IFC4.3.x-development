@@ -52,3 +52,10 @@ Attribute use definition
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcmaterialresource/lexical/ifcmateriallayerwithoffsets.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute       | Description                                                                                                                                                                                                                                                                                                                                                                                            |
+|-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| OffsetDirection | Orientation of the offset; shall be perpendicular to the parent layer set direction.                                                                                                                                                                                                                                                                                                                   |
+| OffsetValues    | The numerical value of layer offset, in the direction of the axis assigned by the attribute _OffsetDirection_. The _OffsetValues[1]_ identifies the offset from the lower position along the axis direction (normally the start of the standard extrusion), the _OffsetValues[2]_ identifies the offset from the upper position along the axis direction (normally the end of the standard extrusion). |
+

@@ -36,3 +36,16 @@ The _IfcRamp_ shall either be represented:
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcsharedbldgelements/lexical/ifcramp.htm)
 
 
+Formal Propositions
+-------------------
+| Rule                  | Description   |
+|-----------------------|---------------|
+| CorrectPredefinedType |               |
+| CorrectTypeAssigned   |               |
+
+Associations
+------------
+| Attribute      | Description   |
+|----------------|---------------|
+| PredefinedType |               |
+

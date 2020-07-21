@@ -10,3 +10,9 @@ distribution system interacts with the external environment. An example of
 this is a loading arm for the transfer of liquid from a docked vessel.
 
 
+Attribute definitions
+---------------------
+| Attribute      | Description                                                                                   |
+|----------------|-----------------------------------------------------------------------------------------------|
+| PredefinedType | Identifies the predefined type of a liquid terminal from which the type modelled, may be set. |
+

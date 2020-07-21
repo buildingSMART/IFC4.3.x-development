@@ -8,3 +8,15 @@ in fixed transmission networks should be instantiated using
 IfcCommunicationsAppliance.
 
 
+Attribute definitions
+---------------------
+| Attribute      | Description   |
+|----------------|---------------|
+| PredefinedType |               |
+
+Associations
+------------
+| Attribute      | Description   |
+|----------------|---------------|
+| PredefinedType |               |
+

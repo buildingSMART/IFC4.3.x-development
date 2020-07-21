@@ -16,3 +16,11 @@ and derived SI units such as Pascal, square meter and cubic meter.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcmeasureresource/lexical/ifcsiunit.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute                    | Description                                                                                                                                                                                                  |
+|------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Prefix                       | The SI Prefix for defining decimal multiples and submultiples of the unit.                                                                                                                                   |
+| Name                         | The word, or group of words, by which the SI unit is referred to.\X\0D\X\0D> NOTE  Even though the SI system''s base unit for mass is kilogram, the _IfcSIUnit_ for mass is gram if no _Prefix_ is asserted. |
+| SELF\IfcNamedUnit.Dimensions |                                                                                                                                                                                                              |
+

@@ -1,2 +1,0 @@
-IfcCableFittingTypeEnum.EXIT
-============================

@@ -6,3 +6,9 @@ duration and breaking currents under specified abnormal circuit conditions
 such as those of short circuit (IEC - 811-29-01)
 
 
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+

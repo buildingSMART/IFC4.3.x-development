@@ -20,3 +20,24 @@ three-dimensional space.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometryresource/lexical/ifccartesiantransformationoperator3d.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                                                                                                    |
+|-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| U           | The list of mutually orthogonal, normalized vectors defining the transformation matrix T. They are derived from the explicit attributes Axis3, Axis1, and Axis2 in that order. |
+
+Formal Propositions
+-------------------
+| Rule      | Description   |
+|-----------|---------------|
+| DimIs3D   |               |
+| Axis1Is3D |               |
+| Axis2Is3D |               |
+| Axis3Is3D |               |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| Axis3       |               |
+

@@ -207,3 +207,21 @@ Figure 3 -- Extruded area solid textures
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricmodelresource/lexical/ifcextrudedareasolid.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                            |
+|-------------|------------------------------------------------------------------------|
+| Depth       | The distance the surface is to be swept along the _ExtrudedDirection_. |
+
+Formal Propositions
+-------------------
+| Rule                    | Description   |
+|-------------------------|---------------|
+| ValidExtrusionDirection |               |
+
+Associations
+------------
+| Attribute         | Description   |
+|-------------------|---------------|
+| ExtrudedDirection |               |
+

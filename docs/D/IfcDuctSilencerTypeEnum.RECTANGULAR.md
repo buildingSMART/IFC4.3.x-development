@@ -1,2 +1,0 @@
-IfcDuctSilencerTypeEnum.RECTANGULAR
-===================================

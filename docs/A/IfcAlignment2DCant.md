@@ -8,3 +8,15 @@ vertical alignment.
   
 
 
+Attribute definitions
+---------------------
+| Attribute        | Description                                                                                                       |
+|------------------|-------------------------------------------------------------------------------------------------------------------|
+| RailHeadDistance | Length measured as distance between the nominal centre points of the two contact patches of a wheelset and rails. |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| Segments    |               |
+

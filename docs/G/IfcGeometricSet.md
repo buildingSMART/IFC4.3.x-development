@@ -17,3 +17,16 @@ tessellated and are not solid models (such as swept solids, CSG or Brep).
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricmodelresource/lexical/ifcgeometricset.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                                                                                          |
+|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Elements    | The geometric elements which make up the geometric set, these may be points, curves or surfaces; but are required to be of the same coordinate space dimensionality. |
+| Dim         | The space dimensionality of this class, it is identical to the first element in the set. A where rule ensures that all elements have the same dimensionality.        |
+
+Formal Propositions
+-------------------
+| Rule          | Description   |
+|---------------|---------------|
+| ConsistentDim |               |
+

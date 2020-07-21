@@ -18,3 +18,18 @@ attribute level; thus overriding the IFC model global unit assignments.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcmeasureresource/lexical/ifcmeasurewithunit.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute      | Description                                                               |
+|----------------|---------------------------------------------------------------------------|
+| ValueComponent | The value of the physical quantity when expressed in the specified units. |
+| UnitComponent  | The unit in which the physical quantity is expressed.                     |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+|             |               |
+|             |               |
+

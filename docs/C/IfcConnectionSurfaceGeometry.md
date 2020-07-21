@@ -23,3 +23,10 @@ _RelatedElement_ by using the _SurfaceOnRelatedElement_ attribute.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricconstraintresource/lexical/ifcconnectionsurfacegeometry.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute                | Description                                                                                                                                                                                      |
+|--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| SurfaceOnRelatingElement | Surface at which related object is aligned at the relating element, given in the LCS of the relating element.                                                                                    |
+| SurfaceOnRelatedElement  | Surface at which the relating element is aligned at the related element, given in the LCS of the related element. If the information is omitted, then the origin of the related element is used. |
+

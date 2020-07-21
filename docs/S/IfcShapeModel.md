@@ -19,3 +19,15 @@ shape (via _IfcShapeAspect_).
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcrepresentationresource/lexical/ifcshapemodel.htm)
 
 
+Formal Propositions
+-------------------
+| Rule   | Description   |
+|--------|---------------|
+| WR11   |               |
+
+Associations
+------------
+| Attribute     | Description   |
+|---------------|---------------|
+| OfShapeAspect |               |
+

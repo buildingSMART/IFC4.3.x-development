@@ -69,3 +69,19 @@ Figure 1 -- Rectangle hollow profile
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcprofileresource/lexical/ifcrectanglehollowprofiledef.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute         | Description                |
+|-------------------|----------------------------|
+| WallThickness     | Thickness of the material. |
+| InnerFilletRadius | Inner corner radius.       |
+| OuterFilletRadius | Outer corner radius.       |
+
+Formal Propositions
+-------------------
+| Rule               | Description   |
+|--------------------|---------------|
+| ValidWallThickness |               |
+| ValidInnerRadius   |               |
+| ValidOuterRadius   |               |
+

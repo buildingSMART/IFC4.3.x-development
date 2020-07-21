@@ -1,2 +1,0 @@
-IfcJunctionBoxTypeEnum.DATA
-===========================

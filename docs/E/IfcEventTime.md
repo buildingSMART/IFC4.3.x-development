@@ -21,3 +21,18 @@ attribute applying to all date time related attributes of _IfcEventTime_.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcdatetimeresource/lexical/ifceventtime.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute    | Description                                                                                                                                               |
+|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ActualDate   | The date on which an event actually occurs. It is a measured value.                                                                                       |
+| EarlyDate    | The earliest date on which an event can occur. It is a calculated value.                                                                                  |
+| LateDate     | The latest date on which an event can occur. It is a calculated value.                                                                                    |
+| ScheduleDate | The date on which an event is scheduled to occur. \X\0D The value might be measured or somehow calculated, which is defined by\X\0D _ScheduleDataOrigin_. |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+

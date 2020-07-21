@@ -12,3 +12,9 @@ Note 1 to entry: The conductors can be for example:
 -return cables.(IEC 60050-811-35-01)
 
 
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+

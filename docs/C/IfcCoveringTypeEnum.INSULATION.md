@@ -1,2 +1,0 @@
-IfcCoveringTypeEnum.INSULATION
-==============================

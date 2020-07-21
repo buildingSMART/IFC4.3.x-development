@@ -35,3 +35,18 @@ IfcLightSourcePositional
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcpresentationorganizationresource/lexical/ifclightsourcepositional.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute           | Description                                                                                                                                                                                                 |
+|---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Radius              | The maximum distance from the light source for a surface still to be illuminated.\X\0DDefinition from VRML97 - ISO/IEC 14772-1:1997: A Point light node illuminates geometry within radius of its location. |
+| ConstantAttenuation | Definition from ISO/CD 10303-46:1992: This real indicates the value of the attenuation in the lighting equation that is constant.                                                                           |
+| DistanceAttenuation | Definition from ISO/CD 10303-46:1992: This real indicates the value of the attenuation in the lighting equation that proportional to the distance from the light source.                                    |
+| QuadricAttenuation  | This real indicates the value of the attenuation in the lighting equation that proportional to the square value of the distance from the light source.                                                      |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| Position    |               |
+

@@ -9,3 +9,9 @@ IfcSignalFrame
   
 
 
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+

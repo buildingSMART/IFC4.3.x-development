@@ -90,3 +90,26 @@ within the parametric range of the _BasisCurve_.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometryresource/lexical/ifctrimmedcurve.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute            | Description                                                                                                                |
+|----------------------|----------------------------------------------------------------------------------------------------------------------------|
+| Trim1                | The first trimming point which may be specified as a Cartesian point, as a real parameter or both.                         |
+| Trim2                | The second trimming point which may be specified as a Cartesian point, as a real parameter or both.                        |
+| SenseAgreement       | Flag to indicate whether the direction of the trimmed curve agrees with or is opposed to the direction of the basis curve. |
+| MasterRepresentation | Where both parameter and point are present at either end of the curve this indicates the preferred form.                   |
+
+Formal Propositions
+-------------------
+| Rule                  | Description   |
+|-----------------------|---------------|
+| Trim1ValuesConsistent |               |
+| Trim2ValuesConsistent |               |
+| NoTrimOfBoundedCurves |               |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| BasisCurve  |               |
+

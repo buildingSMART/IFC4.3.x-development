@@ -78,3 +78,12 @@ Figure 1 -- Trapezium profile
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcprofileresource/lexical/ifctrapeziumprofiledef.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                              |
+|-------------|----------------------------------------------------------------------------------------------------------|
+| BottomXDim  | The extent of the bottom line measured along the implicit x-axis.                                        |
+| TopXDim     | The extent of the top line measured along the implicit x-axis.                                           |
+| YDim        | The extent of the distance between the parallel bottom and top lines measured along the implicit y-axis. |
+| TopXOffset  | Offset from the beginning of the top line to the bottom line, measured along the implicit x-axis.        |
+

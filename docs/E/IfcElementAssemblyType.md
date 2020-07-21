@@ -25,3 +25,21 @@ are represented by instances of
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcproductextension/lexical/ifcelementassemblytype.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute      | Description   |
+|----------------|---------------|
+| PredefinedType |               |
+
+Formal Propositions
+-------------------
+| Rule                  | Description   |
+|-----------------------|---------------|
+| CorrectPredefinedType |               |
+
+Associations
+------------
+| Attribute      | Description   |
+|----------------|---------------|
+| PredefinedType |               |
+

@@ -30,3 +30,22 @@ transparent, FF is completely opaque, 80 is semi-transparent.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcpresentationappearanceresource/lexical/ifcpixeltexture.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute        | Description                                                                                                                                                                              |
+|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Width            | The number of pixels in width (S) direction.                                                                                                                                             |
+| Height           | The number of pixels in height (T) direction.                                                                                                                                            |
+| ColourComponents | Indication whether the pixel values contain a 1, 2, 3, or 4 colour component.                                                                                                            |
+| Pixel            | Flat list of hexadecimal values, each describing one pixel by 1, 2, 3, or 4 components.\X\0D{ .change-ifc2x3}\X\0D> IFC2x3 CHANGE  The data type has been changed from STRING to BINARY. |
+
+Formal Propositions
+-------------------
+| Rule                     | Description   |
+|--------------------------|---------------|
+| MinPixelInS              |               |
+| MinPixelInT              |               |
+| NumberOfColours          |               |
+| SizeOfPixelList          |               |
+| PixelAsByteAndSameLength |               |
+

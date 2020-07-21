@@ -34,3 +34,21 @@ the attribute _Thickness_.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcstructuralanalysisdomain/lexical/ifcstructuralsurfacemember.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                                            |
+|-------------|------------------------------------------------------------------------------------------------------------------------|
+| Thickness   | Defines the typically understood thickness of the structural surface member, measured normal to its reference surface. |
+
+Formal Propositions
+-------------------
+| Rule          | Description   |
+|---------------|---------------|
+| HasObjectType |               |
+
+Associations
+------------
+| Attribute      | Description   |
+|----------------|---------------|
+| PredefinedType |               |
+

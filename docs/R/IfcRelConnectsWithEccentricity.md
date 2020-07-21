@@ -33,3 +33,9 @@ shall refer to two instances of _IfcFaceSurface_.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcstructuralanalysisdomain/lexical/ifcrelconnectswitheccentricity.htm)
 
 
+Associations
+------------
+| Attribute            | Description   |
+|----------------------|---------------|
+| ConnectionConstraint |               |
+

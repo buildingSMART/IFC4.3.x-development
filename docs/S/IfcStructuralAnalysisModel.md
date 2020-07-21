@@ -61,3 +61,19 @@ this case, all these models must use the same instance of
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcstructuralanalysisdomain/lexical/ifcstructuralanalysismodel.htm)
 
 
+Formal Propositions
+-------------------
+| Rule          | Description   |
+|---------------|---------------|
+| HasObjectType |               |
+
+Associations
+------------
+| Attribute            | Description   |
+|----------------------|---------------|
+| SharedPlacement      |               |
+| OrientationOf2DPlane |               |
+| PredefinedType       |               |
+| LoadedBy             |               |
+| HasResults           |               |
+

@@ -11,3 +11,9 @@ within a conveyor system that joins two sections of the system. these can
 utilise different carrying methods such as belt, rope, chain, screw etc.
 
 
+Attribute definitions
+---------------------
+| Attribute      | Description                                                                                    |
+|----------------|------------------------------------------------------------------------------------------------|
+| PredefinedType | Identifies the predefined type of a conveyor segment from which the type modelled, may be set. |
+

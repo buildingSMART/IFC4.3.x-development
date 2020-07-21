@@ -28,3 +28,23 @@ entities.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcexternalreferenceresource/lexical/ifcexternalreference.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute      | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+|----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Location       | Location, where the external source (classification, document or library) can be accessed by electronic means. The electronic location is provided as an URI, and would normally be given as an URL location string.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  The data type has been changed from _IfcLabel_ to _IfcURIReference_ \X\0D> .                                                                                                                                                                                                           |
+| Identification | The _Identification_ provides a unique identifier of the referenced item within the external source (classification, document or library). It may be provided as \X\0D* a key, e.g. a classification notation, like NF2.3\X\0D* a handle\X\0D* a uuid or guid\X\0D\X\0D\X\0DIt may be human readable (such as a key) or not (such as a handle or uuid) depending on the context of its usage (which has to be determined by local agreement).\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE Attribute renamed from _ItemReference_ for consistency. \X\0D> |
+| Name           | Optional name to further specify the reference. It can provide a human readable identifier (which does not necessarily need to have a counterpart in the internal structure of the document).                                                                                                                                                                                                                                                                                                                                                        |
+
+Formal Propositions
+-------------------
+| Rule   | Description   |
+|--------|---------------|
+| WR1    |               |
+
+Associations
+------------
+| Attribute                     | Description   |
+|-------------------------------|---------------|
+| ExternalReferenceForResources |               |
+

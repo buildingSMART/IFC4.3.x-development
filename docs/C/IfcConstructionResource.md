@@ -98,3 +98,11 @@ baseline.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcconstructionmgmtdomain/lexical/ifcconstructionresource.htm)
 
 
+Associations
+------------
+| Attribute    | Description   |
+|--------------|---------------|
+| BaseCosts    |               |
+| Usage        |               |
+| BaseQuantity |               |
+

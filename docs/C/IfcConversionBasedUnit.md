@@ -121,3 +121,16 @@ Table 1 -- Standard unit names
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcmeasureresource/lexical/ifcconversionbasedunit.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                     |
+|-------------|---------------------------------------------------------------------------------|
+| Name        | The word, or group of words, by which the conversion based unit is referred to. |
+
+Associations
+------------
+| Attribute            | Description   |
+|----------------------|---------------|
+| HasExternalReference |               |
+| ConversionFactor     |               |
+

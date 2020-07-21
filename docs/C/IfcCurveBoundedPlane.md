@@ -27,3 +27,11 @@ coordinate values.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometryresource/lexical/ifccurveboundedplane.htm)
 
 
+Associations
+------------
+| Attribute       | Description   |
+|-----------------|---------------|
+| InnerBoundaries |               |
+| OuterBoundary   |               |
+| BasisSurface    |               |
+

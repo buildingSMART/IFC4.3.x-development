@@ -10,3 +10,10 @@ The line where install track slab provide the place for installing fastening
 system. No sleeper is needed.  
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                 |
+|-------------|-----------------------------|
+| Type        | Type of track slab          |
+| Number      | Common specification number |
+

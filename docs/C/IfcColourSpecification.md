@@ -14,3 +14,9 @@ IfcColourSpecification
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcpresentationappearanceresource/lexical/ifccolourspecification.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                                                                                                                                                                                  |
+|-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Name        | Optional name given to a particular colour specification in addition to the colour components (like the RGB values).\X\0D> EXAMPLE  Names of a industry colour classification, such as RAL.\X\0D\X\0D{ .change-ifc2x3}\X\0D> IFC2x3 CHANGE  Attribute added. |
+

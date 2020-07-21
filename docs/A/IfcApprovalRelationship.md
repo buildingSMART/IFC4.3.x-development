@@ -13,3 +13,10 @@ approval process or the approved objects evolve.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcapprovalresource/lexical/ifcapprovalrelationship.htm)
 
 
+Associations
+------------
+| Attribute        | Description   |
+|------------------|---------------|
+| RelatedApprovals |               |
+| RelatingApproval |               |
+

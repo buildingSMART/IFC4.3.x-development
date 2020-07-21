@@ -13,3 +13,15 @@ classifications to materials.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcmaterialresource/lexical/ifcmaterialclassificationrelationship.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute               | Description                                                    |
+|-------------------------|----------------------------------------------------------------|
+| MaterialClassifications | The material classifications identifying the type of material. |
+
+Associations
+------------
+| Attribute          | Description   |
+|--------------------|---------------|
+| ClassifiedMaterial |               |
+

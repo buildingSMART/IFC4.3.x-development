@@ -5,3 +5,10 @@ Switch for alternatively closing and opening one or more electric circuits
 60050-151-12-23)
 
 
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+|             |               |
+

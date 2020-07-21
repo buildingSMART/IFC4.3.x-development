@@ -28,3 +28,15 @@ Circle hollow profile")
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcprofileresource/lexical/ifccirclehollowprofiledef.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute     | Description                                                                         |
+|---------------|-------------------------------------------------------------------------------------|
+| WallThickness | Thickness of the material, it is the difference between the outer and inner radius. |
+
+Formal Propositions
+-------------------
+| Rule   | Description   |
+|--------|---------------|
+| WR1    |               |
+

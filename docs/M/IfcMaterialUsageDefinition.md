@@ -27,3 +27,9 @@ occurrence.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcmaterialresource/lexical/ifcmaterialusagedefinition.htm)
 
 
+Associations
+------------
+| Attribute    | Description   |
+|--------------|---------------|
+| AssociatedTo |               |
+

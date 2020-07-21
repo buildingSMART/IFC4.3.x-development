@@ -31,3 +31,15 @@ bar type.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcstructuralelementsdomain/lexical/ifcreinforcementdefinitionproperties.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute      | Description                                                           |
+|----------------|-----------------------------------------------------------------------|
+| DefinitionType | Descriptive type name applied to reinforcement definition properties. |
+
+Associations
+------------
+| Attribute                       | Description   |
+|---------------------------------|---------------|
+| ReinforcementSectionDefinitions |               |
+

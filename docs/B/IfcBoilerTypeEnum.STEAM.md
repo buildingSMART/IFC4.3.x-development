@@ -1,5 +1,0 @@
-IfcBoilerTypeEnum.STEAM
-=======================
-Steam boiler.
-
-

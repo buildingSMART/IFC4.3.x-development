@@ -26,3 +26,20 @@ task scheduling or some other defined purpose.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcprocessextension/lexical/ifcworkcontrol.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute    | Description                                        |
+|--------------|----------------------------------------------------|
+| CreationDate | The date that the plan is created.                 |
+| Purpose      | A description of the purpose of the work schedule. |
+| Duration     | The total duration of the entire work schedule.    |
+| TotalFloat   | The total time float of the entire work schedule.  |
+| StartTime    | The start time of the schedule.                    |
+| FinishTime   | The finish time of the schedule.                   |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| Creators    |               |
+

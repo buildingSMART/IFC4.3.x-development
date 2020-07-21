@@ -49,3 +49,9 @@ Building storey elevations")
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcproductextension/lexical/ifcbuildingstorey.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                                                                                                                                                                                                                                                                                                                                               |
+|-------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Elevation   | Elevation of the base of this storey, relative to the 0,00 internal reference height of the building. The 0.00 level is given by the absolute above sea level height by the _ElevationOfRefHeight_ attribute given at _IfcBuilding_.\X\0D\X\0D> NOTE  If the geometric data is provided (_ObjectPlacement_ is specified), the _Elevation_ value shall either not be included, or be equal to the local placement Z value. |
+

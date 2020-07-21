@@ -23,3 +23,9 @@ _Factor_ values to many groups. Grouping relationships are not hierarchical.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifckernel/lexical/ifcrelassignstogroupbyfactor.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                                              |
+|-------------|--------------------------------------------------------------------------------------------------------------------------|
+| Factor      | Factor provided as a ratio measure that identifies the fraction or weighted factor that applies to the group assignment. |
+

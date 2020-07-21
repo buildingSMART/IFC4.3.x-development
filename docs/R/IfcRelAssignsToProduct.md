@@ -20,3 +20,22 @@ values are proposed:
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifckernel/lexical/ifcrelassignstoproduct.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute       | Description                                                                                                                                                                            |
+|-----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| RelatingProduct | Reference to the product or product type to which the objects are assigned to.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE Datatype expanded to include _IfcProduct_ and _IfcTypeProduct_. |
+
+Formal Propositions
+-------------------
+| Rule            | Description   |
+|-----------------|---------------|
+| NoSelfReference |               |
+
+Associations
+------------
+| Attribute       | Description   |
+|-----------------|---------------|
+| RelatingProduct |               |
+| RelatingProduct |               |
+

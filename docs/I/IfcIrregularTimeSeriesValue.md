@@ -8,3 +8,16 @@ particular time point.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcdatetimeresource/lexical/ifcirregulartimeseriesvalue.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                   |
+|-------------|---------------------------------------------------------------|
+| TimeStamp   | The specification of the time point.                          |
+| ListValues  | A list of time-series values. At least one value is required. |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+

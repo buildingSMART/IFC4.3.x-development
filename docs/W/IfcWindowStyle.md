@@ -38,3 +38,12 @@ list of _HasPropertySets_. See geometry use definitions there.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcarchitecturedomain/lexical/ifcwindowstyle.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute                | Description                                                                                                                                                                                                                                                      |
+|--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ConstructionType         | Type defining the basic construction and material type of the window.                                                                                                                                                                                            |
+| OperationType            | Type defining the general layout and operation of the window style.                                                                                                                                                                                              |
+| ParameterTakesPrecedence | The Boolean value reflects, whether the parameter given in the attached lining and panel properties exactly define the geometry (TRUE), or whether the attached style shape take precedence (FALSE). In the last case the parameter have only informative value. |
+| Sizeable                 | The Boolean indicates, whether the attached ShapeStyle can be sized (using scale factor of transformation), or not (FALSE). If not, the ShapeStyle should be inserted by the IfcWindow (using IfcMappedItem) with the scale factor = 1.                          |
+

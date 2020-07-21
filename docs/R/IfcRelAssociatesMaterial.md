@@ -69,3 +69,23 @@ _IfcElementType_, it should only be associated with individual occurrences
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcproductextension/lexical/ifcrelassociatesmaterial.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute        | Description                                                    |
+|------------------|----------------------------------------------------------------|
+| RelatingMaterial | Material definition assigned to the elements or element types. |
+
+Formal Propositions
+-------------------
+| Rule            | Description   |
+|-----------------|---------------|
+| NoVoidElement   |               |
+| AllowedElements |               |
+
+Associations
+------------
+| Attribute        | Description   |
+|------------------|---------------|
+| RelatingMaterial |               |
+| RelatingMaterial |               |
+

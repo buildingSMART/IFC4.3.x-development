@@ -21,3 +21,27 @@ represented by instances of _IfcReinforcingBar_.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcstructuralelementsdomain/lexical/ifcreinforcingbartype.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute         | Description                                                                                                                                                                                                                                                                                |
+|-------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| NominalDiameter   | The nominal diameter defining the cross-section size of the reinforcing bar.                                                                                                                                                                                                               |
+| CrossSectionArea  | The effective cross-section area of the reinforcing bar.                                                                                                                                                                                                                                   |
+| BarLength         | The total length of the reinforcing bar. The total length of bended bars are calculated according to local standards with corrections for the bends.                                                                                                                                       |
+| BarSurface        | Indicator for whether the bar surface is plain or textured.                                                                                                                                                                                                                                |
+| BendingShapeCode  | Shape code per a standard like ACI 315, ISO 3766, or a similar standard. It is presumed that a single standard for defining the bar bending is used throughout the project and that this standard is referenced from the _IfcProject_ object through the _IfcDocumentReference_ mechanism. |
+| BendingParameters | Bending shape parameters. Their meaning is defined by the bending shape code and the respective standard.                                                                                                                                                                                  |
+
+Formal Propositions
+-------------------
+| Rule                     | Description   |
+|--------------------------|---------------|
+| CorrectPredefinedType    |               |
+| BendingShapeCodeProvided |               |
+
+Associations
+------------
+| Attribute      | Description   |
+|----------------|---------------|
+| PredefinedType |               |
+

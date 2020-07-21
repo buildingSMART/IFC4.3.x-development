@@ -13,3 +13,27 @@ external references.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcexternalreferenceresource/lexical/ifcexternalreferencerelationship.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute              | Description                                                                                                                                                            |
+|------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| RelatedResourceObjects | Objects within the list of _IfcResourceObjectSelect_ that can be tagged by an external reference to a dictionary, library, catalogue, classification or documentation. |
+
+Associations
+------------
+| Attribute              | Description   |
+|------------------------|---------------|
+| RelatedResourceObjects |               |
+| RelatedResourceObjects |               |
+| RelatedResourceObjects |               |
+| RelatedResourceObjects |               |
+| RelatedResourceObjects |               |
+| RelatingReference      |               |
+| RelatedResourceObjects |               |
+| RelatedResourceObjects |               |
+| RelatedResourceObjects |               |
+| RelatedResourceObjects |               |
+| RelatedResourceObjects |               |
+| RelatedResourceObjects |               |
+| RelatedResourceObjects |               |
+

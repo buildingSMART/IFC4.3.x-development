@@ -8,3 +8,10 @@ effect when the curve is used for linear placement or creating other geometric
 representation items.  
 
 
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| Directrix   |               |
+| Inclinating |               |
+

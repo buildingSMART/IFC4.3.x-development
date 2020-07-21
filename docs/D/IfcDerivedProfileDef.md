@@ -225,3 +225,22 @@ Figure 1 -- Derived profile
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcprofileresource/lexical/ifcderivedprofiledef.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                                                               |
+|-------------|-------------------------------------------------------------------------------------------------------------------------------------------|
+| Label       | The name by which the transformation may be referred to. The actual meaning of the name has to be defined in the context of applications. |
+
+Formal Propositions
+-------------------
+| Rule                 | Description   |
+|----------------------|---------------|
+| InvariantProfileType |               |
+
+Associations
+------------
+| Attribute     | Description   |
+|---------------|---------------|
+| Operator      |               |
+| ParentProfile |               |
+

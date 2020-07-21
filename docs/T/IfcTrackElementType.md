@@ -26,3 +26,15 @@ Occurrences of the _IfcTrackElementType_ are represented by instances of
 _IfcTrackElement_.
 
 
+Attribute definitions
+---------------------
+| Attribute      | Description   |
+|----------------|---------------|
+| PredefinedType |               |
+
+Associations
+------------
+| Attribute      | Description   |
+|----------------|---------------|
+| PredefinedType |               |
+

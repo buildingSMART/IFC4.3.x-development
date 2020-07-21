@@ -58,3 +58,22 @@ shall be of the same entity type.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcstructuralanalysisdomain/lexical/ifcstructuralsurfaceaction.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute       | Description                                                                                                                                                                                                                                   |
+|-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ProjectedOrTrue | Defines whether load values are given per true lengths of the surface on which they act, or per lengths of the projection of the surface in load direction. The latter is only applicable to loads which act in global coordinate directions. |
+
+Formal Propositions
+-------------------
+| Rule              | Description   |
+|-------------------|---------------|
+| ProjectedIsGlobal |               |
+| HasObjectType     |               |
+
+Associations
+------------
+| Attribute      | Description   |
+|----------------|---------------|
+| PredefinedType |               |
+

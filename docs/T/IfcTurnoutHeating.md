@@ -5,3 +5,9 @@ device, sensor of rail temperature, electric control cabinet, isolating
 transformer, etc.
 
 
+Attribute definitions
+---------------------
+| Attribute           | Description   |
+|---------------------|---------------|
+| Primary positioning |               |
+

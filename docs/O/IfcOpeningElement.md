@@ -55,3 +55,10 @@ that is contained in the spatial structure.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcproductextension/lexical/ifcopeningelement.htm)
 
 
+Associations
+------------
+| Attribute      | Description   |
+|----------------|---------------|
+| PredefinedType |               |
+| HasFillings    |               |
+

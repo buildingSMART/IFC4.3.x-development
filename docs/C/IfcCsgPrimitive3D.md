@@ -10,3 +10,15 @@ placement coordinate system.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricmodelresource/lexical/ifccsgprimitive3d.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                     |
+|-------------|---------------------------------------------------------------------------------|
+| Dim         | The space dimensionality of this geometric representation item, it is always 3. |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| Position    |               |
+

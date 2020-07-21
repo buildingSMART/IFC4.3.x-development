@@ -26,3 +26,16 @@ layout3.gif "Figure 1 -- Arbitrary open profile")
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcprofileresource/lexical/ifcarbitraryopenprofiledef.htm)
 
 
+Formal Propositions
+-------------------
+| Rule   | Description   |
+|--------|---------------|
+| WR11   |               |
+| WR12   |               |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| Curve       |               |
+

@@ -22,3 +22,10 @@ spatial zones, it serves. Examples of systems are:
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcproductextension/lexical/ifcrelservicesbuildings.htm)
 
 
+Associations
+------------
+| Attribute        | Description   |
+|------------------|---------------|
+| RelatedBuildings |               |
+| RelatingSystem   |               |
+

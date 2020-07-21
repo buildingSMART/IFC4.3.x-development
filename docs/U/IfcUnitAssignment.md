@@ -17,3 +17,21 @@ within an _IfcUnitAssignment_.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcmeasureresource/lexical/ifcunitassignment.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                    |
+|-------------|------------------------------------------------|
+| Units       | Units to be included within a unit assignment. |
+
+Formal Propositions
+-------------------
+| Rule   | Description   |
+|--------|---------------|
+| WR01   |               |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+

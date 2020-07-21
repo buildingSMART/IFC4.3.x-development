@@ -8,3 +8,10 @@ stability and reliability of the switch under the lock state (in the process
 of high-speed and heavy-duty train running).  
 
 
+Attribute definitions
+---------------------
+| Attribute             | Description   |
+|-----------------------|---------------|
+| Primary positioning   |               |
+| Secondary positioning |               |
+

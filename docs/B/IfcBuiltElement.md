@@ -39,3 +39,9 @@ elements cannot be expressed by a subtype of IfcBuiltElement.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcproductextension/lexical/ifcbuildingelement.htm)
 
 
+Formal Propositions
+-------------------
+| Rule                      | Description   |
+|---------------------------|---------------|
+| MaxOneMaterialAssociation |               |
+

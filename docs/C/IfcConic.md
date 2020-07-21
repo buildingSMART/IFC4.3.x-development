@@ -18,3 +18,9 @@ An _IfcConic_ is a parameterized planar curve.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometryresource/lexical/ifcconic.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                                                                |
+|-------------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| Position    | The location and orientation of the conic. Further details of the interpretation of this attribute are given for the individual subtypes." |
+

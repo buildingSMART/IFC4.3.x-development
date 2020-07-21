@@ -35,3 +35,16 @@ substration is substracted:
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcproductextension/lexical/ifcfeatureelementsubtraction.htm)
 
 
+Formal Propositions
+-------------------
+| Rule             | Description   |
+|------------------|---------------|
+| HasNoSubtraction |               |
+| IsNotFilling     |               |
+
+Associations
+------------
+| Attribute     | Description   |
+|---------------|---------------|
+| VoidsElements |               |
+

@@ -1,2 +1,0 @@
-IfcSubContractResourceTypeEnum.WORK
-===================================

@@ -5,3 +5,9 @@ which SuperelevationEvent or WidthEvent has been used as basis for
 dimensioning a particular OpenCrossProfile.  
 
 
+Attribute definitions
+---------------------
+| Attribute          | Description   |
+|--------------------|---------------|
+| RelatingProfileDef |               |
+

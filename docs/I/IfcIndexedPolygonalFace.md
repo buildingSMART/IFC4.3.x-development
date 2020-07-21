@@ -26,3 +26,15 @@ face geometry provided by indices into a point list")
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricmodelresource/lexical/ifcindexedpolygonalface.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+|-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| CoordIndex  | One-dimensional list with the indices for the three or more points, that define the vertices of the outer loop. If the tessellated face set is closed, indicated by _SELF\\\IfcTessellatedFaceSet.Closed_, then the points, defining the outer loop, shall connect counter clockwise, as seen from the outside of the body, so that the resulting normal will point outwards.\X\0D> NOTE  The coordinates of the vertices are provided by the indexed list of _SELF\\\IfcTessellatedFaceSet.Coordinates.CoordList_. If the _SELF\\\IfcTessellatedFaceSet.PnIndex_ is provided, the indices point into it, otherwise directly into the _IfcCartesianPointList3D_. |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| ToFaceSet   |               |
+

@@ -26,3 +26,9 @@ the global unit definitions (given by _IfcUnitAssignment_) are used.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcquantityresource/lexical/ifcphysicalsimplequantity.htm)
 
 
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| Unit        |               |
+

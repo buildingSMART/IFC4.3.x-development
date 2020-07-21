@@ -23,3 +23,9 @@ Cartesian coordinate system.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcstructuralanalysisdomain/lexical/ifcstructuralcurveconnection.htm)
 
 
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| Axis        |               |
+

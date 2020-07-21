@@ -23,3 +23,22 @@ considered to be referenced with the sense TRUE.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifctopologyresource/lexical/ifcedgeloop.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                              |
+|-------------|------------------------------------------|
+| Ne          | The number of elements in the edge list. |
+
+Formal Propositions
+-------------------
+| Rule         | Description   |
+|--------------|---------------|
+| IsClosed     |               |
+| IsContinuous |               |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| EdgeList    |               |
+

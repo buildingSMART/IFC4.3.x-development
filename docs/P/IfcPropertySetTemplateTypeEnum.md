@@ -9,3 +9,9 @@ _IfcPropertySetTemplate_, to subtypes of _IfcObjectDefinition_.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifckernel/lexical/ifcpropertysettemplatetypeenum.htm)
 
 
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+

@@ -33,3 +33,15 @@ The connection types for bridges include:
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcproductextension/lexical/ifcrelconnectswithrealizingelements.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute      | Description                                                                                                                              |
+|----------------|------------------------------------------------------------------------------------------------------------------------------------------|
+| ConnectionType | The type of the connection given for informal purposes, it may include labels, like ''joint'', ''rigid joint'', ''flexible joint'', etc. |
+
+Associations
+------------
+| Attribute         | Description   |
+|-------------------|---------------|
+| RealizingElements |               |
+

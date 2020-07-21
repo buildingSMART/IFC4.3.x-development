@@ -21,3 +21,32 @@ This entity represents an individual human being.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcactorresource/lexical/ifcperson.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute      | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+|----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Identification | Identification of the person.                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| FamilyName     | The name by which the family identity of the person may be recognized.\X\0D> NOTE  Depending on geographical location and culture, family name may appear either as the first or last component of a name.                                                                                                                                                                                                                                                        |
+| GivenName      | The name by which a person is known within a family and by which he or she may be familiarly recognized.\X\0D> NOTE  Depending on geographical location and culture, given name may appear either as the first or last component of a name.                                                                                                                                                                                                                       |
+| MiddleNames    | Additional names given to a person that enable their identification apart from others who may have the same or similar family and given names.\X\0D> NOTE  Middle names are not normally used in familiar communication but may be asserted to provide additional identification of a particular person if necessary. They may be particularly useful in situations where the person concerned has a family name that occurs commonly in the geographical region. |
+| PrefixTitles   | The word, or group of words, which specify the person''s social and/or professional standing and appear before his/her names.                                                                                                                                                                                                                                                                                                                                     |
+| SuffixTitles   | The word, or group of words, which specify the person''s social and/or professional standing and appear after his/her names.                                                                                                                                                                                                                                                                                                                                      |
+
+Formal Propositions
+-------------------
+| Rule               | Description   |
+|--------------------|---------------|
+| IdentifiablePerson |               |
+| ValidSetOfNames    |               |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| Roles       |               |
+| Addresses   |               |
+|             |               |
+| EngagedIn   |               |
+|             |               |
+|             |               |
+

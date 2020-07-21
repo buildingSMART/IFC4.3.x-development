@@ -50,3 +50,9 @@ of the _IfcWallStandardCase_.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcsharedbldgelements/lexical/ifcwallstandardcase.htm)
 
 
+Formal Propositions
+-------------------
+| Rule                     | Description   |
+|--------------------------|---------------|
+| HasMaterialLayerSetUsage |               |
+

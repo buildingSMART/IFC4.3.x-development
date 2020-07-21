@@ -1,2 +1,0 @@
-IfcSpatialZoneTypeEnum.CONSTRUCTION
-===================================

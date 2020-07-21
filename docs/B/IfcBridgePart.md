@@ -9,3 +9,9 @@ ELEMENT, and a pier can be composed of separate towers (PARTIAL).
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcproductextension/lexical/ifcbridgepart.htm)
 
 
+Associations
+------------
+| Attribute      | Description   |
+|----------------|---------------|
+| PredefinedType |               |
+

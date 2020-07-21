@@ -6,3 +6,10 @@ electrically bounded, without expansion capacity which can resist the forces
 in CWR  
 
 
+Attribute definitions
+---------------------
+| Attribute      | Description                                                                                     |
+|----------------|-------------------------------------------------------------------------------------------------|
+| Type           | Type of connection, material, type of screw, adhesion; emergency bond yes/no; speed restriction |
+| Equipment DCGM |                                                                                                 |
+

@@ -16,3 +16,9 @@ offset assignment.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcmaterialresource/lexical/ifcmaterialprofilewithoffsets.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute    | Description                                                                                                                                                                                                                                                                                                                                                                                                                      |
+|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| OffsetValues | The numerical value of profile offset, in the direction of the axis direction - always AXIS1 that is, the axis along the extrusion path. The _OffsetValues[1]_ identifies the offset from the lower position along the axis direction (normally the start of the standard extrusion), the _OffsetValues[2]_ identifies the offset from the upper position along the axis direction (normally the end of the standard extrusion). |
+

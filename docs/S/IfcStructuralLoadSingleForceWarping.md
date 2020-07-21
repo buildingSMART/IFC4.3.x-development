@@ -10,3 +10,9 @@ warping moment can be defined.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcstructuralloadresource/lexical/ifcstructuralloadsingleforcewarping.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute     | Description                           |
+|---------------|---------------------------------------|
+| WarpingMoment | The warping moment at the point load. |
+

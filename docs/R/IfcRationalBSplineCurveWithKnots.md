@@ -41,3 +41,17 @@ P _i_
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometryresource/lexical/ifcrationalbsplinecurvewithknots.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                     |
+|-------------|-------------------------------------------------------------------------------------------------|
+| WeightsData | The supplied values of the weights.                                                             |
+| Weights     | The array of weights associated with the control points. This is derived from the weights data. |
+
+Formal Propositions
+-------------------
+| Rule                      | Description   |
+|---------------------------|---------------|
+| SameNumOfWeightsAndPoints |               |
+| WeightsGreaterZero        |               |
+

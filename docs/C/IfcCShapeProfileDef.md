@@ -37,3 +37,21 @@ profile")
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcprofileresource/lexical/ifccshapeprofiledef.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute            | Description                                                     |
+|----------------------|-----------------------------------------------------------------|
+| Depth                | Profile depth, see illustration above (= h).                    |
+| Width                | Profile width, see illustration above (= b).                    |
+| WallThickness        | Constant wall thickness of profile (= ts).                      |
+| Girth                | Lengths of girth, see illustration above (= c).                 |
+| InternalFilletRadius | Internal fillet radius according the above illustration (= r1). |
+
+Formal Propositions
+-------------------
+| Rule                      | Description   |
+|---------------------------|---------------|
+| ValidGirth                |               |
+| ValidInternalFilletRadius |               |
+| ValidWallThickness        |               |
+

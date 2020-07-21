@@ -45,3 +45,26 @@ instance of _IfcRepresentationMap_.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcrepresentationresource/lexical/ifcshapeaspect.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute                    | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+|------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Name                         | The word or group of words by which the shape aspect is known. It is a tag to indicate the particular semantic of a component within the product definition shape, used to provide meaning. Example: use the tag "Glazing" to define which component of a window shape defines the glazing area.                                                                                                                                                                                                                                                                                                                 |
+| Description                  | The word or group of words that characterize the shape aspect. It can be used to add additional meaning to the name of the aspect.                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| ProductDefinitional          | An indication that the shape aspect is on the physical boundary of the product definition shape. If the value of this attribute is TRUE, it shall be asserted that the shape aspect being identified is on such a boundary. If the value is FALSE, it shall be asserted that the shape aspect being identified is not on such a boundary. If the value is UNKNOWN, it shall be asserted that it is not known whether or not the shape aspect being identified is on such a boundary. \X\0D---\X\0DEXAMPLE: Would be FALSE for a center line, identified as shape aspect; would be TRUE for a cantilever.\X\0D--- |
+| PartOfProductDefinitionShape | Reference to the _IfcProductDefinitionShape_ or the _IfcRepresentationMap_ of which this shape is an aspect.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  Data type modified to be _IfcProductRepresentationSelect_ allowing the assignment also to _IfcRepresentationMap_.                                                                                                                                                                                                                                                                                                                                          |
+
+Associations
+------------
+| Attribute                    | Description   |
+|------------------------------|---------------|
+|                              |               |
+|                              |               |
+|                              |               |
+|                              |               |
+|                              |               |
+| HasExternalReferences        |               |
+| PartOfProductDefinitionShape |               |
+| PartOfProductDefinitionShape |               |
+| ShapeRepresentations         |               |
+

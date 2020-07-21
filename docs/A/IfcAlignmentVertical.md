@@ -23,3 +23,15 @@ upper rail.
   
 
 
+Attribute definitions
+---------------------
+| Attribute      | Description   |
+|----------------|---------------|
+| Reference axis | Defines whether the vertical alignment follows:
+
+  * the lower rail
+  * the center line
+
+
+  * the higher rail               |
+

@@ -43,3 +43,24 @@ Figure 1 -- Axis1 placement
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometryresource/lexical/ifcaxis1placement.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                                                      |
+|-------------|----------------------------------------------------------------------------------------------------------------------------------|
+| Z           | The normalized direction of the local Z axis. It is either identical with the Axis value, if given, or it defaults to [0.,0.,1.] |
+
+Formal Propositions
+-------------------
+| Rule         | Description   |
+|--------------|---------------|
+| AxisIs3D     |               |
+| LocationIs3D |               |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+| Axis        |               |
+|             |               |
+

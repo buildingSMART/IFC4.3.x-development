@@ -36,3 +36,17 @@ Other usages of _IfcBuildingElementProxy_ include:
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcsharedbldgelements/lexical/ifcbuildingelementproxy.htm)
 
 
+Formal Propositions
+-------------------
+| Rule                  | Description   |
+|-----------------------|---------------|
+| HasObjectName         |               |
+| CorrectPredefinedType |               |
+| CorrectTypeAssigned   |               |
+
+Associations
+------------
+| Attribute      | Description   |
+|----------------|---------------|
+| PredefinedType |               |
+

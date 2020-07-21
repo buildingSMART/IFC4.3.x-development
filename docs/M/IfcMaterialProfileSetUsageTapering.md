@@ -32,3 +32,15 @@ in the topological representation of the curve member.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcmaterialresource/lexical/ifcmaterialprofilesetusagetapering.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute        | Description                                                                                                                                                                                                                                                                                                                              |
+|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| CardinalEndPoint | Index reference to a significant point in the second section profile. Describes how this section is aligned relative to the axis of the member it is associated with. This parametric specification of profile alignment can be provided redundantly to the explicit alignment defined by ForProfileSet.MaterialProfiles[\\\\*].Profile. |
+
+Associations
+------------
+| Attribute        | Description   |
+|------------------|---------------|
+| ForProfileEndSet |               |
+

@@ -34,3 +34,16 @@ in which object definitons (by their instantiable subtypes) can be involved:
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifckernel/lexical/ifcobjectdefinition.htm)
 
 
+Associations
+------------
+| Attribute       | Description   |
+|-----------------|---------------|
+| HasAssociations |               |
+| HasAssignments  |               |
+| IsNestedBy      |               |
+| Nests           |               |
+|                 |               |
+| HasContext      |               |
+| IsDecomposedBy  |               |
+| Decomposes      |               |
+

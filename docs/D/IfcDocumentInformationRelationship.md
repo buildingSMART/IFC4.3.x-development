@@ -16,3 +16,16 @@ retained).
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcexternalreferenceresource/lexical/ifcdocumentinformationrelationship.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute        | Description                                                                                                                                                            |
+|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| RelationshipType | Describes the type of relationship between documents. This could be sub-document, replacement etc. The interpretation has to be established in an application context. |
+
+Associations
+------------
+| Attribute        | Description   |
+|------------------|---------------|
+| RelatedDocuments |               |
+| RelatingDocument |               |
+

@@ -21,3 +21,22 @@ revision control system.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcexternalreferenceresource/lexical/ifclibraryinformation.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                                                                                                                                   |
+|-------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Name        | The name which is used to identify the library.                                                                                                                                                               |
+| Version     | Identifier for the library version used for reference.                                                                                                                                                        |
+| Publisher   | Information of the organization that acts as the library publisher.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  The data type has been changed to _IfcActorSelect_.                                              |
+| VersionDate | Date of the referenced version of the library.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  The data type has been changed to _IfcDateTime_, the date and time string according to ISO8601.                       |
+| Location    | Resource identifier or locator, provided as URI, URN or URL, of the library information for online references.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  New attribute added at the end of the attribute list. |
+| Description | Additional description provided for the library revision information.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  New attribute added at the end of the attribute list.                                          |
+
+Associations
+------------
+| Attribute             | Description   |
+|-----------------------|---------------|
+|                       |               |
+| HasLibraryReferences  |               |
+| LibraryInfoForObjects |               |
+

@@ -14,3 +14,22 @@ consumption, to a resource (as subtypes of _IfcResource_).
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifckernel/lexical/ifcrelassignstoresource.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute        | Description                                                                                                                                                               |
+|------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| RelatingResource | Reference to the resource to which the objects are assigned to.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE Datatype expanded to include _IfcResource_ and _IfcTypeResource_. |
+
+Formal Propositions
+-------------------
+| Rule            | Description   |
+|-----------------|---------------|
+| NoSelfReference |               |
+
+Associations
+------------
+| Attribute        | Description   |
+|------------------|---------------|
+| RelatingResource |               |
+| RelatingResource |               |
+

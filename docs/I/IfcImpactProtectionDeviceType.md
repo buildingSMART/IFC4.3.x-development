@@ -9,3 +9,15 @@ A impact protection device is a component used to protect other built elements
 from kinetic damage.
 
 
+Attribute definitions
+---------------------
+| Attribute      | Description                                                                                 |
+|----------------|---------------------------------------------------------------------------------------------|
+| PredefinedType | Identifies the predefined type of a impact device from which the type modelled, may be set. |
+
+Associations
+------------
+| Attribute      | Description   |
+|----------------|---------------|
+| PredefinedType |               |
+

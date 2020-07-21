@@ -20,3 +20,15 @@ documentation at _IfcDistributionBoard_ for supported property sets,
 materials, composition, and ports.  
 
 
+Attribute definitions
+---------------------
+| Attribute      | Description   |
+|----------------|---------------|
+| PredefinedType |               |
+
+Associations
+------------
+| Attribute      | Description   |
+|----------------|---------------|
+| PredefinedType |               |
+

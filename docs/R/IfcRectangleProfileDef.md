@@ -77,3 +77,10 @@ Figure 1 -- Rectangle profile
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcprofileresource/lexical/ifcrectangleprofiledef.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                 |
+|-------------|-------------------------------------------------------------|
+| XDim        | The extent of the rectangle in the direction of the x-axis. |
+| YDim        | The extent of the rectangle in the direction of the y-axis. |
+

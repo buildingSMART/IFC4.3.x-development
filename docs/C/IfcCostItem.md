@@ -36,3 +36,11 @@ calculated as a percentage of a subtotal.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcsharedmgmtelements/lexical/ifccostitem.htm)
 
 
+Associations
+------------
+| Attribute      | Description   |
+|----------------|---------------|
+| CostValues     |               |
+| CostQuantities |               |
+| PredefinedType |               |
+

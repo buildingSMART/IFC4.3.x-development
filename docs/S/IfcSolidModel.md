@@ -19,3 +19,9 @@ solid representation schemes.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricmodelresource/lexical/ifcsolidmodel.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                             |
+|-------------|---------------------------------------------------------|
+| Dim         | The space dimensionality of this class, it is always 3. |
+

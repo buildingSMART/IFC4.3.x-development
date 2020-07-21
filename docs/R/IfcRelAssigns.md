@@ -31,3 +31,21 @@ relationship.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifckernel/lexical/ifcrelassigns.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute          | Description                                                                                                                                                                                                                                                                      |
+|--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| RelatedObjectsType | Particular type of the assignment relationship. It can constrain the applicable object types, used within the role of _RelatedObjects_.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  The attribute is deprecated and shall no longer be used. A NIL value should always be assigned. |
+
+Formal Propositions
+-------------------
+| Rule   | Description   |
+|--------|---------------|
+| WR1    |               |
+
+Associations
+------------
+| Attribute      | Description   |
+|----------------|---------------|
+| RelatedObjects |               |
+

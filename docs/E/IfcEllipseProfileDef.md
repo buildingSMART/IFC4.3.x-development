@@ -34,3 +34,10 @@ Ellipse profile")
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcprofileresource/lexical/ifcellipseprofiledef.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                            |
+|-------------|----------------------------------------------------------------------------------------|
+| SemiAxis1   | The first radius of the ellipse. It is measured along the direction of Position.P[1].  |
+| SemiAxis2   | The second radius of the ellipse. It is measured along the direction of Position.P[2]. |
+

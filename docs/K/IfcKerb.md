@@ -9,3 +9,9 @@ NOTE Definition from PIARC: Unit intended to separate surfacings of different
 surfaces and to provide physical delineation or containment [CEN].  
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                            |
+|-------------|------------------------------------------------------------------------|
+| Mountable   | Specifies whether the kerb can be readily climbed by a vehicle or not. |
+

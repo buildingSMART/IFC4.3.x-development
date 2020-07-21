@@ -15,3 +15,19 @@ or multiple material profiles is known.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcmaterialresource/lexical/ifcmaterialprofileset.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                  |
+|-------------|--------------------------------------------------------------|
+| Name        | The name by which the material profile set is known.         |
+| Description | Definition of the material profile set in descriptive terms. |
+
+Associations
+------------
+| Attribute        | Description   |
+|------------------|---------------|
+| MaterialProfiles |               |
+| CompositeProfile |               |
+|                  |               |
+|                  |               |
+

@@ -19,3 +19,17 @@ collection _IfcRelNests_.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcproductextension/lexical/ifcrelconnectsports.htm)
 
 
+Formal Propositions
+-------------------
+| Rule            | Description   |
+|-----------------|---------------|
+| NoSelfReference |               |
+
+Associations
+------------
+| Attribute        | Description   |
+|------------------|---------------|
+| RealizingElement |               |
+| RelatingPort     |               |
+| RelatedPort      |               |
+

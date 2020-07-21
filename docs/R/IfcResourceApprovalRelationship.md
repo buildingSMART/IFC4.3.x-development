@@ -9,3 +9,16 @@ _IfcResourceObjectSelect_.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcapprovalresource/lexical/ifcresourceapprovalrelationship.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute              | Description                         |
+|------------------------|-------------------------------------|
+| RelatedResourceObjects | Resource objects that are approved. |
+
+Associations
+------------
+| Attribute              | Description   |
+|------------------------|---------------|
+| RelatingApproval       |               |
+| RelatedResourceObjects |               |
+

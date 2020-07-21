@@ -7,3 +7,9 @@ quality power, and effectively protect precision instruments. It provides
 continuous, stable and uninterrupted power supply for load equipment.
 
 
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+

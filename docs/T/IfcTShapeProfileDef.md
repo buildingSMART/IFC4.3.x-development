@@ -69,3 +69,24 @@ Figure 1 -- T-shape profile
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcprofileresource/lexical/ifctshapeprofiledef.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute        | Description                                            |
+|------------------|--------------------------------------------------------|
+| Depth            | Web lengths, see illustration above (= h).             |
+| FlangeWidth      | Flange lengths, see illustration above (= b).          |
+| WebThickness     | Constant wall thickness of web (= ts).                 |
+| FlangeThickness  | Constant wall thickness of flange (= tg).              |
+| FilletRadius     | Fillet radius according the above illustration (= r1). |
+| FlangeEdgeRadius | Edge radius according the above illustration (= r2).   |
+| WebEdgeRadius    | Edge radius according the above illustration (= r3).   |
+| WebSlope         | Slope of flange of the profile.                        |
+| FlangeSlope      | Slope of web of the profile.                           |
+
+Formal Propositions
+-------------------
+| Rule                 | Description   |
+|----------------------|---------------|
+| ValidFlangeThickness |               |
+| ValidWebThickness    |               |
+

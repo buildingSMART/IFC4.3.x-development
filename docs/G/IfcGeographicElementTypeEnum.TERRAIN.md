@@ -1,5 +1,0 @@
-IfcGeographicElementTypeEnum.TERRAIN
-====================================
-$
-
-

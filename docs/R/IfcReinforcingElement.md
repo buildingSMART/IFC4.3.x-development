@@ -22,3 +22,9 @@ information.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcstructuralelementsdomain/lexical/ifcreinforcingelement.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                                                                      |
+|-------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| SteelGrade  | Deprecated.\X\0D\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  Attribute deprecated. Use material association at _IfcReinforcingElementType_ instead. |
+

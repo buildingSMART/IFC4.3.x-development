@@ -13,3 +13,16 @@ regulatory, security or other access restrictions apply.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcsharedmgmtelements/lexical/ifcpermit.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute       | Description                                                                                                             |
+|-----------------|-------------------------------------------------------------------------------------------------------------------------|
+| Status          | The status currently assigned to the permit.\X\0D\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE The attribute has been added. |
+| LongDescription | Detailed description of the request.\X\0D\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE The attribute has been added.         |
+
+Associations
+------------
+| Attribute      | Description   |
+|----------------|---------------|
+| PredefinedType |               |
+

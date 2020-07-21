@@ -7,3 +7,9 @@ An IfcKerb is a border of stone, concrete or other rigid material formed at
 the edge of the carriageway or footway.
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                            |
+|-------------|------------------------------------------------------------------------|
+| Mountable   | Specifies whether the kerb can be readily climbed by a vehicle or not. |
+

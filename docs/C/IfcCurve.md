@@ -20,3 +20,34 @@ Informal Propositions:
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometryresource/lexical/ifccurve.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                                                            |
+|-------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| Dim         | The space dimensionality of this abstract class, defined differently for all subtypes, i.e. for IfcLine, IfcConic and IfcBoundedCurve. |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+|             |               |
+|             |               |
+|             |               |
+|             |               |
+|             |               |
+|             |               |
+|             |               |
+|             |               |
+|             |               |
+|             |               |
+|             |               |
+|             |               |
+|             |               |
+|             |               |
+|             |               |
+|             |               |
+|             |               |
+|             |               |
+|             |               |
+

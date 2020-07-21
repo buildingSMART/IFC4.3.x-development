@@ -1,2 +1,9 @@
 IfcOperationalPoint
 ===================
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+|             |               |
+

@@ -76,3 +76,9 @@ following multiple shape representations for its definition:
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcsharedbldgelements/lexical/ifccolumnstandardcase.htm)
 
 
+Formal Propositions
+-------------------
+| Rule                       | Description   |
+|----------------------------|---------------|
+| HasMaterialProfileSetUsage |               |
+

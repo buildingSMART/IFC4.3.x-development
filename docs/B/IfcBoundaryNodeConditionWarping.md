@@ -20,3 +20,9 @@ Applicability:
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcstructuralloadresource/lexical/ifcboundarynodeconditionwarping.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute        | Description                          |
+|------------------|--------------------------------------|
+| WarpingStiffness | Defines the warping stiffness value. |
+

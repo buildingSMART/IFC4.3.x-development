@@ -13,3 +13,22 @@ through reference to _IfcDocumentInformation_.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcexternalreferenceresource/lexical/ifcdocumentreference.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                                                                                      |
+|-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description | Description of the document reference for informational purposes.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  New attribute added at the end of the attribute list. |
+
+Formal Propositions
+-------------------
+| Rule   | Description   |
+|--------|---------------|
+| WR1    |               |
+
+Associations
+------------
+| Attribute             | Description   |
+|-----------------------|---------------|
+| ReferencedDocument    |               |
+| DocumentRefForObjects |               |
+

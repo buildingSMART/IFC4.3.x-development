@@ -92,3 +92,10 @@ Figure 2 -- Right circular cone textures
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricmodelresource/lexical/ifcrightcircularcone.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute    | Description                                             |
+|--------------|---------------------------------------------------------|
+| Height       | The distance between the base of the cone and the apex. |
+| BottomRadius | The radius of the cone at the base.                     |
+

@@ -5,3 +5,11 @@ gross, human useful reference system to place some infrastructures (station,
 bridges, tunnel) and the tracks.
 
 
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+|             |               |
+|             |               |
+

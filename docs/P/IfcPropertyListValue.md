@@ -73,3 +73,16 @@ Table 1 -- List property with values, measure types and units
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcpropertyresource/lexical/ifcpropertylistvalue.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                                                                                                         |
+|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ListValues  | List of property values.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  The attribute has been made optional with upward compatibility for file based exchange.                           |
+| Unit        | Unit for the list values, if not given, the default value for the measure type (given by the TYPE of nominal value) is used as defined by the global unit assignment at IfcProject. |
+
+Formal Propositions
+-------------------
+| Rule   | Description   |
+|--------|---------------|
+| WR31   |               |
+

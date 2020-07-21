@@ -30,3 +30,9 @@ _IfcFacetedBrep_ shall be of type _IfcPolyLoop_.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricmodelresource/lexical/ifcfacetedbrepwithvoids.htm)
 
 
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| Voids       |               |
+

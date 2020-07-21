@@ -15,3 +15,11 @@ distribution of power directly to the contact line,
 • electrical installations of switching stations. (IEC 62128-1:2013, 3.4.1)
 
 
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+|             |               |
+|             |               |
+

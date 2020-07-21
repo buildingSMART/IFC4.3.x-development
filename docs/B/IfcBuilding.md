@@ -82,3 +82,16 @@ HISTORY New entity in IFC1.0.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcproductextension/lexical/ifcbuilding.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute            | Description                                                                                                                                           |
+|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ElevationOfRefHeight | Elevation above sea level of the reference height used for all storey elevation measures, equals to height 0.0. It is usually the ground floor level. |
+| ElevationOfTerrain   | Elevation above the minimal terrain level around the foot print of the building, given in elevation above sea level.                                  |
+
+Associations
+------------
+| Attribute       | Description   |
+|-----------------|---------------|
+| BuildingAddress |               |
+

@@ -10,3 +10,15 @@ address, telecommunication addresses, and roles.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifckernel/lexical/ifcactor.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                  |
+|-------------|------------------------------|
+| TheActor    | Information about the actor. |
+
+Associations
+------------
+| Attribute    | Description   |
+|--------------|---------------|
+| IsActingUpon |               |
+

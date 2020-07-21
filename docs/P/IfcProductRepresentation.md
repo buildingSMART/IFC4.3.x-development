@@ -21,3 +21,17 @@ shared among various products using mapped representations.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcrepresentationresource/lexical/ifcproductrepresentation.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                                                                                  |
+|-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Name        | The word or group of words by which the product representation is known.                                                                                     |
+| Description | The word or group of words that characterize the product representation. It can be used to add additional meaning to the name of the product representation. |
+
+Associations
+------------
+| Attribute       | Description   |
+|-----------------|---------------|
+|                 |               |
+| Representations |               |
+

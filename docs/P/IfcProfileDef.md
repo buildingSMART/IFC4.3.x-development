@@ -266,3 +266,28 @@ inverse attribute _HasProperties_.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcprofileresource/lexical/ifcprofiledef.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                                                                                                                                                                                        |
+|-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ProfileType | Defines the type of geometry into which this profile definition shall be resolved, either a curve or a surface area. In case of curve the profile should be referenced by a swept surface, in case of area the profile should be referenced by a swept area solid. |
+| ProfileName | Human-readable name of the profile, for example according to a standard profile table. As noted above, machine-readable standardized profile designations should be provided in _IfcExternalReference.ItemReference_.                                              |
+
+Associations
+------------
+| Attribute            | Description   |
+|----------------------|---------------|
+| HasExternalReference |               |
+|                      |               |
+|                      |               |
+|                      |               |
+|                      |               |
+|                      |               |
+|                      |               |
+|                      |               |
+|                      |               |
+|                      |               |
+|                      |               |
+|                      |               |
+| HasProperties        |               |
+

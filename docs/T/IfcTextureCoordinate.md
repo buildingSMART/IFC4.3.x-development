@@ -27,3 +27,9 @@ _IfcSurfaceTexture_, the default mapping shall be used.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcpresentationappearanceresource/lexical/ifctexturecoordinate.htm)
 
 
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| Maps        |               |
+

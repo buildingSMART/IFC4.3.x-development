@@ -1,2 +1,0 @@
-IfcReinforcingBarTypeEnum.SHEAR
-===============================

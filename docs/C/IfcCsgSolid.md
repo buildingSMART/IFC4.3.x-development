@@ -43,3 +43,9 @@ of the CSG tree:
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricmodelresource/lexical/ifccsgsolid.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute          | Description                                                                                                                                                                                                                            |
+|--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| TreeRootExpression | Boolean expression of primitives and regularized operators describing the solid. The root of the tree of Boolean expressions is given explicitly as an _IfcBooleanResult_ entitiy or as a primitive (subtypes of _IfcCsgPrimitive3D_). |
+

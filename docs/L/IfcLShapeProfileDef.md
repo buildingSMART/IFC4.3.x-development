@@ -137,3 +137,20 @@ Figure 1 -- L-shape profile
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcprofileresource/lexical/ifclshapeprofiledef.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute    | Description                                                                                                                                                                                     |
+|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Depth        | Leg length, see illustration above (= h). Same as the overall depth.                                                                                                                            |
+| Width        | Leg length, see illustration above (= b). Same as the overall width. This attribute is formally optional for historic reasons only. Whenever the width is known, it shall be provided by value. |
+| Thickness    | Constant wall thickness of profile, see illustration above (= ts).                                                                                                                              |
+| FilletRadius | Fillet radius according the above illustration (= r1).                                                                                                                                          |
+| EdgeRadius   | Edge radius according the above illustration (= r2).                                                                                                                                            |
+| LegSlope     | Slope of the inner face of each leg of the profile.                                                                                                                                             |
+
+Formal Propositions
+-------------------
+| Rule           | Description   |
+|----------------|---------------|
+| ValidThickness |               |
+

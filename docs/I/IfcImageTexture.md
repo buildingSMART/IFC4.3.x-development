@@ -50,3 +50,9 @@ the definitions in the international standard.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcpresentationappearanceresource/lexical/ifcimagetexture.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute    | Description                                                                           |
+|--------------|---------------------------------------------------------------------------------------|
+| URLReference | Location, provided as an URI, at which the image texture is electronically published. |
+

@@ -39,3 +39,10 @@ _IfcConnectionPointEccentricity_ shall be used.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricconstraintresource/lexical/ifcconnectionpointgeometry.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute              | Description                                                                                                                                                                                  |
+|------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| PointOnRelatingElement | Point at which the connected object is aligned at the relating element, given in the LCS of the relating element.                                                                            |
+| PointOnRelatedElement  | Point at which connected objects are aligned at the related element, given in the LCS of the related element. If the information is omitted, then the origin of the related element is used. |
+

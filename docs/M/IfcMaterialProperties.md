@@ -26,3 +26,9 @@ the individual material properties by name, description, value and unit.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcmaterialresource/lexical/ifcmaterialproperties.htm)
 
 
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| Material    |               |
+

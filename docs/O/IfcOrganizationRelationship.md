@@ -15,3 +15,10 @@ relating organization and one or more related organizations.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcactorresource/lexical/ifcorganizationrelationship.htm)
 
 
+Associations
+------------
+| Attribute            | Description   |
+|----------------------|---------------|
+| RelatedOrganizations |               |
+| RelatingOrganization |               |
+

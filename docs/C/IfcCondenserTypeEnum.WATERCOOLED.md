@@ -1,2 +1,0 @@
-IfcCondenserTypeEnum.WATERCOOLED
-================================

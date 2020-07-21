@@ -17,3 +17,16 @@ IfcDerivedUnitElement
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcmeasureresource/lexical/ifcderivedunitelement.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                      |
+|-------------|--------------------------------------------------|
+| Exponent    | The power that is applied to the unit attribute. |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+| Unit        |               |
+

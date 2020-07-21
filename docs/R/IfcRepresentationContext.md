@@ -20,3 +20,17 @@ _IfcRepresentation_ of a product is related.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcrepresentationresource/lexical/ifcrepresentationcontext.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute         | Description                                                                                                                                    |
+|-------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
+| ContextIdentifier | The optional identifier of the representation context as used within a project.                                                                |
+| ContextType       | The description of the type of a representation context. The supported values for context type are to be specified by implementers agreements. |
+
+Associations
+------------
+| Attribute                | Description   |
+|--------------------------|---------------|
+|                          |               |
+| RepresentationsInContext |               |
+

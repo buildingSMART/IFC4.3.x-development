@@ -76,3 +76,10 @@ Figure 3 -- Alignment vertical parabolic arc segment concave
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricconstraintresource/lexical/ifcalignment2dversegparabolicarc.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute        | Description                                                                                                                                                                                                                                                                                                                                                                                        |
+|------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ParabolaConstant | Parabola constant (determining the \X2\201C\X0\steepness\X2\201D\X0\ of the parabola). The parabola constant is provided by the \X2\201C\X0\minimum parabola radius\X2\201D\X0\, the true radius of a parabola at its vertical axis (the zero-gradient point of the parabola). The minimum radius is twice the focal length of the parabola (the distance between the focal point and the vertex). |
+| IsConvex         | Orientation of the parabolic arc, convex (Boolean=\X2\201D\X0\true\X2\201D\X0\\) means decreasing gradient along the arc at the beginning such as at the crest of a hill, concave (Boolean=\X2\201D\X0\false\X2\201D\X0\\) means increasing gradient along the arc at the beginning such as at the base of a valley.                                                                               |
+

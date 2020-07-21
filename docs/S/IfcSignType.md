@@ -8,3 +8,15 @@ written, symbolic or other form. Signs are passive with the most common form
 of a pictorial panel.
 
 
+Attribute definitions
+---------------------
+| Attribute      | Description                                                                         |
+|----------------|-------------------------------------------------------------------------------------|
+| PredefinedType | Identifies the predefined type of a signs from which the type modelled, may be set. |
+
+Associations
+------------
+| Attribute      | Description   |
+|----------------|---------------|
+| PredefinedType |               |
+

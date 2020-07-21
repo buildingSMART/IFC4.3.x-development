@@ -23,3 +23,11 @@ the subtype _IfcTextLiteralWithExtent_.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcpresentationdefinitionresource/lexical/ifctextliteral.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                   |
+|-------------|-----------------------------------------------------------------------------------------------|
+| Literal     | The text literal to be presented.                                                             |
+| Placement   | An _IfcAxis2Placement_ that determines the placement and orientation of the presented string. |
+| Path        | The writing direction of the text literal.                                                    |
+

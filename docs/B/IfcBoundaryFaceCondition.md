@@ -21,3 +21,11 @@ Applicability:
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcstructuralloadresource/lexical/ifcboundaryfacecondition.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute                     | Description                                                                                                                    |
+|-------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
+| TranslationalStiffnessByAreaX | Translational stiffness value in x-direction of the coordinate system defined by the instance which uses this resource object. |
+| TranslationalStiffnessByAreaY | Translational stiffness value in y-direction of the coordinate system defined by the instance which uses this resource object. |
+| TranslationalStiffnessByAreaZ | Translational stiffness value in z-direction of the coordinate system defined by the instance which uses this resource object. |
+

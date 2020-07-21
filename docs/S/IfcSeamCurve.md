@@ -26,3 +26,10 @@ seam curve bounding a cylindrical surface")
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometryresource/lexical/ifcseamcurve.htm)
 
 
+Formal Propositions
+-------------------
+| Rule        | Description   |
+|-------------|---------------|
+| TwoPCurves  |               |
+| SameSurface |               |
+

@@ -47,3 +47,9 @@ which may display various attributes through connected sensors).
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcsharedbldgserviceelements/lexical/ifcdistributioncontrolelement.htm)
 
 
+Associations
+------------
+| Attribute             | Description   |
+|-----------------------|---------------|
+| AssignedToFlowElement |               |
+

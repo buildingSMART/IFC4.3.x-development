@@ -1,5 +1,0 @@
-IfcSystemFurnitureElementTypeEnum.WORKSURFACE
-=============================================
-Workstation countertop.
-
-

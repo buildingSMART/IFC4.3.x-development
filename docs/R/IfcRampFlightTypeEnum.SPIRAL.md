@@ -1,2 +1,0 @@
-IfcRampFlightTypeEnum.SPIRAL
-============================

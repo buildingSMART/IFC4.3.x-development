@@ -43,3 +43,10 @@ the connection geometry for first level space boundaries.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcproductextension/lexical/ifcrelspaceboundary1stlevel.htm)
 
 
+Associations
+------------
+| Attribute       | Description   |
+|-----------------|---------------|
+| InnerBoundaries |               |
+| ParentBoundary  |               |
+

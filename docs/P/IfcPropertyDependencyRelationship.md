@@ -23,3 +23,22 @@ to flag the form of the dependency.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcpropertyresource/lexical/ifcpropertydependencyrelationship.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                              |
+|-------------|--------------------------------------------------------------------------|
+| Expression  | Expression that further describes the nature of the dependency relation. |
+
+Formal Propositions
+-------------------
+| Rule            | Description   |
+|-----------------|---------------|
+| NoSelfReference |               |
+
+Associations
+------------
+| Attribute         | Description   |
+|-------------------|---------------|
+| DependingProperty |               |
+| DependantProperty |               |
+

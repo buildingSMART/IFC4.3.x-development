@@ -20,3 +20,22 @@ accommodate these types of data.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcdatetimeresource/lexical/ifctimeseries.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute             | Description                                                                                                                                                                                                                    |
+|-----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Name                  | An unique name for the time series.                                                                                                                                                                                            |
+| Description           | A text description of the data that the series represents.                                                                                                                                                                     |
+| StartTime             | The start time of a time series.                                                                                                                                                                                               |
+| EndTime               | The end time of a time series.                                                                                                                                                                                                 |
+| TimeSeriesDataType    | The time series data type.                                                                                                                                                                                                     |
+| DataOrigin            | The origin of a time series data.                                                                                                                                                                                              |
+| UserDefinedDataOrigin | Value of the data origin if DataOrigin attribute is USERDEFINED.                                                                                                                                                               |
+| Unit                  | The unit to be assigned to all values within the time series. Note that mixing units is not allowed. If the value is not given, the global unit for the type of _IfcValue_, as defined at _IfcProject.UnitsInContext_ is used. |
+
+Associations
+------------
+| Attribute            | Description   |
+|----------------------|---------------|
+| HasExternalReference |               |
+

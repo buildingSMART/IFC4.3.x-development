@@ -31,3 +31,12 @@ _IfcOpenCrossProfileDef-1_]($imageman://id=1364904450;mdg=Global;name=IfcOpenCro
 __]($imageman://id=1110734429;mdg=Global;name=OpenCrossProfileDef-1;type=Bitmap;)  
 
 
+Attribute definitions
+---------------------
+| Attribute        | Description                                                                                                                                                                                             |
+|------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Widths           | The horizontal widths (when HorizontalWidths=.T.) or distances along the Slope (when HorizontalWidths=.F.) for the segments in the profile. And if Horizontal=.T. the Slopes shall not be = +/- 90 deg. |
+| HorizontalWidths | Indicates if the widths shall be measured horizontally or along the slopes.                                                                                                                             |
+| Slopes           | The slope measure.                                                                                                                                                                                      |
+| Tags             |                                                                                                                                                                                                         |
+

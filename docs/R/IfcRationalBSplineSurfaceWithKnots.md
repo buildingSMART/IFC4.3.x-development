@@ -14,3 +14,17 @@ The surface is to be interpreted as follows:
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometryresource/lexical/ifcrationalbsplinesurfacewithknots.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                  |
+|-------------|------------------------------------------------------------------------------|
+| WeightsData | The weights associated with the control points in the rational case.         |
+| Weights     | Array (two-dimensional) of weight values constructed from the _WeightsData_. |
+
+Formal Propositions
+-------------------
+| Rule                          | Description   |
+|-------------------------------|---------------|
+| CorrespondingWeightsDataLists |               |
+| WeightValuesGreaterZero       |               |
+

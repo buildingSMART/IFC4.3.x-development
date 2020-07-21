@@ -37,3 +37,20 @@ For each cant segment, the following information is provided:
   
 
 
+Attribute definitions
+---------------------
+| Attribute        | Description                                                                                                                                    |
+|------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
+| StartDistAlong   | Distance along the horizontal alignment, measured along the IfcAlignment2DHorizontal given in the length unit of the global IfcUnitAssignment. |
+| HorizontalLength | Length measured as distance along the horizontal alignment of the segment.                                                                     |
+| StartCantLeft    | Length measured for the left cant at the beginning of the segment.                                                                             |
+| EndCantLeft      | Length measured for the left cant at the end of the segment.                                                                                   |
+| StartCantRight   | Length measured for the right cant at the beginning of the segment.                                                                            |
+| EndCantRight     | Length measured for the right cant at the end of the segment.                                                                                  |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| ToCant      |               |
+

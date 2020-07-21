@@ -35,3 +35,15 @@ part of its legth.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometryresource/lexical/ifcsurfaceofrevolution.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                      |
+|-------------|--------------------------------------------------|
+| AxisLine    | The line coinciding with the axis of revolution. |
+
+Associations
+------------
+| Attribute    | Description   |
+|--------------|---------------|
+| AxisPosition |               |
+

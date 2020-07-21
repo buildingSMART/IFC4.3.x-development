@@ -33,3 +33,20 @@ operands being solids.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricmodelresource/lexical/ifcbooleanresult.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute     | Description                                                                                                                                                                              |
+|---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Operator      | The Boolean operator used in the operation to create the result.                                                                                                                         |
+| FirstOperand  | The first operand to be operated upon by the Boolean operation.                                                                                                                          |
+| SecondOperand | The second operand specified for the operation.                                                                                                                                          |
+| Dim           | The space dimensionality of this entity. It is identical with the space dimensionality of the first operand. A where rule ensures that both operands have the same space dimensionality. |
+
+Formal Propositions
+-------------------
+| Rule                | Description   |
+|---------------------|---------------|
+| SameDim             |               |
+| FirstOperandClosed  |               |
+| SecondOperandClosed |               |
+

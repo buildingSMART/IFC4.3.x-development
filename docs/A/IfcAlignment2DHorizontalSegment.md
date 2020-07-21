@@ -34,3 +34,10 @@ The following checks can be done to validate the correct exchange:
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricconstraintresource/lexical/ifcalignment2dhorizontalsegment.htm)
 
 
+Associations
+------------
+| Attribute     | Description   |
+|---------------|---------------|
+| ToHorizontal  |               |
+| CurveGeometry |               |
+

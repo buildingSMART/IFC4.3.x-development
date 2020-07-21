@@ -28,3 +28,11 @@ _IfcCylindricalSurface_ as underlying surface of an _IfcAdvancedFace_")
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifctopologyresource/lexical/ifcadvancedface.htm)
 
 
+Formal Propositions
+-------------------
+| Rule                 | Description   |
+|----------------------|---------------|
+| ApplicableSurface    |               |
+| RequiresEdgeCurve    |               |
+| ApplicableEdgeCurves |               |
+

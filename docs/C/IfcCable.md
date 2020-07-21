@@ -6,3 +6,10 @@ Always contained in a linearly placed object, thus it is generally positioned
 with respect to local reference.
 
 
+Attribute definitions
+---------------------
+| Attribute         | Description   |
+|-------------------|---------------|
+| primaryPosition   |               |
+| secondaryPosition |               |
+

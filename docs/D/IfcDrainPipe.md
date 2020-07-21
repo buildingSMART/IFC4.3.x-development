@@ -1,2 +1,8 @@
 IfcDrainPipe
 ============
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+

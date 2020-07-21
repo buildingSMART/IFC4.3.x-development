@@ -1,5 +1,0 @@
-IfcBoilerTypeEnum.WATER
-=======================
-Water boiler.
-
-

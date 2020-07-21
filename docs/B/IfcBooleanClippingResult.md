@@ -14,3 +14,11 @@ final Boolean result.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricmodelresource/lexical/ifcbooleanclippingresult.htm)
 
 
+Formal Propositions
+-------------------
+| Rule              | Description   |
+|-------------------|---------------|
+| FirstOperandType  |               |
+| SecondOperandType |               |
+| OperatorType      |               |
+

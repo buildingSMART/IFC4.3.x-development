@@ -23,3 +23,21 @@ directions. The location shall not exceed the bounds of the surface activity.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcstructuralloadresource/lexical/ifcstructuralloadconfiguration.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                                                                                                                                                                                                                                                                                             |
+|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Locations   | Locations of the load samples or result samples, given within the local coordinate system defined by the instance which uses this resource object. Each item in the list of locations pertains to the values list item at the same list index. This attribute is optional for configurations in which the locations are implicitly known from higher-level definitions. |
+
+Formal Propositions
+-------------------
+| Rule          | Description   |
+|---------------|---------------|
+| ValidListSize |               |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| Values      |               |
+

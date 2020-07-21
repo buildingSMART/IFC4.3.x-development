@@ -24,3 +24,10 @@ Figure 2 -- Circular arc segment 2D CCW
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometryresource/lexical/ifccirculararcsegment2d.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                                                                                                                                                                                                  |
+|-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Radius      | The radius of the circular arc                                                                                                                                                                                                                                               |
+| IsCCW       | (counter-clockwise or clockwise) as the orientation of the circular arc with Boolean=\X2\201D\X0\true\X2\201D\X0\ being counter-clockwise, or \X2\201C\X0\to the left", and Boolean=\X2\201D\X0\false\X2\201D\X0\ being clockwise, or \X2\201C\X0\to the right\X2\201D\X0\\. |
+

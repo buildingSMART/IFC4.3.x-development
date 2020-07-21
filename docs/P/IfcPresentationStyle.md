@@ -22,3 +22,15 @@ _IfcGeometricRepresentationItem_''s through an intermediate _IfcStyledItem_.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcpresentationappearanceresource/lexical/ifcpresentationstyle.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                     |
+|-------------|---------------------------------|
+| Name        | Name of the presentation style. |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+

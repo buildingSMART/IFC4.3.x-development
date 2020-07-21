@@ -1,2 +1,0 @@
-IfcStructuralCurveActivityTypeEnum.CONST
-========================================

@@ -12,3 +12,11 @@ points, symmetric points, ...) or a track end (track ends, open track ends):
   
 
 
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+|             |               |
+|             |               |
+

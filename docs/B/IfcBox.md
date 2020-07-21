@@ -6,3 +6,10 @@ electrical connection and protection of the device (with certain protection
 functions).
 
 
+Attribute definitions
+---------------------
+| Attribute             | Description   |
+|-----------------------|---------------|
+| Primary positioning   |               |
+| Secondary positioning |               |
+

@@ -6,3 +6,9 @@ embedded.
 Track concrete slab shall only appear in ballastless track structures.
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description           |
+|-------------|-----------------------|
+| Type        | Type of concrete slab |
+

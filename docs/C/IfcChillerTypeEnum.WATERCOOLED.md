@@ -1,2 +1,0 @@
-IfcChillerTypeEnum.WATERCOOLED
-==============================

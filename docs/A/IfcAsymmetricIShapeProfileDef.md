@@ -54,3 +54,29 @@ _IfcExtendedProfileProperties_, if provided, is negative.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcprofileresource/lexical/ifcasymmetricishapeprofiledef.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute                | Description                                                                                                                                                               |
+|--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| BottomFlangeWidth        | Extent of the bottom flange, defined parallel to the x axis of the position coordinate system.                                                                            |
+| OverallDepth             | Total extent of the depth, defined parallel to the y axis of the position coordinate system.                                                                              |
+| WebThickness             | Thickness of the web of the I-shape. The web is centred on the x-axis and the y-axis of the position coordinate system.                                                   |
+| BottomFlangeThickness    | Flange thickness of the bottom flange.                                                                                                                                    |
+| BottomFlangeFilletRadius | The fillet between the web and the bottom flange. 0 if sharp-edged, omitted if unknown.                                                                                   |
+| TopFlangeWidth           | Extent of the top flange, defined parallel to the x axis of the position coordinate system.                                                                               |
+| TopFlangeThickness       | Flange thickness of the top flange. This attribute is formally optional for historic reasons only. Whenever the flange thickness is known, it shall be provided by value. |
+| TopFlangeFilletRadius    | The fillet between the web and the top flange. 0 if sharp-edged, omitted if unknown.                                                                                      |
+| BottomFlangeEdgeRadius   | Radius of the upper edges of the bottom flange. 0 if sharp-edged, omitted if unknown.                                                                                     |
+| BottomFlangeSlope        | Slope of the upper faces of the bottom flange. Non-zero in case of of tapered bottom flange, 0 in case of parallel bottom flange, omitted if unknown.                     |
+| TopFlangeEdgeRadius      | Radius of the lower edges of the top flange. 0 if sharp-edged, omitted if unknown.                                                                                        |
+| TopFlangeSlope           | Slope of the lower faces of the top flange. Non-zero in case of of tapered top flange, 0 in case of parallel top flange, omitted if unknown.                              |
+
+Formal Propositions
+-------------------
+| Rule                    | Description   |
+|-------------------------|---------------|
+| ValidFlangeThickness    |               |
+| ValidWebThickness       |               |
+| ValidBottomFilletRadius |               |
+| ValidTopFilletRadius    |               |
+

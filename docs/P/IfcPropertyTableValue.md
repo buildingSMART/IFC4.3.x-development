@@ -173,3 +173,22 @@ corresponding lists.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcpropertyresource/lexical/ifcpropertytablevalue.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute          | Description                                                                                                                                                                                                                                      |
+|--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| DefiningValues     | List of defining values, which determine the defined values. This list shall have unique values only.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  The attribute has been made optional with upward compatibility for file based exchange.           |
+| DefinedValues      | Defined values which are applicable for the scope as defined by the defining values.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  The attribute has been made optional with upward compatibility for file based exchange.                            |
+| Expression         | Expression for the derivation of defined values from the defining values, the expression is given for information only, i.e. no automatic processing can be expected from the expression.                                                        |
+| DefiningUnit       | Unit for the defining values, if not given, the default value for the measure type (given by the TYPE of the defining values) is used as defined by the global unit assignment at IfcProject.                                                    |
+| DefinedUnit        | Unit for the defined values, if not given, the default value for the measure type (given by the TYPE of the defined values) is used as defined by the global unit assignment at IfcProject.                                                      |
+| CurveInterpolation | Interpolation of the curve between two defining and defined values that are provided. if not provided a linear interpolation is assumed.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  The attribute has been added at the end of the attribute list. |
+
+Formal Propositions
+-------------------
+| Rule   | Description   |
+|--------|---------------|
+| WR21   |               |
+| WR22   |               |
+| WR23   |               |
+

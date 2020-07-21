@@ -26,3 +26,9 @@ Wall elemented case")
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcsharedbldgelements/lexical/ifcwallelementedcase.htm)
 
 
+Formal Propositions
+-------------------
+| Rule             | Description   |
+|------------------|---------------|
+| HasDecomposition |               |
+

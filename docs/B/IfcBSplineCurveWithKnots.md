@@ -28,3 +28,19 @@ functions for which the knot values are explicitly given.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometryresource/lexical/ifcbsplinecurvewithknots.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute          | Description                                                                                                                                          |
+|--------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
+| KnotMultiplicities | The multiplicities of the knots. This list defines the number of times each knot in the knots list is to be repeated in constructing the knot array. |
+| Knots              | The list of distinct knots used to define the B-spline basis functions.                                                                              |
+| KnotSpec           | The description of the knot type. This is for information only.                                                                                      |
+| UpperIndexOnKnots  | The upper index on the knot arrays; the lower index is 1.                                                                                            |
+
+Formal Propositions
+-------------------
+| Rule                   | Description   |
+|------------------------|---------------|
+| ConsistentBSpline      |               |
+| CorrespondingKnotLists |               |
+

@@ -9,3 +9,15 @@ not modelled as Cut, but may be handled as a different concept (Resource) in
 the future.
 
 
+Attribute definitions
+---------------------
+| Attribute      | Description                                                                                                                                                      |
+|----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| PredefinedType | Identifies the predefined type of a earthworks cut elements from which the type modelled, may be set. This type may associate additional specific property sets. |
+
+Associations
+------------
+| Attribute      | Description   |
+|----------------|---------------|
+| PredefinedType |               |
+

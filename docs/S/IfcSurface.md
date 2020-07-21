@@ -22,3 +22,21 @@ Informal Propositions:
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometryresource/lexical/ifcsurface.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                                                                                                               |
+|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Dim         | The space dimensionality of IfcSurface. It is always a three-dimensional geometric representation item.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE Derived attribute promoted from subtypes. |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+|             |               |
+|             |               |
+|             |               |
+|             |               |
+|             |               |
+|             |               |
+

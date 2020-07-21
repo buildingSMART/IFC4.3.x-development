@@ -1,2 +1,0 @@
-IfcActionRequestTypeEnum.FAX
-============================

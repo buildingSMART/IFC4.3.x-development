@@ -1,2 +1,0 @@
-IfcConstructionMaterialResourceTypeEnum.MASONRY
-===============================================

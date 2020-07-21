@@ -29,3 +29,10 @@ the context of a model view definition.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcsharedbldgelements/lexical/ifcrelcoversbldgelements.htm)
 
 
+Associations
+------------
+| Attribute               | Description   |
+|-------------------------|---------------|
+| RelatingBuildingElement |               |
+| RelatedCoverings        |               |
+

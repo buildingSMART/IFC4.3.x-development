@@ -11,3 +11,23 @@ attribute.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifckernel/lexical/ifccomplexpropertytemplate.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description   |
+|-------------|---------------|
+| UsageName   | $             |
+
+Formal Propositions
+-------------------
+| Rule                | Description   |
+|---------------------|---------------|
+| UniquePropertyNames |               |
+| NoSelfReference     |               |
+
+Associations
+------------
+| Attribute            | Description   |
+|----------------------|---------------|
+| HasPropertyTemplates |               |
+| TemplateType         |               |
+

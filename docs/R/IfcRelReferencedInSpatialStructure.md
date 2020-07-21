@@ -54,3 +54,18 @@ HISTORY New entity in IFC2x3.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcproductextension/lexical/ifcrelreferencedinspatialstructure.htm)
 
 
+Formal Propositions
+-------------------
+| Rule                   | Description   |
+|------------------------|---------------|
+| AllowedRelatedElements |               |
+
+Associations
+------------
+| Attribute         | Description   |
+|-------------------|---------------|
+| RelatedElements   |               |
+| RelatedElements   |               |
+| RelatingStructure |               |
+| RelatedElements   |               |
+

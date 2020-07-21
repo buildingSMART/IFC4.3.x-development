@@ -5,3 +5,10 @@ between the rails which, in case of a danger situation, may cause a warning
 horn to beep in the driver's cab.
 
 
+Attribute definitions
+---------------------
+| Attribute             | Description   |
+|-----------------------|---------------|
+| Primary positioning   |               |
+| Secondary positioning |               |
+

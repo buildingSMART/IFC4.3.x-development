@@ -17,3 +17,16 @@ library reference, applied to the item(s).
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifckernel/lexical/ifcrelassociateslibrary.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute       | Description                                                                     |
+|-----------------|---------------------------------------------------------------------------------|
+| RelatingLibrary | Reference to a library, from which the definition of the property set is taken. |
+
+Associations
+------------
+| Attribute       | Description   |
+|-----------------|---------------|
+| RelatingLibrary |               |
+| RelatingLibrary |               |
+

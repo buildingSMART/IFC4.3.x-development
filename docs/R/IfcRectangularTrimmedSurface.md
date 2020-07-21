@@ -35,3 +35,29 @@ surface being trimmed.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometryresource/lexical/ifcrectangulartrimmedsurface.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                                                                       |
+|-------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
+| U1          | First u parametric value.                                                                                                                         |
+| V1          | First v parametric value.                                                                                                                         |
+| U2          | Second u parametric value.                                                                                                                        |
+| V2          | Second v parametric value.                                                                                                                        |
+| Usense      | Flag to indicate whether the direction of the first parameter of the trimmed surface agrees with or opposes the sense of u in the basis surface.  |
+| Vsense      | Flag to indicate whether the direction of the second parameter of the trimmed surface agrees with or opposes the sense of v in the basis surface. |
+
+Formal Propositions
+-------------------
+| Rule             | Description   |
+|------------------|---------------|
+| U1AndU2Different |               |
+| V1AndV2Different |               |
+| UsenseCompatible |               |
+| VsenseCompatible |               |
+
+Associations
+------------
+| Attribute    | Description   |
+|--------------|---------------|
+| BasisSurface |               |
+

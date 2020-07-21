@@ -69,3 +69,22 @@ Figure 1 -- U-shape profile
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcprofileresource/lexical/ifcushapeprofiledef.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute       | Description                                            |
+|-----------------|--------------------------------------------------------|
+| Depth           | Web lengths, see illustration above (= h).             |
+| FlangeWidth     | Flange lengths, see illustration above (= b).          |
+| WebThickness    | Constant wall thickness of web (= ts).                 |
+| FlangeThickness | Constant wall thickness of flange (= tg).              |
+| FilletRadius    | Fillet radius according the above illustration (= r1). |
+| EdgeRadius      | Edge radius according the above illustration (= r2).   |
+| FlangeSlope     | Slope of flange of the profile.                        |
+
+Formal Propositions
+-------------------
+| Rule                 | Description   |
+|----------------------|---------------|
+| ValidFlangeThickness |               |
+| ValidWebThickness    |               |
+

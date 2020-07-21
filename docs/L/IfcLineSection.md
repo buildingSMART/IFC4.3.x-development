@@ -1,2 +1,9 @@
 IfcLineSection
 ==============
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+|             |               |
+

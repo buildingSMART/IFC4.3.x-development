@@ -1,2 +1,0 @@
-IfcWorkPlanTypeEnum.PLANNED
-===========================

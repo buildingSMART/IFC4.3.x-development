@@ -20,3 +20,17 @@ surface.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometryresource/lexical/ifcpcurve.htm)
 
 
+Formal Propositions
+-------------------
+| Rule    | Description   |
+|---------|---------------|
+| DimIs2D |               |
+
+Associations
+------------
+| Attribute      | Description   |
+|----------------|---------------|
+| ReferenceCurve |               |
+| BasisSurface   |               |
+|                |               |
+

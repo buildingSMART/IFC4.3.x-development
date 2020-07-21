@@ -12,3 +12,16 @@ x and y axes.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcpresentationdefinitionresource/lexical/ifcplanarextent.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                |
+|-------------|--------------------------------------------|
+| SizeInX     | The extent in the direction of the x-axis. |
+| SizeInY     | The extent in the direction of the y-axis. |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+

@@ -21,3 +21,14 @@ Applicability:
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcstructuralloadresource/lexical/ifcboundaryedgecondition.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute                       | Description                                                                                                                    |
+|---------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
+| TranslationalStiffnessByLengthX | Translational stiffness value in x-direction of the coordinate system defined by the instance which uses this resource object. |
+| TranslationalStiffnessByLengthY | Translational stiffness value in y-direction of the coordinate system defined by the instance which uses this resource object. |
+| TranslationalStiffnessByLengthZ | Translational stiffness value in z-direction of the coordinate system defined by the instance which uses this resource object. |
+| RotationalStiffnessByLengthX    | Rotational stiffness value about the x-axis of the coordinate system defined by the instance which uses this resource object.  |
+| RotationalStiffnessByLengthY    | Rotational stiffness value about the y-axis of the coordinate system defined by the instance which uses this resource object.  |
+| RotationalStiffnessByLengthZ    | Rotational stiffness value about the z-axis of the coordinate system defined by the instance which uses this resource object.  |
+

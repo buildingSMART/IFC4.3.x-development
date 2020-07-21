@@ -94,3 +94,17 @@ perpendicular to the z-axis of the position coordinate system
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricmodelresource/lexical/ifcpolygonalboundedhalfspace.htm)
 
 
+Formal Propositions
+-------------------
+| Rule         | Description   |
+|--------------|---------------|
+| BoundaryDim  |               |
+| BoundaryType |               |
+
+Associations
+------------
+| Attribute         | Description   |
+|-------------------|---------------|
+| PolygonalBoundary |               |
+| Position          |               |
+

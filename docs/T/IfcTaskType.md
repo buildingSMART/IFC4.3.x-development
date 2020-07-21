@@ -30,3 +30,21 @@ type relationships")
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcprocessextension/lexical/ifctasktype.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                     |
+|-------------|-------------------------------------------------|
+| WorkMethod  | The method of work used in carrying out a task. |
+
+Formal Propositions
+-------------------
+| Rule                  | Description   |
+|-----------------------|---------------|
+| CorrectPredefinedType |               |
+
+Associations
+------------
+| Attribute      | Description   |
+|----------------|---------------|
+| PredefinedType |               |
+

@@ -1,2 +1,0 @@
-IfcDistributionPortTypeEnum.DUCT
-================================

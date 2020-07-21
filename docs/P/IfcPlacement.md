@@ -21,3 +21,15 @@ systems and do not allow mirroring.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometryresource/lexical/ifcplacement.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                              |
+|-------------|------------------------------------------------------------------------------------------|
+| Dim         | The space dimensionality of this class, derived from the dimensionality of the location. |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| Location    |               |
+

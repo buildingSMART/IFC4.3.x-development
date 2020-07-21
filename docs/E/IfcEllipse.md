@@ -81,3 +81,10 @@ Figure 1 -- Ellipse placement and parameterization
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometryresource/lexical/ifcellipse.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                                      |
+|-------------|------------------------------------------------------------------------------------------------------------------|
+| SemiAxis1   | The first radius of the ellipse which shall be positive. Placement.Axes[1] gives the direction of the SemiAxis1. |
+| SemiAxis2   | The second radius of the ellipse which shall be positive.                                                        |
+

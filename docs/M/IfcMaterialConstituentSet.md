@@ -20,3 +20,16 @@ _IfcMaterialProfileSet_ where each part has an individual shape parameter
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcmaterialresource/lexical/ifcmaterialconstituentset.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                      |
+|-------------|------------------------------------------------------------------|
+| Name        | The name by which the constituent set is known.                  |
+| Description | Definition of the material constituent set in descriptive terms. |
+
+Associations
+------------
+| Attribute            | Description   |
+|----------------------|---------------|
+| MaterialConstituents |               |
+

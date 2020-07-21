@@ -1,2 +1,0 @@
-IfcConstructionEquipmentResourceTypeEnum.LIGHTING
-=================================================

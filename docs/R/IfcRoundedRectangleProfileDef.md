@@ -85,3 +85,15 @@ Figure 1 -- Rounded rectangle profile
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcprofileresource/lexical/ifcroundedrectangleprofiledef.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute      | Description                                                                                 |
+|----------------|---------------------------------------------------------------------------------------------|
+| RoundingRadius | Radius of the circular arcs by which all four corners of the rectangle are equally rounded. |
+
+Formal Propositions
+-------------------
+| Rule        | Description   |
+|-------------|---------------|
+| ValidRadius |               |
+

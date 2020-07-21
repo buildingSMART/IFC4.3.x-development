@@ -1,5 +1,0 @@
-IfcBridgePartTypeEnum.PIER_SEGMENT
-==================================
-$
-
-

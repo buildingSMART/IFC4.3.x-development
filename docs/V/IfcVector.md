@@ -24,3 +24,24 @@ attribute and the direction is solely defined by the _Orientation_ attribute.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometryresource/lexical/ifcvector.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                                                       |
+|-------------|-----------------------------------------------------------------------------------------------------------------------------------|
+| Magnitude   | The magnitude of the vector. All vectors of Magnitude 0.0 are regarded as equal in value regardless of the orientation attribute. |
+| Dim         | The space dimensionality of this class, it is derived from Orientation                                                            |
+
+Formal Propositions
+-------------------
+| Rule                  | Description   |
+|-----------------------|---------------|
+| MagGreaterOrEqualZero |               |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| Orientation |               |
+|             |               |
+|             |               |
+

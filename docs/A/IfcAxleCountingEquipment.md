@@ -7,3 +7,10 @@ the numbers being necessary to give a clear indication.
 [source: IEC 60050-821]
 
 
+Attribute definitions
+---------------------
+| Attribute             | Description   |
+|-----------------------|---------------|
+| Primary positioning   |               |
+| Secondary positioning |               |
+

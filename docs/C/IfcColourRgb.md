@@ -21,3 +21,23 @@ IfcColourRgb
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcpresentationappearanceresource/lexical/ifccolourrgb.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                                                                                                   |
+|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Red         | The intensity of the red colour component.\X\0D> NOTE  The colour component value is given within the range of 0..1, and not within the range of 0..255 as otherwise usual.   |
+| Green       | The intensity of the green colour component.\X\0D> NOTE  The colour component value is given within the range of 0..1, and not within the range of 0..255 as otherwise usual. |
+| Blue        | The intensity of the blue colour component.\X\0D> NOTE  The colour component value is given within the range of 0..1, and not within the range of 0..255 as otherwise usual.  |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+|             |               |
+|             |               |
+|             |               |
+|             |               |
+|             |               |
+|             |               |
+

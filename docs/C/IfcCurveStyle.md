@@ -42,3 +42,25 @@ or _IfcAnnotationCurveOccurrence_.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcpresentationappearanceresource/lexical/ifccurvestyle.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute         | Description                                                                                                                                                                                                                                                                                                       |
+|-------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| CurveFont         | A curve style font which is used to present a curve. It can either be a predefined curve font, or an explicitly defined curve font. Both may be scaled. If not given, then the curve font should be taken from the layer assignment with style, if that is not given either, then the default curve font applies. |
+| CurveWidth        | A positive length measure in units of the presentation area for the width of a presented curve. If not given, then the style should be taken from the layer assignment with style, if that is not given either, then the default style applies.                                                                   |
+| CurveColour       | The colour of the visible part of the curve. If not given, then the colour should be taken from the layer assignment with style, if that is not given either, then the default colour applies.                                                                                                                    |
+| ModelOrDraughting | Indication whether the length measures provided for the presentation style are model based, or draughting based.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  New attribute.                                                                                                                                          |
+
+Formal Propositions
+-------------------
+| Rule                   | Description   |
+|------------------------|---------------|
+| MeasureOfWidth         |               |
+| IdentifiableCurveStyle |               |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+

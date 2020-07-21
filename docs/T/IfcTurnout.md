@@ -1,2 +1,8 @@
 IfcTurnout
 ==========
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+

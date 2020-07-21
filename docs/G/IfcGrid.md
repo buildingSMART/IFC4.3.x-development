@@ -118,3 +118,12 @@ Figure 4 -- Grid intersections
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcproductextension/lexical/ifcgrid.htm)
 
 
+Associations
+------------
+| Attribute      | Description   |
+|----------------|---------------|
+| UAxes          |               |
+| WAxes          |               |
+| VAxes          |               |
+| PredefinedType |               |
+

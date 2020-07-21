@@ -5,3 +5,9 @@ turnout to the normal position or reverse position, realize the turnout lock
 and give corresponding position information.
 
 
+Associations
+------------
+| Attribute     | Description   |
+|---------------|---------------|
+| is mounted on |               |
+

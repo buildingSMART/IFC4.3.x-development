@@ -64,3 +64,15 @@ Figure 1 -- Material definition representation
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcrepresentationresource/lexical/ifcmaterialdefinitionrepresentation.htm)
 
 
+Formal Propositions
+-------------------
+| Rule                      | Description   |
+|---------------------------|---------------|
+| OnlyStyledRepresentations |               |
+
+Associations
+------------
+| Attribute           | Description   |
+|---------------------|---------------|
+| RepresentedMaterial |               |
+

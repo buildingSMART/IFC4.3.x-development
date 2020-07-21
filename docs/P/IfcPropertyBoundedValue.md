@@ -118,3 +118,20 @@ _LowerBoundValue_.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcpropertyresource/lexical/ifcpropertyboundedvalue.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute       | Description                                                                                                                                                                                                                                                                                                   |
+|-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| UpperBoundValue | Upper bound value for the interval defining the property value. If the value is not given, it indicates an open bound (all values to be greater than or equal to _LowerBoundValue_).                                                                                                                          |
+| LowerBoundValue | Lower bound value for the interval defining the property value. If the value is not given, it indicates an open bound (all values to be lower than or equal to _UpperBoundValue_).                                                                                                                            |
+| Unit            | Unit for the upper and lower bound values, if not given, the default value for the measure type is used as defined by the global unit assignment at _IfcProject.UnitInContext_. The applicable unit is then selected by the underlying TYPE of the _UpperBoundValue_, _LowerBoundValue_, and _SetPointValue_) |
+| SetPointValue   | Set point value as typically used for operational value setting.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  The attribute has been added at the end of the attribute list.                                                                                                                                      |
+
+Formal Propositions
+-------------------
+| Rule               | Description   |
+|--------------------|---------------|
+| SameUnitUpperLower |               |
+| SameUnitUpperSet   |               |
+| SameUnitLowerSet   |               |
+

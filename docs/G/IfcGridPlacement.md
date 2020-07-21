@@ -135,3 +135,15 @@ Figure 3 -- Grid placement with intersection
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricconstraintresource/lexical/ifcgridplacement.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute             | Description                                                                                                                                                                                                                    |
+|-----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| PlacementRefDirection | Reference to either an explicit direction, or a second grid axis intersection, which defines the orientation of the grid placement.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE The select of an explict direction has been added. |
+
+Associations
+------------
+| Attribute         | Description   |
+|-------------------|---------------|
+| PlacementLocation |               |
+

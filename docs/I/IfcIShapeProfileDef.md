@@ -113,3 +113,23 @@ Figure 1 -- I-shape profile
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcprofileresource/lexical/ifcishapeprofiledef.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute        | Description                                                                                                                                                                     |
+|------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| OverallWidth     | Total extent of the width, defined parallel to the x axis of the position coordinate system.                                                                                    |
+| OverallDepth     | Total extent of the depth, defined parallel to the y axis of the position coordinate system.                                                                                    |
+| WebThickness     | Thickness of the web of the I-shape. The web is centred on the x-axis and the y-axis of the position coordinate system.                                                         |
+| FlangeThickness  | Flange thickness of the I-shape. Both, the upper and the lower flanges have the same thickness and they are centred on the y-axis of the position coordinate system.            |
+| FilletRadius     | The fillet between the web and the flange. 0 if sharp-edged, omitted if unknown.                                                                                                |
+| FlangeEdgeRadius | Radius of the lower edges of the top flange and the upper edges of the bottom flange. 0 if sharp-edged, omitted if unknown.                                                     |
+| FlangeSlope      | Slope of the lower faces of the top flange and of the upper faces of the bottom flange. Non-zero in case of tapered flanges, 0 in case of parallel flanges, omitted if unknown. |
+
+Formal Propositions
+-------------------
+| Rule                 | Description   |
+|----------------------|---------------|
+| ValidFlangeThickness |               |
+| ValidWebThickness    |               |
+| ValidFilletRadius    |               |
+

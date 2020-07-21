@@ -22,3 +22,17 @@ parametric range of the basis surface.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometryresource/lexical/ifcpointonsurface.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute       | Description                                                                                          |
+|-----------------|------------------------------------------------------------------------------------------------------|
+| PointParameterU | The first parameter value of the point location.                                                     |
+| PointParameterV | The second parameter value of the point location.                                                    |
+| Dim             | The space dimensionality of this class, determined by the space dimensionality of the basis surface. |
+
+Associations
+------------
+| Attribute    | Description   |
+|--------------|---------------|
+| BasisSurface |               |
+

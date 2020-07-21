@@ -221,3 +221,23 @@ Figure 3 -- Revolved area solid textures
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricmodelresource/lexical/ifcrevolvedareasolid.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                                                                                         |
+|-------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Angle       | The angle through which the sweep will be made. This angle is measured from the plane of the swept area provided by the XY plane of the position coordinate system. |
+| AxisLine    | The line of the axis of revolution.                                                                                                                                 |
+
+Formal Propositions
+-------------------
+| Rule              | Description   |
+|-------------------|---------------|
+| AxisStartInXY     |               |
+| AxisDirectionInXY |               |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| Axis        |               |
+

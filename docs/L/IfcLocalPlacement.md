@@ -44,3 +44,15 @@ given at the level of subtypes of those five types mentioned.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricconstraintresource/lexical/ifclocalplacement.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute         | Description                                                                                                                                                                                                |
+|-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| RelativePlacement | Geometric placement that defines the transformation from the related coordinate system into the relating. The placement can be either 2D or 3D, depending on the dimension count of the coordinate system. |
+
+Formal Propositions
+-------------------
+| Rule   | Description   |
+|--------|---------------|
+| WR21   |               |
+

@@ -25,3 +25,25 @@ _IfcSweptDiskSolid_ (including subtype _IfcSweptDiskSolidPolygonal_).
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcstructuralelementsdomain/lexical/ifcreinforcingbar.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute        | Description                                                                                                                                                    |
+|------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| NominalDiameter  | Deprecated.\X\0D\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  Attribute made optional and deprecated. Use respective attribute at _IfcReinforcingBarType_ instead. |
+| CrossSectionArea | The effective cross-section area of the reinforcing bar or group of bars.\X\0D\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  Attribute made optional.               |
+| BarLength        | Deprecated.\X\0D\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  Attribute deprecated. Use respective attribute at _IfcReinforcingBarType_ instead.                   |
+| BarSurface       | Deprecated.\X\0D\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  Attribute made optional and deprecated. Use respective attribute at _IfcReinforcingBarType_ instead. |
+
+Formal Propositions
+-------------------
+| Rule                  | Description   |
+|-----------------------|---------------|
+| CorrectPredefinedType |               |
+| CorrectTypeAssigned   |               |
+
+Associations
+------------
+| Attribute      | Description   |
+|----------------|---------------|
+| PredefinedType |               |
+

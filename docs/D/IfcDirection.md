@@ -21,3 +21,40 @@ normalized.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometryresource/lexical/ifcdirection.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute       | Description                                                                                                                        |
+|-----------------|------------------------------------------------------------------------------------------------------------------------------------|
+| DirectionRatios | The components in the direction of X axis (DirectionRatios[1]), of Y axis (DirectionRatios[2]), and of Z axis (DirectionRatios[3]) |
+| Dim             | The space dimensionality of this class, defined by the number of real in the list of DirectionRatios.                              |
+
+Formal Propositions
+-------------------
+| Rule                 | Description   |
+|----------------------|---------------|
+| MagnitudeGreaterZero |               |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+|             |               |
+|             |               |
+|             |               |
+|             |               |
+|             |               |
+|             |               |
+|             |               |
+|             |               |
+|             |               |
+|             |               |
+|             |               |
+|             |               |
+|             |               |
+|             |               |
+|             |               |
+|             |               |
+|             |               |
+|             |               |
+

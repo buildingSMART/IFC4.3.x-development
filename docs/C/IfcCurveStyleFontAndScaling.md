@@ -29,3 +29,11 @@ visible 0.005m, invisible 0.0025m).
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcpresentationappearanceresource/lexical/ifccurvestylefontandscaling.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute        | Description                                                 |
+|------------------|-------------------------------------------------------------|
+| Name             | Name that may be assigned with the scaling of a curve font. |
+| CurveFont        | The curve font to be scaled.                                |
+| CurveFontScaling | The scale factor.                                           |
+

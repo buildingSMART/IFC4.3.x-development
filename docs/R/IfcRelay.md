@@ -12,3 +12,9 @@ also control remote objects. It plays the role of automatic regulation,
 security protection, conversion circuit and so on in the circuit.
 
 
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+

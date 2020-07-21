@@ -43,3 +43,9 @@ Centerline profile")
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcprofileresource/lexical/ifccenterlineprofiledef.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                       |
+|-------------|---------------------------------------------------|
+| Thickness   | Constant thickness applied along the center line. |
+

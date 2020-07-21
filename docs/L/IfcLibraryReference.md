@@ -23,3 +23,17 @@ _Description_ attribute.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcexternalreferenceresource/lexical/ifclibraryreference.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                                                                               |
+|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description | Additional description provided for the library reference.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  New attribute added at the end of the attribute list. |
+| Language    | The language in which a library reference is expressed.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  New attribute added at the end of the attribute list.    |
+
+Associations
+------------
+| Attribute            | Description   |
+|----------------------|---------------|
+| ReferencedLibrary    |               |
+| LibraryRefForObjects |               |
+

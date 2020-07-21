@@ -14,3 +14,10 @@ references are given by the _IfcObjectReferenceSelect_.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcpropertyresource/lexical/ifcpropertyreferencevalue.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute         | Description                                                                                                                                                                                                                              |
+|-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| UsageName         | Description of the use of the referenced value within the property. It is a descriptive text that may hold an expression or other additional information.                                                                                |
+| PropertyReference | Reference to another property entity through one of the select types in the _IfcObjectReferenceSelect_.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  The attribute has been made optional with upward compatibility for file based exchange. |
+

@@ -43,3 +43,12 @@ correct usage of opening symbols for different operation types.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcarchitecturedomain/lexical/ifcdoorstyle.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute                | Description                                                                                                                                                                                                                                                                                                      |
+|--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| OperationType            | Type defining the general layout and operation of the door style.                                                                                                                                                                                                                                                |
+| ConstructionType         | Type defining the basic construction and material type of the door.                                                                                                                                                                                                                                              |
+| ParameterTakesPrecedence | The Boolean value reflects, whether the parameter given in the attached lining and panel properties exactly define the geometry (TRUE), or whether the attached style shape take precedence (FALSE). In the last case the parameter have only informative value.                                                 |
+| Sizeable                 | The Boolean indicates, whether the attached _IfcMappedRepresentation_ (if given) can be sized (using scale factor of transformation), or not (FALSE). If not, the _IfcMappedRepresentation_ should be _IfcShapeRepresentation_ of the _IfcDoor_ (using _IfcMappedItem_ as the _Item_) with the scale factor = 1. |
+

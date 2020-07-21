@@ -31,3 +31,28 @@ impart prestress to concrete when the element is tensioned.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcstructuralelementsdomain/lexical/ifctendon.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute           | Description                                                                                                                                                                                                    |
+|---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| NominalDiameter     | The nominal diameter defining the cross-section size of the tendon.\X\0D\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  Attribute made optional and deprecated. Use respective attribute at _IfcTendonType_ instead. |
+| CrossSectionArea    | The effective cross-section area of the tendon.\X\0D\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  Attribute made optional and deprecated. Use respective attribute at _IfcTendonType_ instead.                     |
+| TensionForce        | The maximum allowed tension force that can be applied on the tendon.                                                                                                                                           |
+| PreStress           | The prestress to be applied on the tendon.                                                                                                                                                                     |
+| FrictionCoefficient | The friction coefficient between tendon and tendon sheet while the tendon is unbonded.                                                                                                                         |
+| AnchorageSlip       | The deformation of an anchor or slippage of tendons when the prestressing device is released.                                                                                                                  |
+| MinCurvatureRadius  | The smallest curvature radius calculated on the whole effective length of the tendon where the tension properties are still valid.                                                                             |
+
+Formal Propositions
+-------------------
+| Rule                  | Description   |
+|-----------------------|---------------|
+| CorrectPredefinedType |               |
+| CorrectTypeAssigned   |               |
+
+Associations
+------------
+| Attribute      | Description   |
+|----------------|---------------|
+| PredefinedType |               |
+

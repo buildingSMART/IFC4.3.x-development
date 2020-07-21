@@ -19,3 +19,9 @@ Assignment of style information to a styled item.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcpresentationappearanceresource/lexical/ifcpresentationstyleassignment.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                     |
+|-------------|-----------------------------------------------------------------|
+| Styles      | A set of presentation styles that are assigned to styled items. |
+

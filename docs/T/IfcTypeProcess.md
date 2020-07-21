@@ -19,3 +19,17 @@ to subtypes of _IfcProcess_.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifckernel/lexical/ifctypeprocess.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute       | Description                                                                                                                                                                                                                                                             |
+|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Identification  | An identifying designation given to a process type.                                                                                                                                                                                                                     |
+| LongDescription | An long description, or text, describing the activity in detail.\X\0D> NOTE  The inherited _SELF\\\IfcRoot.Description_ attribute is used as the short description.                                                                                                     |
+| ProcessType     | The type denotes a particular type that indicates the process further. The use has to be established at the level of instantiable subtypes. In particular it holds the user defined type, if the enumeration of the attribute ''PredefinedType'' is set to USERDEFINED. |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| OperatesOn  |               |
+

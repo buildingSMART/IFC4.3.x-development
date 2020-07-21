@@ -40,3 +40,15 @@ Informal Propositions:
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifctopologyresource/lexical/ifcpolyloop.htm)
 
 
+Formal Propositions
+-------------------
+| Rule             | Description   |
+|------------------|---------------|
+| AllPointsSameDim |               |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| Polygon     |               |
+

@@ -129,3 +129,11 @@ Figure 2 -- Rectangular pyramid textures
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricmodelresource/lexical/ifcrectangularpyramid.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                                                                                  |
+|-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| XLength     | The length of the base measured along the placement X axis. It is provided by the inherited axis placement through _SELF\\\IfcCsgPrimitive3D.Position.P[1]_. |
+| YLength     | The length of the base measured along the placement Y axis. It is provided by the inherited axis placement through _SELF\\\IfcCsgPrimitive3D.Position.P[2]_. |
+| Height      | The height of the apex above the plane of the base, measured in the direction of the placement Z axis, the _SELF\\\IfcCsgPrimitive3D.Position.P[2]_.         |
+

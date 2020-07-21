@@ -80,3 +80,10 @@ _\S\ -\S\ ExtendToStructure = TRUE_
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifckernel/lexical/ifcreldefinesbytype.htm)
 
 
+Associations
+------------
+| Attribute      | Description   |
+|----------------|---------------|
+| RelatedObjects |               |
+| RelatingType   |               |
+

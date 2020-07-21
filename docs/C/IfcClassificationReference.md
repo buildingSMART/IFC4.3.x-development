@@ -43,3 +43,20 @@ classification notation within the classification hierarchy.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcexternalreferenceresource/lexical/ifcclassificationreference.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute        | Description                                                                                                                                                                                                                                                                        |
+|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ReferencedSource | The classification system or source that is referenced.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  Data type changed to _IfcClassificationReferenceSelect_.                                                                                                                          |
+| Description      | Description of the classification reference for informational purposes.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  New attribute added at the end of the attribute list.                                                                                                             |
+| Sort             | Optional identifier to sort the set of classification references within the referenced source (either a classification facet of higher level, or the classification system itself).\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  New attribute added at the end of the attribute list. |
+
+Associations
+------------
+| Attribute                   | Description   |
+|-----------------------------|---------------|
+| ReferencedSource            |               |
+| HasReferences               |               |
+| ReferencedSource            |               |
+| ClassificationRefForObjects |               |
+

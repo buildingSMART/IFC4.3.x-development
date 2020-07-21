@@ -19,3 +19,33 @@ _IfcResourceApprovalRelationship_
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcapprovalresource/lexical/ifcapproval.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute          | Description                                                                                                                                                                                                                                                        |
+|--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Identifier         | A computer interpretable identifier by which the approval is known.                                                                                                                                                                                                |
+| Name               | A human readable name given to an approval.                                                                                                                                                                                                                        |
+| Description        | A general textual description of a design, work task, plan, etc. that is being approved for.                                                                                                                                                                       |
+| TimeOfApproval     | Date and time when the result of the approval process is produced.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  Attribute data type changed to _IfcDateTime_ using ISO 8601 representation, renamed from ApprovalDateTime and made OPTIONAL.                           |
+| Status             | The result or current status of the approval, e.g. Requested, Processed, Approved, Not Approved.                                                                                                                                                                   |
+| Level              | Level of the approval e.g. Draft v.s. Completed design.                                                                                                                                                                                                            |
+| Qualifier          | Textual description of special constraints or conditions for the approval.                                                                                                                                                                                         |
+| RequestingApproval | The actor that is acting in the role specified at _IfcOrganization_ or individually at _IfcPerson_ and requesting an approval.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  New attribute for approval request replacing IfcApprovalActorRelationship (being deleted). |
+| GivingApproval     | The actor that is acting in the role specified at _IfcOrganization_ or individually at _IfcPerson_ and giving an approval.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  New attribute for approval provision replacing IfcApprovalActorRelationship (being deleted).   |
+
+Formal Propositions
+-------------------
+| Rule                | Description   |
+|---------------------|---------------|
+| HasIdentifierOrName |               |
+
+Associations
+------------
+| Attribute             | Description   |
+|-----------------------|---------------|
+| HasExternalReferences |               |
+| IsRelatedWith         |               |
+| Relates               |               |
+| ApprovedObjects       |               |
+| ApprovedResources     |               |
+

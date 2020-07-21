@@ -165,3 +165,11 @@ Figure 2 -- Block textures
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricmodelresource/lexical/ifcblock.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                                                                        |
+|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
+| XLength     | The size of the block along the placement X axis. It is provided by the inherited axis placement through _SELF\\\IfcCsgPrimitive3D.Position.P[1]_. |
+| YLength     | The size of the block along the placement Y axis. It is provided by the inherited axis placement through _SELF\\\IfcCsgPrimitive3D.Position.P[2]_. |
+| ZLength     | The size of the block along the placement Z axis. It is provided by the inherited axis placement through _SELF\\\IfcCsgPrimitive3D.Position.P[3]_. |
+

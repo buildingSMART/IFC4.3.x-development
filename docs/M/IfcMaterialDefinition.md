@@ -23,3 +23,11 @@ _IfcRelAssociatesMaterial_.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcmaterialresource/lexical/ifcmaterialdefinition.htm)
 
 
+Associations
+------------
+| Attribute             | Description   |
+|-----------------------|---------------|
+| HasExternalReferences |               |
+| HasProperties         |               |
+| AssociatedTo          |               |
+

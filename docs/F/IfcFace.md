@@ -62,3 +62,17 @@ of edges) - (number of loops) + (sum of genus for loops) = 0.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifctopologyresource/lexical/ifcface.htm)
 
 
+Formal Propositions
+-------------------
+| Rule          | Description   |
+|---------------|---------------|
+| HasOuterBound |               |
+
+Associations
+------------
+| Attribute      | Description   |
+|----------------|---------------|
+| HasTextureMaps |               |
+|                |               |
+| Bounds         |               |
+

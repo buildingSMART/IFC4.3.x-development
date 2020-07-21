@@ -18,3 +18,9 @@ is still supported, however is now specific to dynamically connected ports.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcsharedbldgserviceelements/lexical/ifcdistributionflowelement.htm)
 
 
+Associations
+------------
+| Attribute          | Description   |
+|--------------------|---------------|
+| HasControlElements |               |
+

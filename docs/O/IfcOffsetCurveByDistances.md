@@ -13,3 +13,15 @@ Offset curve by distances")
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometryresource/lexical/ifcoffsetcurvebydistances.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                            |
+|-------------|--------------------------------------------------------------------------------------------------------|
+| Tag         | Optional identifier of the curve, which may be used to correlate points from a variable cross-section. |
+
+Associations
+------------
+| Attribute    | Description   |
+|--------------|---------------|
+| OffsetValues |               |
+

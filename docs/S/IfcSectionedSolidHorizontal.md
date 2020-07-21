@@ -44,3 +44,22 @@ the directrix to be tangent continuous.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricmodelresource/lexical/ifcsectionedsolidhorizontal.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute         | Description                                                                                                                                                                                         |
+|-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| FixedAxisVertical | Indicates whether _Sections_ are oriented with the Y axis of each profile facing upwards in +Z direction (True), or vertically perpendicular to the _Directrix_ varying according to slope (False). |
+
+Formal Propositions
+-------------------
+| Rule                          | Description   |
+|-------------------------------|---------------|
+| CorrespondingSectionPositions |               |
+| NoLongitudinalOffsets         |               |
+
+Associations
+------------
+| Attribute             | Description   |
+|-----------------------|---------------|
+| CrossSectionPositions |               |
+

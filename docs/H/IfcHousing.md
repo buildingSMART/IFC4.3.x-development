@@ -5,3 +5,10 @@ can be placed in a structure for protection (metal or concrete boxes etc). The
 Shelter/Housing describes the type of protection and its location.
 
 
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+| is located  |               |
+

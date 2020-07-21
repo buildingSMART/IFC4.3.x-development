@@ -10,3 +10,16 @@ material aggregate is composed.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcmaterialresource/lexical/ifcmaterialrelationship.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                                                                                                                                                                                                                                                                   |
+|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Expression  | Information about the material relationship refering for example to the amount of related materials in the composite material. \X\0D> NOTE  Any formal meaning of the _Expression_ string value has to be established in model view definitions or implementer agreements. No such formal language is provided as part of this specification. |
+
+Associations
+------------
+| Attribute        | Description   |
+|------------------|---------------|
+| RelatedMaterials |               |
+| RelatingMaterial |               |
+

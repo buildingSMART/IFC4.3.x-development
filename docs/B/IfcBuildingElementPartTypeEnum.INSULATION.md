@@ -1,2 +1,0 @@
-IfcBuildingElementPartTypeEnum.INSULATION
-=========================================

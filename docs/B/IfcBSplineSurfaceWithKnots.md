@@ -21,3 +21,24 @@ parametric surface in which the knot values are explicitly given.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometryresource/lexical/ifcbsplinesurfacewithknots.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute       | Description                                                     |
+|-----------------|-----------------------------------------------------------------|
+| UMultiplicities | The multiplicities of the knots in the _u_ parameter direction. |
+| VMultiplicities | The multiplicities of the knots in the _v_ parameter direction. |
+| UKnots          | The list of the distinct knots in the _u_ parameter direction.  |
+| VKnots          | The list of the distinct knots in the _v_ parameter direction.  |
+| KnotSpec        | The description of the knot type.                               |
+| KnotVUpper      | The number of distinct knots in the _v_ parameter direction.    |
+| KnotUUpper      | The number of distinct knots in the _u_ parameter direction.    |
+
+Formal Propositions
+-------------------
+| Rule                  | Description   |
+|-----------------------|---------------|
+| UDirectionConstraints |               |
+| VDirectionConstraints |               |
+| CorrespondingULists   |               |
+| CorrespondingVLists   |               |
+

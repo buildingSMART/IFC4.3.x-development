@@ -29,3 +29,9 @@ local placement of the element to which the feature element is added:
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcproductextension/lexical/ifcfeatureelementaddition.htm)
 
 
+Associations
+------------
+| Attribute        | Description   |
+|------------------|---------------|
+| ProjectsElements |               |
+

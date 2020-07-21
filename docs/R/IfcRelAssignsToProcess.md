@@ -31,3 +31,23 @@ captured in the inherited attribute _Name_.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifckernel/lexical/ifcrelassignstoprocess.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute       | Description                                                                                                                                                            |
+|-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| RelatingProcess | Reference to the process to which the objects are assigned to.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE Datatype expanded to include _IfcProcess_ and _IfcTypeProcess_. |
+
+Formal Propositions
+-------------------
+| Rule            | Description   |
+|-----------------|---------------|
+| NoSelfReference |               |
+
+Associations
+------------
+| Attribute         | Description   |
+|-------------------|---------------|
+| RelatingProcess   |               |
+| QuantityInProcess |               |
+| RelatingProcess   |               |
+

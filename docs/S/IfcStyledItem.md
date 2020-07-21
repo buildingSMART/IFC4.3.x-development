@@ -48,3 +48,23 @@ Figure 1 illustrates use of _IfcStyledItem_ for the two usage examples:
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcpresentationappearanceresource/lexical/ifcstyleditem.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                                                                                                                                                                                                                                                                                                                                                        |
+|-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Styles      | Representation styles which are assigned, either to an geometric representation item, or to a material definition.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE The data type has been changed to _IfcStyleAssignmentSelect_ with upward compatibility for file based exchange.\X\0D\X\0D> NOTE  Only the select item _IfcPresentationStyle_ shall be used from IFC4 onwards, the _IfcPresentationStyleAssignment_ has been deprecated. |
+| Name        | The word, or group of words, by which the styled item is referred to.                                                                                                                                                                                                                                                                                                                                                              |
+
+Formal Propositions
+-------------------
+| Rule           | Description   |
+|----------------|---------------|
+| ApplicableItem |               |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| Item        |               |
+|             |               |
+

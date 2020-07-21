@@ -16,3 +16,22 @@ can be reused in many different _IfcPropertySet_''s.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcpropertyresource/lexical/ifccomplexproperty.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                                                                                                                                                                                                                                                   |
+|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| UsageName   | Usage description of the _IfcComplexProperty_ within the property set which references the _IfcComplexProperty_.\X\0D> NOTE  Consider a complex property for glazing properties. The _Name_ attribute of the _IfcComplexProperty_ could be _Pset_GlazingProperties_, and the UsageName attribute could be _OuterGlazingPane_. |
+
+Formal Propositions
+-------------------
+| Rule   | Description   |
+|--------|---------------|
+| WR21   |               |
+| WR22   |               |
+
+Associations
+------------
+| Attribute     | Description   |
+|---------------|---------------|
+| HasProperties |               |
+

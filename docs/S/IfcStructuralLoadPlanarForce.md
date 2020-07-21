@@ -8,3 +8,11 @@ define actions on faces.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcstructuralloadresource/lexical/ifcstructuralloadplanarforce.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute    | Description                        |
+|--------------|------------------------------------|
+| PlanarForceX | Planar force value in x-direction. |
+| PlanarForceY | Planar force value in y-direction. |
+| PlanarForceZ | Planar force value in z-direction. |
+

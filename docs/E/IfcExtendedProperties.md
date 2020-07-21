@@ -17,3 +17,16 @@ of IfcProperty referenced.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcpropertyresource/lexical/ifcextendedproperties.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                              |
+|-------------|------------------------------------------|
+| Name        | The name given to the set of properties. |
+| Description | Description for the set of properties.   |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| Properties  |               |
+

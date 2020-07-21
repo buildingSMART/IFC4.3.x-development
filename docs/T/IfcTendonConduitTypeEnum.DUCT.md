@@ -1,2 +1,0 @@
-IfcTendonConduitTypeEnum.DUCT
-=============================

@@ -9,3 +9,15 @@ provisions which influence structural analysis.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcstructuralloadresource/lexical/ifcstructuralload.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                              |
+|-------------|------------------------------------------|
+| Name        | Optionally defines a name for this load. |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+

@@ -14,3 +14,9 @@ An _IfcElementarySurface_ in the common supertype of analytical surfaces.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometryresource/lexical/ifcelementarysurface.htm)
 
 
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| Position    |               |
+

@@ -176,3 +176,24 @@ Figure 3 -- Window operations
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcsharedbldgelements/lexical/ifcwindow.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute                   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+|-----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| OverallHeight               | Overall measure of the height, it reflects the Z Dimension of a bounding box, enclosing the window opening. If omitted, the _OverallHeight_ should be taken from the geometric representation of the _IfcOpening_ in which the window is inserted. \X\0D\X\0D> NOTE  The body of the window might be taller then the window opening (for example in cases where the window lining includes a casing). In these cases the _OverallHeight_ shall still be given as the window opening height, and not as the total height of the window lining. |
+| OverallWidth                | Overall measure of the width, it reflects the X Dimension of a bounding box, enclosing the window opening. If omitted, the _OverallWidth_ should be taken from the geometric representation of the _IfcOpening_ in which the window is inserted. \X\0D\X\0D> NOTE  The body of the window might be wider then the window opening (for example in cases where the window lining includes a casing). In these cases the _OverallWidth_ shall still be given as the window opening width, and not as the total width of the window lining.       |
+| PartitioningType            | Type defining the general layout of the window in terms of the partitioning of panels. \X\0D> NOTE  The _PartitioningType_ shall only be used, if no type object _IfcWindowType_ is assigned, providing its own _IfcWindowType.PartitioningType_.\X\0D\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE The attribute has been added at the end of the entity definition.                                                                                                                                                                              |
+| UserDefinedPartitioningType | Designator for the user defined partitioning type, shall only be provided, if the value of _PartitioningType_ is set to USERDEFINED.                                                                                                                                                                                                                                                                                                                                                                                                          |
+
+Formal Propositions
+-------------------
+| Rule                 | Description   |
+|----------------------|---------------|
+| CorrectStyleAssigned |               |
+
+Associations
+------------
+| Attribute      | Description   |
+|----------------|---------------|
+| PredefinedType |               |
+

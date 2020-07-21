@@ -45,3 +45,9 @@ for further definitions.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcstructuralanalysisdomain/lexical/ifcstructuralpointreaction.htm)
 
 
+Formal Propositions
+-------------------
+| Rule             | Description   |
+|------------------|---------------|
+| SuitableLoadType |               |
+

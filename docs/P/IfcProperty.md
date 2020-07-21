@@ -8,3 +8,22 @@ can be associated with IFC objects through the property set mechanism.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcpropertyresource/lexical/ifcproperty.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                                           |
+|-------------|-----------------------------------------------------------------------------------------------------------------------|
+| Name        | Name for this property. This label is the significant name string that defines the semantic meaning for the property. |
+| Description | Informative text to explain the property.                                                                             |
+
+Associations
+------------
+| Attribute             | Description   |
+|-----------------------|---------------|
+| HasApprovals          |               |
+| HasConstraints        |               |
+| PartOfPset            |               |
+| PartOfComplex         |               |
+|                       |               |
+| PropertyForDependance |               |
+| PropertyDependsOn     |               |
+

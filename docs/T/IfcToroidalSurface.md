@@ -59,3 +59,16 @@ the resulting surface will be self-intersecting.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometryresource/lexical/ifctoroidalsurface.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                    |
+|-------------|--------------------------------|
+| MajorRadius | The major radius of the torus. |
+| MinorRadius | The minor radius of the torus. |
+
+Formal Propositions
+-------------------
+| Rule             | Description   |
+|------------------|---------------|
+| MajorLargerMinor |               |
+

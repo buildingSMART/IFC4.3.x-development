@@ -61,3 +61,12 @@ Figure 1 SectionedSurface with branching longitudinal breaklines
   
 
 
+Attribute definitions
+---------------------
+| Attribute             | Description                                                                                                                                                                                    |
+|-----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Directrix             | The curve used to define the sweeping operation                                                                                                                                                |
+| CrossSectionPositions | List of distance expressions in sequentially increasing order paired with CrossSections, indicating the position of the corresponding section along the Directrix.                             |
+| CrossSections         | List of cross sections in sequential order along the Directrix                                                                                                                                 |
+| FixedAxisVertical     | Indicates whether Sections are oriented with the Y axis of each profile facing upwards in +Z direction (True), or vertically perpendicular to the Directrix varying according to slope (False) |
+

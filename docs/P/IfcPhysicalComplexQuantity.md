@@ -25,3 +25,24 @@ _Discrimination_ attribute to characterize the complex quantities.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcquantityresource/lexical/ifcphysicalcomplexquantity.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute      | Description                                                                                                                                                            |
+|----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Discrimination | Identification of the discrimination by which this physical complex property is distinguished. Examples of discriminations are ''layer'', ''steel bar diameter'', etc. |
+| Quality        | Additional indication of a quality of the quantities that are grouped under this physical complex quantity.                                                            |
+| Usage          | Additional indication of a usage type of the quantities that are grouped under this physical complex quantity.                                                         |
+
+Formal Propositions
+-------------------
+| Rule                | Description   |
+|---------------------|---------------|
+| NoSelfReference     |               |
+| UniqueQuantityNames |               |
+
+Associations
+------------
+| Attribute     | Description   |
+|---------------|---------------|
+| HasQuantities |               |
+

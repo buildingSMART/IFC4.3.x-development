@@ -10,3 +10,15 @@ function is provide navigational instructions and warnings to vessels, this
 could be in the form of a floating buoy, a fixed beacon or sound signal.
 
 
+Attribute definitions
+---------------------
+| Attribute      | Description                                                                                        |
+|----------------|----------------------------------------------------------------------------------------------------|
+| PredefinedType | Identifies the predefined type of a navigational element from which the type modelled, may be set. |
+
+Associations
+------------
+| Attribute      | Description   |
+|----------------|---------------|
+| PredefinedType |               |
+

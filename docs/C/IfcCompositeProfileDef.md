@@ -55,3 +55,23 @@ single_L : IfcLShapeProfileDef := IfcLShapeProfileDef(AREA, ''L100X100X10'',
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcprofileresource/lexical/ifccompositeprofiledef.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                                                            |
+|-------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| Label       | The name by which the composition may be referred to. The actual meaning of the name has to be defined in the context of applications. |
+
+Formal Propositions
+-------------------
+| Rule                 | Description   |
+|----------------------|---------------|
+| InvariantProfileType |               |
+| NoRecursion          |               |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+| Profiles    |               |
+

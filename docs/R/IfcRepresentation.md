@@ -45,3 +45,20 @@ _IfcTopologyRepresentation_ shall have a well defined:
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcrepresentationresource/lexical/ifcrepresentation.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute                | Description                                                                                                                                                                                                                                                                                                                                                                |
+|--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| RepresentationIdentifier | The optional identifier of the representation as used within a project.                                                                                                                                                                                                                                                                                                    |
+| RepresentationType       | The description of the type of a representation context. The representation type defines the type of geometry or topology used for representing the product representation. More information is given at the subtypes _IfcShapeRepresentation_ and _IfcTopologyRepresentation_. \X\0DThe supported values for context type are to be specified by implementers agreements. |
+
+Associations
+------------
+| Attribute               | Description   |
+|-------------------------|---------------|
+| Items                   |               |
+| RepresentationMap       |               |
+| LayerAssignments        |               |
+| OfProductRepresentation |               |
+| ContextOfItems          |               |
+

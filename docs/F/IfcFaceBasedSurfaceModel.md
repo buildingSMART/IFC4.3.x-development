@@ -32,3 +32,15 @@ faces, edges or vertices.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricmodelresource/lexical/ifcfacebasedsurfacemodel.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                             |
+|-------------|---------------------------------------------------------|
+| Dim         | The space dimensionality of this class, it is always 3. |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| FbsmFaces   |               |
+

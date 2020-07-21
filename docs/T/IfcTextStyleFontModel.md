@@ -73,3 +73,19 @@ in cases, where no (list of) font families are provided.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcpresentationappearanceresource/lexical/ifctextstylefontmodel.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                                                                                                                                                                                                                                                        |
+|-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| FontFamily  | The value is a prioritized list of font family names and/or generic family names. The first list entry has the highest priority, if this font fails, the next list item shall be used. The last list item should (if possible) be a generic family.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  Attribute changed to being mandatory. |
+| FontStyle   | The font style property selects between normal (sometimes referred to as "roman" or "upright"), italic and oblique faces within a font family.                                                                                                                                                                                     |
+| FontVariant | The font variant property selects between normal and small-caps.\X\0D \X\0D> NOTE  It has been introduced for later compliance to full CSS1 support.                                                                                                                                                                               |
+| FontWeight  | The font weight property selects the weight of the font.\X\0D \X\0D> NOTE  Values other then ''normal'' and ''bold'' have been introduced for later compliance to full CSS1 support.                                                                                                                                               |
+| FontSize    | The font size provides the size or height of the text font.\X\0D \X\0D> NOTE  The following values are allowed, <_IfcLengthMeasure_, with positive values, the length unit is globally defined at _IfcUnitAssignment_.__                                                                                                           |
+
+Formal Propositions
+-------------------
+| Rule              | Description   |
+|-------------------|---------------|
+| MeasureOfFontSize |               |
+

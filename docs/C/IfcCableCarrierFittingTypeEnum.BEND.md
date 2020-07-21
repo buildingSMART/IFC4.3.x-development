@@ -1,2 +1,0 @@
-IfcCableCarrierFittingTypeEnum.BEND
-===================================

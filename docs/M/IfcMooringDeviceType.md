@@ -12,3 +12,15 @@ bollard used as an attachment point for lines or active equipment such as
 quick release hooks.
 
 
+Attribute definitions
+---------------------
+| Attribute      | Description                                                                                  |
+|----------------|----------------------------------------------------------------------------------------------|
+| PredefinedType | Identifies the predefined type of a mooring device from which the type modelled, may be set. |
+
+Associations
+------------
+| Attribute      | Description   |
+|----------------|---------------|
+| PredefinedType |               |
+

@@ -35,3 +35,25 @@ layer assignment of the _IfcShapeRepresentation_.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcpresentationorganizationresource/lexical/ifcpresentationlayerassignment.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute     | Description                                                 |
+|---------------|-------------------------------------------------------------|
+| Name          | Name of the layer.                                          |
+| Description   | Additional description of the layer.                        |
+| AssignedItems | The set of layered items, which are assigned to this layer. |
+| Identifier    | An (internal) identifier assigned to the layer.             |
+
+Formal Propositions
+-------------------
+| Rule            | Description   |
+|-----------------|---------------|
+| ApplicableItems |               |
+
+Associations
+------------
+| Attribute     | Description   |
+|---------------|---------------|
+| AssignedItems |               |
+| AssignedItems |               |
+

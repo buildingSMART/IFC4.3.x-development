@@ -42,3 +42,15 @@ Informal Propositions:
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricmodelresource/lexical/ifcrevolvedareasolidtapered.htm)
 
 
+Formal Propositions
+-------------------
+| Rule                     | Description   |
+|--------------------------|---------------|
+| CorrectProfileAssignment |               |
+
+Associations
+------------
+| Attribute    | Description   |
+|--------------|---------------|
+| EndSweptArea |               |
+

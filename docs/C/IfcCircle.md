@@ -55,3 +55,9 @@ layout")
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometryresource/lexical/ifccircle.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                 |
+|-------------|-------------------------------------------------------------|
+| Radius      | The radius of the circle, which shall be greater than zero. |
+

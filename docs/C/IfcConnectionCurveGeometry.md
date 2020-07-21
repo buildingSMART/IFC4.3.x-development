@@ -38,3 +38,10 @@ _IfcRelConnects_ with the associated _IfcConnectionCurveGeometry._
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricconstraintresource/lexical/ifcconnectioncurvegeometry.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute              | Description                                                                                                                                                                                                  |
+|------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| CurveOnRelatingElement | The bounded curve at which the connected objects are aligned at the relating element, given in the LCS of the relating element.                                                                              |
+| CurveOnRelatedElement  | The bounded curve at which the connected objects are aligned at the related element, given in the LCS of the related element. If the information is omitted, then the origin of the related element is used. |
+

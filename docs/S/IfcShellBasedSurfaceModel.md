@@ -29,3 +29,10 @@ vertices.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricmodelresource/lexical/ifcshellbasedsurfacemodel.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute    | Description                                             |
+|--------------|---------------------------------------------------------|
+| SbsmBoundary | $                                                       |
+| Dim          | The space dimensionality of this class, it is always 3. |
+

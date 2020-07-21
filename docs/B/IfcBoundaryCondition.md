@@ -15,3 +15,16 @@ structural member and the connection.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcstructuralloadresource/lexical/ifcboundarycondition.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                            |
+|-------------|--------------------------------------------------------|
+| Name        | Optionally defines a name for this boundary condition. |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+|             |               |
+

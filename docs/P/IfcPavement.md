@@ -11,8 +11,9 @@ or improved subgrade.
   
 
 
-Attributes
-----------
-| Attribute   | Definition   |
-|-------------|--------------|
-| Flexible    |              |
+Attribute definitions
+---------------------
+| Attribute   | Description                                     |
+|-------------|-------------------------------------------------|
+| Flexible    | Specifies if the pavement is rigid or flexible. |
+

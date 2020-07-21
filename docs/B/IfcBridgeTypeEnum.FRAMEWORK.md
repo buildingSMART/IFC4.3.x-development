@@ -1,5 +1,0 @@
-IfcBridgeTypeEnum.FRAMEWORK
-===========================
-$
-
-

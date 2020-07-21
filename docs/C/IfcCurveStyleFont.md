@@ -13,3 +13,15 @@ IfcCurveStyleFont
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcpresentationappearanceresource/lexical/ifccurvestylefont.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                    |
+|-------------|------------------------------------------------|
+| Name        | Name that may be assigned with the curve font. |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| PatternList |               |
+

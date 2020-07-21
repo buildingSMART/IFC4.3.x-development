@@ -31,3 +31,9 @@ IfcConversionBasedUnitWithOffset(
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcmeasureresource/lexical/ifcconversionbasedunitwithoffset.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute        | Description                                                                              |
+|------------------|------------------------------------------------------------------------------------------|
+| ConversionOffset | A positive or negative offset to add after the inherited _ConversionFactor_ was applied. |
+

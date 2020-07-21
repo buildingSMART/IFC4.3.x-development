@@ -10,3 +10,13 @@ This entity represents a person acting on behalf of an organization.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcactorresource/lexical/ifcpersonandorganization.htm)
 
 
+Associations
+------------
+| Attribute       | Description   |
+|-----------------|---------------|
+| Roles           |               |
+| TheOrganization |               |
+| ThePerson       |               |
+|                 |               |
+|                 |               |
+

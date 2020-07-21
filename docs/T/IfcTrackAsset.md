@@ -1,2 +1,8 @@
 IfcTrackAsset
 =============
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+

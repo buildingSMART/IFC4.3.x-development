@@ -42,3 +42,16 @@ to the corresponding object:
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifckernel/lexical/ifcpropertyset.htm)
 
 
+Formal Propositions
+-------------------
+| Rule                | Description   |
+|---------------------|---------------|
+| ExistsName          |               |
+| UniquePropertyNames |               |
+
+Associations
+------------
+| Attribute     | Description   |
+|---------------|---------------|
+| HasProperties |               |
+

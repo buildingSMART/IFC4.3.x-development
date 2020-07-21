@@ -1,2 +1,0 @@
-IfcLampTypeEnum.HIGHPRESSUREMERCURY
-===================================

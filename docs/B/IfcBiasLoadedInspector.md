@@ -5,3 +5,9 @@ biased.
   
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                   |
+|-------------|-------------------------------|
+| Type        | Type of bias loaded inspector |
+

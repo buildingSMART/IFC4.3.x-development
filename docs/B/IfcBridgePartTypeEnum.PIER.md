@@ -1,2 +1,0 @@
-IfcBridgePartTypeEnum.PIER
-==========================

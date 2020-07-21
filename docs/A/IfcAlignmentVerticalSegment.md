@@ -36,3 +36,20 @@ The elevation (= Cartesian Z-coordinate) of the starting point, the segment
 length and the starting gradient are defined for each geometric element.
 
 
+Attribute definitions
+---------------------
+| Attribute                  | Description                                                                                                            |
+|----------------------------|------------------------------------------------------------------------------------------------------------------------|
+| Starting Point             | Starting point defined by the distance along the horizontal alignment.                                                 |
+| Starting Point alternative | Alternative to the distance along the starting point can also be defined with horizontal Cartesian coordinates (X, Y). |
+| Starting Point Elevation   | Elevation of the starting point (= Cartesian Z-coordinate)                                                             |
+| Starting Direction         | Gradient (=Vertical azimuth) at the starting point                                                                     |
+| Segment Length             | Length of the vertical segment                                                                                         |
+| Tangential Continuity      | Tangential Continuity for the end point. Possible values are:
+
+  * Not connected according national regulation
+  * Connect with directional bend
+
+
+  * Connected                                                                                                                        |
+

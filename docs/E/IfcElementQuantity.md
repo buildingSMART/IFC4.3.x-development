@@ -68,3 +68,21 @@ The following general agreements apply for each base quantity set
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcproductextension/lexical/ifcelementquantity.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute           | Description                                                                                                                                                                                                                                                               |
+|---------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| MethodOfMeasurement | Name of the method of measurement used to calculate the element quantity. The method of measurement attribute has to be made recognizable by further agreements.\X\0D\X\0D{ .change-ifc2x2}\X\0D> IFC2x2 Addendum 1 change: The attribute has been changed to be optional |
+
+Formal Propositions
+-------------------
+| Rule                | Description   |
+|---------------------|---------------|
+| UniqueQuantityNames |               |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| Quantities  |               |
+

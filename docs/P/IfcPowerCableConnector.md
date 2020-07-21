@@ -1,2 +1,8 @@
 IfcPowerCableConnector
 ======================
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+

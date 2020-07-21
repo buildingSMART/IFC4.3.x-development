@@ -177,3 +177,26 @@ The following constraints apply to the 2D curve representation:
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcproductextension/lexical/ifcrelspaceboundary.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute                  | Description                                                                                                                                                                |
+|----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| RelatingSpace              | Reference to one spaces that is delimited by this boundary.                                                                                                                |
+| PhysicalOrVirtualBoundary  | Defines, whether the Space Boundary is physical (Physical) or virtual (Virtual).                                                                                           |
+| InternalOrExternalBoundary | Defines, whether the Space Boundary is internal (Internal), or external, i.e. adjacent to open space (that can be an partially enclosed space, such as terrace (External). |
+
+Formal Propositions
+-------------------
+| Rule              | Description   |
+|-------------------|---------------|
+| CorrectPhysOrVirt |               |
+
+Associations
+------------
+| Attribute              | Description   |
+|------------------------|---------------|
+| ConnectionGeometry     |               |
+| RelatedBuildingElement |               |
+| RelatingSpace          |               |
+| RelatingSpace          |               |
+

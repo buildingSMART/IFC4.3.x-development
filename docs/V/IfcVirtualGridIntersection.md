@@ -128,3 +128,16 @@ _IfcGrid.UAxes_ or _IfcGrid.VAxes_ of the corresponding _IfcGrid_.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricconstraintresource/lexical/ifcvirtualgridintersection.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute       | Description                                                                                                                                                                  |
+|-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| OffsetDistances | Offset distances to the grid axes. If given, it defines virtual offset curves to the grid axes. The intersection of the offset curves specify the virtual grid intersection. |
+
+Associations
+------------
+| Attribute        | Description   |
+|------------------|---------------|
+| IntersectingAxes |               |
+|                  |               |
+

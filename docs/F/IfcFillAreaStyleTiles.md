@@ -39,3 +39,16 @@ k\X\7E2\X\7E\\\\* R\X\7E2\X\7E_      _k\X\7E1\X\7E,k\X\7E2\X\7E_= -1,0,1 ,
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcpresentationappearanceresource/lexical/ifcfillareastyletiles.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                        |
+|-------------|------------------------------------------------------------------------------------|
+| TilingScale | The scale factor applied to each tile as it is placed in the annotation fill area. |
+
+Associations
+------------
+| Attribute     | Description   |
+|---------------|---------------|
+| TilingPattern |               |
+| Tiles         |               |
+

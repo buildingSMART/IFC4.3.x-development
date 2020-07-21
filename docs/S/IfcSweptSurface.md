@@ -27,3 +27,16 @@ resulting swept surface relative to the object coordinate system.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometryresource/lexical/ifcsweptsurface.htm)
 
 
+Formal Propositions
+-------------------
+| Rule           | Description   |
+|----------------|---------------|
+| SweptCurveType |               |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| Position    |               |
+| SweptCurve  |               |
+

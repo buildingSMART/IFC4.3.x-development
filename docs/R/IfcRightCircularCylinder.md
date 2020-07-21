@@ -119,3 +119,10 @@ Figure 2 -- Right circular cylinder textures
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricmodelresource/lexical/ifcrightcircularcylinder.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                     |
+|-------------|-----------------------------------------------------------------|
+| Height      | The distance between the planar circular faces of the cylinder. |
+| Radius      | The radius of the cylinder.                                     |
+

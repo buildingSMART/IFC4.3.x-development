@@ -8,3 +8,9 @@ or all of the functions of a track sectioning or track paralleling.
 (IEC 60050-811-36-12)
 
 
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+

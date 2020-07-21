@@ -48,3 +48,27 @@ Figure 1 -- Grid axis
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricconstraintresource/lexical/ifcgridaxis.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                                    |
+|-------------|----------------------------------------------------------------------------------------------------------------|
+| AxisTag     | The tag or name for this grid axis.                                                                            |
+| SameSense   | Defines whether the original sense of curve is used or whether it is reversed in the context of the grid axis. |
+
+Formal Propositions
+-------------------
+| Rule   | Description   |
+|--------|---------------|
+| WR1    |               |
+| WR2    |               |
+
+Associations
+------------
+| Attribute        | Description   |
+|------------------|---------------|
+| AxisCurve        |               |
+| PartOfU          |               |
+| PartOfW          |               |
+| PartOfV          |               |
+| HasIntersections |               |
+

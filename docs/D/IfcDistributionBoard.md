@@ -9,3 +9,15 @@ they can be viewed, operated or acted upon from a single place. Each connected
 item may have its own geometric representation and location.  
 
 
+Attribute definitions
+---------------------
+| Attribute      | Description   |
+|----------------|---------------|
+| PredefinedType |               |
+
+Associations
+------------
+| Attribute      | Description   |
+|----------------|---------------|
+| PredefinedType |               |
+

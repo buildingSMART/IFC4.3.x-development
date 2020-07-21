@@ -32,3 +32,11 @@ enforced by the global rule _IfcSingleProjectInstance_.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifckernel/lexical/ifcproject.htm)
 
 
+Formal Propositions
+-------------------
+| Rule            | Description   |
+|-----------------|---------------|
+| HasName         |               |
+| CorrectContext  |               |
+| NoDecomposition |               |
+

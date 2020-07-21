@@ -33,3 +33,23 @@ _IfcProject_ or _IfcProjectLibrary_ apply to all these elements.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifckernel/lexical/ifcreldeclares.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute          | Description                                                                                                                                              |
+|--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| RelatedDefinitions | Set of object or property definitions that are assigned to a context and to which the unit and representation context definitions of that context apply. |
+
+Formal Propositions
+-------------------
+| Rule            | Description   |
+|-----------------|---------------|
+| NoSelfReference |               |
+
+Associations
+------------
+| Attribute          | Description   |
+|--------------------|---------------|
+| RelatingContext    |               |
+| RelatedDefinitions |               |
+| RelatedDefinitions |               |
+

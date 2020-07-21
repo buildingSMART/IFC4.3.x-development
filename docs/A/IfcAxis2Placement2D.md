@@ -56,3 +56,23 @@ Figure 1 -- Axis2 placement 2D
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometryresource/lexical/ifcaxis2placement2d.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                                                                                                                                                                                                            |
+|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| P           | _P[1]_: The normalized direction of the placement X Axis. This is [1.0,0.0] if _RefDirection_ is omitted. \X\0D_P[2]_: The normalized direction of the placement Y Axis. This is a derived attribute and is orthogonal to P[1]. If _RefDirection_ is omitted, it defaults to [0.0,1.0] |
+
+Formal Propositions
+-------------------
+| Rule         | Description   |
+|--------------|---------------|
+| RefDirIs2D   |               |
+| LocationIs2D |               |
+
+Associations
+------------
+| Attribute    | Description   |
+|--------------|---------------|
+| RefDirection |               |
+|              |               |
+

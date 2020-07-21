@@ -36,3 +36,23 @@ _IfcRepresentationMap_''s, that allow for multiple geometric representations.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcstructuralelementsdomain/lexical/ifctendontype.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute        | Description                                                                                 |
+|------------------|---------------------------------------------------------------------------------------------|
+| NominalDiameter  | The nominal diameter defining the cross-section size of the prestressed part of the tendon. |
+| CrossSectionArea | The effective cross-section area of the prestressed part of the tendon.                     |
+| SheathDiameter   | Diameter of the sheeth (duct) around the tendon, if there is one with this type of tendon.  |
+
+Formal Propositions
+-------------------
+| Rule                  | Description   |
+|-----------------------|---------------|
+| CorrectPredefinedType |               |
+
+Associations
+------------
+| Attribute      | Description   |
+|----------------|---------------|
+| PredefinedType |               |
+

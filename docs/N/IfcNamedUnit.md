@@ -13,3 +13,24 @@ IfcNamedUnit
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcmeasureresource/lexical/ifcnamedunit.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description           |
+|-------------|-----------------------|
+| UnitType    | The type of the unit. |
+
+Formal Propositions
+-------------------
+| Rule   | Description   |
+|--------|---------------|
+| WR1    |               |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+| Dimensions  |               |
+|             |               |
+|             |               |
+

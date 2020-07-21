@@ -1,2 +1,0 @@
-IfcInterceptorTypeEnum.OIL
-==========================

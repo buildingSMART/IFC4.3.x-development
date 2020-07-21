@@ -20,3 +20,20 @@ solids the outside of the solid is to be taken as positive side.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcpresentationappearanceresource/lexical/ifcsurfacestyle.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                    |
+|-------------|----------------------------------------------------------------|
+| Side        | An indication of which side of the surface to apply the style. |
+| Styles      | A collection of different surface styles.                      |
+
+Formal Propositions
+-------------------
+| Rule             | Description   |
+|------------------|---------------|
+| MaxOneShading    |               |
+| MaxOneLighting   |               |
+| MaxOneRefraction |               |
+| MaxOneTextures   |               |
+| MaxOneExtDefined |               |
+

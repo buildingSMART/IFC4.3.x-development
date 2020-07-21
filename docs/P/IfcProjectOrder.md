@@ -16,3 +16,16 @@ schedule types and constraints.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcsharedmgmtelements/lexical/ifcprojectorder.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute       | Description                                                                                                                                                                                                             |
+|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Status          | The current status of a project order.Examples of status values that might be used for a project order status include:\X\0D* PLANNED\X\0D* REQUESTED\X\0D* APPROVED\X\0D* ISSUED\X\0D* STARTED\X\0D* DELAYED\X\0D* DONE |
+| LongDescription | A detailed description of the project order describing the work to be completed.                                                                                                                                        |
+
+Associations
+------------
+| Attribute      | Description   |
+|----------------|---------------|
+| PredefinedType |               |
+

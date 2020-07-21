@@ -1,2 +1,0 @@
-IfcStructuralCurveMemberTypeEnum.CABLE
-======================================

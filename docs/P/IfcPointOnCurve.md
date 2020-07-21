@@ -22,3 +22,16 @@ of the curve.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometryresource/lexical/ifcpointoncurve.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute      | Description                                                                                        |
+|----------------|----------------------------------------------------------------------------------------------------|
+| PointParameter | The parameter value of the point location.                                                         |
+| Dim            | The space dimensionality of this class, determined by the space dimensionality of the basis curve. |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| BasisCurve  |               |
+

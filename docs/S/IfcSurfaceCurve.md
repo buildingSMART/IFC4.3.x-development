@@ -33,3 +33,24 @@ senses.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometryresource/lexical/ifcsurfacecurve.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute            | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| MasterRepresentation | The <em<MasterRepresentation defines the curve used to determine the unique parametrisation of the _IfcSurfaceCurve_. \X\0DThe master_representation takes one of the values _Curve3D_, _PCurve_S1_ or _PCurve_S2_ to indicate a preference for the 3D curve, or the first or second pcurve, in the associated geometry list, respectively. Multiple representations provide the ability to communicate data in more than one form, even though the data is expected to be geometrically identical. \X\0D \X\0DNOTE  The master representation attribute acknowledges the impracticality of ensuring that multiple forms are indeed identical and allows the indication of a preferred form. This would probably be determined by the creator of the data. All characteristics, such as parametrisation, domain, and results of evaluation, for an entity having multiple representations, are derived from the master representation. Any use of the other representations is a compromise for practical considerations. |
+| BasisSurface         | The surface, or surfaces on which the _IfcSurfaceCurve_ lies. This is determined from the _AssociatedGeometry_ list.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+
+Formal Propositions
+-------------------
+| Rule             | Description   |
+|------------------|---------------|
+| CurveIs3D        |               |
+| CurveIsNotPcurve |               |
+
+Associations
+------------
+| Attribute          | Description   |
+|--------------------|---------------|
+| Curve3D            |               |
+| AssociatedGeometry |               |
+

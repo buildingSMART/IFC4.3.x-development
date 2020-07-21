@@ -51,3 +51,22 @@ by the applicable _IfcGeometricRepresentationContext_.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometryresource/lexical/ifcindexedpolycurve.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute     | Description                                                                                                                                                                                                                                                                                |
+|---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Segments      | List of straight line and circular arc segments, each providing a list of indices into the Cartesian point list. Indices should preserve consecutive connectivity between the segments, the start index of the next segment shall be identical with the end index of the previous segment. |
+| SelfIntersect | Indication of whether the curve intersects itself or not; this is for information only.                                                                                                                                                                                                    |
+
+Formal Propositions
+-------------------
+| Rule        | Description   |
+|-------------|---------------|
+| Consecutive |               |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| Points      |               |
+

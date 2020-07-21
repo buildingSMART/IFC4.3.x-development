@@ -82,3 +82,9 @@ Figure 2 -- Indexed triangle texture map geometry
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcpresentationappearanceresource/lexical/ifcindexedtriangletexturemap.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute     | Description                                                                                                       |
+|---------------|-------------------------------------------------------------------------------------------------------------------|
+| TexCoordIndex | Index into the _IfcTextureVertexList_ for each vertex of the triangles representing the _IfcTriangulatedFaceSet_. |
+

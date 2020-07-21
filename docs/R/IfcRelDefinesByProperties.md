@@ -25,3 +25,24 @@ objects then share the same property definition.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifckernel/lexical/ifcreldefinesbyproperties.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute                  | Description                                                                 |
+|----------------------------|-----------------------------------------------------------------------------|
+| RelatingPropertyDefinition | Reference to the property set definition for that object or set of objects. |
+
+Formal Propositions
+-------------------
+| Rule                | Description   |
+|---------------------|---------------|
+| NoRelatedTypeObject |               |
+
+Associations
+------------
+| Attribute                  | Description   |
+|----------------------------|---------------|
+| RelatedObjects             |               |
+| RelatedObjects             |               |
+| RelatedObjects             |               |
+| RelatingPropertyDefinition |               |
+

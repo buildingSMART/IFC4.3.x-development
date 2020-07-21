@@ -58,3 +58,19 @@ Relationship for spatial structure containment")
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcproductextension/lexical/ifcrelcontainedinspatialstructure.htm)
 
 
+Formal Propositions
+-------------------
+| Rule   | Description   |
+|--------|---------------|
+| WR31   |               |
+
+Associations
+------------
+| Attribute         | Description   |
+|-------------------|---------------|
+| RelatedElements   |               |
+| RelatedElements   |               |
+| RelatedElements   |               |
+| RelatedElements   |               |
+| RelatingStructure |               |
+

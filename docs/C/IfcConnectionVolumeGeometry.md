@@ -19,3 +19,10 @@ _RelatedElement_ by using the _VolumeOnRelatedElement_ attribute.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricconstraintresource/lexical/ifcconnectionvolumegeometry.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute               | Description                                                                                                  |
+|-------------------------|--------------------------------------------------------------------------------------------------------------|
+| VolumeOnRelatingElement | Volume at which related object overlaps with the relating element, given in the LCS of the relating element. |
+| VolumeOnRelatedElement  | Volume at which related object overlaps with the relating element, given in the LCS of the related element.  |
+

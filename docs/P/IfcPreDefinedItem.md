@@ -16,3 +16,9 @@ agreed by an external source).
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcpresentationappearanceresource/lexical/ifcpredefineditem.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                                                    |
+|-------------|--------------------------------------------------------------------------------------------------------------------------------|
+| Name        | The string by which the pre defined item is identified. Allowable values for the string are declared at the level of subtypes. |
+

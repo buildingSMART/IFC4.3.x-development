@@ -45,3 +45,15 @@ An _IfcTextureVertex_ is a list of 2 (S, T) texture coordinates.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcpresentationappearanceresource/lexical/ifctexturevertex.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                          |
+|-------------|--------------------------------------------------------------------------------------|
+| Coordinates | The first Coordinate[1] is the S, the second Coordinate[2] is the T parameter value. |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+

@@ -49,3 +49,26 @@ different kinds of geometric transformations.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometryresource/lexical/ifccartesiantransformationoperator.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                         |
+|-------------|-----------------------------------------------------------------------------------------------------|
+| Scale       | The scaling value specified for the transformation.                                                 |
+| Scl         | The derived scale S of the transformation, equal to scale if that exists, or 1.0 otherwise.         |
+| Dim         | The space dimensionality of this class, determined by the space dimensionality of the local origin. |
+
+Formal Propositions
+-------------------
+| Rule             | Description   |
+|------------------|---------------|
+| ScaleGreaterZero |               |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| LocalOrigin |               |
+| Axis1       |               |
+| Axis2       |               |
+|             |               |
+

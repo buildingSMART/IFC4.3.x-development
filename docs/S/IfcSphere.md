@@ -108,3 +108,9 @@ Figure 2 -- Sphere textures
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricmodelresource/lexical/ifcsphere.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description               |
+|-------------|---------------------------|
+| Radius      | The radius of the sphere. |
+

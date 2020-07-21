@@ -36,3 +36,18 @@ Material layer set")
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcmaterialresource/lexical/ifcmateriallayerset.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute      | Description                                                                                                                                                       |
+|----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| LayerSetName   | The name by which the _IfcMaterialLayerSet_ is known.                                                                                                             |
+| Description    | Definition of the _IfcMaterialLayerSet_ in descriptive terms.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  The attribute has been added at the end of attribute list. |
+| TotalThickness | Total thickness of the material layer set is derived from the function _IfcMlsTotalThickness._                                                                    |
+
+Associations
+------------
+| Attribute      | Description   |
+|----------------|---------------|
+| MaterialLayers |               |
+|                |               |
+

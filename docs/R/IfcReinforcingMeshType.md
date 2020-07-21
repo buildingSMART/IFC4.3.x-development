@@ -29,3 +29,31 @@ representations.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcstructuralelementsdomain/lexical/ifcreinforcingmeshtype.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute                       | Description                                                                                                                                                                                                                                                                                                                                                         |
+|---------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| MeshLength                      | The overall length of the mesh measured in its longitudinal direction.                                                                                                                                                                                                                                                                                              |
+| MeshWidth                       | The overall width of the mesh measured in its transversal direction.                                                                                                                                                                                                                                                                                                |
+| LongitudinalBarNominalDiameter  | The nominal diameter denoting the cross-section size of the longitudinal bars.                                                                                                                                                                                                                                                                                      |
+| TransverseBarNominalDiameter    | The nominal diameter denoting the cross-section size of the transverse bars.                                                                                                                                                                                                                                                                                        |
+| LongitudinalBarCrossSectionArea | The effective cross-section area of the longitudinal bars of the mesh.                                                                                                                                                                                                                                                                                              |
+| TransverseBarCrossSectionArea   | The effective cross-section area of the transverse bars of the mesh.                                                                                                                                                                                                                                                                                                |
+| LongitudinalBarSpacing          | The spacing between the longitudinal bars. Note: an even distribution of bars is presumed; other cases are handled by classification or property sets.                                                                                                                                                                                                              |
+| TransverseBarSpacing            | The spacing between the transverse bars. Note: an even distribution of bars is presumed; other cases are handled by classification or property sets.                                                                                                                                                                                                                |
+| BendingShapeCode                | If this mesh type is bent rather than planar, this attribute provides a shape code per a standard like ACI 315, ISO 3766, or a similar standard. It is presumed that a single standard for defining the mesh bending is used throughout the project and that this standard is referenced from the _IfcProject_ object through the _IfcDocumentReference_ mechanism. |
+| BendingParameters               | If this mesh type is bent rather than planar, this attribute provides bending shape parameters. Their meaning is defined by the bending shape code and the respective standard.                                                                                                                                                                                     |
+
+Formal Propositions
+-------------------
+| Rule                     | Description   |
+|--------------------------|---------------|
+| CorrectPredefinedType    |               |
+| BendingShapeCodeProvided |               |
+
+Associations
+------------
+| Attribute      | Description   |
+|----------------|---------------|
+| PredefinedType |               |
+

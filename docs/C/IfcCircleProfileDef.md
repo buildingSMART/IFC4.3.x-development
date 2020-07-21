@@ -29,3 +29,9 @@ Circle profile")
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcprofileresource/lexical/ifccircleprofiledef.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description               |
+|-------------|---------------------------|
+| Radius      | The radius of the circle. |
+

@@ -13,3 +13,10 @@ convertible into orthogonal height above/below the vertical datum.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricconstraintresource/lexical/ifcalignment2dvertical.htm)
 
 
+Associations
+------------
+| Attribute        | Description   |
+|------------------|---------------|
+| Segments         |               |
+| ToAlignmentCurve |               |
+

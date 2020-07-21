@@ -7,3 +7,9 @@ sections of an electrical network or a network of components carrying the
 electrical service.  
 
 
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+

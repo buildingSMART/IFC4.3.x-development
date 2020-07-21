@@ -60,3 +60,17 @@ Figure 2 -- Indexed colour map geometry
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcpresentationappearanceresource/lexical/ifcindexedcolourmap.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Opacity     | The the opacity value, that applies equaly to all faces of the tessellated face set. 1.0 means opaque, and 0.0 completely transparent. If not provided, 1.0 is assumed (all colours are opque).\X\0D\X\0D> NOTE  The definition of the alpha channel component for opacity follows the new definitions in image processing, where 0.0 means full transparency and 1.0 (or 2^bit depths^ -1) means fully opaque. This is contrary to the definition of transparency in _IfcSurfaceStyleShading_. |
+| ColourIndex | Index into the _IfcColourRgbList_ for each face of the _IfcTriangulatedFaceSet_. The colour is applied uniformly to the indexed face.                                                                                                                                                                                                                                                                                                                                                           |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| MappedTo    |               |
+| Colours     |               |
+

@@ -37,3 +37,16 @@ inside the applications.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifckernel/lexical/ifcrelnests.htm)
 
 
+Formal Propositions
+-------------------
+| Rule            | Description   |
+|-----------------|---------------|
+| NoSelfReference |               |
+
+Associations
+------------
+| Attribute      | Description   |
+|----------------|---------------|
+| RelatingObject |               |
+| RelatedObjects |               |
+

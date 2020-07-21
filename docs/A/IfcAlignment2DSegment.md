@@ -11,3 +11,11 @@ alignment segments.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricconstraintresource/lexical/ifcalignment2dsegment.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute            | Description                                                                                                                                                                                                                |
+|----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| TangentialContinuity | Connectivity between the continuous segments is not enforced per se to be tangential. Setting "TangentialContinuity" to True means that the current segment shall continue with tangential continuity to the previous one. |
+| StartTag             | Tag to annotate the start point of the alignment segment.                                                                                                                                                                  |
+| EndTag               | Tag to annotate the end point of the alignment segment.                                                                                                                                                                    |
+

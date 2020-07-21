@@ -14,3 +14,16 @@ same daylight saving offset.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcdatetimeresource/lexical/ifctimeperiod.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                    |
+|-------------|--------------------------------|
+| StartTime   | Start time of the time period. |
+| EndTime     | End time of the time period.   |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+

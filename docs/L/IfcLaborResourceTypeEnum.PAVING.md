@@ -1,2 +1,0 @@
-IfcLaborResourceTypeEnum.PAVING
-===============================

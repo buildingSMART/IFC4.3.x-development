@@ -7,3 +7,10 @@ the field of the loop, in order to provide an electric signal.
 [source: IEC 60050-821]
 
 
+Attribute definitions
+---------------------
+| Attribute             | Description   |
+|-----------------------|---------------|
+| Primary positioning   |               |
+| Secondary positioning |               |
+

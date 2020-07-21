@@ -16,3 +16,15 @@ values.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcdatetimeresource/lexical/ifcregulartimeseries.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                  |
+|-------------|----------------------------------------------|
+| TimeStep    | A duration of time intervals between values. |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| Values      |               |
+

@@ -1,2 +1,0 @@
-IfcDistributionSystemEnum.FUEL
-==============================

@@ -30,3 +30,15 @@ a composite curve segment and shall only be used to bound a surface.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometryresource/lexical/ifccompositecurveonsurface.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute    | Description                                          |
+|--------------|------------------------------------------------------|
+| BasisSurface | The surface on which the composite curve is defined. |
+
+Formal Propositions
+-------------------
+| Rule        | Description   |
+|-------------|---------------|
+| SameSurface |               |
+

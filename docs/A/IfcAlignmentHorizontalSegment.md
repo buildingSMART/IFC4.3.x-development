@@ -32,3 +32,16 @@ Additionally:
   
 
 
+Attribute definitions
+---------------------
+| Attribute             | Description                                                   |
+|-----------------------|---------------------------------------------------------------|
+| Starting Point        | Horizontal Cartesian coordinates (X, Y) of the starting point |
+| Starting Direction    | Horizontal azimuth at the starting point                      |
+| Segment Length        | Length of the horizontal segment                              |
+| Tangential Continuity | Tangential Continuity for the end point. Possible values are:
+
+  * Not connected according national regulation
+  * Connect with directional bend
+  * Connected                                                               |
+

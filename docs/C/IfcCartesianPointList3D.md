@@ -18,3 +18,16 @@ _CoordList_ is a two-dimensional list, where
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricmodelresource/lexical/ifccartesianpointlist3d.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                                                                                               |
+|-------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| CoordList   | Two-dimensional list of Cartesian points provided by three coordinates.                                                                                                   |
+| TagList     | List of tags corresponding to each point that may be used to identify a basis curve according to the Tag attribute at _IfcOffsetCurveByDistances_ or _IfcAlignmentCurve_. |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+

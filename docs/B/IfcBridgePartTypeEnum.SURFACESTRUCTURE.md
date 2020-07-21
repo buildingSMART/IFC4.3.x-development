@@ -1,5 +1,0 @@
-IfcBridgePartTypeEnum.SURFACESTRUCTURE
-======================================
-$
-
-

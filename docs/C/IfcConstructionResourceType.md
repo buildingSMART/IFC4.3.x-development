@@ -53,3 +53,10 @@ assignment.png "Figure 1 -- Construction resource type assignment")
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcconstructionmgmtdomain/lexical/ifcconstructionresourcetype.htm)
 
 
+Associations
+------------
+| Attribute    | Description   |
+|--------------|---------------|
+| BaseQuantity |               |
+| BaseCosts    |               |
+

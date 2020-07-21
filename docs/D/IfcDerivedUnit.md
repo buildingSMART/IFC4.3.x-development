@@ -14,3 +14,24 @@ IfcDerivedUnit
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcmeasureresource/lexical/ifcderivedunit.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute       | Description                                                                                                      |
+|-----------------|------------------------------------------------------------------------------------------------------------------|
+| UnitType        | Name of the derived unit chosen from an enumeration of derived unit types for use in IFC models.                 |
+| UserDefinedType | $                                                                                                                |
+| Dimensions      | Dimensional exponents derived using the function IfcDerivedDimensionalExponents using (SELF) as the input value. |
+
+Formal Propositions
+-------------------
+| Rule   | Description   |
+|--------|---------------|
+| WR1    |               |
+| WR2    |               |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| Elements    |               |
+

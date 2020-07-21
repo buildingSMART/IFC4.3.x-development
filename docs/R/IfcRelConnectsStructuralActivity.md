@@ -9,3 +9,16 @@ connection, or element.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcstructuralanalysisdomain/lexical/ifcrelconnectsstructuralactivity.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute       | Description                                                                           |
+|-----------------|---------------------------------------------------------------------------------------|
+| RelatingElement | Reference to a structural item or element to which the specified activity is applied. |
+
+Associations
+------------
+| Attribute                 | Description   |
+|---------------------------|---------------|
+| RelatingElement           |               |
+| RelatedStructuralActivity |               |
+

@@ -63,3 +63,20 @@ Figure 1 -- Z-shape profile
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcprofileresource/lexical/ifczshapeprofiledef.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute       | Description                                                       |
+|-----------------|-------------------------------------------------------------------|
+| Depth           | Web length, see illustration above (= h).                         |
+| FlangeWidth     | Flange length, see illustration above (= b).                      |
+| WebThickness    | Constant wall thickness of web, see illustration above (= ts).    |
+| FlangeThickness | Constant wall thickness of flange, see illustration above (= tg). |
+| FilletRadius    | Fillet radius according the above illustration (= r1).            |
+| EdgeRadius      | Edge radius according the above illustration (= r2).              |
+
+Formal Propositions
+-------------------
+| Rule                 | Description   |
+|----------------------|---------------|
+| ValidFlangeThickness |               |
+

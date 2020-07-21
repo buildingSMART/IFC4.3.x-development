@@ -20,3 +20,16 @@ from supertypes:
   
 
 
+Attribute definitions
+---------------------
+| Attribute      | Description                                                                                                                                                                                                                                                                                |
+|----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| PredefinedType | Predefined types of built systems.                                                                                                                                                                                                                                                         |
+| LongName       | Long name for a built system, used for informal purposes. It should be used, if available, in conjunction with the inherited Name attribute.NOTE In many scenarios the Name attribute refers to the short name or number of a built system, and the LongName refers to a descriptive name. |
+
+Associations
+------------
+| Attribute      | Description   |
+|----------------|---------------|
+| PredefinedType |               |
+

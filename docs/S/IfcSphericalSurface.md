@@ -49,3 +49,9 @@ R(sin _v_) **z**
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometryresource/lexical/ifcsphericalsurface.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description               |
+|-------------|---------------------------|
+| Radius      | The radius of the sphere. |
+

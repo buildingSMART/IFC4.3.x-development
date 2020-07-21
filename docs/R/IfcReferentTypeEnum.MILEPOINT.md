@@ -1,5 +1,0 @@
-IfcReferentTypeEnum.MILEPOINT
-=============================
-$
-
-

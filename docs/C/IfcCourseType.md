@@ -14,3 +14,15 @@ Structurally a course does not have capacity to carry loads over open span, or
 to be removed or replaced as a single unit.
 
 
+Attribute definitions
+---------------------
+| Attribute      | Description                                                                                   |
+|----------------|-----------------------------------------------------------------------------------------------|
+| PredefinedType | Identifies the predefined types of a course element from which the type modelled, may be set. |
+
+Associations
+------------
+| Attribute      | Description   |
+|----------------|---------------|
+| PredefinedType |               |
+

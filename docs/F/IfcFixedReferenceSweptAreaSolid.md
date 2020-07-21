@@ -73,3 +73,15 @@ directrix at any point along this curve.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricmodelresource/lexical/ifcfixedreferencesweptareasolid.htm)
 
 
+Formal Propositions
+-------------------
+| Rule             | Description   |
+|------------------|---------------|
+| DirectrixBounded |               |
+
+Associations
+------------
+| Attribute      | Description   |
+|----------------|---------------|
+| FixedReference |               |
+

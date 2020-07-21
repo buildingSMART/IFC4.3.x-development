@@ -7,3 +7,9 @@ collection. Each length of the contact wire overlaps with the next so that the
 pantograph slides smoothly from one to the other.(UIC R 791-2006)
 
 
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+

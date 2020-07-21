@@ -19,6 +19,9 @@ import express
 import logging
 logging.basicConfig(level=logging.DEBUG)
 
+# The order in which definitions are to appear in the Express schema
+EXPRESS_ORDER=("TYPE", "ENUM", "SELECT", "ENTITY", "FUNCTION", "RULE")
+
 def float_international(s):
     return float(s.replace(',', '.'))
 
@@ -36,8 +39,6 @@ xmi = xmi.doc(fn)
 
 connector_data = namedtuple("connector_data", ("is_inverse", "inverse_order", "aggregation_type", "is_optional"))
 assocation_data = namedtuple("assocation_data", ("own_end", "type", "other_end", "asssocation"))
-# The order in which definitions are to appear in the Express schema
-EXPRESS_ORDER=("TYPE", "ENUM", "SELECT", "ENTITY", "FUNCTION", "RULE")
 
 # Extract some data from the connectors for use later on
 connectors = defaultdict(dict)

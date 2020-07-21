@@ -15,3 +15,16 @@ curve parameterization. If no EndParam is provided the end defaults to the end
 of the directrix.  
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                                                                                                   |
+|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| StartParam  | The parameter value on the Directrix at which the sweeping operation commences. If no value is provided the start of the sweeping operation is at the start of the Directrix. |
+| EndParam    | The parameter value on the Directrix at which the sweeping operation ends. If no value is provided the end of the sweeping operation is at the end of the Directrix.          |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| Directrix   |               |
+

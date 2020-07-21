@@ -7,3 +7,9 @@ components, with a minimum of 50 % of the cross sectional-area hollow
 throughout its length.
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                    |
+|-------------|------------------------------------------------------------------------------------------------|
+| Purpose     | What's the purpose of the hollow sleeper? Eg. cable trenching, protection of turnout mechanism |
+

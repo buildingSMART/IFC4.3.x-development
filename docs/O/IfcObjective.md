@@ -21,3 +21,23 @@ is applied and to capture the benchmark metrics of the constraint.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcconstraintresource/lexical/ifcobjective.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute            | Description                                                                                                                                                                                                                                                                                                    |
+|----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| LogicalAggregator    | Enumeration that identifies the logical type of aggregation for the benchmark metrics.\X\0D\X\0D{ .change-ifc2x4}\X\0D> IFC2X4 CHANGE  This attribute replaces replaces the former _ResultValues_ attribute and indicates the aggregation behavior formerly defined at _IfcConstraintAggregationRelationship_. |
+| ObjectiveQualifier   | Enumeration that qualifies the type of objective constraint.                                                                                                                                                                                                                                                   |
+| UserDefinedQualifier | A user defined value that qualifies the type of objective constraint when ObjectiveQualifier attribute of type _IfcObjectiveEnum_ has value USERDEFINED.                                                                                                                                                       |
+
+Formal Propositions
+-------------------
+| Rule   | Description   |
+|--------|---------------|
+| WR21   |               |
+
+Associations
+------------
+| Attribute       | Description   |
+|-----------------|---------------|
+| BenchmarkValues |               |
+

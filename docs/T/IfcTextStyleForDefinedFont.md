@@ -22,3 +22,16 @@ to the text literal.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcpresentationappearanceresource/lexical/ifctextstylefordefinedfont.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute        | Description                                                                                       |
+|------------------|---------------------------------------------------------------------------------------------------|
+| Colour           | This property describes the text color of an element (often referred to as the foreground color). |
+| BackgroundColour | This property sets the background color of an element.                                            |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+

@@ -58,3 +58,10 @@ inner boundary.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcpresentationdefinitionresource/lexical/ifcannotationfillarea.htm)
 
 
+Associations
+------------
+| Attribute       | Description   |
+|-----------------|---------------|
+| OuterBoundary   |               |
+| InnerBoundaries |               |
+

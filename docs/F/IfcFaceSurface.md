@@ -47,3 +47,15 @@ face surface shall lie on the face geometry.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifctopologyresource/lexical/ifcfacesurface.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                                                                          |
+|-------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
+| SameSense   | This flag indicates whether the sense of the surface normal agrees with (TRUE), or opposes (FALSE), the sense of the topological normal to the face. |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| FaceSurface |               |
+

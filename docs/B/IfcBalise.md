@@ -6,3 +6,10 @@ signal conditions of the line ahead.
 [source: IEC 60050-821]
 
 
+Attribute definitions
+---------------------
+| Attribute             | Description   |
+|-----------------------|---------------|
+| Primary positioning   |               |
+| Secondary positioning |               |
+

@@ -35,3 +35,23 @@ layer.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcpresentationorganizationresource/lexical/ifcpresentationlayerwithstyle.htm)
 
 
+Attribute definitions
+---------------------
+| Attribute    | Description                                                                                                                                                             |
+|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| LayerOn      | A logical setting, TRUE indicates that the layer is set to ''On'', FALSE that the layer is set to ''Off'', UNKNOWN that such information is not available.              |
+| LayerFrozen  | A logical setting, TRUE indicates that the layer is set to ''Frozen'', FALSE that the layer is set to ''Not frozen'', UNKNOWN that such information is not available.   |
+| LayerBlocked | A logical setting, TRUE indicates that the layer is set to ''Blocked'', FALSE that the layer is set to ''Not blocked'', UNKNOWN that such information is not available. |
+
+Formal Propositions
+-------------------
+| Rule                  | Description   |
+|-----------------------|---------------|
+| ApplicableOnlyToItems |               |
+
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+| LayerStyles |               |
+

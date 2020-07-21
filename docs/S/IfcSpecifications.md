@@ -1,2 +1,8 @@
 IfcSpecifications
 =================
+Associations
+------------
+| Attribute   | Description   |
+|-------------|---------------|
+|             |               |
+

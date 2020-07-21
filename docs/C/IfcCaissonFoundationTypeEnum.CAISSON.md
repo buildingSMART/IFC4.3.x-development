@@ -1,5 +1,0 @@
-IfcCaissonFoundationTypeEnum.CAISSON
-====================================
-Closed box.
-
-

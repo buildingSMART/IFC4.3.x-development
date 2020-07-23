@@ -3,6 +3,7 @@ import logging
 express_basic_types = {"REAL", "NUMBER", "BINARY", "BOOLEAN", "INTEGER", "STRING", "LOGICAL"}
 
 def ifc_name(name):
+    if name.startswith("ENUMERATION"): return name
     if name.startswith("Ifc"): return name
     for ebt in express_basic_types: 
         if ebt in name: return name

@@ -22,6 +22,10 @@ logging.basicConfig(level=logging.DEBUG)
 # The order in which definitions are to appear in the Express schema
 EXPRESS_ORDER=("TYPE", "ENUM", "SELECT", "ENTITY", "FUNCTION", "RULE")
 
+def unescape(s):
+    # @todo this is bizarre encoding, what happened here?
+    return html.unescape(html.unescape(s.replace('xx38', '&')))
+
 def float_international(s):
     return float(s.replace(',', '.'))
 
@@ -72,6 +76,20 @@ for o in xmi/"thecustomprofile:ExpressOrdering":
     d = o.attributes()
     dk = [k for k in d.keys() if k.startswith('base_')][0]
     order[d[dk]] = int(d['ExpressOrdering'])
+    
+def yield_parents(node):
+    yield node
+    if node.parentNode:
+        yield from yield_parents(node.parentNode)
+        
+def get_path(xmi_node):
+    nodes = list(yield_parents(xmi_node.xml))
+    def get_name(n):
+        if n.attributes:
+            v = n.attributes.get('name')
+            if v: return v.value
+    node_names = [get_name(n) for n in nodes]
+    return node_names[::-1]
 
 def generate_definitions():
     """
@@ -81,6 +99,11 @@ def generate_definitions():
     """
     
     for d in xmi.by_tag_and_type["element"]["uml:DataType"]:
+       
+        P = " ".join(map(str, get_path(xmi.by_id[d.idref])))
+        print(P)
+        if "to be replaced" in P:
+            continue
        
         dd = xmi.by_id[d.idref]
         try:
@@ -96,11 +119,19 @@ def generate_definitions():
                 continue
         
         cs = sorted(d/"constraint", key=lambda cc: float_international(cc.weight))
-        constraints = map(lambda cc: "\t%s : %s;" % tuple(map(html.unescape, map(functools.partial(getattr, cc), ("name", "description")))), cs)            
+        constraints = map(lambda cc: "\t%s : %s;" % tuple(map(unescape, map(functools.partial(getattr, cc), ("name", "description")))), cs)            
         
         yield "TYPE", d.name, express.format_simple_type(d.name, super, constraints, super_verbatim=super_verbatim)
         
     for c in xmi.by_tag_and_type["element"]["uml:Class"]:
+    
+        P = " ".join(map(str, get_path(xmi.by_id[c.idref])))
+        print(P)
+        if "to be replaced" in P:
+            continue
+            
+        if c.name == "IfcSimplePropertyTemplateTypeEnum":
+            import pdb; pdb.set_trace()
     
         stereotype = (c/"properties")[0].stereotype
         if stereotype is not None: 
@@ -108,7 +139,12 @@ def generate_definitions():
         
         if stereotype in {"express function", "express rule"}:
             
-            yield stereotype.split(" ")[1].upper(), html.unescape((c|"behaviour").value).split(" ")[1], html.unescape((c|"behaviour").value) + ";"
+            yield stereotype.split(" ")[1].upper(), unescape((c|"behaviour").value).split(" ")[1], unescape((c|"behaviour").value) + ";"
+            
+        elif stereotype == 'predefinedtype':
+            
+            # A predefined type enumeration value, handled as part of 'ptcontainer'
+            continue
         
         elif stereotype == "express select":
             
@@ -116,14 +152,32 @@ def generate_definitions():
             yield "SELECT", c.name, express.format_type(c.name, "SELECT", values)
             
         elif stereotype == "enumeration":
-        
+            
             def try_get_order(a):
                 try:
                     return int([t for t in a/("tag") if t.name == "ExpressOrdering"][0].value)
                 except IndexError as e:
                     return 0
                     
+            if "penum_" in c.name.lower():
+                continue
+                    
             values = map(operator.itemgetter(1), sorted(map(lambda a: (try_get_order(a), a.name), c/("attribute"))))
+            yield "ENUM", c.name, express.format_type(c.name, "ENUMERATION OF", values)
+            
+        elif stereotype == 'templatecontainer':
+            
+            values = [xmi.by_id[d.supplier].name for d in xmi.by_tag_and_type["packagedElement"]["uml:Dependency"] if d.client==c.idref]
+            # @todo ExpressOrdering on <element>
+            yield "ENUM", c.name, express.format_type(c.name, "ENUMERATION OF", values)
+            
+        elif stereotype == 'ptcontainer':
+            
+            values = [x.name.split('.')[1] for x in xmi.by_tag_and_type["element"]["uml:Class"] if x.name.startswith(c.name + ".")]
+            
+            if "USERDEFINED" not in values: values.append("USERDEFINED")
+            if "NOTDEFINED" not in values: values.append("NOTDEFINED")
+            
             yield "ENUM", c.name, express.format_type(c.name, "ENUMERATION OF", values)
             
         elif stereotype is not None and (stereotype.startswith("pset") or stereotype == "$"):
@@ -215,7 +269,7 @@ def generate_definitions():
                         continue
                     
                 if is_derived:
-                    derived.append("\t%s : %s;" % (n, html.unescape((la|"Constraint").notes)))
+                    derived.append("\t%s : %s;" % (n, unescape((la|"Constraint").notes)))
                     continue
                 attribute_names.add(n)
                 tv = express.ifc_name(xmi.by_id[t].name)
@@ -224,7 +278,7 @@ def generate_definitions():
                 attributes.append((ordering, "\t%s : %s%s;" % (n, is_optional_string, tv)))
             
             cs = sorted(c/("constraint"), key=lambda cc: float_international(cc.weight))
-            constraints = map(lambda cc: (cc.type, "\t%s : %s;" % tuple(map(html.unescape, map(functools.partial(getattr, cc), ("name", "description"))))), cs)
+            constraints = map(lambda cc: (cc.type, "\t%s : %s;" % tuple(map(unescape, map(functools.partial(getattr, cc), ("name", "description"))))), cs)
             constraints_by_type = defaultdict(list)
             for ct, cc in constraints:
                 constraints_by_type[ct].append(cc)

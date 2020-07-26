@@ -130,9 +130,6 @@ def generate_definitions():
         if "to be replaced" in P:
             continue
             
-        if c.name == "IfcSimplePropertyTemplateTypeEnum":
-            import pdb; pdb.set_trace()
-    
         stereotype = (c/"properties")[0].stereotype
         if stereotype is not None: 
             stereotype = stereotype.lower()

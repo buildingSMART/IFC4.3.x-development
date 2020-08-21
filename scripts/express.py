@@ -4,6 +4,7 @@ express_basic_types = {"REAL", "NUMBER", "BINARY", "BOOLEAN", "INTEGER", "STRING
 
 def ifc_name(name):
     if name.startswith("ENUMERATION"): return name
+    if name.startswith("SELECT"): return name
     if name.startswith("Ifc"): return name
     for ebt in express_basic_types: 
         if ebt in name: return name
@@ -44,7 +45,7 @@ def format_entity(name, attributes, derived, inverses, where_clauses, unique_cla
             logging.warning("Multiple super types for %s", name)
         if len(supertypes):
             semi = "" if len(subtypes) else ";"
-            yield "%s SUPERTYPE OF (ONEOF\n%s))" % (abstract_string, "\n".join(map(lambda v: "\t%s%s" % (",("[v[0] == 0], ifc_name(v[1])), enumerate(supertypes)))) + semi
+            yield "%s SUPERTYPE OF (ONEOF\n%s))" % (abstract_string, "\n".join(map(lambda v: "\t%s%s" % (",("[v[0] == 0], ifc_name(v[1])), enumerate(sorted(supertypes))))) + semi
         if len(subtypes) == 1:
             yield " SUBTYPE OF (%s);" % ifc_name(subtypes[0])
         for label, li in zip(adic_labels, adic):

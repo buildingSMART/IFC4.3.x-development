@@ -10,6 +10,7 @@ install:
   - # sudo apt-get install texlive-full imagemagick
   - # sudo rm /etc/ImageMagick-6/policy.xml
   - # python3 -m pip install hilbertcurve
+  - python3 -m pip install tabulate
 script:
   - python3 scripts/main.py
 after_success:

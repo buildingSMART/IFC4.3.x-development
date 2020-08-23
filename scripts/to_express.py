@@ -128,6 +128,17 @@ def skip_this_path(P):
     skipped = "to be replaced", "PIM Common", "PIM Track Track-Transfer", "PIM Track Track Structural", "PIM Signalling", "PIM Telecom", "PIM Energy", "Example", "Road related zones and areas", "Ports and Waterways _Workbench", "Common Schema _Workbench", "Bridge Geometric representation", "WIP"
     return any(s in P for s in skipped)
     
+included_packages = set(("IFC 4.2 schema (13.11.2019)", "Common Schema", "IFC Ports and Waterways", "IFC Road", "IFC Rail - PSM"))
+excluded_stereotypes = set(("propertyset", "quantityset", "penumtype", "virtualentity"))
+included_statuses = set(("implemented", "proposed", "proposedmodification", "deprecated", "approved", "candidate"))
+
+# Assert that we indeed have all `included_packages` in the UML
+packagenames_from_uml = set(map(operator.attrgetter('name'), xmi.by_tag_and_type["packagedElement"]["uml:Package"]))
+assert len(included_packages - packagenames_from_uml) == 0
+
+def skip_by_package(element):
+    return not (set(get_path(xmi.by_id[element.idref])) & included_packages)
+    
 where_pat = re.compile(r"'\w+\.(\w+(\.\w+)?)'")
 def fix_schema_name(s):
     def repl(x):
@@ -147,42 +158,25 @@ def generate_definitions():
     a: an element in EXPRESS_ORDER
     b: an type/entity/function definition string
     """
+           
+    for c in (xmi.by_tag_and_type["element"]["uml:Class"] + xmi.by_tag_and_type["element"]["uml:Interface"] + xmi.by_tag_and_type["element"]["uml:Enumeration"] + xmi.by_tag_and_type["element"]["uml:DataType"]):
     
-    for d in xmi.by_tag_and_type["element"]["uml:DataType"]:
-       
-        P = " ".join(map(str, get_path(xmi.by_id[d.idref])))
-        print(P)
-        if skip_this_path(P):
-            continue
-       
-        dd = xmi.by_id[d.idref]
-        try:
-            super = [t for t in d/"tag" if t.name == "ExpressDefinition"][0].value
-            super_verbatim = True
-        except IndexError as e:
-            try:
-                super = xmi.by_id[(dd|"generalization").general].name
-                super_verbatim = False
-            except ValueError as ee:
-                # if the type does not have a generalization, let's assume it's one of EXPRESS' native types
-                logging.warning("No generalization found on %s, omitting", d)
-                continue
-        
-        cs = sorted(d/"constraint", key=lambda cc: float_international(cc.weight))
-        constraints = map(lambda cc: "\t%s : %s;" % tuple(map(unescape, map(functools.partial(getattr, cc), ("name", "description")))), cs)            
-        
-        yield "TYPE", d.name, express.format_simple_type(d.name, super, constraints, super_verbatim=super_verbatim)
-        
-    for c in (xmi.by_tag_and_type["element"]["uml:Class"] + xmi.by_tag_and_type["element"]["uml:Interface"] + xmi.by_tag_and_type["element"]["uml:Enumeration"]):
-    
-        P = " ".join(map(str, get_path(xmi.by_id[c.idref])))
-        print(P)
-        if skip_this_path(P):
+        if skip_by_package(c):
             continue
             
         stereotype = (c/"properties")[0].stereotype if (c/"properties") else None
         if stereotype is not None: 
             stereotype = stereotype.lower()
+            
+        if stereotype in excluded_stereotypes:
+            continue
+            
+        status = (c/"project")[0].status if (c/"project") else None
+        if status is not None: 
+            status = status.lower()
+            
+        if status not in included_statuses:
+            continue
         
         if stereotype in {"express function", "express rule"}:
             
@@ -197,12 +191,32 @@ def generate_definitions():
             
             continue
             
+        elif c.xmi_type == "uml:DataType":
+        
+            dd = xmi.by_id[c.idref]
+            try:
+                super = [t for t in c/"tag" if t.name == "ExpressDefinition"][0].value
+                super_verbatim = True
+            except IndexError as e:
+                try:
+                    super = xmi.by_id[(dd|"generalization").general].name
+                    super_verbatim = False
+                except ValueError as ee:
+                    # if the type does not have a generalization, let's assume it's one of EXPRESS' native types
+                    logging.warning("No generalization found on %s, omitting", c)
+                    continue
+            
+            cs = sorted(c/"constraint", key=lambda cc: float_international(cc.weight))
+            constraints = map(lambda cc: "\t%s : %s;" % tuple(map(unescape, map(functools.partial(getattr, cc), ("name", "description")))), cs)            
+            
+            yield "TYPE", c.name, express.format_simple_type(c.name, super, constraints, super_verbatim=super_verbatim)
+            
         elif c.xmi_type == "uml:Enumeration":
         
             if "penum_" in c.name.lower():
                 continue
-        
-            values = [x.name for x in c/"ownedLiteral"]
+                
+            values = [x.name for x in xmi.by_id[c.xmi_idref]/"ownedLiteral"]
             yield "ENUM", c.name, express.format_type(c.name, "ENUMERATION OF", values)
         
         elif stereotype == "express select" or stereotype == "select" or c.xmi_type == "uml:Interface":
@@ -225,9 +239,22 @@ def generate_definitions():
             yield "ENUM", c.name, express.format_type(c.name, "ENUMERATION OF", values)
             
         elif stereotype == 'ptcontainer':
+        
+            # if c.name == "IfcRoadPartTypeEnum":
+            #     import pdb; pdb.set_trace()
                 
-            nodes = [x for x in xmi.by_tag_and_type["element"]["uml:Class"] if x.name.startswith(c.name + ".")]
-            values = list(map(operator.itemgetter(1), sorted(map(lambda a: (try_get_order(a), a.name.split('.')[1]), nodes))))
+            ids = [d.end for d in (c/"Dependency") if d.start == c.xmi_idref]
+            if not ids:
+                print("Warning, no dependency relationship for %s" % c.name)
+                nodes = [x for x in xmi.by_tag_and_type["element"]["uml:Class"] if x.name.startswith(c.name + ".")]
+                values = list(map(operator.itemgetter(1), sorted(map(lambda a: (try_get_order(a), a.name.split('.')[1]), nodes))))               
+            else:
+                def get_element(id): return [n for n in xmi.by_tag_and_type['element']['uml:Class'] if n.idref==id][0]
+                elems = list(map(get_element, ids))
+                def get_stereotype(elem): return (elem/"properties")[0].stereotype if (elem/"properties") else None
+                stereotypes = list(map(get_stereotype, elems))
+                filtered_elems = [e for e,s in zip(elems, stereotypes) if s.lower() != 'virtualentity']
+                values = [e.name.split('.')[-1] for e in filtered_elems]
             
             if "USERDEFINED" not in values: values.append("USERDEFINED")
             if "NOTDEFINED" not in values: values.append("NOTDEFINED")
@@ -382,9 +409,16 @@ def generate_definitions():
                     derived.append("\t%s : %s;" % (n, unescape((la|"Constraint").notes)))
                     continue
                 attribute_names.add(n)
+                
                 tv = express.ifc_name(xmi.by_id[t].name)
                 if express_aggr:
                     tv = "%s %s OF %s" % (express_aggr, bound, tv)
+                
+                override = la.tags().get("ExpressDefinition")
+                if override:
+                    tv = override
+                    is_optional_string = ""
+                    
                 attributes.append((ordering, "\t%s : %s%s;" % (n, is_optional_string, tv)))
             
             cs = sorted(c/("constraint"), key=lambda cc: float_international(cc.weight))

@@ -8,6 +8,8 @@ from . import nodes
 
 fn1, fn2, output = sys.argv[1:]
 
+print("Running difference", *sys.argv[1:])
+
 def eq(a, b):
     if (type(a) != type(b)):
         return False

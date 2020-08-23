@@ -1,5 +1,5 @@
 language: python
-python: "3.7"
+python: "3.6"
 env:
   global:
     - REPO=IFC4.3.x-output

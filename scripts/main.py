@@ -6,7 +6,7 @@ import subprocess
 def relative_path(*args):
     return os.path.abspath(os.path.join(os.path.dirname(__file__), *args))
 
-reference_dir = os.path.join(os.path.dirname(__file__), "..", "reference_schemas")
+reference_dir = relative_path("..", "reference_schemas")
 scripts = "to_express", "to_po", "to_bsdd"
 extensions = "exp", "po", "json"
 
@@ -18,5 +18,7 @@ for ffn in glob.glob(relative_path("..", "schemas", "*.xml")):
     for script, ext in zip(scripts, extensions):
         print("Running:", script)
         subprocess.call([sys.executable, relative_path(script + ".py"), ffn, relative_path("..", "output", fn[:-4] + "." + ext)])
+        if ext == "exp":
+            subprocess.call([sys.executable, "-m", "express_diff", os.path.join(reference_dir, "IFC4x3_RC1.exp"), relative_path("..", "output", fn[:-4] + "." + ext), relative_path("..", "output", fn[:-4] + "." + ext + ".md")], cwd=relative_path("."))
     # subprocess.call([sys.executable, relative_path("process_schema.py"), ffn])
     

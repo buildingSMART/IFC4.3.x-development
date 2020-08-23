@@ -34,8 +34,8 @@ def format_type(name, type, values):
     ))
     
 def format_entity(name, attributes, derived, inverses, where_clauses, unique_clauses, subtypes, supertypes, is_abstract):
-    adic = map(list, (attributes, derived, inverses, where_clauses, unique_clauses))
-    adic_labels = None, "DERIVE", "INVERSE", "WHERE", "UNIQUE"
+    adic = map(list, (attributes, derived, inverses, unique_clauses, where_clauses))
+    adic_labels = None, "DERIVE", "INVERSE", "UNIQUE", "WHERE"
     abstract_string = ["", " ABSTRACT"][is_abstract]
     
     def _():

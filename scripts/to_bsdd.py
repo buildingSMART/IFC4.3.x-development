@@ -25,6 +25,25 @@ schema_name = "".join(["_", c][c.isalnum()] for c in schema_name)
 schema_name = re.sub(r"_+", "_", schema_name)
 schema_name = schema_name.strip('_')
 
+def yield_parents(node):
+    yield node
+    if node.parentNode:
+        yield from yield_parents(node.parentNode)
+
+def get_path(xmi_node):
+    nodes = list(yield_parents(xmi_node.xml))
+    def get_name(n):
+        if n.attributes:
+            v = n.attributes.get('name')
+            if v: return v.value
+    node_names = [get_name(n) for n in nodes]
+    return node_names[::-1]
+    
+included_packages = set(("IFC 4.2 schema (13.11.2019)", "Common Schema", "IFC Ports and Waterways", "IFC Road", "IFC Rail - PSM"))
+
+def skip_by_package(element):
+    return not (set(get_path(xmi_doc.by_id[element.idref])) & included_packages)
+
 def generate_definitions():
     """
     A generator that yields tuples of <a, b> with
@@ -45,9 +64,11 @@ def generate_definitions():
     
     class_name_to_node = {}
     
-    # @todo add pset name
-    
     for c in xmi_doc.by_tag_and_type["element"]["uml:Class"]:
+        
+        if skip_by_package(c):
+            continue
+    
         class_name_to_node[c.name] = c
         stereotype = (c/"properties")[0].stereotype
         if stereotype is not None: 
@@ -128,7 +149,7 @@ def generate_definitions():
                 if type_values:
                     classifications[class_name]["Psets"][pset_name]["Properties"][a.name]['values'] = type_values
 
-    class_names = sorted(classifications.keys())
+    class_names = sorted(classifications.keys() | {c.get('Parent') for c in classifications.values() if c.get('Parent')})
     annotated = set()
     
     def annotate_parent(cn):      

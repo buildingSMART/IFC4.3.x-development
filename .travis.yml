@@ -1,5 +1,4 @@
-language: python
-python: "3.6"
+dist: focal
 env:
   global:
     - REPO=IFC4.3.x-output
@@ -10,6 +9,7 @@ install:
   - # sudo apt-get install texlive-full imagemagick
   - # sudo rm /etc/ImageMagick-6/policy.xml
   - # python3 -m pip install hilbertcurve
+  - sudo apt-get update -y && sudo apt-get install -y python3 python3-pip
   - python3 -m pip install tabulate
 script:
   - python3 scripts/main.py

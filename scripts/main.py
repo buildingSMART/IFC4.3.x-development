@@ -17,8 +17,11 @@ for ffn in glob.glob(relative_path("..", "schemas", "*.xml")):
     if not os.path.exists(relative_path("..", "output")): os.makedirs(relative_path("..", "output"))
     for script, ext in zip(scripts, extensions):
         print("Running:", script)
-        subprocess.call([sys.executable, relative_path(script + ".py"), ffn, relative_path("..", "output", fn[:-4] + "." + ext)])
-        if ext == "exp":
-            subprocess.call([sys.executable, "-m", "express_diff", os.path.join(reference_dir, "IFC4x3_RC1.exp"), relative_path("..", "output", fn[:-4] + "." + ext), relative_path("..", "output", fn[:-4] + "." + ext + ".md")], cwd=relative_path("."))
-    # subprocess.call([sys.executable, relative_path("process_schema.py"), ffn])
+        subprocess.check_call([sys.executable, relative_path(script + ".py"), ffn, relative_path("..", "output", fn[:-4] + "." + ext)])
+        if script == "to_express":
+            subprocess.check_call([sys.executable, "-m", "express_diff", os.path.join(reference_dir, "IFC4x3_RC1.exp"), relative_path("..", "output", fn[:-4] + "." + ext), relative_path("..", "output", fn[:-4] + "." + ext + ".md")], cwd=relative_path("."))
+        elif script == "to_bsdd":
+            subprocess.check_call([sys.executable, relative_path("validate_bsdd.py"), relative_path("..", "output", fn[:-4] + "." + ext)])
+
+    # subprocess.check_call([sys.executable, relative_path("process_schema.py"), ffn])
     

@@ -168,8 +168,24 @@ def generate_definitions():
         except ValueError as e:
             print(e, file=sys.stderr)
                 
-                
+    
+    product = [c for c in xmi_doc.by_tag_and_type['element']['uml:Class'] if c.name == 'IfcProduct'][0]
+    def element_by_id(id):
+        return [x for x in xmi_doc.by_tag_and_type['element']['uml:Class'] if x.idref==id][0]
+        
+    subtypes = []
+    def visit_subtypes(t):
+        sts = [element_by_id(g.start) for g in (t|"links")/"Generalization" if g.end == t.idref]
+        subtypes.extend(x.name for x in sts)
+        for t in sts:
+            visit_subtypes(t)
+    
+    visit_subtypes(product)
+    
     for cn in class_names:
+        annotate_parent(cn)
+        
+    for cn in subtypes:
         annotate_parent(cn)
         
     return data

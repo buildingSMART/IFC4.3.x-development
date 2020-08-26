@@ -1,6 +1,7 @@
 import os
 import re
 import sys
+import html
 import json
 
 from collections import defaultdict
@@ -43,6 +44,16 @@ included_packages = set(("IFC 4.2 schema (13.11.2019)", "Common Schema", "IFC Po
 
 def skip_by_package(element):
     return not (set(get_path(xmi_doc.by_id[element.idref])) & included_packages)
+    
+HTML_TAG_PATTERN = re.compile('<.*?>')
+MULTIPLE_SPACE_PATTERN = re.compile(r'\s+')
+def strip_html(s):
+    S = html.unescape(s or '')
+    i = S.find('\n')
+    return re.sub(HTML_TAG_PATTERN, '', S)
+    
+def format(s):
+    return re.sub(MULTIPLE_SPACE_PATTERN, ' ', ''.join([' ', c][c.isalnum() or c in '.,'] for c in s)).strip()
 
 def generate_definitions():
     """
@@ -109,6 +120,8 @@ def generate_definitions():
                 # @todo filter this based on inheritance hierarchy
                 type_refs_without_type = [s for s in type_refs if 'Type' not in s][0]
                 classifications[class_name]['Parent'] = type_refs_without_type
+                
+            classifications[class_name]['Description'] = format(strip_html((class_element/"properties")[0].documentation))
             
             def generalization(pe):
                 try:
@@ -140,6 +153,8 @@ def generate_definitions():
                         continue
                         
                 classifications[class_name]["Psets"][pset_name]["Properties"][a.name]['type'] = type_name
+                classifications[class_name]["Psets"][pset_name]["Properties"][a.name]["Description"] = format(strip_html((a|"documentation").value))
+                
                 type_to_values = {
                     'boolean': ['TRUE','FALSE'],
                     'logical': ['TRUE','FALSE','UNKNOWN'],
@@ -151,6 +166,9 @@ def generate_definitions():
 
     class_names = sorted(classifications.keys() | {c.get('Parent') for c in classifications.values() if c.get('Parent')})
     annotated = set()
+    
+    def element_by_id(id):
+        return [x for x in xmi_doc.by_tag_and_type['element']['uml:Class'] if x.idref==id][0]        
     
     def annotate_parent(cn):      
         if cn in annotated: return
@@ -164,15 +182,13 @@ def generate_definitions():
                 if rel.start == node.idref:
                     pc = xmi_doc.by_id[rel.end]
                     classifications[cn]["Parent"] = pc.name
+                    classifications[cn]['Description'] = format(strip_html((element_by_id(rel.end)/"properties")[0].documentation))
                     annotate_parent(pc.name)
         except ValueError as e:
             print(e, file=sys.stderr)
                 
     
     product = [c for c in xmi_doc.by_tag_and_type['element']['uml:Class'] if c.name == 'IfcProduct'][0]
-    def element_by_id(id):
-        return [x for x in xmi_doc.by_tag_and_type['element']['uml:Class'] if x.idref==id][0]
-        
     subtypes = []
     def visit_subtypes(t):
         sts = [element_by_id(g.start) for g in (t|"links")/"Generalization" if g.end == t.idref]

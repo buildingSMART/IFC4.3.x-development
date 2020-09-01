@@ -182,7 +182,7 @@ def generate_definitions():
                 if rel.start == node.idref:
                     pc = xmi_doc.by_id[rel.end]
                     classifications[cn]["Parent"] = pc.name
-                    classifications[cn]['Description'] = format(strip_html((element_by_id(rel.end)/"properties")[0].documentation))
+                    classifications[cn]['Description'] = format(strip_html((element_by_id(rel.start)/"properties")[0].documentation))
                     annotate_parent(pc.name)
         except ValueError as e:
             print(e, file=sys.stderr)

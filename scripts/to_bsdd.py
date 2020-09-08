@@ -73,6 +73,37 @@ def generate_definitions():
         }
     }
     
+    def process_pt(class_element):
+        class_name = class_element.name
+        if "." not in class_name:
+            print("WARNING:", "Unexpected naming pattern on", class_element)
+            return None
+        enum, class_name = class_name.split('.')
+        enum_types = [x for x in xmi_doc.by_tag_and_type["element"]["uml:Class"] if x.name == enum]
+        if len(enum_types) != 1:
+            print("Warning: ", enum_types, class_element)
+            return None
+        enum_id = enum_types[0].idref
+        type_refs = []
+        for assoc in xmi_doc.by_tag_and_type["packagedElement"]["uml:Association"]:
+            try:
+                c1, c2 = assoc/'ownedEnd'
+            except ValueError as e:
+                # print("encountered exception `%s' on %s" % (e, assoc))
+                continue
+            assoc_type_refs = set(map(lambda c: (c|"type").idref, (c1, c2)))
+            if enum_id in assoc_type_refs:
+                other_idref = list(assoc_type_refs - {enum_id})[0]
+                type_refs.append(xmi_doc.by_id[other_idref].name)
+        # @todo filter this based on inheritance hierarchy
+        type_refs_without_type = [s for s in type_refs if 'Type' not in s]
+        if len(type_refs_without_type) != 1:
+            print("WARNING:", len(type_refs_without_type), "type associations on", class_element, file=sys.stderr)
+        else:
+            classifications[class_name]['Parent'] = type_refs_without_type[0]
+            classifications[class_name]['Description'] = format(strip_html((class_element/"properties")[0].documentation))
+        return class_name
+    
     class_name_to_node = {}
     
     for c in xmi_doc.by_tag_and_type["element"]["uml:Class"]:
@@ -82,9 +113,13 @@ def generate_definitions():
     
         class_name_to_node[c.name] = c
         stereotype = (c/"properties")[0].stereotype
-        if stereotype is not None: 
-            stereotype = stereotype.lower()  
-        if stereotype and stereotype.startswith("pset"):
+        if stereotype is not None:
+            stereotype = stereotype.lower()
+            
+        if stereotype == "predefinedtype":
+            process_pt(c)
+            
+        elif stereotype and stereotype.startswith("pset"):
             pset_name = c.name
             try:
                 class_idref = (c|"links"|"Realisation").start
@@ -99,29 +134,12 @@ def generate_definitions():
             
             # Lookup enum value -> enum type -> associated type entity -> associated entity
             if class_stereotype == 'PredefinedType':
-                assert "." in class_name
-                enum, class_name = class_name.split('.')
-                enum_types = [x for x in xmi_doc.by_tag_and_type["element"]["uml:Class"] if x.name == enum]
-                if len(enum_types) != 1:
-                    print("Warning: ", enum_types, class_)
+                pt = process_pt(class_element)
+                if pt is None:
                     continue
-                enum_id = enum_types[0].idref
-                type_refs = []
-                for assoc in xmi_doc.by_tag_and_type["packagedElement"]["uml:Association"]:
-                    try:
-                        c1, c2 = assoc/'ownedEnd'
-                    except ValueError as e:
-                        # print("encountered exception `%s' on %s" % (e, assoc))
-                        continue
-                    assoc_type_refs = set(map(lambda c: (c|"type").idref, (c1, c2)))
-                    if enum_id in assoc_type_refs:
-                        other_idref = list(assoc_type_refs - {enum_id})[0]
-                        type_refs.append(xmi_doc.by_id[other_idref].name)
-                # @todo filter this based on inheritance hierarchy
-                type_refs_without_type = [s for s in type_refs if 'Type' not in s][0]
-                classifications[class_name]['Parent'] = type_refs_without_type
-                
-            classifications[class_name]['Description'] = format(strip_html((class_element/"properties")[0].documentation))
+                class_name = pt
+            else:    
+                classifications[class_name]['Description'] = format(strip_html((class_element/"properties")[0].documentation))
             
             def generalization(pe):
                 try:

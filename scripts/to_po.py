@@ -52,6 +52,11 @@ def format(s):
 def annotate(s):
     return re.sub(all_names, lambda match: "[[%s]]" % match.group(0), s)
     
+print('msgid ""', file=OUTPUT)
+print('msgstr ""', file=OUTPUT)
+print('"X-Crowdin-SourceKey: msgstr\n"', file=OUTPUT)
+print(file=OUTPUT)
+    
 for i, ((ln, col), p, d) in enumerate(generate_definitions()):
     print('#:', bfn, ':', ln, sep='', file=OUTPUT)
     

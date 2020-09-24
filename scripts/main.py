@@ -8,8 +8,10 @@ def relative_path(*args):
 
 reference_dir = relative_path("..", "reference_schemas")
 scripts = "to_express", "to_po", "to_bsdd"
-extensions = "exp", "po", "json"
+extensions = "exp", "pot", "json"
 
+# check PO file for non-unique keys with
+# grep msgid ifc.pot | sort | uniq -d
 
 for ffn in glob.glob(relative_path("..", "schemas", "*.xml")):
     fn = os.path.basename(ffn)

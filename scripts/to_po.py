@@ -4,7 +4,7 @@ import sys
 import html
 import operator
 
-import xmi
+from xmi_document import xmi_document
 
 try:
     fn = sys.argv[1]
@@ -16,13 +16,10 @@ except:
     print("Usage: python to_po.py <schema.xml>", file=sys.stderr)
     exit()
 
-xmi_doc = xmi.doc(fn)
+xmi_doc = xmi_document(fn)
 bfn = os.path.basename(fn)
 
-schema_name = xmi_doc.by_tag_and_type["packagedElement"]['uml:Package'][1].name.replace("exp", "").upper()
-schema_name = "".join(["_", c][c.isalnum()] for c in schema_name)
-schema_name = re.sub(r"_+", "_", schema_name)
-schema_name = schema_name.strip('_')
+all_names = re.compile("\\b(%s)\\b" % "|".join(sorted((item.name for item in xmi_doc if item.type != "FUNCTION"), key=lambda s: -len(s))))
 
 HTML_TAG_PATTERN = re.compile('<.*?>')
 MULTIPLE_SPACE_PATTERN = re.compile(' +')
@@ -37,61 +34,33 @@ def valid_key(s):
     return ''.join(c if c.isalnum() else '_' for c in s).strip('_')
 
 def generate_definitions():
-    """
-    A generator that yields tuples of <a, b> with
-    a: location in file
-    a: a fully qualifying key as tuple
-    b: the documentation string
-    """
-    
-    def process(node):
-        loc = xmi_doc.locate(node)
-        # import pdb; pdb.set_trace()
-        docs = (node/"properties")[0].documentation
-        return loc, (schema_name, valid_key(node.name)), docs
-    
-    for d in xmi_doc.by_tag_and_type["element"]["uml:DataType"]:
-        yield process(d)
+    for item in xmi_doc:
+        loc = xmi_doc.xmi.locate(item.node)
+        yield loc, (valid_key(item.node.name),), item.documentation
         
-    for c in xmi_doc.by_tag_and_type["element"]["uml:Class"]:
-        yield process(c)
+        if item.type in {"ENUM", "ENTITY"}:
+            for subitem in item:
+                loc = xmi_doc.xmi.locate(subitem.node)
+                yield loc, (valid_key(item.node.name), valid_key(subitem.name)), subitem.documentation
         
-        stereotype = (c/"properties")[0].stereotype
-        if stereotype is not None: 
-            stereotype = stereotype.lower()
-        
-        if stereotype == "enumeration":
-        
-            def try_get_order(a):
-                try:
-                    return int([t for t in a/("tag") if t.name == "ExpressOrdering"][0].value)
-                except IndexError as e:
-                    return 0
-                    
-            values = map(operator.itemgetter(1), sorted(map(lambda a: (try_get_order(a), a), c/("attribute"))))
-            for v in values:
-                loc = xmi_doc.locate(v)
-                docs = (v|"properties").documentation
-                yield loc, (schema_name, valid_key(c.name), valid_key(v.name)), docs
-                
-        else:
-            for la in c/("attribute"):
-                loc = xmi_doc.locate(la)
-                docs = (la|"properties").documentation
-                yield loc, (schema_name, valid_key(c.name), valid_key(la.name)), docs
+def quote(s):
+    return '"%s"' % s
         
 def format(s):
-    return '"%s"' % re.sub(MULTIPLE_SPACE_PATTERN, ' ', ''.join([' ', c][c.isalnum() or c in '.,'] for c in s)).strip()
+    return quote(re.sub(MULTIPLE_SPACE_PATTERN, ' ', ''.join([' ', c][c.isalnum() or c in '.,'] for c in s)).strip())
+    
+def annotate(s):
+    return re.sub(all_names, lambda match: "[[%s]]" % match.group(0), s)
     
 for i, ((ln, col), p, d) in enumerate(generate_definitions()):
     print('#:', bfn, ':', ln, sep='', file=OUTPUT)
     
-    print("msgid", "_".join(p[1:]),  file=OUTPUT)
+    print("msgid", quote("_".join(p)),  file=OUTPUT)
     print("msgstr", format(p[-1]),  file=OUTPUT)
     print(file=OUTPUT)
     
-    print("msgid", "_".join(p[1:] + ("DEFINITION",)),  file=OUTPUT)
-    print("msgstr", format(strip_html(d or '')),  file=OUTPUT)
+    print("msgid", quote("_".join(p + ("DEFINITION",))),  file=OUTPUT)
+    print("msgstr", annotate(format(strip_html(d or ''))),  file=OUTPUT)
     print(file=OUTPUT)
     
     if (i % 1000) == 0 and i:

@@ -114,7 +114,7 @@ class doc(base):
     def locate(self, node):
         # pat = r'(?<=<)(%s[^\\/]*?xmi:idref="%s"[^\\/]*?)((?= \\/>)|(?=>))' % (node.xml.tagName, node.idref)
         # offset = next(re.finditer(pat, self.text)).span()[0]
-        offset = self.text.find('id="' + node.idref)
+        offset = self.text.find('id="' + (node.idref or node.id))
         line_no = bisect.bisect_left(self.linebreaks, offset)
         char = self.linebreaks[line_no] - offset
         line_no += 1

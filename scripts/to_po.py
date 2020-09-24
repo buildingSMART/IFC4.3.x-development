@@ -54,7 +54,7 @@ def annotate(s):
     
 print('msgid ""', file=OUTPUT)
 print('msgstr ""', file=OUTPUT)
-print('"X-Crowdin-SourceKey: msgstr\n"', file=OUTPUT)
+print('"X-Crowdin-SourceKey: msgstr\\n"', file=OUTPUT)
 print(file=OUTPUT)
     
 for i, ((ln, col), p, d) in enumerate(generate_definitions()):

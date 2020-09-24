@@ -107,7 +107,13 @@ class xmi_item:
         return iter(self.children)
         
     def _get_documentation(self):
-        return (self.node/"properties")[0].documentation
+        ds = (self.node/"documentation")
+        if ds:
+            return ds[0].value
+        else:
+            ps = (self.node/"properties")
+            if ps:
+                return ps[0].documentation
         
     documentation = property(_get_documentation)
     
@@ -324,7 +330,7 @@ class xmi_document:
                     n = a.name
                     attribute_names.add(n)
 
-                attributes, inverses, derived, subtypes, supertypes = [], [], [], [], []
+                attributes, inverses, derived, subtypes, supertypes, children = [], [], [], [], [], []
                 
                 for g in c/("Generalization"):
                     start, end = g.start, g.end
@@ -391,6 +397,8 @@ class xmi_document:
                                 logging.warning("No attribute order on %s.%s" % (c.name, nm))
                                 attribute_order = 1000
                             attributes.append((attribute_order, "\t%s : %s%s;" % (nm, is_optional_string, attr_entity)))
+                            
+                        children.append((nm, assoc_node))
                     else:
                         # mark as optional for when emitted as an UML attribute below
                         attributes_optional[nm] = is_optional
@@ -444,6 +452,7 @@ class xmi_document:
                         
                     if is_derived:
                         derived.append("\t%s : %s;" % (n, unescape((la|"Constraint").notes)))
+                        children.append((n, la))
                         continue
                     attribute_names.add(n)
                     
@@ -457,6 +466,8 @@ class xmi_document:
                         is_optional_string = ""
                         
                     attributes.append((ordering, "\t%s : %s%s;" % (n, is_optional_string, tv)))
+                    
+                    children.append((n, la))
                 
                 cs = sorted(c/("constraint"), key=lambda cc: float_international(cc.weight))
                 constraints = map(lambda cc: (cc.type, "\t%s : %s;" % tuple(map(unescape, map(functools.partial(getattr, cc), ("name", "description"))))), cs)
@@ -467,4 +478,4 @@ class xmi_document:
                 attributes = map(operator.itemgetter(1), sorted(attributes))
                 inverses = map(operator.itemgetter(1), sorted(inverses))
                 
-                yield xmi_item("ENTITY", c.name, express.format_entity(c.name, attributes, derived, inverses, constraints_by_type["EXPRESS_WHERE"], constraints_by_type["EXPRESS_UNIQUE"], subtypes, supertypes, is_abstract), c)
+                yield xmi_item("ENTITY", c.name, express.format_entity(c.name, attributes, derived, inverses, constraints_by_type["EXPRESS_WHERE"], constraints_by_type["EXPRESS_UNIQUE"], subtypes, supertypes, is_abstract), c, children)

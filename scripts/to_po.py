@@ -41,7 +41,7 @@ def generate_definitions():
         if item.type in {"ENUM", "ENTITY"}:
             for subitem in item:
                 loc = xmi_doc.xmi.locate(subitem.node)
-                yield loc, (valid_key(item.node.name), valid_key(subitem.name)), subitem.documentation
+                yield loc, (valid_key(item.node.name), valid_key(subitem.name)), (subitem.documentation or subitem.name)
         
 def quote(s):
     return '"%s"' % s

@@ -12,10 +12,14 @@ included_packages = set((
     "IFC Road", 
     "IFC Rail - PSM"))
     
-excluded_stereotypes = set((
+# currently not used
+express_excluded_stereotypes = set((
     "propertyset", 
     "quantityset", 
     "penumtype", 
+    "virtualentity"))
+    
+all_excluded_stereotypes = set((
     "virtualentity"))
     
 included_statuses = set((
@@ -205,7 +209,7 @@ class xmi_document:
             if stereotype is not None: 
                 stereotype = stereotype.lower()
                 
-            if stereotype in excluded_stereotypes:
+            if stereotype in all_excluded_stereotypes:
                 continue
                 
             status = (c/"project")[0].status if (c/"project") else None
@@ -252,12 +256,11 @@ class xmi_document:
                 
             elif c.xmi_type == "uml:Enumeration":
             
-                if "penum_" in c.name.lower():
-                    continue
-                
                 get_attribute = lambda n: [x for x in self.xmi.by_idref[n.xmi_id] if x.xml.tagName == "attribute"][0]
                 values = [(x.name, get_attribute(x)) for x in self.xmi.by_id[c.xmi_idref]/"ownedLiteral"]
-                yield xmi_item("ENUM", c.name, express.format_type(c.name, "ENUMERATION OF", [a for a, b in values]), c, values)
+                yield xmi_item(
+                    "PENUM" if stereotype == "penumtype" or c.name.lower().startswith("penum_") else "ENUM", # <------- nb 
+                    c.name, express.format_type(c.name, "ENUMERATION OF", [a for a, b in values]), c, values)
             
             elif stereotype == "express select" or stereotype == "select" or c.xmi_type == "uml:Interface":
                 

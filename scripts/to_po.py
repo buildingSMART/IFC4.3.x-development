@@ -25,7 +25,7 @@ HTML_TAG_PATTERN = re.compile('<.*?>')
 MULTIPLE_SPACE_PATTERN = re.compile(' +')
 def strip_html(s):
     S = html.unescape(s)
-    i = S.find('\n')
+    i = S.find('\\n')
     if i != -1:
         S = S[:i]
     return re.sub(HTML_TAG_PATTERN, '', S)
@@ -35,10 +35,11 @@ def valid_key(s):
 
 def generate_definitions():
     for item in xmi_doc:
+
         loc = xmi_doc.xmi.locate(item.node)
         yield loc, (valid_key(item.node.name),), item.documentation
         
-        if item.type in {"ENUM", "ENTITY", "PSET"}:
+        if item.type in {"ENUM", "ENTITY", "PSET", "PENUM"}:
             for subitem in item:
                 loc = xmi_doc.xmi.locate(subitem.node)
                 yield loc, (valid_key(item.node.name), valid_key(subitem.name)), (subitem.documentation or subitem.name)
@@ -52,11 +53,20 @@ def format(s):
 def annotate(s):
     return re.sub(all_names, lambda match: "[[%s]]" % match.group(0), s)
     
-print('msgid ""', file=OUTPUT)
-print('msgstr ""', file=OUTPUT)
-print('"X-Crowdin-SourceKey: msgstr\\n"', file=OUTPUT)
-print(file=OUTPUT)
     
+print("""# Industry Foundation Classes IFC.
+# Copyright (C) 2020 buildingSMART
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\\n"
+"POT-Creation-Date: 2020-09-25 10:09+0200\\n"
+"X-Crowdin-SourceKey: msgstr\\n"
+"Language-Team: buildingSMART community\\n"
+""", file=OUTPUT)
+
 for i, ((ln, col), p, d) in enumerate(generate_definitions()):
     print('#:', bfn, ':', ln, sep='', file=OUTPUT)
     

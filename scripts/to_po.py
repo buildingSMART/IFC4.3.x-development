@@ -38,7 +38,7 @@ def generate_definitions():
         loc = xmi_doc.xmi.locate(item.node)
         yield loc, (valid_key(item.node.name),), item.documentation
         
-        if item.type in {"ENUM", "ENTITY"}:
+        if item.type in {"ENUM", "ENTITY", "PSET"}:
             for subitem in item:
                 loc = xmi_doc.xmi.locate(subitem.node)
                 yield loc, (valid_key(item.node.name), valid_key(subitem.name)), (subitem.documentation or subitem.name)

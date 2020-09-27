@@ -108,7 +108,7 @@ class xmi_item:
         
     def _get_documentation(self):
         ds = (self.node/"documentation")
-        if ds:
+        if len(ds) == 1:
             return ds[0].value
         else:
             ps = (self.node/"properties")
@@ -226,7 +226,9 @@ class xmi_document:
                 
             elif stereotype == "propertyset" or stereotype == "quantityset" or (stereotype is not None and stereotype.startswith("pset_")):
                 
-                continue
+                yield xmi_item("PSET", c.name, "", c, [
+                    (x.name, x) for x in c/("attribute")
+                ])
                 
             elif c.xmi_type == "uml:DataType":
             

@@ -37,7 +37,7 @@ emitted = set()
 
 xdoc = xmi_document(fn)
 
-for itm in sorted(xdoc, key=sort_key):
+for itm in sorted((x for x in xdoc if x.type in EXPRESS_ORDER), key=sort_key):
     if (itm.type, itm.name) in emitted:
         logging.warning("duplicate definition for %s %s", itm.type, itm.name)
         continue

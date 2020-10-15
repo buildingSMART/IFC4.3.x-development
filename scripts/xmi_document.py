@@ -112,7 +112,7 @@ class xmi_item:
         
     def _get_documentation(self):
         ds = (self.node/"documentation")
-        if len(ds) == 1:
+        if len(ds) == 1 and self.node.xml.tagName != 'element':
             return ds[0].value
         else:
             ps = (self.node/"properties")
@@ -228,7 +228,7 @@ class xmi_document:
                 # A predefined type enumeration value, handled as part of 'ptcontainer'
                 continue
                 
-            elif stereotype == "propertyset" or stereotype == "quantityset" or (stereotype is not None and stereotype.startswith("pset_")):
+            elif stereotype == "propertyset" or stereotype == "quantityset" or (stereotype is not None and (stereotype.startswith("pset_") or stereotype.startswith("qto_"))):
                 
                 yield xmi_item("PSET", c.name, "", c, [
                     (x.name, x) for x in c/("attribute")

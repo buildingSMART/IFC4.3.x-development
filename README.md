@@ -11,3 +11,5 @@ Repository to collect updates to the IFC4.3 UML schema. The following automated 
 Both schema and tooling are currently under development and do not yet have official status within buildingSMART International.
 
 Place schemas for conversion in the `./schemas/` directory.
+
+(C) buildingSMART International Ltd. All rights reserved untill formal release.

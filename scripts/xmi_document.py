@@ -281,6 +281,11 @@ class xmi_document:
 
                 nodes = [[x for x in self.xmi.by_idref[d.supplier] if x.xml.tagName == "element"][0] for d in self.xmi.by_tag_and_type["packagedElement"]["uml:Dependency"] if d.client==c.idref]
                 values = [(n.name, n) for n in nodes]
+                
+                # NB This is actually a fix of the schema
+                if c.name == "IfcPropertySetTemplateTypeEnum":
+                    values.insert(0, ("NOTDEFINED", None))
+                
                 # @todo ExpressOrdering on <element>
                 yield xmi_item("ENUM", c.name, express.format_type(c.name, "ENUMERATION OF", [a for a, b in values]), c, values)
                 

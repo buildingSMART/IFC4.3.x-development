@@ -404,7 +404,7 @@ class xmi_document:
                         
                     # bound != "[0:?]" and 
                     # inverse attributes always aggregates?
-                    if is_inverse and end_node.isOrdered is None and bound != "[1:1]":
+                    if is_inverse and end_node.isOrdered is None: # and bound != "[1:1]":
                         express_aggr = "SET"
                         
                     is_optional_string = "OPTIONAL " if is_optional else ""                    

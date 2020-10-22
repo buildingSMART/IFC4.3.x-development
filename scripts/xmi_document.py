@@ -55,7 +55,7 @@ def unescape(s):
 def float_international(s):
     return float(s.replace(',', '.'))
     
-connector_data = namedtuple("connector_data", ("is_inverse", "inverse_order", "aggregation_type", "is_optional"))
+connector_data = namedtuple("connector_data", ("is_inverse", "inverse_order", "aggregation_type", "is_optional", "express_definition"))
 assocation_data = namedtuple("assocation_data", ("own_end", "type", "other_end", "asssocation"))
 
 def yield_parents(node):
@@ -167,7 +167,12 @@ class xmi_document:
                     
                 inverse_order = int(st.tags().get("ExpressOrderingInverse", 0))
                 is_optional = "ExpressOptional" in st.tags()
-                self.connectors[c.idref][other_cls] = connector_data(is_inverse, inverse_order, st.tags().get("ExpressAggregation"), is_optional)
+                self.connectors[c.idref][other_cls] = connector_data(
+                    is_inverse, 
+                    inverse_order, 
+                    st.tags().get("ExpressAggregation"), 
+                    is_optional,
+                    c.tags().get('ExpressDefinition'))
             
             # if not marked_inverse:
             #     if (src|"model").name and (src|"role").name and (tgt|"model").name and (tgt|"role").name:
@@ -376,9 +381,9 @@ class xmi_document:
                         attr_name = None
                         
                     try:
-                        is_inverse, inverse_order, express_aggr, is_optional = self.connectors[assoc_node.xmi_id][c.name]
+                        is_inverse, inverse_order, express_aggr, is_optional, express_definition = self.connectors[assoc_node.xmi_id][c.name]
                     except:
-                        is_inverse, is_optional, express_aggr = False, False, None
+                        is_inverse, is_optional, express_aggr, express_definition = False, False, None, None
                         
                     is_inverse |= assoc_node.xmi_id not in self.order
                         
@@ -411,6 +416,9 @@ class xmi_document:
                     
                     if express_aggr:
                         attr_entity = "%s %s OF %s" % (express_aggr, bound, attr_entity)
+                        
+                    if express_definition:
+                        attr_entity = express_definition
 
                     if nm not in attribute_names:
                         if (is_inverse and attr_name is not None): # or assoc_node.xmi_id not in order:

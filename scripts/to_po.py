@@ -36,13 +36,13 @@ def valid_key(s):
 def generate_definitions():
     for item in xmi_doc:
 
-        loc = xmi_doc.xmi.locate(item.node)
-        yield loc, (valid_key(item.node.name),), item.documentation
+        loc = xmi_doc.xmi.locate(item.node) if item.node else None
+        yield loc, (valid_key(item.name),), item.documentation
         
         if item.type in {"ENUM", "ENTITY", "PSET", "PENUM"}:
             for subitem in item:
-                loc = xmi_doc.xmi.locate(subitem.node)
-                yield loc, (valid_key(item.node.name), valid_key(subitem.name)), (subitem.documentation or subitem.name)
+                loc = xmi_doc.xmi.locate(subitem.node) if subitem.node else None
+                yield loc, (valid_key(item.name), valid_key(subitem.name)), (subitem.documentation or subitem.name)
         
 def quote(s):
     return '"%s"' % s
@@ -68,7 +68,8 @@ msgstr ""
 """, file=OUTPUT)
 
 for i, ((ln, col), p, d) in enumerate(generate_definitions()):
-    print('#:', bfn, ':', ln, sep='', file=OUTPUT)
+    if ln:
+        print('#:', bfn, ':', ln, sep='', file=OUTPUT)
     
     print("msgid", quote("_".join(p)),  file=OUTPUT)
     print("msgstr", format(p[-1]),  file=OUTPUT)

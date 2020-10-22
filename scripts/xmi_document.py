@@ -102,10 +102,12 @@ class xmi_item:
     definition = None
     node = None
     children = None
+    stereotype = None
     
-    def __init__(self, type, name, definition, node, children = None):
+    def __init__(self, type, name, definition, node, children = None, stereotype = None):
         self.type, self.name, self.definition, self.node, self.children = type, name, definition, node, children or []
         self.children = [xmi_item(None, a, None, b, None) for a, b in self.children]        
+        self.stereotype = stereotype
         
     def __iter__(self):
         return iter(self.children)
@@ -283,6 +285,15 @@ class xmi_document:
                 yield xmi_item("ENUM", c.name, express.format_type(c.name, "ENUMERATION OF", [a for a, b in values]), c, values)
                 
             elif stereotype == 'ptcontainer':
+            
+                old_c = None
+                
+                # NB This is actually a fix of the schema: Transfer IfcBuiltSystemTypeEnum children to IfcBuildingSystemTypeEnum
+                try:
+                    if self.xmi.by_id[(c|"NoteLink").start].body == 'All Predefined Types Transferred to new enum with better name':
+                        old_c = c
+                        c = [x for x in self.xmi.by_tag_and_type["element"]["uml:Class"] if x.name == "IfcBuiltSystemTypeEnum"][0]
+                except: pass
                 
                 children = []
                 ids = [d.end for d in (c/"Dependency") if d.start == c.xmi_idref]
@@ -308,7 +319,10 @@ class xmi_document:
                 if "USERDEFINED" not in values: values.append("USERDEFINED")
                 if "NOTDEFINED" not in values: values.append("NOTDEFINED")
                 
-                yield xmi_item("ENUM", c.name, express.format_type(c.name, "ENUMERATION OF", values), c, children)
+                if old_c:
+                    c = old_c
+                
+                yield xmi_item("ENUM", c.name, express.format_type(c.name, "ENUMERATION OF", values), c, children, stereotype="PREDEFINED_TYPE")
                 
             elif stereotype is not None and (stereotype.startswith("pset") or stereotype == "$"):
                 # Don't serialize psets to EXPRESS

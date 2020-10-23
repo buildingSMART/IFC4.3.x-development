@@ -36,12 +36,12 @@ def valid_key(s):
 def generate_definitions():
     for item in xmi_doc:
 
-        loc = xmi_doc.xmi.locate(item.node) if item.node else None
+        loc = xmi_doc.xmi.locate(item.node) if item.node else (None, None)
         yield loc, (valid_key(item.name),), (item.documentation if item.node else item.name)
         
         if item.type in {"ENUM", "ENTITY", "PSET", "PENUM"}:
             for subitem in item:
-                loc = xmi_doc.xmi.locate(subitem.node) if subitem.node else None
+                loc = xmi_doc.xmi.locate(subitem.node) if subitem.node else (None, None)
                 yield loc, (valid_key(item.name), valid_key(subitem.name)), ((subitem.documentation or subitem.name) if subitem.node else subitem.name)
         
 def quote(s):

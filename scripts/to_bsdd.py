@@ -210,8 +210,6 @@ def filter_definition(di):
         return has_child_
 
     def should_include(k, v):
-        if k == "IfcControl":
-            import pdb; pdb.set_trace()
         return ("IfcProduct" in parents(k)) or has_child("IfcProduct")(k) or child_or_self_has_psets(k)
         
     return {k: v for k, v in di.items() if should_include(k, v)}

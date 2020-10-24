@@ -6,7 +6,7 @@ import json
 
 from collections import defaultdict
 
-import xmi
+from xmi_document import xmi_document
 
 try:
     fn = sys.argv[1]
@@ -18,13 +18,22 @@ except:
     print("Usage: python to_po.py <schema.xml>", file=sys.stderr)
     exit()
 
-xmi_doc = xmi.doc(fn)
+xmi_doc = xmi_document(fn)
 bfn = os.path.basename(fn)
 
-schema_name = xmi_doc.by_tag_and_type["packagedElement"]['uml:Package'][1].name.replace("exp", "").upper()
+schema_name = xmi_doc.xmi.by_tag_and_type["packagedElement"]['uml:Package'][1].name.replace("exp", "").upper()
 schema_name = "".join(["_", c][c.isalnum()] for c in schema_name)
 schema_name = re.sub(r"_+", "_", schema_name)
 schema_name = schema_name.strip('_')
+
+structure = {
+        'Domain': {
+            'Name': 'IFC',
+            'Version': schema_name,
+            
+            'Classifications': None
+        }
+    }
 
 def yield_parents(node):
     yield node
@@ -54,6 +63,15 @@ def strip_html(s):
     
 def format(s):
     return re.sub(MULTIPLE_SPACE_PATTERN, ' ', ''.join([' ', c][c.isalnum() or c in '.,'] for c in s)).strip()
+    
+def generalization(pe):
+    try:
+        P = xmi_doc.xmi.by_id[(pe|"generalization").general]
+    except:
+        P = None
+    if P: return generalization(P)
+    else: return pe
+
 
 def generate_definitions():
     """
@@ -64,28 +82,11 @@ def generate_definitions():
     """
     make_defaultdict = lambda: defaultdict(make_defaultdict)
     classifications = defaultdict(make_defaultdict)
-    data = {
-        'Domain': {
-            'Name': 'IFC',
-            'Version': schema_name,
-            
-            'Classifications': classifications
-        }
-    }
     
-    def process_pt(class_element):
-        class_name = class_element.name
-        if "." not in class_name:
-            print("WARNING:", "Unexpected naming pattern on", class_element)
-            return None
-        enum, class_name = class_name.split('.')
-        enum_types = [x for x in xmi_doc.by_tag_and_type["element"]["uml:Class"] if x.name == enum]
-        if len(enum_types) != 1:
-            print("Warning: ", enum_types, class_element)
-            return None
-        enum_id = enum_types[0].idref
+    def get_parent_of_pt(enum_type):
+        enum_id = enum_type.idref
         type_refs = []
-        for assoc in xmi_doc.by_tag_and_type["packagedElement"]["uml:Association"]:
+        for assoc in xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:Association"]:
             try:
                 c1, c2 = assoc/'ownedEnd'
             except ValueError as e:
@@ -94,72 +95,67 @@ def generate_definitions():
             assoc_type_refs = set(map(lambda c: (c|"type").idref, (c1, c2)))
             if enum_id in assoc_type_refs:
                 other_idref = list(assoc_type_refs - {enum_id})[0]
-                type_refs.append(xmi_doc.by_id[other_idref].name)
+                type_refs.append(xmi_doc.xmi.by_id[other_idref].name)
+                
         # @todo filter this based on inheritance hierarchy
         type_refs_without_type = [s for s in type_refs if 'Type' not in s]
         if len(type_refs_without_type) != 1:
-            print("WARNING:", len(type_refs_without_type), "type associations on", class_element, file=sys.stderr)
-        else:
-            classifications[class_name]['Parent'] = type_refs_without_type[0]
-            classifications[class_name]['Description'] = format(strip_html((class_element/"properties")[0].documentation))
-        return class_name
+            print("WARNING:", len(type_refs_without_type), "type associations on", enum_type.name, file=sys.stderr)
+        
+        return type_refs_without_type[0] if type_refs_without_type else None
     
     class_name_to_node = {}
     
-    for c in xmi_doc.by_tag_and_type["element"]["uml:Class"]:
-        
-        if skip_by_package(c):
-            continue
+    by_id = {}
     
-        class_name_to_node[c.name] = c
-        stereotype = (c/"properties")[0].stereotype
-        if stereotype is not None:
-            stereotype = stereotype.lower()
+    # psets are deferred to the end so that all ids are resolved
+    psets = []
+    
+    for item in xmi_doc:
+        
+        if item.type == "ENUM" and item.stereotype == "PREDEFINED_TYPE":
+        
+            p = get_parent_of_pt(item.node)
             
-        if stereotype == "predefinedtype":
-            process_pt(c)
+            if p:
+                         
+                for c in item.children:            
+                    by_id[c.id] = di = classifications[p + "_" + c.name]
+                    di["Parent"] = p
+                    di['Description'] = format(strip_html(c.documentation))
+                
+        elif item.type == "PSET":
+            psets.append(item)        
+                    
+        elif item.type == "ENTITY":
+            by_id[item.id] = di = classifications[item.name]
+           
+            st = item.meta.get('supertypes', [])
+            if st:
+                di['Parent'] = st[0]
+            di['Description'] = format(strip_html(item.documentation))
             
-        elif stereotype and stereotype.startswith("pset"):
-            pset_name = c.name
-            try:
-                class_idref = (c|"links"|"Realisation").start
-            except ValueError as e:
-                print("WARNING:", pset_name, "has no associated class", file=sys.stderr)
+    for item in psets:
+        refs = item.meta.get('refs', [])
+            
+        for id in refs:
+        
+            di = by_id.get(id)
+            if di is None:
+                print("WARNING: for %s entity %s not emitted" % (item.name, xmi_doc.xmi.by_id[id].name))
                 continue
-
-            class_ = xmi_doc.by_id[class_idref]
-            class_name = class_.name
-            class_element = [e for e in xmi_doc.by_idref[class_idref] if e.xml.tagName == 'element'][0]
-            class_stereotype = (class_element/"properties")[0].stereotype
             
-            # Lookup enum value -> enum type -> associated type entity -> associated entity
-            if class_stereotype == 'PredefinedType':
-                pt = process_pt(class_element)
-                if pt is None:
-                    continue
-                class_name = pt
-            else:    
-                classifications[class_name]['Description'] = format(strip_html((class_element/"properties")[0].documentation))
+            for a in item.children:                
             
-            def generalization(pe):
-                try:
-                    P = xmi_doc.by_id[(pe|"generalization").general]
-                except:
-                    P = None
-                if P: return generalization(P)
-                else: return pe
-            
-            
-            for a in c/"attribute":
                 type_name = "PEnum_" + a.name
                 # @todo why is this lookup by name?
-                enum_types_by_name = [c for c in xmi_doc.by_tag_and_type["packagedElement"]["uml:Class"] if c.name == type_name]
+                enum_types_by_name = [c for c in xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:Class"] if c.name == type_name]
                 if len(enum_types_by_name) == 1:
                     type_values = [x.name for x in enum_types_by_name[0]/"ownedLiteral"]
                 else:
                     type_values = None
                     try:
-                        pe_type = xmi_doc.by_id[(xmi_doc.by_id[a.idref]|"type").idref]
+                        pe_type = xmi_doc.xmi.by_id[(xmi_doc.xmi.by_id[a.node.idref]|"type").idref]
                         pe_type_name = pe_type.name
                         
                         root_generalization = generalization(pe_type)
@@ -170,8 +166,8 @@ def generate_definitions():
                         type_name = 'any'
                         continue
                         
-                classifications[class_name]["Psets"][pset_name]["Properties"][a.name]['type'] = type_name
-                classifications[class_name]["Psets"][pset_name]["Properties"][a.name]["Description"] = format(strip_html((a|"documentation").value))
+                di["Psets"][item.name]["Properties"][a.name]['type'] = type_name
+                di["Psets"][item.name]["Properties"][a.name]["Description"] = format(strip_html(a.documentation))
                 
                 type_to_values = {
                     'boolean': ['TRUE','FALSE'],
@@ -180,49 +176,50 @@ def generate_definitions():
                 if type_values is None:
                     type_values = type_to_values.get(type_name)
                 if type_values:
-                    classifications[class_name]["Psets"][pset_name]["Properties"][a.name]['values'] = type_values
-
-    class_names = sorted(classifications.keys() | {c.get('Parent') for c in classifications.values() if c.get('Parent')})
-    annotated = set()
-    
-    def element_by_id(id):
-        return [x for x in xmi_doc.by_tag_and_type['element']['uml:Class'] if x.idref==id][0]        
-    
-    def annotate_parent(cn):      
-        if cn in annotated: return
-        annotated.add(cn)
-        node = class_name_to_node.get(cn)
-        if node is None:
-            # probably an enumeration value handled above
-            return
-        try:
-            for rel in (node|"links")/"Generalization":
-                if rel.start == node.idref:
-                    pc = xmi_doc.by_id[rel.end]
-                    classifications[cn]["Parent"] = pc.name
-                    classifications[cn]['Description'] = format(strip_html((element_by_id(rel.start)/"properties")[0].documentation))
-                    annotate_parent(pc.name)
-        except ValueError as e:
-            print(e, file=sys.stderr)
+                    di["Psets"][item.name]["Properties"][a.name]['values'] = type_values
+                        
                 
-    
-    product = [c for c in xmi_doc.by_tag_and_type['element']['uml:Class'] if c.name == 'IfcProduct'][0]
-    subtypes = []
-    def visit_subtypes(t):
-        sts = [element_by_id(g.start) for g in (t|"links")/"Generalization" if g.end == t.idref]
-        subtypes.extend(x.name for x in sts)
-        for t in sts:
-            visit_subtypes(t)
-    
-    visit_subtypes(product)
-    
-    for cn in class_names:
-        annotate_parent(cn)
-        
-    for cn in subtypes:
-        annotate_parent(cn)
-        
-    return data
-        
+    return classifications
 
-json.dump(generate_definitions(), OUTPUT, indent=2)
+def filter_definition(di):
+
+    children = defaultdict(list)    
+    for k, v in di.items():
+        if v.get("Parent"):
+            children[v.get("Parent")].append(k)
+
+    def parents(k):
+        yield k
+        v = di.get(k)
+        if v and v.get('Parent'):
+            yield from parents(v.get('Parent'))
+            
+    def child_or_self_has_psets(k):
+        if di.get(k, {}).get("Psets"):
+            return True
+        for c in children[k]:
+            if child_or_self_has_psets(c):
+                return True
+        return False
+        
+    def has_child(k):
+        def has_child_(k2):
+            if k2 == k: return True
+            if not children[k2]: return False
+            return any(has_child_(c) for c in children[k2])
+        return has_child_
+
+    def should_include(k, v):
+        if k == "IfcControl":
+            import pdb; pdb.set_trace()
+        return ("IfcProduct" in parents(k)) or has_child("IfcProduct")(k) or child_or_self_has_psets(k)
+        
+    return {k: v for k, v in di.items() if should_include(k, v)}
+    
+def embed_in_structure(di):
+    d = {}
+    d.update(structure)
+    d["Domain"]['Classifications'] = di
+    return d
+
+json.dump(embed_in_structure(filter_definition(generate_definitions())), OUTPUT, indent=2)

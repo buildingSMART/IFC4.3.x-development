@@ -97,6 +97,7 @@ def remove_linebreak_before_semi(s):
     
 
 class xmi_item:
+    id = None
     type = None
     name = None
     definition = None
@@ -104,10 +105,13 @@ class xmi_item:
     children = None
     stereotype = None
     
-    def __init__(self, type, name, definition, node, children = None, stereotype = None):
+    def __init__(self, type, name, definition, node, children = None, stereotype = None, **kwargs):
         self.type, self.name, self.definition, self.node, self.children = type, name, definition, node, children or []
         self.children = [xmi_item(None, a, None, b, None) for a, b in self.children]        
         self.stereotype = stereotype
+        self.meta = kwargs
+        if self.node:
+            self.id = self.node.id or self.node.idref
         
     def __iter__(self):
         return iter(self.children)
@@ -235,11 +239,22 @@ class xmi_document:
                 # A predefined type enumeration value, handled as part of 'ptcontainer'
                 continue
                 
+                # NB: can have multiple dependency relationships...
+                # yield xmi_item("PT", c.name, "", c, [], container=((c|"links")|"Dependency").start)
+                
             elif stereotype == "propertyset" or stereotype == "quantityset" or (stereotype is not None and (stereotype.startswith("pset_") or stereotype.startswith("qto_"))):
                 
+                refs = None
+                
+                try:
+                    refs = [next(iter({r.start, r.end} - {c.idref})) for r in ((c|"links")/"Realisation")]
+                except ValueError as e:
+                    print("WARNING:", c.name, "has no associated class", file=sys.stderr)
+                    continue
+
                 yield xmi_item("PSET", c.name, "", c, [
                     (x.name, x) for x in c/("attribute")
-                ])
+                ], refs=refs)
                 
             elif c.xmi_type == "uml:DataType":
             
@@ -509,5 +524,13 @@ class xmi_document:
 
                 attributes = map(operator.itemgetter(1), sorted(attributes))
                 inverses = map(operator.itemgetter(1), sorted(inverses))
-                
-                yield xmi_item("ENTITY", c.name, express.format_entity(c.name, attributes, derived, inverses, constraints_by_type["EXPRESS_WHERE"], constraints_by_type["EXPRESS_UNIQUE"], subtypes, supertypes, is_abstract), c, children)
+                             
+                yield xmi_item(
+                    "ENTITY", c.name, 
+                    express.format_entity(c.name, attributes, 
+                        derived, inverses, constraints_by_type["EXPRESS_WHERE"], 
+                        constraints_by_type["EXPRESS_UNIQUE"], subtypes, 
+                        supertypes, is_abstract
+                    ), c, children,
+                    supertypes=subtypes
+                )

@@ -120,7 +120,7 @@ def generate_definitions():
             if p:
                          
                 for c in item.children:            
-                    by_id[c.id] = di = classifications[p + "_" + c.name]
+                    by_id[c.id] = di = classifications[p + "." + c.name]
                     di["Parent"] = p
                     di['Description'] = format(strip_html(c.documentation))
                 

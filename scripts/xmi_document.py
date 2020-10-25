@@ -247,7 +247,7 @@ class xmi_document:
                 refs = None
                 
                 try:
-                    refs = [next(iter({r.start, r.end} - {c.idref})) for r in ((c|"links")/"Realisation")]
+                    refs = [next(iter({r.start, r.end} - {c.idref})) for r in (((c|"links")/"Realisation") + ((c|"links")/"Dependency"))]
                 except ValueError as e:
                     print("WARNING:", c.name, "has no associated class", file=sys.stderr)
                     continue

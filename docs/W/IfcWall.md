@@ -5,7 +5,7 @@ spaces. Wall are usually vertical, or nearly vertical, planar elements, often
 designed to bear structural loads. A wall is however\S\ not required to be
 load bearing.
 
-Test
+Test2
   
 > NOTE  Definition according to ISO 6707-1: vertical construction usually in
 > masonry or in concrete which bounds or subdivides a construction works and

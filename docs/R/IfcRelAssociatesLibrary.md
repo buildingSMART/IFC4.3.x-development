@@ -23,10 +23,3 @@ Attribute definitions
 |-----------------|---------------------------------------------------------------------------------|
 | RelatingLibrary | Reference to a library, from which the definition of the property set is taken. |
 
-Associations
-------------
-| Attribute       | Description   |
-|-----------------|---------------|
-| RelatingLibrary |               |
-| RelatingLibrary |               |
-

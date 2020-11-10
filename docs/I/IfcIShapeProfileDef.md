@@ -125,11 +125,3 @@ Attribute definitions
 | FlangeEdgeRadius | Radius of the lower edges of the top flange and the upper edges of the bottom flange. 0 if sharp-edged, omitted if unknown.                                                     |
 | FlangeSlope      | Slope of the lower faces of the top flange and of the upper faces of the bottom flange. Non-zero in case of tapered flanges, 0 in case of parallel flanges, omitted if unknown. |
 
-Formal Propositions
--------------------
-| Rule                 | Description   |
-|----------------------|---------------|
-| ValidFlangeThickness |               |
-| ValidWebThickness    |               |
-| ValidFilletRadius    |               |
-

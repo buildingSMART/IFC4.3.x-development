@@ -225,19 +225,7 @@ Attribute definitions
 ---------------------
 | Attribute   | Description                                                                                                                                                         |
 |-------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Axis        |                                                                                                                                                                     |
 | Angle       | The angle through which the sweep will be made. This angle is measured from the plane of the swept area provided by the XY plane of the position coordinate system. |
 | AxisLine    | The line of the axis of revolution.                                                                                                                                 |
-
-Formal Propositions
--------------------
-| Rule              | Description   |
-|-------------------|---------------|
-| AxisStartInXY     |               |
-| AxisDirectionInXY |               |
-
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-| Axis        |               |
 

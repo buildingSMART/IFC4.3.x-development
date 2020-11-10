@@ -27,26 +27,14 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute        | Description                                                                                                                                                                                                                              |
-|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| State            | Enumeration that defines the current access state of the object.                                                                                                                                                                         |
-| ChangeAction     | Enumeration that defines the actions associated with changes made to the object.                                                                                                                                                         |
-| LastModifiedDate | Date and Time expressed in UTC (Universal Time Coordinated, formerly Greenwich Mean Time or GMT) at which the last modification was made by LastModifyingUser and LastModifyingApplication.                                              |
-| CreationDate     | The date and time expressed in UTC (Universal Time Coordinated, formerly Greenwich Mean Time or GMT) when first created by the original OwningApplication. Once defined this value remains unchanged through the lifetime of the entity. |
-
-Formal Propositions
--------------------
-| Rule                | Description   |
-|---------------------|---------------|
-| CorrectChangeAction |               |
-
-Associations
-------------
-| Attribute                | Description   |
-|--------------------------|---------------|
-| LastModifyingUser        |               |
-| OwningUser               |               |
-|                          |               |
-| OwningApplication        |               |
-| LastModifyingApplication |               |
+| Attribute                | Description                                                                                                                                                                                                                              |
+|--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| LastModifyingUser        |                                                                                                                                                                                                                                          |
+| OwningUser               |                                                                                                                                                                                                                                          |
+| OwningApplication        |                                                                                                                                                                                                                                          |
+| LastModifyingApplication |                                                                                                                                                                                                                                          |
+| State                    | Enumeration that defines the current access state of the object.                                                                                                                                                                         |
+| ChangeAction             | Enumeration that defines the actions associated with changes made to the object.                                                                                                                                                         |
+| LastModifiedDate         | Date and Time expressed in UTC (Universal Time Coordinated, formerly Greenwich Mean Time or GMT) at which the last modification was made by LastModifyingUser and LastModifyingApplication.                                              |
+| CreationDate             | The date and time expressed in UTC (Universal Time Coordinated, formerly Greenwich Mean Time or GMT) when first created by the original OwningApplication. Once defined this value remains unchanged through the lifetime of the entity. |
 

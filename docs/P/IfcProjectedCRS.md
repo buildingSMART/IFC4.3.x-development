@@ -35,18 +35,7 @@ Attribute definitions
 ---------------------
 | Attribute     | Description                                                                                                                                                                                                                                          |
 |---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| MapUnit       |                                                                                                                                                                                                                                                      |
 | MapProjection | Name by which the map projection is identified.\X\0D\X\0D{ .examples}\X\0D> EXAMPLE  map projects include: { .note}\X\0D> * UTM\X\0D> * Gaus-Krueger                                                                                                 |
 | MapZone       | Name by which the map zone, relating to the _MapProjection_, is identified. \X\0D\X\0D{ .examples}\X\0D> EXAMPLE  { .note}\X\0D> * for UTM, the zone number, like 32 for UTM32\X\0D> * for Gaus-Krueger, the zones of longitudinal width, like 3''', |
-
-Formal Propositions
--------------------
-| Rule         | Description   |
-|--------------|---------------|
-| IsLengthUnit |               |
-
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-| MapUnit     |               |
 

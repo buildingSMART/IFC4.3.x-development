@@ -51,9 +51,3 @@ Attribute definitions
 |-------------|--------------------------------------------------------------------------------------|
 | Coordinates | The first Coordinate[1] is the S, the second Coordinate[2] is the T parameter value. |
 
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
-

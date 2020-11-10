@@ -14,10 +14,3 @@ surface.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcstructuralanalysisdomain/lexical/ifcstructuralplanaraction.htm)
 
 
-Formal Propositions
--------------------
-| Rule                | Description   |
-|---------------------|---------------|
-| SuitableLoadType    |               |
-| ConstPredefinedType |               |
-

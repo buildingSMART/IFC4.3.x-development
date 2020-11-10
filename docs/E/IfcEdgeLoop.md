@@ -27,18 +27,6 @@ Attribute definitions
 ---------------------
 | Attribute   | Description                              |
 |-------------|------------------------------------------|
+| EdgeList    |                                          |
 | Ne          | The number of elements in the edge list. |
-
-Formal Propositions
--------------------
-| Rule         | Description   |
-|--------------|---------------|
-| IsClosed     |               |
-| IsContinuous |               |
-
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-| EdgeList    |               |
 

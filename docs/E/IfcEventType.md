@@ -20,19 +20,7 @@ Attribute definitions
 ---------------------
 | Attribute                   | Description                                                                                                                                       |
 |-----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
+| PredefinedType              |                                                                                                                                                   |
 | EventTriggerType            | Identifies the predefined types of event trigger from which \X\0D the type required may be set.                                                   |
 | UserDefinedEventTriggerType | A user defined event trigger type, the value of which \X\0D is asserted when the value of an event trigger type is \X\0D declared as USERDEFINED. |
-
-Formal Propositions
--------------------
-| Rule                    | Description   |
-|-------------------------|---------------|
-| CorrectPredefinedType   |               |
-| CorrectEventTriggerType |               |
-
-Associations
-------------
-| Attribute      | Description   |
-|----------------|---------------|
-| PredefinedType |               |
 

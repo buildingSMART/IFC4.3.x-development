@@ -11,8 +11,8 @@ items which represent the idealized structural behavior of building elements.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcstructuralanalysisdomain/lexical/ifcstructuralmember.htm)
 
 
-Associations
-------------
+Attribute definitions
+---------------------
 | Attribute   | Description   |
 |-------------|---------------|
 | ConnectedBy |               |

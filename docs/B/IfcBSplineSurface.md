@@ -133,21 +133,16 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute     | Description                                                                                                                  |
-|---------------|------------------------------------------------------------------------------------------------------------------------------|
-| UDegree       | Algebraic degree of basis functions in _u_.                                                                                  |
-| VDegree       | Algebraic degree of basis functions in _v_.                                                                                  |
-| SurfaceForm   | Indicator of special surface types.                                                                                          |
-| UClosed       | Indication of whether the surface is closed in the _u_ direction; this is for information only.                              |
-| VClosed       | Indication of whether the surface is closed in the _v_ direction; this is for information only.                              |
-| SelfIntersect | Flag to indicate whether, or not, surface is self-intersecting; this is for information only.                                |
-| UUpper        | Upper index on control points in _u_ direction.                                                                              |
-| VUpper        | Upper index on control points in _v_ direction.                                                                              |
-| ControlPoints | Array (two-dimensional) of control points defining surface geometry. This array is constructed from the control points list. |
-
-Associations
-------------
-| Attribute         | Description   |
-|-------------------|---------------|
-| ControlPointsList |               |
+| Attribute         | Description                                                                                                                  |
+|-------------------|------------------------------------------------------------------------------------------------------------------------------|
+| ControlPointsList |                                                                                                                              |
+| UDegree           | Algebraic degree of basis functions in _u_.                                                                                  |
+| VDegree           | Algebraic degree of basis functions in _v_.                                                                                  |
+| SurfaceForm       | Indicator of special surface types.                                                                                          |
+| UClosed           | Indication of whether the surface is closed in the _u_ direction; this is for information only.                              |
+| VClosed           | Indication of whether the surface is closed in the _v_ direction; this is for information only.                              |
+| SelfIntersect     | Flag to indicate whether, or not, surface is self-intersecting; this is for information only.                                |
+| UUpper            | Upper index on control points in _u_ direction.                                                                              |
+| VUpper            | Upper index on control points in _v_ direction.                                                                              |
+| ControlPoints     | Array (two-dimensional) of control points defining surface geometry. This array is constructed from the control points list. |
 

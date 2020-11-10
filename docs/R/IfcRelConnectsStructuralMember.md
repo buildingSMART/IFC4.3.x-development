@@ -69,17 +69,12 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute       | Description                                                                               |
-|-----------------|-------------------------------------------------------------------------------------------|
-| SupportedLength | Defines the ''supported length'' of this structural connection. See Fig. for more detail. |
-
-Associations
-------------
-| Attribute                   | Description   |
-|-----------------------------|---------------|
-| ConditionCoordinateSystem   |               |
-| RelatingStructuralMember    |               |
-| AdditionalConditions        |               |
-| RelatedStructuralConnection |               |
-| AppliedCondition            |               |
+| Attribute                   | Description                                                                               |
+|-----------------------------|-------------------------------------------------------------------------------------------|
+| ConditionCoordinateSystem   |                                                                                           |
+| RelatingStructuralMember    |                                                                                           |
+| AdditionalConditions        |                                                                                           |
+| RelatedStructuralConnection |                                                                                           |
+| AppliedCondition            |                                                                                           |
+| SupportedLength             | Defines the ''supported length'' of this structural connection. See Fig. for more detail. |
 

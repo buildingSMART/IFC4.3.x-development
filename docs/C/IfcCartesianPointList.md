@@ -17,9 +17,3 @@ Attribute definitions
 |-------------|-----------------------------------------------------------------------------------|
 | Dim         | The space dimensionality of this class, either 2 or 3, depending on the sub type. |
 
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
-

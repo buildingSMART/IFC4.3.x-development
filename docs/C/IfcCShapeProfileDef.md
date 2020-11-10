@@ -47,11 +47,3 @@ Attribute definitions
 | Girth                | Lengths of girth, see illustration above (= c).                 |
 | InternalFilletRadius | Internal fillet radius according the above illustration (= r1). |
 
-Formal Propositions
--------------------
-| Rule                      | Description   |
-|---------------------------|---------------|
-| ValidGirth                |               |
-| ValidInternalFilletRadius |               |
-| ValidWallThickness        |               |
-

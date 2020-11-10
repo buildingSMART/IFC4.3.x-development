@@ -26,28 +26,3 @@ Attribute definitions
 |-------------|----------------------------------------------------------------------------------------------------------------------------------------|
 | Dim         | The space dimensionality of this abstract class, defined differently for all subtypes, i.e. for IfcLine, IfcConic and IfcBoundedCurve. |
 
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
-|             |               |
-|             |               |
-|             |               |
-|             |               |
-|             |               |
-|             |               |
-|             |               |
-|             |               |
-|             |               |
-|             |               |
-|             |               |
-|             |               |
-|             |               |
-|             |               |
-|             |               |
-|             |               |
-|             |               |
-|             |               |
-|             |               |
-

@@ -66,14 +66,8 @@ Figure 2 -- Boxed half space geometry
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricmodelresource/lexical/ifcboxedhalfspace.htm)
 
 
-Formal Propositions
--------------------
-| Rule             | Description   |
-|------------------|---------------|
-| UnboundedSurface |               |
-
-Associations
-------------
+Attribute definitions
+---------------------
 | Attribute   | Description   |
 |-------------|---------------|
 | Enclosure   |               |

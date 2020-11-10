@@ -19,20 +19,8 @@ Attribute definitions
 ---------------------
 | Attribute                   | Description                                                                                                                                       |
 |-----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
+| EventOccurenceTime          |                                                                                                                                                   |
+| PredefinedType              |                                                                                                                                                   |
 | EventTriggerType            | Identifies the predefined types of event trigger from which \X\0D the type required may be set.                                                   |
 | UserDefinedEventTriggerType | A user defined event trigger type, the value of which is \X\0D asserted when the value of an event trigger type is declared \X\0D as USERDEFINED. |
-
-Formal Propositions
--------------------
-| Rule                  | Description   |
-|-----------------------|---------------|
-| CorrectPredefinedType |               |
-| CorrectTypeAssigned   |               |
-
-Associations
-------------
-| Attribute          | Description   |
-|--------------------|---------------|
-| EventOccurenceTime |               |
-| PredefinedType     |               |
 

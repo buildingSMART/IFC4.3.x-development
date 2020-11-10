@@ -37,19 +37,6 @@ Attribute definitions
 ---------------------
 | Attribute          | Description                                                                                                                                              |
 |--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| RelatingContext    |                                                                                                                                                          |
 | RelatedDefinitions | Set of object or property definitions that are assigned to a context and to which the unit and representation context definitions of that context apply. |
-
-Formal Propositions
--------------------
-| Rule            | Description   |
-|-----------------|---------------|
-| NoSelfReference |               |
-
-Associations
-------------
-| Attribute          | Description   |
-|--------------------|---------------|
-| RelatingContext    |               |
-| RelatedDefinitions |               |
-| RelatedDefinitions |               |
 

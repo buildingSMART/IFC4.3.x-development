@@ -29,9 +29,3 @@ Attribute definitions
 | Colour           | This property describes the text color of an element (often referred to as the foreground color). |
 | BackgroundColour | This property sets the background color of an element.                                            |
 
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
-

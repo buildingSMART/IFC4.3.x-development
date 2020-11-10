@@ -23,15 +23,3 @@ Attribute definitions
 |-------------|------------------------------------------------|
 | Units       | Units to be included within a unit assignment. |
 
-Formal Propositions
--------------------
-| Rule   | Description   |
-|--------|---------------|
-| WR01   |               |
-
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
-

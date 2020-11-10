@@ -28,9 +28,3 @@ Attribute definitions
 | RemainingUsage  | $                                                                                                                                                                                                                                                                                                                                          |
 | Completion      | Indicates the percent completion of this resource. If the resource is assigned to a task, then indicates completion of the task on behalf of the resource; if the resource is partitioned into sub-allocations, then indicates overall completion of sub-allocations.                                                                      |
 
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
-

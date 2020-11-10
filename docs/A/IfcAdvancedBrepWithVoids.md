@@ -24,14 +24,8 @@ _IfcAdvancedBrepWithVoids.Voids_ shall be of type _IfcAdvancedFace_.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricmodelresource/lexical/ifcadvancedbrepwithvoids.htm)
 
 
-Formal Propositions
--------------------
-| Rule                   | Description   |
-|------------------------|---------------|
-| VoidsHaveAdvancedFaces |               |
-
-Associations
-------------
+Attribute definitions
+---------------------
 | Attribute   | Description   |
 |-------------|---------------|
 | Voids       |               |

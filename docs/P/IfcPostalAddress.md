@@ -20,16 +20,3 @@ Attribute definitions
 | PostalCode       | The code that is used by the country''s postal service.                                                                                                                                                                                                                                                                                                                                                                                    |
 | Country          | The name of a country.                                                                                                                                                                                                                                                                                                                                                                                                                     |
 
-Formal Propositions
--------------------
-| Rule   | Description   |
-|--------|---------------|
-| WR1    |               |
-
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
-|             |               |
-

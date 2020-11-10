@@ -21,10 +21,3 @@ Attribute definitions
 |-------------|--------------------------------------------------------|
 | Name        | Optionally defines a name for this boundary condition. |
 
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
-|             |               |
-

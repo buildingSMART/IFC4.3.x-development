@@ -51,11 +51,6 @@ Attribute definitions
 ---------------------
 | Attribute   | Description                                                                                                                                          |
 |-------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
+| FaceSurface |                                                                                                                                                      |
 | SameSense   | This flag indicates whether the sense of the surface normal agrees with (TRUE), or opposes (FALSE), the sense of the topological normal to the face. |
-
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-| FaceSurface |               |
 

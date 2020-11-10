@@ -36,8 +36,8 @@ _IfcPropertySetDefinition_ and _IfcPropertyTemplateDefinition_ for details.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifckernel/lexical/ifcpropertydefinition.htm)
 
 
-Associations
-------------
+Attribute definitions
+---------------------
 | Attribute       | Description   |
 |-----------------|---------------|
 | HasContext      |               |

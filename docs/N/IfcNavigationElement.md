@@ -17,9 +17,3 @@ Attribute definitions
 |----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | PredefinedType | Identifies the predefined type of a navigational element from which the type modelled, may be set. This type may associate additional specific property sets.NOTE The PredefinedType shall only be used, if no [_IfcNavigationElementType_]($element://{632D826D-90EE-4587-8EE3-DCF77AD5CE12})[ __]($element://{B09C5B5F-9AC4-4620-8F66-3DAC7AC707EA}) is assigned, providing its own IfcNavigationElementType.PredefinedType. |
 
-Associations
-------------
-| Attribute      | Description   |
-|----------------|---------------|
-| PredefinedType |               |
-

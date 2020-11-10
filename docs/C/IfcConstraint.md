@@ -42,28 +42,15 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute        | Description                                                                                                                                                                                                                                                                                                                               |
-|------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Name             | A human-readable name to be used for the constraint.                                                                                                                                                                                                                                                                                      |
-| Description      | A human-readable description that may apply additional information about a constraint.                                                                                                                                                                                                                                                    |
-| ConstraintGrade  | Enumeration that qualifies the type of constraint.                                                                                                                                                                                                                                                                                        |
-| ConstraintSource | Any source material, such as a code or standard, from which the constraint originated.                                                                                                                                                                                                                                                    |
-| CreatingActor    | Person and/or organization that has created the constraint.                                                                                                                                                                                                                                                                               |
-| CreationTime     | Time when information specifying the constraint instance was created.                                                                                                                                                                                                                                                                     |
-| UserDefinedGrade | Allows for specification of user defined grade of the constraint beyond the enumeration values (hard, soft, advisory) provided by ConstraintGrade attribute of type _IfcConstraintEnum_. \X\0DWhen a value is provided for attribute UserDefinedGrade in parallel the attribute ConstraintGrade shall have enumeration value USERDEFINED. |
-
-Formal Propositions
--------------------
-| Rule   | Description   |
-|--------|---------------|
-| WR11   |               |
-
-Associations
-------------
-| Attribute               | Description   |
-|-------------------------|---------------|
-| PropertiesForConstraint |               |
-|                         |               |
-| HasExternalReferences   |               |
-|                         |               |
+| Attribute               | Description                                                                                                                                                                                                                                                                                                                               |
+|-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| PropertiesForConstraint |                                                                                                                                                                                                                                                                                                                                           |
+| HasExternalReferences   |                                                                                                                                                                                                                                                                                                                                           |
+| Name                    | A human-readable name to be used for the constraint.                                                                                                                                                                                                                                                                                      |
+| Description             | A human-readable description that may apply additional information about a constraint.                                                                                                                                                                                                                                                    |
+| ConstraintGrade         | Enumeration that qualifies the type of constraint.                                                                                                                                                                                                                                                                                        |
+| ConstraintSource        | Any source material, such as a code or standard, from which the constraint originated.                                                                                                                                                                                                                                                    |
+| CreatingActor           | Person and/or organization that has created the constraint.                                                                                                                                                                                                                                                                               |
+| CreationTime            | Time when information specifying the constraint instance was created.                                                                                                                                                                                                                                                                     |
+| UserDefinedGrade        | Allows for specification of user defined grade of the constraint beyond the enumeration values (hard, soft, advisory) provided by ConstraintGrade attribute of type _IfcConstraintEnum_. \X\0DWhen a value is provided for attribute UserDefinedGrade in parallel the attribute ConstraintGrade shall have enumeration value USERDEFINED. |
 

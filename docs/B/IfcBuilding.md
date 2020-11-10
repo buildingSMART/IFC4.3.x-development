@@ -86,12 +86,7 @@ Attribute definitions
 ---------------------
 | Attribute            | Description                                                                                                                                           |
 |----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
+| BuildingAddress      |                                                                                                                                                       |
 | ElevationOfRefHeight | Elevation above sea level of the reference height used for all storey elevation measures, equals to height 0.0. It is usually the ground floor level. |
 | ElevationOfTerrain   | Elevation above the minimal terrain level around the foot print of the building, given in elevation above sea level.                                  |
-
-Associations
-------------
-| Attribute       | Description   |
-|-----------------|---------------|
-| BuildingAddress |               |
 

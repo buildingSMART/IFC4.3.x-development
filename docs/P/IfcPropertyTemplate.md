@@ -27,8 +27,8 @@ values assigned.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifckernel/lexical/ifcpropertytemplate.htm)
 
 
-Associations
-------------
+Attribute definitions
+---------------------
 | Attribute             | Description   |
 |-----------------------|---------------|
 | PartOfComplexTemplate |               |

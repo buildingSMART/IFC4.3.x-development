@@ -21,9 +21,3 @@ Attribute definitions
 | StartTime   | Start time of the time period. |
 | EndTime     | End time of the time period.   |
 
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
-

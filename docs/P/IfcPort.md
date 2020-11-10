@@ -29,8 +29,8 @@ fixed ports, or _IfcRelConnectsPortToElement_ for dynamic ports.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcproductextension/lexical/ifcport.htm)
 
 
-Associations
-------------
+Attribute definitions
+---------------------
 | Attribute     | Description   |
 |---------------|---------------|
 | ConnectedTo   |               |

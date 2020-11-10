@@ -53,8 +53,8 @@ estimate them, or simply assume zero values.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcprofileresource/lexical/ifcparameterizedprofiledef.htm)
 
 
-Associations
-------------
+Attribute definitions
+---------------------
 | Attribute   | Description   |
 |-------------|---------------|
 | Position    |               |

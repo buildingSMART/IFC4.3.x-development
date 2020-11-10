@@ -36,19 +36,8 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute   | Description                                                                                                            |
-|-------------|------------------------------------------------------------------------------------------------------------------------|
-| Thickness   | Defines the typically understood thickness of the structural surface member, measured normal to its reference surface. |
-
-Formal Propositions
--------------------
-| Rule          | Description   |
-|---------------|---------------|
-| HasObjectType |               |
-
-Associations
-------------
-| Attribute      | Description   |
-|----------------|---------------|
-| PredefinedType |               |
+| Attribute      | Description                                                                                                            |
+|----------------|------------------------------------------------------------------------------------------------------------------------|
+| PredefinedType |                                                                                                                        |
+| Thickness      | Defines the typically understood thickness of the structural surface member, measured normal to its reference surface. |
 

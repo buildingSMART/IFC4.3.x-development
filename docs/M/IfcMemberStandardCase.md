@@ -22,9 +22,3 @@ handles all cases of members, that:
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcsharedbldgelements/lexical/ifcmemberstandardcase.htm)
 
 
-Formal Propositions
--------------------
-| Rule                       | Description   |
-|----------------------------|---------------|
-| HasMaterialProfileSetUsage |               |
-

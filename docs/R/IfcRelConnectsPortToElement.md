@@ -26,8 +26,8 @@ _IfcRelConnectsPorts_ relationship.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcproductextension/lexical/ifcrelconnectsporttoelement.htm)
 
 
-Associations
-------------
+Attribute definitions
+---------------------
 | Attribute      | Description   |
 |----------------|---------------|
 | RelatedElement |               |

@@ -17,20 +17,6 @@ Attribute definitions
 ---------------------
 | Attribute   | Description           |
 |-------------|-----------------------|
+| Dimensions  |                       |
 | UnitType    | The type of the unit. |
-
-Formal Propositions
--------------------
-| Rule   | Description   |
-|--------|---------------|
-| WR1    |               |
-
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
-| Dimensions  |               |
-|             |               |
-|             |               |
 

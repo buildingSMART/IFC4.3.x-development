@@ -20,16 +20,3 @@ Attribute definitions
 |------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | RelatingResource | Reference to the resource to which the objects are assigned to.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE Datatype expanded to include _IfcResource_ and _IfcTypeResource_. |
 
-Formal Propositions
--------------------
-| Rule            | Description   |
-|-----------------|---------------|
-| NoSelfReference |               |
-
-Associations
-------------
-| Attribute        | Description   |
-|------------------|---------------|
-| RelatingResource |               |
-| RelatingResource |               |
-

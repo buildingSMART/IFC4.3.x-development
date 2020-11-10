@@ -62,11 +62,10 @@ Representation item style override")
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometryresource/lexical/ifcrepresentationitem.htm)
 
 
-Associations
-------------
+Attribute definitions
+---------------------
 | Attribute       | Description   |
 |-----------------|---------------|
-|                 |               |
 | StyledByItem    |               |
 | LayerAssignment |               |
 

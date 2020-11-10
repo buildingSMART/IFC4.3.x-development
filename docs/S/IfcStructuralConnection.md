@@ -8,8 +8,8 @@ connection, edge connection, or surface connection) or supports.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcstructuralanalysisdomain/lexical/ifcstructuralconnection.htm)
 
 
-Associations
-------------
+Attribute definitions
+---------------------
 | Attribute                 | Description   |
 |---------------------------|---------------|
 | ConnectsStructuralMembers |               |

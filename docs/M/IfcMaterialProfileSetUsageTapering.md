@@ -36,11 +36,6 @@ Attribute definitions
 ---------------------
 | Attribute        | Description                                                                                                                                                                                                                                                                                                                              |
 |------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ForProfileEndSet |                                                                                                                                                                                                                                                                                                                                          |
 | CardinalEndPoint | Index reference to a significant point in the second section profile. Describes how this section is aligned relative to the axis of the member it is associated with. This parametric specification of profile alignment can be provided redundantly to the explicit alignment defined by ForProfileSet.MaterialProfiles[\\\\*].Profile. |
-
-Associations
-------------
-| Attribute        | Description   |
-|------------------|---------------|
-| ForProfileEndSet |               |
 

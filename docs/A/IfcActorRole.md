@@ -17,25 +17,10 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute       | Description                                                                                                                                                                                                                                                                 |
-|-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Role            | The name of the role played by an actor. If the Role has value USERDEFINED, then\X\0Dthe user defined role shall be provided as a value of the attribute UserDefinedRole.                                                                                                   |
-| UserDefinedRole | Allows for specification of user defined roles beyond the \X\0Denumeration values provided by Role attribute of type IfcRoleEnum. \X\0DWhen a value is provided for attribute UserDefinedRole in parallel \X\0Dthe attribute Role shall have enumeration value USERDEFINED. |
-| Description     | A textual description relating the nature of the role played by an actor.                                                                                                                                                                                                   |
-
-Formal Propositions
--------------------
-| Rule   | Description   |
-|--------|---------------|
-| WR1    |               |
-
-Associations
-------------
-| Attribute            | Description   |
-|----------------------|---------------|
-|                      |               |
-|                      |               |
-|                      |               |
-|                      |               |
-| HasExternalReference |               |
+| Attribute            | Description                                                                                                                                                                                                                                                                 |
+|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| HasExternalReference |                                                                                                                                                                                                                                                                             |
+| Role                 | The name of the role played by an actor. If the Role has value USERDEFINED, then\X\0Dthe user defined role shall be provided as a value of the attribute UserDefinedRole.                                                                                                   |
+| UserDefinedRole      | Allows for specification of user defined roles beyond the \X\0Denumeration values provided by Role attribute of type IfcRoleEnum. \X\0DWhen a value is provided for attribute UserDefinedRole in parallel \X\0Dthe attribute Role shall have enumeration value USERDEFINED. |
+| Description          | A textual description relating the nature of the role played by an actor.                                                                                                                                                                                                   |
 

@@ -21,13 +21,3 @@ Attribute definitions
 | OffsetVertical     | Offset vertical to the basis curve where positive values indicate vertically upwards in global coordinates at DistanceAlong, regardless of the slope of the basis curve at such point.                                                                                                                                                                         |
 | AlongHorizontal    | Indicates whether DistanceAlong is measured according to horizontal projection of distance (if True), or 3D distance (if False or unset).                                                                                                                                                                                                                      |
 
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
-|             |               |
-|             |               |
-|             |               |
-|             |               |
-

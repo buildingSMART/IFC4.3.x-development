@@ -20,11 +20,6 @@ Attribute definitions
 ---------------------
 | Attribute   | Description                                  |
 |-------------|----------------------------------------------|
+| Values      |                                              |
 | TimeStep    | A duration of time intervals between values. |
-
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-| Values      |               |
 

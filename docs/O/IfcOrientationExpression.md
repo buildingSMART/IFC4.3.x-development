@@ -6,11 +6,10 @@ for describing linear placement.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometryresource/lexical/ifcorientationexpression.htm)
 
 
-Associations
-------------
+Attribute definitions
+---------------------
 | Attribute             | Description   |
 |-----------------------|---------------|
-|                       |               |
 | LateralAxisDirection  |               |
 | VerticalAxisDirection |               |
 

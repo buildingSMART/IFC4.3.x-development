@@ -44,9 +44,3 @@ Attribute definitions
 | RemainingTime    | The amount of time remaining to complete a task. It is a predicted value. The value is either given as elapsed time or work time, which is defined by _DurationType_.\X\0D> NOTE  The time remaining in which to complete a task may be determined both for tasks which have not yet started and those which have. Remaining time for a task not yet started has the same value as the scheduled duration. For a task already started, remaining time is calculated as the difference between the scheduled finish and the point of analysis. |
 | Completion       | The extent of completion expressed as a ratio or percentage. It is a measured value.                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
-

@@ -16,14 +16,8 @@ of a control (represented by subtypes of _IfcControl_) to other objects
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifckernel/lexical/ifcrelassignstocontrol.htm)
 
 
-Formal Propositions
--------------------
-| Rule            | Description   |
-|-----------------|---------------|
-| NoSelfReference |               |
-
-Associations
-------------
+Attribute definitions
+---------------------
 | Attribute       | Description   |
 |-----------------|---------------|
 | RelatingControl |               |

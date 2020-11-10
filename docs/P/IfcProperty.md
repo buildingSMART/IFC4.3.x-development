@@ -10,20 +10,14 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute   | Description                                                                                                           |
-|-------------|-----------------------------------------------------------------------------------------------------------------------|
-| Name        | Name for this property. This label is the significant name string that defines the semantic meaning for the property. |
-| Description | Informative text to explain the property.                                                                             |
-
-Associations
-------------
-| Attribute             | Description   |
-|-----------------------|---------------|
-| HasApprovals          |               |
-| HasConstraints        |               |
-| PartOfPset            |               |
-| PartOfComplex         |               |
-|                       |               |
-| PropertyForDependance |               |
-| PropertyDependsOn     |               |
+| Attribute             | Description                                                                                                           |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------------|
+| HasApprovals          |                                                                                                                       |
+| HasConstraints        |                                                                                                                       |
+| PartOfPset            |                                                                                                                       |
+| PartOfComplex         |                                                                                                                       |
+| PropertyForDependance |                                                                                                                       |
+| PropertyDependsOn     |                                                                                                                       |
+| Name                  | Name for this property. This label is the significant name string that defines the semantic meaning for the property. |
+| Description           | Informative text to explain the property.                                                                             |
 

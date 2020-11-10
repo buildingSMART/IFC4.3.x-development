@@ -28,9 +28,3 @@ Attribute definitions
 | Scale2      | The scaling value specified for the transformation along the axis 2. This is normally the y scale factor.                                                                                       |
 | Scl2        | The derived scale S(2) of the transformation along the axis 2 (normally the y axis), equal to Scale2 if that exists, or equal to the derived Scl1 (normally the x axis scale factor) otherwise. |
 
-Formal Propositions
--------------------
-| Rule              | Description   |
-|-------------------|---------------|
-| Scale2GreaterZero |               |
-

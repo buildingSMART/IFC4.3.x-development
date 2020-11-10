@@ -22,13 +22,8 @@ Attribute definitions
 ---------------------
 | Attribute       | Description                                                                                                                                                                                                                                                              |
 |-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ResourceOf      |                                                                                                                                                                                                                                                                          |
 | Identification  | An identifying designation given to a resource type.                                                                                                                                                                                                                     |
 | LongDescription | An long description, or text, describing the resource in detail.\X\0D> NOTE  The inherited _SELF\\\IfcRoot.Description_ attribute is used as the short description.                                                                                                      |
 | ResourceType    | The type denotes a particular type that indicates the resource further. The use has to be established at the level of instantiable subtypes. In particular it holds the user defined type, if the enumeration of the attribute ''PredefinedType'' is set to USERDEFINED. |
-
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-| ResourceOf  |               |
 

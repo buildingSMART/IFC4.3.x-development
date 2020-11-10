@@ -22,21 +22,9 @@ Attribute definitions
 ---------------------
 | Attribute      | Description                                                                                                                                                                                                                                                                                                           |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| PredefinedType |                                                                                                                                                                                                                                                                                                                       |
 | NumberOfRisers | Number of the risers included in the stair flight\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE The attribute has been deprecated it shall only be exposed with a NIL value. Use _Pset_StairFlightCommon.NumberOfRisers_ instead.                                                                                           |
 | NumberOfTreads | Number of treads included in the stair flight.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE The attribute has been deprecated it shall only be exposed with a NIL value. Use _Pset_StairFlightCommon.NumberOfTreads_ instead.                                                                                              |
 | RiserHeight    | Vertical distance from tread to tread. The riser height is supposed to be equal for all stairs in a stair flight.\X\0D \X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE The attribute has been deprecated it shall only be exposed with a NIL value. Use _Pset_StairFlightCommon.RiserHeight_ instead.                        |
 | TreadLength    | Horizontal distance from the front to the back of the tread. The tread length is supposed to be equal for all steps of the stair flight.\X\0D \X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE The attribute has been deprecated it shall only be exposed with a NIL value. Use _Pset_StairFlightCommon.TreadLength_ instead. |
-
-Formal Propositions
--------------------
-| Rule                  | Description   |
-|-----------------------|---------------|
-| CorrectPredefinedType |               |
-| CorrectTypeAssigned   |               |
-
-Associations
-------------
-| Attribute      | Description   |
-|----------------|---------------|
-| PredefinedType |               |
 

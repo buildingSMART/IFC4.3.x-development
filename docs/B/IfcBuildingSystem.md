@@ -24,9 +24,3 @@ Attribute definitions
 | PredefinedType |                                                                                                                                                                                                                                                                                                                |
 | LongName       | Long name for a building system, used for informal purposes. It should be used, if available, in conjunction with the inherited _Name_ attribute.\X\0D> NOTE  In many scenarios the _Name_ attribute refers to the short name or number of a building system, and the _LongName_ refers to a descriptive name. |
 
-Associations
-------------
-| Attribute      | Description   |
-|----------------|---------------|
-| PredefinedType |               |
-

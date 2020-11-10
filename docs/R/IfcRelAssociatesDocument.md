@@ -24,10 +24,3 @@ Attribute definitions
 |------------------|--------------------------------------------------------------------|
 | RelatingDocument | Document information or reference which is applied to the objects. |
 
-Associations
-------------
-| Attribute        | Description   |
-|------------------|---------------|
-| RelatingDocument |               |
-| RelatingDocument |               |
-

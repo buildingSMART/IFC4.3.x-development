@@ -106,22 +106,11 @@ Attribute definitions
 ---------------------
 | Attribute                 | Description                                                                                                                   |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------|
+| ControlPointsList         |                                                                                                                               |
 | Degree                    | The algebraic degree of the basis functions.                                                                                  |
 | CurveForm                 | Used to identify particular types of curve; it is for information only.                                                       |
 | ClosedCurve               | Indication of whether the curve is closed; it is for information only.                                                        |
 | SelfIntersect             | Indication whether the curve self-intersects or not; it is for information only.                                              |
 | UpperIndexOnControlPoints | The upper index on the array of control points; the lower index is 0.\X\0DThis value is derived from the control points list. |
 | ControlPoints             | The array of control points used to define the geometry of the curve. This is derived from the list of control points.        |
-
-Formal Propositions
--------------------
-| Rule    | Description   |
-|---------|---------------|
-| SameDim |               |
-
-Associations
-------------
-| Attribute         | Description   |
-|-------------------|---------------|
-| ControlPointsList |               |
 

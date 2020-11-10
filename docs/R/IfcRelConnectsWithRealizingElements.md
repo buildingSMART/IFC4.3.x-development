@@ -35,13 +35,8 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute      | Description                                                                                                                              |
-|----------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| ConnectionType | The type of the connection given for informal purposes, it may include labels, like ''joint'', ''rigid joint'', ''flexible joint'', etc. |
-
-Associations
-------------
-| Attribute         | Description   |
-|-------------------|---------------|
-| RealizingElements |               |
+| Attribute         | Description                                                                                                                              |
+|-------------------|------------------------------------------------------------------------------------------------------------------------------------------|
+| RealizingElements |                                                                                                                                          |
+| ConnectionType    | The type of the connection given for informal purposes, it may include labels, like ''joint'', ''rigid joint'', ''flexible joint'', etc. |
 

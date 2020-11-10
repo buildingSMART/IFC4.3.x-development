@@ -1,14 +1,25 @@
 IfcTransformer
 ==============
+A transformer is an inductive stationary device that transfers electrical
+energy from one circuit to another.  
   
-A transformer is an inductance device that transfers electric energy from one
-circuit to another. It is used for voltage transformation, current change,
-impedance transformation, isolation, voltage regulation and so on.
+_IfcTransformer_ is used to transform electric power; conversion of electric
+signals for other purposes is handled at other entities: _IfcController_
+converts arbitrary signals, _IfcAudioVisualAppliance_ converts signals for
+audio or video streams, and _IfcCommunicationsAppliance_ converts signals for
+data or other communications usage.  
+  
+> HISTORY  New entity in IFC4  
+  
+{ .note}  
+>  
+[ _bSI
+Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcelectricaldomain/lexical/ifctransformer.htm)
 
 
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
+Attribute definitions
+---------------------
+| Attribute      | Description   |
+|----------------|---------------|
+| PredefinedType |               |
 

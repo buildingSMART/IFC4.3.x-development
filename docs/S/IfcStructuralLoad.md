@@ -15,9 +15,3 @@ Attribute definitions
 |-------------|------------------------------------------|
 | Name        | Optionally defines a name for this load. |
 
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
-

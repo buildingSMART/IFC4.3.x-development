@@ -6,8 +6,8 @@ lateral offset oriented according to the lateral inclination profile defined
 by IfcAxisLateralInclination.
 
 
-Associations
-------------
+Attribute definitions
+---------------------
 | Attribute   | Description   |
 |-------------|---------------|
 | Inclinating |               |

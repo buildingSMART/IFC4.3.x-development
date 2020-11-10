@@ -9,9 +9,10 @@ defined by an _IfcComplexPropertyTemplate_.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifckernel/lexical/ifccomplexpropertytemplatetypeenum.htm)
 
 
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
+Attribute definitions
+---------------------
+| Attribute   | Description                                                                                   |
+|-------------|-----------------------------------------------------------------------------------------------|
+| Q_COMPLEX   | $                                                                                             |
+| P_COMPLEX   | the properties defined by this _IfcComplexPropertyTemplate_ are of type _IfcComplexProperty_. |
 

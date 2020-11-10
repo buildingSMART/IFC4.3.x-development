@@ -39,8 +39,8 @@ an _IfcStyledItem_ and be assigned to an _IfcGeometricRepresentationItem_
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcpresentationappearanceresource/lexical/ifcsurfacestylewithtextures.htm)
 
 
-Associations
-------------
+Attribute definitions
+---------------------
 | Attribute   | Description   |
 |-------------|---------------|
 | Textures    |               |

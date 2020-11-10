@@ -1,8 +1,0 @@
-IfcNeutralSection
-=================
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
-

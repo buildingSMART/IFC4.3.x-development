@@ -83,10 +83,3 @@ Attribute definitions
 | WebSlope         | Slope of flange of the profile.                        |
 | FlangeSlope      | Slope of web of the profile.                           |
 
-Formal Propositions
--------------------
-| Rule                 | Description   |
-|----------------------|---------------|
-| ValidFlangeThickness |               |
-| ValidWebThickness    |               |
-

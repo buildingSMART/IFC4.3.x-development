@@ -17,19 +17,10 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute   | Description                                                                                                    |
-|-------------|----------------------------------------------------------------------------------------------------------------|
-| Name        | Name of the element quantity or measure. The name attribute has to be made recognizable by further agreements. |
-| Description | Further explanation that might be given to the quantity.                                                       |
-
-Associations
-------------
-| Attribute             | Description   |
-|-----------------------|---------------|
-|                       |               |
-|                       |               |
-| HasExternalReferences |               |
-|                       |               |
-| PartOfComplex         |               |
-|                       |               |
+| Attribute             | Description                                                                                                    |
+|-----------------------|----------------------------------------------------------------------------------------------------------------|
+| HasExternalReferences |                                                                                                                |
+| PartOfComplex         |                                                                                                                |
+| Name                  | Name of the element quantity or measure. The name attribute has to be made recognizable by further agreements. |
+| Description           | Further explanation that might be given to the quantity.                                                       |
 

@@ -42,18 +42,7 @@ Attribute definitions
 ---------------------
 | Attribute     | Description                                                                                            |
 |---------------|--------------------------------------------------------------------------------------------------------|
+| RefDirection  |                                                                                                        |
 | Distance      | The distance of the offset curve from the basis curve. The distance may be positive, negative or zero. |
 | SelfIntersect | An indication of whether the offset curve self-intersects, this is for information only.               |
-
-Formal Propositions
--------------------
-| Rule    | Description   |
-|---------|---------------|
-| DimIs2D |               |
-
-Associations
-------------
-| Attribute    | Description   |
-|--------------|---------------|
-| RefDirection |               |
 

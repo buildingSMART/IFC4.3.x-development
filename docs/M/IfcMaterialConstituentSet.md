@@ -22,14 +22,9 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute   | Description                                                      |
-|-------------|------------------------------------------------------------------|
-| Name        | The name by which the constituent set is known.                  |
-| Description | Definition of the material constituent set in descriptive terms. |
-
-Associations
-------------
-| Attribute            | Description   |
-|----------------------|---------------|
-| MaterialConstituents |               |
+| Attribute            | Description                                                      |
+|----------------------|------------------------------------------------------------------|
+| MaterialConstituents |                                                                  |
+| Name                 | The name by which the constituent set is known.                  |
+| Description          | Definition of the material constituent set in descriptive terms. |
 

@@ -8,8 +8,8 @@ effect when the curve is used for linear placement or creating other geometric
 representation items.  
 
 
-Associations
-------------
+Attribute definitions
+---------------------
 | Attribute   | Description   |
 |-------------|---------------|
 | Directrix   |               |

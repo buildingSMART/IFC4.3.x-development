@@ -56,21 +56,9 @@ Attribute definitions
 ---------------------
 | Attribute               | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 |-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| TimeLag                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| RelatedProcess          |                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| RelatingProcess         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | SequenceType            | The way in which the time lag applies to the sequence.                                                                                                                                                                                                                                                                                                                                                                                                               |
 | UserDefinedSequenceType | Allows for specification of user defined type of the sequence\X\0D beyond the enumeration values (START_START, START_FINISH,\X\0D FINISH_START, FINISH_FINISH) provided by _SequenceType_\X\0D attribute of type _IfcSequenceEnum_. When a value is\X\0D provided for attribute _UserDefinedSequenceType_ in\X\0D parallel the attribute _SequenceType_ shall have\X\0D enumeration value USERDEFINED.\X\0D \X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE Attribute added |
-
-Formal Propositions
--------------------
-| Rule                      | Description   |
-|---------------------------|---------------|
-| AvoidInconsistentSequence |               |
-| CorrectSequenceType       |               |
-
-Associations
-------------
-| Attribute       | Description   |
-|-----------------|---------------|
-| TimeLag         |               |
-| RelatedProcess  |               |
-| RelatingProcess |               |
 

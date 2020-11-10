@@ -37,9 +37,3 @@ Attribute definitions
 |-------------|---------------|
 | ParamLength | $             |
 
-Formal Propositions
--------------------
-| Rule                    | Description   |
-|-------------------------|---------------|
-| PositiveLengthParameter |               |
-

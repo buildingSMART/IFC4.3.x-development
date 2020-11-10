@@ -78,11 +78,3 @@ Attribute definitions
 | FillStyles        | The set of fill area styles to use in presenting visible curve segments, annotation fill areas or surfaces.                                                              |
 | ModelorDraughting | Indication whether the length measures provided for the presentation style are model based, or draughting based.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  New attribute. |
 
-Formal Propositions
--------------------
-| Rule                    | Description   |
-|-------------------------|---------------|
-| MaxOneColour            |               |
-| MaxOneExtHatchStyle     |               |
-| ConsistentHatchStyleDef |               |
-

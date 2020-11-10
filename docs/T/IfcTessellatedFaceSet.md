@@ -45,13 +45,8 @@ Attribute definitions
 ---------------------
 | Attribute   | Description                                                                     |
 |-------------|---------------------------------------------------------------------------------|
+| Coordinates |                                                                                 |
+| HasColours  |                                                                                 |
+| HasTextures |                                                                                 |
 | Dim         | The space dimensionality of this geometric representation item, it is always 3. |
-
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-| Coordinates |               |
-| HasColours  |               |
-| HasTextures |               |
 

@@ -26,9 +26,3 @@ Figure 1 illustrates predefined curve fonts.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcpresentationappearanceresource/lexical/ifcdraughtingpredefinedcurvefont.htm)
 
 
-Formal Propositions
--------------------
-| Rule                     | Description   |
-|--------------------------|---------------|
-| PreDefinedCurveFontNames |               |
-

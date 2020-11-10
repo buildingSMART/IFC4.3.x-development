@@ -32,19 +32,8 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute   | Description                                     |
-|-------------|-------------------------------------------------|
-| WorkMethod  | The method of work used in carrying out a task. |
-
-Formal Propositions
--------------------
-| Rule                  | Description   |
-|-----------------------|---------------|
-| CorrectPredefinedType |               |
-
-Associations
-------------
-| Attribute      | Description   |
-|----------------|---------------|
-| PredefinedType |               |
+| Attribute      | Description                                     |
+|----------------|-------------------------------------------------|
+| PredefinedType |                                                 |
+| WorkMethod     | The method of work used in carrying out a task. |
 

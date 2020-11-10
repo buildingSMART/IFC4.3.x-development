@@ -28,20 +28,7 @@ Attribute definitions
 ---------------------
 | Attribute   | Description                                                                                                                       |
 |-------------|-----------------------------------------------------------------------------------------------------------------------------------|
+| Orientation |                                                                                                                                   |
 | Magnitude   | The magnitude of the vector. All vectors of Magnitude 0.0 are regarded as equal in value regardless of the orientation attribute. |
 | Dim         | The space dimensionality of this class, it is derived from Orientation                                                            |
-
-Formal Propositions
--------------------
-| Rule                  | Description   |
-|-----------------------|---------------|
-| MagGreaterOrEqualZero |               |
-
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-| Orientation |               |
-|             |               |
-|             |               |
 

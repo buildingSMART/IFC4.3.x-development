@@ -32,19 +32,8 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute   | Description                                                                                                                                                                                                                                                                                                                                                                                                    |
-|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| LongName    | Long name for a space type, used for informal purposes. It should be used, if available, in conjunction with the inherited _Name_ attribute.\X\0D> NOTE  In many scenarios the _Name_ attribute refers to the short name or number of a space type, and the _LongName_ refers to the full descriptive name.\X\0D\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  New attribute added at the end of entity definition. |
-
-Formal Propositions
--------------------
-| Rule                  | Description   |
-|-----------------------|---------------|
-| CorrectPredefinedType |               |
-
-Associations
-------------
-| Attribute      | Description   |
-|----------------|---------------|
-| PredefinedType |               |
+| Attribute      | Description                                                                                                                                                                                                                                                                                                                                                                                                    |
+|----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| PredefinedType |                                                                                                                                                                                                                                                                                                                                                                                                                |
+| LongName       | Long name for a space type, used for informal purposes. It should be used, if available, in conjunction with the inherited _Name_ attribute.\X\0D> NOTE  In many scenarios the _Name_ attribute refers to the short name or number of a space type, and the _LongName_ refers to the full descriptive name.\X\0D\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  New attribute added at the end of entity definition. |
 

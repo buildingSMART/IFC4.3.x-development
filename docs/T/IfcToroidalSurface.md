@@ -66,9 +66,3 @@ Attribute definitions
 | MajorRadius | The major radius of the torus. |
 | MinorRadius | The minor radius of the torus. |
 
-Formal Propositions
--------------------
-| Rule             | Description   |
-|------------------|---------------|
-| MajorLargerMinor |               |
-

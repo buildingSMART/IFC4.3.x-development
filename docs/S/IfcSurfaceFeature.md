@@ -67,14 +67,8 @@ property sets based on local agreements.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcstructuralelementsdomain/lexical/ifcsurfacefeature.htm)
 
 
-Formal Propositions
--------------------
-| Rule          | Description   |
-|---------------|---------------|
-| HasObjectType |               |
-
-Associations
-------------
+Attribute definitions
+---------------------
 | Attribute      | Description   |
 |----------------|---------------|
 | PredefinedType |               |

@@ -27,19 +27,8 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute     | Description                                                                                                                  |
-|---------------|------------------------------------------------------------------------------------------------------------------------------|
-| AssemblyPlace | A designation of where the assembly is intended to take place. A selection of alternatives s provided in an enumerated list. |
-
-Formal Propositions
--------------------
-| Rule                  | Description   |
-|-----------------------|---------------|
-| CorrectPredefinedType |               |
-
-Associations
-------------
-| Attribute      | Description   |
-|----------------|---------------|
-| PredefinedType |               |
+| Attribute      | Description                                                                                                                  |
+|----------------|------------------------------------------------------------------------------------------------------------------------------|
+| PredefinedType |                                                                                                                              |
+| AssemblyPlace  | A designation of where the assembly is intended to take place. A selection of alternatives s provided in an enumerated list. |
 

@@ -88,9 +88,3 @@ vertices of type vertex point
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricmodelresource/lexical/ifcadvancedbrep.htm)
 
 
-Formal Propositions
--------------------
-| Rule             | Description   |
-|------------------|---------------|
-| HasAdvancedFaces |               |
-

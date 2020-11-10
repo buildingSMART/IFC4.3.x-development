@@ -54,8 +54,8 @@ using the connection geometry for second level space boundaries.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcproductextension/lexical/ifcrelspaceboundary2ndlevel.htm)
 
 
-Associations
-------------
+Attribute definitions
+---------------------
 | Attribute             | Description   |
 |-----------------------|---------------|
 | Corresponds           |               |

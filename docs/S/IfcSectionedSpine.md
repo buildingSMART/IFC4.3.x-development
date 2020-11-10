@@ -63,23 +63,10 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute   | Description                                        |
-|-------------|----------------------------------------------------|
-| Dim         | The dimensionality of the spine curve is always 3. |
-
-Formal Propositions
--------------------
-| Rule                          | Description   |
-|-------------------------------|---------------|
-| CorrespondingSectionPositions |               |
-| ConsistentProfileTypes        |               |
-| SpineCurveDim                 |               |
-
-Associations
-------------
-| Attribute             | Description   |
-|-----------------------|---------------|
-| CrossSectionPositions |               |
-| SpineCurve            |               |
-| CrossSections         |               |
+| Attribute             | Description                                        |
+|-----------------------|----------------------------------------------------|
+| CrossSectionPositions |                                                    |
+| SpineCurve            |                                                    |
+| CrossSections         |                                                    |
+| Dim                   | The dimensionality of the spine curve is always 3. |
 

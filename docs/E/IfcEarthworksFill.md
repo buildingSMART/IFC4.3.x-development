@@ -10,9 +10,3 @@ Attribute definitions
 |----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | PredefinedType | Identifies the predefined type of a earthworks fill elements from which the type modelled, may be set. This type may associate additional specific property sets. |
 
-Associations
-------------
-| Attribute      | Description   |
-|----------------|---------------|
-| PredefinedType |               |
-

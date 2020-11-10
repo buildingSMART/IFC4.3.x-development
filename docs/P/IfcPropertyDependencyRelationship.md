@@ -25,20 +25,9 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute   | Description                                                              |
-|-------------|--------------------------------------------------------------------------|
-| Expression  | Expression that further describes the nature of the dependency relation. |
-
-Formal Propositions
--------------------
-| Rule            | Description   |
-|-----------------|---------------|
-| NoSelfReference |               |
-
-Associations
-------------
-| Attribute         | Description   |
-|-------------------|---------------|
-| DependingProperty |               |
-| DependantProperty |               |
+| Attribute         | Description                                                              |
+|-------------------|--------------------------------------------------------------------------|
+| DependingProperty |                                                                          |
+| DependantProperty |                                                                          |
+| Expression        | Expression that further describes the nature of the dependency relation. |
 

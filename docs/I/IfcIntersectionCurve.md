@@ -18,10 +18,3 @@ intersecting surfaces.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometryresource/lexical/ifcintersectioncurve.htm)
 
 
-Formal Propositions
--------------------
-| Rule             | Description   |
-|------------------|---------------|
-| TwoPCurves       |               |
-| DistinctSurfaces |               |
-

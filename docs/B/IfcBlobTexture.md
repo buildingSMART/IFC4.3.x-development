@@ -26,10 +26,3 @@ Attribute definitions
 | RasterFormat | The format of the _RasterCode_ often using a compression.                                                                                                         |
 | RasterCode   | Blob, given as a single binary, to capture the texture within one popular file (compression) format. The file format is provided by the _RasterFormat_ attribute. |
 
-Formal Propositions
--------------------
-| Rule                  | Description   |
-|-----------------------|---------------|
-| SupportedRasterFormat |               |
-| RasterCodeByteStream  |               |
-

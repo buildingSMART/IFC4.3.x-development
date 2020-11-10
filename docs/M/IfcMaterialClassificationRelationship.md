@@ -17,11 +17,6 @@ Attribute definitions
 ---------------------
 | Attribute               | Description                                                    |
 |-------------------------|----------------------------------------------------------------|
+| ClassifiedMaterial      |                                                                |
 | MaterialClassifications | The material classifications identifying the type of material. |
-
-Associations
-------------
-| Attribute          | Description   |
-|--------------------|---------------|
-| ClassifiedMaterial |               |
 

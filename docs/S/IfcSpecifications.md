@@ -1,8 +1,0 @@
-IfcSpecifications
-=================
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
-

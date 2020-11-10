@@ -63,35 +63,9 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute   | Description                                                                                                               |
-|-------------|---------------------------------------------------------------------------------------------------------------------------|
-| P           | The normalized directions of the placement X Axis (P[1]) and the placement Y Axis (P[2]) and the placement Z Axis (P[3]). |
-
-Formal Propositions
--------------------
-| Rule                   | Description   |
-|------------------------|---------------|
-| LocationIs3D           |               |
-| AxisIs3D               |               |
-| RefDirIs3D             |               |
-| AxisToRefDirPosition   |               |
-| AxisAndRefDirProvision |               |
-
-Associations
-------------
-| Attribute    | Description   |
-|--------------|---------------|
-|              |               |
-|              |               |
-|              |               |
-|              |               |
-|              |               |
-| RefDirection |               |
-| Axis         |               |
-|              |               |
-|              |               |
-|              |               |
-|              |               |
-|              |               |
-|              |               |
+| Attribute    | Description                                                                                                               |
+|--------------|---------------------------------------------------------------------------------------------------------------------------|
+| RefDirection |                                                                                                                           |
+| Axis         |                                                                                                                           |
+| P            | The normalized directions of the placement X Axis (P[1]) and the placement Y Axis (P[2]) and the placement Z Axis (P[3]). |
 

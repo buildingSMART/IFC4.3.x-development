@@ -13,22 +13,8 @@ Attribute definitions
 ---------------------
 | Attribute             | Description                                                                           |
 |-----------------------|---------------------------------------------------------------------------------------|
+| ApplicationDeveloper  |                                                                                       |
 | Version               | The version number of this software as specified by the developer of the application. |
 | ApplicationFullName   | The full name of the application as specified by the application developer.           |
 | ApplicationIdentifier | Short identifying name for the application.                                           |
-
-Formal Propositions
--------------------
-| Rule   | Description   |
-|--------|---------------|
-| UR1    |               |
-| UR2    |               |
-
-Associations
-------------
-| Attribute            | Description   |
-|----------------------|---------------|
-| ApplicationDeveloper |               |
-|                      |               |
-|                      |               |
 

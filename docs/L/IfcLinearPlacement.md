@@ -7,8 +7,8 @@ defined by a reference to a curve such as _IfcAlignmentCurve_.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricconstraintresource/lexical/ifclinearplacement.htm)
 
 
-Associations
-------------
+Attribute definitions
+---------------------
 | Attribute              | Description   |
 |------------------------|---------------|
 | CartesianPosition      |               |

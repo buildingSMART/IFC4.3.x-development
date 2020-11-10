@@ -13,9 +13,3 @@ Attribute definitions
 |-------------|----------------------------------------------------------|
 | Name        | Optionally defines a name for this connection condition. |
 
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
-

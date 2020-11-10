@@ -21,12 +21,7 @@ Attribute definitions
 ---------------------
 | Attribute       | Description                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| PredefinedType  |                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | Status          | The status currently assigned to the request. Possible values include: \X\0DHold: wait to see if further requests are received before deciding on action \X\0DNoAction: no action is required on this request \X\0DSchedule: plan action to take place as part of maintenance or other task planning/scheduling \X\0DUrgent: take action immediately \X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE The attribute has been added. |
 | LongDescription | Detailed description of the permit.\X\0D\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE The attribute has been added.                                                                                                                                                                                                                                                                                                              |
-
-Associations
-------------
-| Attribute      | Description   |
-|----------------|---------------|
-| PredefinedType |               |
 

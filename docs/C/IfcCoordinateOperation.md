@@ -42,13 +42,6 @@ Attribute definitions
 ---------------------
 | Attribute   | Description                                           |
 |-------------|-------------------------------------------------------|
+| TargetCRS   |                                                       |
 | SourceCRS   | Source coordinate reference system for the operation. |
-
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-| TargetCRS   |               |
-| SourceCRS   |               |
-| SourceCRS   |               |
 

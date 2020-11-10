@@ -19,16 +19,3 @@ Attribute definitions
 | NominalLength   | The nominal length describing the longitudinal dimensions of the fastener type.\X\0D\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  Deprecated; the respective attribute of _IfcMechanicalFastenerType_ should be used instead. |
 | PredefinedType  |                                                                                                                                                                                                                           |
 
-Formal Propositions
--------------------
-| Rule                  | Description   |
-|-----------------------|---------------|
-| CorrectPredefinedType |               |
-| CorrectTypeAssigned   |               |
-
-Associations
-------------
-| Attribute      | Description   |
-|----------------|---------------|
-| PredefinedType |               |
-

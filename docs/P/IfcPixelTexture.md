@@ -39,13 +39,3 @@ Attribute definitions
 | ColourComponents | Indication whether the pixel values contain a 1, 2, 3, or 4 colour component.                                                                                                            |
 | Pixel            | Flat list of hexadecimal values, each describing one pixel by 1, 2, 3, or 4 components.\X\0D{ .change-ifc2x3}\X\0D> IFC2x3 CHANGE  The data type has been changed from STRING to BINARY. |
 
-Formal Propositions
--------------------
-| Rule                     | Description   |
-|--------------------------|---------------|
-| MinPixelInS              |               |
-| MinPixelInT              |               |
-| NumberOfColours          |               |
-| SizeOfPixelList          |               |
-| PixelAsByteAndSameLength |               |
-

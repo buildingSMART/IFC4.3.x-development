@@ -41,9 +41,3 @@ Attribute definitions
 | LagValue     | Value of the time lag selected as being either a ratio or a\X\0D time measure.                             |
 | DurationType | The allowed types of task duration that specify the lag time\X\0D measurement (work time or elapsed time). |
 
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
-

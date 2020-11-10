@@ -26,16 +26,11 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute    | Description                                                                                                                                                                                                                                                                               |
-|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ExchangeRate | The currently agreed ratio of the amount of a related monetary unit that is equivalent to a unit amount of the relating monetary unit in a currency relationship. For instance, in the case of a conversion from GBP to USD, the value of the exchange rate may be 1.486 (USD) : 1 (GBP). |
-| RateDateTime | The date and time at which an exchange rate applies.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE Type changed from IfcDateTimeSelect. Attribute made optional.                                                                                                                                |
-
-Associations
-------------
-| Attribute            | Description   |
-|----------------------|---------------|
-| RateSource           |               |
-| RelatedMonetaryUnit  |               |
-| RelatingMonetaryUnit |               |
+| Attribute            | Description                                                                                                                                                                                                                                                                               |
+|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| RateSource           |                                                                                                                                                                                                                                                                                           |
+| RelatedMonetaryUnit  |                                                                                                                                                                                                                                                                                           |
+| RelatingMonetaryUnit |                                                                                                                                                                                                                                                                                           |
+| ExchangeRate         | The currently agreed ratio of the amount of a related monetary unit that is equivalent to a unit amount of the relating monetary unit in a currency relationship. For instance, in the case of a conversion from GBP to USD, the value of the exchange rate may be 1.486 (USD) : 1 (GBP). |
+| RateDateTime         | The date and time at which an exchange rate applies.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE Type changed from IfcDateTimeSelect. Attribute made optional.                                                                                                                                |
 

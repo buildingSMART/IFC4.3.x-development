@@ -19,9 +19,3 @@ Attribute definitions
 | SizeInX     | The extent in the direction of the x-axis. |
 | SizeInY     | The extent in the direction of the y-axis. |
 
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
-

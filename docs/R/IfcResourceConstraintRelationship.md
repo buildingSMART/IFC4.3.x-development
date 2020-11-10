@@ -23,12 +23,6 @@ Attribute definitions
 ---------------------
 | Attribute              | Description                                            |
 |------------------------|--------------------------------------------------------|
+| RelatingConstraint     |                                                        |
 | RelatedResourceObjects | The properties to which a constraint is to be related. |
-
-Associations
-------------
-| Attribute              | Description   |
-|------------------------|---------------|
-| RelatingConstraint     |               |
-| RelatedResourceObjects |               |
 

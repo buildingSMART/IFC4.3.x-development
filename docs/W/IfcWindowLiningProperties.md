@@ -204,6 +204,7 @@ Attribute definitions
 ---------------------
 | Attribute            | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ShapeAspectStyle     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | LiningDepth          | Depth of the window lining (dimension measured perpendicular to window elevation plane).                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | LiningThickness      | Thickness of the window lining as explained in the figure above. If _LiningThickness_ value is 0. (zero) it denotes a window without a lining (all other lining parameters shall be set to NIL in this case). If the _LiningThickness_ is NIL it denotes that the value is not available.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  Data type modified to be _IfcNonNegativeLengthMeasure_.                                                                                                                  |
 | TransomThickness     | Thickness of the transom (horizontal separator of window panels within a window), measured parallel to the window elevation plane. The transom is part of the lining and the transom depth is assumed to be identical to the lining depth.\X\0DIf the _TransomThickness_ is set to zero (and the _TransomOffset_ set to a positive length), then the window is divided vertically without a physical divider.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  Data type changed to _IfcNonNegativeLengthMeasure_.  |
@@ -215,19 +216,4 @@ Attribute definitions
 | LiningOffset         | Offset of the window lining. The offset is given as distance along the y axis of the local placement (perpendicular to the window plane).\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  New attribute added at the end of the entity definition.                                                                                                                                                                                                                                                                 |
 | LiningToPanelOffsetX | Offset between the lining and the window panel measured along the x-axis of the local placement. Should be smaller or equal to the _LiningThickness_.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  New attribute added at the end of the entity definition.                                                                                                                                                                                                                                                     |
 | LiningToPanelOffsetY | Offset between the lining and the window panel measured along the y-axis of the local placement. Should be smaller or equal to the _IfcWindowPanelProperties.PanelThickness_.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  New attribute added at the end of the entity definition.                                                                                                                                                                                                                             |
-
-Formal Propositions
--------------------
-| Rule   | Description   |
-|--------|---------------|
-| WR31   |               |
-| WR32   |               |
-| WR33   |               |
-| WR34   |               |
-
-Associations
-------------
-| Attribute        | Description   |
-|------------------|---------------|
-| ShapeAspectStyle |               |
 

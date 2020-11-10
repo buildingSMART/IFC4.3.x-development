@@ -81,10 +81,3 @@ Attribute definitions
 | EdgeRadius      | Edge radius according the above illustration (= r2).   |
 | FlangeSlope     | Slope of flange of the profile.                        |
 
-Formal Propositions
--------------------
-| Rule                 | Description   |
-|----------------------|---------------|
-| ValidFlangeThickness |               |
-| ValidWebThickness    |               |
-

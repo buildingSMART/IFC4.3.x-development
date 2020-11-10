@@ -1,5 +1,0 @@
-IfcRailwayEnergyFacility
-========================
-Energy System?  
-
-

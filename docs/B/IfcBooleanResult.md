@@ -42,11 +42,3 @@ Attribute definitions
 | SecondOperand | The second operand specified for the operation.                                                                                                                                          |
 | Dim           | The space dimensionality of this entity. It is identical with the space dimensionality of the first operand. A where rule ensures that both operands have the same space dimensionality. |
 
-Formal Propositions
--------------------
-| Rule                | Description   |
-|---------------------|---------------|
-| SameDim             |               |
-| FirstOperandClosed  |               |
-| SecondOperandClosed |               |
-

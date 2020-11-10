@@ -37,10 +37,3 @@ Attribute definitions
 | KnotSpec           | The description of the knot type. This is for information only.                                                                                      |
 | UpperIndexOnKnots  | The upper index on the knot arrays; the lower index is 1.                                                                                            |
 
-Formal Propositions
--------------------
-| Rule                   | Description   |
-|------------------------|---------------|
-| ConsistentBSpline      |               |
-| CorrespondingKnotLists |               |
-

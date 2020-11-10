@@ -22,14 +22,8 @@ attribute.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifckernel/lexical/ifcrelassignstoactor.htm)
 
 
-Formal Propositions
--------------------
-| Rule            | Description   |
-|-----------------|---------------|
-| NoSelfReference |               |
-
-Associations
-------------
+Attribute definitions
+---------------------
 | Attribute     | Description   |
 |---------------|---------------|
 | ActingRole    |               |

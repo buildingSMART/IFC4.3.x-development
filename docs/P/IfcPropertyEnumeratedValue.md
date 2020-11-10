@@ -125,19 +125,8 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute         | Description                                                                                                                                                                                                                                             |
-|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| EnumerationValues | Enumeration values, which shall be listed in the referenced _IfcPropertyEnumeration_, if such a reference is provided.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  The attribute has been made optional with upward compatibility for file based exchange. |
-
-Formal Propositions
--------------------
-| Rule   | Description   |
-|--------|---------------|
-| WR21   |               |
-
-Associations
-------------
-| Attribute            | Description   |
-|----------------------|---------------|
-| EnumerationReference |               |
+| Attribute            | Description                                                                                                                                                                                                                                             |
+|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| EnumerationReference |                                                                                                                                                                                                                                                         |
+| EnumerationValues    | Enumeration values, which shall be listed in the referenced _IfcPropertyEnumeration_, if such a reference is provided.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  The attribute has been made optional with upward compatibility for file based exchange. |
 

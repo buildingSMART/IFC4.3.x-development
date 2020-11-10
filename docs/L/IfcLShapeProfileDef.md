@@ -148,9 +148,3 @@ Attribute definitions
 | EdgeRadius   | Edge radius according the above illustration (= r2).                                                                                                                                            |
 | LegSlope     | Slope of the inner face of each leg of the profile.                                                                                                                                             |
 
-Formal Propositions
--------------------
-| Rule           | Description   |
-|----------------|---------------|
-| ValidThickness |               |
-

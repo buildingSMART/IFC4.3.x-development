@@ -106,7 +106,7 @@ class xmi_item:
     stereotype = None
     
     def __init__(self, type, name, definition, node, children = None, stereotype = None, **kwargs):
-        self.type, self.name, self.definition, self.node, self.children = type, name, definition, node, children or []
+        self.type, self.name, self.definition, self.node, self.children = type, name.strip(), definition, node, children or []
         self.children = [xmi_item(None, a, None, b, None) for a, b in self.children]        
         self.stereotype = stereotype
         self.meta = kwargs
@@ -117,13 +117,14 @@ class xmi_item:
         return iter(self.children)
         
     def _get_documentation(self):
-        ds = (self.node/"documentation")
-        if len(ds) == 1 and self.node.xml.tagName != 'element':
-            return ds[0].value
-        else:
-            ps = (self.node/"properties")
-            if ps:
-                return ps[0].documentation
+        if self.node:
+            ds = (self.node/"documentation")
+            if len(ds) == 1 and self.node.xml.tagName != 'element':
+                return ds[0].value
+            else:
+                ps = (self.node/"properties")
+                if ps:
+                    return ps[0].documentation
         
     documentation = property(_get_documentation)
     

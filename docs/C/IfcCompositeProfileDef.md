@@ -59,19 +59,6 @@ Attribute definitions
 ---------------------
 | Attribute   | Description                                                                                                                            |
 |-------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| Profiles    |                                                                                                                                        |
 | Label       | The name by which the composition may be referred to. The actual meaning of the name has to be defined in the context of applications. |
-
-Formal Propositions
--------------------
-| Rule                 | Description   |
-|----------------------|---------------|
-| InvariantProfileType |               |
-| NoRecursion          |               |
-
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
-| Profiles    |               |
 

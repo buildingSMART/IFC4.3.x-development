@@ -17,18 +17,12 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute                 | Description                                                                                                                                                     |
-|---------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| LongitudinalStartPosition | The start position in longitudinal direction for the section reinforcement properties.                                                                          |
-| LongitudinalEndPosition   | The end position in longitudinal direction for the section reinforcement properties.                                                                            |
-| TransversePosition        | The position for the section reinforcement properties in transverse direction.                                                                                  |
-| ReinforcementRole         | The role, purpose or usage of the reinforcement, i.e. the kind of loads and stresses it is intended to carry, defined for the section reinforcement properties. |
-
-Associations
-------------
-| Attribute                            | Description   |
-|--------------------------------------|---------------|
-| CrossSectionReinforcementDefinitions |               |
-| SectionDefinition                    |               |
-|                                      |               |
+| Attribute                            | Description                                                                                                                                                     |
+|--------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| CrossSectionReinforcementDefinitions |                                                                                                                                                                 |
+| SectionDefinition                    |                                                                                                                                                                 |
+| LongitudinalStartPosition            | The start position in longitudinal direction for the section reinforcement properties.                                                                          |
+| LongitudinalEndPosition              | The end position in longitudinal direction for the section reinforcement properties.                                                                            |
+| TransversePosition                   | The position for the section reinforcement properties in transverse direction.                                                                                  |
+| ReinforcementRole                    | The role, purpose or usage of the reinforcement, i.e. the kind of loads and stresses it is intended to carry, defined for the section reinforcement properties. |
 

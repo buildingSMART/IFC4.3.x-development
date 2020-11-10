@@ -46,14 +46,9 @@ Attribute definitions
 ---------------------
 | Attribute       | Description                                                                                                                                                                                    |
 |-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| IsSuccessorFrom |                                                                                                                                                                                                |
+| OperatesOn      |                                                                                                                                                                                                |
+| IsPredecessorTo |                                                                                                                                                                                                |
 | Identification  | An identifying designation given to a process or activity.\X\0D It is the identifier at the occurrence level. \X\0D \X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE Attribute promoted from subtypes. |
 | LongDescription | An extended description or narrative that may be provided.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  New attribute.                                                                             |
-
-Associations
-------------
-| Attribute       | Description   |
-|-----------------|---------------|
-| IsSuccessorFrom |               |
-| OperatesOn      |               |
-| IsPredecessorTo |               |
 

@@ -46,22 +46,11 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute      | Description                                                                                                                                      |
-|----------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
-| OperationType  | Types of window panel operations. Also used to assign standard symbolic presentations according to national building standards.                  |
-| PanelPosition  | Position of this panel within the overall window style.                                                                                          |
-| FrameDepth     | Depth of panel frame, measured from front face to back face horizontally (i.e. perpendicular to the window (elevation) plane.                    |
-| FrameThickness | Width of panel frame, measured from inside of panel (at glazing) to outside of panel (at lining), i.e. parallel to the window (elevation) plane. |
-
-Formal Propositions
--------------------
-| Rule             | Description   |
-|------------------|---------------|
-| ApplicableToType |               |
-
-Associations
-------------
-| Attribute        | Description   |
-|------------------|---------------|
-| ShapeAspectStyle |               |
+| Attribute        | Description                                                                                                                                      |
+|------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| ShapeAspectStyle |                                                                                                                                                  |
+| OperationType    | Types of window panel operations. Also used to assign standard symbolic presentations according to national building standards.                  |
+| PanelPosition    | Position of this panel within the overall window style.                                                                                          |
+| FrameDepth       | Depth of panel frame, measured from front face to back face horizontally (i.e. perpendicular to the window (elevation) plane.                    |
+| FrameThickness   | Width of panel frame, measured from inside of panel (at glazing) to outside of panel (at lining), i.e. parallel to the window (elevation) plane. |
 

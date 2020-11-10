@@ -15,8 +15,8 @@ This is a collection of properties applicable to section profile definitions.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcprofileresource/lexical/ifcprofileproperties.htm)
 
 
-Associations
-------------
+Attribute definitions
+---------------------
 | Attribute         | Description   |
 |-------------------|---------------|
 | ProfileDefinition |               |

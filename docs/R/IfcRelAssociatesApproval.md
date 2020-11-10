@@ -9,8 +9,8 @@ _IfcRoot_.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifccontrolextension/lexical/ifcrelassociatesapproval.htm)
 
 
-Associations
-------------
+Attribute definitions
+---------------------
 | Attribute        | Description   |
 |------------------|---------------|
 | RelatingApproval |               |

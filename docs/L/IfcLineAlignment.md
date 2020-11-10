@@ -1,9 +1,0 @@
-IfcLinealignment
-================
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
-|             |               |
-

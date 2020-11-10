@@ -17,11 +17,6 @@ Attribute definitions
 ---------------------
 | Attribute   | Description                                    |
 |-------------|------------------------------------------------|
+| PatternList |                                                |
 | Name        | Name that may be assigned with the curve font. |
-
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-| PatternList |               |
 

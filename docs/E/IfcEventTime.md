@@ -30,9 +30,3 @@ Attribute definitions
 | LateDate     | The latest date on which an event can occur. It is a calculated value.                                                                                    |
 | ScheduleDate | The date on which an event is scheduled to occur. \X\0D The value might be measured or somehow calculated, which is defined by\X\0D _ScheduleDataOrigin_. |
 
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
-

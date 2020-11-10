@@ -33,14 +33,8 @@ resulting swept solid relative to the object coordinate system.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricmodelresource/lexical/ifcsweptareasolid.htm)
 
 
-Formal Propositions
--------------------
-| Rule          | Description   |
-|---------------|---------------|
-| SweptAreaType |               |
-
-Associations
-------------
+Attribute definitions
+---------------------
 | Attribute   | Description   |
 |-------------|---------------|
 | SweptArea   |               |

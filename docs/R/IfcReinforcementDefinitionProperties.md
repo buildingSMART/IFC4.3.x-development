@@ -33,13 +33,8 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute      | Description                                                           |
-|----------------|-----------------------------------------------------------------------|
-| DefinitionType | Descriptive type name applied to reinforcement definition properties. |
-
-Associations
-------------
-| Attribute                       | Description   |
-|---------------------------------|---------------|
-| ReinforcementSectionDefinitions |               |
+| Attribute                       | Description                                                           |
+|---------------------------------|-----------------------------------------------------------------------|
+| ReinforcementSectionDefinitions |                                                                       |
+| DefinitionType                  | Descriptive type name applied to reinforcement definition properties. |
 

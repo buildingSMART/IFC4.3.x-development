@@ -20,9 +20,3 @@ Attribute definitions
 |----------------|-----------------------------------------------------------------------------------------------|
 | PredefinedType | Identifies the predefined types of a course element from which the type modelled, may be set. |
 
-Associations
-------------
-| Attribute      | Description   |
-|----------------|---------------|
-| PredefinedType |               |
-

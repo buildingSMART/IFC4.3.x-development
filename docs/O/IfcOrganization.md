@@ -20,18 +20,12 @@ Attribute definitions
 ---------------------
 | Attribute      | Description                                                            |
 |----------------|------------------------------------------------------------------------|
+| Roles          |                                                                        |
+| Addresses      |                                                                        |
+| Engages        |                                                                        |
+| IsRelatedBy    |                                                                        |
+| Relates        |                                                                        |
 | Identification | Identification of the organization.                                    |
 | Name           | The word, or group of words, by which the organization is referred to. |
 | Description    | Text that relates the nature of the organization.                      |
-
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-| Roles       |               |
-| Addresses   |               |
-| Engages     |               |
-|             |               |
-| IsRelatedBy |               |
-| Relates     |               |
 

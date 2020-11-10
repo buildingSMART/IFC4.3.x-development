@@ -13,14 +13,8 @@ entity.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcsharedfacilitieselements/lexical/ifcoccupant.htm)
 
 
-Formal Propositions
--------------------
-| Rule   | Description   |
-|--------|---------------|
-| WR31   |               |
-
-Associations
-------------
+Attribute definitions
+---------------------
 | Attribute      | Description   |
 |----------------|---------------|
 | PredefinedType |               |

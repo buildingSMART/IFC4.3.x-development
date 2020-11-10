@@ -71,21 +71,8 @@ Attribute definitions
 ---------------------
 | Attribute     | Description                                                                                                  |
 |---------------|--------------------------------------------------------------------------------------------------------------|
+| Segments      |                                                                                                              |
 | SelfIntersect | Indication of whether the curve intersects itself or not; this is for information only.                      |
 | NSegments     | The number of component curves.                                                                              |
 | ClosedCurve   | Indication whether the curve is closed or not; this is derived from the transition code of the last segment. |
-
-Formal Propositions
--------------------
-| Rule            | Description   |
-|-----------------|---------------|
-| CurveContinuous |               |
-| SameDim         |               |
-
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
-| Segments    |               |
 

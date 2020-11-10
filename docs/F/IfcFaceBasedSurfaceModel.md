@@ -36,11 +36,6 @@ Attribute definitions
 ---------------------
 | Attribute   | Description                                             |
 |-------------|---------------------------------------------------------|
+| FbsmFaces   |                                                         |
 | Dim         | The space dimensionality of this class, it is always 3. |
-
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-| FbsmFaces   |               |
 

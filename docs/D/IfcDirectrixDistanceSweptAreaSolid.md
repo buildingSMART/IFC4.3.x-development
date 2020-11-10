@@ -14,8 +14,8 @@ EndDistance, provided by IfcDistanceExpression. If no EndDistance is provided
 the end defaults to the end of the directrix.  
 
 
-Associations
-------------
+Attribute definitions
+---------------------
 | Attribute     | Description   |
 |---------------|---------------|
 | Directrix     |               |

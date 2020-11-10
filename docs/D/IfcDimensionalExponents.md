@@ -37,9 +37,3 @@ Attribute definitions
 | AmountOfSubstanceExponent        | The power of the amount of substance base quantity.       |
 | LuminousIntensityExponent        | The power of the luminous intensity base quantity.        |
 
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
-

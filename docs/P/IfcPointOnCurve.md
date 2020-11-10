@@ -26,12 +26,7 @@ Attribute definitions
 ---------------------
 | Attribute      | Description                                                                                        |
 |----------------|----------------------------------------------------------------------------------------------------|
+| BasisCurve     |                                                                                                    |
 | PointParameter | The parameter value of the point location.                                                         |
 | Dim            | The space dimensionality of this class, determined by the space dimensionality of the basis curve. |
-
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-| BasisCurve  |               |
 

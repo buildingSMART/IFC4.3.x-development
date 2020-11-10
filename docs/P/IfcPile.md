@@ -22,18 +22,6 @@ Attribute definitions
 ---------------------
 | Attribute        | Description                                                                                                                                                                                                                                                                                                                                                                                  |
 |------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| PredefinedType   |                                                                                                                                                                                                                                                                                                                                                                                              |
 | ConstructionType | Deprecated.\X\0D\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  Material profile association capability by means of _IfcRelAssociatesMaterial_ has been added. The attribute _ConstructionType_ should not be used whenever its information can be provided by a material profile set, either associated with the _IfcPile_ object or, if present, with a corresponding instance of _IfcPileType_. |
-
-Formal Propositions
--------------------
-| Rule                  | Description   |
-|-----------------------|---------------|
-| CorrectPredefinedType |               |
-| CorrectTypeAssigned   |               |
-
-Associations
-------------
-| Attribute      | Description   |
-|----------------|---------------|
-| PredefinedType |               |
 

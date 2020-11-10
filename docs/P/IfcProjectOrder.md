@@ -20,12 +20,7 @@ Attribute definitions
 ---------------------
 | Attribute       | Description                                                                                                                                                                                                             |
 |-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| PredefinedType  |                                                                                                                                                                                                                         |
 | Status          | The current status of a project order.Examples of status values that might be used for a project order status include:\X\0D* PLANNED\X\0D* REQUESTED\X\0D* APPROVED\X\0D* ISSUED\X\0D* STARTED\X\0D* DELAYED\X\0D* DONE |
 | LongDescription | A detailed description of the project order describing the work to be completed.                                                                                                                                        |
-
-Associations
-------------
-| Attribute      | Description   |
-|----------------|---------------|
-| PredefinedType |               |
 

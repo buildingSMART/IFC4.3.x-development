@@ -15,11 +15,6 @@ Attribute definitions
 ---------------------
 | Attribute              | Description                                                                                                 |
 |------------------------|-------------------------------------------------------------------------------------------------------------|
+| DistributionData       |                                                                                                             |
 | LightDistributionCurve | Standardized light distribution curve used to define the luminous intensity of the light in all directions. |
-
-Associations
-------------
-| Attribute        | Description   |
-|------------------|---------------|
-| DistributionData |               |
 

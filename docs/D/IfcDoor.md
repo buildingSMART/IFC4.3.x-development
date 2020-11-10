@@ -133,20 +133,9 @@ Attribute definitions
 ---------------------
 | Attribute                | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 |--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| PredefinedType           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | OverallHeight            | Overall measure of the height, it reflects the Z Dimension of a bounding box, enclosing the body of the door opening. If omitted, the _OverallHeight_ should be taken from the geometric representation of the _IfcOpening_ in which the door is inserted. NOTE The body of the door might be taller then the door opening (e.g. in cases where the door lining includes a casing). In these cases the _OverallHeight_ shall still be given as the door opening height, and not as the total height of the door lining. |
 | OverallWidth             | Overall measure of the width, it reflects the X Dimension of a bounding box, enclosing the body of theE door opening. If omitted, the _OverallWidth_ should be taken from the geometric representation of the _IfcOpening_ in which the door is inserted. NOTE The body of the door might be wider then the door opening (e.g. in cases where the door lining includes a casing). In these cases the _OverallWidth_ shall still be given as the door opening width, and not as the total width of the door lining.      |
 | OperationType            | Type defining the general layout and operation of the door type in terms of the partitioning of panels and panel operations. NOTE The _OperationType_ shall only be used, if no type object _IfcDoorType_ is assigned, providing its own _IfcDoorType.OperationType_.                                                                                                                                                                                                                                                   |
 | UserDefinedOperationType | Designator for the user defined operation type, shall only be provided, if the value of _OperationType_ is set to USERDEFINED.                                                                                                                                                                                                                                                                                                                                                                                          |
-
-Formal Propositions
--------------------
-| Rule                 | Description   |
-|----------------------|---------------|
-| CorrectStyleAssigned |               |
-
-Associations
-------------
-| Attribute      | Description   |
-|----------------|---------------|
-| PredefinedType |               |
 

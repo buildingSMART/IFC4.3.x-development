@@ -48,10 +48,3 @@ Attribute definitions
 | WeightsData | The supplied values of the weights.                                                             |
 | Weights     | The array of weights associated with the control points. This is derived from the weights data. |
 
-Formal Propositions
--------------------
-| Rule                      | Description   |
-|---------------------------|---------------|
-| SameNumOfWeightsAndPoints |               |
-| WeightsGreaterZero        |               |
-

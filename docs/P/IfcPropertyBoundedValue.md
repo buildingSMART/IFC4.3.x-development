@@ -127,11 +127,3 @@ Attribute definitions
 | Unit            | Unit for the upper and lower bound values, if not given, the default value for the measure type is used as defined by the global unit assignment at _IfcProject.UnitInContext_. The applicable unit is then selected by the underlying TYPE of the _UpperBoundValue_, _LowerBoundValue_, and _SetPointValue_) |
 | SetPointValue   | Set point value as typically used for operational value setting.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  The attribute has been added at the end of the attribute list.                                                                                                                                      |
 
-Formal Propositions
--------------------
-| Rule               | Description   |
-|--------------------|---------------|
-| SameUnitUpperLower |               |
-| SameUnitUpperSet   |               |
-| SameUnitLowerSet   |               |
-

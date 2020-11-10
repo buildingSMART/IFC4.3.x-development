@@ -11,8 +11,8 @@ property name, value and other instance information.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcpropertyresource/lexical/ifcpropertyabstraction.htm)
 
 
-Associations
-------------
+Attribute definitions
+---------------------
 | Attribute             | Description   |
 |-----------------------|---------------|
 | HasExternalReferences |               |

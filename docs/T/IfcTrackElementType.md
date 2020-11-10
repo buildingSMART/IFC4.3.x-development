@@ -32,9 +32,3 @@ Attribute definitions
 |----------------|---------------|
 | PredefinedType |               |
 
-Associations
-------------
-| Attribute      | Description   |
-|----------------|---------------|
-| PredefinedType |               |
-

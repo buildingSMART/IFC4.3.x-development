@@ -28,9 +28,3 @@ Attribute definitions
 |-------------|---------------------------------|
 | Name        | Name of the presentation style. |
 
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
-

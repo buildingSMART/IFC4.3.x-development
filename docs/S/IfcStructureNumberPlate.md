@@ -1,5 +1,0 @@
-IfcStructureNumberPlate
-=======================
-Identification plate number
-
-

@@ -37,9 +37,3 @@ Attribute definitions
 | Distance      | The distance of the offset curve from the basis curve. distance may be positive, negative or zero. A positive value of distance defines an offset in the direction which is normal to the curve in the sense of an anti-clockwise rotation through 90 degrees from the tangent vector T at the given point. (This is in the direction of orthogonal complement(T).) |
 | SelfIntersect | An indication of whether the offset curve self-intersects; this is for information only.                                                                                                                                                                                                                                                                            |
 
-Formal Propositions
--------------------
-| Rule    | Description   |
-|---------|---------------|
-| DimIs2D |               |
-

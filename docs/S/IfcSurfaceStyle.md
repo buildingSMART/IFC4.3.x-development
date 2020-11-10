@@ -27,13 +27,3 @@ Attribute definitions
 | Side        | An indication of which side of the surface to apply the style. |
 | Styles      | A collection of different surface styles.                      |
 
-Formal Propositions
--------------------
-| Rule             | Description   |
-|------------------|---------------|
-| MaxOneShading    |               |
-| MaxOneLighting   |               |
-| MaxOneRefraction |               |
-| MaxOneTextures   |               |
-| MaxOneExtDefined |               |
-

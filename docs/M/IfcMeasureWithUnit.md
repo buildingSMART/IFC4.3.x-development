@@ -25,11 +25,3 @@ Attribute definitions
 | ValueComponent | The value of the physical quantity when expressed in the specified units. |
 | UnitComponent  | The unit in which the physical quantity is expressed.                     |
 
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
-|             |               |
-|             |               |
-

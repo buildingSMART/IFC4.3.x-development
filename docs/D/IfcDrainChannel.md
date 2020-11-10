@@ -1,8 +1,0 @@
-IfcDrainChannel
-===============
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
-

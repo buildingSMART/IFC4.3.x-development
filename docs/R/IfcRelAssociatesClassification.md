@@ -35,10 +35,3 @@ Attribute definitions
 |------------------------|----------------------------------------|
 | RelatingClassification | Classification applied to the objects. |
 
-Associations
-------------
-| Attribute              | Description   |
-|------------------------|---------------|
-| RelatingClassification |               |
-| RelatingClassification |               |
-

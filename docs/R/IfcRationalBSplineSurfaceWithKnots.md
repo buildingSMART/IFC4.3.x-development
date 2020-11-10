@@ -21,10 +21,3 @@ Attribute definitions
 | WeightsData | The weights associated with the control points in the rational case.         |
 | Weights     | Array (two-dimensional) of weight values constructed from the _WeightsData_. |
 
-Formal Propositions
--------------------
-| Rule                          | Description   |
-|-------------------------------|---------------|
-| CorrespondingWeightsDataLists |               |
-| WeightValuesGreaterZero       |               |
-

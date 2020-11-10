@@ -20,17 +20,12 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute   | Description                                                                                                                                                                   |
-|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Name        | The name by which the material constituent is known.                                                                                                                          |
-| Description | Definition of the material constituent in descriptive terms.                                                                                                                  |
-| Fraction    | Optional provision of a fraction of the total amount (volume or weight) that applies to the _IfcMaterialConstituentSet_ that is contributed by this _IfcMaterialConstituent_. |
-| Category    | Category of the material constituent, e.g. the role it has in the constituent set it belongs to.                                                                              |
-
-Associations
-------------
-| Attribute                | Description   |
-|--------------------------|---------------|
-| Material                 |               |
-| ToMaterialConstituentSet |               |
+| Attribute                | Description                                                                                                                                                                   |
+|--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Material                 |                                                                                                                                                                               |
+| ToMaterialConstituentSet |                                                                                                                                                                               |
+| Name                     | The name by which the material constituent is known.                                                                                                                          |
+| Description              | Definition of the material constituent in descriptive terms.                                                                                                                  |
+| Fraction                 | Optional provision of a fraction of the total amount (volume or weight) that applies to the _IfcMaterialConstituentSet_ that is contributed by this _IfcMaterialConstituent_. |
+| Category                 | Category of the material constituent, e.g. the role it has in the constituent set it belongs to.                                                                              |
 

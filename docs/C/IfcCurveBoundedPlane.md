@@ -27,8 +27,8 @@ coordinate values.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometryresource/lexical/ifccurveboundedplane.htm)
 
 
-Associations
-------------
+Attribute definitions
+---------------------
 | Attribute       | Description   |
 |-----------------|---------------|
 | InnerBoundaries |               |

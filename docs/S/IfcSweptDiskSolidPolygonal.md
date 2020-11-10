@@ -28,10 +28,3 @@ Attribute definitions
 |--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | FilletRadius | The fillet that is equally applied to all transitions between the segments of the _IfcPolyline_, providing the geometric representation for _the Directrix_. If omited, no fillet is applied to the segments. |
 
-Formal Propositions
--------------------
-| Rule                | Description   |
-|---------------------|---------------|
-| CorrectRadii        |               |
-| DirectrixIsPolyline |               |
-

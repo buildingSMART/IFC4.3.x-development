@@ -83,9 +83,3 @@ Attribute definitions
 | RowCells    | The data value of the table cell..                                                                                                                            |
 | IsHeading   | Flag which identifies if the row is a heading row or a row which contains row values. \X\0D> NOTE - If the row is a heading, the flag takes the value = TRUE. |
 
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
-

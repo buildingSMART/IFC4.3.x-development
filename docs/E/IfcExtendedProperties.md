@@ -21,12 +21,7 @@ Attribute definitions
 ---------------------
 | Attribute   | Description                              |
 |-------------|------------------------------------------|
+| Properties  |                                          |
 | Name        | The name given to the set of properties. |
 | Description | Description for the set of properties.   |
-
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-| Properties  |               |
 

@@ -1,5 +1,0 @@
-IfcTensioningFitting
-====================
-Fitting tensionning equipements
-
-

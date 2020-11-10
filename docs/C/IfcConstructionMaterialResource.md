@@ -36,14 +36,8 @@ used to represent resource usage, but not product substances.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcconstructionmgmtdomain/lexical/ifcconstructionmaterialresource.htm)
 
 
-Formal Propositions
--------------------
-| Rule                  | Description   |
-|-----------------------|---------------|
-| CorrectPredefinedType |               |
-
-Associations
-------------
+Attribute definitions
+---------------------
 | Attribute      | Description   |
 |----------------|---------------|
 | PredefinedType |               |

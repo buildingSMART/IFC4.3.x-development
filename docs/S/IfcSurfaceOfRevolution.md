@@ -37,13 +37,8 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute   | Description                                      |
-|-------------|--------------------------------------------------|
-| AxisLine    | The line coinciding with the axis of revolution. |
-
-Associations
-------------
-| Attribute    | Description   |
-|--------------|---------------|
-| AxisPosition |               |
+| Attribute    | Description                                      |
+|--------------|--------------------------------------------------|
+| AxisPosition |                                                  |
+| AxisLine     | The line coinciding with the axis of revolution. |
 

@@ -34,9 +34,3 @@ Attribute definitions
 |---------------|-------------------------------------------------------------------------------------|
 | WallThickness | Thickness of the material, it is the difference between the outer and inner radius. |
 
-Formal Propositions
--------------------
-| Rule   | Description   |
-|--------|---------------|
-| WR1    |               |
-

@@ -1,5 +1,0 @@
-IfcInsulatedCables
-==================
-Common insulated cable
-
-

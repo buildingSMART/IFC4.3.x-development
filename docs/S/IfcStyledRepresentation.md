@@ -25,9 +25,3 @@ styled.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcrepresentationresource/lexical/ifcstyledrepresentation.htm)
 
 
-Formal Propositions
--------------------
-| Rule            | Description   |
-|-----------------|---------------|
-| OnlyStyledItems |               |
-

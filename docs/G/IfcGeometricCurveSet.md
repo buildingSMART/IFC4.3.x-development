@@ -15,9 +15,3 @@ consisting of an collection of (2D or 3D) points and curves only.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricmodelresource/lexical/ifcgeometriccurveset.htm)
 
 
-Formal Propositions
--------------------
-| Rule       | Description   |
-|------------|---------------|
-| NoSurfaces |               |
-

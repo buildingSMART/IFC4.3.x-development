@@ -47,10 +47,3 @@ Attribute definitions
 |----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | RelatedObjects | Set of object or property definitions to which the external references or information is associated. It includes object and type objects, property set templates, property templates and property sets and contexts.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  The attribute datatype has been changed from _IfcRoot_ to _IfcDefinitionSelect_. |
 
-Associations
-------------
-| Attribute      | Description   |
-|----------------|---------------|
-| RelatedObjects |               |
-| RelatedObjects |               |
-

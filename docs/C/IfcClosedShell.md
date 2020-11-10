@@ -59,11 +59,3 @@ for the equation.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifctopologyresource/lexical/ifcclosedshell.htm)
 
 
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
-|             |               |
-|             |               |
-

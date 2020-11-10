@@ -31,12 +31,3 @@ geometry/topology types are in scope:
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricconstraintresource/lexical/ifcconnectiongeometry.htm)
 
 
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
-|             |               |
-|             |               |
-|             |               |
-

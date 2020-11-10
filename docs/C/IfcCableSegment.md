@@ -14,15 +14,8 @@ network or a network of components carrying the electrical service.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcelectricaldomain/lexical/ifccablesegment.htm)
 
 
-Formal Propositions
--------------------
-| Rule                  | Description   |
-|-----------------------|---------------|
-| CorrectPredefinedType |               |
-| CorrectTypeAssigned   |               |
-
-Associations
-------------
+Attribute definitions
+---------------------
 | Attribute      | Description   |
 |----------------|---------------|
 | PredefinedType |               |

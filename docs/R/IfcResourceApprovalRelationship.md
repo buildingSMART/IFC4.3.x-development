@@ -13,12 +13,6 @@ Attribute definitions
 ---------------------
 | Attribute              | Description                         |
 |------------------------|-------------------------------------|
+| RelatingApproval       |                                     |
 | RelatedResourceObjects | Resource objects that are approved. |
-
-Associations
-------------
-| Attribute              | Description   |
-|------------------------|---------------|
-| RelatingApproval       |               |
-| RelatedResourceObjects |               |
 

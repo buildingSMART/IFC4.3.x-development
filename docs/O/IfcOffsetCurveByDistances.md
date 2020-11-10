@@ -15,13 +15,8 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute   | Description                                                                                            |
-|-------------|--------------------------------------------------------------------------------------------------------|
-| Tag         | Optional identifier of the curve, which may be used to correlate points from a variable cross-section. |
-
-Associations
-------------
-| Attribute    | Description   |
-|--------------|---------------|
-| OffsetValues |               |
+| Attribute    | Description                                                                                            |
+|--------------|--------------------------------------------------------------------------------------------------------|
+| OffsetValues |                                                                                                        |
+| Tag          | Optional identifier of the curve, which may be used to correlate points from a variable cross-section. |
 

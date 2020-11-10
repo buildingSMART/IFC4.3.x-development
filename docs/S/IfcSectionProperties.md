@@ -16,15 +16,9 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute   | Description                                                                                               |
-|-------------|-----------------------------------------------------------------------------------------------------------|
-| SectionType | An indicator whether a specific piece of a cross section is uniform or tapered in longitudinal direction. |
-
-Associations
-------------
-| Attribute    | Description   |
-|--------------|---------------|
-| EndProfile   |               |
-| StartProfile |               |
-|              |               |
+| Attribute    | Description                                                                                               |
+|--------------|-----------------------------------------------------------------------------------------------------------|
+| EndProfile   |                                                                                                           |
+| StartProfile |                                                                                                           |
+| SectionType  | An indicator whether a specific piece of a cross section is uniform or tapered in longitudinal direction. |
 

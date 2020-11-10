@@ -35,15 +35,3 @@ Attribute definitions
 | PredefinedType |                                                                                                                                                                                                                                                                                                                      |
 | LongName       | Long name for a spatial zone type, used for informal purposes. It should be used, if available, in conjunction with the inherited _Name_ attribute.\X\0D> NOTE  In many scenarios the _Name_ attribute refers to the short name or number of a spatial zone, and the _LongName_ refers to the full descriptive name. |
 
-Formal Propositions
--------------------
-| Rule                  | Description   |
-|-----------------------|---------------|
-| CorrectPredefinedType |               |
-
-Associations
-------------
-| Attribute      | Description   |
-|----------------|---------------|
-| PredefinedType |               |
-

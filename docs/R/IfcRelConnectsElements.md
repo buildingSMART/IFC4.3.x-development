@@ -15,14 +15,8 @@ entities by providing a connection geometry.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcproductextension/lexical/ifcrelconnectselements.htm)
 
 
-Formal Propositions
--------------------
-| Rule            | Description   |
-|-----------------|---------------|
-| NoSelfReference |               |
-
-Associations
-------------
+Attribute definitions
+---------------------
 | Attribute          | Description   |
 |--------------------|---------------|
 | ConnectionGeometry |               |

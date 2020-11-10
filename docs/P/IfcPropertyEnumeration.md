@@ -87,17 +87,3 @@ Attribute definitions
 | EnumerationValues | List of values that form the enumeration.                                                                                                                                                 |
 | Unit              | Unit for the enumerator values, if not given, the default value for the measure type (given by the TYPE of nominal value) is used as defined by the global unit assignment at IfcProject. |
 
-Formal Propositions
--------------------
-| Rule   | Description   |
-|--------|---------------|
-| UR1    |               |
-| WR01   |               |
-
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
-|             |               |
-

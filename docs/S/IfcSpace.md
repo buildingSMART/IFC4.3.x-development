@@ -96,20 +96,8 @@ Attribute definitions
 ---------------------
 | Attribute             | Description                                                                                                                                              |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| BoundedBy             |                                                                                                                                                          |
+| PredefinedType        |                                                                                                                                                          |
+| HasCoverings          |                                                                                                                                                          |
 | ElevationWithFlooring | Level of flooring of this space; the average shall be taken, if the space ground surface is sloping or if there are level differences within this space. |
-
-Formal Propositions
--------------------
-| Rule                  | Description   |
-|-----------------------|---------------|
-| CorrectPredefinedType |               |
-| CorrectTypeAssigned   |               |
-
-Associations
-------------
-| Attribute      | Description   |
-|----------------|---------------|
-| BoundedBy      |               |
-| PredefinedType |               |
-| HasCoverings   |               |
 

@@ -91,9 +91,3 @@ Attribute definitions
 |----------------|---------------------------------------------------------------------------------------------|
 | RoundingRadius | Radius of the circular arcs by which all four corners of the rectangle are equally rounded. |
 
-Formal Propositions
--------------------
-| Rule        | Description   |
-|-------------|---------------|
-| ValidRadius |               |
-

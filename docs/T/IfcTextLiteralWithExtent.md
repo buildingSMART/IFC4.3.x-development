@@ -32,17 +32,6 @@ Attribute definitions
 ---------------------
 | Attribute    | Description                                                 |
 |--------------|-------------------------------------------------------------|
+| Extent       |                                                             |
 | BoxAlignment | The alignment of the text literal relative to its position. |
-
-Formal Propositions
--------------------
-| Rule   | Description   |
-|--------|---------------|
-| WR31   |               |
-
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-| Extent      |               |
 

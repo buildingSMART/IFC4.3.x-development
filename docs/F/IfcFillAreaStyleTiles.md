@@ -41,14 +41,9 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute   | Description                                                                        |
-|-------------|------------------------------------------------------------------------------------|
-| TilingScale | The scale factor applied to each tile as it is placed in the annotation fill area. |
-
-Associations
-------------
-| Attribute     | Description   |
-|---------------|---------------|
-| TilingPattern |               |
-| Tiles         |               |
+| Attribute     | Description                                                                        |
+|---------------|------------------------------------------------------------------------------------|
+| TilingPattern |                                                                                    |
+| Tiles         |                                                                                    |
+| TilingScale   | The scale factor applied to each tile as it is placed in the annotation fill area. |
 

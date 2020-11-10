@@ -53,22 +53,11 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute   | Description                                                                                                                                                                                                                                                          |
-|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ObjectType  | The type denotes a particular type that indicates the object further. The use has to be established at the level of instantiable subtypes. In particular it holds the user defined type, if the enumeration of the attribute _PredefinedType_ is set to USERDEFINED. |
-
-Formal Propositions
--------------------
-| Rule                   | Description   |
-|------------------------|---------------|
-| UniquePropertySetNames |               |
-
-Associations
-------------
-| Attribute    | Description   |
-|--------------|---------------|
-| Declares     |               |
-| IsDeclaredBy |               |
-| IsDefinedBy  |               |
-| IsTypedBy    |               |
+| Attribute    | Description                                                                                                                                                                                                                                                          |
+|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Declares     |                                                                                                                                                                                                                                                                      |
+| IsDeclaredBy |                                                                                                                                                                                                                                                                      |
+| IsDefinedBy  |                                                                                                                                                                                                                                                                      |
+| IsTypedBy    |                                                                                                                                                                                                                                                                      |
+| ObjectType   | The type denotes a particular type that indicates the object further. The use has to be established at the level of instantiable subtypes. In particular it holds the user defined type, if the enumeration of the attribute _PredefinedType_ is set to USERDEFINED. |
 

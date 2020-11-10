@@ -55,11 +55,3 @@ The representation type is given as a string value at the inherited attribute
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcrepresentationresource/lexical/ifctopologyrepresentation.htm)
 
 
-Formal Propositions
--------------------
-| Rule   | Description   |
-|--------|---------------|
-| WR21   |               |
-| WR22   |               |
-| WR23   |               |
-

@@ -11,13 +11,8 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute   | Description                                                                                                                                                                                           |
-|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Intent      | The intent of the constraint usage with regard to its related IfcConstraint and IfcObjects, IfcPropertyDefinitions or IfcRelationships. Typical values can be e.g. RATIONALE or EXPECTED PERFORMANCE. |
-
-Associations
-------------
-| Attribute          | Description   |
-|--------------------|---------------|
-| RelatingConstraint |               |
+| Attribute          | Description                                                                                                                                                                                           |
+|--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| RelatingConstraint |                                                                                                                                                                                                       |
+| Intent             | The intent of the constraint usage with regard to its related IfcConstraint and IfcObjects, IfcPropertyDefinitions or IfcRelationships. Typical values can be e.g. RATIONALE or EXPECTED PERFORMANCE. |
 

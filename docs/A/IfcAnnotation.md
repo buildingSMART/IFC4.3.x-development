@@ -81,14 +81,8 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute      | Description   |
-|----------------|---------------|
-| PredefinedType |               |
-
-Associations
-------------
 | Attribute            | Description   |
 |----------------------|---------------|
-| PredefinedType       |               |
 | ContainedInStructure |               |
+| PredefinedType       |               |
 

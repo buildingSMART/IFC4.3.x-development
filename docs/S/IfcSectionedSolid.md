@@ -6,16 +6,8 @@ sweeping potentially variable cross sections along a directrix.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometricmodelresource/lexical/ifcsectionedsolid.htm)
 
 
-Formal Propositions
--------------------
-| Rule                   | Description   |
-|------------------------|---------------|
-| DirectrixIs3D          |               |
-| ConsistentProfileTypes |               |
-| SectionsSameType       |               |
-
-Associations
-------------
+Attribute definitions
+---------------------
 | Attribute     | Description   |
 |---------------|---------------|
 | Directrix     |               |

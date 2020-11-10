@@ -1,8 +1,0 @@
-IfcLinearReferenceOnAbsTrackPart
-================================
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
-

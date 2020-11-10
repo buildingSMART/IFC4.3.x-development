@@ -68,21 +68,8 @@ Attribute definitions
 ---------------------
 | Attribute              | Description                                                                                                                                                  |
 |------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| EdgeElement            |                                                                                                                                                              |
 | Orientation            | BOOLEAN, If TRUE the topological orientation as used coincides with the orientation from start vertex to end vertex of the edge element. If FALSE otherwise. |
 | SELF\IfcEdge.EdgeStart |                                                                                                                                                              |
 | SELF\IfcEdge.EdgeEnd   |                                                                                                                                                              |
-
-Formal Propositions
--------------------
-| Rule                   | Description   |
-|------------------------|---------------|
-| EdgeElementNotOriented |               |
-
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-| EdgeElement |               |
-|             |               |
-|             |               |
 

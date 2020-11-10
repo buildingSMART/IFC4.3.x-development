@@ -44,12 +44,7 @@ Attribute definitions
 ---------------------
 | Attribute     | Description   |
 |---------------|---------------|
+| Boundaries    |               |
+| BasisSurface  |               |
 | ImplicitOuter | $             |
-
-Associations
-------------
-| Attribute    | Description   |
-|--------------|---------------|
-| Boundaries   |               |
-| BasisSurface |               |
 

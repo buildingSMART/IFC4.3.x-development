@@ -47,20 +47,6 @@ Attribute definitions
 ---------------------
 | Attribute   | Description                                                                                                                      |
 |-------------|----------------------------------------------------------------------------------------------------------------------------------|
+| Axis        |                                                                                                                                  |
 | Z           | The normalized direction of the local Z axis. It is either identical with the Axis value, if given, or it defaults to [0.,0.,1.] |
-
-Formal Propositions
--------------------
-| Rule         | Description   |
-|--------------|---------------|
-| AxisIs3D     |               |
-| LocationIs3D |               |
-
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
-| Axis        |               |
-|             |               |
 

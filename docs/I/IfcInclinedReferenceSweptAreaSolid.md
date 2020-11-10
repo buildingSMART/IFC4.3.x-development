@@ -9,11 +9,6 @@ Attribute definitions
 ---------------------
 | Attribute         | Description                                                                                                                                                                       |
 |-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Inclinating       |                                                                                                                                                                                   |
 | FixedAxisVertical | Indicates whether the profile is oriented with its Y axis facing upwards in +Z direction (True), or vertically perpendicular to the Directrix varying according to slope (False). |
-
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-| Inclinating |               |
 

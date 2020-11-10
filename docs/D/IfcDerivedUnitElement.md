@@ -21,12 +21,6 @@ Attribute definitions
 ---------------------
 | Attribute   | Description                                      |
 |-------------|--------------------------------------------------|
+| Unit        |                                                  |
 | Exponent    | The power that is applied to the unit attribute. |
-
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
-| Unit        |               |
 

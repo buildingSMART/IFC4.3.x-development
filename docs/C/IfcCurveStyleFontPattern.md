@@ -20,15 +20,3 @@ Attribute definitions
 | VisibleSegmentLength   | The length of the visible segment in the pattern definition.\X\0D> NOTE  For a visible segment representing a point, the value 0. should be assigned.\X\0D\X\0D{ .change-ifc2x3}\X\0D> IFC2x3 CHANGE  The datatype has been changed to IfcLengthMeasure with upward compatibility for file-based exchange. |
 | InvisibleSegmentLength | The length of the invisible segment in the pattern definition.                                                                                                                                                                                                                                             |
 
-Formal Propositions
--------------------
-| Rule                          | Description   |
-|-------------------------------|---------------|
-| VisibleLengthGreaterEqualZero |               |
-
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
-

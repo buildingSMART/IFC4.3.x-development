@@ -1,2 +1,0 @@
-Ifc3dStructureGauge
-===================

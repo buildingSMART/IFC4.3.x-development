@@ -44,16 +44,3 @@ Attribute definitions
 | AssignedItems | The set of layered items, which are assigned to this layer. |
 | Identifier    | An (internal) identifier assigned to the layer.             |
 
-Formal Propositions
--------------------
-| Rule            | Description   |
-|-----------------|---------------|
-| ApplicableItems |               |
-
-Associations
-------------
-| Attribute     | Description   |
-|---------------|---------------|
-| AssignedItems |               |
-| AssignedItems |               |
-

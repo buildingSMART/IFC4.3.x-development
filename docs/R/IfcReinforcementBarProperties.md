@@ -25,9 +25,3 @@ Attribute definitions
 | NominalBarDiameter    | The nominal diameter defining the cross-section size of the reinforcing bar. The bar diameter should be identical for all bars included in the specific reinforcement configuration.                                                                                                                      |
 | BarCount              | The number of bars with identical nominal diameter and steel grade included in the specific reinforcement configuration.                                                                                                                                                                                  |
 
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
-

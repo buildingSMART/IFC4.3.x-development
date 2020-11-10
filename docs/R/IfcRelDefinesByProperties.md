@@ -29,20 +29,6 @@ Attribute definitions
 ---------------------
 | Attribute                  | Description                                                                 |
 |----------------------------|-----------------------------------------------------------------------------|
+| RelatedObjects             |                                                                             |
 | RelatingPropertyDefinition | Reference to the property set definition for that object or set of objects. |
-
-Formal Propositions
--------------------
-| Rule                | Description   |
-|---------------------|---------------|
-| NoRelatedTypeObject |               |
-
-Associations
-------------
-| Attribute                  | Description   |
-|----------------------------|---------------|
-| RelatedObjects             |               |
-| RelatedObjects             |               |
-| RelatedObjects             |               |
-| RelatingPropertyDefinition |               |
 

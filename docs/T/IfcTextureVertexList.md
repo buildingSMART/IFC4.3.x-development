@@ -23,9 +23,3 @@ Attribute definitions
 |---------------|--------------------------------------------------------------------|
 | TexCoordsList | List of texture vertices defined by S-coordinate and T-coordinate. |
 
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
-

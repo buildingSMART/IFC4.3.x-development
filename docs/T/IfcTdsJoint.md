@@ -1,9 +1,0 @@
-IfcTdsJoint
-===========
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
-|             |               |
-

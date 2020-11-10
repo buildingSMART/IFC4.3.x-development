@@ -75,24 +75,12 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute   | Description                                                                                                                                                                                                                                                 |
-|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Status      | Current status of the task.\X\0D \X\0D> NOTE  Particular values for status are not specified, these should be determined and agreed by local usage. Examples of possible status values include ''Not Yet Started'', ''Started'', ''Completed''.             |
-| WorkMethod  | The method of work used in carrying out a task.\X\0D \X\0D> NOTE  This attribute should not be used if the work method is specified for the _IfcTaskType_                                                                                                   |
-| IsMilestone | Identifies whether a task is a milestone task (=TRUE) or not\X\0D (= FALSE).\X\0D \X\0D> NOTE  In small project planning applications, a milestone task may be understood to be a task having no duration. As such, it represents a singular point in time. |
-| Priority    | A value that indicates the relative priority of the task (in\X\0D comparison to the priorities of other tasks).                                                                                                                                             |
-
-Formal Propositions
--------------------
-| Rule                  | Description   |
-|-----------------------|---------------|
-| HasName               |               |
-| CorrectPredefinedType |               |
-
-Associations
-------------
-| Attribute      | Description   |
-|----------------|---------------|
-| TaskTime       |               |
-| PredefinedType |               |
+| Attribute      | Description                                                                                                                                                                                                                                                 |
+|----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| TaskTime       |                                                                                                                                                                                                                                                             |
+| PredefinedType |                                                                                                                                                                                                                                                             |
+| Status         | Current status of the task.\X\0D \X\0D> NOTE  Particular values for status are not specified, these should be determined and agreed by local usage. Examples of possible status values include ''Not Yet Started'', ''Started'', ''Completed''.             |
+| WorkMethod     | The method of work used in carrying out a task.\X\0D \X\0D> NOTE  This attribute should not be used if the work method is specified for the _IfcTaskType_                                                                                                   |
+| IsMilestone    | Identifies whether a task is a milestone task (=TRUE) or not\X\0D (= FALSE).\X\0D \X\0D> NOTE  In small project planning applications, a milestone task may be understood to be a task having no duration. As such, it represents a singular point in time. |
+| Priority       | A value that indicates the relative priority of the task (in\X\0D comparison to the priorities of other tasks).                                                                                                                                             |
 

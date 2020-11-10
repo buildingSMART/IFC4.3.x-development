@@ -7,8 +7,8 @@ variable along the referenced curve.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcgeometryresource/lexical/ifcoffsetcurve.htm)
 
 
-Associations
-------------
+Attribute definitions
+---------------------
 | Attribute   | Description   |
 |-------------|---------------|
 | BasisCurve  |               |

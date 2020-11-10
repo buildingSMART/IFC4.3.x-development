@@ -50,15 +50,8 @@ The following guideline shall apply:
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcsharedbldgelements/lexical/ifccovering.htm)
 
 
-Formal Propositions
--------------------
-| Rule                  | Description   |
-|-----------------------|---------------|
-| CorrectPredefinedType |               |
-| CorrectTypeAssigned   |               |
-
-Associations
-------------
+Attribute definitions
+---------------------
 | Attribute      | Description   |
 |----------------|---------------|
 | PredefinedType |               |

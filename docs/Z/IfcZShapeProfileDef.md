@@ -74,9 +74,3 @@ Attribute definitions
 | FilletRadius    | Fillet radius according the above illustration (= r1).            |
 | EdgeRadius      | Edge radius according the above illustration (= r2).              |
 
-Formal Propositions
--------------------
-| Rule                 | Description   |
-|----------------------|---------------|
-| ValidFlangeThickness |               |
-

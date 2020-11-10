@@ -26,18 +26,3 @@ Attribute definitions
 |-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | U           | The list of mutually orthogonal, normalized vectors defining the transformation matrix T. They are derived from the explicit attributes Axis1 and Axis2 in that order. |
 
-Formal Propositions
--------------------
-| Rule      | Description   |
-|-----------|---------------|
-| DimEqual2 |               |
-| Axis1Is2D |               |
-| Axis2Is2D |               |
-
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
-|             |               |
-

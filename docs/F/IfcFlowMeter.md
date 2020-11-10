@@ -10,15 +10,8 @@ A flow meter is a device that is used to measure the flow rate in a system.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifchvacdomain/lexical/ifcflowmeter.htm)
 
 
-Formal Propositions
--------------------
-| Rule                  | Description   |
-|-----------------------|---------------|
-| CorrectPredefinedType |               |
-| CorrectTypeAssigned   |               |
-
-Associations
-------------
+Attribute definitions
+---------------------
 | Attribute      | Description   |
 |----------------|---------------|
 | PredefinedType |               |

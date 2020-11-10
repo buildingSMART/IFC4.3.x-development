@@ -11,9 +11,3 @@ the new _IfcCaissonFoundation_.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcsharedbldgelements/lexical/ifcdeepfoundation.htm)
 
 
-Formal Propositions
--------------------
-| Rule                | Description   |
-|---------------------|---------------|
-| CorrectTypeAssigned |               |
-

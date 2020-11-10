@@ -33,9 +33,3 @@ Attribute definitions
 | SecondaryPlaneAngle | The list of secondary plane angles (the α, β or γ angles) according to the light distribution curve chosen.\X\0D\X\0D> NOTE  The _SecondaryPlaneAngle_ and _LuminousIntensity_ lists are corresponding lists. |
 | LuminousIntensity   | The luminous intensity distribution measure for this pair of main and secondary plane angles according to the light distribution curve chosen.                                                                |
 
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
-

@@ -31,10 +31,3 @@ Attribute definitions
 | Scl2        | The derived scale S(2) of the transformation along the axis 2 (normally the y axis), equal to Scale2 if that exists, or equal to the derived Scl1 (normally the x axis scale factor) otherwise. |
 | Scl3        | The derived scale S(3) of the transformation along the axis 3 (normally the z axis), equal to Scale3 if that exists, or equal to the derived Scl1 (normally the x axis scale factor) otherwise. |
 
-Formal Propositions
--------------------
-| Rule              | Description   |
-|-------------------|---------------|
-| Scale2GreaterZero |               |
-| Scale3GreaterZero |               |
-

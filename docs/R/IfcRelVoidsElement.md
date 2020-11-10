@@ -17,8 +17,8 @@ by _IfcWall(StandardCase) o-- IfcRelVoidsElement --o IfcOpeningElement_.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcproductextension/lexical/ifcrelvoidselement.htm)
 
 
-Associations
-------------
+Attribute definitions
+---------------------
 | Attribute               | Description   |
 |-------------------------|---------------|
 | RelatingBuildingElement |               |

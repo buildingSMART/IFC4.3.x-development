@@ -11,14 +11,8 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute       | Description                                                                           |
-|-----------------|---------------------------------------------------------------------------------------|
-| RelatingElement | Reference to a structural item or element to which the specified activity is applied. |
-
-Associations
-------------
-| Attribute                 | Description   |
-|---------------------------|---------------|
-| RelatingElement           |               |
-| RelatedStructuralActivity |               |
+| Attribute                 | Description                                                                           |
+|---------------------------|---------------------------------------------------------------------------------------|
+| RelatedStructuralActivity |                                                                                       |
+| RelatingElement           | Reference to a structural item or element to which the specified activity is applied. |
 

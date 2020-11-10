@@ -13,21 +13,9 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute   | Description   |
-|-------------|---------------|
-| UsageName   | $             |
-
-Formal Propositions
--------------------
-| Rule                | Description   |
-|---------------------|---------------|
-| UniquePropertyNames |               |
-| NoSelfReference     |               |
-
-Associations
-------------
 | Attribute            | Description   |
 |----------------------|---------------|
 | HasPropertyTemplates |               |
 | TemplateType         |               |
+| UsageName            | $             |
 

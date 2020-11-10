@@ -30,16 +30,11 @@ Attribute definitions
 ---------------------
 | Attribute    | Description                                        |
 |--------------|----------------------------------------------------|
+| Creators     |                                                    |
 | CreationDate | The date that the plan is created.                 |
 | Purpose      | A description of the purpose of the work schedule. |
 | Duration     | The total duration of the entire work schedule.    |
 | TotalFloat   | The total time float of the entire work schedule.  |
 | StartTime    | The start time of the schedule.                    |
 | FinishTime   | The finish time of the schedule.                   |
-
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-| Creators    |               |
 

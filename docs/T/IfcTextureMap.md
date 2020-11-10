@@ -76,8 +76,8 @@ _IfcStyledItem_.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcpresentationappearanceresource/lexical/ifctexturemap.htm)
 
 
-Associations
-------------
+Attribute definitions
+---------------------
 | Attribute   | Description   |
 |-------------|---------------|
 | MappedTo    |               |

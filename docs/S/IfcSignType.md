@@ -14,9 +14,3 @@ Attribute definitions
 |----------------|-------------------------------------------------------------------------------------|
 | PredefinedType | Identifies the predefined type of a signs from which the type modelled, may be set. |
 
-Associations
-------------
-| Attribute      | Description   |
-|----------------|---------------|
-| PredefinedType |               |
-

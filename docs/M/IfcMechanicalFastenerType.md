@@ -73,15 +73,3 @@ Attribute definitions
 | NominalDiameter | The nominal diameter describing the cross-section size of the fastener type.    |
 | NominalLength   | The nominal length describing the longitudinal dimensions of the fastener type. |
 
-Formal Propositions
--------------------
-| Rule                  | Description   |
-|-----------------------|---------------|
-| CorrectPredefinedType |               |
-
-Associations
-------------
-| Attribute      | Description   |
-|----------------|---------------|
-| PredefinedType |               |
-

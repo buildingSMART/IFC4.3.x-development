@@ -31,20 +31,15 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute         | Description                                                                                                                                                                                                                                                                |
-|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Identification    | A unique identification assigned to an asset that enables its differentiation from other assets.\X\0D> NOTE  The asset identifier is unique within the asset register. It differs from the globally unique id assigned to the instance of an entity populating a database. |
-| Owner             | The name of the person or organization that ''owns'' the asset.                                                                                                                                                                                                            |
-| User              | The name of the person or organization that ''uses'' the asset.                                                                                                                                                                                                            |
-| IncorporationDate | The date on which an asset was incorporated into the works, installed, constructed, erected or completed.\X\0D> NOTE  This is the date on which an asset is considered to start depreciating.\X\0D\X\0D{ .history}\X\0D> IFC4 CHANGE  Type changed from IfcDateTimeSelect. |
-
-Associations
-------------
-| Attribute            | Description   |
-|----------------------|---------------|
-| ResponsiblePerson    |               |
-| TotalReplacementCost |               |
-| CurrentValue         |               |
-| OriginalValue        |               |
-| DepreciatedValue     |               |
+| Attribute            | Description                                                                                                                                                                                                                                                                |
+|----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ResponsiblePerson    |                                                                                                                                                                                                                                                                            |
+| TotalReplacementCost |                                                                                                                                                                                                                                                                            |
+| CurrentValue         |                                                                                                                                                                                                                                                                            |
+| OriginalValue        |                                                                                                                                                                                                                                                                            |
+| DepreciatedValue     |                                                                                                                                                                                                                                                                            |
+| Identification       | A unique identification assigned to an asset that enables its differentiation from other assets.\X\0D> NOTE  The asset identifier is unique within the asset register. It differs from the globally unique id assigned to the instance of an entity populating a database. |
+| Owner                | The name of the person or organization that ''owns'' the asset.                                                                                                                                                                                                            |
+| User                 | The name of the person or organization that ''uses'' the asset.                                                                                                                                                                                                            |
+| IncorporationDate    | The date on which an asset was incorporated into the works, installed, constructed, erected or completed.\X\0D> NOTE  This is the date on which an asset is considered to start depreciating.\X\0D\X\0D{ .history}\X\0D> IFC4 CHANGE  Type changed from IfcDateTimeSelect. |
 

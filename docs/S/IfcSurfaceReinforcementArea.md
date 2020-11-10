@@ -20,12 +20,3 @@ Attribute definitions
 | SurfaceReinforcement2 | Reinforcement at the face of the member which is located at the side of the negative local z direction of the surface member. Specified as area per length, e.g. square metre per metre (hence length measure, e.g. metre). The reinforcement area may be specified for two or three directions of reinforcement bars. |
 | ShearReinforcement    | Shear reinforcement. Specified as area per area, e.g. square metre per square metre (hence ratio measure, i.e. unitless).                                                                                                                                                                                              |
 
-Formal Propositions
--------------------
-| Rule                           | Description   |
-|--------------------------------|---------------|
-| SurfaceAndOrShearAreaSpecified |               |
-| NonnegativeArea1               |               |
-| NonnegativeArea2               |               |
-| NonnegativeArea3               |               |
-

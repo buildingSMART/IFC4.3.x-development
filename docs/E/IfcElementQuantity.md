@@ -72,17 +72,6 @@ Attribute definitions
 ---------------------
 | Attribute           | Description                                                                                                                                                                                                                                                               |
 |---------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Quantities          |                                                                                                                                                                                                                                                                           |
 | MethodOfMeasurement | Name of the method of measurement used to calculate the element quantity. The method of measurement attribute has to be made recognizable by further agreements.\X\0D\X\0D{ .change-ifc2x2}\X\0D> IFC2x2 Addendum 1 change: The attribute has been changed to be optional |
-
-Formal Propositions
--------------------
-| Rule                | Description   |
-|---------------------|---------------|
-| UniqueQuantityNames |               |
-
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-| Quantities  |               |
 

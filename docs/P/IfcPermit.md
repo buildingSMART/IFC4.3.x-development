@@ -17,12 +17,7 @@ Attribute definitions
 ---------------------
 | Attribute       | Description                                                                                                             |
 |-----------------|-------------------------------------------------------------------------------------------------------------------------|
+| PredefinedType  |                                                                                                                         |
 | Status          | The status currently assigned to the permit.\X\0D\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE The attribute has been added. |
 | LongDescription | Detailed description of the request.\X\0D\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE The attribute has been added.         |
-
-Associations
-------------
-| Attribute      | Description   |
-|----------------|---------------|
-| PredefinedType |               |
 

@@ -15,9 +15,3 @@ Attribute definitions
 | TimeStamp   | The specification of the time point.                          |
 | ListValues  | A list of time-series values. At least one value is required. |
 
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
-

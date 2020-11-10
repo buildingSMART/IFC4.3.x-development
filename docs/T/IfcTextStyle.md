@@ -35,15 +35,10 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute         | Description                                                                                                                                                                                                                                              |
-|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| TextFontStyle     | The style applied to the text font for its visual appearance. It defines the font family, font style, weight and size.\X\0D \X\0D{ .change-ifc2x2}\X\0D> IFC2x2 Add2 CHANGE The attribute _TextFontStyle_ is a new attribute attached to _IfcTextStyle_. |
-| ModelOrDraughting | Indication whether the length measures provided for the presentation style are model based, or draughting based.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  New attribute.                                                                                 |
-
-Associations
-------------
-| Attribute               | Description   |
-|-------------------------|---------------|
-| TextCharacterAppearance |               |
-| TextStyle               |               |
+| Attribute               | Description                                                                                                                                                                                                                                              |
+|-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| TextCharacterAppearance |                                                                                                                                                                                                                                                          |
+| TextStyle               |                                                                                                                                                                                                                                                          |
+| TextFontStyle           | The style applied to the text font for its visual appearance. It defines the font family, font style, weight and size.\X\0D \X\0D{ .change-ifc2x2}\X\0D> IFC2x2 Add2 CHANGE The attribute _TextFontStyle_ is a new attribute attached to _IfcTextStyle_. |
+| ModelOrDraughting       | Indication whether the length measures provided for the presentation style are model based, or draughting based.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  New attribute.                                                                                 |
 

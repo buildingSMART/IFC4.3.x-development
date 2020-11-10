@@ -130,14 +130,8 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute       | Description                                                                                                                                                                  |
-|-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| OffsetDistances | Offset distances to the grid axes. If given, it defines virtual offset curves to the grid axes. The intersection of the offset curves specify the virtual grid intersection. |
-
-Associations
-------------
-| Attribute        | Description   |
-|------------------|---------------|
-| IntersectingAxes |               |
-|                  |               |
+| Attribute        | Description                                                                                                                                                                  |
+|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| IntersectingAxes |                                                                                                                                                                              |
+| OffsetDistances  | Offset distances to the grid axes. If given, it defines virtual offset curves to the grid axes. The intersection of the offset curves specify the virtual grid intersection. |
 

@@ -11,15 +11,8 @@ in a cable carrier system.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcelectricaldomain/lexical/ifccablecarrierfitting.htm)
 
 
-Formal Propositions
--------------------
-| Rule                  | Description   |
-|-----------------------|---------------|
-| CorrectPredefinedType |               |
-| CorrectTypeAssigned   |               |
-
-Associations
-------------
+Attribute definitions
+---------------------
 | Attribute      | Description   |
 |----------------|---------------|
 | PredefinedType |               |

@@ -32,16 +32,8 @@ layout1.gif "Figure 1 -- Arbitrary closed profile")
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcprofileresource/lexical/ifcarbitraryclosedprofiledef.htm)
 
 
-Formal Propositions
--------------------
-| Rule   | Description   |
-|--------|---------------|
-| WR1    |               |
-| WR2    |               |
-| WR3    |               |
-
-Associations
-------------
+Attribute definitions
+---------------------
 | Attribute   | Description   |
 |-------------|---------------|
 | OuterCurve  |               |

@@ -40,19 +40,8 @@ Attribute definitions
 ---------------------
 | Attribute        | Description                                                                                 |
 |------------------|---------------------------------------------------------------------------------------------|
+| PredefinedType   |                                                                                             |
 | NominalDiameter  | The nominal diameter defining the cross-section size of the prestressed part of the tendon. |
 | CrossSectionArea | The effective cross-section area of the prestressed part of the tendon.                     |
 | SheathDiameter   | Diameter of the sheeth (duct) around the tendon, if there is one with this type of tendon.  |
-
-Formal Propositions
--------------------
-| Rule                  | Description   |
-|-----------------------|---------------|
-| CorrectPredefinedType |               |
-
-Associations
-------------
-| Attribute      | Description   |
-|----------------|---------------|
-| PredefinedType |               |
 

@@ -19,14 +19,9 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute      | Description                                                                                                       |
-|----------------|-------------------------------------------------------------------------------------------------------------------|
-| StartDistAlong | The value of the distance along at the start of the horizontal alignment. If omited (standard) it is set to zero. |
-
-Associations
-------------
-| Attribute        | Description   |
-|------------------|---------------|
-| Segments         |               |
-| ToAlignmentCurve |               |
+| Attribute        | Description                                                                                                       |
+|------------------|-------------------------------------------------------------------------------------------------------------------|
+| Segments         |                                                                                                                   |
+| ToAlignmentCurve |                                                                                                                   |
+| StartDistAlong   | The value of the distance along at the start of the horizontal alignment. If omited (standard) it is set to zero. |
 

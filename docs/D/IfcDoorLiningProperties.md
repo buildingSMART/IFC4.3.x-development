@@ -181,6 +181,7 @@ Attribute definitions
 ---------------------
 | Attribute            | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 |----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ShapeAspectStyle     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | LiningDepth          | Depth of the door lining, measured perpendicular to the plane of the door lining. If omitted (and with a given value to lining thickness) it indicates an adjustable depth (i.e. a depth that adjusts to the thickness of the wall into which the occurrence of this door style is inserted).                                                                                                                                                                                                   |
 | LiningThickness      | Thickness of the door lining as explained in the figure above. If _LiningThickness_ value is 0. (zero) it denotes a door without a lining (all other lining parameters shall be set to NIL in this case). If the _LiningThickness_ is NIL it denotes that the value is not available.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  Data type modified to be _IfcNonNegativeLengthMeasure_.                                                                                                          |
 | ThresholdDepth       | Depth (dimension in plane perpendicular to door leaf) of the door threshold. Only given if the door lining includes a threshold. If omitted (and with a given value to threshold thickness) it indicates an adjustable depth (i.e. a depth that adjusts to the thickness of the wall into which the occurrence of this door style is inserted).                                                                                                                                                 |
@@ -193,20 +194,4 @@ Attribute definitions
 | CasingDepth          | Depth of the casing (dimension in plane perpendicular to door leaf). If given it is applied equally to all four sides of the adjacent wall.                                                                                                                                                                                                                                                                                                                                                     |
 | LiningToPanelOffsetX | Offset between the lining and the window panel measured along the x-axis of the local placement.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  New attribute added at the end of the entity definition.                                                                                                                                                                                                                                                                                              |
 | LiningToPanelOffsetY | Offset between the lining and the door panel measured along the y-axis of the local placement.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  New attribute added at the end of the entity definition.                                                                                                                                                                                                                                                                                                |
-
-Formal Propositions
--------------------
-| Rule   | Description   |
-|--------|---------------|
-| WR31   |               |
-| WR32   |               |
-| WR33   |               |
-| WR34   |               |
-| WR35   |               |
-
-Associations
-------------
-| Attribute        | Description   |
-|------------------|---------------|
-| ShapeAspectStyle |               |
 

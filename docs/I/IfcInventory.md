@@ -32,17 +32,12 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute      | Description                                                                                                                                           |
-|----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Jurisdiction   | The organizational unit to which the inventory is applicable.                                                                                         |
-| LastUpdateDate | The date on which the last update of the inventory was carried out.\X\0D\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE Type changed from IfcDateTimeSelect. |
-
-Associations
-------------
-| Attribute          | Description   |
-|--------------------|---------------|
-| ResponsiblePersons |               |
-| CurrentValue       |               |
-| OriginalValue      |               |
-| PredefinedType     |               |
+| Attribute          | Description                                                                                                                                           |
+|--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ResponsiblePersons |                                                                                                                                                       |
+| CurrentValue       |                                                                                                                                                       |
+| OriginalValue      |                                                                                                                                                       |
+| PredefinedType     |                                                                                                                                                       |
+| Jurisdiction       | The organizational unit to which the inventory is applicable.                                                                                         |
+| LastUpdateDate     | The date on which the last update of the inventory was carried out.\X\0D\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE Type changed from IfcDateTimeSelect. |
 

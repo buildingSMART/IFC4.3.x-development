@@ -38,20 +38,9 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute   | Description                                                                                                                                            |
-|-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Tag         | The tag (or label) identifier at the particular type of a product, e.g. the article number (like the EAN). It is the identifier at the specific level. |
-
-Formal Propositions
--------------------
-| Rule                 | Description   |
-|----------------------|---------------|
-| ApplicableOccurrence |               |
-
-Associations
-------------
-| Attribute          | Description   |
-|--------------------|---------------|
-| RepresentationMaps |               |
-| ReferencedBy       |               |
+| Attribute          | Description                                                                                                                                            |
+|--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
+| RepresentationMaps |                                                                                                                                                        |
+| ReferencedBy       |                                                                                                                                                        |
+| Tag                | The tag (or label) identifier at the particular type of a product, e.g. the article number (like the EAN). It is the identifier at the specific level. |
 

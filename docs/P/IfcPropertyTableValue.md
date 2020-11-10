@@ -184,11 +184,3 @@ Attribute definitions
 | DefinedUnit        | Unit for the defined values, if not given, the default value for the measure type (given by the TYPE of the defined values) is used as defined by the global unit assignment at IfcProject.                                                      |
 | CurveInterpolation | Interpolation of the curve between two defining and defined values that are provided. if not provided a linear interpolation is assumed.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  The attribute has been added at the end of the attribute list. |
 
-Formal Propositions
--------------------
-| Rule   | Description   |
-|--------|---------------|
-| WR21   |               |
-| WR22   |               |
-| WR23   |               |
-

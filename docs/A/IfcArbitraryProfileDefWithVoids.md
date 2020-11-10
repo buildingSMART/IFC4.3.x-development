@@ -39,16 +39,8 @@ Arbitrary profile with voids")
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcprofileresource/lexical/ifcarbitraryprofiledefwithvoids.htm)
 
 
-Formal Propositions
--------------------
-| Rule   | Description   |
-|--------|---------------|
-| WR1    |               |
-| WR2    |               |
-| WR3    |               |
-
-Associations
-------------
+Attribute definitions
+---------------------
 | Attribute   | Description   |
 |-------------|---------------|
 | InnerCurves |               |

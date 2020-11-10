@@ -51,16 +51,3 @@ Attribute definitions
 | CurveColour       | The colour of the visible part of the curve. If not given, then the colour should be taken from the layer assignment with style, if that is not given either, then the default colour applies.                                                                                                                    |
 | ModelOrDraughting | Indication whether the length measures provided for the presentation style are model based, or draughting based.\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  New attribute.                                                                                                                                          |
 
-Formal Propositions
--------------------
-| Rule                   | Description   |
-|------------------------|---------------|
-| MeasureOfWidth         |               |
-| IdentifiableCurveStyle |               |
-
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
-

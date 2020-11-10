@@ -1,2 +1,0 @@
-IfcEntity Exisitng
-==================

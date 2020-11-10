@@ -30,22 +30,10 @@ Attribute definitions
 ---------------------
 | Attribute          | Description                                                                                                                                                                                                              |
 |--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Rows               |                                                                                                                                                                                                                          |
+| Columns            |                                                                                                                                                                                                                          |
 | Name               | $                                                                                                                                                                                                                        |
 | NumberOfCellsInRow | The number of cells in each row, this complies to the number of columns in a table. See WR2 that ensures that each row has the same number of cells. The actual value is derived from the first member of the Rows list. |
 | NumberOfHeadings   | The number of headings in a table. This is restricted by WR3 to max. one.                                                                                                                                                |
 | NumberOfDataRows   | The number of rows in a table that contains data, i.e. total number of rows minus number of heading rows in table.                                                                                                       |
-
-Formal Propositions
--------------------
-| Rule   | Description   |
-|--------|---------------|
-| WR1    |               |
-| WR2    |               |
-
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-| Rows        |               |
-| Columns     |               |
 

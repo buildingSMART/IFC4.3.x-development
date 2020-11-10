@@ -49,12 +49,7 @@ Attribute definitions
 ---------------------
 | Attribute     | Description                                                                                                                                |
 |---------------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| BaseSurface   |                                                                                                                                            |
 | AgreementFlag | The agreement flag is TRUE if the normal to the BaseSurface points away from the material of the IfcHalfSpaceSolid. Otherwise it is FALSE. |
 | Dim           | The space dimensionality of this class, it is always 3                                                                                     |
-
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-| BaseSurface |               |
 

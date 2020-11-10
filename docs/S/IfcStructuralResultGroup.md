@@ -16,21 +16,10 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute   | Description                                                                                                                        |
-|-------------|------------------------------------------------------------------------------------------------------------------------------------|
-| TheoryType  | Specifies the analysis theory used to obtain the respective results.                                                               |
-| IsLinear    | This value allows to easily recognize whether a linear analysis has been applied (allowing the superposition of analysis results). |
-
-Formal Propositions
--------------------
-| Rule          | Description   |
-|---------------|---------------|
-| HasObjectType |               |
-
-Associations
-------------
-| Attribute          | Description   |
-|--------------------|---------------|
-| ResultGroupFor     |               |
-| ResultForLoadGroup |               |
+| Attribute          | Description                                                                                                                        |
+|--------------------|------------------------------------------------------------------------------------------------------------------------------------|
+| ResultGroupFor     |                                                                                                                                    |
+| ResultForLoadGroup |                                                                                                                                    |
+| TheoryType         | Specifies the analysis theory used to obtain the respective results.                                                               |
+| IsLinear           | This value allows to easily recognize whether a linear analysis has been applied (allowing the superposition of analysis results). |
 

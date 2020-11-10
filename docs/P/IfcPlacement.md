@@ -25,11 +25,6 @@ Attribute definitions
 ---------------------
 | Attribute   | Description                                                                              |
 |-------------|------------------------------------------------------------------------------------------|
+| Location    |                                                                                          |
 | Dim         | The space dimensionality of this class, derived from the dimensionality of the location. |
-
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-| Location    |               |
 

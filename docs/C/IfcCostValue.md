@@ -53,15 +53,3 @@ _Category_ attribute:
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifccostresource/lexical/ifccostvalue.htm)
 
 
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
-|             |               |
-|             |               |
-|             |               |
-|             |               |
-|             |               |
-|             |               |
-

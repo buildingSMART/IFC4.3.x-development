@@ -18,8 +18,8 @@ attribute _ConditionCoordinateSystem_.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcstructuralanalysisdomain/lexical/ifcstructuralpointconnection.htm)
 
 
-Associations
-------------
+Attribute definitions
+---------------------
 | Attribute                 | Description   |
 |---------------------------|---------------|
 | ConditionCoordinateSystem |               |

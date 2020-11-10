@@ -12,13 +12,8 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute   | Description                  |
-|-------------|------------------------------|
-| TheActor    | Information about the actor. |
-
-Associations
-------------
-| Attribute    | Description   |
-|--------------|---------------|
-| IsActingUpon |               |
+| Attribute    | Description                  |
+|--------------|------------------------------|
+| IsActingUpon |                              |
+| TheActor     | Information about the actor. |
 

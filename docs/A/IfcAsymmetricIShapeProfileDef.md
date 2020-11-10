@@ -71,12 +71,3 @@ Attribute definitions
 | TopFlangeEdgeRadius      | Radius of the lower edges of the top flange. 0 if sharp-edged, omitted if unknown.                                                                                        |
 | TopFlangeSlope           | Slope of the lower faces of the top flange. Non-zero in case of of tapered top flange, 0 in case of parallel top flange, omitted if unknown.                              |
 
-Formal Propositions
--------------------
-| Rule                    | Description   |
-|-------------------------|---------------|
-| ValidFlangeThickness    |               |
-| ValidWebThickness       |               |
-| ValidBottomFilletRadius |               |
-| ValidTopFilletRadius    |               |
-

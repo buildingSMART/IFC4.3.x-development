@@ -13,9 +13,3 @@ Attribute definitions
 |----------------|--------------------------------------------------------------------------------------|
 | PredefinedType | Identifies the predefined type of a signal from which the type modelled, may be set. |
 
-Associations
-------------
-| Attribute      | Description   |
-|----------------|---------------|
-| PredefinedType |               |
-

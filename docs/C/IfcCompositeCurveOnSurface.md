@@ -36,9 +36,3 @@ Attribute definitions
 |--------------|------------------------------------------------------|
 | BasisSurface | The surface on which the composite curve is defined. |
 
-Formal Propositions
--------------------
-| Rule        | Description   |
-|-------------|---------------|
-| SameSurface |               |
-

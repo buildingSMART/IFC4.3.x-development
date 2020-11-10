@@ -3,8 +3,9 @@ IfcWall
 The wall represents a vertical construction that may bound or subdivide
 spaces. Wall are usually vertical, or nearly vertical, planar elements, often
 designed to bear structural loads. A wall is however\S\ not required to be
-load bearing.
+load bearing.  
   
+{ .extDef}  
 > NOTE  Definition according to ISO 6707-1: vertical construction usually in
 > masonry or in concrete which bounds or subdivides a construction works and
 > fulfils a load bearing or retaining function.  
@@ -36,15 +37,8 @@ There are three entities for wall occurrences:
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcsharedbldgelements/lexical/ifcwall.htm)
 
 
-Formal Propositions
--------------------
-| Rule                  | Description   |
-|-----------------------|---------------|
-| CorrectPredefinedType |               |
-| CorrectTypeAssigned   |               |
-
-Associations
-------------
+Attribute definitions
+---------------------
 | Attribute      | Description   |
 |----------------|---------------|
 | PredefinedType |               |

@@ -33,6 +33,7 @@ Attribute definitions
 ---------------------
 | Attribute                       | Description                                                                                                                                                     |
 |---------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| PredefinedType                  |                                                                                                                                                                 |
 | MeshLength                      | Deprecated.\X\0D\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  Attribute deprecated. Use respective attribute at _IfcReinforcingMeshType_ instead.                   |
 | MeshWidth                       | Deprecated.\X\0D\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  Attribute deprecated. Use respective attribute at _IfcReinforcingMeshType_ instead.                   |
 | LongitudinalBarNominalDiameter  | Deprecated.\X\0D\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  Attribute made optional and deprecated. Use respective attribute at _IfcReinforcingMeshType_ instead. |
@@ -41,17 +42,4 @@ Attribute definitions
 | TransverseBarCrossSectionArea   | Deprecated.\X\0D\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  Attribute made optional and deprecated. Use respective attribute at _IfcReinforcingMeshType_ instead. |
 | LongitudinalBarSpacing          | Deprecated.\X\0D\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  Attribute made optional and deprecated. Use respective attribute at _IfcReinforcingMeshType_ instead. |
 | TransverseBarSpacing            | Deprecated.\X\0D\X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  Attribute made optional and deprecated. Use respective attribute at _IfcReinforcingMeshType_ instead. |
-
-Formal Propositions
--------------------
-| Rule                  | Description   |
-|-----------------------|---------------|
-| CorrectPredefinedType |               |
-| CorrectTypeAssigned   |               |
-
-Associations
-------------
-| Attribute      | Description   |
-|----------------|---------------|
-| PredefinedType |               |
 

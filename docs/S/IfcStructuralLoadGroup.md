@@ -50,24 +50,13 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute    | Description                                                                                                                                                                                                 |
-|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ActionType   | Type of actions in the group. Normally needed if ''PredefinedType'' specifies a LOAD_CASE.                                                                                                                  |
-| ActionSource | Source of actions in the group. Normally needed if ''PredefinedType'' specifies a LOAD_CASE.                                                                                                                |
-| Coefficient  | Load factor. If omitted, a factor is not yet known or not specified. A load factor of 1.0 shall be explicitly exported as Coefficient = 1.0.                                                                |
-| Purpose      | Description of the purpose of this instance. Among else, possible values of the Purpose of load combinations are ''SLS'', ''ULS'', ''ALS'' to indicate serviceability, ultimate, or accidental limit state. |
-
-Formal Propositions
--------------------
-| Rule          | Description   |
-|---------------|---------------|
-| HasObjectType |               |
-
-Associations
-------------
-| Attribute           | Description   |
-|---------------------|---------------|
-| PredefinedType      |               |
-| LoadGroupFor        |               |
-| SourceOfResultGroup |               |
+| Attribute           | Description                                                                                                                                                                                                 |
+|---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| PredefinedType      |                                                                                                                                                                                                             |
+| LoadGroupFor        |                                                                                                                                                                                                             |
+| SourceOfResultGroup |                                                                                                                                                                                                             |
+| ActionType          | Type of actions in the group. Normally needed if ''PredefinedType'' specifies a LOAD_CASE.                                                                                                                  |
+| ActionSource        | Source of actions in the group. Normally needed if ''PredefinedType'' specifies a LOAD_CASE.                                                                                                                |
+| Coefficient         | Load factor. If omitted, a factor is not yet known or not specified. A load factor of 1.0 shall be explicitly exported as Coefficient = 1.0.                                                                |
+| Purpose             | Description of the purpose of this instance. Among else, possible values of the Purpose of load combinations are ''SLS'', ''ULS'', ''ALS'' to indicate serviceability, ultimate, or accidental limit state. |
 

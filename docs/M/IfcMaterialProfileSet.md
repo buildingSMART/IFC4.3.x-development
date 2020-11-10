@@ -17,17 +17,10 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute   | Description                                                  |
-|-------------|--------------------------------------------------------------|
-| Name        | The name by which the material profile set is known.         |
-| Description | Definition of the material profile set in descriptive terms. |
-
-Associations
-------------
-| Attribute        | Description   |
-|------------------|---------------|
-| MaterialProfiles |               |
-| CompositeProfile |               |
-|                  |               |
-|                  |               |
+| Attribute        | Description                                                  |
+|------------------|--------------------------------------------------------------|
+| MaterialProfiles |                                                              |
+| CompositeProfile |                                                              |
+| Name             | The name by which the material profile set is known.         |
+| Description      | Definition of the material profile set in descriptive terms. |
 

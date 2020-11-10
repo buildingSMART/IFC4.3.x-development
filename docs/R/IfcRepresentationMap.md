@@ -34,22 +34,10 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute     | Description                                                                                       |
-|---------------|---------------------------------------------------------------------------------------------------|
-| MappingOrigin | An axis2 placement that defines the position about which the mapped\X\0Drepresentation is mapped. |
-
-Formal Propositions
--------------------
-| Rule                 | Description   |
-|----------------------|---------------|
-| ApplicableMappedRepr |               |
-
-Associations
-------------
-| Attribute            | Description   |
-|----------------------|---------------|
-| MapUsage             |               |
-| MappedRepresentation |               |
-|                      |               |
-| HasShapeAspects      |               |
+| Attribute            | Description                                                                                       |
+|----------------------|---------------------------------------------------------------------------------------------------|
+| MapUsage             |                                                                                                   |
+| MappedRepresentation |                                                                                                   |
+| HasShapeAspects      |                                                                                                   |
+| MappingOrigin        | An axis2 placement that defines the position about which the mapped\X\0Drepresentation is mapped. |
 

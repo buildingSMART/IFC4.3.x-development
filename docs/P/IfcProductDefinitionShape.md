@@ -18,14 +18,8 @@ same product. The shape relevant information includes:
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcrepresentationresource/lexical/ifcproductdefinitionshape.htm)
 
 
-Formal Propositions
--------------------
-| Rule           | Description   |
-|----------------|---------------|
-| OnlyShapeModel |               |
-
-Associations
-------------
+Attribute definitions
+---------------------
 | Attribute       | Description   |
 |-----------------|---------------|
 | ShapeOfProduct  |               |

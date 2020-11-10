@@ -52,15 +52,9 @@ Attribute definitions
 ---------------------
 | Attribute   | Description                                                        |
 |-------------|--------------------------------------------------------------------|
+| Corner      |                                                                    |
 | XDim        | Length attribute (measured along the edge parallel to the X Axis)  |
 | YDim        | Width attribute (measured along the edge parallel to the Y Axis)   |
 | ZDim        | Height attribute (measured along the edge parallel to the Z Axis). |
 | Dim         | The space dimensionality of this class, it is always 3.            |
-
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-| Corner      |               |
-|             |               |
 

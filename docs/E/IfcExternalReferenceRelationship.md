@@ -17,23 +17,6 @@ Attribute definitions
 ---------------------
 | Attribute              | Description                                                                                                                                                            |
 |------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| RelatingReference      |                                                                                                                                                                        |
 | RelatedResourceObjects | Objects within the list of _IfcResourceObjectSelect_ that can be tagged by an external reference to a dictionary, library, catalogue, classification or documentation. |
-
-Associations
-------------
-| Attribute              | Description   |
-|------------------------|---------------|
-| RelatedResourceObjects |               |
-| RelatedResourceObjects |               |
-| RelatedResourceObjects |               |
-| RelatedResourceObjects |               |
-| RelatedResourceObjects |               |
-| RelatingReference      |               |
-| RelatedResourceObjects |               |
-| RelatedResourceObjects |               |
-| RelatedResourceObjects |               |
-| RelatedResourceObjects |               |
-| RelatedResourceObjects |               |
-| RelatedResourceObjects |               |
-| RelatedResourceObjects |               |
 

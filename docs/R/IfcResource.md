@@ -45,12 +45,7 @@ Attribute definitions
 ---------------------
 | Attribute       | Description                                                                                                                                                                                                                                       |
 |-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ResourceOf      |                                                                                                                                                                                                                                                   |
 | Identification  | An identifying designation given to a resource.\X\0D It is the identifier at the occurrence level. \X\0D \X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE Attribute promoted from subtype _IfcConstructionResource_.                                      |
 | LongDescription | A detailed description of the resource (e.g. the skillset for a labor resource). \X\0D{ .change-ifc2x4}\X\0D> IFC4 CHANGE  The attribute _LongDescription_ is added replacing the _ResourceGroup_ attribute at subtype _IfcConstructionResource_. |
-
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-| ResourceOf  |               |
 

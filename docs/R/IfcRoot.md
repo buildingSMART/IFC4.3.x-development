@@ -20,21 +20,10 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute   | Description                                                                                                                                                                                     |
-|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| GlobalId    | Assignment of a globally unique identifier within the entire software world.                                                                                                                    |
-| Name        | Optional name for use by the participating software systems or users. For some subtypes of IfcRoot the insertion of the Name attribute may be required. This would be enforced by a where rule. |
-| Description | Optional description, provided for exchanging informative comments.                                                                                                                             |
-
-Formal Propositions
--------------------
-| Rule   | Description   |
-|--------|---------------|
-| UR1    |               |
-
-Associations
-------------
-| Attribute    | Description   |
-|--------------|---------------|
-| OwnerHistory |               |
+| Attribute    | Description                                                                                                                                                                                     |
+|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| OwnerHistory |                                                                                                                                                                                                 |
+| GlobalId     | Assignment of a globally unique identifier within the entire software world.                                                                                                                    |
+| Name         | Optional name for use by the participating software systems or users. For some subtypes of IfcRoot the insertion of the Name attribute may be required. This would be enforced by a where rule. |
+| Description  | Optional description, provided for exchanging informative comments.                                                                                                                             |
 

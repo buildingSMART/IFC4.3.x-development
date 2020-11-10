@@ -25,19 +25,8 @@ Attribute definitions
 ---------------------
 | Attribute            | Description                                                                                                                                                                                                                                                                                                    |
 |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| BenchmarkValues      |                                                                                                                                                                                                                                                                                                                |
 | LogicalAggregator    | Enumeration that identifies the logical type of aggregation for the benchmark metrics.\X\0D\X\0D{ .change-ifc2x4}\X\0D> IFC2X4 CHANGE  This attribute replaces replaces the former _ResultValues_ attribute and indicates the aggregation behavior formerly defined at _IfcConstraintAggregationRelationship_. |
 | ObjectiveQualifier   | Enumeration that qualifies the type of objective constraint.                                                                                                                                                                                                                                                   |
 | UserDefinedQualifier | A user defined value that qualifies the type of objective constraint when ObjectiveQualifier attribute of type _IfcObjectiveEnum_ has value USERDEFINED.                                                                                                                                                       |
-
-Formal Propositions
--------------------
-| Rule   | Description   |
-|--------|---------------|
-| WR21   |               |
-
-Associations
-------------
-| Attribute       | Description   |
-|-----------------|---------------|
-| BenchmarkValues |               |
 

@@ -1,8 +1,0 @@
-IfcDilatationTurnoutAsset
-=========================
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
-

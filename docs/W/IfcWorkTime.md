@@ -22,16 +22,9 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute   | Description                                                                                        |
-|-------------|----------------------------------------------------------------------------------------------------|
-| Start       | Start date of the work time (0:00), that might be further\X\0D restricted by a recurrence pattern. |
-| Finish      | End date of the work time (24:00), that might be further\X\0D restricted by a recurrence pattern.  |
-
-Associations
-------------
-| Attribute         | Description   |
-|-------------------|---------------|
-| RecurrencePattern |               |
-|                   |               |
-|                   |               |
+| Attribute         | Description                                                                                        |
+|-------------------|----------------------------------------------------------------------------------------------------|
+| RecurrencePattern |                                                                                                    |
+| Start             | Start date of the work time (0:00), that might be further\X\0D restricted by a recurrence pattern. |
+| Finish            | End date of the work time (24:00), that might be further\X\0D restricted by a recurrence pattern.  |
 

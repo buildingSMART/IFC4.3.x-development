@@ -31,15 +31,3 @@ Attribute definitions
 |----------------|---------------|
 | PredefinedType |               |
 
-Formal Propositions
--------------------
-| Rule                  | Description   |
-|-----------------------|---------------|
-| CorrectPredefinedType |               |
-
-Associations
-------------
-| Attribute      | Description   |
-|----------------|---------------|
-| PredefinedType |               |
-

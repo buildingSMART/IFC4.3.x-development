@@ -33,9 +33,3 @@ Attribute definitions
 | TextTransform  | This property describes how text characters may transform to upper case, lower case, or capitalized case, independent of the character case used in the text literal.\X\0D \X\0D> NOTE  It has been introduced for later compliance to full CSS support.                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | LineHeight     | The property sets the distance between two adjacent lines'' baselines. \X\0DWhen a ratio value is specified, the line height is given by the font size of the current element multiplied with the numerical value. A value of ''normal'' sets the line height to a reasonable value for the element''s font. It is suggested that importing applications set the ''normal'' value to be a ratio number in the range of 1.0 to 1.2.\X\0D \X\0D> NOTE  The following values are allowed: _IfcDescriptiveMeasure_ with value=''normal'', or _IfcLengthMeasure_, with non-negative values, the length unit is globally defined at _IfcUnitAssignment_, or _IfcRatioMeasure_.__ |
 
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-|             |               |
-

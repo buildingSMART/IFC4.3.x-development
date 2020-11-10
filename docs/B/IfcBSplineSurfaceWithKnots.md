@@ -33,12 +33,3 @@ Attribute definitions
 | KnotVUpper      | The number of distinct knots in the _v_ parameter direction.    |
 | KnotUUpper      | The number of distinct knots in the _u_ parameter direction.    |
 
-Formal Propositions
--------------------
-| Rule                  | Description   |
-|-----------------------|---------------|
-| UDirectionConstraints |               |
-| VDirectionConstraints |               |
-| CorrespondingULists   |               |
-| CorrespondingVLists   |               |
-

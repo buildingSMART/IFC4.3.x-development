@@ -25,9 +25,3 @@ defined in the _PredefinedType_ attribute apply as well.
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcsharedbldgelements/lexical/ifcslabstandardcase.htm)
 
 
-Formal Propositions
--------------------
-| Rule                     | Description   |
-|--------------------------|---------------|
-| HasMaterialLayerSetusage |               |
-

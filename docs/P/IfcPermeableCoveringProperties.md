@@ -45,16 +45,11 @@ Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/sc
 
 Attribute definitions
 ---------------------
-| Attribute      | Description                                                                                                                                                                                                  |
-|----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| OperationType  | Types of permeable covering operations. Also used to assign standard symbolic presentations according to national building standards.                                                                        |
-| PanelPosition  | Position of this permeable covering panel within the overall window or door type.                                                                                                                            |
-| FrameDepth     | Depth of panel frame (used to include the permeable covering), measured from front face to back face horizontally (i.e. perpendicular to the window or door (elevation) plane.                               |
-| FrameThickness | Width of panel frame (used to include the permeable covering), measured from inside of panel (at permeable covering) to outside of panel (at lining), i.e. parallel to the window or door (elevation) plane. |
-
-Associations
-------------
-| Attribute        | Description   |
-|------------------|---------------|
-| ShapeAspectStyle |               |
+| Attribute        | Description                                                                                                                                                                                                  |
+|------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ShapeAspectStyle |                                                                                                                                                                                                              |
+| OperationType    | Types of permeable covering operations. Also used to assign standard symbolic presentations according to national building standards.                                                                        |
+| PanelPosition    | Position of this permeable covering panel within the overall window or door type.                                                                                                                            |
+| FrameDepth       | Depth of panel frame (used to include the permeable covering), measured from front face to back face horizontally (i.e. perpendicular to the window or door (elevation) plane.                               |
+| FrameThickness   | Width of panel frame (used to include the permeable covering), measured from inside of panel (at permeable covering) to outside of panel (at lining), i.e. parallel to the window or door (elevation) plane. |
 

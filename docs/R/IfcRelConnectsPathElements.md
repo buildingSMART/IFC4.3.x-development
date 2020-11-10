@@ -109,10 +109,3 @@ Attribute definitions
 | RelatedConnectionType  | Indication of the connection type in relation to the path of the _RelatingObject_.                                                                                                                                                                                                                                                                                                                                          |
 | RelatingConnectionType | Indication of the connection type in relation to the path of the _RelatingObject_.                                                                                                                                                                                                                                                                                                                                          |
 
-Formal Propositions
--------------------
-| Rule                         | Description   |
-|------------------------------|---------------|
-| NormalizedRelatingPriorities |               |
-| NormalizedRelatedPriorities  |               |
-

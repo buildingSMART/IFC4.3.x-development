@@ -93,12 +93,7 @@ Attribute definitions
 ---------------------
 | Attribute   | Description                                                                                                                                                                                                                                                                                 |
 |-------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Faces       |                                                                                                                                                                                                                                                                                             |
 | Closed      | Indication whether the _IfcPolygonalFaceSet_ is a closed shell or not. If omited no such information can be provided.                                                                                                                                                                       |
 | PnIndex     | The list of integers defining the locations in the _IfcCartesianPointList3D_ to obtain the point coordinates for the indices at the indexed polygonal faces. If the _PnIndex_ is not provided the indices at the indexed polygonal faces point directly into the _IfcCartesianPointList3D_. |
-
-Associations
-------------
-| Attribute   | Description   |
-|-------------|---------------|
-| Faces       |               |
 

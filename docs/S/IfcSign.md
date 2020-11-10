@@ -16,9 +16,3 @@ Attribute definitions
 |----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | PredefinedType | Identifies the predefined type of a signs from which the type modelled, may be set. This type may associate additional specific property sets.NOTE The PredefinedType shall only be used, if no [_IfcSignType_]($element://{B8D00EA4-C9E5-4f74-AB2A-D8235B911718}) is assigned, providing its own IfcSignType .PredefinedType. |
 
-Associations
-------------
-| Attribute      | Description   |
-|----------------|---------------|
-| PredefinedType |               |
-

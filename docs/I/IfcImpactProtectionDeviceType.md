@@ -15,9 +15,3 @@ Attribute definitions
 |----------------|---------------------------------------------------------------------------------------------|
 | PredefinedType | Identifies the predefined type of a impact device from which the type modelled, may be set. |
 
-Associations
-------------
-| Attribute      | Description   |
-|----------------|---------------|
-| PredefinedType |               |
-

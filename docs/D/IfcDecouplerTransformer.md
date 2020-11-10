@@ -1,5 +1,0 @@
-IfcDecouplerTransformer
-=======================
-Phase separation transformer.
-
-

@@ -53,14 +53,8 @@ Informal Propositions:
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcstructuralanalysisdomain/lexical/ifcstructuralsurfacereaction.htm)
 
 
-Formal Propositions
--------------------
-| Rule              | Description   |
-|-------------------|---------------|
-| HasPredefinedType |               |
-
-Associations
-------------
+Attribute definitions
+---------------------
 | Attribute      | Description   |
 |----------------|---------------|
 | PredefinedType |               |

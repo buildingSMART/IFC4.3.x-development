@@ -50,9 +50,3 @@ Attribute definitions
 |-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | RelativePlacement | Geometric placement that defines the transformation from the related coordinate system into the relating. The placement can be either 2D or 3D, depending on the dimension count of the coordinate system. |
 
-Formal Propositions
--------------------
-| Rule   | Description   |
-|--------|---------------|
-| WR21   |               |
-

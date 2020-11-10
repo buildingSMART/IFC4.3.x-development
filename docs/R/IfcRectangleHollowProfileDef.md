@@ -77,11 +77,3 @@ Attribute definitions
 | InnerFilletRadius | Inner corner radius.       |
 | OuterFilletRadius | Outer corner radius.       |
 
-Formal Propositions
--------------------
-| Rule               | Description   |
-|--------------------|---------------|
-| ValidWallThickness |               |
-| ValidInnerRadius   |               |
-| ValidOuterRadius   |               |
-

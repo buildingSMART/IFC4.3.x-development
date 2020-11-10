@@ -75,17 +75,3 @@ Attribute definitions
 |------------------|----------------------------------------------------------------|
 | RelatingMaterial | Material definition assigned to the elements or element types. |
 
-Formal Propositions
--------------------
-| Rule            | Description   |
-|-----------------|---------------|
-| NoVoidElement   |               |
-| AllowedElements |               |
-
-Associations
-------------
-| Attribute        | Description   |
-|------------------|---------------|
-| RelatingMaterial |               |
-| RelatingMaterial |               |
-

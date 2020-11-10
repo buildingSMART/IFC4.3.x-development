@@ -22,8 +22,8 @@ Informal Propositions:
 Documentation_](https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifctopologyresource/lexical/ifcvertexloop.htm)
 
 
-Associations
-------------
+Attribute definitions
+---------------------
 | Attribute   | Description   |
 |-------------|---------------|
 | LoopVertex  |               |

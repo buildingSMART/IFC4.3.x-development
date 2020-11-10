@@ -1,5 +1,0 @@
-IfcBases
-========
-substation foundation
-
-

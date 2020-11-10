@@ -13,20 +13,9 @@ Attribute definitions
 ---------------------
 | Attribute          | Description                                                                                                                                                                                                                                                                                                    |
 |--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| OfPerson           |                                                                                                                                                                                                                                                                                                                |
+| OfOrganization     |                                                                                                                                                                                                                                                                                                                |
 | Purpose            | Identifies the logical location of the address.                                                                                                                                                                                                                                                                |
 | Description        | Text that relates the nature of the address.                                                                                                                                                                                                                                                                   |
 | UserDefinedPurpose | Allows for specification of user specific purpose of the address beyond the \X\0Denumeration values provided by Purpose attribute of type IfcAddressTypeEnum. \X\0DWhen a value is provided for attribute UserDefinedPurpose, in parallel the \X\0Dattribute Purpose shall have enumeration value USERDEFINED. |
-
-Formal Propositions
--------------------
-| Rule   | Description   |
-|--------|---------------|
-| WR1    |               |
-
-Associations
-------------
-| Attribute      | Description   |
-|----------------|---------------|
-| OfPerson       |               |
-| OfOrganization |               |
 

@@ -83,9 +83,3 @@ Attribute definitions
 | FontWeight  | The font weight property selects the weight of the font.\X\0D \X\0D> NOTE  Values other then ''normal'' and ''bold'' have been introduced for later compliance to full CSS1 support.                                                                                                                                               |
 | FontSize    | The font size provides the size or height of the text font.\X\0D \X\0D> NOTE  The following values are allowed, <_IfcLengthMeasure_, with positive values, the length unit is globally defined at _IfcUnitAssignment_.__                                                                                                           |
 
-Formal Propositions
--------------------
-| Rule              | Description   |
-|-------------------|---------------|
-| MeasureOfFontSize |               |
-

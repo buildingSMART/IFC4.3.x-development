@@ -37,7 +37,7 @@ NOTE A structural item may be grouped into more than one analysis model. In this
 ### SharedPlacement
 
 
-## WhereRules
+## Formal Propositions
 
 ### HasObjectType
 The attribute ObjectType shall be given if the predefined type is set to USERDEFINED.

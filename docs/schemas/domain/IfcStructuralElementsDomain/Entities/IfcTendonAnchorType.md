@@ -26,7 +26,7 @@ The _IfcTendonAnchorType_ may define the shared geometric representation for man
 ### PredefinedType
 Subtype of tendon anchor.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 The inherited attribute _ElementType_ shall be provided if the _PredefinedType_ is set to USERDEFINED.

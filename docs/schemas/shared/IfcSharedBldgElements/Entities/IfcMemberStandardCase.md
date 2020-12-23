@@ -14,7 +14,7 @@ The standard member, _IfcMemberStandardCase_, defines a member with certain cons
 
 > HISTORY&nbsp; New entity in IFC4.
 
-## WhereRules
+## Formal Propositions
 
 ### HasMaterialProfileSetUsage
 A valid instance of _IfcMemberStandardCase_ relies on the provision of an _IfcMaterialProfileSetUsage_.

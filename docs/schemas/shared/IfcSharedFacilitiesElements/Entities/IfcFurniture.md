@@ -11,7 +11,7 @@ Occurrences of furniture that are built in (where the property _Pset_FurnitureTy
 ### PredefinedType
 
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

@@ -24,7 +24,7 @@ If connected with a curve item or surface item, instances of _IfcStructuralPoint
 Special Case 2:  
 If not connected with a structural item (which may happen in an incomplete or conceptual model), a point action should have an _ObjectPlacement_ and _Representation_, containing an _IfcVertexPoint_. See _IfcStructuralActivity_ for further definitions.
 
-## WhereRules
+## Formal Propositions
 
 ### SuitableLoadType
 A structural point action shall place either a single force or a single displacement.

@@ -8,7 +8,7 @@ A sign is a notice on display that gives information or instructions in a writte
 ### PredefinedType
 
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 The inherited attribute _ElementType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.

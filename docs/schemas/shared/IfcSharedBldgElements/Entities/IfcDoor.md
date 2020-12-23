@@ -67,7 +67,7 @@ Type defining the general layout and operation of the door type in terms of the 
 ### UserDefinedOperationType
 Designator for the user defined operation type, shall only be provided, if the value of _OperationType_ is set to USERDEFINED.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectStyleAssigned
 Either there is no door type object associated, i.e. the _IsTypedBy_ inverse relationship is not provided, or the associated type object has to be of type _IfcDoorType_.

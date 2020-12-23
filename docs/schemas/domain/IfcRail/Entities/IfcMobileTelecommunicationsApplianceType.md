@@ -15,7 +15,7 @@ It is used to define a mobile telecommunications appliance type specification in
 ### PredefinedType
 
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 The inherited attribute _ElementType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.

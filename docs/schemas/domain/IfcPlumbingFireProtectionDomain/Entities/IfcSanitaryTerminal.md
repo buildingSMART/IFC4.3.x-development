@@ -12,7 +12,7 @@ A sanitary terminal is a fixed appliance or terminal usually supplied with water
 ### PredefinedType
 
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

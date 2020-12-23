@@ -22,7 +22,7 @@ In addition to assignments specified at the base class _IfcConstructionResourceT
 ### PredefinedType
 Defines types of construction product resources.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

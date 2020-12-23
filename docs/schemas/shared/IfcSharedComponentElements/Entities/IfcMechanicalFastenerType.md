@@ -36,7 +36,7 @@ The nominal diameter describing the cross-section size of the fastener type.
 ### NominalLength
 The nominal length describing the longitudinal dimensions of the fastener type.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 The inherited attribute _ElementType_ shall be provided if the _PredefinedType_ is set to USERDEFINED.

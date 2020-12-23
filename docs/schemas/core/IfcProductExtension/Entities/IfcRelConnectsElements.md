@@ -18,7 +18,7 @@ Reference to a subtype of _IfcElement_ that is connected by the connection relat
 ### RelatedElement
 Reference to a subtype of _IfcElement_ that is connected by the connection relationship in the role of _RelatedElement_.
 
-## WhereRules
+## Formal Propositions
 
 ### NoSelfReference
 The instance of the _RelatingElement_ shall not be the same instance as the _RelatedElement_.

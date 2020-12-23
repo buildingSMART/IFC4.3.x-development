@@ -65,7 +65,7 @@ Pointer to the shape aspect, if given. The shape aspect reflects the part of the
 { .deprecated}
 > DEPRECATION&nbsp; The attribute is deprecated and shall no longer be used, i.e. the value shall be NIL ($).
 
-## WhereRules
+## Formal Propositions
 
 ### ApplicableToType
 The _IfcDoorPanelProperties_ shall only be used in the context of an _IfcDoorType_.

@@ -146,7 +146,7 @@ Transformation operator applied to the parent profile.
 ### Label
 The name by which the transformation may be referred to. The actual meaning of the name has to be defined in the context of applications.
 
-## WhereRules
+## Formal Propositions
 
 ### InvariantProfileType
 The profile type of the derived profile shall be the same as the type of the parent profile, i.e. both shall be either AREA or CURVE.

@@ -19,7 +19,7 @@ Long name for a zone, used for informal purposes. It should be used, if availabl
 { .change-ifc2x4}
 > IFC4 CHANGE The attribute has been added at the end of the entity definition.
 
-## WhereRules
+## Formal Propositions
 
 ### WR1
 An _IfcZone_ is grouped by the objectified relationship _IfcRelAssignsToGroup_. Only objects of type _IfcSpace_, _IfcZone_ and _IfcSpatialZone_ are allowed as _RelatedObjects_.

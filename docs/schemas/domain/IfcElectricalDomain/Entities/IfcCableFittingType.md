@@ -15,7 +15,7 @@ It is used to define a cable fitting type specification indicating the specific 
 ### PredefinedType
 Identifies the predefined types of cable fitting from which the type required may be set.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

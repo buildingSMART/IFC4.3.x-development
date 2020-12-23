@@ -16,7 +16,7 @@ Informal Propositions:
 ### FilletRadius
 The fillet that is equally applied to all transitions between the segments of the _IfcPolyline_, providing the geometric representation for _the Directrix_. If omited, no fillet is applied to the segments.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectRadii
 If a _FilletRadius is given_, it has to be greater or equal to the _Radius_ of the disk.

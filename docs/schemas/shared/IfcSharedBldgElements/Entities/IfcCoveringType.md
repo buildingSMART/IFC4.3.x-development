@@ -22,7 +22,7 @@ Informal Propositions:
 ### PredefinedType
 Predefined types to define the particular type of the covering. There may be property set definitions available for each predefined type.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 The inherited attribute _ElementType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.

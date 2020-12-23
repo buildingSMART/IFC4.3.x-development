@@ -51,7 +51,7 @@ The deformation of an anchor or slippage of tendons when the prestressing device
 ### MinCurvatureRadius
 The smallest curvature radius calculated on the whole effective length of the tendon where the tension properties are still valid.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 Either the _PredefinedType_ attribute is unset (e.g. because an _IfcTendonType_ is associated), or the inherited attribute _ObjectType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.

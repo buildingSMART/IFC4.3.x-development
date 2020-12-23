@@ -16,7 +16,7 @@ It is used to define a footing type specification indicating the specific produc
 ### PredefinedType
 Subtype of footing.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 The inherited attribute _ElementType_ shall be provided if the _PredefinedType_ is set to USERDEFINED.

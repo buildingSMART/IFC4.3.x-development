@@ -91,7 +91,7 @@ Informal Propositions:
 
 1. The value 'by layer' shall only be inserted, if the geometric representation item using the colour definition has an association to _IfcPresentationLayerWithStyle_, and if that instance of _IfcPresentationLayerWithStyle_ has a valid colour definition for _IfcCurveStyle_, _IfcSymbolStyle_, or _IfcSurfaceStyle_ (depending on what is applicable).
 
-## WhereRules
+## Formal Propositions
 
 ### PreDefinedColourNames
 The inherited name for pre defined items shall only have the value of one of the following words.

@@ -14,7 +14,7 @@ As shown in Figure 1, openings within the composite slab are directly assigned t
 
 !["voiding"](../../../../figures/ifcslabelementedcase_fig01.png "Figure 1 &mdash; Slab elemented voiding")
 
-## WhereRules
+## Formal Propositions
 
 ### HasDecomposition
 A valid instance of _IfcSlabElementedCase_ has to have parts in a decomposition hierarchy.

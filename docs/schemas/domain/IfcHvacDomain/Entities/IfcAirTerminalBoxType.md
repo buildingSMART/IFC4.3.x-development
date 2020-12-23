@@ -15,7 +15,7 @@ It is used to define an air terminal box type specification indicating the speci
 ### PredefinedType
 The air terminal box type.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

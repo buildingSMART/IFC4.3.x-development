@@ -15,7 +15,7 @@ It is used to define a lamp type specification indicating the specific product i
 ### PredefinedType
 Identifies the predefined types of lamp from which the type required may be set.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

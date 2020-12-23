@@ -15,7 +15,7 @@ The occurrences of the [<font color="#0000ff"><u>IfcTransportElementType</u></fo
 ### PredefinedType
 
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 The inherited attribute _ElementType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.

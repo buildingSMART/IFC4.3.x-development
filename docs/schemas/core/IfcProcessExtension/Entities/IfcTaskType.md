@@ -21,7 +21,7 @@ Identifies the predefined types of a task type from which
 ### WorkMethod
 The method of work used in carrying out a task.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 The attribute ProcessType must be asserted when the value of PredefinedType is set to USERDEFINED.

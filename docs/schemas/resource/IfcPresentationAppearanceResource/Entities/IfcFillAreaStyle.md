@@ -56,7 +56,7 @@ Indication whether the length measures provided for the presentation style are m
 { .change-ifc2x4}
 > IFC4 CHANGE&nbsp; New attribute.
 
-## WhereRules
+## Formal Propositions
 
 ### MaxOneColour
 There shall be a maximum of one colour assignment to the fill area style.

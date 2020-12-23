@@ -40,7 +40,7 @@ The start vertex of the oriented edge. It derives from the vertices of the edge 
 ### EdgeEnd
 The end vertex of the oriented edge. It derives from the vertices of the edge element after taking account of the orientation.
 
-## WhereRules
+## Formal Propositions
 
 ### EdgeElementNotOriented
 The edge element shall not be an oriented edge.

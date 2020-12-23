@@ -9,7 +9,7 @@ A system furniture element defines components of modular furniture which are not
 ### PredefinedType
 
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

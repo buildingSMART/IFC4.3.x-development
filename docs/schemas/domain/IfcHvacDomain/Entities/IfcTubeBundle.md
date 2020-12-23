@@ -12,7 +12,7 @@ A tube bundle is a device consisting of tubes and bundles of tubes used for heat
 ### PredefinedType
 
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 Either the _PredefinedType_ attribute is unset (e.g. because an _IfcTubeBundleType_ is associated), or the inherited attribute _ObjectType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.

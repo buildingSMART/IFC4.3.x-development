@@ -14,7 +14,7 @@ Alarms include the provision of break glass buttons and manual pull boxes that a
 ### PredefinedType
 
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 Either the _PredefinedType_ attribute is unset (e.g. because an _IfcAlarmType_ is associated), or the inherited attribute _ObjectType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.

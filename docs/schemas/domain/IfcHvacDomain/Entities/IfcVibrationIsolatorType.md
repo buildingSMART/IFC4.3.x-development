@@ -19,7 +19,7 @@ It is used to define a vibration isolator type specification indicating the spec
 ### PredefinedType
 Defines the type of vibration isolator.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

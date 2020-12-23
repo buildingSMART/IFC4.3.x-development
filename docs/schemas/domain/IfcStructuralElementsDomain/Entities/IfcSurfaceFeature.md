@@ -38,7 +38,7 @@ Higher-level parameters (geometric and non-geometric) may be provided by propert
 ### PredefinedType
 Indicates the kind of surface feature.
 
-## WhereRules
+## Formal Propositions
 
 ### HasObjectType
 The attribute ObjectType shall be given if the predefined type is set to USERDEFINED.

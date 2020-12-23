@@ -52,7 +52,7 @@ Representation styles which are assigned, either to an geometric representation 
 ### Name
 The word, or group of words, by which the styled item is referred to.
 
-## WhereRules
+## Formal Propositions
 
 ### ApplicableItem
 A styled item cannot be styled by another styled item.

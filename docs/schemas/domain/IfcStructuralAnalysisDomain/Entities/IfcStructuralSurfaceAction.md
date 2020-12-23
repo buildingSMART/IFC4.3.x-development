@@ -39,7 +39,7 @@ Defines whether load values are given per true lengths of the surface on which t
 ### PredefinedType
 Type of action according to its distribution of load values.
 
-## WhereRules
+## Formal Propositions
 
 ### ProjectedIsGlobal
 A load can only be related to projected lengths if it was specified in global coordinate directions (i.e. in analysis model coordinate directions).  If a load was specified in local coordinate directions, it can only relate to true lengths.

@@ -41,7 +41,7 @@ Reference to all associations between this external reference and objects within
 > IFC4 CHANGE&nbsp; New inverse attribute added with upward compatibility.  
 >
 
-## WhereRules
+## Formal Propositions
 
 ### WR1
 One of the attributes of IfcExternalReference should have a value assigned.

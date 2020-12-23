@@ -47,7 +47,7 @@ Reference to an external references, e.g. library, classification, or document i
 ### PropertiesForConstraint
 Reference to the properties to which the constraint is applied.
 
-## WhereRules
+## Formal Propositions
 
 ### WR11
 The attribute UserDefinedGrade must be asserted when the value of the IfcConstraintGradeEnum is set to USERDEFINED.

@@ -15,7 +15,7 @@ This _Ifc<font color="#ff0000">Built</font>Element_ is a generalization of all e
 <font color="#ff0000">The IfcBuiltElement can be instantiated in the case when arbitrary built elements cannot be expressed by a subtype of IfcBuiltElement.</font>  
 > HISTORY New entity in IFC1.0
 
-## WhereRules
+## Formal Propositions
 
 ### MaxOneMaterialAssociation
 There should be only a maximum of one material association assigned to an building element.

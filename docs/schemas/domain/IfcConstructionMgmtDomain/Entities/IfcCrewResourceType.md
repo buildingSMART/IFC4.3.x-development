@@ -17,7 +17,7 @@ Occurrences of the _IfcCrewResourceType_ are represented by instances of _IfcCre
 ### PredefinedType
 Defines types of crew resources.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

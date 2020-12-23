@@ -21,7 +21,7 @@ In case of closed faces with periodic surfaces, such as cylindrical or spherical
 
 > HISTORY&nbsp; New entity in IFC4
 
-## WhereRules
+## Formal Propositions
 
 ### ApplicableSurface
 The geometry used in the definition of the face shall be restricted. The face geometry shall be an _IfcElementarySurface_, _IfcSweptSurface_, or _IfcBSplineSurface_.

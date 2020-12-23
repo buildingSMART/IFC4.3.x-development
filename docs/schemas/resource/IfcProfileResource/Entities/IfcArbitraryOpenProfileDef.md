@@ -22,7 +22,7 @@ The _Curve_ attribute defines a two dimensional open bounded curve.
 ### Curve
 Open bounded curve defining the profile.
 
-## WhereRules
+## Formal Propositions
 
 ### WR11
 The profile type is a .CURVE., an open profile can only be used to define a swept surface.

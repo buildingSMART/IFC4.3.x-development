@@ -17,7 +17,7 @@ By using offsets of the position location, the parameterized profile can be posi
 ### WallThickness
 Thickness of the material, it is the difference between the outer and inner radius.
 
-## WhereRules
+## Formal Propositions
 
 ### WR1
 The wall thickness shall be smaller then the radius.

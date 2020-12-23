@@ -16,7 +16,7 @@ The dimensional exponents of the SI base units by which the named unit is define
 ### UnitType
 The type of the unit.
 
-## WhereRules
+## Formal Propositions
 
 ### WR1
 Correct dimensions of the unit are established through the function IfcCorrectDimensions.

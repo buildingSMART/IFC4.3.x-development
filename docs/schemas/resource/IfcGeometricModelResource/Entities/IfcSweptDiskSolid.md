@@ -59,7 +59,7 @@ The parameter value on the _Directrix_ at which the sweeping operation ends. <fo
 { .change-ifc2x4}
 > IFC4 CHANGE&nbsp; The attribute has been changed to OPTIONAL with upward compatibility for file-based exchange.
 
-## WhereRules
+## Formal Propositions
 
 ### DirectrixDim
 The _Directrix_ shall be a curve in three dimensional space.

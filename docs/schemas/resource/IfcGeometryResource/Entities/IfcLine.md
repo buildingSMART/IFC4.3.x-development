@@ -35,7 +35,7 @@ The location of the _IfcLine_.
 ### Dir
 The direction of the _IfcLine_, the magnitude and units of _Dir_ affect the parameterization of the line.
 
-## WhereRules
+## Formal Propositions
 
 ### SameDim
 The dimensionality of the _Pnt_, provided by _IfcCartesianPoint_, shall be the same as the dimensionality of the _Dir_, provided by _IfcVector_.

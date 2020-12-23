@@ -42,7 +42,7 @@ The direction used to determine the direction of the local X axis. If a value is
 _P[1]_: The normalized direction of the placement X Axis. This is [1.0,0.0] if _RefDirection_ is omitted.  
 _P[2]_: The normalized direction of the placement Y Axis. This is a derived attribute and is orthogonal to P[1]. If _RefDirection_ is omitted, it defaults to [0.0,1.0]
 
-## WhereRules
+## Formal Propositions
 
 ### RefDirIs2D
 

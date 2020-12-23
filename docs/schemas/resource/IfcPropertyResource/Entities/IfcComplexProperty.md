@@ -15,7 +15,7 @@ Usage description of the _IfcComplexProperty_ within the property set which refe
 ### HasProperties
 Set of properties that can be used within this complex property (may include other complex properties).
 
-## WhereRules
+## Formal Propositions
 
 ### WR21
 The IfcComplexProperty should not reference itself within the list of HasProperties.

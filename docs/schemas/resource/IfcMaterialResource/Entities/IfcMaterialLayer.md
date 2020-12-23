@@ -55,7 +55,7 @@ The relative priority of the layer, expressed as normalised integer range [0..10
 ### ToMaterialLayerSet
 Reference to the _IfcMaterialLayerSet_ in which the material layer is included.
 
-## WhereRules
+## Formal Propositions
 
 ### NormalizedPriority
 The _Property_ shall all be given as a normalized integer range [0..100], where 0 is the lowest and 100 the highest priority of the material layer.

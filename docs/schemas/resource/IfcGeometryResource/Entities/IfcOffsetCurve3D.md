@@ -30,7 +30,7 @@ An indication of whether the offset curve self-intersects, this is for informati
 ### RefDirection
 The direction used to define the direction of the offset curve 3d from the basis curve.
 
-## WhereRules
+## Formal Propositions
 
 ### DimIs2D
 The underlying curve shall be defined in three-dimensional space.

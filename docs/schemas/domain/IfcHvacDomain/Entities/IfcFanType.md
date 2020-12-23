@@ -15,7 +15,7 @@ It is used to define a fan type specification indicating the specific product in
 ### PredefinedType
 Defines the type of fan typically used in building services.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

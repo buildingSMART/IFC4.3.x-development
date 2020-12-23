@@ -42,7 +42,7 @@ Denotes, whether the predefined spatial structure element represents itself, or 
 { .change-ifc2x4}\X\0D
 > IFC4 CHANGE&nbsp; Attribute made optional.
 
-## WhereRules
+## Formal Propositions
 
 ### WR41
 All spatial structure elements shall be associated (using the IfcRelAggregates relationship) with another spatial structure element, or with IfcProject.

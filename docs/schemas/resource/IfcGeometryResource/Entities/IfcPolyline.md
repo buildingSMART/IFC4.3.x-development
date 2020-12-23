@@ -22,7 +22,7 @@ The _IfcPolyline_ is a bounded curve with only linear segments defined by a list
 ### Points
 The points defining the polyline.
 
-## WhereRules
+## Formal Propositions
 
 ### SameDim
 The space dimensionality of all Points shall be the same.

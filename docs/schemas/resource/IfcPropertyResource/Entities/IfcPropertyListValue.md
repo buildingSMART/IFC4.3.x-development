@@ -60,7 +60,7 @@ List of property values.
 ### Unit
 Unit for the list values, if not given, the default value for the measure type (given by the TYPE of nominal value) is used as defined by the global unit assignment at IfcProject.
 
-## WhereRules
+## Formal Propositions
 
 ### WR31
 All values within the list of values shall be of the same measure type.

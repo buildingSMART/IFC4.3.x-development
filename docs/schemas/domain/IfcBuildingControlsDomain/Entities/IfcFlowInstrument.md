@@ -14,7 +14,7 @@ Instrumentation is typically for the purpose of determining the value of the pro
 ### PredefinedType
 
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 Either the _PredefinedType_ attribute is unset (e.g. because an _IfcFlowInstrumentType_ is associated), or the inherited attribute _ObjectType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.

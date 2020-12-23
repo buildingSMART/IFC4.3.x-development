@@ -14,7 +14,7 @@ Predefined occupant types from which that required may be set.
 { .change-ifc2x4}
 > IFC4 CHANGE Attribute made optional.
 
-## WhereRules
+## Formal Propositions
 
 ### WR31
 The attribute ObjectType must be asserted when the value of the IfcOccupantTypeEnum is set to USERDEFINED.

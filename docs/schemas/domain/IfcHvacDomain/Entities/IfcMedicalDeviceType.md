@@ -15,7 +15,7 @@ It is used to define a medical device type specification indicating the specific
 ### PredefinedType
 
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

@@ -18,7 +18,7 @@ It is used to define a space heater type specification indicating the specific p
 ### PredefinedType
 Enumeration of possible types of space heater (e.g., baseboard heater, convector, radiator, etc.).
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

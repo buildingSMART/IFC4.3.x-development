@@ -20,7 +20,7 @@ If an assigned _IfcTask_ is a root-level task, such task must be declared on the
 Identifies the predefined types of a work plan from which 
     the type required may be set.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 The attribute ObjectType must be asserted when the value of the IfcWorkPlanTypeEnum is set to USERDEFINED.

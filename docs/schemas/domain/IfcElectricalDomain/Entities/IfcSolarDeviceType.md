@@ -15,7 +15,7 @@ It is used to define a solar device type specification indicating the specific p
 ### PredefinedType
 
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

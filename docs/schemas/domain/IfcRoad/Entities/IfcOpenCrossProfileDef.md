@@ -21,7 +21,7 @@ The slope measure.
 ### Tags
 
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectProfileType
 

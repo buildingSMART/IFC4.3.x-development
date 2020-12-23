@@ -15,7 +15,7 @@ It is used to define a audio visual appliance type specification indicating the 
 ### PredefinedType
 Identifies the predefined types of audio-visual appliance from which the type required may be set.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

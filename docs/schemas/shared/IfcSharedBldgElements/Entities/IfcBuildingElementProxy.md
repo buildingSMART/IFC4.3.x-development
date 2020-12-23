@@ -24,7 +24,7 @@ Predefined generic type for a building element proxy that is specified in an enu
 { .change-ifc2x4}
 > IFC4 CHANGE&nbsp; The attribute _CompositionType_ has been replaced by _PredefinedType_, being a superset of the enumerators.
 
-## WhereRules
+## Formal Propositions
 
 ### HasObjectName
 A Name attribute should be asserted for a building element proxy.

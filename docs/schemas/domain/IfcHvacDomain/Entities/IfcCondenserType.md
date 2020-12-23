@@ -15,7 +15,7 @@ It is used to define a condenser type specification indicating the specific prod
 ### PredefinedType
 Defines the type of condenser.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

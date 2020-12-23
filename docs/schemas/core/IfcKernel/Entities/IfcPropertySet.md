@@ -25,7 +25,7 @@ An _IfcPropertySetTemplate_ may define the underlying structure, i.e. the requir
 ### HasProperties
 Contained set of properties. For property sets defined as part of the IFC Object model, the property objects within a property set are defined as part of the standard. If a property is not contained within the set of predefined properties, its value has not been set at this time.
 
-## WhereRules
+## Formal Propositions
 
 ### ExistsName
 The _Name_ attribute has to be provided. The attribute is used to specify the signifier of the property set. The properties that are allowed to be attached to a particular property set may be given within the property set definition part of the IFC specification. Those property set definitions are references in the semantic definition section of the individal subtypes of _IfcObjectDefinition_.

@@ -34,7 +34,7 @@ The number of distinct knots in the _v_ parameter direction.
 ### KnotUUpper
 The number of distinct knots in the _u_ parameter direction.
 
-## WhereRules
+## Formal Propositions
 
 ### UDirectionConstraints
 The function returns TRUE when the parameter constraints are verified for the _u_ direction.

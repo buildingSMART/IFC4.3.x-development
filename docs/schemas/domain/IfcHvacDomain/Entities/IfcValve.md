@@ -12,7 +12,7 @@ A valve is used in a building services piping distribution system to control or 
 ### PredefinedType
 
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 Either the _PredefinedType_ attribute is unset (e.g. because an _IfcValveType_ is associated), or the inherited attribute _ObjectType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.

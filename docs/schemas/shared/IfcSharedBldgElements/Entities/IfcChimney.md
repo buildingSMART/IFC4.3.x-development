@@ -15,7 +15,7 @@ Chimneys are typically vertical, or as near as vertical, parts of the constructi
 Predefined generic type for a chimney that is specified in an enumeration. There may be a property set given specificly for the predefined types.
 > NOTE&nbsp; The _PredefinedType_ shall only be used, if no _IfcChimneyType_ is assigned, providing its own _IfcChimneyType.PredefinedType_.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 Either the _PredefinedType_ attribute is unset (e.g. because an _IfcChimneyType_ is associated), or the inherited attribute _ObjectType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.

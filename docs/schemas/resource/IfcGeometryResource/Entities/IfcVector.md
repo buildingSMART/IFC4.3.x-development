@@ -23,7 +23,7 @@ The magnitude of the vector. All vectors of Magnitude 0.0 are regarded as equal 
 ### Dim
 The space dimensionality of this class, it is derived from Orientation
 
-## WhereRules
+## Formal Propositions
 
 ### MagGreaterOrEqualZero
 The magnitude shall be positive or zero.

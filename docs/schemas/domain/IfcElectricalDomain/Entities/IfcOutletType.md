@@ -15,7 +15,7 @@ It is used to define a outlet type specification indicating the specific product
 ### PredefinedType
 Identifies the predefined types of outlet from which the type required may be set.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

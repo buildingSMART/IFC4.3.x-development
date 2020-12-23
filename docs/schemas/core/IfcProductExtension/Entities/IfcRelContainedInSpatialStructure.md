@@ -40,7 +40,7 @@ Spatial structure element, within which the element is contained. Any element ca
 { .change-ifc2x4}
 > IFC4 CHANGE&nbsp; The attribute _RelatingStructure_ as been promoted to the new supertype _IfcSpatialElement_ with upward compatibility for file based exchange.
 
-## WhereRules
+## Formal Propositions
 
 ### WR31
 The relationship object shall not be used to include other spatial structure elements into a spatial structure element. The hierarchy of the spatial structure is defined using _IfcRelAggregates_.

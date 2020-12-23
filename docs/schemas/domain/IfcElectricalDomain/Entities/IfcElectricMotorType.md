@@ -15,7 +15,7 @@ It is used to define a electric motor type specification indicating the specific
 ### PredefinedType
 Identifies the predefined types of electric motor from which the type required may be set.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

@@ -15,7 +15,7 @@ The group [<font color="#0000ff"><u>IfcBuiltSystem</u></font>]($element://{82D4F
 Long name for a built system, used for informal purposes. It should be used, if available, in conjunction with the inherited Name attribute.
 NOTE  In many scenarios the Name attribute refers to the short name or number of a built system, and the LongName refers to a descriptive name.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 Either the _PredefinedType_ attribute is unset, or the inherited attribute _ObjectType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.

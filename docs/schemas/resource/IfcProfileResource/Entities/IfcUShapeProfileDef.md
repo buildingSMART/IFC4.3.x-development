@@ -65,7 +65,7 @@ Edge radius according the above illustration (= r2).
 ### FlangeSlope
 Slope of flange of the profile.
 
-## WhereRules
+## Formal Propositions
 
 ### ValidFlangeThickness
 The flange thickness shall be smaller than half of the depth.

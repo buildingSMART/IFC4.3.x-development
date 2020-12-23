@@ -24,7 +24,7 @@ HISTORY New entity in IFC2x3.
 ### RelatingStructure
 
 
-## WhereRules
+## Formal Propositions
 
 ### AllowedRelatedElements
 The relationship object shall not be used to include other spatial structure elements into a spatial structure element. The hierarchy of the spatial structure is defined using _IfcRelAggregates_. Exception: an _IfcSpace_ can be referenced by another spatial structure element, in particular by an _IfcSpatialZone_.

@@ -15,7 +15,7 @@ It is used to define a tube bundle type specification indicating the specific pr
 ### PredefinedType
 Defines the type of tube bundle.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

@@ -17,7 +17,7 @@ It is used to define a unitary control element type specification indicating the
 ### PredefinedType
 Identifies the predefined types of unitary control element from which the type required may be set.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

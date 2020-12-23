@@ -21,7 +21,7 @@ This value allows to easily recognize whether a linear analysis has been applied
 ### ResultGroupFor
 Reference to an instance of IfcStructuralAnalysisModel for which this instance captures a result.
 
-## WhereRules
+## Formal Propositions
 
 ### HasObjectType
 The attribute ObjectType shall be given if the analysis theory type is set to USERDEFINED.

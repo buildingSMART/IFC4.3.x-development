@@ -23,7 +23,7 @@ Reference to the process to which the objects are assigned to.
 ### QuantityInProcess
 Quantity of the object specific for the operation by this process.
 
-## WhereRules
+## Formal Propositions
 
 ### NoSelfReference
 The instance to with the relation points as provided by _RelatingProcess_ shall not be contained in the set of _RelatedObjects_.

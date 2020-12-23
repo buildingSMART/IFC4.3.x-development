@@ -15,7 +15,7 @@ It is used to define a evaporator type specification indicating the specific pro
 ### PredefinedType
 Defines the type of evaporator.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

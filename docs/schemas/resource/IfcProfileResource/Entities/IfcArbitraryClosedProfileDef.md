@@ -24,7 +24,7 @@ or in case of sectioned spines the xy plane of each list member of _IfcSectioned
 ### OuterCurve
 Bounded curve, defining the outer boundaries of the arbitrary profile.
 
-## WhereRules
+## Formal Propositions
 
 ### WR1
 The curve used for the outer curve definition shall have the dimensionality of 2.

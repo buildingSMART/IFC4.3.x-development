@@ -35,7 +35,7 @@ The effective cross-section area of the prestressed part of the tendon.
 ### SheathDiameter
 Diameter of the sheeth (duct) around the tendon, if there is one with this type of tendon.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 The inherited attribute _ElementType_ shall be provided if the _PredefinedType_ is set to USERDEFINED.

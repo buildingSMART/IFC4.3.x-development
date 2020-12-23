@@ -56,7 +56,7 @@ of curvature in all four corners of the rectangle.</p>
 ### RoundingRadius
 Radius of the circular arcs by which all four corners of the rectangle are equally rounded.
 
-## WhereRules
+## Formal Propositions
 
 ### ValidRadius
 The value of the attribute RoundingRadius shall be lower or equal than either of both, half the value of the Xdim and the YDim attribute.

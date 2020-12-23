@@ -156,7 +156,7 @@ Offset between the lining and the window panel measured along the y-axis of the 
 { .change-ifc2x4}
 > IFC4 CHANGE&nbsp; New attribute added at the end of the entity definition.
 
-## WhereRules
+## Formal Propositions
 
 ### WR31
 Either both parameter, _LiningDepth_ and _LiningThickness_ are given, or only the _LiningThickness_, then the _LiningDepth_ is variable. It is not valid to only assert the _LiningDepth_.

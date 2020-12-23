@@ -12,7 +12,7 @@ A solar device converts solar radiation into other energy such as electric curre
 ### PredefinedType
 
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

@@ -7,7 +7,7 @@ An electric flow treatment device is used to remove unwanted matter from an elec
 ### PredefinedType
 
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 Either the _PredefinedType_ attribute is unset(e.g. because an _IfcElectricFlowTreatmentDeviceType_ is associated), or the inherited attribute _ObjectType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.

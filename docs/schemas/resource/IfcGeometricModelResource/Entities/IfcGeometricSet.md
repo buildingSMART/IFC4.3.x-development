@@ -18,7 +18,7 @@ The geometric elements which make up the geometric set, these may be points, cur
 ### Dim
 The space dimensionality of this class, it is identical to the first element in the set. A where rule ensures that all elements have the same dimensionality.
 
-## WhereRules
+## Formal Propositions
 
 ### ConsistentDim
 All elements within a geometric set shall have the same dimensionality.

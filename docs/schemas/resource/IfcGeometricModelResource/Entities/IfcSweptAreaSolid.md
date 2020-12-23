@@ -27,7 +27,7 @@ Position coordinate system for the resulting swept solid of the sweeping operati
 { .change-ifc2x4}
 > IFC4 CHANGE&nbsp; The attribute has been changed to OPTIONAL with upward compatibility for file-based exchange.
 
-## WhereRules
+## Formal Propositions
 
 ### SweptAreaType
 The profile definition for the swept area solid shall be of type AREA.

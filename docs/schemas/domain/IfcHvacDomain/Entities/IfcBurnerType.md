@@ -15,7 +15,7 @@ It is used to define a burner type specification indicating the specific product
 ### PredefinedType
 
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

@@ -30,7 +30,7 @@ Optional identifier that describes the nature of the interference. Examples incl
 ### ImpliedOrder
 Logical value indicating whether the interference geometry should be subtracted from the _RelatingElement_ (if TRUE), or whether it should be either subtracted from the _RelatingElement_ or the _RelatedElement_ (if FALSE), or whether no indication can be provided (if UNKNOWN).
 
-## WhereRules
+## Formal Propositions
 
 ### NoSelfReference
 The instance of the _RelatingElement_ shall not be the same instance as the _RelatedElement_.

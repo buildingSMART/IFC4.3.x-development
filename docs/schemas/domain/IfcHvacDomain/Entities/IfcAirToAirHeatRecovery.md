@@ -12,7 +12,7 @@ An air-to-air heat recovery device employs a counter-flow heat exchanger between
 ### PredefinedType
 
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 Either the _PredefinedType_ attribute is unset (e.g. because an _IfcAirToAirHeatRecoveryType_ is associated), or the inherited attribute _ObjectType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.

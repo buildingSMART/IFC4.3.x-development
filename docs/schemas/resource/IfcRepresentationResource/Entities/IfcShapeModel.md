@@ -11,7 +11,7 @@ The _IfcShapeModel_ can be a shape representation (geometric and/or topologogica
 ### OfShapeAspect
 Reference to the shape aspect, for which it is the shape representation.
 
-## WhereRules
+## Formal Propositions
 
 ### WR11
 The _IfcShapeModel_ shall be used by an _IfcProductRepresentation_, by an _IfcRepresentationMap_ or by an _IfcShapeAspect_.

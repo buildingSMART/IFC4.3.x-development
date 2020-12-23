@@ -23,7 +23,7 @@ The extent in the x and y direction of the text literal.
 ### BoxAlignment
 The alignment of the text literal relative to its position.
 
-## WhereRules
+## Formal Propositions
 
 ### WR31
 The subtype of _IfcPlanarExtent_, _IfcPlanarBox_, should not be used to represent an _Extent_ for the text literal.

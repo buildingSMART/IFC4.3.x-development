@@ -24,7 +24,7 @@ The _IfcProductDefinitionShape_ shall be used to provide a representation for a 
 ### HasShapeAspects
 Reference to the shape aspect that represents part of the shape or its feature distinctively.
 
-## WhereRules
+## Formal Propositions
 
 ### OnlyShapeModel
 Only representations of type _IfcShapeModel_, i.e. either _IfcShapeRepresentation_ or _IfcTopologyRepresentation_ should be used to represent a product through the _IfcProductDefinitionShape_.__

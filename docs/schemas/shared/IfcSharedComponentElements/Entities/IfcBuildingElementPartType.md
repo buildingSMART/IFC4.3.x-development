@@ -9,7 +9,7 @@ The building element part type defines lists of commonly shared property set def
 ### PredefinedType
 Subtype of building element part
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 The inherited attribute _ElementType_ shall be provided if the _PredefinedType_ is set to USERDEFINED.

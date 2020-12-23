@@ -97,7 +97,7 @@ Edge radius according the above illustration (= r2).
 ### LegSlope
 Slope of the inner face of each leg of the profile.
 
-## WhereRules
+## Formal Propositions
 
 ### ValidThickness
 The thickness shall be smaller than the depth and width.

@@ -10,7 +10,7 @@ An _IfcIntersectionCurve_ is a 3-dimensional curve that has two additional repre
 
 > HISTORY&nbsp; New entity in IFC4 Add2.
 
-## WhereRules
+## Formal Propositions
 
 ### TwoPCurves
 The intersection curve shall have precisely two associated geometry elements.

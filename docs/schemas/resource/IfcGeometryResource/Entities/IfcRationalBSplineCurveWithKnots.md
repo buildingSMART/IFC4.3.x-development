@@ -39,7 +39,7 @@ The supplied values of the weights.
 ### Weights
 The array of weights associated with the control points. This is derived from the weights data.
 
-## WhereRules
+## Formal Propositions
 
 ### SameNumOfWeightsAndPoints
 There shall be the same number of weights as control points.

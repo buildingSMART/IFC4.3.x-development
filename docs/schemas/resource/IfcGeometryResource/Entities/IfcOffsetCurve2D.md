@@ -22,7 +22,7 @@ The distance of the offset curve from the basis curve. distance may be positive,
 ### SelfIntersect
 An indication of whether the offset curve self-intersects; this is for information only.
 
-## WhereRules
+## Formal Propositions
 
 ### DimIs2D
 The underlying curve shall be defined in two-dimensional space.

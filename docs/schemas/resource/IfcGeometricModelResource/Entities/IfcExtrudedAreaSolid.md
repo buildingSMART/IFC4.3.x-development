@@ -103,7 +103,7 @@ The direction in which the surface, provided by _SweptArea_ is to be swept.
 ### Depth
 The distance the surface is to be swept along the _ExtrudedDirection_.
 
-## WhereRules
+## Formal Propositions
 
 ### ValidExtrusionDirection
 The _ExtrudedDirection_ shall not be perpendicular to the local z-axis.

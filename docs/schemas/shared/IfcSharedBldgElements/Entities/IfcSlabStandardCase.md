@@ -14,7 +14,7 @@ The definitions of slab openings and niches are the same as given at the superty
 
 > HISTORY&nbsp; New entity in IFC4.
 
-## WhereRules
+## Formal Propositions
 
 ### HasMaterialLayerSetusage
 A valid instance of _IfcSlabStandardCase_ relies on the provision of an _IfcMaterialLayerSetUsage_.

@@ -39,7 +39,7 @@ List of straight line and circular arc segments, each providing a list of indice
 ### SelfIntersect
 Indication of whether the curve intersects itself or not; this is for information only.
 
-## WhereRules
+## Formal Propositions
 
 ### Consecutive
 If a list of indexed segments is provided, they need to be consecutive, meaning that the last index of all, but the last, segments shall be identical with the first index of the next segment.

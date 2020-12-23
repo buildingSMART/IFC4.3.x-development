@@ -15,7 +15,7 @@ It is used to define a duct fitting type specification indicating the specific p
 ### PredefinedType
 The type of duct fitting.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

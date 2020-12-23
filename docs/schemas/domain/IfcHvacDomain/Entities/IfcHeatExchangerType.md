@@ -15,7 +15,7 @@ It is used to define a heat exchanger type specification indicating the specific
 ### PredefinedType
 Defines the basic types of heat exchanger (e.g., plate, shell and tube, etc.).
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

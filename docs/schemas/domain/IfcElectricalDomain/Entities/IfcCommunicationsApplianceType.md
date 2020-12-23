@@ -15,7 +15,7 @@ It is used to define a communications appliance type specification indicating th
 ### PredefinedType
 Identifies the predefined types of communications appliance from which the type required may be set.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

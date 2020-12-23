@@ -163,7 +163,7 @@ Interpolation of the curve between two defining and defined values that are prov
 { .change-ifc2x4}
 > IFC4 CHANGE&nbsp; The attribute has been added at the end of the attribute list.
 
-## WhereRules
+## Formal Propositions
 
 ### WR21
 Either both _DefiningValues_ and _DefinedValues_ are not provided, or the number of members in the list of _DefiningValues_ shall be the same as the number of members in the list of _DefinedValues_.

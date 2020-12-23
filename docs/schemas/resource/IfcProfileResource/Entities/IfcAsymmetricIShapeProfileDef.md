@@ -64,7 +64,7 @@ Radius of the lower edges of the top flange.  0 if sharp-edged, omitted if unkno
 ### TopFlangeSlope
 Slope of the lower faces of the top flange.  Non-zero in case of of tapered top flange, 0 in case of parallel top flange, omitted if unknown.
 
-## WhereRules
+## Formal Propositions
 
 ### ValidFlangeThickness
 The sum of flange thicknesses shall be less than the overall depth.

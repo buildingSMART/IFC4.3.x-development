@@ -129,7 +129,7 @@ If not given, the start point of the curve style font pattern is at the (virtual
 ### HatchLineAngle
 A plane angle measure determining the direction of the parallel hatching lines.
 
-## WhereRules
+## Formal Propositions
 
 ### PatternStart2D
 The _IfcCartesianPoint_, if given as value to _PatternStart_ shall have the dimensionality of 2.

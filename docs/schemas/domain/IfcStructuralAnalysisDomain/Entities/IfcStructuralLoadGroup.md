@@ -42,7 +42,7 @@ Results which were computed using this load group.
 ### LoadGroupFor
 Analysis models in which this load group is used.
 
-## WhereRules
+## Formal Propositions
 
 ### HasObjectType
 The attribute ObjectType shall be given if the predefined type, action type, or action source is set to USERDEFINED.

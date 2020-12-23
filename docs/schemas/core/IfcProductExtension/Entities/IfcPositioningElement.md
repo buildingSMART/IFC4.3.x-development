@@ -19,7 +19,7 @@ Relationship to a spatial structure element, to which the positioning element is
 ### Positions
 
 
-## WhereRules
+## Formal Propositions
 
 ### HasPlacement
 The placement for the grid has to be given.

@@ -22,7 +22,7 @@ As shown in Figure 11, _IfcProcedure_ does not restrict anything but describes s
 Identifies the predefined types of a procedure from which 
     the type required may be set.
 
-## WhereRules
+## Formal Propositions
 
 ### HasName
 The Name attribute should be inserted to describe the task name.

@@ -22,7 +22,7 @@ Informal Propositions:
 
 1. There shall only be one project within the exchange context. This is enforced by the global rule _IfcSingleProjectInstance_.
 
-## WhereRules
+## Formal Propositions
 
 ### HasName
 The _Name_ attribute has to be provided for _IfcProject_. It is the short name for the project.

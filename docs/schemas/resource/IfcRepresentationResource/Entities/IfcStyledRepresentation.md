@@ -8,7 +8,7 @@ A styled representation has to include one or several styled items with the asso
 
 > HISTORY&nbsp; New entity in IFC2x2.
 
-## WhereRules
+## Formal Propositions
 
 ### OnlyStyledItems
 Only _IfcStyledItem_'s (or subtypes) are allowed as members in the list of _Items_, inherited from _IfcRepresentation_.

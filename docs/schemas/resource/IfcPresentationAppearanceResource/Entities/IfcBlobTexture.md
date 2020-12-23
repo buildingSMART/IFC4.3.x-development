@@ -19,7 +19,7 @@ The format of the _RasterCode_ often using a compression.
 ### RasterCode
 Blob, given as a single binary, to capture the texture within one popular file (compression) format. The file format is provided by the _RasterFormat_ attribute.
 
-## WhereRules
+## Formal Propositions
 
 ### SupportedRasterFormat
 Currently the formats of bmp, jpg, gif and pgn, shall be supported.

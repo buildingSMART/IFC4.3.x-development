@@ -12,7 +12,7 @@ An interceptor is a device designed and installed in order to separate and retai
 ### PredefinedType
 
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

@@ -49,7 +49,7 @@ Position coordinate systems for the cross sections that form the sectioned spine
 ### Dim
 The dimensionality of the spine curve is always 3.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrespondingSectionPositions
 The set of cross sections and the set of cross section positions shall be of the same size.

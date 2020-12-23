@@ -35,7 +35,7 @@ Informal Propositions:
 ### EndSweptArea
 
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectProfileAssignment
 The _SweptArea_ as start profile and the _EndSweptArea_ as end profile shall be compatible.

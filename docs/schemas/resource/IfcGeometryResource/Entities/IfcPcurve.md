@@ -18,7 +18,7 @@ The _IfcPcurve_ is a curve defined within the parameter space of its reference s
 ### ReferenceCurve
 
 
-## WhereRules
+## Formal Propositions
 
 ### DimIs2D
 The dimensionality of the parameter space curve shall be 2.

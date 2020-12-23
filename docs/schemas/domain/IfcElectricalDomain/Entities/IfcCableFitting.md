@@ -12,7 +12,7 @@ A cable fitting is a fitting that is placed at a junction, transition or termina
 ### PredefinedType
 Identifies the predefined types of cable fitting from which the type required may be set.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 Either the _PredefinedType_ attribute is unset (e.g. because an _IfcCableFittingType_ is associated), or the inherited attribute _ObjectType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.

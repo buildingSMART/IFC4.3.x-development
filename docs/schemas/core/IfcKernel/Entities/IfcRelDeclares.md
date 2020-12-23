@@ -20,7 +20,7 @@ Reference to the _IfcProject_ to which additional information is assigned.
 ### RelatedDefinitions
 Set of object or property definitions that are assigned to a context and to which the unit and representation context definitions of that context apply.
 
-## WhereRules
+## Formal Propositions
 
 ### NoSelfReference
 The instance to with the relation points shall not be contained in the set of _RelatedObjects_.

@@ -223,7 +223,7 @@ some additional representation types are provided:</td>
 { .change-ifc2x4}
 > IFC4 CHANGE&nbsp; The _RepresentationType_'s 'Point', 'PointCloud', 'Curve', 'Curve3D', 'Surface', 'Surface2D', 'Surface3D', 'FillArea', 'Text', 'Tessellation', 'AdvancedBrep', 'LightSource', and the _RepresentationIdentifier_ 'Body-FallBack', 'Profile', 'Clearance', 'Lighting' have been added.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectContext
 The context to which the IfcShapeRepresentation is assign, shall be of type IfcGeometricRepresentationContext.

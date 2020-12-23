@@ -28,7 +28,7 @@ Reference to external information, e.g. library, classification, or document inf
 { .change-ifc2x4}
 > IFC4 CHANGE&nbsp; New inverse attribute.
 
-## WhereRules
+## Formal Propositions
 
 ### WR1
 If the attribute _Role_ has the enumeration value USERDEFINED then a value for the attribute _UserDefinedRole_ shall be asserted.

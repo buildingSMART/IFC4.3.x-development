@@ -28,7 +28,7 @@ Position coordinate system for the swept surface, provided by a profile definiti
 { .change-ifc2x4}
 > IFC4 CHANGE&nbsp; The attribute has been changed to OPTIONAL with upward compatibility for file-based exchange.
 
-## WhereRules
+## Formal Propositions
 
 ### SweptCurveType
 

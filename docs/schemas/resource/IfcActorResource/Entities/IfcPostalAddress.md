@@ -29,7 +29,7 @@ The code that is used by the country's postal service.
 ### Country
 The name of a country.
 
-## WhereRules
+## Formal Propositions
 
 ### WR1
 Requires that at least one attribute of internal location, address lines, town, region or country is asserted. It is not acceptable to have a postal address without at least one of these values.

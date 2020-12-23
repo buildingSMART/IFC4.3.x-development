@@ -37,7 +37,7 @@ Reference to the _IfcRelAssignsToProduct_ relationship, by which other products,
 ### ReferencedInStructures
 
 
-## WhereRules
+## Formal Propositions
 
 ### PlacementForShapeRepresentation
 If a _Representation_ is given being an _IfcProductDefinitionShape_, then also an _ObjectPlacement_ has to be given. The _ObjectPlacement_ defines the object coordinate system in which the geometric representation items of the _IfcProductDefinitionShape_ are founded. 

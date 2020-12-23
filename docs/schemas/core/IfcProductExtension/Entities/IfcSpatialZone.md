@@ -20,7 +20,7 @@ Physical elements that are referenced by this spatial zone are related using the
 ### PredefinedType
 Predefined types to define the particular type of the spatial zone. There may be property set definitions available for each predefined type.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 Either the _PredefinedType_ attribute is unset (e.g. because an _IfcSpatialZoneType_ is associated), or the inherited attribute _ObjectType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.

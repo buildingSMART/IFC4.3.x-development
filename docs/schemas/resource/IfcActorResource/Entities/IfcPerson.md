@@ -44,7 +44,7 @@ Postal and telecommunication addresses of a person.
 ### EngagedIn
 The inverse relationship to IfcPersonAndOrganization relationships in which IfcPerson is engaged.
 
-## WhereRules
+## Formal Propositions
 
 ### IdentifiablePerson
 Requires that the identification or/ and the family name or/ and the given name is provided as minimum information.

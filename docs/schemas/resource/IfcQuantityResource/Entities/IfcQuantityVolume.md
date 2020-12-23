@@ -16,7 +16,7 @@ A formula by which the quantity has been calculated. It can be assigned in addit
 { .change-ifc2x4}
 > IFC4 CHANGE Attribute added to the end of the attribute list.
 
-## WhereRules
+## Formal Propositions
 
 ### WR21
 If a unit is given, the unit type shall be volume unit.

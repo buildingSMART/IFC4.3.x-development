@@ -19,7 +19,7 @@ The scaling value specified for the transformation along the axis 2. This is nor
 ### Scl2
 The derived scale S(2) of the transformation along the axis 2 (normally the y axis), equal to Scale2 if that exists, or equal to the derived Scl1 (normally the x axis scale factor) otherwise.
 
-## WhereRules
+## Formal Propositions
 
 ### Scale2GreaterZero
 The derived scaling Scl2 shall be greater than zero.

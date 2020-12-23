@@ -15,7 +15,7 @@ It is used to define a unitary equipment type specification indicating the speci
 ### PredefinedType
 The type of unitary equipment.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

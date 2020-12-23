@@ -17,7 +17,7 @@ Reference to the product or product type to which the objects are assigned to.
 { .change-ifc2x4}
 > IFC4 CHANGE Datatype expanded to include _IfcProduct_ and _IfcTypeProduct_.
 
-## WhereRules
+## Formal Propositions
 
 ### NoSelfReference
 The instance to which the relation points, as provided by _RelatingProduct_ shall not be contained in the set of _RelatedObjects_.

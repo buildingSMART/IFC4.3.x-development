@@ -15,7 +15,7 @@ It is used to define a electric generator type specification indicating the spec
 ### PredefinedType
 Identifies the predefined types of electric generators from which the type required may be set.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

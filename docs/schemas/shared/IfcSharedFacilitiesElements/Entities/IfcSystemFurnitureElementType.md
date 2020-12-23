@@ -19,7 +19,7 @@ It is used to define a system furniture element type specification indicating th
 ### PredefinedType
 
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

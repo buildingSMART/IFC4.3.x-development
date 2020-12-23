@@ -15,7 +15,7 @@ It is used to define a chiller type specification indicating the specific produc
 ### PredefinedType
 Defines the typical types of chillers (e.g., air-cooled, water-cooled, etc.).
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

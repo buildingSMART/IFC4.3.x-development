@@ -23,7 +23,7 @@ The _IfcCompositeCurveOnSurface_ is a collection of segments, based on p-curves.
 ### BasisSurface
 The surface on which the composite curve is defined.
 
-## WhereRules
+## Formal Propositions
 
 ### SameSurface
 The _BasisSurface_ shall contain at least one surface (and exactly one surface). This ensures that all segments reference curves on the same surface.

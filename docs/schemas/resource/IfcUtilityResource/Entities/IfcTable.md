@@ -37,7 +37,7 @@ The number of headings in a table. This is restricted by WR3 to max. one.
 ### NumberOfDataRows
 The number of rows in a table that contains data, i.e. total number of rows minus number of heading rows in table.
 
-## WhereRules
+## Formal Propositions
 
 ### WR1
 Ensures that each row defines the same number of cells. The rule compares whether all other rows of the IfcTable have the same number of cells as the first row.

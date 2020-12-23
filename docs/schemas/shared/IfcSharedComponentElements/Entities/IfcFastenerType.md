@@ -16,7 +16,7 @@ It is used to define a fastener type specification indicating the specific produ
 ### PredefinedType
 Subtype of fastener
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 The inherited attribute _ElementType_ shall be provided if the _PredefinedType_ is set to USERDEFINED.

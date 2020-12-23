@@ -17,7 +17,7 @@ The occurrences of the _IfcBuildingElementProxyType_ are represented by instance
 ### PredefinedType
 Predefined types to define the particular type of an building element proxy. There may be property set definitions available for each predefined or user defined type.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 The inherited attribute _ElementType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.

@@ -58,7 +58,7 @@ Fillet radius according the above illustration (= r1).
 ### EdgeRadius
 Edge radius according the above illustration (= r2).
 
-## WhereRules
+## Formal Propositions
 
 ### ValidFlangeThickness
 The flange thickness shall be smaller than half of the depth.

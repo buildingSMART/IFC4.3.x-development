@@ -31,7 +31,7 @@ Flat list of hexadecimal values, each describing one pixel by 1, 2, 3, or 4 comp
 { .change-ifc2x3}
 > IFC2x3 CHANGE&nbsp; The data type has been changed from STRING to BINARY.
 
-## WhereRules
+## Formal Propositions
 
 ### MinPixelInS
 The minimum number of pixel in width (S coordinate) direction shall be 1.

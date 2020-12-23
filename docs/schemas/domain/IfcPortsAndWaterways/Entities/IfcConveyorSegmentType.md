@@ -8,7 +8,7 @@ A conveyor segment defines an occurrence of a flow segment/ continuous run withi
 ### PredefinedType
 
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 The inherited attribute _ElementType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.

@@ -12,7 +12,7 @@ A tendon anchor is the end connection for tendons in prestressed or posttensione
 ### PredefinedType
 Kind of tendon anchor.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 Either the _PredefinedType_ attribute is unset (e.g. because an _IfcTendonAnchorType_ is associated), or the inherited attribute _ObjectType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.

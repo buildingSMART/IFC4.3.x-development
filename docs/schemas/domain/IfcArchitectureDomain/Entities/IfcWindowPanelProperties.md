@@ -36,7 +36,7 @@ Optional link to a shape aspect definition, which points to the part of the geom
 { .deprecated}
 > DEPRECATION&nbsp; The attribute is deprecated and shall no longer be used, i.e. the value shall be NIL ($).
 
-## WhereRules
+## Formal Propositions
 
 ### ApplicableToType
 The _IfcWindowPanelProperties_ shall only be used in the context of an _IfcDoorType_.

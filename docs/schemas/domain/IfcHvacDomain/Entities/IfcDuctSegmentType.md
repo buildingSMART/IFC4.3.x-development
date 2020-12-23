@@ -15,7 +15,7 @@ It is used to define a duct segment type specification indicating the specific p
 ### PredefinedType
 The type of duct segment.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

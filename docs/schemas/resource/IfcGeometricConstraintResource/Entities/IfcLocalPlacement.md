@@ -35,7 +35,7 @@ The following conventions shall apply as default relative positions if the relat
 ### RelativePlacement
 Geometric placement that defines the transformation from the related coordinate system into the relating. The placement can be either 2D or 3D, depending on the dimension count of the coordinate system.
 
-## WhereRules
+## Formal Propositions
 
 ### WR21
 Ensures that a 3D local placement can only be relative (if exists) to a 3D parent local placement (and not to a 2D parent local placement).

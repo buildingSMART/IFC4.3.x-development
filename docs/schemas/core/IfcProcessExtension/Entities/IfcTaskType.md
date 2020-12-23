@@ -10,7 +10,7 @@ Usage of _IfcTaskType_ defines the parameters for one or more occurrences of _If
 
 Figure 1 shows the definition of a task type that is part of a task template library. Please note that in this example the task type is further subdivided into tasks that define task times (for example, duration) and/or a task sequence.
 
-!["task type instantiation diagram"](../../../../../../figures/ifctasktype_instantiation_diagram.png "Figure 1 &mdash; Task type relationships")
+!["task type instantiation diagram"](../../../../figures/ifctasktype_instantiation_diagram.png "Figure 1 &mdash; Task type relationships")
 
 ## Attributes
 

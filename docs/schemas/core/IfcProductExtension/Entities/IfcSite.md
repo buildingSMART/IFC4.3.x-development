@@ -20,7 +20,7 @@ Figure 1 shows the _IfcSite_ as part of the spatial structure. In addition to th
 
 > NOTE&nbsp; Detailed requirements on mandatory element containment and placement structure relationships are given in view definitions and implementer agreements.
 
-!["IfcSite as part of a spatial structure"](../../../../../../figures/ifcsite-spatialstructure.png "Figure 1 &mdash; Site composition")
+!["IfcSite as part of a spatial structure"](../../../../figures/ifcsite-spatialstructure.png "Figure 1 &mdash; Site composition")
 
 Figure 2 describes the heights and elevations of the _IfcSite_. It is used to provide the geographic longitude, latitude, and height above sea level for the origin of the site. The origin of the site is the local placement.
 
@@ -35,7 +35,7 @@ For exact georeferencing (or referencing to any other geographic coordinate syst
 <table border="0" cellpadding="2" cellspacing="2" summary="attribute use">
 <tbody>
 <tr valign="top">
-<td align="left" valign="top"><img src="../../../../../../figures/ifcsite_heights.png" alt="building heights" border="0" height="400" width="500">&nbsp;</td>
+<td align="left" valign="top"><img src="../../../../figures/ifcsite_heights.png" alt="building heights" border="0" height="400" width="500">&nbsp;</td>
 </tr>
 <tr>
 <td>

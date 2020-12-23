@@ -6,7 +6,7 @@ A virtual element is a special element used to provide imaginary boundaries, suc
 
 The _IfcVirtualElement_ is mainly used to define a virtual boundary between two spaces. Figure 1 describes how to use _IfcRelSpaceBoundary_ in conjunction with _IfcVirtualElement_ to define space boundaries.
 
-!["space boundary"](../../../../../../figures/ifcvirtualelement_spaceboundaries.png "Figure 1 &mdash; Virtual element space boundaries")
+!["space boundary"](../../../../figures/ifcvirtualelement_spaceboundaries.png "Figure 1 &mdash; Virtual element space boundaries")
 
 > HISTORY&nbsp; New entity in IFC2x2 Addendum.
 

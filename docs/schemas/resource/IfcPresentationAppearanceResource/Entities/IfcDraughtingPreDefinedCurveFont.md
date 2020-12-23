@@ -6,7 +6,7 @@ The draughting predefined curve font type defines a selection of widely used cur
 
 Figure 1 illustrates predefined curve fonts.
 
-!["predefined fonts"](../../../../../../figures/ifcdraughtingpredefinedcurvefont_fig1.gif "Figure 1 &mdash; Draughting predefined curve font")
+!["predefined fonts"](../../../../figures/ifcdraughtingpredefinedcurvefont_fig1.gif "Figure 1 &mdash; Draughting predefined curve font")
 
 > NOTE&nbsp; If the _IfcDraughtingPreDefinedCurveFont_ is used within an _IfcCurveStyleFontAndScaling_ then the segment and space lengths that are given in the table are as such for the scale factor 1.0
 

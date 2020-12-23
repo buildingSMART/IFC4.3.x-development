@@ -25,7 +25,7 @@ Use definition
 <table border="0" cellpadding="0" cellspacing="0" summary="use diagram">
       <tr>
         <td valign="top">
-          <img src="../../../../../../figures/ifcmaterialdefinitionrepresentation_01.png" alt="use diagram" border="0">
+          <img src="../../../../figures/ifcmaterialdefinitionrepresentation_01.png" alt="use diagram" border="0">
         </td>
 	<td>As shown in Figure 1, the presentation assignment can be
       specific to a representation context by adding one and more

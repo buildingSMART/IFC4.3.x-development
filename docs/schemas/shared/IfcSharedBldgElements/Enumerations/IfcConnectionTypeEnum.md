@@ -21,7 +21,7 @@ The enumerated items shall be used in the following combinations:
 <li>RelatedConnectionType: AtStart</li>
 </ul>
 </td>
-<td width="300"><img src="../../../../../../figures/IfcConnectionTypeEnum-Fig03.gif" width="143" height="132" border="0"></td>
+<td width="300"><img src="../../../../figures/IfcConnectionTypeEnum-Fig03.gif" width="143" height="132" border="0"></td>
 </tr>
 <tr>
 <td width="260" valign="top" align="left">
@@ -31,7 +31,7 @@ The enumerated items shall be used in the following combinations:
 <li>RelatedConnectionType: AtStart</li>
 </ul>
 </td>
-<td width="300"><img src="../../../../../../figures/IfcConnectionTypeEnum-Fig01.gif" width="193" height="132" border="0"></td>
+<td width="300"><img src="../../../../figures/IfcConnectionTypeEnum-Fig01.gif" width="193" height="132" border="0"></td>
 </tr>
 <tr>
 <td width="260" valign="top" align="left">
@@ -41,7 +41,7 @@ The enumerated items shall be used in the following combinations:
 <li>RelatedConnectionType: AtStart</li>
 </ul>
 </td>
-<td width="300"><img src="../../../../../../figures/IfcConnectionTypeEnum-Fig02.gif" width="145" height="133" border="0"></td>
+<td width="300"><img src="../../../../figures/IfcConnectionTypeEnum-Fig02.gif" width="145" height="133" border="0"></td>
 </tr>
 </table>
 </td>

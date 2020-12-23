@@ -13,7 +13,7 @@ Figure 1 illustrates parameters of the rounded rectangle profile definition.
 <table frame="border" width="100%">
   <tbody>
     <tr>
-      <td width="420"><img src="../../../../../../figures/ifcroundedrectangleprofiledef-layout1.gif" alt="rounded rectangle profile" border="0" height="300" width="400"></td>
+      <td width="420"><img src="../../../../figures/ifcroundedrectangleprofiledef-layout1.gif" alt="rounded rectangle profile" border="0" height="300" width="400"></td>
       <td align="left" valign="top" width="100%">
       <p><u>Position</u>
       <br>

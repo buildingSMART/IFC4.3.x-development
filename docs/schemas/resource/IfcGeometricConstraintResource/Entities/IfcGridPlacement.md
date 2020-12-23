@@ -21,7 +21,7 @@ The direction of the z-axis is the orientation of the cross product of the x-axi
 The following figures show the usage of placement location and direction for an _IfcGridPlacement_.
 
 <table cellpadding="2" cellspacing="2" summary="Geometry use definition">
-<tr><td align="left" valign="top"><img src="../../../../../../figures/ifcgridplacement-layout1.png" alt="without ref direction" border="0" height="300" width="400"></td>
+<tr><td align="left" valign="top"><img src="../../../../figures/ifcgridplacement-layout1.png" alt="without ref direction" border="0" height="300" width="400"></td>
 <td style="vertical-align:bottom">
 <p>Figure 1 illustrates the case where <em>PlacementRefDirection</em> is <u>not</u> given - the object coordinate system is defined by:</p>
 <ul>
@@ -37,7 +37,7 @@ The following figures show the usage of placement location and direction for an 
 
 <table cellpadding="2" cellspacing="2" summary="Geometry use definition">
 <tr>
-<td align="left" valign="top"><img src="../../../../../../figures/ifcgridplacement-layout3.png" alt="with ref direction" border="0" height="300" width="400"></td>
+<td align="left" valign="top"><img src="../../../../figures/ifcgridplacement-layout3.png" alt="with ref direction" border="0" height="300" width="400"></td>
 <td style="vertical-align:bottom">
 <p>Figure 2 illustrates the case where <em>PlacementRefDirection</em> is given as an <em>IfcDirection</em>- the object coordinate system is defined by:
 <ul>
@@ -52,7 +52,7 @@ The following figures show the usage of placement location and direction for an 
 </table>
 
 <table cellpadding="2" cellspacing="2" summary="Geometry use definition">
-<tr><td align="left" valign="top"><img src="../../../../../../figures/ifcgridplacement-layout2.png" alt="with ref direction" border="0" height="300" width="400"></td>
+<tr><td align="left" valign="top"><img src="../../../../figures/ifcgridplacement-layout2.png" alt="with ref direction" border="0" height="300" width="400"></td>
 <td style="vertical-align:bottom">
 <p>Figure 3 illustrates the case where <em>PlacementRefDirection</em> is given as an <em>IfcVirtualGridIntersection</em>- the object coordinate system is defined by:
 <ul>

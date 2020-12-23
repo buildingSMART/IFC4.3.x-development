@@ -3,7 +3,7 @@
 { .extDef}
 > NOTE&nbsp; Definition according to ISO/CD 10303-42:1992  
 > A vertex_loop is a loop of zero genus consisting of a single vertex. A vertex can exist independently of a vertex loop. The topological data shall satisfy the following constraint: 
->> ![Image](../../../../../../figures/ifcvertexloop-math1.gif)
+>> ![Image](../../../../figures/ifcvertexloop-math1.gif)
 
 
 > 

@@ -8,11 +8,11 @@ Only objects that take part in a type decomposition and in an occurrence decompo
 
 &nbsp;
 
-!["instance diagram"](../../../../../../figures/ifcreldefinesbyobject_fig-1.png "Figure 1 &mdash; Part definition relationships")
+!["instance diagram"](../../../../figures/ifcreldefinesbyobject_fig-1.png "Figure 1 &mdash; Part definition relationships")
 
 The _IfcRelDefinesByObject_ can be used together with the shape representations of the product type as shown in Figure 2. The _IfcShapeRepresentation_ of the "declaring part" is referenced by the "reflected part". The _IfcObjectPlacement_ of the model occurrence (the whole) determines the position within the project context.
 
-!["geometry diagram"](../../../../../../figures/ifcreldefinesbyobject_fig-2.png "Figure 2 &mdash; Part definition relationships with shape representation")
+!["geometry diagram"](../../../../figures/ifcreldefinesbyobject_fig-2.png "Figure 2 &mdash; Part definition relationships with shape representation")
 
 > HISTORY&nbsp; New entity in IFC4.
 

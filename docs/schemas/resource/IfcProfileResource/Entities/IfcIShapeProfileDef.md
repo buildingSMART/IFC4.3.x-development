@@ -14,7 +14,7 @@ Figure 1 illustrates parameters of the I-shape profile definition.
 <table border="1" cellpadding="2" cellspacing="2" frame="border" width="100%">
   <tbody>
     <tr>
-      <td width="420"><img src="../../../../../../figures/ifcishapeprofiledef-layout1.gif" alt="I-shape profile" border="0" height="300" width="400"></td>
+      <td width="420"><img src="../../../../figures/ifcishapeprofiledef-layout1.gif" alt="I-shape profile" border="0" height="300" width="400"></td>
       <td align="left" valign="top" width="100%">
       <p><u>Position</u>
       <br>
@@ -38,7 +38,7 @@ below.</p>
       </td>
     </tr>
     <tr>
-      <td width="420"><img src="../../../../../../figures/ifcishapeprofiledef-layout2.gif" alt="I shape with fillet" border="0" height="300" width="400"><br>
+      <td width="420"><img src="../../../../figures/ifcishapeprofiledef-layout2.gif" alt="I shape with fillet" border="0" height="300" width="400"><br>
       <font size="-1">Note:
 The black coordinate axes show the
 underlying coordinate system of the swept surface or swept area solid</font></td>

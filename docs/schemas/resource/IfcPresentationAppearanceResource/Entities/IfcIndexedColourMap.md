@@ -4,13 +4,13 @@ The _IfcIndexedColourMap_ provides the assignment of colour information to indiv
 
 Figure 1 shows the use of _IfcTriangulatedFaceSet_ with colours per face.
 
-!["IfcIndexedColourMap_01"](../../../../../../figures/ifcindexedcolourmap-fig1.png "Figure 1 &mdash; Indexed colour map")
+!["IfcIndexedColourMap_01"](../../../../figures/ifcindexedcolourmap-fig1.png "Figure 1 &mdash; Indexed colour map")
 
 &nbsp;
 
 <table>
   <tr>
-    <td><img src="../../../../../../figures/ifcindexedcolourmap_example-01.png" alt="IfcIndexedColourMap_example-01"></td>
+    <td><img src="../../../../figures/ifcindexedcolourmap_example-01.png" alt="IfcIndexedColourMap_example-01"></td>
     <td>
       <p>&nbsp;</p>
       Figure 2 illustrates an <i>IfcTriangulatedFaceSet</i> represented by

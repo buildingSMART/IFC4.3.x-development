@@ -8,7 +8,7 @@ The resulting solid is positioned by the _IfcSweptAreaSolid_._Position_ relative
 
 <table summary="revolved solid geometry" cellpadding="2" cellspacing="2" border="0">
 <tr>
-<td><img src="../../../../../../figures/ifcrevolvedareasolid-fig1.png" alt="revolved area solid" border="0"></td>
+<td><img src="../../../../figures/ifcrevolvedareasolid-fig1.png" alt="revolved area solid" border="0"></td>
 <td><blockquote class="example">EXAMPLE&nbsp; Figure 1 illustrates geometric parameters of the revolved solid. The revolved area solid defines the revolution of a 2D area (given by a profile definition) by an axis and angle. The result is a solid. The swept area is given by a
 profile definition.</blockquote>
 <blockquote>
@@ -33,7 +33,7 @@ shown in the illustration.</blockquote>
 
 <table summary="revolved solid geometry repositioning" cellpadding="2" cellspacing="2" border="0">
 <tr>
-<td><img src="../../../../../../figures/ifcrevolvedareasolid-fig2.png" alt="revolved area solid" border="0"></td>
+<td><img src="../../../../figures/ifcrevolvedareasolid-fig2.png" alt="revolved area solid" border="0"></td>
 <td><blockquote class="example">EXAMPLE&nbsp; Figure 1 illustrates geometric parameters and additional positioning parameters of the revolved area solid. The revolved area solid defines the rotation of a 2D area by an axis and angle. The 2D area, provided by a parameterized profile definition, can be positioned relative to the object coordinate system (other then by default at 0.,0. with no rotation). The result is a solid that can be repositioned within the object coordinate system.</blockquote>
 <blockquote><ul>
 <li class="small">The profile to be swept is defined:
@@ -78,7 +78,7 @@ For profiles with voids, textures are aligned facing upright along the inner sid
 
 <table summary="texture">
 <tr>
-<td><img src="../../../../../../figures/ifcrevolvedareasolid-texture.png" alt="texture"></td>
+<td><img src="../../../../figures/ifcrevolvedareasolid-texture.png" alt="texture"></td>
 <td>
 <blockquote class="example">Figure 3 illustrates default texture mapping with a repeated texture (RepeatS=True and RepeatT=True). The image on
 the left shows the texture where the S axis points to the right and the T axis points up. The image on the right shows

@@ -46,11 +46,11 @@ The parameters, which define the shape of the _IfcWindow_, are given at the _Ifc
 
 Figure 1 illustrates the insertion of a window into the _IfcOpeningElement_ by creating an instance of _IfcWindow_ with _PartitioningType = DoublePanelHorizontal_. The parameters _OverallHeight_ and _OverallWidth_ show the extent of the window in the positive Z and X axis of the local placement of the window. The lining and the transom are created by the given parameters.
 
-!["window 1"](../../../../../../figures/ifcwindow-layout1.gif "Figure 1 &mdash; Window placement")
+!["window 1"](../../../../figures/ifcwindow-layout1.gif "Figure 1 &mdash; Window placement")
 
 Figure 2 illustrates the final window (DoublePanelHorizontal) with first panel having _PanelPosition = TOP_, _OperationType = BOTTOMHUNG_ and second panel having _PanelPosition = BOTTOM_ and _OperationType = TILTANDTURNLEFTHAND_.
 
-!["window 2"](../../../../../../figures/ifcwindow-layout2.gif "Figure 2 &mdash; Window planes")
+!["window 2"](../../../../figures/ifcwindow-layout2.gif "Figure 2 &mdash; Window planes")
 
 { .use-head}
 Window opening operation by window type
@@ -64,7 +64,7 @@ Figure 3 illustrates window operation types.
 <table><tr><td><table border="1" cellpadding="2" cellspacing="2">
 <tbody>
 <tr valign="top">
-<td align="left" valign="top"><small><img alt="fig 1" src="../../../../../../figures/ifcwindow-fig01.gif" height="121" width="301"><br></small></td>
+<td align="left" valign="top"><small><img alt="fig 1" src="../../../../figures/ifcwindow-fig01.gif" height="121" width="301"><br></small></td>
 <td align="left" valign="top">
 <p><small>The window panel (for side hung windows) opens always
 into the direction of the positive Y axis of the local placement.
@@ -76,7 +76,7 @@ SideHungLeftHand.</small></p>
 </td>
 </tr>
 <tr>
-<td><small><img alt="fig 2" src="../../../../../../figures/ifcwindow-fig02.gif" height="121" width="301"><br></small></td>
+<td><small><img alt="fig 2" src="../../../../figures/ifcwindow-fig02.gif" height="121" width="301"><br></small></td>
 <td valign="top">
 <p><small>If the window should open to the other side, then the
 local placement has to be changed. It is still a left hung
@@ -85,7 +85,7 @@ window, given by <em>IfcWindowPanelProperties.OperationType</em>
 </td>
 </tr>
 <tr>
-<td><img alt="fig 3" src="../../../../../../figures/ifcwindow-fig03.gif" height="121" width="301"></td>
+<td><img alt="fig 3" src="../../../../figures/ifcwindow-fig03.gif" height="121" width="301"></td>
 <td valign="top">
 <p><small>If the window panel (for side hung windows) opens to
 the right, a separate window panel style needs to be used (here
@@ -95,7 +95,7 @@ the positive Y axis of the local placement. </small></p>
 </td>
 </tr>
 <tr valign="top">
-<td align="left" valign="top"><small><img alt="fig 4" src="../../../../../../figures/ifcwindow-fig04.gif" height="121" width="301"><br></small></td>
+<td align="left" valign="top"><small><img alt="fig 4" src="../../../../figures/ifcwindow-fig04.gif" height="121" width="301"><br></small></td>
 <td align="left" valign="top">
 <p><small>If the window should open to the other side, then the
 local placement has to be changed. It is still a right hung

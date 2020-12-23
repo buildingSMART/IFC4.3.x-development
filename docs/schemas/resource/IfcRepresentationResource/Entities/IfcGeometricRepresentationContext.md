@@ -5,7 +5,7 @@ The _IfcGeometricRepresentationContext_ defines the context that applies to seve
 <table border="0" summary="true north">
  <tr>
   <td width="505" valign="top">
-   <img src="../../../../../../figures/ifcgeometricrepresentationcontext_truenorth.png" alt="TrueNorth" border="0">
+   <img src="../../../../figures/ifcgeometricrepresentationcontext_truenorth.png" alt="TrueNorth" border="0">
   </td>
   <td valign="top">
    <p class="small">
@@ -33,7 +33,7 @@ The use of one instance of _IfcGeometricRepresentationContext_ to represent the 
 <table summary="figure" border="0">
  <tr>
   <td valign="top">
-    <img src="../../../../../../figures/ifcgeometricrepresentationcontext_layout.png" alt="representation context" border="">
+    <img src="../../../../figures/ifcgeometricrepresentationcontext_layout.png" alt="representation context" border="">
   </td>
   <td valign="top">
    <p class="small">Use of representation contexts defined at <em>IfcProject</em> for 3D model and 2D plan context,

@@ -6,7 +6,7 @@ Figure 1 illustrates a B-spline curve.
 
 > NOTE&nbsp; Figure quoted from ISO 10303-42.
 
-!["control points"](../../../../../../figures/ifcbsplinecurve-fig1.gif "Figure 1 &mdash; B-spline curve")
+!["control points"](../../../../figures/ifcbsplinecurve-fig1.gif "Figure 1 &mdash; B-spline curve")
 
 { .extDef}
 > NOTE&nbsp; Definition according to ISO/CD 10303-42:1992  
@@ -15,7 +15,7 @@ Figure 1 illustrates a B-spline curve.
 > Interpretation of the data is as follows: <ol style=" font-size:inherit;">
 <li style=" font-size:inherit;">
 <p style=" font-size:inherit;">All weights shall be positive and the curve is given by</p>
-<img src="../../../../../../figures/ifcbsplinecurve-math1.gif" alt="equation" width="183" height="115" border="0">
+<img src="../../../../figures/ifcbsplinecurve-math1.gif" alt="equation" width="183" height="115" border="0">
 <table summary="illustration" style=" font-size:inherit;">
 <tr style=" font-size:inherit;">
 <td align="right" width="100" style=" font-size:inherit;"><em>k</em>+1</td>
@@ -45,7 +45,7 @@ data list by repeating each multiple knot according to the multiplicity. <em>N <
 <p style=" font-size:inherit;">Let <em>L</em> denote the number of distinct values among the <em>d</em>+<em>k</em>+2
 knots in the knot array; <em>L</em> will be referred to as the 'upper index on knots'. Let <em>m<sub>j</sub></em>
 denote the multiplicity (number of repetitions) of the <em>j</em>th distinct knot. Then</p>
-<img src="../../../../../../figures/ifcbsplinecurve-math2.gif" alt="equation" width="149" height="59" border="0">
+<img src="../../../../figures/ifcbsplinecurve-math2.gif" alt="equation" width="149" height="59" border="0">
 <p style=" font-size:inherit;">All knot multiplicities except the first and the last shall be in the range 1 ...
 degree; the first and last may have a maximum value of degree + 1. In evaluating the basis functions, a knot <em>u</em>
 of e.g. multiplicity 3 is interpreted as a string <em>u, u, u,</em> in the knot array. The B-spline curve has 3 special

@@ -1,0 +1,1 @@
+This is a select of enumerations to provide the option of groups of predefined types for an [<font color="#0000ff"><u>IfcImpactProtectionDevice</u></font>]($element://{2CCC5500-DE35-4db2-87C6-55B53CA06894}) or [<font color="#0000ff"><u>IfcImpactProtectionDeviceType</u></font>]($element://{2611DC1C-60E0-47b7-8506-B0D8829FA389}).

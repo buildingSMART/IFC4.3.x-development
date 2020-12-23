@@ -1,0 +1,1 @@
+Controller type common attributes.

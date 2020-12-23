@@ -1,0 +1,1 @@
+This container defines the different predefined types of earthworks fill elements that can specify an [<font color="#0000ff"><u>IfcEarthworksFill</u></font>]($element://{04D59E49-786C-4558-8F2F-4AC00545AE17}).

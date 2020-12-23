@@ -1,0 +1,15 @@
+# IfcBuildingElementPartType
+
+The building element part type defines lists of commonly shared property set definitions and representation maps of parts of a building element.
+
+> HISTORY&nbsp; New entity in IFC4.
+
+## Attributes
+
+### PredefinedType
+Subtype of building element part
+
+## WhereRules
+
+### CorrectPredefinedType
+The inherited attribute _ElementType_ shall be provided if the _PredefinedType_ is set to USERDEFINED.

@@ -1,0 +1,1 @@
+Duct fitting performance history common attributes.

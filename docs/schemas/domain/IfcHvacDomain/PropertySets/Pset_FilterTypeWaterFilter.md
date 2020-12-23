@@ -1,0 +1,1 @@
+Water filter type attributes.

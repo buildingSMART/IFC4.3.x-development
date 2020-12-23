@@ -41,7 +41,7 @@ Application used to make the last modification.
 ### CreationDate
 The date and time expressed in UTC (Universal Time Coordinated, formerly Greenwich Mean Time or GMT) when first created by the original OwningApplication. Once defined this value remains unchanged through the lifetime of the entity.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectChangeAction
 If ChangeAction is asserted and LastModifiedDate is not defined, ChangeAction must be set to NOTDEFINED

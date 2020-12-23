@@ -18,7 +18,7 @@ The exact direction of U[3], the derived Z axis direction.
 ### U
 The list of mutually orthogonal, normalized vectors defining the transformation matrix T. They are derived from the explicit attributes Axis3, Axis1, and Axis2 in that order.
 
-## WhereRules
+## Formal Propositions
 
 ### DimIs3D
 The coordinate space dimensionality of this entity shall be 3.

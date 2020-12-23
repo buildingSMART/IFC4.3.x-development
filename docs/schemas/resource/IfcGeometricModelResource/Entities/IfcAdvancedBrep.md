@@ -46,7 +46,7 @@ Informal Propositions:
 5. the edges used to define the face boundaries shall all be trimmed by vertices of type vertex point
 6. no loop used to define a face bound shall be of the oriented subtype
 
-## WhereRules
+## Formal Propositions
 
 ### HasAdvancedFaces
 Each face of the advanced B-rep shall be of type _IfcAdvancedFace_.

@@ -12,7 +12,7 @@ An engine is a device that converts fuel into mechanical energy through combusti
 ### PredefinedType
 
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

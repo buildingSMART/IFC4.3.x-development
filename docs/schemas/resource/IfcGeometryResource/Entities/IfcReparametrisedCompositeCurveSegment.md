@@ -24,7 +24,7 @@ The _IfcReparametrisedCompositeCurveSegment_ is geometrically identical to a _If
 ### ParamLength
 
 
-## WhereRules
+## Formal Propositions
 
 ### PositiveLengthParameter
 The _ParamLength_ shall be greater than zero.

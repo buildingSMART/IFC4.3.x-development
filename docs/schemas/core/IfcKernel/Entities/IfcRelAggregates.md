@@ -27,7 +27,7 @@ The object definitions, either object occurrences or object types, that are bein
 { .change-ifc2x4}
 > IFC4 CHANGE&nbsp; The attribute has been demoted from the supertype _IfcRelDecomposes_ and defines the non-ordered set of parts within the aggregation.
 
-## WhereRules
+## Formal Propositions
 
 ### NoSelfReference
 The instance to with the relation points as provided by _RelatingObject_ shall not be contained in the set of _RelatedObjects_.

@@ -36,7 +36,7 @@ Set ~~list~~ of unique property sets, that are associated with the object type a
 ### Types
 Reference to the relationship IfcRelDefinedByType and thus to those occurrence objects, which are defined by this type.
 
-## WhereRules
+## Formal Propositions
 
 ### NameRequired
 A Name attribute has to be provided. The name can be declared within the IFC specification as part of the property set agreements.

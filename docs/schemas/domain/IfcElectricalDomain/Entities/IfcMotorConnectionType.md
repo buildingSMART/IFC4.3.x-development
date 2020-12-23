@@ -15,7 +15,7 @@ It is used to define a motor connection type specification indicating the specif
 ### PredefinedType
 Identifies the predefined types of motor connection from which the type required may be set.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

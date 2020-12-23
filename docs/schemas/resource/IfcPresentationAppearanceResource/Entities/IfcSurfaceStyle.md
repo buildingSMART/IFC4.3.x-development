@@ -16,7 +16,7 @@ An indication of which side of the surface to apply the style.
 ### Styles
 A collection of different surface styles.
 
-## WhereRules
+## Formal Propositions
 
 ### MaxOneShading
 The _IfcSurfaceStyleShading_ shall only be used zero or one time within the set of _Styles_.

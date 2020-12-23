@@ -26,7 +26,7 @@ The inverse relationship to Person to whom address is associated.
 ### OfOrganization
 The inverse relationship to Organization to whom address is associated.
 
-## WhereRules
+## Formal Propositions
 
 ### WR1
 Either attribute value Purpose is not given, or

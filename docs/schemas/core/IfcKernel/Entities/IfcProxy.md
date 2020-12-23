@@ -21,7 +21,7 @@ High level (and only) semantic meaning attached to the IfcProxy, defining the ba
 ### Tag
 The tag (or label) identifier at the particular instance of a product, e.g. the serial number, or the position number. It is the identifier at the occurrence level.
 
-## WhereRules
+## Formal Propositions
 
 ### WR1
 The Name attribute has to be provided for a proxy.

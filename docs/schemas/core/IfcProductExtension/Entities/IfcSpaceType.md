@@ -30,7 +30,7 @@ Long name for a space type, used for informal purposes. It should be used, if av
 { .change-ifc2x4}
 > IFC4 CHANGE&nbsp; New attribute added at the end of entity definition.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 The inherited attribute _ElementType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.

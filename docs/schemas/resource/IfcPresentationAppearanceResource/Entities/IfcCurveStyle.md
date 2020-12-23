@@ -36,7 +36,7 @@ Indication whether the length measures provided for the presentation style are m
 { .change-ifc2x4}
 > IFC4 CHANGE&nbsp; New attribute.
 
-## WhereRules
+## Formal Propositions
 
 ### MeasureOfWidth
 The curve width, if provided, shall be given by an _IfcPositiveLengthMeasure_ representing the curve width in the default measure unit, or by an _IfcDescriptiveMeasure_ with the value 'by layer' representing the curve width by the default curve width at the associated layer.

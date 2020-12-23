@@ -12,7 +12,7 @@ The definitions of plate openings and niches are the same as given at the supert
 
 > HISTORY&nbsp; New entity in IFC4.
 
-## WhereRules
+## Formal Propositions
 
 ### HasMaterialLayerSetUsage
 A valid instance of _IfcPlateStandardCase_ relies on the provision of an _IfcMaterialLayerSetUsage_.

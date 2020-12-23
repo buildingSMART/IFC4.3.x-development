@@ -33,7 +33,7 @@ Assignment of presentation styles to the layer to provide a default style for re
 { .change-ifc2x4}
 > IFC4 CHANGE&nbsp; The data type has been changed from _IfcPresentationStyleSelect_ (now deprecated) to _IfcPresentationStyle_.
 
-## WhereRules
+## Formal Propositions
 
 ### ApplicableOnlyToItems
 The _IfcPresentationLayerWithStyle_ shall only be used to assign subtypes of _IfcGeometricRepresentationItem_'s and to _IfcMappedItem_. There shall be no instance of subtypes of _IfcRepresentation_ in the set of _AssignedItem_'s.

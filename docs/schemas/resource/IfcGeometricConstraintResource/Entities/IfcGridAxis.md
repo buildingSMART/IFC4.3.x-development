@@ -56,7 +56,7 @@ The reference to a set of <IfcVirtualGridIntersection's, that connect other grid
 { .change-ifc2x3}
 > IFC2x3 CHANGE&nbsp; New inverse attribute.
 
-## WhereRules
+## Formal Propositions
 
 ### WR1
 The dimensionality of the grid axis is 2.

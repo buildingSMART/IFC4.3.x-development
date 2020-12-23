@@ -27,7 +27,7 @@ Type of member with respect to its load carrying behavior in this analysis ideal
 ### Thickness
 Defines the typically understood thickness of the structural surface member, measured normal to its reference surface.
 
-## WhereRules
+## Formal Propositions
 
 ### HasObjectType
 The attribute ObjectType shall be given if the predefined type is set to USERDEFINED.

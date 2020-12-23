@@ -15,7 +15,7 @@ It is used to define a cable carrier segment type specification indicating the s
 ### PredefinedType
 Identifies the predefined types of cable carrier segment from which the type required may be set.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

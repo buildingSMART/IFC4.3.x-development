@@ -15,7 +15,7 @@ It is used to define a pipe fitting type specification indicating the specific p
 ### PredefinedType
 The type of pipe fitting.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

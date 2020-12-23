@@ -15,7 +15,7 @@ It is used to define a humidifier type specification indicating the specific pro
 ### PredefinedType
 Defines the type of humidifier.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

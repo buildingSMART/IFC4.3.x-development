@@ -15,7 +15,7 @@ Occurrences of the _IfcRailType_ are represented by instances of _IfcRail_.
 ### PredefinedType
 
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 The inherited attribute _ElementType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.

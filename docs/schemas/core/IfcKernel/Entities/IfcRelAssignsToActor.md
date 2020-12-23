@@ -18,7 +18,7 @@ Reference to the information about the actor. It comprises the information about
 ### ActingRole
 Role of the actor played within the context of the assignment to the object(s).
 
-## WhereRules
+## Formal Propositions
 
 ### NoSelfReference
 The instance to with the relation points shall not be contained in the set of _RelatedObjects_.

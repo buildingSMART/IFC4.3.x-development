@@ -21,7 +21,7 @@ Predefined types to define the particular type of the spatial zone. There may be
 Long name for a spatial zone type, used for informal purposes. It should be used, if available, in conjunction with the inherited _Name_ attribute.
 > NOTE&nbsp; In many scenarios the _Name_ attribute refers to the short name or number of a spatial zone, and the _LongName_ refers to the full descriptive name.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 The inherited attribute _ElementType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.

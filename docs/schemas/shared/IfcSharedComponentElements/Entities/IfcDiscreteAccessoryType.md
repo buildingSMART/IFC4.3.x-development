@@ -86,7 +86,7 @@ Accessories mainly used in the building services domain:
 ### PredefinedType
 Subtype of discrete accessory
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 The inherited attribute _ElementType_ shall be provided if the _PredefinedType_ is set to USERDEFINED.

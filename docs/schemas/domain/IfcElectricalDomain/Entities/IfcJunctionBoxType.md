@@ -15,7 +15,7 @@ It is used to define a junction box type specification indicating the specific p
 ### PredefinedType
 Identifies the predefined types of junction boxes from which the type required may be set.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

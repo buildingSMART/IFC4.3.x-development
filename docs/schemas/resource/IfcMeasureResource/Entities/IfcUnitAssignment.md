@@ -11,7 +11,7 @@ _IfcUnitAssignment_ indicates a set of units which may be assigned. Within an _I
 ### Units
 Units to be included within a unit assignment.
 
-## WhereRules
+## Formal Propositions
 
 ### WR01
 Checks that the set of globally assigned units has each unit type (either of type _IfcNamedUnit_,_IfcDerivedUnit_, or _IfcMonetaryUnit_) defined only once.

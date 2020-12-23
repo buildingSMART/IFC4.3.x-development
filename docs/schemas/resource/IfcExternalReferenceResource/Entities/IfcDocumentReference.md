@@ -19,7 +19,7 @@ The document reference with which objects are associated.
 { .change-ifc2x4}
 > IFC4 CHANGE&nbsp; New inverse attribute.
 
-## WhereRules
+## Formal Propositions
 
 ### WR1
 A name should only be given, if no document information (including the document name) is attached

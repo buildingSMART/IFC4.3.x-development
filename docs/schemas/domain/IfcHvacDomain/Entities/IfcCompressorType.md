@@ -15,7 +15,7 @@ It is used to define a compressor type specification indicating the specific pro
 ### PredefinedType
 Defines the type of compressor (e.g., hermetic, reciprocating, etc.).
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

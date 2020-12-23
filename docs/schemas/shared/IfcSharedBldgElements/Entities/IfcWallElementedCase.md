@@ -17,7 +17,7 @@ Parts within the decomposition are usually be of type:
 
 > HISTORY&nbsp; New entity in IFC4.
 
-## WhereRules
+## Formal Propositions
 
 ### HasDecomposition
 A valid instance of _IfcWallElementedCase_ has to have parts in a decomposition hierarchy.

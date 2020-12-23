@@ -17,7 +17,7 @@ The generic type of the footing.
 { .change-ifc2x4}
 > IFC4 CHANGE&nbsp; Attribute made optional. Type information can be provided by _IfcRelDefinesByType_ and _IfcFootingType_.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 Either the _PredefinedType_ attribute is unset (e.g. because an _IfcFootingType_ is associated), or the inherited attribute _ObjectType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.

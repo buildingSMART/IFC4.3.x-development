@@ -20,7 +20,7 @@ The local placement for _IfcFeatureElementSubtraction_ is defined in its superty
 ### VoidsElements
 Reference to the Voids Relationship that uses this Opening Element to create a void within an Element. The Opening Element can only be used to create a single void within a single Element.
 
-## WhereRules
+## Formal Propositions
 
 ### HasNoSubtraction
 An feature subtraction (e.g. an opening element) can not have other openings to void itself. The inverse relationship _HasOpenings_ shall therefore be NIL.

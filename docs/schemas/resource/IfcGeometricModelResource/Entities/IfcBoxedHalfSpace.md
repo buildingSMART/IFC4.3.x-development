@@ -43,7 +43,7 @@ fully enclose the Boolean result.</td>
 ### Enclosure
 The box which bounds the resulting solid of the Boolean operation involving the half space solid for computational purposes only.
 
-## WhereRules
+## Formal Propositions
 
 ### UnboundedSurface
 The BaseSurface defining the half space shall not be a bounded surface.

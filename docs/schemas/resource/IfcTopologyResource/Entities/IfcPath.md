@@ -23,7 +23,7 @@ Informal Propositions:
 ### EdgeList
 The list of oriented edges which are concatenated together to form this path.
 
-## WhereRules
+## Formal Propositions
 
 ### IsContinuous
 The end vertex of each edge shall be the same as the start vertex of its successor.

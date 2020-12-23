@@ -15,7 +15,7 @@ It is used to define a electric flow storage device type specification indicatin
 ### PredefinedType
 Identifies the predefined types of electric flow storage devices from which the type required may be set.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

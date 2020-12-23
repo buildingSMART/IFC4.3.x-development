@@ -59,7 +59,7 @@ The set of relationships by which this approval is related to others.
 ### Relates
 The set of relationships by which other approvals are related to this one.
 
-## WhereRules
+## Formal Propositions
 
 ### HasIdentifierOrName
 Either Identifier or Name (or both) by which the approval is known shall be given.

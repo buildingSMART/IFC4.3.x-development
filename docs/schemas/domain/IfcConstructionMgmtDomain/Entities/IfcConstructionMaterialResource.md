@@ -20,7 +20,7 @@ Defines types of construction material resources.
 { .change-ifc2x4}
 > IFC4 New attribute.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

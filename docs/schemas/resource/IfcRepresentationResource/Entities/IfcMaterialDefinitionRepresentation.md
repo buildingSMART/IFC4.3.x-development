@@ -47,7 +47,7 @@ Use definition
 ### RepresentedMaterial
 Reference to the material to which the representation applies.
 
-## WhereRules
+## Formal Propositions
 
 ### OnlyStyledRepresentations
 Only representations of type _IfcStyledRepresentation_ should be used to represent material through the _IfcMaterialRepresentation_.

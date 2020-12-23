@@ -16,7 +16,7 @@ Figure 1 shows an instance diagram explaining the use of _IfcSeamCurve_ as a bou
 
 > HISTORY&nbsp; New entity in IFC4 Add2.
 
-## WhereRules
+## Formal Propositions
 
 ### TwoPCurves
 The intersection curve shall have precisely two associated geometry elements.

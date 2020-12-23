@@ -15,7 +15,7 @@ It is used to define a electric distribution board type specification indicating
 ### PredefinedType
 Identifies the predefined types of electric distribution type from which the type required may be set.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

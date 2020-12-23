@@ -14,7 +14,7 @@ Outlets for medical gasses should use _IfcValve_ with PredefinedType equal to GA
 ### PredefinedType
 
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

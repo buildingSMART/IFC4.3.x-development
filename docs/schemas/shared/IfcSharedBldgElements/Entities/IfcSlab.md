@@ -31,7 +31,7 @@ Predefined generic type for a slab that is specified in an enumeration. There ma
 { .change-ifc2x}
 > IFC2x CHANGE The attribute has been changed into an OPTIONAL attribute.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 Either the _PredefinedType_ attribute is unset (e.g. because an _IfcSlabType_ is associated), or the inherited attribute _ObjectType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.

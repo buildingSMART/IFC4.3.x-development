@@ -15,7 +15,7 @@ It is used to define a waste terminal type specification indicating the specific
 ### PredefinedType
 Identifies the predefined types of waste terminal from which the type required may be set.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

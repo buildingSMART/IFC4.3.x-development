@@ -19,7 +19,7 @@ Reference to the objects (or single object) to which the property definition app
 ### RelatingPropertyDefinition
 Reference to the property set definition for that object or set of objects.
 
-## WhereRules
+## Formal Propositions
 
 ### NoRelatedTypeObject
 There shall be no related object being of typy _IfcTypeObject_.

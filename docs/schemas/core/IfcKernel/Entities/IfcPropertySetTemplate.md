@@ -41,7 +41,7 @@ Set of _IfcPropertyTemplate_'s that are defined within the scope of the _IfcProp
 ### Defines
 Relation to the property sets, via the objectified relationship _IfcRelDefinesByTemplate_, that, if given, utilize the definition template.
 
-## WhereRules
+## Formal Propositions
 
 ### ExistsName
 The _Name_ attribute has to be provided. The attribute is used to specify the signifier of the property set template. The properties that are allowed to be attached to a particular property set template may be given within the property set definition part of the IFC specification.

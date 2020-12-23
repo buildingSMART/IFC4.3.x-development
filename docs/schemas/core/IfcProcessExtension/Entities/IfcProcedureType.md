@@ -14,7 +14,7 @@ Usage of _IfcProcedureType_ defines the parameters for one or more occurrences o
 Identifies the predefined types of a procedure from which 
     the type required may be set.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 The attribute ProcessType must be asserted when the value of PredefinedType is set to USERDEFINED.

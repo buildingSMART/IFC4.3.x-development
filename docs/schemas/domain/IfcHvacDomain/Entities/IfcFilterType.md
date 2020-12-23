@@ -15,7 +15,7 @@ It is used to define a filter type specification indicating the specific product
 ### PredefinedType
 The type of air filter.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

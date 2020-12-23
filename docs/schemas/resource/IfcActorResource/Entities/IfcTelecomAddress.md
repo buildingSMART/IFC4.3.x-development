@@ -28,7 +28,7 @@ The world wide web address at which the preliminary page of information for the 
 ### MessagingIDs
 IDs or addresses for any other means of telecommunication, for example instant messaging, voice-over-IP, or file transfer protocols. The communication protocol is indicated by the URI value with scheme designations such as irc:, sip:, or ftp:.
 
-## WhereRules
+## Formal Propositions
 
 ### MinimumDataProvided
 Requires that at least one attribute of telephone numbers, facsimile numbers, pager number, electronic mail addresses, world wide web home page URL, or messaging ID is asserted. It is not acceptable to have a telecommunications address without at least one of these values.

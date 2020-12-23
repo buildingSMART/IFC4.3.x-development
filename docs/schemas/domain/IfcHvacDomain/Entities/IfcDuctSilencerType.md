@@ -15,7 +15,7 @@ It is used to define a duct silencer type specification indicating the specific 
 ### PredefinedType
 The type of duct silencer.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

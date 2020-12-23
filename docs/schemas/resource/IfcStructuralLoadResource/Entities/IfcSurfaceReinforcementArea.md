@@ -17,7 +17,7 @@ Reinforcement at the face of the member which is located at the side of the nega
 ### ShearReinforcement
 Shear reinforcement.  Specified as area per area, e.g. square metre per square metre (hence ratio measure, i.e. unitless).
 
-## WhereRules
+## Formal Propositions
 
 ### SurfaceAndOrShearAreaSpecified
 At least one of the reinforcement area attributes shall be specified.

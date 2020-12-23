@@ -36,7 +36,7 @@ Boundaries of the face.
 ### HasTextureMaps
 
 
-## WhereRules
+## Formal Propositions
 
 ### HasOuterBound
 At most one of the bounds shall be of the type _IfcFaceOuterBound_.

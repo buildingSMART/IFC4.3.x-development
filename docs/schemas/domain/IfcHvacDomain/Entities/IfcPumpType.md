@@ -15,7 +15,7 @@ It is used to define a pump type specification indicating the specific product i
 ### PredefinedType
 Defines the type of pump typically used in building services.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

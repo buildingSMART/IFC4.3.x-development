@@ -45,7 +45,7 @@ User defined target view, this attribute value shall be given, if the TargetView
 ### Precision
 
 
-## WhereRules
+## Formal Propositions
 
 ### ParentNoSub
 The parent context shall not be another geometric representation sub context.

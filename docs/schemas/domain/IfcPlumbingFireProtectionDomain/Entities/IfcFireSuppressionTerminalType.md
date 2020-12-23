@@ -15,7 +15,7 @@ It is used to define a fire suppression terminal type specification indicating t
 ### PredefinedType
 Identifies the predefined types of fire suppression terminal from which the type required may be set.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

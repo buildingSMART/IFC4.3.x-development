@@ -18,7 +18,7 @@ The weights associated with the control points in the rational case.
 ### Weights
 Array (two-dimensional) of weight values constructed from the _WeightsData_.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrespondingWeightsDataLists
 The array dimensions for the weights shall be consistent with the control points data.

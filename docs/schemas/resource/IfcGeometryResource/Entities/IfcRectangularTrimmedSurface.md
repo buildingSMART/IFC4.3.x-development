@@ -42,7 +42,7 @@ Flag to indicate whether the direction of the first parameter of the trimmed sur
 ### Vsense
 Flag to indicate whether the direction of the second parameter of the trimmed surface agrees with or opposes the sense of v in the basis surface.
 
-## WhereRules
+## Formal Propositions
 
 ### U1AndU2Different
 U1 and U2 shall have different values.

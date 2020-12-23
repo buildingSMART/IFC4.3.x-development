@@ -20,7 +20,7 @@ Informal Propositions:
 ### RelatingGroup
 Reference to group that contains all assigned group members.
 
-## WhereRules
+## Formal Propositions
 
 ### NoSelfReference
 The instance to with the relation points shall not be contained in the set of _RelatedObjects_.

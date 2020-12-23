@@ -17,7 +17,7 @@ Occurrences of the _IfcLaborResourceType_ are represented by instances of _IfcLa
 ### PredefinedType
 Defines types of labour resources.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

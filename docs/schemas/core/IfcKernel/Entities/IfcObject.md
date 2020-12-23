@@ -55,7 +55,7 @@ Set of relationships to property set definitions attached to this object. Those 
 { .change-ifc2x4}
 > IFC4 CHANGE&nbsp; The data type has been changed from _IfcRelDefines_ to _IfcRelDefinesByProperties_ with upward compatibility for file based exchange.
 
-## WhereRules
+## Formal Propositions
 
 ### UniquePropertySetNames
 

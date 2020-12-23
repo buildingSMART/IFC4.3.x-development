@@ -15,7 +15,7 @@ It is used to define a light fixture type specification indicating the specific 
 ### PredefinedType
 Identifies the predefined types of light fixture from which the type required may be set.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

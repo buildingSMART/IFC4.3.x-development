@@ -97,7 +97,7 @@ Set point value as typically used for operational value setting.
 { .change-ifc2x4}
 > IFC4 CHANGE&nbsp; The attribute has been added at the end of the attribute list.
 
-## WhereRules
+## Formal Propositions
 
 ### SameUnitUpperLower
 The measure type of the _UpperBoundValue_ shall be the same as the measure type of the _LowerBoundValue_, if both (upper and lower bound) are given.

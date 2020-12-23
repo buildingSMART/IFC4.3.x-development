@@ -14,7 +14,7 @@ The parameter value on the Directrix at which the sweeping operation commences. 
 ### EndParam
 The parameter value on the Directrix at which the sweeping operation ends. If no value is provided the end of the sweeping operation is at the end of the Directrix.
 
-## WhereRules
+## Formal Propositions
 
 ### DirectrixBounded
 If the values for _StartParam_ or _EndParam_ are omited, then the _Directrix_ has to be a bounded or closed curve.

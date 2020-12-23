@@ -17,7 +17,7 @@ It is used to define a controller type specification indicating the specific pro
 ### PredefinedType
 Identifies the predefined types of controller from which the type required may be set.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

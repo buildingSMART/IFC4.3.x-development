@@ -13,7 +13,7 @@ Depending on local classification systems transport elements and transportation 
 ### PredefinedType
 
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 Either the _IfcTransportElement_ attribute is unset (e.g. because an _IfcTransportElementType_ is associated), or the inherited attribute _ObjectType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.

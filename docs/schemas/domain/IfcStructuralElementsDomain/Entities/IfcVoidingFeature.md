@@ -18,7 +18,7 @@ Voiding features shall have no spatial containment relationship to the spatial s
 ### PredefinedType
 Qualifies the feature regarding its shape and configuration relative to the voided element.
 
-## WhereRules
+## Formal Propositions
 
 ### HasObjectType
 The attribute ObjectType shall be given if the predefined type is set to USERDEFINED.

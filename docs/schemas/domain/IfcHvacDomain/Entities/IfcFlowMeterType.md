@@ -15,7 +15,7 @@ It is used to define a flow meter type specification indicating the specific pro
 ### PredefinedType
 Defines the type of flow meter.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

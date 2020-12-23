@@ -28,7 +28,7 @@ The second operand specified for the operation.
 ### Dim
 The space dimensionality of this entity. It is identical with the space dimensionality of the first operand. A where rule ensures that both operands have the same space dimensionality.
 
-## WhereRules
+## Formal Propositions
 
 ### SameDim
 The dimensionality of the first operand shall be the same as the dimensionality of the second operand.

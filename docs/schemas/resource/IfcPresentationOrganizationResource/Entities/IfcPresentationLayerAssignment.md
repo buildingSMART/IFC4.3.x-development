@@ -31,7 +31,7 @@ The set of layered items, which are assigned to this layer.
 ### Identifier
 An (internal) identifier assigned to the layer.
 
-## WhereRules
+## Formal Propositions
 
 ### ApplicableItems
 The items within the set of _AssignedItems_ that can be assigned to a presentation layer shall be geometric shape representation or representation items.

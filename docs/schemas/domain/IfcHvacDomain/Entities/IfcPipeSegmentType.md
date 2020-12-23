@@ -15,7 +15,7 @@ It is used to define a pipe segment type specification indicating the specific p
 ### PredefinedType
 The type of pipe segment.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

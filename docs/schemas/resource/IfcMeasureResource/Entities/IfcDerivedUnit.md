@@ -24,7 +24,7 @@ Name of the derived unit chosen from an enumeration of derived unit types for us
 ### Dimensions
 Dimensional exponents derived using the function IfcDerivedDimensionalExponents using (SELF) as the input value.
 
-## WhereRules
+## Formal Propositions
 
 ### WR1
 Units as such shall not be re-defined as derived units.

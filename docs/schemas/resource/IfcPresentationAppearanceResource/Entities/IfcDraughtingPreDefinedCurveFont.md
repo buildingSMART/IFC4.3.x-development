@@ -14,7 +14,7 @@ Figure 1 illustrates predefined curve fonts.
 
 > HISTORY&nbsp; New entity in IFC2x2.
 
-## WhereRules
+## Formal Propositions
 
 ### PreDefinedCurveFontNames
 The name of the _IfcDraughtingPreDefinedCurveFont_ shall be 'continuous', 'chain', 'chain double dash', 'dashed', 'dotted' or 'by layer'.

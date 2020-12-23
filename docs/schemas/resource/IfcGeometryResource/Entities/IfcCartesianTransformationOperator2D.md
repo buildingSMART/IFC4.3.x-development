@@ -15,7 +15,7 @@ An _IfcCartesianTransformationOperator2D_ defines a geometric transformation in 
 ### U
 The list of mutually orthogonal, normalized vectors defining the transformation matrix T. They are derived from the explicit attributes Axis1 and Axis2 in that order.
 
-## WhereRules
+## Formal Propositions
 
 ### DimEqual2
 The coordinate space dimensionality of this entity shall be 2.

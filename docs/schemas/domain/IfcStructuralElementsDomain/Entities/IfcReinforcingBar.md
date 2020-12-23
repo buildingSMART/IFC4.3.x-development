@@ -46,7 +46,7 @@ Deprecated.
 { .change-ifc2x4}
 > IFC4 CHANGE&nbsp; Attribute made optional and deprecated. Use respective attribute at _IfcReinforcingBarType_ instead.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 Either the _PredefinedType_ attribute is unset (e.g. because an _IfcReinforcingBarType_ is associated), or the inherited attribute _ObjectType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.

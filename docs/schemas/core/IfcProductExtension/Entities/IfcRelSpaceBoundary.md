@@ -126,7 +126,7 @@ Defines, whether the Space Boundary is physical (Physical) or virtual (Virtual).
 ### InternalOrExternalBoundary
 Defines, whether the Space Boundary is internal (Internal), or external, i.e. adjacent to open space (that can be an partially enclosed space, such as terrace (External).
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPhysOrVirt
 If the space boundary is physical, it shall be provided by an element (i.e. excluding a virtual element). If the space boundary is virtual, it shall either have a virtual element or an opening providing the space boundary. If the space boundary _PhysicalOrVirtualBoundary_ attribute is not defined, no restrictions are imposed.

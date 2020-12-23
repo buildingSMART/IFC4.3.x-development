@@ -15,7 +15,7 @@ It is used to define a protective device type specification indicating the speci
 ### PredefinedType
 Identifies the predefined types of protective device from which the type required may be set.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

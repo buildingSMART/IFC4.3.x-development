@@ -34,7 +34,7 @@ An 'Axis' and a 'Body' shape representation has to be provided, and it is invali
 
 > HISTORY&nbsp; New entity in IFC2x.
 
-## WhereRules
+## Formal Propositions
 
 ### HasMaterialLayerSetUsage
 A valid instance of _IfcWallStandardCase_ relies on the provision of an _IfcMaterialLayerSetUsage_.

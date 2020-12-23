@@ -7,7 +7,7 @@ A TendonConduit represents the components of the conduit system for tendons embe
 ### PredefinedType
 The predefined generic type of the tendon conduit.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 Either the _PredefinedType_ attribute is unset (e.g. because an _IfcTendonConduitType_ is associated), or the inherited attribute _ObjectType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.

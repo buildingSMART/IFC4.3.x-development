@@ -22,7 +22,7 @@ A designation of where the assembly is intended to take place. A selection of al
 ### PredefinedType
 
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

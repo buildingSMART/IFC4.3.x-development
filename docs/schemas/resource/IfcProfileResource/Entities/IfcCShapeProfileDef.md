@@ -35,7 +35,7 @@ Lengths of girth, see illustration above (= c).
 ### InternalFilletRadius
 Internal fillet radius according the above illustration (= r1).
 
-## WhereRules
+## Formal Propositions
 
 ### ValidGirth
 The girth shall be smaller than half of the depth.

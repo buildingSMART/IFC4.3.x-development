@@ -20,7 +20,7 @@ The length of the visible segment in the pattern definition.
 ### InvisibleSegmentLength
 The length of the invisible segment in the pattern definition.
 
-## WhereRules
+## Formal Propositions
 
 ### VisibleLengthGreaterEqualZero
 The value of a visible pattern length shall be equal or greater then zero.

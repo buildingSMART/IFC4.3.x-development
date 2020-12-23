@@ -15,7 +15,7 @@ It is used to define a tank type specification indicating the specific product i
 ### PredefinedType
 Defines the type of tank.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

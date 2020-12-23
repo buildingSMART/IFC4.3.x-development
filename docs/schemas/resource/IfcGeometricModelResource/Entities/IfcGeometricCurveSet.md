@@ -10,7 +10,7 @@ The _IfcGeometricCurveSet_ is used for the exchange of shape representation cons
 
 > HISTORY&nbsp; New entity in IFC2x2.
 
-## WhereRules
+## Formal Propositions
 
 ### NoSurfaces
 No surface shall be included in this geometric set.

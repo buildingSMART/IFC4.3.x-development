@@ -16,7 +16,7 @@ It is used to define a ramp flight type specification indicating the specific pr
 ### PredefinedType
 Identifies the predefined types of a ramp flight element from which the type required may be set.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 The inherited attribute _ElementType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.

@@ -54,7 +54,7 @@ The font size provides the size or height of the text font.
   
 > NOTE&nbsp; The following values are allowed, <_IfcLengthMeasure_, with positive values, the length unit is globally defined at _IfcUnitAssignment_.__
 
-## WhereRules
+## Formal Propositions
 
 ### MeasureOfFontSize
 The size should be given by a positive length measure,

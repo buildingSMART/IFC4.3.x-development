@@ -12,7 +12,7 @@ A protective device tripping unit breaks an electrical circuit at a separate bre
 ### PredefinedType
 
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 Either the _PredefinedType_ attribute is unset (e.g. because an _IfcProtectiveDeviceTrippingUnitType_ is associated), or the inherited attribute _ObjectType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.

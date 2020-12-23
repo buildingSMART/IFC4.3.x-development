@@ -50,7 +50,7 @@ Informal Propositions:
 ### RelatingMaterial
 Material definition assigned to the elements or element types.
 
-## WhereRules
+## Formal Propositions
 
 ### NoVoidElement
 The material information must not be associated to a substraction feature (such as an opening) or to a virtual element.

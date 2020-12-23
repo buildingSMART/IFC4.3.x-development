@@ -17,7 +17,7 @@ It is used to define a alarm type specification indicating the specific product 
 ### PredefinedType
 Identifies the predefined types of alarm from which the type required may be set.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

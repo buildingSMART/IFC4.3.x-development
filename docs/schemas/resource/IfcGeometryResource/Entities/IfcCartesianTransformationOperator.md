@@ -45,7 +45,7 @@ The derived scale S of the transformation, equal to scale if that exists, or 1.0
 ### Dim
 The space dimensionality of this class, determined by the space dimensionality of the local origin.
 
-## WhereRules
+## Formal Propositions
 
 ### ScaleGreaterZero
 The derived scaling Scl shall be greater than zero.

@@ -32,7 +32,7 @@ Informal Propositions:
 ### PredefinedType
 Type of reaction according to its distribution of load values.
 
-## WhereRules
+## Formal Propositions
 
 ### HasObjectType
 The attribute ObjectType shall be given if the predefined type is set to USERDEFINED.

@@ -12,7 +12,7 @@ A stack terminal is placed at the top of a ventilating stack (such as to prevent
 ### PredefinedType
 
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

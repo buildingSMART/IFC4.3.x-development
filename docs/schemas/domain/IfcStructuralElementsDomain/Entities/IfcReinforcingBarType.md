@@ -34,7 +34,7 @@ Shape code per a standard like ACI 315, ISO 3766, or a similar standard.  It is 
 ### BendingParameters
 Bending shape parameters.  Their meaning is defined by the bending shape code and the respective standard.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 The inherited attribute _ElementType_ shall be provided if the _PredefinedType_ is set to USERDEFINED.

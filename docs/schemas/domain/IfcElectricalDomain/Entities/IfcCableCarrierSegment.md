@@ -12,7 +12,7 @@ A cable carrier segment is a flow segment that is specifically used to carry and
 ### PredefinedType
 Identifies the predefined types of cable carrier segment from which the type required may be set.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 Either the _PredefinedType_ attribute is unset (e.g. because an _IfcCableCarrierSegmentType_ is associated), or the inherited attribute _ObjectType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.

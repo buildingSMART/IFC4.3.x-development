@@ -14,7 +14,7 @@ A waste terminal provides for all forms of trap and waste point that collects di
 ### PredefinedType
 
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

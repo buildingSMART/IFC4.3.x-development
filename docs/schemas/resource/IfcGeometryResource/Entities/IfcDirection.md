@@ -20,7 +20,7 @@ The components in the direction of X axis (DirectionRatios[1]), of Y axis (Direc
 ### Dim
 The space dimensionality of this class, defined by the number of real in the list of DirectionRatios.
 
-## WhereRules
+## Formal Propositions
 
 ### MagnitudeGreaterZero
 The magnitude of the direction vector shall be greater than zero.

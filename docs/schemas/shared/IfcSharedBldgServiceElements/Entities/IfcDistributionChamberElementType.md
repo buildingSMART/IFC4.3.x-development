@@ -17,7 +17,7 @@ It is used to define a distribution chamber element type specification indicatin
 ### PredefinedType
 Predefined types of distribution chambers.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

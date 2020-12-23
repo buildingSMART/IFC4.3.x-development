@@ -47,7 +47,7 @@ Reference to the objectified relationship that handles the relationship of the c
 { .change-ifc2x4}
 > IFC4 CHANGE Renamed into _CoversElements_ for consistency.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 Either the _PredefinedType_ attribute is unset (e.g. because an _IfcCoveringType_ is associated), or the inherited attribute _ObjectType_ shall be given, if the _PredefinedType_ is set to USERDEFINED.

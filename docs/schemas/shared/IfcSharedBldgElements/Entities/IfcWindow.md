@@ -139,7 +139,7 @@ Type defining the general layout of the window in terms of the partitioning of p
 ### UserDefinedPartitioningType
 Designator for the user defined partitioning type, shall only be provided, if the value of _PartitioningType_ is set to USERDEFINED.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectStyleAssigned
 Either there is no door type object associated, i.e. the _IsTypedBy_ inverse relationship is not provided, or the associated type object has to be of type _IfcWindowStyle_.

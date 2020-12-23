@@ -15,7 +15,7 @@ It is used to define an air to air heat recovery type specification indicating t
 ### PredefinedType
 Defines the type of air to air heat recovery device.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

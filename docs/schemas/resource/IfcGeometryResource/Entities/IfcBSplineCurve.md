@@ -83,7 +83,7 @@ This value is derived from the control points list.
 ### ControlPoints
 The array of control points used to define the geometry of the curve. This is derived from the list of control points.
 
-## WhereRules
+## Formal Propositions
 
 ### SameDim
 All control points shall have the same dimensionality.

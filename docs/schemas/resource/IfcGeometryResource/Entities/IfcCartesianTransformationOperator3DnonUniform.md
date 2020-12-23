@@ -26,7 +26,7 @@ The derived scale S(2) of the transformation along the axis 2 (normally the y ax
 ### Scl3
 The derived scale S(3) of the transformation along the axis 3 (normally the z axis), equal to Scale3 if that exists, or equal to the derived Scl1 (normally the x axis scale factor) otherwise.
 
-## WhereRules
+## Formal Propositions
 
 ### Scale2GreaterZero
 The derived scaling Scl2 shall be greater than zero.

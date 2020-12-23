@@ -60,7 +60,7 @@ The Boolean value reflects, whether the parameter given in the attached lining a
 ### UserDefinedPartitioningType
 Designator for the user defined partitioning type, shall only be provided, if the value of _PartitioningType_ is set to USERDEFINED.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 The inherited attribute _ElementType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.

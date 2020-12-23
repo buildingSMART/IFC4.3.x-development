@@ -30,7 +30,7 @@ The depth of the extrusion, it determines the parameterization.
 ### ExtrusionAxis
 The extrusion axis defined as vector.
 
-## WhereRules
+## Formal Propositions
 
 ### DepthGreaterZero
 

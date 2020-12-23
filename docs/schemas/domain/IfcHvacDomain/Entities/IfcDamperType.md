@@ -15,7 +15,7 @@ It is used to define a damper type specification indicating the specific product
 ### PredefinedType
 Type of damper.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

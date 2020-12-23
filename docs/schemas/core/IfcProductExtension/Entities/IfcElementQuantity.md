@@ -45,7 +45,7 @@ Name of the method of measurement used to calculate the element quantity. The me
 ### Quantities
 The individual quantities for the element, can be a set of length, area, volume, weight or count based quantities.
 
-## WhereRules
+## Formal Propositions
 
 ### UniqueQuantityNames
 Every individual _IfcPhysicalQuantity_ within the set _Quantities_ shall have a unique _Name_ attribute value.

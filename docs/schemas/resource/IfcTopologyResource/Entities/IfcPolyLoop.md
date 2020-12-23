@@ -28,7 +28,7 @@ Informal Propositions:
 ### Polygon
 List of points defining the loop. There are no repeated points in the list.
 
-## WhereRules
+## Formal Propositions
 
 ### AllPointsSameDim
 The space dimensionality of all Points shall be the same.

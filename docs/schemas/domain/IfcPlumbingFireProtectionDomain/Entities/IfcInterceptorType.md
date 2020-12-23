@@ -15,7 +15,7 @@ It is used to define a interceptor type specification indicating the specific pr
 ### PredefinedType
 
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

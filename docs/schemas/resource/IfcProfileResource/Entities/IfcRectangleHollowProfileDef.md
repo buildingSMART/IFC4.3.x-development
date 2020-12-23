@@ -50,7 +50,7 @@ Inner corner radius.
 ### OuterFilletRadius
 Outer corner radius.
 
-## WhereRules
+## Formal Propositions
 
 ### ValidWallThickness
 The wall thickness shall be smaller than half of the X and Y dimension of the rectangle.

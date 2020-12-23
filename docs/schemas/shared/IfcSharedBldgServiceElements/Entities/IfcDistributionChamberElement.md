@@ -11,7 +11,7 @@ An **IfcDistributionChamberElement** is a formed volume used in a distribution s
 ### PredefinedType
 
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

@@ -10,7 +10,7 @@ An _IfcBoundaryCurve_ defines a curve acting as the boundary of a surface.
 
 > HISTORY&nbsp; New entity in IFC4.
 
-## WhereRules
+## Formal Propositions
 
 ### IsClosed
 The derived _ClosedCurve_ attribute of _IfcCompositeCurve_ supertype shall be TRUE.

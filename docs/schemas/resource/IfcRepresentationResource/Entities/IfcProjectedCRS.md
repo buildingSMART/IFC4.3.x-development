@@ -34,7 +34,7 @@ Name by which the map zone, relating to the _MapProjection_, is identified.
 Unit of the coordinate axes composing the map coordinate system.
 > NOTE&nbsp; Only length measures are in scope and all two or three axes of the map coordinate system shall have the same length unit.
 
-## WhereRules
+## Formal Propositions
 
 ### IsLengthUnit
 The map unit shall be given, if present, as a length unit.

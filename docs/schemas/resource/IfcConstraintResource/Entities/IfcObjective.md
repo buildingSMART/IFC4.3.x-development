@@ -31,7 +31,7 @@ Enumeration that qualifies the type of objective constraint.
 ### UserDefinedQualifier
 A user defined value that qualifies the type of objective constraint when ObjectiveQualifier attribute of type _IfcObjectiveEnum_ has value USERDEFINED.
 
-## WhereRules
+## Formal Propositions
 
 ### WR21
 The attribute UserDefinedQualifier must be asserted when the value of the ObjectiveQualifier is set to USERDEFINED.

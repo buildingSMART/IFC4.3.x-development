@@ -39,7 +39,7 @@ The geometric representation of _IfcColumnStandardCase_ is defined using the fol
 
 > NOTE&nbsp; It is invalid to exchange a 'SurfaceModel', 'Brep', or 'MappedRepresentation' representation for the 'Body' shape representation of an _IfcColumnStandardCase_.
 
-## WhereRules
+## Formal Propositions
 
 ### HasMaterialProfileSetUsage
 A valid instance of _IfcColumnStandardCase_ relies on the provision of an _IfcMaterialProfileSetUsage_.

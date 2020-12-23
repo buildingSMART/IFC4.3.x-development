@@ -31,7 +31,7 @@ Identifies the predefined types of a work calendar from which
 { .change-ifc2x4}
 > IFC4 CHANGE Attribute added
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 The attribute ObjectType must be asserted when the value of the IfcWorkCalendarTypeEnum is set to USERDEFINED.

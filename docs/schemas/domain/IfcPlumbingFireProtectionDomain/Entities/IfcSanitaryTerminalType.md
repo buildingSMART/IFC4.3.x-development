@@ -15,7 +15,7 @@ It is used to define a sanitary terminal type specification indicating the speci
 ### PredefinedType
 Identifies the predefined types of sanitary terminal from which the type required may be set.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

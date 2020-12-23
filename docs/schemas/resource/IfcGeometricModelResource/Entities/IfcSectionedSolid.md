@@ -10,7 +10,7 @@ The curve used to define the sweeping operation.
 ### CrossSections
 List of cross sections in sequential order along the _Directrix_.
 
-## WhereRules
+## Formal Propositions
 
 ### DirectrixIs3D
 The curve entity which is the underlying directrix shall have the dimensionality of 3.

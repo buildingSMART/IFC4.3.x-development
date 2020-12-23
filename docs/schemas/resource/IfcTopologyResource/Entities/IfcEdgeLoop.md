@@ -23,7 +23,7 @@ A list of oriented edge entities which are concatenated together to form this pa
 ### Ne
 The number of elements in the edge list.
 
-## WhereRules
+## Formal Propositions
 
 ### IsClosed
 The start vertex of the first edge shall be the same as the end vertex of the last edge. This ensures that the path is closed to form a loop.

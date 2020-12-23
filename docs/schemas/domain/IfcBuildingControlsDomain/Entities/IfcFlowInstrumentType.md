@@ -17,7 +17,7 @@ It is used to define a flow instrument type specification indicating the specifi
 ### PredefinedType
 Identifies the predefined types of flow instrument from which the type required may be set.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

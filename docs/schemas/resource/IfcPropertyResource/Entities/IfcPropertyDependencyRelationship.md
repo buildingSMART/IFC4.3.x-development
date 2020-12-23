@@ -23,7 +23,7 @@ The dependant property.
 ### Expression
 Expression that further describes the nature of the dependency relation.
 
-## WhereRules
+## Formal Propositions
 
 ### NoSelfReference
 The _DependingProperty_ shall not point to the same instance as the _DependantProperty_.

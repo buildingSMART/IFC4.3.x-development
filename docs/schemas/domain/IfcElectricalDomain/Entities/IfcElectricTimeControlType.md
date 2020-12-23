@@ -15,7 +15,7 @@ It is used to define a electric time control type specification indicating the s
 ### PredefinedType
 Identifies the predefined types of electrical time control from which the type required may be set.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

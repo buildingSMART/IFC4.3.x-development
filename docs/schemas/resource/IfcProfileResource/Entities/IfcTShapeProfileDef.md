@@ -71,7 +71,7 @@ Slope of flange of the profile.
 ### FlangeSlope
 Slope of web of the profile.
 
-## WhereRules
+## Formal Propositions
 
 ### ValidFlangeThickness
 The flange thickness shall be smaller than the depth.

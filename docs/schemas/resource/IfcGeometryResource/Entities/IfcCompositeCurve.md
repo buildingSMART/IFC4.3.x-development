@@ -60,7 +60,7 @@ The number of component curves.
 ### ClosedCurve
 Indication whether the curve is closed or not; this is derived from the transition code of the last segment.
 
-## WhereRules
+## Formal Propositions
 
 ### CurveContinuous
 No transition code should be Discontinuous, except for the last code of an open curve.

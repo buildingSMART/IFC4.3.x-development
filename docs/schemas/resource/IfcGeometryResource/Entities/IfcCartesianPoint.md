@@ -18,7 +18,7 @@ The first, second, and third coordinate of the point location. If placed in a tw
 ### Dim
 The space dimensionality of this class, determined by the number of coordinates in the List of Coordinates.
 
-## WhereRules
+## Formal Propositions
 
 ### CP2Dor3D
 Only two or three dimensional points are in scope.

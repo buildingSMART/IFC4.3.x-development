@@ -15,7 +15,7 @@ It is used to define a evaporative cooler type specification indicating the spec
 ### PredefinedType
 Defines the type of evaporative cooler.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

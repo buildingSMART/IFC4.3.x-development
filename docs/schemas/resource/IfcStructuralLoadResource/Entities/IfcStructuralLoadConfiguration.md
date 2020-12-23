@@ -21,7 +21,7 @@ List of load or result values.
 ### Locations
 Locations of the load samples or result samples, given within the local coordinate system defined by the instance which uses this resource object.  Each item in the list of locations pertains to the values list item at the same list index.  This attribute is optional for configurations in which the locations are implicitly known from higher-level definitions.
 
-## WhereRules
+## Formal Propositions
 
 ### ValidListSize
 If locations are provided, there shall be as many location items as there are value items.

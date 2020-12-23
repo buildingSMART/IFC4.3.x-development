@@ -25,7 +25,7 @@ or in case of sectioned spines the xy plane of each list member of _IfcSectioned
 ### InnerCurves
 Set of bounded curves, defining the inner boundaries of the arbitrary profile.
 
-## WhereRules
+## Formal Propositions
 
 ### WR1
 The type of the profile shall be AREA, as it can only be involved in the definition of a swept area.

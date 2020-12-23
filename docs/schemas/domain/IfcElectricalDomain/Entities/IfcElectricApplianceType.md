@@ -15,7 +15,7 @@ It is used to define a electric appliance type specification indicating the spec
 ### PredefinedType
 Identifies the predefined types of electrical appliance from which the type required may be set.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

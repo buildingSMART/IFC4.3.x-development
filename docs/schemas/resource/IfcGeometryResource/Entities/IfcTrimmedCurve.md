@@ -61,7 +61,7 @@ Flag to indicate whether the direction of the trimmed curve agrees with or is op
 ### MasterRepresentation
 Where both parameter and point are present at either end of the curve this indicates the preferred form.
 
-## WhereRules
+## Formal Propositions
 
 ### Trim1ValuesConsistent
 Either a single value is specified for Trim1, or the two trimming values are of different type (point and parameter)

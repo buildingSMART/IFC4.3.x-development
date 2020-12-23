@@ -14,7 +14,7 @@ The kind of building element part is further specified by a corresponding instan
 ### PredefinedType
 Subtype of building element part
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 Either the _PredefinedType_ attribute is unset (e.g. because an _IfcBuildingElementPartType_ is associated), or the inherited attribute _ObjectType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.

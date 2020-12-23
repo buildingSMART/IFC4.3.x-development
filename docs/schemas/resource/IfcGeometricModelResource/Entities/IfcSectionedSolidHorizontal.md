@@ -26,7 +26,7 @@ List of distance expressions in sequentially increasing order paired with _Cross
 ### FixedAxisVertical
 Indicates whether _Sections_ are oriented with the Y axis of each profile facing upwards in +Z direction (True), or vertically perpendicular to the _Directrix_ varying according to slope (False).
 
-## WhereRules
+## Formal Propositions
 
 ### CorrespondingSectionPositions
 The set of cross sections and the set of cross section positions shall be of the same size.

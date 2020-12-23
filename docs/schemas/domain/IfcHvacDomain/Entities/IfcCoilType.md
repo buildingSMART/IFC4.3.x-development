@@ -15,7 +15,7 @@ It is used to define a coil type specification indicating the specific product i
 ### PredefinedType
 Defines typical types of coils (e.g., Cooling, Heating, etc.)
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

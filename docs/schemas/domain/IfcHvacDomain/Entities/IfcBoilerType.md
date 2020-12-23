@@ -15,7 +15,7 @@ It is used to define a boiler type specification indicating the specific product
 ### PredefinedType
 Defines types of boilers.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

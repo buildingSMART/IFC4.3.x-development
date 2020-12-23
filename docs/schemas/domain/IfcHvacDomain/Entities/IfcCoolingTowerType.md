@@ -15,7 +15,7 @@ It is used to define a cooling tower type specification indicating the specific 
 ### PredefinedType
 Defines the typical types of cooling towers (e.g., OpenTower, ClosedTower, CrossFlow, etc.).
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

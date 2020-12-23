@@ -49,7 +49,7 @@ The major radius of the torus.
 ### MinorRadius
 The minor radius of the torus.
 
-## WhereRules
+## Formal Propositions
 
 ### MajorLargerMinor
 The attribute value of the MinorRadius shall be smaller then the value of the MajorRadius

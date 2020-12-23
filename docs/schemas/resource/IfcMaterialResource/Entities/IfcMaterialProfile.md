@@ -32,7 +32,7 @@ Category of the material profile, e.g. the role it has in the profile set it bel
 ### ToMaterialProfileSet
 Material profile set in which this material profile is included.
 
-## WhereRules
+## Formal Propositions
 
 ### NormalizedPriority
 The _Property_ shall all be given as a normalized integer range [0..100], where 0 is the lowest and 100 the highest priority of the material profile.

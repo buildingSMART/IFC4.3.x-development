@@ -16,7 +16,7 @@ It is used to define a pile type specification indicating the specific product i
 ### PredefinedType
 Subtype of pile.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 The inherited attribute _ElementType_ shall be provided if the _PredefinedType_ is set to USERDEFINED.

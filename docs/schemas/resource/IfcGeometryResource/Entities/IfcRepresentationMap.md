@@ -31,7 +31,7 @@ Reference to the shape aspect that represents part of the shape or its feature d
 ### MapUsage
 
 
-## WhereRules
+## Formal Propositions
 
 ### ApplicableMappedRepr
 Only representations of type _IfcShapeRepresentation_, or _IfcTopologyRepresentation_ are allowed as _MappedRepresentation_.

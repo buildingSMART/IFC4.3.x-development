@@ -15,7 +15,7 @@ It is used to define a cooled beam type specification indicating the specific pr
 ### PredefinedType
 Defines the type of cooled beam.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

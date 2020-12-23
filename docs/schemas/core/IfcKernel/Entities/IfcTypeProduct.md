@@ -31,7 +31,7 @@ Reference to the _IfcRelAssignsToProduct_ relationship, by which other products,
 { .change-ifc2x4}
 > IFC4 CHANGE&nbsp; New inverse relationship.
 
-## WhereRules
+## Formal Propositions
 
 ### ApplicableOccurrence
 The product type (or style), if assigned to an object, shall only be assigned to object being a sub type of _IfcProduct_.

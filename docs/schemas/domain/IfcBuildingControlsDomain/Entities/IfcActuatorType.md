@@ -17,7 +17,7 @@ It is used to define a actuator type specification indicating the specific produ
 ### PredefinedType
 Identifies the predefined types of actuator from which the type required may be set.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

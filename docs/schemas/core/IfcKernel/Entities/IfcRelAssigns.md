@@ -22,7 +22,7 @@ Particular type of the assignment relationship. It can constrain the applicable 
 { .change-ifc2x4}
 > IFC4 CHANGE&nbsp; The attribute is deprecated and shall no longer be used. A NIL value should always be assigned.
 
-## WhereRules
+## Formal Propositions
 
 ### WR1
 Rule checks whether the types of the assigned related objects comply with the contraint given by the RelatedObjectsType. The rule is important for constraint checks at subtypes of IfcRelAssigns or at subtypes of IfcObject, which refers to assignment relationships through the inverse HasAssignments relation.

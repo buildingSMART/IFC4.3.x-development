@@ -10,7 +10,7 @@ Positioning element defining the source of the relative position.
 ### RelatedProducts
 Relatively positioned product.
 
-## WhereRules
+## Formal Propositions
 
 ### NoSelfReference
 The instance of the _PositionedElement_ shall not be the same instance as the _Product_.

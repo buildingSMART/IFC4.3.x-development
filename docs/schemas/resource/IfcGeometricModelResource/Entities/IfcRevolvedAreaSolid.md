@@ -107,7 +107,7 @@ The angle through which the sweep will be made. This angle is measured from the 
 ### AxisLine
 The line of the axis of revolution.
 
-## WhereRules
+## Formal Propositions
 
 ### AxisStartInXY
 The start of the axis shall lie in the XY plane of the position coordinate system.

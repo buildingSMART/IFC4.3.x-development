@@ -9,7 +9,7 @@ This entity defines an action with constant value which is distributed over a su
 
 > NOTE&nbsp; Like its supertype _IfcStructuralSurfaceAction_, this action type may also act on curved faces.
 
-## WhereRules
+## Formal Propositions
 
 ### SuitableLoadType
 A planar action shall place either a planar force or a temperature load.

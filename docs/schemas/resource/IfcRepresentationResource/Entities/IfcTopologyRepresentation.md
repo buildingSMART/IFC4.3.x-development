@@ -40,7 +40,7 @@ The representation type is given as a string value at the inherited attribute '_
 
 > HISTORY&nbsp; New entity in IFC2x2.
 
-## WhereRules
+## Formal Propositions
 
 ### WR21
 Only topological representation items should be used.

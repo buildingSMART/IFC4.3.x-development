@@ -15,7 +15,7 @@ It is used to define a protective device tripping unit type specification indica
 ### PredefinedType
 Identifies the predefined types of protective device tripping unit types from which the type required may be set.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

@@ -25,7 +25,7 @@ The geometric representation of _IfcBeamStandardCase_ is defined using the follo
 
 > NOTE&nbsp; It is invalid to exchange a 'SurfaceModel', 'Brep', or 'MappedRepresentation' representation for the 'Body' shape representation of an _IfcBeamStandardCase_.
 
-## WhereRules
+## Formal Propositions
 
 ### HasMaterialProfileSetUsage
 A valid instance of _IfcBeamStandardCase_ relies on the provision of an _IfcMaterialProfileSetUsage_.

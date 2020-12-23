@@ -33,7 +33,7 @@ NOTE&nbsp; The master representation attribute acknowledges the impracticality o
 ### BasisSurface
 The surface, or surfaces on which the _IfcSurfaceCurve_ lies. This is determined from the _AssociatedGeometry_ list.
 
-## WhereRules
+## Formal Propositions
 
 ### CurveIs3D
 The _Curve2D_ shall be defined in three-dimensional space.

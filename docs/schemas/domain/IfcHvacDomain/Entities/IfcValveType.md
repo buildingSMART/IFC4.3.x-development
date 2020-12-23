@@ -15,7 +15,7 @@ It is used to define a valve type specification indicating the specific product 
 ### PredefinedType
 The type of valve.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

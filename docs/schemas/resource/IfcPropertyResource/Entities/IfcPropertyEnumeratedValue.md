@@ -93,7 +93,7 @@ Enumeration values, which shall be listed in the referenced _IfcPropertyEnumerat
 ### EnumerationReference
 Enumeration from which a enumeration value has been selected. The referenced enumeration also establishes the unit of the enumeration value.
 
-## WhereRules
+## Formal Propositions
 
 ### WR21
 Each value within the list of _EnumerationValues_ shall be a member of the list of _EnumerationValues_ at the referenced _IfcPropertyEnumeration_ (provided that both, the _EnumerationValues_ and _EnumerationReference_, are asserted).

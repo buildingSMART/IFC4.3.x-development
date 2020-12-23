@@ -6,7 +6,7 @@ A clipping result is the Boolean difference between a swept solid and a half spa
 
 > HISTORY&nbsp; New entity in IFC2x.
 
-## WhereRules
+## Formal Propositions
 
 ### FirstOperandType
 The first operand of the Boolean clipping operation shall be either an IfcSweptAreaSolid or (in case of more than one clipping) an IfcBooleanResult.

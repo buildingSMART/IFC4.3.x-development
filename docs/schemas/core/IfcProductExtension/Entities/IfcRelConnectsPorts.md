@@ -20,7 +20,7 @@ Reference to the second port that is connected by the objectified relationship.
 ### RealizingElement
 Defines the element that realizes a port connection relationship.
 
-## WhereRules
+## Formal Propositions
 
 ### NoSelfReference
 The instance of the _RelatingPort_ shall not be the same instance as the _RelatedPort_.

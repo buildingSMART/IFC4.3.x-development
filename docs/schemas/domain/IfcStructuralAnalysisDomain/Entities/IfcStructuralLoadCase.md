@@ -13,7 +13,7 @@ The three components of the self weight vector correspond with the x,y,z directi
 
 The overall coefficient in the inherited attribute _Coefficient_ shall not be applied to _SelfWeightCoefficients_ of the same instance of _IfcStructuralLoadCase_. It only applies to actions and load groups which are grouped below the load case, not to the load case's computed self weight.
 
-## WhereRules
+## Formal Propositions
 
 ### IsLoadCasePredefinedType
 An instance of this subtype of structural load group cannot be of any other type than that of a load case.

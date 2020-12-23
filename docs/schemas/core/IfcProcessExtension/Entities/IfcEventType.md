@@ -23,7 +23,7 @@ A user defined event trigger type, the value of which
     is asserted when the value of an event trigger type is 
     declared as USERDEFINED.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 The attribute ProcessType must be asserted when the value of PredefinedType is set to USERDEFINED.

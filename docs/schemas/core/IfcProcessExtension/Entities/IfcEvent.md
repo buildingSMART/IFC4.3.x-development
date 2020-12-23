@@ -27,7 +27,7 @@ A user defined event trigger type, the value of which is
 ### EventOccurenceTime
 The date and/or time at which an event occurs.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 Either the _PredefinedType_ attribute is unset, or the inherited attribute _ObjectType_ must be asserted when the value of _PredefinedType_ is set to _USERDEFINED_.

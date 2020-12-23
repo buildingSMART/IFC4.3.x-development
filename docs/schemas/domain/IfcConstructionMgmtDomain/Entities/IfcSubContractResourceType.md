@@ -17,7 +17,7 @@ Occurrences of the _IfcSubContractResourceType_ are represented by instances of 
 ### PredefinedType
 Defines types of subcontract resources.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

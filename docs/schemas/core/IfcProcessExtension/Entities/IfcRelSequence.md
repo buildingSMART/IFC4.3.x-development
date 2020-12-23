@@ -46,7 +46,7 @@ Allows for specification of user defined type of the sequence
 { .change-ifc2x4}
 > IFC4 CHANGE Attribute added
 
-## WhereRules
+## Formal Propositions
 
 ### AvoidInconsistentSequence
 The RelatingProcess shall not point to the same instance as the RelatedProcess.

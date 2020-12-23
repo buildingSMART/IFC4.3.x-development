@@ -72,7 +72,7 @@ Identifies the predefined types of a task from which
 { .change-ifc2x4}
 > IFC4 CHANGE Attribute added
 
-## WhereRules
+## Formal Propositions
 
 ### HasName
 The Name attribute should be inserted to describe the task name.

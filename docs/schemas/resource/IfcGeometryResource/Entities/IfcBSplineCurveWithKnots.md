@@ -29,7 +29,7 @@ The description of the knot type. This is for information only.
 ### UpperIndexOnKnots
 The upper index on the knot arrays; the lower index is 1.
 
-## WhereRules
+## Formal Propositions
 
 ### ConsistentBSpline
 The function IfcConstraintsParamBSpline returns TRUE if no inconsistencies in the parametrisation of the

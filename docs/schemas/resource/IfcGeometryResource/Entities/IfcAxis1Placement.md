@@ -33,7 +33,7 @@ The direction of the local Z axis.
 ### Z
 The normalized direction of the local Z axis. It is either identical with the Axis value, if given, or it defaults to [0.,0.,1.]
 
-## WhereRules
+## Formal Propositions
 
 ### AxisIs3D
 The Axis when given should only reference a three-dimensional IfcDirection.

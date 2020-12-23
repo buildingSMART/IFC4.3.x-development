@@ -15,7 +15,7 @@ It is used to define a transformer type specification indicating the specific pr
 ### PredefinedType
 Identifies the predefined types of transformer from which the type required may be set.
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 

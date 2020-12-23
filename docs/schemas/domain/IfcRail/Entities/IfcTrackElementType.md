@@ -15,7 +15,7 @@ Occurrences of the _IfcTrackElementType_ are represented by instances of _IfcTra
 ### PredefinedType
 
 
-## WhereRules
+## Formal Propositions
 
 ### CorrectPredefinedType
 The inherited attribute _ElementType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.

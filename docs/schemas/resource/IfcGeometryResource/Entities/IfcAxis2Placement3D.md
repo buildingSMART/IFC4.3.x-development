@@ -48,7 +48,7 @@ The direction used to determine the direction of the local X Axis. If necessary 
 ### P
 The normalized directions of the placement X Axis (P[1]) and the placement Y Axis (P[2]) and the placement Z Axis (P[3]).
 
-## WhereRules
+## Formal Propositions
 
 ### LocationIs3D
 The dimensionality of the placement location shall be 3.

@@ -75,7 +75,7 @@ Indication of the connection type in relation to the path of the _RelatingObject
 ### RelatingConnectionType
 Indication of the connection type in relation to the path of the _RelatingObject_.
 
-## WhereRules
+## Formal Propositions
 
 ### NormalizedRelatingPriorities
 The _RelatingProperties_ shall all be given as a normalized integer range [0..100], where 0 is the lowest and 100 the highest priority of the material layers.

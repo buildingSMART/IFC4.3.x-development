@@ -14,7 +14,7 @@ The objectified relationship _IfcRelAssignsToControl_ handles the assignment of 
 ### RelatingControl
 Reference to the _IfcControl_ that applies a control upon objects.
 
-## WhereRules
+## Formal Propositions
 
 ### NoSelfReference
 The instance to with the relation points shall not be contained in the set of _RelatedObjects_.

@@ -54,7 +54,7 @@ Two-dimensional ~~polyline~~ bounded curve, defined in the xy plane of the posit
 { .change-ifc2x3}
 > IFC2x3 CHANGE&nbsp; The attribute type has been changed from _IfcPolyline_ to its supertype _IfcBoundedCurve_ with upward compatibility for file based exchange.
 
-## WhereRules
+## Formal Propositions
 
 ### BoundaryDim
 The bounding polyline should have the dimensionality of 2.

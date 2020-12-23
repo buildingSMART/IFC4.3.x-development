@@ -19,7 +19,7 @@ Informal Propositions:
 ### Voids
 
 
-## WhereRules
+## Formal Propositions
 
 ### VoidsHaveAdvancedFaces
 Each face of the voids within the advanced B-rep with voids shall be of type _IfcAdvancedFace_.

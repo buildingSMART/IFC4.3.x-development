@@ -9,7 +9,7 @@ This entity defines an action with constant value which is distributed over a cu
 
 > NOTE&nbsp; Like its supertype _IfcStructuralCurveAction_, this action type may also act on curved edges.
 
-## WhereRules
+## Formal Propositions
 
 ### SuitableLoadType
 A linear action shall place either a linear force or a temperature load.

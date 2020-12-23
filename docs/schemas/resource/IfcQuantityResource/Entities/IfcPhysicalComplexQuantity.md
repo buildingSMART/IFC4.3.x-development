@@ -25,7 +25,7 @@ Additional indication of a quality of the quantities that are grouped under this
 ### Usage
 Additional indication of a usage type of the quantities that are grouped under this physical complex quantity.
 
-## WhereRules
+## Formal Propositions
 
 ### NoSelfReference
 The _IfcPhysicalComplexQuantity_ should not reference itself within the list of _HasQuantities_.

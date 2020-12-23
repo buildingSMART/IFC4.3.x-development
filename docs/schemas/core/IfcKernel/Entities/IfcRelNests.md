@@ -29,7 +29,7 @@ The object definitions, either non-product object occurrences or non-product obj
 { .change-ifc2x4}
 > IFC4 CHANGE&nbsp; The attribute has been demoted from the supertype _IfcRelDecomposes_ and defines the ordered set of parts within the nest.
 
-## WhereRules
+## Formal Propositions
 
 ### NoSelfReference
 The instance to with the relation points as provided by _RelatingObject_ shall not be contained in the list of _RelatedObjects_.

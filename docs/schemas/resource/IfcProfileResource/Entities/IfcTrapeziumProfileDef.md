@@ -10,7 +10,7 @@ Figure 1 illustrates parameters of the trapezium profile definition.
 <table frame="border" width="100%">
   <tbody>
     <tr>
-      <td width="420"><img src="../../../../../../figures/ifctrapeziumprofiledef-layout1.gif" alt="trapezium profile" border="0" height="300" width="400"></td>
+      <td width="420"><img src="../../../../figures/ifctrapeziumprofiledef-layout1.gif" alt="trapezium profile" border="0" height="300" width="400"></td>
       <td align="left" valign="top" width="100%"><u>Position</u>
       <br>
 The parameterized profile defines its own position coordinate system.

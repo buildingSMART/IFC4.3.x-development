@@ -6,7 +6,7 @@ Figure 1 illustrates transition types
 
 > NOTE&nbsp; The figure is quoted from ISO 10303-42.
 
-!["transition code"](../../../../../../figures/ifctransitioncode.gif "Figure 1 &mdash; Transition code")
+!["transition code"](../../../../figures/ifctransitioncode.gif "Figure 1 &mdash; Transition code")
 
 { .extDef}
 > NOTE&nbsp; Definition according to ISO/CD 10303-42:1992  

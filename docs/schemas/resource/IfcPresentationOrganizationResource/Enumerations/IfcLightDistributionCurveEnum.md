@@ -8,8 +8,8 @@ There are three kinds of light distribution curves, see Figure 1.
 <tr><td>
 <table border="1"> 
 <tr> 
-  <td><img src="../../../../../../figures/ifclightdistributioncurveenum_b-plane.gif" alt="B-Type" width="300" height="300" border="0"></td> 
-  <td><img src="../../../../../../figures/ifclightdistributioncurveenum_c-plane.gif" alt="C-Type" width="300" height="300" border="0"></td> 
+  <td><img src="../../../../figures/ifclightdistributioncurveenum_b-plane.gif" alt="B-Type" width="300" height="300" border="0"></td> 
+  <td><img src="../../../../figures/ifclightdistributioncurveenum_c-plane.gif" alt="C-Type" width="300" height="300" border="0"></td> 
 </tr> 
 <tr> 
   <td>B-Type System</td> 

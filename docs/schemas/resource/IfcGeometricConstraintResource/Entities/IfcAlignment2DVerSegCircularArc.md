@@ -11,8 +11,8 @@ The circular arc is described by:
 
 For crest curves (where _IsConvex_ is True), the elevation of a point along the curve (relative to _StartHeight_) is defined as:
 
-![Image](../../../../../../figures/ifcalignment2dversegcirculararc-formula-concave.png)<table>
-<tr><td><img src="../../../../../../figures/ifcalignment2dversegcirculararc-convex.png"></td><td style="vertical-align: bottom">start point provided by <i>StartDistAlong</i> and <i>StartHeight</i><br>instanteneous gradient provided by <i>StartGradient</i>, <br>and length provided by <i>HorizontalLength</i></td></tr>
+![Image](../../../../figures/ifcalignment2dversegcirculararc-formula-concave.png)<table>
+<tr><td><img src="../../../../figures/ifcalignment2dversegcirculararc-convex.png"></td><td style="vertical-align: bottom">start point provided by <i>StartDistAlong</i> and <i>StartHeight</i><br>instanteneous gradient provided by <i>StartGradient</i>, <br>and length provided by <i>HorizontalLength</i></td></tr>
 <tr><td><p class="figure">Figure 1 &mdash; Alignment vertical arc segment convex</p></td><td>&nbsp;</td></tr>
 </table>
 
@@ -20,8 +20,8 @@ For crest curves (where _IsConvex_ is True), the elevation of a point along the 
 
 For sag curves (where _IsConvex_ is False), the elevation of a point along the curve (relative to _StartHeight_) is defined as:
 
-![Image](../../../../../../figures/ifcalignment2dversegcirculararc-formula-convex.png)<table>
-<tr><td><img src="../../../../../../figures/ifcalignment2dversegcirculararc-concave.png"></td><td style="vertical-align: bottom">start point provided by <i>StartDistAlong</i> and <i>StartHeight</i><br>instanteneous gradient provided by <i>StartGradient</i>, <br>and length provided by <i>HorizontalLength</i></td></tr>
+![Image](../../../../figures/ifcalignment2dversegcirculararc-formula-convex.png)<table>
+<tr><td><img src="../../../../figures/ifcalignment2dversegcirculararc-concave.png"></td><td style="vertical-align: bottom">start point provided by <i>StartDistAlong</i> and <i>StartHeight</i><br>instanteneous gradient provided by <i>StartGradient</i>, <br>and length provided by <i>HorizontalLength</i></td></tr>
 <tr><td><p class="figure">Figure 2 &mdash; Alignment vertical arc segment concave</p></td><td>&nbsp;</td></tr>
 </table>
 

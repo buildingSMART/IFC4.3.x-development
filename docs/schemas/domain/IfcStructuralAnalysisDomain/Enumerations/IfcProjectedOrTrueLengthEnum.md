@@ -4,4 +4,4 @@ Figure 1 illustrates the interpretation of a load definition depending on the en
 
 > HISTORY&nbsp; New enumeration in IFC2x2.
 
-!["projected or true length"](../../../../../../figures/ifcprojectedortruelengthenum-fig1.gif "Figure 1 &mdash; Projected or true length")
+!["projected or true length"](../../../../figures/ifcprojectedortruelengthenum-fig1.gif "Figure 1 &mdash; Projected or true length")

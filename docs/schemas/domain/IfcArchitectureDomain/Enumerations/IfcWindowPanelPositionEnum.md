@@ -14,14 +14,14 @@ Windows which are subdivided into more than three panels have to be defined by t
 	  <td width="30%" valign="top" align="left">first
 		 IfcWindowPanelProperties with PanelPosition = LEFT<br>second
 		 IfcWindowPanelProperties with PanelPosition = RIGHT</td> 
-	  <td width="23%" valign="top" align="left"><img src="../../../../../../figures/ifcwindowpanelpositionenum-fig01.gif" width="152" height="151" border="0"></td> 
+	  <td width="23%" valign="top" align="left"><img src="../../../../figures/ifcwindowpanelpositionenum-fig01.gif" width="152" height="151" border="0"></td> 
 	</tr> 
 	<tr valign="top"> 
 	  <td width="30%" valign="top" align="left">DoublePanelHorizontal</td> 
 	  <td width="30%" valign="top" align="left">first
 		 IfcWindowPanelProperties with PanelPosition = TOP<br>second
 		 IfcWindowPanelProperties with PanelPosition = BOTTOM</td> 
-	  <td width="23%" valign="top" align="left"><img src="../../../../../../figures/ifcwindowpanelpositionenum-fig02.gif" width="152" height="151" border="0"></td> 
+	  <td width="23%" valign="top" align="left"><img src="../../../../figures/ifcwindowpanelpositionenum-fig02.gif" width="152" height="151" border="0"></td> 
 	</tr> 
 	<tr valign="top"> 
 	  <td width="30%" valign="top" align="left">TriplePanelVertical</td> 
@@ -29,7 +29,7 @@ Windows which are subdivided into more than three panels have to be defined by t
 		 IfcWindowPanelProperties with PanelPosition = LEFT<be>second
 		 IfcWindowPanelProperties with PanelPosition = MIDDLE<br>third
 		 IfcWindowPanelProperties with PanelPosition = RIGHT</be></td> 
-	  <td width="23%" valign="top" align="left"><img src="../../../../../../figures/ifcwindowpanelpositionenum-fig03.gif" width="209" height="152" border="0"></td> 
+	  <td width="23%" valign="top" align="left"><img src="../../../../figures/ifcwindowpanelpositionenum-fig03.gif" width="209" height="152" border="0"></td> 
 	</tr> 
 	<tr valign="top"> 
 	  <td width="30%" valign="top" align="left">TriplePanelHorizontal </td> 
@@ -37,7 +37,7 @@ Windows which are subdivided into more than three panels have to be defined by t
 		 IfcWindowPanelProperties with PanelPosition = TOP<br>second
 		 IfcWindowPanelProperties with PanelPosition = MIDDLE<br>third
 		 IfcWindowPanelProperties with PanelPosition = BOTTOM</td> 
-	  <td width="23%" valign="top" align="left"><img src="../../../../../../figures/ifcwindowpanelpositionenum-fig04.gif" width="151" height="208" border="0"></td> 
+	  <td width="23%" valign="top" align="left"><img src="../../../../figures/ifcwindowpanelpositionenum-fig04.gif" width="151" height="208" border="0"></td> 
 	</tr> 
 	<tr valign="top"> 
 	  <td width="30%" valign="top" align="left">TriplePanelBottom</td> 
@@ -45,7 +45,7 @@ Windows which are subdivided into more than three panels have to be defined by t
 		 IfcWindowPanelProperties with PanelPosition = LEFT<br>second
 		 IfcWindowPanelProperties with PanelPosition = RIGHT<br>third
 		 IfcWindowPanelProperties with PanelPosition = BOTTOM</td> 
-	  <td width="23%" valign="top" align="left"><img src="../../../../../../figures/ifcwindowpanelpositionenum-fig05.gif" width="151" height="208" border="0"></td> 
+	  <td width="23%" valign="top" align="left"><img src="../../../../figures/ifcwindowpanelpositionenum-fig05.gif" width="151" height="208" border="0"></td> 
 	</tr> 
 	<tr valign="top"> 
 	  <td width="30%" valign="top" align="left">TriplePanelTop</td> 
@@ -53,7 +53,7 @@ Windows which are subdivided into more than three panels have to be defined by t
 		 IfcWindowPanelProperties with PanelPosition = TOP<br>second
 		 IfcWindowPanelProperties with PanelPosition = LEFT<br>third
 		 IfcWindowPanelProperties with PanelPosition = RIGHT</td> 
-	  <td width="23%" valign="top" align="left"><img src="../../../../../../figures/ifcwindowpanelpositionenum-fig06.gif" width="151" height="208" border="0"></td> 
+	  <td width="23%" valign="top" align="left"><img src="../../../../figures/ifcwindowpanelpositionenum-fig06.gif" width="151" height="208" border="0"></td> 
 	</tr> 
 	<tr valign="top"> 
 	  <td width="30%" valign="top" align="left">TriplePanelLeft</td> 
@@ -61,7 +61,7 @@ Windows which are subdivided into more than three panels have to be defined by t
 		 IfcWindowPanelProperties with PanelPosition = LEFT<br>second
 		 IfcWindowPanelProperties with PanelPosition = TOP<br>third
 		 IfcWindowPanelProperties with PanelPosition = BOTTOM</td> 
-	  <td width="23%" valign="top" align="left"><img src="../../../../../../figures/ifcwindowpanelpositionenum-fig07.gif" width="209" height="152" border="0"></td> 
+	  <td width="23%" valign="top" align="left"><img src="../../../../figures/ifcwindowpanelpositionenum-fig07.gif" width="209" height="152" border="0"></td> 
 	</tr> 
 	<tr valign="top"> 
 	  <td width="30%" valign="top" align="left">TriplePanelRight</td> 
@@ -69,7 +69,7 @@ Windows which are subdivided into more than three panels have to be defined by t
 		 IfcWindowPanelProperties with PanelPosition = TOP<br>second
 		 IfcWindowPanelProperties with PanelPosition = BOTTOM<br>third
 		 IfcWindowPanelProperties with PanelPosition = RIGHT</td> 
-	  <td width="23%" valign="top" align="left"><img src="../../../../../../figures/ifcwindowpanelpositionenum-fig08.gif" width="209" height="152" border="0"></td> 
+	  <td width="23%" valign="top" align="left"><img src="../../../../figures/ifcwindowpanelpositionenum-fig08.gif" width="209" height="152" border="0"></td> 
 	</tr> 
  </table> 
 </td></tr>

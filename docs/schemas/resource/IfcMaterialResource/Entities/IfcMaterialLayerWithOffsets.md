@@ -23,7 +23,7 @@ Attribute use definition
 > 
 > The _OffsetValues_ and _OffsetDirection_ correspond to the definitions _ReferenceExtent_ and _LayerSetDirection_ at the _IfcMaterialLayerSetUsage_. Figure 1 shows an example of applying the _OffsetValues_ to the material layers of a standard wall.
 > 
-> !["IfcMaterialLayerWithOffsets_fig-1"](../../../../../../figures/ifcmateriallayerwithoffsets_fig-1.png "Figure 1 &mdash; Material layer with offsets")
+> !["IfcMaterialLayerWithOffsets_fig-1"](../../../../figures/ifcmateriallayerwithoffsets_fig-1.png "Figure 1 &mdash; Material layer with offsets")
 
 ## Attributes
 

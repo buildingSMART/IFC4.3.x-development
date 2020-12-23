@@ -13,7 +13,7 @@ The inherited _HasContext_ inverse relation to _IfcRelDeclares_ is used to decla
 
 &nbsp;
 
-!["property set template"](../../../../../../figures/ifcpropertysettemplate_fig-1.png "Figure 1 &mdash; Property set template relationships")
+!["property set template"](../../../../figures/ifcpropertysettemplate_fig-1.png "Figure 1 &mdash; Property set template relationships")
 
 Between _IfcProperty_'s within the _HasProperties_ set of _IfcPropertySet_ having the same _Name_ attribute value as the _IfcPropertyTemplate_'s within the _HasPropertyTemplates_ set of _IfcPropertySetTemplate_ an implicit definition relationship is established that assigns the template to the individual properties.
 

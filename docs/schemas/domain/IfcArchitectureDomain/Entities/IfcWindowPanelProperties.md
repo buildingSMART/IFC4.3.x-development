@@ -10,7 +10,7 @@ The _IfcWindowPanelProperties_ does not hold an own geometric representation. Ho
 
 As shown in Figure 1, the panel is applied to the position within the lining as defined by the panel position attribute. The following parameter apply to that panel: _FrameDepth_, _FrameThickness_.
 
-!["panel 1"](../../../../../../figures/ifcwindowpanelproperties-fig01.gif "Figure 1 &mdash; Window panel properties")
+!["panel 1"](../../../../figures/ifcwindowpanelproperties-fig01.gif "Figure 1 &mdash; Window panel properties")
 
 > HISTORY&nbsp; New entity in IFC2.0, it had been renamed from IfcWindowPanel in IFC2x.
 

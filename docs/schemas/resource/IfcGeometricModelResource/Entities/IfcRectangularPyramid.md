@@ -8,7 +8,7 @@ The _IfcRectangularPyramid_ is a Construction Solid Geometry (CSG) 3D primitive.
 
 As shown in Figure 1, the pyramid is positioned within its own placement coordinate system. The origin is the center of the bottom rectangle, that lies in the XY plane. The apex lies on the positive z axis at [0, 0, _Height_].
 
-!["pyramid"](../../../../../../figures/ifcrectangularpyramid-layout1.png "Figure 1 &mdash; Rectangular pyramid geometry")
+!["pyramid"](../../../../figures/ifcrectangularpyramid-layout1.png "Figure 1 &mdash; Rectangular pyramid geometry")
 
 > HISTORY&nbsp; New entity in IFC2x3
 
@@ -26,7 +26,7 @@ Figure 2 illustrates default texture mapping with a clamped texture (RepeatS=Fal
 { .gridtable}
 <table summary="texture" class="gridtable">
 <tr valign="top">
-<td><img src="../../../../../../figures/ifcrectangularpyramid-texture.png" alt="texture"></td>
+<td><img src="../../../../figures/ifcrectangularpyramid-texture.png" alt="texture"></td>
 </tr>
 <tr>
 <td>

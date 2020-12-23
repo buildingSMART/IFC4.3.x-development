@@ -6,7 +6,7 @@ _IfcProcess_ is defined as one individual activity or event, that is ordered in 
 > NOTE&nbsp; Definition according to ISO9000:  
 > A process is a set of activities that are interrelated or that interact with one another. Processes use resources to transform inputs into outputs. Processes are interconnected because the output from one process becomes the input for another process. In effect, processes are "glued" together by means of such input output relationships.
 
-!["icon diagram"](../../../../../../figures/ifcprocess_icon_fig.png "Figure 1 &mdash; Process relationships and the ICON process diagram.")
+!["icon diagram"](../../../../figures/ifcprocess_icon_fig.png "Figure 1 &mdash; Process relationships and the ICON process diagram.")
 
 Process information relates to other objects by establishing the following relationships:
 

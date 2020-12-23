@@ -1,0 +1,1 @@
+Gutter segment type common attributes.

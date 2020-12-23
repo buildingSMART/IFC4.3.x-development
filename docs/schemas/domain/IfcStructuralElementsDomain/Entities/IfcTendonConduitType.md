@@ -1,0 +1,13 @@
+# IfcTendonConduitType
+
+
+
+## Attributes
+
+### PredefinedType
+Subtype of tendon conduit.
+
+## WhereRules
+
+### CorrectPredefinedType
+The inherited attribute _ElementType_ shall be provided if the _PredefinedType_ is set to USERDEFINED.

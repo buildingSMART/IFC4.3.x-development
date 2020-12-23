@@ -1,0 +1,1 @@
+Properties that are applied to an occurrence of a protective device.

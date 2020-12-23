@@ -1,0 +1,1 @@
+Engine type common attributes.

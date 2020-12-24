@@ -142,7 +142,13 @@ def generate_definitions():
         
             di = by_id.get(id)
             if di is None:
-                print("WARNING: for %s entity %s not emitted" % (item.name, xmi_doc.xmi.by_id[id].name))
+                try:
+                    log_attr_2 = xmi_doc.xmi.by_id[id].name
+                except KeyError as e:
+                    log_attr_2 = id
+                    print("WARNING: id %s not found" % id)
+                    pass
+                print("WARNING: for %s entity %s not emitted" % (item.name, log_attr_2))
                 continue
             
             for a in item.children:                

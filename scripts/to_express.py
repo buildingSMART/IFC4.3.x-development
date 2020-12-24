@@ -1,7 +1,10 @@
 import sys
+import logging
 
 import express
 from xmi_document import xmi_document
+
+logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
 
 # The order in which definitions are to appear in the Express schema
 EXPRESS_ORDER=("TYPE", "ENUM", "SELECT", "ENTITY", "FUNCTION", "RULE")

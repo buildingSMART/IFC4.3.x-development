@@ -98,4 +98,4 @@ def compare(fn1, fn2, m1, m2):
 with open(output, "w") as f:
     f.write(tabulate.tabulate(list(
         [format(x) for x in tup] for tup in compare(fn1, fn2, *map(express_parser.parse, (fn1, fn2)))
-    ), headers=["Name", fn1, fn2], tablefmt="github"))
+    ), headers=["Name", os.path.basename(fn1), os.path.basename(fn2)], tablefmt="github"))

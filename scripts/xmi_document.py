@@ -5,12 +5,14 @@
 # @todo: schema namespace different in constraint expression
 
 # CONFIGURATION
+"""
 included_packages = set((
     "IFC 4.2 schema (13.11.2019)", 
     "Common Schema", 
     "IFC Ports and Waterways", 
     "IFC Road", 
     "IFC Rail - PSM"))
+"""
     
 # currently not used
 express_excluded_stereotypes = set((
@@ -138,11 +140,12 @@ class xmi_document:
         self.extract_order()
                 
         # Assert that we indeed have all `included_packages` in the UML
-        packagenames_from_uml = set(map(operator.attrgetter('name'), self.xmi.by_tag_and_type["packagedElement"]["uml:Package"]))
-        assert len(included_packages - packagenames_from_uml) == 0
+        # packagenames_from_uml = set(map(operator.attrgetter('name'), self.xmi.by_tag_and_type["packagedElement"]["uml:Package"]))
+        # assert len(included_packages - packagenames_from_uml) == 0
         
     def skip_by_package(self, element):
-        return not (set(get_path(self.xmi.by_id[element.idref])) & included_packages)
+        return False
+        # return not (set(get_path(self.xmi.by_id[element.idref])) & included_packages)
         
     def extract_connectors(self):
         # Extract some data from the connectors for use later on
@@ -193,7 +196,11 @@ class xmi_document:
                 logging.warning("encountered exception `%s' on %s", e, assoc)
                 continue
             t1, t2 = map(lambda c: (c|"type").idref, (c1, c2))
-            tv1, tv2 = map(lambda t: self.xmi.by_id[t].name, (t1, t2))
+            try:
+                tv1, tv2 = map(lambda t: self.xmi.by_id[t].name, (t1, t2))
+            except KeyError as e:
+                logging.warning("encountered exception `%s' on %s", e, assoc)
+                continue
             cv1, cv2 = map(operator.attrgetter('name'), (c1, c2))
             self.assocations[tv1].append(assocation_data(c2, self.xmi.by_id[t2], c1, assoc))
             self.assocations[tv2].append(assocation_data(c1, self.xmi.by_id[t1], c2, assoc))
@@ -329,8 +336,12 @@ class xmi_document:
                     children = list(map(operator.itemgetter(1), sorted(map(lambda a: (try_get_order(a), (a.name.split('.')[1], a)), nodes))))
                     values = [a for a, b in children]
                 else:
-                    def get_element(id): return [n for n in self.xmi.by_tag_and_type['element']['uml:Class'] if n.idref==id][0]
-                    elems = list(map(get_element, ids))
+                    def get_element(id): 
+                        ns = [n for n in self.xmi.by_tag_and_type['element']['uml:Class'] if n.idref==id]
+                        if ns: return ns[0]
+                        else:
+                            print("Warning, no uml:Class element for %s" % id)
+                    elems = list(filter(None, map(get_element, ids)))
                     def get_stereotype(elem): return (elem/"properties")[0].stereotype if (elem/"properties") else None
                     stereotypes = list(map(get_stereotype, elems))
                     # pelems = [self.xmi.by_id[n.idref] for n in elems]
@@ -499,7 +510,11 @@ class xmi_document:
                             continue
                         
                     if is_derived:
-                        derived.append("\t%s : %s;" % (n, unescape((la|"Constraint").notes)))
+                        derive_def = unescape((la|"Constraint").notes)
+                        if derive_def.startswith("%s : " % n):
+                            logging.warning("Derived attribute definition for %s contains attribute name: %s", n, derive_def)
+                            derive_def = derive_def[len(n) + 3:]
+                        derived.append("\t%s : %s;" % (n, derive_def))
                         children.append((n, la))
                         continue
                     attribute_names.add(n)
@@ -517,10 +532,21 @@ class xmi_document:
                     
                     children.append((n, la))
                 
+                def trailing_semi_fix(s):
+                    if s.endswith(';'):
+                        logging.warning("Definition '%s' ends in semicolon", s)
+                        return s[:-1]
+                    else:
+                        return s
+                    
                 cs = sorted(c/("constraint"), key=lambda cc: float_international(cc.weight))
-                constraints = map(lambda cc: (cc.type, "\t%s : %s;" % tuple(map(unescape, map(functools.partial(getattr, cc), ("name", "description"))))), cs)
+                constraints_type_name_def = map(lambda cc: ((cc.type,) + tuple(map(trailing_semi_fix, map(unescape, map(functools.partial(getattr, cc), ("name", "description")))))), cs)
                 constraints_by_type = defaultdict(list)
-                for ct, cc in constraints:
+                for ct, cname, cdef in constraints_type_name_def:
+                    if cdef.startswith("%s : " % cname):
+                        logging.warning("Where clause for %s contains attribute name: %s", cname, cdef)
+                        cdef = cdef[len(cname) + 3:]
+                    cc = "\t%s : %s;" % (cname, cdef)
                     constraints_by_type[ct].append(fix_schema_name(cc))
 
                 attributes = map(operator.itemgetter(1), sorted(attributes))

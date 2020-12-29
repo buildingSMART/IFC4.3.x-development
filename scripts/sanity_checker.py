@@ -1,5 +1,6 @@
 import os
 import sys
+import time
 import itertools
 
 import lark
@@ -26,7 +27,7 @@ class issue:
         parts = [p for p in parts if p]
         parts = [(x if x == "WORD" else ('"%s"' % x)) for x in parts]
         
-        self.grammar = lark.Lark("start: %s\n%%import common.WORD\n" % " ".join(parts))
+        self.grammar = lark.Lark("start: %s\n%%import common.WORD\n%%ignore \" \"\n" % " ".join(parts))
         
     def __hash__(self):
         return hash(self.data)
@@ -39,10 +40,28 @@ class issue:
         print(self.format % self.data[1:])
         print("="*len(self.format % self.data[1:]))
         print(self.body)
-        return g.create_issue(self.format % self.data[1:], body=self.body)
+        gh_handle = r.create_issue(self.format % self.data[1:], body=self.body)
+        
+        # If you're making a large number of POST, PATCH,
+        # PUT, or DELETE requestsfor a single user or client
+        # ID, wait at least one second between each request.
+        # https://docs.github.com/en/free-pro-team@latest/rest/guides/best-practices-for-integrators
+        
+        time.sleep(1.0)
+        
+        # @todo
+        # Requests that create content which triggers notifications,
+        # such as issues, comments and pull requests, may be further
+        # limited and will not include a Retry-After header in the
+        # response. Please create this content at a reasonable pace
+        # to avoid further limiting.
+        # https://docs.github.com/en/free-pro-team@latest/rest/guides/best-practices-for-integrators
+        
+        return gh_handle
     
     def parse(self, issue):
         self.data = (type(self).__name__,) + tuple(map(str, self.grammar.parse(issue.title).children))
+        self.body = issue.body
         
 
 class missing_documentation_for_attribute(issue):
@@ -54,13 +73,16 @@ class missing_documentation_for_entity(issue):
 issue_templates = [missing_documentation_for_entity, missing_documentation_for_attribute]
 
 def parse_issue(i):
+    exceptions = []
     for t in issue_templates:
         try:
             x = t()
             x.parse(i)
             return x
         except lark.exceptions.LarkError as e:
-            return None
+            exceptions.append(str(e))
+    print("Unable to parse issue")
+    for e in exceptions: print(e)
 
 
 issues = list(r.get_issues(state='all'))

@@ -31,7 +31,10 @@ included_statuses = set((
     "deprecated", 
     "approved", 
     "candidate"))
+    
+REPO_URL = "https://github.com/buildingSMART/IFC4.3.x-development/edit/master/"
 
+import os
 import re
 import sys
 import html
@@ -45,7 +48,7 @@ import xmi
 import express
 
 import logging
-logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
+logging.basicConfig(level=logging.WARNING, stream=sys.stdout)
 
 # @todo schema name is hardcoded and not derived from the XMI package name for now
 SCHEMA_NAME = "IFC4X3_RC1"
@@ -98,6 +101,12 @@ def remove_linebreak_before_semi(s):
     return '\n'.join(lines)
     
 
+class missing_markdown:
+    def __init__(self, reason): self.reason = reason
+    def __bool__(self): return False
+    def __repr__(self): return self.reason
+        
+        
 class xmi_item:
     id = None
     type = None
@@ -106,14 +115,29 @@ class xmi_item:
     node = None
     children = None
     stereotype = None
+    document = None
+    parent = None
     
-    def __init__(self, type, name, definition, node, children = None, stereotype = None, **kwargs):
+    def __init__(self, type, name, definition, node, children = None, stereotype = None, document = None, parent = None, **kwargs):
         self.type, self.name, self.definition, self.node, self.children = type, name.strip(), definition, node, children or []
-        self.children = [xmi_item(None, a, None, b, None) for a, b in self.children]        
+        self.children = [xmi_item(None, a, None, b, None, parent=self, document=document) for a, b in self.children]        
         self.stereotype = stereotype
         self.meta = kwargs
+        self.document = document
+        self.parent = parent
         if self.node:
             self.id = self.node.id or self.node.idref
+            
+    def _mdtype(self):
+        return {
+            "PT"    : "Enumerations" ,
+            "PSET"  : "PropertySets" ,
+            "TYPE"  : "UNKNOWN"      ,
+            "PENUM" : "Enumerations" ,
+            "SELECT": "Selects"      ,
+            "ENUM"  : "Enumerations" ,
+            "ENTITY": "Entities"     ,
+        }[self.parent.type if self.parent else self.type]
         
     def __iter__(self):
         return iter(self.children)
@@ -127,13 +151,131 @@ class xmi_item:
                 ps = (self.node/"properties")
                 if ps:
                     return ps[0].documentation
+                    
+    def _get_markdown(self, definition=False):
+        # @note we use two markdown parsers, as the first does not
+        # have an intermediate parse tree, but is the defacto standard
+        # for conversion to HTML.
+        
+        # pip install markdown-it-py
+        from markdown_it import MarkdownIt
+        from markdown_it.renderer import RendererHTML
+        from markdown_it.presets.default import make as make_default
+        from markdown_it.utils import AttrDict
+        
+        options = AttrDict(make_default()['options'])
+        
+        if self.node:
+            is_sub = self.parent is not None
+            package = self.parent.path[-2] if is_sub else self.path[-2]
+            fn = self.parent.document.filename if is_sub else self.document.filename
+            repo_root = os.path.join(os.path.abspath(os.path.dirname(fn)), '..')
+            md_root = os.path.join(repo_root, 'docs', 'schemas')
+            for category in os.listdir(md_root):
+                for module in os.listdir(os.path.join(md_root, category)):
+                    if module == package:
+                        parser = MarkdownIt()
+                        renderer = RendererHTML()
+                        
+                        md_fn = os.path.join(md_root, category, module, self.mdtype, (self.parent.name if is_sub else self.name) + ".md")
+                        p = os.path.relpath(md_fn, start=repo_root).replace(os.sep, '/')
+                                                
+                        if not os.path.exists(md_fn):
+                            return missing_markdown(REPO_URL + p + " does not exist")
+                        
+                        tokens = parser.parse(open(md_fn, encoding='utf-8').read())
+                        renders = [renderer.render([t], options, {}) for t in tokens]
+                        
+                        tok_renders = [(t.type, s, t.as_dict().get('map'), t.tag) for t, s in zip(tokens, renders)]
+                        tok_renders_pairs = list(zip(tok_renders[:-1],tok_renders[1:]))
+                        
+                        if is_sub:                          
+                            try:
+                                attribute_heading_idx, tag = [(i,d[0][3]) for i,d in enumerate(tok_renders_pairs) if d[0][0] == 'heading_open' and d[1][1] == 'Attributes'][0]
+                            except IndexError as e:
+                                return missing_markdown(REPO_URL + p + " has no 'Attributes' heading")
+                                
+                            try:
+                                next_same_level_heading = [i for i,d in enumerate(tok_renders_pairs) if i > attribute_heading_idx and d[0][0] == 'heading_open' and d[0][3] == tag][0]                           
+                            except IndexError as e:
+                                next_same_level_heading = 100000
+                            
+                            has_heading = False
+                            try:
+                                heading_idx = [i for i,d in enumerate(tok_renders_pairs) if d[0][0] == 'heading_open' and d[1][1] == self.name and i > attribute_heading_idx and i < next_same_level_heading][0]
+                                has_heading = True
+                                
+                                try:
+                                    next_heading = [i for i,d in enumerate(tok_renders_pairs) if i > heading_idx and d[0][0] == 'heading_open'][0]                           
+                                except IndexError as e:
+                                    next_heading = 100000
+                                
+                                first_paragraph = [d for i, d in enumerate(tok_renders_pairs) if d[0][0] == 'paragraph_open' and i > heading_idx and i < next_heading][0]
+                                line_begin = first_paragraph[0][2][0]
+                            except IndexError as e:
+                                if has_heading:
+                                    lno = tok_renders_pairs[heading_idx][0][2][0] + 1
+                                    return missing_markdown(REPO_URL + p + "#L%d has no content" % lno)
+                                else:
+                                    return missing_markdown(REPO_URL + p + " has no '%s' heading" % self.name)
+                            
+                            try:
+                                next_heading = [d for i,d in enumerate(tok_renders_pairs) if d[0][0] == 'heading_open' and i > heading_idx][0]
+                                line_end = next_heading[0][2][0]
+                            except IndexError as e:
+                                next_same_level_heading = 100000
+                                line_end = 100000
+                        else:
+                        
+                            try:
+                                first_paragraph = [d for d in tok_renders_pairs if d[0][0] == 'paragraph_open'][0]
+                            except IndexError as e:
+                                return missing_markdown(REPO_URL + p + " has no content")
+                                
+                            line_begin = first_paragraph[0][2][0]
+                            
+                            try:
+                                attribute_heading = [d for d in tok_renders_pairs if d[0][0] == 'heading_open' and d[1][1] == 'Attributes'][0]
+                                line_end = first_paragraph[0][2][1] if definition else attribute_heading[0][2][0]
+                            except IndexError as e:
+                                line_end = 100000
+                        
+                        return "\n".join(list(open(md_fn, encoding='utf-8'))[line_begin:line_end])
+                        
+    def _get_markdown_definition(self):
+        return self._get_markdown(definition=True)
+        
+    def _get_markdown_definition_html(self):
+        # pip install Markdown
+        import markdown
+        
+        md = self._get_markdown(definition=True)
+        
+        if not md: return md
+        
+        html = markdown.markdown(
+            md,
+            extensions=['tables', 'fenced_code']
+        )
+        
+        return html
+                        
+    def _get_path(self):
+        if self.node:
+            return get_path(self.document.xmi.by_id[self.id])
         
     documentation = property(_get_documentation)
+    markdown = property(_get_markdown)
+    markdown_definition = property(_get_markdown_definition)
+    markdown_definition_html = property(_get_markdown_definition_html)
+    path = property(_get_path)
+    mdtype = property(_mdtype)
     
 class xmi_document:
 
     def __init__(self, fn):    
     
+        self.filename = fn
         self.xmi = xmi.doc(fn)
         self.extract_connectors()
         self.extract_associations()
@@ -240,7 +382,7 @@ class xmi_document:
             
             if stereotype in {"express function", "express rule"}:
                 
-                yield xmi_item(stereotype.split(" ")[1].upper(), unescape((c|"behaviour").value).split(" ")[1], fix_schema_name(unescape((c|"behaviour").value)) + ";", c)
+                yield xmi_item(stereotype.split(" ")[1].upper(), unescape((c|"behaviour").value).split(" ")[1], fix_schema_name(unescape((c|"behaviour").value)) + ";", c, document=self)
                 
             elif stereotype == 'predefinedtype':
                 
@@ -248,7 +390,7 @@ class xmi_document:
                 continue
                 
                 # NB: can have multiple dependency relationships...
-                # yield xmi_item("PT", c.name, "", c, [], container=((c|"links")|"Dependency").start)
+                # yield xmi_item("PT", c.name, "", c, [], container=((c|"links")|"Dependency").start, document=self)
                 
             elif stereotype == "propertyset" or stereotype == "quantityset" or (stereotype is not None and (stereotype.startswith("pset_") or stereotype.startswith("qto_"))):
                 
@@ -262,7 +404,7 @@ class xmi_document:
 
                 yield xmi_item("PSET", c.name, "", c, [
                     (x.name, x) for x in c/("attribute")
-                ], refs=refs)
+                ], document=self, refs=refs)
                 
             elif c.xmi_type == "uml:DataType":
             
@@ -282,7 +424,7 @@ class xmi_document:
                 cs = sorted(c/"constraint", key=lambda cc: float_international(cc.weight))
                 constraints = map(lambda cc: "\t%s : %s;" % tuple(map(unescape, map(functools.partial(getattr, cc), ("name", "description")))), cs)            
                 
-                yield xmi_item("TYPE", c.name, express.format_simple_type(c.name, super, constraints, super_verbatim=super_verbatim), c)
+                yield xmi_item("TYPE", c.name, express.format_simple_type(c.name, super, constraints, super_verbatim=super_verbatim), c, document=self)
                 
             elif c.xmi_type == "uml:Enumeration":
             
@@ -290,12 +432,12 @@ class xmi_document:
                 values = [(x.name, get_attribute(x)) for x in self.xmi.by_id[c.xmi_idref]/"ownedLiteral"]
                 yield xmi_item(
                     "PENUM" if stereotype == "penumtype" or c.name.lower().startswith("penum_") else "ENUM", # <------- nb 
-                    c.name, express.format_type(c.name, "ENUMERATION OF", [a for a, b in values]), c, values)
+                    c.name, express.format_type(c.name, "ENUMERATION OF", [a for a, b in values]), c, values, document=self)
             
             elif stereotype == "express select" or stereotype == "select" or c.xmi_type == "uml:Interface":
                 
                 values = sorted(filter(lambda s: s != c.name, map(lambda s: self.xmi.by_id[s.start].name, c/"Substitution")))
-                yield xmi_item("SELECT", c.name, express.format_type(c.name, "SELECT", values), c)
+                yield xmi_item("SELECT", c.name, express.format_type(c.name, "SELECT", values), c, document=self)
                 
             elif stereotype == "enumeration":
                                    
@@ -303,7 +445,7 @@ class xmi_document:
                     continue
                         
                 values = map(operator.itemgetter(1), sorted(map(lambda a: (try_get_order(a), (a.name, a)), c/("attribute"))))
-                yield xmi_item("ENUM", c.name, express.format_type(c.name, "ENUMERATION OF", [a for a, b in values]), c, values)
+                yield xmi_item("ENUM", c.name, express.format_type(c.name, "ENUMERATION OF", [a for a, b in values]), c, values, document=self)
                 
             elif stereotype == 'templatecontainer':
 
@@ -315,7 +457,7 @@ class xmi_document:
                     values.insert(0, ("NOTDEFINED", None))
                 
                 # @todo ExpressOrdering on <element>
-                yield xmi_item("ENUM", c.name, express.format_type(c.name, "ENUMERATION OF", [a for a, b in values]), c, values)
+                yield xmi_item("ENUM", c.name, express.format_type(c.name, "ENUMERATION OF", [a for a, b in values]), c, values, document=self)
                 
             elif stereotype == 'ptcontainer':
             
@@ -359,7 +501,7 @@ class xmi_document:
                 if old_c:
                     c = old_c
                 
-                yield xmi_item("ENUM", c.name, express.format_type(c.name, "ENUMERATION OF", values), c, children, stereotype="PREDEFINED_TYPE")
+                yield xmi_item("ENUM", c.name, express.format_type(c.name, "ENUMERATION OF", values), c, children, document=self, stereotype="PREDEFINED_TYPE")
                 
             elif stereotype is not None and (stereotype.startswith("pset") or stereotype == "$"):
                 # Don't serialize psets to EXPRESS
@@ -559,5 +701,6 @@ class xmi_document:
                         constraints_by_type["EXPRESS_UNIQUE"], subtypes, 
                         supertypes, is_abstract
                     ), c, children,
+                    document=self,
                     supertypes=subtypes
                 )

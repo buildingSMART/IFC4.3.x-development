@@ -24,6 +24,7 @@ for ffn in glob.glob(relative_path("..", "schemas", "*.xml")):
             subprocess.check_call([sys.executable, "-m", "express_diff", os.path.join(reference_dir, "IFC4x3_RC2.exp"), relative_path("..", "output", fn[:-4] + "." + ext), relative_path("..", "output", fn[:-4] + "." + ext + ".md")], cwd=relative_path("."))
         elif script == "to_bsdd":
             subprocess.check_call([sys.executable, relative_path("validate_bsdd.py"), relative_path("..", "output", fn[:-4] + "." + ext)])
+    subprocess.check_call([sys.executable, relative_path("sanity_checker.py"), ffn])
 
     # subprocess.check_call([sys.executable, relative_path("process_schema.py"), ffn])
     

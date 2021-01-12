@@ -10,7 +10,7 @@ logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
 EXPRESS_ORDER=("TYPE", "ENUM", "SELECT", "ENTITY", "FUNCTION", "RULE")
 
 # @todo schema name is hardcoded and not derived from the XMI package name for now
-SCHEMA_NAME = "IFC4X3_RC1"
+SCHEMA_NAME = "IFC4X3_RC2"
 
 try:
     fn = sys.argv[1]

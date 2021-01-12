@@ -143,5 +143,5 @@ for gh_handle, state in issue_changes:
     pause()
     
 for new_issue in new_issues:
-    new_issue.construct(sleep=dt)
+    new_issue.construct()
     pause()

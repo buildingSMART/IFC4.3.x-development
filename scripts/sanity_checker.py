@@ -23,11 +23,11 @@ class issue:
         
         parts = self.format.split("%s")
         parts = [p.strip() for p in parts]
-        parts = list(itertools.chain(*zip(parts, ["WORD"] * len(parts))))[:-1]
+        parts = list(itertools.chain(*zip(parts, ["ref"] * len(parts))))[:-1]
         parts = [p for p in parts if p]
-        parts = [(x if x == "WORD" else ('"%s"' % x)) for x in parts]
+        parts = [(x if x == "ref" else ('"%s"' % x)) for x in parts]
         
-        self.grammar = lark.Lark("start: %s\n%%import common.WORD\n%%ignore \" \"\n" % " ".join(parts))
+        self.grammar = lark.Lark('start: %s\nref: /[A-Za-z0-9_]+/\n%%ignore " "\n' % " ".join(parts))
         
     def __hash__(self):
         return hash(self.data)
@@ -40,28 +40,14 @@ class issue:
         print(self.format % self.data[1:])
         print("="*len(self.format % self.data[1:]))
         print(self.body)
-        gh_handle = r.create_issue(self.format % self.data[1:], body=self.body)
-        
-        # If you're making a large number of POST, PATCH,
-        # PUT, or DELETE requestsfor a single user or client
-        # ID, wait at least one second between each request.
-        # https://docs.github.com/en/free-pro-team@latest/rest/guides/best-practices-for-integrators
-        
-        time.sleep(sleep)
-        
-        # @todo
-        # Requests that create content which triggers notifications,
-        # such as issues, comments and pull requests, may be further
-        # limited and will not include a Retry-After header in the
-        # response. Please create this content at a reasonable pace
-        # to avoid further limiting.
-        # https://docs.github.com/en/free-pro-team@latest/rest/guides/best-practices-for-integrators
-        
-        return gh_handle
+        return r.create_issue(self.format % self.data[1:], body=self.body)
     
     def parse(self, issue):
-        self.data = (type(self).__name__,) + tuple(map(str, self.grammar.parse(issue.title).children))
+        self.data = (type(self).__name__,) + tuple(map(lambda t: str(t.children[0]), self.grammar.parse(issue.title).children))
         self.body = issue.body
+        
+    def __repr__(self):
+        return "issue(%s)" % repr(self.format % tuple("<%s>" % s for s in self.data[1:]))
         
 
 class missing_documentation_for_attribute(issue):
@@ -117,14 +103,45 @@ def generate_issues():
             
 discovered_issues = set(generate_issues())
 
+issue_changes = []
+
 for old_issue, gh_handle in issue_mapping.items():
     open_on_gh = gh_handle.state == 'open'
     issue_exists = old_issue in discovered_issues
-    if open_on_gh != issue_exists:
-        gh_handle.edit(state='open' if issue_exists else 'closed')
-    
+    if open_on_gh != issue_exists:        
+        issue_changes.append((gh_handle, ('open' if issue_exists else 'closed')))
+
 new_issues = list(discovered_issues - issue_mapping.keys())
+n_issue_changes = len(new_issues) + len(issue_changes)
+
+print("New issues", len(new_issues))
+print("Changed issues", len(issue_changes))
+print("Changing", n_issue_changes, "issues")
+
 total_runtime = 20 * 60
-dt = total_runtime / len(new_issues)
+sleep_time = total_runtime / n_issue_changes
+
+def pause():
+    # If you're making a large number of POST, PATCH,
+    # PUT, or DELETE requestsfor a single user or client
+    # ID, wait at least one second between each request.
+    # https://docs.github.com/en/free-pro-team@latest/rest/guides/best-practices-for-integrators
+    
+    # Requests that create content which triggers notifications,
+    # such as issues, comments and pull requests, may be further
+    # limited and will not include a Retry-After header in the
+    # response. Please create this content at a reasonable pace
+    # to avoid further limiting.
+    # https://docs.github.com/en/free-pro-team@latest/rest/guides/best-practices-for-integrators
+    
+    # We wait for the max amount of time to have the issues created in 20mins.
+    time.sleep(sleep_time)
+    
+for gh_handle, state in issue_changes:
+    print("Changing", gh_handle, "->", state)
+    gh_handle.edit(state=state)
+    pause()
+    
 for new_issue in new_issues:
     new_issue.construct(sleep=dt)
+    pause()

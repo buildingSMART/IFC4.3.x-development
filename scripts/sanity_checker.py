@@ -35,7 +35,7 @@ class issue:
     def __eq__(self, other):
         return self.data == other.data
         
-    def construct(self):
+    def construct(self, sleep=1.0):
         print("Creating issue:")
         print(self.format % self.data[1:])
         print("="*len(self.format % self.data[1:]))
@@ -47,7 +47,7 @@ class issue:
         # ID, wait at least one second between each request.
         # https://docs.github.com/en/free-pro-team@latest/rest/guides/best-practices-for-integrators
         
-        time.sleep(1.0)
+        time.sleep(sleep)
         
         # @todo
         # Requests that create content which triggers notifications,
@@ -123,5 +123,8 @@ for old_issue, gh_handle in issue_mapping.items():
     if open_on_gh != issue_exists:
         gh_handle.edit(state='open' if issue_exists else 'closed')
     
-for new_issue in discovered_issues - issue_mapping.keys():
-    new_issue.construct()
+new_issues = list(discovered_issues - issue_mapping.keys())
+total_runtime = 20 * 60
+dt = total_runtime / len(new_issues)
+for new_issue in new_issues:
+    new_issue.construct(sleep=dt)

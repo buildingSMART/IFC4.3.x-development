@@ -118,6 +118,10 @@ print("New issues", len(new_issues))
 print("Changed issues", len(issue_changes))
 print("Changing", n_issue_changes, "issues")
 
+if n_issue_changes == 0:
+    print("No changes in issue state, exiting")
+    exit(0)
+
 total_runtime = 20 * 60
 sleep_time = total_runtime / n_issue_changes
 

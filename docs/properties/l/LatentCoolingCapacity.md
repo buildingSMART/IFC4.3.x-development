@@ -1,0 +1,4 @@
+LatentCoolingCapacity
+=====================
+
+Latent cooling capacity.

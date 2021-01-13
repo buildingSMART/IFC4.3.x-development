@@ -1,0 +1,4 @@
+NominalLatentCapacity
+=====================
+
+Nominal latent capacity.

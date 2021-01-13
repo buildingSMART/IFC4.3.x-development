@@ -1,0 +1,4 @@
+FanEfficiency
+=============
+
+Fan mechanical efficiency.

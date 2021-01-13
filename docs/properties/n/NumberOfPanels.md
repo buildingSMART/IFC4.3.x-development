@@ -1,0 +1,4 @@
+NumberOfPanels
+==============
+
+Number of panels.

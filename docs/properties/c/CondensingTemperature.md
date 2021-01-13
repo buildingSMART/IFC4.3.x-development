@@ -1,0 +1,4 @@
+CondensingTemperature
+=====================
+
+Refrigerant condensing temperature.

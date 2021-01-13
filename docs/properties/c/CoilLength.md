@@ -1,0 +1,4 @@
+CoilLength
+==========
+
+Length of coil.

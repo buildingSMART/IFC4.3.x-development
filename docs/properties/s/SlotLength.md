@@ -1,0 +1,4 @@
+SlotLength
+==========
+
+Slot length.

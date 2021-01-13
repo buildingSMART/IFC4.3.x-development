@@ -1,0 +1,4 @@
+FanPowerRate
+============
+
+Fan power consumption.

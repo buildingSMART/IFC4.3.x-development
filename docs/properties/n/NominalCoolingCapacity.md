@@ -1,0 +1,4 @@
+NominalCoolingCapacity
+======================
+
+Nominal cooling capacity.

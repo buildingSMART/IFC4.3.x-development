@@ -1,0 +1,4 @@
+NominalSensibleCapacity
+=======================
+
+Nominal sensible capacity.

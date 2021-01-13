@@ -1,0 +1,4 @@
+CoilWidth
+=========
+
+Width of coil.

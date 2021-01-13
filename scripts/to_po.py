@@ -7,13 +7,9 @@ import operator
 from xmi_document import xmi_document
 
 try:
-    fn = sys.argv[1]
-    try:
-        OUTPUT = open(sys.argv[2], "w", encoding='utf-8')
-    except IndexError as e:
-        OUTPUT = sys.stdout
+    fn, output_dir = sys.argv[1:]
 except:
-    print("Usage: python to_po.py <schema.xml>", file=sys.stderr)
+    print("Usage: python to_po.py <schema.xml> <output_dir>", file=sys.stderr)
     exit()
 
 xmi_doc = xmi_document(fn)
@@ -37,12 +33,12 @@ def generate_definitions():
     for item in xmi_doc:
 
         loc = xmi_doc.xmi.locate(item.node) if item.node else (None, None)
-        yield loc, (valid_key(item.name),), (item.documentation if item.node else item.name)
+        yield item.package, loc, (valid_key(item.name),), (item.documentation if item.node else item.name)
         
         if item.type in {"ENUM", "ENTITY", "PSET", "PENUM"}:
             for subitem in item:
                 loc = xmi_doc.xmi.locate(subitem.node) if subitem.node else (None, None)
-                yield loc, (valid_key(item.name), valid_key(subitem.name)), ((subitem.documentation or subitem.name) if subitem.node else subitem.name)
+                yield item.package, loc, (valid_key(item.name), valid_key(subitem.name)), ((subitem.documentation or subitem.name) if subitem.node else subitem.name)
         
 def quote(s):
     return '"%s"' % s
@@ -54,30 +50,47 @@ def annotate(s):
     return re.sub(all_names, lambda match: "[[%s]]" % match.group(0), s)
     
     
-print("""# Industry Foundation Classes IFC.
-# Copyright (C) 2020 buildingSMART
-#
-#, fuzzy
-msgid ""
-msgstr ""
-"Project-Id-Version: PACKAGE VERSION\\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\\n"
-"POT-Creation-Date: 2020-09-25 10:09+0200\\n"
-"X-Crowdin-SourceKey: msgstr\\n"
-"Language-Team: buildingSMART community\\n"
-""", file=OUTPUT)
+class pot_file:
+    def __init__(self, f):
+        self.f = f
+    
+        print("""# Industry Foundation Classes IFC.
+        # Copyright (C) 2020 buildingSMART
+        #
+        #, fuzzy
+        msgid ""
+        msgstr ""
+        "Project-Id-Version: PACKAGE VERSION\\n"
+        "Report-Msgid-Bugs-To: http://bugs.kde.org\\n"
+        "POT-Creation-Date: 2020-09-25 10:09+0200\\n"
+        "X-Crowdin-SourceKey: msgstr\\n"
+        "Language-Team: buildingSMART community\\n"
+        """, file=self.f)
+        
+    def __getattr__(self, k):
+        return getattr(self.f, k)
+        
+class pot_dict(dict):
+    def __missing__(self, key):
+        v = self[key] = pot_file(open(os.path.join(output_dir, key + ".pot"), "w", encoding="utf-8"))
+        return v
 
-for i, ((ln, col), p, d) in enumerate(generate_definitions()):
+        
+po_files = pot_dict()       
+
+for i, (package, (ln, col), p, d) in enumerate(generate_definitions()):
+    po_file = po_files[package]
+
     if ln:
-        print('#:', bfn, ':', ln, sep='', file=OUTPUT)
+        print('#:', bfn, ':', ln, sep='', file=po_file)
     
-    print("msgid", quote("_".join(p)),  file=OUTPUT)
-    print("msgstr", format(p[-1]),  file=OUTPUT)
-    print(file=OUTPUT)
+    print("msgid", quote("_".join(p)),  file=po_file)
+    print("msgstr", format(p[-1]),  file=po_file)
+    print(file=po_file)
     
-    print("msgid", quote("_".join(p + ("DEFINITION",))),  file=OUTPUT)
-    print("msgstr", annotate(format(strip_html(d or ''))),  file=OUTPUT)
-    print(file=OUTPUT)
+    print("msgid", quote("_".join(p + ("DEFINITION",))),  file=po_file)
+    print("msgstr", annotate(format(strip_html(d or ''))),  file=po_file)
+    print(file=po_file)
     
     if (i % 1000) == 0 and i:
         print(i, "items written", file=sys.stderr)

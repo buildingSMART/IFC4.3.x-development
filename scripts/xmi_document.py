@@ -152,6 +152,10 @@ class xmi_item:
                 if ps:
                     return ps[0].documentation
                     
+    def _get_package(self):
+        is_sub = self.parent is not None
+        return self.parent.path[-2] if is_sub else self.path[-2]
+                    
     def _get_markdown(self, definition=False):
         # @note we use two markdown parsers, as the first does not
         # have an intermediate parse tree, but is the defacto standard
@@ -167,13 +171,12 @@ class xmi_item:
         
         if self.node:
             is_sub = self.parent is not None
-            package = self.parent.path[-2] if is_sub else self.path[-2]
             fn = self.parent.document.filename if is_sub else self.document.filename
             repo_root = os.path.join(os.path.abspath(os.path.dirname(fn)), '..')
             md_root = os.path.join(repo_root, 'docs', 'schemas')
             for category in os.listdir(md_root):
                 for module in os.listdir(os.path.join(md_root, category)):
-                    if module == package:
+                    if module == self.package:
                         parser = MarkdownIt()
                         renderer = RendererHTML()
                         
@@ -269,6 +272,7 @@ class xmi_item:
     markdown_definition = property(_get_markdown_definition)
     markdown_definition_html = property(_get_markdown_definition_html)
     path = property(_get_path)
+    package = property(_get_package)
     mdtype = property(_mdtype)
     
 class xmi_document:

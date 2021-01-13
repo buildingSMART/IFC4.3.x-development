@@ -34,10 +34,10 @@ def compare(fn1, fn2, m1, m2):
     s1, s2 = m1.schema, m2.schema
     
     for nm in set(s1.keys) - set(s2.keys):
-        yield (nm, "", "not in '%s'" % fn2)
+        yield (nm, "", "not in '%s'" % os.path.basename(fn2))
         
     for nm in set(s2.keys) - set(s1.keys):
-        yield (nm, "not in '%s'" % fn1, "")
+        yield (nm, "not in '%s'" % os.path.basename(fn1), "")
         
     for x in 'simpletypes', 'selects', 'enumerations':
         d1, d2 = map(operator.attrgetter(x), (s1, s2))

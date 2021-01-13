@@ -51,7 +51,7 @@ import logging
 logging.basicConfig(level=logging.WARNING, stream=sys.stdout)
 
 # @todo schema name is hardcoded and not derived from the XMI package name for now
-SCHEMA_NAME = "IFC4X3_RC1"
+SCHEMA_NAME = "IFC4X3_RC2"
 
 def unescape(s):
     # @todo this is bizarre encoding, what happened here?

@@ -1,0 +1,4 @@
+TouchScreen
+===========
+
+Indicates touchscreen support.

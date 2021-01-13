@@ -1,0 +1,4 @@
+CloseOffRating
+==============
+
+Close off rating.

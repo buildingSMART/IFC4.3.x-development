@@ -1,0 +1,4 @@
+FrictionHeatGain
+================
+
+Friction heat gain.

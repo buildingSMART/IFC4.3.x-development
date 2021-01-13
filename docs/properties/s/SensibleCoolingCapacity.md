@@ -1,0 +1,4 @@
+SensibleCoolingCapacity
+=======================
+
+Sensible cooling capacity.

@@ -1,0 +1,4 @@
+ShaftPowerRate
+==============
+
+Fan shaft power.

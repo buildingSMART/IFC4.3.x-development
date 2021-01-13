@@ -1,0 +1,4 @@
+SlotWidth
+=========
+
+Slot width.

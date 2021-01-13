@@ -1,0 +1,4 @@
+FanRotationSpeed
+================
+
+Fan rotation speed.

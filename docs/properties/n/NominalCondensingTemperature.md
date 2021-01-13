@@ -1,0 +1,4 @@
+NominalCondensingTemperature
+============================
+
+Chiller condensing temperature.

@@ -1,0 +1,4 @@
+DishwasherType
+==============
+
+Type of dishwasher.

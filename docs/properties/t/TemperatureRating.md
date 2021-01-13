@@ -1,0 +1,4 @@
+TemperatureRating
+=================
+
+Temperature rating.

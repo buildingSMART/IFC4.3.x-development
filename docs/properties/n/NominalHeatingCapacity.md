@@ -1,0 +1,4 @@
+NominalHeatingCapacity
+======================
+
+Nominal heating capacity.

@@ -1,0 +1,4 @@
+NumberOfSlots
+=============
+
+Number of slots.

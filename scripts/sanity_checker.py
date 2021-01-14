@@ -123,7 +123,8 @@ if n_issue_changes == 0:
     exit(0)
 
 total_runtime = 20 * 60
-sleep_time = total_runtime / n_issue_changes
+# clamp sleep time to max 20 secs
+sleep_time = min(20, total_runtime / n_issue_changes)
 
 def pause():
     # If you're making a large number of POST, PATCH,

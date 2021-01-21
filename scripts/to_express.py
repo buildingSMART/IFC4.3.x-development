@@ -1,6 +1,8 @@
 import sys
 import logging
 
+from collections import defaultdict
+
 import express
 from xmi_document import xmi_document
 
@@ -40,10 +42,27 @@ emitted = set()
 
 xdoc = xmi_document(fn)
 
-for itm in sorted((x for x in xdoc if x.type in EXPRESS_ORDER), key=sort_key):
+definitions = sorted((x for x in xdoc if x.type in EXPRESS_ORDER), key=sort_key)
+
+supertypes = {}
+for x in definitions:
+    if x.type == "ENTITY":
+        supertypes[x.name] = x.definition.supertype
+        
+def is_subclass_of(nm, supert):
+    print(nm, supert)
+    return nm == supert or (supertypes.get(nm) and is_subclass_of(supertypes.get(nm), supert))
+
+
+for itm in definitions:
     if (itm.type, itm.name) in emitted:
         logging.warning("duplicate definition for %s %s", itm.type, itm.name)
         continue
+        
+    if is_subclass_of(itm.name, "IfcBuiltElement"):
+        clauses = dict(itm.definition.where_clauses)
+        # @todo
+        
     emitted.add((itm.type, itm.name))
     print(itm.definition, file=OUTPUT)
     print(file=OUTPUT)

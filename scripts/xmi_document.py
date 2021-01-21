@@ -91,7 +91,7 @@ where_pat = re.compile(r"'\w+\.(\w+(\.\w+)?)'")
 def fix_schema_name(s):
     def repl(x):
         return "'%s.%s'" % (SCHEMA_NAME, x.group(1))
-    return remove_linebreak_before_semi(re.sub(where_pat, repl, s))    
+    return remove_linebreak_before_semi(re.sub(where_pat, repl, s))
     
 def remove_linebreak_before_semi(s):
     lines = s.split('\n')
@@ -386,7 +386,13 @@ class xmi_document:
             
             if stereotype in {"express function", "express rule"}:
                 
-                yield xmi_item(stereotype.split(" ")[1].upper(), unescape((c|"behaviour").value).split(" ")[1], fix_schema_name(unescape((c|"behaviour").value)) + ";", c, document=self)
+                yield xmi_item(
+                    stereotype.split(" ")[1].upper(), 
+                    unescape((c|"behaviour").value).split(" ")[1], 
+                    fix_schema_name(unescape((c|"behaviour").value)) + ";", 
+                    c, 
+                    document=self
+                )
                 
             elif stereotype == 'predefinedtype':
                 
@@ -406,9 +412,15 @@ class xmi_document:
                     print("WARNING:", c.name, "has no associated class", file=sys.stderr)
                     continue
 
-                yield xmi_item("PSET", c.name, "", c, [
-                    (x.name, x) for x in c/("attribute")
-                ], document=self, refs=refs)
+                yield xmi_item(
+                    "PSET", 
+                    c.name, 
+                    "", 
+                    c, 
+                    [(x.name, x) for x in c/("attribute")],
+                    document=self, 
+                    refs=refs
+                )
                 
             elif c.xmi_type == "uml:DataType":
             
@@ -428,7 +440,7 @@ class xmi_document:
                 cs = sorted(c/"constraint", key=lambda cc: float_international(cc.weight))
                 constraints = map(lambda cc: "\t%s : %s;" % tuple(map(unescape, map(functools.partial(getattr, cc), ("name", "description")))), cs)            
                 
-                yield xmi_item("TYPE", c.name, express.format_simple_type(c.name, super, constraints, super_verbatim=super_verbatim), c, document=self)
+                yield xmi_item("TYPE", c.name, express.simple_type(c.name, super, constraints, super_verbatim=super_verbatim), c, document=self)
                 
             elif c.xmi_type == "uml:Enumeration":
             
@@ -436,12 +448,12 @@ class xmi_document:
                 values = [(x.name, get_attribute(x)) for x in self.xmi.by_id[c.xmi_idref]/"ownedLiteral"]
                 yield xmi_item(
                     "PENUM" if stereotype == "penumtype" or c.name.lower().startswith("penum_") else "ENUM", # <------- nb 
-                    c.name, express.format_type(c.name, "ENUMERATION OF", [a for a, b in values]), c, values, document=self)
+                    c.name, express.enumeration(c.name, [a for a, b in values]), c, values, document=self)
             
             elif stereotype == "express select" or stereotype == "select" or c.xmi_type == "uml:Interface":
                 
                 values = sorted(filter(lambda s: s != c.name, map(lambda s: self.xmi.by_id[s.start].name, c/"Substitution")))
-                yield xmi_item("SELECT", c.name, express.format_type(c.name, "SELECT", values), c, document=self)
+                yield xmi_item("SELECT", c.name, express.select(c.name, values), c, document=self)
                 
             elif stereotype == "enumeration":
                                    
@@ -449,7 +461,7 @@ class xmi_document:
                     continue
                         
                 values = map(operator.itemgetter(1), sorted(map(lambda a: (try_get_order(a), (a.name, a)), c/("attribute"))))
-                yield xmi_item("ENUM", c.name, express.format_type(c.name, "ENUMERATION OF", [a for a, b in values]), c, values, document=self)
+                yield xmi_item("ENUM", c.name, express.enumeration(c.name, [a for a, b in values]), c, values, document=self)
                 
             elif stereotype == 'templatecontainer':
 
@@ -461,7 +473,7 @@ class xmi_document:
                     values.insert(0, ("NOTDEFINED", None))
                 
                 # @todo ExpressOrdering on <element>
-                yield xmi_item("ENUM", c.name, express.format_type(c.name, "ENUMERATION OF", [a for a, b in values]), c, values, document=self)
+                yield xmi_item("ENUM", c.name, express.enumeration(c.name, [a for a, b in values]), c, values, document=self)
                 
             elif stereotype == 'ptcontainer':
             
@@ -505,7 +517,7 @@ class xmi_document:
                 if old_c:
                     c = old_c
                 
-                yield xmi_item("ENUM", c.name, express.format_type(c.name, "ENUMERATION OF", values), c, children, document=self, stereotype="PREDEFINED_TYPE")
+                yield xmi_item("ENUM", c.name, express.enumeration(c.name, values), c, children, document=self, stereotype="PREDEFINED_TYPE")
                 
             elif stereotype is not None and (stereotype.startswith("pset") or stereotype == "$"):
                 # Don't serialize psets to EXPRESS
@@ -692,19 +704,21 @@ class xmi_document:
                     if cdef.startswith("%s : " % cname):
                         logging.warning("Where clause for %s contains attribute name: %s", cname, cdef)
                         cdef = cdef[len(cname) + 3:]
-                    cc = "\t%s : %s;" % (cname, cdef)
-                    constraints_by_type[ct].append(fix_schema_name(cc))
+                    cc = (cname, fix_schema_name(cdef))
+                    constraints_by_type[ct].append(cc)
 
                 attributes = map(operator.itemgetter(1), sorted(attributes))
                 inverses = map(operator.itemgetter(1), sorted(inverses))
+                
+                express_entity = express.entity(c.name, attributes, 
+                    derived, inverses, constraints_by_type["EXPRESS_WHERE"], 
+                    constraints_by_type["EXPRESS_UNIQUE"], subtypes, 
+                    supertypes, is_abstract
+                )
                              
                 yield xmi_item(
                     "ENTITY", c.name, 
-                    express.format_entity(c.name, attributes, 
-                        derived, inverses, constraints_by_type["EXPRESS_WHERE"], 
-                        constraints_by_type["EXPRESS_UNIQUE"], subtypes, 
-                        supertypes, is_abstract
-                    ), c, children,
+                    express_entity, c, children,
                     document=self,
                     supertypes=subtypes
                 )

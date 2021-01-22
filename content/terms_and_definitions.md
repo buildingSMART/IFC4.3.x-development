@@ -1,0 +1,1 @@
+The page with terms and definitions is under development.

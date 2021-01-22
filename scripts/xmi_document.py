@@ -321,12 +321,16 @@ class xmi_document:
                     
                 inverse_order = int(st.tags().get("ExpressOrderingInverse", 0))
                 is_optional = "ExpressOptional" in st.tags()
-                self.connectors[c.idref][other_cls] = connector_data(
-                    is_inverse, 
-                    inverse_order, 
-                    st.tags().get("ExpressAggregation"), 
-                    is_optional,
-                    c.tags().get('ExpressDefinition'))
+                
+                # For self-referential inverses we need to make sure we're not overwriting                
+                if cls != other_cls or "ExpressInverse" in st.tags():
+                    
+                    self.connectors[c.idref][other_cls] = connector_data(
+                        is_inverse, 
+                        inverse_order, 
+                        st.tags().get("ExpressAggregation"), 
+                        is_optional,
+                        c.tags().get('ExpressDefinition'))
             
             # if not marked_inverse:
             #     if (src|"model").name and (src|"role").name and (tgt|"model").name and (tgt|"role").name:
@@ -613,7 +617,7 @@ class xmi_document:
                             if attribute_order is None:
                                 logging.warning("No attribute order on %s.%s" % (c.name, nm))
                                 attribute_order = 1000
-                            attributes.append((attribute_order, "\t%s : %s%s;" % (nm, is_optional_string, attr_entity)))
+                            attributes.append((attribute_order, (nm, is_optional_string + attr_entity)))
                             
                         children.append((nm, assoc_node))
                     else:
@@ -686,7 +690,7 @@ class xmi_document:
                         tv = override
                         is_optional_string = ""
                         
-                    attributes.append((ordering, "\t%s : %s%s;" % (n, is_optional_string, tv)))
+                    attributes.append((ordering, (n, is_optional_string + tv)))
                     
                     children.append((n, la))
                 

@@ -43,15 +43,22 @@ emitted = set()
 xdoc = xmi_document(fn)
 
 definitions = sorted((x for x in xdoc if x.type in EXPRESS_ORDER), key=sort_key)
+definitions_by_name = {x.name: x for x in definitions}
 
 supertypes = {}
 for x in definitions:
     if x.type == "ENTITY":
         supertypes[x.name] = x.definition.supertype
         
+        
 def is_subclass_of(nm, supert):
-    print(nm, supert)
     return nm == supert or (supertypes.get(nm) and is_subclass_of(supertypes.get(nm), supert))
+
+
+def has_where_rule(nm, wr):
+    itm = definitions_by_name[nm]
+    clauses = dict(itm.definition.where_clauses)
+    return wr in clauses or (supertypes.get(nm) and has_where_rule(supertypes.get(nm), wr))
 
 
 for itm in definitions:
@@ -59,9 +66,15 @@ for itm in definitions:
         logging.warning("duplicate definition for %s %s", itm.type, itm.name)
         continue
         
-    if is_subclass_of(itm.name, "IfcBuiltElement"):
-        clauses = dict(itm.definition.where_clauses)
-        # @todo
+    # add two where rules
+    # @todo we should probably move this to xmi_document
+    # if is_subclass_of(itm.name, "IfcObject") and itm.name != "IfcBuiltElement":
+    #     if "PredefinedType" in dict(itm.definition.attributes):
+    #         if not has_where_rule(itm.name, "CorrectPredefinedType"):
+    #             itm.definition.where_clauses += [("CorrectPredefinedType", "NOT(EXISTS(PredefinedType)) OR\n (PredefinedType <> %(entity_name)sTypeEnum.USERDEFINED) OR\n ((PredefinedType = %(entity_name)sTypeEnum.USERDEFINED) AND EXISTS (SELF\\IfcObject.ObjectType))" % {'entity_name': itm.name})]
+    #     if itm.name + "Type" in definitions_by_name:
+    #         if not has_where_rule(itm.name, "CorrectTypeAssigned"):
+    #             itm.definition.where_clauses += [("CorrectTypeAssigned", "(SIZEOF(IsTypedBy) = 0) OR\n  ('IFC4X3_RC2.%(entity_name_upper)sTYPE' IN TYPEOF(SELF\\IfcObject.IsTypedBy[1].RelatingType))" % {'entity_name_upper': itm.name.upper()})]
         
     emitted.add((itm.type, itm.name))
     print(itm.definition, file=OUTPUT)

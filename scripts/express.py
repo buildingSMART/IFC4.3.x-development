@@ -62,7 +62,7 @@ class entity:
     
     def __init__(self, name, attributes, derived, inverses, where_clauses, unique_clauses, subtypes, supertypes, is_abstract):
         self.name, self.attributes, self.derived, self.inverses, self.where_clauses, self.unique_clauses, self.subtypes, self.supertypes, self.is_abstract = \
-            name, attributes, derived, inverses, where_clauses, unique_clauses, subtypes, supertypes, is_abstract
+            name, list(attributes), list(derived), list(inverses), list(where_clauses), list(unique_clauses), list(subtypes), list(supertypes), is_abstract
             
     def _get_supertype(self):
         # @todo this is some weird naming due to ` .. of .. ' naming in express
@@ -73,7 +73,7 @@ class entity:
             
     def to_express(self):
         join = lambda x: map(lambda tup: "\t%s : %s;" % tup, x)
-        adic = map(list, (self.attributes, self.derived, self.inverses, join(self.unique_clauses), join(self.where_clauses)))
+        adic = map(list, (join(self.attributes), self.derived, self.inverses, join(self.unique_clauses), join(self.where_clauses)))
         adic_labels = None, "DERIVE", "INVERSE", "UNIQUE", "WHERE"
         abstract_string = ["", " ABSTRACT"][self.is_abstract]
         

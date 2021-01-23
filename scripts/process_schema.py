@@ -592,8 +592,7 @@ class Tex_object(object):
         
     def generate_pdf(self):
         subprocess.check_call(['pdflatex', "-interaction=batchmode", os.path.basename(self.tex_file_name+'.tex')], cwd=os.path.dirname(self.tex_file_name), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        subprocess.check_call([IM_CONVERT, "-density", "150", self.tex_file_name+'.pdf', "-quality", "50", self.tex_file_name+'.png'])
-        assert os.path.exists(self.tex_file_name+'.png')
+        print(*[IM_CONVERT, "-density", "150", self.tex_file_name+'.pdf', "-quality", "50", self.tex_file_name+'.png'])
 
 if __name__ == '__main__':
 
@@ -695,3 +694,5 @@ img {
         for future in concurrent.futures.as_completed(fts):
             completed += 1
             print(completed * 100 // num, '%')
+            
+    subprocess.call(["mogrify", "-format", "png", "-density", "300", "*.pdf"], cwd=tex_dir)

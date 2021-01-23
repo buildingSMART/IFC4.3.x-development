@@ -4,6 +4,7 @@ import html
 import subprocess
 
 import operator
+import platform
 import functools
 
 import concurrent.futures
@@ -12,11 +13,17 @@ from collections import defaultdict, namedtuple
 from shutil import copyfile
 
 import xmi
+from xmi_document import xmi_document
 import express
 import json
 
 from hilbertcurve.hilbertcurve import HilbertCurve as HC
-hc = HC(3, 2)
+hc = HC(4, 2)
+
+if platform.system():
+    IM_CONVERT = r"C:\Program Files\ImageMagick-7.0.7-Q16\convert.exe"
+else:
+    IM_CONVERT = "convert"
 
 try:
     xmi_fn = sys.argv[1]
@@ -93,6 +100,8 @@ class Type(object):
         self.substitution_rel = {'clientof': [], 'supplierof': []}
         self.realization_rel = {'clientof': [], 'supplierof': []}
         self.dependency_rel = {'clientof': [], 'supplierof': []}
+        self.assoc_rel = {'clientof': [], 'supplierof': []}
+        
         self.xmi_type = xmi_type
         attributes = xmi_type.attributes()
         self.xmi_id = attributes['xmi:id']
@@ -134,8 +143,16 @@ class Relation(object):
         attributes = xmi_relation.attributes()
         self.xmi_type = attributes['xmi:type']
         self.xmi_id = attributes['xmi:id']
-        self.client = attributes['client']
-        self.supplier = attributes['supplier']
+        if xmi_relation.type == 'uml:Association':
+            try:
+                self.client, self.supplier = map(lambda n:(n|"type").idref, xmi_relation/"ownedEnd")
+                self.valid = True
+            except:
+                self.valid = False
+        else:
+            self.client = attributes['client']
+            self.supplier = attributes['supplier']
+            self.valid = True
 
 
 # Generalization 
@@ -154,9 +171,11 @@ class Association(object):
 
 class UMLclass_Ifc_Entity(object):
     def __init__(self, xmi_class):
+            
         self.substitution_rel = {'clientof': [], 'supplierof': []}
         self.realization_rel = {'clientof': [], 'supplierof': []}
         self.dependency_rel = {'clientof': [], 'supplierof': []}
+        self.assoc_rel = {'clientof': [], 'supplierof': []}
 
         self.subtypes = []
         self.supertypes = []
@@ -185,11 +204,12 @@ class UMLclass_Ifc_Entity(object):
 
 
 def process_relations(xmi):
-    substitutions = set(Relation(i) for i in xmi.by_tag_and_type["packagedElement"]["uml:Substitution"])
-    realizations = set(Relation(i) for i in xmi.by_tag_and_type["packagedElement"]["uml:Realization"])
-    dependencies = set(Relation(i) for i in xmi.by_tag_and_type["packagedElement"]["uml:Dependency"])
+    substitutions = set(Relation(i) for i in xmi.by_tag_and_type["packagedElement"]["uml:Substitution"] if Relation(i).valid)
+    realizations = set(Relation(i) for i in xmi.by_tag_and_type["packagedElement"]["uml:Realization"] if Relation(i).valid)
+    dependencies = set(Relation(i) for i in xmi.by_tag_and_type["packagedElement"]["uml:Dependency"] if Relation(i).valid)
+    associations = set(Relation(i) for i in xmi.by_tag_and_type["packagedElement"]["uml:Association"] if Relation(i).valid)
 
-    return (substitutions, realizations, dependencies)
+    return (substitutions, realizations, dependencies, associations)
 
 
 def process_properties(xmi, relations):
@@ -213,7 +233,10 @@ def process_generalizations(xmi, typeobj):
             for g in generalizations:
                 gen_attr = g.attributes()
                 general_id = gen_attr['general']
-                general_node = xmi.by_id[general_id]
+                try:
+                    general_node = xmi.by_id[general_id]
+                except:
+                    continue
                 general_node_attr = general_node.attributes()
 
                 if 'name' in general_node_attr.keys():
@@ -273,10 +296,13 @@ def process_classes(xmi, relations=None, properties=None, entities_to_retain=Non
 
 
 def add_relations(relations, UML_objects, entities_to_retain = None):
-    for i in range(3):
+    for i in range(4):
         for pr in relations[i]:
-            supplier = xmi.by_id[pr.supplier]
-            client = xmi.by_id[pr.client]
+            try:
+                supplier = xmi.by_id[pr.supplier]
+                client = xmi.by_id[pr.client]
+            except:
+                continue
             sup_att = supplier.attributes()
             cli_att = client.attributes()
 
@@ -298,6 +324,9 @@ def add_relations(relations, UML_objects, entities_to_retain = None):
                             instance.realization_rel['supplierof'].append((cli, cid))
                         if pr.xmi_type == 'uml:Dependency':
                             instance.dependency_rel['supplierof'].append((cli, cid))
+                        if pr.xmi_type == 'uml:Association':
+                            instance.assoc_rel['supplierof'].append((cli, cid))
+                        
 
             if cli in UML_objects.keys():
                 for instance in UML_objects[cli]:
@@ -308,6 +337,8 @@ def add_relations(relations, UML_objects, entities_to_retain = None):
                             instance.realization_rel['clientof'].append((sup, sid))
                         if pr.xmi_type == 'uml:Dependency':
                             instance.dependency_rel['clientof'].append((sup, sid))
+                        if pr.xmi_type == 'uml:Association':
+                            instance.assoc_rel['clientof'].append((sup, sid))
 
 
 def add_generalizations(UML_generalizations, UML_objects):
@@ -328,31 +359,37 @@ def add_generalizations(UML_generalizations, UML_objects):
 
 
 def build_uml_schema(xmi, entities_to_retain = None):
+
+    xmi_doc = xmi_document(xmi)
+    defs = list(xmi_doc)
+    entity_names = [d.name for d in defs if d.type == 'ENTITY'] # ["IfcRoot", "IfcOwnerHistory"] # 
  
 
     # Process all the UML nodes 
     UMLrelations = process_relations(xmi)
     UMLgeneralizations = process_generalizations(xmi, 'class')
 
-    UMLclasses = process_classes(xmi, entities_to_retain=entities_to_retain)
-    UMLtypes = process_types(xmi)
+    UMLclasses = process_classes(xmi, entities_to_retain=entity_names)
+    UMLtypes = {} # process_types(xmi)
 
     UMLobjects = {}
     UMLobjects.update(UMLclasses)
     UMLobjects.update(UMLtypes)
 
+
     # Assign relations to objects
     add_relations(UMLrelations, UMLobjects, entities_to_retain=entities_to_retain)
     add_generalizations(UMLgeneralizations, UMLobjects)
 
-    # Print out the results
+    # # Print out the results
     # for k, v in UMLobjects.items():
-    #     if k in entities_to_retain:
+    #     if entities_to_retain is None or k in entities_to_retain:
     #         for val in v:
     #             print(val.name)
     #             print('substitutions ', val.substitution_rel,'\n')
     #             print('realizations ', val.realization_rel,'\n')
     #             print('dependencies ', val.dependency_rel,'\n')
+    #             print('associations ', val.assoc_rel,'\n')
     #             print('supertypes', val.supertypes,'\n')
     #             print('subtypes', val.subtypes,'\n')
     #             print('properties',  val.properties)
@@ -364,8 +401,6 @@ def build_uml_schema(xmi, entities_to_retain = None):
     #             if val.constraints != None:
     #                 for c in val.constraints:
     #                     print(c.content)
-
-    #         print('-----------------------------')
 
     return UMLobjects
 
@@ -416,13 +451,19 @@ class Tex_object(object):
         if classtype == 'uml:Class' and UMLobject.properties != None:
             for p in UMLobject.properties:
                 properties_and_constraints.append(p)
-        if classtype == 'uml:Class' and UMLobject.constraints != None:
-            for c in UMLobject.constraints:
-                properties_and_constraints.append(c)    
+        
+        # Don't add constraints for now.
+        # if classtype == 'uml:Class' and UMLobject.constraints != None:
+        #     for c in UMLobject.constraints:
+        #         properties_and_constraints.append(c)    
+        
+        properties_and_constraints = properties_and_constraints[0:5]
         
         attribute_content = ""
         i = 0
         for value in properties_and_constraints:
+            if not value.name:
+                continue
             value = value.name.replace('_',' ')
             if i != len(properties_and_constraints) - 1:
                 attribute_content += tex_escape(value) + r'\\'
@@ -431,12 +472,17 @@ class Tex_object(object):
             i += 1
 
 
+        # sign = +1 if self.I % 2 else -1
+        # offset = self.I // 2
+        # xpos, ypos = hc.coordinates_from_distance(hc.max_h // 2 + sign * offset)
         xpos, ypos = hc.coordinates_from_distance(self.I)
+        # start at the top
+        ypos = hc.max_x - ypos
         xpos *= 6
-        ypos *= 3
+        ypos *= 4
 
-        if attribute_content != "":
-            tex_content = r'''\umlclass[x=%s, y=%s, width=15ex, anchor=north]{%s}{%s}{} '''%(xpos,ypos,tex_escape(classname),attribute_content)
+        if attribute_content != "": # anchor=north
+            tex_content = r'''\umlclass[x=%s, y=%s, width=15ex]{%s}{%s}{} '''%(xpos,ypos,tex_escape(classname),attribute_content)
         else:
             tex_content = r'''\umlsimpleclass[x=%s, y=%s]{%s}  '''%(xpos,ypos,tex_escape(classname))
 
@@ -445,7 +491,7 @@ class Tex_object(object):
         self.tex_classes.add(UMLobject.name)
 
 
-        if make_connections:
+        if depth < 1: # make_connections:
        
             x = 0
             y = 0
@@ -453,12 +499,12 @@ class Tex_object(object):
  
             # Substitutions, Realizations, Dependencies
 
-            if depth < 3:
+            if depth < 1:
                 mc = True
             else:
                 mc = False
             
-            for rel in ['substitution','realization','dependency']:
+            for rel in ['substitution','realization','dependency', 'assocation']:
 
                 if rel == 'substitution':
                     dict_to_use = UMLobject.substitution_rel
@@ -466,7 +512,9 @@ class Tex_object(object):
                 elif rel == 'realization':
                     dict_to_use = UMLobject.realization_rel
                     reltype = 'real'
-
+                elif rel == 'assocation':
+                    dict_to_use = UMLobject.assoc_rel
+                    reltype = 'assoc'
                 else:
                     dict_to_use = UMLobject.dependency_rel
                     reltype = 'depend'
@@ -543,9 +591,8 @@ class Tex_object(object):
         self.tex_file.close()
         
     def generate_pdf(self):
-        print(os.path.basename(self.tex_file_name))
         subprocess.call(['pdflatex', "-interaction=batchmode", os.path.basename(self.tex_file_name+'.tex')], cwd=os.path.dirname(self.tex_file_name), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        subprocess.call(["convert", "-density", "90", self.tex_file_name+'.pdf', "-quality", "50", self.tex_file_name+'.png'])
+        subprocess.call([IM_CONVERT, "-density", "90", self.tex_file_name+'.pdf', "-quality", "50", self.tex_file_name+'.png'])
 
 if __name__ == '__main__':
 
@@ -622,21 +669,24 @@ img {
             except:
                 continue
                 
-            try:
-                tex_fn = os.path.join(tex_dir, entity_to_write)
-                tex_object = Tex_object(tex_fn)
-                UMLobject = UMLobjects[entity_to_write][0]
-                tex_object.write_class2(UMLobject,UMLobjects)
-                tex_object.generate_tex()
-                html.write("<div style='display:none'><img src='%s.png'></div>\n" % entity_to_write)
-                yield tex_object
-            except Exception as e:
-                print(e)
+            # try:
+            tex_fn = os.path.join(tex_dir, entity_to_write)
+            tex_object = Tex_object(tex_fn)
+            UMLobject = UMLobjects[entity_to_write][0]
+            tex_object.write_class2(UMLobject,UMLobjects)
+            tex_object.generate_tex()
+            html.write("<div style='display:none'><img src='%s.png'></div>\n" % entity_to_write)
+            yield tex_object
+            # except Exception as e:
+            #     print(e)
                 
                 
     texs = list(preproc())
     html.write("</body></html>\n")
-
+    
+    # for t in texs:
+    #     t.generate_pdf()
+    
     completed = 0
     num = len(texs)
     with concurrent.futures.ThreadPoolExecutor(max_workers=6) as executor:
@@ -644,4 +694,3 @@ img {
         for future in concurrent.futures.as_completed(fts):
             completed += 1
             print(completed * 100 // num, '%')
-            

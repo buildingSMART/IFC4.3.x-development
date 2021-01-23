@@ -591,8 +591,9 @@ class Tex_object(object):
         self.tex_file.close()
         
     def generate_pdf(self):
-        subprocess.call(['pdflatex', "-interaction=batchmode", os.path.basename(self.tex_file_name+'.tex')], cwd=os.path.dirname(self.tex_file_name), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        subprocess.call([IM_CONVERT, "-density", "90", self.tex_file_name+'.pdf', "-quality", "50", self.tex_file_name+'.png'])
+        subprocess.check_call(['pdflatex', "-interaction=batchmode", os.path.basename(self.tex_file_name+'.tex')], cwd=os.path.dirname(self.tex_file_name), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        subprocess.check_call([IM_CONVERT, "-density", "150", self.tex_file_name+'.pdf', "-quality", "50", self.tex_file_name+'.png'])
+        assert os.path.exists(self.tex_file_name+'.png')
 
 if __name__ == '__main__':
 

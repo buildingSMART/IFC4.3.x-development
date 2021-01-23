@@ -279,8 +279,12 @@ class xmi_document:
 
     def __init__(self, fn):    
     
-        self.filename = fn
-        self.xmi = xmi.doc(fn)
+        if isinstance(fn, str):
+            self.filename = fn
+            self.xmi = xmi.doc(fn)
+        else:
+            self.xmi = fn
+            
         self.extract_connectors()
         self.extract_associations()
         self.extract_order()

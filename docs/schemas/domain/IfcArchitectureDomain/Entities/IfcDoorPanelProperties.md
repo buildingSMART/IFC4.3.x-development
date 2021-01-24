@@ -17,7 +17,7 @@ The parameters of the _IfcDoorPanelProperties_ define a standard door panel, inc
   <td>
    <table class="gridtable">
     <tr valign="top">
-     <td align="left" valign="top"><img src="../../../../figures/ifcdoorpanelproperties-fig01.gif" alt="panel 1" border="0" height="187" width="266"></td>
+     <td align="left" valign="top"><img src="../../../../../../figures/ifcdoorpanelproperties-fig01.gif" alt="panel 1" border="0" height="187" width="266"></td>
      <td align="left" valign="top">The depth of the panel (swinging, double-acting, and sliding panels) is defined by the <em>PanelDepth</em> parameter.
       <ul>
        <li class="small"><em>PanelDepth</em></li>
@@ -25,7 +25,7 @@ The parameters of the _IfcDoorPanelProperties_ define a standard door panel, inc
      </td>
     </tr>
     <tr valign="top">
-     <td align="left" valign="top"><img src="../../../../figures/ifcdoorpanelproperties-fig02.gif" alt="panel 2" border="0" height="259" width="304"></td>
+     <td align="left" valign="top"><img src="../../../../../../figures/ifcdoorpanelproperties-fig02.gif" alt="panel 2" border="0" height="259" width="304"></td>
      <td align="left" valign="top">For door operation types that include more than one panel, the width of (at least) one panel is
       given by a normalised ratio measure. It determines the width of that panel, which is defined as a ratio of the overall width of the door opening.
       <ul>

@@ -31,7 +31,7 @@ The following checks can be done to validate the correct exchange:
 
 > NOTE&nbsp; Specific subtypes of the <span class="self-ref">IfcAlignment2DVerticalSegment</span> add specific geometric curve parameters. Connectivity between vertical segments is not necessarily tangential, but this can be enforced as a requirement through the attribute _TangentialContinuity_.
 
-!["Alignment vertical segment"](../../../../figures/ifcalignment2dverticalsegment.png "Figure 1 &mdash; Alignment vertical segment")
+!["Alignment vertical segment"](../../../../../../figures/ifcalignment2dverticalsegment.png "Figure 1 &mdash; Alignment vertical segment")
 
 ## Attributes
 

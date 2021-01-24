@@ -14,7 +14,7 @@ Figure 1 illustrates parameters of the Z-shape profile definition.
   <tbody>
     <tr>
       <td width="420">
-<img src="../../../../figures/ifczshapeprofiledef.gif" alt="Z-shape profile" border="0" height="300" width="400">
+<img src="../../../../../../figures/ifczshapeprofiledef.gif" alt="Z-shape profile" border="0" height="300" width="400">
 
       </td>
       <td valign="top">

@@ -10,7 +10,7 @@ Figure 1 illustrates a polygonal bounded half space.
 
 <table border="0" cellpadding="2" cellspacing="2" summary="illustration">
 <tr>
-<td width="650"><img src="../../../../figures/ifcpolygonalboundedhalfspace-layout1.png" border="0" height="480" width="640" alt="polygonal bounded halfspace"></td>
+<td width="650"><img src="../../../../../../figures/ifcpolygonalboundedhalfspace-layout1.png" border="0" height="480" width="640" alt="polygonal bounded halfspace"></td>
 <td>
 <ul>
 <li class="small">Black coordinates indicate the object coordinate system (usually provided by <em>IfcLocalPlacement</em>).</li>

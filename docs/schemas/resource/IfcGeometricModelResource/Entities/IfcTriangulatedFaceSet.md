@@ -12,11 +12,11 @@ The coordinates of each point are provided by a one-based index into an ordered 
 
 Depending on the provision of _PnIndex_ the indices point either directly into the _IfcCartesianPointList3D_ referenced by _Coordinates_ defined at the supertype _IfcTessellatedFaceSet_, or they point into the _PnIndex_ where the integer values at that position provides the location of the coordinate values within the _IfcCartesianPointList3D_. See Figure 1 for the handling of point index.
 
-!["PnIndex"](../../../../figures/ifctriangulatedfaceset_03.png "Figure 1 &mdash; Use of _PnIndex_")
+!["PnIndex"](../../../../../../figures/ifctriangulatedfaceset_03.png "Figure 1 &mdash; Use of _PnIndex_")
 
 See Figure 2 for using the _IfcTriangulatedFaceSet_ without (as default) and with using the _PnIndex_.
 
-!["IfcTriangulatedFaceSet_01"](../../../../figures/ifctriangulatedfaceset_01.png "Figure 2 &mdash; Triangulated face set")
+!["IfcTriangulatedFaceSet_01"](../../../../../../figures/ifctriangulatedfaceset_01.png "Figure 2 &mdash; Triangulated face set")
 
 Optionally normals can be provided. Only normals per vector are supported allowing for visually curved triangles when the three normals of the corresponding three vertices of a triangle are not co-linear to the normal of the triangular face. If they are identical, normals shall be omited.
 
@@ -29,7 +29,7 @@ Normals are provided by the two-dimensional list _Normals_, where
 
 The indices in the _CoordIndex_ point into the list of _Normals_. The indices of _CoordIndex_ are applied to both points, either directly directly, or via the _PnIndex_ and normals. See Figure 3 for handling of normals.
 
-!["IfcTriangulatedFaceSet_02"](../../../../figures/ifctriangulatedfaceset_02.png "Figure 3 &mdash; Triangulated face set with normals")
+!["IfcTriangulatedFaceSet_02"](../../../../../../figures/ifctriangulatedfaceset_02.png "Figure 3 &mdash; Triangulated face set with normals")
 
 > NOTE&nbsp; Using corresponding lists of points and normals allows to use only a single list of indices into both at the expense of having non-unique collections of vertices.
 
@@ -38,7 +38,7 @@ Figure 4 shows the use of _IfcTriangulatedFaceSet_ without annotation. The diagr
 &nbsp;
 
 <table summary="tessellation">
- <tr><td style="width: 280px"><img src="../../../../figures/ifctriangulatedfaceset_example-01.png" width="275" height="350" alt="IfcTriangulatedFaceSet_Example-01">
+ <tr><td style="width: 280px"><img src="../../../../../../figures/ifctriangulatedfaceset_example-01.png" width="275" height="350" alt="IfcTriangulatedFaceSet_Example-01">
  </td>
  <td>
   <p>Figure 168 shows an <em>IfcTriangulatedFaceSet</em> represented by<br><br></p>

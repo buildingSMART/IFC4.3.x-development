@@ -16,7 +16,7 @@ Or in case of sectioned spines it is the xy plane of each list member of _IfcSec
 
 > NOTE&nbsp; The black coordinate axes show the underlying coordinate system of the swept surface or swept area solid.
 
-!["composite"](../../../../figures/ifccompositeprofiledef-layout1.gif "Figure 314")
+!["composite"](../../../../../../figures/ifccompositeprofiledef-layout1.gif "Figure 314")
 
 { .use-head}
 Twin profiles special case

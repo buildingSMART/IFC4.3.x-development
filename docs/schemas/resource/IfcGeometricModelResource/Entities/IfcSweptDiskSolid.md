@@ -16,7 +16,7 @@ Figure 1 illustrates an example.
 
 > NOTE&nbsp; The geometric item _IfcIndexedPolyCurve_ provides a more compact representation compared with _IfcCompositeCurve_ as is therefore the prefered curve representation for the _Directrix_.
 
-!["disk solid"](../../../../figures/ifcsweptdisksolid-layout1.png "Figure 1 &mdash; Swept disk solid geometry")
+!["disk solid"](../../../../../../figures/ifcsweptdisksolid-layout1.png "Figure 1 &mdash; Swept disk solid geometry")
 
 { .extDef}
 > NOTE&nbsp; Definition according to ISO/CD 10303-42:1992  

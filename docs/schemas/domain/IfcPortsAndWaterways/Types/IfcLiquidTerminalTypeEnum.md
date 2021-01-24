@@ -1,0 +1,1 @@
+This container defines the different predefined types of liquid terminals that can further specify an [<font color="#0000ff"><u>LiquidTerminal</u></font>]($element://{F042A74A-1026-46d7-9A2D-5E48DEA59687}) or [<font color="#0000ff"><u>LiquidTerminalType</u></font>]($element://{7758C865-E160-4dd8-BA26-D8333A7274C9}).

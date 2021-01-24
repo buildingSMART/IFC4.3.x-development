@@ -8,10 +8,10 @@ The _IfcReparametrisedCompositeCurveSegment_ is geometrically identical to a _If
 >   
 > If t~<small>0</small>~ &le; t &le; t~<small>1</small>~ is the parameter range of _ParentCurve_, the new parameter . for the reparametrised composite curve segment is given by the equation: 
 { .extDef}
->> ![Image](../../../../figures/ifcreparametrisedcompositecurvesegment-math1.gif) if _SameSense_ = TRUE;
+>> ![Image](../../../../../../figures/ifcreparametrisedcompositecurvesegment-math1.gif) if _SameSense_ = TRUE;
 >  or by the equation: 
 { .extDef}
->> ![Image](../../../../figures/ifcreparametrisedcompositecurvesegment-math2.gif) if _SameSense_ = FALSE;
+>> ![Image](../../../../../../figures/ifcreparametrisedcompositecurvesegment-math2.gif) if _SameSense_ = FALSE;
 
 
 > 

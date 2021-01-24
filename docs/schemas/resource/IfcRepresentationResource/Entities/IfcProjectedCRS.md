@@ -32,7 +32,8 @@ Name by which the map zone, relating to the _MapProjection_, is identified.
 
 ### MapUnit
 Unit of the coordinate axes composing the map coordinate system.
-> NOTE&nbsp; Only length measures are in scope and all two or three axes of the map coordinate system shall have the same length unit.
+> NOTE 1&nbsp; Only length measures are in scope and all two or three axes of the map coordinate system shall have the same length unit.
+> NOTE 2&nbsp; If MapUnit is omited, the unit for the coordinate axes is taken from the default units, as stated in IfcProject.UnitInContext.
 
 ## Formal Propositions
 

@@ -44,7 +44,7 @@ Figure 1 illustrates use of parameterized profiles within a swept area solid.
     <tr valign="top">
       <td align="left" valign="top" width="420">
 
-<img src="../../../../figures/ifcprofiledef-layout1.gif" alt="Example of standard profile definition" border="0" height="300" width="400">
+<img src="../../../../../../figures/ifcprofiledef-layout1.gif" alt="Example of standard profile definition" border="0" height="300" width="400">
 
       </td>
       <td align="left" valign="top">
@@ -69,7 +69,7 @@ that uses the profile definition. It is the xy plane</p>
     <tr>
       <td width="420">
 
-<img src="../../../../figures/ifcprofiledef-layout5.gif" alt="use within swept area solids" border="0" height="300" width="400">
+<img src="../../../../../../figures/ifcprofiledef-layout5.gif" alt="use within swept area solids" border="0" height="300" width="400">
 
       </td>
       <td align="left" valign="top">
@@ -119,13 +119,13 @@ Results of the different usage of the _ProfileType_ attribute are demonstrated h
     <tr>
       <td width="420">
 
-<img src="../../../../figures/ifcprofiledef-layout3.gif" alt="area without thickness" height="225" width="300"><br>
+<img src="../../../../../../figures/ifcprofiledef-layout3.gif" alt="area without thickness" height="225" width="300"><br>
 ProfileType = AREA
 
       </td>
       <td align="left" valign="top">
 
-<img src="../../../../figures/ifcprofiledef-layout4.gif" alt="closed curve" height="225" width="300"><br>
+<img src="../../../../../../figures/ifcprofiledef-layout4.gif" alt="closed curve" height="225" width="300"><br>
 ProfileType = CURVE
 
       </td>

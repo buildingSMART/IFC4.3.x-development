@@ -6,7 +6,7 @@ The standard geometric representation of _IfcGridAxis_ is defined using a 2D cur
 
 <table cellpadding="2" cellspacing="2">
 <tr>
-<td><img src="../../../../figures/ifcgridaxis-layout1.gif" alt="design grid" border="0" height="300" width="400"></td>
+<td><img src="../../../../../../figures/ifcgridaxis-layout1.gif" alt="design grid" border="0" height="300" width="400"></td>
 <td style="vertical-align:bottom">
 <p class="small">As shown in Figure 1, the grid axis is defined as a 2D curve within
 the xy plane of the position coordinate system. Any curve can be

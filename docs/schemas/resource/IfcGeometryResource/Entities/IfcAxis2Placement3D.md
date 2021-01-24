@@ -9,7 +9,7 @@ If the attribute values for _Axis_ and _RefDirection_ are not given, the placeme
 <table>
       <tr>
         <td>
-          <img src="../../../../figures/ifcaxis2placement3d-layout1.gif" alt="axis2 placement 2D" border="0" height="300" width="400">
+          <img src="../../../../../../figures/ifcaxis2placement3d-layout1.gif" alt="axis2 placement 2D" border="0" height="300" width="400">
         </td>
         <td style="vertical-align:bottom">
           <blockquote class="note">
@@ -64,3 +64,6 @@ The _Axis_ and _RefDirection_ shall not be parallel or anti-parallel.
 
 ### AxisAndRefDirProvision
 Either both, _Axis_ and _RefDirection_ are not given and therefore defaulted, or both shall be given.
+
+### LocationIsCP
+

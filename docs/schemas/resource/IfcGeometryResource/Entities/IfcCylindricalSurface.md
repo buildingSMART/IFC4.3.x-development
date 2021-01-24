@@ -25,17 +25,17 @@ z = Position.P[3]
 </pre>
 > and the surface is parameterized as:
 > 
->> ![formula](../../../../figures/ifccylindricalsurface-math1.gif)
+>> ![formula](../../../../../../figures/ifccylindricalsurface-math1.gif)
 > where the parametric range is -&infin; &lt; _u,v_ &lt; &infin; .
 > 
 > In the above parameterization the length unit for the unit vectors **z** is equal to that of the radius **_R_**. In the placement coordinate system defined above, the surface is represented by the equation _S_ = 0, where
 > 
->> ![formula](../../../../figures/ifccylindricalsurface-math2.gif)
+>> ![formula](../../../../../../figures/ifccylindricalsurface-math2.gif)
 > The positive direction of the normal to the surface at any point on the surface is given by
 > 
->> ![formula](../../../../figures/ifccylindricalsurface-math3.gif), or as unit normal by
+>> ![formula](../../../../../../figures/ifccylindricalsurface-math3.gif), or as unit normal by
 >> 
->> ![formula](../../../../figures/ifccylindricalsurface-math4.gif)
+>> ![formula](../../../../../../figures/ifccylindricalsurface-math4.gif)
 >>
 > The direction of the normal is away from the axis of the cylinder.
 > 

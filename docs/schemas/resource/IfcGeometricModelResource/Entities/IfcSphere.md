@@ -10,7 +10,7 @@ The _IfcSphere_ is a Construction Solid Geometry (CSG) 3D primitive. It is a sol
 
 <table summary="illustration">
 <tr>
-<td><img src="../../../../figures/ifcsphere-layout1.png" border="0" height="300" width="400" alt="sphere"></td>
+<td><img src="../../../../../../figures/ifcsphere-layout1.png" border="0" height="300" width="400" alt="sphere"></td>
 <td><blockquote class="example">EXAMPLE&nbsp; Figure 1 illustrates geometric parameters of the sphere. The sphere is positioned within its own placement
 coordiante system relative to the object coordinate system. The origin is the center of the sphere.</blockquote>
 </td></tr>
@@ -39,7 +39,7 @@ Figure 2 illustrates default texture mapping with a clamped texture (RepeatS=Fal
 { .gridtable}
 <table summary="texture" class="gridtable">
 <tr>
-<td><img src="../../../../figures/ifcsphere-texture.png" alt="texture"></td>
+<td><img src="../../../../../../figures/ifcsphere-texture.png" alt="texture"></td>
 </tr>
 <tr>
 <td>

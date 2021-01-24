@@ -9,11 +9,11 @@ In the case that the list of _Segments_ is provided, it is interpreted as such:
 
 > EXAMPLE&nbsp; Figure 2 illustrates a bounded open _IfcIndexedPolyCurve_ having straight and arc segments. In this example, the straight segments only have two points and one edge, however more then two indices into the Cartesian point list can be includes, defining a multi edge polyline segment.
 
-!["poly curve with arcs examples"](../../../../figures/ifcindexedpolycurve-fig1.png "Figure 2 &mdash; Bounded open _IfcIndexedPolyCurve_ with straight and arc segments")
+!["poly curve with arcs examples"](../../../../../../figures/ifcindexedpolycurve-fig1.png "Figure 2 &mdash; Bounded open _IfcIndexedPolyCurve_ with straight and arc segments")
 
 > EXAMPLE&nbsp; Figure 2 illustrates a bounded open _IfcIndexedPolyCurve_ having only straight segments. In this example, no list of _Segments_ is provided, hence the points are drawn in the order of their appearance in the _IfcCartesianPointList_.
 
-!["poly curve examples"](../../../../figures/ifcindexedpolycurve-fig2.png "Figure 2 &mdash; Bounded open _IfcIndexedPolyCurve_ with only straight segments")
+!["poly curve examples"](../../../../../../figures/ifcindexedpolycurve-fig2.png "Figure 2 &mdash; Bounded open _IfcIndexedPolyCurve_ with only straight segments")
 
 The _IfcIndexedPolyCurve_ represents an open or a closed curve depending on the following condition:
 

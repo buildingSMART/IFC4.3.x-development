@@ -13,7 +13,7 @@ The _IfcSimplePropertyTemplate_ is part of the set of templates included in the 
 
 > NOTE&nbsp; Constraints at _IfcPropertySetTemplate_ and _IfcPropertySet_ (and _IfcElementQuantity_) guarantee that the _Name_ attributes of included property templates and individual properties are unique.
 
-!["IfcSimplePropertyTemplate figure 1"](../../../../figures/ifcsimplepropertytemplate_fig-1.png "Figure 1 &mdash; Property template relationships")
+!["IfcSimplePropertyTemplate figure 1"](../../../../../../figures/ifcsimplepropertytemplate_fig-1.png "Figure 1 &mdash; Property template relationships")
 
 > HISTORY&nbsp; New entity in IFC4.
 

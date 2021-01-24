@@ -17,7 +17,7 @@ Figure 1 illustrates parameters of the T-shape profile definition.
   <tbody>
     <tr>
       <td width="420">
-<img src="../../../../figures/ifctshapeprofiledef.gif" alt="T-shape profile" border="0" height="300" width="400">
+<img src="../../../../../../figures/ifctshapeprofiledef.gif" alt="T-shape profile" border="0" height="300" width="400">
 
       </td>
       <td valign="top">

@@ -14,13 +14,13 @@ A grid may support a rectangular layout as shown in Figure 1, a radial layout as
       <tbody>
         <tr>
           <td width="320">
-            <img src="../../../../figures/ifcdesigngrid-type1.gif" alt="1" border="0" height="211" width="306">
+            <img src="../../../../../../figures/ifcdesigngrid-type1.gif" alt="1" border="0" height="211" width="306">
           </td>
           <td width="320">
-            <img src="../../../../figures/ifcdesigngrid-type2.gif" alt="2" border="0" height="211" width="306">
+            <img src="../../../../../../figures/ifcdesigngrid-type2.gif" alt="2" border="0" height="211" width="306">
           </td>
           <td width="320">
-            <img src="../../../../figures/ifcdesigngrid-type3.gif" alt="3" border="0" height="211" width="306">
+            <img src="../../../../../../figures/ifcdesigngrid-type3.gif" alt="3" border="0" height="211" width="306">
           </td>
         </tr>
         <tr>
@@ -67,7 +67,7 @@ Informal Propositions:
           </blockquote>
         </td>
         <td align="right" valign="top" width="320">
-          <img src="../../../../figures/ifcdesigngrid-ip2.gif" alt="IP2" border="0" height="97" width="306">
+          <img src="../../../../../../figures/ifcdesigngrid-ip2.gif" alt="IP2" border="0" height="97" width="306">
           <p class="figure">Figure 4 &mdash; Grid intersections</p>
         </td>
       </tr>

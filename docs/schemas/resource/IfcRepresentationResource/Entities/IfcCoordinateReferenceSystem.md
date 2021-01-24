@@ -18,10 +18,18 @@ The unambiguous identifier by which the coordinate reference system is know, is 
 
 ### Name
 Name by which the coordinate reference system is identified.
-> NOTE&nbsp; The name shall be taken from the list recognized by the European Petroleum Survey Group EPSG. It should then be qualified by the EPSG name space, for example as 'EPSG:5555'.
+> NOTE 1&nbsp; The name shall be taken from the list recognized by the European Petroleum Survey Group EPSG. It should then be qualified by the EPSG name space, for example as 'EPSG:5555'.
+{ .extDef}
+> NOTE 2&nbsp; The name shall be 'WKT' if an EPSG code does not exist for the CRS.
 
 ### Description
-Informal description of this coordinate reference system.
+Informal description of this coordinate reference system 
+
+{ .extDef}
+> NOTE&nbsp; In case Name equals 'WKT' the Description is well-known text that corresponds to ISO 19162 definition specifying the necessary parameters for the coordinate reference system.
+
+Example for ellipsoid:
+ELLIPSOID[&lt;name&gt;,&lt;major axis&gt;,&lt;inverse flattening&gt;,&lt;length unit&gt;]
 
 ### GeodeticDatum
 Name by which this datum is identified. The geodetic datum is associated with the coordinate reference system and indicates the shape and size of the rotation ellipsoid and this ellipsoid's connection and orientation to the actual globe/earth. It needs to be provided, if the _Name_ identifier does not unambiguously define the geodetic datum as well.

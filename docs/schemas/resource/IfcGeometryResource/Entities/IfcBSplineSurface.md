@@ -52,7 +52,7 @@ array.<br>
 <li style=" font-size:inherit;">Let <em>L</em> denote the number of distinct values amongst the knots in the knot list;
 <em>L</em> will be referred to as the &lsquo;upper index on knots&rsquo;. Let <em>m</em><sub><em>j</em></sub> denote
 the multiplicity (i.e., number of repetitions) of the <em>j</em>th distinct knot value. Then:
-<blockquote><img src="../../../../figures/ifcbsplinecurve-math2.gif" alt="formula" border="0"></blockquote>
+<blockquote><img src="../../../../../../figures/ifcbsplinecurve-math2.gif" alt="formula" border="0"></blockquote>
 All knot multiplicities except the first and the last shall be in the range 1, ...., <em>d</em>; the first and last may
 have a maximum value of <em>d</em>+1. In evaluating the basis functions, a knot <em>u</em> of, e.g., multiplicity 3 is
 interpreted as a sequence <em>u</em>, <em>u</em>, <em>u</em>, in the knot array.<br>
@@ -63,9 +63,9 @@ only and the spline data takes precedence.<br>
 <br></li>
 <li style=" font-size:inherit;">The surface is to be interpreted as follows: In the polynomial case the surface is
 given by the equation:
-<blockquote><img src="../../../../figures/ifcbsplinesurface-math1.gif" alt="formula" border=""></blockquote>
+<blockquote><img src="../../../../../../figures/ifcbsplinesurface-math1.gif" alt="formula" border=""></blockquote>
 In the rational case the surface equation is:
-<blockquote><img src="../../../../figures/ifcbsplinesurface-math2.gif" alt="formula" border=""></blockquote>
+<blockquote><img src="../../../../../../figures/ifcbsplinesurface-math2.gif" alt="formula" border=""></blockquote>
 </li>
 </ol>
 

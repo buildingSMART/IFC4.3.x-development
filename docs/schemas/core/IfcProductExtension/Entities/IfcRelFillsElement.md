@@ -8,7 +8,7 @@ As shown in Figure 1, the insertion of a door into a wall is represented by two 
 
 &nbsp;
 
-!["relationships for filling"](../../../../figures/ifcrelfillselements-fig1.png "Figure 1 &mdash; Relationships for element filling")
+!["relationships for filling"](../../../../../../figures/ifcrelfillselements-fig1.png "Figure 1 &mdash; Relationships for element filling")
 
 > HISTORY&nbsp; New entity in IFC1.0
 

@@ -12,9 +12,6 @@ An _IfcCompositeCurveSegment_ is a bounded curve constructed for the sole purpos
 
 ## Attributes
 
-### Transition
-The state of transition (i.e., geometric continuity from the last point of this segment to the first point of the next segment) in a composite curve.
-
 ### SameSense
 An indicator of whether or not the sense of the segment agrees with, or opposes, that of the parent curve. If _SameSense_ is false, the point with highest parameter value is taken as the first point of the segment.
 > NOTE&nbsp; If the datatype of _ParentCurve_ is _IfcTrimmedCurve_, the value of _SameSense_ overrides the value of _IfcTrimmedCurve.SenseAgreement_

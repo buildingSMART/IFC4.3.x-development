@@ -712,7 +712,7 @@ class xmi_document:
                     if cdef.startswith("%s : " % cname):
                         logging.warning("Where clause for %s contains attribute name: %s", cname, cdef)
                         cdef = cdef[len(cname) + 3:]
-                    cc = (cname, fix_schema_name(cdef))
+                    cc = (cname.strip(), fix_schema_name(cdef))
                     constraints_by_type[ct].append(cc)
 
                 attributes = map(operator.itemgetter(1), sorted(attributes))

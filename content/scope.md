@@ -27,6 +27,7 @@ The full IFC standard is used to define one or many recognized workflows in the 
 
 # General use
 The following are within the entire scope of this release of IFC: 
+
 1. BIM exchange format definitions that are required during the life cycle phases of buildings: 
 
   * demonstrating the need; 
@@ -40,8 +41,10 @@ The following are within the entire scope of this release of IFC:
   * production information; 
   * construction; 
   * operation and maintenance. 
-  
+
+
 2. BIM exchange format definitions that are required by the various disciplines involved within the life cycle phases: 
+
 
   * architecture; 
   * building service; 
@@ -62,7 +65,7 @@ The following are within the entire scope of this release of IFC:
   * controls; 
   * actors; 
   * context definition. 
-  
+
 3. exchange format definitions outside of the domain of construction and facility maintenance; 
 4. full project structure and component breakdown structures outside of building engineering, but providing a baseline for civil engineering to be extended in future releases; 
 5. behavioral aspects of components and other information items. 

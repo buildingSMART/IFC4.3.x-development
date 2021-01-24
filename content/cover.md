@@ -2,7 +2,7 @@
 
 # IFC 4.3.x (latest)
 
-![IFC 4.3 cover image](https://raw.githubusercontent.com/buildingSMART/IFC4.3.x-development/master/docs/img/Dongping.jpg | width=600)
+<img src="https://raw.githubusercontent.com/buildingSMART/IFC4.3.x-development/master/docs/img/Dongping.jpg" width="800">
 
 # Copyright 
 Copyright © 1996-2021 buildingSMART International Limited. All rights reserved.

@@ -11,7 +11,7 @@ The association's values are:
  * Neutral and independent, and therefore not beholden to any group or company, whether software suppliers, building companies, architects or others, or indeed governments; 
  * Open and transparent, because the processes by which bSI operates need to be clear and understood by all to demonstrate its independence and neutrality; 
  * A not-for-profit organisation, meaning that any profits it might make from commercial or quasi-commercial activities are used for non-commercial purposes such as developing standards. 
- 
+
  
 The association's goals in pursuit of its mission are: 
 
@@ -20,7 +20,7 @@ The association's goals in pursuit of its mission are:
  * To provide networking opportunities, specifications and written guidance; 
  * To resolve high cost problems that hinder data sharing, 
  * To extend buildingSMART processes and technology to the whole built environment, over its lifecycle, and encompassing leadership, production, facilities management and engineering maintenance. 
- 
+
  
 buildingSMART develops open standards for Building Information Modeling, open BIM. The standards deal with data models, processes and terms. The Industry Foundation Classes IFC specification constitutes buildingSMART's specification for the buildingSMART data model. Property terms, defined in IFC, are linked to terms defined in the buildingSMART data dictionary. 
  

@@ -2,9 +2,9 @@
 
 # IFC 4.3.x (latest)
 
-![IFC 4.3 cover image](../docs/img/Dongping.jpg)
+![IFC 4.3 cover image](https://raw.githubusercontent.com/buildingSMART/IFC4.3.x-development/master/docs/img/Dongping.jpg | width=600)
 
-# copyright 
+# Copyright 
 Copyright © 1996-2021 buildingSMART International Limited. All rights reserved.
 By using the IFC4.3.x specification you agree to the following copyright notice:
 Any technical documentation made available by buildingSMART International Limited is the copyrighted work of buildingSMART International Limited and is owned by the buildingSMART International Limited. It may be photocopied, used in software development, or translated into another computer language without prior written consent from buildingSMART International Limited provided that full attribution is given. Prior written consent is required if changes are made to the technical specification.

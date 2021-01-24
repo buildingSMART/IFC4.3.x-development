@@ -6,7 +6,7 @@ An _IfcCircle_ is a curve consisting of a set of points having equal distance fr
 
 Figure 1 illustrates the definition of _IfcCircle_ within a three-dimensional position coordinate system placed within the object coordinate system of an element.
 
-!["axis1 placement"](../../../../figures/ifccircle-layout1.gif "Figure 1 &mdash; Circle layout")
+!["axis1 placement"](../../../../../../figures/ifccircle-layout1.gif "Figure 1 &mdash; Circle layout")
 
 &nbsp;
 
@@ -24,18 +24,18 @@ Figure 1 illustrates the definition of _IfcCircle_ within a three-dimensional po
 > and the circle is parameterized as
 > 
 >> 
->>> ![formula](../../../../figures/ifccircle-math1.gif)
+>>> ![formula](../../../../../../figures/ifccircle-math1.gif)
 >> 
 > The parameterization range is 0 &le; _u_ &le; 2&pi; (0 &le; _u_ &le; 360 degree).  
 > In the placement coordinate system defined above, the circle is the equation _C_ = 0, where
 > 
 >> 
->>> ![formula](../../../../figures/ifccircle-math2.gif)
+>>> ![formula](../../../../../../figures/ifccircle-math2.gif)
 >> 
 > The positive sense of the circle at any point is in the tangent direction, **T**, to the curve at the point, where
 > 
 >> 
->>> ![formula](../../../../figures/ifccircle-math3.gif)
+>>> ![formula](../../../../../../figures/ifccircle-math3.gif)
 >> 
 
 

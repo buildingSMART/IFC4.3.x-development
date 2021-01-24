@@ -8,7 +8,7 @@ The resulting solid is positioned by the _IfcSweptAreaSolid_._Position_ relative
 
 <table summary="geometry" cellpadding="2" cellspacing="2" border="0">
 <tr>
-<td valign="top" align="left"><img src="../../../../figures/ifcextrudedareasolid-fig1.png" alt="extruded area solid" border="0"></td>
+<td valign="top" align="left"><img src="../../../../../../figures/ifcextrudedareasolid-fig1.png" alt="extruded area solid" border="0"></td>
 <td>
 <blockquote class="example">EXAMPLE&nbsp; Figure 1 illustrates geometric parameters of the extruded area solid. The extruded area solid defines the
 extrusion of a 2D area by an direction and depth. The result is a solid.</blockquote>
@@ -32,7 +32,7 @@ extrusion of a 2D area by an direction and depth. The result is a solid.</blockq
 
 <table summary="geometry" cellpadding="2" cellspacing="2" border="0">
 <tr>
-<td valign="top" align="left"><img src="../../../../figures/ifcextrudedareasolid-fig2.png" alt="extruded area solid repositioned" border="0"></td>
+<td valign="top" align="left"><img src="../../../../../../figures/ifcextrudedareasolid-fig2.png" alt="extruded area solid repositioned" border="0"></td>
 <td>
 <blockquote class="example">EXAMPLE&nbsp; Figure 2 illustrates geometric parameters and additional positioning parameters of the extruded area solid. The extruded area solid defines the extrusion of a 2D area by an direction and depth. The 2D area, provided by a parameterized profile definition, can be positioned relative to the object coordinate system (other then by default at 0.,0. with no rotation). The result is a solid that can be repositioned within the object coordinate system.</blockquote>
 <blockquote><ul>
@@ -75,7 +75,7 @@ For profiles with voids, textures are aligned facing upright along the inner sid
 <table summary="texture">
 <tr>
 <td width="520px">
-<p><img src="../../../../figures/ifcextrudedareasolid-texture.png" alt="texture" border="0"></p>
+<p><img src="../../../../../../figures/ifcextrudedareasolid-texture.png" alt="texture" border="0"></p>
 </td>
 <td>
 <blockquote class="example">EXAMPLE&nbsp; Figure 3 illustrates default texture mapping with a repeated texture (RepeatS=True and RepeatT=True). 

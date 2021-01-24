@@ -14,7 +14,7 @@ Figure 1 shows the use of _IfcTriangulatedFaceSet_ with textures.
 <table summary="">
       <tr>
         <td>
-          <img src="../../../../figures/ifcindexedtriangletexturemap_01.png" width="760" height="400" alt="IfcIndexedTriangleTextureMap_01">
+          <img src="../../../../../../figures/ifcindexedtriangletexturemap_01.png" width="760" height="400" alt="IfcIndexedTriangleTextureMap_01">
         </td>
         <td>
           &nbsp;
@@ -40,7 +40,7 @@ _IfcTextureVertexList.TexCoordsList_: ((0. -0.5), (1. -0.5), (0. 1.5), (1. 1.5),
 <table summary="">
       <tr>
         <td>
-          <img src="../../../../figures/ifcindexedtriangletexturemap_example-01.png" width="500" height="350" alt="IfcIndexedTriangleTextureMap_example-01">
+          <img src="../../../../../../figures/ifcindexedtriangletexturemap_example-01.png" width="500" height="350" alt="IfcIndexedTriangleTextureMap_example-01">
         </td>
         <td>
           &nbsp;

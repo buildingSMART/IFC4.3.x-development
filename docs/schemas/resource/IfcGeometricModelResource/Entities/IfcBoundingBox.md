@@ -6,7 +6,7 @@ The _IfcBoundingBox_ defines an orthogonal box oriented parallel to the axes of 
 
 <table cellpadding="2" cellspacing="2">
 <tr>
-<td><img src="../../../../figures/ifcboundingbox-layout1.gif" alt="half space solid" width="400" height="300" border="0"></td>
+<td><img src="../../../../../../figures/ifcboundingbox-layout1.gif" alt="half space solid" width="400" height="300" border="0"></td>
 <td style="vertical-align:bottom;">
 <p class="small">As shown in Figure 1, the <em>IfcBoundingBox</em> is defined with its own location which can be used to place the
 <em>IfcBoundingBox</em> relative to the geometric coordinate system. The <em>IfcBoundingBox</em> is defined by the

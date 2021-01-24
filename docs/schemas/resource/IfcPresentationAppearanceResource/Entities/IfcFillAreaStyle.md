@@ -51,7 +51,7 @@ An _IfcFillAreaStyle_ can be assigned to _IfcFillArea_ via the _IfcPresentationS
 ### FillStyles
 The set of fill area styles to use in presenting visible curve segments, annotation fill areas or surfaces.
 
-### ModelorDraughting
+### ModelOrDraughting
 Indication whether the length measures provided for the presentation style are model based, or draughting based.
 { .change-ifc2x4}
 > IFC4 CHANGE&nbsp; New attribute.

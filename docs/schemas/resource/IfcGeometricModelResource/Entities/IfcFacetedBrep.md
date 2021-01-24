@@ -7,7 +7,7 @@ The _IfcFacetedBrep_ is a manifold solid brep with the restriction that all face
 <table summary="faceted brep" border="0">
       <tr>
         <td valign="top">
-          <img src="../../../../figures/ifcfacetedbrep_01.png" alt="faceted brep instantiation" width="500" height="400">
+          <img src="../../../../../../figures/ifcfacetedbrep_01.png" alt="faceted brep instantiation" width="500" height="400">
         </td>
         <td valign="top">
           <blockquote class="note">

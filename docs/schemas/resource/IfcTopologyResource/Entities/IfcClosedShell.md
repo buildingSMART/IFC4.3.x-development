@@ -9,7 +9,7 @@
 > The combinatorial restrictions on closed shells and geometrical restrictions on their domains are designed to ensure that any domain associated with a closed shell is a closed, orientable manifold. The domain of a closed shell, if present, is a connected, closed, oriented 2-manifold. It is always topologically equivalent to an _H_-fold torus for some _H_ &ge; 0. The number _H_ is referred to as the surface genus of the shell. If a shell of genus _H_ has a domain within coordinate space _R^3^_, then the finite region of space inside it is topologically equivalent to a solid ball with _H_ tunnels drilled through it.  
 >   
 > The Euler equation applies with _B_=0, because in this case there are no holes. As in the case of open shells, the surface genus _H_ may not be known a priori, but shall be an integer &ge; 0. Thus a necessary, but not sufficient, condition for a well-formed closed shell is the following: 
->> ![Image](../../../../figures/ifcopenshell-math1.gif)
+>> ![Image](../../../../../../figures/ifcopenshell-math1.gif)
 
 
 > 

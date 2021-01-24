@@ -14,7 +14,7 @@ _IfcProcedure_ is used to capture information about stepped processes such as ca
 
 As shown in Figure 11, _IfcProcedure_ does not restrict anything but describes specific steps of how something should happen. While a procedure does control/restrict in the sense of indicating "this is how the task should be performed" by nature of describing inner detail, this is not different than parts of a product indicating "this is how the parts should be assembled". Consequently, it doesn't restrict the outer item as a whole but provides inner detail of the item.
 
-!["procedure example"](../../../../figures/ifcprocedure_example.png "Figure 1 &mdash; Procedure relationships")
+!["procedure example"](../../../../../../figures/ifcprocedure_example.png "Figure 1 &mdash; Procedure relationships")
 
 ## Attributes
 

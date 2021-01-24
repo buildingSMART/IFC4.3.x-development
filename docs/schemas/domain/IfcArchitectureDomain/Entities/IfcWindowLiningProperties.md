@@ -15,7 +15,7 @@ The _IfcWindowLiningProperties_ does not hold a geometric representation. Howeve
   <td>
    <table class="gridtable">
     <tr>
-     <td><img src="../../../../figures/ifcwindowliningproperties-fig05.png" alt="lining 5" width="280" height="250" border="0"></td>
+     <td><img src="../../../../../../figures/ifcwindowliningproperties-fig05.png" alt="lining 5" width="280" height="250" border="0"></td>
      <td valign="top" align="left">The lining is applied to all faces of the opening reveal. The parameter are:
       <ul>
        <li class="small"><em>LiningDepth</em></li>
@@ -28,7 +28,7 @@ The _IfcWindowLiningProperties_ does not hold a geometric representation. Howeve
      </td>
     </tr>
     <tr>
-     <td><img src="../../../../figures/ifcwindowliningproperties-fig01.png" alt="lining 1" width="250" height="200" border="0"></td>
+     <td><img src="../../../../../../figures/ifcwindowliningproperties-fig01.png" alt="lining 1" width="250" height="200" border="0"></td>
      <td valign="top" align="left">
       If the <i>OperationType</i> of the window style is
       <ul>
@@ -46,7 +46,7 @@ The _IfcWindowLiningProperties_ does not hold a geometric representation. Howeve
      </td>
     </tr>
     <tr>
-     <td><img src="../../../../figures/ifcwindowliningproperties-fig02.png" alt="lining 2" width="250" height="200" border="0"></td>
+     <td><img src="../../../../../../figures/ifcwindowliningproperties-fig02.png" alt="lining 2" width="250" height="200" border="0"></td>
      <td valign="top" align="left">
       If the <i>OperationType</i> of the window type is:
       <ul>
@@ -64,7 +64,7 @@ The _IfcWindowLiningProperties_ does not hold a geometric representation. Howeve
      </td>
     </tr>
     <tr>
-     <td><img src="../../../../figures/ifcwindowliningproperties-fig03.png" alt="lining 3" width="280" height="200" border="0"></td>
+     <td><img src="../../../../../../figures/ifcwindowliningproperties-fig03.png" alt="lining 3" width="280" height="200" border="0"></td>
      <td valign="top" align="left">
       If the <i>OperationType</i> of the window type is:
       <ul>
@@ -77,7 +77,7 @@ The _IfcWindowLiningProperties_ does not hold a geometric representation. Howeve
      </td>
     </tr>
     <tr>
-     <td><img src="../../../../figures/ifcwindowliningproperties-fig04.png" alt="lining 4" width="250" height="250" border="0"></td>
+     <td><img src="../../../../../../figures/ifcwindowliningproperties-fig04.png" alt="lining 4" width="250" height="250" border="0"></td>
      <td valign="top" align="left">
       If the <i>OperationType</i> of the window type is:
       <ul>

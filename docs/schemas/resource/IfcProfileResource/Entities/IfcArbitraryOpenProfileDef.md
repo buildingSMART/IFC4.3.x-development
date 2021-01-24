@@ -15,7 +15,7 @@ Figure 1 illustrates the arbitrary open profile definition. The _Curve_ is defin
 
 The _Curve_ attribute defines a two dimensional open bounded curve.
 
-!["arbitrary profile without boundaries"](../../../../figures/ifcarbitraryprofiledef-layout3.gif "Figure 1 &mdash; Arbitrary open profile")
+!["arbitrary profile without boundaries"](../../../../../../figures/ifcarbitraryprofiledef-layout3.gif "Figure 1 &mdash; Arbitrary open profile")
 
 ## Attributes
 

@@ -31,14 +31,14 @@ A resource may have assignments of other objects using _IfcRelAssignsToResource_
 
 Figure 1 illustrates resource assignment.
 
-!["Assignment Use Definition"](../../../../figures/ifcconstructionresource-assignment.png "Figure 1 &mdash; Construction resource assignment use")
+!["Assignment Use Definition"](../../../../../../figures/ifcconstructionresource-assignment.png "Figure 1 &mdash; Construction resource assignment use")
 
 { .use-head}
 Baseline use definition
 
 A resource may have any number of baselines defined using the relationship _IfcRelDefinesByObject_ where _RelatingObject_ is the "current" resource and _RelatedObjects_ consists of multiple "baseline" resources, each representing a copy of the resource as it existed at an earlier point in time as shown in Figure 185. Each baseline _IfcConstructionResource_ is identified by its nested _IfcRelAssignsToControl_ relationship to an _IfcWorkSchedule_ having _PredefinedType=BASELINE_, _IfcWorkSchedule.CreationDate_ indicating the date of the baseline, and _IfcWorkSchedule.Name_ indicating the name of the baseline.
 
-!["Baseline Use Definition"](../../../../figures/ifcconstructionresource-baseline.png "Figure 2 &mdash; Construction resource baseline use")
+!["Baseline Use Definition"](../../../../../../figures/ifcconstructionresource-baseline.png "Figure 2 &mdash; Construction resource baseline use")
 
 ## Attributes
 

@@ -4,7 +4,7 @@ A rational B-spline curve with knots is a B-spline curve described in terms of c
 
 All weights shall be positive and the curve is given by:
 
-> ![Math](../../../../figures/ifcrationalbsplinecurvewithknots-math1.gif)
+> ![Math](../../../../../../figures/ifcrationalbsplinecurvewithknots-math1.gif)
 
 where
 

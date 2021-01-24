@@ -9,7 +9,7 @@ Limitation: For backward compatibility, all _IfcTableRow_ objects referenced by 
 <table>
       <tr>
         <td>
-          <img src="../../../../figures/ifctablerow_image1.gif">
+          <img src="../../../../../../figures/ifctablerow_image1.gif">
         </td>
         <td style="vertical-align:bottom">
           Figure 337 illustrates table row use.
@@ -29,7 +29,7 @@ Limitation: For backward compatibility, all _IfcTableRow_ objects referenced by 
       </tr>
       <tr>
         <td>
-          <img src="../../../../figures/ifctablerow_image2.gif">
+          <img src="../../../../../../figures/ifctablerow_image2.gif">
         </td>
         <td style="vertical-align:bottom">
           Figure 338 depicts how table rows were structured prior

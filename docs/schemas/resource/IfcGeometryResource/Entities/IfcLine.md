@@ -12,7 +12,7 @@ The _IfcLine_ is an unbounded line parameterized by an _IfcCartesianPoint_ and a
 > 4. _IfcPolyline_ with _Points[1]_ being 0.,0. and _Points[2]_ being 0.,2.
 > 5. _IfcIndexedPolyCurve_ with two indices, pointing into a point list providing the coordinates (0.,0.) and (0.,2.).
 
-!["line examples"](../../../../figures/ifcline-fig1.png "Figure 1 &mdash; Unbounded _IfcLine_ and bounded _IfcTrimmedCurve_")
+!["line examples"](../../../../../../figures/ifcline-fig1.png "Figure 1 &mdash; Unbounded _IfcLine_ and bounded _IfcTrimmedCurve_")
 
 { .extDef}
 > NOTE&nbsp; Definition according to ISO/CD 10303-42:1992  

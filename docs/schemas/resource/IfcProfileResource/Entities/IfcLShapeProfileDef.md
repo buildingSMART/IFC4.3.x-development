@@ -21,7 +21,7 @@ Figure 1 illustrates parameters of equal-sided and non-equal sided L-shaped sect
     <tr>
       <td align="left" valign="top" width="420">
 
-<img alt="non equal sided L-shape" src="../../../../figures/ifclshapeprofiledef_layout1.gif" border="0" height="300" width="400">
+<img alt="non equal sided L-shape" src="../../../../../../figures/ifclshapeprofiledef_layout1.gif" border="0" height="300" width="400">
 
       </td>
       <td align="left" valign="top">
@@ -44,7 +44,7 @@ relative to the profile.</p>
     <tr>
       <td>
 
-<img alt="equal sided L-shape" src="../../../../figures/ifclshapeprofiledef_layout2.gif" border="0" height="300" width="400"><br>
+<img alt="equal sided L-shape" src="../../../../../../figures/ifclshapeprofiledef_layout2.gif" border="0" height="300" width="400"><br>
 
 <font size="-1">Note:
 The black coordinate axes show the

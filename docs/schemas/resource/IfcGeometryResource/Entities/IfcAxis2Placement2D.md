@@ -5,7 +5,7 @@ The _IfcAxis2Placement2D_ provides location and orientation to place items in a 
 <table>
       <tr>
         <td>
-          <img src="../../../../figures/ifcaxis2placement2d-layout1.gif" alt="axis2 placement 2D" width="400" height="300" border="0">
+          <img src="../../../../../../figures/ifcaxis2placement2d-layout1.gif" alt="axis2 placement 2D" width="400" height="300" border="0">
         </td>
         <td style="vertical-align:bottom">
           <blockquote class="note">
@@ -48,4 +48,7 @@ _P[2]_: The normalized direction of the placement Y Axis. This is a derived attr
 
 
 ### LocationIs2D
+
+
+### LocationIsCP
 

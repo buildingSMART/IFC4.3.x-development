@@ -1,0 +1,19 @@
+# IfcAxis2PlacementLinear
+
+The _IfcAxis2PlacementLinear_ provides location and orientation to place items in a three-dimensional space confined to the context of a curve. Relative placement axes (Axis and RefDirection) are relative to the curve used for linear referencing provided in _IfcPlacement_ _Location_ (_IfcPointByDistanceExpression_ _BasisCurve_), maintaining the relationship to the tangent of the curve.
+
+## Attributes
+
+### Axis
+The exact direction of the local Z Axis.
+
+### RefDirection
+The direction used to determine the direction of the local X Axis. If necessary an adjustment is made to maintain orthogonality to the Axis direction. If RefDirection is omitted, the direction is taken from the curve tangent at Location .
+
+## Formal Propositions
+
+### WR1
+
+
+### WR2
+The _Axis_ and _RefDirection_ shall not be parallel or anti-parallel.

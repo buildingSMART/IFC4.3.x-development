@@ -23,7 +23,7 @@ Each _IfcTextureVertex_ (given as S, T coordinates of the 2-dimension texture co
 <table summary="texture map use">
       <tr>
         <td>
-          <img src="../../../../figures/ifctexturemap_fig-1.png" width="620" height="600" alt="IfcTextureMap_fig-1.png 35,6 KB">
+          <img src="../../../../../../figures/ifctexturemap_fig-1.png" width="620" height="600" alt="IfcTextureMap_fig-1.png 35,6 KB">
         </td>
 				<td style=" vertical-align:bottom;"><span style=" font-size:x-small;">Figure 1 illustrates applying a texture map to a vertex
       based geometry.</span>

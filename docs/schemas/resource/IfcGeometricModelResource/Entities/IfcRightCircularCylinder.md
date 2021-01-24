@@ -8,7 +8,7 @@ The _IfcRightCircularCylinder_ is a Construction Solid Geometry (CSG) 3D primiti
 
 Figure 1 illustrates geometric parameters of the cylinder. The cylinder is positioned within its own placement coordiante system. The origin is the center of the bottom circular disk, that lies in the XY plane. The center of the top circular disk is on the positive z axis at [0, 0, _Height_].
 
-!["cylinder"](../../../../figures/ifcrightcircularcylinder-layout1.png "Figure 1 &mdash; Right circular cylinder geometry")
+!["cylinder"](../../../../../../figures/ifcrightcircularcylinder-layout1.png "Figure 1 &mdash; Right circular cylinder geometry")
 
 { .extDef}
 > NOTE&nbsp; Definition according to ISO/CD 10303-42:1992  
@@ -30,7 +30,7 @@ Figure 2 illustrates default texture mapping with a clamped texture (RepeatS=Fal
 { .gridtable}
 <table summary="texture" class="gridtable">
 <tr>
-<td><img alt="texture" src="../../../../figures/ifcrightcircularcylinder-texture.png"></td>
+<td><img alt="texture" src="../../../../../../figures/ifcrightcircularcylinder-texture.png"></td>
 </tr>
 <tr>
 <td>

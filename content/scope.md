@@ -30,6 +30,7 @@ The following are within the entire scope of this release of IFC:
 
 1. BIM exchange format definitions that are required during the life cycle phases of buildings: 
 
+
   * demonstrating the need; 
   * conception of need; 
   * outline feasibility; 
@@ -65,6 +66,7 @@ The following are within the entire scope of this release of IFC:
   * controls; 
   * actors; 
   * context definition. 
+
 
 3. exchange format definitions outside of the domain of construction and facility maintenance; 
 4. full project structure and component breakdown structures outside of building engineering, but providing a baseline for civil engineering to be extended in future releases; 

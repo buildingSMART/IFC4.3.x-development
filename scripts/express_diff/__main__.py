@@ -33,10 +33,10 @@ def format(a):
 def compare(fn1, fn2, m1, m2):
     s1, s2 = m1.schema, m2.schema
     
-    for nm in set(s1.keys) - set(s2.keys):
+    for nm in sorted(set(s1.keys) - set(s2.keys)):
         yield (nm, "", "not in '%s'" % os.path.basename(fn2))
         
-    for nm in set(s2.keys) - set(s1.keys):
+    for nm in sorted(set(s2.keys) - set(s1.keys)):
         yield (nm, "not in '%s'" % os.path.basename(fn1), "")
         
     for x in 'simpletypes', 'selects', 'enumerations':
@@ -96,6 +96,9 @@ def compare(fn1, fn2, m1, m2):
                     yield (e + "." + wnm, w1, w2)
         
 with open(output, "w") as f:
-    f.write(tabulate.tabulate(list(
+    items = list(
         [format(x) for x in tup] for tup in compare(fn1, fn2, *map(express_parser.parse, (fn1, fn2)))
-    ), headers=["Name", os.path.basename(fn1), os.path.basename(fn2)], tablefmt="github"))
+    )
+    print("# Express schema differences\n", file=f)
+    print(len(items), "items\n", file=f)
+    f.write(tabulate.tabulate(items, headers=["Name", os.path.basename(fn1), os.path.basename(fn2)], tablefmt="github"))

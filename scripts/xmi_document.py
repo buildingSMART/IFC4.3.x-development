@@ -60,7 +60,7 @@ def unescape(s):
 def float_international(s):
     return float(s.replace(',', '.'))
     
-connector_data = namedtuple("connector_data", ("is_inverse", "inverse_order", "aggregation_type", "is_optional", "express_definition"))
+connector_data = namedtuple("connector_data", ("is_inverse", "inverse_order", "aggregation_type", "is_optional", "express_definition", "allow_duplicates"))
 assocation_data = namedtuple("assocation_data", ("own_end", "type", "other_end", "asssocation"))
 
 def yield_parents(node):
@@ -315,6 +315,8 @@ class xmi_document:
             for st, en in [(src, tgt), (tgt, src)]:
                 cls = (st|"model").name
                 other_cls = (en|"model").name
+                other_attr = (st|"role").name
+                style = dict(x.split("=") for x in [x for x in (st|"style").value.split(";") if x])
                 
                 if marked_inverse:
                     is_inverse = "ExpressInverse" in st.tags()
@@ -326,15 +328,18 @@ class xmi_document:
                 inverse_order = int(st.tags().get("ExpressOrderingInverse", 0))
                 is_optional = "ExpressOptional" in st.tags()
                 
+                
+                
                 # For self-referential inverses we need to make sure we're not overwriting                
-                if cls != other_cls or "ExpressInverse" in st.tags():
+                # if cls != other_cls or "ExpressInverse" in st.tags():
                     
-                    self.connectors[c.idref][other_cls] = connector_data(
-                        is_inverse, 
-                        inverse_order, 
-                        st.tags().get("ExpressAggregation"), 
-                        is_optional,
-                        c.tags().get('ExpressDefinition'))
+                self.connectors[c.idref][(other_cls, other_attr)] = connector_data(
+                    is_inverse, 
+                    inverse_order, 
+                    st.tags().get("ExpressAggregation"), 
+                    is_optional,
+                    c.tags().get('ExpressDefinition'),
+                    style.get('AllowDuplicates') == '1')
             
             # if not marked_inverse:
             #     if (src|"model").name and (src|"role").name and (tgt|"model").name and (tgt|"role").name:
@@ -574,7 +579,7 @@ class xmi_document:
                         attr_name = None
                         
                     try:
-                        is_inverse, inverse_order, express_aggr, is_optional, express_definition = self.connectors[assoc_node.xmi_id][c.name]
+                        is_inverse, inverse_order, express_aggr, is_optional, express_definition, allow_duplicates = self.connectors[assoc_node.xmi_id][(c.name, nm)]
                     except:
                         is_inverse, is_optional, express_aggr, express_definition = False, False, None, None
                     
@@ -606,17 +611,26 @@ class xmi_document:
                     if is_inverse and end_node.isOrdered is None: # and bound != "[1:1]":
                         express_aggr = "SET"
                         
-                    is_optional_string = "OPTIONAL " if is_optional else ""                    
+                    is_optional_string = "OPTIONAL " if is_optional else ""
+
+                    express_aggr_unique = ""
+                    if express_aggr and not is_inverse and not allow_duplicates:
+                        # the grammar does not allow unique on SET (obviously)
+                        if express_aggr == "LIST":
+                            express_aggr_unique = "UNIQUE "
                     
                     if express_aggr:
-                        attr_entity = "%s %s OF %s" % (express_aggr, bound, attr_entity)
+                        attr_entity = "%s %s OF %s%s" % (express_aggr, bound, express_aggr_unique, attr_entity)
                         
                     if express_definition:
                         attr_entity = express_definition
 
                     if nm not in attribute_names:
-                        if (is_inverse and attr_name is not None): # or assoc_node.xmi_id not in order:
-                            inverses.append((inverse_order, "\t%s : %s FOR %s;" % (nm, attr_entity, attr_name)))
+                        if is_inverse: # or assoc_node.xmi_id not in order:
+                            if attr_name is not None:
+                                inverses.append((inverse_order, "\t%s : %s FOR %s;" % (nm, attr_entity, attr_name)))
+                            else:
+                                logging.warning("No role name in connector target for %s.%s" % (c.name, nm))
                         else:
                             attribute_order = self.order.get(assoc_node.xmi_id, None)
                             if attribute_order is None:

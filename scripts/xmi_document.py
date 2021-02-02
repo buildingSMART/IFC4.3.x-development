@@ -577,8 +577,9 @@ class xmi_document:
                         is_inverse, inverse_order, express_aggr, is_optional, express_definition = self.connectors[assoc_node.xmi_id][c.name]
                     except:
                         is_inverse, is_optional, express_aggr, express_definition = False, False, None, None
-                        
-                    is_inverse |= assoc_node.xmi_id not in self.order
+                    
+                    # @tfk this was misguided
+                    # is_inverse |= assoc_node.xmi_id not in self.order
                         
                     if not is_inverse and end_node.isOrdered is not None:
                         ####

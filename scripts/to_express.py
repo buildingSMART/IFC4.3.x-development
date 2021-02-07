@@ -94,7 +94,7 @@ for itm in definitions:
                     rule = clause_1 + "(PredefinedType <> %(type_name)s.USERDEFINED) OR\n ((PredefinedType = %(type_name)s.USERDEFINED) AND EXISTS (SELF\\%(attr)s))" % locals()
                 itm.definition.where_clauses += [("CorrectPredefinedType", rule)]
         if itm.name + "Type" in definitions_by_name:
-            itm_type=definitions_by_name(itm.name+"Type")
+            itm_type=definitions_by_name[itm.name+"Type"]
             if "PredefinedType" in dict(itm_type.definition.attributes):
                 if not has_where_rule(itm.name, "CorrectTypeAssigned", inherited=False):
                     itm.definition.where_clauses += [("CorrectTypeAssigned", "(SIZEOF(IsTypedBy) = 0) OR\n  ('IFC4X3_RC2.%(entity_name_upper)sTYPE' IN TYPEOF(SELF\\IfcObject.IsTypedBy[1].RelatingType))" % {'entity_name_upper': itm.name.upper()})]

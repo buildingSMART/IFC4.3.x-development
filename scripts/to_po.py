@@ -55,17 +55,17 @@ class pot_file:
         self.f = f
     
         print("""# Industry Foundation Classes IFC.
-        # Copyright (C) 2020 buildingSMART
-        #
-        #, fuzzy
-        msgid ""
-        msgstr ""
-        "Project-Id-Version: PACKAGE VERSION\\n"
-        "Report-Msgid-Bugs-To: http://bugs.kde.org\\n"
-        "POT-Creation-Date: 2020-09-25 10:09+0200\\n"
-        "X-Crowdin-SourceKey: msgstr\\n"
-        "Language-Team: buildingSMART community\\n"
-        """, file=self.f)
+# Copyright (C) 2020 buildingSMART
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\\n"
+"POT-Creation-Date: 2020-09-25 10:09+0200\\n"
+"X-Crowdin-SourceKey: msgstr\\n"
+"Language-Team: buildingSMART community\\n"
+""", file=self.f)
         
     def __getattr__(self, k):
         return getattr(self.f, k)

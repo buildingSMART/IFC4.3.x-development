@@ -90,6 +90,8 @@ def generate_issues():
     for item in xmi_doc:
         
         if item.type == "ENTITY":
+        
+            print("checking", item.name)
             
             md = item.markdown_definition_html
             if not md:

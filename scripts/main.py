@@ -39,7 +39,7 @@ for ffn in glob.glob(relative_path("..", "schemas", "*.xml")):
             subprocess.check_call([
                 sys.executable, 
                 "-m", "express_diff", 
-                os.path.join(reference_dir, "IFC4x3_RC2.exp"),
+                os.path.join(reference_dir, "IFC4x3_RC3.exp"),
                 relative_path("..", "output", fn[:-4] + "." + ext),
                 relative_path("..", "output", fn[:-4] + "." + ext + ".md")
             ], cwd=relative_path("."))

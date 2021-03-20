@@ -25,7 +25,7 @@ Texture are defined by 2D images that contain an array of colour values describi
 
 Figure 1 illustrates the texture coordinate system.
 
-!["texture coordinates"](../../../../../../figures/ifcsurfacetexture_fig-1.png "Figure 1 &mdash; Surface texture coordinates")
+!["texture coordinates"](../../../../figures/ifcsurfacetexture_fig-1.png "Figure 1 &mdash; Surface texture coordinates")
 
 The following definitions from ISO/IEC 19775-1 X3D Architecture and base components ([X3D Specification](http://www.web3d.org/x3d/specifications/)) on texture coordinates apply:
 

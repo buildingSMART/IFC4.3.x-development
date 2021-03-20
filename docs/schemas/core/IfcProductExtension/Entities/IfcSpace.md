@@ -16,7 +16,7 @@ Figure 1 shows the _IfcSpace_ as part of the spatial structure. It also serves a
 
 > NOTE&nbsp; Detailed requirements on mandatory element containment and placement structure relationships are given in view definitions and implementer agreements.
 
-!["spatial structure"](../../../../../../figures/ifcspace-spatialstructure.png "Figure 1 &mdash; Space composition")
+!["spatial structure"](../../../../figures/ifcspace-spatialstructure.png "Figure 1 &mdash; Space composition")
 
 The following guidelines should apply for using the _Name_, _Description_, _LongName_ and _ObjectType_ attributes.
 
@@ -35,7 +35,7 @@ Figure 2 describes the heights and elevations of the _IfcSpace_.
 * floor height of space (top of slab below to top of flooring): provided by BaseQuantity with Name="FinishFloorHeight"
 * net height of space (top of flooring to bottom of suspended ceiling): provided by BaseQuantity with Name="FinishCeilingHeight"
 
-!["space heights"](../../../../../../figures/ifcspace_heights.png "Figure 2 &mdash; Space elevations")
+!["space heights"](../../../../figures/ifcspace_heights.png "Figure 2 &mdash; Space elevations")
 
 > HISTORY&nbsp; New entity in IFC1.0
 

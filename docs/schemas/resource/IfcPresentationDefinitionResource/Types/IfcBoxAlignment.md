@@ -14,11 +14,11 @@ The box alignment specifies the alignment of the text box relative to its positi
 
 Figure 1 illustrates alignment values.
 
-!["9 alignment values"](../../../../../../figures/ifcboxalignment_fig1.gif "Figure 1 &mdash; Box alignment values")
+!["9 alignment values"](../../../../figures/ifcboxalignment_fig1.gif "Figure 1 &mdash; Box alignment values")
 
 Figure 2 illustrates use of alignment values together with the placement and planar extent.
 
-!["use with planar extent"](../../../../../../figures/ifcboxalignment_fig2.gif "Figure 2 &mdash; Box alignment examples")
+!["use with planar extent"](../../../../figures/ifcboxalignment_fig2.gif "Figure 2 &mdash; Box alignment examples")
 
 > HISTORY&nbsp; New type in IFC2x2 Addendum2.
 

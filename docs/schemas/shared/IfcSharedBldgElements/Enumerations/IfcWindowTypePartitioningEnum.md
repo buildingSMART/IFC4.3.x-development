@@ -15,63 +15,63 @@ Windows which are subdivided into more than three panels have to be defined by t
 <td width="30%" valign="top" align="left">SinglePanel</td>
 <td width="46%" valign="top" align="left">Window with one
 panel.<br></td>
-<td width="23%" valign="top" align="left"><img src="../../../../../../figures/ifcwindowtypepartitioningenum-fig01.gif" width="58" height="115" border="0"></td>
+<td width="23%" valign="top" align="left"><img src="../../../../figures/ifcwindowtypepartitioningenum-fig01.gif" width="58" height="115" border="0"></td>
 </tr>
 <tr valign="top">
 <td width="30%" valign="top" align="left">
 DoublePanelVertical</td>
 <td width="46%" valign="top" align="left">Window with two panels.
 The configuration of the panels is vertically.<br></td>
-<td width="23%" valign="top" align="left"><img src="../../../../../../figures/ifcwindowtypepartitioningenum-fig02.gif" width="115" height="115" border="0"></td>
+<td width="23%" valign="top" align="left"><img src="../../../../figures/ifcwindowtypepartitioningenum-fig02.gif" width="115" height="115" border="0"></td>
 </tr>
 <tr valign="top">
 <td width="30%" valign="top" align="left">
 DoublePanelHorizontal</td>
 <td width="46%" valign="top" align="left">Window with two panels.
 The configuration of the panels is horizontally.<br></td>
-<td width="23%" valign="top" align="left"><img src="../../../../../../figures/ifcwindowtypepartitioningenum-fig03.gif" width="115" height="115" border="0"></td>
+<td width="23%" valign="top" align="left"><img src="../../../../figures/ifcwindowtypepartitioningenum-fig03.gif" width="115" height="115" border="0"></td>
 </tr>
 <tr valign="top">
 <td width="30%" valign="top" align="left">
 TriplePanelVertical</td>
 <td width="46%" valign="top" align="left">Window with three
 panels. The configuration of the panels is vertically.<br></td>
-<td width="23%" valign="top" align="left"><img src="../../../../../../figures/ifcwindowtypepartitioningenum-fig04.gif" width="171" height="115" border="0"></td>
+<td width="23%" valign="top" align="left"><img src="../../../../figures/ifcwindowtypepartitioningenum-fig04.gif" width="171" height="115" border="0"></td>
 </tr>
 <tr valign="top">
 <td width="30%" valign="top" align="left">
 TriplePanelHorizontal</td>
 <td width="46%" valign="top" align="left">Window with three
 panels. The configuration of the panels is horizontally.</td>
-<td width="23%" valign="top" align="left"><img src="../../../../../../figures/ifcwindowtypepartitioningenum-fig05.gif" width="115" height="171" border="0"></td>
+<td width="23%" valign="top" align="left"><img src="../../../../figures/ifcwindowtypepartitioningenum-fig05.gif" width="115" height="171" border="0"></td>
 </tr>
 <tr valign="top">
 <td width="30%" valign="top" align="left">TriplePanelBottom</td>
 <td width="46%" valign="top" align="left">Window with three
 panels. The configuration of two panels is vertically and the
 third one is horizontally at the bottom.<br></td>
-<td width="23%" valign="top" align="left"><img src="../../../../../../figures/ifcwindowtypepartitioningenum-fig06.gif" width="115" height="171" border="0"></td>
+<td width="23%" valign="top" align="left"><img src="../../../../figures/ifcwindowtypepartitioningenum-fig06.gif" width="115" height="171" border="0"></td>
 </tr>
 <tr valign="top">
 <td width="30%" valign="top" align="left">TriplePanelTop</td>
 <td width="46%" valign="top" align="left">Window with three
 panels. The configuration of two panels is vertically and the
 third one is horizontally at the top.<br></td>
-<td width="23%" valign="top" align="left"><img src="../../../../../../figures/ifcwindowtypepartitioningenum-fig07.gif" width="115" height="171" border="0"></td>
+<td width="23%" valign="top" align="left"><img src="../../../../figures/ifcwindowtypepartitioningenum-fig07.gif" width="115" height="171" border="0"></td>
 </tr>
 <tr valign="top">
 <td width="30%" valign="top" align="left">TriplePanelLeft</td>
 <td width="46%" valign="top" align="left">Window with three
 panels. The configuration of two panels is horizontally and the
 third one is vertically at the left hand side.<br></td>
-<td width="23%" valign="top" align="left"><img src="../../../../../../figures/ifcwindowtypepartitioningenum-fig08.gif" width="171" height="115" border="0"></td>
+<td width="23%" valign="top" align="left"><img src="../../../../figures/ifcwindowtypepartitioningenum-fig08.gif" width="171" height="115" border="0"></td>
 </tr>
 <tr valign="top">
 <td width="30%" valign="top" align="left">TriplePanelRight</td>
 <td width="46%" valign="top" align="left">Window with three
 panels. The configuration of two panels is horizontally and the
 third one is vertically at the right hand side.<br></td>
-<td width="23%" valign="top" align="left"><img src="../../../../../../figures/ifcwindowtypepartitioningenum-fig09.gif" width="171" height="115" border="0"></td>
+<td width="23%" valign="top" align="left"><img src="../../../../figures/ifcwindowtypepartitioningenum-fig09.gif" width="171" height="115" border="0"></td>
 </tr>
 <tr valign="top">
 <td width="30%" valign="top" align="left">UserDefined</td>

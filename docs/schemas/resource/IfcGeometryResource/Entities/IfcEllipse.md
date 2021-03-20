@@ -6,7 +6,7 @@ The inherited _SELF\IfcConic.Position.Location_ is the center of the _IfcEllipse
 
 <table summary="example" cellpadding="2" cellspacing="2">
 <tr>
-<td><img src="../../../../../../figures/ifcellipse-layout1.gif" alt="ellipse" width="400" height="300" border="0"></td>
+<td><img src="../../../../figures/ifcellipse-layout1.gif" alt="ellipse" width="400" height="300" border="0"></td>
 <td style="vertical-align:bottom; text-align:left;">
 <p><span style="font-size:smaller">Definition of the <em>IfcEllipse</em> within the a three-dimensional position
 coordinate system is shown in Figure 1.</span></p>
@@ -39,14 +39,14 @@ representation.</span></p>
 >> ```
 > and the ellipse is parameterized as:
 > 
->> ![formula](../../../../../../figures/ifcellipse-math1.gif)
+>> ![formula](../../../../figures/ifcellipse-math1.gif)
 > The parameterization range is 0 &le; _u_ &lt;&le; 2&pi; (0 &le; _u_ &le; 360 degree). In the placement coordinate system defined above, the ellipse is the equation _C_ = 0, where
 > 
->> ![formula](../../../../../../figures/ifcellipse-math2.gif)
+>> ![formula](../../../../figures/ifcellipse-math2.gif)
 >>
 > The positive sense of the ellipse at any point is in the tangent direction, T, to the curve at the point, where
 > 
->> ![formula](../../../../../../figures/ifcellipse-math3.gif)
+>> ![formula](../../../../figures/ifcellipse-math3.gif)
 >>
 
 

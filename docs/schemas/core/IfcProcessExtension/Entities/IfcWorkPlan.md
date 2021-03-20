@@ -12,7 +12,7 @@ Figure 1 shows the backbone structure of a work plan that defines (1) contained 
 
 If an assigned _IfcTask_ is a root-level task, such task must be declared on the _IfcProject_ using the _IfcRelDeclares_ relationship.
 
-!["work plan instantiation diagram"](../../../../../../figures/ifcworkplan_instantiation_diagram.png "Figure 1 &mdash; Work plan relationships")
+!["work plan instantiation diagram"](../../../../figures/ifcworkplan_instantiation_diagram.png "Figure 1 &mdash; Work plan relationships")
 
 ## Attributes
 

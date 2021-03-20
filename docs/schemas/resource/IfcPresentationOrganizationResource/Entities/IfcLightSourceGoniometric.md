@@ -4,7 +4,7 @@ _IfcLightSourceGoniometric_ defines a light source for which exact lighting data
 
 Figure 1 shows an example of a light emitter having two light sources (of type _IfcLightSourceGoniometric_).
 
-!["Example"](../../../../../../figures/ifclightsourcegoniometric_fig1.gif "Figure 1 &mdash; Light source goniometric")
+!["Example"](../../../../figures/ifclightsourcegoniometric_fig1.gif "Figure 1 &mdash; Light source goniometric")
 
 > HISTORY&nbsp; New entity in IFC2x2.
 

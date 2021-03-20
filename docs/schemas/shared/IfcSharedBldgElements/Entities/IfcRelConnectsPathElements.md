@@ -8,7 +8,7 @@ The connection is described by a connection geometry, given within the object co
 
 <table cellpadding="2" cellspacing="2">
  <tr valign="top">
-  <td valign="top" align="left" width="410"><img src="../../../../../../figures/ifcrelconnectspathelements-fig1.png" alt="wall connection" width="400" height="300" border="0">
+  <td valign="top" align="left" width="410"><img src="../../../../figures/ifcrelconnectspathelements-fig1.png" alt="wall connection" width="400" height="300" border="0">
   </td>
   <td>Figure 1 shows the application of <em>IfcRelConnectsPathElements</em> with the <em>ConnectionGeometry</em> of type  <em>IfcConnectionCurveGeometry</em>. The example shows the connection relationship between two instances of <em>IfcWallStandardCase</em> using the
  <em>IfcRelConnectsPathElements</em> relationship. The <em>ConnectionCurveGeometry</em> defines the <em>CurveOnReleatingElement</em> and
@@ -25,9 +25,9 @@ The connection is described by a connection geometry, given within the object co
 
 <table cellpadding="2" cellspacing="2">
  <tr valign="top">
-  <td valign="top" align="left" width="410"><img src="../../../../../../figures/ifcrelconnectspathelements-fig3.png" alt="wall connection" width="400" height="260" border="0">
+  <td valign="top" align="left" width="410"><img src="../../../../figures/ifcrelconnectspathelements-fig3.png" alt="wall connection" width="400" height="260" border="0">
   </td>
-  <td valign="top" align="left">&nbsp;<img src="../../../../../../figures/ifcrelconnectspathelements-fig2.png" alt="wall connection" width="320" height="200" border="0">
+  <td valign="top" align="left">&nbsp;<img src="../../../../figures/ifcrelconnectspathelements-fig2.png" alt="wall connection" width="320" height="200" border="0">
   </td>
  </tr>
  <tr valign="top">

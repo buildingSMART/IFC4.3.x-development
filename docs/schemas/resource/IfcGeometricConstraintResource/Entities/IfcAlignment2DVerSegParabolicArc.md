@@ -17,7 +17,7 @@ The following equations are used for any point along the parabola:
 * the height z~1~ = (s~1~-s~0~) \* (g~1~+g~0~)/2 + z~0~ 
 
 <table>
-<tr><td><img src="../../../../../../figures/ifcalignment2dversegparabolicarc_fig1.png"></td></tr>
+<tr><td><img src="../../../../figures/ifcalignment2dversegparabolicarc_fig1.png"></td></tr>
 <tr><td>
 Legend:<br>
 red: the parabolic curve with start point and calculated end point used as an vertical alignment</br>
@@ -30,14 +30,14 @@ blue: the minimum circle defined by the parabola constant agreeing to the "is co
 &nbsp;
 
 <table>
-<tr><td><img src="../../../../../../figures/ifcalignment2dversegparabolicarc-convex.png"></td><td style="vertical-align: bottom">start point provided by <i>StartDistAlong</i> and <i>StartHeight</i><br>instanteneous gradient provided by <i>StartGradient</i>, <br>and length provided by <i>HorizontalLength</i></td></tr>
+<tr><td><img src="../../../../figures/ifcalignment2dversegparabolicarc-convex.png"></td><td style="vertical-align: bottom">start point provided by <i>StartDistAlong</i> and <i>StartHeight</i><br>instanteneous gradient provided by <i>StartGradient</i>, <br>and length provided by <i>HorizontalLength</i></td></tr>
 <tr><td><p class="figure">Figure 3 &mdash; Alignment vertical parabolic arc segment convex</p></td><td>&nbsp;</td></tr>
 </table>
 
 &nbsp;
 
 <table>
-<tr><td><img src="../../../../../../figures/ifcalignment2dversegparabolicarc-concave.png"></td><td style="vertical-align: bottom">start point provided by <i>StartDistAlong</i> and <i>StartHeight</i><br>instanteneous gradient provided by <i>StartGradient</i>, <br>and length provided by <i>HorizontalLength</i></td></tr>
+<tr><td><img src="../../../../figures/ifcalignment2dversegparabolicarc-concave.png"></td><td style="vertical-align: bottom">start point provided by <i>StartDistAlong</i> and <i>StartHeight</i><br>instanteneous gradient provided by <i>StartGradient</i>, <br>and length provided by <i>HorizontalLength</i></td></tr>
 <tr><td><p class="figure">Figure 3 &mdash; Alignment vertical parabolic arc segment concave</p></td><td>&nbsp;</td></tr>
 </table>
 

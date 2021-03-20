@@ -8,7 +8,7 @@ The _IfcCompositeCurveOnSurface_ is a collection of segments, based on p-curves.
 > 
 > There shall be at least positional continuity between adjacent segments. The parameterization of the composite curve is obtained from the accumulation of the parametric ranges of the segments. The first segment is parameterized from _0_ to _l~1~_, and, for _i &ge; 2_, the _i^th^_ segment is parameterized from
 > 
->> ![formula](../../../../../../figures/ifccompositecurveonsurface-math1.gif)
+>> ![formula](../../../../figures/ifccompositecurveonsurface-math1.gif)
 > where _l~k~_ is the parametric length (that is, the difference between maximum and minimum parameter values) of the _k^th^_ curve segment.
 > 
 

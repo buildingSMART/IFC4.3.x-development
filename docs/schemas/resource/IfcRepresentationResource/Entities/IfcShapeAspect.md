@@ -8,7 +8,7 @@ The _IfcShapeAspect_'s may have distinct material information or other distict c
 
 Figure 1 indicates the association of material characteristics to shape aspects.
 
-!["shape"](../../../../../../figures/ifcshapeaspect_fig1.png "Figure 1 &mdash; shape aspects for associating material")
+!["shape"](../../../../figures/ifcshapeaspect_fig1.png "Figure 1 &mdash; shape aspects for associating material")
 
 { .extDef}
 > NOTE&nbsp; Definition from ISO 10303-41:  

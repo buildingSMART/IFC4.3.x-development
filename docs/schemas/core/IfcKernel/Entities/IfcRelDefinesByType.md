@@ -13,7 +13,7 @@ There are several scenarios to define the same property set on the object type d
     * If the object occurrence has a property with the same _IfcProperty.Name_ in an _IfcPropertySet_, as the corresponding object type definition, then the occurrence property value overrides the type property value. 
 
 <table border="0" cellpadding="0" cellspacing="0" summary="relationship usage">
-<tr><td valign="top"><img src="../../../../../../figures/ifcreldefinesbytype_fig-1.png" alt="instance diagram" border="0"></td></tr>
+<tr><td valign="top"><img src="../../../../figures/ifcreldefinesbytype_fig-1.png" alt="instance diagram" border="0"></td></tr>
 <td valign="top"><p class="figure">Figure 1 &mdash; Type definition relationships</p></td>
 </table>
 

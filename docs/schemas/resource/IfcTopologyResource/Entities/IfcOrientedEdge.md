@@ -7,7 +7,7 @@ The _IfcOrientedEdge_ represents an _IfcEdge_ with an _Orientation_ flag applied
 The reused edge with a geometric representation as _IfcEdgeCurve_ defines the edge in 3D coordinate space. In some cases, particularly when using elementary or swept surfaces, there is the risk of imprecise mapping of the 3D (x, y, z) _IfcEdgeCurve_ onto the adjacent surfaces to determine the boundaries of these surfaces. The optional _CurveOnSurface_ defines the 2D (u, v) edge within the parametric space of the surface. It could be used to determine the correctness of the mapping of the 3D _IfcEdgeCurve_ onto this surface.
 
 <table>
-<tr><td><br><img src="../../../../../../figures/ifcadvancedbrep_02.png" width="450" height="600" alt="example"></td>
+<tr><td><br><img src="../../../../figures/ifcadvancedbrep_02.png" width="450" height="600" alt="example"></td>
 <td><blockquote class="example">EXAMPLE&nbsp; Figure 1 illustrates an example where the <em>CurveOnSurface</em> is provided in addition to the curve geometry of the <em>IfcEdgeCurve</em>.</blockquote></td>
 </tr>
 <tr><td><p class="figure">Figure 1 &mdash; Curve on surface representation of an <em>IfcOrientedEdge</em></p></td><td>&nbsp;</td><td>&nbsp;</td></tr>

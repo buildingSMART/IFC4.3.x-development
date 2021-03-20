@@ -9,7 +9,7 @@ The _XLength_, _YLength_, and _ZLength_ attributes define the size of the IfcBlo
 
 <table cellpadding="2" cellspacing="2" summary="block geometry">
 <tr>
-<td><img alt="block" src="../../../../../../figures/ifcblock-layout1.png" border="0" height="300" width="400"></td>
+<td><img alt="block" src="../../../../figures/ifcblock-layout1.png" border="0" height="300" width="400"></td>
 <td style="vertical-align:bottom;">
 <p class="small">Figure 1 illustrates geometric parameters of a block where the block positioned within its own placement
 coordinate system. The values for <em>XLength</em>, <em>YLength</em>, and <em>ZLength</em> are applied to the positive
@@ -44,7 +44,7 @@ Figure 2 illustrates default texture mapping with a clamped texture (RepeatS=Fal
 { .gridtable}
 <table summary="block texture" class="gridtable">
 <tr>
-<td><img src="../../../../../../figures/ifcblock-texture.png" alt="texture"></td>
+<td><img src="../../../../figures/ifcblock-texture.png" alt="texture"></td>
 </tr>
 <tr>
 <td>

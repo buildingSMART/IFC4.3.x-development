@@ -15,7 +15,7 @@ The _IfcDoorLiningProperties_ does not hold its own geometric representation. Ho
   <td>
    <table class="gridtable">
     <tr valign="top">
-     <td align="left" valign="top"><img src="../../../../../../figures/ifcdoorliningproperties-fig01.png" alt="lining 1" border="0" height="250" width="280"></td>
+     <td align="left" valign="top"><img src="../../../../figures/ifcdoorliningproperties-fig01.png" alt="lining 1" border="0" height="250" width="280"></td>
      <td align="left" valign="top">The lining is applied to the left, right and upper side of the opening reveal. The parameters are:
       <ul>
        <li class="small"><em>LiningDepth</em>, if omited, equal to wall thickness - this only takes effect if a value for <em>LiningThickness</em> is given. If both parameters are not given, then there is no lining.</li>
@@ -27,7 +27,7 @@ The _IfcDoorLiningProperties_ does not hold its own geometric representation. Ho
      </td>
     </tr>
     <tr valign="top">
-     <td align="left" valign="top"><img src="../../../../../../figures/ifcdoorliningproperties-fig02.png" alt="lining 2" border="0" height="250" width="280"></td>
+     <td align="left" valign="top"><img src="../../../../figures/ifcdoorliningproperties-fig02.png" alt="lining 2" border="0" height="250" width="280"></td>
      <td align="left" valign="top">The lining can only cover part of the opening reveal.
       <ul>
        <li class="small"><em>LiningOffset</em> : given if lining edge has an offset to the x axis of the local placement.</li>
@@ -38,7 +38,7 @@ The _IfcDoorLiningProperties_ does not hold its own geometric representation. Ho
      </td>
     </tr>
     <tr valign="top">
-     <td align="left" valign="top"><img src="../../../../../../figures/ifcdoorliningproperties-fig03.png" alt="lining 3" border="0" height="250" width="280"></td>
+     <td align="left" valign="top"><img src="../../../../figures/ifcdoorliningproperties-fig03.png" alt="lining 3" border="0" height="250" width="280"></td>
      <td align="left" valign="top">The lining may include a casing, which covers part of the wall faces around the opening. The
       casing covers the left, right and upper side of the lining on both sides of the wall. The parameters are:
       <ul>
@@ -48,7 +48,7 @@ The _IfcDoorLiningProperties_ does not hold its own geometric representation. Ho
      </td>
     </tr>
     <tr>
-     <td align="left" valign="top"><img src="../../../../../../figures/ifcdoorliningproperties-fig04.png" alt="lining 4" border="0" height="250" width="250"></td>
+     <td align="left" valign="top"><img src="../../../../figures/ifcdoorliningproperties-fig04.png" alt="lining 4" border="0" height="250" width="250"></td>
      <td align="left" valign="top">The lining may include a threshold, which covers the bottom side of the opening. The parameters are:
       <ul>
        <li><em>ThresholdDepth</em> &mdash; if omited, equal to wall thickness - this only takes effect if a value for <em>ThresholdThickness</em> is
@@ -59,7 +59,7 @@ The _IfcDoorLiningProperties_ does not hold its own geometric representation. Ho
      </td>
     </tr>
     <tr valign="top">
-     <td align="left" valign="top"><img src="../../../../../../figures/ifcdoorliningproperties-fig05.png" alt="lining 5" border="0" height="300" width="250"></td>
+     <td align="left" valign="top"><img src="../../../../figures/ifcdoorliningproperties-fig05.png" alt="lining 5" border="0" height="300" width="250"></td>
      <td align="left" valign="top">The lining may have a transom which separates the door panel from a window panel. The transom, if given, is defined by:
       <ul>
        <li class="small"><em>TransomOffset</em> : a parallel edge to the x axis of the local placement</li>

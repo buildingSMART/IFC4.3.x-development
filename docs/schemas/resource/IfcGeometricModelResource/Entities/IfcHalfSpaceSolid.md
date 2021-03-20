@@ -4,7 +4,7 @@ A half space solid divides the domain into two by a base surface. Normally, the 
 
 Figure 1 illustrates the definition of the _IfcHalfSpaceSolid_ within a given coordinate system. The base surface is given by an unbounded plane, the red boundary is shown for visualization purposes only.
 
-!["half space solid"](../../../../../../figures/ifchalfspacesolid-layout1.gif "Figure 1 &mdash; Half space solid geometry")
+!["half space solid"](../../../../figures/ifchalfspacesolid-layout1.gif "Figure 1 &mdash; Half space solid geometry")
 
 { .extDef}
 > NOTE&nbsp; Definition according to ISO/CD 10303-42:1992  

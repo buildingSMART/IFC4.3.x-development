@@ -12,7 +12,7 @@ Figure 1 illustrates annotation fill area.
 
 <table>
 <tr>
-<td>&nbsp; &nbsp; <img src="../../../../../../figures/ifcannotationfillarea_fig1.png" alt="annotation fill area" border="0"></td>
+<td>&nbsp; &nbsp; <img src="../../../../figures/ifcannotationfillarea_fig1.png" alt="annotation fill area" border="0"></td>
 </tr>
 <tr>
 <td>

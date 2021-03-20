@@ -16,7 +16,7 @@ Instances of type _IfcManifoldSolidBrep_ shall be of type _IfcFacetedBrep_, usin
 > 
 > A B-rep is represented by one or more closed shells which shall be disjoint. One shell, the outer, shall completely enclose all the other shells and no other shell may enclose a shell. The facility to define a B-rep with one or more internal voids is provided by a subtype. The following version of the Euler formula shall be satisfied,
 > 
->> ![math](../../../../../../figures/ifcmanifoldsolidbrep-math1.gif)
+>> ![math](../../../../figures/ifcmanifoldsolidbrep-math1.gif)
 > where V, E, F, L~l~ and S are the numbers of unique vertices, edges, faces, loop uses and shells in the model and G^s^ is the sum of the genus of the shells.
 > 
 

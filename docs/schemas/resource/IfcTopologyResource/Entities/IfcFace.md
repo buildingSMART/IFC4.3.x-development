@@ -13,7 +13,7 @@ An _IfcFace_ is topological entity used to define surface, bounded by loops, of 
 > A face shall have at least one bound, and the loops shall not intersect. One loop is optionally distinguished as the outer loop of the face. If so, it establishes a preferred way of embedding the face domain in the plane, in which the other bounding loops of the face are inside the outer bound. Because the face domain is arcwise connected, no inner loop will contain any other loop. This is true regardless of which embedding in the plane is chosen.   
 >   
 > The edges and vertices referenced by the loops of a face form a graph, of which the individual loops are the connected components. The Euler equation (1) for this graph becomes: 
->> ![Image](../../../../../../figures/ifcface-math1.gif)
+>> ![Image](../../../../figures/ifcface-math1.gif)
 >  where _G^l^~i~_ is the graph genus of the_i_^th^ loop.
 
 > NOTE&nbsp; Entity adapted from **face** defined in ISO 10303-42.

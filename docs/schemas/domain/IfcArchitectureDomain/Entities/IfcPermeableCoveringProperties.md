@@ -10,7 +10,7 @@ The parameters at the _IfcPermeableCoveringProperties_ define a standard permeab
 
 Figure 1 illustrates the panel applied to the position within the lining, as defined by the panel position attribute. The following parameters apply to that panel: _FrameDepth_, _FrameThickness_.
 
-!["covering"](../../../../../../figures/ifcpermeablecoveringproperties.gif "Figure 1 &mdash; Permeable covering properties")
+!["covering"](../../../../figures/ifcpermeablecoveringproperties.gif "Figure 1 &mdash; Permeable covering properties")
 
 > HISTORY&nbsp; New entity in IFC2.0, it had been renamed from _IfcPermeableCovering_ in IFC2x.
 

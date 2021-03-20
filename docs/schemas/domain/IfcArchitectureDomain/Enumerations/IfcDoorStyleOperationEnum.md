@@ -14,7 +14,7 @@ This enumeration defines the basic ways to describe how doors operate as shown i
       <td valign="top" width="50%">Door with one panel that opens (swings) to the left. The hinges are on the left side as viewed in the direction of the positive y-axis.<br>
       <blockquote class="note">Note&nbsp; Direction of swing (whether in or out) is determined at the <em>IfcDoor</em>.<br><br></blockquote>
       </td>
-      <td valign="top" width="20%"><img src="../../../../../../figures/ifcdoorstyleoperationenum-fig01.gif" alt="single swing left " border="0" height="86" width="133"></td>
+      <td valign="top" width="20%"><img src="../../../../figures/ifcdoorstyleoperationenum-fig01.gif" alt="single swing left " border="0" height="86" width="133"></td>
     </tr>
     <tr>
       <td valign="top" width="20%">SINGLE_SWING_RIGHT
@@ -23,7 +23,7 @@ This enumeration defines the basic ways to describe how doors operate as shown i
 the positive y-axis.<br>
       <blockquote class="note">NOTE&nbsp; Direction of swing (whether in or out) is determined at the <em>IfcDoor</em>.<br><br></blockquote>
       </td>
-      <td valign="top" width="20%"><img src="../../../../../../figures/ifcdoorstyleoperationenum-fig02.gif" alt="single swing right" border="0" height="86" width="133"></td>
+      <td valign="top" width="20%"><img src="../../../../figures/ifcdoorstyleoperationenum-fig02.gif" alt="single swing right" border="0" height="86" width="133"></td>
     </tr>
     <tr>
       <td valign="top" width="20%">DOUBLE_DOOR_<br>SINGLE_SWING
@@ -31,7 +31,7 @@ the positive y-axis.<br>
       <td valign="top" width="50%">Door with two panels, one opens (swings) to the left the other opens (swings) to the right.<br>
       <blockquote class="note">NOTE&nbsp; Direction of swing (whether in or out) is determined at the <em>IfcDoor</em>.&nbsp;<br><br> </blockquote>
       </td>
-      <td valign="top" width="20%"><img src="../../../../../../figures/ifcdoorstyleoperationenum-fig03.gif" alt="double swing" border="0" height="65" width="133"></td>
+      <td valign="top" width="20%"><img src="../../../../figures/ifcdoorstyleoperationenum-fig03.gif" alt="double swing" border="0" height="65" width="133"></td>
     </tr>
     <tr>
       <td valign="top" width="20%">DOUBLE_SWING_LEFT
@@ -40,7 +40,7 @@ the positive y-axis.<br>
 double acting door.<br>
       <blockquote class="note">NOTE&nbsp; Direction of main swing (whether in or out) is determined at the <em>IfcDoor</em>.<br><br></blockquote>
       </td>
-      <td valign="top" width="20%"><img src="../../../../../../figures/ifcdoorstyleoperationenum-fig04.gif" alt="double swing left" border="0" height="153" width="133"></td>
+      <td valign="top" width="20%"><img src="../../../../figures/ifcdoorstyleoperationenum-fig04.gif" alt="double swing left" border="0" height="153" width="133"></td>
     </tr>
     <tr>
       <td valign="top" width="20%">DOUBLE_SWING_RIGHT
@@ -49,7 +49,7 @@ double acting door.<br>
 double acting door.<br>
       <blockquote class="note">NOTE&nbsp; Direction of main swing (whether in or out) is determined at the <em>IfcDoor</em>.<br><br></blockquote>
       </td>
-      <td valign="top" width="20%"><img src="../../../../../../figures/ifcdoorstyleoperationenum-fig05.gif" alt="double swing right" border="0" height="153" width="133"></td>
+      <td valign="top" width="20%"><img src="../../../../figures/ifcdoorstyleoperationenum-fig05.gif" alt="double swing right" border="0" height="153" width="133"></td>
     </tr>
     <tr>
       <td valign="top" width="20%">DOUBLE_DOOR_<br>DOUBLE_SWING
@@ -57,7 +57,7 @@ double acting door.<br>
       <td valign="top" width="50%">Door with two panels, one swings in both directions and to the right in the main trafic direction the other swings also in both directions and to the left in the main trafic direction.<br>
       <blockquote class="note">NOTE&nbsp; Direction of main swing (whether in or out) is determined at the <em>IfcDoor</em>.<br><br></blockquote>
       </td>
-      <td valign="top" width="20%"><img src="../../../../../../figures/ifcdoorstyleoperationenum-fig06.gif" alt="double double swing" border="0" height="98" width="133"></td>
+      <td valign="top" width="20%"><img src="../../../../figures/ifcdoorstyleoperationenum-fig06.gif" alt="double double swing" border="0" height="98" width="133"></td>
     </tr>
     <tr>
       <td valign="top" width="20%">DOUBLE_DOOR_<br>SINGLE_SWING_<br>OPPOSITE_LEFT
@@ -66,7 +66,7 @@ double acting door.<br>
 opposite direction.<br>
       <blockquote class="note">NOTE&nbsp; Direction of main swing (whether in or out) is determined at the <em>IfcDoor</em>.<br><br></blockquote>
       </td>
-      <td valign="top" width="20%"><img src="../../../../../../figures/ifcdoorstyleoperationenum-fig06a.gif" alt="opposite left" border="0" height="101" width="133"></td>
+      <td valign="top" width="20%"><img src="../../../../figures/ifcdoorstyleoperationenum-fig06a.gif" alt="opposite left" border="0" height="101" width="133"></td>
     </tr>
     <tr>
       <td valign="top" width="20%">DOUBLE_DOOR_<br>SINGLE_SWING_<br>OPPOSITE_RIGHT
@@ -75,50 +75,50 @@ opposite direction.<br>
 opposite direction.<br>
       <blockquote class="note">NOTE&nbsp; Direction of main swing (whether in or out) is determined at the <em>IfcDoor</em>.</blockquote>
       </td>
-      <td valign="top" width="20%"><img src="../../../../../../figures/ifcdoorstyleoperationenum-fig06b.gif" alt="opposite right" border="0" height="103" width="133"></td>
+      <td valign="top" width="20%"><img src="../../../../figures/ifcdoorstyleoperationenum-fig06b.gif" alt="opposite right" border="0" height="103" width="133"></td>
     </tr>
     <tr>
       <td valign="top" width="20%">SLIDING_TO_LEFT
       </td>
       <td valign="top" width="50%">Door with one panel that is sliding to the left. </td>
-      <td valign="top" width="20%"><img src="../../../../../../figures/ifcdoorstyleoperationenum-fig07.gif" alt="sliding to left" border="0" height="70" width="133"></td>
+      <td valign="top" width="20%"><img src="../../../../figures/ifcdoorstyleoperationenum-fig07.gif" alt="sliding to left" border="0" height="70" width="133"></td>
     </tr>
     <tr>
       <td valign="top" width="20%">SLIDING_TO_RIGHT
       </td>
       <td valign="top" width="50%">Door with one panel that is sliding to the right. </td>
-      <td valign="top" width="20%"><img src="../../../../../../figures/ifcdoorstyleoperationenum-fig08.gif" alt="sliding to right" border="0" height="70" width="133"></td>
+      <td valign="top" width="20%"><img src="../../../../figures/ifcdoorstyleoperationenum-fig08.gif" alt="sliding to right" border="0" height="70" width="133"></td>
     </tr>
     <tr>
       <td valign="top" width="20%">DOUBLE_DOOR_SLIDING
       </td>
       <td valign="top" width="50%">Door with two panels, one is sliding to the left the other is sliding to the right. </td>
-      <td valign="top" width="20%"><img src="../../../../../../figures/ifcdoorstyleoperationenum-fig09.gif" alt="double sliding" border="0" height="72" width="133"></td>
+      <td valign="top" width="20%"><img src="../../../../figures/ifcdoorstyleoperationenum-fig09.gif" alt="double sliding" border="0" height="72" width="133"></td>
     </tr>
     <tr>
       <td valign="top" width="20%">FOLDING_TO_LEFT
       </td>
       <td valign="top" width="50%">Door with one panel that is folding to the left. </td>
-      <td valign="top" width="20%"><img src="../../../../../../figures/ifcdoorstyleoperationenum-fig10.gif" alt="folding to left" border="0" height="79" width="133"></td>
+      <td valign="top" width="20%"><img src="../../../../figures/ifcdoorstyleoperationenum-fig10.gif" alt="folding to left" border="0" height="79" width="133"></td>
     </tr>
     <tr>
       <td valign="top" width="20%">FOLDING_TO_RIGHT
       </td>
       <td valign="top" width="50%">Door with one panel that is folding to the right. </td>
-      <td valign="top" width="20%"><img src="../../../../../../figures/ifcdoorstyleoperationenum-fig11.gif" alt="folding to right" border="0" height="79" width="133"></td>
+      <td valign="top" width="20%"><img src="../../../../figures/ifcdoorstyleoperationenum-fig11.gif" alt="folding to right" border="0" height="79" width="133"></td>
     </tr>
     <tr>
       <td valign="top" width="20%">DOUBLE_DOOR_FOLDING
       </td>
       <td valign="top" width="50%">Door with two panels, one is folding to the left the other is folding to the right. </td>
-      <td valign="top" width="20%"><img src="../../../../../../figures/ifcdoorstyleoperationenum-fig12.gif" alt="double folding" border="0" height="74" width="133"></td>
+      <td valign="top" width="20%"><img src="../../../../figures/ifcdoorstyleoperationenum-fig12.gif" alt="double folding" border="0" height="74" width="133"></td>
     </tr>
     <tr>
       <td valign="top" width="20%">REVOLVING
       </td>
       <td valign="top" width="50%">An entrance door consisting of four leaves set in a form of a cross and revolving around a central vertical axis (the
 four panels are described by a single <em>IfcDoor</em> panel property). </td>
-      <td valign="top" width="20%"><img src="../../../../../../figures/ifcdoorstyleoperationenum-fig13.gif" alt="revolving" border="0" height="98" width="133"></td>
+      <td valign="top" width="20%"><img src="../../../../figures/ifcdoorstyleoperationenum-fig13.gif" alt="revolving" border="0" height="98" width="133"></td>
     </tr>
     <tr>
       <td valign="top" width="20%">ROLLINGUP
@@ -126,7 +126,7 @@ four panels are described by a single <em>IfcDoor</em> panel property). </td>
       <td valign="top" width="50%">Door that opens by rolling up.<br>
       <blockquote class="note">NOTE&nbsp; Whether it rolls up to the inside or outside is determined at the <em>IfcDoor</em>.</blockquote>
       </td>
-      <td valign="top" width="20%"><img src="../../../../../../figures/ifcdoorstyleoperationenum-fig14.gif" alt="rolling" border="0" height="136" width="133"></td>
+      <td valign="top" width="20%"><img src="../../../../figures/ifcdoorstyleoperationenum-fig14.gif" alt="rolling" border="0" height="136" width="133"></td>
     </tr>
     <tr>
       <td valign="top" width="20%">USERDEFINED
@@ -139,7 +139,7 @@ four panels are described by a single <em>IfcDoor</em> panel property). </td>
       </td>
       <td valign="top" width="50%">A door with a not defined operation type is considered as a door with a lining, but no panels. It is thereby always
 open.</td>
-      <td valign="top" width="20%">&nbsp;<img src="../../../../../../figures/ifcdoorstyleoperationenum-fig15.gif" alt="not defined" height="100" width="133"><br>
+      <td valign="top" width="20%">&nbsp;<img src="../../../../figures/ifcdoorstyleoperationenum-fig15.gif" alt="not defined" height="100" width="133"><br>
       </td>
     </tr>
   </tbody>

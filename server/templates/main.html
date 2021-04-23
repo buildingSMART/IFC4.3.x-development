@@ -1,0 +1,84 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>IFC4.3 Documentation {{ title }}</title>
+</head>
+<style>
+body {
+  font-size: 12pt;
+}
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  height:5em;
+}
+nav>a {
+  display: flex;
+}
+a {
+  color: #336699;
+  text-decoration: none;
+}
+a:hover {
+  color: #66ccff;
+}
+h1 {
+  padding: 0;
+  margin: 0;
+  font-size: 12pt;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: solid 1px #555;  
+}
+tr {
+  border-bottom: solid 1px #888;
+}
+th {
+  text-align: left;
+  background: lightgray;
+}
+.edit {
+  display: inline-block;
+  padding: 5px 15px;
+  background: #369;
+  border: solid 1px #246;
+  border-radius: 8px;
+  color: white;
+  margin-top: 8px;
+}
+pre {
+  padding: 10px;
+  border: solid 1px gray;
+  backgroud: #eee;
+  font-size: 80%;
+}
+</style>
+<body>
+
+<h1>IFC 4.3.0.0</h1>
+
+<nav>
+    {% for column in navigation %}
+        {% for cell in column %}
+            <a href='{{ cell["url"] }}'>{{ cell['number'] or '' }} {{ cell['title'] }}</a>
+        {% endfor %}
+    {% endfor %}
+</nav>
+
+{% block searchbar %}
+
+<form method='post' action='/search' style='float: right; margin:20px;'>
+<input type='text' name='query' value='' />
+<input type='submit' value='Search' />
+</form>
+
+{% endblock %}
+
+{% block pagecontent %}
+{% endblock %}
+
+</body>
+</html>

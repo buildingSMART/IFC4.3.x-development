@@ -1,0 +1,116 @@
+{% extends "main.html" %}
+{% block pagecontent %}
+<h2>{{number}} {{ title}}</h2>
+
+{% if path %}
+
+<div id='contributors'></div>
+<a class='edit' href='https://github.com/{{ repo or "buildingSMART/IFC4.3.x-development" }}/blob/master/{{ path }}'>Edit on Github</a>
+<script>
+fetch('https://api.github.com/repos/{{ repo or "buildingSMART/IFC4.3.x-development" }}/commits?path={{ path }}').then(r => r.json()).then(j => {
+  let n = {};
+  j.forEach(c => {
+    n[c.author.avatar_url] = (n[c.author.avatar_url || 0]) + 1;
+  });
+  let es = Object.entries(n);
+  document.getElementById('contributors').appendChild(
+    document.createTextNode(es.length + ' contributor(s): ')
+  );
+  es.map(kv => [kv[1], kv[0]]).sort().forEach(kv => {
+    let img = document.createElement('img');
+    img.src = kv[1] + "&s=32";
+    img.style.borderRadius = '16px';
+    img.style.verticalAlign = 'middle';
+    document.getElementById('contributors').appendChild(img);
+  });
+  console.log(j[0])
+  document.getElementById('contributors').innerHTML += '<br />Last change: ' +
+  '<em>' + j[0].commit.message + '</em>' + ' by ' + j[0].commit.author.name + ' on ' + (new Date(j[0].commit.author.date)).toLocaleString();
+});
+</script>
+
+
+{% endif %}
+
+{{ content | safe }}
+
+{% if toc %}
+
+{% for sub in subs %}
+
+{% if loop.index < 5 %}
+
+<a href='content/{{ ["scope", "normative_references", "terms_and_definitions", "concepts"][loop.index-1] }}.htm'>{{ loop.index }} {{ sub[0] }}</a><br>
+
+{% else %}
+
+<a href='chapter-{{loop.index}}'>{{ loop.index }} {{ sub[0] }}</a><br>
+
+{% endif %}
+
+{% set loop1 = loop %}
+
+{% for ssub in sub[1] %}
+
+&nbsp;&nbsp;<a href='{{ ssub[0] | lower }}/content.html'>{{ loop1.index }}.{{ loop.index }} {{ ssub[0] }}</a><br>
+
+{% set loop2 = loop %}
+
+&nbsp;&nbsp;&nbsp;&nbsp;<a href='{{ ssub[0] | lower }}/content.html'>{{ loop1.index }}.{{ loop2.index }}.1 Schema Definition</a><br>
+
+{% set loop3 = loop %}
+
+{% for a in ["Types", "Entities"] %}
+
+&nbsp;&nbsp;&nbsp;&nbsp;<a href='{{ ssub[0] | lower }}/content.html'>{{ loop1.index }}.{{ loop2.index }}.{{ loop.index + 1 }} {{ a }}</a><br>
+
+{% set loop4 = loop %}
+
+{% for x in ssub[1][a] %}
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='lexical/{{ x }}.htm'>{{ loop1.index }}.{{ loop2.index }}.{{ loop4.index + 1 }}.{{ loop.index }} {{ x }}</a><br>
+
+{% endfor %}
+
+{% endfor %}
+
+{% endfor %}
+
+{% endfor %}
+
+
+{% else %}
+
+{% for sub in subs %}
+
+{% if sub is string %}
+
+{% if ":" in sub %}
+
+<a href='{{ sub.split(":")[1] }}'>{{ sub.split(":")[0] }}</a><br>
+
+{% else %}
+
+<a href='../{{ sub | lower }}/content.html'>{{ number }}.{{ loop.index }} {{ sub }}</a><br>
+
+{% endif %}
+
+{% else %}
+
+<h3>{{ number }}.{{ loop.index + 1 }} {{ sub[0] }}</h3>
+
+{% set outer_loop = loop %}
+
+{% for ssub in sub[1] %}
+
+<a href='../lexical/{{ ssub }}.htm'>{{ number }}.{{ outer_loop.index + 1 }}.{{ loop.index }} {{ ssub }}</a><br>
+
+{% endfor %}
+
+{% endif %}
+
+{% endfor %}
+
+{% endif %}
+
+{% endblock %}

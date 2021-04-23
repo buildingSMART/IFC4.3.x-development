@@ -14,7 +14,7 @@ The Markdown documents are taken from https://github.com/buildingSMART/IFC4.3.x-
 - Clean-up the invalid existing .html documentation files
 
 Fully functional and consistent HTML documentation is automatically generated from the Markdown files.  
-The full generated documentation can be accessed at http://ifc43-docs.aecgeeks.com/
+The full generated documentation can be accessed at http://ifc43-docs.standards.buildingsmart.org/
 
 #### Diagrams
 
@@ -26,7 +26,8 @@ For example, the IfcWorkPlan instantiation diagram can be included and edited in
 Below is the Graphviz definition of this figure. The user's input overwrites the automatic settings. This can be verified with 
 the IfcProject node on the HTML diagram, whose link pointing to Building Smart website replaces the link to the entity's HTML page. 
 
-The interactive SVG diagram can be seen on the generated HTML page here http://ifc43-docs.aecgeeks.com/IFC/RELEASE/IFC4x3/RC1/HTML/lexical/IfcWorkPlan.htm
+The interactive SVG diagram can be seen on the generated HTML page here
+http://ifc43-docs.standards.buildingsmart.org/IFC/RELEASE/IFC4x3/HTML/lexical/IfcWorkPlan.htm
 
 #### Dependencies
 

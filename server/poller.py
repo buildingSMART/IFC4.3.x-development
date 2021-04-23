@@ -5,7 +5,9 @@ import subprocess
 
 XML_PATH = "/tmp/ifc43-xml"
 
-os.makedirs(XML_PATH)
+try:
+    os.makedirs(XML_PATH)
+except: pass
 
 while True:
 

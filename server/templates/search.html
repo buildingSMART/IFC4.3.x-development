@@ -1,0 +1,19 @@
+{% extends "main.html" %}
+{% block pagecontent %}
+
+<h2>Search</h2>
+
+<form method='post'>
+<input type='text' name='query' value='{{ query }}'/>
+<input type='submit' value='Search' />
+</form>
+
+<ul>
+    {% for r in matches %}
+        <li><a href="{{ r['url'] }}">{{ r['title']}}</a>
+            <span>{{ r['match'] | safe }}</span>
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

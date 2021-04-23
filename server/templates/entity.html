@@ -1,0 +1,34 @@
+{% extends "main.html" %}
+{% block pagecontent %}
+<h2>{{ number }} {{ entity}}</h2>
+
+<div id='contributors'></div>
+<a class='edit' href='https://github.com/buildingSMART/IFC4.3.x-development/blob/master/{{ path }}'>Edit on Github</a>
+<script>
+fetch('https://api.github.com/repos/buildingSMART/IFC4.3.x-development/commits?path={{ path }}').then(r => r.json()).then(j => {
+  let n = {};
+  j.forEach(c => {
+    n[c.author.avatar_url] = (n[c.author.avatar_url || 0]) + 1;
+  });
+  let es = Object.entries(n);
+  document.getElementById('contributors').appendChild(
+    document.createTextNode(es.length + ' contributor(s): ')
+  );
+  es.map(kv => [kv[1], kv[0]]).sort().forEach(kv => {
+    let img = document.createElement('img');
+    img.src = kv[1] + "&s=32";
+    img.style.borderRadius = '16px';
+    img.style.verticalAlign = 'middle';
+    document.getElementById('contributors').appendChild(img);
+  });
+  console.log(j[0])
+  document.getElementById('contributors').innerHTML += '<br />Last change: ' +
+  '<em>' + j[0].commit.message + '</em>' + ' by ' + j[0].commit.author.name + ' on ' + (new Date(j[0].commit.author.date)).toLocaleString();
+});
+</script>
+
+<h3>{{ number }}.1 Semantic definitions at the entity</h3>
+
+{{ content | safe }}
+
+{% endblock %}

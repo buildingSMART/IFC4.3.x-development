@@ -4,8 +4,14 @@
 
 {% if path %}
 
-<div id='contributors'></div>
-<a class='edit' href='https://github.com/{{ repo or "buildingSMART/IFC4.3.x-development" }}/blob/master/{{ path }}'>Edit on Github</a>
+<div class="col-sm-12">
+    <div class="card fluid shadowed">
+        <p>
+            <a class='button primary' style="float: right;" href='https://github.com/buildingSMART/IFC4.3.x-development/blob/master/{{ path }}'><span class="icon-edit inverse"></span> Edit on Github</a>
+            <small><span id='contributors'></span><br /><span id='last-change'></span></small>
+        </p>
+    </div>
+</div>
 <script>
 fetch('https://api.github.com/repos/{{ repo or "buildingSMART/IFC4.3.x-development" }}/commits?path={{ path }}').then(r => r.json()).then(j => {
   let n = {};
@@ -24,7 +30,7 @@ fetch('https://api.github.com/repos/{{ repo or "buildingSMART/IFC4.3.x-developme
     document.getElementById('contributors').appendChild(img);
   });
   console.log(j[0])
-  document.getElementById('contributors').innerHTML += '<br />Last change: ' +
+  document.getElementById('last-change').innerHTML += 'Last change: ' +
   '<em>' + j[0].commit.message + '</em>' + ' by ' + j[0].commit.author.name + ' on ' + (new Date(j[0].commit.author.date)).toLocaleString();
 });
 </script>

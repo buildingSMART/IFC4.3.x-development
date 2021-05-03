@@ -1,20 +1,13 @@
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>IFC4.3 Documentation {{ title }}</title>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/Chalarangelo/mini.css/v3.0.1/dist/mini-default.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>IFC4.3 Documentation {{ title }}</title>
 </head>
 <style>
 body {
   font-size: 12pt;
-}
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  height:5em;
-}
-nav>a {
-  display: flex;
 }
 a {
   color: #336699;
@@ -22,32 +15,6 @@ a {
 }
 a:hover {
   color: #66ccff;
-}
-h1 {
-  padding: 0;
-  margin: 0;
-  font-size: 12pt;
-}
-table {
-  width: 100%;
-  border-collapse: collapse;
-  border: solid 1px #555;  
-}
-tr {
-  border-bottom: solid 1px #888;
-}
-th {
-  text-align: left;
-  background: lightgray;
-}
-.edit {
-  display: inline-block;
-  padding: 5px 15px;
-  background: #369;
-  border: solid 1px #246;
-  border-radius: 8px;
-  color: white;
-  margin-top: 8px;
 }
 pre {
   padding: 10px;
@@ -57,28 +24,32 @@ pre {
 }
 </style>
 <body>
-
-<h1>IFC 4.3.0.0</h1>
-
-<nav>
-    {% for column in navigation %}
-        {% for cell in column %}
-            <a href='{{ cell["url"] }}'>{{ cell['number'] or '' }} {{ cell['title'] }}</a>
-        {% endfor %}
-    {% endfor %}
-</nav>
-
-{% block searchbar %}
-
-<form method='post' action='/search' style='float: right; margin:20px;'>
-<input type='text' name='query' value='' />
-<input type='submit' value='Search' />
-</form>
-
-{% endblock %}
-
-{% block pagecontent %}
-{% endblock %}
-
+    <div class="container">
+        <div class="row">
+            <h1>IFC 4.3.0.0</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                {% block searchbar %}
+                <form method='post' action='/search'>
+                    <input type='text' name='query' value='' />
+                    <input type='submit' value='Search' />
+                    <span class="icon-search"></span>
+                </form>
+                {% endblock %}
+                <nav>
+                    {% for column in navigation %}
+                    {% for cell in column %}
+                    <a href='{{ cell["url"] }}'>{{ cell['number'] or '' }} {{ cell['title'] }}</a>
+                    {% endfor %}
+                    {% endfor %}
+                </nav>
+            </div>
+            <div class="col-md-9">
+                {% block pagecontent %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
 </body>
 </html>

@@ -20,11 +20,6 @@ import json
 from hilbertcurve.hilbertcurve import HilbertCurve as HC
 hc = HC(4, 2)
 
-if platform.system():
-    IM_CONVERT = r"C:\Program Files\ImageMagick-7.0.7-Q16\convert.exe"
-else:
-    IM_CONVERT = "convert"
-
 try:
     xmi_fn = sys.argv[1]
 except:
@@ -592,7 +587,7 @@ class Tex_object(object):
         
     def generate_pdf(self):
         subprocess.check_call(['pdflatex', "-interaction=batchmode", os.path.basename(self.tex_file_name+'.tex')], cwd=os.path.dirname(self.tex_file_name), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        print(*[IM_CONVERT, "-density", "150", self.tex_file_name+'.pdf', "-quality", "50", self.tex_file_name+'.png'])
+
 
 if __name__ == '__main__':
 

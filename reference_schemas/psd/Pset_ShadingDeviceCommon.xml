@@ -1,0 +1,448 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="3eeaba00d20711e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC2" />
+  <Name>Pset_ShadingDeviceCommon</Name>
+  <Definition>Shading device properties associated with an element that represents a shading device</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcShadingDevice</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcShadingDevice</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="47db8b80d20711e1800000215ad4efdf">
+      <Name>Reference</Name>
+      <Definition>Reference ID for this specified type in this project (e.g. type 'A-1'), provided, if there is no classification reference to a recognized classification system used.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcIdentifier" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Bemusterungstyp</NameAlias>
+        <NameAlias lang="en">Reference</NameAlias>
+        <NameAlias lang="fr-FR">Référence</NameAlias>
+        <NameAlias lang="ja-JP">参照記号</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">Bemusterungstyp, wird als Attribute angegeben, wenn keine allgemein anerkanntes Klassifizierungssystem angewandt wird.</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Référence à l'identifiant d'un type spécifié dans le contexte du projet (exemple : "type A1"). A fournir s'il n'y a pas de référence à une classification en usage.</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">このプロジェクトにおける参照記号(例：A-1)。分類コードではなく内部で使用されるプロジェクトタイプとして使用されるもの。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="4e6a0300d20711e1800000215ad4efdf">
+      <Name>Status</Name>
+      <Definition>Status of the element, predominately used in renovation or retrofitting projects. The status can be assigned to as "New" - element designed as new addition, "Existing" - element exists and remains, "Demolish" - element existed but is to be demolished,  "Temporary" - element will exists only temporary (like a temporary support structure).</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_ElementStatus">
+            <EnumItem>NEW</EnumItem>
+            <EnumItem>EXISTING</EnumItem>
+            <EnumItem>DEMOLISH</EnumItem>
+            <EnumItem>TEMPORARY</EnumItem>
+            <EnumItem>USERDEFINED</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>NEW</EnumItem>
+            <EnumItem>EXISTING</EnumItem>
+            <EnumItem>DEMOLISH</EnumItem>
+            <EnumItem>TEMPORARY</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>NEW</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>EXISTING</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>DEMOLISH</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>TEMPORARY</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>USERDEFINED</Name>
+              <NameAliases>
+                <NameAlias lang="en">User Defined</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NEW</Name>
+              <Definition>element designed as new addition</Definition>
+              <NameAliases>
+                <NameAlias lang="en">New</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>EXISTING</Name>
+              <Definition>element exists and is to remain</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Existing</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>DEMOLISH</Name>
+              <Definition>element exists but is to be demolished</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Demolish</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>TEMPORARY</Name>
+              <Definition>element will exist only temporarily (such as a temporary support structure)</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Temporary</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Status</NameAlias>
+        <NameAlias lang="en">Status</NameAlias>
+        <NameAlias lang="fr-FR">Statut</NameAlias>
+        <NameAlias lang="ja-JP">状態</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">Status bzw. Phase des Bauteils insbesondere beim Bauen im Bestand. "Neu" (new) neues Bauteil als Ergänzung, "Bestand" (existing) bestehendes Bauteil, dass erhalten bleibt, "Abbruch" (demolish) Bauteil, das abgebrochen wird, "Temporär" (temporary) Bauteil und andere Bauelemente, die vorübergehend eingebaut werden (wie Abstützungen, etc.)</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Statut de l'élément, principalement utilisé dans les projets de rénovation et de réhabilitation. Le statut a pour valeur NOUVEAU pour un nouvel élément, EXISTANT pour un élément existant qui est conservé, DEMOLI pour un élément existant à démolir et TEMPORAIRE pour un élément temporaire (comme une structure support provisoire).</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">要素（主にリノベーションまたは改修プロジェクトにおいて）の状態。 状態は、「新規(New)」－新しく追加される要素。「既存」－要素は存在し、かつ残りもの。「破壊」－要素は存在したが、廃棄されるもの。「一時的」－一時的に存在する要素（一時的にサポートしている構造のようなもの）。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="5de94c00d20711e1800000215ad4efdf">
+      <Name>ShadingDeviceType</Name>
+      <Definition>Specifies the type of shading device.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_ElementShading">
+            <EnumItem>FIXED</EnumItem>
+            <EnumItem>MOVABLE</EnumItem>
+            <EnumItem>OVERHANG</EnumItem>
+            <EnumItem>SIDEFIN</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>FIXED</Name>
+              <NameAliases>
+                <NameAlias lang="en">Fixed</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>MOVABLE</Name>
+              <NameAliases>
+                <NameAlias lang="en">Movable</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OVERHANG</Name>
+              <NameAliases>
+                <NameAlias lang="en">Overhang</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>SIDEFIN</Name>
+              <NameAliases>
+                <NameAlias lang="en">Sidefin</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Sonnenschutztyp</NameAlias>
+        <NameAlias lang="en">Shading Device Type</NameAlias>
+        <NameAlias lang="fr-FR">Type de protection solaire</NameAlias>
+        <NameAlias lang="ja-JP">日除け装置種別</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE" />
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Spécifies le type de protection solaire.</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">日除け装置の種別を設定する。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="6f325880d20711e1800000215ad4efdf">
+      <Name>MechanicalOperated</Name>
+      <Definition>Indication whether the element is operated machanically (TRUE) or not, i.e. manually  (FALSE).</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Mechanisch</NameAlias>
+        <NameAlias lang="en">Mechanical Operated</NameAlias>
+        <NameAlias lang="fr-FR">Actionné mécaniquement</NameAlias>
+        <NameAlias lang="ja-JP">機械的操作</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">Angabe, ob dieses Bauteil  mechanisch bewegt oder angetrieben wird (JA) oder manuell (NEIN). Diese Eigenschaft wird nur für beweglichen Sonnenschutz angegeben.</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Indique si l'élément est actionné mécaniquement (VRAI) ou manuellement (FAUX).</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">機械的操作が可能かどうかを示すブーリアン値。可能な場合TRUE、手動の場合FALSE。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="79eced80d20711e1800000215ad4efdf">
+      <Name>SolarTransmittance</Name>
+      <Definition>(Tsol): The ratio of incident solar radiation that directly passes through a shading system (also named τe). Note the following equation Asol + Rsol + Tsol = 1</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveRatioMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Strahlungstransmissionsgrad</NameAlias>
+        <NameAlias lang="en">Solar Transmittance</NameAlias>
+        <NameAlias lang="fr-FR">Transmission du rayonnement solaire</NameAlias>
+        <NameAlias lang="ja-JP">日射透過率</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE" />
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">(Tsol). Ratio du rayonnement solaire incident qui est transmis directement par la protection solaire. Noter l'équation suivante : Asol + Rsol + Tsol = 1.</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">(Tsol)：日除けシステムを直接透過する日射の率。注： Asol + Rsol + Tsol = 1　という方程式が成り立つ。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="85401900d20711e1800000215ad4efdf">
+      <Name>SolarReflectance</Name>
+      <Definition>(Rsol): The ratio of incident solar radiation that is reflected by a shading system (also named ρe). Note the following equation Asol + Rsol + Tsol = 1</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveRatioMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Strahlungsreflectionsgrad</NameAlias>
+        <NameAlias lang="en">Solar Reflectance</NameAlias>
+        <NameAlias lang="fr-FR">Reflexion du rayonnement solaire</NameAlias>
+        <NameAlias lang="ja-JP">日射反射率</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE" />
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">(Rsol). Ratio du rayonnement solaire incident qui est réfléchi par la protection solaire. Noter l'équation suivante : Asol + Rsol + Tsol = 1.</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">(Rsol)：日除けシステムにより反射される日射の率。注： Asol + Rsol + Tsol = 1　という方程式が成り立つ。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="7f4a3800d20711e1800000215ad4efdf">
+      <Name>VisibleLightTransmittance</Name>
+      <Definition>Fraction of the visible light that passes the shading system  at normal incidence. It is a value without unit.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveRatioMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Transmissionsgrad für sichtbares Licht</NameAlias>
+        <NameAlias lang="en">Visible Light Transmittance</NameAlias>
+        <NameAlias lang="fr-FR">Transmittance du rayonnement visible</NameAlias>
+        <NameAlias lang="ja-JP">可視光透過率</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE" />
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Fraction du rayonnement visible qui est transmise par la protection solaire sous incidence normale. Valeur sans unité.</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">通常の入射における日除け装置を通過する可視光の比率。単位の無い数値。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="9c7f0680d20711e1800000215ad4efdf">
+      <Name>VisibleLightReflectance</Name>
+      <Definition>Fraction of the visible light that is reflected by the glazing at normal incidence. It is a value without unit.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveRatioMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Reflektionsgrad für sichtbares Licht</NameAlias>
+        <NameAlias lang="en">Visible Light Reflectance</NameAlias>
+        <NameAlias lang="fr-FR">Reflexion du rayonnement visible</NameAlias>
+        <NameAlias lang="ja-JP">可視光反射率</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE" />
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Fraction du rayonnement visible qui est réfléchi par la protection solaire sous incidence normale. Valeur sans unité.</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">通常の入射における日除け装置により反射される可視光の比率。単位の無い数値。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="75283980d20711e1800000215ad4efdf">
+      <Name>ThermalTransmittance</Name>
+      <Definition>Thermal transmittance coefficient (U-Value) of a material of a certain thickness for this element.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcThermalTransmittanceMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">U-Wert</NameAlias>
+        <NameAlias lang="en">Thermal Transmittance</NameAlias>
+        <NameAlias lang="fr-FR">Transmission thermique surfacique</NameAlias>
+        <NameAlias lang="ja-JP">熱貫流率</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">Wärmedurchgangskoeffizient (U-Wert) der Materialschichten.
+Hier der Gesamtwärmedurchgangskoeffizient der Tür.</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Coefficient de transmission thermique surfacique (U) d'un métériau d'une certaine épaisseur pour cet élément</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">熱貫流率U値。
+ここでは（すべての材料を含む）梁を通した熱移動の方向における全体の熱還流率を示す。
+注：IFC2x4の新しいプロパティ</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="69d50e00d20711e1800000215ad4efdf">
+      <Name>IsExternal</Name>
+      <Definition>Indication whether the element is designed for use in the exterior (TRUE) or not (FALSE). If (TRUE) it is an external element and faces the outside of the building.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Außenbauteil</NameAlias>
+        <NameAlias lang="en">Is External</NameAlias>
+        <NameAlias lang="fr-FR">Est extérieur</NameAlias>
+        <NameAlias lang="ja-JP">外部区分</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">Angabe, ob dieses Bauteil ein Aussenbauteil ist (JA) oder ein Innenbauteil (NEIN). Als Aussenbauteil grenzt es an den Aussenraum (oder Erdreich, oder Wasser).</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Indique si l'élément est conçu pour être utilisé à l'extérieur (VRAI) ou non (FAUX). Si VRAI, c'est un élément extérieur qui donne sur l'extérieur du bâtiment.</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">外部の部材かどうかを示すブーリアン値。もしTRUEの場合、外部の部材で建物の外側に面している。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="a1dc5100d20711e1800000215ad4efdf">
+      <Name>Roughness</Name>
+      <Definition>A measure of the vertical deviations of the surface.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Rauheit der Oberfläche</NameAlias>
+        <NameAlias lang="en">Roughness</NameAlias>
+        <NameAlias lang="fr-FR">Rugosité</NameAlias>
+        <NameAlias lang="ja-JP">表面粗さ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE" />
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Une mesure des déviations verticales de la surface.</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">表面の垂直方向の偏差。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="a86ac880d20711e1800000215ad4efdf">
+      <Name>SurfaceColor</Name>
+      <Definition>The color of the surface.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Oberflächenfarbe</NameAlias>
+        <NameAlias lang="en">Surface Color</NameAlias>
+        <NameAlias lang="fr-FR">Couleur surface</NameAlias>
+        <NameAlias lang="ja-JP">表面色</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE" />
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">La couleur de la surface</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">表面の色を示す文字列情報。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">日除け装置(IfcShadingDeviceオブジェクト)に関する共通プロパティセット定義。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

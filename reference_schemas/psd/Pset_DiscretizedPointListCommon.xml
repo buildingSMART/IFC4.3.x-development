@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="0415dd1ba36a4aa6a6571bcdd37a2ff9" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC2" />
+  <Name>Pset_DiscretizedPointListCommon</Name>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcAlignment</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcAlignment</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="6e3ee2a0bc894e5faabaa3d09a56d72c">
+      <Name>DiscretizedPoint</Name>
+      <Definition />
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="CP_DiscretizedPoint" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="33637f7eaba24204bffc76b11f3bf01e">
+      <Name>StandardDeviationHorizontal</Name>
+      <Definition />
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="Length" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="e25efde80e544ecda026f9aedca1a946">
+      <Name>StandardDeviationVertical</Name>
+      <Definition />
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="Length" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

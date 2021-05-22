@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="b83ada80d21011e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC2" />
+  <Name>Pset_TankTypeSectional</Name>
+  <Definition>Fixed vessel constructed from sectional parts with one or more compartments for storing a liquid.
+
+Note (1): All sectional construction tanks are considered to be rectangular by default.
+Note (2): Generally, it is not expected that sectional construction tanks will be used for the purposes of gas storage.
+
+Pset renamed from Pset_TankTypeSectionalTank to Pset_TankTypeSectional in IFC2x2 Pset Addendum.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcTank/SECTIONAL</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcTank/SECTIONAL</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="bd982500d21011e1800000215ad4efdf">
+      <Name>NumberOfSections</Name>
+      <Definition>Number of sections used in the construction of the tank
+
+Note: All sections assumed to be the same size.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcInteger" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Number Of Sections</NameAlias>
+        <NameAlias lang="ja-JP">セクションの数</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">タンクの製作に使用されているセクションの数
+注：全てのセクションは同サイズと考える</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="c4269c80d21011e1800000215ad4efdf">
+      <Name>SectionLength</Name>
+      <Definition>The length of a section used in the construction of the tank.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Section Length</NameAlias>
+        <NameAlias lang="ja-JP">セクションの長さ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">タンクの製作に使用されているセクションの長さ</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="cd176e00d21011e1800000215ad4efdf">
+      <Name>SectionWidth</Name>
+      <Definition>The width of a section used in the construction of the tank.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Section Width</NameAlias>
+        <NameAlias lang="ja-JP">セクションの幅</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">タンクの製作に使用されているセクションの幅</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">液体を貯蔵するために一つ以上の区画を持ち組立部品から造られている固定された容器　　注(1)：全ての組立式タンクは矩形をデフォルトと考えられている。注(2)：一般的に、組立式タンクは気体を貯蔵する目的のために使用されることは考えていない。　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　PsetはIFC2x2 Pset AddendumでPset_TankTypeSectionalTankからPsetまで_をTankTypeSectionalに改名しました。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

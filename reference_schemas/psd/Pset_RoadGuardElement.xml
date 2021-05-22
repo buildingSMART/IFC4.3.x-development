@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="c21c7efcba944055a9a92e1319e17fc4" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC2" />
+  <Name>Pset_RoadGuardElement</Name>
+  <Definition>Properties assigned to IfcWall/PARAPET or IfcRailing/GUARDRAIL.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcWall/PARAPET</ClassName>
+    <ClassName> IfcRail/GUARDRAIL</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcWall/PARAPET, IfcRail/GUARDRAIL</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="99333b777d5e4a7999b2ff9644ea0595">
+      <Name>IsMoveable</Name>
+      <Definition>True if element is moveable.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="20a86c8f081747e28a902a7acc316e73">
+      <Name>IsTerminal</Name>
+      <Definition>True if element is a terminal. See class Terminal.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="d7598a89cad64ff6979956323c6c997f">
+      <Name>IsTransition</Name>
+      <Definition>True if element is a transition. See class Transition.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="c9eb7d68b4ba47678338c3a4debc9437">
+      <Name>TerminalType</Name>
+      <Definition>Specifies the kind of terminal if IsTerminal is true.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

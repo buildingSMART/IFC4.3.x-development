@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="83311c118f5a4dbeb6d0d8b5872e4134" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC2" />
+  <Name>Pset_BoreholeCommon</Name>
+  <Definition>Properties describing the features of a borehole (if not modelled separately).</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcBorehole</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcBorehole</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="5fcb32a361db4300894cb9130794fb05">
+      <Name>BoreholeState</Name>
+      <Definition>The state the borehole or trial pit has been left in. (boreholeML).</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoreholeState" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="d0ec910e86bc4aeca8de89e5cd51ee18">
+      <Name>CapDepth</Name>
+      <Definition>Depth of cap (boreholeML).</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="0c9b4faeb9b94a599b6015e87822b376">
+      <Name>CapMaterial</Name>
+      <Definition>Cap material or 'NOT CAPPED' or 'UNKNOWN' (boreholeML).</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="270685329c444ef89025655483d11e04">
+      <Name>FillingDepth</Name>
+      <Definition>Depth of filling (boreholeML).</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="f881cb07b34a4645af0e79ecda178b33">
+      <Name>FillingMaterial</Name>
+      <Definition>Filling material or 'NOT FILLED' or 'UNKNOWN' (boreholeML).</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="959397fa5ce3432fa7e3f063a7706a04">
+      <Name>GroundwaterDepth</Name>
+      <Definition>Depth groundwater encountered (boreholeML).</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="5699095930ce4346be4078ca37516347">
+      <Name>LiningMaterial</Name>
+      <Definition>Lining material or 'NOT LINED' or 'UNKNOWN' (boreholeML).</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="23e5ef55bdec49abaaaea907114c0e92">
+      <Name>LiningThickness</Name>
+      <Definition>Lining thickness (boreholeML).</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

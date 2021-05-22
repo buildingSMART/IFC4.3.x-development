@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="3c1864c76e9546c7a52f5edba67bfffb" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC2" />
+  <Name>Pset_RoadDesignCriteriaCommon</Name>
+  <Definition>Road design criteria that may be attached to road parts.</Definition>
+  <Applicability />
+  <ApplicableClasses />
+  <PropertyDefs>
+    <PropertyDef ifdguid="b51274e7f92947e4ae8a053260449d99">
+      <Name>Crossfall</Name>
+      <Definition>Specifies the nominal crossfall as a ratio measure (slope) at the location of the event.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcRatioMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="5be263f173e34a008a96f3b3ea596c3c">
+      <Name>DesignSpeed</Name>
+      <Definition>NOTE Definition from PIARC: Speed selected in designing a new road or in modernizing, strengthening or rehabilitating an existing road section, to determine the various geometric design features of the carriageway that allow a car to travel safely at that speed, under normal road surface and weather conditions. Note: the design speed is not constant, but may vary depending on the conditions of relief (plain, hill, mountain).</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLinearVelocityMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="ff4f4d3284bd4cc3be3f08e192327b44">
+      <Name>DesignTrafficVolume</Name>
+      <Definition>The traffic volume used for planning and design purposes specified as the number of vehicles per day . Typically given as AADT - Average Annual Daily Traffic</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcCountMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="93164a2d26a040db8e0f992d4259650a">
+      <Name>DesignVehicleClass</Name>
+      <Definition>A vehicle designator with content according to local standards.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="223061d19d7745138bf2e3dfb1858015">
+      <Name>LaneWidth</Name>
+      <Definition>Standard nominal width of one trough lane.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="1f22b978d8fc4fb89437b537999e5dc4">
+      <Name>NumberOfThroughLanes</Name>
+      <Definition>The total number of through lanes on the segment. This excludes auxiliary lanes, parking and turning lanes, acceleration/deceleration lanes, toll collection lanes, shoulders etc.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcCountMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="82bf293ea2a64d18abd4137965a0f127">
+      <Name>RoadDesignClass</Name>
+      <Definition>A road design class designator with content according to local standards.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

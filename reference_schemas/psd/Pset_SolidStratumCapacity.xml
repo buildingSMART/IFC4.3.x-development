@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="4a1a7cb85e2e4bc2b8fbaeffc8412985" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC2" />
+  <Name>Pset_SolidStratumCapacity</Name>
+  <Definition>Properties expressing the capacity of a stratum using physical measures. Regional and National conventions should be captured through classification and specific property sets.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcSolidStratum</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcSolidStratum</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="5dd8398c1141421caffb328019a34b1f">
+      <Name>CohesionBehaviour</Name>
+      <Definition>Cohesive shear strength of a rock or soil that is independent of interparticle friction.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPressureMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="617ff59c32d74d86af06601d1b9ba304">
+      <Name>FrictionAngle</Name>
+      <Definition>Friction Angle is the tested inclination angle from horizontal.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPlaneAngleMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="abb80a2391ee40aeac39b92dd66284cc">
+      <Name>FrictionBehaviour</Name>
+      <Definition>Friction shear strength of a rock or soil that is dependent on interparticle friction.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPressureMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="5177ab43fa31480fb9dcc6434c4062fb">
+      <Name>GrainSize</Name>
+      <Definition>Grain size diameter.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="3116bf07e8a24c4286f5e3d2aea9f290">
+      <Name>HydraulicConductivity</Name>
+      <Definition>Hydraulic Conductivity (permeability) of soil for water, given with the K or Kf value in m/s</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcVelocityMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="b50ba0126eab428d966346bbf1c8a35e">
+      <Name>LoadbearingCapacity</Name>
+      <Definition>Estimate of the loadbearing capacity of the stratum.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="PressureMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="b4688dfefd2d4c638515f7857ac11488">
+      <Name>NValue</Name>
+      <Definition>Blow count from standard penetration testing, to ISO 22476-3, ASTM D1586[1] and Australian Standards AS 1289.6.3.1, which correlates to other engineering properties of soils.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcCountMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="04559461de8a472e91068b267895c8ff">
+      <Name>PermeabilityBehaviour</Name>
+      <Definition>Proportionality constant in Darcy's law which relates flow rate and viscosity to a pressure gradient applied to the porous media.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcRatioMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="e3413ce220424a7abc2f19411610c245">
+      <Name>PoisonsRatio</Name>
+      <Definition>Ratio of transverse contraction strain to longitudinal extension strain in the direction of stretching force.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcRatioMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="8569754fd668420ca61e0ebab3e099f2">
+      <Name>PwaveVelocity</Name>
+      <Definition>P-wave velocity of a rock or soil.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcVelocityMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="0c341fe4f64b4cb68507081d0db3363d">
+      <Name>Resistivity</Name>
+      <Definition>Electrical resistivity of a rock or soil (Ohm-m).</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcElectricResistanceMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="244b62eb01e04fe5b34c947b57b49f6a">
+      <Name>SettlementBehaviour</Name>
+      <Definition>Estimate of the settlement/compaction behaviour of the stratum.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPressureMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="23dc9f3d7e0b4f0da7b67f8d7cb88a1d">
+      <Name>SwaveVelocity</Name>
+      <Definition>S-wave velocity of a rock or soil.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcVelocityMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

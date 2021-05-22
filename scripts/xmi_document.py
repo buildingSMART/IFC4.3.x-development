@@ -417,6 +417,11 @@ class xmi_document:
                 
             elif stereotype == "propertyset" or stereotype == "quantityset" or (stereotype is not None and (stereotype.startswith("pset_") or stereotype.startswith("qto_"))):
                 
+                if stereotype == "quantityset" or (stereotype is not None and stereotype.startswith("qto_")):
+                    stereotype = "QSET"
+                else:
+                    stereotype = "PSET"
+                
                 refs = None
                 
                 try:
@@ -432,7 +437,8 @@ class xmi_document:
                     c, 
                     [(x.name, x) for x in c/("attribute")],
                     document=self, 
-                    refs=refs
+                    refs=refs,
+                    stereotype=stereotype
                 )
                 
             elif c.xmi_type == "uml:DataType":

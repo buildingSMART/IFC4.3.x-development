@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="85caf644328d4bd9bd906e3c2bf5ead0" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC2" />
+  <Name>Pset_BridgeCommon</Name>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcBridge</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcBridge</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="9f5179daea8c404e9fd6ec42dba5fe75">
+      <Name>StructureIndicator</Name>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_StructureIndicator">
+            <EnumItem>COMPOSITE</EnumItem>
+            <EnumItem>COATED</EnumItem>
+            <EnumItem>HOMOGENEOUS</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>COMPOSITE</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>COATED</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>HOMOGENEOUS</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

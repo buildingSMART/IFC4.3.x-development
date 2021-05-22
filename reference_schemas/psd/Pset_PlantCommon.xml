@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="bff7eedc8844446ab6c2fd5bdaad0968" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC2" />
+  <Name>Pset_PlantCommon</Name>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcPlant</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcPlant</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="7a525fa2dfda4afbb5bfb6993dd1da66">
+      <Name>BotanicalName</Name>
+      <Definition>Formal scientific name conforming to the International Code of Nomenclature for algae, fungi, and plants (ICN)</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="e3d7420421a149beb71653c6faf42cf2">
+      <Name>Description</Name>
+      <Definition />
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcText" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="289711fa80e64310a9c60994af663b87">
+      <Name>LocalName</Name>
+      <Definition>The local name that the plant is known as.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

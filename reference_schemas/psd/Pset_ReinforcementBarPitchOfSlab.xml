@@ -1,0 +1,255 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="422e7780d20011e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC2" />
+  <Name>Pset_ReinforcementBarPitchOfSlab</Name>
+  <Definition>The pitch length information of reinforcement  bar with the slab.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcSlab</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcSlab</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="48245880d20011e1800000215ad4efdf">
+      <Name>Description</Name>
+      <Definition>Description of the reinforcement.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcText" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Description</NameAlias>
+        <NameAlias lang="ja-JP">説明</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">鉄筋の説明。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="4eb2d000d20011e1800000215ad4efdf">
+      <Name>Reference</Name>
+      <Definition>A descriptive label for the general reinforcement type.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Reference</NameAlias>
+        <NameAlias lang="ja-JP">参照記号</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">一般的な鉄筋タイプの説明ラベル。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="55414780d20011e1800000215ad4efdf">
+      <Name>LongOutsideTopBarPitch</Name>
+      <Definition>The pitch length of the long outside top bar.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Long Outside Top Bar Pitch</NameAlias>
+        <NameAlias lang="ja-JP">長辺・柱列帯・上端ピッチ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">長辺方向・柱列帯・上端の鉄筋間隔。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="5d998280d20011e1800000215ad4efdf">
+      <Name>LongInsideCenterTopBarPitch</Name>
+      <Definition>The pitch length of the long inside center top bar.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Long Inside Center Top Bar Pitch</NameAlias>
+        <NameAlias lang="ja-JP">長辺・柱列帯・上端中央ピッチ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">長辺方向・柱間帯・上端中央の鉄筋間隔。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="65f1bd80d20011e1800000215ad4efdf">
+      <Name>LongInsideEndTopBarPitch</Name>
+      <Definition>The pitch length of the long inside end top bar.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Long Inside End Top Bar Pitch</NameAlias>
+        <NameAlias lang="ja-JP">長辺・柱列帯・上端端部ピッチ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">長辺方向・柱間帯・上端端部の鉄筋間隔。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="6e49f880d20011e1800000215ad4efdf">
+      <Name>ShortOutsideTopBarPitch</Name>
+      <Definition>The pitch length of the short outside top bar.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Short Outside Top Bar Pitch</NameAlias>
+        <NameAlias lang="ja-JP">短辺・柱列帯・上端ピッチ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">短辺方向・柱列帯・上端の鉄筋間隔。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="75710680d20011e1800000215ad4efdf">
+      <Name>ShortInsideCenterTopBarPitch</Name>
+      <Definition>The pitch length of the short inside center top bar.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Short Inside Center Top Bar Pitch</NameAlias>
+        <NameAlias lang="ja-JP">短辺・柱列帯・上端中央ピッチ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">短辺方向・柱間帯・上端中央の鉄筋間隔。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="7dc94180d20011e1800000215ad4efdf">
+      <Name>ShortInsideEndTopBarPitch</Name>
+      <Definition>The pitch length of the short inside end top bar.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Short Inside End Top Bar Pitch</NameAlias>
+        <NameAlias lang="ja-JP">短辺・柱列帯・上端端部ピッチ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">短辺方向・柱間帯・上端端部の鉄筋間隔。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="8588e600d20011e1800000215ad4efdf">
+      <Name>LongOutsideLowerBarPitch</Name>
+      <Definition>The pitch length of the long outside lower bar.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Long Outside Lower Bar Pitch</NameAlias>
+        <NameAlias lang="ja-JP">長辺・柱列帯・下端ピッチ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">長辺方向・柱列帯・下端の鉄筋間隔。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="8de12100d20011e1800000215ad4efdf">
+      <Name>LongInsideCenterLowerBarPitch</Name>
+      <Definition>The pitch length of the long inside center lower bar.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Long Inside Center Lower Bar Pitch</NameAlias>
+        <NameAlias lang="ja-JP">長辺・柱列帯・下端中央ピッチ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">長辺方向・柱間帯・下端中央の鉄筋間隔。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="95a0c580d20011e1800000215ad4efdf">
+      <Name>LongInsideEndLowerBarPitch</Name>
+      <Definition>The pitch length of the long inside end lower bar.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Long Inside End Lower Bar Pitch</NameAlias>
+        <NameAlias lang="ja-JP">長辺・柱列帯・下端端部ピッチ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">長辺方向・柱間帯・下端端部の鉄筋間隔。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="9cc7d380d20011e1800000215ad4efdf">
+      <Name>ShortOutsideLowerBarPitch</Name>
+      <Definition>The pitch length of the short outside lower bar.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Short Outside Lower Bar Pitch</NameAlias>
+        <NameAlias lang="ja-JP">短辺・柱列帯・下端ピッチ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">短辺方向・柱列帯・下端の鉄筋間隔。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="a5200e80d20011e1800000215ad4efdf">
+      <Name>ShortInsideCenterLowerBarPitch</Name>
+      <Definition>The pitch length of the short inside center lower bar.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Short Inside Center Lower Bar Pitch</NameAlias>
+        <NameAlias lang="ja-JP">短辺・柱列帯・下端中央ピッチ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">短辺方向・柱間帯・下端中央の鉄筋間隔。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="acdfb300d20011e1800000215ad4efdf">
+      <Name>ShortInsideEndLowerBarPitch</Name>
+      <Definition>The pitch length of the short inside end lower bar.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Short Inside End Lower Bar Pitch</NameAlias>
+        <NameAlias lang="ja-JP">短辺・柱列帯・下端端部ピッチ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">短辺方向・柱間帯・下端端部の鉄筋間隔。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">スラブの鉄筋間隔に関する情報。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

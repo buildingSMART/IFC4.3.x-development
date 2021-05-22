@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="44003700d21011e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC2" />
+  <Name>Pset_TankTypeExpansion</Name>
+  <Definition>Common attributes of an expansion type tank.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcTank/EXPANSION</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcTank/EXPANSION</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="48c4eb00d21011e1800000215ad4efdf">
+      <Name>ChargePressure</Name>
+      <Definition>Nominal or design operating pressure of the tank.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPressureMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Charge Pressure</NameAlias>
+        <NameAlias lang="ja-JP">加圧力</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">タンクの公称又は設計運転圧力</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="5a0df780d21011e1800000215ad4efdf">
+      <Name>PressureRegulatorSetting</Name>
+      <Definition>Pressure that is automatically maintained in the tank.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPressureMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Pressure Regulator Setting</NameAlias>
+        <NameAlias lang="ja-JP">圧力調整設定</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">タンク内で自動的に維持される圧力</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="5f6b4200d21011e1800000215ad4efdf">
+      <Name>ReliefValveSetting</Name>
+      <Definition>Pressure at which the relief valve activates.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPressureMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Relief Valve Setting</NameAlias>
+        <NameAlias lang="ja-JP">安全弁設定</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">安全弁が作動する圧力</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">膨張タンクの共通属性</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

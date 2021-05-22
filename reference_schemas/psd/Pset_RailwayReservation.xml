@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="c683a443eba04cdb91b7f58133e3c529" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC2" />
+  <Name>Pset_RailwayReservation</Name>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcSpat/RESERVATION</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcSpat/RESERVATION</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="7f0bc15de2c54b9bbc343fbc58bae0c3">
+      <Name>Domain</Name>
+      <Definition />
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="13ce4976e842458d9676f77e08370b61">
+      <Name>IsOutdoor</Name>
+      <Definition />
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

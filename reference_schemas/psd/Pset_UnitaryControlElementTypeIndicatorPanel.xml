@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="f486dcd09ead45a7a52599e6d39c06c1" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC2" />
+  <Name>Pset_UnitaryControlElementTypeIndicatorPanel</Name>
+  <Definition>Unitary control element type indicator panel attributes.  HISTORY: Added in IFC4.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcUnitaryControlElement/INDICATORPANEL</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcUnitaryControlElement/INDICATORPANEL</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="a214298bc8bc4c2d91e02d20124d29f8">
+      <Name>Application</Name>
+      <Definition>The application of the unitary control element.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_UnitaryControlElementApplication">
+            <EnumItem>LIFTPOSITIONINDICATOR</EnumItem>
+            <EnumItem>LIFTHALLLANTERN</EnumItem>
+            <EnumItem>LIFTARRIVALGONG</EnumItem>
+            <EnumItem>LIFTCARDIRECTIONLANTERN</EnumItem>
+            <EnumItem>LIFTFIRESYSTEMSPORT</EnumItem>
+            <EnumItem>LIFTVOICEANNOUNCER</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>LIFTPOSITIONINDICATOR</Name>
+              <NameAliases>
+                <NameAlias lang="en">Lift Position Indicator</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>LIFTHALLLANTERN</Name>
+              <NameAliases>
+                <NameAlias lang="en">Lift Hall Lantern</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>LIFTARRIVALGONG</Name>
+              <NameAliases>
+                <NameAlias lang="en">Lift Arrival Gong</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>LIFTCARDIRECTIONLANTERN</Name>
+              <NameAliases>
+                <NameAlias lang="en">Lift Car Direction Lantern</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>LIFTFIRESYSTEMSPORT</Name>
+              <NameAliases>
+                <NameAlias lang="en">Lift Fire Systems Port</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>LIFTVOICEANNOUNCER</Name>
+              <NameAliases>
+                <NameAlias lang="en">Lift Voice Announcer</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Application</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+  </PsetDefinitionAliases>
+</PropertySetDef>

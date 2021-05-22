@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="a292e50a623842bf8cbf70af606b496c" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC2" />
+  <Name>Pset_MarkingLinesCommon</Name>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcSurf/LINEMARKING</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcSurf/LINEMARKING</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="f6e38981850546008dd70ba25ad8d540">
+      <Name>DashedLine</Name>
+      <Definition>State if the line is dashed or continuous</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="06d20a6dbac84c61b04cfab78c843125">
+      <Name>DashedLinePattern</Name>
+      <Definition>Indicates the pattern for dashed line types e.g. '3+9'</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="039fa58365164b37a7bfe943d55b2bc7">
+      <Name>Width</Name>
+      <Definition>The nominal width for each single line</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

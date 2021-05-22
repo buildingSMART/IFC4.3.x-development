@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="ee856805db854284a81c6aa2034d1da9" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC2" />
+  <Name>Pset_TransponderGeneral</Name>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcComm/TRANSPONDER</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcComm/TRANSPONDER</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="304c9286383e458487c7349cb4d3b4aa">
+      <Name>IsActive</Name>
+      <Definition />
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="boolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

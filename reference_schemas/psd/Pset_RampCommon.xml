@@ -1,0 +1,363 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="2d051900d1ff11e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC2" />
+  <Name>Pset_RampCommon</Name>
+  <Definition>Properties common to the definition of all occurrences of IfcRamp.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcRamp</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcRamp</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="33939080d1ff11e1800000215ad4efdf">
+      <Name>Reference</Name>
+      <Definition>Reference ID for this specified type in this project (e.g. type 'A-1'), Also referred to as "construction type". It should be provided as an alternative to the name of the "object type", if the software does not support object types.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcIdentifier" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Bauteiltyp</NameAlias>
+        <NameAlias lang="en">Reference</NameAlias>
+        <NameAlias lang="fr-FR">Reference</NameAlias>
+        <NameAlias lang="ja-JP">参照記号</NameAlias>
+        <NameAlias lang="zh-CN">参考号</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">Bezeichnung zur Zusammenfassung gleichartiger Bauteile zu einem Bauteiltyp (auch Konstruktionstyp genannt). Alternativ zum Namen des "Typobjekts", insbesondere wenn die Software keine Typen unterstützt.</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Référence à l'identifiant d'un type spécifié dans le contexte du projet (exemple : "type A1") pour désigner un "type de construction". Une alternative au nom d'un objet type lorsque les objets types ne sont pas gérés par le logiciel.</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">このプロジェクトにおける参照記号(例：A-1)。分類コードではなく内部で使用されるプロジェクトタイプとして使用されるもの。</DefinitionAlias>
+        <DefinitionAlias lang="zh-CN">若未采用已知的分类系统，则该属性为该项目中该类型构件的参考编号（例如，类型A-1）。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="38f0db00d1ff11e1800000215ad4efdf">
+      <Name>Status</Name>
+      <Definition>Status of the element, predominately used in renovation or retrofitting projects. The status can be assigned to as "New" - element designed as new addition, "Existing" - element exists and remains, "Demolish" - element existed but is to be demolished,  "Temporary" - element will exists only temporary (like a temporary support structure).</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_ElementStatus">
+            <EnumItem>NEW</EnumItem>
+            <EnumItem>EXISTING</EnumItem>
+            <EnumItem>DEMOLISH</EnumItem>
+            <EnumItem>TEMPORARY</EnumItem>
+            <EnumItem>USERDEFINED</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>NEW</EnumItem>
+            <EnumItem>EXISTING</EnumItem>
+            <EnumItem>DEMOLISH</EnumItem>
+            <EnumItem>TEMPORARY</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>NEW</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>EXISTING</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>DEMOLISH</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>TEMPORARY</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>USERDEFINED</Name>
+              <NameAliases>
+                <NameAlias lang="en">User Defined</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NEW</Name>
+              <Definition>element designed as new addition</Definition>
+              <NameAliases>
+                <NameAlias lang="en">New</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>EXISTING</Name>
+              <Definition>element exists and is to remain</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Existing</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>DEMOLISH</Name>
+              <Definition>element exists but is to be demolished</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Demolish</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>TEMPORARY</Name>
+              <Definition>element will exist only temporarily (such as a temporary support structure)</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Temporary</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Status</NameAlias>
+        <NameAlias lang="en">Status</NameAlias>
+        <NameAlias lang="fr-FR">Statut</NameAlias>
+        <NameAlias lang="ja-JP">状態</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">Status bzw. Phase des Bauteils insbesondere beim Bauen im Bestand. "Neu" (new) neues Bauteil als Ergänzung, "Bestand" (existing) bestehendes Bauteil, dass erhalten bleibt, "Abbruch" (demolish) Bauteil, das abgebrochen wird, "Temporär" (temporary) Bauteil und andere Bauelemente, die vorübergehend eingebaut werden (wie Abstützungen, etc.)</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Statut de l'élément, principalement utilisé dans les projets de rénovation et de réhabilitation. Le statut a pour valeur NOUVEAU pour un nouvel élément, EXISTANT pour un élément existant qui est conservé, DEMOLI pour un élément existant à démolir et TEMPORAIRE pour un élément temporaire (comme une structure support provisoire).</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">要素（主にリノベーションまたは改修プロジェクトにおいて）の状態。 状態は、「新規(New)」－新しく追加される要素。「既存」－要素は存在し、かつ残りもの。「破壊」－要素は存在したが、廃棄されるもの。「一時的」－一時的に存在する要素（一時的にサポートしている構造のようなもの）。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="45753380d1ff11e1800000215ad4efdf">
+      <Name>RequiredHeadroom</Name>
+      <Definition>Required headroom clearance for the passageway according to the applicable building code or additional requirements.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">erforderliche Durchgangshöhe</NameAlias>
+        <NameAlias lang="en">Required Headroom</NameAlias>
+        <NameAlias lang="fr-FR">HauteurPassageRequise</NameAlias>
+        <NameAlias lang="ja-JP">要求頭高余裕</NameAlias>
+        <NameAlias lang="zh-CN">所需净空</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">German-description-2</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Hauteur de passage (échappée) requise selon la réglementation en vigueur ou des spécifications additionnelles.</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">要求される頭高余裕。関連する建築基準法を参照。</DefinitionAlias>
+        <DefinitionAlias lang="zh-CN">建筑规范或其他规定要求的通道净空高度。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="4c03ab00d1ff11e1800000215ad4efdf">
+      <Name>RequiredSlope</Name>
+      <Definition>Required sloping angle of the object  - relative to horizontal (0.0 degrees).
+Required maximum slope for the passageway according to the applicable building code or additional requirements.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPlaneAngleMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">erforderliche Neigung</NameAlias>
+        <NameAlias lang="en">Required Slope</NameAlias>
+        <NameAlias lang="fr-FR">InclinaisonRequise</NameAlias>
+        <NameAlias lang="ja-JP">要求傾斜</NameAlias>
+        <NameAlias lang="zh-CN">所需坡度</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">German-description-3</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Inclinaison de la rampe par rapport à l'horizontal (0 degrés). Valeur maximale de l'inclinaison du passage selon le code applicable ou pour respecter des contraintes additionnelles.</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">要求される傾斜角度。水平を０度とする。</DefinitionAlias>
+        <DefinitionAlias lang="zh-CN">构件所需的相对于水平（0.0度）方向的坡度角。
+建筑规范或其他规定要求的通道的最大坡度。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="60e03e80d1ff11e1800000215ad4efdf">
+      <Name>HandicapAccessible</Name>
+      <Definition>Indication that this object is designed to be accessible by the handicapped. 
+Set to (TRUE) if this ramp is rated as handicap accessible  according the local building codes, otherwise (FALSE).</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Behindertengerecht</NameAlias>
+        <NameAlias lang="en">Handicap Accessible</NameAlias>
+        <NameAlias lang="fr-FR">AccessibleHandicapes</NameAlias>
+        <NameAlias lang="ja-JP">ハンディキャップアクセス可能性</NameAlias>
+        <NameAlias lang="zh-CN">是否为无障碍设施</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">German-description-7</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Indique que cet objet est conçu pour être accessible aux handicapés. Indication donnée selon le Code National.</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">この空間がハンディキャップ者向けの空間かどうかを示すブーリアン値。</DefinitionAlias>
+        <DefinitionAlias lang="zh-CN">表示该构件是否设计为可供残疾人使用的无障碍设施。
+该属性的根据为国家建筑规范。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="663d8900d1ff11e1800000215ad4efdf">
+      <Name>HasNonSkidSurface</Name>
+      <Definition>Indication whether the surface finish is designed to prevent slippery (TRUE) or not (FALSE).</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Nichtrutschende Oberfläche</NameAlias>
+        <NameAlias lang="en">Has Non Skid Surface</NameAlias>
+        <NameAlias lang="fr-FR">AntiDerapant</NameAlias>
+        <NameAlias lang="ja-JP">滑り止め表面加工区分</NameAlias>
+        <NameAlias lang="zh-CN">表面是否防滑</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">German-description-8</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Indique si le revêtement de surface est anti dérapant (VRAI) ou non (FAUX)</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">スリップ防止のための表面仕上げをしているかどうかのブーリアン値。</DefinitionAlias>
+        <DefinitionAlias lang="zh-CN">表示表面处理是否设计为防滑的。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="5b82f400d1ff11e1800000215ad4efdf">
+      <Name>FireExit</Name>
+      <Definition>Indication whether this object is designed to serve as an exit in the case of fire (TRUE) or not (FALSE).
+Here it defines an exit ramp in accordance to the national building code.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Fluchtweg</NameAlias>
+        <NameAlias lang="en">Fire Exit</NameAlias>
+        <NameAlias lang="fr-FR">SortieSecours</NameAlias>
+        <NameAlias lang="ja-JP">非常口区分</NameAlias>
+        <NameAlias lang="zh-CN">是否为紧急出口</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">German-description-6</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Indique si cet objet est conçu pour servir de sortie en cas d'incendie (VRAI) ou non (FAUX). Définition de la sortie de secours selon le Code National.</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">このオブジェクトが火災時の非常口として設計されているかどうかを示すブーリアン値。ここでは関連する建築基準法における出口ドアとして定義している。</DefinitionAlias>
+        <DefinitionAlias lang="zh-CN">表示该构件是否设计为火灾时的紧急出口。
+该属性的依据为国家建筑规范。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="502fc880d1ff11e1800000215ad4efdf">
+      <Name>IsExternal</Name>
+      <Definition>Indication whether the element is designed for use in the exterior (TRUE) or not (FALSE). If (TRUE) it is an external element and faces the outside of the building.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Außenbauteil</NameAlias>
+        <NameAlias lang="en">Is External</NameAlias>
+        <NameAlias lang="fr-FR">EstExterieur</NameAlias>
+        <NameAlias lang="ja-JP">外部区分</NameAlias>
+        <NameAlias lang="zh-CN">是否外部构件</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">Angabe, ob dieses Bauteil ein Aussenbauteil ist (JA) oder ein Innenbauteil (NEIN). Als Aussenbauteil grenzt es an den Aussenraum (oder Erdreich, oder Wasser).</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Indique si l'élément est conçu pour être utilisé à l'extérieur (VRAI) ou non (FAUX). Si VRAI, c'est un élément extérieur qui donne sur l'extérieur du bâtiment.</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">外部の部材かどうかを示すブーリアン値。もしTRUEの場合、外部の部材で建物の外側に面している。</DefinitionAlias>
+        <DefinitionAlias lang="zh-CN">表示该构件是否设计为外部构件。若是，则该构件为外部构件，朝向建筑物的外侧。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="d656025ed2cd424598c8b1b57aa9e3a0">
+      <Name>ThermalTransmittance</Name>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="761e9ee4c87544849c2a57a17935596e">
+      <Name>LoadBearing</Name>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="558d1300d1ff11e1800000215ad4efdf">
+      <Name>FireRating</Name>
+      <Definition>Fire rating for this object.
+It is given according to the national fire safety classification.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Feuerwiderstandsklasse</NameAlias>
+        <NameAlias lang="en">Fire Rating</NameAlias>
+        <NameAlias lang="fr-FR">ResistanceAuFeu</NameAlias>
+        <NameAlias lang="ja-JP">耐火等級</NameAlias>
+        <NameAlias lang="zh-CN">防火等级</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">Feuerwiderstandasklasse gemäß der nationalen oder regionalen Brandschutzverordnung.</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Classement au feu de l'élément donné selon la classification nationale de sécurité incendie.</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">主要な耐火等級。関連する建築基準法、消防法などの国家基準を参照。</DefinitionAlias>
+        <DefinitionAlias lang="zh-CN">该构件的防火等级。
+该属性的依据为国家防火安全分级。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="fr-FR">Définition de l'IAI : propriétés communes à la définition de toutes les instances de la classe IfcRamp</PsetDefinitionAlias>
+    <PsetDefinitionAlias lang="ja-JP">IfcRamp(ランプ)オブジェクトに関する共通プロパティセット定義。</PsetDefinitionAlias>
+    <PsetDefinitionAlias lang="zh-CN">所有IfcRamp实例的定义中通用的属性。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

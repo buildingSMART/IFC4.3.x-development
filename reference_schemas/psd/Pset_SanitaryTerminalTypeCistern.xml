@@ -1,0 +1,254 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="64c19000d20211e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC2" />
+  <Name>Pset_SanitaryTerminalTypeCistern</Name>
+  <Definition>A water storage unit attached to a sanitary terminal that is fitted with a device, operated automatically or by the user, that discharges water to cleanse a water closet (toilet) pan, urinal or slop hopper. (BS6100 330 5008)</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcSanitaryTerminal/CISTERN</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcSanitaryTerminal/CISTERN</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="6a1eda80d20211e1800000215ad4efdf">
+      <Name>CisternHeight</Name>
+      <Definition>Enumeration that identifies the height of the cistern or, if set to 'None' if the urinal has no cistern and is flushed using mains or high pressure water through a flushing valve.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_CisternHeight">
+            <EnumItem>HIGHLEVEL</EnumItem>
+            <EnumItem>LOWLEVEL</EnumItem>
+            <EnumItem>NONE</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>HIGHLEVEL</Name>
+              <NameAliases>
+                <NameAlias lang="en">High-level</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>LOWLEVEL</Name>
+              <NameAliases>
+                <NameAlias lang="en">Low-level</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NONE</Name>
+              <NameAliases>
+                <NameAlias lang="en">None</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Cistern Height</NameAlias>
+        <NameAlias lang="ja-JP">貯水タンクの高さ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">貯水タンクの高さを示す。小便器がフラッシュバルブを使い貯水タンクを持っていない場合は'None'に設定される。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="786cf680d20211e1800000215ad4efdf">
+      <Name>CisternCapacity</Name>
+      <Definition>Volumetric capacity of the cistern</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcVolumeMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Cistern Capacity</NameAlias>
+        <NameAlias lang="ja-JP">貯水タンク容量</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">貯水タンクの体積容量。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="7dca4100d20211e1800000215ad4efdf">
+      <Name>IsSingleFlush</Name>
+      <Definition>Indicates whether the cistern is single flush = TRUE (i.e. the same amount of water is used for each and every flush) or dual flush = FALSE (i.e. the amount of water used for a flush may be selected by the user to be high or low depending on the waste material to be removed).</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Is Single Flush</NameAlias>
+        <NameAlias lang="ja-JP">単一のフラッシュ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">単一フラッシュ= TRUE（各洗浄に同量の水が使用される）、デュアルフラッシュ= FALSE（洗浄する汚物に応じてハイまたはローをユーザが選択することができるフラッシュ使用）の指標を設定する。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="84f14f00d20211e1800000215ad4efdf">
+      <Name>FlushType</Name>
+      <Definition>The property enumeration Pset_FlushTypeEnum defines the types of flushing mechanism that may be specified for cisterns and sanitary terminals where:-
+
+Lever: 	Flushing is achieved by twisting a lever that causes a predetermined flow of water to be passed from a cistern to the sanitary terminal.
+Pull: 	Flushing is achieved by pulling a handle or knob vertically upwards that causes a predetermined flow of water to be passed from a cistern to the sanitary terminal.
+Push: 	Flushing is achieved by pushing a button or plate that causes a predetermined flow of water to be passed from a cistern to the sanitary terminal.
+Sensor: Flush is activated through an automatic sensing mechanism.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_FlushType">
+            <EnumItem>LEVER</EnumItem>
+            <EnumItem>PULL</EnumItem>
+            <EnumItem>PUSH</EnumItem>
+            <EnumItem>SENSOR</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>LEVER</Name>
+              <NameAliases>
+                <NameAlias lang="en">Lever</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>PULL</Name>
+              <NameAliases>
+                <NameAlias lang="en">Pull</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>PUSH</Name>
+              <NameAliases>
+                <NameAlias lang="en">Push</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>SENSOR</Name>
+              <NameAliases>
+                <NameAlias lang="en">Sensor</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Flush Type</NameAlias>
+        <NameAlias lang="ja-JP">タイプフラッシュ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">列挙するプロパティはPset_FlushTypeEnumでは貯水槽や衛生配管の配置による、フラッシュメカニズムのタイプを定義する：
+
+レバー式：洗浄水は、レバーをねじることによって貯水タンクから衛生配管にの所定の流量を流す。
+
+引っ張り式：洗浄水は、ハンドルまたはノブを垂直方向に引くことによって貯水タンクから衛生配管にの所定の流量を流す。
+
+押しボタン式：洗浄水は、ボタンかプレートを押すことによって貯水タンクから衛生配管にの所定の流量を流す。
+
+センサー式：洗浄水は、自動検出機構を介して作動する。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="95a1c500d20211e1800000215ad4efdf">
+      <Name>FlushRate</Name>
+      <Definition>The minimum and maximum volume of water used at each flush. Where a single flush is used, the value of upper bound and lower bound should be equal. For a dual flush toilet, the lower bound should be used for the lesser flush rate and the upper bound for the greater flush rate. Where flush is achieved using mains pressure water through a flush valve, the value of upper and lower bound should be equal and should be the same as the flush rate property of the flush valve (see relevant valve property set). Alternatively, in this case, do not assert the flush rate property; refer to the flush rate of the flush valve.</Definition>
+      <PropertyType>
+        <TypePropertyBoundedValue>
+          <DataType type="IfcVolumeMeasure" />
+        </TypePropertyBoundedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Flush Rate</NameAlias>
+        <NameAlias lang="ja-JP">フラッシュレート</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">各フラッシュで使用される水量の最小値と最大値。単一フラッシュが使用されている場合、上下限値は同じ。デュアルフラッシュトイレについては、下限が低いフラッシュレート、上限に大きいフラッシュ率を使用する。ここで、洗浄はフラッシュバルブを通した水の水圧を用いて達成されるので、フラッシュレートとフラッシュバルブの上下限値と等しくなければなりません（関連バルブプロパティセットを参照してください）。また、この場合には、フラッシュレートのプロパティを設定しない。フラッシュバルブのフラッシュレートを参照。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="9cc8d300d20211e1800000215ad4efdf">
+      <Name>IsAutomaticFlush</Name>
+      <Definition>Boolean value that determines if the cistern is flushed automatically either after each use or periodically (TRUE) or whether manual flushing is required (FALSE).</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Is Automatic Flush</NameAlias>
+        <NameAlias lang="ja-JP">自動フラッシュか</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">貯水タンクは、使用後に自動的または定期的に洗浄する場合（TRUE）、手動で洗浄する場合（FALSE）をブーリアン値で指定する。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">衛生配管に接続されている貯水装置で、自動または手動により、大便器（トイレ）パン、小便器や汚物ホッパーなどを排水により洗浄する。 （BS61003305008）</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

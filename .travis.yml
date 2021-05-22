@@ -10,7 +10,7 @@ install:
   - # sudo rm /etc/ImageMagick-6/policy.xml
   - # python3 -m pip install hilbertcurve
   - sudo apt-get update -y && sudo apt-get install -y python3 python3-pip
-  - python3 -m pip install tabulate pyparsing lark-parser PyGithub Markdown markdown-it-py
+  - python3 -m pip install tabulate pyparsing lark-parser PyGithub Markdown markdown-it-py deepdiff
 script:
   - python3 scripts/main.py
 after_success:

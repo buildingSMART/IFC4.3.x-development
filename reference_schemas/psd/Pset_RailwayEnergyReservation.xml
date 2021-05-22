@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="f0c1de9c3c834835bb869d37fe13907f" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC2" />
+  <Name>Pset_RailwayEnergyReservation</Name>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcSpat/RESERVATION</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcSpat/RESERVATION</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="726ba87af6484083821fc1f0d4ecffd0">
+      <Name>ReservationZoneType</Name>
+      <Definition />
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

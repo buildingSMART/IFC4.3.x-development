@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="7c9b1300d20611e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC2" />
+  <Name>Pset_SensorTypeTemperatureSensor</Name>
+  <Definition>A device that senses or detects temperature. HISTORY: TemperatureSensorSensorSetPoint changed to SetPointTemperature. Range, accuracy and time constant deleted.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcSensor/TEMPERATURESENSOR</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcSensor/TEMPERATURESENSOR</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="815fc700d20611e1800000215ad4efdf">
+      <Name>TemperatureSensorType</Name>
+      <Definition>Enumeration that Identifies the types of temperature sensor that can be specified.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_TemperatureSensorType">
+            <EnumItem>HIGHLIMIT</EnumItem>
+            <EnumItem>LOWLIMIT</EnumItem>
+            <EnumItem>OUTSIDETEMPERATURE</EnumItem>
+            <EnumItem>OPERATINGTEMPERATURE</EnumItem>
+            <EnumItem>ROOMTEMPERATURE</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>HIGHLIMIT</Name>
+              <NameAliases>
+                <NameAlias lang="en">Highlimit</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>LOWLIMIT</Name>
+              <NameAliases>
+                <NameAlias lang="en">Lowlimit</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OUTSIDETEMPERATURE</Name>
+              <NameAliases>
+                <NameAlias lang="en">Outside Temperature</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OPERATINGTEMPERATURE</Name>
+              <NameAliases>
+                <NameAlias lang="en">Operating Temperature</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>ROOMTEMPERATURE</Name>
+              <NameAliases>
+                <NameAlias lang="en">Room Temperature</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Temperature Sensor Type</NameAlias>
+        <NameAlias lang="ja-JP">温度センサータイプ</NameAlias>
+        <NameAlias lang="ko-KR">온도 센서 타입</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">明示された温度センサーのタイプを識別する一覧。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">명시된 온도 센서 유형을 식별하는 목록.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="93416a00d20611e1800000215ad4efdf">
+      <Name>SetPointTemperature</Name>
+      <Definition>The temperature value to be sensed. Use IfcPropertyBoundedValue.SetPointValue to set the set point value.</Definition>
+      <PropertyType>
+        <TypePropertyBoundedValue>
+          <DataType type="IfcThermodynamicTemperatureMeasure" />
+        </TypePropertyBoundedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Set Point Temperature</NameAlias>
+        <NameAlias lang="ja-JP">温度設定値</NameAlias>
+        <NameAlias lang="ko-KR">온도 성정</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">感知される温度。
+セットポイント値を置くために、IfcPropertyBoundedValue.SetPointValueを使用する。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">감지되는 온도. 세트 포인트 값을 넣으려면, IfcPropertyBoundedValue.SetPointValue를 사용하십시오.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">温度を感知または検出するデバイス。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

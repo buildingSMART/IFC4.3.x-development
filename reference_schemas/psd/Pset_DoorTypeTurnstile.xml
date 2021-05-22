@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="d8094867a8e84d05a2775dfda30f6d92" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC2" />
+  <Name>Pset_DoorTypeTurnstile</Name>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcDoor/TURNSTILE</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcDoor/TURNSTILE</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="3c950b586710489db42e77733c87a639">
+      <Name>SensorMode</Name>
+      <Definition />
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

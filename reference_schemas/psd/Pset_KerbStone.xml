@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="6fa143be9ee1451f94b7df9b5e8923e3" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC2" />
+  <Name>Pset_KerbStone</Name>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcKerb</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcKerb</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="4ff0486291384d74b34d949a401b2a6c">
+      <Name>Height</Name>
+      <Definition>The height of the object. The size information is provided in addition to the shape representation and the geometric parameters used within. In cases of inconsistency between the geometric parameters and the size properties, provided in the attached property set, the geometric parameters take precedence.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="c388842f4a9346c98c00a51f8c2a8fbe">
+      <Name>Length</Name>
+      <Definition>The length of the object. The size information is provided in addition to the shape representation and the geometric parameters used within. In cases of inconsistency between the geometric parameters and the size properties, provided in the attached property set, the geometric parameters take precedence.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="0d0968ef06554b2abd047ffc7548f918">
+      <Name>StoneFinishes</Name>
+      <Definition>Eg. 'Polished', 'Bush Hammered', 'Split', 'Sawn', 'Flamed'</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="fec5ed14d21e43eeba124e8eb03952d0">
+      <Name>TypeDesignation</Name>
+      <Definition>Type designator for the element. The content depends on local standards. Eg. 'Bull nose', 'Half batter', 'Dropper', 'Chamfer' etc</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="2aed66a4dd2246219792facb404a03da">
+      <Name>Width</Name>
+      <Definition>The nominal width of the object. The size information is provided in addition to the shape representation and the geometric parameters used within. In cases of inconsistency between the geometric parameters and the size properties, provided in the attached property set, the geometric parameters take precedence.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

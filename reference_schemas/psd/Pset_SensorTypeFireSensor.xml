@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="1bbf0b00d20511e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC2" />
+  <Name>Pset_SensorTypeFireSensor</Name>
+  <Definition>A device that senses or detects the presence of fire.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcSensor/FIRESENSOR</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcSensor/FIRESENSOR</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="2083bf00d20511e1800000215ad4efdf">
+      <Name>FireSensorSetPoint</Name>
+      <Definition>The temperature value to be sensed to indicate the presence of fire.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcThermodynamicTemperatureMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Fire Sensor Set Point</NameAlias>
+        <NameAlias lang="ja-JP">感知温度</NameAlias>
+        <NameAlias lang="ko-KR">감지 온도</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">炎の存在を示すために感知される温度値。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">불꽃의 존재를 보여주기 위하여 감지되는 온도 값.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="2679a000d20511e1800000215ad4efdf">
+      <Name>AccuracyOfFireSensor</Name>
+      <Definition>The accuracy of the sensor.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcThermodynamicTemperatureMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Accuracy Of Fire Sensor</NameAlias>
+        <NameAlias lang="ja-JP">精度</NameAlias>
+        <NameAlias lang="ko-KR">정확도</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">センサの精度。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">센서의 정밀도.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="2c6f8100d20511e1800000215ad4efdf">
+      <Name>TimeConstant</Name>
+      <Definition>The time constant of the sensor.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcTimeMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Time Constant</NameAlias>
+        <NameAlias lang="ja-JP">時定数</NameAlias>
+        <NameAlias lang="ko-KR">시정</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">センサの時定数。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">센서의 시정.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">炎の存在を感知または検出するデバイス</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

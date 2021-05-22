@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="a94cc9f854394d6ca5571732a0e8c427" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC2" />
+  <Name>Pset_SumpBusterCommon</Name>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcElem/SUMPBUSTER</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcElem/SUMPBUSTER</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="a2fa257c48bd49adb0e436dccdd10f57">
+      <Name>Type</Name>
+      <Definition>Sump buster designator according to local standards</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

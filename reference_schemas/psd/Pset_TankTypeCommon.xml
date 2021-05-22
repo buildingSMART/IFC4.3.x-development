@@ -1,0 +1,683 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="bc1a2d00d20f11e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC2" />
+  <Name>Pset_TankTypeCommon</Name>
+  <Definition>Common attributes of a tank type.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcTank</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcTank</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="c0464a80d20f11e1800000215ad4efdf">
+      <Name>Reference</Name>
+      <Definition>Reference ID for this specified type in this project (e.g. type 'A-1').</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcIdentifier" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Reference</NameAlias>
+        <NameAlias lang="ja-JP">参照記号</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">このプロジェクトにおける参照記号(例：A-1)。分類コードではなく内部で使用されるプロジェクトタイプとして使用されるもの。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="c5a39500d20f11e1800000215ad4efdf">
+      <Name>Status</Name>
+      <Definition>Status of the element, predominately used in renovation or retrofitting projects. The status can be assigned to as "New" - element designed as new addition, "Existing" - element exists and remains, "Demolish" - element existed but is to be demolished,  "Temporary" - element will exists only temporary (like a temporary support structure).</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_ElementStatus">
+            <EnumItem>NEW</EnumItem>
+            <EnumItem>EXISTING</EnumItem>
+            <EnumItem>DEMOLISH</EnumItem>
+            <EnumItem>TEMPORARY</EnumItem>
+            <EnumItem>USERDEFINED</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>NEW</EnumItem>
+            <EnumItem>EXISTING</EnumItem>
+            <EnumItem>DEMOLISH</EnumItem>
+            <EnumItem>TEMPORARY</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>NEW</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>EXISTING</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>DEMOLISH</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>TEMPORARY</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>USERDEFINED</Name>
+              <NameAliases>
+                <NameAlias lang="en">User Defined</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NEW</Name>
+              <Definition>element designed as new addition</Definition>
+              <NameAliases>
+                <NameAlias lang="en">New</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>EXISTING</Name>
+              <Definition>element exists and is to remain</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Existing</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>DEMOLISH</Name>
+              <Definition>element exists but is to be demolished</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Demolish</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>TEMPORARY</Name>
+              <Definition>element will exist only temporarily (such as a temporary support structure)</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Temporary</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Status</NameAlias>
+        <NameAlias lang="ja-JP">状態</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">要素（主にリノベーションまたは改修プロジェクトにおいて）の状態。 状態は、「新規(New)」－新しく追加される要素。「既存」－要素は存在し、かつ残りもの。「破壊」－要素は存在したが、廃棄されるもの。「一時的」－一時的に存在する要素（一時的にサポートしている構造のようなもの）。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="d2c08400d20f11e1800000215ad4efdf">
+      <Name>AccessType</Name>
+      <Definition>Defines the types of access (or cover) to a tank that may be specified.
+
+Note that covers are generally specified for rectangular tanks. For cylindrical tanks, access will normally be via a manhole.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_TankAccessType">
+            <EnumItem>NONE</EnumItem>
+            <EnumItem>LOOSECOVER</EnumItem>
+            <EnumItem>MANHOLE</EnumItem>
+            <EnumItem>SECUREDCOVER</EnumItem>
+            <EnumItem>SECUREDCOVERWITHMANHOLE</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>NONE</Name>
+              <NameAliases>
+                <NameAlias lang="en">None</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>LOOSECOVER</Name>
+              <NameAliases>
+                <NameAlias lang="en">Loose Cover</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>MANHOLE</Name>
+              <NameAliases>
+                <NameAlias lang="en">Manhole</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>SECUREDCOVER</Name>
+              <NameAliases>
+                <NameAlias lang="en">Secured Cover</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>SECUREDCOVERWITHMANHOLE</Name>
+              <NameAliases>
+                <NameAlias lang="en">Secured Cover with Manhole</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Access Type</NameAlias>
+        <NameAlias lang="ja-JP">点検タイプ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">タンクの点検口（又はカバー)のタイプの定義は明示される。カバーは一般的に矩形タンクについて明示されていることに注意。円筒形タンクの点検は通常のマンホールを通る</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="e0760980d20f11e1800000215ad4efdf">
+      <Name>StorageType</Name>
+      <Definition>Defines the general material category intended to be stored.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_TankStorageType">
+            <EnumItem>ICE</EnumItem>
+            <EnumItem>WATER</EnumItem>
+            <EnumItem>RAINWATER</EnumItem>
+            <EnumItem>WASTEWATER</EnumItem>
+            <EnumItem>POTABLEWATER</EnumItem>
+            <EnumItem>FUEL</EnumItem>
+            <EnumItem>OIL</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>ICE</Name>
+              <NameAliases>
+                <NameAlias lang="en">Ice</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>WATER</Name>
+              <NameAliases>
+                <NameAlias lang="en">Water</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>RAINWATER</Name>
+              <NameAliases>
+                <NameAlias lang="en">Rain Water</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>WASTEWATER</Name>
+              <NameAliases>
+                <NameAlias lang="en">Waste Water</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>POTABLEWATER</Name>
+              <NameAliases>
+                <NameAlias lang="en">Potable Water</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>FUEL</Name>
+              <NameAliases>
+                <NameAlias lang="en">Fuel</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OIL</Name>
+              <NameAliases>
+                <NameAlias lang="en">Oil</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Storage Type</NameAlias>
+        <NameAlias lang="ja-JP">貯蔵タイプ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">一般的な材料種別が格納される</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="eff55280d20f11e1800000215ad4efdf">
+      <Name>NominalLengthOrDiameter</Name>
+      <Definition>The nominal length or, in the case of a vertical cylindrical tank, the nominal diameter of the tank.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Nominal Length Or Diameter</NameAlias>
+        <NameAlias lang="ja-JP">公称長さ又は直径</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">公称長さ又は垂直円筒形タンクの場合、タンクの公称直径</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="f7b4f700d20f11e1800000215ad4efdf">
+      <Name>NominalWidthOrDiameter</Name>
+      <Definition>The nominal width or, in the case of a horizontal cylindrical tank, the nominal diameter of the tank.
+
+Note: Not required for a vertical cylindrical tank.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Nominal Width Or Diameter</NameAlias>
+        <NameAlias lang="ja-JP">公称幅又は直径</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">公称幅又は水平円筒形タンクの場合、タンクの公称直径　　　　　注：垂直円筒形タンクに対しては必須ではない</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="fedc0500d20f11e1800000215ad4efdf">
+      <Name>NominalDepth</Name>
+      <Definition>The nominal depth of the tank.
+
+Note: Not required for a horizontal cylindrical tank.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Nominal Depth</NameAlias>
+        <NameAlias lang="ja-JP">公称深さ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">タンクの公称深さ　　注：水平円筒形タンクに対しては必須ではない</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="069ba980d21011e1800000215ad4efdf">
+      <Name>NominalCapacity</Name>
+      <Definition>The total nominal or design volumetric capacity of the tank.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcVolumeMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Nominal Capacity</NameAlias>
+        <NameAlias lang="ja-JP">公称容量</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">タンクの総公称又は設計容量</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="0ac7c700d21011e1800000215ad4efdf">
+      <Name>EffectiveCapacity</Name>
+      <Definition>The total effective or actual volumetric capacity of the tank.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcVolumeMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Effective Capacity</NameAlias>
+        <NameAlias lang="ja-JP">有効容量</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">タンクの総有効又は実容量</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="0f8c7b00d21011e1800000215ad4efdf">
+      <Name>OperatingWeight</Name>
+      <Definition>Operating weight of the tank including all of its contents.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcMassMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Operating Weight</NameAlias>
+        <NameAlias lang="ja-JP">運転重量</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">中身全部を含んだタンクの運転重量</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="14512f00d21011e1800000215ad4efdf">
+      <Name>PatternType</Name>
+      <Definition>Defines the types of pattern (or shape of a tank that may be specified.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_TankPatternType">
+            <EnumItem>HORIZONTALCYLINDER</EnumItem>
+            <EnumItem>VERTICALCYLINDER</EnumItem>
+            <EnumItem>RECTANGULAR</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>HORIZONTALCYLINDER</Name>
+              <NameAliases>
+                <NameAlias lang="en">Horizontal Cylinder</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>VERTICALCYLINDER</Name>
+              <NameAliases>
+                <NameAlias lang="en">Vertical Cylinder</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>RECTANGULAR</Name>
+              <NameAliases>
+                <NameAlias lang="en">Rectangular</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Pattern Type</NameAlias>
+        <NameAlias lang="ja-JP">パターンタイプ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">定義　パターンのタイプ（又はタンクの形状)が明示される</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="1f0bc400d21011e1800000215ad4efdf">
+      <Name>EndShapeType</Name>
+      <Definition>Defines the types of end shapes that can be used for preformed tanks. The convention for reading these enumerated values is that for a vertical cylinder, the first value is the base and the second is the top; for a horizontal cylinder, the order of reading should be left to right. For a speherical tank, the value UNSET should be used.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_EndShapeType">
+            <EnumItem>CONCAVECONVEX</EnumItem>
+            <EnumItem>FLATCONVEX</EnumItem>
+            <EnumItem>CONVEXCONVEX</EnumItem>
+            <EnumItem>CONCAVEFLAT</EnumItem>
+            <EnumItem>FLATFLAT</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>CONCAVECONVEX</Name>
+              <NameAliases>
+                <NameAlias lang="en">Concave Convex</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>FLATCONVEX</Name>
+              <NameAliases>
+                <NameAlias lang="en">Flat Convex</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>CONVEXCONVEX</Name>
+              <NameAliases>
+                <NameAlias lang="en">Convex Convex</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>CONCAVEFLAT</Name>
+              <NameAliases>
+                <NameAlias lang="en">Concave Flat</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>FLATFLAT</Name>
+              <NameAliases>
+                <NameAlias lang="en">Flat Flat</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">End Shape Type</NameAlias>
+        <NameAlias lang="ja-JP">末端形状タイプ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">定義　予めタンクに使用することができる端形状の種類を示す。これらの列挙された値を読み取るための規則は、垂直円筒に関しては、最初の値はベースです、そして、2番目は先端です。水平円筒に関しては、値は左から右に読む必要があります。球形タンクの場合、値はUNSETを使用する必要があります。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="2cc14980d21011e1800000215ad4efdf">
+      <Name>FirstCurvatureRadius</Name>
+      <Definition>FirstCurvatureRadius should be defined as the base or left side radius of curvature value.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">First Curvature Radius</NameAlias>
+        <NameAlias lang="ja-JP">最初の曲率半径</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">最初の曲率半径は、基本又は曲率の値の左側の半径として定義する必要があります。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="3480ee00d21011e1800000215ad4efdf">
+      <Name>SecondCurvatureRadius</Name>
+      <Definition>SecondCurvatureRadius should be defined as the top or right side radius of curvature value.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Second Curvature Radius</NameAlias>
+        <NameAlias lang="ja-JP">2番目の曲率半径</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">2番目の曲率半径は、曲率の値の先頭又は右側の半径として定義する必要があります。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="3cd92900d21011e1800000215ad4efdf">
+      <Name>NumberOfSections</Name>
+      <Definition>Number of sections used in the construction of the tank. Default is 1.
+
+Note: All sections assumed to be the same size.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcInteger" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Number Of Sections</NameAlias>
+        <NameAlias lang="ja-JP">セクションの数</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">タンクの製作に使用されているセクションの数　既定は1つ　　注：全てのセクションは同サイズと考える</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">水槽タイプ共通属性</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

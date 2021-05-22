@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="79098b00d20a11e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC2" />
+  <Name>Pset_SpaceHeaterTypeConvector</Name>
+  <Definition>Space heater type convector attributes.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcSpaceHeater/CONVECTOR</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcSpaceHeater/CONVECTOR</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="7e66d580d20a11e1800000215ad4efdf">
+      <Name>ConvectorType</Name>
+      <Definition>Indicates the type of convector, whether forced air (mechanically driven) or natural (gravity).</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_SpaceHeaterConvectorType">
+            <EnumItem>FORCED</EnumItem>
+            <EnumItem>NATURAL</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>FORCED</Name>
+              <NameAliases>
+                <NameAlias lang="en">Forced</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NATURAL</Name>
+              <NameAliases>
+                <NameAlias lang="en">Natural</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Convector Type</NameAlias>
+        <NameAlias lang="ja-JP">対流タイプ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">強制空気(機械的に運転される)か自然な(重力)であることにかかわらず対流式暖房器のタイプを示します。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">暖房用ヒーター対流式属性</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

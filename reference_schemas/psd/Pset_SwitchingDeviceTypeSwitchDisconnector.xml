@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="ae17dc80d20e11e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC2" />
+  <Name>Pset_SwitchingDeviceTypeSwitchDisconnector</Name>
+  <Definition>A switch disconnector is a switch which in the open position satisfies the isolating requirements specified for a disconnector.
+
+History: Property 'HasVisualIndication' changed to 'IsIlluminated' to conform with property name for toggle switch</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcSwitchingDevice/SWITCHDISCONNECTOR</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcSwitchingDevice/SWITCHDISCONNECTOR</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="b3752700d20e11e1800000215ad4efdf">
+      <Name>SwitchDisconnectorType</Name>
+      <Definition>A list of the available types of switch disconnector from which that required may be selected where:
+
+CenterBreak: A disconnector in which both contacts of each pole are movable and engage at a point substantially midway between their supports. (IEC 441-14-08)
+DividedSupport: A disconnector in which the fixed and moving contacts of each pole are not supported by a common base or frame. (IEC 441-14-06)
+DoubleBreak: A disconnector that opens a circuit at two points. (IEC 441-14-09)
+EarthingSwitch: A disconnector in which the fixed and moving contacts of each pole are not supported by a common base or frame. (IEC 441-14-07)
+Isolator: A disconnector which in the open position satisfies isolating requirements. (IEC 441-14-12)</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_SwitchDisconnectorType">
+            <EnumItem>CENTERBREAK</EnumItem>
+            <EnumItem>DIVIDEDSUPPORT</EnumItem>
+            <EnumItem>DOUBLEBREAK</EnumItem>
+            <EnumItem>EARTHINGSWITCH</EnumItem>
+            <EnumItem>ISOLATOR</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>CENTERBREAK</Name>
+              <NameAliases>
+                <NameAlias lang="en">Center Break</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>DIVIDEDSUPPORT</Name>
+              <NameAliases>
+                <NameAlias lang="en">Divided Support</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>DOUBLEBREAK</Name>
+              <NameAliases>
+                <NameAlias lang="en">Double Break</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>EARTHINGSWITCH</Name>
+              <NameAliases>
+                <NameAlias lang="en">Earthing Switch</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>ISOLATOR</Name>
+              <NameAliases>
+                <NameAlias lang="en">Isolator</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Switch Disconnector Type</NameAlias>
+        <NameAlias lang="ja-JP">高圧遮断機タイプ</NameAlias>
+        <NameAlias lang="ko-KR">고압차단기 유형</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">以下より選択が必要となる、スイッチ断路機の一覧リスト：
+
+センターブレイク： 各極の両方の接点は可動式で、実質的に中間付近を保持する断路器。 (IEC 441-14-08)
+DividedSupport： 各極の固定側と移動側接点が、共通のベースまたはフレームではサポートされない断路器。(IEC 441-14-06)
+二点切り断路器： 2点で回路を開く断路器 (IEC 441-14-09)
+接地開閉器 ： 各極の固定側と移動側接点が、共通のベースまたはフレームではサポートされない断路器。(IEC 441-14-07)
+断路器： 解放位置の分離要件を満たす、断路器。(IEC 441-14-12)</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">아래에서 선택이 필요한 스위치 단로 기의 목록 목록 : 센터 브레이크 : 각 국의 두 접점은 가동 식에서 실질적으로 중간 부근을 유지 단로기. (IEC 441-14-08) DividedSupport : 각 국의 고정 측과 ​​이동 측의 접점이 공통 기반 또는 프레임이 지원되지 않는 단로기. (IEC 441-14-06) 두가지 끄고 단로기 : 2 점 회로를 열 단로기 (IEC 441-14-09) 접지 개폐기 : 각 국의 고정 측과 ​​이동 측의 접점이 공통 기반 또는 프레임이 지원되지 않는 단로기. (IEC 441-14-07) 단로기 : 해제 위치 격리 요구 사항을 충족 단로기. (IEC 441-14-12)</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="c5ef6080d20e11e1800000215ad4efdf">
+      <Name>LoadDisconnectionType</Name>
+      <Definition>A list of the available types of load disconnection from which that required may be selected.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_LoadDisconnectionType">
+            <EnumItem>OFFLOAD</EnumItem>
+            <EnumItem>ONLOAD</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>OFFLOAD</Name>
+              <NameAliases>
+                <NameAlias lang="en">Offload</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>ONLOAD</Name>
+              <NameAliases>
+                <NameAlias lang="en">Onload</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Load Disconnection Type</NameAlias>
+        <NameAlias lang="ja-JP">切断タイプ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">選択が必要となる、負荷開閉器タイプの一覧リスト。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">IEC 441-14-12の定義：
+高圧開閉器は開閉器のために孤立した状態である必要条件を満たす、開いた位置にあるスイッチ。
+
+履歴：
+属性 'HasVisualIndication' を トグルスイッチのプロパティ名に対応するよう、'IsIlluminated' へ変更。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

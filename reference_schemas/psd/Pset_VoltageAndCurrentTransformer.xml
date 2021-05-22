@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="1f1f23bf6ca945ceb901f43d39cabe2c" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC2" />
+  <Name>Pset_VoltageAndCurrentTransformer</Name>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcTran/COMBINED</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcTran/COMBINED</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="f1a54c2344124f6cb86c284db649fc1e">
+      <Name>TransformerType</Name>
+      <Definition />
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

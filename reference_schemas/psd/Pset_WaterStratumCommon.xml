@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="4f05aceabecd454691af71112e8950a7" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC2" />
+  <Name>Pset_WaterStratumCommon</Name>
+  <Definition>Properties expressing the composition and any variability in the height of the body of water. Ranges are non-negative describing a spread.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcWaterStratum</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcWaterStratum</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="4d9aa6676cf043338951433c562725ce">
+      <Name>AnnualRange</Name>
+      <Definition>Indicative (95%-100%) annual range in levels.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="e4b9fe7554b54dc2bd29d45de360b498">
+      <Name>AnnualTrend</Name>
+      <Definition>Indicative (95%-100%) annual rise in level.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="549fdf14d4594553be784643275202b6">
+      <Name>IsFreshwater</Name>
+      <Definition>Indication of freshwater (true,false or unknown)</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLogical" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="23371a6cef4e44edb9c72cb41ce847bc">
+      <Name>SeicheRange</Name>
+      <Definition>Indicative (95%-100%) range between peaks and troughts of seiche (resonant) waves.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="cebb4c2ebc8e4de5894476cd6cccbc24">
+      <Name>TidalRange</Name>
+      <Definition>Indicative (95%-100%) range between high and low tide levels.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="e274744920144840b9c3f3b34e8df37e">
+      <Name>WaveRange</Name>
+      <Definition>Indicative (95%-100%) range between peaks and troughs of waves</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

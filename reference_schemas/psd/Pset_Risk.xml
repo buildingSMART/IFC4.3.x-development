@@ -1,0 +1,648 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="ff20d400d20011e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC2" />
+  <Name>Pset_Risk</Name>
+  <Definition>An indication of exposure to mischance, peril, menace, hazard or loss.   
+HISTORY:  Extended in IFC2x3  
+Refactored in IFC4.3  
+There are various types of risk that may be encountered and there may be several instances of Pset_Risk associated in an instance of an IfcProcess.  
+Specification of this property set incorporates the values of the Incom risk analysis matrix (satisfying AS/NZS 4360) together with additional identified requirements including UK PAS 1192-6.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcProcess</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcProcess</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="0516b500d20111e1800000215ad4efdf">
+      <Name>RiskType</Name>
+      <Definition>Identifies the predefined types of risk from which the type required may be set.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_RiskType">
+            <EnumItem>BUSINESS</EnumItem>
+            <EnumItem>HAZARD</EnumItem>
+            <EnumItem>HEALTHANDSAFETY</EnumItem>
+            <EnumItem>INSURANCE</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>BUSINESS</Name>
+              <NameAliases>
+                <NameAlias lang="en">Business</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>HAZARD</Name>
+              <NameAliases>
+                <NameAlias lang="en">Hazard</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>HEALTHANDSAFETY</Name>
+              <NameAliases>
+                <NameAlias lang="en">Health and Safety</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>INSURANCE</Name>
+              <NameAliases>
+                <NameAlias lang="en">Insurance</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Risk Type</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="1495fe00d20111e1800000215ad4efdf">
+      <Name>NatureOfRisk</Name>
+      <Definition>An indication of the generic nature of the risk that might be encountered. 
+
+NOTE: It is anticipated that there will be a local agreement that constrains the values that might be assigned to this property. An example might be 'Fall'  or 'Fall of grille unit' causing injury and damage to person and property.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Nature Of Risk</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="1bbd0c00d20111e1800000215ad4efdf">
+      <Name>SubNatureOfRisk1</Name>
+      <Definition>A first subsidiary value that might be assigned to designate a more specific type of risk.
+
+NOTE: Nature of risk may be identified in various ways depending upon the place where risk assessment takes place and according to local agreement. This property set allows for a generic nature of risk and up to two subsidiary natures. An example might be 'causing injury and damage'.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Sub Nature Of Risk1</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="224b8380d20111e1800000215ad4efdf">
+      <Name>SubNatureOfRisk2</Name>
+      <Definition>A second subsidiary value that might be assigned to designate a more specific type of risk. An example might be 'o person and property'.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Sub Nature Of Risk2</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="29729180d20111e1800000215ad4efdf">
+      <Name>RiskCause</Name>
+      <Definition>A value that may be assigned to capture the cause or trigger for the risk. An example might be 'poor fixing'.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcText" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Risk Cause</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="30010900d20111e1800000215ad4efdf">
+      <Name>AssessmentOfRisk</Name>
+      <Definition>Likelihood of risk event occurring.
+
+Note  that assessment of risk may frequently be associated with the physical location of the object for which the risk is assessed.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_RiskAssessment">
+            <EnumItem>ALMOSTCERTAIN</EnumItem>
+            <EnumItem>VERYLIKELY</EnumItem>
+            <EnumItem>LIKELY</EnumItem>
+            <EnumItem>VERYPOSSIBLE</EnumItem>
+            <EnumItem>POSSIBLE</EnumItem>
+            <EnumItem>SOMEWHATPOSSIBLE</EnumItem>
+            <EnumItem>UNLIKELY</EnumItem>
+            <EnumItem>VERYUNLIKELY</EnumItem>
+            <EnumItem>RARE</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>ALMOSTCERTAIN</Name>
+              <NameAliases>
+                <NameAlias lang="en">Almost Certain</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>VERYLIKELY</Name>
+              <NameAliases>
+                <NameAlias lang="en">Very Likely</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>LIKELY</Name>
+              <NameAliases>
+                <NameAlias lang="en">Likely</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>VERYPOSSIBLE</Name>
+              <NameAliases>
+                <NameAlias lang="en">Very Possible</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>POSSIBLE</Name>
+              <NameAliases>
+                <NameAlias lang="en">Possible</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>SOMEWHATPOSSIBLE</Name>
+              <NameAliases>
+                <NameAlias lang="en">Somewhat Possible</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNLIKELY</Name>
+              <NameAliases>
+                <NameAlias lang="en">Unlikely</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>VERYUNLIKELY</Name>
+              <NameAliases>
+                <NameAlias lang="en">Very Unlikely</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>RARE</Name>
+              <NameAliases>
+                <NameAlias lang="en">Rare</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Assessment Of Risk</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="44dd9c80d20111e1800000215ad4efdf">
+      <Name>RiskConsequence</Name>
+      <Definition>Indicates the level of severity of the consequences that the risk would have in case it happens.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_RiskConsequence">
+            <EnumItem>CATASTROPHIC</EnumItem>
+            <EnumItem>SEVERE</EnumItem>
+            <EnumItem>MAJOR</EnumItem>
+            <EnumItem>CONSIDERABLE</EnumItem>
+            <EnumItem>MODERATE</EnumItem>
+            <EnumItem>SOME</EnumItem>
+            <EnumItem>MINOR</EnumItem>
+            <EnumItem>VERYLOW</EnumItem>
+            <EnumItem>INSIGNIFICANT</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>CATASTROPHIC</Name>
+              <NameAliases>
+                <NameAlias lang="en">Catastrophic</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>SEVERE</Name>
+              <NameAliases>
+                <NameAlias lang="en">Severe</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>MAJOR</Name>
+              <NameAliases>
+                <NameAlias lang="en">Major</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>CONSIDERABLE</Name>
+              <NameAliases>
+                <NameAlias lang="en">Considerable</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>MODERATE</Name>
+              <NameAliases>
+                <NameAlias lang="en">Moderate</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>SOME</Name>
+              <NameAliases>
+                <NameAlias lang="en">Some</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>MINOR</Name>
+              <NameAliases>
+                <NameAlias lang="en">Minor</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>VERYLOW</Name>
+              <NameAliases>
+                <NameAlias lang="en">Very Low</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>INSIGNIFICANT</Name>
+              <NameAliases>
+                <NameAlias lang="en">Insignificant</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Risk Consequence</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="5aeb5d00d20111e1800000215ad4efdf">
+      <Name>RiskRating</Name>
+      <Definition>A general rating of the risk that may be determined from a combination of the risk assessment and risk consequence.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_RiskRating">
+            <EnumItem>CRITICAL</EnumItem>
+            <EnumItem>VERYHIGH</EnumItem>
+            <EnumItem>HIGH</EnumItem>
+            <EnumItem>CONSIDERABLE</EnumItem>
+            <EnumItem>MODERATE</EnumItem>
+            <EnumItem>SOME</EnumItem>
+            <EnumItem>LOW</EnumItem>
+            <EnumItem>VERYLOW</EnumItem>
+            <EnumItem>INSIGNIFICANT</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>CRITICAL</Name>
+              <NameAliases>
+                <NameAlias lang="en">Critical</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>VERYHIGH</Name>
+              <NameAliases>
+                <NameAlias lang="en">Veryhigh</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>HIGH</Name>
+              <NameAliases>
+                <NameAlias lang="en">High</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>CONSIDERABLE</Name>
+              <NameAliases>
+                <NameAlias lang="en">Considerable</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>MODERATE</Name>
+              <NameAliases>
+                <NameAlias lang="en">Moderate</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>SOME</Name>
+              <NameAliases>
+                <NameAlias lang="en">Some</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>LOW</Name>
+              <NameAliases>
+                <NameAlias lang="en">Low</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>VERYLOW</Name>
+              <NameAliases>
+                <NameAlias lang="en">Verylow</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>INSIGNIFICANT</Name>
+              <NameAliases>
+                <NameAlias lang="en">Insignificant</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Risk Rating</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="7191b400d20111e1800000215ad4efdf">
+      <Name>RiskOwner</Name>
+      <Definition>A determination of who is the owner of the risk by reference to principal roles of organizations within a project. Determination of the specific organization should be by reference to instances of IfcActorRole assigned to instances of IfcOrganization (if assigned).</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_RiskOwner">
+            <EnumItem>DESIGNER</EnumItem>
+            <EnumItem>SPECIFIER</EnumItem>
+            <EnumItem>CONSTRUCTOR</EnumItem>
+            <EnumItem>INSTALLER</EnumItem>
+            <EnumItem>MAINTAINER</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>DESIGNER</Name>
+              <NameAliases>
+                <NameAlias lang="en">Designer</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>SPECIFIER</Name>
+              <NameAliases>
+                <NameAlias lang="en">Specifier</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>CONSTRUCTOR</Name>
+              <NameAliases>
+                <NameAlias lang="en">Constructor</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>INSTALLER</Name>
+              <NameAliases>
+                <NameAlias lang="en">Installer</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>MAINTAINER</Name>
+              <NameAliases>
+                <NameAlias lang="en">Maintainer</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Risk Owner</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="81a99380d20111e1800000215ad4efdf">
+      <Name>AffectsSurroundings</Name>
+      <Definition>Indicates wether the risk affects only to the person assigned to that task (FALSE) or if it can also affect to the people in the surroundings (TRUE).
+
+For example, the process of painting would affect all the people in the vicinity of the process.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Affects Surroundings</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="88d0a180d20111e1800000215ad4efdf">
+      <Name>PreventiveMeassures</Name>
+      <Definition>Identifies preventive measures to be taken to mitigate risk.</Definition>
+      <PropertyType>
+        <TypePropertyListValue>
+          <ListValue>
+            <DataType type="IfcText" />
+          </ListValue>
+        </TypePropertyListValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Preventive Meassures</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+  </PsetDefinitionAliases>
+</PropertySetDef>

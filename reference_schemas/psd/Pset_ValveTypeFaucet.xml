@@ -1,0 +1,382 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="9e9b9200d21411e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC2" />
+  <Name>Pset_ValveTypeFaucet</Name>
+  <Definition>A small diameter valve, with a free outlet, from which water is drawn.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcValve/FAUCET</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcValve/FAUCET</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="a3f8dc80d21411e1800000215ad4efdf">
+      <Name>FaucetType</Name>
+      <Definition>Defines the range of faucet types that may be specified where:
+
+Bib:	 Faucet with a horizontal inlet and a nozzle that discharges downwards.
+Globe:	 Faucet fitted through the end of a bath, with a horizontal inlet, a partially spherical body and a vertical nozzle.
+Diverter: 	Combination faucet assembly with a valve to enable the flow of mixed water to be transferred to a showerhead.
+DividedFlowCombination:	 Combination faucet assembly in which hot and cold water are kept separate until emerging from a common nozzle
+.
+Pillar:	 Faucet that has a vertical inlet and a nozzle that discharges downwards
+.
+SingleOutletCombination =	 Combination faucet assembly in which hot and cold water mix before emerging from a common nozzle
+.
+Spray:	 Faucet with a spray outlet
+.
+SprayMixing:	 Spray faucet connected to hot and cold water supplies that delivers water at a temperature determined during use.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_FaucetType">
+            <EnumItem>BIB</EnumItem>
+            <EnumItem>GLOBE</EnumItem>
+            <EnumItem>DIVERTER</EnumItem>
+            <EnumItem>DIVIDEDFLOWCOMBINATION</EnumItem>
+            <EnumItem>PILLAR</EnumItem>
+            <EnumItem>SINGLEOUTLETCOMBINATION</EnumItem>
+            <EnumItem>SPRAY</EnumItem>
+            <EnumItem>SPRAYMIXING</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>BIB</Name>
+              <NameAliases>
+                <NameAlias lang="en">Bib</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>GLOBE</Name>
+              <NameAliases>
+                <NameAlias lang="en">Globe</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>DIVERTER</Name>
+              <NameAliases>
+                <NameAlias lang="en">Diverter</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>DIVIDEDFLOWCOMBINATION</Name>
+              <NameAliases>
+                <NameAlias lang="en">Divided Flow Combination</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>PILLAR</Name>
+              <NameAliases>
+                <NameAlias lang="en">Pillar</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>SINGLEOUTLETCOMBINATION</Name>
+              <NameAliases>
+                <NameAlias lang="en">Single Outlet Combination</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>SPRAY</Name>
+              <NameAliases>
+                <NameAlias lang="en">Spray</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>SPRAYMIXING</Name>
+              <NameAliases>
+                <NameAlias lang="en">Spray Mixing</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Faucet Type</NameAlias>
+        <NameAlias lang="ja-JP">水栓タイプ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">水栓タイプの範囲をここに明確に定義する
+Bib = 入口が水平で、下に吐出するノズルの水栓　Globe =浴槽の端に付けられ、入口が水平で、本体が部分的に球形で、ノズルが垂直な水栓　Diverter =シャワーヘッドへの混合水の流れを変えられる弁を持った組合せ水栓　DividedFlowCombination = 共通のノズルから出るまで水と湯が分かれたままになっている組合せ水栓　Pillar =垂直な入口と下へ吐出するノズルを持った水栓　SingleOutletCombination =共通のノズルから出る前に水と湯が混合する組合せ水栓　Spray =スプレー状の吐出口を持った水栓　SprayMixing =使用中決められた温度で供給する給水と給湯に接続されたスプレー水栓</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="b70bac80d21411e1800000215ad4efdf">
+      <Name>FaucetOperation</Name>
+      <Definition>Defines the range of ways in which a faucet can be operated that may be specified where:
+
+CeramicDisc: Quick action faucet with a ceramic seal to open or close the orifice
+.
+LeverHandle: Quick action faucet that is operated by a lever handle
+.
+NonConcussiveSelfClosing:	 Self closing faucet that does not induce surge pressure
+.
+QuarterTurn: Quick action faucet that can be fully opened or shut by turning the operating mechanism through 90 degrees.
+QuickAction: Faucet that can be opened or closed fully with a single small movement of the operating mechanism
+.
+ScrewDown: Faucet in which a plate or disc is moved, by the rotation of a screwed spindle, to close or open the orifice.
+SelfClosing: Faucet that is opened by pressure of the top of an operating spindle and is closed under the action of a spring or weight when the pressure is released.
+TimedSelfClosing: 	Self closing faucet that discharges for a predetermined period of time
+.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_FaucetOperation">
+            <EnumItem>CERAMICDISC</EnumItem>
+            <EnumItem>LEVERHANDLE</EnumItem>
+            <EnumItem>NONCONCUSSIVESELFCLOSING</EnumItem>
+            <EnumItem>QUARTERTURN</EnumItem>
+            <EnumItem>QUICKACTION</EnumItem>
+            <EnumItem>SCREWDOWN</EnumItem>
+            <EnumItem>SELFCLOSING</EnumItem>
+            <EnumItem>TIMEDSELFCLOSING</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>CERAMICDISC</Name>
+              <NameAliases>
+                <NameAlias lang="en">Ceramic Disc</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>LEVERHANDLE</Name>
+              <NameAliases>
+                <NameAlias lang="en">Lever Handle</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NONCONCUSSIVESELFCLOSING</Name>
+              <NameAliases>
+                <NameAlias lang="en">Nonconcussive Self Closing</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>QUARTERTURN</Name>
+              <NameAliases>
+                <NameAlias lang="en">Quarter Turn</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>QUICKACTION</Name>
+              <NameAliases>
+                <NameAlias lang="en">Quick Action</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>SCREWDOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">Screw Down</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>SELFCLOSING</Name>
+              <NameAliases>
+                <NameAlias lang="en">Self Closing</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>TIMEDSELFCLOSING</Name>
+              <NameAliases>
+                <NameAlias lang="en">Timed Self Closing</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Faucet Operation</NameAlias>
+        <NameAlias lang="ja-JP">水栓操作</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">水栓の操作方法の範囲をここで明確に定義する：
+CeramicDisc = 口を開閉するセラミックシールを持った急操作水栓　LeverHandle = レバーハンドルで操作される急操作水栓　SelfClosing =サージ圧をもたらさない自閉水栓　QuarterTurn =90度、操作機構を回すことで全開又は全閉できる急操作水栓　QuickAction =操作機構の一つの小さな動きで全開又は全閉できる水栓　ScrewDown =口を開閉するためにねじの主軸を回して中の板又は円板を動かす水栓　SelfClosing = 操作主軸の頂部の圧力で開けられ、圧力が開放された時は、ばね又は錘の動作で閉められる水栓　TimedSelfClosing =前もって決められた時間、吐出する自閉水栓</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="cbe84000d21411e1800000215ad4efdf">
+      <Name>FaucetFunction</Name>
+      <Definition>Defines the operating temperature of a faucet that may be specified.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_FaucetFunction">
+            <EnumItem>COLD</EnumItem>
+            <EnumItem>HOT</EnumItem>
+            <EnumItem>MIXED</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>COLD</Name>
+              <NameAliases>
+                <NameAlias lang="en">Cold</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>HOT</Name>
+              <NameAliases>
+                <NameAlias lang="en">Hot</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>MIXED</Name>
+              <NameAliases>
+                <NameAlias lang="en">Mixed</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Faucet Function</NameAlias>
+        <NameAlias lang="ja-JP">水栓機能</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">水栓の作動温度を明確に定義する。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="da365c00d21411e1800000215ad4efdf">
+      <Name>Finish</Name>
+      <Definition>Description of the finish applied to the faucet.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcText" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Finish</NameAlias>
+        <NameAlias lang="ja-JP">仕上げ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">水栓に適用される仕上げの説明</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="e02c3d00d21411e1800000215ad4efdf">
+      <Name>FaucetTopDescription</Name>
+      <Definition>Description of the operating mechanism/top of the faucet.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcText" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Faucet Top Description</NameAlias>
+        <NameAlias lang="ja-JP">水栓の頂部</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">操作機構/水栓の頂部の説明</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">弁タイプ水栓</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

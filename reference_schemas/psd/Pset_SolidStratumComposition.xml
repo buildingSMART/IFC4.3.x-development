@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="77479c265e53461cadd2d1a373ab1745" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC2" />
+  <Name>Pset_SolidStratumComposition</Name>
+  <Definition>Properties expressing the composition of a stratum using volume measures, implementing ISO14688 Part 2 Table 1 Primary fractions and composite fractions. Regional and National conventions should be captured through classification and specific property sets. Zero values may be omitted.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcSolidStratum</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcSolidStratum</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="95499b0cfb18404c91169a076f88cd6f">
+      <Name>AirVolume</Name>
+      <Definition>Relative volume of air stratum constituents.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcVolumeMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="5b0c9563679049b1a64bb8635cfb18a1">
+      <Name>BouldersVolume</Name>
+      <Definition>Relative volume of boulders (typically larger than 200mm) stratum constituents.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcVolumeMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="4e557b7dae9e47a5811c77e23904575d">
+      <Name>ClayVolume</Name>
+      <Definition>Relative volume of clay (typically smaller than 0.002mm) stratum constituents.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcVolumeMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="cec6eb22e72241b890958bea1dff66c1">
+      <Name>CobblesVolume</Name>
+      <Definition>Relative volume of cobbles (typically larger than 63mm) stratum constituents.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcVolumeMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="ed0efe100eec4b1c99e5ab3cc9602800">
+      <Name>ContaminantVolume</Name>
+      <Definition>Relative volume of contaminant stratum constituents.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcVolumeMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="01d15699dd0b4d0485a0e85a0affbf76">
+      <Name>FillVolume</Name>
+      <Definition>Relative volume of fill (controlled placement of anthropogenic soil) stratum constituents.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcVolumeMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="99a22998a27a4aec9aa42c4f86cb809f">
+      <Name>GravelVolume</Name>
+      <Definition>Relative volume of gravel (typically larger than 2mm) stratum constituents.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcVolumeMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="613812db05a64c6eb28b2c7c64d7755e">
+      <Name>OrganicVolume</Name>
+      <Definition>Relative volume of organic (peat/humus) stratum constituents especially soil.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcVolumeMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="1c65d7fbb7fe48f1b673a9e142284892">
+      <Name>RockVolume</Name>
+      <Definition>Relative volume of rock stratum constituents.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcVolumeMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="80c0111716c5490194f85487802038fc">
+      <Name>SandVolume</Name>
+      <Definition>Relative volume of sand (typically smaller than 2mm) stratum constituents.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcVolumeMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="2280c5a6f9bf4dc882f1381ec509a3a5">
+      <Name>SiltVolume</Name>
+      <Definition>Relative volume of silt (typically smaller than 0.063mm) stratum constituents.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcVolumeMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="93f6a784d8274f1281a9df6fde183973">
+      <Name>WaterVolume</Name>
+      <Definition>Relative volume of water stratum constituents.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcVolumeMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

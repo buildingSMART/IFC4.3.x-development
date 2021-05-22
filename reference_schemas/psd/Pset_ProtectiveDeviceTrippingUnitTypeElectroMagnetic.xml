@@ -1,0 +1,280 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="4062b500d1fc11e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC2" />
+  <Name>Pset_ProtectiveDeviceTrippingUnitTypeElectroMagnetic</Name>
+  <Definition>Information on tripping units that are electrically or magnetically tripped.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcProtectiveDeviceTrippingUnit/ELECTROMAGNETIC</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcProtectiveDeviceTrippingUnit/ELECTROMAGNETIC</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="45bfff80d1fc11e1800000215ad4efdf">
+      <Name>ElectroMagneticTrippingUnitType</Name>
+      <Definition>A list of the available types of electric magnetic tripping unit  from which that required may be selected. These cover overload, none special, short circuit, motor protection and bi-metal tripping.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_ElectroMagneticTrippingUnitType">
+            <EnumItem>OL</EnumItem>
+            <EnumItem>TMP_STD</EnumItem>
+            <EnumItem>TMP_SC</EnumItem>
+            <EnumItem>TMP_MP</EnumItem>
+            <EnumItem>TMP_BM</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>OL</Name>
+              <NameAliases>
+                <NameAlias lang="en">Ol</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>TMP_STD</Name>
+              <NameAliases>
+                <NameAlias lang="en">Tmp  Std</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>TMP_SC</Name>
+              <NameAliases>
+                <NameAlias lang="en">Tmp  Sc</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>TMP_MP</Name>
+              <NameAliases>
+                <NameAlias lang="en">Tmp  Mp</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>TMP_BM</Name>
+              <NameAliases>
+                <NameAlias lang="en">Tmp  Bm</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Electro Magnetic Tripping Unit Type</NameAlias>
+        <NameAlias lang="ja-JP">電磁トリップ装置タイプ</NameAlias>
+        <NameAlias lang="ko-KR">전자 트립장치 유형</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">電磁トリップ装置タイプを選択する。（過電流・配線用・モーター・バイメタル・その他）</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">전자 트립 장치 유형을 선택합니다. (과전류 · 배선 모터 바이메탈 기타)</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="553f4880d1fc11e1800000215ad4efdf">
+      <Name>I1</Name>
+      <Definition>The (thermal) lower testing current limit in [x In], indicating that for currents lower than I1, the tripping time shall be longer than the associated tripping time, T2.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcReal" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">I1</NameAlias>
+        <NameAlias lang="ja-JP">I1</NameAlias>
+        <NameAlias lang="ko-KR">I1</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">熱動式の低試験電流限界値を [x In]、電流は I1　よりも低い値を示す。トリップ時間は関連する T2 の時間よりも長い。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">열 동식 낮은 시험 전류 한계를 [x In] 전류는 I1보다 낮은 값을 나타낸다. 트립 시간은 관련 T2 시간보다 길다.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="5b352980d1fc11e1800000215ad4efdf">
+      <Name>I2</Name>
+      <Definition>The (thermal) upper testing current limit in [x In], indicating that for currents larger than I2, the tripping time shall be shorter than the associated tripping time, T2.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcReal" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">I2</NameAlias>
+        <NameAlias lang="ja-JP">I2</NameAlias>
+        <NameAlias lang="ko-KR">I2</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">熱動式の高試験電流限界値を [x In], 電流は I2 よりも高い値を示す。トリップ時間は関連する T2 の時間よりも短い。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">열 동식 높은 시험 전류 한계를 [x In], 전류 I2보다 높은 값을 나타낸다. 트립 시간은 관련 T2 시간보다 짧다.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="60927400d1fc11e1800000215ad4efdf">
+      <Name>T2</Name>
+      <Definition>The (thermal) testing time in [s] associated with the testing currents I1 and I2.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcTimeMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">T2</NameAlias>
+        <NameAlias lang="ja-JP">T2</NameAlias>
+        <NameAlias lang="ko-KR">T2</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">熱動式の試験時間を [s] , 関連する試験電流を I1 と I2　とする。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">열 동식 시험 시간 [s] 관련 시험 전류를 I1과 I2로한다.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="68521880d1fc11e1800000215ad4efdf">
+      <Name>DefinedTemperature</Name>
+      <Definition>The ambient temperature at which the thermal current/time-curve associated with this protection device is defined.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcThermodynamicTemperatureMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Defined Temperature</NameAlias>
+        <NameAlias lang="ja-JP">設定温度</NameAlias>
+        <NameAlias lang="ko-KR">설정 온도</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">この保護装置が定める温度・電流/時間-カーブに関連する周囲温度。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">이 보호 장치가 정한 온도 · 전류 / 시간 - 곡선과 관련된 주위 온도.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="6ee09000d1fc11e1800000215ad4efdf">
+      <Name>TemperatureFactor</Name>
+      <Definition>The correction factor (typically measured as %/deg K) for adjusting the thermal current/time to an ambient temperature different from the value given by the defined temperature.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcRatioMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Temperature Factor</NameAlias>
+        <NameAlias lang="ja-JP">温度係数</NameAlias>
+        <NameAlias lang="ko-KR">온도 계수</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">熱の電流/時間を、定義済みの温度によって与えられる値と異なる場合に周囲温度に合わせるための補正係数（%/deg K で計測する）。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">열 전류 / 시간 미리 정의된 온도에 의해 주어진 값과 다른 경우 주위 온도에 맞추기위한 보정 계수 (% / deg K로 측정한다).</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="73a54400d1fc11e1800000215ad4efdf">
+      <Name>I4</Name>
+      <Definition>The lower electromagnetic testing current limit in [x In], indicating that for currents lower than I4, the tripping time shall be longer than the associated tripping time, T5, i.e. the device shall not trip instantaneous.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcReal" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">I4</NameAlias>
+        <NameAlias lang="ja-JP">I4</NameAlias>
+        <NameAlias lang="ko-KR">I4</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">電磁の低試験電流限界値を [x In], 電流は I4 よりも低い値を示す。トリップ時間は関連する T5 と瞬時に遮断する定格使用電流の時間よりも長い。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">전자 낮은 시험 전류 한계를 [x In] 전류는 I4보다 낮은 값을 나타낸다. 트립 시간은 관련 T5 즉석에서 차단하는 정격 사용 전류의 시간보다 길다.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="799b2500d1fc11e1800000215ad4efdf">
+      <Name>I5</Name>
+      <Definition>The upper electromagnetic testing current limit in [x In], indicating that for currents larger than I5, the tripping time shall be shorter than or equal to the associated tripping time, T5, i.e. the device shall trip instantaneous.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcReal" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">I5</NameAlias>
+        <NameAlias lang="ja-JP">I5</NameAlias>
+        <NameAlias lang="ko-KR">I5</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">電磁の高試験電流限界値を [x In], 電流は I4 よりも低い値を示す。トリップ時間は関連する T5 と瞬時に遮断する定格使用電流の時間よりも長い。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">전자의 높은 시험 전류 한계를 [x In] 전류는 I4보다 낮은 값을 나타낸다. 트립 시간은 관련 T5 즉석에서 차단하는 정격 사용 전류의 시간보다 길다.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="80299c80d1fc11e1800000215ad4efdf">
+      <Name>T5</Name>
+      <Definition>The electromagnetic testing time in [s] associated with the testing currents I4 and I5, i.e. electromagnetic tripping time</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcTimeMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">T5</NameAlias>
+        <NameAlias lang="ja-JP">T5</NameAlias>
+        <NameAlias lang="ko-KR">T5</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">電磁の試験時間を [s] , 関連する試験電流を I4 と I5　とする。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">전자 시험 시간 [s] 관련 시험 전류를 I4하면 I5한다.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="84ee5080d1fc11e1800000215ad4efdf">
+      <Name>CurveDesignation</Name>
+      <Definition>The designation of the trippingcurve given by the manufacturer. For a MCB the designation should be in accordance with the designations given in IEC 60898.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Curve Designation</NameAlias>
+        <NameAlias lang="ja-JP">曲線指定</NameAlias>
+        <NameAlias lang="ko-KR">곡성 지정</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">メーカーが提供する指定のトリッピングカーブ。MCBのために、指定はIEC 60898に準拠しなければならない。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">제조 업체가 제공하는 지정된 토릿삔구 곡선. MCB 위해, 지정은 IEC 60898을 준수해야한다.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">電気と磁気により遮断するトリップ装置の情報。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

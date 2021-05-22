@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="2dde4d8650a3497c8bebe98d4d424c34" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC2" />
+  <Name>Pset_RailwayAlignmentCommon</Name>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcAlignment</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcAlignment</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="52978d5917b24e869208445d8587af34">
+      <Name>CantRotationAxis</Name>
+      <Definition />
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="bd0b64c8278d42b68c01d2ec6e36f999">
+      <Name>VerticalReferenceAxis</Name>
+      <Definition />
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

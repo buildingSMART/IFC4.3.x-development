@@ -1,0 +1,235 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="7b171e00d1f911e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC2" />
+  <Name>Pset_ProtectiveDeviceBreakerUnitTypeMCB</Name>
+  <Definition>A coherent set of attributes representing the breaking capacities of an MCB. Note - A protective device may be associated with different instances of this property set providing information related to different  basic characteristics.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcProtectiveDevice/CIRCUITBREAKER</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcProtectiveDevice/CIRCUITBREAKER</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="84a08600d1f911e1800000215ad4efdf">
+      <Name>PowerLoss</Name>
+      <Definition>The power loss in [W] per pole of the MCB  when the nominal current is flowing through the MCB.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPowerMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Power Loss</NameAlias>
+        <NameAlias lang="ja-JP">電力損失</NameAlias>
+        <NameAlias lang="ko-KR">전력 손실</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">定格電流がMCBに流れている時のMCBの極当たりの電力損失[W]。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">정격 전류가 MCB 흐르고있을 때의 MCB 극 당 전력 손실 [W].</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="8ec28480d1f911e1800000215ad4efdf">
+      <Name>VoltageLevel</Name>
+      <Definition>The voltage levels for which the data of the instance is valid. More than one value may be selected in the enumeration.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_VoltageLevels">
+            <EnumItem>U230</EnumItem>
+            <EnumItem>U400</EnumItem>
+            <EnumItem>U440</EnumItem>
+            <EnumItem>U525</EnumItem>
+            <EnumItem>U690</EnumItem>
+            <EnumItem>U1000</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>U230</Name>
+              <NameAliases>
+                <NameAlias lang="en">U230</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>U400</Name>
+              <NameAliases>
+                <NameAlias lang="en">U400</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>U440</Name>
+              <NameAliases>
+                <NameAlias lang="en">U440</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>U525</Name>
+              <NameAliases>
+                <NameAlias lang="en">U525</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>U690</Name>
+              <NameAliases>
+                <NameAlias lang="en">U690</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>U1000</Name>
+              <NameAliases>
+                <NameAlias lang="en">U1000</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Voltage Level</NameAlias>
+        <NameAlias lang="ja-JP">電圧レベル</NameAlias>
+        <NameAlias lang="ko-KR">전압 레벨</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">電圧レベルを選択。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">전압레벨을 선택합니다.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="ae59ad00d1f911e1800000215ad4efdf">
+      <Name>NominalCurrents</Name>
+      <Definition>A set of nominal currents in [A] for which the data of this instance is valid. At least one value shall be provided. Any value in the set shall not exceed the value of the 
+UltimateRatedCurrent associated with the same breaker unit.</Definition>
+      <PropertyType>
+        <TypePropertyListValue>
+          <ListValue>
+            <DataType type="IfcElectricCurrentMeasure" />
+          </ListValue>
+        </TypePropertyListValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Nominal Currents</NameAlias>
+        <NameAlias lang="ja-JP">定格電流</NameAlias>
+        <NameAlias lang="ko-KR">정격 전류</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">定格電流[A]を少なくても1つ値をセットしなければならない。
+ セット内の任意の値の値を超えてはならない。
+ 定格電流は、同じブレーカ部に関連付けられている。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">정격 전류 [A]를 적어도 2 개의 값을 설정해야한다.   동일한 차단기부와 연결된 정격전류는세트 내의 임의의 값은 초과할 수 없다.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="b6b1e800d1f911e1800000215ad4efdf">
+      <Name>ICU60947</Name>
+      <Definition>The ultimate breaking capacity in [A] for an MCB tested in accordance with the IEC 60947 series.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcElectricCurrentMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">ICU60947</NameAlias>
+        <NameAlias lang="ja-JP">定格限界短絡遮断容量</NameAlias>
+        <NameAlias lang="ko-KR">정격 한계 단락 차단 용량</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">IECの60947シリーズに基づいてテストされたMCBの定格限界短絡遮断容量を[A]で設定。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">IEC의 60948 시리즈를 기반으로 시험한 MCB의 정격 한계 단락 차단 용량 [A]로 설정.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="c0d3e680d1f911e1800000215ad4efdf">
+      <Name>ICS60947</Name>
+      <Definition>The service breaking capacity in [A] for an MCB tested in accordance with the IEC 60947 series.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcElectricCurrentMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">ICS60947</NameAlias>
+        <NameAlias lang="ja-JP">定格使用短絡遮断容量</NameAlias>
+        <NameAlias lang="ko-KR">정격 사용 단락 차단 용량</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">IECの60947シリーズに基づいてテストされたMCBの定格使用短絡遮断容量を[A]で設定。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">IEC의 60947 시리즈를 기반으로 시험한 MCB의 정격 사용 단락 차단 용량 [A]로 설정.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="c9c4b800d1f911e1800000215ad4efdf">
+      <Name>ICN60898</Name>
+      <Definition>The nominal breaking capacity in [A] for an MCB tested in accordance with the IEC 60898 series.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcElectricCurrentMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">ICN60898</NameAlias>
+        <NameAlias lang="ja-JP">ICN60898</NameAlias>
+        <NameAlias lang="ko-KR">ICN60898</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">IECの60898シリーズに基づいてテストされたMCBの定格遮断容量を[A]で設定。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">IEC의 60898 시리즈를 기반으로 시험한 MCB의 정격 차단 용량 [A]로 설정.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="d2b58980d1f911e1800000215ad4efdf">
+      <Name>ICS60898</Name>
+      <Definition>The service breaking capacity in [A] for an MCB tested in accordance with the IEC 60898 series.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcElectricCurrentMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">ICS60898</NameAlias>
+        <NameAlias lang="ja-JP">ICS60898</NameAlias>
+        <NameAlias lang="ko-KR">ICS60898</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">IECの60898シリーズに基づいてテストされたMCBの遮断使用容量を[A]で設定。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">IEC의 60898 시리즈를 기반으로 시험한 MCB 차단 사용 용량 [A]로 설정.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+  </PsetDefinitionAliases>
+</PropertySetDef>

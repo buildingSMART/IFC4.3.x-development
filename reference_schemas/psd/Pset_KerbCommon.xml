@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="0c6dd572b9b4424c94e6454d24d56fb7" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC2" />
+  <Name>Pset_KerbCommon</Name>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcKerb</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcKerb</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="a17f9b22d1c24b5283ecc296a95f01de">
+      <Name>CombinedKerbGutter</Name>
+      <Definition>Indicating  the use of a combined kerb and gutter.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="df3137fdeab24c329373f8523e84b1fe">
+      <Name>Upstand</Name>
+      <Definition>The height difference between the two separated surfaces.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcNonNegativeLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

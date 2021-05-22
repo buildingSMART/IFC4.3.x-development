@@ -99,7 +99,7 @@ def construct_xml(xmi_doc, pset, path, by_id):
     psd = ET.Element('PropertySetDef' if pset.stereotype == "PSET" else 'QtoSetDef')
     psd.set('xmlns:xsi', 'http://www.w3.org/2001/XMLSchema-instance')
     psd.set('xmlns:xsd', 'http://www.w3.org/2001/XMLSchema')
-    psd.set('ifdguid', guid)
+    # psd.set('ifdguid', guid)
     psd.set('templatetype', 'PSET_TYPEDRIVENOVERRIDE')
     
     if pset.stereotype == "PSET":

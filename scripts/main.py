@@ -17,8 +17,8 @@ for ffn in glob.glob(relative_path("..", "schemas", "*.xml")):
     fn = os.path.basename(ffn)
     print("Processing:", fn)
     
-    if not os.path.exists(relative_path("..", "output")):
-        os.makedirs(relative_path("..", "output"))
+    if not os.path.exists(relative_path("..", "output", "psd")):
+        os.makedirs(relative_path("..", "output", "psd"))
     
     for script, ext in zip(scripts, extensions):
         print("Running:", script)

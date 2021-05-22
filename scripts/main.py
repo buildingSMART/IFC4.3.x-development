@@ -60,6 +60,7 @@ for ffn in glob.glob(relative_path("..", "schemas", "*.xml")):
             subprocess.check_call([
                 sys.executable, 
                 relative_path(script + ".py"), 
+                "--compare",
                 output_path,
                 os.path.join(reference_dir, "psd"),
                 relative_path("..", "output", fn[:-4] + "-psets.md")

@@ -20,6 +20,7 @@ after_success:
   - MESSAGE=$(git log --oneline -1)
   - git clone https://$USER_NAME:$USER_AUTH@github.com/buildingSMART/$REPO
   - cd $REPO
+  - [ -d psd/ ] && rm -rf psd
   - mv ../output/* .
   - git config user.email "${USER_EMAIL}"
   - git config user.name "${USER_NAME}"

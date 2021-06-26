@@ -56,12 +56,15 @@ def skip_by_package(element):
     
 HTML_TAG_PATTERN = re.compile('<.*?>')
 MULTIPLE_SPACE_PATTERN = re.compile(r'\s+')
+CHANGE_LOG_PATTERN = re.compile(r'\{\s*\.change\-\w+\s*\}.+', flags=re.DOTALL)
 def strip_html(s):
     S = html.unescape(s or '')
     i = S.find('\n')
     return re.sub(HTML_TAG_PATTERN, '', S)
     
 def format(s):
+    s = s.replace("\\X\\0D", "")
+    s = re.sub(CHANGE_LOG_PATTERN, '', s)
     return re.sub(MULTIPLE_SPACE_PATTERN, ' ', ''.join([' ', c][c.isalnum() or c in '.,'] for c in s)).strip()
     
 def generalization(pe):
@@ -72,6 +75,11 @@ def generalization(pe):
     if P: return generalization(P)
     else: return pe
 
+
+type_to_values = {
+    'boolean': ['TRUE','FALSE'],
+    'logical': ['TRUE','FALSE','UNKNOWN'],
+}
 
 def generate_definitions():
     """
@@ -107,11 +115,17 @@ def generate_definitions():
     class_name_to_node = {}
     
     by_id = {}
+    item_by_id = {}
     
     # psets are deferred to the end so that all ids are resolved
     psets = []
     
+    # same for entity attributes:
+    entities = []
+    
     for item in xmi_doc:
+    
+        item_by_id[item.id] = item
         
         if item.type == "ENUM" and item.stereotype == "PREDEFINED_TYPE":
         
@@ -134,6 +148,8 @@ def generate_definitions():
             if st:
                 di['Parent'] = st[0]
             di['Description'] = format(strip_html(item.documentation))
+            
+            entities.append(item)
             
     for item in psets:
         refs = item.meta.get('refs', [])
@@ -175,16 +191,78 @@ def generate_definitions():
                 di["Psets"][item.name]["Properties"][a.name]['type'] = type_name
                 di["Psets"][item.name]["Properties"][a.name]["Description"] = format(strip_html(a.documentation))
                 
-                type_to_values = {
-                    'boolean': ['TRUE','FALSE'],
-                    'logical': ['TRUE','FALSE','UNKNOWN'],
-                }
                 if type_values is None:
                     type_values = type_to_values.get(type_name)
                 if type_values:
                     di["Psets"][item.name]["Properties"][a.name]['values'] = type_values
                         
+    for item in entities:
+    
+        item_name = item.name
+        if item_name.endswith("Type"):
+            item_name = item_name[:-4]
+        di = classifications[item_name]        
+               
+        for c in item.children:
+        
+            try:
+                node = c.node
+                if node.xml.tagName == "attribute":
+                    node = xmi_doc.xmi.by_id[c.node.idref]
+                    type_type = node|"type"
+                    type_id = type_type.idref
+                else:
+                    type_id = ([t for t in (node/"ownedEnd") if t.name == c.name][0]|"type").idref
+                    type_type = xmi_doc.xmi.by_id[type_id]
+                type_item = item_by_id[type_id]
+            except:
+                print("Not emitting %s.%s because of an error" % (item.name, c.name))
+                continue
+            
+            if c.name == "PredefinedType":
+                print("Not emitting %s.%s because it's the PredefinedType attribute" % (item.name, c.name))
+            elif type_item.type in {"ENTITY", "SELECT"}:
+                print("Not emitting %s.%s because it's a %s %s" % (item.name, c.name, type_item.name, type_item.type))
+            elif type_item.type == "TYPE":
                 
+                type_values = None
+                
+                if type_item.definition.super_verbatim:
+                
+                    if not type_item.definition.super.lower().startswith("string"):                    
+                        print("Not emitting %s.%s because it has a hardcoded express definition %s" % (item.name, c.name, type_item.definition.super))
+                        continue
+                    else:
+                        type_name = "string"
+                        
+                else:
+                
+                    pattr = xmi_doc.xmi.by_id[c.node.idref]
+                    ty_id = (pattr|"type").idref
+                    ty_pe = xmi_doc.xmi.by_id[ty_id]
+                    ty_gen = generalization(ty_pe)
+                    type_name = ty_gen.name.lower()
+                
+                di["Psets"]["Attributes"]["Properties"][c.name]['type'] = type_name
+                di["Psets"]["Attributes"]["Properties"][c.name]["Description"] = format(strip_html(c.documentation))
+                
+                if type_values is None:
+                    type_values = type_to_values.get(type_name)
+                if type_values:
+                    di["Psets"]["Attributes"]["Properties"][c.name]['values'] = type_values
+            
+            elif type_item.type == "ENUM":
+            
+                type_name = type_item.name
+                type_values = type_item.definition.values
+                
+                di["Psets"]["Attributes"]["Properties"][c.name]['values'] = type_values
+                di["Psets"]["Attributes"]["Properties"][c.name]['type'] = type_name
+                di["Psets"]["Attributes"]["Properties"][c.name]["Description"] = format(strip_html(c.documentation))
+                
+            else:
+                print("Not emitting %s.%s because it's a %s %s" % (item.name, c.name, type_item.name, type_item.type))
+            
     return classifications
 
 def filter_definition(di):
@@ -201,8 +279,10 @@ def filter_definition(di):
             yield from parents(v.get('Parent'))
             
     def child_or_self_has_psets(k):
-        if di.get(k, {}).get("Psets"):
-            return True
+        ps = di.get(k, {}).get("Psets")
+        if ps:
+            if set(ps.keys()) - {"Attributes"}:
+                return True
         for c in children[k]:
             if child_or_self_has_psets(c):
                 return True

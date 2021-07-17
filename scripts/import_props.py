@@ -21,7 +21,7 @@ for p in prop_files:
 for nm, defs in prop_definitions.items():
     of = os.path.join(odr, nm[0].lower(), nm + ".md")
     # we just take the longest property definition in case of duplicates
-    longest = sorted(defs, key=len)[-1]
+    longest = max(defs, key=len)
     if not os.path.exists(os.path.dirname(of)):
         os.makedirs(os.path.dirname(of))
     with open(of, "w", encoding="utf-8") as f:

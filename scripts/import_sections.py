@@ -12,7 +12,7 @@ odirs = {p.split(os.sep)[-1]:p for p in glob.glob(odr + "\\**", recursive=True) 
 
 md_files = glob.glob(os.path.join(dr, "**", "Documentation.md"), recursive=True)
 
-for p in sorted(md_files, key=len): #[0:100]:
+for p in sorted(md_files, key=len):
     parts = p.split(os.sep)
     section = parts[-2]
     if " " in section:

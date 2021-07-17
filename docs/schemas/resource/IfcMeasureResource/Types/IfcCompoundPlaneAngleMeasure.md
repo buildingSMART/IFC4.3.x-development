@@ -1,3 +1,5 @@
+# IfcCompoundPlaneAngleMeasure
+
 _IfcCompoundPlaneAngleMeasure_ is a compound measure of plane angle in degrees, minutes, seconds, and optionally millionth-seconds of arc.
 
 > NOTE&nbsp; _IfcCompoundPlaneAngleMeasure_ is used where angles need to be described to an accuracy as fine as one millionth of a degree and expressed as parts of an arc. It may be used for angular measurement by surveyors or for other angular measurements where precision is required. Another usage is exact or approximate global positioning against a geographic coordinate systems using longitude and latitude.
@@ -65,3 +67,17 @@ Another often encountered display format of latitudes and longitudes is to omit 
 50&deg;58'33"S
 ```
 . When stored as _IfcCompoundPlaneAngleMeasure_ however, a compound plane angle measure is always signed, with same sign of all components.
+
+## Formal Propositions
+
+### MinutesInRange
+The second measure (minutes) shall be between -60 exclusive and 60 exclusive.
+
+### SecondsInRange
+The third measure (seconds) shall be between -60 exclusive and 60 exclusive.
+
+### MicrosecondsInRange
+The forth measure (millionth-seconds), if asserted, shall be between -1e6 exclusive and 1e6 exclusive.
+
+### ConsistentSign
+All non-zero measure components shall have the same sign (positive or negative).

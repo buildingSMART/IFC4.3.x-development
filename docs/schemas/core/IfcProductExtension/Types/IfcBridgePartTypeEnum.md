@@ -1,0 +1,3 @@
+# IfcBridgePartTypeEnum
+
+$

@@ -1,3 +1,5 @@
+# IfcBoxAlignment
+
 The box alignment specifies the alignment of the text box relative to its position. The following string values shall be used:
 
 * top-left
@@ -24,3 +26,8 @@ Figure 2 illustrates use of alignment values together with the placement and pla
 
 { .change-ifc2x3}
 > IFC2x3 CHANGE&nbsp; The _IfcBoxAlignment_ has been added.
+
+## Formal Propositions
+
+### WR1
+

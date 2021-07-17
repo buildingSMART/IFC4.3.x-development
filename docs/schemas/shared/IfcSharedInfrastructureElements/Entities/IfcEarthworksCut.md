@@ -7,7 +7,7 @@ NOTE The material excavated and either used as fill or discarded as waste is not
 ## Attributes
 
 ### PredefinedType
-
+Identifies the predefined type of a earthworks cut elements. This type may associate additional specific property sets.
 
 ## Formal Propositions
 

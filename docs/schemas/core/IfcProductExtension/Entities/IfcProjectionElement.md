@@ -23,3 +23,8 @@ The _IfcProjectionElement_ shall not participate in the containment relationship
 Predefined generic type for a projection element that is specified in an enumeration. There may be a property set given specificly for the predefined types.
 { .change-ifc2x4}
 > IFC4 CHANGE The attribute has been added at the end of the entity definition.
+
+## Formal Propositions
+
+### CorrectPredefinedType
+Either _PredefinedType_ is unset or the inherited attribute _ObjectType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED or _PredefinedType_.

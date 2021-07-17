@@ -48,3 +48,8 @@ Predefined generic type for an opening that is specified in an enumeration. Ther
 
 ### HasFillings
 Reference to the Filling Relationship that is used to assign Elements as Fillings for this Opening Element. The Opening Element can be filled with zero-to-many Elements.
+
+## Formal Propositions
+
+### CorrectPredefinedType
+Either _PredefinedType_ is unset or the inherited attribute _ObjectType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED or _PredefinedType_.

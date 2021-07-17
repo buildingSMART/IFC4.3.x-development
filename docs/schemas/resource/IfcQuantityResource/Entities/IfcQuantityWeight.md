@@ -19,7 +19,8 @@ A formula by which the quantity has been calculated. It can be assigned in addit
 ## Formal Propositions
 
 ### WR21
-If a unit is given, the unit type shall be mass unit. NOTE&nbsp; There is no distinction between the concept of "Mass" and "Weight" in the current IFC Release.
+If a unit is given, the unit type shall be mass unit.\
+			>NOTE&nbsp; There is no distinction between the concept of "Mass" and "Weight" in the current IFC Release.
 
 ### WR22
 A valid weight quantity shall be greater than or equal to zero.

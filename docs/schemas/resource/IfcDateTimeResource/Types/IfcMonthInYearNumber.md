@@ -1,3 +1,5 @@
+# IfcMonthInYearNumber
+
 _IfcMonthInYearNumber_ is an integer that defines the position of the specified month in a year.
 
 Calendar month numbers map to calendar month names as follows:
@@ -21,3 +23,8 @@ Type: INTEGER
 
 { .note}
 > HISTORY&nbsp; New type in IFC1.5.1.
+
+## Formal Propositions
+
+### ValidRange
+The valid range for positioning a month in a year is min inclusive = 1 and max inclusive = 12.

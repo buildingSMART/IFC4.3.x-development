@@ -9,7 +9,7 @@ The following vertical segment types are defined:
 * line segment - _IfcAlignmentVerticalSegmentTypeEnum_ .LINE.
 * circular arc segment - _IfcAlignmentVerticalSegmentTypeEnum_ .ARC.
 * parabolic arc segment - _IfcAlignmentVerticalSegmentTypeEnum_ .PARABOLICARC. which can describe symmetric and unsymmetric parabolas
-* nonlinear/transition segment - _IfcAlignmentVerticalSegmentTypeEnum_ .NONLINEAR.
+* transition segment with linear curvature variation - _IfcAlignmentVerticalSegmentTypeEnum_ .CLOTHOID.
 
 For each vertical segment, the following non-redundant information is provided:
 
@@ -37,7 +37,9 @@ The following checks can be done to validate the correct exchange:
 ## Attributes
 
 ### StartDistAlong
-Distance along the horizontal alignment, measured along the _IfcAlignment2DHorizontal_ given in the length unit of the global _IfcUnitAssignment_.
+Distance along the horizontal alignment as measured along the corresponding _IfcAlignmentHorizontal_.
+> NOTE 1&nbsp; The distance along is measured from the start point of _IfcAlignmentHorizontal_, any optionally provided offset expressed by _IfcAlignmentHorizontal_.StartDistanceAlong is not taken into account.
+> NOTE 2&nbsp; The unit of measurement is the global length unit, as set by _IfcContext_.UnitInContext
 
 ### HorizontalLength
 Length measured as distance along the horizontal alignment of the segment.
@@ -53,10 +55,10 @@ Start gradient of the segment.
 End gradient of the segment. In the case of a PredefinedType='.CONSTANTGRADIENT.' the value is the same as _StartGradient_.
 
 ### RadiusOfCurvature
-Radius of parabola or arc.
-> NOTE1 &nbsp; For _PredefinedType_ is ARC. The radius of the basis circle for the arc.
-> NOTE2 &nbsp; For _PredefinedType_ is PARABOLICARC. Parabola constant (determining the “steepness” of the parabola). The parabola constant is provided by the “minimum parabola radius”, the true radius of a parabola at its vertical axis (the zero-gradient point of the parabola). The minimum radius is twice the focal length of the parabola (the distance between the focal point and the vertex).
-> NOTE3 &nbsp; For _PredefinedType_ that is not either ARC or PARABOLICARC the value should be empty.
+Radius of parabola or arc. Positive values imply a CCW direction whereas negative CW.
+> NOTE1&nbsp; For _PredefinedType_ is ARC. The radius of the basis circle for the arc.  
+> NOTE2&nbsp; For _PredefinedType_ is PARABOLICARC. Parabola constant (determining the “steepness” of the parabola). The parabola constant is provided by the “minimum parabola radius”, the true radius of a parabola at its vertical axis (the zero-gradient point of the parabola). The minimum radius is twice the focal length of the parabola (the distance between the focal point and the vertex).  
+> NOTE3&nbsp; For _PredefinedType_ that is not either ARC or PARABOLICARC the value should be empty.
 
 ### PredefinedType
 Predefined type of the vertical alignmnent segment.

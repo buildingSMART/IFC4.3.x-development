@@ -22,7 +22,7 @@ Several representation identifiers for shape representation are included as pred
 </tr>
 <tr>
 <td align="left" valign="top" width="210"><b>Annotation</b></td>
-<td align="left" valign="top">2D annotations not representing elements</td>
+<td align="left" valign="top">3D annotations not representing elements</td>
 </tr>
 <tr>
 <td align="left" valign="top" width="210"><b>Axis</b></td>
@@ -47,6 +47,10 @@ Several representation identifiers for shape representation are included as pred
 <tr>
 <td align="left" valign="top" width="210"><b>Body</b></td>
 <td align="left" valign="top">3D Body representation, e.g. as wireframe, surface, or solid model, of an element</td>
+</tr>
+<tr>
+<td align="left" valign="top" width="210"><b>Body-FallBack</b></td>
+<td align="left" valign="top">3D Body representation, e.g. as tessellation, or other surface, or boundary representation, added in addition to the solid model (potentially involving Boolean operations) of an element</td>
 </tr>
 <tr>
 <td align="left" valign="top" width="210"><b>Clearance</b></td>

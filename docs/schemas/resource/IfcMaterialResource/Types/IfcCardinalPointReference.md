@@ -1,3 +1,5 @@
+# IfcCardinalPointReference
+
 An _IfcCardinalPointReference_ is an index reference to significant points of a section profile. This index is used to describe the spatial relationship between the section of a member and a reference axis of the same member.
 
 > HISTORY  New Type in IFC4.
@@ -23,6 +25,7 @@ Indexes 1...9 refer to points at the bounding box of a profile. Indexes 10...19 
 17. left in line with the shear centre
 18. right in line with the shear centre
 19. top in line with the shear centre
+20. Lowest point inside of pipe or channel profile (centre of flat bottom)
 
 Other index values are possible but outside the scope of this specification.
 
@@ -33,3 +36,8 @@ Figure 1 illustrates cardinal point values.
 Figure 2 illustrates an example extrusion shape with arbitrary profile (_IfcArbitraryClosedProfileDef_), aligned "mid-depth right" on the member axis. The line of sight follows the extrusion direction Z which points into the drawing plane of above illustration. Hence, "left" is in the positive X direction of the _IfcProfileDef_. "Top" is in the positive Y direction of the _IfcProfileDef_.
 
 !["extrusion shape with arbitrary profile and alignment"](../../../../figures/ifccardinalpointreference-02.png "Figure 2 &mdash; Cardinal point extrusion")
+
+## Formal Propositions
+
+### GreaterThanZero
+Cardinal point reference shall be greater than zero.

@@ -1,3 +1,5 @@
+# IfcAccelerationMeasure
+
 _IfcAccelerationMeasure_ is a measure of acceleration.
 
 Usually measured in m/s2.

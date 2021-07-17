@@ -61,3 +61,6 @@ Containment relationship to the spatial structure element, to which the element 
 
 ### HasCoverings
 Reference to _IfcCovering_ by virtue of the objectified relationship _IfcRelCoversBldgElement_. It defines the concept of an element having coverings associated.
+
+### HasSurfaceFeatures
+Reference to the _IfcRelAdheresToElement_ relationship that adheres a _IfcSurfaceFeature_ to an element. An element can incorporate zero-to-many surface features in one relationship.

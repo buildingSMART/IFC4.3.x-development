@@ -1,3 +1,5 @@
+# IfcFontStyle
+
 The _IfcFontStyle_ type defines whether the normal, the italic or the oblique faces within a font family shall be used. Values are:
 
 * normal 
@@ -11,3 +13,8 @@ The _IfcFontStyle_ type defines whether the normal, the italic or the oblique fa
 > NOTE&nbsp; Type adopted from **font-style** defined in [CSS-1](../../../bibliography.htm#CSS1).
 
 > HISTORY&nbsp; New type in IFC2x3.
+
+## Formal Propositions
+
+### WR1
+Allowable values for font style.

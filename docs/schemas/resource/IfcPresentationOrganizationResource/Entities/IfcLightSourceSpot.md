@@ -24,7 +24,7 @@ Definition from VRML97 - ISO/IEC 14772-1:1997: The direction field specifies the
 
 ### ConcentrationExponent
 Definition from ISO/CD 10303-46:1992: This real is the exponent on the cosine of the angle between the line that starts at the position of the spot light source and is in the direction of the orientation of the spot light source and a line that starts at the position of the spot light source and goes through a point on the surface being shaded.
-NOTE&nbsp; This attribute does not exists in ISO/IEC 14772-1:1997.
+>NOTE&nbsp; This attribute does not exists in ISO/IEC 14772-1:1997.
 
 ### SpreadAngle
 Definition from ISO/CD 10303-46:1992: This planar angle measure is the angle between the line that starts at the position of the spot light source and is in the direction of the spot light source and any line on the boundary of the cone of influence.

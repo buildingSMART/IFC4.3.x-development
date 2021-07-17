@@ -1,3 +1,5 @@
+# IfcShapeRepresentationTypes
+
 The function gets the representation type and the assigned set of representation items as input and verifies whether the correct items are assigned according to the representation type given.
 
 > HISTORY&nbsp; New function in IFC2x.

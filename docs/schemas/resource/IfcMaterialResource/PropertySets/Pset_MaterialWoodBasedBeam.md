@@ -1,3 +1,5 @@
+# Pset_MaterialWoodBasedBeam
+
 This is a collection of mechanical properties applicable to wood-based materials for beam-like products, especially laminated materials like glulam and LVL.
 Anisotropy of such materials is taken into account by different properties according to grain direction and load types.
 

@@ -1,6 +1,3 @@
-# IfcCaissonFoundationType
-
-
 
 ## Attributes
 

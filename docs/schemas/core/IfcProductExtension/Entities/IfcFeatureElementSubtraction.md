@@ -8,7 +8,7 @@ The voiding relationship between a master element and a subtraction feature is g
 
 The local placement for _IfcFeatureElementSubtraction_ is defined in its supertype _IfcProduct_. It is defined by the _IfcLocalPlacement_, which defines the local coordinate system that is referenced by all geometric representations. The local placement is always defined in relation to the local placement of the building element from which the feature element substration is substracted:
 
-* The _PlacementRelTo_ relationship of _IfcLocalPlacement_ shall point (if given) to the local placement of the same _IfcElement_, which is used in the _VoidsElements.RelatingElement_ inverse attribute.
+* The _PlacementRelTo_ attribute of _IfcObjectPlacement_ shall point (if given) to the object placement of the _IfcElement_, which is used in the _VoidsElements.RelatingElement_ inverse attribute (the parent element of the feature).
 
 > HISTORY&nbsp; New entity in IFC2x2.
 

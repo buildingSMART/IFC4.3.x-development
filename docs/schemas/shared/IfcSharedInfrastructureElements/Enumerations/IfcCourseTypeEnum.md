@@ -1,1 +1,0 @@
-This container defines the different predefined types of course elements that can further specify an [<font color="#0000ff"><u>IfcCourse</u></font>]($element://{2FFB2951-EEF9-49ce-BE91-DABE981E3BE6}) or [<font color="#0000ff"><u>IfcCourseType</u></font>]($element://{7722C204-F35C-482e-B0B7-9A1CED6BAD72}).

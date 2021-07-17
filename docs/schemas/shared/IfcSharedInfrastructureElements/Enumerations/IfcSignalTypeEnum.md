@@ -1,1 +1,0 @@
-This container defines the different predefined types of signals that can specify an [<font color="#0000ff"><u>IfcSignal</u></font>]($element://{15911371-83A2-4660-B0A2-B479E9560615})  or [<font color="#0000ff"><u>IfcSignalType</u></font>]($element://{ABB9523D-45C0-45dd-9E66-2BD5B046E9FE}).

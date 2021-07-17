@@ -3,8 +3,14 @@
 An _IfcAlignmentCantSegment_ is an individual segment along _IfcAlignmentCant_.
 The cant alignment is defined by ordered segments that connect end-to-start. The points defined in a cant alignment segment are defined in a plane with x = distance along horizontal alignment and y = height relative to projected points in vertical alignment. 
 The following cant segment types are defined:
-* line segment - _IfcAlignmentCantSegmentTypeEnum_ .LINE.
-* transition curve segment - _IfcAlignmentCantSegmentTypeEnum_ .NONLINEAR.
+
+* Bloss transition - _IfcAlignmentCantSegmentTypeEnum_ .BLOSSCURVE.
+* Constant cant - _IfcAlignmentCantSegmentTypeEnum_ .CONSTANTCANT.
+* Cosine transition - _IfcAlignmentCantSegmentTypeEnum_ .COSINECURVE.
+* Helmert transition - _IfcAlignmentCantSegmentTypeEnum_ .HELMERTCURVE.
+* Linear transition - _IfcAlignmentCantSegmentTypeEnum_ .LINEARTRANSITION.
+* Sine transition - _IfcAlignmentCantSegmentTypeEnum_ SINECURVE
+* Viennese Bend (R) transition - _IfcAlignmentCantSegmentTypeEnum_ .VIENNESEBEND.
 
 
 For each cant segment, the following information is provided:
@@ -33,9 +39,6 @@ Length measured for the right cant at the beginning of the segment.
 
 ### EndCantRight
 Length measured for the right cant at the end of the segment.
-
-### SmoothingLength
-
 
 ### PredefinedType
 

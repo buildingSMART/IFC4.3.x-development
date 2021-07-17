@@ -1,3 +1,5 @@
+# IfcFontWeight
+
 The _IfcFontWeight_ type defines the weight of the font. Values are:
 
 * normal 
@@ -23,3 +25,8 @@ The _IfcFontWeight_ type defines the weight of the font. Values are:
 > NOTE&nbsp; Type adopted from **font-weight** defined in [CSS-1](../../../bibliography.htm#CSS1).
 
 > HISTORY&nbsp; New type in IFC2x2 Add2.
+
+## Formal Propositions
+
+### WR1
+

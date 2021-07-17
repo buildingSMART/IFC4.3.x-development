@@ -6,7 +6,7 @@ The _IfcFeatureElementAddition_ is associated to its master element by virtue of
 
 The local placement for _IfcFeatureElementAddition_ is defined in its supertype _IfcProduct_. It is defined by the _IfcLocalPlacement_, which defines the local coordinate system that is referenced by all geometric representations. The local placement is always defined in relation to the local placement of the element to which the feature element is added:
 
-* The _PlacementRelTo_ relationship of _IfcLocalPlacement_ shall point to the local placement of the same _IfcElement_, which is used in the _HasAdditionFeature.RelatingElement_ inverse attribute. 
+* The _PlacementRelTo_ attribute of _IfcObjectPlacement_ shall point (if given) to the object placement of the _IfcElement_, which is used in the _ProjectsElements.RelatingElement_ inverse attribute (the parent element of the feature).
 
 > HISTORY&nbsp; New entity in IFC2x2.
 

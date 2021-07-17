@@ -1,6 +1,3 @@
-# IfcBearingType
-
-
 
 ## Attributes
 

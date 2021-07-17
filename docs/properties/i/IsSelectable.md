@@ -1,4 +1,4 @@
 IsSelectable
 ============
 
-Indication whether the S-function can be switched off or not.
+Indication whether the L-function can be switched off or not.

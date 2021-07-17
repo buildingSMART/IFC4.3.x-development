@@ -1,4 +1,4 @@
 NumberOfCircuits
 ================
 
-Number of circuits in the distribution board.
+Number of parallel fluid tube circuits.

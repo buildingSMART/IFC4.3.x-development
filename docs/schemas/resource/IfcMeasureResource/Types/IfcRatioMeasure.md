@@ -1,3 +1,5 @@
+# IfcRatioMeasure
+
 An _IfcRatioMeasure_ is the value of the relation between two physical quantities that are of the same kind.
 
 > NOTE&nbsp; Input given in percent is to be divided by 100% when stored as an _IfcRatioMeasure_. For example, 25% becomes 0.25.

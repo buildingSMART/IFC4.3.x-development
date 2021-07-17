@@ -5,7 +5,7 @@ Soil reinforced or stabilized by some mechanical or chemical method.
 ## Attributes
 
 ### PredefinedType
-
+Identifies the predefined type of a reinforced soil elements. This type may associate additional specific property sets.
 
 ## Formal Propositions
 

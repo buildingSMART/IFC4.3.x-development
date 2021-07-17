@@ -5,5 +5,14 @@ NOTE Definition from ISO 6707-1: road, runway, or similar construction above the
 
 ## Attributes
 
-### Flexible
-Boolean to identify the pavement type as a Flexible or Rigid structure.
+### PredefinedType
+Identifies the predefined type of a pavement element. This type may associate additional specific property sets.
+NOTE  The PredefinedType shall only be used, if no IfcPavementType is assigned, providing its own IfcCourseType.PredefinedType.
+
+## Formal Propositions
+
+### CorrectPredefinedType
+Either the _PredefinedType_ attribute is unset(e.g. because an _IfcPavementType_ is associated), or the inherited attribute _ObjectType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.
+
+### CorrectTypeAssigned
+Either there is no type object associated, i.e. the _IsTypedBy_ inverse relationship is not provided, or the associated type object has to be of type _IfcPavementType_.

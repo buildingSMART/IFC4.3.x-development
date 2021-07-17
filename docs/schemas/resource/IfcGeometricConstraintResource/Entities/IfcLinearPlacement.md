@@ -4,12 +4,6 @@ _IfcLinearPlacement_ provides a specialization of _IfcObjectPlacement_ in which 
 
 ## Attributes
 
-### PlacementMeasuredAlong
-
-
-### Distance
-
-
 ### RelativePlacement
 
 

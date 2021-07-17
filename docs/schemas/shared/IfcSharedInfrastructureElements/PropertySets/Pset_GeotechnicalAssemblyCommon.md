@@ -1,1 +1,3 @@
-Properties describing the characteristics of any geotechnical model. A Status of �New� should not be associated to a [<font color="#0000ff"><u>IfcGeotechnicalAssembly</u></font>]($element://{85B77FDE-67EA-40a4-ADA4-ADD4C95A7D3E}) or [<font color="#0000ff"><u>IfcGeotechnicalStratum</u></font>]($element://{FAEFB134-3800-4995-B222-B921D7E287BF}), as other entities are used for earthworks and courses.
+# Pset_GeotechnicalAssemblyCommon
+
+Properties describing the characteristics of any geotechnical model. A Status of "New" should not be associated to a _IfcGeotechnicalAssembly_ or _IfcGeotechnicalStratum_, as other entities are used for earthworks and courses.

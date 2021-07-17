@@ -1,0 +1,4 @@
+LiningThickness
+===============
+
+Lining thickness (boreholeML).

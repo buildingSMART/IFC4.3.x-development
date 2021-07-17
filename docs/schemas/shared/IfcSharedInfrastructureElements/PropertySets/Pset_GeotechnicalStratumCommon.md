@@ -1,1 +1,3 @@
-Properties describing the characteristics of any solid, water or void stratum. A status of �New� should not be associated to a [<font color="#0000ff"><u>IfcGeotechnicalAssembly</u></font>]($element://{85B77FDE-67EA-40a4-ADA4-ADD4C95A7D3E})  or [<font color="#0000ff"><u>IfcSolidStratum</u></font>]($element://{C1BDB3F2-0742-4fc7-B313-53194628B9C2}) , as other entities are used for earthworks and courses.
+# Pset_GeotechnicalStratumCommon
+
+Properties describing the characteristics of any solid, water or void stratum. A status of "New" should not be associated to a _IfcGeotechnicalAssembly_  or _IfcSolidStratum_, as other entities are used for earthworks and courses.

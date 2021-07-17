@@ -1,3 +1,5 @@
+# IfcTextTransformation
+
 The _IfcTextTransformation_ describes how the cases of characters are handled. Values are:
 
 * capitalize: uppercases the first character of each word
@@ -8,3 +10,8 @@ The _IfcTextTransformation_ describes how the cases of characters are handled. V
 > NOTE&nbsp; Type adopted from **text-transform** defined in [CSS-1](../../../bibliography.htm#CSS1).
 
 > HISTORY&nbsp; New type in IFC2x3.
+
+## Formal Propositions
+
+### WR1
+Allowable values for text transform.

@@ -51,6 +51,8 @@ Informal Propositions:
 ### Segments
 The component bounded curves, their transitions and senses. The transition attribute for the last segment defines the transition between the end of the last segment and the start of the first; this transition attribute may take the value discontinuous, which indicates an open curve.
 
+> NOTE&nbsp: For _IfcGradientCurve_ and _IfcSegmentedReferenceCurve_ the segments define the interpolation between segment start and and segment end.
+
 ### SelfIntersect
 Indication of whether the curve intersects itself or not; this is for information only.
 

@@ -1,3 +1,5 @@
+# IfcBinary
+
 _IfcBinary_ is a defined type of simple data type BINARY which may be used to encode binary data such as embedded textures.
 
 { .\"note\"}

@@ -5,7 +5,7 @@ A type of earthworks element created by earthwork activities to build subgrade o
 ## Attributes
 
 ### PredefinedType
-
+Identifies the predefined type of a earthworks fill elements. This type may associate additional specific property sets.
 
 ## Formal Propositions
 

@@ -1,0 +1,4 @@
+DeviceType
+==========
+
+Mooring device type

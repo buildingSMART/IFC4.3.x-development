@@ -1,0 +1,4 @@
+Colour
+======
+
+Stratum colour

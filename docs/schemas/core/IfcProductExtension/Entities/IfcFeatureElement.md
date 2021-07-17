@@ -10,3 +10,8 @@ In contrary to the aggregation, as used in _IfcElementAssembly_, that defines th
 
 { .change-ifc2x2}
 > IFC2x2 CHANGE&nbsp; The entity is introduced as an upward compatible extension of the IFC2x platform. It is an intermediate abstract supertype without defining its own explicit attributes.
+
+## Formal Propositions
+
+### NotContained
+Element is not contained in spatial structure.

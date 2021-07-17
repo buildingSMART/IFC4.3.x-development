@@ -1,3 +1,5 @@
+# IfcTaperedSweptAreaProfiles
+
 This function checks whether the start and end profile in a tapered extrusion are topologically similar, i.e. whether both have the same number of vertices and edges.
 
 It returnes TRUE if:

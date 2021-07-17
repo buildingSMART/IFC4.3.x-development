@@ -10,3 +10,8 @@ A Bridge is civil engineering works that affords passage to pedestrians, animals
 
 ### PredefinedType
 
+
+## Formal Propositions
+
+### CorrectPredefinedType
+Either _PredefinedType_ is unset or the inherited attribute _ObjectType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED or _PredefinedType_.

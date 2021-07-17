@@ -22,9 +22,6 @@ The bounded curve which defines the geometry of the segment.
 ### Dim
 The space dimensionality of this class, defined by the dimensionality of the first ParentCurve.
 
-### UsingCurves
-The set of composite curves which use this composite curve segment as a segment. This set shall not be empty.
-
 ## Formal Propositions
 
 ### ParentIsBoundedCurve

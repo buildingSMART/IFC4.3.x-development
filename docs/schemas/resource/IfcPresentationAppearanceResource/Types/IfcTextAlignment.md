@@ -1,3 +1,5 @@
+# IfcTextAlignment
+
 The _IfcTextAlignment_ describes how text is aligned within the element. Values are:
 
 * left
@@ -12,3 +14,8 @@ The _IfcTextAlignment_ describes how text is aligned within the element. Values 
 > NOTE&nbsp; Type adopted from **text-align** defined in [CSS-1](../../../bibliography.htm#CSS1).
 
 > HISTORY&nbsp; New type in IFC2x3.
+
+## Formal Propositions
+
+### WR1
+Allowable values for text alignment.

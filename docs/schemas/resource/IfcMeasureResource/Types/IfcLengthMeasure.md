@@ -1,3 +1,5 @@
+# IfcLengthMeasure
+
 An _IfcLengthMeasure_ is the value of a distance.
 
 Type: REAL

@@ -48,13 +48,13 @@ The _Radius_ of the circular disk to be swept along the _directrix_. Denotes the
 This attribute is optional, if present it defines the radius of a circular hole in the centre of the disk.
 
 ### StartParam
-The parameter value on the _Directrix_ at which the sweeping operation commences. <font color="#0000ff">If no value is provided the start of the sweeping operation is at the start of the <em>Directrix</em>.</font>.
+The parameter value on the _Directrix_ at which the sweeping operation commences. If no value is provided the start of the sweeping operation is at the start of the _Directrix_.
 
 { .change-ifc2x4}
 > IFC4 CHANGE&nbsp; The attribute has been changed to OPTIONAL with upward compatibility for file-based exchange.
 
 ### EndParam
-The parameter value on the _Directrix_ at which the sweeping operation ends. <font color="#0000ff">If no value is provided the end of the sweeping operation is at the end of the <em>Directrix</em>.</font>.
+The parameter value on the _Directrix_ at which the sweeping operation ends. If no value is provided the end of the sweeping operation is at the end of the _Directrix_.
 
 { .change-ifc2x4}
 > IFC4 CHANGE&nbsp; The attribute has been changed to OPTIONAL with upward compatibility for file-based exchange.

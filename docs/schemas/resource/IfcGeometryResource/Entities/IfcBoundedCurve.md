@@ -15,8 +15,3 @@ Informal Propositions:
 
 1. A bounded curve has finite arc length.
 2. A bounded curve has a start point and an end point.
-
-## Attributes
-
-### PositioningElement
-

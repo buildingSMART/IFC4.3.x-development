@@ -1,3 +1,5 @@
+# IfcFontVariant
+
 The _IfcFontVariant_ type defines whether the normal or the small-caps faces within a font family shall be used. Values are:
 
 * normal 
@@ -10,3 +12,8 @@ The _IfcFontVariant_ type defines whether the normal or the small-caps faces wit
 > NOTE&nbsp; Type adopted from **font-variant** defined in [CSS-1](../../../bibliography.htm#CSS1).
 
 > HISTORY&nbsp; New type in IFC2x3.
+
+## Formal Propositions
+
+### WR1
+

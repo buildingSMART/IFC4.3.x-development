@@ -103,7 +103,7 @@ the analysis model, i.e. as established by _IfcStructuralAnalysisModel.SharedPla
 or to the local coordinate system (local to the activity or connected item, as established by
 an explicit or implied representation and its parameter space).
 
-> NOTE, the informal definition of _IfcRepresentationResource.IfcGlobalOrLocalEnum_ doe s not distinguish between "global coordinate system" and "world coordinate system". On the other hand, this distinction is necessary in the _IfcStructuralAnalysisDomain_ where the shared "global" coordinate system of an analysis model may very well not be the same as the project-wide world coordinate system.
+> NOTE&nbsp;, the informal definition of _IfcRepresentationResource.IfcGlobalOrLocalEnum_ doe s not distinguish between "global coordinate system" and "world coordinate system". On the other hand, this distinction is necessary in the _IfcStructuralAnalysisDomain_ where the shared "global" coordinate system of an analysis model may very well not be the same as the project-wide world coordinate system.
 
 > NOTE&nbsp; In the scope of _IfcStructuralActivity.GlobalOrLocal_, the meaning of GLOBAL_COORDS is therefore not to be taken as world coordinate system but as the analysis model specific shared coordinate system. In contrast, LOCAL_COORDS is to be taken as coordinates which are local to individual structural items and activities, as established by subclass-specific geometry use definitions.
 

@@ -144,3 +144,9 @@ Designator for the user defined partitioning type, shall only be provided, if th
 ### CorrectStyleAssigned
 Either there is no door type object associated, i.e. the _IsTypedBy_ inverse relationship is not provided, or the associated type object has to be of type _IfcWindowStyle_.
 > NOTEnbsp; The deprecated type _IfcWindowStyle_ is still included for backward compatibility reasons.
+
+### CorrectPredefinedType
+Either the _PredefinedType_ attribute is unset (e.g. because an _IfcWIndowType_ is associated), or the inherited attribute _ObjectType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.
+
+### CorrectTypeAssigned
+Either there is no door type object associated, i.e. the _IsTypedBy_ inverse relationship is not provided, or the associated type object has to be of type _IfcWindowType_.

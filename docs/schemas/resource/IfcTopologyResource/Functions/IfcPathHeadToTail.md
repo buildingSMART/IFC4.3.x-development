@@ -1,3 +1,5 @@
+# IfcPathHeadToTail
+
 This function returns TRUE if all edges of the input path are consecutive.
 
 { .extDef}

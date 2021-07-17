@@ -24,10 +24,10 @@ The start point of the segment defined by a Cartesian point.
 The direction of the tangent at the start point. Direction value 0. indicates a curve with a start tangent along the positive x-axis. Values increases counter-clockwise, and decreases clockwise. Depending on the plane angle unit, either degree or radians, the sensible range is -360° ≤ n ≤ 360° (or -2π ≤ n ≤ 2π). Values larger then a full circle (>|360°| or >|2 π| shall not be used.
 
 ### StartRadiusOfCurvature
-For a NONLINEAR horizontal segment type the radius of the curve at the start point (_Placement_ of the segment). For CIRCULAR type it is constant i.e. _StartRadiusOfCurvature_ and _EndRadiusOfCurvature_ are always the same. For LINE type, both _StartRadiusOfCurvature_ and _EndRadiusOfCurvature_ is 0. If the radius is 0 it shall be interpreted as INFINITE.
+For a NONLINEAR horizontal segment type the radius of the curve at the start point (_Placement_ of the segment). For CIRCULAR type it is constant i.e. _StartRadiusOfCurvature_ and _EndRadiusOfCurvature_ are always the same. For LINE type, both _StartRadiusOfCurvature_ and _EndRadiusOfCurvature_ is 0. If the radius is 0 it shall be interpreted as INFINITE. Positive values imply a CCW direction whereas negative CW.
 
 ### EndRadiusOfCurvature
-For a NONLINEAR horizontal segment type the radius of the curve at the end point. If the radius is 0 it shall be interpreted as INFINITE.
+For a NONLINEAR horizontal segment type the radius of the curve at the end point. If the radius is 0 it shall be interpreted as INFINITE. Positive values imply a CCW direction whereas negative CW.
 
 ### SegmentLength
 The length along the curve.

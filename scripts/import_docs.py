@@ -12,7 +12,7 @@ odr = os.path.join(os.path.abspath(os.path.dirname(__file__)), "..", "docs", "sc
 md_files = glob.glob(os.path.join(dr, "**", "Documentation.md"), recursive=True)
 xml_files = glob.glob(os.path.join(dr, "**", "Doc*.xml"), recursive=True)
 
-to_ignore = {"ChangeSets", "ModelViews", "Properties", "Publications", "Templates", "Quantities"}
+to_ignore = {"ChangeSets", "ModelViews", "Properties", "Publications", "Templates", "Quantities", "Primitives"}
 
 def yield_relevant(fns):
     for fn in fns:

@@ -12,6 +12,7 @@ xmi_doc = xmi_document(fn)
 
 entity_to_package = {}
 
+#@todo this may need to get revised
 hierarchy = [
     ("Core data schemas", [
         ("IfcKernel", defaultdict(list)),
@@ -69,6 +70,8 @@ hierarchy = [
 supertype = {}
 subtypes = defaultdict(list)
 roots = []
+attributes = {}
+definitions = {}
 
 def get_schema(name):
     for cat, schemas in hierarchy:
@@ -85,8 +88,20 @@ for item in xmi_doc:
             subtypes[item.definition.supertype].append(item.name)
         else:
             roots.append(item.name)
+            
+        for a in item.definition.attributes:
+            attributes[".".join((item.name, a[0]))] = (True, a[1])
+        for a in item.definition.inverses:
+            parts = a.split(' ')
+            nm = parts[0].strip()
+            ty = ' '.join(parts[2:])[:-1]
+            attributes[".".join((item.name, nm))] = (False, ty)
+        
     elif item.type in ("TYPE", "SELECT", "ENUM"):
         get_schema(item.package)['Types'].append(item.name)
+        
+    if item.type in ("ENTITY", "TYPE", "SELECT", "ENUM"):
+        definitions[item.name] = str(item.definition)
         
 for cat, schemas in hierarchy:
     for schema_name, members in schemas:
@@ -106,3 +121,5 @@ with open("inheritance_listing.txt", "w") as f:
 json.dump(supertype, open("entity_supertype.json", "w", encoding="utf-8"))
 json.dump(entity_to_package, open("entity_to_package.json", "w", encoding="utf-8"))
 json.dump(hierarchy, open("hierarchy.json", "w", encoding="utf-8"))
+json.dump(attributes, open("entity_attributes.json", "w", encoding="utf-8"))
+json.dump(definitions, open("entity_definitions.json", "w", encoding="utf-8"))

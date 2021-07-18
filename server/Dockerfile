@@ -7,7 +7,7 @@ RUN apt-get update -y && apt-get install -y texlive texlive-pictures texlive-lat
 # remove policy to disable PDF conversion
 RUN rm /etc/ImageMagick-6/policy.xml
 RUN curl --silent --show-error --retry 5 https://bootstrap.pypa.io/get-pip.py | python3
-RUN python3 -m pip install flask Beautifulsoup4 Markdown gunicorn pysolr pydot tabulate hilbertcurve==1.0.5
+RUN python3 -m pip install flask Beautifulsoup4 Markdown gunicorn pysolr pydot tabulate hilbertcurve==1.0.5 markdown-it-py
 
 RUN curl --location --silent --show-error --retry 5 'https://archive.apache.org/dist/lucene/solr/8.6.3/solr-8.6.3.tgz' -o - | tar zxf -
 RUN ls /
@@ -24,7 +24,7 @@ RUN git clone https://github.com/buildingSMART/Sample-Test-Files /examples
 ADD https://api.github.com/repos/buildingSMART/IFC4.3.x-development/git/refs/heads/master /tmp/data_version.json
 RUN git clone https://github.com/buildingSMART/IFC4.3.x-development /ifc43
 
-ADD wsgi.py main.py parse_xmi.py transform_to_xml.py parse_mvd.py poller.py /ifc43/server/
+ADD wsgi.py main.py parse_xmi.py transform_to_xml.py parse_mvd.py poller.py md.py /ifc43/server/
 ADD templates/* /ifc43/server/templates/
 
 WORKDIR /ifc43/server

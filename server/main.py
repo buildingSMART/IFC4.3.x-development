@@ -18,12 +18,16 @@ from bs4 import BeautifulSoup
 
 from flask import Flask, send_file, render_template, abort, url_for, request, send_from_directory
 
+import md as mdp
+
 app = Flask(__name__)
 
 base = '/IFC/RELEASE/IFC4x3/HTML'
 
 def make_url(fragment): return base + '/' + fragment
 
+entity_attributes = json.load(open("entity_attributes.json", encoding="utf-8"))
+entity_definitions = json.load(open("entity_definitions.json", encoding="utf-8"))
 entity_to_package = json.load(open("entity_to_package.json", encoding="utf-8"))
 entity_supertype = json.load(open("entity_supertype.json", encoding="utf-8"))
 concepts = json.load(open("concepts.json", encoding="utf-8"))
@@ -120,7 +124,7 @@ for i, (cat, schemas) in enumerate(hierarchy, start=5):
 
 def generate_inheritance_graph(current_entity):
     i = current_entity
-    g = pydot.Graph('dot_inheritance', graph_type='graph')
+    g = pydot.Graph('dot_inheritance', directed=True)
     di = {
         'rankdir': 'BT',
         'ranksep': 0.2
@@ -146,7 +150,7 @@ def generate_inheritance_graph(current_entity):
         g.add_node(n)
     
         if previous:
-            g.add_edge(pydot.Edge(previous, n))
+            g.add_edge(pydot.Edge(previous, n, arrowhead="onormal"))
             
         previous = n
         
@@ -156,18 +160,19 @@ def generate_inheritance_graph(current_entity):
     
 
 def get_node_colour(n):
-    try:
-        i = S.declaration_by_name(n)
-    except:
+    if entity_supertype.get(n) is None:
         return 'gray'
+
+    def is_relationship(ty=n):
+        print(ty)
+        if ty == "IfcRelationship":
+            return True
+        ty = entity_supertype.get(ty)
+        if ty:
+            return is_relationship(ty)
+        return False
     
-    def is_relationship(n):
-        while n:
-            if n.name() == 'IfcRelationship':
-                return True
-            n = n.supertype()
-    
-    return 'yellow' if is_relationship(i) else 'dodgerblue'
+    return 'yellow' if is_relationship() else 'dodgerblue'
 
 
 def transform_graph(current_entity, graph_data, only_urls=False):
@@ -233,7 +238,9 @@ def resource(resource):
         idx = name_to_number[resource]
     except:
         abort(404)
-    
+        
+    doc_annotation_pattern = re.compile(r'\{\s*\..+?\}')
+
     """
     package = entity_to_package.get(resource)
     if not package:
@@ -249,26 +256,82 @@ def resource(resource):
     md = os.path.join("../docs/schemas", "*", "*", "*", resource + ".md")
     
     html = ''
+    
+    paragraph = 1
                 
     if glob.glob(md):
         
         md = glob.glob(md)[0]
         
+        attribute_table = ''
+        
         with open(md, 'r', encoding='utf-8') as f:
     
-            mdc = f.read()
-        
+            mdc = re.sub(doc_annotation_pattern, '', f.read())
+            
             if "Entities" in md:
-    
+            
+                if "## Attributes" in mdc:
+                    mdc = mdc[0:mdc.index("## Attributes")]
+                    mdc += '\n\n' + idx + '.%d Attributes\n===========\n\n' % paragraph
+                    paragraph += 1
+                
+                attrs = []
+                supertype_counts = []
+                fwd_attrs = []
+                ty = resource
+                while ty:
+                    md_ty_fn = glob.glob(os.path.join("../docs/schemas", "*", "*", "*", ty + ".md"))[0]
+                    md_ty = re.sub(doc_annotation_pattern, '', open(md_ty_fn, encoding='utf-8').read())
+                    ty_attrs = list(mdp.markdown_attribute_parser(md_ty))
+                    supertype_counts.append((ty, len(ty_attrs)))
+                    for a, b in ty_attrs[::-1]:
+                        is_fwd, attr_ty = entity_attributes.get(".".join((ty, a)), (False, "INVALID"))
+                        attrs.append((
+                            a, attr_ty, re.sub(
+                                "\\n+", 
+                                "<br><br>",
+                                # remove underscored words:
+                                re.sub("_(\\w+?)_", lambda m: m.group(1), b.strip()) 
+                                # keep underscored words:
+                                # b.strip()             
+                                # convert to links (todo attributes):                   
+                                # re.sub("_(\\w+?)_", lambda m: "<a href='%s'>%s</a>" % (url_for('resource', resource=m.group(1)), m.group(1)), b.strip())
+                        )))
+                        if is_fwd:
+                            fwd_attrs.append(a)
+                    ty = entity_supertype.get(ty)
+                    
+                attr_index = {b:a for a,b in enumerate(fwd_attrs[::-1], 1)}
+                attrs = [(attr_index.get(b,''),b,c,d) for b,c,d in attrs[::-1]]
+            
+                attribute_table = tabulate.tabulate(attrs, headers=("#", "Attribute", "Type", "Description"), tablefmt='unsafehtml')
+                soup = BeautifulSoup(attribute_table)
+                insertion_points = [0] + list(itertools.accumulate(map(operator.itemgetter(1), supertype_counts[::-1])))[:-1]
+                trs = list(soup.findAll('tr'))
+                for tridx, (ty, _) in zip(insertion_points, supertype_counts[::-1]):
+                    tr = soup.new_tag('tr')
+                    td = soup.new_tag('td', colspan=4)
+                    a = soup.new_tag('a', href=url_for('resource', resource=ty))
+                    a.string = ty
+                    td.append(a)
+                    tr.append(td)
+                    trs[tridx+1].insert_before(tr)
+                attribute_table = str(soup)
+                    
+                mdc += "\n\nattribute_table\n\n"
+                
                 try:
-                    # @todo we still need to properly implement inheritance based on XMI
-                    mdc += '\n\n' + idx + '.2 Entity inheritance\n===========\n\n```' + generate_inheritance_graph(resource) + '```'
+                    mdc += '\n\n' + idx + '.%d Entity inheritance\n===========\n\n```' % paragraph + generate_inheritance_graph(resource) + '```'
+                    paragraph += 1
                 except:
                     pass
     
             html = markdown.markdown(
                 process_graphviz(resource, mdc),
                 extensions=['tables', 'fenced_code'])
+                
+            html = html.replace("attribute_table", attribute_table)
         
             soup = BeautifulSoup(html)
         
@@ -313,11 +376,12 @@ def resource(resource):
                     usage.update(d)                
                 
                 if usage:
-                    html += "<h3>" + idx + ".3 Definitions applying to General Usage</h3>"
+                    paragraph += 1
+                    html += "<h3>" + idx + ".%d Definitions applying to General Usage</h3>" % (paragraph-1)
             
                     for n, (concept, data) in enumerate(sorted(usage.items()), start=1):
-                        html += "<h4>" + idx + ".3.%d " % n + concept + "</h4>"
-                        html += data['definition'].replace("../../", "")
+                        html += "<h4>" + idx + ".%d.%d " % (paragraph - 1, n) + concept + "</h4>"
+                        html += "<div>" + data['definition'].replace("../../", "")
                         
                         keys = set()
                         for d in dicts:
@@ -332,9 +396,16 @@ def resource(resource):
                             
                         # transpose
                         vals = list(map(list, itertools.zip_longest(*params.values())))
-                        html += tabulate.tabulate(vals, headers=params.keys(), tablefmt='html')
+                        html += tabulate.tabulate(vals, headers=params.keys(), tablefmt='html') + "</div>"
                         # html += "<pre>" + data['rules'] + "</pre>"
-        
+                        
+            if entity_definitions.get(resource):
+                html += "<h3>" + idx + ".%d Formal representations</h3>" % paragraph
+                html += "<pre>" + entity_definitions.get(resource) + "</pre>"
+                paragraph += 1
+            
+            
+                
     return render_template('entity.html', navigation=navigation_entries, content=html, number=idx, entity=resource, path=md[3:])
 
 @app.route(make_url('listing'))

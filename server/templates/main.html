@@ -22,6 +22,37 @@ pre {
   backgroud: #eee;
   font-size: 80%;
 }
+svg text {
+  font-size: 60%;
+}
+blockquote p {
+  font-size: 80%;
+}
+table {
+  max-height: 10000px !important;
+  display: table !important;
+}
+table thead, table tbody {
+  display: table-header-group;
+}
+table tr {
+  display: table-row;
+}
+table tr th ,
+table tr td {
+  font-size: 80%;
+  padding: 0.2em;
+}
+h3:hover {
+  cursor: pointer;
+}
+h3:before {
+  font-size: 50%;
+  content: '\25B2 '
+}
+h3.collapsed:before {
+  content: '\25BC '
+}
 </style>
 <body>
     <div class="container">
@@ -51,5 +82,22 @@ pre {
             </div>
         </div>
     </div>
+    
+<script>
+Array.from(document.querySelectorAll("h3")).forEach(n => {
+  n.onclick = function(evt) {
+    elem = evt.target.nextElementSibling;
+    var hide = evt.target.classList.toggle('collapsed');
+    while (elem) {
+      elem.style.display = hide ? 'none' : '';
+      elem = elem.nextElementSibling;
+      if (elem.tagName == evt.target.tagName) {
+        break;
+      }
+    }
+  }
+});
+</script>
+    
 </body>
 </html>

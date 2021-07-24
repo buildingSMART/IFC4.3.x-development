@@ -30,6 +30,7 @@ entity_attributes = json.load(open("entity_attributes.json", encoding="utf-8"))
 entity_definitions = json.load(open("entity_definitions.json", encoding="utf-8"))
 entity_to_package = json.load(open("entity_to_package.json", encoding="utf-8"))
 entity_supertype = json.load(open("entity_supertype.json", encoding="utf-8"))
+changes_by_type = json.load(open("changes_by_type.json", encoding="utf-8"))
 concepts = json.load(open("concepts.json", encoding="utf-8"))
 
 navigation_entries = [
@@ -65,7 +66,7 @@ def make_entries(x):
             url = make_url('chapter-%d/' % x['number'])
         else:
             url = make_url('content/' + content_names[x['number'] - 1] + '.htm')
-    elif x['number'] in {'A', 'C', 'D', 'E'}:
+    elif x['number'] in {'A', 'C', 'D', 'E', 'F'}:
         url = make_url('annex-%s.html' % x['number'].lower())
     elif x['title'].lower() in content_names_2:
         url = make_url('content/' + x['title'].lower() + '.htm')
@@ -360,6 +361,15 @@ def resource(resource):
                 else:
                     img['src'] = img['src'][9:]
         
+            scs = changes_by_type.get(resource, [])
+            change_log = ''
+            if scs:
+                change_log += "<h3>Change log</h3><div>"
+                for s, cs in scs.items():
+                    change_log += "<h4>%s</h4>" % s
+                    change_log += tabulate.tabulate(cs, tablefmt='unsafehtml')
+                change_log += "</div>"
+        
             html = str(soup)
             
             if "Entities" in md:
@@ -406,7 +416,7 @@ def resource(resource):
             
             
                 
-    return render_template('entity.html', navigation=navigation_entries, content=html, number=idx, entity=resource, path=md[3:])
+    return render_template('entity.html', navigation=navigation_entries, content=html, number=idx, entity=resource, path=md[3:], preface=change_log)
 
 @app.route(make_url('listing'))
 def listing():
@@ -520,6 +530,17 @@ def annex_e():
     subs = map(os.path.basename, filter(os.path.isdir, glob.glob("../../examples/IFC 4.3/*")))
     subs = sorted(s + ":" + url_for('annex_e_example_page', s=s) for s in subs)
     return render_template('chapter.html', navigation=navigation_entries, content='<h2>Examples</h2>', path=None, title="Annex E", number="", subs=subs)
+
+    
+@app.route(make_url('annex-f.html'))
+def annex_f():
+    with open("changes_by_schema.json") as f:
+        li = json.load(f)
+        pairs = [('<h3>%s</h3>' % s, '<div>%s</div>' % tabulate.tabulate(cs, tablefmt='unsafehtml')) for s, cs in li]
+        flat = sum(pairs, ())
+        content = "".join(('<h2>Change logs</h2>',) + flat)
+    return render_template('chapter.html', navigation=navigation_entries, content=content, path=None, title="Annex F", number="")
+    
     
 @app.route(make_url('annex_e/<s>.html'))
 def annex_e_example_page(s):

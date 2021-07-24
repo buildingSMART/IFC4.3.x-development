@@ -1,5 +1,6 @@
 {% extends "main.html" %}
 {% block pagecontent %}
+
 <h2>{{ number }} {{ entity}}</h2>
 
 <div class="col-sm-12">
@@ -32,6 +33,8 @@ fetch('https://api.github.com/repos/buildingSMART/IFC4.3.x-development/commits?p
   '<em>' + j[0].commit.message + '</em>' + ' by ' + j[0].commit.author.name + ' on ' + (new Date(j[0].commit.author.date)).toLocaleString();
 });
 </script>
+
+{{ preface | safe }}
 
 <h3>{{ number }}.1 Semantic definitions at the entity</h3>
 

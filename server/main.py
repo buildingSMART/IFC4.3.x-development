@@ -61,6 +61,8 @@ def make_entries(x):
         url = make_url('listing')
     elif x['title'] == 'Contents':
         url = make_url('toc.html')
+    elif x['number'] == 4:
+        url = make_url('concepts/content.html')
     elif type(x['number']) == int:
         if  x['number'] >= 5:
             url = make_url('chapter-%d/' % x['number'])
@@ -222,6 +224,72 @@ def process_graphviz(current_entity, md):
         subprocess.call(["dot", "-O", "-Tsvg", fn])
     
     return md    
+
+
+def create_entity_definition(e):
+    table = [(e, "")]
+    while e:
+        keys = [x for x in entity_attributes.keys() if x.startswith(e + '.')]
+        for k, (is_fwd, ty) in zip(keys, map(entity_attributes.__getitem__, keys)):
+            nm = k.split('.')[1]
+            
+            if is_fwd:
+                card = "[0:1]" if "OPTIONAL" in ty else "[1:1]"
+            else:
+                # nm = "<i>%s</i>" % nm
+                inv_card = re.findall(r'(\[.+?\])', ty)
+                if inv_card:
+                    card = inv_card[0]
+                else:
+                    card = ""
+            
+            table.append((nm, card))
+        e = entity_supertype.get(e)
+        
+    table = "<<table border=\"1\" cellborder=\"0\" cellspacing=\"0\">%s</table>>" % \
+        "".join("<tr>%s</tr>" % "".join("<td width=\"%d\" height=\"24\" fixedsize=\"true\" bgcolor=\"%s\" align=\"left\" port=\"%s%d\">%s</td>" % ([20,250][i==0],["white", "gray"][ri==0],r[0],i,c) for i,c in enumerate(r)) for ri, r in enumerate(table))
+    
+    return table
+
+
+def process_graphviz_concept(name, md):
+    graphviz_code = filter(lambda s: s.strip().startswith("concept"), re.findall('```(.*?)```', md, re.S))
+    
+    for c in graphviz_code:
+        
+        hash = hashlib.sha256(c.encode('utf-8')).hexdigest()
+        fn = os.path.join('svgs', name + "_" + hash + '.dot')
+        c2 = c.replace("concept", "digraph")  # transform_graph(current_entity, c, only_urls=is_figure(c) == 2)
+        
+        nodes = set(n.split(':')[0] for n in (re.findall('([\:\w]+)\s*\->', c2) + re.findall('\->\s*([\:\w]+)', c2)))
+        
+        c2 = re.sub(r'(\w+)\:(\w+)\s*\->\s*([\:\w]+)', lambda m: f"{m.group(1)}:{m.group(2)}1 -> {m.group(3)}", c2)
+        c2 = re.sub(r'([\w\:]+)\s*\->\s*(\w+)\:(\w+)', lambda m: f"{m.group(1)} -> {m.group(2)}:{m.group(3)}0", c2)
+        
+        G = pydot.graph_from_dot_data(c2)[0]
+        
+        G.set_node_defaults(shape='plaintext', width='3')
+        G.set_nodesep('0.1')
+        G.set_splines('polyline')
+        G.set_rankdir('LR')
+                        
+        for n in nodes:
+            G.add_node(pydot.Node(n, label=create_entity_definition(n)))
+            
+        # this is ugly, but the node defaults need to come before the edges
+        G.obj_dict["nodes"]['node'][0]['sequence'] = -1
+            
+        c3 = G.to_string()
+        
+        with open(fn, "w") as f:
+            f.write(c3)
+        md = md.replace("```%s```" % c, '![](/svgs/%s_%s.svg)' % (name, hash))
+        
+        print("dot", "-O", "-Tsvg", fn)
+        print("svg", subprocess.call(["dot", "-O", "-Tsvg", fn]))
+    
+    return md 
+
     
 """
 @app.route('/svgs/<entity>/<hash>.svg')
@@ -422,15 +490,81 @@ def resource(resource):
 def listing():
     items = [{'number': name_to_number[n], 'url': url_for('resource', resource=n), 'title': n} for n in sorted(entity_names + type_names)]
     return render_template('list.html', navigation=navigation_entries, items=items)
+
+@app.route(make_url('concepts/content.html'))
+@app.route(make_url('concepts/<path:s>/content.html'))
+def concept(s=''):
+    md_root = "../docs/templates"
+    
+    s = s.replace("_", " ")
+    
+    n = "4"
+    if s:
+        ps = s.split("/")
+        t = ps[-1]
+        for pt in itertools.accumulate([[p] for p in ps]):
+            n += '.%d' % (sorted(os.listdir(os.path.join(md_root, *pt[:-1]))).index(pt[-1]) + 1)
+    else:
+        t = chapter_lookup(number=4).get('title')
+    
+    fn = os.path.join(md_root, s, "README.md")
+    
+    if os.path.exists(fn):
+        html = markdown.markdown(
+            process_graphviz_concept(
+                "".join(c for c in s if c.isalnum()),
+                open(fn).read()
+            ))
+        soup = BeautifulSoup(html)
+        # First h1 is handled by the template
+        soup.find('h1').decompose()
+        
+        # Change svg img references to embedded svg
+        # because otherwise URLS are not interactive
+        for img in soup.findAll("img"):
+            if img['src'].endswith('.svg'):
+                entity, hash = img['src'].split('/')[-1].split('.')[0].split('_')
+                svg = BeautifulSoup(open(os.path.join('svgs', entity + "_" + hash + '.dot.svg')))
+                svg_node = svg.find('svg')
+                svg_node.attrs['width'] = "%dpx" % (int(svg_node.attrs['width'][0:-2]) // 3 * 2)
+                svg_node.attrs['height'] = "%dpx" % (int(svg_node.attrs['height'][0:-2]) // 3 * 2)
+                img.replaceWith(svg_node)
+            else:
+                img['src'] = img['src'][9:]
+
+        html = str(soup)
+    else:
+    	html = fn
+    	
+    def make_path(p):
+        return p.split(os.sep)[3:-1]
+        
+    def make_link(c):
+        c = list(c)
+        return link(
+            make_url("concepts/" + "/".join(c).replace(" ", "_") + "/content.html"),
+            " ".join(c[(0 if len(c) == 1 else 1):]))
+        
+    subs = sorted(filter(lambda pt: "/".join(pt) != s, filter(None, map(make_path, glob.glob(os.path.join(md_root, s, "**", "README.md"), recursive=True)))))
+    subs = list((make_link(next(b)),[make_link(c) for c in list(b)[1:]]) for a, b in itertools.groupby(subs, key=operator.itemgetter(0)))
+
+    return render_template('chapter.html', navigation=navigation_entries, content=html, path=fn[3:], title=t, number=n, subs=subs)
+
+from dataclasses import dataclass
+@dataclass
+class link:
+    href : str
+    text : str
+    
     
 @app.route(make_url('chapter-<n>/'))
 def chapter(n):
     try: n = int(n)
-    except: pass
+    except: abort(404)
     
-    md_root = "../docs/schemas"
     chp = chapter_lookup(number=n)
     t = chp.get('title')
+    md_root = "../docs/schemas"
     cat = t.split(" ")[0].lower()
     
     fn = os.path.join(md_root, cat, "README.md")

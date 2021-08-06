@@ -4,7 +4,3 @@ Each concept template defines a graph of entities and attributes, with constrain
 
 EXAMPLE  The 'Ports' concept template defines distribution system connectivity for mechanical, electrical, and plumbing systems; a pipe segment defines an application of the 'Ports' concept, having one port as an inlet and another as an outlet.
 
-# Status
-
-The IFC 4.3.x deployment has not formally defined concept templates yet. **The intent is to reuse as much as possible from IFC 4.2 and IFC 4.1.**
-The definition of the concept templates needs to be done in close collaboration with the Software Certification team. 

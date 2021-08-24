@@ -167,7 +167,6 @@ def get_node_colour(n):
         return 'gray'
 
     def is_relationship(ty=n):
-        print(ty)
         if ty == "IfcRelationship":
             return True
         ty = entity_supertype.get(ty)
@@ -190,15 +189,23 @@ def transform_graph(current_entity, graph_data, only_urls=False):
     elif len(graph.get_nodes()):
         for node in graph.get_nodes():
             all_nodes.append(node)
-            
+    
+    names_seen = set()        
     for n in all_nodes:
         if not only_urls:
-            n.set('fillcolor', get_node_colour(n.get_name()))
+            if n.get_name() in names_seen:
+                # rank=same groupings otherwise cause
+                # node names to be listed twice
+                continue
+            names_seen.add(n.get_name())
+            
+            nm = n.get_label() or n.get_name()
+            n.set('fillcolor', get_node_colour(nm))
             if n.get_name() == current_entity:
                 n.set('color', 'red')
             n.set('shape', 'box')
             n.set('style', 'filled')
-        n.set('URL',  url_for('resource', resource=n.get_name(), _external=True))
+        n.set('URL',  url_for('resource', resource=nm, _external=True))
         
     return graph.to_string()
 
@@ -736,3 +743,35 @@ def search():
             'title': r['title'][0]
         } for r in list(results)[0:10]]
     return render_template('search.html', navigation=navigation_entries, matches=matches, query=query)
+
+
+@app.route('/sandcastle', methods=['GET', 'POST'])
+def sandcastle():
+    
+    md = ''
+    html = ''
+    
+    if request.method == 'POST' and request.form['md']:
+        
+        md = request.form['md']
+
+        html = markdown.markdown(
+            process_graphviz('sandcastle', md),
+            extensions=['tables', 'fenced_code'])
+            
+        soup = BeautifulSoup(html)
+        
+        # Change svg img references to embedded svg
+        # because otherwise URLS are not interactive
+        for img in soup.findAll("img"):
+            if img['src'].endswith('.svg'):
+                print(img['src'].split('/')[-1].split('.')[0])
+                entity, hash = img['src'].split('/')[-1].split('.')[0].split('_')
+                svg = BeautifulSoup(open(os.path.join('svgs', entity + "_" + hash + '.dot.svg')))
+                img.replaceWith(svg.find('svg'))
+                
+        html = str(soup)
+    
+    return render_template('sandcastle.html', html=html, md=md)
+        
+    

@@ -179,33 +179,70 @@ def get_node_colour(n):
 
 def transform_graph(current_entity, graph_data, only_urls=False):
     graphs = pydot.graph_from_dot_data(graph_data)
-    graph = graphs[0]
     
-    all_nodes = []
-    if len(graph.get_subgraphs()):
-        for subgraph in graph.get_subgraphs():
-            for node in subgraph.get_nodes():
-                all_nodes.append(node)
-    elif len(graph.get_nodes()):
-        for node in graph.get_nodes():
-            all_nodes.append(node)
+    # collect all node names to see if we need to insert args in cluster
     
-    names_seen = set()        
-    for n in all_nodes:
-        if not only_urls:
-            if n.get_name() in names_seen:
-                # rank=same groupings otherwise cause
-                # node names to be listed twice
-                continue
-            names_seen.add(n.get_name())
+    all_nodes = set()
+    
+    def collect_nodes(g):
+        all_nodes.update(n.get_name() for n in g.get_nodes())
+        for sg in g.get_subgraphs():
+            collect_nodes(sg)
+    
+    for graph in graphs:
+        collect_nodes(graph)
+        
+    # now visit graph and decorate nodes
+    
+    def visit_graph(g):
+        names_seen = {}
+        
+        edge_nodes_in_cluster = set()
+        
+        for e in g.get_edges():
+            edge_nodes_in_cluster.add(e.get_source())
+            edge_nodes_in_cluster.add(e.get_destination())
             
+        # add nodes to cluster that aren't explicitly declared
+        # in the graph
+        for n in (edge_nodes_in_cluster - all_nodes):
+            g.add_node(pydot.Node(n))
+        
+        for n in g.get_nodes():
             nm = n.get_label() or n.get_name()
-            n.set('fillcolor', get_node_colour(nm))
-            if n.get_name() == current_entity:
-                n.set('color', 'red')
-            n.set('shape', 'box')
-            n.set('style', 'filled')
-        n.set('URL',  url_for('resource', resource=nm, _external=True))
+            
+            if nm in {'graph', 'edge', 'node'}: continue
+                
+            if not only_urls:            
+                
+                if n.get_name() in names_seen:
+                    # rank=same groupings otherwise cause
+                    # node names to be listed twice
+                    args = names_seen[n.get_name()]
+                
+                else:
+                    args = {
+                        'fillcolor': get_node_colour(nm),
+                        'shape': 'box',
+                        'style': 'filled'
+                    }
+                    
+                    if n.get_name() == current_entity:
+                        args['color'] = 'red'
+                    
+                    names_seen[n.get_name()] = args
+                    
+                for kv in args.items():
+                    print(nm, *kv)
+                    n.set(*kv)
+                
+            n.set('URL',  url_for('resource', resource=nm, _external=True))
+            
+        for sg in g.get_subgraphs():
+            visit_graph(sg)
+            
+    for graph in graphs:
+        visit_graph(graph)
         
     return graph.to_string()
 

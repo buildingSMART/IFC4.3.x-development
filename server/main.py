@@ -16,7 +16,7 @@ import markdown
 
 from bs4 import BeautifulSoup
 
-from flask import Flask, send_file, render_template, abort, url_for, request, send_from_directory
+from flask import Flask, send_file, render_template, abort, url_for, request, send_from_directory, jsonify
 
 import md as mdp
 
@@ -345,6 +345,88 @@ def get_svg(entity, hash):
 def get_figure(fig):
     return send_from_directory('../docs/figures', fig)
 
+
+DOC_ANNOTATION_PATTERN = re.compile(r'\{\s*\..+?\}')
+    
+class builder:
+    
+    def __init__(self, resource, md_root=None):
+    
+        """
+        package = entity_to_package.get(resource)
+        if not package:
+            abort(404)
+        """
+            
+        md = None    
+        self.md_root = md_root or "../docs/schemas"
+        
+        # @todo eliminate this glob pattern approach
+        
+        # for category in os.listdir(md_root):
+        #     for module in os.listdir(os.path.join(md_root, category)):
+        #         if module == package:
+        
+        self.md = os.path.join("../docs/schemas", "*", "*", "*", resource + ".md")
+        self.resource = resource
+    
+        
+    @property
+    def markdown(self):
+        fns = glob.glob(self.md)
+        if not fns: return ''
+        with open(fns[0], 'r', encoding='utf-8') as f:
+            return re.sub(DOC_ANNOTATION_PATTERN, '', "\n".join(f.readlines()[2:]))
+            
+    @property
+    def attributes(self):
+        attrs = []
+        supertype_counts = []
+        fwd_attrs = []
+        
+        ty = self.resource
+        while ty:
+            md_ty_fn = glob.glob(os.path.join("../docs/schemas", "*", "*", "*", ty + ".md"))[0]
+            md_ty = re.sub(DOC_ANNOTATION_PATTERN, '', open(md_ty_fn, encoding='utf-8').read())
+            ty_attrs = list(mdp.markdown_attribute_parser(md_ty))
+            supertype_counts.append((ty, len(ty_attrs)))
+            for a, b in ty_attrs[::-1]:
+                is_fwd, attr_ty = entity_attributes.get(".".join((ty, a)), (False, "INVALID"))
+                attrs.append((
+                    a, attr_ty, re.sub(
+                        "\\n+", 
+                        "<br><br>",
+                        # remove underscored words:
+                        re.sub("_(\\w+?)_", lambda m: m.group(1), b.strip()) 
+                        # keep underscored words:
+                        # b.strip()             
+                        # convert to links (todo attributes):                   
+                        # re.sub("_(\\w+?)_", lambda m: "<a href='%s'>%s</a>" % (url_for('resource', resource=m.group(1)), m.group(1)), b.strip())
+                )))
+                if is_fwd:
+                    fwd_attrs.append(a)
+            ty = entity_supertype.get(ty)
+            
+        attr_index = {b:a for a,b in enumerate(fwd_attrs[::-1], 1)}
+        attrs = [(attr_index.get(b,''),b,c,d) for b,c,d in attrs[::-1]]
+        
+        return attrs
+            
+    
+@app.route('/api/v0/resource/<resource>')
+def api_resource(resource):
+    b = builder(resource)
+    definition = b.markdown
+    if "\n\n" in definition:
+        definition = definition[0:definition.index("\n\n")]
+    definition = markdown.markdown(definition)
+    return jsonify({
+        'resource': resource,
+        'definition': definition,
+        'attributes': b.attributes
+    });
+      
+
 @app.route(make_url('lexical/<resource>.htm'))
 def resource(resource):
     try:
@@ -392,6 +474,7 @@ def resource(resource):
                 attrs = []
                 supertype_counts = []
                 fwd_attrs = []
+                
                 ty = resource
                 while ty:
                     md_ty_fn = glob.glob(os.path.join("../docs/schemas", "*", "*", "*", ty + ".md"))[0]

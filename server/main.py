@@ -41,6 +41,18 @@ navigation_entries = [
     ("Examples", "Change logs", "Bibliography", "Index")
 ]
 
+class toc_entry:
+    parent = None # toc_entry
+    number = None # tuple
+    url = None    # str
+
+
+class root_toc_entry:
+    @property
+    def children(self):
+        return list(map(toc_entry(navigation_entries)))
+
+
 content_names = ['scope','normative_references','terms_and_definitions','concepts']
 content_names_2 = ['cover','foreword','introduction','bibliography']
 
@@ -134,30 +146,64 @@ def generate_inheritance_graph(current_entity):
     }
     for kv in di.items():
         g.set(*kv)
+        
+    NDPROPS = {
+        'color':'black',
+        'fillcolor':'grey43',
+        'fontcolor':'white',
+        'fontsize': '10',
+        'height':'0.2',
+        'shape':'rectangle',
+        'style':'filled',
+        'width':'3',
+    }
+    
+    def new_node(nm, **kwargs):
+        n = pydot.Node(nm)
+        for kv in list(NDPROPS.items()) + list(kwargs.items()):
+            n.set(*kv)
+        g.add_node(n)
+        return n
+    
+    first = True
+    siblings = [k for k,v in entity_supertype.items() if v == current_entity]
+    if len(siblings) < 4:
+        for sibl in siblings:
+            new_node(sibl, fillcolor='gray60')
+            g.add_edge(pydot.Edge(sibl, current_entity, arrowhead="onormal", weight=10 if first else 1))
+            first = False
+    else:
+        nn = new_node(current_entity + "_children", fillcolor='gray80')
+        nn.set("label", "%d more..." % (len(siblings) - 1))
+        g.add_edge(pydot.Edge(nn, current_entity, arrowhead="onormal", weight=1))
+
 
     previous = None
     while i:
-        n = pydot.Node(i)
-        di = {
-            'color':'black',
-            'fillcolor':'grey43',
-            'fontcolor':'white',
-            'fontsize': '10',
-            'height':'0.2',
-            'shape':'rectangle',
-            'style':'filled',
-            'width':'3',
-        }
-        for kv in di.items():
-            n.set(*kv)
-        g.add_node(n)
+        if i == current_entity:
+            n = new_node(i, fillcolor='blue')
+        else:
+            n = new_node(i)
     
         if previous:
-            g.add_edge(pydot.Edge(previous, n, arrowhead="onormal"))
+            g.add_edge(pydot.Edge(previous, n, arrowhead="onormal", weight=10))
             
         previous = n
         
-        i = entity_supertype.get(i)
+        i, old = entity_supertype.get(i), i
+        
+        siblings = [k for k,v in entity_supertype.items() if v == i]
+        if len(siblings) < 4:
+            for sibl in siblings:
+                if sibl == old: continue
+                new_node(sibl, fillcolor='gray60')
+                g.add_edge(pydot.Edge(sibl, i, arrowhead="onormal", weight=1))
+        else:
+            nn = new_node(i + "_children", fillcolor='gray80')
+            nn.set("label", "%d more..." % (len(siblings) - 1))
+            g.add_edge(pydot.Edge(nn, i, arrowhead="onormal", weight=1))
+            
+    
         
     return g.to_string()
     
@@ -233,10 +279,10 @@ def transform_graph(current_entity, graph_data, only_urls=False):
                     names_seen[n.get_name()] = args
                     
                 for kv in args.items():
-                    print(nm, *kv)
                     n.set(*kv)
-                
-            n.set('URL',  url_for('resource', resource=nm, _external=True))
+            
+            if nm.startswith("Ifc"):    
+                n.set('URL',  url_for('resource', resource=nm, _external=True))
             
         for sg in g.get_subgraphs():
             visit_graph(sg)
@@ -265,7 +311,7 @@ def process_graphviz(current_entity, md):
         with open(fn, "w") as f:
             f.write(c2)
         md = md.replace("```%s```" % c, '![](/svgs/%s_%s.svg)' % (current_entity, hash))
-        subprocess.call(["dot", "-O", "-Tsvg", fn])
+        subprocess.call(["dot", "-O", "-Tsvg", "-Gbgcolor=#ffffff00", fn])
     
     return md    
 
@@ -329,8 +375,7 @@ def process_graphviz_concept(name, md):
             f.write(c3)
         md = md.replace("```%s```" % c, '![](/svgs/%s_%s.svg)' % (name, hash))
         
-        print("dot", "-O", "-Tsvg", fn)
-        print("svg", subprocess.call(["dot", "-O", "-Tsvg", fn]))
+        subprocess.call(["dot", "-O", "-Tsvg", "-Gbgcolor=#ffffff00", fn])
     
     return md 
 
@@ -512,7 +557,11 @@ def resource(resource):
                     a.string = ty
                     td.append(a)
                     tr.append(td)
-                    trs[tridx+1].insert_before(tr)
+                    try:
+                        trs[tridx+1].insert_before(tr)
+                    except:
+                        import traceback
+                        traceback.print_exc()
                 attribute_table = str(soup)
                     
                 mdc += "\n\nattribute_table\n\n"
@@ -521,6 +570,8 @@ def resource(resource):
                     mdc += '\n\n' + idx + '.%d Entity inheritance\n===========\n\n```' % paragraph + generate_inheritance_graph(resource) + '```'
                     paragraph += 1
                 except:
+                    import traceback
+                    traceback.print_exc()
                     pass
     
             html = markdown.markdown(
@@ -549,7 +600,6 @@ def resource(resource):
             # because otherwise URLS are not interactive
             for img in soup.findAll("img"):
                 if img['src'].endswith('.svg'):
-                    print(img['src'].split('/')[-1].split('.')[0])
                     entity, hash = img['src'].split('/')[-1].split('.')[0].split('_')
                     svg = BeautifulSoup(open(os.path.join('svgs', entity + "_" + hash + '.dot.svg')))
                     img.replaceWith(svg.find('svg'))
@@ -597,8 +647,6 @@ def resource(resource):
                             for k in keys:
                                 params[k] += d.get(concept, {}).get('parameters', {}).get(k, [])
                                 
-                        print(params)
-                            
                         # transpose
                         vals = list(map(list, itertools.zip_longest(*params.values())))
                         html += tabulate.tabulate(vals, headers=params.keys(), tablefmt='html') + "</div>"
@@ -643,8 +691,11 @@ def concept(s=''):
                 open(fn).read()
             ))
         soup = BeautifulSoup(html)
+        
         # First h1 is handled by the template
-        soup.find('h1').decompose()
+        h1 = soup.find('h1')
+        if h1 is not None:
+            h1.decompose()
         
         # Change svg img references to embedded svg
         # because otherwise URLS are not interactive
@@ -653,8 +704,8 @@ def concept(s=''):
                 entity, hash = img['src'].split('/')[-1].split('.')[0].split('_')
                 svg = BeautifulSoup(open(os.path.join('svgs', entity + "_" + hash + '.dot.svg')))
                 svg_node = svg.find('svg')
-                svg_node.attrs['width'] = "%dpx" % (int(svg_node.attrs['width'][0:-2]) // 3 * 2)
-                svg_node.attrs['height'] = "%dpx" % (int(svg_node.attrs['height'][0:-2]) // 3 * 2)
+                svg_node.attrs['width'] = "%dpx" % (int(svg_node.attrs['width'][0:-2]) // 4 * 3)
+                svg_node.attrs['height'] = "%dpx" % (int(svg_node.attrs['height'][0:-2]) // 4 * 3)
                 img.replaceWith(svg_node)
             else:
                 img['src'] = img['src'][9:]
@@ -885,7 +936,6 @@ def sandcastle():
         # because otherwise URLS are not interactive
         for img in soup.findAll("img"):
             if img['src'].endswith('.svg'):
-                print(img['src'].split('/')[-1].split('.')[0])
                 entity, hash = img['src'].split('/')[-1].split('.')[0].split('_')
                 svg = BeautifulSoup(open(os.path.join('svgs', entity + "_" + hash + '.dot.svg')))
                 img.replaceWith(svg.find('svg'))

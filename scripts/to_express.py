@@ -12,7 +12,7 @@ logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
 EXPRESS_ORDER=("TYPE", "ENUM", "SELECT", "ENTITY", "FUNCTION", "RULE")
 
 # @todo schema name is hardcoded and not derived from the XMI package name for now
-SCHEMA_NAME = "IFC4X3_RC3"
+SCHEMA_NAME = "IFC4X3_DEV"
 
 try:
     fn = sys.argv[1]
@@ -97,7 +97,7 @@ for itm in definitions:
             itm_type=definitions_by_name[itm.name+"Type"]
             if "PredefinedType" in dict(itm_type.definition.attributes):
                 if not has_where_rule(itm.name, "CorrectTypeAssigned", inherited=False):
-                    itm.definition.where_clauses += [("CorrectTypeAssigned", "(SIZEOF(IsTypedBy) = 0) OR\n  ('IFC4X3_RC3.%(entity_name_upper)sTYPE' IN TYPEOF(SELF\\IfcObject.IsTypedBy[1].RelatingType))" % {'entity_name_upper': itm.name.upper()})]
+                    itm.definition.where_clauses += [("CorrectTypeAssigned", "(SIZEOF(IsTypedBy) = 0) OR\n  ('%(schema_name)s.%(entity_name_upper)sTYPE' IN TYPEOF(SELF\\IfcObject.IsTypedBy[1].RelatingType))" % {'schema_name': SCHEMA_NAME, 'entity_name_upper': itm.name.upper()})]
             
     emitted.add((itm.type, itm.name))
     print(itm.definition, file=OUTPUT)

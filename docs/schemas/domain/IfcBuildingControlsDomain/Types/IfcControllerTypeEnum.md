@@ -6,3 +6,26 @@ The _IfcControllerTypeEnum_ defines the range of different types of controller t
 
 { .change-ifc2x4}
 > IFC4 CHANGE&nbsp; PROPORTIONALINTEGRAL and PROPORTIONALINTEGRALDERIVATIVE values deleted (property set enumeration now used). MULTIPOSITION added.
+
+## Items
+
+### FLOATING
+
+
+### PROGRAMMABLE
+Output is programmable such as Discrete Digital Control (DDC).
+
+### PROPORTIONAL
+Output is proportional to the control error and optionally time integral and derivative.
+
+### MULTIPOSITION
+Output is discrete value, can be one of three or more values.
+
+### TWOPOSITION
+Output can be either on or off.
+
+### USERDEFINED
+
+
+### NOTDEFINED
+

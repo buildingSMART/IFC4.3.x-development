@@ -6,3 +6,29 @@ This enumeration defines the applicable object categories. Attached to an object
 
 { .deprecated}
 > DEPRECATION&nbsp; The use of this enumeration is deprecated since IFC2x3.
+
+## Items
+
+### PRODUCT
+
+
+### PROCESS
+
+
+### CONTROL
+
+
+### RESOURCE
+
+
+### ACTOR
+
+
+### GROUP
+
+
+### PROJECT
+
+
+### NOTDEFINED
+

@@ -94,3 +94,41 @@ NOTE
 2. The reference from the window panel to the location of that panel in the window style configuration is handled by the _IfcWindowPanelProperties.PanelPosition_.
 3. The figures are shown as elevations in the XZ plane of the local placement of the window, looking into the direction of the positive Y axis.
 4. These figures are only shown as illustrations
+
+## Items
+
+### SINGLE_PANEL
+Window with one panel.
+
+### DOUBLE
+
+
+### DOUBLE
+
+
+### TRIPLE_PANEL_VERTICAL
+Window with three panels. The configuration of the panels is
+vertically.
+
+### TRIPLE
+
+
+### TRIPLE_PANEL_TOP
+Window with three panels. The configuration of two panels is vertically and
+the third one is horizontally at the top.
+
+### TRIPLE
+
+
+### TRIPLE_PANEL_RIGHT
+Window with three panels. The configuration of two panels is horizontally and
+the third one is vertically at the right hand side.
+
+### TRIPLE_PANEL_HORIZONTAL
+Window with three panels. The configuration of the panels is horizontally.
+
+### USERDEFINED
+user defined operation type
+
+### NOTDEFINED
+

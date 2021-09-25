@@ -105,3 +105,54 @@ surfaces.</td>
 </td>
 </tr>
 </table>
+
+## Items
+
+### FLAT_ROOF
+A roof having no slope, or one with only a slight pitch so as to drain
+rainwater.
+
+### SHED_ROOF
+A roof having a single slope.
+
+### GABLE
+
+
+### HIP_ROOF
+A roof having sloping ends and sides meeting at an inclined projecting
+angle.
+
+### HIPPED_GABLE_ROOF
+A roof having a hipped end truncating a gable.
+
+### GAMBREL_ROOF
+A roof sloping downward in two parts from a central ridge, so as to form a
+gable at each end.
+
+### MANSARD
+
+
+### BARREL_ROOF
+A roof or ceiling having a semicylindrical form.
+
+### RAINBOW_ROOF
+A gable roof in the form of a broad Gothic arch, with gently sloping convex
+surfaces.
+
+### BUTTERFLY_ROOF
+A roof having two slopes, each descending inward from the eaves.
+
+### PAVILION_ROOF
+A pyramidal hip roof.
+
+### DOME_ROOF
+A hemispherical hip roof.
+
+### FREEFORM
+Free form roof.
+
+### USERDEFINED
+No specification given.
+
+### NOTDEFINED
+No specification given.

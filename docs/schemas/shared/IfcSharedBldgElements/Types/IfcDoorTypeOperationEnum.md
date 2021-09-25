@@ -254,3 +254,81 @@ NOTE
 3. These figures are only shown as illustrations, the actual representation in the ground view might differ.
 4. Open to the outside is declared as open into the direction of the positive y-axis, determined by the _ObjectPlacement_ at _IfcDoor_
 5. The location of the panel relative to the wall thickness is defined by the _ObjectPlacement_ at _IfcDoor_, and the _IfcDoorLiningProperties.LiningOffset_ parameter.
+
+## Items
+
+### SINGLE
+
+
+### SINGLE
+
+
+### DOUBLE
+
+
+### DOUBLE
+
+
+### DOUBLE
+
+
+### DOUBLE_SWING_LEFT
+Door with one panel that swings in both directions and to the left in the main trafic direction. Also called double acting door.
+
+### DOUBLE
+
+
+### DOUBLE_PANEL_DOUBLE_SWING
+Door with two panels, one swings in both directions and to the right in the main trafic direction the other swings also in both directions and to the left in the main trafic direction.
+
+### SLIDING_TO_LEFT
+Door with one panel that is sliding to the left.
+
+### SLIDING_TO_RIGHT
+Door with one panel that is sliding to the right.
+
+### DOUBLE_PANEL_SLIDING
+Door with two panels, one is sliding to the left the other is sliding to the right.
+
+### FOLDING_TO_LEFT
+Door with one panel that is folding to the left.
+
+### FOLDING_TO_RIGHT
+Door with one panel that is folding to the right.
+
+### DOUBLE_PANEL_FOLDING
+Door with two panels, one is folding to the left the other is folding to the right.
+
+### REVOLVING_HORIZONTAL
+An entrance door consisting of four leaves set in a form of a cross and revolving around a central vertical axis (the four panels are described by a single _IfcDoor_ panel property).
+
+### ROLLINGUP
+
+
+### SWING_FIXED_LEFT
+Door with one panel that opens (swings) to the left and one fixed panel. The hinges of the swinging panel are on the left side as viewed in the direction of the positive y-axis.
+
+### SWING_FIXED_RIGHT
+Door with one panel that opens (swings) to the right and one fixed panel. The hinges of the swinging panel are on the right side as viewed in the direction
+of the positive y-axis.
+
+### DOUBLE_PANEL_LIFTING_VERTICAL
+
+
+### LIFTING_HORIZONTAL
+
+
+### LIFTING_VERTICAL_LEFT
+
+
+### LIFTING_VERTICAL_RIGHT
+
+
+### REVOLVING_VERTICAL
+
+
+### USERDEFINED
+User defined operation type.
+
+### NOTDEFINED
+A door with a not defined operation type is considered as a door with a lining, but no panels. It is thereby always open.

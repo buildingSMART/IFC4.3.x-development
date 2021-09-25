@@ -6,3 +6,35 @@ Enumeration defining standard types for the role, purpose or usage of the bar, i
 
 { .change-ifc2x4}
 > IFC4 CHANGE&nbsp; Item ANCHORING added.
+
+## Items
+
+### MAIN
+The reinforcing bar is a main bar.
+
+### SHEAR
+The reinforcing bar is a shear bar.
+
+### LIGATURE
+The reinforcing bar is a ligature (link, stirrup).
+
+### STUD
+The reinforcing bar is a stud.
+
+### PUNCHING
+Punching reinforcement.
+
+### EDGE
+Edge reinforcement.
+
+### RING
+Ring reinforcement.
+
+### ANCHORING
+Anchoring reinforcement.
+
+### USERDEFINED
+
+
+### NOTDEFINED
+The type of reinforcement is not defined.

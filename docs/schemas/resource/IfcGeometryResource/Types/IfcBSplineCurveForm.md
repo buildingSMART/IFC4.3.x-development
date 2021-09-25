@@ -9,3 +9,23 @@ The _IfcBSplineCurveForm_ represents a part of a curve of some sppecific form.
 > NOTE&nbsp; Type adapted from **b_spline_curve_form** defined in ISO 10303-42.
 
 > HISTORY&nbsp; New type in IFC2x2.
+
+## Items
+
+### POLYLINE_FORM
+A connected sequence of line segments represented by degree 1 B-spline basis functions.
+
+### CIRCULAR
+
+
+### ELLIPTIC_ARC
+An arc of an ellipse, or a complete ellipse, represented by a B-spline curve.
+
+### PARABOLIC_ARC
+An arc of finite length of a parabola represented by a B-spline curve.
+
+### HYPERBOLIC_ARC
+An arc of finite length of one branch of a hyperbola represented by a B-spline curve.
+
+### UNSPECIFIED
+A B-spline curve for which no particular form is specified.

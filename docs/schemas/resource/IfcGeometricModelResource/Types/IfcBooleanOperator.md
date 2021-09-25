@@ -9,3 +9,14 @@ Boolean operators that apply to the first and second Boolean operands.
 > NOTE&nbsp; Entity adapted from **boolean_operator** defined in ISO 10303-42.
 
 > HISTORY&nbsp; New entity in IFC1.5.1.
+
+## Items
+
+### UNION
+
+
+### INTERSECTION
+The operation of constructing the regularised set theoretic intersection of the volumes defined by two solids.
+
+### DIFFERENCE
+The regularised set theoretic difference between the volumes defined by two solids.

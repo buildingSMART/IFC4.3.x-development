@@ -17,3 +17,19 @@ Figure 1 illustrates transition types
 > NOTE&nbsp; Type adapted from **transition_code** defined in ISO 10303-42.
 
 > HISTORY&nbsp; New Type in IFC1.0
+
+## Items
+
+### DISCONTINUOUS
+
+
+### CONTINUOUS
+The segments join but no condition on their tangents is implied.
+
+### CONTSAMEGRADIENT
+The segments join and their tangent vectors or tangent planes are parallel and
+have the same direction at the joint: equality of derivatives is not required.
+
+### CONTSAMEGRADIENTSAMECURVATURE
+For a curve, the segments join, their tangent vectors are parallel and in the same direction and their curvatures are equal at the joint: equality of derivatives is not required. For a surface this implies that the principle curvatures are the same and the principle directions are coincident along the
+common boundary.

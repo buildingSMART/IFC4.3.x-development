@@ -1,3 +1,99 @@
 # IfcRoadPartTypeEnum
 
 The predefined type container that collects all possible road facility part types together into the implemented enumeration.
+
+## Items
+
+### ROADSIDEPART
+
+
+### BUS_STOP
+Lateral part of Road for stopping buses allowing them to draw out of the traffic lanes and wait for short periods.
+
+### HARDSHOULDER
+A type of Shoulder that is surfaced, providing for safe use by vehicles in distress. 
+
+> NOTE&nbsp; Definition from ISO 6707-1: surfaced strip, adjacent to and abutting a carriageway, intended for use by vehicles in the event of difficulty or during obstruction of the carriageway, (Emergency lane, Service lane, US).
+
+### INTERSECTION
+At-grade junction where two or more roads meet or cross. Intersections may be further classified by number of road segments, traffic controls, and/or lane design.
+
+### PASSINGBAY
+
+
+### ROADWAYPLATEAU
+
+
+### ROADSIDE
+A lateral RoadPart located along the Road adjoining the outer edges of the Shoulders. A general concept comprising the areas outside RoadwayPlateau not intended for vehicles.
+
+### REFUGEISLAND
+A raised platform or a guarded area so sited in the carriageway as to divide the streams of traffic and to provide a safety area for pedestrians.
+
+### TOLLPLAZA
+A part of road facility where tolls are collected for use of  toll road, tunnel or bridge.
+
+### CENTRALRESERVE
+
+
+### SIDEWALK
+A footpath along the side of a road. May accommodate moderate changes in grade (elevation) and is normally separated from the vehicular section by a kerb. There may be a central reserve or road verge between the sidewalk and traffic lanes. 
+
+> NOTE&nbsp; Definition from ISO 6707-1: portion of a road reserved exclusively for pedestrians, (Sidewalk, Walkway, US) (footway).
+
+### PARKINGBAY
+Lateral part of Road for parking vehicles.
+
+> NOTE&nbsp; Definition from ISO 6707-1: Area intended, and usually designated and marked, for the parking of a vehicle.
+
+### RAILWAYCROSSING
+At-grade crossing between road and railway.
+
+### PEDESTRIAN_CROSSING
+Designated level crossing over a road for pedestrians.
+
+### SOFTSHOULDER
+
+
+### BICYCLECROSSING
+Designated level crossing over a road for cyclists.
+
+### CENTRALISLAND
+The center of a roundabout not intended for traffic, can be painted or upraised.
+
+### SHOULDER
+A lateral part of Road adjacent to, and usually at the same level as the Carriageway; not intended for vehicular traffic but may be used in case of emergency. 
+
+> NOTE&nbsp; Definition from ISO 6707-1: part of a highway alongside a carriageway and at approximately the same level, exclusive of embankment or cutting slopes, (Shoulder, US).
+>
+> NOTE&nbsp; Definition from PIARC: Part of the roadway between the carriageway and the ditch or the (cutting or embankment) slope, which gives the carriageway lateral support.
+
+### TRAFFICLANE
+Lateral part of carriageway designated to vehicular traffic for a particular purpose.
+
+> NOTE&nbsp; Definition from ISO 6707-1: strip of carriageway intended to accommodate a single line of moving vehicles, frequently defined by road markings.
+
+### ROADSEGMENT
+Longitudinal, linear segment of a road, either defined by uniform characteristics, or as a transition segment (e.g. number of lanes changing).
+
+### ROUNDABOUT
+Type of at-grade junction at which traffic streams are directed around a circle. 
+
+> NOTE&nbsp; Definition from ISO 6707-1: portion of a road usually at a junction, on which traffic moves in one direction around a central element.
+
+### LAYBY
+
+
+### CARRIAGEWAY
+Unitary lateral part of Road built for traffic. Carriageway may comprise several kinds of traffic lanes and lay-bys, as well as traffic islands, and in case of dual carriageway road they are separated by central reserve.
+
+> NOTE&nbsp; Definition from ISO 6707-1: part of the road or highway constructed for use by vehicular traffic, including auxiliary traffic lanes, passing places, and lay-bys (US:Roadway).
+
+### TRAFFICISLAND
+A central or subsidiary area raised or marked on the carriageway, generally at a road junction or level crossing, shaped and placed so as to direct traffic movement and/or provide refuge for pedestrians.
+
+### USERDEFINED
+
+
+### NOTDEFINED
+

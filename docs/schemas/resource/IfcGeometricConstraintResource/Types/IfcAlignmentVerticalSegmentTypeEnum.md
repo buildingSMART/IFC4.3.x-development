@@ -60,3 +60,34 @@ Referenced content of EN 13803/2017 "Table 2 - Elements for vertical alignment" 
 
 EN13803 clause 3.5:
 **Chainage**: longitudinal distance along the horizontal projection of the track centre line.
+
+## Items
+
+### CONSTANTGRADIENT
+
+
+### CIRCULARARC
+Vertical alignment segment where the derivative of vertical angle with respect to sloping length along the track (3D length) is constant.
+
+<br/>
+
+**Vertical Curvature**
+!["Vertical circular arc segment"](../../figures/ifcalignmentverticalsegmenttypeenum-arc_curvature.png "Figure 1 &mdash; Curvature for vertical circular arc segment")
+
+<br/>
+
+**Segment length**
+!["Vertical circular arc segment"](../../figures/ifcalignmentverticalsegmenttypeenum-arc_length.png "Figure 2 &mdash; Length for vertical circular arc segment")
+
+<br/>
+
+**Distance between point on segment to tangent**
+!["Vertical circular arc segment"](../../figures/ifcalignmentverticalsegmenttypeenum-arc_z_s.png "Figure 3 &mdash; Distance of point an vertical circular arc segment to tangent")
+
+### PARABOLICARC
+
+
+### CLOTHOID
+Vertical alignment segment where the derivative of vertical angle with respect to sloping length along the track (3D length) obeys a linear change.
+
+!["Vertical clothoid segment"](../../figures/ifcalignmentverticalsegmenttypeenum-clothoid_curvature.png "Figure 1 &mdash; curvature equation of the vertical clothoid segment")

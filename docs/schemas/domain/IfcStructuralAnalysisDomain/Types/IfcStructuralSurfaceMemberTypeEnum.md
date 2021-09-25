@@ -6,3 +6,20 @@ This enumeration distinguishes between different types of structural surface mem
 
 { .change-ifc2x4}
 > IFC4 CHANGE&nbsp; Renamed from _IfcStructuralSurfaceTypeEnum_.
+
+## Items
+
+### BENDING_ELEMENT
+A member with capacity to carry out-of-plane loads, i.e. a plate.
+
+### MEMBRANE_ELEMENT
+A member with capacity to carry in-plane loads, for example a shear wall.
+
+### SHELL
+
+
+### USERDEFINED
+A specially defined member.
+
+### NOTDEFINED
+A member without further categorization.

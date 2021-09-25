@@ -59,3 +59,78 @@ Check the relevant regulations for the network in question. Alignment designs as
 **Intrinsic coordinate, intrinisc coordinate system of an alignment segment:**
 
 The origin of an intrinsic coordinate system is the start of the segment. The direction of the positive x-axis is the start direction of the segments.
+
+## Items
+
+### LINE
+In the geometry perspective it denotes a straight connection between two points. In the dynamic perspective, it denotes a segment with a curvature with a value of 0. This means that no lateral acceleration acts on the moving vehicle.
+
+**Base formula (Curvature) **
+!["Horizontal line segment"](../../figures/ifcalignmenthorizontalsegmenttypeenum-line.png "Figure 1 &mdash; Curvature for horizontal straight line segment")
+
+### CIRCULARARC
+In the geometric perspective, it denotes a connection between two points that follows a circular path. In the dynamic perspective, it denotes a segment with constant lateral acceleration on the moving vehicle, i.e. constant curvature.
+
+**Base formula (Curvature) **
+!["Circular arc segment"](../../figures/ifcalignmenthorizontalsegmenttypeenum-circulararc.png "Figure 1 &mdash; Curvature for horizontal circular segment")
+
+### CLOTHOID
+
+
+### CUBIC
+In IFC CUBIC denotes a transition segment where x and y coordinates obey a cubic formula.
+<br/><br/>
+**General formula**
+!["Cubic"](../../figures/ifcalignmenthorizontalsegmenttypeenum-cubic_general.png "Figure 1 &mdash; General formula for cubic")</Documentation>
+<br/>
+
+It was discovered very early that setting **a** to "1&nbsp;/&nbsp;6RL" and **b**, **c** and **d** to 0 yields a good enough approximation of the clothoid in many situations.
+<br/><br/>
+**Cubic formula for alignment**
+!["Cubic transition"](../../figures/ifcalignmenthorizontalsegmenttypeenum-cubic.png "Figure 2 &mdash; Alignment formula for cubic")</Documentation>
+<br/>
+
+Since the manual computation of cubics was considerable easier compared to the theoretically sound clothoid, cubic transistions became very popular as "good enough" replacement curves.
+
+Cubic transition bends can still be found in many legacy alignments based on earlier design regulations. There also exist regulations containing cubic transitions for new designs.
+
+It is obvious that simple approximations cannot fulfil all requirements for a kinematically correct track design. For example, the requirement of tangential continuity has often been neglected in favour of lower design costs by using sufficiently good cubic curves.
+
+The cubic is known in two variants as **Cubic Parabola** or **Cubic Spiral** setting either the sinus or the cosinus of the deflection angle to 0.
+
+### HELMERTCURVE
+The Helmert curve or Helmert transition is an early example of a high performance transition bend. It is now widely accepted in relevant science and engineering that the linear change of the clothoid induces unwanted kinematic influences to a running train at speeds higher than 125 km/h.
+
+In the geometry perspective the Helmert segment is the assembly of two parts of same length which mirror the same change in radius of curvature. A rough approximation is known as the biquadratic parabola.
+
+>NOTE&nbsp; also referred to as Schramm curve.
+
+**Base formula (Curvature)**
+!["Helmert curve transition segment"](../../figures/ifcalignmenthorizontalsegmenttypeenum-helmertcurve.png "Figure 1 &mdash; Curvature for horizontal Helmert transition segment")
+
+### BLOSSCURVE
+The Bloss transition is a more recent form of a high performance transition bend. Proposed in 1936. it is now in use in several railway networks. There is no established rough geometric approximation.
+
+>NOTE&nbsp;Further reading: Constantin Ciobanu, BLOSS TRANSITION – A SHORT DESIGN GUIDE
+
+**Base formula (Curvature)**
+!["Bloss curve transition segment"](../../figures/ifcalignmenthorizontalsegmenttypeenum-blosscurve.png "Figure 1 &mdash; Curvature for horizontal Bloss curve transition segment")
+
+### COSINECURVE
+
+
+### SINECURVE
+Sine transition or sinusoidal transition was suggested 1937. The curvature function is built up of one period of a sine function. The sine curve is characterised by particularly advantageous smoothing properties at the end points. Compared to the clothoid, it is twice as long.
+
+>NOTE&nbsp; also referred to as Klein curve.
+
+**Base formula (Curvature)**
+!["Sine curve transition segment"](../../figures/ifcalignmenthorizontalsegmenttypeenum-sinecurve.png "Figure 1 &mdash; Curvature for horizontal Sine curve transition segment")
+
+### VIENNESEBEND
+The Viennese Bend (R) is an innovative track geometry transition element. Instead of analyzing the vehicle movement at the track plane the optimization efforts target a gravity center line at a defined height above the rails.
+
+As a consequence the path of the horizontal alignment center line is also influenced by the cant layout. The first part of the curvature formula is assembled from the basic function like the other transition bends. The additional term contains the bank angle "&psi;" and the gravity center line height "h" and is unique to the Viennes Bend (R). This term causes a small movement contrary to the main direction in the x,y layout. 
+
+**Curvature formula**
+!["Viennese bend (R) transition segment"](../../figures/ifcalignmenthorizontalsegmenttypeenum-viennesebend.png "Figure 1 &mdash; Curvature for horizontal Viennese bend (R) transition segment")

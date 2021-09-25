@@ -21,3 +21,35 @@ TRACKSTRUCTURE could have longitudinal decomposition based on track specificitie
 !["Railway vertical and lateral spatial decomposition "](../../../../figures/IfcRailwayPartTypeEnum-track.png "Figure 2 &mdash; Track longitudinal decomposition")
 
 More generic longitudinal subdivision is provided for LINESIDESTRUCTURE with LINESIDESTRUCTUREPART value if needed.
+
+## Items
+
+### TRACKSTRUCTURE
+
+
+### TRACKSTRUCTUREPART
+A track structure part refers to a segment of a track system. It usually has one of the following functions: plain-track, turnout-track, dilatation-track.
+
+### LINESIDESTRUCTUREPART
+A railway line side structure part is a longitudinal decomposition of railway lineside structure in more managable volume for engineering purposes.
+
+### DILATATIONSUPERSTRUCTURE
+
+
+### PLAINTRACKSUPESTRUCTURE
+The plain-track superstructure is one specific type of the track structure. It does not contain any turnout panel or dilatation panel.
+
+### LINESIDESTRUCTURE
+A spatial structure element that contains the elements of the railway that are not in or over the tracks, hence line-side.
+
+### SUPERSTRUCTURE
+A spatial structure element that contains elements that are positioned over the tracks, such as catenaries.
+
+### TURNOUTSUPERSTRUCTURE
+
+
+### USERDEFINED
+
+
+### NOTDEFINED
+

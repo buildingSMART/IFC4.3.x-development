@@ -9,3 +9,26 @@ This enumeration defines the available generic types for _IfcBuildingElementProx
 
 { .deprecated}
 > DEPRECATION&nbsp; The enumerator COMPLEX, ELEMENT, PARTIAL shall no longer be used.
+
+## Items
+
+### COMPLEX
+Not used - kept for upward compatibility.
+
+### ELEMENT
+
+
+### PARTIAL
+
+
+### PROVISIONFORVOID
+
+
+### PROVISIONFORSPACE
+The proxy denotes a provision for space (e.g. the space allocated as a provision for mechanical equipment or furniture).
+
+### USERDEFINED
+
+
+### NOTDEFINED
+Undefined building element proxy.

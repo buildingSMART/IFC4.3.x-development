@@ -8,3 +8,20 @@ Consider Application A will create an IFC dataset that it wants to publish to ot
 
 { .change-ifc2x4}
 > IFC4 CHANGE&nbsp; Enumerators MODIFIEDADDED and MODIFIEDDELETED have been removed
+
+## Items
+
+### NOCHANGE
+Object has not been modified.
+
+### MODIFIED
+A modification to the object has been made by the user and application defined by the LastModifyingUser and LastModifyingApplication respectively.
+
+### ADDED
+The object has been created by the user and application defined by the OwningUser and OwningApplication respectively.
+
+### DELETED
+The object has been deleted by the user and application defined by the LastModifyingUser and LastModifyingApplication respectively.
+
+### NOTDEFINED
+The change action is not known or has not been defined.

@@ -58,11 +58,13 @@ HTML_TAG_PATTERN = re.compile('<.*?>')
 MULTIPLE_SPACE_PATTERN = re.compile(r'\s+')
 CHANGE_LOG_PATTERN = re.compile(r'\{\s*\.change\-\w+\s*\}.+', flags=re.DOTALL)
 def strip_html(s):
+    return s
     S = html.unescape(s or '')
     i = S.find('\n')
     return re.sub(HTML_TAG_PATTERN, '', S)
     
 def format(s):
+    return s
     s = s.replace("\\X\\0D", "")
     s = re.sub(CHANGE_LOG_PATTERN, '', s)
     return re.sub(MULTIPLE_SPACE_PATTERN, ' ', ''.join([' ', c][c.isalnum() or c in '.,'] for c in s)).strip()
@@ -136,7 +138,7 @@ def generate_definitions():
                 for c in item.children:            
                     by_id[c.id] = di = classifications[p + "." + c.name]
                     di["Parent"] = p
-                    di['Description'] = format(strip_html(c.documentation))
+                    di['Description'] = format(strip_html(c.markdown))
                 
         elif item.type == "PSET":
             psets.append(item)        
@@ -147,7 +149,7 @@ def generate_definitions():
             st = item.meta.get('supertypes', [])
             if st:
                 di['Parent'] = st[0]
-            di['Description'] = format(strip_html(item.documentation))
+            di['Description'] = format(strip_html(item.markdown))
             
             entities.append(item)
             
@@ -188,8 +190,11 @@ def generate_definitions():
                         type_name = 'any'
                         continue
                         
+                # if a.name == "DesignLocationNumber":
+                #     import pdb; pdb.set_trace()
+                        
                 di["Psets"][item.name]["Properties"][a.name]['type'] = type_name
-                di["Psets"][item.name]["Properties"][a.name]["Description"] = format(strip_html(a.documentation))
+                di["Psets"][item.name]["Properties"][a.name]["Description"] = format(strip_html(a.markdown))
                 
                 if type_values is None:
                     type_values = type_to_values.get(type_name)
@@ -306,4 +311,4 @@ def embed_in_structure(di):
     d["Domain"]['Classifications'] = di
     return d
 
-json.dump(embed_in_structure(filter_definition(generate_definitions())), OUTPUT, indent=2)
+json.dump(embed_in_structure(filter_definition(generate_definitions())), OUTPUT, indent=2, default=lambda x: (getattr(x, 'to_json', None) or (lambda: vars(x)))())

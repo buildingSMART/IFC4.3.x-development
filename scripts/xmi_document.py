@@ -105,6 +105,9 @@ class missing_markdown:
     def __init__(self, reason): self.reason = reason
     def __bool__(self): return False
     def __repr__(self): return self.reason
+    def to_json(self):
+        logging.warning(self.reason)
+        return ''
         
         
 class xmi_item:
@@ -130,13 +133,13 @@ class xmi_item:
             
     def _mdtype(self):
         return {
-            "PT"    : "Enumerations" ,
-            "PSET"  : "PropertySets" ,
-            "TYPE"  : "UNKNOWN"      ,
-            "PENUM" : "Enumerations" ,
-            "SELECT": "Selects"      ,
-            "ENUM"  : "Enumerations" ,
-            "ENTITY": "Entities"     ,
+            "PT"    : "Types",
+            "PSET"  : "PropertySets",
+            "TYPE"  : "Types",
+            "PENUM" : "Types" ,
+            "SELECT": "Selects",
+            "ENUM"  : "Types",
+            "ENTITY": "Entities",
         }[self.parent.type if self.parent else self.type]
         
     def __iter__(self):
@@ -171,79 +174,95 @@ class xmi_item:
         
         if self.node:
             is_sub = self.parent is not None
+            
             fn = self.parent.document.filename if is_sub else self.document.filename
             repo_root = os.path.join(os.path.abspath(os.path.dirname(fn)), '..')
-            md_root = os.path.join(repo_root, 'docs', 'schemas')
-            for category in os.listdir(md_root):
-                for module in os.listdir(os.path.join(md_root, category)):
-                    if module == self.package:
-                        parser = MarkdownIt()
-                        renderer = RendererHTML()
-                        
-                        md_fn = os.path.join(md_root, category, module, self.mdtype, (self.parent.name if is_sub else self.name) + ".md")
-                        p = os.path.relpath(md_fn, start=repo_root).replace(os.sep, '/')
-                                                
-                        if not os.path.exists(md_fn):
-                            return missing_markdown(REPO_URL + p + " does not exist")
-                        
-                        tokens = parser.parse(open(md_fn, encoding='utf-8').read())
-                        renders = [renderer.render([t], options, {}) for t in tokens]
-                        
-                        tok_renders = [(t.type, s, t.as_dict().get('map'), t.tag) for t, s in zip(tokens, renders)]
-                        tok_renders_pairs = list(zip(tok_renders[:-1],tok_renders[1:]))
-                        
-                        if is_sub:                          
-                            try:
-                                attribute_heading_idx, tag = [(i,d[0][3]) for i,d in enumerate(tok_renders_pairs) if d[0][0] == 'heading_open' and d[1][1] == 'Attributes'][0]
-                            except IndexError as e:
-                                return missing_markdown(REPO_URL + p + " has no 'Attributes' heading")
-                                
-                            try:
-                                next_same_level_heading = [i for i,d in enumerate(tok_renders_pairs) if i > attribute_heading_idx and d[0][0] == 'heading_open' and d[0][3] == tag][0]                           
-                            except IndexError as e:
-                                next_same_level_heading = 100000
+            md_root = os.path.join(repo_root, 'docs')
+            md_fn = None
+            
+            if self.parent and self.parent.type == "PSET" and self.type is None:
+                # properties are not encoded into a definition of their pset
+                # but rather are listed separately in a directory 
+                is_sub = False
+                md_fn = os.path.join(md_root, 'properties', self.name[0].lower(), self.name + ".md")
+            else:
+                md_root = os.path.join(md_root, 'schemas')
+                for category in os.listdir(md_root):
+                    for module in os.listdir(os.path.join(md_root, category)):
+                        if module == self.package:
+                            md_fn = os.path.join(md_root, category, module, self.mdtype, (self.parent.name if is_sub else self.name) + ".md")
+                            break
                             
-                            has_heading = False
-                            try:
-                                heading_idx = [i for i,d in enumerate(tok_renders_pairs) if d[0][0] == 'heading_open' and d[1][1] == self.name and i > attribute_heading_idx and i < next_same_level_heading][0]
-                                has_heading = True
-                                
-                                try:
-                                    next_heading = [i for i,d in enumerate(tok_renders_pairs) if i > heading_idx and d[0][0] == 'heading_open'][0]                           
-                                except IndexError as e:
-                                    next_heading = 100000
-                                
-                                first_paragraph = [d for i, d in enumerate(tok_renders_pairs) if d[0][0] == 'paragraph_open' and i > heading_idx and i < next_heading][0]
-                                line_begin = first_paragraph[0][2][0]
-                            except IndexError as e:
-                                if has_heading:
-                                    lno = tok_renders_pairs[heading_idx][0][2][0] + 1
-                                    return missing_markdown(REPO_URL + p + "#L%d has no content" % lno)
-                                else:
-                                    return missing_markdown(REPO_URL + p + " has no '%s' heading" % self.name)
-                            
-                            try:
-                                next_heading = [d for i,d in enumerate(tok_renders_pairs) if d[0][0] == 'heading_open' and i > heading_idx][0]
-                                line_end = next_heading[0][2][0]
-                            except IndexError as e:
-                                next_same_level_heading = 100000
-                                line_end = 100000
-                        else:
-                        
-                            try:
-                                first_paragraph = [d for d in tok_renders_pairs if d[0][0] == 'paragraph_open'][0]
-                            except IndexError as e:
-                                return missing_markdown(REPO_URL + p + " has no content")
-                                
-                            line_begin = first_paragraph[0][2][0]
-                            
-                            try:
-                                attribute_heading = [d for d in tok_renders_pairs if d[0][0] == 'heading_open' and d[1][1] == 'Attributes'][0]
-                                line_end = first_paragraph[0][2][1] if definition else attribute_heading[0][2][0]
-                            except IndexError as e:
-                                line_end = 100000
-                        
-                        return "\n".join(list(open(md_fn, encoding='utf-8'))[line_begin:line_end])
+            if md_fn is None:
+                return missing_markdown("Unable to locate markdown path")                        
+            
+            p = os.path.relpath(md_fn, start=repo_root).replace(os.sep, '/')
+                                    
+            if not os.path.exists(md_fn):
+                return missing_markdown(REPO_URL + p + " does not exist")
+            
+            parser = MarkdownIt()
+            renderer = RendererHTML()
+            tokens = parser.parse(open(md_fn, encoding='utf-8').read())
+            renders = [renderer.render([t], options, {}) for t in tokens]
+            
+            tok_renders = [(t.type, s, t.as_dict().get('map'), t.tag) for t, s in zip(tokens, renders)]
+            tok_renders_pairs = list(zip(tok_renders[:-1],tok_renders[1:]))
+            
+            if is_sub:
+                sub_item_heading_name = 'Attributes' if self.parent.type == "ENTITY" else 'Items'
+
+                try:
+                    attribute_heading_idx, tag = [(i,d[0][3]) for i,d in enumerate(tok_renders_pairs) if d[0][0] == 'heading_open' and d[1][1] == sub_item_heading_name][0]
+                except IndexError as e:
+                    return missing_markdown(REPO_URL + p + " has no '%s' heading" % sub_item_heading_name)
+                    
+                try:
+                    next_same_level_heading = [i for i,d in enumerate(tok_renders_pairs) if i > attribute_heading_idx and d[0][0] == 'heading_open' and d[0][3] == tag][0]                           
+                except IndexError as e:
+                    next_same_level_heading = 100000
+                
+                has_heading = False
+                try:
+                    heading_idx = [i for i,d in enumerate(tok_renders_pairs) if d[0][0] == 'heading_open' and d[1][1] == self.name and i > attribute_heading_idx and i < next_same_level_heading][0]
+                    has_heading = True
+                    
+                    try:
+                        next_heading = [i for i,d in enumerate(tok_renders_pairs) if i > heading_idx and d[0][0] == 'heading_open'][0]                           
+                    except IndexError as e:
+                        next_heading = 100000
+                    
+                    first_paragraph = [d for i, d in enumerate(tok_renders_pairs) if d[0][0] == 'paragraph_open' and i > heading_idx and i < next_heading][0]
+                    line_begin = first_paragraph[0][2][0]
+                except IndexError as e:
+                    if has_heading:
+                        lno = tok_renders_pairs[heading_idx][0][2][0] + 1
+                        return missing_markdown(REPO_URL + p + "#L%d has no content" % lno)
+                    else:
+                        return missing_markdown(REPO_URL + p + " has no '%s' heading" % self.name)
+                
+                try:
+                    next_heading = [d for i,d in enumerate(tok_renders_pairs) if d[0][0] == 'heading_open' and i > heading_idx][0]
+                    line_end = next_heading[0][2][0]
+                except IndexError as e:
+                    next_same_level_heading = 100000
+                    line_end = 100000
+            else:
+            
+                try:
+                    first_paragraph = [d for d in tok_renders_pairs if d[0][0] == 'paragraph_open'][0]
+                except IndexError as e:
+                    return missing_markdown(REPO_URL + p + " has no content")
+                    
+                line_begin = first_paragraph[0][2][0]
+                
+                try:
+                    attribute_heading = [d for d in tok_renders_pairs if d[0][0] == 'heading_open' and d[1][1] == 'Attributes'][0]
+                    line_end = first_paragraph[0][2][1] if definition else attribute_heading[0][2][0]
+                except IndexError as e:
+                    line_end = 100000
+            
+            return "\n".join(list(open(md_fn, encoding='utf-8'))[line_begin:line_end])
                         
     def _get_markdown_definition(self):
         return self._get_markdown(definition=True)

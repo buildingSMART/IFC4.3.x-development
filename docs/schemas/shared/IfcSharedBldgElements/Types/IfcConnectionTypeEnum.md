@@ -54,3 +54,17 @@ The enumerated items shall be used in the following combinations:
 </td>
 </tr>
 </table>
+
+## Items
+
+### ATPATH
+
+
+### ATSTART
+Connection at the start of the connected element.
+
+### ATEND
+Connection at the end of the connected element.
+
+### NOTDEFINED
+

@@ -1,4 +1,4 @@
-# IfcDimensionsForSiUnit
+# IfcDimensionsForSIUnit
 
 **Definition from ISO/CD 10303-41:1992**: The function returns the dimensional exponents of the given SI-unit.
 

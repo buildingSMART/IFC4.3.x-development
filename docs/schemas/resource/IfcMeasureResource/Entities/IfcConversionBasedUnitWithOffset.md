@@ -19,7 +19,7 @@ IfcConversionBasedUnitWithOffset(
 > &nbsp;&nbsp;&nbsp;&nbsp;'Fahrenheit',  
 > &nbsp;&nbsp;&nbsp;&nbsp;IfcMeasureWithUnit(  
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IfcThermodynamicTemperatureMeasure(1.8),  
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IfcSiUnit(THERMODYNAMICTEMPERATUREUNIT, ?, KELVIN)),  
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IfcSIUnit(THERMODYNAMICTEMPERATUREUNIT, ?, KELVIN)),  
 > &nbsp;&nbsp;&nbsp;&nbsp;-459.67);
 
 > ```

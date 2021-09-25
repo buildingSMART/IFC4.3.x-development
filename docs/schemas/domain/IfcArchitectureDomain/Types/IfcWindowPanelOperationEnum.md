@@ -103,3 +103,47 @@ NOTE
 !["opening direction"](../../../../figures/ifcwindowpaneloperationenum-fig13.gif "Figure 2 &mdash; Window panel directions")
 
 > HISTORY&nbsp; New enumeration in IFC2.0.
+
+## Items
+
+### SIDEHUNGRIGHTHAND
+
+
+### SIDEHUNGLEFTHAND
+
+
+### TILTANDTURNRIGHTHAND
+
+
+### TILTANDTURNLEFTHAND
+
+
+### TOPHUNG
+
+
+### BOTTOMHUNG
+
+
+### PIVOTHORIZONTAL
+
+
+### PIVOTVERTICAL
+
+
+### SLIDINGHORIZONTAL
+
+
+### SLIDINGVERTICAL
+
+
+### REMOVABLECASEMENT
+
+
+### FIXEDCASEMENT
+
+
+### OTHEROPERATION
+
+
+### NOTDEFINED
+

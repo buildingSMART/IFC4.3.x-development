@@ -5,3 +5,17 @@ This enumeration defines the different predefined types of geographic elements t
 > NOTE&nbsp; Cuurently no other predefined types beside terrain are defined.
 
 > HISTORY&nbsp; New enumeration in IFC2x2.
+
+## Items
+
+### TERRAIN
+
+
+### SOIL_BORING_POINT
+
+
+### USERDEFINED
+
+
+### NOTDEFINED
+

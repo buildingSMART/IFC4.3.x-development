@@ -3,3 +3,20 @@
 Enumeration defining the typical types of duct silencers.
 
 > HISTORY&nbsp; New enumeration in IFC2x2.
+
+## Items
+
+### FLATOVAL
+Flat-oval shaped duct silencer type.
+
+### RECTANGULAR
+Rectangular shaped duct silencer type.
+
+### ROUND
+Round duct silencer type.
+
+### USERDEFINED
+
+
+### NOTDEFINED
+Undefined duct silencer type.

@@ -7,3 +7,17 @@ The text path determines the direction of the text characters in respect to each
 > NOTE&nbsp; Corresponding ISO 10303 name:text_path . Please refer to ISO/IS 10303-46:1994 for the final definition of the formal standard.
 
 > HISTORY&nbsp; New entity in IFC2x2.
+
+## Items
+
+### LEFT
+
+
+### RIGHT
+
+
+### UP
+
+
+### DOWN
+

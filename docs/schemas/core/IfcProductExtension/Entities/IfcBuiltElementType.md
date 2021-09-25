@@ -9,4 +9,4 @@ The _IfcBuiltElementType_ can be instantiated in the case when arbitrary built e
 
 Occurrences of subtypes of the _IfcBuiltElementType_ are represented by instances of the appropriate subtypes of _IfcBuiltElement_.  
 
-> HISTORY&nbsp; HISTORY New entity in IFC2x2.
+> HISTORY&nbsp; New entity in IFC2x2.

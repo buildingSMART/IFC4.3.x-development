@@ -3,3 +3,95 @@
 _IfcUnitEnum_ is an enumeration type for allowed unit types of _IfcNamedUnit_.
 
 > HISTORY&nbsp; New type in IFC1.5.1.
+
+## Items
+
+### ABSORBEDDOSEUNIT
+
+
+### AMOUNTOFSUBSTANCEUNIT
+
+
+### AREAUNIT
+
+
+### DOSEEQUIVALENTUNIT
+
+
+### ELECTRICCAPACITANCEUNIT
+
+
+### ELECTRICCHARGEUNIT
+
+
+### ELECTRICCONDUCTANCEUNIT
+
+
+### ELECTRICCURRENTUNIT
+
+
+### ELECTRICRESISTANCEUNIT
+
+
+### ELECTRICVOLTAGEUNIT
+
+
+### ENERGYUNIT
+
+
+### FORCEUNIT
+
+
+### FREQUENCYUNIT
+
+
+### ILLUMINANCEUNIT
+
+
+### INDUCTANCEUNIT
+
+
+### LENGTHUNIT
+
+
+### LUMINOUSFLUXUNIT
+
+
+### LUMINOUSINTENSITYUNIT
+
+
+### MAGNETICFLUXDENSITYUNIT
+
+
+### MAGNETICFLUXUNIT
+
+
+### MASSUNIT
+
+
+### PLANEANGLEUNIT
+
+
+### POWERUNIT
+
+
+### PRESSUREUNIT
+
+
+### RADIOACTIVITYUNIT
+
+
+### SOLIDANGLEUNIT
+
+
+### THERMODYNAMICTEMPERATUREUNIT
+
+
+### TIMEUNIT
+
+
+### VOLUMEUNIT
+
+
+### USERDEFINED
+User defined unit type. The type of unit is only implied by its name or the usage context.

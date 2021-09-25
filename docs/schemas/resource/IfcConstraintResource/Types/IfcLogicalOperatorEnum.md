@@ -237,3 +237,20 @@ Table 1 illustrates application of _IfcLogicalOperatorEnum_ in a case of three o
 
 { .change-ifc2x4}
 > IFC4 CHANGE&nbsp; Extended to include LOGICALXOR, LOGICALNOTAND and LOGICALNOTOR.
+
+## Items
+
+### LOGICALAND
+
+
+### LOGICALOR
+Defines a relationship between operands whereby the result is true if at least one operand is true, and false if all operands are false.
+
+### LOGICALXOR
+Defines a relationship between operands whereby the result is true if exactly one operand is true (exclusive or).
+
+### LOGICALNOTAND
+Defines a relationship between operands whereby the result is true if at least one operand is false, and false if all operands are true.
+
+### LOGICALNOTOR
+Defines a relationship between operands whereby the result is true if all operands are false, and false if at least one operand is true.

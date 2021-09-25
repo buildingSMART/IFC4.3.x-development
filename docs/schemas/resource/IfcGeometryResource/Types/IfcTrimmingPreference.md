@@ -9,3 +9,14 @@ The _IfcTrimmingPreference_ indicates the preferred way of trimming.
 > NOTE&nbsp; Type adapted from **trimming_preference** defined in ISO 10303-42.
 
 > HISTORY&nbsp; New Type in IFC1.0
+
+## Items
+
+### CARTESIAN
+Indicates that trimming by Cartesian point is preferred.
+
+### PARAMETER
+Indicates the preference for the parameter value.
+
+### UNSPECIFIED
+Indicates that no preference is communicated.

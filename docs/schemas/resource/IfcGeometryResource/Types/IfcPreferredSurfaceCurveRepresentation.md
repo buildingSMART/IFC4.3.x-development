@@ -9,3 +9,14 @@ The _IfcPreferredSurfaceCurveRepresentation_ indicates the preferred form of an 
 > NOTE&nbsp; Type adapted from **preferred_surface_curve_representation** defined in ISO 10303-42.
 
 > HISTORY&nbsp; New type in IFC4 Addendum 2.
+
+## Items
+
+### CURVE3D
+The curve in three-dimensional space is preferred
+
+### PCURVE_S1
+The first pcurve is preferred
+
+### PCURVE_S2
+The second pcurve is preferred

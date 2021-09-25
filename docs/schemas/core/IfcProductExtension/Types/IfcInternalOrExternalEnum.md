@@ -6,3 +6,23 @@ This enumeration defines the different types of space boundaries in terms of eit
 
 { .change-ifc2x4}
 > IFC4 CHANGE&nbsp; Enumeration no longer applicable to _IfcSpace_. The following enumerators are added: EXTERNAL_EARTH, EXTERNAL_WATER, EXTERNAL_FIRE.
+
+## Items
+
+### INTERNAL
+The space boundary faces a physical or virtual element where there is an internal space on the other side.
+
+### EXTERNAL
+The space boundary faces a physical or virtual element where there is an external space on the other side.
+
+### EXTERNAL_EARTH
+The space boundary faces a physical or virtual element where there is earth (or terrain) on the other side.
+
+### EXTERNAL
+
+
+### EXTERNAL
+
+
+### NOTDEFINED
+No information available.

@@ -84,3 +84,23 @@ NOTE
 
 1. The figures are shown as elevations in the XZ plane of the local placement of the window, looking into the direction of the positive Y axis.
 2. These figures are only shown as illustrations.
+
+## Items
+
+### LEFT
+
+
+### MIDDLE
+
+
+### RIGHT
+
+
+### BOTTOM
+
+
+### TOP
+
+
+### NOTDEFINED
+

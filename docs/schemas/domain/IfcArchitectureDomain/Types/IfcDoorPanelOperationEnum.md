@@ -65,3 +65,32 @@ The opening direction of the door panels is given by the local placement of the 
 
 { .change-ifc2x4}
 > IFC4 CHANGE&nbsp; Enumerator FIXEDPANEL added.
+
+## Items
+
+### SWINGING
+
+
+### DOUBLE_ACTING
+
+
+### SLIDING
+
+
+### FOLDING
+
+
+### REVOLVING
+
+
+### ROLLINGUP
+
+
+### FIXEDPANEL
+
+
+### USERDEFINED
+
+
+### NOTDEFINED
+

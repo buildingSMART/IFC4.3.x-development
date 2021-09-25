@@ -8,3 +8,59 @@ The _IfcElectricApplianceTypeEnum_ defines the range of different types of elect
 { .change-ifc2x4}
 > IFC4 CHANGE&nbsp; ELECTRICHEATER changed to FREESTANDINGELECTRICHEATER and noted as being for occasional use. RADIANTHEATER removed as part of general 'heater consolidation'. WATERHEATER, DIRECTWATERHEATER and INDIRECTWATERHEATER rationalized to FREESTANDINGWATERHEATER. WATERCOOLER changed to FREESTANDINGWATERCOOLER.   
 > COMPUTER, FACSIMILE (FAX), PRINTER, SCANNER, TELEPHONE, TV (TELEVISION) moved to IfcAudioVisualApplianceTypeEnum and IfcCommunicationsApplianceTypeEnum. KITCHENMACHINE added.
+
+## Items
+
+### DISHWASHER
+An appliance that has the primary function of washing dishes.
+
+### ELECTRICCOOKER
+An electrical appliance that has the primary function of cooking food (including oven, hob, grill).
+
+### FREESTANDINGELECTRICHEATER
+
+
+### FREESTANDINGFAN
+An electrical appliance that is used occasionally to provide ventilation. A freestanding fan is a 'plugged' appliance whose load may be removed from an electric circuit.
+
+### FREESTANDINGWATERHEATER
+
+
+### FREESTANDINGWATERCOOLER
+
+
+### FREEZER
+An electrical appliance that has the primary function of storing food at temperatures below the freezing point of water.
+
+### FRIDGE_FREEZER
+An electrical appliance that combines the functions of a freezer and a refrigerator through the provision of separate compartments.
+
+### HANDDRYER
+An electrical appliance that has the primary function of drying hands.
+
+### KITCHENMACHINE
+A specialized appliance used in commercial kitchens such as a mixer.
+
+### MICROWAVE
+
+
+### PHOTOCOPIER
+A machine that has the primary function of reproduction of printed matter.
+
+### REFRIGERATOR
+An electrical appliance that has the primary function of storing food at low temperature but above the freezing point of water.
+
+### TUMBLEDRYER
+An electrical appliance that has the primary function of drying clothes.
+
+### VENDINGMACHINE
+An appliance that stores and vends goods including food, drink, tickets, and goods of various types.
+
+### WASHINGMACHINE
+An appliance that has the primary function of washing clothes.
+
+### USERDEFINED
+
+
+### NOTDEFINED
+

@@ -22,7 +22,7 @@ def yield_relevant(fns):
             # currently not imported
             continue
             
-        if len(parts) < 8:
+        if len(parts) < 7:
             # section or schema documentation, not a full path to entity/type
             continue
         
@@ -66,12 +66,10 @@ for fn, of, name, type, schema, group in yield_relevant(xml_files):
     pairs = [
         ("Attributes", dom.getElementsByTagName("DocAttribute")),
         ("Formal Propositions", dom.getElementsByTagName("DocWhereRule")),
-        ("UniqueRules", dom.getElementsByTagName("DocUniqueRule"))
+        ("UniqueRules", dom.getElementsByTagName("DocUniqueRule")),
+        ("Items", dom.getElementsByTagName("DocConstant"))
     ]
-    
-    # if name == "IfcComplexPropertyTemplate":
-    #     import pdb; pdb.set_trace()
-    
+
     num_elems = sum(len(p[1]) for p in pairs)
     i = 1
     
@@ -84,12 +82,29 @@ for fn, of, name, type, schema, group in yield_relevant(xml_files):
             if elems:
                 print("##", lbl, end="\n\n", file=f)
                 for elem in elems:
-                    print("###", elem.getAttribute("Name"), file=f)
-                    doc = elem.getElementsByTagName("Documentation")
-                    if doc and doc[0].childNodes:
-                        print(doc[0].childNodes[0].data, file=f)
-                    else:
-                        print(file=f)
+
+                    if elem.tagName == 'DocConstant':
+                        # in case of constants we need to lookup the definition in another
+                        # XML file. We can then use the same logic on Name and Documentation
+                        href = elem.getAttribute("href")
+                        cnst_fn = os.path.join(dr, 'Constants', href[0].lower(), href + ".xml")
+                        if not os.path.exists(cnst_fn):
+                            name = href.split("_", 1)[0]
+                            elem = None
+                        else:
+                            dom2 = parse(cnst_fn)
+                            elem = dom2.getElementsByTagName("DocConstant")[0]
+
+                    print("###", elem.getAttribute("Name") if elem is not None else name, file=f)
+
+                    docstring = ""
+                    # can be None in case of missing constant
+                    if elem is not None:
+                        doc = elem.getElementsByTagName("Documentation")
+                        if doc and doc[0].childNodes:
+                            docstring = doc[0].childNodes[0].data
+
+                    print(docstring, file=f)
                         
                     if i < num_elems:
                         print(file=f)

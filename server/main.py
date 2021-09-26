@@ -30,6 +30,7 @@ entity_attributes = json.load(open("entity_attributes.json", encoding="utf-8"))
 entity_definitions = json.load(open("entity_definitions.json", encoding="utf-8"))
 entity_to_package = json.load(open("entity_to_package.json", encoding="utf-8"))
 entity_supertype = json.load(open("entity_supertype.json", encoding="utf-8"))
+pset_definitions = json.load(open("pset_definitions.json", encoding="utf-8"))
 changes_by_type = json.load(open("changes_by_type.json", encoding="utf-8"))
 concepts = json.load(open("concepts.json", encoding="utf-8"))
 
@@ -128,12 +129,13 @@ hierarchy = json.load(open("hierarchy.json"))
 
 entity_names = sorted(sum([schema.get('Entities', []) for _, cat in hierarchy for __, schema in cat], []))
 type_names = sorted(sum([schema.get('Types', []) for _, cat in hierarchy for __, schema in cat], []))
+pset_names = sorted(sum([schema.get('Property Sets', []) for _, cat in hierarchy for __, schema in cat], []))
 
 name_to_number = {}
 
 for i, (cat, schemas) in enumerate(hierarchy, start=5):
     for j, (schema_name, members) in enumerate(schemas, start=1):
-        for k, ke in enumerate(["Types", "Entities"], start=2):
+        for k, ke in enumerate(["Types", "Entities", "Property Sets"], start=2):
             for l, name in enumerate(members.get(ke, ()), start=1):
                 name_to_number[name] = ".".join(map(str, (i,j,k,l)))
 
@@ -573,6 +575,15 @@ def resource(resource):
                     import traceback
                     traceback.print_exc()
                     pass
+                    
+            elif "PropertySets" in md:
+            
+                def make_prop(prop):
+                    doc = [x for x in open(md_root + "/../properties/%s/%s.md" % (prop['name'][0].lower(), prop['name'])).read().split("\n") if x][-1]
+                    return [prop['name'], prop['type'], doc]
+                attrs = list(map(make_prop, pset_definitions[resource]['properties']))
+                attribute_table = tabulate.tabulate(attrs, headers=("Name", "Type", "Description"), tablefmt='unsafehtml')
+                mdc += "\n\nattribute_table\n\n"
     
             html = markdown.markdown(
                 process_graphviz(resource, mdc),
@@ -892,7 +903,7 @@ def schema(name):
     else:
         html = ''
 
-    order = ["Types", "Entities"]
+    order = ["Types", "Entities", "Property Sets"]
     subs = sorted(subs.items(), key=lambda tup: order.index(tup[0]))
 
     return render_template('chapter.html', navigation=navigation_entries, content=html, path=fn[5:], title=t, number=n, subs=subs)
@@ -945,7 +956,7 @@ def sandcastle():
     return render_template('sandcastle.html', html=html, md=md)
        
        
-ifcre = re.compile(r"Ifc\w+(?!(.ht|</a|</h|/|.md))")
+ifcre = re.compile(r"(Ifc|Pset)\w+(?!(.ht|</a|</h|/|.md))")
 
 @app.after_request
 def after(response):
@@ -955,7 +966,7 @@ def after(response):
         
         def decorate_link(m):
             w = m.group(0)
-            if w in entity_definitions:
+            if w in entity_definitions or w in pset_definitions:
                 return "<a href='" + url_for('resource', resource=w) + "'>" + w + "</a>"
             else:
                 return w

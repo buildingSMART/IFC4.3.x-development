@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <QtoSetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.buildingsmart-tech.org/xml/qto/QTO_IFC4.xsd">
-  <IfcVersion version="IFC4x3_RC2" />
+  <IfcVersion version="IFC4x3_RC4" />
   <Name>Qto_ProjectionElementBaseQuantities</Name>
   <Definition>Base quantities that are common to the definition of all occurrences of projection elements.</Definition>
   <Applicability />
@@ -24,7 +24,7 @@
     </QtoDef>
     <QtoDef>
       <Name>Volume</Name>
-      <Definition>Volume of the opening. It is the addition volume of the project to the element (e.g. wall or slab).</Definition>
+      <Definition>Volume of the opening. It is the additional volume of the projection to the element (e.g. wall or slab).</Definition>
       <QtoType>Q_VOLUME</QtoType>
       <NameAliases>
         <NameAlias lang="de-DE">Volumen</NameAlias>

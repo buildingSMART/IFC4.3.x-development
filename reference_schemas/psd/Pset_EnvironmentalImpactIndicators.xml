@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="7ba3ba80d1e111e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
-  <IfcVersion version="IFC4x3_RC2" />
+  <IfcVersion version="IFC4x3_RC4" />
   <Name>Pset_EnvironmentalImpactIndicators</Name>
   <Definition>Environmental impact indicators are related to a given “functional unit” (ISO 14040 concept). An example of functional unit is a "Double glazing window with PVC frame" and the unit to consider is "one square meter of opening elements filled by this product”.
 Indicators values are valid for the whole life cycle or only a specific phase (see LifeCyclePhase property). Values of all the indicators are expressed per year according to the expected service life. The first five properties capture the characteristics of the functional unit. The following properties are related to environmental indicators.
@@ -220,6 +220,7 @@ There is a consensus agreement international for the five one. Last ones are not
             </ConstantDef>
             <ConstantDef>
               <Name>REPAIR</Name>
+              <Definition>Project responsible for the repair to a facility</Definition>
               <NameAliases>
                 <NameAlias lang="en">Repair</NameAlias>
               </NameAliases>

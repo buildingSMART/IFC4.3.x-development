@@ -1,16 +1,17 @@
 <?xml version="1.0"?>
 <PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="12089fbe3ddb4d69b5f983766de3862d" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
-  <IfcVersion version="IFC4x3_RC2" />
+  <IfcVersion version="IFC4x3_RC4" />
   <Name>Pset_TrafficCalmingDeviceCommon</Name>
+  <Definition>Properties for a traffic calming device.</Definition>
   <Applicability />
   <ApplicableClasses>
-    <ClassName>IfcElem/TRAFFIC_CALMING_DEVICE</ClassName>
+    <ClassName>IfcElementAssembly/(.TRAFFIC_CALMING_DEVICE.)</ClassName>
   </ApplicableClasses>
-  <ApplicableTypeValue>IfcElem/TRAFFIC_CALMING_DEVICE</ApplicableTypeValue>
+  <ApplicableTypeValue>IfcElementAssembly/(.TRAFFIC_CALMING_DEVICE.)</ApplicableTypeValue>
   <PropertyDefs>
-    <PropertyDef ifdguid="044387cffda241fd8dc46806de5fdf93">
-      <Name>Type</Name>
-      <Definition>Traffic Calming Device designator according to local standards</Definition>
+    <PropertyDef ifdguid="fec5ed14d21e43eeba124e8eb03952d0">
+      <Name>TypeDesignation</Name>
+      <Definition>Type designator according to local standards</Definition>
       <PropertyType>
         <TypePropertySingleValue>
           <DataType type="IfcLabel" />

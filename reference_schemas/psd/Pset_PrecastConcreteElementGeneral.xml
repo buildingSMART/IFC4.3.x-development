@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="8287f880d1f411e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
-  <IfcVersion version="IFC4x3_RC2" />
+  <IfcVersion version="IFC4x3_RC4" />
   <Name>Pset_PrecastConcreteElementGeneral</Name>
   <Definition>Production and manufacturing related properties common to different types of precast concrete elements. The Pset can be used by a number of subtypes of IfcBuildingElement. If the precast concrete element is a sandwich wall panel each structural layer or shell represented by an IfcBuildingElementPart may be attached to a separate Pset of this type, if needed. Some of the properties apply only for specific types of precast concrete elements.</Definition>
   <Applicability />
@@ -24,22 +24,16 @@
   </ApplicableClasses>
   <ApplicableTypeValue>IfcBeam,IfcBuildingElementProxy,IfcChimney,IfcColumn,IfcFooting,IfcMember,IfcPile,IfcPlate,IfcRamp,IfcRampFlight,IfcRoof,IfcSlab,IfcStair,IfcStairFlight,IfcWall,IfcCivilElement</ApplicableTypeValue>
   <PropertyDefs>
-    <PropertyDef ifdguid="94699b80d1f411e1800000215ad4efdf">
-      <Name>TypeDesignator</Name>
-      <Definition>Type designator for the precast concrete element. The content depends on local standards. For instance in Finland it usually a one-letter acronym, e.g. P=Column, K=reinforced concrete beam,etc.</Definition>
+    <PropertyDef ifdguid="fec5ed14d21e43eeba124e8eb03952d0">
+      <Name>TypeDesignation</Name>
+      <Definition>Type designator according to local standards</Definition>
       <PropertyType>
         <TypePropertySingleValue>
           <DataType type="IfcLabel" />
         </TypePropertySingleValue>
       </PropertyType>
-      <NameAliases>
-        <NameAlias lang="en">Type Designator</NameAlias>
-        <NameAlias lang="ja-JP">特定子の記述</NameAlias>
-      </NameAliases>
-      <DefinitionAliases>
-        <DefinitionAlias lang="en" />
-        <DefinitionAlias lang="ja-JP">プレキャストコンクリート要素の特定子（部位）を記述する。内容はローカルな（各国の）標準（規格）に依存する。例えばフィンランドでは、柱はP、梁はKのように通常、頭文字1文字で表す。</DefinitionAlias>
-      </DefinitionAliases>
+      <NameAliases />
+      <DefinitionAliases />
     </PropertyDef>
     <PropertyDef ifdguid="aba88900d1f411e1800000215ad4efdf">
       <Name>CornerChamfer</Name>

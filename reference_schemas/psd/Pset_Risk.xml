@@ -1,19 +1,34 @@
 <?xml version="1.0"?>
-<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="ff20d400d20011e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
-  <IfcVersion version="IFC4x3_RC2" />
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="91e0ddf4d6ba45e3b689a10510bef4bc" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC4" />
   <Name>Pset_Risk</Name>
-  <Definition>An indication of exposure to mischance, peril, menace, hazard or loss.   
-HISTORY:  Extended in IFC2x3  
-Refactored in IFC4.3  
-There are various types of risk that may be encountered and there may be several instances of Pset_Risk associated in an instance of an IfcProcess.  
-Specification of this property set incorporates the values of the Incom risk analysis matrix (satisfying AS/NZS 4360) together with additional identified requirements including UK PAS 1192-6.</Definition>
+  <Definition>An indication of exposure to mischance, peril, menace, hazard or loss. Documentation of a potential hazard, likilihood and consequence aligned with AS/NZS 4360 and BS PAS 1192-6:2017, which can be assigned to or associated with a product, activity and/or location. Alternatively it may be assigned to an ISO 3864 annotation symbol.
+
+HISTORY: Extended in IFC2x3, Revised IFC4x3 
+
+There are various types of risk that may be encountered and there may be several instances of Pset_Risk associated to an instance or type.</Definition>
   <Applicability />
   <ApplicableClasses>
     <ClassName>IfcProcess</ClassName>
+    <ClassName>IfcTypeProcess</ClassName>
+    <ClassName>IfcProduct</ClassName>
+    <ClassName>IfcTypeProduct</ClassName>
+    <ClassName>IfcGroup</ClassName>
   </ApplicableClasses>
-  <ApplicableTypeValue>IfcProcess</ApplicableTypeValue>
+  <ApplicableTypeValue>IfcProcess,IfcTypeProcess,IfcProduct,IfcTypeProduct,IfcGroup</ApplicableTypeValue>
   <PropertyDefs>
-    <PropertyDef ifdguid="0516b500d20111e1800000215ad4efdf">
+    <PropertyDef ifdguid="2a61adb47fe94a12a790b4a5a292f94c">
+      <Name>RiskName</Name>
+      <Definition>A locally unique identifier for the risk entry that can be used to track the development and mitiagtion of the risk throughout the project life cycle</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="53651ee9f81d4642abbd27656122671a">
       <Name>RiskType</Name>
       <Definition>Identifies the predefined types of risk from which the type required may be set.</Definition>
       <PropertyType>
@@ -26,6 +41,53 @@ Specification of this property set incorporates the values of the Incom risk ana
             <EnumItem>OTHER</EnumItem>
             <EnumItem>NOTKNOWN</EnumItem>
             <EnumItem>UNSET</EnumItem>
+            <EnumItem>HEALTHISSUE</EnumItem>
+            <EnumItem>MATERIALEFFECTS</EnumItem>
+            <EnumItem>ASBESTOSEFFECTS</EnumItem>
+            <EnumItem>LEADEFFECTS</EnumItem>
+            <EnumItem>HAZARDOUSDUST</EnumItem>
+            <EnumItem>WOODDUST</EnumItem>
+            <EnumItem>SILICADUST</EnumItem>
+            <EnumItem>CHEMICALEFFECTS</EnumItem>
+            <EnumItem>MECHANICALEFFECTS</EnumItem>
+            <EnumItem>NOISE_EFFECTS</EnumItem>
+            <EnumItem>TOOLUSAGE</EnumItem>
+            <EnumItem>VIBRATION</EnumItem>
+            <EnumItem>WELFAREISSUE</EnumItem>
+            <EnumItem>SAFETYISSUE</EnumItem>
+            <EnumItem>FALL</EnumItem>
+            <EnumItem>FALL_LADDER</EnumItem>
+            <EnumItem>FALLEDGE</EnumItem>
+            <EnumItem>FALLSCAFFOLD</EnumItem>
+            <EnumItem>FALLFRAGILEMATERIAL</EnumItem>
+            <EnumItem>SLIPTRIP</EnumItem>
+            <EnumItem>TRAPPED</EnumItem>
+            <EnumItem>CONFINEMENT</EnumItem>
+            <EnumItem>UNINTENDEDCOLLAPSE</EnumItem>
+            <EnumItem>CRUSHING</EnumItem>
+            <EnumItem>ASPHIXIATION</EnumItem>
+            <EnumItem>DROWNINGANDFLOODING</EnumItem>
+            <EnumItem>EVENT</EnumItem>
+            <EnumItem>ELECTRICSHOCK</EnumItem>
+            <EnumItem>FIRE_EXPLOSION</EnumItem>
+            <EnumItem>MACHINERYGUARDING</EnumItem>
+            <EnumItem>HANDLING</EnumItem>
+            <EnumItem>MATERIALSHANDLING</EnumItem>
+            <EnumItem>MECHANICAL_LIFTING</EnumItem>
+            <EnumItem>MOBILE_ELEVATEDWORKPLATFORM</EnumItem>
+            <EnumItem>WORKINGOVERHEAD</EnumItem>
+            <EnumItem>STRUCK</EnumItem>
+            <EnumItem>STRUCKFALLINFOBJECT</EnumItem>
+            <EnumItem>STRUCKVEHICLE</EnumItem>
+            <EnumItem>OVERTURINGPLANT</EnumItem>
+            <EnumItem>PUBLICPROTECTIONISSUES</EnumItem>
+            <EnumItem>ENVIRONMENTALISSUES</EnumItem>
+            <EnumItem>BUSINESSISSUES</EnumItem>
+            <EnumItem>COMMERICALISSUES</EnumItem>
+            <EnumItem>INSURANCE_ISSUES</EnumItem>
+            <EnumItem>OPERATIONALISSUES</EnumItem>
+            <EnumItem>SOCIALISSUES</EnumItem>
+            <EnumItem>OTHERISSUES</EnumItem>
           </EnumList>
           <ConstantList>
             <ConstantDef>
@@ -58,6 +120,7 @@ Specification of this property set incorporates the values of the Incom risk ana
             </ConstantDef>
             <ConstantDef>
               <Name>OTHER</Name>
+              <Definition>required category not on scale</Definition>
               <NameAliases>
                 <NameAlias lang="en">(other)</NameAlias>
               </NameAliases>
@@ -67,6 +130,7 @@ Specification of this property set incorporates the values of the Incom risk ana
             </ConstantDef>
             <ConstantDef>
               <Name>NOTKNOWN</Name>
+              <Definition>Value is unkown</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unknown)</NameAlias>
               </NameAliases>
@@ -76,6 +140,7 @@ Specification of this property set incorporates the values of the Incom risk ana
             </ConstantDef>
             <ConstantDef>
               <Name>UNSET</Name>
+              <Definition>Value has not been specified</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unset)</NameAlias>
               </NameAliases>
@@ -83,325 +148,366 @@ Specification of this property set incorporates the values of the Incom risk ana
                 <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
               </DefinitionAliases>
             </ConstantDef>
+            <ConstantDef>
+              <Name>HEALTHISSUE</Name>
+              <NameAliases>
+                <NameAlias lang="en">Health issue</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>MATERIALEFFECTS</Name>
+              <NameAliases>
+                <NameAlias lang="en">Material effects</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>ASBESTOSEFFECTS</Name>
+              <NameAliases>
+                <NameAlias lang="en">Asbestos effects</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>LEADEFFECTS</Name>
+              <NameAliases>
+                <NameAlias lang="en">Lead effects</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>HAZARDOUSDUST</Name>
+              <NameAliases>
+                <NameAlias lang="en">Hazardous dust</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>WOODDUST</Name>
+              <NameAliases>
+                <NameAlias lang="en">Wood dust</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>SILICADUST</Name>
+              <NameAliases>
+                <NameAlias lang="en">Silica dust</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>CHEMICALEFFECTS</Name>
+              <NameAliases>
+                <NameAlias lang="en">Chemical effects</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>MECHANICALEFFECTS</Name>
+              <NameAliases>
+                <NameAlias lang="en">Mechanical effects</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOISE_EFFECTS</Name>
+              <NameAliases>
+                <NameAlias lang="en">Noise effects</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>TOOLUSAGE</Name>
+              <NameAliases>
+                <NameAlias lang="en">Tool usage</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>VIBRATION</Name>
+              <NameAliases>
+                <NameAlias lang="en">Vibration</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>WELFAREISSUE</Name>
+              <NameAliases>
+                <NameAlias lang="en">Welfare issue</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>SAFETYISSUE</Name>
+              <NameAliases>
+                <NameAlias lang="en">Safety issue</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>FALL</Name>
+              <NameAliases>
+                <NameAlias lang="en">Fall</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>FALL_LADDER</Name>
+              <NameAliases>
+                <NameAlias lang="en">Fall from ladder</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>FALLEDGE</Name>
+              <NameAliases>
+                <NameAlias lang="en">Fall from open edge</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>FALLSCAFFOLD</Name>
+              <NameAliases>
+                <NameAlias lang="en">Fall from scaffold</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>FALLFRAGILEMATERIAL</Name>
+              <NameAliases>
+                <NameAlias lang="en">Fall through fragile material</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>SLIPTRIP</Name>
+              <NameAliases>
+                <NameAlias lang="en">Slip or trip on the same level</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>TRAPPED</Name>
+              <NameAliases>
+                <NameAlias lang="en">Trapped</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>CONFINEMENT</Name>
+              <NameAliases>
+                <NameAlias lang="en">Confinement</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNINTENDEDCOLLAPSE</Name>
+              <NameAliases>
+                <NameAlias lang="en">Unintended collapse</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>CRUSHING</Name>
+              <NameAliases>
+                <NameAlias lang="en">Crushed by excavation</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>ASPHIXIATION</Name>
+              <NameAliases>
+                <NameAlias lang="en">Asphixiation</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>DROWNINGANDFLOODING</Name>
+              <NameAliases>
+                <NameAlias lang="en">Drowning and flooding</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>EVENT</Name>
+              <NameAliases>
+                <NameAlias lang="en">Event</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>ELECTRICSHOCK</Name>
+              <NameAliases>
+                <NameAlias lang="en">Electric shock</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>FIRE_EXPLOSION</Name>
+              <NameAliases>
+                <NameAlias lang="en">Fire/explosion</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>MACHINERYGUARDING</Name>
+              <NameAliases>
+                <NameAlias lang="en">Machinery Guarding</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>HANDLING</Name>
+              <NameAliases>
+                <NameAlias lang="en">Handling</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>MATERIALSHANDLING</Name>
+              <NameAliases>
+                <NameAlias lang="en">Materials handling including manual handling</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>MECHANICAL_LIFTING</Name>
+              <NameAliases>
+                <NameAlias lang="en">Mechanical lifting operations</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>MOBILE_ELEVATEDWORKPLATFORM</Name>
+              <NameAliases>
+                <NameAlias lang="en">Mobile Elevating Work Platform operations</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>WORKINGOVERHEAD</Name>
+              <NameAliases>
+                <NameAlias lang="en">Working overhead</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>STRUCK</Name>
+              <NameAliases>
+                <NameAlias lang="en">Struck</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>STRUCKFALLINFOBJECT</Name>
+              <NameAliases>
+                <NameAlias lang="en">Struck by falling object</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>STRUCKVEHICLE</Name>
+              <NameAliases>
+                <NameAlias lang="en">Struck by moving vehicle</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OVERTURINGPLANT</Name>
+              <NameAliases>
+                <NameAlias lang="en">Overturning plant or moving machinery</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>PUBLICPROTECTIONISSUES</Name>
+              <NameAliases>
+                <NameAlias lang="en">Public protection issues</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>ENVIRONMENTALISSUES</Name>
+              <NameAliases>
+                <NameAlias lang="en">Environmental issues</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>BUSINESSISSUES</Name>
+              <NameAliases>
+                <NameAlias lang="en">Business Issues</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>COMMERICALISSUES</Name>
+              <NameAliases>
+                <NameAlias lang="en">Commercial issues</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>INSURANCE_ISSUES</Name>
+              <NameAliases>
+                <NameAlias lang="en">Insurance Issues</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OPERATIONALISSUES</Name>
+              <NameAliases>
+                <NameAlias lang="en">Operational issues</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>SOCIALISSUES</Name>
+              <NameAliases>
+                <NameAlias lang="en">Social issues</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHERISSUES</Name>
+              <NameAliases>
+                <NameAlias lang="en">Other issues</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
           </ConstantList>
         </TypePropertyEnumeratedValue>
       </PropertyType>
-      <NameAliases>
-        <NameAlias lang="en">Risk Type</NameAlias>
-      </NameAliases>
-      <DefinitionAliases>
-        <DefinitionAlias lang="en" />
-      </DefinitionAliases>
+      <NameAliases />
+      <DefinitionAliases />
     </PropertyDef>
-    <PropertyDef ifdguid="1495fe00d20111e1800000215ad4efdf">
+    <PropertyDef ifdguid="18f2ceabc94b4e6ba45cec5d9ffa8337">
       <Name>NatureOfRisk</Name>
-      <Definition>An indication of the generic nature of the risk that might be encountered. 
-
-NOTE: It is anticipated that there will be a local agreement that constrains the values that might be assigned to this property. An example might be 'Fall'  or 'Fall of grille unit' causing injury and damage to person and property.</Definition>
+      <Definition>A description of the generic nature of the context or hazard that might be encountered.</Definition>
       <PropertyType>
         <TypePropertySingleValue>
           <DataType type="IfcLabel" />
         </TypePropertySingleValue>
       </PropertyType>
-      <NameAliases>
-        <NameAlias lang="en">Nature Of Risk</NameAlias>
-      </NameAliases>
-      <DefinitionAliases>
-        <DefinitionAlias lang="en" />
-      </DefinitionAliases>
+      <NameAliases />
+      <DefinitionAliases />
     </PropertyDef>
-    <PropertyDef ifdguid="1bbd0c00d20111e1800000215ad4efdf">
-      <Name>SubNatureOfRisk1</Name>
-      <Definition>A first subsidiary value that might be assigned to designate a more specific type of risk.
-
-NOTE: Nature of risk may be identified in various ways depending upon the place where risk assessment takes place and according to local agreement. This property set allows for a generic nature of risk and up to two subsidiary natures. An example might be 'causing injury and damage'.</Definition>
+    <PropertyDef ifdguid="0932f5c6091d4726b0de6e8232c2a6c9">
+      <Name>RiskAssessmentMethodology</Name>
+      <Definition>An indication or link to the chosen risk assessment methodology, for example PAS1192-6 or a chosen ISO13100 annex.</Definition>
       <PropertyType>
         <TypePropertySingleValue>
           <DataType type="IfcLabel" />
         </TypePropertySingleValue>
       </PropertyType>
-      <NameAliases>
-        <NameAlias lang="en">Sub Nature Of Risk1</NameAlias>
-      </NameAliases>
-      <DefinitionAliases>
-        <DefinitionAlias lang="en" />
-      </DefinitionAliases>
+      <NameAliases />
+      <DefinitionAliases />
     </PropertyDef>
-    <PropertyDef ifdguid="224b8380d20111e1800000215ad4efdf">
-      <Name>SubNatureOfRisk2</Name>
-      <Definition>A second subsidiary value that might be assigned to designate a more specific type of risk. An example might be 'o person and property'.</Definition>
-      <PropertyType>
-        <TypePropertySingleValue>
-          <DataType type="IfcLabel" />
-        </TypePropertySingleValue>
-      </PropertyType>
-      <NameAliases>
-        <NameAlias lang="en">Sub Nature Of Risk2</NameAlias>
-      </NameAliases>
-      <DefinitionAliases>
-        <DefinitionAlias lang="en" />
-      </DefinitionAliases>
-    </PropertyDef>
-    <PropertyDef ifdguid="29729180d20111e1800000215ad4efdf">
-      <Name>RiskCause</Name>
-      <Definition>A value that may be assigned to capture the cause or trigger for the risk. An example might be 'poor fixing'.</Definition>
-      <PropertyType>
-        <TypePropertySingleValue>
-          <DataType type="IfcText" />
-        </TypePropertySingleValue>
-      </PropertyType>
-      <NameAliases>
-        <NameAlias lang="en">Risk Cause</NameAlias>
-      </NameAliases>
-      <DefinitionAliases>
-        <DefinitionAlias lang="en" />
-      </DefinitionAliases>
-    </PropertyDef>
-    <PropertyDef ifdguid="30010900d20111e1800000215ad4efdf">
-      <Name>AssessmentOfRisk</Name>
-      <Definition>Likelihood of risk event occurring.
-
-Note  that assessment of risk may frequently be associated with the physical location of the object for which the risk is assessed.</Definition>
-      <PropertyType>
-        <TypePropertyEnumeratedValue>
-          <EnumList name="PEnum_RiskAssessment">
-            <EnumItem>ALMOSTCERTAIN</EnumItem>
-            <EnumItem>VERYLIKELY</EnumItem>
-            <EnumItem>LIKELY</EnumItem>
-            <EnumItem>VERYPOSSIBLE</EnumItem>
-            <EnumItem>POSSIBLE</EnumItem>
-            <EnumItem>SOMEWHATPOSSIBLE</EnumItem>
-            <EnumItem>UNLIKELY</EnumItem>
-            <EnumItem>VERYUNLIKELY</EnumItem>
-            <EnumItem>RARE</EnumItem>
-            <EnumItem>OTHER</EnumItem>
-            <EnumItem>NOTKNOWN</EnumItem>
-            <EnumItem>UNSET</EnumItem>
-          </EnumList>
-          <ConstantList>
-            <ConstantDef>
-              <Name>ALMOSTCERTAIN</Name>
-              <NameAliases>
-                <NameAlias lang="en">Almost Certain</NameAlias>
-              </NameAliases>
-              <DefinitionAliases />
-            </ConstantDef>
-            <ConstantDef>
-              <Name>VERYLIKELY</Name>
-              <NameAliases>
-                <NameAlias lang="en">Very Likely</NameAlias>
-              </NameAliases>
-              <DefinitionAliases />
-            </ConstantDef>
-            <ConstantDef>
-              <Name>LIKELY</Name>
-              <NameAliases>
-                <NameAlias lang="en">Likely</NameAlias>
-              </NameAliases>
-              <DefinitionAliases />
-            </ConstantDef>
-            <ConstantDef>
-              <Name>VERYPOSSIBLE</Name>
-              <NameAliases>
-                <NameAlias lang="en">Very Possible</NameAlias>
-              </NameAliases>
-              <DefinitionAliases />
-            </ConstantDef>
-            <ConstantDef>
-              <Name>POSSIBLE</Name>
-              <NameAliases>
-                <NameAlias lang="en">Possible</NameAlias>
-              </NameAliases>
-              <DefinitionAliases />
-            </ConstantDef>
-            <ConstantDef>
-              <Name>SOMEWHATPOSSIBLE</Name>
-              <NameAliases>
-                <NameAlias lang="en">Somewhat Possible</NameAlias>
-              </NameAliases>
-              <DefinitionAliases />
-            </ConstantDef>
-            <ConstantDef>
-              <Name>UNLIKELY</Name>
-              <NameAliases>
-                <NameAlias lang="en">Unlikely</NameAlias>
-              </NameAliases>
-              <DefinitionAliases />
-            </ConstantDef>
-            <ConstantDef>
-              <Name>VERYUNLIKELY</Name>
-              <NameAliases>
-                <NameAlias lang="en">Very Unlikely</NameAlias>
-              </NameAliases>
-              <DefinitionAliases />
-            </ConstantDef>
-            <ConstantDef>
-              <Name>RARE</Name>
-              <NameAliases>
-                <NameAlias lang="en">Rare</NameAlias>
-              </NameAliases>
-              <DefinitionAliases />
-            </ConstantDef>
-            <ConstantDef>
-              <Name>OTHER</Name>
-              <NameAliases>
-                <NameAlias lang="en">(other)</NameAlias>
-              </NameAliases>
-              <DefinitionAliases>
-                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
-              </DefinitionAliases>
-            </ConstantDef>
-            <ConstantDef>
-              <Name>NOTKNOWN</Name>
-              <NameAliases>
-                <NameAlias lang="en">(unknown)</NameAlias>
-              </NameAliases>
-              <DefinitionAliases>
-                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
-              </DefinitionAliases>
-            </ConstantDef>
-            <ConstantDef>
-              <Name>UNSET</Name>
-              <NameAliases>
-                <NameAlias lang="en">(unset)</NameAlias>
-              </NameAliases>
-              <DefinitionAliases>
-                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
-              </DefinitionAliases>
-            </ConstantDef>
-          </ConstantList>
-        </TypePropertyEnumeratedValue>
-      </PropertyType>
-      <NameAliases>
-        <NameAlias lang="en">Assessment Of Risk</NameAlias>
-      </NameAliases>
-      <DefinitionAliases>
-        <DefinitionAlias lang="en" />
-      </DefinitionAliases>
-    </PropertyDef>
-    <PropertyDef ifdguid="44dd9c80d20111e1800000215ad4efdf">
-      <Name>RiskConsequence</Name>
-      <Definition>Indicates the level of severity of the consequences that the risk would have in case it happens.</Definition>
-      <PropertyType>
-        <TypePropertyEnumeratedValue>
-          <EnumList name="PEnum_RiskConsequence">
-            <EnumItem>CATASTROPHIC</EnumItem>
-            <EnumItem>SEVERE</EnumItem>
-            <EnumItem>MAJOR</EnumItem>
-            <EnumItem>CONSIDERABLE</EnumItem>
-            <EnumItem>MODERATE</EnumItem>
-            <EnumItem>SOME</EnumItem>
-            <EnumItem>MINOR</EnumItem>
-            <EnumItem>VERYLOW</EnumItem>
-            <EnumItem>INSIGNIFICANT</EnumItem>
-            <EnumItem>OTHER</EnumItem>
-            <EnumItem>NOTKNOWN</EnumItem>
-            <EnumItem>UNSET</EnumItem>
-          </EnumList>
-          <ConstantList>
-            <ConstantDef>
-              <Name>CATASTROPHIC</Name>
-              <NameAliases>
-                <NameAlias lang="en">Catastrophic</NameAlias>
-              </NameAliases>
-              <DefinitionAliases />
-            </ConstantDef>
-            <ConstantDef>
-              <Name>SEVERE</Name>
-              <NameAliases>
-                <NameAlias lang="en">Severe</NameAlias>
-              </NameAliases>
-              <DefinitionAliases />
-            </ConstantDef>
-            <ConstantDef>
-              <Name>MAJOR</Name>
-              <NameAliases>
-                <NameAlias lang="en">Major</NameAlias>
-              </NameAliases>
-              <DefinitionAliases />
-            </ConstantDef>
-            <ConstantDef>
-              <Name>CONSIDERABLE</Name>
-              <NameAliases>
-                <NameAlias lang="en">Considerable</NameAlias>
-              </NameAliases>
-              <DefinitionAliases />
-            </ConstantDef>
-            <ConstantDef>
-              <Name>MODERATE</Name>
-              <NameAliases>
-                <NameAlias lang="en">Moderate</NameAlias>
-              </NameAliases>
-              <DefinitionAliases />
-            </ConstantDef>
-            <ConstantDef>
-              <Name>SOME</Name>
-              <NameAliases>
-                <NameAlias lang="en">Some</NameAlias>
-              </NameAliases>
-              <DefinitionAliases />
-            </ConstantDef>
-            <ConstantDef>
-              <Name>MINOR</Name>
-              <NameAliases>
-                <NameAlias lang="en">Minor</NameAlias>
-              </NameAliases>
-              <DefinitionAliases />
-            </ConstantDef>
-            <ConstantDef>
-              <Name>VERYLOW</Name>
-              <NameAliases>
-                <NameAlias lang="en">Very Low</NameAlias>
-              </NameAliases>
-              <DefinitionAliases />
-            </ConstantDef>
-            <ConstantDef>
-              <Name>INSIGNIFICANT</Name>
-              <NameAliases>
-                <NameAlias lang="en">Insignificant</NameAlias>
-              </NameAliases>
-              <DefinitionAliases />
-            </ConstantDef>
-            <ConstantDef>
-              <Name>OTHER</Name>
-              <NameAliases>
-                <NameAlias lang="en">(other)</NameAlias>
-              </NameAliases>
-              <DefinitionAliases>
-                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
-              </DefinitionAliases>
-            </ConstantDef>
-            <ConstantDef>
-              <Name>NOTKNOWN</Name>
-              <NameAliases>
-                <NameAlias lang="en">(unknown)</NameAlias>
-              </NameAliases>
-              <DefinitionAliases>
-                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
-              </DefinitionAliases>
-            </ConstantDef>
-            <ConstantDef>
-              <Name>UNSET</Name>
-              <NameAliases>
-                <NameAlias lang="en">(unset)</NameAlias>
-              </NameAliases>
-              <DefinitionAliases>
-                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
-              </DefinitionAliases>
-            </ConstantDef>
-          </ConstantList>
-        </TypePropertyEnumeratedValue>
-      </PropertyType>
-      <NameAliases>
-        <NameAlias lang="en">Risk Consequence</NameAlias>
-      </NameAliases>
-      <DefinitionAliases>
-        <DefinitionAlias lang="en" />
-      </DefinitionAliases>
-    </PropertyDef>
-    <PropertyDef ifdguid="5aeb5d00d20111e1800000215ad4efdf">
-      <Name>RiskRating</Name>
-      <Definition>A general rating of the risk that may be determined from a combination of the risk assessment and risk consequence.</Definition>
+    <PropertyDef ifdguid="56943fdc02b0457f8a3f74be9f086ca4">
+      <Name>UnmitigatedRiskLikelihood</Name>
+      <Definition>Identifies the likelihood of the hazard prior to any specific mitigation.</Definition>
       <PropertyType>
         <TypePropertyEnumeratedValue>
           <EnumList name="PEnum_RiskRating">
@@ -421,6 +527,7 @@ Note  that assessment of risk may frequently be associated with the physical loc
           <ConstantList>
             <ConstantDef>
               <Name>CRITICAL</Name>
+              <Definition>Critical risk</Definition>
               <NameAliases>
                 <NameAlias lang="en">Critical</NameAlias>
               </NameAliases>
@@ -428,6 +535,7 @@ Note  that assessment of risk may frequently be associated with the physical loc
             </ConstantDef>
             <ConstantDef>
               <Name>VERYHIGH</Name>
+              <Definition>Very high risk</Definition>
               <NameAliases>
                 <NameAlias lang="en">Veryhigh</NameAlias>
               </NameAliases>
@@ -435,6 +543,7 @@ Note  that assessment of risk may frequently be associated with the physical loc
             </ConstantDef>
             <ConstantDef>
               <Name>HIGH</Name>
+              <Definition>High risk</Definition>
               <NameAliases>
                 <NameAlias lang="en">High</NameAlias>
               </NameAliases>
@@ -442,6 +551,7 @@ Note  that assessment of risk may frequently be associated with the physical loc
             </ConstantDef>
             <ConstantDef>
               <Name>CONSIDERABLE</Name>
+              <Definition>Considerable risk</Definition>
               <NameAliases>
                 <NameAlias lang="en">Considerable</NameAlias>
               </NameAliases>
@@ -449,6 +559,7 @@ Note  that assessment of risk may frequently be associated with the physical loc
             </ConstantDef>
             <ConstantDef>
               <Name>MODERATE</Name>
+              <Definition>Moderate risk</Definition>
               <NameAliases>
                 <NameAlias lang="en">Moderate</NameAlias>
               </NameAliases>
@@ -456,6 +567,7 @@ Note  that assessment of risk may frequently be associated with the physical loc
             </ConstantDef>
             <ConstantDef>
               <Name>SOME</Name>
+              <Definition>Some risk</Definition>
               <NameAliases>
                 <NameAlias lang="en">Some</NameAlias>
               </NameAliases>
@@ -463,6 +575,7 @@ Note  that assessment of risk may frequently be associated with the physical loc
             </ConstantDef>
             <ConstantDef>
               <Name>LOW</Name>
+              <Definition>Low risk</Definition>
               <NameAliases>
                 <NameAlias lang="en">Low</NameAlias>
               </NameAliases>
@@ -470,6 +583,7 @@ Note  that assessment of risk may frequently be associated with the physical loc
             </ConstantDef>
             <ConstantDef>
               <Name>VERYLOW</Name>
+              <Definition>Very low risk</Definition>
               <NameAliases>
                 <NameAlias lang="en">Verylow</NameAlias>
               </NameAliases>
@@ -477,6 +591,7 @@ Note  that assessment of risk may frequently be associated with the physical loc
             </ConstantDef>
             <ConstantDef>
               <Name>INSIGNIFICANT</Name>
+              <Definition>Insignificant risk</Definition>
               <NameAliases>
                 <NameAlias lang="en">Insignificant</NameAlias>
               </NameAliases>
@@ -484,6 +599,7 @@ Note  that assessment of risk may frequently be associated with the physical loc
             </ConstantDef>
             <ConstantDef>
               <Name>OTHER</Name>
+              <Definition>required category not on scale</Definition>
               <NameAliases>
                 <NameAlias lang="en">(other)</NameAlias>
               </NameAliases>
@@ -493,6 +609,7 @@ Note  that assessment of risk may frequently be associated with the physical loc
             </ConstantDef>
             <ConstantDef>
               <Name>NOTKNOWN</Name>
+              <Definition>Value is unkown</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unknown)</NameAlias>
               </NameAliases>
@@ -502,6 +619,7 @@ Note  that assessment of risk may frequently be associated with the physical loc
             </ConstantDef>
             <ConstantDef>
               <Name>UNSET</Name>
+              <Definition>Value has not been specified</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unset)</NameAlias>
               </NameAliases>
@@ -512,66 +630,104 @@ Note  that assessment of risk may frequently be associated with the physical loc
           </ConstantList>
         </TypePropertyEnumeratedValue>
       </PropertyType>
-      <NameAliases>
-        <NameAlias lang="en">Risk Rating</NameAlias>
-      </NameAliases>
-      <DefinitionAliases>
-        <DefinitionAlias lang="en" />
-      </DefinitionAliases>
+      <NameAliases />
+      <DefinitionAliases />
     </PropertyDef>
-    <PropertyDef ifdguid="7191b400d20111e1800000215ad4efdf">
-      <Name>RiskOwner</Name>
-      <Definition>A determination of who is the owner of the risk by reference to principal roles of organizations within a project. Determination of the specific organization should be by reference to instances of IfcActorRole assigned to instances of IfcOrganization (if assigned).</Definition>
+    <PropertyDef ifdguid="7724a35044ca4f79a8f870c83d86b883">
+      <Name>UnmitigatedRiskConsequence</Name>
+      <Definition>Identifies the consequence of the hazard prior to any specific mitigation.</Definition>
       <PropertyType>
         <TypePropertyEnumeratedValue>
-          <EnumList name="PEnum_RiskOwner">
-            <EnumItem>DESIGNER</EnumItem>
-            <EnumItem>SPECIFIER</EnumItem>
-            <EnumItem>CONSTRUCTOR</EnumItem>
-            <EnumItem>INSTALLER</EnumItem>
-            <EnumItem>MAINTAINER</EnumItem>
+          <EnumList name="PEnum_RiskRating">
+            <EnumItem>CRITICAL</EnumItem>
+            <EnumItem>VERYHIGH</EnumItem>
+            <EnumItem>HIGH</EnumItem>
+            <EnumItem>CONSIDERABLE</EnumItem>
+            <EnumItem>MODERATE</EnumItem>
+            <EnumItem>SOME</EnumItem>
+            <EnumItem>LOW</EnumItem>
+            <EnumItem>VERYLOW</EnumItem>
+            <EnumItem>INSIGNIFICANT</EnumItem>
             <EnumItem>OTHER</EnumItem>
             <EnumItem>NOTKNOWN</EnumItem>
             <EnumItem>UNSET</EnumItem>
           </EnumList>
           <ConstantList>
             <ConstantDef>
-              <Name>DESIGNER</Name>
+              <Name>CRITICAL</Name>
+              <Definition>Critical risk</Definition>
               <NameAliases>
-                <NameAlias lang="en">Designer</NameAlias>
+                <NameAlias lang="en">Critical</NameAlias>
               </NameAliases>
               <DefinitionAliases />
             </ConstantDef>
             <ConstantDef>
-              <Name>SPECIFIER</Name>
+              <Name>VERYHIGH</Name>
+              <Definition>Very high risk</Definition>
               <NameAliases>
-                <NameAlias lang="en">Specifier</NameAlias>
+                <NameAlias lang="en">Veryhigh</NameAlias>
               </NameAliases>
               <DefinitionAliases />
             </ConstantDef>
             <ConstantDef>
-              <Name>CONSTRUCTOR</Name>
+              <Name>HIGH</Name>
+              <Definition>High risk</Definition>
               <NameAliases>
-                <NameAlias lang="en">Constructor</NameAlias>
+                <NameAlias lang="en">High</NameAlias>
               </NameAliases>
               <DefinitionAliases />
             </ConstantDef>
             <ConstantDef>
-              <Name>INSTALLER</Name>
+              <Name>CONSIDERABLE</Name>
+              <Definition>Considerable risk</Definition>
               <NameAliases>
-                <NameAlias lang="en">Installer</NameAlias>
+                <NameAlias lang="en">Considerable</NameAlias>
               </NameAliases>
               <DefinitionAliases />
             </ConstantDef>
             <ConstantDef>
-              <Name>MAINTAINER</Name>
+              <Name>MODERATE</Name>
+              <Definition>Moderate risk</Definition>
               <NameAliases>
-                <NameAlias lang="en">Maintainer</NameAlias>
+                <NameAlias lang="en">Moderate</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>SOME</Name>
+              <Definition>Some risk</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Some</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>LOW</Name>
+              <Definition>Low risk</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Low</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>VERYLOW</Name>
+              <Definition>Very low risk</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Verylow</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>INSIGNIFICANT</Name>
+              <Definition>Insignificant risk</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Insignificant</NameAlias>
               </NameAliases>
               <DefinitionAliases />
             </ConstantDef>
             <ConstantDef>
               <Name>OTHER</Name>
+              <Definition>required category not on scale</Definition>
               <NameAliases>
                 <NameAlias lang="en">(other)</NameAlias>
               </NameAliases>
@@ -581,6 +737,7 @@ Note  that assessment of risk may frequently be associated with the physical loc
             </ConstantDef>
             <ConstantDef>
               <Name>NOTKNOWN</Name>
+              <Definition>Value is unkown</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unknown)</NameAlias>
               </NameAliases>
@@ -590,6 +747,7 @@ Note  that assessment of risk may frequently be associated with the physical loc
             </ConstantDef>
             <ConstantDef>
               <Name>UNSET</Name>
+              <Definition>Value has not been specified</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unset)</NameAlias>
               </NameAliases>
@@ -600,49 +758,576 @@ Note  that assessment of risk may frequently be associated with the physical loc
           </ConstantList>
         </TypePropertyEnumeratedValue>
       </PropertyType>
-      <NameAliases>
-        <NameAlias lang="en">Risk Owner</NameAlias>
-      </NameAliases>
-      <DefinitionAliases>
-        <DefinitionAlias lang="en" />
-      </DefinitionAliases>
+      <NameAliases />
+      <DefinitionAliases />
     </PropertyDef>
-    <PropertyDef ifdguid="81a99380d20111e1800000215ad4efdf">
-      <Name>AffectsSurroundings</Name>
-      <Definition>Indicates wether the risk affects only to the person assigned to that task (FALSE) or if it can also affect to the people in the surroundings (TRUE).
-
-For example, the process of painting would affect all the people in the vicinity of the process.</Definition>
+    <PropertyDef ifdguid="2810074d990a4edc9d3dade96c37188c">
+      <Name>UnmitigatedRiskSignificance</Name>
+      <Definition>Identifies the signifiance of the risk given the likelihood and consequence prior to any specific mitigation.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_RiskRating">
+            <EnumItem>CRITICAL</EnumItem>
+            <EnumItem>VERYHIGH</EnumItem>
+            <EnumItem>HIGH</EnumItem>
+            <EnumItem>CONSIDERABLE</EnumItem>
+            <EnumItem>MODERATE</EnumItem>
+            <EnumItem>SOME</EnumItem>
+            <EnumItem>LOW</EnumItem>
+            <EnumItem>VERYLOW</EnumItem>
+            <EnumItem>INSIGNIFICANT</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>CRITICAL</Name>
+              <Definition>Critical risk</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Critical</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>VERYHIGH</Name>
+              <Definition>Very high risk</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Veryhigh</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>HIGH</Name>
+              <Definition>High risk</Definition>
+              <NameAliases>
+                <NameAlias lang="en">High</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>CONSIDERABLE</Name>
+              <Definition>Considerable risk</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Considerable</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>MODERATE</Name>
+              <Definition>Moderate risk</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Moderate</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>SOME</Name>
+              <Definition>Some risk</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Some</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>LOW</Name>
+              <Definition>Low risk</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Low</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>VERYLOW</Name>
+              <Definition>Very low risk</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Verylow</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>INSIGNIFICANT</Name>
+              <Definition>Insignificant risk</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Insignificant</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <Definition>required category not on scale</Definition>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <Definition>Value is unkown</Definition>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <Definition>Value has not been specified</Definition>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="74c4def10786450d8a8831d9bee31b83">
+      <Name>MitigationPlanned</Name>
+      <Definition>The planned (agreed and irrevocable) mitigation of the likelhood and consequences of the hazard.</Definition>
       <PropertyType>
         <TypePropertySingleValue>
-          <DataType type="IfcBoolean" />
+          <DataType type="IfcLabel" />
         </TypePropertySingleValue>
       </PropertyType>
-      <NameAliases>
-        <NameAlias lang="en">Affects Surroundings</NameAlias>
-      </NameAliases>
-      <DefinitionAliases>
-        <DefinitionAlias lang="en" />
-      </DefinitionAliases>
+      <NameAliases />
+      <DefinitionAliases />
     </PropertyDef>
-    <PropertyDef ifdguid="88d0a180d20111e1800000215ad4efdf">
-      <Name>PreventiveMeassures</Name>
-      <Definition>Identifies preventive measures to be taken to mitigate risk.</Definition>
+    <PropertyDef ifdguid="b0ac39a3f38c4b0185fcc16095d21c7f">
+      <Name>MitigatedRiskLikelihood</Name>
+      <Definition>Identifies the likelihood of the hazard given the planned mitigation.</Definition>
       <PropertyType>
-        <TypePropertyListValue>
-          <ListValue>
-            <DataType type="IfcText" />
-          </ListValue>
-        </TypePropertyListValue>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_RiskRating">
+            <EnumItem>CRITICAL</EnumItem>
+            <EnumItem>VERYHIGH</EnumItem>
+            <EnumItem>HIGH</EnumItem>
+            <EnumItem>CONSIDERABLE</EnumItem>
+            <EnumItem>MODERATE</EnumItem>
+            <EnumItem>SOME</EnumItem>
+            <EnumItem>LOW</EnumItem>
+            <EnumItem>VERYLOW</EnumItem>
+            <EnumItem>INSIGNIFICANT</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>CRITICAL</Name>
+              <Definition>Critical risk</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Critical</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>VERYHIGH</Name>
+              <Definition>Very high risk</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Veryhigh</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>HIGH</Name>
+              <Definition>High risk</Definition>
+              <NameAliases>
+                <NameAlias lang="en">High</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>CONSIDERABLE</Name>
+              <Definition>Considerable risk</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Considerable</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>MODERATE</Name>
+              <Definition>Moderate risk</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Moderate</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>SOME</Name>
+              <Definition>Some risk</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Some</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>LOW</Name>
+              <Definition>Low risk</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Low</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>VERYLOW</Name>
+              <Definition>Very low risk</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Verylow</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>INSIGNIFICANT</Name>
+              <Definition>Insignificant risk</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Insignificant</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <Definition>required category not on scale</Definition>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <Definition>Value is unkown</Definition>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <Definition>Value has not been specified</Definition>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
       </PropertyType>
-      <NameAliases>
-        <NameAlias lang="en">Preventive Meassures</NameAlias>
-      </NameAliases>
-      <DefinitionAliases>
-        <DefinitionAlias lang="en" />
-      </DefinitionAliases>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="8f5b5cc8a816491daae368c217b0d210">
+      <Name>MitigatedRiskConsequence</Name>
+      <Definition>Identifies the consequence of the hazard given the planned mitigation.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_RiskRating">
+            <EnumItem>CRITICAL</EnumItem>
+            <EnumItem>VERYHIGH</EnumItem>
+            <EnumItem>HIGH</EnumItem>
+            <EnumItem>CONSIDERABLE</EnumItem>
+            <EnumItem>MODERATE</EnumItem>
+            <EnumItem>SOME</EnumItem>
+            <EnumItem>LOW</EnumItem>
+            <EnumItem>VERYLOW</EnumItem>
+            <EnumItem>INSIGNIFICANT</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>CRITICAL</Name>
+              <Definition>Critical risk</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Critical</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>VERYHIGH</Name>
+              <Definition>Very high risk</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Veryhigh</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>HIGH</Name>
+              <Definition>High risk</Definition>
+              <NameAliases>
+                <NameAlias lang="en">High</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>CONSIDERABLE</Name>
+              <Definition>Considerable risk</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Considerable</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>MODERATE</Name>
+              <Definition>Moderate risk</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Moderate</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>SOME</Name>
+              <Definition>Some risk</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Some</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>LOW</Name>
+              <Definition>Low risk</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Low</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>VERYLOW</Name>
+              <Definition>Very low risk</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Verylow</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>INSIGNIFICANT</Name>
+              <Definition>Insignificant risk</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Insignificant</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <Definition>required category not on scale</Definition>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <Definition>Value is unkown</Definition>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <Definition>Value has not been specified</Definition>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="e48d6babae8843cd985203b84d33dc40">
+      <Name>MitigatedRiskSignificance</Name>
+      <Definition>Identifies the signifiance of the risk given the mitigation of likelihood and consequence.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_RiskRating">
+            <EnumItem>CRITICAL</EnumItem>
+            <EnumItem>VERYHIGH</EnumItem>
+            <EnumItem>HIGH</EnumItem>
+            <EnumItem>CONSIDERABLE</EnumItem>
+            <EnumItem>MODERATE</EnumItem>
+            <EnumItem>SOME</EnumItem>
+            <EnumItem>LOW</EnumItem>
+            <EnumItem>VERYLOW</EnumItem>
+            <EnumItem>INSIGNIFICANT</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>CRITICAL</Name>
+              <Definition>Critical risk</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Critical</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>VERYHIGH</Name>
+              <Definition>Very high risk</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Veryhigh</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>HIGH</Name>
+              <Definition>High risk</Definition>
+              <NameAliases>
+                <NameAlias lang="en">High</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>CONSIDERABLE</Name>
+              <Definition>Considerable risk</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Considerable</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>MODERATE</Name>
+              <Definition>Moderate risk</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Moderate</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>SOME</Name>
+              <Definition>Some risk</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Some</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>LOW</Name>
+              <Definition>Low risk</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Low</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>VERYLOW</Name>
+              <Definition>Very low risk</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Verylow</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>INSIGNIFICANT</Name>
+              <Definition>Insignificant risk</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Insignificant</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <Definition>required category not on scale</Definition>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <Definition>Value is unkown</Definition>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <Definition>Value has not been specified</Definition>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="0a3da282d70243248c22f964519aa0de">
+      <Name>MitigationProposed</Name>
+      <Definition>Any proposed, but not yet agreed and irrevocable, mitigation of the likelhood and consequences of the hazard.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="432690e38f4044c39d0a7691ac65c4c3">
+      <Name>AssociatedProduct</Name>
+      <Definition>An indication or link to any associated product or material that may trigger the hazard. If used directly on an annotation or semantic object. for an alternative see group use encording template</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="8a3c59a6eee34dbd84183e0b8749d92c">
+      <Name>AssociatedActivity</Name>
+      <Definition>An indication or link to any associated activity or process that may trigger the hazard. If used directly on an annotation or semantic object. for an alternative see group use encording template</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="147db099a93c44fb896f5aa2c8efbe8d">
+      <Name>AssociatedLocation</Name>
+      <Definition>An indication or link to any associated location or space that may trigger the hazard. If used directly on an annotation or semantic object. for an alternative see group use encording template</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
     </PropertyDef>
   </PropertyDefs>
-  <PsetDefinitionAliases>
-    <PsetDefinitionAlias lang="en" />
-  </PsetDefinitionAliases>
+  <PsetDefinitionAliases />
 </PropertySetDef>

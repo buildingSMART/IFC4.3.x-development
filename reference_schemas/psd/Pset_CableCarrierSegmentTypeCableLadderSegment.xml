@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="72592480d1c611e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
-  <IfcVersion version="IFC4x3_RC2" />
+  <IfcVersion version="IFC4x3_RC4" />
   <Name>Pset_CableCarrierSegmentTypeCableLadderSegment</Name>
   <Definition>An open carrier segment on which cables are carried on a ladder structure.
 HISTORY: IFC4 - NominalLength deleted. To be handled as a quantity measure.</Definition>
@@ -10,12 +10,12 @@ HISTORY: IFC4 - NominalLength deleted. To be handled as a quantity measure.</Def
   </ApplicableClasses>
   <ApplicableTypeValue>IfcCableCarrierSegment/CABLELADDERSEGMENT</ApplicableTypeValue>
   <PropertyDefs>
-    <PropertyDef ifdguid="78e79c00d1c611e1800000215ad4efdf">
+    <PropertyDef ifdguid="a28e9f226e204a909976810e633a45f4">
       <Name>NominalWidth</Name>
-      <Definition>The nominal width of the segment.</Definition>
+      <Definition>The nominal width of the object.</Definition>
       <PropertyType>
         <TypePropertySingleValue>
-          <DataType type="IfcPositiveLengthMeasure" />
+          <DataType type="IfcNonNegativeLengthMeasure" />
         </TypePropertySingleValue>
       </PropertyType>
       <NameAliases>
@@ -26,7 +26,7 @@ HISTORY: IFC4 - NominalLength deleted. To be handled as a quantity measure.</Def
       <DefinitionAliases>
         <DefinitionAlias lang="en" />
         <DefinitionAlias lang="ja-JP">呼び幅寸法。</DefinitionAlias>
-        <DefinitionAlias lang="ko-KR">폭 치수.</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">폭 치수</DefinitionAlias>
       </DefinitionAliases>
     </PropertyDef>
     <PropertyDef ifdguid="7e44e680d1c611e1800000215ad4efdf">

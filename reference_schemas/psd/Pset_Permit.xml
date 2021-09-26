@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="58cdd200d1f211e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
-  <IfcVersion version="IFC4x3_RC2" />
+  <IfcVersion version="IFC4x3_RC4" />
   <Name>Pset_Permit</Name>
   <Definition>A permit is a document that allows permission to gain access to an area or carry out work in a situation where security or other access restrictions apply.
 HISTORY: IFC4 EndDate added. PermitType, PermitDuration, StartTime and EndTime are deleted.</Definition>

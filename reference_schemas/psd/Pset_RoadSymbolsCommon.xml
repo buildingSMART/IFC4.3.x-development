@@ -1,12 +1,13 @@
 <?xml version="1.0"?>
 <PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="1beaa2e6a4a14d14a2c7ba651e6baec6" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
-  <IfcVersion version="IFC4x3_RC2" />
+  <IfcVersion version="IFC4x3_RC4" />
   <Name>Pset_RoadSymbolsCommon</Name>
+  <Definition>Properties for road symbols.</Definition>
   <Applicability />
   <ApplicableClasses>
-    <ClassName>IfcSurf/SYMBOLMARKING</ClassName>
+    <ClassName>IfcSurfaceFeature/(.SYMBOLMARKING.)</ClassName>
   </ApplicableClasses>
-  <ApplicableTypeValue>IfcSurf/SYMBOLMARKING</ApplicableTypeValue>
+  <ApplicableTypeValue>IfcSurfaceFeature/(.SYMBOLMARKING.)</ApplicableTypeValue>
   <PropertyDefs>
     <PropertyDef ifdguid="ebd38aa8ddd646f08a9a588f0bc095af">
       <Name>Text</Name>
@@ -19,9 +20,9 @@
       <NameAliases />
       <DefinitionAliases />
     </PropertyDef>
-    <PropertyDef ifdguid="d4e2a5494cce4342b04baf8575b307d8">
-      <Name>Type</Name>
-      <Definition>A symbol designator with content according to local standards, e.g.  'BycycleCrossing', 'RoadStuds', 'SpeedBump', 'TransverseBar', 'BusStop', 'Chevron', 'Hatched', 'KeepClear', 'BoxJunction', 'EmergencyExit', 'Intersection', 'Junction'</Definition>
+    <PropertyDef ifdguid="fec5ed14d21e43eeba124e8eb03952d0">
+      <Name>TypeDesignation</Name>
+      <Definition>Type designator according to local standards</Definition>
       <PropertyType>
         <TypePropertySingleValue>
           <DataType type="IfcLabel" />

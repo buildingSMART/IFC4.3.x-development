@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="71d38480d1ec11e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
-  <IfcVersion version="IFC4x3_RC2" />
+  <IfcVersion version="IFC4x3_RC4" />
   <Name>Pset_ManufacturerTypeInformation</Name>
   <Definition>Defines characteristics of types (ranges) of manufactured products that may be given by the manufacturer. Note that the term 'manufactured' may also be used to refer to products that are supplied and identified by the supplier or that are assembled off site by a third party provider. 
 HISTORY: This property set replaces the entity IfcManufacturerInformation from previous IFC releases. IFC 2x4: AssemblyPlace property added.</Definition>
@@ -137,6 +137,7 @@ HISTORY: This property set replaces the entity IfcManufacturerInformation from p
             </ConstantDef>
             <ConstantDef>
               <Name>OTHER</Name>
+              <Definition>required category not on scale</Definition>
               <NameAliases>
                 <NameAlias lang="en">(other)</NameAlias>
               </NameAliases>
@@ -146,6 +147,7 @@ HISTORY: This property set replaces the entity IfcManufacturerInformation from p
             </ConstantDef>
             <ConstantDef>
               <Name>NOTKNOWN</Name>
+              <Definition>Value is unkown</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unknown)</NameAlias>
               </NameAliases>
@@ -155,6 +157,7 @@ HISTORY: This property set replaces the entity IfcManufacturerInformation from p
             </ConstantDef>
             <ConstantDef>
               <Name>UNSET</Name>
+              <Definition>Value has not been specified</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unset)</NameAlias>
               </NameAliases>
@@ -171,6 +174,33 @@ HISTORY: This property set replaces the entity IfcManufacturerInformation from p
       <DefinitionAliases>
         <DefinitionAlias lang="en" />
       </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="1288897e549844d8a1dd6041edf590fe">
+      <Name>OperationalDocument</Name>
+      <Definition>Manufacturer's operational document</Definition>
+      <PropertyType>
+        <TypePropertyReferenceValue reftype="IfcExternalReference" />
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="32b16c286d174a548e8ff8f0b37f921d">
+      <Name>SafetyDocument</Name>
+      <Definition>Manufacturer's safety document</Definition>
+      <PropertyType>
+        <TypePropertyReferenceValue reftype="IfcDocumentReference" />
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="d1bc54c4a7f44cbfb6438497fd443f0f">
+      <Name>PerformanceCertificate</Name>
+      <Definition>Manufacturer's performance certificate</Definition>
+      <PropertyType>
+        <TypePropertyReferenceValue reftype="IfcDocumentReference" />
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
     </PropertyDef>
   </PropertyDefs>
   <PsetDefinitionAliases>

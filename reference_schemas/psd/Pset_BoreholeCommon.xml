@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="83311c118f5a4dbeb6d0d8b5872e4134" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
-  <IfcVersion version="IFC4x3_RC2" />
+  <IfcVersion version="IFC4x3_RC4" />
   <Name>Pset_BoreholeCommon</Name>
-  <Definition>Properties describing the features of a borehole (if not modelled separately).</Definition>
+  <Definition>Properties describing the features of a borehole (If not modelled separately).</Definition>
   <Applicability />
   <ApplicableClasses>
     <ClassName>IfcBorehole</ClassName>

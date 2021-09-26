@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="77479c265e53461cadd2d1a373ab1745" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
-  <IfcVersion version="IFC4x3_RC2" />
+  <IfcVersion version="IFC4x3_RC4" />
   <Name>Pset_SolidStratumComposition</Name>
   <Definition>Properties expressing the composition of a stratum using volume measures, implementing ISO14688 Part 2 Table 1 Primary fractions and composite fractions. Regional and National conventions should be captured through classification and specific property sets. Zero values may be omitted.</Definition>
   <Applicability />
@@ -137,6 +137,207 @@
         <TypePropertySingleValue>
           <DataType type="IfcVolumeMeasure" />
         </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="f9754785af394505ae68218963eab793">
+      <Name>CompositeFractions</Name>
+      <Definition>Denomination into soil groups by composite fractions</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_SoilCompositeFractions">
+            <EnumItem>BOULDERS</EnumItem>
+            <EnumItem>BOULDERS_WITH_COBBLES</EnumItem>
+            <EnumItem>BOULDERS_WITH_FINER_SOILS</EnumItem>
+            <EnumItem>GRAVEL_WITH_COBBLES</EnumItem>
+            <EnumItem>GRAVEL</EnumItem>
+            <EnumItem>SANDY_GRAVEL_WITH_COBBLES</EnumItem>
+            <EnumItem>SANDY_GRAVEL</EnumItem>
+            <EnumItem>GRAVEL_WITH_CLAY_OR_SILT</EnumItem>
+            <EnumItem>GRAVELLY_SAND</EnumItem>
+            <EnumItem>SAND</EnumItem>
+            <EnumItem>SAND_WITH_CLAY_AND_SILT</EnumItem>
+            <EnumItem>SANDY_SILT</EnumItem>
+            <EnumItem>SANDY_GRAVELLY_SILT</EnumItem>
+            <EnumItem>SANDY_CLAYEY_SILT</EnumItem>
+            <EnumItem>CLAYEY_SILT</EnumItem>
+            <EnumItem>SILTY_CLAY</EnumItem>
+            <EnumItem>SANDY_GRAVELLY_CLAY</EnumItem>
+            <EnumItem>SILT</EnumItem>
+            <EnumItem>CLAY</EnumItem>
+            <EnumItem>ORGANIC_SILT</EnumItem>
+            <EnumItem>ORGANIC_CLAY</EnumItem>
+            <EnumItem>SANDY_PEAT</EnumItem>
+            <EnumItem>FILL</EnumItem>
+            <EnumItem>COBBLES</EnumItem>
+            <EnumItem>COBBLES_WITH_BOULDERS</EnumItem>
+            <EnumItem>COBBLES_WITH_FINER_SOILS</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET.</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>BOULDERS</Name>
+              <Definition />
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>BOULDERS_WITH_COBBLES</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>BOULDERS_WITH_FINER_SOILS</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>GRAVEL_WITH_COBBLES</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>GRAVEL</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>SANDY_GRAVEL_WITH_COBBLES</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>SANDY_GRAVEL</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>GRAVEL_WITH_CLAY_OR_SILT</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>GRAVELLY_SAND</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>SAND</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>SAND_WITH_CLAY_AND_SILT</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>SANDY_SILT</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>SANDY_GRAVELLY_SILT</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>SANDY_CLAYEY_SILT</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>CLAYEY_SILT</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>SILTY_CLAY</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>SANDY_GRAVELLY_CLAY</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>SILT</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>CLAY</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>ORGANIC_SILT</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>ORGANIC_CLAY</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>SANDY_PEAT</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>FILL</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>COBBLES</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>COBBLES_WITH_BOULDERS</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>COBBLES_WITH_FINER_SOILS</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <Definition>required category not on scale</Definition>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <Definition>Value is unkown</Definition>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET.</Name>
+              <NameAliases>
+                <NameAlias lang="en">Unset.</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
       </PropertyType>
       <NameAliases />
       <DefinitionAliases />

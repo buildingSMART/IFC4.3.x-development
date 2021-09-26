@@ -1,31 +1,49 @@
 <?xml version="1.0"?>
 <PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="b233d75ed40c4561b2dea7f32d713442" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
-  <IfcVersion version="IFC4x3_RC2" />
+  <IfcVersion version="IFC4x3_RC4" />
   <Name>Pset_PavementMillingCommon</Name>
+  <Definition>Properties for pavement milling.</Definition>
   <Applicability />
-  <ApplicableClasses />
+  <ApplicableClasses>
+    <ClassName>IfcEarthworksCut/(.PAVEMENTMILLING.)</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcEarthworksCut/(.PAVEMENTMILLING.)</ApplicableTypeValue>
   <PropertyDefs>
-    <PropertyDef ifdguid="b75401b9936344179b0b55722cbb46e6">
-      <Name>Depth</Name>
-      <Definition>The nominal milling depth. The size information is provided in addition to the shape representation and the geometric parameters used within. In cases of inconsistency between the geometric parameters and the size properties, provided in the attached property set, the geometric parameters take precedence.</Definition>
+    <PropertyDef ifdguid="118f1380d1e911e1800000215ad4efdf">
+      <Name>NominalDepth</Name>
+      <Definition>Nominal Depth of the object</Definition>
       <PropertyType>
         <TypePropertySingleValue>
-          <DataType type="IfcPositiveLengthMeasure" />
+          <DataType type="IfcNonNegativeLengthMeasure" />
         </TypePropertySingleValue>
       </PropertyType>
-      <NameAliases />
-      <DefinitionAliases />
+      <NameAliases>
+        <NameAlias lang="en">Nominal Depth</NameAlias>
+        <NameAlias lang="ja-JP">深さ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">装置の基礎に配管吸入口から測定した深さ。</DefinitionAlias>
+      </DefinitionAliases>
     </PropertyDef>
-    <PropertyDef ifdguid="32d4421cc9b54a40a8045aeced141af6">
-      <Name>Width</Name>
-      <Definition>The nominal width of the milling. The size information is provided in addition to the shape representation and the geometric parameters used within. In cases of inconsistency between the geometric parameters and the size properties, provided in the attached property set, the geometric parameters take precedence.</Definition>
+    <PropertyDef ifdguid="a28e9f226e204a909976810e633a45f4">
+      <Name>NominalWidth</Name>
+      <Definition>The nominal width of the object.</Definition>
       <PropertyType>
         <TypePropertySingleValue>
-          <DataType type="IfcPositiveLengthMeasure" />
+          <DataType type="IfcNonNegativeLengthMeasure" />
         </TypePropertySingleValue>
       </PropertyType>
-      <NameAliases />
-      <DefinitionAliases />
+      <NameAliases>
+        <NameAlias lang="en">Nominal Width</NameAlias>
+        <NameAlias lang="ja-JP">公称幅</NameAlias>
+        <NameAlias lang="ko-KR">공칭 폭</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">呼び幅寸法。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">폭 치수</DefinitionAlias>
+      </DefinitionAliases>
     </PropertyDef>
   </PropertyDefs>
   <PsetDefinitionAliases />

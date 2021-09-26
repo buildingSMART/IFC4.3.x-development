@@ -1,18 +1,56 @@
 <?xml version="1.0"?>
 <PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="94d6b7401a364f72811f3dcef7b2dbab" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
-  <IfcVersion version="IFC4x3_RC2" />
+  <IfcVersion version="IFC4x3_RC4" />
   <Name>Pset_Superelevation</Name>
   <Definition>Specifices the general properties for a Superelevation event.</Definition>
   <Applicability />
-  <ApplicableClasses />
+  <ApplicableClasses>
+    <ClassName>IfcAnnotation/(.SUPERELEVATIONEVENT.)</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcAnnotation/(.SUPERELEVATIONEVENT.)</ApplicableTypeValue>
   <PropertyDefs>
-    <PropertyDef ifdguid="a06240e92da94ab292aefb5ae9928022">
+    <PropertyDef ifdguid="52834ea804d7431d89717aa6920072cf">
       <Name>Side</Name>
-      <Definition>Specifies if the superelevation is measured to the RIGHT or to the LEFT of the curve referenced by the placement, or if the same value is applied to BOTH sides.</Definition>
+      <Definition>Specifies if the width is measured to the RIGHT or to the LEFT of the curve referenced by the placement, or if the same value is applied to BOTH sides.</Definition>
       <PropertyType>
-        <TypePropertySingleValue>
-          <DataType />
-        </TypePropertySingleValue>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_SideType">
+            <EnumItem>LEFT</EnumItem>
+            <EnumItem>RIGHT</EnumItem>
+            <EnumItem>BOTH</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>LEFT</Name>
+              <Definition>Left side</Definition>
+              <NameAliases>
+                <NameAlias lang="en" />
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Left side</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>RIGHT</Name>
+              <Definition>Right side</Definition>
+              <NameAliases>
+                <NameAlias lang="en" />
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Right side</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>BOTH</Name>
+              <NameAliases>
+                <NameAlias lang="en" />
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Both sides</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
       </PropertyType>
       <NameAliases />
       <DefinitionAliases />
@@ -29,12 +67,26 @@
       <DefinitionAliases />
     </PropertyDef>
     <PropertyDef ifdguid="7750fcb38c9241d0b6bfa8abeaa576f0">
-      <Name>Transition</Name>
+      <Name>TransitionSuperelevation</Name>
       <Definition>The type of transition of superelevation from previous event to this one.</Definition>
       <PropertyType>
-        <TypePropertySingleValue>
-          <DataType />
-        </TypePropertySingleValue>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_TransitionSuperelevationType">
+            <EnumItem>LINEAR</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>LINEAR</Name>
+              <NameAliases>
+                <NameAlias lang="en" />
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Specifies that the transition of the superelevation between the previous superelevation event and this event shall be linearly interpolated.
+</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
       </PropertyType>
       <NameAliases />
       <DefinitionAliases />

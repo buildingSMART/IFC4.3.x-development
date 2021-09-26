@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="b4dc6471beb74326b19176f8d8247f21" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
-  <IfcVersion version="IFC4x3_RC2" />
+  <IfcVersion version="IFC4x3_RC4" />
   <Name>Pset_StructuralSurfaceMemberVaryingThickness</Name>
   <Definition>Thickness parameters of a surface member (structural analysis item) with varying thickness, particularly with linearly varying thickness.  The thickness is interpolated/ extrapolated from three points.  The locations of these points are given either in local x,y coordinates of the surface member or in global X,Y,Z coordinates.  Either way, these points are required to be located within the face or at the bounds of the face  of the surface member, and they must not be located on a common line.  Local and global coordinates shall not be mixed within the same property set instance.</Definition>
   <Applicability />

@@ -1,13 +1,15 @@
 <?xml version="1.0"?>
 <PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="d1219c80d1cc11e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
-  <IfcVersion version="IFC4x3_RC2" />
+  <IfcVersion version="IFC4x3_RC4" />
   <Name>Pset_Condition</Name>
   <Definition>Determines the state or condition of an element at a particular point in time.</Definition>
   <Applicability />
   <ApplicableClasses>
     <ClassName>IfcElement</ClassName>
+    <ClassName>IfcSystem</ClassName>
+    <ClassName>IfcAsset</ClassName>
   </ApplicableClasses>
-  <ApplicableTypeValue>IfcElement</ApplicableTypeValue>
+  <ApplicableTypeValue>IfcElement,IfcSystem,IfcAsset</ApplicableTypeValue>
   <PropertyDefs>
     <PropertyDef ifdguid="d7177d80d1cc11e1800000215ad4efdf">
       <Name>AssessmentDate</Name>
@@ -59,6 +61,48 @@
         <DefinitionAlias lang="en" />
         <DefinitionAlias lang="ja-JP">状態に関する定性的な記述。</DefinitionAlias>
       </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="d7719a70bc8b4b86a0546e6db2b4dd4c">
+      <Name>AssessmentType</Name>
+      <Definition>Category of latest condition assessment report of the asset.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="2dbf34a56f344446bf42654942874c98">
+      <Name>AssessmentMethod</Name>
+      <Definition>External reference to assessment method or application used to perform the assessment.</Definition>
+      <PropertyType>
+        <TypePropertyReferenceValue reftype="IfcDocumentReference" />
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="6a40009992bc4f0a9da92a539571fc39">
+      <Name>LastAssessmentReport</Name>
+      <Definition>Reference to latest condition (state of health) report.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="88cb6c309d054297841736534c5812c0">
+      <Name>NextAssessmentDate</Name>
+      <Definition>Date of next condition inspection</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcDate" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
     </PropertyDef>
   </PropertyDefs>
   <PsetDefinitionAliases>

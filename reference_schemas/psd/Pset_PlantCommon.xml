@@ -1,7 +1,8 @@
 <?xml version="1.0"?>
 <PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="bff7eedc8844446ab6c2fd5bdaad0968" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
-  <IfcVersion version="IFC4x3_RC2" />
+  <IfcVersion version="IFC4x3_RC4" />
   <Name>Pset_PlantCommon</Name>
+  <Definition>Properties for a plant.</Definition>
   <Applicability />
   <ApplicableClasses>
     <ClassName>IfcPlant</ClassName>

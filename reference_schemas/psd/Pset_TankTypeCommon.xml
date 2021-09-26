@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="bc1a2d00d20f11e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
-  <IfcVersion version="IFC4x3_RC2" />
+  <IfcVersion version="IFC4x3_RC4" />
   <Name>Pset_TankTypeCommon</Name>
   <Definition>Common attributes of a tank type.</Definition>
   <Applicability />
@@ -36,53 +36,11 @@
             <EnumItem>EXISTING</EnumItem>
             <EnumItem>DEMOLISH</EnumItem>
             <EnumItem>TEMPORARY</EnumItem>
-            <EnumItem>USERDEFINED</EnumItem>
-            <EnumItem>NOTKNOWN</EnumItem>
-            <EnumItem>NEW</EnumItem>
-            <EnumItem>EXISTING</EnumItem>
-            <EnumItem>DEMOLISH</EnumItem>
-            <EnumItem>TEMPORARY</EnumItem>
             <EnumItem>OTHER</EnumItem>
             <EnumItem>NOTKNOWN</EnumItem>
             <EnumItem>UNSET</EnumItem>
           </EnumList>
           <ConstantList>
-            <ConstantDef>
-              <Name>NEW</Name>
-              <NameAliases />
-              <DefinitionAliases />
-            </ConstantDef>
-            <ConstantDef>
-              <Name>EXISTING</Name>
-              <NameAliases />
-              <DefinitionAliases />
-            </ConstantDef>
-            <ConstantDef>
-              <Name>DEMOLISH</Name>
-              <NameAliases />
-              <DefinitionAliases />
-            </ConstantDef>
-            <ConstantDef>
-              <Name>TEMPORARY</Name>
-              <NameAliases />
-              <DefinitionAliases />
-            </ConstantDef>
-            <ConstantDef>
-              <Name>USERDEFINED</Name>
-              <NameAliases>
-                <NameAlias lang="en">User Defined</NameAlias>
-              </NameAliases>
-              <DefinitionAliases />
-            </ConstantDef>
-            <ConstantDef>
-              <Name>NOTKNOWN</Name>
-              <NameAliases>
-                <NameAlias lang="en">(unknown)</NameAlias>
-              </NameAliases>
-              <DefinitionAliases>
-                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
-              </DefinitionAliases>
-            </ConstantDef>
             <ConstantDef>
               <Name>NEW</Name>
               <Definition>element designed as new addition</Definition>
@@ -117,6 +75,7 @@
             </ConstantDef>
             <ConstantDef>
               <Name>OTHER</Name>
+              <Definition>required category not on scale</Definition>
               <NameAliases>
                 <NameAlias lang="en">(other)</NameAlias>
               </NameAliases>
@@ -126,6 +85,7 @@
             </ConstantDef>
             <ConstantDef>
               <Name>NOTKNOWN</Name>
+              <Definition>Value is unkown</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unknown)</NameAlias>
               </NameAliases>
@@ -135,6 +95,7 @@
             </ConstantDef>
             <ConstantDef>
               <Name>UNSET</Name>
+              <Definition>Value has not been specified</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unset)</NameAlias>
               </NameAliases>
@@ -209,6 +170,7 @@ Note that covers are generally specified for rectangular tanks. For cylindrical 
             </ConstantDef>
             <ConstantDef>
               <Name>OTHER</Name>
+              <Definition>required category not on scale</Definition>
               <NameAliases>
                 <NameAlias lang="en">(other)</NameAlias>
               </NameAliases>
@@ -218,6 +180,7 @@ Note that covers are generally specified for rectangular tanks. For cylindrical 
             </ConstantDef>
             <ConstantDef>
               <Name>NOTKNOWN</Name>
+              <Definition>Value is unkown</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unknown)</NameAlias>
               </NameAliases>
@@ -227,6 +190,7 @@ Note that covers are generally specified for rectangular tanks. For cylindrical 
             </ConstantDef>
             <ConstantDef>
               <Name>UNSET</Name>
+              <Definition>Value has not been specified</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unset)</NameAlias>
               </NameAliases>
@@ -315,6 +279,7 @@ Note that covers are generally specified for rectangular tanks. For cylindrical 
             </ConstantDef>
             <ConstantDef>
               <Name>OTHER</Name>
+              <Definition>required category not on scale</Definition>
               <NameAliases>
                 <NameAlias lang="en">(other)</NameAlias>
               </NameAliases>
@@ -324,6 +289,7 @@ Note that covers are generally specified for rectangular tanks. For cylindrical 
             </ConstantDef>
             <ConstantDef>
               <Name>NOTKNOWN</Name>
+              <Definition>Value is unkown</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unknown)</NameAlias>
               </NameAliases>
@@ -333,6 +299,7 @@ Note that covers are generally specified for rectangular tanks. For cylindrical 
             </ConstantDef>
             <ConstantDef>
               <Name>UNSET</Name>
+              <Definition>Value has not been specified</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unset)</NameAlias>
               </NameAliases>
@@ -388,23 +355,21 @@ Note: Not required for a vertical cylindrical tank.</Definition>
         <DefinitionAlias lang="ja-JP">公称幅又は水平円筒形タンクの場合、タンクの公称直径　　　　　注：垂直円筒形タンクに対しては必須ではない</DefinitionAlias>
       </DefinitionAliases>
     </PropertyDef>
-    <PropertyDef ifdguid="fedc0500d20f11e1800000215ad4efdf">
+    <PropertyDef ifdguid="118f1380d1e911e1800000215ad4efdf">
       <Name>NominalDepth</Name>
-      <Definition>The nominal depth of the tank.
-
-Note: Not required for a horizontal cylindrical tank.</Definition>
+      <Definition>Nominal Depth of the object</Definition>
       <PropertyType>
         <TypePropertySingleValue>
-          <DataType type="IfcPositiveLengthMeasure" />
+          <DataType type="IfcNonNegativeLengthMeasure" />
         </TypePropertySingleValue>
       </PropertyType>
       <NameAliases>
         <NameAlias lang="en">Nominal Depth</NameAlias>
-        <NameAlias lang="ja-JP">公称深さ</NameAlias>
+        <NameAlias lang="ja-JP">深さ</NameAlias>
       </NameAliases>
       <DefinitionAliases>
         <DefinitionAlias lang="en" />
-        <DefinitionAlias lang="ja-JP">タンクの公称深さ　　注：水平円筒形タンクに対しては必須ではない</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">装置の基礎に配管吸入口から測定した深さ。</DefinitionAlias>
       </DefinitionAliases>
     </PropertyDef>
     <PropertyDef ifdguid="069ba980d21011e1800000215ad4efdf">
@@ -495,6 +460,7 @@ Note: Not required for a horizontal cylindrical tank.</Definition>
             </ConstantDef>
             <ConstantDef>
               <Name>OTHER</Name>
+              <Definition>required category not on scale</Definition>
               <NameAliases>
                 <NameAlias lang="en">(other)</NameAlias>
               </NameAliases>
@@ -504,6 +470,7 @@ Note: Not required for a horizontal cylindrical tank.</Definition>
             </ConstantDef>
             <ConstantDef>
               <Name>NOTKNOWN</Name>
+              <Definition>Value is unkown</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unknown)</NameAlias>
               </NameAliases>
@@ -513,6 +480,7 @@ Note: Not required for a horizontal cylindrical tank.</Definition>
             </ConstantDef>
             <ConstantDef>
               <Name>UNSET</Name>
+              <Definition>Value has not been specified</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unset)</NameAlias>
               </NameAliases>
@@ -585,6 +553,7 @@ Note: Not required for a horizontal cylindrical tank.</Definition>
             </ConstantDef>
             <ConstantDef>
               <Name>OTHER</Name>
+              <Definition>required category not on scale</Definition>
               <NameAliases>
                 <NameAlias lang="en">(other)</NameAlias>
               </NameAliases>
@@ -594,6 +563,7 @@ Note: Not required for a horizontal cylindrical tank.</Definition>
             </ConstantDef>
             <ConstantDef>
               <Name>NOTKNOWN</Name>
+              <Definition>Value is unkown</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unknown)</NameAlias>
               </NameAliases>
@@ -603,6 +573,7 @@ Note: Not required for a horizontal cylindrical tank.</Definition>
             </ConstantDef>
             <ConstantDef>
               <Name>UNSET</Name>
+              <Definition>Value has not been specified</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unset)</NameAlias>
               </NameAliases>

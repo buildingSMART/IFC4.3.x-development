@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="2a052b00d1f511e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
-  <IfcVersion version="IFC4x3_RC2" />
+  <IfcVersion version="IFC4x3_RC4" />
   <Name>Pset_PrecastSlab</Name>
   <Definition>Layout and component information defining how prestressed slab components are laid out in a precast slab assembly. The values are global defaults for the slab as a whole, but can be overridden by local placements of the individual com</Definition>
   <Applicability />
@@ -9,20 +9,16 @@
   </ApplicableClasses>
   <ApplicableTypeValue>IfcSlab</ApplicableTypeValue>
   <PropertyDefs>
-    <PropertyDef ifdguid="2ffb0c00d1f511e1800000215ad4efdf">
-      <Name>TypeDesignator</Name>
-      <Definition>Type designator for the precast concrete slab, expressing mainly the component type. Possible values are “Hollow-core”, “Double-tee”, “Flat plank”, etc.</Definition>
+    <PropertyDef ifdguid="fec5ed14d21e43eeba124e8eb03952d0">
+      <Name>TypeDesignation</Name>
+      <Definition>Type designator according to local standards</Definition>
       <PropertyType>
         <TypePropertySingleValue>
           <DataType type="IfcLabel" />
         </TypePropertySingleValue>
       </PropertyType>
-      <NameAliases>
-        <NameAlias lang="en">Type Designator</NameAlias>
-      </NameAliases>
-      <DefinitionAliases>
-        <DefinitionAlias lang="en" />
-      </DefinitionAliases>
+      <NameAliases />
+      <DefinitionAliases />
     </PropertyDef>
     <PropertyDef ifdguid="36898380d1f511e1800000215ad4efdf">
       <Name>ToppingType</Name>
@@ -99,19 +95,19 @@
         <DefinitionAlias lang="en" />
       </DefinitionAliases>
     </PropertyDef>
-    <PropertyDef ifdguid="5456e880d1f511e1800000215ad4efdf">
+    <PropertyDef ifdguid="9aa93573818943ee9e7ad7e898fddfae">
       <Name>NominalThickness</Name>
-      <Definition>The nominal overall thickness of the slab.</Definition>
+      <Definition>The nominal  thickness of the entity.</Definition>
       <PropertyType>
         <TypePropertySingleValue>
-          <DataType type="IfcPositiveLengthMeasure" />
+          <DataType type="IfcNonNegativeLengthMeasure" />
         </TypePropertySingleValue>
       </PropertyType>
       <NameAliases>
         <NameAlias lang="en">Nominal Thickness</NameAlias>
       </NameAliases>
       <DefinitionAliases>
-        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="en">The nominal wall thickness of the duct at the connection point.</DefinitionAlias>
       </DefinitionAliases>
     </PropertyDef>
     <PropertyDef ifdguid="5b7df680d1f511e1800000215ad4efdf">

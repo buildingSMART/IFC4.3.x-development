@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <QtoSetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.buildingsmart-tech.org/xml/qto/QTO_IFC4.xsd">
-  <IfcVersion version="IFC4x3_RC2" />
+  <IfcVersion version="IFC4x3_RC4" />
   <Name>Qto_LinearStratumBaseQuantities</Name>
-  <Definition>Quantity measures associated to a linear stratum such as in a borehole. Uncertainty is documented in [&lt;font color="#0000ff"&gt;&lt;u&gt;Pset_Uncertainty&lt;/u&gt;&lt;/font&gt;]($element://{EB7C91FE-A348-4889-BDFA-65CC36C81917}).</Definition>
+  <Definition>Quantity measures associated to a linear stratum such as in a borehole. Uncertainty is documented in _Pset_Uncertainty_.</Definition>
   <Applicability />
   <ApplicableClasses>
     <ClassName>IfcGeotechnicalStratum</ClassName>

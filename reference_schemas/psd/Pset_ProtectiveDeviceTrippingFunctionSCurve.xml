@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="3f7d5380d1fb11e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
-  <IfcVersion version="IFC4x3_RC2" />
+  <IfcVersion version="IFC4x3_RC4" />
   <Name>Pset_ProtectiveDeviceTrippingFunctionSCurve</Name>
   <Definition>Tripping functions are applied to electronic tripping units (i.e. tripping units having type property sets for electronic tripping defined). They are not applied to thermal, thermal magnetic or RCD tripping units.
 This property set represent the short time protection (S-curve) of an electronic protection device.</Definition>

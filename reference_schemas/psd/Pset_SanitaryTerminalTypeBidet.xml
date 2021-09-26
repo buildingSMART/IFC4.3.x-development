@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="1e6c3100d20211e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
-  <IfcVersion version="IFC4x3_RC2" />
+  <IfcVersion version="IFC4x3_RC4" />
   <Name>Pset_SanitaryTerminalTypeBidet</Name>
   <Definition>Waste water appliance for washing the excretory organs while sitting astride the bowl (BS6100). HISTORY: In IFC4, Material property removed. Use materials capabilities from IfcMaterialsResource schema. Datatype of color changed to IfcLabel (still a string value). BidetMounting changed to Mounting.</Definition>
   <Applicability />
@@ -63,6 +63,7 @@ Note that BackToWall, Pedestal and WallHung are allowable values for a bidet.</D
             </ConstantDef>
             <ConstantDef>
               <Name>OTHER</Name>
+              <Definition>required category not on scale</Definition>
               <NameAliases>
                 <NameAlias lang="en">(other)</NameAlias>
               </NameAliases>
@@ -72,6 +73,7 @@ Note that BackToWall, Pedestal and WallHung are allowable values for a bidet.</D
             </ConstantDef>
             <ConstantDef>
               <Name>NOTKNOWN</Name>
+              <Definition>Value is unkown</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unknown)</NameAlias>
               </NameAliases>
@@ -81,6 +83,7 @@ Note that BackToWall, Pedestal and WallHung are allowable values for a bidet.</D
             </ConstantDef>
             <ConstantDef>
               <Name>UNSET</Name>
+              <Definition>Value has not been specified</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unset)</NameAlias>
               </NameAliases>

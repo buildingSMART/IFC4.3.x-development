@@ -1,7 +1,8 @@
 <?xml version="1.0"?>
 <PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="75246832754b4570a4e224baa7a30a33" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
-  <IfcVersion version="IFC4x3_RC2" />
+  <IfcVersion version="IFC4x3_RC4" />
   <Name>Pset_BoundedCourseCommon</Name>
+  <Definition>Properties for a bounded course.</Definition>
   <Applicability />
   <ApplicableClasses>
     <ClassName>IfcCourse</ClassName>

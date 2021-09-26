@@ -1,15 +1,16 @@
 <?xml version="1.0"?>
 <PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="e10080b50bcc453ab2305c72efe09fb4" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
-  <IfcVersion version="IFC4x3_RC2" />
+  <IfcVersion version="IFC4x3_RC4" />
   <Name>Pset_RoadMarkingCommon</Name>
+  <Definition>Properties for road markings.</Definition>
   <Applicability />
   <ApplicableClasses>
-    <ClassName>IfcSurf/HATCHMARKING</ClassName>
-    <ClassName> IfcSurf/LINEMARKING</ClassName>
-    <ClassName> IfcSurf/PAVEMENTSURFACEMARKING</ClassName>
-    <ClassName> IfcSurf/SYMBOLMARKING</ClassName>
+    <ClassName>IfcSurfaceFeature/(.HATCHMARKING.)</ClassName>
+    <ClassName>IfcSurfaceFeature/(.LINEMARKING.)</ClassName>
+    <ClassName>IfcSurfaceFeature/(.PAVEMENTSURFACEMARKING.)</ClassName>
+    <ClassName>IfcSurfaceFeature/(.SYMBOLMARKING.)</ClassName>
   </ApplicableClasses>
-  <ApplicableTypeValue>IfcSurf/HATCHMARKING, IfcSurf/LINEMARKING, IfcSurf/PAVEMENTSURFACEMARKING, IfcSurf/SYMBOLMARKING</ApplicableTypeValue>
+  <ApplicableTypeValue>IfcSurfaceFeature/(.HATCHMARKING.),IfcSurfaceFeature/(.LINEMARKING.),IfcSurfaceFeature/(.PAVEMENTSURFACEMARKING.),IfcSurfaceFeature/(.SYMBOLMARKING.)</ApplicableTypeValue>
   <PropertyDefs>
     <PropertyDef ifdguid="faa1626357624a27aba01fe93a6cc739">
       <Name>ApplicationMethod</Name>

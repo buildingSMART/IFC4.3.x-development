@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="aa7e5880d20211e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
-  <IfcVersion version="IFC4x3_RC2" />
+  <IfcVersion version="IFC4x3_RC4" />
   <Name>Pset_SanitaryTerminalTypeCommon</Name>
   <Definition>Common properties for sanitary terminals.</Definition>
   <Applicability />
@@ -35,53 +35,11 @@
             <EnumItem>EXISTING</EnumItem>
             <EnumItem>DEMOLISH</EnumItem>
             <EnumItem>TEMPORARY</EnumItem>
-            <EnumItem>USERDEFINED</EnumItem>
-            <EnumItem>NOTKNOWN</EnumItem>
-            <EnumItem>NEW</EnumItem>
-            <EnumItem>EXISTING</EnumItem>
-            <EnumItem>DEMOLISH</EnumItem>
-            <EnumItem>TEMPORARY</EnumItem>
             <EnumItem>OTHER</EnumItem>
             <EnumItem>NOTKNOWN</EnumItem>
             <EnumItem>UNSET</EnumItem>
           </EnumList>
           <ConstantList>
-            <ConstantDef>
-              <Name>NEW</Name>
-              <NameAliases />
-              <DefinitionAliases />
-            </ConstantDef>
-            <ConstantDef>
-              <Name>EXISTING</Name>
-              <NameAliases />
-              <DefinitionAliases />
-            </ConstantDef>
-            <ConstantDef>
-              <Name>DEMOLISH</Name>
-              <NameAliases />
-              <DefinitionAliases />
-            </ConstantDef>
-            <ConstantDef>
-              <Name>TEMPORARY</Name>
-              <NameAliases />
-              <DefinitionAliases />
-            </ConstantDef>
-            <ConstantDef>
-              <Name>USERDEFINED</Name>
-              <NameAliases>
-                <NameAlias lang="en">User Defined</NameAlias>
-              </NameAliases>
-              <DefinitionAliases />
-            </ConstantDef>
-            <ConstantDef>
-              <Name>NOTKNOWN</Name>
-              <NameAliases>
-                <NameAlias lang="en">(unknown)</NameAlias>
-              </NameAliases>
-              <DefinitionAliases>
-                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
-              </DefinitionAliases>
-            </ConstantDef>
             <ConstantDef>
               <Name>NEW</Name>
               <Definition>element designed as new addition</Definition>
@@ -116,6 +74,7 @@
             </ConstantDef>
             <ConstantDef>
               <Name>OTHER</Name>
+              <Definition>required category not on scale</Definition>
               <NameAliases>
                 <NameAlias lang="en">(other)</NameAlias>
               </NameAliases>
@@ -125,6 +84,7 @@
             </ConstantDef>
             <ConstantDef>
               <Name>NOTKNOWN</Name>
+              <Definition>Value is unkown</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unknown)</NameAlias>
               </NameAliases>
@@ -134,6 +94,7 @@
             </ConstantDef>
             <ConstantDef>
               <Name>UNSET</Name>
+              <Definition>Value has not been specified</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unset)</NameAlias>
               </NameAliases>
@@ -147,38 +108,56 @@
       <NameAliases />
       <DefinitionAliases />
     </PropertyDef>
-    <PropertyDef ifdguid="36bde0df4e7b4ff4a9b7b5191c5e82f7">
+    <PropertyDef ifdguid="076d1500d1e911e1800000215ad4efdf">
       <Name>NominalLength</Name>
-      <Definition>Nominal or quoted length of the object.</Definition>
+      <Definition>Nominal length of the object</Definition>
       <PropertyType>
         <TypePropertySingleValue>
-          <DataType type="IfcPositiveLengthMeasure" />
+          <DataType type="IfcNonNegativeLengthMeasure" />
         </TypePropertySingleValue>
       </PropertyType>
-      <NameAliases />
-      <DefinitionAliases />
+      <NameAliases>
+        <NameAlias lang="en">Nominal Length</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
     </PropertyDef>
-    <PropertyDef ifdguid="6cf48d3d336e4eb0acdf9bdf68db0d60">
+    <PropertyDef ifdguid="a28e9f226e204a909976810e633a45f4">
       <Name>NominalWidth</Name>
-      <Definition>Nominal or quoted width of the object.</Definition>
+      <Definition>The nominal width of the object.</Definition>
       <PropertyType>
         <TypePropertySingleValue>
-          <DataType type="IfcPositiveLengthMeasure" />
+          <DataType type="IfcNonNegativeLengthMeasure" />
         </TypePropertySingleValue>
       </PropertyType>
-      <NameAliases />
-      <DefinitionAliases />
+      <NameAliases>
+        <NameAlias lang="en">Nominal Width</NameAlias>
+        <NameAlias lang="ja-JP">公称幅</NameAlias>
+        <NameAlias lang="ko-KR">공칭 폭</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">呼び幅寸法。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">폭 치수</DefinitionAlias>
+      </DefinitionAliases>
     </PropertyDef>
-    <PropertyDef ifdguid="bb516e7b73f84dcd85b953f3b61f0f22">
+    <PropertyDef ifdguid="118f1380d1e911e1800000215ad4efdf">
       <Name>NominalDepth</Name>
-      <Definition>Nominal or quoted depth of the object.</Definition>
+      <Definition>Nominal Depth of the object</Definition>
       <PropertyType>
         <TypePropertySingleValue>
-          <DataType type="IfcPositiveLengthMeasure" />
+          <DataType type="IfcNonNegativeLengthMeasure" />
         </TypePropertySingleValue>
       </PropertyType>
-      <NameAliases />
-      <DefinitionAliases />
+      <NameAliases>
+        <NameAlias lang="en">Nominal Depth</NameAlias>
+        <NameAlias lang="ja-JP">深さ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">装置の基礎に配管吸入口から測定した深さ。</DefinitionAlias>
+      </DefinitionAliases>
     </PropertyDef>
     <PropertyDef ifdguid="93112095298e44d29aea7995d82eb202">
       <Name>Color</Name>

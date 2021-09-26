@@ -1,29 +1,88 @@
 <?xml version="1.0"?>
 <PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="eb7c91fea3484889bdfa65cc36c81917" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
-  <IfcVersion version="IFC4x3_RC2" />
+  <IfcVersion version="IFC4x3_RC4" />
   <Name>Pset_Uncertainty</Name>
   <Definition>Property set capturing the geometric uncertainty regarding measurements including how the way that uncertainty was assessed.</Definition>
   <Applicability />
   <ApplicableClasses>
-    <ClassName>IfcGeotechnicalStratum</ClassName>
-    <ClassName> IfcGeotechnicalElement</ClassName>
-    <ClassName> IfcGeotechnicalAssembly</ClassName>
+    <ClassName>IfcProduct</ClassName>
+    <ClassName>IfcTypeProduct</ClassName>
   </ApplicableClasses>
-  <ApplicableTypeValue>IfcGeotechnicalStratum, IfcGeotechnicalElement, IfcGeotechnicalAssembly</ApplicableTypeValue>
+  <ApplicableTypeValue>IfcProduct,IfcTypeProduct</ApplicableTypeValue>
   <PropertyDefs>
     <PropertyDef ifdguid="da7247f30bb04cc29b54f11e644eaa76">
-      <Name>Basis</Name>
+      <Name>UncertaintyBasis</Name>
       <Definition>Indication of the basis of the uncertainty</Definition>
       <PropertyType>
-        <TypePropertySingleValue>
-          <DataType />
-        </TypePropertySingleValue>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_UncertaintyBasis">
+            <EnumItem>MEASUREMENT</EnumItem>
+            <EnumItem>OBSERVATION</EnumItem>
+            <EnumItem>ASSESSMENT</EnumItem>
+            <EnumItem>INTERPRITATION</EnumItem>
+            <EnumItem>ESTIMATE</EnumItem>
+            <EnumItem>USERDEFINED</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>NOTDEFINED</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>MEASUREMENT</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OBSERVATION</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>ASSESSMENT</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>INTERPRITATION</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>ESTIMATE</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>USERDEFINED</Name>
+              <NameAliases>
+                <NameAlias lang="en">User Defined</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <Definition>Value is unkown</Definition>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTDEFINED</Name>
+              <NameAliases>
+                <NameAlias lang="en">Notdefined</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
       </PropertyType>
       <NameAliases />
       <DefinitionAliases />
     </PropertyDef>
     <PropertyDef ifdguid="b5e86de9db65474aa95c1d94239bb1a8">
-      <Name>Description</Name>
+      <Name>UncertaintyDescription</Name>
       <Definition>General description of the uncertainty associated to the element or feature, its source and implications.</Definition>
       <PropertyType>
         <TypePropertySingleValue>

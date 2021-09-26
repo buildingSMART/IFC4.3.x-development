@@ -1,43 +1,114 @@
 <?xml version="1.0"?>
 <PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="0231ac434cbc4f2cbe8f9c9229df9962" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
-  <IfcVersion version="IFC4x3_RC2" />
+  <IfcVersion version="IFC4x3_RC4" />
   <Name>Pset_Width</Name>
   <Definition>Specifices the general properties for a Width event.</Definition>
   <Applicability />
-  <ApplicableClasses />
+  <ApplicableClasses>
+    <ClassName>IfcAnnotation/(.WIDTHEVENT.)</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcAnnotation/(.WIDTHEVENT.)</ApplicableTypeValue>
   <PropertyDefs>
     <PropertyDef ifdguid="52834ea804d7431d89717aa6920072cf">
       <Name>Side</Name>
       <Definition>Specifies if the width is measured to the RIGHT or to the LEFT of the curve referenced by the placement, or if the same value is applied to BOTH sides.</Definition>
       <PropertyType>
-        <TypePropertySingleValue>
-          <DataType />
-        </TypePropertySingleValue>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_SideType">
+            <EnumItem>LEFT</EnumItem>
+            <EnumItem>RIGHT</EnumItem>
+            <EnumItem>BOTH</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>LEFT</Name>
+              <Definition>Left side</Definition>
+              <NameAliases>
+                <NameAlias lang="en" />
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Left side</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>RIGHT</Name>
+              <Definition>Right side</Definition>
+              <NameAliases>
+                <NameAlias lang="en" />
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Right side</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>BOTH</Name>
+              <NameAliases>
+                <NameAlias lang="en" />
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Both sides</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
       </PropertyType>
       <NameAliases />
       <DefinitionAliases />
     </PropertyDef>
     <PropertyDef ifdguid="6a806455953a4f75a274ac9ea7ad5707">
-      <Name>Transition</Name>
+      <Name>TransitionWidth</Name>
       <Definition>The type of transition of width used between the previous event and this event.</Definition>
       <PropertyType>
-        <TypePropertySingleValue>
-          <DataType />
-        </TypePropertySingleValue>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_TransitionWidthType">
+            <EnumItem>CONST</EnumItem>
+            <EnumItem>LINEAR</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>CONST</Name>
+              <NameAliases>
+                <NameAlias lang="en" />
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Specifies that transition of the width between the previous width event and this event shall be constant and equal to the previously specified width meaning that the change in width shall occur instantaneously at the location of this event.
+</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>LINEAR</Name>
+              <NameAliases>
+                <NameAlias lang="en" />
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Specifies that the transition of the width between the previous width event and this event shall be linearly interpolated providing a gradual width change.
+</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
       </PropertyType>
       <NameAliases />
       <DefinitionAliases />
     </PropertyDef>
-    <PropertyDef ifdguid="381428b1c91c4705a6c85bc231b06ae4">
-      <Name>Width</Name>
-      <Definition>The width measure at this location.</Definition>
+    <PropertyDef ifdguid="a28e9f226e204a909976810e633a45f4">
+      <Name>NominalWidth</Name>
+      <Definition>The nominal width of the object.</Definition>
       <PropertyType>
         <TypePropertySingleValue>
           <DataType type="IfcNonNegativeLengthMeasure" />
         </TypePropertySingleValue>
       </PropertyType>
-      <NameAliases />
-      <DefinitionAliases />
+      <NameAliases>
+        <NameAlias lang="en">Nominal Width</NameAlias>
+        <NameAlias lang="ja-JP">公称幅</NameAlias>
+        <NameAlias lang="ko-KR">공칭 폭</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">呼び幅寸法。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">폭 치수</DefinitionAlias>
+      </DefinitionAliases>
     </PropertyDef>
   </PropertyDefs>
   <PsetDefinitionAliases />

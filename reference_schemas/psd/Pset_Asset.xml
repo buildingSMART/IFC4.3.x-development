@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="83536700d1c111e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
-  <IfcVersion version="IFC4x3_RC2" />
+  <IfcVersion version="IFC4x3_RC4" />
   <Name>Pset_Asset</Name>
   <Definition>An asset is a uniquely identifiable element which has a financial value and against which maintenance actions are recorded.</Definition>
   <Applicability />
@@ -38,6 +38,7 @@
             </ConstantDef>
             <ConstantDef>
               <Name>OTHER</Name>
+              <Definition>required category not on scale</Definition>
               <NameAliases>
                 <NameAlias lang="en">(other)</NameAlias>
               </NameAliases>
@@ -47,6 +48,7 @@
             </ConstantDef>
             <ConstantDef>
               <Name>NOTKNOWN</Name>
+              <Definition>Value is unkown</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unknown)</NameAlias>
               </NameAliases>
@@ -56,6 +58,7 @@
             </ConstantDef>
             <ConstantDef>
               <Name>UNSET</Name>
+              <Definition>Value has not been specified</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unset)</NameAlias>
               </NameAliases>
@@ -104,6 +107,7 @@
             </ConstantDef>
             <ConstantDef>
               <Name>OTHER</Name>
+              <Definition>required category not on scale</Definition>
               <NameAliases>
                 <NameAlias lang="en">(other)</NameAlias>
               </NameAliases>
@@ -113,6 +117,7 @@
             </ConstantDef>
             <ConstantDef>
               <Name>NOTKNOWN</Name>
+              <Definition>Value is unkown</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unknown)</NameAlias>
               </NameAliases>
@@ -122,6 +127,7 @@
             </ConstantDef>
             <ConstantDef>
               <Name>UNSET</Name>
+              <Definition>Value has not been specified</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unset)</NameAlias>
               </NameAliases>
@@ -170,6 +176,7 @@
             </ConstantDef>
             <ConstantDef>
               <Name>OTHER</Name>
+              <Definition>required category not on scale</Definition>
               <NameAliases>
                 <NameAlias lang="en">(other)</NameAlias>
               </NameAliases>
@@ -179,6 +186,7 @@
             </ConstantDef>
             <ConstantDef>
               <Name>NOTKNOWN</Name>
+              <Definition>Value is unkown</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unknown)</NameAlias>
               </NameAliases>
@@ -188,6 +196,7 @@
             </ConstantDef>
             <ConstantDef>
               <Name>UNSET</Name>
+              <Definition>Value has not been specified</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unset)</NameAlias>
               </NameAliases>
@@ -206,6 +215,28 @@
         <DefinitionAlias lang="en" />
         <DefinitionAlias lang="ja-JP">保険の定義済み種別。</DefinitionAlias>
       </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="442e566590d1453b8cf957cae7db5e50">
+      <Name>AssetStatus</Name>
+      <Definition>Current status or stage in life cycle.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="4fd2e75b2b134b5996cc8a2581cd265a">
+      <Name>AssetUse</Name>
+      <Definition>General use category of the asset</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
     </PropertyDef>
   </PropertyDefs>
   <PsetDefinitionAliases>

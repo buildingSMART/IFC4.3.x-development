@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="9e9b9200d21411e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
-  <IfcVersion version="IFC4x3_RC2" />
+  <IfcVersion version="IFC4x3_RC4" />
   <Name>Pset_ValveTypeFaucet</Name>
   <Definition>A small diameter valve, with a free outlet, from which water is drawn.</Definition>
   <Applicability />
@@ -99,6 +99,7 @@ SprayMixing:	 Spray faucet connected to hot and cold water supplies that deliver
             </ConstantDef>
             <ConstantDef>
               <Name>OTHER</Name>
+              <Definition>required category not on scale</Definition>
               <NameAliases>
                 <NameAlias lang="en">(other)</NameAlias>
               </NameAliases>
@@ -108,6 +109,7 @@ SprayMixing:	 Spray faucet connected to hot and cold water supplies that deliver
             </ConstantDef>
             <ConstantDef>
               <Name>NOTKNOWN</Name>
+              <Definition>Value is unkown</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unknown)</NameAlias>
               </NameAliases>
@@ -117,6 +119,7 @@ SprayMixing:	 Spray faucet connected to hot and cold water supplies that deliver
             </ConstantDef>
             <ConstantDef>
               <Name>UNSET</Name>
+              <Definition>Value has not been specified</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unset)</NameAlias>
               </NameAliases>
@@ -228,6 +231,7 @@ TimedSelfClosing: 	Self closing faucet that discharges for a predetermined perio
             </ConstantDef>
             <ConstantDef>
               <Name>OTHER</Name>
+              <Definition>required category not on scale</Definition>
               <NameAliases>
                 <NameAlias lang="en">(other)</NameAlias>
               </NameAliases>
@@ -237,6 +241,7 @@ TimedSelfClosing: 	Self closing faucet that discharges for a predetermined perio
             </ConstantDef>
             <ConstantDef>
               <Name>NOTKNOWN</Name>
+              <Definition>Value is unkown</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unknown)</NameAlias>
               </NameAliases>
@@ -246,6 +251,7 @@ TimedSelfClosing: 	Self closing faucet that discharges for a predetermined perio
             </ConstantDef>
             <ConstantDef>
               <Name>UNSET</Name>
+              <Definition>Value has not been specified</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unset)</NameAlias>
               </NameAliases>
@@ -303,6 +309,7 @@ CeramicDisc = 口を開閉するセラミックシールを持った急操作水
             </ConstantDef>
             <ConstantDef>
               <Name>OTHER</Name>
+              <Definition>required category not on scale</Definition>
               <NameAliases>
                 <NameAlias lang="en">(other)</NameAlias>
               </NameAliases>
@@ -312,6 +319,7 @@ CeramicDisc = 口を開閉するセラミックシールを持った急操作水
             </ConstantDef>
             <ConstantDef>
               <Name>NOTKNOWN</Name>
+              <Definition>Value is unkown</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unknown)</NameAlias>
               </NameAliases>
@@ -321,6 +329,7 @@ CeramicDisc = 口を開閉するセラミックシールを持った急操作水
             </ConstantDef>
             <ConstantDef>
               <Name>UNSET</Name>
+              <Definition>Value has not been specified</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unset)</NameAlias>
               </NameAliases>

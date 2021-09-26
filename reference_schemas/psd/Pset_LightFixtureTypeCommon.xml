@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="882d1080d1eb11e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
-  <IfcVersion version="IFC4x3_RC2" />
+  <IfcVersion version="IFC4x3_RC4" />
   <Name>Pset_LightFixtureTypeCommon</Name>
   <Definition>Common data for light fixtures.
 History: IFC4 - Article number and manufacturer specific information deleted. Use Pset_ManufacturerTypeInformation. ArticleNumber instead.   Load properties moved from Pset_LightFixtureTypeThermal (deleted).</Definition>
@@ -37,53 +37,11 @@ History: IFC4 - Article number and manufacturer specific information deleted. Us
             <EnumItem>EXISTING</EnumItem>
             <EnumItem>DEMOLISH</EnumItem>
             <EnumItem>TEMPORARY</EnumItem>
-            <EnumItem>USERDEFINED</EnumItem>
-            <EnumItem>NOTKNOWN</EnumItem>
-            <EnumItem>NEW</EnumItem>
-            <EnumItem>EXISTING</EnumItem>
-            <EnumItem>DEMOLISH</EnumItem>
-            <EnumItem>TEMPORARY</EnumItem>
             <EnumItem>OTHER</EnumItem>
             <EnumItem>NOTKNOWN</EnumItem>
             <EnumItem>UNSET</EnumItem>
           </EnumList>
           <ConstantList>
-            <ConstantDef>
-              <Name>NEW</Name>
-              <NameAliases />
-              <DefinitionAliases />
-            </ConstantDef>
-            <ConstantDef>
-              <Name>EXISTING</Name>
-              <NameAliases />
-              <DefinitionAliases />
-            </ConstantDef>
-            <ConstantDef>
-              <Name>DEMOLISH</Name>
-              <NameAliases />
-              <DefinitionAliases />
-            </ConstantDef>
-            <ConstantDef>
-              <Name>TEMPORARY</Name>
-              <NameAliases />
-              <DefinitionAliases />
-            </ConstantDef>
-            <ConstantDef>
-              <Name>USERDEFINED</Name>
-              <NameAliases>
-                <NameAlias lang="en">User Defined</NameAlias>
-              </NameAliases>
-              <DefinitionAliases />
-            </ConstantDef>
-            <ConstantDef>
-              <Name>NOTKNOWN</Name>
-              <NameAliases>
-                <NameAlias lang="en">(unknown)</NameAlias>
-              </NameAliases>
-              <DefinitionAliases>
-                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
-              </DefinitionAliases>
-            </ConstantDef>
             <ConstantDef>
               <Name>NEW</Name>
               <Definition>element designed as new addition</Definition>
@@ -118,6 +76,7 @@ History: IFC4 - Article number and manufacturer specific information deleted. Us
             </ConstantDef>
             <ConstantDef>
               <Name>OTHER</Name>
+              <Definition>required category not on scale</Definition>
               <NameAliases>
                 <NameAlias lang="en">(other)</NameAlias>
               </NameAliases>
@@ -127,6 +86,7 @@ History: IFC4 - Article number and manufacturer specific information deleted. Us
             </ConstantDef>
             <ConstantDef>
               <Name>NOTKNOWN</Name>
+              <Definition>Value is unkown</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unknown)</NameAlias>
               </NameAliases>
@@ -136,6 +96,7 @@ History: IFC4 - Article number and manufacturer specific information deleted. Us
             </ConstantDef>
             <ConstantDef>
               <Name>UNSET</Name>
+              <Definition>Value has not been specified</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unset)</NameAlias>
               </NameAliases>
@@ -270,6 +231,7 @@ History: IFC4 - Article number and manufacturer specific information deleted. Us
             </ConstantDef>
             <ConstantDef>
               <Name>OTHER</Name>
+              <Definition>required category not on scale</Definition>
               <NameAliases>
                 <NameAlias lang="en">(other)</NameAlias>
               </NameAliases>
@@ -279,6 +241,7 @@ History: IFC4 - Article number and manufacturer specific information deleted. Us
             </ConstantDef>
             <ConstantDef>
               <Name>NOTKNOWN</Name>
+              <Definition>Value is unkown</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unknown)</NameAlias>
               </NameAliases>
@@ -288,6 +251,7 @@ History: IFC4 - Article number and manufacturer specific information deleted. Us
             </ConstantDef>
             <ConstantDef>
               <Name>UNSET</Name>
+              <Definition>Value has not been specified</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unset)</NameAlias>
               </NameAliases>
@@ -362,6 +326,7 @@ History: IFC4 - Article number and manufacturer specific information deleted. Us
             </ConstantDef>
             <ConstantDef>
               <Name>OTHER</Name>
+              <Definition>required category not on scale</Definition>
               <NameAliases>
                 <NameAlias lang="en">(other)</NameAlias>
               </NameAliases>
@@ -371,6 +336,7 @@ History: IFC4 - Article number and manufacturer specific information deleted. Us
             </ConstantDef>
             <ConstantDef>
               <Name>NOTKNOWN</Name>
+              <Definition>Value is unkown</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unknown)</NameAlias>
               </NameAliases>
@@ -380,6 +346,7 @@ History: IFC4 - Article number and manufacturer specific information deleted. Us
             </ConstantDef>
             <ConstantDef>
               <Name>UNSET</Name>
+              <Definition>Value has not been specified</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unset)</NameAlias>
               </NameAliases>

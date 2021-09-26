@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="829734737c7c4725b43558a4a802081e" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
-  <IfcVersion version="IFC4x3_RC2" />
+  <IfcVersion version="IFC4x3_RC4" />
   <Name>Pset_GeotechnicalAssemblyCommon</Name>
-  <Definition>Properties describing the characteristics of any geotechnical model. A Status of �New� should not be associated to a [&lt;font color="#0000ff"&gt;&lt;u&gt;IfcGeotechnicalAssembly&lt;/u&gt;&lt;/font&gt;]($element://{85B77FDE-67EA-40a4-ADA4-ADD4C95A7D3E}) or [&lt;font color="#0000ff"&gt;&lt;u&gt;IfcGeotechnicalStratum&lt;/u&gt;&lt;/font&gt;]($element://{FAEFB134-3800-4995-B222-B921D7E287BF}), as other entities are used for earthworks and courses.</Definition>
+  <Definition>Properties describing the characteristics of any geotechnical model. A Status of "New" should not be associated to a _IfcGeotechnicalAssembly_ or _IfcGeotechnicalStratum_, as other entities are used for earthworks and courses.</Definition>
   <Applicability />
   <ApplicableClasses>
     <ClassName>IfcGeotechnicalAssembly</ClassName>
@@ -35,20 +35,199 @@
       <Name>Purpose</Name>
       <Definition>Purpose for which the borehole, section or volumetric model was created. (EU Inspire, boreholeML)</Definition>
       <PropertyType>
-        <TypePropertySingleValue>
-          <DataType />
-        </TypePropertySingleValue>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_StrataAssemblyPurpose">
+            <EnumItem>SITE_INVESTIGATION</EnumItem>
+            <EnumItem>HYDROCARBON</EnumItem>
+            <EnumItem>FEEDSTOCK</EnumItem>
+            <EnumItem>MINERAL</EnumItem>
+            <EnumItem>GEOLOGICAL</EnumItem>
+            <EnumItem>HYDROGEOLOGICAL</EnumItem>
+            <EnumItem>DEPOSIT</EnumItem>
+            <EnumItem>STORAGE</EnumItem>
+            <EnumItem>ENVIRONMENTAL</EnumItem>
+            <EnumItem>PEDOLOGICAL</EnumItem>
+            <EnumItem>GEOTHERMAL</EnumItem>
+            <EnumItem>USERDEFINED</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>NOTDEFINED</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>SITE_INVESTIGATION</Name>
+              <Definition>Strata assembly for site investigations</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>HYDROCARBON</Name>
+              <Definition>Strata assembly for hydrocarbon investigations</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>FEEDSTOCK</Name>
+              <Definition>Strata assembly for feedstock investigations</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>MINERAL</Name>
+              <Definition>Strata assembly for mineral investigations</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>GEOLOGICAL</Name>
+              <Definition>Strata assembly for geological purposes</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>HYDROGEOLOGICAL</Name>
+              <Definition>Strata assembly for hydrogeological purposes</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>DEPOSIT</Name>
+              <Definition>Strata assembly for analysis of deposits</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>STORAGE</Name>
+              <Definition>Strata assembly for storage purposes</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>ENVIRONMENTAL</Name>
+              <Definition>Strata assembly for environmental investigations</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>PEDOLOGICAL</Name>
+              <Definition>Strata assembly for pedological purposes</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>GEOTHERMAL</Name>
+              <Definition>Strata assembly for geothermal applications</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>USERDEFINED</Name>
+              <NameAliases>
+                <NameAlias lang="en">User Defined</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <Definition>Value is unkown</Definition>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTDEFINED</Name>
+              <NameAliases>
+                <NameAlias lang="en">Notdefined</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
       </PropertyType>
       <NameAliases />
       <DefinitionAliases />
     </PropertyDef>
-    <PropertyDef ifdguid="e73be196bfaf453286b93f8779df109a">
+    <PropertyDef ifdguid="41e9a1256ded49a6bc81c38c72fd066f">
       <Name>Status</Name>
       <Definition>Status of the element, predominately used in renovation or retrofitting projects. The status can be assigned to as "New" - element designed as new addition, "Existing" - element exists and remains, "Demolish" - element existed but is to be demolished, "Temporary" - element will exists only temporary (like a temporary support structure).</Definition>
       <PropertyType>
-        <TypePropertySingleValue>
-          <DataType />
-        </TypePropertySingleValue>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_ElementStatus">
+            <EnumItem>NEW</EnumItem>
+            <EnumItem>EXISTING</EnumItem>
+            <EnumItem>DEMOLISH</EnumItem>
+            <EnumItem>TEMPORARY</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>NEW</Name>
+              <Definition>element designed as new addition</Definition>
+              <NameAliases>
+                <NameAlias lang="en">New</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>EXISTING</Name>
+              <Definition>element exists and is to remain</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Existing</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>DEMOLISH</Name>
+              <Definition>element exists but is to be demolished</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Demolish</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>TEMPORARY</Name>
+              <Definition>element will exist only temporarily (such as a temporary support structure)</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Temporary</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <Definition>required category not on scale</Definition>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <Definition>Value is unkown</Definition>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <Definition>Value has not been specified</Definition>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
       </PropertyType>
       <NameAliases />
       <DefinitionAliases />

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="3cd72a00d20c11e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
-  <IfcVersion version="IFC4x3_RC2" />
+  <IfcVersion version="IFC4x3_RC4" />
   <Name>Pset_SpaceThermalRequirements</Name>
   <Definition>Properties related to the comfort requirements for thermal and other  thermal related performance properties of spaces that apply to the occurrences of IfcSpace, IfcSpatialZone or IfcZone. It can also be used to capture requirements for IfcSpaceType's. This includes the required design temperature, humidity, ventilation, and air conditioning.</Definition>
   <Applicability />

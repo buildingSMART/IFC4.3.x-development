@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="c21c7efcba944055a9a92e1319e17fc4" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
-  <IfcVersion version="IFC4x3_RC2" />
+  <IfcVersion version="IFC4x3_RC4" />
   <Name>Pset_RoadGuardElement</Name>
-  <Definition>Properties assigned to IfcWall/PARAPET or IfcRailing/GUARDRAIL.</Definition>
+  <Definition>Properties assigned to IfcWall/PARAPET or IfcRailing/GUARDRAIL when assigned as road guard elements.</Definition>
   <Applicability />
   <ApplicableClasses>
-    <ClassName>IfcWall/PARAPET</ClassName>
-    <ClassName> IfcRail/GUARDRAIL</ClassName>
+    <ClassName>IfcRailing/(.GUARDRAIL.)</ClassName>
+    <ClassName>IfcWall/(.PARAPET.)</ClassName>
   </ApplicableClasses>
-  <ApplicableTypeValue>IfcWall/PARAPET, IfcRail/GUARDRAIL</ApplicableTypeValue>
+  <ApplicableTypeValue>IfcRailing/(.GUARDRAIL.),IfcWall/(.PARAPET.)</ApplicableTypeValue>
   <PropertyDefs>
     <PropertyDef ifdguid="99333b777d5e4a7999b2ff9644ea0595">
       <Name>IsMoveable</Name>

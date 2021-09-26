@@ -1,7 +1,8 @@
 <?xml version="1.0"?>
 <PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="e4d7b2f1fe8143179f58629e0825c2e4" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
-  <IfcVersion version="IFC4x3_RC2" />
+  <IfcVersion version="IFC4x3_RC4" />
   <Name>Pset_RadiiKerbStone</Name>
+  <Definition>Properties describing the keb stone radii.</Definition>
   <Applicability />
   <ApplicableClasses>
     <ClassName>IfcKerb</ClassName>
@@ -10,11 +11,26 @@
   <PropertyDefs>
     <PropertyDef ifdguid="d81fd76910774b0eb8390d44ec1d96c5">
       <Name>CurveShape</Name>
-      <Definition>Shape according to &lt;a href="$element://{9DF817DE-97F9-43e9-A716-0EA93FC4CA4D}"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;CurveShapeEnum&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;</Definition>
+      <Definition>Shape according to CurveShapeEnum</Definition>
       <PropertyType>
-        <TypePropertySingleValue>
-          <DataType />
-        </TypePropertySingleValue>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_CurveShapeEnum">
+            <EnumItem>INTERNAL</EnumItem>
+            <EnumItem>EXTERNAL</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>INTERNAL</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>EXTERNAL</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
       </PropertyType>
       <NameAliases />
       <DefinitionAliases />

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="d2380b9a776941d4932610e6732b576d" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
-  <IfcVersion version="IFC4x3_RC2" />
+  <IfcVersion version="IFC4x3_RC4" />
   <Name>Pset_CourseCommon</Name>
   <Definition>Common properties for courses.</Definition>
   <Applicability />
@@ -9,38 +9,54 @@
   </ApplicableClasses>
   <ApplicableTypeValue>IfcCourse</ApplicableTypeValue>
   <PropertyDefs>
-    <PropertyDef ifdguid="7a192ad96bc24160a09f28607a0ace38">
-      <Name>Length</Name>
-      <Definition>The nominal overall length of the course. The size information is provided in addition to the shape representation and the geometric parameters used within. In cases of inconsistency between the geometric parameters and the size...?</Definition>
+    <PropertyDef ifdguid="076d1500d1e911e1800000215ad4efdf">
+      <Name>NominalLength</Name>
+      <Definition>Nominal length of the object</Definition>
       <PropertyType>
         <TypePropertySingleValue>
-          <DataType type="IfcPositiveLengthMeasure" />
+          <DataType type="IfcNonNegativeLengthMeasure" />
         </TypePropertySingleValue>
       </PropertyType>
-      <NameAliases />
-      <DefinitionAliases />
+      <NameAliases>
+        <NameAlias lang="en">Nominal Length</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
     </PropertyDef>
-    <PropertyDef ifdguid="baa8ab2d44944b2ab62781d30dc780a2">
-      <Name>Thickness</Name>
-      <Definition>The nominal overall thickness of the course. The size information is provided in addition to the shape representation and the geometric parameters used within. In cases of inconsistency between the geometric parameters and the size...?</Definition>
+    <PropertyDef ifdguid="9aa93573818943ee9e7ad7e898fddfae">
+      <Name>NominalThickness</Name>
+      <Definition>The nominal  thickness of the entity.</Definition>
       <PropertyType>
         <TypePropertySingleValue>
-          <DataType type="IfcPositiveLengthMeasure" />
+          <DataType type="IfcNonNegativeLengthMeasure" />
         </TypePropertySingleValue>
       </PropertyType>
-      <NameAliases />
-      <DefinitionAliases />
+      <NameAliases>
+        <NameAlias lang="en">Nominal Thickness</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en">The nominal wall thickness of the duct at the connection point.</DefinitionAlias>
+      </DefinitionAliases>
     </PropertyDef>
-    <PropertyDef ifdguid="114337333b5c4c11a3397d577ef81683">
-      <Name>Width</Name>
-      <Definition>The nominal overall width of the course. The size information is provided in addition to the shape representation and the geometric parameters used within. In cases of inconsistency between the geometric parameters and the size...?</Definition>
+    <PropertyDef ifdguid="a28e9f226e204a909976810e633a45f4">
+      <Name>NominalWidth</Name>
+      <Definition>The nominal width of the object.</Definition>
       <PropertyType>
         <TypePropertySingleValue>
-          <DataType type="IfcPositiveLengthMeasure" />
+          <DataType type="IfcNonNegativeLengthMeasure" />
         </TypePropertySingleValue>
       </PropertyType>
-      <NameAliases />
-      <DefinitionAliases />
+      <NameAliases>
+        <NameAlias lang="en">Nominal Width</NameAlias>
+        <NameAlias lang="ja-JP">公称幅</NameAlias>
+        <NameAlias lang="ko-KR">공칭 폭</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">呼び幅寸法。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">폭 치수</DefinitionAlias>
+      </DefinitionAliases>
     </PropertyDef>
   </PropertyDefs>
   <PsetDefinitionAliases />

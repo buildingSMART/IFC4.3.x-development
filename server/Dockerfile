@@ -30,6 +30,12 @@ ADD templates/* /ifc43/server/templates/
 
 WORKDIR /ifc43/server
 RUN mkdir svgs
+RUN mkdir psd
+
+WORKDIR /ifc43/scripts
+RUN python3 to_pset.py ../schemas/IFC.xml /ifc43/server/psd
+
+WORKDIR /ifc43/server
 RUN python3 parse_xmi.py
 RUN python3 parse_mvd.py
 RUN python3 change_log.py

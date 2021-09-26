@@ -66,13 +66,13 @@ fetch('https://api.github.com/repos/{{ repo or "buildingSMART/IFC4.3.x-developme
 
 {% set loop3 = loop %}
 
-{% for a in ["Types", "Entities"] %}
+{% for a in ["Types", "Entities", "Property Sets"] %}
 
 &nbsp;&nbsp;&nbsp;&nbsp;<a href='{{ ssub[0] | lower }}/content.html'>{{ loop1.index }}.{{ loop2.index }}.{{ loop.index + 1 }} {{ a }}</a><br>
 
 {% set loop4 = loop %}
 
-{% for x in ssub[1][a] %}
+{% for x in ssub[1].get(a, []) %}
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='lexical/{{ x }}.htm'>{{ loop1.index }}.{{ loop2.index }}.{{ loop4.index + 1 }}.{{ loop.index }} {{ x }}</a><br>
 

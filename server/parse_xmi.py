@@ -1,11 +1,15 @@
 import os
 import sys
 import json
+import glob
+import operator
 
 from collections import defaultdict
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'scripts'))
+
 from xmi_document import xmi_document
+from compare_pset import read as read_psd
 
 fn = os.path.join(os.path.dirname(__file__), '..', 'schemas', 'IFC.xml')
 xmi_doc = xmi_document(fn)
@@ -72,16 +76,18 @@ subtypes = defaultdict(list)
 roots = []
 attributes = {}
 definitions = {}
+resource_to_package = {}
+psets = {}
 
 def get_schema(name):
     for cat, schemas in hierarchy:
         for schema_name, members in schemas:
             if schema_name == name: return members
-    import pdb; pdb.set_trace()
 
 for item in xmi_doc:
     if item.type == "ENTITY":
         entity_to_package[item.name] = item.package
+        resource_to_package[item.name] = get_schema(item.package)
         get_schema(item.package)['Entities'].append(item.name)
         if item.definition.supertype:
             supertype[item.name] = item.definition.supertype
@@ -98,10 +104,55 @@ for item in xmi_doc:
             attributes[".".join((item.name, nm))] = (False, ty)
         
     elif item.type in ("TYPE", "SELECT", "ENUM"):
+        resource_to_package[item.name] = get_schema(item.package)
         get_schema(item.package)['Types'].append(item.name)
         
     if item.type in ("ENTITY", "TYPE", "SELECT", "ENUM"):
         definitions[item.name] = str(item.definition)
+        
+def child_by_tag(node, tag):
+    return [c for c in node["_children"] if c['#tag'] == tag][0]
+    
+for fn in glob.glob("./psd/*.xml"):
+    xml = read_psd(fn)
+    
+    psetname = child_by_tag(xml, "Name")["#text"]
+    try:
+        classes = list(map(operator.itemgetter("#text"), child_by_tag(xml, "ApplicableClasses")["_children"]))
+    except:
+        classes = []
+
+    props = []
+    definition = {
+        'name': psetname,
+        'applicability': classes,
+        'properties': props
+    }
+
+    if xml['#tag'] == 'PropertySetDef':
+        for prop in child_by_tag(xml, 'PropertyDefs').get("_children", []):
+            propname = child_by_tag(prop, "Name")["#text"]
+            try:
+                proptypenode = child_by_tag(prop, 'PropertyType')["_children"][0]
+                proptype = proptypenode["#tag"]
+                # proptypeargs = globals()[f"format_{proptype}"](proptypenode)
+                proptypeifc = f"Ifc{proptype[4:]}"
+            except IndexError as e:
+                proptypeifc = "INVALID"
+            
+            props.append({
+                'name': propname,
+                'type': proptypeifc
+            })
+            
+    if classes:
+        cls = classes[0].split("/")[0]
+        try:
+            resource_to_package[cls]['Property Sets'].append(psetname)
+        except KeyError as e:
+            pass
+            
+    psets[psetname] = definition
         
 for cat, schemas in hierarchy:
     for schema_name, members in schemas:
@@ -123,3 +174,4 @@ json.dump(entity_to_package, open("entity_to_package.json", "w", encoding="utf-8
 json.dump(hierarchy, open("hierarchy.json", "w", encoding="utf-8"))
 json.dump(attributes, open("entity_attributes.json", "w", encoding="utf-8"))
 json.dump(definitions, open("entity_definitions.json", "w", encoding="utf-8"))
+json.dump(psets, open("pset_definitions.json", "w", encoding="utf-8"))

@@ -943,5 +943,24 @@ def sandcastle():
         html = str(soup)
     
     return render_template('sandcastle.html', html=html, md=md)
+       
+       
+ifcre = re.compile(r"Ifc\w+(?!(.ht|</a|</h|/|.md))")
+
+@app.after_request
+def after(response):
+    
+    if request.path.endswith('.htm'):    
+        d = response.data.decode('utf-8')
         
+        def decorate_link(m):
+            w = m.group(0)
+            if w in entity_definitions:
+                return "<a href='" + url_for('resource', resource=w) + "'>" + w + "</a>"
+            else:
+                return w
+            
+        response.data = ifcre.sub(decorate_link, d)
+    
+    return response
     

@@ -1,4 +1,5 @@
 import os
+import re
 import sys
 import operator
 import itertools
@@ -13,6 +14,8 @@ import nodes
 fn1, fn2, output = sys.argv[1:]
 
 print("Running difference", *sys.argv[1:])
+
+schema_name_re = re.compile(r"ifc4x3_rc\d")
 
 def eq(a, b):
     if (type(a) != type(b)):
@@ -93,6 +96,11 @@ def compare(fn1, fn2, m1, m2):
             for wnm in (set(d1_wns) & set(d2_wns)):
                 w1 = dict(cv1)[wnm]
                 w2 = dict(cv2)[wnm]
+                                
+                # replace schema names              
+                w1 = schema_name_re.sub("ifc4x3_dev", w1)
+                w2 = schema_name_re.sub("ifc4x3_dev", w2)
+                
                 if w1 != w2:
                     yield "WHERE", (e + "." + wnm, w1, w2)
         

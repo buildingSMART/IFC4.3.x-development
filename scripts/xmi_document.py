@@ -611,9 +611,9 @@ class xmi_document:
                     # @tfk this was misguided
                     # is_inverse |= assoc_node.xmi_id not in self.order
                         
-                    if not is_inverse and end_node.isOrdered is not None:
-                        ####
-                        express_aggr = "LIST" if end_node.isOrdered == "true" else "SET"
+                    # @tfk this is no longer working, rely fully on `express_aggr`
+                    # if not is_inverse and end_node.isOrdered is not None:
+                    #     express_aggr = "LIST" if end_node.isOrdered == "true" else "SET"
                         
                     if end_node/"lowerValue" and not express_aggr:
                         is_optional |= (end_node|"lowerValue").value == '0'

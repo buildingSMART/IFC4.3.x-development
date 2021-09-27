@@ -91,7 +91,7 @@ def generate_issues():
         
         if item.type == "ENTITY":
         
-            print("checking", item.name)
+            print("checking", item.name, flush=True)
             
             md = item.markdown_definition_html
             if not md:
@@ -145,7 +145,7 @@ def pause():
     time.sleep(sleep_time)
     
 for gh_handle, state in issue_changes:
-    print("Changing", gh_handle, "->", state)
+    print("Changing", gh_handle, "->", state, flush=True)
     gh_handle.edit(state=state)
     pause()
     

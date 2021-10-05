@@ -41,6 +41,7 @@ import html
 
 import operator
 import functools
+import subprocess
 
 from collections import defaultdict, namedtuple
 
@@ -52,6 +53,11 @@ logging.basicConfig(level=logging.WARNING, stream=sys.stdout)
 
 # @todo schema name is hardcoded and not derived from the XMI package name for now
 SCHEMA_NAME = "IFC4X3_DEV"
+
+try:
+    sha = subprocess.check_output(["git", "rev-parse", "--short", "HEAD"]).decode('ascii').strip()
+    SCHEMA_NAME += f"_{sha}"
+except: pass
 
 def unescape(s):
     # @todo this is bizarre encoding, what happened here?

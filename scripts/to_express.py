@@ -4,15 +4,12 @@ import logging
 from collections import defaultdict
 
 import express
-from xmi_document import xmi_document
+from xmi_document import xmi_document, SCHEMA_NAME
 
 logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
 
 # The order in which definitions are to appear in the Express schema
 EXPRESS_ORDER=("TYPE", "ENUM", "SELECT", "ENTITY", "FUNCTION", "RULE")
-
-# @todo schema name is hardcoded and not derived from the XMI package name for now
-SCHEMA_NAME = "IFC4X3_DEV"
 
 try:
     fn = sys.argv[1]

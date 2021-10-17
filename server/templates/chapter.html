@@ -40,99 +40,28 @@ fetch('https://api.github.com/repos/{{ repo or "buildingSMART/IFC4.3.x-developme
 
 {{ content | safe }}
 
-{% if toc %}
+{% for sub in subs recursive -%}
 
-{% for sub in subs %}
+{# indentation #}
+{{ ("&nbsp;&nbsp;" * loop.depth0) | safe }}
 
-{% if loop.index < 4 %}
-
-<a href='content/{{ ["scope", "normative_references", "terms_and_definitions", "concepts"][loop.index-1] }}.htm'>{{ loop.index }} {{ sub[0] }}</a><br>
-
-{% else %}
-
-<a href='chapter-{{loop.index}}'>{{ loop.index }} {{ sub[0] }}</a><br>
-
+{# opening a #}
+{% if sub.url %}
+<a href='{{sub.url}}'>
 {% endif %}
 
-{% set loop1 = loop %}
+{{ sub.number if sub.number }} {{ sub.text }}
 
-{% for ssub in sub[1] %}
-
-&nbsp;&nbsp;<a href='{{ ssub[0] | lower }}/content.html'>{{ loop1.index }}.{{ loop.index }} {{ ssub[0] }}</a><br>
-
-{% set loop2 = loop %}
-
-&nbsp;&nbsp;&nbsp;&nbsp;<a href='{{ ssub[0] | lower }}/content.html'>{{ loop1.index }}.{{ loop2.index }}.1 Schema Definition</a><br>
-
-{% set loop3 = loop %}
-
-{% for a in ["Types", "Entities", "Property Sets"] %}
-
-&nbsp;&nbsp;&nbsp;&nbsp;<a href='{{ ssub[0] | lower }}/content.html'>{{ loop1.index }}.{{ loop2.index }}.{{ loop.index + 1 }} {{ a }}</a><br>
-
-{% set loop4 = loop %}
-
-{% for x in ssub[1].get(a, []) %}
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='lexical/{{ x }}.htm'>{{ loop1.index }}.{{ loop2.index }}.{{ loop4.index + 1 }}.{{ loop.index }} {{ x }}</a><br>
-
-{% endfor %}
-
-{% endfor %}
-
-{% endfor %}
-
-{% endfor %}
-
-
-{% else %}
-
-{% for sub in subs %}
-
-{% if sub is string %}
-
-{% if ":" in sub %}
-
-<a href='{{ sub.split(":")[1] }}'>{{ sub.split(":")[0] }}</a><br>
-
-{% else %}
-
-<a href='../{{ sub | lower }}/content.html'>{{ number }}.{{ loop.index }} {{ sub }}</a><br>
-
+{% if sub.url %}
+</a>
 {% endif %}
 
-{% else %}
+<br />
 
-{% if sub[0].__class__.__name__ == "link" %}
-
-<a href='{{ sub[0].href }}'>{{ number }}.{{ loop.index }} {{ sub[0].text }}</a><br>
-
-{% else %}
-
-<h3>{{ number }}.{{ loop.index + 1 }} {{ sub[0] }}</h3>
-
+{% if sub.children %}
+{{ loop(sub.children) }}
 {% endif %}
 
-{% set outer_loop = loop %}
-
-{% for ssub in sub[1] %}
-
-{% if ssub.__class__.__name__ == "link" %}
-
-&nbsp;&nbsp;&nbsp;&nbsp;<a href='{{ ssub.href }}'>{{ number }}.{{ outer_loop.index + 1 }}.{{ loop.index }} {{ ssub.text }}</a><br>
-
-{% else %}
-
-<a href='../lexical/{{ ssub }}.htm'>{{ number }}.{{ outer_loop.index + 1 }}.{{ loop.index }} {{ ssub }}</a><br>
-
-{% endif %}
-
-{% endfor %}
-
-{% endif %}
-
-{% endfor %}
-
-{% endif %}
+{%- endfor %}
 
 {% endblock %}

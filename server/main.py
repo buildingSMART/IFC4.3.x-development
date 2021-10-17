@@ -8,6 +8,7 @@ import itertools
 import subprocess
 
 from collections import defaultdict
+from dataclasses import dataclass
 
 import tabulate
 import pydot
@@ -42,16 +43,15 @@ navigation_entries = [
     ("Examples", "Change logs", "Bibliography", "Index")
 ]
 
+@dataclass
 class toc_entry:
-    parent = None # toc_entry
-    number = None # tuple
-    url = None    # str
-
-
-class root_toc_entry:
-    @property
-    def children(self):
-        return list(map(toc_entry(navigation_entries)))
+    text : str
+    
+    number : str = None
+    url : str = None
+    
+    parent : object = None
+    children : list = None
 
 
 content_names = ['scope','normative_references','terms_and_definitions','concepts']
@@ -725,26 +725,22 @@ def concept(s=''):
     else:
     	html = fn
     	
-    def make_path(p):
-        return p.split(os.sep)[3:-1]
+    def make_concept(path, number_path=None):
+        if number_path is None:
+            number_path = n
         
-    def make_link(c):
-        c = list(c)
-        return link(
-            make_url("concepts/" + "/".join(c).replace(" ", "_") + "/content.html"),
-            " ".join(c[(0 if len(c) == 1 else 1):]))
+        children = enumerate(sorted([d for d in os.listdir(os.path.join(md_root, *path)) if os.path.exists(os.path.join(md_root, *path, d, "README.md"))]), 1)
+        return toc_entry(
+            url      = make_url("concepts/" + "/".join(path).replace(" ", "_") + "/content.html"),
+            number   = number_path,
+            text     = path[-1],
+            children = [make_concept(path + [c], number_path=f"{number_path}.{i}") for i, c in children]
+        )
         
-    subs = sorted(filter(lambda pt: "/".join(pt) != s, filter(None, map(make_path, glob.glob(os.path.join(md_root, s, "**", "README.md"), recursive=True)))))
-    subs = list((make_link(next(b)),[make_link(c) for c in list(b)[1:]]) for a, b in itertools.groupby(subs, key=operator.itemgetter(0)))
+    subs = make_concept(s.split("/")).children
 
     return render_template('chapter.html', navigation=navigation_entries, content=html, path=fn[3:], title=t, number=n, subs=subs)
 
-from dataclasses import dataclass
-@dataclass
-class link:
-    href : str
-    text : str
-    
     
 @app.route(make_url('chapter-<n>/'))
 def chapter(n):
@@ -768,7 +764,12 @@ def chapter(n):
     	html = ''
     
     subs = [itms for t, itms in hierarchy if t == chp.get('title')][0]
-    subs = list(map(operator.itemgetter(0), subs))
+    
+    def get_entry(pair):
+        i, text = pair
+        return toc_entry(text, url=url_for("schema", name=text.lower()), number=f"{n}.{i}")
+    
+    subs = list(map(get_entry, enumerate(map(operator.itemgetter(0), subs), 1)))
     
     return render_template('chapter.html', navigation=navigation_entries, content=html, path=fn[3:], title=t, number=n, subs=subs)
     
@@ -809,11 +810,50 @@ def annex_a():
         (tabulate.tabulate([["IFC EXPRESS long form schema", '%s']], headers=["Format", "URL"], tablefmt='html') % \
             ("<a href='%(url)s'>%(url)s</a>" % locals()))
     return render_template('chapter.html', navigation=navigation_entries, content=html, path=None, title="Annex A", number="", subs=[])
+    
+
+def annotate_hierarchy(data = None, start = 1, number_path = None):
+
+    level_2_headings = ("Schema Definition", "Types", "Entities", "Property Sets")
+    
+    def items(d):
+        if len(number_path or []) == 2:
+            return [(h, dict(d).get(h, [])) for h in level_2_headings]
+        elif isinstance(d, dict):
+            return d.items()
+        else:
+            return [(x, []) if isinstance(x, str) else x for x in d]
+    
+    def get_url(idx, text):
+        if len(number_path) == 0:
+            return make_url('chapter-%d/' % idx)
+        elif len(number_path) == 1:
+            return url_for("schema", name=text.lower())
+        elif len(number_path) == 2:
+            return url_for("schema", name=number_path[1][1])
+        elif len(number_path) == 3:
+            return url_for("resource", resource=text)
+
+    if data is None:
+        data = hierarchy
+    
+    if number_path is None:
+        number_path = []
+        
+    return [toc_entry(
+        text     = k,
+        number   = ".".join(list(map(operator.itemgetter(0), number_path)) + [str(i)]),
+        url      = get_url(i, k),
+        children = annotate_hierarchy(
+            data        = vs,
+            number_path = number_path + [(str(i), k)]
+        )
+    ) for i, (k, vs) in enumerate(items(data), start)]
 
     
 @app.route(make_url('toc.html'))
 def toc():
-    subs = [(x['title'], []) for x in navigation_entries[1]] + hierarchy
+    subs = [toc_entry(x['title'], number=i, url=x['url']) for i, x in enumerate(navigation_entries[1], 1)] + annotate_hierarchy(start=5)
     return render_template('chapter.html', navigation=navigation_entries, content='', path=None, title="Contents", number="", subs=subs, toc=True)
 
 
@@ -835,7 +875,7 @@ def annex_c():
 @app.route(make_url('annex-d.html'))
 def annex_d():
     subs = map(os.path.basename, glob.glob("../output/IFC.xml/*.png"))
-    subs = sorted(s[:-4] + ":" + url_for('annex_d_diagram_page', s=s[:-4]) for s in subs)
+    subs = sorted(toc_entry(s[:-4], url=url_for('annex_d_diagram_page', s=s[:-4])) for s in subs)
     return render_template('chapter.html', navigation=navigation_entries, content='<h2>Diagrams</h2>', path=None, title="Annex D", number="", subs=subs)
     
 @app.route(make_url('annex_d/<s>.html'))
@@ -851,7 +891,7 @@ def annex_d_diagram(s):
 @app.route(make_url('annex-e.html'))
 def annex_e():
     subs = map(os.path.basename, filter(os.path.isdir, glob.glob("../../examples/IFC 4.3/*")))
-    subs = sorted(s + ":" + url_for('annex_e_example_page', s=s) for s in subs)
+    subs = sorted(toc_entry(s, url=url_for('annex_e_example_page', s=s)) for s in subs)
     return render_template('chapter.html', navigation=navigation_entries, content='<h2>Examples</h2>', path=None, title="Annex E", number="", subs=subs)
 
     
@@ -902,11 +942,11 @@ def schema(name):
         html = "<h2>" + n + ".1 Schema Definition</h2>" + str(soup)
     else:
         html = ''
-
+        
     order = ["Types", "Entities", "Property Sets"]
-    subs = sorted(subs.items(), key=lambda tup: order.index(tup[0]))
+    subs2 = [toc_entry(o, number=f"{n}.{ii}", children=[toc_entry(c, number=f"{n}.{ii}.{jj}", url=url_for('resource', resource=c)) for jj, c in enumerate(subs.get(o, []), 1)]) for ii, o in enumerate(order,2)]
 
-    return render_template('chapter.html', navigation=navigation_entries, content=html, path=fn[5:], title=t, number=n, subs=subs)
+    return render_template('chapter.html', navigation=navigation_entries, content=html, path=fn[5:], title=t, number=n, subs=subs2)
 
 @app.route('/search', methods=['GET', 'POST'])
 def search():

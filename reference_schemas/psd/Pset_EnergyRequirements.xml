@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="b00232f2210c4ec59c146cf81542aa47" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC4" />
+  <Name>Pset_EnergyRequirements</Name>
+  <Definition>Property set for the application of energy requirements to facility and physical elements</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcDistributionElement</ClassName>
+    <ClassName>IfcDistributionElementType</ClassName>
+    <ClassName>IfcTransportElement</ClassName>
+    <ClassName>IfcTransportElementType</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcDistributionElement,IfcDistributionElementType,IfcTransportElement,IfcTransportElementType</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="8f737eae19e84576bca44982c4cf5a0a">
+      <Name>EnergyConsumption</Name>
+      <Definition>Annual energy consumption requirement</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcEnergyMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="4f91ea76f87942d1a9fa84adbeb83c3f">
+      <Name>PowerDemand</Name>
+      <Definition>Power demand of the element</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPowerMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="70bf1f16939c408797bd780289a363e6">
+      <Name>EnergySource</Name>
+      <Definition>Type of energy source e.g. Electricity, Diesel, LPG etc. utilised by the element.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="1af94ce95b9049a3a6969ceb0b9621d4">
+      <Name>EnergyConversionEfficiency</Name>
+      <Definition>Measure of the efficiency of conversion of fuel energy to mechanical energy</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcRatioMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

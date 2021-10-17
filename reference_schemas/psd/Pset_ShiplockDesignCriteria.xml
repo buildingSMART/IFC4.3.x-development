@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="4d508d0c39674b6e8a1b083ccbe9a4f3" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC4" />
+  <Name>Pset_ShiplockDesignCriteria</Name>
+  <Definition>Properties common to the definition of design criteria of all occurrences of IfcMarineFacility with the predefined type set to SHIPLOCK.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcMarineFacility/SHIPLOCK</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcMarineFacility/SHIPLOCK</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="ed9dc4eb44e545839aa8cd3efddb265f">
+      <Name>MaximumUpstreamNavigableWaterLevel</Name>
+      <Definition>Design maximum upstream water level for the lock complex</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="fc8a0e07ca17485dbee268b04214afda">
+      <Name>MinimumUpstreamNavigableWaterLevel</Name>
+      <Definition>Design minimum upstream water level for the lock complex</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="945cc2e9fdcc40a881089f72e7cfb8cf">
+      <Name>MaximumDownstreamNavigableWaterLevel</Name>
+      <Definition>Design maximum downstream water level for the lock complex</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="8e2812aa9e4a4a07a7ca8133cbc01b72">
+      <Name>MinimumDownstreamNavigableWaterLevel</Name>
+      <Definition>Design minimum downstream water level for the lock complex</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="0f09e9f33d974ace82ce7421a1cd6878">
+      <Name>UpstreamMaintenanceWaterLevel</Name>
+      <Definition>Design maximum upstream water level for the lock complex</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="5c13485457a44643bb4065e38ab3404b">
+      <Name>DownstreamMaintenanceWaterLevel</Name>
+      <Definition>Design minimum upstream water level for the lock complex</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="18cf23ba9455423b89e5b79b9faf7994">
+      <Name>UpstreamFloodWaterLevel</Name>
+      <Definition>Design maximum upstream water level for the lock complex</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="a3fa81e82a1a4248b95d8bf07adf2f75">
+      <Name>DownstreamFloodWaterLevel</Name>
+      <Definition>the design minimum upstream water level for the lock complex</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

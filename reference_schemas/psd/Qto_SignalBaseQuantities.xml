@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<QtoSetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.buildingsmart-tech.org/xml/qto/QTO_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC4" />
+  <Name>Qto_SignalBaseQuantities</Name>
+  <Applicability />
+  <ApplicableClasses />
+  <QtoDefs>
+    <QtoDef>
+      <Name>Weight</Name>
+      <Definition>Total weight of object</Definition>
+      <QtoType>Q_WEIGHT</QtoType>
+      <NameAliases />
+      <DefinitionAliases />
+    </QtoDef>
+  </QtoDefs>
+  <QtoDefinitionAliases />
+</QtoSetDef>

@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="a4db95cf06af45628d73bbd65fbcc8da" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC4" />
+  <Name>Pset_LinearReferencingMethod</Name>
+  <Definition>Describes the manner in which measurements are made along (and optionally offset from) a linear element.
+
+&gt; NOTE Definition according to ISO 19148:2021</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcAlignment</ClassName>
+    <ClassName>IfcReferent/(.POSITION.)</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcAlignment,IfcReferent/(.POSITION.)</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="361d880a8ed24d92bec001d40de485b3">
+      <Name>LRMName</Name>
+      <Definition>Gives the name of this Linear Referencing Method, such as “kilometre-point”. 
+
+&gt; NOTE&amp;nbsp;Definition according to ISO 19148:2021.
+&gt;
+&gt; NOTE&amp;nbsp;Names of commonly used Linear Referencing Methods are included in ISO 19148, Annex C, along with recognized name aliases.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="ea3eec208d624f1890c817b39f2c76b9">
+      <Name>LRMType</Name>
+      <Definition>Gives the type of this Linear Referencing Method.
+
+&gt; NOTE&amp;nbsp;Definition according to ISO 19148:2021, LRMType.
+
+&gt; NOTE&amp;nbsp;Since the definition in ISO 19148:2021, LRMType is stereotyped as a CodeList it is open for user defined extensions. In this Pset this is handled by adding the enumeration constant _LRM_USERDEFINED_ and the additional property _UserDefinedLRMType_</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_LRMType">
+            <EnumItem>LRM_ABSOLUTE</EnumItem>
+            <EnumItem>LRM_RELATIVE</EnumItem>
+            <EnumItem>LRM_INTERPOLATIVE</EnumItem>
+            <EnumItem>LRM_USERDEFINED</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>LRM_ABSOLUTE</Name>
+              <Definition>Measurements are made from the start of the linear element being measured, in the direction of the linear element.
+
+&gt; NOTE Definition according to ISO 19148:2021, LRMType.absolute.</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>LRM_RELATIVE</Name>
+              <Definition>Measurements are made from the specified “from referent” location, in the direction of the linear element.
+
+&gt; NOTE Definition according to ISO 19148:2021, LRMType.relative.</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>LRM_INTERPOLATIVE</Name>
+              <Definition>Measurements are interpolated in accordance with the default length of the linear element.
+
+&gt; NOTE Definition according to ISO 19148:2021, LRMType.interpolative.</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>LRM_USERDEFINED</Name>
+              <Definition>A user defined linear referencing method. The method needs to be specified as a UserDefinedLRMType in _Pset_LinearReferencingMethod_.</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="d865767f1a524e029c9ae8da0ae9838d">
+      <Name>UserDefinedLRMType</Name>
+      <Definition>Gives the user defined type of this Linear Referencing Method when property _LRMType_ is _LRM_USERDEFINED_.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="eb83539940674bcba1d64e25981fb30a">
+      <Name>LRMUnit</Name>
+      <Definition>Specifies the units of measure used by this Linear Referencing Method for measures along the linear element being measured.
+
+&gt; NOTE&amp;nbsp;Definition according to ISO 19148:2021.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="bb87d06eaf50475c87e1d83883f12bb9">
+      <Name>LRMConstraint</Name>
+      <Definition>Allows for the specification of constraints imposed by this Linear Referencing Method. For example, a Reference Post Linear Referencing Method may specify that referents be of type “reference marker”.
+
+&gt; NOTE&amp;nbsp;definition according to ISO 19148:2021</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

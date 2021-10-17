@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="cccbde5daea24e5da55a7602871d2687" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC4" />
+  <Name>Pset_CargoCommon</Name>
+  <Definition>Properties common to the definition of all occurrences of _IfcTransportElement_ and types of _IfcTransportElementType_ with the predefined type set to CARGO.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcTransportElement/IfcTransportElementNonFixedTypeEnum(.CARGO.)</ClassName>
+    <ClassName>IfcTransportElementType/IfcTransportElementNonFixedTypeEnum(.CARGO.)</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcTransportElement/IfcTransportElementNonFixedTypeEnum(.CARGO.),IfcTransportElementType/IfcTransportElementNonFixedTypeEnum(.CARGO.)</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="3c8560a7e9dc4706acfb468a77f65fdc">
+      <Name>ProcessItem</Name>
+      <Definition>The type of cargo (and its measurement method) being modelled within a process.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="PEnum_ProcessItem" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="106608c53a03450dba83e763cd810b9c">
+      <Name>AdditionalProcessing</Name>
+      <Definition>Any additional or special processing requirements on the associated cargo.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_AdditionalProcessing">
+            <EnumItem>NONE</EnumItem>
+            <EnumItem>INSPECTION</EnumItem>
+            <EnumItem>TARIFFS</EnumItem>
+            <EnumItem>ISOLATION</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>NONE</Name>
+              <NameAliases>
+                <NameAlias lang="en">None</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>INSPECTION</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>TARIFFS</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>ISOLATION</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="3eb38689be474880bc5915a132004291">
+      <Name>ProcessDirection</Name>
+      <Definition>The direction of flow of the cargo within the process.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_ProcessDirection">
+            <EnumItem>IMPORT</EnumItem>
+            <EnumItem>EXPORT</EnumItem>
+            <EnumItem>TRANSFER</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>IMPORT</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>EXPORT</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>TRANSFER</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

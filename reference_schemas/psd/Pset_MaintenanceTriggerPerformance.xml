@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="3b24f630a25e4015af67291775ce97d3" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC4" />
+  <Name>Pset_MaintenanceTriggerPerformance</Name>
+  <Definition>Properties for performance based maintenance policies</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcElement</ClassName>
+    <ClassName>IfcAsset</ClassName>
+    <ClassName>IfcSystem</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcElement,IfcAsset,IfcSystem</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="e22f3594601440f6b5602662adafba62">
+      <Name>TargetPerformance</Name>
+      <Definition>Target capacity or performance of the asset. Units of the performance value are specified through the propertyValue units attribute.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcReal" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="6cd2c7c12e7e49b9907d3f0771ee1e4a">
+      <Name>MaintenanceLevel</Name>
+      <Definition>Performance level at which maintenance takes place</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcReal" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="3d7db41aeffd4120a5a1898f6ffb4f0e">
+      <Name>ReplacementLevel</Name>
+      <Definition>Performance level at which replacement takes place</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcReal" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="b8e8a7de23f3475a9c42eeee115e401f">
+      <Name>DisposalLevel</Name>
+      <Definition>Performance level at which disposal takes place</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcReal" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="95ac3d01c3244bba912c4185b0bfce5d" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC4" />
+  <Name>Pset_ProcessCapacity</Name>
+  <Definition>Property set for the application of process data to spatial elements and transport assets</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcSpatialElement</ClassName>
+    <ClassName>IfcSpatialElementType</ClassName>
+    <ClassName>IfcTransportElement</ClassName>
+    <ClassName>IfcTransportElementType</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcSpatialElement,IfcSpatialElementType,IfcTransportElement,IfcTransportElementType</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="3c8560a7e9dc4706acfb468a77f65fdc">
+      <Name>ProcessItem</Name>
+      <Definition>The type of cargo (and its measurement method) being modelled within a process.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="PEnum_ProcessItem" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="6f59a5a9f24b48838bba8cc13186ea6c">
+      <Name>ProcessCapacity</Name>
+      <Definition>The number of units that can be processed in the time defined in ProcessPerformance</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcCountMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="b1d174966cdb4054a881c120e3e658d1">
+      <Name>ProcessPerformance</Name>
+      <Definition>Minimum time to accept or dispatch the entire item capacity.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcDuration " />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="4fe945f07a10401aaf862404dd29a9ae">
+      <Name>DownstreamConnections</Name>
+      <Definition>Names of downstream connected equipment and spaces (comma-separated), if not otherwise represented</Definition>
+      <PropertyType>
+        <TypePropertyListValue>
+          <ListValue>
+            <DataType type="IfcLabel" />
+          </ListValue>
+        </TypePropertyListValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="2a9b02331e6a4f088a6a33547c8093ed">
+      <Name>UpstreamConnections</Name>
+      <Definition>Names of upstream connected equipment and spaces (comma-separated), if not otherwise represented</Definition>
+      <PropertyType>
+        <TypePropertyListValue>
+          <ListValue>
+            <DataType type="IfcLabel" />
+          </ListValue>
+        </TypePropertyListValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

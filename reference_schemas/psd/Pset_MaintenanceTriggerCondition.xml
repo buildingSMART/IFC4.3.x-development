@@ -1,0 +1,212 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="8c96074fccd047f18333c20b06083cf6" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC4" />
+  <Name>Pset_MaintenanceTriggerCondition</Name>
+  <Definition>Trigger levels for an asset that has an inspection-based maintenance strategy</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcElement</ClassName>
+    <ClassName>IfcAsset</ClassName>
+    <ClassName>IfcSystem</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcElement,IfcAsset,IfcSystem</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="ac36ccc841d748f5b8186c2a9bb886ae">
+      <Name>ConditionTargetPerformance</Name>
+      <Definition>Target condition of the asset</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_AssetRating">
+            <EnumItem>VERYHIGH</EnumItem>
+            <EnumItem>HIGH</EnumItem>
+            <EnumItem>MODERATE</EnumItem>
+            <EnumItem>LOW</EnumItem>
+            <EnumItem>VERYLOW</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>VERYHIGH</Name>
+              <Definition>Asset rating of very high</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>HIGH</Name>
+              <Definition>Asset rating of high</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>MODERATE</Name>
+              <Definition>Asset rating of moderate</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>LOW</Name>
+              <Definition>Asset rating of low</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>VERYLOW</Name>
+              <Definition>Asset rating of very low</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="1fa5d96606ad4a8ebc6edd80af49cd16">
+      <Name>ConditionMaintenanceLevel</Name>
+      <Definition>Condition that will trigger maintenance</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_AssetRating">
+            <EnumItem>VERYHIGH</EnumItem>
+            <EnumItem>HIGH</EnumItem>
+            <EnumItem>MODERATE</EnumItem>
+            <EnumItem>LOW</EnumItem>
+            <EnumItem>VERYLOW</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>VERYHIGH</Name>
+              <Definition>Asset rating of very high</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>HIGH</Name>
+              <Definition>Asset rating of high</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>MODERATE</Name>
+              <Definition>Asset rating of moderate</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>LOW</Name>
+              <Definition>Asset rating of low</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>VERYLOW</Name>
+              <Definition>Asset rating of very low</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="48bbbef276a34858a7e2a517c0cef8bf">
+      <Name>ConditionReplacementLevel</Name>
+      <Definition>Condition that will trigger a replacement process</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_AssetRating">
+            <EnumItem>VERYHIGH</EnumItem>
+            <EnumItem>HIGH</EnumItem>
+            <EnumItem>MODERATE</EnumItem>
+            <EnumItem>LOW</EnumItem>
+            <EnumItem>VERYLOW</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>VERYHIGH</Name>
+              <Definition>Asset rating of very high</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>HIGH</Name>
+              <Definition>Asset rating of high</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>MODERATE</Name>
+              <Definition>Asset rating of moderate</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>LOW</Name>
+              <Definition>Asset rating of low</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>VERYLOW</Name>
+              <Definition>Asset rating of very low</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="6a5706e3fba4460ea078a1ef65d02d9c">
+      <Name>ConditionDisposalLevel</Name>
+      <Definition>Condition that will trigger a disposal process</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_AssetRating">
+            <EnumItem>VERYHIGH</EnumItem>
+            <EnumItem>HIGH</EnumItem>
+            <EnumItem>MODERATE</EnumItem>
+            <EnumItem>LOW</EnumItem>
+            <EnumItem>VERYLOW</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>VERYHIGH</Name>
+              <Definition>Asset rating of very high</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>HIGH</Name>
+              <Definition>Asset rating of high</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>MODERATE</Name>
+              <Definition>Asset rating of moderate</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>LOW</Name>
+              <Definition>Asset rating of low</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>VERYLOW</Name>
+              <Definition>Asset rating of very low</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

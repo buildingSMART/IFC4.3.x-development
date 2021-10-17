@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<QtoSetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.buildingsmart-tech.org/xml/qto/QTO_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC4" />
+  <Name>Qto_CourseBaseQuantities</Name>
+  <Applicability />
+  <ApplicableClasses />
+  <QtoDefs>
+    <QtoDef>
+      <Name>Length</Name>
+      <Definition>Characteristic length</Definition>
+      <QtoType>Q_LENGTH</QtoType>
+      <NameAliases />
+      <DefinitionAliases />
+    </QtoDef>
+    <QtoDef>
+      <Name>Width</Name>
+      <Definition>Characteristic width</Definition>
+      <QtoType>Q_LENGTH</QtoType>
+      <NameAliases />
+      <DefinitionAliases />
+    </QtoDef>
+    <QtoDef>
+      <Name>Thickness</Name>
+      <Definition>The geometric thickness of the object.</Definition>
+      <QtoType>Q_LENGTH</QtoType>
+      <NameAliases />
+      <DefinitionAliases />
+    </QtoDef>
+    <QtoDef>
+      <Name>Volume</Name>
+      <Definition>Measured volume</Definition>
+      <QtoType>Q_VOLUME</QtoType>
+      <NameAliases />
+      <DefinitionAliases />
+    </QtoDef>
+    <QtoDef>
+      <Name>GrossVolume</Name>
+      <Definition>Total gross volume of the slab. Openings, recesses, and projections are not taken into account.</Definition>
+      <QtoType>Q_VOLUME</QtoType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Bruttovolumen</NameAlias>
+        <NameAlias lang="en">Gross Volume</NameAlias>
+        <NameAlias lang="ja-JP">体積</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">Bruttovolumen der Decke. Alle Öffnungen werden übermessen.</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">スラブの体積。開口、へこみなどを考慮しない。</DefinitionAlias>
+      </DefinitionAliases>
+    </QtoDef>
+    <QtoDef>
+      <Name>Weight</Name>
+      <Definition>Total weight of object</Definition>
+      <QtoType>Q_WEIGHT</QtoType>
+      <NameAliases />
+      <DefinitionAliases />
+    </QtoDef>
+  </QtoDefs>
+  <QtoDefinitionAliases />
+</QtoSetDef>

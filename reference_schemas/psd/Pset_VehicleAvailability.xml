@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="4f95937894e04d289d5e265e0ce558d5" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC4" />
+  <Name>Pset_VehicleAvailability</Name>
+  <Definition>Property set for the application of availability data to vehicles and equipment.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcTransportElement/IfcTransportElementNonFixedTypeEnum(.VEHICLE.)</ClassName>
+    <ClassName>IfcTransportElement/IfcTransportElementNonFixedTypeEnum(.VEHICLETRACKED.)</ClassName>
+    <ClassName>IfcTransportElement/IfcTransportElementNonFixedTypeEnum(.VEHICLEMARINE.)</ClassName>
+    <ClassName>IfcTransportElement/IfcTransportElementNonFixedTypeEnum(.VEHICLEAIR.)</ClassName>
+    <ClassName>IfcTransportElement/IfcTransportElementNonFixedTypeEnum(.ROLLINGSTOCK.)</ClassName>
+    <ClassName>IfcTransportElementType/IfcTransportElementNonFixedTypeEnum(.VEHICLE.)</ClassName>
+    <ClassName>IfcTransportElementType/IfcTransportElementNonFixedTypeEnum(.VEHICLETRACKED.)</ClassName>
+    <ClassName>IfcTransportElementType/IfcTransportElementNonFixedTypeEnum(.VEHICLEMARINE.)</ClassName>
+    <ClassName>IfcTransportElementType/IfcTransportElementNonFixedTypeEnum(.VEHICLEAIR.)</ClassName>
+    <ClassName>IfcTransportElementType/IfcTransportElementNonFixedTypeEnum(.ROLLINGSTOCK.)</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcTransportElement/IfcTransportElementNonFixedTypeEnum(.VEHICLE.),IfcTransportElement/IfcTransportElementNonFixedTypeEnum(.VEHICLETRACKED.),IfcTransportElement/IfcTransportElementNonFixedTypeEnum(.VEHICLEMARINE.),IfcTransportElement/IfcTransportElementNonFixedTypeEnum(.VEHICLEAIR.),IfcTransportElement/IfcTransportElementNonFixedTypeEnum(.ROLLINGSTOCK.),IfcTransportElementType/IfcTransportElementNonFixedTypeEnum(.VEHICLE.),IfcTransportElementType/IfcTransportElementNonFixedTypeEnum(.VEHICLETRACKED.),IfcTransportElementType/IfcTransportElementNonFixedTypeEnum(.VEHICLEMARINE.),IfcTransportElementType/IfcTransportElementNonFixedTypeEnum(.VEHICLEAIR.),IfcTransportElementType/IfcTransportElementNonFixedTypeEnum(.ROLLINGSTOCK.)</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="0980236efdf34c48a63f89046bfc6f86">
+      <Name>VehicleAvailability</Name>
+      <Definition>Vehicle or Plant availability</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcRatioMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="48893d2906644bf8aa8a57a137d6d9a9">
+      <Name>MaintenanceDowntime </Name>
+      <Definition>Maintenance downtime proportion</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcRatioMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="7e6796b3427647868d6e6736f8ee79d2">
+      <Name>WeatherDowntime</Name>
+      <Definition>Weather downtime proportion</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcRatioMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

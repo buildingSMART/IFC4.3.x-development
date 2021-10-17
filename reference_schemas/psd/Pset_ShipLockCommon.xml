@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="7b49b556c0704094a56a0e69a0357585" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC4" />
+  <Name>Pset_ShipLockCommon</Name>
+  <Definition>Properties common to the definition of all occurrences of _IfcMarineFacility_ with the predefined type set to SHIPLOCK.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcMarineFacility/SHIPLOCK</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcMarineFacility/SHIPLOCK</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="d40c29334f9441e18a500526d6f5a336">
+      <Name>CillLevelUpperHead</Name>
+      <Definition>Height of the upper head cill level</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="f9236d7542ee452fb44c3aa7a2b7ca04">
+      <Name>CillLevelLowerHead</Name>
+      <Definition>Height of the lower head cill level</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="c8271873d9294a7f96b3682e714af710">
+      <Name>WaterDeliveryValveType</Name>
+      <Definition>Type of water delivery valve</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="5a007b6b9cb94b76a03f88cf837be4d6">
+      <Name>WaterDeliverySystemType</Name>
+      <Definition>Type of water delivery system</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

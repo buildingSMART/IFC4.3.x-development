@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="30497c1e92104a86bbbad8beceaf4b3b" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC4" />
+  <Name>Pset_ReferentCommon</Name>
+  <Definition>Specifies common properties for _IfcReferent_</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcReferent</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcReferent</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="108b47e283b7482aae7240f327123803">
+      <Name>NameFormat</Name>
+      <Definition>Specifies a reference to or description of the formatting or encoding of the Name attribute of the _IfcReferent_ occurence.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

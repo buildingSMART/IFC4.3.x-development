@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="b6f3108cb37548f89be90a7f888d8f43" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC4" />
+  <Name>Pset_Stationing</Name>
+  <Definition>Specifies stationing parameters for _IfcReferent_.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcReferent</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcReferent</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="9c9a28cdc1a24c2796c81c8680f6fb0c">
+      <Name>IncomingStation</Name>
+      <Definition>The optional station value of the incoming segment that ends at this location. This value needs to be set if the intention is to specify a station equation, i.e. a location where stationing changes.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="ba78f876d1f34b229ea776e1fd413857">
+      <Name>Station</Name>
+      <Definition>The station value at this location.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

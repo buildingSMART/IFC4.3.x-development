@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="53e6b2fe03d3456c853a1986419b9a24" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC4" />
+  <Name>Pset_SiteWeather</Name>
+  <Definition>Properties for site weather</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcSite</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcSite</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="a5e8ebbcb5384fcb9b2362fa4ced0962">
+      <Name>MaxAmbientTemp</Name>
+      <Definition>Maximum ambient temperature of the site used as a basis of design</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcThermodynamicTemperatureMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="d5c3d409c3a34598a72bcac83907662d">
+      <Name>MinAmbientTemp</Name>
+      <Definition>Minimum ambient temperature of the site used as a basis of design</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcThermodynamicTemperatureMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

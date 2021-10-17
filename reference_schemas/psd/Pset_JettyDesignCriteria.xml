@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="a7cf07877c6a4455a7887ba893e3b2ff" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC4" />
+  <Name>Pset_JettyDesignCriteria</Name>
+  <Definition>Properties common to the definition of design criteria of all occurrences of _IfcMarineFacility_ with the predefined type set to JETTY.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcMarineFacility/JETTY</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcMarineFacility/JETTY</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="1c0f0736cb4749ef970a9bf339187ca8">
+      <Name>HighWaterLevel</Name>
+      <Definition>High water level</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="8c87e80f46ee49e4bf340a963085eaa0">
+      <Name>LowWaterLevel</Name>
+      <Definition>Low water level</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="d03f1019cc5d40a1a41946292b8a569c">
+      <Name>ExtremeHighWaterLevel</Name>
+      <Definition>Extreme high water level</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="8b690a2758904396a89af19f4424f6df">
+      <Name>ExtremeLowWaterLevel</Name>
+      <Definition>Extreme low water level</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="5a4a9e3c6cdc4e91ae06ba58bcc08cc3">
+      <Name>ShipLoading</Name>
+      <Definition>Ship loading force</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcForceMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="ecef22cfff614e7bba4361745c295846">
+      <Name>WaveLoading</Name>
+      <Definition>Wave loading force</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcForceMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="5712767a2527462b980cdd9caa51a2be">
+      <Name>FlowLoading</Name>
+      <Definition>Flow loading force</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcForceMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="b23d452d65e94494a16c2108105c0e13">
+      <Name>UniformlyDistributedLoad</Name>
+      <Definition>Uniformly Distributed Load</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcForceMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="68017d80ff274f05b477983605f5d96a">
+      <Name>EquipmentLoading</Name>
+      <Definition>Loading from equipment</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcForceMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

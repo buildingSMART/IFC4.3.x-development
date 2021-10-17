@@ -1,0 +1,261 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="f7f14ce7afdc4d4f915a7083f3c19a95" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC4" />
+  <Name>Pset_MaintenanceStrategy</Name>
+  <Definition>Property set for the association of a maintenance strategy to an element, asset of system.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcElement</ClassName>
+    <ClassName>IfcAsset</ClassName>
+    <ClassName>IfcSystem</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcElement,IfcAsset,IfcSystem</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="ea704473b88543e6acb410eecce2f745">
+      <Name>AssetCriticality</Name>
+      <Definition>Rating of the asset's criticality to the operation of the facility</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_AssetRating">
+            <EnumItem>VERYHIGH</EnumItem>
+            <EnumItem>HIGH</EnumItem>
+            <EnumItem>MODERATE</EnumItem>
+            <EnumItem>LOW</EnumItem>
+            <EnumItem>VERYLOW</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>VERYHIGH</Name>
+              <Definition>Asset rating of very high</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>HIGH</Name>
+              <Definition>Asset rating of high</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>MODERATE</Name>
+              <Definition>Asset rating of moderate</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>LOW</Name>
+              <Definition>Asset rating of low</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>VERYLOW</Name>
+              <Definition>Asset rating of very low</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="00c2cebea1164a21915139fb7e04700c">
+      <Name>AssetFrailty</Name>
+      <Definition>Rating of the asset's frailty to breakage or deterioration</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_AssetRating">
+            <EnumItem>VERYHIGH</EnumItem>
+            <EnumItem>HIGH</EnumItem>
+            <EnumItem>MODERATE</EnumItem>
+            <EnumItem>LOW</EnumItem>
+            <EnumItem>VERYLOW</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>VERYHIGH</Name>
+              <Definition>Asset rating of very high</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>HIGH</Name>
+              <Definition>Asset rating of high</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>MODERATE</Name>
+              <Definition>Asset rating of moderate</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>LOW</Name>
+              <Definition>Asset rating of low</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>VERYLOW</Name>
+              <Definition>Asset rating of very low</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="a4fec42368a54248bf87ea82c7d840c0">
+      <Name>AssetPriority</Name>
+      <Definition>Combined criticality and frailty rating indicating the operational and maintenance priority of the asset</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_AssetRating">
+            <EnumItem>VERYHIGH</EnumItem>
+            <EnumItem>HIGH</EnumItem>
+            <EnumItem>MODERATE</EnumItem>
+            <EnumItem>LOW</EnumItem>
+            <EnumItem>VERYLOW</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>VERYHIGH</Name>
+              <Definition>Asset rating of very high</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>HIGH</Name>
+              <Definition>Asset rating of high</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>MODERATE</Name>
+              <Definition>Asset rating of moderate</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>LOW</Name>
+              <Definition>Asset rating of low</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>VERYLOW</Name>
+              <Definition>Asset rating of very low</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="9af4f1623c24400aa5d2e0b2c283c460">
+      <Name>MonitoringType</Name>
+      <Definition>Monitoring strategy chosen for the asset</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_MonitoringType">
+            <EnumItem>IOT</EnumItem>
+            <EnumItem>SENSORS</EnumItem>
+            <EnumItem>PPM</EnumItem>
+            <EnumItem>INSPECTION</EnumItem>
+            <EnumItem>FEEDBACK</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>IOT</Name>
+              <Definition>Internet of Things, connected devices and sensors.</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>SENSORS</Name>
+              <Definition>Monitoring sensors with no connected or smart functionality</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>PPM</Name>
+              <Definition>Planned Preventative Maintenance (PPM)</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>INSPECTION</Name>
+              <Definition>Qualitative &amp; quantitative inspections</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>FEEDBACK</Name>
+              <Definition>Reactive Feedback approach</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="4c6a45789e0841caa8485585987a0f81">
+      <Name>AccidentResponse</Name>
+      <Definition>Accident response chosen for the asset</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_AccidentResponse">
+            <EnumItem>EMERGENCYPROCEDURE</EnumItem>
+            <EnumItem>URGENTPROCEDURE</EnumItem>
+            <EnumItem>EMERGENCYINSPECTION</EnumItem>
+            <EnumItem>URGENTINSPECTION</EnumItem>
+            <EnumItem>REACTIVE</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>EMERGENCYPROCEDURE</Name>
+              <Definition>Respond with a defined emergency procedure that must be conducted immediately</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>URGENTPROCEDURE</Name>
+              <Definition>Respond with an urgent procedure that must be complete as soon as possible</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>EMERGENCYINSPECTION</Name>
+              <Definition>Respond with a defined emergency inspection that must be conducted immediately</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>URGENTINSPECTION</Name>
+              <Definition>Respond with an urgent inspection that must be complete as soon as possible</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>REACTIVE</Name>
+              <Definition>Respond by reviewing the accident and defining the response on a ad hoc basis</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

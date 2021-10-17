@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="e82c6a0079da43dbae466eab6d295bca" templatetype="PSET_OCCURRENCEDRIVEN" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC4" />
+  <Name>Pset_ProjectCommon</Name>
+  <Definition>Property set for the application of high level project information to all occurrences of _IfcProject_</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcProject</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcProject</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="bf70702c50b041e9b8ce54fb2b52b447">
+      <Name>ProjectType</Name>
+      <Definition>Additional typing of a project</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_ProjectType">
+            <EnumItem>NEWBUILD</EnumItem>
+            <EnumItem>MODIFICATION</EnumItem>
+            <EnumItem>REPAIR</EnumItem>
+            <EnumItem>OPERATIONMAINTENANCE</EnumItem>
+            <EnumItem>RENOVATION</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>NEWBUILD</Name>
+              <Definition>Project responsible for the development of a new build facility</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>MODIFICATION</Name>
+              <Definition>Project responsible for the modification of a facility</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>REPAIR</Name>
+              <Definition>Project responsible for the repair to a facility</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Repair</NameAlias>
+              </NameAliases>
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OPERATIONMAINTENANCE</Name>
+              <Definition>Project responsible for operation &amp; maintenance</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>RENOVATION</Name>
+              <Definition>Project responsible for renovation of a facility</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="91615ddfdf4447ecbf6785d94af2ce31">
+      <Name>ProjectInvestmentEstimate</Name>
+      <Definition>Estimate of investment cost</Definition>
+      <PropertyType>
+        <TypePropertyReferenceValue reftype="IfcCostValue" />
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="a30a83715c4048358ce6c25aa6b97033">
+      <Name>FundingSource</Name>
+      <Definition>Investment funding source</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="9568f584719d42bd9b5bc3f903d5ae4d">
+      <Name>ROI</Name>
+      <Definition>Return on Investment</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcRatioMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="f14f2deb44304bcbb20fa9bb8ef454cd">
+      <Name>NetEarnedValue</Name>
+      <Definition>Net earned value</Definition>
+      <PropertyType>
+        <TypePropertyReferenceValue reftype="IfcCostValue" />
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="323fc6b0bf3549659160dcbeb699a770">
+      <Name>PaybackPeriod</Name>
+      <Definition>Payback period of investment</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcDuration" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

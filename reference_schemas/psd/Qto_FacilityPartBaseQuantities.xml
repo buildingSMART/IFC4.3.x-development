@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<QtoSetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.buildingsmart-tech.org/xml/qto/QTO_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC4" />
+  <Name>Qto_FacilityPartBaseQuantities</Name>
+  <Definition>Base quantities that are common to the definition of all occurrences of _IfcFacility_.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcFacilityPart</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcFacilityPart</ApplicableTypeValue>
+  <QtoDefs>
+    <QtoDef>
+      <Name>Length</Name>
+      <Definition>Characteristic length</Definition>
+      <QtoType>Q_LENGTH</QtoType>
+      <NameAliases />
+      <DefinitionAliases />
+    </QtoDef>
+    <QtoDef>
+      <Name>Width</Name>
+      <Definition>Characteristic width</Definition>
+      <QtoType>Q_LENGTH</QtoType>
+      <NameAliases />
+      <DefinitionAliases />
+    </QtoDef>
+    <QtoDef>
+      <Name>Height</Name>
+      <Definition>Characteristic height</Definition>
+      <QtoType>Q_LENGTH</QtoType>
+      <NameAliases />
+      <DefinitionAliases />
+    </QtoDef>
+    <QtoDef>
+      <Name>Area</Name>
+      <Definition>Measured plan area</Definition>
+      <QtoType>Q_AREA</QtoType>
+      <NameAliases />
+      <DefinitionAliases />
+    </QtoDef>
+    <QtoDef>
+      <Name>Volume</Name>
+      <Definition>Measured volume</Definition>
+      <QtoType>Q_VOLUME</QtoType>
+      <NameAliases />
+      <DefinitionAliases />
+    </QtoDef>
+  </QtoDefs>
+  <QtoDefinitionAliases />
+</QtoSetDef>

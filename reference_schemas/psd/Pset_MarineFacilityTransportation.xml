@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="0780f51c54af49059639f70a911427bf" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC4" />
+  <Name>Pset_MarineFacilityTransportation</Name>
+  <Definition>Properties common to the definition of all occurrences of _IfcMarineFacility_ which are catagorised as transportation facilities such as Ports, marinas etc.</Definition>
+  <Applicability />
+  <ApplicableClasses />
+  <PropertyDefs>
+    <PropertyDef ifdguid="bb1220528a2e44feb24b56680b26a55a">
+      <Name>Berths</Name>
+      <Definition>Number of standard berths within the facility</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcCountMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="472044987b1a4dd583192c7f818074ef">
+      <Name>BerthGrade</Name>
+      <Definition>Berth grade</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="f0e2e5547a2e4f34b8e115f258215081">
+      <Name>BerthCargoWeight</Name>
+      <Definition>Total cargo weight of berths within the facility</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcMassMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

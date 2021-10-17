@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="04b0f3ed887342b1af88d19f4a22055a" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC4" />
+  <Name>Pset_MooringDeviceCommon</Name>
+  <Definition>Properties common to the definition of all occurrences of _IfcMooringDevice_ and types of _IfcMooringDeviceType_.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcMooringDevice</ClassName>
+    <ClassName>IfcMooringDeviceType</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcMooringDevice,IfcMooringDeviceType</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="d24aebce7cdf43b49ed8bc85ccb8e5f3">
+      <Name>DeviceType</Name>
+      <Definition>Mooring device type</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_MooringDeviceType">
+            <EnumItem>THEAD</EnumItem>
+            <EnumItem>SINGLEBUTT</EnumItem>
+            <EnumItem>DOUBLEBUTT</EnumItem>
+            <EnumItem>HORN</EnumItem>
+            <EnumItem>KIDNEY</EnumItem>
+            <EnumItem>PILLAR</EnumItem>
+            <EnumItem>CLEAT</EnumItem>
+            <EnumItem>RING</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>THEAD</Name>
+              <Definition>T Head connection type mooring device</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>SINGLEBUTT</Name>
+              <Definition>A single butt mooring device</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>DOUBLEBUTT</Name>
+              <Definition>A double butt mooring device</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>HORN</Name>
+              <Definition>A horn shaped mooring device</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>KIDNEY</Name>
+              <Definition>A kidney shaped mooring device</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>PILLAR</Name>
+              <Definition>A pillar style mooring device</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>CLEAT</Name>
+              <Definition>A cleat type mooring device</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>RING</Name>
+              <Definition>A ring mooring device</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="ad9b8a08acca49d590b2b99f577f7a05">
+      <Name>DeviceCapacity</Name>
+      <Definition>Mooring device force capacity</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcForceMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="9e8ff2bbeb9748698416012305ffe8e9">
+      <Name>AnchorageType</Name>
+      <Definition>Mooring device anchorage type</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_AnchorageType">
+            <EnumItem>CASTIN</EnumItem>
+            <EnumItem>DRILLEDANDFIXED</EnumItem>
+            <EnumItem>THROUGHBOLTED</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>CASTIN</Name>
+              <Definition>Mooring device is cast into the supporting or base structure</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>DRILLEDANDFIXED</Name>
+              <Definition>Mooring device is attached by drilling the supporting substrate and fixed</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>THROUGHBOLTED</Name>
+              <Definition>Mooring device is anchored via tightened bolts through the device and substrate</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="3cf42b39879a435eb4d7da69e78d55c0">
+      <Name>MinumumLineSlope</Name>
+      <Definition>Minimum allowable line angle in degrees (negative if below horizontal from quay)</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPlaneAngleMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="69d7baaffd304da79fae576ef64d0a26">
+      <Name>MaximumLineSlope</Name>
+      <Definition>Maximum allowable line angle in degrees (negative if below horizontal from quay)</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPlaneAngleMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="8880a68c98e945c88ed6df2601d58462">
+      <Name>MaximumLineCount</Name>
+      <Definition>Maximum number of lines that may be secured to the mooring device.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcCountMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

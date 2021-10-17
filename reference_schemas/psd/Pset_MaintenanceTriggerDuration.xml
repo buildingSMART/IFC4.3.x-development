@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="045969a32d354fd2bc2f2e750f31e82e" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC4" />
+  <Name>Pset_MaintenanceTriggerDuration</Name>
+  <Definition>Trigger levels for an asset that has an PPM based maintenance strategy.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcElement</ClassName>
+    <ClassName>IfcAsset</ClassName>
+    <ClassName>IfcSystem</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcElement,IfcAsset,IfcSystem</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="a2038a2a9a3a476cae7a2f56faad0f2d">
+      <Name>DurationTargetPerformance</Name>
+      <Definition>Target time to failure of the asset</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcDuration" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="6a6a72bff17840658a305db7bcd161d2">
+      <Name>DurationMaintenanceLevel</Name>
+      <Definition>Duration interval at which maintenance is performed</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcDuration" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="db8e5a6a5a2040fa81ccccea10f5248b">
+      <Name>DurationReplacementLevel</Name>
+      <Definition>Duration interval at which replacement is performed</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcDuration" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="464d423af1954d6085ae2162678c940e">
+      <Name>DurationDisposalLevel</Name>
+      <Definition>Duration interval at which disposal is performed</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcDuration" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

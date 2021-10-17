@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<QtoSetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.buildingsmart-tech.org/xml/qto/QTO_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC4" />
+  <Name>Qto_PavementBaseQuantities</Name>
+  <Applicability />
+  <ApplicableClasses />
+  <QtoDefs>
+    <QtoDef>
+      <Name>Length</Name>
+      <Definition>Characteristic length</Definition>
+      <QtoType>Q_LENGTH</QtoType>
+      <NameAliases />
+      <DefinitionAliases />
+    </QtoDef>
+    <QtoDef>
+      <Name>Width</Name>
+      <Definition>Characteristic width</Definition>
+      <QtoType>Q_LENGTH</QtoType>
+      <NameAliases />
+      <DefinitionAliases />
+    </QtoDef>
+    <QtoDef>
+      <Name>Depth</Name>
+      <Definition>Depth (one direction of the non-projected foot print area) of the slab. It shall only be provided, if the slab is rectangular.
+&gt; NOTE&amp;nbsp; Also refered to as width, but not to be confused with the "Width" quantity, that denotes the thickness in the context of the slab.</Definition>
+      <QtoType>Q_LENGTH</QtoType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Breite</NameAlias>
+        <NameAlias lang="en">Depth</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">Breite der Decke (einer der beiden Abmasse in der parallelen Draufsicht auf die Decke). Wird nur bei rechteckigen Decken angegeben.</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </QtoDef>
+    <QtoDef>
+      <Name>GrossArea</Name>
+      <Definition>Total area of the extruded area of the slab. Openings, recesses and projections are not taken into account. Only given, if the slab is prismatic.</Definition>
+      <QtoType>Q_AREA</QtoType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Bruttofläche</NameAlias>
+        <NameAlias lang="en">Gross Area</NameAlias>
+        <NameAlias lang="ja-JP">面積</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">Fläche der Decke (Ansichtsfläche, nicht projizierte oder Mantelfläche). Alle Öffnungen werden übermessen. Der Wert wird nur angegeben, wenn die Decke eine kostante Dicke hat.</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">スラブの面積。開口、へこみなどを考慮しない。</DefinitionAlias>
+      </DefinitionAliases>
+    </QtoDef>
+    <QtoDef>
+      <Name>NetArea</Name>
+      <Definition>Total area of the extruded area of the slab. Openings and recesses are taken into account by subtraction, projections by addition. Only given, if the slab is prismatic.</Definition>
+      <QtoType>Q_AREA</QtoType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Nettofläche</NameAlias>
+        <NameAlias lang="en">Net Area</NameAlias>
+        <NameAlias lang="ja-JP">正味面積</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">Fläche der Decke (Ansichtsfläche, nicht projizierte oder Mantelfläche). Alle Öffnungen werden abgezogen. Der Wert wird nur angegeben, wenn die Decke eine kostante Dicke hat.</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">スラブの面積。開口、へこみなどを考慮する。</DefinitionAlias>
+      </DefinitionAliases>
+    </QtoDef>
+    <QtoDef>
+      <Name>GrossVolume</Name>
+      <Definition>Total gross volume of the slab. Openings, recesses, and projections are not taken into account.</Definition>
+      <QtoType>Q_VOLUME</QtoType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Bruttovolumen</NameAlias>
+        <NameAlias lang="en">Gross Volume</NameAlias>
+        <NameAlias lang="ja-JP">体積</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">Bruttovolumen der Decke. Alle Öffnungen werden übermessen.</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">スラブの体積。開口、へこみなどを考慮しない。</DefinitionAlias>
+      </DefinitionAliases>
+    </QtoDef>
+    <QtoDef>
+      <Name>NetVolume</Name>
+      <Definition>Total net volume of the slab. Openings and recesses are taken into account by subtraction, projections by addition.</Definition>
+      <QtoType>Q_VOLUME</QtoType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Nettovolumen</NameAlias>
+        <NameAlias lang="en">Net Volume</NameAlias>
+        <NameAlias lang="ja-JP">正味体積</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">Nettovolumen der Decke. Alle Öffnungen werden abgezogen.</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">スラブの体積。開口、へこみなどを考慮する。</DefinitionAlias>
+      </DefinitionAliases>
+    </QtoDef>
+  </QtoDefs>
+  <QtoDefinitionAliases />
+</QtoSetDef>

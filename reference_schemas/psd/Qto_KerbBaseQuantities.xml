@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<QtoSetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.buildingsmart-tech.org/xml/qto/QTO_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC4" />
+  <Name>Qto_KerbBaseQuantities</Name>
+  <Applicability />
+  <ApplicableClasses />
+  <QtoDefs>
+    <QtoDef>
+      <Name>Length</Name>
+      <Definition>Characteristic length</Definition>
+      <QtoType>Q_LENGTH</QtoType>
+      <NameAliases />
+      <DefinitionAliases />
+    </QtoDef>
+    <QtoDef>
+      <Name>Width</Name>
+      <Definition>Characteristic width</Definition>
+      <QtoType>Q_LENGTH</QtoType>
+      <NameAliases />
+      <DefinitionAliases />
+    </QtoDef>
+    <QtoDef>
+      <Name>Height</Name>
+      <Definition>Characteristic height</Definition>
+      <QtoType>Q_LENGTH</QtoType>
+      <NameAliases />
+      <DefinitionAliases />
+    </QtoDef>
+    <QtoDef>
+      <Name>Depth</Name>
+      <Definition>Depth (one direction of the non-projected foot print area) of the slab. It shall only be provided, if the slab is rectangular.
+&gt; NOTE&amp;nbsp; Also refered to as width, but not to be confused with the "Width" quantity, that denotes the thickness in the context of the slab.</Definition>
+      <QtoType>Q_LENGTH</QtoType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Breite</NameAlias>
+        <NameAlias lang="en">Depth</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">Breite der Decke (einer der beiden Abmasse in der parallelen Draufsicht auf die Decke). Wird nur bei rechteckigen Decken angegeben.</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </QtoDef>
+    <QtoDef>
+      <Name>Volume</Name>
+      <Definition>Measured volume</Definition>
+      <QtoType>Q_VOLUME</QtoType>
+      <NameAliases />
+      <DefinitionAliases />
+    </QtoDef>
+    <QtoDef>
+      <Name>Weight</Name>
+      <Definition>Total weight of object</Definition>
+      <QtoType>Q_WEIGHT</QtoType>
+      <NameAliases />
+      <DefinitionAliases />
+    </QtoDef>
+  </QtoDefs>
+  <QtoDefinitionAliases />
+</QtoSetDef>

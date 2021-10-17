@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="fe1a9395eb89452698dff8fcf8dc0d95" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC4" />
+  <Name>Pset_EnvironmentalEmissions</Name>
+  <Definition>Property set for the application of energy emissions produced by facility and physical elements.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcDistributionElement</ClassName>
+    <ClassName>IfcDistributionElementType</ClassName>
+    <ClassName>IfcTransportElement</ClassName>
+    <ClassName>IfcTransportElementType</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcDistributionElement,IfcDistributionElementType,IfcTransportElement,IfcTransportElementType</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="34f74128d0534da4aabbefeab6ff8a09">
+      <Name>CarbonDioxideEmissions</Name>
+      <Definition>Rate of emission of carbon dioxide</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcMassFlowRateMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="ff318b60b9524ed8a13175330f670765">
+      <Name>SulphurDioxideEmissions</Name>
+      <Definition>Rate of emission of sulphur dioxide</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcMassFlowRateMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="6221c2867a62489dbdf01f68f6d8bc3e">
+      <Name>NitrogenOxidesEmissions</Name>
+      <Definition>Rate of emission of nitrogen oxides</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcMassFlowRateMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="1988da651f1f43febc9d25e2e5814a9c">
+      <Name>ParticulateMatterEmissions</Name>
+      <Definition>Rate of emission of particulate matter</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcMassFlowRateMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="1ae290030ae342d99fdc17b17478443b">
+      <Name>NoiseEmissions</Name>
+      <Definition>Level of sound emission</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcSoundPowerLevelMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

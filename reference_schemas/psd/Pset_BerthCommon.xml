@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="4e2be60d6b804bdab044248695da8588" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC4" />
+  <Name>Pset_BerthCommon</Name>
+  <Definition>properties common to the definition of all occurrences of _IfcSpace_ and types of _IfcSpaceType_ with the predefined type set to BERTH</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcSpace/BERTH</ClassName>
+    <ClassName>IfcSpaceType/BERTH</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcSpace/BERTH,IfcSpaceType/BERTH</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="55d125a43d004efba586fd270dadb2fc">
+      <Name>BerthApproach</Name>
+      <Definition>How the vessel approaches the berth</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_BerthApproach">
+            <EnumItem>SIDE</EnumItem>
+            <EnumItem>END</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>SIDE</Name>
+              <Definition>Berthing approach from the side.</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>END</Name>
+              <Definition>Berthing approach from the end.</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="167630fcb89b4e41b2f306282c91c5a5">
+      <Name>BerthMode</Name>
+      <Definition>Orientation of vessel as it approaches berth</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_BerthMode">
+            <EnumItem>BOW</EnumItem>
+            <EnumItem>STERN</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>BOW</Name>
+              <Definition>Bow first berthing mode.</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>STERN</Name>
+              <Definition>Stern first berthing mode.</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="fc109b4a580449e3a851d73ea3b2c4be">
+      <Name>BerthingAngle</Name>
+      <Definition>Angle of approach for the vessel to the berth</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPlaneAngleMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="2fa7dfa5dec34317bc34d035ddc4b842">
+      <Name>BerthingVelocity</Name>
+      <Definition>Velocity of the vessel as it berths</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLinearVelocityMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="e2332b34439e4d00a286056fb57e0fb1">
+      <Name>AbnormalBerthingFactor</Name>
+      <Definition>Risk assessed safety factor</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveRatioMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="21919fd924f84909935595897e3f4376" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC4" />
+  <Name>Pset_FenderCommon</Name>
+  <Definition>Properties common to the definition of all occurrences of _IfcImpactProtectionDevice_ and types of _IfcImpactProtectionDeviceType_ with the predefined type set to FENDER.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcImpactProtectionDevice/IfcImpactProtectionDeviceTypeEnum(.FENDER.)</ClassName>
+    <ClassName>IfcImpactProtectionDeviceType/IfcImpactProtectionDeviceTypeEnum(.FENDER.)</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcImpactProtectionDevice/IfcImpactProtectionDeviceTypeEnum(.FENDER.),IfcImpactProtectionDeviceType/IfcImpactProtectionDeviceTypeEnum(.FENDER.)</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="f69231f2ea514dfcb362725c4c83405d">
+      <Name>FenderType</Name>
+      <Definition>The type of fender</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_FenderType">
+            <EnumItem>ARCH</EnumItem>
+            <EnumItem>CELL</EnumItem>
+            <EnumItem>CONE</EnumItem>
+            <EnumItem>CYLINDER</EnumItem>
+            <EnumItem>PNEUMATIC</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>ARCH</Name>
+              <Definition>Arch fender type</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>CELL</Name>
+              <Definition>Cell fender type</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>CONE</Name>
+              <Definition>Cone fender type</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>CYLINDER</Name>
+              <Definition>Cylindrical fender type</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>PNEUMATIC</Name>
+              <Definition>Pneumatic or hydro-pneumatic fender type</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="97baf3b1244a4a2a9a5268b8b68b18cd">
+      <Name>CoefficientOfFriction</Name>
+      <Definition>Coefficient of friction value for the fender</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveRatioMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="584c11f8a9a8400cb9c47114b2e86c05">
+      <Name>EnergyAbsorptionTolerance</Name>
+      <Definition>Manufacturing tolerance on energy absorption</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveRatioMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="19c34ea975464d20acaa40382d72490e">
+      <Name>MaxReactionTolerance</Name>
+      <Definition>Manufacturing tolerance on maximum reaction at fender support.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveRatioMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="dac95fda84904346b6cd9931990cd218">
+      <Name>MaximumTemperatureFactor</Name>
+      <Definition>Deviation in performance due to maximum design temperature</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveRatioMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="0c97c89ab51346aba80052fdba6f7477">
+      <Name>MinimumTemperatureFactor</Name>
+      <Definition>Deviation in performance due to minimum design temperature</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveRatioMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="4071b741916e45eba6ec1394129ce3c3">
+      <Name>VelocityFactorEnergy</Name>
+      <Definition>Deviation in energy absorption performance due to strain rate</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveRatioMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="903492d9dff846e8be5d143a4e276481">
+      <Name>VelocityFactorReaction</Name>
+      <Definition>Deviation in reaction due to strain rate</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveRatioMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="e63a1a3884e64e38bcda8a508392395f">
+      <Name>EnergyAbsorption </Name>
+      <Definition>Energy absorption capacity of the element</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcEnergyMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="520740867e694162b1ede81854827ecf">
+      <Name>MaxReaction</Name>
+      <Definition>Maximum reaction from the element</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcForceMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

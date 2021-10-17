@@ -97,18 +97,38 @@ def read(fn):
 dr = sys.argv[1]
 odr = os.path.join(os.path.abspath(os.path.dirname(__file__)), "..", "docs", "templates")
 
-base = os.path.join(dr, "IFC4x3", "Templates")
-md_files = glob.glob(os.path.join(base, "**", "Documentation.md"), recursive=True)
-xml_files = [fn.replace("Documentation.md", "DocTemplateDefinition.xml") for fn in md_files]
+Documentation = "Documentation.md"
+DocTemplateDefinition = "DocTemplateDefinition.xml"
 
-for md, xml in zip(md_files, xml_files):
-    parts = md[len(base)+1:].split(os.sep)[:-1]
+def join_with(s):
+    return lambda *p: os.path.join(*p, s)
+    
+make_md = join_with(Documentation)
+make_xml = join_with(DocTemplateDefinition)
+
+base = os.path.join(dr, "IFC4x3", "Templates")
+
+templates = sorted(set(map(os.path.dirname, 
+    glob.glob(make_md(base, "**"), recursive=True) + \
+    glob.glob(make_xml(base, "**"), recursive=True)
+)))
+
+for tmpl in templates:
+    parts = tmpl[len(base)+1:].split(os.sep)
     of = os.path.join(odr, *parts, "README.md")
     try:
         os.makedirs(os.path.dirname(of))
     except:
         pass
-    contents = open(md, encoding='utf-8-sig').read().strip()
+        
+    md = make_md(tmpl)
+    xml = make_xml(tmpl)
+    
+    if os.path.exists(md):
+        contents = open(md, encoding='utf-8-sig').read().strip()
+    else:
+        contents = ""
+
     with open(of, "w", encoding="utf-8") as f:
         print(parts[-1], file=f)
         print("=" * len(parts[-1]), file=f)

@@ -38,6 +38,9 @@ for root in roots:
         for vals in itertools.zip_longest(*parameters.values()):
             grouping[key].append((root.entity,) + tuple(vals))
             
+        if len(parameters) == 0:
+            grouping[key].append((root.entity,))
+            
 def format(v):
     if isinstance(v, str) and v[0] == "'" and v[-1] == "'":
         return v[1:-1]
@@ -47,7 +50,7 @@ workbook = xlsxwriter.Workbook('concepts.xlsx')
 header_format = workbook.add_format({'bg_color': 'black', 'font_color': 'white'})
 postfixes = defaultdict(int)
 for k, vss in grouping.items():
-    sheet_name = k[0]
+    sheet_name = k[0].replace(" ", "")[0:25]
     if postfixes[k[0]]:
         sheet_name += " %02d" % postfixes[k[0]]
     postfixes[k[0]] += 1

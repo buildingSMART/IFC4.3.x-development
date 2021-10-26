@@ -33,9 +33,10 @@ for root in roots:
         for k, v in map(operator.attrgetter('a', 'c'), filter(lambda x: isinstance(x, expression_node), flatten(concept.rules()))):
             parameters[k].append(v)
             
-        key = (concept.name,) + tuple(sorted(parameters.keys()))
+        ks = tuple(sorted(parameters.keys()))
+        key = (concept.name,) + ks
         
-        for vals in itertools.zip_longest(*parameters.values()):
+        for vals in itertools.zip_longest(*[parameters[k] for k in ks]):
             grouping[key].append((root.entity,) + tuple(vals))
             
         if len(parameters) == 0:

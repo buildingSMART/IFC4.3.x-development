@@ -51,7 +51,7 @@ Eyewash: 	Waste water appliance, usually installed in work places where there is
             </ConstantDef>
             <ConstantDef>
               <Name>NOTKNOWN</Name>
-              <Definition>Value is unkown</Definition>
+              <Definition>Value is unknown</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unknown)</NameAlias>
               </NameAliases>
@@ -145,7 +145,7 @@ WallHung: 	A sanitary terminal cantilevered clear of the floor.</Definition>
             </ConstantDef>
             <ConstantDef>
               <Name>NOTKNOWN</Name>
-              <Definition>Value is unkown</Definition>
+              <Definition>Value is unknown</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unknown)</NameAlias>
               </NameAliases>

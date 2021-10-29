@@ -86,7 +86,7 @@ History: IFC4 - Article number and manufacturer specific information deleted. Us
             </ConstantDef>
             <ConstantDef>
               <Name>NOTKNOWN</Name>
-              <Definition>Value is unkown</Definition>
+              <Definition>Value is unknown</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unknown)</NameAlias>
               </NameAliases>
@@ -241,7 +241,7 @@ History: IFC4 - Article number and manufacturer specific information deleted. Us
             </ConstantDef>
             <ConstantDef>
               <Name>NOTKNOWN</Name>
-              <Definition>Value is unkown</Definition>
+              <Definition>Value is unknown</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unknown)</NameAlias>
               </NameAliases>
@@ -336,7 +336,7 @@ History: IFC4 - Article number and manufacturer specific information deleted. Us
             </ConstantDef>
             <ConstantDef>
               <Name>NOTKNOWN</Name>
-              <Definition>Value is unkown</Definition>
+              <Definition>Value is unknown</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unknown)</NameAlias>
               </NameAliases>

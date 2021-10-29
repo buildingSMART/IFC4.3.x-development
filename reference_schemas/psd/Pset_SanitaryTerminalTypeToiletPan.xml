@@ -78,7 +78,7 @@ SlopHopper: 	Hopper shaped soil appliance with a flushing rim and outlet similar
             </ConstantDef>
             <ConstantDef>
               <Name>NOTKNOWN</Name>
-              <Definition>Value is unkown</Definition>
+              <Definition>Value is unknown</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unknown)</NameAlias>
               </NameAliases>
@@ -174,7 +174,7 @@ WashOut: 	A washdown toilet pan in which excrement falls first into a shallow wa
             </ConstantDef>
             <ConstantDef>
               <Name>NOTKNOWN</Name>
-              <Definition>Value is unkown</Definition>
+              <Definition>Value is unknown</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unknown)</NameAlias>
               </NameAliases>
@@ -269,7 +269,7 @@ WallHung: 	A sanitary terminal cantilevered clear of the floor.</Definition>
             </ConstantDef>
             <ConstantDef>
               <Name>NOTKNOWN</Name>
-              <Definition>Value is unkown</Definition>
+              <Definition>Value is unknown</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unknown)</NameAlias>
               </NameAliases>

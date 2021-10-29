@@ -49,7 +49,7 @@ Pset renamed from Pset_DamperTypeFire to Pset_DamperTypeFireDamper in IFC2x2 Pse
             </ConstantDef>
             <ConstantDef>
               <Name>NOTKNOWN</Name>
-              <Definition>Value is unkown</Definition>
+              <Definition>Value is unknown</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unknown)</NameAlias>
               </NameAliases>
@@ -116,7 +116,7 @@ Pset renamed from Pset_DamperTypeFire to Pset_DamperTypeFireDamper in IFC2x2 Pse
             </ConstantDef>
             <ConstantDef>
               <Name>NOTKNOWN</Name>
-              <Definition>Value is unkown</Definition>
+              <Definition>Value is unknown</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unknown)</NameAlias>
               </NameAliases>

@@ -86,7 +86,7 @@ InsertionLoss and RegeneratedSound attributes deleted in IFC2x2 Pset Addendum: U
             </ConstantDef>
             <ConstantDef>
               <Name>NOTKNOWN</Name>
-              <Definition>Value is unkown</Definition>
+              <Definition>Value is unknown</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unknown)</NameAlias>
               </NameAliases>

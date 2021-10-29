@@ -58,7 +58,7 @@ Pset renamed from Pset_TankTypePreformedTank to Pset_TankTypePreformed in IFC2x2
             </ConstantDef>
             <ConstantDef>
               <Name>NOTKNOWN</Name>
-              <Definition>Value is unkown</Definition>
+              <Definition>Value is unknown</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unknown)</NameAlias>
               </NameAliases>
@@ -151,7 +151,7 @@ Pset renamed from Pset_TankTypePreformedTank to Pset_TankTypePreformed in IFC2x2
             </ConstantDef>
             <ConstantDef>
               <Name>NOTKNOWN</Name>
-              <Definition>Value is unkown</Definition>
+              <Definition>Value is unknown</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unknown)</NameAlias>
               </NameAliases>

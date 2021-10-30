@@ -11,6 +11,8 @@ from ifcopenshell.mvd.mvdxml_expression import parse as parse_mvd_expr
 
 IGNORED_ATTRS = ()
 IGNORED_TAGS = ()
+
+class DependencyError(BaseException): pass
    
 def flatmap(func, *iterable):
     return itertools.chain.from_iterable(map(func, *iterable))
@@ -44,7 +46,7 @@ def make_transform_tag_renamer(target, attribute_mapping={}):
     def inner(di, parent):
         return {
             '#tag': target,
-            **{attribute_mapping.get(k, k): v for k, v in di.items() if k[0] == '@'}
+            **{"@"+attribute_mapping.get(k[1:], k[1:]): v for k, v in di.items() if k[0] == '@'}
         }
     return inner
 
@@ -67,19 +69,52 @@ def transform_uuid(v):
 transform_DocModelView = make_transform_tag_renamer("ModelView")
 transform_ConceptRoots = make_transform_tag_renamer("Roots")
 transform_Concepts = make_transform_identity()
+transform_References = make_transform_identity()
 transform_DocModelRuleAttribute = make_transform_tag_renamer("AttributeRule", attribute_mapping={"Name": "AttributeName"})
 transform_DocModelRuleEntity = make_transform_tag_renamer("EntityRule", attribute_mapping={"Name": "EntityName"})
-transform_DocTemplateDefinition = make_transform_tag_renamer("ConceptTemplate")
 
 templates = {}
 used_template_ids = {}
 
 def parse_templates(pt):
-    for fn in glob.glob(os.path.join(pt, "**", "DocTemplateDefinition.xml"), recursive=True):
-        tmpl_def = transform(read(fn))[0]
+    queue = glob.glob(os.path.join(pt, "**", "DocTemplateDefinition.xml"), recursive=True)
+    while queue:
+        fn = queue.pop(0)
+        try:
+            tmpl_defs = transform(read(fn))
+        except DependencyError as e:
+            print("x", e, fn)
+            queue.append(fn)
+            continue
+            
+        if not tmpl_defs:
+            continue
+            
+        tmpl_def = tmpl_defs[0]
+            
         if "@id" in tmpl_def:
             href = tmpl_def["@id"]
             templates[href] = tmpl_def
+            
+            print("v", href)
+            
+def transform_DocTemplateDefinition(di, parent):
+    if di.get("@href"):
+        if di["@href"] not in templates:
+            raise DependencyError(di["@href"])
+        ref = templates[di["@href"]]["@uuid"]
+        return {
+            '#tag': "Template",
+            '@ref': ref
+        }
+    elif di.get("@Type") and di.get("@id"):
+        return {
+            '#tag': "ConceptTemplate",
+            '@id': di["@id"],
+            '@uuid': transform_uuid(di["@UniqueId"]),
+            '@name': di["@Name"],
+            '@applicableEntity': di["@Type"]
+        }
 
 def transform_DocConceptRoot(di, parent):
     return {
@@ -92,11 +127,11 @@ def transform_DocConceptRoot(di, parent):
 def transform_DocTemplateUsage(di, parent):
     href = child_by_tag(di, "Definition")["@href"]
     if href not in used_template_ids:
-        used_template_ids[href] = 1    
+        used_template_ids[href] = 1
     return {
         '#tag': "Concept",
         '@uuid': transform_uuid(di["@UniqueId"]),
-        '@name': templates[href]["@Name"],
+        '@name': templates[href]["@name"],
         '@status': "sample",
         '@override': "false",
     }
@@ -115,7 +150,7 @@ def transform_DocTemplateItem(di, parent):
 
 def transform_Items(di, parent):
     href = child_by_tag(parent, "Definition")["@href"]
-    ref = transform_uuid(templates[href]["@UniqueId"])
+    ref = templates[href]["@uuid"]
     return [{'#tag': "Template", "@ref": ref}, {'#tag': "TemplateRules", "@operator": "and"}]
     
 def transform_Rules(di, parent):
@@ -195,7 +230,7 @@ def serialize(di, ofn):
                 for child in v:
                     inner(child, node)
             else:
-                raise ValueError("Unexpected")
+                raise ValueError("Unexpected: " + k)
                 
         return node
 
@@ -203,5 +238,6 @@ def serialize(di, ofn):
     
 if __name__ == "__main__":
     import sys
+    parse_templates(os.path.join(sys.argv[1], "..", "..", "..", "Templates", "Partial Templates"))
     parse_templates(os.path.join(sys.argv[1], "..", "..", "..", "Templates"))
     serialize(create_mvd(strip_child_rules(transform(read(sys.argv[1])))), sys.argv[2])

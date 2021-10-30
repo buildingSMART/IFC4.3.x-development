@@ -105,7 +105,7 @@ class extractor:
         
     def concept_starting_with(self, prefix):
         keys = [k for k in self.grouping.keys() if k[0].startswith(prefix)]
-        concepts = [v for v in sum(map(self.grouping.__getitem__, ks), [])]
+        concepts = [v for v in sum(map(self.grouping.__getitem__, keys), [])]
         return concepts
 
 if __name__ == "__main__":

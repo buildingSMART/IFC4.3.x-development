@@ -56,7 +56,10 @@ class extractor:
                     if rl == "and": continue
                     prms = dict(map(operator.attrgetter('a', 'c'), filter(lambda x: isinstance(x, expression_node), flatten(rl))))
                     for kk in param_keys:
-                        parameters[kk].append(prms.get(kk))
+                        p_v = prms.get(kk, "")
+                        if isinstance(p_v, str) and len(p_v) and p_v[0] == "'" and p_v[-1] == "'":
+                            p_v = p_v[1:-1]
+                        parameters[kk].append(p_v)
                 
                 key = (concept.name,) + ks
                 
@@ -64,7 +67,7 @@ class extractor:
                     self.grouping[key].append((root.entity,) + tuple(vals))
                     
                 if len(parameters) == 0:
-                    self.grouping[key].append((root.entity,) + tuple(None for k in ks))
+                    self.grouping[key].append((root.entity,) + tuple("" for k in ks))
                     
         def format(v):
             if isinstance(v, str) and v[0] == "'" and v[-1] == "'":
@@ -82,7 +85,7 @@ class extractor:
                 sheet_name += " %02d" % postfixes[sheet_name_orig.lower()]
             postfixes[sheet_name_orig.lower()] += 1
             
-            columns_in_use = [i for i, xs in enumerate(zip(*vss)) if any(x is not None for x in xs)]
+            columns_in_use = [i for i, xs in enumerate(zip(*vss)) if any(xs)]
             
             worksheet = workbook.add_worksheet(sheet_name)
             worksheet.write(0, 0, "ApplicableEntity", header_format)
@@ -96,6 +99,11 @@ class extractor:
                     worksheet.write(i + 2, j, format(v))
                 
         workbook.close()
+        
+    def concept_starting_with(self, prefix):
+        keys = [k for k in self.grouping.keys() if k[0].startswith(prefix)]
+        concepts = [v for v in sum(map(self.grouping.__getitem__, ks), [])]
+        return concepts
 
 if __name__ == "__main__":
     try:
@@ -103,15 +111,5 @@ if __name__ == "__main__":
     except:
         fn = "../mvdXML/IFC4_ADD2.mvdxml"
     
-    x = extractor(fn)
-    breakpoint()
-    
-    ks = [k for k in x.grouping.keys() if k[0].startswith("Axis ")]
-    ents = set([v[0] for v in sum(map(x.grouping.__getitem__, ks), [])])
-    
-    print("Entities with Axis Geometry")
-    print("---------------------------")
-    for en in ints:
-        print(en)
-    
+    x = extractor(fn)    
     x.write_excel("concepts.xlsx")

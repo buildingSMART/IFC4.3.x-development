@@ -70,8 +70,8 @@ transform_DocModelView = make_transform_tag_renamer("ModelView")
 transform_ConceptRoots = make_transform_tag_renamer("Roots")
 transform_Concepts = make_transform_identity()
 transform_References = make_transform_identity()
-transform_DocModelRuleAttribute = make_transform_tag_renamer("AttributeRule", attribute_mapping={"Name": "AttributeName"})
-transform_DocModelRuleEntity = make_transform_tag_renamer("EntityRule", attribute_mapping={"Name": "EntityName"})
+transform_DocModelRuleAttribute = make_transform_tag_renamer("AttributeRule", attribute_mapping={"Name": "AttributeName", "Identification": "RuleID"})
+transform_DocModelRuleEntity = make_transform_tag_renamer("EntityRule", attribute_mapping={"Name": "EntityName", "Identification": "RuleID"})
 
 templates = {}
 used_template_ids = {}

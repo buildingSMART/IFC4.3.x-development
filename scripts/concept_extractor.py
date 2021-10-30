@@ -41,6 +41,8 @@ class extractor:
         for root in roots:
             for concept in root.concepts():
                 tmpl = concept.template()
+                if tmpl is None:
+                    continue
                 uuid = tmpl.root.getAttribute("uuid")
                 if uuid in bindings:
                     ks = bindings[uuid]
@@ -52,6 +54,7 @@ class extractor:
 
                 parameters = defaultdict(list)
                 param_keys = dict(ks).keys()
+               
                 for rl in concept.rules():
                     if rl == "and": continue
                     prms = dict(map(operator.attrgetter('a', 'c'), filter(lambda x: isinstance(x, expression_node), flatten(rl))))

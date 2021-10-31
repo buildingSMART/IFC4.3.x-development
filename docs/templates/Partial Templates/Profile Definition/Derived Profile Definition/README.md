@@ -1,5 +1,5 @@
-Derived Profile Definiton
-=========================
+Derived Profile Definition
+==========================
 
 
 

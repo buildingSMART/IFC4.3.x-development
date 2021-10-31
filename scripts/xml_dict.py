@@ -1,5 +1,6 @@
 import re
 import itertools
+import functools
 
 from dataclasses import dataclass, field
 
@@ -10,6 +11,7 @@ class xml_node:
     text : str = ""
     namespaces : dict = None
     children : list = field(default_factory=list, repr=False)
+    parent : object = None
 
 import lxml.etree as ET
 
@@ -20,7 +22,7 @@ def flatmap(func, *iterable):
     return itertools.chain.from_iterable(map(func, *iterable))
     
 
-def to_data(t):
+def to_data(t, parent=None):
     if t.tag in IGNORED_TAGS:
         return
 
@@ -31,7 +33,11 @@ def to_data(t):
     if t.text and t.text.strip():
         text = t.text.strip()
         
-    yield xml_node(t.tag, attributes, text, t.nsmap, children)
+    nd = xml_node(t.tag, attributes, text, t.nsmap, children)
+    for ch in children:
+        ch.parent = nd
+
+    yield nd
 
     
 def read(fn):

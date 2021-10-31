@@ -5,7 +5,7 @@ Product types may have representations indicating shape representation for geome
 
 The shape representation attached to a type is defined using the relationship _RepresentationMaps_ of data type _IfcRepresentationMap_. It provides the means to store several representation maps for different purposes. In order to utilze the representation map at each occurrence of the product type, the product occurrence has to use the concept 'Mapped Geometry'.
 
-> NOTE&nbsp; See _IfcTypeProduct_ for further information and figures explaning the concepts 'Product Type Representation' and 'Mapped Geometry'.
+> NOTE&nbsp; See _IfcTypeProduct_ for further information and figures explaining the concepts 'Product Type Representation' and 'Mapped Geometry'.
 
 ```
 concept {

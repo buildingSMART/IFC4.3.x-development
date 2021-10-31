@@ -15,7 +15,7 @@ Characteristics defined at the object type level may include:
 
 * common naming and predefined type;
 * common properties within a type driven property set;
-* common geometry representations, applied as mapped representation to each occurences;
+* common geometry representations, applied as mapped representation to each occurence;
 * common material assignments (with exception of material set usages);
 * common definition of a decomposition structure.
 

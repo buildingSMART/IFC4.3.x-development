@@ -3,6 +3,7 @@ import itertools
 
 from dataclasses import dataclass, field
 from itertools import zip_longest as zip_l
+from collections import defaultdict
 
 import xml_dict
 
@@ -52,6 +53,62 @@ class uml_class:
                 'visibility': 'public'
             }
         )
+        
+@dataclass
+class uml_enumeration:
+    name : str
+    values : list
+    id : str = field(default_factory=new_id)
+    
+    def to_xml(self):
+        return xml_dict.xml_node(
+            tag = 'packagedElement',
+            attributes = {
+                XMI.type: 'uml:Enumeration',
+                XMI.id: self.id,
+                'name': self.name,
+            },
+            children = [
+                xml_dict.xml_node(
+                    tag = 'ownedLiteral',
+                    attributes = {
+                        XMI.type: 'uml:EnumerationLiteral',
+                        XMI.id: new_id(),
+                        'name': v,
+                    }
+                ) for v in self.values
+            ]
+        )
+    
+def create_connector(assoc_id):
+    def inner(type_id_connector_id):
+        # @todo flatstarmap?
+        type_id, connector_id = type_id_connector_id
+        return [
+            xml_dict.xml_node(
+                tag = 'memberEnd',
+                attributes = {
+                    XMI.idref: connector_id,
+                }
+            ),
+            xml_dict.xml_node(
+                tag = 'ownedEnd',
+                attributes = {
+                    XMI.type: 'uml:Property',
+                    XMI.id: connector_id,
+                    "association": assoc_id
+                },
+                children = [
+                    xml_dict.xml_node(
+                        tag = 'type',
+                        attributes = {
+                            XMI.idref: type_id,
+                        }
+                    )
+                ]
+            )
+        ]
+    return inner
     
 @dataclass
 class uml_assoc_class:
@@ -59,62 +116,76 @@ class uml_assoc_class:
     connector_types : list
     id : str = field(default_factory=new_id)
     connector_ids : list = None
+    type : str = "uml:AssociationClass"
     
     def to_xml(self):
     
         c_ids = [cid or new_id() for _, cid in zip_l(self.connector_types, self.connector_ids or [])]
-    
-        def create_connector(type_id_connector_id):
-            # @todo flatstarmap?
-            type_id, connector_id = type_id_connector_id
-            return [
-                xml_dict.xml_node(
-                    tag = 'memberEnd',
-                    attributes = {
-                        XMI.idref: connector_id,
-                    }
-                ),
-                xml_dict.xml_node(
-                    tag = 'ownedEnd',
-                    attributes = {
-                        XMI.type: 'uml:Property',
-                        XMI.id: connector_id,
-                        "association": self.id
-                    },
-                    children = [
-                        xml_dict.xml_node(
-                            tag = 'type',
-                            attributes = {
-                                XMI.idref: type_id,
-                            }
-                        )
-                    ]
-                )
-            ]
         
         return xml_dict.xml_node(
             tag = 'packagedElement',
             attributes = {
-                XMI.type: 'uml:AssociationClass',
+                XMI.type: self.type,
                 XMI.id: self.id,
                 'name': self.name,
                 'visibility': 'public'
             },
-            children = list(flatmap(create_connector, zip(self.connector_types, c_ids)))
-        )        
-
+            children = list(flatmap(create_connector(self.id), zip(self.connector_types, c_ids)))
+        )
+        
+        
+@dataclass
+class uml_realization:
+    supplier : str
+    client : str
+    id : str = field(default_factory=new_id)
+    
+    def to_xml(self):        
+        return xml_dict.xml_node(
+            tag = 'packagedElement',
+            attributes = {
+                XMI.type: 'uml:Realization',
+                XMI.id: self.id,
+                "supplier": self.supplier,
+                "client": self.client
+            }
+        )
+        
+        
 class context:
     
     def __init__(self, fn):
         self.content = xml_dict.read(fn)
         
-        self.to_id = {}
+        self.to_node = {}
+        
         def v(nd, stack):
             if nd.tag == "packagedElement" and "name" in nd.attributes:
-                self.to_id[(
+                self.to_node[(
                     nd.attributes[XMI.type],
                     nd.attributes["name"]
-                )] = nd.attributes[XMI.id]
+                )] = nd
+                self.to_node[
+                    nd.attributes["name"]
+                ] = nd
+                self.to_node[
+                    nd.attributes[XMI.id]
+                ] = nd
+                
+        self._recurse(v)
+        
+        self.superclass = {}
+        self.subclasses = defaultdict(list)
+        
+        def v(nd, stack):
+            if nd.tag == "packagedElement" and nd.attributes.get(XMI.type) == "uml:Class":
+                gens = [ch for ch in nd.children if ch.tag == "generalization"]
+                if gens:
+                    gen_name = self.to_node[gens[0].attributes['general']].attributes["name"]
+                    self_name = nd.attributes["name"]
+                    self.superclass[self_name] = gen_name
+                    self.subclasses[gen_name].append(self_name)
+                
         self._recurse(v)
         
     def write(self, fn):
@@ -130,6 +201,7 @@ class context:
     def insert(self, location, element):
         nd = element.to_xml()
         location.children.append(nd)
+        nd.parent = location
         return nd
         
     def _recurse(self, fn, nd=None, stack=None):
@@ -151,6 +223,9 @@ class context:
                 print(" "*len(stack), nd.attributes["name"])
         self._recurse(v)
         
+    def to_id(self, *args):
+        return self.to_node[args].attributes[XMI.id]
+        
 if __name__ == "__main__":
     
     c = context("..\schemas\IFC.xml")
@@ -160,7 +235,7 @@ if __name__ == "__main__":
     axis_geom_package = c.insert(gu_package, uml_package("GeneralUsage"))
     axis_geom = uml_class("AxisGeometry")
     c.insert(axis_geom_package, axis_geom)
-    c.insert(axis_geom_package, uml_assoc_class("IfcWallAxisGeometryUsage", [axis_geom.id, c.to_id[("uml:Class", "IfcWall")]]))
+    c.insert(axis_geom_package, uml_assoc_class("IfcWallAxisGeometryUsage", [axis_geom.id, c.to_id("uml:Class", "IfcWall")]))
     c.write("test.xml")
     # breakpoint()
     

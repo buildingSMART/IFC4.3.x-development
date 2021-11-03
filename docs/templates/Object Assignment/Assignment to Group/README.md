@@ -8,5 +8,6 @@ The grouping relationship does not apply any other meaning then grouping objects
 ```
 concept {
     IfcObject:HasAssignments -> IfcRelAssignsToGroup
+    IfcObject:HasAssignments[binding="IsAssigned"]
 }
 ```

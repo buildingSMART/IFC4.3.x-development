@@ -24,5 +24,6 @@ concept {
     IfcStyledItem:Name -> IfcLabel
     IfcStyledItem:Name -> IfcLabel
     IfcStyledItem:Name -> IfcLabel
+    IfcRevolvedAreaSolid:SweptArea[binding="Profile"]
 }
 ```

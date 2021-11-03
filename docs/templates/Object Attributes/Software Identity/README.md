@@ -8,5 +8,6 @@ Various objects may have additional identifications that may be human-readable a
 ```
 concept {
     IfcRoot:GlobalId -> IfcGloballyUniqueId
+    IfcRoot:GlobalId[binding="GUID"]
 }
 ```

@@ -9,5 +9,8 @@ concept {
     IfcBuildingStorey:Name -> IfcLabel
     IfcBuildingStorey:CompositionType -> IfcElementCompositionEnum
     IfcBuildingStorey:Elevation -> IfcLengthMeasure
+    IfcBuildingStorey:LongName[binding="LongName"]
+    IfcBuildingStorey:Name[binding="Name"]
+    IfcBuildingStorey:Elevation[binding="Elevation"]
 }
 ```

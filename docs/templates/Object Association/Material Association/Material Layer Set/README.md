@@ -17,5 +17,10 @@ concept {
     IfcMaterialLayer:IsVentilated -> IfcLogical
     IfcMaterialLayer:Category -> IfcLabel
     IfcMaterialLayer:Priority -> IfcNormalisedRatioMeasure
+    IfcMaterialLayerSet:MaterialLayers[binding="HasLayer"]
+    IfcMaterialLayer:Name[binding="LayerName"]
+    IfcMaterialLayer:LayerThickness[binding="LayerThickness"]
+    IfcMaterialLayer:IsVentilated[binding="AirGap"]
+    IfcMaterialLayer:Category[binding="Category"]
 }
 ```

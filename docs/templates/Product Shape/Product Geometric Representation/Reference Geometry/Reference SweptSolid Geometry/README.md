@@ -17,5 +17,7 @@ concept {
     IfcShapeRepresentation:RepresentationIdentifier -> IfcLabel
     IfcShapeRepresentation:RepresentationType -> IfcLabel
     IfcShapeRepresentation:Items -> IfcSweptAreaSolid
+    IfcShapeRepresentation:RepresentationIdentifier[binding="Identifier"]
+    IfcShapeRepresentation:RepresentationType[binding="Type"]
 }
 ```

@@ -18,5 +18,6 @@ concept {
     IfcPolyline:Points -> IfcCartesianPoint
     IfcPolyline:Points -> IfcCartesianPoint
     IfcPolyline:Points -> IfcCartesianPoint
+    IfcRelConnectsPathElements:RelatedElement[binding="RelatedElement"]
 }
 ```

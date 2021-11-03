@@ -19,5 +19,8 @@ concept {
     IfcShapeRepresentation:Items -> IfcGeometricCurveSet
     IfcGeometricCurveSet:Elements -> IfcCartesianPoint
     IfcGeometricCurveSet:Elements -> IfcPolyline
+    IfcShapeRepresentation:RepresentationIdentifier[binding="Identifier"]
+    IfcShapeRepresentation:RepresentationType[binding="Type"]
+    IfcShapeRepresentation:Items[binding="Items"]
 }
 ```

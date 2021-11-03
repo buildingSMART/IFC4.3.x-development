@@ -14,5 +14,7 @@ concept {
     IfcGradientCurve:BaseCurve -> IfcCompositeCurve
     IfcGradientCurve:Segments -> IfcCurveSegment
     IfcCompositeCurve:Segments -> IfcCurveSegment
+    IfcShapeRepresentation:RepresentationIdentifier[binding="Identifier"]
+    IfcShapeRepresentation:RepresentationType[binding="Type"]
 }
 ```

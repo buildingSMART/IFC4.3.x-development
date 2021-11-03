@@ -28,5 +28,7 @@ concept {
     IfcCartesianTransformationOperator3D:Axis2 -> IfcDirection
     IfcCartesianTransformationOperator3D:LocalOrigin -> IfcCartesianPoint
     IfcCartesianTransformationOperator3D:Axis3 -> IfcDirection
+    IfcShapeRepresentation:RepresentationIdentifier[binding="Identifier"]
+    IfcShapeRepresentation:RepresentationType[binding="Type"]
 }
 ```

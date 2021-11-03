@@ -9,5 +9,8 @@ Each cost value may be defined using a constant amount or calculated according t
 concept {
     IfcConstructionResource:BaseCosts -> IfcAppliedValue
     IfcAppliedValue:Name -> IfcLabel
+    IfcConstructionResource:BaseCosts[binding="CostType"]
+    IfcAppliedValue:Name[binding="CostName"]
+    IfcAppliedValue:AppliedValue[binding="ValueType"]
 }
 ```

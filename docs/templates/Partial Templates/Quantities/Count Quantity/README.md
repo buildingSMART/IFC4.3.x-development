@@ -9,5 +9,7 @@ concept {
     IfcQuantityCount:Description -> IfcText
     IfcQuantityCount:CountValue -> IfcCountMeasure
     IfcQuantityCount:Formula -> IfcLabel
+    IfcQuantityCount:Name[binding="QuantityName"]
+    IfcQuantityCount:CountValue[binding="CountValue"]
 }
 ```

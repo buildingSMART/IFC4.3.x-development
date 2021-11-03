@@ -13,5 +13,6 @@ concept {
     IfcContext:Phase -> IfcLabel
     IfcContext:ObjectType -> IfcLabel
     IfcContext:LongName -> IfcLabel
+    IfcRelDeclares:RelatedDefinitions[binding="Type"]
 }
 ```

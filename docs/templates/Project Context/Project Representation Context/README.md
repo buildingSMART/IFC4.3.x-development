@@ -23,5 +23,9 @@ concept {
     IfcGeometricRepresentationSubContext:TargetScale -> IfcPositiveRatioMeasure
     IfcGeometricRepresentationSubContext:TargetView -> IfcGeometricProjectionEnum
     IfcGeometricRepresentationSubContext:UserDefinedTargetView -> IfcLabel
+    IfcGeometricRepresentationContext:ContextIdentifier[binding="ContextIdentifier"]
+    IfcGeometricRepresentationContext:ContextType[binding="ContextType"]
+    IfcGeometricRepresentationSubContext:ContextIdentifier[binding="SubContextIdentifier"]
+    IfcGeometricRepresentationSubContext:ContextType[binding="SubContextType"]
 }
 ```

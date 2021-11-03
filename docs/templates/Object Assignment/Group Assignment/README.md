@@ -16,5 +16,7 @@ The _Group Assignment_ concept establish a given object as being the group colle
 concept {
     IfcGroup:IsGroupedBy -> IfcRelAssignsToGroup:RelatingGroup
     IfcRelAssignsToGroup:RelatedObjects -> IfcProduct
+    IfcGroup:IsGroupedBy[binding="IsGrouped"]
+    IfcRelAssignsToGroup:RelatedObjects[binding="RelatedObjects"]
 }
 ```

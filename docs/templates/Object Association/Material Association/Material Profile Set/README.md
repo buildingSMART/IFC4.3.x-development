@@ -20,5 +20,8 @@ concept {
     IfcMaterialProfile:Priority -> IfcInteger
     IfcProfileDef:ProfileType -> IfcProfileTypeEnum
     IfcProfileDef:ProfileName -> IfcLabel
+    IfcMaterialProfileSet:MaterialProfiles[binding="HasProfiles"]
+    IfcProfileDef:ProfileName[binding="ProfileName"]
+    IfcMaterialProfile:Category[binding="Category"]
 }
 ```

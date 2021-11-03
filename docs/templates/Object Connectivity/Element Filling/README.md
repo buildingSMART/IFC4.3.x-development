@@ -9,5 +9,6 @@ concept {
     IfcRelFillsElement:RelatingOpeningElement -> IfcOpeningElement
     IfcOpeningElement:VoidsElements -> IfcRelVoidsElement
     IfcRelVoidsElement:RelatingElement -> IfcElement
+    IfcRelVoidsElement:RelatingElement[binding="Type"]
 }
 ```

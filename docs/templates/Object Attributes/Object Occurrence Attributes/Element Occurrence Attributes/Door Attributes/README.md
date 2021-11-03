@@ -20,5 +20,9 @@ concept {
     IfcDoorPanelProperties:PanelOperation -> IfcDoorPanelOperationEnum
     IfcDoorPanelProperties:PanelWidth -> IfcNormalisedRatioMeasure
     IfcDoorPanelProperties:PanelPosition -> IfcDoorPanelPositionEnum
+    IfcDoor:OverallHeight[binding="OverallHeight"]
+    IfcDoor:OverallWidth[binding="OverallWidth"]
+    IfcDoor:OperationType[binding="OperationType"]
+    IfcDoorType:OperationType[binding="TypeOperationType"]
 }
 ```

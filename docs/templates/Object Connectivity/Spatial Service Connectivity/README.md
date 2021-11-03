@@ -8,5 +8,8 @@ concept {
     IfcSpatialElement:ServicedBySystems -> IfcRelServicesBuildings:RelatedBuildings
     IfcRelServicesBuildings:RelatingSystem -> IfcSystem
     IfcSystem:Name -> IfcLabel
+    IfcSpatialElement:ServicedBySystems[binding="ServicedBySystems"]
+    IfcRelServicesBuildings:RelatingSystem[binding="RelatedSystem"]
+    IfcSystem:Name[binding="SystemName"]
 }
 ```

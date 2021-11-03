@@ -12,5 +12,6 @@ concept {
     IfcRelAssignsToActor:RelatedObjects -> IfcProcess
     IfcRelAssignsToActor:RelatedObjects -> IfcResource
     IfcRelAssignsToActor:RelatedObjects -> IfcContext
+    IfcRelAssignsToActor:RelatedObjects[binding="Type"]
 }
 ```

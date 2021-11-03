@@ -34,5 +34,10 @@ concept {
     IfcClassification:Description -> IfcText
     IfcClassification:Location -> IfcURIReference
     IfcClassification:EditionDate -> IfcDate
+    IfcClassificationReference:Identification[binding="Identification"]
+    IfcClassificationReference:Name[binding="Name"]
+    IfcClassification:Source[binding="ClassificationSource"]
+    IfcClassification:Name[binding="ClassificationName"]
+    IfcClassification:ReferenceTokens[binding="ClassificationTokens"]
 }
 ```

@@ -15,5 +15,6 @@ concept {
     IfcMaterialConstituent:Material -> IfcMaterial
     IfcMaterialConstituent:Category -> IfcLabel
     IfcMaterialConstituent:Fraction -> IfcNormalisedRatioMeasure
+    IfcMaterialConstituent:Name[binding="ConstituentName"]
 }
 ```

@@ -16,5 +16,9 @@ concept {
     IfcRelDefinesByType:RelatingType -> IfcTypeObject
     IfcTypeObject:Name -> IfcLabel
     IfcTypeObject:Description -> IfcText
+    IfcObject:Name[binding="ObjectName"]
+    IfcObject:Description[binding="ObjectDescription"]
+    IfcTypeObject:Name[binding="TypeName"]
+    IfcTypeObject:Description[binding="TypeDescription"]
 }
 ```

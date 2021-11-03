@@ -7,5 +7,6 @@ An _IfcProduct_ can be placed relative to a positioning element such as _IfcAlig
 concept {
     IfcProduct:PositionedRelativeTo -> IfcRelPositions:RelatedProducts
     IfcRelPositions:RelatingPositioningElement -> IfcPositioningElement
+    IfcRelPositions:RelatingPositioningElement[binding="PositioningElement"]
 }
 ```

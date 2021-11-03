@@ -21,5 +21,12 @@ concept {
     IfcPostalAddress:Region -> IfcLabel
     IfcPostalAddress:PostalCode -> IfcLabel
     IfcPostalAddress:Country -> IfcLabel
+    IfcBuilding:LongName[binding="LongName"]
+    IfcBuilding:Name[binding="Name"]
+    IfcBuilding:BuildingAddress[binding="HasAddress"]
+    IfcPostalAddress:AddressLines[binding="AddressLines"]
+    IfcPostalAddress:Town[binding="Town"]
+    IfcPostalAddress:PostalCode[binding="PostalCode"]
+    IfcPostalAddress:Country[binding="Country"]
 }
 ```

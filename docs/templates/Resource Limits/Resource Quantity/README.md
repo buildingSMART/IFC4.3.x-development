@@ -9,5 +9,7 @@ For work-based resources such as labor and equipment, quantities are based on ti
 concept {
     IfcConstructionResource:BaseQuantity -> IfcPhysicalSimpleQuantity
     IfcPhysicalSimpleQuantity:Name -> IfcLabel
+    IfcConstructionResource:BaseQuantity[binding="QuantityType"]
+    IfcPhysicalSimpleQuantity:Name[binding="QuantityName"]
 }
 ```

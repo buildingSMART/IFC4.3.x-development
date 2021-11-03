@@ -10,5 +10,7 @@ concept {
     IfcRelConnectsPorts:RelatedPort -> IfcDistributionPort
     IfcRelConnectsPorts:RealizingElement -> IfcFlowSegment
     IfcRelConnectsPorts:RelatingPort -> IfcDistributionPort
+    IfcDistributionPort:ConnectedTo[binding="ConnectedToPort"]
+    IfcDistributionPort:ConnectedFrom[binding="ConnectedFromPort"]
 }
 ```

@@ -18,5 +18,9 @@ concept {
     IfcAxis2Placement3D:Location -> IfcCartesianPoint
     IfcAxis2Placement3D:Axis -> IfcDirection
     IfcAxis2Placement3D:RefDirection -> IfcDirection
+    IfcDistributionElement:PredefinedType[binding="PredefinedType"]
+    IfcDistributionPort:Name[binding="PortName"]
+    IfcDistributionPort:FlowDirection[binding="Flow"]
+    IfcDistributionPort:SystemType[binding="SystemType"]
 }
 ```

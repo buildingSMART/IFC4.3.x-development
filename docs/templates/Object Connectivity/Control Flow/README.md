@@ -7,5 +7,6 @@ Control elements (such as sensors) that monitor or control behavior of flow elem
 concept {
     IfcDistributionControlElement:AssignedToFlowElement -> IfcRelFlowControlElements:RelatedControlElements
     IfcRelFlowControlElements:RelatingFlowElement -> IfcDistributionFlowElement
+    IfcRelFlowControlElements:RelatingFlowElement[binding="Type"]
 }
 ```

@@ -43,7 +43,7 @@ navigation_entries = [
     ("Examples", "Change logs", "Bibliography", "Index")
 ]
 
-@dataclass
+@dataclass(order=True, eq=True, frozen=True)
 class toc_entry:
     text : str
     
@@ -318,11 +318,14 @@ def process_graphviz(current_entity, md):
     return md    
 
 
-def create_entity_definition(e):
-    table = [(e, "")]
+def create_entity_definition(e, bindings):
+    
+    E = e
+    table = []
+    
     while e:
         keys = [x for x in entity_attributes.keys() if x.startswith(e + '.')]
-        for k, (is_fwd, ty) in zip(keys, map(entity_attributes.__getitem__, keys)):
+        for k, (is_fwd, ty) in list(zip(keys, map(entity_attributes.__getitem__, keys)))[::-1]:
             nm = k.split('.')[1]
             
             if is_fwd:
@@ -334,12 +337,19 @@ def create_entity_definition(e):
                     card = inv_card[0]
                 else:
                     card = ""
+                    
+            bnd = bindings.get((E, nm), "")
+            table.append((nm, card, 2 if bnd else 0))
+            if bnd:
+               table.append((bnd, "", 3))
             
-            table.append((nm, card))
         e = entity_supertype.get(e)
         
+    table.append((E, "", 1))
+    table = table[::-1]
+        
     table = "<<table border=\"1\" cellborder=\"0\" cellspacing=\"0\">%s</table>>" % \
-        "".join("<tr>%s</tr>" % "".join("<td width=\"%d\" height=\"24\" fixedsize=\"true\" bgcolor=\"%s\" align=\"left\" port=\"%s%d\">%s</td>" % ([20,250][i==0],["white", "gray"][ri==0],r[0],i,c) for i,c in enumerate(r)) for ri, r in enumerate(table))
+        "".join("<tr>%s</tr>" % "".join("<td width=\"%d\" height=\"%d\" fixedsize=\"true\" bgcolor=\"%s\" align=\"left\" port=\"%s%d\">%s%s%s</td>" % ([20,250][i==0],[24,18][r[2]==3],["white", "gray", "#aaaaff", "#aaaaff"][r[2]],r[0],i,"<b>" if r[2]==3 and c else "", c, "</b>" if r[2]==3 and c else "") for i,c in enumerate(r[:-1])) for r in table)
     
     return table
 
@@ -358,6 +368,11 @@ def process_graphviz_concept(name, md):
         c2 = re.sub(r'(\w+)\:(\w+)\s*\->\s*([\:\w]+)', lambda m: f"{m.group(1)}:{m.group(2)}1 -> {m.group(3)}", c2)
         c2 = re.sub(r'([\w\:]+)\s*\->\s*(\w+)\:(\w+)', lambda m: f"{m.group(1)} -> {m.group(2)}:{m.group(3)}0", c2)
         
+        bindings = {}
+        for ent, attr, bind in re.findall(r'(\w+)\:(\w+)\[binding="(\w+)"\]', c2):
+            bindings[(ent, attr)] = bind
+        c2 = re.sub(r'\w+\:\w+\[binding="\w+"\]', '', c2)
+        
         G = pydot.graph_from_dot_data(c2)[0]
         
         G.set_node_defaults(shape='plaintext', width='3')
@@ -366,7 +381,10 @@ def process_graphviz_concept(name, md):
         G.set_rankdir('LR')
                         
         for n in nodes:
-            G.add_node(pydot.Node(n, label=create_entity_definition(n)))
+            if n.startswith("Ifc"):
+                G.add_node(pydot.Node(n, label=create_entity_definition(n, bindings)))
+            else:
+                G.add_node(pydot.Node(n, label=n.replace("_", " "), fillcolor="#aaaaff", shape="rect", style="filled"))
             
         # this is ugly, but the node defaults need to come before the edges
         G.obj_dict["nodes"]['node'][0]['sequence'] = -1

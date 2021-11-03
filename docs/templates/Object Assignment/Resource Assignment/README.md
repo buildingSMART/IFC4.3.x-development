@@ -8,5 +8,6 @@ concept {
     IfcResource:ResourceOf -> IfcRelAssignsToResource:RelatingResource
     IfcRelAssignsToResource:RelatedObjects -> IfcActor
     IfcRelAssignsToResource:RelatedObjects -> IfcProduct
+    IfcRelAssignsToResource:RelatedObjects[binding="Type"]
 }
 ```

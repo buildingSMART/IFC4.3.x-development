@@ -7,5 +7,7 @@ Spatial objects may be further identified via the _LongName_ attribute. This val
 concept {
     IfcSpatialElement:Name -> IfcLabel
     IfcSpatialElement:LongName -> IfcLabel
+    IfcSpatialElement:Name[binding="Name"]
+    IfcSpatialElement:LongName[binding="LongName"]
 }
 ```

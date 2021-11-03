@@ -20,5 +20,8 @@ concept {
     IfcElement:Decomposes -> IfcRelAggregates
     IfcElement:Name -> IfcLabel
     IfcRelAggregates:RelatingObject -> IfcElement
+    IfcElement:Decomposes[binding="Decomposes"]
+    IfcRelAggregates:RelatingObject[binding="RelatingObject"]
+    IfcElement:Name[binding="ElementName"]
 }
 ```

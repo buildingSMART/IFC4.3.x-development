@@ -23,5 +23,6 @@ concept {
     IfcColourRgbList:ColourList -> IfcNormalisedRatioMeasure
     IfcIndexedTriangleTextureMap:Maps -> IfcImageTexture
     IfcStyledItem:Styles -> IfcSurfaceStyle
+    IfcShapeRepresentation:Items[binding="Geometry"]
 }
 ```

@@ -25,5 +25,6 @@ concept {
     IfcSimplePropertyTemplate:Expression -> IfcLabel
     IfcPropertyEnumeration:Name -> IfcLabel
     IfcPropertyEnumeration:EnumerationValues -> IfcValue
+    IfcRelDeclares:RelatedDefinitions[binding="Type"]
 }
 ```

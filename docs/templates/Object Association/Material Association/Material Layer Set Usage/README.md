@@ -23,5 +23,6 @@ concept {
     IfcMaterial:HasRepresentation -> IfcMaterialDefinitionRepresentation:RepresentedMaterial
     IfcMaterialLayerWithOffsets:OffsetDirection -> IfcLayerSetDirectionEnum
     IfcMaterialLayerWithOffsets:OffsetValues -> IfcLengthMeasure
+    IfcMaterialLayer:Name[binding="Name"]
 }
 ```

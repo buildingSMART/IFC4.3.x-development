@@ -44,5 +44,11 @@ concept {
     IfcConversionBasedUnitWithOffset:Name -> IfcLabel
     IfcConversionBasedUnitWithOffset:ConversionFactor -> IfcMeasureWithUnit
     IfcConversionBasedUnitWithOffset:ConversionOffset -> IfcReal
+    IfcContext:UnitsInContext[binding="HasUnits"]
+    IfcDerivedUnit:UnitType[binding="DerivedUnitType"]
+    IfcSIUnit:UnitType[binding="SIUnitType"]
+    IfcSIUnit:Name[binding="SIUnitName"]
+    IfcConversionBasedUnit:UnitType[binding="ConversionUnitType"]
+    IfcConversionBasedUnit:Name[binding="ConversionUnitName"]
 }
 ```

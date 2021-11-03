@@ -21,5 +21,8 @@ concept {
     IfcShapeRepresentation:Items -> IfcPoint
     IfcShapeRepresentation:Items -> IfcCurve
     IfcShapeRepresentation:Items -> IfcSurface
+    IfcShapeRepresentation:RepresentationIdentifier[binding="Identifier"]
+    IfcShapeRepresentation:RepresentationType[binding="Type"]
+    IfcShapeRepresentation:Items[binding="Items"]
 }
 ```

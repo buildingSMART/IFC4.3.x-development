@@ -9,5 +9,6 @@ concept {
     IfcSweptAreaSolid:StyledByItem -> IfcStyledItem
     IfcStyledItem:Name -> IfcLabel
     IfcStyledItem:Styles -> IfcSurfaceStyle
+    IfcSweptAreaSolid:SweptArea[binding="Profile"]
 }
 ```

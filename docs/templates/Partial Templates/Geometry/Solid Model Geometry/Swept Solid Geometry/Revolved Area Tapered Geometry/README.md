@@ -17,5 +17,6 @@ concept {
     IfcAxis2Placement3D:RefDirection -> IfcDirection
     IfcAxis1Placement:Location -> IfcCartesianPoint
     IfcAxis1Placement:Axis -> IfcDirection
+    IfcRevolvedAreaSolidTapered:SweptArea[binding="Profile"]
 }
 ```

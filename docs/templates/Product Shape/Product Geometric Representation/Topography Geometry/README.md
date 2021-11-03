@@ -17,5 +17,7 @@ concept {
     IfcIndexedPolyCurve:SelfIntersect -> IfcBoolean
     IfcIndexedPolyCurve:Segments -> IfcArcIndex
     IfcIndexedPolyCurve:Segments -> IfcLineIndex
+    IfcShapeRepresentation:RepresentationIdentifier[binding="Identifier"]
+    IfcShapeRepresentation:RepresentationType[binding="Type"]
 }
 ```

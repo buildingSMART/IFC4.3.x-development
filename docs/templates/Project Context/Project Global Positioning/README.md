@@ -25,5 +25,12 @@ concept {
     IfcProjectedCRS:VerticalDatum -> IfcIdentifier
     IfcProjectedCRS:MapProjection -> IfcIdentifier
     IfcProjectedCRS:MapZone -> IfcIdentifier
+    IfcGeometricRepresentationContext:HasCoordinateOperation[binding="HasGlobalPosition"]
+    IfcMapConversion:Eastings[binding="Eastings"]
+    IfcMapConversion:Northings[binding="Northings"]
+    IfcMapConversion:OrthogonalHeight[binding="OrthogonalHeight"]
+    IfcMapConversion:XAxisAbscissa[binding="XAxisAbscissa"]
+    IfcMapConversion:XAxisOrdinate[binding="XAxisOrdinate"]
+    IfcProjectedCRS:Name[binding="CRSName"]
 }
 ```

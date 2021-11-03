@@ -22,5 +22,7 @@ concept {
     IfcBooleanResult:Operator -> IfcBooleanOperator
     IfcBooleanResult:FirstOperand -> IfcBooleanOperand
     IfcBooleanResult:SecondOperand -> IfcBooleanOperand
+    IfcShapeRepresentation:RepresentationType[binding="RepresentationType"]
+    IfcShapeRepresentation:Items[binding="Geometry"]
 }
 ```

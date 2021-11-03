@@ -22,5 +22,8 @@ concept {
     IfcSecondOrderPolynomialSpiral:QuadraticTerm -> IfcLengthMeasure
     IfcSecondOrderPolynomialSpiral:LinearTerm -> IfcLengthMeasure
     IfcSecondOrderPolynomialSpiral:ConstantTerm -> IfcReal
+    IfcSecondOrderPolynomialSpiral:QuadraticTerm[binding="QuadraticTerm"]
+    IfcSecondOrderPolynomialSpiral:LinearTerm[binding="LinearTerm"]
+    IfcSecondOrderPolynomialSpiral:ConstantTerm[binding="Constant"]
 }
 ```

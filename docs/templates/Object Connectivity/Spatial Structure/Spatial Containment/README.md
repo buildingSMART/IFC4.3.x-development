@@ -13,5 +13,7 @@ concept {
     IfcElement:ContainedInStructure -> IfcRelContainedInSpatialStructure:RelatedElements
     IfcRelContainedInSpatialStructure:RelatingStructure -> IfcSpatialElement
     IfcSpatialElement:Name -> IfcLabel
+    IfcRelContainedInSpatialStructure:RelatingStructure[binding="RelatingStructure"]
+    IfcSpatialElement:Name[binding="SpatialElementName"]
 }
 ```

@@ -29,5 +29,7 @@ concept {
     IfcTableColumn:Name -> IfcLabel
     IfcTableColumn:Description -> IfcText
     IfcTableColumn:ReferencePath -> IfcReference
+    IfcMetric:DataValue[binding="DataValue"]
+    IfcReference:AttributeIdentifier[binding="Attribute1"]
 }
 ```

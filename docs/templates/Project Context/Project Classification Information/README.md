@@ -21,5 +21,8 @@ concept {
     IfcClassificationReference:Name -> IfcLabel
     IfcClassificationReference:Description -> IfcText
     IfcClassificationReference:Sort -> IfcIdentifier
+    IfcClassification:Source[binding="ClassificationSource"]
+    IfcClassification:Name[binding="ClassificationName"]
+    IfcClassification:ReferenceTokens[binding="ReferenceTokens"]
 }
 ```

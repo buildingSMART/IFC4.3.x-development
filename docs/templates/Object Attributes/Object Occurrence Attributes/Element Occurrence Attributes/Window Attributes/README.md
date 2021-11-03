@@ -18,5 +18,9 @@ concept {
     IfcWindowType:HasPropertySets -> IfcWindowPanelProperties
     IfcWindowPanelProperties:OperationType -> IfcWindowPanelOperationEnum
     IfcWindowPanelProperties:PanelPosition -> IfcWindowPanelPositionEnum
+    IfcWindow:OverallHeight[binding="OverallHeight"]
+    IfcWindow:OverallWidth[binding="OverallWidth"]
+    IfcWindow:PartitioningType[binding="PartitioningType"]
+    IfcWindowType:PartitioningType[binding="TypePartitioningType"]
 }
 ```

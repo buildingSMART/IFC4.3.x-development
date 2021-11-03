@@ -9,5 +9,6 @@ concept {
     IfcLinearPlacement:RelativePlacement -> IfcAxis2PlacementLinear
     IfcLinearPlacement:PlacementRelTo -> IfcLocalPlacement
     IfcLocalPlacement:PlacesObject -> IfcLinearPositioningElement
+    IfcProduct:ObjectPlacement[binding="HasPlacement"]
 }
 ```

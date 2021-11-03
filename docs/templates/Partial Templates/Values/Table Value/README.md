@@ -11,5 +11,8 @@ concept {
     IfcPropertyTableValue:DefinedValues -> IfcValue
     IfcPropertyTableValue:Expression -> IfcText
     IfcPropertyTableValue:CurveInterpolation -> IfcCurveInterpolationEnum
+    IfcPropertyTableValue:Name[binding="PropertyName"]
+    IfcPropertyTableValue:DefiningValues[binding="Value"]
+    IfcPropertyTableValue:DefinedValues[binding="Reference"]
 }
 ```

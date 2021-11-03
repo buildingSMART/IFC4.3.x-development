@@ -7,5 +7,6 @@ Process types may have assignments indicating re-usable resource types for which
 concept {
     IfcTypeProcess:OperatesOn -> IfcRelAssignsToProcess:RelatingProcess
     IfcRelAssignsToProcess:RelatedObjects -> IfcTypeResource
+    IfcRelAssignsToProcess:RelatedObjects[binding="Type"]
 }
 ```

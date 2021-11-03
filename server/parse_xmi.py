@@ -85,6 +85,10 @@ def get_schema(name):
             if schema_name == name: return members
 
 for item in xmi_doc:
+    if get_schema(item.package) is None:
+        print("Warning", item.package, "not registered")
+        continue
+    
     if item.type == "ENTITY":
         entity_to_package[item.name] = item.package
         resource_to_package[item.name] = get_schema(item.package)

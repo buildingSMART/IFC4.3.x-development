@@ -29,5 +29,8 @@ concept {
     IfcPolygonalBoundedHalfSpace:AgreementFlag -> IfcBoolean
     IfcPolygonalBoundedHalfSpace:Position -> IfcAxis2Placement3D
     IfcPolygonalBoundedHalfSpace:PolygonalBoundary -> IfcIndexedPolyCurve
+    IfcShapeRepresentation:RepresentationIdentifier[binding="Identifier"]
+    IfcShapeRepresentation:RepresentationType[binding="Type"]
+    IfcShapeRepresentation:Items[binding="Items"]
 }
 ```

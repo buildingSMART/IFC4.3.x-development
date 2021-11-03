@@ -12,5 +12,6 @@ concept {
     IfcContext:ObjectType -> IfcLabel
     IfcContext:LongName -> IfcLabel
     IfcRelDeclares:RelatedDefinitions -> IfcTypeObject
+    IfcRelDeclares:RelatedDefinitions[binding="RelatedTypes"]
 }
 ```

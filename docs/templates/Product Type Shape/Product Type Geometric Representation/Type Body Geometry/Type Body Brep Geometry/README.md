@@ -19,5 +19,7 @@ concept {
     IfcFaceOuterBound:Bound -> IfcPolyLoop
     IfcFaceOuterBound:Orientation -> IfcBoolean
     IfcPolyLoop:Polygon -> IfcCartesianPoint
+    IfcShapeRepresentation:RepresentationType[binding="RepresentationType"]
+    IfcShapeRepresentation:Items[binding="Geometry"]
 }
 ```

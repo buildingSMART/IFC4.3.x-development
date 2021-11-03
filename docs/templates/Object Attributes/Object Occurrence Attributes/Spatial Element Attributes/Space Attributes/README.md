@@ -13,5 +13,9 @@ concept {
     IfcRelDefinesByType:RelatingType -> IfcSpaceType
     IfcSpaceType:Name -> IfcLabel
     IfcSpaceType:LongName -> IfcLabel
+    IfcSpace:LongName[binding="LongName"]
+    IfcSpace:Name[binding="Name"]
+    IfcSpaceType:Name[binding="TypeName"]
+    IfcSpaceType:LongName[binding="TypeLongName"]
 }
 ```

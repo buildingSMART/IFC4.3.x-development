@@ -17,5 +17,8 @@ concept {
     IfcShapeRepresentation:RepresentationIdentifier -> IfcLabel
     IfcShapeRepresentation:RepresentationType -> IfcLabel
     IfcShapeRepresentation:Items -> IfcBoundedCurve
+    IfcShapeRepresentation:RepresentationIdentifier[binding="Identifier"]
+    IfcShapeRepresentation:RepresentationType[binding="Type"]
+    IfcShapeRepresentation:Items[binding="Items"]
 }
 ```

@@ -12,5 +12,8 @@ concept {
     IfcShapeRepresentation:RepresentationType -> IfcLabel
     IfcShapeRepresentation:Items -> IfcSurfaceCurveSweptAreaSolid
     IfcShapeRepresentation:Items -> IfcFixedReferenceSweptAreaSolid
+    IfcShapeRepresentation:RepresentationIdentifier[binding="Identifier"]
+    IfcShapeRepresentation:RepresentationType[binding="Type"]
+    IfcShapeRepresentation:Items[binding="Items"]
 }
 ```

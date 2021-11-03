@@ -15,5 +15,6 @@ concept {
     IfcAxis2Placement3D:Location -> IfcCartesianPoint
     IfcAxis2Placement3D:Axis -> IfcDirection
     IfcAxis2Placement3D:RefDirection -> IfcDirection
+    IfcExtrudedAreaSolidTapered:SweptArea[binding="Profile"]
 }
 ```

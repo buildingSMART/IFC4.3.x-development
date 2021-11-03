@@ -23,5 +23,6 @@ concept {
     IfcMaterialProfileWithOffsets:OffsetValues -> IfcLengthMeasure
     IfcMaterialProfileSetUsageTapering:ForProfileEndSet -> IfcMaterialProfileSet
     IfcMaterialProfileSetUsageTapering:CardinalEndPoint -> IfcCardinalPointReference
+    IfcMaterialProfile:Name[binding="Name"]
 }
 ```

@@ -15,5 +15,10 @@ concept {
     IfcOpeningElement:HasFillings -> IfcRelFillsElement:RelatingOpeningElement
     IfcRelFillsElement:RelatedBuildingElement -> IfcDoor
     IfcRelFillsElement:RelatedBuildingElement -> IfcWindow
+    IfcElement:HasOpenings[binding="HasOpenings"]
+    IfcOpeningElement:HasFillings[binding="HasFillings"]
+    IfcRelFillsElement:RelatedBuildingElement[binding="RelatedFillings"]
+    IfcDoor[binding="ElementName"]
+    IfcWindow[binding="ElementName"]
 }
 ```

@@ -27,5 +27,7 @@ concept {
     IfcElement:IsNestedBy -> IfcRelNests
     IfcElement:ObjectPlacement -> IfcLocalPlacement
     IfcRelNests:RelatedObjects -> IfcElement
+    IfcRelNests:RelatedObjects[binding="Type"]
+    IfcElement:PredefinedType[binding="PredefinedType"]
 }
 ```

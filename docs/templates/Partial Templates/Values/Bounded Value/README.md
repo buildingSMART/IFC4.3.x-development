@@ -10,5 +10,9 @@ concept {
     IfcPropertyBoundedValue:UpperBoundValue -> IfcValue
     IfcPropertyBoundedValue:LowerBoundValue -> IfcValue
     IfcPropertyBoundedValue:SetPointValue -> IfcValue
+    IfcPropertyBoundedValue:Name[binding="PropertyName"]
+    IfcPropertyBoundedValue:UpperBoundValue[binding="UpperValue"]
+    IfcPropertyBoundedValue:LowerBoundValue[binding="LowerValue"]
+    IfcPropertyBoundedValue:SetPointValue[binding="SetValue"]
 }
 ```

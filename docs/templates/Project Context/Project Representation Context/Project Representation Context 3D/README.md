@@ -26,5 +26,9 @@ concept {
     IfcGeometricRepresentationSubContext:UserDefinedTargetView -> IfcLabel
     IfcGeometricRepresentationSubContext:ContextIdentifier -> IfcLabel
     IfcGeometricRepresentationSubContext:ContextType -> IfcLabel
+    IfcGeometricRepresentationContext:ContextIdentifier[binding="ContextIdentifier"]
+    IfcGeometricRepresentationContext:ContextType[binding="ContextType"]
+    IfcGeometricRepresentationSubContext:ContextIdentifier[binding="SubContextIdentifier"]
+    IfcGeometricRepresentationSubContext:ContextType[binding="SubContextType"]
 }
 ```

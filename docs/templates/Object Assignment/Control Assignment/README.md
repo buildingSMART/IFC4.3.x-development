@@ -7,5 +7,6 @@ Controls may have assignments indicating objects that must observe the establish
 concept {
     IfcControl:Controls -> IfcRelAssignsToControl:RelatingControl
     IfcRelAssignsToControl:RelatedObjects -> IfcObject
+    IfcRelAssignsToControl:RelatedObjects[binding="Type"]
 }
 ```

@@ -14,5 +14,6 @@ concept {
     IfcDocumentReference:Identification -> IfcIdentifier
     IfcDocumentReference:Name -> IfcLabel
     IfcDocumentReference:Description -> IfcText
+    IfcRelAssociatesDocument:Name[binding="Name"]
 }
 ```

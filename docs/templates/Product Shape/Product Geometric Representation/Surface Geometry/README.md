@@ -14,5 +14,8 @@ concept {
     IfcShapeRepresentation:ContextOfItems -> IfcGeometricRepresentationContext
     IfcShapeRepresentation:RepresentationIdentifier -> IfcLabel
     IfcShapeRepresentation:RepresentationType -> IfcLabel
+    IfcShapeRepresentation:RepresentationIdentifier[binding="Identifier"]
+    IfcShapeRepresentation:RepresentationType[binding="Type"]
+    IfcShapeRepresentation:Items[binding="Items"]
 }
 ```

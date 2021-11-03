@@ -62,5 +62,8 @@ concept {
     IfcTextLiteral:Placement -> IfcAxis2Placement2D
     IfcTextLiteral:Path -> IfcTextPath
     IfcTextLiteral:StyledByItem -> IfcStyledItem
+    IfcShapeRepresentation:RepresentationIdentifier[binding="Identifier"]
+    IfcShapeRepresentation:RepresentationType[binding="Type"]
+    IfcShapeRepresentation:Items[binding="Items"]
 }
 ```

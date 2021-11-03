@@ -13,5 +13,6 @@ concept {
     IfcPropertySet:HasProperties -> IfcPropertyEnumeratedValue
     IfcPropertySet:HasProperties -> IfcPropertyListValue
     IfcPropertySet:HasProperties -> IfcPropertyTableValue
+    IfcPropertySet:Name[binding="PsetName"]
 }
 ```

@@ -12,5 +12,6 @@ concept {
     IfcTopologyRepresentation:RepresentationIdentifier -> IfcLabel
     IfcTopologyRepresentation:RepresentationType -> IfcLabel
     IfcTopologyRepresentation:Items -> IfcTopologicalRepresentationItem
+    IfcTopologyRepresentation:Items[binding="Topology"]
 }
 ```

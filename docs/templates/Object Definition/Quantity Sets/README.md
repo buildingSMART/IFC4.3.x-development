@@ -18,5 +18,7 @@ concept {
     IfcElementQuantity:Quantities -> IfcQuantityWeight
     IfcElementQuantity:Quantities -> IfcQuantityCount
     IfcElementQuantity:Quantities -> IfcQuantityTime
+    IfcElementQuantity:Name[binding="QsetName"]
+    IfcElementQuantity:Quantities[binding="Quantities"]
 }
 ```

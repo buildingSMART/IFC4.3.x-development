@@ -29,5 +29,8 @@ Many object occurrence and object type entities have an attribute named _Predefi
 concept {
     IfcObject:IsTypedBy -> IfcRelDefinesByType:RelatedObjects
     IfcRelDefinesByType:RelatingType -> IfcTypeObject
+    IfcObject:IsTypedBy[binding="HasType"]
+    IfcRelDefinesByType:RelatingType[binding="RelatingType"]
+    IfcTypeObject:Name[binding="TypeName"]
 }
 ```

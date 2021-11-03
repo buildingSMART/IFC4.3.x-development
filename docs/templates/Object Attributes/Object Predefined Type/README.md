@@ -17,5 +17,9 @@ concept {
     IfcObject:ObjectType -> IfcLabel
     IfcObject:IsTypedBy -> IfcRelDefinesByType:RelatedObjects
     IfcRelDefinesByType:RelatingType -> IfcTypeObject
+    IfcObject:ObjectType[binding="UserDefinedType"]
+    IfcObject:PredefinedType[binding="PredefinedType"]
+    IfcTypeObject:ElementType[binding="TypeUserdefinedType"]
+    IfcTypeObject:PredefinedType[binding="TypePredefinedType"]
 }
 ```

@@ -23,5 +23,11 @@ concept {
     IfcPostalAddress:PostalCode -> IfcLabel
     IfcPostalAddress:Country -> IfcLabel
     IfcPostalAddress:UserDefinedPurpose -> IfcLabel
+    IfcSite:LongName[binding="LongName"]
+    IfcSite:Name[binding="Name"]
+    IfcSite:RefLatitude[binding="Latitude"]
+    IfcSite:RefLongitude[binding="Longitude"]
+    IfcSite:RefElevation[binding="Elevation"]
+    IfcSite:SiteAddress[binding="HasAddress"]
 }
 ```

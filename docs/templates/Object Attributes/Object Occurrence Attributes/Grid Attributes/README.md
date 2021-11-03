@@ -25,5 +25,8 @@ concept {
     IfcGridAxis:AxisCurve -> IfcCircle
     IfcGridAxis:SameSense -> IfcBoolean
     IfcGridAxis:SameSense -> IfcBoolean
+    IfcGrid:UAxes[binding="UAxes"]
+    IfcGrid:VAxes[binding="VAxes"]
+    IfcGrid:WAxes[binding="WAxes"]
 }
 ```

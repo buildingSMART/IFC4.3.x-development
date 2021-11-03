@@ -50,5 +50,7 @@ concept {
     IfcBSplineSurfaceWithKnots:UKnots -> IfcParameterValue
     IfcBSplineSurfaceWithKnots:VKnots -> IfcParameterValue
     IfcBSplineSurfaceWithKnots:KnotSpec -> IfcKnotType
+    IfcShapeRepresentation:RepresentationType[binding="RepresentationType"]
+    IfcShapeRepresentation:Items[binding="Geometry"]
 }
 ```

@@ -14,5 +14,7 @@ concept {
     IfcElementType:IsNestedBy -> IfcRelNests
     IfcRelNests:RelatedObjects -> IfcElement
     IfcElement:Name -> IfcLabel
+    IfcRelNests:RelatedObjects[binding="Elements"]
+    IfcElement:Name[binding="Name"]
 }
 ```

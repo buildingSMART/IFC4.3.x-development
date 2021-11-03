@@ -22,5 +22,8 @@ concept {
     IfcShapeRepresentation:Items -> IfcGeometricCurveSet
     IfcShapeRepresentation:Items -> IfcAnnotationFillArea
     IfcShapeRepresentation:Items -> IfcTextLiteral
+    IfcShapeRepresentation:RepresentationIdentifier[binding="Identifier"]
+    IfcShapeRepresentation:RepresentationType[binding="Type"]
+    IfcShapeRepresentation:Items[binding="Items"]
 }
 ```

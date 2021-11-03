@@ -8,5 +8,7 @@ concept {
     IfcDistributionPort:HasAssignments -> IfcRelAssignsToGroup
     IfcRelAssignsToGroup:RelatingGroup -> IfcDistributionSystem
     IfcDistributionSystem:Name -> IfcLabel
+    IfcDistributionPort:HasAssignments[binding="IsAssigned"]
+    IfcDistributionSystem:Name[binding="SystemName"]
 }
 ```

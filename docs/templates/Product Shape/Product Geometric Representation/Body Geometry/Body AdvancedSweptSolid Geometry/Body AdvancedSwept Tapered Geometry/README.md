@@ -12,5 +12,8 @@ concept {
     IfcShapeRepresentation:RepresentationType -> IfcLabel
     IfcShapeRepresentation:Items -> IfcExtrudedAreaSolidTapered
     IfcShapeRepresentation:Items -> IfcRevolvedAreaSolidTapered
+    IfcShapeRepresentation:RepresentationIdentifier[binding="Identifier"]
+    IfcShapeRepresentation:RepresentationType[binding="Type"]
+    IfcShapeRepresentation:Items[binding="Items"]
 }
 ```

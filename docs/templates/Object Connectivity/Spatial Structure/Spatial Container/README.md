@@ -11,5 +11,6 @@ The _Spatial Container_ concept is realized by using the _IfcRelContainedInSpati
 concept {
     IfcSpatialElement:ContainsElements -> IfcRelContainedInSpatialStructure:RelatingStructure
     IfcRelContainedInSpatialStructure:RelatedElements -> IfcProduct
+    IfcRelContainedInSpatialStructure:RelatedElements[binding="Type"]
 }
 ```

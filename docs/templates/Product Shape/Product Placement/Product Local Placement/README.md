@@ -25,5 +25,9 @@ concept {
     IfcLocalPlacement:PlacesObject -> IfcSpatialElement
     IfcElement:Name -> IfcLabel
     IfcSpatialElement:Name -> IfcLabel
+    IfcProduct:ObjectPlacement[binding="HasPlacement"]
+    IfcLocalPlacement:PlacesObject[binding="RelativeToElement"]
+    IfcElement:Name[binding="ElementName"]
+    IfcSpatialElement:Name[binding="SpatialElementName"]
 }
 ```

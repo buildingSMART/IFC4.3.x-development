@@ -22,5 +22,6 @@ concept {
     IfcStyledItem:Name -> IfcLabel
     IfcStyledItem:Name -> IfcLabel
     IfcStyledItem:Name -> IfcLabel
+    IfcSurfaceCurveSweptAreaSolid:SweptArea[binding="Profile"]
 }
 ```

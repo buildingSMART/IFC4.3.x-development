@@ -18,5 +18,8 @@ concept {
     IfcShapeRepresentation:RepresentationType -> IfcLabel
     IfcShapeRepresentation:Items -> IfcTriangulatedFaceSet
     IfcShapeRepresentation:Items -> IfcPolygonalFaceSet
+    IfcShapeRepresentation:RepresentationIdentifier[binding="Identifier"]
+    IfcShapeRepresentation:RepresentationType[binding="Type"]
+    IfcShapeRepresentation:Items[binding="Items"]
 }
 ```

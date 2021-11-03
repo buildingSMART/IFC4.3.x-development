@@ -17,5 +17,8 @@ concept {
     IfcIndexedPolyCurve:Segments -> IfcLineIndex
     IfcIndexedPolyCurve:SelfIntersect -> IfcBoolean
     IfcCartesianPointList2D:CoordList -> IfcLengthMeasure
+    IfcShapeRepresentation:RepresentationIdentifier[binding="Identifier"]
+    IfcShapeRepresentation:RepresentationType[binding="Type"]
+    IfcShapeRepresentation:Items[binding="Items"]
 }
 ```

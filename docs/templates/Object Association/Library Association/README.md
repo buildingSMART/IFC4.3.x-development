@@ -13,5 +13,6 @@ concept {
     IfcLibraryReference:Description -> IfcText
     IfcLibraryReference:Language -> IfcLanguageId
     IfcLibraryReference:ReferencedLibrary -> IfcLibraryInformation
+    IfcRelAssociatesLibrary:RelatingLibrary[binding="RelatingLibrary"]
 }
 ```

@@ -16,5 +16,7 @@ concept {
     IfcObjectDefinition:IsDecomposedBy -> IfcRelAggregates:RelatingObject
     IfcRelAggregates:RelatedObjects -> IfcSpatialElement
     IfcSpatialElement:Name -> IfcLabel
+    IfcRelAggregates:RelatedObjects[binding="RelatedObjects"]
+    IfcSpatialElement:Name[binding="SpatialElementName"]
 }
 ```

@@ -21,7 +21,7 @@ while True:
         subprocess.call(["/solr-8.6.3/bin/solr", "create_core", "-force", "-c", "ifc"])
         subprocess.call(["/solr-8.6.3/bin/post", "-c", "ifc", XML_PATH])
         
-        # @todo diagrams
+        subprocess.call([sys.executable, "process_schema.py", "../schemas/IFC.xml" ])
         
     else:
     

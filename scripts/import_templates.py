@@ -113,7 +113,21 @@ templates = sorted(set(map(os.path.dirname,
     glob.glob(make_xml(base, "**"), recursive=True)
 )))
 
+tmpl_to_name = {}
+
 for tmpl in templates:
+    xml = make_xml(tmpl)
+    if os.path.exists(xml):
+        doc = read(xml)
+        keys = set(d for d in doc.keys() if d.startswith("@"))
+        if "@Name" in keys and "@id" in keys:
+            tmpl_to_name[doc["@id"]] = doc["@Name"]
+
+for tmpl in templates:
+
+    if "Property Sets for Objects" not in tmpl:
+        continue
+
     parts = tmpl[len(base)+1:].split(os.sep)
     of = os.path.join(odr, *parts, "README.md")
     try:
@@ -130,33 +144,42 @@ for tmpl in templates:
         contents = ""
 
     with open(of, "w", encoding="utf-8") as f:
+    
         print(parts[-1], file=f)
         print("=" * len(parts[-1]), file=f)
         print(file=f)
         print(contents, file=f)
         
         parent_child = defaultdict(list)
+        
+        ids = {}
             
-        def visit(parent, r):           
-            if r['#tag'] == "DocTemplateDefinition" or r['#tag'] == "Reference" or r['#tag'] == "Value" or r['#tag'] == "DocModelRuleConstraint":
+        def visit(parent, r):
+            if r['#tag'] == "Value" or r['#tag'] == "DocModelRuleConstraint":
                 # @todo
+                return
+                
+            if r['#tag'] == "DocTemplateDefinition":
+                parent_child[parent].append(r["@href"])
                 return
                 
             name = r['@Name']
             if r['#tag'] == "DocModelRuleAttribute":
                 name = parent + "." + name
             parent_child[parent].append(name)
+            if r.get('@Identification'):
+                ids[name] = r.get('@Identification')
+                
             for x in r.get('_children', []):
                 for c in x.get('_children', []):
                     visit(name, c)
                     
-        
-        # import pdb; pdb.set_trace()
+                    
+                    
         doc = read(xml)
         rules = [c for c in doc.get('_children', []) if c['#tag'] == 'Rules']
         if rules:
             root = doc.get('@Type')
-            entity_defs = set()
             print(file=f)
             print("```", file=f)
             print("concept {", file=f)
@@ -164,14 +187,20 @@ for tmpl in templates:
             for c in rules[0].get('_children', []):
                 visit(root, c)
                 
+            import pprint
+            pprint.pprint(parent_child)
+            
             for k, vs in list(parent_child.items()):
                 if '.' not in k:
                     for v in vs:
-                        for v2 in parent_child[v]:
-                            entity_defs.add(k)
-                            entity_defs.add(v2)
+                        if "_" in v:
+                            print("   ", k, "->", tmpl_to_name[v].replace(" ", "_"), file=f)
+                        else:
+                            for v2 in parent_child[v]:                            
+                                print("   ", v.replace(".", ":"), "->", (v2 + reverse_attr(v)).replace(".", ":"), file=f)
                             
-                            print("   ", v.replace(".", ":"), "->", (v2 + reverse_attr(v)).replace(".", ":"), file=f)
+            for k, v in ids.items():
+                print(f"    {k.replace('.', ':')}[binding=\"{v}\"]", file=f)
                                 
             print("}", file=f)
             print("```", file=f)

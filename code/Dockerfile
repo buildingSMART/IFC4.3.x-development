@@ -25,33 +25,17 @@ RUN git clone https://github.com/buildingSMART/Sample-Test-Files /examples
 ADD https://api.github.com/repos/buildingSMART/IFC4.3.x-development/git/refs/heads/master /tmp/data_version.json
 RUN git clone https://github.com/buildingSMART/IFC4.3.x-development /ifc43
 
-ADD wsgi.py server.py parse_xmi.py transform_to_xml.py parse_mvd.py poller.py md.py change_log.py process_schema.py xmi.py xmi_document.py express.py tikz-uml.sty /ifc43/server/
+ADD wsgi.py server.py parse_xmi.py transform_to_xml.py parse_mvd.py poller.py md.py change_log.py process_schema.py xmi.py xmi_document.py express.py tikz-uml.sty /ifc43/code/
 ADD templates/* /ifc43/server/templates/
 
-WORKDIR /ifc43/server
+WORKDIR /ifc43/code
 RUN mkdir svgs
 RUN mkdir psd
 
-WORKDIR /ifc43/scripts
-RUN python3 to_pset.py ../schemas/IFC.xml /ifc43/server/psd
-
-WORKDIR /ifc43/server
+RUN python3 to_pset.py ../schemas/IFC.xml psd/
 RUN python3 parse_xmi.py
 RUN python3 parse_mvd.py
 RUN python3 change_log.py
-
-# RUN python3 transform_to_xml.py ../docs xml
-
-# @todo update solr after every documentation change
-# RUN /solr-8.6.3/bin/solr start -force && \
-#     /solr-8.6.3/bin/solr create_core -force -c ifc && \
-#     /solr-8.6.3/bin/post -c ifc xml && \
-#     /solr-8.6.3/bin/solr stop
-
-# WORKDIR /ifc43/scripts
-# RUN python3 process_schema.py ../schemas/IFC.xml
-
-# WORKDIR /ifc43/server
 
 COPY supervisord.conf /etc/supervisord.conf
 

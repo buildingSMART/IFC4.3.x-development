@@ -18,7 +18,6 @@ import express
 import json
 
 from hilbertcurve.hilbertcurve import HilbertCurve as HC
-hc = HC(4, 2)
 
 try:
     xmi_fn = sys.argv[1]
@@ -140,14 +139,17 @@ class Relation(object):
         self.xmi_id = attributes['xmi:id']
         if xmi_relation.type == 'uml:Association':
             try:
-                self.client, self.supplier = map(lambda n:(n|"type").idref, xmi_relation/"ownedEnd")
+                self.supplier, self.client = map(lambda n:(n|"type").idref, xmi_relation/"ownedEnd")
+                self.supplier_name, self.client_name = [n.name for n in (xmi_relation/"ownedEnd")]
                 self.valid = True
-            except:
+            except Exception as e:
+                print(e)
                 self.valid = False
         else:
             self.client = attributes['client']
             self.supplier = attributes['supplier']
             self.valid = True
+            self.supplier_name, self.client_name = None, None
 
 
 # Generalization 
@@ -192,8 +194,7 @@ class UMLclass_Ifc_Entity(object):
         self.attributes = (self.xmi_class / "ownedAttribute")
 
         if len(self.attributes):
-            self.properties = set(Property(i) for i in self.attributes)
-
+            self.properties = list(Property(i) for i in self.attributes)
         else:
             self.properties = None
 
@@ -293,47 +294,42 @@ def process_classes(xmi, relations=None, properties=None, entities_to_retain=Non
 def add_relations(relations, UML_objects, entities_to_retain = None):
     for i in range(4):
         for pr in relations[i]:
+        
+            # skip dependencies for now
+            if pr.xmi_type == "uml:Dependency":
+                continue
+        
             try:
                 supplier = xmi.by_id[pr.supplier]
                 client = xmi.by_id[pr.client]
-            except:
+            except Exception as e:
+                print(e)
                 continue
+                
             sup_att = supplier.attributes()
             cli_att = client.attributes()
 
             sup = sup_att['name']
             cli = cli_att['name']
-
+            
             stype = sup_att['xmi:type']
             ctype = cli_att['xmi:type']
 
             sid = sup_att['xmi:id']
             cid = cli_att['xmi:id']
-
-            if sup in UML_objects.keys():
-                for instance in UML_objects[sup]:
-                    if sid == instance.xmi_id:
-                        if pr.xmi_type == 'uml:Substitution':
-                            instance.substitution_rel['supplierof'].append((cli, cid))
-                        if pr.xmi_type == 'uml:Realization':
-                            instance.realization_rel['supplierof'].append((cli, cid))
-                        if pr.xmi_type == 'uml:Dependency':
-                            instance.dependency_rel['supplierof'].append((cli, cid))
-                        if pr.xmi_type == 'uml:Association':
-                            instance.assoc_rel['supplierof'].append((cli, cid))
-                        
-
-            if cli in UML_objects.keys():
-                for instance in UML_objects[cli]:
-                    if cid == instance.xmi_id:
-                        if pr.xmi_type == 'uml:Substitution':
-                            instance.substitution_rel['clientof'].append((sup, sid))
-                        if pr.xmi_type == 'uml:Realization':
-                            instance.realization_rel['clientof'].append((sup, sid))
-                        if pr.xmi_type == 'uml:Dependency':
-                            instance.dependency_rel['clientof'].append((sup, sid))
-                        if pr.xmi_type == 'uml:Association':
-                            instance.assoc_rel['clientof'].append((sup, sid))
+            
+            for kk, end, other, nm in [('supplierof', sup, cli, pr.client_name), ('clientof', cli, sup, pr.supplier_name)]:                
+                if end in UML_objects.keys():
+                    for instance in UML_objects[end]:
+                        if sid == instance.xmi_id:
+                            if pr.xmi_type == 'uml:Substitution':
+                                instance.substitution_rel[kk].append((other, cid, nm))
+                            if pr.xmi_type == 'uml:Realization':
+                                instance.realization_rel[kk].append((other, cid, nm))
+                            if pr.xmi_type == 'uml:Dependency':
+                                instance.dependency_rel[kk].append((other, cid, nm))
+                            if pr.xmi_type == 'uml:Association':
+                                instance.assoc_rel[kk].append((other, cid, nm))
 
 
 def add_generalizations(UML_generalizations, UML_objects):
@@ -358,6 +354,9 @@ def build_uml_schema(xmi, entities_to_retain = None):
     xmi_doc = xmi_document(xmi)
     defs = list(xmi_doc)
     entity_names = [d.name for d in defs if d.type == 'ENTITY'] # ["IfcRoot", "IfcOwnerHistory"] # 
+    
+    if entities_to_retain:
+        entity_names = entities_to_retain
  
 
     # Process all the UML nodes 
@@ -398,10 +397,12 @@ def build_uml_schema(xmi, entities_to_retain = None):
     #                     print(c.content)
 
     return UMLobjects
+    
+assoc_label_counter = {'value': 0}
 
 class Tex_object(object):
 
-    def __init__(self,texfilename):
+    def __init__(self, texfilename):
         self.data = {}
         self.tex_file = open(texfilename+".tex", "w")
         self.tex_file_name = texfilename 
@@ -414,7 +415,7 @@ class Tex_object(object):
         self.tex_relationships = []
         self.I = -1
 
-    def make_connection(self,source,target,connection_type="real",stereo="vec"):
+    def make_connection(self,source,target,connection_type="real",stereo="vec",name=""):
         if '_' in source:
             source = source.replace("_",' ')
         if '_' in target:
@@ -428,9 +429,13 @@ class Tex_object(object):
         }.get(connection_type)
         
         if tex_connection_type:
-            self.tex_content += r''' \%s[]{%s}{%s}'''%(tex_connection_type, tex_escape(source), tex_escape(target))
+            assoc_label_counter['value'] += 1
+            v = assoc_label_counter['value']
+            self.tex_content += r''' \%s[%s]{%s}{%s}'''%(tex_connection_type, "name=assoc%d"%v, tex_escape(source), tex_escape(target))
+            if name:
+                self.tex_content += r'''"\node[above] at (assoc%d-1) {%s}"''' % (v, name);
      
-    def write_class2(self,UMLobject,schema,make_connections=True, depth=0):
+    def write_class2(self, hc, xmi, UMLobject, schema, depth=0):
         self.I += 1
         
         # print('DEPTH ',depth,' Class', UMLobject,' Name',UMLobject.name)
@@ -438,7 +443,7 @@ class Tex_object(object):
         classname = UMLobject.name
         classname = classname.replace("_"," ")
         classtype = UMLobject.xmi_type
-
+        
         # Build Properties and Constraints content
 
         properties_and_constraints = []
@@ -455,17 +460,21 @@ class Tex_object(object):
         properties_and_constraints = properties_and_constraints[0:5]
         
         attribute_content = ""
-        i = 0
-        for value in properties_and_constraints:
-            if not value.name:
+        
+        for i, prop in enumerate(properties_and_constraints):
+            if not prop.name:
                 continue
-            value = value.name.replace('_',' ')
+                
+            value = prop.name.replace('_',' ')
+            
+            # add property type
+            if prop.type_ref and prop.type_ref.idref and xmi.by_id.get(prop.type_ref.idref) and xmi.by_id.get(prop.type_ref.idref).attributes().get('name'):
+                value += " : %s" % xmi.by_id.get(prop.type_ref.idref).attributes().get('name')
+                
+            attribute_content += tex_escape(value)
+            
             if i != len(properties_and_constraints) - 1:
-                attribute_content += tex_escape(value) + r'\\'
-            else:
-                attribute_content += tex_escape(value)
-            i += 1
-
+                attribute_content += r'\\'
 
         # sign = +1 if self.I % 2 else -1
         # offset = self.I // 2
@@ -473,8 +482,8 @@ class Tex_object(object):
         xpos, ypos = hc.coordinates_from_distance(self.I)
         # start at the top
         ypos = hc.max_x - ypos
-        xpos *= 6
-        ypos *= 4
+        xpos *= 8
+        ypos *= 3
 
         if attribute_content != "": # anchor=north
             tex_content = r'''\umlclass[x=%s, y=%s, width=15ex]{%s}{%s}{} '''%(xpos,ypos,tex_escape(classname),attribute_content)
@@ -485,20 +494,8 @@ class Tex_object(object):
         self.tex_content += tex_content
         self.tex_classes.add(UMLobject.name)
 
-
-        if depth < 1: # make_connections:
-       
-            x = 0
-            y = 0
-     
+        if depth < 1:
  
-            # Substitutions, Realizations, Dependencies
-
-            if depth < 1:
-                mc = True
-            else:
-                mc = False
-            
             for rel in ['substitution','realization','dependency', 'assocation']:
 
                 if rel == 'substitution':
@@ -513,70 +510,52 @@ class Tex_object(object):
                 else:
                     dict_to_use = UMLobject.dependency_rel
                     reltype = 'depend'
+                    
+                for order, kk in enumerate(['clientof', 'supplierof']):
+                    rels = dict_to_use[kk]
+                    for (other_name, other_id, assoc_name) in rels:
+                        if other_name in schema.keys():
+                            class_to_write = schema[other_name][0]
+                            
+                            if class_to_write.name not in self.tex_classes:
+                                self.write_class2(hc, xmi, class_to_write,schema, depth=depth + 1)
 
-                subclientof = dict_to_use['clientof']
-                for e in subclientof:
-                    x += 2
-                    y -= 3 
-                    if e[0] in schema.keys():
-                        class_to_write = schema[e[0]][0]
-                        if class_to_write.name not in self.tex_classes:
-                            self.write_class2(class_to_write,schema,make_connections=mc, depth=depth + 1)
-
-
-                        if {UMLobject.name,class_to_write.name} not in self.tex_relationships:
-                            self.make_connection(class_to_write.name,classname,connection_type=reltype)
-                            self.tex_relationships.append({UMLobject.name,class_to_write.name})
-
-
-                subsupplierof = dict_to_use['supplierof']
-                for e in subsupplierof:
-                    x += 2
-                    y -= 3 
-                    if e[0] in schema.keys():
-                        class_to_write = schema[e[0]][0]
-                        if class_to_write.name not in self.tex_classes:
-                            self.write_class2(class_to_write,schema,make_connections=mc, depth=depth + 1)
-
-                        if {UMLobject.name,class_to_write.name} not in self.tex_relationships:
-                            self.make_connection(classname,class_to_write.name,connection_type=reltype)
-                            self.tex_relationships.append({UMLobject.name,class_to_write.name})
-
-
+                            if {UMLobject.name, class_to_write.name} not in self.tex_relationships:
+                                args = class_to_write.name, classname
+                                if order:
+                                    args = args[::-1]
+                                self.make_connection(*args, connection_type=reltype, name=assoc_name)
+                                self.tex_relationships.append({UMLobject.name,class_to_write.name})
 
             # Subtypes, Supertypes
 
             # 'Type' object has no attribute 'subtypes'
             subtypes = getattr(UMLobject, 'subtypes', [])
             for sub in subtypes:
-                x += 2
-                y -= 3 
                 e = sub[1]
                 if e in schema.keys():
                     class_to_write = schema[e][0]
                     if class_to_write.name not in self.tex_classes:
-                        self.write_class2(class_to_write,schema,make_connections=False, depth=depth + 1)
+                        #@nb depth is not incremented
+                        self.write_class2(hc, xmi, class_to_write,schema, depth=depth)
                     if {UMLobject.name,class_to_write.name} not in self.tex_relationships:
                         self.make_connection(classname,class_to_write.name,connection_type='herit')
                         self.tex_relationships.append({UMLobject.name,class_to_write.name})
 
+            """
             # 'Type' object has no attribute 'supertypes'
             supertypes = getattr(UMLobject, 'supertypes', [])
             for sup in supertypes:
-                x += 2
-                y -= 3 
                 e = sup[1]
                 if e in schema.keys():
                     class_to_write = schema[e][0]
                     if class_to_write.name not in self.tex_classes:
-                        self.write_class2(class_to_write,schema,make_connections=mc, depth=depth + 1)
+                        #@nb depth *is* incremented
+                        self.write_class2(hc, xmi, class_to_write,schema, depth=depth+1)
                     if {UMLobject.name,class_to_write.name} not in self.tex_relationships:
                         self.make_connection(class_to_write.name,classname,connection_type='herit')
                         self.tex_relationships.append({UMLobject.name,class_to_write.name})
-
-
-
-
+            """
 
     def generate_tex(self):
         self.tex_content += r'''\end{tikzpicture} 
@@ -592,7 +571,7 @@ class Tex_object(object):
 if __name__ == '__main__':
 
     xmi = xmi.doc(xmi_fn)
-    entities_to_retain = None # {'IfcWall', 'IfcSlab', 'IfcDoor', 'IfcWindow', 'IfcRail', 'IfcRoad', 'IfcBridge',
+    entities_to_retain = None # {{'IfcBuilding', 'IfcPostalAddress', 'IfcFacility', 'IfcSpatialStructureElement', 'IfcSpatialElement', 'IfcRelContainedInSpatialStructure'} # , 'IfcSlab', 'IfcDoor', 'IfcWindow', 'IfcRail', 'IfcRoad', 'IfcBridge',
                               #  'IfcWallTypeEnum', 'Pset_WallCommon','Pset_WindowCommon','Qto_WindowBaseQuantities', 
                               #  'IfcBuildingElement','IfcELement','IfcWindowStandardCase','RACK-RAIL','GUARD-RAIL','RAIL','STOCK-RAIL','CHECK-RAIL'}
 
@@ -659,16 +638,24 @@ img {
             if any(entity_to_write.lower().startswith(x) for x in ("qto", "pset", "penum", "p_", "q_")):
                 continue
                 
-            try:
-                UMLobjects[entity_to_write][0].xmi_class
-            except:
-                continue
+            UMLobjects[entity_to_write][0].xmi_class
                 
             # try:
             tex_fn = os.path.join(tex_dir, entity_to_write)
-            tex_object = Tex_object(tex_fn)
+            print(tex_fn)
             UMLobject = UMLobjects[entity_to_write][0]
-            tex_object.write_class2(UMLobject,UMLobjects)
+
+            for i in range(4,10):
+                # keep trying until hc is large enough
+                # to accomodate all elements
+                try:
+                    hc = HC(i, 2)
+                    tex_object = Tex_object(tex_fn)
+                    tex_object.write_class2(hc, xmi, UMLobject, UMLobjects)
+                    break
+                except ValueError as e:
+                    continue
+
             tex_object.generate_tex()
             html.write("<div style='display:none'><img src='%s.png'></div>\n" % entity_to_write)
             yield tex_object
@@ -690,4 +677,4 @@ img {
             completed += 1
             print(completed * 100 // num, '%')
             
-    subprocess.call(["mogrify", "-format", "png", "-density", "300", "*.pdf"], cwd=tex_dir)
+    subprocess.call(["mogrify", "-format", "png", "-density", "150", "*.pdf"], cwd=tex_dir)

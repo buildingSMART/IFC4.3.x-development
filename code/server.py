@@ -453,7 +453,7 @@ class builder:
         while ty:
             md_ty_fns = glob.glob(os.path.join("../docs/schemas", "*", "*", "*", ty + ".md"))
             if not md_ty_fns:
-                return []
+                return None
             md_ty_fn = md_ty_fns[0]
             md_ty = re.sub(DOC_ANNOTATION_PATTERN, '', open(md_ty_fn, encoding='utf-8').read())
             ty_attrs = list(mdp.markdown_attribute_parser(md_ty))
@@ -484,6 +484,8 @@ class builder:
 @app.route('/api/v0/resource/<resource>')
 def api_resource(resource):
     b = builder(resource)
+    if b.attributes is None:
+        abort(404)
     definition = b.markdown
     if "\n\n" in definition:
         definition = definition[0:definition.index("\n\n")]

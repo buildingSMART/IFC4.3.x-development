@@ -451,7 +451,10 @@ class builder:
         
         ty = self.resource
         while ty:
-            md_ty_fn = glob.glob(os.path.join("../docs/schemas", "*", "*", "*", ty + ".md"))[0]
+            md_ty_fns = glob.glob(os.path.join("../docs/schemas", "*", "*", "*", ty + ".md"))
+            if not md_ty_fns:
+                return []
+            md_ty_fn = md_ty_fns[0]
             md_ty = re.sub(DOC_ANNOTATION_PATTERN, '', open(md_ty_fn, encoding='utf-8').read())
             ty_attrs = list(mdp.markdown_attribute_parser(md_ty))
             supertype_counts.append((ty, len(ty_attrs)))

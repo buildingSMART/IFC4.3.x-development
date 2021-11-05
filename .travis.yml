@@ -15,7 +15,7 @@ install:
   - mkdir -p `python3 -c 'import site; print(site.getusersitepackages())'`
   - unzip -d `python3 -c 'import site; print(site.getusersitepackages())'` /tmp/ifopsh.zip
 script:
-  - python3 scripts/main.py
+  - python3 code/main.py
 after_success:
   - MESSAGE=$(git log --oneline -1)
   - git clone https://$USER_NAME:$USER_AUTH@github.com/buildingSMART/$REPO

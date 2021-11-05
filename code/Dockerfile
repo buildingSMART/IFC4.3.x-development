@@ -25,7 +25,7 @@ RUN git clone https://github.com/buildingSMART/Sample-Test-Files /examples
 ADD https://api.github.com/repos/buildingSMART/IFC4.3.x-development/git/refs/heads/master /tmp/data_version.json
 RUN git clone https://github.com/buildingSMART/IFC4.3.x-development /ifc43
 
-ADD wsgi.py main.py parse_xmi.py transform_to_xml.py parse_mvd.py poller.py md.py change_log.py /ifc43/server/
+ADD wsgi.py server.py parse_xmi.py transform_to_xml.py parse_mvd.py poller.py md.py change_log.py process_schema.py xmi.py xmi_document.py express.py tikz-uml.sty /ifc43/server/
 ADD templates/* /ifc43/server/templates/
 
 WORKDIR /ifc43/server

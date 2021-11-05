@@ -893,12 +893,12 @@ def annex_c():
 @app.route(make_url('annex-d.html'))
 def annex_d():
     subs = map(os.path.basename, glob.glob("../output/IFC.xml/*.png"))
-    subs = sorted(toc_entry(s[:-4], url=url_for('annex_d_diagram_page', s=s[:-4])) for s in subs)
+    subs = [toc_entry(s[:-4], url=url_for('annex_d_diagram_page', s=s[:-4]), number="D-%d" % i) for i, s in enumerate(sorted(subs), start=1)]
     return render_template('chapter.html', navigation=navigation_entries, content='<h2>Diagrams</h2>', path=None, title="Annex D", number="", subs=subs)
     
 @app.route(make_url('annex_d/<s>.html'))
 def annex_d_diagram_page(s):
-    img = "<h2>" + s + " diagram</h2><img src='"+s+".png'/>"
+    img = "<h2>" + s + " diagram</h2><img style='max-width: none' src='"+s+".png'/>"
     return render_template('chapter.html', navigation=navigation_entries, content=img, path=None, title="Annex D", number="", subs=[])
 
 @app.route(make_url('annex_d/<s>.png'))

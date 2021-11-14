@@ -5,14 +5,6 @@
 # @todo: schema namespace different in constraint expression
 
 # CONFIGURATION
-"""
-included_packages = set((
-    "IFC 4.2 schema (13.11.2019)", 
-    "Common Schema", 
-    "IFC Ports and Waterways", 
-    "IFC Road", 
-    "IFC Rail - PSM"))
-"""
     
 # currently not used
 express_excluded_stereotypes = set((
@@ -66,7 +58,6 @@ def unescape(s):
 def float_international(s):
     return float(s.replace(',', '.'))
     
-connector_data = namedtuple("connector_data", ("is_inverse", "inverse_order", "aggregation_type", "is_optional", "express_definition", "allow_duplicates"))
 assocation_data = namedtuple("assocation_data", ("own_end", "type", "other_end", "asssocation"))
 
 def yield_parents(node):
@@ -84,15 +75,7 @@ def get_path(xmi_node):
     return node_names[::-1]
     
 infinity = 1e9
-    
-def try_get_order(a):
-    try:
-        return int([t for t in a/("tag") if t.name == "ExpressOrdering"][0].value)
-    except IndexError as e:
-        # When no ordering is found in sequences where other elements do have
-        # ordering, they are pushed to the back to be consistent with IFC4X3_RC1
-        return infinity
-        
+
 where_pat = re.compile(r"'\w+\.(\w+(\.\w+)?)'")
 def fix_schema_name(s):
     def repl(x):
@@ -310,7 +293,6 @@ class xmi_document:
         else:
             self.xmi = fn
             
-        self.extract_connectors()
         self.extract_associations()
         self.extract_order()
                 
@@ -318,57 +300,18 @@ class xmi_document:
         # packagenames_from_uml = set(map(operator.attrgetter('name'), self.xmi.by_tag_and_type["packagedElement"]["uml:Package"]))
         # assert len(included_packages - packagenames_from_uml) == 0
         
+    def try_get_order(self, a):
+        try:
+            return int(self.xmi.tags['ExpressOrdering'][a.id or a.idref])
+        except IndexError as e:
+            # When no ordering is found in sequences where other elements do have
+            # ordering, they are pushed to the back to be consistent with IFC4X3_RC1
+            return infinity
+        
     def skip_by_package(self, element):
         return False
         # return not (set(get_path(self.xmi.by_id[element.idref])) & included_packages)
         
-    def extract_connectors(self):
-        # Extract some data from the connectors for use later on
-        self.connectors = defaultdict(dict)
-        for c in self.xmi/"connector":
-            src = c|"source"
-            tgt = c|"target"
-            
-            # model need to be populated for both and at least one role (attribute name)
-            if not ((src|"model").name and (tgt|"model").name and ((src|"role").name or (tgt|"role").name)):
-                continue    
-            
-            marked_inverse = False
-            for st, en in [(src, tgt), (tgt, src)]:
-                marked_inverse |= "ExpressInverse" in st.tags()
-                
-            for st, en in [(src, tgt), (tgt, src)]:
-                cls = (st|"model").name
-                other_cls = (en|"model").name
-                other_attr = (st|"role").name
-                style = dict(x.split("=") for x in [x for x in (st|"style").value.split(";") if x])
-                
-                if marked_inverse:
-                    is_inverse = "ExpressInverse" in st.tags()
-                else:
-                    # @tfk this is a guess but apparently in the cases where ExpressInverse where
-                    # not marked, the inverse attribute is on the source end of the connector
-                    is_inverse = st == src
-                    
-                inverse_order = int(st.tags().get("ExpressOrderingInverse", 0))
-                is_optional = "ExpressOptional" in st.tags()
-                
-                
-                
-                # For self-referential inverses we need to make sure we're not overwriting                
-                # if cls != other_cls or "ExpressInverse" in st.tags():
-                    
-                self.connectors[c.idref][(other_cls, other_attr)] = connector_data(
-                    is_inverse, 
-                    inverse_order, 
-                    st.tags().get("ExpressAggregation"), 
-                    is_optional,
-                    c.tags().get('ExpressDefinition'),
-                    style.get('AllowDuplicates') == '1')
-            
-            # if not marked_inverse:
-            #     if (src|"model").name and (src|"role").name and (tgt|"model").name and (tgt|"role").name:
-            #         logging.warning("Inverse not marked on %s: %s.%s %s.%s", c, (src|"model").name, (src|"role").name, (tgt|"model").name, (tgt|"role").name)
             
     def extract_associations(self):
         # Extract some data from the assocations for use later on
@@ -390,11 +333,7 @@ class xmi_document:
             self.assocations[tv2].append(assocation_data(c1, self.xmi.by_id[t1], c2, assoc))
 
     def extract_order(self):
-        self.order = dict()
-        for o in self.xmi/"thecustomprofile:ExpressOrdering":
-            d = o.attributes()
-            dk = [k for k in d.keys() if k.startswith('base_')][0]
-            self.order[d[dk]] = int(d['ExpressOrdering'])    
+        self.order = {k: int(v) for k, v in self.xmi.tags["ExpressOrdering"].items()}
     
     def __iter__(self):
         """
@@ -504,7 +443,7 @@ class xmi_document:
                 if "penum_" in c.name.lower():
                     continue
                         
-                values = map(operator.itemgetter(1), sorted(map(lambda a: (try_get_order(a), (a.name, a)), c/("attribute"))))
+                values = map(operator.itemgetter(1), sorted(map(lambda a: (self.try_get_order(a), (a.name, a)), c/("attribute"))))
                 yield xmi_item("ENUM", c.name, express.enumeration(c.name, [a for a, b in values]), c, values, document=self)
                 
             elif stereotype == 'templatecontainer':
@@ -535,7 +474,7 @@ class xmi_document:
                 if not ids:
                     print("Warning, no dependency relationship for %s" % c.name)
                     nodes = [x for x in self.xmi.by_tag_and_type["element"]["uml:Class"] if x.name.startswith(c.name + ".")]
-                    children = list(map(operator.itemgetter(1), sorted(map(lambda a: (try_get_order(a), (a.name.split('.')[1], a)), nodes))))
+                    children = list(map(operator.itemgetter(1), sorted(map(lambda a: (self.try_get_order(a), (a.name.split('.')[1], a)), nodes))))
                     values = [a for a, b in children]
                 else:
                     def get_element(id): 
@@ -608,11 +547,15 @@ class xmi_document:
                         attr_name = other_end.name
                     except:
                         attr_name = None
-                        
-                    try:
-                        is_inverse, inverse_order, express_aggr, is_optional, express_definition, allow_duplicates = self.connectors[assoc_node.xmi_id][(c.name, nm)]
-                    except:
-                        is_inverse, is_optional, express_aggr, express_definition = False, False, None, None
+                    
+
+                    is_inverse = bool(self.xmi.tags['ExpressInverse'].get(end_node.id))
+                    if is_inverse:
+                        inverse_order = int(self.xmi.tags['ExpressOrderingInverse'][end_node.id])
+                    
+                    express_aggr = self.xmi.tags['ExpressAggregation'].get(end_node.id, "")
+                    express_definition = self.xmi.tags['ExpressDefinition'].get(end_node.id)
+                    is_optional = bool(self.xmi.tags['ExpressOptional'].get(end_node.id, False))
                     
                     # @tfk this was misguided
                     # is_inverse |= assoc_node.xmi_id not in self.order
@@ -645,10 +588,13 @@ class xmi_document:
                     is_optional_string = "OPTIONAL " if is_optional else ""
 
                     express_aggr_unique = ""
-                    if express_aggr and not is_inverse and not allow_duplicates:
-                        # the grammar does not allow unique on SET (obviously)
-                        if express_aggr == "LIST":
-                            express_aggr_unique = "UNIQUE "
+                    
+                    # @todo not enabled at the moment. Looking for better solution
+                    
+                    # if express_aggr and not is_inverse and not allow_duplicates:
+                    #     # the grammar does not allow unique on SET (obviously)
+                    #     if express_aggr == "LIST":
+                    #         express_aggr_unique = "UNIQUE "
                     
                     if express_aggr:
                         attr_entity = "%s %s OF %s%s" % (express_aggr, bound, express_aggr_unique, attr_entity)
@@ -726,7 +672,7 @@ class xmi_document:
                         if derive_def.startswith("%s : " % n):
                             logging.warning("Derived attribute definition for %s contains attribute name: %s", n, derive_def)
                             derive_def = derive_def[len(n) + 3:]
-                        derived.append("\t%s : %s;" % (n, derive_def))
+                        derived.append((ordering, "\t%s : %s;" % (n, derive_def)))
                         children.append((n, la))
                         continue
                     attribute_names.add(n)
@@ -763,6 +709,7 @@ class xmi_document:
 
                 attributes = map(operator.itemgetter(1), sorted(attributes))
                 inverses = map(operator.itemgetter(1), sorted(inverses))
+                derived = map(operator.itemgetter(1), sorted(derived))
                 
                 express_entity = express.entity(c.name, attributes, 
                     derived, inverses, constraints_by_type["EXPRESS_WHERE"], 

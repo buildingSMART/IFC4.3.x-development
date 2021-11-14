@@ -70,6 +70,7 @@ class doc(base):
         self.linebreaks = [m.span()[0] for m in re.finditer(r'\n', self.text)]
         self.by_type = defaultdict(list)
         self.by_tag_and_type = defaultdict(lambda: defaultdict(list))
+        self.by_tag = defaultdict(list)
         self.by_id = dict()
         self.by_idref = defaultdict(list)
         
@@ -88,6 +89,7 @@ class doc(base):
             
         def register_by_tag_and_xmi_type(n):
             n = node(n)
+            self.by_tag[n.xml.tagName].append(n)
             t = n.type
             if t: self.by_tag_and_type[n.xml.tagName][t].append(n)
             
@@ -110,6 +112,39 @@ class doc(base):
             register_by_xmi_id,
             register_by_xmi_idref,
             register_by_tag_and_xmi_type)
+            
+        self.tags = {}
+            
+        for pr in self.by_tag["uml:Profile"]:
+            for pe in pr / "packagedElement":
+                if pe.xmi_type != "uml:Stereotype":
+                    continue
+
+                D = {}
+                tag = f"{pr.id}:{pe.id}".replace(" ", "_")
+                attrs = [a.name for a in pe / "ownedAttribute"]
+                base, attrs = attrs[0], attrs[1:]
+                for tag_def in self.by_tag[tag]:
+                    # it appears EA does not correctly export
+                    # profiles with different base types but the
+                    # same id / name, so we lookup attribute name
+                    # based on XML node
+                    base = [k for k in tag_def.attributes() if k.startswith("base_")][0]
+                    
+                    base_val = getattr(tag_def, base)
+                    if len(attrs) == 0:
+                        D[base_val] = True
+                    elif len(attrs) == 1:
+                        D[base_val] = getattr(tag_def, attrs[0])
+                    else:
+                        D[base_val] = tuple(getattr(tag_def, a) for a in attrs)
+                
+                # we update because there can be multiple stereotypes for
+                # different kinds of elements, such as ordering info
+                # for assoc, entity and enum literals
+                self.tags[pe.name] = self.tags.get(pe.name, {})
+                self.tags[pe.name].update(D)
+
     
     def locate(self, node):
         # pat = r'(?<=<)(%s[^\\/]*?xmi:idref="%s"[^\\/]*?)((?= \\/>)|(?=>))' % (node.xml.tagName, node.idref)

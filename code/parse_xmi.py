@@ -30,6 +30,7 @@ hierarchy = [
         ("IfcSharedComponentElements", defaultdict(list)),
         ("IfcSharedFacilitiesElements", defaultdict(list)),
         ("IfcSharedMgmtElements", defaultdict(list)),
+        ("IfcSharedInfrastructureElements", defaultdict(list)),
     ]),
     ("Domain specific data schemas", [
         ("IfcArchitectureDomain", defaultdict(list)),
@@ -38,11 +39,9 @@ hierarchy = [
         ("IfcElectricalDomain", defaultdict(list)),
         ("IfcHvacDomain", defaultdict(list)),
         ("IfcPlumbingFireProtectionDomain", defaultdict(list)),
-        ("IfcPortsAndWaterways", defaultdict(list)),
-        ("IfcRail", defaultdict(list)),
-        ("IfcRoad", defaultdict(list)),
-        # @NB this one is XMI but not in the published HTML
-        ("IfcSharedInfrastructureElements", defaultdict(list)),
+        ("IfcPortsAndWaterwaysDomain", defaultdict(list)),
+        ("IfcRailDomain", defaultdict(list)),
+        ("IfcRoadDomain", defaultdict(list)),
         ("IfcStructuralAnalysisDomain", defaultdict(list)),
         ("IfcStructuralElementsDomain", defaultdict(list)),
     ]),

@@ -34,6 +34,7 @@ entity_supertype = json.load(open("entity_supertype.json", encoding="utf-8"))
 pset_definitions = json.load(open("pset_definitions.json", encoding="utf-8"))
 changes_by_type = json.load(open("changes_by_type.json", encoding="utf-8"))
 concepts = json.load(open("concepts.json", encoding="utf-8"))
+deprecated_entities = set(json.load(open("deprecated_entities.json", encoding="utf-8")))
 
 navigation_entries = [
     ("Cover", "Contents", "Foreword", "Introduction"),
@@ -640,10 +641,17 @@ def resource(resource):
                 else:
                     img['src'] = img['src'][9:]
         
-            scs = changes_by_type.get(resource, [])
+            scs = changes_by_type.get(resource, {})
             change_log = ''
-            if scs:
+            
+            deprecated = resource in deprecated_entities
+            
+            if scs or deprecated:
                 change_log += "<h3>Change log</h3><div>"
+                
+                if deprecated:
+                    change_log += "<mark class='dont'>DEPRECATED</mark>This definition may be imported, but shall not be exported by applications";
+                
                 for s, cs in scs.items():
                     change_log += "<h4>%s</h4>" % s
                     change_log += tabulate.tabulate(cs, tablefmt='unsafehtml')

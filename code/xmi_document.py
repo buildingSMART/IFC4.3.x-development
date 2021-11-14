@@ -556,6 +556,7 @@ class xmi_document:
                     express_aggr = self.xmi.tags['ExpressAggregation'].get(end_node.id, "")
                     express_definition = self.xmi.tags['ExpressDefinition'].get(end_node.id)
                     is_optional = bool(self.xmi.tags['ExpressOptional'].get(end_node.id, False))
+                    is_unique = bool(self.xmi.tags['ExpressUnique'].get(end_node.id, False))
                     
                     # @tfk this was misguided
                     # is_inverse |= assoc_node.xmi_id not in self.order
@@ -587,14 +588,7 @@ class xmi_document:
                         
                     is_optional_string = "OPTIONAL " if is_optional else ""
 
-                    express_aggr_unique = ""
-                    
-                    # @todo not enabled at the moment. Looking for better solution
-                    
-                    # if express_aggr and not is_inverse and not allow_duplicates:
-                    #     # the grammar does not allow unique on SET (obviously)
-                    #     if express_aggr == "LIST":
-                    #         express_aggr_unique = "UNIQUE "
+                    express_aggr_unique = "UNIQUE " if is_unique else ""
                     
                     if express_aggr:
                         attr_entity = "%s %s OF %s%s" % (express_aggr, bound, express_aggr_unique, attr_entity)
@@ -628,6 +622,8 @@ class xmi_document:
                     iref = la.idref
                     a = self.xmi.by_id[iref]
                     is_optional = "ExpressOptional" in map(operator.attrgetter('name'), la/("tag"))
+                    is_unique = bool(self.xmi.tags['ExpressUnique'].get(iref, False))
+                    
                     bnds = la/"bounds"
                     express_aggr = la.tags().get("ExpressAggregation") or (bnds and bnds[0].upper and bnds[0].upper != '1')
                     if not express_aggr:
@@ -679,7 +675,7 @@ class xmi_document:
                     
                     tv = express.ifc_name(self.xmi.by_id[t].name)
                     if express_aggr:
-                        tv = "%s %s OF %s" % (express_aggr, bound, tv)
+                        tv = "%s %s OF %s%s" % (express_aggr, bound, "UNIQUE " if is_unique else "", tv)
                     
                     override = la.tags().get("ExpressDefinition")
                     if override:

@@ -77,6 +77,7 @@ attributes = {}
 definitions = {}
 resource_to_package = {}
 psets = {}
+deprecated_entities = []
 
 def get_schema(name):
     for cat, schemas in hierarchy:
@@ -89,6 +90,10 @@ for item in xmi_doc:
         continue
     
     if item.type == "ENTITY":
+    
+        if xmi_doc.xmi.tags["deprecated"].get(item.id, False):
+            deprecated_entities.append(item.name)
+        
         entity_to_package[item.name] = item.package
         resource_to_package[item.name] = get_schema(item.package)
         get_schema(item.package)['Entities'].append(item.name)
@@ -178,3 +183,4 @@ json.dump(hierarchy, open("hierarchy.json", "w", encoding="utf-8"))
 json.dump(attributes, open("entity_attributes.json", "w", encoding="utf-8"))
 json.dump(definitions, open("entity_definitions.json", "w", encoding="utf-8"))
 json.dump(psets, open("pset_definitions.json", "w", encoding="utf-8"))
+json.dump(deprecated_entities, open("deprecated_entities.json", "w", encoding="utf-8"))

@@ -9,9 +9,12 @@ class xml_node:
     tag : str
     attributes : dict
     text : str = ""
-    namespaces : dict = None
+    namespaces : dict = field(default=None, repr=False)
     children : list = field(default_factory=list, repr=False)
-    parent : object = None
+    parent : object = field(default=None, repr=False)
+    
+    def __hash__(self):
+        return id(self)
 
 import lxml.etree as ET
 

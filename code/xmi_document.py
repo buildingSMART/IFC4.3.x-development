@@ -554,7 +554,10 @@ class xmi_document:
                         inverse_order = int(self.xmi.tags['ExpressOrderingInverse'][end_node.id])
                     
                     express_aggr = self.xmi.tags['ExpressAggregation'].get(end_node.id, "")
-                    express_definition = self.xmi.tags['ExpressDefinition'].get(end_node.id)
+                    # It appears there is some inconsistency (IfcBSplineSurface.ControlPointList)
+                    # where the definition is located on the association and not on the member ends
+                    express_definition = self.xmi.tags['ExpressDefinition'].get(end_node.id) or \
+                        self.xmi.tags['ExpressDefinition'].get(assoc_node.id)
                     is_optional = bool(self.xmi.tags['ExpressOptional'].get(end_node.id, False))
                     is_unique = bool(self.xmi.tags['ExpressUnique'].get(end_node.id, False))
                     

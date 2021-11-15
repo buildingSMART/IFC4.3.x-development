@@ -35,7 +35,7 @@ import operator
 import functools
 import subprocess
 
-from collections import defaultdict, namedtuple
+from collections import defaultdict, namedtuple, Counter
 
 import xmi
 import express
@@ -536,7 +536,20 @@ class xmi_document:
                     other_name = self.xmi.by_id[other].name
                     [supertypes, subtypes][issub].append(other_name)
                     
-                for end_node, end_node_type, other_end, assoc_node in self.assocations[c.name]:
+                # In case of assymetric inverse relationships we need to find the
+                # proper target element.
+                assocs_by_name = self.assocations[c.name].copy()
+                # count duplicate role names
+                counter = Counter()
+                counter.update(ass[0].name for ass in assocs_by_name)
+                # flag duplicates
+                duplicates = [ass[0].name is not None and counter[ass[0].name] > 1 for ass in assocs_by_name]
+                # look up suppression tag
+                suppressed = [self.xmi.tags['ExpressSuppressRel'].get(ass[2].id) == "YES" for ass in self.assocations[c.name]]
+                # apply filter
+                assocs_by_name = [a for a,d,s in zip(assocs_by_name, duplicates, suppressed) if not (d and s)]
+                    
+                for end_node, end_node_type, other_end, assoc_node in assocs_by_name:
                     try:
                         nm = end_node.name
                         assert nm

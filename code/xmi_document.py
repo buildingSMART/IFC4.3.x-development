@@ -621,6 +621,8 @@ class xmi_document:
                         else:
                             attribute_order = self.order.get(assoc_node.xmi_id, None)
                             if attribute_order is None:
+                                attribute_order = self.order.get(end_node.xmi_id, None)
+                            if attribute_order is None:
                                 logging.warning("No attribute order on %s.%s" % (c.name, nm))
                                 attribute_order = 1000
                             attributes.append((attribute_order, (nm, is_optional_string + attr_entity)))

@@ -11258,7 +11258,7 @@ ENTITY IfcSurfaceFeature
  SUBTYPE OF (IfcFeatureElement);
 	PredefinedType : OPTIONAL IfcSurfaceFeatureTypeEnum;
  INVERSE
-	AdheresToElement : IfcRelAdheresToElement FOR RelatedSurfaceFeature;
+	AdheresToElement : IfcRelAdheresToElement FOR RelatedSurfaceFeatures;
  WHERE
 	HasObjectType : NOT EXISTS(PredefinedType) OR (PredefinedType <> IfcSurfaceFeatureTypeEnum.USERDEFINED) OR EXISTS(SELF\IfcObject.ObjectType);
 END_ENTITY;

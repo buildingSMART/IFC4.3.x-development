@@ -115,5 +115,8 @@ with open(output, "w") as f:
     for key, key_items in itertools.groupby(all_items, operator.itemgetter(0)):
         items = list(map(operator.itemgetter(1), key_items))
         print("### %s\n" % (key[0]+key[1:].lower()), file=f)
-        print(len(items), "items\n", file=f)
+        if len(items) == 0:
+            print(":tada: No items :tada:\n", file=f)
+        else:
+            print(len(items), "items\n", file=f)
         print(tabulate.tabulate(items, headers=["Name", os.path.basename(fn1), os.path.basename(fn2)], tablefmt="github"), file=f)

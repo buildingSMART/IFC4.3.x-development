@@ -39,13 +39,15 @@ for ffn in glob.glob(relative_path("..", "schemas", "*.xml")):
         ])
         if script == "to_express":
         
-            subprocess.check_call([
-                sys.executable, 
-                "-m", "express_diff", 
-                os.path.join(reference_dir, "IFC4x3_RC4.exp"),
-                relative_path("..", "output", fn[:-4] + "." + ext),
-                relative_path("..", "output", fn[:-4] + "." + ext + ".md")
-            ], cwd=relative_path("."))
+            for reference in ["IFC4x3_RC4.exp", "IFC4x3_RC4_43c3555.exp"]:
+        
+                subprocess.check_call([
+                    sys.executable, 
+                    "-m", "express_diff", 
+                    os.path.join(reference_dir, reference),
+                    relative_path("..", "output", fn[:-4] + "." + ext),
+                    relative_path("..", "output", "%s-%s-differences.md" % (fn[:-4], reference[:-4]))
+                ], cwd=relative_path("."))
             
         elif script == "to_bsdd":
         

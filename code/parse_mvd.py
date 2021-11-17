@@ -1,8 +1,8 @@
+import os
 import io
-import sys
-import json
 import operator
 import functools
+import dataclasses
 
 import pyparsing
 
@@ -13,37 +13,60 @@ from ifcopenshell.mvd.mvdxml_expression import node as expression_node
 
 flatten=lambda l: sum(map(flatten,l),[]) if isinstance(l,(list, pyparsing.ParseResults)) else [l]
 
-try:
-    fn = sys.argv[1]
-except:
-    # fn = "data/mvdXML/ReferenceView_V1-2.mvdxml"
-    fn = "../mvdXML/IFC4_ADD2.mvdxml"
+def dump(rule, parents, file):
+    print(" " * len(parents), "- ", rule.attribute, sep='', file=file)
 
-def dump(rule, parents, file=sys.stdout): print(" " * len(parents), "- ", rule.attribute, sep='', file=file)
+def remove_quotes(v):
+    if v[0] == "'" and v[-1] == "'": return v[1:-1]
 
-roots = list(mvd.concept_root.parse(fn))
-
-output = defaultdict(dict)
-
-for root in roots:
-    for concept in root.concepts():
+@dataclasses.dataclass(order=True, frozen=True)
+class concept_binding:
+    entity: str
+    name: str
+    definition: str
+    rules: object
+    parameters: object
     
-        try:
-            definition = concept.concept_node.getElementsByTagName('Definition')[0].getElementsByTagName("Body")[0].firstChild.wholeText
-        except:
-            definition = ''
-        s = io.StringIO()
-        concept.template().traverse(functools.partial(dump, file=s), with_parents=True)
-        rules = s.getvalue()
-        
-        parameters = defaultdict(list)
-        for k, v in map(operator.attrgetter('a', 'c'), filter(lambda x: isinstance(x, expression_node), flatten(concept.rules()))):
-            parameters[k].append(v)
 
-        output[root.entity][concept.name] = {
-            'definition': definition,
-            'rules': rules,
-            'parameters': parameters
-        }
+def enumerate_concepts(fn=None, with_rules=True):
+    if fn is None:
+        fn = os.path.join(
+            os.path.dirname(__file__),
+            "../mvdXML/IFC4_ADD2.mvdxml"
+        )
 
-json.dump(output, open("concepts.json", "w"), indent=1)
+    roots = list(mvd.concept_root.parse(fn))
+    for root in roots:
+        for concept in root.concepts():
+            try:
+                definition = concept.concept_node.getElementsByTagName('Definition')[0].getElementsByTagName("Body")[0].firstChild.wholeText
+            except:
+                definition = ''
+                
+            rules = None
+            
+            if with_rules:
+                s = io.StringIO()
+                concept.template().traverse(functools.partial(dump, file=s), with_parents=True)
+                rules = s.getvalue()
+            
+            parameters = defaultdict(list)
+            for k, v in map(operator.attrgetter('a', 'c'), filter(lambda x: isinstance(x, expression_node), flatten(concept.rules()))):
+                parameters[k].append(remove_quotes(v))
+
+            yield concept_binding(root.entity, concept.name, definition, rules, dict(parameters.items()))
+
+
+if __name__ == "__main__":
+    import sys
+    import json
+
+    try: fn = sys.argv[1]
+    except: fn = None
+
+    output = defaultdict(dict)
+
+    for cb in enumerate_concepts(fn):
+        output[cb.entity][cb.name] = dataclasses.asdict(cb)
+
+    json.dump(output, open("concepts.json", "w"), indent=1)

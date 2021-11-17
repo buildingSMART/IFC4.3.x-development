@@ -11,3 +11,12 @@ Information about the actor.
 
 ### IsActingUpon
 Reference to the relationship that associates the actor to an object.
+
+## Concepts
+
+### Actor Assignment
+
+
+### Property Sets for Objects
+
+

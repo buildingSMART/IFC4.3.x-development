@@ -19,3 +19,21 @@ Either the _PredefinedType_ attribute is unset (e.g. because an _IfcTendonAnchor
 
 ### CorrectTypeAssigned
 If this occurrence is defined by a type object, the latter has to be an _IfcTendonAnchorType_.
+
+## Concepts
+
+### Body Geometry
+
+
+### Object Typing
+
+
+### Placement
+
+
+### Property Sets
+
+
+### Quantity Sets
+
+

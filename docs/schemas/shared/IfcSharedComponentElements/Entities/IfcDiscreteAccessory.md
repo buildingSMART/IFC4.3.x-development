@@ -19,3 +19,12 @@ Either the _PredefinedType_ attribute is unset (e.g. because an _IfcDiscreteAcce
 
 ### CorrectTypeAssigned
 If this occurrence is defined by a type object, the latter has to be an _IfcDiscreteAccessoryType_.
+
+## Concepts
+
+### Object Typing
+
+
+### Property Sets for Objects
+
+

@@ -53,3 +53,9 @@ Denotes, whether the predefined spatial structure element represents itself, or 
 
 ### WR41
 All spatial structure elements shall be associated (using the IfcRelAggregates relationship) with another spatial structure element, or with IfcProject.
+
+## Concepts
+
+### Property Sets for Objects
+
+

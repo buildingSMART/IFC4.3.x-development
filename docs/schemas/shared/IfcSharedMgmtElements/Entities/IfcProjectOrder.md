@@ -29,3 +29,46 @@ The current status of a project order.Examples of status values that might be us
 
 ### LongDescription
 A detailed description of the project order describing the work to be completed.
+
+## Concepts
+
+### Aggregation
+
+As shown in Figure 160, an IfcProjectOrder may be aggregated into components.
+
+
+![Composition Use Definition](../../../../figuresifcprojectorder-composition.png)
+Figure 313 — Project order composition
+
+
+
+### Approval
+
+Approvals may be associated to indicate the status of acceptance or rejection using the IfcRelAssociatesApproval relationship where RelatingApproval refers to an IfcApproval and RelatedObjects contains the IfcProjectOrder. Approvals may be split into sub-approvals using IfcApprovalRelationship to track approval status separately for each party where RelatingApproval refers to the higher-level approval and RelatedApprovals contains one or more lower-level approvals. The hierarchy of approvals implies sequencing such that a higher-level approval is not executed until all of its lower-level approvals have been accepted.
+
+
+
+### Control Assignment
+
+Figure 314 illustrates IfcProjectOrder assignment relationships as indicated:
+
+
+* *IfcActor* (*IfcRelAssignsToActor*): Organization issuing the order such as an owner or contractor.
+
+
+ The IfcProjectOrder may have assignments of its own using the *IfcRelAssignsToControl* relationship where RelatingControl refers to the IfcProjectOrder and RelatedObjects contains one or more objects of the following types: 
+
+* *IfcActor*: Organization(s) contracted to fulfill the order, typically a single contractor, subcontractor, or supplier.
+
+
+![Assignment Use Definition](../../../../figuresifcprojectorder-assignment.png)
+Figure 314 — Project order assignment
+
+
+
+### Nesting
+
+
+### Property Sets for Objects
+
+

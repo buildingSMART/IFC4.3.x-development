@@ -31,3 +31,46 @@ Detailed description of the permit.
 
 { .change-ifc2x4}
 > IFC4 CHANGE The attribute has been added.
+
+## Concepts
+
+### Aggregation
+
+As shown in Figure 308, an IfcActionRequest may be aggregated into components.
+
+
+![Composition Use Definition](../../../../figuresifcactionrequest-composition.png)
+Figure 308 — Action request composition
+
+
+
+### Approval
+
+Approvals may be associated to indicate the status of acceptance or rejection using the IfcRelAssociatesApproval relationship where RelatingApproval refers to an IfcApproval and RelatedObjects contains the IfcActionRequest. Approvals may be split into sub-approvals using IfcApprovalRelationship to track approval status separately for each party where RelatingApproval refers to the higher-level approval and RelatedApprovals contains one or more lower-level approvals. The hierarchy of approvals implies sequencing such that a higher-level approval is not executed until all of its lower-level approvals have been accepted.
+
+
+
+### Control Assignment
+
+As shown in Figure 309, an IfcActionRequest may be assigned to the following entities using relationships as indicated:
+
+
+* IfcActor (IfcRelAssignsToActor): Person or organization issuing the request such as a tenant or owner.
+
+
+The IfcActionRequest may have assignments of its own using the IfcRelAssignsToControl relationship where RelatingControl refers to the IfcActionRequest and RelatedObjects contains one or more objects of the following types: 
+
+* IfcActor: Person or organization(s) fulfilling the request such as a facilities manager or contractor.
+
+
+![Assignment Use Definition](../../../../figuresifcactionrequest-assignment.png)
+Figure 309 — Action request assignment
+
+
+
+### Nesting
+
+
+### Property Sets for Objects
+
+

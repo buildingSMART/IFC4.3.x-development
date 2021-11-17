@@ -11,3 +11,9 @@ Thus furnishing elements can either be movable, or not (as the built-ins).
 
 { .change-ifc2x4}
 > IFC4 CHANGE&nbsp; The entity is marked as deprecated for instantiation - will be made ABSTRACT after IFC4.
+
+## Concepts
+
+### Spatial Containment
+
+

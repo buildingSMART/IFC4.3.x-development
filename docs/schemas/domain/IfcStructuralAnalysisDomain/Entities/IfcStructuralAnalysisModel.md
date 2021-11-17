@@ -54,3 +54,12 @@ The attribute ObjectType shall be given if the predefined type is set to USERDEF
 
 ### CorrectPredefinedType
 Either the _PredefinedType_ attribute is unset, or the inherited attribute _ObjectType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.
+
+## Concepts
+
+### Aggregation
+
+
+### Group Assignment
+
+

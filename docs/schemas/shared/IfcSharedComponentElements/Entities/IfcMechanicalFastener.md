@@ -31,3 +31,15 @@ Either the _PredefinedType_ attribute is unset (e.g. because an _IfcMechanicalFa
 
 ### CorrectTypeAssigned
 If this occurrence is defined by a type object, the latter has to be an _IfcMechanicalFastenerType_.
+
+## Concepts
+
+### Object Typing
+
+
+### Property Sets for Objects
+
+
+### Quantity Sets
+
+

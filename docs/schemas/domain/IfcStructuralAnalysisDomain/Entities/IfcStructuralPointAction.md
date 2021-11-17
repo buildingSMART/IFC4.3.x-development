@@ -28,3 +28,9 @@ If not connected with a structural item (which may happen in an incomplete or co
 
 ### SuitableLoadType
 A structural point action shall place either a single force or a single displacement.
+
+## Concepts
+
+### Structural Activity
+
+

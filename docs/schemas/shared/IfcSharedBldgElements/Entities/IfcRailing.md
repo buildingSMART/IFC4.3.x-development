@@ -16,3 +16,34 @@ Either the _PredefinedType_ attribute is unset (e.g. because an _IfcRailingType_
 
 ### CorrectTypeAssigned
 Either there is no railing type object associated, i.e. the _IsTypedBy_ inverse relationship is not provided, or the associated type object has to be of type _IfcRailingType_.
+
+## Concepts
+
+### Axis 2D Geometry
+
+
+### Material Constituents
+
+The material of the IfcRailing is defined by the
+ IfcMaterialConstituent or as fallback by IfcMaterial, and it is attached either directly or at the IfcRailingType.
+
+
+
+### Object Typing
+
+
+### Property Sets for Objects
+
+
+### Quantity Sets
+
+
+### Spatial Containment
+
+The IfcRailing, as any subtype of IfcBuildingElement, 
+may participate alternatively in one of the two different containment relationships:
+
+
+* the Spatial Containment (defined here), or
+* the Element Composition.
+

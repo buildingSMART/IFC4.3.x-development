@@ -19,3 +19,24 @@ Either the _PredefinedType_ attribute is unset (e.g. because an _IfcElectricGene
 
 ### CorrectTypeAssigned
 Either there is no electric generator type object associated, i.e. the _IsTypedBy_ inverse relationship is not provided, or the associated type object has to be of type _IfcElectricGeneratorType_.
+
+## Concepts
+
+### Composition
+
+
+### Material
+
+
+### Object Typing
+
+
+### Port
+
+
+### Property Sets for Objects
+
+
+### Quantity Sets
+
+

@@ -19,3 +19,21 @@ Defines types of construction equipment resources.
 
 ### CorrectPredefinedType
 
+
+## Concepts
+
+### Object Typing
+
+
+### Quantity Sets
+
+
+### Resource Assignment
+
+
+### Resource Cost
+
+
+### Resource Quantity
+
+

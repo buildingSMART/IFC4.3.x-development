@@ -33,3 +33,41 @@ Either the _PredefinedType_ attribute is unset (e.g. because an _IfcCurtainWallT
 
 ### CorrectTypeAssigned
 Either there is no curtain wall type object associated, i.e. the _IsTypedBy_ inverse relationship is not provided, or the associated type object has to be of type _IfcCurtainWallType_.
+
+## Concepts
+
+### Axis 2D Geometry
+
+The following additional constraints apply to the 'Axis' 
+representation:
+
+
+* Geometry : IfcPolyline having two Points, or
+IfcTrimmedCurve with BasisCurve of type 
+IfcLine or IfcCircle.
+
+
+
+### Object Typing
+
+
+### Placement
+
+The following restriction may be imposed by view definitions or implementer agreements:
+
+
+* If the IfcCurtainWall establishes an aggregate, then
+all contained elements shall be placed relative to the
+IfcCurtainWall.ObjectPlacement.
+
+
+
+### Property Sets for Objects
+
+
+### Quantity Sets
+
+
+### Spatial Containment
+
+

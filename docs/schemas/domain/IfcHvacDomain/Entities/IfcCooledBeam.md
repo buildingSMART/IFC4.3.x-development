@@ -19,3 +19,21 @@ Either the _PredefinedType_ attribute is unset (e.g. because an _IfcCooledBeamTy
 
 ### CorrectTypeAssigned
 Either there is no cooled beam type object associated, i.e. the _IsTypedBy_ inverse relationship is not provided, or the associated type object has to be of type _IfcCooledBeamType_.
+
+## Concepts
+
+### Material
+
+
+### Object Typing
+
+
+### Port
+
+
+### Property Sets for Objects
+
+
+### Quantity Sets
+
+

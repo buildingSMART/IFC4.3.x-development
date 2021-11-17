@@ -18,3 +18,25 @@ An **IfcDistributionChamberElement** is a formed volume used in a distribution s
 
 ### CorrectTypeAssigned
 
+
+## Concepts
+
+### Material Constituents
+
+The material of the IfcDistributionChamberElement is defined by IfcMaterialConstituentSet or as a fallback by IfcMaterial, and attached by the RelatingMaterial attribute on the IfcRelAssociatesMaterial relationship. It is accessible by the HasAssociations inverse attribute. Material information can also be given at the IfcDistributionChamberElementType, defining the common attribute data for all occurrences of the same type. The following keywords for IfcMaterialConstituentSet.MaterialConstituents[n].Name shall be used:
+
+
+* 'Base': The material from which the base of the duct is constructed.
+* 'Cover': The material from which the access cover to the chamber is constructed.
+* 'Fill': The material that is used to fill the duct (where used).
+* 'Wall': The material from which the wall of the duct is constructed.
+
+### Object Typing
+
+
+### Property Sets for Objects
+
+
+### Quantity Sets
+
+

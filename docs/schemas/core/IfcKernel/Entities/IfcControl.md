@@ -20,3 +20,11 @@ An identifying designation given to a control
 
 ### Controls
 Reference to the relationship that associates the control to the object(s) being controlled.
+
+## Concepts
+
+### Control Assignment
+
+Controls have assignments from products, processes, or other objects by using the relationship object IfcRelAssignsToControl.
+
+

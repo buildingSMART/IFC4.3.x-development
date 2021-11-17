@@ -30,3 +30,30 @@ Either the _PredefinedType_ attribute is unset (e.g. because an _IfcPileType_ is
 
 ### CorrectTypeAssigned
 If this occurrence is defined by a type object, the latter has to be an _IfcPileType_.
+
+## Concepts
+
+### Axis Geometry
+
+
+### Body Geometry
+
+
+### Footprint Geometry
+
+
+### Material Profile Set Usage
+
+
+### Object Typing
+
+
+### Placement
+
+
+### Property Sets for Objects
+
+
+### Quantity Sets
+
+

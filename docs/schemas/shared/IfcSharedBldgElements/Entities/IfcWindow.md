@@ -150,3 +150,161 @@ Either the _PredefinedType_ attribute is unset (e.g. because an _IfcWIndowType_ 
 
 ### CorrectTypeAssigned
 Either there is no door type object associated, i.e. the _IsTypedBy_ inverse relationship is not provided, or the associated type object has to be of type _IfcWindowType_.
+
+## Concepts
+
+### Material Constituent Set
+
+The material of the IfcWindow is defined by the
+IfcMaterialConstituentSet or as fall back by
+IfcMaterial and attached by the
+IfcRelAssociatesMaterial.
+It is accessible by the inverse HasAssociations relationship. The following keywords for IfcMaterialConstituentSet.MaterialConstituents[n].Name shall be used:
+
+
+* 'Lining' - to indicate that the material constituent applies to to the window lining
+* 'Framing' - to indicate that the material constituent applies to to the window panels, if not provided, the 'Lining' material information applied to panels as well
+* 'Glazing' - to indicate that the material constituent applies to to the glazing part
+
+
+If the fall back single IfcMaterial is referenced, it applies to the lining and framing of the window.
+
+
+
+### Object Typing
+
+
+### Product Local Placement
+
+The following restriction is imposed:
+
+
+1. The PlacementRelTo relationship of
+IfcLocalPlacement shall point to the local placement of
+the same element (if given), in which the IfcWindow is
+used as a filling (normally an IfcOpeningElement), as
+provided by the IfcRelFillsElement relationship.
+2. If the IfcWindow is not inserted into an
+IfcOpeningElement, then the PlacementRelTo
+relationship of IfcLocalPlacement shall point (if given)
+to the local placement of the same
+IfcSpatialStructureElement that is used in the
+ContainedInStructure inverse attribute or to a referenced
+spatial structure element at a higher level.
+3. If the relative placement is not used, the absolute placement
+is defined within the world coordinate system.
+
+
+
+> NOTE  The product placement is used to determine the opening direction of the window.
+
+
+### Profile 3D Geometry
+
+The window profile is represented by a three-dimensional
+closed curve within a particular shape representation. The 
+profile is used to apply the parameter of the parametric window
+representation. The following attribute values for the
+IfcShapeRepresentation holding this geometric
+representation shall be used:
+
+
+* RepresentationIdentifier : 'Profile'
+* RepresentationType : 'Curve3D', only a single closed 
+curve shall be contained in the set of
+IfcShapeRepresentation.Items.
+
+
+A 'Profile' representation has to be provided if:
+
+
+* a parametric representation shall be applied to the
+ window AND
+* + the window is 'free standing', or
+	+ the opening into which the window is inserted is not extruded
+	horizontally (i.e. where the opening profile does not match the
+	window profile)
+
+
+The following additional constraints apply to the 'Profile' 
+representation type:
+
+
+* Curve: being an IfcPolyline defining a
+rectangle.
+* Position: The curve shall lie in the xz plane of the
+object placement coordinate (the y coordinate values of the
+IfcCartesianPoint's shall be 0.).
+
+
+As shown in Figure 298, the profile defines the outer boundary to which the window
+lining parameters relate as:
+
+
+* IfcWindowLiningProperties.LiningDepth starting at
+distance defined by LiningOffset going into the positive y
+ direction.
+* IfcWindowLiningProperties.LiningThickness offset into
+the inner side of the rectangle.
+* IfcWindowLiningProperties.LiningOffset distance along
+the positive y direction to where the LiningDepth
+applies.
+* IfcWindowLiningProperties.FirstTransomOffset starting
+at the bottom edge of the rectangle (along local x axis) into the
+ inner side of the rectangle, distance provided as percentage of
+overall height. Distance to the centre line of the transom.
+SecondTransomOffset defined accordingly.
+* IfcWindowLiningProperties.FirstMullionOffset starting
+at the left edge of the rectangle (along local z-axis) into the
+inner side of the rectangle, distance provided as percentage of
+overall width. Distance to the centre line of the mullion.
+SecondMullionOffset defined accordingly.
+
+
+![standard window](../../../../figuresifcwindowstandardcase-01.png)
+Figure 298 — Window profile
+
+
+
+### Property Sets for Objects
+
+
+### Quantity Sets
+
+
+### Spatial Containment
+
+The IfcWindow, as any subtype of IfcBuildingElement, 
+may participate alternatively in one of the two different containment relationships:
+
+
+* the Spatial Containment (defined here), or
+* the Element Composition.
+
+
+The IfcWindow may also be connected to the IfcOpeningElement in which it is placed as a filler. In this case, the spatial containment relationship shall be provided, see Figure 297.
+
+
+![Containment](../../../../figuresifcwindow_containment-01.png)
+
+> NOTE  The containment shall be defined independently of the filling relationship, that is, even if the 
+>  IfcWindow is a filling of an opening established by IfcRelFillsElement, it is also contained in the spatial structure 
+>  by an IfcRelContainedInSpatialStructure.
+
+
+Figure 297 — Window spatial containment
+
+
+ 
+
+
+
+### Window Attributes
+
+The IfcWindowTypePartitioningEnum defines the general layout of the window type and its symbolic presentation. Depending on the enumerator, the appropriate instances of
+IfcWindowLiningProperties and IfcWindowPanelProperties are attached in the list of HasPropertySets. The IfcWindowTypePartitioningEnum mainly determines the way of partitioning the window into individual window panels and thereby number and position of window panels.
+
+
+See IfcWindowTypePartitioningEnum for the correct usage of panel partitioning and IfcWindowPanelProperties for the opening symbols for different panel operation types.
+
+

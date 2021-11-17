@@ -21,3 +21,46 @@ Parts within the decomposition are usually be of type:
 
 ### HasDecomposition
 A valid instance of _IfcWallElementedCase_ has to have parts in a decomposition hierarchy.
+
+## Concepts
+
+### Element Decomposition
+
+An elemented wall is decomposed into parts for particular components such as framing and panels on each side. There must be an object corresponding to each type of part, however there may be single object instance indicating multiple placements (via mapping geometry) for each part, or multiple instances corresponding to each placement. For minimizing file size, it is recommended to use a single object with multiple placement unless there are specific connectivity relationships indicated (e.g. a junction box connected to a specific stud).
+
+
+
+
+### Element Voiding
+
+As shown in Figure 285, openings within the composite wall are directly assigned to IfcWallElementedCase using IfcRelVoidsElement pointing to IfcOpeningElement and apply to all aggregated parts. If individual parts have cutting and other voiding features, then the decomposed parts have a separate voiding relationship IfcRelVoidsElement pointing to IfcVoidingFeature.
+
+
+![voiding](../../../../figuresifcwallelementedcase_fig01.png)
+Figure 285 — Wall elemented voiding
+
+
+
+### Product Local Placement
+
+The use of local placement is defined at the supertype
+IfcWall. The local placement of the
+IfcWallElementedCase defines the parent coordinate systems
+for the parts within the decomposition. All parts shall be
+positioned relative to the IfcWallElementedCase.
+
+
+
+### Surface Geometry
+
+The 'Surface Geometry' shape representation can be used to define a
+ surfacic model of the building (e.g. for analytical purposes, or 
+for reduced Level of Detail representation). It could suppress 
+the geometric details of the parts in the
+ decomposition.
+
+
+
+> NOTE  It is invalid to exchange a 'Body' shape representation of an IfcWallElementedCase. The body geometry is defined by the parts within the decomposition.
+
+

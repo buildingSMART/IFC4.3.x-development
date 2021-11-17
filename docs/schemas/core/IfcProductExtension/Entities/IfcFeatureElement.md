@@ -15,3 +15,18 @@ In contrary to the aggregation, as used in _IfcElementAssembly_, that defines th
 
 ### NotContained
 Element is not contained in spatial structure.
+
+## Concepts
+
+### Spatial Containment
+
+As a subordinate part being fully dependent on the master
+element the IfcFeatureElement shall have no independent
+containment relationship to the spatial structure.
+
+
+* The SELF\IfcElement.ContainedInStructure relationship
+shall be NIL.
+
+
+

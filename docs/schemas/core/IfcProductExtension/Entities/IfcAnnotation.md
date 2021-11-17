@@ -31,3 +31,15 @@ Relationship to a spatial structure element, to which the associate is primarily
 
 ### PredefinedType
 
+
+## Concepts
+
+### Annotation 2D Geometry
+
+
+### Annotation 3D Geometry
+
+
+### Property Sets for Objects
+
+

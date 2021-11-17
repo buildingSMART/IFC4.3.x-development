@@ -35,3 +35,56 @@ Either the _PredefinedType_ attribute is unset (e.g. because an _IfcRoofType_ is
 
 ### CorrectTypeAssigned
 Either there is no roof type object associated, i.e. the _IsTypedBy_ inverse relationship is not provided, or the associated type object has to be of type _IfcRoofType_.
+
+## Concepts
+
+### Element Decomposition
+
+Geometric representation by aggregated elements
+
+
+If the IfcRoof has components (referenced by
+SELF\IfcObject.IsDecomposedBy) then no independent
+geometric representation shall defined for the IfcRoof.
+The IfcRoof is then geometrically represented by the
+geometric representation of its components. The components are
+accessed via 
+SELF\IfcObject.IsDecomposedBy[1].RelatedObjects. The 
+geometric representations that are supported for the aggregated 
+elements are defined with each element. See geometric use 
+definition for IfcSlab, IfcBeam, IfcColumn,
+IfcBuildingElementPart and other subtypes of
+IfcBuildingElement.
+
+
+Figure 260 illustrates roof placement, with an IfcRoof defining the local placement for all aggregated elements.
+
+
+![roof](../../../../figuresifcroof-layout1.gif)
+Figure 260 — Roof placement
+
+
+
+### Object Typing
+
+
+### Placement
+
+The following restriction may be imposed by view definitions or implementer agreements:
+
+
+* If the IfcRoof establishes an aggregate, then
+all contained elements shall be placed relative to the
+IfcRoof.ObjectPlacement.
+
+
+
+### Property Sets for Objects
+
+
+### Quantity Sets
+
+
+### Spatial Containment
+
+

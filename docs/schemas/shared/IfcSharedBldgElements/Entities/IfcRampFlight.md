@@ -26,3 +26,108 @@ Either the _PredefinedType_ attribute is unset (e.g. because an _IfcRampFlightTy
 
 ### CorrectTypeAssigned
 Either there is no ramp flight type object associated, i.e. the _IsTypedBy_ inverse relationship is not provided, or the associated type object has to be of type _IfcRampFlightType_.
+
+## Concepts
+
+### Axis 2D Geometry
+
+The walking line is represented by a two-dimensional open curve
+as the axis. The curve is directed into the upward direction
+(direction has to be interpreted as specified at the subtypes of
+IfcCurve). 
+
+
+Figure 254 illustrates the axis representation which has the following constraints:
+
+
+* In case of straight flights the curve shall be a single item of type IfcPolyline.
+* In case of winding flights the curve shall be a single item of type IfcCompositeCurve.
+* In case of a curved flight or a spiral flight the curve shall be a single item of type IfcTrimmedCurve.
+
+
+![walking line](../../../../figuresifcstairflight_01-layout1.gif)
+Figure 254 — Ramp flight axis
+
+
+
+### Body Clipping Geometry
+
+
+### Body SweptSolid Geometry
+
+The following additional constraints apply to the 'SweptSolid'
+representation type:
+
+
+* Solid: IfcExtrudedAreaSolid is required,
+* Profile: IfcRectangleProfileDef and
+IfcArbitraryClosedProfileDef shall be supported.
+* Extrusion: The profile shall be extruded in any
+direction relative to the XY plane of the position coordinate
+system of the IfcExtrudedAreaSolid. Therefore
+non-perpendicular sweep operation has to be supported. It might be
+further constrained to be in the direction of the global z-axis in
+implementers agreements.
+
+
+Figure 256 illustrates the body representation.
+
+
+![fig1](../../../../figuresifcrampflight-layout1.gif)
+Figure 256 — Ramp flight body
+
+
+
+### Footprint Geometry
+
+The flight foot print, including the flight boundary is represented by a two-dimensional geometric curve set.
+
+
+Figure 255 illustrates the footprint representation which has the following constraints:
+
+
+* In case of straight flights the curve set shall consist of a single item of type IfcPolyline.
+* In case of winding flights or curved flights the curve set shall consists of a single item of type
+IfcCompositeCurve.
+* In case of a spiral flight the curve set shall consists of a single item of type IfcConic or
+IfcPolyline.
+
+
+![boundary](../../../../figuresifcstairflight_02-layout1.gif)
+Figure 255 — Ramp flight footprint
+
+
+
+### Material Solid
+
+The material of the IfcRampFlight is defined by the
+IfcMaterial and attached by the
+IfcRelAssociatesMaterial.RelatingMaterial. It is
+accessible by the inverse HasAssociations relationship.
+
+
+
+### Object Typing
+
+
+### Property Sets for Objects
+
+
+### Quantity Sets
+
+
+### Spatial Containment
+
+The IfcRampFlight, as any subtype of IfcBuildingElement, 
+may participate alternatively in one of the two different containment relationships:
+
+
+* the Spatial Containment (defined here), or
+* the Element Composition.
+
+
+
+> NOTE  Model view definitions or implementer agreements may force an IfcRampFlight to be solely used as a part within an IfcRamp container. In this case, no Spatial containment shall be used.
+> 
+
+

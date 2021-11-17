@@ -19,3 +19,24 @@ Either the _PredefinedType_ attribute is unset (e.g. because an _IfcCoolingTower
 
 ### CorrectTypeAssigned
 Either there is no cooling tower type object associated, i.e. the _IsTypedBy_ inverse relationship is not provided, or the associated type object has to be of type _IfcCoolingTowerType_.
+
+## Concepts
+
+### Composition
+
+
+### Material
+
+
+### Object Typing
+
+
+### Port
+
+
+### Property Sets for Objects
+
+
+### Quantity Sets
+
+

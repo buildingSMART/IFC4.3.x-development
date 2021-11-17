@@ -35,3 +35,20 @@ Designator for the user defined operation type, shall only be provided, if the v
 
 ### CorrectPredefinedType
 The inherited attribute _ElementType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.
+
+## Concepts
+
+### Body Geometry
+
+
+### Property Sets for Types
+
+Two subtypes of IfcPreDefinedPropertySet are applicable
+to IfcDoorType:
+
+
+* IfcDoorLiningProperties - a single instance to define
+the shape parameters of the door lining
+* IfcDoorPanelProperties - one or several instances to
+define the shape parameters of the door panel(s)
+

@@ -32,3 +32,75 @@ If a _RepresentationContexts_ relation is provided then there shall be no instan
 
 ### NoDecomposition
 The _IfcProject_ represents the root of the any decomposition tree. It shall therefore not be used to decompose any other object definition.
+
+## Concepts
+
+### Project Classification Information
+
+
+### Project Declaration
+
+The IfcProject is also the context for other information about the construction project such as a work plan. Non-product structures are assigned by their first level object to IfcProject using the IfcRelDeclares relationship. The IfcProject provides the context for work plans (or other non-product based) descriptions of the construction project. It is handled by the objectified relationship IfcRelDeclares.
+
+
+
+> NOTE  The spatial structure and the schedule structure can be decomposed. For example the IfcBuilding can be decomposed into IfcBuildingStorey's, and the IfcWorkPlan can be decomposed into IfcWorkSchedule's.
+
+
+
+> NOTE  The products and tasks can be decomposed further. For example the IfcCurtainWall can be decomposed into IfcMember and IfcPlate, the IfcTask can be decomposed into other IfcTask's.
+
+
+
+> NOTE  The products and tasks can have direct linking relationships. For example the IfcCurtainWall can be assigned to a IfcTask as an input or output for a construction schedule.
+
+
+Figure 128 illustrates the use of IfcProject as context for work plans or work schedules.
+
+
+![project relationships](../../../../figuresifcproject_fig-1.png)
+Figure 128 — Project spatial and work plan structure
+
+
+
+### Project Document Information
+
+
+### Project Global Positioning
+
+The representation context of the project refers to a global positioning, i.e. the local engineering coordinate system of the project has a mapping to a defined projected coordinate system (a rectangular map coordinate system, as used in GIS systems)
+
+
+### Project Library Information
+
+
+### Project Representation Context
+
+
+### Project Units
+
+
+### Spatial Decomposition
+
+The IfcProject is used to reference the root of the spatial structure of a building or other construction project (that serves as the primary project breakdown and is required to be hierarchical). The spatial structure elements are linked together, and to the IfcProject, by using the objectified relationship IfcRelAggregates. 
+
+
+The following constraints are applied to using the relationshio IfcRelAggregates in context of IfcProject
+
+
+
+> NOTE  The anomaly to use the composition structure through IfcRelAggregates for assigning the uppermost spatial container to IfcProject is due to upward compatibility reasons with earlier releases of this standard.
+
+
+* IfcProject.Decomposes -- it shall be NIL, i.e. the IfcProject shall be on top of the root of the spatial structure tree.
+* IfcProject.IsDecomposedBy -- referencing (IfcSite || IfcBuilding || IfcSpatialZone) by using IfcRelAggregates.RelatedObjects. The IfcSite, IfcBuilding, or IfcSpatialZone being referenced shall be the root of the spatial structure.
+
+
+Figure 129 illustrates project relationships with spatial structures, elements, and element type libraries.
+
+
+![spatial decomposition relationships](../../../../figuresifcproject_fig-2.png)
+Figure 129 — Project spatial structure, products and product type library
+
+
+

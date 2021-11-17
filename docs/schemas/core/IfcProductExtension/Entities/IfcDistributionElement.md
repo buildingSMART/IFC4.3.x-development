@@ -25,3 +25,60 @@ Reference to the element to port connection relationship. The relationship then 
 
 { .change-ifc2x4}
 > IFC4 CHANGE&nbsp; The inverse attribute is deprecated. Relationship to ports, contained within the _IfcDistributionElement_ is now realized by the inverse relationship _NestedBy_ referencing _IfcRelNests_.
+
+## Concepts
+
+### Object Typing
+
+
+The IfcDistributionElement defines the occurrence of
+ any HVAC, electrical, sanitary or other element within a
+ distribution system. Common information about distribution
+ element types (or styles) is handled by subtypes of
+ IfcDistributionElementType. The
+ IfcDistributionElementType (if present) may establish
+ the common type name, usage (or predefined) type, common
+ material, common set of properties and common shape
+ representations (using IfcRepresentationMap). The
+ IfcDistributionElementType is attached using the
+ IfcRelDefinedByType.RelatingType objectified
+ relationship and is accessible by the inverse
+ IsDefinedBy attribute.
+
+
+
+
+The assignment of types to distribution element occurrences
+ is vital for providing the additional meaning, or ontology,
+ of the distribution element. Many specialized type are
+ defined in other schemas of this specification.
+
+
+
+### Property Sets for Objects
+
+
+### Quantity Sets
+
+
+ The quantities relating to the IfcDistributionElement
+ are defined by the IfcElementQuantity and attached by
+ the IfcRelDefinesByProperties. A detailed
+ specification for individual quantities is introduced at the
+ level of subtypes of IfcDistributionElement.
+ 
+
+
+
+### Spatial Containment
+
+
+The IfcDistributionElement may be contained within the spatial containment tree. The IfcSpace is the default spatial container.
+
+
+
+> 
+>  NOTE  The 'Spatial Containment' concept is mandatory in many model view definitions.
+> 
+
+

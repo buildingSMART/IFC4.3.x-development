@@ -18,3 +18,18 @@ Occurrences of furniture that are built in (where the property _Pset_FurnitureTy
 
 ### CorrectTypeAssigned
 
+
+## Concepts
+
+### Aggregation
+
+
+### Material Constituents
+
+
+### Object Typing
+
+
+### Property Sets for Objects
+
+

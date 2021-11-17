@@ -51,3 +51,9 @@ The attribute ObjectType shall be given if the predefined type is set to USERDEF
 
 ### SuitablePredefinedType
 The EQUIDISTANT distribution type is out of scope of structural curve actions.
+
+## Concepts
+
+### Structural Activity
+
+

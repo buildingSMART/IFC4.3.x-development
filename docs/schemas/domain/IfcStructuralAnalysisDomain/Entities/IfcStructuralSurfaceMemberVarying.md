@@ -16,3 +16,9 @@ See definitions at _IfcStructuralItem_ and _IfcStructuralSurfaceMember_. The loc
 ****Material Use Definition****
 
 In case of aggregation, only the individual parts (direct instances of _IfcStructuralSurfaceMember_) carry material and thickness information. Otherwise, definitions at _IfcStructuralSurfaceMember_ apply.
+
+## Concepts
+
+### Property Sets for Objects
+
+

@@ -31,3 +31,44 @@ Identifies the predefined types of a slab element from which the type required m
 
 ### CorrectPredefinedType
 The inherited attribute _ElementType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.
+
+## Concepts
+
+### Body Geometry
+
+
+### Material Layer Set
+
+The material of the IfcSlabType is defined by the
+IfcMaterialLayerSet or as fall back by IfcMaterial
+and attached by the
+IfcRelAssociatesMaterial.RelatingMaterial. It is
+accessible by the inverse HasAssociations relationship.
+
+
+
+> NOTE  It is illegal to assign an
+> IfcMaterial to an IfcSlabType, if there is at least
+> one occurrences. of IfcSlabStandardCase for this
+> type.
+
+
+The shared material layer set definition is defined by assigning
+an IfcMaterialLayerSet (see material use definition above).
+The IfcMaterialLayer refers to one or several of
+IfcMaterial that is the common for all slab occurrence, if
+used. It is only applicable if the IfcSlabType has only
+occurrences of type IfcSlabStandardCase (see definition of
+IfcSlabStandardCase for further information).
+
+
+
+> NOTE  Since each individual instance of
+> IfcSlabStandardCase defines its own
+> IfcMaterialLayerSetUsage including the offset from the
+> reference plane, the same IfcSlabType can be used
+> independently of the reference plane alignment of its
+> occurrences.
+
+
+

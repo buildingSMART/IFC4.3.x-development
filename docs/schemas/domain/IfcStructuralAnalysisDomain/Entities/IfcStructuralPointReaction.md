@@ -28,3 +28,9 @@ If not connected with a structural item (which may happen in an incomplete or co
 
 ### SuitableLoadType
 A structural point reaction shall have as a result either a single force or a single displacement.
+
+## Concepts
+
+### Structural Activity
+
+

@@ -21,3 +21,9 @@ Predefined types to define the particular type of an building element proxy. The
 
 ### CorrectPredefinedType
 The inherited attribute _ElementType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.
+
+## Concepts
+
+### Body Geometry
+
+

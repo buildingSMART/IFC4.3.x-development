@@ -21,3 +21,21 @@ Outlets for medical gasses should use _IfcValve_ with PredefinedType equal to GA
 
 ### CorrectTypeAssigned
 
+
+## Concepts
+
+### Material
+
+
+### Object Typing
+
+
+### Port
+
+
+### Property Sets for Objects
+
+
+### Quantity Sets
+
+

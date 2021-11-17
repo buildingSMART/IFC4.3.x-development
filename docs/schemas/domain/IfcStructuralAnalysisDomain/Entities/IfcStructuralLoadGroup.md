@@ -46,3 +46,9 @@ Analysis models in which this load group is used.
 
 ### HasObjectType
 The attribute ObjectType shall be given if the predefined type, action type, or action source is set to USERDEFINED.
+
+## Concepts
+
+### Group Assignment
+
+

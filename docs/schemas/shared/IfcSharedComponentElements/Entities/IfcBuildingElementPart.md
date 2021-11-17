@@ -21,3 +21,9 @@ Either the _PredefinedType_ attribute is unset (e.g. because an _IfcBuildingElem
 
 ### CorrectTypeAssigned
 If this occurrence is defined by a type object, the latter has to be an _IfcBuildingElementPartType_.
+
+## Concepts
+
+### Object Typing
+
+

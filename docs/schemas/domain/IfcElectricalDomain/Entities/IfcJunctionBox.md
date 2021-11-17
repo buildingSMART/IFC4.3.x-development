@@ -21,3 +21,30 @@ Either the _PredefinedType_ attribute is unset (e.g. because an _IfcJunctionBoxT
 
 ### CorrectTypeAssigned
 Either there is no junction box type object associated, i.e. the _IsTypedBy_ inverse relationship is not provided, or the associated type object has to be of type _IfcJunctionBoxType_.
+
+## Concepts
+
+### Element Connectivity
+
+
+### Element Nesting
+
+
+> IFC4 ADD1 CHANGE  Junction boxes no longer have ports defined, but rely on element nesting for indicating containment of electrical devices.
+
+
+### Filling
+
+
+### Material
+
+
+### Object Typing
+
+
+### Property Sets for Objects
+
+
+### Quantity Sets
+
+

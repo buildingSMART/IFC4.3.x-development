@@ -21,3 +21,21 @@ Either the _PredefinedType_ attribute is unset (e.g. because an _IfcAlarmType_ i
 
 ### CorrectTypeAssigned
 Either there is no alarm type object associated, i.e. the _IsTypedBy_ inverse relationship is not provided, or the associated type object has to be of type _IfcAlarmType_.
+
+## Concepts
+
+### Material
+
+
+### Object Typing
+
+
+### Port
+
+
+### Property Sets for Objects
+
+
+### Quantity Sets
+
+

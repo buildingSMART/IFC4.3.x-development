@@ -24,3 +24,21 @@ Defines types of construction material resources.
 
 ### CorrectPredefinedType
 
+
+## Concepts
+
+### Object Typing
+
+
+### Quantity Sets
+
+
+### Resource Cost
+
+
+### Resource Quantity
+
+
+### Resource Type Assignment
+
+

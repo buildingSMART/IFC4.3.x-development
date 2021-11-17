@@ -58,3 +58,26 @@ Either the _PredefinedType_ attribute is unset (e.g. because an _IfcTendonType_ 
 
 ### CorrectTypeAssigned
 If this occurrence is defined by a type object, the latter has to be an _IfcTendonType_.
+
+## Concepts
+
+### Body Geometry
+
+See supertype IfcElementComponent. This method of representation allows for several tendons
+represented by a single instance of IfcTendon. The representation map should contain
+one IfcSweptDiskSolid.
+
+
+
+### Object Typing
+
+
+### Placement
+
+
+### Property Sets
+
+
+### Quantity Sets
+
+

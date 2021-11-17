@@ -21,3 +21,30 @@ Either the _PredefinedType_ attribute is unset (e.g. because an _IfcControllerTy
 
 ### CorrectTypeAssigned
 Either there is no controller type object associated, i.e. the _IsTypedBy_ inverse relationship is not provided, or the associated type object has to be of type _IfcControllerType_.
+
+## Concepts
+
+### Composition
+
+Figure 328 illustrates controller composition use.
+
+
+![Composition Use Definition](../../../../figuresifccontroller-composition.png)Figure 328 — Controller composition use
+
+
+
+### Material
+
+
+### Object Typing
+
+
+### Port
+
+
+### Property Sets for Objects
+
+
+### Quantity Sets
+
+

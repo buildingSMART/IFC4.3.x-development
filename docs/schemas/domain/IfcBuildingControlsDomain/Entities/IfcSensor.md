@@ -19,3 +19,24 @@ Either the _PredefinedType_ attribute is unset (e.g. because an _IfcSensorType_ 
 
 ### CorrectTypeAssigned
 Either there is no sensor type object associated, i.e. the _IsTypedBy_ inverse relationship is not provided, or the associated type object has to be of type _IfcSensorType_.
+
+## Concepts
+
+### Control Flow
+
+
+### Material
+
+
+### Object Typing
+
+
+### Port
+
+
+### Property Sets for Objects
+
+
+### Quantity Sets
+
+

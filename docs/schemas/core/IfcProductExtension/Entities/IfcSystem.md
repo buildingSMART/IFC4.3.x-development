@@ -13,3 +13,9 @@ Reference to the ~~building~~ spatial structure via the objectified relationship
 
 ### ServicesFacilities
 
+
+## Concepts
+
+### Property Sets
+
+

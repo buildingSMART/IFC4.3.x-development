@@ -35,3 +35,47 @@ Either the _PredefinedType_ attribute is unset (e.g. because an _IfcElementAssem
 
 ### CorrectTypeAssigned
 Either there is no element assembly type object associated, i.e. the _IsTypedBy_ inverse relationship is not provided, or the associated type object has to be of type _IfcElementAssemblyType_.
+
+## Concepts
+
+### Aggregation
+
+The IfcElementAssembly shall represent an aggregate,
+i.e. it should have other elements, being subtypes of
+IfcElement, 
+as contained (sub)parts. The table above only represents a selection of subtypes of IfcElement that are legitimate as parts in an 
+IfcElementAssembly
+
+
+* The IfcElementAssembly is an aggregate i.e. being
+composed by other elements and acting as an assembly using the
+objectified relationship IfcRelAggregates, refering to it
+by its inverse attribute
+SELF\IfcObjectDefinition.IsDecomposedBy. Components of an
+assembly are described by instances of subtypes of
+IfcElement.
+* In this case, the contained subtypes of IfcElement
+shall not be additionally contained in the project spatial
+hierarchy, i.e. the inverse attribute
+SELF\IfcElement.ContainedInStructure of those
+IfcElement's shall be NIL.
+
+
+Figure 151 illustrates spatial containment and element aggregation relationships.
+
+
+![containment relationships](../../../../figuresifcelementassembly-containment.png)
+Figure 151 — Element assembly containment
+
+
+
+### Object Typing
+
+
+### Spatial Containment
+
+The IfcElementAssembly should have a relationship for its 
+containment in the hierachical spatial structure of the project. Only if the IfcElementAssembly is itself a part of another assembly this relationship should be omitted.
+
+
+

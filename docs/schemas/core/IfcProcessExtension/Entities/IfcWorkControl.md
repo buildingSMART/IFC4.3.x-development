@@ -33,3 +33,24 @@ The start time of the schedule.
 
 ### FinishTime
 The finish time of the schedule.
+
+## Concepts
+
+### Control Assignment
+
+
+ From IFC4 onwards the assignment of tasks to the work
+ control is handled by the IfcRelAssignsToControl
+ relationship. IfcRelAssignsTasks as used in previous
+ IFC releases has been deleted and can not be used any
+ longer. Another change in IFC4 is that it is not
+ necessary to assign each task to a work control as it is
+ regarded to be sufficient if the summary task (root task in
+ the task hierarchy defined through IfcRelNests
+ relationships) is assigned to a work control.
+ 
+
+
+### Property Sets for Objects
+
+

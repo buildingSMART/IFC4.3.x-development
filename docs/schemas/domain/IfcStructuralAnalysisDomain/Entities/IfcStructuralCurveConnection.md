@@ -17,3 +17,9 @@ See definitions at _IfcStructuralItem_. The local coordinate system is establish
 Direction which is used in the definition of the local z axis.  _Axis_ is specified relative to the so-called global coordinate system, i.e. the _SELF\IfcProduct.ObjectPlacement_.
 
 > NOTE&nbsp; It is desirable and usually possible that many instances of _IfcStructuralCurveConnection_ and _IfcStructuralCurveMember_ share a common instance of _IfcDirection_ as their _Axis_ attribute.
+
+## Concepts
+
+### Reference Topology
+
+

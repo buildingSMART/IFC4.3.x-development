@@ -76,3 +76,20 @@ Either the _PredefinedType_ attribute is unset (e.g. because an _IfcReinforcingM
 
 ### CorrectTypeAssigned
 If this occurrence is defined by a type object, the latter has to be an _IfcReinforcingMeshType_.
+
+## Concepts
+
+### Body Geometry
+
+The representation map referenced by a 'Body' 'MappedRepresentation' could contain a representation of type 'AdvancedSweptSolid' which holds an IfcSweptDiskSolid (including subtype IfcSweptDiskSolidPolygonal). Multiple IfcMappedItem's can be used to represent the bars within a mesh as one occurrence of IfcReinforcingMesh.
+
+
+### Object Typing
+
+
+### Property Sets
+
+
+### Quantity Sets
+
+

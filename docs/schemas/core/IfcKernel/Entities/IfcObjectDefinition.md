@@ -54,3 +54,11 @@ References to the decomposition relationship being an aggregation. It determines
 
 ### HasAssociations
 Reference to the relationship objects, that associates external references or other resource definitions to the object.. Examples are the association to library, documentation or classification.
+
+## Concepts
+
+### Classification Association
+
+Any object occurrence or object type can have a reference to a specific classification reference, i.e. to a particular facet within a classification system.
+
+

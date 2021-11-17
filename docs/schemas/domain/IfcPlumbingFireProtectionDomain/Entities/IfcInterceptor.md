@@ -19,3 +19,21 @@ An interceptor is a device designed and installed in order to separate and retai
 
 ### CorrectTypeAssigned
 
+
+## Concepts
+
+### Material
+
+
+### Object Typing
+
+
+### Port
+
+
+### Property Sets for Objects
+
+
+### Quantity Sets
+
+

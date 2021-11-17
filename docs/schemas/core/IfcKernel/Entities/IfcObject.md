@@ -59,3 +59,31 @@ Set of relationships to property set definitions attached to this object. Those 
 
 ### UniquePropertySetNames
 
+
+## Concepts
+
+### Object Predefined Type
+
+
+### Object Typing
+
+Any object occurrence can be typed by being assigned to a common object type utilizing this concept. A particular rule, restricting the applicable subtypes of IfcTypeObject that can be assigned, is introduced by overriding this concept at the level of subtypes of IfcObject.
+
+ 
+
+
+### Object User Identity
+
+An attribute Name and optionally Description can be used for all subypes of IfcObject. For those subtypes, that have an object type definition, such as ifcBeam - IfcBeamType, the common Name and optionally Description is associated with the object type.
+
+
+### Property Sets for Objects
+
+Any object occurrence can hold property sets, each being a set of individual properties having name, description, value(s) and unit(s). A reference to applicable property sets, being part of this specification, is introduced at the level of sub types of IfcObject.
+
+
+### Property Sets with Override
+
+Any object occurrence can hold property sets, either directly at the object occurrence as element specific property sets, or at the object type, as type property sets. In this case, the properties that are provided to the object occurrence are the combinations of element specific and type properties. In case, that the same property (within the same property set, is defined both, in occurrence and type properties, the property value of the occurrence property overrides the property value of the type property.
+
+

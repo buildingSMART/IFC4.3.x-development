@@ -31,3 +31,37 @@ Long name for a distribution system, used for informal purposes. It should be us
 
 ### CorrectPredefinedType
 Either the _PredefinedType_ attribute is unset, or the inherited attribute _ObjectType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.
+
+## Concepts
+
+### Aggregation
+
+
+### Group Assignment
+
+For the most common case of an IfcDistributionElement subtype containing ports of a particular PredefinedType that all belong to the same distribution system, the IfcDistributionElement is assigned to the IfcDistributionSystem via the IfcRelAssignsToGroup relationship, where IfcDistributionPort's are implied as part of the corresponding system based on their PredefinedType. An IfcDistributionElement may belong to multiple systems, however only one IfcDistributionSystem of a particular PredefinedType.
+
+
+For rare cases where an IfcDistributionElement subtype contains ports of the same PredefinedType yet different ports belong to different systems, alternatively each IfcDistributionPort may be directly assigned to a single IfcDistributionSystem via the IfcRelAssignsToGroup relationship, where the PredefinedType must match. Such assignment indicates that the IfcDistributionSystem assigned from the IfcDistributionPort overrides any such system of the same PredefinedType assigned from the containing IfcDistributionElement, if any.
+
+
+Additionally, an IfcDistributionSystem may in turn be assigned to an IfcDistributionPort indicating the host or origination of the system using IfcRelAssignsToProduct.
+
+
+
+> 
+> EXAMPLE  A gas-powered hot water heater may have three ports: GAS, DOMESTICCOLDWATER, and DOMESTICHOTWATER. The heater is a member of two systems (GAS and DOMESTICCOLDWATER), and hosts one system (DOMESTICHOTWATER) at the corresponding port.
+> 
+
+
+Figure 303 illustrates a distribution system for an electrical circuit.
+
+
+![Instance diagram for electrical circuit](../../../../figuresifcdistributionsystem-01.png)
+Figure 303 — Distribution system assignment
+
+
+
+### Property Sets for Objects
+
+

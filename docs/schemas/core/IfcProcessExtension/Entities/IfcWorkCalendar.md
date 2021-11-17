@@ -35,3 +35,11 @@ Identifies the predefined types of a work calendar from which
 
 ### CorrectPredefinedType
 The attribute ObjectType must be asserted when the value of the IfcWorkCalendarTypeEnum is set to USERDEFINED.
+
+## Concepts
+
+### Control Assignment
+
+The base calendar of a work calendar is defined by IfcRelAssignsToControl, where IfcRelAssignsToControl.RelatingControl is linked with the base calendar and IfcRelAssignsToControl.RelatedObjects is linked with work calendars that are derived from the base calendar. Although not restricted by the IfcRelAssignsToControl relationship it is only allowed to have one base calendar.
+
+

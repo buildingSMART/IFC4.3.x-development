@@ -28,3 +28,93 @@ Predefined generic type for a projection element that is specified in an enumera
 
 ### CorrectPredefinedType
 Either _PredefinedType_ is unset or the inherited attribute _ObjectType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED or _PredefinedType_.
+
+## Concepts
+
+### Body Geometry
+
+The geometric representation of IfcProjectionElement is
+defined using the swept area solid geometry. The following
+attribute values for the IfcShapeRepresentation holding this
+geometric representation shall be used:
+
+
+* RepresentationIdentifier : 'Body'
+* RepresentationType : 'SweptSolid'
+
+
+The following additional constraints apply to the swept solid
+representation:
+
+
+* Solid: IfcExtrudedAreaSolid is required.
+* Profile: IfcRectangleProfileDef,
+IfcCircleProfileDef and IfcArbitraryClosedProfileDef
+shall be supported.
+* Extrusion: The profile shall be extruded horizontally
+(that is, perpendicular to the extrusion direction of the modified
+element), such as for wall projections, or vertically (that is, in the
+extrusion direction of the projected element), such as for floor
+projections.
+
+
+As shown in Figure 162, the following interpretation of dimension parameter applies for
+rectangular projection:
+
+
+* IfcRectangleProfileDef.YDim interpreted as projection
+width
+* IfcRectangleProfileDef.XDim interpreted as projection
+height
+* IfcExtrudedAreaSolid.Depth is interpreted as projection
+depth
+
+
+
+> NOTE  Rectangles are now defined centric, the placement location has to be set:
+> * IfcCartesianPoint(XDim/2,YDim/2)
+> 
+
+
+
+> NOTE  The local placement directions for the IfcProjectionElement are only given as an example, other directions are valid as well.
+
+
+![projection](../../../../figuresifcprojectionelement-layout1.png)
+Figure 162 — Projection representation
+
+
+The general b-rep geometric representation of
+IfcProjectionElement is defined using the Brep geometry. The
+Brep representation allows for the representation of complex
+element shape. The following attribute values for the
+IfcShapeRepresentation holding this geometric representation
+shall be used:
+
+
+* RepresentationIdentifier : 'Body'
+* RepresentationType : 'Brep'
+
+
+
+### Placement
+
+The local placement for IfcOpeningRecess is defined in
+its supertype IfcProduct. It is defined by the
+IfcLocalPlacement, which defines the local coordinate system
+that is referenced by all geometric representations.
+
+
+* The PlacementRelTo relationship of
+IfcLocalPlacement should point to the local placement of the
+same element, to which the projection adds, i.e. referred to by
+ProjectsElement.RelatingBuildingElement.
+
+
+
+### Property Sets
+
+
+### Quantity Sets
+
+

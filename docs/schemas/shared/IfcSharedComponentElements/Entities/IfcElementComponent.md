@@ -19,3 +19,40 @@ A symbolic representation is defined for a row of components or several rows of 
 * _RepresentationType_ : 'GeometricCurveSet'
 
 and one or several curves as geometric items. The curves represent where reference points of the pieces are located. For example, such reference points may be at the heads of mechanical fasteners or at the starting point of the extrusion axis of reinforcement bars. In case of straight components (bolts, nails, staples, straight reinforcement bars, or similar), the local placement of the _IfcElementComponent_ shall be located and oriented such that the local z axis is parallel with the axes of the components. A _Qto_ElementComponentPatternQuantities_ should denote the count of pieces in the row or array and their spacing.
+
+## Concepts
+
+### Mapped Geometry
+
+The mapped item, IfcMappedItem, should be used if appropriate as it allows for reusing the geometry definition of a type at all occurrences of the same type.
+
+
+A single instance of a subtype of IfcElementComponent can stand for several 
+actual element components at once. In this case, the IfcShapeRepresentation
+contains as many mapped items as there are element components combined within this
+ occurrence object.
+
+
+ 
+
+
+![](../../../../figuresifcelementcomponent_multiple.png)
+
+> EXAMPLE  Figure 304 illustrates multiple components modeled as a single occurrence object (here: IfcFastener)
+
+
+Figure 304 — Element component mapped representation
+
+
+ 
+
+
+Representation identifier and type are the same as in single mapped representation.
+The number of mapped items in the representation corresponds with the count of
+element components in the IfcElementQuantity.
+
+
+
+### Property Sets for Objects
+
+

@@ -35,3 +35,9 @@ Type of reaction according to its distribution of load values.
 
 ### HasPredefinedType
 The attribute ObjectType shall be given if the predefined type is set to USERDEFINED.
+
+## Concepts
+
+### Structural Activity
+
+

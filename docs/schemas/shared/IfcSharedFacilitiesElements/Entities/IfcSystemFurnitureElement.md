@@ -16,3 +16,15 @@ A system furniture element defines components of modular furniture which are not
 
 ### CorrectTypeAssigned
 
+
+## Concepts
+
+### Material Constituents
+
+
+### Object Typing
+
+
+### Property Sets for Objects
+
+

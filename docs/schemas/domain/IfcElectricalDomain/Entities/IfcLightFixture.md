@@ -19,3 +19,29 @@ Either the _PredefinedType_ attribute is unset (e.g. because an _IfcLightFixture
 
 ### CorrectTypeAssigned
 Either there is no light fixture type object associated, i.e. the _IsTypedBy_ inverse relationship is not provided, or the associated type object has to be of type _IfcLightFixtureType_.
+
+## Concepts
+
+### Connection
+
+
+### Lighting Geometry
+
+This represents the light emission of the item having IfcShapeRepresentation.RepresentationType of 'LightSource' and containing one or more IfcLightSource subtypes.
+
+
+### Material
+
+
+### Object Typing
+
+
+### Port
+
+
+### Property Sets for Objects
+
+
+### Quantity Sets
+
+

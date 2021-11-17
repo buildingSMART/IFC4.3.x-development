@@ -40,3 +40,12 @@ Set of spatial reference relationships, that holds those elements, which are ref
 
 { .change-ifc2x4}
 > Ø\X
+
+## Concepts
+
+### FootPrint GeomSet Geometry
+
+
+### Property Sets for Objects
+
+

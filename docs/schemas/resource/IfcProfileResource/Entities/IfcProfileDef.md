@@ -174,3 +174,9 @@ Reference to external information, e.g. library, classification, or document inf
 Additional properties of the profile, for example mechanical properties.
 { .change-ifc2x4}
 > IFC4 CHANGE New inverse attribute
+
+## Concepts
+
+### Property Sets for Objects
+
+

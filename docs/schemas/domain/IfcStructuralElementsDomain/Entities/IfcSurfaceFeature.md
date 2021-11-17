@@ -45,3 +45,22 @@ Reference to the _IfcRelAdheresToElement_ relationship that uses this _IfcSurfac
 
 ### HasObjectType
 The attribute ObjectType shall be given if the predefined type is set to USERDEFINED.
+
+## Concepts
+
+### Body Geometry
+
+
+### Placement
+
+The local placement for IfcSurfaceFeatureElement is defined in its supertype IfcProduct. It is defined by the IfcLocalPlacement, which defines the local coordinate system that is referenced by all geometric representations.
+
+
+* In case of features which are part of an element type, absolute placement into the type object's implied coordinate system shall be used.
+* In case of features which are voiding an element occurrence, the PlacementRelTo relationship of IfcLocalPlacement shall point to the local placement of the respective element.
+
+
+
+### Property Sets
+
+

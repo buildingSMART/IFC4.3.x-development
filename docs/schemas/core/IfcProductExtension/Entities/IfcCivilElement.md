@@ -7,3 +7,18 @@ An _IfcCivilElement_ is a generalization of all elements within a civil engineer
 Civil elements are typically horizontally organized using a spatial structure expressed by spatial zones, therefore _IfcCivilElement_ is spatially contained by default within an _IfcSpatialZone_.
 
 > HISTORY &nbsp;New entity in IFC4.
+
+## Concepts
+
+### Classification
+
+
+### Object Typing
+
+
+### Property Sets
+
+
+### Spatial Containment
+
+

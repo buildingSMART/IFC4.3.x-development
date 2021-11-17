@@ -46,3 +46,9 @@ A load can only be related to projected lengths if it was specified in global co
 
 ### HasObjectType
 The attribute ObjectType shall be given if the predefined type is set to USERDEFINED.
+
+## Concepts
+
+### Structural Activity
+
+

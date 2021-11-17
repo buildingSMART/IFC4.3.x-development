@@ -19,3 +19,21 @@ A solar device converts solar radiation into other energy such as electric curre
 
 ### CorrectTypeAssigned
 
+
+## Concepts
+
+### Material
+
+
+### Object Typing
+
+
+### Port
+
+
+### Property Sets for Objects
+
+
+### Quantity Sets
+
+

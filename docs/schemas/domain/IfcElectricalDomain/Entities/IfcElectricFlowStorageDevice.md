@@ -19,3 +19,21 @@ Either the _PredefinedType_ attribute is unset (e.g. because an _IfcElectricFlow
 
 ### CorrectTypeAssigned
 Either there is no electric flow storage device type object associated, i.e. the _IsTypedBy_ inverse relationship is not provided, or the associated type object has to be of type _IfcElectricFlowStorageDeviceType_.
+
+## Concepts
+
+### Material
+
+
+### Object Typing
+
+
+### Port
+
+
+### Property Sets for Objects
+
+
+### Quantity Sets
+
+

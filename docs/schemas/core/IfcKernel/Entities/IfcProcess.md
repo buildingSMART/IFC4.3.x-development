@@ -48,3 +48,9 @@ Dependency between two activities, it refers to the previous activity for which 
 
 ### OperatesOn
 Set of relationships to other objects, e.g. products, processes, controls, resources or actors, that are operated on by the process.
+
+## Concepts
+
+### Property Sets for Objects
+
+

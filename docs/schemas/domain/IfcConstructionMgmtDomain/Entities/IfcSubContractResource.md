@@ -29,3 +29,12 @@ Defines types of subcontract resources.
 
 ### CorrectPredefinedType
 
+
+## Concepts
+
+### Object Typing
+
+
+### Resource Assignment
+
+

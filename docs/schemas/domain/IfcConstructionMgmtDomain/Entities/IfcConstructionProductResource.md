@@ -17,3 +17,18 @@ Defines types of construction product resources.
 
 ### CorrectPredefinedType
 
+
+## Concepts
+
+### Object Typing
+
+
+### Resource Assignment
+
+
+### Resource Cost
+
+
+### Resource Quantity
+
+

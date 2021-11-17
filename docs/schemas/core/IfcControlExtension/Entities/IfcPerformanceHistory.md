@@ -18,3 +18,30 @@ Describes the applicable building life-cycle phase. Typical values should be DES
 Predefined generic type for a performace history that is specified in an enumeration.
 { .change-ifc2x4}
 > IFC4 CHANGE The attribute has been added at the end of the entity definition.
+
+## Concepts
+
+### Aggregation
+
+IfcPerformanceHistory may be decomposed into components using IfcRelNests where RelatingObject refers to the enclosing IfcPerformanceHistory and RelatedObjects contains one or more IfcPerformanceHistory components. Composition indicates breakdown of further detail and may correspond to the hierarchy of objects it represents.
+
+
+
+### Classification
+
+IfcPerformanceHistory may be classified using IfcRelAssociatesClassification where RelatingClassification refers to an IfcClassificationReference indicating a classification notation. Such classification notation may be used to identify the information such as an address within a building automation system, a work breakdown structure code for tasks, or a cost code for resource allocation.
+
+
+
+### Control Assignment
+
+
+### Property Sets for Performance
+
+The property sets relating to this entity are defined by IfcPropertySet and attached by the IfcRelDefinesByProperties relationship. They are accessible by the IsDefinedBy inverse attribute. Applicable property sets are defined at assigned entities (primarily IfcDistributionElement subtypes) where IfcPropertySetTemplate.PropertySetType is PSET\_PERFORMANCEDRIVEN.
+
+
+In addition to standard property sets defined within this specification, if the underlying information source provides metadata (specific type information), then custom property sets may capture such data, where corresponding IfcPropertySetTemplate and IfcPropertyTemplate objects may be defined for such information to be accessed by other applications.
+
+
+

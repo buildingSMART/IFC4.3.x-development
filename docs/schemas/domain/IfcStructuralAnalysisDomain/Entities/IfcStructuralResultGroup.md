@@ -25,3 +25,9 @@ Reference to an instance of IfcStructuralAnalysisModel for which this instance c
 
 ### HasObjectType
 The attribute ObjectType shall be given if the analysis theory type is set to USERDEFINED.
+
+## Concepts
+
+### Group Assignment
+
+

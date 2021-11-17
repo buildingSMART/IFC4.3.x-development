@@ -21,3 +21,32 @@ The key distinction between _IfcDistributionFlowElement_ and _IfcDistributionCon
 
 ### AssignedToFlowElement
 Reference through the relationship object to related distribution flow elements.
+
+## Concepts
+
+### Object Classification
+
+In addition to general product and project classification (UniFormat, etc.), classifications may also be applied to indicate a device address or addressing scheme according to system-based device instance classification.
+
+
+Figure 301 illustrates classification usage.
+
+
+![Classification Use Definition](../../../../figuresifcdistributioncontrolelement-classification.png)
+Figure 301 — Distribution control classification
+
+
+
+### Object Typing
+
+
+### Product Assignment
+
+The IfcDistributionControlElement may be assigned to the following entities using relationships as indicated:
+
+
+* IfcDistributionSystem (IfcRelAssignsToGroup): Indicates a system containing interconnected devices, where control elements are typically part of a control system having PredefinedType=CONTROL.
+* IfcPerformanceHistory (IfcRelAssignsToControl): Indicates realtime or historical infomation captured for the device.
+
+
+

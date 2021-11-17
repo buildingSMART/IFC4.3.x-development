@@ -50,3 +50,9 @@ Reference to a material relationship indicating that this material is a part (or
 Reference to a material relationship indicating that this material composite has parts (or constituents).
 { .change-ifc2x4}
 > IFC4 CHANGE&nbsp; The inverse attribute has been added.
+
+## Concepts
+
+### Property Sets for Objects
+
+

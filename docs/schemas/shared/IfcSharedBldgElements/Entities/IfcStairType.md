@@ -20,3 +20,9 @@ Identifies the predefined types of a stair element from which the type required 
 
 ### CorrectPredefinedType
 The inherited attribute _ElementType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.
+
+## Concepts
+
+### Body Geometry
+
+

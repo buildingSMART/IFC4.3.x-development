@@ -17,3 +17,9 @@ The overall coefficient in the inherited attribute _Coefficient_ shall not be ap
 
 ### IsLoadCasePredefinedType
 An instance of this subtype of structural load group cannot be of any other type than that of a load case.
+
+## Concepts
+
+### Group Assignment
+
+

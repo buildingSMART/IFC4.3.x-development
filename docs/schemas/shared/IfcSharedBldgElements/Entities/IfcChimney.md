@@ -22,3 +22,24 @@ Either the _PredefinedType_ attribute is unset (e.g. because an _IfcChimneyType_
 
 ### CorrectTypeAssigned
 Either there is no chimney type object associated, i.e. the _IsTypedBy_ inverse relationship is not provided, or the associated type object has to be of type _IfcChimneyType_.
+
+## Concepts
+
+### Object Typing
+
+
+### Property Sets for Objects
+
+
+### Quantity Sets
+
+
+### Spatial Containment
+
+The IfcChimney, as any subtype of IfcBuildingElement, 
+may participate alternatively in one of the two different containment relationships:
+
+
+* the Spatial Containment (defined here), or
+* the Element Composition.
+

@@ -19,3 +19,18 @@ Either the _PredefinedType_ attribute is unset (e.g. because an _IfcProtectiveDe
 
 ### CorrectTypeAssigned
 Either there is no protective device tripping unit type object associated, i.e. the _IsTypedBy_ inverse relationship is not provided, or the associated type object has to be of type _IfcProtectiveDeviceTrippingUnitType_.
+
+## Concepts
+
+### Control Flow
+
+
+### Object Typing
+
+
+### Property Sets for Objects
+
+
+### Quantity Sets
+
+

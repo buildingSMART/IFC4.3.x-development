@@ -39,3 +39,9 @@ The attribute ObjectType shall be given if the predefined type is set to USERDEF
 
 ### SuitablePredefinedType
 The SINUS and PARABOLA distribution types are out of scope of structural curve reactions.
+
+## Concepts
+
+### Structural Activity
+
+

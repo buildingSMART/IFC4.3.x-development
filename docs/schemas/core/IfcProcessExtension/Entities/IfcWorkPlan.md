@@ -60,3 +60,9 @@ Identifies the predefined types of a work plan from which
 
 ### CorrectPredefinedType
 The attribute ObjectType must be asserted when the value of the IfcWorkPlanTypeEnum is set to USERDEFINED.
+
+## Concepts
+
+### Property Sets
+
+

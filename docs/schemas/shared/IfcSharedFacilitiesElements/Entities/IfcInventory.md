@@ -37,3 +37,9 @@ An estimate of the current cost value of the inventory.
 
 ### OriginalValue
 An estimate of the original cost value of the inventory.
+
+## Concepts
+
+### Group Assignment
+
+

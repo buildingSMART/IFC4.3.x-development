@@ -19,3 +19,21 @@ Either the _PredefinedType_ attribute is unset (e.g. because an _IfcPumpType_ is
 
 ### CorrectTypeAssigned
 Either there is no pump type object associated, i.e. the _IsTypedBy_ inverse relationship is not provided, or the associated type object has to be of type _IfcPumpType_.
+
+## Concepts
+
+### Material
+
+
+### Object Typing
+
+
+### Port
+
+
+### Property Sets for Objects
+
+
+### Quantity Sets
+
+

@@ -192,7 +192,17 @@ class xmi_item:
             
             parser = MarkdownIt()
             renderer = RendererHTML()
-            tokens = parser.parse(open(md_fn, encoding='utf-8').read())
+            lines = list(open(md_fn, encoding='utf-8'))
+
+            # https://github.com/executablebooks/markdown-it-py/issues/175
+            # remove trailing blank lines
+            for l in list(lines[::-1]):
+                if len(l.strip()) == 0:
+                    lines = lines[::-1]
+                else:
+                    break
+
+            tokens = parser.parse("".join(lines))
             renders = [renderer.render([t], options, {}) for t in tokens]
             
             tok_renders = [(t.type, s, t.as_dict().get('map'), t.tag) for t, s in zip(tokens, renders)]

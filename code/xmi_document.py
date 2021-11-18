@@ -40,6 +40,8 @@ from collections import defaultdict, namedtuple, Counter
 import xmi
 import express
 
+from md import markdown_attribute_parser
+
 import logging
 logging.basicConfig(level=logging.WARNING, stream=sys.stdout)
 
@@ -149,18 +151,6 @@ class xmi_item:
         return self.parent.path[-2] if is_sub else self.path[-2]
                     
     def _get_markdown(self, definition=False):
-        # @note we use two markdown parsers, as the first does not
-        # have an intermediate parse tree, but is the defacto standard
-        # for conversion to HTML.
-        
-        # pip install markdown-it-py
-        from markdown_it import MarkdownIt
-        from markdown_it.renderer import RendererHTML
-        from markdown_it.presets.default import make as make_default
-        from markdown_it.utils import AttrDict
-        
-        options = AttrDict(make_default()['options'])
-        
         if self.node:
             is_sub = self.parent is not None
             
@@ -190,78 +180,29 @@ class xmi_item:
             if not os.path.exists(md_fn):
                 return missing_markdown(REPO_URL + p + " does not exist")
             
-            parser = MarkdownIt()
-            renderer = RendererHTML()
-            lines = list(open(md_fn, encoding='utf-8'))
-
-            # https://github.com/executablebooks/markdown-it-py/issues/175
-            # remove trailing blank lines
-            for l in list(lines[::-1]):
-                if len(l.strip()) == 0:
-                    lines = lines[:-1]
-                else:
-                    break
-
-            tokens = parser.parse("".join(lines))
-            renders = [renderer.render([t], options, {}) for t in tokens]
+            hname = 'Attributes' if not is_sub or self.parent.type == "ENTITY" else 'Items'
+            md_parser = markdown_attribute_parser(open(md_fn).read(), hname)            
             
-            tok_renders = [(t.type, s, t.as_dict().get('map'), t.tag) for t, s in zip(tokens, renders)]
-            tok_renders_pairs = list(zip(tok_renders[:-1],tok_renders[1:]))
-            
-            if is_sub:
-                sub_item_heading_name = 'Attributes' if self.parent.type == "ENTITY" else 'Items'
-
-                try:
-                    attribute_heading_idx, tag = [(i,d[0][3]) for i,d in enumerate(tok_renders_pairs) if d[0][0] == 'heading_open' and d[1][1] == sub_item_heading_name][0]
-                except IndexError as e:
+            if is_sub:                
+                attrs = dict(md_parser)
+                if md_parser.status.get("ALL") == "NO_HEADING":
                     return missing_markdown(REPO_URL + p + " has no '%s' heading" % sub_item_heading_name)
                     
-                try:
-                    next_same_level_heading = [i for i,d in enumerate(tok_renders_pairs) if i > attribute_heading_idx and d[0][0] == 'heading_open' and d[0][3] == tag][0]                           
-                except IndexError as e:
-                    next_same_level_heading = 100000
+                st = md_parser.status.get(self.name)
+                if st and st[0] == "NO_CONTENT":
+                    return missing_markdown(REPO_URL + p + "#L%d has no content" % st[1])
+                elif st is None:
+                    return missing_markdown(REPO_URL + p + " has no '%s' heading" % self.name)
                 
-                has_heading = False
-                try:
-                    heading_idx = [i for i,d in enumerate(tok_renders_pairs) if d[0][0] == 'heading_open' and d[1][1] == self.name and i > attribute_heading_idx and i < next_same_level_heading][0]
-                    has_heading = True
-                    
-                    try:
-                        next_heading = [i for i,d in enumerate(tok_renders_pairs) if i > heading_idx and d[0][0] == 'heading_open'][0]                           
-                    except IndexError as e:
-                        next_heading = 100000
-                    
-                    first_paragraph = [d for i, d in enumerate(tok_renders_pairs) if d[0][0] == 'paragraph_open' and i > heading_idx and i < next_heading][0]
-                    line_begin = first_paragraph[0][2][0]
-                except IndexError as e:
-                    if has_heading:
-                        lno = tok_renders_pairs[heading_idx][0][2][0] + 1
-                        return missing_markdown(REPO_URL + p + "#L%d has no content" % lno)
-                    else:
-                        return missing_markdown(REPO_URL + p + " has no '%s' heading" % self.name)
-                
-                try:
-                    next_heading = [d for i,d in enumerate(tok_renders_pairs) if d[0][0] == 'heading_open' and i > heading_idx][0]
-                    line_end = next_heading[0][2][0]
-                except IndexError as e:
-                    next_same_level_heading = 100000
-                    line_end = 100000
+                return attrs[self.name]
             else:
-            
-                try:
-                    first_paragraph = [d for d in tok_renders_pairs if d[0][0] == 'paragraph_open'][0]
-                except IndexError as e:
+                d = md_parser.definition(short=definition)
+                st = md_parser.status.get("DEFINITION")
+                if st and st[0] == "NO_CONTENT":
                     return missing_markdown(REPO_URL + p + " has no content")
-                    
-                line_begin = first_paragraph[0][2][0]
-                
-                try:
-                    attribute_heading = [d for d in tok_renders_pairs if d[0][0] == 'heading_open' and d[1][1] == 'Attributes'][0]
-                    line_end = first_paragraph[0][2][1] if definition else attribute_heading[0][2][0]
-                except IndexError as e:
-                    line_end = 100000
-            
-            return "\n".join(list(open(md_fn, encoding='utf-8'))[line_begin:line_end])
+                else:
+                    return d
+
                         
     def _get_markdown_definition(self):
         return self._get_markdown(definition=True)

@@ -6,4 +6,4 @@ The distribution flow element _IfcFlowFitting_ defines the occurrence of a junct
 
 { .change-ifc2x4}
 > IFC4 CHANGE&nbsp; This entity has been deprecated for instantiation and will become ABSTRACT in a future release; new subtypes should now be used instead.  
->
+> 

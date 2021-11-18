@@ -32,7 +32,7 @@ def make_url(fragment): return base + '/' + fragment
 
 identity = lambda x: x
 
-class resource:
+class schema_resource:
     def __init__(self, path, transform=identity):
         self.path = path
         self.transform = transform
@@ -72,16 +72,35 @@ class resource:
         
 
 class resource_manager:
-    entity_attributes = resource("entity_attributes.json")
-    entity_definitions = resource("entity_definitions.json")
-    entity_to_package = resource("entity_to_package.json")
-    entity_supertype = resource("entity_supertype.json")
-    pset_definitions = resource("pset_definitions.json")
-    changes_by_type = resource("changes_by_type.json")
-    concepts = resource("concepts.json")
-    deprecated_entities = resource("deprecated_entities.json", transform=set)
+    entity_attributes = schema_resource("entity_attributes.json")
+    entity_definitions = schema_resource("entity_definitions.json")
+    entity_to_package = schema_resource("entity_to_package.json")
+    entity_supertype = schema_resource("entity_supertype.json")
+    pset_definitions = schema_resource("pset_definitions.json")
+    changes_by_type = schema_resource("changes_by_type.json")
+    concepts = schema_resource("concepts.json")
+    deprecated_entities = schema_resource("deprecated_entities.json", transform=set)
+    hierarchy = schema_resource("hierarchy.json")
 
 R = resource_manager()
+
+def resource_paths(pairs, path=None):
+    if isinstance(pairs, dict): pairs = list(pairs.items())
+    if isinstance(pairs[0], str):
+        for v in pairs:
+            yield v, path
+        return    
+    for p, vs in pairs:
+        yield from resource_paths(vs, (path or ()) + ((p.split(" ")[0].lower() if path is None else p),))
+        
+def get_resource_path(resource, abort_on_error=True):
+    v = dict(resource_paths(R.hierarchy)).get(resource)
+    if not v:
+        if abort_on_error:
+            return abort(404)
+        else:
+            return None
+    return os.path.join(os.path.dirname(__file__), "../docs/schemas", *v, resource + ".md")
 
 navigation_entries = [
     ("Cover", "Contents", "Foreword", "Introduction"),
@@ -112,9 +131,6 @@ def to_dict(x):
         return {"title": x}
 
 def make_entries(x):
-    md_root = "../docs/schemas"
-    categories = [d for d in os.listdir(md_root) if os.path.isdir(os.path.join(md_root, d))]
-        
     if isinstance(x, (list, tuple)):
         return type(x)(map(make_entries, x))
     
@@ -173,19 +189,21 @@ def chapter_lookup(number=None, cat=None):
             
     return do_chapter_lookup(navigation_entries)
 
-hierarchy = json.load(open("hierarchy.json"))
 
-entity_names = sorted(sum([schema.get('Entities', []) for _, cat in hierarchy for __, schema in cat], []))
-type_names = sorted(sum([schema.get('Types', []) for _, cat in hierarchy for __, schema in cat], []))
-pset_names = sorted(sum([schema.get('Property Sets', []) for _, cat in hierarchy for __, schema in cat], []))
+entity_names = lambda: sorted(sum([schema.get('Entities', []) for _, cat in R.hierarchy for __, schema in cat], []))
+type_names = lambda: sorted(sum([schema.get('Types', []) for _, cat in R.hierarchy for __, schema in cat], []))
+pset_names = lambda: sorted(sum([schema.get('Property Sets', []) for _, cat in R.hierarchy for __, schema in cat], []))
 
-name_to_number = {}
+def name_to_number():
+    ntn = {}
 
-for i, (cat, schemas) in enumerate(hierarchy, start=5):
-    for j, (schema_name, members) in enumerate(schemas, start=1):
-        for k, ke in enumerate(["Types", "Entities", "Property Sets"], start=2):
-            for l, name in enumerate(members.get(ke, ()), start=1):
-                name_to_number[name] = ".".join(map(str, (i,j,k,l)))
+    for i, (cat, schemas) in enumerate(R.hierarchy, start=5):
+        for j, (schema_name, members) in enumerate(schemas, start=1):
+            for k, ke in enumerate(["Types", "Entities", "Property Sets"], start=2):
+                for l, name in enumerate(members.get(ke, ()), start=1):
+                    ntn[name] = ".".join(map(str, (i,j,k,l)))
+    
+    return ntn
 
 def generate_inheritance_graph(current_entity):
     i = current_entity
@@ -461,34 +479,15 @@ def get_figure(fig):
 
 DOC_ANNOTATION_PATTERN = re.compile(r'\{\s*\..+?\}')
     
-class builder:
+class resource_documentation_builder:
     
-    def __init__(self, resource, md_root=None):
-    
-        """
-        package = R.entity_to_package.get(resource)
-        if not package:
-            abort(404)
-        """
-            
-        md = None    
-        self.md_root = md_root or "../docs/schemas"
-        
-        # @todo eliminate this glob pattern approach
-        
-        # for category in os.listdir(md_root):
-        #     for module in os.listdir(os.path.join(md_root, category)):
-        #         if module == package:
-        
-        self.md = os.path.join("../docs/schemas", "*", "*", "*", resource + ".md")
+    def __init__(self, resource):
         self.resource = resource
-    
+        self.md = get_resource_path(resource)
         
     @property
     def markdown(self):
-        fns = glob.glob(self.md)
-        if not fns: return ''
-        with open(fns[0], 'r', encoding='utf-8') as f:
+        with open(self.md, 'r', encoding='utf-8') as f:
             return re.sub(DOC_ANNOTATION_PATTERN, '', "\n".join(f.readlines()[2:]))
             
     @property
@@ -499,10 +498,7 @@ class builder:
         
         ty = self.resource
         while ty:
-            md_ty_fns = glob.glob(os.path.join("../docs/schemas", "*", "*", "*", ty + ".md"))
-            if not md_ty_fns:
-                return None
-            md_ty_fn = md_ty_fns[0]
+            md_ty_fn = get_resource_path(ty)
             md_ty = re.sub(DOC_ANNOTATION_PATTERN, '', open(md_ty_fn, encoding='utf-8').read())
             ty_attrs = list(mdp.markdown_attribute_parser(md_ty))
             supertype_counts.append((ty, len(ty_attrs)))
@@ -531,7 +527,7 @@ class builder:
     
 @app.route('/api/v0/resource/<resource>')
 def api_resource(resource):
-    b = builder(resource)
+    b = resource_documentation_builder(resource)
     if b.attributes is None:
         abort(404)
     definition = b.markdown
@@ -548,203 +544,185 @@ def api_resource(resource):
 @app.route(make_url('lexical/<resource>.htm'))
 def resource(resource):
     try:
-        idx = name_to_number[resource]
+        idx = name_to_number()[resource]
     except:
         abort(404)
         
-    doc_annotation_pattern = re.compile(r'\{\s*\..+?\}')
-
-    """
-    package = R.entity_to_package.get(resource)
-    if not package:
-        abort(404)
-    """
-        
-    md = None    
-    md_root = "../docs/schemas"
-    # for category in os.listdir(md_root):
-    #     for module in os.listdir(os.path.join(md_root, category)):
-    #         if module == package:
-    
-    md = os.path.join("../docs/schemas", "*", "*", "*", resource + ".md")
-    
     html = ''
     
     paragraph = 1
                 
-    if glob.glob(md):
-        
-        md = glob.glob(md)[0]
-        
-        attribute_table = ''
-        
-        with open(md, 'r', encoding='utf-8') as f:
+    md = get_resource_path(resource, abort_on_error=False)
     
-            mdc = re.sub(doc_annotation_pattern, '', f.read())
+    attribute_table = ''
+    
+    with open(md, 'r', encoding='utf-8') as f:
+
+        mdc = re.sub(DOC_ANNOTATION_PATTERN, '', f.read())
+        
+        if "Entities" in md:
+        
+            if "## Attributes" in mdc:
+                mdc = mdc[0:mdc.index("## Attributes")]
+                mdc += '\n\n' + idx + '.%d Attributes\n===========\n\n' % paragraph
+                paragraph += 1
             
-            if "Entities" in md:
+            attrs = []
+            supertype_counts = []
+            fwd_attrs = []
             
-                if "## Attributes" in mdc:
-                    mdc = mdc[0:mdc.index("## Attributes")]
-                    mdc += '\n\n' + idx + '.%d Attributes\n===========\n\n' % paragraph
-                    paragraph += 1
+            ty = resource
+            while ty:
+                md_ty_fn = get_resource_path(ty)
+                md_ty = re.sub(DOC_ANNOTATION_PATTERN, '', open(md_ty_fn, encoding='utf-8').read())
+                ty_attrs = list(mdp.markdown_attribute_parser(md_ty))
+                supertype_counts.append((ty, len(ty_attrs)))
+                for a, b in ty_attrs[::-1]:
+                    is_fwd, attr_ty = R.entity_attributes.get(".".join((ty, a)), (False, "INVALID"))
+                    attrs.append((
+                        a, attr_ty, re.sub(
+                            "\\n+", 
+                            "<br><br>",
+                            # remove underscored words:
+                            re.sub("_(\\w+?)_", lambda m: m.group(1), b.strip()) 
+                            # keep underscored words:
+                            # b.strip()             
+                            # convert to links (todo attributes):                   
+                            # re.sub("_(\\w+?)_", lambda m: "<a href='%s'>%s</a>" % (url_for('resource', resource=m.group(1)), m.group(1)), b.strip())
+                    )))
+                    if is_fwd:
+                        fwd_attrs.append(a)
+                ty = R.entity_supertype.get(ty)
                 
-                attrs = []
-                supertype_counts = []
-                fwd_attrs = []
-                
-                ty = resource
-                while ty:
-                    md_ty_fn = glob.glob(os.path.join("../docs/schemas", "*", "*", "*", ty + ".md"))[0]
-                    md_ty = re.sub(doc_annotation_pattern, '', open(md_ty_fn, encoding='utf-8').read())
-                    ty_attrs = list(mdp.markdown_attribute_parser(md_ty))
-                    supertype_counts.append((ty, len(ty_attrs)))
-                    for a, b in ty_attrs[::-1]:
-                        is_fwd, attr_ty = R.entity_attributes.get(".".join((ty, a)), (False, "INVALID"))
-                        attrs.append((
-                            a, attr_ty, re.sub(
-                                "\\n+", 
-                                "<br><br>",
-                                # remove underscored words:
-                                re.sub("_(\\w+?)_", lambda m: m.group(1), b.strip()) 
-                                # keep underscored words:
-                                # b.strip()             
-                                # convert to links (todo attributes):                   
-                                # re.sub("_(\\w+?)_", lambda m: "<a href='%s'>%s</a>" % (url_for('resource', resource=m.group(1)), m.group(1)), b.strip())
-                        )))
-                        if is_fwd:
-                            fwd_attrs.append(a)
-                    ty = R.entity_supertype.get(ty)
-                    
-                attr_index = {b:a for a,b in enumerate(fwd_attrs[::-1], 1)}
-                attrs = [(attr_index.get(b,''),b,c,d) for b,c,d in attrs[::-1]]
-            
-                attribute_table = tabulate.tabulate(attrs, headers=("#", "Attribute", "Type", "Description"), tablefmt='unsafehtml')
-                soup = BeautifulSoup(attribute_table)
-                insertion_points = [0] + list(itertools.accumulate(map(operator.itemgetter(1), supertype_counts[::-1])))[:-1]
-                trs = list(soup.findAll('tr'))
-                for tridx, (ty, _) in zip(insertion_points, supertype_counts[::-1]):
-                    tr = soup.new_tag('tr')
-                    td = soup.new_tag('td', colspan=4)
-                    a = soup.new_tag('a', href=url_for('resource', resource=ty))
-                    a.string = ty
-                    td.append(a)
-                    tr.append(td)
-                    try:
-                        trs[tridx+1].insert_before(tr)
-                    except:
-                        import traceback
-                        traceback.print_exc()
-                attribute_table = str(soup)
-                    
-                mdc += "\n\nattribute_table\n\n"
-                
+            attr_index = {b:a for a,b in enumerate(fwd_attrs[::-1], 1)}
+            attrs = [(attr_index.get(b,''),b,c,d) for b,c,d in attrs[::-1]]
+        
+            attribute_table = tabulate.tabulate(attrs, headers=("#", "Attribute", "Type", "Description"), tablefmt='unsafehtml')
+            soup = BeautifulSoup(attribute_table)
+            insertion_points = [0] + list(itertools.accumulate(map(operator.itemgetter(1), supertype_counts[::-1])))[:-1]
+            trs = list(soup.findAll('tr'))
+            for tridx, (ty, _) in zip(insertion_points, supertype_counts[::-1]):
+                tr = soup.new_tag('tr')
+                td = soup.new_tag('td', colspan=4)
+                a = soup.new_tag('a', href=url_for('resource', resource=ty))
+                a.string = ty
+                td.append(a)
+                tr.append(td)
                 try:
-                    mdc += '\n\n' + idx + '.%d Entity inheritance\n===========\n\n```' % paragraph + generate_inheritance_graph(resource) + '```'
-                    paragraph += 1
+                    trs[tridx+1].insert_before(tr)
                 except:
                     import traceback
                     traceback.print_exc()
-                    pass
-                    
-            elif "PropertySets" in md:
-            
-                def make_prop(prop):
-                    doc = [x for x in open(md_root + "/../properties/%s/%s.md" % (prop['name'][0].lower(), prop['name'])).read().split("\n") if x][-1]
-                    return [prop['name'], prop['type'], doc]
-                attrs = list(map(make_prop, R.pset_definitions[resource]['properties']))
-                attribute_table = tabulate.tabulate(attrs, headers=("Name", "Type", "Description"), tablefmt='unsafehtml')
-                mdc += "\n\nattribute_table\n\n"
-    
-            html = markdown.markdown(
-                process_graphviz(resource, mdc),
-                extensions=['tables', 'fenced_code'])
+            attribute_table = str(soup)
                 
-            html = html.replace("attribute_table", attribute_table)
-        
-            soup = BeautifulSoup(html)
-        
-            # First h1 is handled by the template
+            mdc += "\n\nattribute_table\n\n"
+            
             try:
-                soup.find('h1').decompose()
-            except:
-                # only entities have H1?
-                pass
-        
-            hs = []
-            # Renumber the headings
-            for i in list(range(7))[::-1]:
-                for h in soup.findAll('h%d' % i):
-                    h.name = 'h%d' % (i + 2)
-                    hs.append(h)
-                
-            # Change svg img references to embedded svg
-            # because otherwise URLS are not interactive
-            for img in soup.findAll("img"):
-                if img['src'].endswith('.svg'):
-                    entity, hash = img['src'].split('/')[-1].split('.')[0].split('_')
-                    svg = BeautifulSoup(open(os.path.join('svgs', entity + "_" + hash + '.dot.svg')))
-                    img.replaceWith(svg.find('svg'))
-                else:
-                    img['src'] = img['src'][9:]
-        
-            scs = R.changes_by_type.get(resource, {})
-            change_log = ''
-            
-            deprecated = resource in R.deprecated_entities
-            
-            if scs or deprecated:
-                change_log += "<h3>Change log</h3><div>"
-                
-                if deprecated:
-                    change_log += "<mark class='dont'>DEPRECATED</mark>This definition may be imported, but shall not be exported by applications";
-                
-                for s, cs in scs.items():
-                    change_log += "<h4>%s</h4>" % s
-                    change_log += tabulate.tabulate(cs, tablefmt='unsafehtml')
-                change_log += "</div>"
-        
-            html = str(soup)
-            
-            if "Entities" in md:
-            
-                ty = resource
-                dicts = []
-                while ty is not None:
-                    dicts.append(R.concepts.get(ty, {}))
-                    ty = R.entity_supertype.get(ty)
-                    
-                usage = {}
-                # in reverse so that the most-specialized are retained
-                for d in reversed(dicts):
-                    usage.update(d)                
-                
-                if usage:
-                    paragraph += 1
-                    html += "<h3>" + idx + ".%d Definitions applying to General Usage</h3>" % (paragraph-1)
-            
-                    for n, (concept, data) in enumerate(sorted(usage.items()), start=1):
-                        html += "<h4>" + idx + ".%d.%d " % (paragraph - 1, n) + concept + "</h4>"
-                        html += "<div>" + data['definition'].replace("../../", "")
-                        
-                        keys = set()
-                        for d in dicts:
-                            keys |= d.get(concept, {}).get('parameters', {}).keys()
-                            
-                        params = defaultdict(list)
-                        for d in dicts:
-                            for k in keys:
-                                params[k] += d.get(concept, {}).get('parameters', {}).get(k, [])
-                                
-                        # transpose
-                        vals = list(map(list, itertools.zip_longest(*params.values())))
-                        html += tabulate.tabulate(vals, headers=params.keys(), tablefmt='html') + "</div>"
-                        # html += "<pre>" + data['rules'] + "</pre>"
-                        
-            if R.entity_definitions.get(resource):
-                html += "<h3>" + idx + ".%d Formal representations</h3>" % paragraph
-                html += "<pre>" + R.entity_definitions.get(resource) + "</pre>"
+                mdc += '\n\n' + idx + '.%d Entity inheritance\n===========\n\n```' % paragraph + generate_inheritance_graph(resource) + '```'
                 paragraph += 1
+            except:
+                import traceback
+                traceback.print_exc()
+                pass
+                
+        elif "PropertySets" in md:
+        
+            def make_prop(prop):
+                doc = [x for x in open(md_root + "/../properties/%s/%s.md" % (prop['name'][0].lower(), prop['name'])).read().split("\n") if x][-1]
+                return [prop['name'], prop['type'], doc]
+            attrs = list(map(make_prop, R.pset_definitions[resource]['properties']))
+            attribute_table = tabulate.tabulate(attrs, headers=("Name", "Type", "Description"), tablefmt='unsafehtml')
+            mdc += "\n\nattribute_table\n\n"
+
+        html = markdown.markdown(
+            process_graphviz(resource, mdc),
+            extensions=['tables', 'fenced_code'])
+            
+        html = html.replace("attribute_table", attribute_table)
+    
+        soup = BeautifulSoup(html)
+    
+        # First h1 is handled by the template
+        try:
+            soup.find('h1').decompose()
+        except:
+            # only entities have H1?
+            pass
+    
+        hs = []
+        # Renumber the headings
+        for i in list(range(7))[::-1]:
+            for h in soup.findAll('h%d' % i):
+                h.name = 'h%d' % (i + 2)
+                hs.append(h)
+            
+        # Change svg img references to embedded svg
+        # because otherwise URLS are not interactive
+        for img in soup.findAll("img"):
+            if img['src'].endswith('.svg'):
+                entity, hash = img['src'].split('/')[-1].split('.')[0].split('_')
+                svg = BeautifulSoup(open(os.path.join('svgs', entity + "_" + hash + '.dot.svg')))
+                img.replaceWith(svg.find('svg'))
+            else:
+                img['src'] = img['src'][9:]
+    
+        scs = R.changes_by_type.get(resource, {})
+        change_log = ''
+        
+        deprecated = resource in R.deprecated_entities
+        
+        if scs or deprecated:
+            change_log += "<h3>Change log</h3><div>"
+            
+            if deprecated:
+                change_log += "<mark class='dont'>DEPRECATED</mark>This definition may be imported, but shall not be exported by applications";
+            
+            for s, cs in scs.items():
+                change_log += "<h4>%s</h4>" % s
+                change_log += tabulate.tabulate(cs, tablefmt='unsafehtml')
+            change_log += "</div>"
+    
+        html = str(soup)
+        
+        if "Entities" in md:
+        
+            ty = resource
+            dicts = []
+            while ty is not None:
+                dicts.append(R.concepts.get(ty, {}))
+                ty = R.entity_supertype.get(ty)
+                
+            usage = {}
+            # in reverse so that the most-specialized are retained
+            for d in reversed(dicts):
+                usage.update(d)                
+            
+            if usage:
+                paragraph += 1
+                html += "<h3>" + idx + ".%d Definitions applying to General Usage</h3>" % (paragraph-1)
+        
+                for n, (concept, data) in enumerate(sorted(usage.items()), start=1):
+                    html += "<h4>" + idx + ".%d.%d " % (paragraph - 1, n) + concept + "</h4>"
+                    html += "<div>" + data['definition'].replace("../../", "")
+                    
+                    keys = set()
+                    for d in dicts:
+                        keys |= d.get(concept, {}).get('parameters', {}).keys()
+                        
+                    params = defaultdict(list)
+                    for d in dicts:
+                        for k in keys:
+                            params[k] += d.get(concept, {}).get('parameters', {}).get(k, [])
+                            
+                    # transpose
+                    vals = list(map(list, itertools.zip_longest(*params.values())))
+                    html += tabulate.tabulate(vals, headers=params.keys(), tablefmt='html') + "</div>"
+                    # html += "<pre>" + data['rules'] + "</pre>"
+                    
+        if R.entity_definitions.get(resource):
+            html += "<h3>" + idx + ".%d Formal representations</h3>" % paragraph
+            html += "<pre>" + R.entity_definitions.get(resource) + "</pre>"
+            paragraph += 1
             
             
                 
@@ -752,7 +730,7 @@ def resource(resource):
 
 @app.route(make_url('listing'))
 def listing():
-    items = [{'number': name_to_number[n], 'url': url_for('resource', resource=n), 'title': n} for n in sorted(entity_names + type_names)]
+    items = [{'number': name_to_number()[n], 'url': url_for('resource', resource=n), 'title': n} for n in sorted(entity_names() + type_names())]
     return render_template('list.html', navigation=navigation_entries, items=items)
 
 @app.route(make_url('concepts/content.html'))
@@ -841,7 +819,7 @@ def chapter(n):
     else:
     	html = ''
     
-    subs = [itms for t, itms in hierarchy if t == chp.get('title')][0]
+    subs = [itms for t, itms in R.hierarchy if t == chp.get('title')][0]
     
     def get_entry(pair):
         i, text = pair
@@ -913,7 +891,7 @@ def annotate_hierarchy(data = None, start = 1, number_path = None):
             return url_for("resource", resource=text)
 
     if data is None:
-        data = hierarchy
+        data = R.hierarchy
     
     if number_path is None:
         number_path = []
@@ -944,7 +922,7 @@ def annex_c():
         s = s.strip('\n')
         padding = s.count(' ')
         entity = "".join([c for c in s if c != ' '])
-        return '<tr><td>' + '&nbsp;' * padding * 4 + "<a href='" + url_for('resource', resource=entity) + "'>" + entity + "</a> </td><td>" + name_to_number[entity] + "</td>"
+        return '<tr><td>' + '&nbsp;' * padding * 4 + "<a href='" + url_for('resource', resource=entity) + "'>" + entity + "</a> </td><td>" + name_to_number()[entity] + "</td>"
     
     html += "<table style='width:fit-content'>" +  "".join(map(transform, open("inheritance_listing.txt"))) + "</table>"
         
@@ -1002,7 +980,7 @@ def annex_e_example_page(s):
 def schema(name):
     md_root = "../docs/schemas"
     
-    cat_full, schemas = [(t, itms) for t, itms in hierarchy if name in [i[0].lower() for i in itms]][0]
+    cat_full, schemas = [(t, itms) for t, itms in R.hierarchy if name in [i[0].lower() for i in itms]][0]
     cat = cat_full.split(" ")[0].lower()
     t, subs = [x for x in schemas if x[0].lower() == name][0]
     chp = chapter_lookup(cat=cat)

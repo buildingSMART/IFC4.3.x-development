@@ -15,8 +15,11 @@ import pydot
 import pysolr
 import markdown
 
-from bs4 import BeautifulSoup
+import bs4
 
+def BeautifulSoup(*args):
+    return bs4.BeautifulSoup(*args, features='lxml')
+    
 from flask import Flask, send_file, render_template, abort, url_for, request, send_from_directory, jsonify
 
 import md as mdp
@@ -27,14 +30,58 @@ base = '/IFC/RELEASE/IFC4x3/HTML'
 
 def make_url(fragment): return base + '/' + fragment
 
-entity_attributes = json.load(open("entity_attributes.json", encoding="utf-8"))
-entity_definitions = json.load(open("entity_definitions.json", encoding="utf-8"))
-entity_to_package = json.load(open("entity_to_package.json", encoding="utf-8"))
-entity_supertype = json.load(open("entity_supertype.json", encoding="utf-8"))
-pset_definitions = json.load(open("pset_definitions.json", encoding="utf-8"))
-changes_by_type = json.load(open("changes_by_type.json", encoding="utf-8"))
-concepts = json.load(open("concepts.json", encoding="utf-8"))
-deprecated_entities = set(json.load(open("deprecated_entities.json", encoding="utf-8")))
+identity = lambda x: x
+
+class resource:
+    def __init__(self, path, transform=identity):
+        self.path = path
+        self.transform = transform
+        self.mtime = 0
+        self.data = None
+        
+    def load(fn):
+        def inner(self, *args):
+            try:
+                mt = os.path.getmtime(self.path)
+                if mt > self.mtime:
+                    self.data = self.transform(json.load(open(self.path, encoding="utf-8")))
+                    self.mtime = mt
+            except:
+                import traceback
+                traceback.print_exc()
+                abort(503)
+                
+            return fn(self, *args)
+        return inner
+
+    @load
+    def __getitem__(self, k):
+        return self.data[k]
+        
+    @load
+    def __contains__(self, k):
+        return k in self.data
+
+    @load        
+    def get(self, k, default=None):
+        return self.data.get(k, default)
+        
+    @load
+    def items(self):
+        return self.data.items()
+        
+
+class resource_manager:
+    entity_attributes = resource("entity_attributes.json")
+    entity_definitions = resource("entity_definitions.json")
+    entity_to_package = resource("entity_to_package.json")
+    entity_supertype = resource("entity_supertype.json")
+    pset_definitions = resource("pset_definitions.json")
+    changes_by_type = resource("changes_by_type.json")
+    concepts = resource("concepts.json")
+    deprecated_entities = resource("deprecated_entities.json", transform=set)
+
+R = resource_manager()
 
 navigation_entries = [
     ("Cover", "Contents", "Foreword", "Introduction"),
@@ -169,7 +216,7 @@ def generate_inheritance_graph(current_entity):
         return n
     
     first = True
-    siblings = [k for k,v in entity_supertype.items() if v == current_entity]
+    siblings = [k for k,v in R.entity_supertype.items() if v == current_entity]
     if len(siblings) < 4:
         for sibl in siblings:
             new_node(sibl, fillcolor='gray60')
@@ -193,9 +240,9 @@ def generate_inheritance_graph(current_entity):
             
         previous = n
         
-        i, old = entity_supertype.get(i), i
+        i, old = R.entity_supertype.get(i), i
         
-        siblings = [k for k,v in entity_supertype.items() if v == i]
+        siblings = [k for k,v in R.entity_supertype.items() if v == i]
         if len(siblings) < 4:
             for sibl in siblings:
                 if sibl == old: continue
@@ -212,13 +259,13 @@ def generate_inheritance_graph(current_entity):
     
 
 def get_node_colour(n):
-    if entity_supertype.get(n) is None:
+    if R.entity_supertype.get(n) is None:
         return 'gray'
 
     def is_relationship(ty=n):
         if ty == "IfcRelationship":
             return True
-        ty = entity_supertype.get(ty)
+        ty = R.entity_supertype.get(ty)
         if ty:
             return is_relationship(ty)
         return False
@@ -325,8 +372,8 @@ def create_entity_definition(e, bindings):
     table = []
     
     while e:
-        keys = [x for x in entity_attributes.keys() if x.startswith(e + '.')]
-        for k, (is_fwd, ty) in list(zip(keys, map(entity_attributes.__getitem__, keys)))[::-1]:
+        keys = [x for x in R.entity_attributes.keys() if x.startswith(e + '.')]
+        for k, (is_fwd, ty) in list(zip(keys, map(R.entity_attributes.__getitem__, keys)))[::-1]:
             nm = k.split('.')[1]
             
             if is_fwd:
@@ -344,7 +391,7 @@ def create_entity_definition(e, bindings):
             if bnd:
                table.append((bnd, "", 3))
             
-        e = entity_supertype.get(e)
+        e = R.entity_supertype.get(e)
         
     table.append((E, "", 1))
     table = table[::-1]
@@ -419,7 +466,7 @@ class builder:
     def __init__(self, resource, md_root=None):
     
         """
-        package = entity_to_package.get(resource)
+        package = R.entity_to_package.get(resource)
         if not package:
             abort(404)
         """
@@ -460,7 +507,7 @@ class builder:
             ty_attrs = list(mdp.markdown_attribute_parser(md_ty))
             supertype_counts.append((ty, len(ty_attrs)))
             for a, b in ty_attrs[::-1]:
-                is_fwd, attr_ty = entity_attributes.get(".".join((ty, a)), (False, "INVALID"))
+                is_fwd, attr_ty = R.entity_attributes.get(".".join((ty, a)), (False, "INVALID"))
                 attrs.append((
                     a, attr_ty, re.sub(
                         "\\n+", 
@@ -474,7 +521,7 @@ class builder:
                 )))
                 if is_fwd:
                     fwd_attrs.append(a)
-            ty = entity_supertype.get(ty)
+            ty = R.entity_supertype.get(ty)
             
         attr_index = {b:a for a,b in enumerate(fwd_attrs[::-1], 1)}
         attrs = [(attr_index.get(b,''),b,c,d) for b,c,d in attrs[::-1]]
@@ -508,7 +555,7 @@ def resource(resource):
     doc_annotation_pattern = re.compile(r'\{\s*\..+?\}')
 
     """
-    package = entity_to_package.get(resource)
+    package = R.entity_to_package.get(resource)
     if not package:
         abort(404)
     """
@@ -553,7 +600,7 @@ def resource(resource):
                     ty_attrs = list(mdp.markdown_attribute_parser(md_ty))
                     supertype_counts.append((ty, len(ty_attrs)))
                     for a, b in ty_attrs[::-1]:
-                        is_fwd, attr_ty = entity_attributes.get(".".join((ty, a)), (False, "INVALID"))
+                        is_fwd, attr_ty = R.entity_attributes.get(".".join((ty, a)), (False, "INVALID"))
                         attrs.append((
                             a, attr_ty, re.sub(
                                 "\\n+", 
@@ -567,7 +614,7 @@ def resource(resource):
                         )))
                         if is_fwd:
                             fwd_attrs.append(a)
-                    ty = entity_supertype.get(ty)
+                    ty = R.entity_supertype.get(ty)
                     
                 attr_index = {b:a for a,b in enumerate(fwd_attrs[::-1], 1)}
                 attrs = [(attr_index.get(b,''),b,c,d) for b,c,d in attrs[::-1]]
@@ -605,7 +652,7 @@ def resource(resource):
                 def make_prop(prop):
                     doc = [x for x in open(md_root + "/../properties/%s/%s.md" % (prop['name'][0].lower(), prop['name'])).read().split("\n") if x][-1]
                     return [prop['name'], prop['type'], doc]
-                attrs = list(map(make_prop, pset_definitions[resource]['properties']))
+                attrs = list(map(make_prop, R.pset_definitions[resource]['properties']))
                 attribute_table = tabulate.tabulate(attrs, headers=("Name", "Type", "Description"), tablefmt='unsafehtml')
                 mdc += "\n\nattribute_table\n\n"
     
@@ -641,10 +688,10 @@ def resource(resource):
                 else:
                     img['src'] = img['src'][9:]
         
-            scs = changes_by_type.get(resource, {})
+            scs = R.changes_by_type.get(resource, {})
             change_log = ''
             
-            deprecated = resource in deprecated_entities
+            deprecated = resource in R.deprecated_entities
             
             if scs or deprecated:
                 change_log += "<h3>Change log</h3><div>"
@@ -664,8 +711,8 @@ def resource(resource):
                 ty = resource
                 dicts = []
                 while ty is not None:
-                    dicts.append(concepts.get(ty, {}))
-                    ty = entity_supertype.get(ty)
+                    dicts.append(R.concepts.get(ty, {}))
+                    ty = R.entity_supertype.get(ty)
                     
                 usage = {}
                 # in reverse so that the most-specialized are retained
@@ -694,9 +741,9 @@ def resource(resource):
                         html += tabulate.tabulate(vals, headers=params.keys(), tablefmt='html') + "</div>"
                         # html += "<pre>" + data['rules'] + "</pre>"
                         
-            if entity_definitions.get(resource):
+            if R.entity_definitions.get(resource):
                 html += "<h3>" + idx + ".%d Formal representations</h3>" % paragraph
-                html += "<pre>" + entity_definitions.get(resource) + "</pre>"
+                html += "<pre>" + R.entity_definitions.get(resource) + "</pre>"
                 paragraph += 1
             
             
@@ -1037,7 +1084,7 @@ def after(response):
         
         def decorate_link(m):
             w = m.group(0)
-            if w in entity_definitions or w in pset_definitions:
+            if w in R.entity_definitions or w in R.pset_definitions:
                 return "<a href='" + url_for('resource', resource=w) + "'>" + w + "</a>"
             else:
                 return w

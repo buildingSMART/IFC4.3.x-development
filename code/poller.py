@@ -17,7 +17,7 @@ while True:
     
     if a != c or not os.listdir(XML_PATH):
     
-        subprocess.call([sys.executable, "transform_to_xml.py", "../docs", XML_PATH], cwd="/ifc43/server")
+        subprocess.call([sys.executable, "transform_to_xml.py", "../docs", XML_PATH])
         subprocess.call(["/solr-8.6.3/bin/solr", "create_core", "-force", "-c", "ifc"])
         subprocess.call(["/solr-8.6.3/bin/post", "-c", "ifc", XML_PATH])
         

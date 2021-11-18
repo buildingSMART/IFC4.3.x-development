@@ -7,10 +7,9 @@ RUN apt-get update -y && apt-get install -y texlive texlive-pictures texlive-lat
 # remove policy to disable PDF conversion
 RUN rm /etc/ImageMagick-6/policy.xml
 RUN curl --silent --show-error --retry 5 https://bootstrap.pypa.io/get-pip.py | python3
-RUN python3 -m pip install flask Beautifulsoup4 Markdown gunicorn pysolr pydot tabulate hilbertcurve==1.0.5 markdown-it-py deepdiff
+RUN python3 -m pip install flask Beautifulsoup4 lxml Markdown gunicorn pysolr pydot tabulate hilbertcurve==1.0.5 markdown-it-py deepdiff
 
 RUN curl --location --silent --show-error --retry 5 'https://archive.apache.org/dist/lucene/solr/8.6.3/solr-8.6.3.tgz' -o - | tar zxf -
-RUN ls /
 RUN chmod +x /solr-8.6.3/bin/*
 
 RUN curl --silent --show-error --retry 5 -o /tmp/ifcopenshell_python.zip https://s3.amazonaws.com/ifcopenshell-builds/ifcopenshell-python-`python3 -c 'import sys;print("".join(map(str, sys.version_info[0:2])))'`-v0.6.0-f14d349-linux64.zip
@@ -22,10 +21,9 @@ RUN git clone https://github.com/opensourceBIM/python-mvdxml/ `python3 -c 'impor
 
 RUN git clone https://github.com/buildingSMART/Sample-Test-Files /examples
 
-ADD https://api.github.com/repos/buildingSMART/IFC4.3.x-development/git/refs/heads/master /tmp/data_version.json
 RUN git clone https://github.com/buildingSMART/IFC4.3.x-development /ifc43
 
-ADD wsgi.py server.py parse_xmi.py transform_to_xml.py parse_mvd.py poller.py md.py change_log.py process_schema.py xmi.py xmi_document.py express.py tikz-uml.sty /ifc43/code/
+ADD *.py tikz-uml.sty /ifc43/code/
 ADD templates/* /ifc43/server/templates/
 
 WORKDIR /ifc43/code

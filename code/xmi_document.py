@@ -198,7 +198,7 @@ class xmi_item:
             # remove trailing blank lines
             for l in list(lines[::-1]):
                 if len(l.strip()) == 0:
-                    lines = lines[::-1]
+                    lines = lines[:-1]
                 else:
                     break
 

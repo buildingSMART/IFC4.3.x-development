@@ -1,5 +1,6 @@
 import re
 import os
+import sys
 import glob
 import json
 import hashlib
@@ -7,7 +8,7 @@ import operator
 import itertools
 import subprocess
 
-from collections import defaultdict
+from collections import defaultdict, Counter
 from dataclasses import dataclass
 
 import tabulate
@@ -16,6 +17,9 @@ import pysolr
 import markdown
 
 import bs4
+
+# we depend on dictionaries with insertion order
+assert sys.version_info[0:2] >= (3,6)
 
 def BeautifulSoup(*args):
     return bs4.BeautifulSoup(*args, features='lxml')
@@ -493,7 +497,6 @@ class resource_documentation_builder:
     @property
     def attributes(self):
         attrs = []
-        supertype_counts = []
         fwd_attrs = []
         
         ty = self.resource
@@ -501,11 +504,10 @@ class resource_documentation_builder:
             md_ty_fn = get_resource_path(ty)
             md_ty = re.sub(DOC_ANNOTATION_PATTERN, '', open(md_ty_fn, encoding='utf-8').read())
             ty_attrs = list(mdp.markdown_attribute_parser(md_ty))
-            supertype_counts.append((ty, len(ty_attrs)))
             for a, b in ty_attrs[::-1]:
                 is_fwd, attr_ty = R.entity_attributes.get(".".join((ty, a)), (False, "INVALID"))
                 attrs.append((
-                    a, attr_ty, re.sub(
+                    ty, a, attr_ty, re.sub(
                         "\\n+", 
                         "<br><br>",
                         # remove underscored words:
@@ -520,7 +522,7 @@ class resource_documentation_builder:
             ty = R.entity_supertype.get(ty)
             
         attr_index = {b:a for a,b in enumerate(fwd_attrs[::-1], 1)}
-        attrs = [(attr_index.get(b,''),b,c,d) for b,c,d in attrs[::-1]]
+        attrs = [(a,attr_index.get(b,''),b,c,d) for a,b,c,d in attrs[::-1]]
         
         return attrs
             
@@ -534,10 +536,11 @@ def api_resource(resource):
     if "\n\n" in definition:
         definition = definition[0:definition.index("\n\n")]
     definition = markdown.markdown(definition)
+    attributes = [a[1:] for a in b.attributes]
     return jsonify({
         'resource': resource,
         'definition': definition,
-        'attributes': b.attributes
+        'attributes': attributes
     });
       
 
@@ -567,35 +570,12 @@ def resource(resource):
                 mdc += '\n\n' + idx + '.%d Attributes\n===========\n\n' % paragraph
                 paragraph += 1
             
-            attrs = []
-            supertype_counts = []
-            fwd_attrs = []
-            
-            ty = resource
-            while ty:
-                md_ty_fn = get_resource_path(ty)
-                md_ty = re.sub(DOC_ANNOTATION_PATTERN, '', open(md_ty_fn, encoding='utf-8').read())
-                ty_attrs = list(mdp.markdown_attribute_parser(md_ty))
-                supertype_counts.append((ty, len(ty_attrs)))
-                for a, b in ty_attrs[::-1]:
-                    is_fwd, attr_ty = R.entity_attributes.get(".".join((ty, a)), (False, "INVALID"))
-                    attrs.append((
-                        a, attr_ty, re.sub(
-                            "\\n+", 
-                            "<br><br>",
-                            # remove underscored words:
-                            re.sub("_(\\w+?)_", lambda m: m.group(1), b.strip()) 
-                            # keep underscored words:
-                            # b.strip()             
-                            # convert to links (todo attributes):                   
-                            # re.sub("_(\\w+?)_", lambda m: "<a href='%s'>%s</a>" % (url_for('resource', resource=m.group(1)), m.group(1)), b.strip())
-                    )))
-                    if is_fwd:
-                        fwd_attrs.append(a)
-                ty = R.entity_supertype.get(ty)
-                
-            attr_index = {b:a for a,b in enumerate(fwd_attrs[::-1], 1)}
-            attrs = [(attr_index.get(b,''),b,c,d) for b,c,d in attrs[::-1]]
+            builder = resource_documentation_builder(resource)
+            attrs = builder.attributes
+            supertype_counts = Counter()
+            supertype_counts.update([a[0] for a in attrs])
+            attrs = [a[1:] for a in attrs]
+            supertype_counts = list(supertype_counts.items())[::-1]
         
             attribute_table = tabulate.tabulate(attrs, headers=("#", "Attribute", "Type", "Description"), tablefmt='unsafehtml')
             soup = BeautifulSoup(attribute_table)

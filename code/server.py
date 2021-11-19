@@ -75,6 +75,10 @@ class schema_resource:
     def items(self):
         return self.data.items()
         
+    @load
+    def keys(self):
+        return self.data.keys()
+        
 
 class resource_manager:
     entity_attributes = schema_resource("entity_attributes.json")
@@ -625,9 +629,21 @@ def resource(resource):
             
             if concepts:
                 mdc += f"\n\n## {idx}.{paragraph} Concepts\n\n"
+                
+                concept_hierarchy = make_concept([""])
+                
+                def flatten_hierarchy(h):
+                    yield h
+                    for ch in h.children:
+                        yield from flatten_hierarchy(ch)
+
+                concept_lookup = {c.text: c.url for c in flatten_hierarchy(concept_hierarchy)}
 
                 for ci, (en, nm, defn) in enumerate(concepts, start=1):
+                
                     mdc += f"\n\n## {idx}.{paragraph}.{ci} {nm}\n\n"
+                    if concept_lookup.get(nm):
+                        mdc += f"[link]({concept_lookup.get(nm)})\n\n"
                     mdc += defn + "\n\n"
                     
                     # @todo get the template bindings from XMI
@@ -743,6 +759,23 @@ def listing():
     items = [{'number': name_to_number()[n], 'url': url_for('resource', resource=n), 'title': n} for n in sorted(entity_names() + type_names())]
     return render_template('list.html', navigation=navigation_entries, items=items)
 
+    
+def make_concept(path, number_path=None):
+    print("path", path)
+    md_root = "../docs/templates"
+    
+    if number_path is None:
+        number_path = "4"
+    
+    children = enumerate(sorted([d for d in os.listdir(os.path.join(md_root, *path)) if os.path.exists(os.path.join(md_root, *path, d, "README.md"))]), 1)
+    return toc_entry(
+        url      = make_url("concepts/" + "/".join(path).replace(" ", "_") + "/content.html"),
+        number   = number_path,
+        text     = path[-1],
+        children = [make_concept(path + [c], number_path=f"{number_path}.{i}") for i, c in children]
+    )
+
+
 @app.route(make_url('concepts/content.html'))
 @app.route(make_url('concepts/<path:s>/content.html'))
 def concept(s=''):
@@ -791,17 +824,6 @@ def concept(s=''):
     else:
     	html = fn
     	
-    def make_concept(path, number_path=None):
-        if number_path is None:
-            number_path = n
-        
-        children = enumerate(sorted([d for d in os.listdir(os.path.join(md_root, *path)) if os.path.exists(os.path.join(md_root, *path, d, "README.md"))]), 1)
-        return toc_entry(
-            url      = make_url("concepts/" + "/".join(path).replace(" ", "_") + "/content.html"),
-            number   = number_path,
-            text     = path[-1],
-            children = [make_concept(path + [c], number_path=f"{number_path}.{i}") for i, c in children]
-        )
         
     subs = make_concept(s.split("/")).children
 

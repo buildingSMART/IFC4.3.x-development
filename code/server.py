@@ -752,7 +752,7 @@ def resource(resource):
             
             
                 
-    return render_template('entity.html', navigation=navigation_entries, content=html, number=idx, entity=resource, path=md[3:], preface=change_log)
+    return render_template('entity.html', navigation=navigation_entries, content=html, number=idx, entity=resource, path=md[27:], preface=change_log)
 
 @app.route(make_url('listing'))
 def listing():

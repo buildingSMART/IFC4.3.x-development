@@ -3,6 +3,7 @@ import os
 import sys
 import glob
 import json
+import shutil
 import hashlib
 import operator
 import itertools
@@ -383,7 +384,7 @@ def process_graphviz(current_entity, md):
         with open(fn, "w") as f:
             f.write(c2)
         md = md.replace("```%s```" % c, '![](/svgs/%s_%s.svg)' % (current_entity, hash))
-        subprocess.call(["dot", "-O", "-Tsvg", "-Gbgcolor=#ffffff00", fn])
+        subprocess.call([shutil.which("dot") or "dot", "-O", "-Tsvg", "-Gbgcolor=#ffffff00", fn])
     
     return md    
 
@@ -465,7 +466,7 @@ def process_graphviz_concept(name, md):
             f.write(c3)
         md = md.replace("```%s```" % c, '![](/svgs/%s_%s.svg)' % (name, hash))
         
-        subprocess.call(["dot", "-O", "-Tsvg", "-Gbgcolor=#ffffff00", fn])
+        subprocess.call([shutil.which("dot") or "dot", "-O", "-Tsvg", "-Gbgcolor=#ffffff00", fn])
     
     return md 
 

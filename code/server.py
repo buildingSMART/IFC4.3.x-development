@@ -495,8 +495,8 @@ class resource_documentation_builder:
         with open(self.md, 'r', encoding='utf-8') as f:
             return re.sub(DOC_ANNOTATION_PATTERN, '', "\n".join(f.readlines()[2:]))
             
-    @property
-    def attributes(self):
+            
+    def get_markdown_content(self, heading):
         attrs = []
         fwd_attrs = []
         
@@ -504,29 +504,39 @@ class resource_documentation_builder:
         while ty:
             md_ty_fn = get_resource_path(ty)
             md_ty = re.sub(DOC_ANNOTATION_PATTERN, '', open(md_ty_fn, encoding='utf-8').read())
-            ty_attrs = list(mdp.markdown_attribute_parser(md_ty))
+            ty_attrs = list(mdp.markdown_attribute_parser(md_ty, heading))
             for a, b in ty_attrs[::-1]:
-                is_fwd, attr_ty = R.entity_attributes.get(".".join((ty, a)), (False, "INVALID"))
-                attrs.append((
-                    ty, a, attr_ty, re.sub(
-                        "\\n+", 
-                        "<br><br>",
-                        # remove underscored words:
-                        re.sub("_(\\w+?)_", lambda m: m.group(1), b.strip()) 
-                        # keep underscored words:
-                        # b.strip()             
-                        # convert to links (todo attributes):                   
-                        # re.sub("_(\\w+?)_", lambda m: "<a href='%s'>%s</a>" % (url_for('resource', resource=m.group(1)), m.group(1)), b.strip())
-                )))
-                if is_fwd:
-                    fwd_attrs.append(a)
+                # remove underscored words:
+                content = re.sub("_(\\w+?)_", lambda m: m.group(1), b.strip()) 
+                
+                if heading == "Attributes":
+                    # inline strings in the attribute table benefit from some additional spacing
+                    content = re.sub("\\n+", "<br><br>", content)                        
+                    is_fwd, attr_ty = R.entity_attributes.get(".".join((ty, a)), (False, "INVALID"))
+                    attrs.append((ty, a, attr_ty, content))
+                    if is_fwd:
+                        fwd_attrs.append(a)
+                else:
+                    attrs.append((ty, a, content))
             ty = R.entity_supertype.get(ty)
             
-        attr_index = {b:a for a,b in enumerate(fwd_attrs[::-1], 1)}
-        attrs = [(a,attr_index.get(b,''),b,c,d) for a,b,c,d in attrs[::-1]]
+        attrs = attrs[::-1]
         
-        return attrs
+        if heading == "Attributes":
+            # Decorate with attribute index
+            attr_index = {b:a for a,b in enumerate(fwd_attrs[::-1], 1)}
+            attrs = [(a,attr_index.get(b,''),b,c,d) for a,b,c,d in attrs]
             
+        return attrs
+        
+    @property
+    def attributes(self):
+        return self.get_markdown_content("Attributes")
+        
+    @property
+    def concepts(self):
+        return self.get_markdown_content("Concepts")
+
     
 @app.route('/api/v0/resource/<resource>')
 def api_resource(resource):
@@ -605,6 +615,24 @@ def resource(resource):
                 import traceback
                 traceback.print_exc()
                 pass
+            
+            concepts = list(builder.concepts)
+            
+            # In case of inherited concepts filter on the entity
+            # that defines it most specifically (insertion order)
+            most_specific = {b:a for a,b,_ in concepts}
+            concepts = [(en, nm, defn) for en, nm, defn in concepts if most_specific[nm] == en]
+            
+            if concepts:
+                mdc += f"\n\n## {idx}.{paragraph} Concepts\n\n"
+
+                for ci, (en, nm, defn) in enumerate(concepts, start=1):
+                    mdc += f"\n\n## {idx}.{paragraph}.{ci} {nm}\n\n"
+                    mdc += defn + "\n\n"
+                    
+                    # @todo get the template bindings from XMI
+                
+                paragraph += 1
                 
         elif "PropertySets" in md:
         
@@ -673,10 +701,11 @@ def resource(resource):
                 dicts.append(R.concepts.get(ty, {}))
                 ty = R.entity_supertype.get(ty)
                 
+            # Disabled, we get them from markdown now.
             usage = {}
             # in reverse so that the most-specialized are retained
-            for d in reversed(dicts):
-                usage.update(d)                
+            # for d in reversed(dicts):
+            #     usage.update(d)                
             
             if usage:
                 paragraph += 1

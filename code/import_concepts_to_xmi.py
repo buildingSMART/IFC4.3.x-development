@@ -24,6 +24,53 @@ if __name__ == "__main__":
         if nd.attributes.get(XMI.type) == "uml:Realization":
             realizations.add(frozenset((nd.attributes["supplier"], nd.attributes["client"])))
     ctx._recurse(v)
+        
+    # Property Sets
+    concept_name = "Property Sets for Objects"
+    concept_name_short = concept_name.replace(" ", "")
+    concept_package = ctx.insert(gu_package, append_xmi.uml_package(concept_name_short))
+    
+    key = [k for k in x.grouping.keys() if k[0] == concept_name][0]
+    parameters = key[1:]
+    values = x.grouping[key]
+    
+    for row in values:
+        d = dict(zip([p[0] for p in parameters], row[1:]))
+        
+        if not d.get("PsetName"):
+            continue
+        
+        entity = row[0]
+        pset = d.get("PsetName")
+        
+        if entity == "IfcBuildingElement":
+            entity = "IfcBuiltElement"
+        
+        if d.get("PredefinedType") and d.get("PredefinedType").isupper():
+            pdtype = f"{entity}TypeEnum.{d.get('PredefinedType')}"
+            try:
+                ctx.to_id("uml:Class", pdtype)
+                entity = pdtype
+            except KeyError as e:
+                print(f"Undefined predefined type {pdtype}")
+                continue
+            
+        try:
+            entity_id = ctx.to_id("uml:Class", entity)
+        except KeyError as e:
+            print(f"Undefined entity {entity}")
+            continue
+            
+        try:
+            pset_id = ctx.to_id("uml:Class", pset)
+        except KeyError as e:
+            print(f"Undefined pset {pset}")
+            continue            
+            
+        assoc = append_xmi.uml_assoc_class(f"{entity}{concept_name_short}{pset}", (entity_id, pset_id))
+        ctx.insert(concept_package, assoc)
+            
+    
     
     # Axis Geometry
     axis_geom_package = ctx.insert(gu_package, append_xmi.uml_package("AxisGeometry"))

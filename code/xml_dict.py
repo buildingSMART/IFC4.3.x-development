@@ -53,7 +53,7 @@ def serialize(di, ofn):
         if parent is None:
             node = ET.Element(d.tag, nsmap=d.namespaces)
         else:
-            node = ET.SubElement(parent, d.tag)
+            node = ET.SubElement(parent, d.tag, nsmap=d.namespaces)
 
         if d.text:
             node.text = d.text

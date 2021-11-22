@@ -15,6 +15,11 @@ class xml_node:
     
     def __hash__(self):
         return id(self)
+        
+    def child_with_tag(self, tag):
+        for ch in self.children:
+            if ch.tag == tag:
+                return ch
 
 import lxml.etree as ET
 
@@ -66,4 +71,6 @@ def serialize(di, ofn):
                 
         return node
 
-    ET.ElementTree(inner(di[0])).write(ofn, pretty_print=True, xml_declaration=True)
+    etree = ET.ElementTree(inner(di[0]))
+    ET.indent(etree, "\t")
+    etree.write(ofn, pretty_print=True, xml_declaration=True)

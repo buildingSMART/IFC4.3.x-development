@@ -245,6 +245,7 @@ class xmi_document:
             self.xmi = fn
             
         self.extract_associations()
+        self.extract_associations(concepts=True)
         self.extract_order()
                 
         # Assert that we indeed have all `included_packages` in the UML
@@ -258,30 +259,60 @@ class xmi_document:
             # When no ordering is found in sequences where other elements do have
             # ordering, they are pushed to the back to be consistent with IFC4X3_RC1
             return infinity
+
         
     def skip_by_package(self, element):
-        return False
-        # return not (set(get_path(self.xmi.by_id[element.idref])) & included_packages)
+        return "Views" in get_path(self.xmi.by_id[element.id or element.idref])
         
+        
+    def supertypes(self, eid):
+        yield self.xmi.by_id[eid].name
+        gs = self.xmi.by_id[eid] / "generalization"
+        if gs:
+            yield from self.supertypes(gs[0].general)
+
             
-    def extract_associations(self):
+    def extract_associations(self, concepts=False):
         # Extract some data from the assocations for use later on
-        self.assocations = defaultdict(list)
-        for assoc in self.xmi.by_tag_and_type["packagedElement"]["uml:Association"]:
+        
+        if concepts:
+            self.concepts = defaultdict(lambda: defaultdict(list))
+        else:
+            self.assocations = defaultdict(list)
+        
+        for assoc in self.xmi.by_tag_and_type["packagedElement"]["uml:AssociationClass" if concepts else "uml:Association"]:
+            # @todo n-aray assocs
+            
+            ends = assoc/'ownedEnd'
+            end_types = list(map(lambda c: (c|"type").idref, ends))
             try:
-                c1, c2 = assoc/'ownedEnd'
-            except ValueError as e:
-                logging.warning("encountered exception `%s' on %s", e, assoc)
-                continue
-            t1, t2 = map(lambda c: (c|"type").idref, (c1, c2))
-            try:
-                tv1, tv2 = map(lambda t: self.xmi.by_id[t].name, (t1, t2))
+                end_type_names = list(map(lambda t: self.xmi.by_id[t].name, end_types))
             except KeyError as e:
-                logging.warning("encountered exception `%s' on %s", e, assoc)
-                continue
-            cv1, cv2 = map(operator.attrgetter('name'), (c1, c2))
-            self.assocations[tv1].append(assocation_data(c2, self.xmi.by_id[t2], c1, assoc))
-            self.assocations[tv2].append(assocation_data(c1, self.xmi.by_id[t1], c2, assoc))
+                logging.warning("Encountered exception `%s' on %s", e, assoc)
+                continue            
+            
+            if concepts:
+                parent = get_path(assoc)[-2]
+                
+                is_rooted = lambda tid: "IfcRoot" in self.supertypes(tid)
+                sorted_type_ids = sorted(zip(map(is_rooted, end_types), end_types), reverse=True)
+                sorted_type_ids = tuple(map(operator.itemgetter(1), sorted_type_ids))
+                
+                self.concepts[parent][sorted_type_ids[0]].append(sorted_type_ids[1:])
+                for other in sorted_type_ids[1:]:
+                    self.concepts[parent][other].append(sorted_type_ids[0])
+            else:
+                if len(ends) != 2:                    
+                    logging.warning("Expeced two associations ends on %s", e, assoc)
+                    continue
+                
+                c1, c2 = ends
+                t1, t2 = end_types
+                tv1, tv2 = end_type_names
+                
+                self.assocations[tv1].append(assocation_data(c2, self.xmi.by_id[t2], c1, assoc))
+                self.assocations[tv2].append(assocation_data(c1, self.xmi.by_id[t1], c2, assoc))
+
 
     def extract_order(self):
         self.order = {k: int(v) for k, v in self.xmi.tags["ExpressOrdering"].items()}
@@ -292,7 +323,7 @@ class xmi_document:
         a: an element in EXPRESS_ORDER
         b: an type/entity/function definition string
         """
-               
+        
         for c in (self.xmi.by_tag_and_type["element"]["uml:Class"] + self.xmi.by_tag_and_type["element"]["uml:Interface"] + self.xmi.by_tag_and_type["element"]["uml:Enumeration"] + self.xmi.by_tag_and_type["element"]["uml:DataType"]):
         
             if self.skip_by_package(c):
@@ -340,7 +371,7 @@ class xmi_document:
                 refs = None
                 
                 try:
-                    refs = [next(iter({r.start, r.end} - {c.idref})) for r in (((c|"links")/"Realisation") + ((c|"links")/"Dependency"))]
+                    refs = self.concepts["PropertySetsforObjects"].get(c.id or c.idref)
                 except ValueError as e:
                     print("WARNING:", c.name, "has no associated class", file=sys.stderr)
                     continue

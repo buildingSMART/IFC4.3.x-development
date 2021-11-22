@@ -1,6 +1,8 @@
 import sys
+import glob
 import operator
 
+import xml_dict
 import append_xmi
 import concept_extractor
 
@@ -25,10 +27,52 @@ if __name__ == "__main__":
             realizations.add(frozenset((nd.attributes["supplier"], nd.attributes["client"])))
     ctx._recurse(v)
         
+        
     # Property Sets
+    
     concept_name = "Property Sets for Objects"
     concept_name_short = concept_name.replace(" ", "")
     concept_package = ctx.insert(gu_package, append_xmi.uml_package(concept_name_short))
+    
+    for fn in glob.glob("../reference_schemas/psd/Pset_*.xml"):
+        xd = xml_dict.read(fn)
+        pset = xd.child_with_tag("Name").text
+        appl = [n.text for n in xd.child_with_tag("ApplicableClasses").children]
+        
+        try:
+            pset_id = ctx.to_id("uml:Class", pset)
+        except KeyError as e:
+            print(f"Undefined pset {pset}")
+            continue
+            
+        for entity in appl:
+        
+            if "/" in entity:
+                if "(" in entity:
+                    type_enum = entity.split("/")[1].replace(".)", "").replace("(", "")
+                    if type_enum.startswith("."):
+                        type_enum = entity.split("/")[0] + type_enum
+                else:
+                    parts = entity.split("/")
+                    type_enum = f"{parts[0]}TypeEnum.{parts[1]}"
+                try:
+                    ctx.to_id("uml:Class", type_enum)
+                    entity = type_enum
+                except KeyError as e:
+                    print(f"Undefined type enum {type_enum}")
+                    entity = parts[0]
+    
+            try:
+                entity_id = ctx.to_id("uml:Class", entity)
+            except KeyError as e:
+                print(f"Undefined entity {entity}")
+                continue
+            
+            assoc = append_xmi.uml_assoc_class(f"{entity}{concept_name_short}{pset}", (entity_id, pset_id))
+            ctx.insert(concept_package, assoc)
+    
+    
+    """
     
     key = [k for k in x.grouping.keys() if k[0] == concept_name][0]
     parameters = key[1:]
@@ -69,14 +113,15 @@ if __name__ == "__main__":
             
         assoc = append_xmi.uml_assoc_class(f"{entity}{concept_name_short}{pset}", (entity_id, pset_id))
         ctx.insert(concept_package, assoc)
-            
-    
-    
-    # Axis Geometry
-    axis_geom_package = ctx.insert(gu_package, append_xmi.uml_package("AxisGeometry"))
-    axis_geom = append_xmi.uml_class("AxisGeometry")
+
+    """
+   
+    # Axis (3D) Geometry
+    axis_geom_package = ctx.insert(gu_package, append_xmi.uml_package("Axis3DGeometry"))
+    axis_geom = append_xmi.uml_class("Axis3DGeometry")
     ctx.insert(axis_geom_package, axis_geom)
     
+    keys = [k for k in x.grouping.keys() if k[0].startswith("Axis ") and not "2D" in k[0]]
     axis_concepts = x.concept_starting_with("Axis ")
     axis_entities = set(v[0] for v in axis_concepts)
     
@@ -84,6 +129,24 @@ if __name__ == "__main__":
         ids = [axis_geom.id, ctx.to_id("uml:Class", entity)]
         assoc = append_xmi.uml_assoc_class(f"{entity}AxisGeometryUsage", ids)
         ctx.insert(axis_geom_package, assoc)
+        
+        
+    # Axis 2D Geometry
+    concept_name = "Axis 2D Geometry"
+    concept_name_short = concept_name.replace(" ", "")
+    concept_package = ctx.insert(gu_package, append_xmi.uml_package(concept_name_short))
+    concept_class = append_xmi.uml_class("Axis2DGeometry")
+    ctx.insert(concept_package, concept_class)
+    
+    key = [k for k in x.grouping.keys() if k[0] == concept_name][0]
+    axis_concepts = x.grouping[key]
+    axis_entities = set(v[0] for v in axis_concepts)
+    
+    for entity in axis_entities:
+        ids = [axis_geom.id, ctx.to_id("uml:Class", entity)]
+        assoc = append_xmi.uml_assoc_class(f"{entity}AxisGeometryUsage", ids)
+        ctx.insert(axis_geom_package, assoc)
+        
         
     # Port Nesting
     concept_name = "Port Nesting"
@@ -183,6 +246,7 @@ if __name__ == "__main__":
         assoc = append_xmi.uml_assoc_class(f"{entity}{concept_name_short}Usage", ids, type="uml:Association")
         ctx.insert(concept_package, assoc)
         
+        
     # Object Typing
     concept_name = "Object Typing"
     concept_name_short = concept_name.replace(" ", "")
@@ -193,7 +257,11 @@ if __name__ == "__main__":
     values = x.grouping[key]
     column_id = list(map(operator.itemgetter(0), parameters)).index("RelatingType") + 1
     for ent_ty in [(row[0], row[column_id]) for row in values]:
-        ids = [ctx.to_id("uml:Class", x) for x in ent_ty]
+        try:
+            ids = [ctx.to_id("uml:Class", x) for x in ent_ty]
+        except:
+            print(f"Undefined entity {ent_ty}")
+            continue
         assoc = append_xmi.uml_assoc_class(f"{ent_ty[0]}{concept_name_short}Usage", ids)
         ctx.insert(concept_package, assoc)
         

@@ -154,7 +154,7 @@ def generate_definitions():
             entities.append(item)
             
     for item in psets:
-        refs = item.meta.get('refs', [])
+        refs = item.meta.get('refs') or []
             
         for id in refs:
         

@@ -111,7 +111,7 @@ def get_resource_path(resource, abort_on_error=True):
             return abort(404)
         else:
             return None
-    return os.path.join(REPO_DIR, "docs/schemas", *v, resource + ".md")
+    return os.path.join(REPO_DIR, "docs/schemas", *v, resource + ".md").replace("Property Sets", "PropertySets")
 
 navigation_entries = [
     ("Cover", "Contents", "Foreword", "Introduction"),
@@ -669,7 +669,8 @@ def resource(resource):
         elif "PropertySets" in md:
         
             def make_prop(prop):
-                doc = [x for x in open(os.path.join(REPO_DIR, "properties/%s/%s.md") % (prop['name'][0].lower(), prop['name'])).read().split("\n") if x][-1]
+                # @todo check for file existence
+                doc = [x for x in open(os.path.join(REPO_DIR, "docs/properties/%s/%s.md") % (prop['name'][0].lower(), prop['name'])).read().split("\n") if x][-1]
                 return [prop['name'], prop['type'], doc]
             attrs = list(map(make_prop, R.pset_definitions[resource]['properties']))
             attribute_table = tabulate.tabulate(attrs, headers=("Name", "Type", "Description"), tablefmt='unsafehtml')

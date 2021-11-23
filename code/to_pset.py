@@ -119,7 +119,7 @@ def construct_xml(xmi_doc, pset, path, by_id):
     acs = ET.SubElement(psd, 'ApplicableClasses')
     atv = ET.SubElement(psd, 'ApplicableTypeValue')
     
-    for x in pset.meta.get("refs", []):
+    for x in (pset.meta.get("refs") or []):
         if x in by_id:
             x = by_id[x]
             if x.type == "ENTITY" or (x.parent and x.parent.type == "ENUM"):

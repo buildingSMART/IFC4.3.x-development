@@ -92,6 +92,7 @@ class resource_manager:
     concepts = schema_resource("concepts.json")
     deprecated_entities = schema_resource("deprecated_entities.json", transform=set)
     hierarchy = schema_resource("hierarchy.json")
+    xmi_concepts = schema_resource("xmi_concepts.json")
 
 R = resource_manager()
 
@@ -576,6 +577,8 @@ def resource(resource):
     
     attribute_table = ''
     
+    replacements = []
+    
     with open(md, 'r', encoding='utf-8') as f:
 
         mdc = re.sub(DOC_ANNOTATION_PATTERN, '', f.read())
@@ -649,6 +652,18 @@ def resource(resource):
                     mdc += defn + "\n\n"
                     
                     # @todo get the template bindings from XMI
+                    if nm.replace(" ", "") in R.xmi_concepts:
+                        rows = R.xmi_concepts[nm.replace(" ", "")]
+                        rows = [r for r in rows if r.get("ApplicableEntity") == resource]
+                        if rows:
+                            headers = list(rows[0].keys())
+                            rows = [list(r.values()) for r in rows]
+                            
+                            mdc += f"concept_{nm.replace(' ', '')}\n\n"
+                            
+                            replacements.append((
+                                f"concept_{nm.replace(' ', '')}",
+                                tabulate.tabulate(rows, headers=headers, tablefmt='unsafehtml')))
                 
                 paragraph += 1
                 
@@ -666,7 +681,10 @@ def resource(resource):
             extensions=['tables', 'fenced_code'])
             
         html = html.replace("attribute_table", attribute_table)
-    
+        
+        for from_r, to_r in replacements:
+            html = html.replace(from_r, to_r)
+        
         soup = BeautifulSoup(html)
     
         # First h1 is handled by the template
@@ -754,7 +772,7 @@ def resource(resource):
             
             
                 
-    return render_template('entity.html', navigation=navigation_entries, content=html, number=idx, entity=resource, path=md[len(REPO_DIR):], preface=change_log)
+    return render_template('entity.html', navigation=navigation_entries, content=html, number=idx, entity=resource, path=md[len(REPO_DIR):].replace("\\", "/"), preface=change_log)
 
 @app.route(make_url('listing'))
 def listing():
@@ -770,7 +788,7 @@ def make_concept(path, number_path=None):
     
     children = enumerate(sorted([d for d in os.listdir(os.path.join(md_root, *path)) if os.path.exists(os.path.join(md_root, *path, d, "README.md"))]), 1)
     return toc_entry(
-        url      = make_url("concepts/" + "/".join(path).replace(" ", "_") + "/content.html"),
+        url      = make_url("concepts/" + "/".join(p for p in path if p).replace(" ", "_") + "/content.html"),
         number   = number_path,
         text     = path[-1],
         children = [make_concept(path + [c], number_path=f"{number_path}.{i}") for i, c in children]
@@ -826,9 +844,18 @@ def concept(s=''):
     	html = fn
     	
         
+    if t.replace(" ", "") in R.xmi_concepts:
+        rows = R.xmi_concepts[t.replace(" ", "")]
+        if rows:
+            headers = list(rows[0].keys())
+            rows = [list(r.values()) for r in rows]
+            
+            html += tabulate.tabulate(rows, headers=headers, tablefmt='unsafehtml')            
+
+        
     subs = make_concept(s.split("/")).children
 
-    return render_template('chapter.html', navigation=navigation_entries, content=html, path=fn[len(REPO_DIR):], title=t, number=n, subs=subs)
+    return render_template('chapter.html', navigation=navigation_entries, content=html, path=fn[len(REPO_DIR):].replace("\\", "/"), title=t, number=n, subs=subs)
 
     
 @app.route(make_url('chapter-<n>/'))
@@ -860,7 +887,7 @@ def chapter(n):
     
     subs = list(map(get_entry, enumerate(map(operator.itemgetter(0), subs), 1)))
     
-    return render_template('chapter.html', navigation=navigation_entries, content=html, path=fn[len(REPO_DIR):], title=t, number=n, subs=subs)
+    return render_template('chapter.html', navigation=navigation_entries, content=html, path=fn[len(REPO_DIR):].replace("\\", "/"), title=t, number=n, subs=subs)
     
 
 @app.route('/')
@@ -886,7 +913,7 @@ def content(s='cover'):
             abort(404)
     
     html = markdown.markdown(open(fn).read())
-    return render_template('chapter.html', navigation=navigation_entries, content=html, path=fn[len(REPO_DIR):], title=title, number=number, subs=[])
+    return render_template('chapter.html', navigation=navigation_entries, content=html, path=fn[len(REPO_DIR):].replace("\\", "/"), title=title, number=number, subs=[])
 
     
 @app.route(make_url('annex-a.html'))
@@ -1035,7 +1062,7 @@ def schema(name):
     order = ["Types", "Entities", "Property Sets"]
     subs2 = [toc_entry(o, number=f"{n}.{ii}", children=[toc_entry(c, number=f"{n}.{ii}.{jj}", url=url_for('resource', resource=c)) for jj, c in enumerate(subs.get(o, []), 1)]) for ii, o in enumerate(order,2)]
 
-    return render_template('chapter.html', navigation=navigation_entries, content=html, path=fn[len(REPO_DIR):], title=t, number=n, subs=subs2)
+    return render_template('chapter.html', navigation=navigation_entries, content=html, path=fn[len(REPO_DIR):].replace("\\", "/"), title=t, number=n, subs=subs2)
 
 @app.route('/search', methods=['GET', 'POST'])
 def search():
@@ -1090,7 +1117,7 @@ ifcre = re.compile(r"(Ifc|Pset)\w+(?!(.ht|</a|</h|/|.md))")
 @app.after_request
 def after(response):
     
-    if request.path.endswith('.htm'):    
+    if request.path.endswith('.htm') or request.path.endswith('.html'):
         d = response.data.decode('utf-8')
         
         def decorate_link(m):

@@ -12,8 +12,6 @@ from collections import defaultdict
 from ifcopenshell import mvd
 from ifcopenshell.mvd.mvdxml_expression import node as expression_node
 
-import xlsxwriter
-
 flatten=lambda l: sum(map(flatten,l),[]) if isinstance(l,(list, pyparsing.ParseResults)) else [l]
 
 class capturer:
@@ -78,6 +76,8 @@ class extractor:
             return v
         
     def write_excel(self, fn):
+        import xlsxwriter
+
         workbook = xlsxwriter.Workbook(fn)
         header_format = workbook.add_format({'bg_color': 'black', 'font_color': 'white'})
         postfixes = defaultdict(int)

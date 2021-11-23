@@ -579,7 +579,7 @@ if __name__ == '__main__':
     # Parse XMI file
     UMLobjects = build_uml_schema(xmi, entities_to_retain)
 
-    tex_dir = os.path.join(os.path.dirname(__file__), "..", "output", os.path.basename(xmi_fn))
+    tex_dir = os.path.join(os.path.dirname(xmi_fn), "..", "output", os.path.basename(xmi_fn))
     if not os.path.exists(tex_dir): os.makedirs(tex_dir)
     if not os.path.exists(os.path.join(tex_dir, "tikz-uml.sty")): copyfile(os.path.join(os.path.dirname(__file__), "tikz-uml.sty"), os.path.join(tex_dir, "tikz-uml.sty"))
     
@@ -669,10 +669,12 @@ img {
     # for t in texs:
     #     t.generate_pdf()
     
+    # @NB TEMPORARY: [::32]
+    
     completed = 0
     num = len(texs)
     with concurrent.futures.ThreadPoolExecutor(max_workers=6) as executor:
-        fts = {executor.submit(Tex_object.generate_pdf, t): t for t in texs}
+        fts = {executor.submit(Tex_object.generate_pdf, t): t for t in texs[::32]}
         for future in concurrent.futures.as_completed(fts):
             completed += 1
             print(completed * 100 // num, '%')

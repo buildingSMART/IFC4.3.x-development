@@ -11,7 +11,11 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'scripts'))
 from xmi_document import xmi_document
 from compare_pset import read as read_psd
 
-fn = os.path.join(os.path.dirname(__file__), '..', 'schemas', 'IFC.xml')
+if len(sys.argv) == 2:
+    fn = sys.argv[1]
+else:
+    fn = os.path.join(os.path.dirname(__file__), '..', 'schemas', 'IFC.xml')
+
 xmi_doc = xmi_document(fn)
 
 entity_to_package = {}

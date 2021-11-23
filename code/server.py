@@ -37,6 +37,8 @@ def make_url(fragment): return base + '/' + fragment
 
 identity = lambda x: x
 
+REPO_DIR = os.path.abspath(os.environ.get("REPO_DIR", os.path.join(os.path.dirname(__file__), "..")))
+
 class schema_resource:
     def __init__(self, path, transform=identity):
         self.path = path
@@ -109,7 +111,7 @@ def get_resource_path(resource, abort_on_error=True):
             return abort(404)
         else:
             return None
-    return os.path.join(os.path.dirname(__file__), "../docs/schemas", *v, resource + ".md")
+    return os.path.join(REPO_DIR, "docs/schemas", *v, resource + ".md")
 
 navigation_entries = [
     ("Cover", "Contents", "Foreword", "Introduction"),
@@ -483,7 +485,7 @@ def get_svg(entity, hash):
 
 @app.route(make_url('figures/<fig>'))
 def get_figure(fig):
-    return send_from_directory('../docs/figures', fig)
+    return send_from_directory(os.path.join(REPO_DIR, 'docs/figures'), fig)
 
 
 DOC_ANNOTATION_PATTERN = re.compile(r'\{\s*\..+?\}')
@@ -653,7 +655,7 @@ def resource(resource):
         elif "PropertySets" in md:
         
             def make_prop(prop):
-                doc = [x for x in open(md_root + "/../properties/%s/%s.md" % (prop['name'][0].lower(), prop['name'])).read().split("\n") if x][-1]
+                doc = [x for x in open(os.path.join(REPO_DIR, "properties/%s/%s.md") % (prop['name'][0].lower(), prop['name'])).read().split("\n") if x][-1]
                 return [prop['name'], prop['type'], doc]
             attrs = list(map(make_prop, R.pset_definitions[resource]['properties']))
             attribute_table = tabulate.tabulate(attrs, headers=("Name", "Type", "Description"), tablefmt='unsafehtml')
@@ -752,7 +754,7 @@ def resource(resource):
             
             
                 
-    return render_template('entity.html', navigation=navigation_entries, content=html, number=idx, entity=resource, path=md[27:], preface=change_log)
+    return render_template('entity.html', navigation=navigation_entries, content=html, number=idx, entity=resource, path=md[len(REPO_DIR):], preface=change_log)
 
 @app.route(make_url('listing'))
 def listing():
@@ -761,8 +763,7 @@ def listing():
 
     
 def make_concept(path, number_path=None):
-    print("path", path)
-    md_root = "../docs/templates"
+    md_root = os.path.join(REPO_DIR, "docs/templates")
     
     if number_path is None:
         number_path = "4"
@@ -779,7 +780,7 @@ def make_concept(path, number_path=None):
 @app.route(make_url('concepts/content.html'))
 @app.route(make_url('concepts/<path:s>/content.html'))
 def concept(s=''):
-    md_root = "../docs/templates"
+    md_root = os.path.join(REPO_DIR, "docs/templates")
     
     s = s.replace("_", " ")
     
@@ -827,7 +828,7 @@ def concept(s=''):
         
     subs = make_concept(s.split("/")).children
 
-    return render_template('chapter.html', navigation=navigation_entries, content=html, path=fn[3:], title=t, number=n, subs=subs)
+    return render_template('chapter.html', navigation=navigation_entries, content=html, path=fn[len(REPO_DIR):], title=t, number=n, subs=subs)
 
     
 @app.route(make_url('chapter-<n>/'))
@@ -837,7 +838,7 @@ def chapter(n):
     
     chp = chapter_lookup(number=n)
     t = chp.get('title')
-    md_root = "../docs/schemas"
+    md_root = os.path.join(REPO_DIR, "docs/schemas")
     cat = t.split(" ")[0].lower()
     
     fn = os.path.join(md_root, cat, "README.md")
@@ -859,13 +860,13 @@ def chapter(n):
     
     subs = list(map(get_entry, enumerate(map(operator.itemgetter(0), subs), 1)))
     
-    return render_template('chapter.html', navigation=navigation_entries, content=html, path=fn[3:], title=t, number=n, subs=subs)
+    return render_template('chapter.html', navigation=navigation_entries, content=html, path=fn[len(REPO_DIR):], title=t, number=n, subs=subs)
     
 
 @app.route('/')
 @app.route(make_url('content/<s>.htm'))
 def content(s='cover'):
-    fn = "../content"
+    fn = os.path.join(REPO_DIR, "content")
     fn = os.path.join(fn, s + ".md")
     
     if not os.path.exists(fn):
@@ -885,7 +886,7 @@ def content(s='cover'):
             abort(404)
     
     html = markdown.markdown(open(fn).read())
-    return render_template('chapter.html', navigation=navigation_entries, content=html, path=fn[3:], title=title, number=number, subs=[])
+    return render_template('chapter.html', navigation=navigation_entries, content=html, path=fn[len(REPO_DIR):], title=title, number=number, subs=[])
 
     
 @app.route(make_url('annex-a.html'))
@@ -962,7 +963,7 @@ def annex_c():
     
 @app.route(make_url('annex-d.html'))
 def annex_d():
-    subs = map(os.path.basename, glob.glob("../output/IFC.xml/*.png"))
+    subs = map(os.path.basename, glob.glob(os.path.join(REPO_DIR, "output/IFC.xml/*.png")))
     subs = [toc_entry(s[:-4], url=url_for('annex_d_diagram_page', s=s[:-4]), number="D-%d" % i) for i, s in enumerate(sorted(subs), start=1)]
     return render_template('chapter.html', navigation=navigation_entries, content='<h2>Diagrams</h2>', path=None, title="Annex D", number="", subs=subs)
     
@@ -973,12 +974,12 @@ def annex_d_diagram_page(s):
 
 @app.route(make_url('annex_d/<s>.png'))
 def annex_d_diagram(s):
-    return send_from_directory("../output/IFC.xml", s + ".png")
+    return send_from_directory(os.path.join(REPO_DIR, "output/IFC.xml"), s + ".png")
 
 
 @app.route(make_url('annex-e.html'))
 def annex_e():
-    subs = map(os.path.basename, filter(os.path.isdir, glob.glob("../../examples/IFC 4.3/*")))
+    subs = map(os.path.basename, filter(os.path.isdir, glob.glob(os.path.join(REPO_DIR, "../examples/IFC 4.3/*"))))
     subs = sorted(toc_entry(s, url=url_for('annex_e_example_page', s=s)) for s in subs)
     return render_template('chapter.html', navigation=navigation_entries, content='<h2>Examples</h2>', path=None, title="Annex E", number="", subs=subs)
 
@@ -995,13 +996,13 @@ def annex_f():
     
 @app.route(make_url('annex_e/<s>.html'))
 def annex_e_example_page(s):
-    subs = map(os.path.basename, filter(os.path.isdir, glob.glob("../../examples/IFC 4.3/*")))
+    subs = map(os.path.basename, filter(os.path.isdir, os.path.join(REPO_DIR, glob.glob("../examples/IFC 4.3/*"))))
     if s not in subs:
         abort(404)
     
-    fn = glob.glob(os.path.join("../../examples/IFC 4.3", s, "*.md"))[0]
+    fn = glob.glob(os.path.join(REPO_DIR, "../examples/IFC 4.3", s, "*.md"))[0]
     html = '<p></p>' + markdown.markdown(open(fn).read(), extensions=['tables', 'fenced_code'])
-    code = open(glob.glob(os.path.join("../../examples/IFC 4.3", s, "*.ifc"))[0]).read()
+    code = open(glob.glob(os.path.join(REPOSE_DIR, "../examples/IFC 4.3", s, "*.ifc"))[0]).read()
     html += "<h2>Source</h2>"
     html += "<pre>" + code + "</pre>"
     path_repo = 'buildingSMART/Sample-Test-Files'
@@ -1010,7 +1011,7 @@ def annex_e_example_page(s):
 
 @app.route(make_url('<name>/content.html'))
 def schema(name):
-    md_root = "../docs/schemas"
+    md_root = os.path.join(REPO_DIR, "docs/schemas")
     
     cat_full, schemas = [(t, itms) for t, itms in R.hierarchy if name in [i[0].lower() for i in itms]][0]
     cat = cat_full.split(" ")[0].lower()
@@ -1034,7 +1035,7 @@ def schema(name):
     order = ["Types", "Entities", "Property Sets"]
     subs2 = [toc_entry(o, number=f"{n}.{ii}", children=[toc_entry(c, number=f"{n}.{ii}.{jj}", url=url_for('resource', resource=c)) for jj, c in enumerate(subs.get(o, []), 1)]) for ii, o in enumerate(order,2)]
 
-    return render_template('chapter.html', navigation=navigation_entries, content=html, path=fn[5:], title=t, number=n, subs=subs2)
+    return render_template('chapter.html', navigation=navigation_entries, content=html, path=fn[len(REPO_DIR):], title=t, number=n, subs=subs2)
 
 @app.route('/search', methods=['GET', 'POST'])
 def search():

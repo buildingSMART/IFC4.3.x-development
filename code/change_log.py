@@ -88,14 +88,20 @@ def compare_schemas(s0, s1):
 
 if __name__ == "__main__":
     import os
+    import sys
     import json
     import operator
     import itertools
     import functools
     
     from ifcopenshell.express import express_parser
+    
+    try:
+        repo_dir = sys.argv[1]
+    except:
+        repo_dir = os.path.join(os.path.dirname(__file__), "..")
 
-    d = os.path.join(os.path.dirname(__file__), "..", "reference_schemas")
+    d = os.path.join(repo_dir, "reference_schemas")
     names = [
         "IFC2X3_TC1.exp",
         "IFC4_ADD2_TC1.exp",

@@ -49,7 +49,11 @@ logging.basicConfig(level=logging.WARNING, stream=sys.stdout)
 SCHEMA_NAME = "IFC4X3_DEV"
 
 try:
-    sha = subprocess.check_output(["git", "rev-parse", "--short", "HEAD"]).decode('ascii').strip()
+    if os.environ.get("REPO_DIR"):
+        repo_dir = "-C", os.environ.get("REPO_DIR")
+    else:
+        repo_dir = []
+    sha = subprocess.check_output(["git", *repo_dir, "rev-parse", "--short", "HEAD"]).decode('ascii').strip()
     SCHEMA_NAME += f"_{sha}"
 except: pass
 

@@ -303,7 +303,7 @@ class xmi_document:
                     self.concepts[parent][other].append(sorted_type_ids[0])
             else:
                 if len(ends) != 2:                    
-                    logging.warning("Expeced two associations ends on %s", e, assoc)
+                    logging.warning("Expeced two associations ends on %s", assoc)
                     continue
                 
                 c1, c2 = ends

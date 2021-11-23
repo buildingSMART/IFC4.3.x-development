@@ -22,18 +22,15 @@ RUN git clone https://github.com/opensourceBIM/python-mvdxml/ `python3 -c 'impor
 RUN git clone https://github.com/buildingSMART/Sample-Test-Files /examples
 
 RUN git clone https://github.com/buildingSMART/IFC4.3.x-development /ifc43
+ENV REPO_DIR=/ifc43
 
-ADD *.py tikz-uml.sty /ifc43/code/
-ADD templates/* /ifc43/server/templates/
+ADD *.py tikz-uml.sty /code/
+ADD templates/* /code/templates/
 
-WORKDIR /ifc43/code
+WORKDIR /code
+
 RUN mkdir svgs
 RUN mkdir psd
-
-RUN python3 to_pset.py ../schemas/IFC.xml psd/
-RUN python3 parse_xmi.py
-RUN python3 parse_mvd.py
-RUN python3 change_log.py
 
 COPY supervisord.conf /etc/supervisord.conf
 

@@ -54,8 +54,7 @@ class schema_resource:
                     self.data = self.transform(json.load(open(self.path, encoding="utf-8")))
                     self.mtime = mt
             except:
-                import traceback
-                traceback.print_exc()
+                print("Path", self.path, "not available")
                 abort(503)
                 
             return fn(self, *args)

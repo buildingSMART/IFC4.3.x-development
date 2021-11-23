@@ -23,6 +23,7 @@ while True:
         subprocess.call(["/solr-8.6.3/bin/solr", "create_core", "-force", "-c", "ifc"])
         subprocess.call(["/solr-8.6.3/bin/post", "-c", "ifc", XML_PATH])
         
+        subprocess.call([sys.executable, "extract_concepts_from_xmi.py", os.path.join(REPO_DIR, "schemas/IFC.xml")])
         subprocess.call([sys.executable, "to_pset.py", os.path.join(REPO_DIR, "schemas/IFC.xml"), "psd/"])
         subprocess.call([sys.executable, "parse_xmi.py", os.path.join(REPO_DIR, "schemas/IFC.xml")])
         subprocess.call([sys.executable, "parse_mvd.py", os.path.join(REPO_DIR, "mvdXML/IFC4_ADD2.mvdxml")])

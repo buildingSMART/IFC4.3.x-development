@@ -281,6 +281,7 @@ class xmi_document:
         
         if concepts:
             self.concepts = defaultdict(lambda: defaultdict(list))
+            self.concept_associations = defaultdict(list)
         else:
             self.assocations = defaultdict(list)
         
@@ -298,6 +299,8 @@ class xmi_document:
             if concepts:
                 parent = get_path(assoc)[-2]
                 
+                self.concept_associations[parent].append(end_types)
+                
                 is_rooted = lambda tid: "IfcRoot" in self.supertypes(tid)
                 sorted_type_ids = sorted(zip(map(is_rooted, end_types), end_types), reverse=True)
                 sorted_type_ids = tuple(map(operator.itemgetter(1), sorted_type_ids))
@@ -305,6 +308,7 @@ class xmi_document:
                 self.concepts[parent][sorted_type_ids[0]].append(sorted_type_ids[1:])
                 for other in sorted_type_ids[1:]:
                     self.concepts[parent][other].append(sorted_type_ids[0])
+                    
             else:
                 if len(ends) != 2:                    
                     logging.warning("Expeced two associations ends on %s", assoc)

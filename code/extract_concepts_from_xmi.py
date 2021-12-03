@@ -43,12 +43,8 @@ def get_predefined_types_for_entity(e):
 
 result = defaultdict(list)
 
-all_templates = glob.glob("../docs/templates/**/*.md", recursive=True)
-
-
-def can_be_assigned_to():
-    pass
-    
+all_templates = glob.glob(os.path.join(os.path.dirname(fn), "../docs/templates/**/*.md"), recursive=True)
+  
     
 def flatten(iterable):
     if isinstance(iterable, (list, tuple)):

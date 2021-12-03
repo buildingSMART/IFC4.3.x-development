@@ -36,28 +36,30 @@ def format_TypeComplexProperty(prop):
 
 format_TypePropertyBoundedValue = format_TypePropertySingleValue
 
-for fn in os.listdir("../reference_schemas/psd"):
-    fn = os.path.join("../reference_schemas/psd", fn)
-    
-    xml = read(fn)
+if __name__ == "__main__":
 
-    psetname = child_by_tag(xml, "Name")["#text"]
-    try:
-        classes = " ".join(map(operator.itemgetter("#text"), child_by_tag(xml, "ApplicableClasses")["_children"]))
-    except:
-        classes = "-"
+    for fn in os.listdir("../reference_schemas/psd"):
+        fn = os.path.join("../reference_schemas/psd", fn)
+        
+        xml = read(fn)
 
-    if xml['#tag'] == 'PropertySetDef':
-        for prop in child_by_tag(xml, 'PropertyDefs')["_children"]:
-            propname = child_by_tag(prop, "Name")["#text"]
-            proptypenode = child_by_tag(prop, 'PropertyType')["_children"][0]
-            proptype = proptypenode["#tag"]
-            proptypeargs = globals()[f"format_{proptype}"](proptypenode)
-            proptypeifc = f"Ifc{proptype[4:]}"
+        psetname = child_by_tag(xml, "Name")["#text"]
+        try:
+            classes = " ".join(map(operator.itemgetter("#text"), child_by_tag(xml, "ApplicableClasses")["_children"]))
+        except:
+            classes = "-"
 
-            properties_by_type[proptypeifc].append((psetname, classes, propname, proptypeargs))
+        if xml['#tag'] == 'PropertySetDef':
+            for prop in child_by_tag(xml, 'PropertyDefs')["_children"]:
+                propname = child_by_tag(prop, "Name")["#text"]
+                proptypenode = child_by_tag(prop, 'PropertyType')["_children"][0]
+                proptype = proptypenode["#tag"]
+                proptypeargs = globals()[f"format_{proptype}"](proptypenode)
+                proptypeifc = f"Ifc{proptype[4:]}"
 
-for k, vs in properties_by_type.items():
-    with open(f"{k}.csv", 'w') as f:
-        for v in vs:
-            print(",".join(v), file=f)
+                properties_by_type[proptypeifc].append((psetname, classes, propname, proptypeargs))
+
+    for k, vs in properties_by_type.items():
+        with open(f"{k}.csv", 'w') as f:
+            for v in vs:
+                print(",".join(v), file=f)

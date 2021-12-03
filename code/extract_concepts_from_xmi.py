@@ -1,6 +1,8 @@
 import os
 import sys
 import json
+import re
+import glob
 
 from collections import defaultdict
 
@@ -41,6 +43,49 @@ def get_predefined_types_for_entity(e):
 
 result = defaultdict(list)
 
+all_templates = glob.glob("../docs/templates/**/*.md", recursive=True)
+
+
+def can_be_assigned_to():
+    pass
+    
+    
+def flatten(iterable):
+    if isinstance(iterable, (list, tuple)):
+        for x in iterable:
+            yield from flatten(x)
+    else:
+        yield iterable
+
+
+def get_all_attributes(nm):
+    d = dict(definitions_by_name[nm].definition.attributes)
+    for inv in definitions_by_name["IfcObject"].definition.inverses:
+        k,v = inv.split(" : ")
+        k = k.strip()
+        v = re.findall('OF (\w+)', v)[0]
+        d[k] = v
+    st = definitions_by_name[nm].definition.supertype
+    if st:
+        d.update(get_all_attributes(st))
+    return d
+
+
+def parse_bindings(concept):
+    tmpl = [t for t in all_templates if os.path.abspath(t).split(os.sep)[-2].lower().replace(" ", "") == concept.lower()][0]
+    concept_block = re.findall(r"concept\s*\{.+?\}", open(tmpl, encoding='utf-8').read(), flags=re.S)[0]
+    for a,b,c in re.findall(r'(\w+):(\w+)\[binding="(.+?)"\]', concept_block):
+        t = get_all_attributes(a).get(b).replace("OPTIONAL ", "")
+        yield c, (a,b), xmi_doc.xmi.by_id[definitions_by_name[t].id]
+    
+
+def yield_supertypes(a):
+    yield a
+    try:
+        yield from yield_supertypes(xmi_doc.xmi.by_id[(a | "generalization").general])
+    except: pass
+
+
 for xmi_concept, v in xmi_doc.concepts.items():
     for e in entities:
         
@@ -65,5 +110,29 @@ for xmi_concept, v in xmi_doc.concepts.items():
                             binding = (binding,)
                         others = list(map(xmi_doc.xmi.by_id.__getitem__, binding))
                         result[xmi_concept].append(dict(zip(binding_names, [e.name, pt.split(".")[1], others[0].name])))
+                    
+for xmi_concept, pairs in xmi_doc.concept_associations.items():
+    if xmi_concept == "ObjectTyping":
+        bindings = list(parse_bindings(xmi_concept))
+        
+        for p in pairs:
+            elems = tuple(map(xmi_doc.xmi.by_id.__getitem__, p))
+            
+            def get_binding(el):
+                for nm, attr, nd in bindings:
+                    if nd in set(yield_supertypes(el)):
+                        return nm
+                        
+            elem_binds = list(map(get_binding, elems))
+            
+            # a single element should not be bound, that is the ApplicableEntity
+            assert len([x for x in elem_binds if x is None]) == 1
+            elem_binds[elem_binds.index(None)] = "ApplicableEntity"
+            
+            binding_names = ["ApplicableEntity"] + [b[0] for b in bindings if b[0] in elem_binds]
+            elem_names = [e.name for e in elems]
+            d = {x: elem_names[elem_binds.index(x)] for x in binding_names}
+            
+            result[xmi_concept].append(d)
 
 json.dump(result, open("xmi_concepts.json", "w", encoding="utf-8"), indent=1)

@@ -1,5 +1,6 @@
 import uuid
 import itertools
+import functools
 
 from dataclasses import dataclass, field
 from itertools import zip_longest as zip_l
@@ -27,7 +28,8 @@ class uml_package:
     name : str
     id : str = field(default_factory=new_id)
     
-    def to_xml(self):
+    @functools.cached_property
+    def xml(self):
         return xml_dict.xml_node(
             tag = 'packagedElement',
             attributes = {
@@ -43,7 +45,8 @@ class uml_class:
     name : str
     id : str = field(default_factory=new_id)
     
-    def to_xml(self):
+    @functools.cached_property
+    def xml(self):
         return xml_dict.xml_node(
             tag = 'packagedElement',
             attributes = {
@@ -60,7 +63,8 @@ class uml_enumeration:
     values : list
     id : str = field(default_factory=new_id)
     
-    def to_xml(self):
+    @functools.cached_property
+    def xml(self):
         return xml_dict.xml_node(
             tag = 'packagedElement',
             attributes = {
@@ -80,18 +84,21 @@ class uml_enumeration:
             ]
         )
     
+# @todo mutable: inserts into owner.children
 def create_connector(assoc_id):
-    def inner(type_id_connector_id):
+    def inner(type_id_connector_id, owner):
         # @todo flatstarmap?
         type_id, connector_id = type_id_connector_id
-        return [
+        li = [
             xml_dict.xml_node(
                 tag = 'memberEnd',
                 attributes = {
                     XMI.idref: connector_id,
                 }
-            ),
-            xml_dict.xml_node(
+            )
+        ]
+        if owner is None:
+            li.append(xml_dict.xml_node(
                 tag = 'ownedEnd',
                 attributes = {
                     XMI.type: 'uml:Property',
@@ -106,9 +113,28 @@ def create_connector(assoc_id):
                         }
                     )
                 ]
-            )
-        ]
+            ))
+        else:
+            owner.children.append(xml_dict.xml_node(
+                tag = 'ownedAttribute',
+                attributes = {
+                    XMI.type: 'uml:Property',
+                    XMI.id: connector_id,
+                    "association": assoc_id
+                },
+                children = [
+                    xml_dict.xml_node(
+                        tag = 'type',
+                        attributes = {
+                            XMI.idref: type_id,
+                        }
+                    )
+                ]
+            ))
+            
+        return li
     return inner
+    
     
 @dataclass
 class uml_assoc_class:
@@ -117,10 +143,13 @@ class uml_assoc_class:
     id : str = field(default_factory=new_id)
     connector_ids : list = None
     type : str = "uml:AssociationClass"
+    owners : list = None
     
-    def to_xml(self):
+    @functools.cached_property
+    def xml(self):
     
         c_ids = [cid or new_id() for _, cid in zip_l(self.connector_types, self.connector_ids or [])]
+        owners = [None] * len(c_ids)
         
         return xml_dict.xml_node(
             tag = 'packagedElement',
@@ -130,7 +159,32 @@ class uml_assoc_class:
                 'name': self.name,
                 'visibility': 'public'
             },
-            children = list(flatmap(create_connector(self.id), zip(self.connector_types, c_ids)))
+            children = list(flatmap(create_connector(self.id), zip(self.connector_types, c_ids), owners))
+        )
+        
+        
+@dataclass
+class uml_association:
+    connector_types : list
+    id : str = field(default_factory=new_id)
+    connector_ids : list = None
+    type : str = "uml:Association"
+    owners : list = None
+    
+    @functools.cached_property
+    def xml(self):
+    
+        c_ids = [cid or new_id() for _, cid in zip_l(self.connector_types, self.connector_ids or [])]
+        owners = self.owners or ([None] * len(c_ids))
+        
+        return xml_dict.xml_node(
+            tag = 'packagedElement',
+            attributes = {
+                XMI.type: self.type,
+                XMI.id: self.id,
+                'visibility': 'public'
+            },
+            children = list(flatmap(create_connector(self.id), zip(self.connector_types, c_ids), owners))
         )
         
         
@@ -140,7 +194,8 @@ class uml_realization:
     client : str
     id : str = field(default_factory=new_id)
     
-    def to_xml(self):        
+    @functools.cached_property
+    def xml(self):        
         return xml_dict.xml_node(
             tag = 'packagedElement',
             attributes = {
@@ -199,7 +254,7 @@ class context:
         return self._recurse(v)
         
     def insert(self, location, element):
-        nd = element.to_xml()
+        nd = element.xml
         location.children.append(nd)
         nd.parent = location
         return nd

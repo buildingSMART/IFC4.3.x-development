@@ -15,9 +15,12 @@ if __name__ == "__main__":
     fn = sys.argv[1]
     
     ctx = append_xmi.context("..\schemas\IFC.xml")
-    ifc_package = ctx.package_by_name("IFC4x3_RC4")
-    views_package = ctx.insert(ifc_package, append_xmi.uml_package("Views"))
-    gu_package = ctx.insert(views_package, append_xmi.uml_package("GeneralUsage"))
+    try:
+        gu_package = ctx.package_by_name("GeneralUsage")
+    except:
+        ifc_package = ctx.package_by_name("IFC4x3_RC4")
+        views_package = ctx.insert(ifc_package, append_xmi.uml_package("Views"))
+        gu_package = ctx.insert(views_package, append_xmi.uml_package("GeneralUsage"))
     
     x = concept_extractor.extractor(fn)
     

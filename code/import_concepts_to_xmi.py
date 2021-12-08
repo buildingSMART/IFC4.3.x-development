@@ -1,6 +1,7 @@
 import sys
 import glob
 import operator
+import itertools
 
 import xml_dict
 import append_xmi
@@ -29,6 +30,37 @@ if __name__ == "__main__":
         if nd.attributes.get(XMI.type) == "uml:Realization":
             realizations.add(frozenset((nd.attributes["supplier"], nd.attributes["client"])))
     ctx._recurse(v)
+    
+    concept_name = "Spatial Containment"
+    concept_name_short = concept_name.replace(" ", "")
+    concept_package = ctx.insert(gu_package, append_xmi.uml_package(concept_name_short))
+    
+    key = [k for k in x.grouping.keys() if k[0] == concept_name][0]
+    parameters = key[1:]
+    values = x.grouping[key]
+    
+    itertools.groupby(sorted([v[0:2] for v in values]), key=operator.itemgetter(0))
+    mapping = dict([(g, frozenset([vv[1] for vv in vs])) for g, vs in itertools.groupby(sorted([v[0:2] for v in values]), key=operator.itemgetter(0))])
+    options = set(mapping.values())
+    option_to_class = {}
+    
+    for opt in options:
+        nm = "".join(o[3:] for o in sorted(opt))
+        opt_class = append_xmi.uml_class(nm)
+        option_to_class[opt] = opt_class
+        ctx.insert(concept_package, opt_class)
+        for entity in opt:
+            ctx.insert(concept_package, append_xmi.uml_association(
+                [opt_class.id, ctx.to_id("uml:Class", entity)],
+                owners = [None, opt_class.xml]
+            ))
+            
+    for appl, opt in mapping.items():
+        ent_class = ctx.to_node[("uml:Class", appl)]
+        ctx.insert(concept_package, append_xmi.uml_association(
+            [ent_class.attributes[XMI.id], option_to_class[opt].id],
+            owners = [None, ent_class]
+        ))
         
         
     # Property Sets

@@ -82,6 +82,13 @@ def yield_supertypes(a):
     except: pass
 
 
+def make_get_binding(bindings):
+    def inner(el):
+        for nm, attr, nd in bindings:
+            if nd in set(yield_supertypes(el)):
+                return nm
+    return inner
+
 for xmi_concept, v in xmi_doc.concepts.items():
     for e in entities:
         
@@ -106,19 +113,25 @@ for xmi_concept, v in xmi_doc.concepts.items():
                             binding = (binding,)
                         others = list(map(xmi_doc.xmi.by_id.__getitem__, binding))
                         result[xmi_concept].append(dict(zip(binding_names, [e.name, pt.split(".")[1], others[0].name])))
+
+    if xmi_concept == "SpatialContainment":
+        bindings = list(parse_bindings(xmi_concept))
+        get_binding = make_get_binding(bindings)
+        for k, vs in v.items():
+            for vv in vs:
+                d = {
+                    'ApplicableEntity': xmi_doc.xmi.by_id[k].name,
+                    get_binding(xmi_doc.xmi.by_id[vv]): xmi_doc.xmi.by_id[vv].name
+                }
+                result[xmi_concept].append(d)
                     
 for xmi_concept, pairs in xmi_doc.concept_associations.items():
     if xmi_concept == "ObjectTyping":
         bindings = list(parse_bindings(xmi_concept))
+        get_binding = make_get_binding(bindings)
         
         for p in pairs:
             elems = tuple(map(xmi_doc.xmi.by_id.__getitem__, p))
-            
-            def get_binding(el):
-                for nm, attr, nd in bindings:
-                    if nd in set(yield_supertypes(el)):
-                        return nm
-                        
             elem_binds = list(map(get_binding, elems))
             
             # a single element should not be bound, that is the ApplicableEntity
@@ -130,5 +143,6 @@ for xmi_concept, pairs in xmi_doc.concept_associations.items():
             d = {x: elem_names[elem_binds.index(x)] for x in binding_names}
             
             result[xmi_concept].append(d)
+
 
 json.dump(result, open("xmi_concepts.json", "w", encoding="utf-8"), indent=1)

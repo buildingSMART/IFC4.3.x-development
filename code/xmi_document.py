@@ -33,6 +33,7 @@ import html
 
 import operator
 import functools
+import itertools
 import subprocess
 
 from collections import defaultdict, namedtuple, Counter
@@ -284,11 +285,15 @@ class xmi_document:
             self.concept_associations = defaultdict(list)
         else:
             self.assocations = defaultdict(list)
+            self.assoc_from = defaultdict(list)
+            self.assoc_to = defaultdict(list)
         
         for assoc in self.xmi.by_tag_and_type["packagedElement"]["uml:AssociationClass" if concepts else "uml:Association"]:
             # @todo n-aray assocs
             
-            ends = assoc/'ownedEnd'
+            mends = assoc/'memberEnd'
+            ends = [self.xmi.by_id[mend.idref] for mend in mends]
+            is_source = [e.xml.tagName == "ownedEnd" for e in ends]
             end_types = list(map(lambda c: (c|"type").idref, ends))
             try:
                 end_type_names = list(map(lambda t: self.xmi.by_id[t].name, end_types))
@@ -318,9 +323,23 @@ class xmi_document:
                 t1, t2 = end_types
                 tv1, tv2 = end_type_names
                 
+                for is_s, from_id, to_id in zip(is_source, end_types, reversed(end_types)):
+                    if is_s:
+                        self.assoc_from[from_id].append(to_id)
+                    else:
+                        self.assoc_to[from_id].append(to_id)
+                
                 self.assocations[tv1].append(assocation_data(c2, self.xmi.by_id[t2], c1, assoc))
                 self.assocations[tv2].append(assocation_data(c1, self.xmi.by_id[t1], c2, assoc))
 
+        if concepts:
+            for inter in self.xmi.by_tag_and_type["packagedElement"]["uml:Class"]:
+                pt = get_path(inter)
+                if "Views" in pt:
+                    parent = pt[-2]
+                    for ff, tt in itertools.product(self.assoc_to[inter.id], self.assoc_from[inter.id]):
+                        self.concepts[parent][ff].append(tt)
+                            
 
     def extract_order(self):
         self.order = {k: int(v) for k, v in self.xmi.tags["ExpressOrdering"].items()}

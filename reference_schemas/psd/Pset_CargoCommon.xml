@@ -12,7 +12,7 @@
   <PropertyDefs>
     <PropertyDef ifdguid="3c8560a7e9dc4706acfb468a77f65fdc">
       <Name>ProcessItem</Name>
-      <Definition>The type of cargo (and its measurement method) being modelled within a process.</Definition>
+      <Definition>The type of item (and its measurement method) being modelled within a process. This can be cargo, passengers or vehicles that pass through the system.</Definition>
       <PropertyType>
         <TypePropertySingleValue>
           <DataType type="PEnum_ProcessItem" />
@@ -38,22 +38,36 @@
               <NameAliases>
                 <NameAlias lang="en">None</NameAlias>
               </NameAliases>
-              <DefinitionAliases />
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">None, empty or no additional action or function.</DefinitionAlias>
+              </DefinitionAliases>
             </ConstantDef>
             <ConstantDef>
               <Name>INSPECTION</Name>
-              <NameAliases />
-              <DefinitionAliases />
+              <NameAliases>
+                <NameAlias lang="en">Inspection</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Additional Inspections required.</DefinitionAlias>
+              </DefinitionAliases>
             </ConstantDef>
             <ConstantDef>
               <Name>TARIFFS</Name>
-              <NameAliases />
-              <DefinitionAliases />
+              <NameAliases>
+                <NameAlias lang="en">Tariffs</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Time to process additional tariffs required.</DefinitionAlias>
+              </DefinitionAliases>
             </ConstantDef>
             <ConstantDef>
               <Name>ISOLATION</Name>
-              <NameAliases />
-              <DefinitionAliases />
+              <NameAliases>
+                <NameAlias lang="en">Isolation</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Quarantine or isolation period required.</DefinitionAlias>
+              </DefinitionAliases>
             </ConstantDef>
           </ConstantList>
         </TypePropertyEnumeratedValue>
@@ -74,18 +88,30 @@
           <ConstantList>
             <ConstantDef>
               <Name>IMPORT</Name>
-              <NameAliases />
-              <DefinitionAliases />
+              <NameAliases>
+                <NameAlias lang="en">Import</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Process direction import into facility.</DefinitionAlias>
+              </DefinitionAliases>
             </ConstantDef>
             <ConstantDef>
               <Name>EXPORT</Name>
-              <NameAliases />
-              <DefinitionAliases />
+              <NameAliases>
+                <NameAlias lang="en">Export</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Process direction export from facility.</DefinitionAlias>
+              </DefinitionAliases>
             </ConstantDef>
             <ConstantDef>
               <Name>TRANSFER</Name>
-              <NameAliases />
-              <DefinitionAliases />
+              <NameAliases>
+                <NameAlias lang="en">Transfer</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Process is an intermediatory transfer with the facility</DefinitionAlias>
+              </DefinitionAliases>
             </ConstantDef>
           </ConstantList>
         </TypePropertyEnumeratedValue>

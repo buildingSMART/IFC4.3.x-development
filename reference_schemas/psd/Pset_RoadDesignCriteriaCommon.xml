@@ -4,7 +4,20 @@
   <Name>Pset_RoadDesignCriteriaCommon</Name>
   <Definition>Road design criteria that may be attached to road parts.</Definition>
   <Applicability />
-  <ApplicableClasses />
+  <ApplicableClasses>
+    <ClassName>IfcRoad</ClassName>
+    <ClassName>IfcFacilityPart/IfcRoadPartTypeEnum(.ROADSEGMENT.)</ClassName>
+    <ClassName>IfcFacilityPart/IfcFacilityPartCommonTypeEnum(.SEGMENT.)</ClassName>
+    <ClassName>IfcFacilityPart/IfcFacilityPartCommonTypeEnum(.JUNCTION.)</ClassName>
+    <ClassName>IfcFacilityPart/IfcFacilityPartCommonTypeEnum(.LEVELCROSSING.)</ClassName>
+    <ClassName>IfcFacilityPart/IfcRoadPartTypeEnum(.RAILWAYCROSSING.)</ClassName>
+    <ClassName>IfcFacilityPart/IfcRoadPartTypeEnum(.PEDESTRIAN_CROSSING.)</ClassName>
+    <ClassName>IfcFacilityPart/IfcRoadPartTypeEnum(.BICYCLECROSSING.)</ClassName>
+    <ClassName>IfcFacilityPart/IfcRoadPartTypeEnum(.ROUNDABOUT.)</ClassName>
+    <ClassName>IfcFacilityPart/IfcRoadPartTypeEnum(.INTERSECTION.)</ClassName>
+    <ClassName>IfcFacilityPart/IfcRoadPartTypeEnum(.TOLLPLAZA.)</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcRoad,IfcFacilityPart/IfcRoadPartTypeEnum(.ROADSEGMENT.),IfcFacilityPart/IfcFacilityPartCommonTypeEnum(.SEGMENT.),IfcFacilityPart/IfcFacilityPartCommonTypeEnum(.JUNCTION.),IfcFacilityPart/IfcFacilityPartCommonTypeEnum(.LEVELCROSSING.),IfcFacilityPart/IfcRoadPartTypeEnum(.RAILWAYCROSSING.),IfcFacilityPart/IfcRoadPartTypeEnum(.PEDESTRIAN_CROSSING.),IfcFacilityPart/IfcRoadPartTypeEnum(.BICYCLECROSSING.),IfcFacilityPart/IfcRoadPartTypeEnum(.ROUNDABOUT.),IfcFacilityPart/IfcRoadPartTypeEnum(.INTERSECTION.),IfcFacilityPart/IfcRoadPartTypeEnum(.TOLLPLAZA.)</ApplicableTypeValue>
   <PropertyDefs>
     <PropertyDef ifdguid="b51274e7f92947e4ae8a053260449d99">
       <Name>Crossfall</Name>

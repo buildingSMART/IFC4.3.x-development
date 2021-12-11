@@ -234,7 +234,9 @@ SoundLevel and SoundAttenuation attributes deleted in IFC2x2 Pset Addendum: Use 
               <NameAliases>
                 <NameAlias lang="en">None</NameAlias>
               </NameAliases>
-              <DefinitionAliases />
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">None, empty or no additional action or function.</DefinitionAlias>
+              </DefinitionAliases>
             </ConstantDef>
             <ConstantDef>
               <Name>ONOFFVALVE</Name>
@@ -497,7 +499,9 @@ SoundLevel and SoundAttenuation attributes deleted in IFC2x2 Pset Addendum: Use 
               <NameAliases>
                 <NameAlias lang="en">None</NameAlias>
               </NameAliases>
-              <DefinitionAliases />
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">None, empty or no additional action or function.</DefinitionAlias>
+              </DefinitionAliases>
             </ConstantDef>
             <ConstantDef>
               <Name>DIRECT</Name>

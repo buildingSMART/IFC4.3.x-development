@@ -5,6 +5,8 @@ import xml_dict
 
 from xmi_document import xmi_document
 
+NS_QTO = "http://www.buildingsmart-tech.org/xml/qto/QTO_IFC4.xsd"
+
 def format_TypePropertySingleValue(prop):
     try:
         return prop.children[0].attributes["type"]
@@ -50,7 +52,21 @@ def get_property_definitions():
             proptypeifc = f"Ifc{proptype[4:]}"
             
             yield pname, pset, proptypeifc, proptypeargs, pdef
-            
+
+    for fn in glob.glob("../reference_schemas/psd/Qto_*.xml"):
+        xd = xml_dict.read(fn)
+        qset = xd.child_with_tag(f'{{{NS_QTO}}}Name').text
+        
+        for prop in xd.child_with_tag(f'{{{NS_QTO}}}QtoDefs').children:
+            qname = prop.child_with_tag(f'{{{NS_QTO}}}Name').text
+            qtype = prop.child_with_tag(f'{{{NS_QTO}}}QtoType').text
+            try:
+                qdef = prop.child_with_tag(f'{{{NS_QTO}}}Definition').text
+            except:
+                qdef = "-"
+        
+            yield qname, qset, "Quantity", qtype, qdef
+
     xmi_doc = xmi_document("../schemas/IFC.xml")
     for item in xmi_doc:
         if item.type == "ENTITY":

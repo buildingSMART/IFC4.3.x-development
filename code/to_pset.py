@@ -29,26 +29,13 @@ def format(s):
     return re.sub(MULTIPLE_SPACE_PATTERN, ' ', ''.join([' ', c][c.isalnum() or c in '.,'] for c in s)).strip()
     
    
-def get_parent_of_pt(xmi_doc, enum_type):
-    enum_id = enum_type.idref
-    type_refs = []
-    for assoc in xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:Association"]:
-        try:
-            c1, c2 = assoc/'ownedEnd'
-        except ValueError as e:
-            # print("encountered exception `%s' on %s" % (e, assoc))
-            continue
-        assoc_type_refs = set(map(lambda c: (c|"type").idref, (c1, c2)))
-        if enum_id in assoc_type_refs:
-            other_idref = list(assoc_type_refs - {enum_id})[0]
-            type_refs.append(xmi_doc.xmi.by_id[other_idref].name)
-            
-    # @todo filter this based on inheritance hierarchy
-    type_refs_without_type = [s for s in type_refs if 'Type' not in s]
-    if len(type_refs_without_type) != 1:
-        print("WARNING:", len(type_refs_without_type), "type associations on", enum_type.name, file=sys.stderr)
-    
-    return type_refs_without_type[0] if type_refs_without_type else None
+def get_parent_of_pt(xmi_doc, enum_or_select_type):
+    type_id = enum_or_select_type.id or enum_or_select_type.idref
+    attrs = [x for x in xmi_doc.xmi.by_tag_and_type["ownedAttribute"]["uml:Property"] if x.name == "PredefinedType" and (x|"type").idref == type_id]
+    if attrs:
+        return attrs[0].xml.parentNode.getAttribute("name")
+    else:
+        return get_parent_of_pt(xmi_doc, xmi_doc.xmi.by_id[[x for x in xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:Substitution"] if x.client == type_id][0].supplier])
 
 
 def build_property_defs(xmi_doc, pset, node, by_name):
@@ -116,11 +103,14 @@ def build_property_defs(xmi_doc, pset, node, by_name):
                 
             elif ty == "PropertyTableValue":
                 
-                # what's this?
-                ET.SubElement(pt, 'Expression')
+                tptv = ET.SubElement(pt, 'TypePropertyTableValue')
                 
-                ET.SubElement(ET.SubElement(pt, 'DefiningValue'), "DataType").set("type", ty_args["Defining"])
-                ET.SubElement(ET.SubElement(pt, 'DefinedValue'), "DataType").set("type", ty_args["Defined"])
+                # what's this?
+                ET.SubElement(tptv, 'Expression')
+                
+                # @todo double check
+                ET.SubElement(ET.SubElement(tptv, 'DefiningValue'), "DataType").set("type", ty_args["Defined"])
+                ET.SubElement(ET.SubElement(tptv, 'DefinedValue'), "DataType").set("type", ty_args["Defining"])
             
         else:
             pt.text = ty_ty_arg
@@ -144,8 +134,9 @@ def construct_xml(xmi_doc, pset, path, by_id, by_name):
     psd = ET.Element('PropertySetDef' if pset.stereotype == "PSET" else 'QtoSetDef')
     psd.set('xmlns:xsi', 'http://www.w3.org/2001/XMLSchema-instance')
     psd.set('xmlns:xsd', 'http://www.w3.org/2001/XMLSchema')
-    # psd.set('ifdguid', guid)
-    psd.set('templatetype', 'PSET_TYPEDRIVENOVERRIDE')
+    if pset.stereotype == "PSET":
+        ttype = (pset.node/"properties")[0].stereotype
+        psd.set('templatetype', ttype)
     
     if pset.stereotype == "PSET":
         psd.set('xsi:noNamespaceSchemaLocation', 'http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd')
@@ -164,6 +155,8 @@ def construct_xml(xmi_doc, pset, path, by_id, by_name):
     acs = ET.SubElement(psd, 'ApplicableClasses')
     atv = ET.SubElement(psd, 'ApplicableTypeValue')
     
+    atv_values = []
+    
     for x in (pset.meta.get("refs") or []):
         if x in by_id:
             x = by_id[x]
@@ -173,10 +166,12 @@ def construct_xml(xmi_doc, pset, path, by_id, by_name):
                     nm = get_parent_of_pt(xmi_doc, x.parent.node) + "." + nm
                 nm = nm.replace(".", "/")
                 ET.SubElement(acs, 'ClassName').text = nm
-                atv.text = nm
+                atv_values.append(nm)
         else:
             print("WARNING:", x, "on", pset.name, "not recorded", file=sys.stderr)
-        
+    
+    atv.text = ",".join(atv_values)
+    
     pdefs = ET.SubElement(psd, 'PropertyDefs' if pset.stereotype == "PSET" else 'QtoDefs')
     
     build_property_defs(xmi_doc, pset, pdefs, by_name)
@@ -232,7 +227,7 @@ def compare(path1, path2, output):
             if data:
                 print(p, file=f)
                 print("="*len(p), file=f)
-                print(data.decode('ascii'), file=f)
+                print(data.decode('ascii'), file=f, flush=True)
             
             
 if __name__ == "__main__":

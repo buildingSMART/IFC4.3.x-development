@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="ca90056ffe4383a8cb762acd9adc9881" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC4" />
+  <Name>Pset_MobileTelecommunicationsApplianceTypeBasebandUnit</Name>
+  <Definition>Properties common to the definition of all occurrences of  _IfcMobileTelecommunicationsAppliance_ and types of _IfcMobileTelecommunicationsApplianceType_ with the predefined type set to BASEBANDUNIT.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcMobileTelecommunicationsAppliance/BASEBANDUNIT</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcMobileTelecommunicationsAppliance/BASEBANDUNIT</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="07ecdef39b6c46f0a04411063e903a66">
+      <Name>NumberOfCarriers</Name>
+      <Definition>Indicates how many carrier frequencies can be managed by the device.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcInteger" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="cd03a478484643ab833d4727038848e9">
+      <Name>NumberOfInterfaces</Name>
+      <Definition>Indicates the types of interfaces and their number in the device.</Definition>
+      <PropertyType>
+        <TypePropertyTableValue>
+          <Expression />
+          <DefiningValue>
+            <DataType type="IfcLabel" />
+          </DefiningValue>
+          <DefinedValue>
+            <DataType type="IfcInteger" />
+          </DefinedValue>
+        </TypePropertyTableValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="9bd7d8a68e3a42d980e7cc5965f5faaf">
+      <Name>NumberOfEmergencyTransceivers</Name>
+      <Definition>Indicates the number of emergency transceivers in the base band unit.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcInteger" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="372b6cbae0c448eeade3fa3a96fc47aa">
+      <Name>MaximumNumberOfRRUs</Name>
+      <Definition>Indicates the maximum number of remote radio units (RRU) which can be connected to the baseband unit.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcInteger" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

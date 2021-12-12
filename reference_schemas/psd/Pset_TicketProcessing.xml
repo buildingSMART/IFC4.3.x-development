@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="05465994845944b18e128851e6c6ea7e" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC4" />
+  <Name>Pset_TicketProcessing</Name>
+  <Definition>Properties for indicating performance ratings for ticket processing of entry elements (e.g. turnstile, boom barrier).</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcDoor/TURNSTILE</ClassName>
+    <ClassName>IfcDoor/BOOM_BARRIER</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcDoor/TURNSTILE,IfcDoor/BOOM_BARRIER</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="47589326faef4804836980a1108d374a">
+      <Name>TicketProcessingTime</Name>
+      <Definition>Indicates the processing time of a ticket.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcTimeMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="fcd5a049b4384ce1b009b6667ed9e694">
+      <Name>TicketStuckRate</Name>
+      <Definition>Indicates the stuck rate of tickets in the turnstile.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcRatioMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

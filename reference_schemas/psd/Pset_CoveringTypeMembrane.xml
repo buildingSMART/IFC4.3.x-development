@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="47658c3f53a9c5ecbece869201bdc658" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC4" />
+  <Name>Pset_CoveringTypeMembrane</Name>
+  <Definition />
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcCovering/MEMBRANE</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcCovering/MEMBRANE</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="bc3898bbabbe4051bf51239882a669b2">
+      <Name>NominalInstallationDepth</Name>
+      <Definition>Nominal installation depth underground.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="cc9ffe9190e245f6840437c24a9c2813">
+      <Name>NominalTransverseInclination</Name>
+      <Definition>Required nominal angle of transverse slope.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPlaneAngleMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

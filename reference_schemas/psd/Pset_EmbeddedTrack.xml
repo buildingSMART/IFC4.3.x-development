@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="673d8227525b4a92ba7609fd90224df5" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC4" />
+  <Name>Pset_EmbeddedTrack</Name>
+  <Definition>Properties for track slab that have embedded tracks recessed into road surface.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcSlab/TRACKSLAB</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcSlab/TRACKSLAB</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="db1571054e0b497b8c1ce3ea5e52883d">
+      <Name>IsAccessibleByVehicle</Name>
+      <Definition>Indicates whether the element is accessible by a vehicle or not.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="c08c3563d5e045cc930b7c6c9ca44937">
+      <Name>HasDrainage</Name>
+      <Definition>Indicates whether the infrastructure element has drainage embedded or not.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="278fa11e89c34f7d9d5ab2531e8f5e15">
+      <Name>PermissibleRoadLoad</Name>
+      <Definition>Permissible traffic load for the road design.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcMassMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

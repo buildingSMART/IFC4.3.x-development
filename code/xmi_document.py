@@ -388,26 +388,54 @@ class xmi_document:
                 # NB: can have multiple dependency relationships...
                 # yield xmi_item("PT", c.name, "", c, [], container=((c|"links")|"Dependency").start, document=self)
                 
-            elif stereotype == "propertyset" or stereotype == "quantityset" or (stereotype is not None and (stereotype.startswith("pset_") or stereotype.startswith("qto_"))):
+            elif stereotype is not None and (stereotype.startswith("pset_") or stereotype.startswith("qto_") or stereotype == "complexproperty"):
                 
-                if stereotype == "quantityset" or (stereotype is not None and stereotype.startswith("qto_")):
+                if stereotype.startswith("qto_"):
                     stereotype = "QSET"
-                else:
+                elif stereotype.startswith("pset_"):
                     stereotype = "PSET"
+                else:
+                    stereotype = "CPROP"
                 
                 refs = None
                 
-                try:
-                    refs = self.concepts["PropertySetsforObjects"].get(c.id or c.idref)
-                except ValueError as e:
-                    print("WARNING:", c.name, "has no associated class", file=sys.stderr)
+                if stereotype == "PSET":
+                    try:
+                        refs = self.concepts["PropertySetsforObjects"].get(c.id or c.idref)
+                    except ValueError as e:
+                        print("WARNING:", c.name, "has no associated class", file=sys.stderr)
+                        continue
+
+                # TEMPORARY SKIP SOME OLD PSET DEFINITIONS
+                if (c|"project").author == 'IQSOFT':
                     continue
 
+                set_definition = []
+                for attr in self.xmi.by_id[c.idref]/"ownedAttribute":
+                    nm = attr.name
+                    ty = self.xmi.by_id[(attr|"type").idref]
+                    
+                    if stereotype in ("PSET", "CPROP"):
+                    
+                        for b in ty/"templateBinding":
+                            if b/"parameterSubstitution":
+                                prop_type = self.xmi.by_id[b.signature].xml.parentNode.getAttribute('name')
+                                prop_args = {}
+                                for sub in b/"parameterSubstitution":
+                                    formal = (self.xmi.by_id[sub.formal] | "ownedParameteredElement").name
+                                    actual = self.xmi.by_id[sub.actual].name
+                                    prop_args[formal] = actual
+                                    
+                                set_definition.append((nm, (prop_type, prop_args)))
+
+                    else:
+                        set_definition.append((nm, ty.name))
+
                 yield xmi_item(
-                    "PSET", 
+                    "CPROP" if stereotype == "CPROP" else "PSET", 
                     c.name, 
-                    "", 
-                    c, 
+                    set_definition, 
+                    c,
                     [(x.name, x) for x in c/("attribute")],
                     document=self, 
                     refs=refs,

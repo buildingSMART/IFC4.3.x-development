@@ -8,10 +8,7 @@ import subprocess
 
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
-
 from collections import defaultdict
-
-import ifcopenshell.guid
 
 from xmi_document import xmi_document, SCHEMA_NAME
 
@@ -31,36 +28,7 @@ def strip(s):
 def format(s):
     return re.sub(MULTIPLE_SPACE_PATTERN, ' ', ''.join([' ', c][c.isalnum() or c in '.,'] for c in s)).strip()
     
-    
-def generalization(xmi_doc, pe):
-    try:
-        P = xmi_doc.xmi.by_id[(pe|"generalization").general]
-    except:
-        P = None
-    if P: return generalization(P)
-    else: return pe
-    
-    
-def get_prop_type(xmi_doc, a):
-    type_name = "PEnum_" + a.name
-    # @todo why is this lookup by name?
-    enum_types_by_name = [c for c in xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:Class"] if c.name == type_name]
-    if len(enum_types_by_name) == 1:
-        return type_name, [x.name for x in enum_types_by_name[0]/"ownedLiteral"]
-    else:
-        type_values = None
-        try:
-            pe_type = xmi_doc.xmi.by_id[(xmi_doc.xmi.by_id[a.node.idref]|"type").idref]
-            return pe_type.name, None
-            
-            root_generalization = generalization(pe_type)
-            type_name = root_generalization.name.lower()
-            
-        except ValueError as e:
-            print("WARNING:", a.name, "has no associated type", file=sys.stderr)
-            type_name = 'any'
-    return None, None
-    
+   
 def get_parent_of_pt(xmi_doc, enum_type):
     enum_id = enum_type.idref
     type_refs = []
@@ -83,10 +51,86 @@ def get_parent_of_pt(xmi_doc, enum_type):
     return type_refs_without_type[0] if type_refs_without_type else None
 
 
-def construct_xml(xmi_doc, pset, path, by_id):
+def build_property_defs(xmi_doc, pset, node, by_name):
     
+    def elem_by_name(nm):
+        els = [c for c in xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:Class"] if c.name == ty_arg] + \
+            [c for c in xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:Enumeration"] if c.name == ty_arg]
+        return els[0]
+    
+    orders = [xmi_doc.try_get_order(x) for x in pset.children]
+   
+    for _, a, (nm, (ty_ty_arg)) in sorted(zip(orders, pset.children, pset.definition)):
+    
+        is_pset = pset.type == "CPROP" or pset.stereotype == "PSET"
+        
+        pd = ET.SubElement(node, "PropertyDef" if is_pset else 'QtoDef')
+        ET.SubElement(pd, 'Name').text = a.name
+        ET.SubElement(pd, 'Definition').text = strip((a.node/"documentation")[0].value)
+        pt = ET.SubElement(pd, 'PropertyType' if pset.stereotype == "PSET" else 'QtoType')
+        
+        if is_pset:
+            ty, ty_args = ty_ty_arg
+            
+            if ty in ("PropertySingleValue", "PropertyBoundedValue", "PropertyListValue"):
+            
+                ty_arg = list(ty_args.values())[0]
+                            
+                tpsv = ET.SubElement(pt, 'Type' + ty)
+                
+                if ty == "PropertyListValue":
+                    # unnecessary intermediate node
+                    tpsv = ET.SubElement(tpsv, 'ListValue')
+                
+                ET.SubElement(tpsv, 'DataType').set('type', ty_arg)
+                
+            elif ty == "PropertyEnumeratedValue":
+                
+                ty_arg = list(ty_args.values())[0]
+            
+                tpev = ET.SubElement(pt, 'TypePropertyEnumeratedValue')
+                el = ET.SubElement(tpev, 'EnumList')
+                el.set('name', ty_arg)
+                
+                enum_type = elem_by_name(ty_arg)
+                p_id_values = sorted((xmi_doc.try_get_order(x), x.name) for x in enum_type/"ownedLiteral")
+                
+                for pid, pv in p_id_values:
+                    ET.SubElement(el, 'EnumItem').text = pv
+                    
+            elif ty == "PropertyComplexProperty":
+                
+                ty_arg = list(ty_args.values())[0]
+                
+                tcp = ET.SubElement(pt, 'TypeComplexProperty')
+                tcp.set('name', ty_arg)
+                
+                build_property_defs(xmi_doc, by_name[ty_arg], tcp, by_name)
+
+            elif ty == "PropertyReferenceValue":
+                
+                ty_arg = list(ty_args.values())[0]
+                
+                tprv = ET.SubElement(pt, 'TypePropertyReferenceValue')
+                tprv.set("reftype", ty_arg)
+                
+            elif ty == "PropertyTableValue":
+                
+                # what's this?
+                ET.SubElement(pt, 'Expression')
+                
+                ET.SubElement(ET.SubElement(pt, 'DefiningValue'), "DataType").set("type", ty_args["Defining"])
+                ET.SubElement(ET.SubElement(pt, 'DefinedValue'), "DataType").set("type", ty_args["Defined"])
+            
+        else:
+            pt.text = ty_ty_arg
+
+
+def construct_xml(xmi_doc, pset, path, by_id, by_name):
+
     # The XMI data contains IFC base64 guids and rfc encoded hex guids
-       
+    
+    """
     guid = pset.node.tags().get("IFCDOC_GUID")
     if guid is None:
         print("WARNING: no guid for", pset.name)
@@ -95,6 +139,7 @@ def construct_xml(xmi_doc, pset, path, by_id):
         guid = guid.lower().replace("-", "")
     else:
         guid = ifcopenshell.guid.expand(guid)
+    """
 
     psd = ET.Element('PropertySetDef' if pset.stereotype == "PSET" else 'QtoSetDef')
     psd.set('xmlns:xsi', 'http://www.w3.org/2001/XMLSchema-instance')
@@ -133,39 +178,9 @@ def construct_xml(xmi_doc, pset, path, by_id):
             print("WARNING:", x, "on", pset.name, "not recorded", file=sys.stderr)
         
     pdefs = ET.SubElement(psd, 'PropertyDefs' if pset.stereotype == "PSET" else 'QtoDefs')
-        
-    for a in pset.children:
-        
-        pd = ET.SubElement(pdefs, "PropertyDef" if pset.stereotype == "PSET" else 'QtoDef')
-        ET.SubElement(pd, 'Name').text = a.name
-        ET.SubElement(pd, 'Definition').text = strip((a.node/"documentation")[0].value)
-        
-        ptype_name, pvalues = get_prop_type(xmi_doc, a)
-        if ptype_name:
-            pt = ET.SubElement(pd, 'PropertyType' if pset.stereotype == "PSET" else 'QtoType')
-            
-            if pset.stereotype == "PSET":
-                if pvalues is None:
-                    tpsv = ET.SubElement(pt, 'TypePropertySingleValue')
-                    ET.SubElement(tpsv, 'DataType').set('type', ptype_name)
-                else:
-                    tpev = ET.SubElement(pt, 'TypePropertyEnumeratedValue')
-                    el = ET.SubElement(tpev, 'EnumList')
-                    el.set('name', ptype_name)
-                    
-                    for pv in pvalues:
-                        ET.SubElement(el, 'EnumItem').text = pv
-                        
-                    # apparently, similarly to the USERDEFINED and NOTDEFINED predefined
-                    # type labels, these three also not (always?) modelled in UML.
-                    additional = "OTHER", "NOTKNOWN", "UNSET"
-                    
-                    for x in additional:
-                        if x not in pvalues:
-                            ET.SubElement(el, 'EnumItem').text = x
-            else:
-                pt.text = ptype_name
-                       
+    
+    build_property_defs(xmi_doc, pset, pdefs, by_name)
+    
     with open(os.path.join(path, pset.name + ".xml"), 'w') as f:
         f.write(
             minidom.parseString(ET.tostring(psd))\
@@ -175,16 +190,19 @@ def construct_xml(xmi_doc, pset, path, by_id):
 def run(xmi_doc, path):
     psets = []
     by_id = {}
+    by_name = {}
+    
     for item in xmi_doc:
         if item.type == "PSET":
             psets.append(item)
         else:
             by_id[item.id] = item
+            by_name[item.name] = item
             for c in item.children:
                 by_id[c.id] = c
-
+        
     for item in psets:
-        construct_xml(xmi_doc, item, path, by_id)
+        construct_xml(xmi_doc, item, path, by_id, by_name)
             
             
 def compare(path1, path2, output):

@@ -9,7 +9,7 @@ from deepdiff import DeepDiff
 
 # from pprint import pprint as print
     
-IGNORED_TAGS = {'PsetDefinitionAliases', 'NameAliases', 'DefinitionAliases', 'ConstantList', 'QtoDefinitionAliases'}
+IGNORED_TAGS = {'PsetDefinitionAliases', 'NameAliases', 'DefinitionAliases', 'ConstantList', 'QtoDefinitionAliases', 'Definition'}
 IGNORED_ATTRS = {'ifdguid', 'version'}
 
 
@@ -19,12 +19,12 @@ def flatmap(func, *iterable):
     
 
 def to_dict(t):
-    if t.tag in IGNORED_TAGS:
-        return
-
     # strip out namespace reported by etree as
     # "{http://www.buildingsmart-tech.org/xml/qto/QTO_IFC4.xsd}QtoSetDef"
     items = {'#tag': re.sub(r'\{.+?\}', '', t.tag)}
+
+    if items['#tag'] in IGNORED_TAGS:
+        return
     
     if list(t):
         items['_children'] = list(flatmap(to_dict, t))

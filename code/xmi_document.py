@@ -128,6 +128,9 @@ class xmi_item:
             self.id = self.node.id or self.node.idref
             
     def _mdtype(self):
+        if self.type == "PSET" and self.stereotype == "QSET":
+            return "QuantitySets"
+            
         return {
             "PT"    : "Types",
             "PSET"  : "PropertySets",

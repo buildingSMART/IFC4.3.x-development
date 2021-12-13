@@ -9,14 +9,33 @@ from collections import defaultdict
 dr = sys.argv[1]
 odr = os.path.join(os.path.abspath(os.path.dirname(__file__)), "..", "docs", "properties")
 
-prop_files = glob.glob(os.path.join(dr, "**", "Documentation.md"), recursive=True)
+# We first do properties, and augment with quantities if a prop does not exist under that name
+prop_file_groups = [
+    glob.glob(os.path.join(dr, "Properties", "**", "Documentation.md"), recursive=True),
+    glob.glob(os.path.join(dr, "Quantities", "**", "Documentation.md"), recursive=True)
+]
 propname_from_path = lambda s: s.split(os.sep)[-2].split("_")[0]
 
 prop_definitions = defaultdict(list)
+prop_keys = []
 
-for p in prop_files:
-    # -sig is used to strip off the BOM
-    prop_definitions[propname_from_path(p)].append(open(p, encoding='utf-8-sig').read().strip())
+for prop_files in prop_file_groups:
+
+    for p in prop_files:
+        pname = propname_from_path(p)
+        
+        if prop_keys:
+            print(pname)
+        
+        if pname in prop_keys:
+            continue
+        
+        # -sig is used to strip off the BOM
+        content = open(p, encoding='utf-8-sig').read().strip()
+        
+        prop_definitions[pname].append(content)
+
+    prop_keys = set(prop_definitions.keys())
 
 for nm, defs in prop_definitions.items():
     of = os.path.join(odr, nm[0].lower(), nm + ".md")

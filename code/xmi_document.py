@@ -139,7 +139,7 @@ class xmi_item:
             "SELECT": "Selects",
             "ENUM"  : "Types",
             "ENTITY": "Entities",
-        }[self.parent.type if self.parent else self.type]
+        }.get(self.parent.type if self.parent else self.type, "Unknown")
         
     def __iter__(self):
         return iter(self.children)

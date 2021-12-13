@@ -54,7 +54,7 @@ def build_property_defs(xmi_doc, pset, node, by_name):
         pd = ET.SubElement(node, "PropertyDef" if is_pset else 'QtoDef')
         ET.SubElement(pd, 'Name').text = a.name
         ET.SubElement(pd, 'Definition').text = a.markdown
-        pt = ET.SubElement(pd, 'PropertyType' if pset.stereotype == "PSET" else 'QtoType')
+        pt = ET.SubElement(pd, 'PropertyType' if is_pset else 'QtoType')
         
         if is_pset:
             ty, ty_args = ty_ty_arg

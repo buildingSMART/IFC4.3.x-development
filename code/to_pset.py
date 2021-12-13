@@ -53,7 +53,7 @@ def build_property_defs(xmi_doc, pset, node, by_name):
         
         pd = ET.SubElement(node, "PropertyDef" if is_pset else 'QtoDef')
         ET.SubElement(pd, 'Name').text = a.name
-        ET.SubElement(pd, 'Definition').text = strip((a.node/"documentation")[0].value)
+        ET.SubElement(pd, 'Definition').text = a.markdown
         pt = ET.SubElement(pd, 'PropertyType' if pset.stereotype == "PSET" else 'QtoType')
         
         if is_pset:
@@ -148,7 +148,7 @@ def construct_xml(xmi_doc, pset, path, by_id, by_name):
     
     ET.SubElement(psd, 'Name').text = pset.name
     
-    ET.SubElement(psd, 'Definition').text = strip((pset.node/"properties")[0].documentation)
+    ET.SubElement(psd, 'Definition').text = pset.markdown
     
     ET.SubElement(psd, 'Applicability')
     
@@ -176,7 +176,7 @@ def construct_xml(xmi_doc, pset, path, by_id, by_name):
     
     build_property_defs(xmi_doc, pset, pdefs, by_name)
     
-    with open(os.path.join(path, pset.name + ".xml"), 'w') as f:
+    with open(os.path.join(path, pset.name + ".xml"), 'w', encoding='utf-8') as f:
         f.write(
             minidom.parseString(ET.tostring(psd))\
                 .toprettyxml(indent="  ")

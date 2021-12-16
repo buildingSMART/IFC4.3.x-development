@@ -645,7 +645,8 @@ def resource(resource):
 
                 for ci, (en, nm, defn) in enumerate(concepts, start=1):
                 
-                    mdc += f"\n\n## {idx}.{paragraph}.{ci} {nm}\n\n"
+                    is_inherited = " (inherited)" if en != resource else ""
+                    mdc += f"\n\n## {idx}.{paragraph}.{ci} {nm}{is_inherited}\n\n"
                     if concept_lookup.get(nm):
                         mdc += f"[link]({concept_lookup.get(nm)})\n\n"
                     mdc += defn + "\n\n"

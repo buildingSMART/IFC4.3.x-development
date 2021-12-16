@@ -8,7 +8,7 @@ y = CoefficientsX[3]*x², where other values in CoefficientsY are 0.
 ```
 concept {
     IfcCurveSegment:ParentCurve -> IfcPolynomialCurve
-    IfcPolynomialCurve:CoefficientsX -> IfcReal
-    IfcPolynomialCurve:CoefficientsY -> IfcReal
+    IfcPolynomialCurve:CoefficientsX -> IfcReal_0
+    IfcPolynomialCurve:CoefficientsY -> IfcReal_1
 }
 ```

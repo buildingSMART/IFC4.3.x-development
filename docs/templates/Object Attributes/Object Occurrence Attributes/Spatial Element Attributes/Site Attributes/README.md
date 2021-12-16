@@ -5,24 +5,24 @@ A site may be located according to latitute, longitute, elevation, land title de
 
 ```
 concept {
-    IfcSite:LongName -> IfcLabel
-    IfcSite:Name -> IfcLabel
+    IfcSite:LongName -> IfcLabel_0
+    IfcSite:Name -> IfcLabel_1
     IfcSite:CompositionType -> IfcElementCompositionEnum
-    IfcSite:LandTitleNumber -> IfcLabel
-    IfcSite:RefLatitude -> IfcCompoundPlaneAngleMeasure
-    IfcSite:RefLongitude -> IfcCompoundPlaneAngleMeasure
+    IfcSite:LandTitleNumber -> IfcLabel_2
+    IfcSite:RefLatitude -> IfcCompoundPlaneAngleMeasure_0
+    IfcSite:RefLongitude -> IfcCompoundPlaneAngleMeasure_1
     IfcSite:RefElevation -> IfcLengthMeasure
     IfcSite:SiteAddress -> IfcPostalAddress
     IfcPostalAddress:Purpose -> IfcAddressTypeEnum
     IfcPostalAddress:Description -> IfcText
-    IfcPostalAddress:InternalLocation -> IfcLabel
-    IfcPostalAddress:AddressLines -> IfcLabel
-    IfcPostalAddress:PostalBox -> IfcLabel
-    IfcPostalAddress:Town -> IfcLabel
-    IfcPostalAddress:Region -> IfcLabel
-    IfcPostalAddress:PostalCode -> IfcLabel
-    IfcPostalAddress:Country -> IfcLabel
-    IfcPostalAddress:UserDefinedPurpose -> IfcLabel
+    IfcPostalAddress:InternalLocation -> IfcLabel_3
+    IfcPostalAddress:AddressLines -> IfcLabel_4
+    IfcPostalAddress:PostalBox -> IfcLabel_5
+    IfcPostalAddress:Town -> IfcLabel_6
+    IfcPostalAddress:Region -> IfcLabel_7
+    IfcPostalAddress:PostalCode -> IfcLabel_8
+    IfcPostalAddress:Country -> IfcLabel_9
+    IfcPostalAddress:UserDefinedPurpose -> IfcLabel_10
     IfcSite:LongName[binding="LongName"]
     IfcSite:Name[binding="Name"]
     IfcSite:RefLatitude[binding="Latitude"]

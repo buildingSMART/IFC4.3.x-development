@@ -7,7 +7,7 @@ On type objects, ports are not connected, but serve as placeholders indicating t
 
 ```
 concept {
-    IfcDistributionElementType:IsNestedBy -> IfcRelNests
+    IfcDistributionElementType:IsNestedBy -> IfcRelNests:RelatingObject
     IfcRelNests:RelatedObjects -> IfcDistributionPort
     IfcDistributionPort:Name -> IfcLabel
     IfcDistributionPort:FlowDirection -> IfcFlowDirectionEnum
@@ -16,7 +16,7 @@ concept {
     IfcDistributionPort:PredefinedType -> IfcDistributionPortTypeEnum
     IfcLocalPlacement:RelativePlacement -> IfcAxis2Placement3D
     IfcAxis2Placement3D:Location -> IfcCartesianPoint
-    IfcAxis2Placement3D:Axis -> IfcDirection
-    IfcAxis2Placement3D:RefDirection -> IfcDirection
+    IfcAxis2Placement3D:Axis -> IfcDirection_0
+    IfcAxis2Placement3D:RefDirection -> IfcDirection_1
 }
 ```

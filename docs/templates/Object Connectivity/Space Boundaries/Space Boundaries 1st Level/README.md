@@ -5,12 +5,12 @@ Spaces may have boundaries defined by building elements such as walls, slabs, do
 
 ```
 concept {
-    IfcSpace:BoundedBy -> IfcRelSpaceBoundary1stLevel:RelatingSpace
-    IfcRelSpaceBoundary1stLevel:RelatedBuildingElement -> IfcElement
-    IfcRelSpaceBoundary1stLevel:ConnectionGeometry -> IfcConnectionSurfaceGeometry
-    IfcRelSpaceBoundary1stLevel:ParentBoundary -> IfcRelSpaceBoundary1stLevel
-    IfcRelSpaceBoundary1stLevel:PhysicalOrVirtualBoundary -> IfcPhysicalOrVirtualEnum
-    IfcRelSpaceBoundary1stLevel:InternalOrExternalBoundary -> IfcInternalOrExternalEnum
+    IfcSpace:BoundedBy -> IfcRelSpaceBoundary1stLevel_0:RelatingSpace
+    IfcRelSpaceBoundary1stLevel_0:RelatedBuildingElement -> IfcElement
+    IfcRelSpaceBoundary1stLevel_0:ConnectionGeometry -> IfcConnectionSurfaceGeometry
+    IfcRelSpaceBoundary1stLevel_0:ParentBoundary -> IfcRelSpaceBoundary1stLevel_1
+    IfcRelSpaceBoundary1stLevel_0:PhysicalOrVirtualBoundary -> IfcPhysicalOrVirtualEnum
+    IfcRelSpaceBoundary1stLevel_0:InternalOrExternalBoundary -> IfcInternalOrExternalEnum
     IfcConnectionSurfaceGeometry:SurfaceOnRelatingElement -> IfcSurfaceOfLinearExtrusion
     IfcConnectionSurfaceGeometry:SurfaceOnRelatingElement -> IfcCurveBoundedPlane
     IfcConnectionSurfaceGeometry:SurfaceOnRelatingElement -> IfcCurveBoundedSurface
@@ -20,15 +20,15 @@ concept {
     IfcIndexedPolyCurve:Points -> IfcCartesianPointList2D
     IfcIndexedPolyCurve:Segments -> IfcArcIndex
     IfcIndexedPolyCurve:Segments -> IfcLineIndex
-    IfcIndexedPolyCurve:SelfIntersect -> IfcBoolean
+    IfcIndexedPolyCurve:SelfIntersect -> IfcBoolean_0
     IfcCartesianPointList2D:CoordList -> IfcLengthMeasure
-    IfcBoolean:RelatedOpeningElement -> IfcVoidingFeature
+    IfcBoolean_0:RelatedOpeningElement -> IfcVoidingFeature
     IfcCurveBoundedPlane:BasisSurface -> IfcPlane
-    IfcPlane:Position -> IfcAxis2Placement3D
+    IfcPlane:Position -> IfcAxis2Placement3D_0
     IfcCurveBoundedSurface:BasisSurface -> IfcCylindricalSurface
     IfcCurveBoundedSurface:Boundaries -> IfcOuterBoundaryCurve
-    IfcCurveBoundedSurface:ImplicitOuter -> IfcBoolean
-    IfcCylindricalSurface:Position -> IfcAxis2Placement3D
+    IfcCurveBoundedSurface:ImplicitOuter -> IfcBoolean_1
+    IfcCylindricalSurface:Position -> IfcAxis2Placement3D_1
     IfcOuterBoundaryCurve:Segments -> IfcCompositeCurveSegment
     IfcFaceBasedSurfaceModel:FbsmFaces -> IfcOpenShell
     IfcOpenShell:CfsFaces -> IfcFace

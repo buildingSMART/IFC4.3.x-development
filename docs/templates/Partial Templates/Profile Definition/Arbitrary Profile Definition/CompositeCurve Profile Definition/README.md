@@ -7,26 +7,26 @@ Composite curve profile definitons define the closed two-dimensional curve used 
 concept {
     IfcArbitraryProfileDefWithVoids:ProfileType -> IfcProfileTypeEnum
     IfcArbitraryProfileDefWithVoids:ProfileName -> IfcLabel
-    IfcArbitraryProfileDefWithVoids:OuterCurve -> IfcCompositeCurve
-    IfcArbitraryProfileDefWithVoids:InnerCurves -> IfcCompositeCurve
-    IfcCompositeCurve:Segments -> IfcCompositeCurveSegment
+    IfcArbitraryProfileDefWithVoids:OuterCurve -> IfcCompositeCurve_0
+    IfcArbitraryProfileDefWithVoids:InnerCurves -> IfcCompositeCurve_1
+    IfcCompositeCurve_0:Segments -> IfcCompositeCurveSegment
     IfcCompositeCurveSegment:Transition -> IfcTransitionCode
-    IfcCompositeCurveSegment:SameSense -> IfcBoolean
+    IfcCompositeCurveSegment:SameSense -> IfcBoolean_0
     IfcCompositeCurveSegment:ParentCurve -> IfcTrimmedCurve
     IfcTrimmedCurve:BasisCurve -> IfcPolyline
     IfcTrimmedCurve:BasisCurve -> IfcCircle
     IfcTrimmedCurve:BasisCurve -> IfcEllipse
-    IfcTrimmedCurve:Trim1 -> IfcCartesianPoint
-    IfcTrimmedCurve:Trim1 -> IfcParameterValue
-    IfcTrimmedCurve:Trim2 -> IfcCartesianPoint
-    IfcTrimmedCurve:Trim2 -> IfcParameterValue
-    IfcTrimmedCurve:SenseAgreement -> IfcBoolean
+    IfcTrimmedCurve:Trim1 -> IfcCartesianPoint_1
+    IfcTrimmedCurve:Trim1 -> IfcParameterValue_0
+    IfcTrimmedCurve:Trim2 -> IfcCartesianPoint_2
+    IfcTrimmedCurve:Trim2 -> IfcParameterValue_1
+    IfcTrimmedCurve:SenseAgreement -> IfcBoolean_1
     IfcTrimmedCurve:MasterRepresentation -> IfcTrimmingPreference
-    IfcPolyline:Points -> IfcCartesianPoint
-    IfcCircle:Position -> IfcAxis2Placement2D
-    IfcCircle:Radius -> IfcPositiveLengthMeasure
-    IfcEllipse:Position -> IfcAxis2Placement2D
-    IfcEllipse:SemiAxis1 -> IfcPositiveLengthMeasure
-    IfcEllipse:SemiAxis2 -> IfcPositiveLengthMeasure
+    IfcPolyline:Points -> IfcCartesianPoint_0
+    IfcCircle:Position -> IfcAxis2Placement2D_0
+    IfcCircle:Radius -> IfcPositiveLengthMeasure_0
+    IfcEllipse:Position -> IfcAxis2Placement2D_1
+    IfcEllipse:SemiAxis1 -> IfcPositiveLengthMeasure_1
+    IfcEllipse:SemiAxis2 -> IfcPositiveLengthMeasure_2
 }
 ```

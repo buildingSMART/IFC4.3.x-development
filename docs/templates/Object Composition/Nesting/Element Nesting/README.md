@@ -24,10 +24,10 @@ A general rule for using nesting as opposed to aggregation is based on the conte
 
 ```
 concept {
-    IfcElement:IsNestedBy -> IfcRelNests
-    IfcElement:ObjectPlacement -> IfcLocalPlacement
-    IfcRelNests:RelatedObjects -> IfcElement
+    IfcElement_0:IsNestedBy -> IfcRelNests:RelatingObject
+    IfcRelNests:RelatedObjects -> IfcElement_1
+    IfcElement_1:ObjectPlacement -> IfcLocalPlacement
     IfcRelNests:RelatedObjects[binding="Type"]
-    IfcElement:PredefinedType[binding="PredefinedType"]
+    IfcElement_1:PredefinedType[binding="PredefinedType"]
 }
 ```

@@ -52,12 +52,12 @@ class node_reference:
     
 
 def get_attribute(x):
-    df = entity_attributes.get(x)
+    e, a = x.split(":")
+    df = entity_attributes.get(x.replace(":", "."))
     if df:
         return df    
     elif entity_supertype.get(e):
-        e, a = x.split(".")
-        return get_attribute(entity_supertype[e] + "." + a)
+        return get_attribute(entity_supertype[e] + ":" + a)
         
     
 def reverse_attr(v):
@@ -189,6 +189,8 @@ for tmpl in templates:
                     
         parse_template(xml)
         
+        if not parent_child:
+            continue
     
         print(file=f)
         print("```", file=f)
@@ -206,8 +208,8 @@ for tmpl in templates:
                     elif isinstance(v, str) and "_" in v:
                         print("   ", k, "->", tmpl_to_name[v].replace(" ", "_"), file=f)
                     else:
-                        for v2 in parent_child[v]:                            
-                            print("   ", v, "->", v2, reverse_attr(v), file=f)
+                        for v2 in parent_child[v]:
+                            print(f"    {v} -> {v2}{reverse_attr(v.name)}", file=f)
                         
         for k, v in ids.items():
             print(f"    {k}[binding=\"{v}\"]", file=f)

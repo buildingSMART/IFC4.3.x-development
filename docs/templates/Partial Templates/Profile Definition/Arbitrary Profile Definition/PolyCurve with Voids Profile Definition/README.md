@@ -9,11 +9,11 @@ Poly curve profile definitons define the closed two-dimensional curve used for t
 concept {
     IfcArbitraryProfileDefWithVoids:ProfileType -> IfcProfileTypeEnum
     IfcArbitraryProfileDefWithVoids:ProfileName -> IfcLabel
-    IfcArbitraryProfileDefWithVoids:OuterCurve -> IfcIndexedPolyCurve
-    IfcArbitraryProfileDefWithVoids:InnerCurves -> IfcIndexedPolyCurve
-    IfcIndexedPolyCurve:Points -> IfcCartesianPointList2D
-    IfcIndexedPolyCurve:Segments -> IfcArcIndex
-    IfcIndexedPolyCurve:Segments -> IfcLineIndex
-    IfcIndexedPolyCurve:SelfIntersect -> IfcBoolean
+    IfcArbitraryProfileDefWithVoids:OuterCurve -> IfcIndexedPolyCurve_0
+    IfcArbitraryProfileDefWithVoids:InnerCurves -> IfcIndexedPolyCurve_1
+    IfcIndexedPolyCurve_0:Points -> IfcCartesianPointList2D
+    IfcIndexedPolyCurve_0:Segments -> IfcArcIndex
+    IfcIndexedPolyCurve_0:Segments -> IfcLineIndex
+    IfcIndexedPolyCurve_0:SelfIntersect -> IfcBoolean
 }
 ```

@@ -5,12 +5,12 @@ Ports on distribution elements, such as ducts and airoutlets, or pipes and sanit
 
 ```
 concept {
-    IfcDistributionPort:ConnectedTo -> IfcRelConnectsPorts
-    IfcDistributionPort:ConnectedFrom -> IfcRelConnectsPorts
-    IfcRelConnectsPorts:RelatedPort -> IfcDistributionPort
-    IfcRelConnectsPorts:RealizingElement -> IfcFlowSegment
-    IfcRelConnectsPorts:RelatingPort -> IfcDistributionPort
-    IfcDistributionPort:ConnectedTo[binding="ConnectedToPort"]
-    IfcDistributionPort:ConnectedFrom[binding="ConnectedFromPort"]
+    IfcDistributionPort_0:ConnectedTo -> IfcRelConnectsPorts_0:RelatingPort
+    IfcDistributionPort_0:ConnectedFrom -> IfcRelConnectsPorts_1:RelatedPort
+    IfcRelConnectsPorts_0:RelatedPort -> IfcDistributionPort_1
+    IfcRelConnectsPorts_0:RealizingElement -> IfcFlowSegment
+    IfcRelConnectsPorts_1:RelatingPort -> IfcDistributionPort_3
+    IfcDistributionPort_0:ConnectedTo[binding="ConnectedToPort"]
+    IfcDistributionPort_0:ConnectedFrom[binding="ConnectedFromPort"]
 }
 ```

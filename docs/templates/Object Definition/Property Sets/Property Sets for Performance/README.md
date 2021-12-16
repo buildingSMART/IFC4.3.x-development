@@ -5,7 +5,7 @@ For performance history, properties are in the form of time series, for tracking
 
 ```
 concept {
-    IfcPerformanceHistory:IsDefinedBy -> IfcRelDefinesByProperties
+    IfcPerformanceHistory:IsDefinedBy -> IfcRelDefinesByProperties:RelatedObjects
     IfcRelDefinesByProperties:RelatingPropertyDefinition -> IfcPropertySet
     IfcPropertySet:HasProperties -> IfcPropertyReferenceValue
     IfcPropertyReferenceValue:PropertyReference -> IfcIrregularTimeSeries

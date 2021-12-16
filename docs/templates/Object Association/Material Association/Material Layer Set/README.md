@@ -8,15 +8,16 @@ concept {
     IfcObjectDefinition:HasAssociations -> IfcRelAssociatesMaterial:RelatedObjects
     IfcRelAssociatesMaterial:RelatingMaterial -> IfcMaterialLayerSet
     IfcMaterialLayerSet:MaterialLayers -> IfcMaterialLayer
-    IfcMaterialLayerSet:LayerSetName -> IfcLabel
-    IfcMaterialLayerSet:Description -> IfcText
-    IfcMaterialLayer:Name -> IfcLabel
-    IfcMaterialLayer:Description -> IfcText
+    IfcMaterialLayerSet:LayerSetName -> IfcLabel_2
+    IfcMaterialLayerSet:Description -> IfcText_1
+    IfcMaterialLayer:Name -> IfcLabel_0
+    IfcMaterialLayer:Description -> IfcText_0
     IfcMaterialLayer:Material -> IfcMaterial
     IfcMaterialLayer:LayerThickness -> IfcNonNegativeLengthMeasure
     IfcMaterialLayer:IsVentilated -> IfcLogical
-    IfcMaterialLayer:Category -> IfcLabel
+    IfcMaterialLayer:Category -> IfcLabel_1
     IfcMaterialLayer:Priority -> IfcNormalisedRatioMeasure
+    IfcMaterial -> Material
     IfcMaterialLayerSet:MaterialLayers[binding="HasLayer"]
     IfcMaterialLayer:Name[binding="LayerName"]
     IfcMaterialLayer:LayerThickness[binding="LayerThickness"]

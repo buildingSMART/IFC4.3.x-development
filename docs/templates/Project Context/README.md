@@ -11,8 +11,8 @@ All project data sets shall contain a single _IfcProject_ instance indicating ov
 
 ```
 concept {
-    IfcContext:LongName -> IfcLabel
-    IfcContext:ObjectType -> IfcLabel
-    IfcContext:Phase -> IfcLabel
+    IfcContext:LongName -> IfcLabel_0
+    IfcContext:ObjectType -> IfcLabel_1
+    IfcContext:Phase -> IfcLabel_2
 }
 ```

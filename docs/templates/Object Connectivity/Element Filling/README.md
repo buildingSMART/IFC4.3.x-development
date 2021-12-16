@@ -5,10 +5,10 @@ Elements such as doors and windows may be placed inside openings of walls, slabs
 
 ```
 concept {
-    IfcElement:FillsVoids -> IfcRelFillsElement:RelatedBuildingElement
+    IfcElement_0:FillsVoids -> IfcRelFillsElement:RelatedBuildingElement
     IfcRelFillsElement:RelatingOpeningElement -> IfcOpeningElement
-    IfcOpeningElement:VoidsElements -> IfcRelVoidsElement
-    IfcRelVoidsElement:RelatingElement -> IfcElement
+    IfcOpeningElement:VoidsElements -> IfcRelVoidsElement:RelatedOpeningElement
+    IfcRelVoidsElement:RelatingElement -> IfcElement_1
     IfcRelVoidsElement:RelatingElement[binding="Type"]
 }
 ```

@@ -6,8 +6,8 @@ Composite Profile Definition
 ```
 concept {
     IfcCompositeProfileDef:ProfileType -> IfcProfileTypeEnum
-    IfcCompositeProfileDef:ProfileName -> IfcLabel
+    IfcCompositeProfileDef:ProfileName -> IfcLabel_0
     IfcCompositeProfileDef:Profiles -> IfcProfileDef
-    IfcCompositeProfileDef:Label -> IfcLabel
+    IfcCompositeProfileDef:Label -> IfcLabel_1
 }
 ```

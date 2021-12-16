@@ -9,8 +9,8 @@ concept {
     IfcProductDefinitionShape:Representations -> IfcTopologyRepresentation
     IfcTopologyRepresentation:ContextOfItems -> IfcGeometricRepresentationContext
     IfcTopologyRepresentation:ContextOfItems -> IfcRepresentationContext
-    IfcTopologyRepresentation:RepresentationIdentifier -> IfcLabel
-    IfcTopologyRepresentation:RepresentationType -> IfcLabel
+    IfcTopologyRepresentation:RepresentationIdentifier -> IfcLabel_0
+    IfcTopologyRepresentation:RepresentationType -> IfcLabel_1
     IfcTopologyRepresentation:Items -> IfcTopologicalRepresentationItem
     IfcTopologyRepresentation:Items[binding="Topology"]
 }

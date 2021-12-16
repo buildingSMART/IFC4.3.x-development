@@ -7,7 +7,7 @@ Ports may have placement defined indicating the position and outward orientation
 
 ```
 concept {
-    IfcDistributionElement:IsNestedBy -> IfcRelNests
+    IfcDistributionElement:IsNestedBy -> IfcRelNests:RelatingObject
     IfcRelNests:RelatedObjects -> IfcDistributionPort
     IfcDistributionPort:Name -> IfcLabel
     IfcDistributionPort:FlowDirection -> IfcFlowDirectionEnum
@@ -16,8 +16,8 @@ concept {
     IfcDistributionPort:PredefinedType -> IfcDistributionPortTypeEnum
     IfcLocalPlacement:RelativePlacement -> IfcAxis2Placement3D
     IfcAxis2Placement3D:Location -> IfcCartesianPoint
-    IfcAxis2Placement3D:Axis -> IfcDirection
-    IfcAxis2Placement3D:RefDirection -> IfcDirection
+    IfcAxis2Placement3D:Axis -> IfcDirection_0
+    IfcAxis2Placement3D:RefDirection -> IfcDirection_1
     IfcDistributionElement:PredefinedType[binding="PredefinedType"]
     IfcDistributionPort:Name[binding="PortName"]
     IfcDistributionPort:FlowDirection[binding="Flow"]

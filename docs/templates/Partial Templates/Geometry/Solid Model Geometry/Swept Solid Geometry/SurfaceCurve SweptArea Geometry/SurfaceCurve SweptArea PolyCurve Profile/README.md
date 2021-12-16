@@ -9,19 +9,15 @@ concept {
     IfcSurfaceCurveSweptAreaSolid:Position -> IfcAxis2Placement3D
     IfcSurfaceCurveSweptAreaSolid:Directrix -> IfcIndexedPolyCurve
     IfcSurfaceCurveSweptAreaSolid:Directrix -> IfcPcurve
-    IfcSurfaceCurveSweptAreaSolid:StartParam -> IfcParameterValue
-    IfcSurfaceCurveSweptAreaSolid:EndParam -> IfcParameterValue
+    IfcSurfaceCurveSweptAreaSolid:StartParam -> IfcParameterValue_0
+    IfcSurfaceCurveSweptAreaSolid:EndParam -> IfcParameterValue_1
     IfcSurfaceCurveSweptAreaSolid:ReferenceSurface -> IfcSurfaceOfLinearExtrusion
     IfcSurfaceCurveSweptAreaSolid:ReferenceSurface -> IfcSurfaceOfRevolution
-    IfcSurfaceCurveSweptAreaSolid:StyledByItem -> IfcStyledItem
-    IfcSurfaceCurveSweptAreaSolid:StyledByItem -> IfcStyledItem
-    IfcSurfaceCurveSweptAreaSolid:StyledByItem -> IfcStyledItem
-    IfcStyledItem:Styles -> IfcSurfaceStyle
-    IfcStyledItem:Styles -> IfcSurfaceStyle
-    IfcStyledItem:Styles -> IfcSurfaceStyle
-    IfcStyledItem:Name -> IfcLabel
-    IfcStyledItem:Name -> IfcLabel
-    IfcStyledItem:Name -> IfcLabel
+    IfcSurfaceCurveSweptAreaSolid:StyledByItem -> IfcStyledItem_0:Item
+    IfcSurfaceCurveSweptAreaSolid:StyledByItem -> IfcStyledItem_1:Item
+    IfcProfileDef -> PolyCurve_with_Voids_Profile_Definition
+    IfcStyledItem_0:Styles -> IfcSurfaceStyle
+    IfcStyledItem_0:Name -> IfcLabel
     IfcSurfaceCurveSweptAreaSolid:SweptArea[binding="Profile"]
 }
 ```

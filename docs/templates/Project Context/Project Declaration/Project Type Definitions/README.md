@@ -8,9 +8,9 @@ Declaration of object types, such as element types utilized by the element occur
 ```
 concept {
     IfcContext:Declares -> IfcRelDeclares:RelatingContext
-    IfcContext:Phase -> IfcLabel
-    IfcContext:ObjectType -> IfcLabel
-    IfcContext:LongName -> IfcLabel
+    IfcContext:Phase -> IfcLabel_0
+    IfcContext:ObjectType -> IfcLabel_1
+    IfcContext:LongName -> IfcLabel_2
     IfcRelDeclares:RelatedDefinitions -> IfcTypeObject
     IfcRelDeclares:RelatedDefinitions[binding="RelatedTypes"]
 }

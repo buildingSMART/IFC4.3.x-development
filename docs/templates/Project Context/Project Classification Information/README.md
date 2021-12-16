@@ -7,20 +7,20 @@ The classification information can either be provided as an external classificat
 
 ```
 concept {
-    IfcContext:HasAssociations -> IfcRelAssociatesClassification
-    IfcContext:Phase -> IfcLabel
-    IfcContext:ObjectType -> IfcLabel
-    IfcContext:LongName -> IfcLabel
+    IfcContext:HasAssociations -> IfcRelAssociatesClassification:RelatedObjects
+    IfcContext:Phase -> IfcLabel_3
+    IfcContext:ObjectType -> IfcLabel_4
+    IfcContext:LongName -> IfcLabel_5
     IfcRelAssociatesClassification:RelatingClassification -> IfcClassification
-    IfcClassification:Source -> IfcLabel
-    IfcClassification:Name -> IfcLabel
-    IfcClassification:ReferenceTokens -> IfcIdentifier
-    IfcClassification:HasReferences -> IfcClassificationReference:ReferencedSource
-    IfcClassificationReference:HasReferences -> IfcClassificationReference:ReferencedSource
-    IfcClassificationReference:Identification -> IfcIdentifier
-    IfcClassificationReference:Name -> IfcLabel
-    IfcClassificationReference:Description -> IfcText
-    IfcClassificationReference:Sort -> IfcIdentifier
+    IfcClassification:Source -> IfcLabel_0
+    IfcClassification:Name -> IfcLabel_1
+    IfcClassification:ReferenceTokens -> IfcIdentifier_0
+    IfcClassification:HasReferences -> IfcClassificationReference_0:ReferencedSource
+    IfcClassificationReference_0:HasReferences -> IfcClassificationReference_1:ReferencedSource
+    IfcClassificationReference_0:Identification -> IfcIdentifier_1
+    IfcClassificationReference_0:Name -> IfcLabel_2
+    IfcClassificationReference_0:Description -> IfcText
+    IfcClassificationReference_0:Sort -> IfcIdentifier_2
     IfcClassification:Source[binding="ClassificationSource"]
     IfcClassification:Name[binding="ClassificationName"]
     IfcClassification:ReferenceTokens[binding="ReferenceTokens"]

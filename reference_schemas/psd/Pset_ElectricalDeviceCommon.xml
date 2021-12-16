@@ -310,7 +310,7 @@
 &gt; NOTE&amp;nbsp; In earlier labeling, the third numeral (1..) had been occasionally added to the closely related IP Code on ingress protection, to indicate the level of impact protection.</Definition>
       <PropertyType>
         <TypePropertySingleValue>
-          <DataType />
+          <DataType type="IfcLabel" />
         </TypePropertySingleValue>
       </PropertyType>
       <NameAliases />

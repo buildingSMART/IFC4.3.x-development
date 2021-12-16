@@ -396,31 +396,56 @@ def process_graphviz(current_entity, md):
 
 
 def create_entity_definition(e, bindings):
+
+    # unique name (postfix for multiple occurences, can have template bindings)
+    EE = e
     
+    # schema name, updated when traversing supertypes
+    e = e.split("_")[0]
+    
+    # schema name, constant
     E = e
+    
     table = []
+    
+    bindings_seen = set()
     
     while e:
         keys = [x for x in R.entity_attributes.keys() if x.startswith(e + '.')]
         for k, (is_fwd, ty) in list(zip(keys, map(R.entity_attributes.__getitem__, keys)))[::-1]:
             nm = k.split('.')[1]
+
+            card = re.findall(r'(\[.+?\])', ty)
             
-            if is_fwd:
+            if card:
+                card = card[0]
+            elif is_fwd:
                 card = "[0:1]" if "OPTIONAL" in ty else "[1:1]"
             else:
-                # nm = "<i>%s</i>" % nm
-                inv_card = re.findall(r'(\[.+?\])', ty)
-                if inv_card:
-                    card = inv_card[0]
-                else:
-                    card = ""
+                # default inverse cardinality
+                card = "[1:1]"
                     
-            bnd = bindings.get((E, nm), "")
+            bnd = bindings.get((EE, nm), "")
             table.append((nm, card, 2 if bnd else 0))
             if bnd:
+               bindings_seen.add((EE, nm))
                table.append((bnd, "", 3))
             
         e = R.entity_supertype.get(e)
+        
+    is_first = True
+    for (ent, attr), bnd in bindings.items():
+        if ent != EE:
+            continue
+        if (ent, attr) in bindings_seen:
+            continue
+            
+        if is_first:
+            table.insert(0, ("...", "", 0))
+        table.insert(0, (bnd, "", 3))
+        table.insert(0, (attr, "", 2))
+        
+        is_first = False
         
     table.append((E, "", 1))
     table = table[::-1]
@@ -444,11 +469,11 @@ def process_graphviz_concept(name, md):
         
         c2 = re.sub(r'(\w+)\:(\w+)\s*\->\s*([\:\w]+)', lambda m: f"{m.group(1)}:{m.group(2)}1 -> {m.group(3)}", c2)
         c2 = re.sub(r'([\w\:]+)\s*\->\s*(\w+)\:(\w+)', lambda m: f"{m.group(1)} -> {m.group(2)}:{m.group(3)}0", c2)
-        
+                
         bindings = {}
-        for ent, attr, bind in re.findall(r'(\w+)\:(\w+)\[binding="(\w+)"\]', c2):
+        for ent, attr, bind in re.findall(r'(\w+)\:(\w+)\[binding="([\w_]+)"\]', c2):
             bindings[(ent, attr)] = bind
-        c2 = re.sub(r'\w+\:\w+\[binding="\w+"\]', '', c2)
+        c2 = re.sub(r'\w+\:\w+\[binding="[\w_]+"\]', '', c2)
         
         G = pydot.graph_from_dot_data(c2)[0]
         
@@ -460,8 +485,12 @@ def process_graphviz_concept(name, md):
         for n in nodes:
             if n.startswith("Ifc"):
                 G.add_node(pydot.Node(n, label=create_entity_definition(n, bindings)))
+            elif n.startswith("constraint_"):
+                G.get_node(n)[0].set_fillcolor("#ffaaaa")
+                G.get_node(n)[0].set_shape("rect")
+                G.get_node(n)[0].set_style("filled")
             else:
-                G.add_node(pydot.Node(n, label=n.replace("_", " "), fillcolor="#aaaaff", shape="rect", style="filled"))
+                G.add_node(pydot.Node(n, label=n.replace("_", " "), fillcolor="#aaffaa", shape="rect", style="filled"))
             
         # this is ugly, but the node defaults need to come before the edges
         G.obj_dict["nodes"]['node'][0]['sequence'] = -1

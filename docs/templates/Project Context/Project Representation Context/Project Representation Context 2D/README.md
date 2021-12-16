@@ -8,23 +8,25 @@ The main geometric representation context that is created for 2D representations
 ```
 concept {
     IfcContext:RepresentationContexts -> IfcGeometricRepresentationContext
-    IfcContext:Phase -> IfcLabel
-    IfcContext:ObjectType -> IfcLabel
-    IfcContext:LongName -> IfcLabel
-    IfcGeometricRepresentationContext:ContextIdentifier -> IfcLabel
-    IfcGeometricRepresentationContext:ContextType -> IfcLabel
+    IfcContext:Phase -> IfcLabel_5
+    IfcContext:ObjectType -> IfcLabel_6
+    IfcContext:LongName -> IfcLabel_7
+    IfcGeometricRepresentationContext:ContextIdentifier -> IfcLabel_0
+    IfcGeometricRepresentationContext:ContextType -> IfcLabel_1
     IfcGeometricRepresentationContext:CoordinateSpaceDimension -> IfcDimensionCount
     IfcGeometricRepresentationContext:WorldCoordinateSystem -> IfcAxis2Placement3D
-    IfcGeometricRepresentationContext:TrueNorth -> IfcDirection
+    IfcGeometricRepresentationContext:TrueNorth -> IfcDirection_2
     IfcGeometricRepresentationContext:HasSubContexts -> IfcGeometricRepresentationSubContext:ParentContext
+    IfcDimensionCount -> constraint_0
+    constraint_0[label="=2"]
     IfcAxis2Placement3D:Location -> IfcCartesianPoint
-    IfcAxis2Placement3D:Axis -> IfcDirection
-    IfcAxis2Placement3D:RefDirection -> IfcDirection
+    IfcAxis2Placement3D:Axis -> IfcDirection_0
+    IfcAxis2Placement3D:RefDirection -> IfcDirection_1
     IfcGeometricRepresentationSubContext:TargetScale -> IfcPositiveRatioMeasure
     IfcGeometricRepresentationSubContext:TargetView -> IfcGeometricProjectionEnum
-    IfcGeometricRepresentationSubContext:UserDefinedTargetView -> IfcLabel
-    IfcGeometricRepresentationSubContext:ContextIdentifier -> IfcLabel
-    IfcGeometricRepresentationSubContext:ContextType -> IfcLabel
+    IfcGeometricRepresentationSubContext:UserDefinedTargetView -> IfcLabel_2
+    IfcGeometricRepresentationSubContext:ContextIdentifier -> IfcLabel_3
+    IfcGeometricRepresentationSubContext:ContextType -> IfcLabel_4
     IfcGeometricRepresentationContext:ContextIdentifier[binding="ContextIdentifier"]
     IfcGeometricRepresentationContext:ContextType[binding="ContextType"]
     IfcGeometricRepresentationSubContext:ContextIdentifier[binding="SubContextIdentifier"]

@@ -124,17 +124,6 @@ The nominal thickness of the pavement remains constant with the value from Nomin
         <DefinitionAlias lang="ja-JP">要素（主にリノベーションまたは改修プロジェクトにおいて）の状態。 状態は、「新規(New)」－新しく追加される要素。「既存」－要素は存在し、かつ残りもの。「破壊」－要素は存在したが、廃棄されるもの。「一時的」－一時的に存在する要素（一時的にサポートしている構造のようなもの）。</DefinitionAlias>
       </DefinitionAliases>
     </PropertyDef>
-    <PropertyDef ifdguid="e67741b634704b7caa49bc70951af4bc">
-      <Name>NominalThickness</Name>
-      <Definition>The nominal thickness of the object. The size information is provided in addition to the shape representation and the geometric parameters used within. In case of inconsistency between the geometric parameters and the size properties, provided in the attached property set, the geometric parameters take precedence.</Definition>
-      <PropertyType>
-        <TypePropertySingleValue>
-          <DataType type="IfcNonNegativeLengthMeasure" />
-        </TypePropertySingleValue>
-      </PropertyType>
-      <NameAliases />
-      <DefinitionAliases />
-    </PropertyDef>
     <PropertyDef ifdguid="a7f754ca683141a6bb4128417c4f3d34">
       <Name>NominalThicknessEnd</Name>
       <Definition>The nominal thickness of the object after a transition from its original value. The size information is provided in addition to the shape representation and the geometric parameters used within. In case of inconsistency between the geometric parameters and the size properties, provided in the attached property set, the geometric parameters take precedence.</Definition>
@@ -168,17 +157,6 @@ The nominal thickness of the pavement remains constant with the value from Nomin
       <NameAliases />
       <DefinitionAliases />
     </PropertyDef>
-    <PropertyDef ifdguid="17701219053141b9b3f1b110eb14c495">
-      <Name>NominalLength</Name>
-      <Definition>The nominal overall length of the object. The size information is provided in addition to the shape representation and the geometric parameters used within. In case of inconsistency between the geometric parameters and the size properties, provided in the attached property set, the geometric parameters take precedence.</Definition>
-      <PropertyType>
-        <TypePropertySingleValue>
-          <DataType type="IfcPositiveLengthMeasure" />
-        </TypePropertySingleValue>
-      </PropertyType>
-      <NameAliases />
-      <DefinitionAliases />
-    </PropertyDef>
     <PropertyDef ifdguid="a28e9f226e204a909976810e633a45f4">
       <Name>NominalWidth</Name>
       <Definition>The nominal width of the object.</Definition>
@@ -196,6 +174,36 @@ The nominal thickness of the pavement remains constant with the value from Nomin
         <DefinitionAlias lang="en" />
         <DefinitionAlias lang="ja-JP">呼び幅寸法。</DefinitionAlias>
         <DefinitionAlias lang="ko-KR">폭 치수</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="076d1500d1e911e1800000215ad4efdf">
+      <Name>NominalLength</Name>
+      <Definition>Nominal length of the object</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcNonNegativeLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Nominal Length</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="9aa93573818943ee9e7ad7e898fddfae">
+      <Name>NominalThickness</Name>
+      <Definition>The nominal  thickness of the entity.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcNonNegativeLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Nominal Thickness</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en">The nominal wall thickness of the duct at the connection point.</DefinitionAlias>
       </DefinitionAliases>
     </PropertyDef>
   </PropertyDefs>

@@ -5,8 +5,8 @@ A building storey may be indicate the elevation of the top surface of the floor 
 
 ```
 concept {
-    IfcBuildingStorey:LongName -> IfcLabel
-    IfcBuildingStorey:Name -> IfcLabel
+    IfcBuildingStorey:LongName -> IfcLabel_0
+    IfcBuildingStorey:Name -> IfcLabel_1
     IfcBuildingStorey:CompositionType -> IfcElementCompositionEnum
     IfcBuildingStorey:Elevation -> IfcLengthMeasure
     IfcBuildingStorey:LongName[binding="LongName"]

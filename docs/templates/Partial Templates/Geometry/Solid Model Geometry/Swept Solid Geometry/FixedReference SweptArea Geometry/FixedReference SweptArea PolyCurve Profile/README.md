@@ -9,18 +9,14 @@ concept {
     IfcFixedReferenceSweptAreaSolid:Position -> IfcAxis2Placement3D
     IfcFixedReferenceSweptAreaSolid:Directrix -> IfcIndexedPolyCurve
     IfcFixedReferenceSweptAreaSolid:Directrix -> IfcPcurve
-    IfcFixedReferenceSweptAreaSolid:StartParam -> IfcParameterValue
-    IfcFixedReferenceSweptAreaSolid:EndParam -> IfcParameterValue
+    IfcFixedReferenceSweptAreaSolid:StartParam -> IfcParameterValue_0
+    IfcFixedReferenceSweptAreaSolid:EndParam -> IfcParameterValue_1
     IfcFixedReferenceSweptAreaSolid:FixedReference -> IfcDirection
-    IfcFixedReferenceSweptAreaSolid:StyledByItem -> IfcStyledItem
-    IfcFixedReferenceSweptAreaSolid:StyledByItem -> IfcStyledItem
-    IfcFixedReferenceSweptAreaSolid:StyledByItem -> IfcStyledItem
-    IfcStyledItem:Styles -> IfcSurfaceStyle
-    IfcStyledItem:Styles -> IfcSurfaceStyle
-    IfcStyledItem:Styles -> IfcSurfaceStyle
-    IfcStyledItem:Name -> IfcLabel
-    IfcStyledItem:Name -> IfcLabel
-    IfcStyledItem:Name -> IfcLabel
+    IfcFixedReferenceSweptAreaSolid:StyledByItem -> IfcStyledItem_0:Item
+    IfcFixedReferenceSweptAreaSolid:StyledByItem -> IfcStyledItem_1:Item
+    IfcProfileDef -> PolyCurve_with_Voids_Profile_Definition
+    IfcStyledItem_0:Styles -> IfcSurfaceStyle
+    IfcStyledItem_0:Name -> IfcLabel
     IfcFixedReferenceSweptAreaSolid:SweptArea[binding="Profile"]
 }
 ```

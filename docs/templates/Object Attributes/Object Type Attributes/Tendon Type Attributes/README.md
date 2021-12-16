@@ -5,8 +5,8 @@ Reinforcing may be further described according to physical characteristics.
 
 ```
 concept {
-    IfcTendonType:NominalDiameter -> IfcPositiveLengthMeasure
+    IfcTendonType:NominalDiameter -> IfcPositiveLengthMeasure_0
     IfcTendonType:CrossSectionArea -> IfcAreaMeasure
-    IfcTendonType:SheethDiameter -> IfcPositiveLengthMeasure
+    IfcTendonType:SheethDiameter -> IfcPositiveLengthMeasure_1
 }
 ```

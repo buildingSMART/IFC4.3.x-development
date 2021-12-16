@@ -9,20 +9,18 @@ Scaling is supported to correlate the size of a texture with its physical dimens
 
 ```
 concept {
-    IfcImageTexture:Mode -> IfcIdentifier
+    IfcImageTexture:Mode -> IfcIdentifier_0
     IfcImageTexture:TextureTransform -> IfcCartesianTransformationOperator2D
     IfcImageTexture:TextureTransform -> IfcCartesianTransformationOperator2DnonUniform
-    IfcImageTexture:Parameter -> IfcIdentifier
+    IfcImageTexture:Parameter -> IfcIdentifier_1
     IfcImageTexture:URLReference -> IfcURIReference
-    IfcCartesianTransformationOperator2D:Axis1 -> IfcDirection
-    IfcCartesianTransformationOperator2D:Axis2 -> IfcDirection
-    IfcCartesianTransformationOperator2D:LocalOrigin -> IfcCartesianPoint
-    IfcCartesianPoint:Coordinates -> IfcLengthMeasure
-    IfcCartesianPoint:Coordinates -> IfcLengthMeasure
-    IfcCartesianPoint:Coordinates -> IfcLengthMeasure
-    IfcCartesianPoint:Coordinates -> IfcLengthMeasure
-    IfcCartesianTransformationOperator2DnonUniform:Axis1 -> IfcDirection
-    IfcCartesianTransformationOperator2DnonUniform:Axis2 -> IfcDirection
-    IfcCartesianTransformationOperator2DnonUniform:LocalOrigin -> IfcCartesianPoint
+    IfcCartesianTransformationOperator2D:Axis1 -> IfcDirection_0
+    IfcCartesianTransformationOperator2D:Axis2 -> IfcDirection_1
+    IfcCartesianTransformationOperator2D:LocalOrigin -> IfcCartesianPoint_0
+    IfcCartesianPoint_0:Coordinates -> IfcLengthMeasure_0
+    IfcCartesianTransformationOperator2DnonUniform:Axis1 -> IfcDirection_2
+    IfcCartesianTransformationOperator2DnonUniform:Axis2 -> IfcDirection_3
+    IfcCartesianTransformationOperator2DnonUniform:LocalOrigin -> IfcCartesianPoint_1
+    IfcCartesianPoint_1:Coordinates -> IfcLengthMeasure_1
 }
 ```

@@ -17,11 +17,11 @@ By default the following constraints apply to an element being decomposed by _El
 
 ```
 concept {
-    IfcElement:IsDecomposedBy -> IfcRelAggregates
-    IfcElement:Name -> IfcLabel
-    IfcRelAggregates:RelatedObjects -> IfcElement
-    IfcElement:IsDecomposedBy[binding="IsDecomposedBy"]
+    IfcElement_0:IsDecomposedBy -> IfcRelAggregates:RelatingObject
+    IfcRelAggregates:RelatedObjects -> IfcElement_1
+    IfcElement_1:Name -> IfcLabel
+    IfcElement_0:IsDecomposedBy[binding="IsDecomposedBy"]
     IfcRelAggregates:RelatedObjects[binding="RelatedObjects"]
-    IfcElement:Name[binding="PartName"]
+    IfcElement_1:Name[binding="PartName"]
 }
 ```

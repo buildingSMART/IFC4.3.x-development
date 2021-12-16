@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="7272290a0644456e87b728e6e3312a57" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC4" />
+  <Name>Pset_ElementKinematics</Name>
+  <Definition>Information confirming that the element has cyclic and/or pathed kinematic behaviour. The resulting envelope may be availabe as a 'clearance' shape representation.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcElement</ClassName>
+    <ClassName>IfcElementType</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcElement,IfcElementType</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="beda2213a4ba4f6eb386c04d64e2400c">
+      <Name>CyclicPath</Name>
+      <Definition>Represents the time:angle table of the kinematic behaviour.</Definition>
+      <PropertyType>
+        <TypePropertyTableValue>
+          <Expression />
+          <DefiningValue>
+            <DataType type="IfcTimeMeasure" />
+          </DefiningValue>
+          <DefinedValue>
+            <DataType type="IfcPlaneAngleMeasure" />
+          </DefinedValue>
+        </TypePropertyTableValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="d8f88282dfbe4f819fd6c89fb96f5f52">
+      <Name>CyclicRange</Name>
+      <Definition>Identifies the angular range of the kinematic behaviour</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPlaneAngleMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="59f49e26741a46a3b046a1ca6466a6bf">
+      <Name>LinearPath</Name>
+      <Definition>Represents the time:distance table of the kinematic behaviour.</Definition>
+      <PropertyType>
+        <TypePropertyTableValue>
+          <Expression />
+          <DefiningValue>
+            <DataType type="IfcTimeMeasure" />
+          </DefiningValue>
+          <DefinedValue>
+            <DataType type="IfcLengthMeasure" />
+          </DefinedValue>
+        </TypePropertyTableValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="9531571e52344926bc9c64d6a26eae8f">
+      <Name>LinearRange</Name>
+      <Definition>Identifies the linear range of the kinematic behaviour.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="999796268d2b4ff2bab97596d7454b04">
+      <Name>MaximumAngularVelocity</Name>
+      <Definition>Identifies the maximum angular velocity of the kinematic behaviour.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcAngularVelocityMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="90c625140c764287b78fe79ab623873c">
+      <Name>MaximumConstantSpeed</Name>
+      <Definition>Identifies the maximum constant speed over the kinematic path.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcVelocityMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="20a6e851321c47029ec5bb71a339f516">
+      <Name>MinimumTime</Name>
+      <Definition>Identifies the minimum time for the kinematic behaviour.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcTimeMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

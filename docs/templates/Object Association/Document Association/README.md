@@ -8,11 +8,11 @@ Typical document meta data, such as issue date, editor, and similar, can be capt
 ```
 concept {
     IfcObjectDefinition:HasAssociations -> IfcRelAssociatesDocument:RelatedObjects
-    IfcRelAssociatesDocument:Name -> IfcLabel
+    IfcRelAssociatesDocument:Name -> IfcLabel_0
     IfcRelAssociatesDocument:RelatingDocument -> IfcDocumentReference
     IfcDocumentReference:Location -> IfcURIReference
     IfcDocumentReference:Identification -> IfcIdentifier
-    IfcDocumentReference:Name -> IfcLabel
+    IfcDocumentReference:Name -> IfcLabel_1
     IfcDocumentReference:Description -> IfcText
     IfcRelAssociatesDocument:Name[binding="Name"]
 }

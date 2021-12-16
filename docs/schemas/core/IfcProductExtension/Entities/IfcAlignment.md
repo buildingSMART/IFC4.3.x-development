@@ -83,3 +83,9 @@ The _RepresentationIdentifier_ shall always be set to 'Axis' and the _Representa
 
 ### PredefinedType
 
+## Concepts
+
+### Alignment Geometry
+
+> here comes documentation for the concept assignment
+

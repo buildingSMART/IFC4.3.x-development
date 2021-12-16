@@ -14,9 +14,13 @@ concept {
     IfcElement:Representation -> IfcProductDefinitionShape
     IfcProductDefinitionShape:Representations -> IfcShapeRepresentation
     IfcShapeRepresentation:ContextOfItems -> IfcGeometricRepresentationContext
-    IfcShapeRepresentation:RepresentationIdentifier -> IfcLabel
-    IfcShapeRepresentation:RepresentationType -> IfcLabel
+    IfcShapeRepresentation:RepresentationIdentifier -> IfcLabel_0
+    IfcShapeRepresentation:RepresentationType -> IfcLabel_1
     IfcShapeRepresentation:Items -> IfcFacetedBrep
+    IfcLabel_0 -> constraint_0
+    constraint_0[label="=Body"]
+    IfcLabel_1 -> constraint_1
+    constraint_1[label="=Brep"]
     IfcShapeRepresentation:RepresentationIdentifier[binding="Identifier"]
     IfcShapeRepresentation:RepresentationType[binding="Type"]
     IfcShapeRepresentation:Items[binding="Items"]

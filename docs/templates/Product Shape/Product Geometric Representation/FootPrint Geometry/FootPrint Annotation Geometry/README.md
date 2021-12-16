@@ -16,12 +16,16 @@ The following attribute values for the _IfcShapeRepresentation_ holding this geo
 concept {
     IfcProduct:Representation -> IfcProductDefinitionShape
     IfcProductDefinitionShape:Representations -> IfcShapeRepresentation
-    IfcShapeRepresentation:RepresentationIdentifier -> IfcLabel
+    IfcShapeRepresentation:RepresentationIdentifier -> IfcLabel_0
     IfcShapeRepresentation:ContextOfItems -> IfcGeometricRepresentationContext
-    IfcShapeRepresentation:RepresentationType -> IfcLabel
+    IfcShapeRepresentation:RepresentationType -> IfcLabel_1
     IfcShapeRepresentation:Items -> IfcGeometricCurveSet
     IfcShapeRepresentation:Items -> IfcAnnotationFillArea
     IfcShapeRepresentation:Items -> IfcTextLiteral
+    IfcLabel_0 -> constraint_0
+    constraint_0[label="=FootPrint"]
+    IfcLabel_1 -> constraint_1
+    constraint_1[label="=Annotation2D"]
     IfcShapeRepresentation:RepresentationIdentifier[binding="Identifier"]
     IfcShapeRepresentation:RepresentationType[binding="Type"]
     IfcShapeRepresentation:Items[binding="Items"]

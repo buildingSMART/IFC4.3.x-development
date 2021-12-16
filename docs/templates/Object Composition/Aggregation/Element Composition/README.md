@@ -17,11 +17,11 @@ The part should not be contained in the spatial hierarchy, i.e. the concept _Spa
 
 ```
 concept {
-    IfcElement:Decomposes -> IfcRelAggregates
-    IfcElement:Name -> IfcLabel
-    IfcRelAggregates:RelatingObject -> IfcElement
-    IfcElement:Decomposes[binding="Decomposes"]
+    IfcElement_0:Decomposes -> IfcRelAggregates:RelatedObjects
+    IfcRelAggregates:RelatingObject -> IfcElement_1
+    IfcElement_1:Name -> IfcLabel
+    IfcElement_0:Decomposes[binding="Decomposes"]
     IfcRelAggregates:RelatingObject[binding="RelatingObject"]
-    IfcElement:Name[binding="ElementName"]
+    IfcElement_1:Name[binding="ElementName"]
 }
 ```

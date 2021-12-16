@@ -169,29 +169,29 @@ def generate_definitions():
                 print("WARNING: for %s entity %s not emitted" % (item.name, log_attr_2))
                 continue
             
-            for a in item.children:                
-            
-                type_name = "PEnum_" + a.name
-                # @todo why is this lookup by name?
-                enum_types_by_name = [c for c in xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:Class"] if c.name == type_name]
-                if len(enum_types_by_name) == 1:
-                    type_values = [x.name for x in enum_types_by_name[0]/"ownedLiteral"]
-                else:
+            for a, (nm, (ty_ty_arg)) in zip(item.children, item.definition):
+                
+                if item.stereotype == "QSET":
+                    type_name = "real"
                     type_values = None
-                    try:
-                        pe_type = xmi_doc.xmi.by_id[(xmi_doc.xmi.by_id[a.node.idref]|"type").idref]
-                        pe_type_name = pe_type.name
-                        
+                else:
+                    ty, ty_arg = ty_ty_arg
+                    if ty == "PropertyEnumeratedValue":
+                        type_name = list(ty_arg.values())[0]
+                        enum_types_by_name = [c for c in xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:Class"] if c.name == type_name]
+                        enum_types_by_name += [c for c in xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:Enumeration"] if c.name == type_name]
+                        type_values = [x.name for x in enum_types_by_name[0]/"ownedLiteral"]
+                    elif ty == "PropertySingleValue":
+                        type_name = list(ty_arg.values())[0]
+                        pe_types = [c for c in xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:Class"] if c.name == type_name]
+                        pe_types += [c for c in xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:DataType"] if c.name == type_name]                    
+                        pe_type = pe_types[0]
                         root_generalization = generalization(pe_type)
                         type_name = root_generalization.name.lower()
-                        
-                    except ValueError as e:
-                        print("WARNING:", a.name, "has no associated type", file=sys.stderr)
-                        type_name = 'any'
+                        type_values = None
+                    else:
+                        print("Warning: %s.%s of type %s <%s> not mapped" % (item.name, nm, ty, ",".join(map(lambda kv: "=".join(kv), ty_arg.items()))))
                         continue
-                        
-                # if a.name == "DesignLocationNumber":
-                #     import pdb; pdb.set_trace()
                         
                 di["Psets"][item.name]["Properties"][a.name]['type'] = type_name
                 di["Psets"][item.name]["Properties"][a.name]["Description"] = format(strip_html(a.markdown))

@@ -10,46 +10,44 @@ concept {
     IfcRepresentationMap:MappingOrigin -> IfcAxis2Placement3D
     IfcRepresentationMap:MappingOrigin -> IfcAxis2Placement2D
     IfcShapeRepresentation:ContextOfItems -> IfcGeometricRepresentationContext
-    IfcShapeRepresentation:RepresentationIdentifier -> IfcLabel
-    IfcShapeRepresentation:RepresentationType -> IfcLabel
+    IfcShapeRepresentation:RepresentationIdentifier -> IfcLabel_0
+    IfcShapeRepresentation:RepresentationType -> IfcLabel_1
     IfcShapeRepresentation:Items -> IfcAdvancedBrep
     IfcAdvancedBrep:Outer -> IfcClosedShell
     IfcClosedShell:CfsFaces -> IfcAdvancedFace
     IfcAdvancedFace:Bounds -> IfcFaceOuterBound
     IfcAdvancedFace:FaceSurface -> IfcBSplineSurfaceWithKnots
     IfcFaceOuterBound:Bound -> IfcEdgeLoop
-    IfcFaceOuterBound:Orientation -> IfcBoolean
+    IfcFaceOuterBound:Orientation -> IfcBoolean_2
     IfcEdgeLoop:EdgeList -> IfcOrientedEdge
     IfcOrientedEdge:EdgeElement -> IfcEdgeCurve
-    IfcOrientedEdge:Orientation -> IfcBoolean
+    IfcOrientedEdge:Orientation -> IfcBoolean_1
     IfcEdgeCurve:EdgeGeometry -> IfcBSplineCurveWithKnots
-    IfcEdgeCurve:EdgeStart -> IfcVertexPoint
-    IfcEdgeCurve:EdgeEnd -> IfcVertexPoint
-    IfcEdgeCurve:SameSense -> IfcBoolean
-    IfcBSplineCurveWithKnots:Degree -> IfcInteger
-    IfcBSplineCurveWithKnots:ControlPointsList -> IfcCartesianPoint
+    IfcEdgeCurve:EdgeStart -> IfcVertexPoint_0
+    IfcEdgeCurve:EdgeEnd -> IfcVertexPoint_1
+    IfcEdgeCurve:SameSense -> IfcBoolean_0
+    IfcBSplineCurveWithKnots:Degree -> IfcInteger_0
+    IfcBSplineCurveWithKnots:ControlPointsList -> IfcCartesianPoint_0
     IfcBSplineCurveWithKnots:CurveForm -> IfcBSplineCurveForm
-    IfcBSplineCurveWithKnots:ClosedCurve -> IfcLogical
-    IfcBSplineCurveWithKnots:SelfIntersect -> IfcLogical
-    IfcBSplineCurveWithKnots:KnotMultiplicities -> IfcInteger
-    IfcBSplineCurveWithKnots:Knots -> IfcParameterValue
-    IfcBSplineCurveWithKnots:KnotSpec -> IfcKnotType
-    IfcVertexPoint:VertexGeometry -> IfcCartesianPoint
-    IfcVertexPoint:VertexGeometry -> IfcCartesianPoint
-    IfcVertexPoint:VertexGeometry -> IfcCartesianPoint
-    IfcVertexPoint:VertexGeometry -> IfcCartesianPoint
-    IfcBSplineSurfaceWithKnots:ControlPointsList -> IfcCartesianPoint
-    IfcBSplineSurfaceWithKnots:UDegree -> IfcInteger
-    IfcBSplineSurfaceWithKnots:VDegree -> IfcInteger
+    IfcBSplineCurveWithKnots:ClosedCurve -> IfcLogical_0
+    IfcBSplineCurveWithKnots:SelfIntersect -> IfcLogical_1
+    IfcBSplineCurveWithKnots:KnotMultiplicities -> IfcInteger_1
+    IfcBSplineCurveWithKnots:Knots -> IfcParameterValue_0
+    IfcBSplineCurveWithKnots:KnotSpec -> IfcKnotType_0
+    IfcVertexPoint_0:VertexGeometry -> IfcCartesianPoint_1
+    IfcVertexPoint_1:VertexGeometry -> IfcCartesianPoint_2
+    IfcBSplineSurfaceWithKnots:ControlPointsList -> IfcCartesianPoint_3
+    IfcBSplineSurfaceWithKnots:UDegree -> IfcInteger_2
+    IfcBSplineSurfaceWithKnots:VDegree -> IfcInteger_3
     IfcBSplineSurfaceWithKnots:SurfaceForm -> IfcBSplineSurfaceForm
-    IfcBSplineSurfaceWithKnots:UClosed -> IfcLogical
-    IfcBSplineSurfaceWithKnots:VClosed -> IfcLogical
-    IfcBSplineSurfaceWithKnots:SelfIntersect -> IfcLogical
-    IfcBSplineSurfaceWithKnots:UMultiplicities -> IfcInteger
-    IfcBSplineSurfaceWithKnots:VMultiplicities -> IfcInteger
-    IfcBSplineSurfaceWithKnots:UKnots -> IfcParameterValue
-    IfcBSplineSurfaceWithKnots:VKnots -> IfcParameterValue
-    IfcBSplineSurfaceWithKnots:KnotSpec -> IfcKnotType
+    IfcBSplineSurfaceWithKnots:UClosed -> IfcLogical_2
+    IfcBSplineSurfaceWithKnots:VClosed -> IfcLogical_3
+    IfcBSplineSurfaceWithKnots:SelfIntersect -> IfcLogical_4
+    IfcBSplineSurfaceWithKnots:UMultiplicities -> IfcInteger_4
+    IfcBSplineSurfaceWithKnots:VMultiplicities -> IfcInteger_5
+    IfcBSplineSurfaceWithKnots:UKnots -> IfcParameterValue_1
+    IfcBSplineSurfaceWithKnots:VKnots -> IfcParameterValue_2
+    IfcBSplineSurfaceWithKnots:KnotSpec -> IfcKnotType_1
     IfcShapeRepresentation:RepresentationType[binding="RepresentationType"]
     IfcShapeRepresentation:Items[binding="Geometry"]
 }

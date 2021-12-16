@@ -9,15 +9,21 @@ The quantity set is expressed by instances of _IfcElementQuantity_, where the _N
 concept {
     IfcObject:IsDefinedBy -> IfcRelDefinesByProperties:RelatedObjects
     IfcRelDefinesByProperties:RelatingPropertyDefinition -> IfcElementQuantity
-    IfcElementQuantity:Name -> IfcLabel
+    IfcElementQuantity:Name -> IfcLabel_0
     IfcElementQuantity:Description -> IfcText
-    IfcElementQuantity:MethodOfMeasurement -> IfcLabel
+    IfcElementQuantity:MethodOfMeasurement -> IfcLabel_1
     IfcElementQuantity:Quantities -> IfcQuantityLength
     IfcElementQuantity:Quantities -> IfcQuantityArea
     IfcElementQuantity:Quantities -> IfcQuantityVolume
     IfcElementQuantity:Quantities -> IfcQuantityWeight
     IfcElementQuantity:Quantities -> IfcQuantityCount
     IfcElementQuantity:Quantities -> IfcQuantityTime
+    IfcQuantityLength -> Length_Quantity
+    IfcQuantityArea -> Area_Quantity
+    IfcQuantityVolume -> Volume_Quantity
+    IfcQuantityWeight -> Weight_Quantity
+    IfcQuantityCount -> Count_Quantity
+    IfcQuantityTime -> Time_Quantity
     IfcElementQuantity:Name[binding="QsetName"]
     IfcElementQuantity:Quantities[binding="Quantities"]
 }

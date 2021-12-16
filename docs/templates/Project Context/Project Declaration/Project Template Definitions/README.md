@@ -8,22 +8,22 @@ Declaration of property set templates, including the property templates that are
 ```
 concept {
     IfcContext:Declares -> IfcRelDeclares:RelatingContext
-    IfcContext:Phase -> IfcLabel
-    IfcContext:ObjectType -> IfcLabel
-    IfcContext:LongName -> IfcLabel
+    IfcContext:Phase -> IfcLabel_4
+    IfcContext:ObjectType -> IfcLabel_5
+    IfcContext:LongName -> IfcLabel_6
     IfcRelDeclares:RelatedDefinitions -> IfcPropertySetTemplate
     IfcPropertySetTemplate:TemplateType -> IfcPropertySetTemplateTypeEnum
     IfcPropertySetTemplate:ApplicableEntity -> IfcIdentifier
     IfcPropertySetTemplate:HasPropertyTemplates -> IfcSimplePropertyTemplate
     IfcSimplePropertyTemplate:TemplateType -> IfcSimplePropertyTemplateTypeEnum
-    IfcSimplePropertyTemplate:PrimaryMeasureType -> IfcLabel
-    IfcSimplePropertyTemplate:SecondaryMeasureType -> IfcLabel
+    IfcSimplePropertyTemplate:PrimaryMeasureType -> IfcLabel_0
+    IfcSimplePropertyTemplate:SecondaryMeasureType -> IfcLabel_1
     IfcSimplePropertyTemplate:Enumerators -> IfcPropertyEnumeration
     IfcSimplePropertyTemplate:AccessState -> IfcStateEnum
-    IfcSimplePropertyTemplate:PrimaryUnit -> IfcUnit
-    IfcSimplePropertyTemplate:SecondaryUnit -> IfcUnit
-    IfcSimplePropertyTemplate:Expression -> IfcLabel
-    IfcPropertyEnumeration:Name -> IfcLabel
+    IfcSimplePropertyTemplate:PrimaryUnit -> IfcUnit_0
+    IfcSimplePropertyTemplate:SecondaryUnit -> IfcUnit_1
+    IfcSimplePropertyTemplate:Expression -> IfcLabel_3
+    IfcPropertyEnumeration:Name -> IfcLabel_2
     IfcPropertyEnumeration:EnumerationValues -> IfcValue
     IfcRelDeclares:RelatedDefinitions[binding="Type"]
 }

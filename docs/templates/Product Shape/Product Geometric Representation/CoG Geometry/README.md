@@ -14,9 +14,11 @@ concept {
     IfcProduct:Representation -> IfcProductDefinitionShape
     IfcProductDefinitionShape:Representations -> IfcShapeRepresentation
     IfcShapeRepresentation:ContextOfItems -> IfcGeometricRepresentationContext
-    IfcShapeRepresentation:RepresentationIdentifier -> IfcLabel
-    IfcShapeRepresentation:RepresentationType -> IfcLabel
+    IfcShapeRepresentation:RepresentationIdentifier -> IfcLabel_0
+    IfcShapeRepresentation:RepresentationType -> IfcLabel_1
     IfcShapeRepresentation:Items -> IfcCartesianPoint
+    IfcLabel_0 -> constraint_0
+    constraint_0[label="=CoG"]
     IfcShapeRepresentation:RepresentationIdentifier[binding="Identifier"]
     IfcShapeRepresentation:RepresentationType[binding="Type"]
 }

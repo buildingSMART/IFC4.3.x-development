@@ -8,14 +8,14 @@ The Viennese Bend (R) transition segment is a kinematic high performance transit
 ```
 concept {
     IfcCurveSegment:ParentCurve -> IfcSeventhOrderPolynomialSpiral
-    IfcCurveSegment:SegmentStart -> IfcParameterValue
-    IfcCurveSegment:SegmentLength -> IfcParameterValue
+    IfcCurveSegment:SegmentStart -> IfcParameterValue_0
+    IfcCurveSegment:SegmentLength -> IfcParameterValue_1
     IfcSeventhOrderPolynomialSpiral:ConstantTerm -> IfcReal
-    IfcSeventhOrderPolynomialSpiral:QuadraticTerm -> IfcLengthMeasure
-    IfcSeventhOrderPolynomialSpiral:CubicTerm -> IfcLengthMeasure
-    IfcSeventhOrderPolynomialSpiral:QuarticTerm -> IfcLengthMeasure
-    IfcSeventhOrderPolynomialSpiral:QuinticTerm -> IfcLengthMeasure
-    IfcSeventhOrderPolynomialSpiral:SexticTerm -> IfcLengthMeasure
-    IfcSeventhOrderPolynomialSpiral:SepticTerm -> IfcLengthMeasure
+    IfcSeventhOrderPolynomialSpiral:QuadraticTerm -> IfcLengthMeasure_0
+    IfcSeventhOrderPolynomialSpiral:CubicTerm -> IfcLengthMeasure_1
+    IfcSeventhOrderPolynomialSpiral:QuarticTerm -> IfcLengthMeasure_2
+    IfcSeventhOrderPolynomialSpiral:QuinticTerm -> IfcLengthMeasure_3
+    IfcSeventhOrderPolynomialSpiral:SexticTerm -> IfcLengthMeasure_4
+    IfcSeventhOrderPolynomialSpiral:SepticTerm -> IfcLengthMeasure_5
 }
 ```

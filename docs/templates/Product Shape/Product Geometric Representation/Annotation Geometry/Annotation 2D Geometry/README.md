@@ -17,51 +17,38 @@ concept {
     IfcAnnotation:Representation -> IfcProductDefinitionShape
     IfcProductDefinitionShape:Representations -> IfcShapeRepresentation
     IfcShapeRepresentation:ContextOfItems -> IfcGeometricRepresentationContext
-    IfcShapeRepresentation:RepresentationIdentifier -> IfcLabel
-    IfcShapeRepresentation:RepresentationType -> IfcLabel
+    IfcShapeRepresentation:RepresentationIdentifier -> IfcLabel_0
+    IfcShapeRepresentation:RepresentationType -> IfcLabel_1
     IfcShapeRepresentation:Items -> IfcAnnotationFillArea
-    IfcShapeRepresentation:Items -> IfcIndexedPolyCurve
+    IfcShapeRepresentation:Items -> IfcIndexedPolyCurve_2
     IfcShapeRepresentation:Items -> IfcCartesianPoint
     IfcShapeRepresentation:Items -> IfcTextLiteral
-    IfcAnnotationFillArea:OuterBoundary -> IfcIndexedPolyCurve
-    IfcAnnotationFillArea:InnerBoundaries -> IfcIndexedPolyCurve
-    IfcAnnotationFillArea:StyledByItem -> IfcStyledItem
-    IfcIndexedPolyCurve:Points -> IfcCartesianPointList2D
-    IfcIndexedPolyCurve:Points -> IfcCartesianPointList2D
-    IfcIndexedPolyCurve:Points -> IfcCartesianPointList2D
-    IfcIndexedPolyCurve:Segments -> IfcArcIndex
-    IfcIndexedPolyCurve:Segments -> IfcLineIndex
-    IfcIndexedPolyCurve:Segments -> IfcArcIndex
-    IfcIndexedPolyCurve:Segments -> IfcLineIndex
-    IfcIndexedPolyCurve:Points -> IfcCartesianPointList2D
-    IfcIndexedPolyCurve:Points -> IfcCartesianPointList2D
-    IfcIndexedPolyCurve:Points -> IfcCartesianPointList2D
-    IfcIndexedPolyCurve:Segments -> IfcArcIndex
-    IfcIndexedPolyCurve:Segments -> IfcLineIndex
-    IfcIndexedPolyCurve:Segments -> IfcArcIndex
-    IfcIndexedPolyCurve:Segments -> IfcLineIndex
-    IfcIndexedPolyCurve:Points -> IfcCartesianPointList2D
-    IfcIndexedPolyCurve:Points -> IfcCartesianPointList2D
-    IfcIndexedPolyCurve:Points -> IfcCartesianPointList2D
-    IfcIndexedPolyCurve:Segments -> IfcArcIndex
-    IfcIndexedPolyCurve:Segments -> IfcLineIndex
-    IfcIndexedPolyCurve:Segments -> IfcArcIndex
-    IfcIndexedPolyCurve:Segments -> IfcLineIndex
-    IfcIndexedPolyCurve:StyledByItem -> IfcStyledItem
-    IfcStyledItem:Styles -> IfcFillAreaStyle
-    IfcStyledItem:Styles -> IfcCurveStyle
-    IfcStyledItem:Styles -> IfcTextStyle
-    IfcStyledItem:Styles -> IfcFillAreaStyle
-    IfcStyledItem:Styles -> IfcCurveStyle
-    IfcStyledItem:Styles -> IfcTextStyle
-    IfcStyledItem:Styles -> IfcFillAreaStyle
-    IfcStyledItem:Styles -> IfcCurveStyle
-    IfcStyledItem:Styles -> IfcTextStyle
-    IfcCartesianPointList2D:CoordList -> IfcLengthMeasure
+    IfcLabel_0 -> constraint_0
+    constraint_0[label="=Annotation"]
+    IfcLabel_1 -> constraint_1
+    constraint_1[label="=Annotation2D"]
+    IfcAnnotationFillArea:OuterBoundary -> IfcIndexedPolyCurve_0
+    IfcAnnotationFillArea:InnerBoundaries -> IfcIndexedPolyCurve_1
+    IfcAnnotationFillArea:StyledByItem -> IfcStyledItem_0:Item
+    IfcIndexedPolyCurve_0:Points -> IfcCartesianPointList2D_0
+    IfcIndexedPolyCurve_0:Segments -> IfcArcIndex_0
+    IfcIndexedPolyCurve_0:Segments -> IfcLineIndex_0
+    IfcIndexedPolyCurve_1:Points -> IfcCartesianPointList2D_1
+    IfcIndexedPolyCurve_1:Segments -> IfcArcIndex_1
+    IfcIndexedPolyCurve_1:Segments -> IfcLineIndex_1
+    IfcStyledItem_0:Styles -> IfcFillAreaStyle
+    IfcFillAreaStyle -> Geometry_Fill_Area_Style
+    IfcIndexedPolyCurve_2:Points -> IfcCartesianPointList2D_2
+    IfcIndexedPolyCurve_2:StyledByItem -> IfcStyledItem_1:Item
+    IfcCartesianPointList2D_2:CoordList -> IfcLengthMeasure
+    IfcStyledItem_1:Styles -> IfcCurveStyle
+    IfcCurveStyle -> Geometry_Curve_Style
     IfcTextLiteral:Literal -> IfcPresentableText
     IfcTextLiteral:Placement -> IfcAxis2Placement2D
     IfcTextLiteral:Path -> IfcTextPath
-    IfcTextLiteral:StyledByItem -> IfcStyledItem
+    IfcTextLiteral:StyledByItem -> IfcStyledItem_2:Item
+    IfcStyledItem_2:Styles -> IfcTextStyle
+    IfcTextStyle -> Geometry_Text_Style
     IfcShapeRepresentation:RepresentationIdentifier[binding="Identifier"]
     IfcShapeRepresentation:RepresentationType[binding="Type"]
     IfcShapeRepresentation:Items[binding="Items"]

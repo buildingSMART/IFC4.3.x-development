@@ -9,20 +9,21 @@ The material of those standard case elements is defined by _IfcMaterialLayerSetU
 
 ```
 concept {
-    IfcProduct:HasAssociations -> IfcRelAssociatesMaterial
+    IfcProduct:HasAssociations -> IfcRelAssociatesMaterial:RelatedObjects
     IfcRelAssociatesMaterial:RelatingMaterial -> IfcMaterialLayerSetUsage
     IfcMaterialLayerSetUsage:ForLayerSet -> IfcMaterialLayerSet
-    IfcMaterialLayerSetUsage:LayerSetDirection -> IfcLayerSetDirectionEnum
+    IfcMaterialLayerSetUsage:LayerSetDirection -> IfcLayerSetDirectionEnum_1
     IfcMaterialLayerSetUsage:DirectionSense -> IfcDirectionSenseEnum
-    IfcMaterialLayerSetUsage:OffsetFromReferenceLine -> IfcLengthMeasure
+    IfcMaterialLayerSetUsage:OffsetFromReferenceLine -> IfcLengthMeasure_1
     IfcMaterialLayerSetUsage:ReferenceExtent -> IfcPositiveLengthMeasure
     IfcMaterialLayerSet:MaterialLayers -> IfcMaterialLayer
     IfcMaterialLayerSet:MaterialLayers -> IfcMaterialLayerWithOffsets
     IfcMaterialLayer:Material -> IfcMaterial
     IfcMaterialLayer:LayerThickness -> IfcNonNegativeLengthMeasure
     IfcMaterial:HasRepresentation -> IfcMaterialDefinitionRepresentation:RepresentedMaterial
-    IfcMaterialLayerWithOffsets:OffsetDirection -> IfcLayerSetDirectionEnum
-    IfcMaterialLayerWithOffsets:OffsetValues -> IfcLengthMeasure
+    IfcMaterialDefinitionRepresentation -> Material_Surface_Color_Style
+    IfcMaterialLayerWithOffsets:OffsetDirection -> IfcLayerSetDirectionEnum_0
+    IfcMaterialLayerWithOffsets:OffsetValues -> IfcLengthMeasure_0
     IfcMaterialLayer:Name[binding="Name"]
 }
 ```

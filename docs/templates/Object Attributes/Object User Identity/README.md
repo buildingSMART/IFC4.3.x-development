@@ -10,12 +10,12 @@ Specific subtypes introduce additional attributes for _User Identity_.
 
 ```
 concept {
-    IfcObject:Name -> IfcLabel
-    IfcObject:Description -> IfcText
+    IfcObject:Name -> IfcLabel_0
+    IfcObject:Description -> IfcText_0
     IfcObject:IsTypedBy -> IfcRelDefinesByType:RelatedObjects
     IfcRelDefinesByType:RelatingType -> IfcTypeObject
-    IfcTypeObject:Name -> IfcLabel
-    IfcTypeObject:Description -> IfcText
+    IfcTypeObject:Name -> IfcLabel_1
+    IfcTypeObject:Description -> IfcText_1
     IfcObject:Name[binding="ObjectName"]
     IfcObject:Description[binding="ObjectDescription"]
     IfcTypeObject:Name[binding="TypeName"]

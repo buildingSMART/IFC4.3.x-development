@@ -7,5 +7,6 @@ Materials are directly associated with products and product types to indicate a 
 concept {
     IfcObjectDefinition:HasAssociations -> IfcRelAssociatesMaterial:RelatedObjects
     IfcRelAssociatesMaterial:RelatingMaterial -> IfcMaterial
+    IfcMaterial -> Material
 }
 ```

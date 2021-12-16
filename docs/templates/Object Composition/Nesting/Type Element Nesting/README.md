@@ -11,7 +11,7 @@ The order and naming of components may be significant based on parameterized mat
 
 ```
 concept {
-    IfcElementType:IsNestedBy -> IfcRelNests
+    IfcElementType:IsNestedBy -> IfcRelNests:RelatingObject
     IfcRelNests:RelatedObjects -> IfcElement
     IfcElement:Name -> IfcLabel
     IfcRelNests:RelatedObjects[binding="Elements"]

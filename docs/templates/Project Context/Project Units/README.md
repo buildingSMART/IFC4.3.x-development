@@ -19,9 +19,9 @@ Default units are defined as either:
 ```
 concept {
     IfcContext:UnitsInContext -> IfcUnitAssignment
-    IfcContext:Phase -> IfcLabel
-    IfcContext:ObjectType -> IfcLabel
-    IfcContext:LongName -> IfcLabel
+    IfcContext:Phase -> IfcLabel_4
+    IfcContext:ObjectType -> IfcLabel_5
+    IfcContext:LongName -> IfcLabel_6
     IfcUnitAssignment:Units -> IfcDerivedUnit
     IfcUnitAssignment:Units -> IfcMonetaryUnit
     IfcUnitAssignment:Units -> IfcSIUnit
@@ -29,20 +29,20 @@ concept {
     IfcUnitAssignment:Units -> IfcConversionBasedUnitWithOffset
     IfcDerivedUnit:UnitType -> IfcDerivedUnitEnum
     IfcDerivedUnit:Elements -> IfcDerivedUnitElement
-    IfcDerivedUnit:UserDefinedType -> IfcLabel
+    IfcDerivedUnit:UserDefinedType -> IfcLabel_0
     IfcDerivedUnitElement:Unit -> IfcNamedUnit
-    IfcMonetaryUnit:Currency -> IfcLabel
-    IfcSIUnit:UnitType -> IfcUnitEnum
+    IfcMonetaryUnit:Currency -> IfcLabel_1
+    IfcSIUnit:UnitType -> IfcUnitEnum_0
     IfcSIUnit:Prefix -> IfcSIPrefix
     IfcSIUnit:Name -> IfcSIUnitName
-    IfcConversionBasedUnit:Dimensions -> IfcDimensionalExponents
-    IfcConversionBasedUnit:UnitType -> IfcUnitEnum
-    IfcConversionBasedUnit:Name -> IfcLabel
-    IfcConversionBasedUnit:ConversionFactor -> IfcMeasureWithUnit
-    IfcConversionBasedUnitWithOffset:Dimensions -> IfcDimensionalExponents
-    IfcConversionBasedUnitWithOffset:UnitType -> IfcUnitEnum
-    IfcConversionBasedUnitWithOffset:Name -> IfcLabel
-    IfcConversionBasedUnitWithOffset:ConversionFactor -> IfcMeasureWithUnit
+    IfcConversionBasedUnit:Dimensions -> IfcDimensionalExponents_0
+    IfcConversionBasedUnit:UnitType -> IfcUnitEnum_1
+    IfcConversionBasedUnit:Name -> IfcLabel_2
+    IfcConversionBasedUnit:ConversionFactor -> IfcMeasureWithUnit_0
+    IfcConversionBasedUnitWithOffset:Dimensions -> IfcDimensionalExponents_1
+    IfcConversionBasedUnitWithOffset:UnitType -> IfcUnitEnum_2
+    IfcConversionBasedUnitWithOffset:Name -> IfcLabel_3
+    IfcConversionBasedUnitWithOffset:ConversionFactor -> IfcMeasureWithUnit_1
     IfcConversionBasedUnitWithOffset:ConversionOffset -> IfcReal
     IfcContext:UnitsInContext[binding="HasUnits"]
     IfcDerivedUnit:UnitType[binding="DerivedUnitType"]

@@ -9,15 +9,15 @@ concept {
     IfcPolygonalFaceSet:Closed -> IfcBoolean
     IfcPolygonalFaceSet:Faces -> IfcIndexedPolygonalFace
     IfcPolygonalFaceSet:Faces -> IfcIndexedPolygonalFaceWithVoids
-    IfcPolygonalFaceSet:PnIndex -> IfcPositiveInteger
-    IfcPolygonalFaceSet:HasColours -> IfcIndexedColourMap
+    IfcPolygonalFaceSet:PnIndex -> IfcPositiveInteger_3
+    IfcPolygonalFaceSet:HasColours -> IfcIndexedColourMap:MappedTo
     IfcCartesianPointList3D:CoordList -> IfcLengthMeasure
-    IfcIndexedPolygonalFace:CoordIndex -> IfcPositiveInteger
-    IfcIndexedPolygonalFaceWithVoids:CoordIndex -> IfcPositiveInteger
-    IfcIndexedPolygonalFaceWithVoids:InnerCoordIndices -> IfcPositiveInteger
-    IfcIndexedColourMap:Opacity -> IfcNormalisedRatioMeasure
+    IfcIndexedPolygonalFace:CoordIndex -> IfcPositiveInteger_0
+    IfcIndexedPolygonalFaceWithVoids:CoordIndex -> IfcPositiveInteger_1
+    IfcIndexedPolygonalFaceWithVoids:InnerCoordIndices -> IfcPositiveInteger_2
+    IfcIndexedColourMap:Opacity -> IfcNormalisedRatioMeasure_0
     IfcIndexedColourMap:Colours -> IfcColourRgbList
-    IfcIndexedColourMap:ColourIndex -> IfcPositiveInteger
-    IfcColourRgbList:ColourList -> IfcNormalisedRatioMeasure
+    IfcIndexedColourMap:ColourIndex -> IfcPositiveInteger_4
+    IfcColourRgbList:ColourList -> IfcNormalisedRatioMeasure_1
 }
 ```

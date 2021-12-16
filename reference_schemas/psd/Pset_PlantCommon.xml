@@ -20,17 +20,6 @@
       <NameAliases />
       <DefinitionAliases />
     </PropertyDef>
-    <PropertyDef ifdguid="e3d7420421a149beb71653c6faf42cf2">
-      <Name>Description</Name>
-      <Definition />
-      <PropertyType>
-        <TypePropertySingleValue>
-          <DataType type="IfcText" />
-        </TypePropertySingleValue>
-      </PropertyType>
-      <NameAliases />
-      <DefinitionAliases />
-    </PropertyDef>
     <PropertyDef ifdguid="289711fa80e64310a9c60994af663b87">
       <Name>LocalName</Name>
       <Definition>The local name that the plant is known as.</Definition>

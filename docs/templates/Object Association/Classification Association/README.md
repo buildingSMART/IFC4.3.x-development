@@ -21,18 +21,18 @@ The main attributes to be provided for a _Classification Association_ are:
 concept {
     IfcObjectDefinition:HasAssociations -> IfcRelAssociatesClassification:RelatedObjects
     IfcRelAssociatesClassification:RelatingClassification -> IfcClassificationReference
-    IfcClassificationReference:Identification -> IfcIdentifier
-    IfcClassificationReference:Name -> IfcLabel
-    IfcClassificationReference:Description -> IfcText
+    IfcClassificationReference:Identification -> IfcIdentifier_0
+    IfcClassificationReference:Name -> IfcLabel_0
+    IfcClassificationReference:Description -> IfcText_0
     IfcClassificationReference:ReferencedSource -> IfcClassification
-    IfcClassificationReference:Sort -> IfcIdentifier
-    IfcClassificationReference:Location -> IfcURIReference
-    IfcClassification:Source -> IfcLabel
-    IfcClassification:Name -> IfcLabel
-    IfcClassification:ReferenceTokens -> IfcIdentifier
-    IfcClassification:Edition -> IfcLabel
-    IfcClassification:Description -> IfcText
-    IfcClassification:Location -> IfcURIReference
+    IfcClassificationReference:Sort -> IfcIdentifier_2
+    IfcClassificationReference:Location -> IfcURIReference_1
+    IfcClassification:Source -> IfcLabel_1
+    IfcClassification:Name -> IfcLabel_2
+    IfcClassification:ReferenceTokens -> IfcIdentifier_1
+    IfcClassification:Edition -> IfcLabel_3
+    IfcClassification:Description -> IfcText_1
+    IfcClassification:Location -> IfcURIReference_0
     IfcClassification:EditionDate -> IfcDate
     IfcClassificationReference:Identification[binding="Identification"]
     IfcClassificationReference:Name[binding="Name"]

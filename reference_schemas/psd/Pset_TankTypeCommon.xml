@@ -138,7 +138,9 @@ Note that covers are generally specified for rectangular tanks. For cylindrical 
               <NameAliases>
                 <NameAlias lang="en">None</NameAlias>
               </NameAliases>
-              <DefinitionAliases />
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">None, empty or no additional action or function.</DefinitionAlias>
+              </DefinitionAliases>
             </ConstantDef>
             <ConstantDef>
               <Name>LOOSECOVER</Name>

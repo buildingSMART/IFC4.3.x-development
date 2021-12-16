@@ -5,10 +5,10 @@ Length Quantity
 
 ```
 concept {
-    IfcQuantityLength:Name -> IfcLabel
+    IfcQuantityLength:Name -> IfcLabel_0
     IfcQuantityLength:Description -> IfcText
     IfcQuantityLength:LengthValue -> IfcLengthMeasure
-    IfcQuantityLength:Formula -> IfcLabel
+    IfcQuantityLength:Formula -> IfcLabel_1
     IfcQuantityLength:Name[binding="QuantityName"]
     IfcQuantityLength:LengthValue[binding="LengthValue"]
 }

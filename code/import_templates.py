@@ -8,53 +8,56 @@ import json
 import itertools
 
 from collections import defaultdict
+from dataclasses import dataclass
 from xml.etree import ElementTree as ET
 
-IGNORED_TAGS = IGNORED_ATTRS = set()
+import xml_dict
 
 entity_attributes = json.load(open(os.path.join(
-    os.path.abspath(os.path.dirname(__file__)), 
-    "..", "server", "entity_attributes.json"
+    os.path.abspath(os.path.dirname(__file__)), "entity_attributes.json"
 )))
 
 entity_supertype = json.load(open(os.path.join(
-    os.path.abspath(os.path.dirname(__file__)), 
-    "..", "server", "entity_supertype.json"
+    os.path.abspath(os.path.dirname(__file__)), "entity_supertype.json"
 )))
 
-def create_entity_definition(e):
-    table = [(e, "")]
-    while e:
-        keys = [x for x in entity_attributes.keys() if x.startswith(e + '.')]
-        for k, (is_fwd, ty) in zip(keys, map(entity_attributes.__getitem__, keys)):
-            nm = k.split('.')[1]
-            
-            if is_fwd:
-                card = "[0:1]" if "OPTIONAL" in ty else "[1:1]"
-            else:
-                nm = "<i>%s</i>" % nm
-                inv_card = re.findall(r'(\[.+?\])', ty)
-                if inv_card:
-                    card = inv_card[0]
-                else:
-                    card = ""
-            
-            table.append((nm, card))
-        e = entity_supertype.get(e)
-        
-    table = "<<table border=\"0\" cellborder=\"1\" cellspacing=\"0\">%s</table>>" % \
-        "".join("<tr>%s</tr>" % "".join("<td port=\"%s%d\">%s</td>" % (r[0],i,c) for i,c in enumerate(r)) for r in table)
+@dataclass(frozen=True,eq=True)
+class constraint:
+    value : str
+
+
+class references_by_name_context:
+    items = defaultdict(list)
+    def clear(self):
+        self.items = defaultdict(list)
+   
+references_by_name = references_by_name_context()
+   
+@dataclass(frozen=True,eq=True)
+class node_reference:
+    id : int
+    name : str
     
-    return table
+    def __post_init__(self):
+        references_by_name.items[self.name.split(":")[0]].append(self)
+    
+    def __repr__(self):
+        refs = [x for x in references_by_name.items.get(self.name.split(":")[0]) if ":" not in x.name]
+        if len(refs) > 1:
+            parts = self.name.split(":")
+            parts[0] += f"_{[x.id for x in refs].index(self.id)}"
+            return ":".join(parts)
+        else:
+            return self.name
     
 
 def get_attribute(x):
-    df = entity_attributes.get(x)
+    e, a = x.split(":")
+    df = entity_attributes.get(x.replace(":", "."))
     if df:
         return df    
     elif entity_supertype.get(e):
-        e, a = x.split(".")
-        return get_attribute(entity_supertype[e] + "." + a)
+        return get_attribute(entity_supertype[e] + ":" + a)
         
     
 def reverse_attr(v):
@@ -65,34 +68,8 @@ def reverse_attr(v):
     if is_fwd:
         return ""
     else:
-        return "." + df.split(" FOR ")[-1]
-
-entity_defs = {e: create_entity_definition(e) for e in (set(entity_supertype.values()) & entity_supertype.keys())}
-
-def flatmap(func, *iterable):
-    return itertools.chain.from_iterable(map(func, *iterable))
-
-def to_dict(t):
-    if t.tag in IGNORED_TAGS:
-        return
-
-    # strip out namespace reported by etree as
-    # "{http://www.buildingsmart-tech.org/xml/qto/QTO_IFC4.xsd}QtoSetDef"
-    items = {'#tag': re.sub(r'\{.+?\}', '', t.tag)}
-    
-    if list(t):
-        items['_children'] = list(flatmap(to_dict, t))
-    
-    items.update({'@' + k: v for k, v in (t.attrib or {}).items() if k not in IGNORED_ATTRS})
-        
-    if t.text and t.text.strip():
-        items['#text'] = t.text.strip()
-        
-    yield items
-    
-def read(fn):
-    parser = ET.XMLParser(encoding="utf-8")
-    return next(to_dict(ET.parse(fn, parser=parser).getroot()))
+        return ":" + df.split(" FOR ")[-1]
+IGNORED_TAGS = IGNORED_ATTRS = set()
 
 dr = sys.argv[1]
 odr = os.path.join(os.path.abspath(os.path.dirname(__file__)), "..", "docs", "templates")
@@ -118,15 +95,24 @@ tmpl_to_name = {}
 for tmpl in templates:
     xml = make_xml(tmpl)
     if os.path.exists(xml):
-        doc = read(xml)
-        keys = set(d for d in doc.keys() if d.startswith("@"))
-        if "@Name" in keys and "@id" in keys:
-            tmpl_to_name[doc["@id"]] = doc["@Name"]
+        doc = xml_dict.read(xml)
+        if "Name" in doc.attributes and "id" in doc.attributes:
+            tmpl_to_name[doc.attributes["id"]] = doc.attributes["Name"]
+
+
+class unique_list(list):
+    """
+    Quick and dirty alternative to set to maintain insertion order.
+    """
+    
+    def append(self, item):
+        if item not in self:
+            list.append(self, item)
+
 
 for tmpl in templates:
 
-    if "Property Sets for Objects" not in tmpl:
-        continue
+    references_by_name.clear()
 
     parts = tmpl[len(base)+1:].split(os.sep)
     of = os.path.join(odr, *parts, "README.md")
@@ -150,58 +136,83 @@ for tmpl in templates:
         print(file=f)
         print(contents, file=f)
         
-        parent_child = defaultdict(list)
+        parent_child = defaultdict(unique_list)
         
         ids = {}
+        
+        def traverse(n):
+            yield n
+            for c in n.children:
+                yield from traverse(c)
+        
+        def parse_template(fn):
+            doc = xml_dict.read(xml)
+            rules = doc.child_with_tag('Rules')
+            if rules:
+                root = doc.attributes.get("Type")
+                for c in rules.children:
+                    visit(node_reference(id(doc), root), c)
             
         def visit(parent, r):
-            if r['#tag'] == "Value" or r['#tag'] == "DocModelRuleConstraint":
-                # @todo
+            if r.tag == "Value" or r.tag == "DocModelRuleConstraint":
+                assert r.child_with_tag("Expression").attributes.get("Operation") == "compareequal"
+                val = r.child_with_tag("Expression").child_with_tag("Value").attributes["Literal"]
+                parent_child[parent].append(constraint(val))
                 return
                 
-            if r['#tag'] == "DocTemplateDefinition":
-                parent_child[parent].append(r["@href"])
+            if r.tag == "DocTemplateDefinition":
+                parent_child[parent].append(r.attributes["href"])
                 return
                 
-            name = r['@Name']
-            if r['#tag'] == "DocModelRuleAttribute":
-                name = parent + "." + name
+            if r.attributes.get("href"):
+                current_path = xml
+                while True:
+                    pdoc = xml_dict.read(current_path)
+                    nodes = [x for x in traverse(pdoc) if x.attributes.get("id") == r.attributes.get("href")]
+                    if nodes:
+                        r = nodes[0]
+                        break                
+                    current_path = os.path.join(os.path.dirname(os.path.dirname(current_path)), 'DocTemplateDefinition.xml')
+                
+            name = node_reference(id(r), r.attributes["Name"])
+            if r.tag == "DocModelRuleAttribute":
+                name = node_reference(parent.id, parent.name + ":" + name.name)
+            
             parent_child[parent].append(name)
-            if r.get('@Identification'):
-                ids[name] = r.get('@Identification')
-                
-            for x in r.get('_children', []):
-                for c in x.get('_children', []):
-                    visit(name, c)
-                    
-                    
-                    
-        doc = read(xml)
-        rules = [c for c in doc.get('_children', []) if c['#tag'] == 'Rules']
-        if rules:
-            root = doc.get('@Type')
-            print(file=f)
-            print("```", file=f)
-            print("concept {", file=f)
             
-            for c in rules[0].get('_children', []):
-                visit(root, c)
+            if r.attributes.get("Identification"):
+                ids[name] = r.attributes.get("Identification")
                 
-            import pprint
-            pprint.pprint(parent_child)
-            
-            for k, vs in list(parent_child.items()):
-                if '.' not in k:
-                    for v in vs:
-                        if "_" in v:
-                            print("   ", k, "->", tmpl_to_name[v].replace(" ", "_"), file=f)
-                        else:
-                            for v2 in parent_child[v]:                            
-                                print("   ", v.replace(".", ":"), "->", (v2 + reverse_attr(v)).replace(".", ":"), file=f)
-                            
-            for k, v in ids.items():
-                print(f"    {k.replace('.', ':')}[binding=\"{v}\"]", file=f)
-                                
-            print("}", file=f)
-            print("```", file=f)
+            for x in r.children:
+                for c in x.children:
+                    visit(name, c)                    
+                    
+        parse_template(xml)
         
+        if not parent_child:
+            continue
+    
+        print(file=f)
+        print("```", file=f)
+        print("concept {", file=f)
+        
+        contraint_counter = 0
+
+        for k, vs in list(parent_child.items()):
+            if ':' not in k.name:
+                for v in vs:
+                    if isinstance(v, constraint):
+                        print(f"    {k} -> constraint_{contraint_counter}", file=f)
+                        print(f"    constraint_{contraint_counter}[label=\"={v.value}\"]", file=f)
+                        contraint_counter += 1
+                    elif isinstance(v, str) and "_" in v:
+                        print("   ", k, "->", tmpl_to_name[v].replace(" ", "_"), file=f)
+                    else:
+                        for v2 in parent_child[v]:
+                            print(f"    {v} -> {v2}{reverse_attr(v.name)}", file=f)
+                        
+        for k, v in ids.items():
+            print(f"    {k}[binding=\"{v}\"]", file=f)
+                            
+        print("}", file=f)
+        print("```", file=f)

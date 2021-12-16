@@ -7,7 +7,7 @@ Linear Segment
 concept {
     IfcCurveSegment:ParentCurve -> IfcPolyline
     IfcCurveSegment:ParentCurve -> IfcLine
-    IfcCurveSegment:SegmentStart -> IfcParameterValue
-    IfcCurveSegment:SegmentLength -> IfcParameterValue
+    IfcCurveSegment:SegmentStart -> IfcParameterValue_0
+    IfcCurveSegment:SegmentLength -> IfcParameterValue_1
 }
 ```

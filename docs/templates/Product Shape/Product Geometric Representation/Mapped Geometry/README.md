@@ -11,24 +11,24 @@ The representation identifier of the mapped geometry representation is any of th
 ```
 concept {
     IfcProduct:Representation -> IfcProductDefinitionShape
-    IfcProductDefinitionShape:Representations -> IfcShapeRepresentation
-    IfcShapeRepresentation:ContextOfItems -> IfcGeometricRepresentationContext
-    IfcShapeRepresentation:RepresentationIdentifier -> IfcLabel
-    IfcShapeRepresentation:RepresentationType -> IfcLabel
-    IfcShapeRepresentation:Items -> IfcMappedItem
+    IfcProductDefinitionShape:Representations -> IfcShapeRepresentation_0
+    IfcShapeRepresentation_0:ContextOfItems -> IfcGeometricRepresentationContext
+    IfcShapeRepresentation_0:RepresentationIdentifier -> IfcLabel_0
+    IfcShapeRepresentation_0:RepresentationType -> IfcLabel_1
+    IfcShapeRepresentation_0:Items -> IfcMappedItem
     IfcMappedItem:MappingSource -> IfcRepresentationMap
     IfcMappedItem:MappingTarget -> IfcCartesianTransformationOperator3D
     IfcMappedItem:MappingTarget -> IfcCartesianTransformationOperator3DnonUniform
     IfcRepresentationMap:MappingOrigin -> IfcAxis2Placement3D
-    IfcRepresentationMap:MappedRepresentation -> IfcShapeRepresentation
-    IfcAxis2Placement3D:Location -> IfcCartesianPoint
-    IfcAxis2Placement3D:Axis -> IfcDirection
-    IfcAxis2Placement3D:RefDirection -> IfcDirection
-    IfcCartesianTransformationOperator3D:Axis1 -> IfcDirection
-    IfcCartesianTransformationOperator3D:Axis2 -> IfcDirection
-    IfcCartesianTransformationOperator3D:LocalOrigin -> IfcCartesianPoint
-    IfcCartesianTransformationOperator3D:Axis3 -> IfcDirection
-    IfcShapeRepresentation:RepresentationIdentifier[binding="Identifier"]
-    IfcShapeRepresentation:RepresentationType[binding="Type"]
+    IfcRepresentationMap:MappedRepresentation -> IfcShapeRepresentation_1
+    IfcAxis2Placement3D:Location -> IfcCartesianPoint_0
+    IfcAxis2Placement3D:Axis -> IfcDirection_0
+    IfcAxis2Placement3D:RefDirection -> IfcDirection_1
+    IfcCartesianTransformationOperator3D:Axis1 -> IfcDirection_2
+    IfcCartesianTransformationOperator3D:Axis2 -> IfcDirection_3
+    IfcCartesianTransformationOperator3D:LocalOrigin -> IfcCartesianPoint_1
+    IfcCartesianTransformationOperator3D:Axis3 -> IfcDirection_4
+    IfcShapeRepresentation_0:RepresentationIdentifier[binding="Identifier"]
+    IfcShapeRepresentation_0:RepresentationType[binding="Type"]
 }
 ```

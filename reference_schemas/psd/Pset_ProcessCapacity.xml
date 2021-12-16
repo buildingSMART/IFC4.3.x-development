@@ -9,12 +9,16 @@
     <ClassName>IfcSpatialElementType</ClassName>
     <ClassName>IfcTransportElement</ClassName>
     <ClassName>IfcTransportElementType</ClassName>
+    <ClassName>IfcBuiltSystem</ClassName>
+    <ClassName>IfcDistributionSystem</ClassName>
+    <ClassName>IfcZone</ClassName>
+    <ClassName>IfcDoor</ClassName>
   </ApplicableClasses>
-  <ApplicableTypeValue>IfcSpatialElement,IfcSpatialElementType,IfcTransportElement,IfcTransportElementType</ApplicableTypeValue>
+  <ApplicableTypeValue>IfcSpatialElement,IfcSpatialElementType,IfcTransportElement,IfcTransportElementType,IfcBuiltSystem,IfcDistributionSystem,IfcZone,IfcDoor</ApplicableTypeValue>
   <PropertyDefs>
     <PropertyDef ifdguid="3c8560a7e9dc4706acfb468a77f65fdc">
       <Name>ProcessItem</Name>
-      <Definition>The type of cargo (and its measurement method) being modelled within a process.</Definition>
+      <Definition>The type of item (and its measurement method) being modelled within a process. This can be cargo, passengers or vehicles that pass through the system.</Definition>
       <PropertyType>
         <TypePropertySingleValue>
           <DataType type="PEnum_ProcessItem" />

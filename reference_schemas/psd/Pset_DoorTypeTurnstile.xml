@@ -1,19 +1,110 @@
 <?xml version="1.0"?>
-<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="d8094867a8e84d05a2775dfda30f6d92" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
-  <IfcVersion version="IFC4x3_RC2" />
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="c523371061f48eb7185b60b03c52ca80" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC4" />
   <Name>Pset_DoorTypeTurnstile</Name>
+  <Definition>Properties common to turnstiles or automatic gates used to control the flow of people or vehicles. This property set is applied to IfcDoor instances of predefined type TURNSTILE.</Definition>
   <Applicability />
   <ApplicableClasses>
     <ClassName>IfcDoor/TURNSTILE</ClassName>
   </ApplicableClasses>
   <ApplicableTypeValue>IfcDoor/TURNSTILE</ApplicableTypeValue>
   <PropertyDefs>
-    <PropertyDef ifdguid="3c950b586710489db42e77733c87a639">
-      <Name>SensorMode</Name>
-      <Definition />
+    <PropertyDef ifdguid="d98931a412a84a33b2444e2e0dc84c72">
+      <Name>IsBidirectional</Name>
+      <Definition>Indicates whether the turnstile is bidirectional.</Definition>
       <PropertyType>
         <TypePropertySingleValue>
-          <DataType type="IfcLabel" />
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="fc3bf996678c423781fa5b7d824db916">
+      <Name>TurnstileType</Name>
+      <Definition>Indicates the type of turnstile gate.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_TurnstileType">
+            <EnumItem>SWINGGATEBRAKE</EnumItem>
+            <EnumItem>THREEPOLEROTARYBRAKE</EnumItem>
+            <EnumItem>WINGGATEBRAKE</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>SWINGGATEBRAKE</Name>
+              <Definition>Swing gate brake.</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>THREEPOLEROTARYBRAKE</Name>
+              <Definition>Three pole rotary brake.</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>WINGGATEBRAKE</Name>
+              <Definition>Wing gate brake.</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <Definition>required category not on scale</Definition>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <Definition>Value is unkown</Definition>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <Definition>Value has not been specified</Definition>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="8603231d9a68449e84f3fe198084f97e">
+      <Name>NarrowChannelWidth</Name>
+      <Definition>Indicates the width of the narrow channel.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="dc70a251ef394bf68fcaf4ee7d7a76d7">
+      <Name>WideChannelWidth</Name>
+      <Definition>Indicates the width of the wide channel.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
         </TypePropertySingleValue>
       </PropertyType>
       <NameAliases />

@@ -139,7 +139,9 @@ NOTDEFINED: Undefined port connection type.</Definition>
               <NameAliases>
                 <NameAlias lang="en">None</NameAlias>
               </NameAliases>
-              <DefinitionAliases />
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">None, empty or no additional action or function.</DefinitionAlias>
+              </DefinitionAliases>
             </ConstantDef>
             <ConstantDef>
               <Name>UNSET</Name>

@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="f0cbcfd94fac57df3ac9deb0fdece805" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC4" />
+  <Name>Pset_UnitaryControlElementBaseStationController</Name>
+  <Definition>Properties that are applicable to _IfcUnitaryControlElement_ with the predefined type set to BASESTATIONCONTROLLER.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcUnitaryControlElement/BASESTATIONCONTROLLER</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcUnitaryControlElement/BASESTATIONCONTROLLER</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="cd03a478484643ab833d4727038848e9">
+      <Name>NumberOfInterfaces</Name>
+      <Definition>Indicates the types of interfaces and their number in the device.</Definition>
+      <PropertyType>
+        <TypePropertyTableValue>
+          <Expression />
+          <DefiningValue>
+            <DataType type="IfcLabel" />
+          </DefiningValue>
+          <DefinedValue>
+            <DataType type="IfcInteger" />
+          </DefinedValue>
+        </TypePropertyTableValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="184646837f764d548f9b5888150ab835">
+      <Name>NumberOfManagedBTSs</Name>
+      <Definition>Indicates the maximum number of base transceiver stations (BTSs) that can be handled by the device.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcInteger" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="a7855d824ea34d4ca7b8c57527e50f38">
+      <Name>NumberOfManagedCarriers</Name>
+      <Definition>Indicates how many carrier frequencies can be managed by the device.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcInteger" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

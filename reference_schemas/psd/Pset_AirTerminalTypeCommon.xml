@@ -687,7 +687,9 @@ Réglable: émission parallèle et aussi s'éloignant de la surface de fixation.
               <NameAliases>
                 <NameAlias lang="en">None</NameAlias>
               </NameAliases>
-              <DefinitionAliases />
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">None, empty or no additional action or function.</DefinitionAlias>
+              </DefinitionAliases>
             </ConstantDef>
             <ConstantDef>
               <Name>OTHER</Name>
@@ -892,7 +894,9 @@ LAYIN：天井にlay-in形式での取り付け（下がり天井格子など）
               <NameAliases>
                 <NameAlias lang="en">None</NameAlias>
               </NameAliases>
-              <DefinitionAliases />
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">None, empty or no additional action or function.</DefinitionAlias>
+              </DefinitionAliases>
             </ConstantDef>
             <ConstantDef>
               <Name>OTHER</Name>
@@ -1028,7 +1032,9 @@ LAYIN：天井にlay-in形式での取り付け（下がり天井格子など）
               <NameAliases>
                 <NameAlias lang="en">None</NameAlias>
               </NameAliases>
-              <DefinitionAliases />
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">None, empty or no additional action or function.</DefinitionAlias>
+              </DefinitionAliases>
             </ConstantDef>
             <ConstantDef>
               <Name>OTHER</Name>

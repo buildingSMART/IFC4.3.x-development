@@ -5,15 +5,15 @@ Projects may define external documents, which may be used to attach arbitrary in
 
 ```
 concept {
-    IfcContext:HasAssociations -> IfcRelAssociatesDocument
-    IfcContext:Phase -> IfcLabel
-    IfcContext:ObjectType -> IfcLabel
-    IfcContext:LongName -> IfcLabel
+    IfcContext:HasAssociations -> IfcRelAssociatesDocument:RelatedObjects
+    IfcContext:Phase -> IfcLabel_1
+    IfcContext:ObjectType -> IfcLabel_2
+    IfcContext:LongName -> IfcLabel_3
     IfcRelAssociatesDocument:RelatingDocument -> IfcDocumentInformation
     IfcDocumentInformation:Location -> IfcURIReference
     IfcDocumentInformation:ElectronicFormat -> IfcDocumentElectronicFormat
     IfcDocumentInformation:Identification -> IfcIdentifier
-    IfcDocumentInformation:Name -> IfcLabel
+    IfcDocumentInformation:Name -> IfcLabel_0
     IfcDocumentInformation:Description -> IfcText
 }
 ```

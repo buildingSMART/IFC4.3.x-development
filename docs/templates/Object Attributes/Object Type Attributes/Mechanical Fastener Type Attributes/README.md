@@ -5,7 +5,7 @@ Mechanical fasteners may have overall dimensions as informational attributes ass
 
 ```
 concept {
-    IfcMechanicalFastenerType:NominalDiameter -> IfcPositiveLengthMeasure
-    IfcMechanicalFastenerType:NominalLength -> IfcPositiveLengthMeasure
+    IfcMechanicalFastenerType:NominalDiameter -> IfcPositiveLengthMeasure_0
+    IfcMechanicalFastenerType:NominalLength -> IfcPositiveLengthMeasure_1
 }
 ```

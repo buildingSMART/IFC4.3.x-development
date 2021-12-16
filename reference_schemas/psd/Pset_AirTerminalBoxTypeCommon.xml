@@ -301,7 +301,9 @@ Conduit unique: le registre terminal reçoit de l'air chaud ou froid depuis un c
               <NameAliases>
                 <NameAlias lang="en">None</NameAlias>
               </NameAliases>
-              <DefinitionAliases />
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">None, empty or no additional action or function.</DefinitionAlias>
+              </DefinitionAliases>
             </ConstantDef>
             <ConstantDef>
               <Name>OTHER</Name>

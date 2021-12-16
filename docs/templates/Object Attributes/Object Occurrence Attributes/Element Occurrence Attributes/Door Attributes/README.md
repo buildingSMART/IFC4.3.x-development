@@ -6,17 +6,17 @@ Doors may be further described by their size and operation type.
 ```
 concept {
     IfcDoor:Tag -> IfcIdentifier
-    IfcDoor:OverallHeight -> IfcPositiveLengthMeasure
-    IfcDoor:OverallWidth -> IfcPositiveLengthMeasure
-    IfcDoor:OperationType -> IfcDoorTypeOperationEnum
-    IfcDoor:UserDefinedOperationType -> IfcLabel
-    IfcDoor:IsTypedBy -> IfcRelDefinesByType
+    IfcDoor:OverallHeight -> IfcPositiveLengthMeasure_0
+    IfcDoor:OverallWidth -> IfcPositiveLengthMeasure_1
+    IfcDoor:OperationType -> IfcDoorTypeOperationEnum_0
+    IfcDoor:UserDefinedOperationType -> IfcLabel_0
+    IfcDoor:IsTypedBy -> IfcRelDefinesByType:RelatedObjects
     IfcRelDefinesByType:RelatingType -> IfcDoorType
-    IfcDoorType:OperationType -> IfcDoorTypeOperationEnum
-    IfcDoorType:UserDefinedOperationType -> IfcLabel
+    IfcDoorType:OperationType -> IfcDoorTypeOperationEnum_1
+    IfcDoorType:UserDefinedOperationType -> IfcLabel_1
     IfcDoorType:HasPropertySets -> IfcDoorLiningProperties
     IfcDoorType:HasPropertySets -> IfcDoorPanelProperties
-    IfcDoorPanelProperties:PanelDepth -> IfcPositiveLengthMeasure
+    IfcDoorPanelProperties:PanelDepth -> IfcPositiveLengthMeasure_2
     IfcDoorPanelProperties:PanelOperation -> IfcDoorPanelOperationEnum
     IfcDoorPanelProperties:PanelWidth -> IfcNormalisedRatioMeasure
     IfcDoorPanelProperties:PanelPosition -> IfcDoorPanelPositionEnum

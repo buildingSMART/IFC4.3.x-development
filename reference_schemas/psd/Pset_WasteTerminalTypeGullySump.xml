@@ -149,7 +149,9 @@
               <NameAliases>
                 <NameAlias lang="en">None</NameAlias>
               </NameAliases>
-              <DefinitionAliases />
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">None, empty or no additional action or function.</DefinitionAlias>
+              </DefinitionAliases>
             </ConstantDef>
             <ConstantDef>
               <Name>P_TRAP</Name>
@@ -272,7 +274,9 @@ A gulley trap may have 0,1,2,3 or 4 inlet connections and the pattern of their a
               <NameAliases>
                 <NameAlias lang="en">None</NameAlias>
               </NameAliases>
-              <DefinitionAliases />
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">None, empty or no additional action or function.</DefinitionAlias>
+              </DefinitionAliases>
             </ConstantDef>
             <ConstantDef>
               <Name>1</Name>

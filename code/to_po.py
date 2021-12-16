@@ -33,12 +33,12 @@ def generate_definitions():
     for item in xmi_doc:
 
         loc = xmi_doc.xmi.locate(item.node) if item.node else (None, None)
-        yield item.package, loc, (valid_key(item.name),), (item.documentation if item.node else item.name)
+        yield item.package, loc, (valid_key(item.name),), (item.markdown if item.node else item.name)
         
         if item.type in {"ENUM", "ENTITY", "PSET", "PENUM"}:
             for subitem in item:
                 loc = xmi_doc.xmi.locate(subitem.node) if subitem.node else (None, None)
-                yield item.package, loc, (valid_key(item.name), valid_key(subitem.name)), ((subitem.documentation or subitem.name) if subitem.node else subitem.name)
+                yield item.package, loc, (valid_key(item.name), valid_key(subitem.name)), ((subitem.markdown or subitem.name) if subitem.node else subitem.name)
         
 def quote(s):
     return '"%s"' % s

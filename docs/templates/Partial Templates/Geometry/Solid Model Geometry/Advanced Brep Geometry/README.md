@@ -13,41 +13,41 @@ concept {
     IfcAdvancedFace:FaceSurface -> IfcSphericalSurface
     IfcAdvancedFace:FaceSurface -> IfcToroidalSurface
     IfcAdvancedFace:FaceSurface -> IfcPlane
-    IfcFaceOuterBound:Orientation -> IfcBoolean
+    IfcFaceOuterBound:Orientation -> IfcBoolean_0
     IfcFaceOuterBound:Bound -> IfcEdgeLoop
     IfcEdgeLoop:EdgeList -> IfcOrientedEdge
     IfcOrientedEdge:EdgeElement -> IfcEdgeCurve
-    IfcEdgeCurve:EdgeStart -> IfcVertexPoint
-    IfcEdgeCurve:EdgeEnd -> IfcVertexPoint
+    IfcEdgeCurve:EdgeStart -> IfcVertexPoint_0
+    IfcEdgeCurve:EdgeEnd -> IfcVertexPoint_1
     IfcEdgeCurve:EdgeGeometry -> IfcRationalBSplineCurveWithKnots
     IfcEdgeCurve:EdgeGeometry -> IfcPolyline
-    IfcEdgeCurve:SameSense -> IfcBoolean
-    IfcRationalBSplineCurveWithKnots:Degree -> IfcInteger
-    IfcRationalBSplineCurveWithKnots:ControlPointsList -> IfcCartesianPoint
+    IfcEdgeCurve:SameSense -> IfcBoolean_1
+    IfcRationalBSplineCurveWithKnots:Degree -> IfcInteger_0
+    IfcRationalBSplineCurveWithKnots:ControlPointsList -> IfcCartesianPoint_0
     IfcRationalBSplineCurveWithKnots:CurveForm -> IfcBSplineCurveForm
-    IfcRationalBSplineCurveWithKnots:ClosedCurve -> IfcLogical
-    IfcRationalBSplineCurveWithKnots:SelfIntersect -> IfcLogical
-    IfcRationalBSplineCurveWithKnots:KnotMultiplicities -> IfcInteger
-    IfcRationalBSplineCurveWithKnots:Knots -> IfcParameterValue
-    IfcRationalBSplineCurveWithKnots:KnotSpec -> IfcKnotType
-    IfcRationalBSplineCurveWithKnots:WeightsData -> IfcReal
-    IfcPolyline:Points -> IfcCartesianPoint
-    IfcRationalBSplineSurfaceWithKnots:UDegree -> IfcInteger
-    IfcRationalBSplineSurfaceWithKnots:VDegree -> IfcInteger
-    IfcRationalBSplineSurfaceWithKnots:ControlPointsList -> IfcCartesianPoint
-    IfcRationalBSplineSurfaceWithKnots:UClosed -> IfcLogical
-    IfcRationalBSplineSurfaceWithKnots:VClosed -> IfcLogical
-    IfcRationalBSplineSurfaceWithKnots:UMultiplicities -> IfcInteger
-    IfcRationalBSplineSurfaceWithKnots:VMultiplicities -> IfcInteger
-    IfcRationalBSplineSurfaceWithKnots:UKnots -> IfcParameterValue
-    IfcRationalBSplineSurfaceWithKnots:VKnots -> IfcParameterValue
-    IfcRationalBSplineSurfaceWithKnots:KnotSpec -> IfcKnotType
-    IfcRationalBSplineSurfaceWithKnots:WeightsData -> IfcReal
-    IfcCylindricalSurface:Position -> IfcAxis2Placement3D
-    IfcCylindricalSurface:Radius -> IfcPositiveLengthMeasure
-    IfcToroidalSurface:Position -> IfcAxis2Placement3D
-    IfcToroidalSurface:MajorRadius -> IfcPositiveLengthMeasure
-    IfcToroidalSurface:MinorRadius -> IfcPositiveLengthMeasure
-    IfcPlane:Position -> IfcAxis2Placement3D
+    IfcRationalBSplineCurveWithKnots:ClosedCurve -> IfcLogical_0
+    IfcRationalBSplineCurveWithKnots:SelfIntersect -> IfcLogical_1
+    IfcRationalBSplineCurveWithKnots:KnotMultiplicities -> IfcInteger_1
+    IfcRationalBSplineCurveWithKnots:Knots -> IfcParameterValue_0
+    IfcRationalBSplineCurveWithKnots:KnotSpec -> IfcKnotType_0
+    IfcRationalBSplineCurveWithKnots:WeightsData -> IfcReal_0
+    IfcPolyline:Points -> IfcCartesianPoint_1
+    IfcRationalBSplineSurfaceWithKnots:UDegree -> IfcInteger_2
+    IfcRationalBSplineSurfaceWithKnots:VDegree -> IfcInteger_3
+    IfcRationalBSplineSurfaceWithKnots:ControlPointsList -> IfcCartesianPoint_2
+    IfcRationalBSplineSurfaceWithKnots:UClosed -> IfcLogical_2
+    IfcRationalBSplineSurfaceWithKnots:VClosed -> IfcLogical_3
+    IfcRationalBSplineSurfaceWithKnots:UMultiplicities -> IfcInteger_4
+    IfcRationalBSplineSurfaceWithKnots:VMultiplicities -> IfcInteger_5
+    IfcRationalBSplineSurfaceWithKnots:UKnots -> IfcParameterValue_1
+    IfcRationalBSplineSurfaceWithKnots:VKnots -> IfcParameterValue_2
+    IfcRationalBSplineSurfaceWithKnots:KnotSpec -> IfcKnotType_1
+    IfcRationalBSplineSurfaceWithKnots:WeightsData -> IfcReal_1
+    IfcCylindricalSurface:Position -> IfcAxis2Placement3D_0
+    IfcCylindricalSurface:Radius -> IfcPositiveLengthMeasure_0
+    IfcToroidalSurface:Position -> IfcAxis2Placement3D_1
+    IfcToroidalSurface:MajorRadius -> IfcPositiveLengthMeasure_1
+    IfcToroidalSurface:MinorRadius -> IfcPositiveLengthMeasure_2
+    IfcPlane:Position -> IfcAxis2Placement3D_2
 }
 ```

@@ -12,7 +12,7 @@ Specific subtypes introduce additional attributes for _User Identity_.
 
 ```
 concept {
-    IfcSpatialElementType:ElementType -> IfcLabel
-    IfcSpatialElementType:Tag -> IfcLabel
+    IfcSpatialElementType:ElementType -> IfcLabel_0
+    IfcSpatialElementType:Tag -> IfcLabel_1
 }
 ```

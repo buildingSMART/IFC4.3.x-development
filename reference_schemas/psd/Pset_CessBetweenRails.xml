@@ -1,0 +1,243 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="eb4b92a213ec52605ec900034e287a7d" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x3_RC4" />
+  <Name>Pset_CessBetweenRails</Name>
+  <Definition>Properties in this property set are applicable for IfcSlab with PredefinedType TRACKSLAB, indicated that the slab is a cess or covering between rails.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcSlab/TRACKSLAB</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcSlab/TRACKSLAB</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="062f1f532c6949f6b59431e2b766ea53">
+      <Name>JointRelativePosition</Name>
+      <Definition>Indicates the relative position of the joint, which lies in the left or right rail or in the middle, or in combination. The left rail is to the left as facing in the direction of increasing stationing values, and the right rail is to the right.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_JointRelativePosition">
+            <EnumItem>LEFT_RAIL</EnumItem>
+            <EnumItem>RIGHT_RAIL</EnumItem>
+            <EnumItem>MIDDLE</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>LEFT_RAIL</Name>
+              <Definition>Positioned in the left rail of the track. The left rail is to the left as facing in the direction of increasing stationing values.</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>RIGHT_RAIL</Name>
+              <Definition>Positioned in the right rail of the track. The right rail is to the right as facing in the direction of increasing stationing values.</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>MIDDLE</Name>
+              <Definition>Positioned in the middle of the track.</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <Definition>required category not on scale</Definition>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <Definition>Value is unkown</Definition>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <Definition>Value has not been specified</Definition>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="93a3bc1564d845d8bd985f21e80b4dae">
+      <Name>CheckRailType</Name>
+      <Definition>Type of the check rail. Check rail types enumerated in this property are defined based on EN 13674.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_CheckRailType">
+            <EnumItem>TYPE_33C1</EnumItem>
+            <EnumItem>TYPE_40C1</EnumItem>
+            <EnumItem>TYPE_47C1</EnumItem>
+            <EnumItem>TYPE_CR3_60U</EnumItem>
+            <EnumItem>TYPE_R260</EnumItem>
+            <EnumItem>TYPE_R320CR</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>TYPE_33C1</Name>
+              <Definition>Check rail type 33C1.</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>TYPE_40C1</Name>
+              <Definition>Check rail type 40C1.</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>TYPE_47C1</Name>
+              <Definition>Check rail type 47C1.</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>TYPE_CR3_60U</Name>
+              <Definition>Check rail type CR3_60U.</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>TYPE_R260</Name>
+              <Definition>Check rail type R260.</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>TYPE_R320CR</Name>
+              <Definition>Check rail type R320CR.</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <Definition>required category not on scale</Definition>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <Definition>Value is unkown</Definition>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <Definition>Value has not been specified</Definition>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="7e4c98c6af6b4a37993e6d09faa53bea">
+      <Name>LoadCapacity</Name>
+      <Definition>Indicates the highest permissible load capacity.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcForceMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="698dcbb984544fed903ec194f7723b4b">
+      <Name>UsagePurpose</Name>
+      <Definition>The purpose of usage of the cess between rails, e.g. maintenance, rescue services.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_UsagePurpose">
+            <EnumItem>MAINTENANCE</EnumItem>
+            <EnumItem>RESCUESERVICES</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>MAINTENANCE</Name>
+              <Definition>For the purpose of maintenance.</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>RESCUESERVICES</Name>
+              <Definition>For the purpose of rescue services.</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <Definition>required category not on scale</Definition>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <Definition>Value is unkown</Definition>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <Definition>Value has not been specified</Definition>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

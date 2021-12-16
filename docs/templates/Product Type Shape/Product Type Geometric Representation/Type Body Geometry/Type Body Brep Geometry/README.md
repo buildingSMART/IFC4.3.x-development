@@ -10,8 +10,8 @@ concept {
     IfcRepresentationMap:MappingOrigin -> IfcAxis2Placement3D
     IfcRepresentationMap:MappingOrigin -> IfcAxis2Placement2D
     IfcShapeRepresentation:ContextOfItems -> IfcGeometricRepresentationContext
-    IfcShapeRepresentation:RepresentationIdentifier -> IfcLabel
-    IfcShapeRepresentation:RepresentationType -> IfcLabel
+    IfcShapeRepresentation:RepresentationIdentifier -> IfcLabel_0
+    IfcShapeRepresentation:RepresentationType -> IfcLabel_1
     IfcShapeRepresentation:Items -> IfcFacetedBrep
     IfcFacetedBrep:Outer -> IfcClosedShell
     IfcClosedShell:CfsFaces -> IfcFace

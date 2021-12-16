@@ -7,10 +7,14 @@ This specialization of the footprint representation uses indexed curves to repre
 concept {
     IfcProduct:Representation -> IfcProductDefinitionShape
     IfcProductDefinitionShape:Representations -> IfcShapeRepresentation
-    IfcShapeRepresentation:RepresentationIdentifier -> IfcLabel
+    IfcShapeRepresentation:RepresentationIdentifier -> IfcLabel_0
     IfcShapeRepresentation:ContextOfItems -> IfcGeometricRepresentationContext
-    IfcShapeRepresentation:RepresentationType -> IfcLabel
+    IfcShapeRepresentation:RepresentationType -> IfcLabel_1
     IfcShapeRepresentation:Items -> IfcGeometricCurveSet
+    IfcLabel_0 -> constraint_0
+    constraint_0[label="=FootPrint"]
+    IfcLabel_1 -> constraint_1
+    constraint_1[label="=GeometricCurveSet"]
     IfcGeometricCurveSet:Elements -> IfcIndexedPolyCurve
     IfcIndexedPolyCurve:Points -> IfcCartesianPointList2D
     IfcIndexedPolyCurve:Segments -> IfcArcIndex

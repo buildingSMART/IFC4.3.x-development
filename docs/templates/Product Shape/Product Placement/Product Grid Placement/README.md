@@ -6,15 +6,18 @@ Product occurrences may be positioned relative to a grid, where the axes of such
 ```
 concept {
     IfcProduct:ObjectPlacement -> IfcGridPlacement
+    IfcProduct:PlacesObject -> IfcGrid_1
     IfcGridPlacement:PlacementLocation -> IfcVirtualGridIntersection
     IfcGridPlacement:PlacementRefDirection -> IfcDirection
-    IfcVirtualGridIntersection:OffsetDistances -> IfcLengthMeasure
+    IfcGridPlacement:PlacementRelTo -> IfcObjectPlacement
+    IfcVirtualGridIntersection:OffsetDistances -> IfcLengthMeasure_0
     IfcVirtualGridIntersection:IntersectingAxes -> IfcGridAxis
     IfcGridAxis:AxisTag -> IfcLabel
     IfcGridAxis:AxisCurve -> IfcLine
     IfcGridAxis:SameSense -> IfcBoolean
     IfcLine:Pnt -> IfcCartesianPoint
     IfcLine:Dir -> IfcVector
-    IfcCartesianPoint:Coordinates -> IfcLengthMeasure
+    IfcCartesianPoint:Coordinates -> IfcLengthMeasure_1
+    IfcObjectPlacement:PlacesObject -> IfcGrid_0:ObjectPlacement
 }
 ```

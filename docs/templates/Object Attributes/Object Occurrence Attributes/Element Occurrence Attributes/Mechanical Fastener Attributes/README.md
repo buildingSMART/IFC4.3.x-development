@@ -6,17 +6,13 @@ Mechanical Fastener Attributes
 ```
 concept {
     IfcMechanicalFastener:Tag -> IfcIdentifier
-    IfcMechanicalFastener:NominalDiameter -> IfcPositiveLengthMeasure
-    IfcMechanicalFastener:NominalDiameter -> IfcPositiveLengthMeasure
-    IfcMechanicalFastener:NominalLength -> IfcPositiveLengthMeasure
-    IfcMechanicalFastener:NominalLength -> IfcPositiveLengthMeasure
-    IfcMechanicalFastener:IsTypedBy -> IfcRelDefinesByType
-    IfcMechanicalFastener:NominalDiameter -> IfcPositiveLengthMeasure
-    IfcMechanicalFastener:NominalDiameter -> IfcPositiveLengthMeasure
-    IfcMechanicalFastener:NominalLength -> IfcPositiveLengthMeasure
-    IfcMechanicalFastener:NominalLength -> IfcPositiveLengthMeasure
+    IfcMechanicalFastener:NominalDiameter -> IfcPositiveLengthMeasure_0
+    IfcMechanicalFastener:NominalDiameter -> IfcPositiveLengthMeasure_4
+    IfcMechanicalFastener:NominalLength -> IfcPositiveLengthMeasure_1
+    IfcMechanicalFastener:NominalLength -> IfcPositiveLengthMeasure_5
+    IfcMechanicalFastener:IsTypedBy -> IfcRelDefinesByType:RelatedObjects
     IfcRelDefinesByType:RelatingType -> IfcMechanicalFastenerType
-    IfcMechanicalFastenerType:NominalDiameter -> IfcPositiveLengthMeasure
-    IfcMechanicalFastenerType:NominalLength -> IfcPositiveLengthMeasure
+    IfcMechanicalFastenerType:NominalDiameter -> IfcPositiveLengthMeasure_2
+    IfcMechanicalFastenerType:NominalLength -> IfcPositiveLengthMeasure_3
 }
 ```

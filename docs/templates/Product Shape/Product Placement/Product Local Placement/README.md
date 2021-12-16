@@ -18,15 +18,15 @@ If a containing spatial structure contains a grid, then placement may also be ba
 
 ```
 concept {
-    IfcProduct:ObjectPlacement -> IfcLocalPlacement
-    IfcLocalPlacement:RelativePlacement -> IfcAxis2Placement3D
-    IfcLocalPlacement:PlacementRelTo -> IfcLocalPlacement
-    IfcLocalPlacement:PlacesObject -> IfcElement
-    IfcLocalPlacement:PlacesObject -> IfcSpatialElement
-    IfcElement:Name -> IfcLabel
-    IfcSpatialElement:Name -> IfcLabel
+    IfcProduct:ObjectPlacement -> IfcLocalPlacement_0
+    IfcLocalPlacement_0:RelativePlacement -> IfcAxis2Placement3D
+    IfcLocalPlacement_0:PlacementRelTo -> IfcLocalPlacement_1
+    IfcLocalPlacement_1:PlacesObject -> IfcElement:ObjectPlacement
+    IfcLocalPlacement_1:PlacesObject -> IfcSpatialElement:ObjectPlacement
+    IfcElement:Name -> IfcLabel_0
+    IfcSpatialElement:Name -> IfcLabel_1
     IfcProduct:ObjectPlacement[binding="HasPlacement"]
-    IfcLocalPlacement:PlacesObject[binding="RelativeToElement"]
+    IfcLocalPlacement_1:PlacesObject[binding="RelativeToElement"]
     IfcElement:Name[binding="ElementName"]
     IfcSpatialElement:Name[binding="SpatialElementName"]
 }

@@ -17,9 +17,15 @@ concept {
     IfcProduct:Representation -> IfcProductDefinitionShape
     IfcProductDefinitionShape:Representations -> IfcShapeRepresentation
     IfcShapeRepresentation:ContextOfItems -> IfcGeometricRepresentationContext
-    IfcShapeRepresentation:RepresentationIdentifier -> IfcLabel
-    IfcShapeRepresentation:RepresentationType -> IfcLabel
+    IfcShapeRepresentation:RepresentationIdentifier -> IfcLabel_0
+    IfcShapeRepresentation:RepresentationType -> IfcLabel_1
     IfcShapeRepresentation:Items -> IfcSweptAreaSolid
+    IfcLabel_0 -> constraint_0
+    constraint_0[label="=Reference"]
+    IfcLabel_1 -> constraint_1
+    constraint_1[label="=SweptSolid"]
+    IfcSweptAreaSolid -> Extruded_Area_PolyCurve_Profile
+    IfcSweptAreaSolid -> Revolved_Area_PolyCurve_Profile
     IfcShapeRepresentation:RepresentationIdentifier[binding="Identifier"]
     IfcShapeRepresentation:RepresentationType[binding="Type"]
 }

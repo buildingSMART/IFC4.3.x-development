@@ -11,9 +11,11 @@ The representation identifier of the foot print representation is:
 concept {
     IfcProduct:Representation -> IfcProductDefinitionShape
     IfcProductDefinitionShape:Representations -> IfcShapeRepresentation
-    IfcShapeRepresentation:RepresentationIdentifier -> IfcLabel
+    IfcShapeRepresentation:RepresentationIdentifier -> IfcLabel_0
     IfcShapeRepresentation:ContextOfItems -> IfcGeometricRepresentationContext
-    IfcShapeRepresentation:RepresentationType -> IfcLabel
+    IfcShapeRepresentation:RepresentationType -> IfcLabel_1
+    IfcLabel_0 -> constraint_0
+    constraint_0[label="=FootPrint"]
     IfcShapeRepresentation:RepresentationIdentifier[binding="Identifier"]
     IfcShapeRepresentation:RepresentationType[binding="Type"]
     IfcShapeRepresentation:Items[binding="Items"]

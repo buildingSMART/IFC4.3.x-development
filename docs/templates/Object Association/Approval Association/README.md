@@ -7,8 +7,8 @@ The concept _Approval Association_ describes how object or object types can have
 concept {
     IfcObjectDefinition:HasAssociations -> IfcRelAssociatesApproval:RelatedObjects
     IfcRelAssociatesApproval:RelatingApproval -> IfcApproval
-    IfcApproval:Name -> IfcLabel
+    IfcApproval:Name -> IfcLabel_0
     IfcApproval:TimeOfApproval -> IfcDateTime
-    IfcApproval:Status -> IfcLabel
+    IfcApproval:Status -> IfcLabel_1
 }
 ```

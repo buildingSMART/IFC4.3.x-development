@@ -8,12 +8,12 @@ concept {
     IfcProduct:Representation -> IfcProductDefinitionShape
     IfcProductDefinitionShape:Representations -> IfcShapeRepresentation
     IfcShapeRepresentation:ContextOfItems -> IfcGeometricRepresentationContext
-    IfcShapeRepresentation:RepresentationIdentifier -> IfcLabel
-    IfcShapeRepresentation:RepresentationType -> IfcLabel
-    IfcShapeRepresentation:Items -> IfcCartesianPointList3D
+    IfcShapeRepresentation:RepresentationIdentifier -> IfcLabel_0
+    IfcShapeRepresentation:RepresentationType -> IfcLabel_1
+    IfcShapeRepresentation:Items -> IfcCartesianPointList3D_0
     IfcShapeRepresentation:Items -> IfcIndexedPolyCurve
-    IfcCartesianPointList3D:CoordList -> IfcLengthMeasure
-    IfcIndexedPolyCurve:Points -> IfcCartesianPointList3D
+    IfcCartesianPointList3D_0:CoordList -> IfcLengthMeasure
+    IfcIndexedPolyCurve:Points -> IfcCartesianPointList3D_1
     IfcIndexedPolyCurve:SelfIntersect -> IfcBoolean
     IfcIndexedPolyCurve:Segments -> IfcArcIndex
     IfcIndexedPolyCurve:Segments -> IfcLineIndex

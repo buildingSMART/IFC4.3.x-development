@@ -8,13 +8,14 @@ concept {
     IfcObjectDefinition:HasAssociations -> IfcRelAssociatesMaterial:RelatedObjects
     IfcRelAssociatesMaterial:RelatingMaterial -> IfcMaterialConstituentSet
     IfcMaterialConstituentSet:MaterialConstituents -> IfcMaterialConstituent
-    IfcMaterialConstituentSet:Name -> IfcLabel
-    IfcMaterialConstituentSet:Description -> IfcText
-    IfcMaterialConstituent:Name -> IfcLabel
-    IfcMaterialConstituent:Description -> IfcText
+    IfcMaterialConstituentSet:Name -> IfcLabel_2
+    IfcMaterialConstituentSet:Description -> IfcText_1
+    IfcMaterialConstituent:Name -> IfcLabel_0
+    IfcMaterialConstituent:Description -> IfcText_0
     IfcMaterialConstituent:Material -> IfcMaterial
-    IfcMaterialConstituent:Category -> IfcLabel
+    IfcMaterialConstituent:Category -> IfcLabel_1
     IfcMaterialConstituent:Fraction -> IfcNormalisedRatioMeasure
+    IfcMaterial -> Material
     IfcMaterialConstituent:Name[binding="ConstituentName"]
 }
 ```

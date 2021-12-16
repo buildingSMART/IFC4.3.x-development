@@ -5,7 +5,7 @@ The _Component to Distribution System_ assignment
 
 ```
 concept {
-    IfcDistributionElement:HasAssignments -> IfcRelAssignsToGroup
+    IfcDistributionElement:HasAssignments -> IfcRelAssignsToGroup:RelatedObjects
     IfcRelAssignsToGroup:RelatingGroup -> IfcDistributionSystem
     IfcDistributionSystem:Name -> IfcLabel
     IfcDistributionElement:HasAssignments[binding="IsAssigned"]

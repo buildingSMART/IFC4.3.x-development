@@ -7,7 +7,7 @@ Physical element types may be further identified via the Tag attribute. This is 
 
 ```
 concept {
-    IfcElementType:ElementType -> IfcLabel
-    IfcElementType:Tag -> IfcLabel
+    IfcElementType:ElementType -> IfcLabel_0
+    IfcElementType:Tag -> IfcLabel_1
 }
 ```

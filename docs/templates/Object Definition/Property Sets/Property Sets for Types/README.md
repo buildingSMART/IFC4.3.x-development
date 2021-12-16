@@ -13,6 +13,11 @@ concept {
     IfcPropertySet:HasProperties -> IfcPropertyEnumeratedValue
     IfcPropertySet:HasProperties -> IfcPropertyListValue
     IfcPropertySet:HasProperties -> IfcPropertyTableValue
+    IfcPropertySingleValue -> Single_Value
+    IfcPropertyBoundedValue -> Bounded_Value
+    IfcPropertyEnumeratedValue -> Enumerated_Value
+    IfcPropertyListValue -> List_Value
+    IfcPropertyTableValue -> Table_Value
     IfcPropertySet:Name[binding="PsetName"]
 }
 ```

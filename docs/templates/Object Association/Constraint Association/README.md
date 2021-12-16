@@ -13,23 +13,23 @@ concept {
     IfcObjective:ObjectiveQualifier -> IfcObjectiveEnum
     IfcObjective:LogicalAggregator -> IfcLogicalOperatorEnum
     IfcMetric:DataValue -> IfcMetricValueSelect
-    IfcMetric:DataValue -> IfcAppliedValue
+    IfcMetric:DataValue -> IfcAppliedValue_0
     IfcMetric:DataValue -> IfcTable
     IfcMetric:Benchmark -> IfcBenchmarkEnum
-    IfcMetric:ReferencePath -> IfcReference
-    IfcMetric:Name -> IfcLabel
-    IfcMetric:Description -> IfcText
-    IfcAppliedValue:ArithmeticOperator -> IfcArithmeticOperatorEnum
-    IfcAppliedValue:Components -> IfcAppliedValue
-    IfcAppliedValue:AppliedValue -> IfcLengthMeasure
-    IfcAppliedValue:AppliedValue -> IfcReal
+    IfcMetric:ReferencePath -> IfcReference_1
+    IfcMetric:Name -> IfcLabel_1
+    IfcMetric:Description -> IfcText_1
+    IfcAppliedValue_0:ArithmeticOperator -> IfcArithmeticOperatorEnum
+    IfcAppliedValue_0:Components -> IfcAppliedValue_1
+    IfcAppliedValue_0:AppliedValue -> IfcLengthMeasure
+    IfcAppliedValue_0:AppliedValue -> IfcReal
     IfcTable:Rows -> IfcTableRow
     IfcTable:Columns -> IfcTableColumn
     IfcTableColumn:Identifier -> IfcIdentifier
-    IfcTableColumn:Name -> IfcLabel
-    IfcTableColumn:Description -> IfcText
-    IfcTableColumn:ReferencePath -> IfcReference
+    IfcTableColumn:Name -> IfcLabel_0
+    IfcTableColumn:Description -> IfcText_0
+    IfcTableColumn:ReferencePath -> IfcReference_0
     IfcMetric:DataValue[binding="DataValue"]
-    IfcReference:AttributeIdentifier[binding="Attribute1"]
+    IfcReference_1:AttributeIdentifier[binding="Attribute1"]
 }
 ```

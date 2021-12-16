@@ -6,8 +6,8 @@ A clothoid segment is based on the IfcClothoid where the value for the clothoid 
 ```
 concept {
     IfcCurveSegment:ParentCurve -> IfcClothoid
-    IfcCurveSegment:SegmentStart -> IfcParameterValue
-    IfcCurveSegment:SegmentLength -> IfcParameterValue
+    IfcCurveSegment:SegmentStart -> IfcParameterValue_0
+    IfcCurveSegment:SegmentLength -> IfcParameterValue_1
     IfcClothoid:ClothoidConstant -> IfcLengthMeasure
 }
 ```

@@ -14,10 +14,16 @@ concept {
     IfcProduct:Representation -> IfcProductDefinitionShape
     IfcProductDefinitionShape:Representations -> IfcShapeRepresentation
     IfcShapeRepresentation:ContextOfItems -> IfcGeometricRepresentationContext
-    IfcShapeRepresentation:RepresentationIdentifier -> IfcLabel
-    IfcShapeRepresentation:RepresentationType -> IfcLabel
+    IfcShapeRepresentation:RepresentationIdentifier -> IfcLabel_0
+    IfcShapeRepresentation:RepresentationType -> IfcLabel_1
     IfcShapeRepresentation:Items -> IfcTriangulatedFaceSet
     IfcShapeRepresentation:Items -> IfcPolygonalFaceSet
+    IfcLabel_0 -> constraint_0
+    constraint_0[label="=Reference"]
+    IfcLabel_1 -> constraint_1
+    constraint_1[label="=Tessellation"]
+    IfcTriangulatedFaceSet -> Triangulated_Geometry
+    IfcPolygonalFaceSet -> Polygonal_Geometry
     IfcShapeRepresentation:RepresentationIdentifier[binding="Identifier"]
     IfcShapeRepresentation:RepresentationType[binding="Type"]
 }

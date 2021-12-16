@@ -9,5 +9,6 @@ concept {
     IfcSurfaceStyle:Name -> IfcLabel
     IfcSurfaceStyle:Side -> IfcSurfaceSide
     IfcSurfaceStyleWithTextures:Textures -> IfcImageTexture
+    IfcImageTexture -> Image_Texture
 }
 ```

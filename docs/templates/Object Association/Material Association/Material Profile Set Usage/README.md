@@ -9,20 +9,21 @@ The material of those standard case elements is defined by _IfcMaterialProfileSe
 
 ```
 concept {
-    IfcProduct:HasAssociations -> IfcRelAssociatesMaterial
+    IfcProduct:HasAssociations -> IfcRelAssociatesMaterial:RelatedObjects
     IfcRelAssociatesMaterial:RelatingMaterial -> IfcMaterialProfileSetUsage
     IfcRelAssociatesMaterial:RelatingMaterial -> IfcMaterialProfileSetUsageTapering
-    IfcMaterialProfileSetUsage:ForProfileSet -> IfcMaterialProfileSet
-    IfcMaterialProfileSetUsage:CardinalPoint -> IfcCardinalPointReference
+    IfcMaterialProfileSetUsage:ForProfileSet -> IfcMaterialProfileSet_0
+    IfcMaterialProfileSetUsage:CardinalPoint -> IfcCardinalPointReference_0
     IfcMaterialProfileSetUsage:ReferenceExtent -> IfcPositiveLengthMeasure
-    IfcMaterialProfileSet:MaterialProfiles -> IfcMaterialProfile
-    IfcMaterialProfileSet:MaterialProfiles -> IfcMaterialProfileWithOffsets
+    IfcMaterialProfileSet_0:MaterialProfiles -> IfcMaterialProfile
+    IfcMaterialProfileSet_0:MaterialProfiles -> IfcMaterialProfileWithOffsets
     IfcMaterialProfile:Material -> IfcMaterial
     IfcMaterialProfile:Profile -> IfcProfileDef
     IfcMaterial:HasRepresentation -> IfcMaterialDefinitionRepresentation:RepresentedMaterial
+    IfcMaterialDefinitionRepresentation -> Material_Surface_Color_Style
     IfcMaterialProfileWithOffsets:OffsetValues -> IfcLengthMeasure
-    IfcMaterialProfileSetUsageTapering:ForProfileEndSet -> IfcMaterialProfileSet
-    IfcMaterialProfileSetUsageTapering:CardinalEndPoint -> IfcCardinalPointReference
+    IfcMaterialProfileSetUsageTapering:ForProfileEndSet -> IfcMaterialProfileSet_1
+    IfcMaterialProfileSetUsageTapering:CardinalEndPoint -> IfcCardinalPointReference_1
     IfcMaterialProfile:Name[binding="Name"]
 }
 ```

@@ -11,8 +11,8 @@ concept {
     IfcFillAreaStyle:ModelorDraughting -> IfcBoolean
     IfcFillAreaStyleHatching:HatchLineAppearance -> IfcCurveStyle
     IfcFillAreaStyleHatching:StartOfNextHatchLine -> IfcVector
-    IfcFillAreaStyleHatching:PointOfReferenceHatchLine -> IfcCartesianPoint
-    IfcFillAreaStyleHatching:PatternStart -> IfcCartesianPoint
+    IfcFillAreaStyleHatching:PointOfReferenceHatchLine -> IfcCartesianPoint_0
+    IfcFillAreaStyleHatching:PatternStart -> IfcCartesianPoint_1
     IfcFillAreaStyleHatching:HatchLineAngle -> IfcPlaneAngleMeasure
 }
 ```

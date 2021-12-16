@@ -14,40 +14,40 @@ Finally, objects may also carry informational attributes indicating when an obje
 ```
 concept {
     IfcRoot:OwnerHistory -> IfcOwnerHistory
-    IfcOwnerHistory:OwningUser -> IfcPersonAndOrganization
-    IfcOwnerHistory:OwningApplication -> IfcApplication
+    IfcOwnerHistory:OwningUser -> IfcPersonAndOrganization_0
+    IfcOwnerHistory:OwningApplication -> IfcApplication_0
     IfcOwnerHistory:State -> IfcStateEnum
     IfcOwnerHistory:ChangeAction -> IfcChangeActionEnum
-    IfcOwnerHistory:CreationDate -> IfcTimeStamp
-    IfcOwnerHistory:LastModifiedDate -> IfcTimeStamp
-    IfcOwnerHistory:LastModifyingUser -> IfcPersonAndOrganization
-    IfcOwnerHistory:LastModifyingApplication -> IfcApplication
-    IfcPersonAndOrganization:ThePerson -> IfcPerson
-    IfcPersonAndOrganization:TheOrganization -> IfcOrganization
-    IfcPersonAndOrganization:Roles -> IfcActorRole
-    IfcPerson:Identification -> IfcIdentifier
-    IfcPerson:FamilyName -> IfcLabel
-    IfcPerson:GivenName -> IfcLabel
-    IfcPerson:MiddleNames -> IfcLabel
-    IfcPerson:PrefixTitles -> IfcLabel
-    IfcPerson:SuffixTitles -> IfcLabel
-    IfcPerson:Roles -> IfcActorRole
+    IfcOwnerHistory:CreationDate -> IfcTimeStamp_0
+    IfcOwnerHistory:LastModifiedDate -> IfcTimeStamp_1
+    IfcOwnerHistory:LastModifyingUser -> IfcPersonAndOrganization_1
+    IfcOwnerHistory:LastModifyingApplication -> IfcApplication_1
+    IfcPersonAndOrganization_0:ThePerson -> IfcPerson
+    IfcPersonAndOrganization_0:TheOrganization -> IfcOrganization
+    IfcPersonAndOrganization_0:Roles -> IfcActorRole_2
+    IfcPerson:Identification -> IfcIdentifier_0
+    IfcPerson:FamilyName -> IfcLabel_0
+    IfcPerson:GivenName -> IfcLabel_1
+    IfcPerson:MiddleNames -> IfcLabel_2
+    IfcPerson:PrefixTitles -> IfcLabel_3
+    IfcPerson:SuffixTitles -> IfcLabel_4
+    IfcPerson:Roles -> IfcActorRole_0
     IfcPerson:Addresses -> IfcTelecomAddress
     IfcTelecomAddress:Purpose -> IfcAddressTypeEnum
-    IfcTelecomAddress:TelephoneNumbers -> IfcLabel
-    IfcTelecomAddress:FacsimileNumbers -> IfcLabel
-    IfcTelecomAddress:ElectronicMailAddresses -> IfcLabel
-    IfcTelecomAddress:WWWHomePageURL -> IfcURIReference
-    IfcTelecomAddress:MessagingIDs -> IfcURIReference
-    IfcTelecomAddress:Description -> IfcText
-    IfcTelecomAddress:UserDefinedPurpose -> IfcLabel
-    IfcOrganization:Identification -> IfcIdentifier
-    IfcOrganization:Name -> IfcLabel
-    IfcOrganization:Description -> IfcText
-    IfcOrganization:Roles -> IfcActorRole
+    IfcTelecomAddress:TelephoneNumbers -> IfcLabel_5
+    IfcTelecomAddress:FacsimileNumbers -> IfcLabel_6
+    IfcTelecomAddress:ElectronicMailAddresses -> IfcLabel_7
+    IfcTelecomAddress:WWWHomePageURL -> IfcURIReference_0
+    IfcTelecomAddress:MessagingIDs -> IfcURIReference_1
+    IfcTelecomAddress:Description -> IfcText_0
+    IfcTelecomAddress:UserDefinedPurpose -> IfcLabel_8
+    IfcOrganization:Identification -> IfcIdentifier_1
+    IfcOrganization:Name -> IfcLabel_9
+    IfcOrganization:Description -> IfcText_1
+    IfcOrganization:Roles -> IfcActorRole_1
     IfcOrganization:Addresses -> IfcAddress
-    IfcActorRole:Role -> IfcRoleEnum
-    IfcActorRole:UserDefinedRole -> IfcLabel
-    IfcActorRole:Description -> IfcText
+    IfcActorRole_2:Role -> IfcRoleEnum
+    IfcActorRole_2:UserDefinedRole -> IfcLabel_10
+    IfcActorRole_2:Description -> IfcText_2
 }
 ```

@@ -10,9 +10,9 @@ The project provides a directory of object types and property templates containe
 ```
 concept {
     IfcContext:Declares -> IfcRelDeclares:RelatingContext
-    IfcContext:Phase -> IfcLabel
-    IfcContext:ObjectType -> IfcLabel
-    IfcContext:LongName -> IfcLabel
+    IfcContext:Phase -> IfcLabel_0
+    IfcContext:ObjectType -> IfcLabel_1
+    IfcContext:LongName -> IfcLabel_2
     IfcRelDeclares:RelatedDefinitions[binding="Type"]
 }
 ```

@@ -9,13 +9,11 @@ concept {
     IfcClosedShell:CfsFaces -> IfcFaceSurface
     IfcFaceSurface:Bounds -> IfcFaceBound
     IfcFaceSurface:Bounds -> IfcFaceOuterBound
-    IfcFaceBound:Bound -> IfcPolyLoop
-    IfcFaceBound:Orientation -> IfcBoolean
-    IfcPolyLoop:Polygon -> IfcCartesianPoint
-    IfcPolyLoop:Polygon -> IfcCartesianPoint
-    IfcPolyLoop:Polygon -> IfcCartesianPoint
-    IfcPolyLoop:Polygon -> IfcCartesianPoint
-    IfcFaceOuterBound:Bound -> IfcPolyLoop
-    IfcFaceOuterBound:Orientation -> IfcBoolean
+    IfcFaceBound:Bound -> IfcPolyLoop_0
+    IfcFaceBound:Orientation -> IfcBoolean_0
+    IfcPolyLoop_0:Polygon -> IfcCartesianPoint_0
+    IfcFaceOuterBound:Bound -> IfcPolyLoop_1
+    IfcFaceOuterBound:Orientation -> IfcBoolean_1
+    IfcPolyLoop_1:Polygon -> IfcCartesianPoint_1
 }
 ```

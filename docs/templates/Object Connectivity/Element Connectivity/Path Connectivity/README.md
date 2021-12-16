@@ -5,19 +5,17 @@ Elements based on an 'Axis' representation such as walls, beams, and columns use
 
 ```
 concept {
-    IfcElement:ConnectedFrom -> IfcRelConnectsPathElements:RelatedElement
-    IfcRelConnectsPathElements:RelatedElement -> IfcElement
+    IfcElement_0:ConnectedFrom -> IfcRelConnectsPathElements:RelatedElement
+    IfcRelConnectsPathElements:RelatedElement -> IfcElement_1
     IfcRelConnectsPathElements:ConnectionGeometry -> IfcConnectionCurveGeometry
-    IfcRelConnectsPathElements:RelatingPriorities -> IfcInteger
-    IfcRelConnectsPathElements:RelatedPriorities -> IfcInteger
-    IfcRelConnectsPathElements:RelatedConnectionType -> IfcConnectionTypeEnum
-    IfcRelConnectsPathElements:RelatingConnectionType -> IfcConnectionTypeEnum
-    IfcConnectionCurveGeometry:CurveOnRelatingElement -> IfcPolyline
-    IfcConnectionCurveGeometry:CurveOnRelatedElement -> IfcPolyline
-    IfcPolyline:Points -> IfcCartesianPoint
-    IfcPolyline:Points -> IfcCartesianPoint
-    IfcPolyline:Points -> IfcCartesianPoint
-    IfcPolyline:Points -> IfcCartesianPoint
+    IfcRelConnectsPathElements:RelatingPriorities -> IfcInteger_0
+    IfcRelConnectsPathElements:RelatedPriorities -> IfcInteger_1
+    IfcRelConnectsPathElements:RelatedConnectionType -> IfcConnectionTypeEnum_0
+    IfcRelConnectsPathElements:RelatingConnectionType -> IfcConnectionTypeEnum_1
+    IfcConnectionCurveGeometry:CurveOnRelatingElement -> IfcPolyline_0
+    IfcConnectionCurveGeometry:CurveOnRelatedElement -> IfcPolyline_1
+    IfcPolyline_0:Points -> IfcCartesianPoint_0
+    IfcPolyline_1:Points -> IfcCartesianPoint_1
     IfcRelConnectsPathElements:RelatedElement[binding="RelatedElement"]
 }
 ```

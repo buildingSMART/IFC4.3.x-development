@@ -37,17 +37,17 @@ application/step | IFC-SPF
 
 ```
 concept {
-    IfcContext:HasAssociations -> IfcRelAssociatesLibrary
-    IfcContext:Phase -> IfcLabel
-    IfcContext:ObjectType -> IfcLabel
-    IfcContext:LongName -> IfcLabel
+    IfcContext:HasAssociations -> IfcRelAssociatesLibrary:RelatedObjects
+    IfcContext:Phase -> IfcLabel_2
+    IfcContext:ObjectType -> IfcLabel_3
+    IfcContext:LongName -> IfcLabel_4
     IfcRelAssociatesLibrary:RelatingLibrary -> IfcLibraryInformation
-    IfcLibraryInformation:Version -> IfcLabel
+    IfcLibraryInformation:Version -> IfcLabel_0
     IfcLibraryInformation:Publisher -> IfcPersonAndOrganization
     IfcLibraryInformation:VersionDate -> IfcDateTime
     IfcLibraryInformation:Location -> IfcURIReference
     IfcLibraryInformation:Description -> IfcText
-    IfcLibraryInformation:Name -> IfcLabel
+    IfcLibraryInformation:Name -> IfcLabel_1
     IfcPersonAndOrganization:ThePerson -> IfcPerson
     IfcPerson:Identification -> IfcIdentifier
 }

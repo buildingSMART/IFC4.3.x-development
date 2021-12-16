@@ -10,16 +10,17 @@ concept {
     IfcObjectDefinition:HasAssociations -> IfcRelAssociatesMaterial:RelatedObjects
     IfcRelAssociatesMaterial:RelatingMaterial -> IfcMaterialProfileSet
     IfcMaterialProfileSet:MaterialProfiles -> IfcMaterialProfile
-    IfcMaterialProfileSet:Name -> IfcLabel
-    IfcMaterialProfileSet:Description -> IfcText
-    IfcMaterialProfile:Name -> IfcLabel
-    IfcMaterialProfile:Description -> IfcText
+    IfcMaterialProfileSet:Name -> IfcLabel_3
+    IfcMaterialProfileSet:Description -> IfcText_1
+    IfcMaterialProfile:Name -> IfcLabel_0
+    IfcMaterialProfile:Description -> IfcText_0
     IfcMaterialProfile:Material -> IfcMaterial
     IfcMaterialProfile:Profile -> IfcProfileDef
-    IfcMaterialProfile:Category -> IfcLabel
+    IfcMaterialProfile:Category -> IfcLabel_2
     IfcMaterialProfile:Priority -> IfcInteger
+    IfcMaterial -> Material
     IfcProfileDef:ProfileType -> IfcProfileTypeEnum
-    IfcProfileDef:ProfileName -> IfcLabel
+    IfcProfileDef:ProfileName -> IfcLabel_1
     IfcMaterialProfileSet:MaterialProfiles[binding="HasProfiles"]
     IfcProfileDef:ProfileName[binding="ProfileName"]
     IfcMaterialProfile:Category[binding="Category"]

@@ -1,4 +1,5 @@
 import re
+import sys
 import itertools
 import functools
 
@@ -20,6 +21,23 @@ class xml_node:
         for ch in self.children:
             if ch.tag == tag:
                 return ch
+                
+    def recursive_print(self, file=sys.stdout, level=0):
+        attr_pairs = "".join(f' {k}="{v}"' for k, v in self.attributes.items())
+        close = " /" if not (self.text or self.children) else ""
+        indent = " " * (level*2)
+        
+        print(f"{indent}<{self.tag}{attr_pairs}{close}>", file=file)
+        
+        if self.text or self.children:
+            if self.text:
+                print(f"{indent}  {self.text}", file=f)
+            for c in self.children:
+                c.recursive_print(file=file, level=level+1)
+                pass
+                
+            print(f"{indent}</{self.tag}>", file=file)
+            
 
 import lxml.etree as ET
 

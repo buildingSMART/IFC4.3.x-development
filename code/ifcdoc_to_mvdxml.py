@@ -2,65 +2,30 @@ import os
 import re
 import glob
 import functools
-import itertools
-
-import lxml.etree as ET
 
 import ifcopenshell
 from ifcopenshell.mvd.mvdxml_expression import parse as parse_mvd_expr
 
-IGNORED_ATTRS = ()
-IGNORED_TAGS = ()
+import xml_dict
 
-class DependencyError(BaseException): pass
-   
-def flatmap(func, *iterable):
-    return itertools.chain.from_iterable(map(func, *iterable))
-    
-
-def to_dict(t):
-    if t.tag in IGNORED_TAGS:
-        return
-
-    # strip out namespace reported by etree as
-    # "{http://www.buildingsmart-tech.org/xml/qto/QTO_IFC4.xsd}QtoSetDef"
-    items = {'#tag': re.sub(r'\{.+?\}', '', t.tag)}
-    
-    if list(t):
-        items['_children'] = list(flatmap(to_dict, t))
-    
-    items.update({'@' + k: v for k, v in (t.attrib or {}).items() if k not in IGNORED_ATTRS})
-        
-    if t.text and t.text.strip():
-        items['#text'] = t.text.strip()
-        
-    yield items
-
-    
-def read(fn):
-    parser = ET.XMLParser(encoding="utf-8")
-    return next(to_dict(ET.parse(fn, parser=parser).getroot()))
-    
-    
+class DependencyError(BaseException): pass  
+  
 def make_transform_tag_renamer(target, attribute_mapping={}):
     def inner(di, parent):
-        return {
-            '#tag': target,
-            **{"@"+attribute_mapping.get(k[1:], k[1:]): v for k, v in di.items() if k[0] == '@'}
-        }
+        return xml_dict.xml_node(
+            target,
+            {attribute_mapping.get(k, k): v for k, v in di.attributes.items()}
+        )
     return inner
 
 def make_transform_identity():
     def inner(di, parent):
-        return make_transform_tag_renamer(di["#tag"])(di, parent)
+        return make_transform_tag_renamer(di.tag)(di, parent)
     return inner
     
 def do_transform_skip(di, parent):
     return None
-    
-def child_by_tag(node, tag):
-    return [c for c in node["_children"] if c['#tag'] == tag][0]
-    
+       
 def transform_uuid(v):
     if len(v) == 36:
         return v
@@ -71,7 +36,9 @@ transform_ConceptRoots = make_transform_tag_renamer("Roots")
 transform_Concepts = make_transform_identity()
 transform_References = make_transform_identity()
 transform_DocModelRuleAttribute = make_transform_tag_renamer("AttributeRule", attribute_mapping={"Name": "AttributeName", "Identification": "RuleID"})
-transform_DocModelRuleEntity = make_transform_tag_renamer("EntityRule", attribute_mapping={"Name": "EntityName", "Identification": "RuleID"})
+
+# not sufficient anymore, because an entity rule can contain an href
+transform_DocModelRuleEntity_nonhref = make_transform_tag_renamer("EntityRule", attribute_mapping={"Name": "EntityName", "Identification": "RuleID"})
 
 templates = {}
 used_template_ids = {}
@@ -81,7 +48,7 @@ def parse_templates(pt):
     while queue:
         fn = queue.pop(0)
         try:
-            tmpl_defs = transform(read(fn))
+            tmpl_defs = transform(xml_dict.read(fn))
         except DependencyError as e:
             print("x", e, fn)
             queue.append(fn)
@@ -92,88 +59,124 @@ def parse_templates(pt):
             
         tmpl_def = tmpl_defs[0]
             
-        if "@id" in tmpl_def:
-            href = tmpl_def["@id"]
+        if "id" in tmpl_def.attributes:
+            href = tmpl_def.attributes["id"]
             templates[href] = tmpl_def
             
             print("v", href)
             
+            
+def transform_DocModelRuleConstraint(di, parent):
+    v = di.child_with_tag("Expression").child_with_tag("Value").attributes["Literal"].replace("'", "")
+    return xml_dict.xml_node(
+        "Constraint", {"Expression": f"[Value]='{v}'"}
+    )
+
+            
 def transform_DocTemplateDefinition(di, parent):
-    if di.get("@href"):
-        if di["@href"] not in templates:
-            raise DependencyError(di["@href"])
-        ref = templates[di["@href"]]["@uuid"]
-        return {
-            '#tag': "Template",
-            '@ref': ref
-        }
-    elif di.get("@Type") and di.get("@id"):
-        return {
-            '#tag': "ConceptTemplate",
-            '@id': di["@id"],
-            '@uuid': transform_uuid(di["@UniqueId"]),
-            '@name': di["@Name"],
-            '@applicableEntity': di["@Type"]
-        }
+    if di.attributes.get("href"):
+        if di.attributes["href"] not in templates:
+            raise DependencyError(di.attributes["href"])
+        ref = templates[di.attributes["href"]].attributes["uuid"]
+        return xml_dict.xml_node(
+            "Template",
+            {'ref': ref}
+        )
+    elif di.attributes.get("Type") and di.attributes.get("id"):
+        return xml_dict.xml_node(
+            "ConceptTemplate",
+            {
+                'id': di.attributes["id"],
+                'uuid': transform_uuid(di.attributes["UniqueId"]),
+                'name': di.attributes["Name"],
+                'applicableEntity': di.attributes["Type"]
+            }
+        )
+        
+entity_rule_by_id = {}
+        
+def transform_DocModelRuleEntity(di, parent):
+    if di.attributes.get("href"):
+        return entity_rule_by_id[di.attributes["href"]]
+    else:
+        node = transform_DocModelRuleEntity_nonhref(di, parent)
+        if di.attributes.get('id'):
+            if di.attributes.get('id') == "IfcLabel_00g8K6wKC9hMMy0XBVIKD3":
+                breakpoint()
+            entity_rule_by_id[di.attributes.get('id')] = node
+        return node
 
 def transform_DocConceptRoot(di, parent):
-    return {
-        '#tag': "ConceptRoot",
-        '@uuid': transform_uuid(di["@UniqueId"]),
-        '@name': child_by_tag(di, "ApplicableEntity")["@href"],
-        '@applicableRootEntity': child_by_tag(di, "ApplicableEntity")["@href"]
-    }
+    return xml_dict.xml_node(
+        "ConceptRoot",
+        {
+            'uuid': transform_uuid(di.attributes["UniqueId"]),
+            'name': di.child_with_tag("ApplicableEntity").attributes["href"],
+            'applicableRootEntity': di.child_with_tag("ApplicableEntity").attributes["href"]
+        }
+    )
     
 def transform_DocTemplateUsage(di, parent):
-    href = child_by_tag(di, "Definition")["@href"]
+    href = di.child_with_tag("Definition").attributes["href"]
     if href not in used_template_ids:
         used_template_ids[href] = 1
-    return {
-        '#tag': "Concept",
-        '@uuid': transform_uuid(di["@UniqueId"]),
-        '@name': templates[href]["@name"],
-        '@status': "sample",
-        '@override': "false",
-    }
+    return xml_dict.xml_node(
+        "Concept",
+        {
+            'uuid': transform_uuid(di.attributes["UniqueId"]),
+            'name': templates[href].attributes["name"],
+            'status': "sample",
+            'override': "false"
+        }
+    )
     
 def transform_DocTemplateItem(di, parent):
-    r = {'#tag': "TemplateRule"}
-    if "@RuleParameters" in di:
+    if "RuleParameters" in di.attributes:
         try:
-            parse_mvd_expr(di["@RuleParameters"])
+            parse_mvd_expr(di.attributes["RuleParameters"])
         except:
-            print("Failed to parse", di["@RuleParameters"])
-            return None         
-        r["@Parameters"] = di["@RuleParameters"]
-    else: return None
-    return r
+            print("Failed to parse", di.attributes["RuleParameters"])
+            return None
+            
+        return xml_dict.xml_node(
+            "TemplateRule",
+            {
+                "Parameters": di.attributes["RuleParameters"]
+            }
+        )
 
 def transform_Items(di, parent):
-    href = child_by_tag(parent, "Definition")["@href"]
-    ref = templates[href]["@uuid"]
-    return [{'#tag': "Template", "@ref": ref}, {'#tag': "TemplateRules", "@operator": "and"}]
+    href = parent.child_with_tag("Definition").attributes["href"]
+    ref = templates[href].attributes["uuid"]
+    return [
+        xml_dict.xml_node("Template", {"ref": ref}),
+        xml_dict.xml_node("TemplateRules", {"operator": "and"})
+    ]
     
 def transform_Rules(di, parent):
-    if parent["#tag"] == "DocTemplateDefinition":
+    if parent.tag == "DocTemplateDefinition":
         tag = "Rules"
-    elif parent["#tag"] == "DocModelRuleAttribute":
+    elif parent.tag == "DocModelRuleAttribute":
         tag = "EntityRules"
     else:
-        tag = "AttributeRules"        
-    return {"#tag": tag}
+        if 'DocModelRuleConstraint' in [c.tag for c in di.children]:
+            tag = "Constraints"
+            assert len(di.children) == 1
+        else:
+            tag = "AttributeRules"        
+    return xml_dict.xml_node(tag)
     
 def transform(di, parent=None):
-    F = globals().get(f"transform_{di['#tag']}", do_transform_skip)
+    F = globals().get(f"transform_{di.tag}", do_transform_skip)
     di2 = F(di, parent)
-    children = sum(map(functools.partial(transform, parent=di), di.get("_children", [])), [])
+    children = sum(map(functools.partial(transform, parent=di), di.children), [])
     if di2 is None:
         return children
-    elif isinstance(di2, dict):
-        di2["_children"] = children
+    elif isinstance(di2, xml_dict.xml_node):
+        di2.children = children
         di2 = [di2]
     elif isinstance(di2, list):
-        # di2.extend(children)
-        di2[-1]["_children"] = children
+        di2[-1].children = children
     elif children:
         # nested templates aren't supported in mvdXML, or how?
         # raise ValueError("Should be leaf")
@@ -182,62 +185,35 @@ def transform(di, parent=None):
     
     
 def create_mvd(roots):
-    return [{
-        "#tag": "mvdXML",
-        # "@xmlns:xsd": "http://www.w3.org/2001/XMLSchema",
-        # "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
-        "@uuid": transform_uuid(ifcopenshell.guid.new()),
-        "@name": "",
-        "@status": "sample",
-        # "@xsi:schemaLocation": "http://www.buildingsmart-tech.org/mvd/XML/1.1 http://www.buildingsmart-tech.org/mvd/XML/1.1/mvdXML_V1.1_add1.xsd",
-        # "@xmlns": "http://buildingsmart-tech.org/mvd/XML/1.1",
-        "_children": [{
-            "#tag": "Templates",
-            "_children": [templates[t] for t in used_template_ids.keys()]
-        },{
-            "#tag": "Views",
-            "_children": roots
-        }]
-    }]
+    return [xml_dict.xml_node(
+        "mvdXML",
+        {
+            "uuid": transform_uuid(ifcopenshell.guid.new()),
+            "name": "",
+            "status": "sample",
+        },
+        children=[xml_dict.xml_node(
+            "Templates",
+            children=[templates[t] for t in used_template_ids.keys()]
+        ),xml_dict.xml_node(
+            "Views",
+            children=roots
+        )]
+    )]
     
     
 def strip_child_rules(d):
     def inner(di):
-        if di["#tag"] == "TemplateRule" and "_children" in di:
-            del di["_children"]
+        if di.tag == "TemplateRule" and di.children:
+            di.children[:] = []
         else:
-            for c in di.get("_children", []):
+            for c in di.children:
                 inner(c)
         return di
     return [inner(d[0])]
-    
-    
-def serialize(di, ofn):
-    def inner(d, parent=None):
-        if parent is None:
-            node = ET.Element(d["#tag"])
-        else:
-            node = ET.SubElement(parent, d["#tag"])
-
-        for k, v in d.items():
-            if k == "#tag":
-                pass
-            elif k == "#text":
-                node.text = v
-            elif k.startswith('@'):
-                node.set(k[1:], v)
-            elif k == "_children":
-                for child in v:
-                    inner(child, node)
-            else:
-                raise ValueError("Unexpected: " + k)
-                
-        return node
-
-    ET.ElementTree(inner(di[0])).write(ofn, pretty_print=True)
     
 if __name__ == "__main__":
     import sys
     parse_templates(os.path.join(sys.argv[1], "..", "..", "..", "Templates", "Partial Templates"))
     parse_templates(os.path.join(sys.argv[1], "..", "..", "..", "Templates"))
-    serialize(create_mvd(strip_child_rules(transform(read(sys.argv[1])))), sys.argv[2])
+    xml_dict.serialize(create_mvd(strip_child_rules(transform(xml_dict.read(sys.argv[1])))), sys.argv[2])

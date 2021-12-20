@@ -42,10 +42,10 @@ class node_reference:
         references_by_name.items[self.name.split(":")[0]].append(self)
     
     def __repr__(self):
-        refs = [x for x in references_by_name.items.get(self.name.split(":")[0]) if ":" not in x.name]
-        if len(refs) > 1:
+        refs = [x.id for x in references_by_name.items.get(self.name.split(":")[0]) if ":" not in x.name]
+        if len(set(refs)) > 1:
             parts = self.name.split(":")
-            parts[0] += f"_{[x.id for x in refs].index(self.id)}"
+            parts[0] += f"_{refs.index(self.id)}"
             return ":".join(parts)
         else:
             return self.name
@@ -216,3 +216,4 @@ for tmpl in templates:
                             
         print("}", file=f)
         print("```", file=f)
+        

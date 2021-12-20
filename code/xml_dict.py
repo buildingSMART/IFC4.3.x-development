@@ -8,7 +8,7 @@ from dataclasses import dataclass, field
 @dataclass
 class xml_node:
     tag : str
-    attributes : dict
+    attributes : dict = field(default_factory=dict)
     text : str = ""
     namespaces : dict = field(default=None, repr=False)
     children : list = field(default_factory=list, repr=False)

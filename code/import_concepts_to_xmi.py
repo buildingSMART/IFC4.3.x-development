@@ -292,15 +292,14 @@ if __name__ == "__main__":
     
     def get_type_classes(IfcClass):
         tys = []
-        try:
-            tys.append(ctx.to_id("uml:Class", f"{IfcClass}Type"))
-        except: pass
-        try:
-            tys.append(ctx.to_id("uml:Class", f"{IfcClass}Style"))
-        except: pass
+        for Postfix in ("Type", "Style"):
+            try:
+                ctx.to_id("uml:Class", f"{IfcClass}{Postfix}")
+                tys.append(f"{IfcClass}{Postfix}")
+            except: pass
         return tys
 
-    class_names = [k[1], get_type_classes(k[1]) for k,v in ctx.to_node.items() \
+    class_names = [(k[1], get_type_classes(k[1])) for k,v in ctx.to_node.items() \
         \
         if k[0] == 'uml:Class' and \
         v.parent.parent.attributes.get('name') != 'GeneralUsage' and \

@@ -243,6 +243,14 @@ class context:
                 
         self._recurse(v)
         
+        self.substitutions = defaultdict(list)
+
+        def v(nd, stack):
+            if nd.tag == "packagedElement" and nd.attributes[XMI.type] == "uml:Substitution":
+                self.substitutions[nd.attributes["supplier"]].append(nd.attributes["client"])
+                
+        self._recurse(v)
+        
     def write(self, fn):
         xml_dict.serialize([self.content], fn)
         

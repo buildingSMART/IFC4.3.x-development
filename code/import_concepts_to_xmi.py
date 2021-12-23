@@ -1,3 +1,4 @@
+import os
 import sys
 import glob
 import operator
@@ -13,7 +14,6 @@ def norm(v):
     return v.lower().replace(" ", "").replace("_", "")
 
 if __name__ == "__main__":
-    fn = sys.argv[1]
     
     ctx = append_xmi.context("..\schemas\IFC.xml")
     try:
@@ -23,7 +23,8 @@ if __name__ == "__main__":
         views_package = ctx.insert(ifc_package, append_xmi.uml_package("Views"))
         gu_package = ctx.insert(views_package, append_xmi.uml_package("GeneralUsage"))
     
-    x = concept_extractor.extractor(fn)
+    # fn = sys.argv[1]
+    # x = concept_extractor.extractor(fn)
     
     realizations = set()
     def v(nd, _):
@@ -31,6 +32,7 @@ if __name__ == "__main__":
             realizations.add(frozenset((nd.attributes["supplier"], nd.attributes["client"])))
     ctx._recurse(v)
     
+    """
     concept_name = "Spatial Containment"
     concept_name_short = concept_name.replace(" ", "")
     concept_package = ctx.insert(gu_package, append_xmi.uml_package(concept_name_short))
@@ -61,96 +63,83 @@ if __name__ == "__main__":
             [ent_class.attributes[XMI.id], option_to_class[opt].id],
             owners = [None, ent_class]
         ))
+    """    
         
-        
-    # Property Sets
-    
-    concept_name = "Property Sets for Objects"
-    concept_name_short = concept_name.replace(" ", "")
-    concept_package = ctx.insert(gu_package, append_xmi.uml_package(concept_name_short))
-    
-    for fn in glob.glob("../reference_schemas/psd/Pset_*.xml"):
-        xd = xml_dict.read(fn)
-        pset = xd.child_with_tag("Name").text
-        appl = [n.text for n in xd.child_with_tag("ApplicableClasses").children]
-        
-        try:
-            pset_id = ctx.to_id("uml:Class", pset)
-        except KeyError as e:
-            print(f"Undefined pset {pset}")
-            continue
-            
-        for entity in appl:
-        
-            if "/" in entity:
-                if "(" in entity:
-                    type_enum = entity.split("/")[1].replace(".)", "").replace("(", "")
-                    if type_enum.startswith("."):
-                        type_enum = entity.split("/")[0] + type_enum
-                else:
-                    parts = entity.split("/")
-                    type_enum = f"{parts[0]}TypeEnum.{parts[1]}"
-                try:
-                    ctx.to_id("uml:Class", type_enum)
-                    entity = type_enum
-                except KeyError as e:
-                    print(f"Undefined type enum {type_enum}")
-                    entity = parts[0]
-    
-            try:
-                entity_id = ctx.to_id("uml:Class", entity)
-            except KeyError as e:
-                print(f"Undefined entity {entity}")
-                continue
-            
-            assoc = append_xmi.uml_assoc_class(f"{entity}{concept_name_short}{pset}", (entity_id, pset_id))
-            ctx.insert(concept_package, assoc)
-    
-    
     """
+    # Property and Quantity Sets
     
-    key = [k for k in x.grouping.keys() if k[0] == concept_name][0]
-    parameters = key[1:]
-    values = x.grouping[key]
+    for desc, ns, filepat in [(
+        "Quantity",
+        "{http://www.buildingsmart-tech.org/xml/qto/QTO_IFC4.xsd}",
+        "Qto_*.xml"
+    ), (
+        "Property",
+        "",
+        "Pset_*.xml"
+    )]:
     
-    for row in values:
-        d = dict(zip([p[0] for p in parameters], row[1:]))
+        concept_name = f"{desc} Sets for Objects"
+        concept_name_short = concept_name.replace(" ", "")
+        concept_package = ctx.insert(gu_package, append_xmi.uml_package(concept_name_short))        
         
-        if not d.get("PsetName"):
-            continue
-        
-        entity = row[0]
-        pset = d.get("PsetName")
-        
-        if entity == "IfcBuildingElement":
-            entity = "IfcBuiltElement"
-        
-        if d.get("PredefinedType") and d.get("PredefinedType").isupper():
-            pdtype = f"{entity}TypeEnum.{d.get('PredefinedType')}"
+        for fn in glob.glob(os.path.join("../reference_schemas/psd/", filepat)):
+            xd = xml_dict.read(fn)
+            set_name = xd.child_with_tag(f"{ns}Name").text
+            appl = [n.text for n in xd.child_with_tag(f"{ns}ApplicableClasses").children]
+            
             try:
-                ctx.to_id("uml:Class", pdtype)
-                entity = pdtype
+                set_id = ctx.to_id("uml:Class", set_name)
             except KeyError as e:
-                print(f"Undefined predefined type {pdtype}")
+                print(f"Undefined (p|q)set {set_name}")
                 continue
-            
-        try:
-            entity_id = ctx.to_id("uml:Class", entity)
-        except KeyError as e:
-            print(f"Undefined entity {entity}")
-            continue
-            
-        try:
-            pset_id = ctx.to_id("uml:Class", pset)
-        except KeyError as e:
-            print(f"Undefined pset {pset}")
-            continue            
-            
-        assoc = append_xmi.uml_assoc_class(f"{entity}{concept_name_short}{pset}", (entity_id, pset_id))
-        ctx.insert(concept_package, assoc)
+                
+            # if set_name == "Pset_LinearReferencingMethod":
+            #     breakpoint()
+                
+            for entity in appl:
+        
+                if "/" in entity:
+                    if "(" in entity:
+                        type_enum = entity.split("/")[1].replace(".)", "").replace("(", "")
+                        if type_enum.startswith("."):
+                            type_enum2 = entity.split("/")[0] + type_enum
+                            try:
+                                ctx.to_id("uml:Class", type_enum2)
+                                type_enum = type_enum2
+                            except:
+                                type_enum = entity.split("/")[0] + "TypeEnum" + type_enum
+                    else:
+                        parts = entity.split("/")
+                        for Type in ("Type", ""):
+                            type_enum_type = f"{parts[0]}{Type}Enum"
+                            try:
+                                ctx.to_id("uml:Enumeration", type_enum_type)
+                                break
+                            except:
+                                type_enum_type = parts[0]
+                                continue
+                        type_enum = f"{type_enum_type}.{parts[1]}"   
+                            
 
+                    try:
+                        ctx.to_id("uml:Class", type_enum)
+                        entity = type_enum
+                    except KeyError as e:
+                        print(f"Undefined type enum {type_enum}")
+                        entity = entity.split("/")[0]
+        
+                try:
+                    entity_id = ctx.to_id("uml:Class", entity)
+                except KeyError as e:
+                    print(f"Undefined entity {entity}")
+                    continue
+                
+                assoc = append_xmi.uml_assoc_class(f"{entity}{concept_name_short}{set_name}", (entity_id, set_id))
+                print(entity, "->", set_name)
+                ctx.insert(concept_package, assoc)
+            
     """
-   
+    """
     # Axis (3D) Geometry
     axis_geom_package = ctx.insert(gu_package, append_xmi.uml_package("Axis3DGeometry"))
     axis_geom = append_xmi.uml_class("Axis3DGeometry")
@@ -280,8 +269,49 @@ if __name__ == "__main__":
         ids = [ctx.to_id("uml:Class", entity)] + ids
         assoc = append_xmi.uml_assoc_class(f"{entity}{concept_name_short}Usage", ids, type="uml:Association")
         ctx.insert(concept_package, assoc)
-        
-        
+    """    
+    
+    """
+    # Object Typing
+    concept_name = "Object Typing"
+    concept_name_short = concept_name.replace(" ", "")
+    concept_package = ctx.insert(gu_package, append_xmi.uml_package(concept_name_short))
+    
+    # tfk: The where rules are not complete wrt abstract classes so instead we simply
+    #      look at the classes where a class exists as well with 'Type' appended to the
+    #      name.
+    # 
+    # # Code below uses the express schema to feed the template parametrizations
+    # get_typename = lambda S: re.findall(r"'ifc4x3\w+\.(\w+)' in typeof\(self\\IfcObject\.IsTypedBy", S)
+    # get_typerule = lambda En: dict(En.where).get('CorrectTypeAssigned', '')
+    # import ifcopenshell.express
+    # schema = ifcopenshell.express.express_parser.parse("IFC.exp").schema
+    # for en in schema.entities.values():
+    #     print(en.name, get_typename(get_typerule(en)))
+    # 
+    
+    def has_type_class(IfcClass):
+        try:
+            ctx.to_id("uml:Class", f"{IfcClass}Type")
+            return True
+        except: return False
+
+    class_names = [k[1] for k,v in ctx.to_node.items() \
+        \
+        if k[0] == 'uml:Class' and \
+        v.parent.parent.attributes.get('name') != 'GeneralUsage' and \
+        v.parent.attributes.get('name') != 'propertytypes' and \
+        not '.' in k[1] and \
+        has_type_class(k[1])
+    ]
+    
+    for IfcClass in class_names:
+        ids = [ctx.to_id("uml:Class", IfcClass), ctx.to_id("uml:Class", f"{IfcClass}Type")]
+        assoc = append_xmi.uml_assoc_class(f"{IfcClass}{concept_name_short}Usage", ids)
+        ctx.insert(concept_package, assoc)
+    """
+    
+    """
     # Object Typing
     concept_name = "Object Typing"
     concept_name_short = concept_name.replace(" ", "")
@@ -300,4 +330,6 @@ if __name__ == "__main__":
         assoc = append_xmi.uml_assoc_class(f"{ent_ty[0]}{concept_name_short}Usage", ids)
         ctx.insert(concept_package, assoc)
         
+    """
+    
     ctx.write("..\schemas\IFC_with_concepts.xml")

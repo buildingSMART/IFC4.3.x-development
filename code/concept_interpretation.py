@@ -7,6 +7,8 @@ class concept_type(Enum):
     SIMPLE_BINARY = auto()
     # Packaged undirected association class
     PROPERTY_OR_QUANTITY_SET = auto()
+    # Packaged undirected association class
+    OBJECT_TYPING = auto()
     # Packaged directed association class
     DIRECTIONAL_BINARY = auto()
     # Packaged intermediate class with normal undirected assocations
@@ -27,7 +29,7 @@ concept_type.DIRECTIONAL_BINARY,
 ('Actor Assignment', ('Type', ('IfcRelAssignsToActor', 'RelatedObjects'))):
 concept_type.DIRECTIONAL_BINARY,
 ('Object Typing', ('HasType', ('IfcObject', 'IsTypedBy')), ('RelatingType', ('IfcRelDefinesByType', 'RelatingType')), ('TypeName', ('IfcTypeObject', 'Name'))):
-concept_type.SIMPLE_BINARY,
+concept_type.OBJECT_TYPING,
 ('Quantity Sets', ('AreaValue', ('IfcQuantityArea', 'AreaValue')), ('CountValue', ('IfcQuantityCount', 'CountValue')), ('LengthValue', ('IfcQuantityLength', 'LengthValue')), ('QsetName', ('IfcElementQuantity', 'Name')), ('Quantities', ('IfcElementQuantity', 'Quantities')), ('QuantityName', ('IfcQuantityTime', 'Name')), ('TimeValue', ('IfcQuantityTime', 'TimeValue')), ('VolumeValue', ('IfcQuantityVolume', 'VolumeValue')), ('WeightValue', ('IfcQuantityWeight', 'WeightValue'))):
 concept_type.PROPERTY_OR_QUANTITY_SET,
 ('Material Constituent Set', ('ConstituentName', ('IfcMaterialConstituent', 'Name'))):

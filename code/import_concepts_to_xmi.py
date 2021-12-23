@@ -290,25 +290,30 @@ if __name__ == "__main__":
     #     print(en.name, get_typename(get_typerule(en)))
     # 
     
-    def has_type_class(IfcClass):
+    def get_type_classes(IfcClass):
+        tys = []
         try:
-            ctx.to_id("uml:Class", f"{IfcClass}Type")
-            return True
-        except: return False
+            tys.append(ctx.to_id("uml:Class", f"{IfcClass}Type"))
+        except: pass
+        try:
+            tys.append(ctx.to_id("uml:Class", f"{IfcClass}Style"))
+        except: pass
+        return tys
 
-    class_names = [k[1] for k,v in ctx.to_node.items() \
+    class_names = [k[1], get_type_classes(k[1]) for k,v in ctx.to_node.items() \
         \
         if k[0] == 'uml:Class' and \
         v.parent.parent.attributes.get('name') != 'GeneralUsage' and \
         v.parent.attributes.get('name') != 'propertytypes' and \
         not '.' in k[1] and \
-        has_type_class(k[1])
+        get_type_classes(k[1])
     ]
     
-    for IfcClass in class_names:
-        ids = [ctx.to_id("uml:Class", IfcClass), ctx.to_id("uml:Class", f"{IfcClass}Type")]
-        assoc = append_xmi.uml_assoc_class(f"{IfcClass}{concept_name_short}Usage", ids)
-        ctx.insert(concept_package, assoc)
+    for IfcClass, tys in class_names:
+        for ty in tys:
+            ids = [ctx.to_id("uml:Class", v) for v in [IfcClass, ty]]
+            assoc = append_xmi.uml_assoc_class(f"{IfcClass}{concept_name_short}Usage", ids)
+            ctx.insert(concept_package, assoc)
     """
     
     """

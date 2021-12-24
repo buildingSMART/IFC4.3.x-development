@@ -4,8 +4,6 @@ class concept_type(Enum):
     # Packaged class, with normal undirected associations
     SIMPLE_UNARY = auto()
     # Packaged undirected association class
-    SIMPLE_BINARY = auto()
-    # Packaged undirected association class
     PROPERTY_OR_QUANTITY_SET = auto()
     # Packaged undirected association class
     OBJECT_TYPING = auto()

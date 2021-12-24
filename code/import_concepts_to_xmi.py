@@ -4,6 +4,7 @@ import glob
 import operator
 import itertools
 
+import xmi_document
 import xml_dict
 import append_xmi
 import concept_extractor
@@ -17,8 +18,9 @@ def norm(v):
 
 class xmi_concept_writer:
 
-    def __init__(self, xmi, extractor):
+    def __init__(self, xmi, xmi_items, extractor):
         self.xmi = xmi
+        self.xmi_items = xmi_items
         self.extractor = extractor
         
         try:
@@ -53,7 +55,22 @@ class xmi_concept_writer:
             return True
 
     def write_as_directional_binary(self, key, values):
-        pass
+        columns = list(zip(*values))
+        non_empty_columns = [col for col in columns if any(cell for cell in col)]
+        rows = zip(*non_empty_columns)
+        
+        for appl, param in rows:
+            try:
+                nodes = [self.xmi.to_node[("uml:Class", v)] for v in [appl, param]]
+            except KeyError as e:
+                print(f"Non existent class {e.args[0][1]} in concept {key[0]}")
+                continue
+            assoc = append_xmi.uml_assoc_class(
+                f"{appl}{self.concept_name_short}Usage",
+                [n.attributes[XMI.id] for n in nodes],
+                owners = [None, nodes[0]]
+            )
+            self.xmi.insert(self.concept_package, assoc)
 
     def write_as_directional_grouped(self, key, values):
         mapping = dict([(g, frozenset([vv[1] for vv in vs])) for g, vs in itertools.groupby(sorted([v[0:2] for v in values]), key=operator.itemgetter(0))])
@@ -84,32 +101,49 @@ class xmi_concept_writer:
         
         for column_id, ((rule_id, (entity_name, attribute_name)), pmap) in enumerate(zip(parameters, parameter_id_mapping), start=1):
             
-            if rule_id == "CostType":
-                breakpoint()
+            def get_attrs_from_class(nd):
+                def get_type_id(attr):
+                    return [ch for ch in attr.children if ch.tag == "type"][0].attributes[XMI.idref]
+                
+                # First have a peak at the child uml:Properties
+                attrs = [get_type_id(ch) for ch in nd.children if ch.attributes[XMI.type] == "uml:Property" and ch.attributes.get('name') == attribute_name]
+                
+                if not attrs:
+                    # If not we take a look at the associations as interpreted by the xmi_document
+                    xi = [i for i in self.xmi_items if i.name == nd.attributes['name']][0]
+                    attrs = [c.node for c in xi.children if c.name == attribute_name]
+                    if attrs:
+                        a = attrs[0]
+                        assoc_types = set(x.idref for x in a/"type")
+                        assert len(assoc_types) == 2
+                        attrs = list(assoc_types - {nd.attributes[XMI.id]})
+                        assert len(attrs) == 1
+                        
+                return attrs
 
             # From the RuleIDs we have (entity_name, attribute_name). We lookup the type of
             # this attribute in the XMI schema. Taking into account inheritance as the
             # attribute may be defined on a more abstract entity.
             nd = self.xmi.to_node[entity_name]
-            while True:
-                # @todo also take into account associations
-                attrs = [ch for ch in nd.children if ch.attributes[XMI.type] == "uml:Property" and ch.attributes.get('name') == attribute_name]
+            while True:                
+                attrs = get_attrs_from_class(nd)
+                
                 if attrs:
-                    attr_nodes = [attrs[0]]
+                    attr_type_ids = [attrs[0]]
                     break
                 else:
                     gens = [ch for ch in nd.children if ch.tag == "generalization"]
                     if gens:
                         nd = self.xmi.to_node[gens[0].attributes['general']]
                     else:
-                        attr_nodes = None
+                        attr_type_ids = None
                         break
                    
             # If not found on the entity or supertype, we also need to look at subtypes.
             # e.g PredefinedType is only introduced at concrete leaf classes, but is
             # still referenced as part of more generic IfcObject for example in the
             # case of the Property Sets for Objects concept.
-            if attr_nodes is None:
+            if attr_type_ids is None:
             
                 def subclasses(x):
                     yield x
@@ -118,34 +152,38 @@ class xmi_concept_writer:
                         
                 scs = list(subclasses(entity_name))
                 
-                attr_nodes = []
+                attr_type_ids = []
                 
                 for sc in scs:
-                    attrs = [ch for ch in self.xmi.to_node[sc].children if ch.attributes[XMI.type] == "uml:Property" and ch.attributes['name'] == attribute_name]
+                    attrs = get_attrs_from_class(self.xmi.to_node[sc])
                     if attrs:
-                        attr_nodes.append(attrs[0])            
+                        attr_type_ids.append(attrs[0])            
             
-            for attr in attr_nodes:
+            for attr_type_id in attr_type_ids:
                 
-                attr_type_id = [ch for ch in attr.children if ch.tag == "type"][0].attributes[XMI.idref]
                 attr_type = self.xmi.to_node[attr_type_id]
                 attr_type_name = attr_type.attributes['name']
                 
-                if self.xmi.substitutions.get(attr_type_id):
+                if attr_type.attributes[XMI.type] == "uml:DataType":
+                
+                    # For data types we create an enumeration as part of the concept
+                    # package to hold all values that are used within the parametrization.
                     
-                    # express select
-                    
-                    def visit_type_id(nd_id):
-                        name = self.xmi.to_node[nd_id].attributes['name']
-                        pmap[norm(name)] = nd_id
-                        for ch in self.xmi.substitutions.get(nd_id, []):
-                            visit_type_id(ch)
-                            
-                    visit_type_id(attr_type_id)
-                    
+                    assert len(attrs) == 1
+                
+                    column = sorted(set(v[column_id] for v in values))
+                    new_enum = append_xmi.uml_enumeration(f"{self.concept_name_short}{rule_id}Values", column)
+                    self.xmi.insert(self.concept_package, new_enum)
+                    for col in column:
+                        full_name = f"{self.concept_name_short}{rule_id}Values.{col}"
+                        enum_value_class = append_xmi.uml_class(full_name)
+                        self.xmi.insert(self.concept_package, enum_value_class)
+                        self.xmi.insert(self.concept_package, append_xmi.uml_realization(enum_value_class.id, new_enum.id))
+                        pmap[norm(col)] = enum_value_class.id
+                        
                 elif attr_type.attributes[XMI.type] == "uml:Enumeration":
                     
-                    # When the type is an enumeration, we check if a node exists already
+                    # Enumeration: check if a node exists already
                     # for the literal.
                     
                     enum_values = [ch.attributes['name'] for ch in attr_type.children if ch.tag == "ownedLiteral"]
@@ -168,21 +206,21 @@ class xmi_concept_writer:
                             pmap[norm(ev)] = enum_value_class.id
                 
                 else:
-                
-                    # For other types we create an enumeration as part of the concept
-                    # package to hold all values that are used within the parametrization.
                     
-                    assert len(attrs) == 1
-                
-                    column = sorted(set(v[column_id] for v in values))
-                    new_enum = append_xmi.uml_enumeration(f"{self.concept_name_short}{rule_id}Values", column)
-                    self.xmi.insert(self.concept_package, new_enum)
-                    for col in column:
-                        full_name = f"{self.concept_name_short}{rule_id}Values.{col}"
-                        enum_value_class = append_xmi.uml_class(full_name)
-                        self.xmi.insert(self.concept_package, enum_value_class)
-                        self.xmi.insert(self.concept_package, append_xmi.uml_realization(enum_value_class.id, new_enum.id))
-                        pmap[norm(col)] = enum_value_class.id
+                    # express select or entity, recursively fill
+                    # with specializations and substitutions
+                    
+                    def visit_type_id(nd_id):
+                        name = self.xmi.to_node[nd_id].attributes['name']
+                        pmap[norm(name)] = nd_id
+                        for ch in self.xmi.substitutions.get(nd_id, []):
+                            visit_type_id(ch)
+                        for ch_name in self.xmi.subclasses.get(name, []):
+                            ch_id = self.xmi.to_node[ch_name].attributes[XMI.id]
+                            visit_type_id(ch_id)
+                            
+                    visit_type_id(attr_type_id)
+                    
 
         def lookup_and_warn(i, pmap, p):
             v = pmap.get(norm(p))
@@ -196,7 +234,7 @@ class xmi_concept_writer:
             params = row[1:]
             ids = list(filter(None, [lookup_and_warn(i, pmap, p) for i, (pmap, p) in enumerate(zip(parameter_id_mapping, params)) if p]))
             ids = [self.xmi.to_id("uml:Class", entity)] + ids
-            assoc = append_xmi.uml_assoc_class(f"{entity}{self.concept_name_short}Usage", ids, type="uml:Association")
+            assoc = append_xmi.uml_assoc_class(f"{entity}{self.concept_name_short}Usage", ids)
             self.xmi.insert(self.concept_package, assoc)
 
     def write_as_no_parametrization(self, key, values):
@@ -305,13 +343,6 @@ class xmi_concept_writer:
                 assoc = append_xmi.uml_assoc_class(f"{IfcClass}{self.concept_name_short}Usage", ids)
                 self.xmi.insert(self.concept_package, assoc)
 
-    def write_as_simple_binary(self, key, values):
-        for IfcClass, tys in class_names:
-            for ty in tys:
-                ids = [self.xmi.to_id("uml:Class", v) for v in [IfcClass, ty]]
-                assoc = append_xmi.uml_assoc_class(f"{IfcClass}{self.concept_name_short}Usage", ids)
-                self.xmi.insert(self.concept_package, assoc)
-
     def write_as_simple_unary(self, key, values):
         concept_class = append_xmi.uml_class(self.concept_name_short)
         self.xmi.insert(self.concept_package, concept_class)
@@ -332,9 +363,10 @@ class xmi_concept_writer:
 
 if __name__ == "__main__":
     
+    xmi_items = list(xmi_document.xmi_document("..\schemas\IFC.xml"))
     xmi = append_xmi.context("..\schemas\IFC.xml")
     concepts = concept_extractor.extractor(sys.argv[1])
-    writer = xmi_concept_writer(xmi, concepts)
+    writer = xmi_concept_writer(xmi, xmi_items, concepts)
     for key in concepts.grouping.keys():
         writer(key)
     

@@ -318,8 +318,11 @@ class xmi_document:
                     self.concepts[parent][other].append(sorted_type_ids[0])
                     
             else:
-                if len(ends) != 2:                    
-                    logging.warning("Expeced two associations ends on %s", assoc)
+                if len(ends) != 2:
+                    # Concept parametrizations uses n-ary associations, so do not
+                    # emit warnings for those.
+                    if "Views" not in get_path(assoc):
+                        logging.warning("Expeced two associations ends on %s", assoc)
                     continue
                 
                 c1, c2 = ends
@@ -336,12 +339,15 @@ class xmi_document:
                 self.assocations[tv2].append(assocation_data(c1, self.xmi.by_id[t1], c2, assoc))
 
         if concepts:
+            
+            # DIRECTIONAL_GROUPED
+            
             for inter in self.xmi.by_tag_and_type["packagedElement"]["uml:Class"]:
                 pt = get_path(inter)
                 if "Views" in pt:
                     parent = pt[-2]
                     for ff, tt in itertools.product(self.assoc_to[inter.id], self.assoc_from[inter.id]):
-                        self.concepts[parent][ff].append(tt)
+                        self.concept_associations[parent].append([ff, tt])
                             
 
     def extract_order(self):

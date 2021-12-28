@@ -7,6 +7,7 @@ import glob
 from collections import defaultdict
 
 import express
+import concept_interpretation
 from xmi_document import xmi_document
 from concept_extractor import extractor
 
@@ -96,11 +97,11 @@ def parse_bindings(concept):
     for a,b,c in re.findall(r'(\w+):(\w+)\[binding="(.+?)"\]', concept_block):
         t = get_all_attributes(a).get(b, '').replace("OPTIONAL ", "").replace("UNIQUE ", "")
         
-        if (a,b) == ('IfcPropertySet', 'Name'):
+        if (a,b) in [('IfcPropertySet', 'Name'), ('IfcElementQuantity', 'Name')]:
             # In UML we have property sets as defined classes, which in
             # IFC are fully late-bound type definitions. Selection of the
             # appropriate psets happens through Name, which is IfcLabel
-            # which will match the pset class name in UML.
+            # which will match the (p|q)set class name in UML.
             type_node = property_set_class()
         elif not t and b == "PredefinedType":
             # PredefinedType is not really an attribute with a specific
@@ -138,7 +139,11 @@ def make_get_binding(bindings):
     return inner
                     
 for xmi_concept, pairs in xmi_doc.concept_associations.items():
-    if xmi_concept in ("PropertySetsforObjects", "SpatialContainment", "ObjectTyping"):
+    if concept_interpretation.get(xmi_concept) in (
+        concept_interpretation.concept_type.PROPERTY_OR_QUANTITY_SET,
+        concept_interpretation.concept_type.OBJECT_TYPING,
+        concept_interpretation.concept_type.DIRECTIONAL_GROUPED,
+    ):
         bindings = list(parse_bindings(xmi_concept))
         get_binding = make_get_binding(bindings)
         
@@ -147,7 +152,7 @@ for xmi_concept, pairs in xmi_doc.concept_associations.items():
             elem_binds = list(map(get_binding, elems))
             
             predtype_bind = all_predtype_ids & set(e.id for e in elems)
-            if xmi_concept == "PropertySetsforObjects" and predtype_bind:
+            if concept_interpretation.get(xmi_concept) == concept_interpretation.concept_type.PROPERTY_OR_QUANTITY_SET and predtype_bind:
                 # when binding to a predefined type, we can infer the ApplicableEntity
                 elem_binds.append(None)
                 elems += (xmi_doc.xmi.by_id[predtype_to_entity[next(iter(predtype_bind))]],)

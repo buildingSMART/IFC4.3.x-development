@@ -223,3 +223,6 @@ concept_type.SIMPLE_UNARY,
 ('Window Type Attributes',):
 concept_type.SIMPLE_UNARY
 }
+
+def get(name):
+    return {k[0].replace(" ", ""): v for k, v in concepts.items()}.get(name)

@@ -24,6 +24,7 @@ concept {
     IfcQuantityWeight -> Weight_Quantity
     IfcQuantityCount -> Count_Quantity
     IfcQuantityTime -> Time_Quantity
+    IfcObject:PredefinedType[binding="PredefinedType"]
     IfcElementQuantity:Name[binding="QsetName"]
     IfcElementQuantity:Quantities[binding="Quantities"]
 }

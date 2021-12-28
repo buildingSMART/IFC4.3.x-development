@@ -28,6 +28,7 @@ def BeautifulSoup(*args):
 from flask import Flask, send_file, render_template, abort, url_for, request, send_from_directory, jsonify
 
 import md as mdp
+from extract_concepts_from_xmi import parse_bindings
 
 app = Flask(__name__)
 
@@ -503,14 +504,20 @@ def process_graphviz_concept(name, md):
         
         subprocess.call([shutil.which("dot") or "dot", "-O", "-Tsvg", "-Gbgcolor=#ffffff00", fn])
     
-    return md 
+    return md
 
-    
-"""
-@app.route('/svgs/<entity>/<hash>.svg')
-def get_svg(entity, hash):
-    return send_from_directory('svgs', entity + "_" + hash + '.dot.svg');
-"""
+
+def create_concept_table(xmi_concept, types=None):
+    rows = R.xmi_concepts[xmi_concept]
+    bindings = [("ApplicableEntity", ("",""))] + list(parse_bindings(os.path.join(REPO_DIR, "schemas/IFC.xml"), xmi_concept))
+    bound_keys = set(sum([list(r.keys()) for r in rows], []))
+    bound_keys = [a[0] for a in bindings if a[0] in bound_keys]
+    headers = [f"{a}<br>{b}{'.' if b else ''}{c}" for a, (b, c) in bindings if a in bound_keys]
+    if types is not None:
+        rows = [r for r in rows if r.get("ApplicableEntity") in types]
+    rows = [[r.get(k, '') for k in bound_keys] for r in rows]
+    return headers, rows
+
 
 @app.route(make_url('figures/<fig>'))
 def get_figure(fig):
@@ -613,6 +620,12 @@ def resource(resource):
         
         if "Entities" in md:
         
+            ty = resource
+            supertype_chain = []
+            while ty is not None:
+                supertype_chain.append(ty)
+                ty = R.entity_supertype.get(ty)
+        
             if "## Attributes" in mdc:
                 mdc = mdc[0:mdc.index("## Attributes")]
                 mdc += '\n\n' + idx + '.%d Attributes\n===========\n\n' % paragraph
@@ -680,14 +693,10 @@ def resource(resource):
                         mdc += f"[link]({concept_lookup.get(nm)})\n\n"
                     mdc += defn + "\n\n"
                     
-                    # @todo get the template bindings from XMI
-                    if nm.replace(" ", "") in R.xmi_concepts:
-                        rows = R.xmi_concepts[nm.replace(" ", "")]
-                        rows = [r for r in rows if r.get("ApplicableEntity") == resource]
+                    xmi_concept = nm.replace(" ", "")
+                    if xmi_concept in R.xmi_concepts:
+                        headers, rows = create_concept_table(xmi_concept, supertype_chain)
                         if rows:
-                            headers = list(rows[0].keys())
-                            rows = [list(r.values()) for r in rows]
-                            
                             mdc += f"concept_{nm.replace(' ', '')}\n\n"
                             
                             replacements.append((
@@ -759,48 +768,10 @@ def resource(resource):
     
         html = str(soup)
         
-        if "Entities" in md:
-        
-            ty = resource
-            dicts = []
-            while ty is not None:
-                dicts.append(R.concepts.get(ty, {}))
-                ty = R.entity_supertype.get(ty)
-                
-            # Disabled, we get them from markdown now.
-            usage = {}
-            # in reverse so that the most-specialized are retained
-            # for d in reversed(dicts):
-            #     usage.update(d)                
-            
-            if usage:
-                paragraph += 1
-                html += "<h3>" + idx + ".%d Definitions applying to General Usage</h3>" % (paragraph-1)
-        
-                for n, (concept, data) in enumerate(sorted(usage.items()), start=1):
-                    html += "<h4>" + idx + ".%d.%d " % (paragraph - 1, n) + concept + "</h4>"
-                    html += "<div>" + data['definition'].replace("../../", "")
-                    
-                    keys = set()
-                    for d in dicts:
-                        keys |= d.get(concept, {}).get('parameters', {}).keys()
-                        
-                    params = defaultdict(list)
-                    for d in dicts:
-                        for k in keys:
-                            params[k] += d.get(concept, {}).get('parameters', {}).get(k, [])
-                            
-                    # transpose
-                    vals = list(map(list, itertools.zip_longest(*params.values())))
-                    html += tabulate.tabulate(vals, headers=params.keys(), tablefmt='html') + "</div>"
-                    # html += "<pre>" + data['rules'] + "</pre>"
-                    
         if R.entity_definitions.get(resource):
             html += "<h3>" + idx + ".%d Formal representations</h3>" % paragraph
             html += "<pre>" + R.entity_definitions.get(resource) + "</pre>"
             paragraph += 1
-            
-            
                 
     return render_template('entity.html', navigation=navigation_entries, content=html, number=idx, entity=resource, path=md[len(REPO_DIR):].replace("\\", "/"), preface=change_log)
 
@@ -873,13 +844,11 @@ def concept(s=''):
     else:
     	html = fn
     	
-        
-    if t.replace(" ", "") in R.xmi_concepts:
-        rows = R.xmi_concepts[t.replace(" ", "")]
+    
+    xmi_concept = t.replace(" ", "")
+    if xmi_concept in R.xmi_concepts:
+        headers, rows = create_concept_table(xmi_concept, None)
         if rows:
-            headers = list(rows[0].keys())
-            rows = [list(r.values()) for r in rows]
-            
             html += tabulate.tabulate(rows, headers=headers, tablefmt='unsafehtml')            
 
         

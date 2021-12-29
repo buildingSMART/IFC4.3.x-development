@@ -17,11 +17,25 @@ class predefined_type_attribute: pass
 class property_set_class: pass
 
 
+def is_no_concept_node(n):
+    """
+    The SIMPLE_UNARY concept type is based on a uml:Class
+    that is part of the uml:Package for this concept, which
+    is then associated to schema classes.
+    """
+    # @todo check whether is part of enum
+    return n.parent.parent.parent.name != "Views"
+
 
 def parse_bindings(fn, concept, to_xmi=False, definitions_by_name=None):
     all_templates = glob.glob(os.path.join(os.path.dirname(fn), "../docs/templates/**/*.md"), recursive=True)                    
     tmpl = [t for t in all_templates if os.path.abspath(t).split(os.sep)[-2].lower().replace(" ", "") == concept.lower()][0]
-    concept_block = re.findall(r"concept\s*\{.+?\}", open(tmpl, encoding='utf-8').read(), flags=re.S)[0]
+    concept_blocks = re.findall(r"concept\s*\{.+?\}", open(tmpl, encoding='utf-8').read(), flags=re.S)
+    if not concept_blocks:
+        print(f"Warning: no concept block on {concept}")
+        return
+    
+    concept_block = concept_blocks[0]
     for a,b,c in re.findall(r'(\w+):(\w+)\[binding="(.+?)"\]', concept_block):
         
         if to_xmi:
@@ -99,11 +113,19 @@ if __name__ == "__main__":
         
 
     def get_all_attributes(nm):
+        # In the concept instance diagram, class names may be postfixed
+        # with _\d to allow for multiple instances of the same type. When
+        # looking up attributes this postfix needs to be removed.
+        nm = nm.split("_")[0]
+        
+        
         d = dict(definitions_by_name[nm].definition.attributes)
-        for inv in definitions_by_name["IfcObject"].definition.inverses:
+        for inv in definitions_by_name[nm].definition.inverses:
             k,v = inv.split(" : ")
             k = k.strip()
-            v = re.findall('OF (\w+)', v)[0]
+            # Either take first symbol after OF, or just first symbol
+            # when the inverse attribute is not of type aggregate
+            v = (re.findall('OF (\w+)', v) + v.split(" "))[0]
             d[k] = v
         st = definitions_by_name[nm].definition.supertype
         if st:
@@ -159,13 +181,20 @@ if __name__ == "__main__":
             concept_interpretation.concept_type.PROPERTY_OR_QUANTITY_SET,
             concept_interpretation.concept_type.OBJECT_TYPING,
             concept_interpretation.concept_type.DIRECTIONAL_GROUPED,
+            concept_interpretation.concept_type.SIMPLE_UNARY,
         ):
             bindings = list(parse_bindings(fn, xmi_concept, to_xmi=True, definitions_by_name=definitions_by_name))
             get_binding = make_get_binding(bindings)
             
             for p in pairs:
-                elems = tuple(map(xmi_doc.xmi.by_id.__getitem__, p))
-                elem_binds = list(map(get_binding, elems))
+                elems = tuple(filter(is_no_concept_node, map(xmi_doc.xmi.by_id.__getitem__, p)))
+                
+                if len(elems) == 1:
+                    # If we have a single element, we already know it's the ApplicableEntity,
+                    # continuing with the binding process may cause false matches.
+                    elem_binds = [None]
+                else:
+                    elem_binds = list(map(get_binding, elems))
                 
                 predtype_bind = all_predtype_ids & set(e.id for e in elems)
                 if concept_interpretation.get(xmi_concept) == concept_interpretation.concept_type.PROPERTY_OR_QUANTITY_SET and predtype_bind:

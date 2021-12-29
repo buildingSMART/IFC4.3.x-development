@@ -6,9 +6,15 @@ from xml.dom import minidom
 from collections import defaultdict
 
 class base(object):
+    def child_with_tag_recursive(self, other):
+        if self.xml.tagName == other:
+            yield self
+        for x in self.children:
+            yield from x.child_with_tag_recursive(other)
+
     def __truediv__(self, other):
-        return list(map(node, self.xml.getElementsByTagName(other)))
-        
+        return list(self.child_with_tag_recursive(other))
+
     def __or__(self, other):
         li = self/other
         if len(li) != 1:
@@ -17,8 +23,10 @@ class base(object):
 
 class node(base):
     
-    def __init__(self, xmlnode):
-        self.xml = xmlnode        
+    def __init__(self, xmlnode, parent):
+        self.xml = xmlnode
+        self.parent = parent
+        self.children = []
         
     def tags(self):    
         return dict(map(lambda t: (t.name, t.value), self/"tag"))
@@ -74,34 +82,34 @@ class doc(base):
         self.by_id = dict()
         self.by_idref = defaultdict(list)
         
-        def visit(n, *fns):
+        def visit(n, *fns, parent=None):
+            N = node(n, parent=parent)
             if n.nodeType == n.ELEMENT_NODE:
                 for fn in fns:
-                    fn(n)
+                    fn(N)
+
             for c in n.childNodes:
                 if c.nodeType == c.ELEMENT_NODE:
-                    visit(c, *fns)
-                
+                    N.children.append(visit(c, *fns, parent=N))
+                    
+            return N
+
         def register_by_xmi_type(n):
-            n = node(n)
             t = n.type
             if t: self.by_type[t].append(n)
             
         def register_by_tag_and_xmi_type(n):
-            n = node(n)
             self.by_tag[n.xml.tagName].append(n)
             t = n.type
             if t: self.by_tag_and_type[n.xml.tagName][t].append(n)
             
         def register_by_xmi_idref(n):
-            n = node(n)
             t = n.xmi_idref
             if t:
                 # note that duplicate xmi:ids do exist e.g. for generalizations
                 self.by_idref[t].append(n)
 
         def register_by_xmi_id(n):
-            n = node(n)
             t = n.xmi_id
             if t and t not in self.by_id:
                 # note that duplicate xmi:ids do exist e.g. for generalizations

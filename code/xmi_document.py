@@ -340,14 +340,24 @@ class xmi_document:
 
         if concepts:
             
-            # DIRECTIONAL_GROUPED
             
-            for inter in self.xmi.by_tag_and_type["packagedElement"]["uml:Class"]:
+            for inter in self.xmi.by_tag_and_type["packagedElement"]["uml:Class"] + self.xmi.by_tag_and_type["packagedElement"]["uml:AssociationClass"]:
                 pt = get_path(inter)
                 if "Views" in pt:
                     parent = pt[-2]
-                    for ff, tt in itertools.product(self.assoc_to[inter.id], self.assoc_from[inter.id]):
-                        self.concept_associations[parent].append([ff, tt])
+                    member_types = set(x.type for x in inter.parent.children)
+                    if member_types == {'uml:Class', 'uml:AssociationClass'}:
+                        # # UNARY
+                        # if inter.type == 'uml:AssociationClass':
+                        #     breakpoint()
+                        pass
+                    elif member_types == {'uml:AssociationClass'}:
+                        # BINARY
+                        pass
+                    elif member_types == {'uml:Class'}:
+                        # DIRECTIONAL_GROUPED
+                        for ff, tt in itertools.product(self.assoc_to[inter.id], self.assoc_from[inter.id]):
+                            self.concept_associations[parent].append([ff, tt])
                             
 
     def extract_order(self):

@@ -21,7 +21,9 @@ concepts = {
 ('Property Sets for Objects', ('LowerValue', ('IfcPropertyBoundedValue', 'LowerBoundValue')), ('PredefinedType', ('IfcObject', 'PredefinedType')), ('Properties', ('IfcPropertySet', 'HasProperties')), ('PropertyName', ('IfcPropertyListValue', 'Name')), ('PsetName', ('IfcPropertySet', 'Name')), ('Reference', ('IfcPropertyEnumeration', 'Name')), ('SetValue', ('IfcPropertyBoundedValue', 'SetPointValue')), ('UpperValue', ('IfcPropertyBoundedValue', 'UpperBoundValue')), ('Value', ('IfcPropertyListValue', 'ListValues'))):
 concept_type.PROPERTY_OR_QUANTITY_SET,
 ('Aggregation',):
-concept_type.SIMPLE_UNARY,
+# Aggregation parametrized without any definition
+# https://github.com/buildingSMART/IFC4.3.x-development/issues/118
+concept_type.NO_PARAMETRIZATION,
 ('Object Nesting', ('Type', ('IfcRelNests', 'RelatedObjects'))):
 concept_type.DIRECTIONAL_BINARY,
 ('Actor Assignment', ('Type', ('IfcRelAssignsToActor', 'RelatedObjects'))):

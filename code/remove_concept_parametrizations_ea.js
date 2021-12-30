@@ -20,9 +20,15 @@ function visitPackage(Fn, p) {
 		}
 	}
 	
-	for (var i = 0; i < P.Packages.Count; ++i) {
+	for (var i = P.Packages.Count - 1; i >= 0; --i) {
 		var sub = P.Packages.GetAt(i);
 		visitPackage(Fn, sub);
+		
+		if (Fn(sub) == 'remove') {
+			Session.Output("Removing " + sub.Name);
+			P.Packages.DeleteAt(i, true);
+			P.Packages.Refresh();
+		}
 	}
 }
 
@@ -48,10 +54,15 @@ function RemoveConceptParams(name) {
 		P = p;
 		E = e;
 		
-		if (P.Name == name && E.AssociationClassConnectorID) {
-			C = Repository.GetConnectorByID(E.AssociationClassConnectorID);
-			deleteConnector(C);
-			return 'remove';
+		if (P.Name == name) {
+			if (E && E.AssociationClassConnectorID) {
+				C = Repository.GetConnectorByID(E.AssociationClassConnectorID);
+				deleteConnector(C);
+				return 'remove';
+			} else if (!E) {
+				// remove package
+				return 'remove';
+			}
 		}
 	}
 	return visitor;
@@ -61,6 +72,7 @@ function main()
 {
 	var P as EA.Package;
 	P = Repository.Models.GetAt(0);
+	
 	visitPackage(RemoveConceptParams("ObjectTyping"), P);
 }
 

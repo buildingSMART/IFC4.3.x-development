@@ -37,7 +37,7 @@ class xmi_concept_writer:
         self.realizations = set()
         def v(nd, _):
             if nd.attributes.get(XMI.type) == "uml:Realization":
-                realizations.add(frozenset((nd.attributes["supplier"], nd.attributes["client"])))
+                self.realizations.add(frozenset((nd.attributes["supplier"], nd.attributes["client"])))
         self.xmi._recurse(v)
 
     def _create_package(self, key):

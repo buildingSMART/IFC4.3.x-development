@@ -135,9 +135,15 @@ if __name__ == "__main__":
 
     def yield_supertypes(a):
         yield a
+        
         try:
+            # entity supertypes
             yield from yield_supertypes(xmi_doc.xmi.by_id[(a | "generalization").general])
         except: pass
+        
+        # select membership
+        for sel in name_to_realization_ids.get(a.name, ()):
+            yield from yield_supertypes(xmi_doc.xmi.by_id[sel])
 
 
     def make_get_binding(bindings):
@@ -173,6 +179,12 @@ if __name__ == "__main__":
     entity_to_predtypes_non_type = get_predefined_type_listing(non_type_definitions)
     predtype_to_entity_non_type = dict((v.id, k) for k, vs in entity_to_predtypes_non_type.items() for v in vs)
     predtype_to_entity.update(predtype_to_entity_non_type)
+    
+    name_to_realization_ids = defaultdict(list)
+    selects = [d for d in definitions if d.type == "SELECT"]
+    for s in selects:
+        for v in s.definition.values:
+            name_to_realization_ids[v].append(s.node.idref)
 
     result = defaultdict(list)
                         
@@ -182,25 +194,40 @@ if __name__ == "__main__":
             concept_interpretation.concept_type.OBJECT_TYPING,
             concept_interpretation.concept_type.DIRECTIONAL_GROUPED,
             concept_interpretation.concept_type.SIMPLE_UNARY,
+            concept_interpretation.concept_type.DIRECTIONAL_BINARY,
         ):
             bindings = list(parse_bindings(fn, xmi_concept, to_xmi=True, definitions_by_name=definitions_by_name))
             get_binding = make_get_binding(bindings)
             
+            # breakpoint()
+            
             for p in pairs:
-                elems = tuple(filter(is_no_concept_node, map(xmi_doc.xmi.by_id.__getitem__, p)))
+                elems = list(filter(is_no_concept_node, map(xmi_doc.xmi.by_id.__getitem__, p)))
                 
-                if len(elems) == 1:
+                appl = None
+                elem_binds = None
+                if concept_interpretation.get(xmi_concept) == concept_interpretation.concept_type.DIRECTIONAL_BINARY:
+                    # We know that the first element is the source of the association, which
+                    # is the ApplicableEntity of the concept parametrization
+                    appl = elems.pop(0)
+                elif len(elems) == 1:
                     # If we have a single element, we already know it's the ApplicableEntity,
                     # continuing with the binding process may cause false matches.
                     elem_binds = [None]
-                else:
+                
+                if elem_binds is None:
                     elem_binds = list(map(get_binding, elems))
                 
                 predtype_bind = all_predtype_ids & set(e.id for e in elems)
                 if concept_interpretation.get(xmi_concept) == concept_interpretation.concept_type.PROPERTY_OR_QUANTITY_SET and predtype_bind:
                     # when binding to a predefined type, we can infer the ApplicableEntity
                     elem_binds.append(None)
-                    elems += (xmi_doc.xmi.by_id[predtype_to_entity[next(iter(predtype_bind))]],)
+                    elems.append(xmi_doc.xmi.by_id[predtype_to_entity[next(iter(predtype_bind))]])
+                    
+                if appl is not None:
+                    # Restore the appl after binding
+                    elem_binds.append(None)
+                    elems.append(appl)
                     
                 # a single element should not be bound, that is the ApplicableEntity
                 assert len([x for x in elem_binds if x is None]) == 1

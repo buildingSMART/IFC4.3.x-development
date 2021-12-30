@@ -149,7 +149,7 @@ class uml_assoc_class:
     def xml(self):
     
         c_ids = [cid or new_id() for _, cid in zip_l(self.connector_types, self.connector_ids or [])]
-        owners = [None] * len(c_ids)
+        owners = self.owners or ([None] * len(c_ids))
         
         return xml_dict.xml_node(
             tag = 'packagedElement',

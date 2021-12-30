@@ -307,7 +307,8 @@ class xmi_document:
             if concepts:
                 parent = get_path(assoc)[-2]
                 
-                self.concept_associations[parent].append(end_types)
+                sorted_end_types = [x[1] for x in sorted(zip(is_source, end_types), reverse=True)]
+                self.concept_associations[parent].append(sorted_end_types)
                 
                 is_rooted = lambda tid: "IfcRoot" in self.supertypes(tid)
                 sorted_type_ids = sorted(zip(map(is_rooted, end_types), end_types), reverse=True)

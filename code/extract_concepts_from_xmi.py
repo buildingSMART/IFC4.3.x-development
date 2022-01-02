@@ -252,7 +252,8 @@ if __name__ == "__main__":
                 elem_binds[elem_binds.index(None)] = "ApplicableEntity"
                 
                 binding_names = ["ApplicableEntity"] + [b[0] for b in bindings if b[0] in elem_binds]
-                elem_names = [e.name for e in elems]
+                # For concept-specific enum literals we need to remove the prefix
+                elem_names = [e.name.split(".")[-1] if e.parent.parent.parent.name == 'Views' else e.name for e in elems]
                 d = {x: elem_names[elem_binds.index(x)] for x in binding_names}
                 
                 result[xmi_concept].append(d)

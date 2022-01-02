@@ -234,7 +234,8 @@ class xmi_concept_writer:
             params = row[1:]
             ids = list(filter(None, [lookup_and_warn(i, pmap, p) for i, (pmap, p) in enumerate(zip(parameter_id_mapping, params)) if p]))
             ids = [self.xmi.to_id("uml:Class", entity)] + ids
-            assoc = append_xmi.uml_assoc_class(f"{entity}{self.concept_name_short}Usage", ids)
+            # @todo why is this set to Association?
+            assoc = append_xmi.uml_assoc_class(f"{entity}{self.concept_name_short}Usage", ids, type="uml:Association")
             self.xmi.insert(self.concept_package, assoc)
 
     def write_as_no_parametrization(self, key, values):

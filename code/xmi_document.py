@@ -342,15 +342,16 @@ class xmi_document:
         if concepts:
             
             
-            for inter in self.xmi.by_tag_and_type["packagedElement"]["uml:Class"] + self.xmi.by_tag_and_type["packagedElement"]["uml:AssociationClass"]:
+            for inter in self.xmi.by_tag_and_type["packagedElement"]["uml:Class"] + \
+                self.xmi.by_tag_and_type["packagedElement"]["uml:AssociationClass"] + \
+                self.xmi.by_tag_and_type["packagedElement"]["uml:Association"]:
+                
                 pt = get_path(inter)
                 if "Views" in pt:
                     parent = pt[-2]
                     member_types = set(x.type for x in inter.parent.children)
                     if member_types == {'uml:Class', 'uml:AssociationClass'}:
-                        # # UNARY
-                        # if inter.type == 'uml:AssociationClass':
-                        #     breakpoint()
+                        # UNARY
                         pass
                     elif member_types == {'uml:AssociationClass'}:
                         # BINARY
@@ -359,7 +360,11 @@ class xmi_document:
                         # DIRECTIONAL_GROUPED
                         for ff, tt in itertools.product(self.assoc_to[inter.id], self.assoc_from[inter.id]):
                             self.concept_associations[parent].append([ff, tt])
-                            
+                    elif member_types == {'uml:Realization', 'uml:Class', 'uml:Enumeration', 'uml:Association'} and inter.type == 'uml:Association':
+                        # N-ARY
+                        ends = [self.xmi.by_id[mend.idref] for mend in inter/'memberEnd']
+                        end_types = list(map(lambda c: (c|"type").idref, ends))
+                        self.concept_associations[parent].append(end_types)
 
     def extract_order(self):
         self.order = {k: int(v) for k, v in self.xmi.tags["ExpressOrdering"].items()}

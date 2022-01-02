@@ -17,16 +17,6 @@ class predefined_type_attribute: pass
 class property_set_class: pass
 
 
-def is_no_concept_node(n):
-    """
-    The SIMPLE_UNARY concept type is based on a uml:Class
-    that is part of the uml:Package for this concept, which
-    is then associated to schema classes.
-    """
-    # @todo check whether is part of enum
-    return n.parent.parent.parent.name != "Views"
-
-
 def parse_bindings(fn, concept, to_xmi=False, definitions_by_name=None):
     all_templates = glob.glob(os.path.join(os.path.dirname(fn), "../docs/templates/**/*.md"), recursive=True)                    
     tmpl = [t for t in all_templates if os.path.abspath(t).split(os.sep)[-2].lower().replace(" ", "") == concept.lower()][0]
@@ -157,7 +147,32 @@ if __name__ == "__main__":
                         return nm
                 elif nd in set(yield_supertypes(el)):
                     return nm
+                else:
+                    enum = xmi_doc.xmi.by_id.get(realizes.get(el.id))
+                    if enum and enum.parent.parent.name == 'IFC4x3_RC4':
+                        # enum from schema, types should match
+                        if nd == enum:
+                            return nm
+                    elif enum and nd.type == 'uml:DataType':
+                        # enum from concept, should be label the name
+                        # of the enum in that case is built up like the
+                        # pattern below
+                        if el.name.startswith(f"{el.parent.name}{nm}Values."):
+                            return nm
         return inner
+        
+    def is_no_concept_node(n):
+        """
+        The SIMPLE_UNARY concept type is based on a uml:Class
+        that is part of the uml:Package for this concept, which
+        is then associated to schema classes.
+        
+        The N-ARY concept will have additional enumeration literals
+        defined under package scope. These have a dependency to the
+        enumeration itself and should still be take into account
+        """
+        return not (n.parent.parent.parent.name == "Views" and realizes.get(n.id) is None)
+
 
     non_type_definitions = [x for x in definitions if definitions_by_name["IfcObject"] in yield_supertypes_items(x)]
 
@@ -186,6 +201,8 @@ if __name__ == "__main__":
         for v in s.definition.values:
             name_to_realization_ids[v].append(s.node.idref)
 
+    realizes = {x.supplier: x.client for x in xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:Realization"]}
+
     result = defaultdict(list)
                         
     for xmi_concept, pairs in xmi_doc.concept_associations.items():
@@ -195,6 +212,7 @@ if __name__ == "__main__":
             concept_interpretation.concept_type.DIRECTIONAL_GROUPED,
             concept_interpretation.concept_type.SIMPLE_UNARY,
             concept_interpretation.concept_type.DIRECTIONAL_BINARY,
+            concept_interpretation.concept_type.NARY,
         ):
             bindings = list(parse_bindings(fn, xmi_concept, to_xmi=True, definitions_by_name=definitions_by_name))
             get_binding = make_get_binding(bindings)

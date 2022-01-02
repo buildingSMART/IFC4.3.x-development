@@ -576,8 +576,13 @@ class xmi_document:
                 
             else:
             
-                if not c.name.startswith("Ifc"):
+                if not c.name.startswith("Ifc") or "." in c.name:
                     # @tfk entities need to start with IFC or otherwise 'conceptual'?
+                    #      ^ probably no longer relevant, all UML data is now relevant
+                    # @todo:
+                    # some enumerations elements for the concepts need a stereotype probably,
+                    # or we can filter them out looking at the uml:Depedency. For now
+                    # checking the dot in the name is quickest.
                     continue
             
                 is_abstract = (c/"properties")[0].isAbstract == "true" 

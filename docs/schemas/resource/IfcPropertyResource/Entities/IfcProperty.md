@@ -9,8 +9,8 @@ _IfcProperty_ is an abstract generalization for all types of properties that can
 ### Name
 Name for this property. This label is the significant name string that defines the semantic meaning for the property.
 
-### Description
-Informative text to explain the property.
+### Reference
+URI reference to a location with semantic definition or informative text to explain the property.
 
 ### PartOfPset
 Reference to the _IfcPropertySet_ by which the _IfcProperty_ is referenced.

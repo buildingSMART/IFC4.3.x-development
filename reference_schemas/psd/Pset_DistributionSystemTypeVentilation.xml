@@ -76,7 +76,7 @@ HISTORY: New property set in IFC Release 2.0.  Renamed from Pset_DuctDesignCrite
             </ConstantDef>
             <ConstantDef>
               <Name>NOTKNOWN</Name>
-              <Definition>Value is unkown</Definition>
+              <Definition>Value is unknown</Definition>
               <NameAliases>
                 <NameAlias lang="en">(unknown)</NameAlias>
               </NameAliases>

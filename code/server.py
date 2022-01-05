@@ -89,7 +89,6 @@ class resource_manager:
     entity_supertype = schema_resource("entity_supertype.json")
     pset_definitions = schema_resource("pset_definitions.json")
     changes_by_type = schema_resource("changes_by_type.json")
-    concepts = schema_resource("concepts.json")
     deprecated_entities = schema_resource("deprecated_entities.json", transform=set)
     hierarchy = schema_resource("hierarchy.json")
     xmi_concepts = schema_resource("xmi_concepts.json")

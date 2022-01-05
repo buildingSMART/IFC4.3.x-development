@@ -74,8 +74,8 @@
         <DefinitionAlias lang="de-DE">Angabe, ob dieses Geschoss vollständig überhalb oberirdisch ist (WAHR), vollständig unterirdisch (FALSCH), oder teilweise unter- und überirdisch (UNKNOWN).</DefinitionAlias>
         <DefinitionAlias lang="en" />
         <DefinitionAlias lang="fr-FR">Indication si l'étage est complètement au dessus du niveau du sol (VRAI), au dessous du niveau du sol (FAUX) ou partiellement enterré (INCONNU) comme dans le cas d'un terrain en pente.</DefinitionAlias>
-        <DefinitionAlias lang="ja-JP">この建物階が地上(TRUE)、地下(FALSE)、一部が地下部分(UNKOWN)かどうかを示すロジカル値。</DefinitionAlias>
-        <DefinitionAlias lang="ko-KR">이 건물 층이 지상 (TRUE), 지하 (FALSE), 일부 지하 부분 (UNKOWN) 여부를 나타내는 논리 값.</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">この建物階が地上(TRUE)、地下(FALSE)、一部が地下部分(UNKNOWN)かどうかを示すロジカル値。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">이 건물 층이 지상 (TRUE), 지하 (FALSE), 일부 지하 부분 (UNKNOWN) 여부를 나타내는 논리 값.</DefinitionAlias>
       </DefinitionAliases>
     </PropertyDef>
     <PropertyDef ifdguid="90725500d1c511e1800000215ad4efdf">

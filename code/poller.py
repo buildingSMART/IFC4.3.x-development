@@ -26,7 +26,6 @@ while True:
         subprocess.call([sys.executable, "extract_concepts_from_xmi.py", os.path.join(REPO_DIR, "schemas/IFC.xml")])
         subprocess.call([sys.executable, "to_pset.py", os.path.join(REPO_DIR, "schemas/IFC.xml"), "psd/"])
         subprocess.call([sys.executable, "parse_xmi.py", os.path.join(REPO_DIR, "schemas/IFC.xml")])
-        subprocess.call([sys.executable, "parse_mvd.py", os.path.join(REPO_DIR, "mvdXML/IFC4_ADD2.mvdxml")])
         subprocess.call([sys.executable, "change_log.py", REPO_DIR])
         
         subprocess.call([sys.executable, "process_schema.py", os.path.join(REPO_DIR, "schemas/IFC.xml")])

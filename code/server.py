@@ -613,165 +613,168 @@ def resource(resource):
     
     replacements = []
     
-    with open(md, 'r', encoding='utf-8') as f:
-
-        mdc = re.sub(DOC_ANNOTATION_PATTERN, '', f.read())
+    try:
+        mdc = open(md, 'r', encoding='utf-8').read()
+    except:
+        mdc = ""
+    
+    mdc = re.sub(DOC_ANNOTATION_PATTERN, '', mdc)
+    
+    if "Entities" in md:
+    
+        ty = resource
+        supertype_chain = []
+        while ty is not None:
+            supertype_chain.append(ty)
+            ty = R.entity_supertype.get(ty)
+    
+        if "## Attributes" in mdc:
+            mdc = mdc[0:mdc.index("## Attributes")]
+            mdc += '\n\n' + idx + '.%d Attributes\n===========\n\n' % paragraph
+            paragraph += 1
         
-        if "Entities" in md:
-        
-            ty = resource
-            supertype_chain = []
-            while ty is not None:
-                supertype_chain.append(ty)
-                ty = R.entity_supertype.get(ty)
-        
-            if "## Attributes" in mdc:
-                mdc = mdc[0:mdc.index("## Attributes")]
-                mdc += '\n\n' + idx + '.%d Attributes\n===========\n\n' % paragraph
-                paragraph += 1
-            
-            builder = resource_documentation_builder(resource)
-            attrs = builder.attributes
-            supertype_counts = Counter()
-            supertype_counts.update([a[0] for a in attrs])
-            attrs = [a[1:] for a in attrs]
-            supertype_counts = list(supertype_counts.items())[::-1]
-        
-            attribute_table = tabulate.tabulate(attrs, headers=("#", "Attribute", "Type", "Description"), tablefmt='unsafehtml')
-            soup = BeautifulSoup(attribute_table)
-            insertion_points = [0] + list(itertools.accumulate(map(operator.itemgetter(1), supertype_counts[::-1])))[:-1]
-            trs = list(soup.findAll('tr'))
-            for tridx, (ty, _) in zip(insertion_points, supertype_counts[::-1]):
-                tr = soup.new_tag('tr')
-                td = soup.new_tag('td', colspan=4)
-                a = soup.new_tag('a', href=url_for('resource', resource=ty))
-                a.string = ty
-                td.append(a)
-                tr.append(td)
-                try:
-                    trs[tridx+1].insert_before(tr)
-                except:
-                    import traceback
-                    traceback.print_exc()
-            attribute_table = str(soup)
-                
-            mdc += "\n\nattribute_table\n\n"
-            
+        builder = resource_documentation_builder(resource)
+        attrs = builder.attributes
+        supertype_counts = Counter()
+        supertype_counts.update([a[0] for a in attrs])
+        attrs = [a[1:] for a in attrs]
+        supertype_counts = list(supertype_counts.items())[::-1]
+    
+        attribute_table = tabulate.tabulate(attrs, headers=("#", "Attribute", "Type", "Description"), tablefmt='unsafehtml')
+        soup = BeautifulSoup(attribute_table)
+        insertion_points = [0] + list(itertools.accumulate(map(operator.itemgetter(1), supertype_counts[::-1])))[:-1]
+        trs = list(soup.findAll('tr'))
+        for tridx, (ty, _) in zip(insertion_points, supertype_counts[::-1]):
+            tr = soup.new_tag('tr')
+            td = soup.new_tag('td', colspan=4)
+            a = soup.new_tag('a', href=url_for('resource', resource=ty))
+            a.string = ty
+            td.append(a)
+            tr.append(td)
             try:
-                mdc += '\n\n' + idx + '.%d Entity inheritance\n===========\n\n```' % paragraph + generate_inheritance_graph(resource) + '```'
-                paragraph += 1
+                trs[tridx+1].insert_before(tr)
             except:
                 import traceback
                 traceback.print_exc()
-                pass
+        attribute_table = str(soup)
             
-            concepts = list(builder.concepts)
-            
-            # In case of inherited concepts filter on the entity
-            # that defines it most specifically (insertion order)
-            most_specific = {b:a for a,b,_ in concepts}
-            concepts = [(en, nm, defn) for en, nm, defn in concepts if most_specific[nm] == en]
-            
-            if concepts:
-                mdc += f"\n\n## {idx}.{paragraph} Concepts\n\n"
-                
-                concept_hierarchy = make_concept([""])
-                
-                def flatten_hierarchy(h):
-                    yield h
-                    for ch in h.children:
-                        yield from flatten_hierarchy(ch)
-
-                concept_lookup = {c.text: c.url for c in flatten_hierarchy(concept_hierarchy)}
-
-                for ci, (en, nm, defn) in enumerate(concepts, start=1):
-                
-                    is_inherited = " (inherited)" if en != resource else ""
-                    mdc += f"\n\n## {idx}.{paragraph}.{ci} {nm}{is_inherited}\n\n"
-                    if concept_lookup.get(nm):
-                        mdc += f"[link]({concept_lookup.get(nm)})\n\n"
-                    mdc += defn + "\n\n"
-                    
-                    xmi_concept = nm.replace(" ", "")
-                    if xmi_concept in R.xmi_concepts:
-                        headers, rows = create_concept_table(xmi_concept, supertype_chain)
-                        if rows:
-                            mdc += f"concept_{nm.replace(' ', '')}\n\n"
-                            
-                            replacements.append((
-                                f"concept_{nm.replace(' ', '')}",
-                                tabulate.tabulate(rows, headers=headers, tablefmt='unsafehtml')))
-                
-                paragraph += 1
-                
-        elif "PropertySets" in md:
+        mdc += "\n\nattribute_table\n\n"
         
-            def make_prop(prop):
-                # @todo check for file existence
-                doc = [x for x in open(os.path.join(REPO_DIR, "docs/properties/%s/%s.md") % (prop['name'][0].lower(), prop['name'])).read().split("\n") if x][-1]
-                return [prop['name'], prop['type'], doc]
-            attrs = list(map(make_prop, R.pset_definitions[resource]['properties']))
-            attribute_table = tabulate.tabulate(attrs, headers=("Name", "Type", "Description"), tablefmt='unsafehtml')
-            mdc += "\n\nattribute_table\n\n"
-
-        html = markdown.markdown(
-            process_graphviz(resource, mdc),
-            extensions=['tables', 'fenced_code'])
-            
-        html = html.replace("attribute_table", attribute_table)
-        
-        for from_r, to_r in replacements:
-            html = html.replace(from_r, to_r)
-        
-        soup = BeautifulSoup(html)
-    
-        # First h1 is handled by the template
         try:
-            soup.find('h1').decompose()
-        except:
-            # only entities have H1?
-            pass
-    
-        hs = []
-        # Renumber the headings
-        for i in list(range(7))[::-1]:
-            for h in soup.findAll('h%d' % i):
-                h.name = 'h%d' % (i + 2)
-                hs.append(h)
-            
-        # Change svg img references to embedded svg
-        # because otherwise URLS are not interactive
-        for img in soup.findAll("img"):
-            if img['src'].endswith('.svg'):
-                entity, hash = img['src'].split('/')[-1].split('.')[0].split('_')
-                svg = BeautifulSoup(open(os.path.join('svgs', entity + "_" + hash + '.dot.svg')))
-                img.replaceWith(svg.find('svg'))
-            else:
-                img['src'] = img['src'][9:]
-    
-        scs = R.changes_by_type.get(resource, {})
-        change_log = ''
-        
-        deprecated = resource in R.deprecated_entities
-        
-        if scs or deprecated:
-            change_log += "<h3>Change log</h3><div>"
-            
-            if deprecated:
-                change_log += "<mark class='dont'>DEPRECATED</mark>This definition may be imported, but shall not be exported by applications";
-            
-            for s, cs in scs.items():
-                change_log += "<h4>%s</h4>" % s
-                change_log += tabulate.tabulate(cs, tablefmt='unsafehtml')
-            change_log += "</div>"
-    
-        html = str(soup)
-        
-        if R.entity_definitions.get(resource):
-            html += "<h3>" + idx + ".%d Formal representations</h3>" % paragraph
-            html += "<pre>" + R.entity_definitions.get(resource) + "</pre>"
+            mdc += '\n\n' + idx + '.%d Entity inheritance\n===========\n\n```' % paragraph + generate_inheritance_graph(resource) + '```'
             paragraph += 1
+        except:
+            import traceback
+            traceback.print_exc()
+            pass
+        
+        concepts = list(builder.concepts)
+        
+        # In case of inherited concepts filter on the entity
+        # that defines it most specifically (insertion order)
+        most_specific = {b:a for a,b,_ in concepts}
+        concepts = [(en, nm, defn) for en, nm, defn in concepts if most_specific[nm] == en]
+        
+        if concepts:
+            mdc += f"\n\n## {idx}.{paragraph} Concepts\n\n"
+            
+            concept_hierarchy = make_concept([""])
+            
+            def flatten_hierarchy(h):
+                yield h
+                for ch in h.children:
+                    yield from flatten_hierarchy(ch)
+
+            concept_lookup = {c.text: c.url for c in flatten_hierarchy(concept_hierarchy)}
+
+            for ci, (en, nm, defn) in enumerate(concepts, start=1):
+            
+                is_inherited = " (inherited)" if en != resource else ""
+                mdc += f"\n\n## {idx}.{paragraph}.{ci} {nm}{is_inherited}\n\n"
+                if concept_lookup.get(nm):
+                    mdc += f"[link]({concept_lookup.get(nm)})\n\n"
+                mdc += defn + "\n\n"
                 
+                xmi_concept = nm.replace(" ", "")
+                if xmi_concept in R.xmi_concepts:
+                    headers, rows = create_concept_table(xmi_concept, supertype_chain)
+                    if rows:
+                        mdc += f"concept_{nm.replace(' ', '')}\n\n"
+                        
+                        replacements.append((
+                            f"concept_{nm.replace(' ', '')}",
+                            tabulate.tabulate(rows, headers=headers, tablefmt='unsafehtml')))
+            
+            paragraph += 1
+            
+    elif "PropertySets" in md:
+    
+        def make_prop(prop):
+            # @todo check for file existence
+            doc = [x for x in open(os.path.join(REPO_DIR, "docs/properties/%s/%s.md") % (prop['name'][0].lower(), prop['name'])).read().split("\n") if x][-1]
+            return [prop['name'], prop['type'], doc]
+        attrs = list(map(make_prop, R.pset_definitions[resource]['properties']))
+        attribute_table = tabulate.tabulate(attrs, headers=("Name", "Type", "Description"), tablefmt='unsafehtml')
+        mdc += "\n\nattribute_table\n\n"
+
+    html = markdown.markdown(
+        process_graphviz(resource, mdc),
+        extensions=['tables', 'fenced_code'])
+        
+    html = html.replace("attribute_table", attribute_table)
+    
+    for from_r, to_r in replacements:
+        html = html.replace(from_r, to_r)
+    
+    soup = BeautifulSoup(html)
+
+    # First h1 is handled by the template
+    try:
+        soup.find('h1').decompose()
+    except:
+        # only entities have H1?
+        pass
+
+    hs = []
+    # Renumber the headings
+    for i in list(range(7))[::-1]:
+        for h in soup.findAll('h%d' % i):
+            h.name = 'h%d' % (i + 2)
+            hs.append(h)
+        
+    # Change svg img references to embedded svg
+    # because otherwise URLS are not interactive
+    for img in soup.findAll("img"):
+        if img['src'].endswith('.svg'):
+            entity, hash = img['src'].split('/')[-1].split('.')[0].split('_')
+            svg = BeautifulSoup(open(os.path.join('svgs', entity + "_" + hash + '.dot.svg')))
+            img.replaceWith(svg.find('svg'))
+        else:
+            img['src'] = img['src'][9:]
+
+    scs = R.changes_by_type.get(resource, {})
+    change_log = ''
+    
+    deprecated = resource in R.deprecated_entities
+    
+    if scs or deprecated:
+        change_log += "<h3>Change log</h3><div>"
+        
+        if deprecated:
+            change_log += "<mark class='dont'>DEPRECATED</mark>This definition may be imported, but shall not be exported by applications";
+        
+        for s, cs in scs.items():
+            change_log += "<h4>%s</h4>" % s
+            change_log += tabulate.tabulate(cs, tablefmt='unsafehtml')
+        change_log += "</div>"
+
+    html = str(soup)
+    
+    if R.entity_definitions.get(resource):
+        html += "<h3>" + idx + ".%d Formal representations</h3>" % paragraph
+        html += "<pre>" + R.entity_definitions.get(resource) + "</pre>"
+        paragraph += 1
+            
     return render_template('entity.html', navigation=navigation_entries, content=html, number=idx, entity=resource, path=md[len(REPO_DIR):].replace("\\", "/"), preface=change_log)
 
 @app.route(make_url('listing'))

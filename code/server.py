@@ -333,8 +333,15 @@ def transform_graph(current_entity, graph_data, only_urls=False):
         for n in (edge_nodes_in_cluster - all_nodes):
             g.add_node(pydot.Node(n))
         
-        for n in g.get_nodes():
+        for n in list(g.get_nodes()):
             nm = n.get_label() or n.get_name()
+            
+            if nm == '"\\n"':
+                # not sure where this comes from, some artefact
+                # of the pydot parsing, but it can't be reproduced
+                # consistently
+                g.del_node(n)
+                continue
             
             if nm in {'graph', 'edge', 'node'}: continue
                 

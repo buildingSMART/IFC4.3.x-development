@@ -14,7 +14,10 @@ REPO_DIR = os.environ.get("REPO_DIR", os.path.join(os.path.dirname(__file__), ".
 while True:
 
     a = subprocess.check_output(["git", "-C", REPO_DIR, "rev-parse", "HEAD"])
-    b = subprocess.check_output(["git", "-C", REPO_DIR, "pull"])
+    # do not require credentials for auto merge on pull
+    # subprocess.check_output(["git", "-C", REPO_DIR, "pull"])
+    subprocess.check_output(["git", "-C", REPO_DIR, "fetch"])
+    subprocess.check_output(["git", "-C", REPO_DIR, "reset", "--hard", "origin/master"])
     c = subprocess.check_output(["git", "-C", REPO_DIR, "rev-parse", "HEAD"])
     
     if a != c or not os.listdir(XML_PATH):

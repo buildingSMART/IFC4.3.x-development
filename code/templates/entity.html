@@ -43,6 +43,7 @@ fetch('https://api.github.com/repos/buildingSMART/IFC4.3.x-development/commits?p
 <script>
 Array.from(document.querySelectorAll('a')).concat(Array.from(document.querySelectorAll('em'))).forEach((a) => {
   let popup = null;
+  let timeout = null;
   let onElem = false;
   let onPopup = false;
   
@@ -60,7 +61,10 @@ Array.from(document.querySelectorAll('a')).concat(Array.from(document.querySelec
     setTimeout(clearPopup, 1000.);
   };
   
-  a.onmouseenter = () => {
+  let showPopup = () => {
+    if (!onElem) {
+      return false;
+    }
     fetch('/api/v0/resource/' + a.innerText).then(r => r.json()).then(data => {
       if (popup) {
         onElem = true;
@@ -113,11 +117,21 @@ Array.from(document.querySelectorAll('a')).concat(Array.from(document.querySelec
       popup.style.left = ((rect.left + rect.right) / 2. - 250 + window.scrollX) + 'px';
       popup.style.top = (rect.bottom + 10. + window.scrollY) + 'px';    
     });
+  }
+
+  let soonShowPopup = () => {
+    timeout = setTimeout(showPopup, 1000.);
   };
   
+  a.onmouseenter = () => {
+    onElem = true;
+    soonShowPopup();
+  };
+
   a.onmouseleave = () => {
     onElem = false;
     soonClearPopup();
+    clearTimeout(timeout);
   };
   
 });

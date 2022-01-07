@@ -203,9 +203,10 @@ if __name__ == "__main__":
 
     realizes = {x.supplier: x.client for x in xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:Realization"]}
 
-    result = defaultdict(list)
-                        
-    for xmi_concept, pairs in xmi_doc.concept_associations.items():
+    result = defaultdict(lambda: defaultdict(list))
+
+    # explore nested dict as 3-tuples
+    for view_name, xmi_concept, pairs in [(k1, k2, v) for k1, d2 in xmi_doc.concept_associations.items() for k2, v in d2.items()]:
         if concept_interpretation.get(xmi_concept) in (
             concept_interpretation.concept_type.PROPERTY_OR_QUANTITY_SET,
             concept_interpretation.concept_type.OBJECT_TYPING,
@@ -216,8 +217,6 @@ if __name__ == "__main__":
         ):
             bindings = list(parse_bindings(fn, xmi_concept, to_xmi=True, definitions_by_name=definitions_by_name))
             get_binding = make_get_binding(bindings)
-            
-            # breakpoint()
             
             for p in pairs:
                 elems = list(filter(is_no_concept_node, map(xmi_doc.xmi.by_id.__getitem__, p)))
@@ -256,7 +255,7 @@ if __name__ == "__main__":
                 elem_names = [e.name.split(".")[-1] if e.parent.parent.parent.name == 'Views' else e.name for e in elems]
                 d = {x: elem_names[elem_binds.index(x)] for x in binding_names}
                 
-                result[xmi_concept].append(d)
+                result[view_name][xmi_concept].append(d)
 
 
     json.dump(result, open("xmi_concepts.json", "w", encoding="utf-8"), indent=1)

@@ -285,7 +285,7 @@ class xmi_document:
         
         if concepts:
             self.concepts = defaultdict(lambda: defaultdict(list))
-            self.concept_associations = defaultdict(list)
+            self.concept_associations = defaultdict(lambda: defaultdict(list))
         else:
             self.assocations = defaultdict(list)
             self.assoc_from = defaultdict(list)
@@ -305,10 +305,10 @@ class xmi_document:
                 continue            
             
             if concepts:
-                parent = get_path(assoc)[-2]
+                parent, view_name = get_path(assoc)[-2], get_path(assoc)[-3]
                 
                 sorted_end_types = [x[1] for x in sorted(zip(is_source, end_types), reverse=True)]
-                self.concept_associations[parent].append(sorted_end_types)
+                self.concept_associations[view_name][parent].append(sorted_end_types)
                 
                 is_rooted = lambda tid: "IfcRoot" in self.supertypes(tid)
                 sorted_type_ids = sorted(zip(map(is_rooted, end_types), end_types), reverse=True)
@@ -348,7 +348,8 @@ class xmi_document:
                 
                 pt = get_path(inter)
                 if "Views" in pt:
-                    parent = pt[-2]
+                    parent, view_name = pt[-2], pt[-3]
+                    
                     member_types = set(x.type for x in inter.parent.children)
                     if member_types == {'uml:Class', 'uml:AssociationClass'}:
                         # UNARY
@@ -359,12 +360,12 @@ class xmi_document:
                     elif member_types == {'uml:Class'}:
                         # DIRECTIONAL_GROUPED
                         for ff, tt in itertools.product(self.assoc_to[inter.id], self.assoc_from[inter.id]):
-                            self.concept_associations[parent].append([ff, tt])
+                            self.concept_associations[view_name][parent].append([ff, tt])
                     elif member_types == {'uml:Realization', 'uml:Class', 'uml:Enumeration', 'uml:Association'} and inter.type == 'uml:Association':
                         # N-ARY
                         ends = [self.xmi.by_id[mend.idref] for mend in inter/'memberEnd']
                         end_types = list(map(lambda c: (c|"type").idref, ends))
-                        self.concept_associations[parent].append(end_types)
+                        self.concept_associations[view_name][parent].append(end_types)
 
     def extract_order(self):
         self.order = {k: int(v) for k, v in self.xmi.tags["ExpressOrdering"].items()}

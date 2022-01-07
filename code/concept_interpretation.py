@@ -148,6 +148,8 @@ concept_type.SIMPLE_UNARY,
 concept_type.SIMPLE_UNARY,
 ('Type Body Tessellated Geometry', ('Geometry', ('IfcShapeRepresentation', 'Items'))):
 concept_type.SIMPLE_UNARY,
+('Body Tessellation Geometry',):
+concept_type.SIMPLE_UNARY,
 ('Element Type Predefined Type',):
 concept_type.SIMPLE_UNARY,
 ('Earthworks Cuttings', ('EarthworksCutType', ('IfcEarthworksCut', 'PredefinedType')), ('FillsVoids', ('IfcEarthworksCut', 'FillsVoids')), ('HasOpenings', ('IfcElement', 'HasOpenings')), ('RelatedBuiltElement', ('IfcRelFillsElement', 'RelatedBuildingElement')), ('RelatedEarthworksCut', ('IfcRelVoidsElement', 'RelatedOpeningElement'))):

@@ -513,8 +513,8 @@ def process_graphviz_concept(name, md):
     return md
 
 
-def create_concept_table(xmi_concept, types=None):
-    rows = R.xmi_concepts[xmi_concept]
+def create_concept_table(view_name, xmi_concept, types=None):
+    rows = R.xmi_concepts[view_name][xmi_concept]
     bindings = [("ApplicableEntity", ("",""))] + list(parse_bindings(os.path.join(REPO_DIR, "schemas/IFC.xml"), xmi_concept))
     bound_keys = set(sum([list(r.keys()) for r in rows], []))
     bound_keys = [a[0] for a in bindings if a[0] in bound_keys]
@@ -523,6 +523,10 @@ def create_concept_table(xmi_concept, types=None):
         rows = [r for r in rows if r.get("ApplicableEntity") in types]
     rows = [[r.get(k, '') for k in bound_keys] for r in rows]
     return headers, rows
+    
+    
+def separate_camel(s):
+    return " ".join(re.split("(?=[A-Z])", s)[1:])
 
 
 @app.route(make_url('figures/<fig>'))
@@ -680,38 +684,44 @@ def resource(resource):
         # In case of inherited concepts filter on the entity
         # that defines it most specifically (insertion order)
         most_specific = {b:a for a,b,_ in concepts}
-        concepts = [(en, nm, defn) for en, nm, defn in concepts if most_specific[nm] == en]
+        concept_definition = {nm.replace(" ", "") : (en, defn) for en, nm, defn in concepts if most_specific[nm] == en}
         
-        if concepts:
-            mdc += f"\n\n## {idx}.{paragraph} Concepts\n\n"
-            
-            concept_hierarchy = make_concept([""])
-            
-            def flatten_hierarchy(h):
-                yield h
-                for ch in h.children:
-                    yield from flatten_hierarchy(ch)
+        # Create a lookup for concept name to URL
+        concept_hierarchy = make_concept([""])
+        
+        def flatten_hierarchy(h):
+            yield h
+            for ch in h.children:
+                yield from flatten_hierarchy(ch)
 
-            concept_lookup = {c.text: c.url for c in flatten_hierarchy(concept_hierarchy)}
-
-            for ci, (en, nm, defn) in enumerate(concepts, start=1):
+        concept_lookup = {c.text.replace(" ", ""): (c.text, c.url) for c in flatten_hierarchy(concept_hierarchy)}
+        
+        # Iterate over views and concepts stored in XMI
+        for view_name, concepts in R.xmi_concepts.items():
+            mdc += f"\n\n## {idx}.{paragraph} {separate_camel(view_name)}\n\n"
             
-                is_inherited = " (inherited)" if en != resource else ""
-                mdc += f"\n\n## {idx}.{paragraph}.{ci} {nm}{is_inherited}\n\n"
-                if concept_lookup.get(nm):
-                    mdc += f"[link]({concept_lookup.get(nm)})\n\n"
-                mdc += defn + "\n\n"
+            ci = 1
+            
+            for xmi_concept in concepts:
                 
-                xmi_concept = nm.replace(" ", "")
-                if xmi_concept in R.xmi_concepts:
-                    headers, rows = create_concept_table(xmi_concept, supertype_chain)
-                    if rows:
-                        mdc += f"concept_{nm.replace(' ', '')}\n\n"
+                headers, rows = create_concept_table(view_name, xmi_concept, supertype_chain)
+                if rows:
+
+                    # is_inherited = " (inherited)" if en != resource else ""
+                    is_inherited = ""
+                    mdc += f"\n\n## {idx}.{paragraph}.{ci} {concept_lookup.get(xmi_concept)[0]}{is_inherited}\n\n"
+                    if concept_lookup.get(xmi_concept):
+                        mdc += f"[link]({concept_lookup.get(xmi_concept)[1]})\n\n"
+                    mdc += concept_definition.get(xmi_concept, ['',''])[1] + "\n\n"
+                                    
+                    mdc += f"concept_{xmi_concept}\n\n"
+                    
+                    replacements.append((
+                        f"concept_{xmi_concept}",
+                        tabulate.tabulate(rows, headers=headers, tablefmt='unsafehtml')))
                         
-                        replacements.append((
-                            f"concept_{nm.replace(' ', '')}",
-                            tabulate.tabulate(rows, headers=headers, tablefmt='unsafehtml')))
-            
+                    ci += 1
+                
             paragraph += 1
             
     elif "PropertySets" in md:
@@ -855,11 +865,13 @@ def concept(s=''):
     	
     
     xmi_concept = t.replace(" ", "")
-    if xmi_concept in R.xmi_concepts:
-        headers, rows = create_concept_table(xmi_concept, None)
-        if rows:
-            html += tabulate.tabulate(rows, headers=headers, tablefmt='unsafehtml')            
-
+    
+    for view_name, concepts in R.xmi_concepts.items():
+        if xmi_concept in concepts:
+            html += f"<h3>{separate_camel(view_name)}</h3>"
+            headers, rows = create_concept_table(view_name, xmi_concept, None)
+            if rows:
+                html += tabulate.tabulate(rows, headers=headers, tablefmt='unsafehtml')
         
     subs = make_concept(s.split("/")).children
 

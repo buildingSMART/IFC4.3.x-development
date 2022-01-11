@@ -197,7 +197,7 @@ _IfcController_\* | _IfcUnitaryControlElement_\* | -
 { .gridtable even}
 Other elements |
 --------------
-_IfcBuildingElementProxy_+ |
+_IfcBuiltElementProxy_+ |
 _IfcCivilElement_\*++ |
 _IfcGeographicElement_\* |
 _IfcDistributionChamberElement_ |

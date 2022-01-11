@@ -263,7 +263,7 @@ class xmi_document:
     def try_get_order(self, a):
         try:
             return int(self.xmi.tags['ExpressOrdering'][a.id or a.idref])
-        except IndexError as e:
+        except (KeyError, IndexError) as e:
             # When no ordering is found in sequences where other elements do have
             # ordering, they are pushed to the back to be consistent with IFC4X3_RC1
             return infinity

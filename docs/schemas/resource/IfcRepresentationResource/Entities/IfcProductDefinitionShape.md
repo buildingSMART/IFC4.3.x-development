@@ -14,7 +14,7 @@ The _IfcProductDefinitionShape_ defines all shape relevant information about an 
 ## Attributes
 
 ### ShapeOfProduct
-The _IfcProductDefinitionShape_ shall be used to provide a representation for a single instance of _IfcProduct_.
+The _IfcProductDefinitionShape_ shall be used to provide a representation for a one or more instances of _IfcProduct_.
 { .change-ifc2x3}
 > IFC2x3 CHANGE New inverse attribute.
 

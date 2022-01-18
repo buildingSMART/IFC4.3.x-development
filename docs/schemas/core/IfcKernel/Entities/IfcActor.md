@@ -50,6 +50,11 @@ Specific documentation for concept parametrization in Reference View
 
 This concept parametrization is not applicable. Consistency to be implemented to flag this as an issue.
 
+### Actor Assignment [Alignment-based Reference View]
+
+Additional provisions are made for Alignment-based Reference View in this context. Note that this is just an example. To be removed later.
+
+
 ### Property Sets for Objects
 
 

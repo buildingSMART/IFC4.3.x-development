@@ -890,7 +890,7 @@ def concept(s=''):
 
         html = str(soup)
     else:
-    	html = fn
+    	html = ''
     	
     
     xmi_concept = t.replace(" ", "")

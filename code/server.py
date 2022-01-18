@@ -684,7 +684,14 @@ def resource(resource):
         # In case of inherited concepts filter on the entity
         # that defines it most specifically (insertion order)
         most_specific = {b:a for a,b,_ in concepts}
-        concept_definition = {nm.replace(" ", "") : (en, defn) for en, nm, defn in concepts if most_specific[nm] == en}
+        
+        def qualify_mvd(nm):
+            if isinstance(nm, tuple):
+                return nm[0].replace(" ", ""), nm[1].replace(" ", "")
+            else:
+                return "GeneralUsage", nm.replace(" ", "")
+        
+        concept_definition = { qualify_mvd(nm) : (en, defn) for en, nm, defn in concepts if most_specific[nm] == en}
         
         # Create a lookup for concept name to URL
         concept_hierarchy = make_concept([""])
@@ -698,29 +705,51 @@ def resource(resource):
         
         # Iterate over views and concepts stored in XMI
         for view_name, concepts in R.xmi_concepts.items():
-            mdc += f"\n\n## {idx}.{paragraph} {separate_camel(view_name)}\n\n"
             
-            ci = 1
-            
+            applicable_concepts = []
             for xmi_concept in concepts:
                 
                 headers, rows = create_concept_table(view_name, xmi_concept, supertype_chain)
                 if rows:
-
+                    applicable_concepts.append((xmi_concept, headers, rows))
+            
+            if applicable_concepts:
+                mdc += f"\n\n## {idx}.{paragraph} {separate_camel(view_name)}\n\n"
+                
+                for ci, (xmi_concept, headers, rows) in enumerate(applicable_concepts, start=1):
+                    
                     # is_inherited = " (inherited)" if en != resource else ""
                     is_inherited = ""
-                    mdc += f"\n\n## {idx}.{paragraph}.{ci} {concept_lookup.get(xmi_concept)[0]}{is_inherited}\n\n"
+                    link = ""
                     if concept_lookup.get(xmi_concept):
-                        mdc += f"[link]({concept_lookup.get(xmi_concept)[1]})\n\n"
-                    mdc += concept_definition.get(xmi_concept, ['',''])[1] + "\n\n"
-                                    
-                    mdc += f"concept_{xmi_concept}\n\n"
+                        link += f"[&#10150;]({concept_lookup.get(xmi_concept)[1]})\n\n"
+                        
+                    mdc += f"\n\n## {idx}.{paragraph}.{ci} {concept_lookup.get(xmi_concept)[0]}{is_inherited} {link}\n\n"
+                    
+                    cdef = concept_definition.get((view_name, xmi_concept), ['',''])[1]
+                    mm = mdp.markdown_attribute_parser(cdef, None)
+                    headings = [x[0][2][0] for x in mm.tok_renders_pairs if x[0][0] == 'heading_open']
+                    if headings:
+                        cdef = "".join(mm.lines[0:headings[0]])
+                    mdc += cdef + "\n\n"                     
+                    mm = dict(mm)
+                    
+                    if mm:
+                        headers += ["Description"]
+                        def augment_with_descriptions(row):
+                            description = ""
+                            intersect = set(row) & set(mm.keys())
+                            if intersect:
+                                description = mm[sorted(intersect)[0]]
+                            return row + [description]
+                            
+                        rows = list(map(augment_with_descriptions, rows))
+
+                    mdc += f"concept_{view_name}_{xmi_concept}\n\n"
                     
                     replacements.append((
-                        f"concept_{xmi_concept}",
+                        f"concept_{view_name}_{xmi_concept}",
                         tabulate.tabulate(rows, headers=headers, tablefmt='unsafehtml')))
-                        
-                    ci += 1
                 
             paragraph += 1
             

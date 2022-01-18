@@ -1,4 +1,5 @@
 import os
+import re
 
 # @note we use two markdown parsers, as the first does not
 # have an intermediate parse tree, but is the defacto standard
@@ -59,21 +60,24 @@ class markdown_attribute_parser:
         
         
     def __iter__(self):
-        try:
-            attribute_heading_idx, tag = [(i,d[0][3]) for i,d in enumerate(self.tok_renders_pairs) if d[0][0] == 'heading_open' and d[1][1] == self.heading_name][0]
-        except IndexError as e:
-            self.status["ALL"] = ("NO_HEADING", -1)
-            return
-            
-        try:
-            next_same_level_heading = [i for i,d in enumerate(self.tok_renders_pairs) if i > attribute_heading_idx and d[0][0] == 'heading_open' and d[0][3] == tag][0]                           
-        except IndexError as e:
-            next_same_level_heading = 100000
+        if self.heading_name:
+            try:
+                attribute_heading_idx, tag = [(i,d[0][3]) for i,d in enumerate(self.tok_renders_pairs) if d[0][0] == 'heading_open' and d[1][1] == self.heading_name][0]
+            except IndexError as e:
+                self.status["ALL"] = ("NO_HEADING", -1)
+                return
+                
+            try:
+                next_same_level_heading = [i for i,d in enumerate(self.tok_renders_pairs) if i > attribute_heading_idx and d[0][0] == 'heading_open' and d[0][3] == tag][0]                           
+            except IndexError as e:
+                next_same_level_heading = 100000
+        else:
+            attribute_heading_idx, next_same_level_heading = 0, 100000
         
         for heading_idx, name in [(i, d[1][1]) for i,d in enumerate(self.tok_renders_pairs) if d[0][0] == 'heading_open' and i > attribute_heading_idx and i < next_same_level_heading]:
         
             try:
-                next_heading = [i for i,d in enumerate(self.tok_renders_pairs) if i > heading_idx and d[0][0] == 'heading_open'][0]                           
+                next_heading = [i for i,d in enumerate(self.tok_renders_pairs) if i > heading_idx and d[0][0] == 'heading_open' and d[0][1] == self.tok_renders_pairs[heading_idx][0][1]][0]
             except IndexError as e:
                 next_heading = 100000
 
@@ -88,7 +92,7 @@ class markdown_attribute_parser:
             line_begin = first_paragraph[0][2][0]
             
             try:
-                next_heading = [d for i,d in enumerate(self.tok_renders_pairs) if d[0][0] == 'heading_open' and i > heading_idx][0]
+                next_heading = [d for i,d in enumerate(self.tok_renders_pairs) if d[0][0] == 'heading_open' and i > heading_idx and d[0][1] == self.tok_renders_pairs[heading_idx][0][1]][0]
                 line_end = next_heading[0][2][0]
             except IndexError as e:
                 next_same_level_heading = 100000
@@ -96,5 +100,12 @@ class markdown_attribute_parser:
                 
             self.status[name] = ("OK", line_begin)
             definition = "\n".join(self.lines[line_begin:line_end])
+            
+            m = re.search(r"\[([\w ]+)\]", name)
+            if m:
+                mvd = m.group(1)
+                li = [c for c in name]
+                li[slice(*m.span())] = []
+                name = (mvd, "".join(li).strip())
             
             yield name, definition

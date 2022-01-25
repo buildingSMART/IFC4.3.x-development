@@ -1,0 +1,58 @@
+@prefix ex:  <http://example.org/ifc43Shapes#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+ex:PropertySet a sh:SPARQLTarget;
+    sh:select """
+        SELECT ?this
+        WHERE {
+            ?this <http://schema.omg.org/spec/XMI/2.1/type> "uml:Class" .
+            ?this <http://example.org/name> ?psetName . 
+            ?this <http://schema.omg.org/spec/XMI/2.1/id> ?psetId . 
+
+            {
+                ?stereo a <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/PSET_TYPEDRIVENOVERRIDE> .
+                ?stereo <http://example.org/base_Class> ?psetId .
+            } UNION {
+                ?stereo a <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/PSET_PERFORMANCEDRIVEN> .
+                ?stereo <http://example.org/base_Class> ?psetId .
+            } UNION {
+                ?stereo a <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/PSET_OCCURRENCEDRIVEN> .
+                ?stereo <http://example.org/base_Class> ?psetId .
+            }
+        }
+   """ .
+   
+ex:hasApplicableClass a sh:SPARQLConstraint ;
+    sh:message "The Property Set '{?psetName}' should have at least one applicability" ;
+    sh:select """
+        SELECT ?this ?psetName
+        WHERE {
+            ?this <http://schema.omg.org/spec/XMI/2.1/id> ?psetId .
+            ?this <http://example.org/name> ?psetName . 
+            
+            FILTER NOT EXISTS {
+                ?assoc <http://schema.omg.org/spec/XMI/2.1/type> "uml:AssociationClass" .
+                
+                ?end1 a <http://example.org/memberEnd> .
+                ?end1 <http://example.org/containedIn> ?assoc .
+                ?end1 <http://schema.omg.org/spec/XMI/2.1/idref> ?end1id .
+                ?prop1 <http://schema.omg.org/spec/XMI/2.1/id> ?end1id .
+                ?type1 <http://example.org/containedIn> ?prop1 .
+                ?type1 <http://schema.omg.org/spec/XMI/2.1/idref> ?psetId .
+                
+                ?end2 a <http://example.org/memberEnd> .
+                ?end2 <http://example.org/containedIn> ?assoc .
+                ?end2 <http://schema.omg.org/spec/XMI/2.1/idref> ?end2id .
+                ?prop2 <http://schema.omg.org/spec/XMI/2.1/id> ?end2id .
+                ?type2 <http://example.org/containedIn> ?prop2 .
+                ?type2 <http://schema.omg.org/spec/XMI/2.1/idref> ?xid .
+        
+                FILTER(?end1 != ?end2) .
+            }
+        }
+    """ .
+
+ex:PsetApplicability a sh:NodeShape ;
+    sh:target ex:PropertySet;
+    sh:sparql ex:hasApplicableClass;
+    .

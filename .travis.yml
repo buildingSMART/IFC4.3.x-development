@@ -15,10 +15,9 @@ install:
   - wget -O /tmp/ifopsh.zip https://s3.amazonaws.com/ifcopenshell-builds/ifcopenshell-python-38-v0.6.0-517b819-linux64.zip
   - mkdir -p `python3 -c 'import site; print(site.getusersitepackages())'`
   - unzip -d `python3 -c 'import site; print(site.getusersitepackages())'` /tmp/ifopsh.zip
-  - (cd / && curl --silent --show-error --retry 5 https://repo1.maven.org/maven2/org/topbraid/shacl/${SHACLVERSION}/shacl-${SHACLVERSION}-bin.zip -o - | sudo jar xv)
+  - (cd / && curl --silent --show-error --retry 5 https://repo1.maven.org/maven2/org/topbraid/shacl/${SHACLVERSION}/shacl-${SHACLVERSION}-bin.zip -o - | sudo jar x)
+  - sudo chmod +x /shacl-${SHACLVERSION}/bin/*
   - export PATH="/shacl-${SHACLVERSION}/bin:${PATH}"
-  - echo PATH $PATH
-  - find /shacl-${SHACLVERSION}/bin
 script:
   - python3 code/main.py
   - python3 code/validate_schema_shacl.py

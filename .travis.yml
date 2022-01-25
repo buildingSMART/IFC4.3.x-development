@@ -17,6 +17,8 @@ install:
   - mkdir -p `python3 -c 'import site; print(site.getusersitepackages())'`
   - unzip -d `python3 -c 'import site; print(site.getusersitepackages())'` /tmp/ifopsh.zip
   - curl --silent --show-error --retry 5 https://repo1.maven.org/maven2/org/topbraid/shacl/${SHACLVERSION}/shacl-${SHACLVERSION}-bin.zip -o - | jar x
+  - echo PATH $PATH
+  - find /shacl-${SHACLVERSION}/bin
 script:
   - python3 code/main.py
   - python3 code/validate_schema_shacl.py

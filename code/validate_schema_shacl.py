@@ -67,7 +67,7 @@ if platform.system() == 'Windows':
     os.environ['SHACL_HOME'] = SHACL_PATH
 
 proc = subprocess.Popen(
-    [VALIDATE_PATH, "-datafile", os.path.join(tempfile.gettempdir(), "schema.ttl"), "-shapesfile", relative_path('shapes.ttl')],
+    [VALIDATE_PATH, "-datafile", os.path.join(tempfile.gettempdir(), "schema.ttl"), "-shapesfile", relative_path('../output/shapes.ttl')],
     stdout=subprocess.PIPE)
 stdout, stderr = proc.communicate()
 stdout = stdout.decode('ascii')

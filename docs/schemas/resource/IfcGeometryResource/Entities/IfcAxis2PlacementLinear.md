@@ -13,7 +13,7 @@ The direction used to determine the direction of the local X Axis. In case both 
 ## Formal Propositions
 
 ### WR1
-
+The _Location_ on parent type _IfcPlacement_ shall be of type _IfcPointByDistanceExpression_
 
 ### WR2
 The _Axis_ and _RefDirection_ shall not be parallel or anti-parallel.

@@ -67,7 +67,7 @@ if platform.system() == 'Windows':
     os.environ['SHACL_HOME'] = SHACL_PATH
 
 proc = subprocess.Popen(
-    [VALIDATE_PATH, "-datafile", os.path.join(tempfile.gettempdir(), "schema.ttl"), "-shapesfile", relative_path('../output/shapes.ttl')],
+    [VALIDATE_PATH, "-datafile", os.path.join(tempfile.gettempdir(), "schema.ttl"), "-shapesfile", relative_path('shapes.ttl')],
     stdout=subprocess.PIPE)
 stdout, stderr = proc.communicate()
 stdout = stdout.decode('ascii')
@@ -77,7 +77,7 @@ g.parse(data=stdout, format="ttl")
 
 results = []
 
-with open("shacl-result.md", "w") as f:
+with open(relative_path('../output/shacl-result.md'), "w") as f:
 
     for s,_,__ in g.triples((None, RDF.type, SHACL.ValidationResult)):
         for _,__, rM in g.triples((s, SHACL.resultMessage, None)):

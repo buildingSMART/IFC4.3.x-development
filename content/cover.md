@@ -10,7 +10,7 @@ This is **not** a formal release. Formal releases are available on [standards.bu
 <img src="https://raw.githubusercontent.com/buildingSMART/IFC4.3.x-development/master/docs/img/Dongping.jpg" width="800">
 
 ## Copyright 
-Copyright © 1996-2021 buildingSMART International Limited. Some rights reserved.Any technical documentation made available by buildingSMART International Limited is the copyrighted work of buildingSMART International Limited and is owned by buildingSMART International Limited. 
+Copyright © 1996-2022 buildingSMART International Limited. Some rights reserved.Any technical documentation made available by buildingSMART International Limited is the copyrighted work of buildingSMART International Limited and is owned by buildingSMART International Limited. 
 The Industry Foundation Classes are published under Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0). Read the [full license text here](https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode).
 For more information please refer to our [IP Policy](https://buildingsmart-1xbd3ajdayi.netdna-ssl.com/wp-content/uploads/2021/06/bSI-Intellectual-Property-Policy.pdf).
 

@@ -6,8 +6,12 @@ The _IfcTaskTypeEnum_ defines the range of different types of task that can be s
 
 ## Items
 
+### ADJUSTMENT
+
 ### ATTENDANCE
 Attendance or waiting on other things happening.
+
+### CALIBRATION
 
 ### CONSTRUCTION
 Constructing or building something.
@@ -20,6 +24,10 @@ Taking something apart carefully so that it can be recycled or reused.
 
 ### DISPOSAL
 Disposing or getting rid of something.
+
+### EMERGENCY
+
+### INSPECTION
 
 ### INSTALLATION
 Installing something (equivalent to construction but more commonly used for engineering tasks).
@@ -36,11 +44,23 @@ Moving things from one place to another.
 ### OPERATION
 A procedure undertaken to start up the operation an artifact.
 
+### MAINTENANCE
+
 ### REMOVAL
 Removal of an item from use and taking it from its place of use.
 
 ### RENOVATION
 Bringing something to an 'as-new' state.
+
+### SAFETY
+
+### SHUTDOWN
+
+### STARTUP
+
+### TESTING
+
+### TROUBLESHOOTING
 
 ### USERDEFINED
 

@@ -27,7 +27,7 @@ The name of a region.
 The code that is used by the country's postal service.
 
 ### Country
-The name of a country.
+An ISO 3166 2-digit country code.
 
 ## Formal Propositions
 

@@ -127,7 +127,7 @@ ex:Fail a sh:SPARQLConstraint ;
 
 ex:PsetApplicability a sh:NodeShape ;
     sh:target ex:PropertySet;
-    sh:sparql ex:Fail
+    sh:sparql ex:hasApplicableClass
     .
 
 ex:PropertyType a sh:NodeShape ;

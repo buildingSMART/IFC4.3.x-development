@@ -50,7 +50,7 @@ if not os.path.exists(os.path.join(tempfile.gettempdir(), "schema.ttl")):
 
     d._recurse(v)
     
-    for i,fn in enumerate(glob.glob("../docs/properties/**/*.md", recursive=True)):
+    for i,fn in enumerate(glob.glob(relative_path("../docs/properties/**/*.md"), recursive=True)):
         s = fqdn(f"doc_{i}")
         g.add((s, RDF.type, fqdn("MarkdownPropertyDefinition")))
         g.add((s, fqdn("hasHeading"), rdflib.Literal([ln for ln in list(open(fn, encoding="utf-8")) if ln][0].strip())))

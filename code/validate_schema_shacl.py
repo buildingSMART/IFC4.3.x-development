@@ -1,4 +1,5 @@
 import os
+import glob
 import platform
 import tempfile
 import operator
@@ -35,7 +36,7 @@ if not os.path.exists(os.path.join(tempfile.gettempdir(), "schema.ttl")):
         if nd.tag == "{http://schema.omg.org/spec/XMI/2.1}Extension":
             return False
 
-        s = rdflib.URIRef(f"node_{counter['c']}")
+        s = fqdn(f"node_{counter['c']}")
         counter['c'] += 1
         node_mapping[nd] = s
 
@@ -45,11 +46,18 @@ if not os.path.exists(os.path.join(tempfile.gettempdir(), "schema.ttl")):
             g.add((s, fqdn(k), rdflib.Literal(v)))
             
         if stack:
-            g.add((s, fqdn("containedIn"), node_mapping[stack[-1]]))        
+            g.add((s, fqdn("containedIn"), node_mapping[stack[-1]]))
 
     d._recurse(v)
+    
+    for i,fn in enumerate(glob.glob("../docs/properties/**/*.md", recursive=True)):
+        s = fqdn(f"doc_{i}")
+        g.add((s, RDF.type, fqdn("MarkdownPropertyDefinition")))
+        g.add((s, fqdn("hasHeading"), rdflib.Literal([ln for ln in list(open(fn, encoding="utf-8")) if ln][0].strip())))
+        g.add((s, fqdn("hasFilename"), rdflib.Literal(fn.replace("\\", "/")[3:])))
+        g.add((s, fqdn("hasContent"), rdflib.Literal(open(fn, encoding="utf-8").read())))
 
-    g.serialize(os.path.join(tempfile.gettempdir(), "schema.ttl"), format="turtle")
+    g.serialize(os.path.join(tempfile.gettempdir(), "schema.ttl"), format="turtle", encoding="utf-8")
 
 VALIDATE_PATH = "shaclvalidate.sh"
 if platform.system() == 'Windows':

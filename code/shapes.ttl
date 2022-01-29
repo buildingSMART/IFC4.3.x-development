@@ -20,8 +20,9 @@ ex:PropertySet a sh:SPARQLTarget;
                 ?stereo <http://example.org/base_Class> ?psetId .
             }
         }
-   """ .
-   
+   """
+   .
+
 ex:PropertySetProperty a sh:SPARQLTarget;
     sh:select """
         SELECT ?this
@@ -44,8 +45,9 @@ ex:PropertySetProperty a sh:SPARQLTarget;
                 ?stereo <http://example.org/base_Class> ?psetId .
             }
         }
-   """ .
-   
+   """
+   .
+
 ex:hasApplicableClass a sh:SPARQLConstraint ;
     sh:message "The Property Set '{?psetName}' should have at least one applicability" ;
     sh:select """
@@ -74,8 +76,9 @@ ex:hasApplicableClass a sh:SPARQLConstraint ;
                 FILTER(?end1 != ?end2) .
             }
         }
-    """ .
-    
+    """
+    .
+
 ex:hasPropertyType a sh:SPARQLConstraint ;
     sh:message "The Property '{?psetName}.{?propName}' has an incorrect type" ;
     sh:select """
@@ -113,6 +116,56 @@ ex:hasPropertyType a sh:SPARQLConstraint ;
     """
     .
 
+ex:hasDefinition a sh:SPARQLConstraint ;
+    sh:message "The Property '{?psetName}.{?propName}' has no definition" ;
+    sh:select """
+        SELECT ?this ?propName ?psetName
+        WHERE {
+            ?this <http://example.org/name> ?propName . 
+            ?this <http://example.org/containedIn> ?pset .
+            ?pset <http://example.org/name> ?psetName .
+            
+            FILTER NOT EXISTS {
+                ?doc a <http://example.org/MarkdownPropertyDefinition> .
+                ?doc <http://example.org/hasHeading> ?propName .
+            }
+        }
+    """
+    .
+
+ex:hasProperty a sh:SPARQLConstraint;
+    sh:message "For document '{?filename}' a property cannot be found" ;
+    sh:select """
+        SELECT ?this ?filename
+        WHERE {
+            ?this a <http://example.org/MarkdownPropertyDefinition> .
+            ?this <http://example.org/hasHeading> ?propName .
+            ?this <http://example.org/hasFilename> ?filename .
+            
+            FILTER NOT EXISTS {
+                # weird performance anomaly?
+                # ?pset <http://schema.omg.org/spec/XMI/2.1/type> "uml:Class" .
+                ?pset <http://schema.omg.org/spec/XMI/2.1/id> ?psetId .
+                
+                ?prop <http://schema.omg.org/spec/XMI/2.1/type> "uml:Property" .
+                ?prop <http://example.org/containedIn> ?pset .
+                ?prop <http://example.org/name> ?propName .
+                
+                {
+                    ?stereo a <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/PSET_TYPEDRIVENOVERRIDE> .
+                    ?stereo <http://example.org/base_Class> ?psetId .
+                } UNION {
+                    ?stereo a <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/PSET_PERFORMANCEDRIVEN> .
+                    ?stereo <http://example.org/base_Class> ?psetId .
+                } UNION {
+                    ?stereo a <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/PSET_OCCURRENCEDRIVEN> .
+                    ?stereo <http://example.org/base_Class> ?psetId .
+                }
+            }
+        }
+   """
+   .
+
 ex:Fail a sh:SPARQLConstraint ;
     sh:message "Generic failing constraint" ;
     sh:select """
@@ -133,4 +186,14 @@ ex:PsetApplicability a sh:NodeShape ;
 ex:PropertyType a sh:NodeShape ;
     sh:target ex:PropertySetProperty;
     sh:sparql ex:hasPropertyType
+    .
+
+ex:DefinitionForProperty a sh:NodeShape ;
+    sh:target ex:PropertySetProperty;
+    sh:sparql ex:hasDefinition
+    .
+
+ex:PropertyForDefinition a sh:NodeShape ;
+    sh:targetClass <http://example.org/MarkdownPropertyDefinition>;
+    sh:sparql ex:hasProperty
     .

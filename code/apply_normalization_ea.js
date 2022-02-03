@@ -29,13 +29,22 @@ function main()
 			Session.Output(cls);
 			E = elementByName[cls];
 			
-			for (var i = 0; i < E.Attributes.Count; ++i) {
-				var attr = E.Attributes.GetAt(i);
-				if (attr.Name == oldName) {
-					attr.Name = newName;
-					attr.Update();
-					break;
+			let found = false;
+			
+			if (E) {		
+				for (var i = 0; i < E.Attributes.Count; ++i) {
+					var attr = E.Attributes.GetAt(i);
+					if (attr.Name == oldName) {
+						attr.Name = newName;
+						attr.Update();
+						found = true;
+						break;
+					}
 				}
+			}
+			
+			if (!found) {
+				Session.Output(tup.join(","));
 			}
 		}			
 	});

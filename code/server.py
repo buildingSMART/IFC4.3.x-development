@@ -1157,9 +1157,9 @@ def schema(name):
 def search():
     matches = []
     query = ''
-    if request.method == 'POST' and request.form['query']:
+    if request.args.get('query'):
         solr = pysolr.Solr('http://localhost:8983/solr/ifc')
-        query = request.form['query']
+        query = request.args.get('query')
         results = solr.search('body:(%s)' % query, **{'hl':'on', 'hl.fl':'body'})
         h = results.highlighting
 

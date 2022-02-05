@@ -92,7 +92,7 @@ h4 a:hover {
         <div class="row">
             <div class="col-md-3">
                 {% block searchbar %}
-                <form method='post' action='/search'>
+                <form method='get' action='/search'>
                     <input type='text' name='query' value='' />
                     <input type='submit' value='Search' />
                     <span class="icon-search"></span>

@@ -30,6 +30,8 @@ def valid_key(s):
     return ''.join(c if c.isalnum() else '_' for c in s).strip('_')
 
 def generate_definitions():
+    props_seen = set()
+    
     for item in xmi_doc:
 
         loc = xmi_doc.xmi.locate(item.node) if item.node else (None, None)
@@ -38,7 +40,13 @@ def generate_definitions():
         if item.type in {"ENUM", "ENTITY", "PSET", "PENUM"}:
             for subitem in item:
                 loc = xmi_doc.xmi.locate(subitem.node) if subitem.node else (None, None)
-                yield item.package, loc, (valid_key(item.name), valid_key(subitem.name)), ((subitem.markdown or subitem.name) if subitem.node else subitem.name)
+                key = (valid_key(item.name), valid_key(subitem.name))
+                if item.type == "PSET":
+                    key = key[1:]
+                    if subitem.name in props_seen:
+                        continue
+                    props_seen.add(subitem.name)
+                yield item.package, loc, key, ((subitem.markdown or subitem.name) if subitem.node else subitem.name)
         
 def quote(s):
     return '"%s"' % s

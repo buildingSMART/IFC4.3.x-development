@@ -1159,13 +1159,22 @@ def search():
         query = request.form['query']
         results = solr.search('body:(%s)' % query, **{'hl':'on', 'hl.fl':'body'})
         h = results.highlighting
+
         def format(s):
             return re.sub(r'[^\w\s<>/]', '', s)
+            
+        def get_url(r):
+            if r.get('resourceType', 'resource') == 'resource':
+                return url_for('resource', resource=r['title'][0])
+            else:
+                return url_for('property', prop=r['title'][0])
+            
         matches = [{
-            'url': url_for('resource', resource=r['title'][0]), 
+            'url': get_url(r), 
             'match': format(h[r['id']]['body'][0]),
             'title': r['title'][0]
         } for r in list(results)[0:10]]
+        
     return render_template('search.html', navigation=navigation_entries, matches=matches, query=query)
 
 

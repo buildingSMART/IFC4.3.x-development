@@ -17,6 +17,10 @@ for fn in glob.glob(os.path.join(ifn, "**", "*.md"), recursive=True):
     title = SubElement(top, 'field')
     title.set('name','id')
     title.text = fn.split("/")[-1][:-3]
+    
+    title = SubElement(top, 'field')
+    title.set('name','resourceType')
+    title.text = "property" if fn.split("/")[-3] == "properties" else "resource"
 
     body = SubElement(top, 'field')
     body.set('name', 'body')

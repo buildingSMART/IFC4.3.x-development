@@ -821,7 +821,10 @@ def resource(resource):
     
         def make_prop(prop):
             # @todo check for file existence
-            doc = process_markdown(open(os.path.join(REPO_DIR, "docs/properties/%s/%s.md") % (prop['name'][0].lower(), prop['name'])).read(), as_attribute=True)
+            try:
+                doc = process_markdown(open(os.path.join(REPO_DIR, "docs/properties/%s/%s.md") % (prop['name'][0].lower(), prop['name'])).read(), as_attribute=True)
+            except:
+                doc = "<i>missing property definition</i>"
             return [prop['name'], prop['type'], prop['data'], doc + f"<a class='button' href='{make_url('property/'+prop['name'])}.htm' style='padding:0;margin:0 0.5em'><span class='icon-edit'></span></a>"]
         attrs = list(map(make_prop, R.pset_definitions[resource]['properties']))
         attribute_table = tabulate.tabulate(attrs, headers=("Name", "Property Type", "Data Type", "Definition"), tablefmt='unsafehtml')

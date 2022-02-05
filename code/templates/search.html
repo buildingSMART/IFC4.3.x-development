@@ -13,6 +13,8 @@
         <li><a href="{{ r['url'] }}">{{ r['title']}}</a>
             <span>{{ r['match'] | safe }}</span>
         </li>
+    {% else %}
+        <li><span>No results match your query</span></li>    
     {% endfor %}
 </ul>
 

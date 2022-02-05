@@ -81,6 +81,10 @@ class schema_resource:
     def keys(self):
         return self.data.keys()
         
+    @load
+    def values(self):
+        return self.data.values()
+        
 
 class resource_manager:
     entity_attributes = schema_resource("entity_attributes.json")
@@ -606,6 +610,66 @@ def api_resource(resource):
         'attributes': attributes
     });
       
+      
+@app.route(make_url('property/<prop>.htm'))
+def property(prop):
+    prop = "".join(c for c in prop if c.isalnum())
+    md = os.path.join(REPO_DIR, "docs", "properties", prop[0].lower(), prop + ".md")
+    try:
+        mdc = open(md, 'r', encoding='utf-8').read()
+    except:
+        mdc = ""
+
+    idx = ""
+    mdc = re.sub(DOC_ANNOTATION_PATTERN, '', mdc)
+
+    psets = [[pset] for pset, pdef in R.pset_definitions.items() if any(p['name'] == prop for p in pdef['properties'])]
+    
+    html = process_markdown(mdc)
+    
+    html += tabulate.tabulate(psets, headers=["Referenced in Property Sets"], tablefmt="html")
+
+    return render_template('entity.html', navigation=navigation_entries, content=html, number=idx, entity=prop, path=md[len(REPO_DIR)+1:].replace("\\", "/"))
+
+        
+def process_markdown(mdc, as_attribute=False):
+    html = markdown.markdown(
+        process_graphviz(resource, mdc),
+        extensions=['tables', 'fenced_code'])
+    
+    soup = BeautifulSoup(html)
+
+    # First h1 is handled by the template
+    try:
+        soup.find('h1').decompose()
+    except:
+        # only entities have H1?
+        pass
+        
+    if as_attribute:
+        return str(soup.text)
+
+    hs = []
+    # Renumber the headings
+    for i in list(range(7))[::-1]:
+        for h in soup.findAll('h%d' % i):
+            h.name = 'h%d' % (i + 2)
+            hs.append(h)
+        
+    # Change svg img references to embedded svg
+    # because otherwise URLS are not interactive
+    for img in soup.findAll("img"):
+        if img['src'].endswith('.svg'):
+            entity, hash = img['src'].split('/')[-1].split('.')[0].split('_')
+            svg = BeautifulSoup(open(os.path.join('svgs', entity + "_" + hash + '.dot.svg')))
+            img.replaceWith(svg.find('svg'))
+        else:
+            img['src'] = img['src'][9:]
+            
+    html = str(soup)
+    
+    return html
+    
 
 @app.route(make_url('lexical/<resource>.htm'))
 def resource(resource):
@@ -757,47 +821,19 @@ def resource(resource):
     
         def make_prop(prop):
             # @todo check for file existence
-            doc = [x for x in open(os.path.join(REPO_DIR, "docs/properties/%s/%s.md") % (prop['name'][0].lower(), prop['name'])).read().split("\n") if x][-1]
-            return [prop['name'], prop['type'], doc]
+            doc = process_markdown(open(os.path.join(REPO_DIR, "docs/properties/%s/%s.md") % (prop['name'][0].lower(), prop['name'])).read(), as_attribute=True)
+            return [prop['name'], prop['type'], prop['data'], doc + f"<a class='button' href='{make_url('property/'+prop['name'])}.htm' style='padding:0;margin:0 0.5em'><span class='icon-edit'></span></a>"]
         attrs = list(map(make_prop, R.pset_definitions[resource]['properties']))
-        attribute_table = tabulate.tabulate(attrs, headers=("Name", "Type", "Description"), tablefmt='unsafehtml')
+        attribute_table = tabulate.tabulate(attrs, headers=("Name", "Property Type", "Data Type", "Definition"), tablefmt='unsafehtml')
         mdc += "\n\nattribute_table\n\n"
 
-    html = markdown.markdown(
-        process_graphviz(resource, mdc),
-        extensions=['tables', 'fenced_code'])
-        
+    html = process_markdown(mdc)
+
     html = html.replace("attribute_table", attribute_table)
     
     for from_r, to_r in replacements:
         html = html.replace(from_r, to_r)
-    
-    soup = BeautifulSoup(html)
-
-    # First h1 is handled by the template
-    try:
-        soup.find('h1').decompose()
-    except:
-        # only entities have H1?
-        pass
-
-    hs = []
-    # Renumber the headings
-    for i in list(range(7))[::-1]:
-        for h in soup.findAll('h%d' % i):
-            h.name = 'h%d' % (i + 2)
-            hs.append(h)
         
-    # Change svg img references to embedded svg
-    # because otherwise URLS are not interactive
-    for img in soup.findAll("img"):
-        if img['src'].endswith('.svg'):
-            entity, hash = img['src'].split('/')[-1].split('.')[0].split('_')
-            svg = BeautifulSoup(open(os.path.join('svgs', entity + "_" + hash + '.dot.svg')))
-            img.replaceWith(svg.find('svg'))
-        else:
-            img['src'] = img['src'][9:]
-
     scs = R.changes_by_type.get(resource, {})
     change_log = ''
     
@@ -814,7 +850,6 @@ def resource(resource):
             change_log += tabulate.tabulate(cs, tablefmt='unsafehtml')
         change_log += "</div>"
 
-    html = str(soup)
     
     if R.entity_definitions.get(resource):
         html += "<h3>" + idx + ".%d Formal representations</h3>" % paragraph
@@ -826,7 +861,9 @@ def resource(resource):
 @app.route(make_url('listing'))
 def listing():
     items = [{'number': name_to_number()[n], 'url': url_for('resource', resource=n), 'title': n} for n in sorted(entity_names() + type_names())]
-    return render_template('list.html', navigation=navigation_entries, items=items)
+    psets = [{'number': name_to_number()[n], 'url': url_for('resource', resource=n), 'title': n} for n in sorted(R.pset_definitions.keys()) if n in name_to_number()]
+    props = [{'number': "", 'url': url_for('property', prop=n), 'title': n} for n in sorted(set([p['name'] for pdef in R.pset_definitions.values() for p in pdef['properties']]))]
+    return render_template('list.html', navigation=navigation_entries, items=items+psets+props)
 
     
 def make_concept(path, number_path=None):

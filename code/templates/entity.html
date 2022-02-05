@@ -36,7 +36,7 @@ fetch('https://api.github.com/repos/buildingSMART/IFC4.3.x-development/commits?p
 
 {{ preface | safe }}
 
-<h3>{{ number }}.1 Semantic definition</h3>
+<h3>{{ number }}{% if number %}.1{% endif %} Semantic definition</h3>
 
 {{ content | safe }}
 

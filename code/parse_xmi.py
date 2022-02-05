@@ -74,6 +74,36 @@ hierarchy = [
     ]),
 ]
 
+def format_TypePropertySingleValue(prop):
+    try:
+        return prop["_children"][0]["@type"]
+    except KeyError as e:
+        return ""
+
+def format_TypePropertyEnumeratedValue(prop):
+    name = prop['_children'][0].get('@name', '')
+    items = map(operator.itemgetter("#text"), prop["_children"][0]["_children"])
+    return f"{name}({', '.join(items)})"
+
+def format_TypePropertyTableValue(prop):
+    return "/".join((
+        child_by_tag(prop, "DefinedValue")["_children"][0]["@type"],
+        child_by_tag(prop, "DefiningValue")["_children"][0]["@type"]
+    ))
+
+def format_TypePropertyReferenceValue(prop):
+    return prop["@reftype"]
+
+def format_TypePropertyListValue(prop):
+    return prop["_children"][0]["_children"][0]["@type"]
+
+def format_TypeComplexProperty(prop):
+    return " ".join(map(lambda n: child_by_tag(n, "Name")["#text"], prop["_children"]))
+
+format_TypePropertyBoundedValue = format_TypePropertySingleValue
+
+
+
 supertype = {}
 subtypes = defaultdict(list)
 roots = []
@@ -147,14 +177,15 @@ for fn in glob.glob("./psd/*.xml"):
             try:
                 proptypenode = child_by_tag(prop, 'PropertyType')["_children"][0]
                 proptype = proptypenode["#tag"]
-                # proptypeargs = globals()[f"format_{proptype}"](proptypenode)
+                proptypeargs = globals()[f"format_{proptype}"](proptypenode)
                 proptypeifc = f"Ifc{proptype[4:]}"
             except IndexError as e:
                 proptypeifc = "INVALID"
             
             props.append({
                 'name': propname,
-                'type': proptypeifc
+                'type': proptypeifc,
+                'data': proptypeargs
             })
             
     if classes:

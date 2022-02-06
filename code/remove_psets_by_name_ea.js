@@ -40,7 +40,9 @@ function removePropertyAssociationsClasses(e, ty) {
         con = E.Connectors.GetAt(i);
         if (con.AssociationClass) {
             Session.Output(con.AssociationClass.Name);
-            if (packageByElementName[con.AssociationClass.Name].Name == "PropertySetsforObjects") {
+            if (packageByElementName[con.AssociationClass.Name].Name == "PropertySetsforObjects" ||
+                packageByElementName[con.AssociationClass.Name].Name == "QuantitySetsforObjects") 
+            {
                 deleteElement(con.AssociationClass);
                 E.Connectors.DeleteAt(i, false);
             }

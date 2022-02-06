@@ -46,14 +46,20 @@ def build_property_defs(xmi_doc, pset, node, by_name):
         return els[0]
     
     orders = [xmi_doc.try_get_order(x) for x in pset.children]
+    
+    if len(orders) != len(set(orders)):
+        print(pset.name)
+        names = [c.name for c in pset.children]
+        for x in sorted(zip(orders, names)):
+            print(*x)
    
-    for _, a, (nm, (ty_ty_arg)) in sorted(zip(orders, pset.children, pset.definition)):
+    for _, (a_name, a_markdown), (nm, (ty_ty_arg)) in sorted(zip(orders, [(c.name, c.markdown) for c in pset.children], pset.definition)):
     
         is_pset = pset.type == "CPROP" or pset.stereotype == "PSET"
         
         pd = ET.SubElement(node, "PropertyDef" if is_pset else 'QtoDef')
-        ET.SubElement(pd, 'Name').text = a.name
-        ET.SubElement(pd, 'Definition').text = a.markdown
+        ET.SubElement(pd, 'Name').text = a_name
+        ET.SubElement(pd, 'Definition').text = a_markdown
         pt = ET.SubElement(pd, 'PropertyType' if is_pset else 'QtoType')
         
         if is_pset:

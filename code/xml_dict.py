@@ -31,7 +31,7 @@ class xml_node:
         
         if self.text or self.children:
             if self.text:
-                print(f"{indent}  {self.text}", file=f)
+                print(f"{indent}  {self.text}", file=file)
             for c in self.children:
                 c.recursive_print(file=file, level=level+1)
                 pass

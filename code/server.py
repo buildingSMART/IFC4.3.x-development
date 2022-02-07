@@ -625,14 +625,14 @@ def property(prop):
 
     psets = [[pset] for pset, pdef in R.pset_definitions.items() if any(p['name'] == prop for p in pdef['properties'])]
     
-    html = process_markdown(mdc)
+    html = process_markdown(prop, mdc)
     
     html += tabulate.tabulate(psets, headers=["Referenced in Property Sets"], tablefmt="html")
 
     return render_template('entity.html', navigation=navigation_entries, content=html, number=idx, entity=prop, path=md[len(REPO_DIR)+1:].replace("\\", "/"))
 
         
-def process_markdown(mdc, as_attribute=False):
+def process_markdown(resource, mdc, as_attribute=False):
     html = markdown.markdown(
         process_graphviz(resource, mdc),
         extensions=['tables', 'fenced_code'])
@@ -822,7 +822,7 @@ def resource(resource):
         def make_prop(prop):
             # @todo check for file existence
             try:
-                doc = process_markdown(open(os.path.join(REPO_DIR, "docs/properties/%s/%s.md") % (prop['name'][0].lower(), prop['name'])).read(), as_attribute=True)
+                doc = process_markdown(resource, open(os.path.join(REPO_DIR, "docs/properties/%s/%s.md") % (prop['name'][0].lower(), prop['name'])).read(), as_attribute=True)
             except:
                 doc = "<i>missing property definition</i>"
             return [prop['name'], prop['type'], prop['data'], doc + f"<a class='button' href='{make_url('property/'+prop['name'])}.htm' style='padding:0;margin:0 0.5em'><span class='icon-edit'></span></a>"]
@@ -830,7 +830,7 @@ def resource(resource):
         attribute_table = tabulate.tabulate(attrs, headers=("Name", "Property Type", "Data Type", "Definition"), tablefmt='unsafehtml')
         mdc += "\n\nattribute_table\n\n"
 
-    html = process_markdown(mdc)
+    html = process_markdown(resource, mdc)
 
     html = html.replace("attribute_table", attribute_table)
     
@@ -1167,7 +1167,7 @@ def search():
             return re.sub(r'[^\w\s<>/]', '', s)
             
         def get_url(r):
-            if r.get('resourceType', 'resource') == 'resource':
+            if r.get('resourceType', ['resource']) == ['resource']:
                 return url_for('resource', resource=r['title'][0])
             else:
                 return url_for('property', prop=r['title'][0])

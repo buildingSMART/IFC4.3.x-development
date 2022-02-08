@@ -26,8 +26,10 @@ Taking something apart carefully so that it can be recycled or reused.
 Disposing or getting rid of something.
 
 ### EMERGENCY
+Tasks required when responding to an emergency situation. This may be applicable across all kinds of object in the model, for example spaces, zones, and systems may have emergency tasks in the case of a different emergency conditions.
 
 ### INSPECTION
+Tasks required to conduct an inspection of the object.
 
 ### INSTALLATION
 Installing something (equivalent to construction but more commonly used for engineering tasks).
@@ -36,15 +38,13 @@ Installing something (equivalent to construction but more commonly used for engi
 Transporation or delivery of something.
 
 ### MAINTENANCE
-Keeping something in good working order.
+Tasks required to keep an object it good working order.
 
 ### MOVE
 Moving things from one place to another.
 
 ### OPERATION
 A procedure undertaken to start up the operation an artifact.
-
-### MAINTENANCE
 
 ### REMOVAL
 Removal of an item from use and taking it from its place of use.
@@ -53,14 +53,19 @@ Removal of an item from use and taking it from its place of use.
 Bringing something to an 'as-new' state.
 
 ### SAFETY
+Tasks required to ensure safe use of the object. For example electrical ‘lock-out' instructions.
 
 ### SHUTDOWN
+The set of tasks required for an orderly shut down, typically applied to systems.
 
 ### STARTUP
+The set of tasks required to begin or restart operation, typically applied to systems.
 
 ### TESTING
+The set of tasks required to evaluate the performance of an object, typically applied to ElementTypes and Systems.
 
 ### TROUBLESHOOTING
+The set of tasks required to diagnose commonly encountered performance problems, typically applied to ElementTypes and Systems.
 
 ### USERDEFINED
 

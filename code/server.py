@@ -561,18 +561,20 @@ class resource_documentation_builder:
             md_ty_fn = get_resource_path(ty)
             md_ty = re.sub(DOC_ANNOTATION_PATTERN, '', open(md_ty_fn, encoding='utf-8').read())
             ty_attrs = list(mdp.markdown_attribute_parser(md_ty, heading))
-            for a, b in ty_attrs[::-1]:
-                # remove underscored words:
-                content = re.sub("_(\\w+?)_", lambda m: m.group(1), b.strip()) 
-                
-                if heading == "Attributes":
-                    # inline strings in the attribute table benefit from some additional spacing
-                    content = re.sub("\\n+", "<br><br>", content)                        
-                    is_fwd, attr_ty = R.entity_attributes.get(".".join((ty, a)), (False, "INVALID"))
+            if heading == "Attributes":        
+                ty_attr_di = dict(ty_attrs)
+                for a in [k.split(".")[1] for k in R.entity_attributes.keys() if k.startswith(f"{ty}.")]:
+                    b = ty_attr_di.get(a, '')
+                    is_fwd, attr_ty = R.entity_attributes[".".join((ty, a))]
+                    content = re.sub("_(\\w+?)_", lambda m: m.group(1), b.strip())
+                    content = re.sub("\\n+", "<br><br>", content)
                     attrs.append((ty, a, attr_ty, content))
                     if is_fwd:
                         fwd_attrs.append(a)
-                else:
+            else:                
+                for a, b in ty_attrs[::-1]:
+                    # remove underscored words:
+                    content = re.sub("_(\\w+?)_", lambda m: m.group(1), b.strip()) 
                     attrs.append((ty, a, content))
             ty = R.entity_supertype.get(ty)
             
@@ -707,7 +709,7 @@ def resource(resource):
             mdc = mdc[0:mdc.index("## Attributes")]
             mdc += '\n\n' + idx + '.%d Attributes\n===========\n\n' % paragraph
             paragraph += 1
-        
+            
         builder = resource_documentation_builder(resource)
         attrs = builder.attributes
         supertype_counts = Counter()

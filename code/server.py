@@ -564,7 +564,6 @@ class resource_documentation_builder:
             if heading == "Attributes":        
                 ty_attr_di = dict(ty_attrs)
                 for a in [k.split(".")[1] for k in R.entity_attributes.keys() if k.startswith(f"{ty}.")][::-1]:
-                    print(a)
                     b = ty_attr_di.get(a, '')
                     is_fwd, attr_ty = R.entity_attributes[".".join((ty, a))]
                     content = re.sub("_(\\w+?)_", lambda m: m.group(1), b.strip())

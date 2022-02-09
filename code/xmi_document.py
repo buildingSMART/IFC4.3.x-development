@@ -638,7 +638,7 @@ class xmi_document:
 
                     is_inverse = bool(self.xmi.tags['ExpressInverse'].get(end_node.id))
                     if is_inverse:
-                        inverse_order = int(self.xmi.tags['ExpressOrderingInverse'][end_node.id])
+                        inverse_order = int(self.xmi.tags['ExpressOrderingInverse'].get(end_node.id, 1e6))
                     
                     express_aggr = self.xmi.tags['ExpressAggregation'].get(end_node.id, "")
                     # It appears there is some inconsistency (IfcBSplineSurface.ControlPointList)

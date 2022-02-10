@@ -828,17 +828,42 @@ def resource(resource):
                 
             paragraph += 1
             
-    elif "PropertySets" in md:
+    elif resource in R.pset_definitions.keys():
     
         def make_prop(prop):
-            # @todo check for file existence
             try:
                 doc = process_markdown(resource, open(os.path.join(REPO_DIR, "docs/properties/%s/%s.md") % (prop['name'][0].lower(), prop['name'])).read(), as_attribute=True)
             except:
                 doc = "<i>missing property definition</i>"
-            return [prop['name'], prop['type'], prop['data'], doc + f"<a class='button' href='{make_url('property/'+prop['name'])}.htm' style='padding:0;margin:0 0.5em'><span class='icon-edit'></span></a>"]
+            
+            if R.pset_definitions[resource]['kind'] == 'quantity_set':
+                prop_type = []
+            else:
+                prop_type = [prop['type']]
+            
+            return [
+                prop['name'],
+                *prop_type,
+                prop['data'],
+                doc + f"<a class='button' href='{make_url('property/'+prop['name'])}.htm' style='padding:0;margin:0 0.5em'><span class='icon-edit'></span></a>"
+            ]
+        
+        mdc += "\n\n## Applicability\n\n"
+        for appl in R.pset_definitions[resource]['applicability']:
+            mdc += f" * {appl}\n"
+            
+        mdc += "\n\n## Properties\n\n"
+        
         attrs = list(map(make_prop, R.pset_definitions[resource]['properties']))
-        attribute_table = tabulate.tabulate(attrs, headers=("Name", "Property Type", "Data Type", "Definition"), tablefmt='unsafehtml')
+        
+        headers = ("Name", "Property Type", "Data Type", "Definition")
+        if R.pset_definitions[resource]['kind'] == 'quantity_set':
+            # Quantity sets elements are always a singular type, as opposed to
+            # property set items which are composed of a property type (single,
+            # bounded, ...) and a data type.
+            headers = (headers[0],) + headers[2:]
+        
+        attribute_table = tabulate.tabulate(attrs, headers=headers, tablefmt='unsafehtml')
         mdc += "\n\nattribute_table\n\n"
 
     html = process_markdown(resource, mdc)
@@ -1221,12 +1246,13 @@ def sandcastle():
     return render_template('sandcastle.html', base=base, html=html, md=md)
        
        
-ifcre = re.compile(r"(Ifc|Pset)\w+(?!(.ht|</a|</h|/|.md))")
+ifcre = re.compile(r"(Ifc|Pset_|Qto_)\w+(?!(.ht|</a|</h|/|.md))")
 
 @app.after_request
 def after(response):
-    
+
     if request.path.endswith('.htm') or request.path.endswith('.html'):
+
         d = response.data.decode('utf-8')
         
         def decorate_link(m):

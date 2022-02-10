@@ -172,6 +172,8 @@ for fn in glob.glob("./psd/*.xml"):
     }
 
     if xml['#tag'] == 'PropertySetDef':
+        definition['kind'] = 'property_set'
+    
         for prop in child_by_tag(xml, 'PropertyDefs').get("_children", []):
             propname = child_by_tag(prop, "Name")["#text"]
             try:
@@ -188,6 +190,20 @@ for fn in glob.glob("./psd/*.xml"):
                 'data': proptypeargs
             })
             
+    elif xml['#tag'] == 'QtoSetDef':
+        definition['kind'] = 'quantity_set'
+        
+        for prop in child_by_tag(xml, 'QtoDefs').get("_children", []):
+            propname = child_by_tag(prop, "Name")["#text"]
+            proptype = child_by_tag(prop, "QtoType")["#text"]
+            proptype = proptype[2].upper() + proptype[3:].lower()
+            proptype = f"IfcQuantity{proptype}"
+            
+            props.append({
+                'name': propname,
+                'data': proptype
+            })
+    
     if classes:
         cls = classes[0].split("/")[0]
         try:

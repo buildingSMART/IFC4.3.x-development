@@ -115,7 +115,9 @@ def get_resource_path(resource, abort_on_error=True):
             return abort(404)
         else:
             return None
-    return os.path.join(REPO_DIR, "docs/schemas", *v, resource + ".md").replace("Property Sets", "PropertySets")
+    return os.path.join(REPO_DIR, "docs/schemas", *v, resource + ".md")\
+        .replace("Property Sets", "PropertySets")\
+        .replace("Quantity Sets", "QuantitySets")
 
 navigation_entries = [
     ("Cover", "Contents", "Foreword", "Introduction"),
@@ -207,14 +209,13 @@ def chapter_lookup(number=None, cat=None):
 
 entity_names = lambda: sorted(sum([schema.get('Entities', []) for _, cat in R.hierarchy for __, schema in cat], []))
 type_names = lambda: sorted(sum([schema.get('Types', []) for _, cat in R.hierarchy for __, schema in cat], []))
-pset_names = lambda: sorted(sum([schema.get('Property Sets', []) for _, cat in R.hierarchy for __, schema in cat], []))
 
 def name_to_number():
     ntn = {}
 
     for i, (cat, schemas) in enumerate(R.hierarchy, start=5):
         for j, (schema_name, members) in enumerate(schemas, start=1):
-            for k, ke in enumerate(["Types", "Entities", "Property Sets"], start=2):
+            for k, ke in enumerate(["Types", "Entities", "Property Sets", "Quantity Sets"], start=2):
                 for l, name in enumerate(members.get(ke, ()), start=1):
                     ntn[name] = ".".join(map(str, (i,j,k,l)))
     
@@ -634,7 +635,7 @@ def property(prop):
     
     html = process_markdown(prop, mdc)
     
-    html += tabulate.tabulate(psets, headers=["Referenced in Property Sets"], tablefmt="html")
+    html += tabulate.tabulate(psets, headers=["Referenced in"], tablefmt="html")
 
     return render_template('entity.html', base=base, navigation=navigation_entries, content=html, number=idx, entity=prop, path=md[len(REPO_DIR)+1:].replace("\\", "/"))
 
@@ -1184,7 +1185,7 @@ def schema(name):
     else:
         html = ''
         
-    order = ["Types", "Entities", "Property Sets"]
+    order = ["Types", "Entities", "Property Sets", "Quantity Sets"]
     subs2 = [toc_entry(o, number=f"{n}.{ii}", children=[toc_entry(c, number=f"{n}.{ii}.{jj}", url=url_for('resource', resource=c)) for jj, c in enumerate(subs.get(o, []), 1)]) for ii, o in enumerate(order,2)]
 
     return render_template('chapter.html', base=base, navigation=navigation_entries, content=html, path=fn[len(REPO_DIR):].replace("\\", "/"), title=t, number=n, subs=subs2)

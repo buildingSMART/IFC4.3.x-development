@@ -172,7 +172,7 @@ for fn in glob.glob("./psd/*.xml"):
     }
 
     if xml['#tag'] == 'PropertySetDef':
-        definition['kind'] = 'property_set'
+        heading = 'Property Sets'
     
         for prop in child_by_tag(xml, 'PropertyDefs').get("_children", []):
             propname = child_by_tag(prop, "Name")["#text"]
@@ -191,7 +191,7 @@ for fn in glob.glob("./psd/*.xml"):
             })
             
     elif xml['#tag'] == 'QtoSetDef':
-        definition['kind'] = 'quantity_set'
+        heading = 'Quantity Sets'
         
         for prop in child_by_tag(xml, 'QtoDefs').get("_children", []):
             propname = child_by_tag(prop, "Name")["#text"]
@@ -203,11 +203,16 @@ for fn in glob.glob("./psd/*.xml"):
                 'name': propname,
                 'data': proptype
             })
+            
+    else:
+        raise ValueError(xml['#tag'])
     
+    definition['kind'] = heading.lower().replace(" ", "_")[:-1]
+
     if classes:
         cls = classes[0].split("/")[0]
         try:
-            resource_to_package[cls]['Property Sets'].append(psetname)
+            resource_to_package[cls][heading].append(psetname)
         except KeyError as e:
             pass
             

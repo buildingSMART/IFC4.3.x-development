@@ -1,7 +1,7 @@
 IFC 4.3 Documentation server
 ============================
 
-##### Introduction
+# Introduction
 
 This folder contains the server to facilitate  a workflow for collaborative editing of the IFC Documentation. 
 The Markdown documents are taken from https://github.com/buildingSMART/IFC4.3.x-development/tree/master/docs
@@ -16,7 +16,7 @@ The Markdown documents are taken from https://github.com/buildingSMART/IFC4.3.x-
 Fully functional and consistent HTML documentation is automatically generated from the Markdown files.  
 The full generated documentation can be accessed at http://ifc43-docs.standards.buildingsmart.org/
 
-#### Diagrams
+# Diagrams
 
 One novel feature of this documentation system is the ability to directly edit
 illustrative  schema diagrams using a text-based notation. For this purpose Graphviz is used. 
@@ -29,7 +29,9 @@ the IfcProject node on the HTML diagram, whose link pointing to Building Smart w
 The interactive SVG diagram can be seen on the generated HTML page here
 http://ifc43-docs.standards.buildingsmart.org/IFC/RELEASE/IFC4x3/HTML/lexical/IfcWorkPlan.htm
 
-#### Dependencies
+# Dependencies
+
+See `Dockerfile` for more detailed dependencies.
 
 * Flask, gunicorn: http server and API
 * Graphviz, pydot: diagram layout
@@ -38,3 +40,13 @@ http://ifc43-docs.standards.buildingsmart.org/IFC/RELEASE/IFC4x3/HTML/lexical/If
 * Docker: container
 * Python-Markdown: document conversion
 * Beautifulsoup4: HTML document post processing
+
+# Development
+
+You can deploy a container running a documentation server using `Dockerfile`.
+However, for local development, assuming you have the dependencies, you can do:
+
+```
+$ ./create_resources.sh
+$ FLASK_APP=server.py FLASK_ENV=development flask run
+```

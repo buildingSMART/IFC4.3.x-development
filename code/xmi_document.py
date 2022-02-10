@@ -323,7 +323,7 @@ class xmi_document:
                     # Concept parametrizations uses n-ary associations, so do not
                     # emit warnings for those.
                     if "Views" not in get_path(assoc):
-                        logging.warning("Expeced two associations ends on %s", assoc)
+                        logging.warning("Expected two associations ends on %s", assoc)
                     continue
                 
                 c1, c2 = ends

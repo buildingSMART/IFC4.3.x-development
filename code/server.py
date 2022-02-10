@@ -538,6 +538,11 @@ def get_figure(fig):
     return send_from_directory(os.path.join(REPO_DIR, 'docs/figures'), fig)
 
 
+@app.route(make_url('img/<img>'))
+def get_img(img):
+    return send_from_directory(os.path.join(REPO_DIR, 'docs/img'), img)
+
+
 DOC_ANNOTATION_PATTERN = re.compile(r'\{\s*\..+?\}')
     
 class resource_documentation_builder:
@@ -631,7 +636,7 @@ def property(prop):
     
     html += tabulate.tabulate(psets, headers=["Referenced in Property Sets"], tablefmt="html")
 
-    return render_template('entity.html', navigation=navigation_entries, content=html, number=idx, entity=prop, path=md[len(REPO_DIR)+1:].replace("\\", "/"))
+    return render_template('entity.html', base=base, navigation=navigation_entries, content=html, number=idx, entity=prop, path=md[len(REPO_DIR)+1:].replace("\\", "/"))
 
         
 def process_markdown(resource, mdc, as_attribute=False):
@@ -865,14 +870,14 @@ def resource(resource):
         html += "<pre>" + R.entity_definitions.get(resource) + "</pre>"
         paragraph += 1
             
-    return render_template('entity.html', navigation=navigation_entries, content=html, number=idx, entity=resource, path=md[len(REPO_DIR):].replace("\\", "/"), preface=change_log)
+    return render_template('entity.html', base=base, navigation=navigation_entries, content=html, number=idx, entity=resource, path=md[len(REPO_DIR):].replace("\\", "/"), preface=change_log)
 
 @app.route(make_url('listing'))
 def listing():
     items = [{'number': name_to_number()[n], 'url': url_for('resource', resource=n), 'title': n} for n in sorted(entity_names() + type_names())]
     psets = [{'number': name_to_number()[n], 'url': url_for('resource', resource=n), 'title': n} for n in sorted(R.pset_definitions.keys()) if n in name_to_number()]
     props = [{'number': "", 'url': url_for('property', prop=n), 'title': n} for n in sorted(set([p['name'] for pdef in R.pset_definitions.values() for p in pdef['properties']]))]
-    return render_template('list.html', navigation=navigation_entries, items=items+psets+props)
+    return render_template('list.html', base=base, navigation=navigation_entries, items=items+psets+props)
 
     
 def make_concept(path, number_path=None):
@@ -950,7 +955,7 @@ def concept(s=''):
         
     subs = make_concept(s.split("/")).children
 
-    return render_template('chapter.html', navigation=navigation_entries, content=html, path=fn[len(REPO_DIR):].replace("\\", "/"), title=t, number=n, subs=subs)
+    return render_template('chapter.html', base=base, navigation=navigation_entries, content=html, path=fn[len(REPO_DIR):].replace("\\", "/"), title=t, number=n, subs=subs)
 
     
 @app.route(make_url('chapter-<n>/'))
@@ -982,7 +987,7 @@ def chapter(n):
     
     subs = list(map(get_entry, enumerate(map(operator.itemgetter(0), subs), 1)))
     
-    return render_template('chapter.html', navigation=navigation_entries, content=html, path=fn[len(REPO_DIR):].replace("\\", "/"), title=t, number=n, subs=subs)
+    return render_template('chapter.html', base=base, navigation=navigation_entries, content=html, path=fn[len(REPO_DIR):].replace("\\", "/"), title=t, number=n, subs=subs)
     
 
 @app.route('/')
@@ -1008,7 +1013,7 @@ def content(s='cover'):
             abort(404)
     
     html = markdown.markdown(open(fn).read())
-    return render_template('chapter.html', navigation=navigation_entries, content=html, path=fn[len(REPO_DIR):].replace("\\", "/"), title=title, number=number, subs=[])
+    return render_template('chapter.html', base=base, navigation=navigation_entries, content=html, path=fn[len(REPO_DIR):].replace("\\", "/"), title=title, number=number, subs=[])
 
     
 @app.route(make_url('annex-a.html'))
@@ -1020,7 +1025,7 @@ def annex_a():
         "<p>Official schema publications for this release are at the following URLs:</p>" + \
         (tabulate.tabulate([["IFC EXPRESS long form schema", '%s']], headers=["Format", "URL"], tablefmt='html') % \
             ("<a href='%(url)s'>%(url)s</a>" % locals()))
-    return render_template('chapter.html', navigation=navigation_entries, content=html, path=None, title="Annex A", number="", subs=[])
+    return render_template('chapter.html', base=base, navigation=navigation_entries, content=html, path=None, title="Annex A", number="", subs=[])
     
 
 def annotate_hierarchy(data = None, start = 1, number_path = None):
@@ -1065,7 +1070,7 @@ def annotate_hierarchy(data = None, start = 1, number_path = None):
 @app.route(make_url('toc.html'))
 def toc():
     subs = [toc_entry(x['title'], number=i, url=x['url']) for i, x in enumerate(navigation_entries[1], 1)] + annotate_hierarchy(start=5)
-    return render_template('chapter.html', navigation=navigation_entries, content='', path=None, title="Contents", number="", subs=subs, toc=True)
+    return render_template('chapter.html', base=base, navigation=navigation_entries, content='', path=None, title="Contents", number="", subs=subs, toc=True)
 
 
 @app.route(make_url('annex-c.html'))
@@ -1081,18 +1086,18 @@ def annex_c():
     
     html += "<table style='width:fit-content'>" +  "".join(map(transform, open("inheritance_listing.txt"))) + "</table>"
         
-    return render_template('chapter.html', navigation=navigation_entries, content=html, path=None, title="Annex C", number="", subs=[])
+    return render_template('chapter.html', base=base, navigation=navigation_entries, content=html, path=None, title="Annex C", number="", subs=[])
     
 @app.route(make_url('annex-d.html'))
 def annex_d():
     subs = map(os.path.basename, glob.glob(os.path.join(REPO_DIR, "output/IFC.xml/*.png")))
     subs = [toc_entry(s[:-4], url=url_for('annex_d_diagram_page', s=s[:-4]), number="D-%d" % i) for i, s in enumerate(sorted(subs), start=1)]
-    return render_template('chapter.html', navigation=navigation_entries, content='<h2>Diagrams</h2>', path=None, title="Annex D", number="", subs=subs)
+    return render_template('chapter.html', base=base, navigation=navigation_entries, content='<h2>Diagrams</h2>', path=None, title="Annex D", number="", subs=subs)
     
 @app.route(make_url('annex_d/<s>.html'))
 def annex_d_diagram_page(s):
     img = "<h2>" + s + " diagram</h2><img style='max-width: none' src='"+s+".png'/>"
-    return render_template('chapter.html', navigation=navigation_entries, content=img, path=None, title="Annex D", number="", subs=[])
+    return render_template('chapter.html', base=base, navigation=navigation_entries, content=img, path=None, title="Annex D", number="", subs=[])
 
 @app.route(make_url('annex_d/<s>.png'))
 def annex_d_diagram(s):
@@ -1103,7 +1108,7 @@ def annex_d_diagram(s):
 def annex_e():
     subs = map(os.path.basename, filter(os.path.isdir, glob.glob(os.path.join(REPO_DIR, "../examples/IFC 4.3/*"))))
     subs = sorted(toc_entry(s, url=url_for('annex_e_example_page', s=s)) for s in subs)
-    return render_template('chapter.html', navigation=navigation_entries, content='<h2>Examples</h2>', path=None, title="Annex E", number="", subs=subs)
+    return render_template('chapter.html', base=base, navigation=navigation_entries, content='<h2>Examples</h2>', path=None, title="Annex E", number="", subs=subs)
 
     
 @app.route(make_url('annex-f.html'))
@@ -1113,7 +1118,7 @@ def annex_f():
         pairs = [('<h3>%s</h3>' % s, '<div>%s</div>' % tabulate.tabulate(cs, tablefmt='unsafehtml')) for s, cs in li]
         flat = sum(pairs, ())
         content = "".join(('<h2>Change logs</h2>',) + flat)
-    return render_template('chapter.html', navigation=navigation_entries, content=content, path=None, title="Annex F", number="")
+    return render_template('chapter.html', base=base, navigation=navigation_entries, content=content, path=None, title="Annex F", number="")
     
     
 @app.route(make_url('annex_e/<s>.html'))
@@ -1129,7 +1134,7 @@ def annex_e_example_page(s):
     html += "<pre>" + code + "</pre>"
     path_repo = 'buildingSMART/Sample-Test-Files'
     path = fn[15:]
-    return render_template('chapter.html', navigation=navigation_entries, content=html, path=path, title="Annex E", number="", subs=[], repo=path_repo)
+    return render_template('chapter.html', base=base, navigation=navigation_entries, content=html, path=path, title="Annex E", number="", subs=[], repo=path_repo)
 
 @app.route(make_url('<name>/content.html'))
 def schema(name):
@@ -1157,7 +1162,7 @@ def schema(name):
     order = ["Types", "Entities", "Property Sets"]
     subs2 = [toc_entry(o, number=f"{n}.{ii}", children=[toc_entry(c, number=f"{n}.{ii}.{jj}", url=url_for('resource', resource=c)) for jj, c in enumerate(subs.get(o, []), 1)]) for ii, o in enumerate(order,2)]
 
-    return render_template('chapter.html', navigation=navigation_entries, content=html, path=fn[len(REPO_DIR):].replace("\\", "/"), title=t, number=n, subs=subs2)
+    return render_template('chapter.html', base=base, navigation=navigation_entries, content=html, path=fn[len(REPO_DIR):].replace("\\", "/"), title=t, number=n, subs=subs2)
 
 @app.route('/search', methods=['GET', 'POST'])
 def search():
@@ -1184,7 +1189,7 @@ def search():
             'title': r['title'][0]
         } for r in list(results)[0:10]]
         
-    return render_template('search.html', navigation=navigation_entries, matches=matches, query=query)
+    return render_template('search.html', base=base, navigation=navigation_entries, matches=matches, query=query)
 
 
 @app.route('/sandcastle', methods=['GET', 'POST'])
@@ -1213,7 +1218,7 @@ def sandcastle():
                 
         html = str(soup)
     
-    return render_template('sandcastle.html', html=html, md=md)
+    return render_template('sandcastle.html', base=base, html=html, md=md)
        
        
 ifcre = re.compile(r"(Ifc|Pset)\w+(?!(.ht|</a|</h|/|.md))")

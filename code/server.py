@@ -571,7 +571,7 @@ class resource_documentation_builder:
                 for a in [k.split(".")[1] for k in R.entity_attributes.keys() if k.startswith(f"{ty}.")][::-1]:
                     b = ty_attr_di.get(a, '')
                     is_fwd, attr_ty = R.entity_attributes[".".join((ty, a))]
-                    content = re.sub("_(\\w+?)_", lambda m: m.group(1), b.strip())
+                    content = re.sub("\\b_(\\w+?)_\\b", lambda m: m.group(1), b.strip())
                     content = re.sub("\\n+", "<br><br>", content)
                     attrs.append((ty, a, attr_ty, content))
                     if is_fwd:
@@ -579,7 +579,7 @@ class resource_documentation_builder:
             else:                
                 for a, b in ty_attrs[::-1]:
                     # remove underscored words:
-                    content = re.sub("_(\\w+?)_", lambda m: m.group(1), b.strip()) 
+                    content = re.sub("\\b_(\\w+?)_\\b", lambda m: m.group(1), b.strip())
                     attrs.append((ty, a, content))
             ty = R.entity_supertype.get(ty)
             

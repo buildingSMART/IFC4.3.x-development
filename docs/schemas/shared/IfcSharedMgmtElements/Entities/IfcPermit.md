@@ -51,7 +51,7 @@ Figure 312 illustrates assignment relationships as indicated:
 * IfcActor: Organization(s) bound to the permit, typically a single contractor.
 
 
-![Assignment Use Definition](../../../../figuresifcpermit-assignment.png)
+![Assignment Use Definition](../../../../figures/ifcpermit-assignment.png)
 Figure 312 — Permit assignment
 
 

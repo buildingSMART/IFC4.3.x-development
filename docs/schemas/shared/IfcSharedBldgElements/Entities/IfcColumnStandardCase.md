@@ -69,7 +69,7 @@ RepresentationType : 'SweptSolid':
  
 
 
-![Axis](../../../../figuresifccolumnstandardcase_axis-01.png)
+![Axis](../../../../figures/ifccolumnstandardcase_axis-01.png)
 
 > EXAMPLE  As shown in Figure 221, the axis shall be defined along the z axis of
 > the object coordinate system. The axis representation can be used to
@@ -85,7 +85,7 @@ Figure 221 — Column axis representation
 
 
 
-![Axis](../../../../figuresifccolumnstandardcase_axis-02.png)
+![Axis](../../../../figures/ifccolumnstandardcase_axis-02.png)
 
 > EXAMPLE  As shown in Figure 222, the axis representation shall be used to represent the cardinal point as the offset between the 'Axis' and the extrusion path of the column. The extrusion path is provided as IfcExtrudedAreaSolid.ExtrudedDirection and should be parallel to the 'Axis'. It has to be guaranteed that the value provided by IfcMaterialProfileSetUsage.CardinalPoint is consistent to the IfcExtrudedAreaSolid.Position.
 
@@ -142,7 +142,7 @@ Figure 223 illustrates a 'Clipping' geometric representation with use of IfcBool
 an IfcExtrudedAreaSolid and an IfcHalfSpaceSolid to create a clipped body, with cardinal point applied as 2 (bottom centre).
 
 
-![clipped column](../../../../figuresifccolumnstandardcase_clipping-01.png)
+![clipped column](../../../../figures/ifccolumnstandardcase_clipping-01.png)
 Figure 223 — Column body clipping
 
 
@@ -187,7 +187,7 @@ The following interpretation of dimension parameter applies for circular columns
 * IfcCircleProfileDef.Radius interpreted as column radius.
 
 
-![standard column](../../../../figuresifccolumnstandardcase_sweptsolid-01.png)
+![standard column](../../../../figures/ifccolumnstandardcase_sweptsolid-01.png)
 Figure 222 — Column body extrusion
 
 
@@ -208,7 +208,7 @@ IfcMaterialProfileSetUsage.
 Figure 219 illustrates assignment of IfcMaterialProfileSetUsage and IfcMaterialProfileSet to the IfcColumnStandardCase as the column occurrence and to the IfcColumnType. The same IfcMaterialProfileSet shall be shared by many occurrences of IfcMaterialProfileSetUsage. This relationship shall be consistent to the relationship between the IfcColumnType and the IfcColumnStandardCase.
 
 
-![Material profile set and usage](../../../../figuresifccolumnstandardcase-01.png)
+![Material profile set and usage](../../../../figures/ifccolumnstandardcase-01.png)
 Figure 219 — Column profile usage
 
 
@@ -225,14 +225,14 @@ Figure 220 illustrates cardinal point alignment.
 > definition at IfcCardinalPointReference
 
 
-![Cardinal point usage](../../../../figuresifccolumnstandardcase_cardinalpoint.png)
+![Cardinal point usage](../../../../figures/ifccolumnstandardcase_cardinalpoint.png)
 Figure 220 — Column cardinal points
 
 
 Figure 221 illustrates assignment of a composite profile by using IfcCompositeProfile for geometric representation and several IfcMaterialProfile's within the IfcMaterialProfileSet. The number of IfcMaterialProfile's within the IfcMaterialProfileSet is restricted to maximal 2 and requires the use of IfcExtrudedAreaSolidTapered, or IfcRevolvedAreaSolidTapered for the correct 'Body' shape representation.
 
 
-![Material profile set and usage](../../../../figuresifccolumnstandardcase-02.png)
+![Material profile set and usage](../../../../figures/ifccolumnstandardcase-02.png)
 Figure 221 — Column composite profiles
 
 

@@ -103,7 +103,7 @@ directions
 Definitions
 Reference to other
 standards
-![fig 1](../../../../figuresifcdoor-fig01.gif)
+![fig 1](../../../../figures/ifcdoor-fig01.gif)
 The door panel (for swinging doors) opens
 always into the direction of the positive Y axis of the local
 placement. The determination of whether the door opens to the left
@@ -116,7 +116,7 @@ refered to as LEFT HAND (LH) in US *
   
 
 refered to as DIN-R (right hung) in Germany
-![fig 2](../../../../figuresifcdoor-fig02.gif)
+![fig 2](../../../../figures/ifcdoor-fig02.gif)
 If the door should open to the other side,
 then the local placement has to be changed. It is still a left side 
 opening door, given by IfcDoorType.OperationType =
@@ -127,7 +127,7 @@ US *
   
 
 refered to as DIN-R (right hung) in Germany
-![fig 3](../../../../figuresifcdoor-fig03.gif)
+![fig 3](../../../../figures/ifcdoor-fig03.gif)
 If the door panel (for swinging doors)
 opens to the right, a separate door style needs to be used (here
 IfcDoorTypee.OperationType = SingleSwingRight) and it always 
@@ -138,7 +138,7 @@ refered to as RIGHT HAND (RH) in US *
   
 
 refered to as DIN-L (left hung) in Germany
-![fig 4](../../../../figuresifcdoor-fig04.gif)
+![fig 4](../../../../figures/ifcdoor-fig04.gif)
 If the door panel (for swinging doors)
 opens to the right, and into the opposite directions, the local
 placement of the door need to change. The door style is given by
@@ -242,7 +242,7 @@ IfcCartesianPoint's shall be 0.).
  
 
 
-![standard door](../../../../figuresifcdoorstandardcase-01.png)
+![standard door](../../../../figures/ifcdoorstandardcase-01.png)
 
 > EXAMPLE  Figure 229 illustrates applying the door lining parameters to the
 > door profile shape representation. The profile defines the outer
@@ -298,7 +298,7 @@ may participate alternatively in one of the two different containment relationsh
 The IfcDoor may also be connected to the IfcOpeningElement in which it is placed as a filler. In this case, the spatial containment relationship shall be provided, see Figure 230.
 
 
-![Containment](../../../../figuresifcdoor_containment-01.png)
+![Containment](../../../../figures/ifcdoor_containment-01.png)
 
 > NOTE  The containment shall be
 > defined independently of the filling relationship, that is, even if

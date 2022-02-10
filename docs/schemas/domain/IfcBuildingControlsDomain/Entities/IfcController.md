@@ -29,7 +29,7 @@ Either there is no controller type object associated, i.e. the _IsTypedBy_ inver
 Figure 328 illustrates controller composition use.
 
 
-![Composition Use Definition](../../../../figuresifccontroller-composition.png)Figure 328 — Controller composition use
+![Composition Use Definition](../../../../figures/ifccontroller-composition.png)Figure 328 — Controller composition use
 
 
 

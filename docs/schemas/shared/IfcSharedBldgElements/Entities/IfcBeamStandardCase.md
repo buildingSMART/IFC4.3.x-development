@@ -55,7 +55,7 @@ RepresentationType : 'SweptSolid':
  
 
 
-![Axis](../../../../figuresifcbeamstandardcase_axis-01.png)
+![Axis](../../../../figures/ifcbeamstandardcase_axis-01.png)
 
 > EXAMPLE  As shown in Figure 76, the axis shall be defined along the z axis of the object coordinate system. The axis representation can be used to represent the system length of a beam that may extent the body length of the beam.
 
@@ -66,7 +66,7 @@ Figure 206 — Beam axis representation
 
 
 
-![Axis](../../../../figuresifcbeamstandardcase_axis-02.png)
+![Axis](../../../../figures/ifcbeamstandardcase_axis-02.png)
 
 > EXAMPLE  As shown in Figure 77, the axis representation shall be used to represent the cardinal point as the offset between the 'Axis' and the extrusion path of the beam. The extrusion path is provided as IfcExtrudedAreaSolid.ExtrudedDirection and should be parallel to the 'Axis' and the z axis. It has to be guaranteed that the value provided by
 > IfcMaterialProfileSetUsage.CardinalPoint is consistent to the IfcExtrudedAreaSolid.Position.
@@ -125,7 +125,7 @@ IfcHalfSpaceSolid (or its subtypes).
 Figure 208 illustrates a 'Clipping' geometric representation with use of IfcBooleanClippingResult between an IfcExtrudedAreaSolid and an IfcHalfSpaceSolid to create a clipped body, with cardinal point applied as 4 (mid-depth left)
 
 
-![clipped beam](../../../../figuresifcbeamstandardcase_clipping-01.png)
+![clipped beam](../../../../figures/ifcbeamstandardcase_clipping-01.png)
 Figure 208 — Beam body clipping
 
 
@@ -173,7 +173,7 @@ The following interpretation of dimension parameter applies for circular beams:
 * IfcCircleProfileDef.Radius interpreted as beam radius.
 
 
-![standard beam](../../../../figuresifcbeamstandardcase_sweptsolid-01.png)
+![standard beam](../../../../figures/ifcbeamstandardcase_sweptsolid-01.png)
 Figure 207 — Beam body extrusion
 
 
@@ -187,7 +187,7 @@ IfcMaterialProfileSetUsage that is assigned to all
 occurrences of this IfcBeamType.
 
 
-![Material profile set and usage](../../../../figuresifcbeamstandardcase-01.png)
+![Material profile set and usage](../../../../figures/ifcbeamstandardcase-01.png)
 
 > EXAMPLE  Figure 204 illustrates assignment of IfcMaterialProfileSetUsage and IfcMaterialProfileSet to the IfcBeamStandardCase as the beam occurrence and to the IfcBeamType. The same IfcMaterialProfileSet shall be shared by many occurrences of IfcMaterialProfileSetUsage. This relationship shall be consistent to the relationship between the IfcBeamType and the IfcBeamStandardCase.
 
@@ -200,7 +200,7 @@ Figure 204 — Beam profile usage
 
 
 
-![Cardinal point usage](../../../../figuresifcbeamstandardcase_cardinalpoint.png)
+![Cardinal point usage](../../../../figures/ifcbeamstandardcase_cardinalpoint.png)
 
 > EXAMPLE  Figure 205 illustrates alignment of cardinal points.
 
@@ -221,7 +221,7 @@ Figure 205 — Beam cardinal points
 
 
 
-![Material profile set and usage](../../../../figuresifcbeamstandardcase-02.png)
+![Material profile set and usage](../../../../figures/ifcbeamstandardcase-02.png)
 
 > EXAMPLE  Figure 206 illustrates assignment of a composite profile by using IfcCompositeProfile for geometric representation and several IfcMaterialProfile's within the IfcMaterialProfileSet.
 

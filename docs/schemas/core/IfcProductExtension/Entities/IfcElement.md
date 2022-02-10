@@ -93,7 +93,7 @@ shape.
  
 
 
-![Brep representation](../../../../figuresifcbuildingelement-brep-layout1.gif)
+![Brep representation](../../../../figures/ifcbuildingelement-brep-layout1.gif)
 
 > EXAMPLE  As shown in Figure 150, the Brep representation is given by an
 >  IfcShapeRepresentation, which includes one or more 
@@ -133,7 +133,7 @@ based surface models. It may also include tessellated models.
  
 
 
-![surface model](../../../../figuresifcbuildingelement-surfacemodel-layout1.gif)
+![surface model](../../../../figures/ifcbuildingelement-surfacemodel-layout1.gif)
 
 > EXAMPLE  As shown in Figure 149, the surface model representation is given 
 > by an IfcShapeRepresentation, which includes a single item which is either an IfcShellBasedSurfaceModel, or an IfcFaceBasedSurfaceModel. In some cases it may also be useful to expose a simple 
@@ -166,7 +166,7 @@ triangulated surface models.
 ### Box Geometry
 
 
-![bounding box](../../../../figuresifcbuildingelement-boundingbox-layout1.gif)
+![bounding box](../../../../figures/ifcbuildingelement-boundingbox-layout1.gif)
 
 > EXAMPLE  Any IfcElement may be represented by a bounding box, which shows the maximum extend of the body within the object coordinate system established by the IfcObjectPlacement. As shown in Figure 148, the bounding box representation is given by an IfcShapeRepresentation that includes a single item, an IfcBoundingBox.
 

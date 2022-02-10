@@ -65,7 +65,7 @@ Figure 273 illustrates the axis representation which has the following constrain
 * In case of a curved flight or a spiral flight the curve shall be a single item of type IfcTrimmedCurve.
 
 
-![walking line](../../../../figuresifcstairflight_01-layout1.gif)
+![walking line](../../../../figures/ifcstairflight_01-layout1.gif)
 Figure 273 — Stair flight axis
 
 
@@ -75,7 +75,7 @@ Figure 273 — Stair flight axis
 Figure 275 illustrates the 'Body' geometric representation using a 'SweptSolid' representation type.
 
 
-![3D](../../../../figuresifcstairflight_03-layout1.gif)
+![3D](../../../../figures/ifcstairflight_03-layout1.gif)
 Figure 275 — Stair flight body
 
 
@@ -94,7 +94,7 @@ Figure 274 illustrates the footprint representation which has the following cons
 * In case of a spiral flight the curve set shall consists of a single item of type IfcConic or IfcPolyline.
 
 
-![boundary](../../../../figuresifcstairflight_02-layout1.gif)
+![boundary](../../../../figures/ifcstairflight_02-layout1.gif)
 Figure 274 — Stair flight footprint
 
 

@@ -73,7 +73,7 @@ opening width
 opening height
 
 
-![standard opening](../../../../figuresifcopeningstandardcase_wall-layout1.png)
+![standard opening](../../../../figures/ifcopeningstandardcase_wall-layout1.png)
 Figure 161 — Opening standard representation
 
 

@@ -62,7 +62,7 @@ IfcRelAssignsToControl is also used in the opposite direction to link the root I
 Figure 311 illustrates cost item assignment derived from building elements. The IfcRelAssignsToControl relationship indicates building elements for which quantities are derived. Not shown, costs may also be derived from building elements by traversing assignment relationships from the assigned IfcProduct to IfcProcess to IfcResource, where all costs ultimately originate at resources. It is also possible for cost items to have assignments from processes or resources directly.
 
 
-![cost item](../../../../figuresifccostitem-assignment.png)
+![cost item](../../../../figures/ifccostitem-assignment.png)
 Figure 311 — Cost assignment
 
 
@@ -78,7 +78,7 @@ There is always a summary cost item as the root item of the tree representing th
 Figure 310 illustrates a cost item composition used for a cost schedule. Each line item has a quantity and separate unit costs where IfcCostValue.CostType indicates the category of cost. The summary item has a hierarchy of costs calculated according to IfcAppliedValueRelationship.ArithmeticOperator, where IfcCostValue.CostType identifies the category to be totalled. The Tax component has IfcCostValue.CostType set to 'Material' which indicates it is the sum of all nested values of the 'Material' category ($3 x 3000 + $118 x 100 = $20800). The Subtotal component has IfcCostValue.CostType set to an asterisk ('*') which indicates it is the sum of all nested values of all categories.
 
 
-![cost item](../../../../figuresifccostitem-composition.png)
+![cost item](../../../../figures/ifccostitem-composition.png)
 Figure 310 — Cost composition
 
 

@@ -147,7 +147,7 @@ IfcTask may be contained within an IfcTask
  
 
 
-![task example](../../../../figuresifctask_example.png)
+![task example](../../../../figures/ifctask_example.png)
 Figure 139 — Task visualization
 
 
@@ -173,7 +173,7 @@ The task order information that is used for viewing
  
 
 
-![task instantiation diagram](../../../../figuresifctask_instantiation_diagram.png)
+![task instantiation diagram](../../../../figures/ifctask_instantiation_diagram.png)
 Figure 140 — Task nesting relationships
 
 

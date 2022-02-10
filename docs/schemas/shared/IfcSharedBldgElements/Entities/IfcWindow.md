@@ -57,7 +57,7 @@ Window opening operation by window type
 
 The parameters that defines the shape of the _IfcWindow_, are given at the _IfcWindowType_ and the property sets, which are included in the _IfcWindowType_. The _IfcWindow_ only defines the local placement which determines the opening direction of the window. The overall layout of the _IfcWindow_ is determined by its _IfcWindowType.PartitioningType_. Each window panel has its own operation type, provided by _IfcWindowPanelProperties.OperationType_. All window panels are assumed to open into the same direction (if relevant for the particular window panel operation. The hindge side (whether a window opens to the left or to the right) is determined by the _IfcWindowPanelProperties_._OperationType_.
 
-> NOTE&nbsp;  There are different conventions in different countries on how to show the symbolic presentation of the window panel operation (the "triangles"). Either as seen from the exterior, or from the interior side. The following figures show the symbolics from the exterior side (the convention as used predominately in Europe).
+> NOTE&nbsp;  There are different conventions in different countries on how to show the symbolic presentation of the window panel operation (the "triangles"). Either as seen from the exterior, or from the interior side. The following figures/ show the symbolics from the exterior side (the convention as used predominately in Europe).
 
 Figure 3 illustrates window operation types.
 
@@ -261,7 +261,7 @@ overall width. Distance to the centre line of the mullion.
 SecondMullionOffset defined accordingly.
 
 
-![standard window](../../../../figuresifcwindowstandardcase-01.png)
+![standard window](../../../../figures/ifcwindowstandardcase-01.png)
 Figure 298 — Window profile
 
 
@@ -285,7 +285,7 @@ may participate alternatively in one of the two different containment relationsh
 The IfcWindow may also be connected to the IfcOpeningElement in which it is placed as a filler. In this case, the spatial containment relationship shall be provided, see Figure 297.
 
 
-![Containment](../../../../figuresifcwindow_containment-01.png)
+![Containment](../../../../figures/ifcwindow_containment-01.png)
 
 > NOTE  The containment shall be defined independently of the filling relationship, that is, even if the 
 >  IfcWindow is a filling of an opening established by IfcRelFillsElement, it is also contained in the spatial structure 

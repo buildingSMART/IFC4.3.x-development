@@ -60,7 +60,7 @@ IfcBuildingElement.
 Figure 260 illustrates roof placement, with an IfcRoof defining the local placement for all aggregated elements.
 
 
-![roof](../../../../figuresifcroof-layout1.gif)
+![roof](../../../../figures/ifcroof-layout1.gif)
 Figure 260 — Roof placement
 
 

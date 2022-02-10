@@ -54,7 +54,7 @@ overall width. Distance to the centre line of the mullion.
 SecondMullionOffset defined accordingly.
 
 
-![standard window](../../../../figuresifcwindowstandardcase-01.png)
+![standard window](../../../../figures/ifcwindowstandardcase-01.png)
 Figure 299 — Window profile
 
 

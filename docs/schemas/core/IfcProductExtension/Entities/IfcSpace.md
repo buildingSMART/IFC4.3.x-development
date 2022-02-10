@@ -102,7 +102,7 @@ Figure 185 shows an extrusion of an arbitrary profile definition into the swept 
 
 
 
-![fig2](../../../../figuresifcspace_advanced-layout1.gif)
+![fig2](../../../../figures/ifcspace_advanced-layout1.gif)
 Figure 185 — Space body clipping
 
 
@@ -125,7 +125,7 @@ containing spatial structure element.
 Figure 184 shows an extrusion of an arbitrary profile definition with voids into the swept area solid of IfcSpace.
 
 
-![fig1](../../../../figuresifcspace_standard-layout1.gif)
+![fig1](../../../../figures/ifcspace_standard-layout1.gif)
 Figure 184 — Space body swept solid
 
 
@@ -146,7 +146,7 @@ IfcPolyline for faceted space contours or
  
 
 
-![2d representation](../../../../figuresifcspace_2d-layout1.gif)
+![2d representation](../../../../figures/ifcspace_2d-layout1.gif)
 
 > EXAMPLE  Figure 183 shows a two-dimensional bounded curve representing the
 > foot print of IfcSpace.

@@ -39,7 +39,7 @@ Detailed description of the permit.
 As shown in Figure 308, an IfcActionRequest may be aggregated into components.
 
 
-![Composition Use Definition](../../../../figuresifcactionrequest-composition.png)
+![Composition Use Definition](../../../../figures/ifcactionrequest-composition.png)
 Figure 308 — Action request composition
 
 
@@ -63,7 +63,7 @@ The IfcActionRequest may have assignments of its own using the IfcRelAssignsToCo
 * IfcActor: Person or organization(s) fulfilling the request such as a facilities manager or contractor.
 
 
-![Assignment Use Definition](../../../../figuresifcactionrequest-assignment.png)
+![Assignment Use Definition](../../../../figures/ifcactionrequest-assignment.png)
 Figure 309 — Action request assignment
 
 

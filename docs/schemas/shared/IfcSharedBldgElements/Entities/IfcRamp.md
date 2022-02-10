@@ -76,7 +76,7 @@ The IfcRamp is then geometrically represented by the
  
 
 
-![ramp](../../../../figuresifcramp-layout1.gif)
+![ramp](../../../../figures/ifcramp-layout1.gif)
 
 > EXAMPLE  Figure 253 illustrates IfcRamp defining the local placement for all components.
 

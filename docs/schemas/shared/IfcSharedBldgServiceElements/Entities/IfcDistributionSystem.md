@@ -57,7 +57,7 @@ Additionally, an IfcDistributionSystem may in turn be assigned to an IfcDistribu
 Figure 303 illustrates a distribution system for an electrical circuit.
 
 
-![Instance diagram for electrical circuit](../../../../figuresifcdistributionsystem-01.png)
+![Instance diagram for electrical circuit](../../../../figures/ifcdistributionsystem-01.png)
 Figure 303 — Distribution system assignment
 
 

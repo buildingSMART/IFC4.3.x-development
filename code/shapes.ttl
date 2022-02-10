@@ -7,17 +7,16 @@ ex:PropertySet a sh:SPARQLTarget;
         WHERE {
             ?this <http://schema.omg.org/spec/XMI/2.1/type> "uml:Class" .
             ?this <http://example.org/name> ?psetName . 
-            ?this <http://schema.omg.org/spec/XMI/2.1/id> ?psetId . 
 
             {
                 ?stereo a <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/PSET_TYPEDRIVENOVERRIDE> .
-                ?stereo <http://example.org/base_Class> ?psetId .
+                ?stereo <http://example.org/base_Class> ?this .
             } UNION {
                 ?stereo a <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/PSET_PERFORMANCEDRIVEN> .
-                ?stereo <http://example.org/base_Class> ?psetId .
+                ?stereo <http://example.org/base_Class> ?this .
             } UNION {
                 ?stereo a <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/PSET_OCCURRENCEDRIVEN> .
-                ?stereo <http://example.org/base_Class> ?psetId .
+                ?stereo <http://example.org/base_Class> ?this .
             }
         }
    """
@@ -29,20 +28,19 @@ ex:PropertySetProperty a sh:SPARQLTarget;
         WHERE {
             ?pset <http://schema.omg.org/spec/XMI/2.1/type> "uml:Class" .
             ?pset <http://example.org/name> ?psetName . 
-            ?pset <http://schema.omg.org/spec/XMI/2.1/id> ?psetId .
             
             ?this <http://schema.omg.org/spec/XMI/2.1/type> "uml:Property" .
             ?this <http://example.org/containedIn> ?pset .
 
             {
                 ?stereo a <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/PSET_TYPEDRIVENOVERRIDE> .
-                ?stereo <http://example.org/base_Class> ?psetId .
+                ?stereo <http://example.org/base_Class> ?pset .
             } UNION {
                 ?stereo a <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/PSET_PERFORMANCEDRIVEN> .
-                ?stereo <http://example.org/base_Class> ?psetId .
+                ?stereo <http://example.org/base_Class> ?pset .
             } UNION {
                 ?stereo a <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/PSET_OCCURRENCEDRIVEN> .
-                ?stereo <http://example.org/base_Class> ?psetId .
+                ?stereo <http://example.org/base_Class> ?pset .
             }
         }
    """
@@ -53,23 +51,23 @@ ex:hasApplicableClass a sh:SPARQLConstraint ;
     sh:select """
         SELECT ?this ?psetName
         WHERE {
-            ?this <http://schema.omg.org/spec/XMI/2.1/id> ?psetId .
             ?this <http://example.org/name> ?psetName . 
             
             FILTER NOT EXISTS {
                 ?assoc <http://schema.omg.org/spec/XMI/2.1/type> "uml:AssociationClass" .
+
+                ?assoc <http://example.org/containedIn> ?package .
+                ?package <http://example.org/name> "PropertySetsforObjects" .
                 
                 ?end1 a <http://example.org/memberEnd> .
                 ?end1 <http://example.org/containedIn> ?assoc .
-                ?end1 <http://schema.omg.org/spec/XMI/2.1/idref> ?end1id .
-                ?prop1 <http://schema.omg.org/spec/XMI/2.1/id> ?end1id .
+                ?end1 <http://schema.omg.org/spec/XMI/2.1/idref> ?prop1 .
                 ?type1 <http://example.org/containedIn> ?prop1 .
-                ?type1 <http://schema.omg.org/spec/XMI/2.1/idref> ?psetId .
+                ?type1 <http://schema.omg.org/spec/XMI/2.1/idref> ?this .
                 
                 ?end2 a <http://example.org/memberEnd> .
                 ?end2 <http://example.org/containedIn> ?assoc .
-                ?end2 <http://schema.omg.org/spec/XMI/2.1/idref> ?end2id .
-                ?prop2 <http://schema.omg.org/spec/XMI/2.1/id> ?end2id .
+                ?end2 <http://schema.omg.org/spec/XMI/2.1/idref> ?prop2 .
                 ?type2 <http://example.org/containedIn> ?prop2 .
                 ?type2 <http://schema.omg.org/spec/XMI/2.1/idref> ?xid .
         
@@ -91,23 +89,20 @@ ex:hasPropertyType a sh:SPARQLConstraint ;
             FILTER NOT EXISTS {
                 ?type <http://example.org/containedIn> ?this .
                 ?type a <http://example.org/type> .
-                ?type <http://schema.omg.org/spec/XMI/2.1/idref> ?typeid .
+                ?type <http://schema.omg.org/spec/XMI/2.1/idref> ?typeref .
                 
                 ?typeref a <http://example.org/packagedElement> .
-                ?typeref <http://schema.omg.org/spec/XMI/2.1/id> ?typeid .
                 
                 ?binding a <http://example.org/templateBinding> .
                 ?binding <http://example.org/containedIn> ?typeref .
-                ?binding <http://example.org/boundElement> ?proptypeid .
+                ?binding <http://example.org/boundElement> ?proptype .
                 
-                ?proptype <http://schema.omg.org/spec/XMI/2.1/id> ?proptypeid .
                 ?proptype <http://example.org/containedIn> ?proppackage .
                 ?proppackage <http://example.org/name> "propertytypes" .
                 
                 ?substitution <http://example.org/containedIn> ?binding .
-                ?substitution <http://example.org/actual> ?actualid .
+                ?substitution <http://example.org/actual> ?actual .
                 
-                ?actual <http://schema.omg.org/spec/XMI/2.1/id> ?actualid .
                 ?actual <http://example.org/name> ?actualname .
                 
                 FILTER(?actualname != "UNKNOWN") .
@@ -145,7 +140,6 @@ ex:hasProperty a sh:SPARQLConstraint;
             FILTER NOT EXISTS {
                 # weird performance anomaly?
                 # ?pset <http://schema.omg.org/spec/XMI/2.1/type> "uml:Class" .
-                ?pset <http://schema.omg.org/spec/XMI/2.1/id> ?psetId .
                 
                 ?prop <http://schema.omg.org/spec/XMI/2.1/type> "uml:Property" .
                 ?prop <http://example.org/containedIn> ?pset .
@@ -153,13 +147,13 @@ ex:hasProperty a sh:SPARQLConstraint;
                 
                 {
                     ?stereo a <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/PSET_TYPEDRIVENOVERRIDE> .
-                    ?stereo <http://example.org/base_Class> ?psetId .
+                    ?stereo <http://example.org/base_Class> ?pset .
                 } UNION {
                     ?stereo a <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/PSET_PERFORMANCEDRIVEN> .
-                    ?stereo <http://example.org/base_Class> ?psetId .
+                    ?stereo <http://example.org/base_Class> ?pset .
                 } UNION {
                     ?stereo a <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/PSET_OCCURRENCEDRIVEN> .
-                    ?stereo <http://example.org/base_Class> ?psetId .
+                    ?stereo <http://example.org/base_Class> ?pset .
                 }
             }
         }

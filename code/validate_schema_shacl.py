@@ -21,7 +21,8 @@ SHACL = Namespace("http://www.w3.org/ns/shacl#")
 if not os.path.exists(os.path.join(tempfile.gettempdir(), "schema.ttl")):
 
     d = append_xmi.context(relative_path("../schemas/IFC.xml"))
-
+    
+    id_to_node = {}
     counter = {'c': 1}
     node_mapping = {}
     g = rdflib.Graph()
@@ -31,30 +32,46 @@ if not os.path.exists(os.path.join(tempfile.gettempdir(), "schema.ttl")):
             return rdflib.URIRef("/".join(s[1:].split("}")))
         else:
             return rdflib.URIRef(f"http://example.org/{s}")
-
+    
     def v(nd, stack):
         if nd.tag == "{http://schema.omg.org/spec/XMI/2.1}Extension":
             return False
 
+        nid = nd.attributes.get("{http://schema.omg.org/spec/XMI/2.1}id")
+        if nid:
+            id_to_node[nid] = nd
+            
         s = fqdn(f"node_{counter['c']}")
         counter['c'] += 1
         node_mapping[nd] = s
 
+    d._recurse(v)
+    
+    def v(nd, stack):
+        if nd.tag == "{http://schema.omg.org/spec/XMI/2.1}Extension":
+            return False
+            
+        s = node_mapping[nd]
+        
         g.add((s, RDF.type, fqdn(nd.tag)))
             
         for k, v in nd.attributes.items():
-            g.add((s, fqdn(k), rdflib.Literal(v)))
+            if v in id_to_node:
+                g.add((s, fqdn(k), node_mapping[id_to_node[v]]))
+            else:
+                g.add((s, fqdn(k), rdflib.Literal(v)))
             
         if stack:
             g.add((s, fqdn("containedIn"), node_mapping[stack[-1]]))
 
     d._recurse(v)
     
-    for i,fn in enumerate(glob.glob(relative_path("../docs/properties/**/*.md"), recursive=True)):
+    base_path = relative_path("..")
+    for i,fn in enumerate(glob.glob(os.path.join(base_path, "docs/properties/**/*.md"), recursive=True)):
         s = fqdn(f"doc_{i}")
         g.add((s, RDF.type, fqdn("MarkdownPropertyDefinition")))
         g.add((s, fqdn("hasHeading"), rdflib.Literal([ln for ln in list(open(fn, encoding="utf-8")) if ln][0].strip())))
-        g.add((s, fqdn("hasFilename"), rdflib.Literal(fn.replace("\\", "/")[3:])))
+        g.add((s, fqdn("hasFilename"), rdflib.Literal(fn.replace("\\", "/")[len(base_path)+1:])))
         g.add((s, fqdn("hasContent"), rdflib.Literal(open(fn, encoding="utf-8").read())))
 
     g.serialize(os.path.join(tempfile.gettempdir(), "schema.ttl"), format="turtle", encoding="utf-8")

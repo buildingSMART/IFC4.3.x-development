@@ -793,10 +793,14 @@ def resource(resource):
                     mdc += f"\n\n## {idx}.{paragraph}.{ci} {concept_lookup.get(xmi_concept)[0]}{is_inherited} {link}\n\n"
                     
                     cdef = concept_definition.get((view_name, xmi_concept), ['',''])[1]
-                    mm = mdp.markdown_attribute_parser(cdef, None)
-                    headings = [x[0][2][0] for x in mm.tok_renders_pairs if x[0][0] == 'heading_open']
-                    if headings:
-                        cdef = "".join(mm.lines[0:headings[0]])
+                    try:
+                        mm = mdp.markdown_attribute_parser(cdef, None)
+                        headings = [x[0][2][0] for x in mm.tok_renders_pairs if x[0][0] == 'heading_open']
+                        if headings:
+                            cdef = "".join(mm.lines[0:headings[0]])
+                    except:
+                        print(f"Failed to parse markdown: {resource}")
+                        cdef += "<i>Failed to parse markdown</i>"
                     mdc += cdef + "\n\n"                     
                     mm = dict(mm)
                     

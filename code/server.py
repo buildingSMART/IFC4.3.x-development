@@ -233,8 +233,8 @@ def generate_inheritance_graph(current_entity):
         g.set(*kv)
         
     NDPROPS = {
-        'color':'black',
-        'fillcolor':'grey43',
+        'color':'transparent',
+        'fillcolor':'black',
         'fontcolor':'white',
         'fontsize': '10',
         'height':'0.2',
@@ -247,6 +247,12 @@ def generate_inheritance_graph(current_entity):
         n = pydot.Node(nm)
         for kv in list(NDPROPS.items()) + list(kwargs.items()):
             n.set(*kv)
+        if 'fillcolor' in kwargs:
+            pass
+        elif nm in R.deprecated_entities:
+            n.set('fillcolor', '#d32f2f')
+        elif nm in R.abstract_entities:
+            n.set('fillcolor', '#444444')
         g.add_node(n)
         return n
     
@@ -254,24 +260,24 @@ def generate_inheritance_graph(current_entity):
     siblings = [k for k,v in R.entity_supertype.items() if v == current_entity]
     if len(siblings) < 4:
         for sibl in siblings:
-            new_node(sibl, fillcolor='gray60')
-            g.add_edge(pydot.Edge(sibl, current_entity, arrowhead="onormal", weight=10 if first else 1))
+            new_node(sibl)
+            g.add_edge(pydot.Edge(sibl, current_entity, arrowsize=0.5, arrowhead="normal", weight=10 if first else 1))
             first = False
     else:
-        nn = new_node(current_entity + "_children", fillcolor='gray80')
+        nn = new_node(current_entity + "_children", fillcolor='#AAAAAA', fontcolor='#333333')
         nn.set("label", "%d more..." % (len(siblings) - 1))
-        g.add_edge(pydot.Edge(nn, current_entity, arrowhead="onormal", weight=1))
+        g.add_edge(pydot.Edge(nn, current_entity, arrowsize=0.5, arrowhead="normal", weight=1))
 
 
     previous = None
     while i:
         if i == current_entity:
-            n = new_node(i, fillcolor='blue')
+            n = new_node(i, fillcolor='#1976d2')
         else:
             n = new_node(i)
     
         if previous:
-            g.add_edge(pydot.Edge(previous, n, arrowhead="onormal", weight=10))
+            g.add_edge(pydot.Edge(previous, n, arrowsize=0.5, arrowhead="normal", weight=10))
             
         previous = n
         
@@ -281,12 +287,12 @@ def generate_inheritance_graph(current_entity):
         if len(siblings) < 4:
             for sibl in siblings:
                 if sibl == old: continue
-                new_node(sibl, fillcolor='gray60')
-                g.add_edge(pydot.Edge(sibl, i, arrowhead="onormal", weight=1))
+                new_node(sibl)
+                g.add_edge(pydot.Edge(sibl, i, arrowsize=0.5, arrowhead="normal", weight=1))
         else:
-            nn = new_node(i + "_children", fillcolor='gray80')
+            nn = new_node(i + "_children", fillcolor='#AAAAAA', fontcolor='#333333')
             nn.set("label", "%d more..." % (len(siblings) - 1))
-            g.add_edge(pydot.Edge(nn, i, arrowhead="onormal", weight=1))
+            g.add_edge(pydot.Edge(nn, i, arrowsize=0.5, arrowhead="normal", weight=1))
             
     
         

@@ -94,6 +94,7 @@ class resource_manager:
     pset_definitions = schema_resource("pset_definitions.json")
     changes_by_type = schema_resource("changes_by_type.json")
     deprecated_entities = schema_resource("deprecated_entities.json", transform=set)
+    abstract_entities = schema_resource("abstract_entities.json", transform=set)
     hierarchy = schema_resource("hierarchy.json")
     xmi_concepts = schema_resource("xmi_concepts.json")
 
@@ -878,6 +879,7 @@ def resource(resource):
     change_log = []
     
     is_deprecated = resource in R.deprecated_entities
+    is_abstract = resource in R.abstract_entities
     
     if changelog_data:
         for section, changes in changelog_data.items():
@@ -895,7 +897,7 @@ def resource(resource):
         paragraph += 1
             
     return render_template('entity.html', base=base, navigation=navigation_entries, content=html, number=idx,
-        entity=resource, path=md[len(REPO_DIR):].replace("\\", "/"), changelog=change_log, is_deprecated=is_deprecated)
+        entity=resource, path=md[len(REPO_DIR):].replace("\\", "/"), changelog=change_log, is_deprecated=is_deprecated, is_abstract=is_abstract)
 
 @app.route(make_url('listing'))
 def listing():

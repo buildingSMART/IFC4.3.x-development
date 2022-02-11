@@ -69,9 +69,6 @@ code {
 .popup table td {
   background: white;
 }
-mark.dont {
-  background: #e53935; 
-}
 h4 a:hover {
   text-decoration: none;
 }

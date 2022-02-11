@@ -12,9 +12,25 @@
     </div>
 </div>
 
-{% if deprecated %}
-<mark class='dont'>DEPRECATED</mark> This definition may be imported, but shall not be exported by applications
+{% if is_deprecated %}
+<div class="row">
+    <div class="card fluid error">
+        <p>
+            <mark class="secondary">DEPRECATED</mark> This definition may be imported, but shall not be exported by applications
+        </p>
+    </div>
+</div>
 {% endif %}
+{% if is_abstract %}
+<div class="row">
+    <div class="card fluid warning">
+        <p>
+            <mark class="secondary">ABSTRACT</mark> This definition may not be instantiated
+        </p>
+    </div>
+</div>
+{% endif %}
+
 
 <h3>{{ number }}{% if number %}.1{% endif %} Semantic definition</h3>
 

@@ -874,29 +874,28 @@ def resource(resource):
     for from_r, to_r in replacements:
         html = html.replace(from_r, to_r)
         
-    scs = R.changes_by_type.get(resource, {})
-    change_log = ''
+    changelog_data = R.changes_by_type.get(resource, {})
+    change_log = []
     
-    deprecated = resource in R.deprecated_entities
+    is_deprecated = resource in R.deprecated_entities
     
-    if scs or deprecated:
-        change_log += "<h3>Change log</h3><div>"
-        
-        if deprecated:
-            change_log += "<mark class='dont'>DEPRECATED</mark>This definition may be imported, but shall not be exported by applications";
-        
-        for s, cs in scs.items():
-            change_log += "<h4>%s</h4>" % s
-            change_log += tabulate.tabulate(cs, tablefmt='unsafehtml')
-        change_log += "</div>"
-
+    if changelog_data:
+        for section, changes in changelog_data.items():
+            change_log.append({"name": section, "changes": [{
+                'is_addition': 'add' in c[0],
+                'is_deletion': 'delet' in c[0],
+                'is_modification': 'modif' in c[0],
+                'what_changed': c[1],
+                'description': c[2],
+            } for c in changes]})
     
     if R.entity_definitions.get(resource):
         html += "<h3>" + idx + ".%d Formal representations</h3>" % paragraph
         html += "<pre>" + R.entity_definitions.get(resource) + "</pre>"
         paragraph += 1
             
-    return render_template('entity.html', base=base, navigation=navigation_entries, content=html, number=idx, entity=resource, path=md[len(REPO_DIR):].replace("\\", "/"), preface=change_log)
+    return render_template('entity.html', base=base, navigation=navigation_entries, content=html, number=idx,
+        entity=resource, path=md[len(REPO_DIR):].replace("\\", "/"), changelog=change_log, is_deprecated=is_deprecated)
 
 @app.route(make_url('listing'))
 def listing():

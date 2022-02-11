@@ -1,3 +1,4 @@
+/* TODO: choose a colour pallette */
 body {
   font-size: 12pt;
 }
@@ -70,9 +71,22 @@ code {
 }
 mark.dont {
   background: #e53935; 
-  margin-right: 8px;
 }
 h4 a:hover {
   text-decoration: none;
 }
-
+table.changelog {
+    width: 100%;
+}
+table.changelog thead tr th:nth-child(1) {
+    width: 5%;
+}
+table.changelog thead tr th:nth-child(2) {
+    width: 20%;
+}
+.feather-plus-square {
+    color: #5d964d;
+}
+.feather-x-square {
+    color: #7a1b14;
+}

@@ -25,7 +25,7 @@ assert sys.version_info[0:2] >= (3,6)
 def BeautifulSoup(*args):
     return bs4.BeautifulSoup(*args, features='lxml')
     
-from flask import Flask, send_file, render_template, abort, url_for, request, send_from_directory, jsonify
+from flask import Flask, send_file, render_template, render_template_string, abort, url_for, request, send_from_directory, jsonify
 
 import md as mdp
 from extract_concepts_from_xmi import parse_bindings
@@ -539,9 +539,9 @@ def get_figure(fig):
     return send_from_directory(os.path.join(REPO_DIR, 'docs/figures'), fig)
 
 
-@app.route(make_url('img/<img>'))
-def get_img(img):
-    return send_from_directory(os.path.join(REPO_DIR, 'docs/img'), img)
+@app.route(make_url('assets/<path:asset>'))
+def get_asset(asset):
+    return send_from_directory(os.path.join(REPO_DIR, 'docs/assets'), asset)
 
 
 DOC_ANNOTATION_PATTERN = re.compile(r'\{\s*\..+?\}')
@@ -674,7 +674,7 @@ def process_markdown(resource, mdc, as_attribute=False):
         else:
             img['src'] = img['src'][9:]
             
-    html = str(soup)
+    html = str(soup).replace("{{ base }}", base)
     
     return html
     
@@ -1038,7 +1038,7 @@ def content(s='cover'):
         except:
             abort(404)
     
-    html = markdown.markdown(open(fn).read())
+    html = markdown.markdown(render_template_string(open(fn).read(), base=base))
     return render_template('chapter.html', base=base, navigation=navigation_entries, content=html, path=fn[len(REPO_DIR):].replace("\\", "/"), title=title, number=number, subs=[])
 
     

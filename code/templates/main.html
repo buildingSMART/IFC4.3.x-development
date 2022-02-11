@@ -1,90 +1,12 @@
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://cdn.rawgit.com/Chalarangelo/mini.css/v3.0.1/dist/mini-default.min.css">
+    <link rel="stylesheet" href="{{ base }}/assets/css/mini-default.min.css">
+    <link rel="stylesheet" href="{{ base }}/assets/css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <title>IFC4.3.x Documentation {{ title }}</title>
-    <link rel="icon" type="image/x-icon" href="{{ base }}/img/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="{{ base }}/assets/img/favicon.ico">
 </head>
-<style>
-body {
-  font-size: 12pt;
-}
-a {
-  color: #336699;
-  text-decoration: none;
-}
-a:hover {
-  color: #66ccff;
-}
-pre {
-  padding: 10px;
-  border: solid 1px gray;
-  backgroud: #eee;
-  font-size: 80%;
-}
-svg text {
-    font-size: 75%;
-}
-svg g.edge text {
-    font-size: 60%;
-}
-blockquote p {
-  font-size: 80%;
-}
-table {
-  max-height: 10000px !important;
-  display: table !important;
-  width: 100%;
-  border-top: solid 1px gray;
-  border-bottom: solid 1px gray;
-}
-table thead, table tbody {
-  display: table-header-group;
-}
-table tr {
-  display: table-row;
-}
-table tr th ,
-table tr td {
-  font-size: 80%;
-  padding: 0.2em;
-}
-h3:hover {
-  cursor: pointer;
-}
-h3:before {
-  font-size: 50%;
-  content: '\25B2 '
-}
-h3.collapsed:before {
-  content: '\25BC '
-}
-code {
-  line-height: inherit;
-  white-space: pre;
-}
-.popup {
-  position: absolute;
-  background: white;
-  padding: 10px;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
-  width: 500px;
-  max-height: 300px;
-  overflow-x: hide;
-  overflow-y: scroll;
-}
-.popup table td {
-  background: white;
-}
-mark.dont {
-  background: #e53935; 
-  margin-right: 8px;
-}
-h4 a:hover {
-  text-decoration: none;
-}
-</style>
 <body>
     <div class="container">
         <div class="row">
@@ -113,22 +35,6 @@ h4 a:hover {
             </div>
         </div>
     </div>
-    
-<script>
-Array.from(document.querySelectorAll("h3")).forEach(n => {
-  n.onclick = function(evt) {
-    elem = evt.target.nextElementSibling;
-    var hide = evt.target.classList.toggle('collapsed');
-    while (elem) {
-      elem.style.display = hide ? 'none' : '';
-      elem = elem.nextElementSibling;
-      if (elem.tagName == evt.target.tagName) {
-        break;
-      }
-    }
-  }
-});
-</script>
-    
+    <script type="text/javascript" src="{{ base }}/assets/js/app.js"></script>
 </body>
 </html>

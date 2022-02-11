@@ -1,0 +1,78 @@
+body {
+  font-size: 12pt;
+}
+a {
+  color: #336699;
+  text-decoration: none;
+}
+a:hover {
+  color: #66ccff;
+}
+pre {
+  padding: 10px;
+  border: solid 1px gray;
+  backgroud: #eee;
+  font-size: 80%;
+}
+svg text {
+    font-size: 75%;
+}
+svg g.edge text {
+    font-size: 60%;
+}
+blockquote p {
+  font-size: 80%;
+}
+table {
+  max-height: 10000px !important;
+  display: table !important;
+  width: 100%;
+  border-top: solid 1px gray;
+  border-bottom: solid 1px gray;
+}
+table thead, table tbody {
+  display: table-header-group;
+}
+table tr {
+  display: table-row;
+}
+table tr th ,
+table tr td {
+  font-size: 80%;
+  padding: 0.2em;
+}
+h3:hover {
+  cursor: pointer;
+}
+h3:before {
+  font-size: 50%;
+  content: '\25B2 '
+}
+h3.collapsed:before {
+  content: '\25BC '
+}
+code {
+  line-height: inherit;
+  white-space: pre;
+}
+.popup {
+  position: absolute;
+  background: white;
+  padding: 10px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+  width: 500px;
+  max-height: 300px;
+  overflow-x: hide;
+  overflow-y: scroll;
+}
+.popup table td {
+  background: white;
+}
+mark.dont {
+  background: #e53935; 
+  margin-right: 8px;
+}
+h4 a:hover {
+  text-decoration: none;
+}
+

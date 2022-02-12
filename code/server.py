@@ -851,6 +851,8 @@ def resource(resource):
 
         concept_lookup = {c.text.replace(" ", ""): (c.text, c.url) for c in flatten_hierarchy(concept_hierarchy)}
 
+        mdc += f"\n\n{SectionNumberGenerator.generate()} Concept usage\n===========\n"
+
         SectionNumberGenerator.begin_subsection()
         # Iterate over views and concepts stored in XMI
         for view_name, concepts in R.xmi_concepts.items():

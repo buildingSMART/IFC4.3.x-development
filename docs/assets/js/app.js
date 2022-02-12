@@ -21,7 +21,6 @@ function replaceReadMoreWithIcon(element) {
         if (a.innerText == 'Read more') {
             a.classList.add('read-more')
             a.innerHTML = '<small>Read more</small> <i data-feather="arrow-right"></i>';
-            console.log(a);
         }
     }
 }
@@ -36,11 +35,14 @@ for (let i=0; i<elements.length; i++) {
         let hide = e.target.classList.toggle('collapsed');
         renderToggleIcon(element);
 
-        elem = e.target.nextElementSibling;
+        let headerLevel = e.target.tagName.slice(-1);
+        let elem = e.target.nextElementSibling;
         while (elem) {
             elem.style.display = hide ? 'none' : '';
             elem = elem.nextElementSibling;
-            if (elem.tagName == e.target.tagName) {
+            if ( ! elem ) {
+                break;
+            } else if (elem.tagName.slice(0, 1) == 'H' && elem.tagName.slice(-1) <= headerLevel)  {
                 break;
             }
         }

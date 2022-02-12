@@ -771,72 +771,83 @@ def resource(resource):
 
     if "Entities" in md:
         builder = resource_documentation_builder(resource)
+        return render_template(
+            "entity.html",
+            base=base,
+            navigation=navigation_entries,
+            content=process_markdown(resource, mdc),
+            number=idx,
+            definition_number=definition_number,
+            entity=resource,
+            path=md[len(REPO_DIR) :].replace("\\", "/"),
+            attributes=get_attributes(resource, builder),
+            entity_inheritance=get_entity_inheritance(resource),
+            concept_usage=get_concept_usage(resource, builder),
+            formal_representation=get_formal_representation(resource),
+            changelog=get_changelog(resource),
+            is_deprecated=resource in R.deprecated_entities,
+            is_abstract=resource in R.abstract_entities,
+        )
     elif resource in R.pset_definitions.keys():
+        return render_template(
+            "property.html",
+            base=base,
+            navigation=navigation_entries,
+            content=process_markdown(resource, mdc),
+            number=idx,
+            definition_number=definition_number,
+            entity=resource,
+            path=md[len(REPO_DIR) :].replace("\\", "/"),
+            applicability=get_applicability(resource),
+            properties=get_properties(resource),
+            changelog=get_changelog(resource),
+        )
 
-        def make_prop(prop):
-            try:
-                doc = process_markdown(
-                    resource,
-                    open(
-                        os.path.join(REPO_DIR, "docs/properties/%s/%s.md") % (prop["name"][0].lower(), prop["name"])
-                    ).read(),
-                    as_attribute=True,
-                )
-            except:
-                doc = "<i>missing property definition</i>"
+def get_applicability(resource):
+    return {
+        "number": SectionNumberGenerator.generate(),
+        "entities": R.pset_definitions[resource]["applicability"]
+    }
 
-            if R.pset_definitions[resource]["kind"] == "quantity_set":
-                prop_type = []
-            else:
-                prop_type = [prop["type"]]
+def get_properties(resource):
+    def make_prop(prop):
+        try:
+            doc = process_markdown(
+                resource,
+                open(
+                    os.path.join(REPO_DIR, "docs/properties/%s/%s.md") % (prop["name"][0].lower(), prop["name"])
+                ).read(),
+                as_attribute=True,
+            )
+        except:
+            doc = "<i>missing property definition</i>"
 
-            return [
-                prop["name"],
-                *prop_type,
-                prop["data"],
-                doc
-                + f"<a class='button' href='{make_url('property/'+prop['name'])}.htm' style='padding:0;margin:0 0.5em'><span class='icon-edit'></span></a>",
-            ]
-
-        mdc += "\n\n## Applicability\n\n"
-        for appl in R.pset_definitions[resource]["applicability"]:
-            mdc += f" * {appl}\n"
-
-        mdc += "\n\n## Properties\n\n"
-
-        attrs = list(map(make_prop, R.pset_definitions[resource]["properties"]))
-
-        headers = ("Name", "Property Type", "Data Type", "Definition")
         if R.pset_definitions[resource]["kind"] == "quantity_set":
-            # Quantity sets elements are always a singular type, as opposed to
-            # property set items which are composed of a property type (single,
-            # bounded, ...) and a data type.
-            headers = (headers[0],) + headers[2:]
+            prop_type = []
+        else:
+            prop_type = [prop["type"]]
 
-        attribute_table = tabulate.tabulate(attrs, headers=headers, tablefmt="unsafehtml")
-        mdc += "\n\nattribute_table\n\n"
+        return [
+            prop["name"],
+            *prop_type,
+            prop["data"],
+            doc
+            + f"<a class='button' href='{make_url('property/'+prop['name'])}.htm' style='padding:0;margin:0 0.5em'><span class='icon-edit'></span></a>",
+        ]
 
-    html = process_markdown(resource, mdc)
+    attrs = list(map(make_prop, R.pset_definitions[resource]["properties"]))
 
-    html = html.replace("attribute_table", attribute_table)
+    headers = ("Name", "Property Type", "Data Type", "Definition")
+    if R.pset_definitions[resource]["kind"] == "quantity_set":
+        # Quantity sets elements are always a singular type, as opposed to
+        # property set items which are composed of a property type (single,
+        # bounded, ...) and a data type.
+        headers = (headers[0],) + headers[2:]
 
-    return render_template(
-        "entity.html",
-        base=base,
-        navigation=navigation_entries,
-        content=html,
-        number=idx,
-        definition_number=definition_number,
-        entity=resource,
-        path=md[len(REPO_DIR) :].replace("\\", "/"),
-        attributes=get_attributes(resource, builder),
-        entity_inheritance=get_entity_inheritance(resource),
-        concept_usage=get_concept_usage(resource, builder),
-        formal_representation=get_formal_representation(resource),
-        changelog=get_changelog(resource),
-        is_deprecated=resource in R.deprecated_entities,
-        is_abstract=resource in R.abstract_entities,
-    )
+    return {
+        "number": SectionNumberGenerator.generate(),
+        "table": tabulate.tabulate(attrs, headers=headers, tablefmt="unsafehtml"),
+    }
 
 
 def get_attributes(resource, builder):

@@ -737,6 +737,26 @@ def process_markdown(resource, mdc, as_attribute=False):
         else:
             img["src"] = img["src"][9:]
 
+
+    # Tag all special notes separately. In markdown they are all lumped in a single block quote.
+    for blockquote in soup.findAll("blockquote"):
+        for p in blockquote.findAll("p"):
+            aside = soup.new_tag("aside")
+            keyword, contents = p.text.split(" ", 1)
+            if keyword.startswith("IFC"):
+                # This is typically something like "IFC4 CHANGE" denoting a historic change reason
+                keyword, keyword2, contents = p.text.split(" ", 2)
+                keyword = "-".join((keyword, keyword2))
+            keyword = keyword.strip()
+            aside["class"] = f"aside-{keyword.lower()}"
+            mark = soup.new_tag("mark")
+            mark.string = keyword
+            aside.string = contents
+            aside.insert(0, mark)
+            blockquote.insert_after(aside)
+            p.decompose()
+        blockquote.decompose()
+
     html = str(soup).replace("{{ base }}", base)
 
     return html
@@ -775,9 +795,9 @@ def resource(resource):
             "entity.html",
             base=base,
             navigation=navigation_entries,
-            content=process_markdown(resource, mdc),
             number=idx,
             definition_number=definition_number,
+            definition=get_entity_definition(resource, mdc),
             entity=resource,
             path=md[len(REPO_DIR) :].replace("\\", "/"),
             attributes=get_attributes(resource, builder),
@@ -814,6 +834,12 @@ def resource(resource):
         formal_representation=get_formal_representation(resource),
         changelog=get_changelog(resource),
     )
+
+
+def get_entity_definition(resource, mdc):
+    if "## Attributes" in mdc:
+        mdc = mdc[0:mdc.index("## Attributes")]
+    return process_markdown(resource, mdc)
 
 def get_applicability(resource):
     return {
@@ -942,7 +968,6 @@ def get_concept_usage(resource, builder):
 
     concept_lookup = {c.text.replace(" ", ""): (c.text, c.url) for c in flatten_hierarchy(concept_hierarchy)}
 
-    #mdc += f"\n\n{SectionNumberGenerator.generate()} Concept usage\n===========\n"
     mdc = ""
     replacements = []
 

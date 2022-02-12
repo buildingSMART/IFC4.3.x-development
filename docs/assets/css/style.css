@@ -2,6 +2,7 @@
   --blue: #1976d2;
   --green: #308732;
   --red: #d32f2f;
+  --yellow: #f57c00;
   --universal-border-radius: 5px;
   --link: #336699;
   --link-hover: #66ccff;
@@ -42,8 +43,20 @@ svg text {
 svg g.edge text {
     font-size: 60%;
 }
-blockquote p {
-  font-size: 80%;
+aside {
+    border: 1px solid var(--border-color);
+    padding: var(--universal-padding);
+    border-radius: var(--universal-border-radius);
+    margin: var(--universal-margin);
+}
+aside mark {
+    margin-right: var(--universal-margin);
+}
+aside.aside-ifc4-change mark {
+    background-color: var(--yellow);
+}
+aside.aside-history mark {
+    background-color: #444;
 }
 table {
   max-height: 10000px !important;

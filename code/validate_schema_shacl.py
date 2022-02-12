@@ -187,7 +187,7 @@ with open(relative_path('../output/shacl-result.md'), "w") as f:
                 results.append((sS, rM))
                 
     for k, vs in itertools.groupby(sorted(results), key=operator.itemgetter(0)):
-        f.write(f"## {k.split('#')[-1]}\n\n")
+        f.write(f"## {k.split('/')[-1]}\n\n")
         for _, v in vs:
             f.write(f"* {v}\n")
         

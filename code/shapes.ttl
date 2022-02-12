@@ -1,22 +1,30 @@
-@prefix ex:  <http://example.org/ifc43Shapes#> .
+@prefix ex:  <http://example.org/ifc43Shapes/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 
 ex:PropertySet a sh:SPARQLTarget;
     sh:select """
+        PREFIX ex:  <http://example.org/ifc43Shapes/>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX xmi: <http://schema.omg.org/spec/XMI/2.1/>
+        PREFIX custom: <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/>
+        
         SELECT ?this
         WHERE {
-            ?this <http://schema.omg.org/spec/XMI/2.1/type> "uml:Class" .
-            ?this <http://example.org/name> ?psetName . 
+            ?this xmi:type "uml:Class" .
+            ?this ex:name ?psetName . 
 
             {
-                ?stereo a <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/PSET_TYPEDRIVENOVERRIDE> .
-                ?stereo <http://example.org/base_Class> ?this .
+                ?stereo a custom:PSET_TYPEDRIVENOVERRIDE .
+                ?stereo ex:base_Class ?this .
             } UNION {
-                ?stereo a <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/PSET_PERFORMANCEDRIVEN> .
-                ?stereo <http://example.org/base_Class> ?this .
+                ?stereo a custom:PSET_PERFORMANCEDRIVEN .
+                ?stereo ex:base_Class ?this .
             } UNION {
-                ?stereo a <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/PSET_OCCURRENCEDRIVEN> .
-                ?stereo <http://example.org/base_Class> ?this .
+                ?stereo a custom:PSET_OCCURRENCEDRIVEN .
+                ?stereo ex:base_Class ?this .
             }
         }
    """
@@ -24,23 +32,28 @@ ex:PropertySet a sh:SPARQLTarget;
 
 ex:PropertySetProperty a sh:SPARQLTarget;
     sh:select """
+        PREFIX ex:  <http://example.org/ifc43Shapes/>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX xmi: <http://schema.omg.org/spec/XMI/2.1/>
+        PREFIX custom: <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/>
+        
         SELECT ?this
         WHERE {
-            ?pset <http://schema.omg.org/spec/XMI/2.1/type> "uml:Class" .
-            ?pset <http://example.org/name> ?psetName . 
+            ?pset xmi:type "uml:Class" .
+            ?pset ex:name ?psetName . 
             
-            ?this <http://schema.omg.org/spec/XMI/2.1/type> "uml:Property" .
-            ?this <http://example.org/containedIn> ?pset .
+            ?this xmi:type "uml:Property" .
+            ?this ex:containedIn ?pset .
 
             {
-                ?stereo a <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/PSET_TYPEDRIVENOVERRIDE> .
-                ?stereo <http://example.org/base_Class> ?pset .
+                ?stereo a custom:PSET_TYPEDRIVENOVERRIDE .
+                ?stereo ex:base_Class ?pset .
             } UNION {
-                ?stereo a <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/PSET_PERFORMANCEDRIVEN> .
-                ?stereo <http://example.org/base_Class> ?pset .
+                ?stereo a custom:PSET_PERFORMANCEDRIVEN .
+                ?stereo ex:base_Class ?pset .
             } UNION {
-                ?stereo a <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/PSET_OCCURRENCEDRIVEN> .
-                ?stereo <http://example.org/base_Class> ?pset .
+                ?stereo a custom:PSET_OCCURRENCEDRIVEN .
+                ?stereo ex:base_Class ?pset .
             }
         }
    """
@@ -49,27 +62,32 @@ ex:PropertySetProperty a sh:SPARQLTarget;
 ex:hasApplicableClass a sh:SPARQLConstraint ;
     sh:message "The Property Set '{?psetName}' should have at least one applicability" ;
     sh:select """
+        PREFIX ex:  <http://example.org/ifc43Shapes/>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX xmi: <http://schema.omg.org/spec/XMI/2.1/>
+        PREFIX custom: <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/>
+        
         SELECT ?this ?psetName
         WHERE {
-            ?this <http://example.org/name> ?psetName . 
+            ?this ex:name ?psetName . 
             
             FILTER NOT EXISTS {
-                ?assoc <http://schema.omg.org/spec/XMI/2.1/type> "uml:AssociationClass" .
+                ?assoc xmi:type "uml:AssociationClass" .
 
-                ?assoc <http://example.org/containedIn> ?package .
-                ?package <http://example.org/name> "PropertySetsforObjects" .
+                ?assoc ex:containedIn ?package .
+                ?package ex:name "PropertySetsforObjects" .
                 
-                ?end1 a <http://example.org/memberEnd> .
-                ?end1 <http://example.org/containedIn> ?assoc .
-                ?end1 <http://schema.omg.org/spec/XMI/2.1/idref> ?prop1 .
-                ?type1 <http://example.org/containedIn> ?prop1 .
-                ?type1 <http://schema.omg.org/spec/XMI/2.1/idref> ?this .
+                ?end1 a ex:memberEnd .
+                ?end1 ex:containedIn ?assoc .
+                ?end1 xmi:idref ?prop1 .
+                ?type1 ex:containedIn ?prop1 .
+                ?type1 xmi:idref ?this .
                 
-                ?end2 a <http://example.org/memberEnd> .
-                ?end2 <http://example.org/containedIn> ?assoc .
-                ?end2 <http://schema.omg.org/spec/XMI/2.1/idref> ?prop2 .
-                ?type2 <http://example.org/containedIn> ?prop2 .
-                ?type2 <http://schema.omg.org/spec/XMI/2.1/idref> ?xid .
+                ?end2 a ex:memberEnd .
+                ?end2 ex:containedIn ?assoc .
+                ?end2 xmi:idref ?prop2 .
+                ?type2 ex:containedIn ?prop2 .
+                ?type2 xmi:idref ?xid .
         
                 FILTER(?end1 != ?end2) .
             }
@@ -80,30 +98,35 @@ ex:hasApplicableClass a sh:SPARQLConstraint ;
 ex:hasPropertyType a sh:SPARQLConstraint ;
     sh:message "The Property '{?psetName}.{?propName}' has an incorrect type" ;
     sh:select """
+        PREFIX ex:  <http://example.org/ifc43Shapes/>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX xmi: <http://schema.omg.org/spec/XMI/2.1/>
+        PREFIX custom: <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/>
+        
         SELECT ?this ?propName ?psetName
         WHERE {
-            ?this <http://example.org/name> ?propName . 
-            ?this <http://example.org/containedIn> ?pset .
-            ?pset <http://example.org/name> ?psetName .
+            ?this ex:name ?propName . 
+            ?this ex:containedIn ?pset .
+            ?pset ex:name ?psetName .
             
             FILTER NOT EXISTS {
-                ?type <http://example.org/containedIn> ?this .
-                ?type a <http://example.org/type> .
-                ?type <http://schema.omg.org/spec/XMI/2.1/idref> ?typeref .
+                ?type ex:containedIn ?this .
+                ?type a ex:type .
+                ?type xmi:idref ?typeref .
                 
-                ?typeref a <http://example.org/packagedElement> .
+                ?typeref a ex:packagedElement .
                 
-                ?binding a <http://example.org/templateBinding> .
-                ?binding <http://example.org/containedIn> ?typeref .
-                ?binding <http://example.org/boundElement> ?proptype .
+                ?binding a ex:templateBinding .
+                ?binding ex:containedIn ?typeref .
+                ?binding ex:boundElement ?proptype .
                 
-                ?proptype <http://example.org/containedIn> ?proppackage .
-                ?proppackage <http://example.org/name> "propertytypes" .
+                ?proptype ex:containedIn ?proppackage .
+                ?proppackage ex:name "propertytypes" .
                 
-                ?substitution <http://example.org/containedIn> ?binding .
-                ?substitution <http://example.org/actual> ?actual .
+                ?substitution ex:containedIn ?binding .
+                ?substitution ex:actual ?actual .
                 
-                ?actual <http://example.org/name> ?actualname .
+                ?actual ex:name ?actualname .
                 
                 FILTER(?actualname != "UNKNOWN") .
             }
@@ -114,15 +137,46 @@ ex:hasPropertyType a sh:SPARQLConstraint ;
 ex:hasDefinition a sh:SPARQLConstraint ;
     sh:message "The Property '{?psetName}.{?propName}' has no definition" ;
     sh:select """
+        PREFIX ex:  <http://example.org/ifc43Shapes/>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX xmi: <http://schema.omg.org/spec/XMI/2.1/>
+        PREFIX custom: <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/>
+        
         SELECT ?this ?propName ?psetName
         WHERE {
-            ?this <http://example.org/name> ?propName . 
-            ?this <http://example.org/containedIn> ?pset .
-            ?pset <http://example.org/name> ?psetName .
+            ?this ex:name ?propName . 
+            ?this ex:containedIn ?pset .
+            ?pset ex:name ?psetName .
             
             FILTER NOT EXISTS {
-                ?doc a <http://example.org/MarkdownPropertyDefinition> .
-                ?doc <http://example.org/hasHeading> ?propName .
+                ?doc a ex:MarkdownPropertyDefinition .
+                ?doc ex:hasHeading ?propName .
+            }
+        }
+    """
+    .
+
+
+ex:hasResourceDefinition a sh:SPARQLConstraint ;
+    sh:message "The resource '{?resourceName}' has no definition" ;
+    sh:select """
+        PREFIX ex:  <http://example.org/ifc43Shapes/>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX xmi: <http://schema.omg.org/spec/XMI/2.1/>
+        PREFIX custom: <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/>
+        
+        SELECT ?this ?resourceName
+        WHERE {
+            ?this ex:name ?resourceName .
+            ?this ex:containedIn ?package .
+            ?package ex:name ?packageName .
+            
+            FILTER NOT EXISTS {
+                ?doc a ex:MarkdownResourceDefinition .
+                ?doc ex:hasHeading ?resourceName .
+                ?doc ex:hasFilename ?filenameParts .
+                
+                ?filenameParts rdf:rest*/rdf:first ?packageName .
             }
         }
     """
@@ -131,42 +185,55 @@ ex:hasDefinition a sh:SPARQLConstraint ;
 ex:hasProperty a sh:SPARQLConstraint;
     sh:message "For document '{?filename}' a property cannot be found" ;
     sh:select """
-        SELECT ?this ?filename
+        PREFIX ex:  <http://example.org/ifc43Shapes/>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX xmi: <http://schema.omg.org/spec/XMI/2.1/>
+        PREFIX custom: <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/>
+    
+        SELECT ?this (GROUP_CONCAT(DISTINCT ?filenamePart ; separator="/") AS ?filename)
         WHERE {
-            ?this a <http://example.org/MarkdownPropertyDefinition> .
-            ?this <http://example.org/hasHeading> ?propName .
-            ?this <http://example.org/hasFilename> ?filename .
+            ?this a ex:MarkdownPropertyDefinition .
+            ?this ex:hasHeading ?propName .
+            ?this ex:hasFilename ?filenameParts .
+            
+            ?filenameParts rdf:rest*/rdf:first ?filenamePart .
             
             FILTER NOT EXISTS {
                 # weird performance anomaly?
-                # ?pset <http://schema.omg.org/spec/XMI/2.1/type> "uml:Class" .
+                # ?pset xmi:type "uml:Class" .
                 
-                ?prop <http://schema.omg.org/spec/XMI/2.1/type> "uml:Property" .
-                ?prop <http://example.org/containedIn> ?pset .
-                ?prop <http://example.org/name> ?propName .
+                ?prop xmi:type "uml:Property" .
+                ?prop ex:containedIn ?pset .
+                ?prop ex:name ?propName .
                 
                 {
-                    ?stereo a <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/PSET_TYPEDRIVENOVERRIDE> .
-                    ?stereo <http://example.org/base_Class> ?pset .
+                    ?stereo a custom:PSET_TYPEDRIVENOVERRIDE .
+                    ?stereo ex:base_Class ?pset .
                 } UNION {
-                    ?stereo a <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/PSET_PERFORMANCEDRIVEN> .
-                    ?stereo <http://example.org/base_Class> ?pset .
+                    ?stereo a custom:PSET_PERFORMANCEDRIVEN .
+                    ?stereo ex:base_Class ?pset .
                 } UNION {
-                    ?stereo a <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/PSET_OCCURRENCEDRIVEN> .
-                    ?stereo <http://example.org/base_Class> ?pset .
+                    ?stereo a custom:PSET_OCCURRENCEDRIVEN .
+                    ?stereo ex:base_Class ?pset .
                 }
             }
         }
+        GROUP BY ?this
    """
    .
 
 ex:Fail a sh:SPARQLConstraint ;
     sh:message "Generic failing constraint" ;
     sh:select """
+        PREFIX ex:  <http://example.org/ifc43Shapes/>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX xmi: <http://schema.omg.org/spec/XMI/2.1/>
+        PREFIX custom: <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/>
+        
         SELECT ?this
         WHERE {
             FILTER NOT EXISTS {
-            ?this <http://example.org/doesNotExist> <http://example.org/something> .
+            ?this ex:doesNotExist ex:something .
             }
         }
     """
@@ -188,6 +255,10 @@ ex:DefinitionForProperty a sh:NodeShape ;
     .
 
 ex:PropertyForDefinition a sh:NodeShape ;
-    sh:targetClass <http://example.org/MarkdownPropertyDefinition>;
+    sh:targetClass ex:MarkdownPropertyDefinition;
     sh:sparql ex:hasProperty
     .
+
+ex:DefinitionForPropertySet a sh:NodeShape ;
+    sh:target ex:PropertySet;
+    sh:sparql ex:hasResourceDefinition

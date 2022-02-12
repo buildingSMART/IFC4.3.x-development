@@ -1,16 +1,37 @@
-Array.from(document.querySelectorAll("h3")).forEach(n => {
-  n.onclick = function(evt) {
-    elem = evt.target.nextElementSibling;
-    var hide = evt.target.classList.toggle('collapsed');
-    while (elem) {
-      elem.style.display = hide ? 'none' : '';
-      elem = elem.nextElementSibling;
-      if (elem.tagName == evt.target.tagName) {
-        break;
-      }
+function renderToggleIcon(element) {
+    let icons = element.getElementsByClassName('toggle-icon');
+    if (icons.length) {
+        icons[0].remove();
     }
-  }
-});
+
+    let a = document.createElement('a');
+    a.classList.add('toggle-icon');
+    element.prepend(a);
+    if (element.classList.contains('collapsed')) {
+        a.innerHTML = feather.icons['chevron-up'].toSvg();
+    } else {
+        a.innerHTML = feather.icons['chevron-down'].toSvg();
+    }
+}
+
+let elements = document.getElementsByTagName('h3');
+for (let i=0; i<elements.length; i++) {
+    renderToggleIcon(elements[i]);
+
+    elements[i].onclick = function(e) {
+        let hide = e.target.classList.toggle('collapsed');
+        renderToggleIcon(elements[i]);
+
+        elem = e.target.nextElementSibling;
+        while (elem) {
+            elem.style.display = hide ? 'none' : '';
+            elem = elem.nextElementSibling;
+            if (elem.tagName == e.target.tagName) {
+                break;
+            }
+        }
+    }
+}
 
 Array.from(document.querySelectorAll('a')).concat(Array.from(document.querySelectorAll('em'))).forEach((a) => {
   let popup = null;

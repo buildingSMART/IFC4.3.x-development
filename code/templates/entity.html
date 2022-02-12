@@ -3,15 +3,6 @@
 
 <h2>{{ number }} {{ entity}}</h2>
 
-<div class="col-sm-12">
-    <div class="card fluid shadowed">
-        <p>
-            <a class='button primary' style="float: right;" href='https://github.com/buildingSMART/IFC4.3.x-development/blob/master/{{ path }}'><span class="icon-edit inverse"></span> Edit on Github</a>
-            <small><span id='contributors'></span><br /><span id='last-change'></span></small>
-        </p>
-    </div>
-</div>
-
 {% if is_deprecated %}
 <div class="row">
     <div class="card fluid error">
@@ -70,5 +61,4 @@
     {% endfor %}
 </div>
 {% endif %}
-
 {% endblock %}

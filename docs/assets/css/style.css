@@ -1,18 +1,39 @@
-/* TODO: choose a colour pallette */
+:root {
+  --blue: #1976d2;
+  --green: #308732;
+  --red: #d32f2f;
+  --universal-border-radius: 5px;
+  --link: #336699;
+  --link-hover: #66ccff;
+}
+header {
+    width: 100%;
+    margin-bottom: var(--universal-margin);
+}
+header h1 {
+    font-size: 12pt;
+}
 body {
-  font-size: 12pt;
+    font-size: 12pt;
+}
+footer {
+    font-size: 12pt;
+    width: 100%;
+    margin-top: var(--universal-margin);
+    text-align: center;
 }
 a {
-  color: #336699;
+  color: var(--link);
   text-decoration: none;
 }
 a:hover {
-  color: #66ccff;
+  color: var(--link-hover);
 }
 pre {
   padding: 10px;
-  border: solid 1px gray;
-  backgroud: #eee;
+  border: solid 1px var(--border-color);
+  border-radius: var(--universal-border-radius);
+  background: #eee;
   font-size: 80%;
 }
 svg text {
@@ -26,31 +47,41 @@ blockquote p {
 }
 table {
   max-height: 10000px !important;
-  display: table !important;
-  width: 100%;
-  border-top: solid 1px gray;
-  border-bottom: solid 1px gray;
+  display: table;
+  margin: var(--universal-margin);
+  padding: 0;
+  border: 1px solid var(--border-color);
+  border-radius: var(--universal-border-radius);
 }
-table thead, table tbody {
+table thead {
   display: table-header-group;
+}
+table tbody {
+  display: table-row-group;
 }
 table tr {
   display: table-row;
 }
+table th:first-child {
+    border-top-left-radius: var(--universal-border-radius);
+}
+
+table th:last-child {
+    border-top-right-radius: var(--universal-border-radius);
+}
+table td {
+    padding: var(--universal-padding);
+    vertical-align: top;
+}
+/*
 table tr th ,
 table tr td {
   font-size: 80%;
   padding: 0.2em;
 }
+*/
 h3:hover {
   cursor: pointer;
-}
-h3:before {
-  font-size: 50%;
-  content: '\25B2 '
-}
-h3.collapsed:before {
-  content: '\25BC '
 }
 code {
   line-height: inherit;
@@ -82,8 +113,27 @@ table.changelog thead tr th:nth-child(2) {
     width: 20%;
 }
 .feather-plus-square {
-    color: #5d964d;
+    color: var(--green);
 }
 .feather-x-square {
-    color: #7a1b14;
+    color: var(--red);
+}
+.feather-edit {
+    color: var(--blue);
+}
+.toggle-icon {
+    display: inline-block;
+    vertical-align: middle;
+}
+.search {
+    margin: 0px;
+    padding: 0px;
+    background: none;
+    border: none;
+}
+.search input {
+    width:100%;
+}
+.edit-github {
+    display: block !important;
 }

@@ -10,15 +10,24 @@
 <body>
     <div class="container">
         <div class="row">
-            <h1>IFC 4.3.x development</h1>
+            <header>
+                <h1>IFC 4.3.x development</h1>
+            </header>
         </div>
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-2">
                 {% block searchbar %}
-                <form method='get' action='/search'>
-                    <input type='text' name='query' value='' />
-                    <input type='submit' value='Search' />
-                    <span class="icon-search"></span>
+                <form method='get' action='/search' style="padding:0px;" class="search">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <input type='text' name='query' value='' placeholder="Search" class="search-input" />
+                        </div>
+                        <div class="col-md-4">
+                            <button type='submit' value='Search' class="primary">
+                                <span class="icon-search inverse"></span>
+                            </button>
+                        </div>
+                    </div>
                 </form>
                 {% endblock %}
                 <nav>
@@ -29,10 +38,36 @@
                     {% endfor %}
                 </nav>
             </div>
-            <div class="col-md-9">
+            <div class="col-md-8">
                 {% block pagecontent %}
                 {% endblock %}
             </div>
+            <div class="col-md-2">
+                {% if path %}
+                <div class="col-sm-12">
+                    <div class="card fluid shadowed">
+                        <p>
+                            <a class="button primary edit-github" href='https://github.com/buildingSMART/IFC4.3.x-development/blob/master/{{ path }}'><span class="icon-edit inverse"></span> Edit on Github</a>
+                        </p>
+                        <p>
+                            <small>
+                                <span id='contributors'></span><br />
+                                <span id='last-change'></span>
+                            </small>
+                        </p>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="row">
+            <footer>
+                <p>
+                    <small>
+                        Copyright &copy; 1996-2022 buildingSMART International Limited. Some rights reserved. Any technical documentation made available by buildingSMART International Limited is the copyrighted work of buildingSMART International Limited and is owned by buildingSMART International Limited. The Industry Foundation Classes are published under Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0). Read the <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode">full license text here</a>. For more information please refer to our <a href="https://buildingsmart-1xbd3ajdayi.netdna-ssl.com/wp-content/uploads/2021/06/bSI-Intellectual-Property-Policy.pdf">IP Policy.</a>
+                    </small>
+                </p>
+            </footer>
         </div>
     </div>
     <script>

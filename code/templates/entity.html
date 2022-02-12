@@ -28,9 +28,7 @@
 {{ content | safe }}
 
 {% if formal_representation %}
-<h3>
-    {{ formal_representation.number }} Formal representation
-</h3>
+<h3>{{ formal_representation.number }} Formal representation</h3>
 <pre>
 {{ formal_representation.express }}
 </pre>

@@ -23,18 +23,27 @@
 {% endif %}
 
 
-<h3>{{ number }}{% if number %}.1{% endif %} Semantic definition</h3>
+<h3>{{ definition_number }} Semantic definition</h3>
 
 {{ content | safe }}
 
+{% if formal_representation %}
+<h3>
+    {{ formal_representation.number }} Formal representation
+</h3>
+<pre>
+{{ formal_representation.express }}
+</pre>
+{% endif %}
+
 {% if changelog %}
 <h3>
-    Changelog
+    {{ changelog.number }} Changelog
 </h3>
 <div>
-    {% for section in changelog %}
+    {% for section in changelog.sections %}
     <h4>
-        {{ section.name }}
+        {{ section.number }} {{ section.name }}
     </h4>
     <table class="striped changelog">
         <thead>

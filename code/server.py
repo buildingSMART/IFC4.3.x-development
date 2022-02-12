@@ -749,9 +749,12 @@ def resource(resource):
     except:
         abort(404)
 
-    html = ""
+    SectionNumberGenerator.set(idx)
+    SectionNumberGenerator.begin_subsection()
 
-    paragraph = 1
+    definition_number = SectionNumberGenerator.generate()
+
+    html = ""
 
     md = get_resource_path(resource, abort_on_error=False)
 
@@ -774,10 +777,11 @@ def resource(resource):
             supertype_chain.append(ty)
             ty = R.entity_supertype.get(ty)
 
+        print(type(mdc))
+
         if "## Attributes" in mdc:
             mdc = mdc[0 : mdc.index("## Attributes")]
-            mdc += "\n\n" + idx + ".%d Attributes\n===========\n\n" % paragraph
-            paragraph += 1
+            mdc += "\n\n" + SectionNumberGenerator.generate() + " Attributes\n===========\n\n"
 
         builder = resource_documentation_builder(resource)
         attrs = builder.attributes
@@ -812,12 +816,11 @@ def resource(resource):
         try:
             mdc += (
                 "\n\n"
-                + idx
-                + ".%d Entity inheritance\n===========\n\n```" % paragraph
+                + SectionNumberGenerator.generate()
+                + " Entity inheritance\n===========\n\n```"
                 + generate_inheritance_graph(resource)
                 + "```"
             )
-            paragraph += 1
         except:
             import traceback
 
@@ -848,6 +851,7 @@ def resource(resource):
 
         concept_lookup = {c.text.replace(" ", ""): (c.text, c.url) for c in flatten_hierarchy(concept_hierarchy)}
 
+        SectionNumberGenerator.begin_subsection()
         # Iterate over views and concepts stored in XMI
         for view_name, concepts in R.xmi_concepts.items():
 
@@ -859,18 +863,19 @@ def resource(resource):
                     applicable_concepts.append((xmi_concept, headers, rows))
 
             if applicable_concepts:
-                mdc += f"\n\n## {idx}.{paragraph} {separate_camel(view_name)}\n\n"
+                mdc += f"\n\n## {SectionNumberGenerator.generate()} {separate_camel(view_name)}\n\n"
 
+                SectionNumberGenerator.begin_subsection()
                 for ci, (xmi_concept, headers, rows) in enumerate(applicable_concepts, start=1):
 
                     # is_inherited = " (inherited)" if en != resource else ""
                     is_inherited = ""
                     link = ""
                     if concept_lookup.get(xmi_concept):
-                        link += f"[&#10150;]({concept_lookup.get(xmi_concept)[1]})\n\n"
+                        link += f"[Read more]({concept_lookup.get(xmi_concept)[1]})\n\n"
 
                     mdc += (
-                        f"\n\n## {idx}.{paragraph}.{ci} {concept_lookup.get(xmi_concept)[0]}{is_inherited} {link}\n\n"
+                        f"\n\n### {SectionNumberGenerator.generate()} {concept_lookup.get(xmi_concept)[0]}{is_inherited} {link}\n\n"
                     )
 
                     cdef = concept_definition.get((view_name, xmi_concept), ["", ""])[1]
@@ -905,8 +910,8 @@ def resource(resource):
                             tabulate.tabulate(rows, headers=headers, tablefmt="unsafehtml"),
                         )
                     )
-
-            paragraph += 1
+                SectionNumberGenerator.end_subsection()
+        SectionNumberGenerator.end_subsection()
 
     elif resource in R.pset_definitions.keys():
 
@@ -960,47 +965,81 @@ def resource(resource):
     for from_r, to_r in replacements:
         html = html.replace(from_r, to_r)
 
-    changelog_data = R.changes_by_type.get(resource, {})
-    change_log = []
-
-    is_deprecated = resource in R.deprecated_entities
-    is_abstract = resource in R.abstract_entities
-
-    if changelog_data:
-        for section, changes in changelog_data.items():
-            change_log.append(
-                {
-                    "name": section,
-                    "changes": [
-                        {
-                            "is_addition": "add" in c[0],
-                            "is_deletion": "delet" in c[0],
-                            "is_modification": "modif" in c[0],
-                            "what_changed": c[1],
-                            "description": c[2],
-                        }
-                        for c in changes
-                    ],
-                }
-            )
-
-    if R.entity_definitions.get(resource):
-        html += "<h3>" + idx + ".%d Formal representations</h3>" % paragraph
-        html += "<pre>" + R.entity_definitions.get(resource) + "</pre>"
-        paragraph += 1
-
     return render_template(
         "entity.html",
         base=base,
         navigation=navigation_entries,
         content=html,
         number=idx,
+        definition_number=definition_number,
         entity=resource,
         path=md[len(REPO_DIR) :].replace("\\", "/"),
-        changelog=change_log,
-        is_deprecated=is_deprecated,
-        is_abstract=is_abstract,
+        formal_representation=get_formal_representation(resource),
+        changelog=get_changelog(resource),
+        is_deprecated=resource in R.deprecated_entities,
+        is_abstract=resource in R.abstract_entities,
     )
+
+
+def get_formal_representation(resource):
+    express = R.entity_definitions.get(resource)
+    if express:
+        return { "number": SectionNumberGenerator.generate(), "express": express }
+
+
+def get_changelog(resource):
+    changelog_data = R.changes_by_type.get(resource, {})
+    if not changelog_data:
+        return
+    changelog = {"number": SectionNumberGenerator.generate(), "sections": []}
+    SectionNumberGenerator.begin_subsection()
+    for section, changes in changelog_data.items():
+        changelog["sections"].append(
+            {
+                "name": section,
+                "number": SectionNumberGenerator.generate(),
+                "changes": [
+                    {
+                        "is_addition": "add" in c[0],
+                        "is_deletion": "delet" in c[0],
+                        "is_modification": "modif" in c[0],
+                        "what_changed": c[1],
+                        "description": c[2],
+                    }
+                    for c in changes
+                ],
+            }
+        )
+    SectionNumberGenerator.end_subsection()
+    return changelog
+
+
+# Will probably become smarter
+class SectionNumberGenerator:
+    number = '1'
+
+    @classmethod
+    def set(cls, number):
+        cls.number = number
+
+    @classmethod
+    def generate(cls):
+        numbers = cls.number.split(".")
+        numbers[-1] = str(int(numbers[-1]) + 1)
+        cls.number = ".".join(numbers)
+        return cls.number
+
+    @classmethod
+    def begin_subsection(cls):
+        cls.number += ".0"
+
+    @classmethod
+    def end_subsection(cls):
+        cls.number = ".".join(cls.number.split(".")[0:-1])
+
+    @classmethod
+    def get_table_of_contents(cls):
+        pass # Just an idea? Like Wikipedia
 
 
 @app.route(make_url("listing"))

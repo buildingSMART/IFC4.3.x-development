@@ -73,14 +73,12 @@ table td {
     padding: var(--universal-padding);
     vertical-align: top;
 }
-/*
-table tr th ,
-table tr td {
-  font-size: 80%;
-  padding: 0.2em;
+h5 {
+    /* Same size as h4, because it starts getting unpleasantly tiny */
+    font-size: calc(1rem * var(--heading-ratio));
+    font-style: italic;
 }
-*/
-h3:hover {
+h3:hover, h4:hover, h5:hover {
   cursor: pointer;
 }
 code {
@@ -121,6 +119,10 @@ table.changelog thead tr th:nth-child(2) {
 .feather-edit {
     color: var(--blue);
 }
+.feather-arrow-right {
+    width: 16px;
+    height: 16px;
+}
 .toggle-icon {
     display: inline-block;
     vertical-align: middle;
@@ -136,4 +138,7 @@ table.changelog thead tr th:nth-child(2) {
 }
 .edit-github {
     display: block !important;
+}
+.read-more small {
+    display: inline;
 }

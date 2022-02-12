@@ -14,13 +14,27 @@ function renderToggleIcon(element) {
     }
 }
 
-let elements = document.getElementsByTagName('h3');
-for (let i=0; i<elements.length; i++) {
-    renderToggleIcon(elements[i]);
+function replaceReadMoreWithIcon(element) {
+    let elements = element.getElementsByTagName('a');
+    for (let i=0; i<elements.length; i++) {
+        let a = elements[i];
+        if (a.innerText == 'Read more') {
+            a.classList.add('read-more')
+            a.innerHTML = '<small>Read more</small> <i data-feather="arrow-right"></i>';
+            console.log(a);
+        }
+    }
+}
 
-    elements[i].onclick = function(e) {
+let elements = document.querySelectorAll('h3, h4, h5, h6');
+for (let i=0; i<elements.length; i++) {
+    let element = elements[i];
+    renderToggleIcon(element);
+    replaceReadMoreWithIcon(element);
+
+    element.onclick = function(e) {
         let hide = e.target.classList.toggle('collapsed');
-        renderToggleIcon(elements[i]);
+        renderToggleIcon(element);
 
         elem = e.target.nextElementSibling;
         while (elem) {
@@ -139,7 +153,7 @@ fetch('https://api.github.com/repos/buildingSMART/IFC4.3.x-development/commits?p
   );
   es.map(kv => [kv[1], kv[0]]).sort().forEach(kv => {
     let img = document.createElement('img');
-    img.src = kv[1] + "&s=32";
+    img.src = kv[1] + '&s=32';
     img.style.borderRadius = '16px';
     img.style.verticalAlign = 'middle';
     document.getElementById('contributors').appendChild(img);

@@ -38,13 +38,11 @@ for (let i=0; i<elements.length; i++) {
         let headerLevel = e.target.tagName.slice(-1);
         let elem = e.target.nextElementSibling;
         while (elem) {
-            elem.style.display = hide ? 'none' : '';
-            elem = elem.nextElementSibling;
-            if ( ! elem ) {
-                break;
-            } else if (elem.tagName.slice(0, 1) == 'H' && elem.tagName.slice(-1) <= headerLevel)  {
+            if (elem.tagName.slice(0, 1) == 'H' && elem.tagName.slice(-1) <= headerLevel)  {
                 break;
             }
+            elem.style.display = hide ? 'none' : '';
+            elem = elem.nextElementSibling;
         }
     }
 }

@@ -22,10 +22,32 @@
 </div>
 {% endif %}
 
-
-<h3>{{ definition_number }} Semantic definition</h3>
+<h3>
+    {{ definition_number }} Semantic definition
+</h3>
 
 {{ content | safe }}
+
+{% if attributes %}
+<h3>
+    {{ attributes.number }} Attributes
+</h3>
+{{ attributes.html | safe }}
+{% endif %}
+
+{% if entity_inheritance %}
+<h3>
+    {{ entity_inheritance.number }} Entity inheritance
+</h3>
+{{ entity_inheritance.graph | safe }}
+{% endif %}
+
+{% if concept_usage %}
+<h3>
+    {{ concept_usage.number }} Concept usage
+</h3>
+{{ concept_usage.html | safe }}
+{% endif %}
 
 {% if formal_representation %}
 <h3>{{ formal_representation.number }} Formal representation</h3>

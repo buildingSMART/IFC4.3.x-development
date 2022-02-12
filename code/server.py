@@ -760,8 +760,6 @@ def resource(resource):
 
     attribute_table = ""
 
-    replacements = []
-
     try:
         mdc = open(md, "r", encoding="utf-8").read()
     except:
@@ -769,152 +767,10 @@ def resource(resource):
 
     mdc = re.sub(DOC_ANNOTATION_PATTERN, "", mdc)
 
+    builder = None
+
     if "Entities" in md:
-
-        ty = resource
-        supertype_chain = []
-        while ty is not None:
-            supertype_chain.append(ty)
-            ty = R.entity_supertype.get(ty)
-
-        print(type(mdc))
-
-        if "## Attributes" in mdc:
-            mdc = mdc[0 : mdc.index("## Attributes")]
-            mdc += "\n\n" + SectionNumberGenerator.generate() + " Attributes\n===========\n\n"
-
         builder = resource_documentation_builder(resource)
-        attrs = builder.attributes
-        supertype_counts = Counter()
-        supertype_counts.update([a[0] for a in attrs])
-        attrs = [a[1:] for a in attrs]
-        supertype_counts = list(supertype_counts.items())[::-1]
-
-        attribute_table = tabulate.tabulate(
-            attrs, headers=("#", "Attribute", "Type", "Description"), tablefmt="unsafehtml"
-        )
-        soup = BeautifulSoup(attribute_table)
-        insertion_points = [0] + list(itertools.accumulate(map(operator.itemgetter(1), supertype_counts[::-1])))[:-1]
-        trs = list(soup.findAll("tr"))
-        for tridx, (ty, _) in zip(insertion_points, supertype_counts[::-1]):
-            tr = soup.new_tag("tr")
-            td = soup.new_tag("td", colspan=4)
-            a = soup.new_tag("a", href=url_for("resource", resource=ty))
-            a.string = ty
-            td.append(a)
-            tr.append(td)
-            try:
-                trs[tridx + 1].insert_before(tr)
-            except:
-                import traceback
-
-                traceback.print_exc()
-        attribute_table = str(soup)
-
-        mdc += "\n\nattribute_table\n\n"
-
-        try:
-            mdc += (
-                "\n\n"
-                + SectionNumberGenerator.generate()
-                + " Entity inheritance\n===========\n\n```"
-                + generate_inheritance_graph(resource)
-                + "```"
-            )
-        except:
-            import traceback
-
-            traceback.print_exc()
-            pass
-
-        concepts = list(builder.concepts)
-
-        # In case of inherited concepts filter on the entity
-        # that defines it most specifically (insertion order)
-        most_specific = {b: a for a, b, _ in concepts}
-
-        def qualify_mvd(nm):
-            if isinstance(nm, tuple):
-                return nm[0].replace(" ", ""), nm[1].replace(" ", "")
-            else:
-                return "GeneralUsage", nm.replace(" ", "")
-
-        concept_definition = {qualify_mvd(nm): (en, defn) for en, nm, defn in concepts if most_specific[nm] == en}
-
-        # Create a lookup for concept name to URL
-        concept_hierarchy = make_concept([""])
-
-        def flatten_hierarchy(h):
-            yield h
-            for ch in h.children:
-                yield from flatten_hierarchy(ch)
-
-        concept_lookup = {c.text.replace(" ", ""): (c.text, c.url) for c in flatten_hierarchy(concept_hierarchy)}
-
-        mdc += f"\n\n{SectionNumberGenerator.generate()} Concept usage\n===========\n"
-
-        SectionNumberGenerator.begin_subsection()
-        # Iterate over views and concepts stored in XMI
-        for view_name, concepts in R.xmi_concepts.items():
-
-            applicable_concepts = []
-            for xmi_concept in concepts:
-
-                headers, rows = create_concept_table(view_name, xmi_concept, supertype_chain)
-                if rows:
-                    applicable_concepts.append((xmi_concept, headers, rows))
-
-            if applicable_concepts:
-                mdc += f"\n\n## {SectionNumberGenerator.generate()} {separate_camel(view_name)}\n\n"
-
-                SectionNumberGenerator.begin_subsection()
-                for ci, (xmi_concept, headers, rows) in enumerate(applicable_concepts, start=1):
-
-                    # is_inherited = " (inherited)" if en != resource else ""
-                    is_inherited = ""
-                    link = ""
-                    if concept_lookup.get(xmi_concept):
-                        link += f"[Read more]({concept_lookup.get(xmi_concept)[1]})\n\n"
-
-                    mdc += (
-                        f"\n\n### {SectionNumberGenerator.generate()} {concept_lookup.get(xmi_concept)[0]}{is_inherited} {link}\n\n"
-                    )
-
-                    cdef = concept_definition.get((view_name, xmi_concept), ["", ""])[1]
-                    try:
-                        mm = mdp.markdown_attribute_parser(cdef, None)
-                        headings = [x[0][2][0] for x in mm.tok_renders_pairs if x[0][0] == "heading_open"]
-                        if headings:
-                            cdef = "".join(mm.lines[0 : headings[0]])
-                    except:
-                        print(f"Failed to parse markdown: {resource}")
-                        cdef += "<i>Failed to parse markdown</i>"
-                    mdc += cdef + "\n\n"
-                    mm = dict(mm)
-
-                    if mm:
-                        headers += ["Description"]
-
-                        def augment_with_descriptions(row):
-                            description = ""
-                            intersect = set(row) & set(mm.keys())
-                            if intersect:
-                                description = mm[sorted(intersect)[0]]
-                            return row + [description]
-
-                        rows = list(map(augment_with_descriptions, rows))
-
-                    mdc += f"concept_{view_name}_{xmi_concept}\n\n"
-
-                    replacements.append(
-                        (
-                            f"concept_{view_name}_{xmi_concept}",
-                            tabulate.tabulate(rows, headers=headers, tablefmt="unsafehtml"),
-                        )
-                    )
-                SectionNumberGenerator.end_subsection()
-        SectionNumberGenerator.end_subsection()
-
     elif resource in R.pset_definitions.keys():
 
         def make_prop(prop):
@@ -964,9 +820,6 @@ def resource(resource):
 
     html = html.replace("attribute_table", attribute_table)
 
-    for from_r, to_r in replacements:
-        html = html.replace(from_r, to_r)
-
     return render_template(
         "entity.html",
         base=base,
@@ -976,11 +829,170 @@ def resource(resource):
         definition_number=definition_number,
         entity=resource,
         path=md[len(REPO_DIR) :].replace("\\", "/"),
+        attributes=get_attributes(resource, builder),
+        entity_inheritance=get_entity_inheritance(resource),
+        concept_usage=get_concept_usage(resource, builder),
         formal_representation=get_formal_representation(resource),
         changelog=get_changelog(resource),
         is_deprecated=resource in R.deprecated_entities,
         is_abstract=resource in R.abstract_entities,
     )
+
+
+def get_attributes(resource, builder):
+    if not builder:
+        return
+    attrs = builder.attributes
+    supertype_counts = Counter()
+    supertype_counts.update([a[0] for a in attrs])
+    attrs = [a[1:] for a in attrs]
+    supertype_counts = list(supertype_counts.items())[::-1]
+
+    attribute_table = tabulate.tabulate(
+        attrs, headers=("#", "Attribute", "Type", "Description"), tablefmt="unsafehtml"
+    )
+    soup = BeautifulSoup(attribute_table)
+    insertion_points = [0] + list(itertools.accumulate(map(operator.itemgetter(1), supertype_counts[::-1])))[:-1]
+    trs = list(soup.findAll("tr"))
+    for tridx, (ty, _) in zip(insertion_points, supertype_counts[::-1]):
+        tr = soup.new_tag("tr")
+        td = soup.new_tag("td", colspan=4)
+        a = soup.new_tag("a", href=url_for("resource", resource=ty))
+        a.string = ty
+        td.append(a)
+        tr.append(td)
+        try:
+            trs[tridx + 1].insert_before(tr)
+        except:
+            import traceback
+
+            traceback.print_exc()
+    return {
+        "number": SectionNumberGenerator.generate(),
+        "html": str(soup),
+    }
+
+
+def get_entity_inheritance(resource):
+    try:
+        return {
+            "number": SectionNumberGenerator.generate(),
+            "graph": process_markdown(resource, "```" + generate_inheritance_graph(resource) + "```"),
+        }
+    except:
+        import traceback
+
+        traceback.print_exc()
+
+
+def get_concept_usage(resource, builder):
+    if not builder:
+        return
+    results = {}
+    ty = resource
+    supertype_chain = []
+    while ty is not None:
+        supertype_chain.append(ty)
+        ty = R.entity_supertype.get(ty)
+
+    concepts = list(builder.concepts)
+
+    # In case of inherited concepts filter on the entity
+    # that defines it most specifically (insertion order)
+    most_specific = {b: a for a, b, _ in concepts}
+
+    def qualify_mvd(nm):
+        if isinstance(nm, tuple):
+            return nm[0].replace(" ", ""), nm[1].replace(" ", "")
+        else:
+            return "GeneralUsage", nm.replace(" ", "")
+
+    concept_definition = {qualify_mvd(nm): (en, defn) for en, nm, defn in concepts if most_specific[nm] == en}
+
+    # Create a lookup for concept name to URL
+    concept_hierarchy = make_concept([""])
+
+    def flatten_hierarchy(h):
+        yield h
+        for ch in h.children:
+            yield from flatten_hierarchy(ch)
+
+    concept_lookup = {c.text.replace(" ", ""): (c.text, c.url) for c in flatten_hierarchy(concept_hierarchy)}
+
+    #mdc += f"\n\n{SectionNumberGenerator.generate()} Concept usage\n===========\n"
+    mdc = ""
+    replacements = []
+
+    SectionNumberGenerator.begin_subsection()
+    # Iterate over views and concepts stored in XMI
+    for view_name, concepts in R.xmi_concepts.items():
+
+        applicable_concepts = []
+        for xmi_concept in concepts:
+
+            headers, rows = create_concept_table(view_name, xmi_concept, supertype_chain)
+            if rows:
+                applicable_concepts.append((xmi_concept, headers, rows))
+
+        if applicable_concepts:
+            mdc += f"\n\n## {SectionNumberGenerator.generate()} {separate_camel(view_name)}\n\n"
+
+            SectionNumberGenerator.begin_subsection()
+            for ci, (xmi_concept, headers, rows) in enumerate(applicable_concepts, start=1):
+
+                # is_inherited = " (inherited)" if en != resource else ""
+                is_inherited = ""
+                link = ""
+                if concept_lookup.get(xmi_concept):
+                    link += f"[Read more]({concept_lookup.get(xmi_concept)[1]})\n\n"
+
+                mdc += (
+                    f"\n\n### {SectionNumberGenerator.generate()} {concept_lookup.get(xmi_concept)[0]}{is_inherited} {link}\n\n"
+                )
+
+                cdef = concept_definition.get((view_name, xmi_concept), ["", ""])[1]
+                try:
+                    mm = mdp.markdown_attribute_parser(cdef, None)
+                    headings = [x[0][2][0] for x in mm.tok_renders_pairs if x[0][0] == "heading_open"]
+                    if headings:
+                        cdef = "".join(mm.lines[0 : headings[0]])
+                except:
+                    print(f"Failed to parse markdown: {resource}")
+                    cdef += "<i>Failed to parse markdown</i>"
+                mdc += cdef + "\n\n"
+                mm = dict(mm)
+
+                if mm:
+                    headers += ["Description"]
+
+                    def augment_with_descriptions(row):
+                        description = ""
+                        intersect = set(row) & set(mm.keys())
+                        if intersect:
+                            description = mm[sorted(intersect)[0]]
+                        return row + [description]
+
+                    rows = list(map(augment_with_descriptions, rows))
+
+                mdc += f"concept_{view_name}_{xmi_concept}\n\n"
+
+                replacements.append(
+                    (
+                        f"concept_{view_name}_{xmi_concept}",
+                        tabulate.tabulate(rows, headers=headers, tablefmt="unsafehtml"),
+                    )
+                )
+            SectionNumberGenerator.end_subsection()
+    SectionNumberGenerator.end_subsection()
+
+    if mdc:
+        html = process_markdown(resource, mdc)
+        for from_r, to_r in replacements:
+            html = html.replace(from_r, to_r)
+        return {
+            "number": SectionNumberGenerator.generate(),
+            "html": html,
+        }
 
 
 def get_formal_representation(resource):

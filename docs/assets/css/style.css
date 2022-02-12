@@ -142,3 +142,9 @@ table.changelog thead tr th:nth-child(2) {
 .read-more small {
     display: inline;
 }
+.contributor-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    vertical-align: middle;
+}

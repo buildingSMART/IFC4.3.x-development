@@ -154,8 +154,7 @@ fetch('https://api.github.com/repos/buildingSMART/IFC4.3.x-development/commits?p
   es.map(kv => [kv[1], kv[0]]).sort().forEach(kv => {
     let img = document.createElement('img');
     img.src = kv[1] + '&s=32';
-    img.style.borderRadius = '16px';
-    img.style.verticalAlign = 'middle';
+    img.classList.add('contributor-icon');
     document.getElementById('contributors').appendChild(img);
   });
   document.getElementById('last-change').innerHTML += 'Last change: ' +

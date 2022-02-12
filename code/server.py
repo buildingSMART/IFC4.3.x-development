@@ -802,6 +802,18 @@ def resource(resource):
             properties=get_properties(resource),
             changelog=get_changelog(resource),
         )
+    return render_template(
+        "type.html",
+        base=base,
+        navigation=navigation_entries,
+        content=process_markdown(resource, mdc),
+        number=idx,
+        definition_number=definition_number,
+        entity=resource,
+        path=md[len(REPO_DIR) :].replace("\\", "/"),
+        formal_representation=get_formal_representation(resource),
+        changelog=get_changelog(resource),
+    )
 
 def get_applicability(resource):
     return {

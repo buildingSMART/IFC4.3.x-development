@@ -1,0 +1,20 @@
+{% extends "main.html" %}
+{% block pagecontent %}
+
+<h2>{{ number }} {{ entity}}</h2>
+
+<h3>
+    {{ definition_number }} Semantic definition
+</h3>
+
+{{ content | safe }}
+
+{% if formal_representation %}
+<h3>
+    {{ formal_representation.number }} Formal representation
+</h3>
+<pre>
+{{ formal_representation.express }}
+</pre>
+{% endif %}
+{% endblock %}

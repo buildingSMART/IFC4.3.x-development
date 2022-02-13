@@ -1677,10 +1677,32 @@ def after(response):
 
         # I know, I know, string to dom to string to dom to ...
         soup = BeautifulSoup(html)
+
         for figure in soup.findAll("figure"):
             for figcaption in figure.findAll("figcaption"):
                 number = figcaption.text.split(" ", 2)[1]
                 FigureNumberer.generate(figure, number)
+
+        for element in soup.findAll(["h3", "h4", "h5", "h6", "figure"]):
+            id_element = element
+            if element.name == "figure":
+                element = element.find("figcaption")
+                print(element)
+                value = element.contents[0].strip()
+            else:
+                value = element.contents[0].strip()
+            anchor_tag = re.sub('[^0-9a-zA-Z.]+', '-', value)
+
+            anchor_id = soup.new_tag("a")
+            anchor_id["id"] = anchor_tag
+            id_element.insert(0, anchor_id)
+
+            anchor = soup.new_tag("a")
+            anchor["href"] = "#" + anchor_tag
+            icon = soup.new_tag("i")
+            icon["data-feather"] = "link"
+            anchor.append(icon)
+            element.append(anchor)
 
         html = FigureNumberer.replace_references(str(soup))
 

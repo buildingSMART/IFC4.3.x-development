@@ -20,7 +20,7 @@ function replaceReadMoreWithIcon(element) {
         let a = elements[i];
         if (a.innerText == 'Read more') {
             a.classList.add('read-more')
-            a.innerHTML = '<small>Read more</small> <i data-feather="arrow-right"></i>';
+            a.innerHTML = '<small>Read more</small> ';
         }
     }
 }

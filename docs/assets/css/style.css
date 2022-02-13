@@ -163,9 +163,14 @@ table.attributes tr.attribute-group td mark {
 .feather-edit {
     color: var(--blue);
 }
-.feather-arrow-right {
+.feather-link {
     width: 16px;
     height: 16px;
+}
+figcaption .feather-link {
+    width: 12px;
+    height: 12px;
+    margin-left: calc(0.5 * var(--universal-margin));
 }
 .hide-inverse .feather-eye-off {
     vertical-align: text-bottom;

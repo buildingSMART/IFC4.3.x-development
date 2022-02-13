@@ -5,6 +5,8 @@
 The documentation server is a web application for viewing the IFC documentation.
 View it live at http://ifc43-docs.standards.buildingsmart.org/
 
+![Website screenshot](website-screenshot.png)
+
 This web application has the following features:
 
  - Allows the IFC documentation to be generated without the need for proprietary
@@ -45,14 +47,13 @@ There are three aspects of the IFC documentation server: **Schema**,
  - **Property set definitions** - definitions for property and quantity sets are
    stored in `reference_schemas/psd/`
 
-UML modeling knowledge is a prerequisite for those modifying the **Base schema**
-and **Property set definitions**. However, any changes to the schema must follow
-the [IFC Change
+UML modeling knowledge is a prerequisite for those modifying the **Schema**.
+However, any changes to the schema must follow the [IFC Change
 Process](https://github.com/buildingSMART/IFC4.3.x-development/wiki/IFC-4.3.x-Change-Process)
 to ensure that all changes are publicly reviewed, transparent to the community,
 and enlist the appropriate domain experts for quality control.
 
-As of writing, this monolithic XMI document is generated using a the
+As of writing, this monolithic XMI document is generated using the
 proprietary Enterprise Architect tool. However, it is planned to be broken up
 into smaller datasets and revised to allow UML modeling without proprietary or
 platform requirements.
@@ -77,21 +78,20 @@ Process](https://github.com/buildingSMART/IFC4.3.x-development/wiki/IFC-4.3.x-Ch
 
 ### Website
 
- - **Preprocessor** - The _Base schema_ and _Property set definitions_
-   cannot be immediately accessed by the web application due to their
-   complexity. This requires a preprocessing step in `code/create_resources.sh`.
-   This breaks down the complex UML / XMI data into simple JSON data that the
-   web application can query.
+ - **Preprocessor** - The _Schema_ cannot be immediately accessed by the web
+   application due to its complexity. This requires a preprocessing step in
+   `code/create_resources.sh`.  This breaks down the complex UML / XMI data into
+   simple JSON data that the web application can query.
  - **Backend** - The website itself is a Python Flask application which begins
-   in `server.py`. This web application renders the preprocessed _schema_ data
-   with _documentation_ using _frontend_ layouts.
- - **Frontend** - The _documentation_ is turned into a website
+   in `server.py`. This web application renders the preprocessed _Schema_ data
+   with _Documentation_ using _Frontend_ templates.
+ - **Frontend** - The _Documentation_ is turned into a website
    layout using templates. Templates are defined in HTML templates in
    `code/templates/`, as well as CSS, Javascript, and images in `docs/assets/`
 
-To edit the web application features, layouting and diagram generation, and
-other more complex systems, programming knowledge is required. This is either
-Python for the backend code, or HTML, CSS, and Javascript knowledge for frontend
+To edit the **Website** features, layouting and diagram generation, and other
+more complex systems, programming knowledge is required. This is either Python
+for the backend code, or HTML, CSS, and Javascript knowledge for frontend
 design. Making a change to this application is no different to any other change,
 and must also follow the [IFC Change
 Process](https://github.com/buildingSMART/IFC4.3.x-development/wiki/IFC-4.3.x-Change-Process).
@@ -142,14 +142,18 @@ You can deploy a container running a documentation server using Docker.
 
 ```
 $ cd code/
+
 # Build a new system image called "ifcdoc"
 $ docker build -t "ifcdoc" .
+
 # Let's see the image we just created
 $ docker images
 REPOSITORY   TAG           IMAGE ID       CREATED          SIZE
 ifcdoc       latest        df699a56028f   12 seconds ago   3GB
+
 # Run the image we created in a new container called "ifcdoc-container", with our local port 8080 mapped to the container's port 80
 $ docker run -p 8080:80 --name "ifcdoc-container" -d "ifcdoc"
+
 # Check running Docker processes to confirm that the container is running
 $ docker ps
 CONTAINER ID   IMAGE    COMMAND                  CREATED          STATUS          PORTS                                   NAMES
@@ -163,6 +167,7 @@ You can stop the Docker container as follows:
 
 ```
 $ docker stop ifcdoc-container
+
 # Check running processes (-a flag shows all processes) to ensure it has exited
 $ docker ps -a
 CONTAINER ID   IMAGE    COMMAND                  CREATED         STATUS                        PORTS   NAMES
@@ -173,6 +178,7 @@ Then you can start it again:
 
 ```
 $ docker start ifcdoc-container
+
 # Check running Docker processes to confirm that the container is running
 $ docker ps
 CONTAINER ID   IMAGE    COMMAND                  CREATED         STATUS         PORTS                                   NAMES
@@ -197,4 +203,4 @@ $ FLASK_APP=server.py FLASK_ENV=development flask run
  * Debugger PIN: 155-459-101
 ```
 
-Then just visit `http://127.0.0.1:5000/` to view the documentation!
+You can now visit `http://127.0.0.1:5000/` to see the running web application.

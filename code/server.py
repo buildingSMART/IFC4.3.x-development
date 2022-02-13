@@ -720,22 +720,37 @@ def process_markdown(resource, mdc, as_attribute=False):
     if as_attribute:
         return str(soup.text)
 
-    hs = []
     # Renumber the headings
     for i in list(range(7))[::-1]:
         for h in soup.findAll("h%d" % i):
             h.name = "h%d" % (i + 2)
-            hs.append(h)
 
-    # Change svg img references to embedded svg
-    # because otherwise URLS are not interactive
+    # Change svg img references to embedded svg because otherwise URLS are not interactive
     for img in soup.findAll("img"):
+        parent = img.parent
         if img["src"].endswith(".svg"):
             entity, hash = img["src"].split("/")[-1].split(".")[0].split("_")
             svg = BeautifulSoup(open(os.path.join("svgs", entity + "_" + hash + ".dot.svg")))
             img.replaceWith(svg.find("svg"))
+            img = svg
         else:
             img["src"] = img["src"][9:]
+        # Capture images as numbered figures
+        has_caption = False
+        for i, sibling in enumerate(parent.find_next_siblings()):
+            if i > 2 or sibling.name not in ("p", "blockquote"):
+                # If we've gone this far without encountering a caption, something is wrong so let's stop
+                break
+            parent.append(sibling.extract())
+            if sibling.name == "p" and sibling.text.startswith("Figure"):
+                has_caption = True
+                sibling.name = "figcaption"
+                break
+        if not has_caption:
+            caption = soup.new_tag("figcaption")
+            caption.string = "Figure Unnamed"
+            parent.append(caption)
+        parent.name = "figure"
 
     # Tag all special notes separately. In markdown they are all lumped in a single block quote.
     for blockquote in soup.findAll("blockquote"):
@@ -1098,6 +1113,29 @@ def get_changelog(resource):
         )
     SectionNumberGenerator.end_subsection()
     return changelog
+
+
+class FigureNumberer:
+    index = {}
+
+    @classmethod
+    def generate(cls, figure, number):
+        for sibling in figure.find_previous_siblings():
+            if sibling.name.startswith("h"):
+                parent_number = sibling.contents[0].strip().split(" ", 1)[0]
+                alphabet = "A"
+                generated_number = parent_number + "." + alphabet
+                while generated_number in cls.index.values():
+                    alphabet = chr(ord(alphabet) + 1)
+                    generated_number = parent_number + "." + alphabet
+                cls.index[number] = generated_number
+                return
+
+    @classmethod
+    def replace_references(cls, html):
+        for placeholder_number, generated_number in cls.index.items():
+            html = html.replace(f"Figure {placeholder_number}", f"Figure {generated_number}")
+        return html
 
 
 # Will probably become smarter
@@ -1634,10 +1672,17 @@ ifcre = re.compile(r"(Ifc|Pset_|Qto_)\w+(?!(.ht|</a|</h|/|.md))")
 
 @app.after_request
 def after(response):
-
     if request.path.endswith(".htm") or request.path.endswith(".html"):
+        html = response.data.decode("utf-8")
 
-        d = response.data.decode("utf-8")
+        # I know, I know, string to dom to string to dom to ...
+        soup = BeautifulSoup(html)
+        for figure in soup.findAll("figure"):
+            for figcaption in figure.findAll("figcaption"):
+                number = figcaption.text.split(" ", 2)[1]
+                FigureNumberer.generate(figure, number)
+
+        html = FigureNumberer.replace_references(str(soup))
 
         def decorate_link(m):
             w = m.group(0)
@@ -1646,6 +1691,5 @@ def after(response):
             else:
                 return w
 
-        response.data = ifcre.sub(decorate_link, d)
-
+        response.data = ifcre.sub(decorate_link, html)
     return response

@@ -2,12 +2,12 @@
 
 ## Introduction
 
-The documentation server is a web application for viewing the IFC documentation.
+The documentation server is a website for viewing the IFC documentation.
 View it live at http://ifc43-docs.standards.buildingsmart.org/
 
 ![Website screenshot](website-screenshot.png)
 
-This web application has the following features:
+This website has the following features:
 
  - Allows the IFC documentation to be generated without the need for proprietary
    software, and work cross platform on Windows, Mac, and Linux.
@@ -81,9 +81,9 @@ Process](https://github.com/buildingSMART/IFC4.3.x-development/wiki/IFC-4.3.x-Ch
  - **Preprocessor** - The _Schema_ cannot be immediately accessed by the web
    application due to its complexity. This requires a preprocessing step in
    `code/create_resources.sh`.  This breaks down the complex UML / XMI data into
-   simple JSON data that the web application can query.
+   simple JSON data that the website can query.
  - **Backend** - The website itself is a Python Flask application which begins
-   in `server.py`. This web application renders the preprocessed _Schema_ data
+   in `server.py`. This website renders the preprocessed _Schema_ data
    with _Documentation_ using _Frontend_ templates.
  - **Frontend** - The _Documentation_ is turned into a website
    layout using templates. Templates are defined in HTML templates in
@@ -114,6 +114,8 @@ illustrative  schema diagrams using a text-based notation. For this purpose
 Graphviz is used.  The Graphviz DOT definition language is automatically
 enriched with colour conventions derived from the IFC schema.
 
+TODO: show code and generated diagrams from it
+
 For example, the IfcWorkPlan instantiation diagram can be included and edited in
 the MD files and then be visible in the related HTML page.  Below is the
 Graphviz definition of this figure. The user's input overwrites the automatic
@@ -121,8 +123,8 @@ settings. This can be verified with the IfcProject node on the HTML diagram,
 whose link pointing to Building Smart website replaces the link to the entity's
 HTML page.
 
-The interactive SVG diagram can be seen on the generated HTML page here
-http://ifc43-docs.standards.buildingsmart.org/IFC/RELEASE/IFC4x3/HTML/lexical/IfcWorkPlan.htm
+See an [example
+diagram](http://ifc43-docs.standards.buildingsmart.org/IFC/RELEASE/IFC4x3/HTML/lexical/IfcWorkPlan.htm).
 
 ## Dependencies
 
@@ -140,7 +142,7 @@ See `Dockerfile` for more detailed dependencies.
 
 You can deploy a container running a documentation server using Docker.
 
-```
+```bash
 $ cd code/
 
 # Build a new system image called "ifcdoc"
@@ -165,7 +167,7 @@ Now you can visit the containerized deployment in your browser by visiting
 
 You can stop the Docker container as follows:
 
-```
+```bash
 $ docker stop ifcdoc-container
 
 # Check running processes (-a flag shows all processes) to ensure it has exited
@@ -176,7 +178,7 @@ CONTAINER ID   IMAGE    COMMAND                  CREATED         STATUS         
 
 Then you can start it again:
 
-```
+```bash
 $ docker start ifcdoc-container
 
 # Check running Docker processes to confirm that the container is running
@@ -189,7 +191,7 @@ CONTAINER ID   IMAGE    COMMAND                  CREATED         STATUS         
 
 For local development, you can do:
 
-```
+```bash
 $ cd code/
 $ pip install flask Beautifulsoup4 lxml Markdown gunicorn pysolr pydot tabulate hilbertcurve==1.0.5 markdown-it-py==1.1.0 deepdiff
 $ ./create_resources.sh
@@ -203,4 +205,4 @@ $ FLASK_APP=server.py FLASK_ENV=development flask run
  * Debugger PIN: 155-459-101
 ```
 
-You can now visit `http://127.0.0.1:5000/` to see the running web application.
+You can now visit `http://127.0.0.1:5000/` to see the running website.

@@ -48,7 +48,7 @@ There are three aspects of the IFC documentation server: **Schema**,
    stored in `reference_schemas/psd/`
 
 UML modeling knowledge is a prerequisite for those modifying the **Schema**.
-However, any changes to the schema must follow the [IFC Change
+Any changes to the schema must follow the [IFC Change
 Process](https://github.com/buildingSMART/IFC4.3.x-development/wiki/IFC-4.3.x-Change-Process)
 to ensure that all changes are publicly reviewed, transparent to the community,
 and enlist the appropriate domain experts for quality control.
@@ -128,19 +128,45 @@ diagram](http://ifc43-docs.standards.buildingsmart.org/IFC/RELEASE/IFC4x3/HTML/l
 
 ## Dependencies
 
-See `Dockerfile` for more detailed dependencies.
+See `Dockerfile` for more detail on how these dependencies are set up.
 
-* Flask, gunicorn: http server and API
-* Graphviz, pydot: diagram layout
-* solr, pysolr: search
-* supervisord: process control
-* Docker: container
-* Python-Markdown: document conversion
-* Beautifulsoup4: HTML document post processing
+System dependencies:
+
+ * `docker` - container management (optional)
+ * `graphviz` - diagram generator
+ * `gunicorn` - http server (optional)
+ * `ifcopenshell` - used in a minor capacity which can probably be removed in the future
+ * `imagemagick` - automatic image conversion
+ * `python` - to run the website
+ * `solr` - search database (optional)
+ * `supervisord` - process control (optional)
+
+Python modules are all captured in `requirements.txt`
+
+## Development
+
+To run the website on your local machine for development, you can do:
+
+```bash
+$ cd code/
+$ pip install -r requirements.txt
+$ ./create_resources.sh
+$ FLASK_APP=server.py FLASK_ENV=development flask run
+ * Serving Flask app "server.py" (lazy loading)
+ * Environment: development
+ * Debug mode: on
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 155-459-101
+```
+
+You can now visit `http://127.0.0.1:5000/` to see the running website.
 
 ## Deployment
 
-You can deploy a container running a documentation server using Docker.
+Typically for hosting a production version of this website, you can choose to
+deploy a container running the website using Docker.
 
 ```bash
 $ cd code/
@@ -186,23 +212,3 @@ $ docker ps
 CONTAINER ID   IMAGE    COMMAND                  CREATED         STATUS         PORTS                                   NAMES
 0d4b0775cf29   ifcdoc   "/bin/sh -c 'supervi…"   5 minutes ago   Up 3 seconds   0.0.0.0:8080->80/tcp, :::8080->80/tcp   ifcdoc-container
 ```
-
-## Development
-
-For local development, you can do:
-
-```bash
-$ cd code/
-$ pip install flask Beautifulsoup4 lxml Markdown gunicorn pysolr pydot tabulate hilbertcurve==1.0.5 markdown-it-py==1.1.0 deepdiff
-$ ./create_resources.sh
-$ FLASK_APP=server.py FLASK_ENV=development flask run
- * Serving Flask app "server.py" (lazy loading)
- * Environment: development
- * Debug mode: on
- * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
- * Restarting with stat
- * Debugger is active!
- * Debugger PIN: 155-459-101
-```
-
-You can now visit `http://127.0.0.1:5000/` to see the running website.

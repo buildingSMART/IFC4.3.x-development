@@ -3,8 +3,7 @@
 ## Introduction
 
 The documentation server is a web application for viewing the IFC documentation.
-You can view this web application live at
-http://ifc43-docs.standards.buildingsmart.org/
+View it live at http://ifc43-docs.standards.buildingsmart.org/
 
 This web application has the following features:
 
@@ -35,7 +34,8 @@ This web application has the following features:
 
 ## Process
 
-There are three aspects of the IFC documentation server.
+There are three aspects of the IFC documentation server: **Schema**,
+**Documentation**, and **Website**.
 
 ### Schema
 
@@ -57,7 +57,7 @@ proprietary Enterprise Architect tool. However, it is planned to be broken up
 into smaller datasets and revised to allow UML modeling without proprietary or
 platform requirements.
 
-### Written documentation
+### Documentation
 
  - **Static pages** - documentation that does not relate to entities in the
    schema are stored in `content/`.
@@ -70,7 +70,7 @@ platform requirements.
  - **Images** - images referenced in documentation may be stored in
    `docs/figures/`
 
-No special skills are required to edit the **Written documentation**. Just a
+No special skills are required to edit the **Documentation**. Just a
 simple text editor will do. However, any documentation that is not a minor
 formatting change must also follow the [IFC Change
 Process](https://github.com/buildingSMART/IFC4.3.x-development/wiki/IFC-4.3.x-Change-Process).
@@ -84,8 +84,8 @@ Process](https://github.com/buildingSMART/IFC4.3.x-development/wiki/IFC-4.3.x-Ch
    web application can query.
  - **Backend** - The website itself is a Python Flask application which begins
    in `server.py`. This web application renders the preprocessed _schema_ data
-   with _written documentation_ using _frontend_ layouts.
- - **Frontend** - The _written documentation_ is turned into a website
+   with _documentation_ using _frontend_ layouts.
+ - **Frontend** - The _documentation_ is turned into a website
    layout using templates. Templates are defined in HTML templates in
    `code/templates/`, as well as CSS, Javascript, and images in `docs/assets/`
 

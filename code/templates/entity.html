@@ -28,18 +28,65 @@
 
 {{ definition | safe }}
 
-{% if attributes %}
-<h3>
-    {{ attributes.number }} Attributes
-</h3>
-{{ attributes.html | safe }}
-{% endif %}
-
 {% if entity_inheritance %}
 <h3>
     {{ entity_inheritance.number }} Entity inheritance
 </h3>
 {{ entity_inheritance.graph | safe }}
+{% endif %}
+
+{% if attributes %}
+<h3>
+    {{ attributes.number }} Attributes
+</h3>
+<!-- <a class="button primary hide-inverse"><i data-feather="eye-off"></i> Hide inverse</a> -->
+<table class="striped attributes">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Attribute</th>
+            <th>Type</th>
+            <th>Description
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for group in attributes.groups %}
+        {% if group.is_inherited %}
+        <tr class="attribute-group-inherited">
+        {% else %}
+        <tr class="attribute-group">
+        {% endif %}
+            <td colspan="4">
+                {% if group.is_inherited %}<mark>Inherited</mark>{% endif %}
+                {{ group.name }}
+                <small>({{ group.total_attributes}})</small>
+            </td>
+        </tr>
+        {% for attribute in group.attributes %}
+        <tr>
+            <td data-label="#">{{ attribute.number }}</td>
+            <td data-label="Name">
+                {% if attribute.is_inverse %}
+                <em>{{ attribute.name }}</em>
+                {% else %}
+                {{ attribute.name }}
+                {% endif %}
+            </td>
+            <td data-label="Type">{{ attribute.type }}</td>
+            <td data-label="Description">
+                {{ attribute.description | safe }}
+                {% if not attribute.description %}
+                <p>
+                    <em>No description available.</em>
+                </p>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+        {% endfor %}
+    </tbody>
+</table>
 {% endif %}
 
 {% if concept_usage %}

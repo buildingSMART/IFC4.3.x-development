@@ -1,5 +1,6 @@
 :root {
   --blue: #1976d2;
+  --dark: #444444;
   --green: #308732;
   --red: #d32f2f;
   --yellow: #f57c00;
@@ -31,17 +32,19 @@ a:hover {
   color: var(--link-hover);
 }
 pre {
-  padding: 10px;
+  padding: var(--universal-padding);
   border: solid 1px var(--border-color);
   border-radius: var(--universal-border-radius);
   background: #eee;
-  font-size: 80%;
 }
 svg text {
     font-size: 75%;
 }
 svg g.edge text {
     font-size: 60%;
+}
+mark {
+    text-transform: uppercase;
 }
 aside {
     border: 1px solid var(--border-color);
@@ -78,7 +81,6 @@ table tr {
 table th:first-child {
     border-top-left-radius: var(--universal-border-radius);
 }
-
 table th:last-child {
     border-top-right-radius: var(--universal-border-radius);
 }
@@ -113,6 +115,9 @@ code {
 h4 a:hover {
   text-decoration: none;
 }
+td p:nth-child(1) {
+    margin-top: 0px;
+}
 table.changelog {
     width: 100%;
 }
@@ -128,6 +133,24 @@ table.type-values {
 table.type-values thead tr th:nth-child(1) {
     width: 20%;
 }
+table.attributes {
+    width: 100%;
+}
+table.attributes tr.attribute-group-inherited td {
+    background: var(--dark);
+    color: #fff;
+}
+table.attributes tr.attribute-group td {
+    background: var(--blue);
+    color: #fff;
+}
+table.attributes tr.attribute-group td a, table.attributes tr.attribute-group-inherited td a {
+    color: #fff;
+}
+table.attributes tr.attribute-group td mark {
+    float: right;
+    border: 1px solid var(--border-color);
+}
 .feather-plus-square {
     color: var(--green);
 }
@@ -140,6 +163,10 @@ table.type-values thead tr th:nth-child(1) {
 .feather-arrow-right {
     width: 16px;
     height: 16px;
+}
+.hide-inverse .feather-eye-off {
+    vertical-align: text-bottom;
+    margin-right: var(--universal-margin)
 }
 .toggle-icon {
     display: inline-block;

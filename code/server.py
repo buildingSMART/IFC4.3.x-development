@@ -635,7 +635,6 @@ class resource_documentation_builder:
                     b = ty_attr_di.get(a, "")
                     is_fwd, attr_ty = R.entity_attributes[".".join((ty, a))]
                     content = re.sub("\\b_(\\w+?)_\\b", lambda m: m.group(1), b.strip())
-                    content = re.sub("\\n+", "<br><br>", content)
                     attrs.append((ty, a, attr_ty, content))
                     if is_fwd:
                         fwd_attrs.append(a)
@@ -738,7 +737,6 @@ def process_markdown(resource, mdc, as_attribute=False):
         else:
             img["src"] = img["src"][9:]
 
-
     # Tag all special notes separately. In markdown they are all lumped in a single block quote.
     for blockquote in soup.findAll("blockquote"):
         for p in blockquote.findAll("p"):
@@ -788,8 +786,6 @@ def resource(resource):
 
     mdc = re.sub(DOC_ANNOTATION_PATTERN, "", mdc)
 
-    builder = None
-
     if "Entities" in md:
         builder = resource_documentation_builder(resource)
         return render_template(
@@ -801,8 +797,8 @@ def resource(resource):
             definition=get_definition(resource, mdc),
             entity=resource,
             path=md[len(REPO_DIR) :].replace("\\", "/"),
-            attributes=get_attributes(resource, builder),
             entity_inheritance=get_entity_inheritance(resource),
+            attributes=get_attributes(resource, builder),
             concept_usage=get_concept_usage(resource, builder),
             formal_representation=get_formal_representation(resource),
             changelog=get_changelog(resource),
@@ -859,24 +855,19 @@ def get_type_values(resource, mdc):
                 description = str(description)
             described_values.append({"name": value, "description": description})
         values = described_values
-    return {
-        "number": SectionNumberGenerator.generate(),
-        "has_description": has_description,
-        "schema_values": values
-    }
+    return {"number": SectionNumberGenerator.generate(), "has_description": has_description, "schema_values": values}
 
 
 def get_definition(resource, mdc):
     # Only match up to the first header
     if "## " in mdc:
-        mdc = mdc[0:mdc.index("## ")]
+        mdc = mdc[0 : mdc.index("## ")]
     return process_markdown(resource, mdc)
 
+
 def get_applicability(resource):
-    return {
-        "number": SectionNumberGenerator.generate(),
-        "entities": R.pset_definitions[resource]["applicability"]
-    }
+    return {"number": SectionNumberGenerator.generate(), "entities": R.pset_definitions[resource]["applicability"]}
+
 
 def get_properties(resource):
     def make_prop(prop):
@@ -927,29 +918,33 @@ def get_attributes(resource, builder):
     supertype_counts.update([a[0] for a in attrs])
     attrs = [a[1:] for a in attrs]
     supertype_counts = list(supertype_counts.items())[::-1]
-
-    attribute_table = tabulate.tabulate(
-        attrs, headers=("#", "Attribute", "Type", "Description"), tablefmt="unsafehtml"
-    )
-    soup = BeautifulSoup(attribute_table)
     insertion_points = [0] + list(itertools.accumulate(map(operator.itemgetter(1), supertype_counts[::-1])))[:-1]
-    trs = list(soup.findAll("tr"))
-    for tridx, (ty, _) in zip(insertion_points, supertype_counts[::-1]):
-        tr = soup.new_tag("tr")
-        td = soup.new_tag("td", colspan=4)
-        a = soup.new_tag("a", href=url_for("resource", resource=ty))
-        a.string = ty
-        td.append(a)
-        tr.append(td)
-        try:
-            trs[tridx + 1].insert_before(tr)
-        except:
-            import traceback
+    group_data = supertype_counts[::-1]
 
-            traceback.print_exc()
+    results = []
+    for i, attr in enumerate(attrs):
+        if i in insertion_points:
+            name, total_attributes = group_data[insertion_points.index(i)]
+            group = {
+                "name": name,
+                "attributes": [],
+                "is_inherited": insertion_points[-1] != i,
+                "total_attributes": total_attributes,
+            }
+            results.append(group)
+        group["attributes"].append(
+            {
+                "number": attr[0],
+                "name": attr[1],
+                "type": attr[2],
+                "description": process_markdown(resource, attr[3]),
+                "is_inverse": not attr[0],
+            }
+        )
+
     return {
         "number": SectionNumberGenerator.generate(),
-        "html": str(soup),
+        "groups": results,
     }
 
 
@@ -1025,9 +1020,7 @@ def get_concept_usage(resource, builder):
                 if concept_lookup.get(xmi_concept):
                     link += f"[Read more]({concept_lookup.get(xmi_concept)[1]})\n\n"
 
-                mdc += (
-                    f"\n\n### {SectionNumberGenerator.generate()} {concept_lookup.get(xmi_concept)[0]}{is_inherited} {link}\n\n"
-                )
+                mdc += f"\n\n### {SectionNumberGenerator.generate()} {concept_lookup.get(xmi_concept)[0]}{is_inherited} {link}\n\n"
 
                 cdef = concept_definition.get((view_name, xmi_concept), ["", ""])[1]
                 try:
@@ -1077,7 +1070,7 @@ def get_concept_usage(resource, builder):
 def get_formal_representation(resource):
     express = R.entity_definitions.get(resource)
     if express:
-        return { "number": SectionNumberGenerator.generate(), "express": express }
+        return {"number": SectionNumberGenerator.generate(), "express": express}
 
 
 def get_changelog(resource):
@@ -1109,7 +1102,7 @@ def get_changelog(resource):
 
 # Will probably become smarter
 class SectionNumberGenerator:
-    number = '1'
+    number = "1"
 
     @classmethod
     def set(cls, number):
@@ -1132,7 +1125,7 @@ class SectionNumberGenerator:
 
     @classmethod
     def get_table_of_contents(cls):
-        pass # Just an idea? Like Wikipedia
+        pass  # Just an idea? Like Wikipedia
 
 
 @app.route(make_url("listing"))

@@ -33,6 +33,18 @@
     {{ entity_inheritance.number }} Entity inheritance
 </h3>
 {{ entity_inheritance.graph | safe }}
+
+{% if entity_inheritance.subclasses %}
+<h4>
+    {{ entity_inheritance.subnumber }} Subclasses
+</h4>
+<ul class="subclasses">
+{% for subclass in entity_inheritance.subclasses %}
+<li class="{% if subclass.is_abstract %}abstract{% endif %}{% if subclass.is_deprecated %}deprecated{% endif %}">{{ subclass.name }}</li>
+{% endfor %}
+</ul>
+{% endif %}
+
 {% endif %}
 
 {% if attributes %}

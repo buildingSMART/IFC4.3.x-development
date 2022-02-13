@@ -1,6 +1,7 @@
 import re
 import os
 import sys
+import uuid
 import glob
 import json
 import shutil
@@ -269,6 +270,7 @@ def name_to_number():
 
 
 def generate_inheritance_graph(current_entity):
+    max_columns = 4
     i = current_entity
     g = pydot.Graph("dot_inheritance", directed=True)
     di = {"rankdir": "BT", "ranksep": 0.2}
@@ -283,7 +285,7 @@ def generate_inheritance_graph(current_entity):
         "height": "0.2",
         "shape": "rectangle",
         "style": "filled",
-        "width": "3",
+        "width": "2.8",
     }
 
     def new_node(nm, **kwargs):
@@ -301,14 +303,16 @@ def generate_inheritance_graph(current_entity):
 
     first = True
     siblings = [k for k, v in R.entity_supertype.items() if v == current_entity]
-    if len(siblings) < 4:
-        for sibl in siblings:
-            new_node(sibl)
-            g.add_edge(pydot.Edge(sibl, current_entity, arrowsize=0.5, arrowhead="normal", weight=10 if first else 1))
-            first = False
-    else:
+    #if len(siblings) < max_columns:
+    #    for sibl in siblings:
+    #        new_node(sibl)
+    #        g.add_edge(pydot.Edge(sibl, current_entity, arrowsize=0.5, arrowhead="normal", weight=10 if first else 1))
+    #        first = False
+    #else:
+    # Still experimenting here, purposely marked as false
+    if siblings and False:
         nn = new_node(current_entity + "_children", fillcolor="#AAAAAA", fontcolor="#333333")
-        nn.set("label", "%d more..." % (len(siblings) - 1))
+        nn.set("label", f"{len(siblings)} subclasses\n")
         g.add_edge(pydot.Edge(nn, current_entity, arrowsize=0.5, arrowhead="normal", weight=1))
 
     previous = None
@@ -326,7 +330,7 @@ def generate_inheritance_graph(current_entity):
         i, old = R.entity_supertype.get(i), i
 
         siblings = [k for k, v in R.entity_supertype.items() if v == i]
-        if len(siblings) < 4:
+        if len(siblings) < max_columns:
             for sibl in siblings:
                 if sibl == old:
                     continue
@@ -738,8 +742,10 @@ def process_markdown(resource, mdc, as_attribute=False):
         # Capture images as numbered figures
         has_caption = False
         for i, sibling in enumerate(parent.find_next_siblings()):
-            if i > 2 or sibling.name not in ("p", "blockquote"):
+            if i > 2 or sibling.name.lower() not in ("p", "blockquote"):
                 # If we've gone this far without encountering a caption, something is wrong so let's stop
+                break
+            if sibling.name == "p" and (sibling.find("img") or sibling.find("svg")):
                 break
             parent.append(sibling.extract())
             if sibling.name == "p" and sibling.text.startswith("Figure"):
@@ -748,7 +754,7 @@ def process_markdown(resource, mdc, as_attribute=False):
                 break
         if not has_caption:
             caption = soup.new_tag("figcaption")
-            caption.string = "Figure Unnamed"
+            caption.string = "Figure " + str(uuid.uuid4())
             parent.append(caption)
         parent.name = "figure"
 
@@ -965,9 +971,24 @@ def get_attributes(resource, builder):
 
 def get_entity_inheritance(resource):
     try:
+        number = SectionNumberGenerator.generate()
+        SectionNumberGenerator.begin_subsection()
+        subnumber = SectionNumberGenerator.generate()
+        SectionNumberGenerator.end_subsection()
+
+        subclasses = []
+        for subclass in sorted([k for k, v in R.entity_supertype.items() if v == resource]):
+            subclasses.append({
+                "name": subclass, 
+                "is_deprecated":subclass in R.deprecated_entities,
+                "is_abstract":subclass in R.abstract_entities,
+            })
+
         return {
-            "number": SectionNumberGenerator.generate(),
+            "number": number,
             "graph": process_markdown(resource, "```" + generate_inheritance_graph(resource) + "```"),
+            "subnumber": subnumber,
+            "subclasses": subclasses,
         }
     except:
         import traceback
@@ -1687,7 +1708,6 @@ def after(response):
             id_element = element
             if element.name == "figure":
                 element = element.find("figcaption")
-                print(element)
                 value = element.contents[0].strip()
             else:
                 value = element.contents[0].strip()

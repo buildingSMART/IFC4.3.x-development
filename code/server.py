@@ -112,6 +112,7 @@ class resource_manager:
     changes_by_type = schema_resource("changes_by_type.json")
     deprecated_entities = schema_resource("deprecated_entities.json", transform=set)
     abstract_entities = schema_resource("abstract_entities.json", transform=set)
+    type_values = schema_resource("type_values.json")
     hierarchy = schema_resource("hierarchy.json")
     xmi_concepts = schema_resource("xmi_concepts.json")
 
@@ -753,7 +754,7 @@ def process_markdown(resource, mdc, as_attribute=False):
             mark.string = keyword
             aside.string = contents
             aside.insert(0, mark)
-            blockquote.insert_after(aside)
+            blockquote.insert_before(aside)
             p.decompose()
         blockquote.decompose()
 
@@ -797,7 +798,7 @@ def resource(resource):
             navigation=navigation_entries,
             number=idx,
             definition_number=definition_number,
-            definition=get_entity_definition(resource, mdc),
+            definition=get_definition(resource, mdc),
             entity=resource,
             path=md[len(REPO_DIR) :].replace("\\", "/"),
             attributes=get_attributes(resource, builder),
@@ -826,19 +827,49 @@ def resource(resource):
         "type.html",
         base=base,
         navigation=navigation_entries,
-        content=process_markdown(resource, mdc),
+        content=get_definition(resource, mdc),
         number=idx,
         definition_number=definition_number,
         entity=resource,
         path=md[len(REPO_DIR) :].replace("\\", "/"),
+        type_values=get_type_values(resource, mdc),
         formal_representation=get_formal_representation(resource),
         changelog=get_changelog(resource),
     )
 
 
-def get_entity_definition(resource, mdc):
-    if "## Attributes" in mdc:
-        mdc = mdc[0:mdc.index("## Attributes")]
+def get_type_values(resource, mdc):
+    values = R.type_values.get(resource)
+    if not values:
+        return
+    has_description = values[0] == values[0].upper()
+    if has_description:
+        soup = BeautifulSoup(process_markdown(resource, mdc))
+        described_values = []
+        for value in values:
+            description = None
+            for h in soup.findAll("h5"):
+                if h.text != value:
+                    continue
+                description = BeautifulSoup()
+                for sibling in h.find_next_siblings():
+                    if sibling.name == "h5":
+                        break
+                    description.append(sibling)
+                description = str(description)
+            described_values.append({"name": value, "description": description})
+        values = described_values
+    return {
+        "number": SectionNumberGenerator.generate(),
+        "has_description": has_description,
+        "schema_values": values
+    }
+
+
+def get_definition(resource, mdc):
+    # Only match up to the first header
+    if "## " in mdc:
+        mdc = mdc[0:mdc.index("## ")]
     return process_markdown(resource, mdc)
 
 def get_applicability(resource):

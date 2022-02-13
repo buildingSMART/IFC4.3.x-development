@@ -52,7 +52,7 @@ aside {
 aside mark {
     margin-right: var(--universal-margin);
 }
-aside.aside-ifc4-change mark {
+aside.aside-ifc4-change mark, aside.aside-ifc2x3-change mark, aside.aside-ifc2x2-change mark {
     background-color: var(--yellow);
 }
 aside.aside-history mark {
@@ -96,7 +96,6 @@ h3:hover, h4:hover, h5:hover {
 }
 code {
   line-height: inherit;
-  white-space: pre;
 }
 .popup {
   position: absolute;
@@ -121,6 +120,12 @@ table.changelog thead tr th:nth-child(1) {
     width: 5%;
 }
 table.changelog thead tr th:nth-child(2) {
+    width: 20%;
+}
+table.type-values {
+    width: 100%;
+}
+table.type-values thead tr th:nth-child(1) {
     width: 20%;
 }
 .feather-plus-square {

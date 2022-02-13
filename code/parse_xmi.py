@@ -113,6 +113,7 @@ resource_to_package = {}
 psets = {}
 deprecated_entities = []
 abstract_entities = []
+type_values = {}
 
 def get_schema(name):
     for cat, schemas in hierarchy:
@@ -152,6 +153,8 @@ for item in xmi_doc:
     elif item.type in ("TYPE", "SELECT", "ENUM"):
         resource_to_package[item.name] = get_schema(item.package)
         get_schema(item.package)['Types'].append(item.name)
+        if item.type in ("SELECT", "ENUM"):
+            type_values.setdefault(item.name, []).extend(item.definition.values)
         
     if item.type in ("ENTITY", "TYPE", "SELECT", "ENUM"):
         definitions[item.name] = str(item.definition)
@@ -245,3 +248,4 @@ json.dump(definitions, open("entity_definitions.json", "w", encoding="utf-8"))
 json.dump(psets, open("pset_definitions.json", "w", encoding="utf-8"))
 json.dump(deprecated_entities, open("deprecated_entities.json", "w", encoding="utf-8"))
 json.dump(abstract_entities, open("abstract_entities.json", "w", encoding="utf-8"))
+json.dump(type_values, open("type_values.json", "w", encoding="utf-8"))

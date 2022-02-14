@@ -190,9 +190,6 @@ def to_dict(x):
 def make_entries(x):
     if isinstance(x, (list, tuple)):
         return type(x)(map(make_entries, x))
-
-    elif x["title"] == "Alphabetical listings":
-        url = make_url("listing")
     elif x["title"] == "Contents":
         url = make_url("toc.html")
     elif x["number"] == 4:
@@ -202,7 +199,7 @@ def make_entries(x):
             url = make_url("chapter-%d/" % x["number"])
         else:
             url = make_url("content/" + content_names[x["number"] - 1] + ".htm")
-    elif x["number"] in {"A", "C", "D", "E", "F"}:
+    elif x["number"] in {"A", "B", "C", "D", "E", "F"}:
         url = make_url("annex-%s.html" % x["number"].lower())
     elif x["title"].lower() in content_names_2:
         url = make_url("content/" + x["title"].lower() + ".htm")
@@ -1221,8 +1218,8 @@ class SectionNumberGenerator:
         pass  # Just an idea? Like Wikipedia
 
 
-@app.route(make_url("listing"))
-def listing():
+@app.route(make_url("annex-b.html"))
+def annex_b():
     items = [
         {"number": name_to_number()[n], "url": url_for("resource", resource=n), "title": n}
         for n in sorted(entity_names() + type_names())
@@ -1236,7 +1233,7 @@ def listing():
         {"number": "", "url": url_for("property", prop=n), "title": n}
         for n in sorted(set([p["name"] for pdef in R.pset_definitions.values() for p in pdef["properties"]]))
     ]
-    return render_template("list.html", base=base, navigation=navigation_entries, items=items + psets + props)
+    return render_template("annex-b.html", base=base, navigation=navigation_entries, items=items + psets + props)
 
 
 def make_concept(path, number_path=None):
@@ -1492,38 +1489,33 @@ def toc():
 
 @app.route(make_url("annex-c.html"))
 def annex_c():
-    html = (
-        "<h2>Inheritance listings</h2>"
-        + "<p>This annex contains listings of entity definitions organized by inheritance.</p>"
-    )
-
-    def transform(s):
-        s = s.strip("\n")
-        padding = s.count(" ")
-        entity = "".join([c for c in s if c != " "])
-        return (
-            "<tr><td>"
-            + "&nbsp;" * padding * 4
-            + "<a href='"
-            + url_for("resource", resource=entity)
-            + "'>"
-            + entity
-            + "</a> </td><td>"
-            + name_to_number()[entity]
-            + "</td>"
-        )
-
-    html += "<table style='width:fit-content'>" + "".join(map(transform, open("inheritance_listing.txt"))) + "</table>"
+    entities = []
+    indentation_map = {0: entities}
+    with open("inheritance_listing.txt") as inheritance_listings:
+        for line in inheritance_listings:
+            line = line.strip("\n")
+            padding = line.count(" ")
+            entity = line.strip()
+            data = {
+                "number": name_to_number()[entity],
+                "url": url_for("resource", resource=entity),
+                "name": entity,
+                "children": [],
+            }
+            if padding == 0:
+                entities.append(data)
+            else:
+                indentation_map[padding-1]["children"].append(data)
+            indentation_map[padding] = data
 
     return render_template(
-        "chapter.html",
+        "annex-c.html",
         base=base,
         navigation=navigation_entries,
-        content=html,
         path=None,
-        title="Annex C",
+        title="Annex C Inheritance listings",
         number="",
-        subs=[],
+        entities=entities,
     )
 
 
@@ -1538,9 +1530,9 @@ def annex_d():
         "chapter.html",
         base=base,
         navigation=navigation_entries,
-        content="<h2>Diagrams</h2>",
+        content="",
         path=None,
-        title="Annex D",
+        title="Annex D Diagrams",
         number="",
         subs=subs,
     )
@@ -1555,7 +1547,7 @@ def annex_d_diagram_page(s):
         navigation=navigation_entries,
         content=img,
         path=None,
-        title="Annex D",
+        title="Annex D Diagrams",
         number="",
         subs=[],
     )
@@ -1574,9 +1566,9 @@ def annex_e():
         "chapter.html",
         base=base,
         navigation=navigation_entries,
-        content="<h2>Examples</h2>",
+        content="",
         path=None,
-        title="Annex E",
+        title="Annex E Examples",
         number="",
         subs=subs,
     )

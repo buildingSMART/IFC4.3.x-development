@@ -121,6 +121,16 @@ code {
 h4 a:hover {
   text-decoration: none;
 }
+ol.referenced-list {
+    list-style: none;
+}
+ol.referenced-list>li:before {
+    content: attr(number);
+}
+ol.dictionary>li:before {
+    width: 5rem;
+    display: inline-block;
+}
 ul.subclasses li {
     display: inline-block;
     margin: var(--universal-margin);

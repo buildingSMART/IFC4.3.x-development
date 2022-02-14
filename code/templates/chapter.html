@@ -1,31 +1,26 @@
 {% extends "main.html" %}
 {% block pagecontent %}
-<h2>{{number}} {{ title}}</h2>
+<h2>{{ number }} {{ title }}</h2>
 
 {{ content | safe }}
 
-{% for sub in subs recursive -%}
+<ol class="referenced-list">
+    {% for sub in subs recursive -%}
+    <li{% if sub.number %} number="{{ sub.number }}"{% endif %}>
+        {% if sub.url %}
+        <a href="{{ sub.url }}">
+        {% endif %}
+            {{ sub.text }}
+        {% if sub.url %}
+        </a>
+        {% endif %}
 
-{# indentation #}
-{{ ("&nbsp;&nbsp;" * loop.depth0) | safe }}
-
-{# opening a #}
-{% if sub.url %}
-<a href='{{sub.url}}'>
-{% endif %}
-
-{{ sub.number if sub.number }} {{ sub.text }}
-
-{% if sub.url %}
-</a>
-{% endif %}
-
-<br />
-
-{% if sub.children %}
-{{ loop(sub.children) }}
-{% endif %}
-
-{%- endfor %}
-
+        {% if sub.children %}
+        <ol class="referenced-list">
+        {{ loop(sub.children) }}
+        </ol>
+        {% endif %}
+    </li>
+    {%- endfor %}
+</ol>
 {% endblock %}

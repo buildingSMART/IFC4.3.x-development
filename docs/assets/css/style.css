@@ -55,7 +55,9 @@ aside {
 aside mark {
     margin-right: var(--universal-margin);
 }
-aside.aside-ifc4-change mark, aside.aside-ifc2x3-change mark, aside.aside-ifc2x2-change mark {
+aside.aside-ifc4-change mark,
+aside.aside-ifc2x3-change mark,
+aside.aside-ifc2x2-change mark {
     background-color: var(--yellow);
 }
 aside.aside-history mark {
@@ -119,8 +121,6 @@ code {
 h4 a:hover {
   text-decoration: none;
 }
-ul.subclasses {
-}
 ul.subclasses li {
     display: inline-block;
     margin: var(--universal-margin);
@@ -128,16 +128,23 @@ ul.subclasses li {
 }
 ul.subclasses li a {
     color: #fff;
-    background-color: #000;
+    background-color: #333;
     display: inline-block;
     text-align: center;
     width: 250px;
 }
 ul.subclasses li.abstract a {
     background-color: #444;
+    background-color: #CCC;
+    color: #000;
 }
 ul.subclasses li.deprecated a {
     background-color: var(--red);
+    color: #fff;
+}
+ul.subclasses li.current a {
+    background-color: var(--blue);
+    color: #fff;
 }
 td p:nth-child(1) {
     /* So that paragraphs in tds and simple tds line up */

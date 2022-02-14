@@ -13,7 +13,7 @@ An _IfcRampFlight_ connects the floor slab of zero to two different storeys (or 
 ## Attributes
 
 ### PredefinedType
-Predefined generic type for a ramp flight that is specified in an enumeration. There may be a property set given specificly for the predefined types.
+Predefined generic type for a ramp flight that is specified in an enumeration. There may be a property set given specifically for the predefined types.
 > NOTE&nbsp; The _PredefinedType_ shall only be used, if no _IfcRampFlightType_ is assigned, providing its own _IfcRampFlightType.PredefinedType_.
 
 { .change-ifc2x4}

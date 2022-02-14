@@ -196,15 +196,15 @@ for tmpl in templates:
         print("```", file=f)
         print("concept {", file=f)
         
-        contraint_counter = 0
+        constraint_counter = 0
 
         for k, vs in list(parent_child.items()):
             if ':' not in k.name:
                 for v in vs:
                     if isinstance(v, constraint):
-                        print(f"    {k} -> constraint_{contraint_counter}", file=f)
-                        print(f"    constraint_{contraint_counter}[label=\"={v.value}\"]", file=f)
-                        contraint_counter += 1
+                        print(f"    {k} -> constraint_{constraint_counter}", file=f)
+                        print(f"    constraint_{constraint_counter}[label=\"={v.value}\"]", file=f)
+                        constraint_counter += 1
                     elif isinstance(v, str) and "_" in v:
                         print("   ", k, "->", tmpl_to_name[v].replace(" ", "_"), file=f)
                     else:

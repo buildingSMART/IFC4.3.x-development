@@ -18,7 +18,7 @@ Other usages of _IfcBuiltElementProxy_ include:
 ## Attributes
 
 ### PredefinedType
-Predefined generic type for a building element proxy that is specified in an enumeration. There may be a property set given specificly for the predefined types.
+Predefined generic type for a building element proxy that is specified in an enumeration. There may be a property set given specifically for the predefined types.
 > NOTE&nbsp; The _PredefinedType_ shall only be used, if no _IfcBuiltElementProxyType_ is assigned, providing its own _IfcBuiltElementProxyType.PredefinedType_.
 
 { .change-ifc2x4}

@@ -9,7 +9,7 @@ Type of building element that is usually used to transmit loads from superstruct
 ## Attributes
 
 ### PredefinedType
-Predefined generic type for a bearing that is specified in an enumeration. There may be a property set given specificly for the predefined types.
+Predefined generic type for a bearing that is specified in an enumeration. There may be a property set given specifically for the predefined types.
 > NOTE&nbsp; The _PredefinedType_ shall only be used, if no _IfcBearingType_ is assigned, providing its own _IfcBearingType.PredefinedType_.
 
 ## Formal Propositions

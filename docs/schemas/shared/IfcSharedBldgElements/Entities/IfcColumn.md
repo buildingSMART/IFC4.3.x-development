@@ -21,7 +21,7 @@ The IFC specification provides two entities for column occurrences:
 ## Attributes
 
 ### PredefinedType
-Predefined generic type for a column that is specified in an enumeration. There may be a property set given specificly for the predefined types.
+Predefined generic type for a column that is specified in an enumeration. There may be a property set given specifically for the predefined types.
 > NOTE&nbsp; The _PredefinedType_ shall only be used, if no _IfcColumnType_ is assigned, providing its own _IfcColumnType.PredefinedType_.
 
 { .change-ifc2x4}

@@ -32,30 +32,18 @@
 <h3>
     {{ entity_inheritance.number }} Entity inheritance
 </h3>
-{{ entity_inheritance.graph | safe }}
-
-{% if entity_inheritance.siblings %}
-<h4>
-    {{ entity_inheritance.siblingnumber }} Siblings
-</h4>
-<ul class="subclasses">
-{% for sibling in entity_inheritance.siblings %}
-    <li class="{% if sibling.is_abstract %}abstract{% endif %} {% if sibling.is_deprecated %}deprecated{% endif %} {% if sibling.is_current %}current{% endif %}">{{ sibling.name }}</li>
+<ol class="tier">
+{% for tier in entity_inheritance.graph %}
+    <li>
+        <i data-feather="arrow-down-circle"></i>
+        <ul class="classes">
+        {% for class in tier %}
+            <li class="{% if class.is_abstract %}abstract{% endif %} {% if class.is_deprecated %}deprecated{% endif %} {% if class.is_current %}current{% endif %} {% if class.is_ancestor %}ancestor{% endif %}">{{ class.name }}</li>
+        {% endfor %}
+        </ul>
+    </li>
 {% endfor %}
-</ul>
-{% endif %}
-
-{% if entity_inheritance.subclasses %}
-<h4>
-    {{ entity_inheritance.subnumber }} Subclasses
-</h4>
-<ul class="subclasses">
-{% for subclass in entity_inheritance.subclasses %}
-    <li class="{% if subclass.is_abstract %}abstract{% endif %}{% if subclass.is_deprecated %}deprecated{% endif %}">{{ subclass.name }}</li>
-{% endfor %}
-</ul>
-{% endif %}
-
+</ol>
 {% endif %}
 
 {% if attributes %}

@@ -236,86 +236,43 @@ def name_to_number():
 
     return ntn
 
+def get_inheritance_graph(current_entity):
+    graph = []
 
-def generate_inheritance_graph(current_entity):
-    max_columns = 4
-    i = current_entity
-    g = pydot.Graph("dot_inheritance", directed=True)
-    di = {"rankdir": "BT", "ranksep": 0.2, "nodesep": 0.1}
-    for kv in di.items():
-        g.set(*kv)
-
-    node_properties = {
-        "color": "transparent",
-        "fillcolor": "#333333",
-        "fontcolor": "white",
-        "fontsize": "10",
-        "height": "0.25",
-        "shape": "rectangle",
-        "style": "filled",
-        "width": "2.8",
-    }
-
-    edge_properties = {"arrowsize": 0.5, "arrowhead": "normal", "color": "#999999"}
-
-    def new_node(nm, **kwargs):
-        n = pydot.Node(nm)
-        for kv in list(node_properties.items()) + list(kwargs.items()):
-            n.set(*kv)
-        if "fillcolor" in kwargs:
-            pass
-        elif nm in R.deprecated_entities:
-            n.set("fillcolor", "#d32f2f")
-        elif nm in R.abstract_entities:
-            n.set("fillcolor", "#CCCCCC")
-            n.set("fontcolor", "black")
-        g.add_node(n)
-        return n
-
-    first = True
-    subclasses = [k for k, v in R.entity_supertype.items() if v == current_entity]
-    # if len(subclasses) < max_columns:
-    #    for sibl in subclasses:
-    #        new_node(sibl)
-    #        g.add_edge(pydot.Edge(sibl, current_entity, weight=10 if first else 1, **edge_properties))
-    #        first = False
-    # if subclasses:
-    #    nn = new_node(current_entity + "_children", fillcolor="#AAAAAA", fontcolor="#333333")
-    #    nn.set("label", f"{len(subclasses)} subclasses\n")
-    #    g.add_edge(pydot.Edge(nn, current_entity, arrowsize=0.5, arrowhead="normal", weight=1))
+    tier = []
+    for subclass in sorted([k for k, v in R.entity_supertype.items() if v == current_entity]):
+        tier.append(
+            {
+                "name": subclass,
+                "is_deprecated": subclass in R.deprecated_entities,
+                "is_abstract": subclass in R.abstract_entities,
+            }
+        )
+    if tier:
+        graph.append(tier)
 
     previous = None
-    while i:
-        if i == current_entity:
-            n = new_node(i, fillcolor="#1976d2")
+    entity = current_entity
+    while entity:
+        tier = []
+        parent = R.entity_supertype.get(entity, None)
+        if parent:
+            siblings = sorted([k for k, v in R.entity_supertype.items() if v == parent])
         else:
-            n = new_node(i)
-
-        if previous:
-            g.add_edge(pydot.Edge(previous, n, weight=10, **edge_properties))
-
-        previous = n
-
-        i, old = R.entity_supertype.get(i), i
-
-        siblings = [k for k, v in R.entity_supertype.items() if v == i]
-        if len(siblings) < max_columns:
-            for sibl in siblings:
-                if sibl == old:
-                    continue
-                new_node(sibl)
-                g.add_edge(pydot.Edge(sibl, i, weight=1, **edge_properties))
-        else:
-            nn = new_node(i + "_children", fillcolor="#EEEEEE", fontcolor="#AAAAAA")
-            nn.set("label", "%d more ..." % (len(siblings) - 1))
-            properties = edge_properties.copy()
-            properties["style"] = "dashed"
-            properties["color"] = "#AAAAAA"
-            properties["arrowhead"] = "onormal"
-            g.add_edge(pydot.Edge(nn, i, weight=1, **properties))
-
-    return g.to_string()
-
+            siblings = [entity]
+        for sibling in siblings:
+            tier.append(
+                {
+                    "name": sibling,
+                    "is_deprecated": sibling in R.deprecated_entities,
+                    "is_abstract": sibling in R.abstract_entities,
+                    "is_current": sibling == current_entity,
+                    "is_ancestor": sibling == entity,
+                }
+            )
+        graph.append(tier)
+        entity, old = R.entity_supertype.get(entity), entity
+    return reversed(graph)
 
 def get_node_colour(n):
     if R.entity_supertype.get(n) is None:
@@ -947,52 +904,9 @@ def get_attributes(resource, builder):
 
 def get_entity_inheritance(resource):
     try:
-        number = SectionNumberGenerator.generate()
-
-        siblings = []
-        parent = R.entity_supertype.get(resource, None)
-        if parent:
-            names = sorted([k for k, v in R.entity_supertype.items() if v == parent])
-            # If there are 3 or less, it's not necessary to overcomplicate the layout and show this list
-            if names and len(names) > 3:
-                for sibling in names:
-                    siblings.append(
-                        {
-                            "name": sibling,
-                            "is_deprecated": sibling in R.deprecated_entities,
-                            "is_abstract": sibling in R.abstract_entities,
-                            "is_current": sibling == resource,
-                        }
-                    )
-
-        subclasses = []
-        for subclass in sorted([k for k, v in R.entity_supertype.items() if v == resource]):
-            subclasses.append(
-                {
-                    "name": subclass,
-                    "is_deprecated": subclass in R.deprecated_entities,
-                    "is_abstract": subclass in R.abstract_entities,
-                }
-            )
-
-        subnumber = None
-        siblingnumber = None
-        if siblings or subclasses:
-            SectionNumberGenerator.begin_subsection()
-        if siblings:
-            siblingnumber = SectionNumberGenerator.generate()
-        if subclasses:
-            subnumber = SectionNumberGenerator.generate()
-        if siblings or subclasses:
-            SectionNumberGenerator.end_subsection()
-
         return {
-            "number": number,
-            "graph": process_markdown(resource, "```" + generate_inheritance_graph(resource) + "```"),
-            "siblingnumber": siblingnumber,
-            "siblings": siblings,
-            "subnumber": subnumber,
-            "subclasses": subclasses,
+            "number": SectionNumberGenerator.generate(),
+            "graph": get_inheritance_graph(resource),
         }
     except:
         import traceback

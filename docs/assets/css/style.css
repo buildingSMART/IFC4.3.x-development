@@ -141,28 +141,57 @@ ol.dictionary>li:before {
     width: 5rem;
     display: inline-block;
 }
-ul.subclasses li {
+ol.tier>li {
+    display: block;
+    border-bottom: 1px solid var(--secondary-border-color);
+}
+ol.tier>li:last-child {
+    border-bottom: 0px;
+}
+ol.tier>li>.feather-arrow-down-circle {
+    position: absolute;
+    margin-top: calc(-12px - var(--universal-margin));
+    background-color: var(--back-color);
+    color: var(--border-color);
+    margin-left: 90px;
+}
+ol.tier>li:first-child>.feather-arrow-down-circle {
+    display: none;
+}
+ul.classes {
+}
+ul.classes li {
     display: inline-block;
     margin: var(--universal-margin);
     margin-left: 0px;
 }
-ul.subclasses li a {
+ul.classes li a {
+    /* Equivalent to <small> */
+    font-size: .75em;
+    border-radius: var(--universal-border-radius);
+    padding: var(--universal-padding);
     color: #fff;
     background-color: #333;
     display: inline-block;
     text-align: center;
-    width: 250px;
+    width: 140px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
-ul.subclasses li.abstract a {
+ul.classes li.ancestor a {
+    border: 2px solid var(--blue);
+}
+ul.classes li.abstract a {
     background-color: #444;
     background-color: #CCC;
     color: #000;
+    font-style: italic;
 }
-ul.subclasses li.deprecated a {
+ul.classes li.deprecated a {
     background-color: var(--red);
     color: #fff;
 }
-ul.subclasses li.current a {
+ul.classes li.current a {
     background-color: var(--blue);
     color: #fff;
 }

@@ -48,8 +48,8 @@ app = Flask(__name__)
 base = "/IFC/RELEASE/IFC4x3/HTML"
 
 
-def make_url(fragment):
-    return base + "/" + fragment
+def make_url(fragment=None):
+    return base + "/" + fragment if fragment else "/"
 
 
 identity = lambda x: x
@@ -146,23 +146,51 @@ def get_resource_path(resource, abort_on_error=True):
     )
 
 
-navigation_entries = [
-    ("Cover", "Contents", "Foreword", "Introduction"),
-    (
-        "Scope",
-        "Normative references",
-        "Terms, definitions, and abbreviated terms",
-        "Fundamental concepts and assumptions",
-    ),
-    (
-        "Core data schemas",
-        "Shared element data schemas",
-        "Domain specific data schemas",
-        "Resource definition data schemas",
-    ),
-    ("Computer interpretable listings", "Alphabetical listings", "Inheritance listings", "Diagrams"),
-    ("Examples", "Change logs", "Bibliography", "Index"),
+navigation = [
+    [
+        {"name": "Cover", "url": make_url()},
+        {"name": "Contents", "url": make_url("toc.html")},
+        {"name": "Foreword", "url": make_url("content/foreword.htm")},
+        {"name": "Introduction", "url": make_url("content/introduction.htm")},
+    ],
+    [
+        {"number": 1, "name": "Scope", "url": make_url("content/scope.htm")},
+        {"number": 2, "name": "Normative references", "url": make_url("content/normative_references.htm")},
+        {
+            "number": 3,
+            "name": "Terms, definitions, and abbreviated terms",
+            "url": make_url("content/terms_and_definitions.htm"),
+        },
+        {"number": 4, "name": "Fundamental concepts and assumptions", "url": make_url("concepts/content.html")},
+        {"number": 5, "name": "Core data schemas", "url": make_url("chapter-5")},
+        {"number": 6, "name": "Shared element data schemas", "url": make_url("chapter-6")},
+        {"number": 7, "name": "Domain specific data schemas", "url": make_url("chapter-7")},
+        {"number": 8, "name": "Resource definition data schemas", "url": make_url("chapter-8")},
+    ],
+    [
+        {"number": "A", "name": "Computer interpretable listings", "url": make_url("annex-a.html")},
+        {"number": "B", "name": "Alphabetical listings", "url": make_url("annex-b.html")},
+        {"number": "C", "name": "Inheritance listings", "url": make_url("annex-c.html")},
+        {"number": "D", "name": "Diagrams", "url": make_url("annex-d.html")},
+        {"number": "E", "name": "Examples", "url": make_url("annex-e.html")},
+        {"number": "F", "name": "Change logs", "url": make_url("annex-f.html")},
+    ],
+    [
+        {"name": "Bibliography", "url": make_url("bibliograph.htm")},
+        # What is this? It's a broken link.
+        {"name": "Index", "url": make_url("index.htm")},
+    ],
 ]
+
+def get_navigation():
+    for section in navigation:
+        for item in section:
+            # Just simple for now
+            if item["url"] == request.path:
+                item["is_current"] = True
+            else:
+                item["is_current"] = False
+    return navigation
 
 
 @dataclass(order=True, eq=True, frozen=True)
@@ -180,74 +208,16 @@ content_names = ["scope", "normative_references", "terms_and_definitions", "conc
 content_names_2 = ["cover", "foreword", "introduction", "bibliography"]
 
 
-def to_dict(x):
-    if isinstance(x, (list, tuple)):
-        return type(x)(map(to_dict, x))
-    else:
-        return {"title": x}
-
-
-def make_entries(x):
-    if isinstance(x, (list, tuple)):
-        return type(x)(map(make_entries, x))
-    elif x["title"] == "Contents":
-        url = make_url("toc.html")
-    elif x["number"] == 4:
-        url = make_url("concepts/content.html")
-    elif type(x["number"]) == int:
-        if x["number"] >= 5:
-            url = make_url("chapter-%d/" % x["number"])
-        else:
-            url = make_url("content/" + content_names[x["number"] - 1] + ".htm")
-    elif x["number"] in {"A", "B", "C", "D", "E", "F"}:
-        url = make_url("annex-%s.html" % x["number"].lower())
-    elif x["title"].lower() in content_names_2:
-        url = make_url("content/" + x["title"].lower() + ".htm")
-    else:
-        url = "#"
-
-    return dict(**x, url=url)
-
-
-def make_counter(start=0):
-    n = start
-
-    def counter():
-        nonlocal n
-        n += 1
-        if n > 14:
-            return None
-        if n > 8:
-            return chr(ord("A") + n - 9)
-        elif n >= 1:
-            return n
-
-    return counter
-
-
-section_counter = make_counter(-4)
-
-
-def number_entries(x):
-    if isinstance(x, (list, tuple)) and set(map(type, x)) == {dict}:
-        return type(x)(dict(**di, number=section_counter()) for i, di in enumerate(x))
-    else:
-        return type(x)(map(number_entries, x))
-
-
-navigation_entries = make_entries(number_entries(to_dict(navigation_entries)))
-
-
 def chapter_lookup(number=None, cat=None):
     def do_chapter_lookup(x):
         if isinstance(x, (list, tuple)):
             return next((v for v in map(do_chapter_lookup, x) if v is not None), None)
-        if number is not None and x["number"] == number:
+        if number is not None and x.get("number", None) == number:
             return x
-        if cat is not None and x["title"].split(" ")[0].lower() == cat:
+        if cat is not None and x["name"].split(" ")[0].lower() == cat:
             return x
 
-    return do_chapter_lookup(navigation_entries)
+    return do_chapter_lookup(navigation)
 
 
 entity_names = lambda: sorted(sum([schema.get("Entities", []) for _, cat in R.hierarchy for __, schema in cat], []))
@@ -285,11 +255,7 @@ def generate_inheritance_graph(current_entity):
         "width": "2.8",
     }
 
-    edge_properties = {
-        "arrowsize": 0.5,
-        "arrowhead": "normal",
-        "color": "#999999"
-    }
+    edge_properties = {"arrowsize": 0.5, "arrowhead": "normal", "color": "#999999"}
 
     def new_node(nm, **kwargs):
         n = pydot.Node(nm)
@@ -307,12 +273,12 @@ def generate_inheritance_graph(current_entity):
 
     first = True
     subclasses = [k for k, v in R.entity_supertype.items() if v == current_entity]
-    #if len(subclasses) < max_columns:
+    # if len(subclasses) < max_columns:
     #    for sibl in subclasses:
     #        new_node(sibl)
     #        g.add_edge(pydot.Edge(sibl, current_entity, weight=10 if first else 1, **edge_properties))
     #        first = False
-    #if subclasses:
+    # if subclasses:
     #    nn = new_node(current_entity + "_children", fillcolor="#AAAAAA", fontcolor="#333333")
     #    nn.set("label", f"{len(subclasses)} subclasses\n")
     #    g.add_edge(pydot.Edge(nn, current_entity, arrowsize=0.5, arrowhead="normal", weight=1))
@@ -707,7 +673,7 @@ def property(prop):
     return render_template(
         "entity.html",
         base=base,
-        navigation=navigation_entries,
+        navigation=get_navigation(),
         content=html,
         number=idx,
         entity=prop,
@@ -818,7 +784,7 @@ def resource(resource):
         return render_template(
             "entity.html",
             base=base,
-            navigation=navigation_entries,
+            navigation=get_navigation(),
             number=idx,
             definition_number=definition_number,
             definition=get_definition(resource, mdc),
@@ -836,7 +802,7 @@ def resource(resource):
         return render_template(
             "property.html",
             base=base,
-            navigation=navigation_entries,
+            navigation=get_navigation(),
             content=process_markdown(resource, mdc),
             number=idx,
             definition_number=definition_number,
@@ -849,7 +815,7 @@ def resource(resource):
     return render_template(
         "type.html",
         base=base,
-        navigation=navigation_entries,
+        navigation=get_navigation(),
         content=get_definition(resource, mdc),
         number=idx,
         definition_number=definition_number,
@@ -986,21 +952,24 @@ def get_entity_inheritance(resource):
             # If there are 3 or less, it's not necessary to overcomplicate the layout and show this list
             if names and len(names) > 3:
                 for sibling in names:
-                    siblings.append({
-                        "name": sibling,
-                        "is_deprecated":sibling in R.deprecated_entities,
-                        "is_abstract":sibling in R.abstract_entities,
-                        "is_current":sibling == resource,
-                    })
-
+                    siblings.append(
+                        {
+                            "name": sibling,
+                            "is_deprecated": sibling in R.deprecated_entities,
+                            "is_abstract": sibling in R.abstract_entities,
+                            "is_current": sibling == resource,
+                        }
+                    )
 
         subclasses = []
         for subclass in sorted([k for k, v in R.entity_supertype.items() if v == resource]):
-            subclasses.append({
-                "name": subclass,
-                "is_deprecated":subclass in R.deprecated_entities,
-                "is_abstract":subclass in R.abstract_entities,
-            })
+            subclasses.append(
+                {
+                    "name": subclass,
+                    "is_deprecated": subclass in R.deprecated_entities,
+                    "is_abstract": subclass in R.abstract_entities,
+                }
+            )
 
         subnumber = None
         siblingnumber = None
@@ -1233,7 +1202,7 @@ def annex_b():
         {"number": "", "url": url_for("property", prop=n), "title": n}
         for n in sorted(set([p["name"] for pdef in R.pset_definitions.values() for p in pdef["properties"]]))
     ]
-    return render_template("annex-b.html", base=base, navigation=navigation_entries, items=items + psets + props)
+    return render_template("annex-b.html", base=base, navigation=get_navigation(), items=items + psets + props)
 
 
 def make_concept(path, number_path=None):
@@ -1274,7 +1243,7 @@ def concept(s=""):
         for pt in itertools.accumulate([[p] for p in ps]):
             n += ".%d" % (sorted(os.listdir(os.path.join(md_root, *pt[:-1]))).index(pt[-1]) + 1)
     else:
-        t = chapter_lookup(number=4).get("title")
+        t = chapter_lookup(number=4).get("name")
 
     fn = os.path.join(md_root, s, "README.md")
 
@@ -1318,7 +1287,7 @@ def concept(s=""):
     return render_template(
         "chapter.html",
         base=base,
-        navigation=navigation_entries,
+        navigation=get_navigation(),
         content=html,
         path=fn[len(REPO_DIR) :].replace("\\", "/"),
         title=t,
@@ -1335,7 +1304,7 @@ def chapter(n):
         abort(404)
 
     chp = chapter_lookup(number=n)
-    t = chp.get("title")
+    t = chp.get("name")
     md_root = os.path.join(REPO_DIR, "docs/schemas")
     cat = t.split(" ")[0].lower()
 
@@ -1350,7 +1319,7 @@ def chapter(n):
     else:
         html = ""
 
-    subs = [itms for t, itms in R.hierarchy if t == chp.get("title")][0]
+    subs = [itms for t, itms in R.hierarchy if t == chp.get("name")][0]
 
     def get_entry(pair):
         i, text = pair
@@ -1361,7 +1330,7 @@ def chapter(n):
     return render_template(
         "chapter.html",
         base=base,
-        navigation=navigation_entries,
+        navigation=get_navigation(),
         content=html,
         path=fn[len(REPO_DIR) :].replace("\\", "/"),
         title=t,
@@ -1371,6 +1340,19 @@ def chapter(n):
 
 
 @app.route("/")
+def cover(s="cover"):
+    fn = os.path.join(REPO_DIR, "content", "cover.md")
+    title = navigation[1][0]["name"]
+    return render_template(
+        "cover.html",
+        base=base,
+        navigation=get_navigation(),
+        content=markdown.markdown(render_template_string(open(fn).read(), base=base)),
+        path=fn[len(REPO_DIR) :].replace("\\", "/"),
+        subs=[],
+    )
+
+
 @app.route(make_url("content/<s>.htm"))
 def content(s="cover"):
     fn = os.path.join(REPO_DIR, "content")
@@ -1382,7 +1364,7 @@ def content(s="cover"):
     try:
         i = content_names.index(s)
         number = i + 1
-        title = navigation_entries[1][i]["title"]
+        title = navigation[1][i]["name"]
     except:
 
         try:
@@ -1396,7 +1378,7 @@ def content(s="cover"):
     return render_template(
         "chapter.html",
         base=base,
-        navigation=navigation_entries,
+        navigation=get_navigation(),
         content=html,
         path=fn[len(REPO_DIR) :].replace("\\", "/"),
         title=title,
@@ -1421,7 +1403,7 @@ def annex_a():
     return render_template(
         "chapter.html",
         base=base,
-        navigation=navigation_entries,
+        navigation=get_navigation(),
         content=html,
         path=None,
         title="Annex A",
@@ -1471,17 +1453,14 @@ def annotate_hierarchy(data=None, start=1, number_path=None):
 
 @app.route(make_url("toc.html"))
 def toc():
-    subs = [
-        toc_entry(x["title"], number=i, url=x["url"]) for i, x in enumerate(navigation_entries[1], 1)
-    ] + annotate_hierarchy(start=5)
+    subs = navigation[1][0:4]
+    subs += annotate_hierarchy(start=5)
     return render_template(
         "chapter.html",
         base=base,
-        navigation=navigation_entries,
-        content="",
+        navigation=get_navigation(),
         path=None,
         title="Contents",
-        number="",
         subs=subs,
         toc=True,
     )
@@ -1505,13 +1484,13 @@ def annex_c():
             if padding == 0:
                 entities.append(data)
             else:
-                indentation_map[padding-1]["children"].append(data)
+                indentation_map[padding - 1]["children"].append(data)
             indentation_map[padding] = data
 
     return render_template(
         "annex-c.html",
         base=base,
-        navigation=navigation_entries,
+        navigation=get_navigation(),
         path=None,
         title="Annex C Inheritance listings",
         number="",
@@ -1529,7 +1508,7 @@ def annex_d():
     return render_template(
         "chapter.html",
         base=base,
-        navigation=navigation_entries,
+        navigation=get_navigation(),
         content="",
         path=None,
         title="Annex D Diagrams",
@@ -1544,7 +1523,7 @@ def annex_d_diagram_page(s):
     return render_template(
         "chapter.html",
         base=base,
-        navigation=navigation_entries,
+        navigation=get_navigation(),
         content=img,
         path=None,
         title="Annex D Diagrams",
@@ -1565,7 +1544,7 @@ def annex_e():
     return render_template(
         "chapter.html",
         base=base,
-        navigation=navigation_entries,
+        navigation=get_navigation(),
         content="",
         path=None,
         title="Annex E Examples",
@@ -1582,7 +1561,7 @@ def annex_f():
         flat = sum(pairs, ())
         content = "".join(("<h2>Change logs</h2>",) + flat)
     return render_template(
-        "chapter.html", base=base, navigation=navigation_entries, content=content, path=None, title="Annex F", number=""
+        "chapter.html", base=base, navigation=get_navigation(), content=content, path=None, title="Annex F", number=""
     )
 
 
@@ -1602,7 +1581,7 @@ def annex_e_example_page(s):
     return render_template(
         "chapter.html",
         base=base,
-        navigation=navigation_entries,
+        navigation=get_navigation(),
         content=html,
         path=path,
         title="Annex E",
@@ -1651,7 +1630,7 @@ def schema(name):
     return render_template(
         "chapter.html",
         base=base,
-        navigation=navigation_entries,
+        navigation=get_navigation(),
         content=html,
         path=fn[len(REPO_DIR) :].replace("\\", "/"),
         title=t,
@@ -1684,7 +1663,7 @@ def search():
             for r in list(results)[0:10]
         ]
 
-    return render_template("search.html", base=base, navigation=navigation_entries, matches=matches, query=query)
+    return render_template("search.html", base=base, navigation=get_navigation(), matches=matches, query=query)
 
 
 @app.route("/sandcastle", methods=["GET", "POST"])
@@ -1737,7 +1716,7 @@ def after(response):
                 value = element.contents[0].strip()
             else:
                 value = element.contents[0].strip()
-            anchor_tag = re.sub('[^0-9a-zA-Z.]+', '-', value)
+            anchor_tag = re.sub("[^0-9a-zA-Z.]+", "-", value)
 
             anchor_id = soup.new_tag("a")
             anchor_id["id"] = anchor_tag

@@ -31,10 +31,12 @@
                 </form>
                 {% endblock %}
                 <nav>
-                    {% for column in navigation %}
-                    {% for cell in column %}
-                    <a href='{{ cell["url"] }}'>{{ cell['number'] or '' }} {{ cell['title'] }}</a>
-                    {% endfor %}
+                    {% for section in navigation %}
+                    <div>
+                        {% for item in section %}
+                        <a href="{{ item.url }}"{% if item.is_current %}class="current"{% endif %}>{{ item.number }} {{ item.name }}</a>
+                        {% endfor %}
+                    </div>
                     {% endfor %}
                 </nav>
             </div>
@@ -51,8 +53,8 @@
                         </p>
                         <p>
                             <small>
-                                <span id='contributors'></span><br />
-                                <span id='last-change'></span>
+                                <span id="contributors"></span><br />
+                                <span id="last-change"></span>
                             </small>
                         </p>
                     </div>

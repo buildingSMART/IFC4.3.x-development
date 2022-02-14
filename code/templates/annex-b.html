@@ -3,10 +3,10 @@
 
 <h2>Annex B Alphabetical listings</h2>
 
-<ol class="chapter dictionary">
-    {% for r in items %}
-    <li number="{{ r['number'] }}">
-        <a href="{{ r['url'] }}">{{ r['title']}}</a>
+<ol class="referenced-list dictionary">
+    {% for item in items %}
+    <li number="{{ item.number }}">
+        <a href="{{ item.url }}">{{ item.title }}</a>
     </li>
     {% endfor %}
 </ol>

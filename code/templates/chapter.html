@@ -5,19 +5,19 @@
 {{ content | safe }}
 
 <ol class="referenced-list">
-    {% for sub in subs recursive -%}
-    <li{% if sub.number %} number="{{ sub.number }}"{% endif %}>
-        {% if sub.url %}
-        <a href="{{ sub.url }}">
+    {% for item in subs recursive -%}
+    <li{% if item.number %} number="{{ item.number }}"{% endif %}>
+        {% if item.url %}
+        <a href="{{ item.url }}">
         {% endif %}
-            {{ sub.text }}
-        {% if sub.url %}
+            {{ item.text or item.name }}
+        {% if item.url %}
         </a>
         {% endif %}
 
-        {% if sub.children %}
+        {% if item.children %}
         <ol class="referenced-list">
-        {{ loop(sub.children) }}
+        {{ loop(item.children) }}
         </ol>
         {% endif %}
     </li>

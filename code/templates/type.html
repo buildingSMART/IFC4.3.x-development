@@ -28,8 +28,9 @@
             {% if type_values.has_description %}
             <td data-label="Name"><code>{{ value.name }}</code</td>
             <td data-label="Description">
+                {% if value.description %}
                 {{ value.description | safe }}
-                {% if not value.description %}
+                {% else %}
                 <p>
                     <em>No description available.</em>
                 </p>

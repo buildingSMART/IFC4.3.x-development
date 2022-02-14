@@ -175,7 +175,7 @@ has a non rectangular foot print geometry that does not change
 along the height of the opening or recess.
 
 
-Figure 162 shows a vertical extrusion with multiple extrusion bodies for the opening. Each extrusion body has a different extrusion lenght.
+Figure 162 shows a vertical extrusion with multiple extrusion bodies for the opening. Each extrusion body has a different extrusion length.
 
 
 

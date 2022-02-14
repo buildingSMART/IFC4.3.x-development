@@ -29,6 +29,9 @@ Each face of the tessellated face set shall have:
 ### Coordinates
 An ordered list of Cartesian points used by the coordinate index defined at the subtypes of _IfcTessellatedFaceSet_.
 
+### Closed
+Indication whether the _IfcTessellatedFaceSet_ is a closed shell (TRUE) or an open shell (FALSE). If omitted no such information can be asserted.
+
 ### Dim
 The space dimensionality of this geometric representation item, it is always 3.
 

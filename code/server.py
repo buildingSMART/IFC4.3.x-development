@@ -182,6 +182,7 @@ navigation = [
     ],
 ]
 
+
 def get_navigation():
     for section in navigation:
         for item in section:
@@ -1190,19 +1191,39 @@ class SectionNumberGenerator:
 @app.route(make_url("annex-b.html"))
 def annex_b():
     items = [
+        {"number": "B.1", "title": "Entities", "url": make_url("annex-b1.html")},
+        {"number": "B.2", "title": "Property sets", "url": make_url("annex-b2.html")},
+        {"number": "B.3", "title": "Properties", "url": make_url("annex-b3.html")},
+    ]
+    return render_template("annex-b.html", base=base, navigation=get_navigation(), items=items)
+
+
+@app.route(make_url("annex-b1.html"))
+def annex_b1():
+    items = [
         {"number": name_to_number()[n], "url": url_for("resource", resource=n), "title": n}
         for n in sorted(entity_names() + type_names())
     ]
-    psets = [
+    return render_template("annex-b.html", base=base, navigation=get_navigation(), items=items, is_dictionary=True)
+
+
+@app.route(make_url("annex-b2.html"))
+def annex_b2():
+    items = [
         {"number": name_to_number()[n], "url": url_for("resource", resource=n), "title": n}
         for n in sorted(R.pset_definitions.keys())
         if n in name_to_number()
     ]
-    props = [
+    return render_template("annex-b.html", base=base, navigation=get_navigation(), items=items, is_dictionary=True)
+
+
+@app.route(make_url("annex-b3.html"))
+def annex_b3():
+    items = [
         {"number": "", "url": url_for("property", prop=n), "title": n}
         for n in sorted(set([p["name"] for pdef in R.pset_definitions.values() for p in pdef["properties"]]))
     ]
-    return render_template("annex-b.html", base=base, navigation=get_navigation(), items=items + psets + props)
+    return render_template("annex-b.html", base=base, navigation=get_navigation(), items=items)
 
 
 def make_concept(path, number_path=None):

@@ -3,7 +3,7 @@
 
 <h2>Annex B Alphabetical listings</h2>
 
-<ol class="referenced-list dictionary">
+<ol class="referenced-list{% if is_dictionary %} dictionary{% endif %}">
     {% for item in items %}
     <li number="{{ item.number }}">
         <a href="{{ item.url }}">{{ item.title }}</a>

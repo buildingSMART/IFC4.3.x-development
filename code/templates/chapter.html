@@ -4,6 +4,7 @@
 
 {{ content | safe }}
 
+{% if subs %}
 <ol class="referenced-list">
     {% for item in subs recursive -%}
     <li{% if item.number %} number="{{ item.number }}"{% endif %}>
@@ -23,4 +24,5 @@
     </li>
     {%- endfor %}
 </ol>
+{% endif %}
 {% endblock %}

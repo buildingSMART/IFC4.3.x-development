@@ -10,7 +10,7 @@ Figure 2 illustrates an instance of _IfcTriangulatedFaceSet_
 
 | figure | example values |
 | ------ | -------------- |
-| !["IfcIndexedColourMap_01"](../../../../figures/ifcindexedcolourmap_example-01.png "Figure 2 &mdash; Indexed colour map for triangulated face set") | <ul><li><em>IfcTriangulatedFaceSet.CoordIndex</em>: ((1,6,5),(1,2,6), (6,2,7), (7,2,3), (7,8,6), (6,8,5), (5,8,1), (1,8,4), (4,2,1), (2,4,3), (4,8,7), (7,3,4))</li> <li><em>IfcCartesianPointList.CoordList</em>: ((0.,0.,0.), (1.,0.,0.), (1.,1.,0.), (0.,1.,0.), (0.,0.,2.), (1.,0.,2.), (1.,1.,2.), (0.,1.,2.))</li> <li><em>IfcIndexedColourMap.ColourIndex</em>: (1, 1, 2, 2, 3, 3, 1, 1, 1, 1, 1, 1, )</li> <li><em>IfcColourRgbList.ColourList</em>: ((1.,0.,0.), (0.,1.,0.), (1.,1.,0.))</li></ul> |
+| !["IfcIndexedColourMap_02"](../../../../figures/ifcindexedcolourmap_example-01.png "Figure 2 &mdash; Indexed colour map for triangulated face set") | <ul><li><em>IfcTriangulatedFaceSet.CoordIndex</em>: ((1,6,5),(1,2,6), (6,2,7), (7,2,3), (7,8,6), (6,8,5), (5,8,1), (1,8,4), (4,2,1), (2,4,3), (4,8,7), (7,3,4))</li> <li><em>IfcCartesianPointList.CoordList</em>: ((0.,0.,0.), (1.,0.,0.), (1.,1.,0.), (0.,1.,0.), (0.,0.,2.), (1.,0.,2.), (1.,1.,2.), (0.,1.,2.))</li> <li><em>IfcIndexedColourMap.ColourIndex</em>: (1, 1, 2, 2, 3, 3, 1, 1, 1, 1, 1, 1, )</li> <li><em>IfcColourRgbList.ColourList</em>: ((1.,0.,0.), (0.,1.,0.), (1.,1.,0.))</li></ul> |
 
 
 > HISTORY&nbsp; New entity in IFC4.

@@ -49,7 +49,7 @@ Applying decorative coatings or coverings.
 Asphalt or concrete roads and walkways.
 
 ### PLUMBING
-
+Plumbing fixtures, equipment, and pipes.
 
 ### ROOFING
 Membranes, shingles, tile, or other roofing.

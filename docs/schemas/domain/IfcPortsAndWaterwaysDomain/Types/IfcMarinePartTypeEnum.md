@@ -8,10 +8,10 @@ The predefined type container that collects all possible marine facility part ty
 A lateral spatial part that forms the crest area of breakwater or embankment where additional structures are placed such as access items or roads.
 
 ### MANUFACTURING
-
+A region spatial part that forms a sub division of a facility for the purpose of manufacturing. This covers areas that are open air and do not constitute a building or the building is only a small part of the entire area (in this case a child of type building can be used).
 
 ### LOWWATERLINE
-
+A vertical spatial part that represents the elevation of the low waterline, multiple low waterlines can be used to represent the different low tide types.
 
 ### CORE
 A lateral spatial part that sub divides the core structure of a facility such as a breakwater or embankment
@@ -19,11 +19,11 @@ A lateral spatial part that sub divides the core structure of a facility such as
 ### WATERFIELD
 A region or lateral facility part that covers the water field of a waterside facility such as a quay.
 
-### CILL
-
+### CILL_LEVEL
+A vertical spatial part that represents the elevation of the cill and floor level of an impounded facility such as a ship lock or dry lock.
 
 ### BERTHINGSTRUCTURE
-
+A longitudinal spatial part of a waterway or port facility that provides facilities for the berthing of vessels while waiting for the waterway facility to become available. For example waiting for a lock cycle to complete and the lock gates to open.
 
 ### COPELEVEL
 A vertical spatial part that represents the elevation working surface of the quay for the placement of quay furniture and plant.
@@ -41,10 +41,10 @@ A longitudinal spatial part of a waterway or port facility that covers the appro
 A region spatial part that represents a functional division designed for the maintenance and/or storage of vehicles used for facility operations.
 
 ### SHIPTRANSFER
-
+A region spatial part that represents a clear area used for the transfer and movement of vessels this area could include complex rail tracks and additional loading requirements.
 
 ### GATEHEAD
-
+A longitudinal spatial part of a waterway or port facility that forms the gate, supporting structure &amp; plant of an impounded facility such as a ship lock, dry dock or hydrolift.
 
 ### GUDINGSTRUCTURE
 A longitudinal spatial part of a waterway or port facility that forms the guiding and assistive structures at the entrance to an impounded facility.
@@ -68,7 +68,7 @@ A lateral spatial part that covers the side of protective structures that do not
 A vertical spatial part that represents the part above the mean waterline defined within the site area.
 
 ### ANCHORAGE
-
+A region spatial part that represents a managed area for the anchorage of vessels awaiting space and conditions to enter a port.
 
 ### NAVIGATIONALAREA
 A region spatial part that covers a managed navigational area that is maintained for an operational reason, this could be a dredged turning circle or waiting area.
@@ -77,7 +77,7 @@ A region spatial part that covers a managed navigational area that is maintained
 A vertical spatial part that represents the elevation of the high waterline, multiple high waterlines can be used to represent the different high tide types.
 
 ### USERDEFINED
-
+User-defined type
 
 ### NOTDEFINED
-
+Undefined type.

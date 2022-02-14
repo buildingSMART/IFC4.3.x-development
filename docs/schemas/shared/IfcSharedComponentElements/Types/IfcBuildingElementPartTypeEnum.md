@@ -20,10 +20,10 @@ A large quarry stone or concrete shaped unit used as erosion prevention on slope
 > NOTE&nbsp; definition in ISO 21650: relatively large quarry stone or concrete shaped unit that is selected to fit specified geometric characteristics and density.
 
 ### SAFETYCAGE
-
+Safety cages are an assembly of circular and vertical bars that are fastened to the stiles of fixed ladders and are arranged to enclose the path of a worker when climbing the ladder. Ladders so enclosed are also known as caged or hooped ladders.
 
 ### USERDEFINED
 User-defined accessory.
 
 ### NOTDEFINED
-
+Undefined accessory.

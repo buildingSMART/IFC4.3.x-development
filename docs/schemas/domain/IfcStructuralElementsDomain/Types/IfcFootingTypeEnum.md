@@ -24,8 +24,8 @@ An element that transfers the load of a single column (possibly two) to the grou
 ### PILE_CAP
 An element that transfers the load from a column or group of columns to a pier or pile or group of piers or piles.
 
-### STRIP
-
+### STRIP_FOOTING
+A linear element that transfers loads into the ground from either a continuous element, such as a wall, or from a series of elements, such as columns.
 
 ### USERDEFINED
 Special types of footings which meet specific local requirements.

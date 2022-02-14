@@ -19,10 +19,10 @@ Device that generates oxygen from air.
 Device that combines a feed air unit, oxygen generator, and backup oxygen cylinders.
 
 ### VACUUMSTATION
-
+Device that provides suction, composed of a vacuum pump and bacterial filtration line.
 
 ### USERDEFINED
-
+User-defined medical device type.
 
 ### NOTDEFINED
 Undefined medical device type.

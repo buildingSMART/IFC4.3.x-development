@@ -6,8 +6,8 @@ This enumeration defines the applicable subtype of instances of _IfcComplexPrope
 
 ## Items
 
-### P
-
+### P_COMPLEX
+the properties defined by this _IfcComplexPropertyTemplate_ are of type _IfcComplexProperty_.
 
 ### Q_COMPLEX
 

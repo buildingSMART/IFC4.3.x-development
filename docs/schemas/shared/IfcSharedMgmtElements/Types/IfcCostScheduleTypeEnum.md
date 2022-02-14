@@ -7,7 +7,7 @@ An _IfcCostScheduleTypeEnum_ is a list of the available types of cost schedule f
 ## Items
 
 ### BUDGET
-
+An allocation of money for a particular purpose.
 
 ### COSTPLAN
 An assessment of the amount of money needing to be expended for a defined purpose based on incomplete information about the goods and services required for a construction or installation.
@@ -31,4 +31,4 @@ A listing of each type of goods forming construction or installation works with 
 User-defined type.
 
 ### NOTDEFINED
-
+Undefined type.

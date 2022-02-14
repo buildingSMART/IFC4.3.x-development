@@ -19,7 +19,7 @@ Wall board, including gypsum board.
 Fuel for running equipment.
 
 ### GYPSUM
-
+Any gypsum material.
 
 ### MASONRY
 Masonry including brick, stone, concrete block, glass block, and tile.

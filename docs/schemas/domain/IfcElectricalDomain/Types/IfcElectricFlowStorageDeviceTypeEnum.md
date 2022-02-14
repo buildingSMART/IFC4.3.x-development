@@ -13,7 +13,7 @@ A device for storing energy in chemical form so that it can be released as elect
 A device that stores electrical energy when an external power supply is present using the electrical property of capacitance.
 
 ### HARMONICFILTER
-
+A device that constantly injects currents that precisely correspond to the harmonic components drawn by the load.
 
 ### INDUCTORBANK
 
@@ -38,4 +38,4 @@ A recharger or battery charger is a device used to put energy into a secondary c
 User-defined type.
 
 ### NOTDEFINED
-
+Undefined type.

@@ -13,10 +13,10 @@ Enumeration defining standard types for the role, purpose or usage of the bar, i
 Anchoring reinforcement.
 
 ### EDGE
-
+Edge reinforcement.
 
 ### LIGATURE
-
+The reinforcing bar is a ligature (link, stirrup).
 
 ### MAIN
 The reinforcing bar is a main bar.
@@ -25,7 +25,7 @@ The reinforcing bar is a main bar.
 Punching reinforcement.
 
 ### RING
-
+Ring reinforcement.
 
 ### SHEAR
 The reinforcing bar is a shear bar.

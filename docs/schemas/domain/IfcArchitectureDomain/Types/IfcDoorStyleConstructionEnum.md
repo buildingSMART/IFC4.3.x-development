@@ -18,7 +18,7 @@ This enumeration defines the basic types of construction of doors. The construct
 ### WOOD
 
 
-### ALUMINIUM
+### ALUMINIUM_WOOD
 
 
 ### ALUMINIUM_PLASTIC

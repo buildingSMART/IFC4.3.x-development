@@ -9,20 +9,24 @@ This enumeration defines the general applicability of instances of _IfcPropertyS
 ### PSET_TYPEDRIVENONLY
 The property sets defined by this _IfcPropertySetTemplate_ can only be assigned to subtypes of _IfcTypeObject_.
 
-### PSET
-
+### PSET_TYPEDRIVENOVERRIDE
+The property sets defined by this _IfcPropertySetTemplate_ can be assigned
+to subtypes of _IfcTypeObject_ and can be overridden by a
+property set with same name at subtypes of _IfcObject_.
 
 ### PSET_OCCURRENCEDRIVEN
 The property sets defined by this _IfcPropertySetTemplate_ can only be assigned to subtypes of _IfcObject_.
 
-### PSET
-
+### PSET_PERFORMANCEDRIVEN
+The property sets defined by this _IfcPropertySetTemplate_ can only be assigned to _IfcPerformanceHistory_.
 
 ### QTO_TYPEDRIVENONLY
 The element quantity defined by this _IfcPropertySetTemplate_ can only be assigned to subtypes of _IfcTypeObject_.
 
-### QTO
-
+### QTO_TYPEDRIVENOVERRIDE
+The element quantity defined by this _IfcPropertySetTemplate_ can be
+assigned to subtypes of _IfcTypeObject_ and can be overridden
+by an element quantity with same name at subtypes of _IfcObject_.
 
 ### QTO_OCCURRENCEDRIVEN
 The element quantity defined by this _IfcPropertySetTemplate_ can only be

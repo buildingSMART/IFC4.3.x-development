@@ -22,4 +22,4 @@ A fitting at which a branch is taken from the main route of the cable carrier.
 User-defined type.
 
 ### NOTDEFINED
-
+Undefined type.

@@ -14,7 +14,7 @@ Underwater excavation to recover material or to create a greater depth of water.
 General type of excavation when more accurate type is not specified.
 
 ### OVEREXCAVATION
-
+Excavation that goes beyond the depth required for construction, in order to replace unsuitable material.
 
 ### TOPSOILREMOVAL
 Excavation where the topmost layer of soil containing organic material is cut or stripped. The removed topsoil can be used as fill (_EarthworksElement_) e.g. where planting is planned.
@@ -32,7 +32,7 @@ Excavation where soil or rock below topsoil is cut to the depth required for the
 Excavation for basements of buildings, abutments of bridges or similar structures either partially or completely below ground level.
 
 ### USERDEFINED
-
+User-defined type
 
 ### NOTDEFINED
-
+Undefined type.

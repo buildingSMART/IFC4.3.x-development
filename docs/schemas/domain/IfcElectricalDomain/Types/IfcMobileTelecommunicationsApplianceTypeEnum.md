@@ -11,10 +11,10 @@ An E-utran nodel B is a logical network component which serves one or more E-utr
 A remote radio unit is a component of a distributed base transceiver station that converts digital baseband signals into high-frequency (rf) signals and sends high-frequency (rf) signals to the antenna for radiation.
 
 ### ACCESSPOINT
-
+An access point is a device that allows wireless devices to connect to a wired network.
 
 ### BASETRANSCEIVERSTATION
-
+A base transceiver station (BTS) is a network component which serves one cell. It completes the conversion between base station controller and wireless channel, and realizes the wireless transmission and related control functions between base station controller and mobile switching through the air interface.
 
 ### REMOTEUNIT
 A remote unit is a device used to amplify a base station signal.
@@ -44,7 +44,7 @@ A packet control unit performs some of the processing tasks of the base station 
 The service GPRS support node (SGSN) is a component of the GPRS core network. It is the GPRS support node of mobile station service, and it can achieve mobility management and packet routing and transfer.
 
 ### USERDEFINED
-
+User-defined type
 
 ### NOTDEFINED
-
+Undefined type.

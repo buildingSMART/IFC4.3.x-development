@@ -8,8 +8,8 @@ This enumeration type defines if the local object coordinate system or the globa
 
 ## Items
 
-### GLOBAL
-
+### GLOBAL_COORDS
+The global project coordinate system is used.
 
 ### LOCAL_COORDS
 The local object coordinate system is used.

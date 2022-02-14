@@ -6,10 +6,10 @@ This enumeration type is used to distinguish between possible action types at a 
 
 ## Items
 
-### PERMANENT
+### PERMANENT_G
 
 
-### VARIABLE
+### VARIABLE_Q
 
 
 ### EXTRAORDINARY_A

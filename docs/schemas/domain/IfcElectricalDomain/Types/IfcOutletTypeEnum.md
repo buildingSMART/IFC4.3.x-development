@@ -10,13 +10,13 @@ The _IfcOutletTypeEnum_ defines the range of different types of outlet that can 
 ## Items
 
 ### AUDIOVISUALOUTLET
-
+An outlet used for an audio or visual device.
 
 ### COMMUNICATIONSOUTLET
 An outlet used for connecting communications equipment.
 
 ### POWEROUTLET
-
+An outlet used for connecting electrical devices requiring power.
 
 ### DATAOUTLET
 An outlet used for connecting data communications equipment.

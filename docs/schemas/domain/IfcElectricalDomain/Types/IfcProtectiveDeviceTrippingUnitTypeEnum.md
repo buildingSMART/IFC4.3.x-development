@@ -10,7 +10,7 @@ Defines the range of different tripping unit types that can be used in conjuncti
 A tripping unit activated by electronic action.
 
 ### ELECTROMAGNETIC
-
+A tripping unit activated by electromagnetic action.
 
 ### RESIDUALCURRENT
 A tripping unit activated by residual current detection.
@@ -22,4 +22,4 @@ A tripping unit activated by thermal action.
 User-defined type.
 
 ### NOTDEFINED
-
+Undefined type.

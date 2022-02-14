@@ -12,13 +12,13 @@ A man-made watercourse constructed usually, to join rivers, lakes or seas and of
 A facility used for raising and lowering boats, ships and other watercraft between stretches of water of different levels on river and canal waterways or between impounded basins. This is achieved via an impounded trough of water which is mechanically lifted up and down.
 
 ### REVETMENT
-
+A marine defensive structure made from earthworks, masonry or activities, built in such a way as to absorb the energy of incoming water.
 
 ### LAUNCHRECOVERY
-
+Subset of facilities for the function of launching or recovering vessels.
 
 ### MARINEDEFENCE
-
+A subset of facilities with the primary function of protection or defence of a coastal or flood area.
 
 ### HYDROLIFT
 A type of vessel launch &amp; recovery facility, also known as a hydraulic lift dock, where ships are lifted vertically by water impounding systems, then floated laterally across the land to berths which subsequently become dry.
@@ -30,16 +30,17 @@ A coastal/waterside facility where ships are built and repaired.
 A type of vessel launch & recovery facility, where ships are lifted vertically out of the water on platforms connected to winches, then transferred horizontally to land based berths on rail, wheel or track systems.
 
 ### PORT
-
+A complex/facility for shipping and marine activities, this includes cargo, people and storage of vessels (marinas &amp; harbours).
 
 ### QUAY
 a facility for the mooring of vessels accompanied with the loading and unloading of cargo or passengers or the maintenance of vessels.
 
 ### FLOATINGDOCK
-
+A spatial element that encompasses a floating dry dock and supporting quay side ancillaries.
 
 ### NAVIGATIONALCHANNEL
-
+A natural navigable watercourse (such as a river) that needs to be managed or have improvements applied. This includes defined navigational areas in open seas and bays.
+ NOTE definition in ISO 6707: open passage for conveying or containing water
 
 ### BREAKWATER
 A longitudinal structure that protects a shore area, harbour, basin or estuary from waves.
@@ -68,7 +69,7 @@ A facility for the dynamic launch or recovery of a vessel utilizing an inclined 
 A subset of facilities that have the primary function of providing a navigable area of water.
 
 ### USERDEFINED
-
+User-defined type
 
 ### NOTDEFINED
-
+Undefined type.

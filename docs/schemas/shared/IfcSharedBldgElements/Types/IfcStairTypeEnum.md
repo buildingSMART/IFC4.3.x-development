@@ -157,8 +157,9 @@ A stair making a 180&deg; turn, consisting of three straight flights connected b
 A stair consisting of one flight with three quarter winders, which make a
 90&deg; turn. The stair makes a 270&deg; turn. The direction of the turns is determined by the walking line.
 
-### THREE
-
+### THREE_QUARTER_TURN_STAIR
+A stair making a 270&deg; turn, consisting of four straight flights connected
+by three quarterspace landings. The direction of the turns is determined by the walking line.
 
 ### SPIRAL_STAIR
 A stair constructed with winders around a circular newel often without landings. Depending on outer boundary it can be either a circular, elliptical or rectangular spiral stair. The orientation of the winding stairs is determined by the walking line.

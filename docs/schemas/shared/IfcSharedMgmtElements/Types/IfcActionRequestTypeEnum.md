@@ -19,10 +19,10 @@ Request was made verbally over a telephone.
 Request was made through postal mail.
 
 ### VERBAL
-
+Request was made verbally in person.
 
 ### USERDEFINED
 User-defined type.
 
 ### NOTDEFINED
-
+Undefined type.

@@ -19,4 +19,4 @@ A collection of furniture instances of type IfcFurnishingElement.
 User-defined type.
 
 ### NOTDEFINED
-
+Undefined type.

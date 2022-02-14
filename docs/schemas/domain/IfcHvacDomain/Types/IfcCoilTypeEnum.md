@@ -10,7 +10,7 @@ Enumeration defining the typical types of coils.
 Cooling coil using a refrigerant to cool the air stream directly.
 
 ### ELECTRICHEATINGCOIL
-
+Heating coil using electricity as a heating source.
 
 ### GASHEATINGCOIL
 Heating coil using gas as a heating source.
@@ -28,7 +28,7 @@ Cooling coil using chilled water. HYDRONICCOIL supercedes this enumerator.
 Heating coil using hot water as a heating source. HYDRONICCOIL supercedes this enumerator.
 
 ### USERDEFINED
-
+User-defined coil type.
 
 ### NOTDEFINED
 Undefined coil type.

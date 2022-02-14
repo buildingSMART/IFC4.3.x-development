@@ -10,7 +10,7 @@ The _IfcActuatorTypeEnum_ defines the range of different types of actuator that 
 A device that electrically actuates a control element.
 
 ### HANDOPERATEDACTUATOR
-
+A device that manually actuates a control element.
 
 ### HYDRAULICACTUATOR
 A device that electrically actuates a control element.
@@ -25,4 +25,4 @@ A device that thermostatically actuates a control element.
 User-defined type.
 
 ### NOTDEFINED
-
+Undefined type.

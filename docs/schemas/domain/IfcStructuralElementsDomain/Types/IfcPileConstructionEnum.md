@@ -15,11 +15,11 @@ iles that are a mix of components, such as a steel outer casing which is driven 
 ### PRECAST_CONCRETE
 Piles that are entirely of precast concrete (possibly with some steel or other fixtures).
 
-### PREFAB
-
+### PREFAB_STEEL
+Prefabricated piles made entirely out of steel. It will also include steel sheet piles where these are not part of another construction element.
 
 ### USERDEFINED
-
+Special types of pile construction which meet specific local requirements.
 
 ### NOTDEFINED
 The type of pile construction is not defined.

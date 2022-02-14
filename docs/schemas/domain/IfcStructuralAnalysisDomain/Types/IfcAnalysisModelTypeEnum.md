@@ -6,13 +6,13 @@ This type definition is used to distinguish between different types of structura
 
 ## Items
 
-### IN
+### IN_PLANE_LOADING_2D
 
 
 ### OUT_PLANE_LOADING_2D
 
 
-### LOADING
+### LOADING_3D
 
 
 ### USERDEFINED

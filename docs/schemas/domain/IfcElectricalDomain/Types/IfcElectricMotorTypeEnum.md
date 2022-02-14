@@ -25,4 +25,4 @@ A motor that operates at a constant speed up to full load. The rotor speed is eq
 User-defined type.
 
 ### NOTDEFINED
-
+Undefined type.

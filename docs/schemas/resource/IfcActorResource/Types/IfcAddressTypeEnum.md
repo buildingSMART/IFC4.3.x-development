@@ -7,7 +7,7 @@ This enumeration identifies the logical location of the address.
 ## Items
 
 ### OFFICE
-
+An office address.
 
 ### SITE
 A site address.

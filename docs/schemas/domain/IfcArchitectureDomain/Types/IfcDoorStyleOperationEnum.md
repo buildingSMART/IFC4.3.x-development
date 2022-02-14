@@ -177,7 +177,7 @@ Door with two panels that both open to the left, one panel swings in one directi
 ### DOUBLE_DOOR_SINGLE_SWING_OPPOSITE_RIGHT
 Door with two panels that both open to the right, one panel swings in one direction and the other panel swings in the opposite direction.
 
-### DOUBLE
+### DOUBLE_SWING_LEFT
 
 
 ### DOUBLE_SWING_RIGHT
@@ -201,8 +201,8 @@ Door with one panel that is folding to the left.
 ### FOLDING_TO_RIGHT
 Door with one panel that is folding to the right.
 
-### DOUBLE
-
+### DOUBLE_DOOR_FOLDING
+Door with two panels, one is folding to the left the other is folding to the right.
 
 ### REVOLVING
 An entrance door consisting of four leaves set in a form of a cross and revolving around a central vertical axis (the four panels are described by a single _IfcDoor_ panel property).

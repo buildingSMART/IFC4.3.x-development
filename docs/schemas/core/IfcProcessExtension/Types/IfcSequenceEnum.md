@@ -9,8 +9,8 @@ _IfcSequenceEnum_ is an enumeration that defines the different ways in which a t
 ### START_START
 The predecessor task must start before the successor task may start.
 
-### START
-
+### START_FINISH
+The predecessor task must start before the successor task may finish.
 
 ### FINISH_START
 The predecessor task must finish before the successor task may start.

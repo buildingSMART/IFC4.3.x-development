@@ -58,7 +58,7 @@ The enumerated items shall be used in the following combinations:
 ## Items
 
 ### ATPATH
-
+Connection along the path of the connected element.
 
 ### ATSTART
 Connection at the start of the connected element.

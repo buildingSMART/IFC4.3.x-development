@@ -7,7 +7,7 @@ _IfcDocumentStatusEnum_ enables selection of the status of document information 
 ## Items
 
 ### DRAFT
-
+Document is a draft.
 
 ### FINALDRAFT
 Document is a final draft.

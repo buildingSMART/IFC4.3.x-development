@@ -37,7 +37,9 @@ A wall designed to withstand shear loads. Examples of shear wall are diaphragms 
 A massive wall construction for the wall core being the single layer or having multiple layers attached. Such walls are often masonry or concrete walls (both cast in-situ or precast) that are load bearing and fire protecting.
 
 ### STANDARD
-
+A standard wall, extruded vertically with a constant thickness along the wall path. 
+{ .deprecated}
+> The value is deprecated, it is expressed by choosing the subtype _IfcWallStandardCase_.
 
 ### POLYGONAL
 A polygonal wall, extruded vertically, where the wall thickness varies along the wall path.
@@ -48,13 +50,13 @@ A stud wall framed with studs and faced with sheetings, sidings, wallboard, or p
 > The value is deprecated, it is expressed by choosing the subtype _IfcWallElementedCase_.
 
 ### RETAININGWALL
-
+A supporting wall used to protect against soil layers behind. Special types of a retaining wall may be e.g. Gabion wall and Grib wall. Examples of retaining walls are wing wall, headwall, stem wall, pierwall and protecting wall.
 
 ### WAVEWALL
 Protective wall or screen to block overtopping and impact of waves across a breakwater
 
 ### USERDEFINED
-
+User-defined wall element.
 
 ### NOTDEFINED
 Undefined wall element.

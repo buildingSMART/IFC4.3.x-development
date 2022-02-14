@@ -115,8 +115,9 @@ rainwater.
 ### SHED_ROOF
 A roof having a single slope.
 
-### GABLE
-
+### GABLE_ROOF
+A roof sloping downward in two parts from a central ridge, so as to form a
+gable at each end.
 
 ### HIP_ROOF
 A roof having sloping ends and sides meeting at an inclined projecting
@@ -129,8 +130,9 @@ A roof having a hipped end truncating a gable.
 A roof sloping downward in two parts from a central ridge, so as to form a
 gable at each end.
 
-### MANSARD
-
+### MANSARD_ROOF
+A roof having on each side a steeper lower part and a shallower upper
+part.
 
 ### BARREL_ROOF
 A roof or ceiling having a semicylindrical form.

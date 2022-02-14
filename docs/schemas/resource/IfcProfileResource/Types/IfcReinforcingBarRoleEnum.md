@@ -34,7 +34,7 @@ Ring reinforcement.
 Anchoring reinforcement.
 
 ### USERDEFINED
-
+The type of reinforcement is user defined.
 
 ### NOTDEFINED
 The type of reinforcement is not defined.

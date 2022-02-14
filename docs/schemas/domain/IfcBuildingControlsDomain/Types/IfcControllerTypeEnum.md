@@ -10,7 +10,7 @@ The _IfcControllerTypeEnum_ defines the range of different types of controller t
 ## Items
 
 ### FLOATING
-
+Output increases or decreases at a constant or accelerating rate.
 
 ### PROGRAMMABLE
 Output is programmable such as Discrete Digital Control (DDC).
@@ -25,7 +25,7 @@ Output is discrete value, can be one of three or more values.
 Output can be either on or off.
 
 ### USERDEFINED
-
+User-defined type.
 
 ### NOTDEFINED
-
+Undefined type.

@@ -22,7 +22,7 @@ A boom barrier (also known as a boom gate) is a bar, or pole pivoted to allow th
 A mechanical gate consisting of revolving arms, allowing only one person at a time to pass through.
 
 ### USERDEFINED
-
+User-defined door element.
 
 ### NOTDEFINED
 Undefined door element.

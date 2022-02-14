@@ -37,10 +37,10 @@ Valve used to facilitate regulation of fluid flow in a system.
 Faucet valve typically used as a flow discharge.
 
 ### FLUSHING
-
+Valve that flushes a predetermined quantity of water to cleanse a toilet, urinal, etc.
 
 ### GASCOCK
-
+Valve that is used for controlling the flow of gas.
 
 ### GASTAP
 Gas tap typically used for venting or discharging gas from a system.
@@ -58,13 +58,13 @@ Valve that reduces the pressure of a fluid immediately downstream of its positio
 Spring or weight loaded valve that automatically discharges to a safe place fluid that has built up to excessive pressure in pipes or fittings.
 
 ### REGULATING
-
+Valve used to facilitate regulation of fluid flow in a system.
 
 ### SAFETYCUTOFF
 Valve that closes under the action of a safety mechanism such as a drop weight, solenoid etc.
 
 ### STEAMTRAP
-
+Valve that restricts flow of steam while allowing condensate to pass through.
 
 ### STOPCOCK
 An isolating valve used on a domestic water service.

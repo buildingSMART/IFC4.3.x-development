@@ -19,7 +19,7 @@ A visual alarm.
 An alarm activation mechanism in which activation is achieved by a pulling action.
 
 ### SIREN
-
+An audible alarm.
 
 ### WHISTLE
 An audible alarm.
@@ -34,4 +34,4 @@ A coin-sized device that is used as a loud warning signal to train drivers. It i
 User-defined type.
 
 ### NOTDEFINED
-
+Undefined type.

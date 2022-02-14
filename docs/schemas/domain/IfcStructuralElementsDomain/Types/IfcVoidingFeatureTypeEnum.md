@@ -7,7 +7,7 @@ This enumeration qualifies a voiding feature regarding its shape and configurati
 ## Items
 
 ### CUTOUT
-
+An internal cutout (creating an opening) or external cutout (creating a recess) of arbitrary shape.  The edges between cutting planes may be overcut or undercut, i.e. rounded.
 
 ### NOTCH
 An external cutout of with a mostly rectangular cutting profile.  The edges between cutting planes may be overcut or undercut, i.e. rounded.

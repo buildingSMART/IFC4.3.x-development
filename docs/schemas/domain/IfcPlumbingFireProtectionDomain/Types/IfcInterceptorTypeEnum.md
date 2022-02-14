@@ -13,7 +13,7 @@ Removes larger liquid drops or larger solid particles.
 Chamber, on the line of a drain or discharge pipe, that prevents grease passing into a drainage system.
 
 ### OIL
-
+One or more chambers arranged to prevent the ingress of oil to a drain or sewer that retains the oil for later removal.
 
 ### PETROL
 Two or more chambers with inlet and outlet pipes arranged to allow petrol/gasoline collected on the surface of water drained into them to evaporate through ventilating pipes.
@@ -22,4 +22,4 @@ Two or more chambers with inlet and outlet pipes arranged to allow petrol/gasoli
 User-defined type.
 
 ### NOTDEFINED
-
+Undefined type.

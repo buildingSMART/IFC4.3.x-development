@@ -7,13 +7,13 @@ This enumeration is used to identify the primary purpose of a construction produ
 ## Items
 
 ### ASSEMBLY
-
+Construction of assemblies for use as input to the building model or other assemblies.
 
 ### FORMWORK
-
+Construction or placement of forms for placing materials such as concrete.
 
 ### USERDEFINED
 User-defined resource.
 
 ### NOTDEFINED
-
+Undefined resource.

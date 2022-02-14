@@ -9,7 +9,7 @@ The _IfcSanitaryTerminalTypeEnum_ defines the range of different types of sanita
 ## Items
 
 ### BATH
-
+Sanitary appliance for immersion of the human body or parts of it.
 
 ### BIDET
 Waste water appliance for washing the excretory organs while sitting astride the bowl.
@@ -21,10 +21,10 @@ A water storage unit attached to a sanitary terminal that is fitted with a devic
 Installation or waste water appliance that emits a spray of water to wash the human body.
 
 ### SINK
-
+Waste water appliance for receiving, retaining or disposing of domestic, culinary, laboratory or industrial process liquids.
 
 ### SANITARYFOUNTAIN
-
+A sanitary terminal that provides a low pressure jet of water for a specific purpose.
 
 ### TOILETPAN
 Soil appliance for the disposal of excrement.
@@ -36,10 +36,10 @@ Soil appliance that receives urine and directs it to a waste outlet.
 Waste water appliance for washing the upper parts of the body.
 
 ### WCSEAT
-
+[Deprecated] Hinged seat that fits on the top of a water closet (WC) pan.
 
 ### USERDEFINED
 User-defined type.
 
 ### NOTDEFINED
-
+Undefined type.

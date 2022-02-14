@@ -19,4 +19,4 @@ Electromagnetically operated contactor for making or breaking a control circuit.
 User-defined type.
 
 ### NOTDEFINED
-
+Undefined type.

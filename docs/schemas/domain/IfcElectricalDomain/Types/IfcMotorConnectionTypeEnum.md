@@ -7,7 +7,7 @@ The _IfcMotorConnectionTypeEnum_ defines the range of different types of motor c
 ## Items
 
 ### BELTDRIVE
-
+An indirect connection made through the medium of a shaped, flexible continuous loop.
 
 ### COUPLING
 An indirect connection made through the medium of the viscosity of a fluid.
@@ -19,4 +19,4 @@ A direct, physical connection made between the motor and the driven device.
 User-defined type.
 
 ### NOTDEFINED
-
+Undefined type.

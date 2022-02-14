@@ -28,7 +28,7 @@ The load value is distributed as a half wave described by a symmetric quadratic 
 The load is specified as a series of discrete load points.
 
 ### USERDEFINED
-
+The load distribution is user-defined.
 
 ### NOTDEFINED
 The load distribution is undefined.

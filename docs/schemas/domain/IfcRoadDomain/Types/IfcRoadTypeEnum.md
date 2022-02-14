@@ -5,7 +5,7 @@ The predefined type container that collects all possible road facility types tog
 ## Items
 
 ### USERDEFINED
-
+User-defined type.
 
 ### NOTDEFINED
-
+Undefined type.

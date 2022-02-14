@@ -17,7 +17,7 @@ composed of a longitudinal screw in a trough or pipe that rotates to force media
 A conveyor in the form of connected buckets or segments that move in a continuous loop
 
 ### USERDEFINED
-
+User-defined type
 
 ### NOTDEFINED
-
+Undefined type.

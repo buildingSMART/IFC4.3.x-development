@@ -31,4 +31,4 @@ Actor renting the use of a property fro a period of time.
 User-defined type.
 
 ### NOTDEFINED
-
+Undefined type.

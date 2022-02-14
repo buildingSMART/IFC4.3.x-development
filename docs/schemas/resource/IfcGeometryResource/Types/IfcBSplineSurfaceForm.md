@@ -15,8 +15,8 @@ The _IfcBSplineSurfaceForm_ represents a part of a surface of some specific form
 ### PLANE_SURF
 A bounded portion of a plane represented by a B-spline surface of degree 1 in each parameter.
 
-### CYLINDRICAL
-
+### CYLINDRICAL_SURF
+A bounded portion of a cylindrical surface.
 
 ### CONICAL_SURF
 A bounded portion of the surface of a right circular cone.
@@ -24,8 +24,8 @@ A bounded portion of the surface of a right circular cone.
 ### SPHERICAL_SURF
 A bounded portion of a sphere, or a complete sphere, represented by a B-spline surface.
 
-### TOROIDAL
-
+### TOROIDAL_SURF
+A torus, or portion of a torus, represented by a B-spline surface.
 
 ### SURF_OF_REVOLUTION
 A bounded portion of a surface of revolution.

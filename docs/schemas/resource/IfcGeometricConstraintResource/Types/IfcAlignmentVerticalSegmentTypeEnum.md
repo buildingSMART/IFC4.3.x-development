@@ -64,7 +64,7 @@ EN13803 clause 3.5:
 ## Items
 
 ### CONSTANTGRADIENT
-
+Vertical alignment segment with constant gradient.
 
 ### CIRCULARARC
 Vertical alignment segment where the derivative of vertical angle with respect to sloping length along the track (3D length) is constant.
@@ -85,7 +85,20 @@ Vertical alignment segment where the derivative of vertical angle with respect t
 !["Vertical circular arc segment"](../../figures/ifcalignmentverticalsegmenttypeenum-arc_z_s.png "Figure 3 &mdash; Distance of point an vertical circular arc segment to tangent")
 
 ### PARABOLICARC
+Vertical alignment segment where the derivative of gradient with respect to distance along is constant.
+<br/>
 
+**general equation of the parabolic arc segment**
+
+!["Vertical parabolic arc segment"](../../figures/ifcalignmentverticalsegmenttypeenum-parabola1.png "Figure 1 &mdash; general equation of the parabolic arc segment")
+
+**gradient (slope) of this curve at any point (first derivative)**
+
+!["Vertical parabolic arc segment"](../../figures/ifcalignmentverticalsegmenttypeenum-parabola2.png "Figure 2 &mdash; gradient (slope)  of the parabolic arc segment at any point")
+
+**variation of curvature**
+
+!["Vertical parabolic arc segment"](../../figures/ifcalignmentverticalsegmenttypeenum-parabola3.png "Figure 3 &mdash; the rate of change of gradient of the parabolic arc segment is constant")
 
 ### CLOTHOID
 Vertical alignment segment where the derivative of vertical angle with respect to sloping length along the track (3D length) obeys a linear change.

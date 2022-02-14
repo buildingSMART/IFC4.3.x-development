@@ -257,26 +257,26 @@ NOTE
 
 ## Items
 
-### SINGLE
+### SINGLE_SWING_LEFT
+Door with one panel that opens (swings) to the left. The hinges are on the left side as viewed in the direction of the positive y-axis.
 
+### SINGLE_SWING_RIGHT
+Door with one panel that opens (swings) to the right. The hinges are on the right side as viewed in the direction of the positive y-axis.
 
-### SINGLE
+### DOUBLE_PANEL_SINGLE_SWING
+Door with two panels, one opens (swings) to the left the other opens (swings) to the right.
 
+### DOUBLE_PANEL_SINGLE_SWING_OPPOSITE_LEFT
+Door with two panels that both open to the left, one panel swings in one direction and the other panel swings in the opposite direction.
 
-### DOUBLE
-
-
-### DOUBLE
-
-
-### DOUBLE
-
+### DOUBLE_PANEL_SINGLE_SWING_OPPOSITE_RIGHT
+Door with two panels that both open to the right, one panel swings in one direction and the other panel swings in the opposite direction.
 
 ### DOUBLE_SWING_LEFT
 Door with one panel that swings in both directions and to the left in the main trafic direction. Also called double acting door.
 
-### DOUBLE
-
+### DOUBLE_SWING_RIGHT
+Door with one panel that swings in both directions and to the right in the main trafic direction. Also called double acting door.
 
 ### DOUBLE_PANEL_DOUBLE_SWING
 Door with two panels, one swings in both directions and to the right in the main trafic direction the other swings also in both directions and to the left in the main trafic direction.
@@ -303,7 +303,7 @@ Door with two panels, one is folding to the left the other is folding to the rig
 An entrance door consisting of four leaves set in a form of a cross and revolving around a central vertical axis (the four panels are described by a single _IfcDoor_ panel property).
 
 ### ROLLINGUP
-
+Door that opens by rolling up.
 
 ### SWING_FIXED_LEFT
 Door with one panel that opens (swings) to the left and one fixed panel. The hinges of the swinging panel are on the left side as viewed in the direction of the positive y-axis.

@@ -75,7 +75,14 @@ In the geometric perspective, it denotes a connection between two points that fo
 !["Circular arc segment"](../../figures/ifcalignmenthorizontalsegmenttypeenum-circulararc.png "Figure 1 &mdash; Curvature for horizontal circular segment")
 
 ### CLOTHOID
+In the geometric perspective, a clothoid denotes a connection between two points where the radius of curvature changes along the segment at a constant rate. The clothoid was an early achievement of geometry, also known as Euler's spiral or Cornu's spiral. It became very popular in road and rail design even before the widespread availability of computers because of the availability of tabulations of the normalized clothoid. Proper application of the so called clothoid constant provided fast solutions for all relevant parameters necessary to integrate clothoid segments between two consecutive segments with constant curvature. In most cases the clothoid smooths the curvature between a straight line and a ciruclar arc. <br/>
 
+In the dynamic perspective, it denotes a segment with constant rate of lateral acceleration change induced by the curvature. The kinematic properties of the clothoid both reduce the exerted forces on the track by a train, improve the travel experience of train passengers and also reduce the stress of a car driver by avoiding sudden movements of the steering wheel.<br>
+
+The kinematic advantages of the clothoid as a smoothing segment are true also for all the other transition bends currently in use. 
+
+**Base formula (Curvature)**
+!["Clothoid transition segment"](../../figures/ifcalignmenthorizontalsegmenttypeenum-clothoid.png "Figure 1 &mdash; Curvature for horizontal Clothoid transition segment")
 
 ### CUBIC
 In IFC CUBIC denotes a transition segment where x and y coordinates obey a cubic formula.
@@ -117,7 +124,10 @@ The Bloss transition is a more recent form of a high performance transition bend
 !["Bloss curve transition segment"](../../figures/ifcalignmenthorizontalsegmenttypeenum-blosscurve.png "Figure 1 &mdash; Curvature for horizontal Bloss curve transition segment")
 
 ### COSINECURVE
+Cosine transition. The cosine transition was already discussed in 1868. Width the advent of high-speed rail it was applied  in production designs. It is e.g. installed on Japanese high speed lines
 
+**Base formula (Curvature)**
+!["Cosine curve transition segment"](../../figures/ifcalignmenthorizontalsegmenttypeenum-cosinecurve.png "Figure 1 &mdash; Curvature for horizontal Cosine curve transition segment")
 
 ### SINECURVE
 Sine transition or sinusoidal transition was suggested 1937. The curvature function is built up of one period of a sine function. The sine curve is characterised by particularly advantageous smoothing properties at the end points. Compared to the clothoid, it is twice as long.

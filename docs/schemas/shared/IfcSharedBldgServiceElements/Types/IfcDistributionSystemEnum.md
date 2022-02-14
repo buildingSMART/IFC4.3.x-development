@@ -9,16 +9,16 @@ Ports for cable carriers may be connected using _IfcCableCarrierSegment_ and _If
 ## Items
 
 ### AIRCONDITIONING
-
+Conditioned air distribution system for purposes of maintaining a temperature range within one or more spaces.
 
 ### AUDIOVISUAL
-
+A transport of a single media source, having audio and/or video streams.
 
 ### CHEMICAL
 Arbitrary chemical further qualified by property set, such as for medical or industrial use.
 
 ### CHILLEDWATER
-
+Nonpotable chilled water, such as circulated through an evaporator.
 
 ### COMMUNICATION
 
@@ -27,7 +27,7 @@ Arbitrary chemical further qualified by property set, such as for medical or ind
 Compressed air system.
 
 ### CONDENSERWATER
-
+Nonpotable water, such as circulated through a condenser.
 
 ### CONTROL
 A transport or network dedicated to control system usage.
@@ -36,7 +36,7 @@ A transport or network dedicated to control system usage.
 Arbitrary supply of substances.
 
 ### DATA
-
+A network having general-purpose usage.
 
 ### DISPOSAL
 Arbitrary disposal of substances.
@@ -48,7 +48,7 @@ Unheated potable water distribution system.
 Heated potable water distribution system.
 
 ### DRAINAGE
-
+Drainage collection system.
 
 ### EARTHING
 A path for equipotential bonding, conducting current to the ground.
@@ -57,7 +57,7 @@ A path for equipotential bonding, conducting current to the ground.
 A circuit for delivering electrical power.
 
 ### ELECTROACOUSTIC
-
+An amplified audio signal such as for loudspeakers.
 
 ### EXHAUST
 Exhaust air collection system for removing stale or noxious air from one or more spaces.
@@ -69,10 +69,10 @@ Fire protection sprinkler system.
 Arbitrary supply of fuel.
 
 ### GAS
-
+Gas-phase materials such as methane or natural gas.
 
 ### HAZARDOUS
-
+Hazardous material or fluid collection system.
 
 ### HEATING
 Water or steam heated from a boiler and circulated through radiators.
@@ -81,7 +81,7 @@ Water or steam heated from a boiler and circulated through radiators.
 A circuit dedicated for lighting, such as a fixture having sockets for lamps.
 
 ### LIGHTNINGPROTECTION
-
+A path for conducting lightning current to the ground.
 
 ### MUNICIPALSOLIDWASTE
 Items consumed and discarded, commonly known as trash or garbage.
@@ -90,7 +90,7 @@ Items consumed and discarded, commonly known as trash or garbage.
 Oil distribution system.
 
 ### OPERATIONAL
-
+Operating supplies system.
 
 ### POWERGENERATION
 A path for power generation.
@@ -123,7 +123,7 @@ A transport of multiple media sources such as analog cable TV, satellite TV, or 
 Vacuum distribution system.
 
 ### VENT
-
+Vent system for wastewater piping systems.
 
 ### VENTILATION
 Ventilation air distribution system involved in either the exchange of air to the outside as well as circulation of air within a building.
@@ -153,7 +153,7 @@ A system that allows communications between operators (e.g. switchtender, traffi
 Mobile network insures wireless communication by providing a secure platform for voice and data communication between infrastructure operators, including drivers, dispatchers, shunting team members and station controllers.
 
 ### MONITORINGSYSTEM
-
+Sensor-based system for building and infastructure environmental monitoring and control.
 
 ### USERDEFINED
 

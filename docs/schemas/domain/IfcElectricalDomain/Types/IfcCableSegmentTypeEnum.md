@@ -35,10 +35,10 @@ An optical cable segment is a cable segment that contains a variable number of o
 A stitch wire consists of auxiliary wires and different components (clamp) used in stitched suspension.
 
 ### WIREPAIRSEGMENT
-
+A pair of conductors contained in a copper cable. The pair is always used together to form a circuit to transmit data by means of electric signals.
 
 ### USERDEFINED
 User-defined type.
 
 ### NOTDEFINED
-
+Undefined type.

@@ -13,7 +13,7 @@ Boolean operators that apply to the first and second Boolean operands.
 ## Items
 
 ### UNION
-
+The operation of constructing the regularized set theoretic union of the volumes defined by two solids.
 
 ### INTERSECTION
 The operation of constructing the regularised set theoretic intersection of the volumes defined by two solids.

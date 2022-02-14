@@ -7,7 +7,7 @@ This enumeration defines the different types an _IfcRampFlight_ or _IfcRampFligh
 ## Items
 
 ### STRAIGHT
-
+A ramp flight with a straight walking line.
 
 ### SPIRAL
 A ramp flight with a circular or elliptic walking line.

@@ -7,7 +7,7 @@ This enumeration defines where the assembly is intended to take place, either in
 ## Items
 
 ### SITE
-
+This assembly is assembled at site.
 
 ### FACTORY
 This assembly is assembled in a factory.

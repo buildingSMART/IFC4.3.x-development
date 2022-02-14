@@ -9,7 +9,7 @@ _IfcSurfaceSide_ is a denotion of whether negative, positive or both sides of a 
 ## Items
 
 ### POSITIVE
-
+The side of a surface which is in the same direction as the surface normal derived from the mathematical definition.
 
 ### NEGATIVE
 The side of a surface which is in the opposite direction than the surface normal derived from the mathematical definition.

@@ -7,7 +7,7 @@ This enumeration defines the various types of damper
 ## Items
 
 ### BACKDRAFTDAMPER
-
+Damper used for purposes of manually balancing pressure differences.  Commonly operated by mechanical adjustment.
 
 ### BALANCINGDAMPER
 Backdraft damper used to restrict the movement of air in one direction.  Commonly operated by mechanical spring.
@@ -22,7 +22,7 @@ Control damper used to modulate the flow of air by adjusting the position of the
 Fire damper used to prevent the spread of fire for a specified duration.  Commonly operated by fusable link that melts above a certain temperature.
 
 ### FIRESMOKEDAMPER
-
+Combination fire and smoke damper used to preven the spread of fire and smoke.  Commonly operated by a fusable link and a smoke detector.
 
 ### FUMEHOODEXHAUST
 Fume hood exhaust damper.  Commonly operated by actuator.
@@ -31,7 +31,7 @@ Fume hood exhaust damper.  Commonly operated by actuator.
 Gravity damper closes from the force of gravity.  Commonly operated by gravitational weight.
 
 ### GRAVITYRELIEFDAMPER
-
+Gravity-relief damper used to allow air to move upon a buildup of enough pressure to overcome the gravitational force exerted upon the damper blades.  Commonly operated by gravitational weight.
 
 ### RELIEFDAMPER
 Relief damper used to allow air to move upon a buildup of a specified pressure differential.  Commonly operated by mechanical spring.

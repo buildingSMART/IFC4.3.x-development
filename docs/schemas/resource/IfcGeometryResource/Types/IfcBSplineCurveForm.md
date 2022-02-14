@@ -15,8 +15,8 @@ The _IfcBSplineCurveForm_ represents a part of a curve of some sppecific form.
 ### POLYLINE_FORM
 A connected sequence of line segments represented by degree 1 B-spline basis functions.
 
-### CIRCULAR
-
+### CIRCULAR_ARC
+An arc of a circle, or a complete circle represented by a B-spline curve.
 
 ### ELLIPTIC_ARC
 An arc of an ellipse, or a complete ellipse, represented by a B-spline curve.

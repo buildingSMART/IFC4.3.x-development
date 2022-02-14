@@ -13,7 +13,7 @@ Document is publicly available.
 Document availability is restricted.
 
 ### CONFIDENTIAL
-
+Document is confidential and its contents should not be revealed without permission.
 
 ### PERSONAL
 Document is personal to the author.

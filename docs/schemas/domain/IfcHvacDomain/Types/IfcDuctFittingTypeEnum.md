@@ -29,7 +29,7 @@ Connector fitting, typically used to join two ports together within a flow distr
 Entry fitting, typically unconnected at one port and connected to a flow distribution system at the other (e.g., an outside air duct system intake opening).
 
 ### EXIT
-
+Exit fitting, typically unconnected at one port and connected to a flow distribution system at the other (e.g., an exhaust air discharge opening).
 
 ### JUNCTION
 A fitting with typically more than two ports used to redistribute flow among the ports and/or to change the direction of flow between connected elements (e.g, tee, cross, wye, etc.).

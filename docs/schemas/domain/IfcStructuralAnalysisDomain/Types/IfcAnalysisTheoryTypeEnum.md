@@ -9,10 +9,10 @@ This enumeration is used to distinguish between different types of structural an
 ### FIRST_ORDER_THEORY
 
 
-### SECOND
+### SECOND_ORDER_THEORY
 
 
-### THIRD
+### THIRD_ORDER_THEORY
 
 
 ### FULL_NONLINEAR_THEORY

@@ -18,11 +18,11 @@ The space boundary faces a physical or virtual element where there is an externa
 ### EXTERNAL_EARTH
 The space boundary faces a physical or virtual element where there is earth (or terrain) on the other side.
 
-### EXTERNAL
+### EXTERNAL_WATER
+The space boundary faces a physical or virtual element where there is water (water component of terrain) on the other side.
 
-
-### EXTERNAL
-
+### EXTERNAL_FIRE
+The space boundary faces a physical or virtual element where there is another building on the other side.
 
 ### NOTDEFINED
 No information available.

@@ -18,7 +18,15 @@ A track circuit is an electric circuit of which the rails of a track section for
 Note: definition from IEC 60050-82.
 
 ### EROSIONPREVENTION
-
+A grouping of elements into a built system for preventing unwanted relocation of material particles in earthworks slopes or rock faces. 
+Typical types of erosion prevention include:
+* Planting
+* Solid
+* Framework
+* Anchored framework
+* Shotcrete
+* Screening
+* Geosynthetics (geotextiles)
 
 ### FOUNDATION
 System of shallow and deep foundation elements that transmit forces to the supporting ground.
@@ -27,7 +35,7 @@ System of shallow and deep foundation elements that transmit forces to the suppo
 System of built elements that transmit forces and stiffen the construction.
 
 ### SHADING
-
+System of shading elements (external or internal) that permits the limitation or control of impact of natural sun light.
 
 ### FENESTRATION
 System of doors, windows, and other fillings in openings in a built envelope that are designed to permit the passage of air or light.
@@ -36,10 +44,10 @@ System of doors, windows, and other fillings in openings in a built envelope tha
 System of all transport elements in a facility that enable the transport of people or goods.
 
 ### PRESTRESSING
-
+System of elements providing pre-stressing to the structure, including typically manufactured products such as tendons, anchorages (active, dead, coupling), ducts, vents and deviators, and in-situ concrete segments, tendon spacers, blisters and additional reinforcements.
 
 ### USERDEFINED
-
+User-defined type
 
 ### NOTDEFINED
-
+Undefined type.

@@ -10,7 +10,7 @@ This enumeration defines the various types of filter typically used within build
 A filter used to remove particulates from air.
 
 ### COMPRESSEDAIRFILTER
-
+A filter used to remove particulates from compressed air.
 
 ### ODORFILTER
 A filter used to remove odors from air.
@@ -28,4 +28,4 @@ A filter used to remove particulates from water.
 User-defined filter type.
 
 ### NOTDEFINED
-
+Undefined filter type.

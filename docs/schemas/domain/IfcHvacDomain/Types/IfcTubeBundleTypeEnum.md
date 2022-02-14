@@ -7,10 +7,10 @@ Enumeration defining the typical types of tube bundles.
 ## Items
 
 ### FINNED
-
+Finned tube bundle type.
 
 ### USERDEFINED
-
+User-defined tube bundle type.
 
 ### NOTDEFINED
 Undefined tube bundle type.

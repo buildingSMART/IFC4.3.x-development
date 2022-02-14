@@ -7,7 +7,7 @@ Enumeration defining the typical types of humidifiers.
 ## Items
 
 ### STEAMINJECTION
-
+Water vapor is added into the airstream through direct steam injection.
 
 ### ADIABATICAIRWASHER
 Water vapor is added into the airstream through adiabatic evaporation using an air washing element.
@@ -22,10 +22,10 @@ Water vapor is added into the airstream through adiabatic evaporation using a we
 Water vapor is added into the airstream through adiabatic evaporation using an atomizing element.
 
 ### ADIABATICULTRASONIC
-
+Water vapor is added into the airstream through adiabatic evaporation using an ultrasonic element.
 
 ### ADIABATICRIGIDMEDIA
-
+Water vapor is added into the airstream through adiabatic evaporation using a rigid media.
 
 ### ADIABATICCOMPRESSEDAIRNOZZLE
 Water vapor is added into the airstream through adiabatic evaporation using a compressed air nozzle.
@@ -43,7 +43,7 @@ Water vapor is added into the airstream through water heated evaporation using a
 Water vapor is added into the airstream through water heated evaporation using a butane heater.
 
 ### ASSISTEDSTEAM
-
+Water vapor is added into the airstream through water heated evaporation using a steam heater.
 
 ### USERDEFINED
 User-defined humidifier type.

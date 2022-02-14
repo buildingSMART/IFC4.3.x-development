@@ -18,7 +18,7 @@ This enumeration type contains possible action sources.
 ### SNOW_S
 
 
-### WIND
+### WIND_W
 
 
 ### PRESTRESSING_P
@@ -30,7 +30,7 @@ This enumeration type contains possible action sources.
 ### TEMPERATURE_T
 
 
-### EARTHQUAKE
+### EARTHQUAKE_E
 
 
 ### FIRE

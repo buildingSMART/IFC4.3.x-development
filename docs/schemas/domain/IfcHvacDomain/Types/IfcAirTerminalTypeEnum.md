@@ -9,13 +9,13 @@ Enumeration defining the functional types of air terminals.
 ## Items
 
 ### DIFFUSER
-
+An outlet discharging supply air in various directions and planes.
 
 ### GRILLE
 A covering for any area through which air passes.
 
 ### LOUVRE
-
+A rectilinear louvre.
 
 ### REGISTER
 A grille typically equipped with a damper or control valve.

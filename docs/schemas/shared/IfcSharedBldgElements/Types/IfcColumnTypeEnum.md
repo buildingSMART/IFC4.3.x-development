@@ -7,7 +7,7 @@ This enumeration defines the different predefined types of columns that can furt
 ## Items
 
 ### COLUMN
-
+A standard member usually vertical and requiring resistance to vertical forces by compression but also sometimes to lateral forces.
 
 ### PILASTER
 A column element embedded within a wall that can be required to be load bearing but may also only be used for decorative purposes.
@@ -22,7 +22,7 @@ A vertical segment of a pier column.
 A column transmitting vertical loads from superstructure to an arch below it.
 
 ### USERDEFINED
-
+User-defined linear element.
 
 ### NOTDEFINED
 Undefined linear element.

@@ -13,7 +13,7 @@ The _IfcSensorTypeEnum_ defines the range of different types of sensor that can 
 A device that senses or detects carbon monoxide.
 
 ### CO2SENSOR
-
+A device that senses or detects carbon dioxide.
 
 ### CONDUCTANCESENSOR
 A device that senses or detects electrical conductance.
@@ -37,7 +37,7 @@ A device that senses or detects gas concentration (other than CO2)
 A device that senses or detects heat.
 
 ### HUMIDITYSENSOR
-
+A device that senses or detects humidity.
 
 ### IDENTIFIERSENSOR
 A device that reads a tag, such as for gaining access to a door or elevator
@@ -49,13 +49,13 @@ A device that senses or detects ion concentration, such as for water hardness.
 A device that senses or detects fill level, such as for a tank.
 
 ### LIGHTSENSOR
-
+A device that senses or detects light.
 
 ### MOISTURESENSOR
 A device that senses or detects moisture.
 
 ### MOVEMENTSENSOR
-
+A device that senses or detects movement.
 
 ### PHSENSOR
 A device that senses or detects acidity.
@@ -73,16 +73,16 @@ A device that senses or detects atomic decay.
 A device that senses or detects smoke.
 
 ### SOUNDSENSOR
-
+A device that senses or detects sound.
 
 ### TEMPERATURESENSOR
 A device that senses or detects temperature.
 
 ### WINDSENSOR
-
+A device that senses or detects airflow speed and direction.
 
 ### EARTHQUAKESENSOR
-
+A device that senses or detects the seismic wave and measures the seismic intensity in case of earthquake.
 
 ### FOREIGNOBJECTDETECTIONSENSOR
 A device that senses or detects foreign objects that shock or break the power network. It may alarm when such accidents happen.
@@ -97,7 +97,7 @@ A device that senses or collects rainfall related information.
 A device that senses or measures the depth of snowfall.
 
 ### TRAINSENSOR
-
+A device, usually attached to the rear end of the last vehicle of a train, acting on a fixed equipment to give an indication that the train is complete.
 
 ### TURNOUTCLOSURESENSOR
 A device that senses or detects the position of a blade of a turnout.
@@ -109,4 +109,4 @@ A device that senses or detects the passage of a wheel.
 User-defined type.
 
 ### NOTDEFINED
-
+Undefined type.

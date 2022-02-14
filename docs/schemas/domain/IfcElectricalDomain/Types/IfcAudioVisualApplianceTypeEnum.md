@@ -7,13 +7,13 @@ Defines the range of different types of audio-video devices that can be specifie
 ## Items
 
 ### AMPLIFIER
-
+A device that receives an audio signal and amplifies it to play through speakers.
 
 ### CAMERA
-
+A device that records images, either as a still photograph or as moving images known as videos or movies.  Note that a camera may operate with light from the visible spectrum or from other parts of the electromagnetic spectrum such as infrared or ultraviolet.
 
 ### DISPLAY
-
+An electronic device that represents information in visual form such as a flat-panel display or television.
 
 ### MICROPHONE
 An acoustic-to-electric transducer or sensor that converts sound into an electrical signal.  Microphones types in use include electromagnetic induction (dynamic microphones), capacitance change (condenser microphones) or piezoelectric generation to produce the signal from mechanical vibration.
@@ -40,13 +40,13 @@ A telecommunications device that is used to transmit and receive sound, and opti
 An electronic receiver that detects, demodulates, and amplifies transmitted signals.
 
 ### COMMUNICATIONTERMINAL
-
+A communication terminal is an audio communication device that is usually installed along transportation infrastructure (railways, roads, tunnels etc.) in order to be used by the general public or operation agents for communication. It may specifically be used to make calls to emergency services in tunnels.
 
 ### RECORDINGEQUIPMENT
 A recording equipment is a device that records telephone calls or other types of audio data. It also provides the function of archiving and immediate replay.
 
 ### USERDEFINED
-
+User-defined type.
 
 ### NOTDEFINED
-
+Undefined type.

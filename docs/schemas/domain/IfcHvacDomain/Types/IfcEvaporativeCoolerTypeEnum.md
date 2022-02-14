@@ -10,7 +10,7 @@ Enumeration defining the typical types of evaporative coolers.
 Direct evaporative random media air cooler: Cools the air stream by evaporating water dircectly into the air stream using coolers with evaporative pads, usually of aspen wood or plastic fiber/foam.
 
 ### DIRECTEVAPORATIVERIGIDMEDIAAIRCOOLER
-
+Direct evaporative rigid media air cooler: Cools the air stream by evaporating water dircectly into the air stream using coolers with sheets of rigid, corrugated material as the wetted surface.
 
 ### DIRECTEVAPORATIVESLINGERSPACKAGEDAIRCOOLER
 Direct evaporative slingers packaged air cooler: Cools the air stream by evaporating water dircectly into the air stream using coolers with a water slinger in an evaporative cooling section and a fan section.
@@ -37,4 +37,4 @@ Indirect/Direct combination: Cools the air stream by evaporating water indirectl
 User-defined evaporative cooler type.
 
 ### NOTDEFINED
-
+Undefined evaporative cooler type.

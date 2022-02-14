@@ -241,7 +241,7 @@ Table 1 illustrates application of _IfcLogicalOperatorEnum_ in a case of three o
 ## Items
 
 ### LOGICALAND
-
+Defines a relationship between operands whereby the result is true if all operands are true, and false if at least one operand is false.
 
 ### LOGICALOR
 Defines a relationship between operands whereby the result is true if at least one operand is true, and false if all operands are false.

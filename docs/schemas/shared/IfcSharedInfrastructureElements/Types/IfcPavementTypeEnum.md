@@ -11,7 +11,7 @@ Flexible favements, including less riged pavements like rubber.
 Pavement substantially constructed of cement concrete.
 
 ### USERDEFINED
-
+User-defined type.
 
 ### NOTDEFINED
-
+Undefined type.

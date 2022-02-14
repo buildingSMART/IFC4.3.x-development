@@ -16,7 +16,7 @@ Rectangular shaped duct silencer type.
 Round duct silencer type.
 
 ### USERDEFINED
-
+User-defined duct silencer type.
 
 ### NOTDEFINED
 Undefined duct silencer type.

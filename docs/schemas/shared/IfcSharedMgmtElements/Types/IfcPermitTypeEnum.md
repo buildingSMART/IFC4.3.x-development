@@ -19,4 +19,4 @@ Enables work to be carried out in an identified area.
 User-defined type.
 
 ### NOTDEFINED
-
+Undefined type.

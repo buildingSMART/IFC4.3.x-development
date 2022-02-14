@@ -9,8 +9,8 @@ This enumeration is used to distinguish between different levels of load groupin
 
 ## Items
 
-### LOAD
-
+### LOAD_GROUP
+Groups instances of subtypes of _IfcStructuralAction_.  It shall be used as a container for loads grouped together for specific purposes, such as loads which are part of a special load pattern.
 
 ### LOAD_CASE
 Groups LOAD_GROUPs and instances of subtypes of _IfcStructuralAction_.

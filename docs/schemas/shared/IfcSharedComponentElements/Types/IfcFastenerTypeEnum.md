@@ -16,7 +16,7 @@ A composition of mineralic or other materials used to fill jointing gaps and pos
 A weld seam between parts of metallic material or other suitable materials.
 
 ### USERDEFINED
-
+User-defined fastener.
 
 ### NOTDEFINED
-
+Undefined fastener.

@@ -18,16 +18,16 @@ An appliance that has the primary function of washing dishes.
 An electrical appliance that has the primary function of cooking food (including oven, hob, grill).
 
 ### FREESTANDINGELECTRICHEATER
-
+An electrical appliance that is used occasionally to provide heat. A freestanding electric heater is a 'plugged' appliance whose load may be removed from an electric circuit.
 
 ### FREESTANDINGFAN
 An electrical appliance that is used occasionally to provide ventilation. A freestanding fan is a 'plugged' appliance whose load may be removed from an electric circuit.
 
 ### FREESTANDINGWATERHEATER
-
+A small, local electrical appliance for heating water. A freestanding water heater is a 'plugged' appliance whose load may be removed from an electric circuit.
 
 ### FREESTANDINGWATERCOOLER
-
+A small, local electrical appliance for cooling water. A freestanding water cooler is a 'plugged' appliance whose load may be removed from an electric circuit.
 
 ### FREEZER
 An electrical appliance that has the primary function of storing food at temperatures below the freezing point of water.
@@ -42,7 +42,7 @@ An electrical appliance that has the primary function of drying hands.
 A specialized appliance used in commercial kitchens such as a mixer.
 
 ### MICROWAVE
-
+An electrical appliance that has the primary function of cooking food using microwaves.
 
 ### PHOTOCOPIER
 A machine that has the primary function of reproduction of printed matter.
@@ -60,7 +60,7 @@ An appliance that stores and vends goods including food, drink, tickets, and goo
 An appliance that has the primary function of washing clothes.
 
 ### USERDEFINED
-
+User-defined type.
 
 ### NOTDEFINED
-
+Undefined type.

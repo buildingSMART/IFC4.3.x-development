@@ -100,25 +100,28 @@ NOTE
 ### SINGLE_PANEL
 Window with one panel.
 
-### DOUBLE
+### DOUBLE_PANEL_VERTICAL
+Window with two panels. The configuration of the panels is vertically.
 
-
-### DOUBLE
-
+### DOUBLE_PANEL_HORIZONTAL
+Window with two panels. The configuration of the panels is
+horizontally.
 
 ### TRIPLE_PANEL_VERTICAL
 Window with three panels. The configuration of the panels is
 vertically.
 
-### TRIPLE
-
+### TRIPLE_PANEL_BOTTOM
+Window with three panels. The configuration of two panels is vertically and
+the third one is horizontally at the bottom.
 
 ### TRIPLE_PANEL_TOP
 Window with three panels. The configuration of two panels is vertically and
 the third one is horizontally at the top.
 
-### TRIPLE
-
+### TRIPLE_PANEL_LEFT
+Window with three panels. The configuration of two panels is horizontally and
+the third one is vertically at the left hand side.
 
 ### TRIPLE_PANEL_RIGHT
 Window with three panels. The configuration of two panels is horizontally and

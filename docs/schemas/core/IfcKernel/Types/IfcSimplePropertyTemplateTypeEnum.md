@@ -21,11 +21,11 @@ The properties defined by this _IfcPropertyTemplate_ are of type _IfcPropertyLis
 ### P_TABLEVALUE
 The properties defined by this _IfcPropertyTemplate_ are of type _IfcPropertyTableValue_.
 
-### P
+### P_REFERENCEVALUE
+The properties defined by this _IfcPropertyTemplate_ are of type _IfcPropertyReferenceValue_.
 
-
-### Q
-
+### Q_LENGTH
+The properties defined by this _IfcPropertyTemplate_ are of type _IfcQuantityLength_.
 
 ### Q_AREA
 The properties defined by this _IfcPropertyTemplate_ are of type _IfcQuantityArea_.

@@ -7,7 +7,7 @@ The _IfcEventTypeEnum_ defines the range of different types of event that can be
 ## Items
 
 ### STARTEVENT
-
+An initiating event of a process.
 
 ### ENDEVENT
 A terminating event of a process.

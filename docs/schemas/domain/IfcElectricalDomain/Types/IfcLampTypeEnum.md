@@ -16,7 +16,7 @@ A typically tubular discharge lamp in which most of the light is emitted by one 
 An incandescent lamp in which a tungsten filament is sealed into a compact transport envelope filled with an inert gas and a small amount of halogen such as iodine or bromine.
 
 ### HIGHPRESSUREMERCURY
-
+A discharge lamp in which most of the light is emitted by exciting mercury at high pressure.
 
 ### HIGHPRESSURESODIUM
 A discharge lamp in which most of the light is emitted by exciting sodium at high pressure.
@@ -37,4 +37,4 @@ A lamp that emits light by passing an electrical current through a tungsten wire
 User-defined type.
 
 ### NOTDEFINED
-
+Undefined type.

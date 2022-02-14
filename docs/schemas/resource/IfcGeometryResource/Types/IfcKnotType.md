@@ -15,11 +15,11 @@ The _IfcKnotType_ indicates the particular form of b-spline knots.
 ### UNIFORM_KNOTS
 The form of knots appropriate for a uniform B-spline curve.
 
-### QUASI
+### QUASI_UNIFORM_KNOTS
+The form of knots appropriate for a quasi-uniform B-spline curve.
 
-
-### PIECEWISE
-
+### PIECEWISE_BEZIER_KNOTS
+The form of knots appropriate for a piecewise Bezier curve.
 
 ### UNSPECIFIED
 The type of knots is not specified. This includes the case of non uniform knots.

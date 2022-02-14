@@ -31,4 +31,4 @@ Water-cooled condenser consisting of one or more assemblies of two tubes, one wi
 User-defined condenser type.
 
 ### NOTDEFINED
-
+Undefined condenser type.

@@ -7,10 +7,10 @@ This enumeration is used to identify the primary purpose of a pipe segment. This
 ## Items
 
 ### CULVERT
-
+A covered channel or large pipe that forms a watercourse below ground level, usually under a road or railway.
 
 ### FLEXIBLESEGMENT
-
+A flexible segment is a continuous non-linear segment of pipe that can be deformed and change the direction of flow.
 
 ### RIGIDSEGMENT
 A rigid segment is continuous linear segment of pipe that cannot be deformed.

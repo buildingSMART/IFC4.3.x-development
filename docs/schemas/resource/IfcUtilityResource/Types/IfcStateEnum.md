@@ -12,7 +12,7 @@ Valid enumerations are:
 ## Items
 
 ### READWRITE
-
+Object is in a Read-Write state. It may be modified by an application.
 
 ### READONLY
 Object is in a Read-Only state. It may be viewed but not modified by an application.

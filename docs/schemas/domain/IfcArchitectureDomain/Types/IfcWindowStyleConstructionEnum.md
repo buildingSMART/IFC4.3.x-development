@@ -9,7 +9,7 @@ This enumeration defines the basic types of construction of windows. The constru
 ### ALUMINIUM
 
 
-### HIGH
+### HIGH_GRADE_STEEL
 
 
 ### STEEL

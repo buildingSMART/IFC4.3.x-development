@@ -19,10 +19,10 @@ Connection to duct segment or fitting for distribution of air.
 Connection to pipe segment or fitting for distribution of solid, liquid, or gas.
 
 ### WIRELESS
-
+Wireless connection to communication appliances for distribution of data or communication.
 
 ### USERDEFINED
 User-defined port type.
 
 ### NOTDEFINED
-
+Undefined port type.

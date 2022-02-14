@@ -13,19 +13,19 @@ NOTE Definition from ISO 21650: protective layer on a breakwater, seawall or oth
 An Intermediate layer whose primary function is to prevent the washing through of fine materials.
 
 ### BALLASTBED
-
+Layer composed of broken stones under the sleepers.
 
 ### CORE
 A core course is the bulk internal structure of aggregate structures.
 
 ### PAVEMENT
-
+A layer within a pavement structure that forms a paved area or road.
 
 ### PROTECTION
-
+Layer with the primary task to provide protection against erosion and scour.
 
 ### USERDEFINED
-
+User-defined type
 
 ### NOTDEFINED
-
+Undefined type.

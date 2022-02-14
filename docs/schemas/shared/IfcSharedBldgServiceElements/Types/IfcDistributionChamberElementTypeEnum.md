@@ -7,10 +7,10 @@ This enumeration identifies different types of distribution chambers.
 ## Items
 
 ### FORMEDDUCT
-
+Space formed in the ground for the passage of pipes, cables, ducts.
 
 ### INSPECTIONCHAMBER
-
+Chamber constructed on a drain, sewer or pipeline with a removable cover that permits visble inspection.
 
 ### INSPECTIONPIT
 Recess or chamber formed to permit access for inspection of substructure and services.
@@ -22,7 +22,7 @@ hamber constructed on a drain, sewer or pipeline with a removable cover that per
 Chamber that houses a meter(s).
 
 ### SUMP
-
+Recessed or small chamber into which liquid is drained to facilitate its collection for removal.
 
 ### TRENCH
 Excavated chamber, the length of which typically exceeds the width.
@@ -34,4 +34,4 @@ Chamber that houses a valve(s).
 User-defined chamber type.
 
 ### NOTDEFINED
-
+Undefined chamber type.

@@ -7,7 +7,7 @@ This enumeration is used to identify the primary purpose of a subcontract resour
 ## Items
 
 ### PURCHASE
-
+Furnishing or supplying products.
 
 ### WORK
 Performing work onsite.

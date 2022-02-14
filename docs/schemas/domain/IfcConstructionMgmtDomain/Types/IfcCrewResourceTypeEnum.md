@@ -7,7 +7,7 @@ This enumeration is used to identify the primary purpose of a crew resource.
 ## Items
 
 ### OFFICE
-
+A composition of resources performing administration work in an office.
 
 ### SITE
 A composition of resources performing production work on a construction site.

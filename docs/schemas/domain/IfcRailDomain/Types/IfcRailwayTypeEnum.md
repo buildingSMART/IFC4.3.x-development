@@ -2,28 +2,7 @@
 ## Items
 
 ### USERDEFINED
-### NOTDEFINED
-
-## Items
-
-### USERDEFINED
-
+User-defined type.
 
 ### NOTDEFINED
-
-
-## Items
-
-### USERDEFINED
-
-
-### NOTDEFINED
-
-
-## Items
-
-### USERDEFINED
-
-
-### NOTDEFINED
-
+Undefined type.

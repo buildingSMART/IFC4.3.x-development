@@ -16,4 +16,4 @@ Contains cables, outlets, and/or switches for electrical power.
 User-defined type.
 
 ### NOTDEFINED
-
+Undefined type.

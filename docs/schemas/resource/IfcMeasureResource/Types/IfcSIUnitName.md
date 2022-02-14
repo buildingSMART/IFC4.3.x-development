@@ -53,16 +53,16 @@ Unit for thermodynamic temperature.
 Unit for luminous flux.
 
 ### LUX
-
+Unit for illuminance.
 
 ### METRE
 Unit for length.
 
 ### MOLE
-
+Unit for amount of substance.
 
 ### NEWTON
-
+Unit for force.
 
 ### OHM
 Unit for electric resistance.
@@ -98,4 +98,4 @@ Unit for electric voltage.
 Unit for power.
 
 ### WEBER
-
+Unit for magnetic flux.

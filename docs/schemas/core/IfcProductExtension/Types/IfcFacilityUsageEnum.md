@@ -17,7 +17,7 @@ A vertical usage implies a subdivision in the "Z plane" usually signifying a def
 A longitidunal usage implies a subdivision along a linear facility where the part has a defined start and end along the facility alignment(s).
 
 ### USERDEFINED
-
+User-defined type
 
 ### NOTDEFINED
-
+Undefined type.

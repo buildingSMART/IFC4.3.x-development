@@ -28,7 +28,7 @@ Identifies that a value must be equal to that set by the constraint.
 Identifies that a value must be not equal to that set by the constraint.
 
 ### INCLUDES
-
+Identifies that an aggregation (set, list or table) must include the value (individual item) set by the constraint.
 
 ### NOTINCLUDES
 Identifies that an aggregation (set, list or table) must not include the value (individual item) set by the constraint.
@@ -37,4 +37,4 @@ Identifies that an aggregation (set, list or table) must not include the value (
 Identifies that a value (individual item) must be included in the aggregation (set, list or table) set by the constraint.
 
 ### NOTINCLUDEDIN
-
+Identifies that a value (individual item) must not be included in the aggregation (set, list or table) set by the constraint.

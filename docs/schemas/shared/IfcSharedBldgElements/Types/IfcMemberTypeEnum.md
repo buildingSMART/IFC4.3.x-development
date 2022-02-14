@@ -31,19 +31,19 @@ A linear element within a curtain wall system to connect two (or more) panels.
 A&nbsp;linear continuous horizontal element in wall framing, such as a head piece or a sole plate.
 
 ### POST
-
+A linear (usually vertical) member used to support something or to mark a point.
 
 ### PURLIN
 A linear element (usually used horizontally) within a roof structure to support rafters.
 
 ### RAFTER
-
+A linear elements used to support roof slabs or roof covering, usually used with slope.
 
 ### STRINGER
 A linear element used to support stair or ramp flights, usually used with slope.
 
 ### STRUT
-
+A linear element often used within a girder or truss.
 
 ### STUD
 Vertical element in wall framing.

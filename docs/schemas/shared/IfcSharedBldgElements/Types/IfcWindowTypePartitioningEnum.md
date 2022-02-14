@@ -100,11 +100,11 @@ NOTE
 
 ## Items
 
-### SINGLE
+### SINGLE_PANEL
+Window with one panel.
 
-
-### DOUBLE
-
+### DOUBLE_PANEL_VERTICAL
+Window with two panels. The configuration of the panels is vertically.
 
 ### DOUBLE_PANEL_HORIZONTAL
 Window with two panels. The configuration of the panels is horizontally.
@@ -116,8 +116,9 @@ Window with three panels. The configuration of the panels is vertically.
 Window with three panels. The configuration of two panels is vertically and the
 third one is horizontally at the bottom.
 
-### TRIPLE
-
+### TRIPLE_PANEL_TOP
+Window with three panels. The configuration of two panels is vertically and the
+third one is horizontally at the top.
 
 ### TRIPLE_PANEL_LEFT
 Window with three panels. The configuration of two panels is horizontally and the
@@ -127,8 +128,8 @@ third one is vertically at the left hand side.
 Window with three panels. The configuration of two panels is horizontally and the
 third one is vertically at the right hand side.
 
-### TRIPLE
-
+### TRIPLE_PANEL_HORIZONTAL
+Window with three panels. The configuration of the panels is horizontally.
 
 ### USERDEFINED
 User defined operation type.

@@ -10,4 +10,4 @@ An _IfcCostItemTypeEnum_ is a list of the available types of cost items.
 User-defined type.
 
 ### NOTDEFINED
-
+Undefined type.

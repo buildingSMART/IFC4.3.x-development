@@ -13,7 +13,7 @@ The spatial zone is used to represent a construction zone for the production pro
 The spatial zone is used to represent a fire safety zone, or fire compartment.
 
 ### LIGHTING
-
+The spatial zone is used to represent a lighting zone; a daylight zone, or an artificial lighting zone.
 
 ### OCCUPANCY
 The spatial zone is used to represent a zone of particular occupancy.

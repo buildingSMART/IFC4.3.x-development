@@ -11,10 +11,10 @@ A signal type formed of an active device conveying information in a visual manne
 A signal type formed of an active device conveying information by emitting an audio signal such as a  beep, ring, horn or explosive sound.
 
 ### MIXED
-
+A signal type formed of an active device conveying information in both a visual and audio manner.
 
 ### USERDEFINED
-
+User-defined type
 
 ### NOTDEFINED
-
+Undefined type.

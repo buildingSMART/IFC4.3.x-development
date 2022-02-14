@@ -25,10 +25,10 @@ A transformer that changes the voltage between circuits.
 A chopper is an electronic power DC convertor without an intermediate AC link giving a variable output voltage by varying the periods of conduction and non-conduction in an adjustable ratio.
 
 ### COMBINED
-
+A transformer that changes different quantities<b> </b>between circuits.
 
 ### USERDEFINED
-
+User-defined type.
 
 ### NOTDEFINED
-
+Undefined type.

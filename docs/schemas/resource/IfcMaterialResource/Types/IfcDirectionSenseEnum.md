@@ -7,7 +7,7 @@ _IfcDirectionSenseEnum_ is an enumeration denoting whether sense of direction is
 ## Items
 
 ### POSITIVE
-
+Direction defined to be positive.
 
 ### NEGATIVE
-
+Direction defined to be negative.

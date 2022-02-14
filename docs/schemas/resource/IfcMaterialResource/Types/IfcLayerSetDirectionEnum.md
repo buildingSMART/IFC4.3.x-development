@@ -7,10 +7,10 @@ _IfcLayerSetDirectionEnum_ provides identification of the axis of element geomet
 ## Items
 
 ### AXIS1
-
+Usually x-axis.
 
 ### AXIS2
 Usually y-axis.
 
 ### AXIS3
-
+Usually z-axis.

@@ -22,4 +22,4 @@ A light fixture having specific purpose of directing occupants in an emergency, 
 User-defined type.
 
 ### NOTDEFINED
-
+Undefined type.

@@ -28,7 +28,7 @@ A friction pile.
 A support pile.
 
 ### USERDEFINED
-
+The type of pile function is user defined.
 
 ### NOTDEFINED
 The type of pile function is not defined.

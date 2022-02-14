@@ -57,16 +57,31 @@ Non linear cant variation according to Bloss curve base formula.  <br/><br/>
 !["Bloss cant transition segment"](../../figures/ifcalignmentcantsegmenttypeenum-blosscurve.png "Figure 1 &mdash; Cant for Bloss curve transition segment")
 
 ### CONSTANTCANT
+For horizontal straight lines, compensation of lateral acceleration is not required and should be avoided. Therefore the applied cant value is constant 0.
 
+For horizontal circular arcs, compensation of lateral acceleration is very common. In these cases the applied cant value is constant value greater 0.
+ <br/><br/>
+
+**Base formula (Cant)**
+!["Constant cant segment"](../../figures/ifcalignmentcantsegmenttypeenum-constantcant.png "Figure 1 &mdash; Constant cant segment")
 
 ### COSINECURVE
+Non linear cant variation according to Cosine curve base formula. <br/><br/>
 
+**Base formula (Cant)**
+!["Cosine cant transition segment"](../../figures/ifcalignmentcantsegmenttypeenum-cosinecurve.png "Figure 1 &mdash; Cant for  Cosine curve transition segment")
 
 ### HELMERTCURVE
+Non linear cant variation according to Helmert curve base formula. <br/><br/>
 
+**Base formula (Cant)**
+!["Helmert cant transition segment"](../../figures/ifcalignmentcantsegmenttypeenum-helmertcurve.png "Figure 1 &mdash; Cant for  Helmert curve transition segment")
 
 ### LINEARTRANSITION
+Linear cant variation. This is the "natural" formula for horizontal clothoids. <br/><br/>
 
+**Base formula (Cant)**
+!["Linear ramp transition segment"](../../figures/ifcalignmentcantsegmenttypeenum-lineartransition.png "Figure 1 &mdash; Cant for  linear ramp transition segment")
 
 ### SINECURVE
 Non linear cant variation according to Sine curve base formula. <br/><br/>
@@ -75,4 +90,7 @@ Non linear cant variation according to Sine curve base formula. <br/><br/>
 !["Sine cant transition segment"](../../figures/ifcalignmentcantsegmenttypeenum-sinecurve.png "Figure 1 &mdash; Cant for  Sine curve transition segment")
 
 ### VIENNESEBEND
+Non linear cant variation according to Viennese bend base formula. The determining influence of the cant variation for the curve in the horizontal Cartesian 2D coordinate space is unique within all other transition curves. <br/><br/>
 
+.**Base formula (Cant)**
+!["Viennese Bend(R) cant transition segment"](../../figures/ifcalignmentcantsegmenttypeenum-viennesebend.png "Figure 1 &mdash; Cant for Viennese Bend(R) transition segment")

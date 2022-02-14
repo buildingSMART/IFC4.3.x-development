@@ -19,4 +19,4 @@ Base isolator preventing transfer of energy from the ground to the structure.
 User-defined vibration isolator type.
 
 ### NOTDEFINED
-
+Undefined vibration isolator type.

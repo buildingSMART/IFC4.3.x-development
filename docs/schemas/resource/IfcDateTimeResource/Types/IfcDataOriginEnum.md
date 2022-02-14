@@ -11,7 +11,7 @@ _IfcDataOriginEnum_ identifies the origin of time data.
 The origin of the time data is a measurement device.
 
 ### PREDICTED
-
+The time data are a prediction.
 
 ### SIMULATED
 The origin of the time data is a simulation.

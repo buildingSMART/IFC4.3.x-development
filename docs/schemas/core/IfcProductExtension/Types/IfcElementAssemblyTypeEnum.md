@@ -10,10 +10,10 @@ This enumeration defines the basic configuration types for element assemblies.
 Assembled accessories or components.
 
 ### ARCH
+A curved structure.
 
-
-### BEAM
-
+### BEAM_GRID
+Interconnected beams, located in one (typically horizontal) plane.
 
 ### BRACED_FRAME
 A rigid frame with additional bracing members.
@@ -27,8 +27,8 @@ Assembled reinforcement elements.
 ### RIGID_FRAME
 A structure built up of beams, columns, etc. with moment-resisting joints, such as gantry
 
-### SLAB
-
+### SLAB_FIELD
+Slabs, laid out in one plane.
 
 ### TRUSS
 A structure built up of members with (quasi) pinned joint.
@@ -58,10 +58,10 @@ An assembly to physically aggregate together one or more signal instances (and a
 A framework of spaced cables or bars that are parallel to or cross each other.
 
 ### SHELTER
-
+A structure, fairly quick to setup, move or dismantle, used to give protection, especially from the weather or intrusion.
 
 ### SUPPORTINGASSEMBLY
-
+An assembly intends to support Overhead Contact Line System. It includes foundation, supporting elements and suspension assembly.
 
 ### SUSPENSIONASSEMBLY
 A complex assembly of components used to suspend elements or cable segments.
@@ -77,7 +77,8 @@ Trackwork ensuring the support and guidance of a vehicle along any given route a
 Note: definition from NF EN 13232-1-2004.
 
 ### DILATATIONPANEL
-
+Device which permits longitudinal relative rail movement of two adjacent rails, while maintaining correct guidance and support.
+Note: definition from NF EN 13232-1-2004.
 
 ### RAIL_MECHANICAL_EQUIPMENT_ASSEMBLY
 A complex assembly made up of several components like blocking device, speed regulator, bias loaded inspector, track scale or controllable retarder.

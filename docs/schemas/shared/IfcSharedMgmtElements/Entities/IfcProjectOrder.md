@@ -37,7 +37,7 @@ A detailed description of the project order describing the work to be completed.
 As shown in Figure 160, an IfcProjectOrder may be aggregated into components.
 
 
-![Composition Use Definition](../../../../figuresifcprojectorder-composition.png)
+![Composition Use Definition](../../../../figures/ifcprojectorder-composition.png)
 Figure 313 — Project order composition
 
 
@@ -61,7 +61,7 @@ Figure 314 illustrates IfcProjectOrder assignment relationships as indicated:
 * *IfcActor*: Organization(s) contracted to fulfill the order, typically a single contractor, subcontractor, or supplier.
 
 
-![Assignment Use Definition](../../../../figuresifcprojectorder-assignment.png)
+![Assignment Use Definition](../../../../figures/ifcprojectorder-assignment.png)
 Figure 314 — Project order assignment
 
 

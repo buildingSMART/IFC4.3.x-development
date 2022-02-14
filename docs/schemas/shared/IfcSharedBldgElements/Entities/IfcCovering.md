@@ -70,7 +70,7 @@ representation of IfcCovering:
  
 
 
-![advanded solid covering](../../../../figuresifccovering_advanced-1-layout1.gif)
+![advanded solid covering](../../../../figures/ifccovering_advanced-1-layout1.gif)
 
 > EXAMPLE  Figure 227 illustrates a body representation where the volume of
 > IfcCovering is given by an IfcExtrudedAreaSolid for
@@ -90,7 +90,7 @@ Figure 227 — Covering body planar
 
 
 
-![advanced solid covering](../../../../figuresifccovering_advanced-2-layout1.gif)
+![advanced solid covering](../../../../figures/ifccovering_advanced-2-layout1.gif)
 
 > EXAMPLE  Figure 228 illustrates a body representation where the volume of
 > the IfcCovering is given by an IfcExtrudedAreaSolid
@@ -164,7 +164,7 @@ representation
  
 
 
-![standard planar covering](../../../../figuresifccovering_standard-1-layout1.gif)
+![standard planar covering](../../../../figures/ifccovering_standard-1-layout1.gif)
 
 > EXAMPLE  Figure 225 illustrates a planar surface representation where the
 > area of IfcCovering is given by an IfcPolyLoop for
@@ -177,7 +177,7 @@ representation
 Figure 225 — Covering surface planar
 
 
-![standard cylindrical covering](../../../../figuresifccovering_standard-2-layout1.gif)
+![standard cylindrical covering](../../../../figures/ifccovering_standard-2-layout1.gif)
 
 > EXAMPLE  Figure 226 illustrates a cylindrical surface representation where
 > the area of the IfcCovering is given by an

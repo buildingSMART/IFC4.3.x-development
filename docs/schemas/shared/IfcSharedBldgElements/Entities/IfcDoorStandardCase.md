@@ -48,7 +48,7 @@ IfcCartesianPoint's shall be 0.).
  
 
 
-![standard door](../../../../figuresifcdoorstandardcase-01.png)
+![standard door](../../../../figures/ifcdoorstandardcase-01.png)
 
 > EXAMPLE  Figure 231 illustrates applying the door lining parameters to the
 > door profile shape representation. The profile defines the outer

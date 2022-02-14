@@ -3,138 +3,161 @@
 
 <h2>{{ number }} {{ entity}}</h2>
 
-<div class="col-sm-12">
-    <div class="card fluid shadowed">
+{% if is_deprecated %}
+<div class="row">
+    <div class="card fluid error">
         <p>
-            <a class='button primary' style="float: right;" href='https://github.com/buildingSMART/IFC4.3.x-development/blob/master/{{ path }}'><span class="icon-edit inverse"></span> Edit on Github</a>
-            <small><span id='contributors'></span><br /><span id='last-change'></span></small>
+            <mark class="secondary">DEPRECATED</mark> This definition may be imported, but shall not be exported by applications
         </p>
     </div>
 </div>
-<script>
-fetch('https://api.github.com/repos/buildingSMART/IFC4.3.x-development/commits?path={{ path }}').then(r => r.json()).then(j => {
-  let n = {};
-  j.forEach(c => {
-    n[c.author.avatar_url] = (n[c.author.avatar_url || 0]) + 1;
-  });
-  let es = Object.entries(n);
-  document.getElementById('contributors').appendChild(
-    document.createTextNode(es.length + ' contributor(s): ')
-  );
-  es.map(kv => [kv[1], kv[0]]).sort().forEach(kv => {
-    let img = document.createElement('img');
-    img.src = kv[1] + "&s=32";
-    img.style.borderRadius = '16px';
-    img.style.verticalAlign = 'middle';
-    document.getElementById('contributors').appendChild(img);
-  });
-  console.log(j[0])
-  document.getElementById('last-change').innerHTML += 'Last change: ' +
-  '<em>' + j[0].commit.message + '</em>' + ' by ' + j[0].commit.author.name + ' on ' + (new Date(j[0].commit.author.date)).toLocaleString();
-});
-</script>
+{% endif %}
+{% if is_abstract %}
+<div class="row">
+    <div class="card fluid warning">
+        <p>
+            <mark class="secondary">ABSTRACT</mark> This definition may not be instantiated
+        </p>
+    </div>
+</div>
+{% endif %}
 
-{{ preface | safe }}
+<h3>
+    {{ definition_number }} Semantic definition
+</h3>
 
-<h3>{{ number }}{% if number %}.1{% endif %} Semantic definition</h3>
+{{ definition | safe }}
 
-{{ content | safe }}
+{% if entity_inheritance %}
+<h3>
+    {{ entity_inheritance.number }} Entity inheritance
+</h3>
+{{ entity_inheritance.graph | safe }}
 
-<script>
-Array.from(document.querySelectorAll('a')).concat(Array.from(document.querySelectorAll('em'))).forEach((a) => {
-  let popup = null;
-  let timeout = null;
-  let onElem = false;
-  let onPopup = false;
-  
-  let clearPopup = () => {
-    if (onElem || onPopup) {
-      return false;
-    }
-    if (popup) {
-      document.body.removeChild(popup);
-    }
-    popup = null;  
-  };
-  
-  let soonClearPopup = () => {
-    setTimeout(clearPopup, 1000.);
-  };
-  
-  let showPopup = () => {
-    if (!onElem) {
-      return false;
-    }
-    fetch('/api/v0/resource/' + a.innerText).then(r => r.json()).then(data => {
-      if (popup) {
-        onElem = true;
-        return;
-      }
-      popup = document.createElement('div');
-      h1 = document.createElement('h1');
-      p = document.createElement('div');
-      table = document.createElement('table');
-      h1.appendChild(document.createTextNode(data.resource));
-      p.innerHTML = data.definition;
-      data.attributes.forEach(a => {
-        tr = document.createElement('tr');
-        let inv = false;
-        a.forEach((c,i) => {
-          if (i === 0 && c === '') {
-            inv = true;
-          } else if (i === 3) {
-            // don't add definition
-            return;
-          }
-          td = document.createElement('td');
-          tr.appendChild(td)
-          if (inv) {
-            ii = document.createElement('i');
-            ii.style.opacity = 0.7;
-            td.appendChild(ii);
-            td = ii;
-          }
-          td.appendChild(document.createTextNode(c));
-        });
-        table.appendChild(tr)
-      });
-      popup.className = 'popup';
-      popup.appendChild(h1);
-      popup.appendChild(p);
-      popup.appendChild(table);
-      document.body.appendChild(popup);
-      
-      popup.onmouseenter = () => {
-        onPopup = true;
-      }
-      
-      popup.onmouseleave = () => {
-        onPopup = false;
-        soonClearPopup();
-      };
-      
-      let rect = a.getBoundingClientRect();
-      popup.style.left = ((rect.left + rect.right) / 2. - 250 + window.scrollX) + 'px';
-      popup.style.top = (rect.bottom + 10. + window.scrollY) + 'px';    
-    });
-  }
+{% if entity_inheritance.siblings %}
+<h4>
+    {{ entity_inheritance.siblingnumber }} Siblings
+</h4>
+<ul class="subclasses">
+{% for sibling in entity_inheritance.siblings %}
+    <li class="{% if sibling.is_abstract %}abstract{% endif %} {% if sibling.is_deprecated %}deprecated{% endif %} {% if sibling.is_current %}current{% endif %}">{{ sibling.name }}</li>
+{% endfor %}
+</ul>
+{% endif %}
 
-  let soonShowPopup = () => {
-    timeout = setTimeout(showPopup, 1000.);
-  };
-  
-  a.onmouseenter = () => {
-    onElem = true;
-    soonShowPopup();
-  };
+{% if entity_inheritance.subclasses %}
+<h4>
+    {{ entity_inheritance.subnumber }} Subclasses
+</h4>
+<ul class="subclasses">
+{% for subclass in entity_inheritance.subclasses %}
+    <li class="{% if subclass.is_abstract %}abstract{% endif %}{% if subclass.is_deprecated %}deprecated{% endif %}">{{ subclass.name }}</li>
+{% endfor %}
+</ul>
+{% endif %}
 
-  a.onmouseleave = () => {
-    onElem = false;
-    soonClearPopup();
-    clearTimeout(timeout);
-  };
-  
-});
-</script>
+{% endif %}
 
+{% if attributes %}
+<h3>
+    {{ attributes.number }} Attributes
+</h3>
+<!-- <a class="button primary hide-inverse"><i data-feather="eye-off"></i> Hide inverse</a> -->
+<table class="striped attributes">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Attribute</th>
+            <th>Type</th>
+            <th>Description
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for group in attributes.groups %}
+        {% if group.is_inherited %}
+        <tr class="attribute-group-inherited">
+        {% else %}
+        <tr class="attribute-group">
+        {% endif %}
+            <td colspan="4">
+                {% if group.is_inherited %}<mark>Inherited</mark>{% endif %}
+                {{ group.name }}
+                <small>({{ group.total_attributes}})</small>
+            </td>
+        </tr>
+        {% for attribute in group.attributes %}
+        <tr>
+            <td data-label="#">{{ attribute.number }}</td>
+            <td data-label="Name">
+                {% if attribute.is_inverse %}
+                <em>{{ attribute.name }}</em>
+                {% else %}
+                {{ attribute.name }}
+                {% endif %}
+            </td>
+            <td data-label="Type">{{ attribute.type }}</td>
+            <td data-label="Description">
+                {{ attribute.description | safe }}
+                {% if not attribute.description %}
+                <p>
+                    <em>No description available.</em>
+                </p>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+        {% endfor %}
+    </tbody>
+</table>
+{% endif %}
+
+{% if concept_usage %}
+<h3>
+    {{ concept_usage.number }} Concept usage
+</h3>
+{{ concept_usage.html | safe }}
+{% endif %}
+
+{% if formal_representation %}
+<h3>
+    {{ formal_representation.number }} Formal representation
+</h3>
+<pre>
+{{ formal_representation.express }}
+</pre>
+{% endif %}
+
+{% if changelog %}
+<h3>
+    {{ changelog.number }} Changelog
+</h3>
+{% for section in changelog.sections %}
+<h4>
+    {{ section.number }} {{ section.name }}
+</h4>
+<table class="striped changelog">
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Location</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for change in section.changes %}
+        <tr>
+            <td data-label="Type">
+                {% if change.is_addition %}<i data-feather="plus-square"></i>{% endif %}
+                {% if change.is_deletion %}<i data-feather="x-square"></i>{% endif %}
+                {% if change.is_modification %}<i data-feather="edit"></i>{% endif %}
+            </td>
+            <td data-label="Location">{{ change.what_changed }}</td>
+            <td data-label="Description">{{ change.description }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endfor %}
+{% endif %}
 {% endblock %}

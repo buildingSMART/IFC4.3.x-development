@@ -58,7 +58,7 @@ The IfcProject is also the context for other information about the construction 
 Figure 128 illustrates the use of IfcProject as context for work plans or work schedules.
 
 
-![project relationships](../../../../figuresifcproject_fig-1.png)
+![project relationships](../../../../figures/ifcproject_fig-1.png)
 Figure 128 — Project spatial and work plan structure
 
 
@@ -99,7 +99,7 @@ The following constraints are applied to using the relationshio IfcRelAggregates
 Figure 129 illustrates project relationships with spatial structures, elements, and element type libraries.
 
 
-![spatial decomposition relationships](../../../../figuresifcproject_fig-2.png)
+![spatial decomposition relationships](../../../../figures/ifcproject_fig-2.png)
 Figure 129 — Project spatial structure, products and product type library
 
 

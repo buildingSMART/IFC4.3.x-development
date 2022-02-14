@@ -113,7 +113,7 @@ Figure 160 illustrates an opening with horizontal extrusion.
 > NOTE  The local placement directions for the IfcOpeningElement are only given as an example, other directions are valid as well.
 
 
-![standard opening](../../../../figuresifcopeningelement_horizontal-layout1.png)
+![standard opening](../../../../figures/ifcopeningelement_horizontal-layout1.png)
 Figure 160 — Opening with full extrusion
 
 
@@ -132,7 +132,7 @@ Figure 161 illustrates an opening for a recess.
 * IfcCartesianPoint(XDim/2,YDim/2)
 
 
-![recess](../../../../figuresifcopeningelement_recess-layout1.png)
+![recess](../../../../figures/ifcopeningelement_recess-layout1.png)
 Figure 161 — Opening with recess extrusion
 
 
@@ -182,7 +182,7 @@ Figure 162 shows a vertical extrusion with multiple extrusion bodies for the ope
 > NOTE  The local placement directions for the IfcOpeningElement are only given as an example, other directions are valid as well.
 
 
-![vertical extrusion](../../../../figuresifcopeningelement_vertical-layout1.png)
+![vertical extrusion](../../../../figures/ifcopeningelement_vertical-layout1.png)
 Figure 162 — Opening with multiple extrusions
 
 

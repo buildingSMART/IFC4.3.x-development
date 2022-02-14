@@ -112,6 +112,8 @@ definitions = {}
 resource_to_package = {}
 psets = {}
 deprecated_entities = []
+abstract_entities = []
+type_values = {}
 
 def get_schema(name):
     for cat, schemas in hierarchy:
@@ -127,6 +129,9 @@ for item in xmi_doc:
     
         if xmi_doc.xmi.tags["deprecated"].get(item.id, False):
             deprecated_entities.append(item.name)
+
+        if item.definition.is_abstract:
+            abstract_entities.append(item.name)
         
         entity_to_package[item.name] = item.package
         resource_to_package[item.name] = get_schema(item.package)
@@ -148,6 +153,8 @@ for item in xmi_doc:
     elif item.type in ("TYPE", "SELECT", "ENUM"):
         resource_to_package[item.name] = get_schema(item.package)
         get_schema(item.package)['Types'].append(item.name)
+        if item.type in ("SELECT", "ENUM"):
+            type_values.setdefault(item.name, []).extend(item.definition.values)
         
     if item.type in ("ENTITY", "TYPE", "SELECT", "ENUM"):
         definitions[item.name] = str(item.definition)
@@ -172,6 +179,8 @@ for fn in glob.glob("./psd/*.xml"):
     }
 
     if xml['#tag'] == 'PropertySetDef':
+        heading = 'Property Sets'
+    
         for prop in child_by_tag(xml, 'PropertyDefs').get("_children", []):
             propname = child_by_tag(prop, "Name")["#text"]
             try:
@@ -188,10 +197,29 @@ for fn in glob.glob("./psd/*.xml"):
                 'data': proptypeargs
             })
             
+    elif xml['#tag'] == 'QtoSetDef':
+        heading = 'Quantity Sets'
+        
+        for prop in child_by_tag(xml, 'QtoDefs').get("_children", []):
+            propname = child_by_tag(prop, "Name")["#text"]
+            proptype = child_by_tag(prop, "QtoType")["#text"]
+            proptype = proptype[2].upper() + proptype[3:].lower()
+            proptype = f"IfcQuantity{proptype}"
+            
+            props.append({
+                'name': propname,
+                'data': proptype
+            })
+            
+    else:
+        raise ValueError(xml['#tag'])
+    
+    definition['kind'] = heading.lower().replace(" ", "_")[:-1]
+
     if classes:
         cls = classes[0].split("/")[0]
         try:
-            resource_to_package[cls]['Property Sets'].append(psetname)
+            resource_to_package[cls][heading].append(psetname)
         except KeyError as e:
             pass
             
@@ -219,3 +247,5 @@ json.dump(attributes, open("entity_attributes.json", "w", encoding="utf-8"))
 json.dump(definitions, open("entity_definitions.json", "w", encoding="utf-8"))
 json.dump(psets, open("pset_definitions.json", "w", encoding="utf-8"))
 json.dump(deprecated_entities, open("deprecated_entities.json", "w", encoding="utf-8"))
+json.dump(abstract_entities, open("abstract_entities.json", "w", encoding="utf-8"))
+json.dump(type_values, open("type_values.json", "w", encoding="utf-8"))

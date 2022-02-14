@@ -184,8 +184,8 @@ Figure 180 shows a set of survey points, given as 3D Cartesian points within the
 The set of IfcCartesianPoint is included in the set of IfcGeometricCurveSet.Elements.
 
 
-![points only](../../../../figuresifcsite-standard-points.gif)
-![facetation of points](../../../../figuresifcsite-standard-facets-points.gif)
+![points only](../../../../figures/ifcsite-standard-points.gif)
+![facetation of points](../../../../figures/ifcsite-standard-facets-points.gif)
 Figure 180 — Site survey points
 
 
@@ -198,8 +198,8 @@ Figure 182 shows A set of survey points, given as 3D Cartesian points, and a set
 The set of IfcCartesianPoint and the set of IfcPolyline are included in the set of IfcGeometricCurveSet.Elements.
 
 
-![breaklines](../../../../figuresifcsite-standard-breaklines.gif)
-![facetation with breakpoints](../../../../figuresifcsite-standard-facets-breaklines.gif)
+![breaklines](../../../../figures/ifcsite-standard-breaklines.gif)
+![facetation with breakpoints](../../../../figures/ifcsite-standard-facets-breaklines.gif)
 Figure 182 — Site breaklines
 
 

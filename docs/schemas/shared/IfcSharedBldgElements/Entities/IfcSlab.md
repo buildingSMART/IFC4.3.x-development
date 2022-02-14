@@ -60,7 +60,7 @@ Figure 266 illustrates a 'Clipping' geometric representation with definition of 
 geometric representation. The profile is extruded non-perpendicular and the slab body is clipped at the eave.
 
 
-![advanced slab](../../../../figuresifcslab_advanced-layout1.gif)
+![advanced slab](../../../../figures/ifcslab_advanced-layout1.gif)
 Figure 266 — Slab body clipping
 
 
@@ -84,7 +84,7 @@ IfcHalfSpaceSolid.
  
 
 
-![advanced slab](../../../../figuresifcslab_advanced-layout1.gif)
+![advanced slab](../../../../figures/ifcslab_advanced-layout1.gif)
 
 > EXAMPLE  Figure 267 illustrates a 'Clipping' geometric representation with definition of a roof slab using advanced geometric representation. The profile is extruded non-perpendicular and the slab body is clipped at the eave.
 
@@ -121,7 +121,7 @@ Figure 264 illustrates a 'SweptSolid' geometric representation.
 > 
 
 
-![standard slab](../../../../figuresifcslab_standard-layout1.gif)
+![standard slab](../../../../figures/ifcslab_standard-layout1.gif)
 Figure 264 — Slab body extrusion
 
 
@@ -145,7 +145,7 @@ ForLayerSet.TotalThickness, has to be consistent to the
  
 
 
-![standard slab](../../../../figuresifcslab_standard-layout1.gif)
+![standard slab](../../../../figures/ifcslab_standard-layout1.gif)
 
 > EXAMPLE  Figure 265 illustrates a 'SweptSolid' geometric representation. The following interpretation of dimension parameter applies for polygonal slabs (in ground floor view):
 >  IfcArbitraryClosedProfileDef.OuterCurve: closed bounded curve interpreted as area (or foot print) of the slab.
@@ -184,7 +184,7 @@ IfcMaterialLayerSetUsage to IfcSlab it shall imply that the
 occurrences of this IfcSlabType.
 
 
-![Material layer set and usage](../../../../figuresifcslab_materialusage-01.png)
+![Material layer set and usage](../../../../figures/ifcslab_materialusage-01.png)
 
 > EXAMPLE  Figure 262 illustrates assignment of IfcMaterialLayerSetUsage and IfcMaterialLayerSet to the IfcSlab as the slab occurrence and to the IfcSlabType. The same IfcMaterialLayerSet shall be shared by many occurrences of IfcMaterialLayerSetUsage. This relationship shall be consistent to the relationship between the IfcSlabType and the IfcSlabStandardCase.
 
@@ -206,8 +206,8 @@ Figure 263 illustrates slab material usage, where the following conventions shal
 * The IfcMaterialLayerSetUsage.LayerSetDirection is always AXIS3.
 
 
-![slab material layer set](../../../../figuresifcmateriallayersetusage_slab-01.png)
-![roof slab material layer set](../../../../figuresifcmateriallayersetusage_roofslab-01.png)
+![slab material layer set](../../../../figures/ifcmateriallayersetusage_slab-01.png)
+![roof slab material layer set](../../../../figures/ifcmateriallayersetusage_roofslab-01.png)
 Figure 263 — Slab material layers
 
 

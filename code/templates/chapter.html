@@ -1,67 +1,28 @@
 {% extends "main.html" %}
 {% block pagecontent %}
-<h2>{{number}} {{ title}}</h2>
-
-{% if path %}
-
-<div class="col-sm-12">
-    <div class="card fluid shadowed">
-        <p>
-            <a class='button primary' style="float: right;" href='https://github.com/buildingSMART/IFC4.3.x-development/blob/master/{{ path }}'><span class="icon-edit inverse"></span> Edit on Github</a>
-            <small><span id='contributors'></span><br /><span id='last-change'></span></small>
-        </p>
-    </div>
-</div>
-<script>
-fetch('https://api.github.com/repos/{{ repo or "buildingSMART/IFC4.3.x-development" }}/commits?path={{ path }}').then(r => r.json()).then(j => {
-  let n = {};
-  j.forEach(c => {
-    n[c.author.avatar_url] = (n[c.author.avatar_url || 0]) + 1;
-  });
-  let es = Object.entries(n);
-  document.getElementById('contributors').appendChild(
-    document.createTextNode(es.length + ' contributor(s): ')
-  );
-  es.map(kv => [kv[1], kv[0]]).sort().forEach(kv => {
-    let img = document.createElement('img');
-    img.src = kv[1] + "&s=32";
-    img.style.borderRadius = '16px';
-    img.style.verticalAlign = 'middle';
-    document.getElementById('contributors').appendChild(img);
-  });
-  console.log(j[0])
-  document.getElementById('last-change').innerHTML += 'Last change: ' +
-  '<em>' + j[0].commit.message + '</em>' + ' by ' + j[0].commit.author.name + ' on ' + (new Date(j[0].commit.author.date)).toLocaleString();
-});
-</script>
-
-
-{% endif %}
+<h2>{{ number }} {{ title }}</h2>
 
 {{ content | safe }}
 
-{% for sub in subs recursive -%}
+{% if subs %}
+<ol class="referenced-list">
+    {% for item in subs recursive -%}
+    <li{% if item.number %} number="{{ item.number }}"{% endif %}>
+        {% if item.url %}
+        <a href="{{ item.url }}">
+        {% endif %}
+            {{ item.text or item.name }}
+        {% if item.url %}
+        </a>
+        {% endif %}
 
-{# indentation #}
-{{ ("&nbsp;&nbsp;" * loop.depth0) | safe }}
-
-{# opening a #}
-{% if sub.url %}
-<a href='{{sub.url}}'>
+        {% if item.children %}
+        <ol class="referenced-list">
+        {{ loop(item.children) }}
+        </ol>
+        {% endif %}
+    </li>
+    {%- endfor %}
+</ol>
 {% endif %}
-
-{{ sub.number if sub.number }} {{ sub.text }}
-
-{% if sub.url %}
-</a>
-{% endif %}
-
-<br />
-
-{% if sub.children %}
-{{ loop(sub.children) }}
-{% endif %}
-
-{%- endfor %}
-
 {% endblock %}

@@ -65,7 +65,7 @@ apply the material layer set usage parameter to the wall geometry.
  
 
 
-![straight wall axis](../../../../figuresifcwallstandard_straigthwall_01-layout1.gif)
+![straight wall axis](../../../../figures/ifcwallstandard_straigthwall_01-layout1.gif)
 
 > EXAMPLE  Figure 279 illustrates an axis representation for a straight wall. In case of a straight wall, the set of items shall
 > include a single geometric representation item of type IfcPolyline or IfcTrimmedCurve with the BasisCurve being an IfcLine. The IfcPolyline or IfcTrimmedCurve shall be parallel (here in a special case co-linear) to the x-axis
@@ -80,7 +80,7 @@ Figure 279 — Wall axis straight
 
 
 
-![curved wall axis](../../../../figuresifcwallstandard_curvedwall_01-layout1.gif)
+![curved wall axis](../../../../figures/ifcwallstandard_curvedwall_01-layout1.gif)
 
 > EXAMPLE  Figure 280 illustrates an axis representation for a curved wall. In case of a curved wall, the set of items shall include
 > a single geometric representation item of type IfcTrimmedCurve. The curve shall have a BasisCurve of type IfcCircle. The tangent of the IfcTrimmedCurve shall be parallel at start to the x-axis of the object coordinate system. The direction shall be identical to the direction of the x-axis.
@@ -116,8 +116,8 @@ Figure 284 illustrates a clipping for a curved wall using an IfcHalfSpaceSolid a
 IfcBooleanClippingResult.
 
 
-![straight wall clipping](../../../../figuresifcwallstandard_straigthwall_03-layout1.gif)
-![curved wall clipping](../../../../figuresifcwallstandard_curvedwall_03-layout1.gif)
+![straight wall clipping](../../../../figures/ifcwallstandard_straigthwall_03-layout1.gif)
+![curved wall clipping](../../../../figures/ifcwallstandard_curvedwall_03-layout1.gif)
 Figure 283 — Wall body clipping straight
 
 
@@ -163,8 +163,8 @@ Figure 281 illustrates a body representation for a straight wall. In case of a s
 Figure 282 illustrates a body representation for a curved wall. In case of a curved wall, the two sides of the profile shall be parallel (with defined offset) to the wall axis, that is, the wall has a single unchanged thickness.
 
 
-![straight wall body](../../../../figuresifcwallstandard_straigthwall_02-layout1.gif)
-![curved wall body](../../../../figuresifcwallstandard_curvedwall_02-layout1.gif)
+![straight wall body](../../../../figures/ifcwallstandard_straigthwall_02-layout1.gif)
+![curved wall body](../../../../figures/ifcwallstandard_curvedwall_02-layout1.gif)
 Figure 281 — Wall body extrusion straight
 
 
@@ -198,7 +198,7 @@ IfcMaterialLayerSetUsage to IfcWall it shall imply that the
 occurrences of this IfcWallType.
 
 
-![Material layer set and usage](../../../../figuresifcwall_materialusage-01.png)
+![Material layer set and usage](../../../../figures/ifcwall_materialusage-01.png)
 
 > EXAMPLE  Figure 277 illustrates assignment of IfcMaterialLayerSetUsage and IfcMaterialLayerSet to the wall type and the wall occurrence.
 
@@ -224,7 +224,7 @@ then point into the positive y-axis of the reference coordinate system.
 * The IfcMaterialLayerSetUsage.LayerSetDirection is always AXIS2.
 
 
-![wall material layer set](../../../../figuresifcmateriallayersetusage_wall-01.png)
+![wall material layer set](../../../../figures/ifcmateriallayersetusage_wall-01.png)
 Figure 278 — Wall material layers
 
 

@@ -36,7 +36,7 @@ An elemented wall is decomposed into parts for particular components such as fra
 As shown in Figure 285, openings within the composite wall are directly assigned to IfcWallElementedCase using IfcRelVoidsElement pointing to IfcOpeningElement and apply to all aggregated parts. If individual parts have cutting and other voiding features, then the decomposed parts have a separate voiding relationship IfcRelVoidsElement pointing to IfcVoidingFeature.
 
 
-![voiding](../../../../figuresifcwallelementedcase_fig01.png)
+![voiding](../../../../figures/ifcwallelementedcase_fig01.png)
 Figure 285 — Wall elemented voiding
 
 

@@ -74,7 +74,7 @@ SELF\IfcObject.IsDecomposedBy[1].RelatedObjects.
 Figure 272 illustrates stair placement, where the IfcStair defines the local placement for all components and the common 'Axis' representation, and each component has its own 'Body' representation.
 
 
-![stair](../../../../figuresifcstair-layout1.png)
+![stair](../../../../figures/ifcstair-layout1.png)
 Figure 272 — Stair placement
 
 

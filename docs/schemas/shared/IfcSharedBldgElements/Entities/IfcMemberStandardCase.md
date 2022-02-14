@@ -44,7 +44,7 @@ RepresentationType : 'SweptSolid':
  
 
 
-![Axis](../../../../figuresifcmemberstandardcase_axis-01.png)
+![Axis](../../../../figures/ifcmemberstandardcase_axis-01.png)
 
 > EXAMPLE  As shown in Figure 101, the axis representation can be used to represent the system length of a member that may extent the body length of the member.
 
@@ -57,7 +57,7 @@ Figure 242 — Member axis representation
 
 
 
-![Axis](../../../../figuresifcmemberstandardcase_axis-02.png)
+![Axis](../../../../figures/ifcmemberstandardcase_axis-02.png)
 
 > EXAMPLE  As shown in Figure 102, the axis representation shall be used to represent the cardinal point as the offset between the 'Axis' and the extrusion path of the member. The extrusion path is provided as IfcExtrudedAreaSolid.ExtrudedDirection and should be parallel to the 'Axis'. It has to be guaranteed that the value provided by IfcMaterialProfileSetUsage.CardinalPoint is consistent to the IfcExtrudedAreaSolid.Position.
 
@@ -122,7 +122,7 @@ Figure 244 illustrates an advanced geometric representation with use of IfcBoole
 an IfcExtrudedAreaSolid and an IfcHalfSpaceSolid to create a clipped body, with cardinal point applied as 4 (mid-depth left).
 
 
-![clipped beam](../../../../figuresifcbeamstandardcase_clipping-01.png)
+![clipped beam](../../../../figures/ifcbeamstandardcase_clipping-01.png)
 Figure 244 — Member body clipping
 
 
@@ -167,7 +167,7 @@ The following interpretation of dimension parameter applies for circular members
 * IfcCircleProfileDef.Radius interpreted as beam radius.
 
 
-![standard member](../../../../figuresifcbeamstandardcase_sweptsolid-01.png)
+![standard member](../../../../figures/ifcbeamstandardcase_sweptsolid-01.png)
 Figure 243 — Member body extrusion
 
 
@@ -177,7 +177,7 @@ Figure 243 — Member body extrusion
 Figure 240 illustrates assignment of IfcMaterialProfileSetUsage and IfcMaterialProfileSet to the IfcMemberStandardCase as the member occurrence and to the IfcMemberType. The same IfcMaterialProfileSet shall be shared by many occurrences of IfcMaterialProfileSetUsage. This relationship shall be consistent to the relationship between the IfcMemberType and the IfcMemberStandardCase.
 
 
-![Material profile set and usage](../../../../figuresifcmemberstandardcase-01.png)
+![Material profile set and usage](../../../../figures/ifcmemberstandardcase-01.png)
 Figure 240 — Member profile usage
 
 
@@ -185,7 +185,7 @@ Figure 241 illustrates assignment of a composite profile by using IfcCompositePr
 requires the use of IfcExtrudedAreaSolidTapered, or IfcRevolvedAreaSolidTapered for the correct 'Body' shape representation.
 
 
-![Material profile set and usage](../../../../figuresifcmemberstandardcase-02.png)
+![Material profile set and usage](../../../../figures/ifcmemberstandardcase-02.png)
 Figure 241 — Member composite profiles
 
 

@@ -18,7 +18,7 @@ The direction of the z-axis is the orientation of the cross product of the x-axi
 
 > NOTE&nbsp; The _PlacementLocation.OffsetDistances[3]_ and the _PlacementRefDirection.OffsetDistances[3]_ shall either not be assigned or should have the same z offset value.
 
-The following figures show the usage of placement location and direction for an _IfcGridPlacement_.
+The following figures/ show the usage of placement location and direction for an _IfcGridPlacement_.
 
 <table cellpadding="2" cellspacing="2" summary="Geometry use definition">
 <tr><td align="left" valign="top"><img src="../../../../figures/ifcgridplacement-layout1.png" alt="without ref direction" border="0" height="300" width="400"></td>

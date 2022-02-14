@@ -45,7 +45,7 @@ Figure 254 illustrates the axis representation which has the following constrain
 * In case of a curved flight or a spiral flight the curve shall be a single item of type IfcTrimmedCurve.
 
 
-![walking line](../../../../figuresifcstairflight_01-layout1.gif)
+![walking line](../../../../figures/ifcstairflight_01-layout1.gif)
 Figure 254 — Ramp flight axis
 
 
@@ -73,7 +73,7 @@ implementers agreements.
 Figure 256 illustrates the body representation.
 
 
-![fig1](../../../../figuresifcrampflight-layout1.gif)
+![fig1](../../../../figures/ifcrampflight-layout1.gif)
 Figure 256 — Ramp flight body
 
 
@@ -93,7 +93,7 @@ IfcCompositeCurve.
 IfcPolyline.
 
 
-![boundary](../../../../figuresifcstairflight_02-layout1.gif)
+![boundary](../../../../figures/ifcstairflight_02-layout1.gif)
 Figure 255 — Ramp flight footprint
 
 

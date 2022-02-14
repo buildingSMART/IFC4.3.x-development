@@ -12,7 +12,7 @@ Offset values may be given (_OffsetDistances_). If given, the position within th
 * _OffsetDistances[2]_ sets the offset to _IntersectingAxes[2]_, and
 * _OffsetDistances[3]_ sets the offset to the virtual intersection in direction of the orientation of the cross product of _IntersectingAxes[1]_ and the orthogonal complement of the _IntersectingAxes[1]_ (which is the positive or negative direction of the z axis of the design grid position).
 
-The following figures explain the usage of the _OffsetDistances_ and _IntersectingAxes_ attributes.
+The following figures/ explain the usage of the _OffsetDistances_ and _IntersectingAxes_ attributes.
 
 <table cellpadding="2" cellspacing="2">
 <tr valign="top"><td align="left" valign="top"><img src="../../../../figures/ifcvirtualgridintersection-layout1.gif" alt="2D offsets" border="0" height="300" width="400"></td>

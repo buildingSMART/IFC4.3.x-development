@@ -63,7 +63,7 @@ IfcHalfSpaceSolid.
  
 
 
-![advanced plate](../../../../figuresifcslab_advanced-layout1.gif)
+![advanced plate](../../../../figures/ifcslab_advanced-layout1.gif)
 
 > EXAMPLE  Figure 248 illustrates a 'Clipping' geometric representation with definition of a plate using advanced geometric representation. The profile is extruded non-perpendicular and the plate body is clipped at the eave.
 
@@ -114,7 +114,7 @@ ForLayerSet.TotalThickness, has to be consistent to the
  
 
 
-![standard plate](../../../../figuresifcslab_standard-layout1.gif)
+![standard plate](../../../../figures/ifcslab_standard-layout1.gif)
 
 > EXAMPLE  Figure 247 illustrates a 'SweptSolid' geometric representation. The following interpretation of dimension parameter applies for polygonal plates (in ground floor view): IfcArbitraryClosedProfileDef.OuterCurve being a closed bounded curve is interpreted as area (or foot print) of the plate.
 
@@ -154,7 +154,7 @@ occurrences of this IfcPlateType.
 Figure 246 illustrates assignment of IfcMaterialLayerSetUsage and IfcMaterialLayerSet to the IfcPlate as the plate occurrence and to the IfcPlateType. The same IfcMaterialLayerSet shall be shared by many occurrences of IfcMaterialLayerSetUsage. This relationship shall be consistent to the relationship between the IfcPlateType and the IfcPlateStandardCase.
 
 
-![Material layer set and usage](../../../../figuresifcplate_materialusage-01.png) 
+![Material layer set and usage](../../../../figures/ifcplate_materialusage-01.png) 
 
 
 Figure 246 — Plate type definition
@@ -171,7 +171,7 @@ As shown in Figure 106, the following conventions shall be met:
 * The IfcMaterialLayerSetUsage.LayerSetDirection i always AXIS3.
 
 
-![plate material layer set](../../../../figuresifcmateriallayersetusage_slab-01.png)
+![plate material layer set](../../../../figures/ifcmateriallayersetusage_slab-01.png)
 Figure 247 — Plate material layers
 
 

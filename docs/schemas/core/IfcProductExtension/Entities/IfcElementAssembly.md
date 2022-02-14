@@ -64,7 +64,7 @@ IfcElement's shall be NIL.
 Figure 151 illustrates spatial containment and element aggregation relationships.
 
 
-![containment relationships](../../../../figuresifcelementassembly-containment.png)
+![containment relationships](../../../../figures/ifcelementassembly-containment.png)
 Figure 151 — Element assembly containment
 
 

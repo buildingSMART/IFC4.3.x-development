@@ -32,7 +32,7 @@ In addition to general product and project classification (UniFormat, etc.), cla
 Figure 301 illustrates classification usage.
 
 
-![Classification Use Definition](../../../../figuresifcdistributioncontrolelement-classification.png)
+![Classification Use Definition](../../../../figures/ifcdistributioncontrolelement-classification.png)
 Figure 301 — Distribution control classification
 
 

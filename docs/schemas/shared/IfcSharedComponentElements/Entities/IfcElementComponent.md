@@ -36,7 +36,7 @@ contains as many mapped items as there are element components combined within th
  
 
 
-![](../../../../figuresifcelementcomponent_multiple.png)
+![](../../../../figures/ifcelementcomponent_multiple.png)
 
 > EXAMPLE  Figure 304 illustrates multiple components modeled as a single occurrence object (here: IfcFastener)
 

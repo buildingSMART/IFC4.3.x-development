@@ -1,0 +1,24 @@
+{% extends "main.html" %}
+{% block pagecontent %}
+
+<h2>Annex C Inheritance listings</h2>
+
+<p>
+    This annex contains listings of entity definitions organized by inheritance.
+</p>
+
+<ol class="referenced-list">
+    {% for entity in entities recursive -%}
+    <li number="{{ entity.number }}">
+        <a href="{{ entity.url }}">{{ entity.name }}</a>
+
+        {% if entity.children %}
+        <ol class="referenced-list">
+        {{ loop(entity.children) }}
+        </ol>
+        {% endif %}
+    </li>
+    {%- endfor %}
+</ol>
+
+{% endblock %}

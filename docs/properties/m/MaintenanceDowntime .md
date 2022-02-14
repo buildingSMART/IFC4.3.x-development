@@ -1,4 +1,0 @@
-MaintenanceDowntime 
-====================
-
-Maintenance downtime proportion

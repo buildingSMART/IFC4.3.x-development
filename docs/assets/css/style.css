@@ -1,0 +1,252 @@
+:root {
+  --blue: #1976d2;
+  --dark: #444444;
+  --green: #308732;
+  --red: #d32f2f;
+  --yellow: #f57c00;
+  --universal-border-radius: 5px;
+  --link: #336699;
+  --link-hover: #66ccff;
+}
+header {
+    width: 100%;
+    margin-bottom: var(--universal-margin);
+}
+header h1 {
+    font-size: 12pt;
+}
+nav div {
+    border-bottom: 1px solid var(--border-color);
+}
+nav div:last-child {
+    border-bottom: 0px;
+}
+nav div a.current {
+    background-color: var(--blue);
+    color: #fff;
+}
+body {
+    font-size: 12pt;
+}
+footer {
+    font-size: 12pt;
+    width: 100%;
+    margin-top: var(--universal-margin);
+    text-align: center;
+}
+a {
+    color: var(--link);
+    text-decoration: none;
+}
+a:hover {
+    color: var(--link-hover);
+}
+pre {
+    padding: var(--universal-padding);
+    border: solid 1px var(--border-color);
+    border-radius: var(--universal-border-radius);
+    background: #eee;
+}
+svg text {
+    font-size: 75%;
+}
+svg g.edge text {
+    font-size: 60%;
+}
+mark {
+    text-transform: uppercase;
+}
+aside {
+    border: 1px solid var(--border-color);
+    padding: var(--universal-padding);
+    border-radius: var(--universal-border-radius);
+    margin: var(--universal-margin);
+}
+aside mark {
+    margin-right: var(--universal-margin);
+}
+aside.aside-ifc4-change mark,
+aside.aside-ifc2x3-change mark,
+aside.aside-ifc2x2-change mark {
+    background-color: var(--yellow);
+}
+aside.aside-history mark {
+    background-color: #444;
+}
+table {
+    max-height: 10000px !important;
+    display: table;
+    margin: var(--universal-margin);
+    padding: 0;
+    border: 1px solid var(--border-color);
+    border-radius: var(--universal-border-radius);
+}
+table thead {
+    display: table-header-group;
+}
+table tbody {
+    display: table-row-group;
+}
+table tr {
+    display: table-row;
+}
+table th:first-child {
+    border-top-left-radius: var(--universal-border-radius);
+}
+table th:last-child {
+    border-top-right-radius: var(--universal-border-radius);
+}
+table td {
+    padding: var(--universal-padding);
+    vertical-align: top;
+}
+h5 {
+    /* Same size as h4, because it starts getting unpleasantly tiny */
+    font-size: calc(1rem * var(--heading-ratio));
+    font-style: italic;
+}
+h3:hover, h4:hover, h5:hover {
+  cursor: pointer;
+}
+figure {
+    text-align: center;
+}
+code {
+  line-height: inherit;
+}
+.popup {
+    position: absolute;
+    background: white;
+    padding: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+    width: 500px;
+    max-height: 300px;
+    overflow-x: hide;
+    overflow-y: scroll;
+    z-index: 9999999;
+}
+.popup table td {
+    background: white;
+}
+h4 a:hover {
+    text-decoration: none;
+}
+ol.referenced-list {
+    list-style: none;
+}
+ol.referenced-list>li:before {
+    content: attr(number);
+}
+ol.dictionary>li:before {
+    width: 5rem;
+    display: inline-block;
+}
+ul.subclasses li {
+    display: inline-block;
+    margin: var(--universal-margin);
+    margin-left: 0px;
+}
+ul.subclasses li a {
+    color: #fff;
+    background-color: #333;
+    display: inline-block;
+    text-align: center;
+    width: 250px;
+}
+ul.subclasses li.abstract a {
+    background-color: #444;
+    background-color: #CCC;
+    color: #000;
+}
+ul.subclasses li.deprecated a {
+    background-color: var(--red);
+    color: #fff;
+}
+ul.subclasses li.current a {
+    background-color: var(--blue);
+    color: #fff;
+}
+td p:nth-child(1) {
+    /* So that paragraphs in tds and simple tds line up */
+    margin-top: 0px;
+}
+table.changelog {
+    width: 100%;
+}
+table.changelog thead tr th:nth-child(1) {
+    width: 5%;
+}
+table.changelog thead tr th:nth-child(2) {
+    width: 20%;
+}
+table.type-values {
+    width: 100%;
+}
+table.type-values thead tr th:nth-child(1) {
+    width: 20%;
+}
+table.attributes {
+    width: 100%;
+}
+table.attributes tr.attribute-group-inherited td {
+    background: var(--dark);
+    color: #fff;
+}
+table.attributes tr.attribute-group td {
+    background: var(--blue);
+    color: #fff;
+}
+table.attributes tr.attribute-group td a, table.attributes tr.attribute-group-inherited td a {
+    color: #fff;
+}
+table.attributes tr.attribute-group td mark {
+    float: right;
+    border: 1px solid var(--border-color);
+}
+.feather-plus-square {
+    color: var(--green);
+}
+.feather-x-square {
+    color: var(--red);
+}
+.feather-edit {
+    color: var(--blue);
+}
+.feather-link {
+    width: 16px;
+    height: 16px;
+}
+figcaption .feather-link {
+    width: 12px;
+    height: 12px;
+    margin-left: calc(0.5 * var(--universal-margin));
+}
+.hide-inverse .feather-eye-off {
+    vertical-align: text-bottom;
+    margin-right: var(--universal-margin)
+}
+.toggle-icon {
+    display: inline-block;
+    vertical-align: middle;
+}
+.search {
+    margin: 0px;
+    padding: 0px;
+    background: none;
+    border: none;
+}
+.search input {
+    width:100%;
+}
+.edit-github {
+    display: block !important;
+}
+.read-more small {
+    display: inline;
+}
+.contributor-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    vertical-align: middle;
+}

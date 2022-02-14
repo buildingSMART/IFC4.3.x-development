@@ -1,133 +1,81 @@
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://cdn.rawgit.com/Chalarangelo/mini.css/v3.0.1/dist/mini-default.min.css">
+    <link rel="stylesheet" href="{{ base }}/assets/css/mini-default.min.css">
+    <link rel="stylesheet" href="{{ base }}/assets/css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <title>IFC4.3.x Documentation {{ title }}</title>
+    <link rel="icon" type="image/x-icon" href="{{ base }}/assets/img/favicon.ico">
 </head>
-<style>
-body {
-  font-size: 12pt;
-}
-a {
-  color: #336699;
-  text-decoration: none;
-}
-a:hover {
-  color: #66ccff;
-}
-pre {
-  padding: 10px;
-  border: solid 1px gray;
-  backgroud: #eee;
-  font-size: 80%;
-}
-svg text {
-    font-size: 75%;
-}
-svg g.edge text {
-    font-size: 60%;
-}
-blockquote p {
-  font-size: 80%;
-}
-table {
-  max-height: 10000px !important;
-  display: table !important;
-  width: 100%;
-  border-top: solid 1px gray;
-  border-bottom: solid 1px gray;
-}
-table thead, table tbody {
-  display: table-header-group;
-}
-table tr {
-  display: table-row;
-}
-table tr th ,
-table tr td {
-  font-size: 80%;
-  padding: 0.2em;
-}
-h3:hover {
-  cursor: pointer;
-}
-h3:before {
-  font-size: 50%;
-  content: '\25B2 '
-}
-h3.collapsed:before {
-  content: '\25BC '
-}
-code {
-  line-height: inherit;
-  white-space: pre;
-}
-.popup {
-  position: absolute;
-  background: white;
-  padding: 10px;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
-  width: 500px;
-  max-height: 300px;
-  overflow-x: hide;
-  overflow-y: scroll;
-}
-.popup table td {
-  background: white;
-}
-mark.dont {
-  background: #e53935; 
-  margin-right: 8px;
-}
-h4 a:hover {
-  text-decoration: none;
-}
-</style>
 <body>
     <div class="container">
         <div class="row">
-            <h1>IFC 4.3.x development</h1>
+            <header>
+                <h1>IFC 4.3.x development</h1>
+            </header>
         </div>
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-2">
                 {% block searchbar %}
-                <form method='get' action='/search'>
-                    <input type='text' name='query' value='' />
-                    <input type='submit' value='Search' />
-                    <span class="icon-search"></span>
+                <form method='get' action='/search' style="padding:0px;" class="search">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <input type='text' name='query' value='' placeholder="Search" class="search-input" />
+                        </div>
+                        <div class="col-md-4">
+                            <button type='submit' value='Search' class="primary">
+                                <span class="icon-search inverse"></span>
+                            </button>
+                        </div>
+                    </div>
                 </form>
                 {% endblock %}
                 <nav>
-                    {% for column in navigation %}
-                    {% for cell in column %}
-                    <a href='{{ cell["url"] }}'>{{ cell['number'] or '' }} {{ cell['title'] }}</a>
-                    {% endfor %}
+                    {% for section in navigation %}
+                    <div>
+                        {% for item in section %}
+                        <a href="{{ item.url }}"{% if item.is_current %}class="current"{% endif %}>{{ item.number }} {{ item.name }}</a>
+                        {% endfor %}
+                    </div>
                     {% endfor %}
                 </nav>
             </div>
-            <div class="col-md-9">
+            <div class="col-md-8">
                 {% block pagecontent %}
                 {% endblock %}
             </div>
+            <div class="col-md-2">
+                {% if path %}
+                <div class="col-sm-12">
+                    <div class="card fluid shadowed">
+                        <p>
+                            <a class="button primary edit-github" href='https://github.com/buildingSMART/IFC4.3.x-development/blob/master/{{ path }}'><span class="icon-edit inverse"></span> Edit on Github</a>
+                        </p>
+                        <p>
+                            <small>
+                                <span id="contributors"></span><br />
+                                <span id="last-change"></span>
+                            </small>
+                        </p>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="row">
+            <footer>
+                <p>
+                    <small>
+                        Copyright &copy; 1996-2022 buildingSMART International Limited. Some rights reserved. Any technical documentation made available by buildingSMART International Limited is the copyrighted work of buildingSMART International Limited and is owned by buildingSMART International Limited. The Industry Foundation Classes are published under Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0). Read the <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode">full license text here</a>. For more information please refer to our <a href="https://buildingsmart-1xbd3ajdayi.netdna-ssl.com/wp-content/uploads/2021/06/bSI-Intellectual-Property-Policy.pdf">IP Policy.</a>
+                    </small>
+                </p>
+            </footer>
         </div>
     </div>
-    
-<script>
-Array.from(document.querySelectorAll("h3")).forEach(n => {
-  n.onclick = function(evt) {
-    elem = evt.target.nextElementSibling;
-    var hide = evt.target.classList.toggle('collapsed');
-    while (elem) {
-      elem.style.display = hide ? 'none' : '';
-      elem = elem.nextElementSibling;
-      if (elem.tagName == evt.target.tagName) {
-        break;
-      }
-    }
-  }
-});
-</script>
-    
+    <script>
+        window.appconfig = {'path': '{{ path }}', 'base': '{{ base }}'};
+    </script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script type="text/javascript" src="{{ base }}/assets/js/app.js"></script>
 </body>
 </html>

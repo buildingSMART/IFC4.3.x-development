@@ -92,8 +92,8 @@ NOTE
 
 1. The way how each panel operates is defined at the _IfcWindowPanelProperties.OperationType_.
 2. The reference from the window panel to the location of that panel in the window style configuration is handled by the _IfcWindowPanelProperties.PanelPosition_.
-3. The figures are shown as elevations in the XZ plane of the local placement of the window, looking into the direction of the positive Y axis.
-4. These figures are only shown as illustrations
+3. The figures/ are shown as elevations in the XZ plane of the local placement of the window, looking into the direction of the positive Y axis.
+4. These figures/ are only shown as illustrations
 
 ## Items
 

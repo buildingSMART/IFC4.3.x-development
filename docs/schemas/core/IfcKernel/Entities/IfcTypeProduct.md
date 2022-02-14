@@ -46,7 +46,7 @@ The RepresentationMaps define the type product shape and multiple geometric repr
 Figure 136 illustrates an example of referencing a representation map by the shape representation of a product occurrence. Here the Cartesian transformation operator only uses translation, but no rotation, mirroring, or scaling.
 
 
-![representation map](../../../../figuresifctypeproduct_representationmap-1.png)
+![representation map](../../../../figures/ifctypeproduct_representationmap-1.png)
 Figure 136 — Product type geometry with single placement
 
 
@@ -54,7 +54,7 @@ Figure 137 illustrates an example of referencing a representation multiple times
 multiple placement.
 
 
-![representation map](../../../../figuresifctypeproduct_representationmap-2.png)
+![representation map](../../../../figures/ifctypeproduct_representationmap-2.png)
 Figure 137 — Product type geometry with multiple placement
 
 

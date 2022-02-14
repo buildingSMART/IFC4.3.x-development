@@ -1,0 +1,56 @@
+{% extends "main.html" %}
+{% block pagecontent %}
+
+<h2>{{ number }} {{ entity}}</h2>
+
+<h3>
+    {{ definition_number }} Semantic definition
+</h3>
+
+{{ content | safe }}
+
+{% if type_values %}
+<h3>
+    {{ type_values.number }} Type values
+</h3>
+<table class="striped type-values">
+    <thead>
+        <tr>
+            <th>Type</th>
+            {% if type_values.has_description %}
+            <th>Description</th>
+            {% endif %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for value in type_values.schema_values %}
+        <tr>
+            {% if type_values.has_description %}
+            <td data-label="Name"><code>{{ value.name }}</code</td>
+            <td data-label="Description">
+                {% if value.description %}
+                {{ value.description | safe }}
+                {% else %}
+                <p>
+                    <em>No description available.</em>
+                </p>
+                {% endif %}
+            </td>
+            {% else %}
+            <td data-label="Name">{{ value }}</td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endif %}
+
+{% if formal_representation %}
+<h3>
+    {{ formal_representation.number }} Formal representation
+</h3>
+<pre>
+{{ formal_representation.express }}
+</pre>
+{% endif %}
+{% endblock %}

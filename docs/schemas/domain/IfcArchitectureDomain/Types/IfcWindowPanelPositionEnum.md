@@ -82,8 +82,8 @@ Windows which are subdivided into more than three panels have to be defined by t
 
 NOTE
 
-1. The figures are shown as elevations in the XZ plane of the local placement of the window, looking into the direction of the positive Y axis.
-2. These figures are only shown as illustrations.
+1. The figures/ are shown as elevations in the XZ plane of the local placement of the window, looking into the direction of the positive Y axis.
+2. These figures/ are only shown as illustrations.
 
 ## Items
 

@@ -66,7 +66,7 @@ for ent, ent_concepts in itertools.groupby(concepts, operator.attrgetter('entity
         
         # Correct relative image paths
         for img in soup.find_all("img"):
-            img['src'] = re.sub("(../)+figures/", "../../../../figures", img['src'])
+            img['src'] = re.sub("(../)+figures/", "../../../../figures/", img['src'])
         
         data.append(md(str(soup)))
         data.append("\n")

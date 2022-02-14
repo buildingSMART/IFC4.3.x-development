@@ -9,11 +9,10 @@ The IFC specification includes terms, concepts and data specification items that
   * the property set definitions that are part of this standard start with the prefix "Pset_" and continue with the English words in CamelCase naming convention; 
   * the quantity set definitions that are part of this standard start with the prefix "Qto_" and continue with the English words in CamelCase naming convention. 
   
-The data schema architecture of IFC defines four conceptual layers, each individual schema is assigned to exactly one conceptual layer. Figure 1 shows the schema architecture IFC4 layered architecture. 
+The data schema architecture of IFC defines four conceptual layers, each individual schema is assigned to exactly one conceptual layer. The figure below shows the schema architecture IFC 4 layered architecture. 
  
-![Figure 1 — Data schema architecture with conceptual layers](https://raw.githubusercontent.com/buildingSMART/IFC4.3.x-development/master/docs/img/IFC4_layered_architecture.png)
+![Figure 1 — Data schema architecture with conceptual layers](https://raw.githubusercontent.com/buildingSMART/IFC4.3.x-development/b3911e98eaf9adc5287c41d2e55beda1688be5d6/content/IFC4_layered_architecture.png)
 
-**Figure 1** — Data schema architecture with conceptual layers
  
 1. **Resource layer** — the lowest layer includes all individual schemas containing resource definitions, those definitions do not include an globally unique identifier and shall not be used independently of a definition declared at a higher layer; 
 2. **Core layer** — the next layer includes the kernel schema and the core extenstion schemas, containing the most general entity definitions, all entities defined at the core layer, or above carry a globally unique id and optionally owner and history information; 

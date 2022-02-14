@@ -39,7 +39,7 @@ Refer to IfcUnitaryEquipment for an example.
 Figure 302 illustrates distribution port connectivity.
 
 
-![Connection Use Definition](../../../../figuresifcdistributionport-connection.png)
+![Connection Use Definition](../../../../figures/ifcdistributionport-connection.png)
 Figure 302 — Distribution port connectivity
 
 

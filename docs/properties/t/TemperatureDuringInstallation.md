@@ -1,0 +1,4 @@
+TemperatureDuringInstallation
+=============================
+
+Normalised working temperature.

@@ -323,7 +323,7 @@ class xmi_document:
                     # Concept parametrizations uses n-ary associations, so do not
                     # emit warnings for those.
                     if "Views" not in get_path(assoc):
-                        logging.warning("Expeced two associations ends on %s", assoc)
+                        logging.warning("Expected two associations ends on %s", assoc)
                     continue
                 
                 c1, c2 = ends
@@ -638,7 +638,7 @@ class xmi_document:
 
                     is_inverse = bool(self.xmi.tags['ExpressInverse'].get(end_node.id))
                     if is_inverse:
-                        inverse_order = int(self.xmi.tags['ExpressOrderingInverse'][end_node.id])
+                        inverse_order = int(self.xmi.tags['ExpressOrderingInverse'].get(end_node.id, 1e6))
                     
                     express_aggr = self.xmi.tags['ExpressAggregation'].get(end_node.id, "")
                     # It appears there is some inconsistency (IfcBSplineSurface.ControlPointList)

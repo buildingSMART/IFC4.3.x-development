@@ -80,7 +80,7 @@ depth
 > NOTE  The local placement directions for the IfcProjectionElement are only given as an example, other directions are valid as well.
 
 
-![projection](../../../../figuresifcprojectionelement-layout1.png)
+![projection](../../../../figures/ifcprojectionelement-layout1.png)
 Figure 162 — Projection representation
 
 

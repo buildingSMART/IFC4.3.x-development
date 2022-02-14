@@ -735,7 +735,10 @@ def process_markdown(resource, mdc, as_attribute=False):
     for blockquote in soup.findAll("blockquote"):
         for p in blockquote.findAll("p"):
             aside = soup.new_tag("aside")
-            keyword, contents = p.text.split(" ", 1)
+            try:
+                keyword, contents = p.text.split(" ", 1)
+            except:
+                continue
             if keyword.startswith("IFC"):
                 # This is typically something like "IFC4 CHANGE" denoting a historic change reason
                 keyword, keyword2, contents = p.text.split(" ", 2)

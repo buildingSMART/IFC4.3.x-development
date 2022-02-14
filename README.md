@@ -1,14 +1,14 @@
 IFC4.3.x
 ========
 
-Repository to collect updates to the IFC4.3 UML schema. The following automated procedures are currently executed on each commit:
+Repository to collect updates to the IFC4.3 Specification. 
+Every update will automaticly be published here:
+- http://ifc43-docs.standards.buildingsmart.org/ (html)
+- https://github.com/buildingsmart/ifc4.3.x-output (exp + pot)
+- https://github.com/buildingSMART/IFC4.3.x-output/tree/master/psd (psd)
 
-* A conversion to the EXPRESS schema language
-* An extract of property sets and types to be fed into bsDD
-* An extract of documentation strings for the purpose of internationalization
-* (Currently disabled: automated diagram generation)
 
-Both schema and tooling are currently under development and do not yet have official status within buildingSMART International.
+This is the official buildingSMART International repository for IFC 4.3.x and it will be the base for IFC 4.4.x.
 
 Place schemas for conversion in the `./schemas/` directory.
 

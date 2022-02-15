@@ -1389,7 +1389,8 @@ def annotate_hierarchy(data=None, start=1, number_path=None):
         elif len(number_path) == 1:
             return url_for("schema", name=text.lower())
         elif len(number_path) == 2:
-            return url_for("schema", name=number_path[1][1])
+            fragment = (".".join(list(map(operator.itemgetter(0), number_path)) + [str(idx)]) + "-" + text).replace(" ", "-")
+            return url_for("schema", name=number_path[1][1].lower()) + f"#{fragment}"
         elif len(number_path) == 3:
             return url_for("resource", resource=text)
 

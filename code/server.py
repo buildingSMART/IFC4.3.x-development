@@ -185,11 +185,17 @@ navigation = [
 ]
 
 
-def get_navigation():
+def get_navigation(resource=None, number=None):
+    if not number and resource:
+        number = name_to_number()[resource]
+    if isinstance(number, str):
+        number = int(number.split(".")[0])
     for section in navigation:
         for item in section:
             # Just simple for now
             if item["url"] == request.path:
+                item["is_current"] = True
+            elif number and item.get("number", None) == number:
                 item["is_current"] = True
             else:
                 item["is_current"] = False
@@ -750,7 +756,7 @@ def resource(resource):
         return render_template(
             "entity.html",
             base=base,
-            navigation=get_navigation(),
+            navigation=get_navigation(resource),
             number=idx,
             definition_number=definition_number,
             definition=get_definition(resource, mdc),
@@ -768,7 +774,7 @@ def resource(resource):
         return render_template(
             "property.html",
             base=base,
-            navigation=get_navigation(),
+            navigation=get_navigation(resource),
             content=process_markdown(resource, mdc),
             number=idx,
             definition_number=definition_number,
@@ -781,7 +787,7 @@ def resource(resource):
     return render_template(
         "type.html",
         base=base,
-        navigation=get_navigation(),
+        navigation=get_navigation(resource),
         content=get_definition(resource, mdc),
         number=idx,
         definition_number=definition_number,
@@ -1210,9 +1216,9 @@ def concept(s=""):
     subs = make_concept(s.split("/")).children
 
     return render_template(
-        "chapter.html",
+        "concept.html",
         base=base,
-        navigation=get_navigation(),
+        navigation=get_navigation(resource, number=n),
         content=html,
         path=fn[len(REPO_DIR) :].replace("\\", "/"),
         title=t,
@@ -1255,7 +1261,7 @@ def chapter(n):
     return render_template(
         "chapter.html",
         base=base,
-        navigation=get_navigation(),
+        navigation=get_navigation(number=n),
         content=html,
         path=fn[len(REPO_DIR) :].replace("\\", "/"),
         title=t,
@@ -1531,10 +1537,12 @@ def schema(name):
     fn = os.path.join(md_root, cat, t, "README.md")
 
     if os.path.exists(fn):
-        html = markdown.markdown(open(fn).read(), extensions=["sane_lists"])
+        html = process_markdown("", open(fn).read())
         soup = BeautifulSoup(html)
         # First h1 is handled by the template
-        soup.find("h1").decompose()
+        h1 = soup.find("h1")
+        if h1:
+            h1.decompose()
         html = "<h2>" + n + ".1 Schema Definition</h2>" + str(soup)
     else:
         html = ""
@@ -1555,7 +1563,7 @@ def schema(name):
     return render_template(
         "chapter.html",
         base=base,
-        navigation=get_navigation(),
+        navigation=get_navigation(number=n),
         content=html,
         path=fn[len(REPO_DIR) :].replace("\\", "/"),
         title=t,

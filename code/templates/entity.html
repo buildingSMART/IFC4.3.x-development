@@ -107,6 +107,19 @@
 </table>
 {% endif %}
 
+{% if formal_propositions %}
+<h2>
+    {{ formal_propositions.number }} Formal Propositions
+</h2>
+<table>
+{% for row in formal_propositions["items"] %}
+<tr>
+<td>{{ row.name }}<td>{{ row.description }}<br><pre>{{ row.formal }}</pre>
+</tr>
+{% endfor %}
+</table>
+{% endif %}
+
 {% if concept_usage %}
 <h2>
     {{ concept_usage.number }} Concept usage

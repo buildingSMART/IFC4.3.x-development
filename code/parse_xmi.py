@@ -1,4 +1,5 @@
 import os
+import re
 import sys
 import json
 import glob
@@ -114,6 +115,7 @@ psets = {}
 deprecated_entities = []
 abstract_entities = []
 type_values = {}
+where_clauses = {}
 
 def get_schema(name):
     for cat, schemas in hierarchy:
@@ -144,21 +146,34 @@ for item in xmi_doc:
             
         for a in item.definition.attributes:
             attributes[".".join((item.name, a[0]))] = (True, a[1])
+
         for a in item.definition.inverses:
             parts = a.split(' ')
             nm = parts[0].strip()
             ty = ' '.join(parts[2:])[:-1]
             attributes[".".join((item.name, nm))] = (False, ty)
-        
+            
     elif item.type in ("TYPE", "SELECT", "ENUM"):
         resource_to_package[item.name] = get_schema(item.package)
         get_schema(item.package)['Types'].append(item.name)
         if item.type in ("SELECT", "ENUM"):
             type_values.setdefault(item.name, []).extend(item.definition.values)
-        
-    if item.type in ("ENTITY", "TYPE", "SELECT", "ENUM"):
+
+    elif item.type in ("FUNCTION", "RULE"):
+        name = re.split(r"\s", item.name)[0]
+        get_schema(item.package)[f"{item.type[0]}{item.type[1:].lower()}s"].append(name)
+
+    if item.type in ("ENTITY", "TYPE", "SELECT", "ENUM", "FUNCTION", "RULE"):
         definitions[item.name] = str(item.definition)
-        
+
+    if item.type == "ENTITY":
+        where_clauses[item.name] = item.definition.where_clauses
+    
+    if item.type == "TYPE":
+        #@todo unify this with entity    
+        trailing_semi = lambda s: s[:-1] if s.endswith(";") else s
+        where_clauses[item.name] = [tuple(map(trailing_semi, map(str.strip, c.split(":")))) for c in item.definition.constraints]
+
 def child_by_tag(node, tag):
     return [c for c in node["_children"] if c['#tag'] == tag][0]
     
@@ -249,3 +264,4 @@ json.dump(psets, open("pset_definitions.json", "w", encoding="utf-8"))
 json.dump(deprecated_entities, open("deprecated_entities.json", "w", encoding="utf-8"))
 json.dump(abstract_entities, open("abstract_entities.json", "w", encoding="utf-8"))
 json.dump(type_values, open("type_values.json", "w", encoding="utf-8"))
+json.dump(where_clauses, open("entity_where_clauses.json", "w", encoding="utf-8"))

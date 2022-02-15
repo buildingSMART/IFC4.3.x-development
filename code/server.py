@@ -111,6 +111,7 @@ class resource_manager:
     entity_definitions = schema_resource("entity_definitions.json")
     entity_to_package = schema_resource("entity_to_package.json")
     entity_supertype = schema_resource("entity_supertype.json")
+    entity_where_clauses = schema_resource("entity_where_clauses.json")
     pset_definitions = schema_resource("pset_definitions.json")
     changes_by_type = schema_resource("changes_by_type.json")
     deprecated_entities = schema_resource("deprecated_entities.json", transform=set)
@@ -145,6 +146,7 @@ def get_resource_path(resource, abort_on_error=True):
         os.path.join(REPO_DIR, "docs/schemas", *v, resource + ".md")
         .replace("Property Sets", "PropertySets")
         .replace("Quantity Sets", "QuantitySets")
+        .replace("Rules", "GlobalRules")
     )
 
 
@@ -239,7 +241,7 @@ def name_to_number():
 
     for i, (cat, schemas) in enumerate(R.hierarchy, start=5):
         for j, (schema_name, members) in enumerate(schemas, start=1):
-            for k, ke in enumerate(["Types", "Entities", "Property Sets", "Quantity Sets"], start=2):
+            for k, ke in enumerate(["Types", "Entities", "Property Sets", "Quantity Sets", "Functions", "Rules"], start=2):
                 for l, name in enumerate(members.get(ke, ()), start=1):
                     ntn[name] = ".".join(map(str, (i, j, k, l)))
 
@@ -608,6 +610,10 @@ class resource_documentation_builder:
         return self.get_markdown_content("Attributes")
 
     @property
+    def formal_propositions(self):
+        return self.get_markdown_content("Formal Propositions")
+
+    @property
     def concepts(self):
         return self.get_markdown_content("Concepts")
 
@@ -761,6 +767,7 @@ def resource(resource):
             path=md[len(REPO_DIR) :].replace("\\", "/"),
             entity_inheritance=get_entity_inheritance(resource),
             attributes=get_attributes(resource, builder),
+            formal_propositions=get_formal_propositions(resource, builder),
             concept_usage=get_concept_usage(resource, builder),
             formal_representation=get_formal_representation(resource),
             changelog=get_changelog(resource),
@@ -781,6 +788,7 @@ def resource(resource):
             properties=get_properties(resource),
             changelog=get_changelog(resource),
         )
+    builder = resource_documentation_builder(resource)
     return render_template(
         "type.html",
         base=base,
@@ -791,6 +799,7 @@ def resource(resource):
         entity=resource,
         path=md[len(REPO_DIR) :].replace("\\", "/"),
         type_values=get_type_values(resource, mdc),
+        formal_propositions=get_formal_propositions(resource, builder),
         formal_representation=get_formal_representation(resource),
         changelog=get_changelog(resource),
     )
@@ -909,6 +918,21 @@ def get_attributes(resource, builder):
         "groups": results,
     }
 
+def get_formal_propositions(resource, builder):
+    if not builder:
+        return
+        
+    defs = {k[1]: k[2] for k in builder.formal_propositions}
+    clauses = R.entity_where_clauses.get(resource, [])
+    
+    if not clauses:
+        return
+    
+    return {
+        "number": SectionNumberGenerator.generate(),
+        "items": [{'name': c[0], 'formal': c[1], 'description': defs.get(c[0])} for c in clauses]
+    }
+    
 
 def get_entity_inheritance(resource):
     try:
@@ -1349,7 +1373,7 @@ def annex_a():
 
 def annotate_hierarchy(data=None, start=1, number_path=None):
 
-    level_2_headings = ("Schema Definition", "Types", "Entities", "Property Sets")
+    level_2_headings = ("Schema Definition", "Types", "Entities", "Property Sets", "Functions", "Rules")
 
     def items(d):
         if len(number_path or []) == 2:
@@ -1568,7 +1592,7 @@ def schema(name):
     else:
         html = ""
 
-    order = ["Types", "Entities", "Property Sets", "Quantity Sets"]
+    order = ["Types", "Entities", "Property Sets", "Quantity Sets", "Functions", "Rules"]
     subs2 = [
         toc_entry(
             o,
@@ -1660,58 +1684,61 @@ def after(response):
         # I know, I know, string to dom to string to dom to ...
         soup = BeautifulSoup(html)
 
-        main_content = soup.find_all(id="main-content")[0]
+        main_content = soup.find_all(id="main-content")
+        main_content = main_content[0] if len(main_content) else None
+        
+        if main_content:
 
-        for img in main_content.findAll("img"):
-            # Capture images as numbered figures
-            parent = img.parent
-            has_caption = False
-            for i, sibling in enumerate(parent.find_next_siblings()):
-                if i > 2 or sibling.name.lower() not in ("p", "blockquote", "aside"):
-                    # If we've gone this far without encountering a caption, something is wrong so let's stop
-                    break
-                if sibling.name == "p" and (sibling.find("img") or sibling.find("table") or sibling.find("svg")):
-                    # This is another figure or table, so it's obviously not a caption
-                    break
-                if sibling.name == "p" and sibling.text.startswith("Figure"):
-                    has_caption = True
-                    sibling.name = "figcaption"
-                    # Make sure the caption is directly under the image
-                    parent.insert(1, sibling.extract())
-                    break
-                else:
-                    parent.append(sibling.extract())
-            if not has_caption:
-                caption = soup.new_tag("figcaption")
-                caption.string = "Figure " + str(uuid.uuid4())
-                parent.append(caption)
-            parent.name = "figure"
+            for img in main_content.findAll("img"):
+                # Capture images as numbered figures
+                parent = img.parent
+                has_caption = False
+                for i, sibling in enumerate(parent.find_next_siblings()):
+                    if i > 2 or sibling.name.lower() not in ("p", "blockquote", "aside"):
+                        # If we've gone this far without encountering a caption, something is wrong so let's stop
+                        break
+                    if sibling.name == "p" and (sibling.find("img") or sibling.find("table") or sibling.find("svg")):
+                        # This is another figure or table, so it's obviously not a caption
+                        break
+                    if sibling.name == "p" and sibling.text.startswith("Figure"):
+                        has_caption = True
+                        sibling.name = "figcaption"
+                        # Make sure the caption is directly under the image
+                        parent.insert(1, sibling.extract())
+                        break
+                    else:
+                        parent.append(sibling.extract())
+                if not has_caption:
+                    caption = soup.new_tag("figcaption")
+                    caption.string = "Figure " + str(uuid.uuid4())
+                    parent.append(caption)
+                parent.name = "figure"
 
-        for table in main_content.findAll("table"):
-            figure = soup.new_tag("figure")
-            table.insert_before(figure)
-            figure.append(table.extract())
-            parent = figure
-            has_caption = False
-            for i, sibling in enumerate(parent.find_next_siblings()):
-                if i > 2 or sibling.name.lower() not in ("p", "blockquote"):
-                    # If we've gone this far without encountering a caption, something is wrong so let's stop
-                    break
-                if sibling.name == "p" and (sibling.find("img") or sibling.find("table") or sibling.find("svg")):
-                    # This is another figure or table, so it's obviously not a caption
-                    break
-                if sibling.name == "p" and sibling.text.startswith("Figure"):
-                    has_caption = True
-                    sibling.name = "figcaption"
-                    # Make sure the caption is directly under the image
-                    parent.insert(1, sibling.extract())
-                    break
-                else:
-                    parent.append(sibling.extract())
-            if not has_caption:
-                caption = soup.new_tag("figcaption")
-                caption.string = "Table " + str(uuid.uuid4())
-                parent.append(caption)
+            for table in main_content.findAll("table"):
+                figure = soup.new_tag("figure")
+                table.insert_before(figure)
+                figure.append(table.extract())
+                parent = figure
+                has_caption = False
+                for i, sibling in enumerate(parent.find_next_siblings()):
+                    if i > 2 or sibling.name.lower() not in ("p", "blockquote"):
+                        # If we've gone this far without encountering a caption, something is wrong so let's stop
+                        break
+                    if sibling.name == "p" and (sibling.find("img") or sibling.find("table") or sibling.find("svg")):
+                        # This is another figure or table, so it's obviously not a caption
+                        break
+                    if sibling.name == "p" and sibling.text.startswith("Figure"):
+                        has_caption = True
+                        sibling.name = "figcaption"
+                        # Make sure the caption is directly under the image
+                        parent.insert(1, sibling.extract())
+                        break
+                    else:
+                        parent.append(sibling.extract())
+                if not has_caption:
+                    caption = soup.new_tag("figcaption")
+                    caption.string = "Table " + str(uuid.uuid4())
+                    parent.append(caption)
 
         for figure in soup.findAll("figure"):
             for figcaption in figure.findAll("figcaption"):

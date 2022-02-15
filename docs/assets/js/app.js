@@ -143,7 +143,7 @@ Array.from(document.querySelectorAll('a')).concat(Array.from(document.querySelec
   
 });
 
-fetch('https://api.github.com/repos/buildingSMART/IFC4.3.x-development/commits?path=' + window.appconfig.path).then(r => r.json()).then(j => {
+fetch(`https://api.github.com/repos/${window.appconfig.repo}/commits?path=${window.appconfig.path}`).then(r => r.json()).then(j => {
   let n = {};
   j.forEach(c => {
     n[c.author.avatar_url] = (n[c.author.avatar_url || 0]) + 1;

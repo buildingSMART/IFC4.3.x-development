@@ -1519,17 +1519,17 @@ def annex_f():
 
 @app.route(make_url("annex_e/<s>.html"))
 def annex_e_example_page(s):
-    subs = map(os.path.basename, filter(os.path.isdir, os.path.join(REPO_DIR, glob.glob("../examples/IFC 4.3/*"))))
+    subs = map(os.path.basename, filter(os.path.isdir, glob.glob(os.path.join(REPO_DIR, "../examples/IFC 4.3/*"))))
     if s not in subs:
         abort(404)
 
     fn = glob.glob(os.path.join(REPO_DIR, "../examples/IFC 4.3", s, "*.md"))[0]
     html = "<p></p>" + markdown.markdown(open(fn).read(), extensions=["tables", "fenced_code"])
-    code = open(glob.glob(os.path.join(REPOSE_DIR, "../examples/IFC 4.3", s, "*.ifc"))[0]).read()
+    code = open(glob.glob(os.path.join(REPO_DIR, "../examples/IFC 4.3", s, "*.ifc"))[0]).read()
     html += "<h2>Source</h2>"
     html += "<pre>" + code + "</pre>"
     path_repo = "buildingSMART/Sample-Test-Files"
-    path = fn[15:]
+    path = fn[len(os.path.join(REPO_DIR, "../examples/")):]
     return render_template(
         "chapter.html",
         base=base,

@@ -48,7 +48,7 @@
                 {% if path %}
                 <div class="card fluid shadowed">
                     <p>
-                        <a class="button primary edit-github" href='https://github.com/buildingSMART/IFC4.3.x-development/blob/master/{{ path }}'><span class="icon-edit inverse"></span> Edit on Github</a>
+                        <a class="button primary edit-github" href='https://github.com/{{ repo or 'buildingSMART/IFC4.3.x-development' }}/blob/master/{{ path }}'><span class="icon-edit inverse"></span> Edit on Github</a>
                     </p>
                     <p>
                         <small>
@@ -98,7 +98,11 @@
         </div>
     </div>
     <script>
-        window.appconfig = {'path': '{{ path }}', 'base': '{{ base }}'};
+        window.appconfig = {
+            'path': '{{ path }}',
+            'base': '{{ base }}',
+            'repo': '{{ repo or "buildingSMART/IFC4.3.x-development" }}',
+        };
     </script>
     <script src="https://unpkg.com/feather-icons"></script>
     <script type="text/javascript" src="{{ base }}/assets/js/app.js"></script>

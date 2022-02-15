@@ -1,0 +1,40 @@
+{% extends "main.html" %}
+{% block pagecontent %}
+<h1>Annex F Changelogs</h1>
+
+{% for section in changelogs.sections %}
+<h2>
+    {{ section.name }}
+</h2>
+<table class="striped changelog">
+    <colgroup>
+       <col style="width: 20px;" />
+       <col style="width: 20%;" />
+       <col style="width: 20%;" />
+       <col>
+    </colgroup>
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Entity</th>
+            <th>Location</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for change in section.changes %}
+        <tr>
+            <td data-label="Type">
+                {% if change.is_addition %}<i data-feather="plus-square"></i>{% endif %}
+                {% if change.is_deletion %}<i data-feather="x-square"></i>{% endif %}
+                {% if change.is_modification %}<i data-feather="edit"></i>{% endif %}
+            </td>
+            <td data-label="Entity">{{ change.entity }}</td>
+            <td data-label="Location">{{ change.what_changed }}</td>
+            <td data-label="Description">{{ change.description }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endfor %}
+{% endblock %}

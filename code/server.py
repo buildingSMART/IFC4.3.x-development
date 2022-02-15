@@ -178,7 +178,7 @@ navigation = [
         {"number": "F", "name": "Change logs", "url": make_url("annex-f.html")},
     ],
     [
-        {"name": "Bibliography", "url": make_url("bibliograph.htm")},
+        {"name": "Bibliography", "url": make_url("bibliography.htm")},
         # What is this? It's a broken link.
         {"name": "Index", "url": make_url("index.htm")},
     ],
@@ -675,6 +675,8 @@ def process_markdown(resource, mdc, as_attribute=False):
             svg = BeautifulSoup(open(os.path.join("svgs", entity + "_" + hash + ".dot.svg")))
             img.replaceWith(svg.find("svg"))
             img = svg
+        elif img["src"].startswith("http"):
+            pass
         else:
             img["src"] = img["src"][9:]
         # Capture images as numbered figures
@@ -698,12 +700,22 @@ def process_markdown(resource, mdc, as_attribute=False):
 
     # Tag all special notes separately. In markdown they are all lumped in a single block quote.
     for blockquote in soup.findAll("blockquote"):
+        has_aside = False
         for p in blockquote.findAll("p"):
-            aside = soup.new_tag("aside")
             try:
                 keyword, contents = p.text.split(" ", 1)
             except:
                 continue
+            valid_keywords = ["HISTORY", "IFC", "EXAMPLE", "NOTE"]
+            has_valid_keyword = False
+            for valid_keyword in valid_keywords:
+                if valid_keyword in keyword:
+                    has_valid_keyword = True
+                    break
+            if not has_valid_keyword:
+                continue
+            has_aside = True
+            aside = soup.new_tag("aside")
             if keyword.startswith("IFC"):
                 # This is typically something like "IFC4 CHANGE" denoting a historic change reason
                 keyword, keyword2, contents = p.text.split(" ", 2)
@@ -719,7 +731,8 @@ def process_markdown(resource, mdc, as_attribute=False):
             aside.insert(0, mark)
             blockquote.insert_before(aside)
             p.decompose()
-        blockquote.decompose()
+        if has_aside:
+            blockquote.decompose()
 
     html = str(soup).replace("{{ base }}", base)
 
@@ -1305,7 +1318,7 @@ def content(s="cover"):
         except:
             abort(404)
 
-    html = markdown.markdown(render_template_string(open(fn).read(), base=base))
+    html = process_markdown("", render_template_string(open(fn).read(), base=base))
     return render_template(
         "chapter.html",
         base=base,
@@ -1487,13 +1500,30 @@ def annex_e():
 @app.route(make_url("annex-f.html"))
 def annex_f():
     with open("changes_by_schema.json") as f:
-        li = json.load(f)
-        pairs = [("<h3>%s</h3>" % s, "<div>%s</div>" % tabulate.tabulate(cs, tablefmt="unsafehtml")) for s, cs in li]
-        flat = sum(pairs, ())
-        content = "".join(("<h2>Change logs</h2>",) + flat)
-    return render_template(
-        "chapter.html", base=base, navigation=get_navigation(), content=content, path=None, title="Annex F", number=""
-    )
+        changelog_data = json.load(f)
+        changelog = {"sections": []}
+        SectionNumberGenerator.begin_subsection()
+        for section in changelog_data:
+            section_name = section[0]
+            changes = section[1]
+            changelog["sections"].append(
+                {
+                    "name": section_name,
+                    "changes": [
+                        {
+                            "entity": c[0],
+                            "is_addition": "add" in c[1],
+                            "is_deletion": "delet" in c[1],
+                            "is_modification": "modif" in c[1],
+                            "what_changed": c[2],
+                            "description": c[3],
+                        }
+                        for c in changes
+                    ],
+                }
+            )
+        SectionNumberGenerator.end_subsection()
+    return render_template("annex-f.html", base=base, navigation=get_navigation(), changelogs=changelog)
 
 
 @app.route(make_url("annex_e/<s>.html"))

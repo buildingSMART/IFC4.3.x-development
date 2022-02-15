@@ -28,44 +28,44 @@ The full IFC standard is used to define one or many recognized workflows in the 
 # General use
 The following are within the entire scope of this release of IFC: 
 
-1: BIM exchange format definitions that are required during the life cycle phases of buildings: 
+ 1. BIM exchange format definitions that are required during the life cycle phases of buildings: 
 
- * demonstrating the need; 
- * conception of need; 
- * outline feasibility; 
- * substantive feasibility study and outline financial authority; 
- * outline conceptual design; 
- * full conceptual design; 
- * coordinated design; 
- * procurement and full financial authority; 
- * production information; 
- * construction; 
- * operation and maintenance. 
+    * demonstrating the need; 
+    * conception of need; 
+    * outline feasibility; 
+    * substantive feasibility study and outline financial authority; 
+    * outline conceptual design; 
+    * full conceptual design; 
+    * coordinated design; 
+    * procurement and full financial authority; 
+    * production information; 
+    * construction; 
+    * operation and maintenance. 
 
-2: BIM exchange format definitions that are required by the various disciplines involved within the life cycle phases: 
+ 2. BIM exchange format definitions that are required by the various disciplines involved within the life cycle phases: 
 
- * architecture; 
- * building service; 
- * structural engineering; 
- * procurement; 
- * construction planning; 
- * facility management; 
- * project management; 
- * client requirement management; 
- * building authority for permits and approval. 
- * BIM exchange format definitions including: 
- * project structure; 
- * physical components; 
- * spatial components; 
- * analysis items; 
- * processes; 
- * resources; 
- * controls; 
- * actors; 
- * context definition. 
+    * architecture; 
+    * building service; 
+    * structural engineering; 
+    * procurement; 
+    * construction planning; 
+    * facility management; 
+    * project management; 
+    * client requirement management; 
+    * building authority for permits and approval. 
+    * BIM exchange format definitions including: 
+    * project structure; 
+    * physical components; 
+    * spatial components; 
+    * analysis items; 
+    * processes; 
+    * resources; 
+    * controls; 
+    * actors; 
+    * context definition. 
 
-3: exchange format definitions outside of the domain of construction and facility maintenance; 
+ 3. exchange format definitions outside of the domain of construction and facility maintenance; 
 
-4: full project structure and component breakdown structures outside of building engineering, but providing a baseline for civil engineering to be extended in future releases; 
+ 4. full project structure and component breakdown structures outside of building engineering, but providing a baseline for civil engineering to be extended in future releases; 
 
-5: behavioral aspects of components and other information items. 
+ 5. behavioral aspects of components and other information items. 

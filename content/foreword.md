@@ -1,10 +1,12 @@
 buildingSMART International Limited is an international non-for-profit association of regional and national buildingSMART chapters. 
  
-The vision of buildingSMART is:  
-*Sustainability by building SMARTER* 
+The vision of buildingSMART is:
+
+> Sustainability by building SMARTER
  
 The mission of buildingSMART is:  
-*Contribute to the sustainable built environment through SMARTER information sharing and communication using open international standards in the building and construction sector, private and public.* 
+
+> Contribute to the sustainable built environment through SMARTER information sharing and communication using open international standards in the building and construction sector, private and public.
  
 The association's values are: 
 

@@ -25,6 +25,7 @@ after_success:
   - MESSAGE=$(git log --oneline -1)
   - git clone https://$USER_NAME:$USER_AUTH@github.com/buildingSMART/$REPO
   - cd $REPO
+  - [ "$TRAVIS_PULL_REQUEST" != "false" ] && git switch -c pr$TRAVIS_PULL_REQUEST
   - "[ -d psd/ ] && rm -rf psd"
   - mv ../output/* .
   - git config user.email "${USER_EMAIL}"

@@ -7,6 +7,10 @@ import lark
 
 from github import Github
 
+if not os.environ.get("USER_AUTH"):
+    print("No Github credentials. Probably a PR?")
+    exit(0)
+
 g = Github(os.environ["USER_AUTH"])
 r = g.get_repo("buildingSMART/IFC4.3.x-output")
 

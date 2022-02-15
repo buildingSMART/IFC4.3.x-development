@@ -578,13 +578,21 @@ class resource_documentation_builder:
         ty = self.resource
         while ty:
             md_ty_fn = get_resource_path(ty)
+            
             try:
                 md_ty = re.sub(DOC_ANNOTATION_PATTERN, "", open(md_ty_fn, encoding="utf-8").read())
             except:
                 # @todo
                 ty = R.entity_supertype.get(ty)
                 continue
-            ty_attrs = list(mdp.markdown_attribute_parser(md_ty, heading))
+                
+            try:
+                ty_attrs = list(mdp.markdown_attribute_parser(md_ty, heading))
+            except:
+                # @todo change markdown parser
+                ty = R.entity_supertype.get(ty)
+                continue
+                
             if heading == "Attributes":
                 ty_attr_di = dict(ty_attrs)
                 for a in [k.split(".")[1] for k in R.entity_attributes.keys() if k.startswith(f"{ty}.")][::-1]:

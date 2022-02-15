@@ -214,23 +214,39 @@ table.type-values {
 table.type-values thead tr th:nth-child(1) {
     width: 20%;
 }
-table.attributes {
+table.grouped {
     width: 100%;
 }
-table.attributes tr.attribute-group-inherited td {
+table.attributes>thead>tr>th:nth-child(1) {
+    width: 2%;
+}
+table.attributes>tbody>tr>td:nth-child(1) {
+    text-align: center;
+}
+table.attributes>thead>tr>th:nth-child(2) {
+    width: 10%;
+}
+table.attributes>thead>tr>th:nth-child(3) {
+    width: 20%;
+}
+table.concepts>thead>tr>th:nth-child(1) {
+    width: 20%;
+}
+table.concepts>thead>tr>th:nth-child(2) {
+    width: 15%;
+}
+table.grouped tr.group-inherited td {
     background: var(--dark);
     color: #fff;
+    text-align: left !important;
 }
-table.attributes tr.attribute-group td {
+table.grouped tr.group td {
     background: var(--blue);
     color: #fff;
+    text-align: left !important;
 }
-table.attributes tr.attribute-group td a, table.attributes tr.attribute-group-inherited td a {
+table.grouped tr.group td a, table.grouped tr.group-inherited td a {
     color: #fff;
-}
-table.attributes tr.attribute-group td mark {
-    float: right;
-    border: 1px solid var(--border-color);
 }
 .feather-plus-square {
     color: var(--green);

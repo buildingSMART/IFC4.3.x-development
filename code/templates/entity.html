@@ -51,7 +51,7 @@
     {{ attributes.number }} Attributes
 </h3>
 <!-- <a class="button primary hide-inverse"><i data-feather="eye-off"></i> Hide inverse</a> -->
-<table class="striped attributes">
+<table class="striped grouped attributes">
     <thead>
         <tr>
             <th>#</th>
@@ -64,9 +64,9 @@
     <tbody>
         {% for group in attributes.groups %}
         {% if group.is_inherited %}
-        <tr class="attribute-group-inherited">
+        <tr class="group-inherited">
         {% else %}
-        <tr class="attribute-group">
+        <tr class="group">
         {% endif %}
             <td colspan="4">
                 {% if group.is_inherited %}<mark>Inherited</mark>{% endif %}
@@ -104,7 +104,65 @@
 <h3>
     {{ concept_usage.number }} Concept usage
 </h3>
-{{ concept_usage.html | safe }}
+
+<table class="striped grouped concepts">
+    <thead>
+        <tr>
+            <th>Concept</th>
+            <th>Usage</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for group in concept_usage.groups %}
+        {% if group.is_inherited %}
+        <tr class="group-inherited">
+        {% else %}
+        <tr class="group">
+        {% endif %}
+            <td colspan="3">
+                {% if group.is_inherited %}<mark>Inherited</mark>{% endif %}
+                {{ group.name }}
+            </td>
+        </tr>
+        {% for concept in group.concepts %}
+        <tr>
+            <td data-label="Name">
+                {% if concept.url %}
+                <a href="{{ concept.url }}">{{ concept.name }}</a>
+                {% else %}
+                {{ concept.name }}
+                {% endif %}
+            </td>
+            <td data-label="Usage">
+                {{ concept.usage }}
+            </td>
+            <td data-label="Description">
+                {{ concept.description | safe }}
+                {% if concept.applicable_relationships %}
+                <p>This concept can be applied to the following resources:</p>
+                <ul>
+                {% for relationship in concept.applicable_relationships %}
+                    <li>
+                        {{ relationship.name }}
+                        {% if relationship.predefined_type %}
+                        (only applies to <code>{{ relationship.predefined_type }})
+                        {% endif %}
+                    </li>
+                {% endfor %}
+                </ul>
+                {% endif %}
+                {% if not concept.description and not concept.applicable_relationships %}
+                <p>
+                    <em>No description available.</em>
+                </p>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+        {% endfor %}
+    </tbody>
+</table>
 {% endif %}
 
 {% if formal_representation %}

@@ -1,6 +1,7 @@
 import re
 import os
 import sys
+import copy
 import uuid
 import glob
 import json
@@ -512,19 +513,23 @@ def process_graphviz_concept(name, md):
 
     return md
 
-
-def create_concept_table(view_name, xmi_concept, types=None):
-    rows = R.xmi_concepts[view_name][xmi_concept]
-    bindings = [("ApplicableEntity", ("", ""))] + list(
-        parse_bindings(os.path.join(REPO_DIR, "schemas/IFC.xml"), xmi_concept)
-    )
-    bound_keys = set(sum([list(r.keys()) for r in rows], []))
-    bound_keys = [a[0] for a in bindings if a[0] in bound_keys]
-    headers = [f"{a}<br>{b}{'.' if b else ''}{c}" for a, (b, c) in bindings if a in bound_keys]
-    if types is not None:
-        rows = [r for r in rows if r.get("ApplicableEntity") in types]
-    rows = [[r.get(k, "") for k in bound_keys] for r in rows]
-    return headers, rows
+def get_applicable_relationships(usage, concept, resource):
+    rows = copy.deepcopy(R.xmi_concepts[usage].get(concept, []))
+    rows = [r for r in rows if r.get("ApplicableEntity") == resource]
+    if not rows:
+        return
+    if len(rows[0].keys()) == 1:
+        # There must be at least one key which defines the ApplicableEntity
+        # In this case, there is no interesting information to display
+        return
+    data = []
+    for row in rows:
+        del row["ApplicableEntity"]
+        data.append({
+            "predefined_type": row.pop("PredefinedType", None),
+            "name": list(row.values())[0]
+        })
+    return data
 
 
 def separate_camel(s):
@@ -915,9 +920,13 @@ def get_entity_inheritance(resource):
 
 
 def get_concept_usage(resource, builder):
-    if not builder:
-        return
-    results = {}
+    def get_usage(name):
+        name = name.replace(" ", "")
+        for view_name, concepts in R.xmi_concepts.items():
+            if name in concepts:
+                return view_name
+        return "GeneralUsage"
+
     ty = resource
     supertype_chain = []
     while ty is not None:
@@ -925,18 +934,6 @@ def get_concept_usage(resource, builder):
         ty = R.entity_supertype.get(ty)
 
     concepts = list(builder.concepts)
-
-    # In case of inherited concepts filter on the entity
-    # that defines it most specifically (insertion order)
-    most_specific = {b: a for a, b, _ in concepts}
-
-    def qualify_mvd(nm):
-        if isinstance(nm, tuple):
-            return nm[0].replace(" ", ""), nm[1].replace(" ", "")
-        else:
-            return "GeneralUsage", nm.replace(" ", "")
-
-    concept_definition = {qualify_mvd(nm): (en, defn) for en, nm, defn in concepts if most_specific[nm] == en}
 
     # Create a lookup for concept name to URL
     concept_hierarchy = make_concept([""])
@@ -948,77 +945,29 @@ def get_concept_usage(resource, builder):
 
     concept_lookup = {c.text.replace(" ", ""): (c.text, c.url) for c in flatten_hierarchy(concept_hierarchy)}
 
-    mdc = ""
-    replacements = []
-
-    SectionNumberGenerator.begin_subsection()
-    # Iterate over views and concepts stored in XMI
-    for view_name, concepts in R.xmi_concepts.items():
-
-        applicable_concepts = []
-        for xmi_concept in concepts:
-
-            headers, rows = create_concept_table(view_name, xmi_concept, supertype_chain)
-            if rows:
-                applicable_concepts.append((xmi_concept, headers, rows))
-
-        if applicable_concepts:
-            mdc += f"\n\n## {SectionNumberGenerator.generate()} {separate_camel(view_name)}\n\n"
-
-            SectionNumberGenerator.begin_subsection()
-            for ci, (xmi_concept, headers, rows) in enumerate(applicable_concepts, start=1):
-
-                # is_inherited = " (inherited)" if en != resource else ""
-                is_inherited = ""
-                link = ""
-                if concept_lookup.get(xmi_concept):
-                    link += f"[Read more]({concept_lookup.get(xmi_concept)[1]})\n\n"
-
-                mdc += f"\n\n### {SectionNumberGenerator.generate()} {concept_lookup.get(xmi_concept)[0]}{is_inherited} {link}\n\n"
-
-                cdef = concept_definition.get((view_name, xmi_concept), ["", ""])[1]
-                try:
-                    mm = mdp.markdown_attribute_parser(cdef, None)
-                    headings = [x[0][2][0] for x in mm.tok_renders_pairs if x[0][0] == "heading_open"]
-                    if headings:
-                        cdef = "".join(mm.lines[0 : headings[0]])
-                except:
-                    print(f"Failed to parse markdown: {resource}")
-                    cdef += "<i>Failed to parse markdown</i>"
-                mdc += cdef + "\n\n"
-                mm = dict(mm)
-
-                if mm:
-                    headers += ["Description"]
-
-                    def augment_with_descriptions(row):
-                        description = ""
-                        intersect = set(row) & set(mm.keys())
-                        if intersect:
-                            description = mm[sorted(intersect)[0]]
-                        return row + [description]
-
-                    rows = list(map(augment_with_descriptions, rows))
-
-                mdc += f"concept_{view_name}_{xmi_concept}\n\n"
-
-                replacements.append(
-                    (
-                        f"concept_{view_name}_{xmi_concept}",
-                        tabulate.tabulate(rows, headers=headers, tablefmt="unsafehtml"),
-                    )
-                )
-            SectionNumberGenerator.end_subsection()
-    SectionNumberGenerator.end_subsection()
-
-    if mdc:
-        html = process_markdown(resource, mdc)
-        for from_r, to_r in replacements:
-            html = html.replace(from_r, to_r)
-        return {
-            "number": SectionNumberGenerator.generate(),
-            "html": html,
+    groups = []
+    for concept in concepts:
+        if not groups or groups[-1]["name"] != concept[0]:
+            groups.append({
+                "name": concept[0],
+                "is_inherited": concept[0] != resource,
+                "concepts": [],
+            })
+        usage = get_usage(concept[1])
+        stripped_name = concept[1].replace(" ", "")
+        data = {
+            "name": concept[1],
+            "description": process_markdown(resource, concept[2]),
+            "usage": separate_camel(usage),
+            "url": concept_lookup.get(stripped_name, [None, None])[1],
+            "applicable_relationships": get_applicable_relationships(usage, stripped_name, groups[-1]["name"])
         }
+        groups[-1]["concepts"].append(data)
+
+    return {
+        "number": SectionNumberGenerator.generate(),
+        "groups": groups,
+    }
 
 
 def get_formal_representation(resource):

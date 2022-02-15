@@ -178,7 +178,7 @@ navigation = [
         {"number": "F", "name": "Change logs", "url": make_url("annex-f.html")},
     ],
     [
-        {"name": "Bibliography", "url": make_url("bibliography.htm")},
+        {"name": "Bibliography", "url": make_url("content/bibliography.htm")},
         # What is this? It's a broken link.
         {"name": "Index", "url": make_url("index.htm")},
     ],

@@ -52,13 +52,18 @@
 </h3>
 <!-- <a class="button primary hide-inverse"><i data-feather="eye-off"></i> Hide inverse</a> -->
 <table class="striped grouped attributes">
+    <colgroup>
+       <col style="width: 20px;" />
+       <col>
+       <col>
+       <col>
+    </colgroup>
     <thead>
         <tr>
             <th>#</th>
             <th>Attribute</th>
             <th>Type</th>
-            <th>Description
-            </th>
+            <th>Description</th>
         </tr>
     </thead>
     <tbody>
@@ -75,7 +80,7 @@
             </td>
         </tr>
         {% for attribute in group.attributes %}
-        <tr>
+        <tr{% if group.is_inherited %} class="inherited"{% endif %}>
             <td data-label="#">{{ attribute.number }}</td>
             <td data-label="Name">
                 {% if attribute.is_inverse %}
@@ -86,12 +91,14 @@
             </td>
             <td data-label="Type">{{ attribute.type }}</td>
             <td data-label="Description">
-                {{ attribute.description | safe }}
-                {% if not attribute.description %}
-                <p>
-                    <em>No description available.</em>
-                </p>
-                {% endif %}
+                <div>
+                    {{ attribute.description | safe }}
+                    {% if not attribute.description %}
+                    <p>
+                        <em>No description available.</em>
+                    </p>
+                    {% endif %}
+                </div>
             </td>
         </tr>
         {% endfor %}
@@ -126,7 +133,7 @@
             </td>
         </tr>
         {% for concept in group.concepts %}
-        <tr>
+        <tr{% if group.is_inherited %} class="inherited"{% endif %}>
             <td data-label="Name">
                 {% if concept.url %}
                 <a href="{{ concept.url }}">{{ concept.name }}</a>
@@ -138,25 +145,27 @@
                 {{ concept.usage }}
             </td>
             <td data-label="Description">
-                {{ concept.description | safe }}
-                {% if concept.applicable_relationships %}
-                <p>This concept can be applied to the following resources:</p>
-                <ul>
-                {% for relationship in concept.applicable_relationships %}
-                    <li>
-                        {{ relationship.name }}
-                        {% if relationship.predefined_type %}
-                        (only applies to <code>{{ relationship.predefined_type }})
-                        {% endif %}
-                    </li>
-                {% endfor %}
-                </ul>
-                {% endif %}
-                {% if not concept.description and not concept.applicable_relationships %}
-                <p>
-                    <em>No description available.</em>
-                </p>
-                {% endif %}
+                <div>
+                    {{ concept.description | safe }}
+                    {% if concept.applicable_relationships %}
+                    <p>This concept can be applied to the following resources:</p>
+                    <ul>
+                    {% for relationship in concept.applicable_relationships %}
+                        <li>
+                            {{ relationship.name }}
+                            {% if relationship.predefined_type %}
+                            (only applies to <code>{{ relationship.predefined_type }})
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                    </ul>
+                    {% endif %}
+                    {% if not concept.description and not concept.applicable_relationships %}
+                    <p>
+                        <em>No description available.</em>
+                    </p>
+                    {% endif %}
+                </div>
             </td>
         </tr>
         {% endfor %}

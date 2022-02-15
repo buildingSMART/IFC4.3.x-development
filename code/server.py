@@ -958,16 +958,17 @@ def get_concept_usage(resource, builder):
         data = {
             "name": concept[1],
             "description": process_markdown(resource, concept[2]),
-            "usage": separate_camel(usage),
+            "usage": separate_camel(usage).replace("General Usage", "General"),
             "url": concept_lookup.get(stripped_name, [None, None])[1],
             "applicable_relationships": get_applicable_relationships(usage, stripped_name, groups[-1]["name"])
         }
         groups[-1]["concepts"].append(data)
 
-    return {
-        "number": SectionNumberGenerator.generate(),
-        "groups": groups,
-    }
+    if groups:
+        return {
+            "number": SectionNumberGenerator.generate(),
+            "groups": groups,
+        }
 
 
 def get_formal_representation(resource):

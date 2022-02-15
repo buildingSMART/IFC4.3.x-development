@@ -1333,26 +1333,18 @@ def content(s="cover"):
 
 @app.route(make_url("annex-a.html"))
 def annex_a():
-    url = "https://github.com/buildingSMART/IFC4.3.x-output/blob/master/IFC.exp"
-    html = (
-        "<h2>Computer interpretable listings</h2>"
-        + "<p>This annex contains a listing of the complete schema combining all definitions of clauses 5, 6, 7, and 8 without comments "
-        + "or other explanatory text. These listings are available in computer-interpretable form that may be parsed by computer.</p>"
-        + "<p>Official schema publications for this release are at the following URLs:</p>"
-        + (
-            tabulate.tabulate([["IFC EXPRESS long form schema", "%s"]], headers=["Format", "URL"], tablefmt="html")
-            % ("<a href='%(url)s'>%(url)s</a>" % locals())
-        )
-    )
+    listings = [
+        {
+            "format": "IFC EXPRESS long form schema",
+            "url": "https://github.com/buildingSMART/IFC4.3.x-output/blob/master/IFC.exp",
+        }
+    ]
     return render_template(
-        "chapter.html",
+        "annex-a.html",
         base=base,
         navigation=get_navigation(),
-        content=html,
-        path=None,
+        listings=listings,
         title="Annex A",
-        number="",
-        subs=[],
     )
 
 

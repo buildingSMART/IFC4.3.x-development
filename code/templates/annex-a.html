@@ -1,0 +1,29 @@
+{% extends "main.html" %}
+{% block pagecontent %}
+
+<h1>Annex A Computer interpretable listings</h1>
+
+<p>
+    This annex contains a listing of the complete schema combining all definitions of clauses 5, 6, 7, and 8 without comments or other explanatory text. These listings are available in computer-interpretable form that may be parsed by computer.
+</p>
+<p>
+    Official schema publications for this release are at the following URLs:
+</p>
+
+<table class="striped">
+    <thead>
+        <tr>
+            <th>Format</th>
+            <th>URL</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for listing in listings %}
+        <tr>
+            <td data-label="Format">{{ listing.format }}</td>
+            <td data-label="URL"><a href="{{ listing.url }}">{{ listing.url }}</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

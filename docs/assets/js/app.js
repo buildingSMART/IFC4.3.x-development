@@ -14,22 +14,10 @@ function renderToggleIcon(element) {
     }
 }
 
-function replaceReadMoreWithIcon(element) {
-    let elements = element.getElementsByTagName('a');
-    for (let i=0; i<elements.length; i++) {
-        let a = elements[i];
-        if (a.innerText == 'Read more') {
-            a.classList.add('read-more')
-            a.innerHTML = '<small>Read more</small> ';
-        }
-    }
-}
-
 let elements = document.querySelectorAll('h3, h4, h5, h6');
 for (let i=0; i<elements.length; i++) {
     let element = elements[i];
     renderToggleIcon(element);
-    replaceReadMoreWithIcon(element);
 
     element.onclick = function(e) {
         let hide = e.target.classList.toggle('collapsed');

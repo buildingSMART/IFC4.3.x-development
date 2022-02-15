@@ -182,37 +182,4 @@
 {{ formal_representation.express }}
 </pre>
 {% endif %}
-
-{% if changelog %}
-<h3>
-    {{ changelog.number }} Changelog
-</h3>
-{% for section in changelog.sections %}
-<h4>
-    {{ section.number }} {{ section.name }}
-</h4>
-<table class="striped changelog">
-    <thead>
-        <tr>
-            <th>Type</th>
-            <th>Location</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for change in section.changes %}
-        <tr>
-            <td data-label="Type">
-                {% if change.is_addition %}<i data-feather="plus-square"></i>{% endif %}
-                {% if change.is_deletion %}<i data-feather="x-square"></i>{% endif %}
-                {% if change.is_modification %}<i data-feather="edit"></i>{% endif %}
-            </td>
-            <td data-label="Location">{{ change.what_changed }}</td>
-            <td data-label="Description">{{ change.description }}</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
-{% endfor %}
-{% endif %}
 {% endblock %}

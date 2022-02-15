@@ -199,23 +199,16 @@ td p:nth-child(1) {
     /* So that paragraphs in tds and simple tds line up */
     margin-top: 0px;
 }
-table.changelog {
-    width: 100%;
+ul.changelog {
+    list-style: none;
 }
-table.changelog thead tr th:nth-child(1) {
-    width: 5%;
-}
-table.changelog thead tr th:nth-child(2) {
-    width: 20%;
-}
-table.type-values {
-    width: 100%;
+ul.changelog>li {
+    padding-left: 30px;
+    word-break: break-word;
+    margin-bottom: var(--universal-margin);
 }
 table.type-values thead tr th:nth-child(1) {
     width: 20%;
-}
-table.grouped {
-    width: 100%;
 }
 table.attributes>thead>tr>th:nth-child(1), table.attributes>tbody>tr>td:nth-child(1) {
     text-align: center;
@@ -244,12 +237,21 @@ table.grouped tr.inherited>td>div {
 }
 .feather-plus-square {
     color: var(--green);
+    vertical-align: middle;
+    position: absolute;
+    margin-left: -30px;
 }
 .feather-x-square {
     color: var(--red);
+    vertical-align: middle;
+    position: absolute;
+    margin-left: -30px;
 }
 .feather-edit {
     color: var(--blue);
+    vertical-align: middle;
+    position: absolute;
+    margin-left: -30px;
 }
 .feather-link {
     width: 16px;

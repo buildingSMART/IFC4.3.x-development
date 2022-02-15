@@ -442,14 +442,14 @@ def create_entity_definition(e, bindings):
     table.append((E, "", 1))
     table = table[::-1]
 
-    table = '<<table border="1" cellborder="0" cellspacing="0">%s</table>>' % "".join(
+    table = '<<table border="1" cellborder="0" cellspacing="0" cellpadding="3px">%s</table>>' % "".join(
         "<tr>%s</tr>"
         % "".join(
-            '<td width="%d" height="%d" fixedsize="true" bgcolor="%s" align="left" port="%s%d">%s%s%s</td>'
+            '<td width="%d" height="%d" bgcolor="%s" align="left" port="%s%d">%s%s%s</td>'
             % (
                 [20, 250][i == 0],
                 [24, 18][r[2] == 3],
-                ["white", "gray", "#aaaaff", "#aaaaff"][r[2]],
+                ["white", "#cccccc", "#8dc0f4", "#8dc0f4"][r[2]],
                 r[0],
                 i,
                 "<b>" if r[2] == 3 and c else "",
@@ -920,6 +920,11 @@ def get_entity_inheritance(resource):
 
 
 def get_concept_usage(resource, builder):
+    def get_name(name):
+        if isinstance(name, tuple):
+            return name[1]
+        return name
+
     def get_usage(name):
         name = name.replace(" ", "")
         for view_name, concepts in R.xmi_concepts.items():
@@ -953,10 +958,11 @@ def get_concept_usage(resource, builder):
                 "is_inherited": concept[0] != resource,
                 "concepts": [],
             })
-        usage = get_usage(concept[1])
-        stripped_name = concept[1].replace(" ", "")
+        name = get_name(concept[1])
+        usage = get_usage(name)
+        stripped_name = name.replace(" ", "")
         data = {
-            "name": concept[1],
+            "name": name,
             "description": process_markdown(resource, concept[2]),
             "usage": separate_camel(usage).replace("General Usage", "General"),
             "url": concept_lookup.get(stripped_name, [None, None])[1],

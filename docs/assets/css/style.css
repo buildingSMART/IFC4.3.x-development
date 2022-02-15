@@ -320,3 +320,13 @@ figcaption .feather-link {
     border-radius: 16px;
     vertical-align: middle;
 }
+.inheritance-listing, .inheritance-listing * {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #aaa;
+}
+.inheritance-listing {
+    padding: 0;
+}

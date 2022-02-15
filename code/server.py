@@ -5,6 +5,7 @@ import copy
 import uuid
 import glob
 import json
+import html
 import shutil
 import hashlib
 import operator
@@ -1564,17 +1565,20 @@ def annex_e_example_page(s):
         abort(404)
 
     fn = glob.glob(os.path.join(REPO_DIR, "../examples/IFC 4.3", s, "*.md"))[0]
-    html = "<p></p>" + markdown.markdown(open(fn).read(), extensions=["tables", "fenced_code"])
-    code = open(glob.glob(os.path.join(REPO_DIR, "../examples/IFC 4.3", s, "*.ifc"))[0]).read()
-    html += "<h2>Source</h2>"
-    html += "<pre>" + code + "</pre>"
+    html_builder = "<p></p>" + markdown.markdown(open(fn).read(), extensions=["tables", "fenced_code"])
+    code = html.escape(open((\
+        glob.glob(os.path.join(REPO_DIR, "../examples/IFC 4.3", s, "*.ifc"))+\
+        glob.glob(os.path.join(REPO_DIR, "../examples/IFC 4.3", s, "*.xml"))\
+    )[0], encoding='ascii', errors='ignore').read())
+    html_builder += "<h2>Source</h2>"
+    html_builder += "<pre>" + code + "</pre>"
     path_repo = "buildingSMART/Sample-Test-Files"
     path = fn[len(os.path.join(REPO_DIR, "../examples/")):]
     return render_template(
         "chapter.html",
         base=base,
         navigation=get_navigation(),
-        content=html,
+        content=html_builder,
         path=path,
         title="Annex E",
         number="",

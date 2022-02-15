@@ -669,7 +669,6 @@ def process_markdown(resource, mdc, as_attribute=False):
 
     # Change svg img references to embedded svg because otherwise URLS are not interactive
     for img in soup.findAll("img"):
-        parent = img.parent
         if img["src"].endswith(".svg"):
             entity, hash = img["src"].split("/")[-1].split(".")[0].split("_")
             svg = BeautifulSoup(open(os.path.join("svgs", entity + "_" + hash + ".dot.svg")))
@@ -679,28 +678,7 @@ def process_markdown(resource, mdc, as_attribute=False):
             pass
         else:
             img["src"] = img["src"][9:]
-        # Capture images as numbered figures
-        has_caption = False
-        for i, sibling in enumerate(parent.find_next_siblings()):
-            if i > 2 or sibling.name.lower() not in ("p", "blockquote"):
-                # If we've gone this far without encountering a caption, something is wrong so let's stop
-                break
-            if sibling.name == "p" and (sibling.find("img") or sibling.find("svg")):
-                # This is another image, so it's obviously not a caption
-                break
-            if sibling.name == "p" and sibling.text.startswith("Figure"):
-                has_caption = True
-                sibling.name = "figcaption"
-                # Make sure the caption is directly under the image
-                parent.insert(1, sibling.extract())
-                break
-            else:
-                parent.append(sibling.extract())
-        if not has_caption:
-            caption = soup.new_tag("figcaption")
-            caption.string = "Figure " + str(uuid.uuid4())
-            parent.append(caption)
-        parent.name = "figure"
+
 
     # Tag all special notes separately. In markdown they are all lumped in a single block quote.
     for blockquote in soup.findAll("blockquote"):
@@ -1067,7 +1045,9 @@ class FigureNumberer:
     def replace_references(cls, html):
         for placeholder_number, generated_number in cls.index.items():
             html = html.replace(f"Figure {placeholder_number}", f"Figure {generated_number}")
-            html = html.replace(f"Figure-{placeholder_number}", f"Figure {generated_number}")
+            html = html.replace(f"Figure-{placeholder_number}", f"Figure-{generated_number}")
+            html = html.replace(f"Table {placeholder_number}", f"Table {generated_number}")
+            html = html.replace(f"Table-{placeholder_number}", f"Table-{generated_number}")
         return html
 
 
@@ -1677,6 +1657,59 @@ def after(response):
 
         # I know, I know, string to dom to string to dom to ...
         soup = BeautifulSoup(html)
+
+        main_content = soup.find_all(id="main-content")[0]
+
+        for img in main_content.findAll("img"):
+            # Capture images as numbered figures
+            parent = img.parent
+            has_caption = False
+            for i, sibling in enumerate(parent.find_next_siblings()):
+                if i > 2 or sibling.name.lower() not in ("p", "blockquote", "aside"):
+                    # If we've gone this far without encountering a caption, something is wrong so let's stop
+                    break
+                if sibling.name == "p" and (sibling.find("img") or sibling.find("table") or sibling.find("svg")):
+                    # This is another figure or table, so it's obviously not a caption
+                    break
+                if sibling.name == "p" and sibling.text.startswith("Figure"):
+                    has_caption = True
+                    sibling.name = "figcaption"
+                    # Make sure the caption is directly under the image
+                    parent.insert(1, sibling.extract())
+                    break
+                else:
+                    parent.append(sibling.extract())
+            if not has_caption:
+                caption = soup.new_tag("figcaption")
+                caption.string = "Figure " + str(uuid.uuid4())
+                parent.append(caption)
+            parent.name = "figure"
+
+        for table in main_content.findAll("table"):
+            figure = soup.new_tag("figure")
+            table.insert_before(figure)
+            figure.append(table.extract())
+            parent = figure
+            has_caption = False
+            for i, sibling in enumerate(parent.find_next_siblings()):
+                if i > 2 or sibling.name.lower() not in ("p", "blockquote"):
+                    # If we've gone this far without encountering a caption, something is wrong so let's stop
+                    break
+                if sibling.name == "p" and (sibling.find("img") or sibling.find("table") or sibling.find("svg")):
+                    # This is another figure or table, so it's obviously not a caption
+                    break
+                if sibling.name == "p" and sibling.text.startswith("Figure"):
+                    has_caption = True
+                    sibling.name = "figcaption"
+                    # Make sure the caption is directly under the image
+                    parent.insert(1, sibling.extract())
+                    break
+                else:
+                    parent.append(sibling.extract())
+            if not has_caption:
+                caption = soup.new_tag("figcaption")
+                caption.string = "Table " + str(uuid.uuid4())
+                parent.append(caption)
 
         for figure in soup.findAll("figure"):
             for figcaption in figure.findAll("figcaption"):

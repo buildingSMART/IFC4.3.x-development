@@ -644,7 +644,7 @@ def property(prop):
     html += tabulate.tabulate(psets, headers=["Referenced in"], tablefmt="html")
 
     return render_template(
-        "entity.html",
+        "property.html",
         base=base,
         navigation=get_navigation(),
         content=html,

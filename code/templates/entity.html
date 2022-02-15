@@ -35,7 +35,7 @@
 <ol class="tier">
 {% for tier in entity_inheritance.graph %}
     <li>
-        <i data-feather="arrow-up-circle"></i>
+        <i data-feather="arrow-up"></i>
         <ul class="classes">
         {% for class in tier %}
             <li class="{% if class.is_abstract %}abstract{% endif %} {% if class.is_deprecated %}deprecated{% endif %} {% if class.is_current %}current{% endif %} {% if class.is_ancestor %}ancestor{% endif %}">{{ class.name }}</li>

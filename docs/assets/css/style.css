@@ -159,14 +159,14 @@ ol.tier>li {
 ol.tier>li:last-child {
     border-bottom: 0px;
 }
-ol.tier>li>.feather-arrow-up-circle {
+ol.tier>li>.feather-arrow-up {
     position: absolute;
     margin-top: calc(-12px - var(--universal-margin));
     background-color: var(--back-color);
     color: var(--blue);
     margin-left: 87px;
 }
-ol.tier>li:first-child>.feather-arrow-up-circle {
+ol.tier>li:first-child>.feather-arrow-up {
     display: none;
 }
 ul.classes {

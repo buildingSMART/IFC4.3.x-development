@@ -271,15 +271,17 @@ def get_inheritance_graph(current_entity):
         else:
             siblings = [entity]
         for sibling in siblings:
-            tier.append(
-                {
-                    "name": sibling,
-                    "is_deprecated": sibling in R.deprecated_entities,
-                    "is_abstract": sibling in R.abstract_entities,
-                    "is_current": sibling == current_entity,
-                    "is_ancestor": sibling == entity,
-                }
-            )
+            data = {
+                "name": sibling,
+                "is_deprecated": sibling in R.deprecated_entities,
+                "is_abstract": sibling in R.abstract_entities,
+                "is_current": sibling == current_entity,
+                "is_ancestor": sibling == entity,
+            }
+            if data["is_current"] or data["is_ancestor"]:
+                tier.insert(0, data)
+            else:
+                tier.append(data)
         graph.append(tier)
         entity, old = R.entity_supertype.get(entity), entity
     return reversed(graph)

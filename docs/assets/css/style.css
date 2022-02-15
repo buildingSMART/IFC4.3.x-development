@@ -159,17 +159,21 @@ ol.tier>li {
 ol.tier>li:last-child {
     border-bottom: 0px;
 }
-ol.tier>li>.feather-arrow-down-circle {
+ol.tier>li>.feather-arrow-up-circle {
     position: absolute;
     margin-top: calc(-12px - var(--universal-margin));
     background-color: var(--back-color);
-    color: var(--border-color);
-    margin-left: 90px;
+    color: var(--blue);
+    margin-left: 87px;
 }
-ol.tier>li:first-child>.feather-arrow-down-circle {
+ol.tier>li:first-child>.feather-arrow-up-circle {
     display: none;
 }
 ul.classes {
+    margin-left: 172px;
+}
+ul.classes li:first-child {
+    margin-left: -172px;
 }
 ul.classes li {
     display: inline-block;

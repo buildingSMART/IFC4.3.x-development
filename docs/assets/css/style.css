@@ -142,6 +142,15 @@ code {
 h4 a:hover {
     text-decoration: none;
 }
+ul.psets>li {
+    width: 33%;
+    display: inline-block;
+}
+ul.psets>li:before{
+    content: "";
+    display: list-item;
+    position: absolute;
+}
 ol.referenced-list {
     list-style: none;
 }

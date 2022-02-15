@@ -784,6 +784,7 @@ def resource(resource):
             entity_inheritance=get_entity_inheritance(resource),
             attributes=get_attributes(resource, builder),
             formal_propositions=get_formal_propositions(resource, builder),
+            property_sets=get_property_sets(resource, builder),
             concept_usage=get_concept_usage(resource, builder),
             formal_representation=get_formal_representation(resource),
             changelog=get_changelog(resource),
@@ -962,19 +963,41 @@ def get_entity_inheritance(resource):
         traceback.print_exc()
 
 
+def get_property_sets(resource, builder):
+    concepts = list(builder.concepts)
+    psets = []
+    for concept in concepts:
+        name = get_concept_name(concept[1])
+        if "Property Sets" not in name and "Quantity Sets" not in name:
+            continue
+        usage = get_usage_name(name)
+        stripped_name = name.replace(" ", "")
+        relationships = get_applicable_relationships(usage, stripped_name, concept[0])
+        if relationships:
+            psets += relationships
+
+    if psets:
+        return {
+            "number": SectionNumberGenerator.generate(),
+            "psets": sorted(psets, key=lambda x: x["name"]),
+        }
+
+
+def get_concept_name(name):
+    if isinstance(name, tuple):
+        return name[1]
+    return name
+
+
+def get_usage_name(name):
+    name = name.replace(" ", "")
+    for view_name, concepts in R.xmi_concepts.items():
+        if name in concepts:
+            return view_name
+    return "GeneralUsage"
+
+
 def get_concept_usage(resource, builder):
-    def get_name(name):
-        if isinstance(name, tuple):
-            return name[1]
-        return name
-
-    def get_usage(name):
-        name = name.replace(" ", "")
-        for view_name, concepts in R.xmi_concepts.items():
-            if name in concepts:
-                return view_name
-        return "GeneralUsage"
-
     ty = resource
     supertype_chain = []
     while ty is not None:

@@ -120,6 +120,24 @@
 </table>
 {% endif %}
 
+{% if property_sets %}
+<h2>
+    {{ property_sets.number }} Property sets
+</h2>
+<p>
+    <ul class="psets">
+    {% for pset in property_sets.psets %}
+        <li>
+            {{ pset.name }}
+            {% if pset.predefined_type %}
+            (<code>{{ pset.predefined_type }})
+            {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+<p>
+{% endif %}
+
 {% if concept_usage %}
 <h2>
     {{ concept_usage.number }} Concept usage

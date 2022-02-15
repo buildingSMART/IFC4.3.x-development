@@ -25,8 +25,8 @@ direction of the X, Y, and Z axis.</p>
 </table>
 
 { .extDef}
-> NOTE&nbsp; Definition according to ISO/CD 10303-42:1992  
-> A block is a solid rectangular parallelepiped, defined with a location and placement coordinate system. The block is specified by the positive lengths x, y, and z along the axes of the placement coordinate system, and has one vertex at the origin of the placement coordinate system.
+> NOTE&nbsp; Definition according to ISO 10303-42
+> A block is a type of geometric representation item which is a solid rectangular parallelepiped, defined with a location and placement coordinate system. The block is specified by the positive lengths x, y, and z along the axes of the placement coordinate system, and has one vertex at the origin of the placement coordinate system.
 
 > NOTE&nbsp; Entity adapted from **block** defined in ISO 10303-42.
 

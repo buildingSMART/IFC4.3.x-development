@@ -242,7 +242,9 @@ def name_to_number():
 
     for i, (cat, schemas) in enumerate(R.hierarchy, start=5):
         for j, (schema_name, members) in enumerate(schemas, start=1):
-            for k, ke in enumerate(["Types", "Entities", "Property Sets", "Quantity Sets", "Functions", "Rules"], start=2):
+            for k, ke in enumerate(
+                ["Types", "Entities", "Property Sets", "Quantity Sets", "Functions", "Rules"], start=2
+            ):
                 for l, name in enumerate(members.get(ke, ()), start=1):
                     ntn[name] = ".".join(map(str, (i, j, k, l)))
 
@@ -480,7 +482,7 @@ def create_entity_definition(e, bindings):
 
 
 def process_graphviz_concept(name, md):
-    graphviz_code = filter(lambda s: s.strip().startswith("concept"), re.findall("```(.*?)```", md, re.S))    
+    graphviz_code = filter(lambda s: s.strip().startswith("concept"), re.findall("```(.*?)```", md, re.S))
 
     for c in graphviz_code:
 
@@ -488,7 +490,7 @@ def process_graphviz_concept(name, md):
         fn = os.path.join("svgs", name + "_" + hash + ".dot")
         c2 = c.replace("concept", "digraph")  # transform_graph(current_entity, c, only_urls=is_figure(c) == 2)
 
-        c2 = re.sub('(?<=\w)\-(?=\w)', '', c2)
+        c2 = re.sub("(?<=\w)\-(?=\w)", "", c2)
 
         nodes = set(n.split(":")[0] for n in (re.findall("([\:\w]+)\s*\->", c2) + re.findall("\->\s*([\:\w]+)", c2)))
 
@@ -581,21 +583,21 @@ class resource_documentation_builder:
         ty = self.resource
         while ty:
             md_ty_fn = get_resource_path(ty)
-            
+
             try:
                 md_ty = re.sub(DOC_ANNOTATION_PATTERN, "", open(md_ty_fn, encoding="utf-8").read())
             except:
                 # @todo
                 ty = R.entity_supertype.get(ty)
                 continue
-                
+
             try:
                 ty_attrs = list(mdp.markdown_attribute_parser(md_ty, heading))
             except:
                 # @todo change markdown parser
                 ty = R.entity_supertype.get(ty)
                 continue
-                
+
             if heading == "Attributes":
                 ty_attr_di = dict(ty_attrs)
                 for a in [k.split(".")[1] for k in R.entity_attributes.keys() if k.startswith(f"{ty}.")][::-1]:
@@ -702,7 +704,6 @@ def process_markdown(resource, mdc, as_attribute=False):
             pass
         else:
             img["src"] = img["src"][9:]
-
 
     # Tag all special notes separately. In markdown they are all lumped in a single block quote.
     for blockquote in soup.findAll("blockquote"):
@@ -935,21 +936,24 @@ def get_attributes(resource, builder):
         "groups": results,
     }
 
+
 def get_formal_propositions(resource, builder):
     if not builder:
         return
-        
+
     defs = {k[1]: k[2] for k in builder.formal_propositions}
     clauses = R.entity_where_clauses.get(resource, [])
-    
+
     if not clauses:
         return
-    
+
     return {
         "number": SectionNumberGenerator.generate(),
-        "items": [{'name': c[0], 'formal': c[1], 'description': defs.get(c[0])} for c in clauses]
+        "items": [
+            {"name": c[0], "formal": c[1], "description": process_markdown(resource, defs.get(c[0]))} for c in clauses
+        ],
     }
-    
+
 
 def get_entity_inheritance(resource):
     try:
@@ -1026,8 +1030,8 @@ def get_concept_usage(resource, builder):
                     "concepts": [],
                 }
             )
-        name = get_name(concept[1])
-        usage = get_usage(name)
+        name = get_concept_name(concept[1])
+        usage = get_usage_name(name)
         stripped_name = name.replace(" ", "")
         data = {
             "name": name,
@@ -1428,7 +1432,9 @@ def annotate_hierarchy(data=None, start=1, number_path=None):
         elif len(number_path) == 1:
             return url_for("schema", name=text.lower())
         elif len(number_path) == 2:
-            fragment = (".".join(list(map(operator.itemgetter(0), number_path)) + [str(idx)]) + "-" + text).replace(" ", "-")
+            fragment = (".".join(list(map(operator.itemgetter(0), number_path)) + [str(idx)]) + "-" + text).replace(
+                " ", "-"
+            )
             return url_for("schema", name=number_path[1][1].lower()) + f"#{fragment}"
         elif len(number_path) == 3:
             return url_for("resource", resource=text)
@@ -1589,14 +1595,20 @@ def annex_e_example_page(s):
 
     fn = glob.glob(os.path.join(REPO_DIR, "../examples/IFC 4.3", s, "*.md"))[0]
     html_builder = "<p></p>" + markdown.markdown(open(fn).read(), extensions=["tables", "fenced_code"])
-    code = html.escape(open((\
-        glob.glob(os.path.join(REPO_DIR, "../examples/IFC 4.3", s, "*.ifc"))+\
-        glob.glob(os.path.join(REPO_DIR, "../examples/IFC 4.3", s, "*.xml"))\
-    )[0], encoding='ascii', errors='ignore').read())
+    code = html.escape(
+        open(
+            (
+                glob.glob(os.path.join(REPO_DIR, "../examples/IFC 4.3", s, "*.ifc"))
+                + glob.glob(os.path.join(REPO_DIR, "../examples/IFC 4.3", s, "*.xml"))
+            )[0],
+            encoding="ascii",
+            errors="ignore",
+        ).read()
+    )
     html_builder += "<h2>Source</h2>"
     html_builder += "<pre>" + code + "</pre>"
     path_repo = "buildingSMART/Sample-Test-Files"
-    path = fn[len(os.path.join(REPO_DIR, "../examples/")):]
+    path = fn[len(os.path.join(REPO_DIR, "../examples/")) :]
     return render_template(
         "chapter.html",
         base=base,
@@ -1729,7 +1741,7 @@ def after(response):
 
         main_content = soup.find_all(id="main-content")
         main_content = main_content[0] if len(main_content) else None
-        
+
         if main_content:
 
             for img in main_content.findAll("img"):
@@ -1790,7 +1802,7 @@ def after(response):
 
         for element in soup.findAll(["h2", "h3", "h4", "h5", "h6", "figure"]):
             id_element = element
-            
+
             try:
                 if element.name == "figure":
                     element = element.find("figcaption")
@@ -1800,7 +1812,7 @@ def after(response):
             except:
                 # @todo IfcPerformanceHistory
                 continue
-            
+
             anchor_tag = re.sub("[^0-9a-zA-Z.]+", "-", value)
 
             anchor_id = soup.new_tag("a")

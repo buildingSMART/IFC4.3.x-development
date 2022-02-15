@@ -109,14 +109,30 @@
 
 {% if formal_propositions %}
 <h2>
-    {{ formal_propositions.number }} Formal Propositions
+    {{ formal_propositions.number }} Formal propositions
 </h2>
 <table>
-{% for row in formal_propositions["items"] %}
-<tr>
-<td>{{ row.name }}<td>{{ row.description }}<br><pre>{{ row.formal }}</pre>
-</tr>
-{% endfor %}
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for row in formal_propositions["items"] %}
+        <tr>
+            <td>{{ row.name }}</td>
+            <td>
+                {{ row.description | safe }}
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <pre>{{ row.formal }}</pre>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
 </table>
 {% endif %}
 

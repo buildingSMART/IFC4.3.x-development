@@ -1645,7 +1645,7 @@ def sandcastle():
     return render_template("sandcastle.html", base=base, html=html, md=md)
 
 
-ifcre = re.compile(r"(Ifc|Pset_|Qto_)\w+(?!(.ht|</a|</h|/|.md))")
+ifcre = re.compile(r"(Ifc|Pset_|Qto_)\w+(?!(.ht|</a|</h|.md))")
 
 
 @app.after_request

@@ -479,13 +479,15 @@ def create_entity_definition(e, bindings):
 
 
 def process_graphviz_concept(name, md):
-    graphviz_code = filter(lambda s: s.strip().startswith("concept"), re.findall("```(.*?)```", md, re.S))
+    graphviz_code = filter(lambda s: s.strip().startswith("concept"), re.findall("```(.*?)```", md, re.S))    
 
     for c in graphviz_code:
 
         hash = hashlib.sha256(c.encode("utf-8")).hexdigest()
         fn = os.path.join("svgs", name + "_" + hash + ".dot")
         c2 = c.replace("concept", "digraph")  # transform_graph(current_entity, c, only_urls=is_figure(c) == 2)
+
+        c2 = re.sub('(?<=\w)\-(?=\w)', '', c2)
 
         nodes = set(n.split(":")[0] for n in (re.findall("([\:\w]+)\s*\->", c2) + re.findall("\->\s*([\:\w]+)", c2)))
 

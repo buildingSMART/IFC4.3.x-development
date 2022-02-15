@@ -706,7 +706,10 @@ def process_markdown(resource, mdc, as_attribute=False):
                 keyword, keyword2, contents = p.text.split(" ", 2)
                 keyword = "-".join((keyword, keyword2))
             keyword = keyword.strip()
-            aside["class"] = f"aside-{keyword.lower()}"
+            css_class = keyword.lower()
+            if "addendum" in css_class or "change" in css_class:
+                css_class = "change"
+            aside["class"] = f"aside-{css_class}"
             mark = soup.new_tag("mark")
             mark.string = keyword
             aside.string = contents

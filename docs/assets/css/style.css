@@ -65,9 +65,7 @@ aside {
 aside mark {
     margin-right: var(--universal-margin);
 }
-aside.aside-ifc4-change mark,
-aside.aside-ifc2x3-change mark,
-aside.aside-ifc2x2-change mark {
+aside.aside-change mark {
     background-color: var(--yellow);
 }
 aside.aside-history mark {
@@ -212,6 +210,9 @@ table.type-values thead tr th:nth-child(1) {
 }
 table.attributes>thead>tr>th:nth-child(1), table.attributes>tbody>tr>td:nth-child(1) {
     text-align: center;
+}
+table.grouped {
+    width: calc(100% - 2 * var(--universal-margin));
 }
 table.grouped tr.group-inherited td {
     background: var(--dark);

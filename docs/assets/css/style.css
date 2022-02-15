@@ -114,7 +114,10 @@ h5 {
     font-style: italic;
 }
 h2:hover, h3:hover, h4:hover, h5:hover {
-  cursor: pointer;
+    cursor: pointer;
+}
+h2:hover a:first-child, h3:hover:first-child a, h4:hover:first-child a, h5:hover:first-child a {
+    color: var(--link-hover);
 }
 figure {
     text-align: center;

@@ -1044,7 +1044,6 @@ class FigureNumberer:
 
     @classmethod
     def generate(cls, figure, number):
-        print('generating for', number)
         previous_header = None
         headers = [f"h{i}" for i in range(2, 7)]
         while True:
@@ -1062,13 +1061,13 @@ class FigureNumberer:
             while generated_number in cls.index.values():
                 alphabet = chr(ord(alphabet) + 1)
                 generated_number = parent_number + "." + alphabet
-            print(generated_number)
             cls.index[number] = generated_number
 
     @classmethod
     def replace_references(cls, html):
         for placeholder_number, generated_number in cls.index.items():
             html = html.replace(f"Figure {placeholder_number}", f"Figure {generated_number}")
+            html = html.replace(f"Figure-{placeholder_number}", f"Figure {generated_number}")
         return html
 
 

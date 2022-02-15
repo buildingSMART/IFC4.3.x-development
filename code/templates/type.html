@@ -1,18 +1,18 @@
 {% extends "main.html" %}
 {% block pagecontent %}
 
-<h2>{{ number }} {{ entity}}</h2>
+<h1>{{ number }} {{ entity}}</h1>
 
-<h3>
+<h2>
     {{ definition_number }} Semantic definition
-</h3>
+</h2>
 
 {{ content | safe }}
 
 {% if type_values %}
-<h3>
+<h2>
     {{ type_values.number }} Type values
-</h3>
+</h2>
 <table class="striped type-values">
     <thead>
         <tr>
@@ -46,9 +46,9 @@
 {% endif %}
 
 {% if formal_representation %}
-<h3>
+<h2>
     {{ formal_representation.number }} Formal representation
-</h3>
+</h2>
 <pre>
 {{ formal_representation.express }}
 </pre>

@@ -1,18 +1,18 @@
 {% extends "main.html" %}
 {% block pagecontent %}
 
-<h2>{{ number }} {{ entity}}</h2>
+<h1>{{ number }} {{ entity}}</h1>
 
-<h3>
+<h2>
     {{ definition_number }} Semantic definition
-</h3>
+</h2>
 
 {{ content | safe }}
 
 {% if applicability %}
-<h3>
+<h2>
     {{ applicability.number }} Applicable entities
-</h3>
+</h2>
 <ul>
     {% for entity in applicability.entities %}
     <li>{{ entity }}</li>
@@ -21,9 +21,9 @@
 {% endif %}
 
 {% if properties %}
-<h3>
+<h2>
     {{ properties.number }} Properties
-</h3>
+</h2>
 {{ properties.table | safe }}
 {% endif %}
 {% endblock %}

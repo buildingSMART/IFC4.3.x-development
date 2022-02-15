@@ -659,11 +659,6 @@ def process_markdown(resource, mdc, as_attribute=False):
     if as_attribute:
         return str(soup.text)
 
-    # Renumber the headings
-    for i in list(range(7))[::-1]:
-        for h in soup.findAll("h%d" % i):
-            h.name = "h%d" % (i + 2)
-
     # Change svg img references to embedded svg because otherwise URLS are not interactive
     for img in soup.findAll("img"):
         parent = img.parent
@@ -1606,7 +1601,7 @@ def after(response):
                 number = figcaption.text.split(" ", 2)[1]
                 FigureNumberer.generate(figure, number)
 
-        for element in soup.findAll(["h3", "h4", "h5", "h6", "figure"]):
+        for element in soup.findAll(["h2", "h3", "h4", "h5", "h6", "figure"]):
             id_element = element
             if element.name == "figure":
                 element = element.find("figcaption")

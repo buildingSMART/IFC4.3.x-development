@@ -1,7 +1,7 @@
 {% extends "main.html" %}
 {% block pagecontent %}
 
-<h2>{{ number }} {{ entity}}</h2>
+<h1>{{ number }} {{ entity}}</h1>
 
 {% if is_deprecated %}
 <div class="row">
@@ -22,16 +22,16 @@
 </div>
 {% endif %}
 
-<h3>
+<h2>
     {{ definition_number }} Semantic definition
-</h3>
+</h2>
 
 {{ definition | safe }}
 
 {% if entity_inheritance %}
-<h3>
+<h2>
     {{ entity_inheritance.number }} Entity inheritance
-</h3>
+</h2>
 <ol class="tier">
 {% for tier in entity_inheritance.graph %}
     <li>
@@ -47,9 +47,9 @@
 {% endif %}
 
 {% if attributes %}
-<h3>
+<h2>
     {{ attributes.number }} Attributes
-</h3>
+</h2>
 <!-- <a class="button primary hide-inverse"><i data-feather="eye-off"></i> Hide inverse</a> -->
 <table class="striped grouped attributes">
     <colgroup>
@@ -108,9 +108,9 @@
 {% endif %}
 
 {% if concept_usage %}
-<h3>
+<h2>
     {{ concept_usage.number }} Concept usage
-</h3>
+</h2>
 
 <table class="striped grouped concepts">
     <thead>
@@ -175,9 +175,9 @@
 {% endif %}
 
 {% if formal_representation %}
-<h3>
+<h2 class="collapsed">
     {{ formal_representation.number }} Formal representation
-</h3>
+</h2>
 <pre>
 {{ formal_representation.express }}
 </pre>

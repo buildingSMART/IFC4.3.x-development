@@ -14,24 +14,30 @@ function renderToggleIcon(element) {
     }
 }
 
-let elements = document.querySelectorAll('h3, h4, h5, h6');
+function refreshCollapsed(element) {
+    let hide = element.classList.contains('collapsed');
+    renderToggleIcon(element);
+
+    let headerLevel = element.tagName.slice(-1);
+    let sibling = element.nextElementSibling;
+    while (sibling) {
+        if (sibling.tagName.slice(0, 1) == 'H' && sibling.tagName.slice(-1) <= headerLevel)  {
+            break;
+        }
+        sibling.style.display = hide ? 'none' : '';
+        sibling = sibling.nextElementSibling;
+    }
+}
+
+let elements = document.querySelectorAll('h2, h3, h4, h5, h6');
 for (let i=0; i<elements.length; i++) {
     let element = elements[i];
     renderToggleIcon(element);
+    refreshCollapsed(element);
 
     element.onclick = function(e) {
-        let hide = e.target.classList.toggle('collapsed');
-        renderToggleIcon(element);
-
-        let headerLevel = e.target.tagName.slice(-1);
-        let elem = e.target.nextElementSibling;
-        while (elem) {
-            if (elem.tagName.slice(0, 1) == 'H' && elem.tagName.slice(-1) <= headerLevel)  {
-                break;
-            }
-            elem.style.display = hide ? 'none' : '';
-            elem = elem.nextElementSibling;
-        }
+        e.target.classList.toggle('collapsed');
+        refreshCollapsed(e.target);
     }
 }
 

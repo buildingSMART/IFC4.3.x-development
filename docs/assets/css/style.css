@@ -41,6 +41,9 @@ a {
 a:hover {
     color: var(--link-hover);
 }
+img {
+    box-shadow:var(--generic-box-shadow) !important;
+}
 pre {
     padding: var(--universal-padding);
     border: solid 1px var(--border-color);
@@ -103,7 +106,7 @@ h5 {
     font-size: calc(1rem * var(--heading-ratio));
     font-style: italic;
 }
-h3:hover, h4:hover, h5:hover {
+h2:hover, h3:hover, h4:hover, h5:hover {
   cursor: pointer;
 }
 figure {
@@ -196,6 +199,15 @@ ul.classes li.current a {
 td p:nth-child(1) {
     /* So that paragraphs in tds and simple tds line up */
     margin-top: 0px;
+}
+div.changelog {
+    opacity: 0.2;
+    -webkit-transition: opacity 0.3s ease-in-out;
+    -moz-transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
+}
+div.changelog:hover {
+    opacity: 1;
 }
 ul.changelog {
     list-style: none;

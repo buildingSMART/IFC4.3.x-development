@@ -46,42 +46,42 @@
             </div>
             <div class="col-md-2">
                 {% if path %}
-                <div class="col-sm-12">
-                    <div class="card fluid shadowed">
-                        <p>
-                            <a class="button primary edit-github" href='https://github.com/buildingSMART/IFC4.3.x-development/blob/master/{{ path }}'><span class="icon-edit inverse"></span> Edit on Github</a>
-                        </p>
-                        <p>
-                            <small>
-                                <span id="contributors"></span><br />
-                                <span id="last-change"></span>
-                            </small>
-                        </p>
-                    </div>
+                <div class="card fluid shadowed">
+                    <p>
+                        <a class="button primary edit-github" href='https://github.com/buildingSMART/IFC4.3.x-development/blob/master/{{ path }}'><span class="icon-edit inverse"></span> Edit on Github</a>
+                    </p>
+                    <p>
+                        <small>
+                            <span id="contributors"></span><br />
+                            <span id="last-change"></span>
+                        </small>
+                    </p>
                 </div>
                 {% endif %}
                 {% if changelog %}
-                <h3>
-                    {{ changelog.number }} Changelog
-                </h3>
-                {% for section in changelog.sections %}
-                <h4>
-                    {{ section.number }} {{ section.name }}
-                </h4>
-                <ul class="changelog">
-                    {% for change in section.changes %}
-                    <li>
-                        <small>
-                            {% if change.is_addition %}<i data-feather="plus-square"></i>{% endif %}
-                            {% if change.is_deletion %}<i data-feather="x-square"></i>{% endif %}
-                            {% if change.is_modification %}<i data-feather="edit"></i>{% endif %}
-                            {{ change.what_changed }},
-                            {{ change.description }}
-                        </small>
-                    </li>
+                <div class="changelog">
+                    <h3>
+                        {{ changelog.number }} Changelog
+                    </h3>
+                    {% for section in changelog.sections %}
+                    <h4 class="collapsed">
+                        {{ section.number }} {{ section.name }}
+                    </h4>
+                    <ul class="changelog">
+                        {% for change in section.changes %}
+                        <li>
+                            <small>
+                                {% if change.is_addition %}<i data-feather="plus-square"></i>{% endif %}
+                                {% if change.is_deletion %}<i data-feather="x-square"></i>{% endif %}
+                                {% if change.is_modification %}<i data-feather="edit"></i>{% endif %}
+                                {{ change.what_changed }},
+                                {{ change.description }}
+                            </small>
+                        </li>
+                        {% endfor %}
+                    </ul>
                     {% endfor %}
-                </ul>
-                {% endfor %}
+                </div>
                 {% endif %}
             </div>
         </div>

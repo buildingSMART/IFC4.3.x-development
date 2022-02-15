@@ -36,8 +36,15 @@ for (let i=0; i<elements.length; i++) {
     refreshCollapsed(element);
 
     element.onclick = function(e) {
-        e.target.classList.toggle('collapsed');
-        refreshCollapsed(e.target);
+        let target = e.target;
+        if (target.classList.contains('feather-link')) {
+            return;
+        }
+        while (target.tagName.slice(0, 1) != "H") {
+            target = target.parentNode;
+        }
+        target.classList.toggle('collapsed');
+        refreshCollapsed(target);
     }
 }
 

@@ -13,6 +13,7 @@ import subprocess
 
 from collections import defaultdict, Counter
 from dataclasses import dataclass
+from functools import lru_cache
 
 import tabulate
 import pydot
@@ -226,6 +227,7 @@ entity_names = lambda: sorted(sum([schema.get("Entities", []) for _, cat in R.hi
 type_names = lambda: sorted(sum([schema.get("Types", []) for _, cat in R.hierarchy for __, schema in cat], []))
 
 
+@lru_cache()
 def name_to_number():
     ntn = {}
 
@@ -236,6 +238,7 @@ def name_to_number():
                     ntn[name] = ".".join(map(str, (i, j, k, l)))
 
     return ntn
+
 
 def get_inheritance_graph(current_entity):
     graph = []
@@ -274,6 +277,7 @@ def get_inheritance_graph(current_entity):
         graph.append(tier)
         entity, old = R.entity_supertype.get(entity), entity
     return reversed(graph)
+
 
 def get_node_colour(n):
     if R.entity_supertype.get(n) is None:
@@ -513,6 +517,7 @@ def process_graphviz_concept(name, md):
 
     return md
 
+
 def get_applicable_relationships(usage, concept, resource):
     rows = copy.deepcopy(R.xmi_concepts[usage].get(concept, []))
     rows = [r for r in rows if r.get("ApplicableEntity") == resource]
@@ -525,10 +530,7 @@ def get_applicable_relationships(usage, concept, resource):
     data = []
     for row in rows:
         del row["ApplicableEntity"]
-        data.append({
-            "predefined_type": row.pop("PredefinedType", None),
-            "name": list(row.values())[0]
-        })
+        data.append({"predefined_type": row.pop("PredefinedType", None), "name": list(row.values())[0]})
     return data
 
 
@@ -951,11 +953,13 @@ def get_concept_usage(resource, builder):
     groups = []
     for concept in concepts:
         if not groups or groups[-1]["name"] != concept[0]:
-            groups.append({
-                "name": concept[0],
-                "is_inherited": concept[0] != resource,
-                "concepts": [],
-            })
+            groups.append(
+                {
+                    "name": concept[0],
+                    "is_inherited": concept[0] != resource,
+                    "concepts": [],
+                }
+            )
         name = get_name(concept[1])
         usage = get_usage(name)
         stripped_name = name.replace(" ", "")
@@ -964,7 +968,7 @@ def get_concept_usage(resource, builder):
             "description": process_markdown(resource, concept[2]),
             "usage": separate_camel(usage).replace("General Usage", "General"),
             "url": concept_lookup.get(stripped_name, [None, None])[1],
-            "applicable_relationships": get_applicable_relationships(usage, stripped_name, groups[-1]["name"])
+            "applicable_relationships": get_applicable_relationships(usage, stripped_name, groups[-1]["name"]),
         }
         groups[-1]["concepts"].append(data)
 
@@ -1121,7 +1125,36 @@ def make_concept(path, number_path=None):
     )
 
 
+def create_concept_table(view_name, xmi_concept, types=None):
+    rows = R.xmi_concepts[view_name][xmi_concept]
+    bindings = [("ApplicableEntity", ("", ""))] + list(
+        parse_bindings(os.path.join(REPO_DIR, "schemas/IFC.xml"), xmi_concept)
+    )
+    bound_keys = set(sum([list(r.keys()) for r in rows], []))
+    bound_keys = [a[0] for a in bindings if a[0] in bound_keys]
+    headers = [f"{a}<br>{b}{'.' if b else ''}{c}" for a, (b, c) in bindings if a in bound_keys]
+    if types is not None:
+        rows = [r for r in rows if r.get("ApplicableEntity") in types]
+    rows = [[r.get(k, "") for k in bound_keys] for r in rows]
+    return headers, rows
+
+
 @app.route(make_url("concepts/content.html"))
+def concept_list():
+    fn = os.path.join(REPO_DIR, "docs", "templates", "README.md")
+    html = process_markdown("", open(fn).read())
+    return render_template(
+        "chapter.html",
+        base=base,
+        navigation=get_navigation(),
+        content=html,
+        path=fn[len(REPO_DIR) :].replace("\\", "/"),
+        title=chapter_lookup(number=4).get("name"),
+        number=4,
+        subs=make_concept([""]).children,
+    )
+
+
 @app.route(make_url("concepts/<path:s>/content.html"))
 def concept(s=""):
     md_root = os.path.join(REPO_DIR, "docs/templates")

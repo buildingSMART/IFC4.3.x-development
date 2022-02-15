@@ -12,7 +12,7 @@ header {
     width: 100%;
     margin-bottom: var(--universal-margin);
 }
-header h1 {
+header p {
     font-size: 12pt;
 }
 nav div {
@@ -33,6 +33,13 @@ footer {
     width: 100%;
     margin-top: var(--universal-margin);
     text-align: center;
+}
+footer img {
+    display: inline-block;
+    float: right;
+}
+h1 {
+    margin-top: 3px;
 }
 a {
     color: var(--link);

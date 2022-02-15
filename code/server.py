@@ -1753,11 +1753,17 @@ def after(response):
 
         for element in soup.findAll(["h2", "h3", "h4", "h5", "h6", "figure"]):
             id_element = element
-            if element.name == "figure":
-                element = element.find("figcaption")
-                value = element.contents[0].strip()
-            else:
-                value = element.contents[0].strip()
+            
+            try:
+                if element.name == "figure":
+                    element = element.find("figcaption")
+                    value = element.contents[0].strip()
+                else:
+                    value = element.contents[0].strip()
+            except:
+                # @todo IfcPerformanceHistory
+                continue
+            
             anchor_tag = re.sub("[^0-9a-zA-Z.]+", "-", value)
 
             anchor_id = soup.new_tag("a")

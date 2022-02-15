@@ -1,6 +1,6 @@
 # IfcTriangulatedFaceSet
 
-The _IfcTriangulatedFaceSet_ is a tessellated face set with all faces being bound by triangles. The faces are constructed by implicit polylines defined by three Cartesian points. Depending on the value of the attribute _Closed_ the instance of _IfcTriangulatedFaceSet_ represents:
+The _IfcTriangulatedFaceSet_ is a tessellated face set with all faces being bound by triangles. The faces are constructed by implicit polylines defined by three Cartesian points. Depending on the value of the inherited attribute _Closed_ the instance of _IfcTriangulatedFaceSet_ represents:
 
 * if TRUE, a boundary represention (or B-rep);
 * if FALSE, a face based surface representation.
@@ -12,11 +12,11 @@ The coordinates of each point are provided by a one-based index into an ordered 
 
 Depending on the provision of _PnIndex_ the indices point either directly into the _IfcCartesianPointList3D_ referenced by _Coordinates_ defined at the supertype _IfcTessellatedFaceSet_, or they point into the _PnIndex_ where the integer values at that position provides the location of the coordinate values within the _IfcCartesianPointList3D_. See Figure 1 for the handling of point index.
 
-!["PnIndex"](../../../../figures/ifctriangulatedfaceset_03.png "Figure 1 &mdash; Use of _PnIndex_")
+!["IfcTriangulatedFaceSet_01"](../../../../figures/ifctriangulatedfaceset_03.png "Figure 1 &mdash; Use of _PnIndex_")
 
 See Figure 2 for using the _IfcTriangulatedFaceSet_ without (as default) and with using the _PnIndex_.
 
-!["IfcTriangulatedFaceSet_01"](../../../../figures/ifctriangulatedfaceset_01.png "Figure 2 &mdash; Triangulated face set")
+!["IfcTriangulatedFaceSet_02"](../../../../figures/ifctriangulatedfaceset_01.png "Figure 2 &mdash; Triangulated face set")
 
 Optionally normals can be provided. Only normals per vector are supported allowing for visually curved triangles when the three normals of the corresponding three vertices of a triangle are not co-linear to the normal of the triangular face. If they are identical, normals shall be omited.
 
@@ -24,7 +24,7 @@ Optionally normals can be provided. Only normals per vector are supported allowi
 
 Normals are provided by the two-dimensional list _Normals_, where
 
-* the first dimension of the two-dimensional list addresses the corresponding list of vertex indices of the triangular faces; 
+* the first dimension of the two-dimensional list addresses the corresponding list of vertex indices of the triangular faces;
 * the second dimension of the two-dimensional list provides exactly three real values to determine the direction of the normal at this vertex of the triangle.
 
 The indices in the _CoordIndex_ point into the list of _Normals_. The indices of _CoordIndex_ are applied to both points, either directly directly, or via the _PnIndex_ and normals. See Figure 3 for handling of normals.
@@ -61,7 +61,7 @@ Figure 4 shows the use of _IfcTriangulatedFaceSet_ without annotation. The diagr
 { .spec-head}
 Informal Propositions:
 
-1. If _Closed_ = TRUE, the same topological constraints as imposed by an faceted boundary representation shall be safisfied. In particular: 
+1. If _Closed_ = TRUE, the same topological constraints as imposed by an faceted boundary representation shall be safisfied. In particular:
     * each face shall be unique;
     * each edge shall be used by exactly two boundaries of faces;
     * the topological normal at each point on the boundary of the triangulated face set shall point away from the mater ial of the solid.
@@ -69,16 +69,13 @@ Informal Propositions:
 ## Attributes
 
 ### Normals
-An ordered list of three directions for normals. It is a two-dimensional list of directions provided by three parameter 
+An ordered list of three directions for normals. It is a two-dimensional list of directions provided by three parameter
 values.
 * The first dimension corresponds to the vertex indices of the _Coordindex_
 * The second dimension has exactly three values, [1] the x-direction, [2] the y-direction and [3] the z-directions
 
-### Closed
-Indication whether the _IfcTriangulatedFaceSet_ is a closed shell or not. If omited no such information can be provided.
-
 ### CoordIndex
-Two-dimensional list for the indexed-based triangles, where 
+Two-dimensional list for the indexed-based triangles, where
 * The first dimension represents the triangles (from 1 to N)
 * The second dimension has exactly three values representing the indices to three vertex points (from 1 to 3).
 

@@ -117,9 +117,11 @@ IfcBooleanClippingResult.
 
 
 ![straight wall clipping](../../../../figures/ifcwallstandard_straigthwall_03-layout1.gif)
-![curved wall clipping](../../../../figures/ifcwallstandard_curvedwall_03-layout1.gif)
+
 Figure 283 — Wall body clipping straight
 
+
+![curved wall clipping](../../../../figures/ifcwallstandard_curvedwall_03-layout1.gif)
 
 Figure 284 — Wall body clipping curved
 
@@ -164,9 +166,10 @@ Figure 282 illustrates a body representation for a curved wall. In case of a cur
 
 
 ![straight wall body](../../../../figures/ifcwallstandard_straigthwall_02-layout1.gif)
-![curved wall body](../../../../figures/ifcwallstandard_curvedwall_02-layout1.gif)
+
 Figure 281 — Wall body extrusion straight
 
+![curved wall body](../../../../figures/ifcwallstandard_curvedwall_02-layout1.gif)
 
 Figure 282 — Wall body extrusion curved
 
@@ -206,9 +209,6 @@ occurrences of this IfcWallType.
 Figure 277 — Wall Standard Object Typing
 
 
- 
-
-
 Figure 278 illustrates material layer usage, where the following conventions shall be met:
 
 
@@ -225,6 +225,7 @@ then point into the positive y-axis of the reference coordinate system.
 
 
 ![wall material layer set](../../../../figures/ifcmateriallayersetusage_wall-01.png)
+
 Figure 278 — Wall material layers
 
 

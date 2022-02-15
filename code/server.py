@@ -686,12 +686,16 @@ def process_markdown(resource, mdc, as_attribute=False):
                 # If we've gone this far without encountering a caption, something is wrong so let's stop
                 break
             if sibling.name == "p" and (sibling.find("img") or sibling.find("svg")):
+                # This is another image, so it's obviously not a caption
                 break
-            parent.append(sibling.extract())
             if sibling.name == "p" and sibling.text.startswith("Figure"):
                 has_caption = True
                 sibling.name = "figcaption"
+                # Make sure the caption is directly under the image
+                parent.insert(1, sibling.extract())
                 break
+            else:
+                parent.append(sibling.extract())
         if not has_caption:
             caption = soup.new_tag("figcaption")
             caption.string = "Figure " + str(uuid.uuid4())
@@ -1035,17 +1039,31 @@ class FigureNumberer:
     index = {}
 
     @classmethod
+    def clear(cls):
+        cls.index = {}
+
+    @classmethod
     def generate(cls, figure, number):
-        for sibling in figure.find_previous_siblings():
-            if sibling.name.startswith("h"):
-                parent_number = sibling.contents[0].strip().split(" ", 1)[0]
-                alphabet = "A"
+        print('generating for', number)
+        previous_header = None
+        headers = [f"h{i}" for i in range(2, 7)]
+        while True:
+            if not headers:
+                break
+            header_tag = headers.pop()
+            previous_header = figure.find_previous(header_tag)
+            if previous_header:
+                break
+
+        if previous_header:
+            parent_number = previous_header.contents[0].strip().split(" ", 1)[0]
+            alphabet = "A"
+            generated_number = parent_number + "." + alphabet
+            while generated_number in cls.index.values():
+                alphabet = chr(ord(alphabet) + 1)
                 generated_number = parent_number + "." + alphabet
-                while generated_number in cls.index.values():
-                    alphabet = chr(ord(alphabet) + 1)
-                    generated_number = parent_number + "." + alphabet
-                cls.index[number] = generated_number
-                return
+            print(generated_number)
+            cls.index[number] = generated_number
 
     @classmethod
     def replace_references(cls, html):
@@ -1654,6 +1672,8 @@ ifcre = re.compile(r"(Ifc|Pset_|Qto_)\w+(?!(.ht|</a|</h|/|.md))")
 @app.after_request
 def after(response):
     if request.path.endswith(".htm") or request.path.endswith(".html"):
+        FigureNumberer.clear()
+
         html = response.data.decode("utf-8")
 
         # I know, I know, string to dom to string to dom to ...

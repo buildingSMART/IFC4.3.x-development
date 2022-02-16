@@ -1709,7 +1709,7 @@ def after(response):
                     parent.append(extracted_img)
                     parent.append(figcaption)
                     FigureNumberer.generate(parent, figcaption.text.split(" ", 2)[1])
-                elif img["title"].strip():
+                elif img.get("title", "").strip():
                     # Option 2: the image has a "title" tag being used as a caption
                     has_caption = True
                     figcaption = soup.new_tag("figcaption")

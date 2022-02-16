@@ -36,7 +36,7 @@ Figure 1 illustrates a B-spline curve.
 </table>
 <p style=" font-size:inherit;">The knot array is an array of (<em>k</em>+<em>d</em>+2) real numbers
 [<em>u</em><sub>-<em>d</em></sub> ... <em>u</em><sub><em>k</em>+1</sub>], such that for all indices j in
-[-<em>d</em>,<em>k</em>], <em>u</em><sub>j</sub> &lt;= <em>u</em><sub>j+1</sub>. This array is obtained from the knot
+[-<em>d</em>,<em>k</em>], <em>u</em><sub>j</sub> <= <em>u</em><sub>j+1</sub>. This array is obtained from the knot
 data list by repeating each multiple knot according to the multiplicity. <em>N <sup>d</sup><sub>i</sub></em>, the
 <em>i</em>th normalized B-spline basis function of degree <em>d</em>, is defined on the subset
 [<em>u<sub>i-d</sub></em>, ... , <em>u<sub>i+1</sub></em>] of this array.</p>

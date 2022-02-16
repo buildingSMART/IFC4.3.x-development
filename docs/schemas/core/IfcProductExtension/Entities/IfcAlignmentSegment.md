@@ -6,7 +6,7 @@ An IfcAlignmentSegment is a segment of an IfcAlignment where either the vertical
 
 >NOTE 2 to entry: For roads, the alignment typically describes the path of the road center line, but in certain situations, e.g. ramps, the alignment may describe the path of other edges of the road body
 
-&gt;NOTE Rail domain definitions according to EN 13803:2017
+> NOTE Rail domain definitions according to EN 13803:2017
 
 ## Attributes
 

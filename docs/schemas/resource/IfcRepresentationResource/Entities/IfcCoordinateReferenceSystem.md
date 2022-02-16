@@ -29,7 +29,7 @@ Informal description of this coordinate reference system
 > NOTE&nbsp; In case Name equals 'WKT' the Description is well-known text that corresponds to ISO 19162 definition specifying the necessary parameters for the coordinate reference system.
 
 Example for ellipsoid:
-ELLIPSOID[&lt;name&gt;,&lt;major axis&gt;,&lt;inverse flattening&gt;,&lt;length unit&gt;]
+ELLIPSOID[<name>,<major axis>,<inverse flattening>,<length unit>]
 
 ### GeodeticDatum
 Name by which this datum is identified. The geodetic datum is associated with the coordinate reference system and indicates the shape and size of the rotation ellipsoid and this ellipsoid's connection and orientation to the actual globe/earth. It needs to be provided, if the _Name_ identifier does not unambiguously define the geodetic datum as well.

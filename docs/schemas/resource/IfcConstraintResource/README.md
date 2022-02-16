@@ -9,7 +9,7 @@ A constraint must be named and may optionally have one or more sources within wh
 
 Constraints may be either qualitative (an objective constraint) or quantitative (a measured constraint or metric). A qualifier can be applied to an objective constraint that determines the purpose for which it is applied. It may be applied to define the constraining values beyond which building codes may be violated or to limit the selectable range of values as in a specification (for example, value of A must be greater than A but less than B). Several possible purposes are provided through an enumeration.
 
-A measured constraint or metric defines the actual value or values of a constraint. Values can be defined in terms of a benchmark requirement which sets the intent of the constraint, for example, whether the benchmark is greater than (&gt;), or less than (&lt;). The value of a constraint may be defined according to a number of data types that are available through a select mechanism.
+A measured constraint or metric defines the actual value or values of a constraint. Values can be defined in terms of a benchmark requirement which sets the intent of the constraint, for example, whether the benchmark is greater than (>), or less than (<). The value of a constraint may be defined according to a number of data types that are available through a select mechanism.
 
 > EXAMPLE&nbsp; A constraint advised by a manufacturer beyond which maintenance must be undertaken on a pump might be qualified as a 'TriggerCondition', named 'PumpMaintenanceCondition', have as its source 'ManufacturerData' and be graded as 'Advisory'. It could have as a single value 10\^-2 / sec as the frequency of vibration and have a benchmark of 'GreaterThanOrEqualTo'.
 

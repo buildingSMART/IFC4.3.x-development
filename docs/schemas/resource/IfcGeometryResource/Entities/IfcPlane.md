@@ -8,11 +8,11 @@ The planar surface is an unbounded surface in the direction of _x_ and _y_. Boun
    C = Position.Location
    x = Position.P[1]
    y = Position.P[2]
-   z = Position.P[3] =&gt; normal to plane
+   z = Position.P[3] => normal to plane
 </pre> and the surface is parameterized as: 
 { .extDef}
 >> ![formula](../../../../figures/ifcplane-math1.gif.gif)
->  where the parametric range is -&infin; &lt; _u,v_ &lt; &infin;. In the above parameterization the length unit for the unit vectors **x** and **y** is derived from the context of the plane.
+>  where the parametric range is -&infin; < _u,v_ < &infin;. In the above parameterization the length unit for the unit vectors **x** and **y** is derived from the context of the plane.
 
 > NOTE&nbsp; A rectangular bounded planar surface can be defined by an _IfcRectangularTrimmedSurface_ with _BasisSurface_ being the plane and _U1_ = left bound in **x**, _U2_ = right bound in **x**, _V_1 = lower bound in **y**, _V2_ = upper bound in **y** if viewed into the direction of the negative normal. (assuming the _Usense_ and _Vsense_ agree to the sense of the basis surface).
 

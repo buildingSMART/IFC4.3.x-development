@@ -52,8 +52,8 @@ attribute values of <em>IfcAxis2Placement2D</em>
 are:</p>
       <blockquote>
         <p> <tt>Location
-= IfcCartesianPoint(&lt;1/2
-OverallWidth&gt;,&lt;1/2 OverallDepth&gt;)<br>
+= IfcCartesianPoint(<1/2
+OverallWidth>,<1/2 OverallDepth>)<br>
 RefDirection = NIL (defaults to 1.,0.)</tt></p>
       </blockquote>
       <p><u>Parameter</u><br>

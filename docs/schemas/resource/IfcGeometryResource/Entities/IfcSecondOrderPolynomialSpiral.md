@@ -22,7 +22,7 @@ The _IfcSecondOrderPolynomialSpiral_ is a specialization of _IfcSpiral_. The cur
 >>
 >> ![formula](../../../../figures/ifcsecondorderpolynomialspiral_theta.PNG)
 >>
-> and the parametric range is: -&infin; &lt; _u_ &lt; &infin;.
+> and the parametric range is: -&infin; < _u_ < &infin;.
 
 ## Attributes
 

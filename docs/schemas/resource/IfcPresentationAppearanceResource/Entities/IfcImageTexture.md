@@ -11,7 +11,7 @@ The following definitions from ISO/IEC 19775-1 X3D Architecture and base compone
 * If the image specifies colours as indexed-colour (that is, palettes or colourmaps), the following semantics should be used (note that `greyscale' refers to a palette entry with equal red, green, and blue values): 
     1. If all the colours in the palette are greyscale and there is no transparency chunk, it is treated as an intensity texture.
     2. If all the colours in the palette are greyscale and there is a transparency chunk, it is treated as an intensity plus opacity texture.
-    3. &gt;If any colour in the palette is not grey and there is no transparency chunk, it is treated as a full RGB texture.
+    3. If any colour in the palette is not grey and there is no transparency chunk, it is treated as a full RGB texture.
     4. If any colour in the palette is not grey and there is a transparency chunk, it is treated as a full RGB plus alpha texture. 
 * Texture nodes that require support for JPEG files shall interpret JPEG files as follows: 
     1. Greyscale files (number of components equals 1) are treated as intensity textures.

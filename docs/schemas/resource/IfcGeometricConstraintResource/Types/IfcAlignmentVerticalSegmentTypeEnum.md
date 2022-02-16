@@ -11,12 +11,12 @@ The IfcAlignmentVerticalSegmentTypeEnum indicates the type of a segment of a ver
 | Variation of vertical curvature is constant | Vertical curve, clothoid | CLOTHOID  |
 
 
-&gt;NOTE A vertical curve in track that starts or ends in canted switches and crossings can be of a higher order polynomial than a parabola.
+> NOTE A vertical curve in track that starts or ends in canted switches and crossings can be of a higher order polynomial than a parabola.
 
-&gt;NOTE chainage is  longitudinal distance along the horizontal projection of the alignment (e.g. track centre line).
+> NOTE chainage is  longitudinal distance along the horizontal projection of the alignment (e.g. track centre line).
 
 
-&gt;NOTE Definitions according to EN 13803/2017 (except CLOTHOID)
+> NOTE Definitions according to EN 13803/2017 (except CLOTHOID)
 
 
 
@@ -40,11 +40,11 @@ The IfcAlignmentVerticalSegmentTypeEnum indicates the type of a segment of a ver
 | Z<sub>M</sub> |  Distance of the centre of the vertical circular arc to the tangent intersection point (stitch height) | length |
 | l<sub>T</sub> | Length of the tangents of the  vertical circular arc | length |
 
-&gt;NOTE Symbols according to EN 13803/2017
+> NOTE Symbols according to EN 13803/2017
 
-&gt;NOTE gradient has a slightly different definition in civil engineering. "Gradient (Civ.Eng.) is the degree of slope, e.g. of a highway or a railway. US grade".
+> NOTE gradient has a slightly different definition in civil engineering. "Gradient (Civ.Eng.) is the degree of slope, e.g. of a highway or a railway. US grade".
 
-&gt;NOTE most railway track designs use the **small angle assumption**. That means &theta;=tan(&theta;)=gradient.
+> NOTE most railway track designs use the **small angle assumption**. That means &theta;=tan(&theta;)=gradient.
 
 **References to EN 13803/2017**
 

@@ -20,7 +20,7 @@ The _IfcLine_ is an unbounded line parameterized by an _IfcCartesianPoint_ and a
 >> **P** = Pnt  
 >> **V** = Dir  
 >> &lambda;(_u_) = **P** + _u_**V**
->  and the parametric range is: -&infin; &lt; _u_ &lt; &infin;
+>  and the parametric range is: -&infin; < _u_ < &infin;
 
 { .extDef}
 > NOTE&nbsp; Entity adapted from **line** defined in ISO 10303-42

@@ -29,7 +29,7 @@ The _IfcPropertyBoundedValue_ allows for the specification of an interval for th
      <td>OverallHeight</td>
      <td>1930</td>
      <td>2300</td>
-     <td>&lt;nil&gt;</td>
+     <td><nil></td>
      <td><em>IfcPositiveLengthMeasure</em></td>
      <td>-</td>
     </tr>
@@ -37,23 +37,23 @@ The _IfcPropertyBoundedValue_ allows for the specification of an interval for th
      <td>OverallWidth</td>
      <td>0.9</td>
      <td>1.25</td>
-     <td>&lt;nil&gt;</td>
+     <td><nil></td>
      <td><em>IfcPositiveLengthMeasure</em></td>
      <td>m</td>
     </tr>
     <tr valign="top">
      <td>MaxHeight</td>
      <td>20.0</td>
-     <td>&lt;nil&gt;</td>
-     <td>&lt;nil&gt;</td>
+     <td><nil></td>
+     <td><nil></td>
      <td><em>IfcPositiveLengthMeasure</em></td>
      <td>-</td>
     </tr>
     <tr valign="top">
      <td>MinWeight</td>
-     <td>&lt;nil&gt;</td>
+     <td><nil></td>
      <td>20</td>
-     <td>&lt;nil&gt;</td>
+     <td><nil></td>
      <td><em>IfcMassMeasure</em></td>
      <td>kg</td>
     </tr>
@@ -79,7 +79,7 @@ The _IfcPropertyBoundedValue_ allows for the specification of an interval for th
 { .spec-head}
 Informal Propositions:
 
-1. If the measure type for the upper and lover bound value is a numeric measure, then the following shall be true: _UpperBoundValue_ &gt; _LowerBoundValue_.
+1. If the measure type for the upper and lover bound value is a numeric measure, then the following shall be true: _UpperBoundValue_ > _LowerBoundValue_.
 
 ## Attributes
 

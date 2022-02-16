@@ -11,7 +11,7 @@ The IfcSurfaceOfRevolution is a surface derived by rotating a curve about an axi
 >> **V** = AxisPosition.Z
 >> 
 >> ![Image](../../../../figures/ifcsurfaceofresolution-math1.gif)
->  In order to produce a single-valued surface with a complete revolution, the curve shall be such that when expressed in a cylindrical coordinate system (_r,&phi; ,z_) centred at **C** with an axis **V**, no two distinct parametric points on the curve shall have the same values for (_r, z_). For a surface of revolution the parametric range is 0 &lt; _u_ &lt; 360 degree. The parameterization range for _v_ is defined by referenced curve.
+>  In order to produce a single-valued surface with a complete revolution, the curve shall be such that when expressed in a cylindrical coordinate system (_r,&phi; ,z_) centred at **C** with an axis **V**, no two distinct parametric points on the curve shall have the same values for (_r, z_). For a surface of revolution the parametric range is 0 < _u_ < 360 degree. The parameterization range for _v_ is defined by referenced curve.
 
 > NOTE&nbsp; Entity adapted from **surface_of_revolution** defined in ISO 10303-42.
 

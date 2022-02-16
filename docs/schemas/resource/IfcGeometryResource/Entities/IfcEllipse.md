@@ -40,7 +40,7 @@ representation.</span></p>
 > and the ellipse is parameterized as:
 > 
 >> ![formula](../../../../figures/ifcellipse-math1.gif)
-> The parameterization range is 0 &le; _u_ &lt;&le; 2&pi; (0 &le; _u_ &le; 360 degree). In the placement coordinate system defined above, the ellipse is the equation _C_ = 0, where
+> The parameterization range is 0 &le; _u_ <&le; 2&pi; (0 &le; _u_ &le; 360 degree). In the placement coordinate system defined above, the ellipse is the equation _C_ = 0, where
 > 
 >> ![formula](../../../../figures/ifcellipse-math2.gif)
 >>

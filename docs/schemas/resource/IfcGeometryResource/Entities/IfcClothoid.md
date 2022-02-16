@@ -17,7 +17,7 @@ A clothoid is a planar curve in the form of a spiral. This curve has the propert
 >> 
 >>> ![formula](../../../../figures/ifcclothoid_parameterisation.PNG)
 
-> and the parametric range is: -&infin; &lt; _u_ &lt; &infin;
+> and the parametric range is: -&infin; < _u_ < &infin;
 >>
 > The arc length _s_ of the curve, from the point C, is given by the formula:
 >>

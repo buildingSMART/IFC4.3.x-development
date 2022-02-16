@@ -34,7 +34,7 @@ An interval can be given according to the pattern type. An
     interval value of 2 can for instance every two days, weeks,
     months, years. An empty interval value is regarded as 1. The
     used interval values should be in a reasonable range, e.g.
-    not 0 or &lt;0.
+    not 0 or <0.
 
 ### Occurrences
 Defines the number of occurrences of this pattern, e.g. a weekly 

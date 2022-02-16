@@ -11,8 +11,8 @@ An _IfcTextureVertex_ is a list of 2 (S, T) texture coordinates.
 
 { .extDef}
 > If the texture map is not repeated, the texture coordinates are clamped to the 0.0 to 1.0 range as follows: <pre style=" font-size:larger;">
-<b>Texture map location = N,     if C &gt; 1.0,
-<br>                     = 0.0,   if C &lt; 0.0,
+<b>Texture map location = N,     if C > 1.0,
+<br>                     = 0.0,   if C < 0.0,
 <br>                     = C &times; N, if 0.0 &le; C &le; 1.0.</b>
 </pre>
 

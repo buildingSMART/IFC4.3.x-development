@@ -10,7 +10,7 @@ _IfcLShapeProfileDef_ defines a section profile that provides the defining param
 { .change-ifc2x4}
 > IFC4 CHANGE&nbsp; Types of _FilletRadius_ and _EdgeRadius_ were relaxed to allow for zero values.  
 > Trailing attributes _CentreOfGravityInX_ and _CentreOfGravityInY_ deleted, use respective properties in _IfcExtendedProfileProperties_ instead.  
-> WHERE rule which required _Width_ &lt;= _Depth_ removed.
+> WHERE rule which required _Width_ <= _Depth_ removed.
 
 Figure 1 illustrates parameters of equal-sided and non-equal sided L-shaped section definitions.
 

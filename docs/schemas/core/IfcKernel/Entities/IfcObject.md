@@ -23,7 +23,7 @@ Objects are independent pieces of information that might contain or reference ot
 > HISTORY&nbsp; New entity in IFC1.0
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; The inverse relationships _Declares_, _IsDeclaredBy_, and _IsTypedBy_ have been added, types are not longer included in the _IsDefinesBy_ relationship. _IfcProject_ has been promoted to be a subtype of _IfcObjectDefinition_ -&gt; _IfcContext_.
+> IFC4 CHANGE&nbsp; The inverse relationships _Declares_, _IsDeclaredBy_, and _IsTypedBy_ have been added, types are not longer included in the _IsDefinesBy_ relationship. _IfcProject_ has been promoted to be a subtype of _IfcObjectDefinition_ -> _IfcContext_.
 
 { .spec-head}
 Informal Propositions:

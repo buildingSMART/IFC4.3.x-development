@@ -8,7 +8,7 @@ An _IfcTrimmedCurve_ is a bounded curve that is trimmed at both ends. The trimmi
 
 Figure 1 shows the four arcs (dashed blue and green lines with arrow showing different orientations) that can be defined by the same _BasisCurve_ (of type _IfcCircle_) and the same trimming points (given by Cartesian points and parameter values) by using different assignments to _Trim1_ and _Trim2_ and _SenseAgreement_.
 
-> NOTE&nbsp; Since the _BasisCurve_ is closed (type _IfcCircle_), the exception of the informal proposition IP3 applies, i.e. the sense flag is not required to be consistent with the parameter values of _Trim1_ and _Trim1_, so the rule (sense = parameter 1 &lt; parameter 2) may not be fulfilled.
+> NOTE&nbsp; Since the _BasisCurve_ is closed (type _IfcCircle_), the exception of the informal proposition IP3 applies, i.e. the sense flag is not required to be consistent with the parameter values of _Trim1_ and _Trim1_, so the rule (sense = parameter 1 < parameter 2) may not be fulfilled.
 
 { .extDef}
 > NOTE Definition according to ISO/CD 10303-42:1992  
@@ -40,8 +40,8 @@ Informal Propositions:
 
 1. Where both the parameter value and the Cartesian point exist for _Trim1_ and _Trim2_ they shall be consistent. (i.e., the _BasisCurve_ evaluated at the parameter value shall coincide with the specified point).
 2. When a Cartesian point is specified by _Trim1_ or by _Trim2_ it shall lie on the _BasisCurve_.
-3. Except the case of a closed _BasisCurve_ where both parameter 1 and parameter 2 exist, they shall be consistent with the sense flag, i.e., (sense = parameter 1 &lt; parameter 2). Or, for every open curve where both parameter 1 and parameter 2 exist, they shall be consistent with the _SenseAgreement_, i.e., _SenseAgreement_ = (parameter 1 &lt; parameter 2).
-4. If both parameter 1 and parameter 2 exist, then parameter 1 &lt;&gt; parameter 2. For a closed base curve, e.g. _IfcCircle_ or _IfcEllipse_, this also applies to the cyclic properties, as 360' is equal to 0', parameter 1 = 360' and parameter 2 = 0' are treated as being equal and therefore violating this proposition.
+3. Except the case of a closed _BasisCurve_ where both parameter 1 and parameter 2 exist, they shall be consistent with the sense flag, i.e., (sense = parameter 1 < parameter 2). Or, for every open curve where both parameter 1 and parameter 2 exist, they shall be consistent with the _SenseAgreement_, i.e., _SenseAgreement_ = (parameter 1 < parameter 2).
+4. If both parameter 1 and parameter 2 exist, then parameter 1 <> parameter 2. For a closed base curve, e.g. _IfcCircle_ or _IfcEllipse_, this also applies to the cyclic properties, as 360' is equal to 0', parameter 1 = 360' and parameter 2 = 0' are treated as being equal and therefore violating this proposition.
 5. When a parameter value is specified by _Trim1_ or _Trim2_ it shall lie within the parametric range of the _BasisCurve_.
 
 ## Attributes

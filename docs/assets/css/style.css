@@ -125,6 +125,17 @@ figure {
 code {
   line-height: inherit;
 }
+#back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    border: 1px solid var(--border-color);
+    color: var(--border-color);
+    padding: 15px;
+    border-radius: var(--universal-border-radius);
+}
 .popup {
     position: absolute;
     background: white;

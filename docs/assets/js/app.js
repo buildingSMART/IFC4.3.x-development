@@ -80,6 +80,24 @@ function generateSectionNavigation() {
     }
 }
 
+
+function initialiseBackToTopButton() {
+    let backToTop = document.getElementById('back-to-top');
+
+    window.onscroll = function() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTop.style.display = "block";
+            } else {
+                backToTop.style.display = "none";
+        }
+    };
+
+    backToTop.addEventListener('click', function() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    });
+}
+
 Array.from(document.querySelectorAll('a')).concat(Array.from(document.querySelectorAll('em'))).forEach((a) => {
     let popup = null;
     let timeout = null;
@@ -196,4 +214,5 @@ fetch(`https://api.github.com/repos/${window.appconfig.repo}/commits?path=${wind
 
 makeHeadersCollapsible();
 generateSectionNavigation();
+initialiseBackToTopButton();
 feather.replace();

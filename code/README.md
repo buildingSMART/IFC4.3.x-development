@@ -122,7 +122,7 @@ control.
 
 ```
 > HISTORY Something happened.
-> IFC CHANGE Something changed
+> IFC CHANGE Something changed.
 ```
 
 To create a captioned figure, you can do this:
@@ -130,7 +130,7 @@ To create a captioned figure, you can do this:
 ```
 ![Optional image alt text](path/to/image.png "Optional image title text")
 
-Figure ABC - Shows something interesting
+Figure ABC - Shows something interesting.
 ```
 
 The image must be immediately succeeded by a paragraph with `Figure 1234` as the
@@ -156,7 +156,7 @@ Name | Definition
 Foo | Description of foo
 Bar | Description of bar
 
-Table XYZ - A table of things
+Table XYZ - A table of things.
 ```
 
 Similar to figures, tables can also be annotated with an arbitrary code of your

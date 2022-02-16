@@ -14,7 +14,7 @@ An _IfcCostItem_ can link one or many _IfcCostValue_'s representing a unit cost,
 ## Attributes
 
 ### PredefinedType
-Predefined generic type for a cost item that is specified in an enumeration. There may be a property set given specificly for the predefined types.
+Predefined generic type for a cost item that is specified in an enumeration. There may be a property set given specifically for the predefined types.
 
 { .change-ifc2x4}
 > IFC4 CHANGE The attribute has been added.

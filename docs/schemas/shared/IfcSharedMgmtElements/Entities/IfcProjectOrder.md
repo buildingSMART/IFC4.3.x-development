@@ -12,7 +12,7 @@ Project orders are typically formal contracts between two organizations, where c
 ## Attributes
 
 ### PredefinedType
-Predefined generic type for a project order that is specified in an enumeration. There may be a property set given specificly for the predefined types.
+Predefined generic type for a project order that is specified in an enumeration. There may be a property set given specifically for the predefined types.
 
 { .change-ifc2x4}
 > IFC4 CHANGE The attribute has been made optional.

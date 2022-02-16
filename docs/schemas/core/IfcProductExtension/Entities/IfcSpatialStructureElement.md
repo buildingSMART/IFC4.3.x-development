@@ -26,7 +26,7 @@ The subtypes of _IfcSpatialStructureElement_ relate to other elements and system
 
 * **Containment of elements** : _IfcRelContainedInSpatialStructure_ by inverse attribute _ContainsElements_, used to assign any element, like building elements, MEP elements, etc. to the spatial structure element in which they are primarily contained.
 * **Reference of elements** : _IfcRelReferencedInSpatialStructure_ by inverse attribute _ReferencesElements_, used to reference any element, like building elements, MEP elements, etc. in spatial structure elements, other then the one, where it is contained.
-* **Reference of systems** : _IfcRelServicesBuildings_ by inverse attribute _ServicedBySystems_, used to reference a sytem, like a building service or electrical distribution system, a zonal system, or a structural analysis system, that is assigned to this spatial structure element.
+* **Reference of systems** : _IfcRelServicesBuildings_ by inverse attribute _ServicedBySystems_, used to reference a system, like a building service or electrical distribution system, a zonal system, or a structural analysis system, that is assigned to this spatial structure element.
 
 The subtypes of _IfcSpatialStructureElement_ relate to each other by using the _IfcRelAggregates_ relationship to build the project spatial structure. Figure 1 shows the use of _IfcRelAggregates_ to establish a spatial structure including site, building, building section and storey. More information is provided at the level of the subtypes.
 
@@ -45,7 +45,7 @@ Informal Propositions:
 ## Attributes
 
 ### CompositionType
-Denotes, whether the predefined spatial structure element represents itself, or an aggregate (complex) or a part (part). The interpretation is given separately for each subtype of spatial structure element. If no _CompositionType_ is asserted, the dafault value ''ELEMENT'' applies.\X\0D
+Denotes, whether the predefined spatial structure element represents itself, or an aggregate (complex) or a part (part). The interpretation is given separately for each subtype of spatial structure element. If no _CompositionType_ is asserted, the default value ''ELEMENT'' applies.\X\0D
 { .change-ifc2x4}\X\0D
 > IFC4 CHANGE&nbsp; Attribute made optional.
 

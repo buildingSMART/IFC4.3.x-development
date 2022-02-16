@@ -43,7 +43,7 @@ An intermediate support e.g. in a bridge, built up of walls, columns, beams etc.
 A vertical structure supporting cables in suspended or stayed structure.
 
 ### CROSS_BRACING
-A Structural linear member or assembly of memebrs inside a box girder or between girders, typically on a pier, to resist lateral forces and transfer them to the support.
+A Structural linear member or assembly of members inside a box girder or between girders, typically on a pier, to resist lateral forces and transfer them to the support.
 
 ### DECK
 A platform (such as floor or bridge deck) built up of beams, slabs.

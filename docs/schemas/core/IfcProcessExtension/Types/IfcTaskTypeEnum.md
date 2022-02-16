@@ -35,7 +35,7 @@ Tasks required to conduct an inspection of the object.
 Installing something (equivalent to construction but more commonly used for engineering tasks).
 
 ### LOGISTIC
-Transporation or delivery of something.
+Transportation or delivery of something.
 
 ### MAINTENANCE
 Tasks required to keep an object it good working order.

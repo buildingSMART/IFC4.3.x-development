@@ -11,7 +11,7 @@
   <PropertyDefs>
     <PropertyDef ifdguid="f7662d00d20a11e1800000215ad4efdf">
       <Name>ParkingUse</Name>
-      <Definition>Identifies the type of transporation for which the parking space is designed. Values are not predefined but might include car, compact car, motorcycle, bicycle, truck, bus etc.</Definition>
+      <Definition>Identifies the type of transportation for which the parking space is designed. Values are not predefined but might include car, compact car, motorcycle, bicycle, truck, bus etc.</Definition>
       <PropertyType>
         <TypePropertySingleValue>
           <DataType type="IfcLabel" />
@@ -30,7 +30,7 @@
     </PropertyDef>
     <PropertyDef ifdguid="ffbe6800d20a11e1800000215ad4efdf">
       <Name>ParkingUnits</Name>
-      <Definition>Indicates the number of transporation units of the type specified by the property ParkingUse that may be accommodated within the space. Generally, this value should default to 1 unit. However, where the parking space is for motorcycles or bicycles, provision may be made for more than one unit in the space.</Definition>
+      <Definition>Indicates the number of transportation units of the type specified by the property ParkingUse that may be accommodated within the space. Generally, this value should default to 1 unit. However, where the parking space is for motorcycles or bicycles, provision may be made for more than one unit in the space.</Definition>
       <PropertyType>
         <TypePropertySingleValue>
           <DataType type="IfcCountMeasure" />

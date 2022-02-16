@@ -28,6 +28,6 @@ An element is assigned to the spatial project structure and may refer by its pla
 
 The other concepts introduced are
 
-* a grid, providing a contraint placement for elements, 
+* a grid, providing a constraint placement for elements, 
 * an annotation to capture any additional annotations to a building model or plan (such as explanatory text, dimensioning, etc.), and 
 * a port, providing connectivity between elements.

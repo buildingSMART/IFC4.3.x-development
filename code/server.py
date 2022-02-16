@@ -1671,7 +1671,7 @@ def sandcastle():
     return render_template("sandcastle.html", base=base, html=html, md=md)
 
 
-ifcre = re.compile(r"(Ifc|Pset_|Qto_)\w+(?!(.ht|</a|</h|.md))")
+ifcre = re.compile(r"(Ifc|Pset_|Qto_)\w+(?!(.ht|</a|</h|.md| - IFC4.3))")
 
 
 @app.after_request
@@ -1684,6 +1684,9 @@ def after(response):
         # I know, I know, string to dom to string to dom to ...
         soup = BeautifulSoup(html)
 
+        h1 = soup.findAll("h1")[0]
+        title = soup.findAll("title")[0]
+        title.string = h1.text + " - " + title.string
         main_content = soup.find_all(id="main-content")
         main_content = main_content[0] if len(main_content) else None
 

@@ -203,11 +203,9 @@ occurrences of this IfcWallType.
 
 ![Material layer set and usage](../../../../figures/ifcwall_materialusage-01.png)
 
-> EXAMPLE  Figure 277 illustrates assignment of IfcMaterialLayerSetUsage and IfcMaterialLayerSet to the wall type and the wall occurrence.
-
-
 Figure 277 — Wall Standard Object Typing
 
+> EXAMPLE  Figure 277 illustrates assignment of IfcMaterialLayerSetUsage and IfcMaterialLayerSet to the wall type and the wall occurrence.
 
 Figure 278 illustrates material layer usage, where the following conventions shall be met:
 

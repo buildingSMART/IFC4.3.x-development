@@ -5,13 +5,14 @@ An _IfcAlignmentCant_ is a lateral inclination profile defined along the horizon
 
 **Cant as a railway specificity**
 
-!["Why cant is applied"](../../figures/ifcalignmentcant_wojtczak_2018.png "Figure 1 &mdash; Cant - compensation for lateral acceleration.")
+!["Why cant is applied"](../../../../figures/ifcalignmentcant_wojtczak_2018.png "Figure 1 &mdash; Cant - compensation for lateral acceleration.")
 
-&gt;NOTE figure was first published in (Basics of) Railway Curve Kinematics Presentation, (Wojtczak 2018)
+> NOTE figure was first published in (Basics of) Railway Curve Kinematics Presentation, (Wojtczak 2018)
 
 The diagram in the figure above shows the principle of compensating part of the lateral acceleration by elevating the outer rail relative to the inner rail of a track.
 
 Almost always the following principles for the placement of horizontal segments and cant segments are implemented:
+
 * Straight horizontal line: no applied cant
 * Horizontal circular arc: constant applied cant
 * Horizontal transition bend: variation of applied cant according to a defined formula
@@ -30,7 +31,7 @@ Detailed geometric modelling of the superelevation has a low priority in the exi
 
 
 
-!["Cant and structural gauge space"](../../figures/ifcalignmentcant_structural_gauge_and_cant.png "Figure 2 &mdash; Cant and structural gauge space")
+!["Cant and structural gauge space"](../../../../figures/ifcalignmentcant_structural_gauge_and_cant.png "Figure 2 &mdash; Cant and structural gauge space")
 
 ## Attributes
 

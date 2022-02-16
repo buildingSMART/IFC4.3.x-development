@@ -151,8 +151,13 @@
         <li>
             {{ pset.name }}
             {% if pset.predefined_type %}
-            (<code>{{ pset.predefined_type }})
+            <code>{{ pset.predefined_type }}</code>
             {% endif %}
+            <ul>
+                {% for property in pset.properties %}
+                <li>{{ property }}</li>
+                {% endfor %}
+            </ul>
         </li>
     {% endfor %}
     </ul>

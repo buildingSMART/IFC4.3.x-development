@@ -102,9 +102,9 @@ aside.aside-history mark {
     background-color: #444;
 }
 table {
+    width: 100%;
     max-height: 10000px !important;
     display: table;
-    margin: var(--universal-margin);
     padding: 0;
     border: 1px solid var(--border-color);
     border-radius: var(--universal-border-radius);
@@ -180,13 +180,23 @@ ul, ol {
     padding-left: calc(4 * var(--universal-margin));
 }
 ul.psets>li {
-    width: 33%;
+    width: 30%;
     display: inline-block;
+    vertical-align: top;
+    border-top: 1px solid var(--secondary-border-color);
+    padding: var(--universal-padding);
 }
-ul.psets>li:before{
-    content: "";
-    display: list-item;
-    position: absolute;
+ul.psets>li>ul {
+    padding: 0px;
+    margin: 0px;
+    -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    max-height:  50px;
+    overflow:hidden;
+}
+ul.psets>li>ul>li {
+    font-size: .75em;
+    list-style-type: none;
 }
 ol.referenced-list {
     padding-left: calc(2 * var(--universal-margin));
@@ -301,17 +311,11 @@ table.type-values thead tr th:nth-child(1) {
 table.attributes>thead>tr>th:nth-child(1), table.attributes>tbody>tr>td:nth-child(1) {
     text-align: center;
 }
-table.changelog {
-    width: calc(100% - 2 * var(--universal-margin));
-}
 table.changelog>thead>tr>th:nth-child(1), table.changelog>tbody>tr>td:nth-child(1) {
     text-align: center;
 }
 table.changelog td {
     word-break: break-word;
-}
-table.grouped {
-    width: calc(100% - 2 * var(--universal-margin));
 }
 table.grouped tr.group-inherited td {
     background: var(--dark);

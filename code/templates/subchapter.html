@@ -1,0 +1,42 @@
+{% extends "main.html" %}
+{% block pagecontent %}
+<h1>{{ number }} {{ title }}</h1>
+
+{% if definition %}
+<h2>
+    {{ subnumber }} Schema definition
+</h2>
+{{ definition | safe }}
+{% endif %}
+
+{% for category in categories %}
+<h2>
+    {{ category.number }} {{ category.text }}
+</h2>
+{% if category.children %}
+<ol class="referenced-list">
+    {% for item in category.children recursive -%}
+    <li{% if item.number %} number="{{ item.number }}"{% endif %}>
+        {% if item.url %}
+        <a href="{{ item.url }}">
+        {% endif %}
+            {{ item.text }}
+        {% if item.url %}
+        </a>
+        {% endif %}
+
+        {% if item.children %}
+        <ol class="referenced-list">
+        {{ loop(item.children) }}
+        </ol>
+        {% endif %}
+    </li>
+    {%- endfor %}
+</ol>
+{% else %}
+<p>
+    No resources are available in this category.
+</p>
+{% endif %}
+{% endfor %}
+{% endblock %}

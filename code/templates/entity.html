@@ -124,6 +124,11 @@
             <td>{{ row.name }}</td>
             <td>
                 {{ row.description | safe }}
+                {% if not row.description %}
+                <p>
+                    <em>No description available.</em>
+                </p>
+                {% endif %}
             </td>
         </tr>
         <tr>

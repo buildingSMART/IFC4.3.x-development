@@ -1,0 +1,24 @@
+{% extends "main.html" %}
+{% block pagecontent %}
+<h1>Annex D Diagrams</h1>
+
+<ol class="referenced-list">
+    {% for item in diagrams recursive -%}
+    <li{% if item.number %} number="{{ item.number }}"{% endif %}>
+        {% if item.url %}
+        <a href="{{ item.url }}">
+        {% endif %}
+            {{ item.text or item.name }}
+        {% if item.url %}
+        </a>
+        {% endif %}
+
+        {% if item.children %}
+        <ol class="referenced-list">
+        {{ loop(item.children) }}
+        </ol>
+        {% endif %}
+    </li>
+    {%- endfor %}
+</ol>
+{% endblock %}

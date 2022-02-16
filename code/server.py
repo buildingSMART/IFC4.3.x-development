@@ -1386,36 +1386,22 @@ def content(s="cover"):
 
     html = process_markdown("", render_template_string(open(fn).read(), base=base))
     return render_template(
-        "chapter.html",
+        "static.html",
         base=base,
         navigation=get_navigation(),
         content=html,
         path=fn[len(REPO_DIR) :].replace("\\", "/"),
         title=title,
         number=number,
-        subs=[],
     )
 
 
 @app.route(make_url("annex-a.html"))
 def annex_a():
-    listings = [
-        {
-            "format": "IFC EXPRESS long form schema",
-            "url": "https://github.com/buildingSMART/IFC4.3.x-output/blob/master/IFC.exp",
-        }
-    ]
-    return render_template(
-        "annex-a.html",
-        base=base,
-        navigation=get_navigation(),
-        listings=listings,
-        title="Annex A",
-    )
+    return render_template("annex-a.html", base=base, navigation=get_navigation())
 
 
 def annotate_hierarchy(data=None, start=1, number_path=None):
-
     level_2_headings = ("Schema Definition", "Types", "Entities", "Property Sets", "Functions", "Rules")
 
     def items(d):
@@ -1460,15 +1446,7 @@ def annotate_hierarchy(data=None, start=1, number_path=None):
 def toc():
     subs = navigation[1][0:4]
     subs += annotate_hierarchy(start=5)
-    return render_template(
-        "chapter.html",
-        base=base,
-        navigation=get_navigation(),
-        path=None,
-        title="Contents",
-        subs=subs,
-        toc=True,
-    )
+    return render_template("chapter.html", base=base, navigation=get_navigation(), title="Contents", subs=subs)
 
 
 @app.route(make_url("annex-c.html"))
@@ -1492,49 +1470,22 @@ def annex_c():
                 indentation_map[padding - 1]["children"].append(data)
             indentation_map[padding] = data
 
-    return render_template(
-        "annex-c.html",
-        base=base,
-        navigation=get_navigation(),
-        path=None,
-        title="Annex C Inheritance listings",
-        number="",
-        entities=entities,
-    )
+    return render_template("annex-c.html", base=base, navigation=get_navigation(), entities=entities)
 
 
 @app.route(make_url("annex-d.html"))
 def annex_d():
-    subs = map(os.path.basename, glob.glob(os.path.join(REPO_DIR, "output/IFC.xml/*.png")))
-    subs = [
+    diagrams = map(os.path.basename, glob.glob(os.path.join(REPO_DIR, "output/IFC.xml/*.png")))
+    diagrams = [
         toc_entry(s[:-4], url=url_for("annex_d_diagram_page", s=s[:-4]), number="D-%d" % i)
-        for i, s in enumerate(sorted(subs), start=1)
+        for i, s in enumerate(sorted(diagrams), start=1)
     ]
-    return render_template(
-        "chapter.html",
-        base=base,
-        navigation=get_navigation(),
-        content="",
-        path=None,
-        title="Annex D Diagrams",
-        number="",
-        subs=subs,
-    )
+    return render_template("annex-d.html", base=base, navigation=get_navigation(), diagrams=diagrams)
 
 
 @app.route(make_url("annex_d/<s>.html"))
 def annex_d_diagram_page(s):
-    img = "<h2>" + s + " diagram</h2><img style='max-width: none' src='" + s + ".png'/>"
-    return render_template(
-        "chapter.html",
-        base=base,
-        navigation=get_navigation(),
-        content=img,
-        path=None,
-        title="Annex D Diagrams",
-        number="",
-        subs=[],
-    )
+    return render_template("annex-d-item.html", base=base, navigation=get_navigation(), name=s)
 
 
 @app.route(make_url("annex_d/<s>.png"))
@@ -1544,18 +1495,9 @@ def annex_d_diagram(s):
 
 @app.route(make_url("annex-e.html"))
 def annex_e():
-    subs = map(os.path.basename, filter(os.path.isdir, glob.glob(os.path.join(REPO_DIR, "../examples/IFC 4.3/*"))))
-    subs = sorted(toc_entry(s, url=url_for("annex_e_example_page", s=s)) for s in subs)
-    return render_template(
-        "chapter.html",
-        base=base,
-        navigation=get_navigation(),
-        content="",
-        path=None,
-        title="Annex E Examples",
-        number="",
-        subs=subs,
-    )
+    examples = map(os.path.basename, filter(os.path.isdir, glob.glob(os.path.join(REPO_DIR, "../examples/IFC 4.3/*"))))
+    examples = sorted(toc_entry(s, url=url_for("annex_e_example_page", s=s)) for s in examples)
+    return render_template("annex-e.html", base=base, navigation=get_navigation(), examples=examples)
 
 
 @app.route(make_url("annex-f.html"))
@@ -1610,14 +1552,11 @@ def annex_e_example_page(s):
     path_repo = "buildingSMART/Sample-Test-Files"
     path = fn[len(os.path.join(REPO_DIR, "../examples/")) :]
     return render_template(
-        "chapter.html",
+        "annex-e-item.html",
         base=base,
         navigation=get_navigation(),
         content=html_builder,
         path=path,
-        title="Annex E",
-        number="",
-        subs=[],
         repo=path_repo,
     )
 
@@ -1633,22 +1572,19 @@ def schema(name):
 
     n1 = chp.get("number")
     n2 = [s[0] for s in schemas].index(t) + 1
-    n = "%d.%d" % (n1, n2)
+    n = f"{n1}.{n2}"
     fn = os.path.join(md_root, cat, t, "README.md")
 
+    SectionNumberGenerator.set(n)
+    SectionNumberGenerator.begin_subsection()
+
+    definition = None
     if os.path.exists(fn):
-        html = process_markdown("", open(fn).read())
-        soup = BeautifulSoup(html)
-        # First h1 is handled by the template
-        h1 = soup.find("h1")
-        if h1:
-            h1.decompose()
-        html = "<h2>" + n + ".1 Schema Definition</h2>" + str(soup)
-    else:
-        html = ""
+        definition_number = SectionNumberGenerator.generate()
+        definition = process_markdown("", open(fn).read())
 
     order = ["Types", "Entities", "Property Sets", "Quantity Sets", "Functions", "Rules"]
-    subs2 = [
+    categories = [
         toc_entry(
             o,
             number=f"{n}.{ii}",
@@ -1661,14 +1597,15 @@ def schema(name):
     ]
 
     return render_template(
-        "chapter.html",
+        "subchapter.html",
         base=base,
         navigation=get_navigation(number=n),
-        content=html,
+        definition=definition,
         path=fn[len(REPO_DIR) :].replace("\\", "/"),
         title=t,
         number=n,
-        subs=subs2,
+        subnumber=definition_number,
+        categories=categories,
     )
 
 

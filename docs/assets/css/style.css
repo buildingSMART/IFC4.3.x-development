@@ -142,6 +142,12 @@ code {
 h4 a:hover {
     text-decoration: none;
 }
+ul, ol {
+    /* The default in mini.css is padding-left: calc(4 * var(--universal-margin));
+     * However in some of our ols we fake our own number, so let's double the indentation
+     * by default and later on we can override it back to 2 * where we use fake numbers */
+    padding-left: calc(4 * var(--universal-margin));
+}
 ul.psets>li {
     width: 33%;
     display: inline-block;
@@ -152,6 +158,7 @@ ul.psets>li:before{
     position: absolute;
 }
 ol.referenced-list {
+    padding-left: calc(2 * var(--universal-margin));
     list-style: none;
 }
 ol.referenced-list>li:before {
@@ -334,8 +341,5 @@ figcaption .feather-link {
     padding-bottom: 0;
     margin-top: 0;
     margin-bottom: 0;
-    color: #aaa;
-}
-.inheritance-listing {
-    padding: 0;
+    color: var(--border-color);
 }

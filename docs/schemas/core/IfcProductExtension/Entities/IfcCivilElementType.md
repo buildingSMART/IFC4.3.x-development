@@ -10,6 +10,6 @@ The specification of the specific types is provided by the inherited attribute _
 
 > NOTE&nbsp; This is due to the range of choices of element type that are available and their expression in different languages. It is not considered possible to create a reasonably full list of types within an enumeration. It is suggested that selection of the relevant type be drawn from an available 'feature catalog'.
 
-> NOTE&nbsp; The _IfcCivilElementType_ has been intruduced as a stub for future extensions of this specification to include an object model for civil engineering works.
+> NOTE&nbsp; The _IfcCivilElementType_ has been introduced as a stub for future extensions of this specification to include an object model for civil engineering works.
 
 > HISTORY&nbsp; New entity in IFC4.

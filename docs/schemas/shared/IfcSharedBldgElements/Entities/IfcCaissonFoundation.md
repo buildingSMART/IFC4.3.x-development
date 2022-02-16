@@ -7,7 +7,7 @@ CaissonFoundation essentially is a hollow box that can be either open or closed.
 ## Attributes
 
 ### PredefinedType
-Predefined generic type for a caisson foundation that is specified in an enumeration. There may be a property set given specificly for the predefined types.
+Predefined generic type for a caisson foundation that is specified in an enumeration. There may be a property set given specifically for the predefined types.
 > NOTE&nbsp; The _PredefinedType_ shall only be used, if no _IfcCaissonFoundationType_ is assigned, providing its own _IfcCaissoFoundationType.PredefinedType_.
 
 ## Formal Propositions

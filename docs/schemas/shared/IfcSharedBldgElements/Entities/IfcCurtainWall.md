@@ -20,7 +20,7 @@ The geometric representation of _IfcCurtainWall_ is defined using the following 
 ## Attributes
 
 ### PredefinedType
-Predefined generic type for a curtain wall that is specified in an enumeration. There may be a property set given specificly for the predefined types.
+Predefined generic type for a curtain wall that is specified in an enumeration. There may be a property set given specifically for the predefined types.
 > NOTE&nbsp; The _PredefinedType_ shall only be used, if no _IfcCurtainWallType_ is assigned, providing its own _IfcCurtainWallType.PredefinedType_.
 
 { .change-ifc2x4}

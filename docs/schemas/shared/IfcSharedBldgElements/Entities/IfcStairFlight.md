@@ -31,7 +31,7 @@ Horizontal distance from the front to the back of the tread. The tread length is
 > IFC4 CHANGE The attribute has been deprecated it shall only be exposed with a NIL value. Use _Pset_StairFlightCommon.TreadLength_ instead.
 
 ### PredefinedType
-Predefined generic type for a stair flight that is specified in an enumeration. There may be a property set given specificly for the predefined types.
+Predefined generic type for a stair flight that is specified in an enumeration. There may be a property set given specifically for the predefined types.
 > NOTE&nbsp; The _PredefinedType_ shall only be used, if no _IfcStairFlightType_ is assigned, providing its own _IfcStairFlightType.PredefinedType_.
 
 { .change-ifc2x4}

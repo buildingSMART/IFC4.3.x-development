@@ -123,7 +123,7 @@ Overall measure of the width, it reflects the X Dimension of a bounding box, enc
 > NOTE&nbsp; The body of the window might be wider then the window opening (for example in cases where the window lining includes a casing). In these cases the _OverallWidth_ shall still be given as the window opening width, and not as the total width of the window lining.
 
 ### PredefinedType
-Predefined generic type for a window that is specified in an enumeration. There may be a property set given specificly for the predefined types.
+Predefined generic type for a window that is specified in an enumeration. There may be a property set given specifically for the predefined types.
 > NOTE&nbsp; The _PredefinedType_ shall only be used, if no _IfcWindowType_ is assigned, providing its own _IfcWindowType.PredefinedType_.
 
 { .change-ifc2x4}

@@ -12,7 +12,7 @@ A storey is (if specified) associated to a building. A storey may span over seve
 
 The _IfcBuildingStorey_ is used to build the spatial structure of a building (that serves as the primary project breakdown and is required to be hierarchical). The spatial structure elements are linked together by using the objectified relationship _IfcRelAggregates_.
 
-Figure 1 shows the _IfcBuildingStorey_ as part of the s patial structure. It also serves as the spatial container for building and other elements.
+Figure 1 shows the _IfcBuildingStorey_ as part of the spatial structure. It also serves as the spatial container for building and other elements.
 
 > NOTE&nbsp; Detailed requirements on mandatory element containment and placement structure relationships are given in view definitions and implementer agreements.
 

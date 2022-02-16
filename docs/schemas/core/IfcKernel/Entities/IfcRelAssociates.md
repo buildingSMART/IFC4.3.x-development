@@ -1,6 +1,6 @@
 # IfcRelAssociates
 
-The association relationship _IfcRelAssociates_ refers to sources of information (most notably a classification, library, document, approval, contraint, or material). The information associated may reside internally or externally of the project data. There is no dependency implied by the association.
+The association relationship _IfcRelAssociates_ refers to sources of information (most notably a classification, library, document, approval, constraint, or material). The information associated may reside internally or externally of the project data. There is no dependency implied by the association.
 
 > EXAMPLE&nbsp; Further external information may be provided to the tank equipment (as subtype of _IfcProduct_) in terms of its classification and instruction documents, the source of the additional information is held external to the project data model.
 
@@ -10,7 +10,7 @@ Association relationships can be established to objects (occurrences as subtypes
 
 > EXAMPLE&nbsp; The classification information for a particular space within a building may be associated to the _IfcSpace_ object (subtype of _IfcObject_), defining a particular occurrence of space. Therefore the association of the DIN notation 'NF 1.5' may be associated by a subtype of _IfcRelAssociates_ to the object.
 
-The association relationship establishs an association between one to many objects or property templates and the associated information. The subtypes of _IfcRelAssociates_ establish the particular semantic meaning of the association relationship.
+The association relationship establishes an association between one to many objects or property templates and the associated information. The subtypes of _IfcRelAssociates_ establish the particular semantic meaning of the association relationship.
 
 > HISTORY&nbsp; New entity in IFC2x.
 

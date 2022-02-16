@@ -8,7 +8,7 @@ The client is denoted as the relating object and is established at the level of 
 
 > EXAMPLE&nbsp; A resource may receive information about its nature of representing real building products by establishing a link between _IfcResource_ and _IfcBuildingElement_ (subtype of _IfcProduct_) through the assignment relationship _IfcRelAssignsToResource_. The resource is then the client that applies the services of other objects (here building elements) to express the particular view of elements to be consumed as a resource in a process.
 
-The assignment relationship establishs a bi-directional relationship among the participating objects and does not imply any dependency. The subtypes of _IfcRelAssigns_ establishes the particular semantic meaning of the assignment relationship.
+The assignment relationship establishes a bi-directional relationship among the participating objects and does not imply any dependency. The subtypes of _IfcRelAssigns_ establishes the particular semantic meaning of the assignment relationship.
 
 > HISTORY&nbsp; New entity in IFC2x.
 
@@ -25,4 +25,4 @@ Particular type of the assignment relationship. It can constrain the applicable 
 ## Formal Propositions
 
 ### WR1
-Rule checks whether the types of the assigned related objects comply with the contraint given by the RelatedObjectsType. The rule is important for constraint checks at subtypes of IfcRelAssigns or at subtypes of IfcObject, which refers to assignment relationships through the inverse HasAssignments relation.
+Rule checks whether the types of the assigned related objects comply with the constraint given by the RelatedObjectsType. The rule is important for constraint checks at subtypes of IfcRelAssigns or at subtypes of IfcObject, which refers to assignment relationships through the inverse HasAssignments relation.

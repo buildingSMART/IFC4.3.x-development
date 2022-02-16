@@ -2,7 +2,7 @@
 
 The _IfcRelAdheresToElement_ is an objectified relationship between an element and one to many surface feature elements that adhere to the surface of the element. The relationship is defined to be a 1 to many relationship. The _IfcRelAdheresToElement_ establishes an aggregation relationship between the main element and a sub ordinary surface feature.
 
-> NOTE&nbsp; In contrary the _IfcRelAggregates_ relationship establishs an aggregation of equal parts to a whole.
+> NOTE&nbsp; In contrary the _IfcRelAggregates_ relationship establishes an aggregation of equal parts to a whole.
 
 The _IfcRelAdheresToElement_ implies a surface interface between the geometric bodies of the element and the surface feature . As with all decomposition relationships it determines:
 

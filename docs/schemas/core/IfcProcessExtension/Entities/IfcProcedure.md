@@ -105,7 +105,7 @@ The relationship IfcRelSequence is used to indicate
  IfcEvent indicates that the procedure should be
  performed in response to the event. An IfcProcedure
  as a predecessor to an IfcEvent indicates that the
- event should be trigerred following the procedure. As
+ event should be triggered following the procedure. As
  procedures have arbitrary duration, the
  IfcRelSequence.SequenceType attribute has no effect
  on an IfcProcedure but still applies to the opposite

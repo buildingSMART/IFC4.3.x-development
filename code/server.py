@@ -744,6 +744,8 @@ def process_markdown(resource, mdc, as_attribute=False):
             css_class = keyword.lower()
             if "addendum" in css_class or "change" in css_class:
                 css_class = "change"
+            if "deprecation" in css_class:
+                css_class = "deprecation"
             aside["class"] = f"aside-{css_class}"
             mark = soup.new_tag("mark")
             mark.string = keyword
@@ -846,12 +848,12 @@ def get_type_values(resource, mdc):
         described_values = []
         for value in values:
             description = None
-            for h in soup.findAll("h5"):
+            for h in soup.findAll("h3"):
                 if h.text != value:
                     continue
                 description = BeautifulSoup()
                 for sibling in h.find_next_siblings():
-                    if sibling.name == "h5":
+                    if sibling.name == "h3":
                         break
                     description.append(sibling)
                 description = str(description)

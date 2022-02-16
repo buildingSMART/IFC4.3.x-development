@@ -115,6 +115,9 @@ aside mark {
 aside.aside-change mark {
     background-color: var(--yellow);
 }
+aside.aside-deprecation mark {
+    background-color: var(--red);
+}
 aside.aside-history mark {
     background-color: #444;
 }

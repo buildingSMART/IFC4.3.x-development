@@ -123,6 +123,7 @@ control.
 ```
 > HISTORY Something happened.
 > IFC CHANGE Something changed.
+> IFC DEPRECATION Something disappeared.
 ```
 
 To create a captioned figure, you can do this:

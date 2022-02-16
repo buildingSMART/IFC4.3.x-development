@@ -2,28 +2,11 @@
 
 The _IfcAxis2Placement2D_ provides location and orientation to place items in a two-dimensional space. The attribute _RefDirection_ defines the x axis, the y axis is derived. If the attribute _RefDirection_ is not given, the placement defaults to P[1] (x-axis) as [1.,0.] and P[2] (y-axis) as [0.,1.].
 
-<table>
-      <tr>
-        <td>
-          <img src="../../../../figures/ifcaxis2placement2d-layout1.gif" alt="axis2 placement 2D" width="400" height="300" border="0">
-        </td>
-        <td style="vertical-align:bottom">
-          <blockquote class="note">
-            Figure 1 illustrates the definition of the
-            <em>IfcAxis2Placement2D</em> within the two-dimensional
-            coordinate system.
-          </blockquote>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <p class="figure">Figure 1 &mdash; Axis2 placement 2D</p>
-        </td>
-        <td>
-          &nbsp;
-        </td>
-      </tr>
-    </table>
+![axis2 placement 2D](../../../../figures/ifcaxis2placement2d-layout1.gif)
+
+Figure 1 &mdash; Axis2 placement 2D
+
+Figure 1 illustrates the definition of the <em>IfcAxis2Placement2D</em> within the two-dimensional coordinate system.
 
 { .extDef}
 > NOTE&nbsp; Definition according to ISO/CD 10303-42:1992  

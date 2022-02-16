@@ -6,28 +6,11 @@ The _IfcAxis2Placement3D_ provides location and orientations to place items in a
 
 If the attribute values for _Axis_ and _RefDirection_ are not given, the placement defaults to P[1] (x-axis) as [1.,0.,0.], P[2] (y-axis) as [0.,1.,0.] and P[3] (z-axis) as [0.,0.,1.].
 
-<table>
-      <tr>
-        <td>
-          <img src="../../../../figures/ifcaxis2placement3d-layout1.gif" alt="axis2 placement 2D" border="0" height="300" width="400">
-        </td>
-        <td style="vertical-align:bottom">
-          <blockquote class="note">
-            Figure 1 illustrates the definition of the
-            <em>IfcAxis2Placement3D</em> within the three-dimensional
-            coordinate system.
-          </blockquote>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <p class="figure">Figure 1 &mdash; Axis2 placement 3D</p>
-        </td>
-        <td>
-          &nbsp;
-        </td>
-      </tr>
-    </table>
+![axis2 placement 2D](../../../../figures/ifcaxis2placement3d-layout1.gif)
+
+Figure 1 &mdash; Axis2 placement 3D
+
+Figure 1 illustrates the definition of the <em>IfcAxis2Placement3D</em> within the three-dimensional coordinate system.
 
 { .extDef}
 > NOTE&nbsp; Definition according to ISO/CD 10303-42:1992  

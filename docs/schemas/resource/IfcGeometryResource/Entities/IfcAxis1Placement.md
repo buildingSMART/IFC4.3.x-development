@@ -2,20 +2,11 @@
 
 The _IfcAxis1Placement_ provides location and direction of a single axis.
 
-<table>
- <tr>
-  <td><img src="../../../../figures/ifcaxis1placement-layout1.gif" alt="axis1 placement" width="400" height="300" border="0">
-  </td>
-  <td style="vertical-align:bottom"><blockquote class="note">
-   Figure 1 illustrates the definition of the <em>IfcAxis1Placement</em> within the parent three-dimensional coordinate system.
-   </blockquote>
-  </td>
- </tr>
- <tr>
-  <td><p class="figure">Figure 1 &mdash; Axis1 placement</p>
-  </td>
- </tr>
-</table>
+![axis1 placement](../../../../figures/ifcaxis1placement-layout1.gif)
+
+Figure 1 &mdash; Axis1 placement
+
+Figure 1 illustrates the definition of the <em>IfcAxis1Placement</em> within the parent three-dimensional coordinate system.
 
 { .extDef}
 > NOTE&nbsp; Definition according to ISO/CD 10303-42:1992  

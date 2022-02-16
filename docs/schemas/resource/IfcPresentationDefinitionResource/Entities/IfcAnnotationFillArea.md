@@ -8,18 +8,9 @@ The fill area style that is applied to the _IfcAnnotationFillArea_ is declared u
 > NOTE&nbsp; Definition according to ISO 10303-46:  
 > An annotation fill area is a set of curves that may be filled with hatching, colour or tiling. The annotation fill are is described by boundaries which consist of non-intersecting, non-self-intersecting closed curves. These curves form the boundary of planar areas to be filled according to the style for the annotation fill area.
 
-Figure 1 illustrates annotation fill area.
+![annotation fill area](../../../../figures/ifcannotationfillarea_fig1.png)
 
-<table>
-<tr>
-<td>&nbsp; &nbsp; <img src="../../../../figures/ifcannotationfillarea_fig1.png" alt="annotation fill area" border="0"></td>
-</tr>
-<tr>
-<td>
-<p class="figure">Figure 1 &mdash; Annotation fill area</p>
-</td>
-</tr>
-</table>
+Figure 1 &mdash; Annotation fill area
 
 > NOTE&nbsp; Entity adapted from **annotation_fill_area** defined in ISO10303-46
 

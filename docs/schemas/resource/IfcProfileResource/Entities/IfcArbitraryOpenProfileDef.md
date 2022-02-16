@@ -26,7 +26,7 @@ Open bounded curve defining the profile.
 
 ### WR11
 The profile type is a .CURVE., an open profile can only be used to define a swept surface.
-> Note&nbsp; This does not apply to the subtype _IfcCentreLineProfileDef_.
+> NOTE This does not apply to the subtype _IfcCentreLineProfileDef_.
 
 ### WR12
 The dimensionality of the curve shall be 2.

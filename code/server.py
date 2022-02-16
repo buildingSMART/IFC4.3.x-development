@@ -191,15 +191,28 @@ navigation = [
 def get_navigation(resource=None, number=None):
     if not number and resource:
         number = name_to_number()[resource]
+    numbers = []
     if isinstance(number, str):
-        number = int(number.split(".")[0])
+        numbers = number.split(".")
+        number = int(numbers[0])
     for section in navigation:
         for item in section:
-            # Just simple for now
+            item["subitems"] = []
             if item["url"] == request.path:
                 item["is_current"] = True
             elif number and item.get("number", None) == number:
                 item["is_current"] = True
+                if number in (5, 6, 7, 8) and len(numbers) >= 2:
+                    subchapters = [items for t, items in R.hierarchy if t == item["name"]][0]
+                    for i, subchapter in enumerate(subchapters, 1):
+                        data = {
+                            "url": url_for("schema", name=subchapter[0].lower()),
+                            "number": f"{number}.{i}",
+                            "name": subchapter[0],
+                        }
+                        if i == int(numbers[1]):
+                            data["is_current"] = True
+                        item["subitems"].append(data)
             else:
                 item["is_current"] = False
     return navigation
@@ -1120,7 +1133,6 @@ class FigureNumberer:
         return html
 
 
-# Will probably become smarter
 class SectionNumberGenerator:
     number = "1"
 
@@ -1142,10 +1154,6 @@ class SectionNumberGenerator:
     @classmethod
     def end_subsection(cls):
         cls.number = ".".join(cls.number.split(".")[0:-1])
-
-    @classmethod
-    def get_table_of_contents(cls):
-        pass  # Just an idea? Like Wikipedia
 
 
 @app.route(make_url("annex-b.html"))

@@ -64,7 +64,11 @@ function generateSectionNavigation() {
         if (href) {
             let name = h2.textContent.trim();
             let number = name.split(' ', 1)[0];
-            name = name.substring(number.length);
+            if (name == number) {
+                number = '';
+            } else {
+                name = name.substring(number.length);
+            }
 
             li = document.createElement('li');
             li.setAttribute('number', number);

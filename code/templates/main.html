@@ -34,7 +34,14 @@
                     {% for section in navigation %}
                     <div>
                         {% for item in section %}
-                        <a href="{{ item.url }}"{% if item.is_current %}class="current"{% endif %}>{{ item.number }} {{ item.name }}</a>
+                        <a href="{{ item.url }}"{% if item.is_current %}class="current"{% endif %}>
+                            {{ item.number }} {{ item.name }}
+                        </a>
+                        {% for subitem in item.subitems %}
+                        <a class="sublink-1{% if subitem.is_current %} current{% endif %}" href="{{ subitem.url }}">
+                            {{ subitem.number }} {{ subitem.name }}
+                        </a>
+                        {% endfor %}
                         {% endfor %}
                     </div>
                     {% endfor %}

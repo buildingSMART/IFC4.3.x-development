@@ -21,34 +21,14 @@ Figure 2 - Equation 1
 
 Figure 3 - Equation 2
 
-<table>
-    <thead>
-        <tr>
-            <th>Variable</th>
-            <th>Definition</th>
-        </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td><em>k</em>+1</td>
-        <td>Number of control points</td>
-    </tr>
-    <tr>
-        <td>P<sub><em>i</em></sub></td>
-        <td>Control points</td>
-    </tr>
-    <tr>
-        <td><em>w</em><sub><em>i</em></sub></td>
-        <td>Weights</td>
-    </tr>
-    <tr>
-        <td><em>d</em></td>
-        <td>Degree</td>
-    </tr>
-    </tbody>
-</table>
+Variable | Definition
+---|---
+k+1 | Number of control points
+P<sub>i</sub> | Control points
+w<sub>i</sub> | Weights
+d | Degree
 
-Table 4 - variable definitions
+Table 4 - Variable definitions
   
 Interpretation of the data is as follows:
 

@@ -104,8 +104,65 @@ tutorial](https://www.markdowntutorial.com/) to learn it quickly!
 However, there are some conventions established for the purposes of IFC
 documentation.
 
-TODO: how to caption and reference figures, how to create inline notes and
-examples.
+To create a note, you can do:
+
+```
+> NOTE This is a note.
+```
+
+To create an example:
+
+```
+> EXAMPLE This is an example.
+```
+
+You may also come across history notes or changes. It is no longer encouraged to
+use these, as changes are automatically detected and tracked using version
+control.
+
+```
+> HISTORY Something happened.
+> IFC CHANGE Something changed
+```
+
+To create a captioned figure, you can do this:
+
+```
+![Optional image alt text](path/to/image.png "Optional image title text")
+
+Figure ABC - Shows something interesting
+```
+
+The image must be immediately succeeded by a paragraph with `Figure 1234` as the
+first words. `ABC` can be any unique code that you choose. The new line
+separating the image and the figure paragraph is optional, but recommended.
+
+If you want to refer to your figure later on, you can simply mention it in a
+paragraph, and the reference will automatically be updated.
+
+```
+This is a paragraph that talks about Figure ABC in interesting ways.
+```
+
+Although not recommended, you can omit a figure paragraph. In that case it will
+be automatically captioned. If an image title is available, the image title will
+be used as the image caption.
+
+You can create a table using Markdown like so:
+
+```
+Name | Definition
+---|---
+Foo | Description of foo
+Bar | Description of bar
+
+Table XYZ - A table of things
+```
+
+Similar to figures, tables can also be annotated with an arbitrary code of your
+choice, which you can refer to later.
+
+Markdown allows HTML, but this is generally unnecessary.
 
 ## Diagrams
 

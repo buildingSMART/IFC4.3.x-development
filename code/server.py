@@ -882,7 +882,7 @@ def get_properties(resource):
                 as_attribute=True,
             )
         except:
-            doc = "<i>missing property definition</i>"
+            doc = "<i>Missing property definition</i>"
 
         if R.pset_definitions[resource]["kind"] == "quantity_set":
             prop_type = []
@@ -990,8 +990,10 @@ def get_property_sets(resource, builder):
         usage = get_usage_name(name)
         stripped_name = name.replace(" ", "")
         relationships = get_applicable_relationships(usage, stripped_name, concept[0])
-        if relationships:
-            psets += relationships
+        for pset in relationships or []:
+            properties = R.pset_definitions[pset["name"]]["properties"]
+            pset["properties"] = [p["name"] for p in properties]
+            psets.append(pset)
 
     if psets:
         return {
@@ -1687,35 +1689,47 @@ def after(response):
         h1 = soup.findAll("h1")[0]
         title = soup.findAll("title")[0]
         title.string = h1.text + " - " + title.string
+
         main_content = soup.find_all(id="main-content")
         main_content = main_content[0] if len(main_content) else None
 
         if main_content:
-
             for img in main_content.findAll("img"):
                 # Capture images as numbered figures
                 parent = img.parent
-                has_caption = False
-                for i, sibling in enumerate(parent.find_next_siblings()):
-                    if i > 2 or sibling.name.lower() not in ("p", "blockquote", "aside"):
-                        # If we've gone this far without encountering a caption, something is wrong so let's stop
-                        break
-                    if sibling.name == "p" and (sibling.find("img") or sibling.find("table") or sibling.find("svg")):
-                        # This is another figure or table, so it's obviously not a caption
-                        break
-                    if sibling.name == "p" and sibling.text.startswith("Figure"):
-                        has_caption = True
-                        sibling.name = "figcaption"
-                        # Make sure the caption is directly under the image
-                        parent.insert(1, sibling.extract())
-                        break
-                    else:
-                        parent.append(sibling.extract())
-                if not has_caption:
-                    caption = soup.new_tag("figcaption")
-                    caption.string = "Figure " + str(uuid.uuid4())
-                    parent.append(caption)
                 parent.name = "figure"
+                has_caption = False
+                if parent.text.strip():
+                    # Option 1: the figure caption is in the same block as the image
+                    has_caption = True
+                    figcaption = soup.new_tag("figcaption")
+                    figcaption.string = parent.text
+                    extracted_img = img.extract()
+                    parent.string = ""
+                    parent.append(extracted_img)
+                    parent.append(figcaption)
+                    FigureNumberer.generate(parent, figcaption.text.split(" ", 2)[1])
+                elif img["title"].strip():
+                    # Option 2: the image has a "title" tag being used as a caption
+                    has_caption = True
+                    figcaption = soup.new_tag("figcaption")
+                    figcaption.string = img["title"].strip()
+                    parent.append(figcaption)
+                    FigureNumberer.generate(parent, figcaption.text.split(" ", 2)[1])
+                else:
+                    # Option 2: the figure caption is in the next block
+                    sibling = parent.find_next_sibling()
+                    if sibling and sibling.name == "p" and sibling.text.startswith("Figure"):
+                        has_caption = True
+                        figcaption = sibling.extract()
+                        figcaption.name = "figcaption"
+                        parent.append(figcaption)
+                        FigureNumberer.generate(parent, figcaption.text.split(" ", 2)[1])
+                if not has_caption:
+                    figcaption = soup.new_tag("figcaption")
+                    figcaption.string = "Figure " + str(uuid.uuid4())
+                    parent.append(figcaption)
+                    FigureNumberer.generate(parent, figcaption.text.split(" ", 2)[1])
 
             for table in main_content.findAll("table"):
                 figure = soup.new_tag("figure")
@@ -1723,43 +1737,29 @@ def after(response):
                 figure.append(table.extract())
                 parent = figure
                 has_caption = False
-                for i, sibling in enumerate(parent.find_next_siblings()):
-                    if i > 2 or sibling.name.lower() not in ("p", "blockquote"):
-                        # If we've gone this far without encountering a caption, something is wrong so let's stop
-                        break
-                    if sibling.name == "p" and (sibling.find("img") or sibling.find("table") or sibling.find("svg")):
-                        # This is another figure or table, so it's obviously not a caption
-                        break
-                    if sibling.name == "p" and sibling.text.startswith("Figure"):
-                        has_caption = True
-                        sibling.name = "figcaption"
-                        # Make sure the caption is directly under the image
-                        parent.insert(1, sibling.extract())
-                        break
-                    else:
-                        parent.append(sibling.extract())
-                if not has_caption:
-                    caption = soup.new_tag("figcaption")
-                    caption.string = "Table " + str(uuid.uuid4())
-                    parent.append(caption)
 
-        for figure in soup.findAll("figure"):
-            for figcaption in figure.findAll("figcaption"):
-                number = figcaption.text.split(" ", 2)[1]
-                FigureNumberer.generate(figure, number)
+                sibling = parent.find_next_sibling()
+                if sibling and sibling.name == "p" and sibling.text.startswith("Table"):
+                    has_caption = True
+                    figcaption = sibling.extract()
+                    figcaption.name = "figcaption"
+                    parent.append(figcaption)
+                    FigureNumberer.generate(parent, figcaption.text.split(" ", 2)[1])
+
+                if not has_caption:
+                    figcaption = soup.new_tag("figcaption")
+                    figcaption.string = "Table " + str(uuid.uuid4())
+                    parent.append(figcaption)
+                    FigureNumberer.generate(parent, figcaption.text.split(" ", 2)[1])
 
         for element in soup.findAll(["h2", "h3", "h4", "h5", "h6", "figure"]):
             id_element = element
 
-            try:
-                if element.name == "figure":
-                    element = element.find("figcaption")
-                    value = element.contents[0].strip()
-                else:
-                    value = element.contents[0].strip()
-            except:
-                # @todo IfcPerformanceHistory
-                continue
+            if element.name == "figure":
+                element = element.findChild("figcaption", recursive=False)
+                value = element.text.strip()
+            else:
+                value = element.text.strip()
 
             anchor_tag = re.sub("[^0-9a-zA-Z.]+", "-", value)
 
@@ -1784,4 +1784,5 @@ def after(response):
                 return w
 
         response.data = ifcre.sub(decorate_link, html)
+
     return response

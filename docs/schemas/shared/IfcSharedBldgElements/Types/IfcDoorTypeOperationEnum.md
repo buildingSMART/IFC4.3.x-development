@@ -64,7 +64,7 @@ SINGLE_SWING
 DOUBLE_SWING_LEFT
 </td>
 <td valign="top" width="40%">Door with one panel that swings in
-both directions and to the left in the main trafic direction.
+both directions and to the left in the main traffic direction.
 Also called double acting door.<br>
 <blockquote class="note">NOTE&nbsp; Direction of swing (whether in or out) is determined at the <em>IfcDoor</em> or <em>IfcDoorStandardCase</em>.<br>
 <br></blockquote>
@@ -77,7 +77,7 @@ Also called double acting door.<br>
 DOUBLE_SWING_RIGHT
 </td>
 <td valign="top" width="40%">Door with one panel that swings in
-both directions and to the right in the main trafic direction.
+both directions and to the right in the main traffic direction.
 Also called double acting door.<br>
 <blockquote class="note">NOTE&nbsp; Direction of swing (whether in or out) is determined at the <em>IfcDoor</em> or <em>IfcDoorStandardCase</em>.<br>
 <br></blockquote>
@@ -91,9 +91,9 @@ DOUBLE_DOOR_<br>
 DOUBLE_SWING
 </td>
 <td valign="top" width="40%">Door with two panels, one swings in
-both directions and to the right in the main trafic direction the
+both directions and to the right in the main traffic direction the
 other swings also in both directions and to the left in the main
-trafic direction.<br>
+traffic direction.<br>
 <blockquote class="note">NOTE&nbsp; Direction of swing (whether in or out) is determined at the <em>IfcDoor</em> or <em>IfcDoorStandardCase</em>.<br>
 <br></blockquote>
 </td>
@@ -273,13 +273,13 @@ Door with two panels that both open to the left, one panel swings in one directi
 Door with two panels that both open to the right, one panel swings in one direction and the other panel swings in the opposite direction.
 
 ### DOUBLE_SWING_LEFT
-Door with one panel that swings in both directions and to the left in the main trafic direction. Also called double acting door.
+Door with one panel that swings in both directions and to the left in the main traffic direction. Also called double acting door.
 
 ### DOUBLE_SWING_RIGHT
-Door with one panel that swings in both directions and to the right in the main trafic direction. Also called double acting door.
+Door with one panel that swings in both directions and to the right in the main traffic direction. Also called double acting door.
 
 ### DOUBLE_PANEL_DOUBLE_SWING
-Door with two panels, one swings in both directions and to the right in the main trafic direction the other swings also in both directions and to the left in the main trafic direction.
+Door with two panels, one swings in both directions and to the right in the main traffic direction the other swings also in both directions and to the left in the main traffic direction.
 
 ### SLIDING_TO_LEFT
 Door with one panel that is sliding to the left.

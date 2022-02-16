@@ -6,7 +6,7 @@ The _IfcGeometricRepresentationSubContext_ is used to define semantically distin
 
 > NOTE&nbsp; If the _IfcShapeRepresentation_ using this sub context has_IfcStyledItem_'s assigned to the _Items_, the presentation style information (e.g. _IfcCurveStyle_, _IfcTextStyle_) associated with the _IfcStyledItem_ is given in target plot dimensions. For example, a line thickness (_IfcCurveStyle.CurveWidth_) is given by a thickness measure relating to the thickness for a plot within the (range of) target scale.
 
-Each _IfcProduct_ can then have several instances of subtypes of _IfcRepresentation_, each being assigned to a different _IfcGeometricRepresentationSubContext_). The applicable values for the inherited _ContextIdentifier_ attribute shall be identical to the _RepresentationIdentifier_ attrubute defined at _IfcShapeRepresentation_.
+Each _IfcProduct_ can then have several instances of subtypes of _IfcRepresentation_, each being assigned to a different _IfcGeometricRepresentationSubContext_). The applicable values for the inherited _ContextIdentifier_ attribute shall be identical to the _RepresentationIdentifier_ attribute defined at _IfcShapeRepresentation_.
 
 > NOTE&nbsp; The provision of a model view (_IfcGeometricRepresentationContext.ContextType_ = 'Model') is mandatory. Instances of _IfcGeometricRepresentationSubContext_ relate to it as its _ParentContext_.
 

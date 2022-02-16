@@ -188,7 +188,7 @@ The material of IfcWall can be defined by
 IfcMaterialLayerSetUsage and attached by 
 IfcRelAssociatesMaterial.RelatingMaterial. It is
  accessible by the inverse HasAssociations relationship.
- Multi-layer walls can be represented by refering to several 
+ Multi-layer walls can be represented by referring to several 
 IfcMaterialLayer's within the IfcMaterialLayerSet 
 that is referenced from the
  IfcMaterialLayerSetUsage.
@@ -215,7 +215,7 @@ Figure 278 illustrates material layer usage, where the following conventions sha
 Representation.Representations of the IfcWallStandardCase.
 * The IfcMaterialLayerSetUsage.OffsetFromReferenceLine is given as a distance from this axis.
 * The IfcMaterialLayerSetUsage.OffsetFromReferenceLine is the distance parallel to the reference axis and always within the base
-(XY) plane of the reference coordinate system. A positve value of IfcMaterialLayerSetUsage.OffsetFromReferenceLine would
+(XY) plane of the reference coordinate system. A positive value of IfcMaterialLayerSetUsage.OffsetFromReferenceLine would
 then point into the positive y-axis of the reference coordinate system.
 * The IfcMaterialLayerSetUsage.DirectionSense defines how the IfcMaterialLayer's are assigned to the reference axis. POSITIVE means in direction to the positive y-axis of the reference coordinate system.
 * The Thickness of each IfcMaterialLayer is provided starting from the OffsetFromReferenceLine and in the direction given by DirectionSense. It is applied without any gap or overlap between two consecutive layers. The TotalThickness of the IfcMaterialLayerSet is the sum of all layer thicknesses.

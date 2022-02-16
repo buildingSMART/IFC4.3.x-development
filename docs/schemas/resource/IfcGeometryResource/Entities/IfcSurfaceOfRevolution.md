@@ -21,7 +21,7 @@ The IfcSurfaceOfRevolution is a surface derived by rotating a curve about an axi
 Informal Propositions:
 
 1. The surface shall not self-intersect
-2. The swept curve shall not be coincident with the axis line for any finite part of its legth.
+2. The swept curve shall not be coincident with the axis line for any finite part of its length.
 
 ## Attributes
 

@@ -57,7 +57,7 @@ Reference to space boundaries by virtue of the objectified relationship _IfcRelS
 Reference to the element connection relationship. The relationship then refers to the other element that is connected to this element.
 
 ### ContainedInStructure
-Containment relationship to the spatial structure element, to which the element is primarily associated. This containment relationship has to be hierachical, i.e. an element may only be assigned directly to zero or one spatial structure.
+Containment relationship to the spatial structure element, to which the element is primarily associated. This containment relationship has to be hierarchical, i.e. an element may only be assigned directly to zero or one spatial structure.
 
 ### HasCoverings
 Reference to _IfcCovering_ by virtue of the objectified relationship _IfcRelCoversBldgElement_. It defines the concept of an element having coverings associated.
@@ -71,7 +71,7 @@ Reference to the _IfcRelAdheresToElement_ relationship that adheres a _IfcSurfac
 
 An IfcElement (so far no further constraints are
  defined at the level of its subtypes or by view definitions) may be 
-represented as a single or multiple boundary representation models, which include advanced surfaces, usually refered to 
+represented as a single or multiple boundary representation models, which include advanced surfaces, usually referred to 
 as NURBS surfaces. The 'AdvancedBrep' representation allows for the 
 representation of complex free-form element shape.
 

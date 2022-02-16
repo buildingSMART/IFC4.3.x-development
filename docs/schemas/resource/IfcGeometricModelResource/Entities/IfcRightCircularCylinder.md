@@ -6,7 +6,7 @@ The _IfcRightCircularCylinder_ is a Construction Solid Geometry (CSG) 3D primiti
 * _SELF\IfcCsgPrimitive3D.Position.Location_: The center of the circular area being the bottom face of the cylinder.
 * _SELF\IfcCsgPrimitive3D.Position.Position[3]:_ The z axis provides the center axis and the height is measured from the origin along the positive direction of the z axis.
 
-Figure 1 illustrates geometric parameters of the cylinder. The cylinder is positioned within its own placement coordiante system. The origin is the center of the bottom circular disk, that lies in the XY plane. The center of the top circular disk is on the positive z axis at [0, 0, _Height_].
+Figure 1 illustrates geometric parameters of the cylinder. The cylinder is positioned within its own placement coordinate system. The origin is the center of the bottom circular disk, that lies in the XY plane. The center of the top circular disk is on the positive z axis at [0, 0, _Height_].
 
 !["cylinder"](../../../../figures/ifcrightcircularcylinder-layout1.png "Figure 1 &mdash; Right circular cylinder geometry")
 

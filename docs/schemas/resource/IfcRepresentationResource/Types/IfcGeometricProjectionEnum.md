@@ -10,7 +10,7 @@ _IfcGeometricProjectionEnum_ defines the various representation types that can b
 Geometric display representation that shows an abstract, often 1D element representation, e.g. representing a wall by its axis line.
 
 ### SKETCH_VIEW
-Geometric display representation that shows an abstract, often 2D element representation, e.g. representing a wall by its two foot print edges, surpressing any inner layer representation.
+Geometric display representation that shows an abstract, often 2D element representation, e.g. representing a wall by its two foot print edges, suppressing any inner layer representation.
 
 ### MODEL_VIEW
 Geometric display representation that shows a full 3D element representation, e.g. representing a wall by its volumetric body.

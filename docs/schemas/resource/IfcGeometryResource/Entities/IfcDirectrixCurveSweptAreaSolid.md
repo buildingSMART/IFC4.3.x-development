@@ -17,4 +17,4 @@ The parameter value on the Directrix at which the sweeping operation ends. If no
 ## Formal Propositions
 
 ### DirectrixBounded
-If the values for _StartParam_ or _EndParam_ are omited, then the _Directrix_ has to be a bounded or closed curve.
+If the values for _StartParam_ or _EndParam_ are omitted, then the _Directrix_ has to be a bounded or closed curve.

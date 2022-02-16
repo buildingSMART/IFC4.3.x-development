@@ -16,7 +16,7 @@ On a generic level products can be assigned to processes, controls, resources, p
 * **Being assigned to a process**: assigned using _IfcRelAssignsToProcess_ linking the _IfcProduct_ to an _IfcProcess_
 * **Being assigned to a resource**: assigned using _IfcRelAssignsToResource_ linking the _IfcProduct_ to an _IfcResource_
 
-> EXAMPLE&nbsp; An example of the control relationship is the assignment of a performance history to a distribution element. An example of process assignment relationship is the assignment of products like wall, slab, column to a contruction task for construction planning. And an example of resource assignment relationship is the assignment of products to a construction resource that consumes the product.
+> EXAMPLE&nbsp; An example of the control relationship is the assignment of a performance history to a distribution element. An example of process assignment relationship is the assignment of products like wall, slab, column to a construction task for construction planning. And an example of resource assignment relationship is the assignment of products to a construction resource that consumes the product.
 
 > HISTORY&nbsp; New entity in IFC1.0
 
@@ -51,7 +51,7 @@ The geometric representation of any IfcProduct is provided by the IfcProductDefi
 
 
 
-> NOTE  A detailed specification of how to apply the local placement and which shape representaions are applicable is provided at the level of subtypes of IfcProduct and is further determined by the model view definition and implementer agreements.
+> NOTE  A detailed specification of how to apply the local placement and which shape representations are applicable is provided at the level of subtypes of IfcProduct and is further determined by the model view definition and implementer agreements.
 
 
 

@@ -19,7 +19,7 @@ The spatial zone is used to represent a lighting zone; a daylight zone, or an ar
 The spatial zone is used to represent a zone of particular occupancy.
 
 ### SECURITY
-The spatial zone is used to represent a zone for security planning and maintainance work.
+The spatial zone is used to represent a zone for security planning and maintenance work.
 
 ### THERMAL
 The spatial zone is used to represent a thermal zone.

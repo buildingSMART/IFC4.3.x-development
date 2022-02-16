@@ -183,7 +183,7 @@ IfcMaterialProfileSet or as fallback by IfcMaterial, and it is attached either d
 The Material Profile Set Usage defines the assignment of an IfcMaterialProfileSetUsage to the 
 IfcColumnType providing a common profile definition to all
  occurrences of this IfcColumnType. Columns with 
-composite profile can be represented by refering to
+composite profile can be represented by referring to
  several IfcMaterialProfile's within the
 IfcMaterialProfileSet that is referenced from the
 IfcMaterialProfileSetUsage.

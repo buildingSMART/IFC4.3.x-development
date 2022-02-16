@@ -3,7 +3,7 @@
 The _IfcWallStandardCase_ defines a wall with certain constraints for the provision of parameters and with certain constraints for the geometric representation. The _IfcWallStandardCase_ handles all cases of walls, that are extruded vertically:
 
 * along the positive z axis of the wall object coordinate system, and
-* along the positve z axis of the global (world) coordinate system
+* along the positive z axis of the global (world) coordinate system
 
 and have a single thickness along the path for each wall layer, i.e.:
 
@@ -164,7 +164,7 @@ Figure 292 — Wall body extrusion curved
 ### Material Layer Set Usage
 
 
-Multi-layer walls can be represented by refering to several
+Multi-layer walls can be represented by referring to several
 IfcMaterialLayer's within the IfcMaterialLayerSet
 that is referenced from the
 IfcMaterialLayerSetUsage. 
@@ -205,7 +205,7 @@ Figure 288 illustrates material layer usage, where the following conventions sha
 Representation.Representations of the IfcWallStandardCase.
 * The IfcMaterialLayerSetUsage.OffsetFromReferenceLine is given as a distance from this axis.
 * The IfcMaterialLayerSetUsage.OffsetFromReferenceLine is the distance parallel to the reference axis and always within the base
-(XY) plane of the reference coordinate system. A positve value of IfcMaterialLayerSetUsage.OffsetFromReferenceLine would
+(XY) plane of the reference coordinate system. A positive value of IfcMaterialLayerSetUsage.OffsetFromReferenceLine would
 then point into the positive y-axis of the reference coordinate system.
 * The IfcMaterialLayerSetUsage.DirectionSense defines how the IfcMaterialLayer's are assigned to the reference axis. POSITIVE means in direction to the positive y-axis of the reference coordinate system.
 * The Thickness of each IfcMaterialLayer is provided starting from the OffsetFromReferenceLine and in the direction given by DirectionSense. It is applied without any gap or overlap between two consecutive layers. The TotalThickness of the IfcMaterialLayerSet is the sum of all layer thicknesses.

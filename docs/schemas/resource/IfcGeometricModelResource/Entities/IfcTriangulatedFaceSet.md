@@ -18,7 +18,7 @@ See Figure 2 for using the _IfcTriangulatedFaceSet_ without (as default) and wit
 
 !["IfcTriangulatedFaceSet_02"](../../../../figures/ifctriangulatedfaceset_01.png "Figure 2 &mdash; Triangulated face set")
 
-Optionally normals can be provided. Only normals per vector are supported allowing for visually curved triangles when the three normals of the corresponding three vertices of a triangle are not co-linear to the normal of the triangular face. If they are identical, normals shall be omited.
+Optionally normals can be provided. Only normals per vector are supported allowing for visually curved triangles when the three normals of the corresponding three vertices of a triangle are not co-linear to the normal of the triangular face. If they are identical, normals shall be omitted.
 
 > NOTE&nbsp; In case of a body representation having triangular faces with curvature, different normals for all three vertices in context of this triangles are exported, describing the curvature for smooth visualisation. In case of triangular faces with no curvature, the three vertex-based normals are identical and could always be computed from the face. Therefore vertices should only be exported to support smooth visualisation by curvature of triangles. In case of faceted representation no vertices should be exported.
 

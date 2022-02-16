@@ -8,7 +8,7 @@ _IfcProjectedCRS_ is a coordinate reference system of the map to which the map t
 
 The unambiguous identifier by which the coordinate reference system is know, is stored in the inherited _Name_ attribute. Well defined identifiers include the map projection and also the map zone information. In these cases the _MapProjection_ and the _MapZone_ attributes can be omitted.
 
-> EXAMPLE&nbsp; The identifier 'EPSG:25832' defines the map projection 'UTM' and the zone '32N' in additon to the geodetic and vertical datum.
+> EXAMPLE&nbsp; The identifier 'EPSG:25832' defines the map projection 'UTM' and the zone '32N' in addition to the geodetic and vertical datum.
 
 > HISTORY&nbsp; New entity in IFC4.
 
@@ -33,7 +33,7 @@ Name by which the map zone, relating to the _MapProjection_, is identified.
 ### MapUnit
 Unit of the coordinate axes composing the map coordinate system.
 > NOTE 1&nbsp; Only length measures are in scope and all two or three axes of the map coordinate system shall have the same length unit.
-> NOTE 2&nbsp; If MapUnit is omited, the unit for the coordinate axes is taken from the default units, as stated in IfcProject.UnitInContext.
+> NOTE 2&nbsp; If MapUnit is omitted, the unit for the coordinate axes is taken from the default units, as stated in IfcProject.UnitInContext.
 
 ## Formal Propositions
 

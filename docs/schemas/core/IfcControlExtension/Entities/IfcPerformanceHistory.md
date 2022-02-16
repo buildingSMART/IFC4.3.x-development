@@ -15,7 +15,7 @@ _IfcPerformanceHistory_ may be declared within a project using _IfcRelDeclares_ 
 Describes the applicable building life-cycle phase. Typical values should be DESIGNDEVELOPMENT, SCHEMATICDEVELOPMENT, CONSTRUCTIONDOCUMENT, CONSTRUCTION, ASBUILT, COMMISSIONING, OPERATION, etc.
 
 ### PredefinedType
-Predefined generic type for a performace history that is specified in an enumeration.
+Predefined generic type for a performance history that is specified in an enumeration.
 { .change-ifc2x4}
 > IFC4 CHANGE The attribute has been added at the end of the entity definition.
 

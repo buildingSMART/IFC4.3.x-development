@@ -75,7 +75,7 @@ In the geometric perspective, it denotes a connection between two points that fo
 !["Circular arc segment"](../../figures/ifcalignmenthorizontalsegmenttypeenum-circulararc.png "Figure 1 &mdash; Curvature for horizontal circular segment")
 
 ### CLOTHOID
-In the geometric perspective, a clothoid denotes a connection between two points where the radius of curvature changes along the segment at a constant rate. The clothoid was an early achievement of geometry, also known as Euler's spiral or Cornu's spiral. It became very popular in road and rail design even before the widespread availability of computers because of the availability of tabulations of the normalized clothoid. Proper application of the so called clothoid constant provided fast solutions for all relevant parameters necessary to integrate clothoid segments between two consecutive segments with constant curvature. In most cases the clothoid smooths the curvature between a straight line and a ciruclar arc. <br/>
+In the geometric perspective, a clothoid denotes a connection between two points where the radius of curvature changes along the segment at a constant rate. The clothoid was an early achievement of geometry, also known as Euler's spiral or Cornu's spiral. It became very popular in road and rail design even before the widespread availability of computers because of the availability of tabulations of the normalized clothoid. Proper application of the so called clothoid constant provided fast solutions for all relevant parameters necessary to integrate clothoid segments between two consecutive segments with constant curvature. In most cases the clothoid smooths the curvature between a straight line and a circular arc. <br/>
 
 In the dynamic perspective, it denotes a segment with constant rate of lateral acceleration change induced by the curvature. The kinematic properties of the clothoid both reduce the exerted forces on the track by a train, improve the travel experience of train passengers and also reduce the stress of a car driver by avoiding sudden movements of the steering wheel.<br>
 
@@ -97,7 +97,7 @@ It was discovered very early that setting **a** to "1&nbsp;/&nbsp;6RL" and **b**
 !["Cubic transition"](../../figures/ifcalignmenthorizontalsegmenttypeenum-cubic.png "Figure 2 &mdash; Alignment formula for cubic")</Documentation>
 <br/>
 
-Since the manual computation of cubics was considerable easier compared to the theoretically sound clothoid, cubic transistions became very popular as "good enough" replacement curves.
+Since the manual computation of cubics was considerable easier compared to the theoretically sound clothoid, cubic transitions became very popular as "good enough" replacement curves.
 
 Cubic transition bends can still be found in many legacy alignments based on earlier design regulations. There also exist regulations containing cubic transitions for new designs.
 

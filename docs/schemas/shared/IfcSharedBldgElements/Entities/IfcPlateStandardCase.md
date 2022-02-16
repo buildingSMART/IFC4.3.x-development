@@ -93,7 +93,7 @@ The material of the IfcPlateStandardCase is defined by
 IfcMaterialLayerSetUsage and attached by the
 IfcRelAssociatesMaterial.RelatingMaterial. It is
 accessible by the inverse HasAssociations relationship.
-Multi-layer plates can be represented by refering to several
+Multi-layer plates can be represented by referring to several
 IfcMaterialLayer's within the IfcMaterialLayerSet
 that is referenced from the
 IfcMaterialLayerSetUsage. 

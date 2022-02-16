@@ -18,7 +18,7 @@ Beams, columns, and similarly shaped building elements and their type objects ma
 
 The profile definition in material association is required to be consistent with shape representations of the respective building elements.
 
-A higher-level description of spatial aligment of the section profile of a member (such as centered, bottom-left, in the geometric centroid, and more) can be provided within _IfcMaterialProfileSetUsage_ by means of a cardinal point reference. This can be used redundant to geometric data in order to convey design intent.
+A higher-level description of spatial alignment of the section profile of a member (such as centered, bottom-left, in the geometric centroid, and more) can be provided within _IfcMaterialProfileSetUsage_ by means of a cardinal point reference. This can be used redundant to geometric data in order to convey design intent.
 
 **Use in shape models**
 

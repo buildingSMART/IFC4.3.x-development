@@ -15,7 +15,7 @@ Figure 1 illustrates parameters of a rectangular or square hollow profile defini
     <tr>
       <td style="vertical-align: top; text-align: left; width: 420px;">
 
-<img src="../../../../figures/ifcrectanglehollowprofiledef.gif" alt="hollow rectange shape profile" border="0" height="300" width="400">
+<img src="../../../../figures/ifcrectanglehollowprofiledef.gif" alt="hollow rectangle shape profile" border="0" height="300" width="400">
 
       </td>
       <td style="vertical-align: top; text-align: left;">

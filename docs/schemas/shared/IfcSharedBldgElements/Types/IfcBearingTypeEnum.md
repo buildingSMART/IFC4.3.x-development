@@ -14,7 +14,7 @@ A pad bearing which carries vertical load by contact stresses between a sheet of
 A bearing which carries vertical load by compression of an (elastomeric) disc confined in a (steel) cylinder and which accommodates rotations by deformations of the disc.
 
 ### GUIDE
-A bearing that ensures that the structure maintains the correct location or expansion/contraction path and takes no vertical load. Inlcudes also restraint bearings.
+A bearing that ensures that the structure maintains the correct location or expansion/contraction path and takes no vertical load. Includes also restraint bearings.
 
 ### ROCKER
 The bearing functionality is provided by a rocker construction. Includes line rocker and point rocker bearings.

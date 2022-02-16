@@ -5,7 +5,7 @@ The space boundary defines the physical or virtual delimiter of a space by the r
 * In the case of a physical space boundary, the placement and shape of the boundary may be given, and the building element, providing the boundary, is referenced,
 * In the case of a virtual space boundary, the placement and shape of the boundary may be given, and a virtual element is referenced.
 
-The _IfcRelSpaceBoundary_ is defined as an objectified relationship that handles the element to space relationship by objectifying the relationship between an element and the space it bounds. It is given as a one-to-one relationship, but allows each element (including virutal elements and openings) to define many such relationship and each space to be defined by many such relationships.
+The _IfcRelSpaceBoundary_ is defined as an objectified relationship that handles the element to space relationship by objectifying the relationship between an element and the space it bounds. It is given as a one-to-one relationship, but allows each element (including virtual elements and openings) to define many such relationship and each space to be defined by many such relationships.
 
 Space boundaries are always defined as seen from the space. In general two basic types of space boundaries are distinguished:
 
@@ -49,7 +49,7 @@ As shown in Figure 41, if the _IfcRelSpaceBoundary_ is used to express a virtual
 
 !["IfcRelSpaceBoundary_virtual (35K)"](../../../../figures/ifcrelspaceboundary_virtual.png "Figure 5 &mdash; Space boundary of virtual element")
 
-As shown in Figure 42, if the _IfcRelSpaceBoundary_ is used to express a physical boundary between two spaces, the attribute _PhysicalOrVirtualBoundary_ has to be set to PHYSICAL. The attribute _RelatedBuildingElement_ has to be given and points to the element providing the space boundary. The attribute _ConnectionGeometry_ may be inserted, in this case it describes the physical space boundary geometically, or it may be omited, in that case it describes a physical space boundary logically.
+As shown in Figure 42, if the _IfcRelSpaceBoundary_ is used to express a physical boundary between two spaces, the attribute _PhysicalOrVirtualBoundary_ has to be set to PHYSICAL. The attribute _RelatedBuildingElement_ has to be given and points to the element providing the space boundary. The attribute _ConnectionGeometry_ may be inserted, in this case it describes the physical space boundary geometically, or it may be omitted, in that case it describes a physical space boundary logically.
 
 !["IfcRelSpaceBoundary_physical (35K)"](../../../../figures/ifcrelspaceboundary_physical.png "Figure 6 &mdash; Space boundary of physical element")
 
@@ -81,10 +81,10 @@ The geometric representation (through the _ConnectionGeometry_ attribute) is def
 The following constraints apply to the surface connection geometry representation:
 
 * planar boundaries: 
-    * _IfcSurfaceOfLinearExtrusion_ defined by a _SweptCurve_ being an _IfcArbitraryOpenProfileDef_ with straight segements, or
+    * _IfcSurfaceOfLinearExtrusion_ defined by a _SweptCurve_ being an _IfcArbitraryOpenProfileDef_ with straight segments, or
     * _IfcCurveBoundedPlane_ 
 * curved boundaries 
-    * _IfcSurfaceOfLinearExtrusion_ defined by a _SweptCurve_ being an _IfcArbitraryOpenProfileDef_ with curves segements, or
+    * _IfcSurfaceOfLinearExtrusion_ defined by a _SweptCurve_ being an _IfcArbitraryOpenProfileDef_ with curves segments, or
     * _IfcCurveBoundedSurface_ with a _BasisSurface_ being a non planar surface, such as _IfcCylindricalSurface_, or
     * _IfcFaceBasedSurfaceModel_ if already faceted. 
 

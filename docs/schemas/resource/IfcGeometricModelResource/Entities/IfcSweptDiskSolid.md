@@ -14,7 +14,7 @@ Figure 1 illustrates an example.
 
 > NOTE&nbsp; Although the example shows a _Directrix_ as a poly curve on a planar reference surface, the definition of _IfcSweptDiskSolid_ is not restricted to be based on planer curves. However view definitions or implementer agreements may provide restrictions.
 
-> NOTE&nbsp; The geometric item _IfcIndexedPolyCurve_ provides a more compact representation compared with _IfcCompositeCurve_ as is therefore the prefered curve representation for the _Directrix_.
+> NOTE&nbsp; The geometric item _IfcIndexedPolyCurve_ provides a more compact representation compared with _IfcCompositeCurve_ as is therefore the preferred curve representation for the _Directrix_.
 
 !["disk solid"](../../../../figures/ifcsweptdisksolid-layout1.png "Figure 1 &mdash; Swept disk solid geometry")
 
@@ -68,7 +68,7 @@ The _Directrix_ shall be a curve in three dimensional space.
 If _InnerRadius_ exists then _Radius_ denoting the outer radius shall be greater than _InnerRadius_.
 
 ### DirectrixBounded
-If the values for _StartParam_ or _EndParam_ are omited, then the _Directrix_ has to be a bounded or closed curve.
+If the values for _StartParam_ or _EndParam_ are omitted, then the _Directrix_ has to be a bounded or closed curve.
 
 { .change-ifc2x4}
 > IFC4 CHANGE&nbsp; New WHERE rule.

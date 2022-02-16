@@ -1,13 +1,13 @@
 # IfcRoof
 
-A roof is the covering of the top part of a building, it protects the building against the effects of wheather.
+A roof is the covering of the top part of a building, it protects the building against the effects of weather.
 
 { .extDef}
 > NOTE&nbsp; Definition according to ISO 6707-1: construction enclosing the building from above.
 
 The _IfcRoof_ shall either be represented:
 
-* as a roof assembly that aggregates all parts (slabs, rafters and purlins, or other included roofs, such as dormers) with own shape representaion, or
+* as a roof assembly that aggregates all parts (slabs, rafters and purlins, or other included roofs, such as dormers) with own shape representation, or
 * as a single roof without decomposition including all shape representations directly at the roof entity.
 
 > NOTE&nbsp; In case of an _IfcRoof_ being the assembly of all parts of the roof the aggregation is handled by the _IfcRelAggregates_ relationship, relating an _IfcRoof_ with the related roof elements, like slabs (represented by _IfcSlab_), rafters and purlins (represented by _IfcBeam_), or other included roofs, such as dormers (represented by _IfcRoof_).

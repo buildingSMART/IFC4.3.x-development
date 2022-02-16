@@ -16,12 +16,12 @@ Materials can be arranged by layers and applied to layered elements. Typical ele
 Material can be applied to profiles. Typical elements using profile material are beam, column, member
 
 * An _IfcMaterialProfileSet_, i.e. a set of material assigned to a set of profiles, with a single material assigned to a single profile as the default.
-* An _IfcMaterialProfileSetUsage_, i.e. a material profile set with positioning information relative to the element axis, also refered to as cardinal point. 
+* An _IfcMaterialProfileSetUsage_, i.e. a material profile set with positioning information relative to the element axis, also referred to as cardinal point. 
 >> NOTE&nbsp; As a material profile set usage is an occurrence based information, that applies to each individual element, it cannot be assigned to an element type. 
 
 Materials can be arranged by identified parts of a component based element. Typical elements are dorrs/windows (with components such as lining, framing and glazing), or distribution elements.
 
-* An _IfcMaterialConstituentSet_, for component based elements with an indication of the component by keyword to which the material consituent applies. 
+* An _IfcMaterialConstituentSet_, for component based elements with an indication of the component by keyword to which the material constituent applies. 
 >> NOTE&nbsp; See the material use definitions at each applicable subtype of _IfcElement_ or _IfcElementType_ for a provision of these keywords. 
 
 As a fallback, or in cases where only a single material information is needed, material information can be directly associated

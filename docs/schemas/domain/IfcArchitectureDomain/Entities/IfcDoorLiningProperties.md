@@ -18,7 +18,7 @@ The _IfcDoorLiningProperties_ does not hold its own geometric representation. Ho
      <td align="left" valign="top"><img src="../../../../figures/ifcdoorliningproperties-fig01.png" alt="lining 1" border="0" height="250" width="280"></td>
      <td align="left" valign="top">The lining is applied to the left, right and upper side of the opening reveal. The parameters are:
       <ul>
-       <li class="small"><em>LiningDepth</em>, if omited, equal to wall thickness - this only takes effect if a value for <em>LiningThickness</em> is given. If both parameters are not given, then there is no lining.</li>
+       <li class="small"><em>LiningDepth</em>, if omitted, equal to wall thickness - this only takes effect if a value for <em>LiningThickness</em> is given. If both parameters are not given, then there is no lining.</li>
        <li class="small"><em>LiningThickness</em></li>
        <li class="small"><em>LiningToPanelOffsetX</em></li>
        <li class="small"><em>LiningToPanelOffsetY</em></li>
@@ -51,7 +51,7 @@ The _IfcDoorLiningProperties_ does not hold its own geometric representation. Ho
      <td align="left" valign="top"><img src="../../../../figures/ifcdoorliningproperties-fig04.png" alt="lining 4" border="0" height="250" width="250"></td>
      <td align="left" valign="top">The lining may include a threshold, which covers the bottom side of the opening. The parameters are:
       <ul>
-       <li><em>ThresholdDepth</em> &mdash; if omited, equal to wall thickness - this only takes effect if a value for <em>ThresholdThickness</em> is
+       <li><em>ThresholdDepth</em> &mdash; if omitted, equal to wall thickness - this only takes effect if a value for <em>ThresholdThickness</em> is
         given. If both parameters are not given, then there is no threshold.</li>
        <li class="small"><em>ThresholdThickness</em></li>
        <li class="small"><em>ThresholdOffset</em> (not shown in figure): given, if the threshold edge has an offset to the x axis of the local placement.</li>

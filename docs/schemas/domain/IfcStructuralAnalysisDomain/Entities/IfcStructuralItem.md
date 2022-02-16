@@ -39,7 +39,7 @@ Instances of _IfcStructuralItem_ shall have a topology representation given by a
     * _RepresentationIdentifier_: 'Reference'
     * _RepresentationType_: 'Edge' 
 >> NOTE&nbsp; While an _IfcEdge_ (or _IfcOrientedEdge_ with underlying _IfcEdge_) does not provide an explicit underlying curve geometry, it may be used to imply an underlying straight line as reference curve with the origin of the curve parameter at the start vertex point. 
-* Surface members and surface connections shall be represented by an _IfcFaceSurface_. The underlying surface defines the reference surface of the structural surface item in the global coordiante system. All edges in the bounds of the face shall conform to the rules for edge representations of structural curve item. The following labels are used in the _IfcTopologyRepresentation_: 
+* Surface members and surface connections shall be represented by an _IfcFaceSurface_. The underlying surface defines the reference surface of the structural surface item in the global coordinate system. All edges in the bounds of the face shall conform to the rules for edge representations of structural curve item. The following labels are used in the _IfcTopologyRepresentation_: 
     * _RepresentationIdentifier_: 'Reference'
     * _RepresentationType_: 'Face' 
 
@@ -48,7 +48,7 @@ The reference point, reference curve, or reference surface partially or complete
 _Structural point items_
 
 * The reference point in the representation is the origin of the local coordinate system of the structural item.
-* The axes of the local coordiante system are either parallel with and directed like the so-called global coordinate axes, or are oriented according to definitions at the respective subtype of _IfcStructuralItem_.
+* The axes of the local coordinate system are either parallel with and directed like the so-called global coordinate axes, or are oriented according to definitions at the respective subtype of _IfcStructuralItem_.
 
 _Structural curve items_
 

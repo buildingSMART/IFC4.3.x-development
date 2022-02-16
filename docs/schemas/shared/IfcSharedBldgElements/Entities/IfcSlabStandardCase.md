@@ -92,7 +92,7 @@ Figure 270 — Slab body extrusion
 ### Material Layer Set Usage
 
 
-Multi-layer slabs can be represented by refering to several
+Multi-layer slabs can be represented by referring to several
 IfcMaterialLayer's within the IfcMaterialLayerSet
 that is referenced from the
 IfcMaterialLayerSetUsage. 

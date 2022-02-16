@@ -2,7 +2,7 @@
 <PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="0231ac434cbc4f2cbe8f9c9229df9962" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
   <IfcVersion version="IFC4x3_RC4" />
   <Name>Pset_Width</Name>
-  <Definition>Specifices the general properties for a Width event.</Definition>
+  <Definition>Specifies the general properties for a Width event.</Definition>
   <Applicability />
   <ApplicableClasses>
     <ClassName>IfcAnnotation/(.WIDTHEVENT.)</ClassName>

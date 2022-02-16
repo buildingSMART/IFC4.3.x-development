@@ -38,7 +38,7 @@ the positive y-axis.<br>
     <tr>
       <td valign="top" width="20%">DOUBLE_SWING_LEFT
       </td>
-      <td valign="top" width="50%">Door with one panel that swings in both directions and to the left in the main trafic direction. Also called
+      <td valign="top" width="50%">Door with one panel that swings in both directions and to the left in the main traffic direction. Also called
 double acting door.<br>
       <blockquote class="note">NOTE&nbsp; Direction of main swing (whether in or out) is determined at the <em>IfcDoor</em>.<br><br></blockquote>
       </td>
@@ -47,7 +47,7 @@ double acting door.<br>
     <tr>
       <td valign="top" width="20%">DOUBLE_SWING_RIGHT
       </td>
-      <td valign="top" width="50%">Door with one panel that swings in both directions and to the right in the main trafic direction. Also called
+      <td valign="top" width="50%">Door with one panel that swings in both directions and to the right in the main traffic direction. Also called
 double acting door.<br>
       <blockquote class="note">NOTE&nbsp; Direction of main swing (whether in or out) is determined at the <em>IfcDoor</em>.<br><br></blockquote>
       </td>
@@ -56,7 +56,7 @@ double acting door.<br>
     <tr>
       <td valign="top" width="20%">DOUBLE_DOOR_<br>DOUBLE_SWING
       </td>
-      <td valign="top" width="50%">Door with two panels, one swings in both directions and to the right in the main trafic direction the other swings also in both directions and to the left in the main trafic direction.<br>
+      <td valign="top" width="50%">Door with two panels, one swings in both directions and to the right in the main traffic direction the other swings also in both directions and to the left in the main traffic direction.<br>
       <blockquote class="note">NOTE&nbsp; Direction of main swing (whether in or out) is determined at the <em>IfcDoor</em>.<br><br></blockquote>
       </td>
       <td valign="top" width="20%"><img src="../../../../figures/ifcdoorstyleoperationenum-fig06.gif" alt="double double swing" border="0" height="98" width="133"></td>
@@ -166,10 +166,10 @@ NOTE
 Door with one panel that opens (swings) to the left. The hinges are on the left side as viewed in the direction of the positive y-axis.
 
 ### SINGLE_SWING_RIGHT
-Door with one panel that swings in both directions and to the right in the main trafic direction. Also called double acting door.
+Door with one panel that swings in both directions and to the right in the main traffic direction. Also called double acting door.
 
 ### DOUBLE_DOOR_SINGLE_SWING
-Door with two panels, one swings in both directions and to the right in the main trafic direction the other swings also in both directions and to the left in the main trafic direction.
+Door with two panels, one swings in both directions and to the right in the main traffic direction the other swings also in both directions and to the left in the main traffic direction.
 
 ### DOUBLE_DOOR_SINGLE_SWING_OPPOSITE_LEFT
 Door with two panels that both open to the left, one panel swings in one direction and the other panel swings in the opposite direction.

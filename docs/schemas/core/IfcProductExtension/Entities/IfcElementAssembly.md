@@ -49,7 +49,7 @@ IfcElementAssembly
 
 * The IfcElementAssembly is an aggregate i.e. being
 composed by other elements and acting as an assembly using the
-objectified relationship IfcRelAggregates, refering to it
+objectified relationship IfcRelAggregates, referring to it
 by its inverse attribute
 SELF\IfcObjectDefinition.IsDecomposedBy. Components of an
 assembly are described by instances of subtypes of
@@ -75,7 +75,7 @@ Figure 151 — Element assembly containment
 ### Spatial Containment
 
 The IfcElementAssembly should have a relationship for its 
-containment in the hierachical spatial structure of the project. Only if the IfcElementAssembly is itself a part of another assembly this relationship should be omitted.
+containment in the hierarchical spatial structure of the project. Only if the IfcElementAssembly is itself a part of another assembly this relationship should be omitted.
 
 
 

@@ -161,8 +161,19 @@ ol.referenced-list {
     padding-left: calc(2 * var(--universal-margin));
     list-style: none;
 }
+ol.referenced-list.small {
+    padding-left: 0px;
+    margin-bottom: calc(2 * var(--universal-margin));
+}
+ol.referenced-list.small>li:before {
+    font-size: .75em;
+}
+ol.referenced-list.small>li {
+    font-size: .75em;
+}
 ol.referenced-list>li:before {
     content: attr(number);
+    margin-right: var(--universal-margin);
 }
 ol.dictionary>li:before {
     width: 5rem;
@@ -186,7 +197,8 @@ ol.tier>li:first-child>.feather-arrow-up {
     display: none;
 }
 ul.classes {
-    margin-left: 172px;
+    margin-left: 173px;
+    padding-left: calc(2 * var(--universal-margin));
 }
 ul.classes li:first-child {
     margin-left: -172px;
@@ -292,6 +304,9 @@ table.grouped tr.inherited>td>div {
     max-height:  100px;
     overflow:hidden;
 }
+.hidden {
+    display: none;
+}
 .feather-plus-square {
     color: var(--green);
 }
@@ -327,8 +342,9 @@ figcaption .feather-link {
 .search input {
     width:100%;
 }
-.edit-github {
-    display: block !important;
+a.edit-github {
+    margin: 0px;
+    display: block;
 }
 .contributor-icon {
     width: 32px;

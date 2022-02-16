@@ -102,6 +102,17 @@ function initialiseBackToTopButton() {
     });
 }
 
+function setupMathJax() {
+    window.MathJax = {
+        loader: {
+            load: ['output/svg']
+        },
+        startup: {
+            output: 'svg',
+        },
+    };
+}
+
 Array.from(document.querySelectorAll('a')).concat(Array.from(document.querySelectorAll('em'))).forEach((a) => {
     let popup = null;
     let timeout = null;
@@ -216,6 +227,7 @@ fetch(`https://api.github.com/repos/${window.appconfig.repo}/commits?path=${wind
     '<em>' + j[0].commit.message + '</em>' + ' by ' + j[0].commit.author.name + ' on ' + (new Date(j[0].commit.author.date)).toLocaleString();
 });
 
+setupMathJax();
 makeHeadersCollapsible();
 generateSectionNavigation();
 initialiseBackToTopButton();

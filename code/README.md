@@ -24,6 +24,7 @@ This website has the following features:
    clickable links to ensure they are searchable and always current
  - Users can generate their own interactive diagrams that can be maintained and
    checked without the need for image editing software
+ - Beautifully rendered math equations
  - All schema entity references are automatically linked and referenced
  - All figures are automatically captioned and numbered
  - All headers and figures are anchored for sharing portions of the
@@ -162,6 +163,12 @@ Table XYZ - A table of things.
 
 Similar to figures, tables can also be annotated with an arbitrary code of your
 choice, which you can refer to later.
+
+If you need to render an equation, simply include it using LaTeX:
+
+```
+$$V_{sphere} = \frac{4}{3}\pi r^3$$
+```
 
 Markdown allows HTML, but this is generally unnecessary.
 

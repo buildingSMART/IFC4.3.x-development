@@ -14,7 +14,6 @@ ex:PropertySet a sh:SPARQLTarget;
         SELECT ?this
         WHERE {
             ?this xmi:type "uml:Class" .
-            ?this ex:name ?psetName . 
 
             {
                 ?stereo a custom:PSET_TYPEDRIVENOVERRIDE .
@@ -25,10 +24,39 @@ ex:PropertySet a sh:SPARQLTarget;
             } UNION {
                 ?stereo a custom:PSET_OCCURRENCEDRIVEN .
                 ?stereo ex:base_Class ?this .
+            } UNION {
+                ?stereo a custom:PSET_TYPEDRIVENONLY .
+                ?stereo ex:base_Class ?this .
             }
         }
    """
    .
+   
+ex:QuantitySet a sh:SPARQLTarget;
+    sh:select """
+        PREFIX ex:  <http://example.org/ifc43Shapes/>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX xmi: <http://schema.omg.org/spec/XMI/2.1/>
+        PREFIX custom: <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/>
+        
+        SELECT ?this
+        WHERE {
+            ?this xmi:type "uml:Class" .
+
+            {
+                ?stereo a custom:QTO_TYPEDRIVENONLY .
+                ?stereo ex:base_Class ?this .
+            } UNION {
+                ?stereo a custom:QTO_TYPEDRIVENOVERRIDE .
+                ?stereo ex:base_Class ?this .
+            } UNION {
+                ?stereo a custom:QTO_OCCURRENCEDRIVEN .
+                ?stereo ex:base_Class ?this .
+            }
+        }
+   """
+   .
+
 
 ex:PropertySetProperty a sh:SPARQLTarget;
     sh:select """
@@ -54,13 +82,45 @@ ex:PropertySetProperty a sh:SPARQLTarget;
             } UNION {
                 ?stereo a custom:PSET_OCCURRENCEDRIVEN .
                 ?stereo ex:base_Class ?pset .
+            } UNION {
+                ?stereo a custom:PSET_TYPEDRIVENONLY .
+                ?stereo ex:base_Class ?pset .
+            }
+        }
+   """
+   .
+   
+ex:QuantitySetQuantity a sh:SPARQLTarget;
+    sh:select """
+        PREFIX ex:  <http://example.org/ifc43Shapes/>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX xmi: <http://schema.omg.org/spec/XMI/2.1/>
+        PREFIX custom: <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/>
+        
+        SELECT ?this
+        WHERE {
+            ?pset xmi:type "uml:Class" .
+            ?pset ex:name ?psetName . 
+            
+            ?this xmi:type "uml:Property" .
+            ?this ex:containedIn ?pset .
+
+            {
+                ?stereo a custom:QTO_TYPEDRIVENONLY .
+                ?stereo ex:base_Class ?pset .
+            } UNION {
+                ?stereo a custom:QTO_TYPEDRIVENOVERRIDE .
+                ?stereo ex:base_Class ?pset .
+            } UNION {
+                ?stereo a custom:QTO_OCCURRENCEDRIVEN .
+                ?stereo ex:base_Class ?pset .
             }
         }
    """
    .
 
 ex:hasApplicableClass a sh:SPARQLConstraint ;
-    sh:message "The Property Set '{?psetName}' should have at least one applicability" ;
+    sh:message "The Property|Quantity Set '{?psetName}' should have at least one applicability" ;
     sh:select """
         PREFIX ex:  <http://example.org/ifc43Shapes/>
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -75,7 +135,7 @@ ex:hasApplicableClass a sh:SPARQLConstraint ;
                 ?assoc xmi:type "uml:AssociationClass" .
 
                 ?assoc ex:containedIn ?package .
-                ?package ex:name "PropertySetsforObjects" .
+                ?package ex:name ?packageName .
                 
                 ?end1 a ex:memberEnd .
                 ?end1 ex:containedIn ?assoc .
@@ -90,6 +150,7 @@ ex:hasApplicableClass a sh:SPARQLConstraint ;
                 ?type2 xmi:idref ?xid .
         
                 FILTER(?end1 != ?end2) .
+                FILTER(?packageName == "PropertySetsforObjects" || ?packageName == "QuantitySetsforObjects"
             }
         }
     """
@@ -208,13 +269,25 @@ ex:hasProperty a sh:SPARQLConstraint;
                 
                 {
                     ?stereo a custom:PSET_TYPEDRIVENOVERRIDE .
-                    ?stereo ex:base_Class ?pset .
+                    ?stereo ex:base_Class ?this .
                 } UNION {
                     ?stereo a custom:PSET_PERFORMANCEDRIVEN .
-                    ?stereo ex:base_Class ?pset .
+                    ?stereo ex:base_Class ?this .
                 } UNION {
                     ?stereo a custom:PSET_OCCURRENCEDRIVEN .
-                    ?stereo ex:base_Class ?pset .
+                    ?stereo ex:base_Class ?this .
+                } UNION {
+                    ?stereo a custom:PSET_TYPEDRIVENONLY .
+                    ?stereo ex:base_Class ?this .
+                } UNION {
+                    ?stereo a custom:QTO_TYPEDRIVENONLY .
+                    ?stereo ex:base_Class ?this .
+                } UNION {
+                    ?stereo a custom:QTO_TYPEDRIVENOVERRIDE .
+                    ?stereo ex:base_Class ?this .
+                } UNION {
+                    ?stereo a custom:QTO_OCCURRENCEDRIVEN .
+                    ?stereo ex:base_Class ?this .
                 }
             }
         }
@@ -243,6 +316,11 @@ ex:PsetApplicability a sh:NodeShape ;
     sh:target ex:PropertySet;
     sh:sparql ex:hasApplicableClass
     .
+    
+ex:QtoApplicability a sh:NodeShape ;
+    sh:target ex:QuantitySet;
+    sh:sparql ex:hasApplicableClass
+    .
 
 ex:PropertyType a sh:NodeShape ;
     sh:target ex:PropertySetProperty;
@@ -254,6 +332,11 @@ ex:DefinitionForProperty a sh:NodeShape ;
     sh:sparql ex:hasDefinition
     .
 
+ex:DefinitionForQuantity a sh:NodeShape ;
+    sh:target ex:QuantitySetQuantity;
+    sh:sparql ex:hasDefinition
+    .
+
 ex:PropertyForDefinition a sh:NodeShape ;
     sh:targetClass ex:MarkdownPropertyDefinition;
     sh:sparql ex:hasProperty
@@ -262,3 +345,9 @@ ex:PropertyForDefinition a sh:NodeShape ;
 ex:DefinitionForPropertySet a sh:NodeShape ;
     sh:target ex:PropertySet;
     sh:sparql ex:hasResourceDefinition
+    .
+    
+ex:DefinitionForQuantitySet a sh:NodeShape ;
+    sh:target ex:QuantitySet;
+    sh:sparql ex:hasResourceDefinition
+    .

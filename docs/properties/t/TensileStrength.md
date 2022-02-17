@@ -1,4 +1,4 @@
 TensileStrength
 ===============
 
-Defining values: α; defined values: tensile strength.
+Indicates the ability to withstand breakage apart under applied force.

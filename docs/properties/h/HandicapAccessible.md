@@ -1,4 +1,5 @@
 HandicapAccessible
 ==================
 
-Indication whether this space (in case of e.g., a toilet) is designed to serve as an accessible space for handicapped people, e.g., for a public toilet (TRUE) or not (FALSE). This information is often used to declare the need for access for the disabled and for special design requirements of this space.
+Indication that this object is designed to be accessible by the handicapped. Set to (TRUE) if this object is rated as handicap accessible according the local building codes, otherwise (FALSE).
+It is giving according to the requirements of the national building code.

@@ -1,4 +1,4 @@
 FinishColor
 ===========
 
-The finish color for the air terminal.
+The finish color of the object.

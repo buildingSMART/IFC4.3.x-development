@@ -1,4 +1,4 @@
 ImpellerDiameter
 ================
 
-Diameter of compressor impeller - used to scale performance of geometrically similar compressors.
+Diameter of object - used to scale performance of geometrically similar objects.

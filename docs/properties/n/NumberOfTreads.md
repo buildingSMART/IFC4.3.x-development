@@ -1,4 +1,4 @@
 NumberOfTreads
 ==============
 
-Total number of treads included in the stair flight.
+Total number of treads included in the stair or stairflight.

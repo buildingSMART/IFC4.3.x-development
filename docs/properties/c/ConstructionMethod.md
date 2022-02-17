@@ -1,4 +1,4 @@
 ConstructionMethod
 ==================
 
-Designator for whether the concrete element is constructed on site or prefabricated. Allowed values are: 'In-Situ' vs 'Precast'.
+The type of construction action to the object, e.g. new construction, renovation, refurbishment, etc.

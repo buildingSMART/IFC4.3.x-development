@@ -1,4 +1,4 @@
 NumberOfCores
 =============
 
-The number of cores in Cable/Bus.
+The number of cores.

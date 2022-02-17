@@ -1,4 +1,4 @@
 OverallEfficiency
 =================
 
-The pump and motor overall operational efficiency.
+Total efficiency of object.

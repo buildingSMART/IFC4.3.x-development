@@ -1,4 +1,4 @@
 Shape
 =====
 
-Cross sectional shape. Note that this shape is uniform throughout the length of the segment. For nonuniform shapes, a transition fitting should be used instead.
+Indication of the shape of the object.

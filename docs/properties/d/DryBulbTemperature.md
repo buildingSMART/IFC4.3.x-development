@@ -1,4 +1,4 @@
 DryBulbTemperature
 ==================
 
-Loads from the dry bulb temperature.
+Dry bulb temperature of the object.

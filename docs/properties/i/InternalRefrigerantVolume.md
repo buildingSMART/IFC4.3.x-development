@@ -1,4 +1,4 @@
 InternalRefrigerantVolume
 =========================
 
-Internal volume of evaporator (refrigerant side).
+Internal volume of object (refrigerant side).

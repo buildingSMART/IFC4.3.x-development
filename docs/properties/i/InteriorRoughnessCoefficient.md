@@ -1,4 +1,4 @@
 InteriorRoughnessCoefficient
 ============================
 
-The interior roughness coefficient of the pipe segment.
+The interior roughness of the material of the object.

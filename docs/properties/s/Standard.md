@@ -1,5 +1,4 @@
 Standard
 ========
 
-The designation of the standard applicable for the definition of the characteristics of the
-tripping_unit.
+The designation of the standard applicable for the definition of the object used.

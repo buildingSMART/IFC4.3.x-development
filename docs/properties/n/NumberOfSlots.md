@@ -1,4 +1,4 @@
 NumberOfSlots
 =============
 
-Number of slots.
+Indicates the number of  slots.

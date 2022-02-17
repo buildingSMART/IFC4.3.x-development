@@ -1,4 +1,4 @@
 NominalRotationSpeed
 ====================
 
-Pump rotational speed under nominal conditions.
+Rotational speed of the object under nominal conditions.

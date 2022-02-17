@@ -1,4 +1,4 @@
 Weight
 ======
 
-The weight of the humidifier.
+Total weight of object

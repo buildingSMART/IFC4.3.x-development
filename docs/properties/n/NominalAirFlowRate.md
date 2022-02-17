@@ -1,4 +1,4 @@
 NominalAirFlowRate
 ==================
 
-Nominal rate of air flow into which water vapor is added.
+Nominal air flow rate.

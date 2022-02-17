@@ -1,4 +1,4 @@
 Power
 =====
 
-The actual power consumption of the pump.
+The actual power and operable range.

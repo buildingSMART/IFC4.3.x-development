@@ -1,4 +1,4 @@
 SerialNumber
 ============
 
-The manufacturer's serial number for the precast concrete element.
+The manufacturer's serial number assigned to an occurrence of a product.

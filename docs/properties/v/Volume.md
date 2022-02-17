@@ -1,4 +1,4 @@
 Volume
 ======
 
-Total volume of fluid in the tubes and their headers.
+Volume of the element.

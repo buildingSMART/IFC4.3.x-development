@@ -1,4 +1,4 @@
 IsPermanentID
 =============
 
-Indicates whether the identity assigned to a land parcel is permanent (= TRUE) or temporary (=FALSE).
+Indicates whether the identity assigned to the object is permanent (= TRUE) or temporary (=FALSE).

@@ -1,5 +1,4 @@
 BaseThickness
 =============
 
-The thickness of the chamber base construction.
-NOTE: It is assumed that chamber base will be constructed at a single thickness.
+The thickness of the base construction, assumed to be constructed at a single thickness.

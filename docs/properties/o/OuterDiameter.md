@@ -1,4 +1,4 @@
 OuterDiameter
 =============
 
-The actual outer diameter of the pipe.
+The actual outer diameter of the object.

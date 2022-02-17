@@ -1,4 +1,4 @@
 AudioVolume
 ===========
 
-Indicates the audio volume level where the integer level corresponds to an entry or interpolation within Pset_AudioVisualApplianceTypeCommon.AudioVolume.
+Indicates discrete audio volume levels and corresponding sound power offsets, if applicable.  Missing values may be interpolated.

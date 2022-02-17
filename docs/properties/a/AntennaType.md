@@ -1,4 +1,4 @@
 AntennaType
 ===========
 
-Indicates the type of antenna integrated in the device.
+Indicates the type of antenna.

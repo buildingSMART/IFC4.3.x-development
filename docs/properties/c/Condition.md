@@ -1,4 +1,4 @@
 Condition
 =========
 
-Indicates alarm condition over time.  The range of possible values and their meanings is defined by Pset_AlarmTypeCommon.Condition.  An empty value indicates no present alarm condition.
+Table mapping alarm condition identifiers to descriptive labels, which may be used for interpreting Pset_AlarmPHistory.Condition.

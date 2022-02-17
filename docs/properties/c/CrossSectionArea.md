@@ -1,4 +1,4 @@
 CrossSectionArea
 ================
 
-Area of the profile. For example measured in mm2. If given, the value of the cross section area shall be greater than zero.
+Total area of the cross section (or profile) of the object.

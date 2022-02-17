@@ -1,4 +1,4 @@
 AirPressureDropCurve
 ====================
 
-Air pressure drop curve, pressure drop – flow rate curve, AirPressureDrop = f (AirflowRate).
+Air pressure drop as a function of air flow rate.

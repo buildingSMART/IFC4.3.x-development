@@ -1,4 +1,4 @@
 InputPressure
 =============
 
-Maximum input control air pressure requirement.
+Maximum input or design pressure for the object.

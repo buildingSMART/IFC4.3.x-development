@@ -1548,7 +1548,10 @@ def annex_e_example_page(s):
         abort(404)
 
     fn = glob.glob(os.path.join(REPO_DIR, "../examples/IFC 4.3", s, "*.md"))[0]
-    html_builder = "<p></p>" + markdown.markdown(open(fn).read(), extensions=["tables", "fenced_code"])
+    html_raw = process_markdown("", open(fn).read())
+
+    soup = BeautifulSoup(html_raw)
+
     code = html.escape(
         open(
             (
@@ -1559,17 +1562,17 @@ def annex_e_example_page(s):
             errors="ignore",
         ).read()
     )
-    html_builder += "<h2>Source</h2>"
-    html_builder += "<pre>" + code + "</pre>"
     path_repo = "buildingSMART/Sample-Test-Files"
     path = fn[len(os.path.join(REPO_DIR, "../examples/")) :]
     return render_template(
         "annex-e-item.html",
         base=base,
         navigation=get_navigation(),
-        content=html_builder,
+        content=html_raw,
         path=path,
         repo=path_repo,
+        title=s,
+        code=code,
     )
 
 
@@ -1701,7 +1704,8 @@ def after(response):
                 parent = img.parent
                 parent.name = "figure"
                 has_caption = False
-                if parent.text.strip():
+                sibling = parent.find_next_sibling()
+                if parent.text.strip() and parent.text.strip().startswith("Figure"):
                     # Option 1: the figure caption is in the same block as the image
                     has_caption = True
                     figcaption = soup.new_tag("figcaption")
@@ -1711,22 +1715,22 @@ def after(response):
                     parent.append(extracted_img)
                     parent.append(figcaption)
                     FigureNumberer.generate(parent, figcaption.text.split(" ", 2)[1])
+                elif sibling and sibling.name == "p" and sibling.text.startswith("Figure"):
+                    # Option 2: the figure caption is in the next block
+                    has_caption = True
+                    figcaption = sibling.extract()
+                    figcaption.name = "figcaption"
+                    parent.append(figcaption)
+                    FigureNumberer.generate(parent, figcaption.text.split(" ", 2)[1])
                 elif img.get("title", "").strip():
-                    # Option 2: the image has a "title" tag being used as a caption
+                    # Option 3: the image has a "title" tag being (ab)used as a caption
+                    # Not very nice, as the title in HTML is not the same as the figcaption
+                    # This is lazy captioning :)
                     has_caption = True
                     figcaption = soup.new_tag("figcaption")
                     figcaption.string = img["title"].strip()
                     parent.append(figcaption)
                     FigureNumberer.generate(parent, figcaption.text.split(" ", 2)[1])
-                else:
-                    # Option 2: the figure caption is in the next block
-                    sibling = parent.find_next_sibling()
-                    if sibling and sibling.name == "p" and sibling.text.startswith("Figure"):
-                        has_caption = True
-                        figcaption = sibling.extract()
-                        figcaption.name = "figcaption"
-                        parent.append(figcaption)
-                        FigureNumberer.generate(parent, figcaption.text.split(" ", 2)[1])
                 if not has_caption:
                     figcaption = soup.new_tag("figcaption")
                     figcaption.string = "Figure " + str(uuid.uuid4())

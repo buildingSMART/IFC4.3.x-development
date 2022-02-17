@@ -32,6 +32,12 @@ This website has the following features:
  - Using markdown and standardised templates helps ensure consistency in layout,
    typography, tables, links, notes, and references.
  - Built-in quality checking procedures during documentation generation.
+ - Hovering over entities shows a quick popup preview of common attributes and
+   data types for convenience
+ - Shows inherited concept usages on all entities
+ - Quick section jumping to browse long or complex pages
+ - Navigation breadcrumb easily communicates the domain scope of the current
+   entity you are browsing
  - API for quick documentation lookup or previews
  - Mobile friendly (well, we plan on it, I would hope)
 
@@ -226,8 +232,8 @@ $ FLASK_APP=server.py FLASK_ENV=development flask run
  * Debugger PIN: 155-459-101
 ```
 
-To load example files from the examples repo, you can clone the sample files
-into a directory called examples one level up from this repository:
+To load example files, you can clone the sample files into a directory called
+`examples` one level up from this repository:
 
 ```bash
 $ cd /path/to/IFC4.3.x-development

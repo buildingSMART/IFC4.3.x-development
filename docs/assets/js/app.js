@@ -64,7 +64,7 @@ function generateSectionNavigation() {
         if (href) {
             let name = h2.textContent.trim();
             let number = name.split(' ', 1)[0];
-            if (name == number) {
+            if (name == number || ! /\d/.test(number)) {
                 number = '';
             } else {
                 name = name.substring(number.length);

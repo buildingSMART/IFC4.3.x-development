@@ -1,6 +1,11 @@
 {% extends "main.html" %}
 {% block pagecontent %}
-<h1>Annex E Examples</h1>
+<h1>Annex E Examples - {{ title }}</h1>
+
+<h2>Example overview</h2>
 
 {{ content | safe }}
+
+<h2>IFC-SPF source</h2>
+<pre>{{ code }}</pre>
 {% endblock %}

@@ -186,8 +186,7 @@ REVOLVING
 </td>
 <td valign="top" width="40%">An entrance door consisting of four
 leaves set in a form of a cross and revolving around a central
-vertical axis (the four panels are described by a single
-<a href="../../ifcsharedbldgelements/lexical/ifcdoor.htm">IfcDoor</a> panel property).</td>
+vertical axis (the four panels are described by a single panel property).</td>
 <td valign="top" width="20%"><img src="../../../../figures/ifcdoortypeenum-fig15.gif" alt="revolving" border="0"> </td>
 <td> </td>
 </tr>

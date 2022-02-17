@@ -226,6 +226,15 @@ $ FLASK_APP=server.py FLASK_ENV=development flask run
  * Debugger PIN: 155-459-101
 ```
 
+To load example files from the examples repo, you can clone the sample files
+into a directory called examples one level up from this repository:
+
+```bash
+$ cd /path/to/IFC4.3.x-development
+$ cd ..
+$ git clone https://github.com/buildingSMART/Sample-Test-Files.git examples
+```
+
 You can now visit `http://127.0.0.1:5000/` to see the running website.
 
 ## Deployment

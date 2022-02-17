@@ -150,7 +150,7 @@ ex:hasApplicableClass a sh:SPARQLConstraint ;
                 ?type2 xmi:idref ?xid .
         
                 FILTER(?end1 != ?end2) .
-                FILTER(?packageName == "PropertySetsforObjects" || ?packageName == "QuantitySetsforObjects"
+                FILTER(?packageName = "PropertySetsforObjects" || ?packageName = "QuantitySetsforObjects"
             }
         }
     """

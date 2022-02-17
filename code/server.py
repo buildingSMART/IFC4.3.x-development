@@ -820,13 +820,13 @@ def resource(resource):
             "property.html",
             base=base,
             navigation=get_navigation(resource),
-            content=process_markdown(resource, mdc),
+            content=get_definition(resource, mdc),
             number=idx,
             definition_number=definition_number,
             entity=resource,
             path=md[len(REPO_DIR) :].replace("\\", "/"),
             applicability=get_applicability(resource),
-            properties=get_properties(resource),
+            properties=get_properties(resource, mdc),
             changelog=get_changelog(resource),
         )
     builder = resource_documentation_builder(resource)
@@ -881,7 +881,9 @@ def get_applicability(resource):
     return {"number": SectionNumberGenerator.generate(), "entities": R.pset_definitions[resource]["applicability"]}
 
 
-def get_properties(resource):
+def get_properties(resource, mdc):
+    pset_specitic_comments = dict(mdp.markdown_attribute_parser(mdc, "Comments"))
+
     def make_prop(prop):
         try:
             doc = process_markdown(
@@ -898,13 +900,20 @@ def get_properties(resource):
             prop_type = []
         else:
             prop_type = [prop["type"]]
+            
+        edit_button = f"<a class='button' href='{make_url('property/'+prop['name'])}.htm' style='padding:0;margin:0 0.5em'><span class='icon-edit'></span></a>"
+        doc += edit_button
+        
+        psc = pset_specitic_comments.get(prop["name"])
+        if psc:
+            doc += f"<br><br><i>{process_markdown(resource, psc, as_attribute=True)}</i>"
+            pass
 
         return [
             prop["name"],
             *prop_type,
             prop["data"],
             doc
-            + f"<a class='button' href='{make_url('property/'+prop['name'])}.htm' style='padding:0;margin:0 0.5em'><span class='icon-edit'></span></a>",
         ]
 
     attrs = list(map(make_prop, R.pset_definitions[resource]["properties"]))

@@ -231,6 +231,21 @@
 </table>
 {% endif %}
 
+{% if examples %}
+<h2>
+    {{ examples.number }} Examples
+</h2>
+<ul class="examples">
+    {% for example in examples.examples %}
+    <li>
+        <figure><a href="{{ example.url }}"><img src="{{ example.image }}" /></a></figure>
+        <p><a href="{{ example.url }}">{{ example.name }}</a></p>
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+
 {% if formal_representation %}
 <h2>
     {{ formal_representation.number }} Formal representation

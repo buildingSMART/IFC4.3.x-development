@@ -120,6 +120,7 @@ class resource_manager:
     type_values = schema_resource("type_values.json")
     hierarchy = schema_resource("hierarchy.json")
     xmi_concepts = schema_resource("xmi_concepts.json")
+    examples_by_type = schema_resource("examples_by_type.json")
 
 
 R = resource_manager()
@@ -807,6 +808,7 @@ def resource(resource):
             formal_propositions=get_formal_propositions(resource, builder),
             property_sets=get_property_sets(resource, builder),
             concept_usage=get_concept_usage(resource, builder),
+            examples=get_examples(resource),
             formal_representation=get_formal_representation(resource),
             changelog=get_changelog(resource),
             is_deprecated=resource in R.deprecated_entities,
@@ -1070,6 +1072,17 @@ def get_concept_usage(resource, builder):
             "groups": groups,
         }
 
+
+def get_examples(resource):
+    examples = []
+    for name in R.examples_by_type.get(resource.upper()):
+        examples.append({
+            "name": name,
+            "url": url_for("annex_e_example_page", s=name),
+            "image": url_for("get_example", example=name) + "/thumb.png"
+        })
+    if examples:
+        return {"number": SectionNumberGenerator.generate(), "examples": examples}
 
 def get_formal_representation(resource):
     express = R.entity_definitions.get(resource)
@@ -1570,12 +1583,9 @@ def annex_e_example_page(s):
     path_repo = "buildingSMART/Sample-Test-Files"
     path = fn[len(os.path.join(REPO_DIR, "../examples/")) :]
 
-    images = []
-    ifcre = re.compile(r"(Ifc|Pset_|Qto_)\w+(?!(.ht|</a|</h|.md| - IFC4.3))")
-    for extension in ["jpg", "png"]:
-        # Use regex because globbing is case sensitive
-        rule = re.compile(r".*\." + extension, re.IGNORECASE)
-        images += [f"{base}/examples/{s}/{name}" for name in os.listdir(example_dir) if rule.match(name)]
+    # Use regex because globbing is case sensitive
+    rule = re.compile(r".*\.(png|jpg|jpeg)", re.IGNORECASE)
+    images = [f"{base}/examples/{s}/{name}" for name in os.listdir(example_dir) if rule.match(name)]
 
     return render_template(
         "annex-e-item.html",

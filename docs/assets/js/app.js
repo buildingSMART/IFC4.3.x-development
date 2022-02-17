@@ -236,8 +236,8 @@ function setupHighlightJS() {
             lexemes: "[a-z-]+",
             keywords: {
                 section: "ENTITY END_ENTITY TYPE END_TYPE",
-                built_in: "OPTIONAL NOT OR EXISTS",
-                keyword: "SUBTYPE OF WHERE ENUMERATION"
+                built_in: "OPTIONAL NOT OR EXISTS SET SIZEOF SELF TYPEOF AND IN ONEOF LIST QUERY",
+                keyword: "SUBTYPE OF WHERE ENUMERATION ABSTRACT SUPERTYPE INVERSE FOR"
             }
         }
     }));

@@ -2,20 +2,21 @@
 
 An _IfcBeam_ is a horizontal, or nearly horizontal, structural member that is capable of withstanding load primarily by resisting bending. It represents such a member from an architectural point of view. It is not required to be load bearing.
 
-{ .extDef}
 > NOTE&nbsp; Definition according to ISO 6707-1: structural member for carrying load(s) between or beyond points of support, usually narrow in relation to its length and horizontal or nearly so.
 
-> NOTE&nbsp; The representation of load-bearing beams in a structural analysis model is provided by subtypes of _IfcStructuralMember_ (with _IfcStructuralCurveMember_ being mostly applicable) as part of an _IfcStructuralAnalysisModel_.
+There are two main representations for beam occurrences:
 
-> NOTE&nbsp; For any other longitudinal structural member, not constrained to be predominately horizontal nor vertical, or where this semantic information is irrelevant, the entity _IfcMember_ should be used.
+- _IfcBeam_ with _IfcMaterialProfileSetUsage_ is used for all occurrences of beams, that have a profile defined that is swept along a directrix. The profile might be changed uniformly by a taper definition along the directrix. The profile parameter and its cardinal point of insertion can be fully described by the _IfcMaterialProfileSetUsage_. These beams are always represented geometricly by an 'Axis' and a 'SweptSolid' or 'AdvancedSweptSolid' shape representation (or by a 'Clipping' geometry based on the swept solid), if a 3D geometric representation is assigned.
 
-The camber of a beam may be defined by assigning a StructuralCurveMember with displacement coordinates. Multiple sets of camber ordinates may be provided that are qualified by the particular load case, where full dead load would typically be used for fabrication, and other scenarios used for other loading conditions such as during construction.
+- _IfcBeam_ without _IfcMaterialProfileSetUsag_e is used for all other occurrences of beams, particularly for beams with non-uniformly changing profile sizes along the sweep, or beams having only 'AdvancedBrep', 'Brep', or 'SurfaceModel' geometry, or if a more parametric representation is not intended.
 
-There are two entities for beam occurrences:
+> NOTE  The entity IfcBeamStandardCase has been deprecated, IfcBeam with IfcMaterialProfileSetUsage is used instead.
 
-* _IfcBeamStandardCase_ used for all occurrences of beams, that have a profile defined that is swept along a directrix. The profile might be changed uniformly by a taper definition along the directrix. The profile parameter and its cardinal point of insertion can be fully described by the _IfcMaterialProfileSetUsage_. These beams are always represented geometricly by an 'Axis' and a 'SweptSolid' or 'AdvancedSweptSolid' shape representation (or by a 'Clipping' geometry based on the swept solid), if a 3D geometric representation is assigned. In addition they have to have a corresponding _IfcMaterialProfileSetUsage_ assigned. 
->> NOTE&nbsp; Model view definitions and implementer agreements may further constrain the applicable geometry types, for example, by excluding tapering from an _IfcBeamStandardCase_ implementation.* _IfcBeam_ used for all other occurrences of beams, particularly for beams with non-uniformly changing profile sizes along the sweep, or beams having only 'AdvancedBrep', 'Brep', 'SurfaceModel', or 'Tessellation' geometry. 
->> NOTE&nbsp; Model view definitions and implementer agreements may impose the use of _IfcBeam_ in all cases by excluding _IfcBeamStandardCase_ from scope of the model view.
+For any other longitudinal structural member, not constrained to be predominately horizontal nor vertical, or where this semantic information is irrelevant, the entity _IfcMember_ should be used.
+
+> NOTE&nbsp; The representation of load-bearing beams in a structural analysis model is provided by subtypes of _IfcStructuralMember_ (with _IfcStructuralCurveMember_ being mostly applicable) as part of an _IfcStructuralAnalysisModel_. The camber of a beam may be defined by assigning an _IfcStructuralCurveMember_ with displacement coordinates. Multiple sets of camber ordinates may be provided that are qualified by the particular load case, where full dead load would typically be used for fabrication, and other scenarios used for other loading conditions such as during construction.
+
+
 > HISTORY&nbsp; New entity in IFC1.0
 
 ## Attributes
@@ -45,12 +46,12 @@ The axis representation can be used to represent the system
 
 
 
-> NOTE  The 'Axis' is used to locate the 
+> NOTE  The 'Axis' is used to locate the
 > material profile set, if the material association is of type IfcMaterialProfileSetUsage.
 
 
 The following additional constraints apply to the 'Axis'
-representation, if an IfcMaterialProfileSetUsage is provided and the 'Body' shape representation has the 
+representation, if an IfcMaterialProfileSetUsage is provided and the 'Body' shape representation has the
 RepresentationType: 'SweptSolid':
 
 
@@ -139,7 +140,7 @@ The following additional constraints apply to the 'SweptSolid' representation ty
 
 * Solid: IfcExtrudedAreaSolid,
 IfcRevolvedAreaSolid shall be supported
-* Profile: all subtypes of IfcProfileDef (with 
+* Profile: all subtypes of IfcProfileDef (with
 exception of IfcArbitraryOpenProfileDef)
 * Extrusion:  All extrusion directions shall be
 supported.
@@ -165,14 +166,14 @@ Figure 201 — Beam non-perpendicular extrusion
 
 ### Material Profile Set
 
-The material information of the IfcBeam is defined by 
+The material information of the IfcBeam is defined by
 IfcMaterialProfileSet or as fallback by IfcMaterial, and it is attached either directly or at the IfcBeamType. In this case, the material information does not allow to construct a shape by applying the profile definition to the axis representation, to enable this parametric definition, the IfcMaterialProfileSetUsage has to be used instead.
 
 
 
 ### Material Profile Set Usage
 
-The Material Profile Set Usage defines the assignment of an IfcMaterialProfileSetUsage to the 
+The Material Profile Set Usage defines the assignment of an IfcMaterialProfileSetUsage to the
 IfcBeamType providing a common profile definition to all
  occurrences of this IfcBeamType. Beams with composite profile can be represented by refering to
  several IfcMaterialProfile's within the
@@ -234,10 +235,9 @@ Figure 198 — Beam composite profiles
 
 ### Spatial Containment
 
-The IfcBeam, as any subtype of IfcBuildingElement, 
+The IfcBeam, as any subtype of IfcBuildingElement,
 may participate alternatively in one of the two different containment relationships:
 
 
 * the Spatial Containment (defined here), or
 * the Element Composition.
-

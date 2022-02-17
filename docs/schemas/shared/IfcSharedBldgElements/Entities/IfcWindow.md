@@ -14,25 +14,26 @@ The _IfcWindow_ defines a particular occurrence of a window inserted in the spat
 
 > NOTE&nbsp; View definitions or implementer agreements may restrict the relationship to only include one window (or door) into one opening.
 
-There are two entities for window occurrences:
+There are two main representations for window occurrences:
 
-* _IfcWindowStandardCase_ used for all occurrences of windows, that have a 'Profile' shape representation defined to which a set of shape parameters for lining and framing properties apply. Additionally it requires the provision of an _IfcWindowType_ that references one _IfcWindowLiningProperties_ and on to many _IfcWindowPanelProperties_. 
-* _IfcWindow_ used for all other occurrences of windows, particularly for windows having only 'Brep', or 'SurfaceModel' geometry without applying shape parameters.
+- _IfcWindow_ with a shape representation having RepresentationIdenfifier='Profile' is used for all occurrences of windows, that have a 'Profile' shape representation defined to which a set of shape parameters for lining and framing properties apply. Additionally it requires the provision of an _IfcWindowType_ that references one _IfcWindowLiningProperties_ and on to many _IfcWindowPanelProperties_.
+
+- _IfcWindow_ used for all other occurrences of windows, particularly for windows having only 'Brep', or 'SurfaceModel' geometry without applying shape parameters.
+
+> NOTE  The entity _IfcWindowStandardCase_ has been deprecated.
 
 The actual parameter of the window and/or its shape is defined at the _IfcWindow_ as the occurrence definition (or project instance), or by the _IfcWindowType_ as the specific definition (or project type). The following parameters are given:
 
 * at the _IfcWindow_ or _IfcWindowStandardCase_ for occurrence specific parameters. The _IfcWindow_ specifies:
-*  
     * the window width and height
-    * the window opening direction (by the y-axis of the _ObjectPlacement_) 
+    * the window opening direction (by the y-axis of the _ObjectPlacement_)
 * at the _IfcWindowType_ to which the _IfcWindow_ is related by the inverse relationship _IsDefinedBy_ pointing to _IfcRelDefinesByType_, for type parameters common to all occurrences of the same type.
-*  
     * the partitioning type (single panel, double panel, tripel panel, more panels)
     * the operation type (swing, tilt and turn, pivot revolve, fixed case ment, etc.)
     * the window panel hinge side (by using two different styles for right and left opening windows)
     * the construction material type
     * the particular attributes for the lining by the _IfcWindowLiningProperties_
-    * the particular attributes for the panels by the  _IfcWindowPanelProperties_ 
+    * the particular attributes for the panels by the  _IfcWindowPanelProperties_
 
 > HISTORY&nbsp; New entity in IFC1.0.
 
@@ -42,7 +43,7 @@ The actual parameter of the window and/or its shape is defined at the _IfcWindow
 { .use-head}
 Parameteric Representation using parameters at _IfcWindowType_
 
-The parameters, which define the shape of the _IfcWindow_, are given at the _IfcWindowType_ and the property sets, which are included in the _IfcWindowType_. The _IfcWindow_ only defines the local placement. The overall size of the _IfcWindow_ to be used to apply the lining or panel parameter provided by the _IfcWindowType_ is determined by the IfcShapeRepresentation with the RepresentationIdentifier = 'Profile'. Only in case of an _IfcWindow_ inserted into an _IfcOpeningElement_ using the _IfcRelFillsElement_ relatioship, having a horizontal extrusion (along the y-axis of the _IfcDoor_), the overall size is determined by the extrusion profile of the _IfcOpeningElement_.
+The parameters, which define the shape of the _IfcWindow_, are given at the _IfcWindowType_ and the property sets, which are included in the _IfcWindowType_. The _IfcWindow_ only defines the local placement. The overall size of the _IfcWindow_ to be used to apply the lining or panel parameter provided by the _IfcWindowType_ is determined by the IfcShapeRepresentation with the RepresentationIdentifier = 'Profile'. Only in case of an _IfcWindow_ inserted into an _IfcOpeningElement_ using the _IfcRelFillsElement_ relatioship, having a horizontal extrusion (along the y-axis of the _IfcWindow_), the overall size is determined by the extrusion profile of the _IfcOpeningElement_.
 
 Figure 1 illustrates the insertion of a window into the _IfcOpeningElement_ by creating an instance of _IfcWindow_ with _PartitioningType = DoublePanelHorizontal_. The parameters _OverallHeight_ and _OverallWidth_ show the extent of the window in the positive Z and X axis of the local placement of the window. The lining and the transom are created by the given parameters.
 
@@ -113,12 +114,12 @@ window, given by <em>IfcWindowPanelProperties.OperationType</em>
 ## Attributes
 
 ### OverallHeight
-Overall measure of the height, it reflects the Z Dimension of a bounding box, enclosing the window opening. If omitted, the _OverallHeight_ should be taken from the geometric representation of the _IfcOpening_ in which the window is inserted. 
+Overall measure of the height, it reflects the Z Dimension of a bounding box, enclosing the window opening. If omitted, the _OverallHeight_ should be taken from the geometric representation of the _IfcOpening_ in which the window is inserted.
 
 > NOTE&nbsp; The body of the window might be taller then the window opening (for example in cases where the window lining includes a casing). In these cases the _OverallHeight_ shall still be given as the window opening height, and not as the total height of the window lining.
 
 ### OverallWidth
-Overall measure of the width, it reflects the X Dimension of a bounding box, enclosing the window opening. If omitted, the _OverallWidth_ should be taken from the geometric representation of the _IfcOpening_ in which the window is inserted. 
+Overall measure of the width, it reflects the X Dimension of a bounding box, enclosing the window opening. If omitted, the _OverallWidth_ should be taken from the geometric representation of the _IfcOpening_ in which the window is inserted.
 
 > NOTE&nbsp; The body of the window might be wider then the window opening (for example in cases where the window lining includes a casing). In these cases the _OverallWidth_ shall still be given as the window opening width, and not as the total width of the window lining.
 
@@ -130,7 +131,7 @@ Predefined generic type for a window that is specified in an enumeration. There 
 > IFC4 CHANGE The attribute has been added at the end of the entity definition.
 
 ### PartitioningType
-Type defining the general layout of the window in terms of the partitioning of panels. 
+Type defining the general layout of the window in terms of the partitioning of panels.
 > NOTE&nbsp; The _PartitioningType_ shall only be used, if no type object _IfcWindowType_ is assigned, providing its own _IfcWindowType.PartitioningType_.
 
 { .change-ifc2x4}
@@ -202,7 +203,7 @@ is defined within the world coordinate system.
 ### Profile 3D Geometry
 
 The window profile is represented by a three-dimensional
-closed curve within a particular shape representation. The 
+closed curve within a particular shape representation. The
 profile is used to apply the parameter of the parametric window
 representation. The following attribute values for the
 IfcShapeRepresentation holding this geometric
@@ -210,7 +211,7 @@ representation shall be used:
 
 
 * RepresentationIdentifier : 'Profile'
-* RepresentationType : 'Curve3D', only a single closed 
+* RepresentationType : 'Curve3D', only a single closed
 curve shall be contained in the set of
 IfcShapeRepresentation.Items.
 
@@ -226,7 +227,7 @@ A 'Profile' representation has to be provided if:
 	window profile)
 
 
-The following additional constraints apply to the 'Profile' 
+The following additional constraints apply to the 'Profile'
 representation type:
 
 
@@ -274,7 +275,7 @@ Figure 298 — Window profile
 
 ### Spatial Containment
 
-The IfcWindow, as any subtype of IfcBuildingElement, 
+The IfcWindow, as any subtype of IfcBuildingElement,
 may participate alternatively in one of the two different containment relationships:
 
 
@@ -287,8 +288,8 @@ The IfcWindow may also be connected to the IfcOpeningElement in which it is plac
 
 ![Containment](../../../../figures/ifcwindow_containment-01.png)
 
-> NOTE  The containment shall be defined independently of the filling relationship, that is, even if the 
->  IfcWindow is a filling of an opening established by IfcRelFillsElement, it is also contained in the spatial structure 
+> NOTE  The containment shall be defined independently of the filling relationship, that is, even if the
+>  IfcWindow is a filling of an opening established by IfcRelFillsElement, it is also contained in the spatial structure
 >  by an IfcRelContainedInSpatialStructure.
 
 
@@ -306,5 +307,3 @@ IfcWindowLiningProperties and IfcWindowPanelProperties are attached in the list 
 
 
 See IfcWindowTypePartitioningEnum for the correct usage of panel partitioning and IfcWindowPanelProperties for the opening symbols for different panel operation types.
-
-

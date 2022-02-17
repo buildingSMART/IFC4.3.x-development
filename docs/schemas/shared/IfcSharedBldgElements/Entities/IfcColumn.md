@@ -1,20 +1,21 @@
 # IfcColumn
 
-<An _IfcColumn_ is a vertical structural member which often is aligned with a structural grid intersection. It represents a vertical, or nearly vertical, structural member that transmits, through compression, the weight of the structure above to other structural elements below. It represents such a member from an architectural point of view. It is not required to be load bearing.
+An _IfcColumn_ is a vertical structural member which often is aligned with a structural grid intersection. It represents a vertical, or nearly vertical, structural member that transmits, through compression, the weight of the structure above to other structural elements below. It represents such a member from an architectural point of view. It is not required to be load bearing.
 
-{ .extDef}
 > NOTE&nbsp; Definition according to ISO 6707-1  
 > structural member of slender form, usually vertical, that transmits to its base the forces, primarily in compression, that are applied to it.
 
+There are two main representations for column occurrences:
+
+- _IfcColumn_ with _IfcMaterialProfileSetUsage_ is used for all occurrences of columns, that have a profile defined that is swept along a directrix. The profile might be changed uniformly by a taper definition along the directrix. The profile parameter and its cardinal point of insertion can be fully described by the _IfcMaterialProfileSetUsag_e. These columns are always represented geometricly by an 'Axis' and a 'SweptSolid' or 'AdvancedSweptSolid' shape representation (or by a 'Clipping' geometry based on the swept solid), if a 3D geometric representation is assigned.
+
+- _IfcColumn_ is used for all other occurrences of columns, particularly for columns with changing profile sizes along the extrusion, or columns defined by non-linear extrusion, or columns having only 'Brep', or 'SurfaceModel' geometry, or if a more parametric representation is not intended.
+
+> NOTE  The entity IfcColumnStandardCase has been deprecated, IfcColumn with IfcMaterialProfileSetUsage is used instead.
+
+For any longitudial structural member, not constrained to be predominately horizontal nor vertical, or where this semantic information is irrelevant, the entity _IfcMember_ exists.
+
 > NOTE&nbsp; The representation of a column in a structural analysis model is provided by _IfcStructuralCurveMember_ being part of an _IfcStructuralAnalysisModel_.
-
-> NOTE&nbsp; For any longitudial structural member, not constrained to be predominately horizontal nor vertical, or where this semantic information is irrelevant, the entity _IfcMember_ exists.
-
-The IFC specification provides two entities for column occurrences:
-
-* _IfcColumnStandardCase_ used for all occurrences of columns, tthat have a profile defined that is swept along a directrix. The profile might be changed uniformly by a taper definition along the directrix. The profile parameter and its cardinal point of insertion can be fully described by the _IfcMaterialProfileSetUsage_. These beams are always represented geometricly by an 'Axis' and a 'SweptSolid' or 'AdvancedSweptSolid' shape representation (or by a 'Clipping' geometry based on the swept solid), if a 3D geometric representation is assigned. In addition they have to have a corresponding _IfcMaterialProfileSetUsage_ assigned. 
->> NOTE&nbsp; View definitions and implementer agreements may further constrain the applicable geometry types, for example by excluding tapering from an _IfcColumnStandardCase_ implementation. 
-* _IfcColumn_ used for all other occurrences of columns, particularly for columns with changing profile sizes along the extrusion, or columns defined by non-linear extrusion, or columns having only 'Brep', or 'SurfaceModel' geometry.
 
 > HISTORY&nbsp; New entity in IFC1.0
 
@@ -45,12 +46,12 @@ The axis representation can be used to represent the system
 
 
 
-> NOTE  The 'Axis' is used to locate the 
+> NOTE  The 'Axis' is used to locate the
 > material profile set, if the material association is of type IfcMaterialProfileSetUsage.
 
 
 The following additional constraints apply to the 'Axis'
-representation, if an IfcMaterialProfileSetUsage is provided and the 'Body' shape representation has the 
+representation, if an IfcMaterialProfileSetUsage is provided and the 'Body' shape representation has the
 RepresentationType: 'SweptSolid':
 
 
@@ -180,9 +181,9 @@ IfcMaterialProfileSet or as fallback by IfcMaterial, and it is attached either d
 
 ### Material Profile Set Usage
 
-The Material Profile Set Usage defines the assignment of an IfcMaterialProfileSetUsage to the 
+The Material Profile Set Usage defines the assignment of an IfcMaterialProfileSetUsage to the
 IfcColumnType providing a common profile definition to all
- occurrences of this IfcColumnType. Columns with 
+ occurrences of this IfcColumnType. Columns with
 composite profile can be represented by refering to
  several IfcMaterialProfile's within the
 IfcMaterialProfileSet that is referenced from the
@@ -200,7 +201,7 @@ Figure 212 illustrates cardinal point alignment.
 
 
 
-> NOTE  It has to be guaranteed that the use of IfcCardinalPointEnum is consistent to the placement of the 
+> NOTE  It has to be guaranteed that the use of IfcCardinalPointEnum is consistent to the placement of the
 > extrusion body provided by IfcExtrudedAreaSolid.Position
 
 
@@ -232,10 +233,9 @@ Figure 213 — Column composite profiles
 
 ### Spatial Containment
 
-The IfcColumn, as any subtype of IfcBuildingElement, 
+The IfcColumn, as any subtype of IfcBuildingElement,
 may participate alternatively in one of the two different containment relationships:
 
 
 * the Spatial Containment (defined here), or
 * the Element Composition.
-

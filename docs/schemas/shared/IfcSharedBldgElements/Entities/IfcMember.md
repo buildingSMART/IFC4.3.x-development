@@ -2,13 +2,14 @@
 
 An _IfcMember_ is a structural member designed to carry loads between or beyond points of support. It is not required to be load bearing. The orientation of the member (being horizontal, vertical or sloped) is not relevant to its definition (in contrary to _IfcBeam_ and _IfcColumn_). An _IfcMember_ represents a linear structural element from an architectural or structural modeling point of view and shall be used if it cannot be expressed more specifically as either an _IfcBeam_ or an _IfcColumn_.
 
+There are two main representations for member occurrences:
+
+- _IfcMember_ with _IfcMaterialProfileSetUsage_ is used for all occurrences of members, that have a profile defined that is swept along a directrix. The profile might be changed uniformly by a taper definition along the directrix. The profile parameter and its cardinal point of insertion can be fully described by the _IfcMaterialProfileSetUsage_. These members are always represented geometricly by an 'Axis' and a 'SweptSolid' or 'AdvancedSweptSolid' shape representation (or by a 'Clipping' geometry based on the swept solid), if a 3D geometric representation is assigned.
+
+- _IfcMember_ without _IfcMaterialProfileSetUsage_ is used for all other occurrences of members, particularly for members with changing profile sizes along the extrusion, or members defined by non-linear extrusion, or members having only 'Brep', or 'SurfaceModel' geometry, or if a more parametric representation is not intended.
+
+
 > NOTE&nbsp; The representation of a member in a structural analysis model is provided by _IfcStructuralCurveMember_ being part of an _IfcStructuralAnalysisModel_.
-
-The IFC specification provides two entities for member occurrences:
-
-* _IfcMemberStandardCase_ used for all occurrences of members, that have a profile defined that is swept along a directrix. The profile might be changed uniformly by a taper definition along the directrix. The profile parameter and its cardinal point of insertion can be fully described by the _IfcMaterialProfileSetUsage_. These beams are always represented geometricly by an 'Axis' and a 'SweptSolid' or 'AdvancedSweptSolid' shape representation (or by a 'Clipping' geometry based on the swept solid), if a 3D geometric representation is assigned. In addition they have to have a corresponding _IfcMaterialProfileSetUsage_ assigned. 
->> NOTE&nbsp; View definitions and implementer agreements may further constrain the applicable geometry types, such as by excluding tapering from an _IfcMemberStandardCase_ implementation. 
-* _IfcMember_ used for all other occurrences of members, particularly for members with changing profile sizes along the extrusion, or members defined by non-linear extrusion, or members having only 'Brep', or 'SurfaceModel' geometry.
 
 > HISTORY&nbsp; New entity in IFC2x2 Addendum 1.
 
@@ -39,12 +40,12 @@ The axis representation can be used to represent the system
 
 
 
-> NOTE  The 'Axis' is used to locate the 
+> NOTE  The 'Axis' is used to locate the
 > material profile set, if the material association is of type IfcMaterialProfileSetUsage.
 
 
 The following additional constraints apply to the 'Axis'
-representation, if an IfcMaterialProfileSetUsage is provided and the 'Body' shape representation has the 
+representation, if an IfcMaterialProfileSetUsage is provided and the 'Body' shape representation has the
 RepresentationType: 'SweptSolid':
 
 
@@ -138,7 +139,7 @@ representation
 
 ### Body Clipping Geometry
 
-The following constraints apply to the 'Clipping' 
+The following constraints apply to the 'Clipping'
 representation:
 
 
@@ -160,7 +161,7 @@ Figure 238 illustrates a 'Clipping' geometric representation with use of IfcBool
 Figure 238 — Member clipping
 
 
-The following constraints apply to the 'Clipping' 
+The following constraints apply to the 'Clipping'
 representation, when an IfcMaterialProfileSetUsage is assigned to the IfcMember:
 
 
@@ -196,7 +197,7 @@ The following constraints apply to the 'SweptSolid' representation:
 * Extrusion: All extrusion directions shall be supported.
 
 
-<>The following additional constraints apply to the 'SweptSolid' 
+<>The following additional constraints apply to the 'SweptSolid'
 representation, when an IfcMaterialProfileSetUsage is assigned to the IfcMember:
 
 * Solid: IfcExtrudedAreaSolid,
@@ -204,7 +205,7 @@ IfcRevolvedAreaSolid shall be supported
 * Profile: all subtypes of IfcProfileDef (with
 exception of IfcArbitraryOpenProfileDef)
 * Profile Position : For all single profiles, the
- IfcParameterizedProfileDef.Position shall be NIL, or 
+ IfcParameterizedProfileDef.Position shall be NIL, or
 having Location = 0.,0. and RefDirection =
 1.,0.
 * Extrusion: perpendicular to the profile
@@ -249,7 +250,7 @@ The material information of the IfcMember is defined by the
 
 The material of the IfcMember is defined by
 IfcMaterialProfileSetUsage and attached by the
-IfcRelAssociatesMaterial.RelatingMaterial. It is 
+IfcRelAssociatesMaterial.RelatingMaterial. It is
 accessible by the inverse HasAssociations relationship.
  Composite profile members can be represented by refering to
 several IfcMaterialProfile's within the
@@ -284,10 +285,9 @@ Figure 234 — Member composite profiles
 
 ### Spatial Containment
 
-The IfcMember, as any subtype of IfcBuildingElement, 
+The IfcMember, as any subtype of IfcBuildingElement,
 may participate alternatively in one of the two different containment relationships:
 
 
 * the Spatial Containment (defined here), or
 * the Element Composition.
-

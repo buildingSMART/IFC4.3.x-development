@@ -5,19 +5,21 @@ The wall represents a vertical construction that may bound or subdivide spaces. 
 { .extDef}
 > NOTE&nbsp; Definition according to ISO 6707-1: vertical construction usually in masonry or in concrete which bounds or subdivides a construction works and fulfils a load bearing or retaining function.
 
-> NOTE&nbsp; There is a representation of walls for structural analysis provided by a proper subtype of _IfcStructuralMember_ being part of the _IfcStructuralAnalysisModel_.
-
 > NOTE&nbsp; An arbitrary planar element to which this semantic information is not applicable (is not predominantly vertical), shall be modeled as _IfcPlate_.
 
 A wall may have openings, such as wall openings, openings used for windows or doors, or niches and recesses. They are defined by an _IfcOpeningElement_ attached to the wall using the inverse relationship _HasOpenings_ pointing to _IfcRelVoidsElement_.
 
 > NOTE&nbsp; Walls with openings that have already been modeled within the enclosing geometry may use the relationship _IfcRelConnectsElements_ to associate the wall with embedded elements such as doors and windows.
 
-There are three entities for wall occurrences:
+There are two main representations for all occurrences:
 
-* _IfcWallStandardCase_  used for all occurrences of walls, that have a non-changing thickness along the wall path and where the thickness parameter can be fully described by a material layer set. These walls are always represented geometrically by an 'Axis' and a 'SweptSolid' shape representation (or by a 'Clipping' geometry based on 'SweptSolid'), if a 3D geometric representation is assigned. In addition they have to have a corresponding _IfcMaterialProfileSetUsage_ assigned.
-* _IfcWallElementedCase_ used for occurrences of walls which are aggregated from subordinate elements, following specific decomposition rules expressed by the mandatory use of _IfcRelAggregates_ relationship.
-* _IfcWall_  used for all other occurrences of wall, particularly for walls with changing thickness along the wall path (e.g. polygonal walls), or walls with a non-rectangular cross sections (e.g. L-shaped retaining walls), and walls having an extrusion axis that is unequal to the global Z axis of the project (i.e. non-vertical walls), or walls having only 'Brep', or 'SurfaceModel' geometry.
+- _IfcWall_ with _IfcMaterialLayerSetUsage_ is used for all occurrences of walls, that have a non-changing thickness along the wall path and where the thickness parameter can be fully described by a material layer set. These walls are always represented geometrically by an 'Axis' and a 'SweptSolid' shape representation (or by a 'Clipping' geometry based on 'SweptSolid'), if a 3D geometric representation is assigned.
+
+- _IfcWall_ without _IfcMaterialLayerSetUsage_ is used for all other occurrences of wall, particularly for walls with changing thickness along the wall path (e.g. polygonal walls), or walls with a non-rectangular cross sections (e.g. L-shaped retaining walls), and walls having an extrusion axis that is unequal to the global Z axis of the project (i.e. non-vertical walls), or walls having only 'Brep', or 'SurfaceModel' geometry, or if a more parametric representation is not intended.
+
+> NOTE  The entity _IfcWallStandardCase_ has been deprecated, _IfcWall_ with _IfcMaterialLayerSetUsage_ is used instead. The entity _IfcWallbElementedCase_ has been deprecated, _IfcWall_ with _IfcRelAggregates_ is used to describe occurrences of wall which are aggregated from subordinate elements, such as wall panels.
+
+> NOTE&nbsp; There is a representation of walls for structural analysis provided by a proper subtype of _IfcStructuralMember_ being part of the _IfcStructuralAnalysisModel_.
 
 > HISTORY&nbsp; New entity in IFC1.0
 
@@ -42,23 +44,23 @@ Either there is no wall type object associated, i.e. the _IsTypedBy_ inverse rel
 
 ### Axis 2D Geometry
 
-The wall axis is represented by a two-dimensional open curve 
-within a particular shape representation. The 'Axis' shape representation is only used to locate the 
-material layer set along the axis, if the IfcMaterialLayerSetUsgae is applied to the IfcWall. In this case, the wall axis is used to 
+The wall axis is represented by a two-dimensional open curve
+within a particular shape representation. The 'Axis' shape representation is only used to locate the
+material layer set along the axis, if the IfcMaterialLayerSetUsgae is applied to the IfcWall. In this case, the wall axis is used to
 apply the material layer set usage parameter to the wall geometry.
 
 
 
 * Axis
-	+ IfcPolyline having two Points, or 
+	+ IfcPolyline having two Points, or
 	IfcTrimmedCurve with BasisCurve of Type
-	IfcLine for the 'SweptSolid' provided as 
+	IfcLine for the 'SweptSolid' provided as
 	IfcExtrudedAreaSolid. The axis curve lies on the x/y plane and is parallel to the x-axis of
 	 the object coordinate system.
 	+ IfcTrimmedCurve with BasisCurve of Type
 	IfcCircle for 'SweptSolid' provided as
 	 IfcExtrudedAreaSolid. The axis curve lies on the x/y plane
-	 of the object coordinate system, the tangent at the start is along 
+	 of the object coordinate system, the tangent at the start is along
 	the positive x-axis.
 
 
@@ -95,7 +97,7 @@ Figure 280 — Wall axis curved
 
 ### Body Clipping Geometry
 
-The following additional constraints apply to the 'SweptSolid' 
+The following additional constraints apply to the 'SweptSolid'
 representation, when an IfcMaterialLayerSetUsage is assigned to the IfcSlab:
 
 
@@ -136,11 +138,11 @@ representation:
 * Solid: IfcExtrudedAreaSolid is required,
 * Profile: IfcArbitraryClosedProfileDef is
 required.
-* Extrusion: All extrusion directions shall be 
+* Extrusion: All extrusion directions shall be
 supported.
 
 
-The following additional constraints apply to the 'SweptSolid' 
+The following additional constraints apply to the 'SweptSolid'
 representation, when an IfcMaterialLayerSetUsage is assigned to the IfcSlab:
 
 
@@ -184,20 +186,20 @@ The material information of the IfcWall is defined by
 
 ### Material Layer Set Usage
 
-The material of IfcWall can be defined by 
-IfcMaterialLayerSetUsage and attached by 
+The material of IfcWall can be defined by
+IfcMaterialLayerSetUsage and attached by
 IfcRelAssociatesMaterial.RelatingMaterial. It is
  accessible by the inverse HasAssociations relationship.
- Multi-layer walls can be represented by refering to several 
-IfcMaterialLayer's within the IfcMaterialLayerSet 
+ Multi-layer walls can be represented by refering to several
+IfcMaterialLayer's within the IfcMaterialLayerSet
 that is referenced from the
  IfcMaterialLayerSetUsage.
 
 
-When assigning an 
+When assigning an
 IfcMaterialLayerSetUsage to IfcWall it shall imply that the
  IfcWallType should have a unique
- IfcMaterialLayerSet, that is referenced by IfcMaterialLayerSetUsage assigned to all 
+ IfcMaterialLayerSet, that is referenced by IfcMaterialLayerSetUsage assigned to all
 occurrences of this IfcWallType.
 
 
@@ -242,7 +244,7 @@ Figure 278 — Wall material layers
 
 ### Spatial Containment
 
-The IfcWall, as any subtype of IfcBuildingElement, 
+The IfcWall, as any subtype of IfcBuildingElement,
 may participate alternatively in one of the two different containment relationships:
 
 
@@ -255,6 +257,3 @@ may participate alternatively in one of the two different containment relationsh
 > NOTE  The 'Surface' can be used to define a
 > surfacic model of the building (e.g. for analytical purposes, or
 > for reduced Level of Detail representation).
-
-
-

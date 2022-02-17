@@ -173,6 +173,12 @@ for item in xmi_doc:
         #@todo unify this with entity    
         trailing_semi = lambda s: s[:-1] if s.endswith(";") else s
         where_clauses[item.name] = [tuple(map(trailing_semi, map(str.strip, c.split(":")))) for c in item.definition.constraints]
+        
+    if item.type == "PSET":
+        if item.stereotype == "PSET":
+            get_schema(item.package)['Property Sets'].append(item.name)
+        else:
+            get_schema(item.package)['Quantity Sets'].append(item.name)
 
 def child_by_tag(node, tag):
     return [c for c in node["_children"] if c['#tag'] == tag][0]
@@ -231,13 +237,6 @@ for fn in glob.glob("./psd/*.xml"):
     
     definition['kind'] = heading.lower().replace(" ", "_")[:-1]
 
-    if classes:
-        cls = classes[0].split("/")[0]
-        try:
-            resource_to_package[cls][heading].append(psetname)
-        except KeyError as e:
-            pass
-            
     psets[psetname] = definition
         
 for cat, schemas in hierarchy:

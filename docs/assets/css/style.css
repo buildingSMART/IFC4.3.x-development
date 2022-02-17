@@ -94,6 +94,10 @@ pre {
     border-radius: var(--universal-border-radius);
     background: #eee;
 }
+code, code * {
+    font-size: 12pt !important;
+    font-family: monospace !important;
+}
 svg text {
     font-size: 75%;
 }
@@ -412,5 +416,22 @@ a.edit-github {
     padding-bottom: 0;
     margin-top: 0;
     margin-bottom: 0;
+    color: var(--border-color);
+}
+table.hljs-ln, table.hljs-ln * {
+    border: 0px !important;
+    background-color: transparent;
+}
+table.hljs-ln td:first-child {
+    padding-right: var(--universal-padding);
+}
+.hljs-ln-numbers {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-align: center;
     color: var(--border-color);
 }

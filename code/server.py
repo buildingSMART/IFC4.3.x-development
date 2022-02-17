@@ -1552,16 +1552,14 @@ def annex_e_example_page(s):
 
     soup = BeautifulSoup(html_raw)
 
-    code = html.escape(
-        open(
-            (
-                glob.glob(os.path.join(REPO_DIR, "../examples/IFC 4.3", s, "*.ifc"))
-                + glob.glob(os.path.join(REPO_DIR, "../examples/IFC 4.3", s, "*.xml"))
-            )[0],
-            encoding="ascii",
-            errors="ignore",
-        ).read()
-    )
+    code = open(
+        (
+            glob.glob(os.path.join(REPO_DIR, "../examples/IFC 4.3", s, "*.ifc"))
+            + glob.glob(os.path.join(REPO_DIR, "../examples/IFC 4.3", s, "*.xml"))
+        )[0],
+        encoding="ascii",
+        errors="ignore",
+    ).read()
     path_repo = "buildingSMART/Sample-Test-Files"
     path = fn[len(os.path.join(REPO_DIR, "../examples/")) :]
     return render_template(

@@ -227,7 +227,13 @@ fetch(`https://api.github.com/repos/${window.appconfig.repo}/commits?path=${wind
     '<em>' + j[0].commit.message + '</em>' + ' by ' + j[0].commit.author.name + ' on ' + (new Date(j[0].commit.author.date)).toLocaleString();
 });
 
+function setupHighlightJS() {
+    hljs.highlightAll();
+    hljs.initLineNumbersOnLoad();
+}
+
 setupMathJax();
+setupHighlightJS();
 makeHeadersCollapsible();
 generateSectionNavigation();
 initialiseBackToTopButton();

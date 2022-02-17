@@ -38,8 +38,8 @@ This website has the following features:
  - Quick section jumping to browse long or complex pages
  - Navigation breadcrumb easily communicates the domain scope of the current
    entity you are browsing
- - Automatic syntax highlighting and line numbering for STEP, XML, and JSON code
-   examples
+ - Automatic syntax highlighting and line numbering for EXPRESS, STEP, XML, and
+   JSON code snippets and examples
  - API for quick documentation lookup
  - Mobile friendly (well, we plan on it, I would hope)
 

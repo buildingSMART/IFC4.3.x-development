@@ -228,6 +228,20 @@ fetch(`https://api.github.com/repos/${window.appconfig.repo}/commits?path=${wind
 });
 
 function setupHighlightJS() {
+    hljs.registerLanguage("express", (function(e) {
+        var s = e.COMMENT("#", "$");
+        return {
+            aliases: ["robotstxt", "robots.txt"],
+            case_insensitive: !0,
+            lexemes: "[a-z-]+",
+            keywords: {
+                section: "ENTITY END_ENTITY TYPE END_TYPE",
+                built_in: "OPTIONAL NOT OR EXISTS",
+                keyword: "SUBTYPE OF WHERE ENUMERATION"
+            }
+        }
+    }));
+
     hljs.highlightAll();
     hljs.initLineNumbersOnLoad();
 }

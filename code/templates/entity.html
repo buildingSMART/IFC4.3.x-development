@@ -133,7 +133,7 @@
         </tr>
         <tr>
             <td colspan="2">
-                <pre>{{ row.formal }}</pre>
+                <pre><code class="language-express hljs">{{ row.formal }}</code></pre>
             </td>
         </tr>
     {% endfor %}
@@ -232,11 +232,9 @@
 {% endif %}
 
 {% if formal_representation %}
-<h2 class="collapsed">
+<h2>
     {{ formal_representation.number }} Formal representation
 </h2>
-<pre>
-{{ formal_representation.express }}
-</pre>
+<pre><code class="language-express hljs">{{ formal_representation.express }}</code></pre>
 {% endif %}
 {% endblock %}

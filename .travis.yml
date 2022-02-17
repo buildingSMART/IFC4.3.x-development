@@ -20,7 +20,7 @@ install:
   - export PATH="/shacl-${SHACLVERSION}/bin:${PATH}"
 script:
   - python3 code/main.py
-  - python3 code/validate_schema_shacl.py
+  - travis_wait python3 code/validate_schema_shacl.py
 after_success:
   - MESSAGE=$(git log --oneline -1)
   - git clone https://$USER_NAME:$USER_AUTH@github.com/buildingSMART/$REPO

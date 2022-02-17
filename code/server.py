@@ -1758,6 +1758,8 @@ def after(response):
             for img in main_content.findAll("img"):
                 # Capture images as numbered figures
                 parent = img.parent
+                if parent is None:
+                    continue
                 if parent.name == "a":
                     parent = parent.parent
                 parent.name = "figure"

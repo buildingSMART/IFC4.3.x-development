@@ -573,7 +573,12 @@ def get_figure(fig):
 
 @app.route(make_url("assets/<path:asset>"))
 def get_asset(asset):
-    return send_from_directory(os.path.join(REPO_DIR, "docs/assets"), asset)
+    return send_from_directory(os.path.join(REPO_DIR, "docs", "assets"), asset)
+
+
+@app.route(make_url("examples/<path:example>"))
+def get_example(example):
+    return send_from_directory(os.path.join(REPO_DIR, "..", "examples", "IFC 4.3"), example)
 
 
 DOC_ANNOTATION_PATTERN = re.compile(r"\{\s*\..+?\}")
@@ -1109,13 +1114,13 @@ class FigureNumberer:
     @classmethod
     def generate(cls, figure, number):
         previous_header = None
-        headers = [f"h{i}" for i in range(2, 7)]
-        while True:
-            if not headers:
+        previous = figure
+        while not previous_header:
+            previous = previous.find_previous()
+            if not previous:
                 break
-            header_tag = headers.pop()
-            previous_header = figure.find_previous(header_tag)
-            if previous_header:
+            elif previous.name.lower().startswith("h"):
+                previous_header = previous
                 break
 
         if previous_header:
@@ -1552,16 +1557,26 @@ def annex_e_example_page(s):
 
     soup = BeautifulSoup(html_raw)
 
+    example_dir = os.path.join(REPO_DIR, "../examples/IFC 4.3", s)
+
     code = open(
         (
-            glob.glob(os.path.join(REPO_DIR, "../examples/IFC 4.3", s, "*.ifc"))
-            + glob.glob(os.path.join(REPO_DIR, "../examples/IFC 4.3", s, "*.xml"))
+            glob.glob(os.path.join(example_dir, "*.ifc"))
+            + glob.glob(os.path.join(example_dir, "*.xml"))
         )[0],
         encoding="ascii",
         errors="ignore",
     ).read()
     path_repo = "buildingSMART/Sample-Test-Files"
     path = fn[len(os.path.join(REPO_DIR, "../examples/")) :]
+
+    images = []
+    ifcre = re.compile(r"(Ifc|Pset_|Qto_)\w+(?!(.ht|</a|</h|.md| - IFC4.3))")
+    for extension in ["jpg", "png"]:
+        # Use regex because globbing is case sensitive
+        rule = re.compile(r".*\." + extension, re.IGNORECASE)
+        images += [f"{base}/examples/{s}/{name}" for name in os.listdir(example_dir) if rule.match(name)]
+
     return render_template(
         "annex-e-item.html",
         base=base,
@@ -1571,6 +1586,7 @@ def annex_e_example_page(s):
         repo=path_repo,
         title=s,
         code=code,
+        images=images,
     )
 
 
@@ -1700,6 +1716,8 @@ def after(response):
             for img in main_content.findAll("img"):
                 # Capture images as numbered figures
                 parent = img.parent
+                if parent.name == "a":
+                    parent = parent.parent
                 parent.name = "figure"
                 has_caption = False
                 sibling = parent.find_next_sibling()

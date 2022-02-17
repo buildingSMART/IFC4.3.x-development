@@ -203,6 +203,17 @@ ul, ol {
      * by default and later on we can override it back to 2 * where we use fake numbers */
     padding-left: calc(4 * var(--universal-margin));
 }
+ul.thumbnails {
+    padding-left: 0px;
+}
+ul.thumbnails>li {
+    display: block;
+}
+ul.thumbnails img {
+    max-width: 300px;
+    max-height: 300px;
+    vertical-align: bottom;
+}
 ul.psets>li {
     width: 30%;
     display: inline-block;

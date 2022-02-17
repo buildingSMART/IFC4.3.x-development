@@ -2,10 +2,25 @@
 {% block pagecontent %}
 <h1>Annex E Examples - {{ title }}</h1>
 
-<h2>Example overview</h2>
+<h2>
+    Example overview
+</h2>
 
 {{ content | safe }}
 
-<h2>IFC-SPF source</h2>
+<h2>
+    Images
+</h2>
+
+<ul class="thumbnails">
+    {% for image in images %}
+    <li><figure><a href="{{ image }}"><img src="{{ image }}" /></a></figure></li>
+    {% endfor %}
+</ul>
+
+<h2>
+    IFC-SPF source
+</h2>
+
 <pre><code class="language-step21 hljs">{{ code }}</code></pre>
 {% endblock %}

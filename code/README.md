@@ -40,6 +40,7 @@ This website has the following features:
    entity you are browsing
  - Automatic syntax highlighting and line numbering for EXPRESS, STEP, XML, and
    JSON code snippets and examples
+ - Examples are shown with thumbnails and automatically referenced by entities
  - API for quick documentation lookup
  - Mobile friendly (well, we plan on it, I would hope)
 

@@ -809,6 +809,7 @@ def resource(resource):
             property_sets=get_property_sets(resource, builder),
             concept_usage=get_concept_usage(resource, builder),
             examples=get_examples(resource),
+            adoption=get_adoption(resource),
             formal_representation=get_formal_representation(resource),
             changelog=get_changelog(resource),
             is_deprecated=resource in R.deprecated_entities,
@@ -1083,6 +1084,27 @@ def get_examples(resource):
         })
     if examples:
         return {"number": SectionNumberGenerator.generate(), "examples": examples}
+
+
+def get_adoption(resource):
+    import random
+    # Just a stub: inspiration from https://caniuse.com/css-grid
+    # ... and so many other implementation matrixes online
+    softwares = []
+    for i in range(0, random.randint(2, 10)):
+        versions = []
+        for j in range(0, random.randint(1, 5)):
+            support = "not-supported"
+            if j > 2 or random.randint(0, 1) == 1:
+                support = "supported"
+            elif j > 0:
+                support = "partially-supported"
+            versions.append({
+                "name": f"V1.{j}",
+                "support": support
+            })
+        softwares.append({ "name": f"Software {i+1}", "versions": reversed(versions) })
+    return {"number": SectionNumberGenerator.generate(), "softwares": softwares}
 
 def get_formal_representation(resource):
     express = R.entity_definitions.get(resource)

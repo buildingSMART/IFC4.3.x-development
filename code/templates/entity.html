@@ -245,6 +245,43 @@
 </ul>
 {% endif %}
 
+{% if examples %}
+<h2>
+    {{ adoption.number }} Industry adoption
+</h2>
+<ul class="adoption">
+    {% for software in adoption.softwares %}
+    <li>
+        <span>{{ software.name }}</span>
+        <ol>
+            {% for version in software.versions %}
+            <li class="{{ version.support }}">{{ version.name }}</li>
+            {% endfor %}
+        </ol>
+    </li>
+    {% endfor %}
+</ul>
+<ul class="adoption-help">
+    <li>
+        <a href="#todo">
+            <i data-feather="flag"></i>
+            Report an implementation issue
+        </a>
+    </li>
+    <li>
+        <a href="#todo">
+            <i data-feather="file-plus"></i>
+            Submit a user resource
+        </a>
+    </li>
+    <li>
+        <a href="#todo">
+            <i data-feather="check-circle"></i>
+            Validate your IFC data
+        </a>
+    </li>
+</ul>
+{% endif %}
 
 {% if formal_representation %}
 <h2>

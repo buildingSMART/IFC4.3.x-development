@@ -203,6 +203,73 @@ ul, ol {
      * by default and later on we can override it back to 2 * where we use fake numbers */
     padding-left: calc(4 * var(--universal-margin));
 }
+ul.adoption-help {
+    text-align: center;
+}
+ul.adoption-help>li {
+    display: inline-block;
+    font-size: .75em;
+    border-left: 1px solid var(--secondary-border-color);
+    padding-left: calc(2 * var(--universal-padding));
+    padding-right: calc(2 * var(--universal-padding));
+}
+ul.adoption-help>li:first-child {
+    border-left: 0px;
+    padding-left: 0px;
+}
+ul.adoption-help>li a svg {
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+}
+ul.adoption {
+    padding: 0px;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+ul.adoption>li {
+    font-size: .75em;
+    display: inline-block;
+    width: 100px;
+    vertical-align: top;
+    text-align: center;
+}
+ul.adoption>li>span {
+    padding-top: var(--universal-padding);
+    padding-bottom: var(--universal-padding);
+    display: block;
+}
+ul.adoption>li:nth-child(even) {
+    background-color: var(--table-body-alt-back-color);
+}
+ul.adoption>li:nth-child(odd) {
+    background-color: var(--table-body-back-color);
+}
+ul.adoption ol {
+    margin: 0px;
+    padding: 0px;
+}
+ul.adoption ol>li {
+    font-size: .75em;
+    margin: 0px;
+    margin-bottom: 3px;
+    padding-top: var(--universal-padding);
+    padding-bottom: var(--universal-padding);
+    /*padding: var(--universal-padding);*/
+    width: 100px;
+    display: block;
+    text-align: center;
+    color: white;
+}
+ul.adoption ol>li.supported {
+    background-color: var(--green);
+}
+ul.adoption ol>li.partially-supported {
+    background-color: var(--yellow);
+}
+ul.adoption ol>li.not-supported {
+    background-color: var(--red);
+}
 ul.examples {
     padding-left: 0px;
 }

@@ -1076,7 +1076,7 @@ def get_concept_usage(resource, builder):
 
 def get_examples(resource):
     examples = []
-    for name in R.examples_by_type.get(resource.upper()):
+    for name in R.examples_by_type.get(resource.upper()) or []:
         examples.append({
             "name": name,
             "url": url_for("annex_e_example_page", s=name),
@@ -1087,6 +1087,7 @@ def get_examples(resource):
 
 
 def get_adoption(resource):
+    return # Is the industry ready? :)
     import random
     # Just a stub: inspiration from https://caniuse.com/css-grid
     # ... and so many other implementation matrixes online

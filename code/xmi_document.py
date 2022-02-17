@@ -507,75 +507,7 @@ class xmi_document:
                 
                 values = sorted(filter(lambda s: s != c.name, map(lambda s: self.xmi.by_id[s.start].name, c/"Substitution")))
                 yield xmi_item("SELECT", c.name, express.select(c.name, values), c, document=self)
-                
-            # elif stereotype == "enumeration":
-            # 
-            #     
-            #             
-            #     values = map(operator.itemgetter(1), sorted(map(lambda a: (self.try_get_order(a), (a.name, a)), c/("attribute"))))
-            #     yield xmi_item("ENUM", c.name, express.enumeration(c.name, [a for a, b in values]), c, values, document=self)
-                
-            elif stereotype == 'templatecontainer':
-
-                nodes = [[x for x in self.xmi.by_idref[d.supplier] if x.xml.tagName == "element"][0] for d in self.xmi.by_tag_and_type["packagedElement"]["uml:Dependency"] if d.client==c.idref]
-                values = [(n.name, n) for n in nodes]
-                
-                # NB This is actually a fix of the schema
-                if c.name == "IfcPropertySetTemplateTypeEnum":
-                    values.insert(0, ("NOTDEFINED", None))
-                
-                # @todo ExpressOrdering on <element>
-                yield xmi_item("ENUM", c.name, express.enumeration(c.name, [a for a, b in values]), c, values, document=self)
             
-            # elif stereotype == 'ptcontainer':
-            # 
-            #     old_c = None
-            #     
-            #     # NB This is actually a fix of the schema: Transfer IfcBuiltSystemTypeEnum children to IfcBuildingSystemTypeEnum
-            #     try:
-            #         if self.xmi.by_id[(c|"NoteLink").start].body == 'All Predefined Types Transferred to new enum with better name':
-            #             old_c = c
-            #             c = [x for x in self.xmi.by_tag_and_type["element"]["uml:Class"] if x.name == "IfcBuiltSystemTypeEnum"][0]
-            #     except: pass
-            #     
-            #     children = []
-            #     ids = [d.end for d in (c/"Dependency") if d.start == c.xmi_idref]
-            #     if not ids:
-            #         print("Warning, no dependency relationship for %s" % c.name)
-            #         nodes = [x for x in self.xmi.by_tag_and_type["element"]["uml:Class"] if x.name.startswith(c.name + ".")]
-            #         children = list(map(operator.itemgetter(1), sorted(map(lambda a: (self.try_get_order(a), (a.name.split('.')[1], a)), nodes))))
-            #         values = [a for a, b in children]
-            #     else:
-            #         def get_element(id): 
-            #             ns = [n for n in self.xmi.by_tag_and_type['element']['uml:Class'] if n.idref==id]
-            #             if ns: return ns[0]
-            #             else:
-            #                 print("Warning, no uml:Class element for %s" % id)
-            #         elems = list(filter(None, map(get_element, ids)))
-            #         def get_stereotype(elem): return (elem/"properties")[0].stereotype if (elem/"properties") else None
-            #         stereotypes = list(map(get_stereotype, elems))
-            #         # pelems = [self.xmi.by_id[n.idref] for n in elems]
-            #         # [self.skip_by_package(x) for x in pelems]
-            #         # [(x|"project").status for x in elems]
-            #         filtered_elems = [e for e,s in zip(elems, stereotypes) if s.lower() != 'virtualentity']
-            #         children = [(e.name.split('.')[-1], e) for e in filtered_elems]
-            #         # make unique by name
-            #         children = [x for i,x in enumerate(children) if x[0] not in [y[0] for y in children[0:i]]]
-            #         values = [a for a, b in children]
-            #     
-            #     if "USERDEFINED" not in values: values.append("USERDEFINED")
-            #     if "NOTDEFINED" not in values: values.append("NOTDEFINED")
-            #     
-            #     if old_c:
-            #         c = old_c
-            #     
-            #     yield xmi_item("ENUM", c.name, express.enumeration(c.name, values), c, children, document=self, stereotype="PREDEFINED_TYPE")
-
-            elif stereotype is not None and (stereotype.startswith("pset") or stereotype == "$"):
-                # Don't serialize psets to EXPRESS
-                # @todo Some psets (and only psets) have their stereotype set to $, why?
-                continue
-                
             elif stereotype == "virtualentity":
             
                 continue

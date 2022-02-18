@@ -1,0 +1,3 @@
+# Pset_DistributionBoardTypeDispatchingBoard
+
+Properties for _IfcDistributionBoard_ with PredefinedType DISPATCHINGBOARD.

@@ -1224,7 +1224,7 @@ class FigureNumberer:
                 previous_header = previous
                 break
 
-        if previous_header:
+        if previous_header and previous_header.contents:
             parent_number = previous_header.contents[0].strip().split(" ", 1)[0]
             alphabet = "A"
             generated_number = parent_number + "." + alphabet

@@ -13,6 +13,7 @@ This website has the following features:
    software, and work cross platform on Windows, Mac, and Linux.
  - The written documentation is now fully captured in plain text using Markdown,
    making it easy for anyone to edit the documentation without special training.
+ - A built-in search feature. How did we live without it :)
  - All written documentation changes are tracked using Git, allowing anyone to
    edit and see edit histories.
  - Using Github, anybody can make quick online "Wiki" style edits without

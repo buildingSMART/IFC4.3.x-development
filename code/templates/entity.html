@@ -92,8 +92,9 @@
             <td data-label="Type">{{ attribute.type }}</td>
             <td data-label="Description">
                 <div>
+                    {% if attribute.description %}
                     {{ attribute.description | safe }}
-                    {% if not attribute.description %}
+                    {% else %}
                     <p>
                         <em>No description available.</em>
                     </p>
@@ -123,8 +124,9 @@
         <tr>
             <td>{{ row.name }}</td>
             <td>
+                {% if row.description %}
                 {{ row.description | safe }}
-                {% if not row.description %}
+                {% else %}
                 <p>
                     <em>No description available.</em>
                 </p>
@@ -203,7 +205,9 @@
             </td>
             <td data-label="Description">
                 <div>
+                    {% if concept.description %}
                     {{ concept.description | safe }}
+                    {% endif %}
                     {% if concept.applicable_relationships %}
                     <p>This concept can be applied to the following resources:</p>
                     <ul>
@@ -245,7 +249,7 @@
 </ul>
 {% endif %}
 
-{% if examples %}
+{% if adoption %}
 <h2>
     {{ adoption.number }} Industry adoption
 </h2>

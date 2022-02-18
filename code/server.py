@@ -900,10 +900,10 @@ def get_properties(resource, mdc):
             prop_type = []
         else:
             prop_type = [prop["type"]]
-            
+
         edit_button = f"<a class='button' href='{make_url('property/'+prop['name'])}.htm' style='padding:0;margin:0 0.5em'><span class='icon-edit'></span></a>"
         doc += edit_button
-        
+
         psc = pset_specitic_comments.get(prop["name"])
         if psc:
             doc += f"<br><br><i>{process_markdown(resource, psc, as_attribute=True)}</i>"
@@ -1042,7 +1042,7 @@ def get_concept_usage(resource, builder):
         supertype_chain.append(ty)
         ty = R.entity_supertype.get(ty)
 
-    concepts = list(builder.concepts)
+    builder_concepts = list(builder.concepts)
 
     # Create a lookup for concept name to URL
     concept_hierarchy = make_concept([""])
@@ -1054,8 +1054,64 @@ def get_concept_usage(resource, builder):
 
     concept_lookup = {c.text.replace(" ", ""): (c.text, c.url) for c in flatten_hierarchy(concept_hierarchy)}
 
+
+    # Grabs concepts from XMI, and then enhances them with human names and descriptions from Markdown
+
+    concept_groups = {}
     groups = []
-    for concept in concepts:
+    for view_name, xmi_concepts in R.xmi_concepts.items():
+        applicable_concepts = []
+        for xmi_concept_name, xmi_relationships in xmi_concepts.items():
+            for xmi_relationship in xmi_relationships:
+                applicable_entity = xmi_relationship.get("ApplicableEntity", None)
+                if applicable_entity in supertype_chain:
+                    concept_groups.setdefault(applicable_entity, {}).setdefault(view_name, {}).setdefault(xmi_concept_name, []).append(xmi_relationship)
+
+    for ifc_class in reversed(supertype_chain):
+        views = concept_groups.get(ifc_class)
+        if not views:
+            continue
+
+        concepts = []
+        for view_name, view_concepts in views.items():
+            for name, data in view_concepts.items():
+                human_name = name
+                description = None
+                for markdown_concept in builder_concepts:
+                    markdown_name = get_concept_name(markdown_concept[1])
+                    stripped_name = markdown_name.replace(" ", "")
+                    if stripped_name == name:
+                        human_name = markdown_name
+                        description = process_markdown(resource, markdown_concept[2])
+                concepts.append({
+                    "name": human_name,
+                    "description": description,
+                    "usage": separate_camel(view_name).replace("General Usage", "General"),
+                    "url": concept_lookup.get(name, [None, None])[1],
+                    "applicable_relationships": get_applicable_relationships(view_name, name, ifc_class),
+                })
+
+        groups.append(
+            {
+                "name": ifc_class,
+                "is_inherited": ifc_class != resource,
+                "concepts": concepts,
+            }
+        )
+
+    # Comment out this return if you want to see how things work using the
+    # markdown as a source of truth instead of XMI. As of writing they differ
+    # quite significantly.
+    if groups:
+        return {
+            "number": SectionNumberGenerator.generate(),
+            "groups": groups,
+        }
+
+    # This code uses the markdown as a source of truth.
+
+    groups = []
+    for concept in builder_concepts:
         if not groups or groups[-1]["name"] != concept[0]:
             groups.append(
                 {

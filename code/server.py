@@ -404,7 +404,7 @@ def process_graphviz(current_entity, md):
         else:
             return 0
 
-    graphviz_code = filter(is_figure, re.findall("```(.*?)```", md, re.S))
+    graphviz_code = filter(is_figure, re.findall("```(.*?)```", md or '', re.S))
 
     for c in graphviz_code:
         hash = hashlib.sha256(c.encode("utf-8")).hexdigest()
@@ -415,7 +415,7 @@ def process_graphviz(current_entity, md):
         md = md.replace("```%s```" % c, "![](/svgs/%s_%s.svg)" % (current_entity, hash))
         subprocess.call([shutil.which("dot") or "dot", "-O", "-Tsvg", "-Gbgcolor=#ffffff00", fn])
 
-    return md
+    return md or ''
 
 
 def create_entity_definition(e, bindings):

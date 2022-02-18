@@ -1075,13 +1075,12 @@ def get_concept_usage(resource, builder):
         concepts = []
         for view_name, view_concepts in views.items():
             for name, data in view_concepts.items():
-                human_name = name
+                human_name = concept_lookup.get(name, [name, ""])[0]
                 description = None
                 for markdown_concept in builder_concepts:
                     markdown_name = get_concept_name(markdown_concept[1])
                     stripped_name = markdown_name.replace(" ", "")
                     if stripped_name == name:
-                        human_name = markdown_name
                         description = process_markdown(resource, markdown_concept[2])
                 concepts.append({
                     "name": human_name,
@@ -1331,7 +1330,7 @@ def make_concept(path, number_path=None):
 def create_concept_table(view_name, xmi_concept, types=None):
     rows = R.xmi_concepts[view_name][xmi_concept]
     bindings = [("ApplicableEntity", ("", ""))] + list(
-        parse_bindings(os.path.join(REPO_DIR, "schemas/IFC.xml"), xmi_concept)
+        parse_bindings(xmi_concept, fn=os.path.join(REPO_DIR, "schemas/IFC.xml"))
     )
     bound_keys = set(sum([list(r.keys()) for r in rows], []))
     bound_keys = [a[0] for a in bindings if a[0] in bound_keys]

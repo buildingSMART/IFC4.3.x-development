@@ -17,15 +17,37 @@ class predefined_type_attribute: pass
 class property_set_class: pass
 
 
-def parse_bindings(fn, concept, to_xmi=False, definitions_by_name=None):
-    all_templates = glob.glob(os.path.join(os.path.dirname(fn), "../docs/templates/**/*.md"), recursive=True)                    
+def get_concept_block(all_templates, concept):
     tmpl = [t for t in all_templates if os.path.abspath(t).split(os.sep)[-2].lower().replace(" ", "") == concept.lower()][0]
     concept_blocks = re.findall(r"concept\s*\{.+?\}", open(tmpl, encoding='utf-8').read(), flags=re.S)
     if not concept_blocks:
         print(f"Warning: no concept block on {concept}")
         return
-    
-    concept_block = concept_blocks[0]
+    return concept_blocks[0]
+
+
+def get_concept_root(all_templates, concept):
+    concept_block = get_concept_block(all_templates, concept)
+    if concept_block is None:
+        return
+
+    lhs = set(n.split(":")[0] for n in re.findall("([\:\w]+)\s*\->", concept_block))
+    rhs = set(n.split(":")[0] for n in re.findall("\->\s*([\:\w]+)", concept_block))
+    roots = list(lhs - rhs)
+    if len(roots) != 1:
+        print(f"Warning: multiple roots on {concept}")
+        return
+    return roots[0]
+
+
+def parse_bindings(concept, all_templates=None, fn=None, to_xmi=False, definitions_by_name=None):
+    if fn:
+        all_templates = glob.glob(os.path.join(os.path.dirname(fn), "../docs/templates/**/*.md"), recursive=True)
+        
+    concept_block = get_concept_block(all_templates, concept)
+    if concept_block is None:
+        return
+        
     for a,b,c in re.findall(r'(\w+):(\w+)\[binding="(.+?)"\]', concept_block):
         
         if to_xmi:
@@ -70,6 +92,8 @@ if __name__ == "__main__":
     definitions = list(xmi_doc)
     definitions_by_name = {x.name: x for x in definitions}
     
+    all_templates = glob.glob(os.path.join(os.path.dirname(fn), "../docs/templates/**/*.md"), recursive=True)  
+
     def get_predefined_types_for_entity(e):
         if "PredefinedType" in dict(e.definition.attributes):
             type_attr = dict(e.definition.attributes)["PredefinedType"]
@@ -204,7 +228,7 @@ if __name__ == "__main__":
     realizes = {x.supplier: x.client for x in xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:Realization"]}
 
     result = defaultdict(lambda: defaultdict(list))
-
+    
     # explore nested dict as 3-tuples
     for view_name, xmi_concept, pairs in [(k1, k2, v) for k1, d2 in xmi_doc.concept_associations.items() for k2, v in d2.items()]:
         if concept_interpretation.get(xmi_concept) in (
@@ -215,7 +239,7 @@ if __name__ == "__main__":
             concept_interpretation.concept_type.DIRECTIONAL_BINARY,
             concept_interpretation.concept_type.NARY,
         ):
-            bindings = list(parse_bindings(fn, xmi_concept, to_xmi=True, definitions_by_name=definitions_by_name))
+            bindings = list(parse_bindings(xmi_concept, all_templates=all_templates, to_xmi=True, definitions_by_name=definitions_by_name))
             get_binding = make_get_binding(bindings)
             
             for p in pairs:
@@ -256,6 +280,18 @@ if __name__ == "__main__":
                 d = {x: elem_names[elem_binds.index(x)] for x in binding_names}
                 
                 result[view_name][xmi_concept].append(d)
-
+                
+    any_sep = re.compile(r"\\|/")
+    all_template_names = [any_sep.split(x)[-2] for x in all_templates if "Partial" not in x][1:]
+    non_leafs = {any_sep.split(x)[-3]:any_sep.split(x)[-2] for x in all_templates if "Partial" not in x}.keys()
+    remaining = set(s.replace(" ", "") for s in all_template_names) - \
+        xmi_doc.concept_associations['GeneralUsage'].keys() - \
+        set(s[0].replace(" ", "") for s in concept_interpretation.concepts.keys()) -\
+        set(s.replace(" ", "") for s in non_leafs)
+        
+    for concept_name in remaining:
+        root = get_concept_root(all_templates, concept_name)
+        if root:
+            result["GeneralUsage"][concept_name].append({"ApplicableEntity": root})
 
     json.dump(result, open("xmi_concepts.json", "w", encoding="utf-8"), indent=1)

@@ -121,7 +121,10 @@ class resource_manager:
     hierarchy = schema_resource("hierarchy.json")
     xmi_concepts = schema_resource("xmi_concepts.json")
     examples_by_type = schema_resource("examples_by_type.json")
-
+    
+    listing_references = schema_resource("listing_references.json")
+    listing_tables = schema_resource("listing_tables.json")
+    listing_figures = schema_resource("listing_figures.json")
 
 R = resource_manager()
 
@@ -1789,8 +1792,14 @@ def sandcastle():
     return render_template("sandcastle.html", base=base, html=html, md=md)
 
 
-ifcre = re.compile(r"(Ifc|Pset_|Qto_)\w+(?!(.ht|.png|.jp|.gif|</a|</h|.md| - IFC4.3))")
+ifcre = re.compile(r"(Ifc|Pset_|Qto_)\w+(?!(\">|.ht|.png|.jp|.gif|</a|</h|.md| - IFC4.3))")
 
+try:
+    import os
+    from redis import Redis, ConnectionError
+    redis = Redis(host=os.environ.get("REDIS_HOST", "localhost"))
+except:
+    redis = None
 
 @app.after_request
 def after(response):
@@ -1802,7 +1811,10 @@ def after(response):
         # I know, I know, string to dom to string to dom to ...
         soup = BeautifulSoup(html)
 
-        h1 = soup.findAll("h1")[0]
+        try:
+            h1 = soup.findAll("h1")[0]
+        except:
+            return response
         title = soup.findAll("title")[0]
         title.string = h1.text + " - " + title.string
 
@@ -1851,7 +1863,7 @@ def after(response):
                     figcaption.string = "Figure " + str(uuid.uuid4())
                     parent.append(figcaption)
                     FigureNumberer.generate(parent, figcaption.text.split(" ", 2)[1])
-
+                    
             for table in main_content.findAll("table"):
                 figure = soup.new_tag("figure")
                 table.insert_before(figure)
@@ -1900,10 +1912,68 @@ def after(response):
         def decorate_link(m):
             w = m.group(0)
             if w in R.entity_definitions or w in R.pset_definitions:
+                if redis:
+                    try:
+                        redis.lpush("references", json.dumps([w, "", request.path]))
+                    except ConnectionError:
+                        pass
                 return "<a href='" + url_for("resource", resource=w) + "'>" + w + "</a>"
             else:
                 return w
+                
+        html = ifcre.sub(decorate_link, html)
+        soup = BeautifulSoup(html)
+        
+        for elem in soup.findAll("figure"):
+            if elem.figcaption:
+                is_image = elem.img
+                if "\u2014" in elem.figcaption.text:
+                    label, caption = map(str.strip, elem.figcaption.text.split("\u2014", 1))
+                elif elem.img:
+                    label = elem.figcaption.text.strip()
+                    caption = elem.img.get('alt', '').strip()
+                else:
+                    continue
+                if redis:
+                    try:
+                        redis.lpush("figures" if is_image else "tables", json.dumps([caption or 'unnamed', label, request.path]))
+                    except ConnectionError:
+                        pass
+        
+        response.data = str(soup)
 
-        response.data = ifcre.sub(decorate_link, html)
 
     return response
+
+
+@app.route(make_url("index.htm"))
+def get_index():
+    items = [
+        {"number": "", "title": f"Listing of {x}", "url": make_url(f"listing-{x}.html")} \
+        for x in "references,figures,tables".split(",")
+    ]
+    return render_template("annex-b.html", base=base, navigation=get_navigation(), items=items, title="Index")
+
+
+@app.route(make_url("listing-<any(references,figures,tables):kind>.html"))
+def get_index_index(kind):
+    items = getattr(R, f"listing_{kind}")
+    if kind == "references":
+        prefix = make_url("lexical/")
+        def reverse_engineer_url(s):
+            if s.startswith(prefix):
+                return s[len(prefix):-4]
+        items = [{"number": k, "url": "", "title": " ".join(reverse_engineer_url(s['url']) for s in gs if reverse_engineer_url(s['url']))}\
+            for k, gs in itertools.groupby(items, operator.itemgetter('title'))]
+    return render_template("annex-b.html", base=base, navigation=get_navigation(), items=items, title=f"Listing of {kind}")
+    
+
+if redis:
+    @app.route("/build_index", methods=['GET', 'POST'])
+    def build_index():
+        for x in "references,figures,tables".split(","):
+            with open(f"listing_{x}.json", "w") as f:
+                json.dump([{"number": p[1], "url": p[2], "title": p[0]} for p in \
+                    sorted(set(map(tuple, map(json.loads, redis.lrange(x, 0, -1)))))],
+                    f)
+        return "OK"

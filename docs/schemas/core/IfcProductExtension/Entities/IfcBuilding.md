@@ -16,7 +16,10 @@ The _IfcBuilding_ is used to build the spatial structure of a building (that ser
 
 > NOTE&nbsp; Detailed requirements on mandatory element containment and placement structure relationships are given in view definitions and implementer agreements.
 
-!["IfcBuildingStorey as part of a spatial structure"](../../../../figures/ifcbuilding-spatialstructure.png "Figure 1 &mdash; Building composition")
+!["A building storey as part of a spatial structure"](../../../../figures/ifcbuilding-spatialstructure.png)
+
+
+Figure 1 &mdash; Building composition
 
 Systems, such as building service or electrical distribution systems, zonal systems, or structural analysis systems, relate to _IfcBuilding_ by using the objectified relationship _IfcRelServicesBuildings_.
 
@@ -27,21 +30,8 @@ Figure 2 describes the heights and elevations of the _IfcBuilding_. It is used t
 * total height of building, also referred to as ridge height (top of roof structure, e.g the ridge against terrain): provided by BaseQuantity with Name="TotalHeight" 
 * eaves height of building (base of roof structure, e.g the eaves against terrain): provided by BaseQuantity with Name="EavesHeight" 
 
-<table border="0" cellpadding="2" cellspacing="2">
-      <tbody>
-        <tr valign="top">
-          <td align="left" valign="top">
-            <img src="../../../../figures/ifcbuilding_heights.png" alt="building heights" border="0" height="420" width="800">&nbsp;
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p class="figure">Figure 2 &mdash; Building elevations
-            </p>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+![building heights](../../../../figures/ifcbuilding_heights.png)
+Figure 2 &mdash; Building elevations
 
 > HISTORY&nbsp; New entity in IFC1.0.
 

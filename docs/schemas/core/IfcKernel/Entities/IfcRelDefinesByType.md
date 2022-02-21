@@ -12,40 +12,16 @@ There are several scenarios to define the same property set on the object type d
     * The sum of all properties within a given property set applicable to an object occurrence is the union of properties assigned to the object type definition plus the properties assigned to the object occurrence.
     * If the object occurrence has a property with the same _IfcProperty.Name_ in an _IfcPropertySet_, as the corresponding object type definition, then the occurrence property value overrides the type property value. 
 
-<table border="0" cellpadding="0" cellspacing="0" summary="relationship usage">
-<tr><td valign="top"><img src="../../../../figures/ifcreldefinesbytype_fig-1.png" alt="instance diagram" border="0"></td></tr>
-<td valign="top"><p class="figure">Figure 1 &mdash; Type definition relationships</p></td>
-</table>
+![instance diagram](../../../../figures/ifcreldefinesbytype_fig-1.png)
+Figure 1 &mdash; Type definition relationships
 
-The following table provides an example of assigning
+The following table provides an example of assigning properties that can be overridden.
 
-<table border="1" cellpadding="2" cellspacing="2" summary="example for property assignment">
-<tr valign="top">
-<td><small><b>properties assigned to <em>IfcWall</em></b></small></td>
-<td><small><b>properties assigned to <em>IfcWallType</em></b></small></td>
-<td><small><b>resulting property value for individual wall</b></small></td>
-</tr>
-<tr valign="top">
-<td><small><em>Pset_WallCommon</em></small></td>
-<td><small><em>Pset_WallCommon</em></small></td>
-<td> </td>
-</tr>
-<tr valign="top">
-<td><em><small> - ExtendToStructure</small> = TRUE</em></td>
-<td> </td>
-<td><small>TRUE</small></td>
-</tr>
-<tr valign="top">
-<td> </td>
-<td><small><em> - ThermalTransmittance</em> = 0.375</small></td>
-<td><small>0.375</small></td>
-</tr>
-<tr valign="top">
-<td><small><em> - ExtendToStructure</em> = FALSE</small></td>
-<td><small><em> - ExtendToStructure</em> = TRUE</small></td>
-<td><small>FALSE</small></td>
-</tr>
-</table>
+Properties assigned to IfcWallType | Property assigned to IfcWall  | Resulting property value for individual wall
+--- | --- | ---
+- | ExtendToStructure = TRUE | ExtendToStructure = TRUE
+ThermalTransmittance = 0.375 | - | ThermalTransmittance = 0.375
+ExtendToStructure = TRUE | ExtendToStructure = FALSE | ExtendToStructure = FALSE
 
 > HISTORY&nbsp; New entity in IFC2x.
 

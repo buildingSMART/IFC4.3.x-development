@@ -118,6 +118,99 @@ ex:QuantitySetQuantity a sh:SPARQLTarget;
         }
    """
    .
+   
+ex:Entity a sh:SPARQLTarget;
+    sh:select """
+        PREFIX ex:  <http://example.org/ifc43Shapes/>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX xmi: <http://schema.omg.org/spec/XMI/2.1/>
+        PREFIX custom: <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/>
+
+        SELECT ?this
+        WHERE {
+            ?this a ex:packagedElement .
+            ?this xmi:type "uml:Class" .
+            ?this ex:name ?entityName . 
+
+            # no pset or qset
+            FILTER NOT EXISTS {
+                {
+                    ?stereo a custom:PSET_TYPEDRIVENOVERRIDE .
+                    ?stereo ex:base_Class ?this .
+                } UNION {
+                    ?stereo a custom:PSET_PERFORMANCEDRIVEN .
+                    ?stereo ex:base_Class ?this .
+                } UNION {
+                    ?stereo a custom:PSET_OCCURRENCEDRIVEN .
+                    ?stereo ex:base_Class ?this .
+                } UNION {
+                    ?stereo a custom:PSET_TYPEDRIVENONLY .
+                    ?stereo ex:base_Class ?this .
+                } UNION {
+                    ?stereo a custom:QTO_TYPEDRIVENONLY .
+                    ?stereo ex:base_Class ?this .
+                } UNION {
+                    ?stereo a custom:QTO_TYPEDRIVENOVERRIDE .
+                    ?stereo ex:base_Class ?this .
+                } UNION {
+                    ?stereo a custom:QTO_OCCURRENCEDRIVEN .
+                    ?stereo ex:base_Class ?this .
+                }
+            }
+            
+            # no rule or function
+            FILTER NOT EXISTS {
+                {
+                    ?stereo a custom:EXPRESS_FUNCTION .
+                    ?stereo ex:base_Class ?this .
+                } UNION {
+                    ?stereo a custom:EXPRESS_RULE .
+                    ?stereo ex:base_Class ?this .
+                }
+            }
+            
+            # no select
+            FILTER NOT EXISTS {
+                {
+                    ?stereo a custom:EXPRESS_SELECT .
+                    ?stereo ex:base_Class ?this .
+                }
+            }
+            
+            # no property data type
+            FILTER NOT EXISTS {
+                ?binding a ex:templateBinding .
+                ?binding ex:containedIn ?this .
+            }
+            
+            # no concept parametrization
+            FILTER NOT EXISTS {
+                ?this ex:containedIn* ?package .
+                ?package ex:name "Views" .
+            }
+            
+            # no property categories
+            FILTER NOT EXISTS {
+                ?this ex:containedIn* ?package .
+                ?package ex:name "propertytypes" .
+            }
+            
+            # no template members
+            FILTER NOT EXISTS {
+                {
+                    ?stereo a custom:QuantityTemplate .
+                    ?stereo ex:base_Class ?this .
+                } UNION {
+                    ?stereo a custom:PropertyTemplate .
+                    ?stereo ex:base_Class ?this .
+                }
+            }
+            
+            # no predefined type item
+            filter (!regex(?entityName, "\\\\.")) .
+        }
+    """
+    .
 
 ex:hasApplicableClass a sh:SPARQLConstraint ;
     sh:message "The Property|Quantity Set '{?psetName}' should have at least one applicability" ;
@@ -344,6 +437,11 @@ ex:PropertyForDefinition a sh:NodeShape ;
 
 ex:DefinitionForPropertySet a sh:NodeShape ;
     sh:target ex:PropertySet;
+    sh:sparql ex:hasResourceDefinition
+    .
+
+ex:DefinitionForEntity a sh:NodeShape ;
+    sh:target ex:Entity ;
     sh:sparql ex:hasResourceDefinition
     .
     

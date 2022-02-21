@@ -2,7 +2,7 @@
 
 A site is a defined area of land, possibly covered with water, on which the project construction is to be completed. A site may be used to erect, retrofit or turn down building(s), or for other construction related developments.
 
-> NOTE&nbsp; Term according to ISO6707-1 vocabulary "area of land or water where construction work or other development is undertaken".
+> NOTE&nbsp; Definition according to ISO 6707-1: area of land or water where construction work or other development is undertaken.
 
 A site may include a definition of the single geographic reference point for this site (global position using WGS84 with _Longitude_, _Latitude_ and _Elevation_). The precision is provided up to millionth of a second and it provides an absolute placement in relation to the real world as used in exchange with geospational information systems. If asserted, the _Longitude_, _Latitude_ and _Elevation_ establish the point in WGS84 where the point 0.,0.,0. of the _LocalPlacement_ of _IfcSite_ is situated.
 
@@ -32,8 +32,7 @@ For exact georeferencing (or referencing to any other geographic coordinate syst
 * <small>the reference height of each building situated at the site is given againt the same height datum used at this location.</small>
 * <small>the elevations of each storey belonging to each building are given as local height relative to the reference height of the building.</small>
 
-!["Site Elevations"](../../../../figures/ifcsite_heights.png "Figure 2 &mdash; Site Elevations")
-
+!["IfcSite with local placement and WGS84 coordinates"](../../../../figures/ifcsite_heights.png "Figure 2 &mdash; Site placement and elevations")
 
 > HISTORY &nbsp;New entity in IFC1.0.
 
@@ -54,6 +53,8 @@ Datum elevation relative to sea level.
 
 ### LandTitleNumber
 The land title number (designation of the site within a regional system).
+
+> IFC4.3.0.0 DEPRECATION  This attribute shall not be used for export, use property _LandTitleID_ at _Pset_LandRegistration_ instead.
 
 ### SiteAddress
 Address given to the site for postal purposes.
@@ -116,18 +117,18 @@ site object, then this is the default situation.
 ### Spatial Composition
 
 By using the inverse relationship IfcSite.Decomposes it references IfcProject ||
-IfcSite through IfcRelAggregates.RelatingObject, If it 
+IfcSite through IfcRelAggregates.RelatingObject, If it
 refers to another instance of IfcSite, the referenced
- IfcSite needs to have a different and higher 
+ IfcSite needs to have a different and higher
 CompositionType, i.e. COMPLEX (if the other IfcSite
- has ELEMENT), or ELEMENT (if the other IfcSite has 
+ has ELEMENT), or ELEMENT (if the other IfcSite has
 PARTIAL).
 
 
 ### Spatial Container
 
 If there are building elements and/or other elements directly
- related to the IfcSite (like a fence, or a shear wall), they 
+ related to the IfcSite (like a fence, or a shear wall), they
 are associated with the IfcSite by using the objectified
  relationship IfcRelContainedInSpatialStructure. The
  IfcIfcSite references them by its inverse relationship:
@@ -143,7 +144,7 @@ IfcRelContainedInSpatialStructure.RelatedElements
 By using the inverse relationship IfcSite.IsDecomposedBy it references (em>IfcSite ||
 IfcBuilding || IfcSpace by
  IfcRelAggregates.RelatedObjects. If it refers to another
-instance of IfcSite, the referenced IfcSite needs to 
+instance of IfcSite, the referenced IfcSite needs to
 have a different and lower CompositionType, i.e. ELEMENT (if the
  other IfcSite has COMPLEX), or PARTIAL (if the other
 IfcSite has ELEMENT).
@@ -198,6 +199,3 @@ Figure 183 — Site breaklines facetation
 
 
 > NOTE  The geometric representation of the site has been based on the ARM level description of the site\_shape\_representation given within the ISO 10303-225 "Building Elements using explicit shape representation".
-
-
-

@@ -7,6 +7,10 @@ A built element type is used to define the common properties of a certain type o
 
 The _IfcBuiltElementType_ can be instantiated in the case when arbitrary built element types cannot be expressed by a subtype of _IfcBuiltElementType_.
 
+> NOTE&nbsp; The deprecated _IfcBuildingElementProxyType_ shall not be used to represent any arbitrary built element type, use a direct instantiation of _IfcBuiltElementType_ instead.
+
 Occurrences of subtypes of the _IfcBuiltElementType_ are represented by instances of the appropriate subtypes of _IfcBuiltElement_.  
 
 > HISTORY&nbsp; New entity in IFC2x2.
+
+> IFC4.3.0.0 CHANGE  The entity has been renamed from IfcBuildingElementType and made non abstract.

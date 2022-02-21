@@ -211,6 +211,92 @@ ex:Entity a sh:SPARQLTarget;
         }
     """
     .
+    
+ex:Select a sh:SPARQLTarget;
+    sh:select """
+        PREFIX ex:  <http://example.org/ifc43Shapes/>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX xmi: <http://schema.omg.org/spec/XMI/2.1/>
+        PREFIX custom: <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/>
+
+        SELECT ?this
+        WHERE {
+            ?this a ex:packagedElement .
+            ?this xmi:type "uml:Class" .
+            ?this ex:name ?resourceName . 
+
+            ?stereo a custom:EXPRESS_SELECT .
+            ?stereo ex:base_Class ?this .
+        }
+    """
+    .
+ex:Enum a sh:SPARQLTarget;
+    sh:select """
+        PREFIX ex:  <http://example.org/ifc43Shapes/>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX xmi: <http://schema.omg.org/spec/XMI/2.1/>
+        PREFIX custom: <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/>
+
+        SELECT ?this
+        WHERE {
+            ?this a ex:packagedElement .
+            ?this xmi:type "uml:Enumeration" .
+            ?this ex:name ?resourceName . 
+
+            filter (!regex(?resourceName, "^PEnum_")) .
+            
+            # no concept parametrization
+            FILTER NOT EXISTS {
+                ?this ex:containedIn* ?package .
+                ?package ex:name "Views" .
+            }
+        }
+    """
+    .
+    
+ex:EnumLiteral a sh:SPARQLTarget;
+    sh:select """
+        PREFIX ex:  <http://example.org/ifc43Shapes/>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX xmi: <http://schema.omg.org/spec/XMI/2.1/>
+        PREFIX custom: <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/>
+
+        SELECT ?this
+        WHERE {
+            ?this a ex:ownedLiteral .
+            ?this ex:containedIn ?enum .
+            ?this ex:name ?itemName .
+
+            ?enum a ex:packagedElement .
+            ?enum xmi:type "uml:Enumeration" .
+            ?enum ex:name ?resourceName . 
+
+            filter (!regex(?resourceName, "^PEnum_")) .
+            
+            # no concept parametrization
+            FILTER NOT EXISTS {
+                ?enum ex:containedIn* ?package .
+                ?package ex:name "Views" .
+            }
+        }
+    """
+    .
+    
+ex:SimpleType a sh:SPARQLTarget;
+    sh:select """
+        PREFIX ex:  <http://example.org/ifc43Shapes/>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX xmi: <http://schema.omg.org/spec/XMI/2.1/>
+        PREFIX custom: <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/>
+
+        SELECT ?this
+        WHERE {
+            ?this a ex:packagedElement .
+            ?this xmi:type "uml:DataType" .
+            ?this ex:name ?resourceName .
+        }
+    """
+    .
 
 ex:hasApplicableClass a sh:SPARQLConstraint ;
     sh:message "The Property|Quantity Set '{?psetName}' should have at least one applicability" ;
@@ -335,6 +421,40 @@ ex:hasResourceDefinition a sh:SPARQLConstraint ;
         }
     """
     .
+    
+ex:hasEnumLiteralDefinition a sh:SPARQLConstraint ;
+    sh:message "The resource '{?enumName}.{?literalName}' has no definition" ;
+    sh:select """
+        PREFIX ex:  <http://example.org/ifc43Shapes/>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX xmi: <http://schema.omg.org/spec/XMI/2.1/>
+        PREFIX custom: <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/>
+        
+        SELECT ?this ?enumName ?literalName
+        WHERE {
+            ?this ex:name ?literalName .
+            ?this ex:containedIn ?enum .
+            ?enum ex:name ?enumName .
+            ?enum ex:containedIn ?package .
+            ?package ex:name ?packageName .
+            
+            FILTER NOT EXISTS {
+                ?doc a ex:MarkdownResourceDefinition .
+                ?doc ex:hasHeading ?resourceName .
+                ?doc ex:hasFilename ?filenameParts .
+                
+                ?itemsHeading ex:containedIn ?doc .
+                ?itemsHeading ex:hasHeading "Items" .
+                
+                ?literalHeading ex:containedIn ?itemsHeading .
+                ?literalHeading ex:hasHeading ?literalName .
+                ?literalHeading ex:hasText ?literalDefinition .
+                
+                ?filenameParts rdf:rest*/rdf:first ?packageName .
+            }
+        }
+    """
+    .
 
 ex:hasProperty a sh:SPARQLConstraint;
     sh:message "For document '{?filename}' a property cannot be found" ;
@@ -444,7 +564,27 @@ ex:DefinitionForEntity a sh:NodeShape ;
     sh:target ex:Entity ;
     sh:sparql ex:hasResourceDefinition
     .
+
+ex:DefinitionForSelect a sh:NodeShape ;
+    sh:target ex:Select ;
+    sh:sparql ex:hasResourceDefinition
+    .
     
+ex:DefinitionForEnum a sh:NodeShape ;
+    sh:target ex:Enum ;
+    sh:sparql ex:hasResourceDefinition
+    .
+    
+ex:DefinitionForEnumLiteral a sh:NodeShape ;
+    sh:target ex:EnumLiteral ;
+    sh:sparql ex:hasEnumLiteralDefinition
+    .
+    
+ex:SimpleType a sh:NodeShape ;
+    sh:target ex:Enum ;
+    sh:sparql ex:hasResourceDefinition
+    .
+  
 ex:DefinitionForQuantitySet a sh:NodeShape ;
     sh:target ex:QuantitySet;
     sh:sparql ex:hasResourceDefinition

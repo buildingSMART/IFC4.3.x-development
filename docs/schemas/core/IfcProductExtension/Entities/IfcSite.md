@@ -32,18 +32,8 @@ For exact georeferencing (or referencing to any other geographic coordinate syst
 * <small>the reference height of each building situated at the site is given againt the same height datum used at this location.</small>
 * <small>the elevations of each storey belonging to each building are given as local height relative to the reference height of the building.</small>
 
-<table border="0" cellpadding="2" cellspacing="2" summary="attribute use">
-<tbody>
-<tr valign="top">
-<td align="left" valign="top"><img src="../../../../figures/ifcsite_heights.png" alt="building heights" border="0" height="400" width="500">&nbsp;</td>
-</tr>
-<tr>
-<td>
-<p class="figure">Figure 2 &mdash; Site elevations</p>
-</td>
-</tr>
-</tbody>
-</table>
+!["Site Elevations"](../../../../figures/ifcsite_heights.png "Figure 2 &mdash; Site Elevations")
+
 
 > HISTORY &nbsp;New entity in IFC1.0.
 

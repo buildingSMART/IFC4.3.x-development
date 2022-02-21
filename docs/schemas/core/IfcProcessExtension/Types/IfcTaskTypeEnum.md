@@ -38,7 +38,7 @@ Installing something (equivalent to construction but more commonly used for engi
 Transportation or delivery of something.
 
 ### MAINTENANCE
-Tasks required to keep an object it good working order.
+Tasks required to keep an object in good working order.
 
 ### MOVE
 Moving things from one place to another.

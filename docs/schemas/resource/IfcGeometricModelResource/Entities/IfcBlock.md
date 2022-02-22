@@ -7,22 +7,13 @@ The _IfcBlock_ is a Construction Solid Geometry (CSG) 3D primitive. It is define
 
 The _XLength_, _YLength_, and _ZLength_ attributes define the size of the IfcBlock along the three axes.
 
-<table cellpadding="2" cellspacing="2" summary="block geometry">
-<tr>
-<td><img alt="block" src="../../../../figures/ifcblock-layout1.png" border="0" height="300" width="400"></td>
-<td style="vertical-align:bottom;">
-<p class="small">Figure 1 illustrates geometric parameters of a block where the block positioned within its own placement
+![block](../../../../figures/ifcblock-layout1.png)
+
+Figure 1 &mdash; Block geometry
+
+Figure 1 illustrates geometric parameters of a block where the block positioned within its own placement
 coordinate system. The values for <em>XLength</em>, <em>YLength</em>, and <em>ZLength</em> are applied to the positive
-direction of the X, Y, and Z axis.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p class="figure">Figure 1 &mdash; Block geometry</p>
-</td>
-<td>&nbsp;</td>
-</tr>
-</table>
+direction of the X, Y, and Z axis.
 
 { .extDef}
 > NOTE&nbsp; Definition according to ISO 10303-42
@@ -42,85 +33,21 @@ Figure 2 illustrates default texture mapping with a clamped texture (RepeatS=Fal
 &nbsp;
 
 { .gridtable}
-<table summary="block texture" class="gridtable">
-<tr>
-<td><img src="../../../../figures/ifcblock-texture.png" alt="texture"></td>
-</tr>
-<tr>
-<td>
-<table summary="texture" width="512" class="gridtable">
-<tr>
-<th>Side</th>
-<th>Normal</th>
-<th>Origin X</th>
-<th>Origin Y</th>
-<th>Origin Z</th>
-<th>S Axis</th>
-<th>T Axis</th>
-</tr>
-<tr>
-<td>Left</td>
-<td>-X</td>
-<td>0</td>
-<td>+YLength</td>
-<td>0</td>
-<td>-Y</td>
-<td>+Z</td>
-</tr>
-<tr>
-<td>Right</td>
-<td>+X</td>
-<td>+XLength</td>
-<td>0</td>
-<td>0</td>
-<td>+Y</td>
-<td>+Z</td>
-</tr>
-<tr>
-<td>Front</td>
-<td>-Y</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>+X</td>
-<td>+Z</td>
-</tr>
-<tr>
-<td>Back</td>
-<td>+Y</td>
-<td>+XLength</td>
-<td>+YLength</td>
-<td>0</td>
-<td>-X</td>
-<td>+Z</td>
-</tr>
-<tr>
-<td>Bottom</td>
-<td>-Z</td>
-<td>0</td>
-<td>+YLength</td>
-<td>0</td>
-<td>+X</td>
-<td>-Y</td>
-</tr>
-<tr>
-<td>Top</td>
-<td>+Z</td>
-<td>0</td>
-<td>0</td>
-<td>+ZLength</td>
-<td>+X</td>
-<td>+Y</td>
-</tr>
-</table>
-</td>
-</tr>
-<tr>
-<td>
-<p class="figure">Figure 2 &mdash; Block textures</p>
-</td>
-</tr>
-</table>
+
+![texture](../../../../figures/ifcblock-texture.png)
+
+Figure 2 &mdash; Block textures
+
+|Side|Normal|Origin X|Origin Y|Origin Z|S Axis|T Axis|
+|--- |--- |--- |--- |--- |--- |--- |
+|Left|-X|0|+YLength|0|-Y|+Z|
+|Right|+X|+XLength|0|0|+Y|+Z|
+|Front|-Y|0|0|0|+X|+Z|
+|Back|+Y|+XLength|+YLength|0|-X|+Z|
+|Bottom|-Z|0|+YLength|0|+X|-Y|
+|Top|+Z|0|0|+ZLength|+X|+Y|
+
+Table 3 &mdash; Texture parameters
 
 ## Attributes
 

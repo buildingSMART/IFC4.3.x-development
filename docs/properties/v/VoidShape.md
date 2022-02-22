@@ -1,0 +1,1 @@
+Shape of the void.

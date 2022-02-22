@@ -1,3 +1,4 @@
+Enumeration of Track Elements types.
 
 ## Items
 

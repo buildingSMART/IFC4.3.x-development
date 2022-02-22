@@ -9,41 +9,13 @@ The unit is handled by the _Unit_ attribute, see Table 1 for an example of a lis
 
 > NOTE&nbsp; An _IfcPropertyListValue_ may be exchanged with no values assigned yet. In this case the _ListValues_ are set to NIL.
 
-&nbsp;
+|Name|ListValues|Type(through IfcValue)|Unit|
+|--- |--- |--- |--- |
+|ApplicableSizes|1200|IfcPositiveLengthMeasure|-|
+|-|1600|IfcPositiveLengthMeasure|-|
+|-|2400|IfcPositiveLengthMeasure|-|
 
-> <table>
- <tr>
-  <td>
-   <table class="gridtable">
-    <tr valign="top">
-     <th width="15%">Name</th></tr></table></td>
-     <th width="30%">ListValues
-     </th><th width="25%">Type<br><span style="font-size:smaller">(through <em>IfcValue</em>)</span>
-     </th><th width="30%">Unit
-    </th></tr>
-    <tr>
-     <td width="15%">ApplicableSizes</td>
-     <td width="30%">1200</td>
-     <td width="25%"><em>IfcPositiveLengthMeasure</em></td>
-     <td width="30%">-</td>
-    </tr>
-    <tr>
-     <td width="15%">-</td>
-     <td width="30%">1600</td>
-     <td width="25%"><em>IfcPositiveLengthMeasure</em></td>
-     <td width="30%">-</td>
-    </tr>
-    <tr>
-     <td width="15%">-</td>
-     <td width="30%">2400</td>
-     <td width="25%"><em>IfcPositiveLengthMeasure</em></td>
-     <td width="30%">-</td>
-    </tr>
-   </table>
-
-<tr>
-  <td><p class="table">Table 1 &mdash; List property with values, measure types and units</p></td>
- </tr>
+Table 1 &mdash; List property with values, measure types and units
 
 > HISTORY&nbsp; New entity in IFC2x2.
 

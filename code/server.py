@@ -989,19 +989,31 @@ def get_entity_inheritance(resource):
 
 
 def get_property_sets(resource, builder):
-    concepts = list(builder.concepts)
+    ty = resource
+    supertype_chain = []
+    while ty is not None:
+        supertype_chain.append(ty)
+        ty = R.entity_supertype.get(ty)
+    supertype_chain = list(reversed(supertype_chain))
+
     psets = []
-    for concept in concepts:
-        name = get_concept_name(concept[1])
-        if "Property Sets" not in name and "Quantity Sets" not in name:
-            continue
-        usage = get_usage_name(name)
-        stripped_name = name.replace(" ", "")
-        relationships = get_applicable_relationships(usage, stripped_name, concept[0])
-        for pset in relationships or []:
-            properties = R.pset_definitions[pset["name"]]["properties"]
-            pset["properties"] = [p["name"] for p in properties]
-            psets.append(pset)
+    for view_name, xmi_concepts in R.xmi_concepts.items():
+        for xmi_concept_name, xmi_relationships in xmi_concepts.items():
+            if "PropertySets" not in xmi_concept_name and "QuantitySets" not in xmi_concept_name:
+                continue
+            for xmi_relationship in xmi_relationships:
+                applicable_entity = xmi_relationship.get("ApplicableEntity", None)
+                if applicable_entity not in supertype_chain:
+                    continue
+                name = xmi_relationship.get("PsetName", None) or xmi_relationship.get("QsetName", None)
+                if not name:
+                    continue
+                properties = R.pset_definitions[name]["properties"]
+                psets.append({
+                    "name": name,
+                    "predefined_type": xmi_relationship.get("PredefinedType", None),
+                    "properties": [p["name"] for p in properties]
+                })
 
     if psets:
         return {

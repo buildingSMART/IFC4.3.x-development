@@ -12,7 +12,6 @@ This enumeration defines the different types of walls that can further specify a
 
 { .change-ifc2x4}
 > IFC4 CHANGE  New enumerators MOVABLE, PARAPET, PARTITIONING, and SOLIDWALL have been added.
-> IFC4 DEPRECATION  The enumerators STANDARD, POLYGONAL and ELEMENTEDWALL are deprecated and shall no longer be used.
 
 > NOTE  The potentially misleading term _SHEAR_ shall not impose a particular resistance against shear forces, but a particular shape.
 
@@ -43,6 +42,7 @@ A standard wall, extruded vertically with a constant thickness along the wall pa
 
 ### POLYGONAL
 A polygonal wall, extruded vertically, where the wall thickness varies along the wall path.
+> IFC4 DEPRECATION The value is deprecated and shall no longer be used.
 
 ### ELEMENTEDWALL
 A stud wall framed with studs and faced with sheetings, sidings, wallboard, or plasterwork.

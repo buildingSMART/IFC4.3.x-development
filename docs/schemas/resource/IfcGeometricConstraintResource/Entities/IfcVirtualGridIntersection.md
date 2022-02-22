@@ -14,44 +14,29 @@ Offset values may be given (_OffsetDistances_). If given, the position within th
 
 The following figures/ explain the usage of the _OffsetDistances_ and _IntersectingAxes_ attributes.
 
-<table cellpadding="2" cellspacing="2">
-<tr valign="top"><td align="left" valign="top"><img src="../../../../figures/ifcvirtualgridintersection-layout1.gif" alt="2D offsets" border="0" height="300" width="400"></td>
-<td style="vertical-align:bottom">
-<p class="small">Figure 1 illustrates two offset distances given where the virtual intersection is defined in the xy plane of the grid axis placement.</p>
-</td>
-</tr>
-<tr><td><p class="figure">Figure 1 &mdash; Virtual grid intersection with two offsets</p></td>
-<td>&nbsp;</td></tr>
-</table>
+![2D offsets](../../../../figures/ifcvirtualgridintersection-layout1.gif)
 
-<table cellpadding="2" cellspacing="2"><tr valign="top"><td align="left" valign="top"><img src="../../../../figures/ifcvirtualgridintersection-layout2.gif" alt="3D offsets" border="0" height="300" width="400"></td>
-<td style="vertical-align:bottom">
-<p class="small">Figure 2 illustrates three offset distances given where the virtual intersection is defined by an offset (in direction of the
-z-axis of the design grid placement) to the virtual intersection in the xy plane of the grid axis placement.</p>
-</td>
-</tr>
-<tr><td><p class="figure">Figure 2 &mdash; Virtual grid intersection with three offsets</p></td>
-<td>&nbsp;</td></tr>
-</table>
+Figure 1 &mdash; Virtual grid intersection with two offsets
+
+Figure 1 illustrates two offset distances given where the virtual intersection is defined in the xy plane of the grid axis placement.
+
+![3D offsets](../../../../figures/ifcvirtualgridintersection-layout2.gif)
+
+Figure 2 &mdash; Virtual grid intersection with three offsets
+
+Figure 2 illustrates three offset distances given where the virtual intersection is defined by an offset (in direction of the z-axis of the design grid placement) to the virtual intersection in the xy plane of the grid axis placement.
 
 The distance of the offset curve (_OffsetDistances[n]_) is measured from the basis curve. The distance may be positive, negative or zero. A positive value of distance defines an offset in the direction which is normal to the curve in the sense of an anti-clockwise rotation through 90 degrees from the tangent vector T at the given point. (This is in the direction of orthogonal complement(T).) This can be reverted by the _SameSense_ attribute at _IfcGridAxis_ which may switch the sense of the _AxisCurve_.
 
-<table cellpadding="2" cellspacing="2">
-<tr><td align="left" valign="top" width="400"><img src="../../../../figures/ifcvirtualgridintersection-offset1.gif" alt="offset direction" border="0" height="211" width="306"></td>
-<td style="vertical-align:bottom">
-<p class="small">Figure 3 illustrates an example of a negative offset where the figure shows the side of the offset.</p>
-<ul>
-<li class="small"><em>IntersectingAxes[1].AxisCurve</em> is an
-<em>IfcTrimmedCurve</em> with an <em>IfcCircle</em> as
-<em>BasisCurve</em> and <em>SenseAgreement</em> = TRUE.</li>
-<li class="small"><em>IntersectingAxes[1].SameSense</em> = TRUE.</li>
-<li class="small"><em>OffsetDistances[1]</em> is a negative length measure</li>
-</ul>
-</td>
-</tr>
-<tr><td><p class="figure">Figure 3 &mdash; Virtual grid intersection negative offset</p></td>
-<td>&nbsp;</td></tr>
-</table>
+![offset direction](../../../../figures/ifcvirtualgridintersection-offset1.gif)
+
+Figure 3 &mdash; Virtual grid intersection negative offset
+
+Figure 3 illustrates an example of a negative offset where the figure shows the side of the offset.
+
+ * <em>IntersectingAxes[1].AxisCurve</em> is an <em>IfcTrimmedCurve</em> with an <em>IfcCircle</em> as <em>BasisCurve</em> and <em>SenseAgreement</em> = TRUE.
+ * <em>IntersectingAxes[1].SameSense</em> = TRUE.
+ * <em>OffsetDistances[1]</em> is a negative length measure
 
 > HISTORY&nbsp; New entity in IFC1.5.
 

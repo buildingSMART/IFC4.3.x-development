@@ -615,7 +615,7 @@ class resource_documentation_builder:
             ty_attrs = []
             try:
                 if md_ty:
-                    ty_attrs = list(mdp.markdown_attribute_parser(md_ty, heading))
+                    ty_attrs = list(mdp.markdown_attribute_parser(data=md_ty, heading_name=heading))
             except:
                 pass
 
@@ -881,7 +881,7 @@ def get_applicability(resource):
 
 
 def get_properties(resource, mdc):
-    pset_specific_comments = dict(mdp.markdown_attribute_parser(mdc, "Comments"))
+    pset_specific_comments = dict(mdp.markdown_attribute_parser(data=mdc, heading_name="Comments"))
 
     def make_prop(prop):
         try:

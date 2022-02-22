@@ -1,111 +1,123 @@
 import os
 import re
 
-# @note we use two markdown parsers, as the first does not
-# have an intermediate parse tree, but is the defacto standard
-# for conversion to HTML.
+import itertools
 
-# pip install markdown-it-py
-from markdown_it import MarkdownIt
-from markdown_it.renderer import RendererHTML
-from markdown_it.presets.default import make as make_default
-from markdown_it.utils import AttrDict
+from dataclasses import dataclass, field
 
-options = AttrDict(make_default()['options'])
+import markdown
 
-parser = MarkdownIt()
-renderer = RendererHTML()
+import bs4
+def BeautifulSoup(*args):
+    return bs4.BeautifulSoup(*args, features='lxml')
+
+@dataclass
+class markdown_section:
+    level : int
+    heading : str
+    content : str
+    first_node_content : str
+    children : list = field(default_factory=list)
+    
+def parse_document(*, fn=None, data=None, linesep="", as_text=True):
+    if fn:
+        data = open(fn, encoding="utf-8").read()
+    else:
+        assert data
+
+    soup = BeautifulSoup(
+        markdown.markdown(data,
+        extensions=['tables', 'fenced_code', 'sane_lists'])
+    )
+    
+    headings = soup.find_all(re.compile("h\d"))
+    next_heading = headings[1:] + [None]
+    
+    root = None
+    stack = [None]
+
+    for h, next in zip(headings, next_heading):
+        nodes = (n for n in h.nextSiblingGenerator())
+        selected = itertools.takewhile(lambda n: next is None or n != next, nodes)
+        if as_text:
+            strings = list(filter(None, map(lambda n: getattr(n, 'text', '').strip(), selected)))
+            concat = linesep.join(strings)
+            first = strings[0] if strings else ""
+        else:
+            selected = list(selected)
+            concat = "".join(map(str, selected))
+            first = str(selected[0])
+        
+        section = markdown_section(int(h.name[1:]), h.text, concat, first)
+        if section.level == len(stack):
+            stack.append(None)
+        elif section.level == len(stack) - 1:
+            pass
+        else:
+            stack[section.level:] = [None]
+            
+        stack[-1] = section
+        try:
+            if stack[-2] is not None:
+                stack[-2].children.append(section)
+        except:
+            print(fn)
+            return None
+        
+        if root is None:
+            root = section
+            
+    return root
 
 class markdown_attribute_parser:
-    def __init__(self, data, heading_name="Attributes"):
+    def __init__(self, *, fn=None, data=None, as_text=True, heading_name="Attributes", short=False):
     
         self.heading_name = heading_name
-    
-        self.lines = data.split("\n")
-
-        # https://github.com/executablebooks/markdown-it-py/issues/175
-        # remove trailing blank lines
-        for l in list(self.lines[::-1]):
-            if len(l.strip()) == 0:
-                self.lines = self.lines[:-1]
-            else:
-                break
-
-        data = "\n".join(self.lines)
-    
-        tokens = parser.parse(data)
-        renders = [renderer.render([t], options, {}) for t in tokens]
-        tok_renders = [(t.type, s, t.as_dict().get('map'), t.tag) for t, s in zip(tokens, renders)]
-        self.tok_renders_pairs = list(zip(tok_renders[:-1], tok_renders[1:]))
-        
+        self.root = parse_document(fn=fn, data=data, as_text=as_text)
+        self.children = {}
         self.status = {}
+        self.short = short
         
     def definition(self, short=False):
-        try:
-            first_paragraph = [d for d in self.tok_renders_pairs if d[0][0] == 'paragraph_open'][0]
-        except IndexError as e:
+        if self.root is None:
             self.status["DEFINITION"] = ("NO_CONTENT", -1)
             return
             
-        line_begin = first_paragraph[0][2][0]
-        
-        try:
-            attribute_heading = [d for d in self.tok_renders_pairs if d[0][0] == 'heading_open' and d[1][1] == self.heading_name][0]
-            line_end = first_paragraph[0][2][1] if short else attribute_heading[0][2][0]
-        except IndexError as e:
-            line_end = 100000
-            
-        self.status["DEFINITION"] = ("OK", line_begin)
-        return "\n".join(self.lines[line_begin:line_end])
-        
+        return self.root.first_node_content if short else self.root.content
         
     def __iter__(self):
-        if self.heading_name:
-            try:
-                attribute_heading_idx, tag = [(i,d[0][3]) for i,d in enumerate(self.tok_renders_pairs) if d[0][0] == 'heading_open' and d[1][1] == self.heading_name][0]
-            except IndexError as e:
-                self.status["ALL"] = ("NO_HEADING", -1)
-                return
-                
-            try:
-                next_same_level_heading = [i for i,d in enumerate(self.tok_renders_pairs) if i > attribute_heading_idx and d[0][0] == 'heading_open' and d[0][3] == tag][0]
-            except IndexError as e:
-                next_same_level_heading = 100000
-        else:
-            attribute_heading_idx, next_same_level_heading = 0, 100000
+        children = self.root.children if self.root else []
+        cs = [c for c in children if c.heading == self.heading_name]
+        if len(cs) != 1:
+            self.status["ALL"] = ("NO_HEADING", -1)
+            return
         
-        for heading_idx, name in [(i, d[1][1]) for i,d in enumerate(self.tok_renders_pairs) if d[0][0] == 'heading_open' and i > attribute_heading_idx and i < next_same_level_heading]:
-        
-            try:
-                next_heading = [i for i,d in enumerate(self.tok_renders_pairs) if i > heading_idx and d[0][0] == 'heading_open' and d[0][1] <= self.tok_renders_pairs[heading_idx][0][1]][0]
-            except IndexError as e:
-                next_heading = 100000
+        for section in cs[0].children:
+            name = section.heading
 
-            try:            
-                first_paragraph = [d for i, d in enumerate(self.tok_renders_pairs) if d[0][0] == 'paragraph_open' and i > heading_idx and i < next_heading][0]
-            except IndexError as e:
-                lno = self.tok_renders_pairs[heading_idx][0][2][0] + 1
-                self.status[name] = ("NO_CONTENT", lno)
-                yield name, ''
-                continue
-            
-            line_begin = first_paragraph[0][2][0]
-            
-            try:
-                next_heading = [d for i,d in enumerate(self.tok_renders_pairs) if d[0][0] == 'heading_open' and i > heading_idx and d[0][1] <= self.tok_renders_pairs[heading_idx][0][1]][0]
-                line_end = next_heading[0][2][0]
-            except IndexError as e:
-                next_same_level_heading = 100000
-                line_end = 100000
-                
-            self.status[name] = ("OK", line_begin)
-            definition = "\n".join(self.lines[line_begin:line_end])
-            
+            if len(section.content.strip()) == 0:
+                self.status[name] = ("NO_CONTENT", 0)
+            else:
+                self.status[name] = ("OK", 0)
+
             m = re.search(r"\[([\w ]+)\]", name)
             if m:
                 mvd = m.group(1)
                 li = [c for c in name]
                 li[slice(*m.span())] = []
                 name = (mvd, "".join(li).strip())
+                
+            # @todo reintegrate this again with server.py
+            #  to embelish concept usage with documentation
+            self.children[name] = section.children
+                
+            yield name, section.first_node_content if self.short else section.content
             
-            yield name, definition
+if __name__ == "__main__":
+    import tabulate
+    fn = os.path.join(os.path.dirname(__file__), "../docs/schemas/resource/IfcActorResource/Entities/IfcActorRole.md")
+    mdp = markdown_attribute_parser(fn=fn, as_text=True, short=True)
+    print(mdp.definition(short=True))
+    print(tabulate.tabulate(list(mdp)))
+    
+    

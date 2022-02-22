@@ -672,7 +672,7 @@ def api_resource(resource):
 
 @app.route(make_url("property/<prop>.htm"))
 def property(prop):
-    prop = "".join(c for c in prop if c.isalnum())
+    prop = "".join(c for c in prop if c.isalnum() or c in "_")
     md = os.path.join(REPO_DIR, "docs", "properties", prop[0].lower(), prop + ".md")
     try:
         mdc = open(md, "r", encoding="utf-8").read()

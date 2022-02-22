@@ -1,29 +1,11 @@
-buildingSMART International Limited is an international non-for-profit association of regional and national buildingSMART chapters. 
- 
-The vision of buildingSMART is:
+buildingSMART is the worldwide industry body driving the digital transformation of the built asset industry. buildingSMART is committed to delivering improvement by the creation and adoption of open, international standards and solutions for infrastructure and buildings. buildingSMART is the community for visionaries working to transform the design, construction, operation and maintenance of built assets. buildingSMART is an open, neutral and international not-for-profit organization.
 
-> Sustainability by building SMARTER
- 
-The mission of buildingSMART is:  
+buildingSMART is a global community of chapters, members, partners and sponsors led by the parent body, buildingSMART International. The buildingSMART community is committed to creating and developing open digital ways of working for the built asset industry. buildingSMART standards help asset owners and the entire supply chain work more efficiently and collaboratively through the entire project and asset lifecycle. Since it was incorporated in 1995, buildingSMART has focused on solving industry interoperability challenges. buildingSMART is a neutral, international forum for initiating, developing, creating and adoption of open digital standards for BIM processes.
 
-> Contribute to the sustainable built environment through SMARTER information sharing and communication using open international standards in the building and construction sector, private and public.
- 
-The association's values are: 
+Core Programs
 
- * Neutral and independent, and therefore not beholden to any group or company, whether software suppliers, building companies, architects or others, or indeed governments; 
- * Open and transparent, because the processes by which bSI operates need to be clear and understood by all to demonstrate its independence and neutrality; 
- * A not-for-profit organisation, meaning that any profits it might make from commercial or quasi-commercial activities are used for non-commercial purposes such as developing standards. 
+buildingSMART is the international authority for a set of standards known as the Industry Foundation Class (IFC) which deal with process, data, terms and change management for the specification, management and effective utilization assets in the built asset industry. buildingSMART Compliance provides guidance and governance for certification of software, people, and organizations through compliance training and testing. The User program supports communication and collaboration among a global community of members, chapters, partners, and sponsors through a variety of online communication properties and through ongoing meetings, webinars, and biannual summits. Additionally, buildingSMART provides support for advancing BIM and the implementation of standards through a variety of services, including the buildingSMART Data Dictionary, openCDE APIs, BCF and related standards such as IDS and IDMs.
 
- 
-The association's goals in pursuit of its mission are: 
+Who We Serve
 
- * To develop and maintain open international standards for Building Information Modelling (open BIM); 
- * To accelerate market assimilation of interoperability through successful sustainable projects; 
- * To provide networking opportunities, specifications and written guidance; 
- * To resolve high cost problems that hinder data sharing, 
- * To extend buildingSMART processes and technology to the whole built environment, over its lifecycle, and encompassing leadership, production, facilities management and engineering maintenance. 
-
- 
-buildingSMART develops open standards for Building Information Modeling, open BIM. The standards deal with data models, processes and terms. The Industry Foundation Classes IFC specification constitutes buildingSMART's specification for the buildingSMART data model. Property terms, defined in IFC, are linked to terms defined in the buildingSMART data dictionary. 
- 
-buildingSMART liaises with the International Standardization Organization ISO, regional and national standardization bodies for developing international, regional and national standards. The Industry Foundation Classes IFC specification is registered as ISO 16739. buildingSMART works actively as a A-liaison organization with ISO/TC 59/SC 13. Further editions of IFC will be submitted to ISO/TC 59/SC 13/JWG 12 for acceptance as next addendums or editions of ISO 16739. 
+Collectively these programs drive the development and active use of open internationally-recognized standards, applications, training and certification procedures. This helps to support the wider uptake of Building Information Modelling (BIM) by owners, operators, the architecture, engineering, construction, and operations (AECO) and facilities management (FM) industries across the buildings and infrastructure sectors.

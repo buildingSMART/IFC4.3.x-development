@@ -6,52 +6,17 @@ Limitation: For backward compatibility, all _IfcTableRow_ objects referenced by 
 
 > NOTE&nbsp; The attribute _IsHeading_ exists for backward compatibility. _IfcTableColumn_ should be used instead beginning with IFC4.
 
-<table>
-      <tr>
-        <td>
-          <img src="../../../../figures/ifctablerow_image1.gif">
-        </td>
-        <td style="vertical-align:bottom">
-          Figure 337 illustrates table row use.
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <p class="figure">
-            Figure 337 &mdash; Table row use
-          </p>
-        </td>
-        <td>
-          <p>
-            &nbsp;
-          </p>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <img src="../../../../figures/ifctablerow_image2.gif">
-        </td>
-        <td style="vertical-align:bottom">
-          Figure 338 depicts how table rows were structured prior
-          to IFC4 with the use of the <em>IsHeading</em> flag. Note
-          that the use of the <em>IfcTableColumn</em> constructs
-          should be used instead of the <em>IsHeading</em> flag
-          (which remains for backward compatibility only).
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <p class="figure">
-            Figure 338 &mdash; Table row use alternative
-          </p>
-        </td>
-        <td>
-          <p>
-            &nbsp;
-          </p>
-        </td>
-      </tr>
-    </table>
+![](../../../../figures/ifctablerow_image1.gif)
+
+Figure 337 &mdash; Table row use
+
+Figure 337 illustrates table row use.
+
+![](../../../../figures/ifctablerow_image2.gif)
+
+Figure 338 &mdash; Table row use alternative
+
+Figure 338 depicts how table rows were structured prior to IFC4 with the use of the <em>IsHeading</em> flag. Note that the use of the <em>IfcTableColumn</em> constructs should be used instead of the <em>IsHeading</em> flag (which remains for backward compatibility only).
 
 > HISTORY&nbsp; New entity in IFC1.5.
 

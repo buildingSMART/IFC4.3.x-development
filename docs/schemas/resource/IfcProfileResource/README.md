@@ -30,35 +30,15 @@ The profile definition (_IfcProfileDef_) can be instantiated by the various subt
 
 When used as the curve or area to be swept into a surface or solid, the 2D coordinate system of the profile is mapped into the xy plane of the 3D coordinate system of the swept surface (subtypes of _IfcSweptSurface_), the swept area solid (subtypes of _IfcSweptAreaSolid_), or the sectioned spine (_IfcSectionedSpine_). The extrusion direction is along the z axis of the 3D coordinate system (or an extrusion vector being not perpendicular to the z axis, or a rotation that has a tangent into the z axis at the point of origin).
 
-The use of coordinate axes in IFC is not identical with the general convention for the use of coordinate axes in structural analysis. The following conversion should be used, as shown in Figure 307:
+The use of coordinate axes in IFC is not identical with the general convention for the use of coordinate axes in structural analysis. The following conversion should be used, as shown in Table 1:
 
-<table>
-  <tbody>
-    <tr valign="top">
-      <table cellspacing="4">
-        <tbody>
-          <tr>
-            <td><u>IFC axes convention</u></td>
-            <td><u>Structural analysis axes convention</u></td>
-          </tr>
-          <tr>
-            <td>+X</td>
-            <td>-Y</td>
-          </tr>
-          <tr>
-            <td>+Y</td>
-            <td>-Z</td>
-          </tr>
-          <tr>
-            <td>+Z</td>
-            <td>+X</td>
-          </tr>
-        </tbody>
-      </table>
-      
-    </tr>
-  </tbody>
-</table>
+|IFC axes convention|Structural analysis axes convention|
+|--- |--- |
+|+X|-Y|
+|+Y|-Z|
+|+Z|+X|
+
+Table 1 &mdash; Axis conversions
 
 !["coordinates in IFC and structural"](../../../../figures/ifcprofileresource-coordinatesystem.gif "Figure 1 &mdash; Profile coordinate system")
 

@@ -2,16 +2,11 @@
 
 An _IfcEdge_ defines two vertices being connected topologically. The geometric representation of the connection between the two vertices defaults to a straight line if no curve geometry is assigned using the subtype _IfcEdgeCurve_. The _IfcEdge_ can therefore be used to exchange straight edges without an associated geometry provided by _IfcLine_ or _IfcPolyline_ thought _IfcEdgeCurve.EdgeGeometry_.
 
-&nbsp;
+![edge representation](../../../../figures/ifcedge.png)
 
-<table>
-<tr><td><br><img src="../../../../figures/ifcedge.png" alt="edge representation" border="0"></td>
-<td><blockquote class="example">EXAMPLE&nbsp; Figure 1 illustrates an example where the bounds of the <em>IfcEdge</em> are given by the <em>EdgeStart</em> and <em>EdgeEnd</em>; this also determines the direction of the edge. The location within a coordinate space is determined by the <em>IfcVertexPoint</em> type for <em>EdgeStart</em> and <em>EdgeEnd</em>. Since no edge geometry is assigned, it defaults to a straight line agreeing to the direction sense.</blockquote></td>
-</tr>
-<tr><td><p class="figure">Figure 1 &mdash; Edge representation</p></td><td>&nbsp;</td></tr>
-</table>
+Figure 1 &mdash; Edge representation
 
-&nbsp;
+> EXAMPLE Figure 1 illustrates an example where the bounds of the <em>IfcEdge</em> are given by the <em>EdgeStart</em> and <em>EdgeEnd</em>; this also determines the direction of the edge. The location within a coordinate space is determined by the <em>IfcVertexPoint</em> type for <em>EdgeStart</em> and <em>EdgeEnd</em>. Since no edge geometry is assigned, it defaults to a straight line agreeing to the direction sense.
 
 { .extDef}
 > NOTE&nbsp; Definition according to ISO/CD 10303-42:1992  

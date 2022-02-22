@@ -9,34 +9,22 @@ _IfcZShapeProfileDef_ defines a section profile that provides the defining param
 
 Figure 1 illustrates parameters of the Z-shape profile definition.
 
-<table><tr><td>
-<table border="1" cellpadding="2" cellspacing="2" width="100%">
-  <tbody>
-    <tr>
-      <td width="420">
-<img src="../../../../figures/ifczshapeprofiledef.gif" alt="Z-shape profile" border="0" height="300" width="400">
+![Z-shape profile](../../../../figures/ifczshapeprofiledef.gif)
 
-      </td>
-      <td valign="top">
+Figure 1 &mdash; Z-shape profile
 
-<p><u>Position</u><br>
+<u>Position</u>
+
 The parameterized profile defines its own position coordinate system.
 The underlying coordinate system is defined by the swept area solid
-that uses the profile definition. It is the xy plane of:</p>
-      <ul>
-        <li style="font-style: italic;">IfcSweptAreaSolid.Position</li>
-      </ul>
-<p>By using offsets of the position location, the parameterized profile
-can be positioned centric (using x,y offsets = 0.), or at any position
-relative to the profile.</p>
+that uses the profile definition. It is the xy plane of:
 
-      </td>
-    </tr>
-  </tbody>
-</table>
-</td></tr>
-<tr><td><p class="figure">Figure 1 &mdash; Z-shape profile</p></td></tr>
-</table>
+ * IfcSweptAreaSolid.Position
+
+By using offsets of the position location, the parameterized profile
+can be positioned centric (using x,y offsets = 0.), or at any position
+relative to the profile.
+
 
 ## Attributes
 

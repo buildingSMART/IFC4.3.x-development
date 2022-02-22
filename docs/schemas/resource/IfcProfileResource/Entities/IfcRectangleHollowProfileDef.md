@@ -9,35 +9,17 @@ _IfcRectangleHollowProfileDef_ defines a section profile that provides the defin
 
 Figure 1 illustrates parameters of a rectangular or square hollow profile definition.
 
-<table><tr><td>
-<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
-  <tbody>
-    <tr>
-      <td style="vertical-align: top; text-align: left; width: 420px;">
+![hollow rectange shape profile](../../../../figures/ifcrectanglehollowprofiledef.gif)
 
-<img src="../../../../figures/ifcrectanglehollowprofiledef.gif" alt="hollow rectange shape profile" border="0" height="300" width="400">
+Figure 1 &mdash; Rectangle hollow profile
 
-      </td>
-      <td style="vertical-align: top; text-align: left;">
+<u>Position</u>
 
-<p><u>Position</u><br>
-The parameterized profile defines its own position coordinate system.
-The underlying coordinate system is defined by the swept area solid
-that uses the profile definition. It is the xy plane of:</p>
-      <ul>
-        <li style="font-style: italic;">IfcSweptAreaSolid.Position</li>
-      </ul>
-<p>by using offsets of the position location, the parameterized profile
-can be positioned centric (using x,y offsets = 0.), or at any position
-relative to the profile.</p>
+The parameterized profile defines its own position coordinate system.  The underlying coordinate system is defined by the swept area solid that uses the profile definition. It is the xy plane of:
 
-      </td>
-    </tr>
-  </tbody>
-</table>
-</td></tr>
-<tr><td><p class="figure">Figure 1 &mdash; Rectangle hollow profile</p></td></tr>
-</table>
+ * IfcSweptAreaSolid.Position
+
+by using offsets of the position location, the parameterized profile can be positioned centric (using x,y offsets = 0.), or at any position relative to the profile.
 
 ## Attributes
 

@@ -4,23 +4,14 @@ An _IfcEllipse_ is a curve consisting of a set of points whose distances to two 
 
 The inherited _SELF\IfcConic.Position.Location_ is the center of the _IfcEllipse_, and the inherited S_ELF\IfcConic.Position.Position.P[1]_ is the direction of the _SemiAxis1_.
 
-<table summary="example" cellpadding="2" cellspacing="2">
-<tr>
-<td><img src="../../../../figures/ifcellipse-layout1.gif" alt="ellipse" width="400" height="300" border="0"></td>
-<td style="vertical-align:bottom; text-align:left;">
-<p><span style="font-size:smaller">Definition of the <em>IfcEllipse</em> within the a three-dimensional position
-coordinate system is shown in Figure 1.</span></p>
-<p><span style=" font-size:smaller;">It is placed within the object coordinate system of an element of which it is a
-representation.</span></p>
-</td>
-</tr>
-<tr>
-<td>
-<p class="figure">Figure 1 &mdash; Ellipse placement and parameterization</p>
-</td>
-<td>&nbsp;</td>
-</tr>
-</table>
+![ellipse](../../../../figures/ifcellipse-layout1.gif)
+
+Figure 1 &mdash; Ellipse placement and parameterization
+
+Definition of the <em>IfcEllipse</em> within the a three-dimensional position coordinate system is shown in Figure 1.
+
+It is placed within the object coordinate system of an element of which it is a
+representation.
 
 > NOTE&nbsp; An elliptical arc segment is defined by using the _IfcTrimmedCurve_ with _BasisCurve_
 

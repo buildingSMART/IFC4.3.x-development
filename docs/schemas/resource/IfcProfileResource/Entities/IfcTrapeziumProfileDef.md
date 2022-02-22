@@ -6,49 +6,28 @@ _IfcTrapeziumProfileDef_ defines a trapezium as the profile definition used by t
 
 Figure 1 illustrates parameters of the trapezium profile definition.
 
-<table><tr><td>
-<table frame="border" width="100%">
-  <tbody>
-    <tr>
-      <td width="420"><img src="../../../../figures/ifctrapeziumprofiledef-layout1.gif" alt="trapezium profile" border="0" height="300" width="400"></td>
-      <td align="left" valign="top" width="100%"><u>Position</u>
-      <br>
-The parameterized profile defines its own position coordinate system.
-The underlying
-coordinate system is defined by the swept surface or swept area solid
-that uses the profile definition. It is the xy plane of either:
-      <ul>
-        <li style="font-style: italic;">IfcSweptSurface.Position</li>
-        <li style="font-style: italic;">IfcSweptAreaSolid.Position</li>
-      </ul>
-or in case of sectioned spines the xy plane of each list member of <span style="font-style: italic;">IfcSectionedSpine.CrossSectionPositions.</span>
-      <br>
-      <br>
+![trapezium profile](../../../../figures/ifctrapeziumprofiledef-layout1.gif)
+
+Figure 1 &mdash; Trapezium profile
+
+<u>Position</u>
+
+The parameterized profile defines its own position coordinate system.  The underlying coordinate system is defined by the swept surface or swept area solid that uses the profile definition. It is the xy plane of either:
+
+ * IfcSweptSurface.Position
+ * IfcSweptAreaSolid.Position
+
+or in case of sectioned spines the xy plane of each list member of IfcSectionedSpine.CrossSectionPositions.
+
 By using offsets of the position location, the parameterized profile
 can be positioned centric (using x,y offsets = 0.), or at any position
 relative to the profile. Explicit coordinate offsets are used to define
 cardinal points (e.g. upper-left bound).
-      <p><u>Parameter</u>
-      <br>
-The <em>IfcTrapeziumProfileDef</em>
-is defined within the position
-coordinate system, where the <em>BottomDim</em>
-defines the length
-measure for the bottom line (half along the positive x-axis) and the <em>YDim</em>
-defines the length measure for the parallel distance of bottom and top
-line (half along the positive y-axis). The top line starts with a
-distance of <em>TopXOffset</em>
-from [-BottomLine/2,YDim] (which can be
-negative, zero, or positive) and has a length of <em>TopXDim</em>
-along
-the positive x-axis.</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
-</td></tr>
-<tr><td><p class="figure">Figure 1 &mdash; Trapezium profile</p></td></tr>
-</table>
+
+<u>Parameter</u>
+
+The <em>IfcTrapeziumProfileDef</em> is defined within the position coordinate system, where the <em>BottomDim</em> defines the length measure for the bottom line (half along the positive x-axis) and the <em>YDim</em> defines the length measure for the parallel distance of bottom and top line (half along the positive y-axis). The top line starts with a distance of <em>TopXOffset</em> from -BottomLine/2,YDim (which can be negative, zero, or positive) and has a length of <em>TopXDim</em> along the positive x-axis.
+
 
 ## Attributes
 

@@ -12,35 +12,17 @@ _IfcUShapeProfileDef_ defines a section profile that provides the defining param
 
 Figure 1 illustrates parameters of the U-shape profile definition.
 
-<table><tr><td>
-<table border="1" cellpadding="2" cellspacing="2" width="100%">
-  <tbody>
-    <tr>
-      <td valign="top" width="420">
+![U-shape profile](../../../../figures/ifcushapeprofiledef.gif)
 
-<img src="../../../../figures/ifcushapeprofiledef.gif" alt="U-shape profile" border="0" height="300" width="400">
+Figure 1 &mdash; U-shape profile
 
-      </td>
-      <td valign="top">
+<u>Position</u>
 
-<p><u>Position</u> <br>
-The parameterized profile defines its own position coordinate system.
-The underlying coordinate system is defined by the swept area solid
-that uses the profile definition. It is the xy plane of:</p>
-      <ul>
-        <li><em>IfcSweptAreaSolid.Position</em></li>
-      </ul>
-<p>By using offsets of the position location, the parameterized profile
-can be positioned centric (using x,y offsets = 0.), or at any position
-relative to the profile.</p>
+The parameterized profile defines its own position coordinate system.  The underlying coordinate system is defined by the swept area solid that uses the profile definition. It is the xy plane of:
 
-      </td>
-    </tr>
-  </tbody>
-</table>
-</td></tr>
-<tr><td><p class="figure">Figure 1 &mdash; U-shape profile</p></td></tr>
-</table>
+ * <em>IfcSweptAreaSolid.Position</em>
+
+By using offsets of the position location, the parameterized profile can be positioned centric (using x,y offsets = 0.), or at any position relative to the profile.
 
 ## Attributes
 

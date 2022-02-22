@@ -4,16 +4,11 @@ An _IfcEdgeCurve_ defines two vertices being connected topologically including t
 
 > NOTE&nbsp; The topology is used to trim the geometry of the edge. There is no need to geometrically trim the edge to match the topology.
 
-&nbsp;
+![example](../../../../figures/ifcedgecurve.png)
 
-<table>
-<tr><td><br><img src="../../../../figures/ifcedgecurve.png" width="600" height="220" alt="example"></td>
-<td><blockquote class="example">EXAMPLE&nbsp; Figure 1 illustrates an example where the edge geometry is given by an unbounded curve, here <em>IfcCircle</em>. The bounds are provided by the <em>EdgeStart</em> and <em>EdgeEnd</em>, the topological direction of the <em>IfcEdgeCurve</em> opposes the direction of the <em>IfcCircle</em> by <em>SameSense</em> = FALSE.</blockquote></td>
-</tr>
-<tr><td><p class="figure">Figure 1 &mdash; Edge curve</p></td><td>&nbsp;</td><td>&nbsp;</td></tr>
-</table>
+Figure 1 &mdash; Edge curve
 
-&nbsp;
+> EXAMPLE Figure 1 illustrates an example where the edge geometry is given by an unbounded curve, here <em>IfcCircle</em>. The bounds are provided by the <em>EdgeStart</em> and <em>EdgeEnd</em>, the topological direction of the <em>IfcEdgeCurve</em> opposes the direction of the <em>IfcCircle</em> by <em>SameSense</em> = FALSE.
 
 { .extDef}
 > NOTE&nbsp; Definition according to ISO/CD 10303-42:1992  

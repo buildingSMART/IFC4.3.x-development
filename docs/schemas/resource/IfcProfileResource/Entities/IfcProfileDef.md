@@ -36,105 +36,47 @@ The purpose of the profile definition within the sectioned spine is to define a 
 
 An _IfcProfileDef_ is treated as bounded area if it is used within swept area solids. In this case, the inside of the profile is part of the profile. The attribute _ProfileType_ is set to AREA. An _IfcProfileDef_ is treated as a curve if it is used within swept surfaces. In this case, the inside of the profile (if the curve is closed) is not part of the profile. The attribute _ProfileType_ is set to CURVE.
 
-Figure 1 illustrates use of parameterized profiles within a swept area solid.
+Figure 1 and Figure 2 illustrates use of parameterized profiles within a swept area solid.
 
-<table><tr><td>
-<table border="1" cellpadding="2" cellspacing="2" frame="border" width="100%">
-  <tbody>
-    <tr valign="top">
-      <td align="left" valign="top" width="420">
+![Example of standard profile definition](../../../../figures/ifcprofiledef-layout1.gif)
 
-<img src="../../../../figures/ifcprofiledef-layout1.gif" alt="Example of standard profile definition" border="0" height="300" width="400">
+Figure 1 &mdash; Example of standard profile definition
 
-      </td>
-      <td align="left" valign="top">
+The <em>IfcProfileDef</em> is defined within the underlying coordinate system which is defined by the swept surface or swept area solid that uses the profile definition. It is the xy plane:
 
-<p><u>Position</u><br>
-The <em>IfcProfileDef</em> is defined within the underlying
-coordinate system which is defined by the swept surface or swept area solid
-that uses the profile definition. It is the xy plane</p>
+ * of <em>IfcSweptSurface.Position</em> or
+ * of <em>IfcSweptAreaSolid.Position</em> or
+ * of each list member of <em>IfcSectionedSpine.CrossSectionPositions</em>.
 
-      <ul>
-        <li>of <em>IfcSweptSurface.Position</em> or</li>
-        <li>of <em>IfcSweptAreaSolid.Position</em> or</li>
-        <li>of each list member of <em>IfcSectionedSpine.CrossSectionPositions</em>.</li>
-      </ul>
+In Figure 1 to the left, the z axis of the position coordinate system points outwards of the drawing plane.
 
-<p>In the figure to the left, the z axis of the position coordinate system points outwards of the drawing plane.</p>
+> NOTE The subtype <em>IfcParameterizedProfileDef</em> optionally provides an additional 2D position coordinate system relative to the underlying coordinate system of the <em>IfcProfileDef</em>.
 
-<p><font size="-1">Note: The subtype <em>IfcParameterizedProfileDef</em> optionally provides an additional 2D position coordinate system relative to the underlying coordinate system of the <em>IfcProfileDef</em>.</font></p>
+![use within swept area solids](../../../../figures/ifcprofiledef-layout5.gif)
 
-      </td>
-    </tr>
-    <tr>
-      <td width="420">
+Figure 2 &mdash; Use within swept area solids
 
-<img src="../../../../figures/ifcprofiledef-layout5.gif" alt="use within swept area solids" border="0" height="300" width="400">
+In the later use of the <em>IfcProfileDef</em> within the swept surface or swept area solid,&nbsp; e.g. the <em>IfcExtrudedAreaSolid</em> (here used as an example), the profile boundaries (here based on the 2D position coordinate system of <em>IfcParameterizedProfileDef</em>) are placed within the xy plane of the 3D position coordinate system of the swept surface or swept area solid.
 
-      </td>
-      <td align="left" valign="top">
+The profile is inserted into the underlying coordinate system either:
 
-<p><u>Sweeping</u></p>
-
-<p>In the later use of the <em>IfcProfileDef</em>
-within the swept surface or swept area solid,&nbsp; e.g. the <em>IfcExtrudedAreaSolid</em>
-(here used as an example), the profile boundaries (here based on the 2D
-position coordinate system of <em>IfcParameterizedProfileDef</em>)
-are placed within the xy plane of the 3D position coordinate system of
-the swept surface or swept area solid.</p>
-
-<p>The profile is inserted into the underlying coordinate system either:</p>
-
-      <ul>
-        <li>directly in case of using <em>IfcArbitraryClosedProfileDef</em>
-        and <em>IfcArbitraryOpenProfileDef</em>,</li>
-
-        <li>through an intermediate position coordinate system in case of
-        using <em>IfcParameterizedProfileDef</em>.</li>
-
-        <li>through an 2D Cartesian transformation operator (applied directly
-        to the curve position when using arbitrary profile definitions,
-        or applied to the position coordinate system when using parameterized
-        profile definitions) in case of using <em>IfcDerivedProfileDef</em>.</li>
-
-        <li>when using <em>IfcCompositeProfileDef</em> the insertion depends on
-        the subtype of the included sub-profiles.</li>
-      </ul>
-
-      </td>
-    </tr>
-  </tbody>
-</table>
-</td></tr>
-<tr><td><p class="figure">Figure 1 &mdash; Profile sweeping</p></td></tr>
-</table>
+ * directly in case of using <em>IfcArbitraryClosedProfileDef</em> and <em>IfcArbitraryOpenProfileDef</em>,
+ * through an intermediate position coordinate system in case of using <em>IfcParameterizedProfileDef</em>.
+ * through an 2D Cartesian transformation operator (applied directly to the curve position when using arbitrary profile definitions, or applied to the position coordinate system when using parameterized profile definitions) in case of using <em>IfcDerivedProfileDef</em>.
+ * when using <em>IfcCompositeProfileDef</em> the insertion depends on the subtype of the included sub-profiles.
 
 **Profile types**
 
-Results of the different usage of the _ProfileType_ attribute are demonstrated here. The _ProfileType_ defines whether the inside (the bounded area) is part of the profile definition (Area) or not (Curve). Figure 2 illustrates the resulting area or curve depending on _ProfileType_.
+Results of the different usage of the _ProfileType_ attribute are demonstrated here. The _ProfileType_ defines whether the inside (the bounded area) is part of the profile definition (Area) or not (Curve). Figure 3 and Figure 4 illustrates the resulting area or curve depending on _ProfileType_.
 
-<table><tr><td>
-<table border="1" cellpadding="2" cellspacing="2" frame="border" width="100%">
-  <tbody>
-    <tr>
-      <td width="420">
+![AREA profile type without thickness](../../../../figures/ifcprofiledef-layout3.gif)
 
-<img src="../../../../figures/ifcprofiledef-layout3.gif" alt="area without thickness" height="225" width="300"><br>
-ProfileType = AREA
+Figure 3 &mdash; AREA profile type without thickness
 
-      </td>
-      <td align="left" valign="top">
+![CURVE profile type with a closed curve](../../../../figures/ifcprofiledef-layout4.gif)
 
-<img src="../../../../figures/ifcprofiledef-layout4.gif" alt="closed curve" height="225" width="300"><br>
-ProfileType = CURVE
+Figure 4 &mdash; CURVE profile type with a closed curve
 
-      </td>
-    </tr>
-  </tbody>
-</table>
-</td></tr>
-<tr><td><p class="figure">Figure 2 &mdash; Profile types</p></td></tr>
-</table>
 
 **Profile specification by external reference**
 

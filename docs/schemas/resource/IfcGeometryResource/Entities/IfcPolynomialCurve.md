@@ -1,3 +1,4 @@
+Polynomial Curve.
 
 ## Attributes
 

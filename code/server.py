@@ -916,7 +916,7 @@ def get_properties(resource, mdc):
     return {
         "number": SectionNumberGenerator.generate(),
         "is_pset": R.pset_definitions[resource]["kind"] != "quantity_set",
-        "properties": attrs
+        "properties": attrs,
     }
 
 
@@ -1030,6 +1030,7 @@ def get_concept_usage(resource, builder):
     while ty is not None:
         supertype_chain.append(ty)
         ty = R.entity_supertype.get(ty)
+    supertype_chain = list(reversed(supertype_chain))
 
     builder_concepts = list(builder.concepts)
 
@@ -1044,7 +1045,15 @@ def get_concept_usage(resource, builder):
     concept_lookup = {c.text.replace(" ", ""): (c.text, c.url) for c in flatten_hierarchy(concept_hierarchy)}
 
     # Grabs concepts from XMI, and then enhances them with human names and descriptions from Markdown
+    # Sorry if you need to read this code I found it really confusing good luck.
 
+    # This code block loops through all the concepts defined in XMI and creates a nested dict structure:
+    # > IfcWall (ifc_class):
+    # > > General Usage (view_name):
+    # > > > Property Sets for Objects (xmi_concept_name
+    # > > > > Relationships: [Pset_WallCommon, ...]
+    # > > > > Is Inherited: True if this concept is defined explicitly for IfcWall
+    # > > > > Is Inherited: False if inherited from a supertype
     concept_groups = {}
     groups = []
     for view_name, xmi_concepts in R.xmi_concepts.items():
@@ -1052,35 +1061,62 @@ def get_concept_usage(resource, builder):
         for xmi_concept_name, xmi_relationships in xmi_concepts.items():
             for xmi_relationship in xmi_relationships:
                 applicable_entity = xmi_relationship.get("ApplicableEntity", None)
-                if applicable_entity in supertype_chain:
-                    concept_groups.setdefault(applicable_entity, {}).setdefault(view_name, {}).setdefault(
-                        xmi_concept_name, []
-                    ).append(xmi_relationship)
+                in_chain = False
+                for ifc_class in supertype_chain:
+                    if ifc_class == applicable_entity:
+                        in_chain = True
+                    if not in_chain:
+                        continue
+                    is_inherited = ifc_class != applicable_entity
 
-    for ifc_class in reversed(supertype_chain):
-        views = concept_groups.get(ifc_class)
-        if not views:
-            continue
+                    concept_groups.setdefault(ifc_class, {})
+                    concept_groups[ifc_class].setdefault(view_name, {})
+                    concept_groups[ifc_class][view_name].setdefault(
+                        xmi_concept_name, {"relationships": [], "is_inherited": is_inherited}
+                    )
+                    concept_groups[ifc_class][view_name][xmi_concept_name]["relationships"].append(xmi_relationship)
+
+    # With this "simpler" concept_groups nested dict, let's build the necessary data structure for the template
+    # Let's start by walking through the inherited classes
+    for ifc_class in supertype_chain:
+        views = concept_groups.get(ifc_class, {})
 
         concepts = []
+        # For each view (General Usage, Reference View, etc)
         for view_name, view_concepts in views.items():
+
+            # For each concept belonging to that view
             for name, data in view_concepts.items():
                 human_name = concept_lookup.get(name, [name, ""])[0]
                 description = None
+
+                # Can we potentially enrich the description from the markdown?
                 for markdown_concept in builder_concepts:
+                    if markdown_concept[0] != ifc_class:
+                        continue
                     markdown_name = get_concept_name(markdown_concept[1])
                     stripped_name = markdown_name.replace(" ", "")
-                    if stripped_name == name:
+                    if stripped_name.lower() == name.lower():
                         description = process_markdown(resource, markdown_concept[2])
-                concepts.append(
-                    {
-                        "name": human_name,
-                        "description": description,
-                        "usage": separate_camel(view_name).replace("General Usage", "General"),
-                        "url": concept_lookup.get(name, [None, None])[1],
-                        "applicable_relationships": get_applicable_relationships(view_name, name, ifc_class),
-                    }
-                )
+
+                should_show_concept = False
+                if not data["is_inherited"]:
+                    # Always show concepts for the active class
+                    should_show_concept = True
+                elif data["is_inherited"] and description:
+                    # If the active class has a description, it may redisplay an inherited concept
+                    should_show_concept = True
+
+                if should_show_concept:
+                    concepts.append(
+                        {
+                            "name": human_name,
+                            "description": description,
+                            "usage": separate_camel(view_name).replace("General Usage", "General"),
+                            "url": concept_lookup.get(name, [None, None])[1],
+                            "applicable_relationships": get_applicable_relationships(view_name, name, ifc_class),
+                        }
+                    )
 
         groups.append(
             {
@@ -1089,39 +1125,6 @@ def get_concept_usage(resource, builder):
                 "concepts": concepts,
             }
         )
-
-    # Comment out this return if you want to see how things work using the
-    # markdown as a source of truth instead of XMI. As of writing they differ
-    # quite significantly.
-    if groups:
-        return {
-            "number": SectionNumberGenerator.generate(),
-            "groups": groups,
-        }
-
-    # This code uses the markdown as a source of truth.
-
-    groups = []
-    for concept in builder_concepts:
-        if not groups or groups[-1]["name"] != concept[0]:
-            groups.append(
-                {
-                    "name": concept[0],
-                    "is_inherited": concept[0] != resource,
-                    "concepts": [],
-                }
-            )
-        name = get_concept_name(concept[1])
-        usage = get_usage_name(name)
-        stripped_name = name.replace(" ", "")
-        data = {
-            "name": name,
-            "description": process_markdown(resource, concept[2]),
-            "usage": separate_camel(usage).replace("General Usage", "General"),
-            "url": concept_lookup.get(stripped_name, [None, None])[1],
-            "applicable_relationships": get_applicable_relationships(usage, stripped_name, groups[-1]["name"]),
-        }
-        groups[-1]["concepts"].append(data)
 
     if groups:
         return {

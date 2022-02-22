@@ -23,42 +23,16 @@ On the bottom face, textures are aligned facing front-to-back, with the center o
 
 Figure 2 illustrates default texture mapping with a clamped texture (RepeatS=False and RepeatT=False). The image on the left shows the texture where the S axis points to the right and the T axis points up. The image on the right shows the texture applied to the geometry where the X axis points back to the right, the Y axis points back to the left, and the Z axis points up.
 
-{ .gridtable}
-<table summary="texture" class="gridtable">
-<tr><td><img alt="texture" src="../../../../figures/ifcrightcircularcone-texture.png"></td></tr>
-<tr><td>
-<table summary="texture" width="512" class="gridtable">
-<tr>
-<th>Side</th>
-<th>Normal</th>
-<th>Origin&nbsp;X</th>
-<th>Origin&nbsp;Y</th>
-<th>Origin&nbsp;Z</th>
-<th>S&nbsp;Axis</th>
-<th>T&nbsp;Axis</th>
-</tr>
-<tr>
-<td>Side</td>
-<td>+Y</td>
-<td>0</td>
-<td>+Radius</td>
-<td>0</td>
-<td>-X</td>
-<td>(towards top point)</td>
-</tr>
-<tr>
-<td>Bottom</td>
-<td>-Z</td>
-<td>-Radius</td>
-<td>+Radius</td>
-<td>0</td>
-<td>+X</td>
-<td>-Y</td>
-</tr>
-</table>
-</td></tr>
-<tr><td><p class="figure">Figure 2 &mdash; Right circular cone textures</p></td></tr>
-</table>
+![texture](../../../../figures/ifcrightcircularcone-texture.png)
+
+Figure 2 &mdash; Right circular cone textures
+
+|Side|Normal|Origin X|Origin Y|Origin Z|S Axis|T Axis|
+|--- |--- |--- |--- |--- |--- |--- |
+|Side|+Y|0|+Radius|0|-X|(towards top point)|
+|Bottom|-Z|-Radius|+Radius|0|+X|-Y|
+
+Table 3 &mdash; Texture parameters
 
 ## Attributes
 

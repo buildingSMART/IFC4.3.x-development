@@ -13,117 +13,17 @@ The units are handled by the _DefiningUnit_ and _DefinedUnit_ attributes, see Ta
 
 The _IfcPropertyTableValue_ allows for the specification of a table of defining/defined value pairs of the property description. The optional attribute _CurveInterpolation_ allows to determine the interval between two given values.
 
-&nbsp;
 
-<table>
- <tr>
-  <td>
-   <table class="gridtable">
-    <tr valign="top">
-     <th align="left" valign="top" width="20%">Name</th>
-     <th align="left" valign="top" width="10%">DefiningValues</th>
-     <th align="left" valign="top" width="20%">DefiningValue Type<br> <span style="font-size:smaller">(through IfcValue)</span></th>
-     <th align="left" valign="top" width="10%">DefinedValues</th>
-     <th align="left" valign="top" width="20%">DefinedValue Type<br> <span style="font-size:smaller">(through IfcValue)</span></th>
-     <th align="left" valign="top" width="10%">DefingUnit</th>
-     <th align="left" valign="top" width="10%">DefinedUnit</th>
-    </tr>
-    <tr valign="top">
-     <td>SoundTransmissionLoss</td>
-     <td>100</td>
-     <td><em>IfcFrequencyMeasure</em></td>
-     <td>20</td>
-     <td><em>IfcNumericMeasure</em></td>
-     <td>-</td>
-     <td>dB</td>
-    </tr>
-    <tr valign="top">
-     <td>&nbsp;
-          </td>
-     <td>200
-          </td>
-     <td><em>IfcFrequencyMeasure</em>
-          </td>
-     <td>42
-          </td>
-     <td><em>IfcNumericMeasure</em>
-          </td>
-     <td>&nbsp;
-          </td>
-     <td>&nbsp;
-          </td>
-        </tr>
-        <tr valign="top">
-     <td>&nbsp;
-          </td>
-     <td>400
-          </td>
-     <td><em>IfcFrequencyMeasure</em>
-          </td>
-     <td>46
-          </td>
-     <td><em>IfcNumericMeasure</em>
-          </td>
-     <td>&nbsp;
-          </td>
-     <td>&nbsp;
-          </td>
-        </tr>
-        <tr valign="top">
-     <td>&nbsp;
-          </td>
-     <td>800
-          </td>
-     <td><em>IfcFrequencyMeasure</em>
-          </td>
-     <td>56
-          </td>
-     <td><em>IfcNumericMeasure</em>
-          </td>
-     <td>&nbsp;
-          </td>
-     <td>&nbsp;
-          </td>
-        </tr>
-        <tr valign="top">
-     <td>&nbsp;
-          </td>
-     <td>1600
-          </td>
-     <td><em>IfcFrequencyMeasure</em>
-          </td>
-     <td>60
-          </td>
-     <td><em>IfcNumericMeasure</em>
-          </td>
-     <td>&nbsp;
-          </td>
-     <td>&nbsp;
-          </td>
-        </tr>
-        <tr valign="top">
-     <td>&nbsp;
-          </td>
-     <td>3200
-          </td>
-     <td><em>IfcFrequencyMeasure</em>
-          </td>
-     <td>65
-          </td>
-     <td><em>IfcNumericMeasure</em>
-          </td>
-     <td>&nbsp;
-          </td>
-     <td>&nbsp;
-          </td>
-        </tr>
-   </table>
-  </td>
- </tr>
- <tr>
-  <td><p class="table">Table 1 &mdash; Table value property with values, measure types and units</p></td>
- </tr>
-</table>
+|Name|DefiningValues|DefiningValue Type (through IfcValue)|DefinedValues|DefinedValue Type (through IfcValue)|DefiningUnit|DefinedUnit|
+|--- |--- |--- |--- |--- |--- |--- |
+|SoundTransmissionLoss|100|IfcFrequencyMeasure|20|IfcNumericMeasure|-|dB|
+||200|IfcFrequencyMeasure|42|IfcNumericMeasure|||
+||400|IfcFrequencyMeasure|46|IfcNumericMeasure|||
+||800|IfcFrequencyMeasure|56|IfcNumericMeasure|||
+||1600|IfcFrequencyMeasure|60|IfcNumericMeasure|||
+||3200|IfcFrequencyMeasure|65|IfcNumericMeasure|||
+
+Table 1 &mdash; Table value property with values, measure types and units
 
 > HISTORY&nbsp; New entity in IFC2x.
 

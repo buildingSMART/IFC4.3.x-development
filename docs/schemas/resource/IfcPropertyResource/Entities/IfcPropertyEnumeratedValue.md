@@ -13,65 +13,21 @@ More precisely: The _IfcPropertyEnumeratedValue_ defines a property, which value
 
 > NOTE&nbsp; An _IfcPropertyEnumeratedValue_ may be exchanged with no values assigned yet. In this case the _EnumerationValues_ are set to NIL.
 
-&nbsp;
 
-<table>
- <tr>
-  <td>
-   <table class="gridtable">
-    <tr valign="top">
-     <th width="15%">Name</th>
-     <th width="30%">Value<br> <span style="font-size:smaller">(EnumerationValue)</span></th>
-     <th width="25%">Type<br> <span style="font-size:smaller">(through&nbsp;IfcValue)</span></th>
-     <th width="30%">IfcPropertyEnumeration<br> <span style="font-size:smaller">(Name)</span></th>
-    </tr>
-    <tr>
-     <td>BladeAction</td>
-     <td>Opposed</td>
-     <td><em>IfcLabel</em></td>
-     <td>DamperBladeActionEnum</td>
-    </tr>
-    <tr>
-     <td>BladeAction</td>
-     <td>Parallel</td>
-     <td><em>IfcLabel</em></td>
-     <td>DamperBladeActionEnum</td>
-    </tr>
-   </table>
-  </td>
- </tr>
- <tr>
-  <td><p class="table">Table 1 &mdash; Enumerated property with values, measure types and units</p></td>
- </tr>
-</table>
+|Name|Value (EnumerationValue)|Type (through IfcValue)|IfcPropertyEnumeration (Name)|
+|--- |--- |--- |--- |
+|BladeAction|Opposed|IfcLabel|DamperBladeActionEnum|
+|BladeAction|Parallel|IfcLabel|DamperBladeActionEnum|
 
-&nbsp;
+Table 1 &mdash; Enumerated property with values, measure types and units
 
 The _IfcPropertyEnumeratedValue_ refers to an _IfcPropertyEnumeration_, see Table 2 for an example:
 
-<table>
- <tr>
-  <td>
-   <table class="gridtable">
-    <tr valign="top">
-     <th width="30%"><b>Name</b></th>
-     <th width="30%"><b>EnumerationValues</b></th>
-     <th width="25%"><b>Type<br></b> <span style="font-size:smaller">(through IfcValue)</span></th>
-     <th width="15%"><b>Unit</b></th>
-    </tr>
-    <tr valign="top">
-     <td>DamperBladeActionEnum</td>
-     <td>(Parallel, Opposed, Other, Unset)</td>
-     <td><em>IfcString</em></td>
-     <td>-</td>
-    </tr>
-   </table>
-  </td>
- </tr>
- <tr>
-  <td><p class="table">Table 2 &mdash; Property enumeration with enumerators</p></td>
- </tr>
-</table>
+|Name|EnumerationValues|Type (through IfcValue)|Unit|
+|--- |--- |--- |--- |
+|DamperBladeActionEnum|(Parallel, Opposed, Other, Unset)|IfcString|-|
+
+Table 2 &mdash; Property enumeration with enumerators
 
 It is not mandatory to use an instance of _IfcPropertyEnumeration_ to hold the applicable values for _IfcPropertyEnumeratedValue_, however this is the preferred way. A single instance of _IfcPropertyEnumeration_ can be referenced by multiple instances of _IfcPropertyEnumeratedValue_.
 

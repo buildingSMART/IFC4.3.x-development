@@ -6,51 +6,28 @@ The resulting solid is positioned by the _IfcSweptAreaSolid_._Position_ relative
 
 > NOTE&nbsp; Both the axis and the cross section are required to lie in the xy plane of the object position coordinate system.
 
-<table summary="revolved solid geometry" cellpadding="2" cellspacing="2" border="0">
-<tr>
-<td><img src="../../../../figures/ifcrevolvedareasolid-fig1.png" alt="revolved area solid" border="0"></td>
-<td><blockquote class="example">EXAMPLE&nbsp; Figure 1 illustrates geometric parameters of the revolved solid. The revolved area solid defines the revolution of a 2D area (given by a profile definition) by an axis and angle. The result is a solid. The swept area is given by a
-profile definition.</blockquote>
-<blockquote>
-<ul>
-<li class="small">The profile is defined:<ul>
- <li class="small">as a 2D primitive, here <em>IfcRectangleProfileDef</em>, that is placed relative to the xy plane of object coordinate system</li>
- <li class="small">since no 2D profile position coordinate system is provided, here <em>IfcParameterizedProfileDef</em>.<em>Position</em> = NIL, the profile is positioned without transformation into the xy plane of the object coordinate system (by default, centric at 0.,0. with no rotation)</li>
-</ul>
-<li class="small">The resulting swept solid is not repositioned, as no position coordinate system is provided, here IfcSweptAreaSolid.<em>Position</em> = NIL.</li>
-</ul>
-</blockquote>
-<blockquote class="example">The <em>AxisLine</em> can have any orientation within the XY plane, it does not have to be parallel to the y-axis as
-shown in the illustration.</blockquote>
-</td>
-</tr>
-<tr>
-<td>
-<p class="figure">Figure 1 &mdash; Revolved area solid geometry</p>
-</td>
-</tr>
-</table>
+![revolved area solid](../../../../figures/ifcrevolvedareasolid-fig1.png)
 
-<table summary="revolved solid geometry repositioning" cellpadding="2" cellspacing="2" border="0">
-<tr>
-<td><img src="../../../../figures/ifcrevolvedareasolid-fig2.png" alt="revolved area solid" border="0"></td>
-<td><blockquote class="example">EXAMPLE&nbsp; Figure 1 illustrates geometric parameters and additional positioning parameters of the revolved area solid. The revolved area solid defines the rotation of a 2D area by an axis and angle. The 2D area, provided by a parameterized profile definition, can be positioned relative to the object coordinate system (other then by default at 0.,0. with no rotation). The result is a solid that can be repositioned within the object coordinate system.</blockquote>
-<blockquote><ul>
-<li class="small">The profile to be swept is defined:
-<ul>
- <li class="small">as a 2D primitive, here <em>IfcRectangleProfileDef</em>, that is placed relative to the xy plane of object coordinate system</li>
- <li class="small">a 2D profile position coordinate system is provided that positions the profile relative to the xy plane (here at a corner of the rectangle)</li>
-</ul></li>
-<li class="small">The resulting swept solid is repositioned, here it is moved into local z and rotated by 15' along the x axis.</li>
-</ul></blockquote>
-</td>
-</tr>
-<tr>
-<td>
-<p class="figure">Figure 2 &mdash; Repositioned revolved area solid geometry</p>
-</td>
-</tr>
-</table>
+Figure 1 &mdash; Revolved area solid geometry
+
+> EXAMPLE Figure 1 illustrates geometric parameters of the revolved solid. The revolved area solid defines the revolution of a 2D area (given by a profile definition) by an axis and angle. The result is a solid. The swept area is given by a profile definition.
+
+ * The profile is defined:
+    * as a 2D primitive, here <em>IfcRectangleProfileDef</em>, that is placed relative to the xy plane of object coordinate system
+    * since no 2D profile position coordinate system is provided, here <em>IfcParameterizedProfileDef</em>.<em>Position</em> = NIL, the profile is positioned without transformation into the xy plane of the object coordinate system (by default, centric at 0.,0. with no rotation)
+ * The resulting swept solid is not repositioned, as no position coordinate system is provided, here IfcSweptAreaSolid.<em>Position</em> = NIL.
+
+The <em>AxisLine</em> can have any orientation within the XY plane, it does not have to be parallel to the y-axis as shown in the illustration.
+
+![revolved area solid](../../../../figures/ifcrevolvedareasolid-fig2.png)
+
+Figure 2 &mdash; Repositioned revolved area solid geometry
+
+> EXAMPLE Figure 1 illustrates geometric parameters and additional positioning parameters of the revolved area solid. The revolved area solid defines the rotation of a 2D area by an axis and angle. The 2D area, provided by a parameterized profile definition, can be positioned relative to the object coordinate system (other then by default at 0.,0. with no rotation). The result is a solid that can be repositioned within the object coordinate system.
+ * The profile to be swept is defined:
+    * as a 2D primitive, here <em>IfcRectangleProfileDef</em>, that is placed relative to the xy plane of object coordinate system
+    * a 2D profile position coordinate system is provided that positions the profile relative to the xy plane (here at a corner of the rectangle)
+ * The resulting swept solid is repositioned, here it is moved into local z and rotated by 15' along the x axis.
 
 { .extDef}
 > NOTE&nbsp; Definition according to ISO/CD 10303-42:1992  
@@ -76,25 +53,12 @@ For top and bottom caps, textures are aligned facing front-to-back, with the ori
 
 For profiles with voids, textures are aligned facing upright along the inner side with origin at the first point of an arbitrary profile, and following the inner bound of the profile clockwise (as seen from above). For parameterized profiles, the origin of inner sides is defined at the +Y extent for rounded profiles (having no sharp edge such as hollow ellipses or rounded rectangles) and the first sharp edge clockwise from the +Y extent for all other profiles.
 
-<table summary="texture">
-<tr>
-<td><img src="../../../../figures/ifcrevolvedareasolid-texture.png" alt="texture"></td>
-<td>
-<blockquote class="example">Figure 3 illustrates default texture mapping with a repeated texture (RepeatS=True and RepeatT=True). The image on
-the left shows the texture where the S axis points to the right and the T axis points up. The image on the right shows
-the texture applied to the geometry where the X axis points back to the right, the Y axis points back to the left, and
-the Z axis points up. For an <em>IfcRevolvedAreaSolid</em> having a profile of <em>IfcTShapeProfileDef</em> and
-revolved at 22.5 degrees, the side texture coordinate origin is the first corner counter-clockwise from the +Y axis,
-which equals <br><br>(-0.5*IfcTShapeProfileDef.OverallWidth, +0.5*IfcTShapeProfileDef.OverallDepth),<br><br> while the top (end cap)
-texture coordinates start at <br><br>(-0.5*IfcTShapeProfileDef.OverallWidth, -0.5*IfcTShapeProfileDef.OverallDepth).</blockquote>
-</td>
-</tr>
-<tr>
-<td>
-<p class="figure">Figure 3 &mdash; Revolved area solid textures</p>
-</td>
-</tr>
-</table>
+![texture](../../../../figures/ifcrevolvedareasolid-texture.png)
+
+Figure 3 &mdash; Revolved area solid textures
+
+Figure 3 illustrates default texture mapping with a repeated texture (RepeatS=True and RepeatT=True). The image on
+the left shows the texture where the S axis points to the right and the T axis points up. The image on the right shows the texture applied to the geometry where the X axis points back to the right, the Y axis points back to the left, and the Z axis points up. For an <em>IfcRevolvedAreaSolid</em> having a profile of <em>IfcTShapeProfileDef</em> and revolved at 22.5 degrees, the side texture coordinate origin is the first corner counter-clockwise from the +Y axis, which equals (-0.5*IfcTShapeProfileDef.OverallWidth, +0.5*IfcTShapeProfileDef.OverallDepth), while top (end cap) texture coordinates start at (-0.5*IfcTShapeProfileDef.OverallWidth, -0.5*IfcTShapeProfileDef.OverallDepth).
 
 ## Attributes
 

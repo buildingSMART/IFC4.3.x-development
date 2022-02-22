@@ -189,7 +189,10 @@ class xmi_item:
                 return missing_markdown(REPO_URL + p + " does not exist")
             
             hname = 'Attributes' if not is_sub or self.parent.type == "ENTITY" else 'Items'
-            md_parser = markdown_attribute_parser(open(md_fn, encoding='utf-8').read(), hname)
+            try:
+                md_parser = markdown_attribute_parser(open(md_fn, encoding='utf-8').read(), hname)
+            except:
+                return missing_markdown(REPO_URL + p + " failed to parse")
             
             if is_sub:                
                 attrs = dict(md_parser)

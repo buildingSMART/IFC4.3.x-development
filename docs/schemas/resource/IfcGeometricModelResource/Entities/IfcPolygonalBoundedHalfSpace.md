@@ -8,27 +8,13 @@ The boundary is defined by a 2 dimensional polyline (or 2 dimensional composite 
 
 Figure 1 illustrates a polygonal bounded half space.
 
-<table border="0" cellpadding="2" cellspacing="2" summary="illustration">
-<tr>
-<td width="650"><img src="../../../../figures/ifcpolygonalboundedhalfspace-layout1.png" border="0" height="480" width="640" alt="polygonal bounded halfspace"></td>
-<td>
-<ul>
-<li class="small">Black coordinates indicate the object coordinate system (usually provided by <em>IfcLocalPlacement</em>).</li>
-<li class="small">Green coordinates indicate the position coordinate system; the <em>PolygonalBoundary</em> is given within this
-coordinate system. It is provided by <em>IfcPolygonalBoundedHalfSpace.Position</em>. This coordinate system is relative
-to the object coordinate system. The extrusion direction of the subtraction body is the positive Z axis.</li>
-<li class="small">Red coordinates indicate the normal of the plane. It is provided by the <em>BaseSurface</em>
-(<em>IfcSurface.Position</em>). This normal is also relative to the object coordinate system.</li>
-</ul>
-</td>
-</tr>
-<tr>
-<td>
-<p class="figure">Figure 1 &mdash; Polygonal half space geometry</p>
-</td>
-<td>&nbsp;</td>
-</tr>
-</table>
+![polygonal bounded halfspace](../../../../figures/ifcpolygonalboundedhalfspace-layout1.png)
+
+Figure 1 &mdash; Polygonal half space geometry
+
+ * Black coordinates indicate the object coordinate system (usually provided by <em>IfcLocalPlacement</em>).
+ * Green coordinates indicate the position coordinate system; the <em>PolygonalBoundary</em> is given within this coordinate system. It is provided by <em>IfcPolygonalBoundedHalfSpace.Position</em>. This coordinate system is relative to the object coordinate system. The extrusion direction of the subtraction body is the positive Z axis.
+ * Red coordinates indicate the normal of the plane. It is provided by the <em>BaseSurface</em> (<em>IfcSurface.Position</em>). This normal is also relative to the object coordinate system.
 
 The polygonal bounded half space is used to limit the volume of the half space in Boolean difference expressions. Only the part that is defined by a theoretical intersection between the half space solid and an extruded area solid, defined by extruding the polygonal boundary, is used for Boolean expressions.
 

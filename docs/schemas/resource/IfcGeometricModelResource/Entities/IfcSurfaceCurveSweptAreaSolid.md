@@ -16,10 +16,18 @@ The resulting body of the swept solid is not repositioned if the inherited _Posi
   
 &nbsp;  
   
-<table border="0" cellpadding="2" cellspacing="2" summary="surface curve wept area solid"><br><tr><br><td><img src="../../../../figures/ifcsurfacecurvesweptareasolid_01.png" alt="surface curve wept area solid" width="600" height="450"></td><br><td><blockquote class="example">EXAMPLE&nbsp; Figure 1 illustrates an example using a cylindrical reference surface and a p-curve for sweeping a rectangle. The <em>Postion</em> is not provided and therefore it does not reposition the resulting swept solid. Figure 2 shows the expected result.</blockquote><br><blockquote class="note">NOTE&nbsp; The start of the directrix lies at the origin of the object coordinate system, as shown in the illustration,<br>only by coincidence. The start of the directrix and thereby the start of the sweeping operation might be at any point within the object coordinate <br>system and only depends on the position of the directrix.</blockquote></td><br></tr><br><tr><br><td><br><p class="figure">Figure 1 &mdash; Surface curve wept area solid parameter</p><br></td><br><td>&nbsp;</td><br></tr><br><tr><br><td><img src="../../../../figures/ifcsurfacecurvesweptareasolid_02.png" alt="surface curve wept area solid" width="600" height="450"></td><br></tr><br><tr><br><td><br><p class="figure">Figure 2 &mdash; Surface curve wept area solid results</p><br></td><br></tr><br></table>
+![surface curve wept area solid](../../../../figures/ifcsurfacecurvesweptareasolid_01.png)
 
-  
-  
+Figure 1 &mdash; Surface curve wept area solid parameter
+
+> EXAMPLE Figure 1 illustrates an example using a cylindrical reference surface and a p-curve for sweeping a rectangle. The <em>Postion</em> is not provided and therefore it does not reposition the resulting swept solid. Figure 2 shows the expected result.
+
+> NOTE The start of the directrix lies at the origin of the object coordinate system, as shown in the illustration,<br>only by coincidence. The start of the directrix and thereby the start of the sweeping operation might be at any point within the object coordinate system and only depends on the position of the directrix.
+
+![surface curve wept area solid](../../../../figures/ifcsurfacecurvesweptareasolid_02.png)
+
+Figure 2 &mdash; Surface curve wept area solid results
+
 { .extDef}  
 > NOTE&nbsp; Definition according to ISO/CD 10303-42:1992    
 > A surface curve swept area solid is a type of swept area solid which is the result of sweeping a face along a _Directrix_ lying on a _ReferenceSurface_. The orientation of the _SweptArea_ is related to the direction of the surface normal.    

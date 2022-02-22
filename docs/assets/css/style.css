@@ -165,6 +165,8 @@ h2:hover a:first-child, h3:hover:first-child a, h4:hover:first-child a, h5:hover
 }
 figure {
     text-align: center;
+    /* For very long tables */
+    overflow-y: scroll;
 }
 code {
   line-height: inherit;

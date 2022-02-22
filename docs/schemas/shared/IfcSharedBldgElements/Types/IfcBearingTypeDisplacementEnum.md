@@ -1,4 +1,4 @@
-Euneration of Bearing Displacement Types.
+Enumeration of Bearing Displacement Types.
 
 ## Items
 

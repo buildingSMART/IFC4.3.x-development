@@ -7,43 +7,14 @@ The unit is handled by the _Unit_ attribute, see Table 1 for an example of vario
 * If the _Unit_ attribute is not given, then the unit is already implied by the type of _IfcMeasureValue_ or _IfcDerivedMeasureValue_. The associated unit can be found at the _IfcUnitAssignment_ globally defined at the project level (_IfcProject.UnitsInContext_).
 * If the _Unit_ attribute is given, then the unit assigned by the _Unit_ attribute overrides the globally assigned unit.
 
-&nbsp;
 
-<table>
- <tr>
-  <td>
-   <table class="gridtable">
-    <tr>
-      <th width="30%"><b>Name</b></th>
-      <th width="30%"><b>NominalValue</b></th>
-      <th width="25%"><b>Type</b> <span style="font-size:smaller">(through <em>IfcValue</em>)</span></th>
-      <th width="15%"><b>Unit</b></th>
-    </tr>
-    <tr>
-      <td>Description</td>
-      <td>Manufacturer "A" door</td>
-      <td><em>IfcLabel</em></td>
-      <td>-</td>
-    </tr>
-    <tr>
-      <td>PanelThickness</td>
-      <td>0.12</td>
-      <td><em>IfcPositiveLengthMeasure</em></td>
-      <td>-</td>
-    </tr>
-    <tr>
-      <td>ThermalTransmittance</td>
-      <td>2.6</td>
-      <td><em>IfcThermalTransmittanceMeasure</em></td>
-      <td>W/(m<sup>2</sup>K)</td>
-    </tr>
-   </table>
-  </td>
- </tr>
- <tr>
-  <td><p class="table">Table 1 &mdash; Single value properties with values, measure types and units</p></td>
- </tr>
-</table>
+|Name|NominalValue|Type (through IfcValue)|Unit|
+|--- |--- |--- |--- |
+|Description|Manufacturer "A" door|IfcLabel|-|
+|PanelThickness|0.12|IfcPositiveLengthMeasure|-|
+|ThermalTransmittance|2.6|IfcThermalTransmittanceMeasure|W/(m2K)|
+
+Table 1 &mdash; Single value properties with values, measure types and units
 
 > HISTORY&nbsp; New entity in IFC1.0.
 

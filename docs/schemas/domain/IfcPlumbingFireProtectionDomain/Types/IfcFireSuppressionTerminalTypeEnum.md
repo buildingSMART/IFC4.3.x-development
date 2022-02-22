@@ -20,6 +20,7 @@ Device for sprinkling water from a pipe under pressure over an area.
 
 ### SPRINKLERDEFLECTOR
 Device attached to a sprinkler to deflect the water flow into a spread pattern to cover the required area.
+> IFC4.3.0.0 DEPRECATION The value is deprecated and shall no longer be used.
 
 ### FIREMONITOR
 

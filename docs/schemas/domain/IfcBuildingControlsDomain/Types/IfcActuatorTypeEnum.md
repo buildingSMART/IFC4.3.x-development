@@ -13,7 +13,7 @@ A device that electrically actuates a control element.
 A device that manually actuates a control element.
 
 ### HYDRAULICACTUATOR
-A device that electrically actuates a control element.
+A device that hydraulically actuates a control element.
 
 ### PNEUMATICACTUATOR
 A device that pneumatically actuates a control element.

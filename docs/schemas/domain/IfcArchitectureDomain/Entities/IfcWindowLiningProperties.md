@@ -4,7 +4,7 @@ The window lining is the outer frame which enables the window to be fixed in pos
 
 > NOTE  The _IfcWindowLiningProperties_ shall only be applied to construct the 3D shape of a window, if the attribute _IfcWindowType_.ParameterTakesPrecedence is set TRUE.
 
-The _IfcWindowLiningProperties_ are included in the set of properties of _IfcWindowStyle.HasPropertySets_. More information about the window lining can be included in the same set of the _IfcWindowType_ using another _IfcPropertySet_ for dynamic extensions.
+The _IfcWindowLiningProperties_ are included in the set of properties of _IfcWindowType.HasPropertySets_. More information about the window lining can be included in the same set of the _IfcWindowType_ using another _IfcPropertySet_ for dynamic extensions.
 
 The _IfcWindowLiningProperties_ does not hold a geometric representation. However it defines parameters which can be used to create the shape of the window type(which is inserted by the _IfcWindow_ into the spatial context of the project) as shown in Figure 1. The parameters at the _IfcWindowLiningProperties_ define a standard window lining, including (if given) a mullion and a transom (for horizontal and vertical splits). The outer boundary of the lining is determined by the 'Profile' shape representation assigned to the _IfcWindow_, which inserts the _IfcWindowType_.
 
@@ -94,4 +94,4 @@ Either both parameter, _FirstMullionOffset_ and _SecondMullionOffset_ are given,
 
 ### WR34
 The _IfcWindowPanelProperties_ shall only be used in the context of an _IfcDoorType_.
-> NOTE  The deprecated entity _IfcWindowStyle_ is applicable as well.
+> NOTE  The deprecated entity _IfcWindowType_ is applicable as well.

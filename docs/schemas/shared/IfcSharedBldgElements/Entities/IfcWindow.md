@@ -107,7 +107,7 @@ Designator for the user defined partitioning type, shall only be provided, if th
 ## Formal Propositions
 
 ### CorrectStyleAssigned
-Either there is no door type object associated, i.e. the _IsTypedBy_ inverse relationship is not provided, or the associated type object has to be of type _IfcWindowStyle_.
+Either there is no window type object associated, i.e. the _IsTypedBy_ inverse relationship is not provided, or the associated type object has to be of type _IfcWindowType_.
 > NOTEnbsp; The deprecated type _IfcWindowStyle_ is still included for backward compatibility reasons.
 
 ### CorrectPredefinedType

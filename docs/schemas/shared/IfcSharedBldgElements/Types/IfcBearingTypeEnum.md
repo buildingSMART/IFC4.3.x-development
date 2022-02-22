@@ -1,3 +1,4 @@
+Enumeration of Bearing Types.
 
 ## Items
 

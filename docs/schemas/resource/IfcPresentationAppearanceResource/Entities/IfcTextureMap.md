@@ -20,22 +20,11 @@ Each _IfcTextureVertex_ (given as S, T coordinates of the 2-dimension texture co
 
 > NOTE&nbsp; In contrary to the X3D vertext based geometry, for example IndexedFaceSet and ElevationGrid, the vertext based geometry in IFC may include inner loops. The areas of inner loops have to be cut-out from the texture applied to the outer loop.
 
-<table summary="texture map use">
-      <tr>
-        <td>
-          <img src="../../../../figures/ifctexturemap_fig-1.png" width="620" height="600" alt="IfcTextureMap_fig-1.png 35,6 KB">
-        </td>
-				<td style=" vertical-align:bottom;"><span style=" font-size:x-small;">Figure 1 illustrates applying a texture map to a vertex
-      based geometry.</span>
-				</td>
-      </tr>
-      <tr>
-        <td>
-          <p class="figure">Figure 1 &mdash; Texture map</p>
-        </td>
-				<td>&nbsp;</td>
-      </tr>
-    </table>
+![IfcTextureMap_fig-1.png 35,6 KB](../../../../figures/ifctexturemap_fig-1.png)
+
+Figure 1 &mdash; Texture map
+
+Figure 1 illustrates applying a texture map to a vertex based geometry.
 
 > HISTORY&nbsp; New entity in IFC2x2.
 

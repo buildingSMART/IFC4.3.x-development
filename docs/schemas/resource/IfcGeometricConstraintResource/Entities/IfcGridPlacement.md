@@ -20,51 +20,32 @@ The direction of the z-axis is the orientation of the cross product of the x-axi
 
 The following figures/ show the usage of placement location and direction for an _IfcGridPlacement_.
 
-<table cellpadding="2" cellspacing="2" summary="Geometry use definition">
-<tr><td align="left" valign="top"><img src="../../../../figures/ifcgridplacement-layout1.png" alt="without ref direction" border="0" height="300" width="400"></td>
-<td style="vertical-align:bottom">
-<p>Figure 1 illustrates the case where <em>PlacementRefDirection</em> is <u>not</u> given - the object coordinate system is defined by:</p>
-<ul>
-<li><u>its location</u>: given by the virtual grid intersection of <em>PlacementLocation</em></li>
-<li><u>its x-axis direction</u>: given by the tangent of the first intersecting axis in the offset location of the virtual grid intersection</li>
-</ul>
-</td>
-</tr>
-<tr><td><p class="figure">Figure 1 &mdash; Grid placement</p></td>
-<td>&nbsp;</td>
-</tr>
-</table>
+![without ref direction](../../../../figures/ifcgridplacement-layout1.png)
 
-<table cellpadding="2" cellspacing="2" summary="Geometry use definition">
-<tr>
-<td align="left" valign="top"><img src="../../../../figures/ifcgridplacement-layout3.png" alt="with ref direction" border="0" height="300" width="400"></td>
-<td style="vertical-align:bottom">
-<p>Figure 2 illustrates the case where <em>PlacementRefDirection</em> is given as an <em>IfcDirection</em>- the object coordinate system is defined by:
-<ul>
-<li><u>its location</u>: given by the virtual grid intersection of <em>PlacementLocation</em></li>
-<li><u>its x-axis direction</u>: given by the <em>DirectionRatios</em> of the <em>IfcDirection</em>, only the ratios for x and y are taken into account,</li>
-</ul>
-</td>
-</tr>
-<tr><td><p class="figure">Figure 2 &mdash; Grid placement with direction</p></td>
-<td>&nbsp;</td>
-</tr>
-</table>
+Figure 1 &mdash; Grid placement
 
-<table cellpadding="2" cellspacing="2" summary="Geometry use definition">
-<tr><td align="left" valign="top"><img src="../../../../figures/ifcgridplacement-layout2.png" alt="with ref direction" border="0" height="300" width="400"></td>
-<td style="vertical-align:bottom">
-<p>Figure 3 illustrates the case where <em>PlacementRefDirection</em> is given as an <em>IfcVirtualGridIntersection</em>- the object coordinate system is defined by:
-<ul>
-<li><u>its location</u>: given by the virtual grid intersection of <em>PlacementLocation</em></li>
-<li><u>its x-axis direction</u>: given by the tangent of the line between the virtual grid intersection of the <em>PlacementLocation</em> and the virtual grid intersection of the <em>PlacementRefDirection</em>.</li>
-</ul>
-</td>
-</tr>
-<tr><td><p class="figure">Figure 3 &mdash; Grid placement with intersection</p></td>
-<td>&nbsp;</td>
-</tr>
-</table>
+Figure 1 illustrates the case where <em>PlacementRefDirection</em> is <u>not</u> given - the object coordinate system is defined by:
+
+ * <u>its location</u>: given by the virtual grid intersection of <em>PlacementLocation</em>
+ * <u>its x-axis direction</u>: given by the tangent of the first intersecting axis in the offset location of the virtual grid intersection
+
+![with ref direction](../../../../figures/ifcgridplacement-layout3.png)
+
+Figure 2 &mdash; Grid placement with direction
+
+Figure 2 illustrates the case where <em>PlacementRefDirection</em> is given as an <em>IfcDirection</em>- the object coordinate system is defined by:
+
+ * <u>its location</u>: given by the virtual grid intersection of <em>PlacementLocation</em>
+ * <u>its x-axis direction</u>: given by the <em>DirectionRatios</em> of the <em>IfcDirection</em>, only the ratios for x and y are taken into account,
+
+![with ref direction](../../../../figures/ifcgridplacement-layout2.png)
+
+Figure 3 &mdash; Grid placement with intersection
+
+Figure 3 illustrates the case where <em>PlacementRefDirection</em> is given as an <em>IfcVirtualGridIntersection</em>- the object coordinate system is defined by:
+
+ * <u>its location</u>: given by the virtual grid intersection of <em>PlacementLocation</em>
+ * <u>its x-axis direction</u>: given by the tangent of the line between the virtual grid intersection of the <em>PlacementLocation</em> and the virtual grid intersection of the <em>PlacementRefDirection</em>.
 
 > HISTORY  New entity in IFC1.5. The entity name was changed from IfcConstrainedPlacement in IFC2x.
 

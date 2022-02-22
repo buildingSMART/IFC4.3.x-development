@@ -10,7 +10,7 @@ Among else, _IfcCenterLineProfileDef_ is used to model cold-formed steel or alum
 
 or a combination of them. See _IfcProfileDef_ for guidance on external references for profiles.
 
-> HISTORY&nbsp; New entity in IFC2x3.
+> HISTORY  New entity in IFC2x3.
 
 { .spec-head}
 Informal Propositions:

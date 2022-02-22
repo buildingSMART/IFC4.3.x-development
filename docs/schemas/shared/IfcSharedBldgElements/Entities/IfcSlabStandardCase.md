@@ -10,9 +10,9 @@ The standard slab, _IfcSlabStandardCase_, defines a slab with certain constraint
 
 The definitions of slab openings and niches are the same as given at the supertype _IfcSlab_. The same agreements to the special types of slabs, as defined in the _PredefinedType_ attribute apply as well.
 
-> NOTE&nbsp; If the _IfcSlabStandardCase_ is of type Landing and is used within an _IfcStair_ or _IfcRamp_, the special agreements to handle stair and ramp geometry will also affect the geometric representation of the _IfcSlabStandardCase_.
+> NOTE  If the _IfcSlabStandardCase_ is of type Landing and is used within an _IfcStair_ or _IfcRamp_, the special agreements to handle stair and ramp geometry will also affect the geometric representation of the _IfcSlabStandardCase_.
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 ## Formal Propositions
 

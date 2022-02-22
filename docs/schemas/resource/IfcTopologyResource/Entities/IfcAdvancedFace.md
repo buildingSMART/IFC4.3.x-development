@@ -17,9 +17,9 @@ In case of closed faces with periodic surfaces, such as cylindrical or spherical
 
 !["cylindrical surface"](../../../../figures/ifcadvancedface_01.png "Figure 1 &mdash; Use of _IfcCylindricalSurface_ as underlying surface of an _IfcAdvancedFace_")
 
-> NOTE&nbsp; Entity adapted from **advanced_face** defined in ISO 10303-511.
+> NOTE  Entity adapted from **advanced_face** defined in ISO 10303-511.
 
-> HISTORY&nbsp; New entity in IFC4
+> HISTORY  New entity in IFC4
 
 ## Formal Propositions
 

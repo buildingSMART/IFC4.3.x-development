@@ -59,7 +59,7 @@ The following are deemed to be out of scope of the _IfcElectricalDomain_ schema 
 
 An electrical circuit is formed from electrical devices connected together with power carrying cables. Up to IFC4, an instance of an electrical circuit has been defined as an _IfcElectricalCircuit_ (subtype of _IfcSystem_). This is now deleted as of IFC4. Instead, electrical systems together with other cable systems and other forms of distribution system are now identified through the _IfcDistributionSystem.PredefinedType::IfcDistributionSystemTypeEnum_, along with specific property sets.
 
-> HISTORY&nbsp; New schema in IFC2x.
+> HISTORY  New schema in IFC2x.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Electrical circuit specification modified, scope expanded to support communications systems.
+> IFC4 CHANGE  Electrical circuit specification modified, scope expanded to support communications systems.

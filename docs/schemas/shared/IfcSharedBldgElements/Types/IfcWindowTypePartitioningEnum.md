@@ -4,7 +4,7 @@ This enumeration defines the basic configuration of the window type in terms of 
 
 Windows which are subdivided into more than three panels have to be defined by the geometry only. The type of such windows is USERDEFINED.
 
-> HISTORY&nbsp; New Enumeration in IFC4. The new _IfcWindowTypePartitioningEnum_ replaces the use of _IfcWindowStyleOperationEnum_ that is deprecated from IFC4 onwards.
+> HISTORY  New Enumeration in IFC4. The new _IfcWindowTypePartitioningEnum_ replaces the use of _IfcWindowStyleOperationEnum_ that is deprecated from IFC4 onwards.
 
 Note:
 

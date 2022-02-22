@@ -4,10 +4,10 @@ _IfcDayInMonthNumber_ is an integer that defines the position of the specified d
 
 Type: INTEGER
 
-> HISTORY&nbsp; New type in IFC1.5.1.
+> HISTORY  New type in IFC1.5.1.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Where rule _ValidRange_ added.
+> IFC4 CHANGE  Where rule _ValidRange_ added.
 
 ## Formal Propositions
 

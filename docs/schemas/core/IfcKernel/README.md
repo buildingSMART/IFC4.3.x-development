@@ -66,4 +66,4 @@ There are two fundamental concepts of property definition types, which are all d
 * property and property set template - defines the syntax and data types for property sets and individual properties.
 * property set occurrence - defines shareable and extensible property sets attachable to occurrences of objects. The property set is regarded as a partial type information as it establishes a subset of common shared property information among occurrence objects. 
 
-> HISTORY&nbsp; New schema in IFC1.5
+> HISTORY  New schema in IFC1.5

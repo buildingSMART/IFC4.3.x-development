@@ -2,7 +2,7 @@
 
 An annotation is an information element within the geometric (and spatial) context of a project, that adds a note or meaning to the objects which constitutes the project model. Annotations include additional points, curves, text, dimensioning, hatching and other forms of graphical notes. It also includes virtual or symbolic representations of additional model components, not representing products or spatial structures, such as event elements, survey points, contour lines or similar.
 
-> NOTE&nbsp; Additional presentation information (often 2D) such as tag number or hatching, that is directly related to a particular product representation is included within the _IfcProductDefinitionShape_ having various _IfcShapeRepresentation_'s of the _IfcElement_ (and its subtypes). Only those presentation information, that cannot be directly related to a single product, have to be wrapped within the _IfcAnnotation_.
+> NOTE  Additional presentation information (often 2D) such as tag number or hatching, that is directly related to a particular product representation is included within the _IfcProductDefinitionShape_ having various _IfcShapeRepresentation_'s of the _IfcElement_ (and its subtypes). Only those presentation information, that cannot be directly related to a single product, have to be wrapped within the _IfcAnnotation_.
 
 If available, the annotation should be related to the spatial context of the project, by containing the annotation within the appropriate level of the building structure (site, facility, facility part or building, storey, or space). This is handled by the _IfcRelContainedInSpatialStructure_ relationship.
 
@@ -22,7 +22,7 @@ The _IfcAnnotation_ can provide specific 0D, 1D, and 2D geometric items as repre
      * **SurveyArea**: A surface patch based on survey points.
   
 
-> HISTORY&nbsp; New entity in IFC2x2.
+> HISTORY  New entity in IFC2x2.
 
 ## Attributes
 

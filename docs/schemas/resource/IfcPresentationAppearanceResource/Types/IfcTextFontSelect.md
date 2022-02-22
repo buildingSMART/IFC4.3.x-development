@@ -2,9 +2,9 @@
 
 _IfcTextFontSelect_ allows for either a predefined text font, a text font model or an externally defined text font to be used to describe the font of a text literal.
 
-> NOTE&nbsp; Type adapted from **font_select** defined in ISO10303-46.
+> NOTE  Type adapted from **font_select** defined in ISO10303-46.
 
-> HISTORY&nbsp; New select type in IFC2x2.
+> HISTORY  New select type in IFC2x2.
 
 { .change-ifc2x3}
-> IFC2x3 CHANGE&nbsp; The select type has been renamed from IfcFontSelect.
+> IFC2x3 CHANGE  The select type has been renamed from IfcFontSelect.

@@ -10,7 +10,7 @@ For the purposes of IFC the English term "alignment" defines three essentially s
 
 An alignment is used to define a reference system to position elements mainly for linear construction works, such as roads, rails, bridges, and others. The relative positioning along the alignment is defined by the linear referencing methodology.  
 
-> NOTE&nbsp; See ISO 19148 Geographic information &ndash; Linear referencing for general definitions about linear referencing.  
+> NOTE  See ISO 19148 Geographic information &ndash; Linear referencing for general definitions about linear referencing.  
 
 **Kinematic perspective**
 
@@ -77,7 +77,7 @@ Supported shape representations of <span class="self-ref">IfcAlignment</span> ar
 
 The _RepresentationIdentifier_ shall always be set to 'Axis' and the _RepresentationType_ shall be set to either 'Curve2D' or 'Curve3D' depending on if the referenced curve is 2- or 3-dimensional
 
-> NOTE&nbsp; Derivative specifications (Model View Definitions) may expand the above set to include additional supported curve types.
+> NOTE  Derivative specifications (Model View Definitions) may expand the above set to include additional supported curve types.
 
 ## Attributes
 

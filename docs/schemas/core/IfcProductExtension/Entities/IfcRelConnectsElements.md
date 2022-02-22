@@ -5,7 +5,7 @@ The _IfcRelConnectsElements_ objectified relationship provides the generalizatio
 * In this case the geometrical constraints of the connection are provided by the optional relationship to the _IfcConnectionGeometry_. The connection geometry is provided as a point, curve or surface within the local placement coordinate systems of the connecting elements. 
 * If the connection geometry is omitted then the connection is provided as a logical connection. Under this circumstance, the connection point, curve or surface has to be recalculated by the receiving application. 
 
-> HISTORY&nbsp; New entity in IFC1.0.
+> HISTORY  New entity in IFC1.0.
 
 ## Attributes
 

@@ -2,7 +2,7 @@
 
 The _IfcSphere_ is a Construction Solid Geometry (CSG) 3D primitive. It is a solid where all points at the surface have the same distance from the center point. The inherited _Position_ attribute defines the _IfcAxisPlacement3D_ and provides:
 
-* _SELF\IfcCsgPrimitive3D.Position_: The location and orientation of the axis system for the primitive.&nbsp;
+* _SELF\IfcCsgPrimitive3D.Position_: The location and orientation of the axis system for the primitive. 
 * _SELF\IfcCsgPrimitive3D.Position.Location_: The center of the sphere.
 * _SELF\IfcCsgPrimitive3D.Position.Position[3]:_ The z axis points at its positve direction towards the north pole, and by its negative directions towards the south pole.
 
@@ -10,15 +10,15 @@ The _IfcSphere_ is a Construction Solid Geometry (CSG) 3D primitive. It is a sol
 
 Figure 1 &mdash; Sphere geometry
 
-> EXAMPLE&nbsp; Figure 1 illustrates geometric parameters of the sphere. The sphere is positioned within its own placement coordiante system relative to the object coordinate system. The origin is the center of the sphere.
+> EXAMPLE  Figure 1 illustrates geometric parameters of the sphere. The sphere is positioned within its own placement coordiante system relative to the object coordinate system. The origin is the center of the sphere.
 
 { .extDef}
-> NOTE&nbsp; Definition according to ISO/CD 10303-42:1992  
+> NOTE  Definition according to ISO/CD 10303-42:1992  
 > A sphere is a CSG primitive with a spherical shape defined by a centre and a radius.
 
-> NOTE&nbsp; Entity adapted from **sphere** defined in ISO 10303-42.
+> NOTE  Entity adapted from **sphere** defined in ISO 10303-42.
 
-> HISTORY&nbsp; New entity in IFC2x3.
+> HISTORY  New entity in IFC2x3.
 
 { .use-head}
 Texture Use Definition

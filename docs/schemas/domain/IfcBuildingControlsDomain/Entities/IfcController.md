@@ -4,7 +4,7 @@ A controller is a device that monitors inputs and controls outputs within a buil
 
 A controller may be physical (having placement within a spatial structure) or logical (a software interface or aggregated within a programmable physical controller).
 
-> HISTORY&nbsp; New entity in IFC4
+> HISTORY  New entity in IFC4
 
 { .note}
 >

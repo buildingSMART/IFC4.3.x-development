@@ -23,7 +23,7 @@ The IfcAlignmentVerticalSegmentTypeEnum indicates the type of a segment of a ver
 **Used Symbols and their meaning**
 
 
-| Symbol&nbsp; | meaning  | Unit, value range |
+| Symbol  | meaning  | Unit, value range |
 |:----|:------------------|:----------|
 | L | full length of segment        | positive length  L > 0 |
 | s | current position on segment        | 0 < s < L |

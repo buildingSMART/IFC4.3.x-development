@@ -10,7 +10,7 @@ The standard plate, _IfcPlateStandardCase_, defines a plate with certain constra
 
 The definitions of plate openings and niches are the same as given at the supertype _IfcPlate_. The same agreements to the special types of plates, as defined in the _PredefinedType_ attribute apply as well.
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 ## Formal Propositions
 

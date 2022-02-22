@@ -20,7 +20,7 @@ See Figure 2 for using the _IfcTriangulatedFaceSet_ without (as default) and wit
 
 Optionally normals can be provided. Only normals per vector are supported allowing for visually curved triangles when the three normals of the corresponding three vertices of a triangle are not co-linear to the normal of the triangular face. If they are identical, normals shall be omited.
 
-> NOTE&nbsp; In case of a body representation having triangular faces with curvature, different normals for all three vertices in context of this triangles are exported, describing the curvature for smooth visualisation. In case of triangular faces with no curvature, the three vertex-based normals are identical and could always be computed from the face. Therefore vertices should only be exported to support smooth visualisation by curvature of triangles. In case of faceted representation no vertices should be exported.
+> NOTE  In case of a body representation having triangular faces with curvature, different normals for all three vertices in context of this triangles are exported, describing the curvature for smooth visualisation. In case of triangular faces with no curvature, the three vertex-based normals are identical and could always be computed from the face. Therefore vertices should only be exported to support smooth visualisation by curvature of triangles. In case of faceted representation no vertices should be exported.
 
 Normals are provided by the two-dimensional list _Normals_, where
 
@@ -31,7 +31,7 @@ The indices in the _CoordIndex_ point into the list of _Normals_. The indices of
 
 !["IfcTriangulatedFaceSet_02"](../../../../figures/ifctriangulatedfaceset_02.png "Figure 3 &mdash; Triangulated face set with normals")
 
-> NOTE&nbsp; Using corresponding lists of points and normals allows to use only a single list of indices into both at the expense of having non-unique collections of vertices.
+> NOTE  Using corresponding lists of points and normals allows to use only a single list of indices into both at the expense of having non-unique collections of vertices.
 
 Figure 4 shows the use of _IfcTriangulatedFaceSet_ without annotation. The diagram of the _IfcTriangulatedFaceSet_ represents the indices and the ordered list into which the indices point. The index starts with 1 (indexed as 1 to N), if the greatest index in _CoordIndex_ in N, then the _IfcCartesianPointList_ shall have N lists of 3:3 coordinates.
 
@@ -49,9 +49,9 @@ IfcCartesianPointList3D:
 ((0.,0.,0.), (1.,0.,0.), (1.,1.,0.), (0.,1.,0.), (0.,0.,2.), (1.,0.,2.), (1.,1.,2.), (0.,1.,2.))
 ```
 
-> NOTE&nbsp; The definition of _IfcTriangulatedFaceSet_ is based on the **indexedFaceSet** and **indexedTriangleSet** defined in ISO/IEC 19775-1. The use of _PnIndex_ has been adopted from **triangulated_surface_set** defined in ISO-10303-42.
+> NOTE  The definition of _IfcTriangulatedFaceSet_ is based on the **indexedFaceSet** and **indexedTriangleSet** defined in ISO/IEC 19775-1. The use of _PnIndex_ has been adopted from **triangulated_surface_set** defined in ISO-10303-42.
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 { .spec-head}
 Informal Propositions:
@@ -74,7 +74,7 @@ Two-dimensional list for the indexed-based triangles, where
 * The first dimension represents the triangles (from 1 to N)
 * The second dimension has exactly three values representing the indices to three vertex points (from 1 to 3).
 
-> NOTE&nbsp; The coordinates of the vertices are provided by the indexed list of _SELF\IfcTessellatedFaceSet.Coordinates.CoordList_.
+> NOTE  The coordinates of the vertices are provided by the indexed list of _SELF\IfcTessellatedFaceSet.Coordinates.CoordList_.
 
 ### PnIndex
 The list of integers defining the locations in the _IfcCartesianPointList3D_ to obtain the point coordinates for the indices withint the _CoordIndex_. If the _PnIndex_ is not provided the indices point directly into the _IfcCartesianPointList3D_.

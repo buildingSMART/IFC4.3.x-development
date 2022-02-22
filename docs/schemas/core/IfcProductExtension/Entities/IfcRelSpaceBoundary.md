@@ -40,7 +40,7 @@ Differentiation between physical and virtual space boundary is illustrated in Fi
 
 As shown in Figure 5, if the _IfcRelSpaceBoundary_ is used to express a virtual boundary, the attribute _PhysicalOrVirtualBoundary_ has to be set to VIRTUAL. The attribute _RelatedBuildingElement_ shall point to an instance of _IfcVirtualElement_. If the correct location is of interest, the attribute _ConnectionGeometry_ is required.
 
-> NOTE&nbsp; The connection geometry, either by a 2D curve or a 3D surface, is used to describe the portion of the "virtual wall" that separates the two spaces. All instances of _IfcRelSpaceBoundary_ given at the adjacent spaces share the same instance of _IfcVirtualElement_. Each instance of _IfcRelSpaceBoundary_ provides in addition the _ConnectionGeometry_ given within the local placement of each space.
+> NOTE  The connection geometry, either by a 2D curve or a 3D surface, is used to describe the portion of the "virtual wall" that separates the two spaces. All instances of _IfcRelSpaceBoundary_ given at the adjacent spaces share the same instance of _IfcVirtualElement_. Each instance of _IfcRelSpaceBoundary_ provides in addition the _ConnectionGeometry_ given within the local placement of each space.
 
 !["IfcRelSpaceBoundary_virtual (35K)"](../../../../figures/ifcrelspaceboundary_virtual.png "Figure 5 &mdash; Space boundary of virtual element")
 
@@ -50,9 +50,9 @@ As shown in Figure 6, if the _IfcRelSpaceBoundary_ is used to express a physical
 
 The _IfcRelSpaceBoundary_ may have geometry attached. If geometry is not attached, the relationship between space and building element is handled only on a logical level. If geometry is attached, it is given within the local coordinate systems of the space.
 
-> NOTE&nbsp; The attributes _CurveOnRelatingElement_ at _IfcConnectionCurveGeometry_ or _SurfaceOnRelatingElement_ at _IfcConnectionSurfaceGeometry_ provide the geometry within the local coordinate system of the _IfcSpace_, whereas the attributes _CurveOnRelatedElement_ at _IfcConnectionCurveGeometry_ or _SurfaceOnRelatedElement_ at _IfcConnectionSurfaceGeometry_ provide the geometry within the local coordinate system of the subtype of _IfcElement_
+> NOTE  The attributes _CurveOnRelatingElement_ at _IfcConnectionCurveGeometry_ or _SurfaceOnRelatingElement_ at _IfcConnectionSurfaceGeometry_ provide the geometry within the local coordinate system of the _IfcSpace_, whereas the attributes _CurveOnRelatedElement_ at _IfcConnectionCurveGeometry_ or _SurfaceOnRelatedElement_ at _IfcConnectionSurfaceGeometry_ provide the geometry within the local coordinate system of the subtype of _IfcElement_
 
-> NOTE&nbsp; In most view definitions the connection geometry for the related _IfcElement_ is not provided.
+> NOTE  In most view definitions the connection geometry for the related _IfcElement_ is not provided.
 
 The geometric representation (through the _ConnectionGeometry_ attribute) is defined using either 2D curve geometry or 3D surface geometry for space boundaries. In most view definitions the 3D connection surface geometry is required.
 
@@ -89,7 +89,7 @@ The following constraints apply to the 2D curve representation:
 
 * Curve: _IfcPolyline_, _IfcTrimmedCurve_ or _IfcCompositeCurve_
 
-> HISTORY&nbsp; New entity in IFC1.5, the entity has been modified in IFC2x.
+> HISTORY  New entity in IFC1.5, the entity has been modified in IFC2x.
 
 { .change-ifc2x}
 > IFC2x CHANGE The data type of the attribute_RelatedBuildingElement_ has been changed from _IfcBuildingElement_ to its supertype _IfcElement_. The data type of the attribute _ConnectionGeometry_ has been changed from _IfcConnectionSurfaceGeometry_ to its supertype _IfcConnectionGeometry_.
@@ -105,15 +105,15 @@ Reference to one spaces that is delimited by this boundary.
 ### RelatedBuildingElement
 Reference to ~~Building~~ Element, that defines the Space Boundaries.
 { .change-ifc2x}
-> IFC2x CHANGE&nbsp; The data type has been changed from _IfcBuildingElement_ to _IfcElement_ with upward compatibility for file based exchange.
+> IFC2x CHANGE  The data type has been changed from _IfcBuildingElement_ to _IfcElement_ with upward compatibility for file based exchange.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; The attribute has been changed to be mandatory.
+> IFC4 CHANGE  The attribute has been changed to be mandatory.
 
 ### ConnectionGeometry
 Physical representation of the space boundary. Provided as a **curve or** surface given within the LCS of the space.
 { .change-ifc2x}
-> IFC2x CHANGE&nbsp; The data type has been changed from _IfcConnectionSurfaceGeometry_ to _IfcConnectionGeometry_ with upward compatibility for file based exchange.
+> IFC2x CHANGE  The data type has been changed from _IfcConnectionSurfaceGeometry_ to _IfcConnectionGeometry_ with upward compatibility for file based exchange.
 
 ### PhysicalOrVirtualBoundary
 Defines, whether the Space Boundary is physical (Physical) or virtual (Virtual).

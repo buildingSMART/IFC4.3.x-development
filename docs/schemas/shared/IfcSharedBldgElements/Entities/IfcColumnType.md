@@ -11,7 +11,7 @@ It is used to define a column specification, or column style (i.e. the specific 
 
 Occurrences of the _IfcColumnType_ within building models are represented by instances of _IfcColumnStandardCase_ if the _IfcColumnType_ has a single associated _IfcMaterialProfileSet_; otherwise they are represented by instances of _IfcColumn_. Occurrences of the _IfcColumnType_ within structural analysis models are represented by instances of _IfcStructuralCurveMember_, or its applicable subtypes.
 
-> HISTORY&nbsp; New entity in IFC2x2.
+> HISTORY  New entity in IFC2x2.
 
 ## Attributes
 

@@ -6,4 +6,4 @@ Usually measured in Volts (V, W/A).
 
 Type: REAL
 
-> HISTORY&nbsp; New type in IFC2.0.
+> HISTORY  New type in IFC2.0.

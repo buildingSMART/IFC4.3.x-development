@@ -29,9 +29,9 @@ The following table states the RGB values associated with the names given by the
 
 If the colour name is 'by layer', colour values obtained from IfcPresentationLayerWithStyle.
 
-> NOTE&nbsp; Corresponding ISO 10303 name: draughting_pre_defined_colour. Please refer to ISO/IS 10303-202:1994 page 194 for the final definition of the formal standard.
+> NOTE  Corresponding ISO 10303 name: draughting_pre_defined_colour. Please refer to ISO/IS 10303-202:1994 page 194 for the final definition of the formal standard.
 
-> HISTORY&nbsp; New entity in IFC2x2.
+> HISTORY  New entity in IFC2x2.
 
 { .spec-head}
 Informal Propositions:

@@ -9,7 +9,7 @@ The building element type **IfcRailingType** defines commonly shared information
 
 It is used to define a railing type specification indicating the specific product information that is common to all occurrences of that product type. The **IfcRailingType** may be declared within _IfcProject_ or _IfcProjectLibrary_ using _IfcRelDeclares_ and may be exchanged with or without occurrences of the type. Occurrences of **IfcRailingType** are represented by instances of _IfcRailing_. Refer to the documentation at _IfcRailing_ for supported property sets, materials, and composition.
 
-> HISTORY&nbsp; New entity in IFC2x2.
+> HISTORY  New entity in IFC2x2.
 
 ## Attributes
 

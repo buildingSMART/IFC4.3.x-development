@@ -4,7 +4,7 @@ _IfcVirtualGridIntersection_ defines the derived location of the intersection be
 
 The two intersecting axes (_IntersectingAxes_) define the intersection point, which exact location (in terms of the Cartesian point representing the intersection) has to be calculated from the geometric representation of the two participating curves.
 
-> NOTE&nbsp; The _IfcGrid_ local placement, that can be provided relative to the local placement of another spatial structure element, has to be taken into account for calculating the absolute placement of the _IfcVirtualGridIntersection_. Where rules and informal rules ensure, that the _IntersectingAxes_ belong to the same _IfcGrid_
+> NOTE  The _IfcGrid_ local placement, that can be provided relative to the local placement of another spatial structure element, has to be taken into account for calculating the absolute placement of the _IfcVirtualGridIntersection_. Where rules and informal rules ensure, that the _IntersectingAxes_ belong to the same _IfcGrid_
 
 Offset values may be given (_OffsetDistances_). If given, the position within the list of _OffsetDistances_ corresponds with the position within the list of _IntersectingAxes_. Therefore:
 
@@ -38,10 +38,10 @@ Figure 3 illustrates an example of a negative offset where the figure shows the 
  * <em>IntersectingAxes[1].SameSense</em> = TRUE.
  * <em>OffsetDistances[1]</em> is a negative length measure
 
-> HISTORY&nbsp; New entity in IFC1.5.
+> HISTORY  New entity in IFC1.5.
 
 { .change-ifc2x}
-> IFC2x CHANGE&nbsp; Renamed from IfcConstraintRelIntersection.
+> IFC2x CHANGE  Renamed from IfcConstraintRelIntersection.
 
 { .spec-head}
 Informal Propositions:

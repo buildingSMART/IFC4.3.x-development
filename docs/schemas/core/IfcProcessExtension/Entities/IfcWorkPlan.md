@@ -2,7 +2,7 @@
 
 An _IfcWorkPlan_ represents work plans in a construction or a facilities management project.
 
-> HISTORY&nbsp; New entity in IFC2.0
+> HISTORY  New entity in IFC2.0
 
 A work plan contains a set of work schedules for different purposes (including construction and facilities management). Contained work schedules are defined through the _IfcRelAggregates_ relationship. Through inheritance from _IfcWorkControl_ it is also possible to define references to activities (for example, _IfcTask_) and resources used in the work plan.
 

@@ -6,13 +6,13 @@ The overall width of the profile is implicitly given by the maximum of the botto
 
 _IfcAsymmetricIShapeProfileDef_ can also be used to model rail profiles if the application scenario does not require a full explicit shape model of the rail profile. Alternatively, _IfcArbitraryClosedProfileDef_ can be used to provide the exact shape of rail profiles. Either way, a reference to an external document or library should be provided to further define the profile as described at _IfcProfileDef_.
 
-> HISTORY&nbsp; New entity in IFC2x2.
+> HISTORY  New entity in IFC2x2.
 
 { .change-ifc2x3}
-> IFC2x3 CHANGE&nbsp; All profile origins are now in the center of the bounding box. The attribute _CentreOfGravityInY_ has been made OPTIONAL.
+> IFC2x3 CHANGE  All profile origins are now in the center of the bounding box. The attribute _CentreOfGravityInY_ has been made OPTIONAL.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Supertype changed from _IfcIShapeProfileDef_ to _IfcParameterizedProfileDef_. Attributes which were inherited from _IfcIShapeProfileDef_ are now defined directly at _IfcAsymmetricIShapeProfileDef_ and have been partially renamed but were not reordered.  
+> IFC4 CHANGE  Supertype changed from _IfcIShapeProfileDef_ to _IfcParameterizedProfileDef_. Attributes which were inherited from _IfcIShapeProfileDef_ are now defined directly at _IfcAsymmetricIShapeProfileDef_ and have been partially renamed but were not reordered.  
 > Bottom flange may be narrower than top flange.  
 > Type of _TopFlangeFilletRadius_ relaxed to allow for zero radius.  
 > Trailing attribute _CentreOfGravityInY_ deleted, use respective property in _IfcExtendedProfileProperties_ instead.  

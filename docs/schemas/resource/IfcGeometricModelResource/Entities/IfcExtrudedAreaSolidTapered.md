@@ -2,7 +2,7 @@
 
 _IfcExtrudedAreaSolidTapered_ is defined by sweeping a cross section along a linear spine. The cross section may change along the sweep from the shape of the start cross section into the shape of the end cross section. The resulting solid is bounded by three or more faces: A start face, an end face (each defined by start and end planes and sections), and one or more lateral faces. Each lateral face is a ruled surface defined by a pair of corresponding edges of the start and end section.
 
-> NOTE&nbsp; Given that the start and end section is provided by a polygon, the corresponding vertices of the start and end cross section are connected, forming a quadrilateral polygon between each pair of corresponding vertices. The surface defined by the bounding quadrilateral polygon is a ruled surface, that could be approximated by triangulation.
+> NOTE  Given that the start and end section is provided by a polygon, the corresponding vertices of the start and end cross section are connected, forming a quadrilateral polygon between each pair of corresponding vertices. The surface defined by the bounding quadrilateral polygon is a ruled surface, that could be approximated by triangulation.
 
 The linear spine is defined by:
 
@@ -39,7 +39,7 @@ In case of Cartesian transformation of the start cross section the shape is cons
     * Rotation is _EndSweptArea\IfcDerivedProfileDef.Operator.Axis1_ 
 * Corresponding vertices of the start and end cross section are connected. Lateral faces are constructed as ruled surfaces between corresponding edges of start and end cross section.
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 { .spec-head}
 Informal Propositions:

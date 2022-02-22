@@ -18,7 +18,7 @@ Then the parameterization of the composite curve is:
 
 * _IfcCompositeCurve_ with 0. &le; T &le; 1. (line segment) and 1. &le; T &le; 91. (arc segment), parametric length = 91.
 
-&nbsp;
+ 
 
 { .extDef}
 > NOTE Definition according to ISO 10303-42:  
@@ -37,9 +37,9 @@ Then the parameterization of the composite curve is:
 
 
 > 
-> NOTE&nbsp; Entity adapted from **composite_curve** defined in ISO 10303-42.
+> NOTE  Entity adapted from **composite_curve** defined in ISO 10303-42.
 
-> HISTORY&nbsp; New entity in IFC1.0
+> HISTORY  New entity in IFC1.0
 
 { .spec-head}
 Informal Propositions:

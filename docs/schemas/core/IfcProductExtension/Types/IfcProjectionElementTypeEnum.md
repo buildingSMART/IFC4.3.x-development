@@ -2,9 +2,9 @@
 
 This enumeration defines the basic types of projection elements.
 
-> NOTE&nbsp; Currently no predefined are defined.
+> NOTE  Currently no predefined are defined.
 
-> HISTORY&nbsp; New enumeration in IFC4.
+> HISTORY  New enumeration in IFC4.
 
 ## Items
 

@@ -26,24 +26,24 @@ Figure 3 &mdash; Path connection L-Type
 
 Figure 3 illustrates using the <em>IfcRelConnectsPathElements</em> for a "L" type connection between two instances of <em>IfcWallStandardCase</em>.
 
-> NOTE&nbsp; The two wall axes connect in each case.
+> NOTE  The two wall axes connect in each case.
 
-> HISTORY&nbsp; New entity in IFC1.5.
+> HISTORY  New entity in IFC1.5.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; The data type of _RelatingPriorities_ and _RelatedPriorities_ are restricted to a range o [0..100] to be a normalized ratio measure.
+> IFC4 CHANGE  The data type of _RelatingPriorities_ and _RelatedPriorities_ are restricted to a range o [0..100] to be a normalized ratio measure.
 
 ## Attributes
 
 ### RelatingPriorities
 Overriding priorities at this connection. It overrides the standard priority given at the wall layer provided by _IfcMaterialLayer_._Priority_. The list of _RelatingProperties_ corresponds to the list of _IfcMaterialLayerSet_._MaterialLayers_ of the element referenced by _RelatingObject_.
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Data type changed to NUMBER and usage to hold a normalized ratio measure [0..1].
+> IFC4 CHANGE  Data type changed to NUMBER and usage to hold a normalized ratio measure [0..1].
 
 ### RelatedPriorities
 Overriding priorities at this connection. It overrides the standard priority given at the wall layer provided by _IfcMaterialLayer_._Priority_. The list of _RelatedProperties_ corresponds to the list of _IfcMaterialLayerSet_._MaterialLayers_ of the element referenced by _RelatedObject_.
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Data type changed to NUMBER and usage to hold a normalized ratio measure [0..1].
+> IFC4 CHANGE  Data type changed to NUMBER and usage to hold a normalized ratio measure [0..1].
 
 ### RelatedConnectionType
 Indication of the connection type in relation to the path of the _RelatingObject_.

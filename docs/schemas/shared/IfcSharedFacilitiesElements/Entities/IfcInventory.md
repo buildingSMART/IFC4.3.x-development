@@ -8,10 +8,10 @@ There are a number of actors that can be associated with an inventory, each acto
   
 There are a number of costs that can be associated with an inventory, each cost having a role. These are specified through the _CurrentValue_ and _OriginalValue_ attributes.
 
-> HISTORY&nbsp; New entity in IFC2.0.
+> HISTORY  New entity in IFC2.0.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; All attributes optional, Where Rule removed.
+> IFC4 CHANGE  All attributes optional, Where Rule removed.
 
 ## Attributes
 

@@ -12,10 +12,10 @@ Figure 1 illustrates the panel applied to the position within the lining, as def
 
 !["covering"](../../../../figures/ifcpermeablecoveringproperties.gif "Figure 1 &mdash; Permeable covering properties")
 
-> HISTORY&nbsp; New entity in IFC2.0, it had been renamed from _IfcPermeableCovering_ in IFC2x.
+> HISTORY  New entity in IFC2.0, it had been renamed from _IfcPermeableCovering_ in IFC2x.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Supertype changed to new _IfcPreDefinedPropertySet_.
+> IFC4 CHANGE  Supertype changed to new _IfcPreDefinedPropertySet_.
 
 ## Attributes
 

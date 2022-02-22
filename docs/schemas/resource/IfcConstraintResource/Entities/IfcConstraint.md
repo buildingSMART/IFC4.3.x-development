@@ -10,10 +10,10 @@ A constraint must have a name applied through the _IfcConstraint.Name_ attribute
 
 A constraint may also have additional external information (such as classification or document information) associated to it by _IfcExternalReferenceRelationship_, accessible through inverse attribute _IfcConstraint.HasExternalReferences_
 
-> HISTORY&nbsp; New entity in IFC2.0
+> HISTORY  New entity in IFC2.0
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; CreationTime changed to IfcDateTime for ISO 8601 representation, HasExternalReferences new inverse attribute.
+> IFC4 CHANGE  CreationTime changed to IfcDateTime for ISO 8601 representation, HasExternalReferences new inverse attribute.
 
 ## Attributes
 

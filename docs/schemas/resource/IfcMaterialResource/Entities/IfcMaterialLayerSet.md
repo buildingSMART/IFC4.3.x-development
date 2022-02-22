@@ -9,10 +9,10 @@ The Material Layer Set Base (MlsBase) describes the imaginary axis along which t
 
 > EXAMPLE A cavity brick wall would be modeled as _IfcMaterialLayerSet_ consisting of three _IfcMaterialLayer_'s: brick, air cavity and brick. The air gap is identified by the _IsVentilated_ flag at _IfcMaterialLayer_.
 
-> HISTORY&nbsp; New entity in IFC1.0
+> HISTORY  New entity in IFC1.0
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Subtyped from _IfcMaterialDefinition_, the attribute _Description_ has been added at the end of attribute list.
+> IFC4 CHANGE  Subtyped from _IfcMaterialDefinition_, the attribute _Description_ has been added at the end of attribute list.
 
 { .use-head}
 Attribute use definition
@@ -32,7 +32,7 @@ The name by which the _IfcMaterialLayerSet_ is known.
 ### Description
 Definition of the _IfcMaterialLayerSet_ in descriptive terms.
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; The attribute has been added at the end of attribute list.
+> IFC4 CHANGE  The attribute has been added at the end of attribute list.
 
 ### TotalThickness
 Total thickness of the material layer set is derived from the function _IfcMlsTotalThickness._

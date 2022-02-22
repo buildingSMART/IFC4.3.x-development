@@ -6,10 +6,10 @@ Distribution ports are used for passage of solid, liquid, or gas substances, as 
 
 Ports are assigned the distribution systems in order to indicate its role in a particular system, e.g. cold water inlet.
 
-> HISTORY&nbsp; New entity in IFC2x2
+> HISTORY  New entity in IFC2x2
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Ports are now related to products and product types using the _IfcRelNests_ relationship; use of _IfcRelConnectsPortToElement_ is now reserved for dynamically attached ports (such as drilling a hole in a tank).
+> IFC4 CHANGE  Ports are now related to products and product types using the _IfcRelNests_ relationship; use of _IfcRelConnectsPortToElement_ is now reserved for dynamically attached ports (such as drilling a hole in a tank).
 
 ## Attributes
 

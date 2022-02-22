@@ -13,7 +13,7 @@ The following definitions from ISO/IEC 19775-1 X3D Architecture and base compone
     4. Four-component images specify the alpha opacity byte after red/green/blue (e.g., 0x0000FF80 is semi-transparent blue). A value of 00 is completely transparent, FF is completely opaque, 80 is semi-transparent. 
 * <font size="-1">Note that alpha equals (1.0 -transparency), if alpha and transparency each range from 0.0 to 1.0.</font>
 
-> HISTORY&nbsp; New entity in IFC2x2.
+> HISTORY  New entity in IFC2x2.
 
 ## Attributes
 
@@ -29,7 +29,7 @@ Indication whether the pixel values contain a 1, 2, 3, or 4 colour component.
 ### Pixel
 Flat list of hexadecimal values, each describing one pixel by 1, 2, 3, or 4 components.
 { .change-ifc2x3}
-> IFC2x3 CHANGE&nbsp; The data type has been changed from STRING to BINARY.
+> IFC2x3 CHANGE  The data type has been changed from STRING to BINARY.
 
 ## Formal Propositions
 

@@ -16,12 +16,12 @@ coordinate system. The values for <em>XLength</em>, <em>YLength</em>, and <em>ZL
 direction of the X, Y, and Z axis.
 
 { .extDef}
-> NOTE&nbsp; Definition according to ISO 10303-42
+> NOTE  Definition according to ISO 10303-42
 > A block is a type of geometric representation item which is a solid rectangular parallelepiped, defined with a location and placement coordinate system. The block is specified by the positive lengths x, y, and z along the axes of the placement coordinate system, and has one vertex at the origin of the placement coordinate system.
 
-> NOTE&nbsp; Entity adapted from **block** defined in ISO 10303-42.
+> NOTE  Entity adapted from **block** defined in ISO 10303-42.
 
-> HISTORY&nbsp; New entity in IFC2x3.
+> HISTORY  New entity in IFC2x3.
 
 { .use-head}
 Texture definition
@@ -30,7 +30,7 @@ On each side face, textures are aligned facing upright. On the top and bottom fa
 
 Figure 2 illustrates default texture mapping with a clamped texture (RepeatS=False and RepeatT=False). The image on the left shows the texture where the S axis points to the right and the T axis points up. The image on the right shows the texture applied to the geometry where the X axis points back to the right, the Y axis points back to the left, and the Z axis points up.
 
-&nbsp;
+ 
 
 { .gridtable}
 

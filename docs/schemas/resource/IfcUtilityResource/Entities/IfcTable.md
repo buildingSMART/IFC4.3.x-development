@@ -12,10 +12,10 @@ Figure 2 depicts how tables were structured prior to IFC4.
 
 !["Table use alternative"](../../../../figures/ifctable_image2.gif "Figure 2 &mdash; Table use alternative")
 
-> HISTORY&nbsp; New entity in IFC1.5.
+> HISTORY  New entity in IFC1.5.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Columns attribute added.
+> IFC4 CHANGE  Columns attribute added.
 
 ## Attributes
 

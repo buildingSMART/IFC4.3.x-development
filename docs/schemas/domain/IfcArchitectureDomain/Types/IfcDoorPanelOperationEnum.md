@@ -6,12 +6,12 @@ The opening direction of the door panels is given by the local placement of the 
 
 !["panel direction"](../../../../figures/ifcdoorpaneloperationenum-fig10.gif "Figure 2 &mdash; Door panel operations")
 
-> NOTE&nbsp; Figures (symbolic representation) depend on the national building code. These figures/ are only shown as illustrations
+> NOTE  Figures (symbolic representation) depend on the national building code. These figures/ are only shown as illustrations
 
-> HISTORY&nbsp; New enumeration in IFC2.0.
+> HISTORY  New enumeration in IFC2.0.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Enumerator FIXEDPANEL added.
+> IFC4 CHANGE  Enumerator FIXEDPANEL added.
 
 ## Items
 

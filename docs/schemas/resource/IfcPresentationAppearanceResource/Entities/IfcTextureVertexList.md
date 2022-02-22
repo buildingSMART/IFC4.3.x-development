@@ -5,9 +5,9 @@ The _IfcTextureVertexList_ defines an ordered collection of texture vertices. Ea
 * first dimension is an unbounded list representing each texture vertex; 
 * second dimension is a fixed list of two list members, where [1] is the S-coordinate, and [2] the T-coordinate of the texture vertex. 
 
-> NOTE&nbsp; The _IfcTextureVertexList_ is introduced to provide a compact representation of an indexable representation of texture coordinates for texture maps in tessellated items.
+> NOTE  The _IfcTextureVertexList_ is introduced to provide a compact representation of an indexable representation of texture coordinates for texture maps in tessellated items.
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 ## Attributes
 

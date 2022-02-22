@@ -4,7 +4,7 @@ A time series is a set of a time-stamped data entries. It allows a natural assoc
 
 The modeling of buildings and their performance involves data that are generated and recorded over a period of time. Such data cover a large spectrum, from weather data to schedules of all kinds to status measurements to reporting to everything else that has a time related aspect. Their correct placement in time is essential for their proper understanding and use, and the _IfcTimeSeries_ subtypes provide the appropriate data structures to accommodate these types of data.
 
-> HISTORY&nbsp; New entity in IFC2x2.
+> HISTORY  New entity in IFC2x2.
 
 ## Attributes
 

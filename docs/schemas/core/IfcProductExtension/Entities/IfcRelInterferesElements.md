@@ -26,7 +26,7 @@ The _InterferenceType_ property optionally specifies the type of interference be
   * Clash: The _RelatingElement_ and _RelatedElement_ have a spatial or shape-based clash
   * Along: The _RelatingElement_ and _RelatedElement_ have a common frontier/surface
  
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 ## Attributes
 

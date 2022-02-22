@@ -16,7 +16,7 @@ The _IfcCompositeCurveOnSurface_ is a collection of segments, based on p-curves.
 { .note}
 > Entity adapted from **composite_curve_on_surface** defined in ISO 10303-42.
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 ## Attributes
 

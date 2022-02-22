@@ -4,4 +4,4 @@ _IfcResourceSelect_ provides the option to either select a resource occurrence,
 
 > HISTORY  New select type in IFC4.
 
-&nbsp;
+ 

@@ -7,7 +7,7 @@ The realtime data tracked by performance history takes the form of property sets
 #### Declaration use definition
 _IfcPerformanceHistory_ may be declared within a project using _IfcRelDeclares_ where _RelatingContext_ refers to the _IfcProject_ and _RelatedDefinitions_ includes the _IfcPerformanceHistory_. Default units (used for property sets) are indicated by the declaring project. Only top-level objects are declared; nested performance history objects (through _IfcRelNests_) do not participate in such relationship.
 
-> HISTORY&nbsp; New entity in IFC2x2.
+> HISTORY  New entity in IFC2x2.
 
 ## Attributes
 

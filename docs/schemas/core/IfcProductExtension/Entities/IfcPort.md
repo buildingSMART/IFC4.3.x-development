@@ -8,14 +8,14 @@ An instance of _IfcElement_ may have one or more points at which it connects to 
 
 The local placement for _IfcPort_ is defined in its supertype _IfcProduct_. It is defined by the _IfcLocalPlacement_, which defines the local coordinate system that is referenced by all geometric representations. The _PlacementRelTo_ relationship of _IfcLocalPlacement_ shall point to the local placement of the master _IfcElement_ or _IfcElementType_ (relevant subtypes), which is related to the _IfcPort_ by the relationship object _IfcRelNests_ for fixed ports, or _IfcRelConnectsPortToElement_ for dynamic ports.
 
-> HISTORY&nbsp; New entity in IFC2x2.
+> HISTORY  New entity in IFC2x2.
 
 ## Attributes
 
 ### ContainedIn
 Reference to the element to port connection relationship. The relationship then refers to the element in which this port is contained.
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; The cardinality has been changed from 1:1 to 0:1. IFC4 DEPRECATION&nbsp; The inverse relationship is deprecated for fixed ports due to deprecation of _IfcRelConnectsPortToElement_ for this usage. Use inverse relationship _Nests_ instead.
+> IFC4 CHANGE  The cardinality has been changed from 1:1 to 0:1. IFC4 DEPRECATION  The inverse relationship is deprecated for fixed ports due to deprecation of _IfcRelConnectsPortToElement_ for this usage. Use inverse relationship _Nests_ instead.
 
 ### ConnectedFrom
 Reference to a port that is connected by the objectified relationship.

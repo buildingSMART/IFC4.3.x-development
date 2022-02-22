@@ -13,16 +13,16 @@ Other usages of _IfcBuiltElementProxy_ include:
 * The _IfcBuiltElementProxy_ can be used to exchange special types of building elements for which the current specification does not yet provide a semantic definition.
 * The _IfcBuiltElementProxy_ can also be used to represent building elements for which the participating applications can not provide a semantic definition.
 
-> HISTORY&nbsp; New entity in IFC2x.
+> HISTORY  New entity in IFC2x.
 
 ## Attributes
 
 ### PredefinedType
 Predefined generic type for a building element proxy that is specified in an enumeration. There may be a property set given specifically for the predefined types.
-> NOTE&nbsp; The _PredefinedType_ shall only be used, if no _IfcBuiltElementProxyType_ is assigned, providing its own _IfcBuiltElementProxyType.PredefinedType_.
+> NOTE  The _PredefinedType_ shall only be used, if no _IfcBuiltElementProxyType_ is assigned, providing its own _IfcBuiltElementProxyType.PredefinedType_.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; The attribute _CompositionType_ has been replaced by _PredefinedType_, being a superset of the enumerators.
+> IFC4 CHANGE  The attribute _CompositionType_ has been replaced by _PredefinedType_, being a superset of the enumerators.
 
 ## Formal Propositions
 

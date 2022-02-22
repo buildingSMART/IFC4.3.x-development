@@ -12,9 +12,9 @@ The standard beam, _IfcBeamStandardCase_, defines a beam with certain constraint
     * the sweeping operation can be linear extrusion, circular rotation, or a sweep along a directrix
     * the start profile, or set of profiles can be swept unchanged, or might be changed uniformly by a taper definition 
 *  
->> NOTE&nbsp; View definitions and implementer agreements may further constrain the applicable geometry types, e.g. by excluding tapering from an _IfcBeamStandardCase_ implementation. 
+>> NOTE  View definitions and implementer agreements may further constrain the applicable geometry types, e.g. by excluding tapering from an _IfcBeamStandardCase_ implementation. 
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 **_Geometric Representations_**
 
@@ -23,7 +23,7 @@ The geometric representation of _IfcBeamStandardCase_ is defined using the follo
 * **Axis**: A three dimensional open curve (subtype of _IfcBoundedCurve_) defining the axis for the standard beam. The cardinal point is determined by the beam axis.
 * **Body**: A Swept Solid Representation or a CSG clipping representation defining the 3D shape of the standard beam.
 
-> NOTE&nbsp; It is invalid to exchange a 'SurfaceModel', 'Brep', or 'MappedRepresentation' representation for the 'Body' shape representation of an _IfcBeamStandardCase_.
+> NOTE  It is invalid to exchange a 'SurfaceModel', 'Brep', or 'MappedRepresentation' representation for the 'Body' shape representation of an _IfcBeamStandardCase_.
 
 ## Formal Propositions
 

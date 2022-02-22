@@ -2,7 +2,7 @@
 
 The window lining is the outer frame which enables the window to be fixed in position. The window lining is used to hold the window panels or other casements. The parameter of the _IfcWindowLiningProperties_ define the geometrically relevant parameter of the lining.
 
-> NOTE&nbsp; The _IfcWindowLiningProperties_ shall only be applied to construct the 3D shape of a window, if the attribute _IfcWindowType_.ParameterTakesPrecedence is set TRUE.
+> NOTE  The _IfcWindowLiningProperties_ shall only be applied to construct the 3D shape of a window, if the attribute _IfcWindowType_.ParameterTakesPrecedence is set TRUE.
 
 The _IfcWindowLiningProperties_ are included in the set of properties of _IfcWindowStyle.HasPropertySets_. More information about the window lining can be included in the same set of the _IfcWindowType_ using another _IfcPropertySet_ for dynamic extensions.
 
@@ -18,10 +18,10 @@ The _IfcWindowLiningProperties_ does not hold a geometric representation. Howeve
 
 Table 1 &mdash; Window lining properties
 
-> HISTORY&nbsp; New entity in IFC2.0. Has been renamed from _IfcWindowLining_ in IFC2x.
+> HISTORY  New entity in IFC2.0. Has been renamed from _IfcWindowLining_ in IFC2x.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; The following attributes have been added _LiningOffset_, _LiningToPanelOffsetX_, _LiningToPanelOffsetY_. The attribute _ShapeAspectStyle_ is deprecated and shall no longer be used. Supertype changed to new _IfcPreDefinedPropertySet_.
+> IFC4 CHANGE  The following attributes have been added _LiningOffset_, _LiningToPanelOffsetX_, _LiningToPanelOffsetY_. The attribute _ShapeAspectStyle_ is deprecated and shall no longer be used. Supertype changed to new _IfcPreDefinedPropertySet_.
 
 ## Attributes
 
@@ -31,19 +31,19 @@ Depth of the window lining (dimension measured perpendicular to window elevation
 ### LiningThickness
 Thickness of the window lining as explained in the figure above. If _LiningThickness_ value is 0. (zero) it denotes a window without a lining (all other lining parameters shall be set to NIL in this case). If the _LiningThickness_ is NIL it denotes that the value is not available.
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Data type modified to be _IfcNonNegativeLengthMeasure_.
+> IFC4 CHANGE  Data type modified to be _IfcNonNegativeLengthMeasure_.
 
 ### TransomThickness
 Thickness of the transom (horizontal separator of window panels within a window), measured parallel to the window elevation plane. The transom is part of the lining and the transom depth is assumed to be identical to the lining depth.
 If the _TransomThickness_ is set to zero (and the _TransomOffset_ set to a positive length), then the window is divided vertically without a physical divider.
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Data type changed to _IfcNonNegativeLengthMeasure_.
+> IFC4 CHANGE  Data type changed to _IfcNonNegativeLengthMeasure_.
 
 ### MullionThickness
 Thickness of the mullion (vertical separator of window panels within a window), measured parallel to the window elevation plane. The mullion is part of the lining and the mullion depth is assumed to be identical to the lining depth. 
 If the _MullionThickness_ is set to zero (and the _MullionOffset_ set to a positive length), then the window is divided horizontally without a physical divider.
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Data type changed to _IfcNonNegativeLengthMeasure_.
+> IFC4 CHANGE  Data type changed to _IfcNonNegativeLengthMeasure_.
 
 ### FirstTransomOffset
 Offset of the transom centerline, measured along the z-axis of the window placement co-ordinate system. An offset value = 0.5 indicates that the transom is positioned in the middle of the window.
@@ -65,26 +65,26 @@ Optional link to a shape aspect definition, which points to the part of the geom
 ### LiningOffset
 Offset of the window lining. The offset is given as distance along the y axis of the local placement (perpendicular to the window plane).
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; New attribute added at the end of the entity definition.
+> IFC4 CHANGE  New attribute added at the end of the entity definition.
 
 ### LiningToPanelOffsetX
 Offset between the lining and the window panel measured along the x-axis of the local placement. Should be smaller or equal to the _LiningThickness_.
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; New attribute added at the end of the entity definition.
+> IFC4 CHANGE  New attribute added at the end of the entity definition.
 
 ### LiningToPanelOffsetY
 Offset between the lining and the window panel measured along the y-axis of the local placement. Should be smaller or equal to the _IfcWindowPanelProperties.PanelThickness_.
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; New attribute added at the end of the entity definition.
+> IFC4 CHANGE  New attribute added at the end of the entity definition.
 
 ## Formal Propositions
 
 ### WR31
 Either both parameter, _LiningDepth_ and _LiningThickness_ are given, or only the _LiningThickness_, then the _LiningDepth_ is variable. It is not valid to only assert the _LiningDepth_.
-> NOTE&nbsp; A _LiningDepth_ with NIL ($) value indicates a window style with a lining equal to the wall thickness.
+> NOTE  A _LiningDepth_ with NIL ($) value indicates a window style with a lining equal to the wall thickness.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Rule corrected.
+> IFC4 CHANGE  Rule corrected.
 
 ### WR32
 Either both parameter, _FirstTransomOffset_ and _SecondTransomOffset_ are given, or only the _FirstTransomOffset_, or none of both. It is not valid to only assert the _SecondTransomOffset_.
@@ -94,4 +94,4 @@ Either both parameter, _FirstMullionOffset_ and _SecondMullionOffset_ are given,
 
 ### WR34
 The _IfcWindowPanelProperties_ shall only be used in the context of an _IfcDoorType_.
-> NOTE&nbsp; The deprecated entity _IfcWindowStyle_ is applicable as well.
+> NOTE  The deprecated entity _IfcWindowStyle_ is applicable as well.

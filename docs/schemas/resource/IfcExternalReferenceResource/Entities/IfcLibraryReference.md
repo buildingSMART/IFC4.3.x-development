@@ -4,22 +4,22 @@ An _IfcLibraryReference_ is a reference into a library of information by _Locati
 
 The _ifcLibraryReference_ additionally provides the capability to handle multilingual library entries. The _Language_ attribute then holds the language tag for the language used by the strings kept in the _Name_ and the _Description_ attribute.
 
-> HISTORY&nbsp; New entity in IFC2.0.
+> HISTORY  New entity in IFC2.0.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; _Description_ and _Language_ attribute added; _ReferencedLibrary_ attribute added (reversing previous ReferenceIntoLibrary inverse relationship).
+> IFC4 CHANGE  _Description_ and _Language_ attribute added; _ReferencedLibrary_ attribute added (reversing previous ReferenceIntoLibrary inverse relationship).
 
 ## Attributes
 
 ### Description
 Additional description provided for the library reference.
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; New attribute added at the end of the attribute list.
+> IFC4 CHANGE  New attribute added at the end of the attribute list.
 
 ### Language
 The language in which a library reference is expressed.
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; New attribute added at the end of the attribute list.
+> IFC4 CHANGE  New attribute added at the end of the attribute list.
 
 ### ReferencedLibrary
 The library information that is being referenced.
@@ -27,4 +27,4 @@ The library information that is being referenced.
 ### LibraryRefForObjects
 The library reference with which objects are associated.
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; New inverse attribute.
+> IFC4 CHANGE  New inverse attribute.

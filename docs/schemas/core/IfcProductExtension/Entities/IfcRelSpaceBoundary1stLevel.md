@@ -9,16 +9,16 @@ The 1st level space boundary defines the physical or virtual delimiter of a spac
 
 1st level space boundaries define a space by its boundary surfaces without taking anything on the other side of the bounding elements into account.
 
-> NOTE&nbsp; 1st level space boundaries are used e.g. in quantity take-off and facility management as they describe the surfaces for finishes. They cannot be directly used for thermal analysis. However 1st level space boundaries can provide the input to preprocessors to thermal analysis software that take 1st level space boundaries and perform the necessary transformation into 2nd level space boundaries that are required for energy analysis.
+> NOTE  1st level space boundaries are used e.g. in quantity take-off and facility management as they describe the surfaces for finishes. They cannot be directly used for thermal analysis. However 1st level space boundaries can provide the input to preprocessors to thermal analysis software that take 1st level space boundaries and perform the necessary transformation into 2nd level space boundaries that are required for energy analysis.
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 { .use-head}
 Relationship Use Definitions
 
 As shown in Figure 1, the attribute _ParentBoundary_ with inverse _InnerBoundaries_ is provided to link the space boundaries of doors, windows, and openings to the parent boundary, such as of a wall or slab.
 
-> NOTE&nbsp; The space boundary of the parent is not cut by the inner boundary - both overlap.
+> NOTE  The space boundary of the parent is not cut by the inner boundary - both overlap.
 
 !["IfcRelSpaceBoundary1stLevel"](../../../../figures/ifcrelspaceboundary1stlevel-fig1.png "Figure 1 &mdash; Space boundary first level relationships")
 

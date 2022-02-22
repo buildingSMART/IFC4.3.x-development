@@ -3,7 +3,7 @@ IfcMaterialResource
 
 The schema _IfcMaterialResource_ contains the types and entities that are used to define materials (substances, of which products are made of). Materials are defined generically.
 
-> NOTE&nbsp; The references to the usage of materials is made from the relevant elements through the objectified relationship _IfcRelAssociatesMaterial_.
+> NOTE  The references to the usage of materials is made from the relevant elements through the objectified relationship _IfcRelAssociatesMaterial_.
 
 Material definitions are distinguished by how they apply to elements or element types and by their components (layers, profiles, parts).
 
@@ -12,7 +12,7 @@ Material designation can be made for standard element occurrences to support a l
 1. a structured set of material layers _IfcMaterialLayerSetUsage_ and how the layers relate to the reference axis or plane,
 2. a structured set of material profiles _IfcMaterialProfileSetUsage_ and how the profiles relate to the reference axis.
 
-> NOTE&nbsp; Often specific subtypes of building elements are used to have such parametric representations associated, they use the common suffix 'StandardCase', for example _IfcWallStandardCase_, or _IfcBeamStandardCase_.
+> NOTE  Often specific subtypes of building elements are used to have such parametric representations associated, they use the common suffix 'StandardCase', for example _IfcWallStandardCase_, or _IfcBeamStandardCase_.
 
 Material designation can be made for element occurrences or element types without applying a parametric meaning using
 
@@ -30,10 +30,10 @@ The following material properties and information sets can be assigned to an _If
 * Material presentation in shape models (e.g. by color, hatching, rendering);
 * Relation to the ingredients of a material composite.
 
-> HISTORY&nbsp; New schema in IFC1.0
+> HISTORY  New schema in IFC1.0
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Definition of material properties and their assignment to _IfcMaterial_ or other appropriate options in _IfcMaterialSelect_ is now fully captured by _IfcExtendedMaterialProperties_ using the general _IfcProperty_ approach. Specific predefined subtypes of _IfcMaterialProperties_ are no longer available.
+> IFC4 CHANGE  Definition of material properties and their assignment to _IfcMaterial_ or other appropriate options in _IfcMaterialSelect_ is now fully captured by _IfcExtendedMaterialProperties_ using the general _IfcProperty_ approach. Specific predefined subtypes of _IfcMaterialProperties_ are no longer available.
 
 { .deprecated}
-> DEPRECATION&nbsp; Material designation by using _IfcMaterialList_ is deprecated and should not be used. The classification of materials should not be done using _IfcMaterialClassificationRelationship_ anymore (entity type deprecated); the _IfcExternalReferenceRelationship_ in _IfcExternalReferenceResource_ schema should be used instead.
+> DEPRECATION  Material designation by using _IfcMaterialList_ is deprecated and should not be used. The classification of materials should not be done using _IfcMaterialClassificationRelationship_ anymore (entity type deprecated); the _IfcExternalReferenceRelationship_ in _IfcExternalReferenceResource_ schema should be used instead.

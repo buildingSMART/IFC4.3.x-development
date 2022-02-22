@@ -19,4 +19,4 @@ Currently not in scope are:
 *  Finite element topology 
 *  Detailed results in finite element meshes as well as stresses and strains in the structural elements. 
 
-> HISTORY&nbsp; New schema in IFC2x2.
+> HISTORY  New schema in IFC2x2.

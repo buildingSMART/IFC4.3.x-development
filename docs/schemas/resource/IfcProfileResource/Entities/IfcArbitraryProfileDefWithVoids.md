@@ -2,7 +2,7 @@
 
 The _IfcArbitraryProfileDefWithVoids_ defines an arbitrary closed two-dimensional profile with holes. It is given by an outer boundary and inner boundaries. A common usage of _IfcArbitraryProfileDefWithVoids_ is as the cross section for the creation of swept surfaces or swept solids.
 
-> HISTORY&nbsp; New entity in IFC2x.
+> HISTORY  New entity in IFC2x.
 
 { .spec-head}
 Informal Propositions:

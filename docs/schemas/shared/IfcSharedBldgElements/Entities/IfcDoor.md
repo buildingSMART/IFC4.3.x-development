@@ -2,11 +2,11 @@
 
 The door is a built element that is predominately used to provide controlled access for people, goods, animals and vehicles. It includes constructions with hinged, pivoted, sliding, and additionally revolving and folding operations.
 
-> NOTE&nbsp; Definition according to ISO 6707-1: construction for closing an opening, intended primarily for access with hinged, pivoted or sliding operation.  
+> NOTE  Definition according to ISO 6707-1: construction for closing an opening, intended primarily for access with hinged, pivoted or sliding operation.  
 
 The _IfcDoor_ defines a particular occurrence of a door inserted in the spatial context of a project. A door can:  
 * be inserted as a filler in an opening using the _IfcRelFillsElement_ relationship, then the _IfcDoor_ has an inverse attribute _FillsVoids_ provided;
->NOTE&nbsp; View definitions or implementer agreements may restrict the relationship to only include one door into one opening.
+>NOTE  View definitions or implementer agreements may restrict the relationship to only include one door into one opening.
 
 * be part of an element assembly, in general an _IfcCurtainWall_, using the _IfcRelAggregates_ relationship, then the _IfcDoor_ has an inverse attribute _Decomposes_ is provided;
 * be a "free standing" door, then the _IfcDoor_ has no inverse attributes _FillsVoids_ or _Decomposes_ provided.
@@ -14,7 +14,7 @@ The _IfcDoor_ defines a particular occurrence of a door inserted in the spatial 
 This specification provides two main representations for door occurrences:  
 
 * _IfcDoor_ used for all occurrences of doors, that have a 'Profile' shape representation defined to which a set of shape parameters for lining and framing properties apply. Additionally it requires the provision of an _IfcDoorType_ that references one _IfcDoorLiningProperties_ and one to many _IfcDoorPanelProperties_;
-> NOTE&nbsp; The entity _IfcDoorStandardCase_ has been deprecated.
+> NOTE  The entity _IfcDoorStandardCase_ has been deprecated.
 
 * _IfcDoor_ used for all other occurrences of doors, particularly for doors having only 'Brep', or 'SurfaceModel' geometry without applying shape parameters.
 
@@ -31,10 +31,10 @@ The actual parameters of the door and/or its shape are defined by the _IfcDoor_ 
     * the particular attributes for the lining by the _IfcDoorLiningProperties_
     * the particular attributes for the panels by the _IfcDoorPanelProperties_
 
-> HISTORY&nbsp; New entity in IFC1.0.
+> HISTORY  New entity in IFC1.0.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; The attributes _PredefinedType_ and _OperationType_ are added, the applicable type object has been changed to _IfcDoorType_.
+> IFC4 CHANGE  The attributes _PredefinedType_ and _OperationType_ are added, the applicable type object has been changed to _IfcDoorType_.
 
 The geometric representation of _IfcDoor_ is given by the _IfcProductDefinitionShape_, allowing multiple geometric representations. The _IfcDoor_ may get its parameter and shape from the _IfcDoorType_. If an _IfcRepresentationMap_ (a block definition) is defined for the _IfcDoorType_, then the _IfcDoor_ inserts it through the _IfcMappedItem_.  
 

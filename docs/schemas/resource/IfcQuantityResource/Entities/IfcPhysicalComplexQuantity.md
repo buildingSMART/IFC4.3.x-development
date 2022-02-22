@@ -6,10 +6,10 @@ The complex physical quantity, _IfcPhysicalComplexQuantity_, is an entity that h
 
 A section "Quantity Use Definition" at individual entities as subtypes of _IfcBuildingElement_ gives guidance to the usage of the _Name_ and _Discrimination_ attribute to characterize the complex quantities.
 
-> HISTORY&nbsp; New entity in IFC2x2 Addendum 1.
+> HISTORY  New entity in IFC2x2 Addendum 1.
 
 { .change-ifc2x2}
-> IFC2x2 ADDENDUM 1 CHANGE&nbsp; The entity _IfcPhysicalComplexQuantity_ has been added. Upward compatibility for file based exchange is guaranteed.
+> IFC2x2 ADDENDUM 1 CHANGE  The entity _IfcPhysicalComplexQuantity_ has been added. Upward compatibility for file based exchange is guaranteed.
 
 ## Attributes
 
@@ -32,4 +32,4 @@ The _IfcPhysicalComplexQuantity_ should not reference itself within the list of 
 
 ### UniqueQuantityNames
 Every individual _IfcPhysicalQuantity_ within the set _HasQuantities_ shall have a unique _Name_ attribute value.
-> HISTORY&nbsp; New rule in IFC4
+> HISTORY  New rule in IFC4

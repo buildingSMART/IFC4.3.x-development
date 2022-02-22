@@ -6,4 +6,4 @@ Usually measured in m3/s.
 
 Type: REAL
 
-> HISTORY&nbsp; New type in IFC2x.
+> HISTORY  New type in IFC2x.

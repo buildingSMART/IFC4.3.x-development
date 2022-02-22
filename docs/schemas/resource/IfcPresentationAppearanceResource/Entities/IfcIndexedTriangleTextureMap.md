@@ -35,7 +35,7 @@ IfcTextureVertexList.TexCoordsList:
 
 Figure 2 &mdash; Indexed triangle texture map geometry 
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 ## Attributes
 

@@ -8,7 +8,7 @@ A time series value is a list of values that comprise the time series. At least 
 
 !["time series values"](../../../../figures/ifctimeseries_timeseriesvalue.gif "Figure 1 &mdash; Time series value")
 
-> HISTORY&nbsp; New entity in IFC2x2.
+> HISTORY  New entity in IFC2x2.
 
 ## Attributes
 

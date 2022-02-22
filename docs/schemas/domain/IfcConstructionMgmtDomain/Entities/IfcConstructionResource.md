@@ -4,10 +4,10 @@ _IfcConstructionResource_ is an abstract generalization of the different resourc
 
 A resource represents "use of something" and does not necessarily correspond to a single item such as a person or vehicle, but represents a pool of items having limited availability such as general labor or an equipment fleet. A resource can represent either a generic resource pool (not having any task assignment) or a task-specific resource allocation (having an _IfcTask_ assignment).
 
-> HISTORY&nbsp; New entity in IFC2x2.
+> HISTORY  New entity in IFC2x2.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Modified in to promote _ResourceIdentifer_ and _ResourceGroup_ (renamed to _LongDescription_) to supertype _IfcResource_ and add attributes as described.
+> IFC4 CHANGE  Modified in to promote _ResourceIdentifer_ and _ResourceGroup_ (renamed to _LongDescription_) to supertype _IfcResource_ and add attributes as described.
 
 { .use-head}
 Declaration use definition
@@ -46,13 +46,13 @@ A resource may have any number of baselines defined using the relationship _IfcR
 Indicates the work, usage, and times scheduled and completed.  Some attributes on this object may have associated constraints or time series; see documentation of _IfcResourceTime_ for specific usage.  If the resource is nested, then certain values may be calculated based on the component resources as indicated at _IfcResourceTime_.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; New attribute.
+> IFC4 CHANGE  New attribute.
 
 ### BaseCosts
 Indicates the unit costs for which accrued amounts should be calculated.  Such unit costs may be split into _Name_ designations (for example, 'Standard', 'Overtime'), and may contain a hierarchy of cost values that apply at different dates (using _IfcCostValue.ApplicableDate_ and _IfcCostValue.FixedUntilDate_).
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; New attribute.
+> IFC4 CHANGE  New attribute.
 
 ### BaseQuantity
 Identifies the base quantity consumed of the resource relative to assignments.  
@@ -64,7 +64,7 @@ For material resources, this refers to _IfcQuantityVolume_.
 For product resources, this refers to _IfcQuantityCount_.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; New attribute.
+> IFC4 CHANGE  New attribute.
 
 ## Concepts
 

@@ -11,12 +11,12 @@ Figure 1 illustrates geometric parameters of the cylinder. The cylinder is posit
 !["cylinder"](../../../../figures/ifcrightcircularcylinder-layout1.png "Figure 1 &mdash; Right circular cylinder geometry")
 
 { .extDef}
-> NOTE&nbsp; Definition according to ISO/CD 10303-42:1992  
+> NOTE  Definition according to ISO/CD 10303-42:1992  
 > A right circular cylinder is a CSG primitive in the form of a solid cylinder of finite height. It is defined by an axis point at the centre of one planar circular face, an axis, a height, and a radius. The faces are perpendicular to the axis and are circular discs with the specified radius. The height is the distance from the first circular face centre in the positive direction of the axis to the second circular face centre.
 
-> NOTE&nbsp; Entity adapted from **right_circular_cylinder** defined in ISO 10303-42.
+> NOTE  Entity adapted from **right_circular_cylinder** defined in ISO 10303-42.
 
-> HISTORY&nbsp; New entity in IFC2x3.
+> HISTORY  New entity in IFC2x3.
 
 { .use-head}
 Texture use definition

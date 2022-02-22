@@ -8,10 +8,10 @@ The _IfcWindowStyle_ defines the baseline geometry, or the representation map, f
 
 The _IfcWindowStyleOperationTypeEnum_ defines the general layout of the window style. Depending on the enumerator, the appropriate instances of _IfcWindowLiningProperties_ and _IfcWindowPanelProperties_ are attached in the list of _HasPropertySets_. See geometry use definitions there.
 
-> HISTORY&nbsp; New entity in IFC2x.
+> HISTORY  New entity in IFC2x.
 
 { .deprecated}
-> IFC4 CHANGE&nbsp; The entity has been deprecated and shall not be used. The new entity _IfcWindowType_ shall be used instead.
+> IFC4 CHANGE  The entity has been deprecated and shall not be used. The new entity _IfcWindowType_ shall be used instead.
 
 ## Attributes
 

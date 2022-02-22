@@ -4,7 +4,7 @@ A surface feature is a modification at (onto, or into) of the surface of an elem
 
 The part&ndash;whole relationship is established by an aggregation relationship object, expressing the decomposition of an element type into one or more additive elements (element parts) and zero or more feature elements.
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 ****Containment Use Definition****:
 

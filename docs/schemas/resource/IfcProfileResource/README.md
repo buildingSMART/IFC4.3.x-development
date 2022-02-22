@@ -7,7 +7,7 @@ The schema _IfcProfileResource_ defines the two dimensional profiles or cross se
 * swept area solids
 * sectioned spines
 
-> NOTE&nbsp; Profile definitions are not subtypes of geometric representation item and can not be used directly to geometrically represent an object.
+> NOTE  Profile definitions are not subtypes of geometric representation item and can not be used directly to geometrically represent an object.
 
 Profiles can be used to either define a curve or an area. In case of a curve, only the boundary is in the domain of the profile definition, in case of an area the boundary and the inside is in the domain of the profile definition. A curve can be used for
 
@@ -19,7 +19,7 @@ and an area can be used for
 * swept area solids
 * sectioned spines
 
-> NOTE&nbsp; The use of profile definitions is the preferred way to define prismatic shapes to represent products.
+> NOTE  The use of profile definitions is the preferred way to define prismatic shapes to represent products.
 
 The profile definition (_IfcProfileDef_) can be instantiated by the various subtypes. There are four different groups of profile definitions:
 
@@ -42,4 +42,4 @@ Table 1 &mdash; Axis conversions
 
 !["coordinates in IFC and structural"](../../../../figures/ifcprofileresource-coordinatesystem.gif "Figure 1 &mdash; Profile coordinate system")
 
-> HISTORY&nbsp; New schema in IFC2x, definitions had been part of the _IfcGeometryResource_ in earlier IFC Releases. _IfcProfilePropertyResource_ schema merged into _IfcProfileResource_ in IFC4.
+> HISTORY  New schema in IFC2x, definitions had been part of the _IfcGeometryResource_ in earlier IFC Releases. _IfcProfilePropertyResource_ schema merged into _IfcProfileResource_ in IFC4.

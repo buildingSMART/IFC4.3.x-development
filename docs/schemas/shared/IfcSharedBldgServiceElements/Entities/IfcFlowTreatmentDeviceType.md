@@ -6,4 +6,4 @@ A flow treatment device is a device used to change the physical properties of th
 
 The occurrences of the _IfcFlowTreatmentDeviceType_ are represented by instances of _IfcFlowTreatmentDevice_ or its subtypes.
 
-> HISTORY&nbsp; New entity in IFC2x2.
+> HISTORY  New entity in IFC2x2.

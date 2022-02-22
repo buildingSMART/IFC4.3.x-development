@@ -19,10 +19,10 @@ Calendar month numbers map to calendar month names as follows:
 
 Type: INTEGER
 
-> NOTE&nbsp; See definition of **calendar month** as defined in ISO&nbsp;8601.
+> NOTE  See definition of **calendar month** as defined in ISO 8601.
 
 { .note}
-> HISTORY&nbsp; New type in IFC1.5.1.
+> HISTORY  New type in IFC1.5.1.
 
 ## Formal Propositions
 

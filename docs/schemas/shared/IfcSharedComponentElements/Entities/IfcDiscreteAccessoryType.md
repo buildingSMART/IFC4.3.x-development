@@ -9,7 +9,7 @@ The element component type **IfcDiscreteAccessoryType** defines commonly shared 
 
 It is used to define a discrete accessory type specification indicating the specific product information that is common to all occurrences of that product type. The **IfcDiscreteAccessoryType** may be declared within _IfcProject_ or _IfcProjectLibrary_ using _IfcRelDeclares_ and may be exchanged with or without occurrences of the type. Occurrences of **IfcDiscreteAccessoryType** are represented by instances of _IfcDiscreteAccessory_.
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 { .use-head}
 Type Use Definition

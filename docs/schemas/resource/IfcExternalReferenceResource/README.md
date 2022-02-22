@@ -46,4 +46,4 @@ The _IfcLibraryInformation_ entity provides specific information about an actual
 
 The _IfcLibraryReference_ entity is more widely used (and should be considered as the default selection). A library reference provides for the identifying of a specific record within a library data source through use of a name, location (web location) and item reference (which locates the data within the library data source). The provision of a language attribute allows the language in which a library reference is expressed to be identifed
 
-> HISTORY&nbsp; New schema in IFC2x.
+> HISTORY  New schema in IFC2x.

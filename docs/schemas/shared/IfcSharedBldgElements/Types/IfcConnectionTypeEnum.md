@@ -2,7 +2,7 @@
 
 This enumeration defines the different ways how path based elements (such as _IfcWallStandardCase_) can connect, as shown in Figure 1.
 
-> HISTORY&nbsp; New type in IFC2.0
+> HISTORY  New type in IFC2.0
 
 The enumerated items shall be used in the following combinations:
 

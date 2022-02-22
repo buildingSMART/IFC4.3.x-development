@@ -15,7 +15,7 @@ Enumerated Item Definitions:
 * **USERDEFINED**: User-defined fitting.
 * **NOTDEFINED**: Undefined fitting.
 
-> HISTORY&nbsp; New enumeration in IFC2x2.
+> HISTORY  New enumeration in IFC2x2.
 
 ## Items
 

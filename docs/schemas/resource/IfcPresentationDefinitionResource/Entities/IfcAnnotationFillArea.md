@@ -5,19 +5,19 @@ The _IfcAnnotationFillArea_ defines an area by a definite _OuterBoundary_, that 
 The fill area style that is applied to the _IfcAnnotationFillArea_ is declared using the _IfcFillAreaStyle_, associated to the area by an _IfcStyledItem_. Applicable fill area styles are a solid color, a hatching, tiles, or a combination of those styles.
 
 { .extDef}
-> NOTE&nbsp; Definition according to ISO 10303-46:  
+> NOTE  Definition according to ISO 10303-46:  
 > An annotation fill area is a set of curves that may be filled with hatching, colour or tiling. The annotation fill are is described by boundaries which consist of non-intersecting, non-self-intersecting closed curves. These curves form the boundary of planar areas to be filled according to the style for the annotation fill area.
 
 ![annotation fill area](../../../../figures/ifcannotationfillarea_fig1.png)
 
 Figure 1 &mdash; Annotation fill area
 
-> NOTE&nbsp; Entity adapted from **annotation_fill_area** defined in ISO10303-46
+> NOTE  Entity adapted from **annotation_fill_area** defined in ISO10303-46
 
-> HISTORY&nbsp; New entity in IFC2x2.
+> HISTORY  New entity in IFC2x2.
 
 { .change-ifc2x3}
-> IFC2x3 CHANGE&nbsp; The two attributes _OuterBoundary_ and _InnerBoundaries_ are added and replace the previous single boundary.
+> IFC2x3 CHANGE  The two attributes _OuterBoundary_ and _InnerBoundaries_ are added and replace the previous single boundary.
 
 { .spec-head}
 Informal Propositions:
@@ -30,9 +30,9 @@ Informal Propositions:
 ### OuterBoundary
 A closed curve that defines the outer boundary of the fill area. The areas defined by the outer boundary (minus potentially defined inner boundaries) is filled by the fill area style.
 { .change-ifc2x3}
-> IFC2x3 CHANGE&nbsp; The two new attributes _OuterBoundary_ and _InnerBoundaries_ replace the old single attribute Boundaries.
+> IFC2x3 CHANGE  The two new attributes _OuterBoundary_ and _InnerBoundaries_ replace the old single attribute Boundaries.
 
 ### InnerBoundaries
 A set of inner curves that define the inner boundaries of the fill area. The areas defined by the inner boundaries are excluded from applying the fill area style.
 { .note}
-> IFC2x3 CHANGE&nbsp; The two new attributes _OuterBoundary_ and _InnerBoundaries_ replace the old single attribute Boundaries.
+> IFC2x3 CHANGE  The two new attributes _OuterBoundary_ and _InnerBoundaries_ replace the old single attribute Boundaries.

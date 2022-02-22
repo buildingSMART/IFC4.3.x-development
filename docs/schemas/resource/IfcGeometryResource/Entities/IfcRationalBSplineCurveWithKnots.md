@@ -15,9 +15,9 @@ P<sub><em>i</em></sub> | control points
 <em>w<sub>i</sub></em> | weights
 <em>d</em> | degree
 
-> NOTE&nbsp; Entity adapted from **rational_b_spline_curve** in ISO 10303-42.
+> NOTE  Entity adapted from **rational_b_spline_curve** in ISO 10303-42.
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 ## Attributes
 

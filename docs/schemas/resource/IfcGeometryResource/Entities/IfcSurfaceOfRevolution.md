@@ -3,7 +3,7 @@
 The IfcSurfaceOfRevolution is a surface derived by rotating a curve about an axis.
 
 { .extDef}
-> NOTE&nbsp; Definition according to ISO/CD 10303-42:1992  
+> NOTE  Definition according to ISO/CD 10303-42:1992  
 > A surface of revolution is the surface obtained by rotating a curve one complete revolution about an axis. The data shall be interpreted as below.  
 >   
 > The parameterization is as follows where the curve has a parameterization &lambda;(_u_): 
@@ -13,9 +13,9 @@ The IfcSurfaceOfRevolution is a surface derived by rotating a curve about an axi
 >> ![Image](../../../../figures/ifcsurfaceofresolution-math1.gif)
 >  In order to produce a single-valued surface with a complete revolution, the curve shall be such that when expressed in a cylindrical coordinate system (_r,&phi; ,z_) centred at **C** with an axis **V**, no two distinct parametric points on the curve shall have the same values for (_r, z_). For a surface of revolution the parametric range is 0 < _u_ < 360 degree. The parameterization range for _v_ is defined by referenced curve.
 
-> NOTE&nbsp; Entity adapted from **surface_of_revolution** defined in ISO 10303-42.
+> NOTE  Entity adapted from **surface_of_revolution** defined in ISO 10303-42.
 
-> HISTORY&nbsp; New entity in IFC2x.
+> HISTORY  New entity in IFC2x.
 
 { .spec-head}
 Informal Propositions:

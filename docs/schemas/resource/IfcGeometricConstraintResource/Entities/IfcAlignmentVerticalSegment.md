@@ -30,7 +30,7 @@ The following checks can be done to validate the correct exchange:
 * continuity – does the calculated end distance along of the previous segment matches with the provided start distance along of this segment
 * tangential continuity – does the calculated end gradient of the previous segment matches with the provided start gradient of this segment
 
-> NOTE&nbsp; Specific subtypes of the <span class="self-ref">IfcAlignmentVerticalSegment</span> add specific geometric curve parameters. Connectivity between vertical segments is not necessarily tangential, but this can be enforced as a requirement through the attribute _TangentialContinuity_.
+> NOTE  Specific subtypes of the <span class="self-ref">IfcAlignmentVerticalSegment</span> add specific geometric curve parameters. Connectivity between vertical segments is not necessarily tangential, but this can be enforced as a requirement through the attribute _TangentialContinuity_.
 
 !["Alignment vertical segment"](../../../../figures/ifcalignment2dverticalsegment.png "Figure 1 &mdash; Alignment vertical segment")
 
@@ -38,15 +38,15 @@ The following checks can be done to validate the correct exchange:
 
 ### StartDistAlong
 Distance along the horizontal alignment as measured along the corresponding _IfcAlignmentHorizontal_.
-> NOTE 1&nbsp; The distance along is measured from the start point of _IfcAlignmentHorizontal_, any optionally provided offset expressed by _IfcAlignmentHorizontal_.StartDistanceAlong is not taken into account.
-> NOTE 2&nbsp; The unit of measurement is the global length unit, as set by _IfcContext_.UnitInContext
+> NOTE 1  The distance along is measured from the start point of _IfcAlignmentHorizontal_, any optionally provided offset expressed by _IfcAlignmentHorizontal_.StartDistanceAlong is not taken into account.
+> NOTE 2  The unit of measurement is the global length unit, as set by _IfcContext_.UnitInContext
 
 ### HorizontalLength
 Length measured as distance along the horizontal alignment of the segment.
 
 ### StartHeight
 Elevation in Z of the start point relative to the IfcAlignment coordinate system.
-> NOTE&nbsp; It is strongly advised to not offset the IfcAlignment coordinate system from the project engineering coordinate system.
+> NOTE  It is strongly advised to not offset the IfcAlignment coordinate system from the project engineering coordinate system.
 
 ### StartGradient
 Start gradient of the segment.
@@ -56,9 +56,9 @@ End gradient of the segment. In the case of a PredefinedType='.CONSTANTGRADIENT.
 
 ### RadiusOfCurvature
 Radius of parabola or arc. Positive values imply a CCW direction whereas negative CW.
-> NOTE1&nbsp; For _PredefinedType_ is ARC. The radius of the basis circle for the arc.  
-> NOTE2&nbsp; For _PredefinedType_ is PARABOLICARC. Parabola constant (determining the “steepness” of the parabola). The parabola constant is provided by the “minimum parabola radius”, the true radius of a parabola at its vertical axis (the zero-gradient point of the parabola). The minimum radius is twice the focal length of the parabola (the distance between the focal point and the vertex).  
-> NOTE3&nbsp; For _PredefinedType_ that is not either ARC or PARABOLICARC the value should be empty.
+> NOTE1  For _PredefinedType_ is ARC. The radius of the basis circle for the arc.  
+> NOTE2  For _PredefinedType_ is PARABOLICARC. Parabola constant (determining the “steepness” of the parabola). The parabola constant is provided by the “minimum parabola radius”, the true radius of a parabola at its vertical axis (the zero-gradient point of the parabola). The minimum radius is twice the focal length of the parabola (the distance between the focal point and the vertex).  
+> NOTE3  For _PredefinedType_ that is not either ARC or PARABOLICARC the value should be empty.
 
 ### PredefinedType
 Predefined type of the vertical alignmnent segment.

@@ -29,7 +29,7 @@ For each horizontal alignment segment with a known curvature formula a generic m
 
 !["Double integration"](../../figures/ifcalignmenthorizontalsegmenttypeenum-curvature2coord.png "Figure 1 &mdash; Double integration of curvature yielding intrinsic coordinates")
 
->NOTE:&nbsp;While it is possible to apply the generic calculation also for trivial cases like LINE or CIRCULARARC it is much more efficient to use available formulas.
+>NOTE: While it is possible to apply the generic calculation also for trivial cases like LINE or CIRCULARARC it is much more efficient to use available formulas.
 
 **Word of warning**
 
@@ -91,7 +91,7 @@ In IFC CUBIC denotes a transition segment where x and y coordinates obey a cubic
 !["Cubic"](../../figures/ifcalignmenthorizontalsegmenttypeenum-cubic_general.png "Figure 1 &mdash; General formula for cubic")</Documentation>
 <br/>
 
-It was discovered very early that setting **a** to "1&nbsp;/&nbsp;6RL" and **b**, **c** and **d** to 0 yields a good enough approximation of the clothoid in many situations.
+It was discovered very early that setting **a** to "1 / 6RL" and **b**, **c** and **d** to 0 yields a good enough approximation of the clothoid in many situations.
 <br/><br/>
 **Cubic formula for alignment**
 !["Cubic transition"](../../figures/ifcalignmenthorizontalsegmenttypeenum-cubic.png "Figure 2 &mdash; Alignment formula for cubic")</Documentation>
@@ -110,7 +110,7 @@ The Helmert curve or Helmert transition is an early example of a high performanc
 
 In the geometry perspective the Helmert segment is the assembly of two parts of same length which mirror the same change in radius of curvature. A rough approximation is known as the biquadratic parabola.
 
->NOTE&nbsp; also referred to as Schramm curve.
+>NOTE  also referred to as Schramm curve.
 
 **Base formula (Curvature)**
 !["Helmert curve transition segment"](../../figures/ifcalignmenthorizontalsegmenttypeenum-helmertcurve.png "Figure 1 &mdash; Curvature for horizontal Helmert transition segment")
@@ -118,7 +118,7 @@ In the geometry perspective the Helmert segment is the assembly of two parts of 
 ### BLOSSCURVE
 The Bloss transition is a more recent form of a high performance transition bend. Proposed in 1936. it is now in use in several railway networks. There is no established rough geometric approximation.
 
->NOTE&nbsp;Further reading: Constantin Ciobanu, BLOSS TRANSITION – A SHORT DESIGN GUIDE
+>NOTE Further reading: Constantin Ciobanu, BLOSS TRANSITION – A SHORT DESIGN GUIDE
 
 **Base formula (Curvature)**
 !["Bloss curve transition segment"](../../figures/ifcalignmenthorizontalsegmenttypeenum-blosscurve.png "Figure 1 &mdash; Curvature for horizontal Bloss curve transition segment")
@@ -132,7 +132,7 @@ Cosine transition. The cosine transition was already discussed in 1868. Width th
 ### SINECURVE
 Sine transition or sinusoidal transition was suggested 1937. The curvature function is built up of one period of a sine function. The sine curve is characterised by particularly advantageous smoothing properties at the end points. Compared to the clothoid, it is twice as long.
 
->NOTE&nbsp; also referred to as Klein curve.
+>NOTE  also referred to as Klein curve.
 
 **Base formula (Curvature)**
 !["Sine curve transition segment"](../../figures/ifcalignmenthorizontalsegmenttypeenum-sinecurve.png "Figure 1 &mdash; Curvature for horizontal Sine curve transition segment")

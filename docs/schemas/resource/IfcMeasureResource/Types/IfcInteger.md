@@ -6,4 +6,4 @@ In principle, the domain of _IfcInteger_ (being an Integer) is all integer numbe
 
 Type: INTEGER
 
-> HISTORY&nbsp; New type in IFC1.5.1.
+> HISTORY  New type in IFC1.5.1.

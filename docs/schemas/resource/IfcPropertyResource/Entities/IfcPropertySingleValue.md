@@ -16,22 +16,22 @@ The unit is handled by the _Unit_ attribute, see Table 1 for an example of vario
 
 Table 1 &mdash; Single value properties with values, measure types and units
 
-> HISTORY&nbsp; New entity in IFC1.0.
+> HISTORY  New entity in IFC1.0.
 
 { .change-ifc2x}
-> IFC2x CHANGE&nbsp; Entity has been renamed from IfcSimpleProperty.
+> IFC2x CHANGE  Entity has been renamed from IfcSimpleProperty.
 
 { .change-ifc2x3}
-> IFC2x3 CHANGE&nbsp; Attribute _NominalValue_ has been made OPTIONAL with upward compatibility for file based exchange.
+> IFC2x3 CHANGE  Attribute _NominalValue_ has been made OPTIONAL with upward compatibility for file based exchange.
 
 ## Attributes
 
 ### NominalValue
 Value and measure type of this property. 
-> NOTE&nbsp; By virtue of the defined data type, that is selected from the SELECT _IfcValue_, the appropriate unit can be found within the _IfcUnitAssignment_, defined for the project if no value for the unit attribute is given.
+> NOTE  By virtue of the defined data type, that is selected from the SELECT _IfcValue_, the appropriate unit can be found within the _IfcUnitAssignment_, defined for the project if no value for the unit attribute is given.
 
 { .note}
-> IFC2x3 CHANGE&nbsp; The attribute has been made optional with upward compatibility for file based exchange.
+> IFC2x3 CHANGE  The attribute has been made optional with upward compatibility for file based exchange.
 
 ### Unit
 Unit for the nominal value, if not given, the default value for the measure type (given by the TYPE of nominal value) is used as defined by the global unit assignment at IfcProject.

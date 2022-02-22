@@ -13,20 +13,20 @@ The 2nd level space boundary defines the physical or virtual delimiter of a spac
 
 2nd level space boundaries define the heat transfer surfaces on both sides of building elements that separate spaces. The generation of 2nd level space boundaries has to take building elements and spaces on the other side into account.
 
-> NOTE&nbsp; 2nd level space boundaries are used by many analysis packages that require a surface view of the building that can be transformed into the various simple topological models. Examples of such analysis packages include: (1) energy analysis, (2) lighting analysis, (3) fluid dynamics
+> NOTE  2nd level space boundaries are used by many analysis packages that require a surface view of the building that can be transformed into the various simple topological models. Examples of such analysis packages include: (1) energy analysis, (2) lighting analysis, (3) fluid dynamics
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 { .use-head}
 Relationship Use Definitions
 
 As shown in Figure 1, the attribute _ParentBoundary_ with inverse _InnerBoundaries_ is provided to link the space boundaries of doors, windows, and openings to the parent boundary, such as of a wall or slab.
 
-> NOTE&nbsp; The space boundary of the parent is not cut by the inner boundary - both overlap.
+> NOTE  The space boundary of the parent is not cut by the inner boundary - both overlap.
 
 The attribute _CorrespondingBoundary_ with inverse _Corresponds_ is provided to link the pair of space boundaries on the opposite sides of the building element.
 
-> NOTE&nbsp; Only 2nd level space boundaries of type A have corresponding boundaries.
+> NOTE  Only 2nd level space boundaries of type A have corresponding boundaries.
 
 !["IfcRelSpaceBoundary2ndLevel"](../../../../figures/ifcrelspaceboundary2ndlevel-fig1.png "Figure 1 &mdash; Space boundary second level relationships")
 

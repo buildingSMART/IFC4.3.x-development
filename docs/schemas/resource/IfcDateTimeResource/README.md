@@ -13,9 +13,9 @@ The _IfcDateTimeResource_ schema defines several generic date and time specific 
     * Only the time when data are taken is recorded. 
 * Time associated with processes such as resource allocation (_IfcResourceTime_), time for task completion (_IfcTaskTime_), work patterns (_IfcWorkTime_), and scheduled events (_IfcEventTime_). 
 
-> NOTE&nbsp; The schema _IfcDateTimeResource_ includes definitions that are based on [ISO 8601](../../bibliography.htm#iso-8601){ .int-ref}
+> NOTE  The schema _IfcDateTimeResource_ includes definitions that are based on [ISO 8601](../../bibliography.htm#iso-8601){ .int-ref}
 
-> HISTORY&nbsp; This schema has been significantly modified in IFC4. The original concepts of _IfcDateTimeResource_ and _IfcTimeSeriesResource_ were introduced in IFC2.0 and IFC2x2 and merged into the _IfcDateTimeResource_ in IFC4.
+> HISTORY  This schema has been significantly modified in IFC4. The original concepts of _IfcDateTimeResource_ and _IfcTimeSeriesResource_ were introduced in IFC2.0 and IFC2x2 and merged into the _IfcDateTimeResource_ in IFC4.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; The new types _IfcDate_, _IfcTime_, _IfcDateTime_ and _IfcDuration_ cancel and replace the previous entities _IfcCalendarDate_, _IfcDateAndTime_, _IfcLocalTime_, and _IfcCoordinatedUniversalTimeOffset_.
+> IFC4 CHANGE  The new types _IfcDate_, _IfcTime_, _IfcDateTime_ and _IfcDuration_ cancel and replace the previous entities _IfcCalendarDate_, _IfcDateAndTime_, _IfcLocalTime_, and _IfcCoordinatedUniversalTimeOffset_.

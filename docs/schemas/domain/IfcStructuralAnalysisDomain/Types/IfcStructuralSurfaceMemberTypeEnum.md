@@ -2,10 +2,10 @@
 
 This enumeration distinguishes between different types of structural surface members, such as the typical mechanical function of walls, slabs and shells.
 
-> HISTORY&nbsp; New enumeration in IFC2x2.
+> HISTORY  New enumeration in IFC2x2.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Renamed from _IfcStructuralSurfaceTypeEnum_.
+> IFC4 CHANGE  Renamed from _IfcStructuralSurfaceTypeEnum_.
 
 ## Items
 

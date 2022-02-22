@@ -17,9 +17,9 @@ SELECT
 *  _IfcDuration_: Defined type of simple type STRING to represent a duration. 
 *  _IfcTimeStamp_: Defined type of simple type INTEGER to represent a point in time by seconds elapsed since 1970. 
 
-> _HISTORY&nbsp; New type in IFC2x._
+> _HISTORY  New type in IFC2x._
 
 { .change-ifc2x4}
-> _IFC4 CHANGE&nbsp; Items _IfcDateTime_,
+> _IFC4 CHANGE  Items _IfcDateTime_,
       _IfcDate_, _IfcTime_, _IfcDuration_,
       _IfcTimeStamp_ added._

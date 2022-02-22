@@ -27,12 +27,12 @@ Figure 2 &mdash; Repositioned extruded area solid geometry
  * The resulting swept solid is repositioned, here it is moved into local z and rotated by 15' along the y axis.
 
 { .extDef}
-> NOTE&nbsp; Definition according to ISO/CD 10303-42:1992  
+> NOTE  Definition according to ISO/CD 10303-42:1992  
 > An extruded area solid is a solid defined by sweeping a bounded planar surface. The direction of translation is defined by a direction vector, and the length of the translation is defined by a distance depth. The planar area may have holes which will sweep into holes in the solid.
 
-> NOTE&nbsp; Entity adapted from **extruded_area_solid** defined in ISO 10303-42.
+> NOTE  Entity adapted from **extruded_area_solid** defined in ISO 10303-42.
 
-> HISTORY&nbsp; New entity in IFC1.5
+> HISTORY  New entity in IFC1.5
 
 { .use-head}
 Texture use definition

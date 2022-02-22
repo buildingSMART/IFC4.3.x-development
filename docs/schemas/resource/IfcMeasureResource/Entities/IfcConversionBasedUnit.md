@@ -40,21 +40,21 @@ An IfcConversionBasedUnit is used to define a unit that has a conversion rate to
 
 Table 1 &mdash; Standard unit names
 
-> EXAMPLE&nbsp; An inch is a converted unit. It is from the Imperial system, its name is "inch" and it can be related to the SI unit, millimetre, through a measure with unit whose value is 25.4 millimetre. A foot is also a converted unit. It is from the Imperial system, its name is "foot" and it can be related to an _IfcSIUnit_, millimetre, either directly or through the unit called "inch". Note that several US customary units differ from Imperial units (nonmetric English units) of the same name.
+> EXAMPLE  An inch is a converted unit. It is from the Imperial system, its name is "inch" and it can be related to the SI unit, millimetre, through a measure with unit whose value is 25.4 millimetre. A foot is also a converted unit. It is from the Imperial system, its name is "foot" and it can be related to an _IfcSIUnit_, millimetre, either directly or through the unit called "inch". Note that several US customary units differ from Imperial units (nonmetric English units) of the same name.
 
 { .extDef}
-> NOTE&nbsp; Definition according to ISO/CD 10303-41:1992  
+> NOTE  Definition according to ISO/CD 10303-41:1992  
 > A conversion based unit is a unit that is defined based on a measure with unit.
 
-> NOTE&nbsp; Entity adapted from **conversion_based_unit** defined in ISO 10303-41.
+> NOTE  Entity adapted from **conversion_based_unit** defined in ISO 10303-41.
 
-> HISTORY&nbsp; New entity in IFC1.5.1.
+> HISTORY  New entity in IFC1.5.1.
 
 { .change-ifc2x3}
-> IFC2x3 CHANGE&nbsp; Standard names of typical units added.
+> IFC2x3 CHANGE  Standard names of typical units added.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Further names added: square inch, square foot, square mile, square yard, cubic inch, cubic foot, cubic yard, fluid ounce UK/US, ton UK/US, degree.
+> IFC4 CHANGE  Further names added: square inch, square foot, square mile, square yard, cubic inch, cubic foot, cubic yard, fluid ounce UK/US, ton UK/US, degree.
 
 ## Attributes
 

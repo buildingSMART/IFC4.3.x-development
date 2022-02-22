@@ -51,4 +51,4 @@ The following topics are currently out of scope:
     * Dams/levees
     * Weirs
 
-> HISTORY&nbsp; New schema in IFC4x3.
+> HISTORY  New schema in IFC4x3.

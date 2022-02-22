@@ -12,7 +12,7 @@ The value of the time lag may be selected as being either a percentage ratio or 
 
 The time unit for the task duration may also be set and this may be set to any allowed unit of time measure.
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 ## Attributes
 

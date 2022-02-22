@@ -2,10 +2,10 @@
 
 An _IfcProcedure_ is a logical set of actions to be taken in response to an event or to cause an event to occur.
 
-> HISTORY&nbsp; New entity in IFC2x2
+> HISTORY  New entity in IFC2x2
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; _ProcedureType_ renamed to _PredefinedType_ and made optional (upward compatible). Where rules WR1 and WR2 have been removed.
+> IFC4 CHANGE  _ProcedureType_ renamed to _PredefinedType_ and made optional (upward compatible). Where rules WR1 and WR2 have been removed.
 
 { .use-head}
 Use definitions

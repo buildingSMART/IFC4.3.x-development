@@ -14,7 +14,7 @@ For each _MainPlaneAngle_ (considered as being the row of a table) a list of _Se
 
 For each pair of _MainPlaneAngle_ and _SecondaryPlaneAngle_ the _LuminousIntensity_ is provided (the unit is given by the _IfcUnitAssignment_ referring to the LuminousIntensityDistributionUnit, normally cd/klm).
 
-> HISTORY&nbsp; New entity in IFC2x2.
+> HISTORY  New entity in IFC2x2.
 
 ## Attributes
 
@@ -24,7 +24,7 @@ The main plane angle (A, B or C angles, according to the light distribution curv
 ### SecondaryPlaneAngle
 The list of secondary plane angles (the &#945;, &#946; or &#947; angles) according to the light distribution curve chosen.
 
-> NOTE&nbsp; The _SecondaryPlaneAngle_ and _LuminousIntensity_ lists are corresponding lists.
+> NOTE  The _SecondaryPlaneAngle_ and _LuminousIntensity_ lists are corresponding lists.
 
 ### LuminousIntensity
 The luminous intensity distribution measure for this pair of main and secondary plane angles according to the light distribution curve chosen.

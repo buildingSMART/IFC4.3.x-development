@@ -14,7 +14,7 @@ If a conversion to a geographic coordinate system is included by virtue of the <
 
 The use of one instance of _IfcGeometricRepresentationContext_ to represent the model (3D) view is mandatory, the use of a second instance of _IfcGeometricRepresentationContext_ to represent the plan (2D) view is optional (but needs to be given, if there are scale dependent plan views), the additional scale or view dependent contexts need to be handled by using the subtype _IfcGeometricRepresentationSubContext_ pointing to the model view (or the plan view) as the _ParentContext_. See Figure 2 for an example using geometric representation contexts for 3D and 2D with assigned sub contexts.
 
-> NOTE&nbsp; The inherited attribute _ContextType_ shall have one of the following recognized values: 'Model', 'Plan', 'NotDefined'.
+> NOTE  The inherited attribute _ContextType_ shall have one of the following recognized values: 'Model', 'Plan', 'NotDefined'.
 
 ![representation context](../../../../figures/ifcgeometricrepresentationcontext_layout.png)
 
@@ -23,18 +23,18 @@ Figure 2 &mdash; Example of using geometric representation contexts
 Use of representation contexts defined at <em>IfcProject</em> for 3D model and 2D plan context, including sub context definitions for different target scales. There shall always be a maximum of one geometric representation context for 2D and for 3D coordinate space.
 
 { .extDef}
-> NOTE&nbsp; Definition according to ISO/CD 10303-42:1992  
+> NOTE  Definition according to ISO/CD 10303-42:1992  
 > A geometric representation context is a representation context in which the geometric representation items are geometrically founded.
 
-> NOTE&nbsp; Entity adapted from **geometric_representation_context** defined in ISO 10303-42.
+> NOTE  Entity adapted from **geometric_representation_context** defined in ISO 10303-42.
 
-> HISTORY&nbsp; New entity in IFC2.0.
+> HISTORY  New entity in IFC2.0.
 
 { .change-ifc2x3}
-> IFC2x3 CHANGE&nbsp; Applicable values for _ContextType_ are only 'Model', 'Plan', and 'NotDefined'. All other contexts are now handled by _IfcGeometricRepresentationSubContext_.
+> IFC2x3 CHANGE  Applicable values for _ContextType_ are only 'Model', 'Plan', and 'NotDefined'. All other contexts are now handled by _IfcGeometricRepresentationSubContext_.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Mapping to Geographic coordinate system added by inverse attribute _HasCoordinateOperation_.
+> IFC4 CHANGE  Mapping to Geographic coordinate system added by inverse attribute _HasCoordinateOperation_.
 
 ## Attributes
 
@@ -47,7 +47,7 @@ Value of the model precision for geometric models. It is a double value (REAL), 
 ### WorldCoordinateSystem
 Establishment of the engineering coordinate system (often referred to as the world coordinate system in CAD) for all representation contexts used by the project. 
 
-> NOTE&nbsp; It can be used to provide better numeric stability if the placement of the building(s) is far away from the origin. In most cases however it would be set to origin: (0.,0.,0.) and directions x(1.,0.,0.), y(0.,1.,0.), z(0.,0.,1.).
+> NOTE  It can be used to provide better numeric stability if the placement of the building(s) is far away from the origin. In most cases however it would be set to origin: (0.,0.,0.) and directions x(1.,0.,0.), y(0.,1.,0.), z(0.,0.,1.).
 
 
 
@@ -56,7 +56,7 @@ If an geographic placement is provided using _IfcMapConversion_ then the _WorldC
 ### TrueNorth
 Direction of the true north, or geographic northing direction, relative to the underlying project coordinate system. It is given by a 2 dimensional direction within the xy-plane of the project coordinate system. If not present, it defaults to 0. 1., meaning that the positive Y axis of the project coordinate system equals the geographic northing direction.
 
-> NOTE&nbsp; If a geographic placement is provided using _IfcMapConversion_ then the true north is for information only. In case of inconsistency, the value provided with _IfcMapConversion_ shall take precedence.
+> NOTE  If a geographic placement is provided using _IfcMapConversion_ then the true north is for information only. In case of inconsistency, the value provided with _IfcMapConversion_ shall take precedence.
 
 ### HasSubContexts
 The set of _IfcGeometricRepresentationSubContexts_ that refer to this _IfcGeometricRepresentationContext_.

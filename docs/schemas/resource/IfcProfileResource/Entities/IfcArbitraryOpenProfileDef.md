@@ -2,7 +2,7 @@
 
 The open profile _IfcArbitraryOpenProfileDef_ defines an arbitrary two-dimensional open profile for the use within the swept surface geometry. It is given by an open boundary from which the surface can be constructed.
 
-> HISTORY&nbsp; New entity in IFC2x.
+> HISTORY  New entity in IFC2x.
 
 { .spec-head}
 Informal Propositions:

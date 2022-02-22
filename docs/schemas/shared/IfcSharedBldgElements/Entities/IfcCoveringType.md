@@ -10,7 +10,7 @@ It is used to define an covering specification or covering style (i.e. the speci
 
 The occurrences of the _IfcCoveringType_ are represented by instances of _IfcCovering_
 
-> HISTORY&nbsp; New entity in IFC2x2.
+> HISTORY  New entity in IFC2x2.
 
 { .spec-head}
 Informal Propositions:

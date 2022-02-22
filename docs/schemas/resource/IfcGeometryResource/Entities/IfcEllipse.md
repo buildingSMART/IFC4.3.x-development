@@ -13,7 +13,7 @@ Definition of the <em>IfcEllipse</em> within the a three-dimensional position co
 It is placed within the object coordinate system of an element of which it is a
 representation.
 
-> NOTE&nbsp; An elliptical arc segment is defined by using the _IfcTrimmedCurve_ with _BasisCurve_
+> NOTE  An elliptical arc segment is defined by using the _IfcTrimmedCurve_ with _BasisCurve_
 
 { .extDef}
 > NOTE Definition according to ISO/CD 10303-42:1992  
@@ -42,9 +42,9 @@ representation.
 
 
 > 
-> NOTE&nbsp; Entity adapted from **ellipse** defined in ISO 10303-42
+> NOTE  Entity adapted from **ellipse** defined in ISO 10303-42
 
-> HISTORY&nbsp; New entity in IFC1.0
+> HISTORY  New entity in IFC1.0
 
 ## Attributes
 

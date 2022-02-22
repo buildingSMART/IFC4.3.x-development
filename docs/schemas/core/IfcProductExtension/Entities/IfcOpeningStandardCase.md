@@ -10,7 +10,7 @@ The standard opening, _IfcOpeningStandardCase_, defines an opening with certain 
 * have a 'Body' shape representation with 'SweptSolid' representation type
 * have only a single extrusion body within the 'Body' shape representation
 
-> HISTORY&nbsp; New entity in IFC4
+> HISTORY  New entity in IFC4
 
 ## Concepts
 

@@ -11,9 +11,9 @@ The _IfcPropertyTemplate_ is an abstract supertype comprising the templates for 
 
 The individual property templates are interpreted according to their _Name_ attribute and may have a predefined property type, property unit, and property data type. A template however shall not have measure values, or quantity values assigned.
 
-> NOTE&nbsp; Property templates can form part of a property library used and attached as part of a project library. In general the _IfcPropertySetTemplate_, containing the subtypes of _IfcPropertyTemplate_ would be directly linked to the _IfcProjectLibrary_.
+> NOTE  Property templates can form part of a property library used and attached as part of a project library. In general the _IfcPropertySetTemplate_, containing the subtypes of _IfcPropertyTemplate_ would be directly linked to the _IfcProjectLibrary_.
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 ## Attributes
 

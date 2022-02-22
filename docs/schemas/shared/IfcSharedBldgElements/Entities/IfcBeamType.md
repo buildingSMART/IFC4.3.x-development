@@ -11,7 +11,7 @@ It is used to define a beam specification, or beam style (the specific product i
 
 Occurrences of the _IfcBeamType_ within building models are represented by instances of _IfcBeamStandardCase_ if the _IfcBeamType_ has a single associated _IfcMaterialProfileSet_; otherwise they are represented by instances of _IfcBeam_. Occurrences of the _IfcBeamType_ within structural analysis models are represented by instances of _IfcStructuralCurveMember_, or its applicable subtypes.
 
-> HISTORY&nbsp; New entity in IFC2x2.
+> HISTORY  New entity in IFC2x2.
 
 ## Attributes
 

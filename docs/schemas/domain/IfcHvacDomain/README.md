@@ -15,4 +15,4 @@ The following are deemed to be out of scope of the _IfcHvacDomain_ schema at thi
 * Provisions for dealing explicitly with hazardous materials such as chemical or biological agents
 * Controls systems and sequencing systems for these equipment beyond what is defined in the _IfcBuildingControls_ domain schema
 
-> HISTORY&nbsp; This schema has been significantly modified in IFC2x2.
+> HISTORY  This schema has been significantly modified in IFC2x2.

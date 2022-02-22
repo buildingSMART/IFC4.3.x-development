@@ -1,7 +1,7 @@
 # IfcClosedShell
 
 { .extDef}
-> NOTE&nbsp; Definition according to ISO/CD 10303-42:1992  
+> NOTE  Definition according to ISO/CD 10303-42:1992  
 > A closed shell is a shell of the dimensionality 2 which typically serves as a bound for a region in R3. A closed shell has no boundary, and has non-zero finite extent. If the shell has a domain with coordinate space R3, it divides that space into two connected regions, one finite and the other infinite. In this case, the topological normal of the shell is defined as being directed from the finite to the infinite region.   
 >   
 > The shell is represented by a collection of faces. The domain of the shell, if present, contains all those faces, together with their bounds. Associated with each face in the shell is a logical value which indicates whether the face normal agrees with (TRUE) or is opposed to (FALSE) the shell normal. The logical value can be applied directly as a BOOLEAN attribute of an oriented face, or be defaulted to TRUE if the shell boundary attribute member is a face without the orientation attribute.   
@@ -13,9 +13,9 @@
 
 
 > 
-> NOTE&nbsp; Entity adapted from **closed_shell** defined in ISO 10303-42.
+> NOTE  Entity adapted from **closed_shell** defined in ISO 10303-42.
 
-> HISTORY&nbsp; New entity in IFC1.0
+> HISTORY  New entity in IFC1.0
 
 { .spec-head}
 Informal Propositions:

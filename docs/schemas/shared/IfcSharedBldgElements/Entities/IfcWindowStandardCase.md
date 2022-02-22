@@ -8,7 +8,7 @@ The standard window, _IfcWindowStandardCase_, defines a window with certain cons
 * have a reference to an _IfcWindowType_ to define the opening direction and the operation type (swinging, sliding, folding, etc.) of the window. The attribute _OperationType_ shall be provided and not being UNDEFINED, and the attribute _ParameterTakesPrecedence_ shall be "TRUE".
 * have a single _IfcWindowLiningProperties_ and a set of _IfcWindowPanelProperties_ instances included in the set of _HasPropertySets_ at _IfcWindowType_
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 The geometric representation of _IfcWindowStandardCase_ is defined using the following multiple shape representations for its definition:
 

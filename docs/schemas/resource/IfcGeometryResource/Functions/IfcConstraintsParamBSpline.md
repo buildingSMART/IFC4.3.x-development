@@ -1,7 +1,7 @@
 # IfcConstraintsParamBSpline
 
 { .extDef}
-> NOTE&nbsp; Definition according to ISO/CD 10303-42:1992  
+> NOTE  Definition according to ISO/CD 10303-42:1992  
 > This function checks the parametrisation of a B-spline curve or (one of the directions of) a B-spline surface and returns TRUE if no inconsistencies are found. These constraints are: > 1. Degree &le; 1.
 > 2. Upper index on knots &le; 2.
 > 3. Upper index on control points &le; degree.
@@ -10,6 +10,6 @@
 > 6. For all other knots the knot multiplicity is bounded by 1 and degree.
 > 7. The consecutive knots are increasing in value.
 
-> NOTE&nbsp; Function adapted from **constraints_param_b_spline** defined in ISO 10303-42.
+> NOTE  Function adapted from **constraints_param_b_spline** defined in ISO 10303-42.
 
-> HISTORY&nbsp; New function in IFC4
+> HISTORY  New function in IFC4

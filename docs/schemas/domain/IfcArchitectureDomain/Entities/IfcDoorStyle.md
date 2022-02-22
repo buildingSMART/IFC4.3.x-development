@@ -10,10 +10,10 @@ The _IfcDoorStyleOperationTypeEnum_ defines the general layout of the door style
 
 See geometry use definitions at _IfcDoorStyleOperationTypeEnum_ for the correct usage of opening symbols for different operation types.
 
-> HISTORY&nbsp; New entity in IFC2x.
+> HISTORY  New entity in IFC2x.
 
 { .deprecated}
-> DEPRECATION&nbsp; The entity is deprecated and shall not be used. The new entity _IfcDoorType_ shall be used instead.
+> DEPRECATION  The entity is deprecated and shall not be used. The new entity _IfcDoorType_ shall be used instead.
 
 ## Attributes
 

@@ -6,9 +6,9 @@ The inherited attributes _Name_ and _Description_ can be used to define a descri
 
 A grid may support a rectangular layout as shown in Figure 1, a radial layout as shown in Figure 2, or a triangular layout as shown in Figure 3.
 
-> NOTE&nbsp; The _PredefinedType_ denotes the type of grid that is represented by _IfcGrid_. The instantiation of _IfcGridAxis_'s has to agree to the _PredefinedType_, if provided.
+> NOTE  The _PredefinedType_ denotes the type of grid that is represented by _IfcGrid_. The instantiation of _IfcGridAxis_'s has to agree to the _PredefinedType_, if provided.
 
-> NOTE&nbsp; The grid axes, defined within the design grid, are those elements to which project objects will be placed relatively using the _IfcGridPlacement_.
+> NOTE  The grid axes, defined within the design grid, are those elements to which project objects will be placed relatively using the _IfcGridPlacement_.
 
 ![Grid rectangular layout](../../../../figures/ifcdesigngrid-type1.gif)
 <img src="" alt="1" border="0" height="211" width="306">
@@ -20,12 +20,12 @@ Figure 2 &mdash; Grid radial layout
 ![Grid triangular layout](../../../../figures/ifcdesigngrid-type3.gif)
 Figure 3 &mdash; Grid triangular layout
 
-> HISTORY&nbsp; New entity in IFC1.0.
+> HISTORY  New entity in IFC1.0.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; The attribute _PredefinedType_ has been added at the end of the attribute list.
+> IFC4 CHANGE  The attribute _PredefinedType_ has been added at the end of the attribute list.
 
-&nbsp;
+ 
 
 { .spec-head}
 Informal Propositions:
@@ -33,7 +33,7 @@ Informal Propositions:
  1. Grid axes, which are referenced in different lists of axes (UAxes, VAxes, WAxes) shall not be parallel.
  2. Grid axes should be defined such as there are no two grid axes which intersect twice (see Figure 4).
 
-> NOTE&nbsp; Left side: ambiguous intersections A1 and A2, a grid containing such grid axes is not a valid design grid;&nbsp; Right side: the conflict can be resolved by splitting one grid axis in a way, such as no ambiguous intersections exist.
+> NOTE  Left side: ambiguous intersections A1 and A2, a grid containing such grid axes is not a valid design grid;  Right side: the conflict can be resolved by splitting one grid axis in a way, such as no ambiguous intersections exist.
 
 ![Grid intersections](../../../../figures/ifcdesigngrid-ip2.gif)
 Figure 4 &mdash; Grid intersections
@@ -52,7 +52,7 @@ List of grid axes defining the third row of grid lines. It may be given in the c
 ### PredefinedType
 Predefined types to define the particular type of the grid. 
 { .change-ifc4}
-> IFC4 Change&nbsp; New attribute.
+> IFC4 Change  New attribute.
 
 ## Concepts
 

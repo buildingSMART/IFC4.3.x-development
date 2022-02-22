@@ -7,15 +7,15 @@ The element type _IfcSlabType_ defines commonly shared information for occurrenc
 * common material layer definitions
 * common shape representations
 
-> NOTE&nbsp; It is illegal to share shape representations as representation maps for occurrences of _IfcSlabStandardCase_.
+> NOTE  It is illegal to share shape representations as representation maps for occurrences of _IfcSlabStandardCase_.
 
 It is used to define a slab specification (i.e. the specific product information, that is common to all occurrences of that product type). Slab types may be exchanged without being already assigned to occurrences.
 
-> NOTE&nbsp; The product representations are defined as representation maps (at the level of the supertype _IfcTypeProduct_, which gets assigned by an element occurrence instance through the _IfcShapeRepresentation.Item[1]_ being an _IfcMappedItem_.
+> NOTE  The product representations are defined as representation maps (at the level of the supertype _IfcTypeProduct_, which gets assigned by an element occurrence instance through the _IfcShapeRepresentation.Item[1]_ being an _IfcMappedItem_.
 
 The occurrences of the _IfcSlabType_ within building models are represented by instances of _IfcSlabStandardCase_ if the _IfcSlabType_ has a single associated _IfcMaterialLayerSet_; otherwise they are represented by instances of _IfcSlab_, or _IfcSlabElementedCase_.
 
-> HISTORY&nbsp; New entity in IFC2x2.
+> HISTORY  New entity in IFC2x2.
 
 { .spec-head}
 Informal Propositions:

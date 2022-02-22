@@ -2,10 +2,10 @@
 
 _IfcRoundedRectangleProfileDef_ defines a rectangle with equally rounded corners as the profile definition used by the swept surface geometry or the swept area solid. It is given by the X extent, the Y extent, and the radius for the rounded corners, and placed within the 2D position coordinate system, established by the _Position_ attribute. It is placed centric within the position coordinate system, that is, in the center of the bounding box.
 
-> HISTORY&nbsp; New entity in IFC2x.
+> HISTORY  New entity in IFC2x.
 
 { .change-ifc2x}
-> IFC2x CHANGE&nbsp; The _IfcRoundedRectangleProfileDef_ is now subtyped from _IfcRectangleProfileDef_. The _XDim_ and _YDim_ attributes have been removed (now inherited from supertype).
+> IFC2x CHANGE  The _IfcRoundedRectangleProfileDef_ is now subtyped from _IfcRectangleProfileDef_. The _XDim_ and _YDim_ attributes have been removed (now inherited from supertype).
 
 Figure 1 illustrates parameters of the rounded rectangle profile definition.
 

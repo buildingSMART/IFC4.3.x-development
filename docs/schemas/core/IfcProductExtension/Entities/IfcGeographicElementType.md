@@ -16,9 +16,9 @@ Information from feature catalogs might be captured in various ways:
 * via property sets, some of which will be specifically defined within the IFC property set catalog whilst others will be created for local use; this is the form of capture that is expected to be most widely used 
 * through use of the IFC classification model whereby features might be identified through an _IfcClassificationReference_ with additional description; in which case, any further attributes required would still need to be captured in property sets. 
 
-> NOTE&nbsp; This is due to the range of choices of element type thyat are available and their expression in different languages. It is not considered possible to create a reasonably full list of types within an enumeration. It is suggested that selection of the relevant type be drawn from an available 'feature catalog'.
+> NOTE  This is due to the range of choices of element type thyat are available and their expression in different languages. It is not considered possible to create a reasonably full list of types within an enumeration. It is suggested that selection of the relevant type be drawn from an available 'feature catalog'.
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 ## Attributes
 

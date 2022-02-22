@@ -2,10 +2,10 @@
 
 A structural curve action defines an action which is distributed over a curve. A curve action may be connected with a curve member or curve connection, or surface member or surface connection.
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Former entity _IfcStructuralLinearActionVarying_ from IFC2x2 has been removed and are replaced by this entity.
+> IFC4 CHANGE  Former entity _IfcStructuralLinearActionVarying_ from IFC2x2 has been removed and are replaced by this entity.
 
 ****Coordinate Systems****:
 

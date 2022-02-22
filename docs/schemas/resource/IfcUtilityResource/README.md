@@ -15,7 +15,7 @@ The history of an IFC object is captured simply in the form of last modifying us
 
 The table datatype is general purpose and may be used for any two dimensional matrix type document. It allows information to be recorded in rows and columns where each column is labeled with the type of information it contains. The model does not allow for any mathematical operations on the information content of a table (that is, it does not function as a spreadsheet).
 
-> HISTORY&nbsp; The various types of registries were removed from this schema in IFC2.0 since the method used within applications to store those types of information could differ between different applications.
+> HISTORY  The various types of registries were removed from this schema in IFC2.0 since the method used within applications to store those types of information could differ between different applications.
 
 { .change-ifc2x}
-> IFC2x CHANGE&nbsp; This schema was significantly simplified in IFC2x to reduce overhead.
+> IFC2x CHANGE  This schema was significantly simplified in IFC2x to reduce overhead.

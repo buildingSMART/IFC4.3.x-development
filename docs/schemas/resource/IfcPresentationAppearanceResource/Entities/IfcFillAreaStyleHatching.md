@@ -3,17 +3,17 @@
 The _IfcFillAreaStyleHatching_ is used to define simple, vector-based hatching patterns, based on styled straight lines. The curve font, color and thickness is given by the _HatchLineAppearance_, the angle by the _HatchLineAngle_ and the distance to the next hatch line by _StartOfNextHatchLine_, being either an offset distance or a vector.
 
 { .extDef}
-> NOTE&nbsp; Definition according to ISO 10303-46:  
+> NOTE  Definition according to ISO 10303-46:  
 > The fill area style hatching defines a styled pattern of curves for hatching an annotation fill area or a surface.
 
-> NOTE&nbsp; If the hatch pattern involves two (potentially crossing) rows of hatch lines, then two instances of _IfcFillAreaStyleHatching_ should be assigned to the _IfcFillAreaStyle_. Both share the same (virtual) point of origin of the hatching that is used by the reference hatch line (or the _PointOfReferenceHatchLine_ if there is an offset).
+> NOTE  If the hatch pattern involves two (potentially crossing) rows of hatch lines, then two instances of _IfcFillAreaStyleHatching_ should be assigned to the _IfcFillAreaStyle_. Both share the same (virtual) point of origin of the hatching that is used by the reference hatch line (or the _PointOfReferenceHatchLine_ if there is an offset).
 
 For better control of the hatching appearance, when using hatch lines with other fonts then continuous, the _PatternStart_ allows to offset the start of the curve font pattern along the reference hatch line (if not given, the _PatternStart_ is at zero distance from the virtual point of origin). If the reference hatch line does not go through the origin (of the virtual hatching coordinate system), it can be offset by using the _PatternStart_ .
 
-> NOTE&nbsp; The coordinates of the _PatternStart_ are given relative to the origin of the object coordinate of _IfcAnnotationFillArea_, or if present, the _FillAreaTarget_ attribute of _IfcAnnotationFillArea_. The measure values are given in global drawing length units, representing a model hatching, and can be translated into drawing units by the _TargetScale_ for a scale depended _IfcGeometricRepresentationSubcontext_, if provided.
+> NOTE  The coordinates of the _PatternStart_ are given relative to the origin of the object coordinate of _IfcAnnotationFillArea_, or if present, the _FillAreaTarget_ attribute of _IfcAnnotationFillArea_. The measure values are given in global drawing length units, representing a model hatching, and can be translated into drawing units by the _TargetScale_ for a scale depended _IfcGeometricRepresentationSubcontext_, if provided.
 
 { .deprecated}
-> DEPRECATION&nbsp; The use of _PointOfReferenceHatchLine_ is deprecated.
+> DEPRECATION  The use of _PointOfReferenceHatchLine_ is deprecated.
 
 ![hatch example 1](../../../../figures/ifcfillareastylehatching_fig1.gif)
 
@@ -67,15 +67,15 @@ This example shows use of <em>IfcFillAreaStyleHatching</em> attributes for two <
 
 Note that the <em>PatternStart</em> now displaces both the reference hatch line from the point of origin and the start of the curve pattern. This can be used in cases when more than one <em>IfcFillAreaStyleHatching</em> is used in an <em>IfcFillAreaStyle</em> in order to place rows of hatch lines with an offset from each other.
 
-> NOTE&nbsp; Entity adapted from **fill_area_style_hatching** defined in ISO10303-46
+> NOTE  Entity adapted from **fill_area_style_hatching** defined in ISO10303-46
 
-> HISTORY&nbsp; New entity in IFC2x2.
+> HISTORY  New entity in IFC2x2.
 
 { .change-ifc2x3}
-> IFC2x3 CHANGE&nbsp; The _IfcFillAreaStyleHatching_ has been changed by making the attributes _PatternStart_ and _PointOfReferenceHatchLine_ OPTIONAL. The attribute _StartOfNextHatchLine_ has changed to a SELECT with the additional choice of _IfcPositiveLengthMeasure_. Upward compatibility for file based exchange is guaranteed.
+> IFC2x3 CHANGE  The _IfcFillAreaStyleHatching_ has been changed by making the attributes _PatternStart_ and _PointOfReferenceHatchLine_ OPTIONAL. The attribute _StartOfNextHatchLine_ has changed to a SELECT with the additional choice of _IfcPositiveLengthMeasure_. Upward compatibility for file based exchange is guaranteed.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; The attribute data type for _StartOfNextHatchLine_ has been changed to be a select of _IfcPositiveLengthMeasure_ and _IfcVector_.
+> IFC4 CHANGE  The attribute data type for _StartOfNextHatchLine_ has been changed to be a select of _IfcPositiveLengthMeasure_ and _IfcVector_.
 
 ## Attributes
 
@@ -86,17 +86,17 @@ The curve style of the hatching lines. Any curve style pattern shall start at th
 A repetition factor that determines the distance between adjacent hatch lines. The factor can either be defined by a parallel offset, or by a repeat factor provided by _IfcVector_.
   
 { .change-ifc2x3}
-> IFC2x3 CHANGE&nbsp; The attribute type of _StartOfNextHatchLine_ has changed to a SELECT of _IfcPositiveLengthMeasure_ (new) and _IfcOneDirectionRepeatFactor_.
+> IFC2x3 CHANGE  The attribute type of _StartOfNextHatchLine_ has changed to a SELECT of _IfcPositiveLengthMeasure_ (new) and _IfcOneDirectionRepeatFactor_.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; The attribute type of _StartOfNextHatchLine_ has changed to a SELECT of _IfcPositiveLengthMeasure_ (new) and _IfcVector_.
+> IFC4 CHANGE  The attribute type of _StartOfNextHatchLine_ has changed to a SELECT of _IfcPositiveLengthMeasure_ (new) and _IfcVector_.
 
 ### PointOfReferenceHatchLine
 A Cartesian point which defines the offset of the reference hatch line from the origin of the (virtual) hatching coordinate system. The origin is used for mapping the fill area style hatching onto an annotation fill area or surface. The reference hatch line would then appear with this offset from the fill style target point.  
 If not given the reference hatch lines goes through the origin of the (virtual) hatching coordinate system.
   
 { .change-ifc2x3}
-> IFC2x3 CHANGE&nbsp; The usage of the attribute _PointOfReferenceHatchLine_ has changed to not provide the Cartesian point which is the origin for mapping, but to provide an offset to the origin for the mapping. The attribute has been made OPTIONAL.
+> IFC2x3 CHANGE  The usage of the attribute _PointOfReferenceHatchLine_ has changed to not provide the Cartesian point which is the origin for mapping, but to provide an offset to the origin for the mapping. The attribute has been made OPTIONAL.
 
 ### PatternStart
 A distance along the reference hatch line which is the start point for the curve style font pattern of the reference hatch line.  

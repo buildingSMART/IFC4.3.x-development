@@ -32,7 +32,7 @@ The material of the wall is defined by the _IfcMaterialLayerSetUsage_ and is att
 
 An 'Axis' and a 'Body' shape representation has to be provided, and it is invalid to exchange a 'Tessellation', 'SurfaceModel', 'Brep' or 'MappedRepresentation' representation for the 'Body' shape representation of the _IfcWallStandardCase_.
 
-> HISTORY&nbsp; New entity in IFC2x.
+> HISTORY  New entity in IFC2x.
 
 ## Formal Propositions
 

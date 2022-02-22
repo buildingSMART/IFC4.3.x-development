@@ -28,7 +28,7 @@ The following conventions shall apply as default relative positions if the relat
         * for coverings that cover the element, as expressed by _IfcRelCoversBldgElements_;
         * for sub components that are aggregated to the main component, as expressed by _IfcRelAggregates_ and _IfcRelNests_. 
 
-> HISTORY&nbsp; New entity in IFC1.0.
+> HISTORY  New entity in IFC1.0.
 
 ## Attributes
 

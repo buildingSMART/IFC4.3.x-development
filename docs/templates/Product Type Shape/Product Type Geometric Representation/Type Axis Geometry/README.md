@@ -7,7 +7,7 @@ For distribution elements, this represents the 3D flow path of the item having _
 
 If an element type is defined parametrically (such as a flow segment type defining common material profile but no particular length or path), then no representations shall be asserted at the type.
 
-> NOTE&nbsp; The product representations are defined as representation maps (at the level of the supertype _IfcTypeProduct_, which get assigned by an element occurrence instance through the _IfcShapeRepresentation.Item[1]_ being an _IfcMappedItem_.
+> NOTE  The product representations are defined as representation maps (at the level of the supertype _IfcTypeProduct_, which get assigned by an element occurrence instance through the _IfcShapeRepresentation.Item[1]_ being an _IfcMappedItem_.
 
 ```
 concept {

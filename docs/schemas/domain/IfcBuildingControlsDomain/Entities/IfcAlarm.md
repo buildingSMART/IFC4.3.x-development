@@ -4,7 +4,7 @@ An alarm is a device that signals the existence of a condition or situation that
 
 Alarms include the provision of break glass buttons and manual pull boxes that are used to activate alarms.
 
-> HISTORY&nbsp; New entity in IFC4
+> HISTORY  New entity in IFC4
 
 { .note}
 >

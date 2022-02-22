@@ -11,7 +11,7 @@
 1. The user agent makes (or accesses) a database of relevant CSS1 properties of all the fonts of which the UA is aware. The UA may be aware of a font because it has been installed locally or it has been previously downloaded over the web. If there are two fonts with exactly the same properties, one of them is ignored. 
 2. At a given element and for each character in that element, the UA assembles the font-properties applicable to that element. Using the complete set of properties, the UA uses the 'font-family' property to choose a tentative font family. The remaining properties are tested against the family according to the matching criteria described with each property. If there are matches for all the remaining properties, then that is the matching font face for the given element. 
 3. If there is no matching font face within the 'font-family' being processed by step 2, and if there is a next alternative 'font-family' in the font set, then repeat step 2 with the next alternative 'font-family'. 
-4. If there is a matching font face, but it doesn't contain a glyph for the current character, and if there is a next alternative 'font-family' in the font sets, then repeat step 2 with the next alternative 'font-family'.&nbsp; 
+4. If there is a matching font face, but it doesn't contain a glyph for the current character, and if there is a next alternative 'font-family' in the font sets, then repeat step 2 with the next alternative 'font-family'.  
 5. If there is no font within the family selected in 2, then use a UA-dependent default 'font-family' and repeat step 2, using the best match that can be obtained within the default font. 
 
 (The above algorithm can be optimized to avoid having to revisit the CSS1 properties for each character.)
@@ -25,16 +25,16 @@ The per-property matching rules from (2) above are as follows:
 
 The inherited _Name_ attribute is used to define the font name, particularly in cases, where no (list of) font families are provided.
 
-> NOTE&nbsp; Corresponding CSS1 definitions are Font properties ('font-family', 'font-style', 'font-variant',&nbsp; 'font-weight').
+> NOTE  Corresponding CSS1 definitions are Font properties ('font-family', 'font-style', 'font-variant',  'font-weight').
 
-> HISTORY&nbsp; New entity in IFC2x3.
+> HISTORY  New entity in IFC2x3.
 
 ## Attributes
 
 ### FontFamily
 The value is a prioritized list of font family names and/or generic family names. The first list entry has the highest priority, if this font fails, the next list item shall be used. The last list item should (if possible) be a generic family.
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Attribute changed to being mandatory.
+> IFC4 CHANGE  Attribute changed to being mandatory.
 
 ### FontStyle
 The font style property selects between normal (sometimes referred to as "roman" or "upright"), italic and oblique faces within a font family.
@@ -42,17 +42,17 @@ The font style property selects between normal (sometimes referred to as "roman"
 ### FontVariant
 The font variant property selects between normal and small-caps.
   
-> NOTE&nbsp; It has been introduced for later compliance to full CSS1 support.
+> NOTE  It has been introduced for later compliance to full CSS1 support.
 
 ### FontWeight
 The font weight property selects the weight of the font.
   
-> NOTE&nbsp; Values other then 'normal' and 'bold' have been introduced for later compliance to full CSS1 support.
+> NOTE  Values other then 'normal' and 'bold' have been introduced for later compliance to full CSS1 support.
 
 ### FontSize
 The font size provides the size or height of the text font.
   
-> NOTE&nbsp; The following values are allowed, <_IfcLengthMeasure_, with positive values, the length unit is globally defined at _IfcUnitAssignment_.__
+> NOTE  The following values are allowed, <_IfcLengthMeasure_, with positive values, the length unit is globally defined at _IfcUnitAssignment_.__
 
 ## Formal Propositions
 

@@ -2,9 +2,9 @@
 
 The cylindrical surface is a surface unbounded in the direction of _z_. Bounded cylindrical surfaces are defined by using a subtype of _IfcBoundedSurface_ with _BasisSurface_ being a cylindrical surface.
 
-> NOTE 1&nbsp; A bounded cylindrical surface can be defined by an _IfcRectangularTrimmedSurface_ with _BasisSurface_ being the cylindrical surface and _U1_ = 0&deg;, _U2_ = 360&deg; and _V1_ = lower bound in **z**, _V2_ = upper bound in **z** (if the plane angle measure is degree). A bounded cylindrical arc surface is provided with |U1 - U2| < 360&deg; (assuming the Usense and Vsense agree to the sense of the basis surface).
+> NOTE 1  A bounded cylindrical surface can be defined by an _IfcRectangularTrimmedSurface_ with _BasisSurface_ being the cylindrical surface and _U1_ = 0&deg;, _U2_ = 360&deg; and _V1_ = lower bound in **z**, _V2_ = upper bound in **z** (if the plane angle measure is degree). A bounded cylindrical arc surface is provided with |U1 - U2| < 360&deg; (assuming the Usense and Vsense agree to the sense of the basis surface).
 
-> NOTE 2&nbsp; A non-rectangular bounded cylindrical surface, e.g. the surface of a round wall underneath a sloped roof, cab be defined by an _IfcCurveBoundedSurface_ with _IfcBoundaryCurve_'s, being a collection of p-curve segments. A p-curve is curve which lies on the basis of a surface and is defined in the parameter space of that surface.
+> NOTE 2  A non-rectangular bounded cylindrical surface, e.g. the surface of a round wall underneath a sloped roof, cab be defined by an _IfcCurveBoundedSurface_ with _IfcBoundaryCurve_'s, being a collection of p-curve segments. A p-curve is curve which lies on the basis of a surface and is defined in the parameter space of that surface.
 
 The inherited attributes are interpreted as
 
@@ -41,9 +41,9 @@ z = Position.P[3]
 > 
 
 
-> NOTE&nbsp; Entity adapted from **cylindrical_surface** defined in ISO 10303-42.
+> NOTE  Entity adapted from **cylindrical_surface** defined in ISO 10303-42.
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 ## Attributes
 

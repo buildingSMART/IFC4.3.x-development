@@ -8,13 +8,13 @@ A space is associated to a building storey (or in case of exterior spaces to a s
 * ELEMENT = space
 * PARTIAL = partial space
 
-> NOTE&nbsp; View definitions and implementation agreements may restrict spaces with _CompositionType_=ELEMENT to be non-overlapping.
+> NOTE  View definitions and implementation agreements may restrict spaces with _CompositionType_=ELEMENT to be non-overlapping.
 
 The _IfcSpace_ is used to build the spatial structure of a building (that serves as the primary project breakdown and is required to be hierarchical). The spatial structure elements are linked together by using the objectified relationship _IfcRelAggregates_.
 
 Figure 1 shows the _IfcSpace_ as part of the spatial structure. It also serves as the spatial container for space related elements.
 
-> NOTE&nbsp; Detailed requirements on mandatory element containment and placement structure relationships are given in view definitions and implementer agreements.
+> NOTE  Detailed requirements on mandatory element containment and placement structure relationships are given in view definitions and implementer agreements.
 
 !["spatial structure"](../../../../figures/ifcspace-spatialstructure.png "Figure 1 &mdash; Space composition")
 
@@ -25,7 +25,7 @@ The following guidelines should apply for using the _Name_, _Description_, _Long
 * _LongName_ holds the full name of the space, it is often used in addition to the _Name_, if a number is assigned to the room, then the descriptive name is exchanged as _LongName_.
 * _ObjectType_ holds the space type, i.e. usually the functional category of the space .
 
-> NOTE&nbsp; In cases of inconsistency between the geometric representation of the _IfcSpace_ and the combined geometric representations of the surrounding _IfcRelSpaceBoundary_, the geometric representation of the space should take priority over the geometric representation of the surrounding space boundaries.
+> NOTE  In cases of inconsistency between the geometric representation of the _IfcSpace_ and the combined geometric representations of the surrounding _IfcRelSpaceBoundary_, the geometric representation of the space should take priority over the geometric representation of the surrounding space boundaries.
 
 Figure 2 describes the heights and elevations of the _IfcSpace_.
 
@@ -37,17 +37,17 @@ Figure 2 describes the heights and elevations of the _IfcSpace_.
 
 !["space heights"](../../../../figures/ifcspace_heights.png "Figure 2 &mdash; Space elevations")
 
-> HISTORY&nbsp; New entity in IFC1.0
+> HISTORY  New entity in IFC1.0
 
 ## Attributes
 
 ### PredefinedType
 Predefined generic types for a space that are specified in an enumeration. There might be property sets defined specifically for each predefined type.
 
-> NOTE&nbsp; Previous use had been to indicates whether the _IfcSpace_ is an interior space by value INTERNAL, or an exterior space by value EXTERNAL. This use is now deprecated, the property 'IsExternal' at 'Pset_SpaceCommon' should be used instead.
+> NOTE  Previous use had been to indicates whether the _IfcSpace_ is an interior space by value INTERNAL, or an exterior space by value EXTERNAL. This use is now deprecated, the property 'IsExternal' at 'Pset_SpaceCommon' should be used instead.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; The attribute has been renamed from _ExteriorOrInteriorSpace_ with upward compatibility for file based exchange.
+> IFC4 CHANGE  The attribute has been renamed from _ExteriorOrInteriorSpace_ with upward compatibility for file based exchange.
 
 ### ElevationWithFlooring
 Level of flooring of this space; the average shall be taken, if the space ground surface is sloping or if there are level differences within this space.
@@ -55,10 +55,10 @@ Level of flooring of this space; the average shall be taken, if the space ground
 ### HasCoverings
 Reference to _IfcCovering_ by virtue of the objectified relationship _IfcRelCoversSpaces_. It defines the concept of a space having coverings assigned. Those coverings may represent different flooring, or tiling areas.
 
-> NOTE&nbsp; Coverings are often managed by the space, and not by the building element, which they cover.
+> NOTE  Coverings are often managed by the space, and not by the building element, which they cover.
 
 { .change-ifc2x3}
-> IFC2x Edition3 CHANGE&nbsp; New inverse relationship. Upward compatibility for file based exchange is guaranteed.
+> IFC2x Edition3 CHANGE  New inverse relationship. Upward compatibility for file based exchange is guaranteed.
 
 ### BoundedBy
 Reference to a set of _IfcRelSpaceBoundary_'s that defines the physical or virtual delimitation of that space against physical or virtual boundaries.

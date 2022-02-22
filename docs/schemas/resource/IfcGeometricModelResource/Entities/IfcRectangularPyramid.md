@@ -2,7 +2,7 @@
 
 The _IfcRectangularPyramid_ is a Construction Solid Geometry (CSG) 3D primitive. It is a solid with a rectangular base and a point called apex as the top. The tapers from the base to the top. The axis from the center of the base to the apex is perpendicular to the base. The inherited _Position_ attribute defines the _IfcAxisPlacement3D_ and provides the location and orientation of the pyramid:
 
-* _SELF\IfcCsgPrimitive3D.Position_: The location and orientation of the axis system for the primitive.&nbsp;
+* _SELF\IfcCsgPrimitive3D.Position_: The location and orientation of the axis system for the primitive. 
 * _SELF\IfcCsgPrimitive3D.Position.Location_: The center of the circular area being the bottom face of the cone.
 * _SELF\IfcCsgPrimitive3D.Position.Position[3]:_ The z-axis of the inherited placement coordinate system provides the center axis of the _IfcRightCircularCone_, and the apex is at the _Height_ value applied to the positive direction of the z-axis. The _BottomRadius_ defines the circular base at the xy-plane of the placement coordinate system.
 
@@ -10,7 +10,7 @@ As shown in Figure 1, the pyramid is positioned within its own placement coordin
 
 !["pyramid"](../../../../figures/ifcrectangularpyramid-layout1.png "Figure 1 &mdash; Rectangular pyramid geometry")
 
-> HISTORY&nbsp; New entity in IFC2x3
+> HISTORY  New entity in IFC2x3
 
 { .use-head}
 Texture use definition

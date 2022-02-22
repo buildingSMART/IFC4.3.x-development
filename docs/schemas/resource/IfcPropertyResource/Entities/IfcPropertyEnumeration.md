@@ -17,10 +17,10 @@ The unit is handled by the _Unit_ attribute, see Table 1 for an example of a uni
 
 Table 1 &mdash; Property enumeration with values, measure types and units
 
-> HISTORY&nbsp; New entity in IFC2.0, capabilities enhanced in IFC2x.
+> HISTORY  New entity in IFC2.0, capabilities enhanced in IFC2x.
 
 { .change-ifc2x}
-> IFC2x CHANGE&nbsp; Entity has been renamed from IfcEnumeration
+> IFC2x CHANGE  Entity has been renamed from IfcEnumeration
 
 ## Attributes
 

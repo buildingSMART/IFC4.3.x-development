@@ -13,7 +13,7 @@ _IfcTopologyRepresentation_ represents the concept of a particular topological r
 
 The representation type is given as a string value at the inherited attribute '_RepresentationType_'.
 
-> HISTORY&nbsp; New entity in IFC2x2.
+> HISTORY  New entity in IFC2x2.
 
 ## Formal Propositions
 

@@ -2,7 +2,7 @@
 
 An _IfcWorkSchedule_ represents a task schedule of a work plan, which in turn can contain a set of schedules for different purposes.
 
-> HISTORY&nbsp; New entity in IFC2.0.
+> HISTORY  New entity in IFC2.0.
 
 { .use-head}
 Declaration Use Definition

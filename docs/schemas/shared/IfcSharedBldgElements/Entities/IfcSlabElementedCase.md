@@ -5,7 +5,7 @@ The _IfcSlabElementedCase_ defines a slab with certain constraints for the provi
 * having components being assigned to the _IfcSlabElementedCase_ using the _IfcRelAggregates_ relationship accessible by the inverse relationship _IsDecomposedBy_.
 * applying the constraint that the parts within the decomposition shall be of type _IfcElementAssembly_, _IfcBeam_, _IfcMember_, _IfcPlate_, _IfcBuildingElementPart_ or _IfcBuiltElementProxy_.
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 { .use-head}
 Voiding Use Definition:

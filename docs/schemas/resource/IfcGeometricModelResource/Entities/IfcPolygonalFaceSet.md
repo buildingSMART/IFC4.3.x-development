@@ -15,7 +15,7 @@ Depending on the provision of _PnIndex_ the indices point either directly into t
 
 !["PnIndex"](../../../../figures/ifcpolygonalfaceset_01.png "Figure 1 &mdash; Use of _PnIndex_")
 
-> NOTE&nbsp; If the _IfcPolygonalFaceSet_ is closed, the face vertices of the _IfcIndexedPolygonalFace_'s shall connect counterclock-wise when seen from the outside of the closed shell to guarantee that the face normal points away from the material of the shell. Inner loops, provided by the _IfcIndexedPolygonalFaceWithVoids_, shall connect clock-wise.
+> NOTE  If the _IfcPolygonalFaceSet_ is closed, the face vertices of the _IfcIndexedPolygonalFace_'s shall connect counterclock-wise when seen from the outside of the closed shell to guarantee that the face normal points away from the material of the shell. Inner loops, provided by the _IfcIndexedPolygonalFaceWithVoids_, shall connect clock-wise.
 
 ![IfcFacetedFaceSet_Example-01](../../../../figures/ifcfacetedfaceset_example-01.png)
 
@@ -34,9 +34,9 @@ Figure 2 shows an <em>IfcFacetedFaceSet</em> represented by:
 ((0.,0.,0.), (1.,0.,0.), (1.,1.,0.), (0.,1.,0.), (0.,0.,2.), (1.,0.,2.), (1.,1.,2.), (0.,1.,2.))
 ```
 
-> NOTE&nbsp; The definition of _IfcFacetedFaceSet_ is based on the **indexedFaceSet** defined in ISO/IEC 19775-1
+> NOTE  The definition of _IfcFacetedFaceSet_ is based on the **indexedFaceSet** defined in ISO/IEC 19775-1
 
-> HISTORY&nbsp; New entity in IFC4 Addendum 2.
+> HISTORY  New entity in IFC4 Addendum 2.
 
 { .spec-head}
 Informal Propositions:

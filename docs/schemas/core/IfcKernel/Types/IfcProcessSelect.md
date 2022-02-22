@@ -4,4 +4,4 @@ _IfcProcessSelect_ provides the option to either select a process or activity o
 
 > HISTORY  New select type in IFC4.
 
-&nbsp;
+ 

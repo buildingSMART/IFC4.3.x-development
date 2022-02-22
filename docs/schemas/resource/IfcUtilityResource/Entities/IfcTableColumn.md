@@ -4,7 +4,7 @@ An _IfcTableColumn_ is a data structure that captures column information for use
 
 The use of _IfcTableColumn_ supersedes the _IsHeading_ flag associated with _IfcTableRow_.
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 ## Attributes
 

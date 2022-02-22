@@ -3,7 +3,7 @@
 The _IfcBSplineSurface_ is a general form of rational or polynomial parametric surface.
 
 { .extDef}
-> NOTE&nbsp; Definition according to ISO/CD 10303-42:1992  
+> NOTE  Definition according to ISO/CD 10303-42:1992  
 > A b_spline_surface is a general form of rational or polynomial parametric surface which is represented by control points, basis functions, and possibly, weights. As with the corresponding curve entity it has some special subtypes where some of the data can be derived.
 
 The symbology used here is:
@@ -51,9 +51,9 @@ In the rational case the surface equation is:
 
 ![formula](../../../../figures/ifcbsplinesurface-math2.gif)
 
-> NOTE&nbsp; Entity adapted from **b_spline_surface** defined in ISO10303-42.
+> NOTE  Entity adapted from **b_spline_surface** defined in ISO10303-42.
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 ## Attributes
 

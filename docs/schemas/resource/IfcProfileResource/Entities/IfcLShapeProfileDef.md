@@ -2,13 +2,13 @@
 
 _IfcLShapeProfileDef_ defines a section profile that provides the defining parameters of an L-shaped section (equilateral L profiles are also covered by this entity) to be used by the swept area solid. Its parameters and orientation relative to the position coordinate system are according to the following illustration. The shorter leg has the same direction as the positive _Position.P[1]_-axis, the longer or equal leg the same as the positive _Position.P[2]_-axis. The centre of the position coordinate system is in the profiles centre of the bounding box.
 
-> HISTORY&nbsp; New entity in IFC2x2.
+> HISTORY  New entity in IFC2x2.
 
 { .change-ifc2x3}
-> IFC2x3 CHANGE&nbsp; All profile origins are now in the center of the bounding box.
+> IFC2x3 CHANGE  All profile origins are now in the center of the bounding box.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Types of _FilletRadius_ and _EdgeRadius_ were relaxed to allow for zero values.  
+> IFC4 CHANGE  Types of _FilletRadius_ and _EdgeRadius_ were relaxed to allow for zero values.  
 > Trailing attributes _CentreOfGravityInX_ and _CentreOfGravityInY_ deleted, use respective properties in _IfcExtendedProfileProperties_ instead.  
 > WHERE rule which required _Width_ <= _Depth_ removed.
 

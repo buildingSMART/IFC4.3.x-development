@@ -6,10 +6,10 @@ Each instance of _IfcCostItem_ may have a name and a description. Depending on t
 
 An _IfcCostItem_ can link one or many _IfcCostValue_'s representing a unit cost, total cost, or a unit cost with one or many quantities used to generate the total cost. The quantities can be given as individual quantities, or those quantities are provided as element quantities by one or many building elements. The _IfcCostValue.CostType_ attribute indicates the category of cost, which may be used to present the value in a particular column. For nested cost items (having _IfcRelNests_ relationship), _IfcCostValue.CostType_ is significant such that _IfcCostValue.AppliedValue_ is calculated as the sum of all nested costs having the same _IfcCostValue.CostType_ or if set to an asterisk ('\*'), then the sum of all nested costs of all cost types. An _IfcCostValue_ may represent an original value or a value derived from formulas using _IfcAppliedValueRelationship_. For example, taxes may be calculated as a percentage of a subtotal.
 
-> HISTORY&nbsp; New entity in IFC2.0.
+> HISTORY  New entity in IFC2.0.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Attribute _PredefinedType_, _CostValues_, and _CostQuantities_ added.
+> IFC4 CHANGE  Attribute _PredefinedType_, _CostValues_, and _CostQuantities_ added.
 
 ## Attributes
 

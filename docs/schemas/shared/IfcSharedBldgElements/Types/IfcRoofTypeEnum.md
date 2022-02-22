@@ -4,7 +4,7 @@ This enumeration defines the basic configuration of the roof in terms of the dif
 
 Roofs which are subdivided into more than these basic shapes or roofs with non-regular shapes (free form roofs) have the type _FREEFORM_.
 
-> HISTORY&nbsp; New enumeration in IFC2x.
+> HISTORY  New enumeration in IFC2x.
 
 ## Items
 

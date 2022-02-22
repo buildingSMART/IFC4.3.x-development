@@ -6,7 +6,7 @@ Usually measured in N/m3.
 
 Type: REAL
 
-> HISTORY&nbsp; New type in IFC2x.
+> HISTORY  New type in IFC2x.
 
 Figure 1 illustrates elastic support of a planar member.
 

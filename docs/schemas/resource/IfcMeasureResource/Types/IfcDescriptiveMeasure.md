@@ -4,6 +4,6 @@ A descriptive measure is a human interpretable definition of a quantifiable valu
 
 Type: STRING
 
-> NOTE&nbsp; Type adapted from **descriptive_measure** defined in ISO 10303-41.
+> NOTE  Type adapted from **descriptive_measure** defined in ISO 10303-41.
 
-> HISTORY&nbsp; New type in IFC1.5.1.
+> HISTORY  New type in IFC1.5.1.

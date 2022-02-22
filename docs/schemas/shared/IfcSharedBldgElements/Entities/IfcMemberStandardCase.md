@@ -10,9 +10,9 @@ The standard member, _IfcMemberStandardCase_, defines a member with certain cons
 * are consistent in using the correct cardinal point offset of the profile as compared to the 'Axis' and 'Body' shape representation
 * are extruded perpendicular to the profile definition plane
 
-> NOTE&nbsp; View definitions and implementer agreements may further constrain the applicable geometry types, such as by excluding tapering from an _IfcMemberStandardCase_ implementation.
+> NOTE  View definitions and implementer agreements may further constrain the applicable geometry types, such as by excluding tapering from an _IfcMemberStandardCase_ implementation.
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 ## Formal Propositions
 

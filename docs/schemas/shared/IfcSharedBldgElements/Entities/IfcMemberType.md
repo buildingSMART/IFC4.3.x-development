@@ -11,7 +11,7 @@ It is used to define a member specification, or member style (the specific produ
 
 Occurrences of the _IfcMemberType_ within building models are represented by instances of _IfcMemberStandardCase_ if the _IfcMemberType_ has a single associated _IfcMaterialProfileSet_; otherwise they are represented by instances of _IfcMember_. Occurrences of the _IfcMemberType_ within structural analysis models are represented by instances of _IfcStructuralCurveMember_, or its applicable subtypes.
 
-> HISTORY&nbsp; New entity in IFC2x2 Addendum 1.
+> HISTORY  New entity in IFC2x2 Addendum 1.
 
 ## Attributes
 

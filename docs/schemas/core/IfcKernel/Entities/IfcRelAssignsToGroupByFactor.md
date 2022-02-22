@@ -4,11 +4,11 @@ The objectified relationship _IfcRelAssignsToGroupByFactor_ is a specialization 
 
 The ratio can be used to define a percentage assignment. For example, a _Factor_ of 0.8 would indicate that the object is assigned by 80% to the group, or a _Factor_ of 2.5 would indicate the object is assigned with a weight factor of 2.5 to the group.
 
-> NOTE&nbsp; Examples of factored groups include the assignment of load cases in a load combination in structural analysis, or the assignment of spaces by percentage to different rental zones.
+> NOTE  Examples of factored groups include the assignment of load cases in a load combination in structural analysis, or the assignment of spaces by percentage to different rental zones.
 
 The same object or object type may be included with the same or different _Factor_ values to many groups. Grouping relationships are not hierarchical.
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 ## Attributes
 

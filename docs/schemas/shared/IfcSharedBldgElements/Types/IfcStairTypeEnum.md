@@ -4,7 +4,7 @@ This enumeration defines the basic configuration of the stair type in terms of t
 
 Stairs which are subdivided into more than three landings, or stairs with non-regular shapes are to be defined with type being USERDEFINED or NOTDEFINED.
 
-> HISTORY&nbsp; New enumeration in IFC2.0.
+> HISTORY  New enumeration in IFC2.0.
 
 ## Items
 

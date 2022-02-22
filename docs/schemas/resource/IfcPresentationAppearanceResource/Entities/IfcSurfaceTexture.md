@@ -19,7 +19,7 @@ Texture are defined by 2D images that contain an array of colour values describi
 3. Full RGB textures (three-component)
 4. Full RGB plus alpha opacity textures (four-component)
 
-> NOTE&nbsp; Image formats specify an alpha opacity, not transparency (where alpha = 1 - transparency).
+> NOTE  Image formats specify an alpha opacity, not transparency (where alpha = 1 - transparency).
 > 
 
 
@@ -29,7 +29,7 @@ Figure 1 illustrates the texture coordinate system.
 
 The following definitions from ISO/IEC 19775-1 X3D Architecture and base components ([X3D Specification](http://www.web3d.org/x3d/specifications/)) on texture coordinates apply:
 
-* <span style="font-size:smaller;color:blue">Texture maps are defined in a 2D coordinate system (s,&nbsp;t) that ranges from [0.0, 1.0] in both directions. The bottom edge of the image corresponds to the S-axis of the texture map, and left edge of the image corresponds to the T-axis of the texture map. The lower-left pixel of the image corresponds to s=0, t=0, and the top-right pixel of the image corresponds to s=1, t=1. Texture maps may be viewed as two dimensional colour functions that, given an <em>(s,&nbsp;t)</em> coordinate, return a colour value <em>colour(s,&nbsp;t)</em>.</span>
+* <span style="font-size:smaller;color:blue">Texture maps are defined in a 2D coordinate system (s, t) that ranges from [0.0, 1.0] in both directions. The bottom edge of the image corresponds to the S-axis of the texture map, and left edge of the image corresponds to the T-axis of the texture map. The lower-left pixel of the image corresponds to s=0, t=0, and the top-right pixel of the image corresponds to s=1, t=1. Texture maps may be viewed as two dimensional colour functions that, given an <em>(s, t)</em> coordinate, return a colour value <em>colour(s, t)</em>.</span>
 
 If multiple surface textures are included in the _IfcSurfaceStyleWithTextures_ applying them to a geometric item, a mode and optional parameters can be included that blending operations.
 
@@ -74,12 +74,12 @@ scale T = <em>TextureTransform.Scale2</em></span></li>
 </ul>
 </li>
 </ul>
-> NOTE&nbsp; The definitions of texturing within this standard have been developed in dependence on the texture component of X3D. See ISO/IEC 19775-1.2:2008 X3D Architecture and base components Edition 2, Part 1, 18 Texturing component for the definitions in the international standard.
+> NOTE  The definitions of texturing within this standard have been developed in dependence on the texture component of X3D. See ISO/IEC 19775-1.2:2008 X3D Architecture and base components Edition 2, Part 1, 18 Texturing component for the definitions in the international standard.
 
-> HISTORY&nbsp; New entity in IFC2x2.
+> HISTORY  New entity in IFC2x2.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Attribute TextureType replaces by _Mode_, attributes _Parameter_ and _MapsTo_ aded, new inverse attribute _UsedInStyle_.
+> IFC4 CHANGE  Attribute TextureType replaces by _Mode_, attributes _Parameter_ and _MapsTo_ aded, new inverse attribute _UsedInStyle_.
 
 ## Attributes
 
@@ -91,26 +91,26 @@ The _RepeatT_ field specifies how the texture wraps in the T direction. If _Repe
 
 ### Mode
 The _Mode_ attribute is provided to control the appearance of a multi textures. The mode then controls the type of blending operation. The mode includes a MODULATE for a lit appearance, a REPLACE for a unlit appearance, and variations of the two.
-> NOTE&nbsp; The applicable values for the _Mode_ attribute are determined by view definitions or implementer agreements. It is recommended to use the modes described in ISO/IES 19775-1.2:2008 X3D Architecture and base components Edition 2, Part 1. See [18.4.3 MultiTexture](http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/components/texturing.html#MultiTexture) for recommended values.
+> NOTE  The applicable values for the _Mode_ attribute are determined by view definitions or implementer agreements. It is recommended to use the modes described in ISO/IES 19775-1.2:2008 X3D Architecture and base components Edition 2, Part 1. See [18.4.3 MultiTexture](http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/components/texturing.html#MultiTexture) for recommended values.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; New attribute replacing previous TextureType.
+> IFC4 CHANGE  New attribute replacing previous TextureType.
 
 ### TextureTransform
 The _TextureTransform_ defines a 2D transformation that is applied to the texture coordinates. It affects the way texture coordinates are applied to the surfaces of geometric representation itesm. The 2D transformation supports changes to the size, orientation, and position of textures on shapes. Mirroring is not allowed to be used in the _IfcCartesianTransformationOperator_
 
 ### Parameter
 The _Parameter_ attribute is provided to control the appearance of a multi textures. The applicable parameters depend on the value of the _Mode_ attribute.
-> NOTE&nbsp; The applicable values for the list of _Parameter_ attributes are determined by view definitions or implementer agreements. It is recommended to use the source and the function fields described in ISO/IES 19775-1.2:2008 X3D Architecture and base components Edition 2, Part 1. See [18.4.3 MultiTexture](http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/components/texturing.html#MultiTexture) for recommended values.  
+> NOTE  The applicable values for the list of _Parameter_ attributes are determined by view definitions or implementer agreements. It is recommended to use the source and the function fields described in ISO/IES 19775-1.2:2008 X3D Architecture and base components Edition 2, Part 1. See [18.4.3 MultiTexture](http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/components/texturing.html#MultiTexture) for recommended values.  
 > By convention, _Parameter[1]_ shall then hold the source value, _Parameter[2]_ the function value, _Parameter[3]_ the base RGB color for select operations, and _Parameter[4]_ the alpha value for select operations.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; New attribute added at the end of the attribute list.
+> IFC4 CHANGE  New attribute added at the end of the attribute list.
 
 ### IsMappedBy
 Texture coordinates, either provided by a corresponding list of texture vertices to vertex-based geometric items or by a texture coordinate generator, that applies the surface texture to the surfaces of the geometric items.
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; New attribute added at the end of the attribute list.
+> IFC4 CHANGE  New attribute added at the end of the attribute list.
 
 ### UsedInStyles
 

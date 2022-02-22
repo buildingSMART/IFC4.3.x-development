@@ -6,7 +6,7 @@ Applicability:
 
 * Point supports and connections.
 
-> HISTORY&nbsp; New entity in IFC2x2.
+> HISTORY  New entity in IFC2x2.
 
 ## Attributes
 

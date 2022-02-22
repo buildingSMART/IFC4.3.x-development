@@ -12,10 +12,10 @@ The context provided by the _IfcProject_ includes:
     * optionally the indication of the true north
     * optionally the map conversion between the project coordinate system and the geospatial coordinate reference system. 
 
-> HISTORY&nbsp; New entity in IFC1.0
+> HISTORY  New entity in IFC1.0
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; The attributes _RepresentationContexts_ and _UnitsInContext_ are made optional and are promoted to supertype _IfcContext_.
+> IFC4 CHANGE  The attributes _RepresentationContexts_ and _UnitsInContext_ are made optional and are promoted to supertype _IfcContext_.
 
 { .spec-head}
 Informal Propositions:

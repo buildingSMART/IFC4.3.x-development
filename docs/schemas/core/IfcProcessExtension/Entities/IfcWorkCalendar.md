@@ -2,7 +2,7 @@
 
 An _IfcWorkCalendar_ defines working and non-working time periods for tasks and resources. It enables to define both specific time periods, such as from 7:00 till 12:00 on 25th August 2009, as well as repetitive time periods based on frequently used recurrence patterns, such as each Monday from 7:00 till 12:00 between 1st March 2009 and 31st December 2009.
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 A work calendar is a subtype of _IfcControl_ and thus inherits the feature for controlling other objects through _IfcRelAssignsToControl_, which is used to define a work calendar for tasks (_IfcTask_) and resources (_IfcResource_). It also inherits a name and description attribute, whereas a name shall be given and a description may be given as an indication of its content and usage.
 

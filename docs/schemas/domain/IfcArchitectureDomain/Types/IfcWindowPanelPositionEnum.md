@@ -15,7 +15,7 @@ Windows which are subdivided into more than three panels have to be defined by t
 | TriplePanelLeft | first IfcWindowPanelProperties with PanelPosition = LEFT<br>second IfcWindowPanelProperties with PanelPosition = TOP<br>third IfcWindowPanelProperties with PanelPosition = BOTTOM | ![](../../../../figures/ifcwindowpanelpositionenum-fig07.gif) |
 | TriplePanelRight | first IfcWindowPanelProperties with PanelPosition = TOP<br>second IfcWindowPanelProperties with PanelPosition = BOTTOM<br>third IfcWindowPanelProperties with PanelPosition = RIGHT | ![](../../../../figures/ifcwindowpanelpositionenum-fig08.gif) |
 
-> HISTORY&nbsp; New enumeration in IFC2.0.
+> HISTORY  New enumeration in IFC2.0.
 
 Note:
 

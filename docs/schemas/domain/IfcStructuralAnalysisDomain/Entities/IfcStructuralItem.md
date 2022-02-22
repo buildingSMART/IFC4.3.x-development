@@ -4,10 +4,10 @@ The abstract entity _IfcStructuralItem_ is the generalization of structural memb
 
 Relationships between elements in the building model and structural items as their idealizations can be expressed by instances of _IfcRelAssignsToProduct_.
 
-> HISTORY&nbsp; New entity in IFC2x2.
+> HISTORY  New entity in IFC2x2.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Use definitions and informal proposition added.
+> IFC4 CHANGE  Use definitions and informal proposition added.
 
 ****Coordinate Systems****:
 
@@ -38,7 +38,7 @@ Instances of _IfcStructuralItem_ shall have a topology representation given by a
 * Curve members and curve connections shall either be represented by an _IfcOrientedEdge_, _IfcEdgeCurve_, or _IfcEdge_. The curve to which the _IfcEdgeCurve_ (or an _IfcOrientedEdge_'s underlying _IfcEdgeCurve_) refers to is the reference curve of the structural item in the global coordinate system. Start and end vertex of the edge shall be _IfcVertexPoint_s with underlying _IfcCartesianPoint_s. The following labels are used in the _IfcTopologyRepresentation_: 
     * _RepresentationIdentifier_: 'Reference'
     * _RepresentationType_: 'Edge' 
->> NOTE&nbsp; While an _IfcEdge_ (or _IfcOrientedEdge_ with underlying _IfcEdge_) does not provide an explicit underlying curve geometry, it may be used to imply an underlying straight line as reference curve with the origin of the curve parameter at the start vertex point. 
+>> NOTE  While an _IfcEdge_ (or _IfcOrientedEdge_ with underlying _IfcEdge_) does not provide an explicit underlying curve geometry, it may be used to imply an underlying straight line as reference curve with the origin of the curve parameter at the start vertex point. 
 * Surface members and surface connections shall be represented by an _IfcFaceSurface_. The underlying surface defines the reference surface of the structural surface item in the global coordiante system. All edges in the bounds of the face shall conform to the rules for edge representations of structural curve item. The following labels are used in the _IfcTopologyRepresentation_: 
     * _RepresentationIdentifier_: 'Reference'
     * _RepresentationType_: 'Face' 
@@ -67,9 +67,9 @@ Informal Propositions:
 
 1. The _ObjectPlacement_s of all structural items which are grouped into the same instance of _IfcStructuralAnalysisModel_ shall refer to the same instance of _IfcObjectPlacement_.
 
-> NOTE&nbsp; This rule is necessary to achieve consistent topology representations. The topology representations of structural items in an analysis model are meant to share vertices and edges und must therefore have the same object placement.
+> NOTE  This rule is necessary to achieve consistent topology representations. The topology representations of structural items in an analysis model are meant to share vertices and edges und must therefore have the same object placement.
 
-> NOTE&nbsp; A structural item may be grouped into more than one analysis model. In this case, all these models must use the same instance of _IfcObjectPlacement_.
+> NOTE  A structural item may be grouped into more than one analysis model. In this case, all these models must use the same instance of _IfcObjectPlacement_.
 
 ## Attributes
 

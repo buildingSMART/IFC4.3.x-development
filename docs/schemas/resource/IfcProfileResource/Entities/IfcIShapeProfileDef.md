@@ -2,10 +2,10 @@
 
 _IfcIShapeProfileDef_ defines a section profile that provides the defining parameters of an 'I' or 'H' section. The I-shape profile has values for its overall depth, width and its web and flange thicknesses. Additionally a fillet radius, flange edge radius, and flange slope may be given. This profile definition represents an I-section which is symmetrical about its major and minor axes; top and bottom flanges are equal and centred on the web.
 
-> HISTORY&nbsp; New entity in IFC2x.
+> HISTORY  New entity in IFC2x.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Type of _FilletRadius_ relaxed to allow for zero radius. Attributes _FlangeEdgeRadius_ and _FlangeSlope_ added.
+> IFC4 CHANGE  Type of _FilletRadius_ relaxed to allow for zero radius. Attributes _FlangeEdgeRadius_ and _FlangeSlope_ added.
 
 Figure 1 illustrates parameters of the I-shape profile definition.
 

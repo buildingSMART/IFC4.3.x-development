@@ -2,7 +2,7 @@
 
 A site is a defined area of land, possibly covered with water, on which the project construction is to be completed. A site may be used to erect, retrofit or turn down building(s), or for other construction related developments.
 
-> NOTE&nbsp; Definition according to ISO 6707-1: area of land or water where construction work or other development is undertaken.
+> NOTE  Definition according to ISO 6707-1: area of land or water where construction work or other development is undertaken.
 
 A site may include a definition of the single geographic reference point for this site (global position using WGS84 with _Longitude_, _Latitude_ and _Elevation_). The precision is provided up to millionth of a second and it provides an absolute placement in relation to the real world as used in exchange with geospational information systems. If asserted, the _Longitude_, _Latitude_ and _Elevation_ establish the point in WGS84 where the point 0.,0.,0. of the _LocalPlacement_ of _IfcSite_ is situated.
 
@@ -18,7 +18,7 @@ The _IfcSite_ is used to build the spatial structure of a building (that serves 
 
 Figure 1 shows the _IfcSite_ as part of the spatial structure. In addition to the logical spatial structure, also the placement hierarchy is shown. In this example the spatial structure hierarchy and the placement hierarchy are identical.
 
-> NOTE&nbsp; Detailed requirements on mandatory element containment and placement structure relationships are given in view definitions and implementer agreements.
+> NOTE  Detailed requirements on mandatory element containment and placement structure relationships are given in view definitions and implementer agreements.
 
 !["IfcSite as part of a spatial structure"](../../../../figures/ifcsite-spatialstructure.png "Figure 1 &mdash; Site composition")
 
@@ -34,19 +34,19 @@ For exact georeferencing (or referencing to any other geographic coordinate syst
 
 !["IfcSite with local placement and WGS84 coordinates"](../../../../figures/ifcsite_heights.png "Figure 2 &mdash; Site placement and elevations")
 
-> HISTORY &nbsp;New entity in IFC1.0.
+> HISTORY  New entity in IFC1.0.
 
 ## Attributes
 
 ### RefLatitude
 World Latitude at reference point (most likely defined in legal description). Defined as integer values for degrees, minutes, seconds, and, optionally, millionths of seconds with respect to the world geodetic system WGS84.
-> NOTE&nbsp; Latitudes are measured relative to the geodetic equator, north of the equator by positive values - from 0 till +90, south of the equator by negative values - from 0 till -90.
+> NOTE  Latitudes are measured relative to the geodetic equator, north of the equator by positive values - from 0 till +90, south of the equator by negative values - from 0 till -90.
 
 ### RefLongitude
 World Longitude at reference point (most likely defined in legal description). Defined as integer values for degrees, minutes, seconds, and, optionally, millionths of seconds with respect to the world geodetic system WGS84.
-> NOTE&nbsp; Longitudes are measured relative to the geodetic zero meridian, nominally the same as the Greenwich prime meridian: longitudes west of the zero meridian have negative values - from 0 till -180, longitudes east of the zero meridian have positive values - from 0 till -180.
+> NOTE  Longitudes are measured relative to the geodetic zero meridian, nominally the same as the Greenwich prime meridian: longitudes west of the zero meridian have negative values - from 0 till -180, longitudes east of the zero meridian have positive values - from 0 till -180.
 
-> EXAMPLE&nbsp; Chicago Harbor Light has according to WGS84 a longitude -87.35.40 (or 87.35.40W) and a latitude 41.53.30 (or 41.53.30N).
+> EXAMPLE  Chicago Harbor Light has according to WGS84 a longitude -87.35.40 (or 87.35.40W) and a latitude 41.53.30 (or 41.53.30N).
 
 ### RefElevation
 Datum elevation relative to sea level.

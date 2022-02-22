@@ -34,4 +34,4 @@ The _IfcBuildingControlsDomain_ schema does not specify building automation prot
 * _IfcProcedure_: Captures device procedures that may be run arbitrarily or in response to events.
 * _IfcTask_: Captures device programs that may be scheduled at various times.
 
-> HISTORY&nbsp; New schema in IFC2x2.
+> HISTORY  New schema in IFC2x2.

@@ -6,11 +6,11 @@ The _SweptArea_ is swept along the _Directrix_ in such a way that the origin of 
 
 The _Directrix_ and the _ReferenceSurface_ are positioned within the object coordinate system. The start of the sweeping operation is at the _StartParam_, being either the parameter value based on the curve parameterization, or by a length measured along the directrix from its beginning. If no _StartParam_ is provided the start defaults to the begin of the directrix. The end of the sweeping operation is at the _EndParam_, being either the parameter value based on the curve parameterization, or by a length measured along the directrix from its beginning. If no _EndParam_ is provided the end defaults to the end of the directrix.
 
-> NOTE&nbsp; The _StartParam_ and the _EndParam_, if provided as a parameter value, are not normalized by default, they depend upon the parameterization of the curve. However using the _IfcReparametrisedCompositeCurveSegment_ within an _IfcCompositeCurve_ as the directrix allows to explicitly reparameterize the underlying sweeping curve.  
+> NOTE  The _StartParam_ and the _EndParam_, if provided as a parameter value, are not normalized by default, they depend upon the parameterization of the curve. However using the _IfcReparametrisedCompositeCurveSegment_ within an _IfcCompositeCurve_ as the directrix allows to explicitly reparameterize the underlying sweeping curve.  
 
-> NOTE&nbsp; In the case of a curve composed of _IfcCurveSegment_, the _IfcSweptAreaSolid_ _Position_ is dependent on the _IfcCurveSegment_ _StartPlacement_ and the type of _BasisCurve_ which defines the _name-function_  between the start and end (explicitly defined as the start point of the next segment) points of the segment
+> NOTE  In the case of a curve composed of _IfcCurveSegment_, the _IfcSweptAreaSolid_ _Position_ is dependent on the _IfcCurveSegment_ _StartPlacement_ and the type of _BasisCurve_ which defines the _name-function_  between the start and end (explicitly defined as the start point of the next segment) points of the segment
 
-> EXAMPLE&nbsp; The reference surface is any surface (plane, cylindric, composite) situated in 3D space and positioned in the object coordinate system. In many cases, it is a surface of extrusion. The directrix lies on the surface, often defined as a p-curve at this reference surface. At any point of the directrix, a plane can be constructed. The origin of the position coordinate system lies at the directrix. The Axis3 (the z-axis, or normal) of the position coordinate system is identical to the tangent of the directrix at this point, the Axis1 (the x axis, or u) of the position coordinate system is identical to the _FixedReference_ direction. The Axis2 (the y axis, or v) is constructed. In this case the resulting swept solid is not repositioned.  
+> EXAMPLE  The reference surface is any surface (plane, cylindric, composite) situated in 3D space and positioned in the object coordinate system. In many cases, it is a surface of extrusion. The directrix lies on the surface, often defined as a p-curve at this reference surface. At any point of the directrix, a plane can be constructed. The origin of the position coordinate system lies at the directrix. The Axis3 (the z-axis, or normal) of the position coordinate system is identical to the tangent of the directrix at this point, the Axis1 (the x axis, or u) of the position coordinate system is identical to the _FixedReference_ direction. The Axis2 (the y axis, or v) is constructed. In this case the resulting swept solid is not repositioned.  
 
 The orientation of the _SweptArea_ as it sweeps along the _Directrix_ is precisely defined by a _CartesianTransformationOperator3d_ with attributes:  
 
@@ -20,11 +20,11 @@ The orientation of the _SweptArea_ as it sweeps along the _Directrix_ is precise
 
 The remaining attributes are defaulted to define a corresponding transformation matrix **T(u)**, which varies with the _Directrix_ parameter **u**.  
 
-> NOTE&nbsp; The geometric shape of the solid is not dependent upon the curve parameterization; the volume depends upon the area swept and the length of the _Directrix_.  
+> NOTE  The geometric shape of the solid is not dependent upon the curve parameterization; the volume depends upon the area swept and the length of the _Directrix_.  
 
-> NOTE&nbsp; Entity adapted from **fixed_reference_swept_surface** defined in ISO 10303-42.  
+> NOTE  Entity adapted from **fixed_reference_swept_surface** defined in ISO 10303-42.  
 
-> HISTORY&nbsp; New entity in IFC4.  
+> HISTORY  New entity in IFC4.  
 
 { .spec-head}  
 Informal Propositions:  

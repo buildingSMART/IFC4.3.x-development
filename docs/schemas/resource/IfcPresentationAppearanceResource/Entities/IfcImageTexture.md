@@ -21,12 +21,12 @@ The following definitions from ISO/IEC 19775-1 X3D Architecture and base compone
 
 The Uniform Resource Locator (URL) is a form of an URI and specified in [RFC1738](http://www.ietf.org/rfc/rfc1738.txt?number=1738) by IETF. It supports resources located on a particular server being accessed by a particular protocol (usually http), and resources located at a local machine.
 
-> NOTE&nbsp; Exchange files following the ifcZIP convention may include a sub directory structure for image resources to be stored together with the product data set.
+> NOTE  Exchange files following the ifcZIP convention may include a sub directory structure for image resources to be stored together with the product data set.
 
->> NOTE&nbsp; The definitions of texturing within this standard have been developed in dependence on the texture component of X3D. See ISO/IEC 19775-1.2:2008 X3D Architecture and base components Edition 2, Part 1, 18 Texturing component for the definitions in the international standard.
+>> NOTE  The definitions of texturing within this standard have been developed in dependence on the texture component of X3D. See ISO/IEC 19775-1.2:2008 X3D Architecture and base components Edition 2, Part 1, 18 Texturing component for the definitions in the international standard.
 >
 
-> HISTORY&nbsp; New entity in IFC2x2.
+> HISTORY  New entity in IFC2x2.
 
 ## Attributes
 

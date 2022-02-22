@@ -11,4 +11,4 @@ The geometric shape representation allows for
 * multiple shape representations for the same product definition shape of a product 
 * separate shape representations for components or parts of the product definition shape by using shape aspects 
 
-> NOTE&nbsp; The definitions within this schema have been influenced or have been adapted from ISO 10303-41, ISO 10303-42, and ISO 10303-43.
+> NOTE  The definitions within this schema have been influenced or have been adapted from ISO 10303-41, ISO 10303-42, and ISO 10303-43.

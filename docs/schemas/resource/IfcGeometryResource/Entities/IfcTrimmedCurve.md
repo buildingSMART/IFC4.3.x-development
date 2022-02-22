@@ -2,13 +2,13 @@
 
 An _IfcTrimmedCurve_ is a bounded curve that is trimmed at both ends. The trimming points may be provided by a Cartesian point or by a parameter value, based on the parameterization of the _BasisCurve_. The _SenseAgreement_ attribute indicates whether the direction of the _IfcTrimmedCurve_ agrees with or is opposed to the direction of the _BasisCurve_.
 
-> NOTE&nbsp; In case of the _BasisCurve_ being a closed curve, such as an _IfcCircle_ or _IfcEllipse_, the _SenseAgreement_ affects the geometric shape of the _IfcTrimmedCurve_.
+> NOTE  In case of the _BasisCurve_ being a closed curve, such as an _IfcCircle_ or _IfcEllipse_, the _SenseAgreement_ affects the geometric shape of the _IfcTrimmedCurve_.
 
 !["curve parameterization"](../../../../figures/ifctrimmedcurve_parameterization.png "Figure 1 &mdash; Trimmed curve parameterization")
 
 Figure 1 shows the four arcs (dashed blue and green lines with arrow showing different orientations) that can be defined by the same _BasisCurve_ (of type _IfcCircle_) and the same trimming points (given by Cartesian points and parameter values) by using different assignments to _Trim1_ and _Trim2_ and _SenseAgreement_.
 
-> NOTE&nbsp; Since the _BasisCurve_ is closed (type _IfcCircle_), the exception of the informal proposition IP3 applies, i.e. the sense flag is not required to be consistent with the parameter values of _Trim1_ and _Trim1_, so the rule (sense = parameter 1 < parameter 2) may not be fulfilled.
+> NOTE  Since the _BasisCurve_ is closed (type _IfcCircle_), the exception of the informal proposition IP3 applies, i.e. the sense flag is not required to be consistent with the parameter values of _Trim1_ and _Trim1_, so the rule (sense = parameter 1 < parameter 2) may not be fulfilled.
 
 { .extDef}
 > NOTE Definition according to ISO/CD 10303-42:1992  
@@ -27,13 +27,13 @@ At least one of these shall be specified at each end of the curve. The _SenseAgr
 
 In the above equations t~1~ is the value given by _Trim1_ or the parameter value corresponding to point 1 and t~2~ is the value given by _Trim2_ or the parameter value corresponding to point 2. The resultant _IfcTrimmedCurve_ has a parameter ranging from 0 at the first trimming point to |t~2~ - t~1~| at the second trimming point.
 > 
->> NOTE&nbsp; In case of a closed curve, it may be necessary to increment t1 or t2 by the parametric length for consistency with the sense flag.
+>> NOTE  In case of a closed curve, it may be necessary to increment t1 or t2 by the parametric length for consistency with the sense flag.
 
 
 > 
 > NOTE Entity adapted from **trimmed_curve** defined in ISO 10303-42
 
-> HISTORY&nbsp; New entity in IFC1.0
+> HISTORY  New entity in IFC1.0
 
 { .spec-head}
 Informal Propositions:

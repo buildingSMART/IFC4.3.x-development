@@ -2,9 +2,9 @@
 
 _IfcMaterialProfileSetUsage_ determines the usage of _IfcMaterialProfileSet_ in terms of its location relative to the associated element geometry. The location of a material profile set shall be compatible with the building element geometry (that is, material profiles shall fit inside the element geometry). The rules to ensure the compatibility depend on the type of the building element. For building elements with shape representations which are based on extruded solids, this is accomplished by referring to the identical profile definition in the shape model as in the material profile set.
 
-> NOTE&nbsp; Model view definitions or implementer agreements may provide more instructions on matching between building element geometry and material profile set usage.
+> NOTE  Model view definitions or implementer agreements may provide more instructions on matching between building element geometry and material profile set usage.
 
-> NOTE&nbsp; The referenced _IfcMaterialProfileSet_ may represent a single material profile, or a composite profile with two or more material profiles.
+> NOTE  The referenced _IfcMaterialProfileSet_ may represent a single material profile, or a composite profile with two or more material profiles.
 
 > HISTORY New entity in IFC4.
 
@@ -19,6 +19,6 @@ Index reference to a significant point in the section profile. Describes how the
 ### ReferenceExtent
 Extent of the extrusion of the elements body shape representation to which the _IfcMaterialProfileSetUsage_ applies. It is used as the reference value for the upper _OffsetValues[2]_ provided by the _IfcMaterialProfileSetWithOffsets_ subtype for included material profiles.
 
-> NOTE&nbsp; The attribute _ReferenceExtent_ shall be asserted if an _IfcMaterialProfileSetWithOffsets_ is included in the _ForProfileSet.MaterialProfiles_ list of material layers.
+> NOTE  The attribute _ReferenceExtent_ shall be asserted if an _IfcMaterialProfileSetWithOffsets_ is included in the _ForProfileSet.MaterialProfiles_ list of material layers.
 
-> NOTE&nbsp; The _ReferenceExtent_ for _IfcBeamStandardCase_, _IfcColumnStandardCase_, and _IfcMemberStandardCase_ is the reference length starting at z=0 being the XY plane of the object coordinate system.
+> NOTE  The _ReferenceExtent_ for _IfcBeamStandardCase_, _IfcColumnStandardCase_, and _IfcMemberStandardCase_ is the reference length starting at z=0 being the XY plane of the object coordinate system.

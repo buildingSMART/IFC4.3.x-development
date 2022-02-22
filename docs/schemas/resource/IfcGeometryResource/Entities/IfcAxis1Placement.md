@@ -9,12 +9,12 @@ Figure 1 &mdash; Axis1 placement
 Figure 1 illustrates the definition of the <em>IfcAxis1Placement</em> within the parent three-dimensional coordinate system.
 
 { .extDef}
-> NOTE&nbsp; Definition according to ISO/CD 10303-42:1992  
+> NOTE  Definition according to ISO/CD 10303-42:1992  
 > The direction and location in three dimensional space of a single axis. An axis1_placement is defined in terms of a locating point (inherited from placement supertype) and an axis direction: this is either the direction of axis or defaults to (0.0,0.0,1.0). The actual direction for the axis placement is given by the derived attribute z.
 
-> NOTE&nbsp; Entity adapted from **axis1_placement** defined in ISO10303-42.
+> NOTE  Entity adapted from **axis1_placement** defined in ISO10303-42.
 
-> HISTORY&nbsp; New entity in IFC1.5
+> HISTORY  New entity in IFC1.5
 
 ## Attributes
 

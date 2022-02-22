@@ -4,7 +4,7 @@ A clipping result is defined as a special subtype of the general _IfcBooleanResu
 
 A clipping result is the Boolean difference between a swept solid and a half space solid, or between the result of the Boolean difference and a half space solid. Hence more than one difference operation can be applied to achieve the final Boolean result.
 
-> HISTORY&nbsp; New entity in IFC2x.
+> HISTORY  New entity in IFC2x.
 
 ## Formal Propositions
 

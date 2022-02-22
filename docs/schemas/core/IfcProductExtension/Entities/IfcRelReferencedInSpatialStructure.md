@@ -2,11 +2,11 @@
 
 The objectified relationship, _IfcRelReferencedInSpatialStructure_ is used to assign elements in addition to those levels of the project spatial structure, in which they are referenced, but not primarily contained. It is also used to connect a system to the relevant spatial element that it serves.  
 
-> NOTE&nbsp; The primary containment relationship between an element and the spatial structure is handled by _IfcRelContainedInSpatialStructure_.  
+> NOTE  The primary containment relationship between an element and the spatial structure is handled by _IfcRelContainedInSpatialStructure_.  
 
 Any element can be referenced to zero, one or several levels of the spatial structure. Whereas the _IfcRelContainedInSpatialStructure_ relationship is required to be hierarchical (an element can only be contained in exactly one spatial structure element), the _IfcRelReferencedInSpatialStructure_ is not restricted to be hierarchical.
 
-> EXAMPLE&nbsp; A wall might be normally contained within a storey, and since it does not span through several stories, it is not referenced in any additional storey. However a curtain wall might span through several stories, in this case it can be contained within the ground floor, but it would be referenced by all additional stories, it spans.
+> EXAMPLE  A wall might be normally contained within a storey, and since it does not span through several stories, it is not referenced in any additional storey. However a curtain wall might span through several stories, in this case it can be contained within the ground floor, but it would be referenced by all additional stories, it spans.
 
 Predefined spatial structure elements to which elements can be assigned are 
 
@@ -21,7 +21,7 @@ Figure 1 shows the use of _IfcRelContainedInSpatialStructure_ and _IfcRelReferen
 !["reference and containment"](../../../../figures/ifcrelreferencedinspatialstructure-fig1.png "Figure 1 &mdash; Relationship for spatial structure referencing")
 
 
-> HISTORY&nbsp; New entity in IFC2x3.
+> HISTORY  New entity in IFC2x3.
 
 ## Attributes
 
@@ -36,4 +36,4 @@ Figure 1 shows the use of _IfcRelContainedInSpatialStructure_ and _IfcRelReferen
 ### AllowedRelatedElements
 The relationship object shall not be used to include other spatial structure elements into a spatial structure element. The hierarchy of the spatial structure is defined using _IfcRelAggregates_. Exception: an _IfcSpace_ can be referenced by another spatial structure element, in particular by an _IfcSpatialZone_.
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; The relaxation to allow _IfcSpace_ has been included.
+> IFC4 CHANGE  The relaxation to allow _IfcSpace_ has been included.

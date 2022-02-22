@@ -4,7 +4,7 @@ _IfcTypeProduct_ defines a type definition of a product without being already in
 
 An _IfcTypeProduct_ may have a list of property set attached and an optional set of product representations. Values of these properties and the representation maps are common to all occurrences of that product type. The type-occurrence relationship is realized using the objectified relationship _IfcRelDefinesByType_.
 
-> NOTE&nbsp; The product representations are defined as representation maps, which may be assigned by a product instance through the representation item(s) being an _IfcShapeRepresentation_ and having _Items_ of type _IfcMappedItem_.
+> NOTE  The product representations are defined as representation maps, which may be assigned by a product instance through the representation item(s) being an _IfcShapeRepresentation_ and having _Items_ of type _IfcMappedItem_.
 
 The representations at the occurrence level (represented by subtypes of _IfcProduct_) can override the specific representations at the type level:
 
@@ -13,10 +13,10 @@ The representations at the occurrence level (represented by subtypes of _IfcProd
 
 An _IfcTypeProduct_ may be exchanged without being already assigned to subtypes of _IfcProduct_.
 
-> HISTORY&nbsp; New entity in IFC2x.
+> HISTORY  New entity in IFC2x.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; The entity _IfcTypeProduct_ shall not be instantiated from IFC4 onwards. It will be changed into an ABSTRACT supertype in future releases of IFC.
+> IFC4 CHANGE  The entity _IfcTypeProduct_ shall not be instantiated from IFC4 onwards. It will be changed into an ABSTRACT supertype in future releases of IFC.
 
 ## Attributes
 
@@ -29,7 +29,7 @@ The tag (or label) identifier at the particular type of a product, e.g. the arti
 ### ReferencedBy
 Reference to the _IfcRelAssignsToProduct_ relationship, by which other products, processes, controls, resources or actors (as subtypes of _IfcObjectDefinition_) can be related to this product type.
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; New inverse relationship.
+> IFC4 CHANGE  New inverse relationship.
 
 ## Formal Propositions
 

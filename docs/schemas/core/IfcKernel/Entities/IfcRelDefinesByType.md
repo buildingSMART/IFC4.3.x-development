@@ -23,10 +23,10 @@ Properties assigned to IfcWallType | Property assigned to IfcWall  | Resulting p
 ThermalTransmittance = 0.375 | - | ThermalTransmittance = 0.375
 ExtendToStructure = TRUE | ExtendToStructure = FALSE | ExtendToStructure = FALSE
 
-> HISTORY&nbsp; New entity in IFC2x.
+> HISTORY  New entity in IFC2x.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; The attribute _RelatedObjects_ had been demoted from the supertype _IfcRelDefines_ to _IfcRelDefinesByType_.
+> IFC4 CHANGE  The attribute _RelatedObjects_ had been demoted from the supertype _IfcRelDefines_ to _IfcRelDefinesByType_.
 
 ## Attributes
 

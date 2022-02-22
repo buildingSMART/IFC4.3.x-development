@@ -17,10 +17,10 @@ The parameters of the _IfcDoorPanelProperties_ define a standard door panel, inc
 
 Table 1 - How attributes affect the door shape
 
-> HISTORY&nbsp; New entity in IFC2.0.
+> HISTORY  New entity in IFC2.0.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Supertype changed to new _IfcPreDefinedPropertySet_.
+> IFC4 CHANGE  Supertype changed to new _IfcPreDefinedPropertySet_.
 
 ## Attributes
 
@@ -39,10 +39,10 @@ Position of this panel within the door. The _PanelPosition_ of the door panel ha
 ### ShapeAspectStyle
 Pointer to the shape aspect, if given. The shape aspect reflects the part of the door shape, which represents the door panel.
 { .deprecated}
-> DEPRECATION&nbsp; The attribute is deprecated and shall no longer be used, i.e. the value shall be NIL ($).
+> DEPRECATION  The attribute is deprecated and shall no longer be used, i.e. the value shall be NIL ($).
 
 ## Formal Propositions
 
 ### ApplicableToType
 The _IfcDoorPanelProperties_ shall only be used in the context of an _IfcDoorType_.
-> NOTE&nbsp; The deprecated entity _IfcDoorStyle_ is applicable as well.
+> NOTE  The deprecated entity _IfcDoorStyle_ is applicable as well.

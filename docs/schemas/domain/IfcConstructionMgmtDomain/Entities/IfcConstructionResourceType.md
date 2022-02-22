@@ -6,7 +6,7 @@ A resource type represents a model of "use of something" and does not necessaril
 
 A construction resource type captures common productivities and cost rates for applying resources to particular task types.
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 { .use-head}
 Composition use definition

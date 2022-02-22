@@ -1,12 +1,12 @@
 # IfcVertex
 
 { .extDef}
-> NOTE&nbsp; Definition according to ISO/CD 10303-42:1992  
+> NOTE  Definition according to ISO/CD 10303-42:1992  
 > A vertex is the topological construct corresponding to a point. It has dimensionality 0 and extent 0. The domain of a vertex, if present, is a point in m dimensional real space _R^M^_; this is represented by the vertex point subtype.
 
-> NOTE&nbsp; Entity adapted from **vertex** defined in ISO 10303-42.
+> NOTE  Entity adapted from **vertex** defined in ISO 10303-42.
 
-> HISTORY&nbsp; New entity in IFC2.0
+> HISTORY  New entity in IFC2.0
 
 { .spec-head}
 Informal Propositions:

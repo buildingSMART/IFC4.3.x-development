@@ -50,10 +50,10 @@ Table 4 - LOGICALNOTAND(A,B,C)
 
 Table 5 - LOGICALNOTOR(A,B,C)
 
-> HISTORY&nbsp; New enumeration in IFC2.0.
+> HISTORY  New enumeration in IFC2.0.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Extended to include LOGICALXOR, LOGICALNOTAND and LOGICALNOTOR.
+> IFC4 CHANGE  Extended to include LOGICALXOR, LOGICALNOTAND and LOGICALNOTOR.
 
 ## Items
 

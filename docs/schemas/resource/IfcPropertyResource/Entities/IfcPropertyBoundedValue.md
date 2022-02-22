@@ -9,7 +9,7 @@ The unit is handled by the _Unit_ attribute, see Table 1 for an example of a bou
 
 The _IfcPropertyBoundedValue_ allows for the specification of an interval for the value component of the property description. If either the _LowerBoundValue_ or the _UpperBoundValue_ is not given, then it indicates an open bound (either a minimum value or a maximum value). The interval is by definition inclusive, that is, the value given for the _LowerBoundValue_ or the _UpperBoundValue_ is included in the interval.
 
-> NOTE&nbsp; An _IfcPropertyBoundedValue_ may be exchanged with no values assigned yet. In this case the _LowerBoundValue_ and the _UpperBoundValue_ are set to NIL.
+> NOTE  An _IfcPropertyBoundedValue_ may be exchanged with no values assigned yet. In this case the _LowerBoundValue_ and the _UpperBoundValue_ are set to NIL.
 
 
 |Name|UpperBoundValue|LowerBoundValue|SetPointValue|Type (through IfcValue)|Unit|
@@ -21,13 +21,13 @@ The _IfcPropertyBoundedValue_ allows for the specification of an interval for th
 
 Table 1 &mdash; Bounded property with values, measure types and units. Where rules ensures same measure type for all values
 
-> HISTORY&nbsp; New entity in IFC2x.
+> HISTORY  New entity in IFC2x.
 
 { .change-ifc2x2}
-> IFC2x2 CHANGE&nbsp; The attribute type of the attribute _UpperBoundValue_ and _LowerBoundValue_ has been made optional with upward compatibility for file based exchange.
+> IFC2x2 CHANGE  The attribute type of the attribute _UpperBoundValue_ and _LowerBoundValue_ has been made optional with upward compatibility for file based exchange.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; The attribute _SetPointValue_ has been added.
+> IFC4 CHANGE  The attribute _SetPointValue_ has been added.
 
 { .spec-head}
 Informal Propositions:
@@ -48,7 +48,7 @@ Unit for the upper and lower bound values, if not given, the default value for t
 ### SetPointValue
 Set point value as typically used for operational value setting.
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; The attribute has been added at the end of the attribute list.
+> IFC4 CHANGE  The attribute has been added at the end of the attribute list.
 
 ## Formal Propositions
 

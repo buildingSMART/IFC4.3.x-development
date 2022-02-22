@@ -1,0 +1,1 @@
+An IfcDirectrixDerivedReferenceSweptAreaSolid is a specialisation of IfcFixedReferenceSweptAreaSolid.

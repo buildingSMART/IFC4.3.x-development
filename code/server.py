@@ -1825,7 +1825,12 @@ def after(response):
                 parent = img.parent
                 if parent is None:
                     continue
-                if parent.name == "a":
+                if parent.name == "td":
+                    p = soup.new_tag("p")
+                    p.append(img.extract())
+                    parent.append(p)
+                    parent = p
+                elif parent.name == "a":
                     parent = parent.parent
                 parent.name = "figure"
                 has_caption = False

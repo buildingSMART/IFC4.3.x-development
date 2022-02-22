@@ -6,16 +6,12 @@ This enumeration defines the different ways how path based elements (such as _If
 
 The enumerated items shall be used in the following combinations:
 
-<table>
-<tr>
-<td>
 <table class="gridtable">
 <tr>
- <th width="260" valign="top" align="left">Connection type</th>
- <th width="300" valign="top" align="left">Illustration</th>
+<th width="260" valign="top" align="left">Connection type</th>
+<th width="300" valign="top" align="left">Illustration</th>
 </tr>
 <tr>
-</tr><tr>
 <td width="260" valign="top" align="left">
 <p>L-Shape Connection</p>
 <ul>
@@ -23,7 +19,7 @@ The enumerated items shall be used in the following combinations:
 <li>RelatedConnectionType: AtStart</li>
 </ul>
 </td>
-<td width="300"><img src="../../../../figures/IfcConnectionTypeEnum-Fig03.gif" width="143" height="132" border="0"></td>
+<td width="300"><img src="../../../../figures/ifcconnectiontypeenum-fig03.gif" width="143" height="132" border="0"></td>
 </tr>
 <tr>
 <td width="260" valign="top" align="left">
@@ -33,7 +29,7 @@ The enumerated items shall be used in the following combinations:
 <li>RelatedConnectionType: AtStart</li>
 </ul>
 </td>
-<td width="300"><img src="../../../../figures/IfcConnectionTypeEnum-Fig01.gif" width="193" height="132" border="0"></td>
+<td width="300"><img src="../../../../figures/ifcconnectiontypeenum-fig01.gif" width="193" height="132" border="0"></td>
 </tr>
 <tr>
 <td width="260" valign="top" align="left">
@@ -43,17 +39,11 @@ The enumerated items shall be used in the following combinations:
 <li>RelatedConnectionType: AtStart</li>
 </ul>
 </td>
-<td width="300"><img src="../../../../figures/IfcConnectionTypeEnum-Fig02.gif" width="145" height="133" border="0"></td>
+<td width="300"><img src="../../../../figures/ifcconnectiontypeenum-fig02.gif" width="145" height="133" border="0"></td>
 </tr>
 </table>
-</td>
-</tr>
-<tr>
-<td>
-<p class="figure">Figure 1 &mdash; Connection types</p>
-</td>
-</tr>
-</table>
+
+Table 1 &mdash; Connection types</p>
 
 ## Items
 

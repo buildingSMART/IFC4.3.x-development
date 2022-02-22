@@ -121,10 +121,11 @@ class resource_manager:
     hierarchy = schema_resource("hierarchy.json")
     xmi_concepts = schema_resource("xmi_concepts.json")
     examples_by_type = schema_resource("examples_by_type.json")
-    
+
     listing_references = schema_resource("listing_references.json")
     listing_tables = schema_resource("listing_tables.json")
     listing_figures = schema_resource("listing_figures.json")
+
 
 R = resource_manager()
 
@@ -407,7 +408,7 @@ def process_graphviz(current_entity, md):
         else:
             return 0
 
-    graphviz_code = filter(is_figure, re.findall("```(.*?)```", md or '', re.S))
+    graphviz_code = filter(is_figure, re.findall("```(.*?)```", md or "", re.S))
 
     for c in graphviz_code:
         hash = hashlib.sha256(c.encode("utf-8")).hexdigest()
@@ -418,7 +419,7 @@ def process_graphviz(current_entity, md):
         md = md.replace("```%s```" % c, "![](/svgs/%s_%s.svg)" % (current_entity, hash))
         subprocess.call([shutil.which("dot") or "dot", "-O", "-Tsvg", "-Gbgcolor=#ffffff00", fn])
 
-    return md or ''
+    return md or ""
 
 
 def create_entity_definition(e, bindings):
@@ -601,7 +602,7 @@ class resource_documentation_builder:
     def get_markdown_content(self, heading):
         attrs = []
         fwd_attrs = []
-        
+
         ty = self.resource
         while ty:
             md_ty_fn = get_resource_path(ty)
@@ -698,7 +699,7 @@ def property(prop):
     )
 
 
-def process_markdown(resource, mdc, as_attribute=False):
+def process_markdown(resource, mdc):
     html = markdown.markdown(process_graphviz(resource, mdc), extensions=["tables", "fenced_code"])
 
     soup = BeautifulSoup(html)
@@ -709,9 +710,6 @@ def process_markdown(resource, mdc, as_attribute=False):
     except:
         # only entities have H1?
         pass
-
-    if as_attribute:
-        return str(soup.text)
 
     # Change svg img references to embedded svg because otherwise URLS are not interactive
     for img in soup.findAll("img"):
@@ -883,7 +881,7 @@ def get_applicability(resource):
 
 
 def get_properties(resource, mdc):
-    pset_specitic_comments = dict(mdp.markdown_attribute_parser(mdc, "Comments"))
+    pset_specific_comments = dict(mdp.markdown_attribute_parser(mdc, "Comments"))
 
     def make_prop(prop):
         try:
@@ -892,43 +890,33 @@ def get_properties(resource, mdc):
                 open(
                     os.path.join(REPO_DIR, "docs/properties/%s/%s.md") % (prop["name"][0].lower(), prop["name"])
                 ).read(),
-                as_attribute=True,
             )
         except:
-            doc = "<i>Missing property definition</i>"
+            doc = ""
 
         if R.pset_definitions[resource]["kind"] == "quantity_set":
-            prop_type = []
+            prop_type = ""
         else:
-            prop_type = [prop["type"]]
+            prop_type = prop["type"]
 
-        edit_button = f"<a class='button' href='{make_url('property/'+prop['name'])}.htm' style='padding:0;margin:0 0.5em'><span class='icon-edit'></span></a>"
-        doc += edit_button
-
-        psc = pset_specitic_comments.get(prop["name"])
+        psc = pset_specific_comments.get(prop["name"])
         if psc:
-            doc += f"<br><br><i>{process_markdown(resource, psc, as_attribute=True)}</i>"
-            pass
+            doc += f"{process_markdown(resource, psc)}"
 
-        return [
-            prop["name"],
-            *prop_type,
-            prop["data"],
-            doc
-        ]
+        return {
+            "name": prop["name"],
+            "type": prop_type,
+            "data_type": prop["data"],
+            "description": doc,
+            "edit_url": make_url("property/" + prop["name"]),
+        }
 
     attrs = list(map(make_prop, R.pset_definitions[resource]["properties"]))
 
-    headers = ("Name", "Property Type", "Data Type", "Definition")
-    if R.pset_definitions[resource]["kind"] == "quantity_set":
-        # Quantity sets elements are always a singular type, as opposed to
-        # property set items which are composed of a property type (single,
-        # bounded, ...) and a data type.
-        headers = (headers[0],) + headers[2:]
-
     return {
         "number": SectionNumberGenerator.generate(),
-        "table": tabulate.tabulate(attrs, headers=headers, tablefmt="unsafehtml"),
+        "is_pset": R.pset_definitions[resource]["kind"] != "quantity_set",
+        "properties": attrs
     }
 
 
@@ -1055,7 +1043,6 @@ def get_concept_usage(resource, builder):
 
     concept_lookup = {c.text.replace(" ", ""): (c.text, c.url) for c in flatten_hierarchy(concept_hierarchy)}
 
-
     # Grabs concepts from XMI, and then enhances them with human names and descriptions from Markdown
 
     concept_groups = {}
@@ -1066,7 +1053,9 @@ def get_concept_usage(resource, builder):
             for xmi_relationship in xmi_relationships:
                 applicable_entity = xmi_relationship.get("ApplicableEntity", None)
                 if applicable_entity in supertype_chain:
-                    concept_groups.setdefault(applicable_entity, {}).setdefault(view_name, {}).setdefault(xmi_concept_name, []).append(xmi_relationship)
+                    concept_groups.setdefault(applicable_entity, {}).setdefault(view_name, {}).setdefault(
+                        xmi_concept_name, []
+                    ).append(xmi_relationship)
 
     for ifc_class in reversed(supertype_chain):
         views = concept_groups.get(ifc_class)
@@ -1083,13 +1072,15 @@ def get_concept_usage(resource, builder):
                     stripped_name = markdown_name.replace(" ", "")
                     if stripped_name == name:
                         description = process_markdown(resource, markdown_concept[2])
-                concepts.append({
-                    "name": human_name,
-                    "description": description,
-                    "usage": separate_camel(view_name).replace("General Usage", "General"),
-                    "url": concept_lookup.get(name, [None, None])[1],
-                    "applicable_relationships": get_applicable_relationships(view_name, name, ifc_class),
-                })
+                concepts.append(
+                    {
+                        "name": human_name,
+                        "description": description,
+                        "usage": separate_camel(view_name).replace("General Usage", "General"),
+                        "url": concept_lookup.get(name, [None, None])[1],
+                        "applicable_relationships": get_applicable_relationships(view_name, name, ifc_class),
+                    }
+                )
 
         groups.append(
             {
@@ -1142,18 +1133,21 @@ def get_concept_usage(resource, builder):
 def get_examples(resource):
     examples = []
     for name in R.examples_by_type.get(resource.upper()) or []:
-        examples.append({
-            "name": name,
-            "url": url_for("annex_e_example_page", s=name),
-            "image": url_for("get_example", example=name) + "/thumb.png"
-        })
+        examples.append(
+            {
+                "name": name,
+                "url": url_for("annex_e_example_page", s=name),
+                "image": url_for("get_example", example=name) + "/thumb.png",
+            }
+        )
     if examples:
         return {"number": SectionNumberGenerator.generate(), "examples": examples}
 
 
 def get_adoption(resource):
-    return # Is the industry ready? :)
+    return  # Is the industry ready? :)
     import random
+
     # Just a stub: inspiration from https://caniuse.com/css-grid
     # ... and so many other implementation matrixes online
     softwares = []
@@ -1165,12 +1159,10 @@ def get_adoption(resource):
                 support = "supported"
             elif j > 0:
                 support = "partially-supported"
-            versions.append({
-                "name": f"V1.{j}",
-                "support": support
-            })
-        softwares.append({ "name": f"Software {i+1}", "versions": reversed(versions) })
+            versions.append({"name": f"V1.{j}", "support": support})
+        softwares.append({"name": f"Software {i+1}", "versions": reversed(versions)})
     return {"number": SectionNumberGenerator.generate(), "softwares": softwares}
+
 
 def get_formal_representation(resource):
     express = R.entity_definitions.get(resource)
@@ -1661,10 +1653,7 @@ def annex_e_example_page(s):
     example_dir = os.path.join(REPO_DIR, "../examples/IFC 4.3", s)
 
     code = open(
-        (
-            glob.glob(os.path.join(example_dir, "*.ifc"))
-            + glob.glob(os.path.join(example_dir, "*.xml"))
-        )[0],
+        (glob.glob(os.path.join(example_dir, "*.ifc")) + glob.glob(os.path.join(example_dir, "*.xml")))[0],
         encoding="ascii",
         errors="ignore",
     ).read()
@@ -1795,9 +1784,11 @@ ifcre = re.compile(r"(Ifc|Pset_|Qto_)\w+(?!(\">|.ht|.png|.jp|.gif|</a|</h|.md| -
 try:
     import os
     from redis import Redis, ConnectionError
+
     redis = Redis(host=os.environ.get("REDIS_HOST", "localhost"))
 except:
     redis = None
+
 
 @app.after_request
 def after(response):
@@ -1866,7 +1857,7 @@ def after(response):
                     figcaption.string = "Figure " + str(uuid.uuid4())
                     parent.append(figcaption)
                     FigureNumberer.generate(parent, figcaption.text.split(" ", 2)[1])
-                    
+
             for table in main_content.findAll("table"):
                 figure = soup.new_tag("figure")
                 table.insert_before(figure)
@@ -1923,10 +1914,10 @@ def after(response):
                 return "<a href='" + url_for("resource", resource=w) + "'>" + w + "</a>"
             else:
                 return w
-                
+
         html = ifcre.sub(decorate_link, html)
         soup = BeautifulSoup(html)
-        
+
         for elem in soup.findAll("figure"):
             if elem.figcaption:
                 is_image = elem.img
@@ -1934,17 +1925,18 @@ def after(response):
                     label, caption = map(str.strip, elem.figcaption.text.split("\u2014", 1))
                 elif elem.img:
                     label = elem.figcaption.text.strip()
-                    caption = elem.img.get('alt', '').strip()
+                    caption = elem.img.get("alt", "").strip()
                 else:
                     continue
                 if redis:
                     try:
-                        redis.lpush("figures" if is_image else "tables", json.dumps([caption or 'unnamed', label, request.path]))
+                        redis.lpush(
+                            "figures" if is_image else "tables", json.dumps([caption or "unnamed", label, request.path])
+                        )
                     except ConnectionError:
                         pass
-        
-        response.data = str(soup)
 
+        response.data = str(soup)
 
     return response
 
@@ -1952,7 +1944,7 @@ def after(response):
 @app.route(make_url("index.htm"))
 def get_index():
     items = [
-        {"number": "", "title": f"Listing of {x}", "url": make_url(f"listing-{x}.html")} \
+        {"number": "", "title": f"Listing of {x}", "url": make_url(f"listing-{x}.html")}
         for x in "references,figures,tables".split(",")
     ]
     return render_template("annex-b.html", base=base, navigation=get_navigation(), items=items, title="Index")
@@ -1963,20 +1955,35 @@ def get_index_index(kind):
     items = getattr(R, f"listing_{kind}")
     if kind == "references":
         prefix = make_url("lexical/")
+
         def reverse_engineer_url(s):
             if s.startswith(prefix):
-                return s[len(prefix):-4]
-        items = [{"number": k, "url": "", "title": " ".join(reverse_engineer_url(s['url']) for s in gs if reverse_engineer_url(s['url']))}\
-            for k, gs in itertools.groupby(items, operator.itemgetter('title'))]
-    return render_template("annex-b.html", base=base, navigation=get_navigation(), items=items, title=f"Listing of {kind}")
-    
+                return s[len(prefix) : -4]
+
+        items = [
+            {
+                "number": k,
+                "url": "",
+                "title": " ".join(reverse_engineer_url(s["url"]) for s in gs if reverse_engineer_url(s["url"])),
+            }
+            for k, gs in itertools.groupby(items, operator.itemgetter("title"))
+        ]
+    return render_template(
+        "annex-b.html", base=base, navigation=get_navigation(), items=items, title=f"Listing of {kind}"
+    )
+
 
 if redis:
-    @app.route("/build_index", methods=['GET', 'POST'])
+
+    @app.route("/build_index", methods=["GET", "POST"])
     def build_index():
         for x in "references,figures,tables".split(","):
             with open(f"listing_{x}.json", "w") as f:
-                json.dump([{"number": p[1], "url": p[2], "title": p[0]} for p in \
-                    sorted(set(map(tuple, map(json.loads, redis.lrange(x, 0, -1)))))],
-                    f)
+                json.dump(
+                    [
+                        {"number": p[1], "url": p[2], "title": p[0]}
+                        for p in sorted(set(map(tuple, map(json.loads, redis.lrange(x, 0, -1)))))
+                    ],
+                    f,
+                )
         return "OK"

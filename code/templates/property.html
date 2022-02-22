@@ -24,6 +24,39 @@
 <h2>
     {{ properties.number }} Properties
 </h2>
-{{ properties.table | safe }}
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            {% if properties.is_pset %}
+            <th>Property Type</th>
+            {% endif %}
+            <th>Data Type</th>
+            <th>Description</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for property in properties.properties %}
+        <tr>
+            <td>{{ property.name }}</td>
+            {% if properties.is_pset %}
+            <td>{{ property.type }}</td>
+            {% endif %}
+            <td>{{ property.data_type }}</td>
+            <td>
+                {% if property.description %}
+                {{ property.description | safe }}
+                {% else %}
+                <p>
+                    <em>No description available.</em>
+                </p>
+                {% endif %}
+            </td>
+            <td><a class="button" href="{{ property.edit_url }}" style='padding:0;margin:0 0.5em'><span class='icon-edit'></span></a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {% endif %}
 {% endblock %}

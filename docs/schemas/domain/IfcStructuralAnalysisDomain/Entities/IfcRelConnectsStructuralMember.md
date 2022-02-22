@@ -23,18 +23,9 @@ Optionally a supported length can be given, which specifies the length (or width
 
 Figure 1 illustrates the appropriate definition of support lengths.
 
-<table border="0" cellpadding="2" cellspacing="0">
-  <tr>
-    <td>
-      <p><img src="../../../../figures/ifcrelconnectsstructuralmember-fig1.gif" alt="supported length" style="border: 0px solid ; width: 600px; height: 368px;" align="left"></p>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <p class="figure">Figure 1 &mdash; Structural member support lengths</p>
-    </td>
-  </tr>
-</table>
+![supported length](../../../../figures/ifcrelconnectsstructuralmember-fig1.gif)
+
+Figure 1 &mdash; Structural member support lengths
 
 ## Attributes
 

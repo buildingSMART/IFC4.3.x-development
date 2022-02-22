@@ -29,4 +29,4 @@ Device attached to a sprinkler to deflect the water flow into a spread pattern t
 User-defined type
 
 ### NOTDEFINED
-Underined type.
+Undefined type.

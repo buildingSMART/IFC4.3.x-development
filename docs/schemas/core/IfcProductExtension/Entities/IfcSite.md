@@ -20,7 +20,7 @@ Figure 1 shows the _IfcSite_ as part of the spatial structure. In addition to th
 
 > NOTE  Detailed requirements on mandatory element containment and placement structure relationships are given in view definitions and implementer agreements.
 
-!["IfcSite as part of a spatial structure"](../../../../figures/ifcsite-spatialstructure.png "Figure 1 &mdash; Site composition")
+![IfcSite as part of a spatial structure](../../../../figures/ifcsite-spatialstructure.png "Figure 1 &mdash; Site composition")
 
 Figure 2 describes the heights and elevations of the _IfcSite_. It is used to provide the geographic longitude, latitude, and height above sea level for the origin of the site. The origin of the site is the local placement.
 
@@ -32,7 +32,7 @@ For exact georeferencing (or referencing to any other geographic coordinate syst
 * <small>the reference height of each building situated at the site is given againt the same height datum used at this location.</small>
 * <small>the elevations of each storey belonging to each building are given as local height relative to the reference height of the building.</small>
 
-!["IfcSite with local placement and WGS84 coordinates"](../../../../figures/ifcsite_heights.png "Figure 2 &mdash; Site placement and elevations")
+![IfcSite with local placement and WGS84 coordinates](../../../../figures/ifcsite_heights.png "Figure 2 &mdash; Site placement and elevations")
 
 > HISTORY  New entity in IFC1.0.
 

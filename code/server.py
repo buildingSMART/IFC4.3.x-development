@@ -1794,7 +1794,7 @@ def sandcastle():
     return render_template("sandcastle.html", base=base, html=html, md=md)
 
 
-ifcre = re.compile(r"(Ifc|Pset_|Qto_)\w+(?!(\">|.ht|.png|.jp|.gif|</a|</h|.md| - IFC4.3))")
+ifcre = re.compile(r"(?<!=\")(Ifc|Pset_|Qto_)\w+(?!(\">|.ht|.png|.jp|.gif|</a|</h|.md| - IFC4.3))")
 
 try:
     import os

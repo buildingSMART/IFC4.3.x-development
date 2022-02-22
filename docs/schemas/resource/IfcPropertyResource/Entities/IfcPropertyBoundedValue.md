@@ -11,62 +11,15 @@ The _IfcPropertyBoundedValue_ allows for the specification of an interval for th
 
 > NOTE&nbsp; An _IfcPropertyBoundedValue_ may be exchanged with no values assigned yet. In this case the _LowerBoundValue_ and the _UpperBoundValue_ are set to NIL.
 
-> &nbsp;
-> 
-> <table>
- <tr>
-  <td>
-   <table class="gridtable">
-    <tr valign="top">
-     <th width="15%">Name</th>
-     <th width="15%">UpperBoundValue</th>
-     <th width="15%">LowerBoundValue</th>
-     <th width="15%">SetPointValue</th>
-     <th width="45%">Type<br> <span style="font-size:smaller">(through <em>IfcValue</em>)</span></th>
-     <th width="10%">Unit<br></th>
-    </tr>
-    <tr valign="top">
-     <td>OverallHeight</td>
-     <td>1930</td>
-     <td>2300</td>
-     <td><nil></td>
-     <td><em>IfcPositiveLengthMeasure</em></td>
-     <td>-</td>
-    </tr>
-    <tr valign="top">
-     <td>OverallWidth</td>
-     <td>0.9</td>
-     <td>1.25</td>
-     <td><nil></td>
-     <td><em>IfcPositiveLengthMeasure</em></td>
-     <td>m</td>
-    </tr>
-    <tr valign="top">
-     <td>MaxHeight</td>
-     <td>20.0</td>
-     <td><nil></td>
-     <td><nil></td>
-     <td><em>IfcPositiveLengthMeasure</em></td>
-     <td>-</td>
-    </tr>
-    <tr valign="top">
-     <td>MinWeight</td>
-     <td><nil></td>
-     <td>20</td>
-     <td><nil></td>
-     <td><em>IfcMassMeasure</em></td>
-     <td>kg</td>
-    </tr>
-    <tr>
-     <td colspan="6" align="right">* Where rules ensures same measure type for all values</td>
-    </tr>
-   </table>
-  </td>
- </tr>
- <tr>
-  <td><p class="table">Table 1 &mdash; Bounded property with values, measure types and units</p></td>
- </tr>
-</table>
+
+|Name|UpperBoundValue|LowerBoundValue|SetPointValue|Type (through IfcValue)|Unit|
+|--- |--- |--- |--- |--- |--- |
+|OverallHeight|1930|2300||IfcPositiveLengthMeasure|-|
+|OverallWidth|0.9|1.25||IfcPositiveLengthMeasure|m|
+|MaxHeight|20.0|||IfcPositiveLengthMeasure|-|
+|MinWeight||20||IfcMassMeasure|kg|
+
+Table 1 &mdash; Bounded property with values, measure types and units. Where rules ensures same measure type for all values
 
 > HISTORY&nbsp; New entity in IFC2x.
 

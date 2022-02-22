@@ -1,0 +1,1 @@
+Subtype of vibration damper.

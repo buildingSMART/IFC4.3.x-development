@@ -1,0 +1,1 @@
+Common properties for Signs.

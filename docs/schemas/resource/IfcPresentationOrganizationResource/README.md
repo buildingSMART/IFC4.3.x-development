@@ -5,11 +5,11 @@ The schema _IfcPresentationOrganizationResource_ defines the resources used for 
 
 The following is within the scope of the presentation resource schemas:
 
-* definition of presentation style attributes for realistic and symbolic visualizations of geometric and non-geometric displayble elements in the product information, including presentation styles for 
+* definition of presentation style attributes for realistic and symbolic visualizations of geometric and non-geometric displayble elements in the product information, including presentation styles for
     * curve
     * text
     * filled area
-    * surface 
+    * surface
 * support of curve styles;
 * support of externally defined character fonts and symbols;
 * support of pre defined character fonts and symbols;

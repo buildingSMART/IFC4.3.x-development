@@ -15,8 +15,8 @@ Figure 2 &mdash; Boxed half space geometry
 The <em>Enclosure</em> therefore helps to prevent dealing with infinite-size related issues. The enclosure box is positioned within the object coordinate system, established by the <em>ObjectPlacement</em> of the element represented (for example, by <em>IfcLocalPlacement</em>). Figure 2 shows the <em>Enclosure</em> box being sufficiently large to fully enclose the Boolean result.
 
 { .extDef}
-> NOTE  Definition according to ISO/CD 10303-42:1992  
-> This entity is a subtype of the half space solid which is trimmed by a surrounding rectangular box. The box has its edges parallel to the coordinate axes of the geometric coordinate system.  
+> NOTE  Definition according to ISO/CD 10303-42:1992
+> This entity is a subtype of the half space solid which is trimmed by a surrounding rectangular box. The box has its edges parallel to the coordinate axes of the geometric coordinate system.
 > The purpose of the box is to facilitate CSG computations by producing a solid of finite size.
 
 > NOTE  Entity adapted from **boxed_half_space** defined in ISO 10303-42.

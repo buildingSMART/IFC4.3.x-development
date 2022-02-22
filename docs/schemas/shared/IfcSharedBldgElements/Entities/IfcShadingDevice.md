@@ -33,7 +33,7 @@ Either there is no shading device type object associated, i.e. the _IsTypedBy_ i
 
 ### Spatial Containment
 
-The IfcShadingDevice, as any subtype of IfcBuildingElement, 
+The IfcShadingDevice, as any subtype of IfcBuildingElement,
 may participate alternatively in one of the two different containment relationships:
 
 

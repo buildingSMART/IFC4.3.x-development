@@ -4,7 +4,7 @@ The profile _IfcCenterLineProfileDef_ defines an arbitrary two-dimensional open,
 
 Among else, _IfcCenterLineProfileDef_ is used to model cold-formed steel or aluminium sections (Sigma, Zeta, Omega, and similar sections which are not covered by subtypes of _IfcParameterizedProfileDef_). However, since _IfcCenterLineProfileDef_ does not provide shape parameters except for the thickness, there is generally a need to further specify the profile definition by means of
 
-* the name, 
+* the name,
 * external reference to a document or library,
 * profile properties,
 

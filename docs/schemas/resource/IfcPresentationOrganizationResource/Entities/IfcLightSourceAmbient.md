@@ -1,7 +1,7 @@
 # IfcLightSourceAmbient
 
 { .extDef}
-> NOTE  Definition according to ISO 10303-46:  
+> NOTE  Definition according to ISO 10303-46:
 > The light source ambient entity is a subtype of light source. It lights a surface independent of the surface's orientation and position.
 
 > NOTE  Corresponding ISO 10303 entity: light_source_ambient. Please refer to ISO/IS 10303-46:1994, p. 31 for the final definition of the formal standard.

@@ -31,21 +31,21 @@ The IfcMemberType may define the shared geometric representation for all member 
 
 
 
-> 
+>
 > NOTE  If the IfcMemberType has an associated IfcMaterialProfileSet, then no shared geometric representation shall be provided.
-> 
+>
 
 
 
-> 
+>
 > NOTE  The product shape representations are defined as RepresentationMaps (attribute of the supertype IfcTypeProduct), which get assigned by an element occurrence instance through the IfcShapeRepresentation.Item[n] being an IfcMappedItem. See IfcTypeProduct for further information.
-> 
+>
 
 
 
-> 
+>
 > NOTE  The values of attributes RepresentationIdentifier and RepresentationType of IfcShapeRepresentation are restricted in the same way as those for IfcMember and IfcMemberStandardCase
-> 
+>
 
 
 
@@ -60,9 +60,9 @@ relationship.
 
 
 
-> 
+>
 > NOTE  It is illegal to assign an IfcMaterial to an IfcMemberType, if there is at least one occurrences of IfcMemberStandardCase for this type.
-> 
+>
 
 
 The shared profile definition is defined by assigning an
@@ -76,7 +76,7 @@ IfcMemberStandardCase for further information).
 
 
 
-> 
+>
 > NOTE  The attribute ProfileName of the
 > IfcProfileDef subtype, referenced in
 > IfcMaterialProfile should contain a standardized profile

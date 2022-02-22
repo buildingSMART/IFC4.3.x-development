@@ -37,7 +37,7 @@ The style applied to the text block for its visual appearance.
 
 ### TextFontStyle
 The style applied to the text font for its visual appearance. It defines the font family, font style, weight and size.
-  
+
 { .change-ifc2x2}
 > IFC2x2 Add2 CHANGE The attribute _TextFontStyle_ is a new attribute attached to _IfcTextStyle_.
 

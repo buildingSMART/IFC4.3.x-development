@@ -13,8 +13,8 @@ _IfcControl_ is the abstract generalization of all concepts that control or cons
 
 ### Identification
 An identifying designation given to a control
-    It is the identifier at the occurrence level. 
-    
+    It is the identifier at the occurrence level.
+
 { .change-ifc2x4}
 > IFC4 CHANGE Attribute unified by promoting from various subtypes of _IfcControl_.
 

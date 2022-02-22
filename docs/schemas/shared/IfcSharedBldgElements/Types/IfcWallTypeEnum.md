@@ -11,7 +11,7 @@ This enumeration defines the different types of walls that can further specify a
 > IFC2x3 CHANGE  The enumerators _ELEMENTEDWALL_ and _PLUMBINGWALL_ have been added.
 
 { .change-ifc2x4}
-> IFC4 CHANGE  New enumerators MOVABLE, PARAPET, PARTITIONING, and SOLIDWALL have been added.  
+> IFC4 CHANGE  New enumerators MOVABLE, PARAPET, PARTITIONING, and SOLIDWALL have been added.
 > IFC4 DEPRECATION  The enumerators STANDARD, POLYGONAL and ELEMENTEDWALL are deprecated and shall no longer be used.
 
 > NOTE  The potentially misleading term _SHEAR_ shall not impose a particular resistance against shear forces, but a particular shape.
@@ -37,7 +37,7 @@ A wall designed to withstand shear loads. Examples of shear wall are diaphragms 
 A massive wall construction for the wall core being the single layer or having multiple layers attached. Such walls are often masonry or concrete walls (both cast in-situ or precast) that are load bearing and fire protecting.
 
 ### STANDARD
-A standard wall, extruded vertically with a constant thickness along the wall path. 
+A standard wall, extruded vertically with a constant thickness along the wall path.
 { .deprecated}
 > IFC4 DEPRECATION The value is deprecated, it is expressed by choosing the subtype _IfcWallStandardCase_.
 
@@ -45,7 +45,7 @@ A standard wall, extruded vertically with a constant thickness along the wall pa
 A polygonal wall, extruded vertically, where the wall thickness varies along the wall path.
 
 ### ELEMENTEDWALL
-A stud wall framed with studs and faced with sheetings, sidings, wallboard, or plasterwork. 
+A stud wall framed with studs and faced with sheetings, sidings, wallboard, or plasterwork.
 { .deprecated}
 > IFC4 DEPRECATION The value is deprecated, it is expressed by choosing the subtype _IfcWallElementedCase_.
 

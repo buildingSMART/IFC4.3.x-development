@@ -25,7 +25,7 @@ Figure 3 &mdash; Grid triangular layout
 { .change-ifc2x4}
 > IFC4 CHANGE  The attribute _PredefinedType_ has been added at the end of the attribute list.
 
- 
+
 
 { .spec-head}
 Informal Propositions:
@@ -50,7 +50,7 @@ List of grid axes defining the second row of grid lines.
 List of grid axes defining the third row of grid lines. It may be given in the case of a triangular grid.
 
 ### PredefinedType
-Predefined types to define the particular type of the grid. 
+Predefined types to define the particular type of the grid.
 { .change-ifc4}
 > IFC4 Change  New attribute.
 
@@ -62,7 +62,7 @@ Predefined types to define the particular type of the grid.
  The 2D geometric representation of IfcGrid is defined
  using the 'GeometricCurveSet' geometry. The following
  attribute values should be inserted
- 
+
 
 
 * IfcShapeRepresentation.RepresentationIdentifier =
@@ -73,7 +73,7 @@ Predefined types to define the particular type of the grid.
 
 
  The following constraints apply to the 2D representation:
- 
+
 
 
 * The IfcGeometricCurveSet shall be an (and the
@@ -82,7 +82,7 @@ Predefined types to define the particular type of the grid.
  subtypes of IfcCurve, each representing a grid axis.
  Applicable subtypes of IfcCurve are:
  IfcPolyline, IfcCircle, IfcTrimmedCurve
- (based on BaseCurve referencing IfcLine or 
+ (based on BaseCurve referencing IfcLine or
  IfcCircle), and IfcOffsetCurve2D.
 * Each subtype of IfcCurve may have a curve style
  assigned, using IfcStyledItem referencing
@@ -95,7 +95,7 @@ Predefined types to define the particular type of the grid.
 
 ![design grid](../../../../figures/ifcdesigngrid-layout1.gif)
 
-> 
+>
 >  As shown in Figure 31, the IfcGrid defines a
 >  placement coordinate system using the
 >  ObjectPlacement. The XY plane of the
@@ -107,7 +107,7 @@ Predefined types to define the particular type of the grid.
 >  Items. All grid axes are added as
 >  IfcPolyline to the
 >  IfcGeometricCurveSet.
->  
+>
 
 
 Figure 157 — Grid layout
@@ -116,18 +116,18 @@ Figure 157 — Grid layout
 
 
   
- 
+
 
 
 
 
   
- 
+
 
 
 ![representation of a design grid](../../../../figures/ifcgrid-representation.png)
 
-> 
+>
 >  As shown in Figure 32, the attributes UAxes
 >  and VAxes define lists of IfcGridAxis
 >  within the context of the grid. Each instance of
@@ -136,7 +136,7 @@ Figure 157 — Grid layout
 >  that is contained within the
 >  IfcGeometricCurveSet that represents the
 >  IfcGrid.
->  
+>
 
 
 Figure 158 — Grid representation
@@ -145,7 +145,7 @@ Figure 158 — Grid representation
 
 
   
- 
+
 
 
 
@@ -157,7 +157,7 @@ Figure 158 — Grid representation
  supertype IfcProduct. It is defined by the
  IfcLocalPlacement, which defines the local coordinate
  system that is referenced by all geometric representations.
- 
+
 
 
 * The PlacementRelTo relationship of

@@ -4,8 +4,8 @@ A space represents an area or volume bounded actually or theoretically. Spaces a
 
 The _IfcSpaceType_ defines a list of commonly shared defines commonly shared information for occurrences of spaces. The set of shared information may include:
 
-* common properties within shared property sets 
-* common shape representations 
+* common properties within shared property sets
+* common shape representations
 
 It is used to define an space specification (i.e. the specific space information, that is common to all occurrences of that space type. Space types may be exchanged without being already assigned to occurrences.
 

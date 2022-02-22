@@ -20,7 +20,7 @@ Predefined generic type for a cost item that is specified in an enumeration. The
 > IFC4 CHANGE The attribute has been added.
 
 ### CostValues
-Component costs for which the total cost for the cost item is calculated, and then multiplied by the total _CostQuantities_ if provided.  
+Component costs for which the total cost for the cost item is calculated, and then multiplied by the total _CostQuantities_ if provided.
 
 If _CostQuantities_ is provided then values indicate unit costs, otherwise values indicate total costs.
 
@@ -55,7 +55,7 @@ For quantity-based costing, IfcElement, IfcTask, or IfcResource occurrence subty
 For rate-based costing (specifically for IfcCostScheduleTypeEnum.SCHEDULEOFRATES), a single IfcTypeProduct, IfcTypeProcess, or IfcTypeResource subtype may be used to reflect rates for occurrences of such types. This enables the possibility to generate a quantity-based cost schedule for occurrences based on types with rate-based cost schedules.
 
 
-IfcRelAssignsToControl is also used in the opposite direction to link the root IfcCostItem to an IfcCostSchedule where RelatingControl is the IfcCostSchedule. 
+IfcRelAssignsToControl is also used in the opposite direction to link the root IfcCostItem to an IfcCostSchedule where RelatingControl is the IfcCostSchedule.
 
 
 

@@ -54,8 +54,8 @@ positioned relative to the IfcWallElementedCase.
 ### Surface Geometry
 
 The 'Surface Geometry' shape representation can be used to define a
- surfacic model of the building (e.g. for analytical purposes, or 
-for reduced Level of Detail representation). It could suppress 
+ surfacic model of the building (e.g. for analytical purposes, or
+for reduced Level of Detail representation). It could suppress
 the geometric details of the parts in the
  decomposition.
 

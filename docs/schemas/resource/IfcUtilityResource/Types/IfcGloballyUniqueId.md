@@ -9,7 +9,7 @@ An _IfcGloballyUniqueId_ holds an encoded string identifier that is used to uniq
 		"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_$";
 
         </font>
-> 
+>
 
 
 The resulting string is a fixed 22 character length string to be exchanged within the IFC exchange file structure.

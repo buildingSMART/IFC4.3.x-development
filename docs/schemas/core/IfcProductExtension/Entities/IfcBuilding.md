@@ -3,7 +3,7 @@
 A building represents a structure that provides shelter for its occupants or contents and stands in one place. The building is also used to provide a basic element within the spatial structure hierarchy for the components of a building project (together with site, storey, and space).
 
 { .extDef}
-> NOTE  Definition from ISO 6707-1:  
+> NOTE  Definition from ISO 6707-1:
 > Construction work that has the provision of shelter for its occupants or contents as one of its main purpose and is normally designed to stand permanently in one place.
 
 A building is (if specified) associated to a site. A building may span over several connected or disconnected buildings. Therefore building complex provides for a collection of buildings included in a site. A building can also be decomposed in (vertical) parts, where each part defines a building section. This is defined by the composition type attribute of the supertype _IfcSpatialStructureElements_ which is interpreted as follow:
@@ -25,10 +25,10 @@ Systems, such as building service or electrical distribution systems, zonal syst
 
 Figure 2 describes the heights and elevations of the _IfcBuilding_. It is used to provide the height above sea level of the project height datum for this building, that is, the internal height 0.00. The height 0.00 is often used as a building internal reference height and equal to the floor finish level of the ground floor.
 
-* base elevation of building provided by: _IfcBuilding.ElevationOfRefHeight_, it is usually the top of construction slab 
-* base elevation of terrain at the perimeter of the building provided by: _IfcBuilding.ElevationOfTerrain_, it is usually the minimum elevation is sloped terrain 
-* total height of building, also referred to as ridge height (top of roof structure, e.g the ridge against terrain): provided by BaseQuantity with Name="TotalHeight" 
-* eaves height of building (base of roof structure, e.g the eaves against terrain): provided by BaseQuantity with Name="EavesHeight" 
+* base elevation of building provided by: _IfcBuilding.ElevationOfRefHeight_, it is usually the top of construction slab
+* base elevation of terrain at the perimeter of the building provided by: _IfcBuilding.ElevationOfTerrain_, it is usually the minimum elevation is sloped terrain
+* total height of building, also referred to as ridge height (top of roof structure, e.g the ridge against terrain): provided by BaseQuantity with Name="TotalHeight"
+* eaves height of building (base of roof structure, e.g the eaves against terrain): provided by BaseQuantity with Name="EavesHeight"
 
 ![building heights](../../../../figures/ifcbuilding_heights.png)
 Figure 2 &mdash; Building elevations
@@ -62,8 +62,8 @@ The body (or solid model) geometric representation (if the
 
 
 > NOTE  Since the building shape is usually described by the
->  exterior building elements, an independent shape representation 
-> shall only be given, if the building is exposed 
+>  exterior building elements, an independent shape representation
+> shall only be given, if the building is exposed
 > independently from its constituting elements and such independent geometric representation may be prohibited in model view definitions.
 
 
@@ -89,12 +89,12 @@ The body (or solid model) geometric representation (if the
  supertype IfcProduct. It is defined by the
  IfcLocalPlacement, which defines the local coordinate
  system that is referenced by all geometric representations.
- 
+
 
 
 * The PlacementRelTo relationship of
  IfcLocalPlacement shall point (if relative placement
- is used) to the IfcSpatialStructureElement of type 
+ is used) to the IfcSpatialStructureElement of type
  IfcSite, or of type IfcBuilding (e.g. to
  position a building relative to a building complex, or a
  building section to a building).
@@ -112,7 +112,7 @@ The body (or solid model) geometric representation (if the
 ### Spatial Composition
 
 
-> NOTE  By using the inverse relationship IfcBuilding.Decomposes it references IfcProject || IfcSite || IfcBuilding through IfcRelAggregates.RelatingObject. If it refers to another instance of IfcBuilding, the referenced IfcBuilding needs to have a different and higher CompositionType, i.e. COMPLEX (if the other IfcBuilding has ELEMENT), or 
+> NOTE  By using the inverse relationship IfcBuilding.Decomposes it references IfcProject || IfcSite || IfcBuilding through IfcRelAggregates.RelatingObject. If it refers to another instance of IfcBuilding, the referenced IfcBuilding needs to have a different and higher CompositionType, i.e. COMPLEX (if the other IfcBuilding has ELEMENT), or
 > ELEMENT (if the other IfcBuilding has PARTIAL).
 
 
@@ -120,21 +120,21 @@ The body (or solid model) geometric representation (if the
 ### Spatial Container
 
 
-> NOTE  If there are building elements and/or other elements directly related to the IfcBuilding (like a curtain wall spanning several stories), they are associated with the IfcBuilding by using the objectified relationship IfcRelContainedInSpatialStructure. The IfcBuilding references them by its inverse relationship: 
-> * IfcBuilding.ContainsElements -- referencing any subtype of IfcProduct (with the 
+> NOTE  If there are building elements and/or other elements directly related to the IfcBuilding (like a curtain wall spanning several stories), they are associated with the IfcBuilding by using the objectified relationship IfcRelContainedInSpatialStructure. The IfcBuilding references them by its inverse relationship:
+> * IfcBuilding.ContainsElements -- referencing any subtype of IfcProduct (with the
 >  exception of other spatial structure element) by IfcRelContainedInSpatialStructure.RelatedElements.
-> 
-> 
-> 
+>
+>
+>
 
 
 ### Spatial Decomposition
 
 
 > NOTE  By using the inverse relationship IfcBuilding.IsDecomposedBy it references
-> IfcBuilding || IfcBuildingStorey through IfcRelAggregates.RelatedObjects. 
-> If it refers to another instance of IfcBuilding, the referenced IfcBuilding needs 
-> to have a different and lower CompositionType, i.e. ELEMENT (if the other IfcBuilding 
+> IfcBuilding || IfcBuildingStorey through IfcRelAggregates.RelatedObjects.
+> If it refers to another instance of IfcBuilding, the referenced IfcBuilding needs
+> to have a different and lower CompositionType, i.e. ELEMENT (if the other IfcBuilding
 > has COMPLEX), or PARTIAL (if the other IfcBuilding has ELEMENT).
 
 

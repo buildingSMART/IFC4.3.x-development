@@ -55,7 +55,7 @@ Indicates the unit costs for which accrued amounts should be calculated.  Such u
 > IFC4 CHANGE  New attribute.
 
 ### BaseQuantity
-Identifies the base quantity consumed of the resource relative to assignments.  
+Identifies the base quantity consumed of the resource relative to assignments.
 
 For crew, labour, subcontract, and equipment resources, this refers to _IfcQuantityTime_.
 

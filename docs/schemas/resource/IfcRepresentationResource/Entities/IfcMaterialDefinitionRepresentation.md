@@ -6,8 +6,8 @@ _IfcMaterialDefinitionRepresentation_ defines presentation information relating 
 
 The _IfcMaterialDefinitionRepresentation_ can apply
 
-* different presentation styles for different representation contexts, for example, a different style for sketch view, model view or plan view, or for different target scales, 
-* for each representation context is can apply curve style, fill area style (hatching), symbol, text and surface style. 
+* different presentation styles for different representation contexts, for example, a different style for sketch view, model view or plan view, or for different target scales,
+* for each representation context is can apply curve style, fill area style (hatching), symbol, text and surface style.
 
 > HISTORY  New entity in IFC2x3.
 
@@ -17,7 +17,7 @@ The _IfcMaterialDefinitionRepresentation_ can apply
 { .change-ifc2x4}
 > IFC4 CHANGE  The assignment of curve, surface and other styles to an _IfcStyledItem_ has been simplified by _IfcStyleAssignmentSelect_. The use of intermediate _IfcPresentationStyleAssignment_ is deprecated.
 
- 
+
 
 { .use-head}
 Use definition

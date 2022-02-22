@@ -2,7 +2,7 @@
 
 An _IfcCurve_ is a curve in two-dimensional or three-dimensional space. It includes definitions for bounded and unbounded curves.
 
-> NOTE  Definition according to ISO 10303-42:  
+> NOTE  Definition according to ISO 10303-42:
 > A curve can be envisioned as the path of a point moving in its coordinate space.
 
 > NOTE Entity adapted from **curve** defined in ISO 10303-42
@@ -12,7 +12,7 @@ An _IfcCurve_ is a curve in two-dimensional or three-dimensional space. It inclu
 { .spec-head}
 Informal Propositions:
 
-1. A curve shall be arcwise connected 
+1. A curve shall be arcwise connected
 2. A curve shall have an arc length greater than zero.
 
 ## Attributes

@@ -100,7 +100,7 @@ IfcMaterialLayerSetUsage. 
 
 Material information can also be given at the
 IfcSlabType, defining the common attribute data for all
-occurrences of the same type. It is then accessible by the 
+occurrences of the same type. It is then accessible by the
 inverse IsDefinedBy relationship pointing to
 IfcSlabType.HasAssociations and via
 IfcRelAssociatesMaterial.RelatingMaterial. The IfcSlabStandardCase defines in addition that the
@@ -145,8 +145,8 @@ Figure 270 — Slab material layers
 The following restriction is imposed:
 
 
-* The local placement shall provide the location and directions 
-for the standard slab, the x/y plane is the plane for the 
+* The local placement shall provide the location and directions
+for the standard slab, the x/y plane is the plane for the
 profile, and the z-axis is the extrusion axis for the slab body.
 
 

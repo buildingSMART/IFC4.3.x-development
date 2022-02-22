@@ -5,9 +5,9 @@ The _IfcSharedFacilitiesElements_ schema defines basic concepts in the facilitie
 
 The _IfcSharedFacilitiesElements_ schema supports ideas including:
 
-* Furniture. 
-* Grouping of elements of system furniture into individual furniture items. 
-* Asset identification. 
+* Furniture.
+* Grouping of elements of system furniture into individual furniture items.
+* Asset identification.
 * Inventory of objects (including asset, furniture and space objects within separate inventories).
 
 ### 6.4.1.1 Furniture and System Furniture

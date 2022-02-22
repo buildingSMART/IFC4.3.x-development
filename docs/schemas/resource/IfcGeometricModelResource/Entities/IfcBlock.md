@@ -30,7 +30,7 @@ On each side face, textures are aligned facing upright. On the top and bottom fa
 
 Figure 2 illustrates default texture mapping with a clamped texture (RepeatS=False and RepeatT=False). The image on the left shows the texture where the S axis points to the right and the T axis points up. The image on the right shows the texture applied to the geometry where the X axis points back to the right, the Y axis points back to the left, and the Z axis points up.
 
- 
+
 
 { .gridtable}
 

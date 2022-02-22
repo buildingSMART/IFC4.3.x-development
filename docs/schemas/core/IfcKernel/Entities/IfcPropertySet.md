@@ -10,10 +10,10 @@ _IfcPropertySet_ can be assigned to object occurrences and object types. An _Ifc
 
 An _IfcPropertySetTemplate_ may define the underlying structure, i.e. the required name, the applicable object or object types to which the property set can be attached, and the individual properties that can be included. Property sets are related to other objects by using the relationship object that refers to the corresponding object:
 
-*  **Occurrence Object**: _IfcRelDefinesByProperties_ using the inverse attribute _DefinesOccurrence_. 
-*  **Type Object**: using a direct link by inverse attribute _DefinesType_. 
-*  **Underlying template**: _IfcRelDefinesByTemplate_ using the inverse attribute _IsDefinedBy_. 
-*  **External reference**: subtypes of _IfcRelAssociates_ are used to provide a link to a classification system, or external library providing further reference to the property set. Accessible by inverse attribute _HasAssociations_. 
+*  **Occurrence Object**: _IfcRelDefinesByProperties_ using the inverse attribute _DefinesOccurrence_.
+*  **Type Object**: using a direct link by inverse attribute _DefinesType_.
+*  **Underlying template**: _IfcRelDefinesByTemplate_ using the inverse attribute _IsDefinedBy_.
+*  **External reference**: subtypes of _IfcRelAssociates_ are used to provide a link to a classification system, or external library providing further reference to the property set. Accessible by inverse attribute _HasAssociations_.
 
 > HISTORY  New entity in IFC1.0
 

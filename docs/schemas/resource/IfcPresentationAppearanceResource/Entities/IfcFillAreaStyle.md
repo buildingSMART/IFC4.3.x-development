@@ -13,17 +13,17 @@ An _IfcFillAreaStyle_ provides the style table for presentation information assi
     * If an instance of _IfcColour_ is assigned in addition to the set of _FillStyles_, it provides the background colour for the hatching.
 
 
-> 
+>
 >> NOTE  Assigning more then two instances of _IfcFillAreaStyleHatching_ to define three or more rows of hatch lines is not encouraged.
 
 
-> 
+>
 * Tiling for areas and surfaces by assigning a single instance of _IfcFillAreaStyleTiles_ to the set of _FillStyles_.
     * If an instance of _IfcColour_ is assigned in addition to the set of _FillStyles_, it provides the background colour for the tiling.
 
 
-* Externally defined hatch style by assigning a single instance of _IfcExternallyDefinedHatchStyle_ to the set of _FillStyles_. 
-    * If an instance of _IfcColour_ is assigned in addition to the set of _FillStyles_, it provides the background colour for the hatching. 
+* Externally defined hatch style by assigning a single instance of _IfcExternallyDefinedHatchStyle_ to the set of _FillStyles_.
+    * If an instance of _IfcColour_ is assigned in addition to the set of _FillStyles_, it provides the background colour for the hatching.
 
 Measures given to a hatch or tile pattern are given in global drawing length units.
 
@@ -36,7 +36,7 @@ The measure values for hatch or tile pattern apply to the model space with a tar
 An _IfcFillAreaStyle_ can be assigned to _IfcFillArea_ via the _IfcPresentationStyleAssignment_ through an intermediate _IfcStyledItem_ or subtype _IfcAnnotationFillAreaOccurrence_.
 
 { .extDef}
-> NOTE  Definition according to ISO/CD 10303-46:1992  
+> NOTE  Definition according to ISO/CD 10303-46:1992
 > The style for filling visible curve segments, annotation fill areas or surfaces with tiles or hatches.
 
 > NOTE  Corresponding ISO 10303 name: fill_area_style. Please refer to ISO/IS 10303-46:1994 for the final definition of the formal standard.

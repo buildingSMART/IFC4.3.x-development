@@ -11,7 +11,7 @@ Figure 1 indicates the association of material characteristics to shape aspects.
 !["shape"](../../../../figures/ifcshapeaspect_fig1.png "Figure 1 &mdash; shape aspects for associating material")
 
 { .extDef}
-> NOTE  Definition from ISO 10303-41:  
+> NOTE  Definition from ISO 10303-41:
 > A shape aspect is an identifiable element of the shape of an object.
 
 > NOTE  Entity adapted from **shape_aspect** defined in ISO 10303-42.
@@ -41,7 +41,7 @@ The word or group of words by which the shape aspect is known. It is a tag to in
 The word or group of words that characterize the shape aspect. It can be used to add additional meaning to the name of the aspect.
 
 ### ProductDefinitional
-An indication that the shape aspect is on the physical boundary of the product definition shape. If the value of this attribute is TRUE, it shall be asserted that the shape aspect being identified is on such a boundary. If the value is FALSE, it shall be asserted that the shape aspect being identified is not on such a boundary. If the value is UNKNOWN, it shall be asserted that it is not known whether or not the shape aspect being identified is on such a boundary. 
+An indication that the shape aspect is on the physical boundary of the product definition shape. If the value of this attribute is TRUE, it shall be asserted that the shape aspect being identified is on such a boundary. If the value is FALSE, it shall be asserted that the shape aspect being identified is not on such a boundary. If the value is UNKNOWN, it shall be asserted that it is not known whether or not the shape aspect being identified is on such a boundary.
 ---
 EXAMPLE: Would be FALSE for a center line, identified as shape aspect; would be TRUE for a cantilever.
 ---

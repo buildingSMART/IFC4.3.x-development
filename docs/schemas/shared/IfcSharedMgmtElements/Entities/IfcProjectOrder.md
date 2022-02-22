@@ -56,7 +56,7 @@ Figure 314 illustrates IfcProjectOrder assignment relationships as indicated:
 * *IfcActor* (*IfcRelAssignsToActor*): Organization issuing the order such as an owner or contractor.
 
 
- The IfcProjectOrder may have assignments of its own using the *IfcRelAssignsToControl* relationship where RelatingControl refers to the IfcProjectOrder and RelatedObjects contains one or more objects of the following types: 
+ The IfcProjectOrder may have assignments of its own using the *IfcRelAssignsToControl* relationship where RelatingControl refers to the IfcProjectOrder and RelatedObjects contains one or more objects of the following types:
 
 * *IfcActor*: Organization(s) contracted to fulfill the order, typically a single contractor, subcontractor, or supplier.
 

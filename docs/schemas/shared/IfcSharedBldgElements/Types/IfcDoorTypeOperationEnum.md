@@ -2,13 +2,13 @@
 
 This enumeration defines the basic ways to describe how an _IfcDoor_ or _IfcDoorType_ operate, as shown in Figure 1. It combines the partitioning of the access barrier into single or multiple panels and the operation types of those panels.
 
-In the most common case of swinging doors the _IfcDoorTypeOperationEnum_ defined the hinge side (left hung or right hung) and the opening direction (opening to the left, opening to the right). Whether the door opens inwards or outwards is determined by the local coordinate system of the _IfcDoor_  
+In the most common case of swinging doors the _IfcDoorTypeOperationEnum_ defined the hinge side (left hung or right hung) and the opening direction (opening to the left, opening to the right). Whether the door opens inwards or outwards is determined by the local coordinate system of the _IfcDoor_
 
-> NOTE  There are different definitions in various countries on what a left opening or left hung or left swing door is (same for right). Therefore the IFC definition terms may derive from the local standard and may need to be mapped appropriately.  
+> NOTE  There are different definitions in various countries on what a left opening or left hung or left swing door is (same for right). Therefore the IFC definition terms may derive from the local standard and may need to be mapped appropriately.
 
-> HISTORY  New Enumeration in IFC4.  
+> HISTORY  New Enumeration in IFC4.
 
-{ .change-ifc2x4}  
+{ .change-ifc2x4}
 > IFC4 CHANGE The new _IfcDoorTypeOperationEnum_ replaces the use of _IfcDoorStyleOperationEnum_ that is deprecated from IFC4 onwards.
 
 Note that:

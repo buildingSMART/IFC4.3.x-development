@@ -12,16 +12,16 @@ _IfcEvent_ is used to capture information about particular things that happen or
 ## Attributes
 
 ### PredefinedType
-Identifies the predefined types of an event from which 
+Identifies the predefined types of an event from which
     the type required may be set.
 
 ### EventTriggerType
-Identifies the predefined types of event trigger from which 
+Identifies the predefined types of event trigger from which
     the type required may be set.
 
 ### UserDefinedEventTriggerType
-A user defined event trigger type, the value of which is 
-    asserted when the value of an event trigger type is declared 
+A user defined event trigger type, the value of which is
+    asserted when the value of an event trigger type is declared
     as USERDEFINED.
 
 ### EventOccurenceTime
@@ -56,7 +56,7 @@ IfcEvent may be contained within an IfcTask using the
  triggered within the task time period but not outside of
  it. As an IfcEvent is considered to be atomic, no use is
  anticipated for nesting processes inside the event.
- 
+
 
 
 ### Object Typing
@@ -83,9 +83,9 @@ For building operation scenarios, IfcEvent may be assigned
 >  IfcRelAssignsToProduct), then the IfcEvent must be assigned
 >  to one or more occurrences of the specified product type
 >  using IfcRelAssignsToProduct.
-> 
+>
 
- 
+
 ### Property Sets
 
 
@@ -103,6 +103,6 @@ For building operation scenarios, IfcEvent may be assigned
  IfcRelSequence.SequenceType attribute has no effect on an
  IfcEvent but still applies to the opposite end of the
  relationship if IfcTask is used.
- 
+
 
 

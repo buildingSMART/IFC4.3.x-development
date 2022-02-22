@@ -13,15 +13,15 @@ See definitions at _IfcStructuralActivity_.
 
 ****Topology Use Definitions****:
 
-Standard Case:  
+Standard Case:
 If connected with a point item, instances of _IfcStructuralPointReaction_ shall not have an _ObjectPlacement_ nor a _Representation_. It is implied that the placement and representation of the reaction is the same as the structural item.
 
-Special Case 1:  
+Special Case 1:
 If connected with a curve item or surface item, instances of _IfcStructuralPointReaction_ shall have an _ObjectPlacement_ and _Representation_, containing an _IfcVertexPoint_. See _IfcStructuralActivity_ for further definitions.
 
 > NOTE  In order to model concentrated reactions on a curve or surface item, _IfcStructuralCurveReaction_ or _IfcStructuralSurfaceAction_ of type DISCRETE is preferable since they do not require an extra topology representation in this case. An _IfcStructuralPointReaction_ should be used for a concentrated reaction on a curve or surface item only when an explicit vertex point representation is actually desired.
 
-Special Case 2:  
+Special Case 2:
 If not connected with a structural item (which may happen in an incomplete or conceptual model), a point action should have an _ObjectPlacement_ and _Representation_, containing an _IfcVertexPoint_. See _IfcStructuralActivity_ for further definitions.
 
 ## Formal Propositions

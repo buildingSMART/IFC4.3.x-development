@@ -46,7 +46,7 @@ Figure 312 illustrates assignment relationships as indicated:
 * IfcActor (IfcRelAssignsToActor): Organization issuing the permit such as a local government agency or security organization.
 
 
- The IfcPermit may have assignments of its own using the IfcRelAssignsToControl relationship where RelatingControl refers to the IfcPermit and RelatedObjects contains one or more objects of the following types: 
+ The IfcPermit may have assignments of its own using the IfcRelAssignsToControl relationship where RelatingControl refers to the IfcPermit and RelatedObjects contains one or more objects of the following types:
 
 * IfcActor: Organization(s) bound to the permit, typically a single contractor.
 

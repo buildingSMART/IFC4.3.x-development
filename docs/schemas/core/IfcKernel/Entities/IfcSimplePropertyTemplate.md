@@ -44,7 +44,7 @@ The value range of the measure type is within the select type _IfcValue_  for al
 > NOTE  The measure type of _IfcPropertyEnumeration.EnumerationValues_ is provided as _PrimaryDataType_.
 
 ### Enumerators
-Name of the property enumeration, and list of all valid enumerators being selectable values, assigned to the definition of the property. 
+Name of the property enumeration, and list of all valid enumerators being selectable values, assigned to the definition of the property.
 This attribute shall only be provided, if the _PropertyType_ is set to:
 * <small>P_ENUMERATEDVALUE</small>
 
@@ -68,8 +68,8 @@ The expression used to store additional information for the property template de
 > NOTE  No value shall be asserted if the _PropertyType_ is not listed above.
 
 ### AccessState
-Information about the access state of the property. It determines whether a property be viewed and/or modified by any receiving application without specific knowledge of it.   
-  
+Information about the access state of the property. It determines whether a property be viewed and/or modified by any receiving application without specific knowledge of it.
+
 **Attribute use definition for _IfcStateEnum_*** READWRITE: Properties of this template are readable and writable. They may be viewed and modified by users of any application. These are typical informational properties set by a user.
 * READONLY: Properties of this template are read-only. They may be viewed but not modified by users of any application. (Applications may generate such values). These are typical automatically generated properties that should be displayed only, but not written back.
 * LOCKED: Properties of this template are locked. They may only be accessed by the owning application (the publisher of the property set template). These are typically application depended, internal properties that should not be published.

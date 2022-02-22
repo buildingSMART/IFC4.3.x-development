@@ -43,7 +43,7 @@ Table 1 &mdash; Standard unit names
 > EXAMPLE  An inch is a converted unit. It is from the Imperial system, its name is "inch" and it can be related to the SI unit, millimetre, through a measure with unit whose value is 25.4 millimetre. A foot is also a converted unit. It is from the Imperial system, its name is "foot" and it can be related to an _IfcSIUnit_, millimetre, either directly or through the unit called "inch". Note that several US customary units differ from Imperial units (nonmetric English units) of the same name.
 
 { .extDef}
-> NOTE  Definition according to ISO/CD 10303-41:1992  
+> NOTE  Definition according to ISO/CD 10303-41:1992
 > A conversion based unit is a unit that is defined based on a measure with unit.
 
 > NOTE  Entity adapted from **conversion_based_unit** defined in ISO 10303-41.

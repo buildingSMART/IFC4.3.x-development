@@ -49,8 +49,8 @@ IfcFacetedBrepWithVoids.
 
 
 > NOTE  Since the building storey shape is usually described by the
->  exterior building elements, an independent shape representation 
-> shall only be given, if the building storey is exposed 
+>  exterior building elements, an independent shape representation
+> shall only be given, if the building storey is exposed
 > independently from its constituting elements and such independent geometric representation may be prohibited in model view definitions.
 
 
@@ -96,8 +96,8 @@ is defined within the world coordinate system.
 
 
 > NOTE  By using the inverse relationship IfcBuildingStorey.Decomposes it references
-> (IfcBuilding || IfcBuildingStorey) through 
-> IfcRelAggregates.RelatingObjectIfcBuildingStorey, the referenced 
+> (IfcBuilding || IfcBuildingStorey) through
+> IfcRelAggregates.RelatingObjectIfcBuildingStorey, the referenced
 > IfcBuildingStorey needs to have a different and higher
 >  CompositionType, i.e. COMPLEX (if the other IfcBuildingStorey has ELEMENT), or ELEMENT (if the other
 >  IfcBuildingStorey has PARTIAL).
@@ -135,12 +135,12 @@ IfcRelServicesBuildings.
 
 
 > NOTE  By using the inverse relationship IfcBuildingStorey.IsDecomposedBy it references
-> IfcBuildingStorey || IfcSpace through 
-> IfcRelAggregates.RelatedObjects. If it refers to another 
-> instance of IfcBuildingStorey, the referenced 
-> IfcBuildingStorey needs to have a different and lower 
-> CompositionType, i.e. ELEMENT (if the other 
-> IfcBuildingStorey has COMPLEX), or PARTIAL (if the other 
+> IfcBuildingStorey || IfcSpace through
+> IfcRelAggregates.RelatedObjects. If it refers to another
+> instance of IfcBuildingStorey, the referenced
+> IfcBuildingStorey needs to have a different and lower
+> CompositionType, i.e. ELEMENT (if the other
+> IfcBuildingStorey has COMPLEX), or PARTIAL (if the other
 > IfcBuildingStorey has ELEMENT).
 
 

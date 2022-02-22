@@ -3,13 +3,13 @@
 The planar surface is an unbounded surface in the direction of _x_ and _y_. Bounded planar surfaces are defined by using a subtype of _IfcBoundedSurface_ with _BasisSurface_ being a plane.
 
 { .extDef}
-> NOTE  Definition according to ISO/CD 10303-42:1992  
+> NOTE  Definition according to ISO/CD 10303-42:1992
 > A plane is an unbounded surface with a constant normal. A plane is defined by a point on the plane and the normal direction to the plane. The data is to be interpreted as follows: <pre>
    C = Position.Location
    x = Position.P[1]
    y = Position.P[2]
    z = Position.P[3] => normal to plane
-</pre> and the surface is parameterized as: 
+</pre> and the surface is parameterized as:
 { .extDef}
 >> ![formula](../../../../figures/ifcplane-math1.gif.gif)
 >  where the parametric range is -&infin; < _u,v_ < &infin;. In the above parameterization the length unit for the unit vectors **x** and **y** is derived from the context of the plane.

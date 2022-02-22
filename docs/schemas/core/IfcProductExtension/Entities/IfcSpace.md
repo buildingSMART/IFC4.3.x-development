@@ -92,7 +92,7 @@ supported.
 i.e., along the positive Z Axis of the co-ordinate system of the
 containing spatial structure element.
 * Boolean result: The difference operation with the second
-operand being of type IfcHalfSpaceSolid (or one of its 
+operand being of type IfcHalfSpaceSolid (or one of its
 subtypes) shall be supported.
 
 
@@ -161,13 +161,13 @@ Figure 183 — Space footprint
 
 ### Product Local Placement
 
-The local placement for IfcSpace is defined at its 
-supertype IfcProduct. It is defined by the 
-IfcLocalPlacement, which defines the local coordinate system 
+The local placement for IfcSpace is defined at its
+supertype IfcProduct. It is defined by the
+IfcLocalPlacement, which defines the local coordinate system
 that is referenced by all geometric representations.
 
 
-* The PlacementRelTo relationship of 
+* The PlacementRelTo relationship of
 IfcLocalPlacement shall point to the local placement of the
  IfcSpatialStructureElement of type IfcBuildingStorey or IfcSite if
  relative placement is used.
@@ -191,8 +191,8 @@ IfcLocalPlacement shall point to the local placement of the
 ### Spatial Composition
 
 By using the inverse relationship IfcSpace.IsDecomposedBy it references IfcSpace by IfcRelAggregates.RelatedObjects. If it refers to another
- instance of IfcSpace, the referenced IfcSpace needs 
-to have a different and lower CompositionType, i.e. ELEMENT 
+ instance of IfcSpace, the referenced IfcSpace needs
+to have a different and lower CompositionType, i.e. ELEMENT
 (if the other IfcSpace has COMPLEX), or PARTIAL (if the
  other IfcSpace has ELEMENT).
 
@@ -200,15 +200,15 @@ to have a different and lower CompositionType, i.e. ELEMENT
 
 ### Spatial Container
 
-If there are building elements and/or other elements directly 
+If there are building elements and/or other elements directly
 related to the IfcSpace (like most furniture and
-distribution elements), they are associated with the 
+distribution elements), they are associated with the
 IfcSpace by using the objectified relationship
-IfcRelContainedInSpatialStructure. The IfcSpace 
+IfcRelContainedInSpatialStructure. The IfcSpace
 references them by its inverse relationship:
 
 
-* IfcSpace.ContainsElements -- referencing any subtype of 
+* IfcSpace.ContainsElements -- referencing any subtype of
 IfcProduct (with the exception of other spatial structure
 element) by
  IfcRelContainedInSpatialStructure.RelatedElements.
@@ -218,11 +218,11 @@ element) by
 ### Spatial Decomposition
 
 By using the inverse relationship IfcSpace.Decomposes it references IfcSite ||
-IfcBuildingStorey || IfcSpace by 
-IfcRelAggregates.RelatingObject. If it refers to another 
-instance of IfcSpace, the referenced IfcSpace 
+IfcBuildingStorey || IfcSpace by
+IfcRelAggregates.RelatingObject. If it refers to another
+instance of IfcSpace, the referenced IfcSpace
 needs to have a different and higher CompositionType, i.e.
-COMPLEX (if the other IfcSpace has ELEMENT), or ELEMENT (if 
+COMPLEX (if the other IfcSpace has ELEMENT), or ELEMENT (if
 the other IfcSpace has PARTIAL).
 
 

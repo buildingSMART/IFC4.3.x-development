@@ -3,7 +3,7 @@
 The window is a building element that is predominately used to provide natural light and fresh air. It includes vertical opening but also horizontal opening such as skylights or light domes. It includes constructions with swinging, pivoting, sliding, or revolving panels and fixed panels. A window consists of a lining and one or several panels.
 
 { .extDef}
-> NOTE  Definition according to ISO 6707-1  
+> NOTE  Definition according to ISO 6707-1
 > Construction for closing a vertical or near vertical opening in a wall or pitched roof that will admit light and may admit fresh air.
 
 The _IfcWindow_ defines a particular occurrence of a window inserted in the spatial context of a project. A window can:

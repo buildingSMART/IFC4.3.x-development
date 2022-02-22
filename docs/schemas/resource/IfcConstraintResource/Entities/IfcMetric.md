@@ -17,7 +17,7 @@ The aim of _IfcMetric_ is to capture the quantitative aspects of a constraint.
 Enumeration that identifies the type of benchmark data.
 
 ### ValueSource
-Reference source for data values. 
+Reference source for data values.
 
 If _DataValue_ refers to an _IfcTable_, this attribute identifies the relevent column identified by _IfcTableColumn_._Identifier_.
 

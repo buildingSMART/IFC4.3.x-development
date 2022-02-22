@@ -16,32 +16,32 @@ representation.
 > NOTE  An elliptical arc segment is defined by using the _IfcTrimmedCurve_ with _BasisCurve_
 
 { .extDef}
-> NOTE Definition according to ISO/CD 10303-42:1992  
+> NOTE Definition according to ISO/CD 10303-42:1992
 > An ellipse is a conic section defined by the lengths of the semi-major and semi-minor diameters and the position (center or mid point of the line joining the foci) and orientation of the curve. Interpretation of the data shall be as follows:
-> 
->> 
+>
+>>
 >> ```
->> C = position.location  
->> x = position.p[1]  
->> y = position.p[2]  
->> z = position.p[3]  
->> R1 = semi axis 1  
+>> C = position.location
+>> x = position.p[1]
+>> y = position.p[2]
+>> z = position.p[3]
+>> R1 = semi axis 1
 >> R2 = semi axis 2
 >> ```
 > and the ellipse is parameterized as:
-> 
+>
 >> ![formula](../../../../figures/ifcellipse-math1.gif)
 > The parameterization range is 0 &le; _u_ <&le; 2&pi; (0 &le; _u_ &le; 360 degree). In the placement coordinate system defined above, the ellipse is the equation _C_ = 0, where
-> 
+>
 >> ![formula](../../../../figures/ifcellipse-math2.gif)
 >>
 > The positive sense of the ellipse at any point is in the tangent direction, T, to the curve at the point, where
-> 
+>
 >> ![formula](../../../../figures/ifcellipse-math3.gif)
 >>
 
 
-> 
+>
 > NOTE  Entity adapted from **ellipse** defined in ISO 10303-42
 
 > HISTORY  New entity in IFC1.0

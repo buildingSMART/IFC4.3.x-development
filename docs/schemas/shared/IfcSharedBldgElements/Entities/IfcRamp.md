@@ -40,15 +40,15 @@ Either there is no ramp type object associated, i.e. the _IsTypedBy_ inverse rel
 
 ### Axis 2D Geometry
 
-The walking line is represented by a two-dimensional open curve 
-as the axis. The curve is directed into the upward direction 
+The walking line is represented by a two-dimensional open curve
+as the axis. The curve is directed into the upward direction
 (direction has to be interpreted as specified at the subtypes of
-IfcCurve). 
+IfcCurve).
 
 
 
 
-> NOTE  The 'Axis' representation of IfcRamp 
+> NOTE  The 'Axis' representation of IfcRamp
 > may be provided even if the IfcRamp has components with own
 >  shape representations.
 
@@ -60,15 +60,15 @@ IfcCurve).
 ### Body SweptSolid Geometry
 
 If the IfcRamp has no components defined (empty set of
-SELF\IfcProduct.IsDecomposedBy) then the IfcRamp 'Body' geometry 
+SELF\IfcProduct.IsDecomposedBy) then the IfcRamp 'Body' geometry
 may be represented by an own IfcShapeRepresentation.
 
 
 ### Element Decomposition
 
-If the IfcRamp has components (referenced by 
-SELF\IfcProduct.IsDecomposedBy) then no independent 'Body' 
-geometric representation shall be defined for the IfcRamp. 
+If the IfcRamp has components (referenced by
+SELF\IfcProduct.IsDecomposedBy) then no independent 'Body'
+geometric representation shall be defined for the IfcRamp.
 The IfcRamp is then geometrically represented by the
  geometric representation of its components.
 
@@ -128,7 +128,7 @@ IfcRamp.ObjectPlacement.
 
 ### Spatial Containment
 
-The IfcRamp, as any subtype of IfcBuildingElement, 
+The IfcRamp, as any subtype of IfcBuildingElement,
 may participate alternatively in one of the two different containment relationships:
 
 

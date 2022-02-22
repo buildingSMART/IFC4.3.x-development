@@ -11,7 +11,7 @@ A Context is declared by the relationship object _IfcRelDeclares_ that refers to
 ## Attributes
 
 ### ObjectType
-The object type denotes a particular type that indicates the object further. The use has to be established at the level of instantiable subtypes. 
+The object type denotes a particular type that indicates the object further. The use has to be established at the level of instantiable subtypes.
 > NOTE  Subtypes of _IfcContext_ do not introduce a _PredefinedType_ attribute, therefore the usage of _ObjectType_ is not bound to the selection of USERDEFINED within the _PredefinedType_ enumaration.
 
 ### LongName
@@ -31,7 +31,7 @@ Units globally assigned to measure types used within the context.
 > IFC4 CHANGE  The attribute has been changed to be optional. Change made with upward compatibility for file based exchange.
 
 ### IsDefinedBy
-Set of relationships to property set definitions attached to this context. Those statically or dynamically defined properties contain alphanumeric information content that further defines the context. 
+Set of relationships to property set definitions attached to this context. Those statically or dynamically defined properties contain alphanumeric information content that further defines the context.
 { .change-ifc2x4}
 > IFC4 CHANGE  The data type has been changed from _IfcRelDefines_ to _IfcRelDefinesByProperties_ with upward compatibility for file based exchange.
 

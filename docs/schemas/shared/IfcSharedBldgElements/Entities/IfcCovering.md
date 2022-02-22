@@ -13,12 +13,12 @@ Coverings are elements with relationships to the covered element and the space o
 
 Coverings can be assigned to
 
-* a space represented by _IfcSpace_ 
-    * using the inverse relationship _CoversSpaces_ pointing to _IfcRelCoversSpaces_. The space is then accessible via _IfcRelCoversSpaces.RelatedSpace_. It defines to which space a covering is facing towards. 
-* a space boundary represented by _IfcRelSpaceBoundary_ 
-    * using the inverse relationship _ProvidesBoundaries_ pointing to _IfcRelSpaceBoundary._ The space is then accessible via _IfcRelSpaceBoundary.RelatingSpace_. 
-* a building element represented by _IfcBuildingElement_ 
-    * using the inverse relationship _Covers_ pointing to _IfcRelCoversBldgElements_. The building element is then accessible via _IfcRelCoversBldgElements.RelatingBuildingElement_. 
+* a space represented by _IfcSpace_
+    * using the inverse relationship _CoversSpaces_ pointing to _IfcRelCoversSpaces_. The space is then accessible via _IfcRelCoversSpaces.RelatedSpace_. It defines to which space a covering is facing towards.
+* a space boundary represented by _IfcRelSpaceBoundary_
+    * using the inverse relationship _ProvidesBoundaries_ pointing to _IfcRelSpaceBoundary._ The space is then accessible via _IfcRelSpaceBoundary.RelatingSpace_.
+* a building element represented by _IfcBuildingElement_
+    * using the inverse relationship _Covers_ pointing to _IfcRelCoversBldgElements_. The building element is then accessible via _IfcRelCoversBldgElements.RelatingBuildingElement_.
 
 > NOTE  The mere containment relationship between an _IfcCovering_ and an _IfcSpace_ is created by using _IfcRelContainedInSpatialStructure_
 
@@ -75,10 +75,10 @@ representation of IfcCovering:
 > EXAMPLE  Figure 227 illustrates a body representation where the volume of
 > IfcCovering is given by an IfcExtrudedAreaSolid for
 > planar base surfaces (here given by the
-> IfcRelSpaceBoundary). The extruded area (IfcArbitraryClosedProfileDef) shall 
+> IfcRelSpaceBoundary). The extruded area (IfcArbitraryClosedProfileDef) shall
 > be coplanar to the surface defined by the
 > IfcRelSpaceBoundary.
-> 
+>
 
 
 Figure 227 — Covering body planar
@@ -99,14 +99,14 @@ Figure 227 — Covering body planar
 
 
 
-> 
+>
 > * The geometry representation of the IfcCovering is given
 > by the IfcCompositeCurve (the OuterCurve parameter of
 > the IfcArbitraryClosedProfileDef - in cases of faceted
 > representation also a closed IfcPolyline). It is extruded
 > along the plane of the base surface using the Depth
 > parameter of the IfcSurfaceOfLinearExtrusion.
-> 
+>
 
 
 Figure 228 — Covering body circular
@@ -187,14 +187,14 @@ Figure 225 — Covering surface planar
 
 
 
-> 
+>
 > * The geometry representation of the IfcCovering is given
 > by the IfcTrimmedCurved (the Curve parameter of the
 > IfcArbitraryOpenProfileDef - in cases of faceted
 > representation also an IfcPolyline). It is extruded within
 > the plane of the base surface using the Depth parameter of
 > the IfcSurfaceOfLinearExtrusion.
-> 
+>
 
 
 Figure 226 — Covering surface

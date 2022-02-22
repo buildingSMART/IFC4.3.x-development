@@ -46,16 +46,16 @@ Additional description provided for the classification.
 > IFC4 CHANGE  New attribute added at the end of the attribute list.
 
 ### Location
-Resource identifier or locator, provided as URI, URN or URL, of the classification.  
+Resource identifier or locator, provided as URI, URN or URL, of the classification.
 { .change-ifc2x4}
 > IFC4 CHANGE  New attribute added at the end of the attribute list.
 
 ### ReferenceTokens
 The delimiter tokens that are used to mark the boundaries of individual facets (substrings) in a classification reference.
-  
-  
+
+
 This typically applies then the _IfcClassification_ is used in
-conjuction with _IfcClassificationReference_'s. If only one _ReferenceToken_ is provided, it applies to all boundaries of individual facets, if more than one _ReferenceToken_ are provided, the first token applies to the first boundary, the second token to the second boundary, and the n^th^ token to the n^th^ and any additional boundary. 
+conjuction with _IfcClassificationReference_'s. If only one _ReferenceToken_ is provided, it applies to all boundaries of individual facets, if more than one _ReferenceToken_ are provided, the first token applies to the first boundary, the second token to the second boundary, and the n^th^ token to the n^th^ and any additional boundary.
 
 > NOTE  Tokens are typically recommended within the classification itself and each token will have a particular role.
 

@@ -2,13 +2,13 @@
 
 This _IfcDistributionElement_ is a generalization of all elements that participate in a distribution system. Typical examples of _IfcDistributionElement_'s are (among others):
 
-* building service elements within a heating systems 
-* building service elements within a cooling system 
-* building service elements within a ventilation system 
-* building service elements within a plumbing system 
-* building service elements within a drainage system 
-* electrical elements 
-* elements within a communication network 
+* building service elements within a heating systems
+* building service elements within a cooling system
+* building service elements within a ventilation system
+* building service elements within a plumbing system
+* building service elements within a drainage system
+* electrical elements
+* elements within a communication network
 * within a sensor (monitoring) network
 
 The _IfcDistributionElement_ is further specialized in the IFC specification. Direct instantiation of _IfcDistributionElement_ without an assigned subtype of _IfcDistributionElementType_ provides the meaning of an distribution element proxy.
@@ -66,7 +66,7 @@ The assignment of types to distribution element occurrences
  the IfcRelDefinesByProperties. A detailed
  specification for individual quantities is introduced at the
  level of subtypes of IfcDistributionElement.
- 
+
 
 
 
@@ -77,8 +77,8 @@ The IfcDistributionElement may be contained within the spatial containment tree.
 
 
 
-> 
+>
 >  NOTE  The 'Spatial Containment' concept is mandatory in many model view definitions.
-> 
+>
 
 

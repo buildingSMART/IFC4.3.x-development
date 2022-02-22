@@ -15,7 +15,7 @@ Figure 1 shows the definition of a task type that is part of a task template lib
 ## Attributes
 
 ### PredefinedType
-Identifies the predefined types of a task type from which 
+Identifies the predefined types of a task type from which
     the type required may be set.
 
 ### WorkMethod
@@ -45,6 +45,6 @@ IfcTaskType may nest other IfcTaskType or
  entities via IfcRelDefinesByType relationships. For
  further information please see the documentation of
  IfcRelDefinesByObject.
- 
+
 
 

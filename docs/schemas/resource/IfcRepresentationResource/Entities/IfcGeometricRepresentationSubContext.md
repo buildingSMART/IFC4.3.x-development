@@ -20,9 +20,9 @@ Each _IfcProduct_ can then have several instances of subtypes of _IfcRepresentat
 Parent context from which the sub context derives its world coordinate system, precision, space coordinate dimension and true north.
 
 ### TargetScale
-The target <font color="#ff0000">plot</font> scale of the representation 
+The target <font color="#ff0000">plot</font> scale of the representation
 to which this representation context applies.
-> NOTE  Scale indicates the target plot scale for the representation sub context, all annotation styles are given in plot dimensions according to this target plot scale.  
+> NOTE  Scale indicates the target plot scale for the representation sub context, all annotation styles are given in plot dimensions according to this target plot scale.
 > If multiple instances of _IfcGeometricRepresentationSubContext_ are given having the same _TargetView_ value, the target plot scale applies up to the next smaller scale, or up to unlimited small scale.
 
 > NOTE  Scale 1:100 (given as 0.01 within _TargetScale_) is bigger then 1:200 (given as 0.005 within _TargetScale_).

@@ -36,7 +36,7 @@ Person and/or organization that has created the constraint.
 Time when information specifying the constraint instance was created.
 
 ### UserDefinedGrade
-Allows for specification of user defined grade of the constraint  beyond the enumeration values (hard, soft, advisory) provided by ConstraintGrade attribute of type _IfcConstraintEnum_. 
+Allows for specification of user defined grade of the constraint  beyond the enumeration values (hard, soft, advisory) provided by ConstraintGrade attribute of type _IfcConstraintEnum_.
 When a value is provided for attribute UserDefinedGrade in parallel the attribute ConstraintGrade shall have enumeration value USERDEFINED.
 
 ### HasExternalReferences

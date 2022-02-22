@@ -9,7 +9,7 @@ Figure 1 &mdash; Diagram showing the use of <em>IfcFacetedBrep</em>
 > NOTE  Use of <em>IfcFacetedBrep</em> is restricted for boundary representation models with planar surfaces only. Those surfaces are implicitly represented by the bounding polygons. The diagram shows the topological and geometric representation items that are used for faceted breps. Each <em>IfcCartesianPoint</em>, used within the <em>IfcFacetedBrep</em> shall be referenced three times by an <em>IfcPolyLoop</em> bounding a different <em>IfcFace</em>.
 
 { .extDef}
-> NOTE  Definition according to ISO/CD 10303-42:1992  
+> NOTE  Definition according to ISO/CD 10303-42:1992
 > A faceted B-rep is a simple form of boundary representation model in which all faces are planar and all edges are straight lines. Unlike the B-rep model, edges and vertices are not represented explicitly in the model but are implicitly available through the poly loop entity. A faceted B-rep has to meet the same topological constraints as the manifold solid B-rep.
 
 { .extDef}
@@ -19,10 +19,10 @@ Figure 1 &mdash; Diagram showing the use of <em>IfcFacetedBrep</em>
 
 > HISTORY  New entity in IFC1.0
 
- 
+
 
 { .spec-head}
 Informal Propositions:
 
-1. All the bounding loops of all the faces of all the shells in the _IfcFacetedBrep_ shall be of type _IfcPolyLoop_. 
+1. All the bounding loops of all the faces of all the shells in the _IfcFacetedBrep_ shall be of type _IfcPolyLoop_.
 2. All vertices shall be referenced by all polyloops, sharing the vertex. I.e., each Cartesian point shall be references by at least three polyloops.

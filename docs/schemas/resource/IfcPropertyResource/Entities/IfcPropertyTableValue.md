@@ -8,8 +8,8 @@ The _IfcPropertyTableValue_ defines a defining/defined property value combinatio
 
 The units are handled by the _DefiningUnit_ and _DefinedUnit_ attributes, see Table 1 for an example of a table value property:
 
-* If the _DefiningUnit_ or _DefinedUnit_ attribute is not given, then the unit is already implied by the type of _IfcMeasureValue_ or _IfcDerivedMeasureValue_. The associated unit can be found at the _IfcUnitAssignment_ globally defined at the project level (_IfcProject.UnitsInContext_). 
-* If the _DefiningUnit_ or _DefinedUnit_ attribute is given, then the unit assigned by the unit attribute overrides the globally assigned unit. 
+* If the _DefiningUnit_ or _DefinedUnit_ attribute is not given, then the unit is already implied by the type of _IfcMeasureValue_ or _IfcDerivedMeasureValue_. The associated unit can be found at the _IfcUnitAssignment_ globally defined at the project level (_IfcProject.UnitsInContext_).
+* If the _DefiningUnit_ or _DefinedUnit_ attribute is given, then the unit assigned by the unit attribute overrides the globally assigned unit.
 
 The _IfcPropertyTableValue_ allows for the specification of a table of defining/defined value pairs of the property description. The optional attribute _CurveInterpolation_ allows to determine the interval between two given values.
 
@@ -30,7 +30,7 @@ Table 1 &mdash; Table value property with values, measure types and units
 { .change-ifc2x4}
 > IFC4 CHANGE  Attributes _DefiningValues_ and _DefinedValues_ have been made OPTIONAL with upward compatibility for file based exchange. The attribute _CurveInterpolation_ has been added.
 
- 
+
 
 { .spec-head}
 Informal Propositions:

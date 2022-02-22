@@ -1,7 +1,7 @@
 # IfcDerivedUnitElement
 
 { .extDef}
-> NOTE  Definition according to ISO/CD 10303-41:1992  
+> NOTE  Definition according to ISO/CD 10303-41:1992
 > A derived unit element is one of the unit quantities which makes up a derived unit.
 
 > EXAMPLE  Newtons per square millimetre is a derived unit. It has two elements, Newton whose exponent has a value of 1 and millimetre whose exponent is -2.

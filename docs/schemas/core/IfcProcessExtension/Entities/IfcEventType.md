@@ -11,16 +11,16 @@ Usage of _IfcEventType_ defines the parameters for one or more occurrences of _I
 ## Attributes
 
 ### PredefinedType
-Identifies the predefined types of an event from which 
+Identifies the predefined types of an event from which
     the type required may be set.
 
 ### EventTriggerType
-Identifies the predefined types of event trigger from which 
+Identifies the predefined types of event trigger from which
     the type required may be set.
 
 ### UserDefinedEventTriggerType
-A user defined event trigger type, the value of which 
-    is asserted when the value of an event trigger type is 
+A user defined event trigger type, the value of which
+    is asserted when the value of an event trigger type is
     declared as USERDEFINED.
 
 ## Formal Propositions

@@ -53,7 +53,7 @@ digraph dot_figure {
 ## Attributes
 
 ### PredefinedType
-Identifies the predefined types of a work plan from which 
+Identifies the predefined types of a work plan from which
     the type required may be set.
 
 ## Formal Propositions

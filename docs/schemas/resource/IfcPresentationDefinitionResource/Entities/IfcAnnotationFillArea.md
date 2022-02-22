@@ -5,7 +5,7 @@ The _IfcAnnotationFillArea_ defines an area by a definite _OuterBoundary_, that 
 The fill area style that is applied to the _IfcAnnotationFillArea_ is declared using the _IfcFillAreaStyle_, associated to the area by an _IfcStyledItem_. Applicable fill area styles are a solid color, a hatching, tiles, or a combination of those styles.
 
 { .extDef}
-> NOTE  Definition according to ISO 10303-46:  
+> NOTE  Definition according to ISO 10303-46:
 > An annotation fill area is a set of curves that may be filled with hatching, colour or tiling. The annotation fill are is described by boundaries which consist of non-intersecting, non-self-intersecting closed curves. These curves form the boundary of planar areas to be filled according to the style for the annotation fill area.
 
 ![annotation fill area](../../../../figures/ifcannotationfillarea_fig1.png)

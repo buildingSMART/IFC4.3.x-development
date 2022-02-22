@@ -41,18 +41,18 @@ _IfcTask_ can also be used to describe an activity that moves people, groups wit
 
 ### Status
 Current status of the task.
-    
+
 > NOTE  Particular values for status are not specified, these should be determined and agreed by local usage. Examples of possible status values include 'Not Yet Started', 'Started', 'Completed'.
 
 ### WorkMethod
 The method of work used in carrying out a task.
-    
+
 > NOTE  This attribute should not be used if the work method is specified for the _IfcTaskType_
 
 ### IsMilestone
 Identifies whether a task is a milestone task (=TRUE) or not
     (= FALSE).
-    
+
 > NOTE  In small project planning applications, a milestone task may be understood to be a task having no duration. As such, it represents a singular point in time.
 
 ### Priority
@@ -61,14 +61,14 @@ A value that indicates the relative priority of the task (in
 
 ### TaskTime
 Time related information for the task.
-    
+
 { .change-ifc2x4}
 > IFC4 CHANGE Attribute added
 
 ### PredefinedType
-Identifies the predefined types of a task from which 
+Identifies the predefined types of a task from which
     the type required may be set.
-    
+
 { .change-ifc2x4}
 > IFC4 CHANGE Attribute added
 
@@ -111,7 +111,7 @@ Constraints may be applied to a task to indicate fixed task duration, fixed star
  schedule) through IfcRelAssignsToControl. Please note that the
  IfcRelAssignsTasks relationship class has been
  removed in IFC4 and is no longer available.
- 
+
 
 
 
@@ -135,7 +135,7 @@ IfcTask may be contained within an IfcTask
  IfcRelNests is used to show the dependency between
  regular tasks and recurring task definitions (please see
  the section about time and duration use definitions).
- 
+
 
 
 
@@ -144,7 +144,7 @@ IfcTask may be contained within an IfcTask
  is identified as 'fix equipment in space 123'.
  IfcTask represents the occurrence of a work
  performance of a type of process in a construction plan.
- 
+
 
 
 ![task example](../../../../figures/ifctask_example.png)
@@ -161,7 +161,7 @@ Figure 139 — Task visualization
  the relative tree view position of the task (in comparison
  to the tree view position of other tasks and the task
  hierarchy defined by IfcRelNests).
- 
+
 
 The task order information that is used for viewing
  purposes is derived from the order defined by the
@@ -170,7 +170,7 @@ The task order information that is used for viewing
  IfcRelSequence. The hierarchy and order defined
  through IfcRelNests enables to order the tasks in a
  tree view or list view structure.
- 
+
 
 
 ![task instantiation diagram](../../../../figures/ifctask_instantiation_diagram.png)
@@ -222,6 +222,6 @@ It is suggested to use the 'summary task'
  should be performed. IfcTask's can be triggered or
  can trigger IfcEvent's, which is also defined
  through the relationship IfcRelSequence.
- 
+
 
 

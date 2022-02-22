@@ -5,20 +5,20 @@ The _IfcTextureCoordinateGenerator_ describes a procedurally defined mapping fun
 > NOTE  It is recommended to use the texture coordinate generation modes as defined in X3D.
 
 { .extDef}
-> NOTE  Definition according to ISO/IEC 19775-1:  
->   
-> The TextureCoordinateGenerator supports the automatic generation of texture coordinates for geometric shapes.  
+> NOTE  Definition according to ISO/IEC 19775-1:
+>
+> The TextureCoordinateGenerator supports the automatic generation of texture coordinates for geometric shapes.
 > The mode field describes the algorithm used to compute texture coordinates. { .std}
-> * SPHERE, 
-> * CAMERASPACENORMAL, 
-> * CAMERASPACEPOSITION, 
-> * CAMERASPACEREFLECTIONVECTOR, 
-> * SPHERE-LOCAL, 
-> * COORD, 
-> * COORD-EYE, 
-> * NOISE, 
-> * NOISE-EYE, 
-> * SPHERE-REFLECT, 
+> * SPHERE,
+> * CAMERASPACENORMAL,
+> * CAMERASPACEPOSITION,
+> * CAMERASPACEREFLECTIONVECTOR,
+> * SPHERE-LOCAL,
+> * COORD,
+> * COORD-EYE,
+> * NOISE,
+> * NOISE-EYE,
+> * SPHERE-REFLECT,
 > * SPHERE-REFLECT-LOCAL
 
 > NOTE  The definitions of texturing within this standard have been developed in dependence on the texture component of X3D. See ISO/IEC 19775-1.2:2008 X3D Architecture and base components Edition 2, Part 1, 18 Texturing component for the definitions in the international standard.

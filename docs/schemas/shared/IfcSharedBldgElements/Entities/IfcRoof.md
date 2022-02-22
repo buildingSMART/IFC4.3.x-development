@@ -48,10 +48,10 @@ SELF\IfcObject.IsDecomposedBy) then no independent
 geometric representation shall defined for the IfcRoof.
 The IfcRoof is then geometrically represented by the
 geometric representation of its components. The components are
-accessed via 
-SELF\IfcObject.IsDecomposedBy[1].RelatedObjects. The 
-geometric representations that are supported for the aggregated 
-elements are defined with each element. See geometric use 
+accessed via
+SELF\IfcObject.IsDecomposedBy[1].RelatedObjects. The
+geometric representations that are supported for the aggregated
+elements are defined with each element. See geometric use
 definition for IfcSlab, IfcBeam, IfcColumn,
 IfcBuildingElementPart and other subtypes of
 IfcBuildingElement.

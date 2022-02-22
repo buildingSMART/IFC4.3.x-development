@@ -8,9 +8,9 @@ There are several scenarios to define the same property set on the object type d
 
 1. All properties for all object occurrences of a common object type have the same value - then only the object type definition has a property set assigned.
 2. All properties for all object occurrences are different, that is there are no common property values for the object type definition - then each of the object occurrence has a property set assigned.
-3. Some properties within the same property set have common values and are assigned to the object type definition and some are occurrence specific and assigned (with potentially different values) to the object occurrences - then: 
+3. Some properties within the same property set have common values and are assigned to the object type definition and some are occurrence specific and assigned (with potentially different values) to the object occurrences - then:
     * The sum of all properties within a given property set applicable to an object occurrence is the union of properties assigned to the object type definition plus the properties assigned to the object occurrence.
-    * If the object occurrence has a property with the same _IfcProperty.Name_ in an _IfcPropertySet_, as the corresponding object type definition, then the occurrence property value overrides the type property value. 
+    * If the object occurrence has a property with the same _IfcProperty.Name_ in an _IfcPropertySet_, as the corresponding object type definition, then the occurrence property value overrides the type property value.
 
 ![instance diagram](../../../../figures/ifcreldefinesbytype_fig-1.png)
 Figure 1 &mdash; Type definition relationships

@@ -48,7 +48,7 @@ The finish time of the schedule.
  regarded to be sufficient if the summary task (root task in
  the task hierarchy defined through IfcRelNests
  relationships) is assigned to a work control.
- 
+
 
 
 ### Property Sets for Objects

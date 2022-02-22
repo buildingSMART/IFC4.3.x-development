@@ -9,14 +9,14 @@ The _IfcFacetedBrepWithVoids_ is a specialization of a faceted B-rep which conta
 { .change-ifc2x4}
 > IFC4 CHANGE  Subtyping changed from _IfcManifoldSolidBrep_ to _IfcFacetedBrep_ with upward compatibility for file based exchange.
 
- 
+
 
 { .spec-head}
 Informal Propositions:
 
-1. Each void shell shall be disjoint from the outer shell and from every other void shell 
-2. Each void shell shall be enclosed within the outer shell but not within any other void shell. In particular the outer shell is not in the set of void shells 
-3. Each shell in the _IfcManifoldSolidBrep_ shall be referenced only once. 
+1. Each void shell shall be disjoint from the outer shell and from every other void shell
+2. Each void shell shall be enclosed within the outer shell but not within any other void shell. In particular the outer shell is not in the set of void shells
+3. Each shell in the _IfcManifoldSolidBrep_ shall be referenced only once.
 4. All the bounding loops of all the faces of all the shells in the _IfcFacetedBrep_ shall be of type _IfcPolyLoop_.
 
 ## Attributes

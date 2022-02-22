@@ -6,7 +6,7 @@ _IfcRelFillsElement_ is an objectified relationship between an opening element a
 
 As shown in Figure 1, the insertion of a door into a wall is represented by two separate relationships. First the door opening is created within the wall by _IfcWall(StandardCase) <-- IfcRelVoidsElement --> IfcOpeningElement_, then the door is inserted within the opening by _IfcOpeningElement <-- IfcRelFillsElement --> IfcDoor_.
 
- 
+
 
 !["relationships for filling"](../../../../figures/ifcrelfillselements-fig1.png "Figure 1 &mdash; Relationships for element filling")
 

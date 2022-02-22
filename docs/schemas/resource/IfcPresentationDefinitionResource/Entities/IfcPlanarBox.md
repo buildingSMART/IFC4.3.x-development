@@ -10,5 +10,5 @@ A planar box specifies an arbitrary rectangular box and its location in a two di
 
 ### Placement
 The _IfcAxis2Placement_ positions a local coordinate system for the definition of the rectangle. The origin of this local coordinate system serves as the lower left corner of the rectangular box.
-  
+
 > NOTE  In case of a 3D placement by _IfcAxisPlacement3D the _IfcPlanarBox_ is defined within the xy plane of the definition coordinate system._

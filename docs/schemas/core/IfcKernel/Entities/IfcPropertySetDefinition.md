@@ -27,7 +27,7 @@ The type object to which the property set is assigned. The property set acts as 
 > IFC4 CHANGE  The cardinality has been changed from 0:1 to 0:? with upward compatibility for file based exchange.
 
 ### IsDefinedBy
-Relation to the property set template, via the objectified relationship _IfcRelDefinesByTemplate_, that, if given, provides the definition template for the property set or quantity set and its properties. 
+Relation to the property set template, via the objectified relationship _IfcRelDefinesByTemplate_, that, if given, provides the definition template for the property set or quantity set and its properties.
 { .change-ifc2x4}
 > IFC4 CHANGE  New inverse relationship, change made with upward compatibility for file based exchange.
 

@@ -73,7 +73,7 @@ depth
 
 > NOTE  Rectangles are now defined centric, the placement location has to be set:
 > * IfcCartesianPoint(XDim/2,YDim/2)
-> 
+>
 
 
 

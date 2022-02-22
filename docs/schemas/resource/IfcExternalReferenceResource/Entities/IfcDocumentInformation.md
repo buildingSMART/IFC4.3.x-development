@@ -78,10 +78,10 @@ Date until which the document remains valid.
 The level of confidentiality of the document.
 
 ### Status
-The current status of the document. Examples of status values that might be used for a document information status include:  
-- DRAFT  
-- FINAL DRAFT  
-- FINAL  
+The current status of the document. Examples of status values that might be used for a document information status include:
+- DRAFT
+- FINAL DRAFT
+- FINAL
 - REVISION
 
 ### DocumentInfoForObjects

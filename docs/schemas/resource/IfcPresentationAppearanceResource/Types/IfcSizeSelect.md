@@ -5,7 +5,7 @@ The _IfcSizeSelect_ provides for the selection between different measure types u
 > NOTE  global units are defined at the single _IfcProject_ instance, given by _UnitsInContext:IfcUnitAssignment_, the same units are used for the geometric representation items and for the style definitions.
 
 { .extDef}
-> NOTE  Definition according to ISO/CD 10303-46:1992  
+> NOTE  Definition according to ISO/CD 10303-46:1992
 > The size select is a selection of a specific positive length measure.
 
 > NOTE  Type adapted from **size_select** defined in ISO10303-46.

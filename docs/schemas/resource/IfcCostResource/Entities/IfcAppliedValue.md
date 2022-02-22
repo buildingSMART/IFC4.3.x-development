@@ -49,11 +49,11 @@ Specification of the type of cost used.
 > NOTE  There are many possible types of cost value that may be identified. Whilst there is a broad understanding of the meaning of names that may be assigned to different types of costs, there is no general standard for naming cost types nor are there any broadly defined classifications. To allow for any type of cost value, the _IfcLabel_ datatype is assigned.
 
 
- 
+
 In the absence of any well defined standard, it is recommended that local agreements should be made to define allowable and understandable cost value types within a project or region.
 
 ### Condition
-The condition under which a cost value applies.  
+The condition under which a cost value applies.
 
 For example, within the context of a bid submission, this may refer to an option that may or may not be elected.
 
@@ -64,6 +64,6 @@ The arithmetic operator applied to component values.
 Optional component values from which _AppliedValue_ is calculated.
 
 ### HasExternalReference
-Reference to an external reference, e.g. library, classification, or document information, that is associated to the IfcAppliedValue. 
+Reference to an external reference, e.g. library, classification, or document information, that is associated to the IfcAppliedValue.
 { .change-ifc2x4}
 > IFC4 CHANGE New inverse attribute.

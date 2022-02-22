@@ -14,7 +14,7 @@ The connection types for bridges include:
 
 * TrussJoint: Joint between truss members.
 * ExpansionJoint: Joint allowing movement, usually due to thermal expansion difference in structures, with DiscreteAccessory of type EXPANSION_JOINT_DEVICE as RealizingElement.
-* EmbeddedPartsJoint: Joint for auxiliary parts to structure, with appropriate RealizingElements, such as DiscreteAccessories of type ANCHORPLATE, BRACKET or SHOE. 
+* EmbeddedPartsJoint: Joint for auxiliary parts to structure, with appropriate RealizingElements, such as DiscreteAccessories of type ANCHORPLATE, BRACKET or SHOE.
 * ConstructionJoint: Joint for phasing of construction, typically in in-situ concrete structures.
 
 ## Attributes

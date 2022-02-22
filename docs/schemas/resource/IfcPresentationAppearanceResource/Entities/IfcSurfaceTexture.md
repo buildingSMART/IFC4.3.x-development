@@ -20,7 +20,7 @@ Texture are defined by 2D images that contain an array of colour values describi
 4. Full RGB plus alpha opacity textures (four-component)
 
 > NOTE  Image formats specify an alpha opacity, not transparency (where alpha = 1 - transparency).
-> 
+>
 
 
 Figure 1 illustrates the texture coordinate system.
@@ -101,7 +101,7 @@ The _TextureTransform_ defines a 2D transformation that is applied to the textur
 
 ### Parameter
 The _Parameter_ attribute is provided to control the appearance of a multi textures. The applicable parameters depend on the value of the _Mode_ attribute.
-> NOTE  The applicable values for the list of _Parameter_ attributes are determined by view definitions or implementer agreements. It is recommended to use the source and the function fields described in ISO/IES 19775-1.2:2008 X3D Architecture and base components Edition 2, Part 1. See [18.4.3 MultiTexture](http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/components/texturing.html#MultiTexture) for recommended values.  
+> NOTE  The applicable values for the list of _Parameter_ attributes are determined by view definitions or implementer agreements. It is recommended to use the source and the function fields described in ISO/IES 19775-1.2:2008 X3D Architecture and base components Edition 2, Part 1. See [18.4.3 MultiTexture](http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/components/texturing.html#MultiTexture) for recommended values.
 > By convention, _Parameter[1]_ shall then hold the source value, _Parameter[2]_ the function value, _Parameter[3]_ the base RGB color for select operations, and _Parameter[4]_ the alpha value for select operations.
 
 { .change-ifc2x4}

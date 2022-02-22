@@ -13,7 +13,7 @@ The measure values for font pattern and curve width apply to the model space wit
 An _IfcCurveStyle_ can be assigned to _IfcGeometricRepresentationItem_'s via the _IfcPresentationStyleAssignment_ through an intermediate _IfcStyledItem_ or _IfcAnnotationCurveOccurrence_.
 
 { .extDef}
-> NOTE  Definition according to ISO/CD 10303-46:1992  
+> NOTE  Definition according to ISO/CD 10303-46:1992
 > A curve style specifies the visual appearance of curves.
 
 > NOTE  Corresponding ISO 10303 name: curve_style. Please refer to ISO/IS 10303-46:1994 for the final definition of the formal standard.

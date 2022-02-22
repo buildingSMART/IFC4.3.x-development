@@ -13,7 +13,7 @@ A general concept for various parts of the Roadside.
 Lateral part of Road for stopping buses allowing them to draw out of the traffic lanes and wait for short periods.
 
 ### HARDSHOULDER
-A type of Shoulder that is surfaced, providing for safe use by vehicles in distress. 
+A type of Shoulder that is surfaced, providing for safe use by vehicles in distress.
 
 > NOTE  Definition from ISO 6707-1: surfaced strip, adjacent to and abutting a carriageway, intended for use by vehicles in the event of difficulty or during obstruction of the carriageway, (Emergency lane, Service lane, US).
 
@@ -41,7 +41,7 @@ Lateral RoadPart separating two carriageways of the same road or separating traf
 > NOTE  Definition from ISO 6707-1: area that separates the carriageways of a road with dual carriageways, (US:Median, UK:Central reservation).
 
 ### SIDEWALK
-A footpath along the side of a road. May accommodate moderate changes in grade (elevation) and is normally separated from the vehicular section by a kerb. There may be a central reserve or road verge between the sidewalk and traffic lanes. 
+A footpath along the side of a road. May accommodate moderate changes in grade (elevation) and is normally separated from the vehicular section by a kerb. There may be a central reserve or road verge between the sidewalk and traffic lanes.
 
 > NOTE  Definition from ISO 6707-1: portion of a road reserved exclusively for pedestrians, (Sidewalk, Walkway, US) (footway).
 
@@ -57,9 +57,9 @@ At-grade crossing between road and railway.
 Designated level crossing over a road for pedestrians.
 
 ### SOFTSHOULDER
-A type of Shoulder that is not surfaced. 
+A type of Shoulder that is not surfaced.
 
-> NOTE  Definition from ISO 6707-1: strip alongside a carriageway not intended to support vehicular traffic. 
+> NOTE  Definition from ISO 6707-1: strip alongside a carriageway not intended to support vehicular traffic.
 >
 > NOTE  Definition from PIARC: Shoulder not intended to support vehicular traffic.
 
@@ -70,7 +70,7 @@ Designated level crossing over a road for cyclists.
 The center of a roundabout not intended for traffic, can be painted or upraised.
 
 ### SHOULDER
-A lateral part of Road adjacent to, and usually at the same level as the Carriageway; not intended for vehicular traffic but may be used in case of emergency. 
+A lateral part of Road adjacent to, and usually at the same level as the Carriageway; not intended for vehicular traffic but may be used in case of emergency.
 
 > NOTE  Definition from ISO 6707-1: part of a highway alongside a carriageway and at approximately the same level, exclusive of embankment or cutting slopes, (Shoulder, US).
 >
@@ -85,7 +85,7 @@ Lateral part of carriageway designated to vehicular traffic for a particular pur
 Longitudinal, linear segment of a road, either defined by uniform characteristics, or as a transition segment (e.g. number of lanes changing).
 
 ### ROUNDABOUT
-Type of at-grade junction at which traffic streams are directed around a circle. 
+Type of at-grade junction at which traffic streams are directed around a circle.
 
 > NOTE  Definition from ISO 6707-1: portion of a road usually at a junction, on which traffic moves in one direction around a central element.
 

@@ -70,9 +70,9 @@ Reference to the _IfcRelAdheresToElement_ relationship that adheres a _IfcSurfac
 ### Body AdvancedBrep Geometry
 
 An IfcElement (so far no further constraints are
- defined at the level of its subtypes or by view definitions) may be 
-represented as a single or multiple boundary representation models, which include advanced surfaces, usually refered to 
-as NURBS surfaces. The 'AdvancedBrep' representation allows for the 
+ defined at the level of its subtypes or by view definitions) may be
+represented as a single or multiple boundary representation models, which include advanced surfaces, usually refered to
+as NURBS surfaces. The 'AdvancedBrep' representation allows for the
 representation of complex free-form element shape.
 
 
@@ -84,9 +84,9 @@ representation of complex free-form element shape.
 
 Any IfcElement (so far no further constraints are
  defined at the level of its subtypes) may be represented as a
- single or multiple Boundary Representation models (which are 
-restricted to be faceted Brep's with or without voids). The Brep 
-representation allows for the representation of complex element 
+ single or multiple Boundary Representation models (which are
+restricted to be faceted Brep's with or without voids). The Brep
+representation allows for the representation of complex element
 shape.
 
 
@@ -96,9 +96,9 @@ shape.
 ![Brep representation](../../../../figures/ifcbuildingelement-brep-layout1.gif)
 
 > EXAMPLE  As shown in Figure 150, the Brep representation is given by an
->  IfcShapeRepresentation, which includes one or more 
-> items, all of type IfcFacetedBrep. In some cases it may be useful to also expose a simple 
-> representation as a bounding box representation of the same complex 
+>  IfcShapeRepresentation, which includes one or more
+> items, all of type IfcFacetedBrep. In some cases it may be useful to also expose a simple
+> representation as a bounding box representation of the same complex
 > shape.
 
 
@@ -113,8 +113,8 @@ representation
 ### Body CSG Geometry
 
 Any IfcElement (so far no further constraints are
- defined at the level of its subtypes) may be represented a CSG primitive or CSG tree. The CSG 
-representation allows for the representation of complex element 
+ defined at the level of its subtypes) may be represented a CSG primitive or CSG tree. The CSG
+representation allows for the representation of complex element
 shape.
 
 
@@ -126,7 +126,7 @@ shape.
 
 Any IfcElement (so far no further constraints are
  defined at the level of its subtypes) may be represented as a
- single or multiple surface models, based on either shell or face 
+ single or multiple surface models, based on either shell or face
 based surface models. It may also include tessellated models.
 
 
@@ -135,9 +135,9 @@ based surface models. It may also include tessellated models.
 
 ![surface model](../../../../figures/ifcbuildingelement-surfacemodel-layout1.gif)
 
-> EXAMPLE  As shown in Figure 149, the surface model representation is given 
-> by an IfcShapeRepresentation, which includes a single item which is either an IfcShellBasedSurfaceModel, or an IfcFaceBasedSurfaceModel. In some cases it may also be useful to expose a simple 
-> representation as a bounding box representation of the same complex 
+> EXAMPLE  As shown in Figure 149, the surface model representation is given
+> by an IfcShapeRepresentation, which includes a single item which is either an IfcShellBasedSurfaceModel, or an IfcFaceBasedSurfaceModel. In some cases it may also be useful to expose a simple
+> representation as a bounding box representation of the same complex
 > shape.
 
 
@@ -151,15 +151,15 @@ representation
 
 ### Body SurfaceOrSolidModel Geometry
 
-Any IfcElement (so far no further constraints are 
+Any IfcElement (so far no further constraints are
 defined at the level of its subtypes) may be represented as a mixed representation, including surface and solid models.
 
 
 ### Body Tessellation Geometry
 
-Any IfcElement (so far no further constraints are 
-defined at the level of its subtypes) may be represented as a 
-single or multiple tessellated surface models, in particular 
+Any IfcElement (so far no further constraints are
+defined at the level of its subtypes) may be represented as a
+single or multiple tessellated surface models, in particular
 triangulated surface models.
 
 

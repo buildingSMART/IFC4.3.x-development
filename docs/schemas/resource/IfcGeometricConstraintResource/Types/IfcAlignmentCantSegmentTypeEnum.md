@@ -1,6 +1,6 @@
 # IfcAlignmentCantSegmentTypeEnum
 
-The IfcAlignmentCantSegmentTypeEnum indicates the type of a segment of a cant alignment segment (IfcAlignmentCantSegment). 
+The IfcAlignmentCantSegmentTypeEnum indicates the type of a segment of a cant alignment segment (IfcAlignmentCantSegment).
 
 Cant is defined as the amount by which one running rail is raised above the other running rail, in a track cross section.
 >NOTE Definition according to EN 13803/2017

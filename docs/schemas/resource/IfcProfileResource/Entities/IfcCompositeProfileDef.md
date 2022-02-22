@@ -23,14 +23,14 @@ Twin profiles special case
 
 If twin profiles are modeled by profile composition, the base profile should only be specified once. It is then included into the composite profile directly and additionally indirectly via _IfcMirroredProfileDef_. For example, a double angle made of two L100x10 with 10mm air gap between them, i.e. a _| |_ shape, can be modeled as
 
-> 
+>
 > ```
-> 
-single_L : IfcLShapeProfileDef := IfcLShapeProfileDef(AREA, 'L100X100X10',  
->     IfcAxis2Placement2D(IfcCartesianPoint(((.100+.010)/2., .0)), ?),  
->     .100, .100, .010, .012, ?, 0., ?, ?);  
->    
-> double_L : IfcCompositeProfileDef := IfcCompositeProfileDef(AREA, 'double angle',  
+>
+single_L : IfcLShapeProfileDef := IfcLShapeProfileDef(AREA, 'L100X100X10',
+>     IfcAxis2Placement2D(IfcCartesianPoint(((.100+.010)/2., .0)), ?),
+>     .100, .100, .010, .012, ?, 0., ?, ?);
+>
+> double_L : IfcCompositeProfileDef := IfcCompositeProfileDef(AREA, 'double angle',
 >     (single_L, IfcMirroredProfileDef(AREA, ?, single_L, ?)), 'twin profile');
 
 > ```

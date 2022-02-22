@@ -26,5 +26,5 @@ Figure 338 depicts how table rows were structured prior to IFC4 with the use of 
 The data value of the table cell..
 
 ### IsHeading
-Flag which identifies if the row is a heading row or a row which contains row values. 
+Flag which identifies if the row is a heading row or a row which contains row values.
 > NOTE - If the row is a heading, the flag takes the value = TRUE.

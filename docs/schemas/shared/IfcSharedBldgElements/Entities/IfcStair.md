@@ -40,15 +40,15 @@ Either there is no stair type object associated, i.e. the _IsTypedBy_ inverse re
 
 ### Axis 2D Geometry
 
-The walking line is represented by a two-dimensional open curve 
-as the axis. The curve is directed into the upward direction 
+The walking line is represented by a two-dimensional open curve
+as the axis. The curve is directed into the upward direction
 (direction has to be interpreted as specified at the subtypes of
-IfcCurve). 
+IfcCurve).
 
 
 
 
-> NOTE  The 'Axis' representation of IfcStair 
+> NOTE  The 'Axis' representation of IfcStair
 > may be provided even if the IfcStair has components with own
 >  shape representations.
 
@@ -118,7 +118,7 @@ IfcStair.ObjectPlacement.
 
 ### Spatial Containment
 
-The IfcStair, as any subtype of IfcBuildingElement, 
+The IfcStair, as any subtype of IfcBuildingElement,
 may participate alternatively in one of the two different containment relationships:
 
 

@@ -10,10 +10,10 @@ The containment relationship of an element within a spatial structure has to be 
 
 Predefined spatial structure elements to which elements can be assigned are
 
-* site as _IfcSite_ 
-* building as _IfcBuilding_ 
-* storey as _IfcBuildingStorey_ 
-* space as _IfcSpace_ 
+* site as _IfcSite_
+* building as _IfcBuilding_
+* storey as _IfcBuildingStorey_
+* space as _IfcSpace_
 
 Occurrences of the same element type can be assigned to different spatial structure elements depending on the context of the occurrence.
 

@@ -23,7 +23,7 @@ Figure 2 &mdash; Example of using geometric representation contexts
 Use of representation contexts defined at <em>IfcProject</em> for 3D model and 2D plan context, including sub context definitions for different target scales. There shall always be a maximum of one geometric representation context for 2D and for 3D coordinate space.
 
 { .extDef}
-> NOTE  Definition according to ISO/CD 10303-42:1992  
+> NOTE  Definition according to ISO/CD 10303-42:1992
 > A geometric representation context is a representation context in which the geometric representation items are geometrically founded.
 
 > NOTE  Entity adapted from **geometric_representation_context** defined in ISO 10303-42.
@@ -45,7 +45,7 @@ The integer dimension count of the coordinate space modeled in a geometric repre
 Value of the model precision for geometric models. It is a double value (REAL), typically in 1E-5 to 1E-8 range, that indicates the tolerance under which two given points are still assumed to be identical. The value can be used e.g. to sets the maximum distance from an edge curve to the underlying face surface in brep models.
 
 ### WorldCoordinateSystem
-Establishment of the engineering coordinate system (often referred to as the world coordinate system in CAD) for all representation contexts used by the project. 
+Establishment of the engineering coordinate system (often referred to as the world coordinate system in CAD) for all representation contexts used by the project.
 
 > NOTE  It can be used to provide better numeric stability if the placement of the building(s) is far away from the origin. In most cases however it would be set to origin: (0.,0.,0.) and directions x(1.,0.,0.), y(0.,1.,0.), z(0.,0.,1.).
 

@@ -26,7 +26,7 @@ The position of the specified month in a year.
 ### Position
 The position of the specified component, e.g. the 3rd
     (position=3) Tuesday (weekday component) in a month. A
-    negative position value is used to define the last position 
+    negative position value is used to define the last position
     of the component (-1), the next to last position (-2) etc.
 
 ### Interval
@@ -37,7 +37,7 @@ An interval can be given according to the pattern type. An
     not 0 or <0.
 
 ### Occurrences
-Defines the number of occurrences of this pattern, e.g. a weekly 
+Defines the number of occurrences of this pattern, e.g. a weekly
     event might be defined to occur 5 times before it stops.
 
 ### TimePeriods

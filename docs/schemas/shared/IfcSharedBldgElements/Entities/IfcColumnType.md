@@ -74,10 +74,10 @@ relationship.
 
 
 
-> 
+>
 > NOTE  It is illegal to assign an IfcMaterial to an IfcColumnType, if there is at least one occurrences of IfcColumnStandardCase for this
 > type.
-> 
+>
 
 
 The shared profile definition is defined by assigning an
@@ -91,7 +91,7 @@ IfcColumnStandardCase for further information).
 
 
 
-> 
+>
 > NOTE  The attribute ProfileName of the
 > IfcProfileDef subtype, referenced in
 > IfcMaterialProfile should contain a standardized profile
@@ -104,7 +104,7 @@ IfcColumnStandardCase for further information).
 > read from a library. Otherwise the geometric representation and
 > possible non geometric IfcProfileProperties have to be
 > used.
-> 
+>
 
 
 

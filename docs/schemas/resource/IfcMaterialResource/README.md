@@ -16,7 +16,7 @@ Material designation can be made for standard element occurrences to support a l
 
 Material designation can be made for element occurrences or element types without applying a parametric meaning using
 
-1. a set of material layers (with a specified configuration by sequence and thickness of material layers) _IfcMaterialLayerSet_, or 
+1. a set of material layers (with a specified configuration by sequence and thickness of material layers) _IfcMaterialLayerSet_, or
 2. a set of material profiles (with a specified configuration by positioning and outline profile of material profiles) _IfcMaterialProfileSet_, or
 3. a set of materials (without a specified configuration or structure) _IfcMaterialConstituentSet_, or
 4. as fallback by a single material _IfcMaterial_ (including composite materials),

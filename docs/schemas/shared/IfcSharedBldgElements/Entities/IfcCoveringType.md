@@ -42,27 +42,27 @@ information).
 
 
 
-> 
+>
 > NOTE  If the IfcCoveringType has an associated IfcMaterialLayerSet, then no shared geometric representation shall be provided.
-> 
+>
 
 
 
-> 
+>
 > NOTE  The product shape representations are defined as RepresentationMaps (attribute of the supertype IfcTypeProduct), which get assigned by an element occurrence instance through the IfcShapeRepresentation.Item[n] being an IfcMappedItem. See IfcTypeProduct for further information.
-> 
+>
 
 
 
-> 
+>
 > NOTE  The values of attributes RepresentationIdentifier and RepresentationType of IfcShapeRepresentation are restricted in the same way as those for IfcCoveringType.
-> 
+>
 
 
 
 ### Material Layer Set
 
-The material of the IfcCoveringType is defined by 
+The material of the IfcCoveringType is defined by
 IfcMaterialLayerSet for layer-based coverings or as fall back by IfcMaterial
 and attached by the
 IfcRelAssociatesMaterial.RelatingMaterial. It is
@@ -73,7 +73,7 @@ relationship.
 
 ### Material Profile Set
 
-The material of the IfcCoveringType is defined by 
+The material of the IfcCoveringType is defined by
 IfcMaterialProfileSet for profile-based coverings or as fall back by IfcMaterial
 and attached by the
 IfcRelAssociatesMaterial.RelatingMaterial. It is

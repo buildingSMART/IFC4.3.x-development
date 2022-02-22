@@ -33,6 +33,6 @@ Value of the data origin if DataOrigin attribute is USERDEFINED.
 The unit to be assigned to all values within the time series. Note that mixing units is not allowed. If the value is not given, the global unit for the type of _IfcValue_, as defined at _IfcProject.UnitsInContext_ is used.
 
 ### HasExternalReference
-Reference to an external reference, e.g. library, classification, or document information, that is associated to the IfcTimeSeries. 
+Reference to an external reference, e.g. library, classification, or document information, that is associated to the IfcTimeSeries.
 { .change-ifc2x4}
 > IFC4 CHANGE New inverse attribute.

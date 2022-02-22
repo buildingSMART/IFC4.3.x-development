@@ -6,7 +6,7 @@ The _IfcStyledItem_ holds presentation style information for products, either ex
 * If the _IfcStyledItem_ is used within a reference from an _IfcMaterialDefinitionRepresentation_ then no _Item_ shall be provided.
 
 { .extDef}
-> NOTE  Definition according to ISO/CD 10303-46:1992  
+> NOTE  Definition according to ISO/CD 10303-46:1992
 > The styled item is an assignment of style for presentation to a geometric representation item as it is used in a representation.
 
 > NOTE  Entity adapted from **styled_item** defined in ISO10303-46.
@@ -38,7 +38,7 @@ Figure 1 illustrates use of _IfcStyledItem_ for the two usage examples:
 
 ### Item
 A geometric representation item to which the style is assigned.
-  
+
 { .change-ifc2x2}
 > IFC2x2 Add2 CHANGE The attribute _Item_ has been made optional. Upward compatibility for file based exchange is guaranteed.
 

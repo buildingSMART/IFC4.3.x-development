@@ -5,13 +5,13 @@ This entity is used to refer to a value of an attribute on an instance. It may r
 ## Attributes
 
 ### TypeIdentifier
-Optional identifier of the entity or type such as 'IfcMaterialLayerSet'. For entity, type, or select-based references within a collection, this resolves the reference to such type. 
+Optional identifier of the entity or type such as 'IfcMaterialLayerSet'. For entity, type, or select-based references within a collection, this resolves the reference to such type.
 If omitted, the type is assumed to be the same as the declared referencing attribute.
 
 > EXAMPLE  _IfcRelAssociatesMaterial_._RelatingMaterial_ may be resolved to _IfcMaterialLayerSet_.
 
 ### AttributeIdentifier
-Optionally identifies a direct or inverse attribute within an entity such as 'MaterialLayers'. 
+Optionally identifies a direct or inverse attribute within an entity such as 'MaterialLayers'.
 If _TypeIdentifier_ is specified and refers to an entity, the attribute must exist within the referenced entity.
 A null value indicates a reference to the type or entity itself, such as for indicating that the type of a value must match a specified constraint.
 

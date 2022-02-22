@@ -119,7 +119,7 @@ representation
 
 ### Body Clipping Geometry
 
-The following constraints apply to the 'Clipping' 
+The following constraints apply to the 'Clipping'
 representation:
 
 
@@ -165,7 +165,7 @@ having Location = 0.,0. and RefDirection =
 IfcExtrudedAreaSolid.ExtrudedDirection shall be
 [0.,0.,1.].
 * Orientation: The y-axis of the profile, as determined
-by IfcSweptAreaSolid.Position.P[2] shall point to the 
+by IfcSweptAreaSolid.Position.P[2] shall point to the
 Y-Axis. It indicates the "role" of the column, a role=0°
 means y-axis of profile = Y-axis of reference coordinate
 system.
@@ -196,9 +196,9 @@ Figure 222 — Column body extrusion
 
 The IfcColumnStandardCase defines in addition that the
 IfcColumnType should have a unique
- IfcMaterialProfileSet, that is referenced by the 
-IfcMaterialProfileSetUsage assigned to all occurrences of 
-this IfcColumnType. 
+ IfcMaterialProfileSet, that is referenced by the
+IfcMaterialProfileSetUsage assigned to all occurrences of
+this IfcColumnType.
 Composite profile columns can be represented by refering to
 several IfcMaterialProfile's within the
 IfcMaterialProfileSet that is referenced from the
@@ -242,8 +242,8 @@ Figure 221 — Column composite profiles
 The following restriction is imposed:
 
 
-* The local placement shall provide the location and directions 
-for the standard column, the x/y plane is the plane for the start 
+* The local placement shall provide the location and directions
+for the standard column, the x/y plane is the plane for the start
 profile, and the z-axis is the extrusion axis for the column body (in
 case of rotation, the tangent direction).
 

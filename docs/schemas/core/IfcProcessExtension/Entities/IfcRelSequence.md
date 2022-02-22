@@ -42,7 +42,7 @@ Allows for specification of user defined type of the sequence
     provided for attribute _UserDefinedSequenceType_ in
     parallel the attribute _SequenceType_ shall have
     enumeration value USERDEFINED.
-    
+
 { .change-ifc2x4}
 > IFC4 CHANGE Attribute added
 

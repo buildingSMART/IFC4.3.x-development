@@ -18,7 +18,7 @@ If an assigned _IfcTask_ is a root-level task, such task must be declared on the
 ## Attributes
 
 ### PredefinedType
-Identifies the predefined types of a work schedule from which 
+Identifies the predefined types of a work schedule from which
     the type required may be set.
 
 ## Formal Propositions
@@ -30,10 +30,10 @@ The attribute ObjectType must be asserted when the value of the IfcWorkScheduleT
 
 ### Aggregation
 
-A work schedule can include other work schedules as sub-items. 
+A work schedule can include other work schedules as sub-items.
  If not included in another work schedule it might be a part of a work plan
  (IfcWorkPlan) defined through IfcRelAggregates relationship.
- 
+
 
 
 ### Control Assignment
@@ -46,7 +46,7 @@ A work schedule can include other work schedules as sub-items.
  specified and schedule time information such as start time,
  finish time, and total float of the schedule can also be
  specified.
- 
+
 
 
 ### Document
@@ -54,14 +54,14 @@ A work schedule can include other work schedules as sub-items.
 
  The documents of the
  IfcWorkSchedule can be referenced by the
- IfcRelAssociatesDocuments relationship. 
+ IfcRelAssociatesDocuments relationship.
 
 
 ### Nesting
 
 A work schedule can include other work schedules as sub-items
- through IfcRelNests relationship. 
- 
+ through IfcRelNests relationship.
+
 
 
 ### Property Sets

@@ -19,7 +19,7 @@ Figure 1 illustrates an example.
 !["disk solid"](../../../../figures/ifcsweptdisksolid-layout1.png "Figure 1 &mdash; Swept disk solid geometry")
 
 { .extDef}
-> NOTE  Definition according to ISO/CD 10303-42:1992  
+> NOTE  Definition according to ISO/CD 10303-42:1992
 > A swept disk solid is the solid produced by sweeping a circular disk along a three dimensional curve. During the sweeping operation the normal to the plane of the circular disk is in the direction of the tangent to the directrix curve and the center of the disk lies on the directrix. The circular disk may, optionally, have a central hole, in this case the resulting solid has a through hole, or, an internal void when the directrix forms a close curve.
 
 > NOTE  Entity adapted from **swept_disk_solid** defined in ISO 10303-42.

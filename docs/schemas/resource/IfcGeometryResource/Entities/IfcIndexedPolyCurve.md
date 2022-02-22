@@ -4,7 +4,7 @@ The _IfcIndexedPolyCurve_ is a bounded curve with only linear and circular arc s
 
 In the case that the list of _Segments_ is provided, it is interpreted as such:
 
-* Segment of type _IfcLineIndex_: The first index is the start point of the poly line segment, the last index is the end point of the poly line segment. If more than two indices are included, then all intermediate indices define intermediate points of the polyline connected in the order of appearance of the indices; 
+* Segment of type _IfcLineIndex_: The first index is the start point of the poly line segment, the last index is the end point of the poly line segment. If more than two indices are included, then all intermediate indices define intermediate points of the polyline connected in the order of appearance of the indices;
 * Segment of type _IfcArcIndex_: The first index is the start point of the circular arc, the second index is a point on arc, the third index is the end point of the circular arc. The three points shall not be co-linear. In case that this informal proposition is not maintained, the arc segment shall be treated as a polyline segment.
 
 > EXAMPLE  Figure 2 illustrates a bounded open _IfcIndexedPolyCurve_ having straight and arc segments. In this example, the straight segments only have two points and one edge, however more then two indices into the Cartesian point list can be includes, defining a multi edge polyline segment.

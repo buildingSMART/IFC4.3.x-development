@@ -20,13 +20,13 @@ Number of treads included in the stair flight.
 
 ### RiserHeight
 Vertical distance from tread to tread. The riser height is supposed to be equal for all stairs in a stair flight.
-  
+
 { .change-ifc2x4}
 > IFC4 CHANGE The attribute has been deprecated it shall only be exposed with a NIL value. Use _Pset_StairFlightCommon.RiserHeight_ instead.
 
 ### TreadLength
 Horizontal distance from the front to the back of the tread. The tread length is supposed to be equal for all steps of the stair flight.
-  
+
 { .change-ifc2x4}
 > IFC4 CHANGE The attribute has been deprecated it shall only be exposed with a NIL value. Use _Pset_StairFlightCommon.TreadLength_ instead.
 
@@ -49,10 +49,10 @@ Either there is no stair flight type object associated, i.e. the _IsTypedBy_ inv
 
 ### Axis 2D Geometry
 
-The walking line is represented by a two-dimensional open 
-curve as the axis. The curve is directed into the upward 
+The walking line is represented by a two-dimensional open
+curve as the axis. The curve is directed into the upward
 direction (direction has to be interpreted as specified at the
- subtypes of IfcCurve). 
+ subtypes of IfcCurve).
 
 
 
@@ -82,7 +82,7 @@ Figure 275 — Stair flight body
 
 ### Footprint Geometry
 
-The flight foot print, including the flight boundary is 
+The flight foot print, including the flight boundary is
 represented by a two-dimensional geometric curve set.
 
 
@@ -120,7 +120,7 @@ relationship.
 
 ### Spatial Containment
 
-The IfcStairFlight, as any subtype of IfcBuildingElement, 
+The IfcStairFlight, as any subtype of IfcBuildingElement,
 may participate alternatively in one of the two different containment relationships:
 
 
@@ -130,6 +130,6 @@ may participate alternatively in one of the two different containment relationsh
 
 
 > NOTE  Model view definitions or implementer agreements may force an IfcStairFlight to be solely used as a part within an IfcStair container. In this case, no Spatial containment shall be used.
-> 
+>
 
 

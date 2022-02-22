@@ -19,7 +19,7 @@ As shown in Figure 11, _IfcProcedure_ does not restrict anything but describes s
 ## Attributes
 
 ### PredefinedType
-Identifies the predefined types of a procedure from which 
+Identifies the predefined types of a procedure from which
     the type required may be set.
 
 ## Formal Propositions
@@ -71,7 +71,7 @@ IfcProcedure defines the anticipated or actual
 >  it is anticipated that such a procedure would be assigned
 >  to the specific IfcProcess for which it gives advice
 >  using IfcRelAssignsToProcess.
-> 
+>
 
 
 ### Product Assignment

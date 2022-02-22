@@ -17,7 +17,7 @@ Almost always the following principles for the placement of horizontal segments 
 * Horizontal circular arc: constant applied cant
 * Horizontal transition bend: variation of applied cant according to a defined formula
 
-In specific difficult topographic environments like mountain lines the extension of a cant transition may differ from the horizontal transition. So far this has only been found for clothoids and is either a so called shortened ramp (can transition is shorter than the corresponding horizontal curvature transition) or a so called “scissor” ramp (overlapping variations of cant on both rails with opposite direction). 
+In specific difficult topographic environments like mountain lines the extension of a cant transition may differ from the horizontal transition. So far this has only been found for clothoids and is either a so called shortened ramp (can transition is shorter than the corresponding horizontal curvature transition) or a so called “scissor” ramp (overlapping variations of cant on both rails with opposite direction).
 
 Application of high-performance horizontal transition bends is always combined with a cant transition with identical start and end location.
 

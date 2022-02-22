@@ -6,7 +6,7 @@ This relationship may be used to indicate an operational relationship such as an
 
 This relationship implies a sensing or controlling relationship; if elements are merely connected without any control relationship, then _IfcRelConnectsElements_ should be used.
 
-> HISTORY  New entity in IFC2x.  
+> HISTORY  New entity in IFC2x.
 >
 
 ## Attributes

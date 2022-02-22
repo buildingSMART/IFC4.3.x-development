@@ -37,7 +37,7 @@ Specifies the value along the northing axis of the end point of a vector indicat
 > NOTE 1 for right-handed Cartesian coordinate systems this would establish the location along the y axis
 
 { .note}
-> 
+>
 
 _XAxisAbscissa_ it provides the direction of the local x axis within the horizontal plane of the map coordinate system.
 

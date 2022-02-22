@@ -2,7 +2,7 @@
 
 A slab is a component of the construction that may enclose a space vertically. The slab may provide the lower support (floor) or upper construction (roof slab) in any space in a building.
 
-> NOTE  Definition according to ISO 6707-1  
+> NOTE  Definition according to ISO 6707-1
 > thick, flat or shaped component, usually larger than 300 mm square, used to form a covering or projecting from a building.
 
 Only the core or constructional part of this construction is considered to be a slab. The upper finish (flooring, roofing) and the lower finish (ceiling, suspended ceiling) are considered to be coverings. A special type of slab is the landing, described as a floor section to which one or more stair flights or ramp flights connect.

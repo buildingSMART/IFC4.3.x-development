@@ -1,7 +1,7 @@
 # IfcVertexPoint
 
 { .extDef}
-> NOTE  Definition according to ISO/CD 10303-42:1992  
+> NOTE  Definition according to ISO/CD 10303-42:1992
 > A vertex point is a vertex which has its geometry defined as a point.
 
 > NOTE  Entity adapted from **vertex_point** defined in ISO 10303-42.

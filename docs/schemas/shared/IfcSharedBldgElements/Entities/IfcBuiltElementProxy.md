@@ -66,12 +66,12 @@ assigned to IfcBuiltElementProxyType.
 ### Object Typing
 
 
-> 
+>
 > NOTE  The IfcBuiltElementProxyType can be used to share common information among many occurrences of the same proxy without establishing a particular semantic meaning of the type.
-> 
+>
 
 
-If no IfcBuiltElementProxyType is attached (i.e. if 
+If no IfcBuiltElementProxyType is attached (i.e. if
 only occurrence information is available) the PredefinedType
 should be provided. If set to .USERDEFINED. a user defined value has to be provided by the ObjectType attribute.
 
@@ -82,7 +82,7 @@ should be provided. If set to .USERDEFINED. a user defined value has to be provi
 
 ### Spatial Containment
 
-The IfcBuiltElementProxy, as any subtype of IfcBuildingElement, 
+The IfcBuiltElementProxy, as any subtype of IfcBuildingElement,
 may participate alternatively in one of the two different containment relationships:
 
 

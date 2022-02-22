@@ -1,7 +1,7 @@
 # IfcDerivedUnit
 
 { .extDef}
-> NOTE  Definition according to ISO/CD 10303-41:1992  
+> NOTE  Definition according to ISO/CD 10303-41:1992
 > A derived unit is an expression of units.
 
 > EXAMPLE  Newton per square millimetre is a derived unit.

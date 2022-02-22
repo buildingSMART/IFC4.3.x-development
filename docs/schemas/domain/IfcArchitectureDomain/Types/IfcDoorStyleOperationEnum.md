@@ -8,7 +8,7 @@ Note:
 
 1. Figures are shown in the ground view.
 2. Figures (symbolic representation) depend on the national building code.
-3. These figures/ are only shown as illustrations, the actual representation in the ground view might differ. 
+3. These figures/ are only shown as illustrations, the actual representation in the ground view might differ.
 4. Open to the outside is declared as open into the direction of the positive y-axis, determined by the _ObjectPlacement_ at _IfcDoor_
 5. The location of the panel relative to the wall thickness is defined by the _ObjectPlacement_ at _IfcDoor_, and the _IfcDoorLiningProperties.LiningOffset_ parameter.
 

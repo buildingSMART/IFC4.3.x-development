@@ -31,20 +31,20 @@ The IfcBeamType may define the shared geometric representation for all beam occu
 
 
 
-> 
+>
 > NOTE  If the IfcBeamType has an associated IfcMaterialProfileSet, then no shared geometric representation shall be provided.
-> 
+>
 
 
 
-> 
+>
 > NOTE  The product shape representations are defined as RepresentationMaps (attribute of the supertype IfcTypeProduct), which get assigned by an element occurrence instance through the IfcShapeRepresentation.Item[n] being an IfcMappedItem. See IfcTypeProduct for further information.
 
 
 
-> 
+>
 > NOTE  The values of attributes RepresentationIdentifier and RepresentationType of IfcShapeRepresentation are restricted in the same way as those for IfcBeam and IfcBeamStandardCase
-> 
+>
 
 
 
@@ -54,17 +54,17 @@ The material of the IfcBeamType is defined by the IfcMaterialProfileSet or as fa
 
 
 
-> 
+>
 > NOTE  It is illegal to assign an IfcMaterial to an IfcBeamType, if there is at least one occurrence of IfcBeamStandardCase for this type.
-> 
+>
 
 
 The shared profile definition is defined by assigning an IfcMaterialProfileSet (see material use definition above). The IfcMaterialProfile refers to the subtype of IfcProfileDef that is the common profile for all beam occurrence, if used. It is only applicable if the IfcBeamType has only occurrences of type IfcBeamStandardCase (see definition of IfcBeamStandardCase for further information).
 
 
 
-> 
+>
 > NOTE  The attribute ProfileName of the IfcProfileDef subtype, referenced in IfcMaterialProfile should contain a standardized profile name according to local standards. However, an additional geometric representation of the profile is necessary (such as IfcExtrudedAreaSolid). An importing application is allowed to check for the existence of the profile name: in case of identifying it as a standardized name, the corresponding profile geometry and possibly other cross sectional properties can be read from a library. Otherwise the geometric representation and possible non geometric IfcProfileProperties have to be used.
-> 
+>
 
 

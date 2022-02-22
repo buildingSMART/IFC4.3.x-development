@@ -19,14 +19,14 @@ The degree of diffusion of the transmitted light. In the case of completely tran
 > NOTE  The factor can be measured physically and has three ratios for the red, green and blue part of the light.
 
 ### DiffuseReflectionColour
-The degree of diffusion of the reflected light. In the case of specular surfaces there is no diffusion. The greater the diffusing power of the reflecting surface, the smaller the specular component of the reflected light, up to the point where only diffuse light is produced. A value of 1 means totally diffuse for that colour part of the light. 
+The degree of diffusion of the reflected light. In the case of specular surfaces there is no diffusion. The greater the diffusing power of the reflecting surface, the smaller the specular component of the reflected light, up to the point where only diffuse light is produced. A value of 1 means totally diffuse for that colour part of the light.
 > NOTE  The factor can be measured physically and has three ratios for the red, green and blue part of the light.
 
 ### TransmissionColour
-Describes how the light falling on a body is totally or partially transmitted. 
+Describes how the light falling on a body is totally or partially transmitted.
 { .note}
 > The factor can be measured physically and has three ratios for the red, green and blue part of the light.
 
 ### ReflectanceColour
-A coefficient that determines the extent that the light falling onto a surface is fully or partially reflected. 
+A coefficient that determines the extent that the light falling onto a surface is fully or partially reflected.
 > NOTE  The factor can be measured physically and has three ratios for the red, green and blue part of the light.

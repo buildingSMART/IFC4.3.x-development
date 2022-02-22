@@ -1,7 +1,7 @@
 # IfcExternallyDefinedTextFont
 
 { .extDef}
-> NOTE  Definition according to ISO/CD 10303-46:1992  
+> NOTE  Definition according to ISO/CD 10303-46:1992
 > The externally defined text font is an external reference to a text font
 
 > NOTE  Restrictions of the font source and font names to be used may be exposed by implementation guidelines.

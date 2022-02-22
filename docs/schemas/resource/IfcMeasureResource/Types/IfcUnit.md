@@ -1,7 +1,7 @@
 # IfcUnit
 
 { .extDef}
-> NOTE  Definition according to ISO/CD 10303-41:1992  
+> NOTE  Definition according to ISO/CD 10303-41:1992
 > A unit is a physical quantity, with a value of one, which is used as a standard in terms of which other quantities are expressed.
 
 > NOTE  Select item _IfcMonetaryUnit_ is an addition to ISO 10303-41.

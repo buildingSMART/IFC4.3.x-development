@@ -31,7 +31,7 @@ System of elements providing reinforcing to the structure.
 System of elements providing pre-stressing to the structure, including typically manufactured products such as tendons, anchorages (active, dead, coupling), ducts, vents and deviators, and in-situ concrete segments, tendon spacers, blisters and additional reinforcements.
 
 ### EROSIONPREVENTION
-A grouping of elements into a built system for preventing unwanted relocation of material particles in earthworks slopes or rock faces. 
+A grouping of elements into a built system for preventing unwanted relocation of material particles in earthworks slopes or rock faces.
 Typical types of erosion prevention include:
 * Planting
 * Solid

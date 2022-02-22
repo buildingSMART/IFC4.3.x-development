@@ -27,7 +27,7 @@ and one or several curves as geometric items. The curves represent where referen
 The mapped item, IfcMappedItem, should be used if appropriate as it allows for reusing the geometry definition of a type at all occurrences of the same type.
 
 
-A single instance of a subtype of IfcElementComponent can stand for several 
+A single instance of a subtype of IfcElementComponent can stand for several
 actual element components at once. In this case, the IfcShapeRepresentation
 contains as many mapped items as there are element components combined within this
  occurrence object.

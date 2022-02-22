@@ -19,6 +19,6 @@ The topological representation of the shape is defined following the adaptation 
 
 The following are within the scope of the topology schema:
 
-* definition of the fundamental topological entities vertex, edge, and face, each with a specialized subtype to enable it to be associated with the geometry of a point, curve, or surface, respectively; 
+* definition of the fundamental topological entities vertex, edge, and face, each with a specialized subtype to enable it to be associated with the geometry of a point, curve, or surface, respectively;
 * collections of the basic entities to form topological structures of path, loop and shell and constraints to ensure the integrity of these structures;
 * orientation of topological entities.

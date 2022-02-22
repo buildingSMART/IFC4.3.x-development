@@ -43,22 +43,22 @@ A valid instance of _IfcWallStandardCase_ relies on the provision of an _IfcMate
 
 ### Axis 2D Geometry
 
-The wall axis is represented by a two-dimensional open curve 
-within a particular shape representation. The wall axis is used to 
+The wall axis is represented by a two-dimensional open curve
+within a particular shape representation. The wall axis is used to
 apply the material layer set usage parameter to the wall geometry.
 
 
 
 * Axis
-	+ IfcPolyline having two Points, or 
+	+ IfcPolyline having two Points, or
 	IfcTrimmedCurve with BasisCurve of Type
-	IfcLine for the 'SweptSolid' provided as 
+	IfcLine for the 'SweptSolid' provided as
 	IfcExtrudedAreaSolid. The axis curve lies on the x/y plane and is parallel to the x-axis of
 	 the object coordinate system.
 	+ IfcTrimmedCurve with BasisCurve of Type
 	IfcCircle for 'SweptSolid' provided as
 	 IfcExtrudedAreaSolid. The axis curve lies on the x/y plane
-	 of the object coordinate system, the tangent at the start is along 
+	 of the object coordinate system, the tangent at the start is along
 	the positive x-axis.
 
 
@@ -178,7 +178,7 @@ IfcSlabType.HasAssociations and via
 IfcRelAssociatesMaterial.RelatingMaterial.
 
  The IfcWallType should then have a unique
- IfcMaterialLayerSet, that is referenced by 
+ IfcMaterialLayerSet, that is referenced by
 the IfcMaterialLayerSetUsage assigned to all
 occurrences of this IfcWallType.
 
@@ -222,8 +222,8 @@ Figure 288 — Wall material layers
 The following restriction is imposed:
 
 
-* The local placement shall provide the location and directions 
-for the standard wall, the x/y plane is the plane for the 
+* The local placement shall provide the location and directions
+for the standard wall, the x/y plane is the plane for the
 profile, and the z-axis is the extrusion axis for the wall body.
 
 

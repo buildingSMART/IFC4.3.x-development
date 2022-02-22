@@ -17,10 +17,10 @@ Predefined generic type for a cost schedule that is specified in an enumeration.
 
 ### Status
 The current status of a cost schedule. Examples of status values that might be used for a cost schedule status include:
-*  PLANNED 
-*  APPROVED 
-*  AGREED 
-*  ISSUED 
+*  PLANNED
+*  APPROVED
+*  AGREED
+*  ISSUED
 *  STARTED
 
 ### SubmittedOn
@@ -49,7 +49,7 @@ Approvals may be associated to indicate the status of acceptance or rejection us
 * IfcActor (IfcRelAssignsToActor): Persons and organizations involved in the preparation, submittal, and as target users.
 
 
- The IfcCostSchedule may have assignments of its own using the IfcRelAssignsToControl relationship where RelatingControl refers to the IfcCostSchedule and RelatedObjects contains one or more objects of the following types: 
+ The IfcCostSchedule may have assignments of its own using the IfcRelAssignsToControl relationship where RelatingControl refers to the IfcCostSchedule and RelatedObjects contains one or more objects of the following types:
 
 * IfcCostItem: Indicates costs published within this cost schedule, typically a single root cost item forming a hierarchy of nested cost items.
 

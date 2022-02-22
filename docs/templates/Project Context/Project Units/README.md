@@ -3,9 +3,9 @@ Project Units
 
 The project context includes the definition of the default units within the IFC data set. They are declared once for the context of the whole data set. Default units are those units that apply:
 
-* to all geometric representation items within the geometric representation contexts; 
-* to all attributes with a defined datatype indicating a measure datatype; 
-* to all properties and quantities with a defined datatype indicating a measure datatype and with no local unit definitions provided. 
+* to all geometric representation items within the geometric representation contexts;
+* to all attributes with a defined datatype indicating a measure datatype;
+* to all properties and quantities with a defined datatype indicating a measure datatype and with no local unit definitions provided.
 
 Default units are defined as either:
 

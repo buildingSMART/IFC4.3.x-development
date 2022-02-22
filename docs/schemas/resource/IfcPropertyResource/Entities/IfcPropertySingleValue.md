@@ -27,7 +27,7 @@ Table 1 &mdash; Single value properties with values, measure types and units
 ## Attributes
 
 ### NominalValue
-Value and measure type of this property. 
+Value and measure type of this property.
 > NOTE  By virtue of the defined data type, that is selected from the SELECT _IfcValue_, the appropriate unit can be found within the _IfcUnitAssignment_, defined for the project if no value for the unit attribute is given.
 
 { .note}

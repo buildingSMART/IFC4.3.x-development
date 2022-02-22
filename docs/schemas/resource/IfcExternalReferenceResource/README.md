@@ -22,7 +22,7 @@ The scope of the documents model is:
 
 * to manage reference to documents
 * to manage information about documents
-* to be equally applicable to documents that are paper based or digital 
+* to be equally applicable to documents that are paper based or digital
 
 It is not intended to be a complete document model and does not overlap in intent or content with such models.
 
@@ -32,7 +32,7 @@ Information about a document can be captured in the _IfcDocumentInformation_ cla
 
 * description
 * revision identifier
-* creation and revision times 
+* creation and revision times
 * duration of document validity using 'valid from' and 'valid to' attributes.
 
 For a document that is stored digitally, the _IfcDocumentElectronicFormat_ class enables information about the format to be recorded. This includes the file extension used and information about the content using the MIME standard.

@@ -18,7 +18,7 @@ The central parameter of the kinematic perspective is lateral acceleration of th
 
 
 
-The traditional view is denoted by the geometric perspective in the context of the business terminology related IfcAlignment documentation. Before the availability of modern computers alignment design was performed using "traditional" drawing techniques. In the first phase of computerization this origin led to a representation in the x,y space first and a check of safety related properties in a second step. This can still be seen in regulations which have been put into effect 1980 or earlier. Of course designs which have been produced on basis of these regulations reflect the "good enough" attitude in the precision of the documentation. 
+The traditional view is denoted by the geometric perspective in the context of the business terminology related IfcAlignment documentation. Before the availability of modern computers alignment design was performed using "traditional" drawing techniques. In the first phase of computerization this origin led to a representation in the x,y space first and a check of safety related properties in a second step. This can still be seen in regulations which have been put into effect 1980 or earlier. Of course designs which have been produced on basis of these regulations reflect the "good enough" attitude in the precision of the documentation.
 
 In a later phase an increasing importance of the kinematic perspective can be observed. Here precise control of the lateral acceleration (horizontal and cant layout) and vertical acceleration (vertical layout) became prevalent. Designers started to use high performance transition bends especially in high speed scenarios. In the kinematic perspective precise curvature fitting between consecutive segments needs to be better than in the "good enough" approach of traditional geometric perspective. Central terms are e.g. "jerks", "theoretical cant" or "cant deficiency".
 
@@ -37,7 +37,7 @@ For each horizontal alignment segment with a known curvature formula a generic m
 
 **Recommendation**
 
-Check the relevant regulations for the network in question. Alignment designs as such are very stable over the lifetime of the road or track. Especially for old designs quality and precision of available documentation has to be checked very carefully. A clear understanding of limitations should be established before implementing automated data flows between high precision BIM environments and legacy documentation systems. This applies both to legacy, central databases and to legacy, individual documents. 
+Check the relevant regulations for the network in question. Alignment designs as such are very stable over the lifetime of the road or track. Especially for old designs quality and precision of available documentation has to be checked very carefully. A clear understanding of limitations should be established before implementing automated data flows between high precision BIM environments and legacy documentation systems. This applies both to legacy, central databases and to legacy, individual documents.
 
 **Used Symbols and their meaning**
 
@@ -79,7 +79,7 @@ In the geometric perspective, a clothoid denotes a connection between two points
 
 In the dynamic perspective, it denotes a segment with constant rate of lateral acceleration change induced by the curvature. The kinematic properties of the clothoid both reduce the exerted forces on the track by a train, improve the travel experience of train passengers and also reduce the stress of a car driver by avoiding sudden movements of the steering wheel.<br>
 
-The kinematic advantages of the clothoid as a smoothing segment are true also for all the other transition bends currently in use. 
+The kinematic advantages of the clothoid as a smoothing segment are true also for all the other transition bends currently in use.
 
 **Base formula (Curvature)**
 !["Clothoid transition segment"](../../figures/ifcalignmenthorizontalsegmenttypeenum-clothoid.png "Figure 1 &mdash; Curvature for horizontal Clothoid transition segment")
@@ -140,7 +140,7 @@ Sine transition or sinusoidal transition was suggested 1937. The curvature funct
 ### VIENNESEBEND
 The Viennese Bend (R) is an innovative track geometry transition element. Instead of analyzing the vehicle movement at the track plane the optimization efforts target a gravity center line at a defined height above the rails.
 
-As a consequence the path of the horizontal alignment center line is also influenced by the cant layout. The first part of the curvature formula is assembled from the basic function like the other transition bends. The additional term contains the bank angle "&psi;" and the gravity center line height "h" and is unique to the Viennes Bend (R). This term causes a small movement contrary to the main direction in the x,y layout. 
+As a consequence the path of the horizontal alignment center line is also influenced by the cant layout. The first part of the curvature formula is assembled from the basic function like the other transition bends. The additional term contains the bank angle "&psi;" and the gravity center line height "h" and is unique to the Viennes Bend (R). This term causes a small movement contrary to the main direction in the x,y layout.
 
 **Curvature formula**
 !["Viennese bend (R) transition segment"](../../figures/ifcalignmenthorizontalsegmenttypeenum-viennesebend.png "Figure 1 &mdash; Curvature for horizontal Viennese bend (R) transition segment")

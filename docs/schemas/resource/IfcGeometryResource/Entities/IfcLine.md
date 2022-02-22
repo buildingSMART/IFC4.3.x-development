@@ -15,10 +15,10 @@ The _IfcLine_ is an unbounded line parameterized by an _IfcCartesianPoint_ and a
 !["line examples"](../../../../figures/ifcline-fig1.png "Figure 1 &mdash; Unbounded _IfcLine_ and bounded _IfcTrimmedCurve_")
 
 { .extDef}
-> NOTE  Definition according to ISO/CD 10303-42:1992  
-> A line is an unbounded curve with constant tangent direction. A line is defined by a point and a direction. The positive direction of the line is in the direction of the dir vector. The curve is parameterized as follows: 
->> **P** = Pnt  
->> **V** = Dir  
+> NOTE  Definition according to ISO/CD 10303-42:1992
+> A line is an unbounded curve with constant tangent direction. A line is defined by a point and a direction. The positive direction of the line is in the direction of the dir vector. The curve is parameterized as follows:
+>> **P** = Pnt
+>> **V** = Dir
 >> &lambda;(_u_) = **P** + _u_**V**
 >  and the parametric range is: -&infin; < _u_ < &infin;
 

@@ -4,14 +4,14 @@ _IfcSurfaceStyleRendering_ holds the properties for visualization related to a p
 
 * a colour component (_SurfaceColour_ attribute inherited from _IfcSurfaceStyleShading_)
 * a transparency component (_Transparency_ attribute inherited from _IfcSurfaceStyleShading_)
-* a reflectance component, given either by 
-    * applying reflectance factors to the surface colour: 
+* a reflectance component, given either by
+    * applying reflectance factors to the surface colour:
         * diffuse component (_SurfaceColour \* DiffuseFactor_)
         * transmission component (_SurfaceColour \* TransmissionFactor_)
         * diffuse transmission component (_SurfaceColour \* DiffuseTransmissionFactor_)
         * reflection component (_SurfaceColour \* ReflectionFactor_)
-        * specular component (_SurfaceColour \* SpecularFactor_ attribute together with _SpecularHighlight_) 
-    * or, by explicitly defining such factors as colours (_DiffuseColour_, _TransmissionColour_, _DiffuseTransmissionColour_, _ReflectionColour_ and _SpecularColour_) 
+        * specular component (_SurfaceColour \* SpecularFactor_ attribute together with _SpecularHighlight_)
+    * or, by explicitly defining such factors as colours (_DiffuseColour_, _TransmissionColour_, _DiffuseTransmissionColour_, _ReflectionColour_ and _SpecularColour_)
 * a displacement component, currently only given by a texture map with the TextureType = bump
 * a coverage component, currently only given by the alpha component of the texture map (2 or 4 component colour texture)
 

@@ -34,7 +34,7 @@ Either there is no ramp flight type object associated, i.e. the _IsTypedBy_ inve
 The walking line is represented by a two-dimensional open curve
 as the axis. The curve is directed into the upward direction
 (direction has to be interpreted as specified at the subtypes of
-IfcCurve). 
+IfcCurve).
 
 
 Figure 254 illustrates the axis representation which has the following constraints:
@@ -118,7 +118,7 @@ accessible by the inverse HasAssociations relationship.
 
 ### Spatial Containment
 
-The IfcRampFlight, as any subtype of IfcBuildingElement, 
+The IfcRampFlight, as any subtype of IfcBuildingElement,
 may participate alternatively in one of the two different containment relationships:
 
 
@@ -128,6 +128,6 @@ may participate alternatively in one of the two different containment relationsh
 
 
 > NOTE  Model view definitions or implementer agreements may force an IfcRampFlight to be solely used as a part within an IfcRamp container. In this case, no Spatial containment shall be used.
-> 
+>
 
 

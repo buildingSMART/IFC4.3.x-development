@@ -1,7 +1,7 @@
 LRMName
 =======
 
-Gives the name of this Linear Referencing Method, such as “kilometre-point”. 
+Gives the name of this Linear Referencing Method, such as “kilometre-point”.
 
 > NOTE Definition according to ISO 19148:2021.
 >

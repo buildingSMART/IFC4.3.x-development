@@ -1,7 +1,7 @@
 # IfcDimensionalExponents
 
 { .extDef}
-> NOTE  Definition according to ISO/CD 10303-41:1992  
+> NOTE  Definition according to ISO/CD 10303-41:1992
 > The dimensionality of any quantity can be expressed as a product of powers of the dimensions of base quantities. The dimensional exponents entity defines the powers of the dimensions of the base quantities. All the physical quantities are founded on seven base quantities (ISO 31 (clause 2)).
 
 > NOTE  Length, mass, time, electric current, thermodynamic temperature, amount of substance, and luminous intensity are the seven base quantities.

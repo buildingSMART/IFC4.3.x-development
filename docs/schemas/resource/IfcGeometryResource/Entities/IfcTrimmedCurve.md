@@ -11,26 +11,26 @@ Figure 1 shows the four arcs (dashed blue and green lines with arrow showing dif
 > NOTE  Since the _BasisCurve_ is closed (type _IfcCircle_), the exception of the informal proposition IP3 applies, i.e. the sense flag is not required to be consistent with the parameter values of _Trim1_ and _Trim1_, so the rule (sense = parameter 1 < parameter 2) may not be fulfilled.
 
 { .extDef}
-> NOTE Definition according to ISO/CD 10303-42:1992  
+> NOTE Definition according to ISO/CD 10303-42:1992
 > A trimmed curve is a bounded curve which is created by taking a selected portion, between two identified points, of the associated basis curve. The basis curve itself is unaltered and more than one trimmed curve may reference the same basis curve. Trimming points for the curve may be identified by:
-> 
+>
 > * parametric value
 > * geometric position
 > * both of the above
 
 At least one of these shall be specified at each end of the curve. The _SenseAgreement_ makes it possible to unambiguously define any segment of a closed curve such as a circle. The combinations of sense and ordered end points make it possible to define four distinct directed segments connecting two different points on a circle or other closed curve. For this purpose cyclic properties of the parameter range are assumed; for example, 370 degrees is equivalent to 10 degrees.
-> 
+>
 > The _IfcTrimmedCurve_ has a parameterization which is inherited from the particular basis curve reference. More precisely the parameter s of the trimmed curve is derived from the parameter of the basis curve as follows:
-> 
+>
 > * if _SenseAgreement_ is TRUE: _s = t - t~1~_
 > * if _SenseAgreement_ is FALSE: _s = t~2~ - t_
 
 In the above equations t~1~ is the value given by _Trim1_ or the parameter value corresponding to point 1 and t~2~ is the value given by _Trim2_ or the parameter value corresponding to point 2. The resultant _IfcTrimmedCurve_ has a parameter ranging from 0 at the first trimming point to |t~2~ - t~1~| at the second trimming point.
-> 
+>
 >> NOTE  In case of a closed curve, it may be necessary to increment t1 or t2 by the parametric length for consistency with the sense flag.
 
 
-> 
+>
 > NOTE Entity adapted from **trimmed_curve** defined in ISO 10303-42
 
 > HISTORY  New entity in IFC1.0

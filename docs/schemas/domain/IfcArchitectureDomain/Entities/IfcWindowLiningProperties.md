@@ -40,7 +40,7 @@ If the _TransomThickness_ is set to zero (and the _TransomOffset_ set to a posit
 > IFC4 CHANGE  Data type changed to _IfcNonNegativeLengthMeasure_.
 
 ### MullionThickness
-Thickness of the mullion (vertical separator of window panels within a window), measured parallel to the window elevation plane. The mullion is part of the lining and the mullion depth is assumed to be identical to the lining depth. 
+Thickness of the mullion (vertical separator of window panels within a window), measured parallel to the window elevation plane. The mullion is part of the lining and the mullion depth is assumed to be identical to the lining depth.
 If the _MullionThickness_ is set to zero (and the _MullionOffset_ set to a positive length), then the window is divided horizontally without a physical divider.
 { .change-ifc2x4}
 > IFC4 CHANGE  Data type changed to _IfcNonNegativeLengthMeasure_.

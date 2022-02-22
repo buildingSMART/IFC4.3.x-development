@@ -12,10 +12,10 @@ _IfcAsymmetricIShapeProfileDef_ can also be used to model rail profiles if the a
 > IFC2x3 CHANGE  All profile origins are now in the center of the bounding box. The attribute _CentreOfGravityInY_ has been made OPTIONAL.
 
 { .change-ifc2x4}
-> IFC4 CHANGE  Supertype changed from _IfcIShapeProfileDef_ to _IfcParameterizedProfileDef_. Attributes which were inherited from _IfcIShapeProfileDef_ are now defined directly at _IfcAsymmetricIShapeProfileDef_ and have been partially renamed but were not reordered.  
-> Bottom flange may be narrower than top flange.  
-> Type of _TopFlangeFilletRadius_ relaxed to allow for zero radius.  
-> Trailing attribute _CentreOfGravityInY_ deleted, use respective property in _IfcExtendedProfileProperties_ instead.  
+> IFC4 CHANGE  Supertype changed from _IfcIShapeProfileDef_ to _IfcParameterizedProfileDef_. Attributes which were inherited from _IfcIShapeProfileDef_ are now defined directly at _IfcAsymmetricIShapeProfileDef_ and have been partially renamed but were not reordered.
+> Bottom flange may be narrower than top flange.
+> Type of _TopFlangeFilletRadius_ relaxed to allow for zero radius.
+> Trailing attribute _CentreOfGravityInY_ deleted, use respective property in _IfcExtendedProfileProperties_ instead.
 > Attributes _BottomFlangeEdgeRadius_, _BottomFlangeSlope_, _TopFlangeEdgeRadius_, _TopFlangeSlope_ added.
 
 Figure 1 illustrates parameters of the asymmetric I-shaped section definition. The parameterized profile defines its own position coordinate system. The underlying coordinate system is defined by the swept area solid that uses the profile definition. It is the xy plane of:

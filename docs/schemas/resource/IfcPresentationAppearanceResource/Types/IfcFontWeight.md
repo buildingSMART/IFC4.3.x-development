@@ -2,21 +2,21 @@
 
 The _IfcFontWeight_ type defines the weight of the font. Values are:
 
-* normal 
-* bold 
+* normal
+* bold
 * 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900
 
 { .extDef}
-> NOTE  Definition according to Cascading Style Sheets, level 1  
+> NOTE  Definition according to Cascading Style Sheets, level 1
 > The values '100' to '900' form an ordered sequence, where each number indicates a weight that is at least as dark as its predecessor. The keyword 'normal' is synonymous with '400', and 'bold' is synonymous with '700'. Keywords other than 'normal' and 'bold' have been shown to be often confused with font names and a numerical scale was therefore chosen for the 9-value list.
 
 { .extDef}
 > Fonts (the font data) typically have one or more properties whose values are names that are descriptive of the "weight" of a font. There is no accepted, universal meaning to these weight names. Their primary role is to distinguish faces of differing darkness within a single font family. Usage across font families is quite variant; for example a font that you might think of as being bold might be described as being _Regular, Roman, Book, Medium, Semi-_ or _DemiBold, Bold,_ or _Black,_ depending on how black the "normal" face of the font is within the design. Because there is no standard usage of names, the weight property values in CSS1 are given on a numerical scale in which the value '400' (or 'normal') corresponds to the "normal" text face for that family. The weight name associated with that face will typically be _Book, Regular, Roman, Normal_ or sometimes _Medium_.
 
 { .extDef}
-> The association of other weights within a family to the numerical weight values is intended only to preserve the ordering of darkness within that family. However, the following heuristics tell how the assignment is done in typical cases: > * If the font family already uses a numerical scale with nine values (such as with _OpenType_), the font weights should be mapped directly. 
-> * If there is both a face labeled _Medium_ and one labeled _Book, Regular, Roman_ or _Normal,_ then the _Medium_ is normally assigned to the '500'. 
-> * The font labeled "Bold" will often correspond to the weight value '700'. 
+> The association of other weights within a family to the numerical weight values is intended only to preserve the ordering of darkness within that family. However, the following heuristics tell how the assignment is done in typical cases: > * If the font family already uses a numerical scale with nine values (such as with _OpenType_), the font weights should be mapped directly.
+> * If there is both a face labeled _Medium_ and one labeled _Book, Regular, Roman_ or _Normal,_ then the _Medium_ is normally assigned to the '500'.
+> * The font labeled "Bold" will often correspond to the weight value '700'.
 > * If there are fewer then 9 weights in the family, the default algorithm for filling the "holes" is as follows. If '500' is unassigned, it will be assigned the same font as '400'. If any of the values '600', '700', '800' or '900' remains unassigned, they are assigned to the same face as the next darker assigned keyword, if any, or the next lighter one otherwise. If any of '300', '200' or '100' remains unassigned, it is assigned to the next lighter assigned keyword, if any, or the next darker otherwise.
 
 { .extDef}

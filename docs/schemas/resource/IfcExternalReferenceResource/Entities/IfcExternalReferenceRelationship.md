@@ -11,7 +11,7 @@ _IfcExternalReferenceRelationship_ is a relationship entity that enables objects
 ### RelatingReference
 An external reference that can be used to tag an object within the range of _IfcResourceObjectSelect_.
 
-> NOTE  External references can be a library reference (for example a dictionary or a catalogue reference), a classification reference, or a documentation reference.  
+> NOTE  External references can be a library reference (for example a dictionary or a catalogue reference), a classification reference, or a documentation reference.
 >
 
 ### RelatedResourceObjects

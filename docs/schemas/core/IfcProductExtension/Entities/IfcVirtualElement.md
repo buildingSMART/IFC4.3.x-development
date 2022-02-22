@@ -21,7 +21,7 @@ The _IfcVirtualElement_ is mainly used to define a virtual boundary between two 
 ### Surface Geometry
 
 The 3D geometric representation of IfcVirtualElement is
-d efined using a surface geometry. The following constraints apply to the 3D surface 
+d efined using a surface geometry. The following constraints apply to the 3D surface
 representation:
 
 

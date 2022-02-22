@@ -6,7 +6,7 @@ The _IfcRelDefinesByObject_ is a 1-to-N relationship, as it allows for the assig
 
 Only objects that take part in a type decomposition and in an occurrence decomposition of the same type can be connected by the _IfcRelDefinesByObject_ relationship. The _IfcRelDefinesByObject_ links the decomposed object type part, also called the "declaring part" with the occurrence of that part inside the occurrence of the decomposed type, also called the "reflected part", as shown in Figure 1.
 
- 
+
 
 !["instance diagram"](../../../../figures/ifcreldefinesbyobject_fig-1.png "Figure 1 &mdash; Part definition relationships")
 

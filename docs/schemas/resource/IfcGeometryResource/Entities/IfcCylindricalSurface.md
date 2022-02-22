@@ -13,9 +13,9 @@ The inherited attributes are interpreted as
 * _SELF\IfcElementarySurface.Position.P[3]_ defines the direction of the axis of the cylindrical surface.
 
 { .extDef}
-> NOTE Definition according to ISO/CD 10303-42:1992  
+> NOTE Definition according to ISO/CD 10303-42:1992
 > A cylindrical surface is a surface at a constant distance (the radius) from a straight line. A cylindrical surface is defined by its radius and its orientation and location. The data is to be interpreted as follows:
-> 
+>
 >> <pre style=" font-size:x-small;">
 C = Position.Location
 x = Position.P[1]
@@ -24,21 +24,21 @@ z = Position.P[3]
 <em>R</em> = Radius
 </pre>
 > and the surface is parameterized as:
-> 
+>
 >> ![formula](../../../../figures/ifccylindricalsurface-math1.gif)
 > where the parametric range is -&infin; < _u,v_ < &infin; .
-> 
+>
 > In the above parameterization the length unit for the unit vectors **z** is equal to that of the radius **_R_**. In the placement coordinate system defined above, the surface is represented by the equation _S_ = 0, where
-> 
+>
 >> ![formula](../../../../figures/ifccylindricalsurface-math2.gif)
 > The positive direction of the normal to the surface at any point on the surface is given by
-> 
+>
 >> ![formula](../../../../figures/ifccylindricalsurface-math3.gif), or as unit normal by
->> 
+>>
 >> ![formula](../../../../figures/ifccylindricalsurface-math4.gif)
 >>
 > The direction of the normal is away from the axis of the cylinder.
-> 
+>
 
 
 > NOTE  Entity adapted from **cylindrical_surface** defined in ISO 10303-42.

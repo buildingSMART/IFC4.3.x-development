@@ -54,9 +54,9 @@ directly at the elemented slab.
 
 
 
-> NOTE  It is invalid to exhange a 'Body' shape 
+> NOTE  It is invalid to exhange a 'Body' shape
 > representation of an IfcSlabElementedCase. The body
-> geometry is defined by the parts within the 
+> geometry is defined by the parts within the
 > decomposition.
 
 

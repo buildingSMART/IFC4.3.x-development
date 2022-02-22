@@ -29,7 +29,7 @@ The thickness of the material layer. The meaning of "thickness" depends on its u
 > IFC4 CHANGE  The attribute datatype has been changed to _IfcNonNegativeLengthMeasure_ allowing for 0. as thickness.
 
 ### IsVentilated
-Indication of whether the material layer represents an air layer (or cavity). 
+Indication of whether the material layer represents an air layer (or cavity).
 * set to TRUE if the material layer is an air gap and provides air exchange from the layer to the outside air.
 * set to UNKNOWN if the material layer is an air gap and does not provide air exchange (or when this information about air exchange of the air gap is not available).
 * set to FALSE if the material layer is a solid material layer (the default).
@@ -43,7 +43,7 @@ Definition of the material layer in more descriptive terms than given by attribu
 ### Category
 Category of the material layer, e.g. the role it has in the layer set it belongs to (such as 'load bearing', 'thermal insulation' etc.). The list of keywords might be extended by model view definitions, however the following keywords shall apply in general:
 * 'LoadBearing' &mdash; for all material layers having a load bearing function.
-* 'Insulation' &mdash; for all material layers having an insolating function. 
+* 'Insulation' &mdash; for all material layers having an insolating function.
 * 'Inner finish' &mdash; for the material layer being the inner finish.
 * 'Outer finish' &mdash; for the material layer being the outer finish.
 

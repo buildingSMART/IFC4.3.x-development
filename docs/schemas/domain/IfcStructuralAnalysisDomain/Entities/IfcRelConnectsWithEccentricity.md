@@ -11,13 +11,13 @@ The entity _IfcRelConnectsWithEccentricity_ adds the definition of eccentricity 
 
 **Use Definition**
 
-_Point Connection_  
+_Point Connection_
 _ConnectionConstraint_ shall be of type _IfcConnectionPointGeometry_ and shall refer to two instances of _IfcVertexPoint_.
 
-_Curve Connection_  
+_Curve Connection_
 _ConnectionConstraint_ shall be of type _IfcConnectionCurveGeometry_ and shall refer to two instances of _IfcEdge_ or subtypes.
 
-_Surface Connection_  
+_Surface Connection_
 _ConnectionConstraint_ shall be of type _IfcConnectionSurfaceGeometry_ and shall refer to two instances of _IfcFaceSurface_.
 
 ## Attributes

@@ -8,7 +8,7 @@ DentalCuspidor: Waste water appliance that receives and flushes away mouth washi
 .
 HandRinse: Wall mounted wash hand basin that has an overall width of 500mm or less
 .
-Hospital: Wash hand basin that has a smooth easy clean surface without tapholes or overflow slot for use where hygiene is of prime importance. 
+Hospital: Wash hand basin that has a smooth easy clean surface without tapholes or overflow slot for use where hygiene is of prime importance.
 
 Tipup: Wash hand basin mounted on pivots so that it can be emptied by tilting.
 

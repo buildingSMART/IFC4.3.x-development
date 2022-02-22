@@ -16,8 +16,8 @@ In any case the object placement has to unambiguously define the object coordina
 ## Attributes
 
 ### PlacesObject
-The _IfcObjectPlacement_ shall be used to provide a placement and 
-an object coordinate system for instances of _IfcProduct_. 
+The _IfcObjectPlacement_ shall be used to provide a placement and
+an object coordinate system for instances of _IfcProduct_.
 { .note}
 > If an _IfcObjectPlacement_ is shared by many instances of _IfcProduct_ it does not apply a semantic meaning of being a shared placement that needs to be maintained. The same instance of _IfcObjectPlacement_ could simply be used to reduce exchange file size.
 

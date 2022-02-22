@@ -1,7 +1,7 @@
 CharacteristicImpedance
 =======================
 
-A quantity defined for a mode of propagation at a given frequency in a specific uniform transmission line or uniform waveguide by one of the three following relations:  
+A quantity defined for a mode of propagation at a given frequency in a specific uniform transmission line or uniform waveguide by one of the three following relations:
 Z1 = S/ |I|2
 Z2 = |U|2 / S
 Z3 = U / I

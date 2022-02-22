@@ -25,9 +25,9 @@ Set of times periods that define exceptions (non-working
     calendar, if provided.
 
 ### PredefinedType
-Identifies the predefined types of a work calendar from which 
+Identifies the predefined types of a work calendar from which
     the type required may be set.
-    
+
 { .change-ifc2x4}
 > IFC4 CHANGE Attribute added
 

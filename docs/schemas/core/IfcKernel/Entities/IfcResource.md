@@ -19,13 +19,13 @@ The inherited attribute _ObjectType_ is used as a textual code that identifies t
 
 ### Identification
 An identifying designation given to a resource.
-    It is the identifier at the occurrence level. 
-    
+    It is the identifier at the occurrence level.
+
 { .change-ifc2x4}
 > IFC4 CHANGE Attribute promoted from subtype _IfcConstructionResource_.
 
 ### LongDescription
-A detailed description of the resource (e.g. the skillset for a labor resource).  
+A detailed description of the resource (e.g. the skillset for a labor resource).
 { .change-ifc2x4}
 > IFC4 CHANGE  The attribute _LongDescription_ is added replacing the _ResourceGroup_ attribute at subtype _IfcConstructionResource_.
 

@@ -15,7 +15,7 @@ A zone is a group of spaces, partial spaces or other zones. These spaces may or 
 Long name for a zone, used for informal purposes. It should be used, if available, in conjunction with the inherited _Name_ attribute.
 > NOTE  In many scenarios the _Name_ attribute refers to the short name or number of a zone, and the _LongName_ refers to the full name.
 
-  
+
 { .change-ifc2x4}
 > IFC4 CHANGE The attribute has been added at the end of the entity definition.
 
@@ -38,7 +38,7 @@ of aggregated spaces.
 
 
 
-> 
+>
 > NOTE  The IfcZone is regarded as the
 > spatial system (as compared to the building service, electrical,
 > or analytical system), the name remains IfcZone for
@@ -47,7 +47,7 @@ of aggregated spaces.
 
 
 
-> 
+>
 > NOTE  One of the purposes of a zone is to
 > define a fire compartmentation. In this case it defines the
 > geometric information about the fire compartment (through the
@@ -59,7 +59,7 @@ of aggregated spaces.
 > independent shape has to be provided to the fire compartment,
 > then the entity IfcSpatialZone shall be
 > used.
-> 
+>
 
 
 In case of a zone denoting a (fire) compartment, the following types should be used, if

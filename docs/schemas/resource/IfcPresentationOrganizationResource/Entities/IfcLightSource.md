@@ -1,7 +1,7 @@
 # IfcLightSource
 
 { .extDef}
-> NOTE  Definition according to ISO 10303-46:  
+> NOTE  Definition according to ISO 10303-46:
 > The light source entity is determined by the reflectance specified in the surface style rendering. Lighting is applied on a surface by surface basis: no interactions between surfaces such as shadows or reflections are defined.
 
 > NOTE  Entity adapted from **light_source** defined in ISO 10303-46.

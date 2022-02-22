@@ -3,7 +3,7 @@ Material Association
 
 Any product or product type can have associated materials indicating the physical composition of an object.
 
-> EXAMPLE  An object can be comprised of a single material or a set of materials with a particular layout. Several examples include: > * a slab may have an associated layer of concrete; 
+> EXAMPLE  An object can be comprised of a single material or a set of materials with a particular layout. Several examples include: > * a slab may have an associated layer of concrete;
 > * a beam may have an associated I-Shape profile of steel;
 > * a door may have associated constituents for framing and glazing;
 > * a port may have an associated profile and/or material flowing through it such as hot water.

@@ -2,7 +2,7 @@
 
 _IfcDataOriginEnum_ identifies the origin of time data.
 
-> HISTORY  New enumeration in IFC2x2.  
+> HISTORY  New enumeration in IFC2x2.
 >
 
 ## Items

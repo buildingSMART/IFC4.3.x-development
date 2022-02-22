@@ -10,16 +10,16 @@ Example: The temperature unit Fahrenheit is based on the temperature unit Kelvin
 
 wherein _k_ is an absolute temperature expressed in Kelvin and _f_ is the same temperature in Fahrenheit. The following entity instances provide Fahrenheit as a unit:
 
-> 
+>
 > ```
-> 
-IfcConversionBasedUnitWithOffset(  
->     IfcDimensionalExponents(0, 0, 0, 0, 1, 0, 0),  
->     THERMODYNAMICTEMPERATUREUNIT,  
->     'Fahrenheit',  
->     IfcMeasureWithUnit(  
->         IfcThermodynamicTemperatureMeasure(1.8),  
->         IfcSIUnit(THERMODYNAMICTEMPERATUREUNIT, ?, KELVIN)),  
+>
+IfcConversionBasedUnitWithOffset(
+>     IfcDimensionalExponents(0, 0, 0, 0, 1, 0, 0),
+>     THERMODYNAMICTEMPERATUREUNIT,
+>     'Fahrenheit',
+>     IfcMeasureWithUnit(
+>         IfcThermodynamicTemperatureMeasure(1.8),
+>         IfcSIUnit(THERMODYNAMICTEMPERATUREUNIT, ?, KELVIN)),
 >     -459.67);
 
 > ```

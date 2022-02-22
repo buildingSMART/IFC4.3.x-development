@@ -24,7 +24,7 @@ Object types may be exchanged without being already assigned to objects. An obje
 The attribute optionally defines the data type of the occurrence object, to which the assigned type object can relate. If not present, no instruction is given to which occurrence object the type object is applicable. The following conventions are used:
 * The IFC entity name of the applicable occurrence using the IFC naming convention, CamelCase with IFC prefix
 * It can be optionally followed by the predefined type after the separator "/" (forward slash), using uppercase
-* If one type object is applicable to many occurrence objects, then those occurrence object names should be separate by comma "," forming a comma separated string. 
+* If one type object is applicable to many occurrence objects, then those occurrence object names should be separate by comma "," forming a comma separated string.
 
 > EXAMPLE Refering to a furniture as applicable occurrence entity would be expressed as 'IfcFurnishingElement', refering to a brace as applicable entity would be expressed as 'IfcMember/BRACE', refering to a wall and wall standard case would be expressed as 'IfcWall, IfcWallStandardCase'.
 

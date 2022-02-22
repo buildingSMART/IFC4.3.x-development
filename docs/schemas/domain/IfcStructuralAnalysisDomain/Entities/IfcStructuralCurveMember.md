@@ -43,7 +43,7 @@ An IfcProfileDef is a two-dimensional geometric object with a xp,yp coordinate s
 
 
 
-> NOTE  Due to convention in structural mechanics, axis names of IfcStructuralCurveMember differ from axis names of building elements like IfcBeamStandardCase: The extrusion axis of IfcStructuralCurveMember is called x while the extrusion axis of IfcBeamStandardCase is called z. Hence x,y,z of IfcStructuralCurveMember correspond with z,x,y of IfcBeamStandardCase.
+> NOTE  Due to convention in structural mechanics, axis names of IfcStructuralCurveMember differ from axis names of building elements like IfcBeam with profile set usages: The extrusion axis of IfcStructuralCurveMember is called x while the extrusion axis of a profiled IfcBeam is called z. Hence x,y,z of IfcStructuralCurveMember correspond with z,x,y of a profiled IfcBeam.
 
 
 If the profile is meant to be inserted centrically in terms of structural section properties, it is necessary that the origin of xp,yp is identical with the geometric centroid of the profile (commonly also called centre of gravity). If subtypes of IfcParameterizedProfileDef are used which are only singly symmetric or are asymmetric, an explicit translation by IfcParameterizedProfileDef.Position.Location is required then.

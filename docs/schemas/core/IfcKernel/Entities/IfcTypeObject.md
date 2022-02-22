@@ -26,7 +26,7 @@ The attribute optionally defines the data type of the occurrence object, to whic
 * It can be optionally followed by the predefined type after the separator "/" (forward slash), using uppercase
 * If one type object is applicable to many occurrence objects, then those occurrence object names should be separate by comma "," forming a comma separated string.
 
-> EXAMPLE Refering to a furniture as applicable occurrence entity would be expressed as 'IfcFurnishingElement', refering to a brace as applicable entity would be expressed as 'IfcMember/BRACE', refering to a wall and wall standard case would be expressed as 'IfcWall, IfcWallStandardCase'.
+> EXAMPLE Refering to a furniture as applicable occurrence entity would be expressed as 'IfcFurnishingElement', refering to a brace as applicable entity would be expressed as 'IfcMember/BRACE'.
 
 ### HasPropertySets
 Set ~~list~~ of unique property sets, that are associated with the object type and are common to all object occurrences referring to this object type.

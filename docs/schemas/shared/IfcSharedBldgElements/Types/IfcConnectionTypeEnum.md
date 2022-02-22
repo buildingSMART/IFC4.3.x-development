@@ -1,6 +1,6 @@
 # IfcConnectionTypeEnum
 
-This enumeration defines the different ways how path based elements (such as _IfcWallStandardCase_) can connect, as shown in Figure 1.
+This enumeration defines the different ways how path based elements (such as layered _IfcWall_ elements) can connect, as shown in Figure 1.
 
 > HISTORY  New type in IFC2.0
 

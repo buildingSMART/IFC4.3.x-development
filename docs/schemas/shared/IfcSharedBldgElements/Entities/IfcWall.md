@@ -17,7 +17,7 @@ There are two main representations for all occurrences:
 
 - _IfcWall_ without _IfcMaterialLayerSetUsage_ is used for all other occurrences of wall, particularly for walls with changing thickness along the wall path (e.g. polygonal walls), or walls with a non-rectangular cross sections (e.g. L-shaped retaining walls), and walls having an extrusion axis that is unequal to the global Z axis of the project (i.e. non-vertical walls), or walls having only 'Brep', or 'SurfaceModel' geometry, or if a more parametric representation is not intended.
 
-> NOTE  The entity _IfcWallStandardCase_ has been deprecated, _IfcWall_ with _IfcMaterialLayerSetUsage_ is used instead. The entity _IfcWallbElementedCase_ has been deprecated, _IfcWall_ with _IfcRelAggregates_ is used to describe occurrences of wall which are aggregated from subordinate elements, such as wall panels.
+> NOTE  The entity _IfcWallStandardCase_ has been deprecated, _IfcWall_ with _IfcMaterialLayerSetUsage_ is used instead. The entity _IfcWallElementedCase_ has been deprecated, _IfcWall_ with _IfcRelAggregates_ is used to describe occurrences of wall which are aggregated from subordinate elements, such as wall panels.
 
 > NOTE  There is a representation of walls for structural analysis provided by a proper subtype of _IfcStructuralMember_ being part of the _IfcStructuralAnalysisModel_.
 
@@ -212,9 +212,9 @@ Figure 277 — Wall Standard Object Typing
 Figure 278 illustrates material layer usage, where the following conventions shall be met:
 
 
-* The reference coordinate system is the local coordinate system established by the ObjectPlacement of the IfcWallStandardCase.
+* The reference coordinate system is the local coordinate system established by the ObjectPlacement of the IfcWall.
 * The reference axis is the axis defined by the IfcShapeRepresentation with RepresentationType='Axis' as one of the
-Representation.Representations of the IfcWallStandardCase.
+Representation.Representations of the IfcWall.
 * The IfcMaterialLayerSetUsage.OffsetFromReferenceLine is given as a distance from this axis.
 * The IfcMaterialLayerSetUsage.OffsetFromReferenceLine is the distance parallel to the reference axis and always within the base
 (XY) plane of the reference coordinate system. A positve value of IfcMaterialLayerSetUsage.OffsetFromReferenceLine would

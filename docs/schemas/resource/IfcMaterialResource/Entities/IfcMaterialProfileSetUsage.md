@@ -21,4 +21,4 @@ Extent of the extrusion of the elements body shape representation to which the _
 
 > NOTE  The attribute _ReferenceExtent_ shall be asserted if an _IfcMaterialProfileSetWithOffsets_ is included in the _ForProfileSet.MaterialProfiles_ list of material layers.
 
-> NOTE  The _ReferenceExtent_ for _IfcBeamStandardCase_, _IfcColumnStandardCase_, and _IfcMemberStandardCase_ is the reference length starting at z=0 being the XY plane of the object coordinate system.
+> NOTE  The _ReferenceExtent_ for _IfcBeam_, _IfcColumn_, and _IfcMember_ is the reference length starting at z=0 being the XY plane of the object coordinate system.

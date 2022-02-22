@@ -128,7 +128,7 @@ IfcRevolvedAreaSolidTapered shall be supported.
 > or IfcRevolvedAreaSolidTapered requires the use of two
 > IfcMaterialProfile's within the
 > IfcMaterialProfileSet assinged to the
-> IfcBeamStandardCase
+> IfcMember
 * Profile: see 'SweptSolid' geometric
 representation
 * Profile Position : see 'SweptSolid' geometric

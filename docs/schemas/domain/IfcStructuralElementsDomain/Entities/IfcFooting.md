@@ -7,7 +7,7 @@ A footing is a part of the foundation of a structure that spreads and transmits 
 
 > HISTORY  New entity in IFC2x2.
 
-> NOTE  Slab foundations, also called slab-on-grade, are not instantiated as _IfcFooting_ but as _IfcSlab_ or as its subtype _IfcSlabStandardCase_, _IfcSlabElementedCase_ with a predefined type of _IfcSlabTypeEnum_.BASESLAB. Deep foundations, which transfer the loads to subsurface layers, are represented by _IfcDeepFoundation_ and its subtypes _IfcCaissonFoundation_ and _IfcPile_.
+> NOTE  Slab foundations, also called slab-on-grade, are not instantiated as _IfcFooting_ but as _IfcSlab_ with a predefined type of _IfcSlabTypeEnum_.BASESLAB. Deep foundations, which transfer the loads to subsurface layers, are represented by _IfcDeepFoundation_ and its subtypes _IfcCaissonFoundation_ and _IfcPile_.
 
 ## Attributes
 

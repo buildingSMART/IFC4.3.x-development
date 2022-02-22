@@ -7,12 +7,10 @@ The schema _IfcMaterialResource_ contains the types and entities that are used t
 
 Material definitions are distinguished by how they apply to elements or element types and by their components (layers, profiles, parts).
 
-Material designation can be made for standard element occurrences to support a limited range of their parametric representation using
+Material designation can be made for element occurrences to support a limited range of their parametric representation using
 
 1. a structured set of material layers _IfcMaterialLayerSetUsage_ and how the layers relate to the reference axis or plane,
 2. a structured set of material profiles _IfcMaterialProfileSetUsage_ and how the profiles relate to the reference axis.
-
-> NOTE  Often specific subtypes of building elements are used to have such parametric representations associated, they use the common suffix 'StandardCase', for example _IfcWallStandardCase_, or _IfcBeamStandardCase_.
 
 Material designation can be made for element occurrences or element types without applying a parametric meaning using
 

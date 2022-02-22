@@ -119,9 +119,6 @@ Figure 264 illustrates a 'SweptSolid' geometric representation.
 
 > NOTE  The following interpretation of dimension parameter applies for polygonal slabs (in ground floor view):
 > * IfcArbitraryClosedProfileDef.OuterCurve: closed bounded curve interpreted as area (or foot print) of the slab.
->
->
->
 
 
 ![standard slab](../../../../figures/ifcslab_standard-layout1.gif)
@@ -189,7 +186,7 @@ occurrences of this IfcSlabType.
 
 ![Material layer set and usage](../../../../figures/ifcslab_materialusage-01.png)
 
-> EXAMPLE  Figure 262 illustrates assignment of IfcMaterialLayerSetUsage and IfcMaterialLayerSet to the IfcSlab as the slab occurrence and to the IfcSlabType. The same IfcMaterialLayerSet shall be shared by many occurrences of IfcMaterialLayerSetUsage. This relationship shall be consistent to the relationship between the IfcSlabType and the IfcSlabStandardCase.
+> EXAMPLE  Figure 262 illustrates assignment of IfcMaterialLayerSetUsage and IfcMaterialLayerSet to the IfcSlab as the slab occurrence and to the IfcSlabType. The same IfcMaterialLayerSet shall be shared by many occurrences of IfcMaterialLayerSetUsage. This relationship shall be consistent to the relationship between the IfcSlabType and the IfcSlab.
 
 
 Figure 262 — Slab type definition

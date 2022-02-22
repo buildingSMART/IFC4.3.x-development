@@ -24,7 +24,7 @@ There are two main representations for window occurrences:
 
 The actual parameter of the window and/or its shape is defined at the _IfcWindow_ as the occurrence definition (or project instance), or by the _IfcWindowType_ as the specific definition (or project type). The following parameters are given:
 
-* at the _IfcWindow_ or _IfcWindowStandardCase_ for occurrence specific parameters. The _IfcWindow_ specifies:
+* at the _IfcWindow_ for occurrence specific parameters. The _IfcWindow_ specifies:
     * the window width and height
     * the window opening direction (by the y-axis of the _ObjectPlacement_)
 * at the _IfcWindowType_ to which the _IfcWindow_ is related by the inverse relationship _IsDefinedBy_ pointing to _IfcRelDefinesByType_, for type parameters common to all occurrences of the same type.

@@ -14,6 +14,7 @@ The _IfcDoor_ defines a particular occurrence of a door inserted in the spatial 
 This specification provides two main representations for door occurrences:
 
 * _IfcDoor_ used for all occurrences of doors, that have a 'Profile' shape representation defined to which a set of shape parameters for lining and framing properties apply. Additionally it requires the provision of an _IfcDoorType_ that references one _IfcDoorLiningProperties_ and one to many _IfcDoorPanelProperties_;
+
 > NOTE  The entity _IfcDoorStandardCase_ has been deprecated.
 
 * _IfcDoor_ used for all other occurrences of doors, particularly for doors having only 'Brep', or 'SurfaceModel' geometry without applying shape parameters.

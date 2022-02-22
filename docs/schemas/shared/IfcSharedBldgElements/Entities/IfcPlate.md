@@ -152,7 +152,7 @@ IfcMaterialLayerSetUsage to IfcPlate it shall imply that the
 occurrences of this IfcPlateType.
 
 
-Figure 246 illustrates assignment of IfcMaterialLayerSetUsage and IfcMaterialLayerSet to the IfcPlate as the plate occurrence and to the IfcPlateType. The same IfcMaterialLayerSet shall be shared by many occurrences of IfcMaterialLayerSetUsage. This relationship shall be consistent to the relationship between the IfcPlateType and the IfcPlateStandardCase.
+Figure 246 illustrates assignment of IfcMaterialLayerSetUsage and IfcMaterialLayerSet to the IfcPlate as the plate occurrence and to the IfcPlateType. The same IfcMaterialLayerSet shall be shared by many occurrences of IfcMaterialLayerSetUsage. This relationship shall be consistent to the relationship between the IfcPlateType and the IfcPlate.
 
 
 ![Material layer set and usage](../../../../figures/ifcplate_materialusage-01.png) 

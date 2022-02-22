@@ -38,7 +38,7 @@ A massive wall construction for the wall core being the single layer or having m
 ### STANDARD
 A standard wall, extruded vertically with a constant thickness along the wall path.
 { .deprecated}
-> IFC4 DEPRECATION The value is deprecated, it is expressed by choosing the subtype _IfcWallStandardCase_.
+> IFC4 DEPRECATION The value is deprecated, it is expressed by using an _IfcMaterialLayerSet_ with _IfcMaterialLayerSetUsage_ in occurrences.
 
 ### POLYGONAL
 A polygonal wall, extruded vertically, where the wall thickness varies along the wall path.
@@ -47,7 +47,7 @@ A polygonal wall, extruded vertically, where the wall thickness varies along the
 ### ELEMENTEDWALL
 A stud wall framed with studs and faced with sheetings, sidings, wallboard, or plasterwork.
 { .deprecated}
-> IFC4 DEPRECATION The value is deprecated, it is expressed by choosing the subtype _IfcWallElementedCase_.
+> IFC4 DEPRECATION The value is deprecated, it is expressed by using _IfcRelAggregates_.
 
 ### RETAININGWALL
 A supporting wall used to protect against soil layers behind. Special types of a retaining wall may be e.g. Gabion wall and Grib wall. Examples of retaining walls are wing wall, headwall, stem wall, pierwall and protecting wall.

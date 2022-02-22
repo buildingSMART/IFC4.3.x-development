@@ -2,7 +2,7 @@
 
 The _IfcMaterialLayerSetUsage_ determines the usage of _IfcMaterialLayerSet_ in terms of its location and orientation relative to the associated element geometry. The location of material layer set shall be compatible with the building element geometry (that is, material layers shall fit inside the element geometry). The rules to ensure the compatibility depend on the type of the building element.
 
-> EXAMPLE  For a cavity brick wall with shape representation SweptSolid, the _IfcMaterialLayerSet.TotalThickness_ shall be equal to the wall thickness. Also the _OffsetFromReferenceLine_ shall match the exact positions between the two shape representations of _IfcWallStandardCase_, that is the _IfcShapeRepresentation_'s with _RepresentationIdentifier_="Axis" and _RepresentationIdentifier_="Body".
+> EXAMPLE  For a cavity brick wall with shape representation SweptSolid, the _IfcMaterialLayerSet.TotalThickness_ shall be equal to the wall thickness. Also the _OffsetFromReferenceLine_ shall match the exact positions between the two shape representations of _IfcWall_, that is the _IfcShapeRepresentation_'s with _RepresentationIdentifier_="Axis" and _RepresentationIdentifier_="Body".
 
 > NOTE  Model view definitions or implementer agreements may provide more instructions on matching between building element geometry and material layer set usage.
 
@@ -19,9 +19,9 @@ The following examples illustrate how the _IfcMaterialLayerSetUsage_ attributes 
 
 Figure 1 shows an example of the use of _IfcMaterialLayerSetUsage_ aligned to the axis of a wall.
 
-> EXAMPLE  For a standard wall with extruded geometric representation (vertical extrusion), the layer set direction will be perpendicular to extrusion direction, and can be derived from the direction of the wall axis. With the_DirectionSense_ (positive in this example) the individual _IfcMaterialLayers_ are assigned consecutively right-to-left or left-to-right. For a curved wall, "direction denoting the wall thickness" can be derived from the direction of the wall axis, and it will remain perpendicular to the wall path. The _DirectionSense_ applies as well.
+> EXAMPLE  For a layered wall with extruded geometric representation (vertical extrusion), the layer set direction will be perpendicular to extrusion direction, and can be derived from the direction of the wall axis. With the_DirectionSense_ (positive in this example) the individual _IfcMaterialLayers_ are assigned consecutively right-to-left or left-to-right. For a curved wall, "direction denoting the wall thickness" can be derived from the direction of the wall axis, and it will remain perpendicular to the wall path. The _DirectionSense_ applies as well.
 
-> NOTE  According to the _IfcWallStandardCase_ material use definition the _LayerSetDirection_ for _IfcWallStandardCase_ is always AXIS2 (that is, along the y-axis), as shown in this example.
+> NOTE  According to the _IfcWall_ material use definition the _LayerSetDirection_ for _IfcWall_ is always AXIS2 (that is, along the y-axis), as shown in this example.
 
 !["Mls usage"](../../../../figures/ifcmateriallayersetusage_wall-01.png "Figure 1 &mdash; Material layer set usage for wall")
 
@@ -29,7 +29,7 @@ Figure 2 shows an example of the use of _IfcMaterialLayerSetUsage_ aligned to a 
 
 > EXAMPLE  For a slab with perpendicular extruded geometric representation, the _LayerSetDirection_ will coincide with the extrusion direction (in positive or negative sense). In this example, the material layer set base is the extruded profile and consistent with the _IfcExtrudedAreaSolid.Position_, with the _DirectionSense_ being positive, the individual _IfcMaterialLayers_ are built up from the base towards the positive z direction in this case.
 
-> NOTE  According to the _IfcSlabStandardCase_ material use definition the _LayerSetDirection_ for _IfcSlabStandardCase_ is always AXIS3 (that is, along the z-axis).
+> NOTE  According to the _IfcSlab_ material use definition the _LayerSetDirection_ for _IfcSlab_ is always AXIS3 (that is, along the z-axis).
 
 !["Mls usage"](../../../../figures/ifcmateriallayersetusage_slab-01.png "Figure 2 &mdash; Material layer set usage for slab")
 
@@ -49,7 +49,7 @@ The _IfcMaterialLayerSet_ set to which the usage is applied.
 ### LayerSetDirection
 Orientation of the material layer set relative to element reference geometry. The meaning of the value of this attribute shall be specified in the geometry use section for each element. For extruded shape representation, direction can be given along the extrusion path (e.g. for slabs) or perpendicular to it (e.g. for walls).
 
-> NOTE  The _LayerSetDirection_ for _IfcWallStandardCase_ shall be AXIS2 (i.e. the y-axis) and for _IfcSlabStandardCase_ and _IfcPlateStandardCase_ it shall be AXIS3 (i.e. the z-axis).
+> NOTE  The _LayerSetDirection_ for _IfcWall_ shall be AXIS2 (i.e. the y-axis) and for _IfcSlab_ and _IfcPlate_ it shall be AXIS3 (i.e. the z-axis).
 
 > NOTE  Whether the material layers of the set being used shall 'grow' into the positive or negative direction of the given axis, shall be defined by _DirectionSense_ attribute.
 
@@ -69,4 +69,4 @@ Extent of the extrusion of the elements body shape representation to which the _
 
 > NOTE  The attribute _ReferenceExtent_ shall be asserted, if an _IfcMaterialLayerSetWithOffsets_ is included in the _ForLayerSet.MaterialLayers_ list of material layers.
 
-> NOTE  The _ReferenceExtent_ for _IfcWallStandardCase_ is the reference height starting at z=0 being the XY plane of the object coordinate system.
+> NOTE  The _ReferenceExtent_ for _IfcWall_ is the reference height starting at z=0 being the XY plane of the object coordinate system.

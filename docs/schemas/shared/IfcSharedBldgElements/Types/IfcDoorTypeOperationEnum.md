@@ -31,7 +31,7 @@ Door with one panel that opens (swings) to the left. The hinges are on the left 
 ### SINGLE_SWING_RIGHT
 Door with one panel that opens (swings) to the right. The hinges are on the right side as viewed in the direction of the positive y-axis.
 
-> NOTE  Direction of swing (whether in or out) is determined at the <em>IfcDoor</em> or <em>IfcDoorStandardCase</em>.
+> NOTE  Direction of swing (whether in or out) is determined at the <em>IfcDoor</em>.
 
 ![single swing right](../../../../figures/ifcdoortypeenum-fig02.gif)
 
@@ -40,7 +40,7 @@ Door with one panel that opens (swings) to the right. The hinges are on the righ
 ### DOUBLE_PANEL_SINGLE_SWING
 Door with two panels, one opens (swings) to the left the other opens (swings) to the right.
 
-> NOTE  Direction of swing (whether in or out) is determined at the <em>IfcDoor</em> or <em>IfcDoorStandardCase</em>.
+> NOTE  Direction of swing (whether in or out) is determined at the <em>IfcDoor</em>.
 
 ![double swing](../../../../figures/ifcdoortypeenum-fig03.gif)
 
@@ -49,21 +49,21 @@ Door with two panels, one opens (swings) to the left the other opens (swings) to
 ### DOUBLE_PANEL_SINGLE_SWING_OPPOSITE_LEFT
 Door with two panels that both open to the left, one panel swings in one direction and the other panel swings in the opposite direction.
 
-> NOTE  Direction of swing (whether in or out) is determined at the <em>IfcDoor</em> or <em>IfcDoorStandardCase</em>.
+> NOTE  Direction of swing (whether in or out) is determined at the <em>IfcDoor</em>.
 
 ![opposite left](../../../../figures/ifcdoortypeenum-fig07.gif)
 
 ### DOUBLE_PANEL_SINGLE_SWING_OPPOSITE_RIGHT
 Door with two panels that both open to the right, one panel swings in one direction and the other panel swings in the opposite direction.
 
-> NOTE  Direction of swing (whether in or out) is determined at the <em>IfcDoor</em> or <em>IfcDoorStandardCase</em>.
+> NOTE  Direction of swing (whether in or out) is determined at the <em>IfcDoor</em>.
 
 ![opposite right](../../../../figures/ifcdoortypeenum-fig08.gif)
 
 ### DOUBLE_SWING_LEFT
 Door with one panel that swings in both directions and to the left in the main trafic direction. Also called double acting door.
 
-> NOTE  Direction of swing (whether in or out) is determined at the <em>IfcDoor</em> or <em>IfcDoorStandardCase</em>.
+> NOTE  Direction of swing (whether in or out) is determined at the <em>IfcDoor</em>.
 
 ![double swing left](../../../../figures/ifcdoortypeenum-fig04.gif)
 
@@ -72,7 +72,7 @@ Door with one panel that swings in both directions and to the left in the main t
 ### DOUBLE_SWING_RIGHT
 Door with one panel that swings in both directions and to the right in the main trafic direction. Also called double acting door.
 
-> NOTE  Direction of swing (whether in or out) is determined at the <em>IfcDoor</em> or <em>IfcDoorStandardCase</em>.
+> NOTE  Direction of swing (whether in or out) is determined at the <em>IfcDoor</em>.
 
 ![double swing right](../../../../figures/ifcdoortypeenum-fig05.gif)
 
@@ -81,7 +81,7 @@ Door with one panel that swings in both directions and to the right in the main 
 ### DOUBLE_PANEL_DOUBLE_SWING
 Door with two panels, one swings in both directions and to the right in the main trafic direction the other swings also in both directions and to the left in the main trafic direction.
 
-> NOTE  Direction of swing (whether in or out) is determined at the <em>IfcDoor</em> or <em>IfcDoorStandardCase</em>.
+> NOTE  Direction of swing (whether in or out) is determined at the <em>IfcDoor</em>.
 
 ![double double swing](../../../../figures/ifcdoortypeenum-fig06.gif)
 
@@ -146,7 +146,7 @@ Door that opens by rolling up.
 ### SWING_FIXED_LEFT
 Door with one panel that opens (swings) to the left and one fixed panel. The hinges of the swinging panel are on the left side as viewed in the direction of the positive y-axis.
 
-> NOTE  Direction of swing (whether in or out) is determined at the <em>IfcDoor</em> or <em>IfcDoorStandardCase</em>.
+> NOTE  Direction of swing (whether in or out) is determined at the <em>IfcDoor</em>.
 
 ![swinging left and fixed](../../../../figures/ifcdoortypeenum-fig18.gif)
 
@@ -156,7 +156,7 @@ Door with one panel that opens (swings) to the left and one fixed panel. The hin
 Door with one panel that opens (swings) to the right and one fixed panel. The hinges of the swinging panel are on the right side as viewed in the direction
 of the positive y-axis.
 
-> NOTE  Direction of swing (whether in or out) is determined at the <em>IfcDoor</em> or <em>IfcDoorStandardCase</em>.
+> NOTE  Direction of swing (whether in or out) is determined at the <em>IfcDoor</em>.
 
 ![swinging right and fixed](../../../../figures/ifcdoortypeenum-fig19.gif)
 

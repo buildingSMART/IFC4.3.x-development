@@ -12,7 +12,7 @@ A window type defines the particular parameter of the lining and one (or several
 
 It is used to define a window specification, or window style (the specific product information that is common to all occurrences of that window type). Window types may be exchanged without being already assigned to occurrences.
 
-Occurrences of the _IfcWindowType_ within building models are represented by instances of _IfcWindow_ or _IfcWindowStandardCase_.
+Occurrences of the _IfcWindowType_ within building models are represented by instances of _IfcWindow_.
 
 > HISTORY  New entity in IFC4. The entity _IfcWindowType_ replaces the previous definition _IfcWindowStyle_ (which is deprecated in IFC4).
 

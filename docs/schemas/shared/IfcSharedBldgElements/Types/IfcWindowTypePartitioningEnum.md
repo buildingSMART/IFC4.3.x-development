@@ -6,92 +6,7 @@ Windows which are subdivided into more than three panels have to be defined by t
 
 > HISTORY&nbsp; New Enumeration in IFC4. The new _IfcWindowTypePartitioningEnum_ replaces the use of _IfcWindowStyleOperationEnum_ that is deprecated from IFC4 onwards.
 
-<table><tr><td>
-<table class="gridtable">
-<tr valign="top">
-<th width="30%" valign="top" align="left"><i>Enumerator</i></th>
-<th width="46%" valign="top" align="left"><i>Description</i></th>
-<th width="23%" valign="top" align="left"><i>Figure</i></th>
-</tr>
-<tr valign="top">
-<td width="30%" valign="top" align="left">SinglePanel</td>
-<td width="46%" valign="top" align="left">Window with one
-panel.<br></td>
-<td width="23%" valign="top" align="left"><img src="../../../../figures/ifcwindowtypepartitioningenum-fig01.gif" width="58" height="115" border="0"></td>
-</tr>
-<tr valign="top">
-<td width="30%" valign="top" align="left">
-DoublePanelVertical</td>
-<td width="46%" valign="top" align="left">Window with two panels.
-The configuration of the panels is vertically.<br></td>
-<td width="23%" valign="top" align="left"><img src="../../../../figures/ifcwindowtypepartitioningenum-fig02.gif" width="115" height="115" border="0"></td>
-</tr>
-<tr valign="top">
-<td width="30%" valign="top" align="left">
-DoublePanelHorizontal</td>
-<td width="46%" valign="top" align="left">Window with two panels.
-The configuration of the panels is horizontally.<br></td>
-<td width="23%" valign="top" align="left"><img src="../../../../figures/ifcwindowtypepartitioningenum-fig03.gif" width="115" height="115" border="0"></td>
-</tr>
-<tr valign="top">
-<td width="30%" valign="top" align="left">
-TriplePanelVertical</td>
-<td width="46%" valign="top" align="left">Window with three
-panels. The configuration of the panels is vertically.<br></td>
-<td width="23%" valign="top" align="left"><img src="../../../../figures/ifcwindowtypepartitioningenum-fig04.gif" width="171" height="115" border="0"></td>
-</tr>
-<tr valign="top">
-<td width="30%" valign="top" align="left">
-TriplePanelHorizontal</td>
-<td width="46%" valign="top" align="left">Window with three
-panels. The configuration of the panels is horizontally.</td>
-<td width="23%" valign="top" align="left"><img src="../../../../figures/ifcwindowtypepartitioningenum-fig05.gif" width="115" height="171" border="0"></td>
-</tr>
-<tr valign="top">
-<td width="30%" valign="top" align="left">TriplePanelBottom</td>
-<td width="46%" valign="top" align="left">Window with three
-panels. The configuration of two panels is vertically and the
-third one is horizontally at the bottom.<br></td>
-<td width="23%" valign="top" align="left"><img src="../../../../figures/ifcwindowtypepartitioningenum-fig06.gif" width="115" height="171" border="0"></td>
-</tr>
-<tr valign="top">
-<td width="30%" valign="top" align="left">TriplePanelTop</td>
-<td width="46%" valign="top" align="left">Window with three
-panels. The configuration of two panels is vertically and the
-third one is horizontally at the top.<br></td>
-<td width="23%" valign="top" align="left"><img src="../../../../figures/ifcwindowtypepartitioningenum-fig07.gif" width="115" height="171" border="0"></td>
-</tr>
-<tr valign="top">
-<td width="30%" valign="top" align="left">TriplePanelLeft</td>
-<td width="46%" valign="top" align="left">Window with three
-panels. The configuration of two panels is horizontally and the
-third one is vertically at the left hand side.<br></td>
-<td width="23%" valign="top" align="left"><img src="../../../../figures/ifcwindowtypepartitioningenum-fig08.gif" width="171" height="115" border="0"></td>
-</tr>
-<tr valign="top">
-<td width="30%" valign="top" align="left">TriplePanelRight</td>
-<td width="46%" valign="top" align="left">Window with three
-panels. The configuration of two panels is horizontally and the
-third one is vertically at the right hand side.<br></td>
-<td width="23%" valign="top" align="left"><img src="../../../../figures/ifcwindowtypepartitioningenum-fig09.gif" width="171" height="115" border="0"></td>
-</tr>
-<tr valign="top">
-<td width="30%" valign="top" align="left">UserDefined</td>
-<td width="46%" valign="top" align="left">user defined operation
-type</td>
-<td width="23%" valign="top" align="left"> </td>
-</tr>
-<tr valign="top">
-<td width="30%" valign="top" align="left">NotDefined</td>
-<td width="46%" valign="top" align="left"> </td>
-<td width="23%" valign="top" align="left"> </td>
-</tr>
-</table>
-</td></tr>
-<tr><td><p class="figure">Figure 1 &mdash; Window partitioning</p></td></tr>
-</table>
-
-NOTE
+Note:
 
 1. The way how each panel operates is defined at the _IfcWindowPanelProperties.OperationType_.
 2. The reference from the window panel to the location of that panel in the window style configuration is handled by the _IfcWindowPanelProperties.PanelPosition_.
@@ -103,33 +18,51 @@ NOTE
 ### SINGLE_PANEL
 Window with one panel.
 
+![](../../../../figures/ifcwindowtypepartitioningenum-fig01.gif)
+
 ### DOUBLE_PANEL_VERTICAL
 Window with two panels. The configuration of the panels is vertically.
+
+![](../../../../figures/ifcwindowtypepartitioningenum-fig02.gif)
 
 ### DOUBLE_PANEL_HORIZONTAL
 Window with two panels. The configuration of the panels is horizontally.
 
+![](../../../../figures/ifcwindowtypepartitioningenum-fig03.gif)
+
 ### TRIPLE_PANEL_VERTICAL
 Window with three panels. The configuration of the panels is vertically.
+
+![](../../../../figures/ifcwindowtypepartitioningenum-fig04.gif)
 
 ### TRIPLE_PANEL_BOTTOM
 Window with three panels. The configuration of two panels is vertically and the
 third one is horizontally at the bottom.
 
+![](../../../../figures/ifcwindowtypepartitioningenum-fig06.gif)
+
 ### TRIPLE_PANEL_TOP
 Window with three panels. The configuration of two panels is vertically and the
 third one is horizontally at the top.
+
+![](../../../../figures/ifcwindowtypepartitioningenum-fig07.gif)
 
 ### TRIPLE_PANEL_LEFT
 Window with three panels. The configuration of two panels is horizontally and the
 third one is vertically at the left hand side.
 
+![](../../../../figures/ifcwindowtypepartitioningenum-fig08.gif)
+
 ### TRIPLE_PANEL_RIGHT
 Window with three panels. The configuration of two panels is horizontally and the
 third one is vertically at the right hand side.
 
+![](../../../../figures/ifcwindowtypepartitioningenum-fig09.gif)
+
 ### TRIPLE_PANEL_HORIZONTAL
 Window with three panels. The configuration of the panels is horizontally.
+
+![](../../../../figures/ifcwindowtypepartitioningenum-fig05.gif)
 
 ### USERDEFINED
 User defined operation type.

@@ -15,78 +15,57 @@ For better control of the hatching appearance, when using hatch lines with other
 { .deprecated}
 > DEPRECATION&nbsp; The use of _PointOfReferenceHatchLine_ is deprecated.
 
-<small>Figure 1 illustrates hatch attributes.</small>
+![hatch example 1](../../../../figures/ifcfillareastylehatching_fig1.gif)
 
-<table>
-<tr>
-<td>
-<table border="0" cellpadding="2" cellspacing="2" width="100%">
-<tbody>
-<tr>
-<td align="left" valign="top" width="280"><img src="../../../../figures/ifcfillareastylehatching_fig1.gif" alt="hatch example 1"></td>
-<td align="left" valign="top"><small><u>Example 1</u><br>
-This example shows simple hatching given by using a curve font "continuous" at <em>HatchLineAppearance</em>.<br>
-<br>
-The distance of hatch lines is given by a positive length measure. The angle (here 45' if measures in degree) is provided by <em>HatchLineAngle</em>.<br>
-<br>
-The <em>PatternStart</em> is set to NIL ($) in this example.</small></td>
-<td align="left" valign="top" width="280"> <img src="../../../../figures/ifcfillareastylehatching_fig2.gif" alt="hatch example 2"></td>
-<td align="left" valign="top"><small><u>Example 2</u><br>
-This shows hatching from example 1 with using a different curve font at <em>HatchLineAppearance</em>.<br>
-<br></small> <small>The distance of hatch lines is given by a positive length
-measure, therefore the font pattern start is at a point at the next hatch line
-given by a vector being perpendicular to the point of origin at the reference
-hatch line.<br>
-<br></small> <small>The <em>PatternStart</em> is set to NIL ($) in this
-example.</small></td>
-</tr>
-<tr>
-<td width="280"><img src="../../../../figures/ifcfillareastylehatching_fig3.gif" alt="hatch example 3"></td>
-<td align="left" valign="top"><small><u>Example 3</u><br>
-This example uses hatching from example 2 with a vector to determine the pattern start of the next hatch lines.<br>
-<br>
-The pattern start is the beginning of the first visual curve font pattern segment at <em>IfcCurveFont.CurveFont</em>.<br>
-<br></small> <small>The <em>PatternStart</em> is set to NIL ($) in this
-example.</small><br></td>
-<td width="280"><img src="../../../../figures/ifcfillareastylehatching_fig4.gif" alt="hatch example 4"></td>
-<td align="left" valign="top"><small><u>Example 4</u><br>
-This example uses hatching from example 3 where the pattern start is offset
-from the point of origin at the reference hatch line. That is, the first
-visible curve font pattern segment now does not start at the point of origin at
-the reference hatch line.</small><br>
-<small><br></small></td>
-</tr>
-<tr>
-<td><img src="../../../../figures/ifcfillareastylehatching_fig5.gif" alt="hatch example 5"></td>
-<td align="left" valign="top"><small><u>Example 5</u><br>
-This example uses hatching from example 4 where the hatch pattern is shifted
-against the underlying coordinate system.<br>
-<br>
-The point that is mapped to the insertion point of the
-<em>IfcAnnotationFillAreaOccurrence</em> now has an X and Y offset from the
-start of the reference hatch line. That is, the reference hatch line now does
-not go through the insertion point of the hatching.<br>
-<br>
-<br>
-<br></small></td>
-<td valign="top"><img src="../../../../figures/ifcfillareastylehatching_fig6.gif" alt="fig 6"></td>
-<td valign="top"><small><u>Example 6</u><br>
-This example shows use of <em>IfcFillAreaStyleHatching</em> attributes for two <em>IfcFillAreaStyleHatching</em>'s within one <em>IfcFillAreaStyle</em>.<br>
-<br>
-Note that the <em>PatternStart</em> now displaces both the reference hatch line from the point of origin and the start of the curve pattern. This can be used
-in cases when more than one <em>IfcFillAreaStyleHatching</em> is used in an <em>IfcFillAreaStyle</em> in order to place rows of hatch lines with an offset
-from each other.</small></td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-<tr>
-<td>
-<p class="figure">Figure 1 &mdash; Fill area style hatching</p>
-</td>
-</tr>
-</table>
+Figure 1 &mdash; Example 1
+
+Figure 1 shows simple hatching given by using a curve font "continuous" at <em>HatchLineAppearance</em>.
+
+The distance of hatch lines is given by a positive length measure. The angle (here 45' if measures in degree) is provided by <em>HatchLineAngle</em>.
+
+The <em>PatternStart</em> is set to NIL ($) in this example.
+
+![hatch example 2](../../../../figures/ifcfillareastylehatching_fig2.gif)
+
+Figure 2 &mdash; Example 2
+
+Figure 2 shows hatching from example 1 with using a different curve font at <em>HatchLineAppearance</em>.
+
+The distance of hatch lines is given by a positive length measure, therefore the font pattern start is at a point at the next hatch line given by a vector being perpendicular to the point of origin at the reference hatch line.
+
+The <em>PatternStart</em> is set to NIL ($) in this example.
+
+![hatch example 3](../../../../figures/ifcfillareastylehatching_fig3.gif)
+
+Figure 3 &mdash; Example 3
+
+Figure 3 uses hatching from example 2 with a vector to determine the pattern start of the next hatch lines.
+
+The pattern start is the beginning of the first visual curve font pattern segment at <em>IfcCurveFont.CurveFont</em>.
+
+The <em>PatternStart</em> is set to NIL ($) in this example.
+
+![hatch example 4](../../../../figures/ifcfillareastylehatching_fig4.gif)
+
+Figure 4 &mdash; Example 4
+
+Figure 4 uses hatching from example 3 where the pattern start is offset from the point of origin at the reference hatch line. That is, the first visible curve font pattern segment now does not start at the point of origin at the reference hatch line.
+
+![hatch example 5](../../../../figures/ifcfillareastylehatching_fig5.gif)
+
+Figure 5 &mdash; Example 5
+
+This example uses hatching from example 4 where the hatch pattern is shifted against the underlying coordinate system.
+
+The point that is mapped to the insertion point of the <em>IfcAnnotationFillAreaOccurrence</em> now has an X and Y offset from the start of the reference hatch line. That is, the reference hatch line now does not go through the insertion point of the hatching.
+
+![fig 6](../../../../figures/ifcfillareastylehatching_fig6.gif)
+
+Figure 6 &mdash; Example 6
+
+This example shows use of <em>IfcFillAreaStyleHatching</em> attributes for two <em>IfcFillAreaStyleHatching</em>'s within one <em>IfcFillAreaStyle</em>.
+
+Note that the <em>PatternStart</em> now displaces both the reference hatch line from the point of origin and the start of the curve pattern. This can be used in cases when more than one <em>IfcFillAreaStyleHatching</em> is used in an <em>IfcFillAreaStyle</em> in order to place rows of hatch lines with an offset from each other.
 
 > NOTE&nbsp; Entity adapted from **fill_area_style_hatching** defined in ISO10303-46
 

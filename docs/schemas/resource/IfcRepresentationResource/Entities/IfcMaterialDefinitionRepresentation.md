@@ -22,25 +22,11 @@ The _IfcMaterialDefinitionRepresentation_ can apply
 { .use-head}
 Use definition
 
-<table border="0" cellpadding="0" cellspacing="0" summary="use diagram">
-      <tr>
-        <td valign="top">
-          <img src="../../../../figures/ifcmaterialdefinitionrepresentation_01.png" alt="use diagram" border="0">
-        </td>
-	<td>As shown in Figure 1, the presentation assignment can be
-      specific to a representation context by adding one and more
-      <em>IfcStyledRepresentation</em>'s. Each of them includes a
-      single <em>IfcStyledItem</em> with exactly zero or one style
-      for either curve, fill area, surface, text or symbol style
-      that is applicable.</td>
-      </tr>
-      <tr>
-        <td>
-          <p class="figure">Figure 1 &mdash; Material definition representation</p>
-        </td>
-	<td>&nbsp;</td>
-      </tr>
-    </table>
+![use diagram](../../../../figures/ifcmaterialdefinitionrepresentation_01.png)
+
+Figure 1 &mdash; Material definition representation
+
+As shown in Figure 1, the presentation assignment can be specific to a representation context by adding one and more <em>IfcStyledRepresentation</em>'s. Each of them includes a single <em>IfcStyledItem</em> with exactly zero or one style for either curve, fill area, surface, text or symbol style that is applicable.
 
 ## Attributes
 

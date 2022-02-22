@@ -4,11 +4,11 @@ The _IfcIndexedPolygonalFace_ is a compact representation of a planar face being
 
 Figure 1 shows an _IfcIndexedPolygonalFace_ at an _IfcPolygonalFaceSet_ not using _PnIndex_ (the default).
 
-!["IfcIndexedPolygonalFace not using PnIndex"](../../../../figures/ifcindexedpolygonalface_01.png "Figure 1 &mdash; Polygonal face geometry provided by indices into a point list")
+![IfcIndexedPolygonalFace not using PnIndex](../../../../figures/ifcindexedpolygonalface_01.png "Figure 1 &mdash; Polygonal face geometry provided by indices into a point list")
 
 Figure 2 shows an _IfcIndexedPolygonalFace_ at an _IfcPolygonalFaceSet_ using _PnIndex_.
 
-!["IfcIndexedPolygonalFace using PnIndex"](../../../../figures/ifcindexedpolygonalface_02.png "Figure 2 &mdash; Polygonal face geometry provided by indices into an PN Index")
+![IfcIndexedPolygonalFace using PnIndex](../../../../figures/ifcindexedpolygonalface_02.png "Figure 2 &mdash; Polygonal face geometry provided by indices into an PN Index")
 
 > HISTORY  New entity in IFC4 Addendum 2.
 

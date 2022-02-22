@@ -13,7 +13,7 @@ The attribute _Faces_ refers to a list of _IfcIndexedPolygonalFace_'s having an 
 
 Depending on the provision of _PnIndex_ the indices point either directly into the _IfcCartesianPointList3D_ referenced by _Coordinates_ defined at the supertype _IfcTessellatedFaceSet_, or they point into the _PnIndex_ where the integer values at that position provides the location of the coordinate values within the _IfcCartesianPointList3D_. See Figure 1 for the handling of point index.
 
-!["PnIndex"](../../../../figures/ifcpolygonalfaceset_01.png "Figure 1 &mdash; Use of _PnIndex_")
+![PnIndex](../../../../figures/ifcpolygonalfaceset_01.png "Figure 1 &mdash; Use of _PnIndex_")
 
 > NOTE  If the _IfcPolygonalFaceSet_ is closed, the face vertices of the _IfcIndexedPolygonalFace_'s shall connect counterclock-wise when seen from the outside of the closed shell to guarantee that the face normal points away from the material of the shell. Inner loops, provided by the _IfcIndexedPolygonalFaceWithVoids_, shall connect clock-wise.
 

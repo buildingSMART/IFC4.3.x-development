@@ -8,7 +8,7 @@
 
 { .extDef}
 > NOTE  Definition according to ISO/IEC 14772-1:1997:
-> The Spot light node defines a light source that emits light from a specific point along a specific direction vector and constrained within a solid angle. Spot lights may illuminate geometry nodes that respond to light sources and intersect the solid angle defined by the Spot light. Spot light nodes are specified in the local coordinate system and are affected by ancestors' transformations. Figure 1 shows the definition of spot light. !["spot light"](../../../../figures/ifclightsourcespot_fig1.gif "Figure 1 &mdash; Light source spot")
+> The Spot light node defines a light source that emits light from a specific point along a specific direction vector and constrained within a solid angle. Spot lights may illuminate geometry nodes that respond to light sources and intersect the solid angle defined by the Spot light. Spot light nodes are specified in the local coordinate system and are affected by ancestors' transformations. Figure 1 shows the definition of spot light. ![spot light](../../../../figures/ifclightsourcespot_fig1.gif "Figure 1 &mdash; Light source spot")
 
 > NOTE  Corresponding ISO 10303 entity: light_source_spot. Please refer to ISO/IS 10303-46:1994, p. 33 for the final definition of the formal standard.
 

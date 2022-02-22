@@ -16,7 +16,7 @@ Figure 1 illustrates parameters of the C-shape profile definition. The parameter
 
 By using offsets of the position location, the parameterized profile can be positioned centric (using x,y offsets = 0.), or at any position relative to the profile. The parameterized profile is defined by a set of parameter attributes. In the illustrated example, the 'CentreOfGravityInX' property in _IfcExtendedProfileProperties_, if provided, is negative.
 
-!["C-shape profile"](../../../../figures/ifccshapeprofiledef.gif "Figure 1 &mdash; C-shape profile")
+![C-shape profile](../../../../figures/ifccshapeprofiledef.gif "Figure 1 &mdash; C-shape profile")
 
 ## Attributes
 

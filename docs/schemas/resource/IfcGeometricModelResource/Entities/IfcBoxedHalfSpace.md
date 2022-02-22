@@ -4,7 +4,7 @@ The _IfcBoxedHalfSpace_ is used (as its supertype _IfcHalfSpaceSolid_) only with
 
 The purpose of the attribute _Enclosure_ is to provide a search box for the other operand in the Boolean operation. It shall be sufficiently large to fully enclose the resulting solid after the Boolean operation with the half space. It however does not alter the final result. The result of the Boolean operation would be the same, as if executed by the supertype _IfcHalfSpaceSolid_. See Figure 1 below.
 
-!["correct use of enclosure"](../../../../figures/ifcboxedhalfspace_01.png "Figure 1 &mdash; Boxed half space operands")
+![correct use of enclosure](../../../../figures/ifcboxedhalfspace_01.png "Figure 1 &mdash; Boxed half space operands")
 
 The _IfcBoundingBox_ that provides the enclosure is given for the convenience of the receiving application to enable the use of size box comparison for efficiency (for example, to check first whether size boxes intersect, if not no calculations has to be done to check whether the solids of the entities intersect).
 

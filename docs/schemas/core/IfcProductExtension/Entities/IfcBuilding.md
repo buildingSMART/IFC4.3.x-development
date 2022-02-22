@@ -16,7 +16,7 @@ The _IfcBuilding_ is used to build the spatial structure of a building (that ser
 
 > NOTE  Detailed requirements on mandatory element containment and placement structure relationships are given in view definitions and implementer agreements.
 
-!["A building storey as part of a spatial structure"](../../../../figures/ifcbuilding-spatialstructure.png)
+![A building storey as part of a spatial structure](../../../../figures/ifcbuilding-spatialstructure.png)
 
 
 Figure 1 &mdash; Building composition

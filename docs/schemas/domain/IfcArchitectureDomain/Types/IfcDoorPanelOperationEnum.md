@@ -4,7 +4,7 @@ This enumeration defines the basic ways how individual door panels operate as sh
 
 The opening direction of the door panels is given by the local placement of the _IfcDoor_. The positive y-axis determines the direction as shown in Figure 2.
 
-!["panel direction"](../../../../figures/ifcdoorpaneloperationenum-fig10.gif "Figure 2 &mdash; Door panel operations")
+![panel direction](../../../../figures/ifcdoorpaneloperationenum-fig10.gif "Figure 2 &mdash; Door panel operations")
 
 > NOTE  Figures (symbolic representation) depend on the national building code. These figures/ are only shown as illustrations
 

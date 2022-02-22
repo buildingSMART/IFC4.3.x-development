@@ -6,7 +6,7 @@ An _IfcSeamCurve_ is a 3-dimensional curve that has additional representations p
 
 Figure 1 shows an instance diagram explaining the use of _IfcSeamCurve_ as a boundary curve of an _IfcCylindricalSurface_.
 
-!["seam curve usage"](../../../../figures/ifcseamcurve_01.png "Figure 1 &mdash; use of a seam curve bounding a cylindrical surface")
+![seam curve usage](../../../../figures/ifcseamcurve_01.png "Figure 1 &mdash; use of a seam curve bounding a cylindrical surface")
 
 { .extDef}
 > NOTE  Definition according to ISO/CD 10303-42:1992

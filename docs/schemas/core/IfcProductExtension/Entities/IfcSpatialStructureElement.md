@@ -30,7 +30,7 @@ The subtypes of _IfcSpatialStructureElement_ relate to other elements and system
 
 The subtypes of _IfcSpatialStructureElement_ relate to each other by using the _IfcRelAggregates_ relationship to build the project spatial structure. Figure 1 shows the use of _IfcRelAggregates_ to establish a spatial structure including site, building, building section and storey. More information is provided at the level of the subtypes.
 
-!["fig1"](../../../../figures/ifcspatialstructureelement-spatialstructure.png "Figure 1 &mdash; Spatial structure element composition")
+![fig1](../../../../figures/ifcspatialstructureelement-spatialstructure.png "Figure 1 &mdash; Spatial structure element composition")
 
 > HISTORY  New entity in IFC2x.
 

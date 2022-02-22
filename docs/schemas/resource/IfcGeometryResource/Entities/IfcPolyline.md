@@ -4,7 +4,7 @@ The _IfcPolyline_ is a bounded curve with only linear segments defined by a list
 
 > EXAMPLE  Figure 1 illustrates a bounded _IfcPolyline_ and shows the parametric length of each segment and of the total polyline.
 
-!["polyline examples"](../../../../figures/ifcpolyline-fig1.png "Figure 1 &mdash; Bounded _IfcPolyline_ with parametric length")
+![polyline examples](../../../../figures/ifcpolyline-fig1.png "Figure 1 &mdash; Bounded _IfcPolyline_ with parametric length")
 
 { .extDef}
 > NOTE  Definition according to ISO/CD 10303-42:1992

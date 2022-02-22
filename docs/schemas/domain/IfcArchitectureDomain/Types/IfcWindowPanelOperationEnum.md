@@ -10,7 +10,7 @@ Note:
 2. Figures (symbolic representation) depend on the national building code
 3. These figures/ are only shown as illustrations
 
-!["opening direction"](../../../../figures/ifcwindowpaneloperationenum-fig13.gif "Figure 2 &mdash; Window panel directions")
+![opening direction](../../../../figures/ifcwindowpaneloperationenum-fig13.gif "Figure 2 &mdash; Window panel directions")
 
 > HISTORY  New enumeration in IFC2.0.
 

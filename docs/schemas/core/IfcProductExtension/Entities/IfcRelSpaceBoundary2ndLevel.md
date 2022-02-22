@@ -28,7 +28,7 @@ The attribute _CorrespondingBoundary_ with inverse _Corresponds_ is provided to 
 
 > NOTE  Only 2nd level space boundaries of type A have corresponding boundaries.
 
-!["IfcRelSpaceBoundary2ndLevel"](../../../../figures/ifcrelspaceboundary2ndlevel-fig1.png "Figure 1 &mdash; Space boundary second level relationships")
+![IfcRelSpaceBoundary2ndLevel](../../../../figures/ifcrelspaceboundary2ndlevel-fig1.png "Figure 1 &mdash; Space boundary second level relationships")
 
 { .use-head}
 Geometry Use Definitions

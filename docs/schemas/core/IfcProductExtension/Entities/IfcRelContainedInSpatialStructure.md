@@ -21,7 +21,7 @@ Occurrences of the same element type can be assigned to different spatial struct
 
 Figure 1 shows the use of _IfcRelContainedInSpatialStructure_ to assign a stair and two walls to two different levels within the spatial structure.
 
-!["fig1"](../../../../figures/ifcrelcontainedinspatialstructure-fig1.png "Figure 1 &mdash; Relationship for spatial structure containment")
+![fig1](../../../../figures/ifcrelcontainedinspatialstructure-fig1.png "Figure 1 &mdash; Relationship for spatial structure containment")
 
 > HISTORY  New entity in IFC2x.
 

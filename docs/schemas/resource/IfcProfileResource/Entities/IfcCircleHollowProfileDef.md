@@ -10,7 +10,7 @@ Figure 1 illustrates parameters of the circular hollow profile definition. The p
 
 By using offsets of the position location, the parameterized profile can be positioned centric (using x,y offsets = 0.), or at any position relative to the profile. Explicit coordinate offsets are used to define cardinal points (for example, upper-left bound). The parameterized profile is defined by a set of parameter attributes.
 
-!["CHS-shape profile"](../../../../figures/ifccirclehollowprofiledef.gif "Figure 1 &mdash; Circle hollow profile")
+![CHS-shape profile](../../../../figures/ifccirclehollowprofiledef.gif "Figure 1 &mdash; Circle hollow profile")
 
 ## Attributes
 

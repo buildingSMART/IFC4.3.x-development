@@ -13,7 +13,7 @@ Parts within the decomposition are usually be of type:
 
 > EXAMPLE Elemented walls may extend the concepts of standard walls with the following features, as shown in Figure 1, including the _IfcRelConnectsWithRealizingElements_ relationship to define fasteners and accessories.
 
-!["voiding"](../../../../figures/ifcwallelementedcase-partitioning.png "Figure 1 &mdash; Wall elemented case")
+![voiding](../../../../figures/ifcwallelementedcase-partitioning.png "Figure 1 &mdash; Wall elemented case")
 
 > HISTORY  New entity in IFC4.
 

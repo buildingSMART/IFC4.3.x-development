@@ -8,7 +8,7 @@ The _IfcRightCircularCone_ is a Construction Solid Geometry (CSG) 3D primitive. 
 
 Figure 1 illustrates geometric parameters of the cone. The cone is positioned within its own placement coordinate system. The origin is the center of the bottom circular disk, that lies in the XY plane. The apex lies on the positive z axis at [0, 0, _Height_].
 
-!["cone1"](../../../../figures/ifcrightcircularcone-layout1.png "Figure 1 &mdash; Right circular cone geometry")
+![cone1](../../../../figures/ifcrightcircularcone-layout1.png "Figure 1 &mdash; Right circular cone geometry")
 
 > NOTE  Entity adapted from **right_circular_cone** defined in ISO 10303-42.
 

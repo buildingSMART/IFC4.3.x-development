@@ -4,7 +4,7 @@ An _IfcCompositeCurve_ is a continuous curve composed of curve segments.
 
 Figure 1 illustrates an example of a composite curve.
 
-!["formula"](../../../../figures/ifccompositecurve.png "Figure 1 &mdash; Composite curve")
+![formula](../../../../figures/ifccompositecurve.png "Figure 1 &mdash; Composite curve")
 
 Consider an _IfcCompositeCurve_ having line segment and an arc segment. The line should be parameterized:
 

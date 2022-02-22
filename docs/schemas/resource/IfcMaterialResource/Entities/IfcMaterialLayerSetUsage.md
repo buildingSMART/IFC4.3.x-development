@@ -23,7 +23,7 @@ Figure 1 shows an example of the use of _IfcMaterialLayerSetUsage_ aligned to th
 
 > NOTE  According to the _IfcWall_ material use definition the _LayerSetDirection_ for _IfcWall_ is always AXIS2 (that is, along the y-axis), as shown in this example.
 
-!["Mls usage"](../../../../figures/ifcmateriallayersetusage_wall-01.png "Figure 1 &mdash; Material layer set usage for wall")
+![Mls usage](../../../../figures/ifcmateriallayersetusage_wall-01.png "Figure 1 &mdash; Material layer set usage for wall")
 
 Figure 2 shows an example of the use of _IfcMaterialLayerSetUsage_ aligned to a slab.
 
@@ -31,7 +31,7 @@ Figure 2 shows an example of the use of _IfcMaterialLayerSetUsage_ aligned to a 
 
 > NOTE  According to the _IfcSlab_ material use definition the _LayerSetDirection_ for _IfcSlab_ is always AXIS3 (that is, along the z-axis).
 
-!["Mls usage"](../../../../figures/ifcmateriallayersetusage_slab-01.png "Figure 2 &mdash; Material layer set usage for slab")
+![Mls usage](../../../../figures/ifcmateriallayersetusage_slab-01.png "Figure 2 &mdash; Material layer set usage for slab")
 
 Figure 3 shows an example of the use of _IfcMaterialLayerSetUsage_ aligned to a roof slab with non-perpendicular extrusion.
 
@@ -39,7 +39,7 @@ Figure 3 shows an example of the use of _IfcMaterialLayerSetUsage_ aligned to a 
 perpendicularly, even if the extrusion direction is not perpendicular. Therefore the total material layer thickness is
 not equal to the extrusion depth of the geometry.</small>
 
-!["Mls usage"](../../../../figures/ifcmateriallayersetusage_roofslab-01.png "Figure 3 &mdash; Material layer set usage for roof slab")
+![Mls usage](../../../../figures/ifcmateriallayersetusage_roofslab-01.png "Figure 3 &mdash; Material layer set usage for roof slab")
 
 ## Attributes
 

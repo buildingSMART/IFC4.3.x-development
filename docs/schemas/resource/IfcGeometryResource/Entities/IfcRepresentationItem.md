@@ -14,13 +14,13 @@ Figure 1 shows an instance diagram explaining the use of _IfcStyledItem_ and _If
 
 > EXAMPLE  The assignment of style information by a styled item and a presentation layer with style. Since the presentation styles are different, _IfcCurveStyle_ and _IfcSurfaceStyle_, both are applied to the geometric representation item.
 
-!["styles assigned by layer and styled item"](../../../../figures/ifcrepresentationitem_style-1.png "Figure 1 &mdash; Representation item style")
+![styles assigned by layer and styled item](../../../../figures/ifcrepresentationitem_style-1.png "Figure 1 &mdash; Representation item style")
 
 Figure 2 shows in instance diagram explaining the override of _IfcPresentationLayerWithStyle_ by _IfcStyledItem_ to apply presentation styles.
 
 > EXAMPLE  The assignment of style information by a styled item and a presentation layer with style. Since the presentation styles for curve style are aprovided by both, the _IfcCurveStyle_ provided by the _IfcStyledItem_ overrides the _IfcCurveStyle_ provided by the _IfcPresentationLayerWithStyle_
 
-!["styles assigned by layer and styled item"](../../../../figures/ifcrepresentationitem_style-2.png "Figure 2 &mdash; Representation item style override")
+![styles assigned by layer and styled item](../../../../figures/ifcrepresentationitem_style-2.png "Figure 2 &mdash; Representation item style override")
 
 > NOTE  Entity adapted from **representation_map** defined in ISO 10303-43.
 

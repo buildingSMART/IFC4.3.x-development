@@ -18,7 +18,7 @@ Figure 1 illustrates the arbitrary closed profile definition with voids. The _Ou
 
 or in case of sectioned spines the xy plane of each list member of _IfcSectionedSpine.CrossSectionPositions_. The _OuterCurve_ attribute defines a two dimensional closed bounded curve, the _InnerCurves_ define a set of two dimensional closed bounded curves.
 
-!["arbitrary profile with inner boundaries"](../../../../figures/ifcarbitraryprofiledef-layout2.gif "Figure 1 &mdash; Arbitrary profile with voids")
+![arbitrary profile with inner boundaries](../../../../figures/ifcarbitraryprofiledef-layout2.gif "Figure 1 &mdash; Arbitrary profile with voids")
 
 ## Attributes
 

@@ -47,13 +47,13 @@ The parameters, which define the shape of the _IfcWindow_, are given at the _Ifc
 
 Figure 1 illustrates the insertion of a window into the _IfcOpeningElement_ by creating an instance of _IfcWindow_ with _PartitioningType = DoublePanelHorizontal_. The parameters _OverallHeight_ and _OverallWidth_ show the extent of the window in the positive Z and X axis of the local placement of the window. The lining and the transom are created by the given parameters.
 
-!["window 1"](../../../../figures/ifcwindow-layout1.gif)
+![window 1](../../../../figures/ifcwindow-layout1.gif)
 
 Figure 1 &mdash; Window placement
 
 Figure 2 illustrates the final window (DoublePanelHorizontal) with first panel having _PanelPosition = TOP_, _OperationType = BOTTOMHUNG_ and second panel having _PanelPosition = BOTTOM_ and _OperationType = TILTANDTURNLEFTHAND_.
 
-!["window 2"](../../../../figures/ifcwindow-layout2.gif)
+![window 2](../../../../figures/ifcwindow-layout2.gif)
 
 Figure 2 &mdash; Window planes
 

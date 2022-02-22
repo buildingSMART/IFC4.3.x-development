@@ -20,7 +20,7 @@ As shown in Figure 1, the attribute _ParentBoundary_ with inverse _InnerBoundari
 
 > NOTE  The space boundary of the parent is not cut by the inner boundary - both overlap.
 
-!["IfcRelSpaceBoundary1stLevel"](../../../../figures/ifcrelspaceboundary1stlevel-fig1.png "Figure 1 &mdash; Space boundary first level relationships")
+![IfcRelSpaceBoundary1stLevel](../../../../figures/ifcrelspaceboundary1stlevel-fig1.png "Figure 1 &mdash; Space boundary first level relationships")
 
 { .use-head}
 Geometry Use Definitions

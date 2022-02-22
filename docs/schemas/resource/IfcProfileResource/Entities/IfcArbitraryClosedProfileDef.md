@@ -17,7 +17,7 @@ Figure 1 illustrates the arbitrary closed profile definition. The _OuterCurve_ i
 
 or in case of sectioned spines the xy plane of each list member of _IfcSectionedSpine.CrossSectionPositions_. The _OuterCurve_ attribute defines a two dimensional closed bounded curve.
 
-!["arbitrary profile without boundaries"](../../../../figures/ifcarbitraryprofiledef-layout1.gif "Figure 1 &mdash; Arbitrary closed profile")
+![arbitrary profile without boundaries](../../../../figures/ifcarbitraryprofiledef-layout1.gif "Figure 1 &mdash; Arbitrary closed profile")
 
 ## Attributes
 

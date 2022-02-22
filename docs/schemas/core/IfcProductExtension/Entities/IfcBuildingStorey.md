@@ -16,7 +16,7 @@ Figure 1 shows the _IfcBuildingStorey_ as part of the spatial structure. It also
 
 > NOTE  Detailed requirements on mandatory element containment and placement structure relationships are given in view definitions and implementer agreements.
 
-!["IfcBuildingStorey as part of a spatial structure"](../../../../figures/ifcbuildingstorey-spatialstructure.png "Figure 1 &mdash; Building storey composition")
+![IfcBuildingStorey as part of a spatial structure](../../../../figures/ifcbuildingstorey-spatialstructure.png "Figure 1 &mdash; Building storey composition")
 
 Figure 2 describes the heights and elevations of the _IfcBuildingStorey_.
 
@@ -24,7 +24,7 @@ Figure 2 describes the heights and elevations of the _IfcBuildingStorey_.
 * net height of storey, also referred to as total height or system height (top of construction slab to top of construction slab above): provided by BaseQuantity with Name="GrossHeight"
 * net height of storey (top of construction slab to bottom of construction slab above): provided by BaseQuantity with Name="NetHeight"
 
-!["space heights"](../../../../figures/ifcbuildingstorey_heights.png "Figure 2 &mdash; Building storey elevations")
+![space heights](../../../../figures/ifcbuildingstorey_heights.png "Figure 2 &mdash; Building storey elevations")
 
 > HISTORY  New entity in IFC1.0
 

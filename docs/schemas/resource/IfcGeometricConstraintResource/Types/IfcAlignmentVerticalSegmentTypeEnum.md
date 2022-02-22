@@ -72,17 +72,17 @@ Vertical alignment segment where the derivative of vertical angle with respect t
 <br/>
 
 **Vertical Curvature**
-!["Vertical circular arc segment"](../../figures/ifcalignmentverticalsegmenttypeenum-arc_curvature.png "Figure 1 &mdash; Curvature for vertical circular arc segment")
+![Vertical circular arc segment](../../figures/ifcalignmentverticalsegmenttypeenum-arc_curvature.png "Figure 1 &mdash; Curvature for vertical circular arc segment")
 
 <br/>
 
 **Segment length**
-!["Vertical circular arc segment"](../../figures/ifcalignmentverticalsegmenttypeenum-arc_length.png "Figure 2 &mdash; Length for vertical circular arc segment")
+![Vertical circular arc segment](../../figures/ifcalignmentverticalsegmenttypeenum-arc_length.png "Figure 2 &mdash; Length for vertical circular arc segment")
 
 <br/>
 
 **Distance between point on segment to tangent**
-!["Vertical circular arc segment"](../../figures/ifcalignmentverticalsegmenttypeenum-arc_z_s.png "Figure 3 &mdash; Distance of point an vertical circular arc segment to tangent")
+![Vertical circular arc segment](../../figures/ifcalignmentverticalsegmenttypeenum-arc_z_s.png "Figure 3 &mdash; Distance of point an vertical circular arc segment to tangent")
 
 ### PARABOLICARC
 Vertical alignment segment where the derivative of gradient with respect to distance along is constant.
@@ -90,17 +90,17 @@ Vertical alignment segment where the derivative of gradient with respect to dist
 
 **general equation of the parabolic arc segment**
 
-!["Vertical parabolic arc segment"](../../figures/ifcalignmentverticalsegmenttypeenum-parabola1.png "Figure 1 &mdash; general equation of the parabolic arc segment")
+![Vertical parabolic arc segment](../../figures/ifcalignmentverticalsegmenttypeenum-parabola1.png "Figure 1 &mdash; general equation of the parabolic arc segment")
 
 **gradient (slope) of this curve at any point (first derivative)**
 
-!["Vertical parabolic arc segment"](../../figures/ifcalignmentverticalsegmenttypeenum-parabola2.png "Figure 2 &mdash; gradient (slope)  of the parabolic arc segment at any point")
+![Vertical parabolic arc segment](../../figures/ifcalignmentverticalsegmenttypeenum-parabola2.png "Figure 2 &mdash; gradient (slope)  of the parabolic arc segment at any point")
 
 **variation of curvature**
 
-!["Vertical parabolic arc segment"](../../figures/ifcalignmentverticalsegmenttypeenum-parabola3.png "Figure 3 &mdash; the rate of change of gradient of the parabolic arc segment is constant")
+![Vertical parabolic arc segment](../../figures/ifcalignmentverticalsegmenttypeenum-parabola3.png "Figure 3 &mdash; the rate of change of gradient of the parabolic arc segment is constant")
 
 ### CLOTHOID
 Vertical alignment segment where the derivative of vertical angle with respect to sloping length along the track (3D length) obeys a linear change.
 
-!["Vertical clothoid segment"](../../figures/ifcalignmentverticalsegmenttypeenum-clothoid_curvature.png "Figure 1 &mdash; curvature equation of the vertical clothoid segment")
+![Vertical clothoid segment](../../figures/ifcalignmentverticalsegmenttypeenum-clothoid_curvature.png "Figure 1 &mdash; curvature equation of the vertical clothoid segment")

@@ -32,7 +32,7 @@ Figure 1 illustrates use of _IfcStyledItem_ for the two usage examples:
 
 > NOTE  The new _IfcStyleAssignmentSelect_ allows the direct assignment styles, such as _IfcCurveStyle_, _IfcSurfaceStyle_ without using the intermediate _IfcPresentationStyleAssignment_
 
-!["2x4 example"](../../../../figures/ifcstyleditem_fig-1.png "Figure 1 &mdash; Styled item")
+![2x4 example](../../../../figures/ifcstyleditem_fig-1.png "Figure 1 &mdash; Styled item")
 
 ## Attributes
 

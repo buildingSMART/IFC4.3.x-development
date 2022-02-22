@@ -1794,7 +1794,14 @@ def sandcastle():
     return render_template("sandcastle.html", base=base, html=html, md=md)
 
 
-ifcre = re.compile(r"(?<!=\")(Ifc|Pset_|Qto_)\w+(?!(\">|.ht|.png|.jp|.gif|</a|</h|.md| - IFC4.3))")
+# Are you ready for regex golfing? Here's a challenge.
+# Y: This is a IfcClass in a paragraph.
+# Y: It may IfcClass-concatenated.
+# N: It may be in an <img alt="IfcClass tag or a" src="IfcSite-url.png">
+# N: It may already be in a <a href="IfcSite">IfcSite</a>
+# N: Or reference an IfcSite.png arbitrarily.
+# N: It may be in the <title>IfcSite - IFC4.3.x Documentation</title>
+ifcre = re.compile(r"(?<!(=\"))(?<!(figures/))(Ifc|Pset_|Qto_)\w+(?!(\">|.ht|.png|.jp|.gif|</a|</h|.md| - IFC4.3))")
 
 try:
     import os

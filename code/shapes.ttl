@@ -297,6 +297,98 @@ ex:SimpleType a sh:SPARQLTarget;
         }
     """
     .
+    
+ex:PropertySetAssociation a sh:SPARQLTarget;
+    sh:select """
+        PREFIX ex:  <http://example.org/ifc43Shapes/>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+        PREFIX xmi: <http://schema.omg.org/spec/XMI/2.1/>
+        PREFIX custom: <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/>
+
+        SELECT ?this
+        WHERE {
+            ?this xmi:type "uml:AssociationClass" .
+            ?this ex:containedIn ?package .
+            ?package ex:name "PropertySetsforObjects" .
+            
+        }
+    """
+    .
+    
+ex:QuantitySetAssociation a sh:SPARQLTarget;
+    sh:select """
+        PREFIX ex:  <http://example.org/ifc43Shapes/>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+        PREFIX xmi: <http://schema.omg.org/spec/XMI/2.1/>
+        PREFIX custom: <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/>
+
+        SELECT ?this
+        WHERE {
+            ?this xmi:type "uml:AssociationClass" .
+            ?this ex:containedIn ?package .
+            ?package ex:name "QuantitySetsforObjects" .
+            
+        }
+    """
+    .
+    
+ex:hasIfcObjectOrPredefinedType a sh:SPARQLTarget;
+    sh:message "The association '{?assocName}' in package '{?packageName}' establishes an invalid relationship to '{?applicableName}'" ;
+    sh:select """
+        PREFIX ex:  <http://example.org/ifc43Shapes/>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+        PREFIX xmi: <http://schema.omg.org/spec/XMI/2.1/>
+        PREFIX custom: <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/>
+
+        SELECT ?this ?assocName ?packageName ?applicableName
+        WHERE {
+            ?this ex:name ?assocName .
+            ?this ex:containedIn/ex:name ?packageName .
+            
+            ?end a ex:memberEnd .
+            ?end ex:containedIn ?this .
+            ?end xmi:idref ?prop .
+            ?type ex:containedIn ?prop .
+            ?type xmi:idref ?applicable .
+            ?applicable ex:name ?applicableName .
+                
+            filter (!regex(?applicableName, "\\\\.")) .
+            
+            FILTER NOT EXISTS {
+                ?applicable rdfs:subClassOf* ?supertype .
+                ?supertype ex:name "IfcObject" .
+            }
+            
+            FILTER NOT EXISTS {
+                {
+                    ?stereo a custom:PSET_TYPEDRIVENOVERRIDE .
+                    ?stereo ex:base_Class ?applicable .
+                } UNION {
+                    ?stereo a custom:PSET_PERFORMANCEDRIVEN .
+                    ?stereo ex:base_Class ?applicable .
+                } UNION {
+                    ?stereo a custom:PSET_OCCURRENCEDRIVEN .
+                    ?stereo ex:base_Class ?applicable .
+                } UNION {
+                    ?stereo a custom:PSET_TYPEDRIVENONLY .
+                    ?stereo ex:base_Class ?applicable .
+                } UNION {
+                    ?stereo a custom:QTO_TYPEDRIVENONLY .
+                    ?stereo ex:base_Class ?applicable .
+                } UNION {
+                    ?stereo a custom:QTO_TYPEDRIVENOVERRIDE .
+                    ?stereo ex:base_Class ?applicable .
+                } UNION {
+                    ?stereo a custom:QTO_OCCURRENCEDRIVEN .
+                    ?stereo ex:base_Class ?applicable .
+                }
+            }
+        }
+    """
+    .
 
 ex:hasApplicableClass a sh:SPARQLConstraint ;
     sh:message "The Property|Quantity Set '{?psetName}' should have at least one applicability" ;
@@ -588,4 +680,14 @@ ex:SimpleType a sh:NodeShape ;
 ex:DefinitionForQuantitySet a sh:NodeShape ;
     sh:target ex:QuantitySet;
     sh:sparql ex:hasResourceDefinition
+    .
+
+ex:IfcObjectAssociationForPropertySetAssoc a sh:NodeShape ;
+    sh:target ex:PropertySetAssociation;
+    sh:sparql ex:hasIfcObjectOrPredefinedType
+    .
+
+ex:IfcObjectAssociationForQuantitySetAssoc a sh:NodeShape ;
+    sh:target ex:QuantitySetAssociation;
+    sh:sparql ex:hasIfcObjectOrPredefinedType
     .

@@ -15,7 +15,7 @@ import markdown
 import append_xmi
 
 from rdflib import Namespace
-from rdflib.namespace import RDF
+from rdflib.namespace import RDF, RDFS
 from rdflib.collection import Collection
 
 import bs4
@@ -131,6 +131,12 @@ if not os.path.exists(os.path.join(tempfile.gettempdir(), "schema.ttl")):
         s = node_mapping[nd]
         
         g.add((s, RDF.type, fqdn(nd.tag)))
+        
+        if nd.child_with_tag("generalization"):
+            # embellish with proper subtype relationship so that we
+            # can use property paths for recursive query in sparql
+            st = nd.child_with_tag("generalization").attributes['general']
+            g.add((s, RDFS.subClassOf, node_mapping[id_to_node[st]]))
             
         for k, v in nd.attributes.items():
             if v in id_to_node:

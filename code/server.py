@@ -615,23 +615,21 @@ class resource_documentation_builder:
             ty_attrs = []
             try:
                 if md_ty:
-                    ty_attrs = list(mdp.markdown_attribute_parser(data=md_ty, heading_name=heading))
+                    ty_attrs = list(mdp.markdown_attribute_parser(data=md_ty, heading_name=heading, as_text=False))
             except:
                 pass
 
             if heading == "Attributes":
                 ty_attr_di = dict(ty_attrs)
                 for a in [k.split(".")[1] for k in R.entity_attributes.keys() if k.startswith(f"{ty}.")][::-1]:
-                    b = ty_attr_di.get(a, "")
+                    content = ty_attr_di.get(a, "")
                     is_fwd, attr_ty = R.entity_attributes[".".join((ty, a))]
-                    content = re.sub("\\b_(\\w+?)_\\b", lambda m: m.group(1), b.strip())
                     attrs.append((ty, a, attr_ty, content))
                     if is_fwd:
                         fwd_attrs.append(a)
             else:
-                for a, b in ty_attrs[::-1]:
+                for a, content in ty_attrs[::-1]:
                     # remove underscored words:
-                    content = re.sub("\\b_(\\w+?)_\\b", lambda m: m.group(1), b.strip())
                     attrs.append((ty, a, content))
             ty = R.entity_supertype.get(ty)
 
@@ -947,6 +945,9 @@ def get_attributes(resource, builder):
                 "number": attr[0],
                 "name": attr[1],
                 "type": attr[2],
+                # @nb we're not really talking about markdown anymore
+                # since the new attribute parser operates on a converted
+                # dom, but it appears to work nonetheless.
                 "description": process_markdown(resource, attr[3]),
                 "is_inverse": not attr[0],
             }

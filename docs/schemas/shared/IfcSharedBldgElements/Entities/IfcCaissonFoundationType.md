@@ -1,3 +1,5 @@
+# IfcCaissonFoundationType
+
 Enumeration defining the Caisson Foundation Types.
 
 ## Attributes

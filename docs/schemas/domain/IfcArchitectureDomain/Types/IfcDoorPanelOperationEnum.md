@@ -16,35 +16,35 @@ The opening direction of the door panels is given by the local placement of the 
 ## Items
 
 ### SWINGING
-
+Swinging:
 ![](../../../../figures/ifcdoorpaneloperationenum-fig01.gif)
 
 ### DOUBLE_ACTING
-
+Doulbe acting:
 ![](../../../../figures/ifcdoorpaneloperationenum-fig02.gif)
 
 ### SLIDING
-
+Sliding:
 ![](../../../../figures/ifcdoorpaneloperationenum-fig03.gif)
 
 ### FOLDING
-
+Folding:
 ![](../../../../figures/ifcdoorpaneloperationenum-fig04.gif)
 
 ### REVOLVING
-
+Revolving:
 ![](../../../../figures/ifcdoorpaneloperationenum-fig05.gif)
 
 ### ROLLINGUP
-
+Rolling up:
 ![](../../../../figures/ifcdoorpaneloperationenum-fig06.gif)
 
 ### FIXEDPANEL
-
+Fixed panel:
 ![](../../../../figures/ifcdoorpaneloperationenum-fig07.gif)
 
 ### USERDEFINED
-
+User defined.
 
 ### NOTDEFINED
-
+Not defined. 

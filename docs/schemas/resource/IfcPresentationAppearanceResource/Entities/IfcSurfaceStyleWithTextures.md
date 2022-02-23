@@ -2,13 +2,6 @@
 
 The entity _IfcSurfaceStyleWithTextures_ allows to include image textures in surface styles. These image textures can be applied repeating across the surface or mapped with a particular scale upon the surface.
 
-The entity _IfcSurfaceStyleWithTextures_ is part of the surface style table for presentation information assigned to surfaces for shading, rendering and lighting with textures. The mapping of the texture onto the surface or the solid is determined by the texture coordinates, in absense of an _IfcTextureCoordinate_ assigned to each surface texture, a default mapping of the texture to the geometric face or surface applies.
-
-Surface textures included in the _IfcSurfaceStyleWithTextures_ are two dimensional map formats. They define 2D images that contain an array of colour values describing the texture. Depending on the number of _IfcSurfaceTextures_ being included in the list of _Textures_ the _IfcSurfaceStyleWithTextures_ either describes a single texture, or a multi texture.
-
-* single texture: a single surface texture is applied to the styled geometric item (entirely or partly) with optional repetition and texture transformation
-* multi texture: two or more surface textures are applied to the styled geometric item (entirely or partly) with optional repetition, texture transformation or texture coordinate mapping being specific for each texture.
-
 { .spec-head}
 Informal Propositions:
 

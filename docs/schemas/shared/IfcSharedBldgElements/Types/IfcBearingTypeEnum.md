@@ -1,3 +1,5 @@
+# IfcBearingTypeEnum
+
 Enumeration of Bearing Types.
 
 ## Items

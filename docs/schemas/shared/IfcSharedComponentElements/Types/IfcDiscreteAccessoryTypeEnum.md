@@ -54,14 +54,13 @@ A track elastic cushion is a kind of layer set on grooved sides of a concrete ba
 A component in the track for sound absorption and may also absorb vibrations. It is often used in combination with slab tracks.
 
 ### POINTMACHINEMOUNTINGDEVICE
-
+Point machine mounting device.
 
 ### POINT_MACHINE_LOCKING_DEVICE
-
+Point machine locking device.
 
 ### RAIL_MECHANICAL_EQUIPMENT
 A rail mechanical equipment is a mechnical equipment installed at railside, like blocking device, speed regulator, bias loaded inspector, track scale or controllable retarder.
-.
 
 ### BIRDPROTECTION
 A device that prevents a sitting down of birds at electrically critical points and thus birds are protected against electrical shocks and disturbances by short circuit are avoided.

@@ -93,7 +93,7 @@ The document information with which objects are associated.
 The document references to which the document applies
 
 ### IsPointedTo
-An inverse relationship from the IfcDocumentInformationRelationship to the related documents./EPM-HTML>
+An inverse relationship from the IfcDocumentInformationRelationship to the related documents.
 
 ### IsPointer
 An inverse relationship from the IfcDocumentInformationRelationship to the relating document.

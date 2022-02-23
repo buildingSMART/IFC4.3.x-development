@@ -1,3 +1,5 @@
+# IfcTendonConduitType
+
 Type of Tendon Conduit.
 
 ## Attributes

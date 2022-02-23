@@ -1,1 +1,3 @@
+# IfcVehicleType
+
 Type of Vehicle.

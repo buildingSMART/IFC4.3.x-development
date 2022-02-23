@@ -89,7 +89,7 @@ Panel is fixed.
 ![fixed](../../../../figures/ifcwindowpaneloperationenum-fig12.gif)
 
 ### OTHEROPERATION
-
+Other.
 
 ### NOTDEFINED
-
+Undefined. 

@@ -7,19 +7,19 @@ This enumeration is used to distinguish between different types of structural an
 ## Items
 
 ### FIRST_ORDER_THEORY
-
+1st order theory
 
 ### SECOND_ORDER_THEORY
-
+2nd order theory
 
 ### THIRD_ORDER_THEORY
-
+3rd order theory
 
 ### FULL_NONLINEAR_THEORY
-
+Full non-linear theory
 
 ### USERDEFINED
-
+User defined.
 
 ### NOTDEFINED
-
+Undefined.

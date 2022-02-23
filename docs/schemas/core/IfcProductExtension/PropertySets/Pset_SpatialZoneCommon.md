@@ -1,1 +1,3 @@
-Common oroperties for Spatial Zones.
+# Pset_SpatialZoneCommon
+
+Common properties for Spatial Zones.

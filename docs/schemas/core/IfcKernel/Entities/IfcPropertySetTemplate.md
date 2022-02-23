@@ -7,7 +7,7 @@ _IfcPropertySetTemplate_ defines the template for all dynamically extensible pro
 Property set templates can form part of a property library used and declared within a project. Depending on the _TemplateType_ the _IfcPropertySetTemplate_ defines a template for:
 
 * "Pset_" - occurrences of _IfcPropertySet_
-* "QTO_" - occurrences of _IfcElementQuantity_
+* "Qto_" - occurrences of _IfcElementQuantity_
 
 The inherited _HasContext_ inverse relation to _IfcRelDeclares_ is used to declare the _IfcPropertySetTemplate_ within a project library. If included in an exchange data set it can then be traversed through the _IfcProjectLibrary_. The _Defines_ inverse relation to _IfcRelDefinesByTemplate_ is provided to keep the definition relationship between the _IfcPropertySetTemplate_ and the one to many _IfcPropertySet_'s, for which it provides the template. Figure 1 illustrates relationships used for property set templates.
 

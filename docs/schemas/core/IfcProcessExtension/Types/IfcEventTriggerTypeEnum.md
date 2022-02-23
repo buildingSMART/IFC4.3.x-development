@@ -19,7 +19,7 @@ An event trigger that is at, or occurs after, a particular point in or period of
 An event trigger that is a complex combination of things.
 
 ### USERDEFINED
-
+User defined
 
 ### NOTDEFINED
-
+Not defined

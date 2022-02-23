@@ -7,13 +7,13 @@ _IfcArithmeticOperatorEnum_ specifies the form of arithmetic operation implied b
 ## Items
 
 ### ADD
-
+Add
 
 ### DIVIDE
-
+Divide
 
 ### MULTIPLY
-
+Multiply
 
 ### SUBTRACT
-
+Subtract

@@ -22,4 +22,4 @@ Type C is the recommended standard system. The C-Plane system equals a globe wit
 ![C-Type](../../../../figures/ifclightdistributioncurveenum_c-plane.gif)
 
 ### NOTDEFINED
-
+Not defined.

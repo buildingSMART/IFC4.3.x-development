@@ -1,60 +1,48 @@
 # IfcSurfaceStyleRendering
 
-_IfcSurfaceStyleRendering_ holds the properties for visualization related to a particular surface side style. It allows rendering properties to be defined by:
+IfcSurfaceStyleRendering holds the properties for visualization related to a particular surface style. Three lighting models are supported:
 
-* a colour component (_SurfaceColour_ attribute inherited from _IfcSurfaceStyleShading_)
-* a transparency component (_Transparency_ attribute inherited from _IfcSurfaceStyleShading_)
-* a reflectance component, given either by
-    * applying reflectance factors to the surface colour:
-        * diffuse component (_SurfaceColour \* DiffuseFactor_)
-        * transmission component (_SurfaceColour \* TransmissionFactor_)
-        * diffuse transmission component (_SurfaceColour \* DiffuseTransmissionFactor_)
-        * reflection component (_SurfaceColour \* ReflectionFactor_)
-        * specular component (_SurfaceColour \* SpecularFactor_ attribute together with _SpecularHighlight_)
-    * or, by explicitly defining such factors as colours (_DiffuseColour_, _TransmissionColour_, _DiffuseTransmissionColour_, _ReflectionColour_ and _SpecularColour_)
-* a displacement component, currently only given by a texture map with the TextureType = bump
-* a coverage component, currently only given by the alpha component of the texture map (2 or 4 component colour texture)
+- Phong lighting model
+- Physically based lighting model
+- Flat lighting model that ignores light sources
 
-> NOTE  The inherited attribute _SurfaceColour_ is treated as the ambient colour and specifies how much ambient light from light sources this surface shall reflect. Ambient light is omnidirectional and depends only on the number of light sources, not their positions with respect to the surface.
+The material parameters are specified as scalars or RGB colors. Every material parameter can be adjusted using a texture. This allows to vary this parameter across the surface. The information sampled from the texture is always multiplied by the simple scalar/color fields.
 
-> NOTE  If the reflectance method, as given by the _IfcReflectanceMethodEnum_ is "GLASS", the transmission factor controls the level of transparency in the glass, In this case the transparency factor is interpreted as transmission factor.
-
-> NOTE  If both _Transparency_ and _TransmissionColour_ (or factor) are included, the following definitions apply: > * Transparency is the ratio of the transmitted flux in a solid angle of 2 \* PI sr (one hemisphere). It is a simple colour filtration that does not account for refraction.
-> * Transmission factor of a material is the ratio of transmitted flux in a given solid angle to the transmitted flux of a completely diffuse material with 100% transmission in the same solid angle. It is the portion of light that goes through the material and may be refracted.
-
-> NOTE  For reflectance equations and further information about the surface style properties and its processing, see: > * ISO/IEC 14772-1: 1997: The Virtual Reality Modeling Language
+> NOTE Refer to the X3D [17 Lighting component](https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD/Part01/components/lighting.html) section for a detailed description of the lighting model equations.
 
 > HISTORY  New entity in IFC2x.
 
 ## Attributes
 
 ### DiffuseColour
-The diffuse part of the reflectance equation can be given as either a colour or a scalar factor.
-The diffuse colour field reflects all light sources depending on the angle of the surface with respect to the light source. The more directly the surface faces the light, the more diffuse light reflects.
-The diffuse factor field specifies how much diffuse light from light sources this surface shall reflect. Diffuse light depends on the angle of the surface with respect to the light source. The more directly the surface faces the light, the more diffuse light reflects. The diffuse colour is then defined by surface colour \* diffuse factor.
+In a PHONG ReflectanceMethod, the DiffuseColour correlates to the diffuseColor attribute in the X3D Phong lighting model. The diffuse colour reflects all X3D light sources depending on the angle of the surface with respect to the light source. The more directly the surface faces the light, the more diffuse light reflects. In a PHYSICAL ReflectanceMethod, a physical based lighting model is assumed, and so the DiffuseColour correlates to the baseColor attribute used in the X3D physical lighting model. In a FLAT ReflectanceMethod, the DiffuseColour correlates to the emissiveColor attribute used in the X3D unlit lighting model.
 
 ### TransmissionColour
 The transmissive part of the reflectance equation can be given as either a colour or a scalar factor. It only applies to materials which Transparency field is greater than zero.
 The transmissive colour field specifies the colour that passes through a transparant material (like the colour that shines through a glass).
 The transmissive factor defines the transmissive part, the transmissive colour is then defined by surface colour \* transmissive factor.
 
+> IFC4.3.0.0 DEPRECATION This attribute is deprecated and shall no longer be used.
+
 ### DiffuseTransmissionColour
 The diffuse transmission part of the reflectance equation can be given as either a colour or a scalar factor. It only applies to materials whose Transparency field is greater than zero.
 The diffuse transmission colour specifies how much diffuse light is reflected at the opposite side of the material surface.
 The diffuse transmission factor field specifies how much diffuse light from light sources this surface shall reflect on the opposite side of the material surface. The diffuse transmissive colour is then defined by surface colour \* diffuse transmissive factor.
+
+> IFC4.3.0.0 DEPRECATION This attribute is deprecated and shall no longer be used.
 
 ### ReflectionColour
 The reflection (or mirror) part of the reflectance equation can be given as either a colour or a scalar factor. Applies to "glass" and "mirror" reflection models.
 The reflection colour specifies the contribution made by light from the mirror direction, i.e. light being reflected from the surface.
 The reflection factor specifies the amount of contribution made by light from the mirror direction. The reflection colour is then defined by surface colour \* reflection factor.
 
+> IFC4.3.0.0 DEPRECATION This attribute is deprecated and shall no longer be used.
+
 ### SpecularColour
-The specular part of the reflectance equation can be given as either a colour or a scalar factor.
-The specular colour determine the specular highlights (e.g., the shiny spots on an apple). When the angle from the light to the surface is close to the angle from the surface to the viewer, the specular colour is added to the diffuse and ambient colour calculations.
-The specular factor defines the specular part, the specular colour is then defined by surface colour \* specular factor.
+In a PHONG ReflectanceMethod, the SpecularColour correlates to the specularColor attribute in the X3D Phong lighting model. The specular colour determine the colour of the specular highlights ( e.g., the shiny spots on an apple). In a PHYSICAL ReflectanceMethod, a physical based lighting model is assumed, and so the SpecularColour is specified as a IfcNormalisedRatioMeasure, which correlates to the metallic attribute used in the X3D physical lighting model. In a FLAT ReflectanceMethod, the SpecularColour has no effect.
 
 ### SpecularHighlight
-The exponent or roughness part of the specular reflectance.
+In a PHONG ReflectanceMethod, the SpecularHighlight is specified as a IfcSpecularRoughness and correlates to the inverse of the shininess attribute in the X3D Phong lighting model. The SpecularHighlight determines the nature of the specular highlights ( e.g., the shiny spots on an apple). Lower shininess values produce soft glows, while higher values result in sharper, smaller highlights. In a PHYSICAL ReflectanceMethod, a physical based lighting model is assumed, and so the SpecularHighlight is specified as a IfcSpecularRoughness, which correlates to the roughness attribute used in the X3D physical lighting model. In a FLAT ReflectanceMethod, the SpecularHighlight has no effect.
 
 ### ReflectanceMethod
-Identifies the predefined types of reflectance method from which the method required may be set.
+Identifies the predefined types of reflectance method from which the method required may be set. PHONG correlates to the X3D Phong lighting model. PHYSICAL correlates to the X3D Physical lighting model. FLAT correlates to the X3D Unlit lighting model. The exact behaviour of other reflectance methods may be determined by view definitions or implementer agreements.

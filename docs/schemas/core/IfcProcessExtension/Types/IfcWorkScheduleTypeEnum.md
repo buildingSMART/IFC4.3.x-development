@@ -16,7 +16,7 @@ A control that is a baseline from which changes that are made later can be recog
 A control showing planned items.
 
 ### USERDEFINED
-
+User defined.
 
 ### NOTDEFINED
-
+Undefined. 

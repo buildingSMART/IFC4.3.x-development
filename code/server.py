@@ -868,9 +868,13 @@ def get_type_values(resource, mdc):
 
 
 def get_definition(resource, mdc):
-    # Only match up to the first header
-    if "## " in mdc:
-        mdc = mdc[0 : mdc.index("## ")]
+    # Only match up to the first h2
+    lines = []
+    for line in mdc.split("\n"):
+        if line.startswith("## "):
+            break
+        lines.append(line)
+    mdc = "\n".join(lines)
     return process_markdown(resource, mdc)
 
 

@@ -17,7 +17,7 @@ The time data are a prediction.
 The origin of the time data is a simulation.
 
 ### USERDEFINED
-
+User defined.
 
 ### NOTDEFINED
 The origin of the time data is undefined.

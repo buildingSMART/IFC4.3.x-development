@@ -7,13 +7,13 @@ This enumeration defines the different predefined types of geographic elements t
 ## Items
 
 ### TERRAIN
-
+Terrain
 
 ### SOIL_BORING_POINT
-
+Soil boring point
 
 ### USERDEFINED
-
+User defined
 
 ### NOTDEFINED
-
+Not defined

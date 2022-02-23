@@ -143,8 +143,10 @@ database](https://github.com/buildingSMART/IFC4.3.x-development/issues/280).
 Different messages may be used to indicate deprecations. For example:
 
 ```
-> IFC4.3.0.0 DEPRECATION This attribute shall not be used for export, use property _Bar_ at _Pset_Foo_ instead.
-> IFC4.3.0.0 DEPRECATION The Foobar property is deprecated and shall no longer be used.
+> IFC4.3.0.0 DEPRECATION This attribute shall not be used, use property _Bar_ at _Pset_Foo_ instead.
+> IFC4.3.0.0 DEPRECATION This attribute is deprecated and shall no longer be used.
+> IFC4.3.0.0 DEPRECATION This property shall not be used, use property _Bar_ at _Pset_Foo_ instead.
+> IFC4.3.0.0 DEPRECATION This property is deprecated and shall no longer be used.
 ```
 
 To create a captioned figure, you can do this:

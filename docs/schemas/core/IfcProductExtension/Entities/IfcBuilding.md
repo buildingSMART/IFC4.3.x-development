@@ -25,8 +25,6 @@ Systems, such as building service or electrical distribution systems, zonal syst
 
 Figure 2 describes the heights and elevations of the _IfcBuilding_. It is used to provide the height above sea level of the project height datum for this building, that is, the internal height 0.00. The height 0.00 is often used as a building internal reference height and equal to the floor finish level of the ground floor.
 
-* base elevation of building provided by: _IfcBuilding.ElevationOfRefHeight_, it is usually the top of construction slab
-* base elevation of terrain at the perimeter of the building provided by: _IfcBuilding.ElevationOfTerrain_, it is usually the minimum elevation is sloped terrain
 * total height of building, also referred to as ridge height (top of roof structure, e.g the ridge against terrain): provided by Qto_BuildingBaseQuantities with Name="Height"
 * eaves height of building (base of roof structure, e.g the eaves against terrain): provided by Qto_BuildingBaseQuantities with Name="EavesHeight"
 
@@ -40,8 +38,12 @@ Figure 2 &mdash; Building elevations
 ### ElevationOfRefHeight
 Elevation above sea level of the reference height used for all storey elevation measures, equals to height 0.0. It is usually the ground floor level.
 
+> IFC4.3.0.0 DEPRECATION This attribute is deprecated and shall no longer be used.
+
 ### ElevationOfTerrain
 Elevation above the minimal terrain level around the foot print of the building, given in elevation above sea level.
+
+> IFC4.3.0.0 DEPRECATION This attribute is deprecated and shall no longer be used.
 
 ### BuildingAddress
 

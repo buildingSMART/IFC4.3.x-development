@@ -16,7 +16,7 @@ Rough carpentry including framing.
 Removal of dust and debris.
 
 ### CONCRETE
-
+Concrete.
 
 ### DRYWALL
 Gypsum wallboard placement and taping.
@@ -28,7 +28,7 @@ Electrical fixtures, equipment, and cables.
 Finish carpentry including custom cabinetry.
 
 ### FLOORING
-
+Flooring.
 
 ### GENERAL
 General labour not requiring specific skill.

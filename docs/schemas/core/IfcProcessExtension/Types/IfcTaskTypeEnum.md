@@ -7,11 +7,13 @@ The _IfcTaskTypeEnum_ defines the range of different types of task that can be s
 ## Items
 
 ### ADJUSTMENT
+Adjustment
 
 ### ATTENDANCE
 Attendance or waiting on other things happening.
 
 ### CALIBRATION
+Calibration 
 
 ### CONSTRUCTION
 Constructing or building something.
@@ -68,7 +70,7 @@ The set of tasks required to evaluate the performance of an object, typically ap
 The set of tasks required to diagnose commonly encountered performance problems, typically applied to ElementTypes and Systems.
 
 ### USERDEFINED
-
+User defined.
 
 ### NOTDEFINED
-
+Undefined. 

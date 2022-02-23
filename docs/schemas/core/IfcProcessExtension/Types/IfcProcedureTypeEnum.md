@@ -19,7 +19,7 @@ A warning of potential danger that should be taken note of as a procedure or whe
 A procedure undertaken to calibrate an artifact.
 
 ### DIAGNOSTIC
-
+Diagnostic
 
 ### SHUTDOWN
 A procedure undertaken to shutdown the operation an artifact.
@@ -28,7 +28,7 @@ A procedure undertaken to shutdown the operation an artifact.
 A procedure undertaken to start up the operation an artifact.
 
 ### USERDEFINED
-
+User defined.
 
 ### NOTDEFINED
-
+Undefined. 

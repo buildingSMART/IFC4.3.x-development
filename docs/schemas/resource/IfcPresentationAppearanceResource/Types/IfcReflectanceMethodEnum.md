@@ -33,5 +33,8 @@ A reflectance model providing a specular effect which is similar to the Phong mo
 ### STRAUSS
 A reflectance model for metallic and non-metallic appearance based on a limited set of control parameter.
 
+### PHYSICAL
+Physical.
+
 ### NOTDEFINED
 Undefined.

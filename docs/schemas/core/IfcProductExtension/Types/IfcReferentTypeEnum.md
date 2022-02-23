@@ -5,13 +5,13 @@ This enumeration defines the different types of referents.
 ## Items
 
 ### KILOPOINT
-
+Kilo point
 
 ### MILEPOINT
-
+Mile point
 
 ### STATION
-
+Station
 
 ### REFERENCEMARKER
 The reference marker is a notation referent, typically located in the right of way of the road, rail or other transportation system. Usually reference markers are initially spaced at a uniform distance along the linear element being measured, though subsequent re-alignments can result in uneven spacing between the markers.
@@ -39,7 +39,7 @@ The referent is the location of an intersection specified by the referent name. 
 Used to fully describe a linearly referenced location given by the linear element being measured (the _IfcAlignment_ into which the _IfcReferent_ is nested), the method of measurement (_Pset_LinearReferencingMethod_) and a measure value specified with a distance expression (_Pset_DistanceExpression_). If a linear referencing method is specified for the position, it overrides any linear referencing method specified for the alignment.”
 
 ### USERDEFINED
-
+User defined.
 
 ### NOTDEFINED
-
+Undefined.

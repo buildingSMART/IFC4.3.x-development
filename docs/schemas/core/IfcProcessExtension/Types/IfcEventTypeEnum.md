@@ -16,7 +16,7 @@ A terminating event of a process.
 An event that occurs at an intermediate stage of a process.
 
 ### USERDEFINED
-
+User defined.
 
 ### NOTDEFINED
-
+Not defined.

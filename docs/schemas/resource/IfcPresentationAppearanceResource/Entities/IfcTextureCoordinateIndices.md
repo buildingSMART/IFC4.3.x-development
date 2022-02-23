@@ -1,1 +1,3 @@
+# IfcTextureCoordinateIndices
+
 Texture Coordinate Indices

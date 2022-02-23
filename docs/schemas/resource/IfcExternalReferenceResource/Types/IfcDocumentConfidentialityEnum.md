@@ -19,7 +19,7 @@ Document is confidential and its contents should not be revealed without permiss
 Document is personal to the author.
 
 ### USERDEFINED
-
+User defined.
 
 ### NOTDEFINED
-
+Not defined.

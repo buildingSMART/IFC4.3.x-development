@@ -11,13 +11,13 @@ The text path determines the direction of the text characters in respect to each
 ## Items
 
 ### LEFT
-
+Left
 
 ### RIGHT
-
+Right
 
 ### UP
-
+Up
 
 ### DOWN
-
+Down

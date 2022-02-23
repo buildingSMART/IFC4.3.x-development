@@ -574,25 +574,25 @@ ex:hasProperty a sh:SPARQLConstraint;
                 
                 {
                     ?stereo a custom:PSET_TYPEDRIVENOVERRIDE .
-                    ?stereo ex:base_Class ?this .
+                    ?stereo ex:base_Class ?pset .
                 } UNION {
                     ?stereo a custom:PSET_PERFORMANCEDRIVEN .
-                    ?stereo ex:base_Class ?this .
+                    ?stereo ex:base_Class ?pset .
                 } UNION {
                     ?stereo a custom:PSET_OCCURRENCEDRIVEN .
-                    ?stereo ex:base_Class ?this .
+                    ?stereo ex:base_Class ?pset .
                 } UNION {
                     ?stereo a custom:PSET_TYPEDRIVENONLY .
-                    ?stereo ex:base_Class ?this .
+                    ?stereo ex:base_Class ?pset .
                 } UNION {
                     ?stereo a custom:QTO_TYPEDRIVENONLY .
-                    ?stereo ex:base_Class ?this .
+                    ?stereo ex:base_Class ?pset .
                 } UNION {
                     ?stereo a custom:QTO_TYPEDRIVENOVERRIDE .
-                    ?stereo ex:base_Class ?this .
+                    ?stereo ex:base_Class ?pset .
                 } UNION {
                     ?stereo a custom:QTO_OCCURRENCEDRIVEN .
-                    ?stereo ex:base_Class ?this .
+                    ?stereo ex:base_Class ?pset .
                 }
             }
         }

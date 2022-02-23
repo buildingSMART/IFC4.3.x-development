@@ -1,1 +1,4 @@
+HumidityMax
+===========
+
 Maximum allowed humidity.

@@ -1,3 +1,5 @@
+# IfcPolynomialCurve
+
 Polynomial Curve.
 
 ## Attributes

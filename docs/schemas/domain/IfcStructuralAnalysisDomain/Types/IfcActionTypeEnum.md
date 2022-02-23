@@ -7,16 +7,16 @@ This enumeration type is used to distinguish between possible action types at a 
 ## Items
 
 ### PERMANENT_G
-
+Permanent G
 
 ### VARIABLE_Q
-
+Variable Q
 
 ### EXTRAORDINARY_A
-
+Extraordinary A
 
 ### USERDEFINED
-
+User defined
 
 ### NOTDEFINED
-
+Not defined

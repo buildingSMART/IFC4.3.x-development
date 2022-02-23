@@ -13,10 +13,10 @@ A control in which actual items undertaken are indicated.
 A control that is a baseline from which changes that are made later can be recognized.
 
 ### PLANNED
-
+Planned
 
 ### USERDEFINED
-
+User defined
 
 ### NOTDEFINED
-
+Undefined.

@@ -1,3 +1,5 @@
+# IfcRailwayTypeEnum
+
 Types of railways. 
 
 ## Items

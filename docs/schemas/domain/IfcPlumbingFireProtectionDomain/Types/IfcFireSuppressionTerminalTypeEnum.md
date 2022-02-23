@@ -23,7 +23,7 @@ Device attached to a sprinkler to deflect the water flow into a spread pattern t
 > IFC4.3.0.0 DEPRECATION The value is deprecated and shall no longer be used.
 
 ### FIREMONITOR
-
+Fire monitor.
 
 ### USERDEFINED
 User-defined type

@@ -10,25 +10,25 @@ This enumeration defines the applicable object categories. Attached to an object
 ## Items
 
 ### PRODUCT
-
+Product
 
 ### PROCESS
-
+Process
 
 ### CONTROL
-
+Control
 
 ### RESOURCE
-
+Resource
 
 ### ACTOR
-
+Actor
 
 ### GROUP
-
+Group
 
 ### PROJECT
-
+Project
 
 ### NOTDEFINED
-
+Not defined

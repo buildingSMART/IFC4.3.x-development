@@ -7,25 +7,25 @@ This enumeration defines the basic types of construction of windows. The constru
 ## Items
 
 ### ALUMINIUM
-
+Aluminium
 
 ### HIGH_GRADE_STEEL
-
+High Grade steel
 
 ### STEEL
-
+Steel
 
 ### WOOD
-
+Wood
 
 ### ALUMINIUM_WOOD
-
+Aluminium and wood
 
 ### PLASTIC
-
+Plastic
 
 ### OTHER_CONSTRUCTION
-
+Other construction.
 
 ### NOTDEFINED
-
+Undefined. 

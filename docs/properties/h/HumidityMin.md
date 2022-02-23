@@ -1,1 +1,4 @@
+HumidityMin
+===========
+
 Minimum required humidity.

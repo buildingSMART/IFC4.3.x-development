@@ -7,28 +7,28 @@ This enumeration defines the basic types of construction of doors. The construct
 ## Items
 
 ### ALUMINIUM
-
+Aluminium
 
 ### HIGH_GRADE_STEEL
-
+High grade steel
 
 ### STEEL
-
+Steel
 
 ### WOOD
-
+Wood
 
 ### ALUMINIUM_WOOD
-
+Aluminium wood
 
 ### ALUMINIUM_PLASTIC
-
+Aluminium plastic
 
 ### PLASTIC
-
+Plastic
 
 ### USERDEFINED
-
+User defined
 
 ### NOTDEFINED
-
+Not defined

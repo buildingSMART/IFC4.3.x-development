@@ -27,8 +27,8 @@ Figure 2 describes the heights and elevations of the _IfcBuilding_. It is used t
 
 * base elevation of building provided by: _IfcBuilding.ElevationOfRefHeight_, it is usually the top of construction slab
 * base elevation of terrain at the perimeter of the building provided by: _IfcBuilding.ElevationOfTerrain_, it is usually the minimum elevation is sloped terrain
-* total height of building, also referred to as ridge height (top of roof structure, e.g the ridge against terrain): provided by BaseQuantity with Name="TotalHeight"
-* eaves height of building (base of roof structure, e.g the eaves against terrain): provided by BaseQuantity with Name="EavesHeight"
+* total height of building, also referred to as ridge height (top of roof structure, e.g the ridge against terrain): provided by Qto_BuildingBaseQuantities with Name="Height"
+* eaves height of building (base of roof structure, e.g the eaves against terrain): provided by Qto_BuildingBaseQuantities with Name="EavesHeight"
 
 ![building heights](../../../../figures/ifcbuilding_heights.png)
 Figure 2 &mdash; Building elevations

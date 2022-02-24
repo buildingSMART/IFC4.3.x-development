@@ -5,7 +5,7 @@ The space boundary defines the physical or virtual delimiter of a space by the r
 * In the case of a physical space boundary, the placement and shape of the boundary may be given, and the building element, providing the boundary, is referenced,
 * In the case of a virtual space boundary, the placement and shape of the boundary may be given, and a virtual element is referenced.
 
-The _IfcRelSpaceBoundary_ is defined as an objectified relationship that handles the element to space relationship by objectifying the relationship between an element and the space it bounds. It is given as a one-to-one relationship, but allows each element (including virutal elements and openings) to define many such relationship and each space to be defined by many such relationships.
+The _IfcRelSpaceBoundary_ is defined as an objectified relationship that handles the element to space relationship by objectifying the relationship between an element and the space it bounds. It is given as a one-to-one relationship, but allows each element (including virtual elements and openings) to define many such relationship and each space to be defined by many such relationships.
 
 Space boundaries are always defined as seen from the space. In general two basic types of space boundaries are distinguished:
 
@@ -76,10 +76,10 @@ The geometric representation (through the _ConnectionGeometry_ attribute) is def
 The following constraints apply to the surface connection geometry representation:
 
 * planar boundaries:
-    * _IfcSurfaceOfLinearExtrusion_ defined by a _SweptCurve_ being an _IfcArbitraryOpenProfileDef_ with straight segements, or
+    * _IfcSurfaceOfLinearExtrusion_ defined by a _SweptCurve_ being an _IfcArbitraryOpenProfileDef_ with straight segments, or
     * _IfcCurveBoundedPlane_
 * curved boundaries
-    * _IfcSurfaceOfLinearExtrusion_ defined by a _SweptCurve_ being an _IfcArbitraryOpenProfileDef_ with curves segements, or
+    * _IfcSurfaceOfLinearExtrusion_ defined by a _SweptCurve_ being an _IfcArbitraryOpenProfileDef_ with curves segments, or
     * _IfcCurveBoundedSurface_ with a _BasisSurface_ being a non planar surface, such as _IfcCylindricalSurface_, or
     * _IfcFaceBasedSurfaceModel_ if already faceted.
 

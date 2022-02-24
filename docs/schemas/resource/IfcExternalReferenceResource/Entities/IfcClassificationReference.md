@@ -8,7 +8,7 @@ The inherited attributes have the following meaning:
 * _Name_: allows for a human interpretable designation of a classification notation.
 * _Location_: optionally holds a direct URI link into the classification system (or source) to hyperlink the classification key.
 
-The _IfcClassificationReference_ can either be assigned directly to the _IfcClassification_, such as if no classification hierarchy has to be included, or it references the parent classification notation, if the fully classification hierarchy is included in the data set. The first is refered to as "lightweight classification", and the second as "full classification". The attribute _ReferencedSource_ then holds the following information (choice by _IfcClassificationReferenceSelect_):
+The _IfcClassificationReference_ can either be assigned directly to the _IfcClassification_, such as if no classification hierarchy has to be included, or it references the parent classification notation, if the fully classification hierarchy is included in the data set. The first is referred to as "lightweight classification", and the second as "full classification". The attribute _ReferencedSource_ then holds the following information (choice by _IfcClassificationReferenceSelect_):
 
 1. being of type _IfcClassification_: direct reference to the classification system (with meta information provided);
 2. being of type _IfcClassificationReference_: reference to the parent classification notation within the classification hierarchy.

@@ -13,7 +13,7 @@ The part may also provide, in addition to the aggregate, more specifically the f
 
 The part should not be contained in the spatial hierarchy, i.e. the concept _Spatial Containment_ shall not be used at the level of parts. The part is contained in the spatial structure by the spatial containment of its composite.
 
-> EXAMPLE  An _IfcBeam_ may be aggregated into an element assembly using the objectified relationship _IfcRelAggregates_, refering to it by its inverse attribute SELF\IfcObjectDefinition.Decomposes. Any subtype of _IfcElement_ can be an element assembly, with _IfcElementAssembly_ as a special focus subtype. In this case it should not be additionally contained in the spatial hierarchy, i.e. _SELF\IfcElement.ContainedInStructure_ should be NIL.
+> EXAMPLE  An _IfcBeam_ may be aggregated into an element assembly using the objectified relationship _IfcRelAggregates_, referring to it by its inverse attribute SELF\IfcObjectDefinition.Decomposes. Any subtype of _IfcElement_ can be an element assembly, with _IfcElementAssembly_ as a special focus subtype. In this case it should not be additionally contained in the spatial hierarchy, i.e. _SELF\IfcElement.ContainedInStructure_ should be NIL.
 
 ```
 concept {

@@ -55,7 +55,7 @@ The delimiter tokens that are used to mark the boundaries of individual facets (
 
 
 This typically applies then the _IfcClassification_ is used in
-conjuction with _IfcClassificationReference_'s. If only one _ReferenceToken_ is provided, it applies to all boundaries of individual facets, if more than one _ReferenceToken_ are provided, the first token applies to the first boundary, the second token to the second boundary, and the n^th^ token to the n^th^ and any additional boundary.
+conjunction with _IfcClassificationReference_'s. If only one _ReferenceToken_ is provided, it applies to all boundaries of individual facets, if more than one _ReferenceToken_ are provided, the first token applies to the first boundary, the second token to the second boundary, and the n^th^ token to the n^th^ and any additional boundary.
 
 > NOTE  Tokens are typically recommended within the classification itself and each token will have a particular role.
 

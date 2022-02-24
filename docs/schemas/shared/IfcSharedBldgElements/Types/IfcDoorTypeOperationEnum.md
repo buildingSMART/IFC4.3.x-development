@@ -61,7 +61,7 @@ Door with two panels that both open to the right, one panel swings in one direct
 ![opposite right](../../../../figures/ifcdoortypeenum-fig08.gif)
 
 ### DOUBLE_SWING_LEFT
-Door with one panel that swings in both directions and to the left in the main trafic direction. Also called double acting door.
+Door with one panel that swings in both directions and to the left in the main traffic direction. Also called double acting door.
 
 > NOTE  Direction of swing (whether in or out) is determined at the <em>IfcDoor</em>.
 
@@ -70,7 +70,7 @@ Door with one panel that swings in both directions and to the left in the main t
 ![double swing left](../../../../figures/ifcdoortypeenum-fig04b.gif)
 
 ### DOUBLE_SWING_RIGHT
-Door with one panel that swings in both directions and to the right in the main trafic direction. Also called double acting door.
+Door with one panel that swings in both directions and to the right in the main traffic direction. Also called double acting door.
 
 > NOTE  Direction of swing (whether in or out) is determined at the <em>IfcDoor</em>.
 
@@ -79,7 +79,7 @@ Door with one panel that swings in both directions and to the right in the main 
 ![double swing right](../../../../figures/ifcdoortypeenum-fig05b.gif)
 
 ### DOUBLE_PANEL_DOUBLE_SWING
-Door with two panels, one swings in both directions and to the right in the main trafic direction the other swings also in both directions and to the left in the main trafic direction.
+Door with two panels, one swings in both directions and to the right in the main traffic direction the other swings also in both directions and to the left in the main traffic direction.
 
 > NOTE  Direction of swing (whether in or out) is determined at the <em>IfcDoor</em>.
 

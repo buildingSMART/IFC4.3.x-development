@@ -24,9 +24,9 @@ Corbels as separate components:
 
 Connecting accessories, for example for sandwich wall panels:
 
-*  **'Diagonal truss connector'**: A fixing device in truss form with diagonal cross bars holding two precast conrete panels together in a sandwich wall panel.
-*  **'Ladder truss connector'**: A fixing device in truss form with straight cross bars in ladder form holding two precast conrete panels together in a sandwich wall panel.
-*  **'Panel suspender'**: A straight fixing device holding two precast conrete panels together in a sandwich wall panel.
+*  **'Diagonal truss connector'**: A fixing device in truss form with diagonal cross bars holding two precast concrete panels together in a sandwich wall panel.
+*  **'Ladder truss connector'**: A fixing device in truss form with straight cross bars in ladder form holding two precast concrete panels together in a sandwich wall panel.
+*  **'Panel suspender'**: A straight fixing device holding two precast concrete panels together in a sandwich wall panel.
 
 Electrical accessories for precast concrete elements:
 

@@ -33,7 +33,7 @@ The attribute optionally defines the data type of the applicable type or occurre
 * If a performance history object of a particular distribution object is attributes by the property set template, then the entity name (and potentially amended by the predefined type) is expanded by adding '[PerformanceHistory]'
 * If one property set template is applicable to many type and/or occurrence objects, then those object names should be separate by comma "," forming a comma separated string.
 
-> EXAMPLE Refering to a boiler type as applicable entity would be expressed as 'IfcBoilerType', refering to a steam boiler type as applicable entity would be expressed as 'IfcBoilerType/STEAM', refering to a wall and a wall type would be expressed as 'IfcWall, IfcWallType'. An applicable _IfcPerformanceHistory_ assigned to an occurrence or type object would be indicated by IfcBoilerType[PerformanceHistory], or respectively IfcBoilerType/STEAM[PerformanceHistory].
+> EXAMPLE Referring to a boiler type as applicable entity would be expressed as 'IfcBoilerType', referring to a steam boiler type as applicable entity would be expressed as 'IfcBoilerType/STEAM', referring to a wall and a wall type would be expressed as 'IfcWall, IfcWallType'. An applicable _IfcPerformanceHistory_ assigned to an occurrence or type object would be indicated by IfcBoilerType[PerformanceHistory], or respectively IfcBoilerType/STEAM[PerformanceHistory].
 
 ### HasPropertyTemplates
 Set of _IfcPropertyTemplate_'s that are defined within the scope of the _IfcPropertySetTemplate_.

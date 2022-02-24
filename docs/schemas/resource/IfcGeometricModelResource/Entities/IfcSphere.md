@@ -4,13 +4,13 @@ The _IfcSphere_ is a Construction Solid Geometry (CSG) 3D primitive. It is a sol
 
 * _SELF\IfcCsgPrimitive3D.Position_: The location and orientation of the axis system for the primitive.
 * _SELF\IfcCsgPrimitive3D.Position.Location_: The center of the sphere.
-* _SELF\IfcCsgPrimitive3D.Position.Position[3]:_ The z axis points at its positve direction towards the north pole, and by its negative directions towards the south pole.
+* _SELF\IfcCsgPrimitive3D.Position.Position[3]:_ The z axis points at its positive direction towards the north pole, and by its negative directions towards the south pole.
 
 ![sphere](../../../../figures/ifcsphere-layout1.png)
 
 Figure 1 &mdash; Sphere geometry
 
-> EXAMPLE  Figure 1 illustrates geometric parameters of the sphere. The sphere is positioned within its own placement coordiante system relative to the object coordinate system. The origin is the center of the sphere.
+> EXAMPLE  Figure 1 illustrates geometric parameters of the sphere. The sphere is positioned within its own placement coordinate system relative to the object coordinate system. The origin is the center of the sphere.
 
 { .extDef}
 > NOTE  Definition according to ISO/CD 10303-42:1992

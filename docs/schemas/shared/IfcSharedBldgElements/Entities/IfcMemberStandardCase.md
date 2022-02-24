@@ -89,7 +89,7 @@ IfcRevolvedAreaSolidTapered shall be supported.
 > NOTE  Using IfcExtrudedAreaSolidTapered,
 > or IfcRevolvedAreaSolidTapered requires the use of two
 > IfcMaterialProfile's within the
-> IfcMaterialProfileSet assinged to the
+> IfcMaterialProfileSet assigned to the
 > IfcBeamStandardCase
 * Profile: see 'SweptSolid' geometric
 representation
@@ -193,7 +193,7 @@ The material of the IfcMemberStandardCase is defined by
 IfcMaterialProfileSetUsage and attached by the
 IfcRelAssociatesMaterial.RelatingMaterial. It is
 accessible by the inverse HasAssociations relationship.
-Composite profile members can be represented by refering to
+Composite profile members can be represented by referring to
 several IfcMaterialProfile's within the
 IfcMaterialProfileSet that is referenced from the
 IfcMaterialProfileSetUsage.

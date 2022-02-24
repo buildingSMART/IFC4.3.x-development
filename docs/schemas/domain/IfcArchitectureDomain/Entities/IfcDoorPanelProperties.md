@@ -31,7 +31,7 @@ Depth of the door panel, measured perpendicular to the plane of the door leaf.
 The _PanelOperation_ defines the way of operation of that panel. The _PanelOperation_ of the door panel has to correspond with the _OperationType_ of the _IfcDoorType_ by which it is referenced.
 
 ### PanelWidth
-Width of this panel, given as ratio relative to the total clear opening width of the door. If omited, it defaults to 1. A value has to be provided for all doors with _OperationType_'s at _IfcDoorType_ defining a door with more then one panel.
+Width of this panel, given as ratio relative to the total clear opening width of the door. If omitted, it defaults to 1. A value has to be provided for all doors with _OperationType_'s at _IfcDoorType_ defining a door with more then one panel.
 
 ### PanelPosition
 Position of this panel within the door. The _PanelPosition_ of the door panel has to correspond with the _OperationType_ of the _IfcDoorType_ by which it is referenced.

@@ -12,7 +12,7 @@ The _IfcDoorLiningProperties_ does not hold its own geometric representation. Ho
 
 The lining is applied to the left, right and upper side of the opening reveal. The parameters are:
 
- * LiningDepth, if omited, equal to wall thickness - this only takes effect if a value for <em>LiningThickness</em> is given. If both parameters are not given, then there is no lining.</li>
+ * LiningDepth, if omitted, equal to wall thickness - this only takes effect if a value for <em>LiningThickness</em> is given. If both parameters are not given, then there is no lining.</li>
  * LiningThickness
  * LiningToPanelOffsetX
  * LiningToPanelOffsetY
@@ -38,7 +38,7 @@ The lining may include a casing, which covers part of the wall faces around the 
 
 The lining may include a threshold, which covers the bottom side of the opening. The parameters are:
 
- * ThresholdDepth, if omited, equal to wall thickness - this only takes effect if a value for <em>ThresholdThickness</em> is given. If both parameters are not given, then there is no threshold.
+ * ThresholdDepth, if omitted, equal to wall thickness - this only takes effect if a value for <em>ThresholdThickness</em> is given. If both parameters are not given, then there is no threshold.
  * ThresholdThickness
  * ThresholdOffset (not shown in figure), given, if the threshold edge has an offset to the x axis of the local placement.
 

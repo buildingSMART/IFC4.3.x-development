@@ -7,7 +7,7 @@ Requests may take many forms depending on the need including fault reports for m
 > HISTORY  New entity in IFC2x2.
 
 { .change-ifc2x4}
-> IFC4 CHANGE  Atribute _RequestID_ renamed to _Identification_ and promoted to supertype _IfcControl_, attributes _PredefinedType_, _Status_, and _LongDescription_ added.
+> IFC4 CHANGE  Attribute _RequestID_ renamed to _Identification_ and promoted to supertype _IfcControl_, attributes _PredefinedType_, _Status_, and _LongDescription_ added.
 
 ## Attributes
 

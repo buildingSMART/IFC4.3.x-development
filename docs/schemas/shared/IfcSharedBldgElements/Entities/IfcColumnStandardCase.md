@@ -199,7 +199,7 @@ IfcColumnType should have a unique
  IfcMaterialProfileSet, that is referenced by the
 IfcMaterialProfileSetUsage assigned to all occurrences of
 this IfcColumnType.
-Composite profile columns can be represented by refering to
+Composite profile columns can be represented by referring to
 several IfcMaterialProfile's within the
 IfcMaterialProfileSet that is referenced from the
 IfcMaterialProfileSetUsage.

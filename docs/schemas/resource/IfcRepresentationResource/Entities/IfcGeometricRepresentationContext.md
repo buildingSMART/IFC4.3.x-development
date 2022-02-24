@@ -62,7 +62,7 @@ Direction of the true north, or geographic northing direction, relative to the u
 The set of _IfcGeometricRepresentationSubContexts_ that refer to this _IfcGeometricRepresentationContext_.
 
 ### HasCoordinateOperation
-Indicates conversion between coordinate systems. In particular it refers to an _IfcCoordinateOperation_ between a Geographic map coordinate reference system, and the engineering coordinate system of this construction project. If there is more then one _IfcGeometricRepresentationContext_ provided to the _IfcProject_ then all contexts shall have an identical instance of _IfcCoordinateOperation_ as _HasCoordinateOperation_ refering to the same instance of _IfcCoordinateReferenceSystem_.
+Indicates conversion between coordinate systems. In particular it refers to an _IfcCoordinateOperation_ between a Geographic map coordinate reference system, and the engineering coordinate system of this construction project. If there is more then one _IfcGeometricRepresentationContext_ provided to the _IfcProject_ then all contexts shall have an identical instance of _IfcCoordinateOperation_ as _HasCoordinateOperation_ referring to the same instance of _IfcCoordinateReferenceSystem_.
 
 ## Formal Propositions
 

@@ -31,7 +31,7 @@ Informal Propositions:
 ## Attributes
 
 ### Points
-A list of points, provided by a point list of either two, or three dimensions, that is used to define the poly curve. If the attribute _Segments_ is not provided, the poly curve is generated as a poly line by connecting the points in the order of their appearance in the point list. If the attribute _Segments_ is provided, the segments determine, how the points are to be used to create straigth and circular arc segments.
+A list of points, provided by a point list of either two, or three dimensions, that is used to define the poly curve. If the attribute _Segments_ is not provided, the poly curve is generated as a poly line by connecting the points in the order of their appearance in the point list. If the attribute _Segments_ is provided, the segments determine, how the points are to be used to create straight and circular arc segments.
 
 ### Segments
 List of straight line and circular arc segments, each providing a list of indices into the Cartesian point list. Indices should preserve consecutive connectivity between the segments, the start index of the next segment shall be identical with the end index of the previous segment.

@@ -2,7 +2,7 @@
 <PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="94d6b7401a364f72811f3dcef7b2dbab" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
   <IfcVersion version="IFC4x3_RC4" />
   <Name>Pset_Superelevation</Name>
-  <Definition>Specifices the general properties for a Superelevation event.</Definition>
+  <Definition>Specifies the general properties for a Superelevation event.</Definition>
   <Applicability />
   <ApplicableClasses>
     <ClassName>IfcAnnotation/(.SUPERELEVATIONEVENT.)</ClassName>

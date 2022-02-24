@@ -29,7 +29,7 @@ The provision of longitude, latitude, height at the _IfcSite_ for georeferencing
 For exact georeferencing (or referencing to any other geographic coordinate system other than WSG84) the entities _IfcCoordinateReferenceSystem_ and _IfcMapConversion_ have to be used to define an exact mapping of the project engineering coordinate system to the geographic (or map) coordinate system.
 
 * <small>reference height of site is provided by: <em>IfcSite.RefElevation</em>, it is given according to the height datum used at this location.</small>
-* <small>the reference height of each building situated at the site is given againt the same height datum used at this location.</small>
+* <small>the reference height of each building situated at the site is given against the same height datum used at this location.</small>
 * <small>the elevations of each storey belonging to each building are given as local height relative to the reference height of the building.</small>
 
 ![IfcSite with local placement and WGS84 coordinates](../../../../figures/ifcsite_heights.png "Figure 2 &mdash; Site placement and elevations")

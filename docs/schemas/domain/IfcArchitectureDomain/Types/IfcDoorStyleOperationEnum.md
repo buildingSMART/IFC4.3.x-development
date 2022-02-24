@@ -22,14 +22,14 @@ Door with one panel that opens (swings) to the left. The hinges are on the left 
 ![single swing left ](../../../../figures/ifcdoorstyleoperationenum-fig01.gif)
 
 ### SINGLE_SWING_RIGHT
-Door with one panel that swings in both directions and to the right in the main trafic direction. Also called double acting door.
+Door with one panel that swings in both directions and to the right in the main traffic direction. Also called double acting door.
 
 > NOTE Direction of swing (whether in or out) is determined at the <em>IfcDoor</em>.
 
 ![single swing right](../../../../figures/ifcdoorstyleoperationenum-fig02.gif)
 
 ### DOUBLE_DOOR_SINGLE_SWING
-Door with two panels, one swings in both directions and to the right in the main trafic direction the other swings also in both directions and to the left in the main trafic direction.
+Door with two panels, one swings in both directions and to the right in the main traffic direction the other swings also in both directions and to the left in the main traffic direction.
 
 > NOTE Direction of swing (whether in or out) is determined at the <em>IfcDoor</em>.
 

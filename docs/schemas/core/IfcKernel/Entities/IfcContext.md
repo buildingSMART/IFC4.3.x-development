@@ -37,4 +37,4 @@ Set of relationships to property set definitions attached to this context. Those
 
 ### Declares
 Reference to the _IfcRelDeclares_ relationship that assigns the uppermost entities of includes hierarchies to this context instance.
-> NOTE  The spatial hiearchy is assigned to _IfcProject_ using the _IfcRelAggregates_ relationship. This is a single exception due to compatibility reasons with earlier releases.
+> NOTE  The spatial hierarchy is assigned to _IfcProject_ using the _IfcRelAggregates_ relationship. This is a single exception due to compatibility reasons with earlier releases.

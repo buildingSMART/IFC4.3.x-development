@@ -1,6 +1,6 @@
 # IfcTypeObject
 
-The object type defines the specific information about a type, being common to all occurrences of this type. It refers to the specific level of the well recognized _generic - specific - occurrance_ modeling paradigm. The _IfcTypeObject_ gets assigned to the individual object instances (the occurrences) via the _IfcRelDefinesByType_ relationship.
+The object type defines the specific information about a type, being common to all occurrences of this type. It refers to the specific level of the well recognized _generic - specific - occurrence_ modeling paradigm. The _IfcTypeObject_ gets assigned to the individual object instances (the occurrences) via the _IfcRelDefinesByType_ relationship.
 
 > NOTE  The terms 'Type' and 'Style' are often used interchangeably.
 
@@ -26,7 +26,7 @@ The attribute optionally defines the data type of the occurrence object, to whic
 * It can be optionally followed by the predefined type after the separator "/" (forward slash), using uppercase
 * If one type object is applicable to many occurrence objects, then those occurrence object names should be separate by comma "," forming a comma separated string.
 
-> EXAMPLE Refering to a furniture as applicable occurrence entity would be expressed as 'IfcFurnishingElement', refering to a brace as applicable entity would be expressed as 'IfcMember/BRACE'.
+> EXAMPLE Referring to a furniture as applicable occurrence entity would be expressed as 'IfcFurnishingElement', referring to a brace as applicable entity would be expressed as 'IfcMember/BRACE'.
 
 ### HasPropertySets
 Set ~~list~~ of unique property sets, that are associated with the object type and are common to all object occurrences referring to this object type.

@@ -42,7 +42,7 @@ Specifies the value along the northing axis of the end point of a vector indicat
 _XAxisAbscissa_ it provides the direction of the local x axis within the horizontal plane of the map coordinate system.
 
 ### Scale
-Scale to be used, when the units of the CRS are not identical to the units of the engineering coordinate system. If omited, the value of 1.0 is assumed.
+Scale to be used, when the units of the CRS are not identical to the units of the engineering coordinate system. If omitted, the value of 1.0 is assumed.
 
 ### ScaleY
 Scale Y by which the length measures in local engineering CS have to be multiplied to get map coordinates

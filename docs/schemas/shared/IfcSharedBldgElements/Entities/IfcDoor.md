@@ -112,44 +112,41 @@ or to the right is done at the level of the IfcDoorType.
 Here it is a left side opening door given
 by IfcDoorType.OperationType =
 SingleSwingLeft
-refered to as LEFT HAND (LH) in US *
+referred to as LEFT HAND (LH) in US *
 
 
-
-refered to as DIN-R (right hung) in Germany
+referred to as DIN-R (right hung) in Germany
 ![fig 2](../../../../figures/ifcdoor-fig02.gif)
 If the door should open to the other side,
 then the local placement has to be changed. It is still a left side
 opening door, given by IfcDoorType.OperationType =
  SingleSwingLeft
-refered to as RIGHT HAND REVERSE (RHR) in
+referred to as RIGHT HAND REVERSE (RHR) in
 US *
 
 
-
-refered to as DIN-R (right hung) in Germany
+referred to as DIN-R (right hung) in Germany
 ![fig 3](../../../../figures/ifcdoor-fig03.gif)
 If the door panel (for swinging doors)
 opens to the right, a separate door style needs to be used (here
 IfcDoorTypee.OperationType = SingleSwingRight) and it always
 opens into the direction of the positive Y axis of the local
 placement.
-refered to as RIGHT HAND (RH) in US *
+referred to as RIGHT HAND (RH) in US *
 
 
 
-refered to as DIN-L (left hung) in Germany
+referred to as DIN-L (left hung) in Germany
 ![fig 4](../../../../figures/ifcdoor-fig04.gif)
 If the door panel (for swinging doors)
 opens to the right, and into the opposite directions, the local
 placement of the door need to change. The door style is given by
 IfcDoorType.OperationType = SingleSwingRight.
-refered to as LEFT HAND REVERSE (LHR) in US
+referred to as LEFT HAND REVERSE (LHR) in US
 *
 
 
-
-refered to as DIN-L (left hung) in Germany
+referred to as DIN-L (left hung) in Germany
 * it assumes that the
 'inside/private/primary' space is above (top in the pictures) and
  the 'outside/public/secondary' space is below (bottom in the

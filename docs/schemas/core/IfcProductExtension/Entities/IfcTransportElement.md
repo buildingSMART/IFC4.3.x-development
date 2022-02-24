@@ -71,7 +71,7 @@ IfcTransportElement defines the occuurence of any
 
 * The IfcTransportElement is placed within the
  project spatial hierarchy using the objectified relationship
- IfcRelContainedInSpatialStructure, refering to it by
+ IfcRelContainedInSpatialStructure, referring to it by
  its inverse attribute
  SELF\IfcElement.ContainedInStructure. Subtypes
  of IfcSpatialStructureElement are valid spatial

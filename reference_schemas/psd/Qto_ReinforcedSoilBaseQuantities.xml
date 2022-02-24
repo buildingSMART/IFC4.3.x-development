@@ -22,7 +22,7 @@
     <QtoDef>
       <Name>Depth</Name>
       <Definition>Depth (one direction of the non-projected foot print area) of the slab. It shall only be provided, if the slab is rectangular.
-&gt; NOTE&amp;nbsp; Also refered to as width, but not to be confused with the "Width" quantity, that denotes the thickness in the context of the slab.</Definition>
+&gt; NOTE&amp;nbsp; Also referred to as width, but not to be confused with the "Width" quantity, that denotes the thickness in the context of the slab.</Definition>
       <QtoType>Q_LENGTH</QtoType>
       <NameAliases>
         <NameAlias lang="de-DE">Breite</NameAlias>

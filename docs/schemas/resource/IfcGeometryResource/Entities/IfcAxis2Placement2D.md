@@ -19,7 +19,7 @@ Figure 1 illustrates the definition of the <em>IfcAxis2Placement2D</em> within t
 ## Attributes
 
 ### RefDirection
-The direction used to determine the direction of the local X axis. If a value is omited that it defaults to [1.0, 0.0.].
+The direction used to determine the direction of the local X axis. If a value is omitted that it defaults to [1.0, 0.0.].
 
 ### P
 _P[1]_: The normalized direction of the placement X Axis. This is [1.0,0.0] if _RefDirection_ is omitted.

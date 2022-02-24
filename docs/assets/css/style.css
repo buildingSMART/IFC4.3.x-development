@@ -13,7 +13,6 @@ header {
     margin-bottom: var(--universal-margin);
 }
 header p {
-    font-size: 12pt;
     float: left;
 }
 header ul {
@@ -58,11 +57,7 @@ nav div a.sublink-1.current {
 nav div a.sublink-1:before {
     border: 0px;
 }
-body {
-    font-size: 12pt;
-}
 footer {
-    font-size: 12pt;
     width: 100%;
     margin-top: var(--universal-margin);
 }
@@ -108,7 +103,7 @@ mark {
     text-transform: uppercase;
 }
 aside {
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--secondary-border-color);
     padding: var(--universal-padding);
     border-radius: var(--universal-border-radius);
     margin: var(--universal-margin);

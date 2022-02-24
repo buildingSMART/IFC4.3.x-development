@@ -883,7 +883,15 @@ def get_definition(resource, mdc):
 
 
 def get_applicability(resource):
-    return {"number": SectionNumberGenerator.generate(), "entities": R.pset_definitions[resource]["applicability"]}
+    template_type_md = get_resource_path("IfcPropertySetTemplateTypeEnum", abort_on_error=False)
+    template_type_mdc = open(template_type_md, "r", encoding="utf-8").read()
+    descriptions = dict(mdp.markdown_attribute_parser(data=template_type_mdc, heading_name="Items"))
+    return {
+        "number": SectionNumberGenerator.generate(),
+        "entities": R.pset_definitions[resource]["applicability"],
+        "template_type": R.pset_definitions[resource]["template_type"],
+        "description": descriptions.get(R.pset_definitions[resource]["template_type"], None)
+    }
 
 
 def get_properties(resource, mdc):

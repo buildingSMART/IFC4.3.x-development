@@ -196,6 +196,7 @@ for fn in glob.glob("./psd/*.xml"):
     definition = {
         'name': psetname,
         'applicability': classes,
+        'template_type': xml.get("@templatetype", None),
         'properties': props
     }
 

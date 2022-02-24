@@ -1,12 +1,13 @@
 :root {
-  --blue: #1976d2;
-  --dark: #444444;
-  --green: #308732;
-  --red: #d32f2f;
-  --yellow: #f57c00;
-  --universal-border-radius: 5px;
-  --link: #336699;
-  --link-hover: #66ccff;
+    --fore-color: #333333;
+    --blue: #1976d2;
+    --dark: #444444;
+    --green: #308732;
+    --red: #d32f2f;
+    --yellow: #f57c00;
+    --universal-border-radius: 5px;
+    --link: #336699;
+    --link-hover: #66ccff;
 }
 header {
     width: 100%;

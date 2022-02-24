@@ -874,11 +874,16 @@ def get_type_values(resource, mdc):
 def get_definition(resource, mdc):
     # Only match up to the first h2
     lines = []
+    SectionNumberGenerator.begin_subsection()
     for line in mdc.split("\n"):
         if line.startswith("## "):
             break
+        if line.startswith("### "):
+            words = line.split(" ")
+            line = " ".join((words[0], SectionNumberGenerator.generate(), *words[1:]))
         lines.append(line)
     mdc = "\n".join(lines)
+    SectionNumberGenerator.end_subsection()
     return process_markdown(resource, mdc)
 
 

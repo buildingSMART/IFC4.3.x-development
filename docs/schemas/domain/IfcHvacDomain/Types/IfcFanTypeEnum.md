@@ -19,7 +19,7 @@ Air flows through the impeller radially using blades that are backward curved.
 Air flows through the impeller radially using blades that are airfoil shaped.
 
 ### TUBEAXIAL
-Air flows through the impeller axially with guide vanes and reduced running blade tip clearance.
+Air flows through the impeller axially with reduced tip clearance and operating at higher tip speeds.
 
 ### VANEAXIAL
 Air flows through the impeller axially with guide vanes and reduced running blade tip clearance.

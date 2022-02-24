@@ -189,6 +189,7 @@
             <td colspan="3">
                 {% if group.is_inherited %}<mark>Inherited</mark>{% endif %}
                 {{ group.name }}
+                <small>({{ group.total_concepts}})</small>
             </td>
         </tr>
         {% for concept in group.concepts %}

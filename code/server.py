@@ -1150,6 +1150,7 @@ def get_concept_usage(resource, builder):
                 "name": ifc_class,
                 "is_inherited": ifc_class != resource,
                 "concepts": concepts,
+                "total_concepts": len(concepts),
             }
         )
 

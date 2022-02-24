@@ -123,8 +123,13 @@ def get_schema(name):
             if schema_name == name: return members
 
 for item in xmi_doc:
-    if get_schema(item.package) is None:
-        print("Warning", item.package, "not registered")
+    item_package = item.package
+    if item.package == "propertytypes":
+        # @todo move these in the XMI
+        item_package = "IfcSharedBldgElements"
+
+    if get_schema(item_package) is None:
+        print(f"Warning: for {item.name} package {item_package} is not registered")
         continue
     
     if item.type == "ENTITY":
@@ -135,9 +140,9 @@ for item in xmi_doc:
         if item.definition.is_abstract:
             abstract_entities.append(item.name)
         
-        entity_to_package[item.name] = item.package
-        resource_to_package[item.name] = get_schema(item.package)
-        get_schema(item.package)['Entities'].append(item.name)
+        entity_to_package[item.name] = item_package
+        resource_to_package[item.name] = get_schema(item_package)
+        get_schema(item_package)['Entities'].append(item.name)
         if item.definition.supertype:
             supertype[item.name] = item.definition.supertype
             subtypes[item.definition.supertype].append(item.name)
@@ -153,15 +158,18 @@ for item in xmi_doc:
             ty = ' '.join(parts[2:])[:-1]
             attributes[".".join((item.name, nm))] = (False, ty)
             
-    elif item.type in ("TYPE", "SELECT", "ENUM"):
-        resource_to_package[item.name] = get_schema(item.package)
-        get_schema(item.package)['Types'].append(item.name)
+    elif item.type in ("TYPE", "SELECT", "ENUM", "PENUM"):
+        resource_to_package[item.name] = get_schema(item_package)
+        heading = 'PropertyEnumerations' if item.type == "PENUM" else 'Types'
+        get_schema(item_package)[heading].append(item.name)
         if item.type in ("SELECT", "ENUM"):
             type_values.setdefault(item.name, []).extend(item.definition.values)
+        if item.type in ("PENUM"):
+            type_values.setdefault(item.name, []).extend([c.name for c in item.children])
 
     elif item.type in ("FUNCTION", "RULE"):
         name = re.split(r"\s", item.name)[0]
-        get_schema(item.package)[f"{item.type[0]}{item.type[1:].lower()}s"].append(name)
+        get_schema(item_package)[f"{item.type[0]}{item.type[1:].lower()}s"].append(name)
 
     if item.type in ("ENTITY", "TYPE", "SELECT", "ENUM", "FUNCTION", "RULE"):
         definitions[item.name] = str(item.definition)
@@ -176,9 +184,9 @@ for item in xmi_doc:
         
     if item.type == "PSET":
         if item.stereotype == "PSET":
-            get_schema(item.package)['Property Sets'].append(item.name)
+            get_schema(item_package)['Property Sets'].append(item.name)
         else:
-            get_schema(item.package)['Quantity Sets'].append(item.name)
+            get_schema(item_package)['Quantity Sets'].append(item.name)
 
 def child_by_tag(node, tag):
     return [c for c in node["_children"] if c['#tag'] == tag][0]

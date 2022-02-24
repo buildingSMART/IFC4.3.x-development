@@ -9,7 +9,6 @@ Ports are assigned the distribution systems in order to indicate its role in a p
 > HISTORY  New entity in IFC2x2
 
 { .change-ifc2x4}
-> IFC4 CHANGE  Ports are now related to products and product types using the _IfcRelNests_ relationship; use of _IfcRelConnectsPortToElement_ is now reserved for dynamically attached ports (such as drilling a hole in a tank).
 
 ## Attributes
 
@@ -33,7 +32,6 @@ IfcDistributionPort may be connected to other objects as follows using the indic
 For port connections between elements, the RelatingPort is set to a port having FlowDirection=SOURCE and the RelatedPort is set to a port having FlowDirection=SINK.
 For aggregation scenarios, ports on a device may be mapped to aggregated devices within, in which case ports on the outer device indicate a single FlowDirection but have an additional connection internally to a port on an aggregated inner device.
 Refer to IfcUnitaryEquipment for an example.
-* IfcDistributionElement (through IfcRelConnectsPortToElement): For dynamic ports, indicates the containing element.
 
 
 Figure 302 illustrates distribution port connectivity.

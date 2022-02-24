@@ -3,40 +3,88 @@
 import os
 import sys
 import glob
+import json
 
 from collections import defaultdict
+
+from xml.dom.minidom import parse
 
 dr = sys.argv[1]
 odr = os.path.join(os.path.abspath(os.path.dirname(__file__)), "..", "docs", "schemas")
 
 md_files = glob.glob(os.path.join(dr, "**", "Documentation.md"), recursive=True)
-xml_files = glob.glob(os.path.join(dr, "**", "Doc*.xml"), recursive=True)
+xml_files = glob.glob(os.path.join(dr, "**", "Doc*.xml"), recursive=True) + \
+    glob.glob(os.path.join(dr, "**", "PEnum_*.xml"), recursive=True)
 
 to_ignore = {"ChangeSets", "ModelViews", "Properties", "Publications", "Templates", "Quantities", "Primitives"}
+to_include = {"PropertyEnumerations"}
 
+# The PEnums in IfcDoc don't have containment in a Domain. In UML we do,
+# so we need to first parse the XMI to map PEnums to a Domain.
+hierarchy = json.load(open("hierarchy.json"))
+from server import resource_paths
+definition_to_package = {a:b[0:2] for a, b in resource_paths(hierarchy)}
+
+constants = {}
+for fn in glob.glob(os.path.join(dr, 'Constants', '**', "*.xml"), recursive=True) + \
+    glob.glob(os.path.join(dr, 'PropertyConstants', '**', "*.xml"), recursive=True):
+    
+    dom = parse(fn)
+    
+    name = dom.childNodes[0].getAttribute("Name")
+    id = dom.childNodes[0].getAttribute("id")
+    try:
+        definition = dom.childNodes[0].getElementsByTagName("Documentation")[0].childNodes[0].data
+    except:
+        definition = ""
+
+    constants[id] = [name, definition]
+    
 def yield_relevant(fns):
     for fn in fns:
         parts = fn[len(dr)+1:].split(os.sep)[::-1]
         
-        if set(parts) & to_ignore:
+        if not (set(parts) & to_include):
             # currently not imported
             continue
             
-        if len(parts) < 7:
-            # section or schema documentation, not a full path to entity/type
-            continue
+        if "PropertyEnumerations" in parts:
         
-        _, name, type, schema, __, group = parts[0:6]
+            name = parts[0].replace(".xml", "")
+            
+            if name not in definition_to_package:
+                print(f"Not modelled: {name}")
+                continue
         
-        of = os.path.join(
-            odr,
-            group.split(' ')[0].lower(),
-            schema,
-            type,
-            name + ".md"
-        )
-        
-        yield fn, of, name, type, schema, group
+            group, schema = definition_to_package[name]
+            type = "PropertyEnumerations"
+            
+            of = os.path.join(
+                odr,
+                group,
+                schema,
+                type,
+                name + ".md"
+            )
+            
+            yield fn, of, name, type, schema, group
+        else:
+            
+            if len(parts) < 7:
+                # section or schema documentation, not a full path to entity/type
+                continue
+            
+            _, name, type, schema, __, group = parts[0:6]
+            
+            of = os.path.join(
+                odr,
+                group.split(' ')[0].lower(),
+                schema,
+                type,
+                name + ".md"
+            )
+            
+            yield fn, of, name, type, schema, group
     
 for fn, of, name, type, schema, group in yield_relevant(md_files):
     
@@ -48,9 +96,7 @@ for fn, of, name, type, schema, group in yield_relevant(md_files):
             print("#", name, file=f)
             print(file=f)
             print(f0.read().strip().replace("../../../../../../", "../../../../"), file=f)
-            
 
-from xml.dom.minidom import parse
 
 for fn, of, name, type, schema, group in yield_relevant(xml_files):
 
@@ -60,22 +106,33 @@ for fn, of, name, type, schema, group in yield_relevant(xml_files):
     if not os.path.exists(os.path.dirname(of)):
         os.makedirs(os.path.dirname(of))
 
-    print(fn)
     dom = parse(fn)
     
     pairs = [
         ("Attributes", dom.getElementsByTagName("DocAttribute")),
         ("Formal Propositions", dom.getElementsByTagName("DocWhereRule")),
         ("UniqueRules", dom.getElementsByTagName("DocUniqueRule")),
-        ("Items", dom.getElementsByTagName("DocConstant"))
+        ("Items", dom.getElementsByTagName("DocConstant")),
+        ("Items", dom.getElementsByTagName("DocPropertyConstant"))
     ]
 
     num_elems = sum(len(p[1]) for p in pairs)
     i = 1
-    
+
     with open(of, "a", encoding="utf-8") as f:
+
+        if dom.childNodes[0].tagName == "DocPropertyEnumeration":
+            # @nb they don't have a corresponding md in ifcdoc, so
+            # we need to create on from the definition
+            print(f"# {name}\n", file=f)
+            
+            try:
+                definition = dom.childNodes[0].getElementsByTagName("Documentation")[0].childNodes[0].data
+                print(f"{definition}\n", file=f)
+            except:
+                pass            
     
-        if num_elems:
+        elif num_elems:
             print(file=f)
     
         for lbl, elems in pairs:
@@ -83,27 +140,26 @@ for fn, of, name, type, schema, group in yield_relevant(xml_files):
                 print("##", lbl, end="\n\n", file=f)
                 for elem in elems:
 
-                    if elem.tagName == 'DocConstant':
+                    docstring = ""
+                    if elem.tagName == 'DocConstant' or elem.tagName == 'DocPropertyConstant':
                         # in case of constants we need to lookup the definition in another
                         # XML file. We can then use the same logic on Name and Documentation
                         href = elem.getAttribute("href")
-                        cnst_fn = os.path.join(dr, 'Constants', href[0].lower(), href + ".xml")
-                        if not os.path.exists(cnst_fn):
-                            name = href.split("_", 1)[0]
-                            elem = None
+                        if href:
+                            name, docstring = constants[href]
                         else:
-                            dom2 = parse(cnst_fn)
-                            elem = dom2.getElementsByTagName("DocConstant")[0]
-
-                    print("###", elem.getAttribute("Name") if elem is not None else name, file=f)
-
-                    docstring = ""
-                    # can be None in case of missing constant
-                    if elem is not None:
-                        doc = elem.getElementsByTagName("Documentation")
-                        if doc and doc[0].childNodes:
-                            docstring = doc[0].childNodes[0].data
-
+                            name = elem.getAttribute("Name")
+                            assert name
+                            docstring = ""
+                    else:
+                        name = elem.getAttribute("Name")
+                        assert name
+                        try:
+                            docstring = elem.getElementsByTagName("Documentation")[0].childNodes[0].data
+                        except:
+                            docstring = ""
+                        
+                    print(f"### {name}", file=f)
                     print(docstring, file=f)
                         
                     if i < num_elems:

@@ -586,6 +586,7 @@ def get_example(example):
     return send_from_directory(os.path.join(REPO_DIR, "..", "examples", "IFC 4.3"), example)
 
 
+# The markdown is littered with this type of annotation tag. Does it have meaning? We strip it out everywhere.
 DOC_ANNOTATION_PATTERN = re.compile(r"\{\s*\..+?\}")
 
 
@@ -601,43 +602,46 @@ class resource_documentation_builder:
 
     def get_markdown_content(self, heading):
         attrs = []
-        fwd_attrs = []
+        direct_attrs = []
 
-        ty = self.resource
-        while ty:
-            md_ty_fn = get_resource_path(ty)
+        entity = self.resource
+        while entity:
+            markdown_filename = get_resource_path(entity)
 
             try:
-                md_ty = re.sub(DOC_ANNOTATION_PATTERN, "", open(md_ty_fn, encoding="utf-8").read())
+                md_entity = re.sub(DOC_ANNOTATION_PATTERN, "", open(markdown_filename, encoding="utf-8").read())
             except:
-                md_ty = None
+                md_entity = None
 
-            ty_attrs = []
+            entity_attrs = []
             try:
-                if md_ty:
-                    ty_attrs = list(mdp.markdown_attribute_parser(data=md_ty, heading_name=heading, as_text=False))
+                if md_entity:
+                    entity_attrs = list(mdp.markdown_attribute_parser(data=md_entity, heading_name=heading, as_text=False))
             except:
-                pass
+                import traceback
+
+                traceback.print_exc()
+
 
             if heading == "Attributes":
-                ty_attr_di = dict(ty_attrs)
-                for a in [k.split(".")[1] for k in R.entity_attributes.keys() if k.startswith(f"{ty}.")][::-1]:
-                    content = ty_attr_di.get(a, "")
-                    is_fwd, attr_ty = R.entity_attributes[".".join((ty, a))]
-                    attrs.append((ty, a, attr_ty, content))
+                entity_attr_di = dict(entity_attrs)
+                for a in [k.split(".")[1] for k in R.entity_attributes.keys() if k.startswith(f"{entity}.")][::-1]:
+                    content = entity_attr_di.get(a, "")
+                    is_fwd, attr_entity = R.entity_attributes[".".join((entity, a))]
+                    attrs.append((entity, a, attr_entity, content))
                     if is_fwd:
-                        fwd_attrs.append(a)
+                        direct_attrs.append(a)
             else:
-                for a, content in ty_attrs[::-1]:
+                for a, content in entity_attrs[::-1]:
                     # remove underscored words:
-                    attrs.append((ty, a, content))
-            ty = R.entity_supertype.get(ty)
+                    attrs.append((entity, a, content))
+            entity = R.entity_supertype.get(entity)
 
         attrs = attrs[::-1]
 
         if heading == "Attributes":
             # Decorate with attribute index
-            attr_index = {b: a for a, b in enumerate(fwd_attrs[::-1], 1)}
+            attr_index = {b: a for a, b in enumerate(direct_attrs[::-1], 1)}
             attrs = [(a, attr_index.get(b, ""), b, c, d) for a, b, c, d in attrs]
 
         return attrs
@@ -923,8 +927,6 @@ def get_properties(resource, mdc):
 
 
 def get_attributes(resource, builder):
-    if not builder:
-        return
     attrs = builder.attributes
     supertype_counts = Counter()
     supertype_counts.update([a[0] for a in attrs])

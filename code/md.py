@@ -45,8 +45,9 @@ def parse_document(*, fn=None, data=None, linesep="", as_text=True):
             first = strings[0] if strings else ""
         else:
             selected = list(selected)
-            concat = "".join(map(str, selected))
-            first = str(selected[0])
+            if selected:
+                concat = "".join(map(str, selected))
+                first = str(selected[0])
         
         section = markdown_section(int(h.name[1:]), h.text, concat, first)
         if section.level == len(stack):

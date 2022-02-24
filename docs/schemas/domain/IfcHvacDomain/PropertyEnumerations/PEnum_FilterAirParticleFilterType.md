@@ -1,0 +1,48 @@
+# PEnum_FilterAirParticleFilterType
+
+## Items
+
+### COARSEMETALSCREEN
+
+
+### COARSECELLFOAMS
+
+
+### COARSESPUNGLASS
+
+
+### MEDIUMELECTRETFILTER
+
+
+### MEDIUMNATURALFIBERFILTER
+
+
+### HEPAFILTER
+
+
+### ULPAFILTER
+
+
+### MEMBRANEFILTERS
+
+
+### RENEWABLEMOVINGCURTIANDRYMEDIAFILTER
+
+
+### ELECTRICALFILTER
+
+
+### ROLLFORM
+
+
+### ADHESIVERESERVOIR
+
+
+### OTHER
+required category not on scale
+
+### NOTKNOWN
+Value is unkown
+
+### UNSET
+Value has not been specified

@@ -974,7 +974,9 @@ def get_attributes(resource, builder):
 
     total_inherited_attributes = sum([g["total_attributes"] for g in groups if g["is_inherited"]])
 
-    [g for g in groups if g["is_inherited"] and g["total_attributes"]][-1]["is_last_inherited_group"] = True
+    inherited_groups_with_attributes = [g for g in groups if g["is_inherited"] and g["total_attributes"]]
+    if inherited_groups_with_attributes:
+        inherited_groups_with_attributes[-1]["is_last_inherited_group"] = True
 
     return {
         "number": SectionNumberGenerator.generate(),
@@ -1165,7 +1167,10 @@ def get_concept_usage(resource, builder):
         )
 
     total_inherited_concepts = sum([g["total_concepts"] for g in groups if g["is_inherited"]])
-    [g for g in groups if g["is_inherited"] and g["total_concepts"]][-1]["is_last_inherited_group"] = True
+
+    inherited_groups_with_concepts = [g for g in groups if g["is_inherited"] and g["total_concepts"]]
+    if inherited_groups_with_concepts:
+        inherited_groups_with_concepts[-1]["is_last_inherited_group"] = True
 
     if groups:
         return {

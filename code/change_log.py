@@ -21,7 +21,7 @@ def to_dict(decl):
             }
             
         def format_inverse(attr):
-            name, definition = list(map(str.strip, str(decl.inverse[1]).split(":", 1)))
+            name, definition = list(map(str.strip, str(attr).split(":", 1)))
             return {
                 # 'type': 'inverse_attribute',
                 'name': name,
@@ -98,20 +98,26 @@ if __name__ == "__main__":
     
     from ifcopenshell.express import express_parser
     
-    try:
+    repo_dir = None
+    
+    if len(sys.argv) == 2:    
         repo_dir = sys.argv[1]
-    except:
+    elif len(sys.argv) == 3:
+        files = sys.argv[1:]
+    else:
         repo_dir = os.path.join(os.path.dirname(__file__), "..")
 
-    d = os.path.join(repo_dir, "reference_schemas")
-    names = [
-        "IFC2X3_TC1.exp",
-        "IFC4_ADD2_TC1.exp",
-        "IFC4x1.exp",
-        "IFC4x2.exp",
-        "IFC4x3_RC3.exp"
-    ]
-    files = map(functools.partial(os.path.join, d), names)
+    if repo_dir:
+        d = os.path.join(repo_dir, "reference_schemas")
+        names = [
+            "IFC2X3_TC1.exp",
+            "IFC4_ADD2_TC1.exp",
+            "IFC4x1.exp",
+            "IFC4x2.exp",
+            "IFC4x3_RC3.exp"
+        ]
+        files = map(functools.partial(os.path.join, d), names)
+
     schemas = list(map(express_parser.parse, files))
     
     for a, b in zip(schemas[:-1], schemas[1:]):

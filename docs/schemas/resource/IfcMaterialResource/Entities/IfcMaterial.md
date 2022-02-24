@@ -19,7 +19,7 @@ An _IfcMaterial_ may also have presentation information associated. Such present
 
 ### Name
 Name of the material.
-> EXAMPLE A view definition may require _Material.Name_ to uniquely specify e.g. concrete or steel grade, in which case the attribute Material.Category could take the value 'Concrete' or 'Steel'.
+> EXAMPLE  A view definition may require each _Name_ attribute to be unique, e.g. for each concrete or steel grade used in a project, in which case the _Category_ should take the values 'concrete' or 'steel'.
 
 > NOTE  Material grade may have different meaning in different view definitions, e.g. strength grade for structural design and analysis, or visible appearance grade in architectural application. Also, more elaborate material grade definition may be associated as classification via inverse attribute _HasExternalReferences_.
 
@@ -30,7 +30,8 @@ Definition of the material in more descriptive terms than given by attributes _N
 
 ### Category
 Definition of the category (group or type) of material, in more general terms than given by attribute _Name_.
-> EXAMPLE A view definition may require each _Material.Name_ to be unique, e.g. for each concrete or steel grade used in a project, in which case _Material.Category_ could take the values 'Concrete' or 'Steel'.
+
+It is recommended to use common terms for the material category, the following list constitutes such a recommondation: 'concrete', 'steel', 'aluminium', 'block', 'brick', 'stone', 'wood', 'glass', 'gypsum', 'plastic', 'earth'.
 
 { .change-ifc2x4}
 > IFC4 CHANGE  The attribute has been added at the end of attribute list.

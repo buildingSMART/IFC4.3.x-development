@@ -927,7 +927,7 @@ def get_properties(resource, mdc):
             "type": prop_type,
             "data_type": prop["data"],
             "description": doc,
-            "edit_url": make_url("property/" + prop["name"]),
+            "edit_url": url_for("property", prop=prop["name"]),
         }
 
     attrs = list(map(make_prop, R.pset_definitions[resource]["properties"]))

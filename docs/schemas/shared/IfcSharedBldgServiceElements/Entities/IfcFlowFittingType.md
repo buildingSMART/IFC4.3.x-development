@@ -6,4 +6,4 @@ A flow fitting type is used to define the common properties of a flow fitting th
 
 Occurrences of the _IfcFlowFittingType_ are represented by instances of _IfcFlowFitting_ or its subtypes.
 
-> HISTORY&nbsp; New entity in IFC2x2.
+> HISTORY  New entity in IFC2x2.

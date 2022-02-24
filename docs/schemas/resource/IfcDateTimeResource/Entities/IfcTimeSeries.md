@@ -4,7 +4,7 @@ A time series is a set of a time-stamped data entries. It allows a natural assoc
 
 The modeling of buildings and their performance involves data that are generated and recorded over a period of time. Such data cover a large spectrum, from weather data to schedules of all kinds to status measurements to reporting to everything else that has a time related aspect. Their correct placement in time is essential for their proper understanding and use, and the _IfcTimeSeries_ subtypes provide the appropriate data structures to accommodate these types of data.
 
-> HISTORY&nbsp; New entity in IFC2x2.
+> HISTORY  New entity in IFC2x2.
 
 ## Attributes
 
@@ -33,6 +33,6 @@ Value of the data origin if DataOrigin attribute is USERDEFINED.
 The unit to be assigned to all values within the time series. Note that mixing units is not allowed. If the value is not given, the global unit for the type of _IfcValue_, as defined at _IfcProject.UnitsInContext_ is used.
 
 ### HasExternalReference
-Reference to an external reference, e.g. library, classification, or document information, that is associated to the IfcTimeSeries. 
+Reference to an external reference, e.g. library, classification, or document information, that is associated to the IfcTimeSeries.
 { .change-ifc2x4}
 > IFC4 CHANGE New inverse attribute.

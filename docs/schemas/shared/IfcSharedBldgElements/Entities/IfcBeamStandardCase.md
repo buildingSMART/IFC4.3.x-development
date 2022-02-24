@@ -6,15 +6,15 @@ The standard beam, _IfcBeamStandardCase_, defines a beam with certain constraint
 * are consistent in using the correct cardinal point offset of the profile as compared to the 'Axis' and 'Body' shape representation
 * are based on a sweep of a planar profile, or set of profiles, as defined by the _IfcMaterialProfileSet_
 * have an 'Axis' shape representation with constraints provided below in the geometry use definition
-* have a 'Body' shape representation with constraints provided below in the geometry use definition 
+* have a 'Body' shape representation with constraints provided below in the geometry use definition
     * are extruded perpendicular to the profile definition plane
     * have a start profile, or set of profiles, that is swept
     * the sweeping operation can be linear extrusion, circular rotation, or a sweep along a directrix
-    * the start profile, or set of profiles can be swept unchanged, or might be changed uniformly by a taper definition 
-*  
->> NOTE&nbsp; View definitions and implementer agreements may further constrain the applicable geometry types, e.g. by excluding tapering from an _IfcBeamStandardCase_ implementation. 
+    * the start profile, or set of profiles can be swept unchanged, or might be changed uniformly by a taper definition
+*
+>> NOTE  View definitions and implementer agreements may further constrain the applicable geometry types, e.g. by excluding tapering from an _IfcBeamStandardCase_ implementation.
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 **_Geometric Representations_**
 
@@ -23,7 +23,7 @@ The geometric representation of _IfcBeamStandardCase_ is defined using the follo
 * **Axis**: A three dimensional open curve (subtype of _IfcBoundedCurve_) defining the axis for the standard beam. The cardinal point is determined by the beam axis.
 * **Body**: A Swept Solid Representation or a CSG clipping representation defining the 3D shape of the standard beam.
 
-> NOTE&nbsp; It is invalid to exchange a 'SurfaceModel', 'Brep', or 'MappedRepresentation' representation for the 'Body' shape representation of an _IfcBeamStandardCase_.
+> NOTE  It is invalid to exchange a 'SurfaceModel', 'Brep', or 'MappedRepresentation' representation for the 'Body' shape representation of an _IfcBeamStandardCase_.
 
 ## Formal Propositions
 
@@ -182,7 +182,7 @@ Figure 207 — Beam body extrusion
 
 The IfcBeamStandardCase defines in addition that the
  IfcBeamType should have a unique
- IfcMaterialProfileSet, that is referenced by the 
+ IfcMaterialProfileSet, that is referenced by the
 IfcMaterialProfileSetUsage that is assigned to all
 occurrences of this IfcBeamType.
 
@@ -235,8 +235,8 @@ Figure 206 — Beam composite profiles
 The following restriction is imposed:
 
 
-* The local placement shall provide the location and directions 
-for the standard beam, the x/y plane is the plane for the start 
+* The local placement shall provide the location and directions
+for the standard beam, the x/y plane is the plane for the start
 profile, and the z-axis is the extrusion axis for the beam body (in
 case of rotation, the tangent direction).
 

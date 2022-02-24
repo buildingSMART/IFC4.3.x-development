@@ -2,7 +2,7 @@
 
 The opening element stands for opening, recess or chase, all reflecting voids. It represents a void within any element that has physical manifestation. Openings can be inserted into walls, slabs, beams, columns, or other elements.
 
-> NOTE&nbsp; Definition according to ISO 6707-1: void in a building element
+> NOTE  Definition according to ISO 6707-1: void in a building element
 
 There are two different types of opening elements. The attribute _PredefinedType_ should be used to capture the differences:
 
@@ -15,20 +15,20 @@ If the value for _PredefinedType_ is omitted, or the value is set to NOTDEFINED,
 
 An _IfcOpeningElement_ has to be inserted into an _IfcElement_ by using the _IfcRelVoidsElement_ relationship. It may be filled by an _IfcDoor_, _IfcWindow_, or another filling element by using the relationship _IfcRelFillsElements_. Depending on the type of the _IfcShapeRepresentation_ of the _IfcOpeningElement_ the voiding relationship implies:
 
-*  if the _IfcShapeRepresentation_.RepresentationIdentifier = 'Body', then the Body shape represntation of the opening has to be subtracted from the body shape representation of the voided element - implicit Boolean difference operation.
+*  if the _IfcShapeRepresentation_.RepresentationIdentifier = 'Body', then the Body shape representation of the opening has to be subtracted from the body shape representation of the voided element - implicit Boolean difference operation.
 *  if the _IfcShapeRepresentation_.RepresentationIdentifier = 'Reference', then the Reference shape representation of the opening is not subtracted, it is provided in addition to the hole in the Body shape representation of the voided element.
 
 The _IfcOpeningElement_ shall not participate in the containment relationship, i.e. it is not linked directly to the spatial structure of the project. It has a mandatory _VoidsElements_ inverse relationship pointing to the _IfcElement_ that is contained in the spatial structure. The inverse relationship _ContainedInStructure_ shall be NIL.
 
-> NOTE&nbsp; See _IfcRelVoidsElement_ for a diagram on how to apply spatial containment and the voiding relationship.
+> NOTE  See _IfcRelVoidsElement_ for a diagram on how to apply spatial containment and the voiding relationship.
 
-> HISTORY&nbsp; New entity in IFC1.0
+> HISTORY  New entity in IFC1.0
 
 { .change-ifc2x}
-> IFC2x CHANGE&nbsp; The intermediate ABSTRACT supertypes _IfcFeatureElement_ and _IfcFeatureSubtraction_ have been added.
+> IFC2x CHANGE  The intermediate ABSTRACT supertypes _IfcFeatureElement_ and _IfcFeatureSubtraction_ have been added.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; The attribute _PredefinedType_ has been added at the end of attribute list. It should be used instead of the inherited attribute _ObjectType_ from now on.
+> IFC4 CHANGE  The attribute _PredefinedType_ has been added at the end of attribute list. It should be used instead of the inherited attribute _ObjectType_ from now on.
 
 ## Attributes
 

@@ -10,7 +10,7 @@ The standard plate, _IfcPlateStandardCase_, defines a plate with certain constra
 
 The definitions of plate openings and niches are the same as given at the supertype _IfcPlate_. The same agreements to the special types of plates, as defined in the _PredefinedType_ attribute apply as well.
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 ## Formal Propositions
 
@@ -93,7 +93,7 @@ The material of the IfcPlateStandardCase is defined by
 IfcMaterialLayerSetUsage and attached by the
 IfcRelAssociatesMaterial.RelatingMaterial. It is
 accessible by the inverse HasAssociations relationship.
-Multi-layer plates can be represented by refering to several
+Multi-layer plates can be represented by referring to several
 IfcMaterialLayer's within the IfcMaterialLayerSet
 that is referenced from the
 IfcMaterialLayerSetUsage. 
@@ -144,8 +144,8 @@ Figure 251 — Plate material layers
 The following restriction is imposed:
 
 
-* The local placement shall provide the location and directions 
-for the standard plate, the x/y plane is the plane for the 
+* The local placement shall provide the location and directions
+for the standard plate, the x/y plane is the plane for the
 profile, and the z-axis is the extrusion axis for the plate body.
 
 

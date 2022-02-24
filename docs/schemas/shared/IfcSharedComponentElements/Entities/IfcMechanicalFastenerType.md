@@ -9,10 +9,10 @@ The element component type **IfcMechanicalFastenerType** defines commonly shared
 
 It is used to define a mechanical fastener type specification indicating the specific product information that is common to all occurrences of that product type. The **IfcMechanicalFastenerType** may be declared within _IfcProject_ or _IfcProjectLibrary_ using _IfcRelDeclares_ and may be exchanged with or without occurrences of the type. Occurrences of **IfcMechanicalFastenerType** are represented by instances of _IfcMechanicalFastener_.
 
-> HISTORY&nbsp; New entity in IFC2x2
+> HISTORY  New entity in IFC2x2
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Supertype changed from _IfcFastenerType_ to _IfcElementComponentType_. Attributes _PredefinedType_, _NominalDiameter_, _NominalLength_ added.
+> IFC4 CHANGE  Supertype changed from _IfcFastenerType_ to _IfcElementComponentType_. Attributes _PredefinedType_, _NominalDiameter_, _NominalLength_ added.
 
 { .use-head}
 Classification Use Definition

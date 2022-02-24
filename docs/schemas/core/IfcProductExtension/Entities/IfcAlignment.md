@@ -8,9 +8,9 @@ For the purposes of IFC the English term "alignment" defines three essentially s
 
 **Reference system for linear positioning**
 
-An alignment is used to define a reference system to position elements mainly for linear construction works, such as roads, rails, bridges, and others. The relative positioning along the alignment is defined by the linear referencing methodology.  
+An alignment is used to define a reference system to position elements mainly for linear construction works, such as roads, rails, bridges, and others. The relative positioning along the alignment is defined by the linear referencing methodology.
 
-> NOTE&nbsp; See ISO 19148 Geographic information &ndash; Linear referencing for general definitions about linear referencing.  
+> NOTE  See ISO 19148 Geographic information &ndash; Linear referencing for general definitions about linear referencing.
 
 **Kinematic perspective**
 
@@ -32,10 +32,10 @@ In the geometric perspective the focus is on the proper placement of horizontal 
 
 4. In a final step the proposed layout is checked against a defined set of rules, formulas and thresholds to guarantee the conformance against the regulation.
 
-The sequence of steps might change from case to case and might be repeated one or more times to achieve the economic objectives and fulfill regulatory safety requirements. 
+The sequence of steps might change from case to case and might be repeated one or more times to achieve the economic objectives and fulfill regulatory safety requirements.
 
 
-Contemporary alignment design almost always implements a 2.5 dimension approach. 
+Contemporary alignment design almost always implements a 2.5 dimension approach.
 
 The resulting and documented geometry might be very precise or just good enough to meet safety thresholds. This depends on factors like priorities of the management, date of the design - existing alignments might have been designed more then 50 years ago - or software tools used. Working with legacy data in a high precision BIM model requires a good understanding of these factors.
 
@@ -52,32 +52,32 @@ According to IFC modeling principles alignment entities are organised in two lar
 
 **IFC modelling**
 
-In IFC a single alignment must have:  
+In IFC a single alignment must have:
 
-* a horizontal alignment defined in the x/y plane of the engineering coordinate system  
+* a horizontal alignment defined in the x/y plane of the engineering coordinate system
 
-A single alignment may have: 
+A single alignment may have:
 
-* an accompanying vertical alignment, defined along the horizontal alignment in the distance along / z coordinate space  
-* a relative alignment, defined as a span within another alignment and/or at constant or variable offsets  
-* a 3D alignment, either computed from the horizontal and vertical alignment, or extracted from geospatial data.  
+* an accompanying vertical alignment, defined along the horizontal alignment in the distance along / z coordinate space
+* a relative alignment, defined as a span within another alignment and/or at constant or variable offsets
+* a 3D alignment, either computed from the horizontal and vertical alignment, or extracted from geospatial data.
 
-Alignments may be aggregated into referents (_IfcReferent_) or derivative alignments. Derivative alignments may be used to indicate dependent alignments, such as an alignment for a bridge that is relative to a parent alignment for a road, where the child _IfcAlignment_ may have its shape representation set to _IfcOffsetCurveByDistances_ that starts and ends at a span within the extent of the shape representation of the parent _IfcAlignment_.  
+Alignments may be aggregated into referents (_IfcReferent_) or derivative alignments. Derivative alignments may be used to indicate dependent alignments, such as an alignment for a bridge that is relative to a parent alignment for a road, where the child _IfcAlignment_ may have its shape representation set to _IfcOffsetCurveByDistances_ that starts and ends at a span within the extent of the shape representation of the parent _IfcAlignment_.
 
-Alignments may be assigned to groups using _IfcRelAssignsToGroup_, where _IfcGroup_ or subtypes may capture information common to multiple alignments.  
+Alignments may be assigned to groups using _IfcRelAssignsToGroup_, where _IfcGroup_ or subtypes may capture information common to multiple alignments.
 
-Supported shape representations of <span class="self-ref">IfcAlignment</span> are:  
+Supported shape representations of <span class="self-ref">IfcAlignment</span> are:
 
-* _IfcGradientCurve_ as a 3D horizontal and vertical alignment (represented by their alignment segments)  
-* _IfcCompositeCurve_ as a 2D horizontal alignment (represented by its horizontal alignment segments) without a vertical alignment  
-* _IfcOffsetCurveByDistances_ as a 2D or 3D curve defined relative to an _IfcAlignmentCurve_ or another _IfcOffsetCurveByDistances_  
-* _IfcSegmentedReferenceCurve_ as a 3D curve defined relative to an _IfcGradientCurve_ to incorporate the application of cant 
-* _IfcPolyline_ as a 3D alignment by a 3D polyline representation (such as coming from a survey)  
-* _IfcPolyline_ as a 2D horizontal alignment by a 2D polyline representation (such as in very early planning phases or as a map representation)  
+* _IfcGradientCurve_ as a 3D horizontal and vertical alignment (represented by their alignment segments)
+* _IfcCompositeCurve_ as a 2D horizontal alignment (represented by its horizontal alignment segments) without a vertical alignment
+* _IfcOffsetCurveByDistances_ as a 2D or 3D curve defined relative to an _IfcAlignmentCurve_ or another _IfcOffsetCurveByDistances_
+* _IfcSegmentedReferenceCurve_ as a 3D curve defined relative to an _IfcGradientCurve_ to incorporate the application of cant
+* _IfcPolyline_ as a 3D alignment by a 3D polyline representation (such as coming from a survey)
+* _IfcPolyline_ as a 2D horizontal alignment by a 2D polyline representation (such as in very early planning phases or as a map representation)
 
 The _RepresentationIdentifier_ shall always be set to 'Axis' and the _RepresentationType_ shall be set to either 'Curve2D' or 'Curve3D' depending on if the referenced curve is 2- or 3-dimensional
 
-> NOTE&nbsp; Derivative specifications (Model View Definitions) may expand the above set to include additional supported curve types.
+> NOTE  Derivative specifications (Model View Definitions) may expand the above set to include additional supported curve types.
 
 ## Attributes
 

@@ -30,9 +30,9 @@ The subtypes of _IfcSpatialStructureElement_ relate to other elements and system
 
 The subtypes of _IfcSpatialStructureElement_ relate to each other by using the _IfcRelAggregates_ relationship to build the project spatial structure. Figure 1 shows the use of _IfcRelAggregates_ to establish a spatial structure including site, building, building section and storey. More information is provided at the level of the subtypes.
 
-!["fig1"](../../../../figures/ifcspatialstructureelement-spatialstructure.png "Figure 1 &mdash; Spatial structure element composition")
+![fig1](../../../../figures/ifcspatialstructureelement-spatialstructure.png "Figure 1 &mdash; Spatial structure element composition")
 
-> HISTORY&nbsp; New entity in IFC2x.
+> HISTORY  New entity in IFC2x.
 
 { .spec-head}
 Informal Propositions:
@@ -47,7 +47,7 @@ Informal Propositions:
 ### CompositionType
 Denotes, whether the predefined spatial structure element represents itself, or an aggregate (complex) or a part (part). The interpretation is given separately for each subtype of spatial structure element. If no _CompositionType_ is asserted, the default value ''ELEMENT'' applies.\X\0D
 { .change-ifc2x4}\X\0D
-> IFC4 CHANGE&nbsp; Attribute made optional.
+> IFC4 CHANGE  Attribute made optional.
 
 ## Formal Propositions
 

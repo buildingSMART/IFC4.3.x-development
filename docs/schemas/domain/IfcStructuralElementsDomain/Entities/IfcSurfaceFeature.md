@@ -4,7 +4,7 @@ A surface feature is a modification at (onto, or into) of the surface of an elem
 
 The part&ndash;whole relationship is established by an aggregation relationship object, expressing the decomposition of an element type into one or more additive elements (element parts) and zero or more feature elements.
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 ****Containment Use Definition****:
 
@@ -27,7 +27,7 @@ The local placement for _IfcSurfaceFeatureElement_ is defined in its supertype _
 
 Different shape representations may be used, depending on the nature of the feature and information requirements:
 
-* Symbolic representation, such as the two-dimensional bounding box of a tag. 
+* Symbolic representation, such as the two-dimensional bounding box of a tag.
 * A geometric set representing the geometric items of a mark.
 * Surface representations of treated parts of the lement surface by means of _IfcShellBasedSurfaceModel_. The faces within the surface model may be included into a B-Rep model within a representation map of the parent element type.
 

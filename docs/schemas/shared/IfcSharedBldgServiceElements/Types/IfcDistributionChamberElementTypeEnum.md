@@ -2,7 +2,7 @@
 
 This enumeration identifies different types of distribution chambers.
 
-> HISTORY&nbsp; New enumeration in IFC2x2.
+> HISTORY  New enumeration in IFC2x2.
 
 ## Items
 
@@ -10,7 +10,7 @@ This enumeration identifies different types of distribution chambers.
 Space formed in the ground for the passage of pipes, cables, ducts.
 
 ### INSPECTIONCHAMBER
-Chamber constructed on a drain, sewer or pipeline with a removable cover that permits visble inspection.
+Chamber constructed on a drain, sewer or pipeline with a removable cover that permits visible inspection.
 
 ### INSPECTIONPIT
 Recess or chamber formed to permit access for inspection of substructure and services.

@@ -8,7 +8,7 @@ The standard door, _IfcDoorStandardCase_, defines a door with certain constraint
 * have a reference to an _IfcDoorType_ to define the opening direction and the operation type (swinging, sliding, folding, etc.) of the door. The attribute _OperationType_ shall be provided and not being UNDEFINED, and the attribute _ParameterTakesPrecedence_ shall be "TRUE";
 * have an _IfcDoorLiningProperties_ and _IfcDoorPanelProperties_ instances included in the set of _HasPropertySets_ at _IfcDoorType_.
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 **_Geometric Representations_**
 
@@ -22,15 +22,15 @@ The geometric representation of _IfcDoorStandardCase_ is defined using the follo
 ### Profile 3D Geometry
 
 The door profile is represented by a three-dimensional closed
-curve within a particular shape representation. The profile is used 
+curve within a particular shape representation. The profile is used
 to apply the parameter of the parametric door representation. The
- following attribute values for the IfcShapeRepresentation 
+ following attribute values for the IfcShapeRepresentation
 holding this geometric representation shall be used:
 
 
 * RepresentationIdentifier : 'Profile'
 * RepresentationType : 'Curve3D' or 'GeometricCurveSet',
-in case of 'GeometricCurveSet' only a single closed curve shall be 
+in case of 'GeometricCurveSet' only a single closed curve shall be
 contained in the set of IfcShapeRepresentation.Items.
 
 
@@ -56,7 +56,7 @@ IfcCartesianPoint's shall be 0.).
 
 
 
-> 
+>
 > * IfcDoorLiningProperties.LiningDepth starting at distance
 > defined by LiningOffset going into the positive y
 > direction.
@@ -70,11 +70,11 @@ IfcCartesianPoint's shall be 0.).
 > * IfcDoorLiningProperties.ThresholdDepth starting at
 > distance defined by LiningOffset going into the positive y
 > direction.
-> * IfcDoorLiningProperties.TransomOffset starting at the 
+> * IfcDoorLiningProperties.TransomOffset starting at the
 > bottom edge of the rectangle (along local x axis) into the inner
 > side of the rectangle, distance provided as percentage of overall
 > height. Distance to the centre line of the transom.
-> 
+>
 
 
 Figure 231 — Door profile

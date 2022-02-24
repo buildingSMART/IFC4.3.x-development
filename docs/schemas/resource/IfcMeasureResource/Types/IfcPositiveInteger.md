@@ -6,7 +6,7 @@ In principle, the domain of _IfcInteger_ is all integer numbers larger than zero
 
 Type: INTEGER
 
-> HISTORY&nbsp; New type in IFC4 ADD1
+> HISTORY  New type in IFC4 ADD1
 
 ## Formal Propositions
 

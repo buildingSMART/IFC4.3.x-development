@@ -2,12 +2,12 @@
 
 This entity describes surface members with varying section properties. The properties are provided by means of _Pset_StructuralSurfaceMemberVaryingThickness_ via _IfcRelDefinesByProperties_, or by means of aggregation: An instance of _IfcStructuralSurfaceMemberVarying_ may be composed of two or more instances of _IfcStructuralSurfaceMember_ with differing section properties. These subordinate members relate to the instance of _IfcStructuralSurfaceMemberVarying_ by _IfcRelAggregates_.
 
-> NOTE&nbsp; It is recommended that structural activities (actions or reactions) are not connected with aggregated _IfcStructuralSurfaceMemberVarying_ but only with the _IfcStructuralSurfaceMember_s in the aggregation. That way, difficulties in interpretation of local coordinates are avoided.
+> NOTE  It is recommended that structural activities (actions or reactions) are not connected with aggregated _IfcStructuralSurfaceMemberVarying_ but only with the _IfcStructuralSurfaceMember_s in the aggregation. That way, difficulties in interpretation of local coordinates are avoided.
 
-> HISTORY&nbsp; New entity in IFC2x2.
+> HISTORY  New entity in IFC2x2.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Use definition changed and attributes deleted.
+> IFC4 CHANGE  Use definition changed and attributes deleted.
 
 ****Coordinate Systems****:
 

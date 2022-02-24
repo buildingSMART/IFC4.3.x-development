@@ -11,17 +11,30 @@ The _TexCoords_ defined at supertype _IfcIndexedTextureMap_ are a two-dimensiona
 
 Figure 1 shows the use of _IfcTriangulatedFaceSet_ with textures.
 
-!["Instantiation diagram showing the use of _IfcIndexedTriangleTextureMap_"](../../../../figures/ifcindexedtriangletexturemap_01.png "Figure 1 &mdash; Use of _IfcIndexedTriangleTextureMap_")
+![IfcIndexedTriangleTextureMap_01](../../../../figures/ifcindexedtriangletexturemap_01.png)
 
-Figure 2 illustrates an _IfcTriangulatedFaceSet_ represented by   
-_IfcTriangulatedFaceSet.CoordIndex_: ((1,6,5), (1,2,6), (6,2,7), (7,2,3), (7,8,6), (6,8,5), (5,8,1), (1,8,4), (4,2,1), (2,4,3), (4,8,7), (7,3,4))  
-_IfcCartesianPointList.CoordList_: ((0.,0.,0.), (1.,0.,0.), (1.,1.,0.), (0.,1.,0.), (0.,0.,2.), (1.,0.,2.), (1.,1.,2.), (0.,1.,2.))  
-_IfcIndexedTriangleTextureMap.TexCoordsIndex_: ((1 4 3), (1 2 4), (3 1 4), (4 1 2), (8 7 6), (6 7 5), (4 3 2), (2 3 1), (5 8 7), (8 5 6), (2 4 3), (3 1 2))  
-_IfcTextureVertexList.TexCoordsList_: ((0. -0.5), (1. -0.5), (0. 1.5), (1. 1.5), (0. 0.), (0. 1.), (1. 0.), (1. 1.))
+Figure 2 illustrates an _IfcTriangulatedFaceSet_ represented by   :
 
-!["Instantiation diagram showing the use of _IfcIndexedTriangleTextureMap_"](../../../../figures/ifcindexedtriangletexturemap_example-01.png "Figure 2 &mdash; Indexed triangle texture map geometry")
+```
+IfcTriangulatedFaceSet.CoordIndex:
+((1,6,5), (1,2,6), (6,2,7), (7,2,3), (7,8,6), (6,8,5), (5,8,1), (1,8,4), (4,2,1), (2,4,3), (4,8,7), (7,3,4))
 
-> HISTORY&nbsp; New entity in IFC4.
+IfcCartesianPointList.CoordList:
+((0.,0.,0.), (1.,0.,0.), (1.,1.,0.), (0.,1.,0.), (0.,0.,2.), (1.,0.,2.), (1.,1.,2.), (0.,1.,2.))
+
+IfcIndexedTriangleTextureMap.TexCoordsIndex:
+((1 4 3), (1 2 4), (3 1 4), (4 1 2), (8 7 6), (6 7 5), (4 3 2), (2 3 1), (5 8 7), (8 5 6), (2 4 3), (3 1 2))
+
+IfcTextureVertexList.TexCoordsList:
+((0. -0.5), (1. -0.5), (0. 1.5), (1. 1.5), (0. 0.), (0. 1.), (1. 0.), (1. 1.))
+```
+
+![IfcIndexedTriangleTextureMap_example-01](../../../../figures/ifcindexedtriangletexturemap_example-01.png)
+
+Figure 2 &mdash; Indexed triangle texture map geometry
+
+> HISTORY  New entity in IFC4.
+
 
 ## Attributes
 

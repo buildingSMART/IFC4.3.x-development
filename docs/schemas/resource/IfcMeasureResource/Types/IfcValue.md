@@ -8,4 +8,4 @@ SELECT
 * **IfcMeasureValue** A select type for basic measure types of ISO 10303-41.
 * **IfcDerivedMeasureValue** A select type for derived measure types.
 
-> HISTORY&nbsp; New type in IFC2x.
+> HISTORY  New type in IFC2x.

@@ -2,7 +2,7 @@
 
 The _IfcActuatorTypeEnum_ defines the range of different types of actuator that can be specified.
 
-> HISTORY&nbsp; New enumeration in IFC2.0
+> HISTORY  New enumeration in IFC2.0
 
 ## Items
 
@@ -13,7 +13,7 @@ A device that electrically actuates a control element.
 A device that manually actuates a control element.
 
 ### HYDRAULICACTUATOR
-A device that electrically actuates a control element.
+A device that hydraulically actuates a control element.
 
 ### PNEUMATICACTUATOR
 A device that pneumatically actuates a control element.

@@ -1,3 +1,6 @@
+# IfcBearingType
+
+Types of building elements that are usually used to transmit loads from superstructure to substructure, and usually allowing movement (displacement or rotation) in one or more degrees of freedom. 
 
 ## Attributes
 

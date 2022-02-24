@@ -2,9 +2,9 @@
 
 This abstract entity represents various kinds of postal and telecom addresses.
 
-> NOTE&nbsp; Entity adapted from **address** defined in ISO&nbsp;10303-41.
+> NOTE  Entity adapted from **address** defined in ISO 10303-41.
 
-> HISTORY&nbsp; New entity in IFC1.5.1.
+> HISTORY  New entity in IFC1.5.1.
 
 ## Attributes
 
@@ -15,9 +15,9 @@ Identifies the logical location of the address.
 Text that relates the nature of the address.
 
 ### UserDefinedPurpose
-Allows for specification of user specific purpose of the address beyond the 
-enumeration values provided by Purpose attribute of type IfcAddressTypeEnum. 
-When a value is provided for attribute UserDefinedPurpose, in parallel the 
+Allows for specification of user specific purpose of the address beyond the
+enumeration values provided by Purpose attribute of type IfcAddressTypeEnum.
+When a value is provided for attribute UserDefinedPurpose, in parallel the
 attribute Purpose shall have enumeration value USERDEFINED.
 
 ### OfPerson

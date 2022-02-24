@@ -4,7 +4,7 @@ A coil is a device used to provide heat transfer between non-mixing media. A com
 
 Coils may also be used for non-airflow cases such as embedded in a floor slab.
 
-> HISTORY&nbsp; New entity in IFC4
+> HISTORY  New entity in IFC4
 
 { .note}
 >

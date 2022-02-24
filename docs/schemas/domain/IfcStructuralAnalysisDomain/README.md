@@ -6,7 +6,7 @@ The _IfcStructuralAnalysisDomain_ describes the structural analysis model in ord
 The following features are in scope:
 
 * Defining planar and/or spatial structural analysis models which can be used by structural analysis applications.
-* Included are, basically: 
+* Included are, basically:
     *  Straight or curved structural curve elements, planar or curved structural surface elements.
     *  Point, curve, and surface connections and supports.
     *  Specification of loadings including point, curve, surface loads, temperature loads, their assignment to load groups, load cases and load combinations.
@@ -14,9 +14,9 @@ The following features are in scope:
     *  Analysis results defined by forces and displacements.
 Currently not in scope are:
 
-* Dynamic analysis 
-*  Description of prestressed loads 
-*  Finite element topology 
-*  Detailed results in finite element meshes as well as stresses and strains in the structural elements. 
+* Dynamic analysis
+*  Description of prestressed loads
+*  Finite element topology
+*  Detailed results in finite element meshes as well as stresses and strains in the structural elements.
 
-> HISTORY&nbsp; New schema in IFC2x2.
+> HISTORY  New schema in IFC2x2.

@@ -11,7 +11,7 @@ Types are used as follows:
 * _IfcTimeSeries_: A value that varies over time.
 * _IfcReference_: A value referenced on an object attribute.
 
-> HISTORY&nbsp; New type in IFC2.0.
+> HISTORY  New type in IFC2.0.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; IfcValue added, which includes removed IfcDateTime and IfcText; IfcReference added.
+> IFC4 CHANGE  IfcValue added, which includes removed IfcDateTime and IfcText; IfcReference added.

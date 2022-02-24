@@ -6,4 +6,4 @@ A flow moving type is used to define the common properties of a flow moving devi
 
 The occurrences of the _IfcFlowMovingDeviceType_ are represented by instances of _IfcFlowMovingDevice_ or its subtypes.
 
-> HISTORY&nbsp; New entity in IFC2x2.
+> HISTORY  New entity in IFC2x2.

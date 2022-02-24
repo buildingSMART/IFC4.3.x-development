@@ -2,7 +2,7 @@
 
 The _IfcCableSegmentTypeEnum_ defines the range of different types of cable segment that can be specified.
 
-> HISTORY&nbsp; New type in IFC2x2. Core and busbar segment added in IFC4.
+> HISTORY  New type in IFC2x2. Core and busbar segment added in IFC4.
 
 ## Items
 
@@ -19,7 +19,7 @@ A single linear element within a cable or an exposed wire (such as for grounding
 A self contained element of a  cable that comprises one or more conductors and sheathing.The core of one lead is normally single wired or multiwired which are intertwined.
 
 ### CONTACTWIRESEGMENT
-An electric conductor of an overhead contact line with which the current collectors make contact.  
+An electric conductor of an overhead contact line with which the current collectors make contact.
 Note: definition from IEC60050 811-33-15.
 
 ### FIBERSEGMENT

@@ -2,7 +2,7 @@
 
 _IfcDocumentConfidentialityEnum_ enables selection of the level of confidentiality of document information from a list of choices.
 
-> HISTORY&nbsp; New enumeration in IFC2x.
+> HISTORY  New enumeration in IFC2x.
 
 ## Items
 
@@ -19,7 +19,7 @@ Document is confidential and its contents should not be revealed without permiss
 Document is personal to the author.
 
 ### USERDEFINED
-
+User defined.
 
 ### NOTDEFINED
-
+Not defined.

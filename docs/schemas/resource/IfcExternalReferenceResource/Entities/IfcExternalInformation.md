@@ -4,4 +4,4 @@ An _IfcExternalInformation_ is the identification of an information source that 
 
 The _IfcExternalInformation_ is an abstract supertype of all external information entities.
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.

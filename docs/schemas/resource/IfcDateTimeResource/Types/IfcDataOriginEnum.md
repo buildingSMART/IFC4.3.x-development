@@ -2,7 +2,7 @@
 
 _IfcDataOriginEnum_ identifies the origin of time data.
 
-> HISTORY&nbsp; New enumeration in IFC2x2.  
+> HISTORY  New enumeration in IFC2x2.
 >
 
 ## Items
@@ -17,7 +17,7 @@ The time data are a prediction.
 The origin of the time data is a simulation.
 
 ### USERDEFINED
-
+User defined.
 
 ### NOTDEFINED
 The origin of the time data is undefined.

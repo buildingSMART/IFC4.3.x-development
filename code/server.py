@@ -121,10 +121,11 @@ class resource_manager:
     hierarchy = schema_resource("hierarchy.json")
     xmi_concepts = schema_resource("xmi_concepts.json")
     examples_by_type = schema_resource("examples_by_type.json")
-    
+
     listing_references = schema_resource("listing_references.json")
     listing_tables = schema_resource("listing_tables.json")
     listing_figures = schema_resource("listing_figures.json")
+
 
 R = resource_manager()
 
@@ -407,7 +408,7 @@ def process_graphviz(current_entity, md):
         else:
             return 0
 
-    graphviz_code = filter(is_figure, re.findall("```(.*?)```", md or '', re.S))
+    graphviz_code = filter(is_figure, re.findall("```(.*?)```", md or "", re.S))
 
     for c in graphviz_code:
         hash = hashlib.sha256(c.encode("utf-8")).hexdigest()
@@ -418,7 +419,7 @@ def process_graphviz(current_entity, md):
         md = md.replace("```%s```" % c, "![](/svgs/%s_%s.svg)" % (current_entity, hash))
         subprocess.call([shutil.which("dot") or "dot", "-O", "-Tsvg", "-Gbgcolor=#ffffff00", fn])
 
-    return md or ''
+    return md or ""
 
 
 def create_entity_definition(e, bindings):
@@ -585,6 +586,7 @@ def get_example(example):
     return send_from_directory(os.path.join(REPO_DIR, "..", "examples", "IFC 4.3"), example)
 
 
+# The markdown is littered with this type of annotation tag. Does it have meaning? We strip it out everywhere.
 DOC_ANNOTATION_PATTERN = re.compile(r"\{\s*\..+?\}")
 
 
@@ -600,45 +602,46 @@ class resource_documentation_builder:
 
     def get_markdown_content(self, heading):
         attrs = []
-        fwd_attrs = []
-        
-        ty = self.resource
-        while ty:
-            md_ty_fn = get_resource_path(ty)
+        direct_attrs = []
+
+        entity = self.resource
+        while entity:
+            markdown_filename = get_resource_path(entity)
 
             try:
-                md_ty = re.sub(DOC_ANNOTATION_PATTERN, "", open(md_ty_fn, encoding="utf-8").read())
+                md_entity = re.sub(DOC_ANNOTATION_PATTERN, "", open(markdown_filename, encoding="utf-8").read())
             except:
-                md_ty = None
+                md_entity = None
 
-            ty_attrs = []
+            entity_attrs = []
             try:
-                if md_ty:
-                    ty_attrs = list(mdp.markdown_attribute_parser(md_ty, heading))
+                if md_entity:
+                    entity_attrs = list(mdp.markdown_attribute_parser(data=md_entity, heading_name=heading, as_text=False))
             except:
-                pass
+                import traceback
+
+                traceback.print_exc()
+
 
             if heading == "Attributes":
-                ty_attr_di = dict(ty_attrs)
-                for a in [k.split(".")[1] for k in R.entity_attributes.keys() if k.startswith(f"{ty}.")][::-1]:
-                    b = ty_attr_di.get(a, "")
-                    is_fwd, attr_ty = R.entity_attributes[".".join((ty, a))]
-                    content = re.sub("\\b_(\\w+?)_\\b", lambda m: m.group(1), b.strip())
-                    attrs.append((ty, a, attr_ty, content))
+                entity_attr_di = dict(entity_attrs)
+                for a in [k.split(".")[1] for k in R.entity_attributes.keys() if k.startswith(f"{entity}.")][::-1]:
+                    content = entity_attr_di.get(a, "")
+                    is_fwd, attr_entity = R.entity_attributes[".".join((entity, a))]
+                    attrs.append((entity, a, attr_entity, content))
                     if is_fwd:
-                        fwd_attrs.append(a)
+                        direct_attrs.append(a)
             else:
-                for a, b in ty_attrs[::-1]:
+                for a, content in entity_attrs[::-1]:
                     # remove underscored words:
-                    content = re.sub("\\b_(\\w+?)_\\b", lambda m: m.group(1), b.strip())
-                    attrs.append((ty, a, content))
-            ty = R.entity_supertype.get(ty)
+                    attrs.append((entity, a, content))
+            entity = R.entity_supertype.get(entity)
 
         attrs = attrs[::-1]
 
         if heading == "Attributes":
             # Decorate with attribute index
-            attr_index = {b: a for a, b in enumerate(fwd_attrs[::-1], 1)}
+            attr_index = {b: a for a, b in enumerate(direct_attrs[::-1], 1)}
             attrs = [(a, attr_index.get(b, ""), b, c, d) for a, b, c, d in attrs]
 
         return attrs
@@ -671,7 +674,7 @@ def api_resource(resource):
 
 @app.route(make_url("property/<prop>.htm"))
 def property(prop):
-    prop = "".join(c for c in prop if c.isalnum())
+    prop = "".join(c for c in prop if c.isalnum() or c in "_")
     md = os.path.join(REPO_DIR, "docs", "properties", prop[0].lower(), prop + ".md")
     try:
         mdc = open(md, "r", encoding="utf-8").read()
@@ -698,7 +701,7 @@ def property(prop):
     )
 
 
-def process_markdown(resource, mdc, as_attribute=False):
+def process_markdown(resource, mdc):
     html = markdown.markdown(process_graphviz(resource, mdc), extensions=["tables", "fenced_code"])
 
     soup = BeautifulSoup(html)
@@ -709,9 +712,6 @@ def process_markdown(resource, mdc, as_attribute=False):
     except:
         # only entities have H1?
         pass
-
-    if as_attribute:
-        return str(soup.text)
 
     # Change svg img references to embedded svg because otherwise URLS are not interactive
     for img in soup.findAll("img"):
@@ -872,18 +872,35 @@ def get_type_values(resource, mdc):
 
 
 def get_definition(resource, mdc):
-    # Only match up to the first header
-    if "## " in mdc:
-        mdc = mdc[0 : mdc.index("## ")]
+    # Only match up to the first h2
+    lines = []
+    SectionNumberGenerator.begin_subsection()
+    for line in mdc.split("\n"):
+        if line.startswith("## "):
+            break
+        if line.startswith("### "):
+            words = line.split(" ")
+            line = " ".join((words[0], SectionNumberGenerator.generate(), *words[1:]))
+        lines.append(line)
+    mdc = "\n".join(lines)
+    SectionNumberGenerator.end_subsection()
     return process_markdown(resource, mdc)
 
 
 def get_applicability(resource):
-    return {"number": SectionNumberGenerator.generate(), "entities": R.pset_definitions[resource]["applicability"]}
+    template_type_md = get_resource_path("IfcPropertySetTemplateTypeEnum", abort_on_error=False)
+    template_type_mdc = open(template_type_md, "r", encoding="utf-8").read()
+    descriptions = dict(mdp.markdown_attribute_parser(data=template_type_mdc, heading_name="Items"))
+    return {
+        "number": SectionNumberGenerator.generate(),
+        "entities": R.pset_definitions[resource]["applicability"],
+        "template_type": R.pset_definitions[resource]["template_type"],
+        "description": descriptions.get(R.pset_definitions[resource]["template_type"], None)
+    }
 
 
 def get_properties(resource, mdc):
-    pset_specitic_comments = dict(mdp.markdown_attribute_parser(mdc, "Comments"))
+    pset_specific_comments = dict(mdp.markdown_attribute_parser(data=mdc, heading_name="Comments"))
 
     def make_prop(prop):
         try:
@@ -892,49 +909,37 @@ def get_properties(resource, mdc):
                 open(
                     os.path.join(REPO_DIR, "docs/properties/%s/%s.md") % (prop["name"][0].lower(), prop["name"])
                 ).read(),
-                as_attribute=True,
             )
         except:
-            doc = "<i>Missing property definition</i>"
+            doc = ""
 
         if R.pset_definitions[resource]["kind"] == "quantity_set":
-            prop_type = []
+            prop_type = ""
         else:
-            prop_type = [prop["type"]]
+            prop_type = prop["type"]
 
-        edit_button = f"<a class='button' href='{make_url('property/'+prop['name'])}.htm' style='padding:0;margin:0 0.5em'><span class='icon-edit'></span></a>"
-        doc += edit_button
-
-        psc = pset_specitic_comments.get(prop["name"])
+        psc = pset_specific_comments.get(prop["name"])
         if psc:
-            doc += f"<br><br><i>{process_markdown(resource, psc, as_attribute=True)}</i>"
-            pass
+            doc += f"{process_markdown(resource, psc)}"
 
-        return [
-            prop["name"],
-            *prop_type,
-            prop["data"],
-            doc
-        ]
+        return {
+            "name": prop["name"],
+            "type": prop_type,
+            "data_type": prop["data"],
+            "description": doc,
+            "edit_url": url_for("property", prop=prop["name"]),
+        }
 
     attrs = list(map(make_prop, R.pset_definitions[resource]["properties"]))
 
-    headers = ("Name", "Property Type", "Data Type", "Definition")
-    if R.pset_definitions[resource]["kind"] == "quantity_set":
-        # Quantity sets elements are always a singular type, as opposed to
-        # property set items which are composed of a property type (single,
-        # bounded, ...) and a data type.
-        headers = (headers[0],) + headers[2:]
-
     return {
         "number": SectionNumberGenerator.generate(),
-        "table": tabulate.tabulate(attrs, headers=headers, tablefmt="unsafehtml"),
+        "is_pset": R.pset_definitions[resource]["kind"] != "quantity_set",
+        "properties": attrs,
     }
 
 
 def get_attributes(resource, builder):
-    if not builder:
-        return
     attrs = builder.attributes
     supertype_counts = Counter()
     supertype_counts.update([a[0] for a in attrs])
@@ -943,7 +948,7 @@ def get_attributes(resource, builder):
     insertion_points = [0] + list(itertools.accumulate(map(operator.itemgetter(1), supertype_counts[::-1])))[:-1]
     group_data = supertype_counts[::-1]
 
-    results = []
+    groups = []
     for i, attr in enumerate(attrs):
         if i in insertion_points:
             name, total_attributes = group_data[insertion_points.index(i)]
@@ -953,20 +958,30 @@ def get_attributes(resource, builder):
                 "is_inherited": insertion_points[-1] != i,
                 "total_attributes": total_attributes,
             }
-            results.append(group)
+            groups.append(group)
         group["attributes"].append(
             {
                 "number": attr[0],
                 "name": attr[1],
                 "type": attr[2],
+                # @nb we're not really talking about markdown anymore
+                # since the new attribute parser operates on a converted
+                # dom, but it appears to work nonetheless.
                 "description": process_markdown(resource, attr[3]),
                 "is_inverse": not attr[0],
             }
         )
 
+    total_inherited_attributes = sum([g["total_attributes"] for g in groups if g["is_inherited"]])
+
+    inherited_groups_with_attributes = [g for g in groups if g["is_inherited"] and g["total_attributes"]]
+    if inherited_groups_with_attributes:
+        inherited_groups_with_attributes[-1]["is_last_inherited_group"] = True
+
     return {
         "number": SectionNumberGenerator.generate(),
-        "groups": results,
+        "groups": groups,
+        "total_inherited_attributes": total_inherited_attributes,
     }
 
 
@@ -1001,19 +1016,31 @@ def get_entity_inheritance(resource):
 
 
 def get_property_sets(resource, builder):
-    concepts = list(builder.concepts)
+    ty = resource
+    supertype_chain = []
+    while ty is not None:
+        supertype_chain.append(ty)
+        ty = R.entity_supertype.get(ty)
+    supertype_chain = list(reversed(supertype_chain))
+
     psets = []
-    for concept in concepts:
-        name = get_concept_name(concept[1])
-        if "Property Sets" not in name and "Quantity Sets" not in name:
-            continue
-        usage = get_usage_name(name)
-        stripped_name = name.replace(" ", "")
-        relationships = get_applicable_relationships(usage, stripped_name, concept[0])
-        for pset in relationships or []:
-            properties = R.pset_definitions[pset["name"]]["properties"]
-            pset["properties"] = [p["name"] for p in properties]
-            psets.append(pset)
+    for view_name, xmi_concepts in R.xmi_concepts.items():
+        for xmi_concept_name, xmi_relationships in xmi_concepts.items():
+            if "PropertySets" not in xmi_concept_name and "QuantitySets" not in xmi_concept_name:
+                continue
+            for xmi_relationship in xmi_relationships:
+                applicable_entity = xmi_relationship.get("ApplicableEntity", None)
+                if applicable_entity not in supertype_chain:
+                    continue
+                name = xmi_relationship.get("PsetName", None) or xmi_relationship.get("QsetName", None)
+                if not name:
+                    continue
+                properties = R.pset_definitions[name]["properties"]
+                psets.append({
+                    "name": name,
+                    "predefined_type": xmi_relationship.get("PredefinedType", None),
+                    "properties": [p["name"] for p in properties]
+                })
 
     if psets:
         return {
@@ -1042,6 +1069,7 @@ def get_concept_usage(resource, builder):
     while ty is not None:
         supertype_chain.append(ty)
         ty = R.entity_supertype.get(ty)
+    supertype_chain = list(reversed(supertype_chain))
 
     builder_concepts = list(builder.concepts)
 
@@ -1055,9 +1083,16 @@ def get_concept_usage(resource, builder):
 
     concept_lookup = {c.text.replace(" ", ""): (c.text, c.url) for c in flatten_hierarchy(concept_hierarchy)}
 
-
     # Grabs concepts from XMI, and then enhances them with human names and descriptions from Markdown
+    # Sorry if you need to read this code I found it really confusing good luck.
 
+    # This code block loops through all the concepts defined in XMI and creates a nested dict structure:
+    # > IfcWall (ifc_class):
+    # > > General Usage (view_name):
+    # > > > Property Sets for Objects (xmi_concept_name
+    # > > > > Relationships: [Pset_WallCommon, ...]
+    # > > > > Is Inherited: True if this concept is defined explicitly for IfcWall
+    # > > > > Is Inherited: False if inherited from a supertype
     concept_groups = {}
     groups = []
     for view_name, xmi_concepts in R.xmi_concepts.items():
@@ -1065,95 +1100,104 @@ def get_concept_usage(resource, builder):
         for xmi_concept_name, xmi_relationships in xmi_concepts.items():
             for xmi_relationship in xmi_relationships:
                 applicable_entity = xmi_relationship.get("ApplicableEntity", None)
-                if applicable_entity in supertype_chain:
-                    concept_groups.setdefault(applicable_entity, {}).setdefault(view_name, {}).setdefault(xmi_concept_name, []).append(xmi_relationship)
+                in_chain = False
+                for ifc_class in supertype_chain:
+                    if ifc_class == applicable_entity:
+                        in_chain = True
+                    if not in_chain:
+                        continue
+                    is_inherited = ifc_class != applicable_entity
 
-    for ifc_class in reversed(supertype_chain):
-        views = concept_groups.get(ifc_class)
-        if not views:
-            continue
+                    concept_groups.setdefault(ifc_class, {})
+                    concept_groups[ifc_class].setdefault(view_name, {})
+                    concept_groups[ifc_class][view_name].setdefault(
+                        xmi_concept_name, {"relationships": [], "is_inherited": is_inherited}
+                    )
+                    concept_groups[ifc_class][view_name][xmi_concept_name]["relationships"].append(xmi_relationship)
+
+    # With this "simpler" concept_groups nested dict, let's build the necessary data structure for the template
+    # Let's start by walking through the inherited classes
+    for ifc_class in supertype_chain:
+        views = concept_groups.get(ifc_class, {})
 
         concepts = []
+        # For each view (General Usage, Reference View, etc)
         for view_name, view_concepts in views.items():
+
+            # For each concept belonging to that view
             for name, data in view_concepts.items():
                 human_name = concept_lookup.get(name, [name, ""])[0]
                 description = None
+
+                # Can we potentially enrich the description from the markdown?
                 for markdown_concept in builder_concepts:
+                    if markdown_concept[0] != ifc_class:
+                        continue
                     markdown_name = get_concept_name(markdown_concept[1])
                     stripped_name = markdown_name.replace(" ", "")
-                    if stripped_name == name:
+                    if stripped_name.lower() == name.lower():
                         description = process_markdown(resource, markdown_concept[2])
-                concepts.append({
-                    "name": human_name,
-                    "description": description,
-                    "usage": separate_camel(view_name).replace("General Usage", "General"),
-                    "url": concept_lookup.get(name, [None, None])[1],
-                    "applicable_relationships": get_applicable_relationships(view_name, name, ifc_class),
-                })
+
+                should_show_concept = False
+                if not data["is_inherited"]:
+                    # Always show concepts for the active class
+                    should_show_concept = True
+                elif data["is_inherited"] and description:
+                    # If the active class has a description, it may redisplay an inherited concept
+                    should_show_concept = True
+
+                if should_show_concept:
+                    concepts.append(
+                        {
+                            "name": human_name,
+                            "description": description,
+                            "usage": separate_camel(view_name).replace("General Usage", "General"),
+                            "url": concept_lookup.get(name, [None, None])[1],
+                            "applicable_relationships": get_applicable_relationships(view_name, name, ifc_class),
+                        }
+                    )
 
         groups.append(
             {
                 "name": ifc_class,
                 "is_inherited": ifc_class != resource,
                 "concepts": concepts,
+                "total_concepts": len(concepts),
             }
         )
 
-    # Comment out this return if you want to see how things work using the
-    # markdown as a source of truth instead of XMI. As of writing they differ
-    # quite significantly.
-    if groups:
-        return {
-            "number": SectionNumberGenerator.generate(),
-            "groups": groups,
-        }
+    total_inherited_concepts = sum([g["total_concepts"] for g in groups if g["is_inherited"]])
 
-    # This code uses the markdown as a source of truth.
-
-    groups = []
-    for concept in builder_concepts:
-        if not groups or groups[-1]["name"] != concept[0]:
-            groups.append(
-                {
-                    "name": concept[0],
-                    "is_inherited": concept[0] != resource,
-                    "concepts": [],
-                }
-            )
-        name = get_concept_name(concept[1])
-        usage = get_usage_name(name)
-        stripped_name = name.replace(" ", "")
-        data = {
-            "name": name,
-            "description": process_markdown(resource, concept[2]),
-            "usage": separate_camel(usage).replace("General Usage", "General"),
-            "url": concept_lookup.get(stripped_name, [None, None])[1],
-            "applicable_relationships": get_applicable_relationships(usage, stripped_name, groups[-1]["name"]),
-        }
-        groups[-1]["concepts"].append(data)
+    inherited_groups_with_concepts = [g for g in groups if g["is_inherited"] and g["total_concepts"]]
+    if inherited_groups_with_concepts:
+        inherited_groups_with_concepts[-1]["is_last_inherited_group"] = True
 
     if groups:
         return {
             "number": SectionNumberGenerator.generate(),
             "groups": groups,
+            "total_inherited_concepts": total_inherited_concepts,
         }
 
 
 def get_examples(resource):
     examples = []
     for name in R.examples_by_type.get(resource.upper()) or []:
-        examples.append({
-            "name": name,
-            "url": url_for("annex_e_example_page", s=name),
-            "image": url_for("get_example", example=name) + "/thumb.png"
-        })
+        examples.append(
+            {
+                "name": name,
+                "url": url_for("annex_e_example_page", s=name),
+                "image": url_for("get_example", example=name) + "/thumb.png",
+            }
+        )
     if examples:
         return {"number": SectionNumberGenerator.generate(), "examples": examples}
 
 
 def get_adoption(resource):
-    return # Is the industry ready? :)
+    return  # Is the industry ready? :)
     import random
+
     # Just a stub: inspiration from https://caniuse.com/css-grid
     # ... and so many other implementation matrixes online
     softwares = []
@@ -1165,12 +1209,10 @@ def get_adoption(resource):
                 support = "supported"
             elif j > 0:
                 support = "partially-supported"
-            versions.append({
-                "name": f"V1.{j}",
-                "support": support
-            })
-        softwares.append({ "name": f"Software {i+1}", "versions": reversed(versions) })
+            versions.append({"name": f"V1.{j}", "support": support})
+        softwares.append({"name": f"Software {i+1}", "versions": reversed(versions)})
     return {"number": SectionNumberGenerator.generate(), "softwares": softwares}
+
 
 def get_formal_representation(resource):
     express = R.entity_definitions.get(resource)
@@ -1661,10 +1703,7 @@ def annex_e_example_page(s):
     example_dir = os.path.join(REPO_DIR, "../examples/IFC 4.3", s)
 
     code = open(
-        (
-            glob.glob(os.path.join(example_dir, "*.ifc"))
-            + glob.glob(os.path.join(example_dir, "*.xml"))
-        )[0],
+        (glob.glob(os.path.join(example_dir, "*.ifc")) + glob.glob(os.path.join(example_dir, "*.xml")))[0],
         encoding="ascii",
         errors="ignore",
     ).read()
@@ -1790,14 +1829,23 @@ def sandcastle():
     return render_template("sandcastle.html", base=base, html=html, md=md)
 
 
-ifcre = re.compile(r"(Ifc|Pset_|Qto_)\w+(?!(\">|.ht|.png|.jp|.gif|</a|</h|.md| - IFC4.3))")
+# Are you ready for regex golfing? Here's a challenge.
+# Y: This is a IfcClass in a paragraph.
+# Y: It may IfcClass-concatenated.
+# N: It may be in an <img alt="IfcClass tag or a" src="IfcSite-url.png">
+# N: It may already be in a <a href="IfcSite">IfcSite</a>
+# N: Or reference an IfcSite.png arbitrarily.
+# N: It may be in the <title>IfcSite - IFC4.3.x Documentation</title>
+ifcre = re.compile(r"(?<!(=\"))(?<!(figures/))(Ifc|Pset_|Qto_)\w+(?!(\">|.ht|.png|.jp|.gif|</a|</h|.md| - IFC4.3))")
 
 try:
     import os
     from redis import Redis, ConnectionError
+
     redis = Redis(host=os.environ.get("REDIS_HOST", "localhost"))
 except:
     redis = None
+
 
 @app.after_request
 def after(response):
@@ -1825,7 +1873,12 @@ def after(response):
                 parent = img.parent
                 if parent is None:
                     continue
-                if parent.name == "a":
+                if parent.name == "td":
+                    p = soup.new_tag("p")
+                    p.append(img.extract())
+                    parent.append(p)
+                    parent = p
+                elif parent.name == "a":
                     parent = parent.parent
                 parent.name = "figure"
                 has_caption = False
@@ -1861,7 +1914,7 @@ def after(response):
                     figcaption.string = "Figure " + str(uuid.uuid4())
                     parent.append(figcaption)
                     FigureNumberer.generate(parent, figcaption.text.split(" ", 2)[1])
-                    
+
             for table in main_content.findAll("table"):
                 figure = soup.new_tag("figure")
                 table.insert_before(figure)
@@ -1918,10 +1971,10 @@ def after(response):
                 return "<a href='" + url_for("resource", resource=w) + "'>" + w + "</a>"
             else:
                 return w
-                
+
         html = ifcre.sub(decorate_link, html)
         soup = BeautifulSoup(html)
-        
+
         for elem in soup.findAll("figure"):
             if elem.figcaption:
                 is_image = elem.img
@@ -1929,17 +1982,18 @@ def after(response):
                     label, caption = map(str.strip, elem.figcaption.text.split("\u2014", 1))
                 elif elem.img:
                     label = elem.figcaption.text.strip()
-                    caption = elem.img.get('alt', '').strip()
+                    caption = elem.img.get("alt", "").strip()
                 else:
                     continue
                 if redis:
                     try:
-                        redis.lpush("figures" if is_image else "tables", json.dumps([caption or 'unnamed', label, request.path]))
+                        redis.lpush(
+                            "figures" if is_image else "tables", json.dumps([caption or "unnamed", label, request.path])
+                        )
                     except ConnectionError:
                         pass
-        
-        response.data = str(soup)
 
+        response.data = str(soup)
 
     return response
 
@@ -1947,7 +2001,7 @@ def after(response):
 @app.route(make_url("index.htm"))
 def get_index():
     items = [
-        {"number": "", "title": f"Listing of {x}", "url": make_url(f"listing-{x}.html")} \
+        {"number": "", "title": f"Listing of {x}", "url": make_url(f"listing-{x}.html")}
         for x in "references,figures,tables".split(",")
     ]
     return render_template("annex-b.html", base=base, navigation=get_navigation(), items=items, title="Index")
@@ -1958,20 +2012,35 @@ def get_index_index(kind):
     items = getattr(R, f"listing_{kind}")
     if kind == "references":
         prefix = make_url("lexical/")
+
         def reverse_engineer_url(s):
             if s.startswith(prefix):
-                return s[len(prefix):-4]
-        items = [{"number": k, "url": "", "title": " ".join(reverse_engineer_url(s['url']) for s in gs if reverse_engineer_url(s['url']))}\
-            for k, gs in itertools.groupby(items, operator.itemgetter('title'))]
-    return render_template("annex-b.html", base=base, navigation=get_navigation(), items=items, title=f"Listing of {kind}")
-    
+                return s[len(prefix) : -4]
+
+        items = [
+            {
+                "number": k,
+                "url": "",
+                "title": " ".join(reverse_engineer_url(s["url"]) for s in gs if reverse_engineer_url(s["url"])),
+            }
+            for k, gs in itertools.groupby(items, operator.itemgetter("title"))
+        ]
+    return render_template(
+        "annex-b.html", base=base, navigation=get_navigation(), items=items, title=f"Listing of {kind}"
+    )
+
 
 if redis:
-    @app.route("/build_index", methods=['GET', 'POST'])
+
+    @app.route("/build_index", methods=["GET", "POST"])
     def build_index():
         for x in "references,figures,tables".split(","):
             with open(f"listing_{x}.json", "w") as f:
-                json.dump([{"number": p[1], "url": p[2], "title": p[0]} for p in \
-                    sorted(set(map(tuple, map(json.loads, redis.lrange(x, 0, -1)))))],
-                    f)
+                json.dump(
+                    [
+                        {"number": p[1], "url": p[2], "title": p[0]}
+                        for p in sorted(set(map(tuple, map(json.loads, redis.lrange(x, 0, -1)))))
+                    ],
+                    f,
+                )
         return "OK"

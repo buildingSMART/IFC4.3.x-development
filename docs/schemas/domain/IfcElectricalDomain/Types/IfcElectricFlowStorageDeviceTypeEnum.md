@@ -2,7 +2,7 @@
 
 The _IfcElectricFlowStorageDeviceTypeEnum_ defines different types of electrical flow storage devices.
 
-> HISTORY&nbsp; New type in IFC2x2.
+> HISTORY  New type in IFC2x2.
 
 ## Items
 
@@ -16,7 +16,7 @@ A device that stores electrical energy when an external power supply is present 
 A device that constantly injects currents that precisely correspond to the harmonic components drawn by the load.
 
 ### INDUCTORBANK
-
+Inductor bank
 
 ### UPS
 A device that provides a time limited alternative source of power supply in the event of failure of the main supply.

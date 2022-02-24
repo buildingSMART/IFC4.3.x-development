@@ -8,7 +8,7 @@ Additionally the schema defines various devices that are connected by cabling, p
 The scope of the _IfcElectricalDomain_ is defined as:
 
 1. cabled systems for power distribution and lighting, data, telecommunications, security, signalling, control and audio visual purposes,
-2. equipment that is used within such systems, 
+2. equipment that is used within such systems,
 3. connection of equipment to circuits, distribution points etc,
 4. steady state operation of electrical installations,
 5. light fixtures (fittings), their types and the provision of such information as is necessary to enable lighting calculations that provide physically accurate illuminance.
@@ -32,7 +32,7 @@ The _IfcElectricalDomain_ schema supports ideas including types of:
 * lamp,
 * outlet,
 * protective device,
-* protective device tripping unit, 
+* protective device tripping unit,
 * switching device,
 * transformer,
 
@@ -43,8 +43,8 @@ The following items are in scope but not elaborated:
 * audio-visual systems
 * telecommunications systems
 * data systems
-* cabling for signal and control systems 
-* cable routers (cable ladders) 
+* cabling for signal and control systems
+* cable routers (cable ladders)
 * computer network cabling and devices used on networks
 
 The following are deemed to be out of scope of the _IfcElectricalDomain_ schema at this time:
@@ -55,11 +55,11 @@ The following are deemed to be out of scope of the _IfcElectricalDomain_ schema 
 * communication signals between automation devices or bus systems
 * sensors (which are dealt with in the _IfcBuildingControl_ domain schema)
 * spotlight mirror systems whereby a spotlight is directed towards a distant mirror that the distributes the light energy (other than as a group of separately defined objects)
-* lighting for specialist purposes (for example, stage, painting) 
+* lighting for specialist purposes (for example, stage, painting)
 
 An electrical circuit is formed from electrical devices connected together with power carrying cables. Up to IFC4, an instance of an electrical circuit has been defined as an _IfcElectricalCircuit_ (subtype of _IfcSystem_). This is now deleted as of IFC4. Instead, electrical systems together with other cable systems and other forms of distribution system are now identified through the _IfcDistributionSystem.PredefinedType::IfcDistributionSystemTypeEnum_, along with specific property sets.
 
-> HISTORY&nbsp; New schema in IFC2x.
+> HISTORY  New schema in IFC2x.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Electrical circuit specification modified, scope expanded to support communications systems.
+> IFC4 CHANGE  Electrical circuit specification modified, scope expanded to support communications systems.

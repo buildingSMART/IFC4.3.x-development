@@ -6,10 +6,10 @@ This subtype of _IfcPropertySetDefinition_ is used to define the reinforcement p
 
 Only one property set definition of this kind is used for each concrete building element in each intended usage indicated by the _DefinitionType_ attribute value. This set then defines a list of cross section properties in a discrete number of longitudinal sections as instances of _IfcSectionReinforcementProperties_ (one for each structural reinforcement bar role), which in turn have a section cross section property defined as a profile and a number of reinforcement properties, one for each steel grade / bar type.
 
-> HISTORY&nbsp; New entity in IFC2x2
+> HISTORY  New entity in IFC2x2
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Supertype changed from _IfcPropertySetDefinition_ to _IfcPreDefinedPropertySet_
+> IFC4 CHANGE  Supertype changed from _IfcPropertySetDefinition_ to _IfcPreDefinedPropertySet_
 
 ## Attributes
 

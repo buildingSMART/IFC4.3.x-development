@@ -8,7 +8,7 @@ The spatial structure of a railway is sub-divided into several elements for late
 * SUPERSTRUCTURE is for the upper part of the railway (vertical decomposition).
 * LINESIDESTRUCTURE is for the lateral part of the railway (lateral decomposition).
 
-!["Railway vertical and lateral spatial decomposition "](../../../../figures/IfcRailwayPartTypeEnum-global.png "Figure 1 &mdash; Railway decomposition")
+![Railway vertical and lateral spatial decomposition ](../../../../figures/IfcRailwayPartTypeEnum-global.png "Figure 1 &mdash; Railway decomposition")
 The subpart of the railway is generally either a _IfcFacilityPartCommonTypeEnum_ BELOWGROUND (non constructed ground) or SUBSTRUCTURE (constructed ground).
 
 TRACKSTRUCTURE could have longitudinal decomposition based on track specificities:
@@ -18,7 +18,7 @@ TRACKSTRUCTURE could have longitudinal decomposition based on track specificitie
 * TURNOUTSUPERSTRUCTURE for the area of turnouts (_IfcElementAssemblyTypeEnum_ TURNOUTPANEL).
 * TRACKSTRUCTUREPART for generic longitudinal decomposition if needed.
 
-!["Railway vertical and lateral spatial decomposition "](../../../../figures/IfcRailwayPartTypeEnum-track.png "Figure 2 &mdash; Track longitudinal decomposition")
+![Railway vertical and lateral spatial decomposition ](../../../../figures/IfcRailwayPartTypeEnum-track.png "Figure 2 &mdash; Track longitudinal decomposition")
 
 More generic longitudinal subdivision is provided for LINESIDESTRUCTURE with LINESIDESTRUCTUREPART value if needed.
 

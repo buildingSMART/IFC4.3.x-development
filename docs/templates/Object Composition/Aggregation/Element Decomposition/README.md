@@ -13,7 +13,7 @@ By default the following constraints apply to an element being decomposed by _El
 * the composite shall not have an own _Body Geometry_, body geometry is provided at the parts;
 * the composite shall not have an own _Material_ assignment, material is assigned to the parts.
 
-> NOTE&nbsp; Use the sub template _Element Decomposition Required_ if any instance of the element is required to represent a composite with declared parts.
+> NOTE  Use the sub template _Element Decomposition Required_ if any instance of the element is required to represent a composite with declared parts.
 
 ```
 concept {

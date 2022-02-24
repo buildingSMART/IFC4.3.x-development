@@ -84,9 +84,12 @@ def get_path(xmi_node):
 infinity = 1e9
 
 where_pat = re.compile(r"'\w+\.(\w+(\.\w+)?)'")
-def fix_schema_name(s):
+def fix_schema_name(s, remove=False):
     def repl(x):
-        return "'%s.%s'" % (SCHEMA_NAME, x.group(1))
+        if remove:
+            return x.group(1)
+        else:
+            return "'%s.%s'" % (SCHEMA_NAME, x.group(1))
     return remove_linebreak_before_semi(re.sub(where_pat, repl, s))
     
 def remove_linebreak_before_semi(s):
@@ -189,7 +192,11 @@ class xmi_item:
                 return missing_markdown(REPO_URL + p + " does not exist")
             
             hname = 'Attributes' if not is_sub or self.parent.type == "ENTITY" else 'Items'
-            md_parser = markdown_attribute_parser(open(md_fn, encoding='utf-8').read(), hname)
+            
+            if not os.path.exists(md_fn):
+                return missing_markdown(REPO_URL + p + " failed to parse")
+                
+            md_parser = markdown_attribute_parser(fn=md_fn, heading_name=hname, short=definition)
             
             if is_sub:                
                 attrs = dict(md_parser)
@@ -381,10 +388,7 @@ class xmi_document:
         
             if self.skip_by_package(c):
                 continue
-                                               
-            if "penum_" in c.name.lower():
-                continue
-                
+
             stereotype = (c/"properties")[0].stereotype if (c/"properties") else None
             if stereotype is not None: 
                 stereotype = stereotype.lower()
@@ -498,10 +502,27 @@ class xmi_document:
                 get_attribute = lambda n: [x for x in self.xmi.by_idref[n.xmi_id] if x.xml.tagName == "attribute"][0]
                 if not values:
                     values = [(x.name, get_attribute(x)) for x in self.xmi.by_id[c.xmi_idref]/"ownedLiteral"]
+                
+                is_property_enum = c.name.lower().startswith("penum_")
+
+                # alphabetical sort, but the items below always come last
+                undefined = ("OTHER", "NOTKNOWN", "UNSET", "USERDEFINED", "NOTDEFINED")
+                penalize_undefined = lambda tup: f"z{undefined.index(tup[0]):02d}" if tup[0] in undefined else tup[0]
+                
+                values = sorted(values, key=penalize_undefined)
+
+                express_definition = ""
+                if not is_property_enum:
+                    # not that it would fail, but they're just not intended to be written to EXP
+                    express_definition = express.enumeration(c.name, [a for a, b in values])
                     
                 yield xmi_item(
-                    "PENUM" if stereotype == "penumtype" or c.name.lower().startswith("penum_") else "ENUM", # <------- nb 
-                    c.name, express.enumeration(c.name, [a for a, b in values]), c, values, document=self)
+                    "PENUM" if is_property_enum else "ENUM",
+                    c.name,
+                    express_definition,
+                    c,
+                    values,
+                    document=self)
             
             elif stereotype == "express select" or stereotype == "select" or c.xmi_type == "uml:Interface":
                 

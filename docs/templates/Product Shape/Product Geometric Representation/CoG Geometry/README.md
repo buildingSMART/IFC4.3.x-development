@@ -6,7 +6,7 @@ Elements may have a 'CoG' representation describing the Center of Gravity as a p
 The representation identifier and type and the only allowed single representation item of the 'CoG' representation are:
 
 * _IfcShapeRepresentation_._RepresentationIdentifier_ = 'CoG'
-* _IfcShapeRepresentation_._RepresentationType_ : 'BoundingBox'
+* _IfcShapeRepresentation_._RepresentationType_ : 'Point'
 * _IfcShapeRepresentation_._Items_ = _IfcCartesianPoint_
 
 ```

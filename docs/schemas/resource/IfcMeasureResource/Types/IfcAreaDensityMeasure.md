@@ -6,4 +6,4 @@ Usually measured in kg/m2.
 
 Type: REAL
 
-> HISTORY&nbsp; New type in IFC4.
+> HISTORY  New type in IFC4.

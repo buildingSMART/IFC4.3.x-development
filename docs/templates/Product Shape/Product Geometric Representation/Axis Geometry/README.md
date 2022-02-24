@@ -7,7 +7,7 @@ The representation identifier of the axis representation is:
 
 * _IfcShapeRepresentation_._RepresentationIdentifier_ = 'Axis'
 
-> EXAMPLE&nbsp; A two-dimensional bounded curve is used as the wall axis in standard walls, a three-dimensional bounded curve is used as the reference axis in standard columns.
+> EXAMPLE  A two-dimensional bounded curve is used as the wall axis in standard walls, a three-dimensional bounded curve is used as the reference axis in standard columns.
 
 ```
 concept {

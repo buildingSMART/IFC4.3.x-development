@@ -6,10 +6,10 @@ An _IfcCurrencyRelationship_ is used where there may be a need to reference an _
 
 The source for the currency exchange is defined as an instance of _IfcLibraryInformation_ that includes a name and a URL.
 
-> HISTORY&nbsp; New entity in IFC2x2.
+> HISTORY  New entity in IFC2x2.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Subtyped from _IfcResourceLevelRelationship_, attribute order changed.
+> IFC4 CHANGE  Subtyped from _IfcResourceLevelRelationship_, attribute order changed.
 
 ## Attributes
 

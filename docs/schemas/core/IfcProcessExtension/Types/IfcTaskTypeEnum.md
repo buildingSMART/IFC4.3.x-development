@@ -2,16 +2,18 @@
 
 The _IfcTaskTypeEnum_ defines the range of different types of task that can be specified.
 
-> HISTORY&nbsp; New type in IFC4
+> HISTORY  New type in IFC4
 
 ## Items
 
 ### ADJUSTMENT
+Adjustment
 
 ### ATTENDANCE
 Attendance or waiting on other things happening.
 
 ### CALIBRATION
+Calibration 
 
 ### CONSTRUCTION
 Constructing or building something.
@@ -38,7 +40,7 @@ Installing something (equivalent to construction but more commonly used for engi
 Transportation or delivery of something.
 
 ### MAINTENANCE
-Tasks required to keep an object it good working order.
+Tasks required to keep an object in good working order.
 
 ### MOVE
 Moving things from one place to another.
@@ -68,7 +70,7 @@ The set of tasks required to evaluate the performance of an object, typically ap
 The set of tasks required to diagnose commonly encountered performance problems, typically applied to ElementTypes and Systems.
 
 ### USERDEFINED
-
+User defined.
 
 ### NOTDEFINED
-
+Undefined. 

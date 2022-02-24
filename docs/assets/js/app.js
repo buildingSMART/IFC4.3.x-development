@@ -102,6 +102,45 @@ function initialiseBackToTopButton() {
     });
 }
 
+function setupInheritanceToggle() {
+    let showElements = document.getElementsByClassName('show-inherited');
+    let hideElements = document.getElementsByClassName('hide-inherited');
+
+    function refreshInheritanceDisplay(type, showInherited) {
+        let inheritedRows = document.getElementsByClassName('inherited');
+        for (let i=0; i<inheritedRows.length; i++) {
+            if (inheritedRows[i].getAttribute('data-type') == type) {
+                inheritedRows[i].style.display = showInherited ? 'table-row' : 'none';
+            }
+        }
+        for (let i=0; i<showElements.length; i++) {
+            if (showElements[i].getAttribute('data-type') == type) {
+                showElements[i].style.display = showInherited ? 'none' : 'block';
+            }
+        }
+        for (let i=0; i<hideElements.length; i++) {
+            if (hideElements[i].getAttribute('data-type') == type) {
+                hideElements[i].style.display = showInherited ? 'block' : 'none';
+            }
+        }
+    }
+
+    for (let i=0; i<showElements.length; i++) {
+        showElements[i].addEventListener('click', function() {
+            refreshInheritanceDisplay(showElements[i].getAttribute('data-type'), true);
+        });
+    }
+
+    for (let i=0; i<hideElements.length; i++) {
+        hideElements[i].addEventListener('click', function() {
+            refreshInheritanceDisplay(showElements[i].getAttribute('data-type'), false);
+        });
+    }
+
+    refreshInheritanceDisplay('attribute', false);
+    refreshInheritanceDisplay('concept', false);
+}
+
 function setupMathJax() {
     window.MathJax = {
         loader: {
@@ -248,6 +287,7 @@ function setupHighlightJS() {
 
 setupMathJax();
 setupHighlightJS();
+setupInheritanceToggle();
 makeHeadersCollapsible();
 generateSectionNavigation();
 initialiseBackToTopButton();

@@ -6,7 +6,6 @@ Product occurrences may be positioned relative to a grid, where the axes of such
 ```
 concept {
     IfcProduct:ObjectPlacement -> IfcGridPlacement
-    IfcProduct:PlacesObject -> IfcGrid_1
     IfcGridPlacement:PlacementLocation -> IfcVirtualGridIntersection
     IfcGridPlacement:PlacementRefDirection -> IfcDirection
     IfcGridPlacement:PlacementRelTo -> IfcObjectPlacement

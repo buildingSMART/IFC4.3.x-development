@@ -6,10 +6,10 @@ _IfcMetric_ is a subtype of _IfcConstraint_ and may be associated with any subty
 
 The aim of _IfcMetric_ is to capture the quantitative aspects of a constraint.
 
-> HISTORY&nbsp; New entity in IFC2.0.
+> HISTORY  New entity in IFC2.0.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; ReferencePath attribute added for indicating the value to be constrained along a path of attribute references.
+> IFC4 CHANGE  ReferencePath attribute added for indicating the value to be constrained along a path of attribute references.
 
 ## Attributes
 
@@ -17,14 +17,14 @@ The aim of _IfcMetric_ is to capture the quantitative aspects of a constraint.
 Enumeration that identifies the type of benchmark data.
 
 ### ValueSource
-Reference source for data values. 
+Reference source for data values.
 
 If _DataValue_ refers to an _IfcTable_, this attribute identifies the relevent column identified by _IfcTableColumn_._Identifier_.
 
 ### DataValue
 The value to be compared on associated objects. A null value indicates comparison to null.
 { .change-ifc4}
-> IFC4 ADD1 CHANGE&nbsp; This attribute is now optional.
+> IFC4 ADD1 CHANGE  This attribute is now optional.
 
 ### ReferencePath
 Optional path to an attribute to be constrained on associated objects.

@@ -9,9 +9,9 @@ The element type _IfcColumnType_ defines commonly shared information for occurre
 
 It is used to define a column specification, or column style (i.e. the specific product information that is common to all occurrences of that column type). Column types may be exchanged without being already assigned to occurrences.
 
-Occurrences of the _IfcColumnType_ within building models are represented by instances of _IfcColumnStandardCase_ if the _IfcColumnType_ has a single associated _IfcMaterialProfileSet_; otherwise they are represented by instances of _IfcColumn_. Occurrences of the _IfcColumnType_ within structural analysis models are represented by instances of _IfcStructuralCurveMember_, or its applicable subtypes.
+Occurrences of the _IfcColumnType_ within structural analysis models are represented by instances of _IfcStructuralCurveMember_, or its applicable subtypes.
 
-> HISTORY&nbsp; New entity in IFC2x2.
+> HISTORY  New entity in IFC2x2.
 
 ## Attributes
 
@@ -72,26 +72,12 @@ IfcRelAssociatesMaterial.RelatingMaterial. It is
 accessible by the inverse HasAssociations
 relationship.
 
-
-
-> 
-> NOTE  It is illegal to assign an IfcMaterial to an IfcColumnType, if there is at least one occurrences of IfcColumnStandardCase for this
-> type.
-> 
-
-
 The shared profile definition is defined by assigning an
 IfcMaterialProfileSet (see material use definition above).
 The IfcMaterialProfile refers to the subtype of
 IfcProfileDef that is the common profile for all column
-occurrence, if used. It is only applicable if the
-IfcColumnType has only occurrences of type
-IfcColumnStandardCase (see definition of
-IfcColumnStandardCase for further information).
+occurrence, if used. If an IfcMaterialProfileSet is used, all occurrences of _IfcColumn_ must have a corresponding IfcMaterialProfileSetUsage.
 
-
-
-> 
 > NOTE  The attribute ProfileName of the
 > IfcProfileDef subtype, referenced in
 > IfcMaterialProfile should contain a standardized profile
@@ -104,7 +90,3 @@ IfcColumnStandardCase for further information).
 > read from a library. Otherwise the geometric representation and
 > possible non geometric IfcProfileProperties have to be
 > used.
-> 
-
-
-

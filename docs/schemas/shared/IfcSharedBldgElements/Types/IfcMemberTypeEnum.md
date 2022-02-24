@@ -2,13 +2,13 @@
 
 This enumeration defines the different types of linear elements an _IfcMember_ or _IfcMemberType_ object can fulfill.
 
-> HISTORY&nbsp; New enumeration type in IFC2x2.
+> HISTORY  New enumeration type in IFC2x2.
 
 { .change-ifc2x2}
-> IFC2x2 CHANGE&nbsp; The additional identifiers CHORD, PLATE, STUD are added.
+> IFC2x2 CHANGE  The additional identifiers CHORD, PLATE, STUD are added.
 
 { .change-ifc2x3}
-> IFC2x3 CHANGE&nbsp; The additional identifier MULLION are added.
+> IFC2x3 CHANGE  The additional identifier MULLION are added.
 
 ## Items
 
@@ -28,7 +28,7 @@ A linear element within a girder or truss with no further meaning.
 A linear element within a curtain wall system to connect two (or more) panels.
 
 ### PLATE
-A&nbsp;linear continuous horizontal element in wall framing, such as a head piece or a sole plate.
+A linear continuous horizontal element in wall framing, such as a head piece or a sole plate.
 
 ### POST
 A linear (usually vertical) member used to support something or to mark a point.

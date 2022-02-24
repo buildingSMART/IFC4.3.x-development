@@ -4,4 +4,4 @@ _IfcWarpingConstantMeasure_ is a measure for the warping constant or warping res
 
 Type: REAL
 
-> HISTORY&nbsp; New type in IFC2x2.
+> HISTORY  New type in IFC2x2.

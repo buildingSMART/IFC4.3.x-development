@@ -6,7 +6,7 @@ The relationship is used to assign a document reference or a more detailed docum
 
 The inherited attribute _RelatedObjects_ define the objects to which the document association is applied. The attribute _RelatingDocument_ is the reference to a document reference, applied to the object(s).
 
-> HISTORY&nbsp; New entity in IFC2x.
+> HISTORY  New entity in IFC2x.
 
 ## Attributes
 

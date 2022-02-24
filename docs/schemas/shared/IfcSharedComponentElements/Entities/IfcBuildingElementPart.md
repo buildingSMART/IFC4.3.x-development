@@ -4,10 +4,10 @@ _IfcBuildingElementPart_ represents major components as subordinate parts of a b
 
 The kind of building element part is further specified by a corresponding instance of _IfcBuildingElementPartType_, referred to by _IfcRelDefinesByType_.
 
-> HISTORY&nbsp; New entity in IFC2x2.
+> HISTORY  New entity in IFC2x2.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Moved from _IfcStructuralElementsDomain_ schema to _IfcSharedComponentElements_ schema, compatible change of supertype, attribute _PredefinedType_ added.
+> IFC4 CHANGE  Moved from _IfcStructuralElementsDomain_ schema to _IfcSharedComponentElements_ schema, compatible change of supertype, attribute _PredefinedType_ added.
 
 ## Attributes
 

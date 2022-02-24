@@ -2,10 +2,10 @@
 
 This enumeration defines the different types of planar elements an _IfcPlate_ or _IfcPlateType_ object can fulfill.
 
-> HISTORY&nbsp; New Enumeration in IFC2x2.
+> HISTORY  New Enumeration in IFC2x2.
 
 { .change-ifc2x3}
-> IFC2x3 CHANGE&nbsp; The additional identifiers CURTAIN_PANEL, SHEET have been added.
+> IFC2x3 CHANGE  The additional identifiers CURTAIN_PANEL, SHEET have been added.
 
 ## Items
 
@@ -13,7 +13,7 @@ This enumeration defines the different types of planar elements an _IfcPlate_ or
 A planar element within a curtain wall, often consisting of a frame with fixed glazing.
 
 ### SHEET
-A planar, flat and thin element, comes usually as metal sheet, and is often used as an additonal part within an assembly.
+A planar, flat and thin element, comes usually as metal sheet, and is often used as an additional part within an assembly.
 
 ### FLANGE_PLATE
 A flange plate in linear members having box or I-profile (e.g. top or bottom flange plate in box-girder).

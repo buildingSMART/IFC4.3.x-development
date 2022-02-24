@@ -4,4 +4,4 @@ _IfcSpatialReferenceSelect_ provides the option to either select a group occurr
 
 > HISTORY  New select type in IFC4x3.
 
-&nbsp;
+

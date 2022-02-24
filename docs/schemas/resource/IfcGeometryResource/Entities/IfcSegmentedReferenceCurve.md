@@ -6,7 +6,7 @@ The parametrization of _IfcSegmentReferenceCurve_ is based on the parametrizatio
 
 Figure 1 shows a cross section of a _IfcSegmentedReferenceCurve_ usage for an alignmnent representation featuring cant
 
-!["segmented reference curve usage"](../../../../figures/IfcSegmentedReferenceCurve.JPG "Figure 1 &mdash; use of a segmented reference curve on a cant segment based on a gradient curve")
+![segmented reference curve usage](../../../../figures/ifcsegmentedreferencecurve.jpg "Figure 1 &mdash; use of a segmented reference curve on a cant segment based on a gradient curve")
 
 ## Attributes
 

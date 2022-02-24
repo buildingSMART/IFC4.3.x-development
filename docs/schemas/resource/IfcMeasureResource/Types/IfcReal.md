@@ -6,4 +6,4 @@ In principle, the domain of _IfcReal_ (being a Real) is all rational, irrational
 
 Type: REAL
 
-> HISTORY&nbsp; New type in IFC1.5.1.
+> HISTORY  New type in IFC1.5.1.

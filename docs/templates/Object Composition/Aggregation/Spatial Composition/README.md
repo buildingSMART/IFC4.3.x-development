@@ -3,7 +3,7 @@ Spatial Composition
 
 Provision of a spatial structure of the project by aggregating spatial elements. The spatial structure is a hierarchical tree of spatial elements ultimately assigned to the project. Composition refers to the relationship to a higher level element (e.g. this storey is part of a building or this road segment is part of a road).
 
-> NOTE&nbsp; The link between the highest level spatial element(s) and the project is provided by this concept through _IfcRelAggregates_ and not through declaration using _IfcRelDeclares_. This is a known anomaly introduced to maintain compatibility with earlier versions of this standard.
+> NOTE  The link between the highest level spatial element(s) and the project is provided by this concept through _IfcRelAggregates_ and not through declaration using _IfcRelDeclares_. This is a known anomaly introduced to maintain compatibility with earlier versions of this standard.
 
 The project spatial structure may be made up of a selection of different spatial structure elements with the most generic and simplest form from high to low level as follows: _IfcProject_, _IfcSite_, _IfcFacility_ (or any of its subtypes), _IfcFacilityPart_ (or _IfcBuildingStorey in the case of buildings), and _IfcSpace_ with _IfcSite_, _FacilityPart_ and _IfcSpace_ being optional levels. Therefore a spatial structure element should only be part of an element at the same or higher level, with the exception of _IfcFacility_ which can be part of an _IfcFacilityPart_ to allow for the regional or longitudinal division of a higjh level facility in to sections which can then contain one or more smaller functional facilities.
 

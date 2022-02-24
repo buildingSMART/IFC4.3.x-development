@@ -2,7 +2,7 @@
 
 This enumeration defines the valid types of permeable coverings.
 
-> HISTORY&nbsp; New enumeration in IFC2.0.
+> HISTORY  New enumeration in IFC2.0.
 
 ## Items
 

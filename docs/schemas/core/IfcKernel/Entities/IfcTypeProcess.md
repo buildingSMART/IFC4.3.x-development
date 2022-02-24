@@ -6,7 +6,7 @@ An _IfcTypeProcess_ may have a list of property set attached. Values of these pr
 
 Subtypes of _IfcTypeProcess_ may be exchanged without being already assigned to subtypes of _IfcProcess_.
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 ## Attributes
 
@@ -15,7 +15,7 @@ An identifying designation given to a process type.
 
 ### LongDescription
 An long description, or text, describing the activity in detail.
-> NOTE&nbsp; The inherited _SELF\IfcRoot.Description_ attribute is used as the short description.
+> NOTE  The inherited _SELF\IfcRoot.Description_ attribute is used as the short description.
 
 ### ProcessType
 The type denotes a particular type that indicates the process further. The use has to be established at the level of instantiable subtypes. In particular it holds the user defined type, if the enumeration of the attribute 'PredefinedType' is set to USERDEFINED.

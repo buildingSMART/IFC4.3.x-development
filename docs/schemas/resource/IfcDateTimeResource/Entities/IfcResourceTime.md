@@ -2,12 +2,12 @@
 
 _IfcResourceTime_ captures the time-related information about a construction resource.
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 ## Attributes
 
 ### ScheduleWork
-Indicates the total work (e.g. person-hours) allocated to the task on behalf of the resource. 
+Indicates the total work (e.g. person-hours) allocated to the task on behalf of the resource.
 Note: this is not necessarily the same as the task duration (IfcTaskTime.ScheduleDuration); it may vary according to the resource usage ratio and other resources assigned to the task.
 
 ### ScheduleUsage

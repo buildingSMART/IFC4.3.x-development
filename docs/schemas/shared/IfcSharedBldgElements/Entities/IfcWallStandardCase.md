@@ -3,7 +3,7 @@
 The _IfcWallStandardCase_ defines a wall with certain constraints for the provision of parameters and with certain constraints for the geometric representation. The _IfcWallStandardCase_ handles all cases of walls, that are extruded vertically:
 
 * along the positive z axis of the wall object coordinate system, and
-* along the positve z axis of the global (world) coordinate system
+* along the positive z axis of the global (world) coordinate system
 
 and have a single thickness along the path for each wall layer, i.e.:
 
@@ -32,7 +32,7 @@ The material of the wall is defined by the _IfcMaterialLayerSetUsage_ and is att
 
 An 'Axis' and a 'Body' shape representation has to be provided, and it is invalid to exchange a 'Tessellation', 'SurfaceModel', 'Brep' or 'MappedRepresentation' representation for the 'Body' shape representation of the _IfcWallStandardCase_.
 
-> HISTORY&nbsp; New entity in IFC2x.
+> HISTORY  New entity in IFC2x.
 
 ## Formal Propositions
 
@@ -43,22 +43,22 @@ A valid instance of _IfcWallStandardCase_ relies on the provision of an _IfcMate
 
 ### Axis 2D Geometry
 
-The wall axis is represented by a two-dimensional open curve 
-within a particular shape representation. The wall axis is used to 
+The wall axis is represented by a two-dimensional open curve
+within a particular shape representation. The wall axis is used to
 apply the material layer set usage parameter to the wall geometry.
 
 
 
 * Axis
-	+ IfcPolyline having two Points, or 
+	+ IfcPolyline having two Points, or
 	IfcTrimmedCurve with BasisCurve of Type
-	IfcLine for the 'SweptSolid' provided as 
+	IfcLine for the 'SweptSolid' provided as
 	IfcExtrudedAreaSolid. The axis curve lies on the x/y plane and is parallel to the x-axis of
 	 the object coordinate system.
 	+ IfcTrimmedCurve with BasisCurve of Type
 	IfcCircle for 'SweptSolid' provided as
 	 IfcExtrudedAreaSolid. The axis curve lies on the x/y plane
-	 of the object coordinate system, the tangent at the start is along 
+	 of the object coordinate system, the tangent at the start is along
 	the positive x-axis.
 
 
@@ -164,7 +164,7 @@ Figure 292 — Wall body extrusion curved
 ### Material Layer Set Usage
 
 
-Multi-layer walls can be represented by refering to several
+Multi-layer walls can be represented by referring to several
 IfcMaterialLayer's within the IfcMaterialLayerSet
 that is referenced from the
 IfcMaterialLayerSetUsage. 
@@ -178,7 +178,7 @@ IfcSlabType.HasAssociations and via
 IfcRelAssociatesMaterial.RelatingMaterial.
 
  The IfcWallType should then have a unique
- IfcMaterialLayerSet, that is referenced by 
+ IfcMaterialLayerSet, that is referenced by
 the IfcMaterialLayerSetUsage assigned to all
 occurrences of this IfcWallType.
 
@@ -205,7 +205,7 @@ Figure 288 illustrates material layer usage, where the following conventions sha
 Representation.Representations of the IfcWallStandardCase.
 * The IfcMaterialLayerSetUsage.OffsetFromReferenceLine is given as a distance from this axis.
 * The IfcMaterialLayerSetUsage.OffsetFromReferenceLine is the distance parallel to the reference axis and always within the base
-(XY) plane of the reference coordinate system. A positve value of IfcMaterialLayerSetUsage.OffsetFromReferenceLine would
+(XY) plane of the reference coordinate system. A positive value of IfcMaterialLayerSetUsage.OffsetFromReferenceLine would
 then point into the positive y-axis of the reference coordinate system.
 * The IfcMaterialLayerSetUsage.DirectionSense defines how the IfcMaterialLayer's are assigned to the reference axis. POSITIVE means in direction to the positive y-axis of the reference coordinate system.
 * The Thickness of each IfcMaterialLayer is provided starting from the OffsetFromReferenceLine and in the direction given by DirectionSense. It is applied without any gap or overlap between two consecutive layers. The TotalThickness of the IfcMaterialLayerSet is the sum of all layer thicknesses.
@@ -222,8 +222,8 @@ Figure 288 — Wall material layers
 The following restriction is imposed:
 
 
-* The local placement shall provide the location and directions 
-for the standard wall, the x/y plane is the plane for the 
+* The local placement shall provide the location and directions
+for the standard wall, the x/y plane is the plane for the
 profile, and the z-axis is the extrusion axis for the wall body.
 
 

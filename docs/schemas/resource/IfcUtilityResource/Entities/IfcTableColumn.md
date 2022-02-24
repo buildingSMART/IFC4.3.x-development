@@ -4,7 +4,7 @@ An _IfcTableColumn_ is a data structure that captures column information for use
 
 The use of _IfcTableColumn_ supersedes the _IsHeading_ flag associated with _IfcTableRow_.
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 ## Attributes
 
@@ -21,6 +21,6 @@ The _Description_ provides human-readable text describing the table column.
 The _Unit_ indicates the unit of measure to be used for this column's data. If not provided, then project default units are assumed. If _ReferencePath_ is provided, the the unit must be of the same measure as the referenced attribute.
 
 ### ReferencePath
-The _ReferencePath_ indicates a relative path to the object and attribute for which data within this column is to be applied. 
+The _ReferencePath_ indicates a relative path to the object and attribute for which data within this column is to be applied.
 
-For constraints, such path is relative to the _IfcObjectDefinition_ associated by _IfcRelAssociatesConstraint_.RelatedObjects. For a constraint to be satisified, exactly one row of the table must match the referenced object for all columns where the _ReferencePath_ attribute is set.
+For constraints, such path is relative to the _IfcObjectDefinition_ associated by _IfcRelAssociatesConstraint_.RelatedObjects. For a constraint to be satisfied, exactly one row of the table must match the referenced object for all columns where the _ReferencePath_ attribute is set.

@@ -4,10 +4,10 @@ A request is the act or instance of asking for something, such as a request for 
 
 Requests may take many forms depending on the need including fault reports for maintenance, requests for small works, and purchase requests (where these are to be made through a help desk or buying function).
 
-> HISTORY&nbsp; New entity in IFC2x2.
+> HISTORY  New entity in IFC2x2.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Atribute _RequestID_ renamed to _Identification_ and promoted to supertype _IfcControl_, attributes _PredefinedType_, _Status_, and _LongDescription_ added.
+> IFC4 CHANGE  Attribute _RequestID_ renamed to _Identification_ and promoted to supertype _IfcControl_, attributes _PredefinedType_, _Status_, and _LongDescription_ added.
 
 ## Attributes
 
@@ -18,11 +18,11 @@ Identifies the predefined type of sources through which a request can be made.
 > IFC4 CHANGE The attribute has been added.
 
 ### Status
-The status currently assigned to the request.  Possible values include:  
-Hold: wait to see if further requests are received before deciding on action  
-NoAction: no action is required on this request  
-Schedule: plan action to take place as part of maintenance or other task planning/scheduling  
-Urgent: take action immediately  
+The status currently assigned to the request.  Possible values include:
+Hold: wait to see if further requests are received before deciding on action
+NoAction: no action is required on this request
+Schedule: plan action to take place as part of maintenance or other task planning/scheduling
+Urgent: take action immediately
 { .change-ifc2x4}
 > IFC4 CHANGE The attribute has been added.
 
@@ -58,7 +58,7 @@ As shown in Figure 309, an IfcActionRequest may be assigned to the following ent
 * IfcActor (IfcRelAssignsToActor): Person or organization issuing the request such as a tenant or owner.
 
 
-The IfcActionRequest may have assignments of its own using the IfcRelAssignsToControl relationship where RelatingControl refers to the IfcActionRequest and RelatedObjects contains one or more objects of the following types: 
+The IfcActionRequest may have assignments of its own using the IfcRelAssignsToControl relationship where RelatingControl refers to the IfcActionRequest and RelatedObjects contains one or more objects of the following types:
 
 * IfcActor: Person or organization(s) fulfilling the request such as a facilities manager or contractor.
 

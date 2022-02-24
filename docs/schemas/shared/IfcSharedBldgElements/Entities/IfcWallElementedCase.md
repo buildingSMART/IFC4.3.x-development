@@ -11,11 +11,11 @@ Parts within the decomposition are usually be of type:
 * _IfcElementAssembly_ for other aggregates, or
 * _IfcBuiltElementProxy_.
 
-> EXAMPLE&nbsp;Elemented walls may extend the concepts of standard walls with the following features, as shown in Figure 1, including the _IfcRelConnectsWithRealizingElements_ relationship to define fasteners and accessories.
+> EXAMPLE Elemented walls may extend the concepts of standard walls with the following features, as shown in Figure 1, including the _IfcRelConnectsWithRealizingElements_ relationship to define fasteners and accessories.
 
-!["voiding"](../../../../figures/ifcwallelementedcase-partitioning.png "Figure 1 &mdash; Wall elemented case")
+![voiding](../../../../figures/ifcwallelementedcase-partitioning.png "Figure 1 &mdash; Wall elemented case")
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 ## Formal Propositions
 
@@ -54,8 +54,8 @@ positioned relative to the IfcWallElementedCase.
 ### Surface Geometry
 
 The 'Surface Geometry' shape representation can be used to define a
- surfacic model of the building (e.g. for analytical purposes, or 
-for reduced Level of Detail representation). It could suppress 
+ surfacic model of the building (e.g. for analytical purposes, or
+for reduced Level of Detail representation). It could suppress
 the geometric details of the parts in the
  decomposition.
 

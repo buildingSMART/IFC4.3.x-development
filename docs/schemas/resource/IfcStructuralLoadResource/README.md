@@ -5,6 +5,6 @@ The _IfcStructuralLoadResource_ holds the definitions of structural loads, resul
 
 The load resource definitions are used in other parts of the IFC model, particularly by the definition of structural actions and reactions that places the load definitions into 2D or 3D space.
 
-> NOTE&nbsp; The current version of IFC does not define dynamic loads, it is restricted to static loads.
+> NOTE  The current version of IFC does not define dynamic loads, it is restricted to static loads.
 
-> HISTORY&nbsp; New schema in IFC2x2.
+> HISTORY  New schema in IFC2x2.

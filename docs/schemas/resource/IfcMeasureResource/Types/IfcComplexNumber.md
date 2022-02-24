@@ -4,4 +4,4 @@ _IfcComplexNumber_ is a representation of a complex number expressed as an array
 
 Type: ARRAY [1:2] OF REAL
 
-> HISTORY&nbsp; New type in IFC2x2.
+> HISTORY  New type in IFC2x2.

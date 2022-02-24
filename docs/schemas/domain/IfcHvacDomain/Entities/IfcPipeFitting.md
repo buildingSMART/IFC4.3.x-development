@@ -4,7 +4,7 @@ A pipe fitting is a junction or transition in a piping flow distribution system 
 
 Pipe fittings include elbows, junctions, manifolds, and plumbing boxes.
 
-> HISTORY&nbsp; New entity in IFC4
+> HISTORY  New entity in IFC4
 
 { .note}
 >

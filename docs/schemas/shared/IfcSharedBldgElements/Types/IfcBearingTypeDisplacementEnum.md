@@ -1,3 +1,6 @@
+# IfcBearingTypeDisplacementEnum
+
+Enumeration of Bearing Displacement Types.
 
 ## Items
 

@@ -10,9 +10,9 @@ The standard member, _IfcMemberStandardCase_, defines a member with certain cons
 * are consistent in using the correct cardinal point offset of the profile as compared to the 'Axis' and 'Body' shape representation
 * are extruded perpendicular to the profile definition plane
 
-> NOTE&nbsp; View definitions and implementer agreements may further constrain the applicable geometry types, such as by excluding tapering from an _IfcMemberStandardCase_ implementation.
+> NOTE  View definitions and implementer agreements may further constrain the applicable geometry types, such as by excluding tapering from an _IfcMemberStandardCase_ implementation.
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 ## Formal Propositions
 
@@ -89,7 +89,7 @@ IfcRevolvedAreaSolidTapered shall be supported.
 > NOTE  Using IfcExtrudedAreaSolidTapered,
 > or IfcRevolvedAreaSolidTapered requires the use of two
 > IfcMaterialProfile's within the
-> IfcMaterialProfileSet assinged to the
+> IfcMaterialProfileSet assigned to the
 > IfcBeamStandardCase
 * Profile: see 'SweptSolid' geometric
 representation
@@ -193,7 +193,7 @@ The material of the IfcMemberStandardCase is defined by
 IfcMaterialProfileSetUsage and attached by the
 IfcRelAssociatesMaterial.RelatingMaterial. It is
 accessible by the inverse HasAssociations relationship.
-Composite profile members can be represented by refering to
+Composite profile members can be represented by referring to
 several IfcMaterialProfile's within the
 IfcMaterialProfileSet that is referenced from the
 IfcMaterialProfileSetUsage.
@@ -215,7 +215,7 @@ members.
 The IfcMemberStandardCase defines in addition that the
 IfcMemberType should have a unique
 IfcMaterialProfileSet, that is referenced by the
-IfcMaterialProfileSetUsage assigned to all occurrences of 
+IfcMaterialProfileSetUsage assigned to all occurrences of
 this IfcMemberType.
 
 
@@ -225,8 +225,8 @@ this IfcMemberType.
 The following restriction is imposed:
 
 
-* The local placement shall provide the location and directions 
-for the standard member, the x/y plane is the plane for the start 
+* The local placement shall provide the location and directions
+for the standard member, the x/y plane is the plane for the start
 profile, and the z-axis is the extrusion axis for the member body (in
 case of rotation, the tangent direction).
 

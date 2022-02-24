@@ -9,7 +9,7 @@ The representation identifier and type and the only allowed single representatio
 * _IfcShapeRepresentation_._RepresentationType_ : 'BoundingBox'
 * _IfcShapeRepresentation_._Items_ = _IfcBoundingBox_
 
-> NOTE&nbsp; The specification does not determine the method by which the bounding box has to be created. If such a method need to be prescribed the definition has to be established by model view definitions or implementer agreements.
+> NOTE  The specification does not determine the method by which the bounding box has to be created. If such a method need to be prescribed the definition has to be established by model view definitions or implementer agreements.
 
 ```
 concept {

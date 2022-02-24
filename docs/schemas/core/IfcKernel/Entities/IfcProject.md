@@ -5,17 +5,17 @@ _IfcProject_ indicates the undertaking of some design, engineering, construction
 The context provided by the _IfcProject_ includes:
 
 * the default units
-* the geometric representation context for exchange structures including shape representations 
+* the geometric representation context for exchange structures including shape representations
     * the project coordinate system
     * the coordinate space dimension
     * the precision used within the geometric representations
     * optionally the indication of the true north
-    * optionally the map conversion between the project coordinate system and the geospatial coordinate reference system. 
+    * optionally the map conversion between the project coordinate system and the geospatial coordinate reference system.
 
-> HISTORY&nbsp; New entity in IFC1.0
+> HISTORY  New entity in IFC1.0
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; The attributes _RepresentationContexts_ and _UnitsInContext_ are made optional and are promoted to supertype _IfcContext_.
+> IFC4 CHANGE  The attributes _RepresentationContexts_ and _UnitsInContext_ are made optional and are promoted to supertype _IfcContext_.
 
 { .spec-head}
 Informal Propositions:
@@ -82,7 +82,7 @@ The representation context of the project refers to a global positioning, i.e. t
 
 ### Spatial Decomposition
 
-The IfcProject is used to reference the root of the spatial structure of a building or other construction project (that serves as the primary project breakdown and is required to be hierarchical). The spatial structure elements are linked together, and to the IfcProject, by using the objectified relationship IfcRelAggregates. 
+The IfcProject is used to reference the root of the spatial structure of a building or other construction project (that serves as the primary project breakdown and is required to be hierarchical). The spatial structure elements are linked together, and to the IfcProject, by using the objectified relationship IfcRelAggregates.
 
 
 The following constraints are applied to using the relationshio IfcRelAggregates in context of IfcProject

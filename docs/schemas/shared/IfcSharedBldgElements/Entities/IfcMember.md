@@ -9,15 +9,15 @@ There are two main representations for member occurrences:
 - _IfcMember_ without _IfcMaterialProfileSetUsage_ is used for all other occurrences of members, particularly for members with changing profile sizes along the extrusion, or members defined by non-linear extrusion, or members having only 'Brep', or 'SurfaceModel' geometry, or if a more parametric representation is not intended.
 
 
-> NOTE&nbsp; The representation of a member in a structural analysis model is provided by _IfcStructuralCurveMember_ being part of an _IfcStructuralAnalysisModel_.
+> NOTE  The representation of a member in a structural analysis model is provided by _IfcStructuralCurveMember_ being part of an _IfcStructuralAnalysisModel_.
 
-> HISTORY&nbsp; New entity in IFC2x2 Addendum 1.
+> HISTORY  New entity in IFC2x2 Addendum 1.
 
 ## Attributes
 
 ### PredefinedType
 Predefined generic type for a member that is specified in an enumeration. There may be a property set given for the predefined types.
-> NOTE&nbsp; The _PredefinedType_ shall only be used, if no _IfcMemberType_ is assigned, providing its own _IfcMemberType.PredefinedType_.
+> NOTE  The _PredefinedType_ shall only be used, if no _IfcMemberType_ is assigned, providing its own _IfcMemberType.PredefinedType_.
 
 { .change-ifc2x4}
 > IFC4 CHANGE The attribute has been added at the end of the entity definition.
@@ -127,8 +127,8 @@ IfcRevolvedAreaSolidTapered shall be supported.
 > NOTE  Using IfcExtrudedAreaSolidTapered,
 > or IfcRevolvedAreaSolidTapered requires the use of two
 > IfcMaterialProfile's within the
-> IfcMaterialProfileSet assinged to the
-> IfcBeamStandardCase
+> IfcMaterialProfileSet assigned to the
+> IfcMember
 * Profile: see 'SweptSolid' geometric
 representation
 * Profile Position : see 'SweptSolid' geometric
@@ -252,7 +252,7 @@ The material of the IfcMember is defined by
 IfcMaterialProfileSetUsage and attached by the
 IfcRelAssociatesMaterial.RelatingMaterial. It is
 accessible by the inverse HasAssociations relationship.
- Composite profile members can be represented by refering to
+ Composite profile members can be represented by referring to
 several IfcMaterialProfile's within the
 IfcMaterialProfileSet that is referenced from the
 IfcMaterialProfileSetUsage.

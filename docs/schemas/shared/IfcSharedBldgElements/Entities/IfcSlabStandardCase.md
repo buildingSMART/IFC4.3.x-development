@@ -10,9 +10,9 @@ The standard slab, _IfcSlabStandardCase_, defines a slab with certain constraint
 
 The definitions of slab openings and niches are the same as given at the supertype _IfcSlab_. The same agreements to the special types of slabs, as defined in the _PredefinedType_ attribute apply as well.
 
-> NOTE&nbsp; If the _IfcSlabStandardCase_ is of type Landing and is used within an _IfcStair_ or _IfcRamp_, the special agreements to handle stair and ramp geometry will also affect the geometric representation of the _IfcSlabStandardCase_.
+> NOTE  If the _IfcSlabStandardCase_ is of type Landing and is used within an _IfcStair_ or _IfcRamp_, the special agreements to handle stair and ramp geometry will also affect the geometric representation of the _IfcSlabStandardCase_.
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 ## Formal Propositions
 
@@ -92,7 +92,7 @@ Figure 270 — Slab body extrusion
 ### Material Layer Set Usage
 
 
-Multi-layer slabs can be represented by refering to several
+Multi-layer slabs can be represented by referring to several
 IfcMaterialLayer's within the IfcMaterialLayerSet
 that is referenced from the
 IfcMaterialLayerSetUsage. 
@@ -100,7 +100,7 @@ IfcMaterialLayerSetUsage. 
 
 Material information can also be given at the
 IfcSlabType, defining the common attribute data for all
-occurrences of the same type. It is then accessible by the 
+occurrences of the same type. It is then accessible by the
 inverse IsDefinedBy relationship pointing to
 IfcSlabType.HasAssociations and via
 IfcRelAssociatesMaterial.RelatingMaterial. The IfcSlabStandardCase defines in addition that the
@@ -145,8 +145,8 @@ Figure 270 — Slab material layers
 The following restriction is imposed:
 
 
-* The local placement shall provide the location and directions 
-for the standard slab, the x/y plane is the plane for the 
+* The local placement shall provide the location and directions
+for the standard slab, the x/y plane is the plane for the
 profile, and the z-axis is the extrusion axis for the slab body.
 
 

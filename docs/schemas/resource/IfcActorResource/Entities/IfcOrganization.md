@@ -2,14 +2,14 @@
 
 A named and structured grouping with a corporate identity.
 
-> NOTE&nbsp; The relationships between _IfcOrganization_'s, like between department within a company, can be expressed using the objectified relationship _IfcOrganizationRelationship_.
+> NOTE  The relationships between _IfcOrganization_'s, like between department within a company, can be expressed using the objectified relationship _IfcOrganizationRelationship_.
 
-> NOTE&nbsp; Entity adapted from **organization** defined in ISO&nbsp;10303-41.
+> NOTE  Entity adapted from **organization** defined in ISO 10303-41.
 
-> HISTORY&nbsp; New entity in IFC1.5.1.
+> HISTORY  New entity in IFC1.5.1.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Attribute 'Id' renamed to _Identification_.
+> IFC4 CHANGE  Attribute 'Id' renamed to _Identification_.
 
 ## Attributes
 
@@ -27,7 +27,7 @@ Roles played by the organization.
 
 ### Addresses
 Postal and telecom addresses of an organization.
-> NOTE&nbsp; There may be several addresses related to an organization.
+> NOTE  There may be several addresses related to an organization.
 
 ### IsRelatedBy
 The inverse relationship for relationship RelatedOrganizations of IfcOrganizationRelationship.

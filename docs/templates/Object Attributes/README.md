@@ -8,8 +8,8 @@ Resource-level instances (not deriving from _IfcRoot_) do not have any identity,
 The distinction between rooted and non-rooted (resource-level) entities achieves several goals:
 
 { .ref}
-* File size may be reduced by interning (sharing) non-rooted data instances; 
-* Database retrieval may be more efficient by storing non-rooted data local to rooted data instances; 
-* Storage size may be reduced by avoiding IFC-GUID storage for items not requiring direct retrieval; 
-* Comparisons of differences may be done at a higher level where the context of such change is apparent; 
+* File size may be reduced by interning (sharing) non-rooted data instances;
+* Database retrieval may be more efficient by storing non-rooted data local to rooted data instances;
+* Storage size may be reduced by avoiding IFC-GUID storage for items not requiring direct retrieval;
+* Comparisons of differences may be done at a higher level where the context of such change is apparent;
 * Implementations may treat non-rooted data instances as immutable for efficiency or simplified usage.

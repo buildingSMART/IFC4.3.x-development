@@ -2,19 +2,20 @@
 
 The door is a built element that is predominately used to provide controlled access for people, goods, animals and vehicles. It includes constructions with hinged, pivoted, sliding, and additionally revolving and folding operations.
 
-> NOTE&nbsp; Definition according to ISO 6707-1: construction for closing an opening, intended primarily for access with hinged, pivoted or sliding operation.  
+> NOTE  Definition according to ISO 6707-1: construction for closing an opening, intended primarily for access with hinged, pivoted or sliding operation.
 
-The _IfcDoor_ defines a particular occurrence of a door inserted in the spatial context of a project. A door can:  
+The _IfcDoor_ defines a particular occurrence of a door inserted in the spatial context of a project. A door can:
 * be inserted as a filler in an opening using the _IfcRelFillsElement_ relationship, then the _IfcDoor_ has an inverse attribute _FillsVoids_ provided;
->NOTE&nbsp; View definitions or implementer agreements may restrict the relationship to only include one door into one opening.
+>NOTE  View definitions or implementer agreements may restrict the relationship to only include one door into one opening.
 
 * be part of an element assembly, in general an _IfcCurtainWall_, using the _IfcRelAggregates_ relationship, then the _IfcDoor_ has an inverse attribute _Decomposes_ is provided;
 * be a "free standing" door, then the _IfcDoor_ has no inverse attributes _FillsVoids_ or _Decomposes_ provided.
 
-This specification provides two main representations for door occurrences:  
+This specification provides two main representations for door occurrences:
 
 * _IfcDoor_ used for all occurrences of doors, that have a 'Profile' shape representation defined to which a set of shape parameters for lining and framing properties apply. Additionally it requires the provision of an _IfcDoorType_ that references one _IfcDoorLiningProperties_ and one to many _IfcDoorPanelProperties_;
-> NOTE&nbsp; The entity _IfcDoorStandardCase_ has been deprecated.
+
+> NOTE  The entity _IfcDoorStandardCase_ has been deprecated.
 
 * _IfcDoor_ used for all other occurrences of doors, particularly for doors having only 'Brep', or 'SurfaceModel' geometry without applying shape parameters.
 
@@ -31,20 +32,20 @@ The actual parameters of the door and/or its shape are defined by the _IfcDoor_ 
     * the particular attributes for the lining by the _IfcDoorLiningProperties_
     * the particular attributes for the panels by the _IfcDoorPanelProperties_
 
-> HISTORY&nbsp; New entity in IFC1.0.
+> HISTORY  New entity in IFC1.0.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; The attributes _PredefinedType_ and _OperationType_ are added, the applicable type object has been changed to _IfcDoorType_.
+> IFC4 CHANGE  The attributes _PredefinedType_ and _OperationType_ are added, the applicable type object has been changed to _IfcDoorType_.
 
-The geometric representation of _IfcDoor_ is given by the _IfcProductDefinitionShape_, allowing multiple geometric representations. The _IfcDoor_ may get its parameter and shape from the _IfcDoorType_. If an _IfcRepresentationMap_ (a block definition) is defined for the _IfcDoorType_, then the _IfcDoor_ inserts it through the _IfcMappedItem_.  
+The geometric representation of _IfcDoor_ is given by the _IfcProductDefinitionShape_, allowing multiple geometric representations. The _IfcDoor_ may get its parameter and shape from the _IfcDoorType_. If an _IfcRepresentationMap_ (a block definition) is defined for the _IfcDoorType_, then the _IfcDoor_ inserts it through the _IfcMappedItem_.
 
-The geometric representation of _IfcDoor_ is defined using the following (potentially multiple) _IfcShapeRepresentation_'s for its _IfcProductDefinitionShape_:  
+The geometric representation of _IfcDoor_ is defined using the following (potentially multiple) _IfcShapeRepresentation_'s for its _IfcProductDefinitionShape_:
 
 * **Profile**: A 'Curve3D' consisting of a single losed curve defining the outer boundary of the door (lining). The door parametric representation uses this profile in order to apply the door lining and panel parameter. If not provided, the profile of the _IfcOpeningElement_ is taken.
 * **FootPrint**: A 'GeometricCurveSet', or 'Annotation2D' representation defining the 2D shape of the door
 * **Body**: A 'SweptSolid', 'SurfaceModel', or 'Brep' representation defining the 3D shape of the door.
 
-In addition the parametric representation of a (limited) door shape is available by applying the parameters from _IfcDoorType_ referencing _IfcDoorLiningProperties_ and _IfcDoorPanelProperties_. The purpose of the parameter is described at those entities and below (door opening operation by door type).  
+In addition the parametric representation of a (limited) door shape is available by applying the parameters from _IfcDoorType_ referencing _IfcDoorLiningProperties_ and _IfcDoorPanelProperties_. The purpose of the parameter is described at those entities and below (door opening operation by door type).
 The overall size of the _IfcDoor_ to be used to apply the lining or panel parameter provided by the _IfcDoorType_ is determined by the IfcShapeRepresentation with the RepresentationIdentifier = 'Profile'.
 
 ## Attributes
@@ -111,44 +112,41 @@ or to the right is done at the level of the IfcDoorType.
 Here it is a left side opening door given
 by IfcDoorType.OperationType =
 SingleSwingLeft
-refered to as LEFT HAND (LH) in US *  
+referred to as LEFT HAND (LH) in US *
 
 
-
-refered to as DIN-R (right hung) in Germany
+referred to as DIN-R (right hung) in Germany
 ![fig 2](../../../../figures/ifcdoor-fig02.gif)
 If the door should open to the other side,
 then the local placement has to be changed. It is still a left side
 opening door, given by IfcDoorType.OperationType =
  SingleSwingLeft
-refered to as RIGHT HAND REVERSE (RHR) in
-US *  
+referred to as RIGHT HAND REVERSE (RHR) in
+US *
 
 
-
-refered to as DIN-R (right hung) in Germany
+referred to as DIN-R (right hung) in Germany
 ![fig 3](../../../../figures/ifcdoor-fig03.gif)
 If the door panel (for swinging doors)
 opens to the right, a separate door style needs to be used (here
 IfcDoorTypee.OperationType = SingleSwingRight) and it always
 opens into the direction of the positive Y axis of the local
 placement.
-refered to as RIGHT HAND (RH) in US *  
+referred to as RIGHT HAND (RH) in US *
 
 
 
-refered to as DIN-L (left hung) in Germany
+referred to as DIN-L (left hung) in Germany
 ![fig 4](../../../../figures/ifcdoor-fig04.gif)
 If the door panel (for swinging doors)
 opens to the right, and into the opposite directions, the local
 placement of the door need to change. The door style is given by
 IfcDoorType.OperationType = SingleSwingRight.
-refered to as LEFT HAND REVERSE (LHR) in US
-*  
+referred to as LEFT HAND REVERSE (LHR) in US
+*
 
 
-
-refered to as DIN-L (left hung) in Germany
+referred to as DIN-L (left hung) in Germany
 * it assumes that the
 'inside/private/primary' space is above (top in the pictures) and
  the 'outside/public/secondary' space is below (bottom in the

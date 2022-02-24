@@ -4,4 +4,4 @@ A sound power level measure is a measure of total radiated noise with units of d
 
 Type: REAL
 
-> HISTORY&nbsp; Renamed in IFC4 (was IfcSoundPowerMeasure).
+> HISTORY  Renamed in IFC4 (was IfcSoundPowerMeasure).

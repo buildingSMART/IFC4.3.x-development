@@ -11,7 +11,7 @@ or in case of sectioned spines the xy plane of each list member of _IfcSectioned
 
 Note, if only mirroring is required, _IfcMirroredProfileDef_ should be used instead.
 
-> HISTORY&nbsp; New entity in IFC2x.
+> HISTORY  New entity in IFC2x.
 
 ![Uniform](../../../../figures/ifcderivedprofiledef-layout1.gif)
 

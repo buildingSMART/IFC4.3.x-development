@@ -2,16 +2,16 @@
 
 A slab is a component of the construction that may enclose a space vertically. The slab may provide the lower support (floor) or upper construction (roof slab) in any space in a building.
 
-> NOTE&nbsp; Definition according to ISO 6707-1  
+> NOTE  Definition according to ISO 6707-1
 > thick, flat or shaped component, usually larger than 300 mm square, used to form a covering or projecting from a building.
 
 Only the core or constructional part of this construction is considered to be a slab. The upper finish (flooring, roofing) and the lower finish (ceiling, suspended ceiling) are considered to be coverings. A special type of slab is the landing, described as a floor section to which one or more stair flights or ramp flights connect.
 
-> NOTE&nbsp; An arbitrary planar element to which this semantic information is not applicable or irrelevant shall be modeled as _IfcPlate_.
+> NOTE  An arbitrary planar element to which this semantic information is not applicable or irrelevant shall be modeled as _IfcPlate_.
 
 A slab may have openings, such as floor openings, or recesses. They are defined by an _IfcOpeningElement_ attached to the slab using the inverse relationship _HasOpenings_ pointing to _IfcRelVoidsElement_.
 
-> NOTE&nbsp; Slabs with openings that have already been modeled within the enclosing geometry may use the relationship _IfcRelConnectsElements_ to associate the wall with embedded elements such as trap doors.
+> NOTE  Slabs with openings that have already been modeled within the enclosing geometry may use the relationship _IfcRelConnectsElements_ to associate the wall with embedded elements such as trap doors.
 
 There are two main representations for slab occurrences:
 
@@ -23,13 +23,13 @@ There are two main representations for slab occurrences:
 
 > NOTE There is a representation of slabs for structural analysis provided by a proper subtype of _IfcStructuralMember_ being part of the _IfcStructuralAnalysisModel_.
 
-> HISTORY&nbsp; New entity in IFC2.0; it is a merger of the two previous entities IfcFloor, IfcRoofSlab, introduced in IFC1.0
+> HISTORY  New entity in IFC2.0; it is a merger of the two previous entities IfcFloor, IfcRoofSlab, introduced in IFC1.0
 
 ## Attributes
 
 ### PredefinedType
 Predefined generic type for a slab that is specified in an enumeration. There may be a property set given specifically for the predefined types.
-> NOTE&nbsp; The _PredefinedType_ shall only be used, if no _IfcSlabType_ is assigned, providing its own _IfcSlabType.PredefinedType_.
+> NOTE  The _PredefinedType_ shall only be used, if no _IfcSlabType_ is assigned, providing its own _IfcSlabType.PredefinedType_.
 
 { .change-ifc2x}
 > IFC2x CHANGE The attribute has been changed into an OPTIONAL attribute.
@@ -119,9 +119,6 @@ Figure 264 illustrates a 'SweptSolid' geometric representation.
 
 > NOTE  The following interpretation of dimension parameter applies for polygonal slabs (in ground floor view):
 > * IfcArbitraryClosedProfileDef.OuterCurve: closed bounded curve interpreted as area (or foot print) of the slab.
->
->
->
 
 
 ![standard slab](../../../../figures/ifcslab_standard-layout1.gif)
@@ -174,7 +171,7 @@ The material of IfcSlab can be defined by
 IfcMaterialLayerSetUsage and attached by
 IfcRelAssociatesMaterial.RelatingMaterial. It is
  accessible by the inverse HasAssociations relationship.
- Multi-layer slabs can be represented by refering to several
+ Multi-layer slabs can be represented by referring to several
 IfcMaterialLayer's within the IfcMaterialLayerSet
 that is referenced from th e
 IfcMaterialLayerSetUsage.
@@ -189,7 +186,7 @@ occurrences of this IfcSlabType.
 
 ![Material layer set and usage](../../../../figures/ifcslab_materialusage-01.png)
 
-> EXAMPLE  Figure 262 illustrates assignment of IfcMaterialLayerSetUsage and IfcMaterialLayerSet to the IfcSlab as the slab occurrence and to the IfcSlabType. The same IfcMaterialLayerSet shall be shared by many occurrences of IfcMaterialLayerSetUsage. This relationship shall be consistent to the relationship between the IfcSlabType and the IfcSlabStandardCase.
+> EXAMPLE  Figure 262 illustrates assignment of IfcMaterialLayerSetUsage and IfcMaterialLayerSet to the IfcSlab as the slab occurrence and to the IfcSlabType. The same IfcMaterialLayerSet shall be shared by many occurrences of IfcMaterialLayerSetUsage. This relationship shall be consistent to the relationship between the IfcSlabType and the IfcSlab.
 
 
 Figure 262 — Slab type definition

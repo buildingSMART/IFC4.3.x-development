@@ -22,13 +22,13 @@ representation</li>
 <li>are extruded perpendicular to the profile definition
 plane</li>
 <li style="list-style-type:none">
-<blockquote class="note"><small>NOTE&nbsp; View definitions and implementer
+<blockquote class="note"><small>NOTE  View definitions and implementer
 agreements may further constrain the applicable geometry types,
 e.g. by excluding tapering from an <em>IfcBeamStandardCase</em>
 implementation.</small></blockquote>
 </li>
 </ul>
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 **_Geometric Representations_**
 
@@ -37,7 +37,7 @@ The geometric representation of _IfcColumnStandardCase_ is defined using the fol
 * **Axis**: A three-dimensional open curve (subtype of _IfcBoundedCurve_) defining the axis for the standard column. The cardinal point is determined by the column axis.
 * **Body**: A Swept Solid Representation or a CSG representation defining the 3D shape of the standard column.
 
-> NOTE&nbsp; It is invalid to exchange a 'SurfaceModel', 'Brep', or 'MappedRepresentation' representation for the 'Body' shape representation of an _IfcColumnStandardCase_.
+> NOTE  It is invalid to exchange a 'SurfaceModel', 'Brep', or 'MappedRepresentation' representation for the 'Body' shape representation of an _IfcColumnStandardCase_.
 
 ## Formal Propositions
 
@@ -119,7 +119,7 @@ representation
 
 ### Body Clipping Geometry
 
-The following constraints apply to the 'Clipping' 
+The following constraints apply to the 'Clipping'
 representation:
 
 
@@ -165,7 +165,7 @@ having Location = 0.,0. and RefDirection =
 IfcExtrudedAreaSolid.ExtrudedDirection shall be
 [0.,0.,1.].
 * Orientation: The y-axis of the profile, as determined
-by IfcSweptAreaSolid.Position.P[2] shall point to the 
+by IfcSweptAreaSolid.Position.P[2] shall point to the
 Y-Axis. It indicates the "role" of the column, a role=0°
 means y-axis of profile = Y-axis of reference coordinate
 system.
@@ -196,10 +196,10 @@ Figure 222 — Column body extrusion
 
 The IfcColumnStandardCase defines in addition that the
 IfcColumnType should have a unique
- IfcMaterialProfileSet, that is referenced by the 
-IfcMaterialProfileSetUsage assigned to all occurrences of 
-this IfcColumnType. 
-Composite profile columns can be represented by refering to
+ IfcMaterialProfileSet, that is referenced by the
+IfcMaterialProfileSetUsage assigned to all occurrences of
+this IfcColumnType.
+Composite profile columns can be represented by referring to
 several IfcMaterialProfile's within the
 IfcMaterialProfileSet that is referenced from the
 IfcMaterialProfileSetUsage.
@@ -242,8 +242,8 @@ Figure 221 — Column composite profiles
 The following restriction is imposed:
 
 
-* The local placement shall provide the location and directions 
-for the standard column, the x/y plane is the plane for the start 
+* The local placement shall provide the location and directions
+for the standard column, the x/y plane is the plane for the start
 profile, and the z-axis is the extrusion axis for the column body (in
 case of rotation, the tangent direction).
 

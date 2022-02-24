@@ -3,18 +3,18 @@
 A ramp is a vertical passageway which provides a human or vehicle circulation link between one floor level and another floor level at a different elevation. It may include a landing as an intermediate floor slab. A ramp normally does not include steps.
 
 { .extDef}
-> NOTE&nbsp; Definition according to ISO 6707-1: Inclined way or floor joining two surfaces at different levels.
+> NOTE  Definition according to ISO 6707-1: Inclined way or floor joining two surfaces at different levels.
 
 The _IfcRamp_ shall either be represented:
 
 * as a ramp assembly that aggregates all parts(ramp flight, landing, etc.) with own shape representations, or
 * as a single ramp without decomposition including all shape representations directly at the ramp entity.
 
-> NOTE&nbsp; In case of an _IfcRamp_ being the assembly of all parts of the ramp the aggregation is handled by the _IfcRelAggregates_ relationship, relating an _IfcRamp_ with the related _IfcRampFlight_ and landings, _IfcSlab_ with PredefinedType=LANDING. _IfcRailing_'s belonging to the ramp may also be included into the aggregation.
+> NOTE  In case of an _IfcRamp_ being the assembly of all parts of the ramp the aggregation is handled by the _IfcRelAggregates_ relationship, relating an _IfcRamp_ with the related _IfcRampFlight_ and landings, _IfcSlab_ with PredefinedType=LANDING. _IfcRailing_'s belonging to the ramp may also be included into the aggregation.
 
-> NOTE&nbsp; Model View Definitions and implementer agreements may restrict the _IfcRamp_ being an assembly to not have an independent shape representation, but to always require that the decomposed parts have a shape representation. In this case, at least the 'Body' geometric representations shall not be provided directly at _IfcRamp_ if it is an assembly. The 'Body' geometric representation of the _IfcRamp_ is then the sum of the 'Body' shape representation of the parts within the decomposition structure.
+> NOTE  Model View Definitions and implementer agreements may restrict the _IfcRamp_ being an assembly to not have an independent shape representation, but to always require that the decomposed parts have a shape representation. In this case, at least the 'Body' geometric representations shall not be provided directly at _IfcRamp_ if it is an assembly. The 'Body' geometric representation of the _IfcRamp_ is then the sum of the 'Body' shape representation of the parts within the decomposition structure.
 
-> HISTORY&nbsp; New entity in IFC2.0.
+> HISTORY  New entity in IFC2.0.
 
 { .change-ifc2x4}
 > IFC4 CHANGE Attribute _ShapeType_ renamed to _PredefinedType_
@@ -23,7 +23,7 @@ The _IfcRamp_ shall either be represented:
 
 ### PredefinedType
 Predefined generic types for a ramp that are specified in an enumeration. There may be a property set given for the predefined types.
-> NOTE&nbsp; The _PredefinedType_ shall only be used, if no _IfcRampType_ is assigned, providing its own _IfcRampType.PredefinedType_.
+> NOTE  The _PredefinedType_ shall only be used, if no _IfcRampType_ is assigned, providing its own _IfcRampType.PredefinedType_.
 
 { .change-ifc2x4}
 > IFC4 CHANGE The attribute has been renamed from ShapeType and changed to be OPTIONAL with upward compatibility for file based exchange.
@@ -40,15 +40,15 @@ Either there is no ramp type object associated, i.e. the _IsTypedBy_ inverse rel
 
 ### Axis 2D Geometry
 
-The walking line is represented by a two-dimensional open curve 
-as the axis. The curve is directed into the upward direction 
+The walking line is represented by a two-dimensional open curve
+as the axis. The curve is directed into the upward direction
 (direction has to be interpreted as specified at the subtypes of
-IfcCurve). 
+IfcCurve).
 
 
 
 
-> NOTE  The 'Axis' representation of IfcRamp 
+> NOTE  The 'Axis' representation of IfcRamp
 > may be provided even if the IfcRamp has components with own
 >  shape representations.
 
@@ -60,15 +60,15 @@ IfcCurve).
 ### Body SweptSolid Geometry
 
 If the IfcRamp has no components defined (empty set of
-SELF\IfcProduct.IsDecomposedBy) then the IfcRamp 'Body' geometry 
+SELF\IfcProduct.IsDecomposedBy) then the IfcRamp 'Body' geometry
 may be represented by an own IfcShapeRepresentation.
 
 
 ### Element Decomposition
 
-If the IfcRamp has components (referenced by 
-SELF\IfcProduct.IsDecomposedBy) then no independent 'Body' 
-geometric representation shall be defined for the IfcRamp. 
+If the IfcRamp has components (referenced by
+SELF\IfcProduct.IsDecomposedBy) then no independent 'Body'
+geometric representation shall be defined for the IfcRamp.
 The IfcRamp is then geometrically represented by the
  geometric representation of its components.
 
@@ -128,7 +128,7 @@ IfcRamp.ObjectPlacement.
 
 ### Spatial Containment
 
-The IfcRamp, as any subtype of IfcBuildingElement, 
+The IfcRamp, as any subtype of IfcBuildingElement,
 may participate alternatively in one of the two different containment relationships:
 
 

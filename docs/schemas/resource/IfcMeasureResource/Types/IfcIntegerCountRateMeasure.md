@@ -6,4 +6,4 @@ _IfcIntegerCountRateMeasure_ is a measure of the integer number of units flowing
 
 Type: INTEGER
 
-> HISTORY&nbsp; New type in IFC2.0.
+> HISTORY  New type in IFC2.0.

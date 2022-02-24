@@ -4,10 +4,10 @@ A project order is a directive to purchase products and/or perform work, such as
 
 Project orders are typically formal contracts between two organizations, where cost and time information may be rigid or flexible according to contained schedule types and constraints.
 
-> HISTORY&nbsp; New entity in IFC2.0
+> HISTORY  New entity in IFC2.0
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Attribute _ID_ renamed to _Identification_ and promoted to supertype _IfcControl_. Attribute 'LongDescription' added.
+> IFC4 CHANGE  Attribute _ID_ renamed to _Identification_ and promoted to supertype _IfcControl_. Attribute 'LongDescription' added.
 
 ## Attributes
 
@@ -56,7 +56,7 @@ Figure 314 illustrates IfcProjectOrder assignment relationships as indicated:
 * *IfcActor* (*IfcRelAssignsToActor*): Organization issuing the order such as an owner or contractor.
 
 
- The IfcProjectOrder may have assignments of its own using the *IfcRelAssignsToControl* relationship where RelatingControl refers to the IfcProjectOrder and RelatedObjects contains one or more objects of the following types: 
+ The IfcProjectOrder may have assignments of its own using the *IfcRelAssignsToControl* relationship where RelatingControl refers to the IfcProjectOrder and RelatedObjects contains one or more objects of the following types:
 
 * *IfcActor*: Organization(s) contracted to fulfill the order, typically a single contractor, subcontractor, or supplier.
 

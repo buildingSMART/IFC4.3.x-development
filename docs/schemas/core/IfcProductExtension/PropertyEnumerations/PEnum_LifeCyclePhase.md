@@ -1,0 +1,75 @@
+# PEnum_LifeCyclePhase
+
+## Items
+
+### ACQUISITION
+
+
+### CRADLETOSITE
+
+
+### DECONSTRUCTION
+
+
+### DISPOSAL
+
+
+### DISPOSALTRANSPORT
+
+
+### GROWTH
+
+
+### INSTALLATION
+
+
+### MAINTENANCE
+
+
+### MANUFACTURE
+
+
+### OCCUPANCY
+
+
+### OPERATION
+
+
+### PROCUREMENT
+
+
+### PRODUCTION
+
+
+### PRODUCTIONTRANSPORT
+
+
+### RECOVERY
+
+
+### REFURBISHMENT
+
+
+### REPAIR
+Project responsible for the repair to a facility
+
+### REPLACEMENT
+
+
+### TRANSPORT
+
+
+### USAGE
+
+
+### WASTE
+
+
+### WHOLELIFECYCLE
+
+
+### USERDEFINED
+
+
+### NOTDEFINED
+

@@ -46,7 +46,7 @@ Either there is no wall type object associated, i.e. the _IsTypedBy_ inverse rel
 
 The wall axis is represented by a two-dimensional open curve
 within a particular shape representation. The 'Axis' shape representation is only used to locate the
-material layer set along the axis, if the IfcMaterialLayerSetUsgae is applied to the IfcWall. In this case, the wall axis is used to
+material layer set along the axis, if the IfcMaterialLayerSetUsage is applied to the IfcWall. In this case, the wall axis is used to
 apply the material layer set usage parameter to the wall geometry.
 
 
@@ -69,26 +69,22 @@ apply the material layer set usage parameter to the wall geometry.
 
 ![straight wall axis](../../../../figures/ifcwallstandard_straigthwall_01-layout1.gif)
 
+Figure 279 — Wall axis straight
+
 > EXAMPLE  Figure 279 illustrates an axis representation for a straight wall. In case of a straight wall, the set of items shall
 > include a single geometric representation item of type IfcPolyline or IfcTrimmedCurve with the BasisCurve being an IfcLine. The IfcPolyline or IfcTrimmedCurve shall be parallel (here in a special case co-linear) to the x-axis
 > of the object coordinate system. The direction shall be identical to the direction of the x-axis.
 
 
-Figure 279 — Wall axis straight
-
-
- 
-
-
-
 
 ![curved wall axis](../../../../figures/ifcwallstandard_curvedwall_01-layout1.gif)
+
+Figure 280 — Wall axis curved
 
 > EXAMPLE  Figure 280 illustrates an axis representation for a curved wall. In case of a curved wall, the set of items shall include
 > a single geometric representation item of type IfcTrimmedCurve. The curve shall have a BasisCurve of type IfcCircle. The tangent of the IfcTrimmedCurve shall be parallel at start to the x-axis of the object coordinate system. The direction shall be identical to the direction of the x-axis.
 
 
-Figure 280 — Wall axis curved
 
 
  

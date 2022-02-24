@@ -14,6 +14,8 @@ The following definitions from ISO/IEC 19775-1 X3D Architecture and base compone
 
 > NOTE  Image formats specify an alpha opacity, not transparency (where alpha = 1 - transparency).
 
+### Texture coordinate systems
+
 Figure 1 illustrates the texture coordinate system.
 
 ![texture coordinates](../../../../figures/ifcsurfacetexture_fig-1.png "Figure 1 &mdash; Surface texture coordinates")
@@ -37,6 +39,8 @@ The mapping of the texture onto the surface or the solid is determined with the 
  1. If the geometry is of a special IFC type which defines a texture mapping, such as an IfcSphere, IfcBlock, or IfcExtrudedAreaSolid, then that definition is the default texture mapping.
  2. If IfcTextureCoordinate texture coordinates are assigned to a surface texture, these texture coordinates are used.
  3. If the geometry has no texture mapping definition and no texture coordinates, the texture s coordinate comes from local vertex X coordinate, and t coordinate comes from local vertex Y coordinate. Along each axis, the s and t texture coordinate goes from 0 to 1, as the geometry goes from bounding box minimum to maximum.
+
+### Texture modes
 
 A texture may belong to a mode, which determines how the texture affects the reflectance method in IfcSurfaceStyleRendering as described in Table 1. Only a single texture may be supplied per texture Mode type (DIFFUSE, SPECULAR, etc).
 
@@ -71,7 +75,7 @@ The _RepeatS_ field specifies how the texture wraps in the S direction. If _Repe
 The _RepeatT_ field specifies how the texture wraps in the T direction. If _RepeatT_ is TRUE (the default), the texture map is repeated outside the [0.0, 1.0] texture coordinate range in the T direction so that it fills the shape. If _RepeatT_ is FALSE, the texture coordinates are clamped in the T direction to lie within the [0.0, 1.0] range.
 
 ### Mode
-Mode shall hold the type of map this corresponds to, chosen from the following list: AMBIENT, NORMAL, EMISSIVE, METALLICROUGHNESS, OCCLUSION, SHININESS, SPECULAR, DIFFUSE. For more information on which texture maps apply in different lighting models refer to the X3D specification.
+Mode shall hold the type of map this corresponds to, chosen from the following list: AMBIENT, NORMAL, EMISSIVE, METALLICROUGHNESS, OCCLUSION, SHININESS, SPECULAR, DIFFUSE.
 
 If Mode is omitted, DIFFUSE is assumed.
 
@@ -84,13 +88,6 @@ If Mode is omitted, DIFFUSE is assumed.
 The _TextureTransform_ defines a 2D transformation that is applied to the texture coordinates. It affects the way texture coordinates are applied to the surfaces of geometric representation itesm. The 2D transformation supports changes to the size, orientation, and position of textures on shapes. Mirroring is not allowed to be used in the _IfcCartesianTransformationOperator_
 
 ### Parameter
-The _Parameter_ attribute is provided to control the appearance of a multi textures. The applicable parameters depend on the value of the _Mode_ attribute.
-> NOTE  The applicable values for the list of _Parameter_ attributes are determined by view definitions or implementer agreements. It is recommended to use the source and the function fields described in ISO/IES 19775-1.2:2008 X3D Architecture and base components Edition 2, Part 1. See [18.4.3 MultiTexture](http://www.web3d.org/x3d/specifications/ISO-IEC-19775-1.2-X3D-AbstractSpecification/Part01/components/texturing.html#MultiTexture) for recommended values.
-> By convention, _Parameter[1]_ shall then hold the source value, _Parameter[2]_ the function value, _Parameter[3]_ the base RGB color for select operations, and _Parameter[4]_ the alpha value for select operations.
-
-{ .change-ifc2x4}
-> IFC4 CHANGE  New attribute added at the end of the attribute list.
-
 > IFC4.3.0.0 DEPRECATION This attribute is deprecated and shall no longer be used.
 
 ### IsMappedBy

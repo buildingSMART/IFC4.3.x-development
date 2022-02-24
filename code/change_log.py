@@ -5,6 +5,8 @@ from deepdiff import DeepDiff
 
 from collections import defaultdict
 
+from xmi_document import fix_schema_name
+
 changes_by_schema = []
 changes_by_type = defaultdict(dict)
 
@@ -30,7 +32,7 @@ def to_dict(decl):
             return {
                 # 'type': type,
                 'name': rl[0],
-                'definition': rl[1]
+                'definition': fix_schema_name(rl[1], remove=True)
             }
     
         return {

@@ -84,9 +84,12 @@ def get_path(xmi_node):
 infinity = 1e9
 
 where_pat = re.compile(r"'\w+\.(\w+(\.\w+)?)'")
-def fix_schema_name(s):
+def fix_schema_name(s, remove=False):
     def repl(x):
-        return "'%s.%s'" % (SCHEMA_NAME, x.group(1))
+        if remove:
+            return x.group(1)
+        else:
+            return "'%s.%s'" % (SCHEMA_NAME, x.group(1))
     return remove_linebreak_before_semi(re.sub(where_pat, repl, s))
     
 def remove_linebreak_before_semi(s):

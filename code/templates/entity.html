@@ -74,13 +74,12 @@
         <tr class="group">
         {% endif %}
             <td colspan="4">
-                {% if group.is_inherited %}<mark>Inherited</mark>{% endif %}
                 {{ group.name }}
                 <small>({{ group.total_attributes}})</small>
             </td>
         </tr>
         {% for attribute in group.attributes %}
-        <tr{% if group.is_inherited %} class="inherited"{% endif %}>
+        <tr{% if group.is_inherited %} class="inherited" data-type="attribute"{% endif %}>
             <td data-label="#">{{ attribute.number }}</td>
             <td data-label="Name">
                 {% if attribute.is_inverse %}
@@ -91,18 +90,31 @@
             </td>
             <td data-label="Type">{{ attribute.type }}</td>
             <td data-label="Description">
-                <div>
-                    {% if attribute.description %}
-                    {{ attribute.description | safe }}
-                    {% else %}
-                    <p>
-                        <em>No description available.</em>
-                    </p>
-                    {% endif %}
-                </div>
+                {% if attribute.description %}
+                {{ attribute.description | safe }}
+                {% else %}
+                <p>
+                    <em>No description available.</em>
+                </p>
+                {% endif %}
             </td>
         </tr>
         {% endfor %}
+        {% if attributes.total_inherited_attributes and group.is_last_inherited_group %}
+        <tr class="preview">
+            <td colspan="4">
+                <small class="show-inherited" data-type="attribute">
+                    <i data-feather="eye-off"></i>
+                    Click to show {{ attributes.total_inherited_attributes }} hidden inherited attributes
+                </small>
+                <small class="hide-inherited" data-type="attribute">
+                    <i data-feather="eye-off"></i>
+                    Click to hide {{ attributes.total_inherited_attributes }} inherited attributes
+                </small>
+            </td>
+        </tr>
+        {% endif %}
+
         {% endfor %}
     </tbody>
 </table>
@@ -181,19 +193,22 @@
     </thead>
     <tbody>
         {% for group in concept_usage.groups %}
+        {% if group.concepts %}
+
         {% if group.is_inherited %}
         <tr class="group-inherited">
         {% else %}
         <tr class="group">
         {% endif %}
+
             <td colspan="3">
-                {% if group.is_inherited %}<mark>Inherited</mark>{% endif %}
                 {{ group.name }}
                 <small>({{ group.total_concepts}})</small>
             </td>
         </tr>
+
         {% for concept in group.concepts %}
-        <tr{% if group.is_inherited %} class="inherited"{% endif %}>
+        <tr{% if group.is_inherited %} class="inherited" data-type="concept"{% endif %}>
             <td data-label="Name">
                 {% if concept.url %}
                 <a href="{{ concept.url }}">{{ concept.name }}</a>
@@ -205,32 +220,46 @@
                 {{ concept.usage }}
             </td>
             <td data-label="Description">
-                <div>
-                    {% if concept.description %}
-                    {{ concept.description | safe }}
-                    {% endif %}
-                    {% if concept.applicable_relationships %}
-                    <p>This concept can be applied to the following resources:</p>
-                    <ul>
-                    {% for relationship in concept.applicable_relationships %}
-                        <li>
-                            {{ relationship.name }}
-                            {% if relationship.predefined_type %}
-                            (only applies to <code>{{ relationship.predefined_type }})
-                            {% endif %}
-                        </li>
-                    {% endfor %}
-                    </ul>
-                    {% endif %}
-                    {% if not concept.description and not concept.applicable_relationships %}
-                    <p>
-                        <em>No description available.</em>
-                    </p>
-                    {% endif %}
-                </div>
+                {% if concept.description %}
+                {{ concept.description | safe }}
+                {% endif %}
+                {% if concept.applicable_relationships %}
+                <p>This concept can be applied to the following resources:</p>
+                <ul>
+                {% for relationship in concept.applicable_relationships %}
+                    <li>
+                        {{ relationship.name }}
+                        {% if relationship.predefined_type %}
+                        (only applies to <code>{{ relationship.predefined_type }})
+                        {% endif %}
+                    </li>
+                {% endfor %}
+                </ul>
+                {% endif %}
+                {% if not concept.description and not concept.applicable_relationships %}
+                <p>
+                    <em>No description available.</em>
+                </p>
+                {% endif %}
             </td>
         </tr>
         {% endfor %}
+        {% endif %}
+        {% if concept_usage.total_inherited_concepts and group.is_last_inherited_group  %}
+        <tr class="preview">
+            <td colspan="4">
+                <small class="show-inherited" data-type="concept">
+                    <i data-feather="eye-off"></i>
+                    Click to show {{ concept_usage.total_inherited_concepts }} hidden inherited concepts
+                </small>
+                <small class="hide-inherited" data-type="concept">
+                    <i data-feather="eye-off"></i>
+                    Click to hide {{ concept_usage.total_inherited_concepts }} inherited concepts
+                </small>
+            </td>
+        </tr>
+        {% endif %}
+
         {% endfor %}
     </tbody>
 </table>

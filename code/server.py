@@ -1221,7 +1221,7 @@ def get_concept_usage(resource, builder):
     if inherited_groups_with_concepts:
         inherited_groups_with_concepts[-1]["is_last_inherited_group"] = True
 
-    if groups:
+    if [g for g in groups if g["total_concepts"]]:
         return {
             "number": SectionNumberGenerator.generate(),
             "groups": groups,

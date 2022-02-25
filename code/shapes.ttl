@@ -334,6 +334,89 @@ ex:QuantitySetAssociation a sh:SPARQLTarget;
     """
     .
     
+ex:ConceptUsageDocumentation a sh:SPARQLTarget;
+    sh:select """
+        PREFIX ex:  <http://example.org/ifc43Shapes/>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+        PREFIX xmi: <http://schema.omg.org/spec/XMI/2.1/>
+        PREFIX custom: <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/>
+
+        SELECT ?this
+        WHERE {
+            # first level heading = ?resourceName
+            ?doc a ex:MarkdownResourceDefinition .
+            ?doc ex:hasHeading ?resourceName .            
+            
+            # second level heading = "Concepts"
+            ?conceptsHeading ex:containedIn ?doc .
+            ?conceptsHeading ex:hasHeading "Concepts" .
+            
+            # third level heading = ?conceptName (with spaces)
+            ?this ex:containedIn ?conceptsHeading .
+            ?this ex:hasHeading ?conceptName .
+            ?this ex:hasText ?conceptUsageDescription .
+        }
+    """
+    .
+    
+ex:hasCorrespondingUmlConcept a sh:SPARQLTarget;
+    sh:message "The concept usage '{?conceptName}' for entity '{?resourceName}' is not modeled in UML" ;
+    sh:select """
+        PREFIX ex:  <http://example.org/ifc43Shapes/>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+        PREFIX xmi: <http://schema.omg.org/spec/XMI/2.1/>
+        PREFIX custom: <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/>
+
+        SELECT ?this ?conceptName ?resourceName
+        WHERE {
+            # first level heading = ?resourceName
+            ?doc a ex:MarkdownResourceDefinition .
+            ?doc ex:hasHeading ?resourceName .            
+            
+            # second level heading = "Concepts"
+            ?conceptsHeading ex:containedIn ?doc .
+            ?conceptsHeading ex:hasHeading "Concepts" .
+            
+            # third level heading = ?conceptName (with spaces)
+            ?this ex:containedIn ?conceptsHeading .
+            ?this ex:hasHeading ?conceptName .
+            ?this ex:hasText ?conceptUsageDescription .
+                            
+            # Remove spaces in markdown heading because
+            # uml:Package doesn't have spaces.
+            BIND(REPLACE(?conceptName, " ", "") AS ?conceptNameCondensed)
+            
+            FILTER NOT EXISTS {
+                
+                # UML package name = ?packageName
+                ?package xmi:type "uml:Package" .
+                ?package ex:name ?packageName .
+                
+                # Package contained association class
+                ?assoc xmi:type "uml:AssociationClass" .
+                ?assoc ex:containedIn ?package .
+                
+                # Association class contained member end
+                # Pointing to uml:Class with equal name
+                # as markdown heading (?resourceName)
+                ?end1 a ex:memberEnd .
+                ?end1 ex:containedIn ?assoc .
+                ?end1 xmi:idref ?prop1 .
+                ?type1 ex:containedIn ?prop1 .
+                ?type1 xmi:idref ?entity .
+                ?entity ex:name ?resourceName .
+                
+                # Match uml:Package with markdown heading
+                filter(?conceptNameCondensed = ?packageName)
+            
+            }
+        }
+    """
+    .
+
+    
 ex:hasIfcObjectOrPredefinedType a sh:SPARQLTarget;
     sh:message "The association '{?assocName}' in package '{?packageName}' establishes an invalid relationship to '{?applicableName}'" ;
     sh:select """
@@ -611,7 +694,7 @@ ex:Fail a sh:SPARQLConstraint ;
         SELECT ?this
         WHERE {
             FILTER NOT EXISTS {
-            ?this ex:doesNotExist ex:something .
+                ?this ex:doesNotExist ex:something .
             }
         }
     """
@@ -690,4 +773,9 @@ ex:IfcObjectAssociationForPropertySetAssoc a sh:NodeShape ;
 ex:IfcObjectAssociationForQuantitySetAssoc a sh:NodeShape ;
     sh:target ex:QuantitySetAssociation;
     sh:sparql ex:hasIfcObjectOrPredefinedType
+    .
+
+ex:ParametrizationForConceptUsageDocumentation a sh:NodeShape ;
+    sh:target ex:ConceptUsageDocumentation;
+    sh:sparql ex:hasCorrespondingUmlConcept
     .

@@ -13,8 +13,6 @@ Figure 1 shows the use of _IfcTriangulatedFaceSet_ with textures.
 
 ![IfcIndexedTriangleTextureMap_01](../../../../figures/ifcindexedtriangletexturemap_01.png)
 
-Figure 1 &mdash; Indexed triangle texture map
-
 Figure 2 illustrates an _IfcTriangulatedFaceSet_ represented by   :
 
 ```
@@ -36,6 +34,7 @@ IfcTextureVertexList.TexCoordsList:
 Figure 2 &mdash; Indexed triangle texture map geometry
 
 > HISTORY  New entity in IFC4.
+
 
 ## Attributes
 

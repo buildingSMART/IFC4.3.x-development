@@ -401,6 +401,12 @@ ex:hasCorrespondingUmlConcept a sh:SPARQLTarget;
                 # Association class contained member end
                 # Pointing to uml:Class with equal name
                 # as markdown heading (?resourceName)
+                
+                # @todo we should check if this is a
+                # directed association and in that case
+                # only consider the 'source' which is the
+                # applicable entity.
+                
                 ?end1 a ex:memberEnd .
                 ?end1 ex:containedIn ?assoc .
                 ?end1 xmi:idref ?prop1 .

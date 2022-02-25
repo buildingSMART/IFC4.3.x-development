@@ -2,7 +2,7 @@
 
 The built element comprises all elements that are primarily part of the construction of a built facility, i.e., its structural and space separating system. Built elements are all physically existent and tangible things.
 
-This _IfcBuiltElement_ is a generalization of all elements that are major functional parts of the structural or space separation sstem of a built facility. Typical examples of _IfcBuiltElement_'s are (among others):
+This _IfcBuiltElement_ is a generalization of all elements that are major functional parts of the structural or space separation system of a built facility. Typical examples of _IfcBuiltElement_'s are (among others):
 
 * built elements within a space separation systems
 * built elements within an enclosure system (such as a facade)

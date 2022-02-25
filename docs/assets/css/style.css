@@ -104,6 +104,10 @@ svg text {
 svg g.edge text {
     font-size: 60%;
 }
+/* Make the concept table borders lighter */
+svg g.node polygon[stroke="black"] {
+    stroke: var(--secondary-border-color);
+}
 mark {
     text-transform: uppercase;
 }

@@ -423,8 +423,7 @@ def process_graphviz(current_entity, md):
     return md or ""
 
 
-def create_entity_definition(e, bindings):
-
+def create_entity_definition(e, bindings, ports):
     # unique name (postfix for multiple occurences, can have template bindings)
     EE = e
 
@@ -441,70 +440,111 @@ def create_entity_definition(e, bindings):
     while e:
         keys = [x for x in R.entity_attributes.keys() if x.startswith(e + ".")]
         for k, (is_fwd, ty) in list(zip(keys, map(R.entity_attributes.__getitem__, keys)))[::-1]:
-            nm = k.split(".")[1]
+            name = k.split(".")[1]
 
-            card = re.findall(r"(\[.+?\])", ty)
+            cardinality = re.findall(r"(\[.+?\])", ty)
 
-            if card:
-                card = card[0]
+            if cardinality:
+                cardinality = cardinality[0]
             elif is_fwd:
-                card = "[0:1]" if "OPTIONAL" in ty else "[1:1]"
+                cardinality = "[0:1]" if "OPTIONAL" in ty else "[1:1]"
             else:
                 # default inverse cardinality
-                card = "[1:1]"
+                cardinality = "[1:1]"
 
-            bnd = bindings.get((EE, nm), "")
-            table.append((nm, card, 2 if bnd else 0))
-            if bnd:
-                bindings_seen.add((EE, nm))
-                table.append((bnd, "", 3))
+            binding = bindings.get((EE, name), "")
+            if binding:
+                table.append({"name": name, "cardinality": cardinality, "is_bound": True, "is_port": name in ports})
+                bindings_seen.add((EE, name))
+                table.append({"name": binding, "is_binding": True})
+            else:
+                table.append({"name": name, "cardinality": cardinality, "is_port": name in ports})
 
         e = R.entity_supertype.get(e)
 
     is_first = True
-    for (ent, attr), bnd in bindings.items():
+    for (ent, attr), binding in bindings.items():
         if ent != EE:
             continue
         if (ent, attr) in bindings_seen:
             continue
 
         if is_first:
-            table.insert(0, ("...", "", 0))
-        table.insert(0, (bnd, "", 3))
-        table.insert(0, (attr, "", 2))
+            table.insert(0, {"name": "..."})
+        table.insert(0, {"name": binding, "is_binding": True})
+        table.insert(0, {"name": attr, "is_bound": True, "is_port": attr in ports})
 
         is_first = False
 
-    table.append((E, "", 1))
+    table.append({"name": E, "is_title": True})
     table = table[::-1]
 
-    table = '<<table border="1" cellborder="0" cellspacing="0" cellpadding="3px">%s</table>>' % "".join(
-        "<tr>%s</tr>"
-        % "".join(
-            '<td width="%d" height="%d" bgcolor="%s" align="left" port="%s%d">%s%s%s</td>'
-            % (
-                [20, 250][i == 0],
-                [24, 18][r[2] == 3],
-                ["white", "#cccccc", "#8dc0f4", "#8dc0f4"][r[2]],
-                r[0],
-                i,
-                "<b>" if r[2] == 3 and c else "",
-                c,
-                "</b>" if r[2] == 3 and c else "",
-            )
-            for i, c in enumerate(r[:-1])
-        )
-        for r in table
-    )
+    html = '<<table border="0" cellborder="1" cellspacing="0" cellpadding="5px">'
+    for row in table:
+        height = 18
+        align = "left"
+        is_bold = False
+        bgcolor = "white"
+        color = "#333333"
 
-    return table
+        if row.get("is_title"):
+            bgcolor = "#1976d2"
+            color = "white"
+            is_bold = True
+        if row.get("is_binding"):
+            is_bold = True
+            align = "center"
+            bgcolor = "#eeeeee"
+        if row.get("is_bound"):
+            bgcolor = "#eeeeee"
+        if row.get("is_port"):
+            bgcolor = "#dddddd"
+
+        name = row["name"]
+
+        html += '<tr>'
+        html += f'<td width="250" height="{height}" bgcolor="{bgcolor}" align="{align}" port="{name}0">'
+        if is_bold:
+            html += '<b>'
+        html += f'<font color="{color}">{name}</font>'
+        if is_bold:
+            html += '</b>'
+        html += '</td>'
+        html += f'<td width="20" height="{height}" bgcolor="{bgcolor}" align="right" port="{name}1">'
+        html += row.get("cardinality", "")
+        html += '</td>'
+        html += '</tr>'
+    html += '</table>>'
+
+    return html
 
 
 def process_graphviz_concept(name, md):
     graphviz_code = filter(lambda s: s.strip().startswith("concept"), re.findall("```(.*?)```", md, re.S))
 
-    for c in graphviz_code:
+    def replace_edge(match):
+        is_direct_attribute = True
+        entity = match.group(1)
+        attribute = match.group(2)
+        while entity:
+            data = R.entity_attributes.get(f"{entity}.{attribute}", None)
+            if data:
+                is_direct_attribute = data[0]
+                break
+            entity = R.entity_supertype.get(entity)
+        endpoint = match.group(3)
+        if ":" not in endpoint:
+            endpoint += ":" + endpoint.split("_")[0]
+        result = f"{match.group(1)}:{match.group(2)}1 -> {endpoint}"
+        if not is_direct_attribute:
+            result += "[dir=back]"
+        return result
 
+    def replace_edge2(match):
+        # I don't understand this one yet.
+        return f"{match.group(1)} -> {match.group(2)}:{match.group(3)}0"
+
+    for c in graphviz_code:
         hash = hashlib.sha256(c.encode("utf-8")).hexdigest()
         fn = os.path.join("svgs", name + "_" + hash + ".dot")
         c2 = c.replace("concept", "digraph")  # transform_graph(current_entity, c, only_urls=is_figure(c) == 2)
@@ -512,9 +552,11 @@ def process_graphviz_concept(name, md):
         c2 = re.sub("(?<=\w)\-(?=\w)", "", c2)
 
         nodes = set(n.split(":")[0] for n in (re.findall("([\:\w]+)\s*\->", c2) + re.findall("\->\s*([\:\w]+)", c2)))
+        node_ports = {n: [] for n in nodes}
+        [node_ports[n.split(":")[0]].append(n.split(":")[1]) for n in (re.findall("([\:\w]+)\s*\->", c2) + re.findall("\->\s*([\:\w]+)", c2)) if len(n.split(":")) > 1]
 
-        c2 = re.sub(r"(\w+)\:(\w+)\s*\->\s*([\:\w]+)", lambda m: f"{m.group(1)}:{m.group(2)}1 -> {m.group(3)}", c2)
-        c2 = re.sub(r"([\w\:]+)\s*\->\s*(\w+)\:(\w+)", lambda m: f"{m.group(1)} -> {m.group(2)}:{m.group(3)}0", c2)
+        c2 = re.sub(r"(\w+)\:(\w+)\s*\->\s*([\:\w]+)", replace_edge, c2)
+        c2 = re.sub(r"([\w\:]+)\s*\->\s*(\w+)\:(\w+)", replace_edge2, c2)
 
         bindings = {}
         for ent, attr, bind in re.findall(r'(\w+)\:(\w+)\[binding="([\w_]+)"\]', c2):
@@ -530,7 +572,7 @@ def process_graphviz_concept(name, md):
 
         for n in nodes:
             if n.startswith("Ifc"):
-                G.add_node(pydot.Node(n, label=create_entity_definition(n, bindings)))
+                G.add_node(pydot.Node(n, label=create_entity_definition(n, bindings, node_ports.get(n, []))))
             elif n.startswith("constraint_"):
                 G.get_node(n)[0].set_fillcolor("#ffaaaa")
                 G.get_node(n)[0].set_shape("rect")
@@ -1425,26 +1467,11 @@ def concept(s=""):
     fn = os.path.join(md_root, s, "README.md")
 
     if os.path.exists(fn):
-        html = markdown.markdown(process_graphviz_concept("".join(c for c in s if c.isalnum()), open(fn).read()))
+        html = process_markdown('', process_graphviz_concept("".join(c for c in s if c.isalnum()), open(fn).read()))
         soup = BeautifulSoup(html)
-
-        # First h1 is handled by the template
-        h1 = soup.find("h1")
-        if h1 is not None:
-            h1.decompose()
-
-        # Change svg img references to embedded svg
-        # because otherwise URLS are not interactive
-        for img in soup.findAll("img"):
-            if img["src"].endswith(".svg"):
-                entity, hash = img["src"].split("/")[-1].split(".")[0].split("_")
-                svg = BeautifulSoup(open(os.path.join("svgs", entity + "_" + hash + ".dot.svg")))
-                svg_node = svg.find("svg")
-                svg_node.attrs["width"] = "%dpx" % (int(svg_node.attrs["width"][0:-2]) // 4 * 3)
-                svg_node.attrs["height"] = "%dpx" % (int(svg_node.attrs["height"][0:-2]) // 4 * 3)
-                img.replaceWith(svg_node)
-            else:
-                img["src"] = img["src"][9:]
+        for svg in soup.findAll("svg"):
+            svg.attrs["width"] = "%dpx" % (int(svg.attrs["width"][0:-2]) // 4 * 3)
+            svg.attrs["height"] = "%dpx" % (int(svg.attrs["height"][0:-2]) // 4 * 3)
 
         html = str(soup)
     else:

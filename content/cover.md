@@ -1,9 +1,9 @@
 
 
-# IFC 4.3.x (latest)
+# IFC 4.3.0.0 (IFC4X3)
 
 ## Content
-This is the **latest** available documentation for IFC 4.3.x. 
+This is the **latest** available documentation for IFC 4.3.0.0 specification. The schema identifier for this specification is IFC4X3.
 It is automatically generated from the latest published [XMI](https://github.com/buildingSMART/IFC4.3.x-development/tree/master/schemas) (with the IFC schema) and [Markdown content](https://github.com/buildingSMART/IFC4.3.x-development/tree/master/docs) (with the definitions and documentations).
 This is **not** a formal release. Formal releases are available on [standards.buildingsmart.org](https://standards.buildingsmart.org/IFC/).
 

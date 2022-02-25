@@ -116,6 +116,12 @@ aside {
 aside mark {
     margin-right: var(--universal-margin);
 }
+aside.aside-example mark {
+    background-color: var(--green);
+}
+aside.aside-reference mark {
+    background-color: var(--dark);
+}
 aside.aside-change mark {
     background-color: var(--yellow);
 }

@@ -731,9 +731,10 @@ def process_markdown(resource, mdc):
         for p in blockquote.findAll("p"):
             try:
                 keyword, contents = p.text.split(" ", 1)
+                keyword = keyword.strip()
             except:
                 continue
-            valid_keywords = ["HISTORY", "IFC", "EXAMPLE", "NOTE"]
+            valid_keywords = ["HISTORY", "IFC", "EXAMPLE", "NOTE", "REFERENCE"]
             has_valid_keyword = False
             for valid_keyword in valid_keywords:
                 if valid_keyword in keyword:
@@ -742,24 +743,29 @@ def process_markdown(resource, mdc):
             if not has_valid_keyword:
                 continue
             has_aside = True
-            aside = soup.new_tag("aside")
+            p.name = "aside"
             if keyword.startswith("IFC"):
                 # This is typically something like "IFC4 CHANGE" denoting a historic change reason
                 keyword, keyword2, contents = p.text.split(" ", 2)
+                p.contents = BeautifulSoup(str(p).replace(keyword + " " + keyword2, "")).html.body.aside.contents
+                keyword = keyword.strip()
+                keyword2 = keyword2.strip()
                 keyword = "-".join((keyword, keyword2))
-            keyword = keyword.strip()
+            else:
+                p.contents = BeautifulSoup(str(p).replace(keyword, "")).html.body.aside.contents
+
             css_class = keyword.lower()
             if "addendum" in css_class or "change" in css_class:
                 css_class = "change"
             if "deprecation" in css_class:
                 css_class = "deprecation"
-            aside["class"] = f"aside-{css_class}"
+            p["class"] = f"aside-{css_class}"
+
             mark = soup.new_tag("mark")
             mark.string = keyword
-            aside.string = contents
-            aside.insert(0, mark)
-            blockquote.insert_before(aside)
-            p.decompose()
+
+            p.insert(0, mark)
+            blockquote.insert_before(p)
         if has_aside:
             blockquote.decompose()
 

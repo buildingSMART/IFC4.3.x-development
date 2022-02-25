@@ -1877,7 +1877,7 @@ def sandcastle():
 # N: It may already be in a <a href="IfcSite">IfcSite</a>
 # N: Or reference an IfcSite.png arbitrarily.
 # N: It may be in the <title>IfcSite - IFC4.3.x Documentation</title>
-ifcre = re.compile(r"(?<!(=\"))(?<!(figures/))(Ifc|Pset_|Qto_)\w+(?!(\">|.ht|.png|.jp|.gif|</a|</h|.md| - IFC4.3))")
+ifcre = re.compile(r"(?<!(=\"))(?<!(figures/))(Ifc|Pset_|Qto_)\w+(?!(\">|.ht|.png|.jp|.gif|\s*</a|\s*</h|.md| - IFC4.3))")
 
 try:
     import os

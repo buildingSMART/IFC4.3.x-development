@@ -11,7 +11,6 @@ A grid may support a rectangular layout as shown in Figure 1, a radial layout as
 > NOTE  The grid axes, defined within the design grid, are those elements to which project objects will be placed relatively using the _IfcGridPlacement_.
 
 ![Grid rectangular layout](../../../../figures/ifcdesigngrid-type1.gif)
-<img src="" alt="1" border="0" height="211" width="306">
 Figure 1 &mdash; Grid rectangular layout
 
 ![Grid radial layout](../../../../figures/ifcdesigngrid-type2.gif)

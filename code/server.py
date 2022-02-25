@@ -1326,7 +1326,14 @@ class FigureNumberer:
 
     @classmethod
     def replace_references(cls, html):
-        for placeholder_number, generated_number in cls.index.items():
+        # We replace references using a simple string replacement, so the
+        # placeholder "X" in "Figure X" gets replaced with the actual generated
+        # number based on the section.
+        # String replacing can be ambiguous, for example if there is both a
+        # "Figure 1" and "Figure 10" it may accidentally replace the latter.
+        # As a result with do string replacements in reverse order of the length
+        # of the placeholder number.
+        for placeholder_number, generated_number in sorted(cls.index.items(), key=lambda x: len(x[0]), reverse=True):
             html = html.replace(f"Figure {placeholder_number}", f"Figure {generated_number}")
             html = html.replace(f"Figure-{placeholder_number}", f"Figure-{generated_number}")
             html = html.replace(f"Table {placeholder_number}", f"Table {generated_number}")
@@ -1945,9 +1952,10 @@ def after(response):
                     FigureNumberer.generate(parent, figcaption.text.split(" ", 2)[1])
                 if not has_caption:
                     figcaption = soup.new_tag("figcaption")
-                    figcaption.string = "Figure " + str(uuid.uuid4())
+                    token = str(uuid.uuid4())
+                    figcaption.string = "Figure " + token
                     parent.append(figcaption)
-                    FigureNumberer.generate(parent, figcaption.text.split(" ", 2)[1])
+                    FigureNumberer.generate(parent, token)
 
             for table in main_content.findAll("table"):
                 figure = soup.new_tag("figure")
@@ -1966,9 +1974,10 @@ def after(response):
 
                 if not has_caption:
                     figcaption = soup.new_tag("figcaption")
-                    figcaption.string = "Table " + str(uuid.uuid4())
+                    token = str(uuid.uuid4())
+                    figcaption.string = "Table " + token
                     parent.append(figcaption)
-                    FigureNumberer.generate(parent, figcaption.text.split(" ", 2)[1])
+                    FigureNumberer.generate(parent, token)
 
         for element in soup.findAll(["h2", "h3", "h4", "h5", "h6", "figure"]):
             id_element = element

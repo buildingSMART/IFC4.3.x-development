@@ -6,8 +6,8 @@ Resources may have assignments indicating sources available to be used. An examp
 ```
 concept {
     IfcResource:ResourceOf -> IfcRelAssignsToResource:RelatingResource
-    IfcRelAssignsToResource:RelatedObjects -> IfcActor
-    IfcRelAssignsToResource:RelatedObjects -> IfcProduct
+    IfcRelAssignsToResource:RelatedObjects -> IfcActor:HasAssignments
+    IfcRelAssignsToResource:RelatedObjects -> IfcProduct:HasAssignments
     IfcRelAssignsToResource:RelatedObjects[binding="Type"]
 }
 ```

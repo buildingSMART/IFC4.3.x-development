@@ -6,7 +6,7 @@ Resource types may have assignments indicating re-usable product types for which
 ```
 concept {
     IfcTypeResource:ResourceOf -> IfcRelAssignsToResource:RelatingResource
-    IfcRelAssignsToResource:RelatedObjects -> IfcTypeProduct
+    IfcRelAssignsToResource:RelatedObjects -> IfcTypeProduct:HasAssignments
     IfcRelAssignsToResource:RelatedObjects[binding="Type"]
 }
 ```

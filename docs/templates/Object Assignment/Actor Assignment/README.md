@@ -6,12 +6,12 @@ Actors may have assignments indicating objects for which they have responsibilit
 ```
 concept {
     IfcActor:IsActingUpon -> IfcRelAssignsToActor:RelatingActor
-    IfcRelAssignsToActor:RelatedObjects -> IfcControl
-    IfcRelAssignsToActor:RelatedObjects -> IfcGroup
-    IfcRelAssignsToActor:RelatedObjects -> IfcProduct
-    IfcRelAssignsToActor:RelatedObjects -> IfcProcess
-    IfcRelAssignsToActor:RelatedObjects -> IfcResource
-    IfcRelAssignsToActor:RelatedObjects -> IfcContext
+    IfcRelAssignsToActor:RelatedObjects -> IfcControl:HasAssignments
+    IfcRelAssignsToActor:RelatedObjects -> IfcGroup:HasAssignments
+    IfcRelAssignsToActor:RelatedObjects -> IfcProduct:HasAssignments
+    IfcRelAssignsToActor:RelatedObjects -> IfcProcess:HasAssignments
+    IfcRelAssignsToActor:RelatedObjects -> IfcResource:HasAssignments
+    IfcRelAssignsToActor:RelatedObjects -> IfcContext:HasAssignments
     IfcRelAssignsToActor:RelatedObjects[binding="Type"]
 }
 ```

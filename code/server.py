@@ -279,6 +279,7 @@ def get_inheritance_graph(current_entity):
                 "name": subclass,
                 "is_deprecated": subclass in R.deprecated_entities,
                 "is_abstract": subclass in R.abstract_entities,
+                "is_subclass": True,
             }
         )
     if tier:

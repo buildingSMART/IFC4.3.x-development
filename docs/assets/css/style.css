@@ -365,8 +365,10 @@ ol.tier>li:first-child>.feather-arrow-up {
     display: none;
 }
 ul.classes {
-    margin-left: 153px;
     padding-left: calc(2 * var(--universal-margin));
+}
+ul.classes-in-chain {
+    margin-left: 153px;
 }
 ul.classes:hover li {
     opacity: 1;
@@ -374,7 +376,7 @@ ul.classes:hover li {
 ul.classes:hover li a:hover {
     outline: 2px solid var(--blue);
 }
-ul.classes li:first-child {
+ul.classes-in-chain li:first-child {
     margin-left: -152px;
     opacity: 1;
 }

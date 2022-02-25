@@ -115,21 +115,100 @@ tutorial](https://www.markdowntutorial.com/) to learn it quickly!
 However, there are some conventions established for the purposes of IFC
 documentation.
 
-To create a note, you can do:
+### Style guide
+
+Markdown allows a few different syntaxes to achieve the same thing. However, as
+the markdown may be parsed, the following conventions should apply.
+
+```markdown
+# Use this style of header
+
+Do not use this
+===============
+
+ * Use asterisks
+ * For unordered lists
+
+ - Do not use dashses
+ - For unordered lists
+
+ 1. Use numbers for numbered lists
+ 2. And always increment the number
+```
+
+### Inline references to resources
+
+If you want to reference an IFC entity, data type, property or quantity set, you
+should follow the capitalisation convention of CapsCase. This reference will be
+automatically linked by the web application and it is not necessary to further
+distinguish it with italics, bold, or other decoration.
+
+If you refer to an attribute name or property name, you must distinguish it with
+italics.
 
 ```
-> NOTE This is a note.
+I can reference an IfcWall without doing anything special, or Pset_WallCommon as
+well without special formatting. Attributes like _Name_ or properties like
+_NetHeight_ should be in italics.
 ```
 
-To create an example:
+### References
+
+References shall be used when it is possible for a reader to get a deeper
+understanding of the topic by reading another ISO standard or specification that
+IFC is built upon.
+
+The reference should unambiguously denote both the standard or specification,
+provide an official link to that specification, as well as an appropriate
+section title, number, or keyword within the referenced document.
+
+References should not be used to copy verbatim key paragraphs and content from a
+referenced specification. Those key paragraphs should be part of the main
+documentation, but then be accompanied by a short "Reference" afterwards.
 
 ```
-> EXAMPLE This is an example.
+> REFERENCE Symbol `c` according to [ISO 2553:2019](https://www.iso.org/standard/72740.html).
 ```
 
-You may also come across history notes or changes. It is no longer encouraged to
-use these, as changes are automatically detected and tracked using version
-control.
+### Notes
+
+Notes shall be used to highlight edge cases that implementers need to be aware
+of, or to warn against an assumption (like a "gotcha") that an implementer or
+user may make. Notes shall be used sparingly. Good technical writing shall be
+clear and minimise the need for these caution notes.
+
+```
+> NOTE IfcBeam shall not be used for the representation of a load-bearing beam
+> in a structural analysis model. This is done using a IfcStructuralMember
+> instead.
+```
+
+### Examples
+
+It is necessary for the specification to use generic, abstract jargon when
+describing concepts, but this may be difficult to understand for users. It is
+always encouraged to accompany all abstract scenarios with a concrete example.
+Examples should be short, use simple language, and use scenarios which may apply
+on real life projects that users can easily relate to.
+
+```
+> EXAMPLE A spatial zone may be given a _Name_ of "1-003", typically a running number provided by default by the application. Then _LongName_ may then be "Office", with a _Description_ of "Corner office with habour view".
+```
+
+Examples which are longer should not use an example block. They should use a
+dedicated example page, which includes attached files, screenshots, and
+descriptions.
+
+### Changes
+
+Sometimes, descriptions are made about the changes in the schema. In the future,
+a better system will be made to unify this into the dedicated and automated
+changelog system. However, for the time being, you may describe changes inline
+in the documentation. You should describe exactly what changed, the version
+where it changed, and point people to alternatives or describe why it changed.
+
+Where changes are automatically detected in the changelog system, you should not
+include this change note.
 
 ```
 > HISTORY Something happened.
@@ -149,6 +228,8 @@ Different messages may be used to indicate deprecations. For example:
 > IFC4.3.0.0 DEPRECATION This property is deprecated and shall no longer be used.
 ```
 
+### Figures
+
 To create a captioned figure, you can do this:
 
 ```
@@ -157,7 +238,7 @@ To create a captioned figure, you can do this:
 Figure ABC - Shows something interesting.
 ```
 
-The image must be immediately succeeded by a paragraph with `Figure 1234` as the
+The image must be immediately succeeded by a paragraph with `Figure ABC` as the
 first words. `ABC` can be any unique code that you choose. The new line
 separating the image and the figure paragraph is optional, but recommended.
 
@@ -171,6 +252,8 @@ This is a paragraph that talks about Figure ABC in interesting ways.
 Although not recommended, you can omit a figure paragraph. In that case it will
 be automatically captioned. If an image title is available, the image title will
 be used as the image caption.
+
+### Tables
 
 You can create a table using Markdown like so:
 
@@ -194,7 +277,7 @@ $$V_{sphere} = \frac{4}{3}\pi r^3$$
 
 Markdown allows HTML, but this is generally unnecessary.
 
-## Diagrams
+### Diagrams
 
 One novel feature of this documentation system is the ability to directly edit
 illustrative  schema diagrams using a text-based notation. For this purpose

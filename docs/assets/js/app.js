@@ -79,7 +79,7 @@ function generateSectionNavigation() {
             ol.append(li);
         }
     });
-    if (ol.getElementsByTagName('li').length) {
+    if (ol.getElementsByTagName('li').length > 1) {
         nav.classList.remove('hidden');
     }
 }

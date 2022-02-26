@@ -13,7 +13,7 @@ Visibility and access control and layer style assignment (colour, line style, li
 { .use-head}
 Attribute use definition
 
-Figure 1 illustrates assignment of items by shape representation or representation item. The set of _AssignedItems_ can either include a whole shape representation, or individual geometric representation items. If both, the _IfcShapeRepresentation_ has a layer assignment, and an individual geometric representation item in the set of _IfcShapeRepresentation_.Items, then the layer assignment of the _IfcGeometricRepresentationItem_ overides the layer assignment of the _IfcShapeRepresentation_.
+Figure 1 illustrates assignment of items by shape representation or representation item. The set of _AssignedItems_ can either include a whole shape representation, or individual geometric representation items. If both, the _IfcShapeRepresentation_ has a layer assignment, and an individual geometric representation item in the set of _IfcShapeRepresentation_.Items, then the layer assignment of the _IfcGeometricRepresentationItem_ overrides the layer assignment of the _IfcShapeRepresentation_.
 
 ![instantiation diagram](../../../../figures/ifcpresentationlayerassignment-fig1.png "Figure 1 &mdash; Presentation layer assignment")
 

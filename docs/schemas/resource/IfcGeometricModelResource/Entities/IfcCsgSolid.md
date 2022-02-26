@@ -3,7 +3,7 @@
 An _IfcCsgSolid_ is the representation of a 3D shape using constructive solid geometry model. It is represented by a single 3D CSG primitive, or as a result of a Boolean operation. The operants of a Boolean operation can be Boolean operations themselves forming a CSG tree. The following volumes can be parts of the CSG tree:
 
 * Boundary representation models, such as _IfcFacetedBrep_, _IfcFacetedBrepWithVoids_,
-* Closed tesselated representation modles, such as _IfcPolygonalFaceSet_, _IfcTriangulatedFaceSet_,
+* Closed tessellated representation modles, such as _IfcPolygonalFaceSet_, _IfcTriangulatedFaceSet_,
 * Swept area solids, such as _IfcExtrudedAreaSolid_, _IfcRevolvedAreaSolid_, and their subtypes for tapering,
 * Advanced swept area solids, such as _IfcSurfaceCurveSweptAreaSolid_), _IfcFixedReferenceSweptAreaSolid_, _IfcSweptDiskSolid_
 * Half space solids, such as _IfcHalfSpaceSolid_ and its subtypes), and
@@ -23,4 +23,4 @@ An _IfcCsgSolid_ is the representation of a 3D shape using constructive solid ge
 ## Attributes
 
 ### TreeRootExpression
-Boolean expression of primitives and regularized operators describing the solid. The root of the tree of Boolean expressions is given explicitly as an _IfcBooleanResult_ entitiy or as a primitive (subtypes of _IfcCsgPrimitive3D_).
+Boolean expression of primitives and regularized operators describing the solid. The root of the tree of Boolean expressions is given explicitly as an _IfcBooleanResult_ entity or as a primitive (subtypes of _IfcCsgPrimitive3D_).

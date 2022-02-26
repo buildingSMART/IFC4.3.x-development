@@ -604,7 +604,7 @@ class xmi_document:
                     #      ^ probably no longer relevant, all UML data is now relevant
                     # @todo:
                     # some enumerations elements for the concepts need a stereotype probably,
-                    # or we can filter them out looking at the uml:Depedency. For now
+                    # or we can filter them out looking at the uml:Dependency. For now
                     # checking the dot in the name is quickest.
                     continue
             
@@ -627,7 +627,7 @@ class xmi_document:
                     other_name = self.xmi.by_id[other].name
                     [supertypes, subtypes][issub].append(other_name)
                     
-                # In case of assymetric inverse relationships we need to find the
+                # In case of asymmetric inverse relationships we need to find the
                 # proper target element.
                 assocs_by_name = self.assocations[c.name].copy()
                 # count duplicate role names

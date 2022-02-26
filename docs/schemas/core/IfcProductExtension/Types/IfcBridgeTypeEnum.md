@@ -30,4 +30,4 @@ Truss bridge.
 User defined bridge.
 
 ### NOTDEFINED
-Undefined brige.
+Undefined bridge.

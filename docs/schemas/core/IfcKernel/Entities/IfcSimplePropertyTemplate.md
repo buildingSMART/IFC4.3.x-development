@@ -32,7 +32,7 @@ Primary measure type assigned to the definition of the property. It should be pr
 * <small>P_TABLEVALUE</small>: determining the measure type of _IfcPropertyTableValue.DefiningValues_
 * <small>P_REFERENCEVALUE</small>: determining the measure type of _IfcPropertyTableValue.PropertyReference_
 
-> NOTE  The value range of the measure type is within the select type _IfcValue_ for all _PropertyType_'s with the exeption of <small>P_REFERENCEVALUE</small>. Here it is within the select type _IfcObjectReferenceSelect_.
+> NOTE  The value range of the measure type is within the select type _IfcValue_ for all _PropertyType_'s with the exception of <small>P_REFERENCEVALUE</small>. Here it is within the select type _IfcObjectReferenceSelect_.
 
 ### SecondaryMeasureType
 Secondary measure type assigned to the definition of the property. It should be provided, if the _PropertyType_ is set to:
@@ -40,7 +40,7 @@ Secondary measure type assigned to the definition of the property. It should be 
 * <small>P_TABLEVALUE</small>: determining the measure type of _IfcPropertyTableValue.DefinedValues_
 
 
-The value range of the measure type is within the select type _IfcValue_  for all _PropertyType_'s with the exeption of <small>P_ENUMERATEDVALUE</small>. Here it is the comma delimited list of enumerators.
+The value range of the measure type is within the select type _IfcValue_  for all _PropertyType_'s with the exception of <small>P_ENUMERATEDVALUE</small>. Here it is the comma delimited list of enumerators.
 > NOTE  The measure type of _IfcPropertyEnumeration.EnumerationValues_ is provided as _PrimaryDataType_.
 
 ### Enumerators

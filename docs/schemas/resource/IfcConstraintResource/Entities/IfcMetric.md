@@ -45,7 +45,7 @@ Enumeration that identifies the type of benchmark data.
 ### ValueSource
 Reference source for data values.
 
-If _DataValue_ refers to an _IfcTable_, this attribute identifies the relevent column identified by _IfcTableColumn_._Identifier_.
+If _DataValue_ refers to an _IfcTable_, this attribute identifies the relevant column identified by _IfcTableColumn_._Identifier_.
 
 ### DataValue
 The value to be compared on associated objects. A null value indicates comparison to null.

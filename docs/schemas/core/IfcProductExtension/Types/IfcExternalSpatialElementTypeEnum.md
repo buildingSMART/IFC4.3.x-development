@@ -16,7 +16,7 @@ External volume covered by earth around the building.
 External volume covered with water around the building.
 
 ### EXTERNAL_FIRE
-Space occupied by a neightboring building.
+Space occupied by a neighboring building.
 
 ### USERDEFINED
 

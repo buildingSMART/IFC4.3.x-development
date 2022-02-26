@@ -23,4 +23,4 @@ Definition from VRML97 - ISO/IEC 14772-1:1997: The color field specifies the spe
 Definition from VRML97 - ISO/IEC 14772-1:1997: The ambientIntensity specifies the intensity of the ambient emission from the light. Light intensity may range from 0.0 (no light emission) to 1.0 (full intensity).
 
 ### Intensity
-Definition from VRML97 - ISO/IEC 14772-1:1997: The intensity field specifies the brightness of the direct emission from the ligth. Light intensity may range from 0.0 (no light emission) to 1.0 (full intensity).
+Definition from VRML97 - ISO/IEC 14772-1:1997: The intensity field specifies the brightness of the direct emission from the light. Light intensity may range from 0.0 (no light emission) to 1.0 (full intensity).

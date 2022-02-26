@@ -16,7 +16,7 @@ Angularvelocity unit
 Area density unit
 
 ### COMPOUNDPLANEANGLEUNIT
-Compund plane angle unit
+Compound plane angle unit
 
 ### DYNAMICVISCOSITYUNIT
 Dynamic viscosity unit
@@ -160,7 +160,7 @@ Temperature of change unit
 Thermal expansion coefficient unit
 
 ### WARPINGCONSTANTUNIT
-Warping constrant unit
+Warping constraint unit
 
 ### WARPINGMOMENTUNIT
 Warping moment unit

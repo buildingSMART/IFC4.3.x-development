@@ -52,7 +52,7 @@ Loads on the facility that occur during erection, but not after completion.
 Propping
 
 ### SYSTEM_IMPERFECTION
-Loads from imperfections in the sytem.
+Loads from imperfections in the system.
 
 ### SHRINKAGE
 Loads from shrinkage.

@@ -14,7 +14,7 @@ $$ \displaylines {
 \sin \psi \approx \psi \approx  \tan \psi
 } $$
 
->NOTE in contempory track engineering &psi; is approximated by sinus of &psi; or tangens of &psi; very often.
+>NOTE in contemporary track engineering &psi; is approximated by sinus of &psi; or tangens of &psi; very often.
 
 
 

@@ -25,7 +25,7 @@ The end cross section is defined by _EndSweptArea_:
 In case of two parameterized profiles the shape is constructed as follows:
 
 * The end profile, defined by a cross section based on the same profile paramterization as the start profile, is translated by the spine distance along the spine direction.
-* It may be shifted within the XY plane of the end postion coordinate system and may be twisted using the rotation parameter.
+* It may be shifted within the XY plane of the end position coordinate system and may be twisted using the rotation parameter.
 * The shift and rotation parameter are provided by the end cross section being of type _IfcParameterizedProfileDef_, where
     * Shift is _EndSweptArea\IfcParameterizedProfileDef.Position.Location_
     * Rotation is _EndSweptArea\IfcParameterizedProfileDef.Position.RefDirection_

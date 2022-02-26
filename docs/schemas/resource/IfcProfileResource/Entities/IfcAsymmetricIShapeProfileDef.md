@@ -24,7 +24,7 @@ Figure 1 illustrates parameters of the asymmetric I-shaped section definition. T
 
 By using offsets of the position location, the parameterized profile can be positioned centric (using x,y offsets = 0.), or at any position relative to the profile. The parameterized profile is defined by a set of parameter attributes. In the illustrated example, the 'CentreOfGravityInY' property in _IfcExtendedProfileProperties_, if provided, is negative.
 
-![asymmetric I shape profile](../../../../figures/ifcasymmetricishapeprofiledef.gif "Figure 1 &mdash; Assymetric I-shape profile")
+![asymmetric I shape profile](../../../../figures/ifcasymmetricishapeprofiledef.gif "Figure 1 &mdash; Asymmetric I-shape profile")
 
 ## Attributes
 

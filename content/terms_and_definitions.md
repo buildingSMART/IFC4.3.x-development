@@ -63,7 +63,7 @@ class of information defined by common attributes and constraints as defined in 
 link to information outside the data set, with direct relevance to the specific information the link originates from inside the data set
 
 ## 3.1.10 feature
-parametric information and additional property information modifiying the shape representation of an element to which it applies
+parametric information and additional property information modifying the shape representation of an element to which it applies
 
 ## 3.1.11 group
 collection of information that fulfills a specified purpose
@@ -91,14 +91,14 @@ a data set, governed by the structure of an underlying schema, to meet certain d
 > NOTE  In scope of this standard IFC models are populations of the IFC schema.
 
 ## 3.1.16 model view
-subset of a schema, representing the data structure required to fullfil the data requirements within one or several exchange scenarios
+subset of a schema, representing the data structure required to fulfill the data requirements within one or several exchange scenarios
 
 > NOTE  Beside being a subset of a schema, a model view (or model view definition) may also impose additional constraints to the population of the subset schema
 
 ## 3.1.16.1 concept
 rules on using a subset of the schema structure identified as a concept template to enable a certain functionality within the context of a concept root contained in a model view
 
-> NOTE  The utilization of material definitions for a paticular concept root representing a wall is an example of a concept.
+> NOTE  The utilization of material definitions for a particular concept root representing a wall is an example of a concept.
 
 ## 3.1.16.2 concept template
 the specification of a subset of the schema structure to enable a certain unit of functionality

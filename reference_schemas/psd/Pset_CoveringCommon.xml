@@ -128,7 +128,7 @@
     <PropertyDef ifdguid="2e6b1d00d1d011e1800000215ad4efdf">
       <Name>AcousticRating</Name>
       <Definition>Acoustic rating for this object.
-It is giving according to the national building code. It indicates the sound transmission resistance of this object by an index ration (instead of providing full sound absorbtion values).</Definition>
+It is giving according to the national building code. It indicates the sound transmission resistance of this object by an index ration (instead of providing full sound absorption values).</Definition>
       <PropertyType>
         <TypePropertySingleValue>
           <DataType type="IfcLabel" />

@@ -12,7 +12,7 @@ New Pset in IFC2x2 Pset Addendum.</Definition>
   <PropertyDefs>
     <PropertyDef ifdguid="e77e2700d1d111e1800000215ad4efdf">
       <Name>ControlType</Name>
-      <Definition>The type of control used to operate the damper (e.g., Open/Closed Indicator, Resetable Temperature Sensor, Temperature Override, etc.).</Definition>
+      <Definition>The type of control used to operate the damper (e.g., Open/Closed Indicator, Resettable Temperature Sensor, Temperature Override, etc.).</Definition>
       <PropertyType>
         <TypePropertySingleValue>
           <DataType type="IfcLabel" />

@@ -1,4 +1,4 @@
 DilatationLength
 ================
 
-Length dilatation admited by the element.
+Length dilatation admitted by the element.

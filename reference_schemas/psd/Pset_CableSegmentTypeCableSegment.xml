@@ -87,7 +87,7 @@
     </PropertyDef>
     <PropertyDef ifdguid="44c0ab00d1c711e1800000215ad4efdf">
       <Name>RatedTemperature</Name>
-      <Definition>The range of allowed temerature that a device is certified to handle. The upper bound of this value is the maximum.</Definition>
+      <Definition>The range of allowed temperature that a device is certified to handle. The upper bound of this value is the maximum.</Definition>
       <PropertyType>
         <TypePropertyBoundedValue>
           <DataType type="IfcThermodynamicTemperatureMeasure" />

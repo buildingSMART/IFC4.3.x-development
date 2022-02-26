@@ -101,7 +101,7 @@ class markdown_attribute_parser:
             else:
                 self.status[name] = ("OK", 0)
 
-            m = re.search(r"\[([\w ]+)\]", name)
+            m = re.search(r"\[([\w\- ]+)\]", name)
             if m:
                 mvd = m.group(1)
                 li = [c for c in name]

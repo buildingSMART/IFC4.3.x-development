@@ -30,6 +30,17 @@ def process_document(g, fn, subj, cls):
     g.add((subj, fqdn("hasFilename"), c.uri))
     
     def write(s, ct):
+        heading = ct.heading.strip()
+        
+        m = re.search(r"\[([\w\- ]+)\]", heading)
+        if m:
+            mvd = m.group(1)
+            g.add((s, fqdn("hasContext"), rdflib.Literal(mvd)))
+            li = [c for c in heading]
+            li[slice(*m.span())] = []
+            heading = (mvd, "".join(li).strip())
+    
+        g.add((s, fqdn("hasCleanHeading"), rdflib.Literal(heading)))
         g.add((s, fqdn("hasHeading"), rdflib.Literal(ct.heading)))
         if ct.content.strip():
             g.add((s, fqdn("hasText"), rdflib.Literal(ct.content)))

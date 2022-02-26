@@ -361,7 +361,7 @@ ex:ConceptUsageDocumentation a sh:SPARQLTarget;
     .
     
 ex:hasCorrespondingUmlConcept a sh:SPARQLTarget;
-    sh:message "The concept usage '{?conceptName}' for entity '{?resourceName}' is not modeled in UML" ;
+    sh:message "The concept usage '{?conceptName}' for entity '{?resourceName}' in MVD '{?viewName}' is not modeled in UML" ;
     sh:select """
         PREFIX ex:  <http://example.org/ifc43Shapes/>
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -369,7 +369,7 @@ ex:hasCorrespondingUmlConcept a sh:SPARQLTarget;
         PREFIX xmi: <http://schema.omg.org/spec/XMI/2.1/>
         PREFIX custom: <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/>
 
-        SELECT ?this ?conceptName ?resourceName
+        SELECT ?this ?conceptName ?resourceName ?viewName
         WHERE {
             # first level heading = ?resourceName
             ?doc a ex:MarkdownResourceDefinition .
@@ -382,11 +382,24 @@ ex:hasCorrespondingUmlConcept a sh:SPARQLTarget;
             # third level heading = ?conceptName (with spaces)
             ?this ex:containedIn ?conceptsHeading .
             ?this ex:hasHeading ?conceptName .
+            ?this ex:hasCleanHeading ?cleanConceptName .
             ?this ex:hasText ?conceptUsageDescription .
+            
+            # third level heading can have an MVD qualifier such as:
+            # Actor Assignment [Reference View]
+            OPTIONAL {
+                ?this ex:hasContext ?viewNameSpaces .
+                BIND(REPLACE(?viewNameSpaces, " ", "") AS ?viewName)
+            }
+            
+            # otherwise default to General Usage
+            OPTIONAL { FILTER (!BOUND(?viewNameSpaces))
+                BIND("GeneralUsage" AS ?viewName)
+            }
                             
             # Remove spaces in markdown heading because
             # uml:Package doesn't have spaces.
-            BIND(REPLACE(?conceptName, " ", "") AS ?conceptNameCondensed)
+            BIND(REPLACE(?cleanConceptName, " ", "") AS ?conceptNameCondensed)
             
             FILTER NOT EXISTS {
                 
@@ -394,6 +407,11 @@ ex:hasCorrespondingUmlConcept a sh:SPARQLTarget;
                 ?package xmi:type "uml:Package" .
                 # Match uml:Package with markdown heading
                 ?package ex:name ?conceptNameCondensed .
+                
+                # Assert correct MVD package, contained in the
+                # which is a subfolder of the "Views" package
+                ?package ex:containedIn/ex:name ?viewName .
+                ?package ex:containedIn/ex:containedIn/ex:name "Views" .
                 
                 # Package contained association class
                 ?assoc xmi:type "uml:AssociationClass" .

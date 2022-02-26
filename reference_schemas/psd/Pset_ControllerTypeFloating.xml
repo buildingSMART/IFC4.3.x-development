@@ -377,7 +377,7 @@ VARIABLE: Controller element is an in-memory variable.</Definition>
     </PropertyDef>
     <PropertyDef ifdguid="69b81c80d1cd11e1800000215ad4efdf">
       <Name>SignalOffset</Name>
-      <Definition>Offset constant added to modified signal.</Definition>
+      <Definition>Offset constant added to modfied signal.</Definition>
       <PropertyType>
         <TypePropertySingleValue>
           <DataType type="IfcReal" />

@@ -152,7 +152,7 @@
     <PropertyDef ifdguid="95420380d1db11e1800000215ad4efdf">
       <Name>AcousticRating</Name>
       <Definition>Acoustic rating for this object.
-It is provided according to the national building code. It indicates the sound transmission resistance of this object by an index ratio (instead of providing full sound absorption values).</Definition>
+It is provided according to the national building code. It indicates the sound transmission resistance of this object by an index ratio (instead of providing full sound absorbtion values).</Definition>
       <PropertyType>
         <TypePropertySingleValue>
           <DataType type="IfcLabel" />
@@ -220,7 +220,7 @@ It is giving according to the national building code.</Definition>
     </PropertyDef>
     <PropertyDef ifdguid="ec47d880d1db11e1800000215ad4efdf">
       <Name>HygrothermalRating</Name>
-      <Definition>Resistance against hygrothermal impact from different temperatures and humidities inside and outside. It is given according to the national code or regulation.</Definition>
+      <Definition>Resistence against hygrothermal impact from different temperatures and humidities inside and outside. It is given according to the national code or regulation.</Definition>
       <PropertyType>
         <TypePropertySingleValue>
           <DataType type="IfcLabel" />

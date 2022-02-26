@@ -1297,7 +1297,7 @@ There are various types of risk that may be encountered and there may be several
     </PropertyDef>
     <PropertyDef ifdguid="432690e38f4044c39d0a7691ac65c4c3">
       <Name>AssociatedProduct</Name>
-      <Definition>An indication or link to any associated product or material that may trigger the hazard. If used directly on an annotation or semantic object. for an alternative see group use encoding template</Definition>
+      <Definition>An indication or link to any associated product or material that may trigger the hazard. If used directly on an annotation or semantic object. for an alternative see group use encording template</Definition>
       <PropertyType>
         <TypePropertySingleValue>
           <DataType type="IfcLabel" />
@@ -1308,7 +1308,7 @@ There are various types of risk that may be encountered and there may be several
     </PropertyDef>
     <PropertyDef ifdguid="8a3c59a6eee34dbd84183e0b8749d92c">
       <Name>AssociatedActivity</Name>
-      <Definition>An indication or link to any associated activity or process that may trigger the hazard. If used directly on an annotation or semantic object. for an alternative see group use encoding template</Definition>
+      <Definition>An indication or link to any associated activity or process that may trigger the hazard. If used directly on an annotation or semantic object. for an alternative see group use encording template</Definition>
       <PropertyType>
         <TypePropertySingleValue>
           <DataType type="IfcLabel" />
@@ -1319,7 +1319,7 @@ There are various types of risk that may be encountered and there may be several
     </PropertyDef>
     <PropertyDef ifdguid="147db099a93c44fb896f5aa2c8efbe8d">
       <Name>AssociatedLocation</Name>
-      <Definition>An indication or link to any associated location or space that may trigger the hazard. If used directly on an annotation or semantic object. for an alternative see group use encoding template</Definition>
+      <Definition>An indication or link to any associated location or space that may trigger the hazard. If used directly on an annotation or semantic object. for an alternative see group use encording template</Definition>
       <PropertyType>
         <TypePropertySingleValue>
           <DataType type="IfcLabel" />

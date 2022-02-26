@@ -392,7 +392,8 @@ ex:hasCorrespondingUmlConcept a sh:SPARQLTarget;
                 
                 # UML package name = ?packageName
                 ?package xmi:type "uml:Package" .
-                ?package ex:name ?packageName .
+                # Match uml:Package with markdown heading
+                ?package ex:name ?conceptNameCondensed .
                 
                 # Package contained association class
                 ?assoc xmi:type "uml:AssociationClass" .
@@ -413,10 +414,6 @@ ex:hasCorrespondingUmlConcept a sh:SPARQLTarget;
                 ?type1 ex:containedIn ?prop1 .
                 ?type1 xmi:idref ?entity .
                 ?entity ex:name ?resourceName .
-                
-                # Match uml:Package with markdown heading
-                filter(?conceptNameCondensed = ?packageName)
-            
             }
         }
     """

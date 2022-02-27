@@ -1,14 +1,14 @@
-# IfcBuiltElementProxyType
+# IfcBuildingElementProxyType
 
-_IfcBuiltElementProxyType_ defines a list of commonly shared property set definitions of a building element proxy and an optional set of product representations. It is used to define an element specification (i.e. the specific product information, that is common to all occurrences of that product type).
+_IfcBuildingElementProxyType_ defines a list of commonly shared property set definitions of a building element proxy and an optional set of product representations. It is used to define an element specification (i.e. the specific product information, that is common to all occurrences of that product type).
 
 > NOTE  The product representations are defined as representation maps (at the level of the supertype _IfcTypeProduct_, which gets assigned by an element occurrence instance through the _IfcShapeRepresentation.Item[1]_ being an _IfcMappedItem_.
 
 A building element proxy type is used to define the common properties of a certain type of a building element proxy that may be applied to many instances of that type to assign a specific style. Building element proxy types may be exchanged without being already assigned to occurrences.
 
-> NOTE  Although an building element proxy does not have a predefined ontological meaning the provision of a type may be helpful in sharing information among multiple occurrences. Applications that provide type information for element types not yet included in the current IFC specification can use the _IfcBuiltElementProxyType_ to exchange such types.
+> NOTE  Although an building element proxy does not have a predefined ontological meaning the provision of a type may be helpful in sharing information among multiple occurrences. Applications that provide type information for element types not yet included in the current IFC specification can use the _IfcBuildingElementProxyType_ to exchange such types.
 
-The occurrences of the _IfcBuiltElementProxyType_ are represented by instances of _IfcBuiltElementProxy_.
+The occurrences of the _IfcBuildingElementProxyType_ are represented by instances of _IfcBuildingElementProxy_.
 
 > HISTORY  New entity in IFC2x3.
 

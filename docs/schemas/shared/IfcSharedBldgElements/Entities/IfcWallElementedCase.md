@@ -9,7 +9,7 @@ Parts within the decomposition are usually be of type:
 * _IfcBuildingElementPart_ for wall layer, insolation layers and similar
 * _IfcMember_ for studs, posts and similar elements,
 * _IfcElementAssembly_ for other aggregates, or
-* _IfcBuiltElementProxy_.
+* _IfcBuildingElementProxy_.
 
 > EXAMPLE Elemented walls may extend the concepts of standard walls with the following features, as shown in Figure 1, including the _IfcRelConnectsWithRealizingElements_ relationship to define fasteners and accessories.
 

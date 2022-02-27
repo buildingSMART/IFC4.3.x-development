@@ -85,10 +85,9 @@ def build_property_defs(xmi_doc, pset, node, by_name):
                 el = ET.SubElement(tpev, 'EnumList')
                 el.set('name', ty_arg)
                 
-                enum_type = elem_by_name(ty_arg)
-                p_id_values = sorted((xmi_doc.try_get_order(x), x.name) for x in enum_type/"ownedLiteral")
+                enum_type = by_name[ty_arg]
                 
-                for pid, pv in p_id_values:
+                for pv in [c.name for c in enum_type.children]:
                     ET.SubElement(el, 'EnumItem').text = pv
                     
             elif ty == "PropertyComplexProperty":

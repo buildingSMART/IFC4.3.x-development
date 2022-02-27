@@ -138,7 +138,7 @@ class xmi_item:
             "PT"    : "Types",
             "PSET"  : "PropertySets",
             "TYPE"  : "Types",
-            "PENUM" : "Types" ,
+            "PENUM" : "PropertyEnumerations",
             "SELECT": "Selects",
             "ENUM"  : "Types",
             "ENTITY": "Entities",

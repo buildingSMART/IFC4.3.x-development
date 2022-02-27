@@ -738,7 +738,7 @@ class xmi_document:
                     else:
                         return s
                     
-                cs = sorted(c/("constraint"), key=lambda cc: float_international(cc.weight))
+                cs = c/("constraint")
                 constraints_type_name_def = map(lambda cc: ((cc.type,) + tuple(map(trailing_semi_fix, map(unescape, map(functools.partial(getattr, cc), ("name", "description")))))), cs)
                 constraints_by_type = defaultdict(list)
                 for ct, cname, cdef in constraints_type_name_def:
@@ -747,14 +747,38 @@ class xmi_document:
                         cdef = cdef[len(cname) + 3:]
                     cc = (cname.strip(), fix_schema_name(cdef))
                     constraints_by_type[ct].append(cc)
-
-                attributes = map(operator.itemgetter(1), sorted(attributes))
+                                    
+                attributes = list(map(operator.itemgetter(1), sorted(attributes)))
                 inverses = map(operator.itemgetter(1), sorted(inverses))
                 derived = map(operator.itemgetter(1), sorted(derived))
+                attribute_dict = dict(attributes)
                 
+                itm_supertype_names = set(self.supertypes(c.idref))
+                is_occurence=itm_supertype_names & {"IfcElement", "IfcSystem", "IfcSpatialStructureElement"}
+                is_type = "IfcElementType" in itm_supertype_names
+                
+                if is_type or is_occurence:
+                    if "PredefinedType" in attribute_dict:
+                        type_attr = attribute_dict["PredefinedType"]
+                        type_name = type_attr.split(" ")[-1]
+                        type_optional = "OPTIONAL" in type_attr
+                        attr = "IfcElementType.ElementType" if is_type else "IfcObject.ObjectType"
+                        clause_1 = "NOT(EXISTS(PredefinedType)) OR\n " if type_optional else ''
+                        rule = clause_1 + "(PredefinedType <> %(type_name)s.USERDEFINED) OR\n ((PredefinedType = %(type_name)s.USERDEFINED) AND EXISTS (SELF\\%(attr)s))" % locals()
+                        constraints_by_type["EXPRESS_WHERE"].append(("CorrectPredefinedType", rule))
+
+                if is_occurence:
+                    if c.name + "Type" in [x.name for x in self.xmi.by_tag_and_type["packagedElement"]["uml:Class"]]:
+                        ty_def = [x for x in self.xmi.by_tag_and_type["packagedElement"]["uml:Class"] if x.name == c.name + "Type"][0]
+                        ty_attr_names = [attr.name for attr in ty_def/"ownedAttribute"]
+                        if "PredefinedType" in ty_attr_names:
+                            constraints_by_type["EXPRESS_WHERE"].append(
+                                ("CorrectTypeAssigned", "(SIZEOF(IsTypedBy) = 0) OR\n  ('%(schema_name)s.%(entity_name_upper)sTYPE' IN TYPEOF(SELF\\IfcObject.IsTypedBy[1].RelatingType))" % {'schema_name': SCHEMA_NAME, 'entity_name_upper': c.name.upper()})
+                            )
+
                 express_entity = express.entity(c.name, attributes, 
-                    derived, inverses, constraints_by_type["EXPRESS_WHERE"], 
-                    constraints_by_type["EXPRESS_UNIQUE"], subtypes, 
+                    derived, inverses, sorted(constraints_by_type["EXPRESS_WHERE"]),
+                    sorted(constraints_by_type["EXPRESS_UNIQUE"]), subtypes, 
                     supertypes, is_abstract
                 )
                              

@@ -431,7 +431,8 @@ ex:hasCorrespondingUmlConcept a sh:SPARQLTarget;
                 ?end1 xmi:idref ?prop1 .
                 ?type1 ex:containedIn ?prop1 .
                 ?type1 xmi:idref ?entity .
-                ?entity ex:name ?resourceName .
+                ?subtype rdfs:subClassOf* ?entity .
+                ?subtype ex:name ?resourceName .
             }
         }
     """

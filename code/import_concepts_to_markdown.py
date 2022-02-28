@@ -86,7 +86,7 @@ for ent, ent_concepts in itertools.groupby(concepts, operator.attrgetter('entity
             # remove underscored words:
             doc = re.sub("\\b_(\\w+?)_\\b", lambda m: m.group(1), doc) 
             
-            data.append(f"#### {'_'.join(args)}\n\n")
+            data.append(f"#### {''.join(c for c in '_'.join(args) if c.isalnum() or c == '_')}\n\n")
             data.append(f"{doc}\n\n")
             
         

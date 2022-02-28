@@ -434,7 +434,7 @@ class xmi_document:
                 
                 if stereotype == "PSET" or stereotype == "QSET":
                     try:
-                        refs = self.concepts[(["Quantity", "Property"][stereotype == "PSET"]) + "SetsforObjects"].get(c.id or c.idref)
+                        refs = self.concepts[["QuantitySets", "PropertySetsforObjects"][stereotype == "PSET"]].get(c.id or c.idref)
                     except ValueError as e:
                         print("WARNING:", c.name, "has no associated class", file=sys.stderr)
                         continue

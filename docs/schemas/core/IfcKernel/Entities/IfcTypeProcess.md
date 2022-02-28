@@ -23,3 +23,10 @@ The type denotes a particular type that indicates the process further. The use h
 ### OperatesOn
 Set of relationships to other objects, e.g. products, processes, controls, resources or actors that are operated on by the process type.
 > HISTORY New inverse relationship in IFC4.
+
+## Concepts
+
+### Process Type Assignment
+
+
+

@@ -25,15 +25,20 @@ If this occurrence is defined by a type object, the latter has to be an _IfcTend
 ### Body Geometry
 
 
+
 ### Object Typing
 
 
-### Placement
+
+### Product Local Placement
 
 
-### Property Sets
+
+### Property Sets for Objects
+
 
 
 ### Quantity Sets
+
 
 

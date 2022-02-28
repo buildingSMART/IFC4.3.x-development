@@ -10,15 +10,19 @@ Civil elements are typically horizontally organized using a spatial structure ex
 
 ## Concepts
 
-### Classification
+### Classification Association
+
 
 
 ### Object Typing
 
 
-### Property Sets
+
+### Property Sets for Objects
+
 
 
 ### Spatial Containment
+
 
 

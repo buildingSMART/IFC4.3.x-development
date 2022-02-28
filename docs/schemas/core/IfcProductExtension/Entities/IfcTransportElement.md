@@ -38,43 +38,15 @@ Either there is no transport element type object associated, i.e. the _IsTypedBy
 
 ### Object Typing
 
+IfcTransportElement defines the occuurence of any transportation device, common information about transportation device types (or styles) is handled by IfcTransportElementType. The IfcTransportElementType (if present) may establish the common&nbsp;type name, usage (or predefined) type, common material layer set, common set of properties and common shape representations (using IfcRepresentationMap). The IfcTransportElementType is attached using the _IfcRelDefinedByType.RelatingType_ objectified relationship and is accessible by the inverse _<font color="#0000FF">IsTypedBy</font>_ attribute.
 
-IfcTransportElement defines the occuurence of any
- transportation device, common information about
- transportation device types (or styles) is handled by
- IfcTransportElementType. The
- IfcTransportElementType (if present) may establish
- the common type name, usage (or predefined) type, common
- material layer set, common set of properties and common shape
- representations (using IfcRepresentationMap). The
- IfcTransportElementType is attached using the
- IfcRelDefinedByType.RelatingType objectified
- relationship and is accessible by the inverse
- IsTypedBy attribute.
-
-
-
-
- If no IfcTransportElementType is attached (i.e.
- if only occurrence information is given) the
- PredefinedType should be provided. If set to
- .USERDEFINED. a user defined value can be provided by the
- ObjectType attribute.
-
-
-
+If no IfcTransportElementType is attached&nbsp;(i.e. if only occurrence information is given) the PredefinedType should be provided. If set to .USERDEFINED. a user defined value can be provided by the ObjectType attribute.
 
 ### Property Sets for Objects
 
 
+
 ### Spatial Containment
 
-* The IfcTransportElement is placed within the
- project spatial hierarchy using the objectified relationship
- IfcRelContainedInSpatialStructure, referring to it by
- its inverse attribute
- SELF\IfcElement.ContainedInStructure. Subtypes
- of IfcSpatialStructureElement are valid spatial
- containers, with IfcBuilding being the default
- container.
+* The IfcTransportElement is placed within the project spatial hierarchy using the objectified relationship IfcRelContainedInSpatialStructure, refering to it by its inverse attribute _SELF\IfcElement.ContainedInStructure_. Subtypes of&nbsp;IfcSpatialStructureElement are valid spatial containers, with IfcBuilding being the default container.
 

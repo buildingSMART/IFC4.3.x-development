@@ -57,3 +57,12 @@ The EQUIDISTANT distribution type is out of scope of structural curve actions.
 ### Structural Activity
 
 
+
+#### IfcStructuralLoadLinearForce_IfcStructuralCurveMember
+
+Linear force and moment along a curve member.
+
+#### IfcStructuralLoadLinearForce_IfcStructuralSurfaceMember
+
+Linear force and moment positioned within a surface member.
+

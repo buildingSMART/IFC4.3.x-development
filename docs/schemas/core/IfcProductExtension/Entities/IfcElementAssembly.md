@@ -40,39 +40,44 @@ Either there is no element assembly type object associated, i.e. the _IsTypedBy_
 
 ### Aggregation
 
-The IfcElementAssembly shall represent an aggregate,
-i.e. it should have other elements, being subtypes of
-IfcElement,
-as contained (sub)parts. The table above only represents a selection of subtypes of IfcElement that are legitimate as parts in an
-IfcElementAssembly
+The IfcElementAssembly shall represent an aggregate, i.e. it should have other elements, being subtypes of IfcElement, as contained (sub)parts. The table above only represents a selection of subtypes of IfcElement that are legitimate as parts in an IfcElementAssembly
 
+* The IfcElementAssembly is an aggregate i.e. being composed by other elements and acting as an assembly using the objectified relationship IfcRelAggregates, refering to it by its inverse attribute _SELF\IfcObjectDefinition.IsDecomposedBy_. Components of an assembly are described by instances of subtypes of IfcElement.
+* In this case, the contained subtypes of IfcElement shall not be additionally contained in the project spatial hierarchy, i.e. the inverse attribute _SELF\IfcElement.ContainedInStructure_ of those IfcElement's shall be _NIL._
 
-* The IfcElementAssembly is an aggregate i.e. being
-composed by other elements and acting as an assembly using the
-objectified relationship IfcRelAggregates, referring to it
-by its inverse attribute
-SELF\IfcObjectDefinition.IsDecomposedBy. Components of an
-assembly are described by instances of subtypes of
-IfcElement.
-* In this case, the contained subtypes of IfcElement
-shall not be additionally contained in the project spatial
-hierarchy, i.e. the inverse attribute
-SELF\IfcElement.ContainedInStructure of those
-IfcElement's shall be NIL.
+Figure 1 illustrates spatial containment and element aggregation relationships.
 
+!["containment relationships"](../../../../figures/ifcelementassembly-containment.png "Figure 1 &mdash; Element assembly containment")
 
-Figure 151 illustrates spatial containment and element aggregation relationships.
+#### IfcMember
 
+Members within the assembly.
 
-![containment relationships](../../../../figures/ifcelementassembly-containment.png)
-Figure 151 — Element assembly containment
+#### IfcPlate
 
+Plates within the assembly.
 
+#### IfcElementComponent
+
+Components within the assembly.
 
 ### Object Typing
 
 
+
 ### Spatial Containment
 
-The IfcElementAssembly should have a relationship for its
-containment in the hierarchical spatial structure of the project. Only if the IfcElementAssembly is itself a part of another assembly this relationship should be omitted.
+The IfcElementAssembly should have a relationship for its containment in the hierachical spatial structure of the project. Only if the IfcElementAssembly is itself a part of another assembly this relationship should be omitted.
+
+#### IfcBuildingStorey
+
+Default spatial container
+
+#### IfcBuilding
+
+Spatial container for element assemblies not assignable to a building storey
+
+#### IfcSite
+
+Spatial container for element assemblies that are placed on site (outside of building)
+

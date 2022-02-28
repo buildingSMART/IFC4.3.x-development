@@ -17,18 +17,37 @@ Defines types of construction product resources.
 
 ### CorrectPredefinedType
 
-
 ## Concepts
 
 ### Object Typing
 
 
+
 ### Resource Assignment
 
+
+
+#### IfcElement
+
+Indicates a physical element manifesting the resource such as nails (in bulk).
 
 ### Resource Cost
 
 
+
+#### Product_IfcCostValue_IfcMonetaryMeasure
+
+The unit cost for purchasing the product.
+
+#### Shipping_IfcCostValue_IfcMonetaryMeasure
+
+The unit cost for transporting the product.
+
 ### Resource Quantity
 
+
+
+#### Product_IfcQuantityCount
+
+The unit count of the product used such as 1 for each or 12 for a dozen.
 

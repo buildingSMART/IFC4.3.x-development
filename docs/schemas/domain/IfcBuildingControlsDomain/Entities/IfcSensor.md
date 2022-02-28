@@ -25,18 +25,36 @@ Either there is no sensor type object associated, i.e. the _IsTypedBy_ inverse r
 ### Control Flow
 
 
-### Material
 
+#### IfcDistributionFlowElement
+
+Sensors may be connected to a flow element for which an aspect of the fluid or flow is measured.
+
+### Material Constituent Set
+
+
+
+#### Casing
+
+Material from which the casing is constructed.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SOURCE_Output_SIGNAL
+
+Transmits signal.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

@@ -34,12 +34,19 @@ If this occurrence is defined by a type object, the latter has to be an _IfcMech
 
 ## Concepts
 
+### Mechanical Fastener Attributes
+
+
+
 ### Object Typing
+
 
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

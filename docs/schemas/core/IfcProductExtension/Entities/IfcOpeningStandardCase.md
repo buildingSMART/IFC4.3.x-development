@@ -16,78 +16,38 @@ The standard opening, _IfcOpeningStandardCase_, defines an opening with certain 
 
 ### Body Geometry
 
-The geometric representation of IfcOpeningStandardCase
-is defined using the following multiple shape representations for
-its definition:
+The geometric representation of IfcOpeningStandardCase is defined using the following multiple shape representations for its definition:
 
+* Body: A SweptSolid representation defining the 3D subtraction shape of the standard opening
 
-* Body: A SweptSolid representation defining the 3D subtraction
-shape of the standard opening
+**Body Representation**
 
+The body representation of IfcOpeningStandardCase is represented using the representation type 'SweptSolid'.
 
-Body Representation
+_Swept Solid Representation Type with Horizontal
+Extrusion_
 
-
-The body representation of IfcOpeningStandardCase is
-represented using the representation type 'SweptSolid'.
-
-
-Swept Solid Representation Type with Horizontal
-Extrusion
-
-
-The standard geometric representation of
-IfcOpeningStandardCase is defined using the 'SweptSolid'
-representation. The following attribute values for the
-IfcShapeRepresentation holding this geometric
-representation shall be used::
-
+The standard geometric representation of IfcOpeningStandardCase is defined using the 'SweptSolid' representation. The following attribute values for the IfcShapeRepresentation holding this geometric representation shall be used::
 
 * RepresentationIdentifier : 'Body'
 * RepresentationType : 'SweptSolid'
 
+The following additional constraints apply to the swept solid representation:
 
-The following additional constraints apply to the swept solid
-representation:
+* **Solid**: a single IfcExtrudedAreaSolid is required
+* **Profile**: IfcRectangleProfileDef, IfcCircleProfileDef and IfcArbitraryClosedProfileDef shall be supported.
+* **Extrusion**: The profile shall be extruded horizontally (i.e. perpendicular to the extrusion direction of the voided element) for wall openings, or vertically (i.e. in the extrusion direction of the voided element), for slab openings.
 
+As shown in Figure 36, the orientation of the opening profile that is extruded for the opening body shall guarantee the following interpretation of dimension parameter for rectangular openings:
 
-* Solid: a single IfcExtrudedAreaSolid is
-required
-* Profile: IfcRectangleProfileDef,
-IfcCircleProfileDef and
-IfcArbitraryClosedProfileDef shall be supported.
-* Extrusion: The profile shall be extruded horizontally
-(i.e. perpendicular to the extrusion direction of the voided
-element) for wall openings, or vertically (i.e. in the extrusion
-direction of the voided element), for slab openings.
+* _IfcRectangleProfileDef.YDim_ interpreted as opening width
+* _IfcRectangleProfileDef.XDim_ interpreted as opening height
 
+!["standard opening"](../../../../figures/ifcopeningstandardcase_wall-layout1.png "Figure 1 &mdash; Opening standard representation")
 
-As shown in Figure 36, the orientation of the opening profile that is extruded
-for the opening body shall guarantee the following interpretation
-of dimension parameter for rectangular openings:
+### Product Local Placement
 
+The following constraint is mandatory for IfcOpeningStandardCase
 
-* IfcRectangleProfileDef.YDim interpreted as
-opening width
-* IfcRectangleProfileDef.XDim interpreted as
-opening height
-
-
-![standard opening](../../../../figures/ifcopeningstandardcase_wall-layout1.png)
-Figure 161 — Opening standard representation
-
-
-
-### Placement
-
-The following constraint is mandatory for
-IfcOpeningStandardCase
-
-
-* The PlacementRelTo relationship of
-IfcLocalPlacement should point to the local placement of
-the same element, which is voided by the opening, i.e. referred
-to by VoidsElement.RelatingBuildingElement.
-
-
+* The PlacementRelTo relationship of IfcLocalPlacement should point to the local placement of the same element, which is voided by the opening, i.e. referred to by _VoidsElement.RelatingBuildingElement_.
 

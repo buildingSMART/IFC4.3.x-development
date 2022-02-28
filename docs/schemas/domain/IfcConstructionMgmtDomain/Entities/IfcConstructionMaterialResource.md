@@ -24,21 +24,37 @@ Defines types of construction material resources.
 
 ### CorrectPredefinedType
 
-
 ## Concepts
 
 ### Object Typing
 
 
+
 ### Quantity Sets
+
 
 
 ### Resource Cost
 
 
+
+#### Material_IfcCostValue_IfcMonetaryMeasure
+
+The amount incurred per unit volume of the material.
+
 ### Resource Quantity
 
 
+
+#### GrossVolume_IfcQuantityVolume
+
+The unit volume of material used, such as cubic meters of concrete.
+
 ### Resource Type Assignment
 
+
+
+#### IfcGeographicElement
+
+Indicates a physical element manifesting the resource such as a pile of sand.
 

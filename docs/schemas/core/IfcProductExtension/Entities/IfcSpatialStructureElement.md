@@ -59,3 +59,4 @@ All spatial structure elements shall be associated (using the IfcRelAggregates r
 ### Property Sets for Objects
 
 
+

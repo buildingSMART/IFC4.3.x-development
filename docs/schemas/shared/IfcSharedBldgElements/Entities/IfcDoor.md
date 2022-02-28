@@ -84,231 +84,218 @@ Either there is no door type object associated, i.e. the _IsTypedBy_ inverse rel
 
 ### Door Attributes
 
-The opening direction is determined by the local placement of
-IfcDoor and the OperationType of the IfcDoorType as
-shown in Figure 228.
+The opening direction is determined by the local placement of IfcDoor and the OperationType of the IfcDoorType as shown in Figure 1.
 
-The IfcDoorTypeOperationEnum defines the general layout of the door type and its symbolic presentation. Depending on the enumerator, the appropriate instances of IfcDoorLiningProperties and IfcDoorPanelProperties are attached in the list of HasPropertySets. The IfcDoorTypeOperationEnum mainly determines the hinge side (left hung, or right hung), the operation (swinging, sliding, folding, etc.) and the number of panels.
+> NOTE&nbsp; There are different definitions in various countries on what a left opening or left hung or left swing door is (same for right). Therefore the IFC definition may derivate from the local standard and need to be mapped appropriately.
 
+<table><tr><td>
+<table border="1" cellpadding="2" cellspacing="2" style=" width:90%;">
 
+<thead>
 
-> NOTE  There are different definitions
-> in various countries on what a left opening or left hung or left
-> swing door is (same for right). Therefore the IFC definition may
-> derivate from the local standard and need to be mapped
-> appropriately.
+ <tr>
+  
+<td align="left" valign="top"><small><b>Opening
+directions</b></small></td>
+  
+<td align="left" valign="top">
+<small><b>Definitions</b></small></td>
+ 
+ <td align="left" valign="top"><small><b>Reference to other
+standards</b></small></td>
+ 
+</tr>
 
+</thead>
 
-Opening
-directions
-Definitions
-Reference to other
-standards
-![fig 1](../../../../figures/ifcdoor-fig01.gif)
-The door panel (for swinging doors) opens
+<tbody>
+
+ <tr valign="top">
+  
+<td><img src="../../../../figures/ifcdoor-fig01.gif" height="130" width="150" alt="fig 1"></td>
+
+  <td align="left"><small>The door panel (for swinging doors) opens
 always into the direction of the positive Y axis of the local
 placement. The determination of whether the door opens to the left
-or to the right is done at the level of the IfcDoorType.
-Here it is a left side opening door given
-by IfcDoorType.OperationType =
-SingleSwingLeft
-referred to as LEFT HAND (LH) in US *
+or to the right is done at the level of the <em>IfcDoorType</em>. 
+Here it is a left side opening door given 
+by <em>IfcDoorType.OperationType</em> = 
+SingleSwingLeft</small></td>
+  
+<td align="left"><small>refered to as LEFT HAND (LH) in US *<br>
+<br>
+refered to as DIN-R (right hung) in Germany</small></td>
+ 
+</tr>
 
+ <tr valign="top">
+  
+<td><img src="../../../../figures/ifcdoor-fig02.gif" height="130" width="150" alt="fig 2"></td>
 
-referred to as DIN-R (right hung) in Germany
-![fig 2](../../../../figures/ifcdoor-fig02.gif)
-If the door should open to the other side,
-then the local placement has to be changed. It is still a left side
-opening door, given by IfcDoorType.OperationType =
- SingleSwingLeft
-referred to as RIGHT HAND REVERSE (RHR) in
-US *
-
-
-referred to as DIN-R (right hung) in Germany
-![fig 3](../../../../figures/ifcdoor-fig03.gif)
-If the door panel (for swinging doors)
+  <td align="left"><small>If the door should open to the other side,
+then the local placement has to be changed. It is still a left side 
+opening door, given by <em>IfcDoorType.OperationType</em> =
+ SingleSwingLeft</small></td>
+  
+<td align="left"><small>refered to as RIGHT HAND REVERSE (RHR) in
+US *<br>
+<br>
+refered to as DIN-R (right hung) in Germany</small></td>
+ 
+</tr>
+ 
+<tr valign="top">
+  
+<td><img src="../../../../figures/ifcdoor-fig03.gif" height="130" width="150" alt="fig 3"></td>
+  
+<td align="left"><small>If the door panel (for swinging doors)
 opens to the right, a separate door style needs to be used (here
-IfcDoorTypee.OperationType = SingleSwingRight) and it always
+<em>IfcDoorTypee.OperationType</em> = SingleSwingRight) and it always 
 opens into the direction of the positive Y axis of the local
-placement.
-referred to as RIGHT HAND (RH) in US *
+placement.</small></td>
+  
+<td align="left"><small>refered to as RIGHT HAND (RH) in US *<br>
+<br>
+refered to as DIN-L (left hung) in Germany</small></td>
 
+ </tr>
 
-
-referred to as DIN-L (left hung) in Germany
-![fig 4](../../../../figures/ifcdoor-fig04.gif)
-If the door panel (for swinging doors)
+ <tr valign="top">
+  
+<td><img src="../../../../figures/ifcdoor-fig04.gif" height="130" width="150" alt="fig 4"></td>
+  
+<td align="left"><small>If the door panel (for swinging doors)
 opens to the right, and into the opposite directions, the local
 placement of the door need to change. The door style is given by
-IfcDoorType.OperationType = SingleSwingRight.
-referred to as LEFT HAND REVERSE (LHR) in US
-*
+<em>IfcDoorType.OperationType</em> = SingleSwingRight.</small></td>
+  
+<td align="left"><small>refered to as LEFT HAND REVERSE (LHR) in US
+*<br>
+<br>
+refered to as DIN-L (left hung) in Germany</small></td>
 
+ </tr>
 
-referred to as DIN-L (left hung) in Germany
-* it assumes that the
+</tbody>
+
+<tfoot>
+ 
+<tr valign="top">
+
+  <td align="right" colspan="3"><small>* it assumes that the
 'inside/private/primary' space is above (top in the pictures) and
  the 'outside/public/secondary' space is below (bottom in the
-pictures).
-Figure 228 — Door swing
+pictures).</small></td>
+ </tr>
 
+</tfoot>
 
+</table>
 
-> NOTE  The OverallWidth and
-> OverallHeight parameters are for informational purpose
-> only.
+</td></tr><tr><td><p class="figure">Figure 1 &mdash; Door swing</p></td></tr></table>
 
-
+> NOTE&nbsp; The OverallWidth and OverallHeight parameters are for informational purpose only.
 
 ### Material Constituent Set
 
-The material of the IfcDoor is defined by the
-IfcMaterialConstituentSet or as fall back by
-IfcMaterial and attached by the
-IfcRelAssociatesMaterial relationship. It is accessible by the inverse HasAssociations relationship.
+The material of the IfcDoor is defined by the IfcMaterialConstituentSet or as fall back by IfcMaterial and attached by the IfcRelAssociatesMaterial relationship.
 
+#### Lining
 
-The following keywords for IfcMaterialConstituentSet.MaterialConstituents[n].Name shall be used:
+Indicates that the material constituent applies to the door lining.
 
+#### Framing
 
-* 'Lining' - to indicate that the material constituent applies to to the door lining
-* 'Framing' - to indicate that the material constituent applies to to the door framing, if not provided, the 'Lining' material information applied to frams as well
-* 'Glazing' - to indicate that the material constituent applies to to the glazing as well
+Indicates that the material constituent applies to the door panel(s); if not provided, the 'Lining' material information applies to panel(s) as well.
 
+#### Glazing
 
-If the fall back single IfcMaterial is referenced, it applies to the lining and framing of the door.
-
-
+Indicates that the material constituent applies to the glazing part.
 
 ### Object Typing
 
+
+
+#### IfcDoorStyle
+
+> NOTE&nbsp;This type is deprecated
 
 ### Product Local Placement
 
 The following restriction is imposed:
 
+1. The PlacementRelTo relationship of IfcLocalPlacement shall point to the local placement of the same element (if given), in which the IfcDoor is used as a filling (normally an IfcOpeningElement), as provided by the IfcRelFillsElement relationship;
+2. If the IfcDoor is part of an assembly, e.g. an IfcCurtainWall, then the PlacementRelTo relationship of IfcLocalPlacement shall point (if given) to the local placement of that assembly;
+3. If the IfcDoor is not inserted into an IfcOpeningElement, then the PlacementRelTo relationship of IfcLocalPlacement shall point (if given) to the local placement of the same IfcSpatialStructureElement that is used in the ContainedInStructure inverse attribute or to a referenced spatial structure element at a higher level.
 
-1. The PlacementRelTo relationship of
-IfcLocalPlacement shall point to the local placement of the
-same element (if given), in which the IfcDoor is used as a
-filling (normally an IfcOpeningElement), as provided by the
-IfcRelFillsElement relationship;
-2. If the IfcDoor is part of an assembly, e.g. an
-IfcCurtainWall, then the PlacementRelTo
-relationship of IfcLocalPlacement shall point (if given) to
-the local placement of that assembly;
-3. If the IfcDoor is not inserted into an
-IfcOpeningElement, then the PlacementRelTo
-relationship of IfcLocalPlacement shall point (if given) to
-the local placement of the same IfcSpatialStructureElement
-that is used in the ContainedInStructure inverse attribute
-or to a referenced spatial structure element at a higher
-level.
-
-
-
-> NOTE  The product placement is used to determine the opening direction of the door.
-
+> NOTE&nbsp; The product placement is used to determine the opening direction of the door.
 
 ### Profile 3D Geometry
 
-The door profile is represented by a three-dimensional closed
-curve within a particular shape representation. The profile is used
-to apply the parameter of the parametric door representation. The
- following attribute values for the IfcShapeRepresentation
-holding this geometric representation shall be used:
+The door profile is represented by a three-dimensional closed curve within a particular shape representation. The profile is used to apply the parameter of the parametric door representation. Only a single closed curve shall be contained in the set of _IfcShapeRepresentation.Items_.
 
-
-* RepresentationIdentifier : 'Profile'
-* RepresentationType : 'Curve3D' or 'GeometricCurveSet',
-in case of 'GeometricCurveSet' only a single closed curve shall be
-contained in the set of IfcShapeRepresentation.Items.
-
-
-The following additional constraints apply to the 'Profile'
-representation type:
-
-
-* Curve: being an IfcPolyline defining a
-rectangle.
-* Position: The curve shall lie in the xz plane of the
- object placement coordinate (the y coordinate values of the
-IfcCartesianPoint's shall be 0.).
-
-
- 
-
-
-![standard door](../../../../figures/ifcdoorstandardcase-01.png)
-
-> EXAMPLE  Figure 229 illustrates applying the door lining parameters to the
-> door profile shape representation. The profile defines the outer
-> boundary to which the door lining parameters relate as:
-
-
-
->
-> * IfcDoorLiningProperties.LiningDepth starting at distance
-> defined by LiningOffset going into the positive y
-> direction.
-> * IfcDoorLiningProperties.LiningThickness offset into the
-> inner side of the rectangle.
-> * IfcDoorLiningProperties.LiningOffset distance along the
-> positive y direction to where the LiningDepth applies.
-> * IfcDoorLiningProperties.ThresholdThickness starting at
-> the bottom edge of the rectangle into the inner side of the
-> rectangle
-> * IfcDoorLiningProperties.ThresholdDepth starting at
-> distance defined by LiningOffset going into the positive y
-> direction.
-> * IfcDoorLiningProperties.TransomOffset starting at the
-> bottom edge of the rectangle (along local x axis) into the inner
-> side of the rectangle, distance provided as percentage of overall
-> height. Distance to the centre line of the transom.
->
-
-
-Figure 229 — Door profile
-
-
-
- 
-
-
+A 'Profile' representation has to be provided if a parametric representation is applied to the door.
 
 ### Property Sets for Objects
+
 
 
 ### Quantity Sets
 
 
+
 ### Spatial Containment
 
-The IfcDoor, as any subtype of IfcBuildingElement,
-may participate alternatively in one of the two different containment relationships:
+The IfcDoor, as any subtype of IfcBuildingElement, may participate alternatively in one of the two different containment relationships:
 
+* the _Spatial Containment_ (defined here), or
+* the _Element Composition_.
 
-* the Spatial Containment (defined here), or
-* the Element Composition.
+The IfcDoor may also be connected to the IfcOpeningElement in which it is placed as a filler. In this case, the spatial containment relationship shall be provided, see Figure 1.
 
+<table>
+ 
+<tr valign="bottom">
+  
+<td><img src="../../../../figures/ifcdoor_containment-01.png" alt="Containment" width="500" height="460" border="0"></td>
+  
+<td>
+<blockquote class="note">NOTE&nbsp; The containment shall be
+defined independently of the filling relationship, that is, even if
 
-The IfcDoor may also be connected to the IfcOpeningElement in which it is placed as a filler. In this case, the spatial containment relationship shall be provided, see Figure 230.
+   the <em>IfcDoor</em> is a filling of an opening established by
+<em>IfcRelFillsElement</em>, it is also contained in the spatial
+structure by
+   <em>IfcRelContainedInSpatialStructure</em>.</blockquote>
+</td>
 
+ </tr>
 
-![Containment](../../../../figures/ifcdoor_containment-01.png)
+ <tr>
+  
+<td>
+<p class="figure">Figure 1 &mdash; Door spatial containment</p>
+</td>
 
-> NOTE  The containment shall be
-> defined independently of the filling relationship, that is, even if
->
->  the IfcDoor is a filling of an opening established by
-> IfcRelFillsElement, it is also contained in the spatial
-> structure by
->  IfcRelContainedInSpatialStructure.
+  <td>&nbsp;</td>
+ 
+</tr>
 
+</table>
 
-Figure 230 — Door spatial containment
+#### IfcBuildingStorey
 
+Default spatial container
 
+#### IfcBuilding
 
- 
+Spatial container for the element if it cannot be assigned to a building storey
+
+#### IfcSite
+
+Spatial container for the element in case that it is placed on site (outside of building)
+
+#### IfcSpace
+
+In particular use cases, a door maybe assigned directly to space
+

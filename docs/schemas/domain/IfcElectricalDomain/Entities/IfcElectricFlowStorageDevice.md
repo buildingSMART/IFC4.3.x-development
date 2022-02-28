@@ -22,18 +22,35 @@ Either there is no electric flow storage device type object associated, i.e. the
 
 ## Concepts
 
-### Material
+### Material Constituent Set
 
+
+
+#### Casing
+
+Material from which the casing is constructed.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_Line_ELECTRICAL
+
+Incoming power used to charge the flow storage device.
+
+#### SOURCE_Load_ELECTRICAL
+
+Outgoing power backed by the flow storage device.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

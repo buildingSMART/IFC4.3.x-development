@@ -31,3 +31,8 @@ The attribute ObjectType shall be given if the analysis theory type is set to US
 ### Group Assignment
 
 
+
+#### IfcStructuralReaction
+
+Structural reactions of the result group.
+

@@ -40,51 +40,49 @@ Either there is no roof type object associated, i.e. the _IsTypedBy_ inverse rel
 
 ### Element Decomposition
 
-Geometric representation by aggregated elements
+_Geometric representation by aggregated elements_
 
+If the IfcRoof has components (referenced by _SELF\IfcObject.IsDecomposedBy_) then no independent geometric representation shall defined for the IfcRoof. The IfcRoof is then geometrically represented by the geometric representation of its components. The components are accessed via _SELF\IfcObject.IsDecomposedBy[1].RelatedObjects_. The geometric representations that are supported for the aggregated elements are defined with each element. See geometric use definition for IfcSlab, IfcBeam, IfcColumn, IfcBuildingElementPart and other subtypes of IfcBuildingElement.
 
-If the IfcRoof has components (referenced by
-SELF\IfcObject.IsDecomposedBy) then no independent
-geometric representation shall defined for the IfcRoof.
-The IfcRoof is then geometrically represented by the
-geometric representation of its components. The components are
-accessed via
-SELF\IfcObject.IsDecomposedBy[1].RelatedObjects. The
-geometric representations that are supported for the aggregated
-elements are defined with each element. See geometric use
-definition for IfcSlab, IfcBeam, IfcColumn,
-IfcBuildingElementPart and other subtypes of
-IfcBuildingElement.
+Figure 1 illustrates roof placement, with an IfcRoof defining the local placement for all aggregated elements.
 
+!["roof"](../../../../figures/ifcroof-layout1.gif "Figure 1 &mdash; Roof placement")
 
-Figure 260 illustrates roof placement, with an IfcRoof defining the local placement for all aggregated elements.
+#### IfcSlab
 
-
-![roof](../../../../figures/ifcroof-layout1.gif)
-Figure 260 — Roof placement
-
-
+A roof may be aggregated into slabs for each face.
 
 ### Object Typing
 
 
-### Placement
+
+### Product Local Placement
 
 The following restriction may be imposed by view definitions or implementer agreements:
 
-
-* If the IfcRoof establishes an aggregate, then
-all contained elements shall be placed relative to the
-IfcRoof.ObjectPlacement.
-
-
+* If the IfcRoof establishes an aggregate, then all contained elements shall be placed relative to the _IfcRoof.ObjectPlacement_.
 
 ### Property Sets for Objects
+
 
 
 ### Quantity Sets
 
 
+
 ### Spatial Containment
 
+
+
+#### IfcBuildingStorey
+
+Default spatial container
+
+#### IfcBuilding
+
+Spatial container for the element if it cannot be assigned to a building storey
+
+#### IfcSite
+
+Spatial container for the element in case that it is placed on site (outside of building)
 

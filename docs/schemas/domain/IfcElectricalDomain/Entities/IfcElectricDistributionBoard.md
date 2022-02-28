@@ -24,18 +24,67 @@ Either there is no electric distribution board type object associated, i.e. the 
 
 ## Concepts
 
-### Material
+### Material Constituent Set
 
+
+
+#### Casing
+
+Material from which the casing is constructed.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_Line_CONSUMERUNIT_ELECTRICAL
+
+Incoming power, such as a cable connecting from the electrical utility or another distribution board.
+
+#### SINK_Ground_CONSUMERUNIT_EARTHING
+
+Grounding connection, such as a cable connecting to a cable fitting connected to a cold water pipe segment coming from the ground.
+
+#### SOURCE_Circuit1_CONSUMERUNIT_ELECTRICAL
+
+A downstream circuit, typically connected to a circuit breaker protective device.
+
+#### SOURCE_Circuit2_CONSUMERUNIT_ELECTRICAL
+
+A downstream circuit, typically connected to a circuit breaker protective device.
+
+#### SOURCE_Circuit3_CONSUMERUNIT_ELECTRICAL
+
+A downstream circuit, typically connected to a circuit breaker protective device.
+
+#### SOURCE_Circuit4_CONSUMERUNIT_ELECTRICAL
+
+A downstream circuit, typically connected to a circuit breaker protective device.
+
+#### SOURCE_Circuit5_CONSUMERUNIT_ELECTRICAL
+
+A downstream circuit, typically connected to a circuit breaker protective device.
+
+#### SOURCE_Circuit6_CONSUMERUNIT_ELECTRICAL
+
+A downstream circuit, typically connected to a circuit breaker protective device.
+
+#### SOURCE_Circuit7_CONSUMERUNIT_ELECTRICAL
+
+A downstream circuit, typically connected to a circuit breaker protective device.
+
+#### SOURCE_Circuit8_CONSUMERUNIT_ELECTRICAL
+
+A downstream circuit, typically connected to a circuit breaker protective device.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

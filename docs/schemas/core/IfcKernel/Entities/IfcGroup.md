@@ -36,4 +36,3 @@ Reference to the relationship _IfcRelAssignsToGroup_ that assigns the one to man
 
 The IfcGroup establishes an arbitrary collection of objects through utilizing this concept.
 
-

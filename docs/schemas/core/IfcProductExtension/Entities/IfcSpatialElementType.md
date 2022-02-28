@@ -16,3 +16,10 @@ The occurrences of subtypes of the abstract _IfcSpatialElementType_ are represen
 
 ### ElementType
 The type denotes a particular type that indicates the object further. The use has to be established at the level of instantiable subtypes. In particular it holds the user defined type, if the enumeration of the attribute 'PredefinedType' is set to USERDEFINED.
+
+## Concepts
+
+### Spatial Element Type Predefined Type
+
+
+

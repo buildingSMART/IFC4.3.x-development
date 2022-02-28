@@ -19,3 +19,10 @@ Either the _PredefinedType_ attribute is unset (e.g. because an _IfcBearingType_
 
 ### CorrectTypeAssigned
 Either there is no bearing type object associated, i.e. the _IsTypedBy_ inverse relationship is not provided, or the associated type object has to be of type _IfcBearingType_.
+
+## Concepts
+
+### Property Sets for Objects
+
+
+

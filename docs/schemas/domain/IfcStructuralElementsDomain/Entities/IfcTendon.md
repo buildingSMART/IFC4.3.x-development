@@ -63,21 +63,25 @@ If this occurrence is defined by a type object, the latter has to be an _IfcTend
 
 ### Body Geometry
 
-See supertype IfcElementComponent. This method of representation allows for several tendons
-represented by a single instance of IfcTendon. The representation map should contain
-one IfcSweptDiskSolid.
-
-
+See supertype IfcElementComponent. This method of representation allows for several tendons represented by a single instance of IfcTendon. The representation map should contain one IfcSweptDiskSolid.
 
 ### Object Typing
 
 
-### Placement
+
+### Product Local Placement
 
 
-### Property Sets
+
+### Property Sets for Objects
+
 
 
 ### Quantity Sets
+
+
+
+### Tendon Attributes
+
 
 

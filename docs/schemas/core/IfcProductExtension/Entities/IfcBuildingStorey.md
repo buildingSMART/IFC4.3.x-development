@@ -44,112 +44,53 @@ Elevation of the base of this storey, relative to the 0,00 internal reference he
 
 ### Body Geometry
 
-The body (or solid model) geometric representation (if the
-building storey has an independent geometric representation) of
-IfcBuildingStorey is defined using faceted B-Rep
-capabilities (with or without voids), based on the
-IfcFacetedBrep or on the
-IfcFacetedBrepWithVoids.
+The body (or solid model) geometric representation (if the building storey has an independent geometric representation) of IfcBuildingStorey is defined using faceted B-Rep capabilities (with or without voids), based on the IfcFacetedBrep or on the IfcFacetedBrepWithVoids.
 
-
-
-> NOTE  Since the building storey shape is usually described by the
->  exterior building elements, an independent shape representation
-> shall only be given, if the building storey is exposed
-> independently from its constituting elements and such independent geometric representation may be prohibited in model view definitions.
-
+> NOTE&nbsp; Since the building storey shape is usually described by the exterior building elements, an independent shape representation shall only be given, if the building storey is exposed independently from its constituting elements and such independent geometric representation may be prohibited in model view definitions.
 
 ### FootPrint GeomSet Geometry
 
-The foot print representation of IfcBuildingStorey is
-given by either a single 2D curve (such as IfcPolyline or
-IfcCompositeCurve), or by a list of 2D curves (in case of
-inner boundaries), if the building storey has an independent
-geometric representation.
+The foot print representation of IfcBuildingStorey is given by either a single 2D curve (such as IfcPolyline or IfcCompositeCurve), or by a list of 2D curves (in case of inner boundaries), if the building storey has an independent geometric representation.
 
+> NOTE&nbsp; The independent geometric representation of IfcBuildingStorey may not be allowed in certain model view definitions. In those cases only the contained elements and spaces have an independent geometric representation.
 
+### Product Local Placement
 
-> NOTE  The independent geometric representation of IfcBuildingStorey may not be allowed in certain model view definitions. In those cases only the contained elements and spaces have an independent geometric representation.
+The local placement for IfcBuildingStorey is defined in its supertype IfcProduct. It is defined by the IfcLocalPlacement, which defines the local coordinate system that is referenced by all geometric representations.
 
-
-### Placement
-
-The local placement for IfcBuildingStorey is defined in
-its supertype IfcProduct. It is defined by the
-IfcLocalPlacement, which defines the local coordinate
-system that is referenced by all geometric representations.
-
-
-* The PlacementRelTo relationship of
-IfcLocalPlacement shall point (if relative placement is
-used) to the IfcSpatialStructureElement of type
-IfcBuilding, or of type IfcBuildingStorey (e.g. to
-position a building storey relative to a building storey complex,
-or a partial building storey to a building storey).
-* If the relative placement is not used, the absolute placement
-is defined within the world coordinate system.
-
-
+* The PlacementRelTo relationship of IfcLocalPlacement shall point (if relative placement is used) to the IfcSpatialStructureElement of type IfcBuilding, or of type IfcBuildingStorey (e.g. to position a building storey relative to a building storey complex, or a partial building storey to a building storey).
+* If the relative placement is not used, the absolute placement is defined within the world coordinate system.
 
 ### Property Sets for Objects
+
 
 
 ### Quantity Sets
 
 
+
 ### Spatial Composition
 
-
-> NOTE  By using the inverse relationship IfcBuildingStorey.Decomposes it references
-> (IfcBuilding || IfcBuildingStorey) through
-> IfcRelAggregates.RelatingObjectIfcBuildingStorey, the referenced
-> IfcBuildingStorey needs to have a different and higher
->  CompositionType, i.e. COMPLEX (if the other IfcBuildingStorey has ELEMENT), or ELEMENT (if the other
->  IfcBuildingStorey has PARTIAL).
-
+> NOTE&nbsp; By using the inverse relationship _IfcBuildingStorey.Decomposes_ it references (IfcBuilding || IfcBuildingStorey) through _IfcRelAggregates.RelatingObject_IfcBuildingStorey_, the referenced 
+IfcBuildingStorey needs to have a different and higher
+ CompositionType, i.e. COMPLEX (if the other IfcBuildingStorey has ELEMENT), or ELEMENT (if the other
+ IfcBuildingStorey has PARTIAL)._
 
 ### Spatial Container
 
-If there are building elements and/or other elements directly
-related to the IfcBuildingStorey (like most building
-elements, such as walls, columns, etc.), they are associated with
-the IfcBuildingStorey by using the objectified
-relationship IfcRelContainedInSpatialStructure. The
-IfcBuildingStorey references them by its inverse
-relationship:
+If there are building elements and/or other elements directly related to the IfcBuildingStorey (like most building elements, such as walls, columns, etc.), they are associated with the IfcBuildingStorey by using the objectified relationship IfcRelContainedInSpatialStructure. The IfcBuildingStorey references them by its inverse relationship:
 
+* _IfcBuildingStorey.ContainsElements_ -- referencing any subtype of IfcProduct (with the exception of other spatial structure element) by _IfcRelContainedInSpatialStructure.RelatedElements_.
 
-* IfcBuildingStorey.ContainsElements -- referencing any
-subtype of IfcProduct (with the exception of other spatial
-structure element) by
-IfcRelContainedInSpatialStructure.RelatedElements.
-
-
-Elements can also be referenced in an
-IfcBuildingStorey, for example, if they span through several
-storeys. This is expressed by using the objectified relationship
-IfcRelReferencedInSpatialStructure. Systems, such as
-building service or electrical distribution systems, zonal
-systems, or structural analysis systems, relate to
-IfcBuildingStorey by using the objectified relationship
-IfcRelServicesBuildings.
-
-
+Elements can also be referenced in an IfcBuildingStorey, for example, if they span through several storeys. This is expressed by using the objectified relationship IfcRelReferencedInSpatialStructure. Systems, such as building service or electrical distribution systems, zonal systems, or structural analysis systems, relate to IfcBuildingStorey by using the objectified relationship IfcRelServicesBuildings.
 
 ### Spatial Decomposition
 
+> NOTE&nbsp; By using the inverse relationship _IfcBuildingStorey.IsDecomposedBy_ it references IfcBuildingStorey || IfcSpace through _IfcRelAggregates.RelatedObjects_. If it refers to another instance of IfcBuildingStorey, the referenced IfcBuildingStorey needs to have a different and lower CompositionType, i.e. ELEMENT (if the other IfcBuildingStorey has COMPLEX), or PARTIAL (if the other IfcBuildingStorey has ELEMENT).
 
-> NOTE  By using the inverse relationship IfcBuildingStorey.IsDecomposedBy it references
-> IfcBuildingStorey || IfcSpace through
-> IfcRelAggregates.RelatedObjects. If it refers to another
-> instance of IfcBuildingStorey, the referenced
-> IfcBuildingStorey needs to have a different and lower
-> CompositionType, i.e. ELEMENT (if the other
-> IfcBuildingStorey has COMPLEX), or PARTIAL (if the other
-> IfcBuildingStorey has ELEMENT).
+> NOTE&nbsp; Multi storey spaces shall be spatially contained by only a single building storey, usually it is the building storey where the base of the space lies.
 
+### Storey Attributes
 
-
-> NOTE  Multi storey spaces shall be spatially contained by only a single building storey, usually it is the building storey where the base of the space lies.
 
 

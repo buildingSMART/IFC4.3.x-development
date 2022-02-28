@@ -21,21 +21,37 @@ Outlets for medical gasses should use _IfcValve_ with PredefinedType equal to GA
 
 ### CorrectTypeAssigned
 
-
 ## Concepts
 
-### Material
+### Material Constituent Set
 
+
+
+#### Casing
+
+Material from which the casing is constructed.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_Power_VACUUMSTATION_ELECTRICAL
+
+Receives electrical power.
+
+#### SOURCE_Vacuum_VACUUMSTATION_VACUUM
+
+Provides suction.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

@@ -31,15 +31,33 @@ Relationship to a spatial structure element, to which the associate is primarily
 
 ### PredefinedType
 
-
 ## Concepts
 
 ### Annotation 2D Geometry
 
 
+
+#### Annotation_IfcGeometricCurveSet_Annotation2D
+
+Any point or curve
+
+#### Annotation_IfcAnnotationFillArea_Annotation2D
+
+Area for hatching
+
+#### Annotation_IfcTextLiteral_Annotation2D
+
+Text literal for applying text
+
 ### Annotation 3D Geometry
 
 
+
+#### Annotation_IfcGeometricSet_GeometricSet
+
+Any point, curve or surface representing the annotation.
+
 ### Property Sets for Objects
+
 
 

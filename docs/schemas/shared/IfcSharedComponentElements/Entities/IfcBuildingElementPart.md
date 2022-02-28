@@ -27,3 +27,4 @@ If this occurrence is defined by a type object, the latter has to be an _IfcBuil
 ### Object Typing
 
 
+

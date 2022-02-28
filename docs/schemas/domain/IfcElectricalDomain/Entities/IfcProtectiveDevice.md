@@ -24,18 +24,35 @@ Either there is no protective device type object associated, i.e. the _IsTypedBy
 
 ## Concepts
 
-### Material
+### Material Constituent Set
 
+
+
+#### Casing
+
+Material from which the casing is constructed.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_Line_ELECTRICAL
+
+The supply line, typically connected from a slot in a distribution board.
+
+#### SOURCE_Load_ELECTRICAL
+
+The load protected by this device, typically a cable connected to a device or the first junction box of a circuit.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

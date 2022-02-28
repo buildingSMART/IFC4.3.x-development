@@ -41,3 +41,8 @@ The attribute ObjectType shall be given if the predefined type is set to USERDEF
 ### Structural Activity
 
 
+
+#### IfcStructuralLoadConfiguration_IfcStructuralSurfaceMember
+
+Resulting stresses within a surface member.
+

@@ -22,5 +22,3 @@ Defines a coordinate system used for the description of the support condition pr
 
 Instances of IfcStructuralPointConnection shall have a topology representation which consists of one IfcVertexPoint, representing the reference point of the point connection. See definitions at IfcStructuralItem for further specifications.
 
-
-

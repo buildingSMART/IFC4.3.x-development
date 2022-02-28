@@ -22,18 +22,35 @@ Either there is no electric time control type object associated, i.e. the _IsTyp
 
 ## Concepts
 
-### Material
+### Material Constituent Set
 
+
+
+#### Casing
+
+Material from which the casing is constructed.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_Line_ELECTRICAL
+
+Receives electrical power.
+
+#### SOURCE_Drive_ELECTRICAL
+
+Transmits electrical power according to time.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

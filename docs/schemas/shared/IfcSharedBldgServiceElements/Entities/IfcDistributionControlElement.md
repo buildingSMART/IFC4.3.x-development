@@ -24,29 +24,62 @@ Reference through the relationship object to related distribution flow elements.
 
 ## Concepts
 
-### Object Classification
+### Classification Association
 
 In addition to general product and project classification (UniFormat, etc.), classifications may also be applied to indicate a device address or addressing scheme according to system-based device instance classification.
 
+Figure 1 illustrates classification usage.
 
-Figure 301 illustrates classification usage.
+!["Classification Use Definition"](../../../../figures/ifcdistributioncontrolelement-classification.png "Figure 1 &mdash; Distribution control classification")
 
+#### BACnet_ASHRAE
 
-![Classification Use Definition](../../../../figures/ifcdistributioncontrolelement-classification.png)
-Figure 301 — Distribution control classification
+32-bit decimal BACnetObjectIdentifier indicating type ID and instance ID (e.g.'12.15' for Digital Input #15).
 
+#### IPv4_IETF
 
+32-bit decimal address for an IPv4 network (e.g.'192.168.1.1').
+
+#### IPv6_IETF
+
+128-bit hexadecimal address for an IPv6 network.
+
+#### MAC_IETF
+
+48-bit hexadecimal form of MAC address.
+
+#### OPC_OPCFoundation
+
+Hierarchical ItemID in alphanumeric form (i.e. 'B204.Tank2.Temperature)
+
+#### Insteon_SmartLabs
+
+24-bit hexadecimal instance address.
+
+#### LonTalk_ISOIEC
+
+48-bit hexadecimal neuron ID.
 
 ### Object Typing
 
 
+
 ### Product Assignment
 
-The IfcDistributionControlElement may be assigned to the following entities using relationships as indicated:
+The **IfcDistributionControlElement** may be assigned to the following entities using relationships as indicated:
 
+* [IfcDistributionSystem](../../ifcsharedbldgserviceelements/lexical/ifcdistributionsystem.htm) ([IfcRelAssignsToGroup](../../ifckernel/lexical/ifcrelassignstogroup.htm)): Indicates a system containing interconnected devices, where control elements are typically part of a control system having _PredefinedType=CONTROL_.
+* [IfcPerformanceHistory](../../ifccontrolextension/lexical/ifcperformancehistory.htm) ([IfcRelAssignsToControl](../../ifckernel/lexical/ifcrelassignstocontrol.htm)): Indicates realtime or historical infomation captured for the device.
 
-* IfcDistributionSystem (IfcRelAssignsToGroup): Indicates a system containing interconnected devices, where control elements are typically part of a control system having PredefinedType=CONTROL.
-* IfcPerformanceHistory (IfcRelAssignsToControl): Indicates realtime or historical information captured for the device.
+#### IfcTask
 
+Indicates tasks used to purchase, install, renovate, demolish, operate, or otherwise act upon the element.  If the element has a type, available task types are assigned to the element type.
 
+#### IfcProcedure
+
+Indicates procedures used to operate the element.  If the element has a type, available procedure types are assigned to the element type.
+
+#### IfcEvent
+
+Indicates events to be handled by the element, sequenced by procedures to be followed.  If the element has a type, available event types are assigned to the element type.
 

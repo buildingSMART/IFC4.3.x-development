@@ -22,3 +22,4 @@ In case of aggregation, only the individual parts (direct instances of _IfcStruc
 ### Property Sets for Objects
 
 
+

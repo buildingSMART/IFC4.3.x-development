@@ -27,18 +27,39 @@ Either there is no space heater type object associated, i.e. the _IsTypedBy_ inv
 
 ## Concepts
 
-### Material
+### Material Constituent Set
 
+
+
+#### Casing
+
+Material from which the casing is constructed.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_Power_CONVECTOR_ELECTRICAL
+
+Receives electrical power.
+
+#### SINK_Inlet_RADIATOR_HEATING
+
+Water or steam supply.
+
+#### SOURCE_Outlet_RADIATOR_HEATING
+
+Water or steam return.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

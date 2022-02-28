@@ -22,21 +22,41 @@ Defines types of labour resources.
 
 ### CorrectPredefinedType
 
-
 ## Concepts
 
 ### Object Typing
 
 
+
 ### Quantity Sets
+
 
 
 ### Resource Assignment
 
 
+
+#### IfcActor
+
+Indicates specific people manifesting the resource such as laborers.
+
 ### Resource Cost
 
 
+
+#### Standard_IfcCostValue_IfcMonetaryMeasure
+
+Wages incurred for work during standard hours.
+
+#### Overtime_IfcCostValue_IfcMonetaryMeasure
+
+Wages incurred for work during overtime hours.
+
 ### Resource Quantity
 
+
+
+#### Labor_IfcQuantityTime
+
+Quantity of labor, typically per hour.
 

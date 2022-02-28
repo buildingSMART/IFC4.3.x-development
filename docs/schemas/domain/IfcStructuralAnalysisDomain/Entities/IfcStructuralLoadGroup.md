@@ -52,3 +52,8 @@ The attribute ObjectType shall be given if the predefined type, action type, or 
 ### Group Assignment
 
 
+
+#### IfcStructuralLoadCase
+
+Structural load cases applicable to the load group.
+

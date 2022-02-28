@@ -46,6 +46,24 @@ Set of spatial reference relationships, that holds those elements, which are ref
 ### FootPrint GeomSet Geometry
 
 
+
+#### FootPrint_IfcGeometricCurveSet_GeometricCurveSet
+
+Set of curves (outer and inner) representing the floor projection,
+
+### Group Spatial Connectivity
+
+
+
 ### Property Sets for Objects
+
+
+
+### Spatial Interference
+
+
+
+### Spatial Interference With Zones
+
 
 

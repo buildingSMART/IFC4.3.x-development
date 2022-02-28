@@ -27,24 +27,45 @@ Either there is no junction box type object associated, i.e. the _IsTypedBy_ inv
 ### Element Connectivity
 
 
+
+#### IfcDiscreteAccessory
+
+Indicates a cover plate for the junction box, having ObjectType 'JunctionBoxCoverPlate'.
+
+### Element Filling
+
+
+
+#### IfcCovering
+
+Covering such as drywall applied to a wall or ceiling, for which the junction box fills.
+
 ### Element Nesting
 
+{ .change-ifc4}
+> IFC4 ADD1 CHANGE&nbsp; Junction boxes no longer have ports defined, but rely on element nesting for indicating containment of electrical devices.
 
-> IFC4 ADD1 CHANGE  Junction boxes no longer have ports defined, but rely on element nesting for indicating containment of electrical devices.
+#### IfcDistributionFlowElement
+
+A switch, outlet, light fixture, or other component that may fit within one of the gangs of the junction box. Property sets may further define compatible objects based on form factor, voltage, and current.
+
+### Material Constituent Set
 
 
-### Filling
 
+#### Casing
 
-### Material
-
+Material from which the casing is constructed.
 
 ### Object Typing
+
 
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

@@ -38,36 +38,41 @@ Either there is no curtain wall type object associated, i.e. the _IsTypedBy_ inv
 
 ### Axis 2D Geometry
 
-The following additional constraints apply to the 'Axis'
-representation:
+The following additional constraints apply to the 'Axis' representation:
 
-
-* Geometry : IfcPolyline having two Points, or
-IfcTrimmedCurve with BasisCurve of type
-IfcLine or IfcCircle.
-
-
+* **Geometry** : IfcPolyline having two Points, or IfcTrimmedCurve with BasisCurve of type IfcLine or IfcCircle.
 
 ### Object Typing
 
 
-### Placement
+
+### Product Local Placement
 
 The following restriction may be imposed by view definitions or implementer agreements:
 
-
-* If the IfcCurtainWall establishes an aggregate, then
-all contained elements shall be placed relative to the
-IfcCurtainWall.ObjectPlacement.
-
-
+* If the IfcCurtainWall establishes an aggregate, then all contained elements shall be placed relative to the _IfcCurtainWall.ObjectPlacement_.
 
 ### Property Sets for Objects
+
 
 
 ### Quantity Sets
 
 
+
 ### Spatial Containment
 
+
+
+#### IfcBuildingStorey
+
+Default spatial container
+
+#### IfcBuilding
+
+Spatial container for the element if it cannot be assigned to a building storey - curtain wall facades may be assigned directly to the building
+
+#### IfcSite
+
+Spatial container for the element in case that it is placed on site (outside of building)
 

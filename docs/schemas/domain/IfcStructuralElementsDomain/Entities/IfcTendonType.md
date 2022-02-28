@@ -39,3 +39,10 @@ Diameter of the sheeth (duct) around the tendon, if there is one with this type 
 
 ### CorrectPredefinedType
 The inherited attribute _ElementType_ shall be provided if the _PredefinedType_ is set to USERDEFINED.
+
+## Concepts
+
+### Tendon Type Attributes
+
+
+

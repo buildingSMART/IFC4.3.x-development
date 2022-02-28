@@ -25,46 +25,23 @@ The inherited attribute _ElementType_ shall be provided, if the _PredefinedType_
 
 ## Concepts
 
-### Body Geometry
+### Material Profile Set
+
+The material of the IfcMemberType is defined by the IfcMaterialProfileSet or as fall back by IfcMaterial and attached by the IfcRelAssociatesMaterial.RelatingMaterial. It is accessible by the inverse HasAssociations relationship.
+
+> NOTE&nbsp; It is illegal to assign an IfcMaterial to an IfcMemberType, if there is at least one occurrences of IfcMemberStandardCase for this type.
+
+The shared profile definition is defined by assigning an IfcMaterialProfileSet (see material use definition above). The IfcMaterialProfile refers to the subtype of IfcProfileDef that is the common profile for all member occurrence, if used. It is only applicable if the IfcMemberType has only occurrences of type IfcMemberStandardCase (see definition of IfcMemberStandardCase for further information).
+
+> NOTE&nbsp; The attribute ProfileName of the IfcProfileDef subtype, referenced in IfcMaterialProfile should contain a standardized profile name according to local standards. However, an additional geometric representation of the profile is necessary (e.g. as IfcExtrudedAreaSolid). An importing application is allowed to check for the existence of the profile name: in case of identifying it as a standardized name, the corresponding profile geometry and possibly other cross sectional properties can be read from a library. Otherwise the geometric representation and possible non geometric IfcProfileProperties have to be used.
+
+### Type Body Geometry
 
 The IfcMemberType may define the shared geometric representation for all member occurrences. The RepresentationMaps attribute refers to a list of IfcRepresentationMap's, that allow for multiple geometric representations (e.g. with IfcShaperepresentation's having an RepresentationIdentifier 'Box', 'Axis', or 'Body'). It is only applicable if the IfcMemberType has only occurrences of type IfcMember (See geometric use definition of IfcMember for further information).
 
-> NOTE  If the IfcMemberType has an associated IfcMaterialProfileSet, then no shared geometric representation shall be provided.
+> NOTE&nbsp; If the IfcMemberType has an associated IfcMaterialProfileSet, then no shared geometric representation shall be provided.
 
-> NOTE  The product shape representations are defined as RepresentationMaps (attribute of the supertype IfcTypeProduct), which get assigned by an element occurrence instance through the IfcShapeRepresentation.Item[n] being an IfcMappedItem. See IfcTypeProduct for further information.
+> NOTE&nbsp; The product shape representations are defined as RepresentationMaps (attribute of the supertype IfcTypeProduct), which get assigned by an element occurrence instance through the _IfcShapeRepresentation.Item[n]_ being an IfcMappedItem. See IfcTypeProduct for further information.
 
-> NOTE  The values of attributes RepresentationIdentifier and RepresentationType of IfcShapeRepresentation are restricted in the same way as those for IfcMember
-
-### Material Profile Set
-
-The material of the IfcMemberType is defined by the
-IfcMaterialProfileSet or as fall back by
-IfcMaterial and attached by the
-IfcRelAssociatesMaterial.RelatingMaterial. It is
-accessible by the inverse HasAssociations
-relationship.
-
-The shared profile definition is defined by assigning an
-IfcMaterialProfileSet (see material use definition above).
-The IfcMaterialProfile refers to the subtype of
-IfcProfileDef that is the common profile for all member
-occurrence, if used. If an IfcMaterialProfileSet is used, all occurrences must have a corresponding IfcMaterialProfileSetUsage.
-
-
-
->
-> NOTE  The attribute ProfileName of the
-> IfcProfileDef subtype, referenced in
-> IfcMaterialProfile should contain a standardized profile
-> name according to local standards. However, an additional
-> geometric representation of the profile is necessary (e.g. as
-> IfcExtrudedAreaSolid). An importing application is allowed
-> to check for the existence of the profile name: in case of
-> identifying it as a standardized name, the corresponding profile
-> geometry and possibly other cross sectional properties can be
-> read from a library. Otherwise the geometric representation and
-> possible non geometric IfcProfileProperties have to be
-> used.
-
-
+> NOTE&nbsp; The values of attributes RepresentationIdentifier and RepresentationType of IfcShapeRepresentation are restricted in the same way as those for IfcMember and IfcMemberStandardCase
 

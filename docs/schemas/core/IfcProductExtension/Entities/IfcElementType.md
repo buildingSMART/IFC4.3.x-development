@@ -12,3 +12,30 @@ An element type is used to define the common properties of a certain type or sty
 
 ### ElementType
 The type denotes a particular type that indicates the object further. The use has to be established at the level of instantiable subtypes. In particular it holds the user defined type, if the enumeration of the attribute 'PredefinedType' is set to USERDEFINED.
+
+## Concepts
+
+### Element Type Predefined Type
+
+
+
+### Type Body AdvancedBrep Geometry
+
+
+
+### Type Body Brep Geometry
+
+
+
+### Type Body CSG Geometry
+
+
+
+### Type Body Tessellated Geometry
+
+
+
+### Type Element Aggregation
+
+
+

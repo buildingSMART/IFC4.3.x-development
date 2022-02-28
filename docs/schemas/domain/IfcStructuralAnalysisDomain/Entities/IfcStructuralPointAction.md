@@ -34,3 +34,16 @@ A structural point action shall place either a single force or a single displace
 ### Structural Activity
 
 
+
+#### IfcStructuralLoadSingleForce_IfcStructuralCurveConnection
+
+Point force and moment at a point connection.
+
+#### IfcStructuralLoadSingleForce_IfcStructuralCurveMember
+
+Point force and moment positioned within a curve member.
+
+#### IfcStructuralLoadSingleForce_IfcStructuralSurfaceMember
+
+Point force and moment positioned within a surface member.
+

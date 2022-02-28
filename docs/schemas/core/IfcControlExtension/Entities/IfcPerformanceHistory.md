@@ -25,23 +25,33 @@ Predefined generic type for a performance history that is specified in an enumer
 
 IfcPerformanceHistory may be decomposed into components using IfcRelNests where RelatingObject refers to the enclosing IfcPerformanceHistory and RelatedObjects contains one or more IfcPerformanceHistory components. Composition indicates breakdown of further detail and may correspond to the hierarchy of objects it represents.
 
-
-
-### Classification
+### Classification Association
 
 IfcPerformanceHistory may be classified using IfcRelAssociatesClassification where RelatingClassification refers to an IfcClassificationReference indicating a classification notation. Such classification notation may be used to identify the information such as an address within a building automation system, a work breakdown structure code for tasks, or a cost code for resource allocation.
-
-
 
 ### Control Assignment
 
 
+
+#### IfcGroup
+
+A system or zone for which time-based system information is provided, such as overall status parameters of a building control system.
+
+#### IfcProduct
+
+A building space, physical device, or port for which time-based information is provided, such as a chiller or an analog input within a device.
+
+#### IfcProcess
+
+A process for which time-based information is provided, such as an alarm event being raised and acknowledged, or regular and overtime costs incurred for a task.
+
+#### IfcResource
+
+A resource for which usage is recorded or planned over time, such as wage rates and number of workers at particular times.
+
 ### Property Sets for Performance
 
-The property sets relating to this entity are defined by IfcPropertySet and attached by the IfcRelDefinesByProperties relationship. They are accessible by the IsDefinedBy inverse attribute. Applicable property sets are defined at assigned entities (primarily IfcDistributionElement subtypes) where IfcPropertySetTemplate.PropertySetType is PSET\_PERFORMANCEDRIVEN.
-
+The property sets relating to this entity are defined by IfcPropertySet and attached by the IfcRelDefinesByProperties relationship. They are accessible by the IsDefinedBy inverse attribute. Applicable property sets are defined at assigned entities (primarily IfcDistributionElement subtypes) where _IfcPropertySetTemplate.PropertySetType_ is PSET_PERFORMANCEDRIVEN.
 
 In addition to standard property sets defined within this specification, if the underlying information source provides metadata (specific type information), then custom property sets may capture such data, where corresponding IfcPropertySetTemplate and IfcPropertyTemplate objects may be defined for such information to be accessed by other applications.
-
-
 

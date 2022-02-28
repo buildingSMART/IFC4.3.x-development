@@ -22,18 +22,79 @@ Either there is no evaporator type object associated, i.e. the _IsTypedBy_ inver
 
 ## Concepts
 
-### Material
+### Material Constituent Set
 
+
+
+#### Casing
+
+Material from which the casing is constructed.
+
+#### Refrigerant
+
+Refrigerant material.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_RefrigerantIn_DIRECTEXPANSION_REFRIGERATION
+
+Liquid refrigerant entering the evaporator.
+
+#### SINK_RefrigerantOut_DIRECTEXPANSION_REFRIGERATION
+
+Liquid refrigerant entering the evaporator.
+
+#### SINK_AirIn_DIRECTEXPANSION_AIRCONDITIONING
+
+Air return entering the evaporator.
+
+#### SOURCE_AirOut_DIRECTEXPANSION_AIRCONDITIONING
+
+Air supply leaving the evaporator.
+
+#### SINK_RefrigerantIn_FLOODEDSHELLANDTUBE_REFRIGERATION
+
+Liquid refrigerant entering the evaporator.
+
+#### SINK_RefrigerantOut_FLOODEDSHELLANDTUBE_REFRIGERATION
+
+Liquid refrigerant entering the evaporator.
+
+#### SINK_ChilledWaterIn_FLOODEDSHELLANDTUBE_CHILLEDWATER
+
+Chilled water return entering the evaporator.
+
+#### SOURCE_ChilledWaterOut_FLOODEDSHELLANDTUBE_CHILLEDWATER
+
+Chilled water supply leaving the evaporator.
+
+#### SINK_RefrigerantIn_SHELLANDCOIL_REFRIGERATION
+
+Liquid refrigerant entering the evaporator.
+
+#### SINK_RefrigerantOut_SHELLANDCOIL_REFRIGERATION
+
+Vapor refrigerant leaving the evaporator.
+
+#### SINK_ChilledWaterIn_FLOODEDSHELLANDTUBE_CHILLEDWATER
+
+Chilled water return entering the evaporator.
+
+#### SOURCE_ChilledWaterOut_FLOODEDSHELLANDTUBE_CHILLEDWATER
+
+Chilled water supply leaving the evaporator.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

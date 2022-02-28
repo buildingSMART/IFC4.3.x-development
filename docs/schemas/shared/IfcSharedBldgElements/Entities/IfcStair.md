@@ -40,90 +40,72 @@ Either there is no stair type object associated, i.e. the _IsTypedBy_ inverse re
 
 ### Axis 2D Geometry
 
-The walking line is represented by a two-dimensional open curve
-as the axis. The curve is directed into the upward direction
-(direction has to be interpreted as specified at the subtypes of
-IfcCurve).
+The walking line is represented by a two-dimensional open curve as the axis. The curve is directed into the upward direction (direction has to be interpreted as specified at the subtypes of IfcCurve).
 
-
-
-
-> NOTE  The 'Axis' representation of IfcStair
-> may be provided even if the IfcStair has components with own
->  shape representations.
-
-
+> NOTE&nbsp; The 'Axis' representation of IfcStair may be provided even if the IfcStair has components with own shape representations.
 
 ### Body SweptSolid Geometry
 
 
+
 ### Element Decomposition
 
-Geometric representation by aggregated elements
+_Geometric representation by aggregated elements_
 
+If the IfcStair has components (referenced by _SELF\IfcObject.IsDecomposedBy_) with own 'Body' representation, then no 'Body' representation shall defined for the IfcStair. The IfcStair shape is then represented by the geometric representation of its components. The components are accessed via _SELF\IfcObject.IsDecomposedBy[1].RelatedObjects_.
 
-If the IfcStair has components (referenced by
-SELF\IfcObject.IsDecomposedBy) with own 'Body'
-representation, then no 'Body' representation shall defined for the
-IfcStair. The IfcStair shape is then represented by
-the geometric representation of its components. The components are
-accessed via
-SELF\IfcObject.IsDecomposedBy[1].RelatedObjects.
+Figure 1 illustrates stair placement, where the IfcStair defines the local placement for all components and the common 'Axis' representation, and each component has its own 'Body' representation.
 
+!["stair"](../../../../figures/ifcstair-layout1.png "Figure 1 &mdash; Stair placement")
 
-Figure 272 illustrates stair placement, where the IfcStair defines the local placement for all components and the common 'Axis' representation, and each component has its own 'Body' representation.
+#### IfcStairFlight
 
+Stairs may be decomposed into stair flights.
 
-![stair](../../../../figures/ifcstair-layout1.png)
-Figure 272 — Stair placement
+#### IfcSlab
 
+Stairs may be decomposed into stair landing, represented by IfcSlab.PredefinedType=LANDING
 
+#### IfcRailing
 
-### Material Solid
+Stairs may be decomposed into railings for zero, one, or both sides.
 
-The material of the IfcStair is defined by the
-IfcMaterial and attached by the
-IfcRelAssociatesMaterial.RelatingMaterial. It is
-accessible by the inverse HasAssociations relationship.
+### Material Single
 
+The material of the IfcStair is defined by the IfcMaterial and attached by the IfcRelAssociatesMaterial.RelatingMaterial. It is accessible by the inverse HasAssociations relationship.
 
-Material information can also be given at the
-IfcStairType, defining the common attribute data for all
-occurrences of the same type. It is then accessible by the inverse
-IsDefinedBy relationship pointing to
-IfcStair.HasAssociations and via
-IfcRelAssociatesMaterial.RelatingMaterial to
-IfcMaterial. If both are given, then the material directly
-assigned to IfcStair overrides the material assigned to
-IfcStairType.
-
-
+Material information can also be given at the IfcStairType, defining the common attribute data for all occurrences of the same type. It is then accessible by the inverse IsDefinedBy relationship pointing to _IfcStair.HasAssociations_ and via _IfcRelAssociatesMaterial.RelatingMaterial_ to IfcMaterial. If both are given, then the material directly assigned to IfcStair overrides the material assigned to IfcStairType.
 
 ### Object Typing
 
 
-### Placement
+
+### Product Local Placement
 
 The following restriction may be imposed by view definitions or implementer agreements:
 
-
-* If the IfcStair establishes an aggregate, then
-all contained elements shall be placed relative to the
-IfcStair.ObjectPlacement.
-
-
+* If the IfcStair establishes an aggregate, then all contained elements shall be placed relative to the _IfcStair.ObjectPlacement_.
 
 ### Property Sets for Objects
 
 
+
 ### Spatial Containment
 
-The IfcStair, as any subtype of IfcBuildingElement,
-may participate alternatively in one of the two different containment relationships:
+The IfcStair, as any subtype of IfcBuildingElement, may participate alternatively in one of the two different containment relationships:
 
+* the _Spatial Containment_ (defined here), or
+* the _Element Composition_.
 
-* the Spatial Containment (defined here), or
-* the Element Composition.
+#### IfcBuildingStorey
 
+Default spatial container
 
+#### IfcBuilding
+
+Spatial container for the element if it cannot be assigned to a building storey
+
+#### IfcSite
+
+Spatial container for the element in case that it is placed on site (outside of building)
 

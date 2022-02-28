@@ -32,17 +32,13 @@ Optional description, provided for exchanging informative comments.
 
 ### UR1
 
-
 ## Concepts
-
-### Identity
-
-IfcRoot assigns the globally unique ID. In addition it may provide for a name and a description about the concept.
-
-
 
 ### Revision Control
 
-Ownership, history, and merge state is captured using *IfcOwnerHistory*.
+Ownership, history, and merge state is captured using IfcOwnerHistory.
 
+### Software Identity
+
+IfcRoot assigns the globally unique ID. In addition it may provide for a name and a description about the concept.
 

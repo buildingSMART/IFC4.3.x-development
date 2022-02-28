@@ -17,3 +17,4 @@ Thus furnishing elements can either be movable, or not (as the built-ins).
 ### Spatial Containment
 
 
+

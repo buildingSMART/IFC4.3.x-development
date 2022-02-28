@@ -43,3 +43,16 @@ An estimate of the original cost value of the inventory.
 ### Group Assignment
 
 
+
+#### IfcAsset
+
+Assets included in the inventory.
+
+#### IfcElement
+
+Elements such as furniture included in the inventory.
+
+#### IfcSpace
+
+Spaces included in the inventory.
+

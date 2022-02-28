@@ -29,3 +29,26 @@ There should be only a maximum of one material association assigned to an buildi
 
 { .change-ifc2x4}
 > IFC2x4 CHANGE The where rule has been promoted from the subtype _IfcWall_.
+
+## Concepts
+
+### Product Assignment
+
+
+
+#### IfcTask
+
+Task for operating upon the building element.
+
+### Property Sets for Objects
+
+
+
+### Spatial Containment
+
+
+
+### Surface 3D Geometry
+
+Some IfcBuildingElement may be represented by an surface as an abstract geometric representation. See each subtype for specific guidance.
+

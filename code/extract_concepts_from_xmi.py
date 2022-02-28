@@ -283,15 +283,22 @@ if __name__ == "__main__":
                 
     any_sep = re.compile(r"\\|/")
     all_template_names = [any_sep.split(x)[-2] for x in all_templates if "Partial" not in x][1:]
-    non_leafs = {any_sep.split(x)[-3]:any_sep.split(x)[-2] for x in all_templates if "Partial" not in x}.keys()
+    # also non-leafs are now included, because they appear to be frequently documented on this level.
+    # non_leafs = {any_sep.split(x)[-3]:any_sep.split(x)[-2] for x in all_templates if "Partial" not in x}.keys()
     remaining = set(s.replace(" ", "") for s in all_template_names) - \
         xmi_doc.concept_associations['GeneralUsage'].keys() - \
-        set(s[0].replace(" ", "") for s in concept_interpretation.concepts.keys()) -\
-        set(s.replace(" ", "") for s in non_leafs)
+        set(s[0].replace(" ", "") for s in concept_interpretation.concepts.keys())
+        # set(s.replace(" ", "") for s in non_leafs)
+        
+    condensed_to_spaced = {s.replace(" ", ""): s for s in all_template_names}
+        
+    print("Parameterizations solely based on template definition")
+    print("=====================================================")
         
     for concept_name in remaining:
         root = get_concept_root(all_templates, concept_name)
         if root:
+            print(condensed_to_spaced[concept_name], "->", root) 
             result["GeneralUsage"][concept_name].append({"ApplicableEntity": root})
 
     json.dump(result, open("xmi_concepts.json", "w", encoding="utf-8"), indent=1)

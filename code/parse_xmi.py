@@ -162,9 +162,9 @@ for item in xmi_doc:
         resource_to_package[item.name] = get_schema(item_package)
         heading = 'PropertyEnumerations' if item.type == "PENUM" else 'Types'
         get_schema(item_package)[heading].append(item.name)
-        if item.type in ("SELECT", "ENUM"):
+        if item.type in ("SELECT",):
             type_values.setdefault(item.name, []).extend(item.definition.values)
-        if item.type in ("PENUM"):
+        if item.type in ("ENUM", "PENUM"):
             type_values.setdefault(item.name, []).extend([c.name for c in item.children])
 
     elif item.type in ("FUNCTION", "RULE"):

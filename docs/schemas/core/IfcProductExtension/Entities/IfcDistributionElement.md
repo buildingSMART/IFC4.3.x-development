@@ -50,7 +50,7 @@ The quantities relating to the IfcDistributionElement are defined by the IfcElem
 
 The IfcDistributionElement may be contained within the spatial containment tree. The IfcSpace is the default spatial container.
 
-> NOTE&nbsp; The 'Spatial Containment' concept is mandatory in many model view definitions.
+> NOTE  The 'Spatial Containment' concept is mandatory in many model view definitions.
 
 #### IfcBuildingStorey
 

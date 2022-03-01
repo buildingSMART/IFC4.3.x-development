@@ -173,7 +173,7 @@ Figure 282 — Wall body extrusion curved
 
 The material information of the IfcWall is defined by
  IfcMaterialLayerSet, or as fallback by IfcMaterial, and it is attached either directly or at the IfcWallType. In this case, the material information does not allow to construct a shape by applying the layer definition to the axis representation, to enable this parametric definition, the IfcMaterialLayerSetUsage has to be used instead.
- 
+
 ### Material Layer Set Usage
 
 The material of IfcWall can be defined by
@@ -272,5 +272,5 @@ Spatial container for the element in case that it is placed on site (outside of 
 
 ### Surface Geometry
 
-> NOTE&nbsp; The 'Surface' can be used to define a surfacic model of the building (e.g. for analytical purposes, or for reduced Level of Detail representation).
+> NOTE  The 'Surface' can be used to define a surfacic model of the building (e.g. for analytical purposes, or for reduced Level of Detail representation).
 

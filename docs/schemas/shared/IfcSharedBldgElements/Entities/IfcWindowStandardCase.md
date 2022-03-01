@@ -32,5 +32,5 @@ As shown in Figure 1, the profile defines the outer boundary to which the window
 * _IfcWindowLiningProperties.FirstTransomOffset_ starting at the bottom edge of the rectangle (along local x axis) into the inner side of the rectangle, distance provided as percentage of overall height. Distance to the centre line of the transom. SecondTransomOffset defined accordingly.
 * _IfcWindowLiningProperties.FirstMullionOffset_ starting at the left edge of the rectangle (along local z-axis) into the inner side of the rectangle, distance provided as percentage of overall width. Distance to the centre line of the mullion. SecondMullionOffset defined accordingly.
 
-!["standard window"](../../../../figures/ifcwindowstandardcase-01.png "Figure 1 &mdash; Window profile")
+![standard window](../../../../figures/ifcwindowstandardcase-01.png "Figure 1 &mdash; Window profile")
 

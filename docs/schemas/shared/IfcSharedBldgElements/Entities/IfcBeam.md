@@ -83,8 +83,8 @@ Three-dimensional reference curve for the beam.
 
 The following additional constraints apply to the 'AdvancedSweptSolid' representation type:
 
-* **Solid**: IfcSurfaceCurveSweptAreaSolid, IfcFixedReferenceSweptAreaSolid, IfcExtrudedAreaSolidTapered, IfcRevolvedAreaSolidTapered shall be supported. 
->> NOTE&nbsp; View definitions and implementer agreement can further constrain the allowed swept solid types. 
+* **Solid**: IfcSurfaceCurveSweptAreaSolid, IfcFixedReferenceSweptAreaSolid, IfcExtrudedAreaSolidTapered, IfcRevolvedAreaSolidTapered shall be supported.
+>> NOTE  View definitions and implementer agreement can further constrain the allowed swept solid types.
 * **Profile**: see 'SweptSolid' geometric representation
 * **Extrusion**: not applicable
 
@@ -108,7 +108,7 @@ The following additional constraints apply to the 'SweptSolid' representation ty
 
 * **Solid**: IfcExtrudedAreaSolid, IfcRevolvedAreaSolid shall be supported
 * **Profile**: all subtypes of IfcProfileDef (with exception of IfcArbitraryOpenProfileDef)
-* **Extrusion**:&nbsp; All extrusion directions shall be supported.
+* **Extrusion**:  All extrusion directions shall be supported.
 
 Figure 200 illustrates the 'SweptSolid' geometric representation. There are no restrictions or conventions on how to use the local placement (black), solid of extrusion placement (red) and profile placement (green).
 

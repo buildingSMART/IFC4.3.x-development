@@ -43,7 +43,7 @@ Covering such as drywall applied to a wall or ceiling, for which the junction bo
 ### Element Nesting
 
 { .change-ifc4}
-> IFC4 ADD1 CHANGE&nbsp; Junction boxes no longer have ports defined, but rely on element nesting for indicating containment of electrical devices.
+> IFC4 ADD1 CHANGE  Junction boxes no longer have ports defined, but rely on element nesting for indicating containment of electrical devices.
 
 #### IfcDistributionFlowElement
 

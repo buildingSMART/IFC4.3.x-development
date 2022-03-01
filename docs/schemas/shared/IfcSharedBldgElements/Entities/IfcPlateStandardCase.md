@@ -24,25 +24,25 @@ A valid instance of _IfcPlateStandardCase_ relies on the provision of an _IfcMat
 The following constraints apply to the 'Clipping' representation:
 
 * **Solid**: see 'SweptSolid' shape representation,
-* **Profile**:&nbsp;see 'SweptSolid' shape representation,
-* **Extrusion**:&nbsp;see 'SweptSolid' shape representation,
-* **Material**:&nbsp;see 'SweptSolid' shape representation,
+* **Profile**: see 'SweptSolid' shape representation,
+* **Extrusion**: see 'SweptSolid' shape representation,
+* **Material**: see 'SweptSolid' shape representation,
 * **Boolean result**: The IfcBooleanClippingResult shall be supported, allowing for Boolean differences between the swept solid (here IfcExtrudedAreaSolid) and one or several IfcHalfSpaceSolid.
 
-&nbsp;
+
 
 <table>
 
  <tr>
   <td><img src="../../../../figures/ifcslab_advanced-layout1.gif" alt="advanced plate" border="0" height="274" width="399"></td>
-  <td><blockquote class="example">EXAMPLE&nbsp; Figure 1 illustrates a 'Clipping' geometric representation with definition of a plate using advanced geometric representation. The profile is extruded non-perpendicular and the plate body is clipped at the eave.</blockquote>
+  <td><blockquote class="example">EXAMPLE  Figure 1 illustrates a 'Clipping' geometric representation with definition of a plate using advanced geometric representation. The profile is extruded non-perpendicular and the plate body is clipped at the eave.</blockquote>
 
 </td>
  </tr>
 
  <tr>
   <td><p class="figure">Figure 1 &mdash; Plate body clipping</p></td>
-  <td>&nbsp;</td>
+  <td> </td>
  </tr>
 
 </table>
@@ -56,7 +56,7 @@ The following additional constraints apply to the swept solid representation:
 * **Extrusion**: The profile can be extruded perpendicularly or non-perpendicularly to the plane of the swept profile.
 * **Material**: The definition of the IfcMaterialLayerSetUsage, particularly of the OffsetFromReferenceLine and the _ForLayerSet.TotalThickness_, has to be consistent to the 'SweptSolid' representation.
 
-&nbsp;
+
 
 <table>
 
@@ -64,7 +64,7 @@ The following additional constraints apply to the swept solid representation:
   <td><img src="../../../../figures/ifcslab_standard-layout1.gif" alt="standard plate" border="0" height="274" width="399"></td>
   <td>
 
-<blockquote class="example">EXAMPLE&nbsp; Figure 1 illustrates a 'SweptSolid' geometric representation. The following interpretation of dimension parameter applies for polygonal plates (in ground floor view): <em>IfcArbitraryClosedProfileDef.OuterCurve</em> being a closed bounded curve is interpreted as area (or foot print) of the plate.</blockquote>
+<blockquote class="example">EXAMPLE  Figure 1 illustrates a 'SweptSolid' geometric representation. The following interpretation of dimension parameter applies for polygonal plates (in ground floor view): <em>IfcArbitraryClosedProfileDef.OuterCurve</em> being a closed bounded curve is interpreted as area (or foot print) of the plate.</blockquote>
 
 
  </td>
@@ -72,25 +72,25 @@ The following additional constraints apply to the swept solid representation:
 
  <tr>
   <td><p class="figure">Figure 1 &mdash; Plate body extrusion</p></td>
-  <td>&nbsp;</td>
+  <td> </td>
  </tr>
 
 </table>
 
 ### Material Layer Set Usage
 
-The material of the IfcPlateStandardCase is defined by IfcMaterialLayerSetUsage and attached by the IfcRelAssociatesMaterial.RelatingMaterial. It is accessible by the inverse HasAssociations relationship. Multi-layer plates can be represented by refering to several IfcMaterialLayer's within the IfcMaterialLayerSet that is referenced from the IfcMaterialLayerSetUsage.&nbsp;
+The material of the IfcPlateStandardCase is defined by IfcMaterialLayerSetUsage and attached by the IfcRelAssociatesMaterial.RelatingMaterial. It is accessible by the inverse HasAssociations relationship. Multi-layer plates can be represented by refering to several IfcMaterialLayer's within the IfcMaterialLayerSet that is referenced from the IfcMaterialLayerSetUsage.
 
-Material information can also be given at the IfcPlateType, defining the common attribute data for all occurrences of the same type.&nbsp;It is then accessible by the inverse IsDefinedBy relationship pointing to _IfcPlateType.HasAssociations_ and via _IfcRelAssociatesMaterial.RelatingMaterial_.
+Material information can also be given at the IfcPlateType, defining the common attribute data for all occurrences of the same type. It is then accessible by the inverse IsDefinedBy relationship pointing to _IfcPlateType.HasAssociations_ and via _IfcRelAssociatesMaterial.RelatingMaterial_.
 
-The IfcPlateStandardCase defines in addition that the IfcPlateType should have a unique IfcMaterialLayerSet, that is referenced by the&nbsp;IfcMaterialLayerSetUsage assigned to all occurrences of this IfcPlateType.
+The IfcPlateStandardCase defines in addition that the IfcPlateType should have a unique IfcMaterialLayerSet, that is referenced by the IfcMaterialLayerSetUsage assigned to all occurrences of this IfcPlateType.
 
 Figure 1 illustrates assignment of IfcMaterialLayerSetUsage and IfcMaterialLayerSet to the IfcPlateStandardCase as the plate occurrence and to the IfcPlateType. The same IfcMaterialLayerSet shall be shared by many occurrences of IfcMaterialLayerSetUsage. This relationship shall be consistent to the relationship between the IfcPlateType and the IfcPlateStandardCase.
 
 <table border="0" cellpadding="2" cellspacing="2">
 
 <tr><td width="610" align="left" valign="top">
-<p><img src="../../../../figures/ifcslab_materialusage-01.png" alt="Material layer set and usage" height="220" width="501">&nbsp;</p></td></tr>
+<p><img src="../../../../figures/ifcslab_materialusage-01.png" alt="Material layer set and usage" height="220" width="501"> </p></td></tr>
 
 <tr><td><p class="figure">Figure 1 &mdash; Plate type definition</p></td></tr>
 
@@ -105,7 +105,7 @@ As shown in Figure 106, the following conventions shall be met:
 * The Thickness of each IfcMaterialLayer shall be the parallel distance (measured perpendicular to the base plane). The TotalThickness of the IfcMaterialLayerSet is the sum of all layer thicknesses and in case of a perpendicular extrusion identical with _IfcExtrudedAreaSolid.Depth_
 * The _IfcMaterialLayerSetUsage.LayerSetDirection_ i always AXIS3.
 
-!["plate material layer set"](../../../../figures/ifcmateriallayersetusage_slab-01.png "Figure 2 &mdash; Plate material layers")
+![plate material layer set](../../../../figures/ifcmateriallayersetusage_slab-01.png "Figure 2 &mdash; Plate material layers")
 
 ### Product Local Placement
 

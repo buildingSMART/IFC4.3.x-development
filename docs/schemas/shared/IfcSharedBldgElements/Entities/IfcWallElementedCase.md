@@ -44,5 +44,5 @@ The use of local placement is defined at the supertype IfcWall. The local placem
 
 The 'Surface Geometry' shape representation can be used to define a surfacic model of the building (e.g. for analytical purposes, or for reduced Level of Detail representation). It could suppress the geometric details of the parts in the decomposition.
 
-> NOTE&nbsp; It is invalid to exchange a 'Body' shape representation of an IfcWallElementedCase. The body geometry is defined by the parts within the decomposition.
+> NOTE  It is invalid to exchange a 'Body' shape representation of an IfcWallElementedCase. The body geometry is defined by the parts within the decomposition.
 

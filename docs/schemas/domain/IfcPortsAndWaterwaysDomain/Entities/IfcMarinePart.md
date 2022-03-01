@@ -1,3 +1,3 @@
 # IfcMarinePart
 
-Part of a marine facility. 
+Part of a marine facility.

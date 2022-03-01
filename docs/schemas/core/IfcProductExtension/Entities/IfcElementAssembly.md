@@ -47,7 +47,7 @@ The IfcElementAssembly shall represent an aggregate, i.e. it should have other e
 
 Figure 1 illustrates spatial containment and element aggregation relationships.
 
-!["containment relationships"](../../../../figures/ifcelementassembly-containment.png "Figure 1 &mdash; Element assembly containment")
+![containment relationships](../../../../figures/ifcelementassembly-containment.png "Figure 1 &mdash; Element assembly containment")
 
 #### IfcMember
 

@@ -81,8 +81,8 @@ Three-dimensional reference curve for the member.
 
 The following additional constraints apply to the 'AdvancedSweptSolid' representation type:
 
-* **Solid**: IfcSurfaceCurveSweptAreaSolid, IfcFixedReferenceSweptAreaSolid, IfcExtrudedAreaSolidTapered, IfcRevolvedAreaSolidTapered shall be supported. 
->> NOTE&nbsp; View definitions and implementer agreements can further constrain the allowed swept solid types. 
+* **Solid**: IfcSurfaceCurveSweptAreaSolid, IfcFixedReferenceSweptAreaSolid, IfcExtrudedAreaSolidTapered, IfcRevolvedAreaSolidTapered shall be supported.
+>> NOTE  View definitions and implementer agreements can further constrain the allowed swept solid types.
 * **Profile**: see 'SweptSolid' geometric representation
 * **Extrusion**: not applicable
 
@@ -190,7 +190,7 @@ Figure 236 — Member body extrusion
 
 The material information of the IfcMember is defined by the
  IfcMaterialProfileSet or as fallback by IfcMaterial, and it is attached either directly or at the IfcMemberType. In this case, the material information does not allow to construct a shape by applying the profile definition to the axis representation, to enable this parametric definition, the IfcMaterialProfileSetUsage has to be used instead.
- 
+
 ### Material Profile Set Usage
 
 The material of the IfcMember is defined by

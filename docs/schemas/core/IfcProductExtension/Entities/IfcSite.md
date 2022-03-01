@@ -146,5 +146,5 @@ The set of IfcCartesianPoint and the set of IfcPolyline are included in the set 
 </tr>
 </table>
 
-> NOTE&nbsp; The geometric representation of the site has been based on the ARM level description of the site_shape_representation given within the ISO 10303-225 "Building Elements using explicit shape representation".
+> NOTE  The geometric representation of the site has been based on the ARM level description of the site_shape_representation given within the ISO 10303-225 "Building Elements using explicit shape representation".
 

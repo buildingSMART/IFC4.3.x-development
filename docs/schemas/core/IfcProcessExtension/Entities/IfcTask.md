@@ -112,13 +112,13 @@ IfcTask may be contained within an IfcTask using the IfcRelNests relationship. A
 
 As shown in Figure 1, the installation of a number of items of equipment within a particular space may be the subject of a single task which is identified as 'fix equipment in space 123'. IfcTask represents the occurrence of a work performance of a type of process in a construction plan.
 
-!["task example"](../../../../figures/ifctask_example.png "Figure 1 &mdash; Task visualization")
+![task example](../../../../figures/ifctask_example.png "Figure 1 &mdash; Task visualization")
 
 A task may nest other tasks as sub-items; the nesting relationship is modeled by IfcRelNests as shown in Figure 2. For example, the construction of a stud wall may be designated as a nesting task named 'install wall #1' including other tasks such as 'install dry wall', 'install studs', 'wall taping', and 'erect wall' as sub-processes. A value that indicates the relative tree view position of the task (in comparison to the tree view position of other tasks and the task hierarchy defined by IfcRelNests).
 
 The task order information that is used for viewing purposes is derived from the order defined by the IfcRelNests relationship and thus is independent of the logical task order defined through IfcRelSequence. The hierarchy and order defined through IfcRelNests enables to order the tasks in a tree view or list view structure.
 
-!["task instantiation diagram"](../../../../figures/ifctask_instantiation_diagram.png "Figure 2 &mdash; Task nesting relationships")
+![task instantiation diagram](../../../../figures/ifctask_instantiation_diagram.png "Figure 2 &mdash; Task nesting relationships")
 
 A top-level task is declared within the IfcProject using the IfcRelDeclares relationship.
 
@@ -126,7 +126,7 @@ A top-level task is declared within the IfcProject using the IfcRelDeclares rela
 
 The IfcTask defines the anticipated or actual occurrence of any task; common information about task types is handled by IfcTaskType.
 
-> EXAMPLE&nbsp; It includes fixed duration, fixed unit or fixed work. An IfcTask can be aggregated to a task type in order to specify a task sequence or any time related information, e.g. the duration of a task. Please see the documentation of IfcTaskType for further information.
+> EXAMPLE  It includes fixed duration, fixed unit or fixed work. An IfcTask can be aggregated to a task type in order to specify a task sequence or any time related information, e.g. the duration of a task. Please see the documentation of IfcTaskType for further information.
 
 ### Process Assignment
 

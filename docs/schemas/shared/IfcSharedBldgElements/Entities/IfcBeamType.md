@@ -37,9 +37,9 @@ The shared profile definition is defined by assigning an IfcMaterialProfileSet (
 
 The IfcBeamType may define the shared geometric representation for all beam occurrences. The RepresentationMaps attribute refers to a list of IfcRepresentationMap's, that allow for multiple geometric representations (e.g. with IfcShaperepresentation's having an RepresentationIdentifier 'Box', 'Axis', or 'Body'). It is only applicable if the IfcBeamType has only occurrences of type IfcBeam (See geometric use definition of IfcBeam for further information).
 
-> NOTE&nbsp; If the IfcBeamType has an associated IfcMaterialProfileSet, then no shared geometric representation shall be provided.
+> NOTE  If the IfcBeamType has an associated IfcMaterialProfileSet, then no shared geometric representation shall be provided.
 
-> NOTE&nbsp; The product shape representations are defined as RepresentationMaps (attribute of the supertype IfcTypeProduct), which get assigned by an element occurrence instance through the _IfcShapeRepresentation.Item[n]_ being an IfcMappedItem. See IfcTypeProduct for further information.
+> NOTE  The product shape representations are defined as RepresentationMaps (attribute of the supertype IfcTypeProduct), which get assigned by an element occurrence instance through the _IfcShapeRepresentation.Item[n]_ being an IfcMappedItem. See IfcTypeProduct for further information.
 
-> NOTE&nbsp; The values of attributes RepresentationIdentifier and RepresentationType of IfcShapeRepresentation are restricted in the same way as those for IfcBeam
+> NOTE  The values of attributes RepresentationIdentifier and RepresentationType of IfcShapeRepresentation are restricted in the same way as those for IfcBeam
 

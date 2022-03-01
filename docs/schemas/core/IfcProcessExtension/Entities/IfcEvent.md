@@ -53,7 +53,7 @@ The IfcEvent defines the anticipated or actual occurrence of any event; common i
 
 For building operation scenarios, IfcEvent may be assigned to a product (IfcElement subtype) using IfcRelAssignsToProduct to indicate a specific product occurrence that sources the event.
 
-> EXAMPLE&nbsp; An IfcSensor for a motion sensor may have a "Motion Sensed" event. If the IfcEvent is defined by an IfcEventType and the IfcEventType is assigned to a product type (using IfcRelAssignsToProduct), then the IfcEvent must be assigned to one or more occurrences of the specified product type using IfcRelAssignsToProduct.
+> EXAMPLE  An IfcSensor for a motion sensor may have a "Motion Sensed" event. If the IfcEvent is defined by an IfcEventType and the IfcEventType is assigned to a product type (using IfcRelAssignsToProduct), then the IfcEvent must be assigned to one or more occurrences of the specified product type using IfcRelAssignsToProduct.
 
 ### Property Sets for Objects
 

@@ -14,7 +14,7 @@ Elevator or lift being a transport device to move people of good vertically.
 Escalator being a transport device to move people. It consists of individual linked steps that move up and down on tracks while keeping the threads horizontal.
 
 ### HAULINGGEAR
-A device used for hauling goods. 
+A device used for hauling goods.
 
 ### LIFTINGGEAR
 A device used for lifting or lowering heavy goods. It may be manually operated or electrically or pneumatically driven.

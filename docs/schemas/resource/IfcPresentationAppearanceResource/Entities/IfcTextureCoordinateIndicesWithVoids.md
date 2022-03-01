@@ -5,7 +5,7 @@ The _IfcTextureCoordinateIndicesWithVoids_ is a subtype of _IfcTextureCoordinate
 * the first dimension corresponds to the list position of the inner loops at _IfcIndexedPolygonalFaceWithVoids_ referenced by _TexCoordsOf_
 * the second dimension corresponds to the list position of the vertices at the n<sup>th</sup> inner loop at _IfcIndexedPolygonalFaceWithVoids_
 
-> HISTORY&nbsp; New entity in IFC4.3.0.0
+> HISTORY  New entity in IFC4.3.0.0
 
 ## Attributes
 

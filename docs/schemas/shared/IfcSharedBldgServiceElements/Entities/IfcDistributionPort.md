@@ -28,7 +28,7 @@ Enumeration that identifies the system type.  If a system type is defined, the p
 **IfcDistributionPort** may be connected to other objects as follows using the indicated relationship:
 
 * **IfcDistributionPort** (IfcRelConnectsPorts) : Indicates a connection to another port having the same type and opposite flow direction. For port connections between elements, the RelatingPort is set to a port having _FlowDirection=SOURCE_ and the RelatedPort is set to a port having _FlowDirection=SINK_. For aggregation scenarios, ports on a device may be mapped to aggregated devices within, in which case ports on the outer device indicate a single FlowDirection but have an additional connection internally to a port on an aggregated inner device. Refer to [IfcUnitaryEquipment](../../ifchvacdomain/lexical/ifcunitaryequipment.htm) for an example.
-* IfcDistributionElement (through IfcRelConnectsPortToElement): For dynamic ports, indicates the containing element. 
+* IfcDistributionElement (through IfcRelConnectsPortToElement): For dynamic ports, indicates the containing element.
 
 Figure 302 illustrates distribution port connectivity.
 
@@ -69,7 +69,7 @@ The Location is the midpoint of the physical connection, unless otherwise indica
 
 The Axis points in the direction of the physical connection away from the product if FlowDirection equals SOURCE (or SOURCEANDSINK or NOTDEFINED), or points opposite direction (to the product) if the FlowDirection equals SINK.
 
-> NOTE&nbsp; The rationale for positioning the Axis in the direction of flow is to allow for the same geometry to be used, such as for connectors with polarized cross-section.
+> NOTE  The rationale for positioning the Axis in the direction of flow is to allow for the same geometry to be used, such as for connectors with polarized cross-section.
 
 The RefDirection points in the direction of the local X axis of the material profile, where the local Y axis points up if looking towards the Axis where the local X axis points right.
 

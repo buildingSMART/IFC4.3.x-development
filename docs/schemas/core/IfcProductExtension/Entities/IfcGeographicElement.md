@@ -23,8 +23,8 @@ Either there is no geographic element type object associated, i.e. the _IsTypedB
 
 An IfcGeographicElement might be further qualified by referencing a feature catalog as a particular classification. The feature classification is assigned using the inverse relationship HasAssociations pointing to IfcClassificationReference. The attributes should have the following meaning:
 
-* Catalog : _IfcClassification.Name_ 
-* Identity: _IfcClassificationReference.Identification_ 
+* Catalog : _IfcClassification.Name_
+* Identity: _IfcClassificationReference.Identification_
 * ElementName: _IfcClassificationReference.Name_
 
 ### Object Typing

@@ -50,11 +50,11 @@ As shown in Figure 1, the following interpretation of dimension parameter applie
 * _IfcRectangleProfileDef.XDim_ interpreted as projection height
 * _IfcExtrudedAreaSolid.Depth_ is interpreted as projection depth
 
-> NOTE&nbsp; Rectangles are now defined centric, the placement location has to be set: > * IfcCartesianPoint(XDim/2,YDim/2)
+> NOTE  Rectangles are now defined centric, the placement location has to be set: > * IfcCartesianPoint(XDim/2,YDim/2)
 
-> NOTE&nbsp; The local placement directions for the IfcProjectionElement are only given as an example, other directions are valid as well.
+> NOTE  The local placement directions for the IfcProjectionElement are only given as an example, other directions are valid as well.
 
-!["projection"](../../../../figures/ifcprojectionelement-layout1.png "Figure 1 &mdash; Projection representation")
+![projection](../../../../figures/ifcprojectionelement-layout1.png "Figure 1 &mdash; Projection representation")
 
 The general b-rep geometric representation of IfcProjectionElement is defined using the Brep geometry. The Brep representation allows for the representation of complex element shape. The following attribute values for the IfcShapeRepresentation holding this geometric representation shall be used:
 

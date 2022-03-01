@@ -8,7 +8,7 @@ Part of a bridge.
 
 The body (or solid model) geometric representation (if the bridge part has an independent geometric representation) of IfcBridgePart is defined using faceted B-Rep capabilities (with or without voids), based on the IfcFacetedBrep or on the IfcFacetedBrepWithVoids. In the case of alignment based infrastructure, the geometric representation can be defined using IfcSectionedSolidHorizontal optionally IfcSweptAreaSolid.
 
-> NOTE&nbsp; Since the bridge part shape is usually described by the exterior building elements, an independent shape representation shall only be given, if the bridge part is exposed independently from its constituting elements and such independent geometric representation may be prohibited in model view definitions.
+> NOTE  Since the bridge part shape is usually described by the exterior building elements, an independent shape representation shall only be given, if the bridge part is exposed independently from its constituting elements and such independent geometric representation may be prohibited in model view definitions.
 
 ### Object Predefined Type
 
@@ -23,7 +23,7 @@ The local placement for IfcBridgePart is defined in its supertype IfcProduct. It
 
 ### Spatial Composition
 
-> NOTE&nbsp; By using the inverse relationship _IfcBridgePart.Decomposes_ it references (IfcBridge || IfcBridgePart) through _IfcRelAggregates.RelatingObject_IfcBridgePart_, the referenced 
+> NOTE  By using the inverse relationship _IfcBridgePart.Decomposes_ it references (IfcBridge || IfcBridgePart) through _IfcRelAggregates.RelatingObject_IfcBridgePart_, the referenced
 IfcBridgePart needs to have a different and higher
  CompositionType, i.e. COMPLEX (if the other IfcBridgePart has ELEMENT), or ELEMENT (if the other
  IfcBridgePart has PARTIAL)._
@@ -46,9 +46,9 @@ Elements can also be referenced in an IfcBridgePart, for example, if they span t
 
 ### Spatial Decomposition
 
-> NOTE&nbsp; By using the inverse relationship _IfcBridgePart.IsDecomposedBy_ it references IfcBridgePart through _IfcRelAggregates.RelatedObjects_. If it refers to another instance of IfcBridgePart, the referenced IfcBridgePart needs to have a different and lower CompositionType, i.e. ELEMENT (if the other IfcBuildingStorey has COMPLEX), or PARTIAL (if the other IfcBuildingStorey has ELEMENT).
+> NOTE  By using the inverse relationship _IfcBridgePart.IsDecomposedBy_ it references IfcBridgePart through _IfcRelAggregates.RelatedObjects_. If it refers to another instance of IfcBridgePart, the referenced IfcBridgePart needs to have a different and lower CompositionType, i.e. ELEMENT (if the other IfcBuildingStorey has COMPLEX), or PARTIAL (if the other IfcBuildingStorey has ELEMENT).
 
-> NOTE&nbsp; Multi storey spaces shall be spatially contained by only a single building storey, usually it is the building storey where the base of the space lies.
+> NOTE  Multi storey spaces shall be spatially contained by only a single building storey, usually it is the building storey where the base of the space lies.
 
 #### IfcBridgePart
 

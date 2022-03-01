@@ -7,7 +7,7 @@ Enumeration of the different turnouts used in railway track.
 ### DERAILMENT_TURNOUT
 Derailment turnout.
 
-### SLIP_TURNOUT_AND_SCISSORS_CROSSING 
+### SLIP_TURNOUT_AND_SCISSORS_CROSSING
 Slip turnout and scissors crossing.
 
 ### THREE_WAYS_TURNOUT

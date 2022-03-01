@@ -46,13 +46,13 @@ IfcProcedure defines the anticipated or actual occurrence of any procedure; comm
 
 ### Process Assignment
 
-> NOTE&nbsp; A particular type of IfcProcedure is a caution, warning or other form of advisory note. Typically, it is anticipated that such a procedure would be assigned to the specific IfcProcess for which it gives advice using IfcRelAssignsToProcess.
+> NOTE  A particular type of IfcProcedure is a caution, warning or other form of advisory note. Typically, it is anticipated that such a procedure would be assigned to the specific IfcProcess for which it gives advice using IfcRelAssignsToProcess.
 
 ### Product Assignment
 
 For building operation scenarios, IfcProcedure may be assigned to a product (IfcElement subtype) using IfcRelAssignsToProduct to indicate a specific product occurrence that performs the procedure.
 
-> EXAMPLE&nbsp; An IfcActuator may have a "Close" procedure. If the IfcProcedure is defined by an IfcProcedureType and the IfcProcedureType is assigned to a product type (using IfcRelAssignsToProduct), then the IfcProcedure must be assigned to one or more occurrences of the specified product type using IfcRelAssignsToProduct.
+> EXAMPLE  An IfcActuator may have a "Close" procedure. If the IfcProcedure is defined by an IfcProcedureType and the IfcProcedureType is assigned to a product type (using IfcRelAssignsToProduct), then the IfcProcedure must be assigned to one or more occurrences of the specified product type using IfcRelAssignsToProduct.
 
 ### Property Sets for Objects
 

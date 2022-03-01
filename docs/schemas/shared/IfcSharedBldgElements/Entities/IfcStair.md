@@ -42,7 +42,7 @@ Either there is no stair type object associated, i.e. the _IsTypedBy_ inverse re
 
 The walking line is represented by a two-dimensional open curve as the axis. The curve is directed into the upward direction (direction has to be interpreted as specified at the subtypes of IfcCurve).
 
-> NOTE&nbsp; The 'Axis' representation of IfcStair may be provided even if the IfcStair has components with own shape representations.
+> NOTE  The 'Axis' representation of IfcStair may be provided even if the IfcStair has components with own shape representations.
 
 ### Body SweptSolid Geometry
 

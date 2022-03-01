@@ -30,9 +30,9 @@ An _IfcZone_ is grouped by the objectified relationship _IfcRelAssignsToGroup_. 
 
 An IfcZone is a spatial system under which individual IfcSpace's (and other IfcZone's) are grouped. In contrary to the IfcSpatialZone entity, IfcZone is a mere grouping, it can not define an own geometric representation and placement. Therefore it cannot be used for spatial zones having a different shape and size compared to the shape and size of aggregated spaces.
 
-> NOTE&nbsp; The IfcZone is regarded as the spatial system (as compared to the building service, electrical, or analytical system), the name remains IfcZone for compatibility reasons, instead of using a proper naming convention, like IfcSpatialSystem.
+> NOTE  The IfcZone is regarded as the spatial system (as compared to the building service, electrical, or analytical system), the name remains IfcZone for compatibility reasons, instead of using a proper naming convention, like IfcSpatialSystem.
 
-> NOTE&nbsp; One of the purposes of a zone is to define a fire compartmentation. In this case it defines the geometric information about the fire compartment (through the contained spaces) and information, whether this compartment is ventilated or sprinkler protected. In addition the fire risk code and the hazard type can be added, the coding is normally defined within a national fire regulation. All that information is available within the relevant property sets. Again, if an independent shape has to be provided to the fire compartment, then the entity IfcSpatialZone shall be used.
+> NOTE  One of the purposes of a zone is to define a fire compartmentation. In this case it defines the geometric information about the fire compartment (through the contained spaces) and information, whether this compartment is ventilated or sprinkler protected. In addition the fire risk code and the hazard type can be added, the coding is normally defined within a national fire regulation. All that information is available within the relevant property sets. Again, if an independent shape has to be provided to the fire compartment, then the entity IfcSpatialZone shall be used.
 
 In case of a zone denoting a (fire) compartment, the following types should be used, if applicable, as values of the ObjectType attribute:
 

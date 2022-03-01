@@ -47,4 +47,4 @@ Fixed panel:
 User defined.
 
 ### NOTDEFINED
-Not defined. 
+Not defined.

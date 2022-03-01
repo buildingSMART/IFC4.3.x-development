@@ -30,14 +30,14 @@ The placement for the grid has to be given.
 
 The 2D geometric representation of IfcGrid is defined using the 'GeometricCurveSet' geometry. The following attribute values should be inserted
 
-*  _IfcShapeRepresentation.RepresentationIdentifier_ = 'FootPrint'. 
-*  _IfcShapeRepresentation.RepresentationType_ = 'GeometricCurveSet' . 
+*  _IfcShapeRepresentation.RepresentationIdentifier_ = 'FootPrint'.
+*  _IfcShapeRepresentation.RepresentationType_ = 'GeometricCurveSet' .
 
 The following constraints apply to the 2D representation:
 
-* The IfcGeometricCurveSet shall be an (and the only) Item of the IfcShapeRepresentation. It should contain an IfcGeometricCurveSet containing subtypes of IfcCurve, each representing a grid axis. Applicable subtypes of IfcCurve are: IfcPolyline, IfcCircle, IfcTrimmedCurve (based on BaseCurve referencing IfcLine or IfcCircle), and IfcOffsetCurve2D. 
-* Each subtype of IfcCurve may have a curve style assigned, using IfcStyledItem referencing IfcCurveStyle. 
-* Optionally the grid axis labels may be added as IfcTextLiteral, and they may have text styles assigned, using IfcStyledItem referencing IfcTextStyle. 
+* The IfcGeometricCurveSet shall be an (and the only) Item of the IfcShapeRepresentation. It should contain an IfcGeometricCurveSet containing subtypes of IfcCurve, each representing a grid axis. Applicable subtypes of IfcCurve are: IfcPolyline, IfcCircle, IfcTrimmedCurve (based on BaseCurve referencing IfcLine or IfcCircle), and IfcOffsetCurve2D.
+* Each subtype of IfcCurve may have a curve style assigned, using IfcStyledItem referencing IfcCurveStyle.
+* Optionally the grid axis labels may be added as IfcTextLiteral, and they may have text styles assigned, using IfcStyledItem referencing IfcTextStyle.
 
 <table cellpadding="2" cellspacing="2">
       <tbody>
@@ -54,7 +54,7 @@ The following constraints apply to the 2D representation:
               The <em>Representation</em> of <em>IfcGrid</em> is
               defined using <em>IfcProductRepresentation</em>,
               referencing an <em>IfcShapeRepresentation</em>, that
-              includes&nbsp;<em>IfcGeometricCurveSet</em> as
+              includes <em>IfcGeometricCurveSet</em> as
               <em>Items</em>. All grid axes are added as
               <em>IfcPolyline</em> to the
               <em>IfcGeometricCurveSet</em>.
@@ -66,13 +66,13 @@ The following constraints apply to the 2D representation:
             <p class="figure">Figure 1 &mdash; Grid layout</p>
           </td>
           <td>
-            &nbsp;
+
           </td>
         </tr>
       </tbody>
     </table>
 
-&nbsp;
+
 
 <table cellpadding="2" cellspacing="2">
       <tbody>
@@ -84,7 +84,7 @@ The following constraints apply to the 2D representation:
             <blockquote>
               As shown in Figure 32, the attributes <em>UAxes</em>
               and <em>VAxes</em> define lists of <em>IfcGridAxis</em>
-              within the context of the&nbsp;grid. Each instance of
+              within the context of the grid. Each instance of
               <em>IfcGridAxis</em> refers to the same instance of
               <em>IfcCurve</em> (here the subtype <em>IfcPolyline</em>)
               that is contained within the
@@ -98,7 +98,7 @@ The following constraints apply to the 2D representation:
             <p class="figure">Figure 2 &mdash; Grid representation</p>
           </td>
           <td>
-            &nbsp;
+
           </td>
         </tr>
       </tbody>
@@ -108,6 +108,6 @@ The following constraints apply to the 2D representation:
 
 The local placement for IfcGrid is defined in its supertype IfcProduct. It is defined by the IfcLocalPlacement, which defines the local coordinate system that is referenced by all geometric representations.
 
-* The PlacementRelTo relationship of IfcLocalPlacement shall point (if given) to the local placement of the same IfcSpatialStructureElement, which is used in the ContainedInStructure inverse attribute, or to a spatial structure element at a higher level, referenced by that. 
+* The PlacementRelTo relationship of IfcLocalPlacement shall point (if given) to the local placement of the same IfcSpatialStructureElement, which is used in the ContainedInStructure inverse attribute, or to a spatial structure element at a higher level, referenced by that.
 * If the relative placement is not used, the absolute placement is defined within the world coordinate system.
 

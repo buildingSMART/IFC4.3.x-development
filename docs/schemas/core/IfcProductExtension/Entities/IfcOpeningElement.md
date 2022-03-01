@@ -65,23 +65,23 @@ The following additional constraints apply to the swept solid representation:
 * **Profile**: IfcRectangleProfileDef, IfcCircleProfileDef and IfcArbitraryClosedProfileDef shall be supported.
 * **Extrusion**: The profile shall be extruded horizontally (perpendicular to the extrusion direction of the voided element such as for wall openings), or vertically (in the extrusion direction of the voided element such as for for floor openings). If multiple instances of IfcExtrudedAreaSolid are used, the extrusion direction of each extrusion should be equal.
 
-> NOTE&nbsp; In case of non-parallel jambs, the shape representation shall be a 'SweptSolid' representation with vertical extrusion.
+> NOTE  In case of non-parallel jambs, the shape representation shall be a 'SweptSolid' representation with vertical extrusion.
 
 Figure 1 illustrates an opening with horizontal extrusion.
 
-> NOTE&nbsp; The local placement directions for the IfcOpeningElement are only given as an example, other directions are valid as well.
+> NOTE  The local placement directions for the IfcOpeningElement are only given as an example, other directions are valid as well.
 
-!["standard opening"](../../../../figures/ifcopeningelement_horizontal-layout1.png "Figure 1 &mdash; Opening with full extrusion")
+![standard opening](../../../../figures/ifcopeningelement_horizontal-layout1.png "Figure 1 &mdash; Opening with full extrusion")
 
 Figure 2 illustrates an opening for a recess.
 
-> NOTE&nbsp; The local placement directions for the IfcOpeningElement are only given as an example, other directions are valid as well.
+> NOTE  The local placement directions for the IfcOpeningElement are only given as an example, other directions are valid as well.
 
-> NOTE&nbsp; Rectangles are now defined centric, the placement location has to be set:
+> NOTE  Rectangles are now defined centric, the placement location has to be set:
 
 * IfcCartesianPoint(XDim/2,YDim/2)
 
-!["recess"](../../../../figures/ifcopeningelement_recess-layout1.png "Figure 2 &mdash; Opening with recess extrusion")
+![recess](../../../../figures/ifcopeningelement_recess-layout1.png "Figure 2 &mdash; Opening with recess extrusion")
 
 _Swept Solid Representation with Vertical Extrusion_
 
@@ -100,9 +100,9 @@ Vertical extrusions shall be used when an opening or recess has a non rectangula
 
 Figure 3 shows a vertical extrusion with multiple extrusion bodies for the opening. Each extrusion body has a different extrusion lenght.
 
-> NOTE&nbsp; The local placement directions for the IfcOpeningElement are only given as an example, other directions are valid as well.
+> NOTE  The local placement directions for the IfcOpeningElement are only given as an example, other directions are valid as well.
 
-!["vertical extrusion"](../../../../figures/ifcopeningelement_vertical-layout1.png "Figure 3 &mdash; Opening with multiple extrusions")
+![vertical extrusion](../../../../figures/ifcopeningelement_vertical-layout1.png "Figure 3 &mdash; Opening with multiple extrusions")
 
 ### Product Local Placement
 

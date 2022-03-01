@@ -4,21 +4,21 @@ Enumeration of Virtual Element Types.
 
 ## Items
 
-### BOUNDARY	
+### BOUNDARY
 Boundary.
 
-### CLEARANCE	
+### CLEARANCE
 Clearance.
 
-### PROVISIONFORAREA	
+### PROVISIONFORAREA
 Provision for area.
 
-### PROVISIONFORSPACE	
+### PROVISIONFORSPACE
 Provision for space
 
-### PROVISIONFORVOID	
+### PROVISIONFORVOID
 Provision for void.
 
-### NOTDEFINED	
+### NOTDEFINED
 
 ### USERDEFINED

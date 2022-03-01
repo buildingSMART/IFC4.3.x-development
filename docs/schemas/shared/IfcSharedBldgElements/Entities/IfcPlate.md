@@ -120,7 +120,7 @@ Figure 247 — Plate body extrusion
 
 The material information of the IfcPlate is defined by
  IfcMaterialLayerSet, or by IfcMaterial, and it is attached either directly or at the IfcPlateType. In this case, the material information does not allow to construct a shape by applying the layer definition to the plane of the shape representation, to enable this parametric definition, the IfcMaterialLayerSetUsage has to be used instead.
- 
+
 ### Material Layer Set Usage
 
 The material of IfcPlate can be defined by
@@ -209,5 +209,5 @@ Spatial container for the element in case that it is placed on site (outside of 
 
 ### Surface 3D Geometry
 
-> NOTE&nbsp; The 'Surface' can be used to define a surfacic model of the building (e.g. for analytical purposes, or for reduced Level of Detail representation).
+> NOTE  The 'Surface' can be used to define a surfacic model of the building (e.g. for analytical purposes, or for reduced Level of Detail representation).
 

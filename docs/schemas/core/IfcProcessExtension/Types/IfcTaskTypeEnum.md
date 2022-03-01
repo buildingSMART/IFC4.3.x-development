@@ -13,7 +13,7 @@ Adjustment
 Attendance or waiting on other things happening.
 
 ### CALIBRATION
-Calibration 
+Calibration
 
 ### CONSTRUCTION
 Constructing or building something.
@@ -73,4 +73,4 @@ The set of tasks required to diagnose commonly encountered performance problems,
 User defined.
 
 ### NOTDEFINED
-Undefined. 
+Undefined.

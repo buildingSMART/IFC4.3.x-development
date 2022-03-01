@@ -26,12 +26,12 @@ A valid instance of _IfcSlabStandardCase_ relies on the provision of an _IfcMate
 The following constraints apply to the 'Clipping' representation:
 
 * **Solid**: see 'SweptSolid' shape representation,
-* **Profile**:&nbsp;see 'SweptSolid' shape representation,
-* **Extrusion**:&nbsp;see 'SweptSolid' shape representation,
-* **Material**:&nbsp;see 'SweptSolid' shape representation,
+* **Profile**: see 'SweptSolid' shape representation,
+* **Extrusion**: see 'SweptSolid' shape representation,
+* **Material**: see 'SweptSolid' shape representation,
 * **Boolean result**: The IfcBooleanClippingResult shall be supported, allowing for Boolean differences between the swept solid (here IfcExtrudedAreaSolid) and one or several IfcHalfSpaceSolid.
 
-&nbsp;
+
 
 <table>
 
@@ -39,14 +39,14 @@ The following constraints apply to the 'Clipping' representation:
   <td><img src="../../../../figures/ifcslab_advanced-layout1.gif" alt="advanced slab" border="0" height="274" width="399"></td>
   <td>
 
-<blockquote class="example">EXAMPLE&nbsp; Figure 1 illustrates a 'Clipping' geometric representation with definition of a roof slab using advanced geometric representation. The profile is extruded non-perpendicular and the slab body is clipped at the eave.</blockquote>
+<blockquote class="example">EXAMPLE  Figure 1 illustrates a 'Clipping' geometric representation with definition of a roof slab using advanced geometric representation. The profile is extruded non-perpendicular and the slab body is clipped at the eave.</blockquote>
 
 </td>
  </tr>
 
  <tr>
   <td><p class="figure">Figure 1 &mdash; Slab body clipping</p></td>
-  <td>&nbsp;</td>
+  <td> </td>
  </tr>
 
 </table>
@@ -60,15 +60,15 @@ The following additional constraints apply to the swept solid representation:
 * **Extrusion**: The profile can be extruded perpendicularly or non-perpendicularly to the plane of the swept profile.
 * **Material**: The definition of the IfcMaterialLayerSetUsage, particularly of the OffsetFromReferenceLine and the _ForLayerSet.TotalThickness_, has to be consistent to the 'SweptSolid' representation.
 
-&nbsp;
+
 
 <table>
- 
+
 <tr>
   <td><img src="../../../../figures/ifcslab_standard-layout1.gif" alt="standard slab" border="0" height="274" width="399"></td>
   <td>
 
-<blockquote class="example">EXAMPLE&nbsp; Figure 1 illustrates a 'SweptSolid' geometric representation. The following interpretation of dimension parameter applies for polygonal slabs (in ground floor view):
+<blockquote class="example">EXAMPLE  Figure 1 illustrates a 'SweptSolid' geometric representation. The following interpretation of dimension parameter applies for polygonal slabs (in ground floor view):
  <em>IfcArbitraryClosedProfileDef.OuterCurve</em>: closed bounded curve interpreted as area (or foot print) of the slab.</blockquote>
 
 </td>
@@ -76,29 +76,29 @@ The following additional constraints apply to the swept solid representation:
 
  <tr>
   <td><p class="figure">Figure 1 &mdash; Slab body extrusion</p></td>
-  <td>&nbsp;</td>
+  <td> </td>
  </tr>
 
 </table>
 
 ### Material Layer Set Usage
 
-Multi-layer slabs can be represented by refering to several IfcMaterialLayer's within the IfcMaterialLayerSet that is referenced from the IfcMaterialLayerSetUsage.&nbsp;
+Multi-layer slabs can be represented by refering to several IfcMaterialLayer's within the IfcMaterialLayerSet that is referenced from the IfcMaterialLayerSetUsage.
 
-Material information can also be given at the IfcSlabType, defining the common attribute data for all occurrences of the same type. It is then accessible by the inverse IsDefinedBy relationship pointing to _IfcSlabType.HasAssociations_ and via _IfcRelAssociatesMaterial.RelatingMaterial_. The IfcSlabStandardCase defines in addition that the IfcSlabType should have a unique IfcMaterialLayerSet, that is referenced by the&nbsp;IfcMaterialLayerSetUsage assigned to all occurrences of this IfcSlabType.
+Material information can also be given at the IfcSlabType, defining the common attribute data for all occurrences of the same type. It is then accessible by the inverse IsDefinedBy relationship pointing to _IfcSlabType.HasAssociations_ and via _IfcRelAssociatesMaterial.RelatingMaterial_. The IfcSlabStandardCase defines in addition that the IfcSlabType should have a unique IfcMaterialLayerSet, that is referenced by the IfcMaterialLayerSetUsage assigned to all occurrences of this IfcSlabType.
 
-&nbsp;
+
 
 <table>
 
  <tr>
   <td><img src="../../../../figures/ifcslab_materialusage-01.png" alt="Material layer set and usage" height="220" width="501"></td>
-  
-<td><blockquote class="example">EXAMPLE&nbsp; Figure 1 illustrates assignment of <em>IfcMaterialLayerSetUsage</em> and <em>IfcMaterialLayerSet</em> to the <em>IfcSlabStandardCase</em> as the slab occurrence and to the <em>IfcSlabType</em>. The same <em>IfcMaterialLayerSet</em> shall be shared by many occurrences of <em>IfcMaterialLayerSetUsage</em>. This relationship shall be consistent to the relationship between the <em>IfcSlabType</em> and the <em>IfcSlabStandardCase</em>.</blockquote></td>
+
+<td><blockquote class="example">EXAMPLE  Figure 1 illustrates assignment of <em>IfcMaterialLayerSetUsage</em> and <em>IfcMaterialLayerSet</em> to the <em>IfcSlabStandardCase</em> as the slab occurrence and to the <em>IfcSlabType</em>. The same <em>IfcMaterialLayerSet</em> shall be shared by many occurrences of <em>IfcMaterialLayerSetUsage</em>. This relationship shall be consistent to the relationship between the <em>IfcSlabType</em> and the <em>IfcSlabStandardCase</em>.</blockquote></td>
  </tr>
- 
+
 <tr><td><p class="figure">Figure 1 &mdash; Slab type definition</p></td>
-  <td>&nbsp;</td>
+  <td> </td>
  </tr>
 
 </table>

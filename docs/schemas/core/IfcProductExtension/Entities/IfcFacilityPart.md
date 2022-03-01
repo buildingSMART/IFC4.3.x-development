@@ -21,7 +21,7 @@ Either _PredefinedType_ is unset or the inherited attribute _ObjectType_ shall b
 
 The body (or solid model) geometric representation (if the facility part has an independent geometric representation) of IfcFacilityPart is defined using faceted B-Rep capabilities (with or without voids), based on the IfcFacetedBrep or on the IfcFacetedBrepWithVoids or in the case of alignment based infrastructure using IfcSectionedSolidHorizontal optionally IfcSweptAreaSolid.
 
-> NOTE&nbsp; Since the facility part shape is usually described by the exterior facility elements, an independent shape representation shall only be given, if the facility part is exposed independently from its constituting elements and such independent geometric representation may be prohibited in model view definitions.
+> NOTE  Since the facility part shape is usually described by the exterior facility elements, an independent shape representation shall only be given, if the facility part is exposed independently from its constituting elements and such independent geometric representation may be prohibited in model view definitions.
 
 ### Product Local Placement
 
@@ -32,7 +32,7 @@ The local placement for IfcFacilityPart is defined in its supertype IfcProduct. 
 
 ### Spatial Composition
 
-> NOTE&nbsp; By using the inverse relationship _IfcFacilityPart.Decomposes_ it references (IfcFacility || IfcFacilityPart) through _IfcRelAggregates.RelatingObject_IfcFacilityPart_, the referenced 
+> NOTE  By using the inverse relationship _IfcFacilityPart.Decomposes_ it references (IfcFacility || IfcFacilityPart) through _IfcRelAggregates.RelatingObject_IfcFacilityPart_, the referenced
 IfcFacilityPart needs to have a different and higher
  CompositionType, i.e. COMPLEX (if the other IfcFacilityPart has ELEMENT), or ELEMENT (if the other
  IfcFacilityPart has PARTIAL)._

@@ -25,42 +25,42 @@ A valid instance of _IfcMemberStandardCase_ relies on the provision of an _IfcMa
 
 The following additional constraints apply to the 'Axis' representation, if the 'Body' shape representation has the RepresentationType : 'SweptSolid':
 
-* Axis 
+* Axis
     * IfcPolyline having two Points, or IfcTrimmedCurve with BasisCurve of Type IfcLine for 'SweptSolid' provided as IfcExtrudedAreaSolid. The axis curve lies on the z axis of the object coordinate system.
-    * IfcTrimmedCurve with BasisCurve of Type IfcCircle for 'SweptSolid' provided as IfcRevolvedAreaSolid. The axis curve lies on the x/z plane of the object coordinate system, the tangent at the start is along the positive z-axis. 
+    * IfcTrimmedCurve with BasisCurve of Type IfcCircle for 'SweptSolid' provided as IfcRevolvedAreaSolid. The axis curve lies on the x/z plane of the object coordinate system, the tangent at the start is along the positive z-axis.
 
-&nbsp;
+
 
 <table border="0" cellpadding="2" cellspacing="2" summary="Axis">
- 
+
 <tr>
   <td align="left" valign="top" width="350"><img src="../../../../figures/ifcmemberstandardcase_axis-01.png" alt="Axis" border="1"></td>
   <td>
 
-<blockquote class="example">EXAMPLE&nbsp; As shown in Figure 101, the axis representation can be used to represent the system length of a member that may extent the body length of the member.</blockquote>
+<blockquote class="example">EXAMPLE  As shown in Figure 101, the axis representation can be used to represent the system length of a member that may extent the body length of the member.</blockquote>
 
  </td>
  </tr>
 
  <tr>
   <td><p class="figure">Figure 1 &mdash; Member axis representation</p></td>
-  <td>&nbsp;</td>
+  <td> </td>
  </tr>
 
 </table>
 
 <table border="0" cellpadding="2" cellspacing="2" summary="Axis">
- 
+
 <tr>
   <td align="left" valign="top" width="350"><img src="../../../../figures/ifcmemberstandardcase_axis-02.png" alt="Axis" border="1"></td>
-  <td align="left" valign="top"><blockquote class="example">EXAMPLE&nbsp; As shown in Figure 102, the axis representation shall be used to represent the cardinal point as the offset between the 'Axis' and the extrusion path of the member. The extrusion path is provided as <em>IfcExtrudedAreaSolid.ExtrudedDirection</em> and should be parallel to the 'Axis'.  It has to be guaranteed that the value provided by <em>IfcMaterialProfileSetUsage.CardinalPoint</em> is consistent to the <em>IfcExtrudedAreaSolid.Position</em>.</blockquote>
+  <td align="left" valign="top"><blockquote class="example">EXAMPLE  As shown in Figure 102, the axis representation shall be used to represent the cardinal point as the offset between the 'Axis' and the extrusion path of the member. The extrusion path is provided as <em>IfcExtrudedAreaSolid.ExtrudedDirection</em> and should be parallel to the 'Axis'.  It has to be guaranteed that the value provided by <em>IfcMaterialProfileSetUsage.CardinalPoint</em> is consistent to the <em>IfcExtrudedAreaSolid.Position</em>.</blockquote>
 
 </td>
  </tr>
- 
+
 <tr>
   <td><p class="figure">Figure 2 &mdash; Member axis cardinal point</p></td>
-  <td>&nbsp;</td>
+  <td> </td>
  </tr>
 
 </table>
@@ -69,9 +69,9 @@ The following additional constraints apply to the 'Axis' representation, if the 
 
 The following additional constraints apply to the 'AdvancedSweptSolid' representation type:
 
-* **Solid**: IfcSurfaceCurveSweptAreaSolid, IfcFixedReferenceSweptAreaSolid, IfcExtrudedAreaSolidTapered, IfcRevolvedAreaSolidTapered shall be supported. 
->> NOTE&nbsp; View definitions and implementer agreement can further constrain the allowed swept solid types. 
->> NOTE&nbsp; Using IfcExtrudedAreaSolidTapered, or IfcRevolvedAreaSolidTapered requires the use of two IfcMaterialProfile's within the IfcMaterialProfileSet assinged to the IfcBeamStandardCase 
+* **Solid**: IfcSurfaceCurveSweptAreaSolid, IfcFixedReferenceSweptAreaSolid, IfcExtrudedAreaSolidTapered, IfcRevolvedAreaSolidTapered shall be supported.
+>> NOTE  View definitions and implementer agreement can further constrain the allowed swept solid types.
+>> NOTE  Using IfcExtrudedAreaSolidTapered, or IfcRevolvedAreaSolidTapered requires the use of two IfcMaterialProfile's within the IfcMaterialProfileSet assinged to the IfcBeamStandardCase
 * **Profile**: see 'SweptSolid' geometric representation
 * **Profile Position** : see 'SweptSolid' geometric representation
 * **Extrusion**: not applicable
@@ -88,7 +88,7 @@ The following constraints apply to the advanced representation:
 
 Figure 1 illustrates an advanced geometric representation with use of IfcBooleanClippingResult between an IfcExtrudedAreaSolid and an IfcHalfSpaceSolid to create a clipped body, with cardinal point applied as **4** (mid-depth left).
 
-!["clipped beam"](../../../../figures/ifcbeamstandardcase_clipping-01.png "Figure 1 &mdash; Member body clipping")
+![clipped beam](../../../../figures/ifcbeamstandardcase_clipping-01.png "Figure 1 &mdash; Member body clipping")
 
 ### Body SweptSolid Geometry
 
@@ -111,17 +111,17 @@ The following interpretation of dimension parameter applies for circular members
 
 * <small><em>IfcCircleProfileDef.Radius</em> interpreted as beam radius.</small>
 
-!["standard member"](../../../../figures/ifcbeamstandardcase_sweptsolid-01.png "Figure 1 &mdash; Member body extrusion")
+![standard member](../../../../figures/ifcbeamstandardcase_sweptsolid-01.png "Figure 1 &mdash; Member body extrusion")
 
 ### Material Profile Set Usage
 
 Figure 1 illustrates assignment of IfcMaterialProfileSetUsage and IfcMaterialProfileSet to the IfcMemberStandardCase as the member occurrence and to the IfcMemberType. The same IfcMaterialProfileSet shall be shared by many occurrences of IfcMaterialProfileSetUsage. This relationship shall be consistent to the relationship between the IfcMemberType and the IfcMemberStandardCase.
 
-!["Material profile set and usage"](../../../../figures/ifcmemberstandardcase-01.png "Figure 1 &mdash; Member profile usage")
+![Material profile set and usage](../../../../figures/ifcmemberstandardcase-01.png "Figure 1 &mdash; Member profile usage")
 
 Figure 2 illustrates assignment of a composite profile by using IfcCompositeProfile for geometric representation and several IfcMaterialProfile's within the IfcMaterialProfileSet. The number of IfcMaterialProfile's within the IfcMaterialProfileSet is restricted to maximal 2 and requires the use of IfcExtrudedAreaSolidTapered, or IfcRevolvedAreaSolidTapered for the correct 'Body' shape representation.
 
-!["Material profile set and usage"](../../../../figures/ifcmemberstandardcase-02.png "Figure 2 &mdash; Member composite profiles")
+![Material profile set and usage](../../../../figures/ifcmemberstandardcase-02.png "Figure 2 &mdash; Member composite profiles")
 
 The material of the IfcMemberStandardCase is defined by IfcMaterialProfileSetUsage and attached by the IfcRelAssociatesMaterial.RelatingMaterial. It is accessible by the inverse HasAssociations relationship. Composite profile members can be represented by refering to several IfcMaterialProfile's within the IfcMaterialProfileSet that is referenced from the IfcMaterialProfileSetUsage.
 

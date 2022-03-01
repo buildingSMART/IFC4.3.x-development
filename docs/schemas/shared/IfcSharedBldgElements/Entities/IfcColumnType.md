@@ -37,9 +37,9 @@ The shared profile definition is defined by assigning an IfcMaterialProfileSet (
 
 The IfcColumnType may define the shared geometric representation for all column occurrences. The RepresentationMaps attribute refers to a list of IfcRepresentationMap's, that allow for multiple geometric representations (e.g. with IfcShapeRepresentation's having an RepresentationIdentifier 'Box', 'Axis', or 'Body'). It is only applicable if the IfcColumnType has only occurrences of type IfcColumn (See geometric use definition of IfcColumn for further information).
 
-> NOTE&nbsp; If the IfcColumnType has an associated IfcMaterialProfileSet, then no shared geometric representation shall be provided.
+> NOTE  If the IfcColumnType has an associated IfcMaterialProfileSet, then no shared geometric representation shall be provided.
 
-> NOTE&nbsp; The product shape representations are defined as RepresentationMaps (attribute of the supertype IfcTypeProduct), which get assigned by an element occurrence instance through the _IfcShapeRepresentation.Item[n]_ being an IfcMappedItem. See IfcTypeProduct for further information.
+> NOTE  The product shape representations are defined as RepresentationMaps (attribute of the supertype IfcTypeProduct), which get assigned by an element occurrence instance through the _IfcShapeRepresentation.Item[n]_ being an IfcMappedItem. See IfcTypeProduct for further information.
 
-> NOTE&nbsp; The values of attributes RepresentationIdentifier and RepresentationType of IfcShapeRepresentation are restricted in the same way as those for IfcColumn and IfcColumnStandardCase
+> NOTE  The values of attributes RepresentationIdentifier and RepresentationType of IfcShapeRepresentation are restricted in the same way as those for IfcColumn and IfcColumnStandardCase
 

@@ -75,8 +75,8 @@ Three-dimensional reference curve for the column.
 
 The following additional constraints apply to the 'AdvancedSweptSolid' representation type:
 
-* **Solid**: IfcSurfaceCurveSweptAreaSolid, IfcFixedReferenceSweptAreaSolid, IfcExtrudedAreaSolidTapered, IfcRevolvedAreaSolidTapered shall be supported. 
->> NOTE&nbsp; View definitions and implementer agreements can further constrain the allowed swept solid types. 
+* **Solid**: IfcSurfaceCurveSweptAreaSolid, IfcFixedReferenceSweptAreaSolid, IfcExtrudedAreaSolidTapered, IfcRevolvedAreaSolidTapered shall be supported.
+>> NOTE  View definitions and implementer agreements can further constrain the allowed swept solid types.
 * **Profile**: see 'SweptSolid' geometric representation
 * **Extrusion**: not applicable
 

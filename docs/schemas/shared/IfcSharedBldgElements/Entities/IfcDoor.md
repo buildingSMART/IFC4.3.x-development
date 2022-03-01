@@ -181,7 +181,7 @@ Indicates that the material constituent applies to the glazing part.
 
 #### IfcDoorStyle
 
-> NOTE&nbsp;This type is deprecated
+> NOTE This type is deprecated
 
 ### Product Local Placement
 
@@ -191,7 +191,7 @@ The following restriction is imposed:
 2. If the IfcDoor is part of an assembly, e.g. an IfcCurtainWall, then the PlacementRelTo relationship of IfcLocalPlacement shall point (if given) to the local placement of that assembly;
 3. If the IfcDoor is not inserted into an IfcOpeningElement, then the PlacementRelTo relationship of IfcLocalPlacement shall point (if given) to the local placement of the same IfcSpatialStructureElement that is used in the ContainedInStructure inverse attribute or to a referenced spatial structure element at a higher level.
 
-> NOTE&nbsp; The product placement is used to determine the opening direction of the door.
+> NOTE  The product placement is used to determine the opening direction of the door.
 
 ### Profile 3D Geometry
 

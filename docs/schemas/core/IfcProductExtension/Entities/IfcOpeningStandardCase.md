@@ -43,7 +43,7 @@ As shown in Figure 36, the orientation of the opening profile that is extruded f
 * _IfcRectangleProfileDef.YDim_ interpreted as opening width
 * _IfcRectangleProfileDef.XDim_ interpreted as opening height
 
-!["standard opening"](../../../../figures/ifcopeningstandardcase_wall-layout1.png "Figure 1 &mdash; Opening standard representation")
+![standard opening](../../../../figures/ifcopeningstandardcase_wall-layout1.png "Figure 1 &mdash; Opening standard representation")
 
 ### Product Local Placement
 

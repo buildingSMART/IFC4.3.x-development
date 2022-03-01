@@ -19,4 +19,4 @@ A control showing planned items.
 User defined.
 
 ### NOTDEFINED
-Undefined. 
+Undefined.

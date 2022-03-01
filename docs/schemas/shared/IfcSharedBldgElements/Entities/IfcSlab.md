@@ -227,5 +227,5 @@ Spatial container for the element in case that it is placed on site (outside of 
 
 ### Surface Geometry
 
-> NOTE&nbsp; The 'Surface' can be used to define a surfacic model of the building (e.g. for analytical purposes, or for reduced Level of Detail representation).
+> NOTE  The 'Surface' can be used to define a surfacic model of the building (e.g. for analytical purposes, or for reduced Level of Detail representation).
 

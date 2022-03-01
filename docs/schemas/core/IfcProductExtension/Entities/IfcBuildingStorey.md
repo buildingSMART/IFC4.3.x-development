@@ -46,13 +46,13 @@ Elevation of the base of this storey, relative to the 0,00 internal reference he
 
 The body (or solid model) geometric representation (if the building storey has an independent geometric representation) of IfcBuildingStorey is defined using faceted B-Rep capabilities (with or without voids), based on the IfcFacetedBrep or on the IfcFacetedBrepWithVoids.
 
-> NOTE&nbsp; Since the building storey shape is usually described by the exterior building elements, an independent shape representation shall only be given, if the building storey is exposed independently from its constituting elements and such independent geometric representation may be prohibited in model view definitions.
+> NOTE  Since the building storey shape is usually described by the exterior building elements, an independent shape representation shall only be given, if the building storey is exposed independently from its constituting elements and such independent geometric representation may be prohibited in model view definitions.
 
 ### FootPrint GeomSet Geometry
 
 The foot print representation of IfcBuildingStorey is given by either a single 2D curve (such as IfcPolyline or IfcCompositeCurve), or by a list of 2D curves (in case of inner boundaries), if the building storey has an independent geometric representation.
 
-> NOTE&nbsp; The independent geometric representation of IfcBuildingStorey may not be allowed in certain model view definitions. In those cases only the contained elements and spaces have an independent geometric representation.
+> NOTE  The independent geometric representation of IfcBuildingStorey may not be allowed in certain model view definitions. In those cases only the contained elements and spaces have an independent geometric representation.
 
 ### Product Local Placement
 
@@ -71,7 +71,7 @@ The local placement for IfcBuildingStorey is defined in its supertype IfcProduct
 
 ### Spatial Composition
 
-> NOTE&nbsp; By using the inverse relationship _IfcBuildingStorey.Decomposes_ it references (IfcBuilding || IfcBuildingStorey) through _IfcRelAggregates.RelatingObject_IfcBuildingStorey_, the referenced 
+> NOTE  By using the inverse relationship _IfcBuildingStorey.Decomposes_ it references (IfcBuilding || IfcBuildingStorey) through _IfcRelAggregates.RelatingObject_IfcBuildingStorey_, the referenced
 IfcBuildingStorey needs to have a different and higher
  CompositionType, i.e. COMPLEX (if the other IfcBuildingStorey has ELEMENT), or ELEMENT (if the other
  IfcBuildingStorey has PARTIAL)._
@@ -86,9 +86,9 @@ Elements can also be referenced in an IfcBuildingStorey, for example, if they sp
 
 ### Spatial Decomposition
 
-> NOTE&nbsp; By using the inverse relationship _IfcBuildingStorey.IsDecomposedBy_ it references IfcBuildingStorey || IfcSpace through _IfcRelAggregates.RelatedObjects_. If it refers to another instance of IfcBuildingStorey, the referenced IfcBuildingStorey needs to have a different and lower CompositionType, i.e. ELEMENT (if the other IfcBuildingStorey has COMPLEX), or PARTIAL (if the other IfcBuildingStorey has ELEMENT).
+> NOTE  By using the inverse relationship _IfcBuildingStorey.IsDecomposedBy_ it references IfcBuildingStorey || IfcSpace through _IfcRelAggregates.RelatedObjects_. If it refers to another instance of IfcBuildingStorey, the referenced IfcBuildingStorey needs to have a different and lower CompositionType, i.e. ELEMENT (if the other IfcBuildingStorey has COMPLEX), or PARTIAL (if the other IfcBuildingStorey has ELEMENT).
 
-> NOTE&nbsp; Multi storey spaces shall be spatially contained by only a single building storey, usually it is the building storey where the base of the space lies.
+> NOTE  Multi storey spaces shall be spatially contained by only a single building storey, usually it is the building storey where the base of the space lies.
 
 ### Storey Attributes
 

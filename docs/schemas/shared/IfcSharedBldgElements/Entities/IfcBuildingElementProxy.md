@@ -41,13 +41,13 @@ Either there is no building element proxy type object associated, i.e. the _IsTy
 
 The material of the IfcBuildingElementProxy is defined by IfcMaterial and attached by the IfcRelAssociatesMaterial.RelatingMaterial. It is accessible by the inverse HasAssociations relationship.
 
-> NOTE&nbsp; It is illegal to assign an IfcMaterial to an IfcBuildingElementProxy with the PredefinedType = ProvisionForVoid.
+> NOTE  It is illegal to assign an IfcMaterial to an IfcBuildingElementProxy with the PredefinedType = ProvisionForVoid.
 
-Material information can also be given at the IfcBuildingElementProxyType, defining the common attribute data for all occurrences of the same type.&nbsp;It is then accessible by the inverse IsTypedBy relationship pointing to _IfcBuildingElementProxyType.HasAssociations_ and via _IfcRelAssociatesMaterial.RelatingMaterial_ to IfcMaterial. If both are given, then the material directly assigned to IfcBuildingElementProxy overrides the material assigned to IfcBuildingElementProxyType.
+Material information can also be given at the IfcBuildingElementProxyType, defining the common attribute data for all occurrences of the same type. It is then accessible by the inverse IsTypedBy relationship pointing to _IfcBuildingElementProxyType.HasAssociations_ and via _IfcRelAssociatesMaterial.RelatingMaterial_ to IfcMaterial. If both are given, then the material directly assigned to IfcBuildingElementProxy overrides the material assigned to IfcBuildingElementProxyType.
 
 ### Object Typing
 
-> NOTE&nbsp; The IfcBuildingElementProxyType can be used to share common information among many occurrences of the same proxy without establishing a particular semantic meaning of the type.
+> NOTE  The IfcBuildingElementProxyType can be used to share common information among many occurrences of the same proxy without establishing a particular semantic meaning of the type.
 
 If no IfcBuildingElementProxyType is attached (i.e. if only occurrence information is available) the PredefinedType should be provided. If set to .USERDEFINED. a user defined value has to be provided by the ObjectType attribute.
 

@@ -25,7 +25,7 @@ Either there is no sanitary terminal type object associated, i.e. the _IsTypedBy
 ### Element Nesting
 
 { .change-ifc4}
-> IFC4 ADD1 CHANGE&nbsp; Element nesting is now used for attaching faucets. Hot and cold water ports have been removed from subtypes that use attached faucets.
+> IFC4 ADD1 CHANGE  Element nesting is now used for attaching faucets. Hot and cold water ports have been removed from subtypes that use attached faucets.
 
 #### FAUCET_IfcValve
 

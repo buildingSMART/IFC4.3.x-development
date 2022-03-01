@@ -40,9 +40,40 @@ Either there is no beam type object associated, i.e. the _IsTypedBy_ inverse rel
 
 ### Axis 3D Geometry
 
-The 'Axis' 'Curve 3D' geometry can be used to represent the system axis and length of a beam that may extent the body length.
+The 'Axis' 'Curve 3D' geometry can be used to represent the system axis and length of a beam that may represent the extents of the body.
 
-> NOTE&nbsp; The 'Axis' is not used to locate the material profile set, only the subtype IfcBeamStandardCase provides this capability.
+> NOTE  The 'Axis' may be used to locate the material profile set, if the material association is of type IfcMaterialProfileSetUsage.
+
+
+The following additional constraints apply to the 'Axis' representation, if an IfcMaterialProfileSetUsage is provided and the 'Body' shape representation has the RepresentationType: 'SweptSolid':
+
+
+* Axis
+	+ IfcPolyline having two Points, or
+	IfcTrimmedCurve with BasisCurve of Type
+	IfcLine for 'SweptSolid' provided as
+	IfcExtrudedAreaSolid. The axis curve lies on the z axis of
+	the object coordinate system.
+	+ IfcTrimmedCurve with BasisCurve of Type
+	IfcCircle for 'SweptSolid' provided as
+	IfcRevolvedAreaSolid. The axis curve lies on the x/z plane
+	of the object coordinate system, the tangent at the start is along
+	the positive z-axis.
+
+
+![Axis](../../../../figures/ifcbeamstandardcase_axis-01.png)
+
+Figure 76 — Beam axis representation
+
+> EXAMPLE  As shown in Figure 76, the axis shall be defined along the z axis of the object coordinate system. The axis representation can be used to represent the system length of a beam that may extent the body length of the beam.
+
+
+
+![Axis](../../../../figures/ifcbeamstandardcase_axis-02.png)
+
+Figure 77 — Beam axis cardinal point
+
+> EXAMPLE  As shown in Figure 77, the axis representation shall be used to represent the cardinal point as the offset between the 'Axis' and the extrusion path of the beam. The extrusion path is provided as IfcExtrudedAreaSolid.ExtrudedDirection and should be parallel to the 'Axis' and the z axis. It has to be guaranteed that the value provided by IfcMaterialProfileSetUsage.CardinalPoint is consistent to the IfcExtrudedAreaSolid.Position.
 
 #### Axis_IfcBoundedCurve_Curve3D
 
@@ -66,9 +97,10 @@ The following additional constraints apply to the 'Clipping' representation type
 * **Extrusion**: see 'SweptSolid' geometric representation
 * **Boolean result**: The IfcBooleanClippingResult shall be supported, allowing for Boolean differences between the swept solid (here IfcExtrudedAreaSolid) and one or several IfcHalfSpaceSolid (or its subtypes).
 
-Figure 1 illustrates use of IfcBooleanClippingResult between an IfcExtrudedAreaSolid and an IfcHalfSpaceSolid to create a clipped body.
+Figure 201 illustrates use of IfcBooleanClippingResult between an IfcExtrudedAreaSolid and an IfcHalfSpaceSolid to create a clipped body.
 
-!["clipped beam"](../../../../figures/ifcbeam_advanced-2-layout1.gif "Figure 1 &mdash; Beam clipping")
+![clipped beam](../../../../figures/ifcbeam_advanced-2-layout1.gif)
+Figure 201 — Beam clipping
 
 ### Body SweptSolid Geometry
 
@@ -78,13 +110,19 @@ The following additional constraints apply to the 'SweptSolid' representation ty
 * **Profile**: all subtypes of IfcProfileDef (with exception of IfcArbitraryOpenProfileDef)
 * **Extrusion**:&nbsp; All extrusion directions shall be supported.
 
-Figure 1 illustrates the 'SweptSolid' geometric representation. There are no restrictions or conventions on how to use the local placement (black), solid of extrusion placement (red) and profile placement (green).
+Figure 200 illustrates the 'SweptSolid' geometric representation. There are no restrictions or conventions on how to use the local placement (black), solid of extrusion placement (red) and profile placement (green).
 
-!["standard beam"](../../../../figures/ifcbeam_standard-layout1.gif "Figure 1 &mdash; Beam swept solid")
 
-Figure 2 illustrates the use of non-perpendicular extrusion to create the IfcExtrudedAreaSolid.
+![standard beam](../../../../figures/ifcbeam_standard-layout1.gif)
+Figure 200 — Beam swept solid
 
-!["non-perpendicular extrusion"](../../../../figures/ifcbeam_advanced-1-layout1.gif "Figure 2 &mdash; Beam non-perpendicular extrusion")
+
+Figure 201 illustrates the use of non-perpendicular extrusion to create the IfcExtrudedAreaSolid.
+
+
+![non-perpendicular extrusion](../../../../figures/ifcbeam_advanced-1-layout1.gif)
+Figure 201 — Beam non-perpendicular extrusion
+
 
 ### Element Composition
 
@@ -100,9 +138,43 @@ Any building element can be a composite
 
 ### Material Profile Set
 
-The material of the IfcBeam is defined by the IfcMaterialProfileSet or as fallback by IfcMaterial, and it is attached either directly or at the IfcBeamType.
+The material information of the IfcBeam is defined by
+IfcMaterialProfileSet or as fallback by IfcMaterial, and it is attached either directly or at the IfcBeamType. In this case, the material information does not allow to construct a shape by applying the profile definition to the axis representation, to enable this parametric definition, the IfcMaterialProfileSetUsage has to be used instead.
 
-> NOTE&nbsp; It is illegal to assign an IfcMaterialProfileSetUsage to an IfcBeam. Only the subtype IfcBeamStandardCase supports this concept.
+
+
+### Material Profile Set Usage
+
+The Material Profile Set Usage defines the assignment of an IfcMaterialProfileSetUsage to the
+IfcBeamType providing a common profile definition to all
+ occurrences of this IfcBeamType. Beams with composite profile can be represented by referring to
+ several IfcMaterialProfile's within the
+IfcMaterialProfileSet that is referenced from the
+IfcMaterialProfileSetUsage.
+
+
+![Material profile set and usage](../../../../figures/ifcbeam-01.png)
+
+Figure 196 — Beam profile usage
+
+> EXAMPLE  Figure 196 illustrates assignment of IfcMaterialProfileSetUsage and IfcMaterialProfileSet to the IfcBeam as the beam occurrence and to the IfcBeamType. The same IfcMaterialProfileSet shall be shared by many occurrences of IfcMaterialProfileSetUsage. This relationship shall be consistent to the relationship between the IfcBeamType and the IfcBeam.
+
+
+
+![Cardinal point usage](../../../../figures/ifcbeam_cardinalpoint.png)
+
+Figure 197 — Beam cardinal points
+
+Figure 197 illustrates alignment of cardinal points. It has to be guaranteed that the use of IfcCardinalPointEnum is consistent to the placement of the extrusion body provided by IfcExtrudedAreaSolid.Position
+
+The cardinal points 8 (top centre) and 6 (mid-depth right) are assigned according to the definition at IfcCardinalPointReference
+
+
+![Material profile set and usage](../../../../figures/ifcbeam-02.png)
+
+Figure 198 — Beam composite profiles
+
+> EXAMPLE  Figure 198 illustrates assignment of a composite profile by using IfcCompositeProfile for geometric representation and several IfcMaterialProfile's within the IfcMaterialProfileSet.
 
 ### Object Typing
 

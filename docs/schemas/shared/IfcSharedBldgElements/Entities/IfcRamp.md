@@ -56,21 +56,11 @@ If the IfcRamp has no components defined (empty set of _SELF\IfcProduct.IsDecomp
 
 If the IfcRamp has components (referenced by _SELF\IfcProduct.IsDecomposedBy_) then no independent 'Body' geometric representation shall be defined for the IfcRamp. The IfcRamp is then geometrically represented by the geometric representation of its components.
 
-&nbsp;
+![ramp](../../../../figures/ifcramp-layout1.gif)
 
-<table>
- 
-<tr>
-  <td><img src="../../../../figures/ifcramp-layout1.gif" alt="ramp" width="393" height="299" border="0"></td>
-  <td><blockquote class="example">EXAMPLE&nbsp; Figure 1 illustrates <em>IfcRamp</em> defining the local placement for all components.</blockquote>
- </td></tr>
- 
-<tr>
-  <td><p class="figure">Figure 1 &mdash; Ramp placement</p></td>
-  <td>&nbsp;</td>
- </tr>
+Figure 253 — Ramp placement
 
-</table>
+> EXAMPLE  Figure 253 illustrates IfcRamp defining the local placement for all components.
 
 #### IfcRampFlight
 

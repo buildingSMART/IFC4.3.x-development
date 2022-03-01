@@ -31,7 +31,37 @@ ex:PropertySet a sh:SPARQLTarget;
         }
    """
    .
-   
+
+
+ex:TypeDrivenPropertyOrQuantitySet a sh:SPARQLTarget;
+    sh:select """
+        PREFIX ex:  <http://example.org/ifc43Shapes/>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX xmi: <http://schema.omg.org/spec/XMI/2.1/>
+        PREFIX custom: <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/>
+        
+        SELECT ?this
+        WHERE {
+            ?this xmi:type "uml:Class" .
+
+            {
+                ?stereo a custom:PSET_TYPEDRIVENOVERRIDE .
+                ?stereo ex:base_Class ?this .
+            } UNION {
+                ?stereo a custom:PSET_TYPEDRIVENONLY .
+                ?stereo ex:base_Class ?this .
+            } UNION {
+                ?stereo a custom:QTO_TYPEDRIVENONLY .
+                ?stereo ex:base_Class ?this .
+            } UNION {
+                ?stereo a custom:QTO_TYPEDRIVENOVERRIDE .
+                ?stereo ex:base_Class ?this .
+            }
+        }
+   """
+   .
+
+
 ex:QuantitySet a sh:SPARQLTarget;
     sh:select """
         PREFIX ex:  <http://example.org/ifc43Shapes/>
@@ -44,11 +74,7 @@ ex:QuantitySet a sh:SPARQLTarget;
             ?this xmi:type "uml:Class" .
 
             {
-                ?stereo a custom:QTO_TYPEDRIVENONLY .
-                ?stereo ex:base_Class ?this .
-            } UNION {
-                ?stereo a custom:QTO_TYPEDRIVENOVERRIDE .
-                ?stereo ex:base_Class ?this .
+                
             } UNION {
                 ?stereo a custom:QTO_OCCURRENCEDRIVEN .
                 ?stereo ex:base_Class ?this .
@@ -438,7 +464,83 @@ ex:hasCorrespondingUmlConcept a sh:SPARQLTarget;
     """
     .
 
-    
+
+ex:hasApplicableObjectWithType a sh:SPARQLConstraint ;
+    sh:message "The Property|Quantity Set [{?stereoName}] '{?psetName}' should be associated to an element with corresponding IfcObjectType, not {?applicableEntity}" ;
+    sh:select """
+        PREFIX ex:  <http://example.org/ifc43Shapes/>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX xmi: <http://schema.omg.org/spec/XMI/2.1/>
+        PREFIX custom: <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/>
+
+        SELECT ?this ?psetName ?stereoName ?applicableEntity
+        WHERE {
+            ?this ex:name ?psetName .
+            ?stereo ex:base_Class ?this .
+            ?stereo a ?stereoUrl .
+            
+            {
+                ?stereo a custom:PSET_TYPEDRIVENOVERRIDE .
+            } UNION {
+                ?stereo a custom:PSET_PERFORMANCEDRIVEN .
+            } UNION {
+                ?stereo a custom:PSET_OCCURRENCEDRIVEN .
+            } UNION {
+                ?stereo a custom:PSET_TYPEDRIVENONLY .
+            } UNION {
+                ?stereo a custom:QTO_TYPEDRIVENONLY .
+            } UNION {
+                ?stereo a custom:QTO_TYPEDRIVENOVERRIDE .
+            } UNION {
+                ?stereo a custom:QTO_OCCURRENCEDRIVEN .
+            }    
+            
+            BIND(REPLACE(str(?stereoUrl), ".+/", "") AS ?stereoName)
+            
+            ?assoc xmi:type "uml:AssociationClass" .
+            ?assoc ex:containedIn ?package .
+            ?package ex:name ?packageName .
+            
+            ?end1 a ex:memberEnd .
+            ?end1 ex:containedIn ?assoc .
+            ?end1 xmi:idref ?prop1 .
+            ?type1 ex:containedIn ?prop1 .
+            ?type1 xmi:idref ?this .
+            
+            ?end2 a ex:memberEnd .
+            ?end2 ex:containedIn ?assoc .
+            ?end2 xmi:idref ?prop2 .
+            ?type2 ex:containedIn ?prop2 .
+            ?type2 xmi:idref ?applicability .
+            
+            FILTER(?end1 != ?end2) .
+            FILTER(?packageName = "PropertySetsforObjects" || ?packageName = "QuantitySetsforObjects") .
+
+            ?applicability ex:name ?applicabilityName .
+            
+            BIND(if(
+                regex(?applicabilityName, "\\\\."),
+                REPLACE(?applicabilityName, "(Type)Enum\\\\..+", ""),
+                ?applicabilityName
+            ) AS ?applicableEntity)
+
+            FILTER NOT EXISTS {
+                ?assoc2 xmi:type "uml:AssociationClass" .
+                ?assoc2 ex:containedIn ?package2 .
+                ?package2 ex:name "ObjectTyping" .
+                
+                ?end22 a ex:memberEnd .
+                ?end22 ex:containedIn ?assoc2 .
+                ?end22 xmi:idref ?prop22 .
+                ?type22 ex:containedIn ?prop22 .
+                ?type22 xmi:idref ?typingApplicability .
+                ?typingApplicability ex:name ?applicableEntity .
+            }
+        }
+    """
+    .
+
+
 ex:hasIfcObjectOrPredefinedType a sh:SPARQLTarget;
     sh:message "The association '{?assocName}' in package '{?packageName}' establishes an invalid relationship to '{?applicableName}'" ;
     sh:select """
@@ -800,4 +902,9 @@ ex:IfcObjectAssociationForQuantitySetAssoc a sh:NodeShape ;
 ex:ParametrizationForConceptUsageDocumentation a sh:NodeShape ;
     sh:target ex:ConceptUsageDocumentation;
     sh:sparql ex:hasCorrespondingUmlConcept
+    .
+
+ex:ObjectTypeAssociationForTypeDrivenPropSets a sh:NodeShape ;
+    sh:target ex:TypeDrivenPropertyOrQuantitySet;
+    sh:sparql ex:hasApplicableObjectWithType
     .

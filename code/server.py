@@ -1008,18 +1008,22 @@ def get_attributes(resource, builder):
                 "total_attributes": total_attributes,
             }
             groups.append(group)
-        group["attributes"].append(
-            {
-                "number": attr[0],
-                "name": attr[1],
-                "type": attr[2],
-                # @nb we're not really talking about markdown anymore
-                # since the new attribute parser operates on a converted
-                # dom, but it appears to work nonetheless.
-                "description": process_markdown(resource, attr[3]),
-                "is_inverse": not attr[0],
-            }
-        )
+        attribute = {
+            "number": attr[0],
+            "name": attr[1],
+            "type": attr[2],
+            # @nb we're not really talking about markdown anymore
+            # since the new attribute parser operates on a converted
+            # dom, but it appears to work nonetheless.
+            "description": process_markdown(resource, attr[3]),
+            "is_inverse": not attr[0],
+        }
+        if attribute["name"] == "PredefinedType" and not attribute["description"]:
+            description = "A list of types to further identify the object. Some property sets may be specifically applicable to one of these types."
+            if "Type" not in group["name"]:
+                description += "\n> NOTE  If the object has an associated IfcTypeObject with a _PredefinedType_, then this attribute shall not be used."
+            attribute["description"] = process_markdown(resource, description)
+        group["attributes"].append(attribute)
 
     total_inherited_attributes = sum([g["total_attributes"] for g in groups if g["is_inherited"]])
 

@@ -29,11 +29,9 @@ The inherited attribute _ElementType_ shall be provided, if the _PredefinedType_
 
 The material of the IfcColumnType is defined by the IfcMaterialProfileSet or as fall back by IfcMaterial and attached by the IfcRelAssociatesMaterial.RelatingMaterial. It is accessible by the inverse HasAssociations relationship.
 
-> NOTE&nbsp; It is illegal to assign an IfcMaterial to an IfcColumnType, if there is at least one occurrences of IfcColumnStandardCase for this type.
+The shared profile definition is defined by assigning an IfcMaterialProfileSet (see material use definition above).  The IfcMaterialProfile refers to the subtype of IfcProfileDef that is the common profile for all column occurrence, if used. If an IfcMaterialProfileSet is used, all occurrences of _IfcColumn_ must have a corresponding IfcMaterialProfileSetUsage.
 
-The shared profile definition is defined by assigning an IfcMaterialProfileSet (see material use definition above). The IfcMaterialProfile refers to the subtype of IfcProfileDef that is the common profile for all column occurrence, if used. It is only applicable if the IfcColumnType has only occurrences of type IfcColumnStandardCase (see definition of IfcColumnStandardCase for further information).
-
-> NOTE&nbsp; The attribute ProfileName of the IfcProfileDef subtype, referenced in IfcMaterialProfile should contain a standardized profile name according to local standards. However, an additional geometric representation of the profile is necessary (e.g. as IfcExtrudedAreaSolid). An importing application is allowed to check for the existence of the profile name: in case of identifying it as a standardized name, the corresponding profile geometry and possibly other cross sectional properties can be read from a library. Otherwise the geometric representation and possible non geometric IfcProfileProperties have to be used.
+> NOTE  The attribute ProfileName of the IfcProfileDef subtype, referenced in IfcMaterialProfile should contain a standardized profile name according to local standards. However, an additional geometric representation of the profile is necessary (e.g. as IfcExtrudedAreaSolid). An importing application is allowed to check for the existence of the profile name: in case of identifying it as a standardized name, the corresponding profile geometry and possibly other cross sectional properties can be read from a library. Otherwise the geometric representation and possible non geometric IfcProfileProperties have to be used.
 
 ### Type Body Geometry
 

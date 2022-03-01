@@ -86,9 +86,11 @@ The following additional constraints apply to the advanced representation:
 * **Extrusion**: The extrusion direction shall be vertically, i.e., along the positive Z Axis of the co-ordinate system of the containing spatial structure element.
 * **Boolean result**: The difference operation with the second operand being of type IfcHalfSpaceSolid (or one of its subtypes) shall be supported.
 
-Figure 1 shows an extrusion of an arbitrary profile definition into the swept area solid. The solid and an half space solid are operands of the Boolean result of IfcSpace.
+Figure 185 shows an extrusion of an arbitrary profile definition into the swept area solid. The solid and an half space solid are operands of the Boolean result of IfcSpace.
 
-![fig2](../../../../figures/ifcspace_advanced-layout1.gif "Figure 1 &mdash; Space body clipping")
+![fig2](../../../../figures/ifcspace_advanced-layout1.gif)
+
+Figure 185 &mdash; Space body clipping
 
 ### Body SweptSolid Geometry
 
@@ -98,9 +100,11 @@ The following constraints apply to the standard representation:
 * **Profile**: IfcArbitraryClosedProfileDef is required, IfcArbitraryProfileDefWithVoids shall be supported.
 * **Extrusion**: The extrusion direction shall be vertically, i.e., along the positive Z Axis of the co-ordinate system of the containing spatial structure element.
 
-Figure 1 shows an extrusion of an arbitrary profile definition with voids into the swept area solid of IfcSpace.
+Figure 184 shows an extrusion of an arbitrary profile definition with voids into the swept area solid of IfcSpace.
 
-![fig1](../../../../figures/ifcspace_standard-layout1.gif "Figure 1 &mdash; Space body swept solid")
+![fig1](../../../../figures/ifcspace_standard-layout1.gif)
+
+Figure 184 &mdash; Space body swept solid
 
 ### FootPrint GeomSet Geometry
 
@@ -108,22 +112,11 @@ The following constraints apply to the 2D representation:
 
 * An IfcBoundedCurve is required, using IfcPolyline for faceted space contours or IfcCompositeCurve for space contours with arc segments. For spaces with inner boundaries, a set of IfcBoundedCurve's is used, that should be grouped into an IfcGeometricCurveSet.
 
+![2d representation](../../../../figures/ifcspace_2d-layout1.gif)
 
+Figure 183 — Space footprint
 
-<table cellpadding="2" cellspacing="2">
-
-<tr valign="top">
-  <td align="left" valign="top"><img src="../../../../figures/ifcspace_2d-layout1.gif" alt="2d representation" border="0" height="300" width="400"></td>
-  <td><blockquote class="example">EXAMPLE  Figure 1 shows a two-dimensional bounded curve representing the
-foot print of <em>IfcSpace</em>.</blockquote></td>
- </tr>
-
- <tr>
-  <td><p class="figure">Figure 1 &mdash; Space footprint</p></td>
-  <td> </td>
- </tr>
-
-</table>
+> EXAMPLE  Figure 183 shows a two-dimensional bounded curve representing the foot print of IfcSpace.
 
 #### FootPrint_IfcBoundedCurve_Curve2D
 

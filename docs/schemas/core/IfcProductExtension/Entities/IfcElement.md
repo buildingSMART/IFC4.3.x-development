@@ -90,31 +90,15 @@ An IfcElement (so far no further constraints are defined at the level of its sub
 Any IfcElement (so far no further constraints are defined at the level of its subtypes) may be represented as a single or multiple Boundary Representation models (which are restricted to be faceted Brep's with or without voids). The Brep representation allows for the representation of complex element shape.
 
 
+![Brep representation](../../../../figures/ifcbuildingelement-brep-layout1.gif)
 
-<table>
+Figure 150 — Building element body boundary representation
 
-<tr>
-
-<td><img src="../../../../figures/ifcbuildingelement-brep-layout1.gif" alt="Brep representation" border="0" height="275" width="400"></td>
-
-  <td><blockquote class="example">EXAMPLE  As shown in Figure 1, the Brep representation is given by an
- <em>IfcShapeRepresentation</em>, which includes one or more
-items, all of type <em>IfcFacetedBrep</em>. In some cases it may be useful to also expose a simple
-representation as a bounding box representation of the same complex
-shape.</blockquote> </td>
- </tr>
-
- <tr>
-
-<td>
-<p class="figure">Figure 1 &mdash; Building element body boundary
-representation</p>
-</td>
-  <td> </td>
- </tr>
-
-
-</table>
+> EXAMPLE  As shown in Figure 150, the Brep representation is given by an
+> IfcShapeRepresentation, which includes one or more
+> items, all of type IfcFacetedBrep. In some cases it may be useful to also expose a simple
+> representation as a bounding box representation of the same complex
+> shape.
 
 ### Body CSG Geometry
 
@@ -131,30 +115,13 @@ Any IfcElement (so far no further constraints are defined at the level of its su
 Any IfcElement (so far no further constraints are defined at the level of its subtypes) may be represented as a single or multiple surface models, based on either shell or face based surface models. It may also include tessellated models.
 
 
+![surface model](../../../../figures/ifcbuildingelement-surfacemodel-layout1.gif)
 
-<table>
+Figure 149 — Element surface model representation
 
- <tr>
 
-<td><img src="../../../../figures/ifcbuildingelement-surfacemodel-layout1.gif" alt="surface model" border="0" height="275" width="400"></td>
+> EXAMPLE  As shown in Figure 1, the surface model representation is given by an IfcShapeRepresentation, which includes a single item which is either an IfcShellBasedSurfaceModel, or an IfcFaceBasedSurfaceModel. In some cases it may also be useful to expose a simple representation as a bounding box representation of the same complex shape.
 
-  <td><blockquote class="example">EXAMPLE  As shown in Figure 1, the surface model representation is given
-by an <em>IfcShapeRepresentation</em>, which includes a single item which is either an <em>IfcShellBasedSurfaceModel</em>, or an <em>IfcFaceBasedSurfaceModel</em>. In some cases it may also be useful to expose a simple
-representation as a bounding box representation of the same complex
-shape.</blockquote></td>
- </tr>
-
-<tr>
-
-<td>
-<p class="figure">Figure 1 &mdash; Element surface model
-representation</p>
-</td>
-  <td> </td>
-
-</tr>
-
-</table>
 
 ### Body SurfaceOrSolidModel Geometry
 
@@ -182,18 +149,11 @@ Any IfcElement (so far no further constraints are defined at the level of its su
 
 ### Box Geometry
 
-<table>
- <tr>
-  <td><img src="../../../../figures/ifcbuildingelement-boundingbox-layout1.gif" border="0" height="275" width="400" alt="bounding box"></td>
-  <td>
-<blockquote class="example">EXAMPLE  Any <em>IfcElement</em> may be represented by a bounding box, which shows the maximum extend of the body within the object coordinate system established by the <em>IfcObjectPlacement</em>. As shown in Figure 1, the bounding box representation is given by an <em>IfcShapeRepresentation</em> that includes a single item, an <em>IfcBoundingBox</em>.</blockquote>
- </td>
- </tr>
- <tr>
-  <td><p class="figure">Figure 1 &mdash; Building element box representation</p></td>
-  <td> </td>
- </tr>
-</table>
+![bounding box](../../../../figures/ifcbuildingelement-boundingbox-layout1.gif)
+
+Figure 148 — Building element box representation
+
+> EXAMPLE  Any IfcElement may be represented by a bounding box, which shows the maximum extend of the body within the object coordinate system established by the IfcObjectPlacement. As shown in Figure 148, the bounding box representation is given by an IfcShapeRepresentation that includes a single item, an IfcBoundingBox.
 
 ### CoG Geometry
 

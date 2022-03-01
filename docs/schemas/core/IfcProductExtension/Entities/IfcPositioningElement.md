@@ -39,70 +39,18 @@ The following constraints apply to the 2D representation:
 * Each subtype of IfcCurve may have a curve style assigned, using IfcStyledItem referencing IfcCurveStyle.
 * Optionally the grid axis labels may be added as IfcTextLiteral, and they may have text styles assigned, using IfcStyledItem referencing IfcTextStyle.
 
-<table cellpadding="2" cellspacing="2">
-      <tbody>
-        <tr>
-          <td width="510">
-            <img src="../../../../figures/ifcdesigngrid-layout1.gif" alt="design grid" border="0" height="300" width="400">
-          </td>
-          <td>
-            <blockquote>
-              As shown in Figure 31, the <em>IfcGrid</em> defines a
-              placement coordinate system using the
-              <em>ObjectPlacement</em>. The XY plane of the
-              coordinate system is used to place the 2D grid axes.
-              The <em>Representation</em> of <em>IfcGrid</em> is
-              defined using <em>IfcProductRepresentation</em>,
-              referencing an <em>IfcShapeRepresentation</em>, that
-              includes <em>IfcGeometricCurveSet</em> as
-              <em>Items</em>. All grid axes are added as
-              <em>IfcPolyline</em> to the
-              <em>IfcGeometricCurveSet</em>.
-            </blockquote>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p class="figure">Figure 1 &mdash; Grid layout</p>
-          </td>
-          <td>
 
-          </td>
-        </tr>
-      </tbody>
-    </table>
+![design grid](../../../../figures/ifcdesigngrid-layout1.gif)
 
+Figure 31 &mdash; Grid layout
 
+As shown in Figure 31, the <em>IfcGrid</em> defines a placement coordinate system using the <em>ObjectPlacement</em>. The XY plane of the coordinate system is used to place the 2D grid axes.  The <em>Representation</em> of <em>IfcGrid</em> is defined using <em>IfcProductRepresentation</em>, referencing an <em>IfcShapeRepresentation</em>, that includes <em>IfcGeometricCurveSet</em> as <em>Items</em>. All grid axes are added as <em>IfcPolyline</em> to the <em>IfcGeometricCurveSet</em>.
 
-<table cellpadding="2" cellspacing="2">
-      <tbody>
-        <tr>
-          <td width="510">
-            <img src="../../../../figures/ifcgrid-representation.png" alt="representation of a design grid" width="501" height="621" border="0">
-          </td>
-          <td>
-            <blockquote>
-              As shown in Figure 32, the attributes <em>UAxes</em>
-              and <em>VAxes</em> define lists of <em>IfcGridAxis</em>
-              within the context of the grid. Each instance of
-              <em>IfcGridAxis</em> refers to the same instance of
-              <em>IfcCurve</em> (here the subtype <em>IfcPolyline</em>)
-              that is contained within the
-              <em>IfcGeometricCurveSet</em> that represents the
-              <em>IfcGrid</em>.
-            </blockquote>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p class="figure">Figure 2 &mdash; Grid representation</p>
-          </td>
-          <td>
+![representation of a design grid](../../../../figures/ifcgrid-representation.png)
 
-          </td>
-        </tr>
-      </tbody>
-    </table>
+Figure 32 &mdash; Grid representation
+
+As shown in Figure 32, the attributes <em>UAxes</em> and <em>VAxes</em> define lists of <em>IfcGridAxis</em> within the context of the grid. Each instance of <em>IfcGridAxis</em> refers to the same instance of <em>IfcCurve</em> (here the subtype <em>IfcPolyline</em>) that is contained within the <em>IfcGeometricCurveSet</em> that represents the <em>IfcGrid</em>.
 
 ### Product Local Placement
 

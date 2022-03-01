@@ -34,13 +34,24 @@ The inherited attribute _ElementType_ shall be provided, if the _PredefinedType_
 
 ### Material Layer Set
 
-The material of the IfcWallType is defined by the IfcMaterialLayerSet or as fall back by IfcMaterial and attached by the IfcRelAssociatesMaterial.RelatingMaterial. It is accessible by the inverse HasAssociations relationship.
+The material of the IfcWallType is defined by the
+IfcMaterialLayerSet or as fall back by IfcMaterial
+and attached by the
+IfcRelAssociatesMaterial.RelatingMaterial. It is
+accessible by the inverse HasAssociations
+relationship.
 
-> NOTE&nbsp; It is illegal to assign an IfcMaterial to an IfcWallType, if there is at least one occurrences. of IfcWallStandardCase for this type.
+The shared material layer set definition is defined by
+assigning an IfcMaterialLayerSet (see material use
+definition above). The IfcMaterialLayer refers to one or
+several of IfcMaterialLayer that is the common for all
+wall occurrence, if used. If an IfcMaterialProfileSet is used, all occurrences must have a corresponding IfcMaterialProfileSetUsage.
 
-The shared material layer set definition is defined by assigning an IfcMaterialLayerSet (see material use definition above). The IfcMaterialLayer refers to one or several of IfcMaterialLayer that is the common for all wall occurrence, if used. It is only applicable if the IfcWallType has only occurrences of type IfcWallStandardCase (see definition of IfcWallStandardCase for further information).
-
-> NOTE&nbsp; Since each individual instance of IfcWallStandardCase defines its own IfcMaterialLayerSetUsage including the offset from the wall axis, the same IfcWallType can be used independently of the axis alignment of its occurrences.
+> NOTE  Since each individual instance of
+> IfcWall defines its own
+> IfcMaterialLayerSetUsage including the offset from the
+> wall axis, the same IfcWallType can be used independently
+> of the axis alignment of its occurrences.
 
 ### Type Body Geometry
 

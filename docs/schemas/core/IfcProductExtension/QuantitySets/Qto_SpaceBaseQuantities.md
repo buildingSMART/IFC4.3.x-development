@@ -7,7 +7,7 @@ Base quantities that are common to the definition of all occurrences of spaces.
 
 ### GrossFloorArea
 
-Includes the area covered by elementsinside the space (columns, inner walls, etc.) and excludes the area covered by wall claddings.
+Includes the area covered by elements inside the space (columns, inner walls, etc.) and excludes the area covered by wall claddings.
 
 ### GrossPerimeter
 

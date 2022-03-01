@@ -47,15 +47,19 @@ Approvals may be associated to indicate the status of acceptance or rejection us
 
 ### Control Assignment
 
-Figure 1 illustrates assignment relationships as indicated:
+Figure 312 illustrates assignment relationships as indicated:
 
-* [IfcActor](../../ifckernel/lexical/ifcactor.htm) ([IfcRelAssignsToActor](../../ifckernel/lexical/ifcrelassignstoactor.htm)): Organization issuing the permit such as a local government agency or security organization.
 
-The **IfcPermit** may have assignments of its own using the [IfcRelAssignsToControl](../../ifckernel/lexical/ifcrelassignstocontrol.htm) relationship where RelatingControl refers to the **IfcPermit** and RelatedObjects contains one or more objects of the following types:
+* IfcActor (IfcRelAssignsToActor): Organization issuing the permit such as a local government agency or security organization.
 
-* [IfcActor](../../ifckernel/lexical/ifcactor.htm): Organization(s) bound to the permit, typically a single contractor. 
 
-!["Assignment Use Definition"](../../../../figures/ifcpermit-assignment.png "Figure 1 &mdash; Permit assignment")
+ The IfcPermit may have assignments of its own using the IfcRelAssignsToControl relationship where RelatingControl refers to the IfcPermit and RelatedObjects contains one or more objects of the following types:
+
+* IfcActor: Organization(s) bound to the permit, typically a single contractor.
+
+
+![Assignment Use Definition](../../../../figures/ifcpermit-assignment.png)
+Figure 312 — Permit assignment
 
 ### Object Nesting
 

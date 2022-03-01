@@ -1,6 +1,6 @@
 # IfcColumn
 
-An _IfcColumn_ is a vertical structural member which often is aligned with a structural grid intersection. It represents a vertical, or nearly vertical, structural member that transmits, through compression, the weight of the structure above to other structural elements below. It represents such a member from an architectural point of view. It is not required to be load bearing.
+An _IfcColumn_ is a vertical structural or architectural member which often is aligned with a structural grid intersection. In most cases it represents a vertical, or nearly vertical, structural member that transmits, through compression, the weight of the structure above to other structural elements below. It may also represent such a member from an architectural point of view in which case it may represent a non load bearing element. Whether it is a structural load bearing element or a non-load bearing element is determined by the _Pset\_ColumnCommon.LoadBearing_ property.
 
 > NOTE  Definition according to ISO 6707-1
 > structural member of slender form, usually vertical, that transmits to its base the forces, primarily in compression, that are applied to it.

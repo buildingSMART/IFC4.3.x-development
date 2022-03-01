@@ -7,7 +7,7 @@ This enumeration defines the different predefined types of columns that can furt
 ## Items
 
 ### COLUMN
-A standard member usually vertical and requiring resistance to vertical forces by compression but also sometimes to lateral forces.
+A usually vertical member that may be load bearing and requiring resistance to vertical forces by compression but also sometimes to lateral forces.
 
 ### PILASTER
 A column element embedded within a wall that can be required to be load bearing but may also only be used for decorative purposes.

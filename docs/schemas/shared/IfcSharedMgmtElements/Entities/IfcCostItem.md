@@ -50,9 +50,11 @@ For rate-based costing (specifically for _IfcCostScheduleTypeEnum.SCHEDULEOFRATE
 
 IfcRelAssignsToControl is also used in the opposite direction to link the root IfcCostItem to an IfcCostSchedule where RelatingControl is the IfcCostSchedule.
 
-Figure 1 illustrates cost item assignment derived from building elements. The IfcRelAssignsToControl relationship indicates building elements for which quantities are derived. Not shown, costs may also be derived from building elements by traversing assignment relationships from the assigned IfcProduct to IfcProcess to IfcResource, where all costs ultimately originate at resources. It is also possible for cost items to have assignments from processes or resources directly.
+Figure 311 illustrates cost item assignment derived from building elements. The IfcRelAssignsToControl relationship indicates building elements for which quantities are derived. Not shown, costs may also be derived from building elements by traversing assignment relationships from the assigned IfcProduct to IfcProcess to IfcResource, where all costs ultimately originate at resources. It is also possible for cost items to have assignments from processes or resources directly.
 
-!["cost item"](../../../../figures/ifccostitem-assignment.png "Figure 1 &mdash; Cost assignment")
+
+![cost item](../../../../figures/ifccostitem-assignment.png)
+Figure 311 — Cost assignment
 
 #### IfcProduct
 
@@ -84,7 +86,9 @@ An IfcCostItem can nest other instances of IfcCostItem through its relationships
 
 There is always a summary cost item as the root item of the tree representing the cost item nesting. Subsequent instances of IfcCostItem are assigned to the summary cost item using IfcRelNests. The summary cost item itself is assigned to IfcCostSchedule through the IfcRelAssignsToControl relationship.
 
-Figure 1 illustrates a cost item composition used for a cost schedule. Each line item has a quantity and separate unit costs where _IfcCostValue.CostType_ indicates the category of cost. The summary item has a hierarchy of costs calculated according to _IfcAppliedValueRelationship.ArithmeticOperator_, where _IfcCostValue.CostType_ identifies the category to be totalled. The Tax component has _IfcCostValue.CostType_ set to 'Material' which indicates it is the sum of all nested values of the 'Material' category ($3 x 3000 + $118 x 100 = $20800). The Subtotal component has _IfcCostValue.CostType_ set to an asterisk ('\*') which indicates it is the sum of all nested values of all categories.
+Figure 310 illustrates a cost item composition used for a cost schedule. Each line item has a quantity and separate unit costs where IfcCostValue.Category indicates the category of cost. The summary item has a hierarchy of costs calculated according to IfcAppliedValueRelationship.ArithmeticOperator, where IfcCostValue.Category identifies the category to be totalled. The Tax component has IfcCostValue.Category set to 'Material' which indicates it is the sum of all nested values of the 'Material' category ($3 x 3000 + $118 x 100 = $20800). The Subtotal component has IfcCostValue.Category set to an asterisk ('*') which indicates it is the sum of all nested values of all categories.
 
-!["cost item"](../../../../figures/ifccostitem-composition.png "Figure 1 &mdash; Cost composition")
+
+![cost item](../../../../figures/ifccostitem-composition.png)
+Figure 310 — Cost composition
 

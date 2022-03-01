@@ -26,25 +26,21 @@ and one or several curves as geometric items. The curves represent where referen
 
 The mapped item, IfcMappedItem, should be used if appropriate as it allows for reusing the geometry definition of a type at all occurrences of the same type.
 
-A single instance of a subtype of IfcElementComponent can stand for several actual element components at once. In this case, the IfcShapeRepresentation contains as many mapped items as there are element components combined within this occurrence object.
+A single instance of a subtype of IfcElementComponent can stand for several
+actual element components at once. In this case, the IfcShapeRepresentation
+contains as many mapped items as there are element components combined within this
+ occurrence object.
 
-&nbsp;
+![](../../../../figures/ifcelementcomponent_multiple.png)
 
-<table>
+Figure 304 — Element component mapped representation
 
- <tr>
-  <td><img src="../../../../figures/ifcelementcomponent_multiple.png"></td>
-  <td><blockquote class="example">EXAMPLE&nbsp; Figure 1 illustrates multiple components modeled as a single occurrence object (here: <em>IfcFastener</em>)</blockquote></td>
- </tr>
- 
-<tr>
-  <td><p class="figure">Figure 1 &mdash; Element component mapped representation</p></td>
-  <td><p>&nbsp;</p></td>
- </tr>
+> EXAMPLE  Figure 304 illustrates multiple components modeled as a single occurrence object (here: IfcFastener)
 
-</table>
+Representation identifier and type are the same as in single mapped representation.
+The number of mapped items in the representation corresponds with the count of
+element components in the IfcElementQuantity.
 
-Representation identifier and type are the same as in single mapped representation. The number of mapped items in the representation corresponds with the count of element components in the IfcElementQuantity.
 
 ### Property Sets for Objects
 

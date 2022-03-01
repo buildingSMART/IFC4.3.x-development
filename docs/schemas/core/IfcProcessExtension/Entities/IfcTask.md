@@ -42,7 +42,7 @@ _IfcTask_ can also be used to describe an activity that moves people, groups wit
 ### Status
 Current status of the task.
 
-> NOTE  Particular values for status are not specified, these should be determined and agreed by local usage. Examples of possible status values include 'Not Yet Started', 'Started', 'Completed'.
+> NOTE  Particular values for status are not specified, these should be determined and agreed by local usage. Examples of possible status values include 'NOTSTARTED', 'STARTED', 'COMPLETED'.
 
 ### WorkMethod
 The method of work used in carrying out a task.

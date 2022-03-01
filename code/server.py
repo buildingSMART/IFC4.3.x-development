@@ -261,7 +261,7 @@ def name_to_number():
     for i, (cat, schemas) in enumerate(R.hierarchy, start=5):
         for j, (schema_name, members) in enumerate(schemas, start=1):
             for k, ke in enumerate(
-                ["Types", "Entities", "Property Sets", "Quantity Sets", "Functions", "Rules"], start=2
+                ["Types", "Entities", "Property Sets", "Quantity Sets", "Functions", "Rules", "PropertyEnumerations"], start=2
             ):
                 for l, name in enumerate(members.get(ke, ()), start=1):
                     ntn[name] = ".".join(map(str, (i, j, k, l)))
@@ -971,10 +971,16 @@ def get_properties(resource, mdc):
         if psc:
             doc += f"{process_markdown(resource, psc)}"
 
+        data_type = prop["data"]
+        # An example value you might come across is:
+        # PEnum_ProjectType(MODIFICATION, NEWBUILD, OPERATIONMAINTENANCE, RENOVATION, REPAIR)
+        if "PEnum" in data_type and "(" in data_type:
+            data_type = data_type.split("(")[0]
+
         return {
             "name": prop["name"],
             "type": prop_type,
-            "data_type": prop["data"],
+            "data_type": data_type,
             "description": doc,
             "edit_url": url_for("property", prop=prop["name"]),
         }
@@ -1877,11 +1883,14 @@ def sandcastle():
 # Are you ready for regex golfing? Here's a challenge.
 # Y: This is a IfcClass in a paragraph.
 # Y: It may IfcClass-concatenated.
+# Y: It may be a Pset_WallCommon.
+# Y: It may be a Qto_WallBaseQuantities.
+# Y: It may be a PEnum_ProjectType.
 # N: It may be in an <img alt="IfcClass tag or a" src="IfcSite-url.png">
 # N: It may already be in a <a href="IfcSite">IfcSite</a>
 # N: Or reference an IfcSite.png arbitrarily.
 # N: It may be in the <title>IfcSite - IFC4.3.x Documentation</title>
-ifcre = re.compile(r"(?<!(=\"))(?<!(figures/))(Ifc|Pset_|Qto_)\w+(?!(\">|.ht|.png|.jp|.gif|\s*</a|\s*</h|.md| - IFC4.3))")
+ifcre = re.compile(r"(?<!(=\"))(?<!(figures/))(Ifc|Pset_|Qto_|PEnum_)\w+(?!(\">|.ht|.png|.jp|.gif|\s*</a|\s*</h|.md| - IFC4.3))")
 
 try:
     import os
@@ -2009,7 +2018,7 @@ def after(response):
 
         def decorate_link(m):
             w = m.group(0)
-            if w in R.entity_definitions or w in R.pset_definitions:
+            if w in R.entity_definitions or w in R.pset_definitions or w in R.type_values:
                 if redis:
                     try:
                         redis.lpush("references", json.dumps([w, "", request.path]))

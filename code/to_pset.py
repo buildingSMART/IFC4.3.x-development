@@ -163,12 +163,23 @@ def construct_xml(xmi_doc, pset, path, by_id, by_name):
     atv_values = []
     
     for x in (pset.meta.get("refs") or []):
+        # In order to annotate TypeObject+PredefinedTpye a tuple is used
+        # carrying the xmi_id of the type object and the predefined type
+        # label as a string
+        predefined_type_label = None
+        if isinstance(x, tuple):
+            x, predefined_type_label = x
         if x in by_id:
             x = by_id[x]
             if x.type == "ENTITY" or (x.parent and x.parent.type == "ENUM"):
                 nm = x.name
                 if x.parent and get_parent_of_pt(xmi_doc, x.parent.node):
                     nm = get_parent_of_pt(xmi_doc, x.parent.node) + "." + nm
+                    
+                if predefined_type_label:
+                    assert "." not in nm
+                    nm = ".".join((nm, predefined_type_label))
+                    
                 nm = nm.replace(".", "/")
                 ET.SubElement(acs, 'ClassName').text = nm
                 atv_values.append(nm)

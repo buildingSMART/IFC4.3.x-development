@@ -424,20 +424,76 @@ class xmi_document:
             elif stereotype is not None and (stereotype.startswith("pset_") or stereotype.startswith("qto_") or stereotype == "complexproperty"):
                 
                 if stereotype.startswith("qto_"):
-                    stereotype = "QSET"
+                    set_stereotype = "QSET"
                 elif stereotype.startswith("pset_"):
-                    stereotype = "PSET"
+                    set_stereotype = "PSET"
                 else:
-                    stereotype = "CPROP"
+                    set_stereotype = "CPROP"
                 
                 refs = None
                 
-                if stereotype == "PSET" or stereotype == "QSET":
+                if set_stereotype == "PSET" or set_stereotype == "QSET":
+                    
                     try:
-                        refs = self.concepts[["QuantitySets", "PropertySetsforObjects"][stereotype == "PSET"]].get(c.id or c.idref)
+                        refs = self.concepts[["QuantitySets", "PropertySetsforObjects"][set_stereotype == "PSET"]].get(c.id or c.idref)
                     except ValueError as e:
                         print("WARNING:", c.name, "has no associated class", file=sys.stderr)
                         continue
+                        
+                    # There are several kinds of pset and qset association mechanisms:
+                    # 
+                    # - occurence driven: only applicable to IfcObject subtypes
+                    # - type driven: only applicable to IfcTypeObject subtypes
+                    # - type driven override: applicable to both IfcObject and IfcTypeObject
+                    #                         where the former can override the latter
+                    # 
+                    # In UML we associate only to the IfcObject subtype and have the
+                    # pset mechanism encoded in the property set stereotype name.
+                    # 
+                    # In this step we make sure that the serialized data corresponds
+                    # to the association mechanism of the pset.
+                    is_type_driven_only = "typedrivenonly" in stereotype
+                    is_type_driven_override = "typedrivenoverride" in stereotype
+                    
+                    if is_type_driven_override or is_type_driven_only:
+                        get_name = lambda id_: self.xmi.by_id[id_].name
+                        ref_names = list(map(get_name, refs))
+                        
+                        def substitute_predefined_type_with_containing_entity(ref_name):
+                            """
+                            PQsets can also be associated to a predefined type which is
+                            modelled in UML as a class with a DOT in its name, signalling
+                            the enum container and predefined type value. We should trace
+                            the containment of such a predefined type ot the relevant entity
+                            by means of the formal UML association, but we take a shortcut
+                            here by looking at the name.                            
+                            """
+                            
+                            if "." in ref_name:
+                                type_name, type_value = ref_name.split(".")
+                                entity_name = re.sub("(Type)?Enum$", "", type_name)
+                                entity = [c for c in self.xmi.by_tag_and_type["packagedElement"]["uml:Class"] if c.name == entity_name][0]
+                                return entity.xmi_id, type_value
+                        
+                        ref_substituted_entities = list(map(substitute_predefined_type_with_containing_entity, ref_names))
+                        refs_combined = [b if b else (a,) for a, b in zip(refs, ref_substituted_entities)]
+                        
+                        # Lookup corresponding object types for the applicable entities
+                        object_typing_reversed = {v[0]: k for k, v in self.concepts['ObjectTyping'].items() if len(v) == 1}
+                        corresponding_types = list(filter(None, map(lambda id_pt: object_typing_reversed.get(id_pt[0], None), refs_combined)))
+                        
+                        if len(corresponding_types) != len(refs):
+                            ref_names = map(get_name, refs)
+                            ref_type_names = map(get_name, corresponding_types)
+                            print(f"WARNING: For PQset {c.name} applicability [{', '.join(ref_names)}] results in type associations [{', '.join(ref_type_names)}]")
+                        
+                        # augment with predefined types again:
+                        corresponding_types = [(a,) + b[1:] if b[1:] else a for a, b in zip(corresponding_types, refs_combined)]
+                        
+                        if is_type_driven_only:
+                            refs = corresponding_types
+                        else:
+                            refs += corresponding_types
 
                 # TEMPORARY SKIP SOME OLD PSET DEFINITIONS
                 if (c|"project").author == 'IQSOFT':
@@ -448,7 +504,7 @@ class xmi_document:
                     nm = attr.name
                     ty = self.xmi.by_id[(attr|"type").idref]
                     
-                    if stereotype in ("PSET", "CPROP"):
+                    if set_stereotype in ("PSET", "CPROP"):
                     
                         for b in ty/"templateBinding":
                             if b/"parameterSubstitution":
@@ -465,14 +521,14 @@ class xmi_document:
                         set_definition.append((nm, ty.name))
 
                 yield xmi_item(
-                    "CPROP" if stereotype == "CPROP" else "PSET", 
+                    "CPROP" if set_stereotype == "CPROP" else "PSET", 
                     c.name, 
                     set_definition, 
                     c,
                     [(x.name, x) for x in c/("attribute")],
                     document=self, 
                     refs=refs,
-                    stereotype=stereotype
+                    stereotype=set_stereotype
                 )
                 
             elif c.xmi_type == "uml:DataType":

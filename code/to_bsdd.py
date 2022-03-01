@@ -158,6 +158,10 @@ def generate_definitions():
             
         for id in refs:
         
+            if isinstance(id, tuple):
+                # In case of TypeObject+PredefinedType appl
+                id = id[0]
+
             di = by_id.get(id)
             if di is None:
                 try:

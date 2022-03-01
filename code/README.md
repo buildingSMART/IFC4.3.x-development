@@ -308,6 +308,7 @@ System dependencies:
  * `ifcopenshell` - used in a minor capacity which can probably be removed in the future
  * `imagemagick` - automatic image conversion
  * `python` - to run the website
+ * `redis` - database for building indexes (optional)
  * `solr` - search database (optional)
  * `supervisord` - process control (optional)
 
@@ -341,6 +342,32 @@ $ git clone https://github.com/buildingSMART/Sample-Test-Files.git examples
 ```
 
 You can now visit `http://127.0.0.1:5000/` to see the running website.
+
+## Publishing
+
+For publishing a static HTML snapshot of the documentation, you may enable ISO
+mode. This disables dynamic features such as the Git edit history and search.
+You can preview what ISO mode looks like by adding `?iso=1` to any page.
+
+Prior to publishing, enable ISO mode by setting `is_iso = True` in `server.py`.
+One option of publishing is by using `wget`:
+
+```
+$ wget -r -l inf -E -k -p -H -Draw.githubusercontent.com,unpkg.com,polyfill.io,cdn.jsdelivr.net,cdnjs.cloudflare.com,i.creativecommons.org,localhost http://localhost:5000
+```
+
+The options used are:
+
+ * -r recursive
+ * -l infinite recursion depth
+ * -E adjust extension, to enforce ".html" extension
+ * -k convert links, to ensure links are relative and work offline
+ * -p page requisites, downloads assets such as inline images and stylesheets
+ * -H span hosts, to allow downloading assets outside localhost
+ * -D comma separated lists of hosts where content may exist
+
+It takes a while to run, so for testing you may limit the recursion depth by
+setting `-l 2` or another low number.
 
 ## Deployment
 

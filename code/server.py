@@ -49,6 +49,7 @@ from extract_concepts_from_xmi import parse_bindings
 app = Flask(__name__)
 
 base = "/IFC/RELEASE/IFC4x3/HTML"
+is_iso = False
 
 
 def make_url(fragment=None):
@@ -736,6 +737,7 @@ def property(prop):
     return render_template(
         "property.html",
         base=base,
+        is_iso=is_iso,
         navigation=get_navigation(),
         content=html,
         number=idx,
@@ -847,6 +849,7 @@ def resource(resource):
         return render_template(
             "entity.html",
             base=base,
+            is_iso=is_iso,
             navigation=get_navigation(resource),
             number=idx,
             definition_number=definition_number,
@@ -869,6 +872,7 @@ def resource(resource):
         return render_template(
             "property.html",
             base=base,
+            is_iso=is_iso,
             navigation=get_navigation(resource),
             content=get_definition(resource, mdc),
             number=idx,
@@ -883,6 +887,7 @@ def resource(resource):
     return render_template(
         "type.html",
         base=base,
+        is_iso=is_iso,
         navigation=get_navigation(resource),
         content=get_definition(resource, mdc),
         number=idx,
@@ -1344,6 +1349,8 @@ class FigureNumberer:
         # As a result with do string replacements in reverse order of the length
         # of the placeholder number.
         for placeholder_number, generated_number in sorted(cls.index.items(), key=lambda x: len(x[0]), reverse=True):
+            print('replace', placeholder_number)
+            print('with', generated_number)
             html = html.replace(f"Figure {placeholder_number}", f"Figure {generated_number}")
             html = html.replace(f"Figure-{placeholder_number}", f"Figure-{generated_number}")
             html = html.replace(f"Table {placeholder_number}", f"Table {generated_number}")
@@ -1381,7 +1388,7 @@ def annex_b():
         {"number": "B.2", "title": "Property sets", "url": make_url("annex-b2.html")},
         {"number": "B.3", "title": "Properties", "url": make_url("annex-b3.html")},
     ]
-    return render_template("annex-b.html", base=base, navigation=get_navigation(), items=items)
+    return render_template("annex-b.html", base=base, is_iso=is_iso, navigation=get_navigation(), items=items)
 
 
 @app.route(make_url("annex-b1.html"))
@@ -1390,7 +1397,7 @@ def annex_b1():
         {"number": name_to_number()[n], "url": url_for("resource", resource=n), "title": n}
         for n in sorted(entity_names() + type_names())
     ]
-    return render_template("annex-b.html", base=base, navigation=get_navigation(), items=items, is_dictionary=True)
+    return render_template("annex-b.html", base=base, is_iso=is_iso, navigation=get_navigation(), items=items, is_dictionary=True)
 
 
 @app.route(make_url("annex-b2.html"))
@@ -1400,7 +1407,7 @@ def annex_b2():
         for n in sorted(R.pset_definitions.keys())
         if n in name_to_number()
     ]
-    return render_template("annex-b.html", base=base, navigation=get_navigation(), items=items, is_dictionary=True)
+    return render_template("annex-b.html", base=base, is_iso=is_iso, navigation=get_navigation(), items=items, is_dictionary=True)
 
 
 @app.route(make_url("annex-b3.html"))
@@ -1409,7 +1416,7 @@ def annex_b3():
         {"number": "", "url": url_for("property", prop=n), "title": n}
         for n in sorted(set([p["name"] for pdef in R.pset_definitions.values() for p in pdef["properties"]]))
     ]
-    return render_template("annex-b.html", base=base, navigation=get_navigation(), items=items)
+    return render_template("annex-b.html", base=base, is_iso=is_iso, navigation=get_navigation(), items=items)
 
 
 def make_concept(path, number_path=None):
@@ -1457,6 +1464,7 @@ def concept_list():
     return render_template(
         "chapter.html",
         base=base,
+        is_iso=is_iso,
         navigation=get_navigation(),
         content=html,
         path=fn[len(REPO_DIR) :].replace("\\", "/"),
@@ -1508,6 +1516,7 @@ def concept(s=""):
     return render_template(
         "concept.html",
         base=base,
+        is_iso=is_iso,
         navigation=get_navigation(resource, number=n),
         content=html,
         path=fn[len(REPO_DIR) :].replace("\\", "/"),
@@ -1551,6 +1560,7 @@ def chapter(n):
     return render_template(
         "chapter.html",
         base=base,
+        is_iso=is_iso,
         navigation=get_navigation(number=n),
         content=html,
         path=fn[len(REPO_DIR) :].replace("\\", "/"),
@@ -1567,8 +1577,9 @@ def cover(s="cover"):
     return render_template(
         "cover.html",
         base=base,
+        is_iso=is_iso,
         navigation=get_navigation(),
-        content=markdown.markdown(render_template_string(open(fn).read(), base=base)),
+        content=markdown.markdown(render_template_string(open(fn).read(), base=base, is_iso=is_iso)),
         path=fn[len(REPO_DIR) :].replace("\\", "/"),
         subs=[],
     )
@@ -1595,10 +1606,11 @@ def content(s="cover"):
         except:
             abort(404)
 
-    html = process_markdown("", render_template_string(open(fn).read(), base=base))
+    html = process_markdown("", render_template_string(open(fn).read(), base=base, is_iso=is_iso))
     return render_template(
         "static.html",
         base=base,
+        is_iso=is_iso,
         navigation=get_navigation(),
         content=html,
         path=fn[len(REPO_DIR) :].replace("\\", "/"),
@@ -1609,7 +1621,7 @@ def content(s="cover"):
 
 @app.route(make_url("annex-a.html"))
 def annex_a():
-    return render_template("annex-a.html", base=base, navigation=get_navigation())
+    return render_template("annex-a.html", base=base, is_iso=is_iso, navigation=get_navigation())
 
 
 def annotate_hierarchy(data=None, start=1, number_path=None):
@@ -1657,7 +1669,7 @@ def annotate_hierarchy(data=None, start=1, number_path=None):
 def toc():
     subs = navigation[1][0:4]
     subs += annotate_hierarchy(start=5)
-    return render_template("chapter.html", base=base, navigation=get_navigation(), title="Contents", subs=subs)
+    return render_template("chapter.html", base=base, is_iso=is_iso, navigation=get_navigation(), title="Contents", subs=subs)
 
 
 @app.route(make_url("annex-c.html"))
@@ -1681,7 +1693,7 @@ def annex_c():
                 indentation_map[padding - 1]["children"].append(data)
             indentation_map[padding] = data
 
-    return render_template("annex-c.html", base=base, navigation=get_navigation(), entities=entities)
+    return render_template("annex-c.html", base=base, is_iso=is_iso, navigation=get_navigation(), entities=entities)
 
 
 @app.route(make_url("annex-d.html"))
@@ -1691,12 +1703,12 @@ def annex_d():
         toc_entry(s[:-4], url=url_for("annex_d_diagram_page", s=s[:-4]), number="D-%d" % i)
         for i, s in enumerate(sorted(diagrams), start=1)
     ]
-    return render_template("annex-d.html", base=base, navigation=get_navigation(), diagrams=diagrams)
+    return render_template("annex-d.html", base=base, is_iso=is_iso, navigation=get_navigation(), diagrams=diagrams)
 
 
 @app.route(make_url("annex_d/<s>.html"))
 def annex_d_diagram_page(s):
-    return render_template("annex-d-item.html", base=base, navigation=get_navigation(), name=s)
+    return render_template("annex-d-item.html", base=base, is_iso=is_iso, navigation=get_navigation(), name=s)
 
 
 @app.route(make_url("annex_d/<s>.png"))
@@ -1708,7 +1720,7 @@ def annex_d_diagram(s):
 def annex_e():
     examples = map(os.path.basename, filter(os.path.isdir, glob.glob(os.path.join(REPO_DIR, "../examples/IFC 4.3/*"))))
     examples = sorted(toc_entry(s, url=url_for("annex_e_example_page", s=s)) for s in examples)
-    return render_template("annex-e.html", base=base, navigation=get_navigation(), examples=examples)
+    return render_template("annex-e.html", base=base, is_iso=is_iso, navigation=get_navigation(), examples=examples)
 
 
 @app.route(make_url("annex-f.html"))
@@ -1737,7 +1749,7 @@ def annex_f():
                 }
             )
         SectionNumberGenerator.end_subsection()
-    return render_template("annex-f.html", base=base, navigation=get_navigation(), changelogs=changelog)
+    return render_template("annex-f.html", base=base, is_iso=is_iso, navigation=get_navigation(), changelogs=changelog)
 
 
 @app.route(make_url("annex_e/<s>.html"))
@@ -1768,6 +1780,7 @@ def annex_e_example_page(s):
     return render_template(
         "annex-e-item.html",
         base=base,
+        is_iso=is_iso,
         navigation=get_navigation(),
         content=html_raw,
         path=path,
@@ -1816,6 +1829,7 @@ def schema(name):
     return render_template(
         "subchapter.html",
         base=base,
+        is_iso=is_iso,
         navigation=get_navigation(number=n),
         definition=definition,
         path=fn[len(REPO_DIR) :].replace("\\", "/"),
@@ -1850,7 +1864,7 @@ def search():
             for r in list(results)[0:10]
         ]
 
-    return render_template("search.html", base=base, navigation=get_navigation(), matches=matches, query=query)
+    return render_template("search.html", base=base, is_iso=is_iso, navigation=get_navigation(), matches=matches, query=query)
 
 
 @app.route("/sandcastle", methods=["GET", "POST"])
@@ -1877,7 +1891,7 @@ def sandcastle():
 
         html = str(soup)
 
-    return render_template("sandcastle.html", base=base, html=html, md=md)
+    return render_template("sandcastle.html", base=base, is_iso=is_iso, html=html, md=md)
 
 
 # Are you ready for regex golfing? Here's a challenge.
@@ -1900,6 +1914,13 @@ try:
 except:
     redis = None
 
+
+@app.before_request
+def before():
+    global is_iso
+    is_iso = False
+    if request.args.get("iso") == "1":
+        is_iso = True
 
 @app.after_request
 def after(response):
@@ -2060,7 +2081,7 @@ def get_index():
         {"number": "", "title": f"Listing of {x}", "url": make_url(f"listing-{x}.html")}
         for x in "references,figures,tables".split(",")
     ]
-    return render_template("annex-b.html", base=base, navigation=get_navigation(), items=items, title="Index")
+    return render_template("annex-b.html", base=base, is_iso=is_iso, navigation=get_navigation(), items=items, title="Index")
 
 
 @app.route(make_url("listing-<any(references,figures,tables):kind>.html"))
@@ -2082,7 +2103,7 @@ def get_index_index(kind):
             for k, gs in itertools.groupby(items, operator.itemgetter("title"))
         ]
     return render_template(
-        "annex-b.html", base=base, navigation=get_navigation(), items=items, title=f"Listing of {kind}"
+        "annex-b.html", base=base, is_iso=is_iso, navigation=get_navigation(), items=items, title=f"Listing of {kind}"
     )
 
 

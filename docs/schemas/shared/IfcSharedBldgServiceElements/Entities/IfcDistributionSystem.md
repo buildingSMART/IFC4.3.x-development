@@ -56,9 +56,11 @@ Additionally, an IfcDistributionSystem may in turn be assigned to an IfcDistribu
 
 > EXAMPLE&nbsp; A gas-powered hot water heater may have three ports: GAS, DOMESTICCOLDWATER, and DOMESTICHOTWATER. The heater is a member of two systems (GAS and DOMESTICCOLDWATER), and hosts one system (DOMESTICHOTWATER) at the corresponding port.
 
-Figure 1 illustrates a distribution system for an electrical circuit.
+Figure 303 — Distribution system assignment
 
-!["Instance diagram for electrical circuit"](../../../../figures/ifcdistributionsystem-01.png "Figure 1 &mdash; Distribution system assignment")
+![Instance diagram for electrical circuit](../../../../figures/ifcdistributionsystem-01.png)
+Figure 303 — Distribution system assignment
+
 
 #### IfcDistributionElement
 

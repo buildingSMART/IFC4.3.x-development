@@ -41,5 +41,5 @@ The IfcBeamType may define the shared geometric representation for all beam occu
 
 > NOTE&nbsp; The product shape representations are defined as RepresentationMaps (attribute of the supertype IfcTypeProduct), which get assigned by an element occurrence instance through the _IfcShapeRepresentation.Item[n]_ being an IfcMappedItem. See IfcTypeProduct for further information.
 
-> NOTE&nbsp; The values of attributes RepresentationIdentifier and RepresentationType of IfcShapeRepresentation are restricted in the same way as those for IfcBeam and IfcBeamStandardCase
+> NOTE&nbsp; The values of attributes RepresentationIdentifier and RepresentationType of IfcShapeRepresentation are restricted in the same way as those for IfcBeam
 

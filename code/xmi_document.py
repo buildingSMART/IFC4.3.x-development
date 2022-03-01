@@ -493,7 +493,7 @@ class xmi_document:
                         if is_type_driven_only:
                             refs = corresponding_types
                         else:
-                            refs += corresponding_types
+                            refs = refs + corresponding_types
 
                 # TEMPORARY SKIP SOME OLD PSET DEFINITIONS
                 if (c|"project").author == 'IQSOFT':

@@ -36,9 +36,11 @@ Detailed description of the permit.
 
 ### Aggregation
 
-As shown in Figure 1, an **IfcActionRequest** may be aggregated into components.
+As shown in Figure 308, an IfcActionRequest may be aggregated into components.
 
-!["Composition Use Definition"](../../../../figures/ifcactionrequest-composition.png "Figure 1 &mdash; Action request composition")
+
+![Composition Use Definition](../../../../figures/ifcactionrequest-composition.png)
+Figure 308 — Action request composition
 
 #### IfcCostSchedule
 
@@ -46,19 +48,25 @@ Cost schedules may indicate the costs projected or incurred for the request.
 
 ### Approval Association
 
-Approvals may be associated to indicate the status of acceptance or rejection using the [IfcRelAssociatesApproval](../../ifccontrolextension/lexical/ifcrelassociatesapproval.htm) relationship where RelatingApproval refers to an [IfcApproval](../../ifcapprovalresource/lexical/ifcapproval.htm) and RelatedObjects contains the **IfcActionRequest**. Approvals may be split into sub-approvals using [IfcApprovalRelationship](../../ifcapprovalresource/lexical/ifcapprovalrelationship.htm) to track approval status separately for each party where RelatingApproval refers to the higher-level approval and RelatedApprovals contains one or more lower-level approvals. The hierarchy of approvals implies sequencing such that a higher-level approval is not executed until all of its lower-level approvals have been accepted.
+Approvals may be associated to indicate the status of acceptance or rejection using the IfcRelAssociatesApproval relationship where RelatingApproval refers to an IfcApproval and RelatedObjects contains the IfcActionRequest. Approvals may be split into sub-approvals using IfcApprovalRelationship to track approval status separately for each party where RelatingApproval refers to the higher-level approval and RelatedApprovals contains one or more lower-level approvals. The hierarchy of approvals implies sequencing such that a higher-level approval is not executed until all of its lower-level approvals have been accepted.
+
 
 ### Control Assignment
 
-As shown in Figure 1, an **IfcActionRequest** may be assigned to the following entities using relationships as indicated:
+As shown in Figure 309, an IfcActionRequest may be assigned to the following entities using relationships as indicated:
 
-* [IfcActor](../../ifckernel/lexical/ifcactor.htm) ([IfcRelAssignsToActor](../../ifckernel/lexical/ifcrelassignstoactor.htm)): Person or organization issuing the request such as a tenant or owner.
 
-The **IfcActionRequest** may have assignments of its own using the [IfcRelAssignsToControl](../../ifckernel/lexical/ifcrelassignstocontrol.htm) relationship where RelatingControl refers to the **IfcActionRequest** and RelatedObjects contains one or more objects of the following types:
+* IfcActor (IfcRelAssignsToActor): Person or organization issuing the request such as a tenant or owner.
 
-* [IfcActor](../../ifckernel/lexical/ifcactor.htm): Person or organization(s) fulfilling the request such as a facilities manager or contractor. 
 
-!["Assignment Use Definition"](../../../../figures/ifcactionrequest-assignment.png "Figure 1 &mdash; Action request assignment")
+The IfcActionRequest may have assignments of its own using the IfcRelAssignsToControl relationship where RelatingControl refers to the IfcActionRequest and RelatedObjects contains one or more objects of the following types:
+
+* IfcActor: Person or organization(s) fulfilling the request such as a facilities manager or contractor.
+
+
+![Assignment Use Definition](../../../../figures/ifcactionrequest-assignment.png)
+Figure 309 — Action request assignment
+
 
 ### Object Nesting
 

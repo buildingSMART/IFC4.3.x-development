@@ -59,72 +59,39 @@ Either there is no covering type object associated, i.e. the _IsTypedBy_ inverse
 
 ### Body SweptSolid Geometry
 
-The following additional constraints apply to the 'SweptSolid' representation of IfcCovering:
+The following additional constraints apply to the 'SweptSolid'
+representation of IfcCovering:
+
 
 * for planar base surfaces - swept area representation
 * for cylindrical base surfaces - swept area representation
 
-&nbsp;
+![advanded solid covering](../../../../figures/ifccovering_advanced-1-layout1.gif)
 
-<table>
- 
-<tr>
-  
-<td><img src="../../../../figures/ifccovering_advanced-1-layout1.gif" alt="advanded solid covering" border="0" height="274" width="399"></td>
+Figure 227 — Covering body planar
 
-  <td><blockquote class="example">EXAMPLE&nbsp; Figure 1 illustrates a body representation where the volume of
-<em>IfcCovering</em> is given by an <em>IfcExtrudedAreaSolid</em> for
-planar base surfaces (here given by the
-<em>IfcRelSpaceBoundary</em>). The extruded area (<em>IfcArbitraryClosedProfileDef</em>) shall 
-be coplanar to the surface defined by the
-<em>IfcRelSpaceBoundary</em>.
-</blockquote></td>
- </tr>
+> EXAMPLE  Figure 227 illustrates a body representation where the volume of
+> IfcCovering is given by an IfcExtrudedAreaSolid for
+> planar base surfaces (here given by the
+> IfcRelSpaceBoundary). The extruded area (IfcArbitraryClosedProfileDef) shall
+> be coplanar to the surface defined by the
+> IfcRelSpaceBoundary.
 
- <tr>
-  
-<td>
-<p class="figure">Figure 1 &mdash; Covering body planar</p>
-</td>
+![advanced solid covering](../../../../figures/ifccovering_advanced-2-layout1.gif)
 
-  <td>&nbsp;</td>
- </tr>
+Figure 228 — Covering body circular
 
-</table>
+> EXAMPLE  Figure 228 illustrates a body representation where the volume of
+> the IfcCovering is given by an IfcExtrudedAreaSolid
+> for cylindrical base surfaces (here given by the
+> IfcRelSpaceBoundary - such as caused by a round wall).
 
-<table>
- 
-<tr>
-  
-<td><img src="../../../../figures/ifccovering_advanced-2-layout1.gif" alt="advanced solid covering" border="0" height="274" width="399"></td>
-
-  <td><blockquote class="example">EXAMPLE&nbsp; Figure 2 illustrates a body representation where the volume of
-the <em>IfcCovering</em> is given by an <em>IfcExtrudedAreaSolid</em>
-for cylindrical base surfaces (here given by the
-<em>IfcRelSpaceBoundary</em> - such as caused by a round wall).</blockquote>
-  <blockquote>
-   
-<ul>
-<li class="small">The geometry representation of the <em>IfcCovering</em> is given
-by the <em>IfcCompositeCurve</em> (the <em>OuterCurve</em> parameter of
-the <em>IfcArbitraryClosedProfileDef</em> - in cases of faceted
-representation also a closed <em>IfcPolyline</em>). It is extruded
-along the plane of the base surface using the <em>Depth</em>
-parameter of the <em>IfcSurfaceOfLinearExtrusion</em>.</li>
-</ul></blockquote>
- </td>
- </tr>
- 
-<tr>
-  
-<td>
-<p class="figure">Figure 2 &mdash; Covering body circular</p>
-</td>
-
-  <td>&nbsp;</td>
- </tr>
-
-</table>
+> * The geometry representation of the IfcCovering is given
+> by the IfcCompositeCurve (the OuterCurve parameter of
+> the IfcArbitraryClosedProfileDef - in cases of faceted
+> representation also a closed IfcPolyline). It is extruded
+> along the plane of the base surface using the Depth
+> parameter of the IfcSurfaceOfLinearExtrusion.
 
 ### Material Layer Set Usage
 
@@ -170,71 +137,42 @@ The IfcCovering has a containment relationship within the hierarchical spatial s
 
 ### Surface Geometry
 
-The following additional constraints apply to the 'GeometricSet' representation of IfcCovering:
+The following additional constraints apply to the 'GeometricSet'
+representation of IfcCovering:
+
 
 * for planar base surfaces - bounded surface representation
-* for cylindrical base surfaces - swept surface representation
+* for cylindrical base surfaces - swept surface
+representation
 
-&nbsp;
 
-<table>
+![standard planar covering](../../../../figures/ifccovering_standard-1-layout1.gif)
 
- <tr>
+Figure 225 — Covering surface planar
 
-  <td><img src="../../../../figures/ifccovering_standard-1-layout1.gif" alt="standard planar covering" border="0" height="274" width="399"></td>
+> EXAMPLE  Figure 225 illustrates a planar surface representation where the
+> area of IfcCovering is given by an IfcPolyLoop for
+> planar base surfaces (here provided by the
+> IfcRelSpaceBoundary). The implicit planar surface of the IfcPolyLoop shall be
+> identical with the planar surface defined by the
+> IfcRelSpaceBoundary.
 
-  <td><blockquote class="example">EXAMPLE&nbsp; Figure 1 illustrates a planar surface representation where the
-area of <em>IfcCovering</em> is given by an <em>IfcPolyLoop</em> for
-planar base surfaces (here provided by the
-<em>IfcRelSpaceBoundary</em>). The implicit planar surface of the <em>IfcPolyLoop</em> shall be
-identical with the planar surface defined by the
-<em>IfcRelSpaceBoundary</em>.</blockquote></td>
- </tr>
 
- <tr>
 
-  <td>
-<p class="figure">Figure 1 &mdash; Covering surface planar</p>
-</td>
 
- </tr>
+![standard cylindrical covering](../../../../figures/ifccovering_standard-2-layout1.gif)
 
-</table>
+Figure 226 — Covering surface cylindrical
 
-<table>
+> EXAMPLE  Figure 226 illustrates a cylindrical surface representation where
+> the area of the IfcCovering is given by an
+> IfcSurfaceOfLinearExtrusion for cylindrical base surfaces
+> (here given by the IfcRelSpaceBoundary, such as caused by a
+> round wall).
 
- <tr>
-
-  <td><img src="../../../../figures/ifccovering_standard-2-layout1.gif" alt="standard cylindrical covering" border="0" height="274" width="399"></td>
-  <td><blockquote class="example">EXAMPLE&nbsp; Figure 2 illustrates a cylindrical surface representation where
-the area of the <em>IfcCovering</em> is given by an
-<em>IfcSurfaceOfLinearExtrusion</em> for cylindrical base surfaces
-(here given by the <em>IfcRelSpaceBoundary</em>, such as caused by a
-round wall).</blockquote>
-  <blockquote>
-
-   <ul>
-    
-<li class="small">The geometry representation of the <em>IfcCovering</em> is given
-by the <em>IfcTrimmedCurved</em> (the Curve parameter of the
-<em>IfcArbitraryOpenProfileDef</em> - in cases of faceted
-representation also an <em>IfcPolyline</em>). It is extruded within
-the plane of the base surface using the <em>Depth</em> parameter of
-the <em>IfcSurfaceOfLinearExtrusion</em>.</li>
-</ul></blockquote>
-</td>
- 
-</tr>
- 
-<tr>
-
-  <td>
-<p class="figure">Figure 2 &mdash; Covering surface
-cylindrical</p>
-</td>
-  <td>&nbsp;</td>
-
-</tr>
-
-</table>
-
+> * The geometry representation of the IfcCovering is given
+> by the IfcTrimmedCurved (the Curve parameter of the
+> IfcArbitraryOpenProfileDef - in cases of faceted
+> representation also an IfcPolyline). It is extruded within
+> the plane of the base surface using the Depth parameter of
+> the IfcSurfaceOfLinearExtrusion.

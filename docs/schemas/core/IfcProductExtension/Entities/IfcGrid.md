@@ -58,4 +58,95 @@ Predefined types to define the particular type of the grid.
 ### Grid Attributes
 
 
+### Footprint Geometry
 
+
+ The 2D geometric representation of IfcGrid is defined
+ using the 'GeometricCurveSet' geometry. The following
+ attribute values should be inserted
+
+
+
+* IfcShapeRepresentation.RepresentationIdentifier =
+ 'FootPrint'.
+* IfcShapeRepresentation.RepresentationType =
+ 'GeometricCurveSet' .
+
+
+
+ The following constraints apply to the 2D representation:
+
+
+
+* The IfcGeometricCurveSet shall be an (and the
+ only) Item of the IfcShapeRepresentation. It
+ should contain an IfcGeometricCurveSet containing
+ subtypes of IfcCurve, each representing a grid axis.
+ Applicable subtypes of IfcCurve are:
+ IfcPolyline, IfcCircle, IfcTrimmedCurve
+ (based on BaseCurve referencing IfcLine or
+ IfcCircle), and IfcOffsetCurve2D.
+* Each subtype of IfcCurve may have a curve style
+ assigned, using IfcStyledItem referencing
+ IfcCurveStyle.
+* Optionally the grid axis labels may be added as
+ IfcTextLiteral, and they may have text styles
+ assigned, using IfcStyledItem referencing
+ IfcTextStyle.
+
+
+![design grid](../../../../figures/ifcdesigngrid-layout1.gif)
+
+>
+>  As shown in Figure 31, the IfcGrid defines a
+>  placement coordinate system using the
+>  ObjectPlacement. The XY plane of the
+>  coordinate system is used to place the 2D grid axes.
+>  The Representation of IfcGrid is
+>  defined using IfcProductRepresentation,
+>  referencing an IfcShapeRepresentation, that
+>  includes IfcGeometricCurveSet as
+>  Items. All grid axes are added as
+>  IfcPolyline to the
+>  IfcGeometricCurveSet.
+>
+
+
+Figure 157 — Grid layout
+
+
+![representation of a design grid](../../../../figures/ifcgrid-representation.png)
+
+>
+>  As shown in Figure 32, the attributes UAxes
+>  and VAxes define lists of IfcGridAxis
+>  within the context of the grid. Each instance of
+>  IfcGridAxis refers to the same instance of
+>  IfcCurve (here the subtype IfcPolyline)
+>  that is contained within the
+>  IfcGeometricCurveSet that represents the
+>  IfcGrid.
+>
+
+
+Figure 158 — Grid representation
+
+
+### Placement
+
+
+ The local placement for IfcGrid is defined in its
+ supertype IfcProduct. It is defined by the
+ IfcLocalPlacement, which defines the local coordinate
+ system that is referenced by all geometric representations.
+
+
+
+* The PlacementRelTo relationship of
+ IfcLocalPlacement shall point (if given) to the local
+ placement of the same IfcSpatialStructureElement,
+ which is used in the ContainedInStructure inverse
+ attribute, or to a spatial structure element at a higher
+ level, referenced by that.
+* If the relative placement is not used, the absolute
+ placement is defined within the world coordinate system.

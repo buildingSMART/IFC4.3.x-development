@@ -51,31 +51,35 @@ Either there is no stair flight type object associated, i.e. the _IsTypedBy_ inv
 
 The walking line is represented by a two-dimensional open curve as the axis. The curve is directed into the upward direction (direction has to be interpreted as specified at the subtypes of IfcCurve).
 
-Figure 1 illustrates the axis representation which has the following constraints:
+Figure 273 illustrates the axis representation which has the following constraints:
 
 * In case of straight flights the curve shall be a single item of type IfcPolyline.
 * In case of winding flights the curve shall be a single item of type IfcCompositeCurve.
 * In case of a curved flight or a spiral flight the curve shall be a single item of type IfcTrimmedCurve.
 
-!["walking line"](../../../../figures/ifcstairflight_01-layout1.gif "Figure 1 &mdash; Stair flight axis")
+![walking line](../../../../figures/ifcstairflight_01-layout1.gif)
+Figure 273 — Stair flight axis
 
 ### Body SweptSolid Geometry
 
-Figure 1 illustrates the 'Body' geometric representation using a 'SweptSolid' representation type.
+Figure 275 illustrates the 'Body' geometric representation using a 'SweptSolid' representation type.
 
-!["3D"](../../../../figures/ifcstairflight_03-layout1.gif "Figure 1 &mdash; Stair flight body")
+
+![3D](../../../../figures/ifcstairflight_03-layout1.gif)
+Figure 275 — Stair flight body
 
 ### FootPrint Geometry
 
 The flight foot print, including the flight boundary is represented by a two-dimensional geometric curve set.
 
-Figure 1 illustrates the footprint representation which has the following constraints:
+Figure 274 illustrates the footprint representation which has the following constraints:
 
 * In case of straight flights the curve set shall consists of a single item of type IfcPolyline.
 * In case of winding flights or curved flights the curve set shall consists of a single item of type IfcCompositeCurve.
 * In case of a spiral flight the curve set shall consists of a single item of type IfcConic or IfcPolyline.
 
-!["boundary"](../../../../figures/ifcstairflight_02-layout1.gif "Figure 1 &mdash; Stair flight footprint")
+![boundary](../../../../figures/ifcstairflight_02-layout1.gif)
+Figure 274 — Stair flight footprint
 
 ### Material Single
 

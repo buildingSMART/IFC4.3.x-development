@@ -38,7 +38,7 @@ Figure 1 illustrates resource assignment.
 
 A resource may have any number of baselines defined using the relationship _IfcRelDefinesByObject_ where _RelatingObject_ is the "current" resource and _RelatedObjects_ consists of multiple "baseline" resources, each representing a copy of the resource as it existed at an earlier point in time as shown in Figure 185. Each baseline _IfcConstructionResource_ is identified by its nested _IfcRelAssignsToControl_ relationship to an _IfcWorkSchedule_ having _PredefinedType=BASELINE_, _IfcWorkSchedule.CreationDate_ indicating the date of the baseline, and _IfcWorkSchedule.Name_ indicating the name of the baseline.
 
-![Baseline Use Definition](../../../../figures/ifcconstructionresource-baseline.png "Figure 2 &mdash; Construction resource baseline use")
+![Baseline Use Definition](../../../../figures/ifcconstructionresource-baseline.png "Figure 185 &mdash; Construction resource baseline use")
 
 ## Attributes
 
@@ -84,7 +84,7 @@ Indicate fixed work (such as total person-hours) such that changes to ScheduleUs
 
 Documents may be published for work plans consisting of schedules, calendars, tasks, and resources. The relationship IfcRelAssociatesDocument may be used to preserve mappings to such document where RelatingDocument points to an IfcDocumentReference and RelatedObjects includes the IfcConstructionResource as shown in Figure 184. _IfcDocumentReference.ItemReference_ identifies the resource within the scope of the document, such as an integer or guid. The _IfcDocumentReference.ReferencedDocument_ corresponds to the document which is uniquely identified by _IfcDocumentInformation.DocumentId_ and/or _IfcDocumentInformation.PublicationLocation_. Such document mapping allows items in the document to be updated from the building information model and vice-versa.
 
-!["Document Use Definition"](../../../../figures/ifcconstructionresource-document.png "Figure 1 &mdash; Construction resource document use")
+!["Document Use Definition"](../../../../figures/ifcconstructionresource-document.png "Figure 184 &mdash; Construction resource document use")
 
 ### Object Nesting
 
@@ -92,17 +92,17 @@ Resources may be decomposed into allocation pools using the IfcRelNests relation
 
 A common scenario is two nesting levels where the first-level resources have no task assignments; while second-level resources have specific task assignments indicating that the resource is subdivided into allocations for specific tasks. While the model allows unlimited nesting of resources, implementer agreements may restrict to two nesting levels with task assignments specifically at the second level.
 
-!["Composition Use Definition"](../../../../figures/ifcconstructionresource-composition.png "Figure 1 &mdash; Construction resource composition use")
+!["Composition Use Definition"](../../../../figures/ifcconstructionresource-composition.png "Figure 181 &mdash; Construction resource composition use")
 
 ### Object Typing
 
 The resource type may provide shared productivity and cost information, allowing tasks and resources to be selected according to lowest cost and/or shortest duration. Given an IfcProduct of a particular IfcTypeProduct type, an IfcTypeProcess may be selected from those assigned to the product type using IfcRelAssignsToProduct, and an IfcTypeResource may be selected from those assigned to the process type using IfcRelAssignsToProcess. Then IfcTask and IfcConstructionResource occurrences may be instantiated from the type definitions, applying productivitity and rate information to assigned quantities to calculate _ResourceTime.ScheduleWork_. Task durations can then be calculated by dividing _ResourceTime.ScheduleWork_ by _ResourceTime.ScheduleUsage_.
 
-!["Type Use Definition"](../../../../figures/ifcconstructionresource-type.png "Figure 1 &mdash; Construction resource type use")
+!["Type Use Definition"](../../../../figures/ifcconstructionresource-type.png "Figure 182 &mdash; Construction resource type use")
 
 ### Property Sets for Objects
 
 For time series properties as shown in Figure 180, each IfcTimeSeriesValue indicates a LIST of values, where the sequence of the value corresponds to the IfcCostValue at _IfcConstructionResource.CostRatesConsumed_. For example, if CostRatesConsumed has two IfcCostValue items in the LIST, "Standard" and "Overtime", then _IfcTimeSeriesValue(IfcDuration('T8H0M0S'),IfcDuration('T2H0M0S'))_ would indicate 8 hours at Standard rate and 2 hours at Overtime rate. If the list of values at _IfcTimeSeriesValue.ListValues_ is less than the size of CostRatesConsumed, then subsequent values are considered to be zero.
 
-!["Time Series Use Definition"](../../../../figures/ifcconstructionresource-timeseries.png "Figure 1 &mdash; Construction resource time series use")
+!["Time Series Use Definition"](../../../../figures/ifcconstructionresource-timeseries.png "Figure 180 &mdash; Construction resource time series use")
 

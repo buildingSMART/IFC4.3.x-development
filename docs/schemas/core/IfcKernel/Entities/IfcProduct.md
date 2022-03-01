@@ -41,6 +41,7 @@ Reference to the _IfcRelAssignsToProduct_ relationship, by which other products,
 
 ### PlacementForShapeRepresentation
 If a _Representation_ is given being an _IfcProductDefinitionShape_, then also an _ObjectPlacement_ has to be given. The _ObjectPlacement_ defines the object coordinate system in which the geometric representation items of the _IfcProductDefinitionShape_ are founded.
+
 > NOTE  If the _Representation_ of several subtypes of _IfcProduct_ have the same coordinate system it is permitted to share an instance of _IfcObjectPlacement_.
 
 ## Concepts
@@ -49,7 +50,7 @@ If a _Representation_ is given being an _IfcProductDefinitionShape_, then also a
 
 The geometric representation of any IfcProduct is provided by the IfcProductDefinitionShape allowing multiple geometric representations. It uses the _Product Placement_ concept utilizing IfcLocalPlacement to establish an object coordinate system, within all geometric representations are founded.
 
-> NOTE&nbsp; A detailed specification of how to apply the local placement and which shape representaions are applicable is provided at the level of subtypes of IfcProduct and is further determined by the model view definition and implementer agreements.
+> NOTE A detailed specification of how to apply the local placement and which shape representaions are applicable is provided at the level of subtypes of IfcProduct and is further determined by the model view definition and implementer agreements.
 
 ### Product Geometry Colour
 

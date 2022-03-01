@@ -16,15 +16,37 @@ A system furniture element defines components of modular furniture which are not
 
 ### CorrectTypeAssigned
 
-
 ## Concepts
 
-### Material Constituents
+### Material Constituent Set
 
+
+
+#### Finish
+
+The finish, typically at visible aspects of the furniture.
+
+#### Frame
+
+The frame from which the object is constructed.
+
+#### Hardware
+
+Finish hardware such as knobs or handles.
+
+#### Padding
+
+Padding such as cushions.
+
+#### Panel
+
+Panels such as glass.
 
 ### Object Typing
 
 
+
 ### Property Sets for Objects
+
 
 

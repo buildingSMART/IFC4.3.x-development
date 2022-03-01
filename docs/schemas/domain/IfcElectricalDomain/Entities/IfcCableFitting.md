@@ -22,21 +22,79 @@ Either there is no cable fitting type object associated, i.e. the _IsTypedBy_ in
 
 ## Concepts
 
-### Connection
+### Material Layer Set Usage
 
 
-### Material
 
+#### Casing
+
+Material from which the casing is constructed.
+
+#### Conductor
+
+Material from which the conductors are constructed, such as Aluminium or Copper.
+
+### Object Connectivity
+
+
+
+#### ENTRY_IfcRelConnectsElements_IfcPipeSegment
+
+For equipotential bonding, may represent a clamp that is attached from a pipe or other conducting element of an earthing system.
+
+#### EXIT_IfcRelConnectsElements_IfcPipeSegment
+
+For equipotential bonding, may represent a clamp that is attached from a pipe or other conducting element of an earthing system.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_Input_CONNECTOR_NOTDEFINED
+
+The input of the connector.
+
+#### SOURCE_Output_CONNECTOR_NOTDEFINED
+
+The output of the connector.
+
+#### SOURCE_Output_ENTRY_NOTDEFINED
+
+The output of the connector.
+
+#### SINK_Input_EXIT_NOTDEFINED
+
+The input of the connector.
+
+#### SINK_Input_JUNCTION_NOTDEFINED
+
+The input of the connector.
+
+#### SOURCE_Output1_JUNCTION_NOTDEFINED
+
+An output of the connector.
+
+#### SOURCE_Output2_JUNCTION_NOTDEFINED
+
+An output of the connector.
+
+#### SINK_Input_CONNECTOR_NOTDEFINED
+
+The input of the connector.
+
+#### SOURCE_Output_CONNECTOR_NOTDEFINED
+
+The output of the connector.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

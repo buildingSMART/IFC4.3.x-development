@@ -41,3 +41,10 @@ The inherited attribute _ElementType_ shall be provided if the _PredefinedType_ 
 
 ### BendingShapeCodeProvided
 Bending parameters must be accompanied by a shape code.
+
+## Concepts
+
+### Reinforcing Bar Type Attributes
+
+
+

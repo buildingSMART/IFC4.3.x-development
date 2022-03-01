@@ -34,3 +34,12 @@ A structural point reaction shall have as a result either a single force or a si
 ### Structural Activity
 
 
+
+#### IfcStructuralLoadSingleForce_IfcStructuralPointConnection
+
+Force and moment reactions at supported point connections.
+
+#### IfcStructuralLoadSingleDisplacement_IfcStructuralPointConnection
+
+Translation and rotation at point connections.
+

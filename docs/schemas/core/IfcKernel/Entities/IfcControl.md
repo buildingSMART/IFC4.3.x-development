@@ -27,4 +27,3 @@ Reference to the relationship that associates the control to the object(s) being
 
 Controls have assignments from products, processes, or other objects by using the relationship object IfcRelAssignsToControl.
 
-

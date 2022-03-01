@@ -32,9 +32,6 @@ The inherited attribute _ElementType_ shall be provided, if the _PredefinedType_
 
 ## Concepts
 
-### Body Geometry
-
-
 ### Material Layer Set
 
 The material of the IfcWallType is defined by the
@@ -55,3 +52,8 @@ wall occurrence, if used. If an IfcMaterialProfileSet is used, all occurrences m
 > IfcMaterialLayerSetUsage including the offset from the
 > wall axis, the same IfcWallType can be used independently
 > of the axis alignment of its occurrences.
+
+### Type Body Geometry
+
+
+

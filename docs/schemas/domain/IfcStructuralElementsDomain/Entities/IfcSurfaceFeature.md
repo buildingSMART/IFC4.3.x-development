@@ -51,16 +51,19 @@ The attribute ObjectType shall be given if the predefined type is set to USERDEF
 ### Body Geometry
 
 
-### Placement
+
+#### IfcShellBasedSurfaceModel_SurfaceModel
+
+Surface representations of treated parts of the lement surface by means of IfcShellBasedSurfaceModel.  The faces within the surface model may be included into a B-Rep model within a representation map of the parent element type.
+
+### Product Local Placement
 
 The local placement for IfcSurfaceFeatureElement is defined in its supertype IfcProduct. It is defined by the IfcLocalPlacement, which defines the local coordinate system that is referenced by all geometric representations.
-
 
 * In case of features which are part of an element type, absolute placement into the type object's implied coordinate system shall be used.
 * In case of features which are voiding an element occurrence, the PlacementRelTo relationship of IfcLocalPlacement shall point to the local placement of the respective element.
 
+### Property Sets for Objects
 
-
-### Property Sets
 
 

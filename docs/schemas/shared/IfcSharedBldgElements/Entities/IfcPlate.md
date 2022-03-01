@@ -66,14 +66,9 @@ IfcHalfSpaceSolid.
 
 ![advanced plate](../../../../figures/ifcslab_advanced-layout1.gif)
 
-> EXAMPLE  Figure 248 illustrates a 'Clipping' geometric representation with definition of a plate using advanced geometric representation. The profile is extruded non-perpendicular and the plate body is clipped at the eave.
-
-
 Figure 248 — Plate body clipping
 
-
- 
-
+> EXAMPLE  Figure 248 illustrates a 'Clipping' geometric representation with definition of a plate using advanced geometric representation. The profile is extruded non-perpendicular and the plate body is clipped at the eave.
 
 
 ### Body SweptSolid Geometry
@@ -117,22 +112,15 @@ ForLayerSet.TotalThickness, has to be consistent to the
 
 ![standard plate](../../../../figures/ifcslab_standard-layout1.gif)
 
-> EXAMPLE  Figure 247 illustrates a 'SweptSolid' geometric representation. The following interpretation of dimension parameter applies for polygonal plates (in ground floor view): IfcArbitraryClosedProfileDef.OuterCurve being a closed bounded curve is interpreted as area (or foot print) of the plate.
-
-
 Figure 247 — Plate body extrusion
 
-
- 
-
+> EXAMPLE  Figure 247 illustrates a 'SweptSolid' geometric representation. The following interpretation of dimension parameter applies for polygonal plates (in ground floor view): IfcArbitraryClosedProfileDef.OuterCurve being a closed bounded curve is interpreted as area (or foot print) of the plate.
 
 ### Material Layer Set
 
 The material information of the IfcPlate is defined by
  IfcMaterialLayerSet, or by IfcMaterial, and it is attached either directly or at the IfcPlateType. In this case, the material information does not allow to construct a shape by applying the layer definition to the plane of the shape representation, to enable this parametric definition, the IfcMaterialLayerSetUsage has to be used instead.
-
-
-
+ 
 ### Material Layer Set Usage
 
 The material of IfcPlate can be defined by
@@ -176,28 +164,50 @@ As shown in Figure 106, the following conventions shall be met:
 Figure 247 — Plate material layers
 
 
-
 ### Object Typing
 
 
+
+### Product Assignment
+
+
+
+#### IfcStructuralSurfaceMember
+
+An idealized structural member corresponding to the plate.
+
+#### IfcTask
+
+A task for operating on the plate.
+
 ### Property Sets for Objects
+
 
 
 ### Quantity Sets
 
 
+
 ### Spatial Containment
 
-The IfcPlate, as any subtype of IfcBuildingElement,
-may participate alternatively in one of the two different containment relationships:
+The IfcPlate, as any subtype of IfcBuildingElement, may participate alternatively in one of the two different containment relationships:
 
+* the _Spatial Containment_ (defined here), or
+* the _Element Composition_.
 
-* the Spatial Containment (defined here), or
-* the Element Composition.
+#### IfcBuildingStorey
+
+Default spatial container
+
+#### IfcBuilding
+
+Spatial container for the element if it cannot be assigned to a building storey
+
+#### IfcSite
+
+Spatial container for the element in case that it is placed on site (outside of building)
 
 ### Surface 3D Geometry
 
+> NOTE&nbsp; The 'Surface' can be used to define a surfacic model of the building (e.g. for analytical purposes, or for reduced Level of Detail representation).
 
-> NOTE  The 'Surface' can be used to define a
-> surfacic model of the building (e.g. for analytical purposes, or
-> for reduced Level of Detail representation).

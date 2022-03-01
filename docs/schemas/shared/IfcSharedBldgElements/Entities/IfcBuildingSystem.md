@@ -24,9 +24,20 @@ Long name for a building system, used for informal purposes. It should be used, 
 ### Aggregation
 
 
+
+#### IfcBuildingSystem
+
+Building systems may be aggregated into subsystems.
+
 ### Group Assignment
 
 
+
+#### IfcBuildingElement
+
+Building elements participating in the building system.
+
 ### Property Sets for Objects
+
 
 

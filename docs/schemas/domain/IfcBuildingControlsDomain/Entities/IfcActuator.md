@@ -22,18 +22,36 @@ Either there is no actuator type object associated, i.e. the _IsTypedBy_ inverse
 ### Control Flow
 
 
-### Material
 
+#### IfcFlowController
+
+Indicates a connected valve, damper, or switch controlled by the actuator.
+
+### Material Constituent Set
+
+
+
+#### Casing
+
+Material from which the casing is constructed.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### Sink_Input_Signal
+
+Receives signal.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

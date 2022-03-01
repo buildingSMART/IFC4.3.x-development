@@ -24,18 +24,35 @@ Either there is no transformer type object associated, i.e. the _IsTypedBy_ inve
 
 ## Concepts
 
-### Material
+### Material Constituent Set
 
+
+
+#### Casing
+
+Material from which the casing is constructed.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_Line_ELECTRICAL
+
+Line to be transformed.
+
+#### SOURCE_Load_ELECTRICAL
+
+Transformed load.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

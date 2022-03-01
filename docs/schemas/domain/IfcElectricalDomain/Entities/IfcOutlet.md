@@ -24,18 +24,79 @@ Either there is no outlet type object associated, i.e. the _IsTypedBy_ inverse r
 
 ## Concepts
 
-### Material
+### Material Constituent Set
 
+
+
+#### Casing
+
+Material from which the casing is constructed.
+
+#### Conductor
+
+Material from which the conductors are constructed.
+
+#### Surface
+
+Material from which the outer plate is constructed.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_Line1_DATAOUTLET_DATA
+
+A data line, connecting to a cable commonly originating from a port on a router.
+
+#### SINK_Line2_DATAOUTLET_DATA
+
+A data line, connecting to a cable commonly originating from a port on a router.
+
+#### SOURCE_Jack1_DATAOUTLET_DATA
+
+Jacks in order of layout, going to the right and then down, which may accept a cable.
+
+#### SOURCE_Jack2_DATAOUTLET_DATA
+
+Jacks in order of layout, going to the right and then down, which may accept a cable.
+
+#### SINK_Line1_POWEROUTLET_ELECTRICAL
+
+The source of power, which may refer to a port on a junction box.
+
+#### SOURCE_Jack1_POWEROUTLET_ELECTRICAL
+
+Upper jack, accepting a plug from an appliance or fixture.
+
+#### SOURCE_Jack1_POWEROUTLET_ELECTRICAL
+
+Lower jack, accepting a plug from an appliance or fixture.
+
+#### SINK_Line1_TELEPHONEOUTLET_TELEPHONE
+
+A telephone line, connecting to a cable originating from a telecommunications distribution board.
+
+#### SINK_Line2_TELEPHONEOUTLET_TELEPHONE
+
+A telephone line, connecting to a cable originating from a telecommunications distribution board.
+
+#### SINK_Jack1_TELEPHONEOUTLET_TELEPHONE
+
+Jacks in order of layout, going to the right and then down, which may accept a cable.
+
+#### SINK_Jack2_TELEPHONEOUTLET_TELEPHONE
+
+Jacks in order of layout, going to the right and then down, which may accept a cable.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

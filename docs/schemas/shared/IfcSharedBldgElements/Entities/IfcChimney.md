@@ -28,18 +28,31 @@ Either there is no chimney type object associated, i.e. the _IsTypedBy_ inverse 
 ### Object Typing
 
 
+
 ### Property Sets for Objects
+
 
 
 ### Quantity Sets
 
 
+
 ### Spatial Containment
 
-The IfcChimney, as any subtype of IfcBuildingElement,
-may participate alternatively in one of the two different containment relationships:
+The IfcChimney, as any subtype of IfcBuildingElement, may participate alternatively in one of the two different containment relationships:
 
+* the _Spatial Containment_ (defined here), or
+* the _Element Composition_.
 
-* the Spatial Containment (defined here), or
-* the Element Composition.
+#### IfcBuildingStorey
+
+Default spatial container (in most cases the storey where the base of the chimney is placed)
+
+#### IfcBuilding
+
+Spatial container for the element if it cannot be assigned to a building storey
+
+#### IfcSite
+
+Spatial container for the element in case that it is placed on site (outside of building)
 

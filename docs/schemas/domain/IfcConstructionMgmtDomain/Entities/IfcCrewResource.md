@@ -17,9 +17,9 @@ Defines types of crew resources.
 
 ### CorrectPredefinedType
 
-
 ## Concepts
 
 ### Object Typing
+
 
 

@@ -60,6 +60,16 @@ Either the _PredefinedType_ attribute is unset, or the inherited attribute _Obje
 ### Aggregation
 
 
+
+#### IfcStructuralAnalysisModel
+
+This relationship provides the hierarchy between separate (partial) analysis models.
+
 ### Group Assignment
 
+
+
+#### IfcStructuralItem
+
+Structural members and connections assigned to the analysis model.
 

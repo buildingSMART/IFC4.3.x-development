@@ -83,27 +83,15 @@ representation,
 swept solid (here IfcExtrudedAreaSolid) and one or several
 IfcHalfSpaceSolid.
 
-
- 
-
-
 ![advanced slab](../../../../figures/ifcslab_advanced-layout1.gif)
-
-> EXAMPLE  Figure 267 illustrates a 'Clipping' geometric representation with definition of a roof slab using advanced geometric representation. The profile is extruded non-perpendicular and the slab body is clipped at the eave.
-
 
 Figure 267 — Slab body clipping
 
-
- 
-
-
+> EXAMPLE  Figure 267 illustrates a 'Clipping' geometric representation with definition of a roof slab using advanced geometric representation. The profile is extruded non-perpendicular and the slab body is clipped at the eave.
 
 ### Body SweptSolid Geometry
-
 The following constraints apply to the 'SweptSolid'
 representation:
-
 
 * Solid: IfcExtrudedAreaSolid is required,
 * Profile: IfcArbitraryClosedProfileDef,
@@ -141,29 +129,17 @@ OffsetFromReferenceLine and the
 ForLayerSet.TotalThickness, has to be consistent to the
 'SweptSolid' representation.
 
-
- 
-
-
 ![standard slab](../../../../figures/ifcslab_standard-layout1.gif)
-
-> EXAMPLE  Figure 265 illustrates a 'SweptSolid' geometric representation. The following interpretation of dimension parameter applies for polygonal slabs (in ground floor view):
->  IfcArbitraryClosedProfileDef.OuterCurve: closed bounded curve interpreted as area (or foot print) of the slab.
-
 
 Figure 265 — Slab body extrusion
 
-
- 
-
-
+> EXAMPLE  Figure 265 illustrates a 'SweptSolid' geometric representation. The following interpretation of dimension parameter applies for polygonal slabs (in ground floor view):
+>  IfcArbitraryClosedProfileDef.OuterCurve: closed bounded curve interpreted as area (or foot print) of the slab.
 
 ### Material Layer Set
 
 The material information of the IfcSlab is defined by
  IfcMaterialLayerSet, or as fallback by IfcMaterial, and it is attached either directly or at the IfcSlabType. In this case, the material information does not allow to construct a shape by applying the layer definition to the plane of the shape representation, to enable this parametric definition, the IfcMaterialLayerSetUsage has to be used instead.
-
-
 
 ### Material Layer Set Usage
 
@@ -186,14 +162,9 @@ occurrences of this IfcSlabType.
 
 ![Material layer set and usage](../../../../figures/ifcslab_materialusage-01.png)
 
-> EXAMPLE  Figure 262 illustrates assignment of IfcMaterialLayerSetUsage and IfcMaterialLayerSet to the IfcSlab as the slab occurrence and to the IfcSlabType. The same IfcMaterialLayerSet shall be shared by many occurrences of IfcMaterialLayerSetUsage. This relationship shall be consistent to the relationship between the IfcSlabType and the IfcSlab.
-
-
 Figure 262 — Slab type definition
 
-
- 
-
+> EXAMPLE  Figure 262 illustrates assignment of IfcMaterialLayerSetUsage and IfcMaterialLayerSet to the IfcSlab as the slab occurrence and to the IfcSlabType. The same IfcMaterialLayerSet shall be shared by many occurrences of IfcMaterialLayerSetUsage. This relationship shall be consistent to the relationship between the IfcSlabType and the IfcSlab.
 
 Figure 263 illustrates slab material usage, where the following conventions shall be met:
 
@@ -207,32 +178,54 @@ Figure 263 illustrates slab material usage, where the following conventions shal
 
 
 ![slab material layer set](../../../../figures/ifcmateriallayersetusage_slab-01.png)
+
 ![roof slab material layer set](../../../../figures/ifcmateriallayersetusage_roofslab-01.png)
 Figure 263 — Slab material layers
-
-
 
 ### Object Typing
 
 
+
+### Product Assignment
+
+
+
+#### IfcStructuralSurfaceMember
+
+An idealized structural member corresponding to the slab.
+
+#### IfcTask
+
+A task for operating on the slab.
+
 ### Property Sets for Objects
+
 
 
 ### Quantity Sets
 
 
+
 ### Spatial Containment
 
-The IfcSlab, as any subtype of IfcBuildingElement,
-may participate alternatively in one of the two different containment relationships:
+The IfcSlab, as any subtype of IfcBuildingElement, may participate alternatively in one of the two different containment relationships:
 
+* the _Spatial Containment_ (defined here), or
+* the _Element Composition_.
 
-* the Spatial Containment (defined here), or
-* the Element Composition.
+#### IfcBuildingStorey
+
+Default spatial container
+
+#### IfcBuilding
+
+Spatial container for the element if it cannot be assigned to a building storey
+
+#### IfcSite
+
+Spatial container for the element in case that it is placed on site (outside of building)
 
 ### Surface Geometry
 
+> NOTE&nbsp; The 'Surface' can be used to define a surfacic model of the building (e.g. for analytical purposes, or for reduced Level of Detail representation).
 
-> NOTE  The 'Surface' can be used to define a
-> surfacic model of the building (e.g. for analytical purposes, or
-> for reduced Level of Detail representation).

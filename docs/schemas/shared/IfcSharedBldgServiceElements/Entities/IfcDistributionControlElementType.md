@@ -16,3 +16,16 @@ The occurrences of the _IfcDistributionControlElementType_ are represented by in
 ### Product Type Assignment
 
 
+
+#### IfcTaskType
+
+Indicates task types available to purchase, install, renovate, demolish, operate, or otherwise act upon occurrences of the element type.  Such task types may be instantiated as task occurrences assigned to occurrences of the element type.  Prices (such as for purchasing or shipping) may be established by resource types assigned to task types.
+
+#### IfcProcedureType
+
+Indicates procedure types available to operate occurrences of the element type.  Such procedure types may be instantiated as procedure occurrences assigned to occurrences of the element type.
+
+#### IfcEventType
+
+Indicates event types available to be raised by occurrences of the element type, sequenced by procedures to be followed.  Such event types may be instantiated as event occurrences assigned to occurrences of the element type.
+

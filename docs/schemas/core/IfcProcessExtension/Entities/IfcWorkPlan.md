@@ -63,6 +63,7 @@ The attribute ObjectType must be asserted when the value of the IfcWorkPlanTypeE
 
 ## Concepts
 
-### Property Sets
+### Property Sets for Objects
+
 
 

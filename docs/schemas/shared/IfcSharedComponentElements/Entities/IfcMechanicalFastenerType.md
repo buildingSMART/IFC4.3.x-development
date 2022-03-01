@@ -40,3 +40,10 @@ The nominal length describing the longitudinal dimensions of the fastener type.
 
 ### CorrectPredefinedType
 The inherited attribute _ElementType_ shall be provided if the _PredefinedType_ is set to USERDEFINED.
+
+## Concepts
+
+### Mechanical Fastener Type Attributes
+
+
+

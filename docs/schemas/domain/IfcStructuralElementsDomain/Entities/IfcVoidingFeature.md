@@ -28,16 +28,31 @@ The attribute ObjectType shall be given if the predefined type is set to USERDEF
 ### Body Geometry
 
 
+
+#### IfcCsgSolid_CSG
+
+Volumetric representations may be used to semi-parametrically model the actual volume of the void created by the feature.  Attributes in the shape model directly correspond with feature parameters, for example diameter of circular holes or length and width of cutouts.  The objects within the shape model of the feature's shape representation can be included into a CSG model within a representation map of the parent element type.
+
+#### IfcShellBasedSurfaceModel_ShellBasedSurfaceModel
+
+Surface representations of cutting planes by means of IfcShellBasedSurfaceModel.  The faces within the surface model may be included into a B-Rep model within a representation map of the parent element type.
+
 ### Product Local Placement
 
 The local placement for IfcVoidingFeatureElement is defined in its supertype IfcProduct. It is defined by the IfcLocalPlacement, which defines the local coordinate system that is referenced by all geometric representations.
 
-
 * In case of features which are part of an element type, absolute placement into the type object's implied coordinate system shall be used.
 * In case of features which are voiding an element occurrence, the PlacementRelTo relationship of IfcLocalPlacement shall point to the local placement of the respective element.
 
-
-
 ### Property Sets for Objects
+
+
+
+### Reference SweptSolid PolyCurve Geometry
+
+
+
+### Reference Tessellation Geometry
+
 
 

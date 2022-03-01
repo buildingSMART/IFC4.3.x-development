@@ -22,18 +22,43 @@ Either there is no evaporative cooler type object associated, i.e. the _IsTypedB
 
 ## Concepts
 
-### Material
+### Material Constituent Set
 
+
+
+#### Casing
+
+Material from which the casing is constructed.
+
+#### Media
+
+Heat exchanger media material.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_WaterIn_DOMESTICCOLDWATER
+
+Incoming water.
+
+#### SINK_AirIn_AIRCONDITIONING
+
+Incoming air.
+
+#### SOURCE_AirOut_AIRCONDITIONING
+
+Outgoing air saturated with vapor.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

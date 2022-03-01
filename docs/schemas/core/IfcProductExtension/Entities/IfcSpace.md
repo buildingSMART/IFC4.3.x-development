@@ -77,153 +77,96 @@ Either there is no space type object associated, i.e. the _IsTypedBy_ inverse re
 
 The space can be represented by a brep geometry representation
 
-
 ### Body Clipping Geometry
 
-The following additional constraints apply to the advanced
-representation:
+The following additional constraints apply to the advanced representation:
 
+* **Solid**: IfcExtrudedAreaSolid is required,
+* **Profile**: IfcArbitraryClosedProfileDef is required, IfcArbitraryProfileDefWithVoids shall be supported.
+* **Extrusion**: The extrusion direction shall be vertically, i.e., along the positive Z Axis of the co-ordinate system of the containing spatial structure element.
+* **Boolean result**: The difference operation with the second operand being of type IfcHalfSpaceSolid (or one of its subtypes) shall be supported.
 
-* Solid: IfcExtrudedAreaSolid is required,
-* Profile: IfcArbitraryClosedProfileDef is
-required, IfcArbitraryProfileDefWithVoids shall be
-supported.
-* Extrusion: The extrusion direction shall be vertically,
-i.e., along the positive Z Axis of the co-ordinate system of the
-containing spatial structure element.
-* Boolean result: The difference operation with the second
-operand being of type IfcHalfSpaceSolid (or one of its
-subtypes) shall be supported.
+Figure 1 shows an extrusion of an arbitrary profile definition into the swept area solid. The solid and an half space solid are operands of the Boolean result of IfcSpace.
 
-
-Figure 185 shows an extrusion of an arbitrary profile definition into the swept area solid. The solid and an half space solid are operands of the Boolean result of IfcSpace.
-
-
-
-
-
-![fig2](../../../../figures/ifcspace_advanced-layout1.gif)
-Figure 185 — Space body clipping
-
-
+!["fig2"](../../../../figures/ifcspace_advanced-layout1.gif "Figure 1 &mdash; Space body clipping")
 
 ### Body SweptSolid Geometry
 
-The following constraints apply to the standard
-representation:
+The following constraints apply to the standard representation:
 
+* **Solid**: IfcExtrudedAreaSolid is required,
+* **Profile**: IfcArbitraryClosedProfileDef is required, IfcArbitraryProfileDefWithVoids shall be supported.
+* **Extrusion**: The extrusion direction shall be vertically, i.e., along the positive Z Axis of the co-ordinate system of the containing spatial structure element.
 
-* Solid: IfcExtrudedAreaSolid is required,
-* Profile: IfcArbitraryClosedProfileDef is
-required, IfcArbitraryProfileDefWithVoids shall be
-supported.
-* Extrusion: The extrusion direction shall be vertically,
-i.e., along the positive Z Axis of the co-ordinate system of the
-containing spatial structure element.
+Figure 1 shows an extrusion of an arbitrary profile definition with voids into the swept area solid of IfcSpace.
 
-
-Figure 184 shows an extrusion of an arbitrary profile definition with voids into the swept area solid of IfcSpace.
-
-
-![fig1](../../../../figures/ifcspace_standard-layout1.gif)
-Figure 184 — Space body swept solid
-
-
+!["fig1"](../../../../figures/ifcspace_standard-layout1.gif "Figure 1 &mdash; Space body swept solid")
 
 ### FootPrint GeomSet Geometry
 
 The following constraints apply to the 2D representation:
 
+* An IfcBoundedCurve is required, using IfcPolyline for faceted space contours or IfcCompositeCurve for space contours with arc segments. For spaces with inner boundaries, a set of IfcBoundedCurve's is used, that should be grouped into an IfcGeometricCurveSet.
 
-* An IfcBoundedCurve is required, using
-IfcPolyline for faceted space contours or
- IfcCompositeCurve for space contours with arc segments. For
- spaces with inner boundaries, a set of IfcBoundedCurve's is
- used, that should be grouped into an
- IfcGeometricCurveSet.
+&nbsp;
 
+<table cellpadding="2" cellspacing="2">
+ 
+<tr valign="top">
+  <td align="left" valign="top"><img src="../../../../figures/ifcspace_2d-layout1.gif" alt="2d representation" border="0" height="300" width="400"></td>
+  <td><blockquote class="example">EXAMPLE&nbsp; Figure 1 shows a two-dimensional bounded curve representing the
+foot print of <em>IfcSpace</em>.</blockquote></td>
+ </tr>
 
- 
+ <tr>
+  <td><p class="figure">Figure 1 &mdash; Space footprint</p></td>
+  <td>&nbsp;</td>
+ </tr>
 
+</table>
 
-![2d representation](../../../../figures/ifcspace_2d-layout1.gif)
+#### FootPrint_IfcBoundedCurve_Curve2D
 
-> EXAMPLE  Figure 183 shows a two-dimensional bounded curve representing the
-> foot print of IfcSpace.
-
-
-Figure 183 — Space footprint
-
-
- 
-
-
+A single curve defining the outer boundary
 
 ### Product Local Placement
 
-The local placement for IfcSpace is defined at its
-supertype IfcProduct. It is defined by the
-IfcLocalPlacement, which defines the local coordinate system
-that is referenced by all geometric representations.
+The local placement for IfcSpace is defined at its supertype IfcProduct. It is defined by the IfcLocalPlacement, which defines the local coordinate system that is referenced by all geometric representations.
 
-
-* The PlacementRelTo relationship of
-IfcLocalPlacement shall point to the local placement of the
- IfcSpatialStructureElement of type IfcBuildingStorey or IfcSite if
- relative placement is used.
-* If the relative placement is not used, the absolute placement
- is defined within the world coordinate system.
-
-
+* The PlacementRelTo relationship of IfcLocalPlacement shall point to the local placement of the IfcSpatialStructureElement of type IfcBuildingStorey or IfcSite if relative placement is used.
+* If the relative placement is not used, the absolute placement is defined within the world coordinate system.
 
 ### Property Sets for Objects
+
 
 
 ### Quantity Sets
 
 
+
+### Space Attributes
+
+
+
 ### Space Boundaries 1st Level
+
 
 
 ### Space Boundaries 2nd Level
 
 
+
 ### Spatial Composition
 
-By using the inverse relationship IfcSpace.IsDecomposedBy it references IfcSpace by IfcRelAggregates.RelatedObjects. If it refers to another
- instance of IfcSpace, the referenced IfcSpace needs
-to have a different and lower CompositionType, i.e. ELEMENT
-(if the other IfcSpace has COMPLEX), or PARTIAL (if the
- other IfcSpace has ELEMENT).
-
-
+By using the inverse relationship _IfcSpace.IsDecomposedBy_ it references IfcSpace by _IfcRelAggregates.RelatedObjects_. If it refers to another instance of IfcSpace, the referenced IfcSpace needs to have a different and lower CompositionType, i.e. ELEMENT (if the other IfcSpace has COMPLEX), or PARTIAL (if the other IfcSpace has ELEMENT).
 
 ### Spatial Container
 
-If there are building elements and/or other elements directly
-related to the IfcSpace (like most furniture and
-distribution elements), they are associated with the
-IfcSpace by using the objectified relationship
-IfcRelContainedInSpatialStructure. The IfcSpace
-references them by its inverse relationship:
+If there are building elements and/or other elements directly related to the IfcSpace (like most furniture and distribution elements), they are associated with the IfcSpace by using the objectified relationship IfcRelContainedInSpatialStructure. The IfcSpace references them by its inverse relationship:
 
-
-* IfcSpace.ContainsElements -- referencing any subtype of
-IfcProduct (with the exception of other spatial structure
-element) by
- IfcRelContainedInSpatialStructure.RelatedElements.
-
-
+* _IfcSpace.ContainsElements_ -- referencing any subtype of IfcProduct (with the exception of other spatial structure element) by _IfcRelContainedInSpatialStructure.RelatedElements_.
 
 ### Spatial Decomposition
 
-By using the inverse relationship IfcSpace.Decomposes it references IfcSite ||
-IfcBuildingStorey || IfcSpace by
-IfcRelAggregates.RelatingObject. If it refers to another
-instance of IfcSpace, the referenced IfcSpace
-needs to have a different and higher CompositionType, i.e.
-COMPLEX (if the other IfcSpace has ELEMENT), or ELEMENT (if
-the other IfcSpace has PARTIAL).
-
-
+By using the inverse relationship _IfcSpace.Decomposes_ it references IfcSite || IfcBuildingStorey || IfcSpace by _IfcRelAggregates.RelatingObject_. If it refers to another instance of IfcSpace, the referenced IfcSpace needs to have a different and higher CompositionType, i.e. COMPLEX (if the other IfcSpace has ELEMENT), or ELEMENT (if the other IfcSpace has PARTIAL).
 

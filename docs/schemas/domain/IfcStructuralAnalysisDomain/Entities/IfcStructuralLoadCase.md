@@ -23,3 +23,8 @@ An instance of this subtype of structural load group cannot be of any other type
 ### Group Assignment
 
 
+
+#### IfcStructuralAction
+
+Structural actions for the load case.
+

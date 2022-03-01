@@ -16,7 +16,7 @@ Reference to the relationship that associates the actor to an object.
 
 ### Actor Assignment
 
-The general usage is as follows:
+
 
 #### IfcControl
 
@@ -38,22 +38,7 @@ Indicates processes for which the actor is responsible.
 
 Indicates resources for which the actor is responsible.
 
-### Actor Assignment [Reference View]
-
-Additional provisions are made for Reference View in this context. Note that this is just an example. To be removed later.
-
-#### IfcProcess
-
-Specific documentation for concept parametrization in Reference View
-
-#### IfcProduct
-
-This concept parametrization is not applicable. Consistency to be implemented to flag this as an issue.
-
-### Actor Assignment [Alignment-based Reference View]
-
-Additional provisions are made for Alignment-based Reference View in this context. Note that this is just an example. To be removed later.
-
 ### Property Sets for Objects
+
 
 

@@ -49,156 +49,84 @@ Either _PredefinedType_ is unset or the inherited attribute _ObjectType_ shall b
 
 ### Body Geometry
 
-The 'Body' representation of IfcOpeningElement can be
-represented using the representation types 'SweptSolid', and
-'Brep'. The representation type 'Brep' is explained at
-IfcFeatureElement
+The 'Body' representation of IfcOpeningElement can be represented using the representation types 'SweptSolid', and 'Brep'. The representation type 'Brep' is explained at IfcFeatureElement
 
+_Swept Solid Representation Type with Horizontal
+Extrusion_
 
-Swept Solid Representation Type with Horizontal
-Extrusion
-
-
-The 'SweptSolid' geometric representation of
-IfcOpeningElement, using horizontal extrusion direction
-(for walls), is defined using the swept area solid geometry. The
-following attribute values for the IfcShapeRepresentation
-holding this geometric representation shall be used:
-
+The 'SweptSolid' geometric representation of IfcOpeningElement, using horizontal extrusion direction (for walls), is defined using the swept area solid geometry. The following attribute values for the IfcShapeRepresentation holding this geometric representation shall be used:
 
 * RepresentationIdentifier : 'Body'
 * RepresentationType : 'SweptSolid'
 
+The following additional constraints apply to the swept solid representation:
 
-The following additional constraints apply to the swept solid
-representation:
+* **Solid**: IfcExtrudedAreaSolid is required, the set of _IfcShapeRepresentation.Items_ may include a single, or multiple, instances of IfcExtrudedAreaSolid.
+* **Profile**: IfcRectangleProfileDef, IfcCircleProfileDef and IfcArbitraryClosedProfileDef shall be supported.
+* **Extrusion**: The profile shall be extruded horizontally (perpendicular to the extrusion direction of the voided element such as for wall openings), or vertically (in the extrusion direction of the voided element such as for for floor openings). If multiple instances of IfcExtrudedAreaSolid are used, the extrusion direction of each extrusion should be equal.
 
+> NOTE&nbsp; In case of non-parallel jambs, the shape representation shall be a 'SweptSolid' representation with vertical extrusion.
 
-* Solid: IfcExtrudedAreaSolid is required, the
-set of IfcShapeRepresentation.Items may include a single,
-or multiple, instances of IfcExtrudedAreaSolid.
-* Profile: IfcRectangleProfileDef,
-IfcCircleProfileDef and
-IfcArbitraryClosedProfileDef shall be supported.
-* Extrusion: The profile shall be extruded horizontally
-(perpendicular to the extrusion direction of the voided
-element such as for wall openings), or vertically (in the
-extrusion direction of the voided element such as for for floor
-openings). If multiple instances of IfcExtrudedAreaSolid
-are used, the extrusion direction of each extrusion should be
-equal.
+Figure 1 illustrates an opening with horizontal extrusion.
 
+> NOTE&nbsp; The local placement directions for the IfcOpeningElement are only given as an example, other directions are valid as well.
 
+!["standard opening"](../../../../figures/ifcopeningelement_horizontal-layout1.png "Figure 1 &mdash; Opening with full extrusion")
 
->
-> NOTE  In case of non-parallel jambs, the shape
-> representation shall be a 'SweptSolid' representation with
-> vertical extrusion.
->
+Figure 2 illustrates an opening for a recess.
 
+> NOTE&nbsp; The local placement directions for the IfcOpeningElement are only given as an example, other directions are valid as well.
 
-Figure 160 illustrates an opening with horizontal extrusion.
-
-
-
-> NOTE  The local placement directions for the IfcOpeningElement are only given as an example, other directions are valid as well.
-
-
-![standard opening](../../../../figures/ifcopeningelement_horizontal-layout1.png)
-Figure 160 — Opening with full extrusion
-
-
-Figure 161 illustrates an opening for a recess.
-
-
-
-> NOTE  The local placement directions for the IfcOpeningElement are only given as an example, other directions are valid as well.
-
-
-
-> NOTE  Rectangles are now defined centric, the placement
-> location has to be set:
-
+> NOTE&nbsp; Rectangles are now defined centric, the placement location has to be set:
 
 * IfcCartesianPoint(XDim/2,YDim/2)
 
+!["recess"](../../../../figures/ifcopeningelement_recess-layout1.png "Figure 2 &mdash; Opening with recess extrusion")
 
-![recess](../../../../figures/ifcopeningelement_recess-layout1.png)
-Figure 161 — Opening with recess extrusion
+_Swept Solid Representation with Vertical Extrusion_
 
-
-Swept Solid Representation with Vertical Extrusion
-
-
-The 'SweptSolid' geometric representation of
-IfcOpeningElement, using vertical extrusion direction (for
-walls), is defined using the swept area solid geometry, however
-the extrusion direction may be vertical, i.e. in case of a wall
-opening, the extrusion would be in the direction of the wall
-height. The following attribute values for the
-IfcShapeRepresentation holding this geometric
-representation shall be used:
-
+The 'SweptSolid' geometric representation of IfcOpeningElement, using vertical extrusion direction (for walls), is defined using the swept area solid geometry, however the extrusion direction may be vertical, i.e. in case of a wall opening, the extrusion would be in the direction of the wall height. The following attribute values for the IfcShapeRepresentation holding this geometric representation shall be used:
 
 * RepresentationIdentifier : 'Body'
 * RepresentationType : 'SweptSolid'
 
+The following additional constraints apply to the swept solid representation:
 
-The following additional constraints apply to the swept solid
- representation:
+* **Solid**: IfcExtrudedAreaSolid is required, the set of _IfcShapeRepresentation.Items_ may include a single, or multiple, instances of IfcExtrudedAreaSolid.
+* **Profile**: IfcRectangleProfileDef, IfcCircleProfileDef and IfcArbitraryClosedProfileDef shall be supported.
+* **Extrusion**: The profile shall be extruded vertically, i.e. for wall openings along the extrusion direction of the voided element.  If multiple instances of IfcExtrudedAreaSolid are used, the extrusion direction should be equal.
 
+Vertical extrusions shall be used when an opening or recess has a non rectangular foot print geometry that does not change along the height of the opening or recess.
 
-* Solid: IfcExtrudedAreaSolid is required, the
-set of IfcShapeRepresentation.Items may include a single,
-or multiple, instances of IfcExtrudedAreaSolid.
-* Profile: IfcRectangleProfileDef,
-IfcCircleProfileDef and
-IfcArbitraryClosedProfileDef shall be supported.
-* Extrusion: The profile shall be extruded vertically,
-i.e. for wall openings along the extrusion direction of the
-voided element.  If multiple instances of
-IfcExtrudedAreaSolid are used, the extrusion direction
-should be equal.
+Figure 3 shows a vertical extrusion with multiple extrusion bodies for the opening. Each extrusion body has a different extrusion lenght.
 
+> NOTE&nbsp; The local placement directions for the IfcOpeningElement are only given as an example, other directions are valid as well.
 
-Vertical extrusions shall be used when an opening or recess
-has a non rectangular foot print geometry that does not change
-along the height of the opening or recess.
-
-
-Figure 162 shows a vertical extrusion with multiple extrusion bodies for the opening. Each extrusion body has a different extrusion length.
-
-
-
-> NOTE  The local placement directions for the IfcOpeningElement are only given as an example, other directions are valid as well.
-
-
-![vertical extrusion](../../../../figures/ifcopeningelement_vertical-layout1.png)
-Figure 162 — Opening with multiple extrusions
-
-
+!["vertical extrusion"](../../../../figures/ifcopeningelement_vertical-layout1.png "Figure 3 &mdash; Opening with multiple extrusions")
 
 ### Product Local Placement
 
-The local placement for IfcOpeningElement is defined in
-its supertype IfcProduct. It is defined by the
-IfcLocalPlacement, which defines the local coordinate
-system that is referenced by all geometric representations.
+The local placement for IfcOpeningElement is defined in its supertype IfcProduct. It is defined by the IfcLocalPlacement, which defines the local coordinate system that is referenced by all geometric representations.
 
-
-* The PlacementRelTo relationship of
-IfcLocalPlacement should point to the local placement of
-the same element, which is voided by the opening, i.e. referred
-to by VoidsElement.RelatingBuildingElement.
-
-
+* The PlacementRelTo relationship of IfcLocalPlacement should point to the local placement of the same element, which is voided by the opening, i.e. referred to by _VoidsElement.RelatingBuildingElement_.
 
 ### Property Sets for Objects
+
 
 
 ### Quantity Sets
 
 
+
 ### Reference Geometry
 
 Since there are no Boolean operations, either as IfcBooleanResult or implicitly by IfcRelVoidsElement the geometry of the IfcOpeningElement shall not be used to subtract the opening from the 'Body' shape representation of the voided element.
+
+### Reference SweptSolid PolyCurve Geometry
+
+Since there are no Boolean operations, either as IfcBooleanResult or implicitly by IfcRelVoidsElement the geometry of the IfcOpeningElement shall not be used to subtract the opening from the 'Body' shape representation of the voided element.
+
+### Reference Tessellation Geometry
+
+Since there are no Boolean operations, either as IfcBooleanResult or implicitly by IfcRelVoidsElement the geometry of the IfcOpeningElement shall not be used to subtract the opening from the 'Body' shape representation of the voided element.
+

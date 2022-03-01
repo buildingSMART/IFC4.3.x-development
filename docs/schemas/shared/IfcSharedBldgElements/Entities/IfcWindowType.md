@@ -67,17 +67,18 @@ The inherited attribute _ElementType_ shall be provided, if the _PredefinedType_
 
 ## Concepts
 
-### Body Geometry
-
-
 ### Property Sets for Types
 
-Two subtypes of IfcPreDefinedPropertySet are applicable
-to IfcWindowType:
+Two subtypes of IfcPreDefinedPropertySet are applicable to IfcWindowType:
+
+* IfcWindowLiningProperties - a single instance to define the shape parameters of the window lining
+* IfcWindowPanelProperties - one or several instances to define the shape parameters of the window panel(s)
+
+### Type Body Geometry
 
 
-* IfcWindowLiningProperties - a single instance to
-define the shape parameters of the window lining
-* IfcWindowPanelProperties - one or several instances to
-define the shape parameters of the window panel(s)
+
+### Window Type Attributes
+
+
 

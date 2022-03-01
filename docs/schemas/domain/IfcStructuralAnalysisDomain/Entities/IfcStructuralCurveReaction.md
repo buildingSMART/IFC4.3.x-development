@@ -45,3 +45,8 @@ The SINUS and PARABOLA distribution types are out of scope of structural curve r
 ### Structural Activity
 
 
+
+#### IfcStructuralLoadConfiguration_IfcStructuralCurveMember
+
+Resulting shear and moment along a curve member.
+

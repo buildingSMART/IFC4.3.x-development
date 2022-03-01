@@ -22,18 +22,35 @@ Either there is no cooled beam type object associated, i.e. the _IsTypedBy_ inve
 
 ## Concepts
 
-### Material
+### Material Constituent Set
 
+
+
+#### Casing
+
+Material from which the casing is constructed.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_ChilledWaterIn_CHILLEDWATER
+
+Chilled water entering.
+
+#### SOURCE_ChilledWaterOut_CHILLEDWATER
+
+Chilled water leaving.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

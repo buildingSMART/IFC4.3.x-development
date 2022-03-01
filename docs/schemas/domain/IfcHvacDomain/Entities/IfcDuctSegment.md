@@ -22,18 +22,47 @@ Either there is no duct segment type object associated, i.e. the _IsTypedBy_ inv
 
 ## Concepts
 
-### Material
+### Material Profile Set Usage
 
+
+
+#### Casing
+
+Material from which the duct fitting is constructed.
+
+#### Coating
+
+The outer coating, if applicable.
+
+#### Insulation
+
+The insulating wrapping, if applicable.
+
+#### Lining
+
+The inner lining, if applicable.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_Inlet_NOTDEFINED
+
+The flow inlet.
+
+#### SOURCE_Outlet_NOTDEFINED
+
+The flow outlet.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

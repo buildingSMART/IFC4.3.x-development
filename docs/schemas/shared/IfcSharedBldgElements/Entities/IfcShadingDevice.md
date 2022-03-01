@@ -25,18 +25,35 @@ Either there is no shading device type object associated, i.e. the _IsTypedBy_ i
 ### Material Single
 
 
+
 ### Object Typing
+
 
 
 ### Property Sets for Objects
 
 
+
 ### Spatial Containment
 
-The IfcShadingDevice, as any subtype of IfcBuildingElement,
-may participate alternatively in one of the two different containment relationships:
+The IfcShadingDevice, as any subtype of IfcBuildingElement, may participate alternatively in one of the two different containment relationships:
 
+* the _Spatial Containment_ (defined here), or
+* the _Element Composition_.
 
-* the Spatial Containment (defined here), or
-* the Element Composition.
+#### IfcBuildingStorey
+
+Default spatial container
+
+#### IfcBuilding
+
+Spatial container for the element if it cannot be assigned to a building storey
+
+#### IfcSite
+
+Spatial container for the element in case that it is placed on site (outside of building)
+
+#### IfcSpace
+
+In particular use cases, a shading device maybe assigned directly to space
 

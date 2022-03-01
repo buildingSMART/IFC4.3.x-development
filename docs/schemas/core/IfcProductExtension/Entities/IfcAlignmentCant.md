@@ -37,3 +37,10 @@ Detailed geometric modelling of the superelevation has a low priority in the exi
 
 ### RailHeadDistance
 Length measured as distance between the nominal centre points of the two contact patches of a wheelset and rails.
+
+## Concepts
+
+### Alignment Cant Attributes
+
+
+

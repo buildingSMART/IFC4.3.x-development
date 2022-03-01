@@ -24,18 +24,43 @@ Either there is no fires suppression terminal type object associated, i.e. the _
 
 ## Concepts
 
-### Material
+### Material Constituent Set
 
+
+
+#### Casing
+
+Material from which the casing is constructed.
+
+#### Damping
+
+The material used to construct the deflector plate.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_Line_FIREHYDRANT_FIREPROTECTION
+
+Supply line.
+
+#### SOURCE_Hose_FIREHYDRANT_FIREPROTECTION
+
+Connection to hose.
+
+#### SINK_Line_SPRINKLER_FIREPROTECTION
+
+Supply line.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

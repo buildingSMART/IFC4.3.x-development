@@ -13,11 +13,7 @@ The _IfcFlowSegment_ defines a particular occurrence of a segment inserted in th
 
 ### Axis Geometry
 
-
 Standard representations are defined at the supertype IfcDistributionFlowElement. For parametric flow segments where IfcMaterialProfileSetUsage is defined and an 'Axis' representation is defined, then the 'Body' representation may be generated using the 'SweptSolid' or 'AdvancedSweptSolid' representation types by sweeping the profile(s) along the axis.
-
-
-
 
 ### Material Profile Set Usage
 
@@ -31,6 +27,3 @@ The material of the IfcFlowSegment is defined using one of the following entitie
 
 
 The material is attached by the RelatingMaterial attribute on the IfcRelAssociatesMaterial relationship. It is accessible by the HasAssociations inverse attribute. Material information can also be given at the IfcFlowSegmentType, defining the common attribute data for all occurrences of the same type. Standard names and material types are defined at subtypes.
-
-
-

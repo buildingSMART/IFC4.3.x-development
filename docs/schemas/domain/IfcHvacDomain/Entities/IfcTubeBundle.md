@@ -22,18 +22,35 @@ Either there is no tube bundle type object associated, i.e. the _IsTypedBy_ inve
 
 ## Concepts
 
-### Material
+### Material Constituent Set
 
+
+
+#### Casing
+
+Material from which the casing is constructed.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_Inlet_NOTDEFINED
+
+Inlet.
+
+#### SOURCE_Outlet_NOTDEFINED
+
+Uutlet.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

@@ -24,18 +24,43 @@ Either there is no switching device type object associated, i.e. the _IsTypedBy_
 
 ## Concepts
 
-### Material
+### Material Constituent Set
 
+
+
+#### Casing
+
+Material from which the casing is constructed.
+
+#### Conductor
+
+Material from which the conductors are constructed.
+
+#### Surface
+
+Material from which the switch surface is constructed.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_Line_ELECTRICAL
+
+The supply line.
+
+#### SOURCE_Load_ELECTRICAL
+
+The load controlled by the switch.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

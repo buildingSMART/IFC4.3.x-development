@@ -29,12 +29,17 @@ Defines types of subcontract resources.
 
 ### CorrectPredefinedType
 
-
 ## Concepts
 
 ### Object Typing
 
 
+
 ### Resource Assignment
 
+
+
+#### IfcActor
+
+Indicates a specific organization to be considered to fulfill the resource or invited to bid on the resource.
 

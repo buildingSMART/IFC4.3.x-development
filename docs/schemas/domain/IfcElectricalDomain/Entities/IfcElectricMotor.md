@@ -22,18 +22,35 @@ Either there is no electric motor type object associated, i.e. the _IsTypedBy_ i
 
 ## Concepts
 
-### Material
+### Material Constituent Set
 
+
+
+#### Casing
+
+Material from which the casing is constructed.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_Line_ELECTRICAL
+
+Receives electrical power.
+
+#### SOURCE_Drive_NOTDEFINED
+
+Motor connection to a driven device.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

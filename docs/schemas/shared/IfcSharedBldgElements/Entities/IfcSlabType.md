@@ -32,9 +32,6 @@ The inherited attribute _ElementType_ shall be provided, if the _PredefinedType_
 
 ## Concepts
 
-### Body Geometry
-
-
 ### Material Layer Set
 
 The material of the IfcSlabType is defined by the
@@ -55,3 +52,8 @@ used. If an IfcMaterialProfileSet is used, all occurrences must have a correspon
 > reference plane, the same IfcSlabType can be used
 > independently of the reference plane alignment of its
 > occurrences.
+
+### Type Body Geometry
+
+
+

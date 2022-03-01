@@ -25,12 +25,20 @@ Either there is no protective device tripping unit type object associated, i.e. 
 ### Control Flow
 
 
+
+#### IfcProtectiveDevice
+
+The corresponding breaker unit for breaking the circuit.
+
 ### Object Typing
+
 
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

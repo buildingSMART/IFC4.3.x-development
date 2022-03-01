@@ -63,139 +63,88 @@ Address given to the site for postal purposes.
 
 ### Body Geometry
 
-The body representation of IfcSite is defined using a
-solid or surface model. Applicable solids are the
-IfcFacetedBrep or on the IfcFacetedBrepWithVoids,
-applicable surface models are the IfcFaceBasedSurfaceModel
-and the IfcShellBasedSurfaceModel.
+The body representation of IfcSite is defined using a solid or surface model. Applicable solids are the IfcFacetedBrep or on the IfcFacetedBrepWithVoids, applicable surface models are the IfcFaceBasedSurfaceModel and the IfcShellBasedSurfaceModel.
 
+The representation identifier and type of this representation of IfcSite is:
 
-The representation identifier and type of this representation of
-IfcSite is:
-
-
-* IfcShapeRepresentation.RepresentationIdentifier =
-'Body'
-* IfcShapeRepresentation.RepresentationType = 'Brep', or
-'SurfaceModel'
-
-
+* _IfcShapeRepresentation.RepresentationIdentifier_ = 'Body'
+* _IfcShapeRepresentation.RepresentationType_ = 'Brep', or 'SurfaceModel'
 
 ### FootPrint GeomSet Geometry
 
-The foot print representation of IfcSite is given by
-either a single 2D curve (such as IfcPolyline or
-IfcCompositeCurve), or by a list of 2D curves (in case of
-inner boundaries).
+The foot print representation of IfcSite is given by either a single 2D curve (such as IfcPolyline or IfcCompositeCurve), or by a list of 2D curves (in case of inner boundaries).
 
+### Product Local Placement
 
-### Placement
+The local placement for IfcSite is defined in its supertype IfcProduct. It is defined by the IfcLocalPlacement, which defines the local coordinate system that is referenced by all geometric representations.
 
-The local placement for IfcSite is defined in its
-supertype IfcProduct. It is defined by the
-IfcLocalPlacement, which defines the local coordinate system
-that is referenced by all geometric representations.
-
-
-* The PlacementRelTo relationship of
-IfcLocalPlacement shall point to the
-IfcSpatialStructureElement of type "IfcSite", if
-relative placement is used (e.g. to position a site relative a a
-site complex, or a site section to a site).
-* If the relative placement is not used, the absolute placement
-is defined within the world coordinate system. If there is only one
-site object, then this is the default situation.
-
-
+* The PlacementRelTo relationship of IfcLocalPlacement shall point to the IfcSpatialStructureElement of type "IfcSite", if relative placement is used (e.g. to position a site relative a a site complex, or a site section to a site).
+* If the relative placement is not used, the absolute placement is defined within the world coordinate system. If there is only one site object, then this is the default situation.
 
 ### Property Sets for Objects
+
 
 
 ### Quantity Sets
 
 
+
+### Site Attributes
+
+
+
 ### Spatial Composition
 
-By using the inverse relationship IfcSite.Decomposes it references IfcProject ||
-IfcSite through IfcRelAggregates.RelatingObject, If it
-refers to another instance of IfcSite, the referenced
- IfcSite needs to have a different and higher
-CompositionType, i.e. COMPLEX (if the other IfcSite
- has ELEMENT), or ELEMENT (if the other IfcSite has
-PARTIAL).
-
+By using the inverse relationship _IfcSite.Decomposes_ it references IfcProject || IfcSite through _IfcRelAggregates.RelatingObject_, If it refers to another instance of IfcSite, the referenced IfcSite needs to have a different and higher CompositionType, i.e. COMPLEX (if the other IfcSite has ELEMENT), or ELEMENT (if the other IfcSite has PARTIAL).
 
 ### Spatial Container
 
-If there are building elements and/or other elements directly
- related to the IfcSite (like a fence, or a shear wall), they
-are associated with the IfcSite by using the objectified
- relationship IfcRelContainedInSpatialStructure. The
- IfcIfcSite references them by its inverse relationship:
+If there are building elements and/or other elements directly related to the IfcSite (like a fence, or a shear wall), they are associated with the IfcSite by using the objectified relationship IfcRelContainedInSpatialStructure. The IfcIfcSite references them by its inverse relationship:
 
-
-* IfcSite.ContainsElements -- referencing any subtype of
-IfcProduct (with the exception of other spatial structure
-element) by
-IfcRelContainedInSpatialStructure.RelatedElements
+* _IfcSite.ContainsElements_ -- referencing any subtype of IfcProduct (with the exception of other spatial structure element) by _IfcRelContainedInSpatialStructure.RelatedElements_
 
 ### Spatial Decomposition
 
-By using the inverse relationship IfcSite.IsDecomposedBy it references (em>IfcSite ||
-IfcBuilding || IfcSpace by
- IfcRelAggregates.RelatedObjects. If it refers to another
-instance of IfcSite, the referenced IfcSite needs to
-have a different and lower CompositionType, i.e. ELEMENT (if the
- other IfcSite has COMPLEX), or PARTIAL (if the other
-IfcSite has ELEMENT).
-
+By using the inverse relationship _IfcSite.IsDecomposedBy_ it references (em>IfcSite || IfcBuilding || IfcSpace by _IfcRelAggregates.RelatedObjects_. If it refers to another instance of IfcSite, the referenced IfcSite needs to have a different and lower CompositionType, i.e. ELEMENT (if the other IfcSite has COMPLEX), or PARTIAL (if the other IfcSite has ELEMENT).
 
 ### Survey Points Geometry
 
-The survey point representation of IfcSite is defined
-using a set of survey points and optionally breaklines. The
-breaklines are restricted to only connect points given in the set
-of survey points. Breaklines, if given, are used to constrain the
-triangulation.
+The survey point representation of IfcSite is defined using a set of survey points and optionally breaklines. The breaklines are restricted to only connect points given in the set of survey points. Breaklines, if given, are used to constrain the triangulation.
 
+The representation identifier and type of this geometric representation of IfcSite is:
 
-The representation identifier and type of this geometric
-representation of IfcSite is:
+* _IfcShapeRepresentation.RepresentationIdentifier_ = 'SurveyPoints'
+* _IfcShapeRepresentation.RepresentationType_ = 'GeometricCurveSet'
 
+Figure 1 shows a set of survey points, given as 3D Cartesian points within the object coordinate system of the site. Figure 2 shows the result after facetation.
 
-* IfcShapeRepresentation.RepresentationIdentifier =
-'SurveyPoints'
-* IfcShapeRepresentation.RepresentationType =
-'GeometricCurveSet'
+The set of IfcCartesianPoint is included in the set of _IfcGeometricCurveSet.Elements_.
 
+<table cellpadding="2" cellspacing="2" summary="survey points representation">
+<tr>
+<td><img src="../../../../figures/ifcsite-standard-points.gif" alt="points only" border="0" height="300" width="400"></td>
+<td><img src="../../../../figures/ifcsite-standard-facets-points.gif" alt="facetation of points" border="0" height="300" width="400"></td>
+</tr>
+<tr>
+<td width="400"><p class="figure">Figure 1 &mdash; Site survey points</p></td>
+<td width="400"><p class="figure">Figure 2 &mdash; Site survey points facetation</p></td>
+</tr>
+</table>
 
-Figure 180 shows a set of survey points, given as 3D Cartesian points within the object coordinate system of the site. Figure 181 shows the result after facetation.
+Figure 3 shows A set of survey points, given as 3D Cartesian points, and a set of break points, given as a set of lines, connecting some survey points, within the object coordinate system of the site. Figure 4 shows the result after facetation.
 
+The set of IfcCartesianPoint and the set of IfcPolyline are included in the set of _IfcGeometricCurveSet.Elements_.
 
-The set of IfcCartesianPoint is included in the set of IfcGeometricCurveSet.Elements.
+<table cellpadding="2" cellspacing="2" summary="survey points representation">
+<tr>
+<td><img src="../../../../figures/ifcsite-standard-breaklines.gif" alt="breaklines" border="0" height="300" width="400"></td>
+<td><img src="../../../../figures/ifcsite-standard-facets-breaklines.gif" alt="facetation with breakpoints" border="0" height="300" width="400"></td>
+</tr>
+<tr>
+<td width="400"><p class="figure">Figure 3 &mdash; Site breaklines</p></td>
+<td width="400"><p class="figure">Figure 4 &mdash; Site breaklines facetation</p></td>
+</tr>
+</table>
 
+> NOTE&nbsp; The geometric representation of the site has been based on the ARM level description of the site_shape_representation given within the ISO 10303-225 "Building Elements using explicit shape representation".
 
-![points only](../../../../figures/ifcsite-standard-points.gif)
-![facetation of points](../../../../figures/ifcsite-standard-facets-points.gif)
-Figure 180 — Site survey points
-
-
-Figure 181 — Site survey points facetation
-
-
-Figure 182 shows A set of survey points, given as 3D Cartesian points, and a set of break points, given as a set of lines, connecting some survey points, within the object coordinate system of the site. Figure 183 shows the result after facetation.
-
-
-The set of IfcCartesianPoint and the set of IfcPolyline are included in the set of IfcGeometricCurveSet.Elements.
-
-
-![breaklines](../../../../figures/ifcsite-standard-breaklines.gif)
-![facetation with breakpoints](../../../../figures/ifcsite-standard-facets-breaklines.gif)
-Figure 182 — Site breaklines
-
-
-Figure 183 — Site breaklines facetation
-
-
-
-> NOTE  The geometric representation of the site has been based on the ARM level description of the site\_shape\_representation given within the ISO 10303-225 "Building Elements using explicit shape representation".

@@ -30,40 +30,21 @@ The attribute ObjectType must be asserted when the value of the IfcWorkScheduleT
 
 ### Aggregation
 
-A work schedule can include other work schedules as sub-items.
- If not included in another work schedule it might be a part of a work plan
- (IfcWorkPlan) defined through IfcRelAggregates relationship.
-
-
+A work schedule can include other work schedules as sub-items. If not included in another work schedule it might be a part of a work plan (IfcWorkPlan) defined through IfcRelAggregates relationship.
 
 ### Control Assignment
 
+An IfcWorkSchedule controls a set of tasks and resources defined through IfcRelAssignsToControl. Additionally, through the IfcWorkControl abstract supertype, the actors creating the schedule can be specified and schedule time information such as start time, finish time, and total float of the schedule can also be specified.
 
- An IfcWorkSchedule controls a set of tasks and
- resources defined through IfcRelAssignsToControl.
- Additionally, through the IfcWorkControl abstract
- supertype, the actors creating the schedule can be
- specified and schedule time information such as start time,
- finish time, and total float of the schedule can also be
- specified.
+### Document Association
 
+The documents of the IfcWorkSchedule can be referenced by the IfcRelAssociatesDocuments relationship.
 
+### Object Nesting
 
-### Document
+A work schedule can include other work schedules as sub-items through IfcRelNests relationship.
 
+### Property Sets for Objects
 
- The documents of the
- IfcWorkSchedule can be referenced by the
- IfcRelAssociatesDocuments relationship.
-
-
-### Nesting
-
-A work schedule can include other work schedules as sub-items
- through IfcRelNests relationship.
-
-
-
-### Property Sets
 
 

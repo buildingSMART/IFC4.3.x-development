@@ -24,18 +24,31 @@ Either there is no alarm type object associated, i.e. the _IsTypedBy_ inverse re
 
 ## Concepts
 
-### Material
+### Material Constituent Set
 
+
+
+#### Casing
+
+Material from which the casing is constructed.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_Input_SIGNAL
+
+Receives signal.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

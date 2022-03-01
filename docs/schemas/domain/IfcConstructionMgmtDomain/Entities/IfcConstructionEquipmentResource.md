@@ -19,21 +19,45 @@ Defines types of construction equipment resources.
 
 ### CorrectPredefinedType
 
-
 ## Concepts
 
 ### Object Typing
 
 
+
 ### Quantity Sets
+
 
 
 ### Resource Assignment
 
 
+
+#### IfcTransportElement
+
+Indicates a physical element manifesting the resource such as a crane.
+
 ### Resource Cost
 
 
+
+#### Usage_IfcCostValue_IfcMonetaryMeasure
+
+The amount incurred for acquiring the equipment, such as rental fees or depreciation.
+
+#### Operation_IfcCostValue_IfcMonetaryMeasure
+
+The amount incurred for operating the equipment, such as fuel and maintenance.
+
+#### Deployment_IfcCostValue_IfcMonetaryMeasure
+
+The amount incurred for mobilizing and decomissioning the equipment.
+
 ### Resource Quantity
 
+
+
+#### Operation_IfcQuantityTime
+
+The unit basis for operating the equipment, such as an hour.
 

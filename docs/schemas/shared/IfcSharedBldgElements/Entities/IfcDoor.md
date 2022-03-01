@@ -159,57 +159,39 @@ Figure 228 — Door swing
 > OverallHeight parameters are for informational purpose
 > only.
 
-
-
 ### Material Constituent Set
 
-The material of the IfcDoor is defined by the
-IfcMaterialConstituentSet or as fall back by
-IfcMaterial and attached by the
-IfcRelAssociatesMaterial relationship. It is accessible by the inverse HasAssociations relationship.
+The material of the IfcDoor is defined by the IfcMaterialConstituentSet or as fall back by IfcMaterial and attached by the IfcRelAssociatesMaterial relationship.
 
+#### Lining
 
-The following keywords for IfcMaterialConstituentSet.MaterialConstituents[n].Name shall be used:
+Indicates that the material constituent applies to the door lining.
 
+#### Framing
 
-* 'Lining' - to indicate that the material constituent applies to to the door lining
-* 'Framing' - to indicate that the material constituent applies to to the door framing, if not provided, the 'Lining' material information applied to frams as well
-* 'Glazing' - to indicate that the material constituent applies to to the glazing as well
+Indicates that the material constituent applies to the door panel(s); if not provided, the 'Lining' material information applies to panel(s) as well.
 
+#### Glazing
 
-If the fall back single IfcMaterial is referenced, it applies to the lining and framing of the door.
-
-
+Indicates that the material constituent applies to the glazing part.
 
 ### Object Typing
 
+
+
+#### IfcDoorStyle
+
+> NOTE&nbsp;This type is deprecated
 
 ### Product Local Placement
 
 The following restriction is imposed:
 
+1. The PlacementRelTo relationship of IfcLocalPlacement shall point to the local placement of the same element (if given), in which the IfcDoor is used as a filling (normally an IfcOpeningElement), as provided by the IfcRelFillsElement relationship;
+2. If the IfcDoor is part of an assembly, e.g. an IfcCurtainWall, then the PlacementRelTo relationship of IfcLocalPlacement shall point (if given) to the local placement of that assembly;
+3. If the IfcDoor is not inserted into an IfcOpeningElement, then the PlacementRelTo relationship of IfcLocalPlacement shall point (if given) to the local placement of the same IfcSpatialStructureElement that is used in the ContainedInStructure inverse attribute or to a referenced spatial structure element at a higher level.
 
-1. The PlacementRelTo relationship of
-IfcLocalPlacement shall point to the local placement of the
-same element (if given), in which the IfcDoor is used as a
-filling (normally an IfcOpeningElement), as provided by the
-IfcRelFillsElement relationship;
-2. If the IfcDoor is part of an assembly, e.g. an
-IfcCurtainWall, then the PlacementRelTo
-relationship of IfcLocalPlacement shall point (if given) to
-the local placement of that assembly;
-3. If the IfcDoor is not inserted into an
-IfcOpeningElement, then the PlacementRelTo
-relationship of IfcLocalPlacement shall point (if given) to
-the local placement of the same IfcSpatialStructureElement
-that is used in the ContainedInStructure inverse attribute
-or to a referenced spatial structure element at a higher
-level.
-
-
-
-> NOTE  The product placement is used to determine the opening direction of the door.
-
+> NOTE&nbsp; The product placement is used to determine the opening direction of the door.
 
 ### Profile 3D Geometry
 
@@ -242,6 +224,9 @@ IfcCartesianPoint's shall be 0.).
 
 ![standard door](../../../../figures/ifcdoorstandardcase-01.png)
 
+
+Figure 229 — Door profile
+
 > EXAMPLE  Figure 229 illustrates applying the door lining parameters to the
 > door profile shape representation. The profile defines the outer
 > boundary to which the door lining parameters relate as:
@@ -269,18 +254,12 @@ IfcCartesianPoint's shall be 0.).
 >
 
 
-Figure 229 — Door profile
-
-
-
- 
-
-
-
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 
 ### Spatial Containment
@@ -298,6 +277,8 @@ The IfcDoor may also be connected to the IfcOpeningElement in which it is placed
 
 ![Containment](../../../../figures/ifcdoor_containment-01.png)
 
+Figure 230 — Door spatial containment
+
 > NOTE  The containment shall be
 > defined independently of the filling relationship, that is, even if
 >
@@ -307,8 +288,21 @@ The IfcDoor may also be connected to the IfcOpeningElement in which it is placed
 >  IfcRelContainedInSpatialStructure.
 
 
-Figure 230 — Door spatial containment
 
 
+#### IfcBuildingStorey
 
- 
+Default spatial container
+
+#### IfcBuilding
+
+Spatial container for the element if it cannot be assigned to a building storey
+
+#### IfcSite
+
+Spatial container for the element in case that it is placed on site (outside of building)
+
+#### IfcSpace
+
+In particular use cases, a door maybe assigned directly to space
+

@@ -20,13 +20,7 @@ Element is not contained in spatial structure.
 
 ### Spatial Containment
 
-As a subordinate part being fully dependent on the master
-element the IfcFeatureElement shall have no independent
-containment relationship to the spatial structure.
+As a subordinate part being fully dependent on the master element the IfcFeatureElement shall have no independent containment relationship to the spatial structure.
 
-
-* The SELF\IfcElement.ContainedInStructure relationship
-shall be NIL.
-
-
+* The _SELF\IfcElement.ContainedInStructure_ relationship shall be NIL.
 

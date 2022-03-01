@@ -41,22 +41,34 @@ Reference to the _IfcRelAssignsToProduct_ relationship, by which other products,
 
 ### PlacementForShapeRepresentation
 If a _Representation_ is given being an _IfcProductDefinitionShape_, then also an _ObjectPlacement_ has to be given. The _ObjectPlacement_ defines the object coordinate system in which the geometric representation items of the _IfcProductDefinitionShape_ are founded.
+
 > NOTE  If the _Representation_ of several subtypes of _IfcProduct_ have the same coordinate system it is permitted to share an instance of _IfcObjectPlacement_.
 
 ## Concepts
 
 ### Product Geometric Representation
 
-The geometric representation of any IfcProduct is provided by the IfcProductDefinitionShape allowing multiple geometric representations. It uses the Product Placement concept utilizing IfcLocalPlacement to establish an object coordinate system, within all geometric representations are founded.
+The geometric representation of any IfcProduct is provided by the IfcProductDefinitionShape allowing multiple geometric representations. It uses the _Product Placement_ concept utilizing IfcLocalPlacement to establish an object coordinate system, within all geometric representations are founded.
+
+> NOTE A detailed specification of how to apply the local placement and which shape representaions are applicable is provided at the level of subtypes of IfcProduct and is further determined by the model view definition and implementer agreements.
+
+### Product Geometry Colour
 
 
 
-> NOTE  A detailed specification of how to apply the local placement and which shape representations are applicable is provided at the level of subtypes of IfcProduct and is further determined by the model view definition and implementer agreements.
+### Product Geometry Layer
 
 
 
 ### Product Placement
 
-The Product Placement establishes the object coordinate system and is required, if a geometric shape representation is provided for this product.
+The _Product Placement_ establishes the object coordinate system and is required, if a geometric shape representation is provided for this product.
+
+### Product Relative Positioning
+
+If the IfcProduct _Product Placement_ is placed relative to an IfcPositioningElement this relationship covers the information on which IfcPositioningElement positions the IfcProduct.
+
+### Product Span Positioning
+
 
 

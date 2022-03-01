@@ -82,146 +82,65 @@ The attribute ObjectType must be asserted when the value of PredefinedType is se
 
 ## Concepts
 
-### Classification
+### Classification Association
 
+An IfcTask may be assigned a Work Breakdown Structure (WBS) code. A WBS code is dealt with as a classification of task and is associated to a task occurrence using the IfcRelAssociatesClassification relationship class. As well as being to designate the code, the classification structure also enables the source of the work breakdown structure classification to be identified.
 
-An IfcTask may be assigned a Work Breakdown
- Structure (WBS) code. A WBS code is dealt with as a
- classification of task and is associated to a task
- occurrence using the IfcRelAssociatesClassification
- relationship class. As well as being to designate the code,
- the classification structure also enables
- the source of the work breakdown structure classification
- to be identified.
+### Constraint Association
 
+Constraints may be applied to a task to indicate fixed task duration, fixed start or fixed finish, where IfcMetric.ReferencePath is set to the corresponding attribute on the IfcTaskTime entity.
 
+#### TaskTime
 
-### Constraint
+Indicate fixed duration of task with ConstraintGrade=HARD and Benchmark=EQUALTO such that changes to an assigned _IfcConstructionResource.ResourceTime.ScheduleWork_ should impact _IfcConstructionResource.ResourceTime.ScheduleUsage_, and vice-versa.
 
+#### TaskTime
 
-Constraints may be applied to a task to indicate fixed task duration, fixed start or fixed finish, where *IfcMetric*.ReferencePath is set to the corresponding attribute on the *IfcTaskTime* entity.
+Indicate constrained start date with ConstraintGrade=HARD and Benchmark of EQUALTO, GREATERTHANOREQUALTO, or LESSTHANOREQUALTO to indicate "must start on", "start no earlier than" or "start no later than" respectively where _IfcMetric.DataValue_ indicates the specific IfcDateTime. Use SOFT constraint having LESSTHAN benchmark to indicate "start as soon as possible".
 
+#### TaskTime
 
+Indicate constrained finish date with ConstraintGrade=HARD and Benchmark of EQUALTO, GREATERTHANOREQUALTO, or LESSTHANOREQUALTO to indicate "must finish on", "finish no earlier than" or "finish no later than" respectively where _IfcMetric.DateValue_ indicates the specific IfcDateTime. Use SOFT constraint having GREATERTHAN benchmark to indicate "finish as late as possible".
 
 ### Control Assignment
 
+Occurrences of IfcTask may be assigned to an IfcWorkControl (either a work plan or a work schedule) through IfcRelAssignsToControl. Please note that the IfcRelAssignsTasks relationship class has been removed in IFC4 and is no longer available.
 
- Occurrences of IfcTask may be assigned to an
- IfcWorkControl (either a work plan or a work
- schedule) through IfcRelAssignsToControl. Please note that the
- IfcRelAssignsTasks relationship class has been
- removed in IFC4 and is no longer available.
+### Object Nesting
 
+IfcTask may be contained within an IfcTask using the IfcRelNests relationship. An IfcTask may in turn nest other IfcTask, IfcProcedure or IfcEvent entities. Such nesting indicates decomposed level of detail. From IFC4 onwards it is required to have a summary task (root of all tasks), which is used to define a link to the work plan or work schedule. All subtasks of the summary tasks are then implicitly linked to this work plan or work schedule. Please note that the summary task is used for data organization and not meant to store typical task information as defined by the user. It is therefore recommended that the summary task is hidden from the user to avoid confusion. Please also note that IfcRelNests is used to show the dependency between regular tasks and recurring task definitions (please see the section about time and duration use definitions).
 
+As shown in Figure 1, the installation of a number of items of equipment within a particular space may be the subject of a single task which is identified as 'fix equipment in space 123'. IfcTask represents the occurrence of a work performance of a type of process in a construction plan.
 
+!["task example"](../../../../figures/ifctask_example.png "Figure 1 &mdash; Task visualization")
 
-### Nesting
+A task may nest other tasks as sub-items; the nesting relationship is modeled by IfcRelNests as shown in Figure 2. For example, the construction of a stud wall may be designated as a nesting task named 'install wall #1' including other tasks such as 'install dry wall', 'install studs', 'wall taping', and 'erect wall' as sub-processes. A value that indicates the relative tree view position of the task (in comparison to the tree view position of other tasks and the task hierarchy defined by IfcRelNests).
 
+The task order information that is used for viewing purposes is derived from the order defined by the IfcRelNests relationship and thus is independent of the logical task order defined through IfcRelSequence. The hierarchy and order defined through IfcRelNests enables to order the tasks in a tree view or list view structure.
 
-IfcTask may be contained within an IfcTask
- using the IfcRelNests relationship. An
- IfcTask may in turn nest other IfcTask,
- IfcProcedure or IfcEvent entities. Such
- nesting indicates decomposed level of detail. From IFC4
- onwards it is required to have a summary task (root of all
- tasks), which is used to define a link to the work plan or
- work schedule. All subtasks of the summary tasks are then
- implicitly linked to this work plan or work schedule.
- Please note that the summary task is used for data
- organization and not meant to store typical task
- information as defined by the user. It is therefore
- recommended that the summary task is hidden from the user
- to avoid confusion. Please also note that
- IfcRelNests is used to show the dependency between
- regular tasks and recurring task definitions (please see
- the section about time and duration use definitions).
+!["task instantiation diagram"](../../../../figures/ifctask_instantiation_diagram.png "Figure 2 &mdash; Task nesting relationships")
 
-
-
-
- As shown in Figure 139, the installation of a number of items of equipment within a
- particular space may be the subject of a single task which
- is identified as 'fix equipment in space 123'.
- IfcTask represents the occurrence of a work
- performance of a type of process in a construction plan.
-
-
-
-![task example](../../../../figures/ifctask_example.png)
-Figure 139 — Task visualization
-
-
-
- A task may nest other tasks as sub-items; the nesting
- relationship is modeled by IfcRelNests as shown in Figure 140. For example,
- the construction of a stud wall may be designated as a
- nesting task named 'install wall #1' including other tasks
- such as 'install dry wall', 'install studs', 'wall taping',
- and 'erect wall' as sub-processes. A value that indicates
- the relative tree view position of the task (in comparison
- to the tree view position of other tasks and the task
- hierarchy defined by IfcRelNests).
-
-
-The task order information that is used for viewing
- purposes is derived from the order defined by the
- IfcRelNests relationship and thus is independent of
- the logical task order defined through
- IfcRelSequence. The hierarchy and order defined
- through IfcRelNests enables to order the tasks in a
- tree view or list view structure.
-
-
-
-![task instantiation diagram](../../../../figures/ifctask_instantiation_diagram.png)
-Figure 140 — Task nesting relationships
-
-
-A top-level task is declared within the *IfcProject* using the *IfcRelDeclares* relationship.
-
+A top-level task is declared within the IfcProject using the IfcRelDeclares relationship.
 
 ### Object Typing
 
+The IfcTask defines the anticipated or actual occurrence of any task; common information about task types is handled by IfcTaskType.
 
-The IfcTask defines the anticipated or actual occurrence
- of any task; common information about task types is handled
- by IfcTaskType.
-
-
-
-> EXAMPLE  It includes fixed
->  duration, fixed unit or fixed work. An IfcTask can be
->  aggregated to a task type in order to specify a task
->  sequence or any time related information, e.g. the duration
->  of a task. Please see the documentation of
->  IfcTaskType for further information.
-
+> EXAMPLE&nbsp; It includes fixed duration, fixed unit or fixed work. An IfcTask can be aggregated to a task type in order to specify a task sequence or any time related information, e.g. the duration of a task. Please see the documentation of IfcTaskType for further information.
 
 ### Process Assignment
 
-
-It is suggested to use the 'summary task'
- (root element of the task hierarchy that is required for
- task management purposes) to assign all subtask to a work
- plan or work schedule. Resources used by tasks are assigned by IfcRelAssignsToProcess.
-
-
+It is suggested to use the 'summary task' (root element of the task hierarchy that is required for task management purposes) to assign all subtask to a work plan or work schedule. Resources used by tasks are assigned by IfcRelAssignsToProcess.
 
 ### Product Assignment
 
 
-### Property Sets
+
+### Property Sets for Objects
+
 
 
 ### Sequential Connectivity
 
-
- The relationship IfcRelSequence is used to indicate
- control flow. An IfcTask as a successor to an
- IfcTask indicates logical sequence how these tasks
- should be performed. IfcTask's can be triggered or
- can trigger IfcEvent's, which is also defined
- through the relationship IfcRelSequence.
-
-
+The relationship IfcRelSequence is used to indicate control flow. An IfcTask as a successor to an IfcTask indicates logical sequence how these tasks should be performed. IfcTask's can be triggered or can trigger IfcEvent's, which is also defined through the relationship IfcRelSequence.
 

@@ -22,21 +22,51 @@ Either there is no cooling tower type object associated, i.e. the _IsTypedBy_ in
 
 ## Concepts
 
-### Composition
+### Aggregation
 
 
-### Material
 
+#### MECHANICALFORCEDDRAFT_IfcFan
+
+May contain fan components for forcing air into the cooling tower.
+
+#### MECHANICALINDUCEDDDRAFT_IfcFan
+
+May contain fan components for inducing air into the cooling tower.
+
+### Material Constituent Set
+
+
+
+#### Casing
+
+Material from which the casing is constructed.
+
+#### Fill
+
+Fill material.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_CondenserWaterIn_CONDENSERWATER
+
+Warmer water entering the cooling tower.
+
+#### SOURCE_CondenserWaterOut_CONDENSERWATER
+
+Cooler water leaving the cooling tower.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

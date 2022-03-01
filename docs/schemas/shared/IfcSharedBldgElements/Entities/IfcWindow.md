@@ -120,49 +120,35 @@ Either there is no door type object associated, i.e. the _IsTypedBy_ inverse rel
 
 ### Material Constituent Set
 
-The material of the IfcWindow is defined by the
-IfcMaterialConstituentSet or as fall back by
-IfcMaterial and attached by the
-IfcRelAssociatesMaterial.
-It is accessible by the inverse HasAssociations relationship. The following keywords for IfcMaterialConstituentSet.MaterialConstituents[n].Name shall be used:
-
-
-* 'Lining' - to indicate that the material constituent applies to to the window lining
-* 'Framing' - to indicate that the material constituent applies to to the window panels, if not provided, the 'Lining' material information applied to panels as well
-* 'Glazing' - to indicate that the material constituent applies to to the glazing part
-
+The material of the IfcWindow is defined by the IfcMaterialConstituentSet or as fall back by IfcMaterial and attached by the IfcRelAssociatesMaterial.RelatingMaterial. It is accessible by the inverse HasAssociations relationship.
 
 If the fall back single IfcMaterial is referenced, it applies to the lining and framing of the window.
 
+#### Lining
 
+Indicates that the material constituent applies to the window lining.
+
+#### Framing
+
+Indicates that the material constituent applies to the windows panels(s); if not provided, the 'Lining' material information applies to panel(s) as well.
+
+#### Glazing
+
+Indicates that the material constituent applies to the glazing part.
 
 ### Object Typing
+
 
 
 ### Product Local Placement
 
 The following restriction is imposed:
 
+1. The PlacementRelTo relationship of IfcLocalPlacement shall point to the local placement of the same element (if given), in which the IfcWindow is used as a filling (normally an IfcOpeningElement), as provided by the IfcRelFillsElement relationship.
+2. If the IfcWindow is not inserted into an IfcOpeningElement, then the PlacementRelTo relationship of IfcLocalPlacement shall point (if given) to the local placement of the same IfcSpatialStructureElement that is used in the ContainedInStructure inverse attribute or to a referenced spatial structure element at a higher level.
+3. If the relative placement is not used, the absolute placement is defined within the world coordinate system.
 
-1. The PlacementRelTo relationship of
-IfcLocalPlacement shall point to the local placement of
-the same element (if given), in which the IfcWindow is
-used as a filling (normally an IfcOpeningElement), as
-provided by the IfcRelFillsElement relationship.
-2. If the IfcWindow is not inserted into an
-IfcOpeningElement, then the PlacementRelTo
-relationship of IfcLocalPlacement shall point (if given)
-to the local placement of the same
-IfcSpatialStructureElement that is used in the
-ContainedInStructure inverse attribute or to a referenced
-spatial structure element at a higher level.
-3. If the relative placement is not used, the absolute placement
-is defined within the world coordinate system.
-
-
-
-> NOTE  The product placement is used to determine the opening direction of the window.
-
+> NOTE&nbsp; The product placement is used to determine the opening direction of the window.
 
 ### Profile 3D Geometry
 
@@ -230,11 +216,12 @@ SecondMullionOffset defined accordingly.
 Figure 298 — Window profile
 
 
-
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 
 ### Spatial Containment
@@ -252,17 +239,12 @@ The IfcWindow may also be connected to the IfcOpeningElement in which it is plac
 
 ![Containment](../../../../figures/ifcwindow_containment-01.png)
 
-> NOTE  The containment shall be defined independently of the filling relationship, that is, even if the
->  IfcWindow is a filling of an opening established by IfcRelFillsElement, it is also contained in the spatial structure
->  by an IfcRelContainedInSpatialStructure.
-
 
 Figure 297 — Window spatial containment
 
-
- 
-
-
+> NOTE  The containment shall be defined independently of the filling relationship, that is, even if the
+>  IfcWindow is a filling of an opening established by IfcRelFillsElement, it is also contained in the spatial structure
+>  by an IfcRelContainedInSpatialStructure.
 
 ### Window Attributes
 
@@ -271,3 +253,4 @@ IfcWindowLiningProperties and IfcWindowPanelProperties are attached in the list 
 
 
 See IfcWindowTypePartitioningEnum for the correct usage of panel partitioning and IfcWindowPanelProperties for the opening symbols for different panel operation types.
+

@@ -29,3 +29,10 @@ Either the _PredefinedType_ attribute is unset (e.g. because an _IfcSpatialZoneT
 
 ### CorrectTypeAssigned
 Either there is no spatial zone type object associated, then the _IsTypedBy_ inverse relationship is not provided, or the associated type object has to be of type _IfcSpatialZoneType_.
+
+## Concepts
+
+### Spatial Zone Attributes
+
+
+

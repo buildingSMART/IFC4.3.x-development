@@ -28,23 +28,7 @@ The attribute ProcessType must be asserted when the value of PredefinedType is s
 
 ## Concepts
 
-### Nesting
+### Object Nesting
 
-
-IfcTaskType may nest other IfcTaskType or
- IfcTask entities using the IfcRelNests
- relationship. Such nesting indicates decomposed level of
- detail. Nesting of IfcTask entities is used if a
- task type shall be detailed by a sequence of tasks or if
- there is a need to include additional time information such
- as the duration of subtasks. Please note that
- IfcTask entities being contained within an
- IfcTaskType are linked with their task occurrences
- via IfcRelDefinesByObject relationships. It is also
- possible to define a task type for these IfcTask
- entities via IfcRelDefinesByType relationships. For
- further information please see the documentation of
- IfcRelDefinesByObject.
-
-
+IfcTaskType may nest other IfcTaskType or IfcTask entities using the IfcRelNests relationship. Such nesting indicates decomposed level of detail. Nesting of IfcTask entities is used if a task type shall be detailed by a sequence of tasks or if there is a need to include additional time information such as the duration of subtasks. Please note that IfcTask entities being contained within an IfcTaskType are linked with their task occurrences via IfcRelDefinesByObject relationships. It is also possible to define a task type for these IfcTask entities via IfcRelDefinesByType relationships. For further information please see the documentation of IfcRelDefinesByObject.
 

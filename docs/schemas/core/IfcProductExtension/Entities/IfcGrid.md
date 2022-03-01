@@ -55,6 +55,9 @@ Predefined types to define the particular type of the grid.
 
 ## Concepts
 
+### Grid Attributes
+
+
 ### Footprint Geometry
 
 
@@ -112,18 +115,6 @@ Predefined types to define the particular type of the grid.
 Figure 157 — Grid layout
 
 
-
-
-  
-
-
-
-
-
-  
-
-
-
 ![representation of a design grid](../../../../figures/ifcgrid-representation.png)
 
 >
@@ -139,14 +130,6 @@ Figure 157 — Grid layout
 
 
 Figure 158 — Grid representation
-
-
-
-
-  
-
-
-
 
 
 ### Placement
@@ -167,6 +150,3 @@ Figure 158 — Grid representation
  level, referenced by that.
 * If the relative placement is not used, the absolute
  placement is defined within the world coordinate system.
-
-
-

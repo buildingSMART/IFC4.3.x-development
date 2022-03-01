@@ -24,18 +24,43 @@ Either there is no heat exchanger type object associated, i.e. the _IsTypedBy_ i
 
 ## Concepts
 
-### Material
+### Material Constituent Set
 
+
+
+#### Casing
+
+Material from which the casing is constructed.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_HeatingInlet_NOTDEFINED
+
+Inlet of substance to be heated.
+
+#### SOURCE_HeatingOutlet_NOTDEFINED
+
+Outlet of substance to be heated.
+
+#### SINK_CoolingInlet_NOTDEFINED
+
+Inlet of substance to be cooled.
+
+#### SOURCE_CoolingOutlet_NOTDEFINED
+
+Outlet of substance to be cooled.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

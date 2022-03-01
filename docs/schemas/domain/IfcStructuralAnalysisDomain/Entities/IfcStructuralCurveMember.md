@@ -76,4 +76,7 @@ The local coordinate system is established by the reference curve given by topol
 
 ### Structural Connectivity
 
+#### IfcStructuralPointConnection
+
+Point connections at each end of the member.
 

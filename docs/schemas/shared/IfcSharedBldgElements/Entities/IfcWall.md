@@ -85,11 +85,9 @@ Figure 280 — Wall axis curved
 > a single geometric representation item of type IfcTrimmedCurve. The curve shall have a BasisCurve of type IfcCircle. The tangent of the IfcTrimmedCurve shall be parallel at start to the x-axis of the object coordinate system. The direction shall be identical to the direction of the x-axis.
 
 
+#### Axis_IfcBoundedCurve_Curve2D
 
-
- 
-
-
+The wall axis of the wall.
 
 ### Body Clipping Geometry
 
@@ -122,7 +120,6 @@ Figure 283 — Wall body clipping straight
 ![curved wall clipping](../../../../figures/ifcwallstandard_curvedwall_03-layout1.gif)
 
 Figure 284 — Wall body clipping curved
-
 
 
 ### Body SweptSolid Geometry
@@ -172,14 +169,11 @@ Figure 281 — Wall body extrusion straight
 Figure 282 — Wall body extrusion curved
 
 
-
 ### Material Layer Set
 
 The material information of the IfcWall is defined by
  IfcMaterialLayerSet, or as fallback by IfcMaterial, and it is attached either directly or at the IfcWallType. In this case, the material information does not allow to construct a shape by applying the layer definition to the axis representation, to enable this parametric definition, the IfcMaterialLayerSetUsage has to be used instead.
-
-
-
+ 
 ### Material Layer Set Usage
 
 The material of IfcWall can be defined by
@@ -225,31 +219,58 @@ then point into the positive y-axis of the reference coordinate system.
 Figure 278 — Wall material layers
 
 
-
 ### Object Typing
+
 
 
 ### Path Connectivity
 
 
+
+#### IfcWall
+
+Walls with equal or lower priority are connected at RelatedElement.
+
+### Product Assignment
+
+
+
+#### IfcStructuralSurfaceMember
+
+An idealized structural member corresponding to the wall.
+
+#### IfcTask
+
+A task for operating on the wall.
+
 ### Property Sets for Objects
+
 
 
 ### Quantity Sets
 
 
+
 ### Spatial Containment
 
-The IfcWall, as any subtype of IfcBuildingElement,
-may participate alternatively in one of the two different containment relationships:
+The IfcWall, as any subtype of IfcBuildingElement, may participate alternatively in one of the two different containment relationships:
 
+* the _Spatial Containment_ (defined here), or
+* the _Element Composition_.
 
-* the Spatial Containment (defined here), or
-* the Element Composition.
+#### IfcBuildingStorey
+
+Default spatial container
+
+#### IfcBuilding
+
+Spatial container for the element if it cannot be assigned to a building storey
+
+#### IfcSite
+
+Spatial container for the element in case that it is placed on site (outside of building)
 
 ### Surface Geometry
 
+> NOTE&nbsp; The 'Surface' can be used to define a surfacic model of the building (e.g. for analytical purposes, or for reduced Level of Detail representation).
 
-> NOTE  The 'Surface' can be used to define a
-> surfacic model of the building (e.g. for analytical purposes, or
-> for reduced Level of Detail representation).

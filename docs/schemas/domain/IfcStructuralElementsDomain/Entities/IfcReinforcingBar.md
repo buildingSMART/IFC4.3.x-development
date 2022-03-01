@@ -60,16 +60,31 @@ If this occurrence is defined by a type object, the latter has to be an _IfcRein
 
 The representation map referenced by a 'Body' 'MappedRepresentation' should contain a representation of type 'AdvancedSweptSolid' which holds an IfcSweptDiskSolid (including subtype IfcSweptDiskSolidPolygonal). Multiple IfcMappedItem's can be used to represent several bars as one occurrence of IfcReinforcingBar.
 
-
 ### Material Profile Set Usage
 
+
+
+#### Core
+
+Material from which the rebar is constructed, such as steel.
+
+#### Coating
+
+Outer coating, if applicable.
 
 ### Object Typing
 
 
-### Property Sets
+
+### Property Sets for Objects
+
 
 
 ### Quantity Sets
+
+
+
+### Reinforcing Bar Attributes
+
 
 

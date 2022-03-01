@@ -61,4 +61,3 @@ Reference to the relationship objects, that associates external references or ot
 
 Any object occurrence or object type can have a reference to a specific classification reference, i.e. to a particular facet within a classification system.
 
-

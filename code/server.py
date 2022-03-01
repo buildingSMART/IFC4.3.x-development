@@ -1869,29 +1869,15 @@ def search():
 
 @app.route("/sandcastle", methods=["GET", "POST"])
 def sandcastle():
-
     md = ""
     html = ""
 
-    if request.method == "POST" and request.form["md"]:
-
+    # Set to false for now because I don't yet know how to sanitise (e.g. any pydot vulnerabilities?)
+    if request.method == "POST" and request.form["md"] and False:
         md = request.form["md"]
+        html = process_markdown("", md)
 
-        html = markdown.markdown(process_graphviz("sandcastle", md), extensions=["tables", "fenced_code"])
-
-        soup = BeautifulSoup(html)
-
-        # Change svg img references to embedded svg
-        # because otherwise URLS are not interactive
-        for img in soup.findAll("img"):
-            if img["src"].endswith(".svg"):
-                entity, hash = img["src"].split("/")[-1].split(".")[0].split("_")
-                svg = BeautifulSoup(open(os.path.join("svgs", entity + "_" + hash + ".dot.svg")))
-                img.replaceWith(svg.find("svg"))
-
-        html = str(soup)
-
-    return render_template("sandcastle.html", base=base, is_iso=is_iso, html=html, md=md)
+    return render_template("sandcastle.html", base=base, is_iso=is_iso, navigation=get_navigation(), html=html, md=md)
 
 
 # Are you ready for regex golfing? Here's a challenge.

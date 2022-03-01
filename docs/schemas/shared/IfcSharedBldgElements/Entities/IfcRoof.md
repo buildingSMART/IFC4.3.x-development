@@ -44,9 +44,11 @@ _Geometric representation by aggregated elements_
 
 If the IfcRoof has components (referenced by _SELF\IfcObject.IsDecomposedBy_) then no independent geometric representation shall defined for the IfcRoof. The IfcRoof is then geometrically represented by the geometric representation of its components. The components are accessed via _SELF\IfcObject.IsDecomposedBy[1].RelatedObjects_. The geometric representations that are supported for the aggregated elements are defined with each element. See geometric use definition for IfcSlab, IfcBeam, IfcColumn, IfcBuildingElementPart and other subtypes of IfcBuildingElement.
 
-Figure 1 illustrates roof placement, with an IfcRoof defining the local placement for all aggregated elements.
+Figure 260 illustrates roof placement, with an IfcRoof defining the local placement for all aggregated elements.
 
-!["roof"](../../../../figures/ifcroof-layout1.gif "Figure 1 &mdash; Roof placement")
+
+![roof](../../../../figures/ifcroof-layout1.gif)
+Figure 260 — Roof placement
 
 #### IfcSlab
 

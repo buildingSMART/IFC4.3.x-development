@@ -16,7 +16,7 @@ A device that stores electrical energy when an external power supply is present 
 A device that constantly injects currents that precisely correspond to the harmonic components drawn by the load.
 
 ### INDUCTORBANK
-Inductor bank
+A device that stores electrical energy in a magnetic field using electrical property of inductance.
 
 ### UPS
 A device that provides a time limited alternative source of power supply in the event of failure of the main supply.

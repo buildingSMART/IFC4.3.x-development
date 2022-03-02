@@ -69,38 +69,40 @@ Vertical alignment segment with constant gradient.
 ### CIRCULARARC
 Vertical alignment segment where the derivative of vertical angle with respect to sloping length along the track (3D length) is constant.
 
-<br/>
+The curvature for vertical circular arc segment is provided by:
 
-**Vertical Curvature**
-![Vertical circular arc segment](../../figures/ifcalignmentverticalsegmenttypeenum-arc_curvature.png "Figure 1 &mdash; Curvature for vertical circular arc segment")
+$$ \kappa_v = \frac{1}{R_v(s)} = \frac{d\theta}{ds} $$
 
-<br/>
+The length for vertical circular arc segment is provided by:
 
-**Segment length**
-![Vertical circular arc segment](../../figures/ifcalignmentverticalsegmenttypeenum-arc_length.png "Figure 2 &mdash; Length for vertical circular arc segment")
+$$ l_V =\Delta s_v = \frac{\Delta \theta}{\kappa_v} = \Delta \theta \cdot R_v $$
 
-<br/>
+The distance between point on segment to tangent is provided by:
 
-**Distance between point on segment to tangent**
-![Vertical circular arc segment](../../figures/ifcalignmentverticalsegmenttypeenum-arc_z_s.png "Figure 3 &mdash; Distance of point an vertical circular arc segment to tangent")
+$$ z_c(s) = \frac{s^2}{2\cdot R_v} $$
 
 ### PARABOLICARC
 Vertical alignment segment where the derivative of gradient with respect to distance along is constant.
 <br/>
 
-**general equation of the parabolic arc segment**
+General equation of the parabolic arc segment is provided by:
 
-![Vertical parabolic arc segment](../../figures/ifcalignmentverticalsegmenttypeenum-parabola1.png "Figure 1 &mdash; general equation of the parabolic arc segment")
+$$ y = a x^2 + b x + c $$
 
-**gradient (slope) of this curve at any point (first derivative)**
+The gradient (slope) of this curve at any point (first derivative) is provided by:
 
-![Vertical parabolic arc segment](../../figures/ifcalignmentverticalsegmenttypeenum-parabola2.png "Figure 2 &mdash; gradient (slope)  of the parabolic arc segment at any point")
+$$ \frac{dy}{dx} = 2  a  x + b $$
 
-**variation of curvature**
+The rate of change of gradient of the parabolic arc segment is constant. The variation of curvature is therefore provided by:
 
-![Vertical parabolic arc segment](../../figures/ifcalignmentverticalsegmenttypeenum-parabola3.png "Figure 3 &mdash; the rate of change of gradient of the parabolic arc segment is constant")
+$$ \frac{d^2y}{d^2x} = 2  a $$
 
 ### CLOTHOID
+
 Vertical alignment segment where the derivative of vertical angle with respect to sloping length along the track (3D length) obeys a linear change.
 
-![Vertical clothoid segment](../../figures/ifcalignmentverticalsegmenttypeenum-clothoid_curvature.png "Figure 1 &mdash; curvature equation of the vertical clothoid segment")
+The curvature equation of the vertical clothoid segment is provided by:
+$$ \displaylines {
+\xi = \frac{s}{L} \\\\
+\kappa_v(s) =  \kappa_{v1} + \xi  \Delta \kappa_v
+} $$

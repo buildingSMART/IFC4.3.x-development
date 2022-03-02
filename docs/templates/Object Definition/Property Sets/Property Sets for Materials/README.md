@@ -5,7 +5,7 @@ The concept template _Property Sets for Materials_ describes how a material can 
 
 NOTE: An IfcMaterial is not an IfcObject. For legacy reasons, this concept is listed under _Object Definition_. In future versions of the standard the various property set association mechanisms will likely be unified. In the current version of this template, there is no mechanism to further guide the applicability in a way similar to how applicability can be tailored to individual predefined types of IfcObject. In future versions of the standard there will likely be the possibility to make property sets applicable to specific categories of IfcMaterial.
 
-Property Sets applicable to this template will carry the IfcTemplateTypeEnum "PSET_MATERIALDRIVEN".
+Property Sets applicable to this template will carry the IfcPropertySetTemplateTypeEnum "PSET_MATERIALDRIVEN".
 
 ```
 concept {

@@ -42,6 +42,7 @@ GeometricCurveSet | points, curves (2 or 3 dimensional)
 Annotation2D | points, curves (2 or 3 dimensional), hatches and text (2 dimensional)
 SurfaceModel | face based and shell based surface model(s), or tessellated surface model(s)
 Tessellation | Tessellated surface representation(s) only
+Segment | partial geometry of curves that shall not be rendered sparately from the main curve
 SolidModel | including swept solid, Boolean results and Brep bodies; more specific types are:
 SweptSolid | swept area solids, by extrusion and revolution, excluding tapered sweeps
 AdvancedSweptSolid | swept area solids created by sweeping a profile along a directrix, and tapered sweeps

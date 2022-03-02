@@ -193,6 +193,15 @@ navigation = [
     ],
 ]
 
+annex_b_navigation = [
+    {"number": "B.1", "name": "Entities", "url": make_url("annex-b1.html")},
+    {"number": "B.2", "name": "Types", "url": make_url("annex-b2.html")},
+    {"number": "B.3", "name": "Property sets", "url": make_url("annex-b3.html")},
+    {"number": "B.4", "name": "Properties", "url": make_url("annex-b4.html")},
+    {"number": "B.5", "name": "Functions", "url": make_url("annex-b5.html")},
+    {"number": "B.6", "name": "Rules", "url": make_url("annex-b6.html")},
+]
+
 
 def get_navigation(resource=None, number=None):
     if not number and resource:
@@ -219,6 +228,12 @@ def get_navigation(resource=None, number=None):
                         if i == int(numbers[1]):
                             data["is_current"] = True
                         item["subitems"].append(data)
+            elif "annex-b" in request.path and item.get("number", None) == "B":
+                item["is_current"] = True
+                for subitem in copy.deepcopy(annex_b_navigation):
+                    if ("annex-" + subitem["number"]).lower().replace(".", "") in request.path:
+                        subitem["is_current"] = True
+                    item["subitems"].append(subitem)
             else:
                 item["is_current"] = False
     return navigation
@@ -252,6 +267,8 @@ def chapter_lookup(number=None, cat=None):
 
 
 entity_names = lambda: sorted(sum([schema.get("Entities", []) for _, cat in R.hierarchy for __, schema in cat], []))
+function_names = lambda: sorted(sum([schema.get("Functions", []) for _, cat in R.hierarchy for __, schema in cat], []))
+rule_names = lambda: sorted(sum([schema.get("Rules", []) for _, cat in R.hierarchy for __, schema in cat], []))
 type_names = lambda: sorted(sum([schema.get("Types", []) for _, cat in R.hierarchy for __, schema in cat], []))
 
 
@@ -1396,40 +1413,61 @@ class SectionNumberGenerator:
 
 @app.route(make_url("annex-b.html"))
 def annex_b():
-    items = [
-        {"number": "B.1", "title": "Entities", "url": make_url("annex-b1.html")},
-        {"number": "B.2", "title": "Property sets", "url": make_url("annex-b2.html")},
-        {"number": "B.3", "title": "Properties", "url": make_url("annex-b3.html")},
-    ]
-    return render_template("annex-b.html", base=base, is_iso=is_iso, navigation=get_navigation(), items=items)
+    return render_template("annex-b.html", base=base, is_iso=is_iso, navigation=get_navigation(), items=annex_b_navigation)
 
 
 @app.route(make_url("annex-b1.html"))
 def annex_b1():
     items = [
-        {"number": name_to_number()[n], "url": url_for("resource", resource=n), "title": n}
-        for n in sorted(entity_names() + type_names())
+        {"number": name_to_number()[n], "url": url_for("resource", resource=n), "name": n}
+        for n in entity_names()
     ]
-    return render_template("annex-b.html", base=base, is_iso=is_iso, navigation=get_navigation(), items=items, is_dictionary=True)
+    return render_template("annex-b.html", base=base, is_iso=is_iso, navigation=get_navigation(), items=items, is_dictionary=True, title="Entities")
 
 
 @app.route(make_url("annex-b2.html"))
 def annex_b2():
     items = [
-        {"number": name_to_number()[n], "url": url_for("resource", resource=n), "title": n}
-        for n in sorted(R.pset_definitions.keys())
-        if n in name_to_number()
+        {"number": name_to_number()[n], "url": url_for("resource", resource=n), "name": n}
+        for n in type_names()
     ]
-    return render_template("annex-b.html", base=base, is_iso=is_iso, navigation=get_navigation(), items=items, is_dictionary=True)
+    return render_template("annex-b.html", base=base, is_iso=is_iso, navigation=get_navigation(), items=items, is_dictionary=True, title="Types")
 
 
 @app.route(make_url("annex-b3.html"))
 def annex_b3():
     items = [
-        {"number": "", "url": url_for("property", prop=n), "title": n}
+        {"number": name_to_number()[n], "url": url_for("resource", resource=n), "name": n}
+        for n in sorted(R.pset_definitions.keys())
+        if n in name_to_number()
+    ]
+    return render_template("annex-b.html", base=base, is_iso=is_iso, navigation=get_navigation(), items=items, is_dictionary=True, title="Property sets")
+
+
+@app.route(make_url("annex-b4.html"))
+def annex_b4():
+    items = [
+        {"number": "", "url": url_for("property", prop=n), "name": n}
         for n in sorted(set([p["name"] for pdef in R.pset_definitions.values() for p in pdef["properties"]]))
     ]
-    return render_template("annex-b.html", base=base, is_iso=is_iso, navigation=get_navigation(), items=items)
+    return render_template("annex-b.html", base=base, is_iso=is_iso, navigation=get_navigation(), items=items, title="Properties")
+
+
+@app.route(make_url("annex-b5.html"))
+def annex_b5():
+    items = [
+        {"number": "", "url": url_for("resource", resource=n), "name": n}
+        for n in function_names()
+    ]
+    return render_template("annex-b.html", base=base, is_iso=is_iso, navigation=get_navigation(), items=items, title="Functions")
+
+@app.route(make_url("annex-b6.html"))
+def annex_b6():
+    items = [
+        {"number": "", "url": url_for("resource", resource=n), "name": n}
+        for n in rule_names()
+    ]
+    return render_template("annex-b.html", base=base, is_iso=is_iso, navigation=get_navigation(), items=items, title="Rules")
 
 
 def make_concept(path, number_path=None):

@@ -232,6 +232,9 @@
                         {% if relationship.predefined_type %}
                         (only applies to <code>{{ relationship.predefined_type }})
                         {% endif %}
+                        {% if relationship.description %}
+                         - {{ relationship.description }}
+                        {% endif %}
                     </li>
                 {% endfor %}
                 </ul>

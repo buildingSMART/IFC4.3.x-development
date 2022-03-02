@@ -877,7 +877,7 @@ def resource(resource):
             attributes=get_attributes(resource, builder),
             formal_propositions=get_formal_propositions(resource, builder),
             property_sets=get_property_sets(resource, builder),
-            concept_usage=get_concept_usage(resource, builder),
+            concept_usage=get_concept_usage(resource, builder, mdc),
             examples=get_examples(resource),
             adoption=get_adoption(resource),
             formal_representation=get_formal_representation(resource),
@@ -1146,7 +1146,8 @@ def get_usage_name(name):
     return "GeneralUsage"
 
 
-def get_concept_usage(resource, builder):
+def get_concept_usage(resource, builder, mdc):
+    concepts_markdown = mdp.markdown_attribute_parser(data=mdc, heading_name="Concepts", short=False)
     ty = resource
     supertype_chain = []
     while ty is not None:
@@ -1229,16 +1230,26 @@ def get_concept_usage(resource, builder):
                     # If the active class has a description, it may redisplay an inherited concept
                     should_show_concept = True
 
-                if should_show_concept:
-                    concepts.append(
-                        {
-                            "name": human_name,
-                            "description": description,
-                            "usage": separate_camel(view_name).replace("General Usage", "General"),
-                            "url": concept_lookup.get(name, [None, None])[1],
-                            "applicable_relationships": get_applicable_relationships(view_name, name, ifc_class),
-                        }
-                    )
+
+                if not should_show_concept:
+                    continue
+
+                relationships = get_applicable_relationships(view_name, name, ifc_class)
+                relationship_descriptions = concepts_markdown.get_children(human_name)
+                # Let's try to enrich relationships with descriptions from the markdown
+                if relationships and relationship_descriptions:
+                    for relationship in relationships:
+                        relationship["description"] = relationship_descriptions.get(relationship["name"])
+
+                concepts.append(
+                    {
+                        "name": human_name,
+                        "description": description,
+                        "usage": separate_camel(view_name).replace("General Usage", "General"),
+                        "url": concept_lookup.get(name, [None, None])[1],
+                        "applicable_relationships": relationships,
+                    }
+                )
 
         groups.append(
             {

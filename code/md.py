@@ -108,11 +108,19 @@ class markdown_attribute_parser:
                 li[slice(*m.span())] = []
                 name = (mvd, "".join(li).strip())
                 
-            # @todo reintegrate this again with server.py
-            #  to embelish concept usage with documentation
             self.children[name] = section.children
                 
             yield name, section.first_node_content if self.short else section.content
+
+    def get_children(self, name):
+        children = self.root.children if self.root else []
+        cs = [c for c in children if c.heading == self.heading_name]
+        if len(cs) != 1:
+            return
+        for section in cs[0].children:
+            section_name = section.heading
+            if section_name == name:
+                return {c.heading: c.content for c in section.children}
             
 if __name__ == "__main__":
     import tabulate

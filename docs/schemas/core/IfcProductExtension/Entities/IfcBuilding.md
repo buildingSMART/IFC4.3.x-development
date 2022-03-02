@@ -2,7 +2,6 @@
 
 A building represents a structure that provides shelter for its occupants or contents and stands in one place. The building is also used to provide a basic element within the spatial structure hierarchy for the components of a building project (together with site, storey, and space).
 
-{ .extDef}
 > NOTE  Definition from ISO 6707-1:
 > Construction work that has the provision of shelter for its occupants or contents as one of its main purpose and is normally designed to stand permanently in one place.
 
@@ -14,7 +13,7 @@ A building is (if specified) associated to a site. A building may span over seve
 
 The _IfcBuilding_ is used to build the spatial structure of a building (that serves as the primary project breakdown and is required to be hierarchical). The spatial structure elements are linked together by using the objectified relationship _IfcRelAggregates_. Figure 1 shows the _IfcBuilding_ as part of the spatial structure. It also serves as the spatial container for building and other elements.
 
-> NOTE  Detailed requirements on mandatory element containment and placement structure relationships are given in view definitions and implementer agreements.
+> NOTE  Detailed requirements on mandatory element containment and placement structure relationships are given in model view definitions.
 
 ![A building storey as part of a spatial structure](../../../../figures/ifcbuilding-spatialstructure.png)
 
@@ -25,8 +24,8 @@ Systems, such as building service or electrical distribution systems, zonal syst
 
 Figure 2 describes the heights and elevations of the _IfcBuilding_. It is used to provide the height above sea level of the project height datum for this building, that is, the internal height 0.00. The height 0.00 is often used as a building internal reference height and equal to the floor finish level of the ground floor.
 
-* total height of building, also referred to as ridge height (top of roof structure, e.g the ridge against terrain): provided by Qto_BuildingBaseQuantities with Name="Height"
-* eaves height of building (base of roof structure, e.g the eaves against terrain): provided by Qto_BuildingBaseQuantities with Name="EavesHeight"
+* total height of building, also referred to as ridge height (top of roof structure, e.g the ridge against terrain): provided by _Qto_BuildingBaseQuantities_ with Name="Height"
+* eaves height of building (base of roof structure, e.g the eaves against terrain): provided by _Qto_BuildingBaseQuantities_ with Name="EavesHeight"
 
 ![building heights](../../../../figures/ifcbuilding_heights.png)
 Figure 2 &mdash; Building elevations
@@ -95,4 +94,3 @@ Annotations that are directly related to the building.
 ### Spatial Decomposition
 
 > NOTE  By using the inverse relationship _IfcBuilding.IsDecomposedBy_ it references IfcBuilding || IfcBuildingStorey through _IfcRelAggregates.RelatedObjects_. If it refers to another instance of IfcBuilding, the referenced IfcBuilding needs to have a different and lower CompositionType, i.e. ELEMENT (if the other IfcBuilding has COMPLEX), or PARTIAL (if the other IfcBuilding has ELEMENT).
-

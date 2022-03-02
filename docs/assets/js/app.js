@@ -274,13 +274,27 @@ function setupHighlightJS() {
             case_insensitive: !0,
             lexemes: "[a-z-]+",
             keywords: {
+                // I actually didn't check what these are I just did trial and error until I liked the colours
                 section: "ENTITY END_ENTITY TYPE END_TYPE",
                 built_in: "OPTIONAL NOT OR EXISTS SET SIZEOF SELF TYPEOF AND IN ONEOF LIST QUERY",
                 keyword: "SUBTYPE OF WHERE ENUMERATION ABSTRACT SUPERTYPE INVERSE FOR"
             }
         }
     }));
-
+    // HighlightJS does not support HTML inside highlighted code:
+    // https://github.com/highlightjs/highlight.js/wiki/security
+    // This hook selectively allows links.
+    const anchor_regex = /<a href="(.*?)">(\w+?)<\/a>/g;
+    const fakeanchor_regex = /{{(.*?):(\w+?)}}/g;
+    hljs.addPlugin({
+        'before:highlightElement': ({ el, language }) => {
+            let result = '';
+            el.innerHTML = el.innerHTML.replace(anchor_regex, '{{$1:$2}}');
+        },
+        'after:highlightElement': ({ el, result }) => {
+            el.innerHTML = el.innerHTML.replace(fakeanchor_regex, '<a href="$1">$2</a>')
+        }
+    });
     hljs.highlightAll();
     hljs.initLineNumbersOnLoad();
 }

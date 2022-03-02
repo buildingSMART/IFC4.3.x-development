@@ -139,9 +139,8 @@ def construct_xml(xmi_doc, pset, path, by_id, by_name):
     psd = ET.Element('PropertySetDef' if pset.stereotype == "PSET" else 'QtoSetDef')
     psd.set('xmlns:xsi', 'http://www.w3.org/2001/XMLSchema-instance')
     psd.set('xmlns:xsd', 'http://www.w3.org/2001/XMLSchema')
-    if pset.stereotype == "PSET":
-        ttype = (pset.node/"properties")[0].stereotype
-        psd.set('templatetype', ttype)
+    ttype = (pset.node/"properties")[0].stereotype
+    psd.set('templatetype', ttype)
     
     if pset.stereotype == "PSET":
         psd.set('xsi:noNamespaceSchemaLocation', 'http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd')

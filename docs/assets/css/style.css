@@ -281,6 +281,15 @@ ul.adoption ol>li.partially-supported {
 ul.adoption ol>li.not-supported {
     background-color: var(--red);
 }
+ul.references li {
+    list-style-type: none;
+}
+ul.references svg {
+    color: var(--border-color);
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+}
 ul.examples {
     padding-left: 0px;
 }

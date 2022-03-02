@@ -864,6 +864,7 @@ def resource(resource):
             examples=get_examples(resource),
             adoption=get_adoption(resource),
             formal_representation=get_formal_representation(resource),
+            references=get_references(resource),
             changelog=get_changelog(resource),
             is_deprecated=resource in R.deprecated_entities,
             is_abstract=resource in R.abstract_entities,
@@ -897,6 +898,7 @@ def resource(resource):
         type_values=get_type_values(resource, mdc),
         formal_propositions=get_formal_propositions(resource, builder),
         formal_representation=get_formal_representation(resource),
+        references=get_references(resource),
         changelog=get_changelog(resource),
     )
 
@@ -1282,6 +1284,17 @@ def get_formal_representation(resource):
     express = R.entity_definitions.get(resource)
     if express:
         return {"number": SectionNumberGenerator.generate(), "express": express}
+
+
+def get_references(resource):
+    references = set()
+    for ifc_entity, express in R.entity_definitions.items():
+        if ifc_entity == resource:
+            continue
+        if resource in re.split('[^a-zA-Z]', express):
+            references.add(ifc_entity)
+    if references:
+        return {"number": SectionNumberGenerator.generate(), "references": sorted(list(references))}
 
 
 def get_changelog(resource):

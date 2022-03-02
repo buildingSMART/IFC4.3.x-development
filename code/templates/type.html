@@ -65,4 +65,15 @@
 </h2>
 <pre><code class="language-express hljs">{{ formal_representation.express }}</code></pre>
 {% endif %}
+
+{% if references %}
+<h2>
+    {{ references.number }} References
+</h2>
+<ul class="references">
+    {% for reference in references.references %}
+    <li><i data-feather="paperclip"></i>{{ reference }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
 {% endblock %}

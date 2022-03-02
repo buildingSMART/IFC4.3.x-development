@@ -275,6 +275,8 @@ If you need to render an equation, simply include it using LaTeX:
 $$V_{sphere} = \frac{4}{3}\pi r^3$$
 ```
 
+There may be some [quirks with LaTeX rendering](https://math.codidact.com/posts/278763) to be aware of.
+
 Markdown allows HTML, but this is generally unnecessary.
 
 ### Diagrams

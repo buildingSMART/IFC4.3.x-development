@@ -220,13 +220,53 @@
                 {{ concept.usage }}
             </td>
             <td data-label="Description">
+                {% if not concept.description and not concept.applicable_relationships %}
+                <p>
+                    <em>No description available.</em>
+                </p>
+                {% endif %}
+
                 {% if concept.description %}
                 {{ concept.description | safe }}
                 {% endif %}
                 {% if concept.applicable_relationships %}
+
+                {% if concept.applicable_relationships.should_show_as_table %}
+                <p>This concept can be applied with the following combinations:</p>
+                <table>
+                    <thead>
+                        <tr>
+                            {% for header in concept.applicable_relationships.headers %}
+                            <th>{{ header }}</th>
+                            {% endfor %}
+                            <th>Description</th>
+                        </tr>
+                    <thead>
+                    <tbody>
+                        {% for relationship in concept.applicable_relationships.relationships %}
+                        <tr>
+                            {% for header in concept.applicable_relationships.headers %}
+                            <td>
+                                {{ relationship.get(header, 'No data found') }}
+                            </td>
+                            {% endfor %}
+                            <td>
+                                {% if relationship.description %}
+                                {{ relationship.description }}
+                                {% else %}
+                                <em>No description available.</em>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+                {% else %}
+
                 <p>This concept can be applied to the following resources:</p>
                 <ul>
-                {% for relationship in concept.applicable_relationships %}
+                {% for relationship in concept.applicable_relationships.relationships %}
                     <li>
                         {{ relationship.name }}
                         {% if relationship.predefined_type %}
@@ -243,6 +283,8 @@
                 <p>
                     <em>No description available.</em>
                 </p>
+                {% endif %}
+
                 {% endif %}
             </td>
         </tr>

@@ -622,10 +622,33 @@ def get_applicable_relationships(usage, concept, resource):
         # In this case, there is no interesting information to display
         return
     data = []
+    should_show_as_table = False
+    headers = []
     for row in rows:
         del row["ApplicableEntity"]
-        data.append({"predefined_type": row.pop("PredefinedType", None), "name": list(row.values())[0]})
-    return data
+        predefined_type = row.pop("PredefinedType", None)
+        # Some concepts are better displayed in a table, if they are complex and
+        # have multiple variables involved. Otherwise, a list is preferred.
+        should_show_as_table = len(row.values()) > 1
+        if should_show_as_table:
+            if predefined_type:
+                row["PredefinedType"] = predefined_type
+            # There seems to be a convention in the markdown that you can
+            # describe something using a header which is a concatenation of the
+            # values in the relationship.
+            name = []
+            if not headers:
+                for key, value in row.items():
+                    if key not in ["ApplicableEntity"]:
+                        headers.append(key)
+            for key, value in row.items():
+                if key not in ["ApplicableEntity"]:
+                    name.append(value)
+            row["name"] = "_".join(name)
+            data.append(row)
+        else:
+            data.append({"predefined_type": predefined_type, "name": list(row.values())[0]})
+    return {"relationships": data, "should_show_as_table": should_show_as_table, "headers": headers}
 
 
 def separate_camel(s):
@@ -1237,8 +1260,8 @@ def get_concept_usage(resource, builder, mdc):
                 relationships = get_applicable_relationships(view_name, name, ifc_class)
                 relationship_descriptions = concepts_markdown.get_children(human_name)
                 # Let's try to enrich relationships with descriptions from the markdown
-                if relationships and relationship_descriptions:
-                    for relationship in relationships:
+                if relationships and relationships["relationships"] and relationship_descriptions:
+                    for relationship in relationships["relationships"]:
                         relationship["description"] = relationship_descriptions.get(relationship["name"])
 
                 concepts.append(
@@ -1390,8 +1413,6 @@ class FigureNumberer:
         # As a result with do string replacements in reverse order of the length
         # of the placeholder number.
         for placeholder_number, generated_number in sorted(cls.index.items(), key=lambda x: len(x[0]), reverse=True):
-            print('replace', placeholder_number)
-            print('with', generated_number)
             html = html.replace(f"Figure {placeholder_number}", f"Figure {generated_number}")
             html = html.replace(f"Figure-{placeholder_number}", f"Figure-{generated_number}")
             html = html.replace(f"Table {placeholder_number}", f"Table {generated_number}")

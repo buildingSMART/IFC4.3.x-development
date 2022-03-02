@@ -172,7 +172,10 @@ for item in xmi_doc:
         get_schema(item_package)[f"{item.type[0]}{item.type[1:].lower()}s"].append(name)
 
     if item.type in ("ENTITY", "TYPE", "SELECT", "ENUM", "FUNCTION", "RULE"):
-        definitions[item.name] = str(item.definition)
+        name = item.name
+        if item.type in ("FUNCTION", "RULE"):
+            name = re.split(r"\s", item.name)[0]
+        definitions[name] = str(item.definition)
 
     if item.type == "ENTITY":
         where_clauses[item.name] = item.definition.where_clauses

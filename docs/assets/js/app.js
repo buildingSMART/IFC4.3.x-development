@@ -275,9 +275,9 @@ function setupHighlightJS() {
             lexemes: "[a-z-]+",
             keywords: {
                 // I actually didn't check what these are I just did trial and error until I liked the colours
-                section: "ENTITY END_ENTITY TYPE END_TYPE",
-                built_in: "OPTIONAL NOT OR EXISTS SET SIZEOF SELF TYPEOF AND IN ONEOF LIST QUERY",
-                keyword: "SUBTYPE OF WHERE ENUMERATION ABSTRACT SUPERTYPE INVERSE FOR"
+                section: "ENTITY END_ENTITY TYPE END_TYPE FUNCTION END_FUNCTION LOCAL END_LOCAL BEGIN END IF THEN END_IF REPEAT END_REPEAT CASE END_CASE OTHERWISE",
+                built_in: "OPTIONAL NOT OR EXISTS SET SIZEOF SELF TYPEOF AND IN ONEOF LIST QUERY ARRAY INTEGER LOGICAL HIINDEX",
+                keyword: "SUBTYPE OF WHERE ENUMERATION ABSTRACT SUPERTYPE INVERSE FOR TO RETURN"
             }
         }
     }));

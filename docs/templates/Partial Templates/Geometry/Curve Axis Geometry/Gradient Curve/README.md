@@ -11,11 +11,11 @@ concept {
     IfcCurveSegment_0 -> Arc_Segment
     IfcCurveSegment_0 -> Bloss_Transition_Segment
     IfcCurveSegment_0 -> Clothoid_Transition_Segment
-    IfcCurveSegment_0 -> Cosine_Transition_Segment
+    IfcCurveSegment_0 -> Cosine_Spiral_Transition_Segment
     IfcCurveSegment_0 -> Cubic_Transition_Segment
     IfcCurveSegment_0 -> Helmert_Transition_Segment
     IfcCurveSegment_0 -> Linear_Segment
-    IfcCurveSegment_0 -> Sine_Transition_Segment
+    IfcCurveSegment_0 -> Sine_Spiral_Transition_Segment
     IfcCurveSegment_0 -> Viennese_Bend_Transition_Segment
     IfcCurveSegment_1 -> Arc_Segment
     IfcCurveSegment_1 -> Clothoid_Transition_Segment

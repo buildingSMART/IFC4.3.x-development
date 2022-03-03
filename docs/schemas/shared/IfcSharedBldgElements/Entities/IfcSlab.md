@@ -44,6 +44,15 @@ Either there is no slab type object associated, i.e. the _IsTypedBy_ inverse rel
 
 ## Concepts
 
+### Aggregation
+
+If an IfcSlab is decomposed into component, the following component entity types are recommended:
+
+* Precast hollow core slabs
+    * double tee or plank components : IfcBeam
+    * topping : IfcBuildingElementPart
+    * others : IfcBuildingElementPart
+
 ### Body Clipping Geometry
 
 The following constraints apply to the 'Clipping'

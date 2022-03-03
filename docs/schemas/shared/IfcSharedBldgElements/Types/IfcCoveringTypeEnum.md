@@ -10,7 +10,7 @@ This enumeration defines the range of different types of covering that can furth
 ## Items
 
 ### CEILING
-The covering is used torepresent a ceiling.
+The covering is used to represent a ceiling.
 
 ### FLOORING
 The covering is used to represent a flooring.

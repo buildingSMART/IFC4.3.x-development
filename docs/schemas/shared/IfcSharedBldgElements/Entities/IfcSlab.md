@@ -46,12 +46,16 @@ Either there is no slab type object associated, i.e. the _IsTypedBy_ inverse rel
 
 ### Aggregation
 
-If an IfcSlab is decomposed into component, the following component entity types are recommended:
+If an IfcSlab is decomposed into components, the following component entity types are recommended:
 
 * Precast hollow core slabs
     * double tee or plank components : IfcBeam
-    * topping : IfcBuildingElementPart
+    * topping : IfcCovering
     * others : IfcBuildingElementPart
+
+![A diagram of a precast hollowcore slab](../../../../figures/ifcslab-aggregation.png)
+
+Figure SLABAGG &mdash; A precast hollow core slab aggregation with its components
 
 ### Body Clipping Geometry
 

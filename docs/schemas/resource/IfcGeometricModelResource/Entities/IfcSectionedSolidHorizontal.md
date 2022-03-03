@@ -10,6 +10,11 @@ Figure 1 illustrates four girders of a bridge having a constant parameterized pr
 
 ![spatial structure](../../../../figures/ifcsectionedsolidhorizontal.png "Figure 1 &mdash; Sectioned solid horizontal")
 
+![IfcSectionedSolidHorizontal1](../../../../figures/IfcSectionedSolidHorizontal1.png "Figure 2 - illustrating the meaning of the parameters")
+
+![IfcSectionedSolidHorizontal2](../../../../figures/IfcSectionedSolidHorizontal2.png "Figure 3 - illustrating the meaning of the parameters")
+
+
 **Informal Propositions:**
 
 1. No two consecutive sections shall intersect.

@@ -41,6 +41,20 @@ Set of spatial reference relationships, that holds those elements, which are ref
 { .change-ifc2x4}
 > Ø\X
 
+### IsInterferedByElements
+Reference to the interference relationship to indicate the spatial element that is interfered. The relationship, if provided, indicates that this spatial element has an interference with one or many other spatial elements.
+> NOTE  There is no indication of precedence between _IsInterferedByElements_ and _InterferesElements_ orientated interference is defined by _IfcRelInterferesElements.ImpliedOrder_ or _IfcRelInterferesElements.InterferenceType_.
+
+{ .change-ifc2x4}
+> IFC4x3 CHANGE New inverse relationship.
+
+### InterferesElements
+Reference to the interference relationship to indicate the spatial element that interferes. The relationship, if provided, indicates that this spatial element has an interference with one or many other spatial elements.
+> NOTE There is no indication of precedence between _IsInterferedByElements_ and _InterferesElements_. Orientated interference is defined by _IfcRelInterferesElements.ImpliedOrder_ or _IfcRelInterferesElements.InterferenceType_.
+
+{ .change-ifc2x4}
+> IFC4x3 CHANGE New inverse relationship.
+
 ## Concepts
 
 ### Body Geometry

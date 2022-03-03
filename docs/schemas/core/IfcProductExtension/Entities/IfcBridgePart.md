@@ -6,13 +6,7 @@ Part of a bridge.
 
 ### Body Geometry
 
-The body (or solid model) geometric representation (if the bridge part has an independent geometric representation) of IfcBridgePart is defined using faceted B-Rep capabilities (with or without voids), based on the IfcFacetedBrep or on the IfcFacetedBrepWithVoids. In the case of alignment based infrastructure, the geometric representation can be defined using IfcSectionedSolidHorizontal optionally IfcSweptAreaSolid.
-
-> NOTE  Since the bridge part shape is usually described by the exterior building elements, an independent shape representation shall only be given, if the bridge part is exposed independently from its constituting elements and such independent geometric representation may be prohibited in model view definitions.
-
 ### Object Predefined Type
-
-
 
 ### Product Local Placement
 

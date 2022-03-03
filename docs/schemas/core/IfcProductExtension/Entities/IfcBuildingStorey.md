@@ -49,10 +49,6 @@ Elevation of the base of this storey, relative to the 0,00 internal reference he
 
 ### Body Geometry
 
-The body (or solid model) geometric representation (if the building storey has an independent geometric representation) of IfcBuildingStorey is defined using faceted B-Rep capabilities (with or without voids), based on the IfcFacetedBrep or on the IfcFacetedBrepWithVoids.
-
-> NOTE  Since the building storey shape is usually described by the exterior building elements, an independent shape representation shall only be given, if the building storey is exposed independently from its constituting elements and such independent geometric representation may be prohibited in model view definitions.
-
 ### FootPrint GeomSet Geometry
 
 The foot print representation of IfcBuildingStorey is given by either a single 2D curve (such as IfcPolyline or IfcCompositeCurve), or by a list of 2D curves (in case of inner boundaries), if the building storey has an independent geometric representation.

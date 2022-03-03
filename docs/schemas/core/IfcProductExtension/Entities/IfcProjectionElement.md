@@ -33,18 +33,19 @@ Either _PredefinedType_ is unset or the inherited attribute _ObjectType_ shall b
 
 ### Body Geometry
 
-The geometric representation of IfcProjectionElement is defined using the swept area solid geometry. The following attribute values for the IfcShapeRepresentation holding this geometric representation shall be used:
+The geometric representation of IfcProjectionElement can be defined using the swept area solid geometry. The following attribute values for the IfcShapeRepresentation holding this geometric representation shall be used:
 
-* RepresentationIdentifier : 'Body'
-* RepresentationType : 'SweptSolid'
+* _IfcShapeRepresentation.RepresentationIdentifier_: 'Body'
+* _IfcShapeRepresentation.RepresentationType_: 'SweptSolid'
 
-The following additional constraints apply to the swept solid representation:
+The following constraints are recommended:
 
-* **Solid**: IfcExtrudedAreaSolid is required.
-* **Profile**: IfcRectangleProfileDef, IfcCircleProfileDef and IfcArbitraryClosedProfileDef shall be supported.
-* **Extrusion**: The profile shall be extruded horizontally (that is, perpendicular to the extrusion direction of the modified element), such as for wall projections, or vertically (that is, in the extrusion direction of the projected element), such as for floor projections.
+* _IfcShapeRepresentation.Items_ may include a single, or multiple, instances of IfcExtrudedAreaSolid.
+* _IfcExtrudedAreaSolid.SweptArea_ shall support IfcRectangleProfileDef, IfcCircleProfileDef and IfcArbitraryClosedProfileDef.
+* _IfcExtrudedAreaSolid.ExtrudedDirection_ shall extrude the profile in a direction non-parallel to the element it is projecting. This may be horizontal for wall projections or vertically for floor projections.
+* If multiple instances of IfcExtrudedAreaSolid are used, the extrusion direction of each extrusion should be equal.
 
-As shown in Figure 1, the following interpretation of dimension parameter applies for rectangular projection:
+As shown in Figure PROJECTIONREP, the following interpretation of dimension parameters applies for rectangular projection:
 
 * _IfcRectangleProfileDef.YDim_ interpreted as projection width
 * _IfcRectangleProfileDef.XDim_ interpreted as projection height
@@ -54,12 +55,14 @@ As shown in Figure 1, the following interpretation of dimension parameter applie
 
 > NOTE  The local placement directions for the IfcProjectionElement are only given as an example, other directions are valid as well.
 
-![projection](../../../../figures/ifcprojectionelement-layout1.png "Figure 1 &mdash; Projection representation")
+![projection](../../../../figures/ifcprojectionelement-layout1.png )
 
-The general b-rep geometric representation of IfcProjectionElement is defined using the Brep geometry. The Brep representation allows for the representation of complex element shape. The following attribute values for the IfcShapeRepresentation holding this geometric representation shall be used:
+Figure PROJECTIONREP &mdash; Projection representation
 
-* RepresentationIdentifier : 'Body'
-* RepresentationType : 'Brep'
+The general geometric representation of IfcProjectionElement can also be defined using the Brep or Tesselation geometry. The Brep or Tessellation representation allows for the representation of complex element shapes. The following attribute values for the IfcShapeRepresentation holding this geometric representation shall be used:
+
+* _IfcShapeRepresentation.RepresentationIdentifier_: 'Body'
+* _IfcShapeRepresentation.RepresentationType_: 'Tessellation' or 'Brep'
 
 ### Product Local Placement
 

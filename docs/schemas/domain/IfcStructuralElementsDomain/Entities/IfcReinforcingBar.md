@@ -58,6 +58,8 @@ If this occurrence is defined by a type object, the latter has to be an _IfcRein
 
 ### Body Geometry
 
+### Mapped Geometry
+
 The representation map referenced by a 'Body' 'MappedRepresentation' should contain a representation of type 'AdvancedSweptSolid' which holds an IfcSweptDiskSolid (including subtype IfcSweptDiskSolidPolygonal). Multiple IfcMappedItem's can be used to represent several bars as one occurrence of IfcReinforcingBar.
 
 ### Material Profile Set Usage

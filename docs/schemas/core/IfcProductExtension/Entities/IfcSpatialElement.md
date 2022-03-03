@@ -43,6 +43,10 @@ Set of spatial reference relationships, that holds those elements, which are ref
 
 ## Concepts
 
+### Body Geometry
+
+A spatial element will not usually provide a body geometry, instead relying on its constituting elements. A body geometry may be provided if it is necessary to expose an independent geometric representation. This geometry is typically expressed by its exterior elements or volume boundary.
+
 ### FootPrint GeomSet Geometry
 
 

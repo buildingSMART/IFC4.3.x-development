@@ -50,10 +50,6 @@ Elevation above the minimal terrain level around the foot print of the building,
 
 ### Body Geometry
 
-The body (or solid model) geometric representation (if the building has an independent geometric representation) of IfcBuilding is defined using faceted B-Rep capabilities (with or without voids), based on the IfcFacetedBrep or on the IfcFacetedBrepWithVoids.
-
-> NOTE  Since the building shape is usually described by the exterior building elements, an independent shape representation shall only be given, if the building is exposed independently from its constituting elements and such independent geometric representation may be prohibited in model view definitions.
-
 ### Building Attributes
 
 The usage of building address, elevation measures and composition type is governed by this concept.

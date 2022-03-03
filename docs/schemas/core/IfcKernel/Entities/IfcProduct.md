@@ -46,6 +46,13 @@ If a _Representation_ is given being an _IfcProductDefinitionShape_, then also a
 
 ## Concepts
 
+### Body Geometry
+
+The body or solid model geometric representation of an IfcProduct is typically defined using a Tessellation or Brep. Subtypes may provide recommendations on other representation types that may be used. The following attribute values for the IfcShapeRepresentation holding this geometric representation shall be used:
+
+* _IfcShapeRepresentation.RepresentationIdentifier_ = 'Body'
+* _IfcShapeRepresentation.RepresentationType_ = Typically 'Tessellation' or 'Brep'
+
 ### Product Geometric Representation
 
 The geometric representation of any IfcProduct is provided by the IfcProductDefinitionShape allowing multiple geometric representations. It uses the _Product Placement_ concept utilizing IfcLocalPlacement to establish an object coordinate system, within all geometric representations are founded.

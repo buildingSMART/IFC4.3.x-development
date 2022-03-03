@@ -6,9 +6,7 @@ A Facility (derived from _IfcSpatialStructureElement_) may be an _IfcBuilding_, 
 
 ### Body Geometry
 
-The body (or solid model) geometric representation (if the facility has an independent geometric representation) of IfcFacility is defined using faceted B-Rep capabilities (with or without voids), based on the IfcFacetedBrep or on the IfcFacetedBrepWithVoids. In the case of alignment based infrastructure, the geometric representation can be defined using IfcSectionedSolidHorizontal optionally IfcSweptAreaSolid.
-
-> NOTE  Since the building shape is usually described by the exterior building elements, an independent shape representation shall only be given, if the building is exposed independently from its constituting elements and such independent geometric representation may be prohibited in model view definitions.
+In the case of alignment based infrastructure, the geometric representation can be defined using IfcSectionedSolidHorizontal or IfcSweptAreaSolid.
 
 ### Product Local Placement
 

@@ -20,13 +20,7 @@ Either _PredefinedType_ is unset or the inherited attribute _ObjectType_ shall b
 
 ### Body Geometry
 
-The body (or solid model) geometric representation (if the bridge has an independent geometric representation) of IfcBridge is defined using faceted B-Rep capabilities (with or without voids), based on the IfcFacetedBrep or on the IfcFacetedBrepWithVoids. In the case of alignment based infrastructure, the geometric representation can be defined using IfcSectionedSolidHorizontal optionally IfcSweptAreaSolid.
-
-> NOTE  Since the bridge shape is usually described by the exterior building elements, an independent shape representation shall only be given, if the bridge is exposed independently from its constituting elements and such independent geometric representation may be prohibited in model view definitions.
-
 ### Object Predefined Type
-
-
 
 ### Product Local Placement
 

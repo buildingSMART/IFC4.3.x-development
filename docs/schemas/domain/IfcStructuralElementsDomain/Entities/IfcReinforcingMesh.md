@@ -81,21 +81,15 @@ If this occurrence is defined by a type object, the latter has to be an _IfcRein
 
 ### Body Geometry
 
+### Mapped Geometry
+
 The representation map referenced by a 'Body' 'MappedRepresentation' could contain a representation of type 'AdvancedSweptSolid' which holds an IfcSweptDiskSolid (including subtype IfcSweptDiskSolidPolygonal). Multiple IfcMappedItem's can be used to represent the bars within a mesh as one occurrence of IfcReinforcingMesh.
 
 ### Object Typing
 
-
-
 ### Property Sets for Objects
-
-
 
 ### Quantity Sets
 
-
-
 ### Reinforcing Mesh Attributes
-
-
 

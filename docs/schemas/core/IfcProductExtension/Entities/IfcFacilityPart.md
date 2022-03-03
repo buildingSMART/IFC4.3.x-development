@@ -19,9 +19,7 @@ Either _PredefinedType_ is unset or the inherited attribute _ObjectType_ shall b
 
 ### Body Geometry
 
-The body (or solid model) geometric representation (if the facility part has an independent geometric representation) of IfcFacilityPart is defined using faceted B-Rep capabilities (with or without voids), based on the IfcFacetedBrep or on the IfcFacetedBrepWithVoids or in the case of alignment based infrastructure using IfcSectionedSolidHorizontal optionally IfcSweptAreaSolid.
-
-> NOTE  Since the facility part shape is usually described by the exterior facility elements, an independent shape representation shall only be given, if the facility part is exposed independently from its constituting elements and such independent geometric representation may be prohibited in model view definitions.
+In the case of alignment based infrastructure, the geometric representation can be defined using IfcSectionedSolidHorizontal or IfcSweptAreaSolid.
 
 ### Product Local Placement
 

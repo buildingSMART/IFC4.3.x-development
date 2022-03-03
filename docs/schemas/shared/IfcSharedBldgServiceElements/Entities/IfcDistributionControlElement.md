@@ -24,43 +24,31 @@ Reference through the relationship object to related distribution flow elements.
 
 ## Concepts
 
-### Classification Association
+### Library Association
 
-In addition to general product and project classification (UniFormat, etc.), classifications may also be applied to indicate a device address or addressing scheme according to system-based device instance classification.
+A distribution system may be associated with an external Building Automation System or similar system. Library references can be used to indicate a device address or other key which can identify the IFC control element within the external system.
 
-Figure 301 illustrates classification usage.
+```
+digraph dot_neato {
+    IfcDistributionSystem[pos="1,3!"];
+    IfcRelAssignsToGroup[pos="4,3!"];
+    IfcController[pos="7,3!"];
+    IfcRelAssociatesLibrary[pos="1,2!"];
+    IfcLibraryInformation[pos="1,1!"];
+    IfcRelAssociatesLibrary2 [label="IfcRelAssociatesLibrary", pos="7,2!"];
+    IfcLibraryReference[pos="7,1!"]
 
+    IfcRelAssignsToGroup -> IfcController [label="RelatedObjects"];
+    IfcRelAssignsToGroup -> IfcDistributionSystem [label="RelatingGroup"];
+    IfcRelAssociatesLibrary -> IfcDistributionSystem [label="RelatedObjects"];
+    IfcRelAssociatesLibrary -> IfcLibraryInformation [label="RelatingLibrary"];
+    IfcRelAssociatesLibrary2 -> IfcController [label="RelatedObjects"];
+    IfcRelAssociatesLibrary2 -> IfcLibraryReference [label="RelatingLibrary"];
+    IfcLibraryReference -> IfcLibraryInformation [label="ReferencedLibrary"];
+}
+```
 
-![Classification Use Definition](../../../../figures/ifcdistributioncontrolelement-classification.png)
-Figure 301 — Distribution control classification
-
-#### BACnet_ASHRAE
-
-32-bit decimal BACnetObjectIdentifier indicating type ID and instance ID (e.g.'12.15' for Digital Input #15).
-
-#### IPv4_IETF
-
-32-bit decimal address for an IPv4 network (e.g.'192.168.1.1').
-
-#### IPv6_IETF
-
-128-bit hexadecimal address for an IPv6 network.
-
-#### MAC_IETF
-
-48-bit hexadecimal form of MAC address.
-
-#### OPC_OPCFoundation
-
-Hierarchical ItemID in alphanumeric form (i.e. 'B204.Tank2.Temperature)
-
-#### Insteon_SmartLabs
-
-24-bit hexadecimal instance address.
-
-#### LonTalk_ISOIEC
-
-48-bit hexadecimal neuron ID.
+> IFC4.3.0.0 CHANGE Library references are now to be used instead of a classification system references for referencing external systems such as Building Automation Systems.
 
 ### Object Typing
 

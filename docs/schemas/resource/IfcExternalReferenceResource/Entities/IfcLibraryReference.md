@@ -4,6 +4,19 @@ An _IfcLibraryReference_ is a reference into a library of information by _Locati
 
 The _ifcLibraryReference_ additionally provides the capability to handle multilingual library entries. The _Language_ attribute then holds the language tag for the language used by the strings kept in the _Name_ and the _Description_ attribute.
 
+Depending on the type of technology used by the library, different IfcLibraryReference.Identification identifiers will be appropriate:
+
+Publisher | Technology | Identifier
+--- | --- | ---
+ASHRAE | BACnet | 32-bit decimal BACnetObjectIdentifier indicating type ID and instance ID (e.g.'12.15' for Digital Input #15).
+Brick Development Team | Brick | Full URI with no namespace (e.g. 'http://example.org/digitaltwin#AHU01')
+IETF | IPv4 | 32-bit decimal address for an IPv4 network (e.g.'192.168.1.1').
+IETF | IPv6 | 128-bit hexadecimal address for an IPv6 network.
+IETF | MAC | 48-bit hexadecimal form of MAC address.
+ISOIEC | LonTalk | 48-bit hexadecimal neuron ID.
+OPCFoundation | OPC | Hierarchical ItemID in alphanumeric form (i.e. 'B204.Tank2.Temperature)
+SmartLabs | Insteon | 24-bit hexadecimal instance address.
+
 > HISTORY  New entity in IFC2.0.
 
 { .change-ifc2x4}

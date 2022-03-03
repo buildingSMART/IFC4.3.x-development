@@ -84,7 +84,7 @@ The attribute ObjectType must be asserted when the value of PredefinedType is se
 
 ### Classification Association
 
-An IfcTask may be assigned a Work Breakdown Structure (WBS) code. A WBS code is dealt with as a classification of task and is associated to a task occurrence using the IfcRelAssociatesClassification relationship class. As well as being to designate the code, the classification structure also enables the source of the work breakdown structure classification to be identified.
+An IfcTask may be assigned a Work Breakdown Structure (WBS) code from of a published external structure or company standard. As well as being used to designate the code, the classification structure also enables the source of the work breakdown structure classification to be identified.
 
 ### Constraint Association
 

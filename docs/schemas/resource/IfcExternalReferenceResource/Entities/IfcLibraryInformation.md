@@ -1,13 +1,15 @@
 # IfcLibraryInformation
 
-An _IfcLibraryInformation_ describes a library where a library is a structured store of information, normally organized in a manner which allows information lookup through an index or reference value. _IfcLibraryInformation_ provides the library _Name_ and optional _Description_, _Version_, _VersionDate_ and _Publisher_ attributes. A _Location_ may be added for electronic access to the library.
+An _IfcLibraryInformation_ describes an external structured store of information, normally organized in a manner which allows information lookup through an index or reference value. _IfcLibraryInformation_ provides the library _Name_ and optional _Description_, _Version_, _VersionDate_ and _Publisher_ attributes. A _Location_ may be added for electronic access to the library.
 
-In a broder sense, _IfcLibraryInformation_ includes the meta data for capture the revision information when checking in library and other data into a revision control system.
+> EXAMPLE A library may be an external network of elements in a Building Automation System structured using BACnet or Brickschema. Alternatively, a library may reference an external revision control system. A library may also reference an arbitrary external database.
 
 > HISTORY  New entity in IFC2x.
 
 { .change-ifc2x4}
 > IFC4 CHANGE  _Location_ and _Description_ attributes added; _Publisher_ and _VersionDate_ data type changed; _HasLibraryReferences_ inverse attribute added (previous LibraryReference changed to inverse).
+
+> IFC4.3.0.0 CHANGE IfcLibraryInformation now is explicitly defined for use to reference external systems.
 
 ## Attributes
 

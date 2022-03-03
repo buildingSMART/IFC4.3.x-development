@@ -25,9 +25,9 @@ Predefined generic type for a performance history that is specified in an enumer
 
 IfcPerformanceHistory may be decomposed into components using IfcRelNests where RelatingObject refers to the enclosing IfcPerformanceHistory and RelatedObjects contains one or more IfcPerformanceHistory components. Composition indicates breakdown of further detail and may correspond to the hierarchy of objects it represents.
 
-### Classification Association
+### Library Association
 
-IfcPerformanceHistory may be classified using IfcRelAssociatesClassification where RelatingClassification refers to an IfcClassificationReference indicating a classification notation. Such classification notation may be used to identify the information such as an address within a building automation system, a work breakdown structure code for tasks, or a cost code for resource allocation.
+IfcPerformanceHistory may refer to external systems, such as a time series data source within a building automation system or a cost code in an accounting system for resource allocation.
 
 ### Control Assignment
 

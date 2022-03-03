@@ -25,8 +25,8 @@ Figure 1 &mdash; Building storey composition
 
 Figure 2 describes the heights and elevations of the _IfcBuildingStorey_.
 
-* elevation of the structural slab level: provided by _Qto_BuildingStoreyBaseQuantities_ with Name="ElevationOfSSLRelative"
-* elevation of the finish floor level: provided by _Qto_BuildingStoreyBaseQuantities_ with Name="ElevationOfFFLRelative"
+* elevation of the structural slab level: provided by _Pset_BuildingStoreyCommon_ with Name="ElevationOfSSLRelative"
+* elevation of the finish floor level: provided by _Pset_BuildingStoreyCommon_ with Name="ElevationOfFFLRelative"
 * gross height of storey, also referred to as total height or system height (top of construction slab to top of construction slab above): provided by _Qto_BuildingStoreyBaseQuantities_ with Name="GrossHeight"
 * net height of storey (top of construction slab to bottom of construction slab above): provided by _Qto_BuildingStoreyBaseQuantities_ with Name="NetHeight"
 

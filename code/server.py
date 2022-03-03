@@ -1245,18 +1245,6 @@ def get_concept_usage(resource, builder, mdc):
                     if stripped_name.lower() == name.lower():
                         description = process_markdown(resource, markdown_concept[2])
 
-                should_show_concept = False
-                if not data["is_inherited"]:
-                    # Always show concepts for the active class
-                    should_show_concept = True
-                elif data["is_inherited"] and description:
-                    # If the active class has a description, it may redisplay an inherited concept
-                    should_show_concept = True
-
-
-                if not should_show_concept:
-                    continue
-
                 relationships = get_applicable_relationships(view_name, name, ifc_class)
                 relationship_descriptions = concepts_markdown.get_children(human_name)
                 # Let's try to enrich relationships with descriptions from the markdown
@@ -1264,15 +1252,25 @@ def get_concept_usage(resource, builder, mdc):
                     for relationship in relationships["relationships"]:
                         relationship["description"] = relationship_descriptions.get(relationship["name"])
 
-                concepts.append(
-                    {
-                        "name": human_name,
-                        "description": description,
-                        "usage": separate_camel(view_name).replace("General Usage", "General"),
-                        "url": concept_lookup.get(name, [None, None])[1],
-                        "applicable_relationships": relationships,
-                    }
-                )
+                should_show_concept = False
+                if not data["is_inherited"]:
+                    # Always show concepts for the active class
+                    should_show_concept = True
+                elif data["is_inherited"] and (description or relationships):
+                    # If the active class has a description, it may redisplay an inherited concept
+                    should_show_concept = True
+
+                if should_show_concept:
+                    concepts.append(
+                        {
+                            "name": human_name,
+                            "is_inherited": data["is_inherited"],
+                            "description": description,
+                            "usage": separate_camel(view_name).replace("General Usage", "General"),
+                            "url": concept_lookup.get(name, [None, None])[1],
+                            "applicable_relationships": relationships,
+                        }
+                    )
 
         groups.append(
             {

@@ -120,6 +120,19 @@ aside {
 aside mark {
     margin-right: var(--universal-margin);
 }
+aside.inherited {
+    text-align: center;
+    -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    background-image: -webkit-gradient(linear, left bottom, right top, color-stop(0, #EEEEEE), color-stop(0.25, #EEEEEE), color-stop(0.25, var(--secondary-border-color)), color-stop(0.5, var(--secondary-border-color)), color-stop(0.5, #EEEEEE), color-stop(0.75, #EEEEEE), color-stop(0.75, var(--secondary-border-color)));
+    background-size: 20px 20px;
+}
+aside.inherited svg {
+    color: var(--border-color);
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+}
 aside.aside-example mark {
     background-color: var(--green);
 }

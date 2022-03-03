@@ -220,6 +220,15 @@
                 {{ concept.usage }}
             </td>
             <td data-label="Description">
+                {% if concept.is_inherited %}
+                <aside class="inherited">
+                    <small>
+                        <i data-feather="paperclip"></i>
+                        This concept is a further elaboration on an inherited concept.
+                    </small>
+                </aside>
+                {% endif %}
+
                 {% if not concept.description and not concept.applicable_relationships %}
                 <p>
                     <em>No description available.</em>

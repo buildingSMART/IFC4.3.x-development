@@ -8,3 +8,9 @@ An aggregation indicates an internal unordered part composition relationship bet
 * Aggregation is used on systems to indicate subsystems such as branch circuits.
 
 Aggregation is a bi-directional relationship, the relationship from the composite to its parts is called Decomposition, and the relationship from the part to its composite is called Composition.
+
+```
+concept {
+    IfcObjectDefinition:IsDecomposedBy -> IfcRelAggregates:RelatingObject
+}
+```

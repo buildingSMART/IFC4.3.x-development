@@ -39,6 +39,8 @@ def parse_document(*, fn=None, data=None, linesep="", as_text=True):
     for h, next in zip(headings, next_heading):
         nodes = (n for n in h.nextSiblingGenerator())
         selected = itertools.takewhile(lambda n: next is None or n != next, nodes)
+        concat = ""
+        first = ""
         if as_text:
             strings = list(filter(None, map(lambda n: getattr(n, 'text', '').strip(), selected)))
             concat = linesep.join(strings)

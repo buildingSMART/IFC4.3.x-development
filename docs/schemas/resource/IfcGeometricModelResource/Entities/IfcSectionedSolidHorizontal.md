@@ -10,9 +10,9 @@ Figure 1 illustrates four girders of a bridge having a constant parameterized pr
 
 ![spatial structure](../../../../figures/ifcsectionedsolidhorizontal.png "Figure 1 &mdash; Sectioned solid horizontal")
 
-![IfcSectionedSolidHorizontal1](../../../../figures/IfcSectionedSolidHorizontal1.png "Figure 2 - illustrating the meaning of the parameters")
+![IfcSectionedSolidHorizontal1](../../../../figures/IfcSectionedSolidHorizontal1.png "Figure 2 Side View with consequences for FixedAxisVertical attribute.")
 
-![IfcSectionedSolidHorizontal2](../../../../figures/IfcSectionedSolidHorizontal2.png "Figure 3 - illustrating the meaning of the parameters")
+![IfcSectionedSolidHorizontal2](../../../../figures/IfcSectionedSolidHorizontal2.png "Figure 3 - Example Shape in red based on two Cross Sections both not starting at the beginning or end and different in shape.")
 
 
 **Informal Propositions:**

@@ -65,7 +65,7 @@ def reverse_attr(v):
         is_fwd, df = get_attribute(v)
     except:
         return ""
-    if is_fwd:
+    if is_fwd == "forward":
         return ""
     else:
         return ":" + df.split(" FOR ")[-1]

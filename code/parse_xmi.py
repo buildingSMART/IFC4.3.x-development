@@ -122,6 +122,9 @@ def get_schema(name):
         for schema_name, members in schemas:
             if schema_name == name: return members
 
+# remove trailing semi-colon if any
+trailing_semi = lambda s: s[:-1] if s.endswith(";") else s
+
 for item in xmi_doc:
     item_package = item.package
     if item.package == "propertytypes":
@@ -150,13 +153,19 @@ for item in xmi_doc:
             roots.append(item.name)
             
         for a in item.definition.attributes:
-            attributes[".".join((item.name, a[0]))] = (True, a[1])
+            attributes[".".join((item.name, a[0]))] = ("forward", a[1])
 
         for a in item.definition.inverses:
             parts = a.split(' ')
             nm = parts[0].strip()
             ty = ' '.join(parts[2:])[:-1]
-            attributes[".".join((item.name, nm))] = (False, ty)
+            attributes[".".join((item.name, nm))] = ("inverse", ty)
+            
+        for a in item.definition.derived:
+            parts = a.split(':=', 1)
+            parts = map(trailing_semi, map(str.strip, parts[0].split(":", 1) + [parts[1]]))
+            name, type, definition = parts
+            attributes[".".join((item.name, name))] = ("derived", (type, definition))
             
     elif item.type in ("TYPE", "SELECT", "ENUM", "PENUM"):
         resource_to_package[item.name] = get_schema(item_package)
@@ -179,10 +188,11 @@ for item in xmi_doc:
 
     if item.type == "ENTITY":
         where_clauses[item.name] = item.definition.where_clauses
+        
+        where_clauses[item.name].extend((a[0], f"UNIQUE {a[1]}") for a in item.definition.unique_clauses)
     
     if item.type == "TYPE":
-        #@todo unify this with entity    
-        trailing_semi = lambda s: s[:-1] if s.endswith(";") else s
+        #@todo unify this with entity
         where_clauses[item.name] = [tuple(map(trailing_semi, map(str.strip, c.split(":")))) for c in item.definition.constraints]
         
     if item.type == "PSET":

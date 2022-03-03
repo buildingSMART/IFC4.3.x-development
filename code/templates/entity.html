@@ -90,6 +90,10 @@
             </td>
             <td data-label="Type">{{ attribute.type }}</td>
             <td data-label="Description">
+                {% if attribute.formal %}
+                    <pre><code class="language-express hljs">{{ attribute.formal | safe }}</code></pre>
+                {% endif %}
+                
                 {% if attribute.description %}
                 {{ attribute.description | safe }}
                 {% else %}
@@ -145,11 +149,13 @@
                 {% endif %}
             </td>
         </tr>
+        {% if row.formal %}
         <tr>
             <td colspan="2">
                 <pre><code class="language-express hljs">{{ row.formal }}</code></pre>
             </td>
         </tr>
+        {% endif %}
     {% endfor %}
     </tbody>
 </table>

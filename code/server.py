@@ -477,6 +477,10 @@ def create_entity_definition(e, bindings, ports):
     while e:
         keys = [x for x in R.entity_attributes.keys() if x.startswith(e + ".")]
         for k, (is_fwd, ty) in list(zip(keys, map(R.entity_attributes.__getitem__, keys)))[::-1]:
+            if is_fwd == "derived":
+                # don't show them for now
+                continue
+            
             name = k.split(".")[1]
 
             cardinality = re.findall(r"(\[.+?\])", ty)
@@ -566,7 +570,7 @@ def process_graphviz_concept(name, md):
         while entity:
             data = R.entity_attributes.get(f"{entity}.{attribute}", None)
             if data:
-                is_direct_attribute = data[0]
+                is_direct_attribute = data[0] == "forward"
                 break
             entity = R.entity_supertype.get(entity)
         endpoint = match.group(3)
@@ -732,7 +736,7 @@ class resource_documentation_builder:
                     content = entity_attr_di.get(a, "")
                     is_fwd, attr_entity = R.entity_attributes[".".join((entity, a))]
                     attrs.append((entity, a, attr_entity, content))
-                    if is_fwd:
+                    if is_fwd == "forward":
                         direct_attrs.append(a)
             else:
                 for a, content in entity_attrs[::-1]:
@@ -1068,7 +1072,7 @@ def get_attributes(resource, builder):
     supertype_counts = list(supertype_counts.items())[::-1]
     insertion_points = [0] + list(itertools.accumulate(map(operator.itemgetter(1), supertype_counts[::-1])))[:-1]
     group_data = supertype_counts[::-1]
-
+    
     groups = []
     for i, attr in enumerate(attrs):
         if i in insertion_points:
@@ -1080,10 +1084,12 @@ def get_attributes(resource, builder):
                 "total_attributes": total_attributes,
             }
             groups.append(group)
+            
         attribute = {
             "number": attr[0],
             "name": attr[1],
-            "type": attr[2],
+            "type": attr[2][0] if isinstance(attr[2], list) else attr[2],
+            "formal": attr[2][1] if isinstance(attr[2], list) else None,
             # @nb we're not really talking about markdown anymore
             # since the new attribute parser operates on a converted
             # dom, but it appears to work nonetheless.
@@ -1123,7 +1129,10 @@ def get_formal_propositions(resource, builder):
     return {
         "number": SectionNumberGenerator.generate(),
         "items": [
-            {"name": c[0], "formal": c[1], "description": process_markdown(resource, defs.get(c[0]))} for c in clauses
+            {"name": c[0], "formal": None, "description": f"The attribute {c[1].split(' ')[1]} should be unique" } \
+            if c[1].startswith("UNIQUE ") else \
+            {"name": c[0], "formal": c[1], "description": process_markdown(resource, defs.get(c[0]))} \
+            for c in clauses
         ],
     }
 

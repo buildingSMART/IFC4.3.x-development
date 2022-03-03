@@ -330,6 +330,7 @@ def get_inheritance_graph(current_entity):
 
 
 def get_node_colour(n):
+    n = n.strip('"')
     if R.entity_supertype.get(n) is None:
         return "gray"
 
@@ -424,19 +425,37 @@ def process_graphviz(current_entity, md):
             return 1
         elif "dot_inheritance" in s:
             return 2
+        elif "dot_neato" in s:
+            return 3
         else:
             return 0
 
-    graphviz_code = filter(is_figure, re.findall("```(.*?)```", md or "", re.S))
+    is_markdown = True
+    graphviz_code = list(filter(is_figure, re.findall("```(.*?)```", md or "", re.S)))
+    # This is a hack to allow markdown that is already in HTML to still get diagrams generated.
+    if not graphviz_code:
+        is_markdown = False
+        graphviz_code = filter(is_figure, re.findall("<pre><code>(.*?)</code></pre>", md or "", re.S))
 
     for c in graphviz_code:
+        if not is_markdown:
+            escaped_c = c
+            c = html.unescape(c)
+
+        layout_engine = "dot"
+        if is_figure(c) == 3:
+            layout_engine = "neato"
+
         hash = hashlib.sha256(c.encode("utf-8")).hexdigest()
         fn = os.path.join("svgs", current_entity + "_" + hash + ".dot")
         c2 = transform_graph(current_entity, c, only_urls=is_figure(c) == 2)
         with open(fn, "w") as f:
             f.write(c2)
-        md = md.replace("```%s```" % c, "![](/svgs/%s_%s.svg)" % (current_entity, hash))
-        subprocess.call([shutil.which("dot") or "dot", "-O", "-Tsvg", "-Gbgcolor=#ffffff00", fn])
+        if is_markdown:
+            md = md.replace("```%s```" % c, "![](/svgs/%s_%s.svg)" % (current_entity, hash))
+        else:
+            md = md.replace("<pre><code>%s</code></pre>" % escaped_c, "![](/svgs/%s_%s.svg)" % (current_entity, hash))
+        subprocess.call([shutil.which("dot") or "dot", f"-K{layout_engine}", "-O", "-Tsvg", "-Gbgcolor=#ffffff00", fn])
 
     return md or ""
 

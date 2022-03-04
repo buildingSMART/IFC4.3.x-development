@@ -2,6 +2,21 @@
 
 This entity is used to refer to a value of an attribute on an instance. It may refer to the value of a scalar attribute or a value within a collection-based attribute. Referenced attributes may be direct values, object references, collections, inverse object references, and inverse collections. References may be chained to form a path of object-attribute references.
 
+```
+digraph dot_neato {
+IfcReference [label=<{IfcReference | TypeIdentifier: IfcSlab<br />AttributeIdentifier: HasAssociations}>, pos="0,0!"];
+IfcReference2 [label=<{IfcReference | TypeIdentifier: IfcRelAssociatesMaterial<br />AttributeIdentifier: RelatingMaterial}>, pos="0,-100!"];
+IfcReference3 [label=<{IfcReference | TypeIdentifier: IfcMaterialLayerSet<br />AttributeIdentifier: MaterialLayers}>, pos="0,-200!"];
+IfcReference4 [label=<{IfcReference | TypeIdentifier: IfcMaterialLayer<br />LayerThickness: HasAssociations<br />InstanceName: Core}>, pos="0,-300!"];
+
+IfcReference -> IfcReference2 [label="InnerReference"];
+IfcReference2 -> IfcReference3 [label="InnerReference"];
+IfcReference3 -> IfcReference4 [label="InnerReference"];
+}
+```
+
+Figure INNERREFERENCE &mdash; An example of chained references to refer to a core layer thickness
+
 ## Attributes
 
 ### TypeIdentifier
@@ -26,4 +41,3 @@ Optionally identifies an instance within a collection according to position star
 ### InnerReference
 Optional reference to an inner value for ENTITY, SELECT, SET, or LIST attributes.
 A path may be formed by linking _IfcReference_ instances together.
-> EXAMPLE  A material layer thickness may be referenced using several instances: #1=IFCREFERENCE($,'IfcSlab','HasAssociations',#2); #2=IFCREFERENCE($,'IfcMaterialLayerSet','MaterialLayers',#3); #3=IFCREFERENCE('Core','IfcMaterialLayer','LayerThickness',$);

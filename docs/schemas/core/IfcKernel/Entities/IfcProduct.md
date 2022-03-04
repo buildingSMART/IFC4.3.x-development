@@ -23,7 +23,7 @@ On a generic level products can be assigned to processes, controls, resources, p
 ## Attributes
 
 ### ObjectPlacement
-Placement of the product in space, the placement can either be absolute (relative to the world coordinate system), relative (relative to the object placement of another product), or constraint (e.g. relative to grid axes). It is determined by the various subtypes of IfcObjectPlacement, which includes the axis placement information to determine the  transformation for the object coordinate system.
+This establishes the object coordinate system and placement of the product in space. The placement can either be absolute (relative to the world coordinate system), relative (relative to the object placement of another product), or constrained (e.g. relative to grid axes, or to a linear positioning element). The type of placement is determined by the various subtypes of IfcObjectPlacement. An object placement must be provided if a representation is present.
 
 ### Representation
 Reference to the representations of the product, being either a representation (IfcProductRepresentation) or as a special case a shape representations (IfcProductDefinitionShape). The product definition shape provides for multiple geometric representations of the shape property of the object within the same object coordinate system, defined by the object placement.
@@ -66,10 +66,6 @@ The geometric representation of any IfcProduct is provided by the IfcProductDefi
 ### Product Geometry Layer
 
 
-
-### Product Placement
-
-The _Product Placement_ establishes the object coordinate system and is required, if a geometric shape representation is provided for this product.
 
 ### Product Relative Positioning
 

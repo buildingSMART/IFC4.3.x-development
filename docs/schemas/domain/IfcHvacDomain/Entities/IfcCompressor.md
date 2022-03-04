@@ -2,7 +2,7 @@
 
 A compressor is a device that compresses a fluid typically used in a refrigeration circuit.
 
-> HISTORY&nbsp; New entity in IFC4
+> HISTORY  New entity in IFC4
 
 { .note}
 >
@@ -22,18 +22,39 @@ Either there is no compressor type object associated, i.e. the _IsTypedBy_ inver
 
 ## Concepts
 
-### Material
+### Material Constituent Set
 
+
+
+#### Casing
+
+Material from which the casing is constructed.
+
+#### Refrigerant
+
+Refrigerant material.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_RefrigerantIn_REFRIGERATION
+
+Uncompressed vapor refrigerant entering the compressor.
+
+#### SOURCE_RefrigerantOut_REFRIGERATION
+
+Compressed vapor refrigerant leaving the compressor.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

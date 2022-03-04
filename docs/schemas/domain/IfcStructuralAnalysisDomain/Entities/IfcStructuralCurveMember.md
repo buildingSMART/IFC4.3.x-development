@@ -2,12 +2,12 @@
 
 Instances of _IfcStructuralCurveMember_ describe edge members, i.e. structural analysis idealizations of beams, columns, rods etc.. Curve members may be straight or curved.
 
-> HISTORY&nbsp; New entity in IFC2x2.
+> HISTORY  New entity in IFC2x2.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Attribute _Axis_ and WHERE rule added. Use definitions changed.
+> IFC4 CHANGE  Attribute _Axis_ and WHERE rule added. Use definitions changed.
 
-****Coordinate Systems****:
+### Coordinate Systems
 
 See definitions at _IfcStructuralItem_. The local coordinate system is established by the reference curve given by topology representation and by the attribute _Axis_. The local x axis is parallel with the tangent on the reference curve. The local z axis is located in the surface which is created by sweeping _Axis_ along the reference curve and is directed according to _Axis_. The local y axis is directed such that x,y,z form a right-handed Cartesian coordinate system.
 
@@ -19,7 +19,7 @@ Type of member with respect to its load carrying behavior in this analysis ideal
 ### Axis
 Direction which is used in the definition of the local z axis.  _Axis_ is specified relative to the so-called global coordinate system, i.e. the _SELF\IfcProduct.ObjectPlacement_.
 
-> NOTE&nbsp; It is desirable and usually possible that many instances of _IfcStructuralCurveConnection_ and _IfcStructuralCurveMember_ share a common instance of _IfcDirection_ as their _Axis_ attribute.
+> NOTE  It is desirable and usually possible that many instances of _IfcStructuralCurveConnection_ and _IfcStructuralCurveMember_ share a common instance of _IfcDirection_ as their _Axis_ attribute.
 
 ## Formal Propositions
 
@@ -30,10 +30,10 @@ The attribute ObjectType shall be given if the predefined type is set to USERDEF
 
 ### Material Profile Set Usage
 
-The material of direct instances IfcStructuralCurveMember (in contrast to instances of the subtype IfcStructuralCurveMemberVarying) is defined by IfcMaterialProfileSetUsage and attached by the IfcRelAssociatesMaterial.RelatingMaterial. It is accessible by the inverse HasAssociations relationship. Composite profile beams can be represented by refering to several IfcMaterialProfiles within the IfcMaterialProfileSet that is referenced from the IfcMaterialProfileSetUsage. In case of tapered members, the material profile usage subtype IfcMaterialProfileSetUsageDual is used which specifies IfcMaterialProfileSets separately at the start and the end of the tapered member.
+The material of direct instances IfcStructuralCurveMember (in contrast to instances of the subtype IfcStructuralCurveMemberVarying) is defined by IfcMaterialProfileSetUsage and attached by the IfcRelAssociatesMaterial.RelatingMaterial. It is accessible by the inverse HasAssociations relationship. Composite profile beams can be represented by referring to several IfcMaterialProfiles within the IfcMaterialProfileSet that is referenced from the IfcMaterialProfileSetUsage. In case of tapered members, the material profile usage subtype IfcMaterialProfileSetUsageTapering is used which specifies IfcMaterialProfileSets separately at the start and the end of the tapered member.
 
 
-The material (IfcMaterial) in each IfcMaterialProfile(Set) is specified minimally by a name which corresponds with an agreed upon standardized structural material designation. An external reference to the source which specifies the material designation should be provided. Alternatively, structural material properties may be provided by means of IfcMechanicalMaterialProperties and IfcExtendedMaterialProperties.
+The material (IfcMaterial) in each IfcMaterialProfile(Set) is specified minimally by a name which corresponds with an agreed upon standardized structural material designation. An external reference to the source which specifies the material designation should be provided. Alternatively, structural material properties may be provided using material property sets.
 
 
 The profile (IfcProfileDef) in each IfcMaterialProfile(Set) is specified minimally by a name which corresponds with an agreed upon standardized structural profile designation. An external reference to the source which specifies the profile designation should be provided. Alternatively or additionally, explicit profile geometry should be provided by using respective subtypes of IfcProfileDef. Alternatively or additionally, structural profile properties may be provided by means of subtypes of IfcProfileProperties.
@@ -43,7 +43,7 @@ An IfcProfileDef is a two-dimensional geometric object with a xp,yp coordinate s
 
 
 
-> NOTE  Due to convention in structural mechanics, axis names of IfcStructuralCurveMember differ from axis names of building elements like IfcBeamStandardCase: The extrusion axis of IfcStructuralCurveMember is called x while the extrusion axis of IfcBeamStandardCase is called z. Hence x,y,z of IfcStructuralCurveMember correspond with z,x,y of IfcBeamStandardCase.
+> NOTE  Due to convention in structural mechanics, axis names of IfcStructuralCurveMember differ from axis names of building elements like IfcBeam with profile set usages: The extrusion axis of IfcStructuralCurveMember is called x while the extrusion axis of a profiled IfcBeam is called z. Hence x,y,z of IfcStructuralCurveMember correspond with z,x,y of a profiled IfcBeam.
 
 
 If the profile is meant to be inserted centrically in terms of structural section properties, it is necessary that the origin of xp,yp is identical with the geometric centroid of the profile (commonly also called centre of gravity). If subtypes of IfcParameterizedProfileDef are used which are only singly symmetric or are asymmetric, an explicit translation by IfcParameterizedProfileDef.Position.Location is required then.
@@ -76,4 +76,7 @@ The local coordinate system is established by the reference curve given by topol
 
 ### Structural Connectivity
 
+#### IfcStructuralPointConnection
+
+Point connections at each end of the member.
 

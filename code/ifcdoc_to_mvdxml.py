@@ -101,8 +101,6 @@ def transform_DocModelRuleEntity(di, parent):
     else:
         node = transform_DocModelRuleEntity_nonhref(di, parent)
         if di.attributes.get('id'):
-            if di.attributes.get('id') == "IfcLabel_00g8K6wKC9hMMy0XBVIKD3":
-                breakpoint()
             entity_rule_by_id[di.attributes.get('id')] = node
         return node
 
@@ -116,7 +114,37 @@ def transform_DocConceptRoot(di, parent):
         }
     )
     
+def transform_Documentation(di, parent):
+    if parent.tag == "DocTemplateUsage":
+        try:
+            text = di.text.strip()
+        except:
+            text = None
+        
+        if text:
+            return xml_dict.xml_node(
+                "Definitions",
+                children=[xml_dict.xml_node(
+                    "Definition",
+                    children=[xml_dict.xml_node(
+                        "Body",
+                        # is already being escaped
+                        # text=f"<![CDATA[{text}]]>"
+                        text=text                        
+                    )]
+                )]
+            )
+        
+    
 def transform_DocTemplateUsage(di, parent):
+    children = []
+    if di.child_with_tag("Definition").child_with_tag("Items") is None:
+        # for non-parametrized usages we need to take care of the definition
+        ref = templates[di.child_with_tag("Definition").attributes["href"]].attributes["uuid"]
+        children.append(
+            xml_dict.xml_node("Template", {"ref": ref})
+        )
+         
     href = di.child_with_tag("Definition").attributes["href"]
     if href not in used_template_ids:
         used_template_ids[href] = 1
@@ -127,22 +155,39 @@ def transform_DocTemplateUsage(di, parent):
             'name': templates[href].attributes["name"],
             'status': "sample",
             'override': "false"
-        }
+        },
+        children=children
     )
     
+class failure: pass
+failure = failure()
+
+def do_try(fn, do_except=None):
+    try:
+        return fn()
+    except:
+        if do_except:
+            do_except()
+        return failure
+    
 def transform_DocTemplateItem(di, parent):
-    if "RuleParameters" in di.attributes:
+    if "RuleParameters" in di.attributes:       
+        params = [p for p in di.attributes.get("RuleParameters", "").split(";") if p and do_try(lambda: parse_mvd_expr(p), lambda: print(f"Failed to parse {p}")) is not failure]
+        params = ";".join(params)
+        if params:
+            params += ";"
+            
         try:
-            parse_mvd_expr(di.attributes["RuleParameters"])
+            description = [("Description", di.child_with_tag("Documentation").text)]
         except:
-            print("Failed to parse", di.attributes["RuleParameters"])
-            return None
+            description = []
             
         return xml_dict.xml_node(
             "TemplateRule",
-            {
-                "Parameters": di.attributes["RuleParameters"]
-            }
+            dict([
+                *description,
+                ("Parameters", params)
+            ])
         )
 
 def transform_Items(di, parent):
@@ -173,7 +218,8 @@ def transform(di, parent=None):
     if di2 is None:
         return children
     elif isinstance(di2, xml_dict.xml_node):
-        di2.children = children
+        # @nb changed to += still need to verify
+        di2.children += children
         di2 = [di2]
     elif isinstance(di2, list):
         di2[-1].children = children

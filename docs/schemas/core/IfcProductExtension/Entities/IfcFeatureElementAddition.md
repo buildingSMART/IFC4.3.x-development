@@ -8,10 +8,10 @@ The local placement for _IfcFeatureElementAddition_ is defined in its supertype 
 
 * The _PlacementRelTo_ attribute of _IfcObjectPlacement_ shall point (if given) to the object placement of the _IfcElement_, which is used in the _ProjectsElements.RelatingElement_ inverse attribute (the parent element of the feature).
 
-> HISTORY&nbsp; New entity in IFC2x2.
+> HISTORY  New entity in IFC2x2.
 
 { .change-ifc2x2}
-> IFC2x2 CHANGE&nbsp; The entity is introduced as an upward compatible extension of the IFC2x platform. It is an intermediate abstract supertype without defining its own explicit attributes.
+> IFC2x2 CHANGE  The entity is introduced as an upward compatible extension of the IFC2x platform. It is an intermediate abstract supertype without defining its own explicit attributes.
 
 ## Attributes
 

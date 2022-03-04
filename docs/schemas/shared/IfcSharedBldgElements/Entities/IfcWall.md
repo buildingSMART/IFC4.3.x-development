@@ -3,13 +3,13 @@
 The wall represents a vertical construction that may bound or subdivide spaces. Wall are usually vertical, or nearly vertical, planar elements, often designed to bear structural loads. A wall is however not required to be load bearing.
 
 { .extDef}
-> NOTE&nbsp; Definition according to ISO 6707-1: vertical construction usually in masonry or in concrete which bounds or subdivides a construction works and fulfils a load bearing or retaining function.
+> NOTE  Definition according to ISO 6707-1: vertical construction usually in masonry or in concrete which bounds or subdivides a construction works and fulfils a load bearing or retaining function.
 
-> NOTE&nbsp; An arbitrary planar element to which this semantic information is not applicable (is not predominantly vertical), shall be modeled as _IfcPlate_.
+> NOTE  An arbitrary planar element to which this semantic information is not applicable (is not predominantly vertical), shall be modeled as _IfcPlate_.
 
 A wall may have openings, such as wall openings, openings used for windows or doors, or niches and recesses. They are defined by an _IfcOpeningElement_ attached to the wall using the inverse relationship _HasOpenings_ pointing to _IfcRelVoidsElement_.
 
-> NOTE&nbsp; Walls with openings that have already been modeled within the enclosing geometry may use the relationship _IfcRelConnectsElements_ to associate the wall with embedded elements such as doors and windows.
+> NOTE  Walls with openings that have already been modeled within the enclosing geometry may use the relationship _IfcRelConnectsElements_ to associate the wall with embedded elements such as doors and windows.
 
 There are two main representations for all occurrences:
 
@@ -17,17 +17,17 @@ There are two main representations for all occurrences:
 
 - _IfcWall_ without _IfcMaterialLayerSetUsage_ is used for all other occurrences of wall, particularly for walls with changing thickness along the wall path (e.g. polygonal walls), or walls with a non-rectangular cross sections (e.g. L-shaped retaining walls), and walls having an extrusion axis that is unequal to the global Z axis of the project (i.e. non-vertical walls), or walls having only 'Brep', or 'SurfaceModel' geometry, or if a more parametric representation is not intended.
 
-> NOTE  The entity _IfcWallStandardCase_ has been deprecated, _IfcWall_ with _IfcMaterialLayerSetUsage_ is used instead. The entity _IfcWallbElementedCase_ has been deprecated, _IfcWall_ with _IfcRelAggregates_ is used to describe occurrences of wall which are aggregated from subordinate elements, such as wall panels.
+> NOTE  The entity _IfcWallStandardCase_ has been deprecated, _IfcWall_ with _IfcMaterialLayerSetUsage_ is used instead. The entity _IfcWallElementedCase_ has been deprecated, _IfcWall_ with _IfcRelAggregates_ is used to describe occurrences of wall which are aggregated from subordinate elements, such as wall panels.
 
-> NOTE&nbsp; There is a representation of walls for structural analysis provided by a proper subtype of _IfcStructuralMember_ being part of the _IfcStructuralAnalysisModel_.
+> NOTE  There is a representation of walls for structural analysis provided by a proper subtype of _IfcStructuralMember_ being part of the _IfcStructuralAnalysisModel_.
 
-> HISTORY&nbsp; New entity in IFC1.0
+> HISTORY  New entity in IFC1.0
 
 ## Attributes
 
 ### PredefinedType
 Predefined generic type for a wall that is specified in an enumeration. There may be a property set given specifically for the predefined types.
-> NOTE&nbsp; The _PredefinedType_ shall only be used, if no _IfcWallType_ is assigned, providing its own _IfcWallType.PredefinedType_.
+> NOTE  The _PredefinedType_ shall only be used, if no _IfcWallType_ is assigned, providing its own _IfcWallType.PredefinedType_.
 
 { .change-ifc2x4}
 > IFC4 CHANGE The attribute has been added at the end of the entity definition.
@@ -46,7 +46,7 @@ Either there is no wall type object associated, i.e. the _IsTypedBy_ inverse rel
 
 The wall axis is represented by a two-dimensional open curve
 within a particular shape representation. The 'Axis' shape representation is only used to locate the
-material layer set along the axis, if the IfcMaterialLayerSetUsgae is applied to the IfcWall. In this case, the wall axis is used to
+material layer set along the axis, if the IfcMaterialLayerSetUsage is applied to the IfcWall. In this case, the wall axis is used to
 apply the material layer set usage parameter to the wall geometry.
 
 
@@ -69,31 +69,25 @@ apply the material layer set usage parameter to the wall geometry.
 
 ![straight wall axis](../../../../figures/ifcwallstandard_straigthwall_01-layout1.gif)
 
+Figure 279 — Wall axis straight
+
 > EXAMPLE  Figure 279 illustrates an axis representation for a straight wall. In case of a straight wall, the set of items shall
 > include a single geometric representation item of type IfcPolyline or IfcTrimmedCurve with the BasisCurve being an IfcLine. The IfcPolyline or IfcTrimmedCurve shall be parallel (here in a special case co-linear) to the x-axis
 > of the object coordinate system. The direction shall be identical to the direction of the x-axis.
 
 
-Figure 279 — Wall axis straight
-
-
- 
-
-
-
 
 ![curved wall axis](../../../../figures/ifcwallstandard_curvedwall_01-layout1.gif)
+
+Figure 280 — Wall axis curved
 
 > EXAMPLE  Figure 280 illustrates an axis representation for a curved wall. In case of a curved wall, the set of items shall include
 > a single geometric representation item of type IfcTrimmedCurve. The curve shall have a BasisCurve of type IfcCircle. The tangent of the IfcTrimmedCurve shall be parallel at start to the x-axis of the object coordinate system. The direction shall be identical to the direction of the x-axis.
 
 
-Figure 280 — Wall axis curved
+#### Axis_IfcBoundedCurve_Curve2D
 
-
- 
-
-
+The wall axis of the wall.
 
 ### Body Clipping Geometry
 
@@ -126,7 +120,6 @@ Figure 283 — Wall body clipping straight
 ![curved wall clipping](../../../../figures/ifcwallstandard_curvedwall_03-layout1.gif)
 
 Figure 284 — Wall body clipping curved
-
 
 
 ### Body SweptSolid Geometry
@@ -176,13 +169,10 @@ Figure 281 — Wall body extrusion straight
 Figure 282 — Wall body extrusion curved
 
 
-
 ### Material Layer Set
 
 The material information of the IfcWall is defined by
  IfcMaterialLayerSet, or as fallback by IfcMaterial, and it is attached either directly or at the IfcWallType. In this case, the material information does not allow to construct a shape by applying the layer definition to the axis representation, to enable this parametric definition, the IfcMaterialLayerSetUsage has to be used instead.
-
-
 
 ### Material Layer Set Usage
 
@@ -190,7 +180,7 @@ The material of IfcWall can be defined by
 IfcMaterialLayerSetUsage and attached by
 IfcRelAssociatesMaterial.RelatingMaterial. It is
  accessible by the inverse HasAssociations relationship.
- Multi-layer walls can be represented by refering to several
+ Multi-layer walls can be represented by referring to several
 IfcMaterialLayer's within the IfcMaterialLayerSet
 that is referenced from the
  IfcMaterialLayerSetUsage.
@@ -212,12 +202,12 @@ Figure 277 — Wall Standard Object Typing
 Figure 278 illustrates material layer usage, where the following conventions shall be met:
 
 
-* The reference coordinate system is the local coordinate system established by the ObjectPlacement of the IfcWallStandardCase.
+* The reference coordinate system is the local coordinate system established by the ObjectPlacement of the IfcWall.
 * The reference axis is the axis defined by the IfcShapeRepresentation with RepresentationType='Axis' as one of the
-Representation.Representations of the IfcWallStandardCase.
+Representation.Representations of the IfcWall.
 * The IfcMaterialLayerSetUsage.OffsetFromReferenceLine is given as a distance from this axis.
 * The IfcMaterialLayerSetUsage.OffsetFromReferenceLine is the distance parallel to the reference axis and always within the base
-(XY) plane of the reference coordinate system. A positve value of IfcMaterialLayerSetUsage.OffsetFromReferenceLine would
+(XY) plane of the reference coordinate system. A positive value of IfcMaterialLayerSetUsage.OffsetFromReferenceLine would
 then point into the positive y-axis of the reference coordinate system.
 * The IfcMaterialLayerSetUsage.DirectionSense defines how the IfcMaterialLayer's are assigned to the reference axis. POSITIVE means in direction to the positive y-axis of the reference coordinate system.
 * The Thickness of each IfcMaterialLayer is provided starting from the OffsetFromReferenceLine and in the direction given by DirectionSense. It is applied without any gap or overlap between two consecutive layers. The TotalThickness of the IfcMaterialLayerSet is the sum of all layer thicknesses.
@@ -229,31 +219,58 @@ then point into the positive y-axis of the reference coordinate system.
 Figure 278 — Wall material layers
 
 
-
 ### Object Typing
+
 
 
 ### Path Connectivity
 
 
+
+#### IfcWall
+
+Walls with equal or lower priority are connected at RelatedElement.
+
+### Product Assignment
+
+
+
+#### IfcStructuralSurfaceMember
+
+An idealized structural member corresponding to the wall.
+
+#### IfcTask
+
+A task for operating on the wall.
+
 ### Property Sets for Objects
+
 
 
 ### Quantity Sets
 
 
+
 ### Spatial Containment
 
-The IfcWall, as any subtype of IfcBuildingElement,
-may participate alternatively in one of the two different containment relationships:
+The IfcWall, as any subtype of IfcBuildingElement, may participate alternatively in one of the two different containment relationships:
 
+* the _Spatial Containment_ (defined here), or
+* the _Element Composition_.
 
-* the Spatial Containment (defined here), or
-* the Element Composition.
+#### IfcBuildingStorey
+
+Default spatial container
+
+#### IfcBuilding
+
+Spatial container for the element if it cannot be assigned to a building storey
+
+#### IfcSite
+
+Spatial container for the element in case that it is placed on site (outside of building)
 
 ### Surface Geometry
 
+> NOTE  The 'Surface' can be used to define a surfacic model of the building (e.g. for analytical purposes, or for reduced Level of Detail representation).
 
-> NOTE  The 'Surface' can be used to define a
-> surfacic model of the building (e.g. for analytical purposes, or
-> for reduced Level of Detail representation).

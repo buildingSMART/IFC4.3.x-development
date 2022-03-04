@@ -4,7 +4,7 @@ A unitary control element combines a number of control components into a single 
 
 A unitary control element provides a housing for an aggregation of control or electrical distribution elements that, in combination, perform a singular (unitary) purpose. Each item in the aggregation may have its own geometric representation and location.
 
-> HISTORY&nbsp; New entity in IFC4
+> HISTORY  New entity in IFC4
 
 { .note}
 >
@@ -24,18 +24,31 @@ Either there is no unitary control element type object associated, i.e. the _IsT
 
 ## Concepts
 
-### Material
+### Material Constituent Set
 
+
+
+#### Casing
+
+Material from which the casing is constructed.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SOURCE_Control_CONTROL
+
+Receives power (typically 24V), and closes the circuit for Fan, Heat, and Cool. Port may be aggregated into sub-ports: 'Fan'(SIGNAL,SOURCE), 'Heat'(SIGNAL,SOURCE), and 'Cool'(SIGNAL,SOURCE)
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

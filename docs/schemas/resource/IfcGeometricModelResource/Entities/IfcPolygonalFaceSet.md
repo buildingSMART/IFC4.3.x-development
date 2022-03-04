@@ -13,37 +13,30 @@ The attribute _Faces_ refers to a list of _IfcIndexedPolygonalFace_'s having an 
 
 Depending on the provision of _PnIndex_ the indices point either directly into the _IfcCartesianPointList3D_ referenced by _Coordinates_ defined at the supertype _IfcTessellatedFaceSet_, or they point into the _PnIndex_ where the integer values at that position provides the location of the coordinate values within the _IfcCartesianPointList3D_. See Figure 1 for the handling of point index.
 
-!["PnIndex"](../../../../figures/ifcpolygonalfaceset_01.png "Figure 1 &mdash; Use of _PnIndex_")
+![PnIndex](../../../../figures/ifcpolygonalfaceset_01.png "Figure 1 &mdash; Use of _PnIndex_")
 
-> NOTE&nbsp; If the _IfcPolygonalFaceSet_ is closed, the face vertices of the _IfcIndexedPolygonalFace_'s shall connect counterclock-wise when seen from the outside of the closed shell to guarantee that the face normal points away from the material of the shell. Inner loops, provided by the _IfcIndexedPolygonalFaceWithVoids_, shall connect clock-wise.
+> NOTE  If the _IfcPolygonalFaceSet_ is closed, the face vertices of the _IfcIndexedPolygonalFace_'s shall connect counterclock-wise when seen from the outside of the closed shell to guarantee that the face normal points away from the material of the shell. Inner loops, provided by the _IfcIndexedPolygonalFaceWithVoids_, shall connect clock-wise.
 
-&nbsp;
+![IfcFacetedFaceSet_Example-01](../../../../figures/ifcfacetedfaceset_example-01.png)
 
-<table summary="tessellation">
- <tr><td style="width: 280px"><img src="../../../../figures/ifcfacetedfaceset_example-01.png" width="275" height="350" alt="IfcFacetedFaceSet_Example-01">
- </td>
- <td>
-  <p>Figure 2 shows an <em>IfcFacetedFaceSet</em> represented by<br><br></p>
-<tt class="spf">
-#1 <em>IfcIndexedPolygonalFace</em>: ((1, 2, 6, 5)<br/>
-#2 <em>IfcIndexedPolygonalFace</em>: ((6, 2, 3, 7)<br/>
-#3 <em>IfcIndexedPolygonalFace</em>: ((7, 3, 4, 8)<br/>
-#4 <em>IfcIndexedPolygonalFace</em>: ((8, 4, 1, 5)<br/>
-#5 <em>IfcIndexedPolygonalFace</em>: ((1, 4, 3, 2)<br/>
-#6 <em>IfcIndexedPolygonalFace</em>: ((6, 7, 8, 5)<br/>
-#7 <em>IfcCartesianPointList3D</em>: ((0.,0.,0.), (1.,0.,0.), (1.,1.,0.), (0.,1.,0.), (0.,0.,2.), (1.,0.,2.), (1.,1.,2.), (0.,1.,2.))
-</tt>
-  </td>
- </tr>
- <tr>
-  <td><p class="figure">Figure 2 &mdash; Polygonal face set geometry</p></td>
-  <td>&nbsp;</td>
- </tr>
-</table>
+Figure 2 &mdash; Polygonal face set geometry
 
-> NOTE&nbsp; The definition of _IfcFacetedFaceSet_ is based on the **indexedFaceSet** defined in ISO/IEC 19775-1
+Figure 2 shows an <em>IfcFacetedFaceSet</em> represented by:
 
-> HISTORY&nbsp; New entity in IFC4 Addendum 2.
+```
+#1 IfcIndexedPolygonalFace: ((1, 2, 6, 5)
+#2 IfcIndexedPolygonalFace: ((6, 2, 3, 7)
+#3 IfcIndexedPolygonalFace: ((7, 3, 4, 8)
+#4 IfcIndexedPolygonalFace: ((8, 4, 1, 5)
+#5 IfcIndexedPolygonalFace: ((1, 4, 3, 2)
+#6 IfcIndexedPolygonalFace: ((6, 7, 8, 5)
+#7 IfcCartesianPointList3D:
+((0.,0.,0.), (1.,0.,0.), (1.,1.,0.), (0.,1.,0.), (0.,0.,2.), (1.,0.,2.), (1.,1.,2.), (0.,1.,2.))
+```
+
+> NOTE  The definition of _IfcFacetedFaceSet_ is based on the **indexedFaceSet** defined in ISO/IEC 19775-1
+
+> HISTORY  New entity in IFC4 Addendum 2.
 
 { .spec-head}
 Informal Propositions:

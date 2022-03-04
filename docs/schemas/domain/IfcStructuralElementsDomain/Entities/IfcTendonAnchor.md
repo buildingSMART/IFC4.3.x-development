@@ -2,10 +2,10 @@
 
 A tendon anchor is the end connection for tendons in prestressed or posttensioned concrete.
 
-> HISTORY&nbsp; New entity in IFC2x2.
+> HISTORY  New entity in IFC2x2.
 
 { .history}
-> IFC4 CHANGE&nbsp; Attribute _PredefinedType_ added.
+> IFC4 CHANGE  Attribute _PredefinedType_ added.
 
 ## Attributes
 
@@ -25,15 +25,20 @@ If this occurrence is defined by a type object, the latter has to be an _IfcTend
 ### Body Geometry
 
 
+
 ### Object Typing
 
 
-### Placement
+
+### Product Local Placement
 
 
-### Property Sets
+
+### Property Sets for Objects
+
 
 
 ### Quantity Sets
+
 
 

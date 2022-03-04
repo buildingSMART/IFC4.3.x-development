@@ -122,9 +122,17 @@ def get_schema(name):
         for schema_name, members in schemas:
             if schema_name == name: return members
 
+# remove trailing semi-colon if any
+trailing_semi = lambda s: s[:-1] if s.endswith(";") else s
+
 for item in xmi_doc:
-    if get_schema(item.package) is None:
-        print("Warning", item.package, "not registered")
+    item_package = item.package
+    if item.package == "propertytypes":
+        # @todo move these in the XMI
+        item_package = "IfcSharedBldgElements"
+
+    if get_schema(item_package) is None:
+        print(f"Warning: for {item.name} package {item_package} is not registered")
         continue
     
     if item.type == "ENTITY":
@@ -135,9 +143,9 @@ for item in xmi_doc:
         if item.definition.is_abstract:
             abstract_entities.append(item.name)
         
-        entity_to_package[item.name] = item.package
-        resource_to_package[item.name] = get_schema(item.package)
-        get_schema(item.package)['Entities'].append(item.name)
+        entity_to_package[item.name] = item_package
+        resource_to_package[item.name] = get_schema(item_package)
+        get_schema(item_package)['Entities'].append(item.name)
         if item.definition.supertype:
             supertype[item.name] = item.definition.supertype
             subtypes[item.definition.supertype].append(item.name)
@@ -145,40 +153,53 @@ for item in xmi_doc:
             roots.append(item.name)
             
         for a in item.definition.attributes:
-            attributes[".".join((item.name, a[0]))] = (True, a[1])
+            attributes[".".join((item.name, a[0]))] = ("forward", a[1])
 
         for a in item.definition.inverses:
             parts = a.split(' ')
             nm = parts[0].strip()
             ty = ' '.join(parts[2:])[:-1]
-            attributes[".".join((item.name, nm))] = (False, ty)
+            attributes[".".join((item.name, nm))] = ("inverse", ty)
             
-    elif item.type in ("TYPE", "SELECT", "ENUM"):
-        resource_to_package[item.name] = get_schema(item.package)
-        get_schema(item.package)['Types'].append(item.name)
-        if item.type in ("SELECT", "ENUM"):
+        for a in item.definition.derived:
+            parts = a.split(':=', 1)
+            parts = map(trailing_semi, map(str.strip, parts[0].split(":", 1) + [parts[1]]))
+            name, type, definition = parts
+            attributes[".".join((item.name, name))] = ("derived", (type, definition))
+            
+    elif item.type in ("TYPE", "SELECT", "ENUM", "PENUM"):
+        resource_to_package[item.name] = get_schema(item_package)
+        heading = 'PropertyEnumerations' if item.type == "PENUM" else 'Types'
+        get_schema(item_package)[heading].append(item.name)
+        if item.type in ("SELECT",):
             type_values.setdefault(item.name, []).extend(item.definition.values)
+        if item.type in ("ENUM", "PENUM"):
+            type_values.setdefault(item.name, []).extend([c.name for c in item.children])
 
     elif item.type in ("FUNCTION", "RULE"):
         name = re.split(r"\s", item.name)[0]
-        get_schema(item.package)[f"{item.type[0]}{item.type[1:].lower()}s"].append(name)
+        get_schema(item_package)[f"{item.type[0]}{item.type[1:].lower()}s"].append(name)
 
     if item.type in ("ENTITY", "TYPE", "SELECT", "ENUM", "FUNCTION", "RULE"):
-        definitions[item.name] = str(item.definition)
+        name = item.name
+        if item.type in ("FUNCTION", "RULE"):
+            name = re.split(r"\s", item.name)[0]
+        definitions[name] = str(item.definition)
 
     if item.type == "ENTITY":
         where_clauses[item.name] = item.definition.where_clauses
+        
+        where_clauses[item.name].extend((a[0], f"UNIQUE {a[1]}") for a in item.definition.unique_clauses)
     
     if item.type == "TYPE":
-        #@todo unify this with entity    
-        trailing_semi = lambda s: s[:-1] if s.endswith(";") else s
+        #@todo unify this with entity
         where_clauses[item.name] = [tuple(map(trailing_semi, map(str.strip, c.split(":")))) for c in item.definition.constraints]
         
     if item.type == "PSET":
         if item.stereotype == "PSET":
-            get_schema(item.package)['Property Sets'].append(item.name)
+            get_schema(item_package)['Property Sets'].append(item.name)
         else:
-            get_schema(item.package)['Quantity Sets'].append(item.name)
+            get_schema(item_package)['Quantity Sets'].append(item.name)
 
 def child_by_tag(node, tag):
     return [c for c in node["_children"] if c['#tag'] == tag][0]
@@ -196,6 +217,7 @@ for fn in glob.glob("./psd/*.xml"):
     definition = {
         'name': psetname,
         'applicability': classes,
+        'template_type': xml.get("@templatetype", None),
         'properties': props
     }
 

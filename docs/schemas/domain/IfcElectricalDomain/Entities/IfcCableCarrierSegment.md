@@ -2,7 +2,7 @@
 
 A cable carrier segment is a flow segment that is specifically used to carry and support cabling.
 
-> HISTORY&nbsp; New entity in IFC4
+> HISTORY  New entity in IFC4
 
 { .note}
 >
@@ -22,18 +22,35 @@ Either there is no cable carrier segment type object associated, i.e. the _IsTyp
 
 ## Concepts
 
-### Material
+### Material Profile Set Usage
 
+
+
+#### Casing
+
+Material from which the casing is constructed.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_Head_NOTDEFINED
+
+Head connection.
+
+#### SOURCE_Tail_NOTDEFINED
+
+Tail connection.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

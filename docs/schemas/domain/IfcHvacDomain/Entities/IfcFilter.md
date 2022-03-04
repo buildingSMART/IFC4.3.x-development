@@ -2,7 +2,7 @@
 
 A filter is an apparatus used to remove particulate or gaseous matter from fluids and gases.
 
-> HISTORY&nbsp; New entity in IFC4
+> HISTORY  New entity in IFC4
 
 { .note}
 >
@@ -22,18 +22,79 @@ Either there is no filter type object associated, i.e. the _IsTypedBy_ inverse r
 
 ## Concepts
 
-### Material
+### Material Constituent Set
 
+
+
+#### Casing
+
+Material from which the casing is constructed.
+
+#### Media
+
+Material used for filtering particulates.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_Inlet_AIRPARTICLEFILTER_AIRCONDITIONING
+
+Incoming fluid.
+
+#### SOURCE_Outlet_AIRPARTICLEFILTER_AIRCONDITIONING
+
+Outgoing fluid.
+
+#### SINK_Inlet_COMPRESSEDAIRFILTER_COMPRESSEDAIR
+
+Incoming fluid.
+
+#### SOURCE_Outlet_COMPRESSEDAIRFILTER_COMPRESSEDAIR
+
+Outgoing fluid.
+
+#### SINK_Inlet_ODORFILTER_EXHAUST
+
+Incoming fluid.
+
+#### SOURCE_Outlet_ODORFILTER_EXHAUST
+
+Outgoing fluid.
+
+#### SINK_Inlet_OILFILTER_OIL
+
+Incoming fluid.
+
+#### SOURCE_Outlet_OILFILTER_OIL
+
+Outgoing fluid.
+
+#### SINK_Inlet_STRAINER_DRAINAGE
+
+Incoming fluid.
+
+#### SOURCE_Outlet_STRAINER_DRAINAGE
+
+Outgoing fluid.
+
+#### SINK_Inlet_WATERFILTER_DOMESTICCOLDWATER
+
+Incoming fluid.
+
+#### SOURCE_Outlet_WATERFILTER_DOMESTICCOLDWATER
+
+Outgoing fluid.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

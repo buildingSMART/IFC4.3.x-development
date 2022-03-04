@@ -5,9 +5,9 @@ The _IfcSharedFacilitiesElements_ schema defines basic concepts in the facilitie
 
 The _IfcSharedFacilitiesElements_ schema supports ideas including:
 
-* Furniture. 
-* Grouping of elements of system furniture into individual furniture items. 
-* Asset identification. 
+* Furniture.
+* Grouping of elements of system furniture into individual furniture items.
+* Asset identification.
 * Inventory of objects (including asset, furniture and space objects within separate inventories).
 
 ### 6.4.1.1 Furniture and System Furniture
@@ -15,13 +15,13 @@ In the _IfcProductExtension_ schema, the _IfcElement_ entity is decomposed into 
 
 Figure 1 illustrates a furniture object (instance of the _IfcFurniture_ entity, which is considered to be a discrete item of furniture in its own right (for example, a table or chair).
 
-!["Furniture"](../../../../figures/ifcsharedfacilitieselements-fig01.gif)
+![Furniture](../../../../figures/ifcsharedfacilitieselements-fig01.gif)
 
 Figure 1 - Furniture
 
 Figure 2 illustrates a system furniture element object (instance of the _IfcSystemFurnitureElement_ entity), which is an identifiable item (such as a modesty panel, side, or desktop) that participates in the assembly of a discrete item of furniture.
 
-!["SystemFurnitureElements"](../../../../figures/ifcsharedfacilitieselements-fig02.gif)
+![SystemFurnitureElements](../../../../figures/ifcsharedfacilitieselements-fig02.gif)
 
 Figure 2 &mdash; System furniture element
 
@@ -32,7 +32,7 @@ An _IfcAsset_ allows for the grouping of objects to form a unit that has an iden
 
 Each asset carries a unique identifier, cost, ownership,location and other information that is required.
 
-!["Assets"](../../../../figures/ifcsharedfacilitieselements-fig03.gif)
+![Assets](../../../../figures/ifcsharedfacilitieselements-fig03.gif)
 
 Figure 3 &mdash; Asset identification
 

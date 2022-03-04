@@ -4,14 +4,14 @@ The abstract entity _IfcStructuralActivity_ combines the definition of actions (
 
 The differentiation between actions and reactions is realized by instantiating objects either from subclasses of _IfcStructuralAction_ or _IfcStructuralReaction_ respectively. They inherit commonly needed attributes from the abstract superclass _IfcStructuralActivity_, notably the relationship which connects actions or reactions with connections, analysis members, or elements (subtypes of _IfcStructuralItem_ or _IfcElement_).
 
-> NOTE&nbsp; Instances of _IfcStructuralActivity_ which are connected with an _IfcElement_ are subject to agreements outside the scope of this specification.
+> NOTE  Instances of _IfcStructuralActivity_ which are connected with an _IfcElement_ are subject to agreements outside the scope of this specification.
 
-> NOTE&nbsp; The semantics of _IfcStructuralActivity_ are only fully defined if an activity instance is connected with exactly one structural item. The inverse attribute _AssignedToStructuralItem_ can only be empty in incomplete models or in conceptual models which are not yet ready for analysis.
+> NOTE  The semantics of _IfcStructuralActivity_ are only fully defined if an activity instance is connected with exactly one structural item. The inverse attribute _AssignedToStructuralItem_ can only be empty in incomplete models or in conceptual models which are not yet ready for analysis.
 
-> HISTORY&nbsp; New entity in IFC2x2.
+> HISTORY  New entity in IFC2x2.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Cardinality of attribute _AssignedToStructuralItem_ relaxed from 1 to 0..1 in order to allow for schema-compliant incomplete models as well as conceptual models without load&mdash;item relationships.
+> IFC4 CHANGE  Cardinality of attribute _AssignedToStructuralItem_ relaxed from 1 to 0..1 in order to allow for schema-compliant incomplete models as well as conceptual models without load&mdash;item relationships.
 
 ****Coordinate Systems****:
 
@@ -76,7 +76,7 @@ Instances of _IfcStructuralActivity_ which act on a curve on a surface item shal
 > * _RepresentationIdentifier_: 'Reference'
 > * _RepresentationType_: 'Edge'
 
-> NOTE&nbsp; While an _IfcEdge_ (or _IfcOrientedEdge_ with underlying _IfcEdge_) does not provide an explicit underlying curve geometry, it may be used to imply an underlying straight line as reference curve with the origin of the curve parameter at the start vertex point.
+> NOTE  While an _IfcEdge_ (or _IfcOrientedEdge_ with underlying _IfcEdge_) does not provide an explicit underlying curve geometry, it may be used to imply an underlying straight line as reference curve with the origin of the curve parameter at the start vertex point.
 
 Instances of _IfcStructuralActivity_ which act on a single point on a curve or surface item shall have a topology representation given by an _IfcVertexPoint_, which should be the single item of _IfcTopologyRepresentation.Items_. The point geometry shall be compatible with the curve or surface geometry of the connected item. The local coordinate system of the activity is oriented by the curve or surface geometry of the connected item as described above for activities with edge or face topology.
 
@@ -103,9 +103,9 @@ the analysis model, i.e. as established by _IfcStructuralAnalysisModel.SharedPla
 or to the local coordinate system (local to the activity or connected item, as established by
 an explicit or implied representation and its parameter space).
 
-> NOTE&nbsp;, the informal definition of _IfcRepresentationResource.IfcGlobalOrLocalEnum_ doe s not distinguish between "global coordinate system" and "world coordinate system". On the other hand, this distinction is necessary in the _IfcStructuralAnalysisDomain_ where the shared "global" coordinate system of an analysis model may very well not be the same as the project-wide world coordinate system.
+> NOTE , the informal definition of _IfcRepresentationResource.IfcGlobalOrLocalEnum_ doe s not distinguish between "global coordinate system" and "world coordinate system". On the other hand, this distinction is necessary in the _IfcStructuralAnalysisDomain_ where the shared "global" coordinate system of an analysis model may very well not be the same as the project-wide world coordinate system.
 
-> NOTE&nbsp; In the scope of _IfcStructuralActivity.GlobalOrLocal_, the meaning of GLOBAL_COORDS is therefore not to be taken as world coordinate system but as the analysis model specific shared coordinate system. In contrast, LOCAL_COORDS is to be taken as coordinates which are local to individual structural items and activities, as established by subclass-specific geometry use definitions.
+> NOTE  In the scope of _IfcStructuralActivity.GlobalOrLocal_, the meaning of GLOBAL_COORDS is therefore not to be taken as world coordinate system but as the analysis model specific shared coordinate system. In contrast, LOCAL_COORDS is to be taken as coordinates which are local to individual structural items and activities, as established by subclass-specific geometry use definitions.
 
 ### AssignedToStructuralItem
 Reference to the _IfcRelConnectsStructuralActivity_ relationship by which activities are connected with structural items.

@@ -12,21 +12,21 @@ Figure 1 illustrates an example of an _IfcSectionedSpine_.
 * Each _CrossSectionPosition_ lies at a start or end point of the _Segments_.
 * Each _CrossSections_ are inserted by the _CrossSectionPositions_. The first two cross sections are of type _IfcRectangleProfileDef_, the third is of type _IfcDerivedProfileDef_.
 
-!["spine 1"](../../../../figures/ifcsectionedspine-layout1.gif "Figure 1 &mdash; Sectioned spine geometry")
+![spine 1](../../../../figures/ifcsectionedspine-layout1.gif "Figure 1 &mdash; Sectioned spine geometry")
 
 Figure 2 illustrates the final result of the _IfcSectionedSpine_. The body (shown transparently) is not fully defined by the exchange definition.
 
-!["render"](../../../../figures/ifcsectionedspine.jpg "Figure 2 &mdash; Sectioned spine result")
+![render](../../../../figures/ifcsectionedspine.jpg "Figure 2 &mdash; Sectioned spine result")
 
 { .extDef}
-> NOTE&nbsp; Definition according to ISO/CD 10303-42:1992  
-> A sectioned spine is a representation of the shape of a three dimensional object composed of a spine curve and a number of planar cross sections. The shape is defined between the first element of cross sections and the last element of this set.  
->   
-> NOTE&nbsp; A sectioned spine may be used to represent a surface or a solid but the interpolation of the shape between the cross-sections is not defined. For the representation of a solid all cross-sections are closed curves.
+> NOTE  Definition according to ISO/CD 10303-42:1992
+> A sectioned spine is a representation of the shape of a three dimensional object composed of a spine curve and a number of planar cross sections. The shape is defined between the first element of cross sections and the last element of this set.
+>
+> NOTE  A sectioned spine may be used to represent a surface or a solid but the interpolation of the shape between the cross-sections is not defined. For the representation of a solid all cross-sections are closed curves.
 
-> NOTE&nbsp; Entity adapted from **sectioned_spine** defined in ISO 10303-42.
+> NOTE  Entity adapted from **sectioned_spine** defined in ISO 10303-42.
 
-> HISTORY&nbsp; New entity in IFC2x.
+> HISTORY  New entity in IFC2x.
 
 { .spec-head}
 Informal Propositions:

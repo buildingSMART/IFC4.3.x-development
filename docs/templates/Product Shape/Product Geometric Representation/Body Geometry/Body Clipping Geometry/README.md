@@ -9,7 +9,7 @@ The following attribute values for the _IfcShapeRepresentation_ holding this geo
 * _IfcShapeRepresentation_._RepresentationType_ = 'Clipping'
 * _IfcShapeRepresentation_._Items_ = _IfcBooleanClippingResult_
 
-> NOTE&nbsp; This representation type is predominately used for compatibility with previous releases of the standard.
+> NOTE  This representation type is predominately used for compatibility with previous releases of the standard.
 
 ```
 concept {

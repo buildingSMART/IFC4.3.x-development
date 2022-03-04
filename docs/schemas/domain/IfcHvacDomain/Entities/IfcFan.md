@@ -2,7 +2,7 @@
 
 A fan is a device which imparts mechanical work on a gas. A typical usage of a fan is to induce airflow in a building services air distribution system.
 
-> HISTORY&nbsp; New entity in IFC4
+> HISTORY  New entity in IFC4
 
 { .note}
 >
@@ -22,18 +22,39 @@ Either there is no fan type object associated, i.e. the _IsTypedBy_ inverse rela
 
 ## Concepts
 
-### Material
+### Material Constituent Set
 
+
+
+#### Casing
+
+Material from which the casing is constructed.
+
+#### Wheel
+
+Material from which the fan wheel is constructed.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_AirIn_NOTDEFINED
+
+Incoming air.
+
+#### SOURCE_AirOut_NOTDEFINED
+
+Outgoing air.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

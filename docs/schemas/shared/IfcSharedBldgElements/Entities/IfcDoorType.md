@@ -11,11 +11,11 @@ A door type defines the particular parameter of the lining and one (or several) 
 
 It is used to define a door specification, or door style (i.e. the specific product information that is common to all occurrences of that door type). Door types may be exchanged without being already assigned to occurrences.
 
-> NOTE&nbsp; The product representations are defined as representation maps (at the level of the supertype _IfcTypeProduct_, which gets assigned by an element occurrence instance through the _IfcShapeRepresentation.Item[1]_ being an _IfcMappedItem_.
+> NOTE  The product representations are defined as representation maps (at the level of the supertype _IfcTypeProduct_, which gets assigned by an element occurrence instance through the _IfcShapeRepresentation.Item[1]_ being an _IfcMappedItem_.
 
-Occurrences of the _IfcDoorType_ within building models are represented by instances of _IfcDoor_ or _IfcDoorStandardCase_.
+Occurrences of the _IfcDoorType_ within building models are represented by instances of _IfcDoor_.
 
-> HISTORY&nbsp; New entity in IFC4. The entity _IfcDoorType_ replaces the previous definition _IfcDoorStyle_ (which is deprecated in IFC4).
+> HISTORY  New entity in IFC4. The entity _IfcDoorType_ replaces the previous definition _IfcDoorStyle_ (which is deprecated in IFC4).
 
 ## Attributes
 
@@ -38,17 +38,18 @@ The inherited attribute _ElementType_ shall be provided, if the _PredefinedType_
 
 ## Concepts
 
-### Body Geometry
+### Door Type Attributes
+
 
 
 ### Property Sets for Types
 
-Two subtypes of IfcPreDefinedPropertySet are applicable
-to IfcDoorType:
+Two subtypes of IfcPreDefinedPropertySet are applicable to IfcDoorType:
+
+* IfcDoorLiningProperties - a single instance to define the shape parameters of the door lining
+* IfcDoorPanelProperties - one or several instances to define the shape parameters of the door panel(s)
+
+### Type Body Geometry
 
 
-* IfcDoorLiningProperties - a single instance to define
-the shape parameters of the door lining
-* IfcDoorPanelProperties - one or several instances to
-define the shape parameters of the door panel(s)
 

@@ -6,4 +6,4 @@ A flow segment type is used to define the common properties of a flow segment th
 
 Occurrences of the _IfcFlowSegmentType_ are represented by instances of _IfcFlowSegment_ or its subtypes.
 
-> HISTORY&nbsp; New entity in IFC2x2.
+> HISTORY  New entity in IFC2x2.

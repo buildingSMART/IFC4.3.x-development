@@ -10,7 +10,7 @@ It is used to define a labour resource specification (the specific resource info
 
 Occurrences of the _IfcLaborResourceType_ are represented by instances of _IfcLaborResource_.
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 ## Attributes
 

@@ -8,7 +8,7 @@ In addition to physical products (covered by the subtype _IfcElement_) and spati
 
 Any instance of _IfcProduct_ defines a particular occurrence of a product, the common type information, that relates to many similar (or identical) occurrences of _IfcProduct_, is handled by the _IfcTypeProduct_ (and its subtypes), assigned to one or many occurrences of _IfcProduct_ by using the objectified relationship _IfcRelDefinesByType_. The _IfcTypeProduct_ may provide, in addition to common properties, also a common geometric representation for all occurrences.
 
-> NOTE&nbsp; See _IfcTypeProduct_ for how to use a common geometric representation and _IfcRelDefinesByType_ for using and overriding common properties.
+> NOTE  See _IfcTypeProduct_ for how to use a common geometric representation and _IfcRelDefinesByType_ for using and overriding common properties.
 
 On a generic level products can be assigned to processes, controls, resources, project by using the relationship objects that refer to the corresponding object:
 
@@ -16,14 +16,14 @@ On a generic level products can be assigned to processes, controls, resources, p
 * **Being assigned to a process**: assigned using _IfcRelAssignsToProcess_ linking the _IfcProduct_ to an _IfcProcess_
 * **Being assigned to a resource**: assigned using _IfcRelAssignsToResource_ linking the _IfcProduct_ to an _IfcResource_
 
-> EXAMPLE&nbsp; An example of the control relationship is the assignment of a performance history to a distribution element. An example of process assignment relationship is the assignment of products like wall, slab, column to a contruction task for construction planning. And an example of resource assignment relationship is the assignment of products to a construction resource that consumes the product.
+> EXAMPLE  An example of the control relationship is the assignment of a performance history to a distribution element. An example of process assignment relationship is the assignment of products like wall, slab, column to a construction task for construction planning. And an example of resource assignment relationship is the assignment of products to a construction resource that consumes the product.
 
-> HISTORY&nbsp; New entity in IFC1.0
+> HISTORY  New entity in IFC1.0
 
 ## Attributes
 
 ### ObjectPlacement
-Placement of the product in space, the placement can either be absolute (relative to the world coordinate system), relative (relative to the object placement of another product), or constraint (e.g. relative to grid axes). It is determined by the various subtypes of IfcObjectPlacement, which includes the axis placement information to determine the  transformation for the object coordinate system.
+This establishes the object coordinate system and placement of the product in space. The placement can either be absolute (relative to the world coordinate system), relative (relative to the object placement of another product), or constrained (e.g. relative to grid axes, or to a linear positioning element). The type of placement is determined by the various subtypes of IfcObjectPlacement. An object placement must be provided if a representation is present.
 
 ### Representation
 Reference to the representations of the product, being either a representation (IfcProductRepresentation) or as a special case a shape representations (IfcProductDefinitionShape). The product definition shape provides for multiple geometric representations of the shape property of the object within the same object coordinate system, defined by the object placement.
@@ -40,23 +40,38 @@ Reference to the _IfcRelAssignsToProduct_ relationship, by which other products,
 ## Formal Propositions
 
 ### PlacementForShapeRepresentation
-If a _Representation_ is given being an _IfcProductDefinitionShape_, then also an _ObjectPlacement_ has to be given. The _ObjectPlacement_ defines the object coordinate system in which the geometric representation items of the _IfcProductDefinitionShape_ are founded. 
-> NOTE&nbsp; If the _Representation_ of several subtypes of _IfcProduct_ have the same coordinate system it is permitted to share an instance of _IfcObjectPlacement_.
+If a _Representation_ is given being an _IfcProductDefinitionShape_, then also an _ObjectPlacement_ has to be given. The _ObjectPlacement_ defines the object coordinate system in which the geometric representation items of the _IfcProductDefinitionShape_ are founded.
+
+> NOTE  If the _Representation_ of several subtypes of _IfcProduct_ have the same coordinate system it is permitted to share an instance of _IfcObjectPlacement_.
 
 ## Concepts
 
+### Body Geometry
+
+The body or solid model geometric representation of an IfcProduct is typically defined using a Tessellation or Brep. Subtypes may provide recommendations on other representation types that may be used. The following attribute values for the IfcShapeRepresentation holding this geometric representation shall be used:
+
+* _IfcShapeRepresentation.RepresentationIdentifier_ = 'Body'
+* _IfcShapeRepresentation.RepresentationType_ = Typically 'Tessellation' or 'Brep'
+
 ### Product Geometric Representation
 
-The geometric representation of any IfcProduct is provided by the IfcProductDefinitionShape allowing multiple geometric representations. It uses the Product Placement concept utilizing IfcLocalPlacement to establish an object coordinate system, within all geometric representations are founded.
+The geometric representation of any IfcProduct is provided by the IfcProductDefinitionShape allowing multiple geometric representations. It uses the _Product Placement_ concept utilizing IfcLocalPlacement to establish an object coordinate system, within all geometric representations are founded.
+
+> NOTE A detailed specification of how to apply the local placement and which shape representaions are applicable is provided at the level of subtypes of IfcProduct and is further determined by the model view definition and implementer agreements.
+
+### Product Geometry Colour
 
 
 
-> NOTE  A detailed specification of how to apply the local placement and which shape representaions are applicable is provided at the level of subtypes of IfcProduct and is further determined by the model view definition and implementer agreements.
+### Product Geometry Layer
 
 
 
-### Product Placement
+### Product Relative Positioning
 
-The Product Placement establishes the object coordinate system and is required, if a geometric shape representation is provided for this product.
+If the IfcProduct _Product Placement_ is placed relative to an IfcPositioningElement this relationship covers the information on which IfcPositioningElement positions the IfcProduct.
+
+### Product Span Positioning
+
 
 

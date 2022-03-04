@@ -1,0 +1,18 @@
+{% extends "main.html" %}
+{% block pagecontent %}
+
+<h1>Sandcastle</h1>
+
+<p>
+    This page may be used for prototyping Markdown and Graphviz diagrams.
+</p>
+
+<form action="" method="post">
+    <textarea rows="10", cols="120" name="md">{{ md }}</textarea>
+    <br />
+    <input type="submit" value="Generate">
+</form>
+
+{{ html | safe }}
+
+{% endblock %}

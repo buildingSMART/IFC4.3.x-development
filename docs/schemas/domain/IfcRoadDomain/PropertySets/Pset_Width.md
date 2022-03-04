@@ -1,3 +1,3 @@
 # Pset_Width
 
-Specifices the general properties for a Width event.
+Specifies the general properties for a Width event.

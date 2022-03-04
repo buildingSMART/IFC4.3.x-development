@@ -2,7 +2,7 @@
 
 A burner is a device that converts fuel into heat through combustion. It includes gas, oil, and wood burners.
 
-> HISTORY&nbsp; New entity in IFC4
+> HISTORY  New entity in IFC4
 
 { .note}
 >
@@ -22,18 +22,35 @@ Either there is no burner type object associated, i.e. the _IsTypedBy_ inverse r
 
 ## Concepts
 
-### Material
+### Material Constituent Set
 
+
+
+#### Casing
+
+Material from which the casing is constructed.
+
+#### Fuel
+
+Material designed to be burned.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_Gas_GAS
+
+Gas inlet for burner.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

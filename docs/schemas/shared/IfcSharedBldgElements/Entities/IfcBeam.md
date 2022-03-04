@@ -2,7 +2,7 @@
 
 An _IfcBeam_ is a horizontal, or nearly horizontal, structural member that is capable of withstanding load primarily by resisting bending. It represents such a member from an architectural point of view. It is not required to be load bearing.
 
-> NOTE&nbsp; Definition according to ISO 6707-1: structural member for carrying load(s) between or beyond points of support, usually narrow in relation to its length and horizontal or nearly so.
+> NOTE  Definition according to ISO 6707-1: structural member for carrying load(s) between or beyond points of support, usually narrow in relation to its length and horizontal or nearly so.
 
 There are two main representations for beam occurrences:
 
@@ -14,16 +14,16 @@ There are two main representations for beam occurrences:
 
 For any other longitudinal structural member, not constrained to be predominately horizontal nor vertical, or where this semantic information is irrelevant, the entity _IfcMember_ should be used.
 
-> NOTE&nbsp; The representation of load-bearing beams in a structural analysis model is provided by subtypes of _IfcStructuralMember_ (with _IfcStructuralCurveMember_ being mostly applicable) as part of an _IfcStructuralAnalysisModel_. The camber of a beam may be defined by assigning an _IfcStructuralCurveMember_ with displacement coordinates. Multiple sets of camber ordinates may be provided that are qualified by the particular load case, where full dead load would typically be used for fabrication, and other scenarios used for other loading conditions such as during construction.
+> NOTE  The representation of load-bearing beams in a structural analysis model is provided by subtypes of _IfcStructuralMember_ (with _IfcStructuralCurveMember_ being mostly applicable) as part of an _IfcStructuralAnalysisModel_. The camber of a beam may be defined by assigning an _IfcStructuralCurveMember_ with displacement coordinates. Multiple sets of camber ordinates may be provided that are qualified by the particular load case, where full dead load would typically be used for fabrication, and other scenarios used for other loading conditions such as during construction.
 
 
-> HISTORY&nbsp; New entity in IFC1.0
+> HISTORY  New entity in IFC1.0
 
 ## Attributes
 
 ### PredefinedType
 Predefined generic type for a beam that is specified in an enumeration. There may be a property set given specifically for the predefined types.
-> NOTE&nbsp; The _PredefinedType_ shall only be used, if no _IfcBeamType_ is assigned, providing its own _IfcBeamType.PredefinedType_.
+> NOTE  The _PredefinedType_ shall only be used, if no _IfcBeamType_ is assigned, providing its own _IfcBeamType.PredefinedType_.
 
 { .change-ifc2x4}
 > IFC4 CHANGE The attribute has been added at the end of the entity definition.
@@ -40,19 +40,12 @@ Either there is no beam type object associated, i.e. the _IsTypedBy_ inverse rel
 
 ### Axis 3D Geometry
 
-The axis representation can be used to represent the system
- length of a beam that may extent the body length of the
- beam.
+The 'Axis' 'Curve 3D' geometry can be used to represent the system axis and length of a beam that may represent the extents of the body.
+
+> NOTE  The 'Axis' may be used to locate the material profile set, if the material association is of type IfcMaterialProfileSetUsage.
 
 
-
-> NOTE  The 'Axis' is used to locate the
-> material profile set, if the material association is of type IfcMaterialProfileSetUsage.
-
-
-The following additional constraints apply to the 'Axis'
-representation, if an IfcMaterialProfileSetUsage is provided and the 'Body' shape representation has the
-RepresentationType: 'SweptSolid':
+The following additional constraints apply to the 'Axis' representation, if an IfcMaterialProfileSetUsage is provided and the 'Body' shape representation has the RepresentationType: 'SweptSolid':
 
 
 * Axis
@@ -68,83 +61,54 @@ RepresentationType: 'SweptSolid':
 	the positive z-axis.
 
 
- 
-
-
 ![Axis](../../../../figures/ifcbeamstandardcase_axis-01.png)
 
+Figure 76 — Beam axis representation
+
 > EXAMPLE  As shown in Figure 76, the axis shall be defined along the z axis of the object coordinate system. The axis representation can be used to represent the system length of a beam that may extent the body length of the beam.
-
-
-Figure 198 — Beam axis representation
-
- 
 
 
 
 ![Axis](../../../../figures/ifcbeamstandardcase_axis-02.png)
 
-> EXAMPLE  As shown in Figure 77, the axis representation shall be used to represent the cardinal point as the offset between the 'Axis' and the extrusion path of the beam. The extrusion path is provided as IfcExtrudedAreaSolid.ExtrudedDirection and should be parallel to the 'Axis' and the z axis. It has to be guaranteed that the value provided by
-> IfcMaterialProfileSetUsage.CardinalPoint is consistent to the IfcExtrudedAreaSolid.Position.
+Figure 77 — Beam axis cardinal point
 
+> EXAMPLE  As shown in Figure 77, the axis representation shall be used to represent the cardinal point as the offset between the 'Axis' and the extrusion path of the beam. The extrusion path is provided as IfcExtrudedAreaSolid.ExtrudedDirection and should be parallel to the 'Axis' and the z axis. It has to be guaranteed that the value provided by IfcMaterialProfileSetUsage.CardinalPoint is consistent to the IfcExtrudedAreaSolid.Position.
 
-Figure 199 — Beam axis cardinal point
+#### Axis_IfcBoundedCurve_Curve3D
 
- 
-
+Three-dimensional reference curve for the beam.
 
 ### Body AdvancedSweptSolid Geometry
 
 The following additional constraints apply to the 'AdvancedSweptSolid' representation type:
 
-
-* Solid: IfcSurfaceCurveSweptAreaSolid,
-IfcFixedReferenceSweptAreaSolid,
-IfcExtrudedAreaSolidTapered,
-IfcRevolvedAreaSolidTapered shall be supported.
-
-> NOTE  View definitions and implementer agreement
-> can further constrain the allowed swept solid
-> types.
-* Profile: see 'SweptSolid' geometric representation
-* Extrusion: not applicable
-
-
+* **Solid**: IfcSurfaceCurveSweptAreaSolid, IfcFixedReferenceSweptAreaSolid, IfcExtrudedAreaSolidTapered, IfcRevolvedAreaSolidTapered shall be supported.
+>> NOTE  View definitions and implementer agreement can further constrain the allowed swept solid types.
+* **Profile**: see 'SweptSolid' geometric representation
+* **Extrusion**: not applicable
 
 ### Body Clipping Geometry
 
 The following additional constraints apply to the 'Clipping' representation type:
 
-
-* Solid: see 'SweptSolid' geometric representation
-* Profile: see 'SweptSolid' geometric representation
-* Extrusion: see 'SweptSolid' geometric representation
-* Boolean result: The IfcBooleanClippingResult
-shall be supported, allowing for Boolean differences between the
-swept solid (here IfcExtrudedAreaSolid) and one or several
-IfcHalfSpaceSolid (or its subtypes).
-
+* **Solid**: see 'SweptSolid' geometric representation
+* **Profile**: see 'SweptSolid' geometric representation
+* **Extrusion**: see 'SweptSolid' geometric representation
+* **Boolean result**: The IfcBooleanClippingResult shall be supported, allowing for Boolean differences between the swept solid (here IfcExtrudedAreaSolid) and one or several IfcHalfSpaceSolid (or its subtypes).
 
 Figure 201 illustrates use of IfcBooleanClippingResult between an IfcExtrudedAreaSolid and an IfcHalfSpaceSolid to create a clipped body.
 
-
 ![clipped beam](../../../../figures/ifcbeam_advanced-2-layout1.gif)
 Figure 201 — Beam clipping
-
-
 
 ### Body SweptSolid Geometry
 
 The following additional constraints apply to the 'SweptSolid' representation type:
 
-
-* Solid: IfcExtrudedAreaSolid,
-IfcRevolvedAreaSolid shall be supported
-* Profile: all subtypes of IfcProfileDef (with
-exception of IfcArbitraryOpenProfileDef)
-* Extrusion:  All extrusion directions shall be
-supported.
-
+* **Solid**: IfcExtrudedAreaSolid, IfcRevolvedAreaSolid shall be supported
+* **Profile**: all subtypes of IfcProfileDef (with exception of IfcArbitraryOpenProfileDef)
+* **Extrusion**:  All extrusion directions shall be supported.
 
 Figure 200 illustrates the 'SweptSolid' geometric representation. There are no restrictions or conventions on how to use the local placement (black), solid of extrusion placement (red) and profile placement (green).
 
@@ -160,9 +124,17 @@ Figure 201 illustrates the use of non-perpendicular extrusion to create the IfcE
 Figure 201 — Beam non-perpendicular extrusion
 
 
-
 ### Element Composition
 
+
+
+#### IfcElementAssembly
+
+Special purpose composite entity
+
+#### IfcBuildingElement
+
+Any building element can be a composite
 
 ### Material Profile Set
 
@@ -175,7 +147,7 @@ IfcMaterialProfileSet or as fallback by IfcMaterial, and it is attached either d
 
 The Material Profile Set Usage defines the assignment of an IfcMaterialProfileSetUsage to the
 IfcBeamType providing a common profile definition to all
- occurrences of this IfcBeamType. Beams with composite profile can be represented by refering to
+ occurrences of this IfcBeamType. Beams with composite profile can be represented by referring to
  several IfcMaterialProfile's within the
 IfcMaterialProfileSet that is referenced from the
 IfcMaterialProfileSetUsage.
@@ -183,61 +155,63 @@ IfcMaterialProfileSetUsage.
 
 ![Material profile set and usage](../../../../figures/ifcbeam-01.png)
 
-> EXAMPLE  Figure 196 illustrates assignment of IfcMaterialProfileSetUsage and IfcMaterialProfileSet to the IfcBeam as the beam occurrence and to the IfcBeamType. The same IfcMaterialProfileSet shall be shared by many occurrences of IfcMaterialProfileSetUsage. This relationship shall be consistent to the relationship between the IfcBeamType and the IfcBeam.
-
-
 Figure 196 — Beam profile usage
 
-
- 
-
+> EXAMPLE  Figure 196 illustrates assignment of IfcMaterialProfileSetUsage and IfcMaterialProfileSet to the IfcBeam as the beam occurrence and to the IfcBeamType. The same IfcMaterialProfileSet shall be shared by many occurrences of IfcMaterialProfileSetUsage. This relationship shall be consistent to the relationship between the IfcBeamType and the IfcBeam.
 
 
 
 ![Cardinal point usage](../../../../figures/ifcbeam_cardinalpoint.png)
 
-> EXAMPLE  Figure 197 illustrates alignment of cardinal points.
-
-
-
-> NOTE  It has to be guaranteed that the use of IfcCardinalPointEnum is consistent to the placement of the extrusion body provided by IfcExtrudedAreaSolid.Position
-
-
-
-> NOTE  The cardinal points 8 (top centre) and 6 (mid-depth right) are assigned according to the definition at IfcCardinalPointReference
-
-
 Figure 197 — Beam cardinal points
 
+Figure 197 illustrates alignment of cardinal points. It has to be guaranteed that the use of IfcCardinalPointEnum is consistent to the placement of the extrusion body provided by IfcExtrudedAreaSolid.Position
 
- 
-
-
+The cardinal points 8 (top centre) and 6 (mid-depth right) are assigned according to the definition at IfcCardinalPointReference
 
 
 ![Material profile set and usage](../../../../figures/ifcbeam-02.png)
 
-> EXAMPLE  Figure 198 illustrates assignment of a composite profile by using IfcCompositeProfile for geometric representation and several IfcMaterialProfile's within the IfcMaterialProfileSet.
-
-
 Figure 198 — Beam composite profiles
 
-
+> EXAMPLE  Figure 198 illustrates assignment of a composite profile by using IfcCompositeProfile for geometric representation and several IfcMaterialProfile's within the IfcMaterialProfileSet.
 
 ### Object Typing
 
 
+
+### Product Assignment
+
+
+
+#### IfcStructuralCurveMember
+
+An idealized structural member corresponding to the beam.
+
 ### Property Sets for Objects
+
 
 
 ### Quantity Sets
 
 
+
 ### Spatial Containment
 
-The IfcBeam, as any subtype of IfcBuildingElement,
-may participate alternatively in one of the two different containment relationships:
+The IfcBeam, as any subtype of IfcBuildingElement, may participate alternatively in one of the two different containment relationships:
 
+* the _Spatial Containment_ (defined here), or
+* the _Element Composition_.
 
-* the Spatial Containment (defined here), or
-* the Element Composition.
+#### IfcBuildingStorey
+
+Default spatial container
+
+#### IfcBuilding
+
+Spatial container for the element if it cannot be assigned to a building storey
+
+#### IfcSite
+
+Spatial container for the element in case that it is placed on site (outside of building)
+

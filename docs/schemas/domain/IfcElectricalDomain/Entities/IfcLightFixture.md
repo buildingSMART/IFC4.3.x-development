@@ -2,7 +2,7 @@
 
 A light fixture is a container that is designed for the purpose of housing one or more lamps and optionally devices that control, restrict or vary their emission.
 
-> HISTORY&nbsp; New entity in IFC4
+> HISTORY  New entity in IFC4
 
 { .note}
 >
@@ -22,26 +22,71 @@ Either there is no light fixture type object associated, i.e. the _IsTypedBy_ in
 
 ## Concepts
 
-### Connection
-
-
 ### Lighting Geometry
 
-This represents the light emission of the item having IfcShapeRepresentation.RepresentationType of 'LightSource' and containing one or more IfcLightSource subtypes.
+This represents the light emission of the item having _IfcShapeRepresentation.RepresentationType_ of 'LightSource' and containing one or more IfcLightSource subtypes.
+
+### Material Constituent Set
 
 
-### Material
 
+#### Casing
+
+Material from which the casing is constructed.
+
+### Object Connectivity
+
+
+
+#### IfcRelConnectsElements_IfcCovering
+
+Indicates a suspended ceiling anchoring the light fixture.
+
+#### IfcRelFillsElements_IfcOpeningElement
+
+Indicates embedding the light fixture in a building element such as a suspended ceiling.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_Line_POINTSOURCE_ELECTRICAL
+
+The power supply line, typically a cable connected to a switch.
+
+#### SOURCE_Socket_POINTSOURCE_LIGHTING
+
+A socket providing electricity to a lamp with one terminal.
+
+#### SINK_Line_DIRECTIONSOURCE_ELECTRICAL
+
+The power supply line, typically a cable connected to a switch.
+
+#### SOURCE_Socket1_DIRECTIONSOURCE_LIGHTING
+
+A socket providing electricity to a lamp with two terminals.
+
+#### SOURCE_Socket2_DIRECTIONSOURCE_LIGHTING
+
+A socket providing electricity to a lamp with two terminals.
+
+#### SOURCE_Socket3_DIRECTIONSOURCE_LIGHTING
+
+A socket providing electricity to a lamp with two terminals.
+
+#### SOURCE_Socket4_DIRECTIONSOURCE_LIGHTING
+
+A socket providing electricity to a lamp with two terminals.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

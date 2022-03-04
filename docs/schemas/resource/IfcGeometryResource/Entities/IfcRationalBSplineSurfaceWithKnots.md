@@ -6,9 +6,9 @@ The surface is to be interpreted as follows:
 
 > <big>&sigma;</big>![formula](../../../../figures/ifcbsplinesurface-math2.gif)
 
-> NOTE&nbsp; Entity adapted from **rational_b_spline_surface** in ISO 10303-42.
+> NOTE  Entity adapted from **rational_b_spline_surface** in ISO 10303-42.
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 ## Attributes
 

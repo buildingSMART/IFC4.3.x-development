@@ -4,4 +4,4 @@ The warping moment measure is a measure for the warping moment, which occurs in 
 
 Type: REAL
 
-> HISTORY&nbsp; New type in IFC2x2.
+> HISTORY  New type in IFC2x2.

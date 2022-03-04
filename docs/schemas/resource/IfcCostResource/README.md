@@ -9,4 +9,4 @@ Each cost value may have a unit basis which determines how a total value should 
 
 An individual cost value may be defined according to the values of a set of component values and may also be identified as a component of other values. This is achieved through the assertion of an applied value relationship which acts as a container for applied value components.
 
-> HISTORY&nbsp; New schema in IFC2.0.
+> HISTORY  New schema in IFC2.0.

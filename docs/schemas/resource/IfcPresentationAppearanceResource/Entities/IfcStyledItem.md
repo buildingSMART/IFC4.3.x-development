@@ -6,15 +6,15 @@ The _IfcStyledItem_ holds presentation style information for products, either ex
 * If the _IfcStyledItem_ is used within a reference from an _IfcMaterialDefinitionRepresentation_ then no _Item_ shall be provided.
 
 { .extDef}
-> NOTE&nbsp; Definition according to ISO/CD 10303-46:1992  
+> NOTE  Definition according to ISO/CD 10303-46:1992
 > The styled item is an assignment of style for presentation to a geometric representation item as it is used in a representation.
 
-> NOTE&nbsp; Entity adapted from **styled_item** defined in ISO10303-46.
+> NOTE  Entity adapted from **styled_item** defined in ISO10303-46.
 
-> HISTORY &nbsp;New entity in IFC2x2.
+> HISTORY  New entity in IFC2x2.
 
 { .change-ifc2x2}
-> IFC2x2 Addendum 1 CHANGE&nbsp; The entity _IfcStyledItem_ has been made non abstract and the attribute _Name_ added.
+> IFC2x2 Addendum 1 CHANGE  The entity _IfcStyledItem_ has been made non abstract and the attribute _Name_ added.
 
 { .change-ifc2x3}
 > IFC2x3 CHANGE The attribute _Item_ has been made optional, upward compatibility for file based exchange is guaranteed.
@@ -30,15 +30,15 @@ Figure 1 illustrates use of _IfcStyledItem_ for the two usage examples:
 * <small>As a presentation for a geometric representation item</small>
 * <small>As a presentation for a material definition</small>
 
-> NOTE&nbsp; The new _IfcStyleAssignmentSelect_ allows the direct assignment styles, such as _IfcCurveStyle_, _IfcSurfaceStyle_ without using the intermediate _IfcPresentationStyleAssignment_
+> NOTE  The new _IfcStyleAssignmentSelect_ allows the direct assignment styles, such as _IfcCurveStyle_, _IfcSurfaceStyle_ without using the intermediate _IfcPresentationStyleAssignment_
 
-!["2x4 example"](../../../../figures/ifcstyleditem_fig-1.png "Figure 1 &mdash; Styled item")
+![2x4 example](../../../../figures/ifcstyleditem_fig-1.png "Figure 1 &mdash; Styled item")
 
 ## Attributes
 
 ### Item
 A geometric representation item to which the style is assigned.
-  
+
 { .change-ifc2x2}
 > IFC2x2 Add2 CHANGE The attribute _Item_ has been made optional. Upward compatibility for file based exchange is guaranteed.
 
@@ -47,7 +47,7 @@ Representation styles which are assigned, either to an geometric representation 
 { .change-ifc2x4}
 > IFC4 CHANGE The data type has been changed to _IfcStyleAssignmentSelect_ with upward compatibility for file based exchange.
 
-> NOTE&nbsp; Only the select item _IfcPresentationStyle_ shall be used from IFC4 onwards, the _IfcPresentationStyleAssignment_ has been deprecated.
+> NOTE  Only the select item _IfcPresentationStyle_ shall be used from IFC4 onwards, the _IfcPresentationStyleAssignment_ has been deprecated.
 
 ### Name
 The word, or group of words, by which the styled item is referred to.

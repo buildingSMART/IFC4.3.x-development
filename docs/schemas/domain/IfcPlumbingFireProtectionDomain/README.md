@@ -23,4 +23,4 @@ The following are deemed to be out of scope of the _IfcPlumbingFireProtectionDom
 
 * public utility water and waste services
 
-> HISTORY&nbsp; New schema in IFC2x2
+> HISTORY  New schema in IFC2x2

@@ -4,7 +4,7 @@ A cable segment is a flow segment used to carry electrical power, data, or telec
 
 A cable segment is used to typically join two sections of an electrical network or a network of components carrying the electrical service.
 
-> HISTORY&nbsp; New entity in IFC4
+> HISTORY  New entity in IFC4
 
 { .note}
 >
@@ -24,21 +24,59 @@ Either there is no cable segment type object associated, i.e. the _IsTypedBy_ in
 
 ## Concepts
 
-### Composition
+### Aggregation
 
 
-### Material
 
+#### CORESEGMENT_CABLESEGMENT_IfcCableSegment
+
+Cable segments may be aggregated into cable cores.
+
+#### CONDUCTORSEGMENT_CORESEGMENT_IfcCableSegment
+
+Cable cores may be aggregated into cable conductors.
+
+### Material Profile Set Usage
+
+
+
+#### Conductor
+
+Material from which the conductors are constructed, such as Aluminium or Copper.
+
+#### Insulation
+
+The material from which the insulation is constructed such as PVC, PEX, or EPR.
+
+#### Screen
+
+The material from which the screen that covers the sheath is constructed (mantel) such as Aluminium, Copper, Steel, or Lead.
+
+#### Sheath
+
+The outer sheathing of the cable which may be color-coded.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_Input_NOTDEFINED
+
+The input end of the cable. While many cables may be bidirectional, port direction is indicated for connectivity purposes.
+
+#### SOURCE_Output_NOTDEFINED
+
+The output end of the cable. While many cables may be bidirectional, port direction is indicated for connectivity purposes.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

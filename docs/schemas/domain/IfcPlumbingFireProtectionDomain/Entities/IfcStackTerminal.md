@@ -2,7 +2,7 @@
 
 A stack terminal is placed at the top of a ventilating stack (such as to prevent ingress by birds or rainwater) or rainwater pipe (to act as a collector or hopper for discharge from guttering).
 
-> HISTORY&nbsp; New entity in IFC4
+> HISTORY  New entity in IFC4
 
 { .note}
 >
@@ -22,18 +22,39 @@ Either there is no stack terminal type object associated, i.e. the _IsTypedBy_ i
 
 ## Concepts
 
-### Material
+### Material Constituent Set
 
+
+
+#### Casing
+
+Material from which the casing is constructed.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_Exhaust_BIRDCAGE_EXHAUST
+
+Exhaust inlet.
+
+#### SINK_Exhaust_COWL_EXHAUST
+
+Exhaust inlet.
+
+#### SINK_Rain_RAINWATERHOPPER_RAINWATER
+
+Rainwater outlet.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

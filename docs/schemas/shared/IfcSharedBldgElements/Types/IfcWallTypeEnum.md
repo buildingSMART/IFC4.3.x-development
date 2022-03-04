@@ -2,19 +2,18 @@
 
 This enumeration defines the different types of walls that can further specify an _IfcWall_ or _IfcWallType_.
 
-> HISTORY&nbsp; New enumeration in IFC2x2.
+> HISTORY  New enumeration in IFC2x2.
 
 { .change-ifc2x2}
-> IFC2x2 CHANGE&nbsp; The enumerator _POLYGON_ has been changed to _POLYGONAL_.
+> IFC2x2 CHANGE  The enumerator _POLYGON_ has been changed to _POLYGONAL_.
 
 { .change-ifc2x3}
-> IFC2x3 CHANGE&nbsp; The enumerators _ELEMENTEDWALL_ and _PLUMBINGWALL_ have been added.
+> IFC2x3 CHANGE  The enumerators _ELEMENTEDWALL_ and _PLUMBINGWALL_ have been added.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; New enumerators MOVABLE, PARAPET, PARTITIONING, and SOLIDWALL have been added.  
-> IFC4 DEPRECATION&nbsp; The enumerators STANDARD, POLYGONAL and ELEMENTEDWALL are deprecated and shall no longer be used.
+> IFC4 CHANGE  New enumerators MOVABLE, PARAPET, PARTITIONING, and SOLIDWALL have been added.
 
-> NOTE&nbsp; The potentially misleading term _SHEAR_ shall not impose a particular resistance against shear forces, but a particular shape.
+> NOTE  The potentially misleading term _SHEAR_ shall not impose a particular resistance against shear forces, but a particular shape.
 
 ## Items
 
@@ -37,17 +36,18 @@ A wall designed to withstand shear loads. Examples of shear wall are diaphragms 
 A massive wall construction for the wall core being the single layer or having multiple layers attached. Such walls are often masonry or concrete walls (both cast in-situ or precast) that are load bearing and fire protecting.
 
 ### STANDARD
-A standard wall, extruded vertically with a constant thickness along the wall path. 
+A standard wall, extruded vertically with a constant thickness along the wall path.
 { .deprecated}
-> IFC4 DEPRECATION The value is deprecated, it is expressed by choosing the subtype _IfcWallStandardCase_.
+> IFC4 DEPRECATION The value is deprecated, it is expressed by using an _IfcMaterialLayerSet_ with _IfcMaterialLayerSetUsage_ in occurrences.
 
 ### POLYGONAL
 A polygonal wall, extruded vertically, where the wall thickness varies along the wall path.
+> IFC4 DEPRECATION The value is deprecated and shall no longer be used.
 
 ### ELEMENTEDWALL
-A stud wall framed with studs and faced with sheetings, sidings, wallboard, or plasterwork. 
+A stud wall framed with studs and faced with sheetings, sidings, wallboard, or plasterwork.
 { .deprecated}
-> IFC4 DEPRECATION The value is deprecated, it is expressed by choosing the subtype _IfcWallElementedCase_.
+> IFC4 DEPRECATION The value is deprecated, it is expressed by using _IfcRelAggregates_.
 
 ### RETAININGWALL
 A supporting wall used to protect against soil layers behind. Special types of a retaining wall may be e.g. Gabion wall and Grib wall. Examples of retaining walls are wing wall, headwall, stem wall, pierwall and protecting wall.

@@ -1,4 +1,4 @@
 IsReducedResistanceFastening
 ============================
 
-Indicates wether the rail fastening is a reduced resistance fastening (YES) or not (NO).
+Indicates whether the rail fastening is a reduced resistance fastening (YES) or not (NO).

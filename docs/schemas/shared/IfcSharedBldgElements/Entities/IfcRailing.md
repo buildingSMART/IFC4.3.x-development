@@ -1,8 +1,8 @@
 # IfcRailing
 
 The railing is a frame assembly adjacent to human or vehicle circulation spaces and at some space boundaries where it is used in lieu of walls or to complement walls. Designed as an optional physical support, or to prevent injury or damage, either by falling or collision.
- 
-> HISTORY&nbsp; New entity in IFC2.0
+
+> HISTORY  New entity in IFC2.0
 
 ## Attributes
 
@@ -22,28 +22,39 @@ Either there is no railing type object associated, i.e. the _IsTypedBy_ inverse 
 ### Axis 2D Geometry
 
 
-### Material Constituents
 
-The material of the IfcRailing is defined by the
- IfcMaterialConstituent or as fallback by IfcMaterial, and it is attached either directly or at the IfcRailingType.
+### Material Constituent Set
 
-
+The material of the IfcRailing is defined by the IfcMaterialConstituent or as fallback by IfcMaterial, and it is attached either directly or at the IfcRailingType.
 
 ### Object Typing
+
 
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 
 ### Spatial Containment
 
-The IfcRailing, as any subtype of IfcBuildingElement, 
-may participate alternatively in one of the two different containment relationships:
+The IfcRailing, as any subtype of IfcBuildingElement, may participate alternatively in one of the two different containment relationships:
 
+* the _Spatial Containment_ (defined here), or
+* the _Element Composition_.
 
-* the Spatial Containment (defined here), or
-* the Element Composition.
+#### IfcBuildingStorey
+
+Default spatial container
+
+#### IfcBuilding
+
+Spatial container for the element if it cannot be assigned to a building storey
+
+#### IfcSite
+
+Spatial container for the element in case that it is placed on site (outside of building)
 

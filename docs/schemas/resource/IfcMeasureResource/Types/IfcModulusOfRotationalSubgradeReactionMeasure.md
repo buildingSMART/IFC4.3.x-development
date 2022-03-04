@@ -4,4 +4,4 @@ _IfcModulusOfRotationalSubgradeReactionMeasure_ is a measure for modulus of rota
 
 Type: REAL
 
-> HISTORY&nbsp; New type in IFC2x2.
+> HISTORY  New type in IFC2x2.

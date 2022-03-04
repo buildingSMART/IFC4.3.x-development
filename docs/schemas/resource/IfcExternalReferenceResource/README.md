@@ -22,7 +22,7 @@ The scope of the documents model is:
 
 * to manage reference to documents
 * to manage information about documents
-* to be equally applicable to documents that are paper based or digital 
+* to be equally applicable to documents that are paper based or digital
 
 It is not intended to be a complete document model and does not overlap in intent or content with such models.
 
@@ -32,7 +32,7 @@ Information about a document can be captured in the _IfcDocumentInformation_ cla
 
 * description
 * revision identifier
-* creation and revision times 
+* creation and revision times
 * duration of document validity using 'valid from' and 'valid to' attributes.
 
 For a document that is stored digitally, the _IfcDocumentElectronicFormat_ class enables information about the format to be recorded. This includes the file extension used and information about the content using the MIME standard.
@@ -46,4 +46,4 @@ The _IfcLibraryInformation_ entity provides specific information about an actual
 
 The _IfcLibraryReference_ entity is more widely used (and should be considered as the default selection). A library reference provides for the identifying of a specific record within a library data source through use of a name, location (web location) and item reference (which locates the data within the library data source). The provision of a language attribute allows the language in which a library reference is expressed to be identifed
 
-> HISTORY&nbsp; New schema in IFC2x.
+> HISTORY  New schema in IFC2x.

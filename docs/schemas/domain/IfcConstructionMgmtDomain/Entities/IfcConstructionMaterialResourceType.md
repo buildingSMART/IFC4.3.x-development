@@ -10,7 +10,7 @@ It is used to define a construction material resource specification (the specifi
 
 Occurrences of the _IfcConstructionMaterialResourceType_ are represented by instances of _IfcConstructionMaterialResource_.
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 { .use-head}
 Assignment Use Definition

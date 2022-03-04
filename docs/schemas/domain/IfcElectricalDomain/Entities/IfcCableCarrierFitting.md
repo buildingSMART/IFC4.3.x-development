@@ -2,7 +2,7 @@
 
 A cable carrier fitting is a fitting that is placed at junction or transition in a cable carrier system.
 
-> HISTORY&nbsp; New entity in IFC4
+> HISTORY  New entity in IFC4
 
 { .note}
 >
@@ -22,18 +22,71 @@ Either there is no cable carrier fitting type object associated, i.e. the _IsTyp
 
 ## Concepts
 
-### Material
+### Material Constituent Set
 
+
+
+#### Casing
+
+Material from which the casing is constructed.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_Head_BEND_NOTDEFINED
+
+Head connection.
+
+#### SOURCE_Tail_BEND_NOTDEFINED
+
+Tail connection.
+
+#### SINK_Head_CROSS_NOTDEFINED
+
+Head connection.
+
+#### SOURCE_Tail_CROSS_NOTDEFINED
+
+Tail connection.
+
+#### SOURCE_Left_CROSS_NOTDEFINED
+
+Left connection.
+
+#### SOURCE_Right_CROSS_NOTDEFINED
+
+Right connection.
+
+#### SINK_Head_REDUCER_NOTDEFINED
+
+Head connection.
+
+#### SOURCE_Tail_REDUCER_NOTDEFINED
+
+Tail connection.
+
+#### SINK_Head_TEE_NOTDEFINED
+
+Head connection.
+
+#### SOURCE_Left_TEE_NOTDEFINED
+
+Left connection.
+
+#### SOURCE_Right_TEE_NOTDEFINED
+
+Right connection.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

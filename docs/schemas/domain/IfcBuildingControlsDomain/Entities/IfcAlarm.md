@@ -4,7 +4,7 @@ An alarm is a device that signals the existence of a condition or situation that
 
 Alarms include the provision of break glass buttons and manual pull boxes that are used to activate alarms.
 
-> HISTORY&nbsp; New entity in IFC4
+> HISTORY  New entity in IFC4
 
 { .note}
 >
@@ -24,18 +24,31 @@ Either there is no alarm type object associated, i.e. the _IsTypedBy_ inverse re
 
 ## Concepts
 
-### Material
+### Material Constituent Set
 
+
+
+#### Casing
+
+Material from which the casing is constructed.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_Input_SIGNAL
+
+Receives signal.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

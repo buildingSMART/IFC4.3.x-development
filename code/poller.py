@@ -1,6 +1,7 @@
 import os
 import sys
 import time
+import requests
 import subprocess
 
 XML_PATH = "/tmp/ifc43-xml"
@@ -20,7 +21,9 @@ while True:
     subprocess.check_output(["git", "-C", REPO_DIR, "reset", "--hard", "origin/master"])
     c = subprocess.check_output(["git", "-C", REPO_DIR, "rev-parse", "HEAD"])
     
-    if a != c or not os.listdir(XML_PATH):
+    first_time = not os.listdir(XML_PATH)
+    
+    if a != c or first_time:
     
         subprocess.call([sys.executable, "transform_to_xml.py", os.path.join(REPO_DIR, "docs"), XML_PATH])
         subprocess.call(["/solr-8.6.3/bin/solr", "create_core", "-force", "-c", "ifc"])
@@ -34,6 +37,10 @@ while True:
         
         subprocess.call([sys.executable, "process_schema.py", os.path.join(REPO_DIR, "schemas/IFC.xml")])
         
+        if first_time:
+            # First time. Spider the site to build indices in Redis. Then terminate.
+            subprocess.call("wget -q --recursive --spider -S localhost".split(" "))
+            requests.post("http://localhost/build_index")
+            subprocess.call("redis-cli shutdown".split(" "))
     else:
-    
         time.sleep(60)

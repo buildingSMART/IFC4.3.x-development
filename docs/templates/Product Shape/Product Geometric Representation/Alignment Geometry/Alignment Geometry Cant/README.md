@@ -21,10 +21,10 @@ concept {
     IfcCurveSegment -> Arc_Segment
     IfcCurveSegment -> Bloss_Transition_Segment
     IfcCurveSegment -> Clothoid_Transition_Segment
-    IfcCurveSegment -> Cosine_Transition_Segment
+    IfcCurveSegment -> Cosine_Spiral_Transition_Segment
     IfcCurveSegment -> Helmert_Transition_Segment
     IfcCurveSegment -> Linear_Segment
-    IfcCurveSegment -> Sine_Transition_Segment
+    IfcCurveSegment -> Sine_Spiral_Transition_Segment
     IfcCurveSegment -> Viennese_Bend_Transition_Segment
     IfcShapeRepresentation:RepresentationIdentifier[binding="Identifier"]
     IfcShapeRepresentation:RepresentationType[binding="Type"]

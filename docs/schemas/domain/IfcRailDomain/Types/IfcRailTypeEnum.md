@@ -19,7 +19,7 @@ A stock rail is a fixed machined rail, ensuring the continuity on the main or di
 Note: definition from EN 13232-1-2004.
 
 ### CHECKRAIL
-A check rail is a rail laid close to the gauge face of a running rail which takes part in lateral guidance of the wheel and prevents derailment in small radius curved track and switches and crossings. 
+A check rail is a rail laid close to the gauge face of a running rail which takes part in lateral guidance of the wheel and prevents derailment in small radius curved track and switches and crossings.
 Note: definition from EN 13481-1.
 
 ### RAIL

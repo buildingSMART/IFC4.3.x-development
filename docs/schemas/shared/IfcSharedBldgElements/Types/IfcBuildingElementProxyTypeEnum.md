@@ -1,14 +1,14 @@
-# IfcBuiltElementProxyTypeEnum
+# IfcBuildingElementProxyTypeEnum
 
-This enumeration defines the available generic types for _IfcBuiltElementProxy_ or _IfcBuiltElementProxyType_.
+This enumeration defines the available generic types for _IfcBuildingElementProxy_ or _IfcBuildingElementProxyType_.
 
-> HISTORY&nbsp; New enumeration IFC2x3
+> HISTORY  New enumeration IFC2x3
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Enumerators PROVISIONFORVOID and PROVISIONFORSPACE added.
+> IFC4 CHANGE  Enumerators PROVISIONFORVOID and PROVISIONFORSPACE added.
 
 { .deprecated}
-> DEPRECATION&nbsp; The enumerator COMPLEX, ELEMENT, PARTIAL shall no longer be used.
+> DEPRECATION  The enumerator COMPLEX, ELEMENT, PARTIAL shall no longer be used.
 
 ## Items
 

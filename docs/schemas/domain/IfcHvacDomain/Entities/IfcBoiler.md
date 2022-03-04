@@ -4,7 +4,7 @@ A boiler is a closed, pressure-rated vessel in which water or other fluid is hea
 
 _IfcBoiler_ is a vessel solely used for heating of water or other fluids. Storage vessels, such as for drinking water storage are considered as tanks and use the _IfcTank_ entity.
 
-> HISTORY&nbsp; New entity in IFC4
+> HISTORY  New entity in IFC4
 
 { .note}
 >
@@ -24,18 +24,59 @@ Either there is no boiler type object associated, i.e. the _IsTypedBy_ inverse r
 
 ## Concepts
 
-### Material
+### Material Constituent Set
 
+
+
+#### Casing
+
+Material from which the casing is constructed.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_Gas_STEAM_GAS
+
+Gas inlet for burner.
+
+#### SOURCE_Exhaust_STEAM_EXHAUST
+
+Exhaust sent to outside.
+
+#### SOURCE_Condenser_STEAM_CONDENSERWATER
+
+Water feed such as from condenser.
+
+#### SOURCE_Heating_STEAM_HEATING
+
+Steam sent to heating coils and space heaters.
+
+#### SINK_Gas_WATER_GAS
+
+Gas inlet for burner.
+
+#### SOURCE_Exhaust_WATER_EXHAUST
+
+Exhaust sent to outside.
+
+#### SINK_ColdWater_WATER_DOMESTICCOLDWATER
+
+Cold water to be heated.
+
+#### SOURCE_HotWater_WATER_DOMESTICHOTWATER
+
+Hot water heated.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

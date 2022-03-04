@@ -2,10 +2,10 @@
 
 A reinforcing mesh is a series of longitudinal and transverse wires or bars of various gauges, arranged at right angles to each other and welded at all points of intersection; usually used for concrete slab reinforcement. It is also known as welded wire fabric. In scope are plane meshes as well as bent meshes.
 
-> HISTORY&nbsp; New entity in IFC2x2
+> HISTORY  New entity in IFC2x2
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; All attributes are optional now. Several attributes are deprecated; their information is now provided by _IfcReinforcingMeshType_. Attribute _PredefinedType_ added.
+> IFC4 CHANGE  All attributes are optional now. Several attributes are deprecated; their information is now provided by _IfcReinforcingMeshType_. Attribute _PredefinedType_ added.
 
 { .use-head}
 Geometry Use Definition
@@ -22,49 +22,49 @@ The representation map of a mapped 'Body' representation should contain a repres
 Deprecated.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Attribute deprecated. Use respective attribute at _IfcReinforcingMeshType_ instead.
+> IFC4 CHANGE  Attribute deprecated. Use respective attribute at _IfcReinforcingMeshType_ instead.
 
 ### MeshWidth
 Deprecated.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Attribute deprecated. Use respective attribute at _IfcReinforcingMeshType_ instead.
+> IFC4 CHANGE  Attribute deprecated. Use respective attribute at _IfcReinforcingMeshType_ instead.
 
 ### LongitudinalBarNominalDiameter
 Deprecated.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Attribute made optional and deprecated. Use respective attribute at _IfcReinforcingMeshType_ instead.
+> IFC4 CHANGE  Attribute made optional and deprecated. Use respective attribute at _IfcReinforcingMeshType_ instead.
 
 ### TransverseBarNominalDiameter
 Deprecated.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Attribute made optional and deprecated. Use respective attribute at _IfcReinforcingMeshType_ instead.
+> IFC4 CHANGE  Attribute made optional and deprecated. Use respective attribute at _IfcReinforcingMeshType_ instead.
 
 ### LongitudinalBarCrossSectionArea
 Deprecated.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Attribute made optional and deprecated. Use respective attribute at _IfcReinforcingMeshType_ instead.
+> IFC4 CHANGE  Attribute made optional and deprecated. Use respective attribute at _IfcReinforcingMeshType_ instead.
 
 ### TransverseBarCrossSectionArea
 Deprecated.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Attribute made optional and deprecated. Use respective attribute at _IfcReinforcingMeshType_ instead.
+> IFC4 CHANGE  Attribute made optional and deprecated. Use respective attribute at _IfcReinforcingMeshType_ instead.
 
 ### LongitudinalBarSpacing
 Deprecated.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Attribute made optional and deprecated. Use respective attribute at _IfcReinforcingMeshType_ instead.
+> IFC4 CHANGE  Attribute made optional and deprecated. Use respective attribute at _IfcReinforcingMeshType_ instead.
 
 ### TransverseBarSpacing
 Deprecated.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Attribute made optional and deprecated. Use respective attribute at _IfcReinforcingMeshType_ instead.
+> IFC4 CHANGE  Attribute made optional and deprecated. Use respective attribute at _IfcReinforcingMeshType_ instead.
 
 ### PredefinedType
 Kind of mesh.
@@ -81,15 +81,15 @@ If this occurrence is defined by a type object, the latter has to be an _IfcRein
 
 ### Body Geometry
 
-The representation map referenced by a 'Body' 'MappedRepresentation' could contain a representation of type 'AdvancedSweptSolid' which holds an IfcSweptDiskSolid (including subtype IfcSweptDiskSolidPolygonal). Multiple IfcMappedItem's can be used to represent the bars within a mesh as one occurrence of IfcReinforcingMesh.
+### Mapped Geometry
 
+The representation map referenced by a 'Body' 'MappedRepresentation' could contain a representation of type 'AdvancedSweptSolid' which holds an IfcSweptDiskSolid (including subtype IfcSweptDiskSolidPolygonal). Multiple IfcMappedItem's can be used to represent the bars within a mesh as one occurrence of IfcReinforcingMesh.
 
 ### Object Typing
 
-
-### Property Sets
-
+### Property Sets for Objects
 
 ### Quantity Sets
 
+### Reinforcing Mesh Attributes
 

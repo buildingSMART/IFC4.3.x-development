@@ -2,7 +2,7 @@
 
 A flow meter is a device that is used to measure the flow rate in a system.
 
-> HISTORY&nbsp; New entity in IFC4
+> HISTORY  New entity in IFC4
 
 { .note}
 >
@@ -22,18 +22,59 @@ Either there is no flow meter type object associated, i.e. the _IsTypedBy_ inver
 
 ## Concepts
 
-### Material
+### Material Constituent Set
 
+
+
+#### Casing
+
+Material from which the casing is constructed.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_Inlet_ENERGYMETER_ELECTRICAL
+
+Inlet from utility.
+
+#### SOURCE_Outlet_ENERGYMETER_ELECTRICAL
+
+Measured use.
+
+#### SINK_Inlet_GASMETER_GAS
+
+Inlet from utility.
+
+#### SOURCE_Outlet_GASMETER_GAS
+
+Measured use.
+
+#### SINK_Inlet_OILMETER_OIL
+
+Inlet from utility.
+
+#### SOURCE_Outlet_OILMETER_OIL
+
+Measured use.
+
+#### SINK_Inlet_WATERMETER_DOMESTICCOLDWATER
+
+Inlet from utility.
+
+#### SOURCE_Outlet_WATERMETER_DOMESTICCOLDWATER
+
+Measured use.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

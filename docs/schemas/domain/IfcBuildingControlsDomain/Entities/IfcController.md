@@ -4,7 +4,7 @@ A controller is a device that monitors inputs and controls outputs within a buil
 
 A controller may be physical (having placement within a spatial structure) or logical (a software interface or aggregated within a programmable physical controller).
 
-> HISTORY&nbsp; New entity in IFC4
+> HISTORY  New entity in IFC4
 
 { .note}
 >
@@ -24,27 +24,105 @@ Either there is no controller type object associated, i.e. the _IsTypedBy_ inver
 
 ## Concepts
 
-### Composition
+### Aggregation
 
-Figure 328 illustrates controller composition use.
+Figure 1 illustrates controller composition use.
+
+![Composition Use Definition](../../../../figures/ifccontroller-composition.png "Figure 1 &mdash; Controller composition use")
+
+#### PROGRAMMABLE_IfcController
+
+May contain IfcController components. Programmable Logic Controllers may be decomposed into logical elements for values and operations.
+
+### Material Constituent Set
 
 
-![Composition Use Definition](../../../../figures/ifccontroller-composition.png)Figure 328 — Controller composition use
 
+#### Casing
 
-
-### Material
-
+Material from which the casing is constructed.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_Input_FLOATING_SIGNAL
+
+Receives the first parameter.
+
+#### SINK_Modifier_FLOATING_SIGNAL
+
+Receives the second parameter (if applicable).
+
+#### SOURCE_Output_FLOATING_SIGNAL
+
+Sets the output value.
+
+#### SINK_Input_MULTIPOSITION_SIGNAL
+
+Receives the first parameter.
+
+#### SINK_Modifier_MULTIPOSITION_SIGNAL
+
+Receives the second parameter (if applicable).
+
+#### SOURCE_Output_MULTIPOSITION_SIGNAL
+
+Sets the output value.
+
+#### SINK_Power_PROGRAMMABLE_ELECTRICAL
+
+Receives electrical power.
+
+#### SINK_Control_PROGRAMMABLE_CONTROL
+
+Direct communication to the device (e.g. serial port).
+
+#### SOURCE_Data_PROGRAMMABLE_DATA
+
+Network communication to the device (e.g. TCP/IP network).
+
+#### SINK_Input1_PROGRAMMABLE_SIGNAL
+
+Analog or digital inputs.
+
+#### SOURCE_Output1_PROGRAMMABLE_SIGNAL
+
+Analog or digital outputs.
+
+#### SINK_Input_PROPORTIONAL_SIGNAL
+
+Receives the first parameter.
+
+#### SINK_Modifier_PROPORTIONAL_SIGNAL
+
+Receives the second parameter (if applicable).
+
+#### SOURCE_Output_PROPORTIONAL_SIGNAL
+
+Sets the output value.
+
+#### SINK_Input_TWOPOSITION_SIGNAL
+
+Receives the first parameter.
+
+#### SINK_Modifier_TWOPOSITION_SIGNAL
+
+Receives the second parameter (if applicable).
+
+#### SOURCE_Output_TWOPOSITION_SIGNAL
+
+Sets the output value.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

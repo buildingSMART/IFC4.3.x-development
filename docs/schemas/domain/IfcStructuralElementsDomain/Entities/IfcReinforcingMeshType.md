@@ -9,7 +9,7 @@ The reinforcing element type **IfcReinforcingMeshType** defines commonly shared 
 
 It is used to define a reinforcing mesh type specification indicating the specific product information that is common to all occurrences of that product type. The **IfcReinforcingMeshType** may be declared within _IfcProject_ or _IfcProjectLibrary_ using _IfcRelDeclares_ and may be exchanged with or without occurrences of the type. Occurrences of **IfcReinforcingMeshType** are represented by instances of _IfcReinforcingMesh_.
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 { .use-head}
 Geometry Use Definition
@@ -58,3 +58,10 @@ The inherited attribute _ElementType_ shall be provided if the _PredefinedType_ 
 
 ### BendingShapeCodeProvided
 Bending parameters must be accompanied by a shape code.
+
+## Concepts
+
+### Reinforcing Mesh Type Attributes
+
+
+

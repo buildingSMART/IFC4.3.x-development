@@ -35,7 +35,7 @@ def generate_definitions():
     for item in xmi_doc:
 
         loc = xmi_doc.xmi.locate(item.node) if item.node else (None, None)
-        yield item.package, loc, (valid_key(item.name),), (item.markdown if item.node else item.name)
+        yield item.package, loc, (valid_key(item.name),), (item.markdown_definition if item.node else item.name)
         
         if item.type in {"ENUM", "ENTITY", "PSET", "PENUM"}:
             for subitem in item:
@@ -46,7 +46,7 @@ def generate_definitions():
                     if subitem.name in props_seen:
                         continue
                     props_seen.add(subitem.name)
-                yield item.package, loc, key, ((subitem.markdown or subitem.name) if subitem.node else subitem.name)
+                yield item.package, loc, key, ((subitem.markdown_definition or subitem.name) if subitem.node else subitem.name)
         
 def quote(s):
     return '"%s"' % s

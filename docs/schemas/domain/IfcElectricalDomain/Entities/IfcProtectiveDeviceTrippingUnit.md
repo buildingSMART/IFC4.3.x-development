@@ -2,7 +2,7 @@
 
 A protective device tripping unit breaks an electrical circuit at a separate breaking unit when a stated electric current that passes through the unit is exceeded.
 
-> HISTORY&nbsp; New entity in IFC4
+> HISTORY  New entity in IFC4
 
 { .note}
 >
@@ -25,12 +25,20 @@ Either there is no protective device tripping unit type object associated, i.e. 
 ### Control Flow
 
 
+
+#### IfcProtectiveDevice
+
+The corresponding breaker unit for breaking the circuit.
+
 ### Object Typing
+
 
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

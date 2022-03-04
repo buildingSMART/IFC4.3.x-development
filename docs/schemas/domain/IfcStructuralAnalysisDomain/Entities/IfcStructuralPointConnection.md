@@ -2,10 +2,10 @@
 
 Instances of _IfcStructuralPointConnection_ describe structural nodes or point supports.
 
-> HISTORY&nbsp; New entity in IFC2x2.
+> HISTORY  New entity in IFC2x2.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Attribute _ConditionCoordinateSystem_ added, allowing for skewed supports. Use definitions added.
+> IFC4 CHANGE  Attribute _ConditionCoordinateSystem_ added, allowing for skewed supports. Use definitions added.
 
 ****Coordinate Systems****:
 
@@ -21,6 +21,4 @@ Defines a coordinate system used for the description of the support condition pr
 ### Reference Topology
 
 Instances of IfcStructuralPointConnection shall have a topology representation which consists of one IfcVertexPoint, representing the reference point of the point connection. See definitions at IfcStructuralItem for further specifications.
-
-
 

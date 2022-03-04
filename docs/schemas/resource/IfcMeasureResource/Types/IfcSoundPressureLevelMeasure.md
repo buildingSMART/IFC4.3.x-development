@@ -4,4 +4,4 @@ A sound pressure level measure is a measure of the pressure fluctuations superim
 
 Type: REAL
 
-> HISTORY&nbsp; Renamed in IFC4 (was IfcSoundPressureMeasure).
+> HISTORY  Renamed in IFC4 (was IfcSoundPressureMeasure).

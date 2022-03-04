@@ -2,7 +2,7 @@
 
 A motor connection provides the means for connecting a motor as the driving device to the driven device.
 
-> HISTORY&nbsp; New entity in IFC4
+> HISTORY  New entity in IFC4
 
 { .note}
 >
@@ -22,18 +22,35 @@ Either there is no motor connection type object associated, i.e. the _IsTypedBy_
 
 ## Concepts
 
-### Material
+### Material Constituent Set
 
+
+
+#### Casing
+
+Material from which the casing is constructed.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_Motor_NOTDEFINED
+
+Connection from the motor.
+
+#### SOURCE_Motor_NOTDEFINED
+
+Connection to the driven device.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

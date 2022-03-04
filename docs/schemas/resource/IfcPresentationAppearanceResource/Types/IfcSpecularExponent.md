@@ -4,6 +4,6 @@ The _IfcSpecularExponent_ defines the datatype for exponent determining the shar
 
 _IfcSpecularExponent_ is of type REAL.
 
-> NOTE&nbsp; The datatype relates to the definition of specular_exponent in ISO 10303-46 entity surface_style_reflectance_ambient_diffuse_specular.
+> NOTE  The datatype relates to the definition of specular_exponent in ISO 10303-46 entity surface_style_reflectance_ambient_diffuse_specular.
 
-> HISTORY&nbsp; New type in IFC2x2.
+> HISTORY  New type in IFC2x2.

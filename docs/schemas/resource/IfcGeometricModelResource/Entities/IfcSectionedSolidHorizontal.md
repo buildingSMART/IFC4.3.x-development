@@ -8,7 +8,12 @@ For sections having cross-section rotated according to a single super-elevation,
 
 Figure 1 illustrates four girders of a bridge having a constant parameterized profile, two guardrails having a constant arbitrary profile (one of them mirrored), and a bridge deck having a variable arbitrary profile.
 
-!["spatial structure"](../../../../figures/ifcsectionedsolidhorizontal.png "Figure 1 &mdash; Sectioned solid horizontal")
+![spatial structure](../../../../figures/ifcsectionedsolidhorizontal.png "Figure 1 &mdash; Sectioned solid horizontal")
+
+![IfcSectionedSolidHorizontal1](../../../../figures/IfcSectionedSolidHorizontal1.png "Figure 2 Side View with consequences for FixedAxisVertical attribute.")
+
+![IfcSectionedSolidHorizontal2](../../../../figures/IfcSectionedSolidHorizontal2.png "Figure 3 - Example Shape in red based on two Cross Sections both not starting at the beginning or end and different in shape.")
+
 
 **Informal Propositions:**
 

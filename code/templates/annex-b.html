@@ -1,12 +1,18 @@
 {% extends "main.html" %}
 {% block pagecontent %}
 
-<h1>Annex B Alphabetical listings</h1>
+<h1>
+    Annex B Alphabetical listings{% if title %} - {{ title }}{% endif %}
+</h1>
 
 <ol class="referenced-list{% if is_dictionary %} dictionary{% endif %}">
     {% for item in items %}
     <li number="{{ item.number }}">
-        <a href="{{ item.url }}">{{ item.title }}</a>
+        {% if item.url %}
+            <a href="{{ item.url }}">{{ item.name }}</a>
+        {% else %}
+            {{ item.name }}
+        {% endif %}
     </li>
     {% endfor %}
 </ol>

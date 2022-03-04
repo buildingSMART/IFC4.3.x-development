@@ -6,7 +6,7 @@ A resource type represents a model of "use of something" and does not necessaril
 
 A construction resource type captures common productivities and cost rates for applying resources to particular task types.
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 { .use-head}
 Composition use definition
@@ -18,7 +18,7 @@ Assignment use definition
 
 Resource types may be assigned to process types (_IfcTypeProcess_ subtypes) using the _IfcRelAssignsToProcess_ relationship as shown in Figure 1. Such relationship indicates that the resource type applies to the process type for the use indicated (e.g. _IfcTaskType.PredefinedType_). Such relationship enables a scenario of placing an _IfcProduct_ of a particular _IfcTypeProduct_, querying for a set of _IfcTypeProcess_ process types for constructing such product (e.g. _IfcTaskTypeEnum.CONSTRUCTION_), querying each _IfcTypeProcess_ for a set of _IfcTypeResource_ resource types for carrying out the process, and finally choosing an _IfcTypeProcess_ and _IfcTypeResource_ combination resulting in the shortest time for instantiated _IfcTask_ occurrence(s) and/or lowest-cost for instantiated _IfcConstructionResource_ occurrence(s).
 
-!["Assignment Use Definition"](../../../../figures/ifcconstructionresourcetype-assignment.png "Figure 1 &mdash; Construction resource type assignment")
+![Assignment Use Definition](../../../../figures/ifcconstructionresourcetype-assignment.png "Figure 1 &mdash; Construction resource type assignment")
 
 ## Attributes
 

@@ -9,4 +9,4 @@ Property sets are related to other objects by using the relationship object that
 
 _IfcPreDefinedPropertySet_'s can be assigned to objects and object types but do not have a defining property set template.
 
-> HISTORY&nbsp; New entity in IFC4
+> HISTORY  New entity in IFC4

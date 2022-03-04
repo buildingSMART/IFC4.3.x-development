@@ -7,4 +7,4 @@ There are two different types of relationships, 1-to-1 relationships and 1-to-ma
 * The two sides of the objectified relationship are named   Relating+<name of relating object> and   Related+<name of related object>
 * In case of the 1-to-many relationship, the related side of the relationship shall be an aggregate being a set 1:N
 
-> HISTORY&nbsp; New entity in IFC1.0.
+> HISTORY  New entity in IFC1.0.

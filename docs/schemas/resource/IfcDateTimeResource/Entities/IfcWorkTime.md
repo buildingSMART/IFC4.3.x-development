@@ -6,7 +6,7 @@ A work time should have a meaningful name that describes the time periods (for e
 
 The start and finish date is optional if a recurrence pattern is given (_IfcWorkTime.RecurrencePattern_). They then restrict never-ending recurrence patterns.
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 ## Attributes
 

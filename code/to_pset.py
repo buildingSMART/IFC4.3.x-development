@@ -85,10 +85,9 @@ def build_property_defs(xmi_doc, pset, node, by_name):
                 el = ET.SubElement(tpev, 'EnumList')
                 el.set('name', ty_arg)
                 
-                enum_type = elem_by_name(ty_arg)
-                p_id_values = sorted((xmi_doc.try_get_order(x), x.name) for x in enum_type/"ownedLiteral")
+                enum_type = by_name[ty_arg]
                 
-                for pid, pv in p_id_values:
+                for pv in [c.name for c in enum_type.children]:
                     ET.SubElement(el, 'EnumItem').text = pv
                     
             elif ty == "PropertyComplexProperty":
@@ -140,9 +139,8 @@ def construct_xml(xmi_doc, pset, path, by_id, by_name):
     psd = ET.Element('PropertySetDef' if pset.stereotype == "PSET" else 'QtoSetDef')
     psd.set('xmlns:xsi', 'http://www.w3.org/2001/XMLSchema-instance')
     psd.set('xmlns:xsd', 'http://www.w3.org/2001/XMLSchema')
-    if pset.stereotype == "PSET":
-        ttype = (pset.node/"properties")[0].stereotype
-        psd.set('templatetype', ttype)
+    ttype = (pset.node/"properties")[0].stereotype
+    psd.set('templatetype', ttype)
     
     if pset.stereotype == "PSET":
         psd.set('xsi:noNamespaceSchemaLocation', 'http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd')
@@ -164,12 +162,23 @@ def construct_xml(xmi_doc, pset, path, by_id, by_name):
     atv_values = []
     
     for x in (pset.meta.get("refs") or []):
+        # In order to annotate TypeObject+PredefinedTpye a tuple is used
+        # carrying the xmi_id of the type object and the predefined type
+        # label as a string
+        predefined_type_label = None
+        if isinstance(x, tuple):
+            x, predefined_type_label = x
         if x in by_id:
             x = by_id[x]
             if x.type == "ENTITY" or (x.parent and x.parent.type == "ENUM"):
                 nm = x.name
                 if x.parent and get_parent_of_pt(xmi_doc, x.parent.node):
                     nm = get_parent_of_pt(xmi_doc, x.parent.node) + "." + nm
+                    
+                if predefined_type_label:
+                    assert "." not in nm
+                    nm = ".".join((nm, predefined_type_label))
+                    
                 nm = nm.replace(".", "/")
                 ET.SubElement(acs, 'ClassName').text = nm
                 atv_values.append(nm)

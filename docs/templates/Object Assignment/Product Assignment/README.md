@@ -6,7 +6,7 @@ Products may have assignments indicating processes that operate upon the product
 ```
 concept {
     IfcProduct:ReferencedBy -> IfcRelAssignsToProduct:RelatingProduct
-    IfcRelAssignsToProduct:RelatedObjects -> IfcObject
+    IfcRelAssignsToProduct:RelatedObjects -> IfcObject:HasAssignments
     IfcRelAssignsToProduct:RelatedObjects[binding="Type"]
 }
 ```

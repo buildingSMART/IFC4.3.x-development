@@ -17,7 +17,10 @@ def dump(rule, parents, file):
     print(" " * len(parents), "- ", rule.attribute, sep='', file=file)
 
 def remove_quotes(v):
-    if v[0] == "'" and v[-1] == "'": return v[1:-1]
+    if v[0] == "'" and v[-1] == "'":
+        return v[1:-1]
+    else:
+        return v
 
 @dataclasses.dataclass(order=True, frozen=True)
 class concept_binding:
@@ -26,15 +29,10 @@ class concept_binding:
     definition: str
     rules: object
     parameters: object
+    parameter_docs: list
     
 
-def enumerate_concepts(fn=None, with_rules=True):
-    if fn is None:
-        fn = os.path.join(
-            os.path.dirname(__file__),
-            "../mvdXML/IFC4_ADD2.mvdxml"
-        )
-
+def enumerate_concepts(fn, with_rules=True):
     roots = list(mvd.concept_root.parse(fn))
     for root in roots:
         for concept in root.concepts():
@@ -53,8 +51,14 @@ def enumerate_concepts(fn=None, with_rules=True):
             parameters = defaultdict(list)
             for k, v in map(operator.attrgetter('a', 'c'), filter(lambda x: isinstance(x, expression_node), flatten(concept.rules()))):
                 parameters[k].append(remove_quotes(v))
-
-            yield concept_binding(root.entity, concept.name, definition, rules, dict(parameters.items()))
+                
+            parameter_docs = [n.getAttribute("Description") for n in concept.concept_node.getElementsByTagName('TemplateRule')]
+            if parameter_docs:
+                param_len = len(next(iter(parameters.values())))
+                if param_len != len(parameter_docs):
+                    breakpoint()
+                
+            yield concept_binding(root.entity, concept.name, definition, rules, dict(parameters.items()), parameter_docs)
 
 
 if __name__ == "__main__":

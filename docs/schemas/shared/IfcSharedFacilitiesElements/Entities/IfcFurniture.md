@@ -4,7 +4,7 @@ Furniture defines complete furnishings such as a table, desk, chair, or cabinet,
 
 Occurrences of furniture that are built in (where the property _Pset_FurnitureTypeCommon.IsBuiltIn_ is asserted to be TRUE) should have their connection relationship with a building element occurrence defined through the _IfcRelConnectsElements_ relationship.
 
-> HISTORY&nbsp; New entity in IFC2x2.
+> HISTORY  New entity in IFC2x2.
 
 ## Attributes
 
@@ -18,18 +18,45 @@ Occurrences of furniture that are built in (where the property _Pset_FurnitureTy
 
 ### CorrectTypeAssigned
 
-
 ## Concepts
 
 ### Aggregation
 
 
-### Material Constituents
 
+#### IfcSystemFurnitureElement
+
+Modular furniture may be aggregated into components.
+
+### Material Constituent Set
+
+
+
+#### Finish
+
+The finish, typically at visible aspects of the furniture.
+
+#### Frame
+
+The frame from which the object is constructed.
+
+#### Hardware
+
+Finiish hardware such as knobs or handles.
+
+#### Padding
+
+Padding such as cushions.
+
+#### Panel
+
+Panels such as glass.
 
 ### Object Typing
 
 
+
 ### Property Sets for Objects
+
 
 

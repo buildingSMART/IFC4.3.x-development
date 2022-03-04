@@ -6,4 +6,4 @@ A flow controller type is used to define the common properties of a flow control
 
 Occurrences of the _IfcFlowControllerType_ are represented by instances of _IfcFlowController_ or its subtypes.
 
-> HISTORY&nbsp; New entity in IFC2x2.
+> HISTORY  New entity in IFC2x2.

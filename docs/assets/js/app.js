@@ -79,7 +79,7 @@ function generateSectionNavigation() {
             ol.append(li);
         }
     });
-    if (ol.getElementsByTagName('li').length) {
+    if (ol.getElementsByTagName('li').length > 1) {
         nav.classList.remove('hidden');
     }
 }
@@ -100,6 +100,45 @@ function initialiseBackToTopButton() {
         document.body.scrollTop = 0; // For Safari
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     });
+}
+
+function setupInheritanceToggle() {
+    let showElements = document.getElementsByClassName('show-inherited');
+    let hideElements = document.getElementsByClassName('hide-inherited');
+
+    function refreshInheritanceDisplay(type, showInherited) {
+        let inheritedRows = document.getElementsByClassName('inherited');
+        for (let i=0; i<inheritedRows.length; i++) {
+            if (inheritedRows[i].getAttribute('data-type') == type) {
+                inheritedRows[i].style.display = showInherited ? 'table-row' : 'none';
+            }
+        }
+        for (let i=0; i<showElements.length; i++) {
+            if (showElements[i].getAttribute('data-type') == type) {
+                showElements[i].style.display = showInherited ? 'none' : 'block';
+            }
+        }
+        for (let i=0; i<hideElements.length; i++) {
+            if (hideElements[i].getAttribute('data-type') == type) {
+                hideElements[i].style.display = showInherited ? 'block' : 'none';
+            }
+        }
+    }
+
+    for (let i=0; i<showElements.length; i++) {
+        showElements[i].addEventListener('click', function() {
+            refreshInheritanceDisplay(showElements[i].getAttribute('data-type'), true);
+        });
+    }
+
+    for (let i=0; i<hideElements.length; i++) {
+        hideElements[i].addEventListener('click', function() {
+            refreshInheritanceDisplay(showElements[i].getAttribute('data-type'), false);
+        });
+    }
+
+    refreshInheritanceDisplay('attribute', false);
+    refreshInheritanceDisplay('concept', false);
 }
 
 function setupMathJax() {
@@ -235,19 +274,34 @@ function setupHighlightJS() {
             case_insensitive: !0,
             lexemes: "[a-z-]+",
             keywords: {
-                section: "ENTITY END_ENTITY TYPE END_TYPE",
-                built_in: "OPTIONAL NOT OR EXISTS SET SIZEOF SELF TYPEOF AND IN ONEOF LIST QUERY",
-                keyword: "SUBTYPE OF WHERE ENUMERATION ABSTRACT SUPERTYPE INVERSE FOR"
+                // I actually didn't check what these are I just did trial and error until I liked the colours
+                section: "ENTITY END_ENTITY TYPE END_TYPE FUNCTION END_FUNCTION LOCAL END_LOCAL BEGIN END IF THEN END_IF REPEAT END_REPEAT CASE END_CASE OTHERWISE RULE END_RULE",
+                built_in: "OPTIONAL NOT OR EXISTS SET SIZEOF SELF TYPEOF AND IN ONEOF LIST QUERY ARRAY INTEGER LOGICAL HIINDEX NVL",
+                keyword: "SUBTYPE OF WHERE ENUMERATION ABSTRACT SUPERTYPE INVERSE FOR TO RETURN"
             }
         }
     }));
-
+    // HighlightJS does not support HTML inside highlighted code:
+    // https://github.com/highlightjs/highlight.js/wiki/security
+    // This hook selectively allows links.
+    const anchor_regex = /<a href="(.*?)">(\w+?)<\/a>/g;
+    const fakeanchor_regex = /{{(.*?):(\w+?)}}/g;
+    hljs.addPlugin({
+        'before:highlightElement': ({ el, language }) => {
+            let result = '';
+            el.innerHTML = el.innerHTML.replace(anchor_regex, '{{$1:$2}}');
+        },
+        'after:highlightElement': ({ el, result }) => {
+            el.innerHTML = el.innerHTML.replace(fakeanchor_regex, '<a href="$1">$2</a>')
+        }
+    });
     hljs.highlightAll();
     hljs.initLineNumbersOnLoad();
 }
 
 setupMathJax();
 setupHighlightJS();
+setupInheritanceToggle();
 makeHeadersCollapsible();
 generateSectionNavigation();
 initialiseBackToTopButton();

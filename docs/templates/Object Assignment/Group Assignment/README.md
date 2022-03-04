@@ -8,14 +8,14 @@ The _Group Assignment_ concept establish a given object as being the group colle
 * Group collection is handled by an instance of _IfcRelAssignsToGroup_, which assigns all group members to the _IfcGroup_ being the collection.
 * Objects included in group as collected items are linked by _IsGroupedBy_ pointing to _IfcRelAssignsToGroup_
 
-> NOTE&nbsp; The _IfcGroup_ maybe not yet have a grouping relationship established, it then identifies an empty group.
+> NOTE  The _IfcGroup_ maybe not yet have a grouping relationship established, it then identifies an empty group.
 
-> EXAMPLE&nbsp; An air handler belonging to an air conditioning system is an example of such group assignment.
+> EXAMPLE  An air handler belonging to an air conditioning system is an example of such group assignment.
 
 ```
 concept {
     IfcGroup:IsGroupedBy -> IfcRelAssignsToGroup:RelatingGroup
-    IfcRelAssignsToGroup:RelatedObjects -> IfcProduct
+    IfcRelAssignsToGroup:RelatedObjects -> IfcObject:HasAssignments
     IfcGroup:IsGroupedBy[binding="IsGrouped"]
     IfcRelAssignsToGroup:RelatedObjects[binding="RelatedObjects"]
 }

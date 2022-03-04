@@ -2,7 +2,7 @@
 
 An air-to-air heat recovery device employs a counter-flow heat exchanger between inbound and outbound air flow. It is typically used to transfer heat from warmer air in one chamber to cooler air in the second chamber (i.e., typically used to recover heat from the conditioned air being exhausted and the outside air being supplied to a building), resulting in energy savings from reduced heating (or cooling) requirements.
 
-> HISTORY&nbsp; New entity in IFC4
+> HISTORY  New entity in IFC4
 
 { .note}
 >
@@ -22,18 +22,47 @@ Either there is no air-to-air heat recovery type object associated, i.e. the _Is
 
 ## Concepts
 
-### Material
+### Material Constituent Set
 
+
+
+#### Casing
+
+Material from which the casing is constructed.
+
+#### Media
+
+The primary media material used for heat transfer.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_AirInlet_AIRCONDITIONING
+
+Conditioned air in.
+
+#### SOURCE_AirOutlet_AIRCONDITIONING
+
+Conditioned air out.
+
+#### SINK_ExhaustInlet_AIRCONDITIONING
+
+Exhausted air in.
+
+#### SOURCE_ExhaustOutlet_AIRCONDITIONING
+
+Exhausted air out.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

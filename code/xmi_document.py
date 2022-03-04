@@ -84,9 +84,12 @@ def get_path(xmi_node):
 infinity = 1e9
 
 where_pat = re.compile(r"'\w+\.(\w+(\.\w+)?)'")
-def fix_schema_name(s):
+def fix_schema_name(s, remove=False):
     def repl(x):
-        return "'%s.%s'" % (SCHEMA_NAME, x.group(1))
+        if remove:
+            return x.group(1)
+        else:
+            return "'%s.%s'" % (SCHEMA_NAME, x.group(1))
     return remove_linebreak_before_semi(re.sub(where_pat, repl, s))
     
 def remove_linebreak_before_semi(s):
@@ -135,7 +138,7 @@ class xmi_item:
             "PT"    : "Types",
             "PSET"  : "PropertySets",
             "TYPE"  : "Types",
-            "PENUM" : "Types" ,
+            "PENUM" : "PropertyEnumerations",
             "SELECT": "Selects",
             "ENUM"  : "Types",
             "ENTITY": "Entities",
@@ -189,7 +192,11 @@ class xmi_item:
                 return missing_markdown(REPO_URL + p + " does not exist")
             
             hname = 'Attributes' if not is_sub or self.parent.type == "ENTITY" else 'Items'
-            md_parser = markdown_attribute_parser(open(md_fn, encoding='utf-8').read(), hname)
+            
+            if not os.path.exists(md_fn):
+                return missing_markdown(REPO_URL + p + " failed to parse")
+                
+            md_parser = markdown_attribute_parser(fn=md_fn, heading_name=hname, short=definition)
             
             if is_sub:                
                 attrs = dict(md_parser)
@@ -381,10 +388,7 @@ class xmi_document:
         
             if self.skip_by_package(c):
                 continue
-                                               
-            if "penum_" in c.name.lower():
-                continue
-                
+
             stereotype = (c/"properties")[0].stereotype if (c/"properties") else None
             if stereotype is not None: 
                 stereotype = stereotype.lower()
@@ -420,20 +424,76 @@ class xmi_document:
             elif stereotype is not None and (stereotype.startswith("pset_") or stereotype.startswith("qto_") or stereotype == "complexproperty"):
                 
                 if stereotype.startswith("qto_"):
-                    stereotype = "QSET"
+                    set_stereotype = "QSET"
                 elif stereotype.startswith("pset_"):
-                    stereotype = "PSET"
+                    set_stereotype = "PSET"
                 else:
-                    stereotype = "CPROP"
+                    set_stereotype = "CPROP"
                 
                 refs = None
                 
-                if stereotype == "PSET" or stereotype == "QSET":
+                if set_stereotype == "PSET" or set_stereotype == "QSET":
+                    
                     try:
-                        refs = self.concepts[(["Quantity", "Property"][stereotype == "PSET"]) + "SetsforObjects"].get(c.id or c.idref)
+                        refs = self.concepts[["QuantitySets", "PropertySetsforObjects"][set_stereotype == "PSET"]].get(c.id or c.idref)
                     except ValueError as e:
                         print("WARNING:", c.name, "has no associated class", file=sys.stderr)
                         continue
+                        
+                    # There are several kinds of pset and qset association mechanisms:
+                    # 
+                    # - occurence driven: only applicable to IfcObject subtypes
+                    # - type driven: only applicable to IfcTypeObject subtypes
+                    # - type driven override: applicable to both IfcObject and IfcTypeObject
+                    #                         where the former can override the latter
+                    # 
+                    # In UML we associate only to the IfcObject subtype and have the
+                    # pset mechanism encoded in the property set stereotype name.
+                    # 
+                    # In this step we make sure that the serialized data corresponds
+                    # to the association mechanism of the pset.
+                    is_type_driven_only = "typedrivenonly" in stereotype
+                    is_type_driven_override = "typedrivenoverride" in stereotype
+                    
+                    if is_type_driven_override or is_type_driven_only:
+                        get_name = lambda id_: self.xmi.by_id[id_].name
+                        ref_names = list(map(get_name, refs))
+                        
+                        def substitute_predefined_type_with_containing_entity(ref_name):
+                            """
+                            PQsets can also be associated to a predefined type which is
+                            modelled in UML as a class with a DOT in its name, signalling
+                            the enum container and predefined type value. We should trace
+                            the containment of such a predefined type ot the relevant entity
+                            by means of the formal UML association, but we take a shortcut
+                            here by looking at the name.                            
+                            """
+                            
+                            if "." in ref_name:
+                                type_name, type_value = ref_name.split(".")
+                                entity_name = re.sub("(Type)?Enum$", "", type_name)
+                                entity = [c for c in self.xmi.by_tag_and_type["packagedElement"]["uml:Class"] if c.name == entity_name][0]
+                                return entity.xmi_id, type_value
+                        
+                        ref_substituted_entities = list(map(substitute_predefined_type_with_containing_entity, ref_names))
+                        refs_combined = [b if b else (a,) for a, b in zip(refs, ref_substituted_entities)]
+                        
+                        # Lookup corresponding object types for the applicable entities
+                        object_typing_reversed = {v[0]: k for k, v in self.concepts['ObjectTyping'].items() if len(v) == 1}
+                        corresponding_types = list(filter(None, map(lambda id_pt: object_typing_reversed.get(id_pt[0], None), refs_combined)))
+                        
+                        if len(corresponding_types) != len(refs):
+                            ref_names = map(get_name, refs)
+                            ref_type_names = map(get_name, corresponding_types)
+                            print(f"WARNING: For PQset {c.name} applicability [{', '.join(ref_names)}] results in type associations [{', '.join(ref_type_names)}]")
+                        
+                        # augment with predefined types again:
+                        corresponding_types = [(a,) + b[1:] if b[1:] else a for a, b in zip(corresponding_types, refs_combined)]
+                        
+                        if is_type_driven_only:
+                            refs = corresponding_types
+                        else:
+                            refs = refs + corresponding_types
 
                 # TEMPORARY SKIP SOME OLD PSET DEFINITIONS
                 if (c|"project").author == 'IQSOFT':
@@ -444,7 +504,7 @@ class xmi_document:
                     nm = attr.name
                     ty = self.xmi.by_id[(attr|"type").idref]
                     
-                    if stereotype in ("PSET", "CPROP"):
+                    if set_stereotype in ("PSET", "CPROP"):
                     
                         for b in ty/"templateBinding":
                             if b/"parameterSubstitution":
@@ -461,14 +521,14 @@ class xmi_document:
                         set_definition.append((nm, ty.name))
 
                 yield xmi_item(
-                    "CPROP" if stereotype == "CPROP" else "PSET", 
+                    "CPROP" if set_stereotype == "CPROP" else "PSET", 
                     c.name, 
                     set_definition, 
                     c,
                     [(x.name, x) for x in c/("attribute")],
                     document=self, 
                     refs=refs,
-                    stereotype=stereotype
+                    stereotype=set_stereotype
                 )
                 
             elif c.xmi_type == "uml:DataType":
@@ -498,10 +558,27 @@ class xmi_document:
                 get_attribute = lambda n: [x for x in self.xmi.by_idref[n.xmi_id] if x.xml.tagName == "attribute"][0]
                 if not values:
                     values = [(x.name, get_attribute(x)) for x in self.xmi.by_id[c.xmi_idref]/"ownedLiteral"]
+                
+                is_property_enum = c.name.lower().startswith("penum_")
+
+                # alphabetical sort, but the items below always come last
+                undefined = ("OTHER", "NOTKNOWN", "UNSET", "USERDEFINED", "NOTDEFINED")
+                penalize_undefined = lambda tup: f"z{undefined.index(tup[0]):02d}" if tup[0] in undefined else tup[0]
+                
+                values = sorted(values, key=penalize_undefined)
+
+                express_definition = ""
+                if not is_property_enum:
+                    # not that it would fail, but they're just not intended to be written to EXP
+                    express_definition = express.enumeration(c.name, [a for a, b in values])
                     
                 yield xmi_item(
-                    "PENUM" if stereotype == "penumtype" or c.name.lower().startswith("penum_") else "ENUM", # <------- nb 
-                    c.name, express.enumeration(c.name, [a for a, b in values]), c, values, document=self)
+                    "PENUM" if is_property_enum else "ENUM",
+                    c.name,
+                    express_definition,
+                    c,
+                    values,
+                    document=self)
             
             elif stereotype == "express select" or stereotype == "select" or c.xmi_type == "uml:Interface":
                 
@@ -717,7 +794,7 @@ class xmi_document:
                     else:
                         return s
                     
-                cs = sorted(c/("constraint"), key=lambda cc: float_international(cc.weight))
+                cs = c/("constraint")
                 constraints_type_name_def = map(lambda cc: ((cc.type,) + tuple(map(trailing_semi_fix, map(unescape, map(functools.partial(getattr, cc), ("name", "description")))))), cs)
                 constraints_by_type = defaultdict(list)
                 for ct, cname, cdef in constraints_type_name_def:
@@ -726,14 +803,38 @@ class xmi_document:
                         cdef = cdef[len(cname) + 3:]
                     cc = (cname.strip(), fix_schema_name(cdef))
                     constraints_by_type[ct].append(cc)
-
-                attributes = map(operator.itemgetter(1), sorted(attributes))
+                                    
+                attributes = list(map(operator.itemgetter(1), sorted(attributes)))
                 inverses = map(operator.itemgetter(1), sorted(inverses))
                 derived = map(operator.itemgetter(1), sorted(derived))
+                attribute_dict = dict(attributes)
                 
+                itm_supertype_names = set(self.supertypes(c.idref))
+                is_occurence=itm_supertype_names & {"IfcElement", "IfcSystem", "IfcSpatialStructureElement"}
+                is_type = "IfcElementType" in itm_supertype_names
+                
+                if is_type or is_occurence:
+                    if "PredefinedType" in attribute_dict:
+                        type_attr = attribute_dict["PredefinedType"]
+                        type_name = type_attr.split(" ")[-1]
+                        type_optional = "OPTIONAL" in type_attr
+                        attr = "IfcElementType.ElementType" if is_type else "IfcObject.ObjectType"
+                        clause_1 = "NOT(EXISTS(PredefinedType)) OR\n " if type_optional else ''
+                        rule = clause_1 + "(PredefinedType <> %(type_name)s.USERDEFINED) OR\n ((PredefinedType = %(type_name)s.USERDEFINED) AND EXISTS (SELF\\%(attr)s))" % locals()
+                        constraints_by_type["EXPRESS_WHERE"].append(("CorrectPredefinedType", rule))
+
+                if is_occurence:
+                    if c.name + "Type" in [x.name for x in self.xmi.by_tag_and_type["packagedElement"]["uml:Class"]]:
+                        ty_def = [x for x in self.xmi.by_tag_and_type["packagedElement"]["uml:Class"] if x.name == c.name + "Type"][0]
+                        ty_attr_names = [attr.name for attr in ty_def/"ownedAttribute"]
+                        if "PredefinedType" in ty_attr_names:
+                            constraints_by_type["EXPRESS_WHERE"].append(
+                                ("CorrectTypeAssigned", "(SIZEOF(IsTypedBy) = 0) OR\n  ('%(schema_name)s.%(entity_name_upper)sTYPE' IN TYPEOF(SELF\\IfcObject.IsTypedBy[1].RelatingType))" % {'schema_name': SCHEMA_NAME, 'entity_name_upper': c.name.upper()})
+                            )
+
                 express_entity = express.entity(c.name, attributes, 
-                    derived, inverses, constraints_by_type["EXPRESS_WHERE"], 
-                    constraints_by_type["EXPRESS_UNIQUE"], subtypes, 
+                    derived, inverses, sorted(constraints_by_type["EXPRESS_WHERE"]),
+                    sorted(constraints_by_type["EXPRESS_UNIQUE"]), subtypes, 
                     supertypes, is_abstract
                 )
                              

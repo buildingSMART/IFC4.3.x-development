@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ifdguid="f2ef4380d20d11e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4" />
+  <Name>Pset_SwitchingDeviceTypeContactor</Name>
+  <Definition>An electrical device used to control the flow of power in a circuit on or off.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcSwitchingDevice/CONTACTOR</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcSwitchingDevice/CONTACTOR</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="f7b3f780d20d11e1800000215ad4efdf">
+      <Name>ContactorType</Name>
+      <Definition>A list of the available types of contactor from which that required may be selected where:
+
+CapacitorSwitching: for switching 3 phase single or multi-step capacitor banks.
+LowCurrent: requires the use of low resistance contacts.
+MagneticLatching: enables the contactor to remain in the on position when the coil is no longer energized.
+MechanicalLatching: requires that the contactor is mechanically retained in the on position.
+Modular: are totally enclosed and self contained.
+Reversing: has a double set of contactors that are prewired.
+Standard: is a generic device that controls the flow of power in a circuit on or off.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_ContactorType">
+            <EnumItem>CAPACITORSWITCHING</EnumItem>
+            <EnumItem>LOWCURRENT</EnumItem>
+            <EnumItem>MAGNETICLATCHING</EnumItem>
+            <EnumItem>MECHANICALLATCHING</EnumItem>
+            <EnumItem>MODULAR</EnumItem>
+            <EnumItem>REVERSING</EnumItem>
+            <EnumItem>STANDARD</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>CAPACITORSWITCHING</Name>
+              <NameAliases>
+                <NameAlias lang="en">Capacitor Switching</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>LOWCURRENT</Name>
+              <NameAliases>
+                <NameAlias lang="en">Low Current</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>MAGNETICLATCHING</Name>
+              <NameAliases>
+                <NameAlias lang="en">Magnetic Latching</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>MECHANICALLATCHING</Name>
+              <NameAliases>
+                <NameAlias lang="en">Mechanical Latching</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>MODULAR</Name>
+              <NameAliases>
+                <NameAlias lang="en">Modular</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>REVERSING</Name>
+              <NameAliases>
+                <NameAlias lang="en">Reversing</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>STANDARD</Name>
+              <NameAliases>
+                <NameAlias lang="en">Standard</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Contactor Type</NameAlias>
+        <NameAlias lang="ja-JP">接触器タイプ</NameAlias>
+        <NameAlias lang="ko-KR">접촉기 유형</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">以下より選択が必要となる、接触器の一覧リスト：
+
+コンデンサスイッチ：3つのシングルフェーズまたは複数のコンデンサバンクで切り替える。
+低流：低い抵抗接触の使用が必要
+マグネット式：コイルのエネルギーが無くなった時に切替をONポジションにして有効にする
+MechanicalLatching：切替器がONポジションを維持するために機械的な仕組みが必要。
+モジュール式：閉鎖されている自働型切替器。
+リバース：2つの切替器をワイヤーで接続したもの。
+標準：回路で電力潮流をオンまたはオフでコントロールする一般的な装置。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">다음에서 선택이 필요하다, 접촉기  목록 : 콘덴서 스위치 : 3 개의 단일 위상 이상의 커패시터 뱅크를 전환합니다. 낮은여 : 낮은 저항 접촉 사용해야 마그네틱 : 코일의 에너지가 분실된 때 전환을 ON 위치로하여 사용 MechanicalLatching : 판을 ON 위치를 유지하기 위해 기계적인 구조가 필요합니다. 모듈형 : 폐쇄되어있는 자신 동형 판. 리버스 : 두 판을 와이어로 연결한 것. 표준 : 회로에서 전력 조류를 켜지거나 꺼지지 컨트롤하는 일반적인 장치</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">電力機器の起動・停止のために、電力回路を開閉する電力機器。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

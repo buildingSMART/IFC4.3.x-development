@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="081d9f80d21911e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x1" />
+  <Name>Pset_WorkControlCommon</Name>
+  <Definition>Properties common to the definition of all occurrences of IfcWorkPlan and IfcWorkSchedule (subtypes of IfcWorkControl).</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcWorkControl</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcWorkControl</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="12d83480d21911e1800000215ad4efdf">
+      <Name>WorkStartTime</Name>
+      <Definition>The default time of day a task is scheduled to start. For presentation purposes, if the start time of a task matches the WorkStartTime, then applications may choose to display the date only. Conversely when entering dates without specifying time, applications may automatically append the WorkStartTime.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcTime" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Work Start Time</NameAlias>
+        <NameAlias lang="ja-JP">作業開始時間</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">仕事開始予定のデフォルト時刻。プレゼンテーション目的のために、仕事の開始時間がWorkStartTimeと一致するならば、アプリケーションは日付だけを表示するほうを選ぶことが出来る。逆に、時間を指定することなく日付を入力した際、アプリケーションはWorkStartTimeを自動的に追加することが出来る。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="179ce880d21911e1800000215ad4efdf">
+      <Name>WorkFinishTime</Name>
+      <Definition>The default time of day a task is scheduled to finish. For presentation purposes, if the finish time of a task matches the WorkFinishTime, then applications may choose to display the date only. Conversely when entering dates without specifying time, applications may automatically append the WorkFinishTime.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcTime" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Work Finish Time</NameAlias>
+        <NameAlias lang="ja-JP">作業終了時間</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">作業が終了するスケジュールのデフォルト時刻。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="1cfa3300d21911e1800000215ad4efdf">
+      <Name>WorkDayDuration</Name>
+      <Definition>The elapsed time within a worktime-based day. For presentation purposes, applications may choose to display IfcTask durations in work days where IfcTaskTime.DurationType=WORKTIME. This value must be less than or equal to 24 hours (an elapsed day); if omitted then 8 hours is assumed.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcDuration" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Work Day Duration</NameAlias>
+        <NameAlias lang="ja-JP">作業日数</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">作業時間を基にした、経過時間の日数。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="22f01400d21911e1800000215ad4efdf">
+      <Name>WorkWeekDuration</Name>
+      <Definition>The elapsed time within a worktime-based week. For presentation purposes, applications may choose to display IfcTask durations in work weeks where IfcTaskTime.DurationType=WORKTIME. This value must be less than or equal to 168 hours (an elapsed week); if omitted then 40 hours is assumed.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcDuration" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Work Week Duration</NameAlias>
+        <NameAlias lang="ja-JP">作業週数</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">作業時間を基にした経過時間の週数。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="27b4c800d21911e1800000215ad4efdf">
+      <Name>WorkMonthDuration</Name>
+      <Definition>The elapsed time within a worktime-based month. For presentation purposes, applications may choose to display IfcTask durations in work months where IfcTaskTime.DurationType=WORKTIME. This value must be less than or equal to 744 hours (an elapsed month of 31 days); if omitted then 160 hours is assumed.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcDuration" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Work Month Duration</NameAlias>
+        <NameAlias lang="ja-JP">作業月数</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">作業時間を基にした経過時間の週数の月数。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">IfcWorkPlan およびIfcWorkSchedule オブジェクト（IfcWorkControlオブジェクトのサブクラス）に関する共通プロパティセット定義。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

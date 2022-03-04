@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="7f9eff00d21811e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x2" />
+  <Name>Pset_WasteTerminalTypeWasteTrap</Name>
+  <Definition>Pipe fitting, set adjacent to a sanitary terminal, that retains liquid to prevent the passage of foul air.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcWasteTerminal/WASTETRAP</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcWasteTerminal/WASTETRAP</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="83cb1c80d21811e1800000215ad4efdf">
+      <Name>WasteTrapType</Name>
+      <Definition>Identifies the predefined types of trap from which the type required may be set.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_TrapType">
+            <EnumItem>NONE</EnumItem>
+            <EnumItem>P_TRAP</EnumItem>
+            <EnumItem>Q_TRAP</EnumItem>
+            <EnumItem>S_TRAP</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>NONE</Name>
+              <NameAliases>
+                <NameAlias lang="en">None</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>P_TRAP</Name>
+              <NameAliases>
+                <NameAlias lang="en">P Trap</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>Q_TRAP</Name>
+              <NameAliases>
+                <NameAlias lang="en">Q Trap</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>S_TRAP</Name>
+              <NameAliases>
+                <NameAlias lang="en">S Trap</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Waste Trap Type</NameAlias>
+        <NameAlias lang="ja-JP">廃棄物防臭弁種類</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">必要とされるタイプがセットされる防臭弁の定義されたタイプを確認してください。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="904f7500d21811e1800000215ad4efdf">
+      <Name>OutletConnectionSize</Name>
+      <Definition>Size of the outlet connection from the object.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Outlet Connection Size</NameAlias>
+        <NameAlias lang="ja-JP">排出口接続口サイズ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">要素からの接続口サイズ。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="980f1980d21811e1800000215ad4efdf">
+      <Name>InletConnectionSize</Name>
+      <Definition>Size of the inlet connection(s), where used, of the inlet connections.
+
+Note that all inlet connections are assumed to be the same size.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Inlet Connection Size</NameAlias>
+        <NameAlias lang="ja-JP">吸気口接続口サイズ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">吸気口接続口のサイズ。
+
+注意：同サイズの吸気口接続口がないものとします。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">液体を溜めて汚れた空気の通過を防ぐよう衛生機器に隣接して設置させた配管。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

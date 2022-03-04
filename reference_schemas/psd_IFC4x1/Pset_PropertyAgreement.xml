@@ -1,0 +1,263 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="21622400d1f811e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x1" />
+  <Name>Pset_PropertyAgreement</Name>
+  <Definition>A property agreement is an agreement that enables the occupation of a property for a period of time.
+
+The objective is to capture the information within an  agreement that is relevant to a facilities manager. Design and construction information associated with the property is not considered. A property agreement may be applied to an instance of IfcSpatialStructureElement including to compositions defined through the IfcSpatialStructureElement.Element.CompositionEnum.
+
+Note that the associated actors are captured by the IfcOccupant class.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcSpatialStructureElement</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcSpatialStructureElement</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="2c1cb900d1f811e1800000215ad4efdf">
+      <Name>AgreementType</Name>
+      <Definition>Identifies the predefined types of property agreement from which the type required may be set.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_PropertyAgreementType">
+            <EnumItem>ASSIGNMENT</EnumItem>
+            <EnumItem>LEASE</EnumItem>
+            <EnumItem>TENANT</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>ASSIGNMENT</Name>
+              <NameAliases>
+                <NameAlias lang="en">Assignment</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>LEASE</Name>
+              <NameAliases>
+                <NameAlias lang="en">Lease</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>TENANT</Name>
+              <NameAliases>
+                <NameAlias lang="en">Tenant</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Agreement Type</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="46569700d1f811e1800000215ad4efdf">
+      <Name>Identifier</Name>
+      <Definition>The identifier assigned to the agreement for the purposes of tracking.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcIdentifier" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Identifier</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="50789580d1f811e1800000215ad4efdf">
+      <Name>Version</Name>
+      <Definition>The version number of the agreement that is identified.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Version</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="5b332a80d1f811e1800000215ad4efdf">
+      <Name>VersionDate</Name>
+      <Definition>The date on which the version of the agreement became applicable.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcDate" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Version Date</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="638b6580d1f811e1800000215ad4efdf">
+      <Name>PropertyName</Name>
+      <Definition>Addressing details of the property as stated within the agreement.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Property Name</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="6e45fa80d1f811e1800000215ad4efdf">
+      <Name>CommencementDate</Name>
+      <Definition>Date on which the agreement commences.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcDate" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Commencement Date</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="7736cc00d1f811e1800000215ad4efdf">
+      <Name>TerminationDate</Name>
+      <Definition>Date on which the agreement terminates.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcDate" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Termination Date</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="80279d80d1f811e1800000215ad4efdf">
+      <Name>Duration</Name>
+      <Definition>The period of time for the lease.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcDuration" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Duration</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="87e74200d1f811e1800000215ad4efdf">
+      <Name>Options</Name>
+      <Definition>A statement of the options available in the agreement.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcText" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Options</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="90d81380d1f811e1800000215ad4efdf">
+      <Name>ConditionCommencement</Name>
+      <Definition>Condition of property provided on commencement of the agreement e.g. cold shell, warm lit shell, broom clean, turn-key.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcText" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Condition Commencement</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="9a617b80d1f811e1800000215ad4efdf">
+      <Name>Restrictions</Name>
+      <Definition>Restrictions that may be placed by a  competent authority.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcText" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Restrictions</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="a0575c80d1f811e1800000215ad4efdf">
+      <Name>ConditionTermination</Name>
+      <Definition>Condition of property required on termination of the agreement e.g. cold shell, warm lit shell, broom clean, turn-key.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcText" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Condition Termination</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+  </PsetDefinitionAliases>
+</PropertySetDef>

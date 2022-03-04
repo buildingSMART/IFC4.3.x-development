@@ -1,0 +1,233 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ifdguid="66925000d21011e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4" />
+  <Name>Pset_TankTypePreformed</Name>
+  <Definition>Fixed vessel manufactured as a single unit with one or more compartments for storing a liquid.
+
+Pset renamed from Pset_TankTypePreformedTank to Pset_TankTypePreformed in IFC2x2 Pset Addendum.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcTank/PREFORMED</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcTank/PREFORMED</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="6b570400d21011e1800000215ad4efdf">
+      <Name>PatternType</Name>
+      <Definition>Defines the types of pattern (or shape of a tank that may be specified.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_TankPatternType">
+            <EnumItem>HORIZONTALCYLINDER</EnumItem>
+            <EnumItem>VERTICALCYLINDER</EnumItem>
+            <EnumItem>RECTANGULAR</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>HORIZONTALCYLINDER</Name>
+              <NameAliases>
+                <NameAlias lang="en">Horizontal Cylinder</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>VERTICALCYLINDER</Name>
+              <NameAliases>
+                <NameAlias lang="en">Vertical Cylinder</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>RECTANGULAR</Name>
+              <NameAliases>
+                <NameAlias lang="en">Rectangular</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Pattern Type</NameAlias>
+        <NameAlias lang="ja-JP">パターンタイプ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">定義　パターンのタイプ（又はタンクの形状）が明示される。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="7873f300d21011e1800000215ad4efdf">
+      <Name>EndShapeType</Name>
+      <Definition>Defines the types of end shapes that can be used for preformed tanks. The convention for reading these enumerated values is that for a vertical cylinder, the first value is the base and the second is the top; for a horizontal cylinder, the order of reading should be left to right. For a speherical tank, the value UNSET should be used.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_EndShapeType">
+            <EnumItem>CONCAVECONVEX</EnumItem>
+            <EnumItem>FLATCONVEX</EnumItem>
+            <EnumItem>CONVEXCONVEX</EnumItem>
+            <EnumItem>CONCAVEFLAT</EnumItem>
+            <EnumItem>FLATFLAT</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>CONCAVECONVEX</Name>
+              <NameAliases>
+                <NameAlias lang="en">Concave Convex</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>FLATCONVEX</Name>
+              <NameAliases>
+                <NameAlias lang="en">Flat Convex</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>CONVEXCONVEX</Name>
+              <NameAliases>
+                <NameAlias lang="en">Convex Convex</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>CONCAVEFLAT</Name>
+              <NameAliases>
+                <NameAlias lang="en">Concave Flat</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>FLATFLAT</Name>
+              <NameAliases>
+                <NameAlias lang="en">Flat Flat</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">End Shape Type</NameAlias>
+        <NameAlias lang="ja-JP">末端形状タイプ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">定義　予めタンクに使用することができる端形状の種類を示す。これらの列挙された値を読み取るための規則は、垂直円筒に関しては、最初の値はベースです、そして、2番目は先端です。水平円筒に関しては、値は左から右に読む必要があります。球形タンクの場合、値はUNSETを使用する必要があります。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="89246900d21011e1800000215ad4efdf">
+      <Name>FirstCurvatureRadius</Name>
+      <Definition>FirstCurvatureRadius should be defined as the base or left side radius of curvature value.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">First Curvature Radius</NameAlias>
+        <NameAlias lang="ja-JP">最初の曲率半径</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">最初の曲率半径は、基本又は曲率の値の左側の半径として定義する必要があります。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="92add100d21011e1800000215ad4efdf">
+      <Name>SecondCurvatureRadius</Name>
+      <Definition>SecondCurvatureRadius should be defined as the top or right side radius of curvature value.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Second Curvature Radius</NameAlias>
+        <NameAlias lang="ja-JP">2番目の曲率半径</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">2番目の曲率半径は、曲率の値の先頭又は右側の半径として定義する必要があります。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">液体を貯蔵するために一つ以上の区画を持ち単体として製造された固定された容器　　　　　　　　　　　　　　　　　　　　　　　　　　　PsetはIFC2x2 Pset AddendumでPset_TankTypePreformedTankからPsetまで_をTankTypePreformedに改名しました。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

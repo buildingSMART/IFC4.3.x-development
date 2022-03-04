@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ifdguid="c03e4e80d1ff11e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4" />
+  <Name>Pset_ReinforcementBarPitchOfBeam</Name>
+  <Definition>The pitch length information of reinforcement  bar with the beam.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcBeam</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcBeam</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="c59b9900d1ff11e1800000215ad4efdf">
+      <Name>Description</Name>
+      <Definition>Description of the reinforcement.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcText" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Description</NameAlias>
+        <NameAlias lang="ja-JP">説明</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">鉄筋の説明。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="cb917a00d1ff11e1800000215ad4efdf">
+      <Name>Reference</Name>
+      <Definition>A descriptive label for the general reinforcement type.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Reference</NameAlias>
+        <NameAlias lang="ja-JP">参照記号</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">一般的な鉄筋タイプの説明ラベル。
+（例えば、梁の両端・中央で肋筋や巾止筋の間隔が異なる場合に、"Start","Center","End"を記述する）</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="d3511e80d1ff11e1800000215ad4efdf">
+      <Name>StirrupBarPitch</Name>
+      <Definition>The pitch length of the stirrup bar.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Stirrup Bar Pitch</NameAlias>
+        <NameAlias lang="ja-JP">肋筋間隔</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">肋筋の間隔。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="d9df9600d1ff11e1800000215ad4efdf">
+      <Name>SpacingBarPitch</Name>
+      <Definition>The pitch length of the spacing bar.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Spacing Bar Pitch</NameAlias>
+        <NameAlias lang="ja-JP">幅止筋間隔</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">巾止筋の間隔。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">梁補強筋の間隔情報。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

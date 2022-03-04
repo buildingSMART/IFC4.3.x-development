@@ -1,0 +1,230 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="16f65900d1fd11e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x1" />
+  <Name>Pset_ProtectiveDeviceTypeCircuitBreaker</Name>
+  <Definition>A coherent set of attributes representing different capacities of a circuit breaker or of a motor protection device, defined in accordance with IEC 60947. Note - A protective device may be associated with different instances of this property set providing information related to different basic characteristics.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcProtectiveDevice/CIRCUITBREAKER</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcProtectiveDevice/CIRCUITBREAKER</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="1bbb0d00d1fd11e1800000215ad4efdf">
+      <Name>PerformanceClasses</Name>
+      <Definition>A set of designations of performance classes for the breaker unit for which the data of this instance is valid. A breaker unit being a circuit breaker may be
+constructed for different levels of breaking capacities. A maximum of 7 different
+performance classes may be provided. Examples of performance classes that may be specified include B, C, N, S, H, L, V.</Definition>
+      <PropertyType>
+        <TypePropertyListValue>
+          <ListValue>
+            <DataType type="IfcLabel" />
+          </ListValue>
+        </TypePropertyListValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Performance Classes</NameAlias>
+        <NameAlias lang="ja-JP">能力クラス</NameAlias>
+        <NameAlias lang="ko-KR">능력 클래스</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">モータ保護を行う開閉装置は、能力が違う最大7種類がある。名称の例として、B, C, N, S, H, L, Vが含まれる。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">모터 보호하는 개폐 장치는 능력이 다른 최대 7 종류가있다. 이름의 예로는, B, C, N, S, H, L, V가 포함된다.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="22e21b00d1fd11e1800000215ad4efdf">
+      <Name>VoltageLevel</Name>
+      <Definition>The voltage levels for which the data of the instance is valid. More than one value may be selected in the enumeration.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_VoltageLevels">
+            <EnumItem>U230</EnumItem>
+            <EnumItem>U400</EnumItem>
+            <EnumItem>U440</EnumItem>
+            <EnumItem>U525</EnumItem>
+            <EnumItem>U690</EnumItem>
+            <EnumItem>U1000</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>U230</Name>
+              <NameAliases>
+                <NameAlias lang="en">U230</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>U400</Name>
+              <NameAliases>
+                <NameAlias lang="en">U400</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>U440</Name>
+              <NameAliases>
+                <NameAlias lang="en">U440</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>U525</Name>
+              <NameAliases>
+                <NameAlias lang="en">U525</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>U690</Name>
+              <NameAliases>
+                <NameAlias lang="en">U690</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>U1000</Name>
+              <NameAliases>
+                <NameAlias lang="en">U1000</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Voltage Level</NameAlias>
+        <NameAlias lang="ja-JP">電圧レベル</NameAlias>
+        <NameAlias lang="ko-KR">전압레벨</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">電圧レベルを選択。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">전압 레벨을 선택합니다.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="355c5480d1fd11e1800000215ad4efdf">
+      <Name>ICU60947</Name>
+      <Definition>The ultimate breaking capacity in [A] for a circuit breaker or motor protection device tested in accordance with the IEC 60947 series.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcElectricCurrentMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">ICU60947</NameAlias>
+        <NameAlias lang="ja-JP">定格限界短絡遮断容量</NameAlias>
+        <NameAlias lang="ko-KR">정격한계단락 차단 용량</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">IECの60947シリーズに基づいてテストされた回路遮断機及びモータ保護装置の短絡遮断容量[A]。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">IEC의 60947 시리즈를 기반으로 테스트 회로 차단기 및 모터 보호 장치의 단락 차단 용량 [A].</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="3ab99f00d1fd11e1800000215ad4efdf">
+      <Name>ICS60947</Name>
+      <Definition>The service breaking capacity in [A] for a circuit breaker or motor protection device tested in accordance with the IEC 60947 series.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcElectricCurrentMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">ICS60947</NameAlias>
+        <NameAlias lang="ja-JP">定格使用短絡遮断容量</NameAlias>
+        <NameAlias lang="ko-KR">정격사용 단락 차단 용량</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">IECの60947シリーズに基づいてテストされた回路遮断機及びモータ保護装置の使用短絡遮断容量[A]。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">IEC60947 시리즈를 기반으로 테스트 배선 차단기 또는 모터 보호 장치를위한 전류 [A]에 견디는 온도  값은 1s 주어진다.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="40af8000d1fd11e1800000215ad4efdf">
+      <Name>ICW60947</Name>
+      <Definition>The thermal withstand current in [A] for a circuit breaker or motor protection device tested in accordance with the IEC 60947 series. The value shall be related to 1 s.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcElectricCurrentMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">ICW60947</NameAlias>
+        <NameAlias lang="ja-JP">ICW60947</NameAlias>
+        <NameAlias lang="ko-KR">ICW60947</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">IEC60947シリーズに基づいてテストした配線遮断機またはモータ保護装置のための電流[A]に耐える温度。
+ 値は、1sで与えられる。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">IEC60947 시리즈를 기반으로 테스트 배선 차단기 또는 모터 보호 장치를위한 전류 [A]에 견디는 온도  값은 1s 주어진다.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="47d68e00d1fd11e1800000215ad4efdf">
+      <Name>ICM60947</Name>
+      <Definition>The making capacity in [A] for a circuit breaker or motor protection device tested in accordance with the IEC 60947 series.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcElectricCurrentMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">ICM60947</NameAlias>
+        <NameAlias lang="ja-JP">ICM60947</NameAlias>
+        <NameAlias lang="ko-KR">ICM60947</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">IECの60947シリーズに基づいてテストされた回路遮断機またはモータ保護装置の能力[A]。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">IEC의 60947 시리즈를 기반으로 테스트 회로 차단 기나 모터 보호 장치의 능력 [A].</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">IECの60947に基づいて定義されている回路ブレーカ、またはモータ保護装置の異なる容量を表すプロパティセットの定義。
+注記-保護装置は、根本的な特性に関連付けられた提供されたプロパティの情報は、　異なる実態に関連しているかもしれません。　　　　　　　　　　　　　　　　　</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

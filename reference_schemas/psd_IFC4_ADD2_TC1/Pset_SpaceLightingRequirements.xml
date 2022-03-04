@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ifdguid="afdfa100d20a11e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4" />
+  <Name>Pset_SpaceLightingRequirements</Name>
+  <Definition>Properties related to the lighting requirements that apply to the occurrences of IfcSpace or IfcZone. This includes the required artificial lighting, illuminance, etc.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcSpace</ClassName>
+    <ClassName> IfcSpatialZone</ClassName>
+    <ClassName> IfcZone</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcSpace, IfcSpatialZone, IfcZone</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="b53ceb80d20a11e1800000215ad4efdf">
+      <Name>ArtificialLighting</Name>
+      <Definition>Indication whether this space  requires artificial lighting (as natural lighting would be not sufficient). (TRUE) indicates yes (FALSE) otherwise.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">künstliche Beleuchtung</NameAlias>
+        <NameAlias lang="en">Artificial Lighting</NameAlias>
+        <NameAlias lang="fr-FR">EclairageArtificiel</NameAlias>
+        <NameAlias lang="ja-JP">人工照明</NameAlias>
+        <NameAlias lang="ko-KR">인공 조명</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">Angabe, ob dieser Raum eine künstliche Beleuchtung erfordert (WAHR) oder nicht (FALSCH)</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Indication si cette pièce a des besoins d'éclairage artificiel (dans la mesure où l'éclairage naturel ne serait pas suffisant). (VRAI) signifie oui, (FAUX) sinon.</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">領域が人工照明を必要とするかどうかの表示（自然光が十分でないとして）　（TRUE）の場合、必要。（FALSE）の場合、不必要。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">이 공간이 인공 조명을 필요로하는지 여부 (자연 조명이 충분하지 않기 위하여)를 나타내는 부울 값입니다. (TRUE) 필요 (FALSE) 아니오 값.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="bb32cc80d20a11e1800000215ad4efdf">
+      <Name>Illuminance</Name>
+      <Definition>Required average illuminance value for this space.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcIlluminanceMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Beleuchtungsstärke</NameAlias>
+        <NameAlias lang="en">Illuminance</NameAlias>
+        <NameAlias lang="fr-FR">EclairementAttendu</NameAlias>
+        <NameAlias lang="ja-JP">照度</NameAlias>
+        <NameAlias lang="ko-KR">조도</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">Geforderte durchschnittliche Beleuchtungsstärke in diesem Raum.</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Valeur de l'éclairement attendu pour la pièce.</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">領域に対しての必要とされる照度の値の平均値。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">이 공간을 위해 필요한 평균 조도</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="de-DE">Property Set Definition in German</PsetDefinitionAlias>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="fr-FR">Définition de l'IAI : propriétés relatives aux exigences en matière d'éclairement, applicables à toutes les instances des classes IfcSpace et IfcZone. Comprend l'éclairage artificiel, le niveau d'éclairement,…</PsetDefinitionAlias>
+    <PsetDefinitionAlias lang="ja-JP">IfcSpaceまたはIfcZoneオブジェクトに適用される照明の条件に関するプロパティ。必要とされる人工照明及び照度などを含む。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

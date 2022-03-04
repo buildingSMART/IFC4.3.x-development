@@ -1,0 +1,402 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="4ad47d00d20311e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x2" />
+  <Name>Pset_SanitaryTerminalTypeSink</Name>
+  <Definition>Waste water appliance for receiving, retaining or disposing of domestic, culinary, laboratory or industrial process liquids. HISTORY: In IFC4, Material property removed. Use materials capabilities from IfcMaterialsResource schema. Datatype of color changed to IfcLabel (still a string value). SinkMounting changed to Mounting.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcSanitaryTerminal/SINK</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcSanitaryTerminal/SINK</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="532cb800d20311e1800000215ad4efdf">
+      <Name>SinkType</Name>
+      <Definition>Selection of the type of sink from the enumerated list of types where:-
+
+Belfast: 	Deep sink that has a plain edge and a weir overflow
+.
+Bucket: 	Sink at low level, with protected front edge, that facilitates filling and emptying buckets, usually with a hinged grid on which to stand them.
+Cleaners:	 Sink, usually fixed at normal height (900mm), with protected front edge.
+Combination_Left:	 Sink with integral drainer on left hand side
+.
+Combination_Right: Sink with integral drainer on right hand side
+.
+Combination_Double: 	Sink with integral drainer on both sides
+.
+Drip: Small sink that catches drips or flow from a faucet
+.
+Laboratory: Sink, of acid resisting material, with a top edge shaped to facilitate fixing to the underside of a desktop
+.
+London: Deep sink that has a plain edge and no overflow
+.
+Plaster: Sink with sediment receiver to prevent waste plaster passing into drains
+.
+Pot: Large metal sink, with a standing waste, for washing cooking utensils
+.
+Rinsing: Metal sink in which water can be heated and culinary utensils and tableware immersed at high temperature that destroys most harmful bacteria and allows subsequent self drying.
+.
+Shelf: Ceramic sink with an integral back shelf through which water fittings are mounted
+.
+VegetablePreparation: 	Large metal sink, with a standing waste, for washing and preparing vegetables
+.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_SinkType">
+            <EnumItem>BELFAST</EnumItem>
+            <EnumItem>BUCKET</EnumItem>
+            <EnumItem>CLEANERS</EnumItem>
+            <EnumItem>COMBINATION_LEFT</EnumItem>
+            <EnumItem>COMBINATION_RIGHT</EnumItem>
+            <EnumItem>COMBINATION_DOUBLE</EnumItem>
+            <EnumItem>DRIP</EnumItem>
+            <EnumItem>LABORATORY</EnumItem>
+            <EnumItem>LONDON</EnumItem>
+            <EnumItem>PLASTER</EnumItem>
+            <EnumItem>POT</EnumItem>
+            <EnumItem>RINSING</EnumItem>
+            <EnumItem>SHELF</EnumItem>
+            <EnumItem>VEGETABLEPREPARATION</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>BELFAST</Name>
+              <NameAliases>
+                <NameAlias lang="en">Belfast</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>BUCKET</Name>
+              <NameAliases>
+                <NameAlias lang="en">Bucket</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>CLEANERS</Name>
+              <NameAliases>
+                <NameAlias lang="en">Cleaners</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>COMBINATION_LEFT</Name>
+              <NameAliases>
+                <NameAlias lang="en">Combination Left</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>COMBINATION_RIGHT</Name>
+              <NameAliases>
+                <NameAlias lang="en">Combination Right</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>COMBINATION_DOUBLE</Name>
+              <NameAliases>
+                <NameAlias lang="en">Combination Double</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>DRIP</Name>
+              <NameAliases>
+                <NameAlias lang="en">Drip</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>LABORATORY</Name>
+              <NameAliases>
+                <NameAlias lang="en">Laboratory</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>LONDON</Name>
+              <NameAliases>
+                <NameAlias lang="en">London</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>PLASTER</Name>
+              <NameAliases>
+                <NameAlias lang="en">Plaster</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>POT</Name>
+              <NameAliases>
+                <NameAlias lang="en">Pot</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>RINSING</Name>
+              <NameAliases>
+                <NameAlias lang="en">Rinsing</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>SHELF</Name>
+              <NameAliases>
+                <NameAlias lang="en">Shelf</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>VEGETABLEPREPARATION</Name>
+              <NameAliases>
+                <NameAlias lang="en">Vegetable Preparation</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Sink Type</NameAlias>
+        <NameAlias lang="ja-JP">シンクの種類</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">シンクタイプの選択
+
+・深流し：エッジが平らであふれにくい深いシンク
+• 下流し：先端が保護され、低水位用のシンク
+・掃除流し：先端が保護されたシンク（通常は900mm高さに調整されたもの）
+・左水切り：左側に水切りが付いているシンク
+・右水切り流し：右側に水切りが付いているシンク
+・両水切り流し：両側に水切りが付いているタイプ
+・点滴：蛇口からの流れや滴を捕まえる小さめのシンク
+・実験流し：デスク天板下が簡易的に固定された他耐酸性の材料を使ったシンク
+・ロンドン：オーバーフローなしのエッジが平らの深いシンク
+・石膏流し：廃石膏が排水管中に入ってしまうのをを防ぐため、沈殿物レシーバーが付いているシンク。
+・料理流し：ゴミの廃棄もできる調理用具を洗うためのシンク
+・すすぎ用の流し：高温滅菌ができる乾いた状態を保持できる鉄製のシンク
+・棚付き流し：金具の接続や設置ができる棚を後ろに持つセラミック製のシンク
+・野菜流し：ゴミの廃棄もできる、洗浄や調理の準備をする大きめの鉄製のシンク</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="7192b380d20311e1800000215ad4efdf">
+      <Name>Mounting</Name>
+      <Definition>Selection of the form of mounting of the sink from the enumerated list of mountings where:-
+
+BackToWall: A pedestal mounted sanitary terminal that fits flush to the wall at the rear to cover its service connections.
+Pedestal: 	A floor mounted sanitary terminal that has an integral base.
+CounterTop: 	A sanitary terminal that is installed into a horizontal surface that is installed into a horizontal surface. Note: When applied to a wash hand basin, the term more normally used is ‘vanity’. See also Wash Hand Basin Type specification.
+WallHung: 	A sanitary terminal cantilevered clear of the floor.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_SanitaryMounting">
+            <EnumItem>BACKTOWALL</EnumItem>
+            <EnumItem>PEDESTAL</EnumItem>
+            <EnumItem>COUNTERTOP</EnumItem>
+            <EnumItem>WALLHUNG</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>BACKTOWALL</Name>
+              <NameAliases>
+                <NameAlias lang="en">Back To Wall</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>PEDESTAL</Name>
+              <NameAliases>
+                <NameAlias lang="en">Pedestal</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>COUNTERTOP</Name>
+              <NameAliases>
+                <NameAlias lang="en">Countertop</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>WALLHUNG</Name>
+              <NameAliases>
+                <NameAlias lang="en">Wall Hung</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Mounting</NameAlias>
+        <NameAlias lang="ja-JP">設置</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">設置場所の選択
+
+・床置き壁排出：接続口の後部に出水口を合わせること。
+・台：床置きの衛生器具には基礎があること。
+・調理台：衛生器具の表層が水平に設置されていること。※手洗い台として設置された場合「化粧台」として扱うこと。また、洗面台種類の規格表を参照のこと。
+・壁掛け型：衛生器具は片側固定がされ床から離れていること。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="a141bb80d20311e1800000215ad4efdf">
+      <Name>Color</Name>
+      <Definition>Color selection for this object.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Color</NameAlias>
+        <NameAlias lang="ja-JP">色</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">要素の色。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="bc143000d20311e1800000215ad4efdf">
+      <Name>DrainSize</Name>
+      <Definition>The size of the drain outlet connection from the object.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Drain Size</NameAlias>
+        <NameAlias lang="ja-JP">管径</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">要素への接続口径。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="c5050180d20311e1800000215ad4efdf">
+      <Name>MountingOffset</Name>
+      <Definition>For cunter top maounted sinks, the vertical offset between the top of the sink and the counter top.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Mounting Offset</NameAlias>
+        <NameAlias lang="ja-JP">据付補正</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">調理台に設置されたシンクに、上端と調理台間で垂直に補正されること。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">受信側の廃水機器。
+家庭内の処理や保持、台所や便所もしくは工業用途の液体処理を行います。
+背景：IFC4において、要素のプロパティーは排除されています 。IfcMaterialsResourceのタイプを使ってください。 色のデータ形式は文字列としてIfcLabelに変更されています。「SinkMounting」は「Mounting」に変更されています。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

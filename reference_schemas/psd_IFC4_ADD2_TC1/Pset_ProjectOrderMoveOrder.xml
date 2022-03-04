@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ifdguid="c8928b80d1f711e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4" />
+  <Name>Pset_ProjectOrderMoveOrder</Name>
+  <Definition>Defines the requirements for move orders. Note that the move order status is defined in the same way as a work order status since a move order implies a work requirement.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcProjectOrder/MOVEORDER</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcProjectOrder/MOVEORDER</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="cfb99980d1f711e1800000215ad4efdf">
+      <Name>SpecialInstructions</Name>
+      <Definition>Special instructions that affect the move.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcText" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Special Instructions</NameAlias>
+        <NameAlias lang="ja-JP">特別指示</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">移動・引っ越しに影響する特別な指示。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">移動・引っ越しへの必要条件を定義する。注：移動指示は、作業の必要条件を含むので、移動命令状態は、作業指示状態と同様な手段で定義される。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

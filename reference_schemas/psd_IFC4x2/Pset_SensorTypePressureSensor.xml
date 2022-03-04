@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="21692080d20611e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x2" />
+  <Name>Pset_SensorTypePressureSensor</Name>
+  <Definition>A device that senses or detects pressure. HISTORY: PressureSensorSensorSetPoint changed to SetPointPressure. Range, accuracy and time constant deleted.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcSensor/PRESSURESENSOR</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcSensor/PRESSURESENSOR</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="262dd480d20611e1800000215ad4efdf">
+      <Name>SetPointPressure</Name>
+      <Definition>The pressure value to be sensed. Use IfcPropertyBoundedValue.SetPointValue to set the set point value.</Definition>
+      <PropertyType>
+        <TypePropertyBoundedValue>
+          <DataType type="IfcPressureMeasure" />
+        </TypePropertyBoundedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Set Point Pressure</NameAlias>
+        <NameAlias lang="ja-JP">圧力設定値</NameAlias>
+        <NameAlias lang="ko-KR">압력 설정</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">感知される圧力。
+セットポイント値を置くために、IfcPropertyBoundedValue.SetPointValueを使用する。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">감지되는 압력. 세트 포인트 값을 넣으려면, IfcPropertyBoundedValue.SetPointValue를 사용하십시오.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="30e86980d20611e1800000215ad4efdf">
+      <Name>IsSwitch</Name>
+      <Definition>Identifies if the sensor also functions as a switch at the set point (=TRUE) or not (= FALSE).</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Is Switch</NameAlias>
+        <NameAlias lang="ja-JP">スイッチ機能の有無</NameAlias>
+        <NameAlias lang="ko-KR">스위치 기능의 유무</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">センサーが設定値でスイッチとして機能する（TRUE)か、否か（FALSE)を識別する。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">센서 설정에서 스위치 역할 (TRUE) 또는 여부 (FALSE)를 확인한다.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">圧力を感知または検出するデバイス。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

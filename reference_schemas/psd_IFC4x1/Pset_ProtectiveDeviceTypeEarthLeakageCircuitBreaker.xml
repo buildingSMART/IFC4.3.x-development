@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="cb907a80d1fd11e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x1" />
+  <Name>Pset_ProtectiveDeviceTypeEarthLeakageCircuitBreaker</Name>
+  <Definition>An earth failure device acts to protect people and equipment from the effects of current leakage.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcProtectiveDevice/EARTHLEAKAGECIRCUITBREAKER</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcProtectiveDevice/EARTHLEAKAGECIRCUITBREAKER</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="d0552e80d1fd11e1800000215ad4efdf">
+      <Name>EarthFailureDeviceType</Name>
+      <Definition>A list of the available types of circuit breaker from which that required may be selected where:
+
+Standard: Device that operates without a time delay.
+TimeDelayed: Device that operates after a time delay.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_EarthFailureDeviceType">
+            <EnumItem>STANDARD</EnumItem>
+            <EnumItem>TIMEDELAYED</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>STANDARD</Name>
+              <NameAliases>
+                <NameAlias lang="en">Standard</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>TIMEDELAYED</Name>
+              <NameAliases>
+                <NameAlias lang="en">Time Delayed</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Earth Failure Device Type</NameAlias>
+        <NameAlias lang="ja-JP">漏電回路遮断機のタイプ</NameAlias>
+        <NameAlias lang="ko-KR">누전 회로 차단기의 유형</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">以下の中から選択が必要となる場合の遮断機タイプのリスト：
+
+スタンダード：遅延無しで動作する機器
+遅延：一定時間を経た後で動作する機器</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">다음 중 선택이 필요한 경우 차단기 유형 목록 : 스탠다드 : 지연없이 동작하는 기기 지연 : 일정 시간이 지난 후에 동작하는 기기 "</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="e6fb8580d1fd11e1800000215ad4efdf">
+      <Name>Sensitivity</Name>
+      <Definition>The rated rms value of the vector sum of the instantaneous currents flowing in the main circuits of the device which causes the device to operate under specified conditions. (IEC 61008-1).</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcElectricCurrentMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Sensitivity</NameAlias>
+        <NameAlias lang="ja-JP">感度</NameAlias>
+        <NameAlias lang="ko-KR">감도</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">装置のメイン回路を流れる瞬時電流の合計ベクトルの関連する rms 値、特定の条件になると機器が動作するようになる（IEC 61008-1)。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">장치의 기본 회로를 흐르는 순간 전류의 합계 벡터 관련 rms 값이 특정 조건이되면 장치가 작동하게된다 (IEC 61008-1).</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">漏電回路遮断機は、人々と器材を漏電電流の影響から保護する動作を行います。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

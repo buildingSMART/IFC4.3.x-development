@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="43ae6e80d20511e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x1" />
+  <Name>Pset_SensorTypeGasSensor</Name>
+  <Definition>A device that senses or detects gas. HISTORY: Changed in IFC4. Gas detected made into enumeration, set point concentration and coverage area added. Range, accuracy and time constant deleted.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcSensor/GASSENSOR</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcSensor/GASSENSOR</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="490bb900d20511e1800000215ad4efdf">
+      <Name>GasDetected</Name>
+      <Definition>Identification of the gas that is being detected, according to chemical formula.  For example, carbon monoxide is 'CO', carbon dioxide is 'CO2', oxygen is 'O2'.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Gas Detected</NameAlias>
+        <NameAlias lang="ja-JP">対象ガス</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">検出されているガスの識別。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="5163f400d20511e1800000215ad4efdf">
+      <Name>SetPointConcentration</Name>
+      <Definition>The gas concentration value to be sensed. Use IfcPropertyBoundedValue.SetPointValue to set the set point value.</Definition>
+      <PropertyType>
+        <TypePropertyBoundedValue>
+          <DataType type="IfcPositiveRatioMeasure" />
+        </TypePropertyBoundedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Set Point Concentration</NameAlias>
+        <NameAlias lang="ja-JP">ガス濃度設定値</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">感知されるガス濃度。
+セットポイント値を置くために、IfcPropertyBoundedValue.SetPointValueを使用する。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="6a6ca500d20511e1800000215ad4efdf">
+      <Name>CoverageArea</Name>
+      <Definition>The floor area that is covered by the sensor (typically measured as a circle whose center is at the location of the sensor).</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcAreaMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Coverage Area</NameAlias>
+        <NameAlias lang="ja-JP">測定範囲</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">センサでカバーされている床面積。(通常、センターがセンサの位置にある円として測定される)</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">ガスを感知または検出するデバイス。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="fe456d80d21311e1800000215ad4efdf" templatetype="PSET_PERFORMANCEDRIVEN" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x2" />
+  <Name>Pset_ValvePHistory</Name>
+  <Definition>Valve performance history common attributes of a typical 2 port pattern type valve.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcValve</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcValve</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="03a2b800d21411e1800000215ad4efdf">
+      <Name>PercentageOpen</Name>
+      <Definition>The ratio between the amount that the valve is open to the full open position of the valve.</Definition>
+      <PropertyType>
+        <TypePropertyReferenceValue reftype="IfcTimeSeries" />
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Percentage Open</NameAlias>
+        <NameAlias lang="ja-JP">パーセント開度</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">全開時に対する開度量の比率。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="069da880d21411e1800000215ad4efdf">
+      <Name>MeasuredFlowRate</Name>
+      <Definition>The rate of flow of a fluid measured across the valve.</Definition>
+      <PropertyType>
+        <TypePropertyReferenceValue reftype="IfcTimeSeries" />
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Measured Flow Rate</NameAlias>
+        <NameAlias lang="ja-JP">計測流量</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">バルブを通過する流体の計測された流量</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="0ac9c600d21411e1800000215ad4efdf">
+      <Name>MeasuredPressureDrop</Name>
+      <Definition>The actual pressure drop in the fluid measured across the valve.</Definition>
+      <PropertyType>
+        <TypePropertyReferenceValue reftype="IfcTimeSeries" />
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Measured Pressure Drop</NameAlias>
+        <NameAlias lang="ja-JP">計測圧力降下</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">バルブを通過する際の計測された圧力降下</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">バルブの履歴</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

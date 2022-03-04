@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ifdguid="e6bab480d21411e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4" />
+  <Name>Pset_ValveTypeFlushing</Name>
+  <Definition>Valve that flushes a predetermined quantity of water to cleanse a WC, urinal or slop hopper.
+Note that a flushing valve is constrained to have a 2 port  pattern.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcValve/FLUSHING</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcValve/FLUSHING</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="ec17ff00d21411e1800000215ad4efdf">
+      <Name>FlushingRate</Name>
+      <Definition>The predetermined quantity of water to be flushed.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcVolumetricFlowRateMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Flushing Rate</NameAlias>
+        <NameAlias lang="ja-JP">フラッシュ率</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">予め決められた流される水量</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="f20de000d21411e1800000215ad4efdf">
+      <Name>HasIntegralShutOffDevice</Name>
+      <Definition>Indication of whether the flushing valve has an integral shut off device fitted (set TRUE) or not (set FALSE).</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Has Integral Shut Off Device</NameAlias>
+        <NameAlias lang="ja-JP">全体閉止装置がついているかどうか</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">フラッシュ弁に全体閉止装置がついているかどうかの表示（付きTRUE）又は（無しFALSE）</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="f89c5780d21411e1800000215ad4efdf">
+      <Name>IsHighPressure</Name>
+      <Definition>Indication of whether the flushing valve is suitable for use on a high pressure water main (set TRUE) or not (set FALSE).</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Is High Pressure</NameAlias>
+        <NameAlias lang="ja-JP">高圧給水の有無</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">フラッシュ弁の高圧給水主管への使用が適当かどうかの表示（適 TRUE）又は（不適 FALSE）</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">弁タイプフラッシュ</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

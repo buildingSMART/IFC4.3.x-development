@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="4d80a380d1fe11e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x2" />
+  <Name>Pset_ProtectiveDeviceTypeResidualCurrentCircuitBreaker</Name>
+  <Definition>A residual current circuit breaker opens, closes or isolates a circuit and has short circuit and overload protection.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcProtectiveDevice/RESIDUALCURRENTCIRCUITBREAKER</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcProtectiveDevice/RESIDUALCURRENTCIRCUITBREAKER</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="52455780d1fe11e1800000215ad4efdf">
+      <Name>Sensitivity</Name>
+      <Definition>Current leakage to an unwanted leading path during normal operation (IEC 151-14-49).</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcElectricCurrentMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Sensitivity</NameAlias>
+        <NameAlias lang="ja-JP">感度</NameAlias>
+        <NameAlias lang="ko-KR">감도</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">通常操作における望ましくない引き込みパスとの電流鎖交 (IEC 151-14-49)。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">정상 작동의 원치 않는 철회 경로와 전류 사슬 교환 (IEC 151-14-49).</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">残留電流遮断回路が 開いているか、 閉じているか、または　回路から独立しているか、また短絡（ショートサーキット）を保有し、過負荷保護継電方式であるか。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

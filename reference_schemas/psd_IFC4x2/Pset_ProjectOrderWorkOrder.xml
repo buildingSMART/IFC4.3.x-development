@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="f677d000d1f711e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x2" />
+  <Name>Pset_ProjectOrderWorkOrder</Name>
+  <Definition>Defines the requirements for purchase orders in a project.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcProjectOrder/WORKORDER</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcProjectOrder/WORKORDER</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="fe377480d1f711e1800000215ad4efdf">
+      <Name>ProductDescription</Name>
+      <Definition>A textual description of the products that require the work.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcText" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Product Description</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="07284600d1f811e1800000215ad4efdf">
+      <Name>WorkTypeRequested</Name>
+      <Definition>Work type requested in circumstances where there are categorizations of types of work task. It could be used to identify a remedial task, minor work task, electrical task etc.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcText" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Work Type Requested</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="0f808100d1f811e1800000215ad4efdf">
+      <Name>ContractualType</Name>
+      <Definition>The contractual type of the work.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcText" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Contractual Type</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="18715280d1f811e1800000215ad4efdf">
+      <Name>IfNotAccomplished</Name>
+      <Definition>Comments if the job is not accomplished.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcText" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">If Not Accomplished</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+  </PsetDefinitionAliases>
+</PropertySetDef>

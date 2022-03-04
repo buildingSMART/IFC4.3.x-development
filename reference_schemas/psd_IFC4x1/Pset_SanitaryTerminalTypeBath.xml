@@ -1,0 +1,192 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="ca614c80d20111e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x1" />
+  <Name>Pset_SanitaryTerminalTypeBath</Name>
+  <Definition>Sanitary appliance for immersion of the human body or parts of it (BS6100). HISTORY: In IFC4, Material and MaterialThickness properties removed. Use materials capabilities from IfcMaterialsResource schema. Datatype of color changed to IfcLabel (still a string value)</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcSanitaryTerminal/BATH</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcSanitaryTerminal/BATH</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="d0572d80d20111e1800000215ad4efdf">
+      <Name>BathType</Name>
+      <Definition>The property enumeration defines the types of bath that may be specified within the property set.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_BathType">
+            <EnumItem>DOMESTIC</EnumItem>
+            <EnumItem>DOMESTICCORNER</EnumItem>
+            <EnumItem>FOOT</EnumItem>
+            <EnumItem>JACUZZI</EnumItem>
+            <EnumItem>PLUNGE</EnumItem>
+            <EnumItem>SITZ</EnumItem>
+            <EnumItem>TREATMENT</EnumItem>
+            <EnumItem>WHIRLPOOL</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>DOMESTIC</Name>
+              <Definition>Bath, for one person at a time, into which the whole body can be easily immersed.
+</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Domestic</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>FOOT</Name>
+              <Definition>Shallow bath for washing the feet.</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Foot</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>POOL</Name>
+              <Definition>Indoor or outdoor pool.</Definition>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>PLUNGE</Name>
+              <Definition>Bath, usually for more than one person at a time, into which the whole body can be easily immersed.</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Plunge</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>SITZ</Name>
+              <Definition>Bath in which a bather sits as in a chair.</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Sitz</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>SPA</Name>
+              <Definition>Indoor or outdoor pool designed for multiple people in which an integrated device agitates the water by pumped circulation or induction of water and/or air.</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Whirlpool</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>TREATMENT</Name>
+              <Definition>Bath used for hydrotherapy purposes.</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Treatment</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Bath Type</NameAlias>
+        <NameAlias lang="ja-JP">バスタイプ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">列挙するプロパティは、プロパティセット内で指定することができるバスの種類の定義：
+
+家庭用：全身を簡単に浸漬することができる一度に1人の人間が入るバス。
+
+家庭用Corner：浸漬トラフが傾いていて、全身を簡単に浸漬することができる一度に1人の人間が入るバス。
+
+フットバス：足を洗う浅いバス。
+
+ジャグジー：複数の人のための渦のバス
+
+プランジバス：通常は全身を簡単に浸漬することができまる一度に複数の人の入るバス。
+
+座バス：水浴を椅子のように座って行うバス。
+
+治療バス：水浴セラピーの目的に使用されるバス。
+
+渦バス：ポンプによる水の循環や、水や空気の誘引により水を攪拌する統合された装置としてのバス。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="0f857e80d20211e1800000215ad4efdf">
+      <Name>DrainSize</Name>
+      <Definition>The size of the drain outlet connection from the object.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Drain Size</NameAlias>
+        <NameAlias lang="ja-JP">ドレインサイズ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">排水口の接続のサイズ。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="17452300d20211e1800000215ad4efdf">
+      <Name>HasGrabHandles</Name>
+      <Definition>Indicates whether the bath is fitted with handles that provide assistance to a bather in entering or leaving the bath.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Has Grab Handles</NameAlias>
+        <NameAlias lang="ja-JP">手すりの有無</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">風呂の出入りを補助する手すりが取り付けられているかどうかを示す。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">人体の全体かその一部を浸す衛生器具（BS6100）。履歴：IFC4では材料および材料厚さ属性削除。使用材料の機能は IfcMaterialsResourceスキーマを使用。色のデータ型は、（まだ文字列値）IfcLabelに変更。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

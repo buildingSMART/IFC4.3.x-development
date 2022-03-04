@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="15835b80d21211e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x2" />
+  <Name>Pset_TransportElementElevator</Name>
+  <Definition>Properties common to the definition of all occurrences of IfcTransportElement with the predefined type ="ELEVATOR"</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcTransportElement/ELEVATOR</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcTransportElement/ELEVATOR</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="1a480f80d21211e1800000215ad4efdf">
+      <Name>FireFightingLift</Name>
+      <Definition>Indication whether the elevator is designed to serve as a fire fighting lift the case of fire (TRUE) or not (FALSE). A fire fighting lift is used by fire fighters to access the location of fire and to evacuate people.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Feuerwehraufzug</NameAlias>
+        <NameAlias lang="en">Fire Fighting Lift</NameAlias>
+        <NameAlias lang="fr-FR">LargeurPassage</NameAlias>
+        <NameAlias lang="ja-JP">消防エレベーター</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">Angabe, ob der Aufzug als ein Feuerwerksaufzug vorgesehen ist (WAHR) oder nicht (FALSCH). Ein Feuerwehraufzug ist ein besonders abgesicherter Aufzug der der Feuerwehr im Branfall ein Erreichen der Branetage ermöglicht.</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Indique si l'ascenseur est conçu pour servir d'ascenseur pompier (VRAI) ou non (FAUX). Un ascenseur pompier est utilisé par les pompiers pour accéder à l'endroit du feu et évacuer les personnes.</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">火災時に消防エレベーターとしての利用を想定して設計されているかどうかを示す。消防エレベーターは火災現場へ消防士を運んだり人を避難させるために使われる。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="20d68700d21211e1800000215ad4efdf">
+      <Name>ClearWidth</Name>
+      <Definition>Clear width of the object (elevator). It indicates the distance from the inner surfaces of the elevator car left and right from the elevator door. 
+The shape information is provided in addition to the shape representation and the geometric parameters used within. In cases of inconsistency between the geometric parameters and the shape properties, provided in the attached property, the geometric parameters take precedence.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Clear Width</NameAlias>
+        <NameAlias lang="fr-FR">Largeur du passage</NameAlias>
+        <NameAlias lang="ja-JP">幅員</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Largeur du passage de l'ascenseur. Elle indique la distance entre les surfaces intérieures gauche et droite de la cabine depuis la porte de l'ascenseur. Cette propriété est donnée en complément de la représentation de la forme de l'élément et des paramètres géométriques qui la déterminent. En cas d'incohérence entre ces paramètres géométriques et cette propriété, ce sont les paramètres géométriques qui priment.</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">オブジェクト（エレベータ）の幅。エレベータ昇降機内部表面の左から右の距離を示す。
+形状表現は、Shape representation（IFCの幾何形状表現）およびそこで設定されている幾何形状パラメータにより与えられる。もし、幾何形状パラメータと形状プロパティ情報が一致しない場合は、形状パラメータの値を優先する。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="29c75880d21211e1800000215ad4efdf">
+      <Name>ClearDepth</Name>
+      <Definition>Clear depth of the object (elevator). It indicates the distance from the inner surface of the elevator door to the opposite surface of the elevator car. 
+The shape information is provided in addition to the shape representation and the geometric parameters used within. In cases of inconsistency between the geometric parameters and the shape properties, provided in the attached property, the geometric parameters take precedence.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Clear Depth</NameAlias>
+        <NameAlias lang="fr-FR">Profondeur de passage</NameAlias>
+        <NameAlias lang="ja-JP">奥行き</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Profondeur de l'ascenseur. Elle indique la distance entre la face intérieure de la porte et la face opposée de la cabine de l'ascenseur. Cette propriété est donnée en complément de la représentation de la forme de l'élément et des paramètres géométriques qui la déterminent. En cas d'incohérence entre ces paramètres géométriques et cette propriété, ce sont les paramètres géométriques qui priment.</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">オブジェクト（エレベータ）の奥行き。エレベータドアの内部表面から、反対側の表面までの距離を示す。
+形状表現は、Shape representation（IFCの幾何形状表現）およびそこで設定されている幾何形状パラメータにより与えられる。もし、幾何形状パラメータと形状プロパティ情報が一致しない場合は、形状パラメータの値を優先する。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="321f9380d21211e1800000215ad4efdf">
+      <Name>ClearHeight</Name>
+      <Definition>Clear height of the object (elevator).  
+The shape information is provided in addition to the shape representation and the geometric parameters used within. In cases of inconsistency between the geometric parameters and the shape properties, provided in the attached property, the geometric parameters take precedence.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Clear Height</NameAlias>
+        <NameAlias lang="fr-FR">Hauteur de passage</NameAlias>
+        <NameAlias lang="ja-JP">高さ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Hauteur du passage de l'ascenseur. Cette propriété est donnée en complément de la représentation de la forme de l'élément et des paramètres géométriques qui la déterminent. En cas d'incohérence entre ces paramètres géométriques et cette propriété, ce sont les paramètres géométriques qui priment.</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">オブジェクト（エレベータ）の高さ。エレベータドアの内部の床面から天井までの距離を示す。
+形状表現は、Shape representation（IFCの幾何形状表現）およびそこで設定されている幾何形状パラメータにより与えられる。もし、幾何形状パラメータと形状プロパティ情報が一致しない場合は、形状パラメータの値を優先する。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="de-DE">Property Set Definition in German</PsetDefinitionAlias>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="fr-FR">Définition de l'IAI : propriétés communes à la définition de toutes les instances de la classe IfcTransportElement de type ELEVATOR.</PsetDefinitionAlias>
+    <PsetDefinitionAlias lang="ja-JP">タイプが既定義の"ELEVATOR"であるIfcTransportElementすべてに共通な属性の定義。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

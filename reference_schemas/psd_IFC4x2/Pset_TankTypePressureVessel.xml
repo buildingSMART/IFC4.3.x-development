@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="9e00fc80d21011e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x2" />
+  <Name>Pset_TankTypePressureVessel</Name>
+  <Definition>Common attributes of a pressure vessel.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcTank/PRESSUREVESSEL</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcTank/PRESSUREVESSEL</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="a2c5b080d21011e1800000215ad4efdf">
+      <Name>ChargePressure</Name>
+      <Definition>Nominal or design operating pressure of the tank.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPressureMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Charge Pressure</NameAlias>
+        <NameAlias lang="ja-JP">加圧力</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">タンクの公称又は設計運転圧力</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="a9ecbe80d21011e1800000215ad4efdf">
+      <Name>PressureRegulatorSetting</Name>
+      <Definition>Pressure that is automatically maintained in the tank.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPressureMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Pressure Regulator Setting</NameAlias>
+        <NameAlias lang="ja-JP">圧力調整設定</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">タンク内で自動的に維持される圧力</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="b07b3600d21011e1800000215ad4efdf">
+      <Name>ReliefValveSetting</Name>
+      <Definition>Pressure at which the relief valve activates.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPressureMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Relief Valve Setting</NameAlias>
+        <NameAlias lang="ja-JP">安全弁設定</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">安全弁が作動する圧力</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">圧力容器の共通属性</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="c2f66f00d21211e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x2" />
+  <Name>Pset_TubeBundleTypeFinned</Name>
+  <Definition>Finned tube bundle type attributes.
+Contains the attributes related to the fins attached to a tube in a finned tube bundle such as is commonly found in coils.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcTubeBundle/FINNED</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcTubeBundle/FINNED</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="c8ec5000d21211e1800000215ad4efdf">
+      <Name>Spacing</Name>
+      <Definition>Distance between fins on a tube in the tube bundle.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Spacing</NameAlias>
+        <NameAlias lang="ja-JP">間隔</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">チューブ束内のフィン間の距離</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="d1dd2180d21211e1800000215ad4efdf">
+      <Name>Thickness</Name>
+      <Definition>Thickness of the fin.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Thickness</NameAlias>
+        <NameAlias lang="ja-JP">厚さ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">フィンの厚さ</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="db668980d21211e1800000215ad4efdf">
+      <Name>ThermalConductivity</Name>
+      <Definition>The thermal conductivity of the fin.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcThermalConductivityMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Thermal Conductivity</NameAlias>
+        <NameAlias lang="ja-JP">熱伝導率</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">フィンの熱伝導率</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="e15c6a80d21211e1800000215ad4efdf">
+      <Name>Length</Name>
+      <Definition>Length of the fin as measured parallel to the direction of airflow.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Length</NameAlias>
+        <NameAlias lang="ja-JP">長さ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">気流方向に平行に計られたフィンの長さ</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="e9b4a580d21211e1800000215ad4efdf">
+      <Name>Height</Name>
+      <Definition>Length of the fin as measured perpendicular to the direction of airflow.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Height</NameAlias>
+        <NameAlias lang="ja-JP">高さ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">気流方向に垂直に計られたフィンの長さ</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="f33e0d80d21211e1800000215ad4efdf">
+      <Name>Diameter</Name>
+      <Definition>Actual diameter of a fin for circular fins only.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Diameter</NameAlias>
+        <NameAlias lang="ja-JP">直径</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">円形フィンのみ、フィンの実直径</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="fc2edf00d21211e1800000215ad4efdf">
+      <Name>FinCorrugatedType</Name>
+      <Definition>Description of a fin corrugated type.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Fin Corrugated Type</NameAlias>
+        <NameAlias lang="ja-JP">コルゲートタイプフィン</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">コルゲートタイプフィンの実直径</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="0355ed00d21311e1800000215ad4efdf">
+      <Name>HasCoating</Name>
+      <Definition>TRUE if the fin has a coating, FALSE if it does not.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Has Coating</NameAlias>
+        <NameAlias lang="ja-JP">コーティング有り</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">フィンがコーティング有りの場合 TRUE、無しの場合FALSE</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">フィンタイプチューブ束属性.一般にコイルに見られるように、フィンチューブ束内のチューブに付いているフィンに関する属性を含む</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

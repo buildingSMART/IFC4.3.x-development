@@ -1,0 +1,250 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="6ccc0080d1ff11e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x2" />
+  <Name>Pset_RampFlightCommon</Name>
+  <Definition>Properties common to the definition of all occurrences of IfcRampFlight.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcRampFlight</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcRampFlight</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="735a7800d1ff11e1800000215ad4efdf">
+      <Name>Reference</Name>
+      <Definition>Reference ID for this specified type in this project (e.g. type 'A-1'), Also referred to as "construction type". It should be provided as an alternative to the name of the "object type", if the software does not support object types.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcIdentifier" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Bauteiltyp</NameAlias>
+        <NameAlias lang="en">Reference</NameAlias>
+        <NameAlias lang="fr-FR">Reference</NameAlias>
+        <NameAlias lang="ja-JP">参照記号</NameAlias>
+        <NameAlias lang="zh-CN">参考号</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">Bezeichnung zur Zusammenfassung gleichartiger Bauteile zu einem Bauteiltyp (auch Konstruktionstyp genannt). Alternativ zum Namen des "Typobjekts", insbesondere wenn die Software keine Typen unterstützt.</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Référence à l'identifiant d'un type spécifié dans le contexte du projet (exemple : "type A1") pour désigner un "type de construction". Une alternative au nom d'un objet type lorsque les objets types ne sont pas gérés par le logiciel.</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">参照記号でプロジェクトでのタイプとして使用されるもの。</DefinitionAlias>
+        <DefinitionAlias lang="zh-CN">若未采用已知的分类系统，则该属性为该项目中该类型构件的参考编号（例如，类型A-1）。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="78b7c280d1ff11e1800000215ad4efdf">
+      <Name>Status</Name>
+      <Definition>Status of the element, predominately used in renovation or retrofitting projects. The status can be assigned to as "New" - element designed as new addition, "Existing" - element exists and remains, "Demolish" - element existed but is to be demolished,  "Temporary" - element will exists only temporary (like a temporary support structure).</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_ElementStatus">
+            <EnumItem>NEW</EnumItem>
+            <EnumItem>EXISTING</EnumItem>
+            <EnumItem>DEMOLISH</EnumItem>
+            <EnumItem>TEMPORARY</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>NEW</Name>
+              <Definition>element designed as new addition</Definition>
+              <NameAliases>
+                <NameAlias lang="en">New</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>EXISTING</Name>
+              <Definition>element exists and is to remain</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Existing</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>DEMOLISH</Name>
+              <Definition>element exists but is to be demolished</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Demolish</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>TEMPORARY</Name>
+              <Definition>element will exist only temporarily (such as a temporary support structure)</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Temporary</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Status</NameAlias>
+        <NameAlias lang="en">Status</NameAlias>
+        <NameAlias lang="fr-FR">Statut</NameAlias>
+        <NameAlias lang="ja-JP">状態</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">Status bzw. Phase des Bauteils insbesondere beim Bauen im Bestand. "Neu" (new) neues Bauteil als Ergänzung, "Bestand" (existing) bestehendes Bauteil, dass erhalten bleibt, "Abbruch" (demolish) Bauteil, das abgebrochen wird, "Temporär" (temporary) Bauteil und andere Bauelemente, die vorübergehend eingebaut werden (wie Abstützungen, etc.)</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Statut de l'élément, principalement utilisé dans les projets de rénovation et de réhabilitation. Le statut a pour valeur NOUVEAU pour un nouvel élément, EXISTANT pour un élément existant qui est conservé, DEMOLI pour un élément existant à démolir et TEMPORAIRE pour un élément temporaire (comme une structure support provisoire).</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">要素（主にリノベーションまたは改修プロジェクトにおいて）の状態。 状態は、「新規(New)」－新しく追加される要素。「既存」－要素は存在し、かつ残りもの。「破壊」－要素は存在したが、廃棄されるもの。「一時的」－一時的に存在する要素（一時的にサポートしている構造のようなもの）。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="853c1b00d1ff11e1800000215ad4efdf">
+      <Name>Headroom</Name>
+      <Definition>Actual headroom clearance for the passageway according to the current design. 
+The shape information is provided in addition to the shape representation and the geometric parameters used within. In cases of inconsistency between the geometric parameters and the shape properties, provided in the attached property, the geometric parameters take precedence.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Durchgangshöhe</NameAlias>
+        <NameAlias lang="en">Headroom</NameAlias>
+        <NameAlias lang="fr-FR">HauteurPassage</NameAlias>
+        <NameAlias lang="ja-JP">頭上スペース</NameAlias>
+        <NameAlias lang="zh-CN">净空</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">German-description-2</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Hauteur de passage (échappée) actuellement projetée. Cette propriété est donnée en complément de la représentation de la forme de l'élément et des paramètres géométriques qui la déterminent. En cas d'incohérence entre ces paramètres géométriques et cette propriété, ce sont les paramètres géométriques qui priment.</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">現状の設計に一致した斜路の実際の頭上スペース高
+形状の情報は、内側は使用される形表現および幾何パラメータ学的媒介変数に加えて提供されます。
+幾何パラメータと形状プロパティが矛盾する場合は、付属のプロパティで提供されている、幾何パラメータを優先する。</DefinitionAlias>
+        <DefinitionAlias lang="zh-CN">当前设计方案确定的通道实际净空高度。
+该属性所提供的形状信息是对内部形状描述和几何参数的补充。如果几何参数与该属性所提供的形状属性不符，应以几何参数为准。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="8bca9280d1ff11e1800000215ad4efdf">
+      <Name>ClearWidth</Name>
+      <Definition>Actual clear width measured as the clear space for accessibility and egress; it is a measured distance betwen the two handrails or the wall and a handrail on a ramp.
+The shape information is provided in addition to the shape representation and the geometric parameters used within. In cases of inconsistency between the geometric parameters and the shape properties, provided in the attached property, the geometric parameters take precedence.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Lichte Breite</NameAlias>
+        <NameAlias lang="en">Clear Width</NameAlias>
+        <NameAlias lang="fr-FR">LargeurPassage</NameAlias>
+        <NameAlias lang="ja-JP">通路有効寸法</NameAlias>
+        <NameAlias lang="zh-CN">净宽</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">German-description-3</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Largeur du passage. Mesure de la distance entre les deux rampes ou entre le mur et la rampe. Cette propriété est donnée en complément de la représentation de la forme de l'élément et des paramètres géométriques qui la déterminent. En cas d'incohérence entre ces paramètres géométriques et cette propriété, ce sont les paramètres géométriques qui priment.</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">実際の通路の有効幅
+形情報は、内側は使用される形表現および幾何学的媒介変数に加えて提供されます。幾何学的媒介変数と形特性の間の矛盾の場合では、付属の特性の中で提供されて、幾何学的媒介変数は先行をとります。"</DefinitionAlias>
+        <DefinitionAlias lang="zh-CN">通道入口和出口实际测量的净宽度，以两侧扶手之间或墙与坡道扶手之间的距离为准。
+该属性所提供的形状信息是对内部形状描述和几何参数的补充。如果几何参数与该属性所提供的形状属性不符，应以几何参数为准。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="92590a00d1ff11e1800000215ad4efdf">
+      <Name>Slope</Name>
+      <Definition>Sloping angle of the object  - relative to horizontal (0.0 degrees). 
+Actual maximum slope for the passageway according to the current design.
+The shape information is provided in addition to the shape representation and the geometric parameters used within. In cases of inconsistency between the geometric parameters and the shape properties, provided in the attached property, the geometric parameters take precedence.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPlaneAngleMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Neigung</NameAlias>
+        <NameAlias lang="en">Slope</NameAlias>
+        <NameAlias lang="fr-FR">Pente</NameAlias>
+        <NameAlias lang="ja-JP">通路の傾斜角度(水平からの角度）</NameAlias>
+        <NameAlias lang="zh-CN">坡度</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">German-description-4</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Angle d'inclinaison relativement à l'horizontale correspondant à la valeur 0 degrés. Valeur maximale de l'inclinaison actuellement projetée. Cette propriété est donnée en complément de la représentation de la forme de l'élément et des paramètres géométriques qui la déterminent. En cas d'incohérence entre ces paramètres géométriques et cette propriété, ce sont les paramètres géométriques qui priment.</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">オブジェクト傾斜角度（水平が0.0度)
+現在の設計による通路のための実際の最大の傾斜。形情報は、内側は使用される形表現および幾何学的媒介変数に加えて提供されます。幾何学的媒介変数と形特性の間の矛盾の場合では、付属の特性の中で提供されて、幾何学的媒介変数は先行をとります。"</DefinitionAlias>
+        <DefinitionAlias lang="zh-CN">构件相对于水平（0.0度）方向的实际坡度角。
+当前设计方案确定的通道的最大坡度。
+该属性所提供的形状信息是对内部形状描述和几何参数的补充。如果几何参数与该属性所提供的形状属性不符，应以几何参数为准。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="971dbe00d1ff11e1800000215ad4efdf">
+      <Name>CounterSlope</Name>
+      <Definition>Sloping angle of the object, measured perpendicular to the slope  - relative to horizontal (0.0 degrees). 
+Actual maximum slope for the passageway measured perpendicular to the direction of travel according to the current design. The shape information is provided in addition to the shape representation and the geometric parameters used within. In cases of inconsistency between the geometric parameters and the shape properties, provided in the attached property, the geometric parameters take precedence. 
+Note: new property in IFC4.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPlaneAngleMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Gegenneigung</NameAlias>
+        <NameAlias lang="en">Counter Slope</NameAlias>
+        <NameAlias lang="fr-FR">ContrePente</NameAlias>
+        <NameAlias lang="ja-JP">通路の傾斜角度(垂直との角度）</NameAlias>
+        <NameAlias lang="zh-CN">反向坡度</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">German-description-5</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Angle d'inclinaison de l'objet, mesuré perpendiculairement à la pente. L'horizontale correspond à la valeur 0 degrés. Valeur maximale de la pente de la rampe actuellement projetée, mesurée perpendiculairement à la direction du passage. Cette propriété est donnée en complément de la représentation de la forme de l'élément et des paramètres géométriques qui la déterminent. En cas d'incohérence entre ces paramètres géométriques et cette propriété, ce sont les paramètres géométriques qui priment. Note : nouvelle propriété de la version IFC2x4.</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">オブジェクトの傾斜角度（垂直との角度）
+通路のための実際の最大の傾斜は、現在の設計による旅行の方向への垂直を測定しました。形情報は、内側は使用される形表現および幾何学的媒介変数に加えて提供されます。幾何学的媒介変数と形特性の間の矛盾の場合では、付属の特性の中で提供されて、幾何学的媒介変数は先行をとります。
+注:IFC2x4の中の新しいプロパティ</DefinitionAlias>
+        <DefinitionAlias lang="zh-CN">构件的垂线相对于水平（0.0度）方向的坡度角。
+当前设计方案确定的通道行走方向的垂线方向的最大坡度。
+该属性所提供的形状信息是对内部形状描述和几何参数的补充。如果几何参数与该属性所提供的形状属性不符，应以几何参数为准。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="fr-FR">Définition de l'IAI : propriétés communes à la définition de toutes les instances de la classe IfcRampFlight</PsetDefinitionAlias>
+    <PsetDefinitionAlias lang="ja-JP">IfcRampFlight(斜路)オブジェクトに関する共通プロパティセット定義。</PsetDefinitionAlias>
+    <PsetDefinitionAlias lang="zh-CN">所有IfcRampFlight实例的定义中通用的属性。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ifdguid="c67efb80d1fc11e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4" />
+  <Name>Pset_ProtectiveDeviceTrippingUnitTypeResidualCurrent</Name>
+  <Definition>Information on tripping units that are activated by residual current.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcProtectiveDeviceTrippingUnit/RESIDUALCURRENT</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcProtectiveDeviceTrippingUnit/RESIDUALCURRENT</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="cb43af80d1fc11e1800000215ad4efdf">
+      <Name>TrippingUnitReleaseCurrent</Name>
+      <Definition>The value of tripping or residual current for which the device has the possibility to be equipped. The values are given in mA.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_TrippingUnitReleaseCurrent">
+            <EnumItem>10</EnumItem>
+            <EnumItem>30</EnumItem>
+            <EnumItem>100</EnumItem>
+            <EnumItem>300</EnumItem>
+            <EnumItem>500</EnumItem>
+            <EnumItem>1000</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>10</Name>
+              <NameAliases>
+                <NameAlias lang="en">10</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>30</Name>
+              <NameAliases>
+                <NameAlias lang="en">30</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>100</Name>
+              <NameAliases>
+                <NameAlias lang="en">100</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>300</Name>
+              <NameAliases>
+                <NameAlias lang="en">300</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>500</Name>
+              <NameAliases>
+                <NameAlias lang="en">500</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>1000</Name>
+              <NameAliases>
+                <NameAlias lang="en">1000</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Tripping Unit Release Current</NameAlias>
+        <NameAlias lang="ja-JP">定格感度電流</NameAlias>
+        <NameAlias lang="ko-KR">정격 감도 전류</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">漏電ブレーカの感度電流値（mA）。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">누전 차단기의 감도 전류 (mA).</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">漏電電流で遮断するトリップ装置の情報。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

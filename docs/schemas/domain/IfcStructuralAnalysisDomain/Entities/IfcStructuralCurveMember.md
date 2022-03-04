@@ -30,7 +30,7 @@ The attribute ObjectType shall be given if the predefined type is set to USERDEF
 
 ### Material Profile Set Usage
 
-The material of direct instances IfcStructuralCurveMember (in contrast to instances of the subtype IfcStructuralCurveMemberVarying) is defined by IfcMaterialProfileSetUsage and attached by the IfcRelAssociatesMaterial.RelatingMaterial. It is accessible by the inverse HasAssociations relationship. Composite profile beams can be represented by referring to several IfcMaterialProfiles within the IfcMaterialProfileSet that is referenced from the IfcMaterialProfileSetUsage.
+The material of direct instances IfcStructuralCurveMember (in contrast to instances of the subtype IfcStructuralCurveMemberVarying) is defined by IfcMaterialProfileSetUsage and attached by the IfcRelAssociatesMaterial.RelatingMaterial. It is accessible by the inverse HasAssociations relationship. Composite profile beams can be represented by referring to several IfcMaterialProfiles within the IfcMaterialProfileSet that is referenced from the IfcMaterialProfileSetUsage. In case of tapered members, the material profile usage subtype IfcMaterialProfileSetUsageTapering is used which specifies IfcMaterialProfileSets separately at the start and the end of the tapered member.
 
 
 The material (IfcMaterial) in each IfcMaterialProfile(Set) is specified minimally by a name which corresponds with an agreed upon standardized structural material designation. An external reference to the source which specifies the material designation should be provided. Alternatively, structural material properties may be provided using material property sets.

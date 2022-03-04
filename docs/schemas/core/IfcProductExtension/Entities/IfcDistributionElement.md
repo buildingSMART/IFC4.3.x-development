@@ -42,10 +42,6 @@ The assignment of types to distribution element occurrences is vital for providi
 
 
 
-### Quantity Sets
-
-The quantities relating to the IfcDistributionElement are defined by the IfcElementQuantity and attached by the IfcRelDefinesByProperties. A detailed specification for individual quantities is introduced at the level of subtypes of IfcDistributionElement.
-
 ### Spatial Containment
 
 The IfcDistributionElement may be contained within the spatial containment tree. The IfcSpace is the default spatial container.

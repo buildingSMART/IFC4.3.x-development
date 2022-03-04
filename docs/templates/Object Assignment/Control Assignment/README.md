@@ -6,7 +6,7 @@ Controls may have assignments indicating objects that must observe the establish
 ```
 concept {
     IfcControl:Controls -> IfcRelAssignsToControl:RelatingControl
-    IfcRelAssignsToControl:RelatedObjects -> IfcObject:HasAssignments
+    IfcRelAssignsToControl:RelatedObjects -> IfcObjectDefinition:HasAssignments
     IfcRelAssignsToControl:RelatedObjects[binding="Type"]
 }
 ```

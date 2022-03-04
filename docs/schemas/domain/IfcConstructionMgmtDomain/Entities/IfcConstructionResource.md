@@ -72,13 +72,56 @@ For product resources, this refers to _IfcQuantityCount_.
 
 Constraints may be applied to a resource to indicate fixed work (such as total person-hours) or fixed usage (such as simultaneous workers).
 
-#### Usage_ScheduleUsage_IfcPositiveRatioMeasure
+Figure FIXEDUSAGE indicates fixed usage (such as simultaneous workers) such that changes to ScheduleWork should impact the assigned IfcTask.TaskTime.ScheduleDuration and vice-versa.
 
-Indicate fixed usage (such as simultaneous workers) such that changes to ScheduleWork should impact the assigned IfcTask.TaskTime.ScheduleDuration and vice-versa.
+```
+digraph dot_neato {
+IfcLaborResource [pos="0,0!"];
+IfcResourceTime [label=<{IfcResourceTime | ScheduleWork: PT16H<br/>ScheduleUsage: 1}>, pos="0,-70!"];
 
-#### Usage_ScheduleWork_IfcDuration
+IfcRelAssociatesConstraint [label=<IfcRelAssociates<br/>Constraint>, pos="200,0!"];
 
-Indicate fixed work (such as total person-hours) such that changes to ScheduleUsage should impact the assigned IfcTask.TaskTime.ScheduleDuration and vice-versa.
+IfcObjective [label=<{IfcObjective | ObjectiveQualifier: PARAMETER}>, pos="400,0!"];
+IfcMetric [label=<{IfcMetric | ConstraintGrade: HARD<br />Benchmark: EQUALTO}>, pos="400,-70!"];
+IfcReference [label=<{IfcReference | AttributeIdentifier: Usage}>, pos="400,-140!"];
+IfcReference2 [label=<{IfcReference | AttributeIdentifier: ScheduleUsage }>, pos="400,-210!"];
+
+IfcLaborResource -> IfcResourceTime [label="Usage"]
+IfcRelAssociatesConstraint -> IfcLaborResource [headlabel="RelatedObjects[1]", labelangle=90, labeldistance="3"]
+IfcRelAssociatesConstraint -> IfcObjective [taillabel="RelatingConstraint", labelangle=90, labeldistance="3"]
+IfcObjective -> IfcMetric [headlabel="BenchmarkValues[1]"];
+IfcMetric -> IfcReference [headlabel="ReferencePath"];
+IfcReference -> IfcReference2 [headlabel="InnerReference"];
+}
+```
+
+Figure FIXEDUSAGE &mdash; A fixed constraint on the schedule usage.
+
+
+Figure FIXEDWORK indicates fixed work (such as total person-hours) such that changes to ScheduleUsage should impact the assigned IfcTask.TaskTime.ScheduleDuration and vice-versa.
+
+```
+digraph dot_neato {
+IfcLaborResource [pos="0,0!"];
+IfcResourceTime [label=<{IfcResourceTime | ScheduleWork: PT16H<br/>ScheduleUsage: 1}>, pos="0,-70!"];
+
+IfcRelAssociatesConstraint [label=<IfcRelAssociates<br/>Constraint>, pos="200,0!"];
+
+IfcObjective [label=<{IfcObjective | ObjectiveQualifier: PARAMETER}>, pos="400,0!"];
+IfcMetric [label=<{IfcMetric | ConstraintGrade: HARD<br />Benchmark: EQUALTO}>, pos="400,-70!"];
+IfcReference [label=<{IfcReference | AttributeIdentifier: Usage}>, pos="400,-140!"];
+IfcReference2 [label=<{IfcReference | AttributeIdentifier: ScheduleWork }>, pos="400,-210!"];
+
+IfcLaborResource -> IfcResourceTime [label="Usage"]
+IfcRelAssociatesConstraint -> IfcLaborResource [headlabel="RelatedObjects[1]", labelangle=90, labeldistance="3"]
+IfcRelAssociatesConstraint -> IfcObjective [taillabel="RelatingConstraint", labelangle=90, labeldistance="3"]
+IfcObjective -> IfcMetric [headlabel="BenchmarkValues[1]"];
+IfcMetric -> IfcReference [headlabel="ReferencePath"];
+IfcReference -> IfcReference2 [headlabel="InnerReference"];
+}
+```
+
+Figure FIXEDWORK &mdash; A fixed constraint on the schedule work.
 
 ### Document Association
 

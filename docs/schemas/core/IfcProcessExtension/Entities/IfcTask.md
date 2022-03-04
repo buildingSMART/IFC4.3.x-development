@@ -88,19 +88,100 @@ An IfcTask may be assigned a Work Breakdown Structure (WBS) code from of a publi
 
 ### Constraint Association
 
-Constraints may be applied to a task to indicate fixed task duration, fixed start or fixed finish, where IfcMetric.ReferencePath is set to the corresponding attribute on the IfcTaskTime entity.
+Constraints may be applied to a task's scheduled duration, start, or finish, by setting the IfcMetric.ReferencePath to the corresponding attribute on the IfcTaskTime entity.
 
-#### TaskTime
+Figure FIXEDDURATION indicates fixed duration of task with ConstraintGrade=HARD and Benchmark=EQUALTO such that changes to an assigned _IfcConstructionResource.Usage.ScheduleWork_ should impact _IfcConstructionResource.Usage.ScheduleUsage_, and vice-versa.
 
-Indicate fixed duration of task with ConstraintGrade=HARD and Benchmark=EQUALTO such that changes to an assigned _IfcConstructionResource.ResourceTime.ScheduleWork_ should impact _IfcConstructionResource.ResourceTime.ScheduleUsage_, and vice-versa.
+```
+digraph dot_neato {
+IfcTask [pos="0,0!"];
+IfcTaskTime [pos="0,-70!"];
 
-#### TaskTime
+IfcRelAssociatesConstraint [label=<IfcRelAssociates<br/>Constraint>, pos="200,0!"];
 
-Indicate constrained start date with ConstraintGrade=HARD and Benchmark of EQUALTO, GREATERTHANOREQUALTO, or LESSTHANOREQUALTO to indicate "must start on", "start no earlier than" or "start no later than" respectively where _IfcMetric.DataValue_ indicates the specific IfcDateTime. Use SOFT constraint having LESSTHAN benchmark to indicate "start as soon as possible".
+IfcObjective [label=<{IfcObjective | ObjectiveQualifier: PARAMETER}>, pos="400,0!"];
+IfcMetric [label=<{IfcMetric | ConstraintGrade: HARD<br />Benchmark: EQUALTO}>, pos="400,-70!"];
+IfcReference [label=<{IfcReference | AttributeIdentifier: TaskTime}>, pos="400,-140!"];
+IfcReference2 [label=<{IfcReference | AttributeIdentifier: ScheduleDuration }>, pos="400,-210!"];
 
-#### TaskTime
+IfcTask -> IfcTaskTime [label="TaskTime"]
+IfcRelAssociatesConstraint -> IfcTask [headlabel="RelatedObjects[1]", labelangle=90, labeldistance="3"]
+IfcRelAssociatesConstraint -> IfcObjective [taillabel="RelatingConstraint", labelangle=90, labeldistance="3"]
+IfcObjective -> IfcMetric [headlabel="BenchmarkValues[1]"];
+IfcMetric -> IfcReference [headlabel="ReferencePath"];
+IfcReference -> IfcReference2 [headlabel="InnerReference"];
+}
+```
 
-Indicate constrained finish date with ConstraintGrade=HARD and Benchmark of EQUALTO, GREATERTHANOREQUALTO, or LESSTHANOREQUALTO to indicate "must finish on", "finish no earlier than" or "finish no later than" respectively where _IfcMetric.DateValue_ indicates the specific IfcDateTime. Use SOFT constraint having GREATERTHAN benchmark to indicate "finish as late as possible".
+Figure FIXEDDURATION &mdash; Constraining the task duration
+
+Figure STARTCONSTRAINT indicates how to constrain the scheduled start date of the task. Depending on the _ConstraintGrade_ and _Benchmark_ the constraint may indicate different meanings as shown in Table STARTCONSTRAINTTYPES.
+
+ConstraintGrade | Benchmark | Indicates
+--- | --- | ---
+HARD | EQUALTO | Must start on
+HARD | GREATERTHANOREQUALTO | Start no earlier than
+HARD | LESSTHANOREQUALTO | Start no later than
+SOFT | LESSTHAN | Start as soon as possible
+
+Table STARTCONSTRAINTTYPES &mdash; Different constraints that can be applied to a start date
+
+```
+digraph dot_neato {
+IfcTask [pos="0,0!"];
+IfcTaskTime [pos="0,-70!"];
+
+IfcRelAssociatesConstraint [label=<IfcRelAssociates<br/>Constraint>, pos="200,0!"];
+
+IfcObjective [label=<{IfcObjective | ObjectiveQualifier: PARAMETER}>, pos="400,0!"];
+IfcMetric [label=<{IfcMetric | ConstraintGrade: SOFT<br />Benchmark: LESSTHAN}>, pos="400,-70!"];
+IfcReference [label=<{IfcReference | AttributeIdentifier: TaskTime}>, pos="400,-140!"];
+IfcReference2 [label=<{IfcReference | AttributeIdentifier: ScheduleStart }>, pos="400,-210!"];
+
+IfcTask -> IfcTaskTime [label="TaskTime"]
+IfcRelAssociatesConstraint -> IfcTask [headlabel="RelatedObjects[1]", labelangle=90, labeldistance="3"]
+IfcRelAssociatesConstraint -> IfcObjective [taillabel="RelatingConstraint", labelangle=90, labeldistance="3"]
+IfcObjective -> IfcMetric [headlabel="BenchmarkValues[1]"];
+IfcMetric -> IfcReference [headlabel="ReferencePath"];
+IfcReference -> IfcReference2 [headlabel="InnerReference"];
+}
+```
+
+Figure STARTCONSTRAINT &mdash; Constraining the task start date to start as soon as possible
+
+Figure FINISHCONSTRAINT indicates how to constrain the scheduled finish date of the task. Depending on the _ConstraintGrade_ and _Benchmark_ the constraint may indicate different meanings as shown in Table FINISHCONSTRAINTTYPES.
+
+ConstraintGrade | Benchmark | Indicates
+--- | --- | ---
+HARD | EQUALTO | Must finish on
+HARD | GREATERTHANOREQUALTO | Finish no earlier than
+HARD | LESSTHANOREQUALTO | Finish no later than
+SOFT | GREATERTHAN | Finish as late as possible
+
+Table FINISHCONSTRAINTTYPES &mdash; Different constraints that can be applied to a start date
+
+```
+digraph dot_neato {
+IfcTask [pos="0,0!"];
+IfcTaskTime [pos="0,-70!"];
+
+IfcRelAssociatesConstraint [label=<IfcRelAssociates<br/>Constraint>, pos="200,0!"];
+
+IfcObjective [label=<{IfcObjective | ObjectiveQualifier: PARAMETER}>, pos="400,0!"];
+IfcMetric [label=<{IfcMetric | ConstraintGrade: SOFT<br />Benchmark: GREATERTHAN}>, pos="400,-70!"];
+IfcReference [label=<{IfcReference | AttributeIdentifier: TaskTime}>, pos="400,-140!"];
+IfcReference2 [label=<{IfcReference | AttributeIdentifier: ScheduleFinish }>, pos="400,-210!"];
+
+IfcTask -> IfcTaskTime [label="TaskTime"]
+IfcRelAssociatesConstraint -> IfcTask [headlabel="RelatedObjects[1]", labelangle=90, labeldistance="3"]
+IfcRelAssociatesConstraint -> IfcObjective [taillabel="RelatingConstraint", labelangle=90, labeldistance="3"]
+IfcObjective -> IfcMetric [headlabel="BenchmarkValues[1]"];
+IfcMetric -> IfcReference [headlabel="ReferencePath"];
+IfcReference -> IfcReference2 [headlabel="InnerReference"];
+}
+```
+
+Figure FINISHCONSTRAINT &mdash; Constraining the task finish date to finish as late as possible
 
 ### Control Assignment
 

@@ -30,16 +30,16 @@ A distribution system may be associated with an external Building Automation Sys
 
 ```
 digraph dot_neato {
-    IfcDistributionSystem[pos="1,3!"];
-    IfcRelAssignsToGroup[pos="4,3!"];
-    IfcController[pos="7,3!"];
-    IfcRelAssociatesLibrary[pos="1,2!"];
-    IfcLibraryInformation[pos="1,1!"];
-    IfcRelAssociatesLibrary2 [label="IfcRelAssociatesLibrary", pos="7,2!"];
-    IfcLibraryReference[pos="7,1!"]
+    IfcDistributionSystem[pos="0,0!"];
+    IfcRelAssignsToGroup[pos="200,0!"];
+    IfcController[pos="400,0!"];
+    IfcRelAssociatesLibrary[pos="0,-70!"];
+    IfcLibraryInformation[pos="0,-140!"];
+    IfcRelAssociatesLibrary2 [label="IfcRelAssociatesLibrary", pos="400,-70!"];
+    IfcLibraryReference[pos="400,-140!"]
 
-    IfcRelAssignsToGroup -> IfcController [label="RelatedObjects"];
-    IfcRelAssignsToGroup -> IfcDistributionSystem [label="RelatingGroup"];
+    IfcRelAssignsToGroup -> IfcController [taillabel="RelatedObjects", labelangle=90, labeldistance=3];
+    IfcRelAssignsToGroup -> IfcDistributionSystem [headlabel="RelatingGroup", labelangle=90, labeldistance=3];
     IfcRelAssociatesLibrary -> IfcDistributionSystem [label="RelatedObjects"];
     IfcRelAssociatesLibrary -> IfcLibraryInformation [label="RelatingLibrary"];
     IfcRelAssociatesLibrary2 -> IfcController [label="RelatedObjects"];

@@ -329,20 +329,25 @@ def get_inheritance_graph(current_entity):
     return reversed(graph)
 
 
-def get_node_colour(n):
-    n = n.strip('"')
-    if R.entity_supertype.get(n) is None:
-        return "gray"
+def get_node_type(n):
+    try:
+        n = n.replace("<br />", "")
+        n = re.findall(r'Ifc\w+', n)[0]
+    except:
+        return "attribute"
+
+    if n not in R.entity_definitions:
+        return "attribute"
 
     def is_relationship(ty=n):
-        if ty == "IfcRelationship":
+        if ty == "IfcRelationship" or ty == "IfcResourceLevelRelationship":
             return True
         ty = R.entity_supertype.get(ty)
         if ty:
             return is_relationship(ty)
         return False
 
-    return "yellow" if is_relationship() else "dodgerblue"
+    return "relationship" if is_relationship() else "entity"
 
 
 def transform_graph(current_entity, graph_data, only_urls=False):
@@ -395,12 +400,33 @@ def transform_graph(current_entity, graph_data, only_urls=False):
                     # rank=same groupings otherwise cause
                     # node names to be listed twice
                     args = names_seen[n.get_name()]
-
                 else:
-                    args = {"fillcolor": get_node_colour(nm), "shape": "box", "style": "filled"}
+                    node_type = get_node_type(nm)
+                    args = {
+                        "shape": "box",
+                        "style": "filled",
+                        "penwidth": 0.2,
+                        "width": 2,
+                        "height": 0.5,
+                        "color": "#000000",
+                    }
+                    if node_type == "entity":
+                        args["fillcolor"] = "dodgerblue"
+                    elif node_type == "relationship":
+                        args["fillcolor"] = "yellow"
+                    else:
+                        args["style"] = ""
+                        args["shape"] = "plain"
 
-                    if n.get_name() == current_entity:
-                        args["color"] = "red"
+                    # A pipe is the symbol for a table
+                    if "|" in nm:
+                        # Experimenting with "Mrecord" incase it looks nicer
+                        args["shape"] = "record"
+
+                    if nm.strip('"').split(" ")[0] == current_entity:
+                        args["fillcolor"] = "#1976d2"
+                        args["penwidth"] = "1"
+
 
                     names_seen[n.get_name()] = args
 
@@ -452,10 +478,21 @@ def process_graphviz(current_entity, md):
         with open(fn, "w") as f:
             f.write(c2)
         if is_markdown:
-            md = md.replace("```%s```" % c, "![](/svgs/%s_%s.svg)" % (current_entity, hash))
+            md = md.replace("```%s```" % c, "![dot_diagram](/svgs/%s_%s.svg)" % (current_entity, hash))
         else:
             md = md.replace("<pre><code>%s</code></pre>" % escaped_c, "![](/svgs/%s_%s.svg)" % (current_entity, hash))
-        subprocess.call([shutil.which("dot") or "dot", f"-K{layout_engine}", "-O", "-Tsvg", "-Gbgcolor=#ffffff00", fn])
+        subprocess.call([
+            shutil.which("dot") or "dot",
+            f"-K{layout_engine}",
+            "-O",
+            "-Tsvg",
+            "-n2",
+            #"-Gsize=10,8",
+            "-Gbgcolor=#ffffff00",
+            "-Earrowsize=0.5",
+            "-Earrowhead=dot",
+            fn
+        ])
 
     return md or ""
 
@@ -544,14 +581,14 @@ def create_entity_definition(e, bindings, ports):
         name = row["name"]
 
         html += '<tr>'
-        html += f'<td width="250" height="{height}" bgcolor="{bgcolor}" align="{align}" port="{name}0">'
+        html += f'<td sides="b" width="250" height="{height}" bgcolor="{bgcolor}" align="{align}" port="{name}0">'
         if is_bold:
             html += '<b>'
         html += f'<font color="{color}">{name}</font>'
         if is_bold:
             html += '</b>'
         html += '</td>'
-        html += f'<td width="20" height="{height}" bgcolor="{bgcolor}" align="right" port="{name}1">'
+        html += f'<td sides="b" width="20" height="{height}" bgcolor="{bgcolor}" align="right" port="{name}1">'
         html += row.get("cardinality", "")
         html += '</td>'
         html += '</tr>'
@@ -832,6 +869,12 @@ def process_markdown(resource, mdc):
             pass
         else:
             img["src"] = img["src"][9:]
+
+    for svg in soup.findAll("svg"):
+        # Graphviz diagrams use pt, a hackish way to isolate them
+        if "pt" in svg.attrs["width"]:
+            svg.attrs["width"] = "%dpx" % (int(svg.attrs["width"][0:-2]) * 1)
+            svg.attrs["height"] = "%dpx" % (int(svg.attrs["height"][0:-2]) * 1)
 
     # Tag all special notes separately. In markdown they are all lumped in a single block quote.
     for blockquote in soup.findAll("blockquote"):
@@ -2038,7 +2081,7 @@ def after(response):
         main_content = main_content[0] if len(main_content) else None
 
         if main_content:
-            for img in main_content.findAll("img"):
+            for img in main_content.findAll(["img", "svg"]):
                 # Capture images as numbered figures
                 parent = img.parent
                 if parent is None:

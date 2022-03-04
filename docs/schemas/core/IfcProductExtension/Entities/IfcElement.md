@@ -161,7 +161,11 @@ The 'CoG', Center of Gravity, shape representation is used as a means to verify 
 
 ### Element Interference
 
+### Element Nesting
 
+A host element can nest connected components. This should be used when there is a specific position or form factor to attach specific elements.
+
+> EXAMPLE A sink has a pre-drilled hole to attach a faucet.
 
 ### Element Openings
 

@@ -42,12 +42,10 @@ Covering such as drywall applied to a wall or ceiling, for which the junction bo
 
 ### Element Nesting
 
+> EXAMPLE A switch, outlet, light fixture, or other component that may fit within one of the gangs of the junction box may be nested.
+
 { .change-ifc4}
 > IFC4 ADD1 CHANGE  Junction boxes no longer have ports defined, but rely on element nesting for indicating containment of electrical devices.
-
-#### IfcDistributionFlowElement
-
-A switch, outlet, light fixture, or other component that may fit within one of the gangs of the junction box. Property sets may further define compatible objects based on form factor, voltage, and current.
 
 ### Material Constituent Set
 

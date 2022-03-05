@@ -209,9 +209,13 @@ class uml_realization:
         
 class context:
     
-    def __init__(self, fn):
-        self.content = xml_dict.read(fn)
-        
+    def __init__(self, *, filename=None, content=None):
+    
+        if filename:
+            self.content = xml_dict.read(fn)
+        else:
+            self.content = content
+            
         self.to_node = {}
         
         def v(nd, stack):

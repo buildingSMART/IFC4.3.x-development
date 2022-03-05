@@ -18,9 +18,14 @@ class xml_node:
         return id(self)
         
     def child_with_tag(self, tag):
+        cs = list(self.children_with_tag(tag))
+        if cs:
+            return cs[0]
+                
+    def children_with_tag(self, tag):
         for ch in self.children:
             if ch.tag == tag:
-                return ch
+                yield ch
                 
     def recursive_print(self, file=sys.stdout, level=0):
         attr_pairs = "".join(f' {k}="{v}"' for k, v in self.attributes.items())

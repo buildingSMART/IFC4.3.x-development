@@ -80,7 +80,7 @@
         </tr>
         {% for attribute in group.attributes %}
         <tr{% if group.is_inherited %} class="inherited" data-type="attribute"{% endif %}>
-            <td data-label="#">{{ attribute.number }}</td>
+            <td data-label="#">{{ attribute.number }}{% if attribute.formal %}*{% endif %}</td>
             <td data-label="Name">
                 {% if attribute.is_inverse %}
                 <em>{{ attribute.name }}</em>
@@ -91,12 +91,15 @@
             <td data-label="Type">{{ attribute.type }}</td>
             <td data-label="Description">
                 {% if attribute.formal %}
-                    <pre><code class="language-express hljs">{{ attribute.formal | safe }}</code></pre>
+                <p>
+                    This attribute is formally derived.
+                </p>
+                <pre><code class="language-express hljs">{{ attribute.formal | safe }}</code></pre>
                 {% endif %}
-                
                 {% if attribute.description %}
                 {{ attribute.description | safe }}
-                {% else %}
+                {% endif %}
+                {% if not attribute.formal and not attribute.description %}
                 <p>
                     <em>No description available.</em>
                 </p>

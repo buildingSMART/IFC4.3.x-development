@@ -1643,25 +1643,34 @@ def concept(s=""):
 
     fn = os.path.join(md_root, s, "README.md")
 
-    if os.path.exists(fn):
-        html = process_markdown('', process_graphviz_concept("".join(c for c in s if c.isalnum()), open(fn).read()))
-        soup = BeautifulSoup(html)
-        for svg in soup.findAll("svg"):
-            svg.attrs["width"] = "%dpx" % (int(svg.attrs["width"][0:-2]) // 4 * 3)
-            svg.attrs["height"] = "%dpx" % (int(svg.attrs["height"][0:-2]) // 4 * 3)
+    diagram = None
 
-        html = str(soup)
+    if os.path.exists(fn):
+        md = open(fn).read()
+
+        if "concept {" in md:
+            diagram = process_graphviz_concept("".join(c for c in s if c.isalnum()), md[md.index("```"):])
+            diagram = process_markdown("", diagram)
+            soup = BeautifulSoup(diagram)
+            for svg in soup.findAll("svg"):
+                svg.attrs["width"] = "%dpx" % (int(svg.attrs["width"][0:-2]) // 4 * 3)
+                svg.attrs["height"] = "%dpx" % (int(svg.attrs["height"][0:-2]) // 4 * 3)
+            diagram = str(soup)
+            md = md[0:md.index("```")]
+
+        html = process_markdown('', md)
     else:
         html = ""
 
     xmi_concept = t.replace(" ", "")
 
+    tables = ""
     for view_name, concepts in R.xmi_concepts.items():
         if xmi_concept in concepts:
-            html += f"<h3>{separate_camel(view_name)}</h3>"
+            tables += f"<h3>{separate_camel(view_name)}</h3>"
             headers, rows = create_concept_table(view_name, xmi_concept, None)
             if rows:
-                html += tabulate.tabulate(rows, headers=headers, tablefmt="unsafehtml")
+                tables += tabulate.tabulate(rows, headers=headers, tablefmt="unsafehtml")
 
     subs = make_concept(s.split("/")).children
 
@@ -1671,6 +1680,8 @@ def concept(s=""):
         is_iso=is_iso,
         navigation=get_navigation(resource, number=n),
         content=html,
+        diagram=diagram,
+        tables=tables,
         path=fn[len(REPO_DIR) :].replace("\\", "/"),
         title=t,
         number=n,

@@ -57,7 +57,7 @@ def process_document(g, fn, subj, cls):
 
 if not os.path.exists(os.path.join(tempfile.gettempdir(), "schema.ttl")):
 
-    d = append_xmi.context(relative_path("../schemas/IFC.xml"))
+    d = append_xmi.context(fn=relative_path("../schemas/IFC.xml"))
     
     id_to_node = {}
     counter = {'c': 1}

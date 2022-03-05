@@ -16,5 +16,7 @@ concept {
     IfcIrregularTimeSeries:Values -> IfcIrregularTimeSeriesValue
     IfcIrregularTimeSeriesValue:TimeStamp -> IfcDateTime
     IfcIrregularTimeSeriesValue:ListValues -> IfcValue
+    
+    IfcObject:PredefinedType[binding="PredefinedType"]
 }
 ```

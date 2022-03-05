@@ -50,7 +50,7 @@ def process_document(g, fn, subj, cls):
             g.add((s2, fqdn("containedIn"), s))
             write(s2, ch)
         
-    contents = parse_document(fn=fn)
+    contents = parse_document(filename=fn)
     if contents:
         write(subj, contents)
     

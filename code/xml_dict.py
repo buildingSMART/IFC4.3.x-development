@@ -27,6 +27,25 @@ class xml_node:
             if ch.tag == tag:
                 yield ch
                 
+    def apply(self, fn):
+        new_self = fn(self)
+        children = [c.apply(fn) for c in self.children]
+        new_self.children = children
+        for c in children:
+            c.parent = new_self
+        return new_self
+        
+    def strip_namespaces(self):
+        sn = lambda s: s.split("}")[-1]
+        def inner(node):
+            return xml_node(
+                sn(node.tag),
+                {sn(k): v for k, v in node.attributes.items()},
+                node.text,
+                node.namespaces
+            )
+        return self.apply(inner)
+                
     def recursive_print(self, file=sys.stdout, level=0):
         attr_pairs = "".join(f' {k}="{v}"' for k, v in self.attributes.items())
         close = " /" if not (self.text or self.children) else ""

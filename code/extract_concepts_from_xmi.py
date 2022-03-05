@@ -52,7 +52,7 @@ def parse_bindings(concept, all_templates=None, fn=None, to_xmi=False, definitio
         
         if to_xmi:
             t = get_all_attributes(a).get(b, '').replace("OPTIONAL ", "").replace("UNIQUE ", "")
-            if (a,b) in [('IfcPropertySet', 'Name'), ('IfcElementQuantity', 'Name')]:
+            if (a,b) in [('IfcPropertySet', 'Name'), ('IfcElementQuantity', 'Name'), ('IfcMaterialProperties', 'Name'), ('IfcProfileProperties', 'Name')]:
                 # In UML we have property sets as defined classes, which in
                 # IFC are fully late-bound type definitions. Selection of the
                 # appropriate psets happens through Name, which is IfcLabel

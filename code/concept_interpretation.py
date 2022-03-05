@@ -24,6 +24,8 @@ concept_type.PROPERTY_OR_QUANTITY_SET,
 concept_type.DIRECTIONAL_BINARY,
 ('Property Sets for Performance', ('PredefinedType', ('IfcObject', 'PredefinedType'))):
 concept_type.PROPERTY_OR_QUANTITY_SET,
+('Property Sets for Materials',):
+concept_type.PROPERTY_OR_QUANTITY_SET,
 ('Aggregation',):
 # Aggregation parametrized without any definition
 # https://github.com/buildingSMART/IFC4.3.x-development/issues/118

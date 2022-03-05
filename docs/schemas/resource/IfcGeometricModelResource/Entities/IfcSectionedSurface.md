@@ -13,19 +13,12 @@ In case of branching longitudinal breaklines, the SectionedSurface may use OpenC
 
 Figure 2 &mdash; Sectioned surface with branching longitudinal breaklines
 
-**Formal propositions:**
+Informal Propositions:
 
-* The curve entity which is the underlying directrix shall have the dimensionality of 3.
-* The profile type shall be CURVE within the list of the profiles defining the cross sections.
-* The entity type for each section must be the same.
-* The list of cross sections and the list of cross section positions shall be of the same size.
-
-**Informal Propositions:**
-
-* No two consecutive sections shall intersect.
-* If the directrix is not tangent continuous, the resulting surface is created by a miter at half angle between the two segments.
-* Very sharp edges may result in nearly impossible miter; implementer agreements may define acceptable limits for tangent discontinuity or require the directrix to be tangent continuous.
-* The directrix shall not intersect
+1. No two consecutive sections shall intersect.
+2. If the directrix is not tangent continuous, the resulting surface is created by a miter at half angle between the two segments.
+3. Very sharp edges may result in nearly impossible miter; implementer agreements may define acceptable limits for tangent discontinuity or require the directrix to be tangent continuous.
+4. The directrix shall not intersect
 
 ## Attributes
 
@@ -40,3 +33,17 @@ List of cross sections in sequential order along the Directrix
 
 ### FixedAxisVertical
 Indicates whether Sections are oriented with the Y axis of each profile facing upwards in +Z direction (True), or vertically perpendicular to the Directrix varying according to slope (False)
+
+## Formal Propositions
+
+### DirectrixIs3D
+The curve entity which is the underlying directrix shall have the dimensionality of 3.
+
+### ProfilesAreCurves
+The profile type shall be CURVE within the list of the profiles defining the cross sections.
+
+### SameProfileType
+The entity type for each section must be the same.
+
+### CorrespondingLists
+The list of cross sections and the list of cross section positions shall be of the same size.

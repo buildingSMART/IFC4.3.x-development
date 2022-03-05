@@ -212,7 +212,7 @@ class context:
     def __init__(self, *, filename=None, content=None):
     
         if filename:
-            self.content = xml_dict.read(fn)
+            self.content = xml_dict.read(filename)
         else:
             self.content = content
             

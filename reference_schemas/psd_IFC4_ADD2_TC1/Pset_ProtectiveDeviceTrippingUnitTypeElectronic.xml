@@ -1,0 +1,218 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ifdguid="8d468b80d1fc11e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4" />
+  <Name>Pset_ProtectiveDeviceTrippingUnitTypeElectronic</Name>
+  <Definition>Information on tripping units that are electronically tripped.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcProtectiveDeviceTrippingUnit/ELECTRONIC</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcProtectiveDeviceTrippingUnit/ELECTRONIC</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="92a3d600d1fc11e1800000215ad4efdf">
+      <Name>ElectronicTrippingUnitType</Name>
+      <Definition>A list of the available types of electronic tripping unit  from which that required may be selected.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_ElectronicTrippingUnitType">
+            <EnumItem>EP_BM</EnumItem>
+            <EnumItem>EP_MP</EnumItem>
+            <EnumItem>EP_SC</EnumItem>
+            <EnumItem>EP_STD</EnumItem>
+            <EnumItem>EP_TIMEDELAYED</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>EP_BM</Name>
+              <NameAliases>
+                <NameAlias lang="en">Ep  Bm</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>EP_MP</Name>
+              <NameAliases>
+                <NameAlias lang="en">Ep  Mp</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>EP_SC</Name>
+              <NameAliases>
+                <NameAlias lang="en">Ep  Sc</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>EP_STD</Name>
+              <NameAliases>
+                <NameAlias lang="en">Ep  Std</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>EP_TIMEDELAYED</Name>
+              <NameAliases>
+                <NameAlias lang="en">Ep  Timedelayed</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Electronic Tripping Unit Type</NameAlias>
+        <NameAlias lang="ja-JP">電磁式の装置タイプ</NameAlias>
+        <NameAlias lang="ko-KR">전자식 장치 유형</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">電磁式の装置タイプをリストから選択。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">전자식 장치 유형을 목록에서 선택합니다.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="a2231f00d1fc11e1800000215ad4efdf">
+      <Name>NominalCurrents</Name>
+      <Definition>A set of values providing information on available modules (chips) for setting the nominal current of the protective device. If
+the set is empty, no nominal current modules are available for the tripping unit.</Definition>
+      <PropertyType>
+        <TypePropertyListValue>
+          <ListValue>
+            <DataType type="IfcElectricCurrentMeasure" />
+          </ListValue>
+        </TypePropertyListValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Nominal Currents</NameAlias>
+        <NameAlias lang="ja-JP">定格電流</NameAlias>
+        <NameAlias lang="ko-KR">정격전류</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">トリップ装置が対応する定格電流。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">트립 장치가 지원하는 정격 전류.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="a94a2d00d1fc11e1800000215ad4efdf">
+      <Name>N_Protection</Name>
+      <Definition>An indication whether the electronic tripping unit has separate protection for the N conductor, or not.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">N_ Protection</NameAlias>
+        <NameAlias lang="ja-JP">N_Protection</NameAlias>
+        <NameAlias lang="ko-KR">N_Protection</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">電磁式トリップ装置がN個の導体を保護するか否かの設定。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">전자식 트립 장치가 N 개의 도체를 보호 여부 설정.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="b0713b00d1fc11e1800000215ad4efdf">
+      <Name>N_Protection_50</Name>
+      <Definition>An indication whether the electronic tripping unit is tripping if the current in the N conductor is more than 50% of that of the phase conductors. The property is only asserted if the property N_Protection is asserted.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">N_ Protection_50</NameAlias>
+        <NameAlias lang="ja-JP">N_Protection_50</NameAlias>
+        <NameAlias lang="ko-KR">N_Protection_50</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">電磁式トリップ装置がN導体の50％以上で保護するか否かの設定。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">전자식 트립 장치가 N 도체의 50 % 이상으로 보호 여부 설정.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="b8c97600d1fc11e1800000215ad4efdf">
+      <Name>N_Protection_100</Name>
+      <Definition>An indication whether the electronic tripping unit is tripping if the current in the N conductor is more than 100% of that of the phase conductors. The property is only asserted if the property N_Protection is asserted.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">N_ Protection_100</NameAlias>
+        <NameAlias lang="ja-JP">N_Protection_100</NameAlias>
+        <NameAlias lang="ko-KR">N_Protection_100</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">電磁式トリップ装置がN導体の100％以上で保護するか否かの設定。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">전자식 트립 장치가 N 도체의 100 % 이상으로 보호 여부 설정.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="bebf5700d1fc11e1800000215ad4efdf">
+      <Name>N_Protection_Select</Name>
+      <Definition>An indication whether the use of the N_Protection can be selected by the user or not. If both the properties N_Protection_50 and N_Protection_100 are asserted, the value of N_Protection_Select property is set to TRUE. The property is only asserted if the property N_Protection is asserted.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">N_ Protection_ Select</NameAlias>
+        <NameAlias lang="ja-JP">N_Protectionの選択</NameAlias>
+        <NameAlias lang="ko-KR">N_Protection 선택</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">どのN_Protectionを使うかユーザが設定できるかどうかを指定する。
+N_Protection_50とN_Protection_100の両方が有効な場合は、TRUEにします。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">어떤 N_Protection를 사용하거나 사용자가 설정할 수 있는지 여부를 지정합니다. N_Protection_50하면 N_Protection_100를 모두 사용할 경우에는 TRUE합니다.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">電気で遮断するトリップ装置の情報。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

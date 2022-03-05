@@ -1,0 +1,255 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="f1bd1700d20b11e1800000215ad4efdf" templatetype="PSET_PERFORMANCEDRIVEN" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x1" />
+  <Name>Pset_SpaceThermalLoadPHistory</Name>
+  <Definition>The space thermal load IfcSpaceThermalLoadProperties defines actual measured thermal losses and gains occurring within a space or zone. The thermal load source attribute defines an enumeration of possible sources of the thermal load.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcSpace</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcSpace</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="f7b2f800d20b11e1800000215ad4efdf">
+      <Name>People</Name>
+      <Definition>Heat gains and losses from people.</Definition>
+      <PropertyType>
+        <TypePropertyReferenceValue reftype="IfcTimeSeries" />
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">People</NameAlias>
+        <NameAlias lang="ja-JP">人員</NameAlias>
+        <NameAlias lang="ko-KR">인원</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">人員からの熱取得。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">사람의 열</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="faade880d20b11e1800000215ad4efdf">
+      <Name>Lighting</Name>
+      <Definition>Lighting loads.</Definition>
+      <PropertyType>
+        <TypePropertyReferenceValue reftype="IfcTimeSeries" />
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Lighting</NameAlias>
+        <NameAlias lang="ja-JP">照明</NameAlias>
+        <NameAlias lang="ko-KR">조명</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">照明負荷。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">조명 부하</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="fda8d900d20b11e1800000215ad4efdf">
+      <Name>EquipmentSensible</Name>
+      <Definition>Heat gains and losses from equipment.</Definition>
+      <PropertyType>
+        <TypePropertyReferenceValue reftype="IfcTimeSeries" />
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Equipment Sensible</NameAlias>
+        <NameAlias lang="ja-JP">事務機器の顕熱</NameAlias>
+        <NameAlias lang="ko-KR">사무기기의 현열</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">事務機器からの熱取得と熱ロス。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">사무기기에서 열 취득 및 손실</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="000b3300d20c11e1800000215ad4efdf">
+      <Name>VentilationIndoorAir</Name>
+      <Definition>Ventilation loads from indoor air.</Definition>
+      <PropertyType>
+        <TypePropertyReferenceValue reftype="IfcTimeSeries" />
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Ventilation Indoor Air</NameAlias>
+        <NameAlias lang="ja-JP">室内の換気量</NameAlias>
+        <NameAlias lang="ko-KR">실내 환기량</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">室内の換気による熱負荷。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">실내 환기에 의한 열 부하</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="03062380d20c11e1800000215ad4efdf">
+      <Name>VentilationOutdoorAir</Name>
+      <Definition>Ventilation loads from outdoor air.</Definition>
+      <PropertyType>
+        <TypePropertyReferenceValue reftype="IfcTimeSeries" />
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Ventilation Outdoor Air</NameAlias>
+        <NameAlias lang="ja-JP">外気量</NameAlias>
+        <NameAlias lang="ko-KR">외기량</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">外気による熱負荷。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">외기에한 열부하</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="06011400d20c11e1800000215ad4efdf">
+      <Name>RecirculatedAir</Name>
+      <Definition>Loads from recirculated air.</Definition>
+      <PropertyType>
+        <TypePropertyReferenceValue reftype="IfcTimeSeries" />
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Recirculated Air</NameAlias>
+        <NameAlias lang="ja-JP">循環空気</NameAlias>
+        <NameAlias lang="ko-KR">순환공기</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">循環空気による熱負荷。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">순환공기에 의한 열부하</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="08fc0480d20c11e1800000215ad4efdf">
+      <Name>ExhaustAir</Name>
+      <Definition>Loads from exhaust air.</Definition>
+      <PropertyType>
+        <TypePropertyReferenceValue reftype="IfcTimeSeries" />
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Exhaust Air</NameAlias>
+        <NameAlias lang="ja-JP">排気</NameAlias>
+        <NameAlias lang="ko-KR">배기</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">排気による熱負荷。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">배기에 의한 열부하</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="0bf6f500d20c11e1800000215ad4efdf">
+      <Name>AirExchangeRate</Name>
+      <Definition>Loads from the air exchange rate.</Definition>
+      <PropertyType>
+        <TypePropertyReferenceValue reftype="IfcTimeSeries" />
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Air Exchange Rate</NameAlias>
+        <NameAlias lang="ja-JP">換気回数</NameAlias>
+        <NameAlias lang="ko-KR">환기회수</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">換気による熱負荷。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">환기에 의한 열부하</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="0f8a7c00d20c11e1800000215ad4efdf">
+      <Name>DryBulbTemperature</Name>
+      <Definition>Loads from the dry bulb temperature.</Definition>
+      <PropertyType>
+        <TypePropertyReferenceValue reftype="IfcTimeSeries" />
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Dry Bulb Temperature</NameAlias>
+        <NameAlias lang="ja-JP">乾球温度</NameAlias>
+        <NameAlias lang="ko-KR">건구온도</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">乾球温度による熱負荷。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">건구온도에의한 열부하</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="12856c80d20c11e1800000215ad4efdf">
+      <Name>RelativeHumidity</Name>
+      <Definition>Loads from the relative humidity.</Definition>
+      <PropertyType>
+        <TypePropertyReferenceValue reftype="IfcTimeSeries" />
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Relative Humidity</NameAlias>
+        <NameAlias lang="ja-JP">相対湿度</NameAlias>
+        <NameAlias lang="ko-KR">상대습도</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">相対湿度による熱負荷。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">상대습도에 의한 열부하</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="15805d00d20c11e1800000215ad4efdf">
+      <Name>InfiltrationSensible</Name>
+      <Definition>Heat gains and losses from infiltration.</Definition>
+      <PropertyType>
+        <TypePropertyReferenceValue reftype="IfcTimeSeries" />
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Infiltration Sensible</NameAlias>
+        <NameAlias lang="ja-JP">すき間風の顕熱</NameAlias>
+        <NameAlias lang="ko-KR">열취득 및 손실</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">すき間風からの熱負荷と熱ロス。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">열 부하및 열손실</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="187b4d80d20c11e1800000215ad4efdf">
+      <Name>TotalSensibleLoad</Name>
+      <Definition>Total energy added or removed from air that affects its temperature.  If a value is less than zero (negative), then the thermal load is lost from the space. If a value is greater than zero (positive), then the thermal load is a gain to the space.</Definition>
+      <PropertyType>
+        <TypePropertyReferenceValue reftype="IfcTimeSeries" />
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Total Sensible Load</NameAlias>
+        <NameAlias lang="ja-JP">顕熱負荷の合計</NameAlias>
+        <NameAlias lang="ko-KR">현열부하의 합계</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">空気温度を上昇・下降させる取得・損失の熱量の合計。ゼロより小さい（－）場合、室内が熱損失となる。ゼロより大きい（＋）場合、室内が熱取得となる。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">공기 온도를 상승 · 하강하는 취득 · 손실 열량의 총. 제로보다 작은 (-) 경우 실내가 열 손실이된다. 제로보다 큰 (+) 경우 실내가 열을 검색된다.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="1b763e00d20c11e1800000215ad4efdf">
+      <Name>TotalLatentLoad</Name>
+      <Definition>Total energy added or removed from air that affects its humidity or concentration of water vapor.  If a value is less than zero (negative), then the thermal load is lost from the space. If a value is greater than zero (positive), then the thermal load is a gain to the space.</Definition>
+      <PropertyType>
+        <TypePropertyReferenceValue reftype="IfcTimeSeries" />
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Total Latent Load</NameAlias>
+        <NameAlias lang="ja-JP">潜熱負荷の合計</NameAlias>
+        <NameAlias lang="ko-KR">잠열부하의 합계</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">空気湿度（水蒸気量）を上昇・下降させる取得・損失の熱量の合計。ゼロより小さい（－）場合、室内の水蒸気が減少となる。ゼロより大きい（＋）場合、室内の水蒸気が増大となる。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">습도 (수증기량)을 상승 · 하강하는 취득 · 손실 열량의 총. 제로보다 작은 (-) 경우 실내의 수증기가 감소된다. 제로보다 큰 (+) 경우 실내의 수증기가 증가된다.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="1e712e80d20c11e1800000215ad4efdf">
+      <Name>TotalRadiantLoad</Name>
+      <Definition>Total electromagnetic energy added or removed by emission or absorption.  If a value is less than zero (negative), then the thermal load is lost from the space. If a value is greater than zero (positive), then the thermal load is a gain to the space.</Definition>
+      <PropertyType>
+        <TypePropertyReferenceValue reftype="IfcTimeSeries" />
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Total Radiant Load</NameAlias>
+        <NameAlias lang="ja-JP">放射熱負荷の合計</NameAlias>
+        <NameAlias lang="ko-KR">복사열로드 합계</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">放射や吸収による放射エネルギーの増加、或いは減少の合計。ゼロより小さい（－）場合、放射エネルギーが減少となる。ゼロより大きい（＋）場合、放射エネルギーが増大となる。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">방사선 및 흡수에 의한 방사 에너지 증가 또는 감소의 총. 제로보다 작은 (-) 경우 방사 에너지가 감소된다. 제로보다 큰 (+) 경우 방사 에너지가 증대된다.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">室内熱負荷属性IfcSpaceThermalLoadProperties はある居室或いはゾーンの実際の熱ロスと熱取得を定義する。熱取得の要因属性は熱負荷の各因子を示している。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

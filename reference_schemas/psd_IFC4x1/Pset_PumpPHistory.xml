@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="a18b8800d1fe11e1800000215ad4efdf" templatetype="PSET_PERFORMANCEDRIVEN" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x1" />
+  <Name>Pset_PumpPHistory</Name>
+  <Definition>Pump performance history attributes.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcPump</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcPump</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="a6503c00d1fe11e1800000215ad4efdf">
+      <Name>MechanicalEfficiency</Name>
+      <Definition>The pumps operational mechanical efficiency.</Definition>
+      <PropertyType>
+        <TypePropertyReferenceValue reftype="IfcTimeSeries" />
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Mechanical Efficiency</NameAlias>
+        <NameAlias lang="ja-JP">機械効率</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">ポンプの稼動時の機械効率</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="a9e3c300d1fe11e1800000215ad4efdf">
+      <Name>OverallEfficiency</Name>
+      <Definition>The pump and motor overall operational efficiency.</Definition>
+      <PropertyType>
+        <TypePropertyReferenceValue reftype="IfcTimeSeries" />
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Overall Efficiency</NameAlias>
+        <NameAlias lang="ja-JP">全効率</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">ポンプとモーターの運用全効率</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="ad774a00d1fe11e1800000215ad4efdf">
+      <Name>PressureRise</Name>
+      <Definition>The developed pressure.</Definition>
+      <PropertyType>
+        <TypePropertyReferenceValue reftype="IfcTimeSeries" />
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Pressure Rise</NameAlias>
+        <NameAlias lang="ja-JP">昇圧</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">上がった圧力</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="b0723a80d1fe11e1800000215ad4efdf">
+      <Name>RotationSpeed</Name>
+      <Definition>Pump rotational speed.</Definition>
+      <PropertyType>
+        <TypePropertyReferenceValue reftype="IfcTimeSeries" />
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Rotation Speed</NameAlias>
+        <NameAlias lang="ja-JP">回転速度</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">ポンプ回転速度</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="b36d2b00d1fe11e1800000215ad4efdf">
+      <Name>Flowrate</Name>
+      <Definition>The actual operational fluid flowrate.</Definition>
+      <PropertyType>
+        <TypePropertyReferenceValue reftype="IfcTimeSeries" />
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Flowrate</NameAlias>
+        <NameAlias lang="ja-JP">流量</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">実際の運用流量</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="b6681b80d1fe11e1800000215ad4efdf">
+      <Name>Power</Name>
+      <Definition>The actual power consumption of the pump.</Definition>
+      <PropertyType>
+        <TypePropertyReferenceValue reftype="IfcTimeSeries" />
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Power</NameAlias>
+        <NameAlias lang="ja-JP">動力</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">ポンプの実動力消費</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+  </PsetDefinitionAliases>
+</PropertySetDef>

@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="61390380d21811e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x2" />
+  <Name>Pset_WasteTerminalTypeWasteDisposalUnit</Name>
+  <Definition>Electrically operated device that reduces kitchen or other waste into fragments small enough to be flushed into a drainage system.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcWasteTerminal/WASTEDISPOSALUNIT</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcWasteTerminal/WASTEDISPOSALUNIT</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="65fdb780d21811e1800000215ad4efdf">
+      <Name>DrainConnectionSize</Name>
+      <Definition>Size of the drain connection inlet to the waste disposal unit.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Drain Connection Size</NameAlias>
+        <NameAlias lang="ja-JP">配管接続口サイズ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">ゴミ処理装置の吸入口配管接続口サイズ。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="6e55f280d21811e1800000215ad4efdf">
+      <Name>OutletConnectionSize</Name>
+      <Definition>Size of the outlet connection from the waste disposal unit.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Outlet Connection Size</NameAlias>
+        <NameAlias lang="ja-JP">排出口接続口サイズ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">ゴミ処理装置の排出口接続口サイズ。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="76ae2d80d21811e1800000215ad4efdf">
+      <Name>NominalDepth</Name>
+      <Definition>Nominal or quoted depth of the object measured from the inlet drain connection to the base of the unit.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Nominal Depth</NameAlias>
+        <NameAlias lang="ja-JP">深さ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">装置の基礎に配管吸入口から測定した深さ。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">キッチンや他の廃棄において、破片を排水システムで処理されるのに十分な大きさに粉砕するよう、電気的に動作する機器。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

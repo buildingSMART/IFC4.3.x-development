@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ifdguid="2a0f2600d20911e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4" />
+  <Name>Pset_SpaceFireSafetyRequirements</Name>
+  <Definition>Properties related to fire protection of spaces that apply to the occurrences of IfcSpace or IfcZone.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcSpace</ClassName>
+    <ClassName> IfcSpatialZone</ClassName>
+    <ClassName> IfcZone</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcSpace, IfcSpatialZone, IfcZone</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="33988e00d20911e1800000215ad4efdf">
+      <Name>FireRiskFactor</Name>
+      <Definition>Fire Risk factor assigned to the space according to local building regulations. It defines the fire risk of the space at several levels of fire hazard.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Brandgefahrenklasse</NameAlias>
+        <NameAlias lang="en">Fire Risk Factor</NameAlias>
+        <NameAlias lang="fr-FR">FacteurRisqueIncendie</NameAlias>
+        <NameAlias lang="ja-JP">火災危険度要因</NameAlias>
+        <NameAlias lang="ko-KR">화재 위험 요인</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">Brandgefahrenklasse des Raums, angegeben nach der nationalen oder regionalen Brandschutzverordnung.</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Facteur de risque incendie attribué à l'espace, selon la réglementation locale en matière de construction.</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">地域の建築規則に従って空間に割り当てられた火災危険要因
+火災のいくつかのレベルにおける空間の火災危険度を定義する。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">지역 건축 규칙에 따라 공간에 할당된 화재 위험 요인 화재 어느 정도의 공간의 화재 위험도를 정의한다. "</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="3c895f80d20911e1800000215ad4efdf">
+      <Name>FlammableStorage</Name>
+      <Definition>Indication whether the space is intended to serve as a storage of flammable material (which is regarded as such by the presiding building code. (TRUE) indicates yes, (FALSE) otherwise.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Lagerung brennbarer Stoffe</NameAlias>
+        <NameAlias lang="en">Flammable Storage</NameAlias>
+        <NameAlias lang="fr-FR">StockageCombustible</NameAlias>
+        <NameAlias lang="ja-JP">可燃物保管区分</NameAlias>
+        <NameAlias lang="ko-KR">가연성 물질 창고</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">Angabe, ob der Raum zur Lagerung der Produktion von brennbaren Stoffen genutzt wird (WHAHR) oder nicht (FALSCH). Die Angabe erfolgt nach der nationalen oder regionalen Brandschutzverordnung.</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Indique si l'espace est destiné au stockage de matières inflammables (considérées comme telles par le Code de la Construction en vigueur). (VRAI) signifie oui, (FAUX) sinon.</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">空間が可燃物(建築基準を管理することによりそのように考慮される)の倉庫として使われることを意図されているかどうかを示すブーリアン値。(TRUE)はい、(FALSE)いいえ。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">공간이 가연물 (건축 기준을 관리함으로써 그렇게 여겨지는)의 창고로 사용되는 것을 의도하고 있는지 여부를 나타내는 부울 값입니다. (TRUE) 예 (FALSE) 아니오. "이 물체가 화재의 경우 출구로 사용되도록 설계되었는지 여부를 나타내는  (TRUE) 예 (FALSE) 아니오 값</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="76f2fc80d20911e1800000215ad4efdf">
+      <Name>FireExit</Name>
+      <Definition>Indication whether this object is designed to serve as an exit in the case of fire (TRUE) or not (FALSE).
+Here whether the space (in case of e.g., a corridor) is designed to serve as an exit space, e.g., for fire escape purposes.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Notausgang</NameAlias>
+        <NameAlias lang="en">Fire Exit</NameAlias>
+        <NameAlias lang="fr-FR">SortieSecours</NameAlias>
+        <NameAlias lang="ja-JP">非常口区分</NameAlias>
+        <NameAlias lang="ko-KR">화재 출구 (피난 출구)</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">Angabe, ob der Raum einen Notausgang für den Brandfall hat und als ein Notausgangs(sammel)raum im Sinne der Brandschutzverordnung gilt (WAHR), oder nicht (FALSCH).</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Indique si cet objet est conçu pour servir de sortie en cas d'incendie (VRAI) ou non (FAUX). Cas d'un espace comme un couloir conçu pour servir d'espace de sortie, par exemple pour l'évacuation en cas d'incendie.</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">このオブジェクトが火災の場合に出口として使われるように設計されているかどうかを示すブーリアン値。(TRUE)はい、(FALSE)いいえ。
+ここに、空間(例えば廊下)は、例えば火災避難目的のために出口空間として使われるよう設計されているかどうか。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">여기에 공간 (예 복도), 예를 들면 화재 피난 목적을 위해 출구 공간으로 사용하도록 설계되었는지 여부</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="7e1a0a80d20911e1800000215ad4efdf">
+      <Name>SprinklerProtection</Name>
+      <Definition>Indication whether the space is sprinkler protected (TRUE) or not (FALSE).</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Sprinklerschutz</NameAlias>
+        <NameAlias lang="en">Sprinkler Protection</NameAlias>
+        <NameAlias lang="fr-FR">ProtectionParSprinkler</NameAlias>
+        <NameAlias lang="ja-JP">スプリンクラー防御</NameAlias>
+        <NameAlias lang="ko-KR">스프링 클러 방어</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">Angabe, ob der Raum durch eine Sprinkleranlage geschützt wird (WAHR) oder nicht (FALSCH).</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Indication selon laquelle ce bâtiment bénéficie d'une protection par sprinkler (VRAI) ou non (FAUX).</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">スプリンクラー設備の有無を示すブーリアン値。(TRUE)有、(FALSE)なし。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">스프링 클러 설비의 유무를 나타내는 부울 값입니다. (TRUE) 유 (FALSE) 없음.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="840feb80d20911e1800000215ad4efdf">
+      <Name>SprinklerProtectionAutomatic</Name>
+      <Definition>Indication whether the space has an automatic sprinkler protection (TRUE) or not (FALSE).
+It should only be given, if the property "SprinklerProtection" is set to TRUE.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Sprinklerschutz automatisch</NameAlias>
+        <NameAlias lang="en">Sprinkler Protection Automatic</NameAlias>
+        <NameAlias lang="fr-FR">ProtectionAutomatiqueParSprinkler</NameAlias>
+        <NameAlias lang="ja-JP">自動スプリンクラー防御</NameAlias>
+        <NameAlias lang="ko-KR">스프링 클러 방어 자동 구분</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">Angabe, ob der Raum durch eine automatische Sprinkleranlage geschützt wird (WAHR) oder nicht (FALSCH).  Dieser Wert soll nur angegeben werden, wenn das Attribut SprinklerProtection auf (WAHR) gesetzt ist.</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Indication selon laquelle ce bâtiment bénéficie d'une protection automatique par sprinkler (VRAI) ou non (FAUX).</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">スプリンクラー設備が自動かどうか示すブーリアン値。(TRUE)自動、(FALSE)非自動。「スプリンクラー防御」プロパティがTRUEに設定された場合のみ、与えられる。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">스프링 클러 설비가 자동 여부를 나타내는 부울 값입니다. (TRUE) 자동 (FALSE) 비자동. "스프링 클러 방어"속성이 TRUE로 설정된 경우에만 주어진다.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="8bcf9000d20911e1800000215ad4efdf">
+      <Name>AirPressurization</Name>
+      <Definition>Indication whether the space is required to have pressurized air (TRUE) or not (FALSE).</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Luftdruckausgleich</NameAlias>
+        <NameAlias lang="en">Air Pressurization</NameAlias>
+        <NameAlias lang="fr-FR">AirComprimeDisponible</NameAlias>
+        <NameAlias lang="ja-JP">空気加圧</NameAlias>
+        <NameAlias lang="ko-KR">공기 가압</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">Angabe, ob der Raum einen Luftdruckausgleich erfordert (WAHR) oder nicht (FALSCH).</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Indique si l'espace nécessite d'être alimenté en air comprimé (VRAI) ou non (FAUX)</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">空間が加圧することを要求されているかどうかを示すブーリアン値。(TRUE)加圧、(FALSE)非加圧。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">공간이 가압 요구되고 있는지 여부를 나타내는 부울 값입니다. (TRUE) 가압 (FALSE) 비 가압.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="de-DE">Property Set Definition in German</PsetDefinitionAlias>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="fr-FR">Définition de l'IAI : propriétés relatives à la protection incendie, qui s'appliquent à toutes les occurrences des classes IfcSpace et IfcZone.</PsetDefinitionAlias>
+    <PsetDefinitionAlias lang="ja-JP">IfcSpaceまたはIfcZoneの存在に適用される、空間の火災防御(防火)に関連したプロパティ。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

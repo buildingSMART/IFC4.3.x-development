@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="ca644b00d20711e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x2" />
+  <Name>Pset_SiteCommon</Name>
+  <Definition>Properties common to the definition of all occurrences of IfcSite. Please note that several site attributes are handled directly at the IfcSite instance, the site number (or short name) by IfcSite.Name, the site name (or long name) by IfcSite.LongName, and the description (or comments) by IfcSite.Description. The land title number is also given as an explicit attribute IfcSite.LandTitleNumber. Actual site quantities, like site perimeter, site area and site volume are provided by IfcElementQuantity, and site classification according to national building code by IfcClassificationReference. The global positioning of the site in terms of Northing and Easting and height above sea level datum is given by IfcSite.RefLongitude, IfcSite.RefLatitude, IfcSite.RefElevation and the postal address by IfcSite.SiteAddress.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcSite</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcSite</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="cd5f3b80d20711e1800000215ad4efdf">
+      <Name>Reference</Name>
+      <Definition>Reference ID for this specified type in this project (e.g. type 'A-1'). Used to store the non-classification driven internal project type.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcIdentifier" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Referenz ID</NameAlias>
+        <NameAlias lang="en">Reference</NameAlias>
+        <NameAlias lang="fr-FR">Reference</NameAlias>
+        <NameAlias lang="ja-JP">参照記号</NameAlias>
+        <NameAlias lang="ko-KR">참조 ID</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">Identifikator der projektinternen Referenz für dieses Grundstück, z.B. nach der Grundstückklassifizierung des Bauherrn. Wird verwendet, wenn keine allgemein anerkanntes Klassifizierungssystem angewandt wird.</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Référence à l'identifiant d'un type spécifié dans le contexte du projet (exemple : "type A1"). Utilisé pour enregistrer un type sans recourir à une classification.</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">このプロジェクトにおける参照記号(例：A-1)。分類コードではなく内部で使用されるプロジェクトタイプとして使用されるもの。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">이 프로젝트의 참조 ID (예 : A-1). 분류 코드가 아닌 내부에서 사용되는 프로젝트 형식으로 사용됩니다.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="d3551c80d20711e1800000215ad4efdf">
+      <Name>BuildableArea</Name>
+      <Definition>The area of site utilization expressed as a maximum value according to local building codes.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcAreaMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">bebaubare Fläche</NameAlias>
+        <NameAlias lang="en">Buildable Area</NameAlias>
+        <NameAlias lang="fr-FR">ValeurSurfaceConstructible</NameAlias>
+        <NameAlias lang="ja-JP">建築可能面積</NameAlias>
+        <NameAlias lang="ko-KR">건축 가능 면적</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">bebaubare Fläche als maximale überbaubare Fläche des Grundstücks.</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Surface constructible maximale en fonction des contraintes d'urbanisme.</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">建築基準により建築可能な最大の面積。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">속성정의</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="d819d080d20711e1800000215ad4efdf">
+      <Name>SiteCoverageRatio</Name>
+      <Definition>The ratio of the utilization,  TotalArea / BuildableArea, expressed as a maximum value. The ratio value may be used to derive BuildableArea.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveRatioMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Grundflächenzahl</NameAlias>
+        <NameAlias lang="en">Site Coverage Ratio</NameAlias>
+        <NameAlias lang="fr-FR">RatioSurfaceConstructible</NameAlias>
+        <NameAlias lang="ja-JP">建蔽率</NameAlias>
+        <NameAlias lang="ko-KR">건폐율</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">Grundflächenzahl als Verhältnis der bebaubaren Fläche zur Bruttogrundstücksfläche.</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Valeur maximale de la surface constructible exprimée en ratio. La valeur du ratio peut être utilisée pour déterminer la surface constructible.</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">建築基準により最大となる、敷地面積(IfcElementQuantity)と建築面積(IfcBuildingのIfcElementQuantity)の比率。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">TotalArea / BuildableArea로 표시되는 이용 가능한 비율의 최대값입니다.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="dd771b00d20711e1800000215ad4efdf">
+      <Name>FloorAreaRatio</Name>
+      <Definition>The ratio of all floor areas to the buildable area as the maximum floor area utilization of the site as a maximum value according to local building codes.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveRatioMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Geschossflächenzahl</NameAlias>
+        <NameAlias lang="en">Floor Area Ratio</NameAlias>
+        <NameAlias lang="fr-FR">ratio de surface de planchers</NameAlias>
+        <NameAlias lang="ja-JP">容積率</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">Geschossflächenzahl als Verhältnis der gesamten Geschossfläche aller Vollgeschosse der baulichen Anlagen auf einem Baugrundstück zu der Fläche des Baugrundstücks.</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Ratio de la surface totale de planchers à la surface constructible, indication de la valeur maximale de la surface de planchers selon la règlementation locale (coefficient d'occupation des sols, N.d.T.)</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">建築基準により最大となる床面積と敷地面積(IfcElementQuantities)の比率。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="e2d46580d20711e1800000215ad4efdf">
+      <Name>BuildingHeightLimit</Name>
+      <Definition>Allowed maximum height of buildings on this site - according to local building codes.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">maximale Bebauungshöhe</NameAlias>
+        <NameAlias lang="en">Building Height Limit</NameAlias>
+        <NameAlias lang="fr-FR">HauteurMaximale</NameAlias>
+        <NameAlias lang="ja-JP">建物高さ制限</NameAlias>
+        <NameAlias lang="ko-KR">건물 높이 제한</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">Maximale Bebauungshöhe die auf diesem Grundstück zulässig ist.</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Hauteur maximale des bâtiments autorisée sur ce site.</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">各地域の建築基準により許可される建物の高さの最大値。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">TotalArea / BuildableArea로 표시되는 이용 가능한 비율의 최대값입니다.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="ea940a00d20711e1800000215ad4efdf">
+      <Name>TotalArea</Name>
+      <Definition>Total planned area for the site. Used for programming the site space.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcAreaMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Bruttogrundstücksfläche</NameAlias>
+        <NameAlias lang="en">Total Area</NameAlias>
+        <NameAlias lang="fr-FR">SurfaceBruteProgrammee</NameAlias>
+        <NameAlias lang="ja-JP">延べ面積</NameAlias>
+        <NameAlias lang="ko-KR">연면적</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">Gesamte Grundstücksfläche für diese Bauaufgabe.</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Surface totale brute. Définie en phase de programmation.</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">敷地にたいする延べ計画面積。敷地空間の計画に使用。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">부지에 대한 총 계획 면적. 호텔 공간 계획에 사용됩니다.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="de-DE">Property Set Definition in German</PsetDefinitionAlias>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="fr-FR">Définition de l'IAI : propriétés communes à la définition de toutes les instances de IfcSite. Veuillez noter que plusieurs attributs sont portés par l'instance IfcSite : le numéro du site ou nom court (IfcSite.Name), le nom ou nom long (IfcSite.LongName), et la description ou des commentaires (IfcSite.Description). Le numéro de référence du foncier est donné par l'attribut IfcSite.LandTitleNumber. Les quantités du site comme le périmètre et la superficie sont fournis par des instances de IfcElementQuantity et la référence à une classification nationale par IfcClassificationReference. La position du site en termes de longitude, latitude et altitude est donnée par IfcSite.RefLongitude, IfcSite.RefLatitude, IfcSite.RefElevation et l'adresse postale par IfcSite.SiteAddress.</PsetDefinitionAlias>
+    <PsetDefinitionAlias lang="ja-JP">IfcSiteに関する共通プロパティセット定義。以下の属性値に関しては、IfcSiteオブジェクトの属性に設定する。敷地番号はIfcSite.Name、敷地名称はIfcSite.LongName、敷地に関する記述はIfcSite.Description。敷地に関する周囲長、面積、体積などの数量値は、IfcElementQuantityによって設定する。地理情報に関する緯度・経度・標高値はＩfcSite.RefLongitude, IfcSite.RefLatitude, IfcSite.RefElevationによって設定し、郵便住所はIfcSite.SiteAddressによって設定する。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

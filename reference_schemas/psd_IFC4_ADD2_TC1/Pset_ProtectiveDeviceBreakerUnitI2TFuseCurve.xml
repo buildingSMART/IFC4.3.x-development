@@ -1,0 +1,198 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ifdguid="f1675080d1f811e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4" />
+  <Name>Pset_ProtectiveDeviceBreakerUnitI2TFuseCurve</Name>
+  <Definition>A coherent set of attributes representing curves for melting- and breaking-energy of a fuse. Note - A fuse may be associated with different instances of this property set providing information related to different  basic characteristics.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcProtectiveDevice</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcProtectiveDevice</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="f75d3180d1f811e1800000215ad4efdf">
+      <Name>VoltageLevel</Name>
+      <Definition>The voltage levels of the fuse for which the data of the instance is valid. More than one value may be selected in the enumeration.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_VoltageLevels">
+            <EnumItem>U230</EnumItem>
+            <EnumItem>U400</EnumItem>
+            <EnumItem>U440</EnumItem>
+            <EnumItem>U525</EnumItem>
+            <EnumItem>U690</EnumItem>
+            <EnumItem>U1000</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>U230</Name>
+              <NameAliases>
+                <NameAlias lang="en">U230</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>U400</Name>
+              <NameAliases>
+                <NameAlias lang="en">U400</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>U440</Name>
+              <NameAliases>
+                <NameAlias lang="en">U440</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>U525</Name>
+              <NameAliases>
+                <NameAlias lang="en">U525</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>U690</Name>
+              <NameAliases>
+                <NameAlias lang="en">U690</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>U1000</Name>
+              <NameAliases>
+                <NameAlias lang="en">U1000</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Voltage Level</NameAlias>
+        <NameAlias lang="ja-JP">電圧レベル</NameAlias>
+        <NameAlias lang="ko-KR">전압레벨</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">電圧レベルを選択。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">전압 레벨을 선택합니다.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="152a9680d1f911e1800000215ad4efdf">
+      <Name>BreakerUnitFuseMeltingCurve</Name>
+      <Definition>A curve that establishes the energy required to melt the fuse of a breaker unit when a particular prospective melting current is applied.  Note that the breaker unit fuse melting curve is defined within a Cartesian coordinate system and this fact must be:
+
+(1) Defining value: ProspectiveCurrentMelting :A list of minimum 2 and maximum 8 numbers providing the currents in [A] for points in the
+current/melting_energy log/log coordinate space. The curve is drawn as a straight line between two consecutive points.
+(2) Defined value: MeltingEnergy: A list of minimum 2 and maximum 8 numbers providing the energy whereby the fuse is starting to melt, I2t, in [A2s] for points in the current/melting_energy log/log coordinate space. The curve is drawn as a straight line between two consecutive points.</Definition>
+      <PropertyType>
+        <TypePropertyTableValue>
+          <Expression />
+          <DefiningValue>
+            <DataType type="IfcElectricCurrentMeasure" />
+          </DefiningValue>
+          <DefinedValue>
+            <DataType type="IfcReal" />
+          </DefinedValue>
+        </TypePropertyTableValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Breaker Unit Fuse Melting Curve</NameAlias>
+        <NameAlias lang="ja-JP">フューズ遮断機融解曲線</NameAlias>
+        <NameAlias lang="ko-KR">퓨즈 차단기 융해 곡선</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">想定外の電流が流れた時に遮断機のフューズを溶かすために必要なエネルギーを表す曲線。
+  想定外の電流が流れた時に遮断機のフューズを溶かすために必要なエネルギーを表す曲線。
+
+  （1）定義値：融解電流：電流/ 融解エネルギーで示される最小2から最大8のリストで電流[A]を定義します。
+   カーブが連続する2つの点を結ぶ直線として描かれています。
+  （2）定義値：融解エネルギー：/電流/融解エネルギーの位置[A2s]で示される2～16の想定されるフューズが溶解始める電流[A2s]を定義します。カーブが連続する2つの点を結ぶ直線として描かれています。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">예상치 못한 전류가 흐를 때 차단기의 퓨즈를 녹이는 데 필요한 에너지를 나타내는 곡선.   예상외의 전류가 흘렀을 때에 차단기의 퓨즈를 녹이는 데 필요한 에너지를 나타내는 곡선.   (1) 정의 값 : 융해 전류 : 전류 / 융해 에너지에 표시된 최소 2에서 최대 8 개의 목록에서 전류 [A]를 정의합니다.    커브가 연속되는 두 개의 점을 연결하는 직선으로 그려져 있습니다.   (2) 정의 값 : 융해 에너지 :/ 전류 / 융해 에너지의 위치 [A2s에서 나타나는 2 ~ 16 예상되는 퓨즈가 용해 시작 전류 [A2s을 정의합니다. 커브가 연속되는 두 개의 점을 연결하는 직선으로 그려져 있습니다.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="2673a300d1f911e1800000215ad4efdf">
+      <Name>BreakerUnitFuseBreakingingCurve</Name>
+      <Definition>A curve that establishes the let through breaking energy of a breaker unit when a particular prospective breaking current is applied.  Note that the breaker unit fuse breaking curve is defined within a Cartesian coordinate system and this fact must be:
+
+(1) Defining value: ProspectiveCurrentBreaking: A list of minimum 2 and maximum 8 numbers providing the currents in [A] for points in the
+current/breaking energy log/log coordinate space. The curve is drawn as a straight line between two consecutive points.
+(2) Defined value: LetThroughBreakingEnergy: A list of minimum 2 and maximum 8 numbers providing the breaking energy whereby the fuse has provided a break, I2t, in [A2s] for points in the current/breakting_energy log/log coordinate space. The curve is drawn as a straight line between two consecutive.</Definition>
+      <PropertyType>
+        <TypePropertyTableValue>
+          <Expression />
+          <DefiningValue>
+            <DataType type="IfcElectricCurrentMeasure" />
+          </DefiningValue>
+          <DefinedValue>
+            <DataType type="IfcReal" />
+          </DefinedValue>
+        </TypePropertyTableValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Breaker Unit Fuse Breakinging Curve</NameAlias>
+        <NameAlias lang="ja-JP">フューズ遮断機融解曲線</NameAlias>
+        <NameAlias lang="ko-KR">퓨즈 차단기 융해 곡선</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">想定外の電流が流れた時に遮断機のフューズを溶かすために必要なエネルギーを表す曲線。
+  想定外の電流が流れた時に遮断機のフューズを溶かすために必要なエネルギーを表す曲線。
+
+  （1）定義値：融解電流：電流/ 融解エネルギーで示される最小2から最大8のリストで電流[A]を定義します。
+   カーブが連続する2つの点を結ぶ直線として描かれています。
+  （2）定義値：融解エネルギー：/電流/融解エネルギーの位置[A2s]で示される2～16の想定されるフューズが溶解始める電流[A2s]を定義します。カーブが連続する2つの点を結ぶ直線として描かれています。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">예상치 못한 전류가 흐를 때 차단기의 퓨즈를 녹이는 데 필요한 에너지를 나타내는 곡선.   예상외의 전류가 흘렀을 때에 차단기의 퓨즈를 녹이는 데 필요한 에너지를 나타내는 곡선.   (1) 정의 값 : 융해 전류 : 전류 / 융해 에너지에 표시된 최소 2에서 최대 8 개의 목록에서 전류 [A]를 정의합니다.    커브가 연속되는 두 개의 점을 연결하는 직선으로 그려져 있습니다.   (2) 정의 값 : 융해 에너지 :/ 전류 / 융해 에너지의 위치 [A2s에서 나타나는 2 ~ 16 예상되는 퓨즈가 용해 시작 전류 [A2s을 정의합니다. 커브가 연속되는 두 개의 점을 연결하는 직선으로 그려져 있습니다.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">フューズの融解-遮断エネルギー曲線を表す一連のプロパティセット。
+注記-フューズは、根本的な特性に関連付けられた提供されたプロパティの情報は、　異なる実態に関連しているかもしれません。　　　　　　　　　　　　　　　　　</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

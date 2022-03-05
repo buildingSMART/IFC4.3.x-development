@@ -1,0 +1,662 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ifdguid="3eefb780d21111e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4" />
+  <Name>Pset_TransformerTypeCommon</Name>
+  <Definition>An inductive stationary device that transfers electrical energy from one circuit to another.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcTransformer</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcTransformer</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="444d0200d21111e1800000215ad4efdf">
+      <Name>Reference</Name>
+      <Definition>Reference ID for this specified type in this project (e.g. type 'A-1'), provided, if there is no classification reference to a recognized classification system used.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcIdentifier" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Reference</NameAlias>
+        <NameAlias lang="ja-JP">参照</NameAlias>
+        <NameAlias lang="ko-KR">참조</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">このプロジェクト (例． 'A-1'　タイプなど)で指定された参照ID。認められた分類体系の分類参照が存在しない場合に適用される。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">이 프로젝트 (예 : 'A-1'유형 등) 지정된 참조 ID. 인정 분류 체계의 분류 참조가없는 경우에 적용된다.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="4b741000d21111e1800000215ad4efdf">
+      <Name>Status</Name>
+      <Definition>Status of the element, predominately used in renovation or retrofitting projects. The status can be assigned to as "New" - element designed as new addition, "Existing" - element exists and remains, "Demolish" - element existed but is to be demolished,  "Temporary" - element will exists only temporary (like a temporary support structure).</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_ElementStatus">
+            <EnumItem>NEW</EnumItem>
+            <EnumItem>EXISTING</EnumItem>
+            <EnumItem>DEMOLISH</EnumItem>
+            <EnumItem>TEMPORARY</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>NEW</Name>
+              <Definition>element designed as new addition</Definition>
+              <NameAliases>
+                <NameAlias lang="en">New</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>EXISTING</Name>
+              <Definition>element exists and is to remain</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Existing</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>DEMOLISH</Name>
+              <Definition>element exists but is to be demolished</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Demolish</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>TEMPORARY</Name>
+              <Definition>element will exist only temporarily (such as a temporary support structure)</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Temporary</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Status</NameAlias>
+        <NameAlias lang="ja-JP">状態</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">要素（主にリノベーションまたは改修プロジェクトにおいて）の状態。 状態は、「新規(New)」－新しく追加される要素。「既存」－要素は存在し、かつ残りもの。「破壊」－要素は存在したが、廃棄されるもの。「一時的」－一時的に存在する要素（一時的にサポートしている構造のようなもの）。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="5dee4980d21111e1800000215ad4efdf">
+      <Name>PrimaryVoltage</Name>
+      <Definition>The voltage that is going to be transformed and that runs into the transformer on the primary side.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcElectricVoltageMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Primary Voltage</NameAlias>
+        <NameAlias lang="ja-JP">第1電圧</NameAlias>
+        <NameAlias lang="ko-KR">제 1 전압</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">変圧器の1次側に伝送される電圧。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">변압기 1 차 측에 전송되는 전압.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="634b9400d21111e1800000215ad4efdf">
+      <Name>SecondaryVoltage</Name>
+      <Definition>The voltage that has been transformed and is running out of the transformer on the secondary side.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcElectricVoltageMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Secondary Voltage</NameAlias>
+        <NameAlias lang="ja-JP">第2電圧</NameAlias>
+        <NameAlias lang="ko-KR">두번째 전압</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">変圧器の2次側へ出力される電圧。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">변압기 2 차 측에 전송되는 전압.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="6a72a200d21111e1800000215ad4efdf">
+      <Name>PrimaryCurrent</Name>
+      <Definition>The current that is going to be transformed and that runs into the transformer on the primary side.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcElectricCurrentMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Primary Current</NameAlias>
+        <NameAlias lang="ja-JP">第1電流</NameAlias>
+        <NameAlias lang="ko-KR">제 1 전류</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">変圧器の1次側に伝送される電流。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">변압기 1 차 측에 전송되는 전류.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="71011980d21111e1800000215ad4efdf">
+      <Name>SecondaryCurrent</Name>
+      <Definition>The current that has been transformed and is running out of the transformer on the secondary side.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcElectricCurrentMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Secondary Current</NameAlias>
+        <NameAlias lang="ja-JP">第2電流</NameAlias>
+        <NameAlias lang="ko-KR">제 2 전류</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">変圧器の2次側へ出力される電流。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">변압기 2 차 측에 전송되는 전류.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="778f9100d21111e1800000215ad4efdf">
+      <Name>PrimaryFrequency</Name>
+      <Definition>The frequency that is going to be transformed and that runs into the transformer on the primary side.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcFrequencyMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Primary Frequency</NameAlias>
+        <NameAlias lang="ja-JP">第１周波数</NameAlias>
+        <NameAlias lang="ko-KR">제 1 주파수</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">変圧器の1次側に伝送される周波数。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">변압기 1 차 측에 전송되는 주파수.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="7e1e0880d21111e1800000215ad4efdf">
+      <Name>SecondaryFrequency</Name>
+      <Definition>The frequency that has been transformed and is running out of the transformer on the secondary side.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcFrequencyMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Secondary Frequency</NameAlias>
+        <NameAlias lang="ja-JP">第2周波数</NameAlias>
+        <NameAlias lang="ko-KR">제 2 주파수</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">変圧器の2次側に出力される周波数。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">변압기 2 차 측에 전송되는 주파수.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="837b5300d21111e1800000215ad4efdf">
+      <Name>PrimaryApparentPower</Name>
+      <Definition>The power in VA (volt ampere) that has been transformed and that runs into the transformer on the primary side.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPowerMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Primary Apparent Power</NameAlias>
+        <NameAlias lang="ja-JP">第1電力</NameAlias>
+        <NameAlias lang="ko-KR">제 1 전력</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">変圧器の1次側に伝送される電力（VA: アンペア）。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">변압기 1 차 측에 전송되는 전력 (VA : 암페어).</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="89713400d21111e1800000215ad4efdf">
+      <Name>SecondaryApparentPower</Name>
+      <Definition>The power in VA (volt ampere) that has been transformed and is running out of the transformer on the secondary side.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPowerMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Secondary Apparent Power</NameAlias>
+        <NameAlias lang="ja-JP">第2電力</NameAlias>
+        <NameAlias lang="ko-KR">제 2 전원</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">変圧器の2次側へ出力される電力（VA: アンペア）。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">변압기 2 차측으로 출력되는 전력 (VA : 암페어).</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="8f671500d21111e1800000215ad4efdf">
+      <Name>MaximumApparentPower</Name>
+      <Definition>Maximum apparent power/capacity in VA (volt ampere).</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPowerMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Maximum Apparent Power</NameAlias>
+        <NameAlias lang="ja-JP">最大電力</NameAlias>
+        <NameAlias lang="ko-KR">최대 전력</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">皮相電力/容量 の最大値　（VA:アンペア）。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">피상 전력 / 용량 최대 (VA : 암페어).</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="94c45f80d21111e1800000215ad4efdf">
+      <Name>SecondaryCurrentType</Name>
+      <Definition>A list of the secondary current types that can result from transformer output.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_SecondaryCurrentType">
+            <EnumItem>AC</EnumItem>
+            <EnumItem>DC</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>AC</Name>
+              <NameAliases>
+                <NameAlias lang="en">Ac</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>DC</Name>
+              <NameAliases>
+                <NameAlias lang="en">Dc</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Secondary Current Type</NameAlias>
+        <NameAlias lang="ja-JP">第2電流タイプ</NameAlias>
+        <NameAlias lang="ko-KR">제 2 전류 타입</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">変圧器より出力される第2電流の種類の一覧。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">변압기에서 출력되는 제 2 전류의 종류 목록입니다.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="a0b02180d21111e1800000215ad4efdf">
+      <Name>ShortCircuitVoltage</Name>
+      <Definition>A complex number that specifies the real and imaginary parts of the short-circuit voltage at rated current of a transformer given in %.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcComplexNumber" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Short Circuit Voltage</NameAlias>
+        <NameAlias lang="ja-JP">短絡電圧</NameAlias>
+        <NameAlias lang="ko-KR">단락 전압</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">%で与えられる変圧器の定格電流における短絡電圧の実数と虚数を定義する複素数。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">%에서 주어진 변압기 정격 전류의 단락 전압의 실수와 허수를 정의하는 복소수.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="a6a60280d21111e1800000215ad4efdf">
+      <Name>RealImpedanceRatio</Name>
+      <Definition>The ratio between the real part of the zero sequence impedance and the real part of the positive impedance (i.e. real part of the short-circuit voltage) of the transformer.
+Used for three-phase transformer which includes a N-conductor.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcRatioMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Real Impedance Ratio</NameAlias>
+        <NameAlias lang="ja-JP">インピーダンス実部比率</NameAlias>
+        <NameAlias lang="ko-KR">임피던스 실수 부 비율</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">零相インピーダンスと正相インピーダンス（例．短絡電圧の実部）の間の比率。N-コンダクターを含む三相トランスのために使用。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">영 상 임피던스와 양의 상 임피던스 (예 : 단락 전압의 실제 부분) 사이의 비율. N-지휘자를 포함 삼상 변압기에 사용됩니다.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="ac9be380d21111e1800000215ad4efdf">
+      <Name>ImaginaryImpedanceRatio</Name>
+      <Definition>The ratio between the imaginary part of the zero sequence impedance and the imaginary part of the positive impedance (i.e. imaginary part of the short-circuit voltage) of the transformer.
+Used for three-phase transformer which includes a N-conductor.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcRatioMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Imaginary Impedance Ratio</NameAlias>
+        <NameAlias lang="ja-JP">インピーダンス虚部比率</NameAlias>
+        <NameAlias lang="ko-KR">임피던스 허수 부 비율</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">零相インピーダンスと正相インピーダンス（例．短絡電圧の虚部）の間の比率。N-コンダクターを含む三相トランスのために使用。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">영 상 임피던스와 양의 상 임피던스 (예 : 단락 전압 국소 부) 사이의 비율. N-지휘자를 포함 삼상 변압기에 사용됩니다.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="95580b0800334fb180f4ce1d5048a707">
+      <Name>TransformerVectorGroup</Name>
+      <Definition>List of the possible vector groups for the transformer from which that required may be set. Values in the enumeration list follow a standard international code where the first letter  describes how the primary windings are connected,
+the second letter describes how the secondary windings are connected, and the numbers describe the rotation of voltages and currents from the primary to the secondary side in multiples of 30 degrees.
+
+D: means that the windings are delta-connected.
+Y: means that the windings are star-connected. 
+Z: means that the windings are zig-zag connected (a special start-connected providing low reactance of the transformer); 
+The connectivity is only relevant for three-phase transformers.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_TransformerVectorGroup">
+            <EnumItem>DD0</EnumItem>
+            <EnumItem>DD6</EnumItem>
+            <EnumItem>DY5</EnumItem>
+            <EnumItem>DY11</EnumItem>
+            <EnumItem>YD5</EnumItem>
+            <EnumItem>YD11</EnumItem>
+            <EnumItem>DZ0</EnumItem>
+            <EnumItem>DZ6</EnumItem>
+            <EnumItem>YY0</EnumItem>
+            <EnumItem>YY6</EnumItem>
+            <EnumItem>YZ5</EnumItem>
+            <EnumItem>YZ11</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>DD0</Name>
+              <NameAliases>
+                <NameAlias lang="en">Dd0</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>DD6</Name>
+              <NameAliases>
+                <NameAlias lang="en">Dd6</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>DY5</Name>
+              <NameAliases>
+                <NameAlias lang="en">Dy5</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>DY11</Name>
+              <NameAliases>
+                <NameAlias lang="en">Dy11</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>YD5</Name>
+              <NameAliases>
+                <NameAlias lang="en">Yd5</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>YD11</Name>
+              <NameAliases>
+                <NameAlias lang="en">Yd11</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>DZ0</Name>
+              <NameAliases>
+                <NameAlias lang="en">Dz0</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>DZ6</Name>
+              <NameAliases>
+                <NameAlias lang="en">Dz6</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>YY0</Name>
+              <NameAliases>
+                <NameAlias lang="en">Yy0</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>YY6</Name>
+              <NameAliases>
+                <NameAlias lang="en">Yy6</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>YZ5</Name>
+              <NameAliases>
+                <NameAlias lang="en">Yz5</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>YZ11</Name>
+              <NameAliases>
+                <NameAlias lang="en">Yz11</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Transformer Vector Group</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="d228ed00d21111e1800000215ad4efdf">
+      <Name>IsNeutralPrimaryTerminalAvailable</Name>
+      <Definition>An indication of whether the neutral point of the primary winding is available as a terminal (=TRUE) or not (= FALSE).</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Is Neutral Primary Terminal Available</NameAlias>
+        <NameAlias lang="ja-JP">中性点第1ターミナルがあるかどうか</NameAlias>
+        <NameAlias lang="ko-KR">중성점 제 1 터미널 여부</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">一次巻線の中性点がターミナルの場合は（=TRUE）、違う場合は（= FALSE）として表示する</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">1차 권선의 중성점 터미널의 경우 (= TRUE), 다른 경우는 (= FALSE)로 표시</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="d94ffb00d21111e1800000215ad4efdf">
+      <Name>IsNeutralSecondaryTerminalAvailable</Name>
+      <Definition>An indication of whether the neutral point of the secondary winding is available as a terminal (=TRUE) or not (= FALSE).</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Is Neutral Secondary Terminal Available</NameAlias>
+        <NameAlias lang="ja-JP">中性点第2ターミナルがあるかどうか</NameAlias>
+        <NameAlias lang="ko-KR">중성점 제 2 터미널 여부</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">二次巻線の中性点がターミナルの場合は（=TRUE）、違う場合は（= FALSE）として表示する</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">2 차 코일의 중성점 터미널의 경우 (= TRUE), 다른 경우는 (= FALSE)로 표시</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="a438b8c27a9c4e9d9976e29609f23d3c">
+      <Name>EfficiencyCurve</Name>
+      <Definition>The ratio of power transformed according to fractional load, where the first value indicates the load percentage and the second value indicates the efficiency of power transformation.</Definition>
+      <PropertyType>
+        <TypePropertyTableValue>
+          <Expression />
+          <DefiningValue>
+            <DataType type="IfcNormalisedRatioMeasure" />
+          </DefiningValue>
+          <DefinedValue>
+            <DataType type="IfcNormalisedRatioMeasure" />
+          </DefinedValue>
+        </TypePropertyTableValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="57cfcbd7f9f645e7b359f754cd1030db">
+      <Name>RadiativeFraction</Name>
+      <Definition>The fraction of energy converted to heat.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcNormalisedRatioMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">1つの回路からもう一つへ電気エネルギーを移す電磁誘導装置。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

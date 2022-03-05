@@ -165,6 +165,9 @@ for item in xmi_doc:
             parts = a.split(':=', 1)
             parts = map(trailing_semi, map(str.strip, parts[0].split(":", 1) + [parts[1]]))
             name, type, definition = parts
+            # Such as SELF\IfcNamedUnit.Dimensions
+            if "SELF\\" in name:
+                name = name.split(".")[-1]
             attributes[".".join((item.name, name))] = ("derived", (type, definition))
             
     elif item.type in ("TYPE", "SELECT", "ENUM", "PENUM"):

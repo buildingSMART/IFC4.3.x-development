@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ifdguid="0e0f8280d21111e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4" />
+  <Name>Pset_ThermalLoadDesignCriteria</Name>
+  <Definition>Building thermal load design data that are used for calculating thermal loads in a space or building. HISTORY: New property set in IFC Release 1.0 (Pset_LoadDesignCriteria); renamed Pset_ThermalLoadDesignCriteria in IFC2x2.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcSpatialElement</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcSpatialElement</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="18ca1780d21111e1800000215ad4efdf">
+      <Name>OccupancyDiversity</Name>
+      <Definition>Diversity factor that may be applied to the number of people in the space.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveRatioMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Occupancy Diversity</NameAlias>
+        <NameAlias lang="ja-JP">居住者の在室率</NameAlias>
+        <NameAlias lang="ko-KR">거주자의 재실 비율</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">室内居住者の在室率。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">실내 거주자의 재실 비율.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="1ebff880d21111e1800000215ad4efdf">
+      <Name>OutsideAirPerPerson</Name>
+      <Definition>Design quantity of outside air to be provided per person in the space.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcVolumetricFlowRateMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Outside Air Per Person</NameAlias>
+        <NameAlias lang="ja-JP">１人あたりの外気量</NameAlias>
+        <NameAlias lang="ko-KR">당 외기량</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">１人あたりの外気量の設計値。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">당 외기 량의 설계 값.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="24b5d980d21111e1800000215ad4efdf">
+      <Name>ReceptacleLoadIntensity</Name>
+      <Definition>Average power use intensity of appliances and other non-HVAC equipment in the space per unit area.(PowerMeasure/IfcAreaMeasure).</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcReal" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Receptacle Load Intensity</NameAlias>
+        <NameAlias lang="ja-JP">単位面積あたり事務機器の平均電力消費量</NameAlias>
+        <NameAlias lang="ko-KR">단위면적 당 사무기기 평균 전력 소비량</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">単位面積あたり事務機器など非空調設備の平均電力消費量。
+（PowerMeasure/IfcAreaMeasure）</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">단위 면적 당 사무 기기 등 비 공조 설비의 평균 전력 소비. (PowerMeasure / IfcAreaMeasure)</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="2aabba80d21111e1800000215ad4efdf">
+      <Name>AppliancePercentLoadToRadiant</Name>
+      <Definition>Percent of sensible load to radiant heat.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveRatioMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Appliance Percent Load To Radiant</NameAlias>
+        <NameAlias lang="ja-JP">放射熱のうち顕熱分の割合</NameAlias>
+        <NameAlias lang="ko-KR">복사열 중 현열 분의 비율</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">放射熱のうち顕熱分負荷の割合。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">복사열 중 현열 분 부하의 비율.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="313a3200d21111e1800000215ad4efdf">
+      <Name>LightingLoadIntensity</Name>
+      <Definition>Average lighting load intensity in the space per unit area (PowerMeasure/IfcAreaMeasure).</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcReal" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Lighting Load Intensity</NameAlias>
+        <NameAlias lang="ja-JP">照明負荷率</NameAlias>
+        <NameAlias lang="ko-KR">조명 부하율</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">単位面積あたり照明機器の平均電力消費量。
+（PowerMeasure/IfcAreaMeasure）</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">단위 면적 당 조명의 평균 전력 소비. (PowerMeasure / IfcAreaMeasure)</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="37c8a980d21111e1800000215ad4efdf">
+      <Name>LightingPercentLoadToReturnAir</Name>
+      <Definition>Percent of lighting load to the return air plenum.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveRatioMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Lighting Percent Load To Return Air</NameAlias>
+        <NameAlias lang="ja-JP">リタン空気への照明機器の放熱率</NameAlias>
+        <NameAlias lang="ko-KR">리탄 공기에 조명 기기의 방열 비율</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">照明機器からリタン空気（天井裏）への放熱率。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">조명 기기에서 폴리탄 공기 (천장)의 방열 속도.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">部屋や建物の熱負荷の計算のために使用される建物の熱負荷設計データ。履歴：IFC1.0の新PropertySet（Pset_LoadDesignCriteria)、：IFC2ｘ2に新たにPset_ThermalLoadDesignCriteriaと定義された。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

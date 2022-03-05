@@ -1,0 +1,481 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="554c4200d21611e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x1" />
+  <Name>Pset_WasteTerminalTypeFloorTrap</Name>
+  <Definition>Pipe fitting, set into the floor, that retains liquid to prevent the passage of foul air.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcWasteTerminal/FLOORTRAP</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcWasteTerminal/FLOORTRAP</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="5aa98c80d21611e1800000215ad4efdf">
+      <Name>NominalBodyLength</Name>
+      <Definition>Nominal or quoted length measured along the x-axis in the local coordinate system or the radius (in the case of a circular shape in plan) of the chamber of the trap.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Nominal Body Length</NameAlias>
+        <NameAlias lang="ja-JP">呼称躯体長</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">防臭弁の区画の半径か局所座標系のＸ軸に沿って測定された呼称もしくは積算された長さ。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="639a5e00d21611e1800000215ad4efdf">
+      <Name>NominalBodyWidth</Name>
+      <Definition>Nominal or quoted length measured along the y-axis in the local coordinate system of the chamber of the trap.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Nominal Body Width</NameAlias>
+        <NameAlias lang="ja-JP">呼称躯体幅</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">防臭弁の区画の半径か局所座標系のＹ軸に沿って測定された呼称もしくは積算された長さ。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="6bf29900d21611e1800000215ad4efdf">
+      <Name>NominalBodyDepth</Name>
+      <Definition>Nominal or quoted length measured along the z-axis in the local coordinate system of the chamber of the  trap.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Nominal Body Depth</NameAlias>
+        <NameAlias lang="ja-JP">呼称躯体深さ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">防臭弁の区画の半径か局所座標系のZ軸に沿って測定された呼称もしくは積算された長さ。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="757c0100d21611e1800000215ad4efdf">
+      <Name>IsForSullageWater</Name>
+      <Definition>Indicates if the purpose of the floor trap is to receive sullage water, or if that is amongst its purposes (= TRUE), or not (= FALSE). Note that if TRUE, it is expected that an upstand or kerb will be placed around the floor trap to prevent the ingress of surface water runoff; the provision of the upstand or kerb is not dealt with in this property set.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Is For Sullage Water</NameAlias>
+        <NameAlias lang="ja-JP">汚水用</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">床排水防臭弁の目的が、汚水を受けることの可（=true)否(=false)を示す。
+注意：TRUEの場合、水の流入を防ぐための床防臭弁の周りに直立壁か縁石が配置され、このプロパティセットにおいては直立壁や縁石の提供は処理されない。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="7ca30f00d21611e1800000215ad4efdf">
+      <Name>SpilloverLevel</Name>
+      <Definition>The level at which water spills out of the terminal.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Spillover Level</NameAlias>
+        <NameAlias lang="ja-JP">水位</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">継手からの水位。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="8593e080d21611e1800000215ad4efdf">
+      <Name>TrapType</Name>
+      <Definition>Identifies the predefined types of waste trap used in combination with the floor trap from which the type required may be set.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_TrapType">
+            <EnumItem>NONE</EnumItem>
+            <EnumItem>P_TRAP</EnumItem>
+            <EnumItem>Q_TRAP</EnumItem>
+            <EnumItem>S_TRAP</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>NONE</Name>
+              <NameAliases>
+                <NameAlias lang="en">None</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>P_TRAP</Name>
+              <NameAliases>
+                <NameAlias lang="en">P Trap</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>Q_TRAP</Name>
+              <NameAliases>
+                <NameAlias lang="en">Q Trap</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>S_TRAP</Name>
+              <NameAliases>
+                <NameAlias lang="en">S Trap</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Trap Type</NameAlias>
+        <NameAlias lang="ja-JP">防臭弁の種類</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">セットされる予定の床の防臭弁と組み合わせて使われる廃棄物の防臭弁のあらかじめ定義されたタイプの識別情報。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="95132980d21611e1800000215ad4efdf">
+      <Name>HasStrainer</Name>
+      <Definition>Indicates whether the gully trap has a strainer (= TRUE) or not (= FALSE).</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Has Strainer</NameAlias>
+        <NameAlias lang="ja-JP">ろ過装置</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">溝の防臭弁がろ過装置を備えているかどうか指示する。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="9c3a3780d21611e1800000215ad4efdf">
+      <Name>OutletConnectionSize</Name>
+      <Definition>Size of the outlet connection from the object.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Outlet Connection Size</NameAlias>
+        <NameAlias lang="ja-JP">接続口口径</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">要素からの接続口口径。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="a65c3600d21611e1800000215ad4efdf">
+      <Name>InletPatternType</Name>
+      <Definition>Identifies the pattern of inlet connections to a trap.
+
+A trap may have 0,1,2,3 or 4 inlet connections and the pattern of their arrangement may vary. The enumeration makes the convention that an outlet is either vertical or is placed at the bottom (south side) of the trap (when viewed in plan). Position 1 is to the left (west), position 2 is to the top (north), position 3 is to the right (east) and position 4 is to the bottom (south).</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_InletPatternType">
+            <EnumItem>NONE</EnumItem>
+            <EnumItem>1</EnumItem>
+            <EnumItem>2</EnumItem>
+            <EnumItem>3</EnumItem>
+            <EnumItem>4</EnumItem>
+            <EnumItem>12</EnumItem>
+            <EnumItem>13</EnumItem>
+            <EnumItem>14</EnumItem>
+            <EnumItem>23</EnumItem>
+            <EnumItem>24</EnumItem>
+            <EnumItem>34</EnumItem>
+            <EnumItem>123</EnumItem>
+            <EnumItem>124</EnumItem>
+            <EnumItem>134</EnumItem>
+            <EnumItem>234</EnumItem>
+            <EnumItem>1234</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>NONE</Name>
+              <NameAliases>
+                <NameAlias lang="en">None</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>1</Name>
+              <NameAliases>
+                <NameAlias lang="en">1</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>2</Name>
+              <NameAliases>
+                <NameAlias lang="en">2</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>3</Name>
+              <NameAliases>
+                <NameAlias lang="en">3</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>4</Name>
+              <NameAliases>
+                <NameAlias lang="en">4</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>12</Name>
+              <NameAliases>
+                <NameAlias lang="en">12</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>13</Name>
+              <NameAliases>
+                <NameAlias lang="en">13</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>14</Name>
+              <NameAliases>
+                <NameAlias lang="en">14</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>23</Name>
+              <NameAliases>
+                <NameAlias lang="en">23</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>24</Name>
+              <NameAliases>
+                <NameAlias lang="en">24</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>34</Name>
+              <NameAliases>
+                <NameAlias lang="en">34</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>123</Name>
+              <NameAliases>
+                <NameAlias lang="en">123</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>124</Name>
+              <NameAliases>
+                <NameAlias lang="en">124</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>134</Name>
+              <NameAliases>
+                <NameAlias lang="en">134</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>234</Name>
+              <NameAliases>
+                <NameAlias lang="en">234</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>1234</Name>
+              <NameAliases>
+                <NameAlias lang="en">1234</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Inlet Pattern Type</NameAlias>
+        <NameAlias lang="ja-JP">吸気口種類</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">防臭弁の吸気口接続口の識別情報。
+
+一つの防臭弁に0.1.2.3.4.の吸気口接続口とパターンがあるときは変化する可能性があります。羅列されるとき、接続口が垂直である様子か、防臭弁の底（南）におかれます。位置1は左(西)に、位置2は上方(北)に、位置3は右(東)に、位置4は下方(南）になる。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="c4299b00d21611e1800000215ad4efdf">
+      <Name>InletConnectionSize</Name>
+      <Definition>Size of the inlet connection(s), where used, of the inlet connections.
+
+Note that all inlet connections are assumed to be the same size.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Inlet Connection Size</NameAlias>
+        <NameAlias lang="ja-JP">吸気口サイズ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">吸気口接続口のサイズ
+
+注意：同サイズの吸気口接続口がないものとする。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="cdb30300d21611e1800000215ad4efdf">
+      <Name>CoverLength</Name>
+      <Definition>The length measured along the x-axis in the local coordinate system or the radius (in the case of a circular shape in plan) of the cover of the trap.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Cover Length</NameAlias>
+        <NameAlias lang="ja-JP">カバー長さ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">局所座標系のX軸に沿うか、半径（円状の形の場合）で測定された防臭弁カバーの長さ。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="d6a3d480d21611e1800000215ad4efdf">
+      <Name>CoverWidth</Name>
+      <Definition>The length measured along the y-axis in the local coordinate system of the cover of the  trap.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Cover Width</NameAlias>
+        <NameAlias lang="ja-JP">カバー幅</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">局所座標系のY軸で測定された防臭弁カバーの長さ。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="df94a600d21611e1800000215ad4efdf">
+      <Name>CoverMaterial</Name>
+      <Definition>Material from which the cover or grating is constructed.</Definition>
+      <PropertyType>
+        <TypePropertyReferenceValue reftype="IfcMaterialDefinition" />
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Cover Material</NameAlias>
+        <NameAlias lang="ja-JP">カバー材質</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">カバーか格子の材質。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">液体を溜めて汚れた空気の通過を防ぐために床に据えられる配管。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

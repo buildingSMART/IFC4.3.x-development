@@ -435,7 +435,8 @@ class xmi_document:
                 if set_stereotype == "PSET" or set_stereotype == "QSET":
                     
                     try:
-                        refs = self.concepts[["QuantitySets", "PropertySetsforObjects"][set_stereotype == "PSET"]].get(c.id or c.idref)
+                        concept_to_use = ["PropertySetsforObjects", "PropertySetsforContexts", "QuantitySets"]
+                        refs = sum((self.concepts[ctu].get(c.id or c.idref, []) for ctu in concept_to_use), [])
                     except ValueError as e:
                         print("WARNING:", c.name, "has no associated class", file=sys.stderr)
                         continue
@@ -446,6 +447,8 @@ class xmi_document:
                     # - type driven: only applicable to IfcTypeObject subtypes
                     # - type driven override: applicable to both IfcObject and IfcTypeObject
                     #                         where the former can override the latter
+                    # - material driven: applicable to IfcMaterialDefinition, uses IfcMaterialProperties
+                    # - profile driven: applicable to IfcProfileDef, uses IfcProfileProperties
                     # 
                     # In UML we associate only to the IfcObject subtype and have the
                     # pset mechanism encoded in the property set stereotype name.

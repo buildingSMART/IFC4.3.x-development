@@ -1,0 +1,285 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="7ad05000d20411e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x1" />
+  <Name>Pset_SanitaryTerminalTypeWashHandBasin</Name>
+  <Definition>Waste water appliance for washing the upper parts of the body. HISTORY: In IFC4, Material property removed. Use materials capabilities from IfcMaterialsResource schema. Datatype of color changed to IfcLabel (still a string value).</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcSanitaryTerminal/WASHHANDBASIN</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcSanitaryTerminal/WASHHANDBASIN</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="802d9a80d20411e1800000215ad4efdf">
+      <Name>WashHandBasinType</Name>
+      <Definition>Defines the types of wash hand basin that may be specified where:
+
+
+DentalCuspidor: Waste water appliance that receives and flushes away mouth washings
+.
+HandRinse: Wall mounted wash hand basin that has an overall width of 500mm or less
+.
+Hospital: Wash hand basin that has a smooth easy clean surface without tapholes or overflow slot for use where hygiene is of prime importance. 
+
+Tipup: Wash hand basin mounted on pivots so that it can be emptied by tilting.
+
+Vanity: Wash hand basin for installation into a horizontal surface.
+
+Washfountain: Wash hand basin that is circular, semi-circular or polygonal on plan, at which more than one person can wash at the same time.
+WashingTrough: Wash hand basin of elongated rectangular shape in plan, at which more than one person can wash at the same time.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_WashHandBasinType">
+            <EnumItem>DENTALCUSPIDOR</EnumItem>
+            <EnumItem>HANDRINSE</EnumItem>
+            <EnumItem>HOSPITAL</EnumItem>
+            <EnumItem>TIPUP</EnumItem>
+            <EnumItem>WASHFOUNTAIN</EnumItem>
+            <EnumItem>WASHINGTROUGH</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>DENTALCUSPIDOR</Name>
+              <NameAliases>
+                <NameAlias lang="en">Dental Cuspidor</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>HANDRINSE</Name>
+              <NameAliases>
+                <NameAlias lang="en">Hand Rinse</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>HOSPITAL</Name>
+              <NameAliases>
+                <NameAlias lang="en">Hospital</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>TIPUP</Name>
+              <NameAliases>
+                <NameAlias lang="en">Tipup</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>WASHFOUNTAIN</Name>
+              <NameAliases>
+                <NameAlias lang="en">Wash Fountain</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>WASHINGTROUGH</Name>
+              <NameAliases>
+                <NameAlias lang="en">Washing Trough</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Wash Hand Basin Type</NameAlias>
+        <NameAlias lang="ja-JP">手洗い種類</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">手洗いの種類は設置される場所で定義されます。
+
+歯科用痰壷：口をゆすぐ際に受けて流す廃水機器
+手洗い：500ｍｍ以下の幅の壁掛け型手洗い
+病院用：サイフォンか氾濫防止弁が付いた衛生が最優先とされる場所で使用される手洗い洗面器
+上げ起こし型：角度調整によって空にできる軸上に設置された手洗い
+化粧台：地平面に設置された手洗い台
+洗浄噴水型：一人以上の人間が同時に使用できる円・半円・多角形の洗面台
+洗浄ボウル：一人以上の人間が同時に使用できる多角形の洗面台</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="9176a700d20411e1800000215ad4efdf">
+      <Name>Mounting</Name>
+      <Definition>Selection of the form of mounting from the enumerated list of mountings where:-
+
+BackToWall: 	A pedestal mounted sanitary terminal that fits flush to the wall at the rear to cover its service connections.
+Pedestal: 	A floor mounted sanitary terminal that has an integral base
+CounterTop: 	A sanitary terminal that is installed into a horizontal surface that is installed into a horizontal surface. Note: When applied to a wash hand basin, the term more normally used is ‘vanity’. See also Wash Hand Basin Type specification.
+WallHung: 	A sanitary terminal cantilevered clear of the floor.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_SanitaryMounting">
+            <EnumItem>BACKTOWALL</EnumItem>
+            <EnumItem>PEDESTAL</EnumItem>
+            <EnumItem>COUNTERTOP</EnumItem>
+            <EnumItem>WALLHUNG</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>BACKTOWALL</Name>
+              <NameAliases>
+                <NameAlias lang="en">Back To Wall</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>PEDESTAL</Name>
+              <NameAliases>
+                <NameAlias lang="en">Pedestal</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>COUNTERTOP</Name>
+              <NameAliases>
+                <NameAlias lang="en">Countertop</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>WALLHUNG</Name>
+              <NameAliases>
+                <NameAlias lang="en">Wall Hung</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Mounting</NameAlias>
+        <NameAlias lang="ja-JP">設置</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">以下のリストから設置方法を選択
+
+
+・床置き壁排出：接続口の後部に出水口を合わせること。
+・台：床置きの衛生器具には基礎があること。
+・カウンター：衛生器具の表層が水平に設置されていること。※手洗い台として設置された場合「化粧台」として扱うこと。また、洗面台種類の規格表を参照のこと。
+・壁掛け型：衛生器具は片側固定がされ床から離れていること。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="bff48200d20411e1800000215ad4efdf">
+      <Name>DrainSize</Name>
+      <Definition>The size of the drain outlet connection from the object.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Drain Size</NameAlias>
+        <NameAlias lang="ja-JP">管径</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">要素への接続口径。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="c97dea00d20411e1800000215ad4efdf">
+      <Name>MountingOffset</Name>
+      <Definition>For counter top mounted basins the vertical offset between the top of the sink and the counter top.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Mounting Offset</NameAlias>
+        <NameAlias lang="ja-JP">据付補正</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">カウンター用途として、カウンターとシンクの間に垂直洗浄に据付される廃水機器。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">体の上部分を洗浄するための廃水機器。
+背景：IFC4において、要素のプロパティーは排除されています 。IfcMaterialsResourceのタイプを使ってください。 色のデータ形式は文字列としてIfcLabelに変更されています。また、「設置」のプロパティーが加えられました。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

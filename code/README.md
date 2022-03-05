@@ -138,21 +138,24 @@ Do not use this
 
 ### Inline references to resources
 
-If you want to reference an IFC entity, data type, property or quantity set, you
-should follow the capitalisation convention of CapsCase. This reference will be
-automatically linked by the web application and it is not necessary to further
-distinguish it with italics, bold, or other decoration.
+If you want to reference an IFC entity, attribute, type, property or quantity
+set, property, function, or rule, you should follow the capitalisation
+convention of CapsCase and distinguish it with italics. This allows the keyword
+to stand out regardless of viewing medium.
 
-If you refer to an attribute name or property name, you must distinguish it with
-italics.
+Also note that references will be automatically linked by the web application
+when possible so you should not manually add links.
+
+When referring to entities or types in the plural, do not use an "s". Instead,
+simply use the name and say "entities" or "types" afterwards.
 
 ```
-I can reference an IfcWall without doing anything special, or Pset_WallCommon as
-well without special formatting. Attributes like _Name_ or properties like
-_NetHeight_ should be in italics.
+I can reference an _IfcWall_ or multiple _IfcWall_ entities and _IfcLabel_
+types. I can also refer to the _Pset_WallCommon_ property set, attributes like
+_Name_ or properties like _NetHeight_.
 ```
 
-### References
+### External references
 
 References shall be used when it is possible for a reader to get a deeper
 understanding of the topic by reading another ISO standard or specification that

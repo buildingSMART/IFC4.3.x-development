@@ -1,0 +1,352 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ifdguid="3f308880d1fa11e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4" />
+  <Name>Pset_ProtectiveDeviceTrippingFunctionGCurve</Name>
+  <Definition>Tripping functions are applied to electronic tripping units (i.e. tripping units having type property sets for electronic tripping defined). They are not applied to thermal, thermal magnetic or RCD tripping units.
+This property set represent the ground fault protection (G-curve) of an electronic protection device</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcProtectiveDeviceTrippingUnit</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcProtectiveDeviceTrippingUnit</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="42c40f80d1fa11e1800000215ad4efdf">
+      <Name>IsSelectable</Name>
+      <Definition>Indication whether the S-function can be switched off or not.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Is Selectable</NameAlias>
+        <NameAlias lang="ja-JP">切り替え</NameAlias>
+        <NameAlias lang="ko-KR">전환</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">装置の “ON-OFF”状態を電気的表示が切り替え可能かどうか。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">장치"ON-OFF "상태를 전기적으로 표시가 교체 가능합니까?</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="4a83b400d1fa11e1800000215ad4efdf">
+      <Name>NominalCurrentAdjusted</Name>
+      <Definition>An indication if the tripping currents of the short time protection is related to the nominal current multiplied with the actual setting of the current adjustment, if any, of the long time protection part of the protective device, or not.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Nominal Current Adjusted</NameAlias>
+        <NameAlias lang="ja-JP">定格調整電流</NameAlias>
+        <NameAlias lang="ko-KR">정격전류조정</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">電流によって、動作時間が短かかったり長かったりするかどうか。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">전류 작동 시간의 여부</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="51122b80d1fa11e1800000215ad4efdf">
+      <Name>ExternalAdjusted</Name>
+      <Definition>An indication if the ground fault protection may be adjusted according to an external current coil or not.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">External Adjusted</NameAlias>
+        <NameAlias lang="ja-JP">外部調整</NameAlias>
+        <NameAlias lang="ko-KR">외부조정</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">外部調整が可能かどうか。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">외부 조정이 가능합니까?</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="57080c80d1fa11e1800000215ad4efdf">
+      <Name>ReleaseCurrent</Name>
+      <Definition>The release current in [x In] for the initial tripping of the S-function.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcElectricCurrentMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Release Current</NameAlias>
+        <NameAlias lang="ja-JP">放出電流</NameAlias>
+        <NameAlias lang="ko-KR">방출전류</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">放出する電流は、S-functionの初期特性。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">방출 전류는 S-function의 초기 특성.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="5bccc080d1fa11e1800000215ad4efdf">
+      <Name>ReleaseTime</Name>
+      <Definition>The release time in [s] for the initial tripping of the relevant part. This time indicates that for current lower than the indicated release current, the tripping time will be longer than the indicated release time. The value is given as a mean value.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcTimeMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Release Time</NameAlias>
+        <NameAlias lang="ja-JP">放出時間</NameAlias>
+        <NameAlias lang="ko-KR">방출 시간</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">関連する部分の初期トリップのための[s]が放出時間。
+ このトリップ時間は、リリースの電流よりも低い電流の場合、指定された動作時間よりも長くなります。
+ 値が平均値として与えられる。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">관련 부분의 초기 여행을위한 [s]가 방출 시간.  이 트립 시간은 릴리스 전류보다 낮은 전류의 경우 지정된 동작 시간보다 길어집니다.  값을 평균으로 주어진다.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="61c2a180d1fa11e1800000215ad4efdf">
+      <Name>CurrentTolerance1</Name>
+      <Definition>The tolerance for the current of time/current-curve in [%].</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveRatioMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Current Tolerance1</NameAlias>
+        <NameAlias lang="ja-JP">許容電流1</NameAlias>
+        <NameAlias lang="ko-KR">허용 전류1</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">時間/特性曲線の許容範囲を[％]で指定。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">시간 / 특성 곡선의 허용 범위를 [%]로 지정합니다.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="671fec00d1fa11e1800000215ad4efdf">
+      <Name>CurrentToleranceLimit1</Name>
+      <Definition>The time limit in [s] limiting the application of CurrentTolerance1, if any. If the value is set to 0, the value of the CurrentTolerance1 is valid for the whole time/current-curve.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcTimeMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Current Tolerance Limit1</NameAlias>
+        <NameAlias lang="ja-JP">許容電流限界1</NameAlias>
+        <NameAlias lang="ko-KR">허용전류한계1</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">許容電流1を制限する時間制限。
+値が0の場合は、制限はない。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">허용 전류 1 제한 시간 제한. 값이 0이면 제한이 없다.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="6d15cd00d1fa11e1800000215ad4efdf">
+      <Name>CurrentTolerance2</Name>
+      <Definition>The tolerance for the current of time/current-curve in [%] valid for times above CurrentTolereanceLimit1.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveRatioMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Current Tolerance2</NameAlias>
+        <NameAlias lang="ja-JP">許容電流2</NameAlias>
+        <NameAlias lang="ko-KR">허용전류 2</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">[％]で指定された時間/特性曲線の許容範囲は、上記の許容電流限界1の時間で有効です。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">[%]로 지정된 시간 / 특성 곡선의 허용 범위는 상기의 허용 전류 한계 1 시간에 유효합니다.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="73a44480d1fa11e1800000215ad4efdf">
+      <Name>IsCurrentTolerancePositiveOnly</Name>
+      <Definition>Indication whether the value of  CurrentTolerance1 is provided as a positive tolereance only  or not. If not, the value is proved as a pluss/minus tolerance.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Is Current Tolerance Positive Only</NameAlias>
+        <NameAlias lang="ja-JP">電流許容値</NameAlias>
+        <NameAlias lang="ko-KR">전류 허용 값</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">許容電流限界1の値のみかどうか
+ 上記でない場合、電流許容値はプラス/マイナスした値。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">허용 전류 한계 값 1 만 여부  위의 경우, 전류 허용 값은 플러스 / 마이너스 값.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="7a32bc00d1fa11e1800000215ad4efdf">
+      <Name>TimeTolerance1</Name>
+      <Definition>The tolerance for the time of time/current-curve in [%].</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveRatioMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Time Tolerance1</NameAlias>
+        <NameAlias lang="ja-JP">許容時間1</NameAlias>
+        <NameAlias lang="ko-KR">허용 시간1</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">[％]で時間/特性曲線の許容時間を設定</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">[%] 시간 / 특성 곡선의 허용 시간을 설정</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="80289d00d1fa11e1800000215ad4efdf">
+      <Name>TimeToleranceLimit1</Name>
+      <Definition>The current limit in [x In] limiting the application of TimeTolerance1, if any. If the value is set to 0, the value of the TimeTolerance1 is valid for the whole time/current-curve.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcElectricCurrentMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Time Tolerance Limit1</NameAlias>
+        <NameAlias lang="ja-JP">許容限界時間1</NameAlias>
+        <NameAlias lang="ko-KR">허용 한계시간1</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">許容時間1を制限する電流制限値。
+値が0の場合は、制限はない。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">허용 시간 1를 제한하는 전류 제한. 값이 0이면 제한이 없다</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="84ed5100d1fa11e1800000215ad4efdf">
+      <Name>TimeTolerance2</Name>
+      <Definition>The tolerance for the time of the time/current-curve in [%] valid for currents above TimeToleranceLimit1.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveRatioMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Time Tolerance2</NameAlias>
+        <NameAlias lang="ja-JP">許容時間2</NameAlias>
+        <NameAlias lang="ko-KR">허용시간 2</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">[％]で指定された時間/特性曲線の許容範囲は、上記の許容電流限界1の電流で有効です。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">[%]로 지정된 시간 / 특성 곡선의 허용 범위는 상기의 허용 전류 한계 1의 전류로 사용할 수 있습니다.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="8ae33200d1fa11e1800000215ad4efdf">
+      <Name>IsTimeTolerancePositiveOnly</Name>
+      <Definition>Indication whether the value of  TimeTolerance1 is provided as a positive tolereance only  or not. If not, the value is proved as a pluss/minus tolerance.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Is Time Tolerance Positive Only</NameAlias>
+        <NameAlias lang="ja-JP">時間許容値</NameAlias>
+        <NameAlias lang="ko-KR">시간 허용치</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">許容時間1の値のみかどうか
+ 上記でない場合、時間許容値は、プラス/マイナスした値。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">허용 시간 1 값만 여부  위의 경우 시간 허용치는 플러스 / 마이너스 값.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="9171a980d1fa11e1800000215ad4efdf">
+      <Name>ReleaseCurrentI2tStart</Name>
+      <Definition>The release current in [x In] for the start point of the I2t tripping curve of the G-function, if any.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcElectricCurrentMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Release Current I2t Start</NameAlias>
+        <NameAlias lang="ja-JP">I2tの開始放流電流</NameAlias>
+        <NameAlias lang="ko-KR">I2t 시작 방류 전류</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">G関数の特性曲線I2tの始点[x In]が開始放流電流。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">G 함수 특성 곡선 I2t의 시작점 [x In]가 시작 방류 전류.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="96cef400d1fa11e1800000215ad4efdf">
+      <Name>ReleaseTimeI2tStart</Name>
+      <Definition>The release time in [s] for the start point of the I2t tripping curve of the G-function, if any.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcTimeMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Release Time I2t Start</NameAlias>
+        <NameAlias lang="ja-JP">I2tの開始放流時間</NameAlias>
+        <NameAlias lang="ko-KR">I2t 시작 방류 시간</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">G関数の特性曲線I2tの始点[s]が開始放流時間。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">G 함수 특성 곡선 I2t의 시작점 [s]가 시작 방류 시간.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="9c2c3e80d1fa11e1800000215ad4efdf">
+      <Name>ReleaseCurrentI2tEnd</Name>
+      <Definition>The release current in [x In] for the end point of the I2t tripping curve of the G-function, if any. The value of ReleaseCurrentI2tEnd shall be larger than ReleaseCurrentI2tStart.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcElectricCurrentMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Release Current I2t End</NameAlias>
+        <NameAlias lang="ja-JP">I2tの終了放流電流</NameAlias>
+        <NameAlias lang="ko-KR">I2t 종료 방류 전류</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">G関数のI2の特性曲線のエンドポイントの[s]を放流電流。 
+  I2tの終了放流電流がI2tの開始放流電流よりも低くしなければならない。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">G 함수 I2의 특성 곡선의 끝점에서 s를 방류 전류.   I2t 종료 방류 전류가 I2t 시작 방류 전류보다 낮게해야한다. "</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="a2221f80d1fa11e1800000215ad4efdf">
+      <Name>ReleaseTimeI2tEnd</Name>
+      <Definition>The release time in [s] for the end point of the I2 tripping curve of the G-function, if any. The value of ReleaseTimeI2tEnd shall be lower than ReleaseTimeI2tStart.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcTimeMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Release Time I2t End</NameAlias>
+        <NameAlias lang="ja-JP">I2tの終了放流時間</NameAlias>
+        <NameAlias lang="ko-KR">I2t 종료 방류 시간</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">G関数のI2の特性曲線のエンドポイントの[s]を放流時間。 
+ I2tの終了放流電流時間がI2tの開始放流時間よりも低くしなければならない。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">G 함수 I2의 특성 곡선의 끝점에서 s를 방류 시간.  I2t 종료 방류 전류 시간이 I2t 시작 방류 시간보다 낮게해야한다</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">トリッピング関数は、電子トリッピング装置に適用される。
+（例えば、トリッピング装置は、電子トリッピング定義されたプロパティセットタイプを持っている）
+これらは、熱,熱電磁,RCDトリッピング装置に適用されない。
+このプロパティセットは、電子保護装置(G-curve)の地絡保護を表す。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="d6a0d600d21011e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x1" />
+  <Name>Pset_ThermalLoadAggregate</Name>
+  <Definition>The aggregated thermal loads experienced by one or many spaces, zones, or buildings. This aggregate thermal load information is typically addressed by a system or plant. HISTORY: New property set in IFC Release 1.0 (Pset_AggregateLoadInformation); renamed Pset_ThermalLoadAggregate in IFC2x2.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcSpatialElement</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcSpatialElement</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="df91a780d21011e1800000215ad4efdf">
+      <Name>TotalCoolingLoad</Name>
+      <Definition>The peak total cooling load for the building, zone or space.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPowerMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Total Cooling Load</NameAlias>
+        <NameAlias lang="ja-JP">冷房負荷</NameAlias>
+        <NameAlias lang="ko-KR">냉방부하</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">建物、ゾーン、部屋のピーク時の冷房負荷。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">건물 영역 방 피크 냉방 부하.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="e4eef200d21011e1800000215ad4efdf">
+      <Name>TotalHeatingLoad</Name>
+      <Definition>The peak total heating load for the building, zone or space.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPowerMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Total Heating Load</NameAlias>
+        <NameAlias lang="ja-JP">暖房負荷</NameAlias>
+        <NameAlias lang="ko-KR">난방 부하</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">建物、ゾーン、部屋のピーク時の暖房負荷。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">건물 영역 방 최대 난방 부하.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="eae4d300d21011e1800000215ad4efdf">
+      <Name>LightingDiversity</Name>
+      <Definition>Lighting diversity.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveRatioMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Lighting Diversity</NameAlias>
+        <NameAlias lang="ja-JP">照明負荷係数</NameAlias>
+        <NameAlias lang="ko-KR">조명 부하계수</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">照明負荷係数。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">조명 부하 계수.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="f33d0e00d21011e1800000215ad4efdf">
+      <Name>InfiltrationDiversitySummer</Name>
+      <Definition>Diversity factor for Summer infiltration.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveRatioMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Infiltration Diversity Summer</NameAlias>
+        <NameAlias lang="ja-JP">夏期すき間換気率</NameAlias>
+        <NameAlias lang="ko-KR">여름 틈새 환기 비율</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">夏期すき間換気率。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">여름 틈새 환기 비율.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="f9cb8580d21011e1800000215ad4efdf">
+      <Name>InfiltrationDiversityWinter</Name>
+      <Definition>Diversity factor for Winter infiltration.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveRatioMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Infiltration Diversity Winter</NameAlias>
+        <NameAlias lang="ja-JP">冬期すき間換気率</NameAlias>
+        <NameAlias lang="ko-KR">겨울철 틈새 환기비율</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">冬期すき間換気率。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">겨울철 틈새 환기 비율.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="0059fd00d21111e1800000215ad4efdf">
+      <Name>ApplianceDiversity</Name>
+      <Definition>Diversity of appliance load.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveRatioMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Appliance Diversity</NameAlias>
+        <NameAlias lang="ja-JP">機器の負荷率</NameAlias>
+        <NameAlias lang="ko-KR">기기의 부하율</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">機器の負荷率。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">기기의 부하율.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="064fde00d21111e1800000215ad4efdf">
+      <Name>LoadSafetyFactor</Name>
+      <Definition>Load safety factor.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveRatioMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Load Safety Factor</NameAlias>
+        <NameAlias lang="ja-JP">負荷の安全率</NameAlias>
+        <NameAlias lang="ko-KR">부하의 안전율</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">空調負荷計算用の安全率（割増係数）。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">공조 부하 계산을위한 안전율 (할증 계수).</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">戸別或いは複数の部屋、ゾーン、建物の熱負荷の集計。この集計した熱負荷情報は一般にシステムあるいはプラントによって扱われる。履歴：IFC1.0の新PropertySet（Pset_AggregateLoadInformation)、：IFC2ｘ２に新たにPset_ThermalLoadAggregateと定義された。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

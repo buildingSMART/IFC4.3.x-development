@@ -37,7 +37,7 @@ def get_concept_root(all_templates, concept):
     if len(roots) != 1:
         print(f"Warning: multiple roots on {concept}")
         return
-    return roots[0]
+    return roots[0].split("_")[0]
 
 
 def parse_bindings(concept, all_templates=None, fn=None, to_xmi=False, definitions_by_name=None):

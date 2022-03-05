@@ -1,11 +1,21 @@
 Material Constituent Set
 ========================
 
-Material constituents are associated with products or product types where materials are placed arbitrarily (unlike 1D material profiles or 2D material layers). The mapping of materials to geometry may be accomplished using _IfcShapeAspect_.
+Material constituents may be associated to arbitrary geometry using _IfcShapeAspect_. This association is done by
+comparing the name of the material constituent with the name of an _IfcShapeAspect_ assigned to a portion of the
+product's representation.
 
 ```
 concept {
-    IfcObjectDefinition:HasAssociations -> IfcRelAssociatesMaterial:RelatedObjects
+    IfcProduct:HasAssociations -> IfcRelAssociatesMaterial:RelatedObjects
+
+    IfcProduct:Representation -> IfcProductDefinitionShape:ShapeOfProduct
+    IfcProductDefinitionShape:Representations -> IfcShapeRepresentation:OfProductRepresentation
+    IfcShapeAspect:PartOfProductDefinitionShape -> IfcProductDefinitionShape:HasShapeAspects
+    IfcShapeAspect:ShapeRepresentations -> IfcShapeRepresentation:OfShapeAspect
+    IfcShapeAspect:Name[binding="ShapeAspectName"]
+    IfcShapeAspect:Name -> IfcLabel_0
+
     IfcRelAssociatesMaterial:RelatingMaterial -> IfcMaterialConstituentSet
     IfcMaterialConstituentSet:MaterialConstituents -> IfcMaterialConstituent
     IfcMaterialConstituentSet:Name -> IfcLabel_2

@@ -1,13 +1,23 @@
 Material Layer Set Usage
 ========================
 
-Material layer set usage defines layout at occurrences to indicate a direction and offset from the 'Axis' reference curve, and a reference extent such as for a default wall height.
+A material layer set may be defined on an object type. In this scenario, occurrences of that type must use this layer set to parametrically define their geometry.
 
-The material is defined by _IfcMaterialLayerSetUsage_ and is attached by the _IfcRelAssociatesMaterial_._RelatingMaterial_. It is accessible by the inverse _HasAssociations_ relationship. Elements with multiple layers can be represented by referring to several _IfcMaterialLayer_'s within the _IfcMaterialLayerSet_ that is referenced from the _IfcMaterialLayerUsage_.
+> EXAMPLE A wall type may define multiple layers of material. A wall of that wall type will then have a geometry with a thickness that corresponds with the layers in the wall type.
+
+The usage may parametrically define an 'Axis' reference curve, and a direction, offset, and extent of the layers to extend along the axis. This allows layers to slope or only extend up to a particular height.
+
+When the _IfcMaterialLayerSet_ is defined by the object type, this implies that all occurrences of that type must use the same instance of the material set via _IfcMaterialLayerSetUsage_.
 
 ```
 concept {
     IfcProduct:HasAssociations -> IfcRelAssociatesMaterial:RelatedObjects
+
+    IfcProduct:IsTypedBy -> IfcRelDefinesByType:RelatedObjects
+    IfcRelDefinesByType:RelatingType -> IfcTypeProduct
+    IfcTypeProduct:HasAssociations -> IfcRelAssociatesMaterial_1:RelatedObjects
+    IfcRelAssociatesMaterial_1:RelatingMaterial -> IfcMaterialLayerSet
+
     IfcRelAssociatesMaterial:RelatingMaterial -> IfcMaterialLayerSetUsage
     IfcMaterialLayerSetUsage:ForLayerSet -> IfcMaterialLayerSet
     IfcMaterialLayerSetUsage:LayerSetDirection -> IfcLayerSetDirectionEnum_1
@@ -15,13 +25,8 @@ concept {
     IfcMaterialLayerSetUsage:OffsetFromReferenceLine -> IfcLengthMeasure_1
     IfcMaterialLayerSetUsage:ReferenceExtent -> IfcPositiveLengthMeasure
     IfcMaterialLayerSet:MaterialLayers -> IfcMaterialLayer
-    IfcMaterialLayerSet:MaterialLayers -> IfcMaterialLayerWithOffsets
     IfcMaterialLayer:Material -> IfcMaterial
     IfcMaterialLayer:LayerThickness -> IfcNonNegativeLengthMeasure
-    IfcMaterial:HasRepresentation -> IfcMaterialDefinitionRepresentation:RepresentedMaterial
-    IfcMaterialDefinitionRepresentation -> Material_Surface_Color_Style
-    IfcMaterialLayerWithOffsets:OffsetDirection -> IfcLayerSetDirectionEnum_0
-    IfcMaterialLayerWithOffsets:OffsetValues -> IfcLengthMeasure_0
     IfcMaterialLayer:Name[binding="Name"]
 }
 ```

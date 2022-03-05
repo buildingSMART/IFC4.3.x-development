@@ -9,7 +9,7 @@ Property Sets applicable to this template will carry the IfcPropertySetTemplateT
 
 ```
 concept {
-    IfcMaterial:HasProperties -> IfcMaterialProperties:Material
+    IfcMaterialDefinition:HasProperties -> IfcMaterialProperties:Material
     
     IfcMaterialProperties:Name -> IfcIdentifier
     IfcMaterialProperties:Description -> IfcText

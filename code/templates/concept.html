@@ -4,12 +4,14 @@
 
 {{ content | safe }}
 
+{% if diagram %}
 <p>
     The following diagram shows the generic classes and relationships used when applying this concept.
     {% if tables %}
     In addition, concepts may have particular importance to common or standardised industry practices and scenarios. For these specific usage scenarios, the tables below shows a recommended list of general usage patterns that users may adopt.
     {% endif %}
 </p>
+{% endif %}
 
 {% if diagram %}
 {{ diagram | safe }}

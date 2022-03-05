@@ -1459,7 +1459,7 @@ class FigureNumberer:
             previous = previous.find_previous()
             if not previous:
                 break
-            elif previous.name.lower().startswith("h"):
+            elif previous.name.lower().startswith("h") and previous.text and previous.text[0].isdigit():
                 previous_header = previous
                 break
 

@@ -109,6 +109,6 @@ class extractor:
         return concepts
 
 if __name__ == "__main__":
-    fn = sys.argv[1]
+    fn, ofn = sys.argv[1:]
     x = extractor(fn)    
-    x.write_excel("concepts.xlsx")
+    x.write_excel(ofn)

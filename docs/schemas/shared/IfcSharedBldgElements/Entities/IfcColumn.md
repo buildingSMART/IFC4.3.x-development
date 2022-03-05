@@ -75,19 +75,19 @@ Three-dimensional reference curve for the column.
 
 The following additional constraints apply to the 'AdvancedSweptSolid' representation type:
 
-* **Solid**: IfcSurfaceCurveSweptAreaSolid, IfcFixedReferenceSweptAreaSolid, IfcExtrudedAreaSolidTapered, IfcRevolvedAreaSolidTapered shall be supported.
+* _Solid_: IfcSurfaceCurveSweptAreaSolid, IfcFixedReferenceSweptAreaSolid, IfcExtrudedAreaSolidTapered, IfcRevolvedAreaSolidTapered shall be supported.
 >> NOTE  View definitions and implementer agreements can further constrain the allowed swept solid types.
-* **Profile**: see 'SweptSolid' geometric representation
-* **Extrusion**: not applicable
+* _Profile_: see 'SweptSolid' geometric representation
+* _Extrusion_: not applicable
 
 ### Body Clipping Geometry
 
 The following constraints apply to the 'Clipping' representation:
 
-* **Solid**: see 'SweptSolid' geometric representation
-* **Profile**: see 'SweptSolid' geometric representation
-* **Extrusion**: see 'SweptSolid' geometric representation
-* **Boolean result**: The IfcBooleanClippingResult shall be supported, allowing for Boolean differences between the swept solid (here IfcExtrudedAreaSolid) and one or several IfcHalfSpaceSolid.
+* _Solid_: see 'SweptSolid' geometric representation
+* _Profile_: see 'SweptSolid' geometric representation
+* _Extrusion_: see 'SweptSolid' geometric representation
+* _Boolean result_: The IfcBooleanClippingResult shall be supported, allowing for Boolean differences between the swept solid (here IfcExtrudedAreaSolid) and one or several IfcHalfSpaceSolid.
 
 Figure 216 illustrates a 'Clipping' geometric representation with use of IfcBooleanClippingResult between an IfcExtrudedAreaSolid and an IfcHalfSpaceSolid to create a clipped body.
 
@@ -99,9 +99,9 @@ Figure 216 — Column clipping
 
 The following additional constraints apply to the 'SweptSolid' representation:
 
-* **Solid**: IfcExtrudedAreaSolid, IfcRevolvedAreaSolid shall be supported
-* **Profile**: all subtypes of IfcProfileDef (with exception of IfcArbitraryOpenProfileDef) 
-* **Extrusion**: All extrusion directions shall be supported
+* _Solid_: IfcExtrudedAreaSolid, IfcRevolvedAreaSolid shall be supported
+* _Profile_: all subtypes of IfcProfileDef (with exception of IfcArbitraryOpenProfileDef) 
+* _Extrusion_: All extrusion directions shall be supported
 
 Figure 215 illustrates a 'SweptSolid' geometric representation. There are no restrictions or conventions on
 how to use the local placement (black), solid of extrusion placement (red) and profile placement (green).

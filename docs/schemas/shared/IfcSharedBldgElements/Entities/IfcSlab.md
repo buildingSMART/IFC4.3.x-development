@@ -2,22 +2,19 @@
 
 A slab is a component of the construction that may enclose a space vertically. The slab may provide the lower support (floor) or upper construction (roof slab) in any space in a building.
 
-> NOTE  Definition according to ISO 6707-1
-> thick, flat or shaped component, usually larger than 300 mm square, used to form a covering or projecting from a building.
-
 Only the core or constructional part of this construction is considered to be a slab. The upper finish (flooring, roofing) and the lower finish (ceiling, suspended ceiling) are considered to be coverings. A special type of slab is the landing, described as a floor section to which one or more stair flights or ramp flights connect.
 
-> NOTE  An arbitrary planar element to which this semantic information is not applicable or irrelevant shall be modeled as _IfcPlate_.
-
-A slab may have openings, such as floor openings, or recesses. They are defined by an _IfcOpeningElement_ attached to the slab using the inverse relationship _HasOpenings_ pointing to _IfcRelVoidsElement_.
-
-> NOTE  Slabs with openings that have already been modeled within the enclosing geometry may use the relationship _IfcRelConnectsElements_ to associate the wall with embedded elements such as trap doors.
+A slab may have openings, such as floor openings, or recesses. They are defined by an _IfcOpeningElement_ attached to the slab using the inverse relationship _HasOpenings_ pointing to _IfcRelVoidsElement_. Slabs with openings that have already been modeled within the enclosing geometry may use the relationship _IfcRelConnectsElements_ to associate the _IfcSlab_ with embedded elements such as trap doors.
 
 There are two main representations for slab occurrences:
 
 - _IfcSlab_ with _IfcMaterialLayerSetUsage_ is used for all occurrences of slabs, that are prismatic and where the thickness parameter can be fully described by the _IfcMaterialLayerSetUsage_. These slabs are always represented geometrically by a 'SweptSolid' geometry (or by a 'Clipping' geometry based on 'SweptSolid'), if a 3D geometric representation is assigned.
 
 - _IfcSlab_ without _IfcMaterialLayerSetUsage_ is used for all other occurrences of slabs, particularly for slabs with changing thickness, or slabs with non planar surfaces, and slabs having only 'SweptSolid' or 'Brep' geometry, or if a more parametric representation is not intended.
+
+> REFERENCE  Definition according to ISO 6707-1: thick, flat or shaped component, usually larger than 300 mm square, used to form a covering or projecting from a building.
+
+> NOTE  An arbitrary planar element to which this semantic information is not applicable or irrelevant shall be modeled as _IfcPlate_.
 
 > NOTE The entity _IfcSlabStandardCase_ has been deprecated, _IfcSlab_ with _IfcMaterialLayerSetUsage_ is used instead. The entity _IfcSlabElementedCase_ has been deprecated, _IfcSlab_ with _IfcRelAggregates_ is used to describe occurrences of slabs which are aggregated from subordinate elements.
 
@@ -44,110 +41,102 @@ Either there is no slab type object associated, i.e. the _IsTypedBy_ inverse rel
 
 ## Concepts
 
-### Aggregation
-
-If an IfcSlab is decomposed into components, the following component entity types are recommended:
-
-* Precast hollow core slabs
-    * double tee or plank components : IfcBeam
-    * topping : IfcCovering
-    * others : IfcBuildingElementPart
-
-![A diagram of a precast hollowcore slab](../../../../figures/ifcslab-aggregation.png)
-
-Figure SLABAGG &mdash; A precast hollow core slab aggregation with its components
-
 ### Body Clipping Geometry
 
-The following constraints apply to the 'Clipping'
-representation:
+The following constraints apply to the 'Clipping' representation:
 
+* Solid: IfcExtrudedAreaSolid is required,
+* Profile: IfcArbitraryClosedProfileDef, IfcRectangleProfileDef, IfcCircleProfileDef, IfcEllipseProfileDef shall be supported.
+* Extrusion: The profile can be extruded perpendicularly or non-perpendicularly to the plane of the swept profile.
+* Boolean result: The IfcBooleanClippingResult shall be supported, allowing for Boolean differences between the swept solid (here IfcExtrudedAreaSolid) and one or several IfcHalfSpaceSolid.
 
-* Solid: see 'SweptSolid' shape representation,
-* Profile: see 'SweptSolid' shape representation,
-* Extrusion: see 'SweptSolid' shape representation,
-* Boolean result: The IfcBooleanClippingResult
-shall be supported, allowing for Boolean differences between the
-swept solid (here IfcExtrudedAreaSolid) and one or several
-IfcHalfSpaceSolid.
+Additional constraints apply when an _IfcMaterialLayerSetUsage_ is used:
 
+* Material: The definition of the IfcMaterialLayerSetUsage, particularly of the OffsetFromReferenceLine and the ForLayerSet.TotalThickness, has to be consistent to the 'SweptSolid' representation.
 
 Figure 266 illustrates a 'Clipping' geometric representation with definition of a roof slab using advanced
 geometric representation. The profile is extruded non-perpendicular and the slab body is clipped at the eave.
 
-
 ![advanced slab](../../../../figures/ifcslab_advanced-layout1.gif)
+
 Figure 266 — Slab body clipping
 
-
-The following constraints apply to the 'Clipping'
-representation, when an IfcMaterialLayerSetUsage is assigned to the IfcSlab:
-
-
-* Solid: see 'SweptSolid' shape representation,
-* Profile: see 'SweptSolid' shape
-representation,
-* Extrusion: see 'SweptSolid' shape
-representation,
-* Material: see 'SweptSolid' shape
-representation,
-* Boolean result: The IfcBooleanClippingResult
- shall be supported, allowing for Boolean differences between the
-swept solid (here IfcExtrudedAreaSolid) and one or several
-IfcHalfSpaceSolid.
-
-![advanced slab](../../../../figures/ifcslab_advanced-layout1.gif)
-
-Figure 267 — Slab body clipping
-
-> EXAMPLE  Figure 267 illustrates a 'Clipping' geometric representation with definition of a roof slab using advanced geometric representation. The profile is extruded non-perpendicular and the slab body is clipped at the eave.
-
 ### Body SweptSolid Geometry
+
 The following constraints apply to the 'SweptSolid'
 representation:
 
 * Solid: IfcExtrudedAreaSolid is required,
-* Profile: IfcArbitraryClosedProfileDef,
-IfcRectangleProfileDef, IfcCircleProfileDef ,
-IfcEllipseProfileDef shall be supported.
-* Extrusion: The profile can be extruded perpendicularly
-or non-perpendicularly to the plane of the swept profile.
+* Profile: IfcArbitraryClosedProfileDef, IfcRectangleProfileDef, IfcCircleProfileDef, IfcEllipseProfileDef shall be supported.
+* Extrusion: The profile can be extruded perpendicularly or non-perpendicularly to the plane of the swept profile.
 
+For polygonal slabs, the following interpretation of dimension parameter applies:
 
-Figure 264 illustrates a 'SweptSolid' geometric representation.
+ * IfcArbitraryClosedProfileDef.OuterCurve: closed bounded curve interpreted as area (or foot print) of the slab.
 
+Additional constraints apply when an _IfcMaterialLayerSetUsage_ is used:
 
-
-> NOTE  The following interpretation of dimension parameter applies for polygonal slabs (in ground floor view):
-> * IfcArbitraryClosedProfileDef.OuterCurve: closed bounded curve interpreted as area (or foot print) of the slab.
-
-
-![standard slab](../../../../figures/ifcslab_standard-layout1.gif)
-Figure 264 — Slab body extrusion
-
-
-The following additional constraints apply to the 'SweptSolid'
-representation, when an IfcMaterialLayerSetUsage is assigned to the IfcSlab:
-
-
-* Solid: IfcExtrudedAreaSolid is required,
-* Profile: IfcArbitraryClosedProfileDef,
-IfcRectangleProfileDef, IfcCircleProfileDef,
-IfcEllipseProfileDef shall be supported.
-* Extrusion: The profile can be extruded perpendicularly
-or non-perpendicularly to the plane of the swept profile.
-* Material: The definition of the
- IfcMaterialLayerSetUsage, particularly of the
-OffsetFromReferenceLine and the
-ForLayerSet.TotalThickness, has to be consistent to the
-'SweptSolid' representation.
+* Material: The definition of the IfcMaterialLayerSetUsage, particularly of the OffsetFromReferenceLine and the ForLayerSet.TotalThickness, has to be consistent to the 'SweptSolid' representation.
 
 ![standard slab](../../../../figures/ifcslab_standard-layout1.gif)
 
 Figure 265 — Slab body extrusion
 
-> EXAMPLE  Figure 265 illustrates a 'SweptSolid' geometric representation. The following interpretation of dimension parameter applies for polygonal slabs (in ground floor view):
->  IfcArbitraryClosedProfileDef.OuterCurve: closed bounded curve interpreted as area (or foot print) of the slab.
+### Element Decomposition
+
+A slab may decomposed into parts such as for structural framing and covering panels or topping. For efficiency, each part may reuse geometry using the mapped geometry concept.
+
+![voiding](../../../../figures/ifcslab-floor.png)
+
+Figure ELEMENTEDCASE &mdash; A timber construction slab decomposed into parts.
+
+![A diagram of a precast hollowcore slab](../../../../figures/ifcslab-aggregation.png)
+
+Figure SLABAGG &mdash; A section showing a slab made from precast hollow core panels
+
+#### IfcBeam
+
+Precast hollow core planks or double tee beams in concrete construction, or joists and bearers in timber construction
+
+#### IfcCovering
+
+Concrete or topping screeds
+
+#### IfcPlate
+
+Used for metal decks at the base of slabs or sheathing
+
+#### IfcBuildingElementPart
+
+Parts for other elements
+
+### Element Voiding
+
+As shown in Figure ELEMENTVOID, openings within an aggregated slab are directly assigned to _IfcSlab_ using _IfcRelVoidsElement_ pointing to _IfcOpeningElement_ and apply to all aggregated parts. If individual parts have cutting and other voiding features, then the decomposed parts have a separate voiding relationship _IfcRelVoidsElement_ pointing to _IfcVoidingFeature_.
+
+```
+digraph dot_neato {
+IfcSlab [pos="0,0!"];
+IfcRelVoidsElement [pos="200,0!"];
+IfcOpeningElement [pos="400,0!"];
+
+IfcRelAggregates [pos="0,-70!"];
+
+IfcBuildingElementPart [pos="0,-140!"];
+IfcRelVoidsElement2 [label="IfcRelVoidsElement", pos="200,-140!"];
+IfcVoidingFeature [pos="400,-140!"];
+
+IfcRelVoidsElement -> IfcSlab [headlabel="RelatingBuildingElement", labelangle=90, labeldistance=3];
+IfcRelVoidsElement -> IfcOpeningElement [headlabel="RelatedOpeningElement", labelangle=-90, labeldistance=3];
+IfcRelAggregates -> IfcSlab [label="RelatingObject"];
+IfcRelAggregates -> IfcBuildingElementPart [label="RelatedObjects[1]"];
+IfcRelVoidsElement2 -> IfcBuildingElementPart [headlabel="RelatingBuildingElement", labelangle=90, labeldistance=3];
+IfcRelVoidsElement2 -> IfcVoidingFeature [headlabel="RelatedOpeningElement", labelangle=-90, labeldistance=3];
+}
+```
+
+Figure ELEMENTVOID &mdash; How individual parts being cut may be expressed.
+
 
 ### Material Layer Set
 

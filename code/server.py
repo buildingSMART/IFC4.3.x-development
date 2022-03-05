@@ -411,9 +411,9 @@ def transform_graph(current_entity, graph_data, only_urls=False):
                         "color": "#000000",
                     }
                     if node_type == "entity":
-                        args["fillcolor"] = "dodgerblue"
+                        args["fillcolor"] = "#1976d2"
                     elif node_type == "relationship":
-                        args["fillcolor"] = "yellow"
+                        args["fillcolor"] = "#E9D758"
                     else:
                         args["style"] = ""
                         args["shape"] = "plain"

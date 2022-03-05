@@ -1,12 +1,10 @@
 # IfcPlate
 
-An _IfcPlate_ is a planar and often flat part with constant thickness. A plate may carry loads between or beyond points of support, or provide stiffening. The location of the plate (being horizontal, vertical or sloped) is not relevant to its definition (in contrary to _IfcWall_ and _IfcSlab_ (as floor slab)).
-
-> NOTE  Definition according to ISO 6707-1: thin, rigid, flat, metal product, of a thickness greater than that of a sheet.
+An _IfcPlate_ is a planar and often flat part with constant thickness. A plate may carry loads between or beyond points of support, or provide stiffening. The location of the plate (being horizontal, vertical or sloped) is not relevant to its definition.
 
 Plates are normally made of steel, other metallic material, or by glass panels. However the definition of _IfcPlate_ is material independent and specific material information shall be handled by using _IfcAssociatesMaterial_ to assign a material specification to the _IfcPlate_.
 
-> NOTE  Although not necessarily, plates are often add-on parts. This is represented by the _IfcRelAggregates_ decomposition mechanism used to aggregate parts, such as _IfcPlate_, into a container element such as _IfcElementAssembly_ or _IfcCurtainWall_.
+Plates are often add-on parts. This is represented by the _IfcRelAggregates_ decomposition mechanism used to aggregate parts, such as _IfcPlate_, into a container element such as _IfcElementAssembly_ or _IfcCurtainWall_.
 
 An instance of _IfcPlate_ should preferably get its geometric representation and material assignment through the type definition by _IfcPlateType_ assigned using the _IfcRelDefinesByType_ relationship. This allows identical plates in a construction to be represented by the same instance of _IfcPlateType_.
 
@@ -18,10 +16,11 @@ There are two main representations for plate occurrences:
 
 - _IfcPlate_ without _IfcMaterialLayerSetUsage_ is used for all other occurrences of plates, particularly for plates with changing thickness, or plates with non planar surfaces, and plates having only 'SurfaceModel' or 'Brep' geometry or if a more parametric representation is not intended.
 
+> REFERENCE  Definition according to ISO 6707-1: thin, rigid, flat, metal product, of a thickness greater than that of a sheet.
+
 > NOTE  The representation of a plate in a structural analysis model is provided by _IfcStructuralSurfaceMember_ being part of an _IfcStructuralAnalysisModel_.
 
 > HISTORY  New entity in IFC2x2
-
 
 ## Attributes
 
@@ -44,25 +43,13 @@ Either there is no plate type object associated, i.e. the _IsTypedBy_ inverse re
 
 ### Body Clipping Geometry
 
-The following constraints apply to the 'Clipping'
-representation when an IfcMaterialLayerSetUsage is assigned to the IfcPlate:
+The following constraints apply to the 'Clipping' representation when an IfcMaterialLayerSetUsage is assigned to the IfcPlate:
 
-
-* Solid: see 'SweptSolid' shape representation,
-* Profile: see 'SweptSolid' shape
-representation,
-* Extrusion: see 'SweptSolid' shape
-representation,
-* Material: see 'SweptSolid' shape
-representation,
-* Boolean result: The IfcBooleanClippingResult
-shall be supported, allowing for Boolean differences between the
-swept solid (here IfcExtrudedAreaSolid) and one or several
-IfcHalfSpaceSolid.
-
-
- 
-
+* Solid: IfcExtrudedAreaSolid is required,
+* Profile: IfcArbitraryClosedProfileDef, IfcArbitraryProfileDefWithVoids, IfcRectangleProfileDef, IfcCircleProfileDef, IfcEllipseProfileDef shall be supported.
+* Extrusion: The profile can be extruded perpendicularly or non-perpendicularly to the plane of the swept profile.
+* Material: The definition of the IfcMaterialLayerSetUsage, particularly of the OffsetFromReferenceLine and the ForLayerSet.TotalThickness, has to be consistent to the 'SweptSolid' representation.
+* Boolean result: The IfcBooleanClippingResult shall be supported, allowing for Boolean differences between the swept solid (here IfcExtrudedAreaSolid) and one or several IfcHalfSpaceSolid.
 
 ![advanced plate](../../../../figures/ifcslab_advanced-layout1.gif)
 
@@ -78,37 +65,12 @@ representation:
 
 
 * Solid: IfcExtrudedAreaSolid is required,
-* Profile: IfcArbitraryClosedProfileDef,
-IfcArbitraryProfileDefWithVoids, IfcRectangleProfileDef,
-IfcCircleProfileDef, IfcEllipseProfileDef shall be
-supported.
-* Extrusion: The profile can be extruded perpendicularly
-or non-perpendicularly to the plane of the swept profile.
+* Profile: IfcArbitraryClosedProfileDef, IfcArbitraryProfileDefWithVoids, IfcRectangleProfileDef, IfcCircleProfileDef, IfcEllipseProfileDef shall be supported.
+* Extrusion: The profile can be extruded perpendicularly or non-perpendicularly to the plane of the swept profile.
 
+The following additional constraints apply when an _IfcMaterialLayerSetUsage_ is used:
 
-
-
-
-The following additional constraints apply to the 'SweptSolid'
-representation, when an IfcMaterialLayerSetUsage is assigned to the IfcPlate:
-
-
-* Solid: IfcExtrudedAreaSolid is required,
-* Profile: IfcArbitraryClosedProfileDef,
-IfcRectangleProfileDef, IfcRoundedRectangleProfileDef,
-IfcCircleProfileDef, IfcEllipseProfileDef shall be
-supported.
-* Extrusion: The profile can be extruded perpendicularly
-or non-perpendicularly to the plane of the swept profile.
-* Material: The definition of the
-IfcMaterialLayerSetUsage, particularly of the
-OffsetFromReferenceLine and the
-ForLayerSet.TotalThickness, has to be consistent to the
-'SweptSolid' representation.
-
-
- 
-
+* Material: The definition of the IfcMaterialLayerSetUsage, particularly of the OffsetFromReferenceLine and the ForLayerSet.TotalThickness, has to be consistent to the 'SweptSolid' representation.
 
 ![standard plate](../../../../figures/ifcslab_standard-layout1.gif)
 

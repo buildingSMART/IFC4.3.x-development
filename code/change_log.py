@@ -195,17 +195,15 @@ if __name__ == "__main__":
             "IFC2X3_TC1.exp", "deprecated_entities_Ifc2.3.0.1.json", "psd_IFC2x3",
             "IFC4_ADD2_TC1.exp", "deprecated_entities_Ifc4.0.2.2.json", "psd_IFC4_ADD2_TC1",
             # no IfcDoc branch for 4x1
-            # "IFC4x1.exp", "deprecated_entities_Ifc4.0.2.2.json", "psd_IFC4x1",
-            # "IFC4x2.exp", "deprecated_entities_Ifc4.2.0.1.json", "psd_IFC4x2"
+            "IFC4x1.exp", "deprecated_entities_Ifc4.0.2.2.json", "psd_IFC4x1",
+            "IFC4x2.exp", "deprecated_entities_Ifc4.2.0.1.json", "psd_IFC4x2"
         ]
         files = list(map(functools.partial(os.path.join, d), names))
-        """
         files += [
             "IFC.exp",
             "deprecated_entities.json",
             "psd",
         ]
-        """
 
     specs = [[express_parser.parse(files[i]), *files[i+1:i+3]] for i in range(0, len(files), 3)]
     

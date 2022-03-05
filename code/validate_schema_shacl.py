@@ -50,14 +50,14 @@ def process_document(g, fn, subj, cls):
             g.add((s2, fqdn("containedIn"), s))
             write(s2, ch)
         
-    contents = parse_document(filename=fn)
+    contents = parse_document(fn=fn)
     if contents:
         write(subj, contents)
     
 
 if not os.path.exists(os.path.join(tempfile.gettempdir(), "schema.ttl")):
 
-    d = append_xmi.context(fn=relative_path("../schemas/IFC.xml"))
+    d = append_xmi.context(filename=relative_path("../schemas/IFC.xml"))
     
     id_to_node = {}
     counter = {'c': 1}

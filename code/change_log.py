@@ -216,11 +216,13 @@ if __name__ == "__main__":
     for (schema_a, depr_a, psd_a), (schema_b, depr_b, psd_b) in zip(specs[:-1], specs[1:]):
         differences = sorted(compare_schemas(schema_a, depr_a, schema_b, depr_b)) \
             + sorted(compare_psets(psd_a, psd_b))
+            
+        schema_name = schema_b.schema.name.replace("X", ".")
         
-        changes_by_schema.append((schema_b.schema.name, differences))
+        changes_by_schema.append((schema_name, differences))
         
         for ty, changes in itertools.groupby(differences, key=operator.itemgetter(0)):
-            changes_by_type[ty][schema_b.schema.name] = [x[1:] for x in changes]
+            changes_by_type[ty][schema_name] = [x[1:] for x in changes]
     
     json.dump(changes_by_schema, open("changes_by_schema.json", "w"), indent=2)
     json.dump(changes_by_type, open("changes_by_type.json", "w"), indent=2)

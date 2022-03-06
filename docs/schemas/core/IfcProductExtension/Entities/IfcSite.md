@@ -57,7 +57,10 @@ The land title number (designation of the site within a regional system).
 > IFC4.3.0.0 DEPRECATION  This attribute shall not be used for export, use property _LandTitleID_ at _Pset_LandRegistration_ instead.
 
 ### SiteAddress
+
 Address given to the site for postal purposes.
+
+> IFC4.3.0.0 DEPRECATION This attribute is deprecated and shall no longer be used. Use Pset_Address instead.
 
 ## Concepts
 

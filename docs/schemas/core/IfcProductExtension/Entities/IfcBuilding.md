@@ -46,6 +46,8 @@ Elevation above the minimal terrain level around the foot print of the building,
 
 ### BuildingAddress
 
+> IFC4.3.0.0 DEPRECATION This attribute is deprecated and shall no longer be used. Use Pset_Address instead.
+
 ## Concepts
 
 ### Body Geometry

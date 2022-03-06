@@ -34,6 +34,7 @@ Curve3D | 3 dimensional curve(s)
 Surface | 2 or 3 dimensional surface(s)
 Surface2D | 2 dimensional surface(s) (a region on ground view)
 Surface3D | 3 dimensional surface(s)
+SectionedSurface | swept surface(s) created by sweeping open profiles along a directrix
 FillArea | 2D region(s) represented as a filled area (hatching)
 Text | text defined as text literals
 AdvancedSurface | 3 dimensional b-spline surface(s)

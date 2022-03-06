@@ -1,15 +1,13 @@
 Material Profile Set Usage
 ==========================
 
-A material profile set may be defined on an object type. In this scenario, occurrences of that type must use this profile set to parametrically define their geometry.
+A material profile set may be defined on an object type. In this scenario, all occurrences of that type must use this profile set to parametrically define their geometry.
 
 > EXAMPLE A beam type may define a material profile. A beam of that beam type will then have a geometry correlating to that profile, extruded along an axis.
 
 The usage may parametrically define an 'Axis' reference curve, an offset, alignment, and extent of the profile to extend along the axis.
 
 Profiles will typically be parametrically defined and named according to a standard, and have material properties that assist in usecases such as structural simulations.
-
-When the _IfcMaterialProfileSet_ is defined by the object type, this implies that all occurrences of that type must use the same instance of the material set via _IfcMaterialProfileSetUsage_.
 
 ```
 concept {

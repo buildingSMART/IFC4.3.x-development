@@ -1347,7 +1347,7 @@ def get_concept_usage(resource, builder, mdc):
             {
                 "name": ifc_class,
                 "is_inherited": ifc_class != resource,
-                "concepts": concepts,
+                "concepts": sorted(concepts, key=lambda x: x["name"]),
                 "total_concepts": len(concepts),
             }
         )

@@ -83,7 +83,11 @@ Figure 201 — Beam clipping
  * IfcExtrudedAreaSolid, IfcRevolvedAreaSolid shall be supported
  * All subtypes of IfcProfileDef
  * All extrusion directions shall be supported.
+
+When an (IfcMaterialProfileSetUsage) is assigned to the _IfcBeam_:
+
  * For all single profiles, the IfcParameterizedProfileDef.Position shall be NIL, or having Location = 0.,0. and RefDirection = 1.,0.
+ * The extrusion shall be perpendicular to the profile direction.
  * Orientation: The y-axis of the profile, as determined by IfcSweptAreaSolid.Position.P[2] shall point upwards. It indicates the "role" of the beam, a role=0° means y-axis of profile pointing upwards.
 
 Figure 200 illustrates the 'SweptSolid' geometric representation. There are no restrictions or conventions on how to use the local placement (black), solid of extrusion placement (red) and profile placement (green).

@@ -4,10 +4,8 @@ An _IfcMember_ is a structural member designed to carry loads between or beyond 
 
 There are two main representations for member occurrences:
 
-- _IfcMember_ with _IfcMaterialProfileSetUsage_ is used for all occurrences of members, that have a profile defined that is swept along a directrix. The profile might be changed uniformly by a taper definition along the directrix. The profile parameter and its cardinal point of insertion can be fully described by the _IfcMaterialProfileSetUsage_. These members are always represented geometricly by an 'Axis' and a 'SweptSolid' or 'AdvancedSweptSolid' shape representation (or by a 'Clipping' geometry based on the swept solid), if a 3D geometric representation is assigned.
-
-- _IfcMember_ without _IfcMaterialProfileSetUsage_ is used for all other occurrences of members, particularly for members with changing profile sizes along the extrusion, or members defined by non-linear extrusion, or members having only 'Brep', or 'SurfaceModel' geometry, or if a more parametric representation is not intended.
-
+ * _IfcMember_ with _IfcMaterialProfileSetUsage_ is used for all occurrences of members, that have a profile defined that is swept along a directrix. The profile might be changed uniformly by a taper definition along the directrix. The profile parameter and its cardinal point of insertion can be fully described by the _IfcMaterialProfileSetUsage_. These members are always represented geometricly by an 'Axis' and a 'SweptSolid' or 'AdvancedSweptSolid' shape representation (or by a 'Clipping' geometry based on the swept solid), if a 3D geometric representation is assigned.
+ * _IfcMember_ without _IfcMaterialProfileSetUsage_ is used for all other occurrences of members, particularly for members with changing profile sizes along the extrusion, or members defined by non-linear extrusion, or members having only 'Brep', or 'SurfaceModel' geometry, or if a more parametric representation is not intended.
 
 > NOTE  The representation of a member in a structural analysis model is provided by _IfcStructuralCurveMember_ being part of an _IfcStructuralAnalysisModel_.
 
@@ -34,44 +32,24 @@ Either there is no member type object associated, i.e. the _IsTypedBy_ inverse r
 
 ### Axis 3D Geometry
 
-The axis representation can be used to represent the system
- length of a member that may extent the body length of the
- member.
+The axis representation can be used to represent the fundamental orientation and extents of a member's body.
 
+If an _IfcMaterialProfileSetUsage_ is used, the axis representation is used to locate the profile. In addition:
 
+ * For a body representation using an _IfcExtrudedAreaSolid_, the axis may be an _IfcPolyline_ having two Points, or _IfcTrimmedCurve_ with BasisCurve of type _IfcLine_. The axis curve lies on the z axis of the object coordinate system.
+ * For a body representation using an _IfcRevolvedAreaSolid_, the axis may be an _IfcTrimmedCurve_ with BasisCurve of type _IfcCircle_. The axis curve lies on the x/z plane of the object coordinate system, the tangent at the start is along the positive z-axis.
 
-> NOTE  The 'Axis' is used to locate the
-> material profile set, if the material association is of type IfcMaterialProfileSetUsage.
-
-
-The following additional constraints apply to the 'Axis'
-representation, if an IfcMaterialProfileSetUsage is provided and the 'Body' shape representation has the
-RepresentationType: 'SweptSolid':
-
-
-* Axis
-	+ IfcPolyline having two Points, or
-	IfcTrimmedCurve with BasisCurve of Type
-	IfcLine for 'SweptSolid' provided as
-	IfcExtrudedAreaSolid. The axis curve lies on the z axis of
-	the object coordinate system.
-	+ IfcTrimmedCurve with BasisCurve of Type
-	IfcCircle for 'SweptSolid' provided as
-	IfcRevolvedAreaSolid. The axis curve lies on the x/z plane
-	of the object coordinate system, the tangent at the start is along
-	the positive z-axis.
+As shown in Figure 235, the axis representation can be used to represent the system length of a member that may extend past the body length of the member.
 
 ![Axis](../../../../figures/ifcmemberstandardcase_axis-01.png)
 
 Figure 235 — Member axis representation
 
-> EXAMPLE  As shown in Figure 101, the axis representation can be used to represent the system length of a member that may extent the body length of the member.
+As shown in Figure 236, the axis representation must be positioned at the _IfcMaterialProfileSetUsage_.CardinalPoint, and parallel to the _IfcExtrudedAreaSolid_.ExtrudedDirection. This offset between the axis line and the _IfcExtrudedAreaSolid_.Position must correlate with the chosen _IfcMaterialProfileSetUsage_.CardinalPoint.
 
 ![Axis](../../../../figures/ifcmemberstandardcase_axis-02.png)
 
 Figure 236 — Member axis cardinal point
-
-> EXAMPLE  As shown in Figure 102, the axis representation shall be used to represent the cardinal point as the offset between the 'Axis' and the extrusion path of the member. The extrusion path is provided as IfcExtrudedAreaSolid.ExtrudedDirection and should be parallel to the 'Axis'. It has to be guaranteed that the value provided by IfcMaterialProfileSetUsage.CardinalPoint is consistent to the IfcExtrudedAreaSolid.Position.
 
 #### Axis_IfcBoundedCurve_Curve3D
 
@@ -79,111 +57,50 @@ Three-dimensional reference curve for the member.
 
 ### Body AdvancedSweptSolid Geometry
 
-The following additional constraints apply to the 'AdvancedSweptSolid' representation type:
-
-* **Solid**: IfcSurfaceCurveSweptAreaSolid, IfcFixedReferenceSweptAreaSolid, IfcExtrudedAreaSolidTapered, IfcRevolvedAreaSolidTapered shall be supported.
->> NOTE  View definitions and implementer agreements can further constrain the allowed swept solid types.
-* **Profile**: see 'SweptSolid' geometric representation
-* **Extrusion**: not applicable
-
-_MappedRepresentation Representation Type_
+* IfcSurfaceCurveSweptAreaSolid, IfcFixedReferenceSweptAreaSolid, IfcExtrudedAreaSolidTapered, IfcRevolvedAreaSolidTapered shall be supported.
+* All subtypes of (IfcProfileDef) (with exception of IfcArbitraryOpenProfileDef) shall be supported
 
 ### Body Clipping Geometry
 
-The following constraints apply to the 'Clipping'
-representation:
-
-
-* Solid: see 'SweptSolid' geometric representation
-* Profile: see 'SweptSolid' geometric
-representation
-* Extrusion: see 'SweptSolid' geometric
-representation
-* Boolean result: The IfcBooleanClippingResult
-shall be supported, allowing for Boolean differences between the
-swept solid (here IfcExtrudedAreaSolid) and one or several
-IfcHalfSpaceSolid (or its subtypes).
-
+* _IfcExtrudedAreaSolid_, _IfcRevolvedAreaSolid_ shall be supported
+* All subtypes of (IfcProfileDef) (with exception of IfcArbitraryOpenProfileDef) shall be supported
+* All extrusion directions shall be supported.
+* The _IfcBooleanClippingResult_ shall be supported, allowing for Boolean differences between the swept solid (here IfcExtrudedAreaSolid) and one or several IfcHalfSpaceSolid (or its subtypes).
 
 Figure 238 illustrates a 'Clipping' geometric representation with use of IfcBooleanClippingResult between an IfcExtrudedAreaSolid and an IfcHalfSpaceSolid to create a clipped body.
 
-
 ![clipped member](../../../../figures/ifcmember_clipping-01.png)
+
 Figure 238 — Member clipping
 
-
-The following constraints apply to the 'Clipping'
-representation, when an IfcMaterialProfileSetUsage is assigned to the IfcMember:
-
-
-* Solid: see 'SweptSolid' geometric representation
-* Profile: see 'SweptSolid' geometric
-representation
-* Profile Position : see 'SweptSolid' geometric
-representation
-* Extrusion: see 'SweptSolid' geometric
-representation
-* Boolean result: The IfcBooleanClippingResult
-shall be supported, allowing for Boolean differences between the
-swept solid (here IfcExtrudedAreaSolid) and one or several
-IfcHalfSpaceSolid (or its subtypes).
-
-
-Figure 239 illustrates an advanced geometric representation with use of IfcBooleanClippingResult between
-an IfcExtrudedAreaSolid and an IfcHalfSpaceSolid to create a clipped body, with cardinal point applied as 4 (mid-depth left).
-
+When an _IfcMaterialProfileSetUsage_ is applied, Figure 239 illustrates an advanced geometric representation with use of _IfcBooleanClippingResult_ between an _IfcExtrudedAreaSolid_ and an _IfcHalfSpaceSolid_ to create a clipped body, with cardinal point applied as 4 (mid-depth left).
 
 ![clipped beam](../../../../figures/ifcbeamstandardcase_clipping-01.png)
+
 Figure 239 — Member body clipping
 
 ### Body SweptSolid Geometry
 
-The following constraints apply to the 'SweptSolid' representation:
+* _IfcExtrudedAreaSolid_, _IfcRevolvedAreaSolid_ shall be supported
+* All subtypes of (IfcProfileDef) (with exception of IfcArbitraryOpenProfileDef) shall be supported
+* All extrusion directions shall be supported.
 
+When an (IfcMaterialProfileSetUsage) is assigned to the _IfcMember_:
 
-* Solid: IfcExtrudedAreaSolid, IfcRevolvedAreaSolid shall be supported
-* Profile: all subtypes of IfcProfileDef (with exception of IfcArbitraryOpenProfileDef)
-* Extrusion: All extrusion directions shall be supported.
-
-
-The following additional constraints apply to the 'SweptSolid'
-representation, when an IfcMaterialProfileSetUsage is assigned to the IfcMember:
-
-* Solid: IfcExtrudedAreaSolid,
-IfcRevolvedAreaSolid shall be supported
-* Profile: all subtypes of IfcProfileDef (with
-exception of IfcArbitraryOpenProfileDef)
-* Profile Position : For all single profiles, the
- IfcParameterizedProfileDef.Position shall be NIL, or
-having Location = 0.,0. and RefDirection =
-1.,0.
-* Extrusion: perpendicular to the profile
-direction.
-* Orientation: The y-axis of the profile, as determined
-by IfcSweptAreaSolid.Position.P[2] shall point to the
-Z-Axis. It indicates the "role" of the column, a role=0°
-means y-axis of profile = Z-axis of reference coordinate system.
-In the exception of a vertical member, the y-axis shall point to
-the Y-axis.
-
+* For all single profiles, the IfcParameterizedProfileDef.Position shall be NIL, or having Location = 0.,0. and RefDirection = 1.,0.
+* The extrusion shall be perpendicular to the profile direction.
+* The y-axis of the profile, as determined by IfcSweptAreaSolid.Position.P[2] shall point to the Z-Axis. It indicates the "role" of the column, a role=0° means y-axis of profile = Z-axis of reference coordinate system.  In the exception of a vertical member, the y-axis shall point to the Y-axis.
 
 Figure 236 illustrates a 'SweptSolid' geometric representation with cardinal point applied as 1 (bottom left).
 
-
-The following interpretation of dimension parameter applies for rectangular members:
-
+If parametric profiles are used, the parameters may be interpreted to be the dimensions of the beam:
 
 * IfcRectangleProfileDef.YDim interpreted as member width
 * IfcRectangleProfileDef.XDim interpreted as member depth
-
-
-The following interpretation of dimension parameter applies for circular members:
-
-
-* IfcCircleProfileDef.Radius interpreted as beam radius.
-
+* IfcCircleProfileDef.Radius interpreted as member radius.
 
 ![standard member](../../../../figures/ifcbeamstandardcase_sweptsolid-01.png)
+
 Figure 236 — Member body extrusion
 
 ### Material Profile Set
@@ -220,11 +137,7 @@ Figure 234 — Member composite profiles
 
 ### Object Typing
 
-
-
 ### Product Assignment
-
-
 
 #### IfcStructuralCurveMember
 
@@ -236,11 +149,7 @@ A task for operating on the member.
 
 ### Property Sets for Objects
 
-
-
 ### Quantity Sets
-
-
 
 ### Spatial Containment
 
@@ -260,4 +169,3 @@ Spatial container for the element if it cannot be assigned to a building storey
 #### IfcSite
 
 Spatial container for the element in case that it is placed on site (outside of building)
-

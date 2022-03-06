@@ -2227,7 +2227,7 @@ def get_index():
         {"number": "", "title": f"Listing of {x}", "url": make_url(f"listing-{x}.html")}
         for x in "references,figures,tables".split(",")
     ]
-    return render_template("annex-b.html", base=base, is_iso=X.is_iso, navigation=get_navigation(), items=items, title="Index")
+    return render_template("index.html", base=base, is_iso=is_iso, navigation=get_navigation(), items=items, title="Index")
 
 
 @app.route(make_url("listing-<any(references,figures,tables):kind>.html"))
@@ -2249,7 +2249,7 @@ def get_index_index(kind):
             for k, gs in itertools.groupby(items, operator.itemgetter("title"))
         ]
     return render_template(
-        "annex-b.html", base=base, is_iso=X.is_iso, navigation=get_navigation(), items=items, title=f"Listing of {kind}"
+        "index.html", base=base, is_iso=is_iso, navigation=get_navigation(), items=items, title=f"Listing of {kind}"
     )
 
 

@@ -1,79 +1,36 @@
 # IfcWindow
 
-The window is a building element that is predominately used to provide natural light and fresh air. It includes vertical opening but also horizontal opening such as skylights or light domes. It includes constructions with swinging, pivoting, sliding, or revolving panels and fixed panels. A window consists of a lining and one or several panels.
+The window is a building element that is predominately used to provide natural light and fresh air. It includes vertical opening but also horizontal opening such as skylights or light domes. It includes constructions with swinging, pivoting, sliding, or revolving panels and fixed panels. A window consists of a lining and one or several panels. A window can:
 
-{ .extDef}
-> NOTE  Definition according to ISO 6707-1
-> Construction for closing a vertical or near vertical opening in a wall or pitched roof that will admit light and may admit fresh air.
-
-The _IfcWindow_ defines a particular occurrence of a window inserted in the spatial context of a project. A window can:
-
-* be inserted into an _IfcOpeningElement_ using the _IfcRelFillsElement_ relationship, then the _IfcWindow_ has an inverse attribute _FillsVoids_ provided,
-* be part of an element assembly, often an _IfcCurtainWall_, using the _IfcRelAggregates_ relationship, then the inverse attribute _Decomposes_ is provided.
-* or be a "free standing" window, then the _IfcWindow_ has no inverse attributes _FillsVoids_ or _Decomposes_ provided.
-
-> NOTE  View definitions or implementer agreements may restrict the relationship to only include one window (or door) into one opening.
+* be a "free standing" window, contained in an _IfcSpatialElement_ such as an _IfcBuildingStorey_.
+* fill an opening, typically in a wall. The window will then have a _FillsVoids_ attribute which uses the _IfcRelFillsElement_ relationship to relate the _IfcWindow_ with the _IfcOpeningElement_;
+* be part of an element assembly, typically an _IfcCurtainWall_. The window will then have a _Decomposes_ attribute which uses the the _IfcRelAggregates_ relationship to relate the window with the assembly of elements;
 
 There are two main representations for window occurrences:
 
-- _IfcWindow_ with a shape representation having RepresentationIdenfifier='Profile' is used for all occurrences of windows, that have a 'Profile' shape representation defined to which a set of shape parameters for lining and framing properties apply. Additionally it requires the provision of an _IfcWindowType_ that references one _IfcWindowLiningProperties_ and on to many _IfcWindowPanelProperties_.
+ * _IfcWindow_ entities that have a 3D rectangle 'Profile' shape representation defined. This profile can then be used to parametrically generate the geometry of a window. If not provided, the profile of the _IfcOpeningElement_ can be used if the window fills an opening. The parameters are specified on the relating _IfcWindowType_ that references _IfcWindowLiningProperties_ and _IfcWindowPanelProperties_ for each panel in the window;
+ * _IfcWindow_ entities that are not parametrically generated and have only 'Brep', or 'SurfaceModel' geometry.
 
-- _IfcWindow_ used for all other occurrences of windows, particularly for windows having only 'Brep', or 'SurfaceModel' geometry without applying shape parameters.
+In addition, an _IfcWindow_ may commonly include a 'FootPrint' representation defining the 2D shape of the window and its swing.
 
-> NOTE  The entity _IfcWindowStandardCase_ has been deprecated.
+ * the window width and height
+ * the window opening direction (by the positive y-axis of the _ObjectPlacement_)
 
-The actual parameter of the window and/or its shape is defined at the _IfcWindow_ as the occurrence definition (or project instance), or by the _IfcWindowType_ as the specific definition (or project type). The following parameters are given:
+The _IfcWindowType_ specifies parameters which are common to all of its occurrences of _IfcWindow_:
 
-* at the _IfcWindow_ for occurrence specific parameters. The _IfcWindow_ specifies:
-    * the window width and height
-    * the window opening direction (by the y-axis of the _ObjectPlacement_)
-* at the _IfcWindowType_ to which the _IfcWindow_ is related by the inverse relationship _IsDefinedBy_ pointing to _IfcRelDefinesByType_, for type parameters common to all occurrences of the same type.
-    * the partitioning type (single panel, double panel, tripel panel, more panels)
-    * the operation type (swing, tilt and turn, pivot revolve, fixed case ment, etc.)
-    * the window panel hinge side (by using two different styles for right and left opening windows)
-    * the construction material type
-    * the particular attributes for the lining by the _IfcWindowLiningProperties_
-    * the particular attributes for the panels by the  _IfcWindowPanelProperties_
+ * the partitioning type (single panel, double panel, tripel panel, more panels)
+ * the operation type (swing, tilt and turn, pivot revolve, fixed casement, etc.)
+ * the window panel hinge side (by using two different styles for right and left opening windows)
+ * the particular attributes for the lining by the _IfcWindowLiningProperties_
+ * the particular attributes for the panels by the  _IfcWindowPanelProperties_
+
+> REFERENCE  Definition according to ISO 6707-1 Construction for closing a vertical or near vertical opening in a wall or pitched roof that will admit light and may admit fresh air.
+
+> NOTE  The entity _IfcWindowStandardCase_ has been deprecated. Use an _IfcWindow_ with a 'Profile' representation instead. The _IfcWindow_ should also have an _IfcWindowType_ with _ParameterTakesPrecedence_ set to 'TRUE'.
+
+> IFC4 CHANGE  The attributes _PredefinedType_ and _OperationType_ are added, the applicable type object has been changed to _IfcWindowType_.
 
 > HISTORY  New entity in IFC1.0.
-
-{ .change-ifc2x4}
-> IFC4 CHANGE  The attributes _PredefinedType_ and _OperationType_ are added, the applicable type object has been changed to _IfcDoorType_.
-
-{ .use-head}
-Parameteric Representation using parameters at _IfcWindowType_
-
-The parameters, which define the shape of the _IfcWindow_, are given at the _IfcWindowType_ and the property sets, which are included in the _IfcWindowType_. The _IfcWindow_ only defines the local placement. The overall size of the _IfcWindow_ to be used to apply the lining or panel parameter provided by the _IfcWindowType_ is determined by the IfcShapeRepresentation with the RepresentationIdentifier = 'Profile'. Only in case of an _IfcWindow_ inserted into an _IfcOpeningElement_ using the _IfcRelFillsElement_ relationship, having a horizontal extrusion (along the y-axis of the _IfcWindow_), the overall size is determined by the extrusion profile of the _IfcOpeningElement_.
-
-Figure 1 illustrates the insertion of a window into the _IfcOpeningElement_ by creating an instance of _IfcWindow_ with _PartitioningType = DoublePanelHorizontal_. The parameters _OverallHeight_ and _OverallWidth_ show the extent of the window in the positive Z and X axis of the local placement of the window. The lining and the transom are created by the given parameters.
-
-![window 1](../../../../figures/ifcwindow-layout1.gif)
-
-Figure 1 &mdash; Window placement
-
-Figure 2 illustrates the final window (DoublePanelHorizontal) with first panel having _PanelPosition = TOP_, _OperationType = BOTTOMHUNG_ and second panel having _PanelPosition = BOTTOM_ and _OperationType = TILTANDTURNLEFTHAND_.
-
-![window 2](../../../../figures/ifcwindow-layout2.gif)
-
-Figure 2 &mdash; Window planes
-
-{ .use-head}
-Window opening operation by window type
-
-The parameters that defines the shape of the _IfcWindow_, are given at the _IfcWindowType_ and the property sets, which are included in the _IfcWindowType_. The _IfcWindow_ only defines the local placement which determines the opening direction of the window. The overall layout of the _IfcWindow_ is determined by its _IfcWindowType.PartitioningType_. Each window panel has its own operation type, provided by _IfcWindowPanelProperties.OperationType_. All window panels are assumed to open into the same direction (if relevant for the particular window panel operation. The hindge side (whether a window opens to the left or to the right) is determined by the _IfcWindowPanelProperties_._OperationType_.
-
-> NOTE   There are different conventions in different countries on how to show the symbolic presentation of the window panel operation (the "triangles"). Either as seen from the exterior, or from the interior side. The following figures/ show the symbolics from the exterior side (the convention as used predominately in Europe).
-
-Table 3 illustrates window operation types.
-
-| Diagram | Description |
-| --- | --- |
-| ![fig 1](../../../../figures/ifcwindow-fig01.gif) | The window panel (for side hung windows) opens always into the direction of the positive Y axis of the local placement.  The determination of whether the window opens to the left or to the right is done at <em>IfcWindowPanelProperties.OperationType</em>. Here it is a left side opening window given by <em>OperationType</em> = SideHungLeftHand.  |
-| ![fig 2](../../../../figures/ifcwindow-fig02.gif) | If the window should open to the other side, then the local placement has to be changed. It is still a left hung window, given by <em>IfcWindowPanelProperties.OperationType</em> = SideHungLeftHand. |
-| ![fig 3](../../../../figures/ifcwindow-fig03.gif) | If the window panel (for side hung windows) opens to the right, a separate window panel style needs to be used (here <em>IfcWindowPanelProperties.OperationType</em> = SideHungRightHand) and it always opens into the direction of the positive Y axis of the local placement. |
-| ![fig 4](../../../../figures/ifcwindow-fig04.gif) | If the window should open to the other side, then the local placement has to be changed. It is still a right hung window, given by <em>IfcWindowPanelProperties.OperationType</em> = SideHungRightHand. |
-
-Table 3 &mdash; Window operations
 
 ## Attributes
 
@@ -120,10 +77,6 @@ Either there is no door type object associated, i.e. the _IsTypedBy_ inverse rel
 
 ### Material Constituent Set
 
-The material of the IfcWindow is defined by the IfcMaterialConstituentSet or as fall back by IfcMaterial and attached by the IfcRelAssociatesMaterial.RelatingMaterial. It is accessible by the inverse HasAssociations relationship.
-
-If the fall back single IfcMaterial is referenced, it applies to the lining and framing of the window.
-
 #### Lining
 
 Indicates that the material constituent applies to the window lining.
@@ -136,109 +89,79 @@ Indicates that the material constituent applies to the windows panels(s); if not
 
 Indicates that the material constituent applies to the glazing part.
 
+### Material Single
+
+If a single IfcMaterial is referenced, it applies to the lining and framing of the window.
+
 ### Object Typing
-
-
 
 ### Product Local Placement
 
-The following restriction is imposed:
-
-1. The PlacementRelTo relationship of IfcLocalPlacement shall point to the local placement of the same element (if given), in which the IfcWindow is used as a filling (normally an IfcOpeningElement), as provided by the IfcRelFillsElement relationship.
-2. If the IfcWindow is not inserted into an IfcOpeningElement, then the PlacementRelTo relationship of IfcLocalPlacement shall point (if given) to the local placement of the same IfcSpatialStructureElement that is used in the ContainedInStructure inverse attribute or to a referenced spatial structure element at a higher level.
-3. If the relative placement is not used, the absolute placement is defined within the world coordinate system.
+ * The PlacementRelTo relationship of IfcLocalPlacement shall point to the local placement of the same element (if given), in which the IfcWindow is used as a filling (normally an IfcOpeningElement), as provided by the IfcRelFillsElement relationship.
+ * If the IfcWindow is not inserted into an IfcOpeningElement, then the PlacementRelTo relationship of IfcLocalPlacement shall point (if given) to the local placement of the same IfcSpatialStructureElement that is used in the ContainedInStructure inverse attribute or to a referenced spatial structure element at a higher level.
+ * If the relative placement is not used, the absolute placement is defined within the world coordinate system.
 
 > NOTE  The product placement is used to determine the opening direction of the window.
 
 ### Profile 3D Geometry
 
-The window profile is represented by a three-dimensional
-closed curve within a particular shape representation. The
-profile is used to apply the parameter of the parametric window
-representation. The following attribute values for the
-IfcShapeRepresentation holding this geometric
-representation shall be used:
+The window profile is represented by a three-dimensional closed curve lying in the xz plane. The profile is used to apply the parameters of a parametric door representation. The following attribute values for the IfcShapeRepresentation holding this geometric representation shall be used:
 
-
-* RepresentationIdentifier : 'Profile'
-* RepresentationType : 'Curve3D', only a single closed
-curve shall be contained in the set of
-IfcShapeRepresentation.Items.
-
+* RepresentationIdentifier: 'Profile'
+* RepresentationType: 'Curve3D' or 'GeometricCurveSet'. In case of 'GeometricCurveSet' only a single closed curve shall be contained in the set of IfcShapeRepresentation.Items.
 
 A 'Profile' representation has to be provided if:
 
-
 * a parametric representation shall be applied to the
  window AND
-* + the window is 'free standing', or
-	+ the opening into which the window is inserted is not extruded
-	horizontally (i.e. where the opening profile does not match the
-	window profile)
+    * the window is 'free standing', or
+	* the opening into which the window is inserted is not extruded horizontally (i.e. where the opening profile does not match the window profile)
 
+The following additional constraints apply to the 'Profile' representation type:
 
-The following additional constraints apply to the 'Profile'
-representation type:
-
-
-* Curve: being an IfcPolyline defining a
-rectangle.
-* Position: The curve shall lie in the xz plane of the
-object placement coordinate (the y coordinate values of the
-IfcCartesianPoint's shall be 0.).
-
+* Curve: being an _IfcPolyline_ defining a rectangle.
+* Position: The curve shall lie in the xz plane of the object placement coordinate (the y coordinate values of the IfcCartesianPoint's shall be 0.).
 
 As shown in Figure 298, the profile defines the outer boundary to which the window
 lining parameters relate as:
 
-
-* IfcWindowLiningProperties.LiningDepth starting at
-distance defined by LiningOffset going into the positive y
- direction.
-* IfcWindowLiningProperties.LiningThickness offset into
-the inner side of the rectangle.
-* IfcWindowLiningProperties.LiningOffset distance along
-the positive y direction to where the LiningDepth
-applies.
-* IfcWindowLiningProperties.FirstTransomOffset starting
-at the bottom edge of the rectangle (along local x axis) into the
- inner side of the rectangle, distance provided as percentage of
-overall height. Distance to the centre line of the transom.
-SecondTransomOffset defined accordingly.
-* IfcWindowLiningProperties.FirstMullionOffset starting
-at the left edge of the rectangle (along local z-axis) into the
-inner side of the rectangle, distance provided as percentage of
-overall width. Distance to the centre line of the mullion.
-SecondMullionOffset defined accordingly.
+* IfcWindowLiningProperties.LiningDepth starting at distance defined by LiningOffset going into the positive y direction.
+* IfcWindowLiningProperties.LiningThickness offset into the inner side of the rectangle.
+* IfcWindowLiningProperties.LiningOffset distance along the positive y direction to where the LiningDepth applies.
+* IfcWindowLiningProperties.FirstTransomOffset starting at the bottom edge of the rectangle (along local x axis) into the inner side of the rectangle, distance provided as percentage of overall height. Distance to the centre line of the transom. SecondTransomOffset defined accordingly.
+* IfcWindowLiningProperties.FirstMullionOffset starting at the left edge of the rectangle (along local z-axis) into the inner side of the rectangle, distance provided as percentage of overall width. Distance to the centre line of the mullion. SecondMullionOffset defined accordingly.
 
 
 ![standard window](../../../../figures/ifcwindowstandardcase-01.png)
 Figure 298 — Window profile
 
+Figure 1 illustrates the insertion of a parametrically generated window into the _IfcOpeningElement_ by creating an instance of _IfcWindow_ with _PartitioningType = DoublePanelHorizontal_. The parameters _OverallHeight_ and _OverallWidth_ show the extent of the window in the positive Z and X axis of the local placement of the window. The lining and the transom are created by the given parameters.
+
+![window 1](../../../../figures/ifcwindow-layout1.gif)
+
+Figure 1 &mdash; Window placement
+
+Figure 2 illustrates the final window (DoublePanelHorizontal) with first panel having _PanelPosition = TOP_, _OperationType = BOTTOMHUNG_ and second panel having _PanelPosition = BOTTOM_ and _OperationType = TILTANDTURNLEFTHAND_.
+
+![window 2](../../../../figures/ifcwindow-layout2.gif)
+
+Figure 2 &mdash; Window planes
 
 ### Property Sets for Objects
 
-
-
 ### Quantity Sets
-
-
 
 ### Spatial Containment
 
 The IfcWindow, as any subtype of IfcBuildingElement,
 may participate alternatively in one of the two different containment relationships:
 
-
 * the Spatial Containment (defined here), or
 * the Element Composition.
 
-
 The IfcWindow may also be connected to the IfcOpeningElement in which it is placed as a filler. In this case, the spatial containment relationship shall be provided, see Figure 297.
 
-
 ![Containment](../../../../figures/ifcwindow_containment-01.png)
-
 
 Figure 297 — Window spatial containment
 
@@ -248,9 +171,21 @@ Figure 297 — Window spatial containment
 
 ### Window Attributes
 
-The IfcWindowTypePartitioningEnum defines the general layout of the window type and its symbolic presentation. Depending on the enumerator, the appropriate instances of
-IfcWindowLiningProperties and IfcWindowPanelProperties are attached in the list of HasPropertySets. The IfcWindowTypePartitioningEnum mainly determines the way of partitioning the window into individual window panels and thereby number and position of window panels.
+The parameters that defines the shape of the _IfcWindow_, are given at the _IfcWindowType_ and the property sets, which are included in the _IfcWindowType_. The _IfcWindow_ only defines the local placement which determines the opening direction of the window.
 
+The overall layout and its symbolic presentation of the _IfcWindow_ is determined by its _IfcWindowType.PartitioningType_. The type determines the number and position of window panels. Depending on the type, the appropriate instances of _IfcWindowLiningProperties_ and _IfcWindowPanelProperties_ are attached in the list of _HasPropertySets_.
 
-See IfcWindowTypePartitioningEnum for the correct usage of panel partitioning and IfcWindowPanelProperties for the opening symbols for different panel operation types.
+Each window panel has its own operation type, provided by _IfcWindowPanelProperties.OperationType_. All window panels are assumed to open into the same direction. If relevant for the particular window panel operation, the hinge side (whether a window opens to the left or to the right) is determined by the _IfcWindowPanelProperties_._OperationType_.
 
+See _IfcWindowTypePartitioningEnum_ for the correct usage of panel partitioning and _IfcWindowPanelProperties_ for the opening symbols for different panel operation types.
+
+There are different conventions in different countries on how to show the symbolic presentation of the window panel operation (the "triangles"). Either as seen from the exterior, or from the interior side. Table 3 illustrates window operation symbols from the exterior side (the convention as used predominately in Europe).
+
+| Diagram | Description |
+| --- | --- |
+| ![fig 1](../../../../figures/ifcwindow-fig01.gif) | The window panel (for side hung windows) opens always into the direction of the positive Y axis of the local placement.  The determination of whether the window opens to the left or to the right is done at <em>IfcWindowPanelProperties.OperationType</em>. Here it is a left side opening window given by <em>OperationType</em> = SideHungLeftHand.  |
+| ![fig 2](../../../../figures/ifcwindow-fig02.gif) | If the window should open to the other side, then the local placement has to be changed. It is still a left hung window, given by <em>IfcWindowPanelProperties.OperationType</em> = SideHungLeftHand. |
+| ![fig 3](../../../../figures/ifcwindow-fig03.gif) | If the window panel (for side hung windows) opens to the right, a separate window panel style needs to be used (here <em>IfcWindowPanelProperties.OperationType</em> = SideHungRightHand) and it always opens into the direction of the positive Y axis of the local placement. |
+| ![fig 4](../../../../figures/ifcwindow-fig04.gif) | If the window should open to the other side, then the local placement has to be changed. It is still a right hung window, given by <em>IfcWindowPanelProperties.OperationType</em> = SideHungRightHand. |
+
+Table 3 &mdash; Window operations

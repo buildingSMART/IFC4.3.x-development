@@ -124,36 +124,23 @@ Any building element can be a composite
 
 ### Material Profile Set Usage
 
-The Material Profile Set Usage defines the assignment of an IfcMaterialProfileSetUsage to the
-IfcBeamType providing a common profile definition to all
- occurrences of this IfcBeamType. Beams with composite profile can be represented by referring to
- several IfcMaterialProfile's within the
-IfcMaterialProfileSet that is referenced from the
-IfcMaterialProfileSetUsage.
-
+Figure 196 illustrates assignment of _IfcMaterialProfileSetUsage_ and _IfcMaterialProfileSet_ to the _IfcColumnType_ and the _IfcColumn_ occurrence. Both the _IfcMaterialProfileSet_ and _IfcProfileDef_ is shared between all occurrences.
 
 ![Material profile set and usage](../../../../figures/ifcbeam-01.png)
 
 Figure 196 — Beam profile usage
 
-> EXAMPLE  Figure 196 illustrates assignment of IfcMaterialProfileSetUsage and IfcMaterialProfileSet to the IfcBeam as the beam occurrence and to the IfcBeamType. The same IfcMaterialProfileSet shall be shared by many occurrences of IfcMaterialProfileSetUsage. This relationship shall be consistent to the relationship between the IfcBeamType and the IfcBeam.
-
-
+Figure 197 illustrates cardinal point alignment. The use of _IfcCardinalPointEnum_ must be consistent with the placement of the extrusion body provided by _IfcExtrudedAreaSolid_._Position_.
 
 ![Cardinal point usage](../../../../figures/ifcbeam_cardinalpoint.png)
 
 Figure 197 — Beam cardinal points
 
-Figure 197 illustrates alignment of cardinal points. It has to be guaranteed that the use of IfcCardinalPointEnum is consistent to the placement of the extrusion body provided by IfcExtrudedAreaSolid.Position
-
-The cardinal points 8 (top centre) and 6 (mid-depth right) are assigned according to the definition at IfcCardinalPointReference
-
+Figure 198 illustrates assignment of a composite profile by using _IfcCompositeProfileDef_ for geometric representation and several _IfcMaterialProfile_ entities within the _IfcMaterialProfileSet_.
 
 ![Material profile set and usage](../../../../figures/ifcbeam-02.png)
 
 Figure 198 — Beam composite profiles
-
-Figure 198 illustrates assignment of a composite profile by using IfcCompositeProfile for geometric representation and several IfcMaterialProfile's within the IfcMaterialProfileSet.
 
 ### Object Typing
 

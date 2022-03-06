@@ -102,16 +102,13 @@ The following additional constraints apply to the 'SweptSolid' representation:
 * Profile: IfcArbitraryClosedProfileDef and IfcRectangleProfileDef shall be supported.
 * Extrusion: All extrusion directions shall be supported.
 
-Additional constraints apply to the 'SweptSolid' representation, when an IfcMaterialLayerSetUsage is used:
+Additional constraints apply to the 'SweptSolid' representation, when an _IfcMaterialLayerSetUsage_ is used:
 
 * Extrusion: The profile shall be extruded vertically, i.e., in the direction of the z-axis of the co-ordinate system of the referred spatial structure element. It might be further constraint to be in the direction of the global z-axis in implementers agreements. The extrusion axis shall be perpendicular to the swept profile, i.e. pointing into the direction of the z-axis of the Position of the IfcExtrudedAreaSolid.
 
-
 The profile of a wall is described in the ground view and extruded vertically. The profile (also identical with the foot print of the wall) is defined by the IfcArbitraryClosedProfileDef (excluding its subtypes). The profile is given with all wall connections already resolved.
 
-
 Figure 281 illustrates a body representation for a straight wall. In case of a straight wall, the two sides of the profile shall be parallel to the wall axis, that is, the wall has a single unchanged thickness.
-
 
 Figure 282 illustrates a body representation for a curved wall. In case of a curved wall, the two sides of the profile shall be parallel (with defined offset) to the wall axis, that is, the wall has a single unchanged thickness.
 
@@ -177,35 +174,16 @@ Figure ELEMENTVOID &mdash; How individual parts being cut may be expressed.
 
 ### Material Layer Set Usage
 
-The material of IfcWall can be defined by
-IfcMaterialLayerSetUsage and attached by
-IfcRelAssociatesMaterial.RelatingMaterial. It is
- accessible by the inverse HasAssociations relationship.
- Multi-layer walls can be represented by referring to several
-IfcMaterialLayer's within the IfcMaterialLayerSet
-that is referenced from the
- IfcMaterialLayerSetUsage.
-
-
-When assigning an
-IfcMaterialLayerSetUsage to IfcWall it shall imply that the
- IfcWallType should have a unique
- IfcMaterialLayerSet, that is referenced by IfcMaterialLayerSetUsage assigned to all
-occurrences of this IfcWallType.
-
+Figure 277 illustrates assignment of _IfcMaterialLayerSetUsage_ and _IfcMaterialLayerSet_ to the _IfcWallType_ and the _IfcWall_ occurrence.
 
 ![Material layer set and usage](../../../../figures/ifcwall_materialusage-01.png)
 
 Figure 277 — Wall Standard Object Typing
 
-> EXAMPLE  Figure 277 illustrates assignment of IfcMaterialLayerSetUsage and IfcMaterialLayerSet to the wall type and the wall occurrence.
-
-Figure 278 illustrates material layer usage, where the following conventions shall be met:
-
+Figure 278 illustrates material layer usage, where:
 
 * The reference coordinate system is the local coordinate system established by the ObjectPlacement of the IfcWall.
-* The reference axis is the axis defined by the IfcShapeRepresentation with RepresentationType='Axis' as one of the
-Representation.Representations of the IfcWall.
+* The reference axis is the axis defined by the IfcShapeRepresentation with RepresentationType='Axis' as one of the wall's representations.
 * The IfcMaterialLayerSetUsage.OffsetFromReferenceLine is given as a distance from this axis.
 * The IfcMaterialLayerSetUsage.OffsetFromReferenceLine is the distance parallel to the reference axis and always within the base
 (XY) plane of the reference coordinate system. A positive value of IfcMaterialLayerSetUsage.OffsetFromReferenceLine would
@@ -213,7 +191,7 @@ then point into the positive y-axis of the reference coordinate system.
 * The IfcMaterialLayerSetUsage.DirectionSense defines how the IfcMaterialLayer's are assigned to the reference axis. POSITIVE means in direction to the positive y-axis of the reference coordinate system.
 * The Thickness of each IfcMaterialLayer is provided starting from the OffsetFromReferenceLine and in the direction given by DirectionSense. It is applied without any gap or overlap between two consecutive layers. The TotalThickness of the IfcMaterialLayerSet is the sum of all layer thicknesses.
 * The IfcMaterialLayerSetUsage.LayerSetDirection is always AXIS2.
-
+* The local placement of the wall uses the the x/y plane for the profile, and the z-axis as the extrusion direction for the wall body.
 
 ![wall material layer set](../../../../figures/ifcmateriallayersetusage_wall-01.png)
 
@@ -273,5 +251,5 @@ Spatial container for the element in case that it is placed on site (outside of 
 
 ### Surface Geometry
 
-> NOTE  The 'Surface' can be used to define a surfacic model of the building (e.g. for analytical purposes, or for reduced Level of Detail representation).
+The 'Surface' can be used to define a surfacic model of the building (e.g. for analytical purposes, or for reduced Level of Detail representation).
 

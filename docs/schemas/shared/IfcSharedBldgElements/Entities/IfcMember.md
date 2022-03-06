@@ -105,30 +105,16 @@ Figure 236 — Member body extrusion
 
 ### Material Profile Set Usage
 
-The material of the IfcMember is defined by
-IfcMaterialProfileSetUsage and attached by the
-IfcRelAssociatesMaterial.RelatingMaterial. It is
-accessible by the inverse HasAssociations relationship.
- Composite profile members can be represented by referring to
-several IfcMaterialProfile's within the
-IfcMaterialProfileSet that is referenced from the
-IfcMaterialProfileSetUsage.
-
-
-Figure 233 illustrates assignment of IfcMaterialProfileSetUsage and IfcMaterialProfileSet to the IfcMember as the member occurrence and to the IfcMemberType. The same IfcMaterialProfileSet shall be shared by many occurrences of IfcMaterialProfileSetUsage. This relationship shall be consistent to the relationship between the IfcMemberType and the IfcMember.
-
+Figure 211 illustrates assignment of _IfcMaterialProfileSetUsage_ and _IfcMaterialProfileSet_ to the _IfcMemberType_ and the _IfcMember_ occurrence. Both the _IfcMaterialProfileSet_ and _IfcProfileDef_ is shared between all occurrences.
 
 ![Material profile set and usage](../../../../figures/ifcmember-01.png)
 Figure 233 — Member profile usage
 
-
-Figure 234 illustrates assignment of a composite profile by using IfcCompositeProfile for geometric representation and several IfcMaterialProfile's within the IfcMaterialProfileSet. The number of IfcMaterialProfile's within the IfcMaterialProfileSet is restricted to maximal 2 and
-requires the use of IfcExtrudedAreaSolidTapered, or IfcRevolvedAreaSolidTapered for the correct 'Body' shape representation.
+Figure 234 illustrates assignment of a composite profile by using _IfcCompositeProfileDef_ for geometric representation and several _IfcMaterialProfile_ entities within the _IfcMaterialProfileSet_.
 
 
 ![Material profile set and usage](../../../../figures/ifcmember-02.png)
 Figure 234 — Member composite profiles
-
 
 ### Object Typing
 

@@ -2,8 +2,6 @@
 
 The opening element stands for opening, recess or chase, all reflecting voids. It represents a void within any element that has physical manifestation. Openings can be inserted into walls, slabs, beams, columns, or other elements.
 
-> NOTE  Definition according to ISO 6707-1: void in a building element
-
 There are two different types of opening elements. The attribute _PredefinedType_ should be used to capture the differences:
 
 * an opening, where the thickness of the opening is greater or equal to the thickness of the element &mdash;
@@ -20,15 +18,17 @@ An _IfcOpeningElement_ has to be inserted into an _IfcElement_ by using the _Ifc
 
 The _IfcOpeningElement_ shall not participate in the containment relationship, i.e. it is not linked directly to the spatial structure of the project. It has a mandatory _VoidsElements_ inverse relationship pointing to the _IfcElement_ that is contained in the spatial structure. The inverse relationship _ContainedInStructure_ shall be NIL.
 
+> REFERENCE Definition according to ISO 6707-1: void in a building element
+
+> NOTE  The entity _IfcOpeningStandardCase_ has been deprecated. Use an _IfcOpeningElement_ with a single extrusion body perpendicular to the wall or slab instead.
+
 > NOTE  See _IfcRelVoidsElement_ for a diagram on how to apply spatial containment and the voiding relationship.
 
-> HISTORY  New entity in IFC1.0
-
-{ .change-ifc2x}
 > IFC2x CHANGE  The intermediate ABSTRACT supertypes _IfcFeatureElement_ and _IfcFeatureSubtraction_ have been added.
 
-{ .change-ifc2x4}
 > IFC4 CHANGE  The attribute _PredefinedType_ has been added at the end of attribute list. It should be used instead of the inherited attribute _ObjectType_ from now on.
+
+> HISTORY  New entity in IFC1.0
 
 ## Attributes
 
@@ -47,7 +47,7 @@ Either _PredefinedType_ is unset or the inherited attribute _ObjectType_ shall b
 
 ## Concepts
 
-### Body Geometry
+### Body SweptSolid Geometry
 
 The 'Body' representation of IfcOpeningElement can be represented using the representation types 'SweptSolid'. The following attribute values for the IfcShapeRepresentation holding this geometric representation shall be used:
 
@@ -59,6 +59,11 @@ The following constraints are recommended:
 * _IfcShapeRepresentation.Items_ may include a single, or multiple, instances of IfcExtrudedAreaSolid.
 * _IfcExtrudedAreaSolid.SweptArea_ shall support IfcRectangleProfileDef, IfcCircleProfileDef and IfcArbitraryClosedProfileDef.
 * If multiple instances of IfcExtrudedAreaSolid are used, the extrusion direction of each extrusion should be equal.
+
+If parametric profiles are used, the parameters may be interpreted to be the dimensions of the beam:
+
+* IfcRectangleProfileDef.YDim interpreted as beam height
+* IfcRectangleProfileDef.XDim interpreted as beam width
 
 There are two main extrusion directions: perpendicular and parallel.
 
@@ -90,7 +95,7 @@ Figure VERTEXTRUDE shows a vertical extrusion with multiple extrusion bodies for
 
 The local placement for IfcOpeningElement is defined in its supertype IfcProduct. It is defined by the IfcLocalPlacement, which defines the local coordinate system that is referenced by all geometric representations.
 
-* The PlacementRelTo relationship of IfcLocalPlacement should point to the local placement of the same element, which is voided by the opening, i.e. referred to by _VoidsElement.RelatingBuildingElement_.
+* The PlacementRelTo relationship of IfcLocalPlacement should point to the local placement of the element which is voided by the opening, i.e. referred to by _VoidsElement.RelatingBuildingElement_.
 
 ### Property Sets for Objects
 

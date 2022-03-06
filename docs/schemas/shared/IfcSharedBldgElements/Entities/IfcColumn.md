@@ -102,48 +102,27 @@ Figure 216 — Column extrusion of I-Shape
 
 ### Material Profile Set Usage
 
-The Material Profile Set Usage defines the assignment of an IfcMaterialProfileSetUsage to the
-IfcColumnType providing a common profile definition to all
- occurrences of this IfcColumnType. Columns with
-composite profile can be represented by referring to
- several IfcMaterialProfile's within the
-IfcMaterialProfileSet that is referenced from the
-IfcMaterialProfileSetUsage.
-
-
-Figure 211 illustrates assignment of IfcMaterialProfileSetUsage and IfcMaterialProfileSet to the IfcColumn as the column occurrence and to the IfcColumnType. The same IfcMaterialProfileSet shall be shared by many occurrences of IfcMaterialProfileSetUsage. This relationship shall be consistent to the relationship between the IfcColumnType and the IfcColumnStandardCase.
-
+Figure 211 illustrates assignment of _IfcMaterialProfileSetUsage_ and _IfcMaterialProfileSet_ to the _IfcColumnType_ and the _IfcColumn_ occurrence. Both the _IfcMaterialProfileSet_ and _IfcProfileDef_ is shared between all occurrences.
 
 ![Material profile set and usage](../../../../figures/ifccolumn-01.png)
+
 Figure 211 — Column profile usage
 
-
-Figure 212 illustrates cardinal point alignment.
-
-> NOTE  It has to be guaranteed that the use of IfcCardinalPointEnum is consistent to the placement of the
-> extrusion body provided by IfcExtrudedAreaSolid.Position
-
-> NOTE  The cardinal points 7 (top left), and 6 (mid-depth right) are assigned according to the
-> definition at IfcCardinalPointReference
-
+Figure 212 illustrates cardinal point alignment. The use of _IfcCardinalPointEnum_ must be consistent with the placement of the extrusion body provided by _IfcExtrudedAreaSolid_._Position_.
 
 ![Cardinal point usage](../../../../figures/ifccolumn_cardinalpoint.png)
+
 Figure 212 — Column cardinal points
 
-
-Figure 213 illustrates assignment of a composite profile by using IfcCompositeProfile for geometric representation and several IfcMaterialProfile's within the IfcMaterialProfileSet. The number of IfcMaterialProfile's within the IfcMaterialProfileSet is restricted to maximal 2 and requires the use of IfcExtrudedAreaSolidTapered, or IfcRevolvedAreaSolidTapered for the correct 'Body' shape representation.
-
+Figure 213 illustrates assignment of a composite profile by using _IfcCompositeProfileDef_ for geometric representation and several _IfcMaterialProfile_ entities within the _IfcMaterialProfileSet_.
 
 ![Material profile set and usage](../../../../figures/ifccolumn-02.png)
+
 Figure 213 — Column composite profiles
 
 ### Object Typing
 
-
-
 ### Product Assignment
-
-
 
 #### IfcStructuralCurveMember
 

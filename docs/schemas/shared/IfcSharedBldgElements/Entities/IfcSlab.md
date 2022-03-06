@@ -139,31 +139,14 @@ Figure ELEMENTVOID &mdash; How individual parts being cut may be expressed.
 
 ### Material Layer Set Usage
 
-The material of IfcSlab can be defined by
-IfcMaterialLayerSetUsage and attached by
-IfcRelAssociatesMaterial.RelatingMaterial. It is
- accessible by the inverse HasAssociations relationship.
- Multi-layer slabs can be represented by referring to several
-IfcMaterialLayer's within the IfcMaterialLayerSet
-that is referenced from th e
-IfcMaterialLayerSetUsage.
-
-
-When assigning an
-IfcMaterialLayerSetUsage to IfcSlab it shall imply that the
- IfcSlabType should have a unique
- IfcMaterialLayerSet, that is referenced by IfcMaterialLayerSetUsage assigned to all
-occurrences of this IfcSlabType.
-
+Figure 262 illustrates assignment of _IfcMaterialLayerSetUsage_ and _IfcMaterialLayerSet_ to the _IfcSlabType_ and the _IfcSlab_ occurrence.
 
 ![Material layer set and usage](../../../../figures/ifcslab_materialusage-01.png)
 
 Figure 262 — Slab type definition
 
-> EXAMPLE  Figure 262 illustrates assignment of IfcMaterialLayerSetUsage and IfcMaterialLayerSet to the IfcSlab as the slab occurrence and to the IfcSlabType. The same IfcMaterialLayerSet shall be shared by many occurrences of IfcMaterialLayerSetUsage. This relationship shall be consistent to the relationship between the IfcSlabType and the IfcSlab.
 
-Figure 263 illustrates slab material usage, where the following conventions shall be met:
-
+Figure 263 and Figure 264 illustrates material layer usage, where:
 
 * The reference coordinate system is the coordinate system established by the IfcExtrudedAreaSolid.Position.
 * The reference plane is the plane defined by the extruded profile of IfcExtrudedAreaSolid.SweptSolid. The IfcMaterialLayerSetUsage.OffsetFromReferenceLine is given as a distance from this plane.
@@ -171,20 +154,19 @@ Figure 263 illustrates slab material usage, where the following conventions shal
 * The IfcMaterialLayerSetUsage.OffsetFromReferenceLine is the distance parallel to the reference plane and always perpendicular to the base (XY) plane of the reference coordinate system. This is independent of a potential non-perpendicular extrusion given by IfcExtrudedAreaSolid.ExtrudedDirection <> 0.,0.,1. A positive value of IfcMaterialLayerSetUsage.OffsetFromReferenceLine would then point into the positive z-axis of the reference coordinate system.
 * The Thickness of each IfcMaterialLayer shall be the parallel distance (measured perpendicular to the base plane). The TotalThickness of the IfcMaterialLayerSet is the sum of all layer thicknesses and in case of a perpendicular extrusion identical with IfcExtrudedAreaSolid.Depth
 * The IfcMaterialLayerSetUsage.LayerSetDirection is always AXIS3.
-
+* The local placement of the slab uses the the x/y plane for the profile, and the z-axis as the extrusion direction for the slab body.
 
 ![slab material layer set](../../../../figures/ifcmateriallayersetusage_slab-01.png)
 
+Figure 264 — Standard usage of a material layer set
+
 ![roof slab material layer set](../../../../figures/ifcmateriallayersetusage_roofslab-01.png)
-Figure 263 — Slab material layers
+
+Figure 263 — Material layers used in a sloping roof slab
 
 ### Object Typing
 
-
-
 ### Product Assignment
-
-
 
 #### IfcStructuralSurfaceMember
 
@@ -196,11 +178,7 @@ A task for operating on the slab.
 
 ### Property Sets for Objects
 
-
-
 ### Quantity Sets
-
-
 
 ### Spatial Containment
 
@@ -223,5 +201,4 @@ Spatial container for the element in case that it is placed on site (outside of 
 
 ### Surface Geometry
 
-> NOTE  The 'Surface' can be used to define a surfacic model of the building (e.g. for analytical purposes, or for reduced Level of Detail representation).
-
+The 'Surface' can be used to define a surfacic model of the building (e.g. for analytical purposes, or for reduced Level of Detail representation).

@@ -12,9 +12,8 @@ A plate may have openings, such as voids or recesses. They are defined by an _If
 
 There are two main representations for plate occurrences:
 
-- _IfcPlate_ with _IfcMaterialLayerSetUsage_ is used for all occurrences of plates, that are prismatic and where the thickness parameter can be fully described by the _IfcMaterialLayerSetUsage_. These plates are always represented geometrically by a 'SweptSolid' geometry (or by a 'Clipping' geometry based on 'SweptSolid'), if a 3D geometric representation is assigned.
-
-- _IfcPlate_ without _IfcMaterialLayerSetUsage_ is used for all other occurrences of plates, particularly for plates with changing thickness, or plates with non planar surfaces, and plates having only 'SurfaceModel' or 'Brep' geometry or if a more parametric representation is not intended.
+ * _IfcPlate_ with _IfcMaterialLayerSetUsage_ is used for all occurrences of plates, that are prismatic and where the thickness parameter can be fully described by the _IfcMaterialLayerSetUsage_. These plates are always represented geometrically by a 'SweptSolid' geometry (or by a 'Clipping' geometry based on 'SweptSolid'), if a 3D geometric representation is assigned.
+ * _IfcPlate_ without _IfcMaterialLayerSetUsage_ is used for all other occurrences of plates, particularly for plates with changing thickness, or plates with non planar surfaces, and plates having only 'SurfaceModel' or 'Brep' geometry or if a more parametric representation is not intended.
 
 > REFERENCE  Definition according to ISO 6707-1: thin, rigid, flat, metal product, of a thickness greater than that of a sheet.
 
@@ -43,81 +42,50 @@ Either there is no plate type object associated, i.e. the _IsTypedBy_ inverse re
 
 ### Body Clipping Geometry
 
-The following constraints apply to the 'Clipping' representation when an IfcMaterialLayerSetUsage is assigned to the IfcPlate:
+* IfcExtrudedAreaSolid is required,
+* IfcArbitraryClosedProfileDef, IfcArbitraryProfileDefWithVoids, IfcRectangleProfileDef, IfcCircleProfileDef, IfcEllipseProfileDef shall be supported.
+* The profile can be extruded perpendicularly or non-perpendicularly to the plane of the swept profile.
+* The definition of the IfcMaterialLayerSetUsage, particularly of the OffsetFromReferenceLine and the ForLayerSet.TotalThickness, has to be consistent to the 'SweptSolid' representation.
+* The IfcBooleanClippingResult shall be supported, allowing for Boolean differences between the swept solid (here IfcExtrudedAreaSolid) and one or several IfcHalfSpaceSolid.
 
-* Solid: IfcExtrudedAreaSolid is required,
-* Profile: IfcArbitraryClosedProfileDef, IfcArbitraryProfileDefWithVoids, IfcRectangleProfileDef, IfcCircleProfileDef, IfcEllipseProfileDef shall be supported.
-* Extrusion: The profile can be extruded perpendicularly or non-perpendicularly to the plane of the swept profile.
-* Material: The definition of the IfcMaterialLayerSetUsage, particularly of the OffsetFromReferenceLine and the ForLayerSet.TotalThickness, has to be consistent to the 'SweptSolid' representation.
-* Boolean result: The IfcBooleanClippingResult shall be supported, allowing for Boolean differences between the swept solid (here IfcExtrudedAreaSolid) and one or several IfcHalfSpaceSolid.
+Figure 248 illustrates a 'Clipping' geometric representation with definition of a plate using advanced geometric representation. The profile is extruded non-perpendicular and the plate body is clipped at the eave.
 
 ![advanced plate](../../../../figures/ifcslab_advanced-layout1.gif)
 
 Figure 248 — Plate body clipping
 
-> EXAMPLE  Figure 248 illustrates a 'Clipping' geometric representation with definition of a plate using advanced geometric representation. The profile is extruded non-perpendicular and the plate body is clipped at the eave.
-
-
 ### Body SweptSolid Geometry
 
-The following additional constraints apply to the 'SweptSolid'
-representation:
+* IfcExtrudedAreaSolid is required,
+* IfcArbitraryClosedProfileDef, IfcArbitraryProfileDefWithVoids, IfcRectangleProfileDef, IfcCircleProfileDef, IfcEllipseProfileDef shall be supported.
+* The profile can be extruded perpendicularly or non-perpendicularly to the plane of the swept profile.
 
-
-* Solid: IfcExtrudedAreaSolid is required,
-* Profile: IfcArbitraryClosedProfileDef, IfcArbitraryProfileDefWithVoids, IfcRectangleProfileDef, IfcCircleProfileDef, IfcEllipseProfileDef shall be supported.
-* Extrusion: The profile can be extruded perpendicularly or non-perpendicularly to the plane of the swept profile.
-
-The following additional constraints apply when an _IfcMaterialLayerSetUsage_ is used:
-
-* Material: The definition of the IfcMaterialLayerSetUsage, particularly of the OffsetFromReferenceLine and the ForLayerSet.TotalThickness, has to be consistent to the 'SweptSolid' representation.
+Figure 247 illustrates a 'SweptSolid' geometric representation. The following interpretation of dimension parameter applies for polygonal plates (in ground floor view): IfcArbitraryClosedProfileDef.OuterCurve being a closed bounded curve is interpreted as area (or foot print) of the plate.
 
 ![standard plate](../../../../figures/ifcslab_standard-layout1.gif)
 
 Figure 247 — Plate body extrusion
 
-> EXAMPLE  Figure 247 illustrates a 'SweptSolid' geometric representation. The following interpretation of dimension parameter applies for polygonal plates (in ground floor view): IfcArbitraryClosedProfileDef.OuterCurve being a closed bounded curve is interpreted as area (or foot print) of the plate.
-
 ### Material Layer Set Usage
 
-The material of IfcPlate can be defined by
-IfcMaterialLayerSetUsage and attached by
-IfcRelAssociatesMaterial.RelatingMaterial. It is
- accessible by the inverse HasAssociations relationship.
- Multi-layer plates can be represented by referring to several
-IfcMaterialLayer's within the IfcMaterialLayerSet
-that is referenced from the
-IfcMaterialLayerSetUsage.
-
-
-When assigning an
-IfcMaterialLayerSetUsage to IfcPlate it shall imply that the
- IfcPlateType should have a unique
- IfcMaterialLayerSet, that is referenced by IfcMaterialLayerSetUsage assigned to all
-occurrences of this IfcPlateType.
-
-
-Figure 246 illustrates assignment of IfcMaterialLayerSetUsage and IfcMaterialLayerSet to the IfcPlate as the plate occurrence and to the IfcPlateType. The same IfcMaterialLayerSet shall be shared by many occurrences of IfcMaterialLayerSetUsage. This relationship shall be consistent to the relationship between the IfcPlateType and the IfcPlate.
-
+Figure 277 illustrates assignment of _IfcMaterialLayerSetUsage_ and _IfcMaterialLayerSet_ to the _IfcPlateType_ and the _IfcPlate_ occurrence.
 
 ![Material layer set and usage](../../../../figures/ifcplate_materialusage-01.png) 
 
-
 Figure 246 — Plate type definition
 
-
-As shown in Figure 106, the following conventions shall be met:
-
+Figure 247 illustrates material layer usage, where:
 
 * The reference coordinate system is the coordinate system established by the IfcExtrudedAreaSolid.Position.
 * The reference plane is the plane defined by the extruded profile of IfcExtrudedAreaSolid.SweptSolid. The IfcMaterialLayerSetUsage.OffsetFromReferenceLine is given as a distance from this plane.
 * The IfcMaterialLayerSetUsage.DirectionSense defines how the IfcMaterialLayer's are assigned to the reference plane. POSITIVE means in direction to the positive z-axis of the reference coordinate system.
 * The IfcMaterialLayerSetUsage.OffsetFromReferenceLine is the distance parallel to the reference plane and always perpendicular to the base (XY) plane of the reference coordinate system. This is independent of a potential non-perpendicular extrusion given by IfcExtrudedAreaSolid.ExtrudedDirection <> 0.,0.,1. A positive value of IfcMaterialLayerSetUsage.OffsetFromReferenceLine would then point into the positive z-axis of the reference coordinate system.
 * The Thickness of each IfcMaterialLayer shall be the parallel distance (measured perpendicular to the base plane). The TotalThickness of the IfcMaterialLayerSet is the sum of all layer thicknesses and in case of a perpendicular extrusion identical with IfcExtrudedAreaSolid.Depth
-* The IfcMaterialLayerSetUsage.LayerSetDirection i always AXIS3.
-
+* The IfcMaterialLayerSetUsage.LayerSetDirection is always AXIS3.
+* The local placement of the wall uses the the x/y plane for the profile, and the z-axis as the extrusion direction for the wall body.
 
 ![plate material layer set](../../../../figures/ifcmateriallayersetusage_slab-01.png)
+
 Figure 247 — Plate material layers
 
 
@@ -166,5 +134,5 @@ Spatial container for the element in case that it is placed on site (outside of 
 
 ### Surface 3D Geometry
 
-> NOTE  The 'Surface' can be used to define a surfacic model of the building (e.g. for analytical purposes, or for reduced Level of Detail representation).
+The 'Surface' can be used to define a surfacic model of the building (e.g. for analytical purposes, or for reduced Level of Detail representation).
 

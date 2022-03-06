@@ -78,11 +78,6 @@ Figure 247 — Plate body extrusion
 
 > EXAMPLE  Figure 247 illustrates a 'SweptSolid' geometric representation. The following interpretation of dimension parameter applies for polygonal plates (in ground floor view): IfcArbitraryClosedProfileDef.OuterCurve being a closed bounded curve is interpreted as area (or foot print) of the plate.
 
-### Material Layer Set
-
-The material information of the IfcPlate is defined by
- IfcMaterialLayerSet, or by IfcMaterial, and it is attached either directly or at the IfcPlateType. In this case, the material information does not allow to construct a shape by applying the layer definition to the plane of the shape representation, to enable this parametric definition, the IfcMaterialLayerSetUsage has to be used instead.
-
 ### Material Layer Set Usage
 
 The material of IfcPlate can be defined by

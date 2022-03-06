@@ -100,11 +100,6 @@ Figure 216 illustrates use of a special profile type (here IfcIShapeProfileDef) 
 
 Figure 216 — Column extrusion of I-Shape
 
-### Material Profile Set
-
-The material information of the IfcColumn is defined by the
-IfcMaterialProfileSet or as fallback by IfcMaterial, and it is attached either directly or at the IfcColumnType. In this case, the material information does not allow to construct a shape by applying the profile definition to the axis representation, to enable this parametric definition, the IfcMaterialProfileSetUsage has to be used instead.
-
 ### Material Profile Set Usage
 
 The Material Profile Set Usage defines the assignment of an IfcMaterialProfileSetUsage to the

@@ -103,11 +103,6 @@ If parametric profiles are used, the parameters may be interpreted to be the dim
 
 Figure 236 — Member body extrusion
 
-### Material Profile Set
-
-The material information of the IfcMember is defined by the
- IfcMaterialProfileSet or as fallback by IfcMaterial, and it is attached either directly or at the IfcMemberType. In this case, the material information does not allow to construct a shape by applying the profile definition to the axis representation, to enable this parametric definition, the IfcMaterialProfileSetUsage has to be used instead.
-
 ### Material Profile Set Usage
 
 The material of the IfcMember is defined by

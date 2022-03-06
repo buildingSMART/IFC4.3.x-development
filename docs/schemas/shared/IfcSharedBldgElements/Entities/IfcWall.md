@@ -175,11 +175,6 @@ IfcRelVoidsElement2 -> IfcVoidingFeature [headlabel="RelatedOpeningElement", lab
 
 Figure ELEMENTVOID &mdash; How individual parts being cut may be expressed.
 
-### Material Layer Set
-
-The material information of the IfcWall is defined by
- IfcMaterialLayerSet, or as fallback by IfcMaterial, and it is attached either directly or at the IfcWallType. In this case, the material information does not allow to construct a shape by applying the layer definition to the axis representation, to enable this parametric definition, the IfcMaterialLayerSetUsage has to be used instead.
-
 ### Material Layer Set Usage
 
 The material of IfcWall can be defined by

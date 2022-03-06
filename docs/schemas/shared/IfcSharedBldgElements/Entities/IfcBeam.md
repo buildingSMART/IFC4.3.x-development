@@ -122,11 +122,6 @@ Special purpose composite entity
 
 Any building element can be a composite
 
-### Material Profile Set
-
-The material information of the IfcBeam is defined by
-IfcMaterialProfileSet or as fallback by IfcMaterial, and it is attached either directly or at the IfcBeamType. In this case, the material information does not allow to construct a shape by applying the profile definition to the axis representation, to enable this parametric definition, the IfcMaterialProfileSetUsage has to be used instead.
-
 ### Material Profile Set Usage
 
 The Material Profile Set Usage defines the assignment of an IfcMaterialProfileSetUsage to the

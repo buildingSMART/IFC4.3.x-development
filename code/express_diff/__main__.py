@@ -105,6 +105,8 @@ def compare(fn1, fn2, m1, m2):
                 w2 = schema_name_re.sub("ifc4x3_dev", w2)
                 
                 if w1 != w2:
+                    if isinstance(wnm, (tuple, list)):
+                        wnm = wnm[-1]
                     yield CONSTRAINTS, (e + "." + wnm, w1, w2)
         
 with open(output, "w") as f:

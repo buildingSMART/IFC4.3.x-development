@@ -47,16 +47,21 @@ import logging
 logging.basicConfig(level=logging.WARNING, stream=sys.stdout)
 
 # @todo schema name is hardcoded and not derived from the XMI package name for now
-SCHEMA_NAME = "IFC4X3_DEV"
+is_iso = os.environ.get('ISO', '0') == '1'
 
-try:
-    if os.environ.get("REPO_DIR"):
-        repo_dir = "-C", os.environ.get("REPO_DIR")
-    else:
-        repo_dir = []
-    sha = subprocess.check_output(["git", *repo_dir, "rev-parse", "--short", "HEAD"]).decode('ascii').strip()
-    SCHEMA_NAME += f"_{sha}"
-except: pass
+if is_iso:
+    SCHEMA_NAME = "IFC4X3"
+else:
+    SCHEMA_NAME = "IFC4X3_DEV"
+
+    try:
+        if os.environ.get("REPO_DIR"):
+            repo_dir = "-C", os.environ.get("REPO_DIR")
+        else:
+            repo_dir = []
+        sha = subprocess.check_output(["git", *repo_dir, "rev-parse", "--short", "HEAD"]).decode('ascii').strip()
+        SCHEMA_NAME += f"_{sha}"
+    except: pass
 
 def unescape(s):
     # @todo this is bizarre encoding, what happened here?

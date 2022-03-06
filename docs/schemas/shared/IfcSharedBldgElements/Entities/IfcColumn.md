@@ -2,18 +2,18 @@
 
 An _IfcColumn_ is a vertical structural or architectural member which often is aligned with a structural grid intersection. In most cases it represents a vertical, or nearly vertical, structural member that transmits, through compression, the weight of the structure above to other structural elements below. It may also represent such a member from an architectural point of view in which case it may represent a non load bearing element. Whether it is a structural load bearing element or a non-load bearing element is determined by the _Pset\_ColumnCommon.LoadBearing_ property.
 
-> NOTE  Definition according to ISO 6707-1
-> structural member of slender form, usually vertical, that transmits to its base the forces, primarily in compression, that are applied to it.
 
 There are two main representations for column occurrences:
 
-- _IfcColumn_ with _IfcMaterialProfileSetUsage_ is used for all occurrences of columns, that have a profile defined that is swept along a directrix. The profile might be changed uniformly by a taper definition along the directrix. The profile parameter and its cardinal point of insertion can be fully described by the _IfcMaterialProfileSetUsag_e. These columns are always represented geometricly by an 'Axis' and a 'SweptSolid' or 'AdvancedSweptSolid' shape representation (or by a 'Clipping' geometry based on the swept solid), if a 3D geometric representation is assigned.
+ * _IfcColumn_ with _IfcMaterialProfileSetUsage_ is used for all occurrences of columns, that have a profile defined that is swept along a directrix. The profile might change uniformly by a taper definition along the directrix. The profile parameter and its cardinal point of insertion can be fully described by the _IfcMaterialProfileSetUsage_. These columns are always represented geometricly by an 'Axis' and a 'SweptSolid' or 'AdvancedSweptSolid' shape representation (or by a 'Clipping' geometry based on the swept solid), if a 3D geometric representation is assigned.
+ * _IfcColumn_ is used for all other occurrences of columns, particularly for columns with changing profile sizes along the extrusion, or columns defined by non-linear extrusion, or columns having only 'Brep', or 'SurfaceModel' geometry, if a more parametric representation is not intended.
 
-- _IfcColumn_ is used for all other occurrences of columns, particularly for columns with changing profile sizes along the extrusion, or columns defined by non-linear extrusion, or columns having only 'Brep', or 'SurfaceModel' geometry, or if a more parametric representation is not intended.
-
-> NOTE  The entity IfcColumnStandardCase has been deprecated, IfcColumn with IfcMaterialProfileSetUsage is used instead.
 
 For any longitudial structural member, not constrained to be predominately horizontal nor vertical, or where this semantic information is irrelevant, the entity _IfcMember_ exists.
+
+> REFERENCE  Definition according to ISO 6707-1 structural member of slender form, usually vertical, that transmits to its base the forces, primarily in compression, that are applied to it.
+
+> NOTE  The entity IfcColumnStandardCase has been deprecated, IfcColumn with IfcMaterialProfileSetUsage is used instead.
 
 > NOTE  The representation of a column in a structural analysis model is provided by _IfcStructuralCurveMember_ being part of an _IfcStructuralAnalysisModel_.
 
@@ -40,32 +40,24 @@ Either there is no column type object associated, i.e. the _IsTypedBy_ inverse r
 
 ### Axis 3D Geometry
 
-The axis representation can be used to represent the system length of a column that may extent the body length of the column.
+The axis representation can be used to represent the fundamental orientation and extents of a column's body.
 
-> NOTE  The 'Axis' is used to locate the material profile set, if the material association is of type IfcMaterialProfileSetUsage.
+If an _IfcMaterialProfileSetUsage_ is used, the axis representation is used to locate the profile. In addition:
 
-The following additional constraints apply to the 'Axis' representation, if an IfcMaterialProfileSetUsage is provided and the 'Body' shape representation has the RepresentationType: 'SweptSolid':
+ * For a body representation using an _IfcExtrudedAreaSolid_, the axis may be an _IfcPolyline_ having two Points, or _IfcTrimmedCurve_ with BasisCurve of type _IfcLine_. The axis curve lies on the z axis of the object coordinate system.
+ * For a body representation using an _IfcRevolvedAreaSolid_, the axis may be an _IfcTrimmedCurve_ with BasisCurve of type _IfcCircle_. The axis curve lies on the x/z plane of the object coordinate system, the tangent at the start is along the positive z-axis.
 
-* Axis
-	+ IfcPolyline having two Points, or IfcTrimmedCurve with BasisCurve of Type IfcLine for 'SweptSolid' provided as IfcExtrudedAreaSolid. The axis curve lies on the z axis of the object coordinate system.
-	+ IfcTrimmedCurve with BasisCurve of Type IfcCircle for 'SweptSolid' provided as IfcRevolvedAreaSolid. The axis curve lies on the x/z plane of the object coordinate system, the tangent at the start is along the positive z-axis.
+As shown in Figure 213, the axis shall be defined along the z axis of the object coordinate system.
 
 ![Axis](../../../../figures/ifccolumnstandardcase_axis-01.png)
 
 Figure 213 — Column axis representation
 
-> EXAMPLE  As shown in Figure 213, the axis shall be defined along the z axis of
-> the object coordinate system. The axis representation can be used to
-> represent the system length of a column that may extent the body
-> length of the column.
-
-
+As shown in Figure 214, the axis representation must be positioned at the _IfcMaterialProfileSetUsage_.CardinalPoint, and parallel to the _IfcExtrudedAreaSolid_.ExtrudedDirection. This offset between the axis line and the _IfcExtrudedAreaSolid_.Position must correlate with the chosen _IfcMaterialProfileSetUsage_.CardinalPoint.
 
 ![Axis](../../../../figures/ifccolumnstandardcase_axis-02.png)
 
 Figure 214 — Column axis cardinal point
-
-> EXAMPLE  As shown in Figure 214, the axis representation shall be used to represent the cardinal point as the offset between the 'Axis' and the extrusion path of the column. The extrusion path is provided as IfcExtrudedAreaSolid.ExtrudedDirection and should be parallel to the 'Axis'. It has to be guaranteed that the value provided by IfcMaterialProfileSetUsage.CardinalPoint is consistent to the IfcExtrudedAreaSolid.Position.
 
 #### Axis_IfcBoundedCurve_Curve3D
 
@@ -73,21 +65,15 @@ Three-dimensional reference curve for the column.
 
 ### Body AdvancedSweptSolid Geometry
 
-The following additional constraints apply to the 'AdvancedSweptSolid' representation type:
-
-* _Solid_: IfcSurfaceCurveSweptAreaSolid, IfcFixedReferenceSweptAreaSolid, IfcExtrudedAreaSolidTapered, IfcRevolvedAreaSolidTapered shall be supported.
->> NOTE  View definitions and implementer agreements can further constrain the allowed swept solid types.
-* _Profile_: see 'SweptSolid' geometric representation
-* _Extrusion_: not applicable
+* _IfcSurfaceCurveSweptAreaSolid_, _IfcFixedReferenceSweptAreaSolid_, _IfcExtrudedAreaSolidTapered_, _IfcRevolvedAreaSolidTapered_ shall be supported.
+* All subtypes of IfcProfileDef (with exception of IfcArbitraryOpenProfileDef) shall be supported
 
 ### Body Clipping Geometry
 
-The following constraints apply to the 'Clipping' representation:
-
-* _Solid_: see 'SweptSolid' geometric representation
-* _Profile_: see 'SweptSolid' geometric representation
-* _Extrusion_: see 'SweptSolid' geometric representation
-* _Boolean result_: The IfcBooleanClippingResult shall be supported, allowing for Boolean differences between the swept solid (here IfcExtrudedAreaSolid) and one or several IfcHalfSpaceSolid.
+* IfcExtrudedAreaSolid, IfcRevolvedAreaSolid shall be supported
+* All subtypes of IfcProfileDef (with exception of IfcArbitraryOpenProfileDef) shall be supported
+* All extrusion directions shall be supported
+* The IfcBooleanClippingResult shall be supported, allowing for Boolean differences between the swept solid (here IfcExtrudedAreaSolid) and one or several IfcHalfSpaceSolid.
 
 Figure 216 illustrates a 'Clipping' geometric representation with use of IfcBooleanClippingResult between an IfcExtrudedAreaSolid and an IfcHalfSpaceSolid to create a clipped body.
 
@@ -97,24 +83,21 @@ Figure 216 — Column clipping
 
 ### Body SweptSolid Geometry
 
-The following additional constraints apply to the 'SweptSolid' representation:
+* IfcExtrudedAreaSolid, IfcRevolvedAreaSolid shall be supported
+* All subtypes of IfcProfileDef (with exception of IfcArbitraryOpenProfileDef) shall be supported
+* All extrusion directions shall be supported
 
-* _Solid_: IfcExtrudedAreaSolid, IfcRevolvedAreaSolid shall be supported
-* _Profile_: all subtypes of IfcProfileDef (with exception of IfcArbitraryOpenProfileDef) 
-* _Extrusion_: All extrusion directions shall be supported
-
-Figure 215 illustrates a 'SweptSolid' geometric representation. There are no restrictions or conventions on
-how to use the local placement (black), solid of extrusion placement (red) and profile placement (green).
+Figure 215 illustrates a 'SweptSolid' geometric representation. There are no restrictions or conventions on how to use the object placement (black), extrusion placement (red) and profile placement (green).
 
 
 ![standard column](../../../../figures/ifccolumn_standard-layout1.gif)
-Figure 215 — Column swept solid
 
+Figure 215 — Column swept solid
 
 Figure 216 illustrates use of a special profile type (here IfcIShapeProfileDef) for the definition of the IfcExtrudedAreaSolid.
 
-
 ![advanced column](../../../../figures/ifccolumn_advanced-1-layout1.png)
+
 Figure 216 — Column extrusion of I-Shape
 
 ### Material Profile Set
@@ -142,12 +125,8 @@ Figure 211 — Column profile usage
 
 Figure 212 illustrates cardinal point alignment.
 
-
-
 > NOTE  It has to be guaranteed that the use of IfcCardinalPointEnum is consistent to the placement of the
 > extrusion body provided by IfcExtrudedAreaSolid.Position
-
-
 
 > NOTE  The cardinal points 7 (top left), and 6 (mid-depth right) are assigned according to the
 > definition at IfcCardinalPointReference

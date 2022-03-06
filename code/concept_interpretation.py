@@ -42,6 +42,8 @@ concept_type.OBJECT_TYPING,
 concept_type.PROPERTY_OR_QUANTITY_SET,
 ('Material Constituent Set', ('ConstituentName', ('IfcMaterialConstituent', 'Name'))):
 concept_type.SIMPLE_UNARY,
+('Material Set',):
+concept_type.NARY,
 ('Port Nesting', ('Flow', ('IfcDistributionPort', 'FlowDirection')), ('PortName', ('IfcDistributionPort', 'Name')), ('PredefinedType', ('IfcDistributionElement', 'PredefinedType')), ('SystemType', ('IfcDistributionPort', 'SystemType'))):
 concept_type.NARY,
 ('Control Flow', ('Type', ('IfcRelFlowControlElements', 'RelatingFlowElement'))):

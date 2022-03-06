@@ -27,7 +27,7 @@ The _IfcDoorType_ specifies parameters which are common to all of its occurrence
 
 > REFERENCE  Definition according to ISO 6707-1: construction for closing an opening, intended primarily for access with hinged, pivoted or sliding operation.
 
-> NOTE  The entity _IfcDoorStandardCase_ has been deprecated. Use an _IfcDoor_ with a 'Profile' representation instead. The _IfcDoor_ should also have an _IfcDoorType_ with _ParameterTakesPrecedence_ set to 'TRUE'.
+> NOTE  The entity _IfcDoorStandardCase_ has been deleted. Use an _IfcDoor_ with a 'Profile' representation instead. The _IfcDoor_ should also have an _IfcDoorType_ with _ParameterTakesPrecedence_ set to 'TRUE'.
 
 > HISTORY  New entity in IFC1.0.
 
@@ -183,4 +183,3 @@ Spatial container for the element in case that it is placed on site (outside of 
 #### IfcSpace
 
 In particular use cases, a door maybe assigned directly to space
-

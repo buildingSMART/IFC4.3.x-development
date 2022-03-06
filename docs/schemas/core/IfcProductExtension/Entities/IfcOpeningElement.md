@@ -20,13 +20,13 @@ The _IfcOpeningElement_ shall not participate in the containment relationship, i
 
 > REFERENCE Definition according to ISO 6707-1: void in a building element
 
-> NOTE  The entity _IfcOpeningStandardCase_ has been deprecated. Use an _IfcOpeningElement_ with a single extrusion body perpendicular to the wall or slab instead.
+> NOTE  The entity _IfcOpeningStandardCase_ has been deleted. Use an _IfcOpeningElement_ with a single extrusion body perpendicular to the wall or slab instead.
 
 > NOTE  See _IfcRelVoidsElement_ for a diagram on how to apply spatial containment and the voiding relationship.
 
 > IFC2x CHANGE  The intermediate ABSTRACT supertypes _IfcFeatureElement_ and _IfcFeatureSubtraction_ have been added.
 
-> IFC4 CHANGE  The attribute _PredefinedType_ has been added at the end of attribute list. It should be used instead of the inherited attribute _ObjectType_ from now on.
+> IFC4 CHANGE  The attribute _PredefinedType_ has been added at the end of attribute list. 
 
 > HISTORY  New entity in IFC1.0
 
@@ -116,4 +116,3 @@ Since there are no Boolean operations, either as IfcBooleanResult or implicitly 
 ### Reference Tessellation Geometry
 
 Since there are no Boolean operations, either as IfcBooleanResult or implicitly by IfcRelVoidsElement the geometry of the IfcOpeningElement shall not be used to subtract the opening from the 'Body' shape representation of the voided element.
-

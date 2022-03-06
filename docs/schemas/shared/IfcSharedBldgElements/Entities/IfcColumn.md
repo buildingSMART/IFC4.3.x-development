@@ -13,7 +13,7 @@ For any longitudial structural member, not constrained to be predominately horiz
 
 > REFERENCE  Definition according to ISO 6707-1 structural member of slender form, usually vertical, that transmits to its base the forces, primarily in compression, that are applied to it.
 
-> NOTE  The entity IfcColumnStandardCase has been deprecated, IfcColumn with IfcMaterialProfileSetUsage is used instead.
+> NOTE  The entity IfcColumnStandardCase has been deleted, IfcColumn with IfcMaterialProfileSetUsage is used instead.
 
 > NOTE  The representation of a column in a structural analysis model is provided by _IfcStructuralCurveMember_ being part of an _IfcStructuralAnalysisModel_.
 
@@ -158,4 +158,3 @@ Spatial container for the element if it cannot be assigned to a building storey
 #### IfcSite
 
 Spatial container for the element in case that it is placed on site (outside of building)
-

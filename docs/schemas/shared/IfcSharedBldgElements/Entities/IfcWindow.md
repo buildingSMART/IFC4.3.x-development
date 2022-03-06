@@ -26,7 +26,7 @@ The _IfcWindowType_ specifies parameters which are common to all of its occurren
 
 > REFERENCE  Definition according to ISO 6707-1 Construction for closing a vertical or near vertical opening in a wall or pitched roof that will admit light and may admit fresh air.
 
-> NOTE  The entity _IfcWindowStandardCase_ has been deprecated. Use an _IfcWindow_ with a 'Profile' representation instead. The _IfcWindow_ should also have an _IfcWindowType_ with _ParameterTakesPrecedence_ set to 'TRUE'.
+> NOTE  The entity _IfcWindowStandardCase_ has been deleted. Use an _IfcWindow_ with a 'Profile' representation instead. The _IfcWindow_ should also have an _IfcWindowType_ with _ParameterTakesPrecedence_ set to 'TRUE'.
 
 > IFC4 CHANGE  The attributes _PredefinedType_ and _OperationType_ are added, the applicable type object has been changed to _IfcWindowType_.
 

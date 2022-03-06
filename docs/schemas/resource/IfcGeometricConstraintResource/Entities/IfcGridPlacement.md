@@ -1,5 +1,7 @@
 # IfcGridPlacement
 
+> CHANGE IFC4.3.0.0 In IFC 4.3 the _PlacementRelTo_ attribute has been moved from IfcLocalPlacement to its supertype IfcObjectPlacement, also a supertype of this entity. That means that for correct global positioning, the IfcGridPlacement will reference (a) the ObjectPlacement of the IfcGrid by means of IfcObjectPlacement.PlacementRelTo and (b) the pair of IfcGridAxis contained in that same grid by means of the IfcVirtualGridIntersection.
+
 _IfcGridPlacement_ provides a specialization of _IfcObjectPlacement_ in which the placement and axis direction of the object coordinate system is defined by a reference to the design grid as defined in _IfcGrid_.
 
 The location of the object coordinate system is given by the attribute _PlacementLocation_. It is defined as an _IfcVirtualGridIntersection_, that is, an intersection between two grid axes with optional offsets.
@@ -13,8 +15,6 @@ The axis direction of the x-axis of the object coordinate system is given either
 The direction of the y-axis of the _IfcGridPlacement_ is the orthogonal complement to the x-axis. The plane defined by the x and y axis shall be co-planar to the xy plane of the local placement of the _IfcGrid_.
 
 The direction of the z-axis is the orientation of the cross product of the x-axis and the y-axis, i.e. the z-axis of the _IfcGridPlacement_ shall be co-linear to the z-axis of the local placement of the _IfcGrid_.
-
-> NOTE  The _IfcGrid_ local placement, that can be provided relative to the local placement of another spatial structure element, has to be taken into account for calculating the absolute placement of the virtual grid intersection.
 
 > NOTE  The _PlacementLocation.OffsetDistances[3]_ and the _PlacementRefDirection.OffsetDistances[3]_ shall either not be assigned or should have the same z offset value.
 

@@ -9,7 +9,7 @@ The representation identifier of the body representation is:
 
 ```
 concept {
-    IfcElement:Representation -> IfcProductDefinitionShape
+    IfcProduct:Representation -> IfcProductDefinitionShape
     IfcProductDefinitionShape:Representations -> IfcShapeRepresentation
     IfcShapeRepresentation:ContextOfItems -> IfcGeometricRepresentationContext
     IfcShapeRepresentation:RepresentationIdentifier -> IfcLabel_0

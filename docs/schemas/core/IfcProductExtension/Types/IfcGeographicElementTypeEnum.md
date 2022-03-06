@@ -12,6 +12,9 @@ Terrain
 ### SOIL_BORING_POINT
 Soil boring point
 
+### VEGETATION
+Plant life or plant cover (as of an area). For example trees, shrubs, herbs, grasses, ferns, and mosses.
+
 ### USERDEFINED
 User defined
 

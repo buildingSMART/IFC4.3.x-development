@@ -49,8 +49,7 @@ from extract_concepts_from_xmi import parse_bindings
 app = Flask(__name__)
 
 base = "/IFC/RELEASE/IFC4x3/HTML"
-is_iso = False
-
+is_iso = os.environ.get('ISO', '0') == '1'
 
 def make_url(fragment=None):
     return base + "/" + fragment if fragment else "/"

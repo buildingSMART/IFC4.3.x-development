@@ -669,12 +669,15 @@ img {
     # for t in texs:
     #     t.generate_pdf()
     
-    # @NB TEMPORARY: [::32]
+    is_iso = os.environ.get('ISO', '0') == '1'
+    if not is_iso:
+        # speed up the processing a bit during development
+        texs = texs[::32]
     
     completed = 0
     num = len(texs)
     with concurrent.futures.ThreadPoolExecutor(max_workers=6) as executor:
-        fts = {executor.submit(Tex_object.generate_pdf, t): t for t in texs[::32]}
+        fts = {executor.submit(Tex_object.generate_pdf, t): t for t in texs}
         for future in concurrent.futures.as_completed(fts):
             completed += 1
             print(completed * 100 // num, '%')

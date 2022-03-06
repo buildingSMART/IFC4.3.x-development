@@ -28,10 +28,6 @@ concept_type.PROPERTY_OR_QUANTITY_SET,
 concept_type.PROPERTY_OR_QUANTITY_SET,
 ('Property Sets for Profiles',):
 concept_type.PROPERTY_OR_QUANTITY_SET,
-('Aggregation',):
-# Aggregation parametrized without any definition
-# https://github.com/buildingSMART/IFC4.3.x-development/issues/118
-concept_type.NO_PARAMETRIZATION,
 ('Object Nesting', ('Type', ('IfcRelNests', 'RelatedObjects'))):
 concept_type.DIRECTIONAL_BINARY,
 ('Actor Assignment', ('Type', ('IfcRelAssignsToActor', 'RelatedObjects'))):
@@ -81,9 +77,9 @@ concept_type.DIRECTIONAL_BINARY,
 ('Spatial Container', ('Type', ('IfcRelContainedInSpatialStructure', 'RelatedElements'))):
 concept_type.DIRECTIONAL_BINARY,
 ('Material Profile Set Usage', ('Name', ('IfcMaterialProfile', 'Name'))):
-concept_type.NARY,
+concept_type.SIMPLE_UNARY,
 ('Material Layer Set Usage', ('Name', ('IfcMaterialLayer', 'Name'))):
-concept_type.NARY,
+concept_type.SIMPLE_UNARY,
 ('Object Connectivity',):
 concept_type.SIMPLE_UNARY,
 ('Resource Assignment', ('Type', ('IfcRelAssignsToResource', 'RelatedObjects'))):
@@ -94,12 +90,8 @@ concept_type.NARY,
 concept_type.NARY,
 ('Resource Type Assignment', ('Type', ('IfcRelAssignsToResource', 'RelatedObjects'))):
 concept_type.DIRECTIONAL_BINARY,
-('Constraint Association', ('Attribute1', ('IfcReference', 'AttributeIdentifier')), ('DataValue', ('IfcMetric', 'DataValue'))):
-concept_type.NARY,
 ('Control Assignment', ('Type', ('IfcRelAssignsToControl', 'RelatedObjects'))):
 concept_type.DIRECTIONAL_BINARY,
-('Classification Association', ('ClassificationName', ('IfcClassification', 'Name')), ('ClassificationSource', ('IfcClassification', 'Source')), ('ClassificationTokens', ('IfcClassification', 'ReferenceTokens')), ('Identification', ('IfcClassificationReference', 'Identification')), ('Name', ('IfcClassificationReference', 'Name'))):
-concept_type.NO_PARAMETRIZATION,
 ('Product Type Assignment', ('Type', ('IfcRelAssignsToProduct', 'RelatedObjects'))):
 concept_type.DIRECTIONAL_BINARY,
 ('Axis Geometry', ('Identifier', ('IfcShapeRepresentation', 'RepresentationIdentifier')), ('Items', ('IfcShapeRepresentation', 'Items')), ('Type', ('IfcShapeRepresentation', 'RepresentationType'))):

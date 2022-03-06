@@ -1,14 +1,15 @@
-
+import os
 import re
 import ast
 from deepdiff import DeepDiff
 
 from collections import defaultdict
-
 from xmi_document import fix_schema_name
 
 changes_by_schema = []
 changes_by_type = defaultdict(dict)
+
+is_iso = os.environ.get('ISO', '0') == '1'
 
 def to_dict(decl, depr=[]):
     if type(decl).__name__ == "EntityDeclaration":
@@ -192,12 +193,17 @@ if __name__ == "__main__":
     if repo_dir:
         d = os.path.join(repo_dir, "reference_schemas")
         names = [
-            "IFC2X3_TC1.exp", "deprecated_entities_Ifc2.3.0.1.json", "psd_IFC2x3",
-            "IFC4_ADD2_TC1.exp", "deprecated_entities_Ifc4.0.2.2.json", "psd_IFC4_ADD2_TC1",
-            # no IfcDoc branch for 4x1
-            "IFC4x1.exp", "deprecated_entities_Ifc4.0.2.2.json", "psd_IFC4x1",
-            "IFC4x2.exp", "deprecated_entities_Ifc4.2.0.1.json", "psd_IFC4x2"
+                "IFC2X3_TC1.exp", "deprecated_entities_Ifc2.3.0.1.json", "psd_IFC2x3",
+                "IFC4_ADD2_TC1.exp", "deprecated_entities_Ifc4.0.2.2.json", "psd_IFC4_ADD2_TC1",
         ]
+        
+        if not is_iso:
+            names += [
+                # no IfcDoc branch for 4x1
+                "IFC4x1.exp", "deprecated_entities_Ifc4.0.2.2.json", "psd_IFC4x1",
+                "IFC4x2.exp", "deprecated_entities_Ifc4.2.0.1.json", "psd_IFC4x2"
+            ]
+            
         files = list(map(functools.partial(os.path.join, d), names))
         files += [
             "IFC.exp",

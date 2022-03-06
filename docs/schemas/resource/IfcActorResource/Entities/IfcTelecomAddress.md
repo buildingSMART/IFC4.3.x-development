@@ -4,8 +4,9 @@ This entity represents an address to which telephone, electronic mail and other 
 
 > HISTORY  New entity in IFC2x.
 
-{ .change-ifc2x4}
 > IFC4 CHANGE  Added attribute _MessagingIDs_. Type of attribute _WWWHomePageURL_ compatibly changed from _IfcLabel_ to _IfcURIReference_.
+
+> IFC4.3.0.0 DEPRECATION This entity is deprecated. Use Pset_Address instead, which is applicable to IfcActor, IfcBuilding and IfcSite.
 
 ## Attributes
 

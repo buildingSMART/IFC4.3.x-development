@@ -21,6 +21,12 @@ The property sets defined by this _IfcPropertySetTemplate_ can only be assigned 
 The property sets defined by this _IfcPropertySetTemplate_ can only be assigned to _IfcPerformanceHistory_, which is
 related to the applicable object by means of IfcRelAssignsToControl.
 
+### PSET_PROFILEDRIVEN
+The property sets defined by this _IfcPropertySetTemplate_ are to be encoded in an IfcProfileProperties entity and assigned to an IfcProfileDef.
+
+### PSET_MATERIALDRIVEN
+The property sets defined by this _IfcPropertySetTemplate_ are to be encoded in an IfcMaterialProperties entity and assigned to an IfcMaterialDefinition.
+
 ### QTO_TYPEDRIVENONLY
 The element quantity defined by this _IfcPropertySetTemplate_ can only be assigned to subtypes of _IfcTypeObject_.
 

@@ -36,6 +36,9 @@ An impervious layer that could be used for e.g. roof covering (below tiling - th
 ### SLEEVING
 The covering is used to isolate a distribution element from a space in which it is contained.
 
+### TOPPING
+A layer of material used for leveling or flattening a surface.
+
 ### WRAPPING
 The covering is used for wrapping particularly of distribution elements using tape.
 

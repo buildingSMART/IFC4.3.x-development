@@ -1208,37 +1208,16 @@ def get_property_sets(resource, builder):
             if "PropertySets" not in xmi_concept_name and "QuantitySets" not in xmi_concept_name:
                 continue
             for xmi_relationship in xmi_relationships:
+                applicable_entity = xmi_relationship.get("ApplicableEntity", None)
+                if applicable_entity not in supertype_chain:
+                    continue
                 name = xmi_relationship.get("PsetName", None) or xmi_relationship.get("QsetName", None)
-                # Previous method
-                #
-                # applicable_entity = xmi_relationship.get("ApplicableEntity", None)
-                # if applicable_entity not in supertype_chain:
-                #     continue
-                #
-                # Last minute hack - it seems as though applicable_entity does not include types
-                # Potentially this is because PSET_TYPEDRIVENOVERRIDE generates the type and this generation
-                # does not come through in the xmi_concepts.
                 if not name:
                     continue
-                # Defensive because this is a last minute hack
-                if name in [p["name"] for p in psets]:
-                    continue
-                pset_data = R.pset_definitions[name]
-                is_applicable = False
-                for applicable_entity in pset_data["applicability"]:
-                    predefined_type = None
-                    if "/" in applicable_entity:
-                        applicable_entity, predefined_type = applicable_entity.split("/")
-                    if applicable_entity in supertype_chain:
-                        is_applicable = True
-                        break
-                if not is_applicable:
-                    continue
-                properties = pset_data["properties"]
+                properties = R.pset_definitions[name]["properties"]
                 psets.append({
                     "name": name,
-                    # "predefined_type": xmi_relationship.get("PredefinedType", None),
-                    "predefined_type": predefined_type,
+                    "predefined_type": xmi_relationship.get("PredefinedType", None),
                     "properties": [p["name"] for p in properties]
                 })
 

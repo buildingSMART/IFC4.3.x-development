@@ -200,6 +200,7 @@ annex_b_navigation = [
     {"number": "B.4", "name": "Properties", "url": make_url("annex-b4.html")},
     {"number": "B.5", "name": "Functions", "url": make_url("annex-b5.html")},
     {"number": "B.6", "name": "Rules", "url": make_url("annex-b6.html")},
+    {"number": "B.7", "name": "Property Enumerations", "url": make_url("annex-b7.html")},
 ]
 
 
@@ -270,6 +271,7 @@ entity_names = lambda: sorted(sum([schema.get("Entities", []) for _, cat in R.hi
 function_names = lambda: sorted(sum([schema.get("Functions", []) for _, cat in R.hierarchy for __, schema in cat], []))
 rule_names = lambda: sorted(sum([schema.get("Rules", []) for _, cat in R.hierarchy for __, schema in cat], []))
 type_names = lambda: sorted(sum([schema.get("Types", []) for _, cat in R.hierarchy for __, schema in cat], []))
+propertyenumeration_names = lambda: sorted(sum([schema.get("PropertyEnumerations", []) for _, cat in R.hierarchy for __, schema in cat], []))
 
 
 @lru_cache()
@@ -1583,6 +1585,7 @@ def annex_b5():
     ]
     return render_template("annex-b.html", base=base, is_iso=X.is_iso, navigation=get_navigation(), items=items, title="Functions")
 
+
 @app.route(make_url("annex-b6.html"))
 def annex_b6():
     items = [
@@ -1590,6 +1593,15 @@ def annex_b6():
         for n in rule_names()
     ]
     return render_template("annex-b.html", base=base, is_iso=X.is_iso, navigation=get_navigation(), items=items, title="Rules")
+
+
+@app.route(make_url("annex-b7.html"))
+def annex_b7():
+    items = [
+        {"number": "", "url": url_for("resource", resource=n), "name": n}
+        for n in propertyenumeration_names()
+    ]
+    return render_template("annex-b.html", base=base, is_iso=X.is_iso, navigation=get_navigation(), items=items, title="Property Enumerations")
 
 
 def make_concept(path, number_path=None):
@@ -1997,7 +2009,7 @@ def schema(name):
         definition_number = SectionNumberGenerator.generate()
         definition = process_markdown("", open(fn).read())
 
-    order = ["Types", "Entities", "Property Sets", "Quantity Sets", "Functions", "Rules"]
+    order = ["Types", "Entities", "Property Sets", "Quantity Sets", "Functions", "Rules", "PropertyEnumerations"]
     categories = [
         toc_entry(
             o,

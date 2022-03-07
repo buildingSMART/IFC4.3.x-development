@@ -5,19 +5,15 @@ Enumeration of Virtual Element Types.
 ## Items
 
 ### BOUNDARY
-Boundary.
+An imaginary boundary, such as between two adjacent spaces that are not separated by a physcial boundary.
 
 ### CLEARANCE
-Clearance.
+The virtual element denotes a clearance area or volume
 
-### PROVISIONFORAREA
-Provision for area.
-
-### PROVISIONFORSPACE
-Provision for space
+> EXAMPLE The space allocated as a placeholder for mechanical equipment or furniture.
 
 ### PROVISIONFORVOID
-Provision for void.
+The virtual element denotes a proposed provision for voids (an proposed opening not applied as void yet).
 
 ### NOTDEFINED
 

@@ -52,8 +52,8 @@ def compare(fn1, fn2, m1, m2):
             if not eq(d1[nm], d2[nm]):
                 yield TYPE_DEFINITIONS, (nm, d1[nm], d2[nm])
             if x == 'simpletypes':
-                d1_wns = [a[0] for a in s1.types[nm].where]
-                d2_wns = [a[0] for a in s2.types[nm].where]
+                d1_wns = sorted(a[0] for a in s1.types[nm].where)
+                d2_wns = sorted(a[0] for a in s2.types[nm].where)
                 if d1_wns != d2_wns:
                     yield CONSTRAINTS, (nm + " where rules", d1_wns, d2_wns)
                 for wnm in (set(d1_wns) & set(d2_wns)):
@@ -92,8 +92,8 @@ def compare(fn1, fn2, m1, m2):
         for constraint in ("where", "unique", "derive"):            
             cv1 = getattr(s1.entities[e], constraint)
             cv2 = getattr(s2.entities[e], constraint)
-            d1_wns = [a[0] for a in cv1]
-            d2_wns = [a[0] for a in cv2]
+            d1_wns = sorted(a[0] for a in cv1)
+            d2_wns = sorted(a[0] for a in cv2)
             if d1_wns != d2_wns:
                 yield CONSTRAINTS, (e + " " + constraint +  " rules", d1_wns, d2_wns)
             for wnm in (set(d1_wns) & set(d2_wns)):

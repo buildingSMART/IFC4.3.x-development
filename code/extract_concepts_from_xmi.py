@@ -272,10 +272,7 @@ if __name__ == "__main__":
                             x = definitions_by_name[xmi_doc.xmi.by_id[x].name]
                         
                         D = {}
-                        
-                        if not (x.type == "ENTITY" or (x.parent and x.parent.type == "ENUM")):
-                            breakpoint()
-                            
+
                         entity = x.name
                         if x.parent and get_parent_of_pt(xmi_doc, x.parent.node):
                             entity = get_parent_of_pt(xmi_doc, x.parent.node)

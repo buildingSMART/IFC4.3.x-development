@@ -63,7 +63,7 @@ concept_type.SIMPLE_UNARY,
 ('Group Assignment', ('IsGrouped', ('IfcGroup', 'IsGroupedBy')), ('RelatedObjects', ('IfcRelAssignsToGroup', 'RelatedObjects'))):
 concept_type.SIMPLE_UNARY,
 ('Spatial Containment', ('RelatingStructure', ('IfcRelContainedInSpatialStructure', 'RelatingStructure')), ('SpatialElementName', ('IfcSpatialElement', 'Name'))):
-concept_type.DIRECTIONAL_GROUPED,
+concept_type.DIRECTIONAL_BINARY,
 ('Element Composition', ('Decomposes', ('IfcElement', 'Decomposes')), ('ElementName', ('IfcElement', 'Name')), ('RelatingObject', ('IfcRelAggregates', 'RelatingObject'))):
 concept_type.SIMPLE_UNARY,
 ('Axis 3D Geometry', ('Identifier', ('IfcShapeRepresentation', 'RepresentationIdentifier')), ('Items', ('IfcShapeRepresentation', 'Items')), ('Type', ('IfcShapeRepresentation', 'RepresentationType'))):

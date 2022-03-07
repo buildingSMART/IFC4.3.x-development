@@ -440,7 +440,7 @@ class xmi_document:
                 if set_stereotype == "PSET" or set_stereotype == "QSET":
                     
                     try:
-                        concept_to_use = ["PropertySetsforObjects", "PropertySetsforContexts", "QuantitySets", "PropertySetsforMaterials", "PropertySetsforProfiles"]
+                        concept_to_use = ["PropertySetsforObjects", "PropertySetsforContexts", "QuantitySets", "PropertySetsforMaterials", "PropertySetsforProfiles", "PropertySetsforPerformance"]
                         refs = sum((self.concepts[ctu].get(c.id or c.idref, []) for ctu in concept_to_use), [])
                     except ValueError as e:
                         print("WARNING:", c.name, "has no associated class", file=sys.stderr)

@@ -70,7 +70,7 @@ Supported shape representations of <span class="self-ref">IfcAlignment</span> ar
 
 * _IfcGradientCurve_ as a 3D horizontal and vertical alignment (represented by their alignment segments)
 * _IfcCompositeCurve_ as a 2D horizontal alignment (represented by its horizontal alignment segments) without a vertical alignment
-* _IfcOffsetCurveByDistances_ as a 2D or 3D curve defined relative to an _IfcAlignmentCurve_ or another _IfcOffsetCurveByDistances_
+* _IfcOffsetCurveByDistances_ as a 2D or 3D curve defined relative to an _IfcGradientCurve_ or another _IfcOffsetCurveByDistances_
 * _IfcSegmentedReferenceCurve_ as a 3D curve defined relative to an _IfcGradientCurve_ to incorporate the application of cant
 * _IfcPolyline_ or _IfcIndexedPolyCurve_ as a 3D alignment by a 3D polyline representation (such as coming from a survey)
 * _IfcPolyline_ or _IfcIndexedPolyCurve_ as a 2D horizontal alignment by a 2D polyline representation (such as in very early planning phases or as a map representation)

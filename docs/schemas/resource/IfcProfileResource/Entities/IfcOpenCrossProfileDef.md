@@ -21,7 +21,6 @@ The slope measure.
 ### OffsetPoint
 Optional Cartesian point to nominate the profile curve start. The provided slopes and widths emerge from this point. If no value is given, the profile initiates at the alignment intersection with the profile plane.
 
-
 ## Formal Propositions
 
 ### CorrectProfileType

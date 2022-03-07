@@ -15,4 +15,4 @@ The _IfcCartesianPointList3D_ defines an ordered collection of three-dimentional
 Two-dimensional list of Cartesian points provided by three coordinates.
 
 ### TagList
-List of tags corresponding to each point that may be used to identify a basis curve according to the Tag attribute at _IfcOffsetCurveByDistances_ or _IfcAlignmentCurve_.
+List of tags corresponding to each point that may be used to identify a basis curve according to the Tag attribute at _IfcOffsetCurveByDistances_.

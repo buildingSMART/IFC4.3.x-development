@@ -15,4 +15,4 @@ The _IfcCartesianPointList2D_ defines an ordered collection of two-dimentional C
 Two-dimensional list of Cartesian points provided by two coordinates.
 
 ### TagList
-List of tags corresponding to each point that may be used to identify a basis curve according to the Tag attribute at _IfcOffsetCurveByDistances_ or _IfcAlignmentCurve_.
+List of tags corresponding to each point that may be used to identify a basis curve according to the Tag attribute at _IfcOffsetCurveByDistances_.  Also used to identify  _IfcSectionedSolidHorizontal_ or _IfcSectionedSurface_ shape string lines ("guide curves") when used within an _IfcProfileDef_ curve of type _IfcIndexedPolyCurve_.

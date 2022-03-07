@@ -24,7 +24,7 @@ Either there is no electric appliance type object associated, i.e. the _IsTypedB
 
 ## Concepts
 
-### Material Constituent Set
+### Material Set
 
 
 

@@ -30,7 +30,7 @@ Either there is no electric generator type object associated, i.e. the _IsTypedB
 
 Engine-Generator sets may optionally include an engine to indicate specific detail.
 
-### Material Constituent Set
+### Material Set
 
 
 

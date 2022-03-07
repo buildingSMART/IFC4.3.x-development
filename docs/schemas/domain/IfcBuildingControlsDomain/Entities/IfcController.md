@@ -34,7 +34,7 @@ Figure 1 illustrates controller composition use.
 
 May contain IfcController components. Programmable Logic Controllers may be decomposed into logical elements for values and operations.
 
-### Material Constituent Set
+### Material Set
 
 
 

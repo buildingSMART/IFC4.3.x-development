@@ -22,7 +22,7 @@ Either there is no air terminal type object associated, i.e. the _IsTypedBy_ inv
 
 ## Concepts
 
-### Material Constituent Set
+### Material Set
 
 
 

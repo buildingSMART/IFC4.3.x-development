@@ -24,7 +24,7 @@ Either there is no alarm type object associated, i.e. the _IsTypedBy_ inverse re
 
 ## Concepts
 
-### Material Constituent Set
+### Material Set
 
 
 

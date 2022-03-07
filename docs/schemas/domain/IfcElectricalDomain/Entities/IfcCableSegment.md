@@ -36,7 +36,7 @@ Cable segments may be aggregated into cable cores.
 
 Cable cores may be aggregated into cable conductors.
 
-### Material Profile Set Usage
+### Material Set
 
 
 

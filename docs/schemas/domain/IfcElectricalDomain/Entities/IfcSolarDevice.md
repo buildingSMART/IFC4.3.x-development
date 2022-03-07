@@ -21,7 +21,7 @@ A solar device converts solar radiation into other energy such as electric curre
 
 ## Concepts
 
-### Material Constituent Set
+### Material Set
 
 
 

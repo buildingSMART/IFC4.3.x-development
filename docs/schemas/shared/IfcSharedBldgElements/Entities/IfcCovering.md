@@ -93,9 +93,11 @@ Figure 228 — Covering body circular
 > along the plane of the base surface using the Depth
 > parameter of the IfcSurfaceOfLinearExtrusion.
 
-### Material Layer Set Usage
+### Material Set
 
 Coverings for surfaces (CEILING, FLOORING, CLADDING, CEILING, ROOFING) may have materials defined according to layers.
+
+Coverings for edges (MOLDING, SKIRTINGBOARD) may have materials defined according to profiles.
 
 #### Front
 
@@ -108,10 +110,6 @@ The solid material of layer-based coverings such as drywall gypsum.
 #### Back
 
 Optional back-facing material of layer-based coverings such as drywall paper.
-
-### Material Profile Set Usage
-
-Coverings for edges (MOLDING, SKIRTINGBOARD) may have materials defined according to profiles.
 
 #### Trim
 

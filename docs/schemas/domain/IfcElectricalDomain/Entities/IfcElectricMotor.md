@@ -22,7 +22,7 @@ Either there is no electric motor type object associated, i.e. the _IsTypedBy_ i
 
 ## Concepts
 
-### Material Constituent Set
+### Material Set
 
 
 

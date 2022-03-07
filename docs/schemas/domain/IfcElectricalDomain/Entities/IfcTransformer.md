@@ -24,7 +24,7 @@ Either there is no transformer type object associated, i.e. the _IsTypedBy_ inve
 
 ## Concepts
 
-### Material Constituent Set
+### Material Set
 
 
 

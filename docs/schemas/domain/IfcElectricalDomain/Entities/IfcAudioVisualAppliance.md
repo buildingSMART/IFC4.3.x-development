@@ -32,7 +32,7 @@ Either there is no audio visual appliance type object associated, i.e. the _IsTy
 
 May contain IfcAudioVisualAppliance components.
 
-### Material Constituent Set
+### Material Set
 
 
 

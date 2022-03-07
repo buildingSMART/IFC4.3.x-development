@@ -22,7 +22,7 @@ Either there is no damper type object associated, i.e. the _IsTypedBy_ inverse r
 
 ## Concepts
 
-### Material Constituent Set
+### Material Set
 
 
 

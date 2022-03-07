@@ -22,7 +22,7 @@ Either there is no cable carrier segment type object associated, i.e. the _IsTyp
 
 ## Concepts
 
-### Material Profile Set Usage
+### Material Set
 
 
 

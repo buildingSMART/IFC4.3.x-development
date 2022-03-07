@@ -22,7 +22,7 @@ Either there is no duct segment type object associated, i.e. the _IsTypedBy_ inv
 
 ## Concepts
 
-### Material Profile Set Usage
+### Material Set
 
 
 

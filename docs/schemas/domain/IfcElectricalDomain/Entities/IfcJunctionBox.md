@@ -47,7 +47,7 @@ Covering such as drywall applied to a wall or ceiling, for which the junction bo
 { .change-ifc4}
 > IFC4 ADD1 CHANGE  Junction boxes no longer have ports defined, but rely on element nesting for indicating containment of electrical devices.
 
-### Material Constituent Set
+### Material Set
 
 
 

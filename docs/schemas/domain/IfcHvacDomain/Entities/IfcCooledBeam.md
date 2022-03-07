@@ -22,7 +22,7 @@ Either there is no cooled beam type object associated, i.e. the _IsTypedBy_ inve
 
 ## Concepts
 
-### Material Constituent Set
+### Material Set
 
 
 

@@ -90,7 +90,7 @@ Table 228 — Mappings of openings to local standards
 
 > NOTE  The OverallWidth and OverallHeight parameters are for informational purpose only.
 
-### Material Constituent Set
+### Material Set
 
 #### Lining
 

@@ -22,7 +22,7 @@ Either there is no cable carrier fitting type object associated, i.e. the _IsTyp
 
 ## Concepts
 
-### Material Constituent Set
+### Material Set
 
 
 

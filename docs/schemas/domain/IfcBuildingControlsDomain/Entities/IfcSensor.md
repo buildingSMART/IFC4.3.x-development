@@ -30,7 +30,7 @@ Either there is no sensor type object associated, i.e. the _IsTypedBy_ inverse r
 
 Sensors may be connected to a flow element for which an aspect of the fluid or flow is measured.
 
-### Material Constituent Set
+### Material Set
 
 
 

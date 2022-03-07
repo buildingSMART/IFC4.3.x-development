@@ -22,7 +22,7 @@ Either there is no humidifier type object associated, i.e. the _IsTypedBy_ inver
 
 ## Concepts
 
-### Material Constituent Set
+### Material Set
 
 
 

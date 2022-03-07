@@ -27,7 +27,7 @@ Either there is no actuator type object associated, i.e. the _IsTypedBy_ inverse
 
 Indicates a connected valve, damper, or switch controlled by the actuator.
 
-### Material Constituent Set
+### Material Set
 
 
 

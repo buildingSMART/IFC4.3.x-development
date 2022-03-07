@@ -24,7 +24,7 @@ Either there is no electric distribution board type object associated, i.e. the 
 
 ## Concepts
 
-### Material Constituent Set
+### Material Set
 
 
 

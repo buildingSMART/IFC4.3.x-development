@@ -22,7 +22,7 @@ Either there is no condenser type object associated, i.e. the _IsTypedBy_ invers
 
 ## Concepts
 
-### Material Constituent Set
+### Material Set
 
 
 

@@ -22,7 +22,7 @@ Either there is no duct silencer type object associated, i.e. the _IsTypedBy_ in
 
 ## Concepts
 
-### Material Constituent Set
+### Material Set
 
 
 

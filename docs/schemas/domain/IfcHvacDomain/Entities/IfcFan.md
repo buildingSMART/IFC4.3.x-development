@@ -22,7 +22,7 @@ Either there is no fan type object associated, i.e. the _IsTypedBy_ inverse rela
 
 ## Concepts
 
-### Material Constituent Set
+### Material Set
 
 
 

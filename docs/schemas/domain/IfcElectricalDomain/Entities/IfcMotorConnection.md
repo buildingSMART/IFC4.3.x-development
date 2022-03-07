@@ -22,7 +22,7 @@ Either there is no motor connection type object associated, i.e. the _IsTypedBy_
 
 ## Concepts
 
-### Material Constituent Set
+### Material Set
 
 
 

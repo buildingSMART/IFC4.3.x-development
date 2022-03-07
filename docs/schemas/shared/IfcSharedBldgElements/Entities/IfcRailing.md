@@ -23,9 +23,7 @@ Either there is no railing type object associated, i.e. the _IsTypedBy_ inverse 
 
 
 
-### Material Constituent Set
-
-The material of the IfcRailing is defined by the IfcMaterialConstituent or as fallback by IfcMaterial, and it is attached either directly or at the IfcRailingType.
+### Material Set
 
 ### Object Typing
 

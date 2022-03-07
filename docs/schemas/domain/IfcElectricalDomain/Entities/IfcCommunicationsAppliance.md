@@ -32,7 +32,7 @@ Either there is no communications appliance type object associated, i.e. the _Is
 
 Computers may be aggregated into audio-visual components such as displays, cameras, speakers, or microphones.
 
-### Material Constituent Set
+### Material Set
 
 
 

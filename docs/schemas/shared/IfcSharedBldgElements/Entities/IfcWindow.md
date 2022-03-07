@@ -75,7 +75,7 @@ Either there is no door type object associated, i.e. the _IsTypedBy_ inverse rel
 
 ## Concepts
 
-### Material Constituent Set
+### Material Set
 
 #### Lining
 

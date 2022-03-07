@@ -22,7 +22,7 @@ Either there is no cable fitting type object associated, i.e. the _IsTypedBy_ in
 
 ## Concepts
 
-### Material Layer Set Usage
+### Material Set
 
 
 

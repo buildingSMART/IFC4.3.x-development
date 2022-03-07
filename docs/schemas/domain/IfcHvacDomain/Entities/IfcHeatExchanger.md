@@ -24,7 +24,7 @@ Either there is no heat exchanger type object associated, i.e. the _IsTypedBy_ i
 
 ## Concepts
 
-### Material Constituent Set
+### Material Set
 
 
 

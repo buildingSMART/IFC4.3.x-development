@@ -22,8 +22,15 @@ Either there is no vibration isolator type object associated, i.e. the _IsTypedB
 
 ## Concepts
 
-### Material
+### Material Set
 
+#### Casing
+
+Material from which the casing is constructed.
+
+#### Damping
+
+Material from which the damping element of the vibration isolator is constructed.
 
 ### Object Typing
 

@@ -22,7 +22,7 @@ Either there is no pipe segment type object associated, i.e. the _IsTypedBy_ inv
 
 ## Concepts
 
-### Material Profile Set Usage
+### Material Set
 
 
 

@@ -24,7 +24,7 @@ Either there is no pipe fitting type object associated, i.e. the _IsTypedBy_ inv
 
 ## Concepts
 
-### Material Layer Set Usage
+### Material Set
 
 
 

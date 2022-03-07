@@ -28,7 +28,7 @@ Occurrences of furniture that are built in (where the property _Pset_FurnitureTy
 
 Modular furniture may be aggregated into components.
 
-### Material Constituent Set
+### Material Set
 
 
 

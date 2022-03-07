@@ -30,7 +30,7 @@ Either there is no chiller type object associated, i.e. the _IsTypedBy_ inverse 
 
 Chillers may aggregate distribution flow elements forming a refrigeration cycle (compressor, condenser, valve, evaporator), as well as control elements.
 
-### Material Constituent Set
+### Material Set
 
 
 

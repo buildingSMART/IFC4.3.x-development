@@ -22,7 +22,7 @@ Either there is no air terminal box type object associated, i.e. the _IsTypedBy_
 
 ## Concepts
 
-### Material Constituent Set
+### Material Set
 
 
 

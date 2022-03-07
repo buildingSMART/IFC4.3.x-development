@@ -30,7 +30,7 @@ Either there is no unitary equipment type object associated, i.e. the _IsTypedBy
 
 Unitary equipment (air handlers in particular) may elaborate contained elements such as dampers, fans, coils, sensors, actuators, and controllers. Such breakdown provides access to component information and tracking of performance history for embedded elements.
 
-### Material Constituent Set
+### Material Set
 
 
 

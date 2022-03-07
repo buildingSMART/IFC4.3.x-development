@@ -24,7 +24,7 @@ Either there is no protective device type object associated, i.e. the _IsTypedBy
 
 ## Concepts
 
-### Material Constituent Set
+### Material Set
 
 
 

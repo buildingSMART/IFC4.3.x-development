@@ -26,7 +26,7 @@ Either there is no light fixture type object associated, i.e. the _IsTypedBy_ in
 
 This represents the light emission of the item having _IfcShapeRepresentation.RepresentationType_ of 'LightSource' and containing one or more IfcLightSource subtypes.
 
-### Material Constituent Set
+### Material Set
 
 
 

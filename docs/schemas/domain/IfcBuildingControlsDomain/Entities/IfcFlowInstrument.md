@@ -24,7 +24,7 @@ Either there is no flow instrument type object associated, i.e. the _IsTypedBy_ 
 
 ## Concepts
 
-### Material Constituent Set
+### Material Set
 
 
 

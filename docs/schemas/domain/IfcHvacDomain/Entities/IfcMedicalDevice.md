@@ -23,7 +23,7 @@ Outlets for medical gasses should use _IfcValve_ with PredefinedType equal to GA
 
 ## Concepts
 
-### Material Constituent Set
+### Material Set
 
 
 

@@ -1799,6 +1799,16 @@ def annex_a():
     return render_template("annex-a.html", base=base, is_iso=X.is_iso, navigation=get_navigation())
 
 
+@app.route(make_url("annex-a-express.html"))
+def annex_a_express():
+    return render_template("annex-a-express.html", base=base, is_iso=X.is_iso, navigation=get_navigation(), express=open("IFC.exp").read())
+
+
+@app.route(make_url("annex-a-psd.zip"))
+def annex_a_psd():
+    return send_file("psd.zip")
+
+
 def annotate_hierarchy(data=None, start=1, number_path=None):
     level_2_headings = ("Schema Definition", "Types", "Entities", "Property Sets", "Functions", "Rules")
 

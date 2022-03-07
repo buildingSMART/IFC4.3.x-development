@@ -22,7 +22,7 @@ The _IfcFontWeight_ type defines the weight of the font. Values are:
 { .extDef}
 > The following two examples illustrate the process. Assume four weights in the "Example1" family, from lightest to darkest: _Regular, Medium, Bold, Heavy._ And assume six weights in the "Example2" family: _Book, Medium, Bold, Heavy, Black, ExtraBlack._ Note how in the second example it has been decided _not_ to assign "Example2 ExtraBlack" to anything. <pre>Available faces       | Assignments   | Filling the holes<br>----------------------+---------------+-------------------<br>"Example1 Regular"    | 400           | 100, 200, 300<br>"Example1 Medium"     | 500           |<br>"Example1 Bold"       | 700           | 600<br>"Example1 Heavy"      | 800           | 900<br></pre><pre>Available faces       | Assignments   | Filling the holes<br>----------------------+---------------+-------------------<br>"Example2 Book"       | 400           | 100, 200, 300<br>"Example2 Medium"     | 500           |<br>"Example2 Bold"       | 700           | 600 <br>"Example2 Heavy"      | 800           |<br>"Example2 Black"      | 900           |<br>"Example2 ExtraBlack" | (none)        |<br></pre>
 
-> NOTE  Type adopted from **font-weight** defined in [CSS-1](../../../bibliography.htm#CSS1).
+> NOTE  Type adopted from **font-weight** defined in [CSS-1](../content/bibliography.htm#CSS1).
 
 > HISTORY  New type in IFC2x2 Add2.
 

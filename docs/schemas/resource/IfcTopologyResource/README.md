@@ -3,7 +3,7 @@ IfcTopologyResource
 
 The schema _IfcTopologyResource_ defines the resources used for topological representations. The primary application of this resource is its use in the Boundary representation of the shape or geometric form of a product model.
 
-> NOTE  The definitions of this resource of the IFC model have been taken from [ISO 10303-42](../../bibliography.htm#iso-10303-42){ .int-ref}. The IfcTopologyResource refers to the clause 5, "Topology" of the standard. The reference is ISO/IS 10303-42:1994, pp. 122. The improved definitions of the second edition, ISO/DIS 10303-42:1999 have been used, when applicable.
+> NOTE  The definitions of this resource of the IFC model have been taken from [ISO 10303-42](../content/bibliography.htm#iso-10303-42){ .int-ref}. The IfcTopologyResource refers to the clause 5, "Topology" of the standard. The reference is ISO/IS 10303-42:1994, pp. 122. The improved definitions of the second edition, ISO/DIS 10303-42:1999 have been used, when applicable.
 
 The definitions taken from ISO/IS 10303-42:1994 have undergone an adaptation process, characterized by:
 

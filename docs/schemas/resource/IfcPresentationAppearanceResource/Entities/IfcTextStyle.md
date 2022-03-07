@@ -10,7 +10,7 @@ An _IfcTextStyle_ is instantiated with:
 
 An _IfcTextStyle_ is assigned to _IfcTextLiteral_ through the _IfcStyledItem_ entity.
 
-> NOTE  Entity adopted from font properties (font-family, font-style, font-variant, font-weight, font-size), Color and background properties (color, background-color) and text properties (word-spacing, letter-spacing, text-decoration, text-transform, text-align, text-indent, line-height) defined in [CSS-1](../../../bibliography.htm#CSS1).
+> NOTE  Entity adopted from font properties (font-family, font-style, font-variant, font-weight, font-size), Color and background properties (color, background-color) and text properties (word-spacing, letter-spacing, text-decoration, text-transform, text-align, text-indent, line-height) defined in [CSS-1](../content/bibliography.htm#CSS1).
 
 > HISTORY  New entity in IFC2x2.
 

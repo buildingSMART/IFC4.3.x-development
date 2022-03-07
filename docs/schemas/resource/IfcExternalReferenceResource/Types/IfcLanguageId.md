@@ -8,6 +8,6 @@ The _IfcLanguageId_ identifies the language in which a natural language text is 
 
 Type: _IfcIdentifier_
 
-> NOTE  See [RFC 5646](../../../bibliography.htm#RFC-5646) for definition of language tag.
+> NOTE  See [RFC 5646](../content/bibliography.htm#RFC-5646) for definition of language tag.
 
 > HISTORY  New defined datatype in IFC4.

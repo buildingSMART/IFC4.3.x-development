@@ -118,8 +118,12 @@
                                 {% if change.is_addition %}<i data-feather="plus-square"></i>{% endif %}
                                 {% if change.is_deletion %}<i data-feather="x-square"></i>{% endif %}
                                 {% if change.is_modification %}<i data-feather="edit"></i>{% endif %}
+                                {% if not change.what_changed and not change.description and change.is_addition %}
+                                New resource
+                                {% else %}
                                 {{ change.what_changed }},
                                 {{ change.description }}
+                                {% endif %}
                             </small>
                         </li>
                         {% endfor %}

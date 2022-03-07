@@ -12,7 +12,7 @@
 
 
 ### OTHER
-required category not on scale
+Value is not listed
 
 ### NOTKNOWN
 Value is unkown

@@ -231,6 +231,10 @@ if __name__ == "__main__":
     
     psets = {item.id: item for item in definitions if item.type == "PSET"}
     
+    # now that we lookup psets from xmi_document we should take care of only processing a pset once
+    # even if it is listed multiple times in the association table.
+    psets_processed = set()
+    
     # explore nested dict as 3-tuples
     for view_name, xmi_concept, pairs in [(k1, k2, v) for k1, d2 in xmi_doc.concept_associations.items() for k2, v in d2.items()]:
         if concept_interpretation.get(xmi_concept) in (
@@ -243,9 +247,7 @@ if __name__ == "__main__":
         ):
             bindings = list(parse_bindings(xmi_concept, all_templates=all_templates, to_xmi=True, definitions_by_name=definitions_by_name))
             get_binding = make_get_binding(bindings)
-            
-            # breakpoint()
-            
+
             for p in pairs:
                 elems = list(filter(is_no_concept_node, map(xmi_doc.xmi.by_id.__getitem__, p)))
                 
@@ -259,7 +261,12 @@ if __name__ == "__main__":
                     assert len(pset_matches) == 1
                     pset_id = list(pset_matches)[0]
                     
-                    pset = psets[pset_id]
+                    if pset_id in psets_processed:
+                        continue
+                        
+                    psets_processed.add(pset_id)
+                    
+                    pset = psets[pset_id]                    
                     
                     for x in (pset.meta.get("refs") or []):                    
                         predefined_type_label = None

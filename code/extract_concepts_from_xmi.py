@@ -229,6 +229,8 @@ if __name__ == "__main__":
 
     result = defaultdict(lambda: defaultdict(list))
     
+    psets = {item.id: item for item in definitions if item.type == "PSET"}
+    
     # explore nested dict as 3-tuples
     for view_name, xmi_concept, pairs in [(k1, k2, v) for k1, d2 in xmi_doc.concept_associations.items() for k2, v in d2.items()]:
         if concept_interpretation.get(xmi_concept) in (
@@ -242,8 +244,54 @@ if __name__ == "__main__":
             bindings = list(parse_bindings(xmi_concept, all_templates=all_templates, to_xmi=True, definitions_by_name=definitions_by_name))
             get_binding = make_get_binding(bindings)
             
+            # breakpoint()
+            
             for p in pairs:
                 elems = list(filter(is_no_concept_node, map(xmi_doc.xmi.by_id.__getitem__, p)))
+                
+                pset_matches = set(e.id for e in elems) & psets.keys()
+                if pset_matches:
+                    # For PSETs we don't rely on the actual applicability table, because the pset
+                    # association is augmented/modified in xmi_document based on the template type
+                    
+                    from to_pset import get_parent_of_pt
+                    
+                    assert len(pset_matches) == 1
+                    pset_id = list(pset_matches)[0]
+                    
+                    pset = psets[pset_id]
+                    
+                    for x in (pset.meta.get("refs") or []):                    
+                        predefined_type_label = None
+                        if isinstance(x, tuple):
+                            x, predefined_type_label = x
+                        
+                        if "." in xmi_doc.xmi.by_id[x].name:
+                            x = [c for c in definitions_by_name[xmi_doc.xmi.by_id[x].name.split(".")[0]] if c.name == xmi_doc.xmi.by_id[x].name.split(".")[1]][0]
+                        else:
+                            x = definitions_by_name[xmi_doc.xmi.by_id[x].name]
+                        
+                        D = {}
+                        
+                        if not (x.type == "ENTITY" or (x.parent and x.parent.type == "ENUM")):
+                            breakpoint()
+                            
+                        entity = x.name
+                        if x.parent and get_parent_of_pt(xmi_doc, x.parent.node):
+                            entity = get_parent_of_pt(xmi_doc, x.parent.node)
+                            predefined_type_label = x.name
+                            
+                        D["ApplicableEntity"] = entity
+                            
+                        if predefined_type_label:
+                            assert "." not in predefined_type_label
+                            D["PredefinedType"] = predefined_type_label
+                            
+                        D["PsetName"] = pset.name
+                        
+                        result[view_name][xmi_concept].append(D)
+                    
+                    continue
                 
                 appl = None
                 elem_binds = None
@@ -276,7 +324,9 @@ if __name__ == "__main__":
                 
                 binding_names = ["ApplicableEntity"] + [b[0] for b in bindings if b[0] in elem_binds]
                 # For concept-specific enum literals we need to remove the prefix
-                elem_names = [e.name.split(".")[-1] if e.parent.parent.parent.name == 'Views' else e.name for e in elems]
+                # if e.parent.parent.parent.name == 'Views' else e.name
+                # In fact let's just always remove the prefix, because it's sometimes also wrong
+                elem_names = [e.name.split(".")[-1] for e in elems]
                 d = {x: elem_names[elem_binds.index(x)] for x in binding_names}
                 
                 result[view_name][xmi_concept].append(d)

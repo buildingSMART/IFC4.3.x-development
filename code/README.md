@@ -374,6 +374,25 @@ The options used are:
 It takes a while to run, so for testing you may limit the recursion depth by
 setting `-l 2` or another low number.
 
+Afterwards, run the following procedures to change the directory structure and add the necessary mathjax plugins.
+
+~~~
+mkdir -p localhost/lib
+mv cdn.jsdelivr.net cdnjs.cloudflare.com i.creativecommons.org polyfill.io raw.githubusercontent.com unpkg.com localhost/lib
+find . -type f \( -name '*.html' -o -name '*.htm' \) \
+    -exec sed s,../cdn.jsdelivr.net,lib/cdn.jsdelivr.net,g -i {} \; \
+    -exec sed s,../cdnjs.cloudflare.com,lib/cdnjs.cloudflare.com,g -i  {} \; \
+    -exec sed s,../i.creativecommons.org,lib/i.creativecommons.org,g -i  {} \; \
+    -exec sed s,../polyfill.io,lib/polyfill.io,g -i  {} \; \
+    -exec sed s,../raw.githubusercontent.com,lib/raw.githubusercontent.com,g -i  {} \; \
+    -exec sed s,../unpkg.com,lib/unpkg.com,g -i  {} \;
+mkdir -p localhost/lib/cdn.jsdelivr.net/npm/mathjax\@3/es5/output/svg/fonts
+cd localhost/lib/cdn.jsdelivr.net/npm/mathjax\@3/es5/output/
+wget https://cdn.jsdelivr.net/npm/mathjax\@3.2.0/es5/output/svg.js
+cd svg/fonts
+wget https://cdn.jsdelivr.net/npm/mathjax\@3.2.0/es5/output/svg/fonts/tex.js
+~~~
+
 ## Deployment
 
 Typically for hosting a production version of this website, you can choose to

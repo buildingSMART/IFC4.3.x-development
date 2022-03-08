@@ -11,15 +11,15 @@ This is **not** a formal release. Formal releases are available on [standards.bu
 
 ## Copyright 
 Copyright © 1996-2022 buildingSMART International Limited. Some rights reserved.Any technical documentation made available by buildingSMART International Limited is the copyrighted work of buildingSMART International Limited and is owned by buildingSMART International Limited. 
-The Industry Foundation Classes are published under Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0). Read the [full license text here](https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode).
+The Industry Foundation Classes are published under Creative Commons Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0). Read the [full license text here](https://creativecommons.org/licenses/by-nd/4.0/legalcode).
 For more information please refer to our [IP Policy](https://buildingsmart-1xbd3ajdayi.netdna-ssl.com/wp-content/uploads/2021/06/bSI-Intellectual-Property-Policy.pdf).
 
 ### No Warranty Notice	  	
 This material is delivered to you as is and buildingSMART International Limited makes no warranty of any kind with regard to it, including, but not limited to, the implied warranties as to its accuracy or fitness for a particular purpose. Any use of the technical documentation or the information contained therein is at the risk of the user. Documentation may include technical or other inaccuracies or typographical errors. buildingSMART International Limited shall not be liable for errors contained therein or for incidental consequential damages in connection with the furnishing, performance or use of the material. The information contained in this documentation is subject to change without notice.
-For more information please refer to our licencing terms: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode).
+For more information please refer to our licencing terms: [CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0/legalcode).
 
 ### Trademark Notice	  	
-buildingSMART®, Home of openBIM®, openBIM®, IFC™, and [the logos](https://app.box.com/s/9dn4xylxdbh10lrx52nbhf3frcprrcqm) are (registered) trademarks of buildingSMART            International Limited and should be given appropriate credits.
+buildingSMART®, Home of openBIM®, openBIM®, IFC™, and [the logos](https://app.box.com/s/9dn4xylxdbh10lrx52nbhf3frcprrcqm) are (registered) trademarks of buildingSMART International Limited and should be given appropriate credits.
 For more information please refer to our [Brand Policy](https://buildingsmart-1xbd3ajdayi.netdna-ssl.com/wp-content/uploads/2021/05/bSI_Brand_Policy_2021.pdf), [Brand Usage Guidelines](https://app.box.com/s/hoanziy6shn857yroe6rvfza6xygbs7y) [Logo Map](https://app.box.com/s/9dn4xylxdbh10lrx52nbhf3frcprrcqm).
 
 ### Copyright Exclusion Notice	  	

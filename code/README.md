@@ -384,7 +384,7 @@ digraph dot_neato {
 
 This is the resulting diagram.
 
-![Entity diagram](entity-diagram1.png)
+![Entity diagram](entity-diagram2.png)
 
 See an [example diagram on a live page](http://ifc43-docs.standards.buildingsmart.org/IFC/RELEASE/IFC4x3/HTML/lexical/IfcWorkPlan.htm).
 

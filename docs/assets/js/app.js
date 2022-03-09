@@ -284,15 +284,26 @@ function setupHighlightJS() {
     // HighlightJS does not support HTML inside highlighted code:
     // https://github.com/highlightjs/highlight.js/wiki/security
     // This hook selectively allows links.
-    const anchor_regex = /<a href="(.*?)">(\w+?)<\/a>/g;
-    const fakeanchor_regex = /{{(.*?):(\w+?)}}/g;
+    const link_regex = /<a href="(.*?)">(\w+?)<\/a>/g;
+    const anchor_regex = /#(\d+)/g;
+    const id_regex = /#(\d+)(\W*=)/g;
+    const fakelink_regex = /{{(.*?):(\w+?)}}/g;
+    const fakeanchor_regex = /\[\[anchor(\d+):anchor(\d+)\]\]/g;
+    const fakeid_regex = /\[\[id(\d+):id(\d+)\]\]/g;
     hljs.addPlugin({
         'before:highlightElement': ({ el, language }) => {
             let result = '';
-            el.innerHTML = el.innerHTML.replace(anchor_regex, '{{$1:$2}}');
+            el.innerHTML = el.innerHTML.replace(link_regex, '{{$1:$2}}');
+            if (language == "step21") {
+                el.innerHTML = el.innerHTML.replace(id_regex, '[[id$1:id$1]]$2');
+                el.innerHTML = el.innerHTML.replace(anchor_regex, '[[anchor$1:anchor$1]]');
+            }
+            console.log(language);
         },
         'after:highlightElement': ({ el, result }) => {
-            el.innerHTML = el.innerHTML.replace(fakeanchor_regex, '<a href="$1">$2</a>')
+            el.innerHTML = el.innerHTML.replace(fakelink_regex, '<a href="$1">$2</a>')
+            el.innerHTML = el.innerHTML.replace(fakeanchor_regex, '<a href="#$1">#$2</a>')
+            el.innerHTML = el.innerHTML.replace(fakeid_regex, '<a id="$1"></a><span class="hljs-symbol">#$2</span>')
         }
     });
     hljs.highlightAll();

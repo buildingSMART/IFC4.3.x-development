@@ -2075,7 +2075,7 @@ def sandcastle():
 # N: It may already be in a <a href="IfcSite">IfcSite</a>
 # N: Or reference an IfcSite.png arbitrarily.
 # N: It may be in the <title>IfcSite - IFC4.3.x Documentation</title>
-ifcre = re.compile(r"(?<!(=\"))(?<!(figures/))(Ifc|Pset_|Qto_|PEnum_)\w+(?!(\">|.ht|.png|.jp|.gif|\s*</a|\s*</h|.md| - IFC4.3))")
+ifcre = re.compile(r"(?<!(=\"))(?<!(figures/))(Ifc|IFC|Pset_|Qto_|PEnum_)\w+(?!(\">|.ht|.png|.jp|.gif|\s*</a|\s*</h|.md| - IFC4.3))")
 
 try:
     import os
@@ -2207,7 +2207,7 @@ def after(response):
 
         def decorate_link(m):
             w = m.group(0)
-            if w in R.entity_definitions or w in R.pset_definitions or w in R.type_values:
+            if w.upper() in [k.upper() for k in R.entity_definitions.keys()] or w in R.pset_definitions or w in R.type_values:
                 if redis:
                     try:
                         redis.lpush("references", json.dumps([w, "", request.path]))

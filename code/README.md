@@ -181,8 +181,8 @@ user may make. Notes shall be used sparingly. Good technical writing shall be
 clear and minimise the need for these caution notes.
 
 ```
-> NOTE IfcBeam shall not be used for the representation of a load-bearing beam
-> in a structural analysis model. This is done using a IfcStructuralMember
+> NOTE _IfcBeam_ shall not be used for the representation of a load-bearing beam
+> in a structural analysis model. This is done using a _IfcStructuralMember_
 > instead.
 ```
 
@@ -195,7 +195,9 @@ Examples should be short, use simple language, and use scenarios which may apply
 on real life projects that users can easily relate to.
 
 ```
-> EXAMPLE A spatial zone may be given a _Name_ of "1-003", typically a running number provided by default by the application. Then _LongName_ may then be "Office", with a _Description_ of "Corner office with habour view".
+> EXAMPLE A spatial zone may be given a _Name_ of "1-003", typically a running
+> number provided by default by the application. Then _LongName_ may then be
+> "Office", with a _Description_ of "Corner office with habour view".
 ```
 
 Examples which are longer should not use an example block. They should use a
@@ -289,17 +291,102 @@ illustrative  schema diagrams using a text-based notation. For this purpose
 Graphviz is used.  The Graphviz DOT definition language is automatically
 enriched with colour conventions derived from the IFC schema.
 
-TODO: show code and generated diagrams from it
+There are two types of diagrams: concept diagrams and entity diagrams.
 
-For example, the IfcWorkPlan instantiation diagram can be included and edited in
-the MD files and then be visible in the related HTML page.  Below is the
-Graphviz definition of this figure. The user's input overwrites the automatic
-settings. This can be verified with the IfcProject node on the HTML diagram,
-whose link pointing to Building Smart website replaces the link to the entity's
-HTML page.
+Concept diagrams are found in chapter 4. A concept diagram shows entities with
+all their direct and indirect attributes being referencing other entities. Here
+is an example:
 
-See an [example
-diagram](http://ifc43-docs.standards.buildingsmart.org/IFC/RELEASE/IFC4x3/HTML/lexical/IfcWorkPlan.htm).
+```
+concept {
+    IfcActor:IsActingUpon -> IfcRelAssignsToActor:RelatingActor
+    IfcRelAssignsToActor:RelatedObjects -> IfcControl:HasAssignments
+    IfcRelAssignsToActor:RelatedObjects[binding="Type"]
+}
+```
+
+This example produces the following diagram. Notice that the arrow direction is
+automatically determined for you. You create entities in order you prefer. If
+the concept is parameterised, you can create a "binding" annotation to highlight
+an attribute with a particular name that correlates to the concept usage table.
+
+![Concept diagram](concept-diagram.png)
+
+An entity diagram shows entities referencing other entities.
+
+```
+digraph dot_neato {
+    IfcWall [pos="0,0!"];
+    IfcRelVoidsElement [pos="200,0!"];
+    IfcOpeningElement [pos="400,0!"];
+
+    IfcRelAggregates [pos="0,-70!"];
+
+    IfcBuildingElementPart [pos="0,-140!"];
+    IfcRelVoidsElement2 [label="IfcRelVoidsElement", pos="200,-140!"];
+    IfcVoidingFeature [pos="400,-140!"];
+
+    IfcRelVoidsElement -> IfcWall [headlabel="RelatingBuildingElement", labelangle=90, labeldistance=3];
+    IfcRelVoidsElement -> IfcOpeningElement [headlabel="RelatedOpeningElement", labelangle=-90, labeldistance=3];
+    IfcRelAggregates -> IfcWall [label="RelatingObject"];
+    IfcRelAggregates -> IfcBuildingElementPart [label="RelatedObjects[1]"];
+    IfcRelVoidsElement2 -> IfcBuildingElementPart [headlabel="RelatingBuildingElement", labelangle=90, labeldistance=3];
+    IfcRelVoidsElement2 -> IfcVoidingFeature [headlabel="RelatedOpeningElement", labelangle=-90, labeldistance=3];
+}
+```
+
+This is the resulting diagram.
+
+![Entity diagram](entity-diagram1.png)
+
+For entity diagrams, they tend to be complex. As a result, it is preferred for
+manual coordinates to be specified for the nodes locations. Positions are
+specified using `pos="x,y!"` attributes. Nodes should be spaced in a grid-like
+manner to aid readability. Nodes should be spaced 200 units in the X direction
+apart from one another, and 70 units in the Y direction.
+
+Below is a more complex example showing nodes splitting in a tree-like manner.
+In this case, one child node can be offset 100 units in the X direction, and the
+other child node offset -100 units in the X direction.
+
+```
+digraph dot_neato {
+    IfcUnitAssignment [pos="0,0!"];
+    IfcDerivedUnit [label=<{IfcDerivedUnit | UnitType: LINEARVELOCITYUNIT<br />Name: mph}>, pos="0,-70!"];
+    IfcDerivedUnitElement_0 [label=<{IfcDerivedUnitElement | Exponent: 1}>, pos="-100,-140!"];
+    IfcDerivedUnitElement_1 [label=<{IfcDerivedUnitElement | Exponent: -1}>, pos="100,-140!"];
+
+    IfcConversionBasedUnit_0 [label=<{IfcConversionBasedUnit | UnitType: LENGTHUNIT<br />Name: mile}>, pos="-200,-210!"];
+    IfcDimensionalExponents_0 [label=<{IfcDimensionalExponents | LengthExponent: 1}>, pos="-300,-280!"];
+    IfcMeasureWithUnit_0 [label=<{IfcMeasureWithUnit | ValueComponent: 1609}>, pos="-100,-280!"];
+    IfcSIUnit_0 [label=<{IfcSIUnit | UnitType: LENGTHUNIT<br />Name: METRE}>, pos="-100,-350!"];
+
+    IfcConversionBasedUnit_1 [label=<{IfcConversionBasedUnit | UnitType: TIMEUNIT<br />Name: hour}>, pos="200,-210!"];
+    IfcDimensionalExponents_1 [label=<{IfcDimensionalExponents | TimeExponent: 1}>, pos="300,-280!"];
+    IfcMeasureWithUnit_1 [label=<{IfcMeasureWithUnit | ValueComponent: 3600}>, pos="100,-280!"];
+    IfcSIUnit_1 [label=<{IfcSIUnit | UnitType: TIMEUNIT<br />Name: SECOND}>, pos="100,-350!"];
+
+    IfcUnitAssignment -> IfcDerivedUnit [label="Units"];
+    IfcDerivedUnit -> IfcDerivedUnitElement_0 [headlabel="Elements[1]", labelangle=130, labeldistance=3];
+    IfcDerivedUnit -> IfcDerivedUnitElement_1 [headlabel="Elements[2]", labelangle=-130, labeldistance=3];
+
+    IfcDerivedUnitElement_0 -> IfcConversionBasedUnit_0 [headlabel="Unit", labelangle=130, labeldistance=3];
+    IfcConversionBasedUnit_0 -> IfcDimensionalExponents_0 [headlabel="Dimensions", labelangle=130, labeldistance=3];
+    IfcConversionBasedUnit_0 -> IfcMeasureWithUnit_0 [headlabel="ConversionFactor", labelangle=-130, labeldistance=3];
+    IfcMeasureWithUnit_0 -> IfcSIUnit_0 [headlabel="UnitComponent", labelangle=80, labeldistance=4];
+
+    IfcDerivedUnitElement_1 -> IfcConversionBasedUnit_1 [headlabel="Unit", labelangle=-130, labeldistance=3];
+    IfcConversionBasedUnit_1 -> IfcDimensionalExponents_1 [headlabel="Dimensions", labelangle=-130, labeldistance=3];
+    IfcConversionBasedUnit_1 -> IfcMeasureWithUnit_1 [headlabel="ConversionFactor", labelangle=130, labeldistance=3];
+    IfcMeasureWithUnit_1 -> IfcSIUnit_1 [headlabel="UnitComponent", labelangle=80, labeldistance=4];
+}
+```
+
+This is the resulting diagram.
+
+![Entity diagram](entity-diagram1.png)
+
+See an [example diagram on a live page](http://ifc43-docs.standards.buildingsmart.org/IFC/RELEASE/IFC4x3/HTML/lexical/IfcWorkPlan.htm).
 
 ## Dependencies
 

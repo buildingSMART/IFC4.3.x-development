@@ -9,7 +9,7 @@ Depending on the type of technology used by the library, different IfcLibraryRef
 Publisher | Technology | Identifier
 --- | --- | ---
 ASHRAE | BACnet | 32-bit decimal BACnetObjectIdentifier indicating type ID and instance ID (e.g.'12.15' for Digital Input #15).
-Brick Development Team | Brick | Full URI with no namespace (e.g. 'http://example.org/digitaltwin#AHU01')
+Brick Development Team | Brick | Full URI with no abbreviation (e.g. 'http://example.org/digitaltwin#AHU01', not 'digitaltwin:AHU01')
 IETF | IPv4 | 32-bit decimal address for an IPv4 network (e.g.'192.168.1.1').
 IETF | IPv6 | 128-bit hexadecimal address for an IPv6 network.
 IETF | MAC | 48-bit hexadecimal form of MAC address.

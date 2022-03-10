@@ -4,19 +4,18 @@ The Industry Foundation Classes specify a data schema and an exchange file forma
 The data schema is defined in a UML Class diagram, [available as XMI file](https://github.com/buildingSMART/IFC4.3.x-development/tree/master/schemas).
 Computer interpretable [schemas are being generated](https://github.com/buildingSMART/IFC4.3.x-output) as:
 
- * [EXPRESS data specification language](https://github.com/buildingSMART/IFC4.3.x-output/blob/master/IFC.exp), defined in ISO 10303-11,
- * XML Schema definition language (XSD) (under development),
- * RDF/OWL Schema  (under development),
- * JavaScript Object Notation Schema (under development),
- * JSON structured [taxonomy](https://github.com/buildingSMART/IFC4.3.x-output/blob/master/IFC.json) of entities, predefined types and properties.
-
+* [EXPRESS data specification language](https://github.com/buildingSMART/IFC4.3.x-output/blob/master/IFC.exp), defined in ISO 10303-11,
+* XML Schema definition language (XSD) (under development),
+* RDF/OWL Schema  (under development),
+* JavaScript Object Notation Schema (under development),
+* JSON structured [taxonomy](https://github.com/buildingSMART/IFC4.3.x-output/blob/master/IFC.json) of entities, predefined types and properties.
 
 The exchange file formats for exchanging and sharing data according to the conceptual schema are
 
- * Clear text encoding of the exchange structure, defined in ISO 10303-21,
- * Extensible Markup Language (XML), defined in XML Schema W3C Recommendation with IFC specific translations,
- * RDF/OWL, defined by W3C and the buildingSMART projects,
- * JSON JavaScript Object Notation, defined by the buildingSMART projects.
+* Clear text encoding of the exchange structure, defined in ISO 10303-21,
+* Extensible Markup Language (XML), defined in XML Schema W3C Recommendation with IFC specific translations,
+* RDF/OWL, defined by W3C and the buildingSMART projects,
+* JSON JavaScript Object Notation, defined by the buildingSMART projects.
 
 An overview of the file formats can be seen on [the technical website](https://technical.buildingsmart.org/standards/ifc/ifc-formats/),
 Alternative exchange file formats may be used if they conform to the data schemas.
@@ -67,6 +66,6 @@ The following are within the entire scope of this release of IFC:
 
 The following are outside the scope of this release of IFC:
 
- * exchange format definitions outside of the domain of construction and facility maintenance;
- * full project structure and component breakdown structures outside of building engineering, but providing a baseline for civil engineering to be extended in future releases;
- * behavioral aspects of components and other information items.
+* exchange format definitions outside of the domain of construction and facility maintenance;
+* full project structure and component breakdown structures outside of building engineering, but providing a baseline for civil engineering to be extended in future releases;
+* behavioral aspects of components and other information items.

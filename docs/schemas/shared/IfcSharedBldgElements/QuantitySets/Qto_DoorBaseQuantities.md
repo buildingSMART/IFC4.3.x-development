@@ -11,7 +11,7 @@ Total area of the outer lining of the door.
 
 ### Height
 
-Total outer heigth of the door lining. It should only be provided, if it is a rectangular door.
+Total outer height of the door lining. It should only be provided, if it is a rectangular door.
 
 ### Width
 

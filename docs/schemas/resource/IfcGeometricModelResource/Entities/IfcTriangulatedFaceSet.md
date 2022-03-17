@@ -2,7 +2,7 @@
 
 The _IfcTriangulatedFaceSet_ is a tessellated face set with all faces being bound by triangles. The faces are constructed by implicit polylines defined by three Cartesian points. Depending on the value of the inherited attribute _Closed_ the instance of _IfcTriangulatedFaceSet_ represents:
 
-* if TRUE, a boundary represention (or B-rep);
+* if TRUE, a boundary representation (or B-rep);
 * if FALSE, a face based surface representation.
 
 The coordinates of each point are provided by a one-based index into an ordered list of Cartesian points provided by the two-dimensional list _CoordIndex_, where
@@ -59,7 +59,7 @@ Informal Propositions:
 1. If _Closed_ = TRUE, the same topological constraints as imposed by an faceted boundary representation shall be safisfied. In particular:
     * each face shall be unique;
     * each edge shall be used by exactly two boundaries of faces;
-    * the topological normal at each point on the boundary of the triangulated face set shall point away from the mater ial of the solid.
+    * the topological normal at each point on the boundary of the triangulated face set shall point away from the material of the solid.
 
 ## Attributes
 

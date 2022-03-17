@@ -20,7 +20,7 @@ Swinging:
 ![](../../../../figures/ifcdoorpaneloperationenum-fig01.gif)
 
 ### DOUBLE_ACTING
-Doulbe acting:
+Double acting:
 ![](../../../../figures/ifcdoorpaneloperationenum-fig02.gif)
 
 ### SLIDING

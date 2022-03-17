@@ -7,11 +7,11 @@ Base quantities that are common to the definition of all occurrences of building
 
 ### GrossFloorArea
 
-Includes the area of construction elements within the building. May be provided in addition to the quantities of the spaces and the construction elements assigend to the building. In case of inconsistencies, the individual quantities of spaces and construction elements take precedence.
+Includes the area of construction elements within the building. May be provided in addition to the quantities of the spaces and the construction elements assigned to the building. In case of inconsistencies, the individual quantities of spaces and construction elements take precedence.
 
 ### GrossVolume
 
-Sum of all gross volumes of spaces enclosed. It includes the volumes of construction elements within the element. May be provided in addition to the quantities of the spaces and the construction elements assigend to the element. In case of inconsistencies, the individual quantities of spaces and construction elements take precedence.
+Sum of all gross volumes of spaces enclosed. It includes the volumes of construction elements within the element. May be provided in addition to the quantities of the spaces and the construction elements assigned to the element. In case of inconsistencies, the individual quantities of spaces and construction elements take precedence.
 
 ### Height
 
@@ -19,9 +19,9 @@ Standard gross height of this building, from the top surface of the construction
 
 ### NetFloorArea
 
-It excludes the area of construction elements within the building. May be provided in addition to the quantities of the spaces assigend to the building. In case of inconsistencies, the individual quantities of spaces take precedence.
+It excludes the area of construction elements within the building. May be provided in addition to the quantities of the spaces assigned to the building. In case of inconsistencies, the individual quantities of spaces take precedence.
 
 ### NetVolume
 
-Sum of all net volumes of spaces enclosed by the building. It excludes the volumes of construction elements within the building. May be provided in addition to the quantities of the spaces assigend to the building. In case of inconsistencies, the individual quantities of spaces take precedence.
+Sum of all net volumes of spaces enclosed by the building. It excludes the volumes of construction elements within the building. May be provided in addition to the quantities of the spaces assigned to the building. In case of inconsistencies, the individual quantities of spaces take precedence.
 

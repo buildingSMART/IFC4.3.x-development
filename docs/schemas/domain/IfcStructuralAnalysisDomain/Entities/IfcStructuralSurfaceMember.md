@@ -40,7 +40,7 @@ The material of direct instances IfcStructuralSurfaceMember (in contrast to inst
 
 The material is specified minimally by a name which corresponds with an agreed upon standardized structural material designation. An external reference to the source which specifies the material designation should be provided. Alternatively, structural material properties may be provided by means of IfcMaterialProperties.
 
-In the absense of material layer set usage, direct instances of IfcStructuralSurfaceMember are assumed to be located centrically relative to their reference surface. Their depth is provided in the attribute Thickness.
+In the absence of material layer set usage, direct instances of IfcStructuralSurfaceMember are assumed to be located centrically relative to their reference surface. Their depth is provided in the attribute Thickness.
 
 ### Reference Topology
 

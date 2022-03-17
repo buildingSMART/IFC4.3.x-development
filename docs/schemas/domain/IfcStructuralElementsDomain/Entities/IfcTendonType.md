@@ -14,7 +14,7 @@ It is used to define a tendon type specification indicating the specific product
 { .use-head}
 Material Use Definition
 
-An associated material denotes the steel grade, preferrably via material classification. A material constituent set or material profile set may be associated if the cable, bonding mortar or corrosion protection, and tendon sheeth are to be described together by the material association.
+An associated material denotes the steel grade, preferably via material classification. A material constituent set or material profile set may be associated if the cable, bonding mortar or corrosion protection, and tendon sheeth are to be described together by the material association.
 
 { .use-head}
 Geometry Use Definition

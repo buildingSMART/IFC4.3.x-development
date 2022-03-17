@@ -6,7 +6,7 @@ The rotation axis is defined by:
 
 * Start point: _SELF\IfcSweptAreaSolid.Position.Location_
 * Direction: _SELF\IfcRevolvedAreaSolid.Axis_
-* Rotation axis: _SELF\IfcRevolvedAreaSolid.AxisLine_, created from start point and direction by appying a 1 unit magnitude.
+* Rotation axis: _SELF\IfcRevolvedAreaSolid.AxisLine_, created from start point and direction by applying a 1 unit magnitude.
 * Orientation: Positive angles are applied clockwise when looking into the positive direction of the rotation axis.
 
 The start cross section is defined by _SELF\IfcSweptAreaSolid.SweptArea_:

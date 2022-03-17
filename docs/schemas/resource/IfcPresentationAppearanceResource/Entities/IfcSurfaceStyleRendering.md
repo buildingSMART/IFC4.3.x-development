@@ -21,7 +21,7 @@ In a PHONG ReflectanceMethod, the DiffuseColour correlates to the diffuseColor a
 
 ### TransmissionColour
 The transmissive part of the reflectance equation can be given as either a colour or a scalar factor. It only applies to materials which Transparency field is greater than zero.
-The transmissive colour field specifies the colour that passes through a transparant material (like the colour that shines through a glass).
+The transmissive colour field specifies the colour that passes through a transparent material (like the colour that shines through a glass).
 The transmissive factor defines the transmissive part, the transmissive colour is then defined by surface colour \* transmissive factor.
 
 > IFC4.3.0.0 DEPRECATION This attribute is deprecated and shall no longer be used.

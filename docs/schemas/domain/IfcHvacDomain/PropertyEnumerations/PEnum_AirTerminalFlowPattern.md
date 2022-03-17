@@ -17,7 +17,7 @@
 ### SWIRL
 
 
-### DISPLACMENT
+### DISPLACEMENT
 
 
 ### COMPACTJET

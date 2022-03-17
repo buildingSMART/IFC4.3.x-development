@@ -20,7 +20,7 @@ The resulting body of the swept solid is not repositioned if the inherited _Posi
 
 Figure 1 &mdash; Surface curve wept area solid parameter
 
-> EXAMPLE Figure 1 illustrates an example using a cylindrical reference surface and a p-curve for sweeping a rectangle. The <em>Postion</em> is not provided and therefore it does not reposition the resulting swept solid. Figure 2 shows the expected result.
+> EXAMPLE Figure 1 illustrates an example using a cylindrical reference surface and a p-curve for sweeping a rectangle. The <em>Position</em> is not provided and therefore it does not reposition the resulting swept solid. Figure 2 shows the expected result.
 
 > NOTE The start of the directrix lies at the origin of the object coordinate system, as shown in the illustration,<br>only by coincidence. The start of the directrix and thereby the start of the sweeping operation might be at any point within the object coordinate system and only depends on the position of the directrix.
 

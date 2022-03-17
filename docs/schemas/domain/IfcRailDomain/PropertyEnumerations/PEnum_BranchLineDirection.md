@@ -8,7 +8,7 @@ Diverging path to the left
 ### RIGHTDEVIATION
 Diverging path to the right
 
-### SYMETRIC
+### SYMMETRIC
 
 
 ### RIGHT_LEFTDEVIATION

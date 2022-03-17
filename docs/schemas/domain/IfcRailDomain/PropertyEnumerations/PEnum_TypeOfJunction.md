@@ -11,10 +11,10 @@ Enumeration of the different junctions used in railway track.
 
 
 ### WELDED_AND_INSERTABLE
-Welded and insertable to a continous welded rail.
+Welded and insertable to a continuous welded rail.
 
 ### WELDED_AND_NOT_INSERTABLE
-Welded and not insertable to a continous welded rail.
+Welded and not insertable to a continuous welded rail.
 
 ### OTHER
 required category not on scale

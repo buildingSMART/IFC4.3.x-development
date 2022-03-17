@@ -1,7 +1,7 @@
 Surface 3D Geometry
 ===================
 
-The _Surface 3D Geometry_ is the standard surfacic represenation for elements having a 'Surface' representation describing the inner or outer surface of the object, e.g. for defining thermal boundaries idealized at the middle plane of an element.
+The _Surface 3D Geometry_ is the standard surfacic representation for elements having a 'Surface' representation describing the inner or outer surface of the object, e.g. for defining thermal boundaries idealized at the middle plane of an element.
 
 The following attribute values for the _IfcShapeRepresentation_ holding this geometric representation shall be used:
 

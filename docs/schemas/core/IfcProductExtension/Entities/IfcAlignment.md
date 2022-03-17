@@ -2,7 +2,7 @@
 
 For the purposes of IFC the English term "alignment" defines three essentially separate but closely interconnected concepts.
 
-1. defintion of a reference system for linear positioning
+1. definition of a reference system for linear positioning
 2. safeguarding and optimization of the movement of vehicles - kinematic perspective
 3. geometric construction of roads, railway tracks or other linear infrastructure
 

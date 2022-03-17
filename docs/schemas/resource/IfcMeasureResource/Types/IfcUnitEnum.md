@@ -10,7 +10,7 @@ _IfcUnitEnum_ is an enumeration type for allowed unit types of _IfcNamedUnit_.
 Absorbed dose unit
 
 ### AMOUNTOFSUBSTANCEUNIT
-Amount of substace unit
+Amount of substance unit
 
 ### AREAUNIT
 Area unit

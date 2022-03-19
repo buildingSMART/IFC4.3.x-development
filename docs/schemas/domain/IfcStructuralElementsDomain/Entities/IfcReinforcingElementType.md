@@ -14,4 +14,4 @@ It is used to define a reinforcing element type specification indicating the spe
 { .use-head}
 Material Use Definition
 
-An associated material denotes the steel grade, preferrably using material classification.
+An associated material denotes the steel grade, preferably using material classification.

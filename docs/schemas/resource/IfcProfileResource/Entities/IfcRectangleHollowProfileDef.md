@@ -9,7 +9,7 @@ _IfcRectangleHollowProfileDef_ defines a section profile that provides the defin
 
 Figure 1 illustrates parameters of a rectangular or square hollow profile definition.
 
-![hollow rectange shape profile](../../../../figures/ifcrectanglehollowprofiledef.gif)
+![hollow rectangle shape profile](../../../../figures/ifcrectanglehollowprofiledef.gif)
 
 Figure 1 &mdash; Rectangle hollow profile
 

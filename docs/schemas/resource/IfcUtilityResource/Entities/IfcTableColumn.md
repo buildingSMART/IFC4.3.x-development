@@ -12,7 +12,7 @@ The use of _IfcTableColumn_ supersedes the _IsHeading_ flag associated with _Ifc
 The _Identifier_ identifies the column within the table. If provided, it must be unique within the table. Columns may be cross-referenced across multiple tables by sharing the same column identifier.
 
 ### Name
-The _Name_ is a human-readable caption for the table column. It is not necessarilly unique.
+The _Name_ is a human-readable caption for the table column. It is not necessarily unique.
 
 ### Description
 The _Description_ provides human-readable text describing the table column.

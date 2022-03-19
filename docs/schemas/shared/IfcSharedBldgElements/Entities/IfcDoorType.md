@@ -26,7 +26,7 @@ Occurrences of the _IfcDoorType_ within building models are represented by insta
 Type defining the general layout and operation of the door type in terms of the partitioning of panels and panel operations.
 
 ### ParameterTakesPrecedence
-The Boolean value reflects, whether the parameter given in the attached lining and panel properties exactly define the geometry (TRUE), or whether the attached style shape take precedence (FALSE). In the last case the parameter have only informative value. If not provided, no such information can be infered.
+The Boolean value reflects, whether the parameter given in the attached lining and panel properties exactly define the geometry (TRUE), or whether the attached style shape take precedence (FALSE). In the last case the parameter have only informative value. If not provided, no such information can be inferred.
 
 ### UserDefinedOperationType
 Designator for the user defined operation type, shall only be provided, if the value of _OperationType_ is set to USERDEFINED.

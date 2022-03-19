@@ -23,7 +23,7 @@ Specifies the location along the northing of the coordinate system of the target
 > NOTE  for right-handed Cartesian coordinate systems this would establish the location along the y axis
 
 ### OrthogonalHeight
-Orthogonal height relativ to the vertical datum specified.
+Orthogonal height relative to the vertical datum specified.
 > NOTE  for right-handed Cartesian coordinate systems this would establish the location along the z axis
 
 ### XAxisAbscissa

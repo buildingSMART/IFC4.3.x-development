@@ -4,7 +4,7 @@ The _IfcTessellatedFaceSet_ is a boundary representation topological model limit
 
 > NOTE  The compact representation has been chosen to enable small data sets despite potentially large sets of faces, edges and vertices needed to represent tessellations of analyticals surfaces and solids, and despite large sets of colour and texture information to annotate the tessellated faces.
 
-The _IfcTessellatedFaceSet_ is an abstract supertype of tesselated face sets each imposing specific constraints on face generation for tessellation, such as triangulation (with or without strip and fans), or quadrilaterals, or polygonal faces (with or without inner loops).
+The _IfcTessellatedFaceSet_ is an abstract supertype of tessellated face sets each imposing specific constraints on face generation for tessellation, such as triangulation (with or without strip and fans), or quadrilaterals, or polygonal faces (with or without inner loops).
 
 > NOTE  Not all different constraints on face sets are included as specific subtypes in this release of the specification.
 

@@ -85,7 +85,7 @@ If Mode is omitted, DIFFUSE is assumed.
 > IFC4.3.0.0 CHANGE  Attribute has been repurposed to store the type of texture.
 
 ### TextureTransform
-The _TextureTransform_ defines a 2D transformation that is applied to the texture coordinates. It affects the way texture coordinates are applied to the surfaces of geometric representation itesm. The 2D transformation supports changes to the size, orientation, and position of textures on shapes. Mirroring is not allowed to be used in the _IfcCartesianTransformationOperator_
+The _TextureTransform_ defines a 2D transformation that is applied to the texture coordinates. It affects the way texture coordinates are applied to the surfaces of geometric representation items. The 2D transformation supports changes to the size, orientation, and position of textures on shapes. Mirroring is not allowed to be used in the _IfcCartesianTransformationOperator_
 
 ### Parameter
 > IFC4.3.0.0 DEPRECATION This attribute is deprecated and shall no longer be used.

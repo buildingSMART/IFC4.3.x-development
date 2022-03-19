@@ -5,7 +5,7 @@ The _IfcIndexedTriangleTextureMap_ provides the mapping of the 2-dimensional tex
 The _IfcIndexedTriangleTextureMap_ defines an index into an indexed list of texture coordinates. The _TexCoordIndex_ is a two-dimensional list, where
 
 * first dimension is the unbounded list of faces corresponding to the list of triangles defined by _CoordIndex_ at _IfcTriangulatedFaceSet_;
-* second dimension is the fixed list of three indices to texture vertices cooresponding to the fixed list of indices to vertices at _IfcTriangulatedFaceSet_
+* second dimension is the fixed list of three indices to texture vertices corresponding to the fixed list of indices to vertices at _IfcTriangulatedFaceSet_
 
 The _TexCoords_ defined at supertype _IfcIndexedTextureMap_ are a two-dimensional list of texture coordinates provided by two parameter values. Each index of the second dimension list of _TexCoordIndex_ points to a texture vertex in _TexCoords_.
 

@@ -44,7 +44,7 @@ As shown in Figure 5, if the _IfcRelSpaceBoundary_ is used to express a virtual 
 
 ![IfcRelSpaceBoundary_virtual (35K)](../../../../figures/ifcrelspaceboundary_virtual.png "Figure 5 &mdash; Space boundary of virtual element")
 
-As shown in Figure 6, if the _IfcRelSpaceBoundary_ is used to express a physical boundary between two spaces, the attribute _PhysicalOrVirtualBoundary_ has to be set to PHYSICAL. The attribute _RelatedBuildingElement_ has to be given and points to the element providing the space boundary. The attribute _ConnectionGeometry_ may be inserted, in this case it describes the physical space boundary geometically, or it may be omited, in that case it describes a physical space boundary logically.
+As shown in Figure 6, if the _IfcRelSpaceBoundary_ is used to express a physical boundary between two spaces, the attribute _PhysicalOrVirtualBoundary_ has to be set to PHYSICAL. The attribute _RelatedBuildingElement_ has to be given and points to the element providing the space boundary. The attribute _ConnectionGeometry_ may be inserted, in this case it describes the physical space boundary geometically, or it may be omitted, in that case it describes a physical space boundary logically.
 
 ![IfcRelSpaceBoundary_physical (35K)](../../../../figures/ifcrelspaceboundary_physical.png "Figure 6 &mdash; Space boundary of physical element")
 

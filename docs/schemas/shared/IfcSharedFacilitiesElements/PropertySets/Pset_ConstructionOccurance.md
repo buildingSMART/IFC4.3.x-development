@@ -1,3 +1,3 @@
-# Pset_ConstructionOccurance
+# Pset_ConstructionOccurence
 
-Property set for Construction Occurance.
+Property set for construction occurence.

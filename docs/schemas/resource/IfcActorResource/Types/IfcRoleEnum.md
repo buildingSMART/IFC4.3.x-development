@@ -13,7 +13,7 @@ This enumeration defines roles which may be played by an actor.
 Supplier
 
 ### MANUFACTURER
-Manmufacturer
+Manufacturer
 
 ### CONTRACTOR
 Contractor

@@ -267,6 +267,8 @@ class xmi_document:
         self.extract_associations()
         self.extract_associations(concepts=True)
         self.extract_order()
+        
+        self.should_translate_pset_types = True
                 
         # Assert that we indeed have all `included_packages` in the UML
         # packagenames_from_uml = set(map(operator.attrgetter('name'), self.xmi.by_tag_and_type["packagedElement"]["uml:Package"]))
@@ -463,7 +465,7 @@ class xmi_document:
                     is_type_driven_only = "typedrivenonly" in stereotype
                     is_type_driven_override = "typedrivenoverride" in stereotype
                     
-                    if is_type_driven_override or is_type_driven_only:
+                    if self.should_translate_pset_types and (is_type_driven_override or is_type_driven_only):
                         get_name = lambda id_: self.xmi.by_id[id_].name
                         ref_names = list(map(get_name, refs))
                         

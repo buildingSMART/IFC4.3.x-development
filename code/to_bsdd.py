@@ -19,6 +19,7 @@ except:
     exit()
 
 xmi_doc = xmi_document(fn)
+xmi_doc.should_translate_pset_types = False
 bfn = os.path.basename(fn)
 
 schema_name = xmi_doc.xmi.by_tag_and_type["packagedElement"]['uml:Package'][1].name.replace("exp", "").upper()
@@ -125,23 +126,23 @@ def generate_definitions():
     # same for entity attributes:
     entities = []
     
+    # predefined types are just normal enumerations
+    eumeratations = {}
+    
+    pset_counts_by_stereo = defaultdict(int)
+    
     for item in xmi_doc:
     
         item_by_id[item.id] = item
+
+        if item.type == "ENUM":
+            eumeratations[item.name] = item
         
-        if item.type == "ENUM" and item.stereotype == "PREDEFINED_TYPE":
-        
-            p = get_parent_of_pt(item.node)
-            
-            if p:
-                         
-                for c in item.children:            
-                    by_id[c.id] = di = classifications[p + "." + c.name]
-                    di["Parent"] = p
-                    di['Description'] = format(strip_html(c.markdown))
-                
         elif item.type == "PSET":
-            psets.append(item)        
+            psets.append(item)
+            
+            stereo = (item.node/"properties")[0].stereotype
+            pset_counts_by_stereo[stereo] += 1
                     
         elif item.type == "ENTITY":
             by_id[item.id] = di = classifications[item.name]
@@ -152,15 +153,33 @@ def generate_definitions():
             di['Description'] = format(strip_html(item.markdown))
             
             entities.append(item)
-            
+
+    for item in entities:
+    
+        if "IfcTypeObject" in xmi_doc.supertypes(item.id):
+            continue
+    
+        predefined_type_attribute = [c for c in item.children if c.name == "PredefinedType"]
+        if predefined_type_attribute:
+            # NB this points to the EA extension node and not the packagedElement
+            ptype = (predefined_type_attribute[0].node|"properties").type
+            for c in eumeratations[ptype].children:
+                by_id[c.id] = di = classifications[item.name + "." + c.name]
+                di["Parent"] = item.name
+                di['Description'] = format(strip_html(c.markdown))
+
     for item in psets:
-        refs = item.meta.get('refs') or []
+        refs = set(item.meta.get('refs') or [])
             
         for id in refs:
         
             if isinstance(id, tuple):
                 # In case of TypeObject+PredefinedType appl
-                id = id[0]
+                # id = id[0]
+                # what to do with typedrivenonly?
+                # this option is disabled now
+                assert False
+                continue
 
             di = by_id.get(id)
             if di is None:
@@ -271,6 +290,14 @@ def generate_definitions():
                 
             else:
                 print("Not emitting %s.%s because it's a %s %s" % (item.name, c.name, type_item.name, type_item.type))
+            
+    # for x in sorted([item.name for item in psets]):
+    #     print(x)
+            
+    for k, v in pset_counts_by_stereo.items():
+        print(k + ":", v)
+        
+    print("TOTAL:", sum(pset_counts_by_stereo.values()))
             
     return classifications
 

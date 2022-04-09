@@ -11,6 +11,7 @@ from xml.dom import minidom
 from collections import defaultdict
 
 from xmi_document import xmi_document, SCHEMA_NAME
+import md as mdp
 
 GUID_PATTERN = re.compile(r'^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$')
 HTML_TAG_PATTERN = re.compile('<.*?>')
@@ -53,13 +54,23 @@ def build_property_defs(xmi_doc, pset, node, by_name):
         for x in sorted(zip(orders, names)):
             print(*x)
    
+    # property definitions are contained in their own markdown file, but the pset markdown
+    # can contain specific comment to augment the definition
+    pset_specific_comments = dict(mdp.markdown_attribute_parser(fn=pset.markdown_filename, heading_name="Comments"))
+    
     for _, (a_name, a_markdown), (nm, (ty_ty_arg)) in sorted(zip(orders, [(c.name, c.markdown) for c in pset.children], pset.definition)):
     
+        # augment definition with pset-specific comment
+        definition = a_markdown
+        psc = pset_specific_comments.get(a_name)
+        if psc:
+            definition += f"\n\n{psc}"
+        
         is_pset = pset.type == "CPROP" or pset.stereotype == "PSET"
         
         pd = ET.SubElement(node, "PropertyDef" if is_pset else 'QtoDef')
         ET.SubElement(pd, 'Name').text = a_name
-        ET.SubElement(pd, 'Definition').text = a_markdown
+        ET.SubElement(pd, 'Definition').text = definition
         pt = ET.SubElement(pd, 'PropertyType' if is_pset else 'QtoType')
         
         if is_pset:

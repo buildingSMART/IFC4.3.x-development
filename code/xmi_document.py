@@ -161,49 +161,71 @@ class xmi_item:
                 ps = (self.node/"properties")
                 if ps:
                     return ps[0].documentation
-                    
+
+
     def _get_package(self):
+        return self.parent.path[-2] if self.is_sub_element(strict=True) else self.path[-2]
+
+
+    def _get_markdown_filename(self):
+        md_root = os.path.join(self.repo_root(), 'docs')
+        
+        if self.parent and self.parent.type == "PSET" and self.type is None:
+            return os.path.join(md_root, 'properties', self.name[0].lower(), self.name + ".md")
+        else:
+            md_root = os.path.join(md_root, 'schemas')
+            for category in os.listdir(md_root):
+                for module in os.listdir(os.path.join(md_root, category)):
+                    if module == self.package:
+                        return os.path.join(md_root, category, module, self.mdtype, (self.parent.name if self.is_sub_element() else self.name) + ".md")
+
+    def repo_root(self):
+        fn = self.parent.document.filename if self.is_sub_element(strict=True) else self.document.filename
+        return os.path.join(os.path.abspath(os.path.dirname(fn)), '..')
+
+    def is_sub_element(self, strict=False):
+        """
+        used for:
+          determining package (strict=True)
+          determining location of markdown (strict=False):
+            - true: sub-element, definition is in parent markdown under 2nd level heading
+            - false: root-element, definition is under 1st level heading in own markdown document
+            
+            NB: Note that property definitions are always in their own file            
+        """
         is_sub = self.parent is not None
-        return self.parent.path[-2] if is_sub else self.path[-2]
-                    
-    def _get_markdown(self, definition=False):
-        if self.node:
-            is_sub = self.parent is not None
-            
-            fn = self.parent.document.filename if is_sub else self.document.filename
-            repo_root = os.path.join(os.path.abspath(os.path.dirname(fn)), '..')
-            md_root = os.path.join(repo_root, 'docs')
-            md_fn = None
-            
+        
+        if not strict:
             if self.parent and self.parent.type == "PSET" and self.type is None:
                 # properties are not encoded into a definition of their pset
                 # but rather are listed separately in a directory 
                 is_sub = False
-                md_fn = os.path.join(md_root, 'properties', self.name[0].lower(), self.name + ".md")
-            else:
-                md_root = os.path.join(md_root, 'schemas')
-                for category in os.listdir(md_root):
-                    for module in os.listdir(os.path.join(md_root, category)):
-                        if module == self.package:
-                            md_fn = os.path.join(md_root, category, module, self.mdtype, (self.parent.name if is_sub else self.name) + ".md")
-                            break
-                            
+            
+        return is_sub
+
+
+    def _get_markdown(self, definition=False):
+        if self.node:
+
+            
+            md_fn = self.markdown_filename
+                         
             if md_fn is None:
                 return missing_markdown("Unable to locate markdown path")                        
             
-            p = os.path.relpath(md_fn, start=repo_root).replace(os.sep, '/')
+            p = os.path.relpath(md_fn, start=self.repo_root()).replace(os.sep, '/')
                                     
             if not os.path.exists(md_fn):
                 return missing_markdown(REPO_URL + p + " does not exist")
             
-            hname = 'Attributes' if not is_sub or self.parent.type == "ENTITY" else 'Items'
+            hname = 'Attributes' if not self.is_sub_element() or self.parent.type == "ENTITY" else 'Items'
             
             if not os.path.exists(md_fn):
                 return missing_markdown(REPO_URL + p + " failed to parse")
                 
             md_parser = markdown_attribute_parser(fn=md_fn, heading_name=hname, short=definition)
             
-            if is_sub:                
+            if self.is_sub_element():                
                 attrs = dict(md_parser)
                 if md_parser.status.get("ALL") == "NO_HEADING":
                     return missing_markdown(REPO_URL + p + " has no '%s' heading" % sub_item_heading_name)
@@ -253,6 +275,7 @@ class xmi_item:
     path = property(_get_path)
     package = property(_get_package)
     mdtype = property(_mdtype)
+    markdown_filename = property(_get_markdown_filename)
     
 class xmi_document:
 

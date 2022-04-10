@@ -6,7 +6,7 @@ SoundLevel attribute deleted in IFC2x2 Pset Addendum: Use IfcSoundProperties ins
 
 ## Comments
 
-### AirFlowrateRange
+### AirFlowRateRange
 
 Air flowrate range within which the air terminal is designed to operate.
 

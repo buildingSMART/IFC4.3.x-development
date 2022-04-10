@@ -16,3 +16,7 @@ Requirement for the element filling the opening.
 ### AcousticRating
 
 Requirement for the element filling the opening.
+
+### Purpose
+
+E.g. 'ventilation' or 'access'

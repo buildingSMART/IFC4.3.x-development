@@ -24,3 +24,6 @@ VARIABLE: Controller element is an in-memory variable.
 
 The default value such as normally-closed or normally-open.
 
+### Labels
+
+Labels indicate the meanings of True and False, such as 'Open' and 'Closed'

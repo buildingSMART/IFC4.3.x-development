@@ -65,9 +65,9 @@ def strip_html(s):
     return re.sub(HTML_TAG_PATTERN, '', S)
     
 def format(s):
+    s = re.sub(CHANGE_LOG_PATTERN, '', str(s)).strip()
     return s
     s = s.replace("\\X\\0D", "")
-    s = re.sub(CHANGE_LOG_PATTERN, '', s)
     return re.sub(MULTIPLE_SPACE_PATTERN, ' ', ''.join([' ', c][c.isalnum() or c in '.,'] for c in s)).strip()
     
 def generalization(pe):
@@ -272,7 +272,7 @@ def generate_definitions():
                     type_name = ty_gen.name.lower()
                 
                 di["Psets"]["Attributes"]["Properties"][c.name]['type'] = type_name
-                di["Psets"]["Attributes"]["Properties"][c.name]["Description"] = format(strip_html(c.documentation))
+                di["Psets"]["Attributes"]["Properties"][c.name]["Description"] = format(strip_html(c.markdown))
                 
                 if type_values is None:
                     type_values = type_to_values.get(type_name)
@@ -286,7 +286,7 @@ def generate_definitions():
                 
                 di["Psets"]["Attributes"]["Properties"][c.name]['values'] = type_values
                 di["Psets"]["Attributes"]["Properties"][c.name]['type'] = type_name
-                di["Psets"]["Attributes"]["Properties"][c.name]["Description"] = format(strip_html(c.documentation))
+                di["Psets"]["Attributes"]["Properties"][c.name]["Description"] = format(strip_html(c.markdown))
                 
             else:
                 print("Not emitting %s.%s because it's a %s %s" % (item.name, c.name, type_item.name, type_item.type))

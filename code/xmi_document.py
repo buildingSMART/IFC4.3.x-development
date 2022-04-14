@@ -515,7 +515,7 @@ class xmi_document:
                         object_typing_reversed = {v[0]: k for k, v in self.concepts['ObjectTyping'].items() if len(v) == 1}
                         corresponding_types = list(filter(None, map(lambda id_pt: object_typing_reversed.get(id_pt[0], None), refs_combined)))
                         
-                        if len(corresponding_types) != len(refs):
+                        if len(corresponding_types) != len(refs) or set(corresponding_types) & set(refs):
                             ref_names = map(get_name, refs)
                             ref_type_names = map(get_name, corresponding_types)
                             print(f"WARNING: For PQset {c.name} applicability [{', '.join(ref_names)}] results in type associations [{', '.join(ref_type_names)}]")

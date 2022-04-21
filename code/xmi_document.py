@@ -204,7 +204,7 @@ class xmi_item:
         return is_sub
 
 
-    def _get_markdown(self, definition=False):
+    def _get_markdown(self, definition=False, content=False):
         if self.node:
 
             
@@ -223,9 +223,22 @@ class xmi_item:
             if not os.path.exists(md_fn):
                 return missing_markdown(REPO_URL + p + " failed to parse")
                 
+            if content and not self.is_sub_element():
+                lines = list(open(md_fn, encoding='utf-8'))
+                h0 = [set(ln.strip()) in ({'='}, {'-'}) for ln in lines]
+                h1 = [ln.startswith("#") for ln in lines]
+                for h in (h0, h1):
+                    if any(h):
+                        lines = lines[h.index(True) + 1:]
+                        break
+                empty = [len(ln.strip()) == 0 for ln in lines]
+                if any(empty):
+                    lines = lines[empty.index(True) + 1:]
+                return "\n".join(lines)                    
+                
             md_parser = markdown_attribute_parser(fn=md_fn, heading_name=hname, short=definition)
             
-            if self.is_sub_element():                
+            if self.is_sub_element():
                 attrs = dict(md_parser)
                 if md_parser.status.get("ALL") == "NO_HEADING":
                     return missing_markdown(REPO_URL + p + " has no '%s' heading" % sub_item_heading_name)
@@ -276,6 +289,7 @@ class xmi_item:
     package = property(_get_package)
     mdtype = property(_mdtype)
     markdown_filename = property(_get_markdown_filename)
+    markdown_content = property(lambda s: s._get_markdown(content=True))
     
 class xmi_document:
 

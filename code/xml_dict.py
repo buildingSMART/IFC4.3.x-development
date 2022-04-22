@@ -5,6 +5,8 @@ import functools
 
 from dataclasses import dataclass, field
 
+strip_namespace = lambda s: s.split("}")[-1]
+
 @dataclass
 class xml_node:
     tag : str
@@ -36,11 +38,10 @@ class xml_node:
         return new_self
         
     def strip_namespaces(self):
-        sn = lambda s: s.split("}")[-1]
         def inner(node):
             return xml_node(
-                sn(node.tag),
-                {sn(k): v for k, v in node.attributes.items()},
+                strip_namespace(node.tag),
+                {strip_namespace(k): v for k, v in node.attributes.items()},
                 node.text,
                 node.namespaces
             )

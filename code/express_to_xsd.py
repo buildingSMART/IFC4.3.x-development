@@ -145,11 +145,15 @@ def create_attribute(entity, a):
                 a_type = a_type.type
 
         #                                            # v this should probably be enabled, but discussion pending in issue #462
-        # if a_type.type.type in schema.simpletypes: # and not isinstance(mapping.flatten_type(a_type.type).type, express_parser.StringType):
+                # if : # and not isinstance(mapping.flatten_type(a_type.type).type, express_parser.StringType):
         
-        is_double_tag = entity_configuration.get(entity.name, {}).get('ReferenceTokens', {}).get('exp-attribute') == 'double-tag'
+        is_list = a_type.type.type in schema.simpletypes and not entity_configuration.get(entity.name, {}).get(a.name, {}).get('exp-attribute') == 'double-tag'
         
-        if not is_double_tag:
+        is_elem = entity_configuration.get(entity.name, {}).get(a.name, {}).get('exp-attribute') == 'attribute-tag'
+        
+        if is_elem:
+            attr = xml_dict.xml_node(XS.element, {'name': a.name, 'type': f'ifc:{a_type.type.type}', 'nillable': 'true', 'minOccurs': a_type.bounds.lower, 'maxOccurs': a_type.bounds.upper})
+        elif is_list:
         
             length_constraint = []
             
@@ -180,11 +184,12 @@ def create_attribute(entity, a):
                     )] + length_constraint  
                 )]
             )]
-        else:
+        else:        
             if a_type.type.type in schema.simpletypes:
                 wrapper_postfix = "-wrapper"
             else:
                 wrapper_postfix = ""
+                
             ty = a_type.type.type
             assert isinstance(ty, str)
             attr = element(a.name, None, nillable="true" if is_optional else None, minOccurs="0" if is_optional else None).to_xml()
@@ -192,15 +197,28 @@ def create_attribute(entity, a):
             min_occurs = str(min_occurs_mult * int(a_type.bounds.lower))
             if min_occurs == "1":
                 min_occurs = None
-            
-            attr.children = [complex_type([
-                element_ref(f"ifc:{a_type.type.type}{wrapper_postfix}", minOccurs=min_occurs, maxOccurs="unbounded").to_xml()
-            ],
-            [
+                
+            max_occurs = "unbounded"
+            try:
+                max_occurs = str(int(a_type.bounds.upper) * max_occurs_mult)
+            except: pass
+                
+            array_data = [
                 attribute_ref("ifc:itemType", fixed=f"ifc:{a_type.type.type}{wrapper_postfix}", use=None),
                 attribute_ref("ifc:cType", fixed=aggregate_type_prefix + a_type.aggregate_type, use=None),
                 attribute_ref("ifc:arraySize", use="optional")
-            ])]
+            ]
+            
+            if a_type.type.type in schema.selects:
+                attr.children = [xml_dict.xml_node(XS.complexType, children=[
+                    xml_dict.xml_node(XS.group, {'ref': f"ifc:{a_type.type.type}", **({'minOccurs': min_occurs} if min_occurs else {}), **{'maxOccurs': max_occurs}}),
+                    *(x.to_xml() for x in array_data)
+                ])]
+            else:
+                attr.children = [complex_type([
+                    element_ref(f"ifc:{a_type.type.type}{wrapper_postfix}", minOccurs=min_occurs, maxOccurs=max_occurs).to_xml()
+                ], array_data
+                )]
             
         return attr
     else:

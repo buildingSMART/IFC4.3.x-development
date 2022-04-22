@@ -19,6 +19,13 @@ namespaces = {
     'ifc': f"https://standards.buildingsmart.org/IFC/RELEASE/{'/'.join(re.split('_|X', SCHEMA_NAME))}"
 }
 
+conf = xml_dict.read("IFC4_conf.xml")
+entity_configuration = {
+    c.attributes['select']:\
+    {cc.attributes['select']:cc.attributes for cc in c.children if cc.tag.endswith('attribute') or cc.tag.endswith('inverse') } \
+    for c in conf.children if c.tag.endswith('entity')
+}
+
 XS = namespace(namespaces['xs'])
 XLINK = namespace(namespaces['xlink'])
 IFC = namespace(namespaces['ifc'])
@@ -85,7 +92,7 @@ def do_try(fn):
     except:
         pass
 
-def create_attribute(a):
+def create_attribute(entity, a):
     a_type = a.type
     
     is_optional = a.optional
@@ -110,6 +117,7 @@ def create_attribute(a):
             )]
             return elm
         return attribute(a.name, f"ifc:{ty}", "optional").to_xml()
+        
     elif isinstance(a_type, express_parser.SimpleType):
         ty = a_type.type
         simple_type_mapping = {
@@ -117,26 +125,43 @@ def create_attribute(a):
             'logical': 'ifc:logical'
         }
         return attribute(a.name, simple_type_mapping[ty], "optional").to_xml()
-    elif isinstance(a_type, express_parser.AggregationType):
+        
+    elif isinstance(a, express_parser.InverseAttribute) or \
+        isinstance(a_type, express_parser.AggregationType):
 
         min_occurs_mult = 1
         max_occurs_mult = 1
         aggregate_type_prefix = ""
-        if isinstance(a_type.type, express_parser.AggregationType):
-            # nested lists don't require a lot of special handling, just list list
-            min_occurs_mult = int(a_type.bounds.lower)
-            max_occurs_mult = float("inf") if a_type.bounds.upper == "?" else int(a_type.bounds.upper)
-            aggregate_type_prefix = a_type.aggregate_type + " "
-            a_type = a_type.type
-
-                                                   # v this should probably be enabled, but discussion pending in issue #462
-        if a_type.type.type in schema.simpletypes: # and not isinstance(mapping.flatten_type(a_type.type).type, express_parser.StringType):
         
-            max_length_constraint = []
+        if isinstance(a, express_parser.InverseAttribute):
+            a_type = type('_0', (), {'type': type('_1', (), {'type': a.entity}), 'bounds': a.bounds, 'aggregate_type': a.type})
+            is_optional = True
+        else:
+            if isinstance(a_type.type, express_parser.AggregationType):
+                # nested lists don't require a lot of special handling, just list list
+                min_occurs_mult = int(a_type.bounds.lower)
+                max_occurs_mult = float("inf") if a_type.bounds.upper == "?" else int(a_type.bounds.upper)
+                aggregate_type_prefix = a_type.aggregate_type + " "
+                a_type = a_type.type
+
+        #                                            # v this should probably be enabled, but discussion pending in issue #462
+        # if a_type.type.type in schema.simpletypes: # and not isinstance(mapping.flatten_type(a_type.type).type, express_parser.StringType):
+        
+        is_double_tag = entity_configuration.get(entity.name, {}).get('ReferenceTokens', {}).get('exp-attribute') == 'double-tag'
+        
+        if not is_double_tag:
+        
+            length_constraint = []
+            
+            if int(a_type.bounds.lower) != 1:
+                length_constraint += [xml_dict.xml_node(
+                    XS.minLength,
+                    {"value": (a_type.bounds.lower * min_occurs_mult)}
+                )]
             if a_type.bounds.upper != "?" and max_occurs_mult != float("inf"):
-                max_length_constraint = [xml_dict.xml_node(
+                length_constraint += [xml_dict.xml_node(
                     XS.maxLength,
-                    {"value": a_type.bounds.upper}
+                    {"value": (a_type.bounds.upper * max_occurs_mult)}
                 )]
                 
             attr = attribute(a.name, None, "optional").to_xml()
@@ -152,7 +177,7 @@ def create_attribute(a):
                             XS.list,
                             {"itemType": f"ifc:{a_type.type.type}"}
                         )]
-                    )] + max_length_constraint  
+                    )] + length_constraint  
                 )]
             )]
         else:
@@ -186,7 +211,14 @@ def convert(e):
     supertype = e.supertypes[0] if e.supertypes else "Entity"
     abstract_if_abstract = {"abstract": "true"} if e.abstract else {}
     yield element(e.name, f"ifc:{e.name}", substitutionGroup=f"ifc:{supertype}", nillable="true", minOccurs=None, **abstract_if_abstract).to_xml()
-    attrs = [create_attribute(a) for a in e.attributes]
+    
+    e_cfg = entity_configuration.get(e.name, {})
+    keep_fwd = lambda a: e_cfg.get(a.name, {}).get('keep') != 'false'
+    keep_inv = lambda a: a.name in e_cfg
+    
+    attributes = list(filter(keep_fwd, e.attributes)) + list(filter(keep_inv, e.inverse))
+    
+    attrs = [create_attribute(e, a) for a in attributes]
     elems = [e for e in attrs if e.tag == XS.element]
     attrs = [e for e in attrs if e.tag == XS.attribute]
     if elems:
@@ -285,4 +317,4 @@ content = xml_dict.xml_node(
     ] + list(flatmap(convert, entities))
 )
 
-xml_dict.serialize([content], "ifc4x3.xsd")
+xml_dict.serialize([content], sys.argv[2])

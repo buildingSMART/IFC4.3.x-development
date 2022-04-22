@@ -73,6 +73,10 @@ def flatmap(func, *iterable):
     
 
 def to_data(t, parent=None):
+    if not isinstance(t.tag, str):
+        # Comment/Entity/...
+        return
+
     if t.tag in IGNORED_TAGS:
         return
 

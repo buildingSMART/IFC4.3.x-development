@@ -1,15 +1,17 @@
-A conforming software application is required to support a well defined Model View Definition (MVD) of the data schema and referenced data. A particular model view definition is defined to support one or many recognized work flows in the building construction and facility management industry sector. Each work flow identifies data exchange requirements that are to be supported by the conforming software applications.
+buildingSMART International publishes official model view definitions (MVDs) as related specifications. The official MVD policy for IFC 4.3.0 currently holds 3 levels of implementation for IFC:
+- Reference View
+- Alignment Based Reference View
+- Design Transfer view
+These three MVDs can be seen as three levels of implementation for IFC 4.3.0. They are gradual levels adding more advanced features to the implementations.  The documentation is deposited at [standards.buildingsmart.org](https://standards.buildingsmart.org).
 
-buildingSMART International publishes official model view definitions and exchange requirements as related specifications. The official website for publication of this specification, related model view definitions and exchange requirements, and supporting materials such as implementer agreements, example data sets, references to development tools, discussion forum and issue database, and certification programs is [technical.buildingsmart.org](https://technical.buildingsmart.org). The documentation is deposited at [standards.buildingsmart.org](https://standards.buildingsmart.org).
-
-The IFC specification includes terms, concepts and data specification items that originate from use within disciplines, trades, and professions of the construction and facility management industry sector. Terms and concepts uses the plain English words, the data items within the data specification follow a naming convention.
+The IFC specification includes terms, concepts and data specification items that originate from use within disciplines, trades, and professions of the construction and facility management industry sector. Terms and concepts uses the plain English words, the data items within the data specification follow a naming convention. Translations can be found on [translations.buildingsmart.org](https://translations.buildingsmart.org).
 
 * the data item names for types, entities, rules and functions start with the prefix "Ifc" and continue with the English words in CamelCase naming convention (no underscore, first letter in word in upper case);
 * the attribute names within an entity follow the CamelCase naming convention with no prefix;
 * the property set definitions that are part of this standard start with the prefix "Pset_" and continue with the English words in CamelCase naming convention;
 * the quantity set definitions that are part of this standard start with the prefix "Qto_" and continue with the English words in CamelCase naming convention.
   
-The data schema architecture of IFC defines four conceptual layers, each individual schema is assigned to exactly one conceptual layer. The figure below shows the schema architecture IFC 4 layered architecture.
+The data schema architecture of IFC defines four conceptual layers, each individual schema is assigned to exactly one conceptual layer. The figure below shows the schema architecture IFC 4.x layered architecture.
 
 ![Figure 1 — Data schema architecture with conceptual layers](https://raw.githubusercontent.com/buildingSMART/IFC4.3.x-development/b3911e98eaf9adc5287c41d2e55beda1688be5d6/content/IFC4_layered_architecture.png)
 

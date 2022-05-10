@@ -19,10 +19,10 @@ A column shoe or a beam shoe (beam hanger) used to support or secure an element.
 Assembly connection element between construction elements to allow for thermic differential expansions.
 
 ### FILLER
-Sealant, gap filler rod, packing material or other used to close a gap
+Sealant, gap filler rod, packing material or other used to close a gap.
 
 ### FLASHING
-Construction material used to manage the passage of water around objects
+Construction material used to manage the passage of water around objects.
 
 ### CABLEARRANGER
 A cable arranger is a flexible accessory or a part of a component placed around cables to arrange and minimize flexing of them at the point where it is placed.

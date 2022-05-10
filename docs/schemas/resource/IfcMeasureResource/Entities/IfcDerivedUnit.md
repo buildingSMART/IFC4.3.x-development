@@ -60,7 +60,7 @@ Type of the derived unit if the UnitType attribute is set to USERDEFINED.
 ### Name
 Name of the unit in addition to the unit type, particularly when the derived unit elements refer to conversion or context based units.
 
-> EXAMPLE The imperial unit name for a velosity measure is miles per hour, or MPH, with a _Name_ of 'MPH'.
+> EXAMPLE The imperial unit name for a velocity measure is miles per hour, or MPH, with a _Name_ of 'MPH'.
 
 ### Dimensions
 Dimensional exponents derived using the function IfcDerivedDimensionalExponents using (SELF) as the input value.

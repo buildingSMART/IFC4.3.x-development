@@ -68,6 +68,10 @@ def conditionally_compress(s):
     return ifcopenshell.guid.compress(s.replace("-", ""))
 
 
+def format_href(name, uid):
+    return f"{'x' if name[0].isdigit() else ''}{name}_{conditionally_compress(uid)}".replace('$', '')
+
+
 tokenize = lambda s: tuple(re.findall(r'\w+', str(s).lower()))
 
 
@@ -199,7 +203,7 @@ def run(xmi_doc, path, ref_path):
     dicts = [dict(re.findall("(\w+)=\"([^\"]+)\"", x)) for x in lines]
     pset_id_mapping = {d["Name"]:d["UniqueId"] for d in dicts if {"Name", "UniqueId"} <= d.keys()}
     
-    fns2 = [fn for fn in fns if "DocProperty.xml" in fn or "DocQuantity.xml" in fn]
+    doc_prop_fns = fns2 = [fn for fn in fns if "DocProperty.xml" in fn or "DocQuantity.xml" in fn]
     lines = [list(open(fn, encoding='utf-8'))[1] for fn in fns2]
     dicts = [dict(re.findall("(\w+)=\"([^\"]+)\"", x)) for x in lines]
     prop_id_mapping = defaultdict(list)
@@ -211,11 +215,22 @@ def run(xmi_doc, path, ref_path):
     dicts = [dict(d.childNodes[0].attributes) for d in doms]
     definitions = [do_try(lambda: [c for c in d.childNodes[0].childNodes if hasattr(c, 'tagName') and c.tagName == 'Documentation'][0].childNodes[0].wholeText) or "" for d in doms]
     constant_id_mapping = {(d["Name"].value, *tokenize(dd)):d["UniqueId"].value for d, dd in zip(dicts, definitions)}
+    constant_id_to_name_mapping = {format_href(d['Name'].value.replace('.', '').replace(" ", "_"), d["UniqueId"].value): d['Name'].value.replace('.', '') for d in dicts}
     
     fns4 = [fn for fn in fns if "PEnum_" in fn]
     lines = [list(open(fn, encoding='utf-8'))[1] for fn in fns4]
     dicts = [dict(re.findall("(\w+)=\"([^\"]+)\"", x)) for x in lines]
     penum_id_mapping = {d["Name"]:d["UniqueId"] for d in dicts if {"Name", "UniqueId"} <= d.keys()}
+    doms = list(map(minidom.parse, fns4))
+    
+    def get_constant_name(n):
+        try:
+            return constant_id_to_name_mapping[n.attributes['href'].value]
+        except:
+            return n.attributes['Name'].value
+            
+    penum_constants = {d.childNodes[0].attributes['Name'].value: [get_constant_name(n) for n in d.childNodes[0].getElementsByTagName("Constants")[0].getElementsByTagName("DocPropertyConstant")] for d in doms}
+    
     
     all_properties = []
     closures = []
@@ -247,8 +262,6 @@ def run(xmi_doc, path, ref_path):
     
     for prop in all_properties:
     
-        # breakpoint()
-        
         prop_def = prop.type.to_tuple() + tokenize(prop.markdown)
     
         candidates = prop_id_mapping[prop.name]
@@ -291,8 +304,16 @@ def run(xmi_doc, path, ref_path):
         propdef.set('xmlns:xsi', 'http://www.w3.org/2001/XMLSchema-instance')
         propdef.set('id', f"{prop.name}_{uid}".replace('$', ''))
         propdef.set('Name', prop.name)
-        propdef.set('UniqueId', uid)
+        uid_hex = ifcopenshell.guid.split(ifcopenshell.guid.expand(uid))[1:-1].lower()
+        propdef.set('UniqueId', uid_hex)
         
+        if matching_definitions:
+            orig_path = [fn for fn in doc_prop_fns if matching_definitions[0] in fn][0]
+            orig_tree = ET.parse(orig_path)
+            orig_loc = orig_tree.find(".//Localization")
+            if orig_loc:
+                propdef.append(orig_loc)
+
         if is_quantity:
             propdef.set('QuantityType', prop.type.primary.lower())
         else:
@@ -312,6 +333,10 @@ def run(xmi_doc, path, ref_path):
                 enum.set('xsi:type', 'DocPropertyEnumeration')
                 enum.set('xsi:nil', 'true')
                 enum.set('href', values[1].replace('$', ''))
+            
+        # Remove existing indentation
+        for x in propdef.iter():
+            x.text = (x.text or '').strip(); x.tail = (x.tail or '').strip()
             
         with open(os.path.join(fn, f"Doc{ty}.xml"), 'w', encoding='utf-8') as f:
             f.write(
@@ -344,7 +369,7 @@ def run(xmi_doc, path, ref_path):
         
         constantdef = ET.Element(f"DocPropertyConstant")
         constantdef.set('xmlns:xsi', 'http://www.w3.org/2001/XMLSchema-instance')
-        constantdef.set('id', f"{'x' if pc[0][0].isdigit() else ''}{pc[0]}_{uid_base64}".replace('$', ''))
+        constantdef.set('id', format_href(pc[0], uid_base64))
         constantdef.set('Name', pc[0])
         constantdef.set('UniqueId', uid_hex)
         
@@ -380,8 +405,31 @@ def run(xmi_doc, path, ref_path):
             ET.SubElement(penumdef, "Documentation").text = penum.markdown
         
         items = ET.SubElement(penumdef, "Constants")
-                        
-        for c in penum.children:
+
+        # alphabetical sort, but the items below always come last
+        undefined = ("OTHER", "NOTKNOWN", "UNSET", "USERDEFINED", "NOTDEFINED")
+        penalize_undefined = lambda s: (s in undefined, s)
+
+        existing_constants = list(map(penalize_undefined, penum_constants.get(penum.name, [])))
+
+        def get_key(item):
+            k = penalize_undefined(item.name)
+            if k in existing_constants:
+                return existing_constants.index(k)
+                
+            new_position = [i for i, v in enumerate(existing_constants) if k < v]
+            if new_position:
+                p = new_position[0]
+            else:
+                p = len(existing_constants)
+                
+            # I don't think updating the list is necessary because sorted() is stable?
+            # existing_constants.insert(p, k)
+            return p
+        
+        penum_children = sorted(penum.children, key=get_key)
+
+        for c in penum_children:
             item = ET.SubElement(items, "DocPropertyConstant")
             item.set('xsi:nil', 'true')
             item.set('href', f"{'x' if c.name[0].isdigit() else ''}{c.name}_{conditionally_compress(constant_id_mapping[(c.name, *tokenize(c.markdown or ''))])}".replace('$', ''))
@@ -406,5 +454,5 @@ if __name__ == "__main__":
         xmi_doc.should_translate_pset_types = False
         run(xmi_doc, path, ref_path)
     else:
-        print("Usage: python to_pset.py <schema.xml> <output dir>", file=sys.stderr)
+        print("Usage: python to_pset.py <schema.xml> <output dir> <ref path>", file=sys.stderr)
         exit(1)

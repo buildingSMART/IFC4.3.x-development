@@ -304,15 +304,21 @@ def run(xmi_doc, path, ref_path):
         propdef.set('xmlns:xsi', 'http://www.w3.org/2001/XMLSchema-instance')
         propdef.set('id', f"{prop.name}_{uid}".replace('$', ''))
         propdef.set('Name', prop.name)
-        uid_hex = ifcopenshell.guid.split(ifcopenshell.guid.expand(uid))[1:-1].lower()
-        propdef.set('UniqueId', uid_hex)
         
         if matching_definitions:
+            # Copy over localizations, if any
             orig_path = [fn for fn in doc_prop_fns if matching_definitions[0] in fn][0]
             orig_tree = ET.parse(orig_path)
             orig_loc = orig_tree.find(".//Localization")
             if orig_loc:
                 propdef.append(orig_loc)
+            
+            # See if original source used compressed, and provide accordingly
+            is_compressed = len(orig_tree.getroot().attrib.get('UniqueId', '')) == 22
+            if not is_compressed:
+                uid = ifcopenshell.guid.split(ifcopenshell.guid.expand(uid))[1:-1].lower()
+                
+        propdef.set('UniqueId', uid)
 
         if is_quantity:
             propdef.set('QuantityType', prop.type.primary.lower())

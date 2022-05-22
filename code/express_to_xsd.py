@@ -163,17 +163,25 @@ def create_attribute(entity, a):
         
             length_constraint = []
             
-            if int(a_type.bounds.lower) != 1:
-                length_constraint += [xml_dict.xml_node(
-                    XS.minLength,
-                    {"value": (a_type.bounds.lower * min_occurs_mult)}
-                )]
-            if a_type.bounds.upper != "?" and max_occurs_mult != float("inf"):
-                length_constraint += [xml_dict.xml_node(
-                    XS.maxLength,
-                    {"value": (a_type.bounds.upper * max_occurs_mult)}
-                )]
-                
+            if a_type.aggregate_type == 'array':
+                assert min_occurs_mult == 1
+                extent = int(a_type.bounds.upper) - int(a_type.bounds.lower) + 1
+                for c in (XS.minLength, XS.maxLength):
+                    length_constraint += [xml_dict.xml_node(
+                        c, {"value": str(extent)}
+                    )]
+            else:                
+                if int(a_type.bounds.lower) != 1:
+                    length_constraint += [xml_dict.xml_node(
+                        XS.minLength,
+                        {"value": (a_type.bounds.lower * min_occurs_mult)}
+                    )]
+                if a_type.bounds.upper != "?" and max_occurs_mult != float("inf"):
+                    length_constraint += [xml_dict.xml_node(
+                        XS.maxLength,
+                        {"value": (a_type.bounds.upper * max_occurs_mult)}
+                    )]
+                    
             attr = attribute(a.name, None, "optional").to_xml()
             attr.children = [xml_dict.xml_node(
                 XS.simpleType,

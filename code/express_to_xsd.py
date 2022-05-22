@@ -158,7 +158,29 @@ def create_attribute(entity, a):
         is_elem = entity_configuration.get(entity.name, {}).get(a.name, {}).get('exp-attribute') == 'attribute-tag'
         
         if is_elem:
-            attr = xml_dict.xml_node(XS.element, {'name': a.name, 'type': f'ifc:{a_type.type.type}', 'nillable': 'true', 'minOccurs': a_type.bounds.lower, 'maxOccurs': a_type.bounds.upper})
+
+            if aggregate_type_prefix:
+                # @todo when length constraint is encoded in the type how to guarantee that the correct length constraint is selected?
+                attr = xml_dict.xml_node(XS.element, {'name': f'Seq-{a_type.type.type}-wrapper', 'type': f'ifc:Seq-{a_type.type.type}', 'maxOccurs': "unbounded" if a_type.bounds.upper == '?' else a_type.bounds.upper})
+                # **({'minOccurs': a_type.bounds.lower} if a_type.bounds.lower != -1 else {})
+                attr = xml_dict.xml_node(
+                    XS.element, 
+                    {'name': a.name, 'minOccurs': '0'},
+                    # why:
+                    # **({'minOccurs': min_occurs_mult} if min_occurs_mult != 1 else {})},
+                    # 
+                    # 'maxOccurs': ("unbounded" if max_occurs_mult == float("inf") else max_occurs_mult)
+                    children=[xml_dict.xml_node(
+                        XS.complexType,
+                        children=[xml_dict.xml_node(
+                            XS.sequence,
+                            children=[attr]
+                        )]
+                    )]
+                )
+            else:
+                attr = xml_dict.xml_node(XS.element, {'name': a.name, 'type': f'ifc:{a_type.type.type}', 'nillable': 'true', 'minOccurs': a_type.bounds.lower, 'maxOccurs': a_type.bounds.upper})
+                
         elif is_list:
         
             length_constraint = []

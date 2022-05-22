@@ -132,16 +132,22 @@ def create_attribute(entity, a):
         min_occurs_mult = 1
         max_occurs_mult = 1
         aggregate_type_prefix = ""
+
+        def aggregate_type(at):
+            agt = at.aggregate_type
+            if at.unique:
+                agt += "-unique"
+            return agt
         
         if isinstance(a, express_parser.InverseAttribute):
-            a_type = type('_0', (), {'type': type('_1', (), {'type': a.entity}), 'bounds': a.bounds, 'aggregate_type': a.type})
+            a_type = type('_0', (), {'type': type('_1', (), {'type': a.entity}), 'bounds': a.bounds, 'aggregate_type': a.type, 'unique': a.unique})
             is_optional = True
         else:
             if isinstance(a_type.type, express_parser.AggregationType):
                 # nested lists don't require a lot of special handling, just list list
                 min_occurs_mult = int(a_type.bounds.lower)
                 max_occurs_mult = float("inf") if a_type.bounds.upper == "?" else int(a_type.bounds.upper)
-                aggregate_type_prefix = a_type.aggregate_type + " "
+                aggregate_type_prefix = aggregate_type(a_type) + " "
                 a_type = a_type.type
 
         #                                            # v this should probably be enabled, but discussion pending in issue #462
@@ -205,7 +211,7 @@ def create_attribute(entity, a):
                 
             array_data = [
                 attribute_ref("ifc:itemType", fixed=f"ifc:{a_type.type.type}{wrapper_postfix}", use=None),
-                attribute_ref("ifc:cType", fixed=aggregate_type_prefix + a_type.aggregate_type, use=None),
+                attribute_ref("ifc:cType", fixed=aggregate_type_prefix + aggregate_type(a_type), use=None),
                 attribute_ref("ifc:arraySize", use="optional")
             ]
             

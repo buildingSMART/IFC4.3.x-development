@@ -261,34 +261,73 @@ def create_attribute(entity, a):
         breakpoint()
         
 
-def convert(e):
-    supertype = e.supertypes[0] if e.supertypes else "Entity"
-    abstract_if_abstract = {"abstract": "true"} if e.abstract else {}
-    yield element(e.name, f"ifc:{e.name}", substitutionGroup=f"ifc:{supertype}", nillable="true", minOccurs=None, **abstract_if_abstract).to_xml()
+def convert(e, name_override=None, excluded_attributes=(), restriction=None, include_inherited=False):
+
+    subGroup = supertype = e.supertypes[0] if e.supertypes else "Entity"
+    abstract_if_abstract = {"abstract": "true"} if e.abstract or (name_override and "-temp" in name_override) else {}
     
-    e_cfg = entity_configuration.get(e.name, {})
-    keep_fwd = lambda a: e_cfg.get(a.name, {}).get('keep') != 'false'
-    keep_inv = lambda a: a.name in e_cfg
+    derived = mapping.derived_in_supertype(e)
     
-    attributes = list(filter(keep_fwd, e.attributes)) + list(filter(keep_inv, e.inverse))
+    def get_attributes(ent):
+        e_cfg = entity_configuration.get(ent.name, {})
+        keep_fwd = lambda a: e_cfg.get(a.name, {}).get('keep') != 'false' and a.name not in excluded_attributes
+        keep_inv = lambda a: a.name in e_cfg
+        
+        inherited = []
+        if include_inherited and ent.supertypes:
+            inherited = get_attributes(mapping.schema.entities[ent.supertypes[0]])
+        
+        return inherited + list(filter(keep_fwd, ent.attributes)) + list(filter(keep_inv, ent.inverse))
+    
+    attributes = get_attributes(e)
+    
+    derived_with_additional_attributes = derived and attributes
+    derived_without_additional_attributes = derived and not attributes
+    
+    if derived:
+        yield from convert(mapping.schema.entities[e.supertypes[0]],
+            name_override = e.name + ("-temp" if attributes else ""), 
+            excluded_attributes = set(derived),
+            restriction = e.supertypes[0],
+            include_inherited = True
+        ) 
+        supertype = f"{e.name}-temp"
+        
+    if derived_without_additional_attributes:
+        return
+
+    if not name_override:
+        yield element(e.name, f"ifc:{e.name}", substitutionGroup=f"ifc:{subGroup}", nillable="true", minOccurs=None, **abstract_if_abstract).to_xml()    
     
     attrs = [create_attribute(e, a) for a in attributes]
     elems = [e for e in attrs if e.tag == XS.element]
     attrs = [e for e in attrs if e.tag == XS.attribute]
+    
     if elems:
         elems = [xml_dict.xml_node(
             XS.sequence,
             children=elems
         )]
+    
     children = elems + attrs
+    
     yield complex_type([], [], content=xml_dict.xml_node(
         XS.complexContent,
-        children=[xml_dict.xml_node(
-            XS.extension,
-            {"base": f"ifc:{supertype}"},
-            children=children
-        )]
-    ), name=e.name, **abstract_if_abstract)
+        children=[
+            xml_dict.xml_node(
+                XS.restriction,
+                {"base": f"ifc:{restriction}"},
+                children=children
+            ) \
+            if restriction
+            else \
+            xml_dict.xml_node(
+                XS.extension,
+                {"base": f"ifc:{supertype}"},
+                children=children
+            )            
+        ]
+    ), name=name_override or e.name, **abstract_if_abstract)
 
 mapping = express_parser.parse(sys.argv[1])
 schema = mapping.schema

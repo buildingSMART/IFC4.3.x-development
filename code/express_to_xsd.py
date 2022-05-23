@@ -238,6 +238,9 @@ def create_attribute(entity, a):
             try:
                 max_occurs = str(int(a_type.bounds.upper) * max_occurs_mult)
             except: pass
+            
+            if max_occurs == "inf":
+                max_occurs = "unbounded"    
                 
             array_data = [
                 attribute_ref("ifc:itemType", fixed=f"ifc:{a_type.type.type}{wrapper_postfix}", use=None),
@@ -329,10 +332,59 @@ def convert(e, name_override=None, excluded_attributes=(), restriction=None, inc
         ]
     ), name=name_override or e.name, **abstract_if_abstract)
 
+
+def convert_select(nm_def):
+    nm, defn = nm_def
+    
+    def items(s=None):
+        def inner(v):
+            v = v.type
+            if v in schema.selects:
+                yield from items(schema.selects[v])
+            else: yield v
+        yield from itertools.chain.from_iterable(map(inner, (s or defn).values))
+    
+    def make_ref(s):
+        if not s in schema.entities:
+            s += '-wrapper'
+        return f'ifc:{s}'
+        
+    make_elem = lambda s: xml_dict.xml_node(XS.element, {'ref': make_ref(s)})
+    children = list(map(make_elem, sorted(set(items()))))
+    
+    yield xml_dict.xml_node(
+        XS.group, 
+        {'name': nm},
+        children=[xml_dict.xml_node(
+            XS.choice,
+            children=children
+        )]
+    )
+    
+    
+def convert_enum(nm_def):
+    nm, defn = nm_def
+    
+    make_elem = lambda s: xml_dict.xml_node(XS.enumeration, {'value': s.lower()})
+    children = list(map(make_elem, defn.values))
+    
+    yield xml_dict.xml_node(
+        XS.simpleType, 
+        {'name': nm},
+        children=[xml_dict.xml_node(
+            XS.restriction,
+            {'base': 'xs:string'},
+            children=children
+        )]
+    )
+    
+
+
 mapping = express_parser.parse(sys.argv[1])
 schema = mapping.schema
 entities = list(schema.entities.values())
-# entities = [schema.entities["IfcPerson"]]
+selects = list(schema.selects.items())
+enums = list(schema.enumerations.items())
 
 header = complex_type(
     [
@@ -407,7 +459,9 @@ content = xml_dict.xml_node(
             
             )]
         ),name="ifcXML")
-    ] + list(flatmap(convert, entities))
+    ] + list(flatmap(convert, entities)) + \
+        list(flatmap(convert_select, selects)) + \
+        list(flatmap(convert_enum, enums))
 )
 
 xml_dict.serialize([content], sys.argv[2])

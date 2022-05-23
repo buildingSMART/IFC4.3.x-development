@@ -20,6 +20,14 @@ ignored_paths = {
     "schema/IfcGeometricRepresentationSubContext-temp/complexContent/restriction/child count",
     "schema/IfcGeometricRepresentationSubContext-temp/complexContent/restriction/sequence/child count",
     "schema/IfcMirroredProfileDef/tags",
+    "schema/IfcNamedUnit/complexContent/extension/sequence/Dimensions/attributes",
+    "schema/IfcOpeningElement/complexContent/extension/sequence/HasFillings/attributes",
+    "schema/IfcOrientedEdge-temp/complexContent/restriction/sequence/child count",
+    "schema/IfcPixelTexture/complexContent/extension/Pixel/simpleType/restriction/simpleType/list/attributes",
+    "schema/IfcSIUnit-temp/complexContent/restriction/sequence/tags",
+    "schema/IfcSite/complexContent/extension/RefLatitude/attributes",
+    "schema/IfcSite/complexContent/extension/RefLongitude/attributes",
+    "schema/IfcStructuralLoadConfiguration/complexContent/extension/sequence/Locations/complexType/sequence/element/attributes",
 }
 
 def freeze(x):
@@ -69,9 +77,11 @@ def compare(args, path=[]):
         xs = [c[i] for c, i in zip(children, indices)]
     
         if len(path) == 0:
+            tags = [x.tag for x in xs]
             names = [x.attributes.get('name') for x in xs]
             if all(names) and len(set(names)) != 1:
                 to_advance = names.index(min(names, key=lambda s: ("-temp" not in s, s)))
+                print("Warning, skipped", tags[to_advance], names[to_advance], "in file", to_advance)
                 indices[to_advance] += 1
                 continue
                 

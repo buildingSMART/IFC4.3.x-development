@@ -495,6 +495,84 @@ def convert_simple(nm_def):
                 
             yield x
     
+    
+def baseschema():
+    yield X(XS.element, {'name': 'Entity', 'type': 'ifc:Entity', 'abstract': 'true', 'nillable': 'true'})
+    
+    yield X(XS.complexType, {'name': 'Entity', 'abstract': 'true'}, children=[
+		X(XS.attribute, {'name': 'href', 'type': 'xs:anyURI', 'use': 'optional'}),
+		X(XS.attribute, {'name': 'ref', 'type': 'xs:IDREF', 'use': 'optional'}),
+		X(XS.attributeGroup, {'ref': 'ifc:instanceAttributes'})
+    ])
+    
+    yield X(XS.attributeGroup, {'name': 'instanceAttributes'}, children=[
+		X(XS.attribute, {'name': 'id', 'type': 'xs:ID', 'use': 'optional'}),
+		X(XS.attribute, {'name': 'path', 'type': 'xs:NMTOKENS', 'use': 'optional'}),
+		X(XS.attribute, {'name': 'pos', 'use': 'optional'}, children=[
+			X(XS.simpleType, children=[
+				X(XS.restriction, children=[
+					X(XS.simpleType, children=[
+						X(XS.list, {'itemType': 'xs:integer'})
+                    ]),
+					X(XS.minLength, {'value': '1'})
+                ])
+            ])
+        ])
+    ])
+    
+    yield X(XS.attribute, {'name': 'arraySize'}, children=[
+		X(XS.simpleType, children=[
+			X(XS.restriction, children=[
+				X(XS.simpleType, children=[
+					X(XS.list, {'itemType': 'xs:integer'})
+                ]),
+				X(XS.minLength, {'value': '1'})
+            ])
+        ])
+    ])
+    
+    yield X(XS.attribute, {'name': 'itemType'}, children=[
+		X(XS.simpleType, children=[
+			X(XS.list, {'itemType': 'xs:QName'})
+        ])
+    ])
+    
+    yield X(XS.attribute, {'name': 'cType'}, children=[
+		X(XS.simpleType, children=[
+			X(XS.list, {'itemType': 'ifc:aggregateType'})
+        ])
+    ])
+    
+    yield X(XS.simpleType, {'name': 'aggregateType'}, children=[
+		X(XS.restriction, {'base': 'xs:normalizedString'}, children=[
+			X(XS.enumeration, {'value': 'array'}),
+			X(XS.enumeration, {'value': 'list'}),
+			X(XS.enumeration, {'value': 'set'}),
+			X(XS.enumeration, {'value': 'bag'}),
+			X(XS.enumeration, {'value': 'array-unique'}),
+			X(XS.enumeration, {'value': 'array-optional'}),
+			X(XS.enumeration, {'value': 'array-optional-unique'}),
+			X(XS.enumeration, {'value': 'list-unique'})
+        ])
+    ])
+    
+    yield X(XS.complexType, {'name': 'hexBinary'}, children=[
+		X(XS.simpleContent, children=[
+			X(XS.extension, {'base': 'xs:hexBinary'}, children=[
+				X(XS.attribute, {'name': 'extraBits', 'type': 'xs:integer', 'use': 'optional'})
+            ])
+        ])
+    ])
+    
+    yield X(XS.simpleType, {'name': 'logical'}, children=[
+		X(XS.restriction, {'base': 'xs:normalizedString'}, children=[
+			X(XS.enumeration, {'value': 'false'}),
+			X(XS.enumeration, {'value': 'true'}),
+			X(XS.enumeration, {'value': 'unknown'})
+        ])
+    ])
+   
+    
 mapping = express_parser.parse(sys.argv[1])
 schema = mapping.schema
 entities = list(schema.entities.values())
@@ -578,7 +656,8 @@ content = X(
     ] + list(flatmap(convert, entities)) + \
         list(flatmap(convert_select, selects)) + \
         list(flatmap(convert_enum, enums)) + \
-        list(flatmap(convert_simple, simpletypes))
+        list(flatmap(convert_simple, simpletypes)) + \
+        list(baseschema())
 )
 
 xml_dict.serialize([content], sys.argv[2])

@@ -10,6 +10,8 @@ from append_xmi import namespace
 from ifcopenshell.express import express_parser
 from xmi_document import SCHEMA_NAME
 
+X = xml_dict.xml_node
+
 def flatmap(func, *iterable):
     return itertools.chain.from_iterable(map(func, *iterable))
 
@@ -17,6 +19,16 @@ namespaces = {
     'xs': "http://www.w3.org/2001/XMLSchema",
     'xlink': "http://www.w3.org/1999/xlink",
     'ifc': f"https://standards.buildingsmart.org/IFC/RELEASE/{'/'.join(re.split('_|X', SCHEMA_NAME))}"
+}
+
+express_xsd_mapping = {
+    'real': 'xs:double',
+    'binary': 'ifc:hexBinary',
+    'boolean': 'xs:boolean',
+    'integer': 'xs:long',
+    'number': 'xs:double',
+    'string': 'xs:normalizedString',
+    'logical': 'ifc:logical',
 }
 
 conf = xml_dict.read("IFC4_conf.xml")
@@ -32,7 +44,7 @@ IFC = namespace(namespaces['ifc'])
 
 class xml_serializable:
     def to_xml(self):
-        return xml_dict.xml_node(getattr(XS, self.__dict__.get('tagname', type(self).__name__)), {k:v for k, v in self.__dict__.items() if v and k != 'tagname'})
+        return X(getattr(XS, self.__dict__.get('tagname', type(self).__name__)), {k:v for k, v in self.__dict__.items() if v and k != 'tagname'})
     
 
 @dataclass
@@ -75,12 +87,12 @@ def complex_type(elements, attributes, content=None, **kwargs):
         children = [content]
     else:
         children = [
-            xml_dict.xml_node(
+            X(
                 XS.sequence,
                 children=elements
             )
         ]
-    return xml_dict.xml_node(
+    return X(
         XS.complexType,
         kwargs,
         children=children + list(map(attribute.to_xml, attributes))
@@ -92,8 +104,11 @@ def do_try(fn):
     except:
         pass
 
-def create_attribute(entity, a):
-    a_type = a.type
+def create_attribute(entity, a, name_override=None):
+    if isinstance(a, express_parser.AggregationType):
+        a_type = a
+    else:
+        a_type = a.type
     
     is_optional = a.optional
     
@@ -108,9 +123,9 @@ def create_attribute(entity, a):
         elif ty in schema.selects:
             assert isinstance(ty, str)
             elm = element(a.name, None, nillable="true" if is_optional else None, minOccurs="0" if is_optional else None).to_xml()
-            elm.children = [xml_dict.xml_node(
+            elm.children = [X(
                 XS.complexType,
-                children=[xml_dict.xml_node(
+                children=[X(
                     XS.group,
                     {"ref": f"ifc:{ty}"}
                 )]
@@ -153,33 +168,42 @@ def create_attribute(entity, a):
         #                                            # v this should probably be enabled, but discussion pending in issue #462
                 # if : # and not isinstance(mapping.flatten_type(a_type.type).type, express_parser.StringType):
         
-        is_list = a_type.type.type in schema.simpletypes and not entity_configuration.get(entity.name, {}).get(a.name, {}).get('exp-attribute') == 'double-tag'
+        def undecorate_until_string(x):
+            if isinstance(x, str):
+                return x
+            return undecorate_until_string(x.type)
         
-        is_elem = entity_configuration.get(entity.name, {}).get(a.name, {}).get('exp-attribute') == 'attribute-tag'
+        is_list = undecorate_until_string(a_type) in schema.simpletypes and not (entity and entity_configuration.get(entity.name, {}).get(a.name, {}).get('exp-attribute') == 'double-tag')
+        
+        is_elem = entity and entity_configuration.get(entity.name, {}).get(a.name, {}).get('exp-attribute') == 'attribute-tag'
+            
+        if name_override:
+            is_elem = False
+            is_list = True
         
         if is_elem:
 
             if aggregate_type_prefix:
                 # @todo when length constraint is encoded in the type how to guarantee that the correct length constraint is selected?
-                attr = xml_dict.xml_node(XS.element, {'name': f'Seq-{a_type.type.type}-wrapper', 'type': f'ifc:Seq-{a_type.type.type}', 'maxOccurs': "unbounded" if a_type.bounds.upper == '?' else a_type.bounds.upper})
+                attr = X(XS.element, {'name': f'Seq-{undecorate_until_string(a_type)}-wrapper', 'type': f'ifc:Seq-{undecorate_until_string(a_type)}', 'maxOccurs': "unbounded" if a_type.bounds.upper == '?' else a_type.bounds.upper})
                 # **({'minOccurs': a_type.bounds.lower} if a_type.bounds.lower != -1 else {})
-                attr = xml_dict.xml_node(
+                attr = X(
                     XS.element, 
                     {'name': a.name, 'minOccurs': '0'},
                     # why:
                     # **({'minOccurs': min_occurs_mult} if min_occurs_mult != 1 else {})},
                     # 
                     # 'maxOccurs': ("unbounded" if max_occurs_mult == float("inf") else max_occurs_mult)
-                    children=[xml_dict.xml_node(
+                    children=[X(
                         XS.complexType,
-                        children=[xml_dict.xml_node(
+                        children=[X(
                             XS.sequence,
                             children=[attr]
                         )]
                     )]
                 )
             else:
-                attr = xml_dict.xml_node(XS.element, {'name': a.name, 'type': f'ifc:{a_type.type.type}', 'nillable': 'true', 'minOccurs': a_type.bounds.lower, 'maxOccurs': a_type.bounds.upper})
+                attr = X(XS.element, {'name': a.name, 'type': f'ifc:{undecorate_until_string(a_type)}', 'nillable': 'true', 'minOccurs': a_type.bounds.lower, 'maxOccurs': a_type.bounds.upper})
                 
         elif is_list:
         
@@ -189,44 +213,51 @@ def create_attribute(entity, a):
                 assert min_occurs_mult == 1
                 extent = int(a_type.bounds.upper) - int(a_type.bounds.lower) + 1
                 for c in (XS.minLength, XS.maxLength):
-                    length_constraint += [xml_dict.xml_node(
+                    length_constraint += [X(
                         c, {"value": str(extent)}
                     )]
             else:                
                 if int(a_type.bounds.lower) != 1:
-                    length_constraint += [xml_dict.xml_node(
+                    length_constraint += [X(
                         XS.minLength,
                         {"value": (a_type.bounds.lower * min_occurs_mult)}
                     )]
                 if a_type.bounds.upper != "?" and max_occurs_mult != float("inf"):
-                    length_constraint += [xml_dict.xml_node(
+                    length_constraint += [X(
                         XS.maxLength,
                         {"value": (a_type.bounds.upper * max_occurs_mult)}
                     )]
                     
             attr = attribute(a.name, None, "optional").to_xml()
-            attr.children = [xml_dict.xml_node(
-                XS.simpleType,
-                
-                
-                children=[xml_dict.xml_node(
+            
+            xsd_type = undecorate_until_string(a_type)
+            xsd_type = express_xsd_mapping.get(xsd_type, f'ifc:{xsd_type}')
+            
+            attr.children = [X(
+                XS.simpleType,               
+                children=[X(
                     XS.restriction,
-                    children=[xml_dict.xml_node(
+                    children=[X(
                         XS.simpleType,
-                        children=[xml_dict.xml_node(
+                        children=[X(
                             XS.list,
-                            {"itemType": f"ifc:{a_type.type.type}"}
+                            {"itemType": xsd_type}
                         )]
                     )] + length_constraint  
                 )]
             )]
+            
+            if name_override:
+                attr = attr.children[0]
+                attr.attributes['name'] = name_override
         else:        
-            if a_type.type.type in schema.simpletypes:
+            ty = undecorate_until_string(a_type)
+            
+            if ty in schema.simpletypes:
                 wrapper_postfix = "-wrapper"
             else:
                 wrapper_postfix = ""
                 
-            ty = a_type.type.type
             assert isinstance(ty, str)
             attr = element(a.name, None, nillable="true" if is_optional else None, minOccurs="0" if is_optional else None).to_xml()
             
@@ -243,19 +274,19 @@ def create_attribute(entity, a):
                 max_occurs = "unbounded"    
                 
             array_data = [
-                attribute_ref("ifc:itemType", fixed=f"ifc:{a_type.type.type}{wrapper_postfix}", use=None),
+                attribute_ref("ifc:itemType", fixed=f"ifc:{ty}{wrapper_postfix}", use=None),
                 attribute_ref("ifc:cType", fixed=aggregate_type_prefix + aggregate_type(a_type), use=None),
                 attribute_ref("ifc:arraySize", use="optional")
             ]
             
-            if a_type.type.type in schema.selects:
-                attr.children = [xml_dict.xml_node(XS.complexType, children=[
-                    xml_dict.xml_node(XS.group, {'ref': f"ifc:{a_type.type.type}", **({'minOccurs': min_occurs} if min_occurs else {}), **{'maxOccurs': max_occurs}}),
+            if ty in schema.selects:
+                attr.children = [X(XS.complexType, children=[
+                    X(XS.group, {'ref': f"ifc:{ty}", **({'minOccurs': min_occurs} if min_occurs else {}), **{'maxOccurs': max_occurs}}),
                     *(x.to_xml() for x in array_data)
                 ])]
             else:
                 attr.children = [complex_type([
-                    element_ref(f"ifc:{a_type.type.type}{wrapper_postfix}", minOccurs=min_occurs, maxOccurs=max_occurs).to_xml()
+                    element_ref(f"ifc:{ty}{wrapper_postfix}", minOccurs=min_occurs, maxOccurs=max_occurs).to_xml()
                 ], array_data
                 )]
             
@@ -307,24 +338,24 @@ def convert(e, name_override=None, excluded_attributes=(), restriction=None, inc
     attrs = [e for e in attrs if e.tag == XS.attribute]
     
     if elems:
-        elems = [xml_dict.xml_node(
+        elems = [X(
             XS.sequence,
             children=elems
         )]
     
     children = elems + attrs
     
-    yield complex_type([], [], content=xml_dict.xml_node(
+    yield complex_type([], [], content=X(
         XS.complexContent,
         children=[
-            xml_dict.xml_node(
+            X(
                 XS.restriction,
                 {"base": f"ifc:{restriction}"},
                 children=children
             ) \
             if restriction
             else \
-            xml_dict.xml_node(
+            X(
                 XS.extension,
                 {"base": f"ifc:{supertype}"},
                 children=children
@@ -349,13 +380,13 @@ def convert_select(nm_def):
             s += '-wrapper'
         return f'ifc:{s}'
         
-    make_elem = lambda s: xml_dict.xml_node(XS.element, {'ref': make_ref(s)})
+    make_elem = lambda s: X(XS.element, {'ref': make_ref(s)})
     children = list(map(make_elem, sorted(set(items()))))
     
-    yield xml_dict.xml_node(
+    yield X(
         XS.group, 
         {'name': nm},
-        children=[xml_dict.xml_node(
+        children=[X(
             XS.choice,
             children=children
         )]
@@ -365,13 +396,13 @@ def convert_select(nm_def):
 def convert_enum(nm_def):
     nm, defn = nm_def
     
-    make_elem = lambda s: xml_dict.xml_node(XS.enumeration, {'value': s.lower()})
+    make_elem = lambda s: X(XS.enumeration, {'value': s.lower()})
     children = list(map(make_elem, defn.values))
     
-    yield xml_dict.xml_node(
+    yield X(
         XS.simpleType, 
         {'name': nm},
-        children=[xml_dict.xml_node(
+        children=[X(
             XS.restriction,
             {'base': 'xs:string'},
             children=children
@@ -379,16 +410,101 @@ def convert_enum(nm_def):
     )
     
 
+def convert_simple(nm_def):
+    nm, defn = nm_def
 
+    def convert_base(d):
+        if isinstance(d, express_parser.SimpleType):
+            return express_xsd_mapping[str(defn.type).split(' ')[0]]
+        elif d in schema.simpletypes or d in schema.entities:
+            return f'ifc:{d}'
+        else:
+            return 'unsupported'
+    
+    if isinstance(defn, express_parser.AggregationType):
+        
+        base = convert_base(defn.type)
+        attrs = [
+            X(XS.attribute, {"ref": "ifc:itemType", "fixed": base}),
+            X(XS.attribute, {"ref": "ifc:cType", "fixed": defn.aggregate_type}),
+            X(XS.attribute, {"ref": "ifc:arraySize", "use": "optional"})
+        ]
+        
+        if defn.type in schema.entities:
+        
+            yield X(XS.complexType, {"name": nm}, children=[
+                X(XS.sequence, children=[X(XS.element,
+                    {"ref": base, 'maxOccurs': "unbounded" if defn.bounds.upper == '?' else defn.bounds.upper}
+                )])]+attrs
+            )
+            
+        else:
+        
+            
+            yield X(XS.complexType, {"name": nm},
+                children=[X(XS.simpleContent, children=[
+                    X(XS.extension, {"base": f"ifc:List-{nm}"}, children=attrs)
+                ])]
+            )
+            
+            # due to name_override not actually an attribute, but simpleType directly
+            yield create_attribute(None, defn, name_override=f'List-{nm}')
+    else:
+    
+        base = convert_base(defn)
+    
+        if base == "ifc:hexBinary":
+            yield X(
+                XS.complexType,
+                {'name': nm},
+                children = [X(
+                    XS.simpleContent,
+                    children = [X(
+                        XS.extension,
+                        {'base': base}
+                    )]
+                )]
+            )
+        else:
+            x = X(
+                XS.simpleType,
+                {'name': nm},
+                children = [X(
+                    XS.restriction,
+                    {'base': base}
+                )]
+            )
+            
+            try:
+                has_width = defn.type.width.width
+                is_fixed = bool(defn.type.width.FIXED)
+                
+                if is_fixed:
+                    x.children[0].children = [
+                        X(XS.minLength, {"value": str(has_width)}),
+                        X(XS.maxLength, {"value": str(has_width)})
+                    ]
+                    
+                elif has_width:
+                    x.children[0].children = [
+                        X(XS.maxLength, {"value": str(has_width)})
+                    ]
+                    
+            except:
+                pass
+                
+            yield x
+    
 mapping = express_parser.parse(sys.argv[1])
 schema = mapping.schema
 entities = list(schema.entities.values())
 selects = list(schema.selects.items())
 enums = list(schema.enumerations.items())
+simpletypes = list(schema.simpletypes.items())
 
 header = complex_type(
     [
-        xml_dict.xml_node(
+        X(
             XS.element,
             {"name": "header", "minOccurs": "0"},
             children=[complex_type(
@@ -414,7 +530,7 @@ header = complex_type(
     name="uos", abstract="true"
 )
 
-content = xml_dict.xml_node(
+content = X(
     XS.schema,
     {
         "targetNamespace": namespaces['ifc'],
@@ -423,19 +539,19 @@ content = xml_dict.xml_node(
     },
     namespaces=namespaces,
     children=[
-        xml_dict.xml_node(XS.element,
+        X(XS.element,
             {
                 "name": "uos",
                 "type": "ifc:uos",
                 "abstract": "true"
             },
         ),
-        xml_dict.xml_node(XS.simpleType,
+        X(XS.simpleType,
             {
                 "name": "Seq-anyURI",
             },
             children=[
-                xml_dict.xml_node(XS.list,
+                X(XS.list,
                     {
                         "itemType": "xs:anyURI",
                     }
@@ -444,16 +560,16 @@ content = xml_dict.xml_node(
         ),
         header,
         element("ifcXML", "ifc:ifcXML", minOccurs=None, substitutionGroup="ifc:uos").to_xml(),
-        complex_type([], [], content=xml_dict.xml_node(
+        complex_type([], [], content=X(
             XS.complexContent,
-            children=[xml_dict.xml_node(
+            children=[X(
                 XS.extension,
                 {"base": "ifc:uos"},
-                children = [xml_dict.xml_node(
+                children = [X(
                     XS.choice,
                     {"minOccurs": "0", "maxOccurs": "unbounded"},
                     children=[(
-                        xml_dict.xml_node(XS.element, {"ref": "ifc:Entity"})
+                        X(XS.element, {"ref": "ifc:Entity"})
                     )]
                 )]
             
@@ -461,7 +577,8 @@ content = xml_dict.xml_node(
         ),name="ifcXML")
     ] + list(flatmap(convert, entities)) + \
         list(flatmap(convert_select, selects)) + \
-        list(flatmap(convert_enum, enums))
+        list(flatmap(convert_enum, enums)) + \
+        list(flatmap(convert_simple, simpletypes))
 )
 
 xml_dict.serialize([content], sys.argv[2])

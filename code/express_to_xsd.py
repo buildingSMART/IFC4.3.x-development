@@ -104,6 +104,9 @@ def do_try(fn):
     except:
         pass
 
+defined_sequences = []
+referenced_wrappers = set()
+
 def create_attribute(entity, a, name_override=None):
     if isinstance(a, express_parser.AggregationType):
         a_type = a
@@ -184,9 +187,33 @@ def create_attribute(entity, a, name_override=None):
         if is_elem:
 
             if aggregate_type_prefix:
+                        
                 # @todo when length constraint is encoded in the type how to guarantee that the correct length constraint is selected?
-                attr = X(XS.element, {'name': f'Seq-{undecorate_until_string(a_type)}-wrapper', 'type': f'ifc:Seq-{undecorate_until_string(a_type)}', 'maxOccurs': "unbounded" if a_type.bounds.upper == '?' else a_type.bounds.upper})
-                # **({'minOccurs': a_type.bounds.lower} if a_type.bounds.lower != -1 else {})
+                attr = X(XS.element, {'name': f'Seq-{undecorate_until_string(a_type)}-wrapper', 'type': f'ifc:Seq-{undecorate_until_string(a_type)}', 'maxOccurs': "unbounded" if max_occurs_mult == float('inf') else str(max_occurs_mult)})
+                
+                inner_type = X(XS.simpleType, {'name': f'Seq-{undecorate_until_string(a_type)}'}, children=[
+                    X(XS.restriction, children=[
+                        X(XS.simpleType, children=[
+                            X(XS.list, {'itemType': f'ifc:{undecorate_until_string(a_type)}'})
+                        ])
+                    ])
+                ])
+                
+                length_constraint = []
+                if int(a_type.bounds.lower) != 1:
+                    length_constraint += [X(
+                        XS.minLength,
+                        {"value": (a_type.bounds.lower)}
+                    )]
+                if a_type.bounds.upper != "?":
+                    length_constraint += [X(
+                        XS.maxLength,
+                        {"value": (a_type.bounds.upper)}
+                    )]
+                    
+                inner_type.children[0].children += length_constraint                
+                defined_sequences.append(inner_type)
+                
                 attr = X(
                     XS.element, 
                     {'name': a.name, 'minOccurs': '0'},
@@ -285,6 +312,9 @@ def create_attribute(entity, a, name_override=None):
                     *(x.to_xml() for x in array_data)
                 ])]
             else:
+                if wrapper_postfix:
+                    referenced_wrappers.add(f"{ty}{wrapper_postfix}")
+
                 attr.children = [complex_type([
                     element_ref(f"ifc:{ty}{wrapper_postfix}", minOccurs=min_occurs, maxOccurs=max_occurs).to_xml()
                 ], array_data
@@ -379,7 +409,11 @@ def convert_select(nm_def):
         if not s in schema.entities:
             s += '-wrapper'
         return f'ifc:{s}'
-        
+    
+    for s in items():
+        if make_ref(s).endswith("-wrapper"):
+            referenced_wrappers.add(make_ref(s).split(':')[1])
+               
     make_elem = lambda s: X(XS.element, {'ref': make_ref(s)})
     children = list(map(make_elem, sorted(set(items()))))
     
@@ -494,7 +528,31 @@ def convert_simple(nm_def):
                 pass
                 
             yield x
+            
+def convert_simple_wrapper(nm_def):
+    nm, defn = nm_def
     
+    def undecorate_type(t):
+        if hasattr(t, 'type'):
+            return undecorate_type(t.type)
+        else:
+            return t
+        
+    if undecorate_type(defn) in schema.entities:
+        ty = XS.complexContent
+    else:
+        ty = XS.simpleContent
+    
+    if f"{nm}-wrapper" in referenced_wrappers:
+        yield X(XS.element, {'name': f"{nm}-wrapper", 'nillable': "true"}, children=[
+            X(XS.complexType, children=[
+                X(ty, children=[
+                    X(XS.extension, {'base': f"ifc:{nm}"}, children=[
+                        X(XS.attributeGroup, {'ref': "ifc:instanceAttributes"})
+                    ])
+                ])
+            ])
+        ])
     
 def baseschema():
     yield X(XS.element, {'name': 'Entity', 'type': 'ifc:Entity', 'abstract': 'true', 'nillable': 'true'})
@@ -657,7 +715,9 @@ content = X(
         list(flatmap(convert_select, selects)) + \
         list(flatmap(convert_enum, enums)) + \
         list(flatmap(convert_simple, simpletypes)) + \
-        list(baseschema())
+        list(baseschema()) + \
+        defined_sequences +\
+        list(flatmap(convert_simple_wrapper, sorted(simpletypes + enums)))
 )
 
 xml_dict.serialize([content], sys.argv[2])

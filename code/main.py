@@ -48,6 +48,13 @@ for ffn in glob.glob(relative_path("..", "schemas", "*.xml")):
                     relative_path("..", "output", fn[:-4] + "." + ext),
                     relative_path("..", "output", "%s-%s-differences.md" % (fn[:-4], reference[:-4]))
                 ], cwd=relative_path("."))
+                
+            subprocess.check_call([
+                sys.executable, 
+                "express_to_xsd.py",
+                output_path,
+                output_path.replace("exp", "xsd")
+            ], cwd=relative_path("."))
             
         elif script == "to_bsdd":
         

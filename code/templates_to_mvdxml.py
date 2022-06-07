@@ -59,6 +59,14 @@ for fn in sorted(fns, key=len):
     except:
         print(fn)
         traceback.print_exc()
+        
+    if name == "Property Sets with Override":
+        breakpoint()
+        
+    if soup.text.strip():
+        definition = soup.body.encode_contents().decode('utf-8')
+    else:
+        definition = ''
     
     concept_blocks = re.findall(r"concept\s*\{.+?\}", txt, flags=re.S)
     rules = None
@@ -126,7 +134,7 @@ for fn in sorted(fns, key=len):
         'Definitions': {
             'Definition': {
                 'Body': {
-                    '$': soup.body.encode_contents().decode('utf-8'),
+                    '$': definition,
                     '@lang': 'en'
                 }
             }

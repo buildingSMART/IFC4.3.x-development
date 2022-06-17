@@ -9,7 +9,7 @@ The cylindrical surface is a surface unbounded in the direction of _z_. Bounded 
 The inherited attributes are interpreted as
 
 * _SELF\IfcElementarySurface.Position_ defines the location and orientation of the cylindrical surface.
-* _SELF\IfcElementarySurface.Position.Location_ definesd a point on the axis of the cylindrical surface.
+* _SELF\IfcElementarySurface.Position.Location_ defines a point on the axis of the cylindrical surface.
 * _SELF\IfcElementarySurface.Position.P[3]_ defines the direction of the axis of the cylindrical surface.
 
 { .extDef}

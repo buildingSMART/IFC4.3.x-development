@@ -3,13 +3,13 @@
 ## Items
 
 ### FLAT
-
+Flat
 
 ### FABRICATEDAIRFOIL
-
+Fabricated Airfoil
 
 ### EXTRUDEDAIRFOIL
-
+Extruded Airfoil
 
 ### OTHER
 required category not on scale

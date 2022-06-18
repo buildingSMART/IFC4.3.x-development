@@ -3,10 +3,10 @@
 ## Items
 
 ### DIAL
-
+Dial
 
 ### DIGITAL
-
+Digital
 
 ### OTHER
 required category not on scale

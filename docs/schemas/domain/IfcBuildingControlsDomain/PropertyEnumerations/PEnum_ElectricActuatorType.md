@@ -3,10 +3,10 @@
 ## Items
 
 ### MOTORDRIVE
-
+Motor Drive
 
 ### MAGNETIC
-
+Magnetic
 
 ### OTHER
 required category not on scale

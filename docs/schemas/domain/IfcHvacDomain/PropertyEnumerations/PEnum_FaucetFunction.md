@@ -3,13 +3,13 @@
 ## Items
 
 ### COLD
-
+Cold
 
 ### HOT
-
+Hot
 
 ### MIXED
-
+Mixed
 
 ### OTHER
 required category not on scale

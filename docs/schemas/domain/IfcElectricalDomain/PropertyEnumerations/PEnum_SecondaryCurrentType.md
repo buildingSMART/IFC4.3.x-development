@@ -3,10 +3,10 @@
 ## Items
 
 ### AC
-
+Ac
 
 ### DC
-
+Dc
 
 ### NOTKNOWN
 Value is unkown

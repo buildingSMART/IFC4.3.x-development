@@ -38,10 +38,10 @@ Enumeration describing the current state of a borehole
 
 
 ### USERDEFINED
-
+User Defined
 
 ### NOTKNOWN
 Value is unkown
 
 ### NOTDEFINED
-
+Notdefined

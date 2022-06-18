@@ -3,10 +3,10 @@
 ## Items
 
 ### LINEAR
-
+Linear
 
 ### EXPONENTIAL
-
+Exponential
 
 ### OTHER
 required category not on scale

@@ -3,25 +3,25 @@
 ## Items
 
 ### CEILING
-
+Ceiling
 
 ### CONCEALED
-
+Concealed
 
 ### CUTOFF
-
+Cut-Off
 
 ### PENDANT
-
+Pendant
 
 ### RECESSEDPENDANT
-
+Recessed Pendant
 
 ### SIDEWALL
-
+Sidewall
 
 ### UPRIGHT
-
+Upright
 
 ### OTHER
 required category not on scale

@@ -3,13 +3,13 @@
 ## Items
 
 ### POINT
-
+Point
 
 ### PATH
-
+Path
 
 ### SURFACE
-
+Surface
 
 ### OTHER
 required category not on scale

@@ -3,13 +3,13 @@
 ## Items
 
 ### FLOOR
-
+Floor
 
 ### CEILING
-
+Ceiling
 
 ### UNIT
-
+Unit
 
 ### OTHER
 required category not on scale

@@ -3,25 +3,25 @@
 ## Items
 
 ### ICE
-
+Ice
 
 ### WATER
-
+Water
 
 ### RAINWATER
-
+Rain Water
 
 ### WASTEWATER
-
+Waste Water
 
 ### POTABLEWATER
-
+Potable Water
 
 ### FUEL
-
+Fuel
 
 ### OIL
-
+Oil
 
 ### OTHER
 required category not on scale

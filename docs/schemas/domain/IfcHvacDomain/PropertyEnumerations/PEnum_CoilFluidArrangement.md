@@ -3,13 +3,13 @@
 ## Items
 
 ### CROSSFLOW
-
+Cross Flow
 
 ### CROSSCOUNTERFLOW
-
+Cross Counter Flow
 
 ### CROSSPARALLELFLOW
-
+Cross Parallel Flow
 
 ### OTHER
 required category not on scale

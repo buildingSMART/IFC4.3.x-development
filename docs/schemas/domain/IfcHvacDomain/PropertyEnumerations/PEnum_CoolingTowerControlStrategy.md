@@ -3,10 +3,10 @@
 ## Items
 
 ### FIXEDEXITINGWATERTEMP
-
+Fixed Exiting Water Temp
 
 ### WETBULBTEMPRESET
-
+Wet Bulb Temp Reset
 
 ### OTHER
 required category not on scale

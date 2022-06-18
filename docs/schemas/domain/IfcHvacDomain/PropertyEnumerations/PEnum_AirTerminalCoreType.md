@@ -3,16 +3,16 @@
 ## Items
 
 ### SHUTTERBLADE
-
+Shutter Blade
 
 ### CURVEDBLADE
-
+Curved Blade
 
 ### REMOVABLE
-
+Removable
 
 ### REVERSIBLE
-
+Reversible
 
 ### NONE
 No waterproof.

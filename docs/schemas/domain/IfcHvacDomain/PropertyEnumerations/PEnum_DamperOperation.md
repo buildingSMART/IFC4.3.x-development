@@ -3,10 +3,10 @@
 ## Items
 
 ### AUTOMATIC
-
+Automatic
 
 ### MANUAL
-
+Manual
 
 ### OTHER
 required category not on scale

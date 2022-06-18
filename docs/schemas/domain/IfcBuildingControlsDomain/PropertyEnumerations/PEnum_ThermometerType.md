@@ -3,13 +3,13 @@
 ## Items
 
 ### DIAL
-
+Dial
 
 ### DIGITAL
-
+Digital
 
 ### STEM
-
+Stem
 
 ### OTHER
 required category not on scale

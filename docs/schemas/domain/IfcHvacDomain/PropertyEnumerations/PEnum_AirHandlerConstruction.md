@@ -3,10 +3,10 @@
 ## Items
 
 ### MANUFACTUREDITEM
-
+Manufactured Item
 
 ### CONSTRUCTEDONSITE
-
+Constructed On Site
 
 ### OTHER
 required category not on scale

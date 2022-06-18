@@ -3,13 +3,13 @@
 ## Items
 
 ### PARALLEL
-
+Parallel
 
 ### PERPENDICULAR
-
+Perpendicular
 
 ### ADJUSTABLE
-
+Adjustable
 
 ### OTHER
 required category not on scale

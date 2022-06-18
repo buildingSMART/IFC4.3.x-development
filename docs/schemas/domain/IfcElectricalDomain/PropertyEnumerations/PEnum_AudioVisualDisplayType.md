@@ -15,7 +15,7 @@ Liquid Crystal Diode
 LIght Emitting Diode
 
 ### PLASMA
-
+Plasma
 
 ### OTHER
 required category not on scale
@@ -24,4 +24,4 @@ required category not on scale
 Value is unkown
 
 ### UNSET.
-
+Unset.

@@ -3,10 +3,10 @@
 ## Items
 
 ### LOCALBATTERY
-
+Local Battery
 
 ### CENTRALBATTERY
-
+Central Battery
 
 ### OTHER
 required category not on scale

@@ -3,16 +3,16 @@
 ## Items
 
 ### SUPPLYAIR
-
+Supply Air
 
 ### RETURNAIR
-
+Return Air
 
 ### EXHAUSTAIR
-
+Exhaust Air
 
 ### COOLINGTOWER
-
+Cooling Tower
 
 ### OTHER
 required category not on scale

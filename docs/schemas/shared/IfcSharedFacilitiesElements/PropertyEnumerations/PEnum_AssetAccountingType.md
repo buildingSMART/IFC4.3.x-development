@@ -3,10 +3,10 @@
 ## Items
 
 ### FIXED
-
+Fixed
 
 ### NONFIXED
-
+Non Fixed
 
 ### OTHER
 required category not on scale

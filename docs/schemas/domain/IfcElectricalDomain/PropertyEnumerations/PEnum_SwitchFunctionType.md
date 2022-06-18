@@ -3,13 +3,13 @@
 ## Items
 
 ### ONOFFSWITCH
-
+On/off Switch
 
 ### INTERMEDIATESWITCH
-
+Intermediate Switch
 
 ### DOUBLETHROWSWITCH
-
+Double Throw Switch
 
 ### OTHER
 required category not on scale

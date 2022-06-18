@@ -3,13 +3,13 @@
 ## Items
 
 ### SINGLEDUCT
-
+Single Duct
 
 ### DUALDUCT
-
+Dual Duct
 
 ### MULTIZONE
-
+Multizone
 
 ### OTHER
 required category not on scale

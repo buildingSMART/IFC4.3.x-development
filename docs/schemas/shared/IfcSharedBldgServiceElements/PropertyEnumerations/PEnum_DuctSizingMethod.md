@@ -3,13 +3,13 @@
 ## Items
 
 ### CONSTANTFRICTION
-
+Constant Friction
 
 ### CONSTANTPRESSURE
-
+Constant Pressure
 
 ### STATICREGAIN
-
+Static Regain
 
 ### OTHER
 required category not on scale

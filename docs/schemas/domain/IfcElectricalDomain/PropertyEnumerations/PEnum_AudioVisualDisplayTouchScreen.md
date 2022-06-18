@@ -3,10 +3,10 @@
 ## Items
 
 ### SINGLETOUCH
-
+Single Touch
 
 ### MULTITOUCH
-
+Multi Touch
 
 ### NONE
 No waterproof.

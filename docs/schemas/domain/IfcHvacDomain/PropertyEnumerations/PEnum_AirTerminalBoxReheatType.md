@@ -3,16 +3,16 @@
 ## Items
 
 ### ELECTRICALREHEAT
-
+Electrical Reheat
 
 ### WATERCOILREHEAT
-
+Water Coil Reheat
 
 ### STEAMCOILREHEAT
-
+Steam Coil Reheat
 
 ### GASREHEAT
-
+Gas Reheat
 
 ### NONE
 No waterproof.

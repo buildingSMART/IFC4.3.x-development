@@ -3,13 +3,13 @@
 ## Items
 
 ### HIGHVOLTAGE
-
+High Voltage
 
 ### LOWVOLTAGE
-
+Low Voltage
 
 ### EXTRALOWVOLTAGE
-
+Extra Low Voltage
 
 ### OTHER
 required category not on scale

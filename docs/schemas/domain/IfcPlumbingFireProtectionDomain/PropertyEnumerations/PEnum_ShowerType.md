@@ -3,13 +3,13 @@
 ## Items
 
 ### DRENCH
-
+Drench
 
 ### INDIVIDUAL
-
+Individual
 
 ### TUNNEL
-
+Tunnel
 
 ### OTHER
 required category not on scale

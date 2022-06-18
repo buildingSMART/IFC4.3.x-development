@@ -3,10 +3,10 @@
 ## Items
 
 ### DRINKINGWATER
-
+Drinking Water
 
 ### EYEWASH
-
+Eyewash
 
 ### OTHER
 required category not on scale

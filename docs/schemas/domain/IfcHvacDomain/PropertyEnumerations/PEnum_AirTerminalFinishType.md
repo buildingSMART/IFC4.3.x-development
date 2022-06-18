@@ -3,10 +3,10 @@
 ## Items
 
 ### ANNODIZED
-
+Annodized
 
 ### PAINTED
-
+Painted
 
 ### NONE
 No waterproof.

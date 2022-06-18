@@ -15,7 +15,7 @@ Single analog input is read and absolute value is written to the output value
 Single analog input is read, 1
 
 ### HYSTERESIS
-
+Hysteresis
 
 ### RUNNINGAVERAGE
 Single analog input is read, averaged over SignalTime, and written to the output value
@@ -36,10 +36,10 @@ Single binary input is read, and for each pulse the SignalOffset is added to the
 Single integer input is read, and for each increment the SignalMultiplier is added and written to the output value
 
 ### LOWERLIMITCONTROL
-
+Lower Limit Control
 
 ### UPPERLIMITCONTROL
-
+Upper Limit Control
 
 ### SUM
 Two analog inputs are read, added, and written to the output value
@@ -63,10 +63,10 @@ Two analog inputs are read and the maximum is written to the output value
 Two analog inputs are read and the minimum is written to the output value
 
 ### REPORT
-
+Report
 
 ### SPLIT
-
+Split
 
 ### INPUT
 Controller element is a dedicated input

@@ -3,10 +3,10 @@
 ## Items
 
 ### CENTRAL
-
+Central
 
 ### LOCAL
-
+Local
 
 ### NONE
 No waterproof.

@@ -3,7 +3,7 @@
 ## Items
 
 ### MUSHROOM
-
+Mushroom
 
 ### OTHER
 required category not on scale

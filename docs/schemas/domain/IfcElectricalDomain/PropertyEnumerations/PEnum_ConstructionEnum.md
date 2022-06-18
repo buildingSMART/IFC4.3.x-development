@@ -3,13 +3,13 @@
 ## Items
 
 ### SOLIDCONDUCTOR
-
+Solid Conductor
 
 ### STRANDEDCONDUCTOR
-
+Stranded Conductor
 
 ### FLEXIBLESTRANDEDCONDUCTOR
-
+Flexible Stranded Conductor
 
 ### OTHER
 required category not on scale

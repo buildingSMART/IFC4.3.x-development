@@ -27,7 +27,7 @@ Single analog input is read and if less than Value
 Single analog input is read and if more than Value
 
 ### AVERAGE
-
+Average
 
 ### CALENDAR
 No inputs

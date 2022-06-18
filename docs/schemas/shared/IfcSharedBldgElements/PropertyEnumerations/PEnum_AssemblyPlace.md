@@ -3,13 +3,13 @@
 ## Items
 
 ### FACTORY
-
+Factory
 
 ### OFFSITE
-
+Offsite
 
 ### SITE
-
+Site
 
 ### OTHER
 Value is not listed

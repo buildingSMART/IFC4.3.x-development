@@ -3,16 +3,16 @@
 ## Items
 
 ### STRAIGHT
-
+Straight
 
 ### RIGHT
-
+Right
 
 ### LEFT
-
+Left
 
 ### TOP
-
+Top
 
 ### OTHER
 required category not on scale

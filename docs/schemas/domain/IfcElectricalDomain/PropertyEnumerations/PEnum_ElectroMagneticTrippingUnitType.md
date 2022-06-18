@@ -3,19 +3,19 @@
 ## Items
 
 ### OL
-
+Ol
 
 ### TMP_STD
-
+Tmp  Std
 
 ### TMP_SC
-
+Tmp  Sc
 
 ### TMP_MP
-
+Tmp  Mp
 
 ### TMP_BM
-
+Tmp  Bm
 
 ### OTHER
 required category not on scale

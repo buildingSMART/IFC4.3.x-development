@@ -3,10 +3,10 @@
 ## Items
 
 ### MALE
-
+Male
 
 ### FEMALE
-
+Female
 
 ### OTHER
 required category not on scale

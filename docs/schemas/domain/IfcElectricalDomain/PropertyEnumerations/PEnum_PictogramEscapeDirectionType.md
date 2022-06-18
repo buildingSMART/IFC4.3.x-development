@@ -3,16 +3,16 @@
 ## Items
 
 ### RIGHTARROW
-
+Right Arrow
 
 ### LEFTARROW
-
+Left Arrow
 
 ### DOWNARROW
-
+Down Arrow
 
 ### UPARROW
-
+Up Arrow
 
 ### OTHER
 required category not on scale

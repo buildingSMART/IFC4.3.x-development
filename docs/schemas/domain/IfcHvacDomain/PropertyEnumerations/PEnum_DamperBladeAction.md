@@ -3,16 +3,16 @@
 ## Items
 
 ### FOLDINGCURTAIN
-
+Folding Curtain
 
 ### PARALLEL
-
+Parallel
 
 ### OPPOSED
-
+Opposed
 
 ### SINGLE
-
+Single
 
 ### OTHER
 required category not on scale

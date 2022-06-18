@@ -3,13 +3,13 @@
 ## Items
 
 ### HIGH
-
+High
 
 ### MEDIUM
-
+Medium
 
 ### LOW
-
+Low
 
 ### OTHER
 required category not on scale

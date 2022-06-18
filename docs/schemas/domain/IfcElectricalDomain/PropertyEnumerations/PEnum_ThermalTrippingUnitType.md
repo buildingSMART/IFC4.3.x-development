@@ -3,16 +3,16 @@
 ## Items
 
 ### NH_FUSE
-
+NH Fuse
 
 ### DIAZED
-
+Diazed
 
 ### MINIZED
-
+Minized
 
 ### NEOZED
-
+Neozed
 
 ### OTHER
 required category not on scale

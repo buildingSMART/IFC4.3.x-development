@@ -3,13 +3,13 @@
 ## Items
 
 ### COMPOUND
-
+Compound
 
 ### INFERENTIAL
-
+Inferential
 
 ### PISTON
-
+Piston
 
 ### OTHER
 required category not on scale

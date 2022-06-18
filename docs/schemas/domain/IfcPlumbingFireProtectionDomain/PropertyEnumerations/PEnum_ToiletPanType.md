@@ -3,16 +3,16 @@
 ## Items
 
 ### SIPHONIC
-
+Siphonic
 
 ### SQUAT
-
+Squat
 
 ### WASHDOWN
-
+Washdown
 
 ### WASHOUT
-
+Washout
 
 ### OTHER
 required category not on scale

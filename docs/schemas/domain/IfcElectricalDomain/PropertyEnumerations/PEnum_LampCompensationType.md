@@ -3,10 +3,10 @@
 ## Items
 
 ### CAPACITIVE
-
+Capacitive
 
 ### INDUCTIVE
-
+Inductive
 
 ### OTHER
 required category not on scale

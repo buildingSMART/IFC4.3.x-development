@@ -3,19 +3,19 @@
 ## Items
 
 ### FULLRANGE
-
+Full Range
 
 ### MIDRANGE
-
+Mid Range
 
 ### WOOFER
-
+Woofer
 
 ### TWEETER
-
+Tweeter
 
 ### COAXIAL
-
+Coaxial
 
 ### OTHER
 required category not on scale
@@ -24,4 +24,4 @@ required category not on scale
 Value is unkown
 
 ### UNSET.
-
+Unset.

@@ -3,10 +3,10 @@
 ## Items
 
 ### PORTABLE
-
+Portable
 
 ### FIXED
-
+Fixed
 
 ### OTHER
 required category not on scale

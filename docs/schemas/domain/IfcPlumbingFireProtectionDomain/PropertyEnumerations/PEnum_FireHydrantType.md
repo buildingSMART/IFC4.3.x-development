@@ -3,10 +3,10 @@
 ## Items
 
 ### DRYBARREL
-
+Dry Barrel
 
 ### WETBARREL
-
+Wet Barrel
 
 ### OTHER
 required category not on scale

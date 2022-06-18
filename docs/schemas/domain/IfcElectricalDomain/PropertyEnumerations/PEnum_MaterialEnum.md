@@ -3,10 +3,10 @@
 ## Items
 
 ### ALUMINIUM
-
+Aluminium
 
 ### COPPER
-
+Copper
 
 ### OTHER
 required category not on scale

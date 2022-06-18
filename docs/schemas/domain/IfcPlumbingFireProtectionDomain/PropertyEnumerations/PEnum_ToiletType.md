@@ -3,19 +3,19 @@
 ## Items
 
 ### BEDPANWASHER
-
+Bed Pan Washer
 
 ### CHEMICAL
-
+Chemical
 
 ### CLOSECOUPLED
-
+Close Coupled
 
 ### LOOSECOUPLED
-
+Loose Coupled
 
 ### SLOPHOPPER
-
+Slop Hopper
 
 ### OTHER
 required category not on scale

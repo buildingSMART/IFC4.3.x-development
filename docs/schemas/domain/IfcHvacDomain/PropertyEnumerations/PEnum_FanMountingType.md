@@ -3,22 +3,22 @@
 ## Items
 
 ### MANUFACTUREDCURB
-
+Manufactured Curb
 
 ### FIELDERECTEDCURB
-
+Field Erected Curb
 
 ### CONCRETEPAD
-
+Concrete Pad
 
 ### SUSPENDED
-
+Suspended
 
 ### WALLMOUNTED
-
+Wall Mounted
 
 ### DUCTMOUNTED
-
+Duct Mounted
 
 ### OTHER
 required category not on scale

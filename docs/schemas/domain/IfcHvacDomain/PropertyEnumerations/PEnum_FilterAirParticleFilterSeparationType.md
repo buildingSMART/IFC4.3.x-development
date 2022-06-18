@@ -3,13 +3,13 @@
 ## Items
 
 ### BAG
-
+Bag
 
 ### PLEAT
-
+Pleat
 
 ### TREADSEPARATION
-
+Tread Separation
 
 ### OTHER
 required category not on scale

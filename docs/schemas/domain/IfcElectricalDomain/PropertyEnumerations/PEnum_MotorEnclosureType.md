@@ -3,16 +3,16 @@
 ## Items
 
 ### OPENDRIPPROOF
-
+Open Drip Proof
 
 ### TOTALLYENCLOSEDAIROVER
-
+Totally Enclosed Air Over
 
 ### TOTALLYENCLOSEDFANCOOLED
-
+Totally Enclosed Fan Cooled
 
 ### TOTALLYENCLOSEDNONVENTILATED
-
+Totally Enclosed Nonventilated
 
 ### OTHER
 required category not on scale

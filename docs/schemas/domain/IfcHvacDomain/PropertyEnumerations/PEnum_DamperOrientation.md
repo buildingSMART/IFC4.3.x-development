@@ -3,13 +3,13 @@
 ## Items
 
 ### VERTICAL
-
+Vertical
 
 ### HORIZONTAL
-
+Horizontal
 
 ### VERTICALORHORIZONTAL
-
+Vertical or Horizontal
 
 ### OTHER
 required category not on scale

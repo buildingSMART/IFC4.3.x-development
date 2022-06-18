@@ -3,13 +3,13 @@
 ## Items
 
 ### LIGHT
-
+Light
 
 ### MEDIUM
-
+Medium
 
 ### HEAVY
-
+Heavy
 
 ### NOTKNOWN
 Value is unkown

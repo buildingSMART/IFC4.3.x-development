@@ -3,16 +3,16 @@
 ## Items
 
 ### ROUND
-
+Round
 
 ### RECTANGULAR
-
+Rectangular
 
 ### SQUARE
-
+Square
 
 ### SLOT
-
+Slot
 
 ### OTHER
 required category not on scale

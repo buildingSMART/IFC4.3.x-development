@@ -3,10 +3,10 @@
 ## Items
 
 ### DRAWTHROUGH
-
+Draw Through
 
 ### BLOWTHROUGH
-
+Blow Through
 
 ### OTHER
 required category not on scale

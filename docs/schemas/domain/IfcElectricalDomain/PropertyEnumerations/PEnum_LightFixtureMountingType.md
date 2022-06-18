@@ -3,28 +3,28 @@
 ## Items
 
 ### CABLESPANNED
-
+Cable Spanned
 
 ### FREESTANDING
-
+Freestanding
 
 ### POLE_SIDE
-
+Pole Side
 
 ### POLE_TOP
-
+Pole Top
 
 ### RECESSED
-
+Recessed
 
 ### SURFACE
-
+Surface
 
 ### SUSPENDED
-
+Suspended
 
 ### TRACKMOUNTED
-
+Track Mounted
 
 ### OTHER
 required category not on scale

@@ -3,22 +3,22 @@
 ## Items
 
 ### DENTALCUSPIDOR
-
+Dental Cuspidor
 
 ### HANDRINSE
-
+Hand Rinse
 
 ### HOSPITAL
-
+Hospital
 
 ### TIPUP
-
+Tipup
 
 ### WASHFOUNTAIN
-
+Wash Fountain
 
 ### WASHINGTROUGH
-
+Washing Trough
 
 ### OTHER
 required category not on scale

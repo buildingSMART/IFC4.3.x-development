@@ -3,10 +3,10 @@
 ## Items
 
 ### VERTICAL
-
+Vertical
 
 ### BACKINLET
-
+Backinlet
 
 ### OTHER
 required category not on scale

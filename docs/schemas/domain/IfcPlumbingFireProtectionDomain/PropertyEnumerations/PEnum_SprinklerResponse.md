@@ -3,10 +3,10 @@
 ## Items
 
 ### QUICK
-
+Quick
 
 ### STANDARD
-
+Standard
 
 ### NOTKNOWN
 Value is unkown

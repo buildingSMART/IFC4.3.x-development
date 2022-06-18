@@ -3,16 +3,16 @@
 ## Items
 
 ### OPENCIRCUIT
-
+Open Circuit
 
 ### CLOSEDCIRCUITWET
-
+Closed Circuit Wet
 
 ### CLOSEDCIRCUITDRY
-
+Closed Circuit Dry
 
 ### CLOSEDCIRCUITDRYWET
-
+Closed Circuit Dry Wet
 
 ### OTHER
 required category not on scale

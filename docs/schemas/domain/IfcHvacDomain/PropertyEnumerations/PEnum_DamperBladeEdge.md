@@ -3,10 +3,10 @@
 ## Items
 
 ### CRIMPED
-
+Crimped
 
 ### UNCRIMPED
-
+Uncrimped
 
 ### OTHER
 required category not on scale

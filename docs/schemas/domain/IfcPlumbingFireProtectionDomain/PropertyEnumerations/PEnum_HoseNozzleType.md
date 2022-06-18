@@ -3,10 +3,10 @@
 ## Items
 
 ### FOG
-
+Fog
 
 ### STRAIGHTSTREAM
-
+Straight Stream
 
 ### OTHER
 required category not on scale

@@ -3,13 +3,13 @@
 ## Items
 
 ### SPRAYFILLED
-
+Spray Filled
 
 ### SPLASHTYPEFILL
-
+Splash Type Fill
 
 ### FILMTYPEFILL
-
+Film Type Fill
 
 ### OTHER
 required category not on scale

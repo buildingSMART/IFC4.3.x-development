@@ -3,13 +3,13 @@
 ## Items
 
 ### CABINET_RECESSED
-
+Cabinet Recessed
 
 ### CABINET_SEMIRECESSED
-
+Cabinet Semirecessed
 
 ### SURFACE
-
+Surface
 
 ### OTHER
 required category not on scale

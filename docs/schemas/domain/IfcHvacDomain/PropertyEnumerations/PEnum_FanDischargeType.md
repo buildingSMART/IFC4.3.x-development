@@ -3,16 +3,16 @@
 ## Items
 
 ### DUCT
-
+Duct
 
 ### SCREEN
-
+Screen
 
 ### LOUVER
-
+Louver
 
 ### DAMPER
-
+Damper
 
 ### OTHER
 required category not on scale

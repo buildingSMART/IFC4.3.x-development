@@ -3,16 +3,16 @@
 ## Items
 
 ### BASEBOARD
-
+Baseboard
 
 ### TOWELWARMER
-
+Towel Warmer
 
 ### SUSPENDED
-
+Suspended
 
 ### WALL
-
+Wall
 
 ### OTHER
 required category not on scale

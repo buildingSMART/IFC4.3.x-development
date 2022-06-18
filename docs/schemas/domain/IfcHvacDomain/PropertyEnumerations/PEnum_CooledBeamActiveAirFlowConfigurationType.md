@@ -3,13 +3,13 @@
 ## Items
 
 ### BIDIRECTIONAL
-
+Bidirectional
 
 ### UNIDIRECTIONALRIGHT
-
+Unidirectional Right
 
 ### UNIDIRECTIONALLEFT
-
+Unidirectional Left
 
 ### OTHER
 required category not on scale

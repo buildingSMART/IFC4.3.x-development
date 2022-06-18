@@ -3,13 +3,13 @@
 ## Items
 
 ### CONVENTIONAL
-
+Conventional
 
 ### ELECTRONIC
-
+Electronic
 
 ### LOWLOSS
-
+Low Loss
 
 ### OTHER
 required category not on scale

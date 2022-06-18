@@ -3,10 +3,10 @@
 ## Items
 
 ### PHOTOELECTRICCELL
-
+Photo Electric Cell
 
 ### PRESSUREPAD
-
+Pressure Pad
 
 ### OTHER
 required category not on scale

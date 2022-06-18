@@ -3,13 +3,13 @@
 ## Items
 
 ### IMPLEMENTED
-
+Implemented
 
 ### UPGRADEABLETO
-
+Upgradeable To
 
 ### NOTIMPLEMENTED
-
+Not Implemented
 
 ### OTHER
 required category not on scale

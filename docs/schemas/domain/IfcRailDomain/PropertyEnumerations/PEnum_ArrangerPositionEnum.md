@@ -11,10 +11,10 @@ Front side.
 Rear side.
 
 ### HORIZONTAL
-
+Horizontal
 
 ### VERTICAL
-
+Vertical
 
 ### OTHER
 required category not on scale

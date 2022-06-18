@@ -3,10 +3,10 @@
 ## Items
 
 ### LEFT
-
+Left
 
 ### RIGHT
-
+Right
 
 ### OTHER
 required category not on scale

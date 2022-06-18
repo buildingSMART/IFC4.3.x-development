@@ -3,13 +3,13 @@
 ## Items
 
 ### MANUAL
-
+Manual
 
 ### PREDEFINED
-
+Predefined
 
 ### THERMOSTATIC
-
+Thermostatic
 
 ### OTHER
 required category not on scale

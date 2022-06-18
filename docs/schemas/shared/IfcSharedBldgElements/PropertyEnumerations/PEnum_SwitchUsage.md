@@ -3,19 +3,19 @@
 ## Items
 
 ### EMERGENCY
-
+Emergency
 
 ### GUARD
-
+Guard
 
 ### LIMIT
-
+Limit
 
 ### START
-
+Start
 
 ### STOP
-
+Stop
 
 ### OTHER
 required category not on scale

@@ -6,13 +6,13 @@
 No waterproof.
 
 ### DIRECT
-
+Direct
 
 ### INDIRECT
-
+Indirect
 
 ### DIRECTANDINDIRECT
-
+Direct and Indirect
 
 ### OTHER
 required category not on scale

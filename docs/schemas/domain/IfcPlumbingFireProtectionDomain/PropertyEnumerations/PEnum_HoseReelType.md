@@ -3,10 +3,10 @@
 ## Items
 
 ### RACK
-
+Rack
 
 ### REEL
-
+Reel
 
 ### OTHER
 required category not on scale

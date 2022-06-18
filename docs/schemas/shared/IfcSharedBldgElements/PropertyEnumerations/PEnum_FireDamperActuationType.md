@@ -3,10 +3,10 @@
 ## Items
 
 ### GRAVITY
-
+Gravity
 
 ### SPRING
-
+Spring
 
 ### OTHER
 required category not on scale

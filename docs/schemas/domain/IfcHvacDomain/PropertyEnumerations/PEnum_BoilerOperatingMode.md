@@ -3,13 +3,13 @@
 ## Items
 
 ### FIXED
-
+Fixed
 
 ### TWOSTEP
-
+Two Step
 
 ### MODULATING
-
+Modulating
 
 ### OTHER
 required category not on scale

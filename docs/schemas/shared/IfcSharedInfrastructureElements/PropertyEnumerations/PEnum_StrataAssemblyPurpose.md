@@ -38,10 +38,10 @@ Strata assembly for pedological purposes
 Strata assembly for geothermal applications
 
 ### USERDEFINED
-
+User Defined
 
 ### NOTKNOWN
 Value is unkown
 
 ### NOTDEFINED
-
+Notdefined

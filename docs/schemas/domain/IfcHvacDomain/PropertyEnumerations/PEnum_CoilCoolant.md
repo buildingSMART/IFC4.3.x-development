@@ -3,13 +3,13 @@
 ## Items
 
 ### WATER
-
+Water
 
 ### BRINE
-
+Brine
 
 ### GLYCOL
-
+Glycol
 
 ### OTHER
 required category not on scale

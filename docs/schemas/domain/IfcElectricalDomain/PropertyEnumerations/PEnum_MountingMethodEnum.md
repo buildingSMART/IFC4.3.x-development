@@ -3,10 +3,10 @@
 ## Items
 
 ### PERFORATEDTRAY
-
+Perforated Tray
 
 ### LADDER
-
+Ladder
 
 ### OTHER
 required category not on scale

@@ -3,10 +3,10 @@
 ## Items
 
 ### DYNAMIC
-
+Dynamic
 
 ### STATIC
-
+Static
 
 ### OTHER
 required category not on scale

@@ -3,10 +3,10 @@
 ## Items
 
 ### AC
-
+Ac
 
 ### DC
-
+Dc
 
 ### OTHER
 required category not on scale

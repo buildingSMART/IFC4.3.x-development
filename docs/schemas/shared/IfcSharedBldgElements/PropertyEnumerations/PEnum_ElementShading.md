@@ -3,16 +3,16 @@
 ## Items
 
 ### FIXED
-
+Fixed
 
 ### MOVABLE
-
+Movable
 
 ### OVERHANG
-
+Overhang
 
 ### SIDEFIN
-
+Sidefin
 
 ### OTHER
 required category not on scale

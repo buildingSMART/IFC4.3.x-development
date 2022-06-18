@@ -3,16 +3,16 @@
 ## Items
 
 ### INDUCT
-
+In Duct
 
 ### INSOIL
-
+In Soil
 
 ### ONWALL
-
+On Wall
 
 ### BELOWCEILING
-
+Below Ceiling
 
 ### OTHER
 required category not on scale

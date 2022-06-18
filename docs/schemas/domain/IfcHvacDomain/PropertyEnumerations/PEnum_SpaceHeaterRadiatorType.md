@@ -3,16 +3,16 @@
 ## Items
 
 ### FINNEDTUBE
-
+Finned Tube
 
 ### PANEL
-
+Panel
 
 ### SECTIONAL
-
+Sectional
 
 ### TUBULAR
-
+Tubular
 
 ### OTHER
 required category not on scale

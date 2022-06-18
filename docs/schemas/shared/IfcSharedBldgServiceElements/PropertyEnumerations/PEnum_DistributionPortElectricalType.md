@@ -21,34 +21,34 @@ Registered jack
 Radio wave transmission
 
 ### DIN
-
+DIN
 
 ### DSUB
-
+D-Sub
 
 ### DVI
 Digital video interchange
 
 ### EIAJ
-
+EIAJ
 
 ### HDMI
 High Definition Multimedia Interface
 
 ### RCA
-
+RCA
 
 ### SOCKET
 Socket for a light bulb, where the ConnectionSubtype identifies the base (though not necessarily the bulb shape or size).
 
 ### TRS
-
+TRS
 
 ### USB
 Universal serial bus
 
 ### XLR
-
+XLR
 
 ### OTHER
 required category not on scale

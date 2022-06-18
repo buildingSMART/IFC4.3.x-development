@@ -3,10 +3,10 @@
 ## Items
 
 ### SENSIBLE
-
+Sensible
 
 ### LATENT
-
+Latent
 
 ### OTHER
 required category not on scale

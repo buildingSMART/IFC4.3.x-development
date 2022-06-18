@@ -3,16 +3,16 @@
 ## Items
 
 ### LEVER
-
+Lever
 
 ### PULL
-
+Pull
 
 ### PUSH
-
+Push
 
 ### SENSOR
-
+Sensor
 
 ### OTHER
 required category not on scale

@@ -3,10 +3,10 @@
 ## Items
 
 ### METALOXIDE
-
+Metal Oxide
 
 ### ZINCOXIDE
-
+Zinc Oxide
 
 ### OTHER
 required category not on scale

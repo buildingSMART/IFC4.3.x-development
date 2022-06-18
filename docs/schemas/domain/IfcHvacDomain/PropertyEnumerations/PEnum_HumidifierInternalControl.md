@@ -3,13 +3,13 @@
 ## Items
 
 ### ONOFF
-
+Onoff
 
 ### STEPPED
-
+Stepped
 
 ### MODULATING
-
+Modulating
 
 ### NONE
 No waterproof.

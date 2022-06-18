@@ -3,10 +3,10 @@
 ## Items
 
 ### BULB
-
+Bulb
 
 ### FUSIBLESOLDER
-
+Fusible Solder
 
 ### OTHER
 required category not on scale

@@ -3,19 +3,19 @@
 ## Items
 
 ### CEILING
-
+Ceiling
 
 ### FLOOR
-
+Floor
 
 ### FURNITURE
-
+Furniture
 
 ### POLE
-
+Pole
 
 ### WALL
-
+Wall
 
 ### OTHER
 required category not on scale

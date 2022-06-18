@@ -3,13 +3,13 @@
 ## Items
 
 ### MASTER
-
+Master
 
 ### SUBMASTER
-
+Submaster
 
 ### SUBMETER
-
+Submeter
 
 ### OTHER
 required category not on scale

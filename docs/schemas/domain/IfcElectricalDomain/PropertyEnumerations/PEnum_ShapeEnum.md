@@ -3,16 +3,16 @@
 ## Items
 
 ### HELICALCONDUCTOR
-
+Helical Conductor
 
 ### CIRCULARCONDUCTOR
-
+Circular Conductor
 
 ### SECTORCONDUCTOR
-
+Sector Conductor
 
 ### RECTANGULARCONDUCTOR
-
+Rectangular Conductor
 
 ### OTHER
 required category not on scale

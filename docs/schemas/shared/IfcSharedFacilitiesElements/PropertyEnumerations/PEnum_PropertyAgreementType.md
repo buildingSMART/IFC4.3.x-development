@@ -3,13 +3,13 @@
 ## Items
 
 ### ASSIGNMENT
-
+Assignment
 
 ### LEASE
-
+Lease
 
 ### TENANT
-
+Tenant
 
 ### OTHER
 required category not on scale

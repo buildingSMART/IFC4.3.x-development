@@ -3,10 +3,10 @@
 ## Items
 
 ### WATER
-
+Water
 
 ### STEAM
-
+Steam
 
 ### OTHER
 required category not on scale

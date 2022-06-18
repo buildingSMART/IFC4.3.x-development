@@ -3,10 +3,10 @@
 ## Items
 
 ### STANDARD
-
+Standard
 
 ### TIMEDELAYED
-
+Time Delayed
 
 ### OTHER
 required category not on scale

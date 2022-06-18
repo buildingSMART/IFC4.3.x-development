@@ -3,10 +3,10 @@
 ## Items
 
 ### COLDLIQUID
-
+Cold Liquid
 
 ### COLDAIR
-
+Cold Air
 
 ### OTHER
 required category not on scale

@@ -3,10 +3,10 @@
 ## Items
 
 ### AUDIO
-
+Audio
 
 ### VIDEO
-
+Video
 
 ### OTHER
 required category not on scale
@@ -15,4 +15,4 @@ required category not on scale
 Value is unkown
 
 ### UNSET.
-
+Unset.

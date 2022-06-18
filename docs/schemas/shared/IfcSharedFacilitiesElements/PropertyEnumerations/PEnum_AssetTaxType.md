@@ -3,10 +3,10 @@
 ## Items
 
 ### CAPITALISED
-
+Capitalised
 
 ### EXPENSED
-
+Expensed
 
 ### OTHER
 required category not on scale

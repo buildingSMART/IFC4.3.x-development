@@ -3,10 +3,10 @@
 ## Items
 
 ### FAILOPEN
-
+Fail Open
 
 ### FAILCLOSED
-
+Fail Closed
 
 ### OTHER
 required category not on scale

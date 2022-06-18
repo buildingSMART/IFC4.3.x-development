@@ -3,10 +3,10 @@
 ## Items
 
 ### FRAGILE
-
+Fragile
 
 ### HANDLEWITHCARE
-
+Handle With Care
 
 ### OTHER
 required category not on scale

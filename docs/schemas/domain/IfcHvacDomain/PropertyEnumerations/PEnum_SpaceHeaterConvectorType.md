@@ -3,10 +3,10 @@
 ## Items
 
 ### FORCED
-
+Forced
 
 ### NATURAL
-
+Natural
 
 ### OTHER
 required category not on scale

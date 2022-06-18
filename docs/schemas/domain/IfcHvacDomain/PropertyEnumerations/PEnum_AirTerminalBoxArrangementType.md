@@ -3,10 +3,10 @@
 ## Items
 
 ### SINGLEDUCT
-
+Single Duct
 
 ### DUALDUCT
-
+Dual Duct
 
 ### OTHER
 required category not on scale

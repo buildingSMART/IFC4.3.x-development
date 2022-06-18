@@ -3,16 +3,16 @@
 ## Items
 
 ### LINE
-
+Line
 
 ### NEUTRAL
-
+Neutral
 
 ### PROTECTIVEEARTH
-
+Protective Earth
 
 ### PROTECTIVEEARTHNEUTRAL
-
+Protective Earth Neutral
 
 ### OTHER
 required category not on scale

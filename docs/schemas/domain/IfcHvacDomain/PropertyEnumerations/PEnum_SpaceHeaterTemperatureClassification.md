@@ -3,10 +3,10 @@
 ## Items
 
 ### LOWTEMPERATURE
-
+Low Temperature
 
 ### HIGHTEMPERATURE
-
+High Temperature
 
 ### OTHER
 required category not on scale

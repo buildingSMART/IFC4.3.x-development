@@ -355,10 +355,52 @@ ex:QuantitySetAssociation a sh:SPARQLTarget;
             ?this xmi:type "uml:AssociationClass" .
             ?this ex:containedIn ?package .
             ?package ex:name "QuantitySetsforObjects" .
-            
         }
     """
     .
+
+
+ex:PropertyOrQuantitySetAssociation a sh:SPARQLTarget;
+    sh:select """
+        PREFIX ex:  <http://example.org/ifc43Shapes/>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+        PREFIX xmi: <http://schema.omg.org/spec/XMI/2.1/>
+        PREFIX custom: <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/>
+
+        SELECT ?this
+        WHERE {
+            # Package contained association class
+            ?this xmi:type "uml:AssociationClass" .
+            ?this ex:containedIn ?package .
+                        
+            ?end2 a ex:memberEnd .
+            ?end2 ex:containedIn ?this .
+            ?end2 xmi:idref ?prop2 .
+            ?type2 ex:containedIn ?prop2 .
+            ?type2 xmi:idref ?pset .
+            
+            ?stereo ex:base_Class ?pset .
+            
+            {
+                ?stereo a custom:PSET_TYPEDRIVENOVERRIDE .
+            } UNION {
+                ?stereo a custom:PSET_PERFORMANCEDRIVEN .
+            } UNION {
+                ?stereo a custom:PSET_OCCURRENCEDRIVEN .
+            } UNION {
+                ?stereo a custom:PSET_TYPEDRIVENONLY .
+            } UNION {
+                ?stereo a custom:QTO_TYPEDRIVENONLY .
+            } UNION {
+                ?stereo a custom:QTO_TYPEDRIVENOVERRIDE .
+            } UNION {
+                ?stereo a custom:QTO_OCCURRENCEDRIVEN .
+            }
+        }
+    """
+    .
+
     
 ex:ConceptUsageDocumentation a sh:SPARQLTarget;
     sh:select """
@@ -807,6 +849,76 @@ ex:hasProperty a sh:SPARQLConstraint;
    """
    .
 
+
+ex:hasNoDuplicateAssociation a sh:SPARQLConstraint;
+    sh:message "For assocation '{?resourceName}' - '{?psetName}' {?duplicates} duplicate associations are found" ;
+    sh:select """
+        PREFIX ex:  <http://example.org/ifc43Shapes/>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX xmi: <http://schema.omg.org/spec/XMI/2.1/>
+        PREFIX custom: <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/>
+    
+        SELECT ?this ?resourceName ?psetName (count(?otherAssoc) as ?duplicates)
+        WHERE {
+            ?end1 a ex:memberEnd .
+            ?end1 ex:containedIn ?this .
+            ?end1 xmi:idref ?prop1 .
+            ?type1 ex:containedIn ?prop1 .
+            ?type1 xmi:idref ?entity .    
+            ?entity ex:name ?resourceName .
+            
+            ?end2 a ex:memberEnd .
+            ?end2 ex:containedIn ?this .
+            ?end2 xmi:idref ?prop2 .
+            ?type2 ex:containedIn ?prop2 .
+            ?type2 xmi:idref ?pset .
+            
+            ?pset ex:name ?psetName .    
+            ?stereo ex:base_Class ?pset .
+            
+            {
+                ?stereo a custom:PSET_TYPEDRIVENOVERRIDE .
+            } UNION {
+                ?stereo a custom:PSET_PERFORMANCEDRIVEN .
+            } UNION {
+                ?stereo a custom:PSET_OCCURRENCEDRIVEN .
+            } UNION {
+                ?stereo a custom:PSET_TYPEDRIVENONLY .
+            } UNION {
+                ?stereo a custom:QTO_TYPEDRIVENONLY .
+            } UNION {
+                ?stereo a custom:QTO_TYPEDRIVENOVERRIDE .
+            } UNION {
+                ?stereo a custom:QTO_OCCURRENCEDRIVEN .
+            }
+            
+            filter(?end1 != ?end2)
+            
+            ?otherAssoc xmi:type "uml:AssociationClass" .
+            
+            ?otherend1 a ex:memberEnd .
+            ?otherend1 ex:containedIn ?otherAssoc .
+            ?otherend1 xmi:idref ?otherprop1 .
+            ?othertype1 ex:containedIn ?otherprop1 .
+            ?othertype1 xmi:idref ?otherentity .    
+            
+            ?otherend2 a ex:memberEnd .
+            ?otherend2 ex:containedIn ?otherAssoc .
+            ?otherend2 xmi:idref ?otherprop2 .
+            ?othertype2 ex:containedIn ?otherprop2 .
+            ?othertype2 xmi:idref ?otherpset .
+            
+            filter(?otherend1 != ?otherend2)
+            filter(?otherentity = ?entity)
+            filter(?otherpset = ?pset)
+            filter(?otherAssoc != ?this)
+        }
+        GROUP BY ?this ?resourceName ?psetName
+        HAVING (?duplicates >= 0)
+   """
+   .
+
+
 ex:Fail a sh:SPARQLConstraint ;
     sh:message "Generic failing constraint" ;
     sh:select """
@@ -907,4 +1019,9 @@ ex:ParametrizationForConceptUsageDocumentation a sh:NodeShape ;
 ex:ObjectTypeAssociationForTypeDrivenPropSets a sh:NodeShape ;
     sh:target ex:TypeDrivenPropertyOrQuantitySet;
     sh:sparql ex:hasApplicableObjectWithType
+    .
+
+ex:DuplicateAssociations a sh:NodeShape ;
+    sh:target ex:PropertyOrQuantitySetAssociation;
+    sh:sparql ex:hasNoDuplicateAssociation
     .

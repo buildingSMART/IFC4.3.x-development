@@ -266,7 +266,7 @@ def write_root(k_v):
         binding_descriptions = mdp.get_children(spaced_name) or {}
         
         def write_binding(di):
-            args = ";".join(f"{k}[{'Type' if v.startswith('Ifc') else 'Value'}]='{v}'" for k, v in sorted(di.items()) if k != 'ApplicableEntity')
+            args = " AND ".join(f"{k}[{'Type' if v.startswith('Ifc') else 'Value'}]='{v}'" for k, v in sorted(di.items()) if k != 'ApplicableEntity')
             desc = None
             if binding_descriptions and di.values():
                 desc = max((BeautifulSoup(binding_descriptions.get(v, '')).text.strip() for v in di.values()), key=len)

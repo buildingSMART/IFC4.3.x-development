@@ -74,7 +74,11 @@ ex:QuantitySet a sh:SPARQLTarget;
             ?this xmi:type "uml:Class" .
 
             {
-                
+                ?stereo a custom:QTO_TYPEDRIVENONLY .
+                ?stereo ex:base_Class ?this .
+            } UNION {
+                ?stereo a custom:QTO_TYPEDRIVENOVERRIDE .
+                ?stereo ex:base_Class ?this .
             } UNION {
                 ?stereo a custom:QTO_OCCURRENCEDRIVEN .
                 ?stereo ex:base_Class ?this .

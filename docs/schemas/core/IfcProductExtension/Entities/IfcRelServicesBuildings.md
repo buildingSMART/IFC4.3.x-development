@@ -11,8 +11,9 @@ The _IfcRelServicesBuildings_ is an objectified relationship that defines the re
 
 > HISTORY  New entity in IFC1.0.
 
-{ .change-ifc2x}
 > IFC2x CHANGE  The data type of the attribute _RelatedBuildings_ has been changed from _IfcBuilding_ to its supertype _IfcSpatialStructureElement_ with upward compatibility for file based exchange.
+
+> IFC4.3.0.0 DEPRECATION Use IfcRelReferencedInSpatialStructure instead.
 
 ## Attributes
 

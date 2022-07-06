@@ -69,6 +69,9 @@ values.
 * The first dimension corresponds to the vertex indices of the _Coordindex_
 * The second dimension has exactly three values, [1] the x-direction, [2] the y-direction and [3] the z-directions
 
+### Closed
+Indication whether the face set is a closed shell (TRUE) or an open shell (FALSE). If omitted no such information can be asserted.
+
 ### CoordIndex
 Two-dimensional list for the indexed-based triangles, where
 * The first dimension represents the triangles (from 1 to N)

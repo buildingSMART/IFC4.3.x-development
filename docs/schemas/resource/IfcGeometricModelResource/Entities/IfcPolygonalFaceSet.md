@@ -48,6 +48,9 @@ Informal Propositions:
 
 ## Attributes
 
+### Closed
+Indication whether the face set is a closed shell (TRUE) or an open shell (FALSE). If omitted no such information can be asserted.
+
 ### Faces
 The list of polygonal faces, with or without inner loops, that bound the faceted face set.
 

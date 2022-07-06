@@ -14,8 +14,10 @@ The local placement for _IfcPort_ is defined in its supertype _IfcProduct_. It i
 
 ### ContainedIn
 Reference to the element to port connection relationship. The relationship then refers to the element in which this port is contained.
-{ .change-ifc2x4}
-> IFC4 CHANGE  The cardinality has been changed from 1:1 to 0:1. IFC4 DEPRECATION  The inverse relationship is deprecated for fixed ports due to deprecation of _IfcRelConnectsPortToElement_ for this usage. Use inverse relationship _Nests_ instead.
+
+> IFC4 CHANGE  The cardinality has been changed from 1:1 to 0:1.
+
+> IFC4 DEPRECATION  The inverse relationship is deprecated for fixed ports due to deprecation of _IfcRelConnectsPortToElement_ for this usage. Use inverse relationship _Nests_ instead.
 
 ### ConnectedFrom
 Reference to a port that is connected by the objectified relationship.

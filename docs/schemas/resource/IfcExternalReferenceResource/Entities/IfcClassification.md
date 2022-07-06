@@ -45,9 +45,9 @@ Additional description provided for the classification.
 { .change-ifc2x4}
 > IFC4 CHANGE  New attribute added at the end of the attribute list.
 
-### Location
+### Specification
 Resource identifier or locator, provided as URI, URN or URL, of the classification.
-{ .change-ifc2x4}
+
 > IFC4 CHANGE  New attribute added at the end of the attribute list.
 
 ### ReferenceTokens

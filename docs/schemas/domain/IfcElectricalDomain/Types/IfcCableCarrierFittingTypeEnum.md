@@ -34,6 +34,11 @@ A fitting with typically two ports having different shapes or sizes. Can also be
 
 > IFC4.3.0.0 CHANGE New enumeration
 
+### REDUCER
+A fitting that changes the physical size of the main route of the cable carrier.
+
+> IFC4.3.0.0 DEPRECATION Use TRANSITION instead.
+
 ### USERDEFINED
 User-defined type.
 

@@ -4,8 +4,7 @@ _IfcMaterialClassificationRelationship_ is a relationship assigning classificati
 
 > HISTORY  New entity in IFC2x.
 
-{ .change-ifc2x4}
-> IFC4 CHANGE  The entity _IfcMaterialClassificationRelationship_ is deprecated since IFC4 and shall no longer be used. Use _IfcExternalReferenceRelationship_ instead.
+> IFC4 DEPRECATION  The entity _IfcMaterialClassificationRelationship_ is deprecated since IFC4 and shall no longer be used. Use _IfcExternalReferenceRelationship_ instead.
 
 ## Attributes
 

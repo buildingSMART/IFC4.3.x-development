@@ -34,13 +34,13 @@ The _InterferenceType_ property optionally specifies the type of interference be
 ## Attributes
 
 ### RelatingElement
-
+Reference to a subtype of IfcElement or IfcSpatialElement that is the RelatingElement in the interference relationship. Depending on the value of ImpliedOrder the RelatingElement may carry the notion to be the element from which the interference geometry should be subtracted.
 
 ### RelatedElement
-
+Reference to a subtype of IfcElement or IfcSpatialElement that is the RelatedElement in the interference relationship. Depending on the value of ImpliedOrder the RelatedElement may carry the notion to be the element from which the interference geometry should not be subtracted.
 
 ### InterferenceGeometry
-
+The geometric shape representation of the interference geometry that is provided in the object coordinate system of the RelatingElement (mandatory) and in the object coordinate system of the RelatedElement (optionally).
 
 ### InterferenceSpace
 Optional attribute that expresses the interfering space for _IfcSpatialElement_ occurrences.

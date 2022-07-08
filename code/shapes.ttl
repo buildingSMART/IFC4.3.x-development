@@ -242,6 +242,204 @@ ex:Entity a sh:SPARQLTarget;
     """
     .
     
+ex:LeafEntity a sh:SPARQLTarget;
+    sh:select """
+        PREFIX ex:  <http://example.org/ifc43Shapes/>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+        PREFIX xmi: <http://schema.omg.org/spec/XMI/2.1/>
+        PREFIX custom: <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/>
+
+        SELECT ?this
+        WHERE {
+            ?this a ex:packagedElement .
+            ?this xmi:type "uml:Class" .
+            ?this ex:name ?entityName . 
+
+            # no pset or qset
+            FILTER NOT EXISTS {
+                {
+                    ?stereo a custom:PSET_TYPEDRIVENOVERRIDE .
+                    ?stereo ex:base_Class ?this .
+                } UNION {
+                    ?stereo a custom:PSET_PERFORMANCEDRIVEN .
+                    ?stereo ex:base_Class ?this .
+                } UNION {
+                    ?stereo a custom:PSET_OCCURRENCEDRIVEN .
+                    ?stereo ex:base_Class ?this .
+                } UNION {
+                    ?stereo a custom:PSET_TYPEDRIVENONLY .
+                    ?stereo ex:base_Class ?this .
+                } UNION {
+                    ?stereo a custom:QTO_TYPEDRIVENONLY .
+                    ?stereo ex:base_Class ?this .
+                } UNION {
+                    ?stereo a custom:QTO_TYPEDRIVENOVERRIDE .
+                    ?stereo ex:base_Class ?this .
+                } UNION {
+                    ?stereo a custom:QTO_OCCURRENCEDRIVEN .
+                    ?stereo ex:base_Class ?this .
+                }
+            }
+            
+            # no rule or function
+            FILTER NOT EXISTS {
+                {
+                    ?stereo a custom:EXPRESS_FUNCTION .
+                    ?stereo ex:base_Class ?this .
+                } UNION {
+                    ?stereo a custom:EXPRESS_RULE .
+                    ?stereo ex:base_Class ?this .
+                }
+            }
+            
+            # no select
+            FILTER NOT EXISTS {
+                {
+                    ?stereo a custom:EXPRESS_SELECT .
+                    ?stereo ex:base_Class ?this .
+                }
+            }
+            
+            # no property data type
+            FILTER NOT EXISTS {
+                ?binding a ex:templateBinding .
+                ?binding ex:containedIn ?this .
+            }
+            
+            # no concept parametrization
+            FILTER NOT EXISTS {
+                ?this ex:containedIn* ?package .
+                ?package ex:name "Views" .
+            }
+            
+            # no property categories
+            FILTER NOT EXISTS {
+                ?this ex:containedIn* ?package .
+                ?package ex:name "propertytypes" .
+            }
+            
+            # no template members
+            FILTER NOT EXISTS {
+                {
+                    ?stereo a custom:QuantityTemplate .
+                    ?stereo ex:base_Class ?this .
+                } UNION {
+                    ?stereo a custom:PropertyTemplate .
+                    ?stereo ex:base_Class ?this .
+                }
+            }
+            
+            # no predefined type item
+            filter (!regex(?entityName, "\\\\.")) .
+            
+            FILTER NOT EXISTS {
+                ?subtype rdfs:subClassOf ?this .
+            }
+        }
+    """
+    .
+
+ex:LeafObject a sh:SPARQLTarget;
+    sh:select """
+        PREFIX ex:  <http://example.org/ifc43Shapes/>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+        PREFIX xmi: <http://schema.omg.org/spec/XMI/2.1/>
+        PREFIX custom: <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/>
+
+        SELECT ?this
+        WHERE {
+            ?this a ex:packagedElement .
+            ?this xmi:type "uml:Class" .
+            ?this ex:name ?entityName . 
+
+            # no pset or qset
+            FILTER NOT EXISTS {
+                {
+                    ?stereo a custom:PSET_TYPEDRIVENOVERRIDE .
+                    ?stereo ex:base_Class ?this .
+                } UNION {
+                    ?stereo a custom:PSET_PERFORMANCEDRIVEN .
+                    ?stereo ex:base_Class ?this .
+                } UNION {
+                    ?stereo a custom:PSET_OCCURRENCEDRIVEN .
+                    ?stereo ex:base_Class ?this .
+                } UNION {
+                    ?stereo a custom:PSET_TYPEDRIVENONLY .
+                    ?stereo ex:base_Class ?this .
+                } UNION {
+                    ?stereo a custom:QTO_TYPEDRIVENONLY .
+                    ?stereo ex:base_Class ?this .
+                } UNION {
+                    ?stereo a custom:QTO_TYPEDRIVENOVERRIDE .
+                    ?stereo ex:base_Class ?this .
+                } UNION {
+                    ?stereo a custom:QTO_OCCURRENCEDRIVEN .
+                    ?stereo ex:base_Class ?this .
+                }
+            }
+            
+            # no rule or function
+            FILTER NOT EXISTS {
+                {
+                    ?stereo a custom:EXPRESS_FUNCTION .
+                    ?stereo ex:base_Class ?this .
+                } UNION {
+                    ?stereo a custom:EXPRESS_RULE .
+                    ?stereo ex:base_Class ?this .
+                }
+            }
+            
+            # no select
+            FILTER NOT EXISTS {
+                {
+                    ?stereo a custom:EXPRESS_SELECT .
+                    ?stereo ex:base_Class ?this .
+                }
+            }
+            
+            # no property data type
+            FILTER NOT EXISTS {
+                ?binding a ex:templateBinding .
+                ?binding ex:containedIn ?this .
+            }
+            
+            # no concept parametrization
+            FILTER NOT EXISTS {
+                ?this ex:containedIn* ?package .
+                ?package ex:name "Views" .
+            }
+            
+            # no property categories
+            FILTER NOT EXISTS {
+                ?this ex:containedIn* ?package .
+                ?package ex:name "propertytypes" .
+            }
+            
+            # no template members
+            FILTER NOT EXISTS {
+                {
+                    ?stereo a custom:QuantityTemplate .
+                    ?stereo ex:base_Class ?this .
+                } UNION {
+                    ?stereo a custom:PropertyTemplate .
+                    ?stereo ex:base_Class ?this .
+                }
+            }
+            
+            # no predefined type item
+            filter (!regex(?entityName, "\\\\.")) .
+            
+            FILTER NOT EXISTS {
+                ?subtype rdfs:subClassOf ?this .
+            }
+            
+            ?this rdfs:subClassOf*/ex:name "IfcObject" .
+        }
+    """
+    .
+
 ex:Select a sh:SPARQLTarget;
     sh:select """
         PREFIX ex:  <http://example.org/ifc43Shapes/>
@@ -922,6 +1120,41 @@ ex:hasNoDuplicateAssociation a sh:SPARQLConstraint;
    """
    .
 
+ex:isNotAbstract a sh:SPARQLConstraint ;
+    sh:message "Leaf entity '{?entityName}' is abstract" ;
+    sh:select """
+        PREFIX ex:  <http://example.org/ifc43Shapes/>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX xmi: <http://schema.omg.org/spec/XMI/2.1/>
+        PREFIX custom: <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/>
+        
+        SELECT ?this ?entityName
+        WHERE {
+            ?this ex:name ?entityName .
+            ?this ex:isAbstract "true" .
+        }
+    """
+    .
+    
+ex:hasPredefinedType a sh:SPARQLConstraint ;
+    sh:message "Leaf IfcObject '{?entityName}' has no PredefinedType attribute" ;
+    sh:select """
+        PREFIX ex:  <http://example.org/ifc43Shapes/>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX xmi: <http://schema.omg.org/spec/XMI/2.1/>
+        PREFIX custom: <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/>
+        
+        SELECT ?this ?entityName
+        WHERE {
+            ?this ex:name ?entityName .
+            filter not exists {
+                ?attr a ex:ownedAttribute .
+                ?attr ex:name "PredefinedType" .
+                ?attr ex:containedIn ?this .
+            }
+        }
+    """
+    .
 
 ex:Fail a sh:SPARQLConstraint ;
     sh:message "Generic failing constraint" ;
@@ -1028,4 +1261,14 @@ ex:ObjectTypeAssociationForTypeDrivenPropSets a sh:NodeShape ;
 ex:DuplicateAssociations a sh:NodeShape ;
     sh:target ex:PropertyOrQuantitySetAssociation;
     sh:sparql ex:hasNoDuplicateAssociation
+    .
+
+ex:LeafEntityHasPredefinedType a sh:NodeShape ;
+    sh:target ex:LeafObject;
+    sh:sparql ex:hasPredefinedType
+    .
+
+ex:LeafEntityIsNotAbstract a sh:NodeShape ;
+    sh:target ex:LeafEntity;
+    sh:sparql ex:isNotAbstract
     .

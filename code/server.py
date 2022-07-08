@@ -512,35 +512,48 @@ def create_entity_definition(e, bindings, ports):
     table = []
 
     bindings_seen = set()
-
-    while e:
-        keys = [x for x in R.entity_attributes.keys() if x.startswith(e + ".")]
-        for k, (is_fwd, ty) in list(zip(keys, map(R.entity_attributes.__getitem__, keys)))[::-1]:
-            if is_fwd == "derived":
-                # don't show them for now
-                continue
+    
+    def attributes_backward(e):
+        while e:
+            keys = [x for x in R.entity_attributes.keys() if x.startswith(e + ".")]
+            yield from list(zip(keys, map(R.entity_attributes.__getitem__, keys)))[::-1]
+            e = R.entity_supertype.get(e)
             
-            name = k.split(".")[1]
+    attributes = list(attributes_backward(E))
+    
+    fwd_attr_idx = sum([is_fwd == "forward" for k, (is_fwd, ty) in attributes])
 
-            cardinality = re.findall(r"(\[.+?\])", ty)
+    for k, (is_fwd, ty) in attributes:
+        if is_fwd == "derived":
+            # don't show them for now
+            continue
+        
+        label = name = k.split(".")[1]
+        
+        if is_fwd == "forward":
+            label = "%d. %s" % (fwd_attr_idx, name)
+            fwd_attr_idx -= 1
+        elif is_fwd == "inverse":
+            label = "      %s" % name
 
-            if cardinality:
-                cardinality = cardinality[0]
-            elif is_fwd:
-                cardinality = "[0:1]" if "OPTIONAL" in ty else "[1:1]"
-            else:
-                # default inverse cardinality
-                cardinality = "[1:1]"
+        cardinality = re.findall(r"(\[.+?\])", ty)
 
-            binding = bindings.get((EE, name), "")
-            if binding:
-                table.append({"name": name, "cardinality": cardinality, "is_bound": True, "is_port": name in ports})
-                bindings_seen.add((EE, name))
-                table.append({"name": binding, "is_binding": True})
-            else:
-                table.append({"name": name, "cardinality": cardinality, "is_port": name in ports})
+        if cardinality:
+            cardinality = cardinality[0]
+        elif is_fwd:
+            cardinality = "[0:1]" if "OPTIONAL" in ty else "[1:1]"
+        else:
+            # default inverse cardinality
+            cardinality = "[1:1]"
 
-        e = R.entity_supertype.get(e)
+        binding = bindings.get((EE, name), "")
+        if binding:
+            table.append({"label": label, "name": name, "cardinality": cardinality, "is_bound": True, "is_port": name in ports})
+            bindings_seen.add((EE, name))
+            table.append({"label": binding, "name": binding, "is_binding": True})
+        else:
+            table.append({"label": label, "name": name, "cardinality": cardinality, "is_port": name in ports})
+
 
     is_first = True
     for (ent, attr), binding in bindings.items():
@@ -550,13 +563,13 @@ def create_entity_definition(e, bindings, ports):
             continue
 
         if is_first:
-            table.insert(0, {"name": "..."})
-        table.insert(0, {"name": binding, "is_binding": True})
-        table.insert(0, {"name": attr, "is_bound": True, "is_port": attr in ports})
+            table.insert(0, {"label": "...", "name": "..."})
+        table.insert(0, {"label": binding, "name": binding, "is_binding": True})
+        table.insert(0, {"label": attr, "name": attr, "is_bound": True, "is_port": attr in ports})
 
         is_first = False
 
-    table.append({"name": E, "is_title": True})
+    table.append({"label": E, "name": E, "is_title": True})
     table = table[::-1]
 
     html = '<<table border="0" cellborder="1" cellspacing="0" cellpadding="5px">'
@@ -586,7 +599,7 @@ def create_entity_definition(e, bindings, ports):
         html += f'<td sides="b" width="250" height="{height}" bgcolor="{bgcolor}" align="{align}" port="{name}0">'
         if is_bold:
             html += '<b>'
-        html += f'<font color="{color}">{name}</font>'
+        html += f'<font color="{color}">{row["label"]}</font>'
         if is_bold:
             html += '</b>'
         html += '</td>'
@@ -2058,9 +2071,9 @@ def sandcastle():
     html = ""
 
     # Set to false for now because I don't yet know how to sanitise (e.g. any pydot vulnerabilities?)
-    if request.method == "POST" and request.form["md"] and False:
+    if request.method == "POST" and request.form["md"]:
         md = request.form["md"]
-        html = process_markdown("", md)
+        html = process_markdown("", process_graphviz_concept("", md))
 
     return render_template("sandcastle.html", base=base, is_iso=X.is_iso, navigation=get_navigation(), html=html, md=md)
 

@@ -56,4 +56,4 @@ Material definition assigned to the elements or element types.
 The material information must not be associated to a substraction feature (such as an opening) or to a virtual element.
 
 ### AllowedElements
-The material information, using _IfcMaterialSelect_ should be associated to an element occurrence (including structural members) or an element type (including the door and window styles). Also port can have assigned materials, here indicating the fluid flowing from the port.
+The material information, using _IfcMaterialSelect_ should be associated to an element occurrence (including structural members) or an element type. Also port can have assigned materials, here indicating the fluid flowing from the port.

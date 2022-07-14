@@ -141,6 +141,7 @@ class Relation(object):
             try:
                 self.supplier, self.client = map(lambda n:(n|"type").idref, xmi_relation/"ownedEnd")
                 self.supplier_name, self.client_name = [n.name for n in (xmi_relation/"ownedEnd")]
+                self.supplier_end_id, self.client_end_id = [n.id for n in (xmi_relation/"ownedEnd")]
                 self.valid = True
             except Exception as e:
                 print(e)
@@ -150,6 +151,7 @@ class Relation(object):
             self.supplier = attributes['supplier']
             self.valid = True
             self.supplier_name, self.client_name = None, None
+            self.supplier_end_id, self.client_end_id = None, None
 
 
 # Generalization 
@@ -318,10 +320,23 @@ def add_relations(relations, UML_objects, entities_to_retain = None):
             sid = sup_att['xmi:id']
             cid = cli_att['xmi:id']
             
-            for kk, end, other, nm in [('supplierof', sup, cli, pr.client_name), ('clientof', cli, sup, pr.supplier_name)]:                
+            suppressed = xmi.tags['ExpressSuppressRel'].get(pr.client_end_id, '').lower() == 'yes'
+            fwd_and_inv = [(sup, cli, pr.client_name, sid), (cli, sup, pr.supplier_name, cid)]
+            
+            # for some reason we don't depend on directed relationships, so we
+            # need to figure out the order from the tags.
+            if xmi.tags['ExpressInverse'].get(pr.client_end_id) or (pr.supplier_name and not pr.client_name):
+                fwd_and_inv = fwd_and_inv[::-1]
+            
+            if suppressed:
+                # for asymmetric inverses, skip over the explicitly duplicated forward attribute
+                fwd_and_inv = [(None,)*4] + fwd_and_inv[1:]
+
+            for ii, (end, other, nm, endid) in enumerate(fwd_and_inv):
+                kk = ('clientof', 'supplierof')[ii]
                 if end in UML_objects.keys():
                     for instance in UML_objects[end]:
-                        if sid == instance.xmi_id:
+                        if endid == instance.xmi_id:
                             if pr.xmi_type == 'uml:Substitution':
                                 instance.substitution_rel[kk].append((other, cid, nm))
                             if pr.xmi_type == 'uml:Realization':
@@ -511,9 +526,10 @@ class Tex_object(object):
                     dict_to_use = UMLobject.dependency_rel
                     reltype = 'depend'
                     
-                for order, kk in enumerate(['clientof', 'supplierof']):
+                for order, kk in enumerate(['supplierof']): # 'clientof' <- no inverses for now...
                     rels = dict_to_use[kk]
                     for (other_name, other_id, assoc_name) in rels:
+                        print(rel, order, kk, other_name, other_id, assoc_name)
                         if other_name in schema.keys():
                             class_to_write = schema[other_name][0]
                             

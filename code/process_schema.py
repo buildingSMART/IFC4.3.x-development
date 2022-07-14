@@ -526,10 +526,9 @@ class Tex_object(object):
                     dict_to_use = UMLobject.dependency_rel
                     reltype = 'depend'
                     
-                for order, kk in enumerate(['supplierof']): # 'clientof' <- no inverses for now...
+                for order, kk in enumerate(['clientof']): # 'supplierof' <- no inverses for now...
                     rels = dict_to_use[kk]
                     for (other_name, other_id, assoc_name) in rels:
-                        print(rel, order, kk, other_name, other_id, assoc_name)
                         if other_name in schema.keys():
                             class_to_write = schema[other_name][0]
                             
@@ -538,7 +537,7 @@ class Tex_object(object):
 
                             if {UMLobject.name, class_to_write.name} not in self.tex_relationships:
                                 args = class_to_write.name, classname
-                                if order:
+                                if not order:
                                     args = args[::-1]
                                 self.make_connection(*args, connection_type=reltype, name=assoc_name)
                                 self.tex_relationships.append({UMLobject.name,class_to_write.name})

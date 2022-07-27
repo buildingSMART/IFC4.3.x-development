@@ -73,10 +73,10 @@ def parse_document(*, fn=None, data=None, linesep="", as_text=True):
     return root
 
 class markdown_attribute_parser:
-    def __init__(self, *, fn=None, data=None, as_text=True, heading_name="Attributes", short=False):
+    def __init__(self, *, fn=None, data=None, as_text=True, heading_name="Attributes", short=False, linesep=""):
     
         self.heading_name = heading_name
-        self.root = parse_document(fn=fn, data=data, as_text=as_text)
+        self.root = parse_document(fn=fn, data=data, as_text=as_text, linesep=linesep)
         self.children = {}
         self.status = {}
         self.short = short

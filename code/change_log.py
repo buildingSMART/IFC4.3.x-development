@@ -28,9 +28,12 @@ rename_pattern = re.compile('renamed from (Ifc[\w]+)')
 changes_by_schema = []
 changes_by_type = defaultdict(dict)
 
+# to be overwritten in __main__
+repo_dir = os.path.join(os.path.dirname(__file__), "..")
+
 def get_notice(fn, subs=False, pattern=deprecation_pattern):
     if not fn.endswith(".md"):
-        fns = glob.glob(os.path.join(os.path.dirname(__file__), "..", "docs", "schemas", "**", fn + ".md"), recursive=True)
+        fns = glob.glob(os.path.join(repo_dir, "docs", "schemas", "**", fn + ".md"), recursive=True)
         
         # if the entity has been deleted we can't show deprecation content anymore for previous version,
         # maybe we shouldn't delete?
@@ -79,13 +82,12 @@ def get_notice(fn, subs=False, pattern=deprecation_pattern):
 
 rename_messages = defaultdict(dict)
 def build_rename_messages():
-    fns = glob.glob(os.path.join(os.path.dirname(__file__), "..", "docs", "schemas", "**", "*.md"), recursive=True)
+    fns = glob.glob(os.path.join(repo_dir, "docs", "schemas", "**", "*.md"), recursive=True)
     for fn in fns:
         for schema_version, msg in get_notice(fn, pattern=change_pattern):
             if rename_pattern.search(msg):
                 rename_messages[schema_version][rename_pattern.search(msg).group(1)] = rename_pattern.sub(f'renamed to {os.path.basename(fn)[:-3]}', msg)
         
-build_rename_messages()
 
 is_iso = os.environ.get('ISO', '0') == '1'
 
@@ -331,14 +333,13 @@ def compare_psets(dir0, dir1):
             
 
 if __name__ == "__main__":
-    repo_dir = None
     
     if len(sys.argv) == 2:    
         repo_dir = sys.argv[1]
     elif len(sys.argv) == 3:
         files = sys.argv[1:]
-    else:
-        repo_dir = os.path.join(os.path.dirname(__file__), "..")
+        
+    build_rename_messages()
 
     if repo_dir:
         d = os.path.join(repo_dir, "reference_schemas")

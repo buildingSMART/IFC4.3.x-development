@@ -6,9 +6,10 @@ _IfcConnectionGeometry_ is used to describe the geometric and topological constr
 
 The _IfcConnectionGeometry_ allows for the provision of connection constraints between geometric and topological elements, the following connection geometry/topology types are in scope:
 
-* point | vertex point,
-* curve | edge curve,
-* surface | face surface,
+* point | vertex point
+* curve | edge curve
+* surface | face surface
+* solid model | closed shell
 
 > HISTORY  New entity in IFC1.5.
 

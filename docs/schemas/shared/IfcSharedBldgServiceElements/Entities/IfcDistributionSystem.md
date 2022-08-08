@@ -21,7 +21,7 @@ Important functionalities for the description of a distribution system are deriv
 ## Attributes
 
 ### LongName
-Long name for a distribution system, used for informal purposes. It should be used, if available, in conjunction with the inherited _Name_ attribute.\X\0D
+Long name for a distribution system, used for informal purposes. It should be used, if available, in conjunction with the inherited _Name_ attribute.
 > NOTE  In many scenarios the _Name_ attribute refers to the short name or number of a distribution system or branch circuit, and the _LongName_ refers to a descriptive name.
 
 ### PredefinedType

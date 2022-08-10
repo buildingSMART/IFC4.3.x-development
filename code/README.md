@@ -274,6 +274,8 @@ Table XYZ - A table of things.
 Similar to figures, tables can also be annotated with an arbitrary code of your
 choice, which you can refer to later.
 
+### Equations
+
 If you need to render an equation, simply include it using LaTeX:
 
 ```

@@ -2,7 +2,7 @@
 
 An _IfcWorkSchedule_ represents a task schedule of a work plan, which in turn can contain a set of schedules for different purposes.
 
-> HISTORY&nbsp; New entity in IFC2.0.
+> HISTORY  New entity in IFC2.0.
 
 { .use-head}
 Declaration Use Definition
@@ -13,12 +13,12 @@ Figure 1 shows the backbone structure of a work schedule that defines (1) a cont
 
 If an assigned _IfcTask_ is a root-level task, such task must be declared on the _IfcProject_ using the _IfcRelDeclares_ relationship.
 
-!["work schedule instantiation diagram"](../../../../figures/ifcworkschedule_instantiation_diagram.png "Figure 1 &mdash; Work schedule relationships")
+![work schedule instantiation diagram](../../../../figures/ifcworkschedule_instantiation_diagram.png "Figure 1 &mdash; Work schedule relationships")
 
 ## Attributes
 
 ### PredefinedType
-Identifies the predefined types of a work schedule from which 
+Identifies the predefined types of a work schedule from which
     the type required may be set.
 
 ## Formal Propositions
@@ -30,40 +30,21 @@ The attribute ObjectType must be asserted when the value of the IfcWorkScheduleT
 
 ### Aggregation
 
-A work schedule can include other work schedules as sub-items. 
- If not included in another work schedule it might be a part of a work plan
- (IfcWorkPlan) defined through IfcRelAggregates relationship.
- 
-
+A work schedule can include other work schedules as sub-items. If not included in another work schedule it might be a part of a work plan (IfcWorkPlan) defined through IfcRelAggregates relationship.
 
 ### Control Assignment
 
+An IfcWorkSchedule controls a set of tasks and resources defined through IfcRelAssignsToControl. Additionally, through the IfcWorkControl abstract supertype, the actors creating the schedule can be specified and schedule time information such as start time, finish time, and total float of the schedule can also be specified.
 
- An IfcWorkSchedule controls a set of tasks and
- resources defined through IfcRelAssignsToControl.
- Additionally, through the IfcWorkControl abstract
- supertype, the actors creating the schedule can be
- specified and schedule time information such as start time,
- finish time, and total float of the schedule can also be
- specified.
- 
+### Document Association
 
+The documents of the IfcWorkSchedule can be referenced by the IfcRelAssociatesDocuments relationship.
 
-### Document
+### Object Nesting
 
+A work schedule can include other work schedules as sub-items through IfcRelNests relationship.
 
- The documents of the
- IfcWorkSchedule can be referenced by the
- IfcRelAssociatesDocuments relationship. 
+### Property Sets for Objects
 
-
-### Nesting
-
-A work schedule can include other work schedules as sub-items
- through IfcRelNests relationship. 
- 
-
-
-### Property Sets
 
 

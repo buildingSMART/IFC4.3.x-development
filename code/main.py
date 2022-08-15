@@ -48,6 +48,13 @@ for ffn in glob.glob(relative_path("..", "schemas", "*.xml")):
                     relative_path("..", "output", fn[:-4] + "." + ext),
                     relative_path("..", "output", "%s-%s-differences.md" % (fn[:-4], reference[:-4]))
                 ], cwd=relative_path("."))
+                
+            subprocess.check_call([
+                sys.executable, 
+                "express_to_xsd.py",
+                output_path,
+                output_path.replace("exp", "xsd")
+            ], cwd=relative_path("."))
             
         elif script == "to_bsdd":
         
@@ -70,5 +77,7 @@ for ffn in glob.glob(relative_path("..", "schemas", "*.xml")):
             
     subprocess.check_call([sys.executable, relative_path("sanity_checker.py"), ffn])
 
-    # subprocess.check_call([sys.executable, relative_path("process_schema.py"), ffn])
+    subprocess.check_call([sys.executable, relative_path("parse_xmi.py"), ffn], cwd=relative_path('.'))
+    subprocess.check_call([sys.executable, relative_path("extract_concepts_from_xmi.py"), ffn], cwd=relative_path('.'))
     
+    subprocess.check_call([sys.executable, relative_path("templates_to_mvdxml.py"), relative_path("..", "output", "IFC4.3.mvdxml")], cwd=relative_path('.'))

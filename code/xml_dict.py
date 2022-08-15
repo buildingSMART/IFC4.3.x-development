@@ -5,6 +5,8 @@ import functools
 
 from dataclasses import dataclass, field
 
+strip_namespace = lambda s: s.split("}")[-1]
+
 @dataclass
 class xml_node:
     tag : str
@@ -18,9 +20,32 @@ class xml_node:
         return id(self)
         
     def child_with_tag(self, tag):
+        cs = list(self.children_with_tag(tag))
+        if cs:
+            return cs[0]
+                
+    def children_with_tag(self, tag):
         for ch in self.children:
             if ch.tag == tag:
-                return ch
+                yield ch
+                
+    def apply(self, fn):
+        new_self = fn(self)
+        children = [c.apply(fn) for c in self.children]
+        new_self.children = children
+        for c in children:
+            c.parent = new_self
+        return new_self
+        
+    def strip_namespaces(self):
+        def inner(node):
+            return xml_node(
+                strip_namespace(node.tag),
+                {strip_namespace(k): v for k, v in node.attributes.items()},
+                node.text,
+                node.namespaces
+            )
+        return self.apply(inner)
                 
     def recursive_print(self, file=sys.stdout, level=0):
         attr_pairs = "".join(f' {k}="{v}"' for k, v in self.attributes.items())
@@ -49,6 +74,10 @@ def flatmap(func, *iterable):
     
 
 def to_data(t, parent=None):
+    if not isinstance(t.tag, str):
+        # Comment/Entity/...
+        return
+
     if t.tag in IGNORED_TAGS:
         return
 

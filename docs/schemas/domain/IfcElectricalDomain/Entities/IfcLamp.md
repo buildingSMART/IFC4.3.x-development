@@ -2,7 +2,7 @@
 
 A lamp is an artificial light source such as a light bulb or tube.
 
-> HISTORY&nbsp; New entity in IFC4
+> HISTORY  New entity in IFC4
 
 { .note}
 >
@@ -22,18 +22,39 @@ Either there is no lamp type object associated, i.e. the _IsTypedBy_ inverse rel
 
 ## Concepts
 
-### Material
+### Material Set
 
+
+
+#### Bulb
+
+Material from which the bulb is constructed such as glass.
+
+#### Conductor
+
+Material from which the conductor is constructed.
+
+#### Filament
+
+Material from which the filament is constructed.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_Socket_LIGHTING
+
+The socket providing electricity to the lamp.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

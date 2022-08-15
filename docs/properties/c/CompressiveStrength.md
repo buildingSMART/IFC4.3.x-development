@@ -1,4 +1,4 @@
 CompressiveStrength
 ===================
 
-Defining values: α; defined values: compressive strength.
+The compressive strength of the object or material.

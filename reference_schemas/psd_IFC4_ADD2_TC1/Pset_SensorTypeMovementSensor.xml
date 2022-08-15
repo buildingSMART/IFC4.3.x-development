@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ifdguid="f8489000d20511e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4" />
+  <Name>Pset_SensorTypeMovementSensor</Name>
+  <Definition>A device that senses or detects movement. HISTORY: In IFC4, time constant deleted.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcSensor/MOVEMENTSENSOR</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcSensor/MOVEMENTSENSOR</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="fd0d4400d20511e1800000215ad4efdf">
+      <Name>MovementSensingType</Name>
+      <Definition>Enumeration that identifies the type of movement sensing mechanism.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_MovementSensingType">
+            <EnumItem>PHOTOELECTRICCELL</EnumItem>
+            <EnumItem>PRESSUREPAD</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>PHOTOELECTRICCELL</Name>
+              <NameAliases>
+                <NameAlias lang="en">Photo Electric Cell</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>PRESSUREPAD</Name>
+              <NameAliases>
+                <NameAlias lang="en">Pressure Pad</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Movement Sensing Type</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="09919c80d20611e1800000215ad4efdf">
+      <Name>SetPointMovement</Name>
+      <Definition>The movement to be sensed.</Definition>
+      <PropertyType>
+        <TypePropertyBoundedValue>
+          <DataType type="IfcPositiveRatioMeasure" />
+        </TypePropertyBoundedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Set Point Movement</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+  </PsetDefinitionAliases>
+</PropertySetDef>

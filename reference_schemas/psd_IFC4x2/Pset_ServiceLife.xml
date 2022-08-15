@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="bd932780d20611e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x2" />
+  <Name>Pset_ServiceLife</Name>
+  <Definition>Captures the period of time that an artifact will last.  HISTORY: Introduced in IFC2X4 as replacement for IfcServiceLife.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcElement</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcElement</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="eadfd580d20611e1800000215ad4efdf">
+      <Name>ServiceLifeDuration</Name>
+      <Definition>The length or duration of a service life.  
+
+The lower bound indicates pessimistic service life, the upper bound indicates optimistic service life, and the setpoint indicates the typical service life.</Definition>
+      <PropertyType>
+        <TypePropertyBoundedValue>
+          <DataType type="IfcDuration" />
+        </TypePropertyBoundedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Service Life Duration</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="8eb2f46791c242e7b997996569152d4f">
+      <Name>MeanTimeBetweenFailure</Name>
+      <Definition>The average time duration between instances of failure of a product.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcDuration" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Mean Time Between Failure</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+  </PsetDefinitionAliases>
+</PropertySetDef>

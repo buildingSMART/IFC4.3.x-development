@@ -4,4 +4,4 @@ _IfcBoolean_ is a defined data type of simple data type Boolean. It is required 
 
 Type: BOOLEAN
 
-> HISTORY&nbsp; New type in IFC1.5.1.
+> HISTORY  New type in IFC1.5.1.

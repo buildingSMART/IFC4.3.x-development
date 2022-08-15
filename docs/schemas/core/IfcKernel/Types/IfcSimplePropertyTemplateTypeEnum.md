@@ -2,7 +2,7 @@
 
 This enumeration defines the correct subtype of instances of _IfcSimpleProperty_ or _IfcPhysicalSimpleQuantity_ that are created and are assigned to this _IfcSimplePropertyTemplate_. It also determines how the attributes of _IfcPropertyTemplate_, _PrimaryUnit_, _SecondaryUnit_, _Enumerators_, _PrimaryDataType_, _SecondaryDataType_, should be used.
 
-> HISTORY&nbsp; New enumeration in IFC4.
+> HISTORY  New enumeration in IFC4.
 
 ## Items
 
@@ -41,3 +41,6 @@ The properties defined by this _IfcPropertyTemplate_ are of type _IfcQuantityWei
 
 ### Q_TIME
 The properties defined by this _IfcPropertyTemplate_ are of type _IfcQuantityTime_.
+
+### Q_TIME
+The properties defined by this _IfcPropertyTemplate_ are of type _IfcQuantityNumber_.

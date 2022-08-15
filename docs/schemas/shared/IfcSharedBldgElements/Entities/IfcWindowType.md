@@ -12,9 +12,9 @@ A window type defines the particular parameter of the lining and one (or several
 
 It is used to define a window specification, or window style (the specific product information that is common to all occurrences of that window type). Window types may be exchanged without being already assigned to occurrences.
 
-Occurrences of the _IfcWindowType_ within building models are represented by instances of _IfcWindow_ or _IfcWindowStandardCase_.
+Occurrences of the _IfcWindowType_ within building models are represented by instances of _IfcWindow_.
 
-> HISTORY&nbsp; New entity in IFC4. The entity _IfcWindowType_ replaces the previous definition _IfcWindowStyle_ (which is deprecated in IFC4).
+> HISTORY  New entity in IFC4. The entity _IfcWindowType_ replaces the previous definition _IfcWindowStyle_ (which is deprecated in IFC4).
 
 { .use-head}
 Partitioning type use definition
@@ -42,9 +42,9 @@ Geometry Use Definitions:
 The _IfcWindowType_ may define the common shape of window occurrences. The common shape can be defined by
 
 * applying shape parameters defined within the associated _IfcWindowLiningProperties_ and _IfcWindowPanelProperties_ applied to the 'Profile' geometric representation. It is only applicable if the _IfcWindowType_ has only occurrences of type _IfcWindowStandardCase_ (See geometric use definition of _IfcWindowStandardCase_ for further information).
-* applying the _RepresentationMaps_ attribute to refer to a list of _IfcRepresentationMap_'s, that allow for multiple geometric representations (e.g. with _IfcShapeRepresentation_'s having an _RepresentationIdentifier_ 'Box', 'Profile', 'FootPrint', or 'Body') 
->> NOTE&nbsp; The product shape representations are defined as _RepresentationMaps_ (attribute of the supertype _IfcTypeProduct_), which get assigned by an element occurrence instance through the _IfcShapeRepresentation.Item[n]_ being an _IfcMappedItem_. See _IfcTypeProduct_ for further information. 
->> NOTE&nbsp; The values of attributes _RepresentationIdentifier_ and _RepresentationType_ of _IfcShapeRepresentation_ are restricted in the same way as those for _IfcWindow_ and _IfcWindowStandardCase_
+* applying the _RepresentationMaps_ attribute to refer to a list of _IfcRepresentationMap_'s, that allow for multiple geometric representations (e.g. with _IfcShapeRepresentation_'s having an _RepresentationIdentifier_ 'Box', 'Profile', 'FootPrint', or 'Body')
+>> NOTE  The product shape representations are defined as _RepresentationMaps_ (attribute of the supertype _IfcTypeProduct_), which get assigned by an element occurrence instance through the _IfcShapeRepresentation.Item[n]_ being an _IfcMappedItem_. See _IfcTypeProduct_ for further information.
+>> NOTE  The values of attributes _RepresentationIdentifier_ and _RepresentationType_ of _IfcShapeRepresentation_ are restricted in the same way as those for _IfcWindow_ and _IfcWindowStandardCase_
 
 ## Attributes
 
@@ -55,7 +55,7 @@ Identifies the predefined types of a window element from which the type required
 Type defining the general layout of the window type in terms of the partitioning of panels.
 
 ### ParameterTakesPrecedence
-The Boolean value reflects, whether the parameter given in the attached lining and panel properties exactly define the geometry (TRUE), or whether the attached style shape take precedence (FALSE). In the last case the parameter have only informative value. If not provided, no such information can be infered.
+The Boolean value reflects, whether the parameter given in the attached lining and panel properties exactly define the geometry (TRUE), or whether the attached style shape take precedence (FALSE). In the last case the parameter have only informative value. If not provided, no such information can be inferred.
 
 ### UserDefinedPartitioningType
 Designator for the user defined partitioning type, shall only be provided, if the value of _PartitioningType_ is set to USERDEFINED.
@@ -67,17 +67,18 @@ The inherited attribute _ElementType_ shall be provided, if the _PredefinedType_
 
 ## Concepts
 
-### Body Geometry
-
-
 ### Property Sets for Types
 
-Two subtypes of IfcPreDefinedPropertySet are applicable
-to IfcWindowType:
+Two subtypes of IfcPreDefinedPropertySet are applicable to IfcWindowType:
+
+* IfcWindowLiningProperties - a single instance to define the shape parameters of the window lining
+* IfcWindowPanelProperties - one or several instances to define the shape parameters of the window panel(s)
+
+### Type Body Geometry
 
 
-* IfcWindowLiningProperties - a single instance to
-define the shape parameters of the window lining
-* IfcWindowPanelProperties - one or several instances to
-define the shape parameters of the window panel(s)
+
+### Window Type Attributes
+
+
 

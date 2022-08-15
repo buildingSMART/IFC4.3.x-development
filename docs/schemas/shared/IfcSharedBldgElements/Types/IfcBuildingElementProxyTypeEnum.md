@@ -1,14 +1,16 @@
-# IfcBuiltElementProxyTypeEnum
+# IfcBuildingElementProxyTypeEnum
 
-This enumeration defines the available generic types for _IfcBuiltElementProxy_ or _IfcBuiltElementProxyType_.
+This enumeration defines the available generic types for _IfcBuildingElementProxy_ or _IfcBuildingElementProxyType_.
 
-> HISTORY&nbsp; New enumeration IFC2x3
+> HISTORY  New enumeration IFC2x3
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Enumerators PROVISIONFORVOID and PROVISIONFORSPACE added.
+> IFC4.3.0.0 CHANGE  Enumerators PROVISIONFORVOID and PROVISIONFORSPACE removed. Use an _IfcVirtualElement_ with PROVISIONFORVOID and CLEARANCE at _IfcVirtualElementTypeEnum_ instead.
+
+> IFC4 CHANGE  Enumerators PROVISIONFORVOID and PROVISIONFORSPACE added.
 
 { .deprecated}
-> DEPRECATION&nbsp; The enumerator COMPLEX, ELEMENT, PARTIAL shall no longer be used.
+> DEPRECATION  The enumerator COMPLEX, ELEMENT, PARTIAL shall no longer be used.
 
 ## Items
 
@@ -20,12 +22,6 @@ Not used - kept for upward compatibility.
 
 ### PARTIAL
 Not used - kept for upward compatibility.
-
-### PROVISIONFORVOID
-The proxy denotes a provision for voids (an proposed opening not applied as void yet).
-
-### PROVISIONFORSPACE
-The proxy denotes a provision for space (e.g. the space allocated as a provision for mechanical equipment or furniture).
 
 ### USERDEFINED
 User-defined building element proxy.

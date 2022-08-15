@@ -141,6 +141,7 @@ class Relation(object):
             try:
                 self.supplier, self.client = map(lambda n:(n|"type").idref, xmi_relation/"ownedEnd")
                 self.supplier_name, self.client_name = [n.name for n in (xmi_relation/"ownedEnd")]
+                self.supplier_end_id, self.client_end_id = [n.id for n in (xmi_relation/"ownedEnd")]
                 self.valid = True
             except Exception as e:
                 print(e)
@@ -150,6 +151,7 @@ class Relation(object):
             self.supplier = attributes['supplier']
             self.valid = True
             self.supplier_name, self.client_name = None, None
+            self.supplier_end_id, self.client_end_id = None, None
 
 
 # Generalization 
@@ -318,10 +320,23 @@ def add_relations(relations, UML_objects, entities_to_retain = None):
             sid = sup_att['xmi:id']
             cid = cli_att['xmi:id']
             
-            for kk, end, other, nm in [('supplierof', sup, cli, pr.client_name), ('clientof', cli, sup, pr.supplier_name)]:                
+            suppressed = xmi.tags['ExpressSuppressRel'].get(pr.client_end_id, '').lower() == 'yes'
+            fwd_and_inv = [(sup, cli, pr.client_name, sid), (cli, sup, pr.supplier_name, cid)]
+            
+            # for some reason we don't depend on directed relationships, so we
+            # need to figure out the order from the tags.
+            if xmi.tags['ExpressInverse'].get(pr.client_end_id) or (pr.supplier_name and not pr.client_name):
+                fwd_and_inv = fwd_and_inv[::-1]
+            
+            if suppressed:
+                # for asymmetric inverses, skip over the explicitly duplicated forward attribute
+                fwd_and_inv = [(None,)*4] + fwd_and_inv[1:]
+
+            for ii, (end, other, nm, endid) in enumerate(fwd_and_inv):
+                kk = ('clientof', 'supplierof')[ii]
                 if end in UML_objects.keys():
                     for instance in UML_objects[end]:
-                        if sid == instance.xmi_id:
+                        if endid == instance.xmi_id:
                             if pr.xmi_type == 'uml:Substitution':
                                 instance.substitution_rel[kk].append((other, cid, nm))
                             if pr.xmi_type == 'uml:Realization':
@@ -511,7 +526,7 @@ class Tex_object(object):
                     dict_to_use = UMLobject.dependency_rel
                     reltype = 'depend'
                     
-                for order, kk in enumerate(['clientof', 'supplierof']):
+                for order, kk in enumerate(['clientof']): # 'supplierof' <- no inverses for now...
                     rels = dict_to_use[kk]
                     for (other_name, other_id, assoc_name) in rels:
                         if other_name in schema.keys():
@@ -522,7 +537,7 @@ class Tex_object(object):
 
                             if {UMLobject.name, class_to_write.name} not in self.tex_relationships:
                                 args = class_to_write.name, classname
-                                if order:
+                                if not order:
                                     args = args[::-1]
                                 self.make_connection(*args, connection_type=reltype, name=assoc_name)
                                 self.tex_relationships.append({UMLobject.name,class_to_write.name})
@@ -669,12 +684,15 @@ img {
     # for t in texs:
     #     t.generate_pdf()
     
-    # @NB TEMPORARY: [::32]
+    is_iso = os.environ.get('ISO', '0') == '1'
+    if not is_iso:
+        # speed up the processing a bit during development
+        texs = texs[::32]
     
     completed = 0
     num = len(texs)
     with concurrent.futures.ThreadPoolExecutor(max_workers=6) as executor:
-        fts = {executor.submit(Tex_object.generate_pdf, t): t for t in texs[::32]}
+        fts = {executor.submit(Tex_object.generate_pdf, t): t for t in texs}
         for future in concurrent.futures.as_completed(fts):
             completed += 1
             print(completed * 100 // num, '%')

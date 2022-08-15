@@ -4,9 +4,9 @@ The _IfcSpecularRoughness_ defines the datatype for the reflection resulting fro
 
 _IfcSpecularRoughness_ is of type REAL. It is constraint to values between (and including) 0 and 1.
 
-> NOTE&nbsp; The datatype relates to the definition of "shiness" in [ISO/IEC 14772-1](../../../bibliography.htm#IEC-14772-1), which is the reciprocate value to the specular roughness.
+> NOTE  The datatype relates to the definition of "shininess" in [ISO/IEC 14772-1](../content/bibliography.htm#IEC-14772-1), which is the reciprocate value to the specular roughness.
 
-> HISTORY&nbsp; New type in IFC2x2.
+> HISTORY  New type in IFC2x2.
 
 ## Formal Propositions
 

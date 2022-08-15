@@ -1,19 +1,23 @@
 :root {
-  --blue: #1976d2;
-  --dark: #444444;
-  --green: #308732;
-  --red: #d32f2f;
-  --yellow: #f57c00;
-  --universal-border-radius: 5px;
-  --link: #336699;
-  --link-hover: #66ccff;
+    --fore-color: #333333;
+    --blue: #1976d2;
+    --dark: #444444;
+    --green: #308732;
+    --red: #d32f2f;
+    --yellow: #f57c00;
+    --universal-border-radius: 5px;
+    --link: #336699;
+    --link-hover: #66ccff;
+}
+html {
+    /* Is this a good idea? Perhaps. */
+     font-size: 0.95rem;
 }
 header {
     width: 100%;
     margin-bottom: var(--universal-margin);
 }
 header p {
-    font-size: 12pt;
     float: left;
 }
 header ul {
@@ -58,11 +62,7 @@ nav div a.sublink-1.current {
 nav div a.sublink-1:before {
     border: 0px;
 }
-body {
-    font-size: 12pt;
-}
 footer {
-    font-size: 12pt;
     width: 100%;
     margin-top: var(--universal-margin);
 }
@@ -95,7 +95,7 @@ pre {
     background: #eee;
 }
 code, code * {
-    font-size: 12pt !important;
+    font-size: 10pt !important;
     font-family: monospace !important;
 }
 svg text {
@@ -104,17 +104,40 @@ svg text {
 svg g.edge text {
     font-size: 60%;
 }
+/* Make the concept table borders lighter */
+svg g.node polygon[stroke="black"] {
+    stroke: var(--secondary-border-color);
+}
 mark {
     text-transform: uppercase;
 }
 aside {
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--secondary-border-color);
     padding: var(--universal-padding);
     border-radius: var(--universal-border-radius);
     margin: var(--universal-margin);
 }
 aside mark {
     margin-right: var(--universal-margin);
+}
+aside.inherited {
+    text-align: center;
+    -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    background-image: -webkit-gradient(linear, left bottom, right top, color-stop(0, #EEEEEE), color-stop(0.25, #EEEEEE), color-stop(0.25, var(--secondary-border-color)), color-stop(0.5, var(--secondary-border-color)), color-stop(0.5, #EEEEEE), color-stop(0.75, #EEEEEE), color-stop(0.75, var(--secondary-border-color)));
+    background-size: 20px 20px;
+}
+aside.inherited svg {
+    color: var(--border-color);
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+}
+aside.aside-example mark {
+    background-color: var(--green);
+}
+aside.aside-reference mark {
+    background-color: var(--dark);
 }
 aside.aside-change mark {
     background-color: var(--yellow);
@@ -184,7 +207,8 @@ code {
     position: absolute;
     background: white;
     padding: 10px;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+    box-shadow:var(--generic-box-shadow);
+    border-radius: var(--universal-border-radius);
     width: 500px;
     max-height: 300px;
     overflow-x: hide;
@@ -270,6 +294,15 @@ ul.adoption ol>li.partially-supported {
 ul.adoption ol>li.not-supported {
     background-color: var(--red);
 }
+ul.references li {
+    list-style-type: none;
+}
+ul.references svg {
+    color: var(--border-color);
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+}
 ul.examples {
     padding-left: 0px;
 }
@@ -352,22 +385,36 @@ ol.tier>li>.feather-arrow-up {
     margin-top: calc(-12px - var(--universal-margin));
     background-color: var(--back-color);
     color: var(--blue);
-    margin-left: 87px;
+    margin-left: 75px;
 }
 ol.tier>li:first-child>.feather-arrow-up {
     display: none;
 }
 ul.classes {
-    margin-left: 173px;
     padding-left: calc(2 * var(--universal-margin));
 }
-ul.classes li:first-child {
-    margin-left: -172px;
+ul.classes-in-chain {
+    margin-left: 153px;
+}
+ul.classes:hover li {
+    opacity: 1;
+}
+ul.classes:hover li a:hover {
+    outline: 2px solid var(--blue);
+}
+ul.classes-in-chain li:first-child {
+    margin-left: -152px;
+    opacity: 1;
 }
 ul.classes li {
     display: inline-block;
     margin: var(--universal-margin);
     margin-left: 0px;
+    vertical-align: middle;
+    opacity: 0.5;
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
 }
 ul.classes li a {
     /* Equivalent to <small> */
@@ -378,7 +425,7 @@ ul.classes li a {
     background-color: #333;
     display: inline-block;
     text-align: center;
-    width: 140px;
+    width: 120px;
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -439,7 +486,7 @@ table.changelog td {
 }
 table.grouped tr.group-inherited td {
     background: var(--dark);
-    color: #fff;
+    background: #CCC;
     text-align: left !important;
 }
 table.grouped tr.group td {
@@ -448,16 +495,33 @@ table.grouped tr.group td {
     text-align: left !important;
 }
 table.grouped tr.group td a, table.grouped tr.group-inherited td a {
+    color: #000;
+}
+table.grouped tr.group-inherited svg {
+    vertical-align: middle;
+    width: 12px;
+    height: 12px;
+    margin-bottom: 4px;
+}
+table.grouped tr.group td a {
     color: #fff;
 }
-table.grouped tr.inherited {
-    opacity: 0.5;
+table.grouped tr.preview>td {
+    text-align: center;
+    background-image: -webkit-gradient(linear, left bottom, right top, color-stop(0, #EEEEEE), color-stop(0.25, #EEEEEE), color-stop(0.25, var(--secondary-border-color)), color-stop(0.5, var(--secondary-border-color)), color-stop(0.5, #EEEEEE), color-stop(0.75, #EEEEEE), color-stop(0.75, var(--secondary-border-color)));
+    background-size: 20px 20px;
 }
-table.grouped tr.inherited>td>div {
-    -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-    max-height:  100px;
-    overflow:hidden;
+table.grouped tr.preview>td:hover {
+    background-image: -webkit-gradient(linear, left bottom, right top, color-stop(0, #FFFFFF), color-stop(0.25, #FFFFFF), color-stop(0.25, #EEEEEE), color-stop(0.5, #EEEEEE), color-stop(0.5, #FFFFFF), color-stop(0.75, #FFFFFF), color-stop(0.75, #EEEEEE));
+}
+table.grouped tr.preview>td svg {
+    vertical-align: middle;
+    width: 12px;
+    height: 12px;
+    margin-bottom: 4px;
+}
+table.grouped tr.inherited {
+    opacity: 0.7;
 }
 .hidden {
     display: none;
@@ -530,4 +594,7 @@ table.hljs-ln td:first-child {
     user-select: none;
     text-align: center;
     color: var(--border-color);
+}
+.show-inherited, .hide-inherited {
+    cursor: pointer;
 }

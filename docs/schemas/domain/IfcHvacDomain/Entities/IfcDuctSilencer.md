@@ -2,7 +2,7 @@
 
 A duct silencer is a device that is typically installed inside a duct distribution system for the purpose of reducing the noise levels from air movement, fan noise, etc. in the adjacent space or downstream of the duct silencer device.
 
-> HISTORY&nbsp; New entity in IFC4
+> HISTORY  New entity in IFC4
 
 { .note}
 >
@@ -22,18 +22,35 @@ Either there is no duct silencer type object associated, i.e. the _IsTypedBy_ in
 
 ## Concepts
 
-### Material
+### Material Set
 
+
+
+#### Casing
+
+Material from which the casing is constructed.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_Inlet_AIRCONDITIONING
+
+The flow inlet.
+
+#### SOURCE_Outlet_AIRCONDITIONING
+
+The flow outlet.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

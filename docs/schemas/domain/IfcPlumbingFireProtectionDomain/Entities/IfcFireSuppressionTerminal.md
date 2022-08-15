@@ -4,7 +4,7 @@ A fire suppression terminal has the purpose of delivering a fluid (gas or liquid
 
 A fire suppression terminal provides for all forms of sprinkler, spreader and other form of terminal that is connected to a pipework system and intended to act in the role of suppressing a fire.
 
-> HISTORY&nbsp; New entity in IFC4
+> HISTORY  New entity in IFC4
 
 { .note}
 >
@@ -24,18 +24,43 @@ Either there is no fires suppression terminal type object associated, i.e. the _
 
 ## Concepts
 
-### Material
+### Material Set
 
+
+
+#### Casing
+
+Material from which the casing is constructed.
+
+#### Damping
+
+The material used to construct the deflector plate.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_Line_FIREHYDRANT_FIREPROTECTION
+
+Supply line.
+
+#### SOURCE_Hose_FIREHYDRANT_FIREPROTECTION
+
+Connection to hose.
+
+#### SINK_Line_SPRINKLER_FIREPROTECTION
+
+Supply line.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

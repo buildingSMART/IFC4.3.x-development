@@ -1,0 +1,320 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="96b2191f151b47c695341fa549672b6e" templatetype="PSET_OCCURRENCEDRIVEN" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x2" />
+  <Name>Pset_ProtectiveDeviceOccurrence</Name>
+  <Definition>Properties that are applied to an occurrence of a protective device.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcProtectiveDevice</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcProtectiveDevice</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="a4234ac09e044d25883b1529e5898574">
+      <Name>PoleUsage</Name>
+      <Definition>Pole usage.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_PoleUsage">
+            <EnumItem>1P</EnumItem>
+            <EnumItem>2P</EnumItem>
+            <EnumItem>3P</EnumItem>
+            <EnumItem>4P</EnumItem>
+            <EnumItem>1PN</EnumItem>
+            <EnumItem>3PN</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>1P</Name>
+              <NameAliases>
+                <NameAlias lang="en">1 P</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>2P</Name>
+              <NameAliases>
+                <NameAlias lang="en">2 P</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>3P</Name>
+              <NameAliases>
+                <NameAlias lang="en">3 P</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>4P</Name>
+              <NameAliases>
+                <NameAlias lang="en">4 P</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>1PN</Name>
+              <NameAliases>
+                <NameAlias lang="en">1 PN</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>3PN</Name>
+              <NameAliases>
+                <NameAlias lang="en">3 PN</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Pole Usage</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="f9250bdd70df4cbfaf6ad72d26170202">
+      <Name>LongTimeFunction</Name>
+      <Definition>Applying long time function
+A flag indicating that the long time function (i.e. the thermal tripping) of the device is used. The value should be set to TRUE for all devices except those that allows the Long time function of the device not to be used.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Long Time Function</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="337c40a498c54e4baa54a444cf4790ea">
+      <Name>ShortTimeFunction</Name>
+      <Definition>Applying short time function A flag indicating that the short time function of the device is used. The value should be set to FALSE for devices not having a short time function, or if the short time function is not selected to be used.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Short Time Function</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="ab1a66c09b664bc39faba566d40fc3f6">
+      <Name>ShortTimei2tFunction</Name>
+      <Definition>Applying short time i2t function. A flag indicating that the I2t short time function of the device is used. The value should be set to TRUE only if the I2t function  is explicitly selected for the device.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Short Timei2t Function</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="8a30c27174694aa78319e83f13deaf14">
+      <Name>GroundFaultFunction</Name>
+      <Definition>Applying ground fault function. A flag indicating that the ground fault function of the device is used. The value should be set to FALSE for devices not having a ground fault function, or if the ground fault function is not selected to be used.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Ground Fault Function</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="011510087b3e484aa631627e3ef99db0">
+      <Name>GroundFaulti2tFunction</Name>
+      <Definition>Applying ground fault i2t function. A flag indicating that the I2t ground fault function of the device is used. The value should be set to TRUE only if the I2t function is explicitly selected for the device.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Ground Faulti2t Function</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="4bc3d7215dac42f8ad3e069dc2559ee2">
+      <Name>LongTimeCurrentSetValue</Name>
+      <Definition>Long time current set value. The set value of the long time tripping current if adjustable.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcElectricCurrentMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Long Time Current Set Value</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="70aaff9161f949eeb5bc5517d4044d3e">
+      <Name>ShortTimeCurrentSetValue</Name>
+      <Definition>Short time current set value. The set value of the long time tripping current if adjustable.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcElectricCurrentMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Short Time Current Set Value</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="3be6cdde984242b0a0d64478bc12607e">
+      <Name>InstantaneousCurrentSetValue</Name>
+      <Definition>Instantaneous current set value. The set value of the instantaneous tripping current if adjustable.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcElectricCurrentMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Instantaneous Current Set Value</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="f0e1b9943900433a8bb2e462694b55d1">
+      <Name>GroundFaultCurrentSetValue</Name>
+      <Definition>Ground fault current set value. The set value of the ground tripping current if adjustable.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcElectricCurrentMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Ground Fault Current Set Value</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="f0250a29337f4364acb3be5daa02add0">
+      <Name>LongTimeDelay</Name>
+      <Definition>Long time delay. The set value of the long time time-delay if adjustable.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcTimeMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Long Time Delay</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="74cb82eed6ff4aae9f88fe5222059167">
+      <Name>ShortTimeTrippingTime</Name>
+      <Definition>Short time tripping time. The set value of the short time tripping time if adjustable.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcTimeMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Short Time Tripping Time</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="976a795614174914adcd03a1ce7bdf3e">
+      <Name>InstantaneousTrippingTime</Name>
+      <Definition>Instantaneous tripping time. The set value of the instantaneous tripping time if adjustable.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcTimeMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Instantaneous Tripping Time</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="5a52482a0258465fa47cc512a46703f1">
+      <Name>GroundFaultTrippingTime</Name>
+      <Definition>Ground fault tripping time. The set value of the ground fault tripping current if adjustable.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcTimeMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Ground Fault Tripping Time</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+  </PsetDefinitionAliases>
+</PropertySetDef>

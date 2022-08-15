@@ -2,7 +2,7 @@
 
 This enumeration is used to identify the primary purpose of a labour resource, and is limited to high-level categories based upon common skill sets.
 
-> HISTORY&nbsp; New enumeration in IFC4.
+> HISTORY  New enumeration in IFC4.
 
 ## Items
 
@@ -16,7 +16,7 @@ Rough carpentry including framing.
 Removal of dust and debris.
 
 ### CONCRETE
-
+Concrete.
 
 ### DRYWALL
 Gypsum wallboard placement and taping.
@@ -28,7 +28,7 @@ Electrical fixtures, equipment, and cables.
 Finish carpentry including custom cabinetry.
 
 ### FLOORING
-
+Flooring.
 
 ### GENERAL
 General labour not requiring specific skill.

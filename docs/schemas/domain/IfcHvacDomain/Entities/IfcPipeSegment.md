@@ -2,7 +2,7 @@
 
 A pipe segment is used to typically join two sections of a piping network.
 
-> HISTORY&nbsp; New entity in IFC4
+> HISTORY  New entity in IFC4
 
 { .note}
 >
@@ -22,18 +22,47 @@ Either there is no pipe segment type object associated, i.e. the _IsTypedBy_ inv
 
 ## Concepts
 
-### Material
+### Material Set
 
+
+
+#### Casing
+
+Material from which the casing is constructed.
+
+#### Coating
+
+The outer coating, if applicable.
+
+#### Insulation
+
+The insulating wrapping, if applicable.
+
+#### Lining
+
+The inner lining, if applicable.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_Inlet_NOTDEFINED
+
+The flow inlet.
+
+#### SOURCE_Outlet_NOTDEFINED
+
+The flow outlet.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

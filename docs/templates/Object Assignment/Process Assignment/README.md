@@ -6,7 +6,7 @@ Processes may have assignments indicating resources consumed or occupied by the 
 ```
 concept {
     IfcProcess:OperatesOn -> IfcRelAssignsToProcess:RelatingProcess
-    IfcRelAssignsToProcess:RelatedObjects -> IfcResource
+    IfcRelAssignsToProcess:RelatedObjects -> IfcResource:HasAssignments
     IfcRelAssignsToProcess:RelatedObjects[binding="Type"]
 }
 ```

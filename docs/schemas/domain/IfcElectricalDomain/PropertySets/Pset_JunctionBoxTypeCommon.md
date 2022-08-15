@@ -9,7 +9,7 @@ History: New in IFC4
 
 ### ClearDepth
 
-It indiciates the unobstructed depth available for cable inclusion within the junction box.
+It indicates the unobstructed depth available for cable inclusion within the junction box.
 
 ### NumberOfGangs
 

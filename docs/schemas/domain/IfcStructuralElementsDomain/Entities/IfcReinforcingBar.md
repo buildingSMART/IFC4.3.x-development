@@ -2,10 +2,10 @@
 
 A reinforcing bar is usually made of steel with manufactured deformations in the surface, and used in concrete and masonry construction to provide additional strength. A single instance of this class may represent one or many of actual rebars, for example a row of rebars.
 
-> HISTORY&nbsp; New entity in IFC2x2
+> HISTORY  New entity in IFC2x2
 
 { .change-ifc2x4}
-> IFC 2x4 CHANGE&nbsp; All attributes are optional now. Several attributes are deprecated; their information now provided by _IfcReinforcingBarType_. Attribute _BarRole_ renamed to _PredefinedType_.
+> IFC 2x4 CHANGE  All attributes are optional now. Several attributes are deprecated; their information now provided by _IfcReinforcingBarType_. Attribute _BarRole_ renamed to _PredefinedType_.
 
 { .use-head}
 Geometry Use Definition
@@ -20,31 +20,31 @@ The representation map of a mapped 'Body' representation should contain a repres
 Deprecated.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Attribute made optional and deprecated. Use respective attribute at _IfcReinforcingBarType_ instead.
+> IFC4 CHANGE  Attribute made optional and deprecated. Use respective attribute at _IfcReinforcingBarType_ instead.
 
 ### CrossSectionArea
 The effective cross-section area of the reinforcing bar or group of bars.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Attribute made optional.
+> IFC4 CHANGE  Attribute made optional.
 
 ### BarLength
 Deprecated.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Attribute deprecated. Use respective attribute at _IfcReinforcingBarType_ instead.
+> IFC4 CHANGE  Attribute deprecated. Use respective attribute at _IfcReinforcingBarType_ instead.
 
 ### PredefinedType
 The role, purpose or usage of the bar, i.e. the kind of loads and stresses it is intended to carry.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Attribute renamed from _BarRole_ to _PredefinedType_ and made optional. Type changed from _IfcReinforcingBarRoleEnum_ without changes to the range of enumeration items.
+> IFC4 CHANGE  Attribute renamed from _BarRole_ to _PredefinedType_ and made optional. Type changed from _IfcReinforcingBarRoleEnum_ without changes to the range of enumeration items.
 
 ### BarSurface
 Deprecated.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Attribute made optional and deprecated. Use respective attribute at _IfcReinforcingBarType_ instead.
+> IFC4 CHANGE  Attribute made optional and deprecated. Use respective attribute at _IfcReinforcingBarType_ instead.
 
 ## Formal Propositions
 
@@ -58,18 +58,35 @@ If this occurrence is defined by a type object, the latter has to be an _IfcRein
 
 ### Body Geometry
 
+### Mapped Geometry
+
 The representation map referenced by a 'Body' 'MappedRepresentation' should contain a representation of type 'AdvancedSweptSolid' which holds an IfcSweptDiskSolid (including subtype IfcSweptDiskSolidPolygonal). Multiple IfcMappedItem's can be used to represent several bars as one occurrence of IfcReinforcingBar.
 
+### Material Set
 
-### Material Profile Set Usage
 
+
+#### Core
+
+Material from which the rebar is constructed, such as steel.
+
+#### Coating
+
+Outer coating, if applicable.
 
 ### Object Typing
 
 
-### Property Sets
+
+### Property Sets for Objects
+
 
 
 ### Quantity Sets
+
+
+
+### Reinforcing Bar Attributes
+
 
 

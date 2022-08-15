@@ -1,15 +1,21 @@
 Material Layer Set Usage
 ========================
 
-Material layer set usage defines layout at occurrences to indicate a direction and offset from the 'Axis' reference curve, and a reference extent such as for a default wall height.
+A material layer set may be defined on an object type. In this scenario, all occurrences of that type must use this layer set to parametrically define their geometry.
 
-The concept of _Material Layer Set Usage_ is only applicable to certain product subtypes, refered to as "Standard case" elements. It supports a certain range of parametric definitions for those element configurations.
+> EXAMPLE A wall type may define multiple layers of material. A wall of that wall type will then have a geometry with a thickness that corresponds with the layers in the wall type.
 
-The material of those standard case elements is defined by _IfcMaterialLayerSetUsage_ and is attached by the _IfcRelAssociatesMaterial_._RelatingMaterial_. It is accessible by the inverse _HasAssociations_ relationship. Standard case elements with multiple layers can be represented by refering to several _IfcMaterialLayer_'s within the _IfcMaterialLayerSet_ that is referenced from the _IfcMaterialLayerUsage_.
+The usage may parametrically define an 'Axis' reference curve, and a direction, offset, and extent of the layers to extend along the axis. This allows layers to slope or only extend up to a particular height.
 
 ```
 concept {
     IfcProduct:HasAssociations -> IfcRelAssociatesMaterial:RelatedObjects
+
+    IfcProduct:IsTypedBy -> IfcRelDefinesByType:RelatedObjects
+    IfcRelDefinesByType:RelatingType -> IfcTypeProduct
+    IfcTypeProduct:HasAssociations -> IfcRelAssociatesMaterial_1:RelatedObjects
+    IfcRelAssociatesMaterial_1:RelatingMaterial -> IfcMaterialLayerSet
+
     IfcRelAssociatesMaterial:RelatingMaterial -> IfcMaterialLayerSetUsage
     IfcMaterialLayerSetUsage:ForLayerSet -> IfcMaterialLayerSet
     IfcMaterialLayerSetUsage:LayerSetDirection -> IfcLayerSetDirectionEnum_1
@@ -17,13 +23,8 @@ concept {
     IfcMaterialLayerSetUsage:OffsetFromReferenceLine -> IfcLengthMeasure_1
     IfcMaterialLayerSetUsage:ReferenceExtent -> IfcPositiveLengthMeasure
     IfcMaterialLayerSet:MaterialLayers -> IfcMaterialLayer
-    IfcMaterialLayerSet:MaterialLayers -> IfcMaterialLayerWithOffsets
     IfcMaterialLayer:Material -> IfcMaterial
     IfcMaterialLayer:LayerThickness -> IfcNonNegativeLengthMeasure
-    IfcMaterial:HasRepresentation -> IfcMaterialDefinitionRepresentation:RepresentedMaterial
-    IfcMaterialDefinitionRepresentation -> Material_Surface_Color_Style
-    IfcMaterialLayerWithOffsets:OffsetDirection -> IfcLayerSetDirectionEnum_0
-    IfcMaterialLayerWithOffsets:OffsetValues -> IfcLengthMeasure_0
     IfcMaterialLayer:Name[binding="Name"]
 }
 ```

@@ -1,19 +1,19 @@
 # IfcElementAssembly
 
-The _IfcElementAssembly_ represents complex element assemblies aggregated from several elements, such as discrete elements, building elements, or other elements.  
+The _IfcElementAssembly_ represents complex element assemblies aggregated from several elements, such as discrete elements, building elements, or other elements.
 
-> EXAMPLE Steel construction assemblies, such as trusses and different kinds of frames, can be represented by the _IfcElementAssembly_ entity. Premanufactured or precast elements are examples of the general _IfcElementAssembly_ entity 
+> EXAMPLE Steel construction assemblies, such as trusses and different kinds of frames, can be represented by the _IfcElementAssembly_ entity. Premanufactured or precast elements are examples of the general _IfcElementAssembly_ entity
 
-> NOTE&nbsp; The _IfcElementAssembly_ is a general purpose entity that is required to be decomposed. Also other subtypes of _IfcElement_ can be decomposed.    
-The assembly structure can be nested, i.e. an _IfcElementAssembly_ could be an aggregated part within another _IfcElementAssembly_.  
+> NOTE  The _IfcElementAssembly_ is a general purpose entity that is required to be decomposed. Also other subtypes of _IfcElement_ can be decomposed.
+The assembly structure can be nested, i.e. an _IfcElementAssembly_ could be an aggregated part within another _IfcElementAssembly_.
 
-> NOTE&nbsp; View definitions and/or implementer agreements may restrict the number of allowed levels of nesting.  
+> NOTE  View definitions and/or implementer agreements may restrict the number of allowed levels of nesting.
 
-The geometry of an _IfcElementAssembly_ is generally formed from its components, in which case it does not need to have an explicit geometric representation. In some cases it may be useful to also expose an own explicit representation of the aggregate.  
+The geometry of an _IfcElementAssembly_ is generally formed from its components, in which case it does not need to have an explicit geometric representation. In some cases it may be useful to also expose an own explicit representation of the aggregate.
 
-> NOTE&nbsp; View definitions or implementer agreements may further constrain the applicability of certain shape representations at the _IfcElementAssembly_ in respect of the shape representations of its parts.  
+> NOTE  View definitions or implementer agreements may further constrain the applicability of certain shape representations at the _IfcElementAssembly_ in respect of the shape representations of its parts.
 
-> HISTORY&nbsp; New entity in IFC2x2.  
+> HISTORY  New entity in IFC2x2.
 
 { .spec-head}
 Informal Propositions:
@@ -40,42 +40,44 @@ Either there is no element assembly type object associated, i.e. the _IsTypedBy_
 
 ### Aggregation
 
-The IfcElementAssembly shall represent an aggregate,
-i.e. it should have other elements, being subtypes of
-IfcElement, 
-as contained (sub)parts. The table above only represents a selection of subtypes of IfcElement that are legitimate as parts in an 
-IfcElementAssembly
+The IfcElementAssembly shall represent an aggregate, i.e. it should have other elements, being subtypes of IfcElement, as contained (sub)parts. The table above only represents a selection of subtypes of IfcElement that are legitimate as parts in an IfcElementAssembly
 
+* The IfcElementAssembly is an aggregate i.e. being composed by other elements and acting as an assembly using the objectified relationship IfcRelAggregates, refering to it by its inverse attribute _SELF\IfcObjectDefinition.IsDecomposedBy_. Components of an assembly are described by instances of subtypes of IfcElement.
+* In this case, the contained subtypes of IfcElement shall not be additionally contained in the project spatial hierarchy, i.e. the inverse attribute _SELF\IfcElement.ContainedInStructure_ of those IfcElement's shall be _NIL._
 
-* The IfcElementAssembly is an aggregate i.e. being
-composed by other elements and acting as an assembly using the
-objectified relationship IfcRelAggregates, refering to it
-by its inverse attribute
-SELF\IfcObjectDefinition.IsDecomposedBy. Components of an
-assembly are described by instances of subtypes of
-IfcElement.
-* In this case, the contained subtypes of IfcElement
-shall not be additionally contained in the project spatial
-hierarchy, i.e. the inverse attribute
-SELF\IfcElement.ContainedInStructure of those
-IfcElement's shall be NIL.
+Figure 1 illustrates spatial containment and element aggregation relationships.
 
+![containment relationships](../../../../figures/ifcelementassembly-containment.png "Figure 1 &mdash; Element assembly containment")
 
-Figure 151 illustrates spatial containment and element aggregation relationships.
+#### IfcMember
 
+Members within the assembly.
 
-![containment relationships](../../../../figures/ifcelementassembly-containment.png)
-Figure 151 — Element assembly containment
+#### IfcPlate
 
+Plates within the assembly.
 
+#### IfcElementComponent
+
+Components within the assembly.
 
 ### Object Typing
 
 
+
 ### Spatial Containment
 
-The IfcElementAssembly should have a relationship for its 
-containment in the hierachical spatial structure of the project. Only if the IfcElementAssembly is itself a part of another assembly this relationship should be omitted.
+The IfcElementAssembly should have a relationship for its containment in the hierachical spatial structure of the project. Only if the IfcElementAssembly is itself a part of another assembly this relationship should be omitted.
 
+#### IfcBuildingStorey
 
+Default spatial container
+
+#### IfcBuilding
+
+Spatial container for element assemblies not assignable to a building storey
+
+#### IfcSite
+
+Spatial container for element assemblies that are placed on site (outside of building)
 

@@ -9,12 +9,12 @@ The reinforcing element type **IfcTendonType** defines commonly shared informati
 
 It is used to define a tendon type specification indicating the specific product information that is common to all occurrences of that product type. The **IfcTendonType** may be declared within _IfcProject_ or _IfcProjectLibrary_ using _IfcRelDeclares_ and may be exchanged with or without occurrences of the type. Occurrences of **IfcTendonType** are represented by instances of _IfcTendon_.
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 { .use-head}
 Material Use Definition
 
-An associated material denotes the steel grade, preferrably via material classification. A material constituent set or material profile set may be associated if the cable, bonding mortar or corrosion protection, and tendon sheeth are to be described together by the material association.
+An associated material denotes the steel grade, preferably via material classification. A material constituent set or material profile set may be associated if the cable, bonding mortar or corrosion protection, and tendon sheeth are to be described together by the material association.
 
 { .use-head}
 Geometry Use Definition
@@ -39,3 +39,10 @@ Diameter of the sheeth (duct) around the tendon, if there is one with this type 
 
 ### CorrectPredefinedType
 The inherited attribute _ElementType_ shall be provided if the _PredefinedType_ is set to USERDEFINED.
+
+## Concepts
+
+### Tendon Type Attributes
+
+
+

@@ -7,7 +7,7 @@ Figure 1 illustrates the concepts of type, occurrence and performance. Types are
 
 A type can have zero or many occurrences. Each occurrence can have many performance history entities associated with it, allowing data that is specific to a certain phase of the lifecycle to be captured and maintained throughout the life of the dataset.
 
-!["type, occurrence and performance history concepts"](../../../../figures/ifcdistributionport_conceptslide2.gif "Figure 1 &mdash; Building service lifecycle")
+![type, occurrence and performance history concepts](../../../../figures/ifcdistributionport_conceptslide2.gif "Figure 1 &mdash; Building service lifecycle")
 
 The _IfcSharedBldgServiceElements_ schema specializes building services concepts symmetrically for occurrences and types, with the _primary_ functional role of the entity determining its classification into the following generic concepts:
 

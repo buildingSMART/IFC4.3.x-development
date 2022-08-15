@@ -7,9 +7,9 @@ The _IfcTextTransformation_ describes how the cases of characters are handled. V
 * lowercase: lowercases all letters of the element
 * none
 
-> NOTE&nbsp; Type adopted from **text-transform** defined in [CSS-1](../../../bibliography.htm#CSS1).
+> NOTE  Type adopted from **text-transform** defined in [CSS-1](../content/bibliography.htm#CSS1).
 
-> HISTORY&nbsp; New type in IFC2x3.
+> HISTORY  New type in IFC2x3.
 
 ## Formal Propositions
 

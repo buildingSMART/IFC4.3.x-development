@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="0e118180d21511e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x1" />
+  <Name>Pset_ValveTypeIsolating</Name>
+  <Definition>Valve that is used to isolate system components.
+Note that an isolating valve is constrained to have a 2 port  pattern.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcValve/ISOLATING</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcValve/ISOLATING</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="12d63580d21511e1800000215ad4efdf">
+      <Name>IsNormallyOpen</Name>
+      <Definition>If TRUE, the valve is normally open. If FALSE is is normally closed.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Is Normally Open</NameAlias>
+        <NameAlias lang="ja-JP">ノーマルオープン</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">もし、TRUEなら弁はノーマルオープン、もし、FALSEならノーマルクローズ</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="1a95da00d21511e1800000215ad4efdf">
+      <Name>IsolatingPurpose</Name>
+      <Definition>Defines the purpose for which the isolating valve is used since the way in which the valve is identified as an isolating valve may be in the context of its use. Note that unless there is a contextual name for the isolating valve (as in the case of a Landing Valve on a rising fire main), then the value assigned shoulkd be UNSET.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_IsolatingPurpose">
+            <EnumItem>LANDING</EnumItem>
+            <EnumItem>LANDINGWITHPRESSUREREGULATION</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>LANDING</Name>
+              <NameAliases>
+                <NameAlias lang="en">Landing</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>LANDINGWITHPRESSUREREGULATION</Name>
+              <NameAliases>
+                <NameAlias lang="en">Landing with Pressure Regulation</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Isolating Purpose</NameAlias>
+        <NameAlias lang="ja-JP">遮断目的</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">その使用の前後関係から遮断弁として使われる弁があるようであれば、遮断弁が使われている理由を定義します。
+注：燃え上がる火の上のランディング弁のように、遮断弁に前後関係から別な名前がつく場合は別です。このようなとき値は定まらない。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">弁タイプ遮断弁</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Mit XMLSpy v2015 sp2 (x64) (http://www.altova.com) von Thomas Liebich (AEC3 Deutschland GmbH) bearbeitet -->
+<xs:schema xmlns:mvd="http://buildingsmart-tech.org/mvd/XML/1.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://buildingsmart-tech.org/mvd/XML/1.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.1">
+	<xs:annotation>
+		<xs:documentation>Change Log: 
+        1.2 draft:
+          schema extensions
+            
+				1.1 final-add1:
+					schema changes
+						concept.TemplateRules changed from mandatory to optional - It is allowed to have concepts without further configuration via template rules. In that case it is expected that the referenced concept template validates to true.
+				1.1 final:
+					schema extensions
+						namespace - updated to: http://buildingsmart-tech.org/mvd/XML/1.1
+						ruleId - new simple type to restrict EntityRule.Reference.@IdPrefix, EntityRule.@RuleId and AttributeRule.@RuleId
+						EntityRule.Reference.@IdPrefix - changed to ruleID (was normalizedString)
+						EntityRule.@RuleId - changed to ruleID (was normalizedString)
+						AttributeRule.@RuleId - changed to ruleID (was normalizedString)
+						copyright - changed to normalizedString (was anyURI)
+				1.1 release candidate
+					schema extensions
+						EntityRule.References.Template - new element that allows to reference other templates as partial templates, it allows to reuse common, smaller ConceptTemplate definitions
+						EntityRule.References.Template.@ref - reference to the partial template by uuid
+						EntityRule.References.@IdPrefix - an optional prefix for the RuleId name, used to prevent ambiguous RuleId's, if the same partial template is referenced twice in a concept template tree
+						Concept.TemplateRules - new element and tree structure to define a logical tree (with boolean operators) to combine several template rules
+						ConceptRoot.Applicability - new element to check, whether the instance of the applicableRootEntity is applicable, allows for more conditions (like certain property values)
+						@applicableSchema - defined as extensible enumeration of standard IFC schema identifiers.
+					schema changes - strict version: removed, transitional version: deprecated 
+						AbstractRule - abstract element and conceptType removed, attributes moved to AttributeRule and EntityRule
+						ConceptTemplate.Rules - restricted to AttributeRule, was an agreement in V1.0, now enforced by schema
+						AttributeRule.@Cardinality - removed/deprecated: this attribute shall not be used to improse a restriction on the cardinality, restrictions are all handled by template rules
+						EntityRule.@Cardinality - removed/deprecated: this attribute shall not be used to improse a restriction on the cardinality, restrictions are all handled by template rules
+						EntityRule.EntityRules - removed/deprecated: There is no usage for an EntityRule to directly contain other EntityRules, without an intermediate AttributeRules
+						RootConcept.Requirements - removed/deprecated: requirements are only valid for concepts, not for a root concept
+						Concept.Rules  - removed/deprecated: AttributeRules and EntityRules at this level are not legal, replaces by TemplateRules that only allow TemplateRule, and boolean logic
+						Concept.SubConcepts - removed/deprecated: the inclusion of SubConcepts has no functionality so far, in order to reduce complexity it should not be used, concepts should be flat
+						Concept.Rules - removed/deprecated: the old Rules structure did not allow for logical combinations of individual rules, it was not defined, what boolean logic should be applied to more than one rule
+						Cardinality - simple type removed/deprecated, not used any more in AttributeRule or EntityRule
+				1.1 draft:
+					schema improvements:
+						- new complex type GenericReference (used by ModelView and Concept)
+						- simplified definition of EntityRule and TemplateRule
+						- definition of applicability attribute changed for ExchangeRequirement and Requirement  
+						- minOccurs changed from 1 to 0 for ModelView.Roots and mvdXML.Templates 
+						- maxOccurs added to several definitions, mainly for clarification 
+						- definition and use of applicability (was xs:attribute now xs:simpleType)
+						- ConceptTemplate.applicableSchema changed to a list of String types
+					schema extensions:
+						- cardinality attribute of AttributeRule and EntityRule extended to support definition of any min and max settings 
+						- baseConcept and override attribute added to Concept to reference the "supertype" concept
+						- tags attribute added to Definitions
+				1.0: first published release
+		</xs:documentation>
+	</xs:annotation>
+	<!-- ======================================== -->
+	<!-- the root element for mvdXML schema populations -->
+	<!-- ======================================== -->
+	<xs:element name="mvdXML" type="mvd:mvdXML">
+		<xs:annotation>
+			<xs:documentation>The mvdXML element comprises the scope of the mvdXML document, it includes zero-to-many model views and one-to-many concept templates (as a minimum, all concept templates that are referenced in the included model view(s)).</xs:documentation>
+		</xs:annotation>
+		<xs:unique name="unique-uuids">
+			<xs:selector xpath=".//mvd:ModelView | .//mvd:ConceptTemplate | .//mvd:ConceptRoot | .//mvd:ExchangeRequirement | .//mvd:Concept"/>
+			<xs:field xpath="@uuid"/>
+		</xs:unique>
+		<xs:key name="TemplateKey">
+			<xs:selector xpath=".//mvd:ConceptTemplate"/>
+			<xs:field xpath="@uuid"/>
+		</xs:key>
+		<xs:keyref name="ConceptToTemplateRef" refer="mvd:TemplateKey">
+			<xs:selector xpath=".//mvd:Template"/>
+			<xs:field xpath="@ref"/>
+		</xs:keyref>
+		<xs:key name="ConceptKey">
+			<xs:selector xpath=".//mvd:Concept"/>
+			<xs:field xpath="@uuid"/>
+		</xs:key>
+		<xs:keyref name="ConceptToConceptRef" refer="mvd:ConceptKey">
+			<xs:selector xpath=".//mvd:Concept"/>
+			<xs:field xpath="@baseConcept"/>
+		</xs:keyref>
+		<xs:key name="ExchangeRequirementKey">
+			<xs:selector xpath=".//mvd:ExchangeRequirement"/>
+			<xs:field xpath="@uuid"/>
+		</xs:key>
+		<xs:keyref name="RequirementToExchangeRequirementRef" refer="mvd:ExchangeRequirementKey">
+			<xs:selector xpath=".//mvd:Requirement"/>
+			<xs:field xpath="@exchangeRequirement"/>
+		</xs:keyref>
+	</xs:element>
+	<xs:complexType name="mvdXML">
+		<xs:sequence>
+			<xs:element name="Templates" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>a list of reusable concept templates, that define the graph within the base IFC schema representing the entities and attributes needed to support the functional unit</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="mvd:ConceptTemplate" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>The ConceptTemplate element represents the reusable concepts, it may have one-to-many sub concept templates and thereby may form a tree of related reusable concepts. Each concept template has an applicable schema and may have applicable root entities (i.e. concept roots to which the concept template applies). </xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Views" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>a list of model view definitions, that contains the necessary entities and associated concepts to define the sub schema of the base schema to support the exchange requirements</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="mvd:ModelView" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>The ModelView element is the description of a Model View Definition (MVD), it is specific to an IFC schema release and contains one-to-many concept roots. It includes the reference to zero-to-many applicable exchange requirements.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attributeGroup ref="mvd:identity"/>
+	</xs:complexType>
+	<!-- ======================================== -->
+	<!-- the branch defining the concept templates, based on the IFC schema structure, reused within model view documentation and validation -->
+	<!-- ======================================== -->
+	<xs:element name="ConceptTemplate" type="mvd:ConceptTemplate">
+		<xs:annotation>
+			<xs:documentation>The concept template holds the common definitions of a concept, that are independent of its use within a root concept. Concept nodes reference a concept template to share the common description. This element represents the reusable concepts; it may have zero-to-many sub concept template's and thereby may form a tree of related reusable concepts. Within the tree it may refer to shared partial concepts. Each concept template has an applicable schema and may have applicable root entities (i.e. concept roots to which the concept template applies).</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="ConceptTemplate">
+		<xs:sequence>
+			<xs:element name="Definitions" type="mvd:Definitions" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Rules" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Set of attributes defined at applicable Entity, where each attribute may have value constraints and/or graphs of object instances defined. If an attribute is not defined, then the requirements are the same as indicated for the schema.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="mvd:AttributeRule" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>An atribute rule, defined for an attribute of the applicable entity. It declares the root element of the rule tree. It is allowed to define rules for attributes that are defined at subtypes of the applicable entity.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="SubTemplates" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Set of sub-templates, having a subset of applicable entities, which further define a concept template for particular usage.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="mvd:ConceptTemplate" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attributeGroup ref="mvd:identity"/>
+		<xs:attribute name="applicableSchema" use="required">
+			<xs:annotation>
+				<xs:documentation>Identifies the default schema for which the template applies, such as IFC2X_FINAL, IFC2X2_FINAL, IFC2X3, or IFC4. The template may be used for model views of other schemas, if all enclosed rules resolve to available attributes and types.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:list itemType="mvd:schemaName"/>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="applicableEntity" use="optional">
+			<xs:annotation>
+				<xs:documentation>Indicates the entities, including all derived entities, for which the concept applies. It is recommended to use a single base class. This value provides the context for any attribute rules and is used within tools to filter the list of available templates for particular entities. For a sub template, the applicable entity must be the same type or a subtype of the outer template. This value may be blank to indicate an abstract template that cannot be instantiated, containing sub templates for specific entities.
+		</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:list itemType="xs:normalizedString"/>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="isPartial" type="xs:boolean" use="optional" default="false"/>
+	</xs:complexType>
+	<xs:element name="AttributeRule" type="mvd:AttributeRule" nillable="true"/>
+	<xs:complexType name="AttributeRule">
+		<xs:sequence>
+			<xs:element name="EntityRules" minOccurs="0" maxOccurs="1">
+				<xs:complexType>
+					<xs:sequence maxOccurs="unbounded">
+						<xs:element ref="mvd:EntityRule"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Constraints" minOccurs="0" maxOccurs="1">
+				<xs:complexType>
+					<xs:sequence maxOccurs="unbounded">
+						<xs:element name="Constraint">
+							<xs:complexType>
+								<xs:attribute name="Expression" type="xs:string" use="required"/>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="AttributeName" type="xs:string" use="required"/>
+		<xs:attribute name="RuleID" type="mvd:ruleId" use="optional">
+			<xs:annotation>
+				<xs:documentation>Identifies the rule for referencing at template rules defined within concepts, where specific parameters are applied for this rule. NOTE The RuleID must be unique within the scope of its usage.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Description" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Optional description of the rule.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="EntityRule" type="mvd:EntityRule"/>
+	<xs:complexType name="EntityRule">
+		<xs:sequence>
+			<xs:element name="References" minOccurs="0" maxOccurs="1">
+				<xs:complexType>
+					<xs:sequence minOccurs="1" maxOccurs="1">
+						<xs:element name="Template" type="mvd:GenericReference"/>
+					</xs:sequence>
+					<xs:attribute name="IdPrefix" type="mvd:ruleId" use="optional"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="AttributeRules" minOccurs="0" maxOccurs="1">
+				<xs:complexType>
+					<xs:sequence maxOccurs="unbounded">
+						<xs:element ref="mvd:AttributeRule"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Constraints" minOccurs="0" maxOccurs="1">
+				<xs:complexType>
+					<xs:sequence maxOccurs="unbounded">
+						<xs:element name="Constraint">
+							<xs:complexType>
+								<xs:attribute name="Expression" type="xs:string" use="required"/>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="EntityName" type="xs:string" use="required"/>
+		<xs:attribute name="RuleID" type="mvd:ruleId" use="optional">
+			<xs:annotation>
+				<xs:documentation>Identifies the rule for referencing at template rules defined within concepts, where specific parameters are applied for this rule. NOTE The RuleID must be unique within the scope of its usage.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Description" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Optional description of the rule.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<!-- ======================================== -->
+	<!-- the branch defining the concepts for an individual model view, based on the concept templates, used for MVD documentation and validation-->
+	<!-- ======================================== -->
+	<xs:element name="ModelView" type="mvd:ModelView">
+		<xs:annotation>
+			<xs:documentation>The Model View Definition (MVD) that represents a subset of the IFC schema to cover the exchange requirements. The model view is specific to an IFC schema release and contains zero-to-many c oncept roots. It also includes the reference to zero-to-many applicable exchange requirements. Multiple model views from potentially different releases may be contained in the same file.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="ModelView">
+		<xs:sequence>
+			<xs:element name="Definitions" type="mvd:Definitions" minOccurs="0"/>
+			<xs:element name="BaseView" type="mvd:GenericReference" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Reference to a base model view definition (in case that this model view represents an add-on model view that extents a base view).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ExchangeRequirements" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>List of exchange requirements defined within this model view. They should appear in logical order.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ExchangeRequirement" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>The ExchangeRequirement element is the description of an Exchange Requirement model (ERM) that is covered by the MVD. An ERM covers the Exchange Requirements (ER) that are identified for a particular exchange scenario that is covered by the MVD. ERM's may add additional constraints to the use of concepts and are an important part of later certification and validation processes. An ERM can be referenced from a Concept element to impose specific constraints for exchanges that reference this ERM. </xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="Definitions" type="mvd:Definitions" minOccurs="0" maxOccurs="1"/>
+								</xs:sequence>
+								<xs:attribute name="applicability" type="mvd:applicability" use="optional">
+									<xs:annotation>
+										<xs:documentation>Identifies if the ERM is specific for import or export. If such value is provided, then any referencing requirements must match; for example, if such value indicates export, then referencing requirements may use export but not import; if such value is not provided, then referencing requirements may use any value. NOTE  The differentiation between import and export origins from software certification and does not have any meaning for data validation applications.
+								</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+								<xs:attributeGroup ref="mvd:identity"/>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Roots" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>List of root concepts defined within scope of the model view.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="mvd:ConceptRoot" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>The ConceptRoot element represents the root element (other terms are "leaf node class", "variable concept") that represent the fundamental parts of an MVD that is represented by a collection of supported concepts. It has an applicable leaf-node IFC entity. </xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attributeGroup ref="mvd:identity"/>
+		<xs:attribute name="applicableSchema" type="mvd:schemaName" use="required"/>
+	</xs:complexType>
+	<xs:element name="ConceptRoot" type="mvd:ConceptRoot">
+		<xs:annotation>
+			<xs:documentation>The root concept (called variable concept in MVD V2.0 documentation). It defines the main and independent entity that is part of a Model View Definition and also provides the root for all path information. Examples are IfcWall, IfcSpace.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="ConceptRoot">
+		<xs:sequence>
+			<xs:element name="Definitions" type="mvd:Definitions" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Applicability" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A set of TemplateRules, based on a template, which describe the conditions, under which the concepts apply to the applicableRootEntity. Those conditions need to validate to true as a prerequisite for checking the TemplateRules imposed at the concepts.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Definitions" type="mvd:Definitions" minOccurs="0"/>
+						<xs:element name="Template" type="mvd:GenericReference" minOccurs="1" maxOccurs="1"/>
+						<xs:element ref="mvd:TemplateRules" minOccurs="1" maxOccurs="1"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Concepts" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>List of concepts defined within scope of the concept root.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="mvd:Concept" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Each Concept indicates use of a particular template for the applicable root entity.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attributeGroup ref="mvd:identity"/>
+		<xs:attribute name="applicableRootEntity" type="xs:normalizedString" use="optional">
+			<xs:annotation>
+				<xs:documentation>Identifies the class or data type of instance being described or validated, i.e. the IFC entity (deriving from IfcRoot) for which the concepts apply. The concepts apply to this IFC entity or its subtypes (respectively instances of those classes in case of validation).</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="Concept" type="mvd:Concept">
+		<xs:annotation>
+			<xs:documentation>The Concept is an MVD specific concept assigned via a root concept to a model view. It has a reference to a concept template from which it re-uses the definition, it may add a specific definition that only relates to its particular usage for the root element.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="Concept">
+		<xs:sequence>
+			<xs:element name="Definitions" type="mvd:Definitions" minOccurs="0"/>
+			<xs:element name="Template" type="mvd:GenericReference"/>
+			<xs:element name="Requirements" type="mvd:Requirements" minOccurs="0" maxOccurs="1"/>
+			<xs:element ref="mvd:TemplateRules" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="mvd:identity"/>
+		<xs:attribute name="baseConcept" type="mvd:uuid" use="optional"/>
+		<xs:attribute name="override" type="xs:boolean" use="optional" default="false"/>
+	</xs:complexType>
+	<xs:element name="TemplateRules" type="mvd:TemplateRules"/>
+	<xs:complexType name="TemplateRules">
+		<xs:choice maxOccurs="unbounded">
+			<xs:element ref="mvd:TemplateRules"/>
+			<xs:element name="TemplateRule">
+				<xs:complexType>
+					<xs:attribute name="Parameters" type="xs:string" use="required"/>
+					<xs:attribute name="Description" type="xs:string" use="optional"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:choice>
+		<xs:attribute name="operator">
+			<!-- new attribute to define the logical combination of rules underneath the Rules sequence -->
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="and"/>
+					<xs:enumeration value="or"/>
+					<xs:enumeration value="not"/>
+					<xs:enumeration value="nand"/>
+					<xs:enumeration value="nor"/>
+					<xs:enumeration value="xor"/>
+					<xs:enumeration value="nxor"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Description" type="xs:string" use="optional"/>
+		<!-- new complex type to differenciate from Rules in the Template section -->
+	</xs:complexType>
+	<!-- ======================================== -->
+	<!-- common complex type definitions-->
+	<!-- ======================================== -->
+	<xs:complexType name="Definitions">
+		<xs:sequence>
+			<xs:element name="Definition" minOccurs="1" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>
+			The element definition contains text and explanatory remarks. It also allows to add links to additional figures, diagrams, examples, and other external documents.
+			</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Body" minOccurs="0" maxOccurs="1">
+							<xs:annotation>
+								<xs:documentation>The element holds the definition text or explanatory remarks. It is qualified by a language tag. It also holds tags that further classify the nature of the definition or remark. NOTE  In order to correctly encapsulate the HTML formatted text, the content shall be tagged by <![CDATA[   ]]> to preserve the HTML code.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:simpleContent>
+									<xs:extension base="xs:string">
+										<xs:attribute name="lang" type="xs:language" use="optional" default="en">
+											<xs:annotation>
+												<xs:documentation>Locale identifier based on RFC 1766 language codes to indicate the default locale. Examples are ‘en’, ‘de’, ‘en-GB’, ’de-CH’.</xs:documentation>
+											</xs:annotation>
+										</xs:attribute>
+										<xs:attribute name="tags" use="optional">
+											<xs:annotation>
+												<xs:documentation>List of tags that classify the element. All tags are separated through whitespaces per default. A semicolon must be used if given tags consists of multiple words.
+												</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction>
+													<xs:simpleType>
+														<xs:list itemType="xs:normalizedString"/>
+													</xs:simpleType>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:attribute>
+									</xs:extension>
+								</xs:simpleContent>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="Link" nillable="true" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>The element holds all links to additional documentation content, often referenced as a link to external resources.
+								</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:attribute name="lang" type="xs:language" use="optional" default="en">
+									<xs:annotation>
+										<xs:documentation>Locale identifier based on RFC 1766 language codes to indicate the default locale. Examples are ‘en’, ‘de’, ‘en-GB’, ’de-CH’.</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+								<xs:attribute name="title" type="xs:normalizedString" use="optional">
+									<xs:annotation>
+										<xs:documentation>Human readable name. This is used as the header of the link content and entry within table of contents when generating documentation.</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+								<xs:attribute name="category" use="optional">
+									<xs:annotation>
+										<xs:documentation>Indication about the category of the linked content.</xs:documentation>
+									</xs:annotation>
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:enumeration value="definition"/>
+											<xs:enumeration value="agreement"/>
+											<xs:enumeration value="diagram"/>
+											<xs:enumeration value="instantiation"/>
+											<xs:enumeration value="example"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+								<xs:attribute name="href" type="xs:anyURI" use="required">
+									<xs:annotation>
+										<xs:documentation>URL to referenced content, particularly for diagrams and examples that are manually generated. This is used to reference any external files such that they are included when generating documentation. NOTE  URL’s local to the file system shall be relative. 
+										</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Requirements">
+		<xs:sequence>
+			<xs:element name="Requirement" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attribute name="exchangeRequirement" type="mvd:uuid" use="required"/>
+							<xs:attribute name="requirement" use="required">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="mandatory"/>
+										<xs:enumeration value="recommended"/>
+										<xs:enumeration value="not-relevant"/>
+										<xs:enumeration value="not-recommended"/>
+										<xs:enumeration value="excluded"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:attribute>
+							<xs:attribute name="applicability" type="mvd:applicability" use="optional"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GenericReference">
+		<xs:attribute name="ref" type="mvd:uuid"/>
+		<xs:attribute name="href" type="xs:anyURI"/>
+	</xs:complexType>
+	<!-- ======================================== -->
+	<!-- common simple type definitions -->
+	<!-- ======================================== -->
+	<xs:simpleType name="uuid">
+		<xs:restriction base="xs:normalizedString">
+			<xs:length value="36" fixed="true"/>
+			<xs:pattern value="[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- new in 1.1 final -->
+	<xs:simpleType name="ruleId">
+		<xs:restriction base="xs:normalizedString">
+			<xs:pattern value="[a-zA-Z_][a-zA-Z0-9_]*"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- ======================================== -->
+	<xs:simpleType name="applicability">
+		<xs:annotation>
+			<xs:documentation>
+Export means that the software application must be able to create a data set that fulfills defined requirements. If an requirement is defined for import only, it defines the data set that must be properly processed by an application. NOTE  The differentiation between import and export origins from software certification and does not have any meaning for data validation applications. 
+	</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:normalizedString">
+			<xs:enumeration value="export"/>
+			<xs:enumeration value="import"/>
+			<xs:enumeration value="both"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="schemaName">
+		<xs:annotation>
+			<xs:documentation>Definition of the schema name, either predefined representing the official IFC release names IFC2X_FINAL, IFC2X2_FINAL, IFC2X3, and IFC4. Or any other string value.</xs:documentation>
+		</xs:annotation>
+		<xs:union memberTypes="xs:normalizedString">
+			<xs:simpleType>
+				<xs:restriction base="xs:normalizedString">
+					<xs:enumeration value="IFC2X_FINAL"/>
+					<xs:enumeration value="IFC2X2_FINAL"/>
+					<xs:enumeration value="IFC2X3"/>
+					<xs:enumeration value="IFC4"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:union>
+	</xs:simpleType>
+	<!-- ======================================== -->
+	<!-- common attribute definitions-->
+	<!-- ======================================== -->
+	<xs:attributeGroup name="identity">
+		<xs:attribute name="uuid" type="mvd:uuid" use="required">
+			<xs:annotation>
+				<xs:documentation>Universally unique identifier. This is used as a persistent identifier, and must never change. It is string type with a fixed length of 36 characters, which should follow a specific pattern.>
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="name" type="xs:normalizedString" use="required">
+			<xs:annotation>
+				<xs:documentation>Human readable name. This is used as the header of the section and entry within table of contents when generating documentation. The name is also reported for a validation against this mvd, if assigned to concepts checked against the mvd.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="code" type="xs:normalizedString" use="optional">
+			<xs:annotation>
+				<xs:documentation>Human readable reference value of this element of the mvd definition.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="version" type="xs:normalizedString" use="optional">
+			<xs:annotation>
+				<xs:documentation>Sequential version number of this element of the mvd definition.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="status" use="optional">
+			<xs:annotation>
+				<xs:documentation>The status information of this element of the mvd definition.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:normalizedString">
+					<xs:enumeration value="sample"/>
+					<xs:enumeration value="proposal"/>
+					<xs:enumeration value="draft"/>
+					<xs:enumeration value="candidate"/>
+					<xs:enumeration value="final"/>
+					<xs:enumeration value="deprecated"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="author" type="xs:normalizedString" use="optional">
+			<xs:annotation>
+				<xs:documentation>The author(s) of this element of the mvd definition. Authors are separated by semicolon.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="owner" type="xs:normalizedString" use="optional">
+			<xs:annotation>
+				<xs:documentation>The legal owner of this element of the mvd definition NOTE  Official Model View Definitions by buildingSMART International shall have ownership assigned to buildingSMART or another accepted standardization organization.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="copyright" type="xs:normalizedString" use="optional">
+			<xs:annotation>
+				<xs:documentation>The copyright under which the work is published. NOTE  If adopted by buildingSMART International, the copyright shall lie either with buildingSMART International, or is governed by a well-recognized open license (e.g. creative commons, or open source licences such as BSD or GNU).
+</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+</xs:schema>

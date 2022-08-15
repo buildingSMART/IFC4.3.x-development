@@ -4,4 +4,4 @@ A sound power measure is a measure of total radiated noise with units of watts (
 
 Type: REAL
 
-> HISTORY&nbsp; New type in IFC2x2, changed in IFC4. See also _IfcSoundPowerLevelMeasure_ for using the unit decibel.
+> HISTORY  New type in IFC2x2, changed in IFC4. See also _IfcSoundPowerLevelMeasure_ for using the unit decibel.

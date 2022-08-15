@@ -115,27 +115,125 @@ tutorial](https://www.markdowntutorial.com/) to learn it quickly!
 However, there are some conventions established for the purposes of IFC
 documentation.
 
-To create a note, you can do:
+### Style guide
+
+Markdown allows a few different syntaxes to achieve the same thing. However, as
+the markdown may be parsed, the following conventions should apply.
+
+```markdown
+# Use this style of header
+
+Do not use this
+===============
+
+ * Use asterisks
+ * For unordered lists
+
+ - Do not use dashses
+ - For unordered lists
+
+ 1. Use numbers for numbered lists
+ 2. And always increment the number
+```
+
+### Inline references to resources
+
+If you want to reference an IFC entity, attribute, type, property or quantity
+set, property, function, or rule, you should follow the capitalisation
+convention of CapsCase and distinguish it with italics. This allows the keyword
+to stand out regardless of viewing medium.
+
+Also note that references will be automatically linked by the web application
+when possible so you should not manually add links.
+
+When referring to entities or types in the plural, do not use an "s". Instead,
+simply use the name and say "entities" or "types" afterwards.
 
 ```
-> NOTE This is a note.
+I can reference an _IfcWall_ or multiple _IfcWall_ entities and _IfcLabel_
+types. I can also refer to the _Pset_WallCommon_ property set, attributes like
+_Name_ or properties like _NetHeight_.
 ```
 
-To create an example:
+### External references
+
+References shall be used when it is possible for a reader to get a deeper
+understanding of the topic by reading another ISO standard or specification that
+IFC is built upon.
+
+The reference should unambiguously denote both the standard or specification,
+provide an official link to that specification, as well as an appropriate
+section title, number, or keyword within the referenced document.
+
+References should not be used to copy verbatim key paragraphs and content from a
+referenced specification. Those key paragraphs should be part of the main
+documentation, but then be accompanied by a short "Reference" afterwards.
 
 ```
-> EXAMPLE This is an example.
+> REFERENCE Symbol `c` according to [ISO 2553:2019](https://www.iso.org/standard/72740.html).
 ```
 
-You may also come across history notes or changes. It is no longer encouraged to
-use these, as changes are automatically detected and tracked using version
-control.
+### Notes
+
+Notes shall be used to highlight edge cases that implementers need to be aware
+of, or to warn against an assumption (like a "gotcha") that an implementer or
+user may make. Notes shall be used sparingly. Good technical writing shall be
+clear and minimise the need for these caution notes.
+
+```
+> NOTE _IfcBeam_ shall not be used for the representation of a load-bearing beam
+> in a structural analysis model. This is done using a _IfcStructuralMember_
+> instead.
+```
+
+### Examples
+
+It is necessary for the specification to use generic, abstract jargon when
+describing concepts, but this may be difficult to understand for users. It is
+always encouraged to accompany all abstract scenarios with a concrete example.
+Examples should be short, use simple language, and use scenarios which may apply
+on real life projects that users can easily relate to.
+
+```
+> EXAMPLE A spatial zone may be given a _Name_ of "1-003", typically a running
+> number provided by default by the application. Then _LongName_ may then be
+> "Office", with a _Description_ of "Corner office with habour view".
+```
+
+Examples which are longer should not use an example block. They should use a
+dedicated example page, which includes attached files, screenshots, and
+descriptions.
+
+### Changes
+
+Sometimes, descriptions are made about the changes in the schema. In the future,
+a better system will be made to unify this into the dedicated and automated
+changelog system. However, for the time being, you may describe changes inline
+in the documentation. You should describe exactly what changed, the version
+where it changed, and point people to alternatives or describe why it changed.
+
+Where changes are automatically detected in the changelog system, you should not
+include this change note.
 
 ```
 > HISTORY Something happened.
-> IFC CHANGE Something changed.
-> IFC DEPRECATION Something disappeared.
+> IFC{M.m.A.C} CHANGE Something changed.
+> IFC{M.m.A.C} DEPRECATION Something disappeared.
 ```
+
+The format `{M.m.A.C}` follows the version numbering scheme found on the [IFC specifications
+database](https://github.com/buildingSMART/IFC4.3.x-development/issues/280).
+
+Different messages may be used to indicate deprecations. For example:
+
+```
+> IFC4.3.0.0 DEPRECATION This attribute shall not be used, use property _Bar_ at _Pset_Foo_ instead.
+> IFC4.3.0.0 DEPRECATION This attribute is deprecated and shall no longer be used.
+> IFC4.3.0.0 DEPRECATION This property shall not be used, use property _Bar_ at _Pset_Foo_ instead.
+> IFC4.3.0.0 DEPRECATION This property is deprecated and shall no longer be used.
+```
+
+### Figures
 
 To create a captioned figure, you can do this:
 
@@ -145,7 +243,7 @@ To create a captioned figure, you can do this:
 Figure ABC - Shows something interesting.
 ```
 
-The image must be immediately succeeded by a paragraph with `Figure 1234` as the
+The image must be immediately succeeded by a paragraph with `Figure ABC` as the
 first words. `ABC` can be any unique code that you choose. The new line
 separating the image and the figure paragraph is optional, but recommended.
 
@@ -159,6 +257,8 @@ This is a paragraph that talks about Figure ABC in interesting ways.
 Although not recommended, you can omit a figure paragraph. In that case it will
 be automatically captioned. If an image title is available, the image title will
 be used as the image caption.
+
+### Tables
 
 You can create a table using Markdown like so:
 
@@ -174,32 +274,121 @@ Table XYZ - A table of things.
 Similar to figures, tables can also be annotated with an arbitrary code of your
 choice, which you can refer to later.
 
+### Equations
+
 If you need to render an equation, simply include it using LaTeX:
 
 ```
 $$V_{sphere} = \frac{4}{3}\pi r^3$$
 ```
 
+There may be some [quirks with LaTeX rendering](https://math.codidact.com/posts/278763) to be aware of.
+
 Markdown allows HTML, but this is generally unnecessary.
 
-## Diagrams
+### Diagrams
 
 One novel feature of this documentation system is the ability to directly edit
 illustrative  schema diagrams using a text-based notation. For this purpose
 Graphviz is used.  The Graphviz DOT definition language is automatically
 enriched with colour conventions derived from the IFC schema.
 
-TODO: show code and generated diagrams from it
+There are two types of diagrams: concept diagrams and entity diagrams.
 
-For example, the IfcWorkPlan instantiation diagram can be included and edited in
-the MD files and then be visible in the related HTML page.  Below is the
-Graphviz definition of this figure. The user's input overwrites the automatic
-settings. This can be verified with the IfcProject node on the HTML diagram,
-whose link pointing to Building Smart website replaces the link to the entity's
-HTML page.
+Concept diagrams are found in chapter 4. A concept diagram shows entities with
+all their direct and indirect attributes being referencing other entities. Here
+is an example:
 
-See an [example
-diagram](http://ifc43-docs.standards.buildingsmart.org/IFC/RELEASE/IFC4x3/HTML/lexical/IfcWorkPlan.htm).
+```
+concept {
+    IfcActor:IsActingUpon -> IfcRelAssignsToActor:RelatingActor
+    IfcRelAssignsToActor:RelatedObjects -> IfcControl:HasAssignments
+    IfcRelAssignsToActor:RelatedObjects[binding="Type"]
+}
+```
+
+This example produces the following diagram. Notice that the arrow direction is
+automatically determined for you. You create entities in order you prefer. If
+the concept is parameterised, you can create a "binding" annotation to highlight
+an attribute with a particular name that correlates to the concept usage table.
+
+![Concept diagram](concept-diagram.png)
+
+An entity diagram shows entities referencing other entities.
+
+```
+digraph dot_neato {
+    IfcWall [pos="0,0!"];
+    IfcRelVoidsElement [pos="200,0!"];
+    IfcOpeningElement [pos="400,0!"];
+
+    IfcRelAggregates [pos="0,-70!"];
+
+    IfcBuildingElementPart [pos="0,-140!"];
+    IfcRelVoidsElement2 [label="IfcRelVoidsElement", pos="200,-140!"];
+    IfcVoidingFeature [pos="400,-140!"];
+
+    IfcRelVoidsElement -> IfcWall [headlabel="RelatingBuildingElement", labelangle=90, labeldistance=3];
+    IfcRelVoidsElement -> IfcOpeningElement [headlabel="RelatedOpeningElement", labelangle=-90, labeldistance=3];
+    IfcRelAggregates -> IfcWall [label="RelatingObject"];
+    IfcRelAggregates -> IfcBuildingElementPart [label="RelatedObjects[1]"];
+    IfcRelVoidsElement2 -> IfcBuildingElementPart [headlabel="RelatingBuildingElement", labelangle=90, labeldistance=3];
+    IfcRelVoidsElement2 -> IfcVoidingFeature [headlabel="RelatedOpeningElement", labelangle=-90, labeldistance=3];
+}
+```
+
+This is the resulting diagram.
+
+![Entity diagram](entity-diagram1.png)
+
+For entity diagrams, they tend to be complex. As a result, it is preferred for
+manual coordinates to be specified for the nodes locations. Positions are
+specified using `pos="x,y!"` attributes. Nodes should be spaced in a grid-like
+manner to aid readability. Nodes should be spaced 200 units in the X direction
+apart from one another, and 70 units in the Y direction.
+
+Below is a more complex example showing nodes splitting in a tree-like manner.
+In this case, one child node can be offset 100 units in the X direction, and the
+other child node offset -100 units in the X direction.
+
+```
+digraph dot_neato {
+    IfcUnitAssignment [pos="0,0!"];
+    IfcDerivedUnit [label=<{IfcDerivedUnit | UnitType: LINEARVELOCITYUNIT<br />Name: mph}>, pos="0,-70!"];
+    IfcDerivedUnitElement_0 [label=<{IfcDerivedUnitElement | Exponent: 1}>, pos="-100,-140!"];
+    IfcDerivedUnitElement_1 [label=<{IfcDerivedUnitElement | Exponent: -1}>, pos="100,-140!"];
+
+    IfcConversionBasedUnit_0 [label=<{IfcConversionBasedUnit | UnitType: LENGTHUNIT<br />Name: mile}>, pos="-200,-210!"];
+    IfcDimensionalExponents_0 [label=<{IfcDimensionalExponents | LengthExponent: 1}>, pos="-300,-280!"];
+    IfcMeasureWithUnit_0 [label=<{IfcMeasureWithUnit | ValueComponent: 1609}>, pos="-100,-280!"];
+    IfcSIUnit_0 [label=<{IfcSIUnit | UnitType: LENGTHUNIT<br />Name: METRE}>, pos="-100,-350!"];
+
+    IfcConversionBasedUnit_1 [label=<{IfcConversionBasedUnit | UnitType: TIMEUNIT<br />Name: hour}>, pos="200,-210!"];
+    IfcDimensionalExponents_1 [label=<{IfcDimensionalExponents | TimeExponent: 1}>, pos="300,-280!"];
+    IfcMeasureWithUnit_1 [label=<{IfcMeasureWithUnit | ValueComponent: 3600}>, pos="100,-280!"];
+    IfcSIUnit_1 [label=<{IfcSIUnit | UnitType: TIMEUNIT<br />Name: SECOND}>, pos="100,-350!"];
+
+    IfcUnitAssignment -> IfcDerivedUnit [label="Units"];
+    IfcDerivedUnit -> IfcDerivedUnitElement_0 [headlabel="Elements[1]", labelangle=130, labeldistance=3];
+    IfcDerivedUnit -> IfcDerivedUnitElement_1 [headlabel="Elements[2]", labelangle=-130, labeldistance=3];
+
+    IfcDerivedUnitElement_0 -> IfcConversionBasedUnit_0 [headlabel="Unit", labelangle=130, labeldistance=3];
+    IfcConversionBasedUnit_0 -> IfcDimensionalExponents_0 [headlabel="Dimensions", labelangle=130, labeldistance=3];
+    IfcConversionBasedUnit_0 -> IfcMeasureWithUnit_0 [headlabel="ConversionFactor", labelangle=-130, labeldistance=3];
+    IfcMeasureWithUnit_0 -> IfcSIUnit_0 [headlabel="UnitComponent", labelangle=80, labeldistance=4];
+
+    IfcDerivedUnitElement_1 -> IfcConversionBasedUnit_1 [headlabel="Unit", labelangle=-130, labeldistance=3];
+    IfcConversionBasedUnit_1 -> IfcDimensionalExponents_1 [headlabel="Dimensions", labelangle=-130, labeldistance=3];
+    IfcConversionBasedUnit_1 -> IfcMeasureWithUnit_1 [headlabel="ConversionFactor", labelangle=130, labeldistance=3];
+    IfcMeasureWithUnit_1 -> IfcSIUnit_1 [headlabel="UnitComponent", labelangle=80, labeldistance=4];
+}
+```
+
+This is the resulting diagram.
+
+![Entity diagram](entity-diagram2.png)
+
+See an [example diagram on a live page](http://ifc43-docs.standards.buildingsmart.org/IFC/RELEASE/IFC4x3/HTML/lexical/IfcWorkPlan.htm).
 
 ## Dependencies
 
@@ -213,6 +402,7 @@ System dependencies:
  * `ifcopenshell` - used in a minor capacity which can probably be removed in the future
  * `imagemagick` - automatic image conversion
  * `python` - to run the website
+ * `redis` - database for building indexes (optional)
  * `solr` - search database (optional)
  * `supervisord` - process control (optional)
 
@@ -246,6 +436,51 @@ $ git clone https://github.com/buildingSMART/Sample-Test-Files.git examples
 ```
 
 You can now visit `http://127.0.0.1:5000/` to see the running website.
+
+## Publishing
+
+For publishing a static HTML snapshot of the documentation, you may enable ISO
+mode. This disables dynamic features such as the Git edit history and search.
+You can preview what ISO mode looks like by adding `?iso=1` to any page.
+
+Prior to publishing, enable ISO mode by setting `is_iso = True` in `server.py`.
+One option of publishing is by using `wget`:
+
+```
+$ wget -r -l inf -E -k -p -H -Draw.githubusercontent.com,unpkg.com,polyfill.io,cdn.jsdelivr.net,cdnjs.cloudflare.com,i.creativecommons.org,localhost http://localhost:5000
+```
+
+The options used are:
+
+ * -r recursive
+ * -l infinite recursion depth
+ * -E adjust extension, to enforce ".html" extension
+ * -k convert links, to ensure links are relative and work offline
+ * -p page requisites, downloads assets such as inline images and stylesheets
+ * -H span hosts, to allow downloading assets outside localhost
+ * -D comma separated lists of hosts where content may exist
+
+It takes a while to run, so for testing you may limit the recursion depth by
+setting `-l 2` or another low number.
+
+Afterwards, run the following procedures to change the directory structure and add the necessary mathjax plugins.
+
+~~~
+mkdir -p localhost/lib
+mv cdn.jsdelivr.net cdnjs.cloudflare.com i.creativecommons.org polyfill.io raw.githubusercontent.com unpkg.com localhost/lib
+find . -type f \( -name '*.html' -o -name '*.htm' \) \
+    -exec sed s,../cdn.jsdelivr.net,lib/cdn.jsdelivr.net,g -i {} \; \
+    -exec sed s,../cdnjs.cloudflare.com,lib/cdnjs.cloudflare.com,g -i  {} \; \
+    -exec sed s,../i.creativecommons.org,lib/i.creativecommons.org,g -i  {} \; \
+    -exec sed s,../polyfill.io,lib/polyfill.io,g -i  {} \; \
+    -exec sed s,../raw.githubusercontent.com,lib/raw.githubusercontent.com,g -i  {} \; \
+    -exec sed s,../unpkg.com,lib/unpkg.com,g -i  {} \;
+mkdir -p localhost/lib/cdn.jsdelivr.net/npm/mathjax\@3/es5/output/svg/fonts
+cd localhost/lib/cdn.jsdelivr.net/npm/mathjax\@3/es5/output/
+wget https://cdn.jsdelivr.net/npm/mathjax\@3.2.0/es5/output/svg.js
+cd svg/fonts
+wget https://cdn.jsdelivr.net/npm/mathjax\@3.2.0/es5/output/svg/fonts/tex.js
+~~~
 
 ## Deployment
 

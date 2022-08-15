@@ -79,7 +79,7 @@ function generateSectionNavigation() {
             ol.append(li);
         }
     });
-    if (ol.getElementsByTagName('li').length) {
+    if (ol.getElementsByTagName('li').length > 1) {
         nav.classList.remove('hidden');
     }
 }
@@ -102,6 +102,45 @@ function initialiseBackToTopButton() {
     });
 }
 
+function setupInheritanceToggle() {
+    let showElements = document.getElementsByClassName('show-inherited');
+    let hideElements = document.getElementsByClassName('hide-inherited');
+
+    function refreshInheritanceDisplay(type, showInherited) {
+        let inheritedRows = document.getElementsByClassName('inherited');
+        for (let i=0; i<inheritedRows.length; i++) {
+            if (inheritedRows[i].getAttribute('data-type') == type) {
+                inheritedRows[i].style.display = showInherited ? 'table-row' : 'none';
+            }
+        }
+        for (let i=0; i<showElements.length; i++) {
+            if (showElements[i].getAttribute('data-type') == type) {
+                showElements[i].style.display = showInherited ? 'none' : 'block';
+            }
+        }
+        for (let i=0; i<hideElements.length; i++) {
+            if (hideElements[i].getAttribute('data-type') == type) {
+                hideElements[i].style.display = showInherited ? 'block' : 'none';
+            }
+        }
+    }
+
+    for (let i=0; i<showElements.length; i++) {
+        showElements[i].addEventListener('click', function() {
+            refreshInheritanceDisplay(showElements[i].getAttribute('data-type'), true);
+        });
+    }
+
+    for (let i=0; i<hideElements.length; i++) {
+        hideElements[i].addEventListener('click', function() {
+            refreshInheritanceDisplay(showElements[i].getAttribute('data-type'), false);
+        });
+    }
+
+    refreshInheritanceDisplay('attribute', false);
+    refreshInheritanceDisplay('concept', false);
+}
+
 function setupMathJax() {
     window.MathJax = {
         loader: {
@@ -113,6 +152,53 @@ function setupMathJax() {
     };
 }
 
+function setupHighlightJS() {
+    hljs.registerLanguage("express", (function(e) {
+        var s = e.COMMENT("#", "$");
+        return {
+            aliases: ["robotstxt", "robots.txt"],
+            case_insensitive: !0,
+            lexemes: "[a-z-]+",
+            keywords: {
+                // I actually didn't check what these are I just did trial and error until I liked the colours
+                section: "ENTITY END_ENTITY TYPE END_TYPE FUNCTION END_FUNCTION LOCAL END_LOCAL BEGIN END IF THEN END_IF REPEAT END_REPEAT CASE END_CASE OTHERWISE RULE END_RULE SCHEMA END_SCHEMA",
+                built_in: "OPTIONAL NOT OR EXISTS SET SIZEOF SELF TYPEOF AND IN ONEOF LIST QUERY ARRAY INTEGER LOGICAL HIINDEX NVL",
+                keyword: "SUBTYPE OF WHERE ENUMERATION ABSTRACT SUPERTYPE INVERSE FOR TO RETURN"
+            }
+        }
+    }));
+    // HighlightJS does not support HTML inside highlighted code:
+    // https://github.com/highlightjs/highlight.js/wiki/security
+    // This hook selectively allows links.
+    const link_regex = /<a href="(.*?)">(\w+?)<\/a>/g;
+    const anchor_regex = /#(\d+)/g;
+    const id_regex = /#(\d+)(\W*=)/g;
+    const fakelink_regex = /{{(.*?):(\w+?)}}/g;
+    const fakeanchor_regex = /\[\[anchor(\d+):anchor(\d+)\]\]/g;
+    const fakeid_regex = /\[\[id(\d+):id(\d+)\]\]/g;
+    hljs.addPlugin({
+        'before:highlightElement': ({ el, language }) => {
+            let result = '';
+            el.innerHTML = el.innerHTML.replace(link_regex, '{{$1:$2}}');
+            if (language == "step21") {
+                el.innerHTML = el.innerHTML.replace(id_regex, '[[id$1:id$1]]$2');
+                el.innerHTML = el.innerHTML.replace(anchor_regex, '[[anchor$1:anchor$1]]');
+            }
+            console.log(language);
+        },
+        'after:highlightElement': ({ el, result }) => {
+            el.innerHTML = el.innerHTML.replace(fakelink_regex, '<a href="$1">$2</a>')
+            el.innerHTML = el.innerHTML.replace(fakeanchor_regex, '<a href="#$1">#$2</a>')
+            el.innerHTML = el.innerHTML.replace(fakeid_regex, '<a id="$1"></a><span class="hljs-symbol">#$2</span>')
+        }
+    });
+    hljs.highlightAll();
+    hljs.initLineNumbersOnLoad();
+}
+
+
+
+document.addEventListener('DOMContentLoaded', (event) => {
 Array.from(document.querySelectorAll('a')).concat(Array.from(document.querySelectorAll('em'))).forEach((a) => {
     let popup = null;
     let timeout = null;
@@ -209,6 +295,9 @@ Array.from(document.querySelectorAll('a')).concat(Array.from(document.querySelec
 });
 
 fetch(`https://api.github.com/repos/${window.appconfig.repo}/commits?path=${window.appconfig.path}`).then(r => r.json()).then(j => {
+    if (document.getElementById('contributors') === null) {
+        return;
+    }
     let n = {};
     j.forEach(c => {
         n[c.author.avatar_url] = (n[c.author.avatar_url || 0]) + 1;
@@ -227,28 +316,12 @@ fetch(`https://api.github.com/repos/${window.appconfig.repo}/commits?path=${wind
     '<em>' + j[0].commit.message + '</em>' + ' by ' + j[0].commit.author.name + ' on ' + (new Date(j[0].commit.author.date)).toLocaleString();
 });
 
-function setupHighlightJS() {
-    hljs.registerLanguage("express", (function(e) {
-        var s = e.COMMENT("#", "$");
-        return {
-            aliases: ["robotstxt", "robots.txt"],
-            case_insensitive: !0,
-            lexemes: "[a-z-]+",
-            keywords: {
-                section: "ENTITY END_ENTITY TYPE END_TYPE",
-                built_in: "OPTIONAL NOT OR EXISTS SET SIZEOF SELF TYPEOF AND IN ONEOF LIST QUERY",
-                keyword: "SUBTYPE OF WHERE ENUMERATION ABSTRACT SUPERTYPE INVERSE FOR"
-            }
-        }
-    }));
-
-    hljs.highlightAll();
-    hljs.initLineNumbersOnLoad();
-}
-
 setupMathJax();
 setupHighlightJS();
+setupInheritanceToggle();
 makeHeadersCollapsible();
 generateSectionNavigation();
 initialiseBackToTopButton();
 feather.replace();
+
+});

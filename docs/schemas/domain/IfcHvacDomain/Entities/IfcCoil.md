@@ -4,7 +4,7 @@ A coil is a device used to provide heat transfer between non-mixing media. A com
 
 Coils may also be used for non-airflow cases such as embedded in a floor slab.
 
-> HISTORY&nbsp; New entity in IFC4
+> HISTORY  New entity in IFC4
 
 { .note}
 >
@@ -24,18 +24,75 @@ Either there is no coil type object associated, i.e. the _IsTypedBy_ inverse rel
 
 ## Concepts
 
-### Material
+### Material Set
 
+
+
+#### Casing
+
+Material from which the casing is constructed.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_RefrigerantIn_DXCOOLINGCOIL_REFRIGERATION
+
+Refrigerant entering the coil.
+
+#### SOURCE_RefrigerantOut_DXCOOLINGCOIL_REFRIGERATION
+
+Refrigerant leaving the coil.
+
+#### SINK_AirIn_DXCOOLINGCOIL_AIRCONDITIONING
+
+Air entering the surface of the coil.
+
+#### SOURCE_AirOut_DXCOOLINGCOIL_AIRCONDITIONING
+
+Air leaving the surface of the coil.
+
+#### SINK_ChilledWaterIn_WATERCOOLINGCOIL_CHILLEDWATER
+
+Chilled water entering the coil.
+
+#### SOURCE_ChilledWaterOut_WATERCOOLINGCOIL_CHILLEDWATER
+
+Chilled water leaving the coil.
+
+#### SINK_AirIn_WATERCOOLINGCOIL_AIRCONDITIONING
+
+Air entering the surface of the coil.
+
+#### SOURCE_AirOut_WATERCOOLINGCOIL_AIRCONDITIONING
+
+Air leaving the surface of the coil.
+
+#### SINK_HeatingIn_WATERHEATINGCOIL_HEATING
+
+Heated water entering the coil.
+
+#### SOURCE_HeatingOut_WATERHEATINGCOIL_HEATING
+
+Heated water leaving the coil.
+
+#### SINK_AirIn_WATERHEATINGCOIL_AIRCONDITIONING
+
+Air entering the surface of the coil.
+
+#### SOURCE_AirOut_WATERHEATINGCOIL_AIRCONDITIONING
+
+Air leaving the surface of the coil.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

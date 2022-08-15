@@ -4,6 +4,6 @@ _IfcTimeStamp_ is an indication of date and time by measuring the number of seco
 
 Type: INTEGER
 
-> NOTE&nbsp; Defined in IEEE Std 1003.1.
+> NOTE  Defined in IEEE Std 1003.1.
 
-> HISTORY&nbsp; New type in IFC1.5.1.
+> HISTORY  New type in IFC1.5.1.

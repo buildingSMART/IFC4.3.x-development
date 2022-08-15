@@ -4,7 +4,7 @@ An element component is a representation for minor items included in, added to o
 
 One or several instances of subtypes of _IfcElementComponent_ should always be accompanied by a defining instance of a respective subtype of _IfcElementComponentType_. The type object holds shape and material information.
 
-> HISTORY&nbsp; New entity in IFC2x2
+> HISTORY  New entity in IFC2x2
 
 It is often desirable to model a number of same-shaped element components by means of a single occurrence object, e.g. several bolts within a connection or a row of reinforcement elements. In this IFC release, this is possible by means of multiple mapped representation as documented below.
 
@@ -26,33 +26,23 @@ and one or several curves as geometric items. The curves represent where referen
 
 The mapped item, IfcMappedItem, should be used if appropriate as it allows for reusing the geometry definition of a type at all occurrences of the same type.
 
-
-A single instance of a subtype of IfcElementComponent can stand for several 
+A single instance of a subtype of IfcElementComponent can stand for several
 actual element components at once. In this case, the IfcShapeRepresentation
 contains as many mapped items as there are element components combined within this
  occurrence object.
 
-
- 
-
-
 ![](../../../../figures/ifcelementcomponent_multiple.png)
-
-> EXAMPLE  Figure 304 illustrates multiple components modeled as a single occurrence object (here: IfcFastener)
-
 
 Figure 304 — Element component mapped representation
 
-
- 
-
+> EXAMPLE  Figure 304 illustrates multiple components modeled as a single occurrence object (here: IfcFastener)
 
 Representation identifier and type are the same as in single mapped representation.
 The number of mapped items in the representation corresponds with the count of
 element components in the IfcElementQuantity.
 
 
-
 ### Property Sets for Objects
+
 
 

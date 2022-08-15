@@ -1,0 +1,347 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="ccc4a600d20311e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x1" />
+  <Name>Pset_SanitaryTerminalTypeToiletPan</Name>
+  <Definition>Soil appliance for the disposal of excrement. HISTORY: In IFC4, Material property removed. Use materials capabilities from IfcMaterialsResource schema. Prefix for color property removed. Datatype of color changed to IfcLabel (still a string value).</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcSanitaryTerminal/TOILETPAN</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcSanitaryTerminal/TOILETPAN</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="d221f080d20311e1800000215ad4efdf">
+      <Name>ToiletType</Name>
+      <Definition>Enumeration that defines the types of toilet (water closet) arrangements that may be specified where:-
+
+BedPanWasher: Enclosed soil appliance in which bedpans and urinal bottles are emptied and cleansed.
+Chemical: Portable receptacle or soil appliance that receives and retains excrement in either an integral or a separate container, in which it is chemically treated and from which it has to be emptied periodically.
+CloseCoupled: 	Toilet suite in which a flushing cistern is connected directly to the water closet pan.
+LooseCoupled: 	Toilet arrangement in which a flushing cistern is connected to the water closet pan through a flushing pipe.
+SlopHopper: 	Hopper shaped soil appliance with a flushing rim and outlet similar to those of a toilet pan, into which human excrement is emptied for disposal.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_ToiletType">
+            <EnumItem>BEDPANWASHER</EnumItem>
+            <EnumItem>CHEMICAL</EnumItem>
+            <EnumItem>CLOSECOUPLED</EnumItem>
+            <EnumItem>LOOSECOUPLED</EnumItem>
+            <EnumItem>SLOPHOPPER</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>BEDPANWASHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">Bed Pan Washer</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>CHEMICAL</Name>
+              <NameAliases>
+                <NameAlias lang="en">Chemical</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>CLOSECOUPLED</Name>
+              <NameAliases>
+                <NameAlias lang="en">Close Coupled</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>LOOSECOUPLED</Name>
+              <NameAliases>
+                <NameAlias lang="en">Loose Coupled</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>SLOPHOPPER</Name>
+              <NameAliases>
+                <NameAlias lang="en">Slop Hopper</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Toilet Type</NameAlias>
+        <NameAlias lang="ja-JP">トイレ種類</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">トイレ配置は下記に列挙された仕様となります。
+
+便器洗浄機：便器と小便器が空にされ洗浄される周囲が囲まれた電気機器。
+ケミカル：別々の容器で排泄物を受けて、保持し、化学的に扱われる、定期的に空にされる携帯用の容器または土機器。
+ｼｽﾀｰﾝ直結型：ｼｽﾀｰﾝがが便器に直接密着して設置されたタイプ
+ｼｽﾀｰﾝ分離型：ｼｽﾀｰﾝがﾊﾟｲﾌﾟを介して便器につながっているタイプ
+汚物流し：ホッパーは土壌器具にデザイされており、汚物が流され空になります。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="e7971a80d20311e1800000215ad4efdf">
+      <Name>ToiletPanType</Name>
+      <Definition>The property enumeration Pset_ToiletPanTypeEnum defines the types of toilet pan that may be specified within the property set Pset_Toilet:-
+
+Siphonic: 	Toilet pan in which excrement is removed by siphonage induced by the flushing water.
+Squat: 	Toilet pan with an elongated bowl installed with its top edge at or near floor level, so that the user has to squat.
+WashDown: 	Toilet pan in which excrement is removed by the momentum of the flushing water.
+WashOut: 	A washdown toilet pan in which excrement falls first into a shallow water filled bowl.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_ToiletPanType">
+            <EnumItem>SIPHONIC</EnumItem>
+            <EnumItem>SQUAT</EnumItem>
+            <EnumItem>WASHDOWN</EnumItem>
+            <EnumItem>WASHOUT</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>SIPHONIC</Name>
+              <NameAliases>
+                <NameAlias lang="en">Siphonic</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>SQUAT</Name>
+              <NameAliases>
+                <NameAlias lang="en">Squat</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>WASHDOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">Washdown</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>WASHOUT</Name>
+              <NameAliases>
+                <NameAlias lang="en">Washout</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Toilet Pan Type</NameAlias>
+        <NameAlias lang="ja-JP">便器タイプ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">Pset_SanitaryMountingEnumは下記に列挙された便器タイプとして定義されます。
+
+サイホン式：流水を含むサイホンにより汚物が廃棄される便器
+和式：便器が床面か淵の高さと同じに配置された便器。使用者はしゃがまなければならない。
+ウォッシュダウン式：勢いよく洗い流すことにより便器をきれいにします
+洗浄式便器：まず汚物が落ちその後、便器に水が流れます</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="f7aefa00d20311e1800000215ad4efdf">
+      <Name>PanMounting</Name>
+      <Definition>The property enumeration Pset_SanitaryMountingEnum defines the forms of mounting or fixing of the sanitary terminal that may be specified within property sets used to define sanitary terminals (WC’s, basins, sinks, etc.) where:-
+
+BackToWall: 	A pedestal mounted sanitary terminal that fits flush to the wall at the rear to cover its service connections.
+Pedestal: 	A floor mounted sanitary terminal that has an integral base.
+CounterTop: 	A sanitary terminal that is installed into a horizontal surface that is installed into a horizontal surface. Note: When applied to a wash hand basin, the term more normally used is ‘vanity’. See also Wash Hand Basin Type specification.
+WallHung: 	A sanitary terminal cantilevered clear of the floor.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_SanitaryMounting">
+            <EnumItem>BACKTOWALL</EnumItem>
+            <EnumItem>PEDESTAL</EnumItem>
+            <EnumItem>COUNTERTOP</EnumItem>
+            <EnumItem>WALLHUNG</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>BACKTOWALL</Name>
+              <NameAliases>
+                <NameAlias lang="en">Back To Wall</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>PEDESTAL</Name>
+              <NameAliases>
+                <NameAlias lang="en">Pedestal</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>COUNTERTOP</Name>
+              <NameAliases>
+                <NameAlias lang="en">Countertop</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>WALLHUNG</Name>
+              <NameAliases>
+                <NameAlias lang="en">Wall Hung</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Pan Mounting</NameAlias>
+        <NameAlias lang="ja-JP">取付方法</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">Pset_SanitaryMountingEnumは固定された衛生器具の接続点（トイレや洗面器、シンクなど）に取り付けられます。
+
+・床置き壁排出：背面の壁に接続口を合わせること。
+・台：床置きの衛生器具には基礎があること。
+・カウンター：衛生器具の表層が水平に設置されていること。※手洗い台として設置された場合「化粧台」として扱うこと。また、洗面台種類の規格表を参照のこと。
+・壁掛け型：衛生器具は片側固定がされ床から離れていること。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="0f867e00d20411e1800000215ad4efdf">
+      <Name>SpilloverLevel</Name>
+      <Definition>The level at which water spills out of the terminal.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Spillover Level</NameAlias>
+        <NameAlias lang="ja-JP">水位</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">継手からの水位。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">排泄物排気用の機器。
+背景：IFC4において、要素のプロパティーは排除されています 。IfcMaterialsResourceのタイプを使ってください。 色の設定は取り除かれています。色のデータ形式は文字列としてIfcLabelに変更されています。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

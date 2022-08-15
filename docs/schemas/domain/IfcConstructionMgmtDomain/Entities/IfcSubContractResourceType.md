@@ -10,7 +10,7 @@ It is used to define a subcontract resource specification (the specific resource
 
 Occurrences of the _IfcSubContractResourceType_ are represented by instances of _IfcSubContractResource_.
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 ## Attributes
 

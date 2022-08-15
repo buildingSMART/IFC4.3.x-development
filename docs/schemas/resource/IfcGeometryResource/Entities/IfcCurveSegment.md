@@ -1,6 +1,6 @@
 # IfcCurveSegment
 
-A type of segment positioned along a curve cutting a segment from the parent curve. The positioning curve (StartPlacement.PlacementMeasuredAlong) does not neccessarly correspond with the ParentCurve.
+A type of segment positioned along a curve cutting a segment from the parent curve. If the segment is placed through IfcAxis2PlacementLinear, the positioning curve (Placement.Location.BasisCurve) does not necessarily correspond with the ParentCurve.
 
 ## Attributes
 

@@ -11,8 +11,8 @@ install:
   - # sudo rm /etc/ImageMagick-6/policy.xml
   - # python3 -m pip install hilbertcurve
   - sudo apt-get update -y && sudo apt-get install -y python3 python3-pip wget curl unzip openjdk-11-jdk-headless
-  - python3 -m pip install tabulate pyparsing lark-parser PyGithub Markdown markdown-it-py==1.1.0 deepdiff rdflib lxml Beautifulsoup4
-  - wget -O /tmp/ifopsh.zip https://s3.amazonaws.com/ifcopenshell-builds/ifcopenshell-python-38-v0.6.0-517b819-linux64.zip
+  - python3 -m pip install tabulate pyparsing lark-parser PyGithub Markdown markdown-it-py==1.1.0 deepdiff rdflib lxml Beautifulsoup4 networkx xmlschema
+  - wget -O /tmp/ifopsh.zip https://s3.amazonaws.com/ifcopenshell-builds/ifcopenshell-python-38-v0.6.0-721fe47-linux64.zip
   - mkdir -p `python3 -c 'import site; print(site.getusersitepackages())'`
   - unzip -d `python3 -c 'import site; print(site.getusersitepackages())'` /tmp/ifopsh.zip
   - (cd / && curl --silent --show-error --retry 5 https://repo1.maven.org/maven2/org/topbraid/shacl/${SHACLVERSION}/shacl-${SHACLVERSION}-bin.zip -o - | sudo jar x)

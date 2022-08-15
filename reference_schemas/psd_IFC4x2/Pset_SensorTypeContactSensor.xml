@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="0e098580d20511e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x2" />
+  <Name>Pset_SensorTypeContactSensor</Name>
+  <Definition>A device that senses or detects contact. HISTORY: Added in IFC4.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcSensor/CONTACTSENSOR</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcSensor/CONTACTSENSOR</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="12ce3980d20511e1800000215ad4efdf">
+      <Name>SetPointContact</Name>
+      <Definition>The contact value to be sensed. Use IfcPropertyBoundedValue.SetPointValue to set the set point value.</Definition>
+      <PropertyType>
+        <TypePropertyBoundedValue>
+          <DataType type="IfcInteger" />
+        </TypePropertyBoundedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Set Point Contact</NameAlias>
+        <NameAlias lang="ja-JP">接触状態設定値</NameAlias>
+        <NameAlias lang="ko-KR">접촉 상태 설정</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">感知される接触状態。
+セットポイント値を置くために、IfcPropertyBoundedValue.SetPointValueを使用する。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">감지되는 접촉 상태. 세트 포인트 값을 넣으려면, IfcPropertyBoundedValue.SetPointValue를 사용하십시오.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">接触を感知または検出するデバイス</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

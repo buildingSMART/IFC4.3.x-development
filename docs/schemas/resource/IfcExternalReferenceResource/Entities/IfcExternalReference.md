@@ -6,21 +6,21 @@ Only the _Location_ (as a URL) is given to describe the place where the informat
 
 _IfcExternalReference_ is an abstract supertype of all external reference entities.
 
-> HISTORY&nbsp; New entity in IFC2x.
+> HISTORY  New entity in IFC2x.
 
 { .change-ifc2x4}
-> IFC 2x4 CHANGE&nbsp; Attribute _Identification_ renamed from ItemReference, attribute _Location_ datatype changed, and inverse attribute _ExternalReferenceForResources_ added.
+> IFC 2x4 CHANGE  Attribute _Identification_ renamed from ItemReference, attribute _Location_ datatype changed, and inverse attribute _ExternalReferenceForResources_ added.
 
 ## Attributes
 
 ### Location
 Location, where the external source (classification, document or library) can be accessed by electronic means. The electronic location is provided as an URI, and would normally be given as an URL location string.
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; The data type has been changed from _IfcLabel_ to _IfcURIReference_  
+> IFC4 CHANGE  The data type has been changed from _IfcLabel_ to _IfcURIReference_
 > .
 
 ### Identification
-The _Identification_ provides a unique identifier of the referenced item within the external source (classification, document or library). It may be provided as 
+The _Identification_ provides a unique identifier of the referenced item within the external source (classification, document or library). It may be provided as
 * a key, e.g. a classification notation, like NF2.3
 * a handle
 * a uuid or guid
@@ -28,7 +28,7 @@ The _Identification_ provides a unique identifier of the referenced item within 
 
 It may be human readable (such as a key) or not (such as a handle or uuid) depending on the context of its usage (which has to be determined by local agreement).
 { .change-ifc2x4}
-> IFC4 CHANGE Attribute renamed from _ItemReference_ for consistency.  
+> IFC4 CHANGE Attribute renamed from _ItemReference_ for consistency.
 >
 
 ### Name
@@ -38,7 +38,7 @@ Optional name to further specify the reference. It can provide a human readable 
 Reference to all associations between this external reference and objects within the _IfcResourceObjectSelect_ that are tagged by the external reference.
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; New inverse attribute added with upward compatibility.  
+> IFC4 CHANGE  New inverse attribute added with upward compatibility.
 >
 
 ## Formal Propositions

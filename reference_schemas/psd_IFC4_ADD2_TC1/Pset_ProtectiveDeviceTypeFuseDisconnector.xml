@@ -1,0 +1,282 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ifdguid="ee229380d1fd11e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4" />
+  <Name>Pset_ProtectiveDeviceTypeFuseDisconnector</Name>
+  <Definition>A coherent set of attributes representing the breakeing capacity of a fuse, defined in accordance with IEC 60269. Note - A protective device may be associated with different instances of this pSet providing information related to different  basic characteristics.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcProtectiveDevice/FUSEDISCONNECTOR</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcProtectiveDevice/FUSEDISCONNECTOR</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="f37fde00d1fd11e1800000215ad4efdf">
+      <Name>FuseDisconnectorType</Name>
+      <Definition>A list of the available types of fuse disconnector from which that required may be selected where:
+
+EngineProtectionDevice: A fuse whose characteristic is specifically designed for the protection of a motor or generator.
+FuseSwitchDisconnector: A switch disconnector in which a fuse link or a fuse carrier with fuse link forms the moving contact,
+HRC: A standard fuse (High Rupturing Capacity)
+OverloadProtectionDevice: A device that disconnects the supply when the operating conditions in an electrically undamaged circuit causes an overcurrent,
+SemiconductorFuse: A fuse whose characteristic is specifically designed for the protection of sem-conductor devices.
+SwitchDisconnectorFuse: A switch disconnector in which one or more poles have a fuse in series in a composite unit.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_FuseDisconnectorType">
+            <EnumItem>ENGINEPROTECTIONDEVICE</EnumItem>
+            <EnumItem>FUSEDSWITCH</EnumItem>
+            <EnumItem>HRC</EnumItem>
+            <EnumItem>OVERLOADPROTECTIONDEVICE</EnumItem>
+            <EnumItem>SWITCHDISCONNECTORFUSE</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>ENGINEPROTECTIONDEVICE</Name>
+              <NameAliases>
+                <NameAlias lang="en">Engine Protection Device</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>FUSEDSWITCH</Name>
+              <NameAliases>
+                <NameAlias lang="en">Fused Switch</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>HRC</Name>
+              <NameAliases>
+                <NameAlias lang="en">Hrc</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">A standard fuse (High Rupturing Capacity)</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OVERLOADPROTECTIONDEVICE</Name>
+              <NameAliases>
+                <NameAlias lang="en">Overload Protection Device</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>SWITCHDISCONNECTORFUSE</Name>
+              <NameAliases>
+                <NameAlias lang="en">Switch Disconnector Fuse</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Fuse Disconnector Type</NameAlias>
+        <NameAlias lang="ja-JP">ヒューズ遮断機のタイプ</NameAlias>
+        <NameAlias lang="ko-KR">퓨즈차단기 유형</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">自家用発電連携側：モータや発電機の保護のために設計されているヒューズ。
+ 地絡保護装置：これでヒューズリンクまたはヒューズリンクヒューズキャリアは、可動接点を形成するスイッチ断路器、
+ HRC：標準ヒューズ（高連動破壊容量）
+ 漏電保護装置：電気的に破損して回路の動作条件は、過電流が発生する電源を切断装置
+ 欠相保護付：その特性を具体的にsemが芯デバイスの保護のために設計されているヒューズ。
+ 複合ヒューズ保護装置：その内の1つまたは複数の極は、複合ユニットに直列にヒューズを持っているスイッチ断路器。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">자가용 발전 연계 측면 : 모터 및 발전기 보호를 위해 디자인되는 퓨즈.  지락 보호 장치 : 이제 퓨즈 링크 또는 퓨즈 링크 퓨즈 캐리어는 가동 접점을 형성하는 스위치 단로기,  HRC : 표준 퓨즈 (높이 연동 파괴 용량)  누전 보호 장치 : 전기 손상 회로의 동작 조건은 과전류가 발생하는 전원을 차단 장치  결상 보호 부착 : 그 특성을 구체적으로 sem이 심 장치 보호를 위해 디자인되는 퓨즈.  복합 퓨즈 보호 장치 : 어떤 한 개 이상의 전극은 복합 유닛에 직렬로 퓨즈를 가지고있는 스위치 단로기.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="2d50e480d1fe11e1800000215ad4efdf">
+      <Name>VoltageLevel</Name>
+      <Definition>The voltage levels for which the data of the instance is valid. More than one value may be selected in the enumeration.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_VoltageLevels">
+            <EnumItem>U230</EnumItem>
+            <EnumItem>U400</EnumItem>
+            <EnumItem>U440</EnumItem>
+            <EnumItem>U525</EnumItem>
+            <EnumItem>U690</EnumItem>
+            <EnumItem>U1000</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>U230</Name>
+              <NameAliases>
+                <NameAlias lang="en">U230</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>U400</Name>
+              <NameAliases>
+                <NameAlias lang="en">U400</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>U440</Name>
+              <NameAliases>
+                <NameAlias lang="en">U440</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>U525</Name>
+              <NameAliases>
+                <NameAlias lang="en">U525</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>U690</Name>
+              <NameAliases>
+                <NameAlias lang="en">U690</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>U1000</Name>
+              <NameAliases>
+                <NameAlias lang="en">U1000</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Voltage Level</NameAlias>
+        <NameAlias lang="ja-JP">電圧レベル</NameAlias>
+        <NameAlias lang="ko-KR">전압레벨</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">電圧レベルを選択。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">전압 레벨을 선택합니다.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="3fcb1e00d1fe11e1800000215ad4efdf">
+      <Name>IC60269</Name>
+      <Definition>The breaking capacity in [A] for fuses in accordance with the IEC 60269 series.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcElectricCurrentMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">IC60269</NameAlias>
+        <NameAlias lang="ja-JP">IC60269</NameAlias>
+        <NameAlias lang="ko-KR">IC60269</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">IECの60269シリーズに応じたヒューズの遮断容量[A]。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">IEC의 60269 시리즈에 따라 퓨즈의 차단 용량 [A].</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="45c0ff00d1fe11e1800000215ad4efdf">
+      <Name>PowerLoss</Name>
+      <Definition>The power loss in [W] of the fuse when the nominal current is flowing through the fuse.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPowerMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Power Loss</NameAlias>
+        <NameAlias lang="ja-JP">電力損失</NameAlias>
+        <NameAlias lang="ko-KR">전력 손실</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">定格電流がヒューズに流れる時の電力損失[W]。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">정격 전류가 퓨즈에 흐르는시 전력 손실 [W].</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">ヒューズのbreakeing容量を表す属性の一貫したセットは、IEC60269に基づいて定義されています。
+ 注-保護デバイスが別の基本的な特性に関連する情報を提供し、このプロセッサセットの別のインスタンスに関連付けられている可能性があります。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

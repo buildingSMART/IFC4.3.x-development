@@ -2,7 +2,7 @@
 
 This enumeration defines the various types of damper
 
-> HISTORY&nbsp; New enumeration in IFC2.0.
+> HISTORY  New enumeration in IFC2.0.
 
 ## Items
 
@@ -22,7 +22,7 @@ Control damper used to modulate the flow of air by adjusting the position of the
 Fire damper used to prevent the spread of fire for a specified duration.  Commonly operated by fusable link that melts above a certain temperature.
 
 ### FIRESMOKEDAMPER
-Combination fire and smoke damper used to preven the spread of fire and smoke.  Commonly operated by a fusable link and a smoke detector.
+Combination fire and smoke damper used to prevent the spread of fire and smoke.  Commonly operated by a fusable link and a smoke detector.
 
 ### FUMEHOODEXHAUST
 Fume hood exhaust damper.  Commonly operated by actuator.

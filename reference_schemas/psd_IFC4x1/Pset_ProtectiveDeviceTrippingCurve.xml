@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="20ca8d00d1fa11e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x1" />
+  <Name>Pset_ProtectiveDeviceTrippingCurve</Name>
+  <Definition>Tripping curves are applied to thermal, thermal magnetic or MCB_RCD tripping units (i.e. tripping units having type property sets for thermal, thermal magnetic or MCB_RCD tripping defined). They are not applied to electronic tripping units.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcProtectiveDevice</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcProtectiveDevice</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="245e1400d1fa11e1800000215ad4efdf">
+      <Name>TrippingCurveType</Name>
+      <Definition>The type of tripping curve that is represented by the property set.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_TrippingCurveType">
+            <EnumItem>UPPER</EnumItem>
+            <EnumItem>LOWER</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>UPPER</Name>
+              <NameAliases>
+                <NameAlias lang="en">Upper</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>LOWER</Name>
+              <NameAliases>
+                <NameAlias lang="en">Lower</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Tripping Curve Type</NameAlias>
+        <NameAlias lang="ja-JP">動作特性曲線のタイプ</NameAlias>
+        <NameAlias lang="ko-KR">동작 특성 곡선의 유형</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">動作特性曲線のタイプを指定。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">동작 특성 곡선의 유형을 지정합니다.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="3049d600d1fa11e1800000215ad4efdf">
+      <Name>TrippingCurve</Name>
+      <Definition>A curve that establishes the release time of a tripping unit when a particular prospective current is applied.  Note that the tripping curve is defined within a Cartesian coordinate system and this fact must be asserted within the property set: 
+
+(1) Defining value is the Prospective Current which is a list of minimum 2 and maximum 16 numbers providing the currents in [x In] for points in the current/time log/log coordinate space. The curve is drawn as a straight line between two consecutive points.
+(2) Defined value is a list of minimum 2 and maximum 16 numbers providing the release_time in [s] for points in the current/time log/log coordinate space. The curve is drawn as a straight line between two consecutive points. Note that a defined interpolation.</Definition>
+      <PropertyType>
+        <TypePropertyTableValue>
+          <Expression />
+          <DefiningValue>
+            <DataType type="IfcElectricCurrentMeasure" />
+          </DefiningValue>
+          <DefinedValue>
+            <DataType type="IfcTimeMeasure" />
+          </DefinedValue>
+        </TypePropertyTableValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Tripping Curve</NameAlias>
+        <NameAlias lang="ja-JP">動作特性曲線</NameAlias>
+        <NameAlias lang="ko-KR">동작 특성 곡선</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">(1)電流/時間の位置[x In]で示される2～16の想定される電流値を定義する。
+(2)定義された値は、電流/時間の位置[ｓ]で示される2～16の想定される放電時間。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">(1) 전류 / 시간 위치 [x In에서 나타나는 2 ~ 16 예상되는 전류 값을 정의한다. (2) 정의된 값은 전류 / 시간 위치 [s]로 표시되는 2 ~ 16 예상되는 방전 시간.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">プロパティセット定義文
+熱、熱磁気またはMCB_RCDトリップ装置のトリップ曲線
+（例えば、トリッピング装置は、熱,熱電磁,MCB_RCDのトリッピング定義されたプロパティセットタイプを持っている）
+これらは、電子トリッピング装置に適用されない。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

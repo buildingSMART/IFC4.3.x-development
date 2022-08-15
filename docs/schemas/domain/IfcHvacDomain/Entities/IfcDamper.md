@@ -2,7 +2,7 @@
 
 A damper typically participates in an HVAC duct distribution system and is used to control or modulate the flow of air.
 
-> HISTORY&nbsp; New entity in IFC4
+> HISTORY  New entity in IFC4
 
 { .note}
 >
@@ -22,18 +22,43 @@ Either there is no damper type object associated, i.e. the _IsTypedBy_ inverse r
 
 ## Concepts
 
-### Material
+### Material Set
 
+
+
+#### Blade
+
+The material from which the damper blades are constructed.
+
+#### Frame
+
+The material from which the damper frame is constructed.
+
+#### Seal
+
+The material from which the damper seals are constructed.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_AirIn_AIRCONDITIONING
+
+Air entering damper.
+
+#### SOURCE_AirOut_AIRCONDITIONING
+
+Air leaving damper, with flow regulated according to position of damper.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

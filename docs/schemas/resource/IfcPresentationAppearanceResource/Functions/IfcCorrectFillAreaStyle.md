@@ -4,10 +4,10 @@ This function returns true if the different fill area styles are assigned correc
 
 Return false:
 
-* if more then one externally defined style is assigned 
-* if an externally defined style is given and any other internal style definition is attached additionally 
-* if more then one background colour is assigned 
-* if both, a hatching and a tiling is assigned 
+* if more then one externally defined style is assigned
+* if an externally defined style is given and any other internal style definition is attached additionally
+* if more then one background colour is assigned
+* if both, a hatching and a tiling is assigned
 
 otherwise return true
 

@@ -2,7 +2,7 @@
 
 This enumeration defines the general applicability of instances of _IfcPropertySet_, or _IfcElementQuantity_ defined by this _IfcPropertySetTemplate_, to subtypes of _IfcObjectDefinition_.
 
-> HISTORY&nbsp; New enumeration in IFC4.
+> HISTORY  New enumeration in IFC4.
 
 ## Items
 
@@ -18,7 +18,14 @@ property set with same name at subtypes of _IfcObject_.
 The property sets defined by this _IfcPropertySetTemplate_ can only be assigned to subtypes of _IfcObject_.
 
 ### PSET_PERFORMANCEDRIVEN
-The property sets defined by this _IfcPropertySetTemplate_ can only be assigned to _IfcPerformanceHistory_.
+The property sets defined by this _IfcPropertySetTemplate_ can only be assigned to _IfcPerformanceHistory_, which is
+related to the applicable object by means of IfcRelAssignsToControl.
+
+### PSET_PROFILEDRIVEN
+The property sets defined by this _IfcPropertySetTemplate_ are to be encoded in an IfcProfileProperties entity and assigned to an IfcProfileDef.
+
+### PSET_MATERIALDRIVEN
+The property sets defined by this _IfcPropertySetTemplate_ are to be encoded in an IfcMaterialProperties entity and assigned to an IfcMaterialDefinition.
 
 ### QTO_TYPEDRIVENONLY
 The element quantity defined by this _IfcPropertySetTemplate_ can only be assigned to subtypes of _IfcTypeObject_.

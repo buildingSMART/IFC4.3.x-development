@@ -2,7 +2,7 @@
 
 This enumeration defines the different types of discrete accessories.
 
-> HISTORY&nbsp; New enumeration in IFC4.
+> HISTORY  New enumeration in IFC4.
 
 ## Items
 
@@ -17,6 +17,12 @@ A column shoe or a beam shoe (beam hanger) used to support or secure an element.
 
 ### EXPANSION_JOINT_DEVICE
 Assembly connection element between construction elements to allow for thermic differential expansions.
+
+### FILLER
+Sealant, gap filler rod, packing material or other used to close a gap.
+
+### FLASHING
+Construction material used to manage the passage of water around objects.
 
 ### CABLEARRANGER
 A cable arranger is a flexible accessory or a part of a component placed around cables to arrange and minimize flexing of them at the point where it is placed.
@@ -54,14 +60,13 @@ A track elastic cushion is a kind of layer set on grooved sides of a concrete ba
 A component in the track for sound absorption and may also absorb vibrations. It is often used in combination with slab tracks.
 
 ### POINTMACHINEMOUNTINGDEVICE
-
+Point machine mounting device.
 
 ### POINT_MACHINE_LOCKING_DEVICE
-
+Point machine locking device.
 
 ### RAIL_MECHANICAL_EQUIPMENT
 A rail mechanical equipment is a mechnical equipment installed at railside, like blocking device, speed regulator, bias loaded inspector, track scale or controllable retarder.
-.
 
 ### BIRDPROTECTION
 A device that prevents a sitting down of birds at electrically critical points and thus birds are protected against electrical shocks and disturbances by short circuit are avoided.

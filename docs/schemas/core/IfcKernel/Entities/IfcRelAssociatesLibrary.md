@@ -6,7 +6,7 @@ The relationship is used to assign a library reference or a more detailed link t
 
 The inherited attribute _RelatedObjects_ define the items to which the library association is applied. The attribute _RelatingLibrary_ is the reference to a library reference, applied to the item(s).
 
-> HISTORY&nbsp; New entity in IFC2x.
+> HISTORY  New entity in IFC2x.
 
 ## Attributes
 

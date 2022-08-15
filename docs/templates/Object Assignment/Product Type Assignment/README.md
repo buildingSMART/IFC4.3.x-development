@@ -6,7 +6,7 @@ Product types may have assignments indicating re-usable process types for which 
 ```
 concept {
     IfcTypeProduct:ReferencedBy -> IfcRelAssignsToProduct:RelatingProduct
-    IfcRelAssignsToProduct:RelatedObjects -> IfcTypeProcess
+    IfcRelAssignsToProduct:RelatedObjects -> IfcTypeProcess:HasAssignments
     IfcRelAssignsToProduct:RelatedObjects[binding="Type"]
 }
 ```

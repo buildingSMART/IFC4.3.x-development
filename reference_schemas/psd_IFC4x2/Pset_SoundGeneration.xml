@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="8a519800d20811e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x2" />
+  <Name>Pset_SoundGeneration</Name>
+  <Definition>Common definition to capture the properties of sound typically used within the context of building services and flow distribution systems.  This property set is instantiated multiple times on an object for each frequency band.  HISTORY: New property set in IFC Release 2x4.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcDistributionFlowElement</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcDistributionFlowElement</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="8faee280d20811e1800000215ad4efdf">
+      <Name>SoundCurve</Name>
+      <Definition>Table of sound frequencies and sound power measured in decibels at a reference power of 1 picowatt(10^(-12) watt) for the referenced octave band frequency.</Definition>
+      <PropertyType>
+        <TypePropertyTableValue>
+          <Expression />
+          <DefiningValue>
+            <DataType type="IfcFrequencyMeasure" />
+          </DefiningValue>
+          <DefinedValue>
+            <DataType type="IfcSoundPowerMeasure" />
+          </DefinedValue>
+        </TypePropertyTableValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Sound Curve</NameAlias>
+        <NameAlias lang="ja-JP">音響（騒音？）曲線</NameAlias>
+        <NameAlias lang="ko-KR">음향곡성</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">オクターブバンド1pW（10^(-12)の音の強さを基準とする音の周波数とデシベル単位で計測した音のエネルギーの一覧表。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">옥타브 밴드 1pW (10 ^ (-12) 소리의 강도를 기준으로하는 소리의 주파수와 데시벨 단위로 측정하는 소리 에너지의 목록.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">建物管理・空気の搬送システムに関連する設備の騒音性能指標。周波数バンド（帯域幅）１HZにおけるある音の強さの倍数で表示する。履歴：IFC4に新たに定義された。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

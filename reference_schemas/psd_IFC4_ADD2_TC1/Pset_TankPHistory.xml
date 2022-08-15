@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ifdguid="d218d48cb0bb40bd80e6df0a017c4ea2" templatetype="" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4" />
+  <Name>Pset_TankPHistory</Name>
+  <Definition>Tank performance history common attributes.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcTank</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcTank</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="7be8fc90c36f4ab391326f58dc7ec77c">
+      <Name>Temperature</Name>
+      <Definition>The temperature of the substance in the tank.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcThermodynamicTemperatureMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="4f41ecc24f1b4dc0981ca475bd7927d0">
+      <Name>Pressure</Name>
+      <Definition>The pressure of the substance in the tank.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPressureMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="8fa541df39a0489697067a0165b4dd83">
+      <Name>Level</Name>
+      <Definition>The level of the tank as a fraction of its available capacity.</Definition>
+      <PropertyType>
+        <TypePropertyReferenceValue reftype="IfcTimeSeries" />
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

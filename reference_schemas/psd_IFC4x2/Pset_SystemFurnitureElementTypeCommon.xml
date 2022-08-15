@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="11a20a00d20f11e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x2" />
+  <Name>Pset_SystemFurnitureElementTypeCommon</Name>
+  <Definition>Common properties for all systems furniture (I.e. modular furniture) element types (e.g. vertical panels, work surfaces, and storage). HISTORY: First issued in IFC Release R1.5. Renamed from Pset_FurnitureElementCommon</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcSystemFurnitureElement</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcSystemFurnitureElement</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="16ff5480d20f11e1800000215ad4efdf">
+      <Name>IsUsed</Name>
+      <Definition>Indicates whether the element is being used in a workstation (= TRUE) or not.(= FALSE).</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Is Used</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="1d8dcc00d20f11e1800000215ad4efdf">
+      <Name>GroupCode</Name>
+      <Definition>e.g. panels, worksurfaces, storage, etc.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcIdentifier" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Group Code</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="24b4da00d20f11e1800000215ad4efdf">
+      <Name>NominalWidth</Name>
+      <Definition>The nominal width of the system furniture elements of this type. The size information is provided in addition to the shape representation and the geometric parameters used within. In cases of inconsistency between the geometric parameters and the size properties, provided in the attached property set, the geometric parameters take precedence.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Nominal Width</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="2d0d1500d20f11e1800000215ad4efdf">
+      <Name>NominalHeight</Name>
+      <Definition>The nominal height of the system furniture elements of this type. The size information is provided in addition to the shape representation and the geometric parameters used within. In cases of inconsistency between the geometric parameters and the size properties, provided in the attached property set, the geometric parameters take precedence.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Nominal Height</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="35655000d20f11e1800000215ad4efdf">
+      <Name>Finishing</Name>
+      <Definition>The finishing applied to system furniture elements of this type e.g. walnut, fabric.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Finishing</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+  </PsetDefinitionAliases>
+</PropertySetDef>

@@ -20,10 +20,14 @@ class concept_type(Enum):
 concepts = {
 ('Property Sets for Objects', ('LowerValue', ('IfcPropertyBoundedValue', 'LowerBoundValue')), ('PredefinedType', ('IfcObject', 'PredefinedType')), ('Properties', ('IfcPropertySet', 'HasProperties')), ('PropertyName', ('IfcPropertyListValue', 'Name')), ('PsetName', ('IfcPropertySet', 'Name')), ('Reference', ('IfcPropertyEnumeration', 'Name')), ('SetValue', ('IfcPropertyBoundedValue', 'SetPointValue')), ('UpperValue', ('IfcPropertyBoundedValue', 'UpperBoundValue')), ('Value', ('IfcPropertyListValue', 'ListValues'))):
 concept_type.PROPERTY_OR_QUANTITY_SET,
-('Aggregation',):
-# Aggregation parametrized without any definition
-# https://github.com/buildingSMART/IFC4.3.x-development/issues/118
-concept_type.NO_PARAMETRIZATION,
+('Property Sets for Contexts', ):
+concept_type.DIRECTIONAL_BINARY,
+('Property Sets for Performance', ('PredefinedType', ('IfcObject', 'PredefinedType'))):
+concept_type.PROPERTY_OR_QUANTITY_SET,
+('Property Sets for Materials',):
+concept_type.PROPERTY_OR_QUANTITY_SET,
+('Property Sets for Profiles',):
+concept_type.PROPERTY_OR_QUANTITY_SET,
 ('Object Nesting', ('Type', ('IfcRelNests', 'RelatedObjects'))):
 concept_type.DIRECTIONAL_BINARY,
 ('Actor Assignment', ('Type', ('IfcRelAssignsToActor', 'RelatedObjects'))):
@@ -34,6 +38,8 @@ concept_type.OBJECT_TYPING,
 concept_type.PROPERTY_OR_QUANTITY_SET,
 ('Material Constituent Set', ('ConstituentName', ('IfcMaterialConstituent', 'Name'))):
 concept_type.SIMPLE_UNARY,
+('Material Set',):
+concept_type.NARY,
 ('Port Nesting', ('Flow', ('IfcDistributionPort', 'FlowDirection')), ('PortName', ('IfcDistributionPort', 'Name')), ('PredefinedType', ('IfcDistributionElement', 'PredefinedType')), ('SystemType', ('IfcDistributionPort', 'SystemType'))):
 concept_type.NARY,
 ('Control Flow', ('Type', ('IfcRelFlowControlElements', 'RelatingFlowElement'))):
@@ -57,27 +63,23 @@ concept_type.SIMPLE_UNARY,
 ('Group Assignment', ('IsGrouped', ('IfcGroup', 'IsGroupedBy')), ('RelatedObjects', ('IfcRelAssignsToGroup', 'RelatedObjects'))):
 concept_type.SIMPLE_UNARY,
 ('Spatial Containment', ('RelatingStructure', ('IfcRelContainedInSpatialStructure', 'RelatingStructure')), ('SpatialElementName', ('IfcSpatialElement', 'Name'))):
-concept_type.DIRECTIONAL_GROUPED,
+concept_type.DIRECTIONAL_BINARY,
 ('Element Composition', ('Decomposes', ('IfcElement', 'Decomposes')), ('ElementName', ('IfcElement', 'Name')), ('RelatingObject', ('IfcRelAggregates', 'RelatingObject'))):
 concept_type.SIMPLE_UNARY,
 ('Axis 3D Geometry', ('Identifier', ('IfcShapeRepresentation', 'RepresentationIdentifier')), ('Items', ('IfcShapeRepresentation', 'Items')), ('Type', ('IfcShapeRepresentation', 'RepresentationType'))):
 concept_type.SIMPLE_UNARY,
 ('Product Assignment', ('Type', ('IfcRelAssignsToProduct', 'RelatedObjects'))):
 concept_type.DIRECTIONAL_BINARY,
-('Type Body Geometry', ('Geometry', ('IfcShapeRepresentation', 'Items')), ('RepresentationType', ('IfcShapeRepresentation', 'RepresentationType'))):
-concept_type.NO_PARAMETRIZATION,
 ('Spatial Composition', ('ProjectName', ('IfcProject', 'Name')), ('RelatingObject', ('IfcRelAggregates', 'RelatingObject')), ('SpatialElementName', ('IfcSpatialElement', 'Name'))):
 concept_type.DIRECTIONAL_BINARY,
 ('Spatial Decomposition', ('RelatedObjects', ('IfcRelAggregates', 'RelatedObjects')), ('SpatialElementName', ('IfcSpatialElement', 'Name'))):
 concept_type.DIRECTIONAL_BINARY,
 ('Spatial Container', ('Type', ('IfcRelContainedInSpatialStructure', 'RelatedElements'))):
 concept_type.DIRECTIONAL_BINARY,
-('Body Geometry', ('Identifier', ('IfcShapeRepresentation', 'RepresentationIdentifier')), ('Type', ('IfcShapeRepresentation', 'RepresentationType'))):
-concept_type.NO_PARAMETRIZATION,
 ('Material Profile Set Usage', ('Name', ('IfcMaterialProfile', 'Name'))):
-concept_type.NARY,
+concept_type.SIMPLE_UNARY,
 ('Material Layer Set Usage', ('Name', ('IfcMaterialLayer', 'Name'))):
-concept_type.NARY,
+concept_type.SIMPLE_UNARY,
 ('Object Connectivity',):
 concept_type.SIMPLE_UNARY,
 ('Resource Assignment', ('Type', ('IfcRelAssignsToResource', 'RelatedObjects'))):
@@ -88,12 +90,8 @@ concept_type.NARY,
 concept_type.NARY,
 ('Resource Type Assignment', ('Type', ('IfcRelAssignsToResource', 'RelatedObjects'))):
 concept_type.DIRECTIONAL_BINARY,
-('Constraint Association', ('Attribute1', ('IfcReference', 'AttributeIdentifier')), ('DataValue', ('IfcMetric', 'DataValue'))):
-concept_type.NARY,
 ('Control Assignment', ('Type', ('IfcRelAssignsToControl', 'RelatedObjects'))):
 concept_type.DIRECTIONAL_BINARY,
-('Classification Association', ('ClassificationName', ('IfcClassification', 'Name')), ('ClassificationSource', ('IfcClassification', 'Source')), ('ClassificationTokens', ('IfcClassification', 'ReferenceTokens')), ('Identification', ('IfcClassificationReference', 'Identification')), ('Name', ('IfcClassificationReference', 'Name'))):
-concept_type.NO_PARAMETRIZATION,
 ('Product Type Assignment', ('Type', ('IfcRelAssignsToProduct', 'RelatedObjects'))):
 concept_type.DIRECTIONAL_BINARY,
 ('Axis Geometry', ('Identifier', ('IfcShapeRepresentation', 'RepresentationIdentifier')), ('Items', ('IfcShapeRepresentation', 'Items')), ('Type', ('IfcShapeRepresentation', 'RepresentationType'))):
@@ -107,8 +105,6 @@ concept_type.SIMPLE_UNARY,
 ('Type Lighting Geometry', ('Geometry', ('IfcShapeRepresentation', 'Items')), ('Type', ('IfcShapeRepresentation', 'RepresentationType'))):
 concept_type.SIMPLE_UNARY,
 ('Door Type Attributes',):
-concept_type.SIMPLE_UNARY,
-('Product Local Placement', ('ElementName', ('IfcElement', 'Name')), ('HasPlacement', ('IfcProduct', 'ObjectPlacement')), ('RelativeToElement', ('IfcLocalPlacement', 'PlacesObject')), ('SpatialElementName', ('IfcSpatialElement', 'Name'))):
 concept_type.SIMPLE_UNARY,
 ('FootPrint Geometry', ('Identifier', ('IfcShapeRepresentation', 'RepresentationIdentifier')), ('Items', ('IfcShapeRepresentation', 'Items')), ('Type', ('IfcShapeRepresentation', 'RepresentationType'))):
 concept_type.SIMPLE_UNARY,
@@ -160,8 +156,6 @@ concept_type.SIMPLE_UNARY,
 concept_type.SIMPLE_UNARY,
 ('Element Filling', ('Type', ('IfcRelVoidsElement', 'RelatingElement'))):
 concept_type.DIRECTIONAL_BINARY,
-('Element Nesting', ('PredefinedType', ('IfcElement', 'PredefinedType')), ('Type', ('IfcRelNests', 'RelatedObjects'))):
-concept_type.NARY,
 ('Mechanical Fastener Attributes',):
 concept_type.SIMPLE_UNARY,
 ('Mechanical Fastener Type Attributes',):

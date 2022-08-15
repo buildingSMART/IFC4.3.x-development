@@ -15,7 +15,7 @@ The explicit values for _EccentricityInX_, _EccentricityInY_, and _EccentricityI
 * from the _PointOnRelatedElement_ to _PointOnRelatingElement_ within the coordinate system of the _RelatingElement_.
 * in addition: when used to specify connections in structural analysis models, the _IfcStructuralMember_ is to be used as the _RelatingElement_ of the relationship object utilizing _IfcConnectionPointEccentricity_, and the _IfcStructuralConnection_ is the _RelatedElement_.
 
-> HISTORY&nbsp; New entity in IFC2x3.
+> HISTORY  New entity in IFC2x3.
 
 ## Attributes
 

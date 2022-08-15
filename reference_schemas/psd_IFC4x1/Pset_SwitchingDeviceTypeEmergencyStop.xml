@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="20d48800d20e11e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x1" />
+  <Name>Pset_SwitchingDeviceTypeEmergencyStop</Name>
+  <Definition>An emergency stop device acts to remove as quickly as possible any danger that may have arisen unexpectedly.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcSwitchingDevice/EMERGENCYSTOP</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcSwitchingDevice/EMERGENCYSTOP</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="25993c00d20e11e1800000215ad4efdf">
+      <Name>SwitchOperation</Name>
+      <Definition>Indicates operation of emergency stop switch.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_SwitchingDeviceEmergencyStopType">
+            <EnumItem>MUSHROOM</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>MUSHROOM</Name>
+              <NameAliases>
+                <NameAlias lang="en">Mushroom</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Switch Operation</NameAlias>
+        <NameAlias lang="ja-JP">スイッチ操作</NameAlias>
+        <NameAlias lang="ko-KR">스위치 조작</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">緊急停止スイッチの操作を示す。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">비상 정지 스위치의 조작을 보여준다.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">IEC 826-08-03の定義: 
+緊急停止スイッチは予期せずして起こるさまざまな危険を可能な限り迅速に取り除くように動作する装置である。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

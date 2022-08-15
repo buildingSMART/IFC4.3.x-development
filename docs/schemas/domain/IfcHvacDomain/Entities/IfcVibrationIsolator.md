@@ -2,7 +2,7 @@
 
 A vibration isolator is a device used to minimize the effects of vibration transmissibility in a structure.
 
-> HISTORY&nbsp; New entity in IFC4
+> HISTORY  New entity in IFC4
 
 { .note}
 >
@@ -22,8 +22,15 @@ Either there is no vibration isolator type object associated, i.e. the _IsTypedB
 
 ## Concepts
 
-### Material
+### Material Set
 
+#### Casing
+
+Material from which the casing is constructed.
+
+#### Damping
+
+Material from which the damping element of the vibration isolator is constructed.
 
 ### Object Typing
 

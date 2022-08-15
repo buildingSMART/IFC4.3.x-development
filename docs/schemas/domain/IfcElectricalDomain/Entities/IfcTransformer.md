@@ -4,7 +4,7 @@ A transformer is an inductive stationary device that transfers electrical energy
 
 _IfcTransformer_ is used to transform electric power; conversion of electric signals for other purposes is handled at other entities: _IfcController_ converts arbitrary signals, _IfcAudioVisualAppliance_ converts signals for audio or video streams, and _IfcCommunicationsAppliance_ converts signals for data or other communications usage.
 
-> HISTORY&nbsp; New entity in IFC4
+> HISTORY  New entity in IFC4
 
 { .note}
 >
@@ -24,18 +24,35 @@ Either there is no transformer type object associated, i.e. the _IsTypedBy_ inve
 
 ## Concepts
 
-### Material
+### Material Set
 
+
+
+#### Casing
+
+Material from which the casing is constructed.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_Line_ELECTRICAL
+
+Line to be transformed.
+
+#### SOURCE_Load_ELECTRICAL
+
+Transformed load.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

@@ -1,0 +1,370 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="31383300d20d11e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x2" />
+  <Name>Pset_StairFlightCommon</Name>
+  <Definition>Properties common to the definition of all occurrences of IfcStairFlight.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcStairFlight</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcStairFlight</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="39906e00d20d11e1800000215ad4efdf">
+      <Name>Reference</Name>
+      <Definition>Reference ID for this specified type in this project (e.g. type 'A-1'), Also referred to as "construction type". It should be provided as an alternative to the name of the "object type", if the software does not support object types.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcIdentifier" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Bauteiltyp</NameAlias>
+        <NameAlias lang="en">Reference</NameAlias>
+        <NameAlias lang="fr-FR">Reference</NameAlias>
+        <NameAlias lang="ja-JP">参照記号</NameAlias>
+        <NameAlias lang="zh-CN">参考号</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">Bezeichnung zur Zusammenfassung gleichartiger Bauteile zu einem Bauteiltyp (auch Konstruktionstyp genannt). Alternativ zum Namen des "Typobjekts", insbesondere wenn die Software keine Typen unterstützt.</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Référence à l'identifiant d'un type spécifié dans le contexte du projet (exemple : "type A1") pour désigner un "type de construction". Une alternative au nom d'un objet type lorsque les objets types ne sont pas gérés par le logiciel.</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">このプロジェクトにおける参照記号(例：A-1)。分類コードではなく内部で使用されるプロジェクトタイプとして使用されるもの。</DefinitionAlias>
+        <DefinitionAlias lang="zh-CN">若未采用已知的分类系统，则该属性为该项目中该类型构件的参考编号（例如，类型A-1）。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="401ee580d20d11e1800000215ad4efdf">
+      <Name>Status</Name>
+      <Definition>Status of the element, predominately used in renovation or retrofitting projects. The status can be assigned to as "New" - element designed as new addition, "Existing" - element exists and remains, "Demolish" - element existed but is to be demolished,  "Temporary" - element will exists only temporary (like a temporary support structure).</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_ElementStatus">
+            <EnumItem>NEW</EnumItem>
+            <EnumItem>EXISTING</EnumItem>
+            <EnumItem>DEMOLISH</EnumItem>
+            <EnumItem>TEMPORARY</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>NEW</Name>
+              <Definition>element designed as new addition</Definition>
+              <NameAliases>
+                <NameAlias lang="en">New</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>EXISTING</Name>
+              <Definition>element exists and is to remain</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Existing</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>DEMOLISH</Name>
+              <Definition>element exists but is to be demolished</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Demolish</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>TEMPORARY</Name>
+              <Definition>element will exist only temporarily (such as a temporary support structure)</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Temporary</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Status</NameAlias>
+        <NameAlias lang="en">Status</NameAlias>
+        <NameAlias lang="fr-FR">Statut</NameAlias>
+        <NameAlias lang="ja-JP">状態</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">Status bzw. Phase des Bauteils insbesondere beim Bauen im Bestand. "Neu" (new) neues Bauteil als Ergänzung, "Bestand" (existing) bestehendes Bauteil, dass erhalten bleibt, "Abbruch" (demolish) Bauteil, das abgebrochen wird, "Temporär" (temporary) Bauteil und andere Bauelemente, die vorübergehend eingebaut werden (wie Abstützungen, etc.)</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Statut de l'élément, principalement utilisé dans les projets de rénovation et de réhabilitation. Le statut a pour valeur NOUVEAU pour un nouvel élément, EXISTANT pour un élément existant qui est conservé, DEMOLI pour un élément existant à démolir et TEMPORAIRE pour un élément temporaire (comme une structure support provisoire).</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">要素（主にリノベーションまたは改修プロジェクトにおいて）の状態。 状態は、「新規(New)」－新しく追加される要素。「既存」－要素は存在し、かつ残りもの。「破壊」－要素は存在したが、廃棄されるもの。「一時的」－一時的に存在する要素（一時的にサポートしている構造のようなもの）。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="4f059800d20d11e1800000215ad4efdf">
+      <Name>NumberOfRiser</Name>
+      <Definition>Total number of the risers included in the stair flight.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcCountMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Anzahl der Steigungen</NameAlias>
+        <NameAlias lang="en">Number Of Riser</NameAlias>
+        <NameAlias lang="fr-FR">NombreContreMarches</NameAlias>
+        <NameAlias lang="ja-JP">蹴上げ数</NameAlias>
+        <NameAlias lang="zh-CN">踢板数</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">German-description-2</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Nombre total de contremarches de l'escalier</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">階段の蹴上げ数。</DefinitionAlias>
+        <DefinitionAlias lang="zh-CN">该梯段所包含的踢板总数。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="54fb7900d20d11e1800000215ad4efdf">
+      <Name>NumberOfTreads</Name>
+      <Definition>Total number of treads included in the stair flight.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcCountMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Anzahl der Auftritte</NameAlias>
+        <NameAlias lang="en">Number Of Treads</NameAlias>
+        <NameAlias lang="fr-FR">NombreGirons</NameAlias>
+        <NameAlias lang="ja-JP">踏面数</NameAlias>
+        <NameAlias lang="zh-CN">踏板数</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">German-description-3</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Nombre total de girons de l'escalier</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">階段の踏面数。</DefinitionAlias>
+        <DefinitionAlias lang="zh-CN">该梯段所包含的踏板总数。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="5af15a00d20d11e1800000215ad4efdf">
+      <Name>RiserHeight</Name>
+      <Definition>Vertical distance from tread to tread. 
+The riser height is supposed to be equal for all steps of a stair or stair flight.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Steigung</NameAlias>
+        <NameAlias lang="en">Riser Height</NameAlias>
+        <NameAlias lang="fr-FR">HauteurContreMarche</NameAlias>
+        <NameAlias lang="ja-JP">蹴上げ高さ</NameAlias>
+        <NameAlias lang="zh-CN">踢板高度</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">German-description-4</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Hauteur de la contremarche, supposée homogène pour toutes les marches de l'escalier ou de la volée de marches.</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">踏面と踏面の垂直方向の距離。この蹴上げ高さ値は、一連の階段において同じ値と仮定する。</DefinitionAlias>
+        <DefinitionAlias lang="zh-CN">踏板之间的垂直高度。
+楼梯或梯段所有梯级的踢板高度应当一致。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="63499500d20d11e1800000215ad4efdf">
+      <Name>TreadLength</Name>
+      <Definition>Horizontal distance from the front of the thread to the front of the next tread. 
+The tread length is supposed to be equal for all steps of the stair or stair flight at the walking line.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Auftritt</NameAlias>
+        <NameAlias lang="en">Tread Length</NameAlias>
+        <NameAlias lang="fr-FR">LongueurGiron</NameAlias>
+        <NameAlias lang="ja-JP">踏面長</NameAlias>
+        <NameAlias lang="zh-CN">踏板长度</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">German-description-5</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Longueur de giron (largeur de marche), supposée égale pour toutes les marches de l'escalier ou de la volée de marchesle long de la ligne de foulée</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">踏面の前面部分から次の踏面までの水平方向の距離。この踏面長の値は、一連の階段において同じ値と仮定する。</DefinitionAlias>
+        <DefinitionAlias lang="zh-CN">踏板前缘到下一级踏板前缘的水平距离。
+走线方向上楼梯或梯段所有梯级的踏板宽度应当一致。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="6c3a6680d20d11e1800000215ad4efdf">
+      <Name>NosingLength</Name>
+      <Definition>Horizontal distance from the front of the tread to the riser underneath. It is the overhang of the tread.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Überstand</NameAlias>
+        <NameAlias lang="en">Nosing Length</NameAlias>
+        <NameAlias lang="fr-FR">LongueurNez</NameAlias>
+        <NameAlias lang="zh-CN">踏板前缘长度</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">German-description-6</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Longueur du nez de marche.</DefinitionAlias>
+        <DefinitionAlias lang="zh-CN">踏板前边沿到下级踢板的水平距离，即踏板悬挑部分的长度。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="7197b100d20d11e1800000215ad4efdf">
+      <Name>WalkingLineOffset</Name>
+      <Definition>Offset of the walking line from the inner side of the flight. 
+Note: the walking line may have a own shape representation (in case of inconsistencies, the value derived from the shape representation shall take precedence).</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Abstand der Lauflinie</NameAlias>
+        <NameAlias lang="en">Walking Line Offset</NameAlias>
+        <NameAlias lang="fr-FR">PositionLigneFoulee</NameAlias>
+        <NameAlias lang="zh-CN">走线偏移</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">German-description-7</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Décalage de la ligne de foulée par rapport au côté intérieur de la volée. Nota : la ligne de foulée peut avoir sa propre représentation. En cas d'incohérences, c'est la valeur déduite de la représentation de la forme qui prime.</DefinitionAlias>
+        <DefinitionAlias lang="zh-CN">走线到梯段内侧的偏移量。
+注：走线可能有单独的形状描述（如果不一致，应以从形状描述得到的值为准）。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="7b211900d20d11e1800000215ad4efdf">
+      <Name>TreadLengthAtOffset</Name>
+      <Definition>Length of treads at a given offset.
+Walking line position is given by the 'WalkingLineOffset'. The resulting value should normally be identical with TreadLength, it may be given in addition, if the walking line offset for building code calculations is different from that used in design.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Auftritt an der Lauflinie</NameAlias>
+        <NameAlias lang="en">Tread Length At Offset</NameAlias>
+        <NameAlias lang="fr-FR">LongueurGironSurLigneFoulee</NameAlias>
+        <NameAlias lang="zh-CN">偏移踏板长度</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">German-description-8</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Longueur du giron le long de la ligne de foulée. La valeur relativement à cette position doit normalement être identique à la propriété "Longueur du giron" ; elle peut être indiquée si la valeur de la propriété "Décalage de la ligne de foulée" donnée par une règle de calcul est différente de celle utilisée en conception.</DefinitionAlias>
+        <DefinitionAlias lang="zh-CN">在指定偏移量处踏板的长度。
+走线位置由“走线偏移”指定。该属性一般应与踏板长度一致，但如果根据建筑规范计算得到的走线偏移量和设计中使用的走线偏移量不同时，应使用该属性。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="8411ea80d20d11e1800000215ad4efdf">
+      <Name>TreadLengthAtInnerSide</Name>
+      <Definition>Minimum length of treads at the inner side of the winder. 
+Only relevant in case of winding flights, for straight flights it is identical with IfcStairFlight.TreadLength. It is a pre-calculated value, in case of inconsistencies, the value derived from the shape representation shall take precedence.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">minimaler Auftritt an der Innenseite</NameAlias>
+        <NameAlias lang="en">Tread Length At Inner Side</NameAlias>
+        <NameAlias lang="fr-FR">LongueurGironCoteInterieur</NameAlias>
+        <NameAlias lang="zh-CN">内侧踏板长度</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">German-description-9</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Longueur minimum des girons du côté intérieur de l'enroulement. Pertinent seulement pour les escaliers tournants car pour une volée droite, la valeur est donnée par la propriété "Longueur du giron". C'est une valeur précalculée. En cas d'incohérence, c'est la valeur dérivée de la représentation de la forme qui prime.</DefinitionAlias>
+        <DefinitionAlias lang="zh-CN">螺旋楼梯踏板内侧的最小长度。
+该属性仅适用于螺旋楼梯。对直跑楼梯，该属性与IfcStairFlight.TreadLength一致。该属性为预设值，若有冲突，应以从形状描述得到的值为准。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="8bd18f00d20d11e1800000215ad4efdf">
+      <Name>Headroom</Name>
+      <Definition>Actual headroom clearance for the passageway according to the current design. 
+The shape information is provided in addition to the shape representation and the geometric parameters used within. In cases of inconsistency between the geometric parameters and the shape properties, provided in the attached property, the geometric parameters take precedence.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">Durchgangshöhe</NameAlias>
+        <NameAlias lang="en">Headroom</NameAlias>
+        <NameAlias lang="fr-FR">HauteurPassage</NameAlias>
+        <NameAlias lang="zh-CN">净空</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">German-description-10</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Hauteur de passage (échappée) actuellement projetée. Cette propriété est donnée en complément de la représentation de la forme de l'élément et des paramètres géométriques qui la déterminent. En cas d'incohérence entre ces paramètres géométriques et cette propriété, ce sont les paramètres géométriques qui priment.</DefinitionAlias>
+        <DefinitionAlias lang="zh-CN">当前设计方案确定的通道实际净空高度。
+该属性所提供的形状信息是对内部形状描述和几何参数的补充。如果几何参数与该属性所提供的形状属性不符，应以几何参数为准。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="9429ca00d20d11e1800000215ad4efdf">
+      <Name>WaistThickness</Name>
+      <Definition>Minimum thickness of the stair flight, measured perpendicular to the slope of the flight to the inner corner of riser and tread. It is a pre-calculated value, in case of inconsistencies, the value derived from the shape representation shall take precedence.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="de-DE">minimale Dicke des Treppenplatte</NameAlias>
+        <NameAlias lang="en">Waist Thickness</NameAlias>
+        <NameAlias lang="fr-FR">Epaisseur</NameAlias>
+        <NameAlias lang="zh-CN">腰部厚度</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="de-DE">German-description-11</DefinitionAlias>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Epaisseur minimum de la volée mesurée perpendiculairement à la pente de la volée jusqu'au coin intérieur formé par la marche et la contremarche. C'est une valeur précalculée. En cas d'incohérence, c'est la valeur dérivée de la représentation de la forme qui prime.</DefinitionAlias>
+        <DefinitionAlias lang="zh-CN">楼梯梯段的最小厚度，即踢板和踏板所成的内角到梯段斜面的垂线长度。该属性为预设值，若有冲突，应以从形状描述得到的值为准。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="fr-FR">Définition de l'IAI : propriétés communes à la définition de toutes les instances de la classe IfcStairFlight</PsetDefinitionAlias>
+    <PsetDefinitionAlias lang="ja-JP">IfcStairFlightオブジェクトに関する共通プロパティセット定義。</PsetDefinitionAlias>
+    <PsetDefinitionAlias lang="zh-CN">所有IfcStairFlight实例的定义中通用的属性。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

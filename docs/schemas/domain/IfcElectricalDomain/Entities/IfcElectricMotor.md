@@ -2,7 +2,7 @@
 
 An electric motor is an engine that is a machine for converting electrical energy into mechanical energy.
 
-> HISTORY&nbsp; New entity in IFC4
+> HISTORY  New entity in IFC4
 
 { .note}
 >
@@ -22,18 +22,35 @@ Either there is no electric motor type object associated, i.e. the _IsTypedBy_ i
 
 ## Concepts
 
-### Material
+### Material Set
 
+
+
+#### Casing
+
+Material from which the casing is constructed.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_Line_ELECTRICAL
+
+Receives electrical power.
+
+#### SOURCE_Drive_NOTDEFINED
+
+Motor connection to a driven device.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

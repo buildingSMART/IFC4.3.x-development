@@ -4,7 +4,7 @@ A switch is used in a cable distribution system (electrical circuit) to control 
 
 Switches include those used for electrical power, communications, audio-visual, or other distribution system types as determined by the available ports.
 
-> HISTORY&nbsp; New entity in IFC4
+> HISTORY  New entity in IFC4
 
 { .note}
 >
@@ -24,18 +24,43 @@ Either there is no switching device type object associated, i.e. the _IsTypedBy_
 
 ## Concepts
 
-### Material
+### Material Set
 
+
+
+#### Casing
+
+Material from which the casing is constructed.
+
+#### Conductor
+
+Material from which the conductors are constructed.
+
+#### Surface
+
+Material from which the switch surface is constructed.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_Line_ELECTRICAL
+
+The supply line.
+
+#### SOURCE_Load_ELECTRICAL
+
+The load controlled by the switch.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

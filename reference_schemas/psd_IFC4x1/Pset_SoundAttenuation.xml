@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="6e4df680d20811e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x1" />
+  <Name>Pset_SoundAttenuation</Name>
+  <Definition>Common definition to capture sound pressure at a point on behalf of a device typically used within the context of building services and flow distribution systems.   To indicate sound values from an instance of IfcDistributionFlowElement at a particular location, IfcAnnotation instance(s) should be assigned to the IfcDistributionFlowElement through the IfcRelAssignsToProduct relationship. The IfcAnnotation should specify ObjectType of 'Sound' and geometric representation of 'Annotation Point' consisting of a single IfcPoint subtype as described at IfcAnnotation.  This property set is instantiated multiple times on an object for each frequency band.  HISTORY: New property set in IFC Release 2x4.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcAnnotation/SOUND</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcAnnotation/SOUND</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="7443d780d20811e1800000215ad4efdf">
+      <Name>SoundScale</Name>
+      <Definition>The reference sound scale.  
+
+DBA: Decibels in an A-weighted scale
+DBB: Decibels in an B-weighted scale
+DBC: Decibels in an C-weighted scale
+NC: Noise criteria
+NR: Noise rating</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_SoundScale">
+            <EnumItem>DBA</EnumItem>
+            <EnumItem>DBB</EnumItem>
+            <EnumItem>DBC</EnumItem>
+            <EnumItem>NC</EnumItem>
+            <EnumItem>NR</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>DBA</Name>
+              <NameAliases>
+                <NameAlias lang="en">dB-A</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Decibels in an A-weighted scale</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>DBB</Name>
+              <NameAliases>
+                <NameAlias lang="en">dB-B</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Decibels in an B-weighted scale</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>DBC</Name>
+              <NameAliases>
+                <NameAlias lang="en">dB-C</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Decibels in an C-weighted scale</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NC</Name>
+              <NameAliases>
+                <NameAlias lang="en">Nc</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Noise criteria</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NR</Name>
+              <NameAliases>
+                <NameAlias lang="en">Nr</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Noise rating</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Sound Scale</NameAlias>
+        <NameAlias lang="ja-JP">騒音の単位</NameAlias>
+        <NameAlias lang="ko-KR">소음단위</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">騒音の単位：
+
+- DBA: dB(A)
+- DBB: dB(B)
+- DBC:dB(C)
+- NC:騒音基準
+- NR:騒音評価</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">소음 단위. DBA : dB (A) DBB : dB (B) DBC : dB (C) NC : 소음 기준 NR : 소음 평가</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="80c83000d20811e1800000215ad4efdf">
+      <Name>SoundFrequency</Name>
+      <Definition>List of nominal sound frequencies, correlated to the SoundPressure time series values (IfcTimeSeries.ListValues)</Definition>
+      <PropertyType>
+        <TypePropertyListValue>
+          <ListValue>
+            <DataType type="IfcFrequencyMeasure" />
+          </ListValue>
+        </TypePropertyListValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Sound Frequency</NameAlias>
+        <NameAlias lang="ja-JP">音の周波数</NameAlias>
+        <NameAlias lang="ko-KR">소리의 주파수</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">代表的な周波数リスト、時系列音圧値と関連する。（IfcTimeSeriesにリストされた値）</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">대표적인 주파수 목록 시계열 소리 圧値과 관련된다. (IfcTimeSeries에 나열된 값)</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="858ce400d20811e1800000215ad4efdf">
+      <Name>SoundPressure</Name>
+      <Definition>A time series of sound pressure values measured in decibels at a reference pressure of 20 microPascals for the referenced octave band frequency.  Each value in IfcTimeSeries.ListValues is correlated to the sound frequency at the same position within SoundFrequencies.</Definition>
+      <PropertyType>
+        <TypePropertyReferenceValue reftype="IfcTimeSeries" />
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Sound Pressure</NameAlias>
+        <NameAlias lang="ja-JP">音圧</NameAlias>
+        <NameAlias lang="ko-KR">음압</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">時系列の音圧、単位はデシベル。オクターブバンドの音の強さ20mPaを基準する。IfcTimeSeriesにリストされた各値は同じ場所で、同じ周波数バントでの温の周波数と関連する。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">시계열의 음압 단위는 dB. 옥타브 밴드 소리의 강도 20mPa을 기준한다. IfcTimeSeries에 나열된 각 값은 같은 장소에서 같은 주파수 번트에서 온도의 주파수와 관련.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">建物管理・空気の搬送システムに関連する設備の音圧の性能指標。特定位置からあるIfcDistributionFlowElement設備の音性能値を表すために、IfcRelAssignsToProduct を通してIfcDistributionFlowElementに IfcAnnotation注釈属性値を付ける。 IfcAnnotation属性値は音の種別（ObjectType） と幾何的な代表位置注釈ポイントで構成され、注釈ポイントは IfcAnnotation注釈を入れたIfcPoint一点とする。このPsetは周波数バンド（帯域幅）１HZにおけるある音の強さの倍数で表示する。履歴：IFC２ｘ４に新たに定義された。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

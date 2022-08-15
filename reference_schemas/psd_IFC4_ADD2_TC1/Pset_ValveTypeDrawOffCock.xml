@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ifdguid="92173980d21411e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4" />
+  <Name>Pset_ValveTypeDrawOffCock</Name>
+  <Definition>A small diameter valve, used to drain water from a cistern or water filled system.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcValve/DRAWOFFCOCK</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcValve/DRAWOFFCOCK</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="96dbed80d21411e1800000215ad4efdf">
+      <Name>HasHoseUnion</Name>
+      <Definition>Indicates whether the drawoff cock is fitted with a hose union connection (= TRUE) or not (= FALSE).</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Has Hose Union</NameAlias>
+        <NameAlias lang="ja-JP">ホースユニオン付き</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">排水コックにホースユニオン継手が付いているかの表示．付き(= TRUE)無し (= FALSE)</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">弁タイプ排水コック</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

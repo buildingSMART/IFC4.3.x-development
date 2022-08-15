@@ -2,7 +2,7 @@
 
 An air terminal box typically participates in an HVAC duct distribution system and is used to control or modulate the amount of air delivered to its downstream ductwork. An air terminal box type is often referred to as an "air flow regulator".
 
-> HISTORY&nbsp; New entity in IFC4
+> HISTORY  New entity in IFC4
 
 { .note}
 >
@@ -22,18 +22,35 @@ Either there is no air terminal box type object associated, i.e. the _IsTypedBy_
 
 ## Concepts
 
-### Material
+### Material Set
 
+
+
+#### Casing
+
+Material from which the casing is constructed.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_Inlet_AIRCONDITIONING
+
+Incoming air.
+
+#### SOURCE_Outlet_AIRCONDITIONING
+
+Outgoing regulated air.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="f2a17900d20a11e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x2" />
+  <Name>Pset_SpaceParking</Name>
+  <Definition>Properties common to the definition of all occurrences of IfcSpace which have an attribute value for ObjectType = 'Parking'. NOTE: Modified in IFC 2x3, properties ParkingUse and ParkingUnits added.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcSpace/PARKING</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcSpace/PARKING</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="f7662d00d20a11e1800000215ad4efdf">
+      <Name>ParkingUse</Name>
+      <Definition>Identifies the type of transporation for which the parking space is designed. Values are not predefined but might include car, compact car, motorcycle, bicycle, truck, bus etc.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Parking Use</NameAlias>
+        <NameAlias lang="fr-FR">AccessibleHandicape</NameAlias>
+        <NameAlias lang="ja-JP">駐車場の用途</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Identifie le type de véhicule pour lequel le parking a été conçu. Les valeurs possibles (voiture, bus, motos, vélos,…)  ne sont pas prédéfinies.</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">どの車両種別の駐車場なのかを識別します。値はあらかじめ定められないが、自動車、小型車、オートバイ、自転車、トラック、バスなどを含んでいるかもしれません。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="ffbe6800d20a11e1800000215ad4efdf">
+      <Name>ParkingUnits</Name>
+      <Definition>Indicates the number of transporation units of the type specified by the property ParkingUse that may be accommodated within the space. Generally, this value should default to 1 unit. However, where the parking space is for motorcycles or bicycles, provision may be made for more than one unit in the space.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcCountMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Parking Units</NameAlias>
+        <NameAlias lang="fr-FR">TypeVehicule</NameAlias>
+        <NameAlias lang="ja-JP">一区画当たりの駐車台数</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Nombre d'unités du type de véhicule spécifié dans la propriété TypeVehicule que peut contenir l'espace alloué au parking. Généralement, la valeur par défaut est 1. Elle peut être supérieure pour les deux roues.</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">車両種別ごとの駐車台数のユニットごとの指定台数。一般に、この値は1台/1ユニットになるべきです。しかしながら、オートバイまたは自転車向けである場合、数台/1ユニット以上なるかもしれません。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="051bb280d20b11e1800000215ad4efdf">
+      <Name>IsAisle</Name>
+      <Definition>Indicates that this parking zone is for accessing the parking units, i.e. an aisle (TRUE) and not a parking unit itself (FALSE)</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Is Aisle</NameAlias>
+        <NameAlias lang="fr-FR">NombreUnites</NameAlias>
+        <NameAlias lang="ja-JP">通路か駐車スペースの判別</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Indique si cette zone du parking, comme une allée, est réservée à l'accès (VRAI) ou non (FAUX).</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">駐車場の通路部分(TRUE)か駐車部部分(FALSE)かを示すフラグ。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="0c42c080d20b11e1800000215ad4efdf">
+      <Name>IsOneWay</Name>
+      <Definition>Indicates whether the parking aisle is designed for oneway traffic (TRUE) or twoway traffic (FALSE). Should only be provided if the property IsAisle is set to TRUE.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Is One Way</NameAlias>
+        <NameAlias lang="fr-FR">Sens unique</NameAlias>
+        <NameAlias lang="ja-JP">一方通行</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="fr-FR">Indique si cette allée du parking est prévue pour être à sens unique (VRAI) ou à double sens (FAUX). A fournir seulement si la propriété "Est un accès" est égale à VRAI.</DefinitionAlias>
+        <DefinitionAlias lang="ja-JP">駐車場通路が一方通行(TRUE)か双方向(FALSE)かを示すフラグ。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="fr-FR">Définition de l'IAI : propriétés communes à la définition des instances de la classe IfcSpace lorsque la valeur de l'attribut ObjetType est "Parking". Nota : les propriétés TypeVehicule et NombreUnites ont été introduites depuis la révision 2x3.</PsetDefinitionAlias>
+    <PsetDefinitionAlias lang="ja-JP">IfcObjectのObjectType属性の値が"Parking"の場合に設定される共通プロパティ情報。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

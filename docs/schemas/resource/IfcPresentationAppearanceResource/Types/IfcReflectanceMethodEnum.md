@@ -2,7 +2,7 @@
 
 The _IfcReflectanceMethodEnum_ defines the range of different reflectance methods available.
 
-> HISTORY&nbsp; New enumeration type in IFC2x2.
+> HISTORY  New enumeration type in IFC2x2.
 
 ## Items
 
@@ -10,7 +10,7 @@ The _IfcReflectanceMethodEnum_ defines the range of different reflectance method
 A reflectance model providing a smooth, slightly shiny appearance.
 
 ### FLAT
-A reflectance model providing a constant colour. This model ignores the effect of all light sources.
+A reflectance model conforming with the Unlit lighting model defined in X3D.
 
 ### GLASS
 A reflectance model that supports an approximation of glass-like materials that have both reflective and transmissive properties.
@@ -25,7 +25,7 @@ A reflectance model providing a specular metallic appearance.
 A reflectance model that supports secondary mirrored views through ray tracing.
 
 ### PHONG
-A reflectance model conforming with the Phong model in which reflections are greatest in the `mirror' direction of a surface opposite the viewing direction with respect to the surface normal.
+A reflectance model conforming with the Phong lighting model defined in X3D.
 
 ### PLASTIC
 A reflectance model providing a specular effect which is similar to the Phong model.
@@ -33,5 +33,8 @@ A reflectance model providing a specular effect which is similar to the Phong mo
 ### STRAUSS
 A reflectance model for metallic and non-metallic appearance based on a limited set of control parameter.
 
-### NOTDEFINED
+### PHYSICAL
+A reflectance model conforming with the Physical lighting model defined in X3D.
 
+### NOTDEFINED
+Undefined.

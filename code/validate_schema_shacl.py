@@ -7,71 +7,20 @@ import operator
 import itertools
 import subprocess
 
-from dataclasses import dataclass, field
+from md import parse_document
 
 import rdflib
-import markdown
 
 import append_xmi
 
 from rdflib import Namespace
-from rdflib.namespace import RDF
+from rdflib.namespace import RDF, RDFS
 from rdflib.collection import Collection
-
-import bs4
-def BeautifulSoup(*args):
-    return bs4.BeautifulSoup(*args, features='lxml')
 
 def relative_path(*args):
     return os.path.abspath(os.path.join(os.path.dirname(__file__), *args))
 
 SHACL = Namespace("http://www.w3.org/ns/shacl#")
-
-@dataclass
-class markdown_section:
-    level : int
-    heading : str
-    content : str
-    children : list = field(default_factory=list)
-    
-def parse_document(fn):
-    soup = BeautifulSoup(
-        markdown.markdown(open(fn, encoding="utf-8").read(),
-        extensions=['tables', 'fenced_code', 'sane_lists'])
-    )
-    
-    headings = soup.find_all(re.compile("h\d"))
-    next_heading = headings[1:] + [None]
-    
-    root = None
-    stack = [None]
-
-    for h, next in zip(headings, next_heading):
-        nodes = (n for n in h.nextSiblingGenerator())
-        selected = itertools.takewhile(lambda n: next is None or n != next, nodes)
-        strings = filter(None, map(lambda n: getattr(n, 'text', '').strip(), selected))
-        concat = "".join(strings)
-        
-        section = markdown_section(int(h.name[1:]), h.text, concat)
-        if section.level == len(stack):
-            stack.append(None)
-        elif section.level == len(stack) - 1:
-            pass
-        else:
-            stack[section.level:] = [None]
-            
-        stack[-1] = section
-        try:
-            if stack[-2] is not None:
-                stack[-2].children.append(section)
-        except:
-            print(fn)
-            return None
-        
-        if root is None:
-            root = section
-            
-    return root
 
 def process_document(g, fn, subj, cls):
     g.add((subj, RDF.type, cls))
@@ -81,6 +30,17 @@ def process_document(g, fn, subj, cls):
     g.add((subj, fqdn("hasFilename"), c.uri))
     
     def write(s, ct):
+        heading = ct.heading.strip()
+        
+        m = re.search(r"\[([\w\- ]+)\]", heading)
+        if m:
+            mvd = m.group(1)
+            g.add((s, fqdn("hasContext"), rdflib.Literal(mvd)))
+            li = [c for c in heading]
+            li[slice(*m.span())] = []
+            heading = (mvd, "".join(li).strip())
+    
+        g.add((s, fqdn("hasCleanHeading"), rdflib.Literal(heading)))
         g.add((s, fqdn("hasHeading"), rdflib.Literal(ct.heading)))
         if ct.content.strip():
             g.add((s, fqdn("hasText"), rdflib.Literal(ct.content)))
@@ -90,14 +50,14 @@ def process_document(g, fn, subj, cls):
             g.add((s2, fqdn("containedIn"), s))
             write(s2, ch)
         
-    contents = parse_document(fn)
+    contents = parse_document(fn=fn)
     if contents:
         write(subj, contents)
     
 
 if not os.path.exists(os.path.join(tempfile.gettempdir(), "schema.ttl")):
 
-    d = append_xmi.context(relative_path("../schemas/IFC.xml"))
+    d = append_xmi.context(filename=relative_path("../schemas/IFC.xml"))
     
     id_to_node = {}
     counter = {'c': 1}
@@ -131,6 +91,12 @@ if not os.path.exists(os.path.join(tempfile.gettempdir(), "schema.ttl")):
         s = node_mapping[nd]
         
         g.add((s, RDF.type, fqdn(nd.tag)))
+        
+        if nd.child_with_tag("generalization"):
+            # embellish with proper subtype relationship so that we
+            # can use property paths for recursive query in sparql
+            st = nd.child_with_tag("generalization").attributes['general']
+            g.add((s, RDFS.subClassOf, node_mapping[id_to_node[st]]))
             
         for k, v in nd.attributes.items():
             if v in id_to_node:

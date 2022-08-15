@@ -4,4 +4,4 @@ _IfcLogical_IfcSimpleValue_) cannot directly include simple types in its select 
 
 Type: LOGICAL
 
-> HISTORY&nbsp; New type in IFC2x.
+> HISTORY  New type in IFC2x.

@@ -10,7 +10,7 @@ It is used to define a construction product resource specification (i.e. the spe
 
 Occurrences of the _IfcConstructionProductResourceType_ are represented by instances of _IfcConstructionProductResource_.
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 { .use-head}
 Assignment use definition

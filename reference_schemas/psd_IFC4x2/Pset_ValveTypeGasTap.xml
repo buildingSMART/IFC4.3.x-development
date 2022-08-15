@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="00f49280d21511e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x2" />
+  <Name>Pset_ValveTypeGasTap</Name>
+  <Definition>A small diameter valve, used to discharge gas from a system.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcValve/GASTAP</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcValve/GASTAP</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="0651dd00d21511e1800000215ad4efdf">
+      <Name>HasHoseUnion</Name>
+      <Definition>Indicates whether the gas tap is fitted with a hose union connection (= TRUE) or not (= FALSE).</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Has Hose Union</NameAlias>
+        <NameAlias lang="ja-JP">ホースユニオン付き</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">排水コックにホースユニオン継手が付いているかの表示．付き
+(= TRUE)無し (= FALSE)</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">弁タイプ排水コック</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

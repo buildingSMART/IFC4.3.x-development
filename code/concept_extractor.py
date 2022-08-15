@@ -109,10 +109,6 @@ class extractor:
         return concepts
 
 if __name__ == "__main__":
-    try:
-        fn = sys.argv[1]
-    except:
-        fn = "../mvdXML/IFC4_ADD2.mvdxml"
-    
+    fn, ofn = sys.argv[1:]
     x = extractor(fn)    
-    x.write_excel("concepts.xlsx")
+    x.write_excel(ofn)

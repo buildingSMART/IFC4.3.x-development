@@ -10,7 +10,7 @@ It is used to define a crew resource specification (the specific resource inform
 
 Occurrences of the _IfcCrewResourceType_ are represented by instances of _IfcCrewResource_.
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.
 
 ## Attributes
 

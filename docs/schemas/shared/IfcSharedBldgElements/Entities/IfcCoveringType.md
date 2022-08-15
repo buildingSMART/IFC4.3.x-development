@@ -10,7 +10,7 @@ It is used to define an covering specification or covering style (i.e. the speci
 
 The occurrences of the _IfcCoveringType_ are represented by instances of _IfcCovering_
 
-> HISTORY&nbsp; New entity in IFC2x2.
+> HISTORY  New entity in IFC2x2.
 
 { .spec-head}
 Informal Propositions:
@@ -29,56 +29,21 @@ The inherited attribute _ElementType_ shall be provided, if the _PredefinedType_
 
 ## Concepts
 
-### Body Geometry
-
-The IfcCoveringType may define the shared geometric
-representation for all covering occurrences. The
-RepresentationMaps attribute refers to a list of
-IfcRepresentationMap's, that allow for multiple geometric
-representations (e.g. with IfcShaperepresentation's having
-an RepresentationIdentifier 'Box', 'Surface', or 'Body').
-(See geometric use definition of IfcCovering for further
-information).
-
-
-
-> 
-> NOTE  If the IfcCoveringType has an associated IfcMaterialLayerSet, then no shared geometric representation shall be provided.
-> 
-
-
-
-> 
-> NOTE  The product shape representations are defined as RepresentationMaps (attribute of the supertype IfcTypeProduct), which get assigned by an element occurrence instance through the IfcShapeRepresentation.Item[n] being an IfcMappedItem. See IfcTypeProduct for further information.
-> 
-
-
-
-> 
-> NOTE  The values of attributes RepresentationIdentifier and RepresentationType of IfcShapeRepresentation are restricted in the same way as those for IfcCoveringType.
-> 
-
-
-
 ### Material Layer Set
 
-The material of the IfcCoveringType is defined by 
-IfcMaterialLayerSet for layer-based coverings or as fall back by IfcMaterial
-and attached by the
-IfcRelAssociatesMaterial.RelatingMaterial. It is
-accessible by the inverse HasAssociations
-relationship.
-
-
+The material of the IfcCoveringType is defined by IfcMaterialLayerSet for layer-based coverings or as fall back by IfcMaterial and attached by the IfcRelAssociatesMaterial.RelatingMaterial. It is accessible by the inverse HasAssociations relationship.
 
 ### Material Profile Set
 
-The material of the IfcCoveringType is defined by 
-IfcMaterialProfileSet for profile-based coverings or as fall back by IfcMaterial
-and attached by the
-IfcRelAssociatesMaterial.RelatingMaterial. It is
-accessible by the inverse HasAssociations
-relationship.
+The material of the IfcCoveringType is defined by IfcMaterialProfileSet for profile-based coverings or as fall back by IfcMaterial and attached by the IfcRelAssociatesMaterial.RelatingMaterial. It is accessible by the inverse HasAssociations relationship.
 
+### Type Body Geometry
 
+The IfcCoveringType may define the shared geometric representation for all covering occurrences. The RepresentationMaps attribute refers to a list of IfcRepresentationMap's, that allow for multiple geometric representations (e.g. with IfcShaperepresentation's having an RepresentationIdentifier 'Box', 'Surface', or 'Body'). (See geometric use definition of IfcCovering for further information).
+
+> NOTE  If the IfcCoveringType has an associated IfcMaterialLayerSet, then no shared geometric representation shall be provided.
+
+> NOTE  The product shape representations are defined as RepresentationMaps (attribute of the supertype IfcTypeProduct), which get assigned by an element occurrence instance through the _IfcShapeRepresentation.Item[n]_ being an IfcMappedItem. See IfcTypeProduct for further information.
+
+> NOTE  The values of attributes RepresentationIdentifier and RepresentationType of IfcShapeRepresentation are restricted in the same way as those for IfcCoveringType.
 

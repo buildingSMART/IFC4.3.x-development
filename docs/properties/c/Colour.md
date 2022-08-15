@@ -1,4 +1,4 @@
 Colour
-======
+=====
 
-Stratum colour
+Colour of this object.

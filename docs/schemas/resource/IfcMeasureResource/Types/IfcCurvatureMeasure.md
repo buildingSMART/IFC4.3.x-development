@@ -4,4 +4,4 @@ _IfcCurvatureMeasure_ is a measure for curvature, which is defined as the change
 
 Type: REAL
 
-> HISTORY&nbsp; New type in IFC2x2.
+> HISTORY  New type in IFC2x2.

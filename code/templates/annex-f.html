@@ -31,7 +31,15 @@
             </td>
             <td data-label="Entity">{{ change.entity }}</td>
             <td data-label="Location">{{ change.what_changed }}</td>
-            <td data-label="Description">{{ change.description }}</td>
+            <td data-label="Description">
+                {% set l = change.description.split('\n') %}
+                {% if l|length == 4 %}
+                    <div><span>Changed from </span><i>{{ l[1][1:-1] }}</i></div>
+                    <div><span style='display:inline-block; width:0px; white-space: nowrap;'>to</span><span style='visibility: hidden'>Changed from </span><i>{{ l[3][1:-1] }}</i></div>
+                {% else %}
+                    {{ change.description }}
+                {% endif %}
+            </td>
         </tr>
         {% endfor %}
     </tbody>

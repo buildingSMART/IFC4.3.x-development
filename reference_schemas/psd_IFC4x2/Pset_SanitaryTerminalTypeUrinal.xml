@@ -1,0 +1,241 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="304ed380d20411e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x2" />
+  <Name>Pset_SanitaryTerminalTypeUrinal</Name>
+  <Definition>Soil appliance that receives urine and directs it to a waste outlet (BS6100). HISTORY: In IFC4, Material property removed. Use materials capabilities from IfcMaterialsResource schema. Prefix for color property removed. Datatype of color changed to IfcLabel (still a string value).  Mounting property added.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcSanitaryTerminal/URINAL</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcSanitaryTerminal/URINAL</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="35138780d20411e1800000215ad4efdf">
+      <Name>UrinalType</Name>
+      <Definition>Selection of the type of urinal from the enumerated list of types where:-
+
+Bowl: Individual wall mounted urinal.
+Slab: Urinal that consists of a slab or sheet fixed to a wall and down which urinal flows into a floor channel.
+Stall: Floor mounted urinal that consists of an elliptically shaped sanitary stall fixed to a wall and down which urine flows into a floor channel.
+Trough: Wall mounted urinal of elongated rectangular shape on plan, that can be used by more than one person at a time.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_UrinalType">
+            <EnumItem>BOWL</EnumItem>
+            <EnumItem>SLAB</EnumItem>
+            <EnumItem>STALL</EnumItem>
+            <EnumItem>TROUGH</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>BOWL</Name>
+              <NameAliases>
+                <NameAlias lang="en">Bowl</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>SLAB</Name>
+              <NameAliases>
+                <NameAlias lang="en">Slab</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>STALL</Name>
+              <NameAliases>
+                <NameAlias lang="en">Stall</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>TROUGH</Name>
+              <NameAliases>
+                <NameAlias lang="en">Trough</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Urinal Type</NameAlias>
+        <NameAlias lang="ja-JP">小便器タイプ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">下記のリストより小便器タイプを選択
+
+便器：壁に設置された独立した小便器
+床：壁や床の溝へ流れるように固定されている
+個室：衛生個室の床や壁に楕円形に設置されたフロア
+溝：一人以上の人数が同時に使用できるよう、壁に直角に長く引き伸ばした形</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="4361a380d20411e1800000215ad4efdf">
+      <Name>Mounting</Name>
+      <Definition>Selection of the form of mounting from the enumerated list of mountings where:-
+
+BackToWall =	A pedestal mounted sanitary terminal that fits flush to the wall at the rear to cover its service connections
+Pedestal =	A floor mounted sanitary terminal that has an integral base
+CounterTop =	A sanitary terminal that is installed into a horizontal surface that is installed into a horizontal surface. Note: When applied to a wash hand basin, the term more normally used is ‘vanity’. See also Wash Hand Basin Type specification.
+WallHung =	A sanitary terminal cantilevered clear of the floor
+.
+
+Note that BackToWall, Pedestal and WallHung are allowable values for a urinal.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_SanitaryMounting">
+            <EnumItem>BACKTOWALL</EnumItem>
+            <EnumItem>PEDESTAL</EnumItem>
+            <EnumItem>COUNTERTOP</EnumItem>
+            <EnumItem>WALLHUNG</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>BACKTOWALL</Name>
+              <NameAliases>
+                <NameAlias lang="en">Back To Wall</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>PEDESTAL</Name>
+              <NameAliases>
+                <NameAlias lang="en">Pedestal</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>COUNTERTOP</Name>
+              <NameAliases>
+                <NameAlias lang="en">Countertop</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>WALLHUNG</Name>
+              <NameAliases>
+                <NameAlias lang="en">Wall Hung</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Mounting</NameAlias>
+        <NameAlias lang="ja-JP">設置</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">下記の設置方法より選択
+
+
+・床置き壁排出：接続口の後部に出水口を合わせること。
+・台：床置きの衛生器具には基礎があること。
+・カウンター：衛生器具の表層が水平に設置されていること。※手洗い台として設置された場合「化粧台」として扱うこと。また、洗面台種類の規格表を参照のこと。
+・壁掛け型：衛生器具は片側固定がされ床から離れていること。
+
+床置き壁排出型・台座と壁掛け型は便器と同等とされます。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="596f6400d20411e1800000215ad4efdf">
+      <Name>SpilloverLevel</Name>
+      <Definition>The level at which water spills out of the object.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Spillover Level</NameAlias>
+        <NameAlias lang="ja-JP">水位</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">継手からの水位。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">小便を受けたり直接排水溝に流すための機器(BS6100)。
+背景：IFC4において、要素のプロパティーは排除されています 。IfcMaterialsResourceのタイプを使ってください。 色の設定は取り除かれています。色のデータ形式は文字列としてIfcLabelに変更されています。また、「設置」のプロパティーが加えられました。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

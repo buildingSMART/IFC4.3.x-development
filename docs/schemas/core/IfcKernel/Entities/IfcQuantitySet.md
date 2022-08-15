@@ -9,4 +9,4 @@ An _IfcPropertySetTemplate_ may define the underlying structure, i.e. the requir
 * **Underlying template**: _IfcRelDefinesByTemplate_ using the inverse attribute _IsDefinedBy_.
 * **External reference**: subtypes of _IfcRelAssociates_ are used to provide a link to a classification system, or external library providing further reference to the quantity set. Accessible by inverse attribute _HasAssociations_.
 
-> HISTORY&nbsp; New entity in IFC4.
+> HISTORY  New entity in IFC4.

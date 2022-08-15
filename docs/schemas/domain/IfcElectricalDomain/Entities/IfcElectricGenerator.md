@@ -2,7 +2,7 @@
 
 An electric generator is an engine that is a machine for converting mechanical energy into electrical energy.
 
-> HISTORY&nbsp; New entity in IFC4
+> HISTORY  New entity in IFC4
 
 { .note}
 >
@@ -22,21 +22,39 @@ Either there is no electric generator type object associated, i.e. the _IsTypedB
 
 ## Concepts
 
-### Composition
+### Aggregation
 
 
-### Material
 
+#### ENGINEGENERATOR_IfcEngine
+
+Engine-Generator sets may optionally include an engine to indicate specific detail.
+
+### Material Set
+
+
+
+#### Casing
+
+Material from which the casing is constructed.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SOURCE_Load_ELECTRICAL
+
+Outgoing power from generator.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

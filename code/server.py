@@ -41,6 +41,7 @@ from flask import (
     request,
     send_from_directory,
     jsonify,
+    g as X
 )
 
 import md as mdp
@@ -49,7 +50,7 @@ from extract_concepts_from_xmi import parse_bindings
 app = Flask(__name__)
 
 base = "/IFC/RELEASE/IFC4x3/HTML"
-
+is_iso = os.environ.get('ISO', '0') == '1'
 
 def make_url(fragment=None):
     return base + "/" + fragment if fragment else "/"
@@ -121,10 +122,11 @@ class resource_manager:
     hierarchy = schema_resource("hierarchy.json")
     xmi_concepts = schema_resource("xmi_concepts.json")
     examples_by_type = schema_resource("examples_by_type.json")
-    
+
     listing_references = schema_resource("listing_references.json")
     listing_tables = schema_resource("listing_tables.json")
     listing_figures = schema_resource("listing_figures.json")
+
 
 R = resource_manager()
 
@@ -191,6 +193,16 @@ navigation = [
     ],
 ]
 
+annex_b_navigation = [
+    {"number": "B.1", "name": "Entities", "url": make_url("annex-b1.html")},
+    {"number": "B.2", "name": "Types", "url": make_url("annex-b2.html")},
+    {"number": "B.3", "name": "Property sets", "url": make_url("annex-b3.html")},
+    {"number": "B.4", "name": "Properties", "url": make_url("annex-b4.html")},
+    {"number": "B.5", "name": "Functions", "url": make_url("annex-b5.html")},
+    {"number": "B.6", "name": "Rules", "url": make_url("annex-b6.html")},
+    {"number": "B.7", "name": "Property Enumerations", "url": make_url("annex-b7.html")},
+]
+
 
 def get_navigation(resource=None, number=None):
     if not number and resource:
@@ -217,6 +229,12 @@ def get_navigation(resource=None, number=None):
                         if i == int(numbers[1]):
                             data["is_current"] = True
                         item["subitems"].append(data)
+            elif "annex-b" in request.path and item.get("number", None) == "B":
+                item["is_current"] = True
+                for subitem in copy.deepcopy(annex_b_navigation):
+                    if ("annex-" + subitem["number"]).lower().replace(".", "") in request.path:
+                        subitem["is_current"] = True
+                    item["subitems"].append(subitem)
             else:
                 item["is_current"] = False
     return navigation
@@ -250,7 +268,10 @@ def chapter_lookup(number=None, cat=None):
 
 
 entity_names = lambda: sorted(sum([schema.get("Entities", []) for _, cat in R.hierarchy for __, schema in cat], []))
+function_names = lambda: sorted(sum([schema.get("Functions", []) for _, cat in R.hierarchy for __, schema in cat], []))
+rule_names = lambda: sorted(sum([schema.get("Rules", []) for _, cat in R.hierarchy for __, schema in cat], []))
 type_names = lambda: sorted(sum([schema.get("Types", []) for _, cat in R.hierarchy for __, schema in cat], []))
+propertyenumeration_names = lambda: sorted(sum([schema.get("PropertyEnumerations", []) for _, cat in R.hierarchy for __, schema in cat], []))
 
 
 @lru_cache()
@@ -260,7 +281,7 @@ def name_to_number():
     for i, (cat, schemas) in enumerate(R.hierarchy, start=5):
         for j, (schema_name, members) in enumerate(schemas, start=1):
             for k, ke in enumerate(
-                ["Types", "Entities", "Property Sets", "Quantity Sets", "Functions", "Rules"], start=2
+                ["Types", "Entities", "Property Sets", "Quantity Sets", "Functions", "Rules", "PropertyEnumerations"], start=2
             ):
                 for l, name in enumerate(members.get(ke, ()), start=1):
                     ntn[name] = ".".join(map(str, (i, j, k, l)))
@@ -278,6 +299,7 @@ def get_inheritance_graph(current_entity):
                 "name": subclass,
                 "is_deprecated": subclass in R.deprecated_entities,
                 "is_abstract": subclass in R.abstract_entities,
+                "is_subclass": True,
             }
         )
     if tier:
@@ -309,19 +331,25 @@ def get_inheritance_graph(current_entity):
     return reversed(graph)
 
 
-def get_node_colour(n):
-    if R.entity_supertype.get(n) is None:
-        return "gray"
+def get_node_type(n):
+    try:
+        n = n.replace("<br />", "")
+        n = re.findall(r'Ifc\w+', n)[0]
+    except:
+        return "attribute"
+
+    if n not in R.entity_definitions:
+        return "attribute"
 
     def is_relationship(ty=n):
-        if ty == "IfcRelationship":
+        if ty == "IfcRelationship" or ty == "IfcResourceLevelRelationship":
             return True
         ty = R.entity_supertype.get(ty)
         if ty:
             return is_relationship(ty)
         return False
 
-    return "yellow" if is_relationship() else "dodgerblue"
+    return "relationship" if is_relationship() else "entity"
 
 
 def transform_graph(current_entity, graph_data, only_urls=False):
@@ -374,12 +402,33 @@ def transform_graph(current_entity, graph_data, only_urls=False):
                     # rank=same groupings otherwise cause
                     # node names to be listed twice
                     args = names_seen[n.get_name()]
-
                 else:
-                    args = {"fillcolor": get_node_colour(nm), "shape": "box", "style": "filled"}
+                    node_type = get_node_type(nm)
+                    args = {
+                        "shape": "box",
+                        "style": "filled",
+                        "penwidth": 0.2,
+                        "width": 2,
+                        "height": 0.5,
+                        "color": "#000000",
+                    }
+                    if node_type == "entity":
+                        args["fillcolor"] = "#1976d2"
+                    elif node_type == "relationship":
+                        args["fillcolor"] = "#E9D758"
+                    else:
+                        args["style"] = ""
+                        args["shape"] = "plain"
 
-                    if n.get_name() == current_entity:
-                        args["color"] = "red"
+                    # A pipe is the symbol for a table
+                    if "|" in nm:
+                        # Experimenting with "Mrecord" incase it looks nicer
+                        args["shape"] = "record"
+
+                    if nm.strip('"').split(" ")[0] == current_entity:
+                        args["fillcolor"] = "#1976d2"
+                        args["penwidth"] = "1"
+
 
                     names_seen[n.get_name()] = args
 
@@ -404,25 +453,53 @@ def process_graphviz(current_entity, md):
             return 1
         elif "dot_inheritance" in s:
             return 2
+        elif "dot_neato" in s:
+            return 3
         else:
             return 0
 
-    graphviz_code = filter(is_figure, re.findall("```(.*?)```", md or '', re.S))
+    is_markdown = True
+    graphviz_code = list(filter(is_figure, re.findall("```(.*?)```", md or "", re.S)))
+    # This is a hack to allow markdown that is already in HTML to still get diagrams generated.
+    if not graphviz_code:
+        is_markdown = False
+        graphviz_code = filter(is_figure, re.findall("<pre><code>(.*?)</code></pre>", md or "", re.S))
 
     for c in graphviz_code:
+        if not is_markdown:
+            escaped_c = c
+            c = html.unescape(c)
+
+        layout_engine = "dot"
+        if is_figure(c) == 3:
+            layout_engine = "neato"
+
         hash = hashlib.sha256(c.encode("utf-8")).hexdigest()
         fn = os.path.join("svgs", current_entity + "_" + hash + ".dot")
         c2 = transform_graph(current_entity, c, only_urls=is_figure(c) == 2)
         with open(fn, "w") as f:
             f.write(c2)
-        md = md.replace("```%s```" % c, "![](/svgs/%s_%s.svg)" % (current_entity, hash))
-        subprocess.call([shutil.which("dot") or "dot", "-O", "-Tsvg", "-Gbgcolor=#ffffff00", fn])
+        if is_markdown:
+            md = md.replace("```%s```" % c, "![dot_diagram](/svgs/%s_%s.svg)" % (current_entity, hash))
+        else:
+            md = md.replace("<pre><code>%s</code></pre>" % escaped_c, "![](/svgs/%s_%s.svg)" % (current_entity, hash))
+        subprocess.call([
+            shutil.which("dot") or "dot",
+            f"-K{layout_engine}",
+            "-O",
+            "-Tsvg",
+            "-n2",
+            #"-Gsize=10,8",
+            "-Gbgcolor=#ffffff00",
+            "-Earrowsize=0.5",
+            "-Earrowhead=dot",
+            fn
+        ])
 
-    return md or ''
+    return md or ""
 
 
-def create_entity_definition(e, bindings):
-
+def create_entity_definition(e, bindings, ports):
     # unique name (postfix for multiple occurences, can have template bindings)
     EE = e
 
@@ -435,74 +512,132 @@ def create_entity_definition(e, bindings):
     table = []
 
     bindings_seen = set()
+    
+    def attributes_backward(e):
+        while e:
+            keys = [x for x in R.entity_attributes.keys() if x.startswith(e + ".")]
+            yield from list(zip(keys, map(R.entity_attributes.__getitem__, keys)))[::-1]
+            e = R.entity_supertype.get(e)
+            
+    attributes = list(attributes_backward(E))
+    
+    fwd_attr_idx = sum([is_fwd == "forward" for k, (is_fwd, ty) in attributes])
 
-    while e:
-        keys = [x for x in R.entity_attributes.keys() if x.startswith(e + ".")]
-        for k, (is_fwd, ty) in list(zip(keys, map(R.entity_attributes.__getitem__, keys)))[::-1]:
-            nm = k.split(".")[1]
+    for k, (is_fwd, ty) in attributes:
+        if is_fwd == "derived":
+            # don't show them for now
+            continue
+        
+        label = name = k.split(".")[1]
+        
+        if is_fwd == "forward":
+            label = "%d. %s" % (fwd_attr_idx, name)
+            fwd_attr_idx -= 1
+        elif is_fwd == "inverse":
+            label = "      %s" % name
 
-            card = re.findall(r"(\[.+?\])", ty)
+        cardinality = re.findall(r"(\[.+?\])", ty)
 
-            if card:
-                card = card[0]
-            elif is_fwd:
-                card = "[0:1]" if "OPTIONAL" in ty else "[1:1]"
-            else:
-                # default inverse cardinality
-                card = "[1:1]"
+        if cardinality:
+            cardinality = cardinality[0]
+        elif is_fwd:
+            cardinality = "[0:1]" if "OPTIONAL" in ty else "[1:1]"
+        else:
+            # default inverse cardinality
+            cardinality = "[1:1]"
 
-            bnd = bindings.get((EE, nm), "")
-            table.append((nm, card, 2 if bnd else 0))
-            if bnd:
-                bindings_seen.add((EE, nm))
-                table.append((bnd, "", 3))
+        binding = bindings.get((EE, name), "")
+        if binding:
+            table.append({"label": label, "name": name, "cardinality": cardinality, "is_bound": True, "is_port": name in ports})
+            bindings_seen.add((EE, name))
+            table.append({"label": binding, "name": binding, "is_binding": True})
+        else:
+            table.append({"label": label, "name": name, "cardinality": cardinality, "is_port": name in ports})
 
-        e = R.entity_supertype.get(e)
 
     is_first = True
-    for (ent, attr), bnd in bindings.items():
+    for (ent, attr), binding in bindings.items():
         if ent != EE:
             continue
         if (ent, attr) in bindings_seen:
             continue
 
         if is_first:
-            table.insert(0, ("...", "", 0))
-        table.insert(0, (bnd, "", 3))
-        table.insert(0, (attr, "", 2))
+            table.insert(0, {"label": "...", "name": "..."})
+        table.insert(0, {"label": binding, "name": binding, "is_binding": True})
+        table.insert(0, {"label": attr, "name": attr, "is_bound": True, "is_port": attr in ports})
 
         is_first = False
 
-    table.append((E, "", 1))
+    table.append({"label": E, "name": E, "is_title": True})
     table = table[::-1]
 
-    table = '<<table border="1" cellborder="0" cellspacing="0" cellpadding="3px">%s</table>>' % "".join(
-        "<tr>%s</tr>"
-        % "".join(
-            '<td width="%d" height="%d" bgcolor="%s" align="left" port="%s%d">%s%s%s</td>'
-            % (
-                [20, 250][i == 0],
-                [24, 18][r[2] == 3],
-                ["white", "#cccccc", "#8dc0f4", "#8dc0f4"][r[2]],
-                r[0],
-                i,
-                "<b>" if r[2] == 3 and c else "",
-                c,
-                "</b>" if r[2] == 3 and c else "",
-            )
-            for i, c in enumerate(r[:-1])
-        )
-        for r in table
-    )
+    html = '<<table border="0" cellborder="1" cellspacing="0" cellpadding="5px">'
+    for row in table:
+        height = 18
+        align = "left"
+        is_bold = False
+        bgcolor = "white"
+        color = "#333333"
 
-    return table
+        if row.get("is_title"):
+            bgcolor = "#1976d2"
+            color = "white"
+            is_bold = True
+        if row.get("is_binding"):
+            is_bold = True
+            align = "center"
+            bgcolor = "#eeeeee"
+        if row.get("is_bound"):
+            bgcolor = "#eeeeee"
+        if row.get("is_port"):
+            bgcolor = "#dddddd"
+
+        name = row["name"]
+
+        html += '<tr>'
+        html += f'<td sides="b" width="250" height="{height}" bgcolor="{bgcolor}" align="{align}" port="{name}0">'
+        if is_bold:
+            html += '<b>'
+        html += f'<font color="{color}">{row["label"]}</font>'
+        if is_bold:
+            html += '</b>'
+        html += '</td>'
+        html += f'<td sides="b" width="20" height="{height}" bgcolor="{bgcolor}" align="right" port="{name}1">'
+        html += row.get("cardinality", "")
+        html += '</td>'
+        html += '</tr>'
+    html += '</table>>'
+
+    return html
 
 
 def process_graphviz_concept(name, md):
     graphviz_code = filter(lambda s: s.strip().startswith("concept"), re.findall("```(.*?)```", md, re.S))
 
-    for c in graphviz_code:
+    def replace_edge(match):
+        is_direct_attribute = True
+        entity = match.group(1)
+        attribute = match.group(2)
+        while entity:
+            data = R.entity_attributes.get(f"{entity}.{attribute}", None)
+            if data:
+                is_direct_attribute = data[0] == "forward"
+                break
+            entity = R.entity_supertype.get(entity)
+        endpoint = match.group(3)
+        if ":" not in endpoint:
+            endpoint += ":" + endpoint.split("_")[0]
+        result = f"{match.group(1)}:{match.group(2)}1 -> {endpoint}"
+        if not is_direct_attribute:
+            result += "[dir=back]"
+        return result
 
+    def replace_edge2(match):
+        # I don't understand this one yet.
+        return f"{match.group(1)} -> {match.group(2)}:{match.group(3)}0"
+
+    for c in graphviz_code:
         hash = hashlib.sha256(c.encode("utf-8")).hexdigest()
         fn = os.path.join("svgs", name + "_" + hash + ".dot")
         c2 = c.replace("concept", "digraph")  # transform_graph(current_entity, c, only_urls=is_figure(c) == 2)
@@ -510,9 +645,11 @@ def process_graphviz_concept(name, md):
         c2 = re.sub("(?<=\w)\-(?=\w)", "", c2)
 
         nodes = set(n.split(":")[0] for n in (re.findall("([\:\w]+)\s*\->", c2) + re.findall("\->\s*([\:\w]+)", c2)))
+        node_ports = {n: [] for n in nodes}
+        [node_ports[n.split(":")[0]].append(n.split(":")[1]) for n in (re.findall("([\:\w]+)\s*\->", c2) + re.findall("\->\s*([\:\w]+)", c2)) if len(n.split(":")) > 1]
 
-        c2 = re.sub(r"(\w+)\:(\w+)\s*\->\s*([\:\w]+)", lambda m: f"{m.group(1)}:{m.group(2)}1 -> {m.group(3)}", c2)
-        c2 = re.sub(r"([\w\:]+)\s*\->\s*(\w+)\:(\w+)", lambda m: f"{m.group(1)} -> {m.group(2)}:{m.group(3)}0", c2)
+        c2 = re.sub(r"(\w+)\:(\w+)\s*\->\s*([\:\w]+)", replace_edge, c2)
+        c2 = re.sub(r"([\w\:]+)\s*\->\s*(\w+)\:(\w+)", replace_edge2, c2)
 
         bindings = {}
         for ent, attr, bind in re.findall(r'(\w+)\:(\w+)\[binding="([\w_]+)"\]', c2):
@@ -528,7 +665,7 @@ def process_graphviz_concept(name, md):
 
         for n in nodes:
             if n.startswith("Ifc"):
-                G.add_node(pydot.Node(n, label=create_entity_definition(n, bindings)))
+                G.add_node(pydot.Node(n, label=create_entity_definition(n, bindings, node_ports.get(n, []))))
             elif n.startswith("constraint_"):
                 G.get_node(n)[0].set_fillcolor("#ffaaaa")
                 G.get_node(n)[0].set_shape("rect")
@@ -560,10 +697,33 @@ def get_applicable_relationships(usage, concept, resource):
         # In this case, there is no interesting information to display
         return
     data = []
+    should_show_as_table = False
+    headers = []
     for row in rows:
         del row["ApplicableEntity"]
-        data.append({"predefined_type": row.pop("PredefinedType", None), "name": list(row.values())[0]})
-    return data
+        predefined_type = row.pop("PredefinedType", None)
+        # Some concepts are better displayed in a table, if they are complex and
+        # have multiple variables involved. Otherwise, a list is preferred.
+        should_show_as_table = len(row.values()) > 1
+        if should_show_as_table:
+            if predefined_type:
+                row["PredefinedType"] = predefined_type
+            # There seems to be a convention in the markdown that you can
+            # describe something using a header which is a concatenation of the
+            # values in the relationship.
+            name = []
+            if not headers:
+                for key, value in row.items():
+                    if key not in ["ApplicableEntity"]:
+                        headers.append(key)
+            for key, value in row.items():
+                if key not in ["ApplicableEntity"]:
+                    name.append(value)
+            row["name"] = "_".join(name)
+            data.append(row)
+        else:
+            data.append({"predefined_type": predefined_type, "name": list(row.values())[0]})
+    return {"relationships": data, "should_show_as_table": should_show_as_table, "headers": headers}
 
 
 def separate_camel(s):
@@ -585,6 +745,7 @@ def get_example(example):
     return send_from_directory(os.path.join(REPO_DIR, "..", "examples", "IFC 4.3"), example)
 
 
+# The markdown is littered with this type of annotation tag. Does it have meaning? We strip it out everywhere.
 DOC_ANNOTATION_PATTERN = re.compile(r"\{\s*\..+?\}")
 
 
@@ -600,47 +761,46 @@ class resource_documentation_builder:
 
     def get_markdown_content(self, heading):
         attrs = []
-        fwd_attrs = []
+        direct_attrs = []
 
-        ty = self.resource
-        while ty:
-            md_ty_fn = get_resource_path(ty)
-
-            try:
-                md_ty = re.sub(DOC_ANNOTATION_PATTERN, "", open(md_ty_fn, encoding="utf-8").read())
-            except:
-                # @todo
-                ty = R.entity_supertype.get(ty)
-                continue
+        entity = self.resource
+        while entity:
+            markdown_filename = get_resource_path(entity)
 
             try:
-                ty_attrs = list(mdp.markdown_attribute_parser(md_ty, heading))
+                md_entity = re.sub(DOC_ANNOTATION_PATTERN, "", open(markdown_filename, encoding="utf-8").read())
             except:
-                # @todo change markdown parser
-                ty = R.entity_supertype.get(ty)
-                continue
+                md_entity = None
+
+            entity_attrs = []
+            try:
+                if md_entity:
+                    entity_attrs = list(mdp.markdown_attribute_parser(data=md_entity, heading_name=heading, as_text=False))
+            except:
+                import traceback
+
+                traceback.print_exc()
+
 
             if heading == "Attributes":
-                ty_attr_di = dict(ty_attrs)
-                for a in [k.split(".")[1] for k in R.entity_attributes.keys() if k.startswith(f"{ty}.")][::-1]:
-                    b = ty_attr_di.get(a, "")
-                    is_fwd, attr_ty = R.entity_attributes[".".join((ty, a))]
-                    content = re.sub("\\b_(\\w+?)_\\b", lambda m: m.group(1), b.strip())
-                    attrs.append((ty, a, attr_ty, content))
-                    if is_fwd:
-                        fwd_attrs.append(a)
+                entity_attr_di = dict(entity_attrs)
+                for a in [k.split(".")[1] for k in R.entity_attributes.keys() if k.startswith(f"{entity}.")][::-1]:
+                    content = entity_attr_di.get(a, "")
+                    is_fwd, attr_entity = R.entity_attributes[".".join((entity, a))]
+                    attrs.append((entity, a, attr_entity, content))
+                    if is_fwd == "forward":
+                        direct_attrs.append(a)
             else:
-                for a, b in ty_attrs[::-1]:
+                for a, content in entity_attrs[::-1]:
                     # remove underscored words:
-                    content = re.sub("\\b_(\\w+?)_\\b", lambda m: m.group(1), b.strip())
-                    attrs.append((ty, a, content))
-            ty = R.entity_supertype.get(ty)
+                    attrs.append((entity, a, content))
+            entity = R.entity_supertype.get(entity)
 
         attrs = attrs[::-1]
 
         if heading == "Attributes":
             # Decorate with attribute index
-            attr_index = {b: a for a, b in enumerate(fwd_attrs[::-1], 1)}
+            attr_index = {b: a for a, b in enumerate(direct_attrs[::-1], 1)}
             attrs = [(a, attr_index.get(b, ""), b, c, d) for a, b, c, d in attrs]
 
         return attrs
@@ -673,7 +833,7 @@ def api_resource(resource):
 
 @app.route(make_url("property/<prop>.htm"))
 def property(prop):
-    prop = "".join(c for c in prop if c.isalnum())
+    prop = "".join(c for c in prop if c.isalnum() or c in "_")
     md = os.path.join(REPO_DIR, "docs", "properties", prop[0].lower(), prop + ".md")
     try:
         mdc = open(md, "r", encoding="utf-8").read()
@@ -692,6 +852,7 @@ def property(prop):
     return render_template(
         "property.html",
         base=base,
+        is_iso=X.is_iso,
         navigation=get_navigation(),
         content=html,
         number=idx,
@@ -700,7 +861,7 @@ def property(prop):
     )
 
 
-def process_markdown(resource, mdc, as_attribute=False):
+def process_markdown(resource, mdc):
     html = markdown.markdown(process_graphviz(resource, mdc), extensions=["tables", "fenced_code"])
 
     soup = BeautifulSoup(html)
@@ -711,9 +872,6 @@ def process_markdown(resource, mdc, as_attribute=False):
     except:
         # only entities have H1?
         pass
-
-    if as_attribute:
-        return str(soup.text)
 
     # Change svg img references to embedded svg because otherwise URLS are not interactive
     for img in soup.findAll("img"):
@@ -727,15 +885,22 @@ def process_markdown(resource, mdc, as_attribute=False):
         else:
             img["src"] = img["src"][9:]
 
+    for svg in soup.findAll("svg"):
+        # Graphviz diagrams use pt, a hackish way to isolate them
+        if "pt" in svg.attrs["width"]:
+            svg.attrs["width"] = "%dpx" % (int(svg.attrs["width"][0:-2]) * 1)
+            svg.attrs["height"] = "%dpx" % (int(svg.attrs["height"][0:-2]) * 1)
+
     # Tag all special notes separately. In markdown they are all lumped in a single block quote.
     for blockquote in soup.findAll("blockquote"):
         has_aside = False
         for p in blockquote.findAll("p"):
             try:
                 keyword, contents = p.text.split(" ", 1)
+                keyword = keyword.strip()
             except:
                 continue
-            valid_keywords = ["HISTORY", "IFC", "EXAMPLE", "NOTE"]
+            valid_keywords = ["HISTORY", "IFC", "EXAMPLE", "NOTE", "REFERENCE"]
             has_valid_keyword = False
             for valid_keyword in valid_keywords:
                 if valid_keyword in keyword:
@@ -744,24 +909,29 @@ def process_markdown(resource, mdc, as_attribute=False):
             if not has_valid_keyword:
                 continue
             has_aside = True
-            aside = soup.new_tag("aside")
+            p.name = "aside"
             if keyword.startswith("IFC"):
                 # This is typically something like "IFC4 CHANGE" denoting a historic change reason
                 keyword, keyword2, contents = p.text.split(" ", 2)
+                p.contents = BeautifulSoup(str(p).replace(keyword + " " + keyword2, "")).html.body.aside.contents
+                keyword = keyword.strip()
+                keyword2 = keyword2.strip()
                 keyword = "-".join((keyword, keyword2))
-            keyword = keyword.strip()
+            else:
+                p.contents = BeautifulSoup(str(p).replace(keyword, "")).html.body.aside.contents
+
             css_class = keyword.lower()
             if "addendum" in css_class or "change" in css_class:
                 css_class = "change"
             if "deprecation" in css_class:
                 css_class = "deprecation"
-            aside["class"] = f"aside-{css_class}"
+            p["class"] = f"aside-{css_class}"
+
             mark = soup.new_tag("mark")
             mark.string = keyword
-            aside.string = contents
-            aside.insert(0, mark)
-            blockquote.insert_before(aside)
-            p.decompose()
+
+            p.insert(0, mark)
+            blockquote.insert_before(p)
         if has_aside:
             blockquote.decompose()
 
@@ -800,6 +970,7 @@ def resource(resource):
         return render_template(
             "entity.html",
             base=base,
+            is_iso=X.is_iso,
             navigation=get_navigation(resource),
             number=idx,
             definition_number=definition_number,
@@ -810,10 +981,11 @@ def resource(resource):
             attributes=get_attributes(resource, builder),
             formal_propositions=get_formal_propositions(resource, builder),
             property_sets=get_property_sets(resource, builder),
-            concept_usage=get_concept_usage(resource, builder),
+            concept_usage=get_concept_usage(resource, builder, mdc),
             examples=get_examples(resource),
             adoption=get_adoption(resource),
             formal_representation=get_formal_representation(resource),
+            references=get_references(resource),
             changelog=get_changelog(resource),
             is_deprecated=resource in R.deprecated_entities,
             is_abstract=resource in R.abstract_entities,
@@ -822,6 +994,7 @@ def resource(resource):
         return render_template(
             "property.html",
             base=base,
+            is_iso=X.is_iso,
             navigation=get_navigation(resource),
             content=get_definition(resource, mdc),
             number=idx,
@@ -836,6 +1009,7 @@ def resource(resource):
     return render_template(
         "type.html",
         base=base,
+        is_iso=X.is_iso,
         navigation=get_navigation(resource),
         content=get_definition(resource, mdc),
         number=idx,
@@ -845,6 +1019,7 @@ def resource(resource):
         type_values=get_type_values(resource, mdc),
         formal_propositions=get_formal_propositions(resource, builder),
         formal_representation=get_formal_representation(resource),
+        references=get_references(resource),
         changelog=get_changelog(resource),
     )
 
@@ -874,18 +1049,35 @@ def get_type_values(resource, mdc):
 
 
 def get_definition(resource, mdc):
-    # Only match up to the first header
-    if "## " in mdc:
-        mdc = mdc[0 : mdc.index("## ")]
+    # Only match up to the first h2
+    lines = []
+    SectionNumberGenerator.begin_subsection()
+    for line in mdc.split("\n"):
+        if line.startswith("## "):
+            break
+        if line.startswith("### "):
+            words = line.split(" ")
+            line = " ".join((words[0], SectionNumberGenerator.generate(), *words[1:]))
+        lines.append(line)
+    mdc = "\n".join(lines)
+    SectionNumberGenerator.end_subsection()
     return process_markdown(resource, mdc)
 
 
 def get_applicability(resource):
-    return {"number": SectionNumberGenerator.generate(), "entities": R.pset_definitions[resource]["applicability"]}
+    template_type_md = get_resource_path("IfcPropertySetTemplateTypeEnum", abort_on_error=False)
+    template_type_mdc = open(template_type_md, "r", encoding="utf-8").read()
+    descriptions = dict(mdp.markdown_attribute_parser(data=template_type_mdc, heading_name="Items"))
+    return {
+        "number": SectionNumberGenerator.generate(),
+        "entities": R.pset_definitions[resource]["applicability"],
+        "template_type": R.pset_definitions[resource]["template_type"],
+        "description": descriptions.get(R.pset_definitions[resource]["template_type"], None)
+    }
 
 
 def get_properties(resource, mdc):
-    pset_specitic_comments = dict(mdp.markdown_attribute_parser(mdc, "Comments"))
+    pset_specific_comments = dict(mdp.markdown_attribute_parser(data=mdc, heading_name="Comments"))
 
     def make_prop(prop):
         try:
@@ -894,49 +1086,43 @@ def get_properties(resource, mdc):
                 open(
                     os.path.join(REPO_DIR, "docs/properties/%s/%s.md") % (prop["name"][0].lower(), prop["name"])
                 ).read(),
-                as_attribute=True,
             )
         except:
-            doc = "<i>Missing property definition</i>"
+            doc = ""
 
         if R.pset_definitions[resource]["kind"] == "quantity_set":
-            prop_type = []
+            prop_type = ""
         else:
-            prop_type = [prop["type"]]
+            prop_type = prop["type"]
 
-        edit_button = f"<a class='button' href='{make_url('property/'+prop['name'])}.htm' style='padding:0;margin:0 0.5em'><span class='icon-edit'></span></a>"
-        doc += edit_button
-
-        psc = pset_specitic_comments.get(prop["name"])
+        psc = pset_specific_comments.get(prop["name"])
         if psc:
-            doc += f"<br><br><i>{process_markdown(resource, psc, as_attribute=True)}</i>"
-            pass
+            doc += f"{process_markdown(resource, psc)}"
 
-        return [
-            prop["name"],
-            *prop_type,
-            prop["data"],
-            doc
-        ]
+        data_type = prop["data"]
+        # An example value you might come across is:
+        # PEnum_ProjectType(MODIFICATION, NEWBUILD, OPERATIONMAINTENANCE, RENOVATION, REPAIR)
+        if "PEnum" in data_type and "(" in data_type:
+            data_type = data_type.split("(")[0]
+
+        return {
+            "name": prop["name"],
+            "type": prop_type,
+            "data_type": data_type,
+            "description": doc,
+            "edit_url": url_for("property", prop=prop["name"]),
+        }
 
     attrs = list(map(make_prop, R.pset_definitions[resource]["properties"]))
 
-    headers = ("Name", "Property Type", "Data Type", "Definition")
-    if R.pset_definitions[resource]["kind"] == "quantity_set":
-        # Quantity sets elements are always a singular type, as opposed to
-        # property set items which are composed of a property type (single,
-        # bounded, ...) and a data type.
-        headers = (headers[0],) + headers[2:]
-
     return {
         "number": SectionNumberGenerator.generate(),
-        "table": tabulate.tabulate(attrs, headers=headers, tablefmt="unsafehtml"),
+        "is_pset": R.pset_definitions[resource]["kind"] != "quantity_set",
+        "properties": attrs,
     }
 
 
 def get_attributes(resource, builder):
-    if not builder:
-        return
     attrs = builder.attributes
     supertype_counts = Counter()
     supertype_counts.update([a[0] for a in attrs])
@@ -944,8 +1130,8 @@ def get_attributes(resource, builder):
     supertype_counts = list(supertype_counts.items())[::-1]
     insertion_points = [0] + list(itertools.accumulate(map(operator.itemgetter(1), supertype_counts[::-1])))[:-1]
     group_data = supertype_counts[::-1]
-
-    results = []
+    
+    groups = []
     for i, attr in enumerate(attrs):
         if i in insertion_points:
             name, total_attributes = group_data[insertion_points.index(i)]
@@ -955,20 +1141,36 @@ def get_attributes(resource, builder):
                 "is_inherited": insertion_points[-1] != i,
                 "total_attributes": total_attributes,
             }
-            results.append(group)
-        group["attributes"].append(
-            {
-                "number": attr[0],
-                "name": attr[1],
-                "type": attr[2],
-                "description": process_markdown(resource, attr[3]),
-                "is_inverse": not attr[0],
-            }
-        )
+            groups.append(group)
+            
+        attribute = {
+            "number": attr[0],
+            "name": attr[1],
+            "type": attr[2][0] if isinstance(attr[2], list) else attr[2],
+            "formal": attr[2][1] if isinstance(attr[2], list) else None,
+            # @nb we're not really talking about markdown anymore
+            # since the new attribute parser operates on a converted
+            # dom, but it appears to work nonetheless.
+            "description": process_markdown(resource, attr[3]),
+            "is_inverse": not attr[0],
+        }
+        if attribute["name"] == "PredefinedType" and not attribute["description"]:
+            description = "A list of types to further identify the object. Some property sets may be specifically applicable to one of these types."
+            if "Type" not in group["name"]:
+                description += "\n> NOTE  If the object has an associated IfcTypeObject with a _PredefinedType_, then this attribute shall not be used."
+            attribute["description"] = process_markdown(resource, description)
+        group["attributes"].append(attribute)
+
+    total_inherited_attributes = sum([g["total_attributes"] for g in groups if g["is_inherited"]])
+
+    inherited_groups_with_attributes = [g for g in groups if g["is_inherited"] and g["total_attributes"]]
+    if inherited_groups_with_attributes:
+        inherited_groups_with_attributes[-1]["is_last_inherited_group"] = True
 
     return {
         "number": SectionNumberGenerator.generate(),
-        "groups": results,
+        "groups": groups,
+        "total_inherited_attributes": total_inherited_attributes,
     }
 
 
@@ -985,7 +1187,10 @@ def get_formal_propositions(resource, builder):
     return {
         "number": SectionNumberGenerator.generate(),
         "items": [
-            {"name": c[0], "formal": c[1], "description": process_markdown(resource, defs.get(c[0]))} for c in clauses
+            {"name": c[0], "formal": None, "description": f"The attribute {c[1].split(' ')[1]} should be unique" } \
+            if c[1].startswith("UNIQUE ") else \
+            {"name": c[0], "formal": c[1], "description": process_markdown(resource, defs.get(c[0]))} \
+            for c in clauses
         ],
     }
 
@@ -1003,19 +1208,31 @@ def get_entity_inheritance(resource):
 
 
 def get_property_sets(resource, builder):
-    concepts = list(builder.concepts)
+    ty = resource
+    supertype_chain = []
+    while ty is not None:
+        supertype_chain.append(ty)
+        ty = R.entity_supertype.get(ty)
+    supertype_chain = list(reversed(supertype_chain))
+
     psets = []
-    for concept in concepts:
-        name = get_concept_name(concept[1])
-        if "Property Sets" not in name and "Quantity Sets" not in name:
-            continue
-        usage = get_usage_name(name)
-        stripped_name = name.replace(" ", "")
-        relationships = get_applicable_relationships(usage, stripped_name, concept[0])
-        for pset in relationships or []:
-            properties = R.pset_definitions[pset["name"]]["properties"]
-            pset["properties"] = [p["name"] for p in properties]
-            psets.append(pset)
+    for view_name, xmi_concepts in R.xmi_concepts.items():
+        for xmi_concept_name, xmi_relationships in xmi_concepts.items():
+            if "PropertySets" not in xmi_concept_name and "QuantitySets" not in xmi_concept_name:
+                continue
+            for xmi_relationship in xmi_relationships:
+                applicable_entity = xmi_relationship.get("ApplicableEntity", None)
+                if applicable_entity not in supertype_chain:
+                    continue
+                name = xmi_relationship.get("PsetName", None) or xmi_relationship.get("QsetName", None)
+                if not name:
+                    continue
+                properties = R.pset_definitions[name]["properties"]
+                psets.append({
+                    "name": name,
+                    "predefined_type": xmi_relationship.get("PredefinedType", None),
+                    "properties": [p["name"] for p in properties]
+                })
 
     if psets:
         return {
@@ -1038,12 +1255,14 @@ def get_usage_name(name):
     return "GeneralUsage"
 
 
-def get_concept_usage(resource, builder):
+def get_concept_usage(resource, builder, mdc):
+    concepts_markdown = mdp.markdown_attribute_parser(data=mdc, heading_name="Concepts", short=False)
     ty = resource
     supertype_chain = []
     while ty is not None:
         supertype_chain.append(ty)
         ty = R.entity_supertype.get(ty)
+    supertype_chain = list(reversed(supertype_chain))
 
     builder_concepts = list(builder.concepts)
 
@@ -1057,9 +1276,16 @@ def get_concept_usage(resource, builder):
 
     concept_lookup = {c.text.replace(" ", ""): (c.text, c.url) for c in flatten_hierarchy(concept_hierarchy)}
 
-
     # Grabs concepts from XMI, and then enhances them with human names and descriptions from Markdown
+    # Sorry if you need to read this code I found it really confusing good luck.
 
+    # This code block loops through all the concepts defined in XMI and creates a nested dict structure:
+    # > IfcWall (ifc_class):
+    # > > General Usage (view_name):
+    # > > > Property Sets for Objects (xmi_concept_name
+    # > > > > Relationships: [Pset_WallCommon, ...]
+    # > > > > Is Inherited: True if this concept is defined explicitly for IfcWall
+    # > > > > Is Inherited: False if inherited from a supertype
     concept_groups = {}
     groups = []
     for view_name, xmi_concepts in R.xmi_concepts.items():
@@ -1067,95 +1293,112 @@ def get_concept_usage(resource, builder):
         for xmi_concept_name, xmi_relationships in xmi_concepts.items():
             for xmi_relationship in xmi_relationships:
                 applicable_entity = xmi_relationship.get("ApplicableEntity", None)
-                if applicable_entity in supertype_chain:
-                    concept_groups.setdefault(applicable_entity, {}).setdefault(view_name, {}).setdefault(xmi_concept_name, []).append(xmi_relationship)
+                in_chain = False
+                for ifc_class in supertype_chain:
+                    if ifc_class == applicable_entity:
+                        in_chain = True
+                    if not in_chain:
+                        continue
+                    is_inherited = ifc_class != applicable_entity
 
-    for ifc_class in reversed(supertype_chain):
-        views = concept_groups.get(ifc_class)
-        if not views:
-            continue
+                    concept_groups.setdefault(ifc_class, {})
+                    concept_groups[ifc_class].setdefault(view_name, {})
+                    concept_groups[ifc_class][view_name].setdefault(
+                        xmi_concept_name, {"relationships": [], "is_inherited": is_inherited}
+                    )
+                    concept_groups[ifc_class][view_name][xmi_concept_name]["relationships"].append(xmi_relationship)
+
+    # With this "simpler" concept_groups nested dict, let's build the necessary data structure for the template
+    # Let's start by walking through the inherited classes
+    for ifc_class in supertype_chain:
+        views = concept_groups.get(ifc_class, {})
 
         concepts = []
+        # For each view (General Usage, Reference View, etc)
         for view_name, view_concepts in views.items():
+
+            # For each concept belonging to that view
             for name, data in view_concepts.items():
                 human_name = concept_lookup.get(name, [name, ""])[0]
                 description = None
+
+                # Can we potentially enrich the description from the markdown?
                 for markdown_concept in builder_concepts:
+                    if markdown_concept[0] != ifc_class:
+                        continue
                     markdown_name = get_concept_name(markdown_concept[1])
                     stripped_name = markdown_name.replace(" ", "")
-                    if stripped_name == name:
+                    if stripped_name.lower() == name.lower():
                         description = process_markdown(resource, markdown_concept[2])
-                concepts.append({
-                    "name": human_name,
-                    "description": description,
-                    "usage": separate_camel(view_name).replace("General Usage", "General"),
-                    "url": concept_lookup.get(name, [None, None])[1],
-                    "applicable_relationships": get_applicable_relationships(view_name, name, ifc_class),
-                })
+
+                relationships = get_applicable_relationships(view_name, name, ifc_class)
+                relationship_descriptions = concepts_markdown.get_children(human_name)
+                # Let's try to enrich relationships with descriptions from the markdown
+                if relationships and relationships["relationships"] and relationship_descriptions:
+                    for relationship in relationships["relationships"]:
+                        relationship["description"] = relationship_descriptions.get(relationship["name"])
+
+                should_show_concept = False
+                if not data["is_inherited"]:
+                    # Always show concepts for the active class
+                    should_show_concept = True
+                elif data["is_inherited"] and (description or relationships):
+                    # If the active class has a description, it may redisplay an inherited concept
+                    should_show_concept = True
+
+                if should_show_concept:
+                    concepts.append(
+                        {
+                            "name": human_name,
+                            "is_inherited": data["is_inherited"],
+                            "description": description,
+                            "usage": separate_camel(view_name).replace("General Usage", "General"),
+                            "url": concept_lookup.get(name, [None, None])[1],
+                            "applicable_relationships": relationships,
+                        }
+                    )
 
         groups.append(
             {
                 "name": ifc_class,
                 "is_inherited": ifc_class != resource,
-                "concepts": concepts,
+                "concepts": sorted(concepts, key=lambda x: x["name"]),
+                "total_concepts": len(concepts),
             }
         )
 
-    # Comment out this return if you want to see how things work using the
-    # markdown as a source of truth instead of XMI. As of writing they differ
-    # quite significantly.
-    if groups:
+    total_inherited_concepts = sum([g["total_concepts"] for g in groups if g["is_inherited"]])
+
+    inherited_groups_with_concepts = [g for g in groups if g["is_inherited"] and g["total_concepts"]]
+    if inherited_groups_with_concepts:
+        inherited_groups_with_concepts[-1]["is_last_inherited_group"] = True
+
+    if [g for g in groups if g["total_concepts"]]:
         return {
             "number": SectionNumberGenerator.generate(),
             "groups": groups,
-        }
-
-    # This code uses the markdown as a source of truth.
-
-    groups = []
-    for concept in builder_concepts:
-        if not groups or groups[-1]["name"] != concept[0]:
-            groups.append(
-                {
-                    "name": concept[0],
-                    "is_inherited": concept[0] != resource,
-                    "concepts": [],
-                }
-            )
-        name = get_concept_name(concept[1])
-        usage = get_usage_name(name)
-        stripped_name = name.replace(" ", "")
-        data = {
-            "name": name,
-            "description": process_markdown(resource, concept[2]),
-            "usage": separate_camel(usage).replace("General Usage", "General"),
-            "url": concept_lookup.get(stripped_name, [None, None])[1],
-            "applicable_relationships": get_applicable_relationships(usage, stripped_name, groups[-1]["name"]),
-        }
-        groups[-1]["concepts"].append(data)
-
-    if groups:
-        return {
-            "number": SectionNumberGenerator.generate(),
-            "groups": groups,
+            "total_inherited_concepts": total_inherited_concepts,
         }
 
 
 def get_examples(resource):
     examples = []
     for name in R.examples_by_type.get(resource.upper()) or []:
-        examples.append({
-            "name": name,
-            "url": url_for("annex_e_example_page", s=name),
-            "image": url_for("get_example", example=name) + "/thumb.png"
-        })
+        examples.append(
+            {
+                "name": name,
+                "url": url_for("annex_e_example_page", s=name),
+                "image": url_for("get_example", example=name) + "/thumb.png",
+            }
+        )
     if examples:
         return {"number": SectionNumberGenerator.generate(), "examples": examples}
 
 
 def get_adoption(resource):
-    return # Is the industry ready? :)
+    return  # Is the industry ready? :)
     import random
+
     # Just a stub: inspiration from https://caniuse.com/css-grid
     # ... and so many other implementation matrixes online
     softwares = []
@@ -1167,17 +1410,26 @@ def get_adoption(resource):
                 support = "supported"
             elif j > 0:
                 support = "partially-supported"
-            versions.append({
-                "name": f"V1.{j}",
-                "support": support
-            })
-        softwares.append({ "name": f"Software {i+1}", "versions": reversed(versions) })
+            versions.append({"name": f"V1.{j}", "support": support})
+        softwares.append({"name": f"Software {i+1}", "versions": reversed(versions)})
     return {"number": SectionNumberGenerator.generate(), "softwares": softwares}
+
 
 def get_formal_representation(resource):
     express = R.entity_definitions.get(resource)
     if express:
         return {"number": SectionNumberGenerator.generate(), "express": express}
+
+
+def get_references(resource):
+    references = set()
+    for ifc_entity, express in R.entity_definitions.items():
+        if ifc_entity == resource:
+            continue
+        if resource in re.split('[^a-zA-Z]', express):
+            references.add(ifc_entity)
+    if references:
+        return {"number": SectionNumberGenerator.generate(), "references": sorted(list(references))}
 
 
 def get_changelog(resource):
@@ -1222,7 +1474,7 @@ class FigureNumberer:
             previous = previous.find_previous()
             if not previous:
                 break
-            elif previous.name.lower().startswith("h"):
+            elif previous.name.lower().startswith("h") and previous.text and previous.text[0].isdigit():
                 previous_header = previous
                 break
 
@@ -1237,7 +1489,14 @@ class FigureNumberer:
 
     @classmethod
     def replace_references(cls, html):
-        for placeholder_number, generated_number in cls.index.items():
+        # We replace references using a simple string replacement, so the
+        # placeholder "X" in "Figure X" gets replaced with the actual generated
+        # number based on the section.
+        # String replacing can be ambiguous, for example if there is both a
+        # "Figure 1" and "Figure 10" it may accidentally replace the latter.
+        # As a result with do string replacements in reverse order of the length
+        # of the placeholder number.
+        for placeholder_number, generated_number in sorted(cls.index.items(), key=lambda x: len(x[0]), reverse=True):
             html = html.replace(f"Figure {placeholder_number}", f"Figure {generated_number}")
             html = html.replace(f"Figure-{placeholder_number}", f"Figure-{generated_number}")
             html = html.replace(f"Table {placeholder_number}", f"Table {generated_number}")
@@ -1270,40 +1529,71 @@ class SectionNumberGenerator:
 
 @app.route(make_url("annex-b.html"))
 def annex_b():
-    items = [
-        {"number": "B.1", "title": "Entities", "url": make_url("annex-b1.html")},
-        {"number": "B.2", "title": "Property sets", "url": make_url("annex-b2.html")},
-        {"number": "B.3", "title": "Properties", "url": make_url("annex-b3.html")},
-    ]
-    return render_template("annex-b.html", base=base, navigation=get_navigation(), items=items)
+    return render_template("annex-b.html", base=base, is_iso=X.is_iso, navigation=get_navigation(), items=annex_b_navigation)
 
 
 @app.route(make_url("annex-b1.html"))
 def annex_b1():
     items = [
-        {"number": name_to_number()[n], "url": url_for("resource", resource=n), "title": n}
-        for n in sorted(entity_names() + type_names())
+        {"number": name_to_number()[n], "url": url_for("resource", resource=n), "name": n}
+        for n in entity_names()
     ]
-    return render_template("annex-b.html", base=base, navigation=get_navigation(), items=items, is_dictionary=True)
+    return render_template("annex-b.html", base=base, is_iso=X.is_iso, navigation=get_navigation(), items=items, is_dictionary=True, title="Entities")
 
 
 @app.route(make_url("annex-b2.html"))
 def annex_b2():
     items = [
-        {"number": name_to_number()[n], "url": url_for("resource", resource=n), "title": n}
-        for n in sorted(R.pset_definitions.keys())
-        if n in name_to_number()
+        {"number": name_to_number()[n], "url": url_for("resource", resource=n), "name": n}
+        for n in type_names()
     ]
-    return render_template("annex-b.html", base=base, navigation=get_navigation(), items=items, is_dictionary=True)
+    return render_template("annex-b.html", base=base, is_iso=X.is_iso, navigation=get_navigation(), items=items, is_dictionary=True, title="Types")
 
 
 @app.route(make_url("annex-b3.html"))
 def annex_b3():
     items = [
-        {"number": "", "url": url_for("property", prop=n), "title": n}
+        {"number": name_to_number()[n], "url": url_for("resource", resource=n), "name": n}
+        for n in sorted(R.pset_definitions.keys())
+        if n in name_to_number()
+    ]
+    return render_template("annex-b.html", base=base, is_iso=X.is_iso, navigation=get_navigation(), items=items, is_dictionary=True, title="Property sets")
+
+
+@app.route(make_url("annex-b4.html"))
+def annex_b4():
+    items = [
+        {"number": "", "url": url_for("property", prop=n), "name": n}
         for n in sorted(set([p["name"] for pdef in R.pset_definitions.values() for p in pdef["properties"]]))
     ]
-    return render_template("annex-b.html", base=base, navigation=get_navigation(), items=items)
+    return render_template("annex-b.html", base=base, is_iso=X.is_iso, navigation=get_navigation(), items=items, title="Properties")
+
+
+@app.route(make_url("annex-b5.html"))
+def annex_b5():
+    items = [
+        {"number": "", "url": url_for("resource", resource=n), "name": n}
+        for n in function_names()
+    ]
+    return render_template("annex-b.html", base=base, is_iso=X.is_iso, navigation=get_navigation(), items=items, title="Functions")
+
+
+@app.route(make_url("annex-b6.html"))
+def annex_b6():
+    items = [
+        {"number": "", "url": url_for("resource", resource=n), "name": n}
+        for n in rule_names()
+    ]
+    return render_template("annex-b.html", base=base, is_iso=X.is_iso, navigation=get_navigation(), items=items, title="Rules")
+
+
+@app.route(make_url("annex-b7.html"))
+def annex_b7():
+    items = [
+        {"number": "", "url": url_for("resource", resource=n), "name": n}
+        for n in propertyenumeration_names()
+    ]
+    return render_template("annex-b.html", base=base, is_iso=X.is_iso, navigation=get_navigation(), items=items, title="Property Enumerations")
 
 
 def make_concept(path, number_path=None):
@@ -1351,6 +1641,7 @@ def concept_list():
     return render_template(
         "chapter.html",
         base=base,
+        is_iso=X.is_iso,
         navigation=get_navigation(),
         content=html,
         path=fn[len(REPO_DIR) :].replace("\\", "/"),
@@ -1377,48 +1668,45 @@ def concept(s=""):
 
     fn = os.path.join(md_root, s, "README.md")
 
+    diagram = None
+
     if os.path.exists(fn):
-        html = markdown.markdown(process_graphviz_concept("".join(c for c in s if c.isalnum()), open(fn).read()))
-        soup = BeautifulSoup(html)
+        md = open(fn).read()
 
-        # First h1 is handled by the template
-        h1 = soup.find("h1")
-        if h1 is not None:
-            h1.decompose()
+        if "concept {" in md:
+            diagram = process_graphviz_concept("".join(c for c in s if c.isalnum()), md[md.index("```"):])
+            diagram = process_markdown("", diagram)
+            soup = BeautifulSoup(diagram)
+            for svg in soup.findAll("svg"):
+                svg.attrs["width"] = "%dpx" % (int(svg.attrs["width"][0:-2]) // 4 * 3)
+                svg.attrs["height"] = "%dpx" % (int(svg.attrs["height"][0:-2]) // 4 * 3)
+            diagram = str(soup)
+            md = md[0:md.index("```")]
 
-        # Change svg img references to embedded svg
-        # because otherwise URLS are not interactive
-        for img in soup.findAll("img"):
-            if img["src"].endswith(".svg"):
-                entity, hash = img["src"].split("/")[-1].split(".")[0].split("_")
-                svg = BeautifulSoup(open(os.path.join("svgs", entity + "_" + hash + ".dot.svg")))
-                svg_node = svg.find("svg")
-                svg_node.attrs["width"] = "%dpx" % (int(svg_node.attrs["width"][0:-2]) // 4 * 3)
-                svg_node.attrs["height"] = "%dpx" % (int(svg_node.attrs["height"][0:-2]) // 4 * 3)
-                img.replaceWith(svg_node)
-            else:
-                img["src"] = img["src"][9:]
-
-        html = str(soup)
+        html = process_markdown('', md)
     else:
         html = ""
 
     xmi_concept = t.replace(" ", "")
 
+    tables = ""
     for view_name, concepts in R.xmi_concepts.items():
         if xmi_concept in concepts:
-            html += f"<h3>{separate_camel(view_name)}</h3>"
+            tables += f"<h3>{separate_camel(view_name)}</h3>"
             headers, rows = create_concept_table(view_name, xmi_concept, None)
             if rows:
-                html += tabulate.tabulate(rows, headers=headers, tablefmt="unsafehtml")
+                tables += tabulate.tabulate(rows, headers=headers, tablefmt="unsafehtml")
 
     subs = make_concept(s.split("/")).children
 
     return render_template(
         "concept.html",
         base=base,
+        is_iso=X.is_iso,
         navigation=get_navigation(resource, number=n),
         content=html,
+        diagram=diagram,
+        tables=tables,
         path=fn[len(REPO_DIR) :].replace("\\", "/"),
         title=t,
         number=n,
@@ -1460,6 +1748,7 @@ def chapter(n):
     return render_template(
         "chapter.html",
         base=base,
+        is_iso=X.is_iso,
         navigation=get_navigation(number=n),
         content=html,
         path=fn[len(REPO_DIR) :].replace("\\", "/"),
@@ -1476,8 +1765,9 @@ def cover(s="cover"):
     return render_template(
         "cover.html",
         base=base,
+        is_iso=X.is_iso,
         navigation=get_navigation(),
-        content=markdown.markdown(render_template_string(open(fn).read(), base=base)),
+        content=markdown.markdown(render_template_string(open(fn).read(), base=base, is_iso=X.is_iso)),
         path=fn[len(REPO_DIR) :].replace("\\", "/"),
         subs=[],
     )
@@ -1504,10 +1794,11 @@ def content(s="cover"):
         except:
             abort(404)
 
-    html = process_markdown("", render_template_string(open(fn).read(), base=base))
+    html = process_markdown("", render_template_string(open(fn).read(), base=base, is_iso=X.is_iso))
     return render_template(
         "static.html",
         base=base,
+        is_iso=X.is_iso,
         navigation=get_navigation(),
         content=html,
         path=fn[len(REPO_DIR) :].replace("\\", "/"),
@@ -1518,7 +1809,17 @@ def content(s="cover"):
 
 @app.route(make_url("annex-a.html"))
 def annex_a():
-    return render_template("annex-a.html", base=base, navigation=get_navigation())
+    return render_template("annex-a.html", base=base, is_iso=X.is_iso, navigation=get_navigation())
+
+
+@app.route(make_url("annex-a-express.html"))
+def annex_a_express():
+    return render_template("annex-a-express.html", base=base, is_iso=X.is_iso, navigation=get_navigation(), express=open("IFC.exp").read())
+
+
+@app.route(make_url("annex-a-psd.zip"))
+def annex_a_psd():
+    return send_file("psd.zip")
 
 
 def annotate_hierarchy(data=None, start=1, number_path=None):
@@ -1566,7 +1867,7 @@ def annotate_hierarchy(data=None, start=1, number_path=None):
 def toc():
     subs = navigation[1][0:4]
     subs += annotate_hierarchy(start=5)
-    return render_template("chapter.html", base=base, navigation=get_navigation(), title="Contents", subs=subs)
+    return render_template("chapter.html", base=base, is_iso=X.is_iso, navigation=get_navigation(), title="Contents", subs=subs)
 
 
 @app.route(make_url("annex-c.html"))
@@ -1590,7 +1891,7 @@ def annex_c():
                 indentation_map[padding - 1]["children"].append(data)
             indentation_map[padding] = data
 
-    return render_template("annex-c.html", base=base, navigation=get_navigation(), entities=entities)
+    return render_template("annex-c.html", base=base, is_iso=X.is_iso, navigation=get_navigation(), entities=entities)
 
 
 @app.route(make_url("annex-d.html"))
@@ -1600,12 +1901,12 @@ def annex_d():
         toc_entry(s[:-4], url=url_for("annex_d_diagram_page", s=s[:-4]), number="D-%d" % i)
         for i, s in enumerate(sorted(diagrams), start=1)
     ]
-    return render_template("annex-d.html", base=base, navigation=get_navigation(), diagrams=diagrams)
+    return render_template("annex-d.html", base=base, is_iso=X.is_iso, navigation=get_navigation(), diagrams=diagrams)
 
 
 @app.route(make_url("annex_d/<s>.html"))
 def annex_d_diagram_page(s):
-    return render_template("annex-d-item.html", base=base, navigation=get_navigation(), name=s)
+    return render_template("annex-d-item.html", base=base, is_iso=X.is_iso, navigation=get_navigation(), name=s)
 
 
 @app.route(make_url("annex_d/<s>.png"))
@@ -1617,7 +1918,7 @@ def annex_d_diagram(s):
 def annex_e():
     examples = map(os.path.basename, filter(os.path.isdir, glob.glob(os.path.join(REPO_DIR, "../examples/IFC 4.3/*"))))
     examples = sorted(toc_entry(s, url=url_for("annex_e_example_page", s=s)) for s in examples)
-    return render_template("annex-e.html", base=base, navigation=get_navigation(), examples=examples)
+    return render_template("annex-e.html", base=base, is_iso=X.is_iso, navigation=get_navigation(), examples=examples)
 
 
 @app.route(make_url("annex-f.html"))
@@ -1646,7 +1947,7 @@ def annex_f():
                 }
             )
         SectionNumberGenerator.end_subsection()
-    return render_template("annex-f.html", base=base, navigation=get_navigation(), changelogs=changelog)
+    return render_template("annex-f.html", base=base, is_iso=X.is_iso, navigation=get_navigation(), changelogs=changelog)
 
 
 @app.route(make_url("annex_e/<s>.html"))
@@ -1663,10 +1964,7 @@ def annex_e_example_page(s):
     example_dir = os.path.join(REPO_DIR, "../examples/IFC 4.3", s)
 
     code = open(
-        (
-            glob.glob(os.path.join(example_dir, "*.ifc"))
-            + glob.glob(os.path.join(example_dir, "*.xml"))
-        )[0],
+        (glob.glob(os.path.join(example_dir, "*.ifc")) + glob.glob(os.path.join(example_dir, "*.xml")))[0],
         encoding="ascii",
         errors="ignore",
     ).read()
@@ -1680,6 +1978,7 @@ def annex_e_example_page(s):
     return render_template(
         "annex-e-item.html",
         base=base,
+        is_iso=X.is_iso,
         navigation=get_navigation(),
         content=html_raw,
         path=path,
@@ -1712,7 +2011,7 @@ def schema(name):
         definition_number = SectionNumberGenerator.generate()
         definition = process_markdown("", open(fn).read())
 
-    order = ["Types", "Entities", "Property Sets", "Quantity Sets", "Functions", "Rules"]
+    order = ["Types", "Entities", "Property Sets", "Quantity Sets", "Functions", "Rules", "PropertyEnumerations"]
     categories = [
         toc_entry(
             o,
@@ -1728,6 +2027,7 @@ def schema(name):
     return render_template(
         "subchapter.html",
         base=base,
+        is_iso=X.is_iso,
         navigation=get_navigation(number=n),
         definition=definition,
         path=fn[len(REPO_DIR) :].replace("\\", "/"),
@@ -1745,7 +2045,7 @@ def search():
     if request.args.get("query"):
         solr = pysolr.Solr("http://localhost:8983/solr/ifc")
         query = request.args.get("query")
-        results = solr.search("body:(%s)" % query, **{"hl": "on", "hl.fl": "body"})
+        results = solr.search("body:(%s)" % query, **{"hl": "on", "hl.fl": "body", 'rows': 30})
         h = results.highlighting
 
         def format(s):
@@ -1759,47 +2059,49 @@ def search():
 
         matches = [
             {"url": get_url(r), "match": format(h[r["id"]]["body"][0]), "title": r["title"][0]}
-            for r in list(results)[0:10]
+            for r in list(results)[0:30]
         ]
 
-    return render_template("search.html", base=base, navigation=get_navigation(), matches=matches, query=query)
+    return render_template("search.html", base=base, is_iso=X.is_iso, navigation=get_navigation(), matches=matches, query=query)
 
 
 @app.route("/sandcastle", methods=["GET", "POST"])
 def sandcastle():
-
     md = ""
     html = ""
 
+    # Set to false for now because I don't yet know how to sanitise (e.g. any pydot vulnerabilities?)
     if request.method == "POST" and request.form["md"]:
-
         md = request.form["md"]
+        html = process_markdown("", process_graphviz_concept("", md))
 
-        html = markdown.markdown(process_graphviz("sandcastle", md), extensions=["tables", "fenced_code"])
-
-        soup = BeautifulSoup(html)
-
-        # Change svg img references to embedded svg
-        # because otherwise URLS are not interactive
-        for img in soup.findAll("img"):
-            if img["src"].endswith(".svg"):
-                entity, hash = img["src"].split("/")[-1].split(".")[0].split("_")
-                svg = BeautifulSoup(open(os.path.join("svgs", entity + "_" + hash + ".dot.svg")))
-                img.replaceWith(svg.find("svg"))
-
-        html = str(soup)
-
-    return render_template("sandcastle.html", base=base, html=html, md=md)
+    return render_template("sandcastle.html", base=base, is_iso=X.is_iso, navigation=get_navigation(), html=html, md=md)
 
 
-ifcre = re.compile(r"(Ifc|Pset_|Qto_)\w+(?!(\">|.ht|.png|.jp|.gif|</a|</h|.md| - IFC4.3))")
+# Are you ready for regex golfing? Here's a challenge.
+# Y: This is a IfcClass in a paragraph.
+# Y: It may IfcClass-concatenated.
+# Y: It may be a Pset_WallCommon.
+# Y: It may be a Qto_WallBaseQuantities.
+# Y: It may be a PEnum_ProjectType.
+# N: It may be in an <img alt="IfcClass tag or a" src="IfcSite-url.png">
+# N: It may already be in a <a href="IfcSite">IfcSite</a>
+# N: Or reference an IfcSite.png arbitrarily.
+# N: It may be in the <title>IfcSite - IFC4.3.x Documentation</title>
+ifcre = re.compile(r"(?<!(=\"))(?<!(figures/))(Ifc|IFC|Pset_|Qto_|PEnum_)\w+(?!(\">|.ht|.png|.jp|.gif|\s*</a|\s*</h|.md| - IFC4.3))")
 
 try:
     import os
     from redis import Redis, ConnectionError
+
     redis = Redis(host=os.environ.get("REDIS_HOST", "localhost"))
 except:
     redis = None
+
+
+@app.before_request
+def before():
+    X.is_iso = request.args.get("iso") == "1" if "iso" in request.args else is_iso
 
 @app.after_request
 def after(response):
@@ -1822,12 +2124,17 @@ def after(response):
         main_content = main_content[0] if len(main_content) else None
 
         if main_content:
-            for img in main_content.findAll("img"):
+            for img in main_content.findAll(["img", "svg"]):
                 # Capture images as numbered figures
                 parent = img.parent
                 if parent is None:
                     continue
-                if parent.name == "a":
+                if parent.name == "td":
+                    p = soup.new_tag("p")
+                    p.append(img.extract())
+                    parent.append(p)
+                    parent = p
+                elif parent.name == "a":
                     parent = parent.parent
                 parent.name = "figure"
                 has_caption = False
@@ -1860,10 +2167,11 @@ def after(response):
                     FigureNumberer.generate(parent, figcaption.text.split(" ", 2)[1])
                 if not has_caption:
                     figcaption = soup.new_tag("figcaption")
-                    figcaption.string = "Figure " + str(uuid.uuid4())
+                    token = str(uuid.uuid4())
+                    figcaption.string = "Figure " + token
                     parent.append(figcaption)
-                    FigureNumberer.generate(parent, figcaption.text.split(" ", 2)[1])
-                    
+                    FigureNumberer.generate(parent, token)
+
             for table in main_content.findAll("table"):
                 figure = soup.new_tag("figure")
                 table.insert_before(figure)
@@ -1881,9 +2189,10 @@ def after(response):
 
                 if not has_caption:
                     figcaption = soup.new_tag("figcaption")
-                    figcaption.string = "Table " + str(uuid.uuid4())
+                    token = str(uuid.uuid4())
+                    figcaption.string = "Table " + token
                     parent.append(figcaption)
-                    FigureNumberer.generate(parent, figcaption.text.split(" ", 2)[1])
+                    FigureNumberer.generate(parent, token)
 
         for element in soup.findAll(["h2", "h3", "h4", "h5", "h6", "figure"]):
             id_element = element
@@ -1911,7 +2220,7 @@ def after(response):
 
         def decorate_link(m):
             w = m.group(0)
-            if w in R.entity_definitions or w in R.pset_definitions:
+            if w.upper() in [k.upper() for k in R.entity_definitions.keys()] or w in R.pset_definitions or w in R.type_values:
                 if redis:
                     try:
                         redis.lpush("references", json.dumps([w, "", request.path]))
@@ -1920,10 +2229,10 @@ def after(response):
                 return "<a href='" + url_for("resource", resource=w) + "'>" + w + "</a>"
             else:
                 return w
-                
+
         html = ifcre.sub(decorate_link, html)
         soup = BeautifulSoup(html)
-        
+
         for elem in soup.findAll("figure"):
             if elem.figcaption:
                 is_image = elem.img
@@ -1931,17 +2240,18 @@ def after(response):
                     label, caption = map(str.strip, elem.figcaption.text.split("\u2014", 1))
                 elif elem.img:
                     label = elem.figcaption.text.strip()
-                    caption = elem.img.get('alt', '').strip()
+                    caption = elem.img.get("alt", "").strip()
                 else:
                     continue
                 if redis:
                     try:
-                        redis.lpush("figures" if is_image else "tables", json.dumps([caption or 'unnamed', label, request.path]))
+                        redis.lpush(
+                            "figures" if is_image else "tables", json.dumps([caption or "unnamed", label, request.path])
+                        )
                     except ConnectionError:
                         pass
-        
-        response.data = str(soup)
 
+        response.data = str(soup)
 
     return response
 
@@ -1949,10 +2259,10 @@ def after(response):
 @app.route(make_url("index.htm"))
 def get_index():
     items = [
-        {"number": "", "title": f"Listing of {x}", "url": make_url(f"listing-{x}.html")} \
+        {"number": "", "title": f"Listing of {x}", "url": make_url(f"listing-{x}.html")}
         for x in "references,figures,tables".split(",")
     ]
-    return render_template("annex-b.html", base=base, navigation=get_navigation(), items=items, title="Index")
+    return render_template("index.html", base=base, is_iso=is_iso, navigation=get_navigation(), items=items, title="Index")
 
 
 @app.route(make_url("listing-<any(references,figures,tables):kind>.html"))
@@ -1960,20 +2270,35 @@ def get_index_index(kind):
     items = getattr(R, f"listing_{kind}")
     if kind == "references":
         prefix = make_url("lexical/")
+
         def reverse_engineer_url(s):
             if s.startswith(prefix):
-                return s[len(prefix):-4]
-        items = [{"number": k, "url": "", "title": " ".join(reverse_engineer_url(s['url']) for s in gs if reverse_engineer_url(s['url']))}\
-            for k, gs in itertools.groupby(items, operator.itemgetter('title'))]
-    return render_template("annex-b.html", base=base, navigation=get_navigation(), items=items, title=f"Listing of {kind}")
-    
+                return s[len(prefix) : -4]
+
+        items = [
+            {
+                "number": k,
+                "url": "",
+                "title": " ".join(reverse_engineer_url(s["url"]) for s in gs if reverse_engineer_url(s["url"])),
+            }
+            for k, gs in itertools.groupby(items, operator.itemgetter("title"))
+        ]
+    return render_template(
+        "index.html", base=base, is_iso=is_iso, navigation=get_navigation(), items=items, title=f"Listing of {kind}"
+    )
+
 
 if redis:
-    @app.route("/build_index", methods=['GET', 'POST'])
+
+    @app.route("/build_index", methods=["GET", "POST"])
     def build_index():
         for x in "references,figures,tables".split(","):
             with open(f"listing_{x}.json", "w") as f:
-                json.dump([{"number": p[1], "url": p[2], "title": p[0]} for p in \
-                    sorted(set(map(tuple, map(json.loads, redis.lrange(x, 0, -1)))))],
-                    f)
+                json.dump(
+                    [
+                        {"number": p[1], "url": p[2], "title": p[0]}
+                        for p in sorted(set(map(tuple, map(json.loads, redis.lrange(x, 0, -1)))))
+                    ],
+                    f,
+                )
         return "OK"

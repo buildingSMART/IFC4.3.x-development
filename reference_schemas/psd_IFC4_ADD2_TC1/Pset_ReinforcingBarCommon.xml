@@ -1,0 +1,213 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ifdguid="420f74163290409197c2bcb30f5541c1" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4" />
+  <Name>Pset_ReinforcingBarCommon</Name>
+  <Definition>Properties common to the definition of all occurrences of IfcReinforcingBar.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcReinforcingBar</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcReinforcingBar</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="d9c5cd9f0bb4453fb678181411558c5d">
+      <Name>Reference</Name>
+      <Definition>Reference ID for this specified type in this project (e.g. type 'A-1').</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcIdentifier" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Reference</NameAlias>
+        <NameAlias lang="ja-JP">参照記号</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">当プロジェクトにおけるこの指定型式のためのリファレンスID。（たとえは、'A-1'型)</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="7d7be887760d4fe3b1302963f7bccd8a">
+      <Name>Status</Name>
+      <Definition>Status of the element, predominately used in renovation or retrofitting projects. The status can be assigned to as "New" - element designed as new addition, "Existing" - element exists and remains, "Demolish" - element existed but is to be demolished,  "Temporary" - element will exists only temporary (like a temporary support structure).</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList />
+          <ConstantList>
+            <ConstantDef>
+              <Name>NEW</Name>
+              <Definition>element designed as new addition</Definition>
+              <NameAliases>
+                <NameAlias lang="en">New</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>EXISTING</Name>
+              <Definition>element exists and is to remain</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Existing</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>DEMOLISH</Name>
+              <Definition>element exists but is to be demolished</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Demolish</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>TEMPORARY</Name>
+              <Definition>element will exist only temporarily (such as a temporary support structure)</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Temporary</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Status</NameAlias>
+        <NameAlias lang="ja-JP">状態</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">要素（主にリノベーションまたは改修プロジェクトにおいて）の状態。 状態は、「新規(New)」－新しく追加される要素。「既存」－要素は存在し、かつ残りもの。「破壊」－要素は存在したが、廃棄されるもの。「一時的」－一時的に存在する要素（一時的にサポートしている構造のようなもの）。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="e6ad105049cb411ba58e97fb9eade51e">
+      <Name>NominalDiameter</Name>
+      <Definition>The nominal diameter defining the cross-section size of the reinforcing bar.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="d2837eec2e95439f97cceef7c80d6580">
+      <Name>BarLength</Name>
+      <Definition>The total length of the reinforcing bar. The total length of bended bars are calculated according to local standards with corrections for the bends.
+</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="002c10a549c44cd3a02a7d3a7cc3e726">
+      <Name>BarSpacing</Name>
+      <Definition>The spacing between bars if constant.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="b4b939846b424bbe898721fbff0d6c8e">
+      <Name>BarSurface</Name>
+      <Definition>Indicator for whether the bar surface is plain or textured.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList />
+          <ConstantList>
+            <ConstantDef>
+              <Name>PLAIN</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>TEXTURED</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>USERDEFINED</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTDEFINED</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="b89eecc8c2d445f3a26938ae697189aa">
+      <Name>BendingShapeCode</Name>
+      <Definition>Shape code per a standard like ACI 315, ISO 3766, or a similar standard.  It is presumed that a single standard for defining the bar bending is used throughout the project and that this standard is referenced from the &lt;em&gt;IfcProject&lt;/em&gt; object through the &lt;em&gt;IfcDocumentReference&lt;/em&gt; mechanism.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcIdentifier" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="766df352b926486a8cfae4e207790013">
+      <Name>BendingParameters</Name>
+      <Definition>If this mesh type is bent rather than planar, this attribute provides bending shape parameters. Their meaning is defined by the bending shape code and the respective standard.</Definition>
+      <PropertyType>
+        <TypePropertyListValue>
+          <ListValue>
+            <DataType type="IfcValue" />
+          </ListValue>
+        </TypePropertyListValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases />
+</PropertySetDef>

@@ -18,7 +18,7 @@ The central parameter of the kinematic perspective is lateral acceleration of th
 
 
 
-The traditional view is denoted by the geometric perspective in the context of the business terminology related IfcAlignment documentation. Before the availability of modern computers alignment design was performed using "traditional" drawing techniques. In the first phase of computerization this origin led to a representation in the x,y space first and a check of safety related properties in a second step. This can still be seen in regulations which have been put into effect 1980 or earlier. Of course designs which have been produced on basis of these regulations reflect the "good enough" attitude in the precision of the documentation. 
+The traditional view is denoted by the geometric perspective in the context of the business terminology related IfcAlignment documentation. Before the availability of modern computers alignment design was performed using "traditional" drawing techniques. In the first phase of computerization this origin led to a representation in the x,y space first and a check of safety related properties in a second step. This can still be seen in regulations which have been put into effect 1980 or earlier. Of course designs which have been produced on basis of these regulations reflect the "good enough" attitude in the precision of the documentation.
 
 In a later phase an increasing importance of the kinematic perspective can be observed. Here precise control of the lateral acceleration (horizontal and cant layout) and vertical acceleration (vertical layout) became prevalent. Designers started to use high performance transition bends especially in high speed scenarios. In the kinematic perspective precise curvature fitting between consecutive segments needs to be better than in the "good enough" approach of traditional geometric perspective. Central terms are e.g. "jerks", "theoretical cant" or "cant deficiency".
 
@@ -26,10 +26,11 @@ In a later phase an increasing importance of the kinematic perspective can be ob
 
 For each horizontal alignment segment with a known curvature formula a generic method to calculate segment intrinsic coordinates exists.
 
+$$\displaylines{ \varphi(s) = \int d \varphi = \int \kappa(s) \ d s \\\\
+x(s) = \int cos \ \varphi(s) \ d s = \int cos( \int \kappa(s) \ d s \ ) d s \\\\
+y(s) = \int sin \ \varphi(s) \ d s = \int \sin( \int \kappa(s) \ d s\ ) d s }$$
 
-!["Double integration"](../../figures/ifcalignmenthorizontalsegmenttypeenum-curvature2coord.png "Figure 1 &mdash; Double integration of curvature yielding intrinsic coordinates")
-
->NOTE:&nbsp;While it is possible to apply the generic calculation also for trivial cases like LINE or CIRCULARARC it is much more efficient to use available formulas.
+> NOTE While it is possible to apply the generic calculation also for trivial cases like LINE or CIRCULARARC it is much more efficient to use available formulas.
 
 **Word of warning**
 
@@ -37,7 +38,7 @@ For each horizontal alignment segment with a known curvature formula a generic m
 
 **Recommendation**
 
-Check the relevant regulations for the network in question. Alignment designs as such are very stable over the lifetime of the road or track. Especially for old designs quality and precision of available documentation has to be checked very carefully. A clear understanding of limitations should be established before implementing automated data flows between high precision BIM environments and legacy documentation systems. This applies both to legacy, central databases and to legacy, individual documents. 
+Check the relevant regulations for the network in question. Alignment designs as such are very stable over the lifetime of the road or track. Especially for old designs quality and precision of available documentation has to be checked very carefully. A clear understanding of limitations should be established before implementing automated data flows between high precision BIM environments and legacy documentation systems. This applies both to legacy, central databases and to legacy, individual documents.
 
 **Used Symbols and their meaning**
 
@@ -66,38 +67,42 @@ The origin of an intrinsic coordinate system is the start of the segment. The di
 In the geometry perspective it denotes a straight connection between two points. In the dynamic perspective, it denotes a segment with a curvature with a value of 0. This means that no lateral acceleration acts on the moving vehicle.
 
 **Base formula (Curvature) **
-!["Horizontal line segment"](../../figures/ifcalignmenthorizontalsegmenttypeenum-line.png "Figure 1 &mdash; Curvature for horizontal straight line segment")
+
+$$ \kappa=0 $$
 
 ### CIRCULARARC
 In the geometric perspective, it denotes a connection between two points that follows a circular path. In the dynamic perspective, it denotes a segment with constant lateral acceleration on the moving vehicle, i.e. constant curvature.
 
 **Base formula (Curvature) **
-!["Circular arc segment"](../../figures/ifcalignmenthorizontalsegmenttypeenum-circulararc.png "Figure 1 &mdash; Curvature for horizontal circular segment")
+
+$$ \kappa = const, \kappa <> 0 $$
 
 ### CLOTHOID
-In the geometric perspective, a clothoid denotes a connection between two points where the radius of curvature changes along the segment at a constant rate. The clothoid was an early achievement of geometry, also known as Euler's spiral or Cornu's spiral. It became very popular in road and rail design even before the widespread availability of computers because of the availability of tabulations of the normalized clothoid. Proper application of the so called clothoid constant provided fast solutions for all relevant parameters necessary to integrate clothoid segments between two consecutive segments with constant curvature. In most cases the clothoid smooths the curvature between a straight line and a ciruclar arc. <br/>
+In the geometric perspective, a clothoid denotes a connection between two points where the radius of curvature changes along the segment at a constant rate. The clothoid was an early achievement of geometry, also known as Euler's spiral or Cornu's spiral. It became very popular in road and rail design even before the widespread availability of computers because of the availability of tabulations of the normalized clothoid. Proper application of the so called clothoid constant provided fast solutions for all relevant parameters necessary to integrate clothoid segments between two consecutive segments with constant curvature. In most cases the clothoid smooths the curvature between a straight line and a circular arc. <br/>
 
 In the dynamic perspective, it denotes a segment with constant rate of lateral acceleration change induced by the curvature. The kinematic properties of the clothoid both reduce the exerted forces on the track by a train, improve the travel experience of train passengers and also reduce the stress of a car driver by avoiding sudden movements of the steering wheel.<br>
 
-The kinematic advantages of the clothoid as a smoothing segment are true also for all the other transition bends currently in use. 
+The kinematic advantages of the clothoid as a smoothing segment are true also for all the other transition bends currently in use.
 
 **Base formula (Curvature)**
-!["Clothoid transition segment"](../../figures/ifcalignmenthorizontalsegmenttypeenum-clothoid.png "Figure 1 &mdash; Curvature for horizontal Clothoid transition segment")
+
+$$ \displaylines{ \xi = \frac{s}{L} \\\\
+\kappa(s) = \kappa_{1} + \xi  \Delta \kappa }$$
 
 ### CUBIC
 In IFC CUBIC denotes a transition segment where x and y coordinates obey a cubic formula.
-<br/><br/>
+
 **General formula**
-!["Cubic"](../../figures/ifcalignmenthorizontalsegmenttypeenum-cubic_general.png "Figure 1 &mdash; General formula for cubic")</Documentation>
-<br/>
 
-It was discovered very early that setting **a** to "1&nbsp;/&nbsp;6RL" and **b**, **c** and **d** to 0 yields a good enough approximation of the clothoid in many situations.
-<br/><br/>
+$$ y = a \cdot x^3 + b \cdot x^2 + c \cdot x + d $$
+
+It was discovered very early that setting **a** to "1 / 6RL" and **b**, **c** and **d** to 0 yields a good enough approximation of the clothoid in many situations.
+
 **Cubic formula for alignment**
-!["Cubic transition"](../../figures/ifcalignmenthorizontalsegmenttypeenum-cubic.png "Figure 2 &mdash; Alignment formula for cubic")</Documentation>
-<br/>
 
-Since the manual computation of cubics was considerable easier compared to the theoretically sound clothoid, cubic transistions became very popular as "good enough" replacement curves.
+$$ y = \frac{x^3}{6 \cdot R \cdot L} $$
+
+Since the manual computation of cubics was considerable easier compared to the theoretically sound clothoid, cubic transitions became very popular as "good enough" replacement curves.
 
 Cubic transition bends can still be found in many legacy alignments based on earlier design regulations. There also exist regulations containing cubic transitions for new designs.
 
@@ -110,37 +115,60 @@ The Helmert curve or Helmert transition is an early example of a high performanc
 
 In the geometry perspective the Helmert segment is the assembly of two parts of same length which mirror the same change in radius of curvature. A rough approximation is known as the biquadratic parabola.
 
->NOTE&nbsp; also referred to as Schramm curve.
+>NOTE  also referred to as Schramm curve.
 
 **Base formula (Curvature)**
-!["Helmert curve transition segment"](../../figures/ifcalignmenthorizontalsegmenttypeenum-helmertcurve.png "Figure 1 &mdash; Curvature for horizontal Helmert transition segment")
+
+$$ \displaylines{
+    \xi = \frac{s}{L} \\\\
+    \text{First half: } \kappa(s) = \kappa_{1} + 2\xi^2  \Delta \kappa \\\\
+    \text{Second half: } \kappa(s) = \kappa_{1} + ( 1 -  2  (1 - \xi)^2)  \Delta \kappa
+} $$
 
 ### BLOSSCURVE
 The Bloss transition is a more recent form of a high performance transition bend. Proposed in 1936. it is now in use in several railway networks. There is no established rough geometric approximation.
 
->NOTE&nbsp;Further reading: Constantin Ciobanu, BLOSS TRANSITION – A SHORT DESIGN GUIDE
+>NOTE Further reading: Constantin Ciobanu, BLOSS TRANSITION – A SHORT DESIGN GUIDE
 
 **Base formula (Curvature)**
-!["Bloss curve transition segment"](../../figures/ifcalignmenthorizontalsegmenttypeenum-blosscurve.png "Figure 1 &mdash; Curvature for horizontal Bloss curve transition segment")
+
+$$ \displaylines{
+    \xi = \frac{s}{L} \\\\
+    \kappa(s) = \kappa_{1} + (3 - 2\xi) \   \xi^2 \  \Delta \kappa
+} $$
 
 ### COSINECURVE
 Cosine transition. The cosine transition was already discussed in 1868. Width the advent of high-speed rail it was applied  in production designs. It is e.g. installed on Japanese high speed lines
 
 **Base formula (Curvature)**
-!["Cosine curve transition segment"](../../figures/ifcalignmenthorizontalsegmenttypeenum-cosinecurve.png "Figure 1 &mdash; Curvature for horizontal Cosine curve transition segment")
+
+$$ \displaylines{
+    \xi = \frac{s}{L} \\\\
+    \kappa(s) = \kappa_{1} + \frac{1}{2}(1- cos(\pi\xi) \  ) \Delta \kappa
+} $$
 
 ### SINECURVE
 Sine transition or sinusoidal transition was suggested 1937. The curvature function is built up of one period of a sine function. The sine curve is characterised by particularly advantageous smoothing properties at the end points. Compared to the clothoid, it is twice as long.
 
->NOTE&nbsp; also referred to as Klein curve.
+>NOTE  also referred to as Klein curve.
 
 **Base formula (Curvature)**
-!["Sine curve transition segment"](../../figures/ifcalignmenthorizontalsegmenttypeenum-sinecurve.png "Figure 1 &mdash; Curvature for horizontal Sine curve transition segment")
+
+$$ \displaylines{
+    \xi = \frac{s}{L} \\\\
+    \kappa(s) = \kappa_{1} + ( \xi - \frac{1}{2\pi}sin(2\pi\xi) \  ) \Delta \kappa
+} $$
 
 ### VIENNESEBEND
 The Viennese Bend (R) is an innovative track geometry transition element. Instead of analyzing the vehicle movement at the track plane the optimization efforts target a gravity center line at a defined height above the rails.
 
-As a consequence the path of the horizontal alignment center line is also influenced by the cant layout. The first part of the curvature formula is assembled from the basic function like the other transition bends. The additional term contains the bank angle "&psi;" and the gravity center line height "h" and is unique to the Viennes Bend (R). This term causes a small movement contrary to the main direction in the x,y layout. 
+As a consequence the path of the horizontal alignment center line is also influenced by the cant layout. The first part of the curvature formula is assembled from the basic function like the other transition bends. The additional term contains the bank angle "&psi;" and the gravity center line height "h" and is unique to the Viennes Bend (R). This term causes a small movement contrary to the main direction in the x,y layout.
 
 **Curvature formula**
-!["Viennese bend (R) transition segment"](../../figures/ifcalignmenthorizontalsegmenttypeenum-viennesebend.png "Figure 1 &mdash; Curvature for horizontal Viennese bend (R) transition segment")
+
+$$ \displaylines{
+    \xi = \frac{s}{L} \\\\
+    \psi(s) = \psi_1 + \Delta\psi \cdot \xi^4 \cdot (35-84\xi + 70\xi^2-20\xi^3) \\\\
+    \kappa(s) = \kappa_{1} +  ( \Delta \kappa  \cdot \xi^2  \cdot (35-84\xi + 70\xi^2-20\xi^3) \\\\
+    \hspace{3em}   -420  \cdot \frac{h \Delta\psi}{L^2}  \cdot (1 - 4\xi + 5\xi^2 - 2\xi^3)) \cdot \xi^2
+} $$

@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="9b51d780d20f11e1800000215ad4efdf" templatetype="PSET_OCCURRENCEDRIVEN" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x1" />
+  <Name>Pset_TankOccurrence</Name>
+  <Definition>Properties that relate to a tank. Note that a partial tank may be considered as a compartment within a compartmentalized tank.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcTank</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcTank</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="a0af2200d20f11e1800000215ad4efdf">
+      <Name>TankComposition</Name>
+      <Definition>Defines the level of element composition where.
+
+COMPLEX: A set of elementary units aggregated together to fulfill the overall  required purpose.
+ELEMENT: A single elementary unit that may exist of itself or as an aggregation of partial units..
+PARTIAL: A partial elementary unit.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_TankComposition">
+            <EnumItem>COMPLEX</EnumItem>
+            <EnumItem>ELEMENT</EnumItem>
+            <EnumItem>PARTIAL</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>COMPLEX</Name>
+              <NameAliases>
+                <NameAlias lang="en">Complex</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">A set of elementary units aggregated together to fulfill the overall  required purpose</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>ELEMENT</Name>
+              <NameAliases>
+                <NameAlias lang="en">Element</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">A single elementary unit that may exist of itself or as an aggregation of partial units</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>PARTIAL</Name>
+              <NameAliases>
+                <NameAlias lang="en">Partial</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">A partial elementary unit</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases />
+              <DefinitionAliases />
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Tank Composition</NameAlias>
+        <NameAlias lang="ja-JP">水槽構成</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">定義　構成要素のレベル　　　　　　　　　　　　　　　　　　　　　　　複合：A　全般的に要求された目的を達成するために集められた基本ユニットのセット　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　要素：A それ自身あるいは部分的ユニットの集まりとしてある単一基本ユニット　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　部分的：A 部分的な基本単位</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="ad337a80d20f11e1800000215ad4efdf">
+      <Name>HasLadder</Name>
+      <Definition>Indication of whether the tank is provided with a ladder (set TRUE) for access to the top. If no ladder is provided then value is set FALSE.
+
+Note: No indication is given of the type of ladder (gooseneck etc.)</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Has Ladder</NameAlias>
+        <NameAlias lang="ja-JP">梯子有り</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">上部を点検するための梯子(TRUEに設定）をタンクに備えているかどうかの表示　もし、梯子が備え付けられていなければ値はFALSEと設定される。　　注：表示がない場合は梯子のタイプが与えられる（グースネック他）</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="b3c1f200d20f11e1800000215ad4efdf">
+      <Name>HasVisualIndicator</Name>
+      <Definition>Indication of whether the tank is provided with a visual indicator (set TRUE) that shows the water level in the tank. If no visual indicator is provided then value is set FALSE.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcBoolean" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Has Visual Indicator</NameAlias>
+        <NameAlias lang="ja-JP">目視型表示器有り</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">タンクの水位を示す目視型表示器（TRUEに設定)が備えつけられているかどうかの表示。もし目視型表示器が備えつけられていなければ、値はFALSEと設定される。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">水槽関連のプロパティ　　部分的な水槽は仕切られた水槽内の区分として考慮されることに注意</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

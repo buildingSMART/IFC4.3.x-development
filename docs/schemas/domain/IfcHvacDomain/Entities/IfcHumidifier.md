@@ -2,7 +2,7 @@
 
 A humidifier is a device that adds moisture into the air.
 
-> HISTORY&nbsp; New entity in IFC4
+> HISTORY  New entity in IFC4
 
 { .note}
 >
@@ -22,18 +22,39 @@ Either there is no humidifier type object associated, i.e. the _IsTypedBy_ inver
 
 ## Concepts
 
-### Material
+### Material Set
 
+
+
+#### Casing
+
+Material from which the casing is constructed.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_WaterIn_DOMESTICCOLDWATER
+
+Incoming water.
+
+#### SINK_AirIn_AIRCONDITIONING
+
+Incoming air.
+
+#### SOURCE_AirOut_AIRCONDITIONING
+
+Outgoing air saturated with vapor.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

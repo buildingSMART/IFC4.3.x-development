@@ -2,7 +2,7 @@
 
 An _IfcWorkPlan_ represents work plans in a construction or a facilities management project.
 
-> HISTORY&nbsp; New entity in IFC2.0
+> HISTORY  New entity in IFC2.0
 
 A work plan contains a set of work schedules for different purposes (including construction and facilities management). Contained work schedules are defined through the _IfcRelAggregates_ relationship. Through inheritance from _IfcWorkControl_ it is also possible to define references to activities (for example, _IfcTask_) and resources used in the work plan.
 
@@ -13,47 +13,30 @@ Figure 1 shows the backbone structure of a work plan that defines (1) contained 
 If an assigned _IfcTask_ is a root-level task, such task must be declared on the _IfcProject_ using the _IfcRelDeclares_ relationship.
 
 ```
-digraph dot_figure {
-    subgraph cluster_0 {
-        label = "Project"
+digraph dot_neato {
+	IfcProject[pos="0,0!"];
+	IfcRelDeclares[pos="0,-70!"];
+        IfcWorkPlan[pos="0,-140!"];
+        IfcRelAggregates[pos="-100,-210!"];
+        IfcRelAssignsToControl[pos="100,-210!"];
+	IfcWorkSchedule[pos="-100,-280!"];
+	IfcTask[pos="100,-280!"];
 
-	IfcProject;
-	IfcRelDeclares;
 	IfcProject -> IfcRelDeclares [label="RelatingContext"];
-    }
-
-    subgraph cluster_1 {
-        label = "Work Plan"
-
-        IfcWorkPlan;
-        IfcRelAggregates;
-        IfcRelAssignsToControl;
-
         IfcWorkPlan -> IfcRelAggregates [label="RelatingObject"]
         IfcWorkPlan -> IfcRelAssignsToControl [label="RelatingControl"]
         IfcRelDeclares -> IfcWorkPlan [label="RelatedDefinitions"]
-    }
-
-    subgraph cluster_2 {
-	label = "Work Schedules"
-
-	IfcWorkSchedule;
 	IfcRelAggregates -> IfcWorkSchedule [label="RelatedObjects"]
-    }
-
-    subgraph cluster_3 {
-	label = "Plan Summary Task"
-
-	IfcTask;
 	IfcRelAssignsToControl -> IfcTask [label="RelatedObjects"]
-    }
 }
 ```
+
+Figure PROJECTDECLARATION &mdash; How projects can declare work plans, which in turn contain tasks or schedules
 
 ## Attributes
 
 ### PredefinedType
-Identifies the predefined types of a work plan from which 
+Identifies the predefined types of a work plan from which
     the type required may be set.
 
 ## Formal Propositions
@@ -63,6 +46,7 @@ The attribute ObjectType must be asserted when the value of the IfcWorkPlanTypeE
 
 ## Concepts
 
-### Property Sets
+### Property Sets for Objects
+
 
 

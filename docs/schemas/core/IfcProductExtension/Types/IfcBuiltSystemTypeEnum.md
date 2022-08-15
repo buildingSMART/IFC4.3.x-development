@@ -18,8 +18,9 @@ A track circuit is an electric circuit of which the rails of a track section for
 Note: definition from IEC 60050-82.
 
 ### EROSIONPREVENTION
-A grouping of elements into a built system for preventing unwanted relocation of material particles in earthworks slopes or rock faces. 
+A grouping of elements into a built system for preventing unwanted relocation of material particles in earthworks slopes or rock faces.
 Typical types of erosion prevention include:
+
 * Planting
 * Solid
 * Framework
@@ -45,6 +46,14 @@ System of all transport elements in a facility that enable the transport of peop
 
 ### PRESTRESSING
 System of elements providing pre-stressing to the structure, including typically manufactured products such as tendons, anchorages (active, dead, coupling), ducts, vents and deviators, and in-situ concrete segments, tendon spacers, blisters and additional reinforcements.
+
+### RAILWAYLINE
+
+A set of functional tracks with explicit terminals. It is usually composed of a set of tracks with continuous track parts and alignments.
+
+### RAILWAYTRACK
+
+Railway track system. It is usually composed of continuous sequences of track parts and alignments.
 
 ### USERDEFINED
 User-defined type

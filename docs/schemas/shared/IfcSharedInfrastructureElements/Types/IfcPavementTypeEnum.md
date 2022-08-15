@@ -5,7 +5,7 @@ This container defines the different predefined types of course elements that ca
 ## Items
 
 ### FLEXIBLE
-Flexible favements, including less riged pavements like rubber.
+Flexible pavements, including less rigid pavements like rubber.
 
 ### RIGID
 Pavement substantially constructed of cement concrete.

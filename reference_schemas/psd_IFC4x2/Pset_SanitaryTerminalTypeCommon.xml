@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="aa7e5880d20211e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x2" />
+  <Name>Pset_SanitaryTerminalTypeCommon</Name>
+  <Definition>Common properties for sanitary terminals.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcSanitaryTerminal</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcSanitaryTerminal</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="aeaa7600d20211e1800000215ad4efdf">
+      <Name>Reference</Name>
+      <Definition>Reference ID for this specified type in this project (e.g. type 'A-1'), provided, if there is no classification reference to a recognized classification system used.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcIdentifier" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Reference</NameAlias>
+        <NameAlias lang="ja-JP">参照記号</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">使用される認識分類システムで分類基準がない場合、プロジェクトで指定された型（タイプ'Ａ-1'など）で提供されるレファレンスID。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="1b1c71bc34194116982bbacb563822d6">
+      <Name>Status</Name>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_ElementStatus">
+            <EnumItem>NEW</EnumItem>
+            <EnumItem>EXISTING</EnumItem>
+            <EnumItem>DEMOLISH</EnumItem>
+            <EnumItem>TEMPORARY</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>NEW</Name>
+              <Definition>element designed as new addition</Definition>
+              <NameAliases>
+                <NameAlias lang="en">New</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>EXISTING</Name>
+              <Definition>element exists and is to remain</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Existing</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>DEMOLISH</Name>
+              <Definition>element exists but is to be demolished</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Demolish</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>TEMPORARY</Name>
+              <Definition>element will exist only temporarily (such as a temporary support structure)</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Temporary</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="36bde0df4e7b4ff4a9b7b5191c5e82f7">
+      <Name>NominalLength</Name>
+      <Definition>Nominal or quoted length of the object.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="6cf48d3d336e4eb0acdf9bdf68db0d60">
+      <Name>NominalWidth</Name>
+      <Definition>Nominal or quoted width of the object.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="bb516e7b73f84dcd85b953f3b61f0f22">
+      <Name>NominalDepth</Name>
+      <Definition>Nominal or quoted depth of the object.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="93112095298e44d29aea7995d82eb202">
+      <Name>Color</Name>
+      <Definition>Color selection for this object.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">衛生器具の共通プロパティを設定。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

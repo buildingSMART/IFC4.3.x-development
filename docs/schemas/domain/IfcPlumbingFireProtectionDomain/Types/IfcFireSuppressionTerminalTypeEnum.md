@@ -2,7 +2,7 @@
 
 The _IfcFireSuppressionTerminalTypeEnum_ defines the range of different types of fire suppression terminal that can be specified.
 
-> HISTORY&nbsp; New type in IFC2x2.
+> HISTORY  New type in IFC2x2.
 
 ## Items
 
@@ -20,12 +20,13 @@ Device for sprinkling water from a pipe under pressure over an area.
 
 ### SPRINKLERDEFLECTOR
 Device attached to a sprinkler to deflect the water flow into a spread pattern to cover the required area.
+> IFC4.3.0.0 DEPRECATION The value is deprecated and shall no longer be used.
 
 ### FIREMONITOR
-
+Fire monitor.
 
 ### USERDEFINED
 User-defined type
 
 ### NOTDEFINED
-Underined type.
+Undefined type.

@@ -1,0 +1,647 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="1e752c80d21411e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x2" />
+  <Name>Pset_ValveTypeCommon</Name>
+  <Definition>Valve type common attributes.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcValve</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcValve</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="2208b380d21411e1800000215ad4efdf">
+      <Name>Reference</Name>
+      <Definition>Reference ID for this specified type in this project (e.g. type 'A-1').</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcIdentifier" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Reference</NameAlias>
+        <NameAlias lang="ja-JP">参照記号</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">このプロジェクトにおける参照記号(例：A-1)。分類コードではなく内部で使用されるプロジェクトタイプとして使用されるもの。</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="103808cf5fe64d589e7317c7493147b5">
+      <Name>Status</Name>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_ElementStatus">
+            <EnumItem>NEW</EnumItem>
+            <EnumItem>EXISTING</EnumItem>
+            <EnumItem>DEMOLISH</EnumItem>
+            <EnumItem>TEMPORARY</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>NEW</Name>
+              <Definition>element designed as new addition</Definition>
+              <NameAliases>
+                <NameAlias lang="en">New</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>EXISTING</Name>
+              <Definition>element exists and is to remain</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Existing</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>DEMOLISH</Name>
+              <Definition>element exists but is to be demolished</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Demolish</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>TEMPORARY</Name>
+              <Definition>element will exist only temporarily (such as a temporary support structure)</Definition>
+              <NameAliases>
+                <NameAlias lang="en">Temporary</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases />
+      <DefinitionAliases />
+    </PropertyDef>
+    <PropertyDef ifdguid="27fe9480d21411e1800000215ad4efdf">
+      <Name>ValvePattern</Name>
+      <Definition>The configuration of the ports of a valve according to either the linear route taken by a fluid flowing through the valve or by the number of ports where:
+
+SINGLEPORT: Valve that has a single entry port from the system that it serves, the exit port being to the surrounding environment.
+ANGLED_2_PORT: Valve in which the direction of flow is changed through 90 degrees.
+STRAIGHT_2_PORT: Valve in which the flow is straight through.
+STRAIGHT_3_PORT: Valve with three separate ports.
+CROSSOVER_4_PORT: Valve with 4 separate ports.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_ValvePattern">
+            <EnumItem>SINGLEPORT</EnumItem>
+            <EnumItem>ANGLED_2_PORT</EnumItem>
+            <EnumItem>STRAIGHT_2_PORT</EnumItem>
+            <EnumItem>STRAIGHT_3_PORT</EnumItem>
+            <EnumItem>CROSSOVER_4_PORT</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>SINGLEPORT</Name>
+              <NameAliases>
+                <NameAlias lang="en">Single Port</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Valve that has a single entry port from the system that it serves, the exit port being to the surrounding environment</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>ANGLED_2_PORT</Name>
+              <NameAliases>
+                <NameAlias lang="en">Angled 2 Port</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Valve in which the direction of flow is changed through 90 degrees</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>STRAIGHT_2_PORT</Name>
+              <NameAliases>
+                <NameAlias lang="en">Straight 2 Port</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Valve in which the flow is straight through</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>STRAIGHT_3_PORT</Name>
+              <NameAliases>
+                <NameAlias lang="en">Straight 3 Port</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Valve with three separate ports</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>CROSSOVER_4_PORT</Name>
+              <NameAliases>
+                <NameAlias lang="en">Crossover 4 Port</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Valve with 4 separate ports</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Valve Pattern</NameAlias>
+        <NameAlias lang="ja-JP">弁の形</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">単一ポートSINGLEPORT()=システムで単一入口ポートを持ち、出口ポートは周囲環境である　2ポート直角型(ANGLED_2_PORT)＝中で流れ方向が完全に90度変わる弁　2ポート直行型(STRAIGHT_2_PORT)＝中で流れが真っ直ぐな弁　3ポート直行型(STRAIGHT_3_PORT)＝3つの別々のポートを持つ　4ポート交差型(CROSSOVER_4_PORT)＝4つの別々のポートを持つ</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="38167400d21411e1800000215ad4efdf">
+      <Name>ValveOperation</Name>
+      <Definition>The method of valve operation where:
+
+DROPWEIGHT: A valve that is closed by the action of a weighted lever being released, the weight normally being prevented from dropping by being held by a wire, the closure normally being made by the action of heat on a fusible link in the wire
+FLOAT: A valve that is opened and closed by the action of a float that rises and falls with water level. The float may be a ball attached to a lever or other mechanism
+HYDRAULIC: A valve that is opened and closed by hydraulic actuation
+LEVER: A valve that is opened and closed by the action of a lever rotating the gate within the valve.
+LOCKSHIELD: A valve that requires the use of a special lockshield key for opening and closing, the operating mechanism being protected by a shroud during normal operation.
+MOTORIZED: A valve that is opened and closed by the action of an electric motor on an actuator
+PNEUMATIC: A valve that is opened and closed by pneumatic actuation
+SOLENOID: A valve that is normally held open by a magnetic field in a coil acting on the gate but that is closed immediately if the electrical current generating the magnetic field is removed. 
+SPRING: A valve that is normally held in position by the pressure of a spring on a plate but that may be caused to open if the pressure of the fluid is sufficient to overcome the spring pressure. 
+THERMOSTATIC: A valve in which the ports are opened or closed to maintain a required predetermined temperature.
+WHEEL: A valve that is opened and closed by the action of a wheel moving the gate within the valve.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_ValveOperation">
+            <EnumItem>DROPWEIGHT</EnumItem>
+            <EnumItem>FLOAT</EnumItem>
+            <EnumItem>HYDRAULIC</EnumItem>
+            <EnumItem>LEVER</EnumItem>
+            <EnumItem>LOCKSHIELD</EnumItem>
+            <EnumItem>MOTORIZED</EnumItem>
+            <EnumItem>PNEUMATIC</EnumItem>
+            <EnumItem>SOLENOID</EnumItem>
+            <EnumItem>SPRING</EnumItem>
+            <EnumItem>THERMOSTATIC</EnumItem>
+            <EnumItem>WHEEL</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>DROPWEIGHT</Name>
+              <NameAliases>
+                <NameAlias lang="en">Drop Weight</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">A valve that is closed by the action of a weighted lever being released, the weight normally being prevented from dropping by being held by a wire, the closure normally being made by the action of heat on a fusible link in the wire</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>FLOAT</Name>
+              <NameAliases>
+                <NameAlias lang="en">Float</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">A valve that is opened and closed by the action of a float that rises and falls with water level</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>HYDRAULIC</Name>
+              <NameAliases>
+                <NameAlias lang="en">Hydraulic</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">A valve that is opened and closed by hydraulic actuation</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>LEVER</Name>
+              <NameAliases>
+                <NameAlias lang="en">Lever</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">A valve that is opened and closed by the action of a lever rotating the gate within the valve</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>LOCKSHIELD</Name>
+              <NameAliases>
+                <NameAlias lang="en">Lock Shield</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">A valve that requires the use of a special lockshield key for opening and closing, the operating mechanism being protected by a shroud during normal operation</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>MOTORIZED</Name>
+              <NameAliases>
+                <NameAlias lang="en">Motorized</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">A valve that is opened and closed by the action of an electric motor on an actuator</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>PNEUMATIC</Name>
+              <NameAliases>
+                <NameAlias lang="en">Pneumatic</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">A valve that is opened and closed by pneumatic actuation</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>SOLENOID</Name>
+              <NameAliases>
+                <NameAlias lang="en">Solenoid</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">A valve that is normally held open by a magnetic field in a coil acting on the gate but that is closed immediately if the electrical current generating the magnetic field is removed</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>SPRING</Name>
+              <NameAliases>
+                <NameAlias lang="en">Spring</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">A valve that is normally held in position by the pressure of a spring on a plate but that may be caused to open if the pressure of the fluid is sufficient to overcome the spring pressure</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>THERMOSTATIC</Name>
+              <NameAliases>
+                <NameAlias lang="en">Thermostatic</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">A valve in which the ports are opened or closed to maintain a required predetermined temperature</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>WHEEL</Name>
+              <NameAliases>
+                <NameAlias lang="en">Wheel</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">A valve that is opened and closed by the action of a wheel moving the gate within the valve</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Valve Operation</NameAlias>
+        <NameAlias lang="ja-JP">弁操作</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">The method of valve operation where:弁操作方法は以下の通り：
+おもり(DROPWEIGHT)＝おもりを付けられたレバーが外される動作で閉まる弁　浮き(FLOAT)＝水位と共に上下する浮きの動作で開閉する弁。浮きはレバーに付けたボール又は他の機構　水力(HYDRAULIC)＝水力アクチュエータで開閉する弁　レバー(LEVER)＝弁内のゲートを回転させるレバーの動作で開閉する弁　ロックシールド(LOCKSHIELD)＝開閉のために特別のロックシールドキーの使用を要求する弁。操作機構は通常の操作の間は覆いで保護されている　電動化(MOTORIZED)＝アクチュエータに付けられた電動モータの動作で開閉する弁　空気圧(PNEUMATIC)＝圧縮空気で動くアクチュエータで開閉する弁　筒型コイル(SOLENOID)＝ゲートに付けられ作動しているコイルの磁界で通常は開に保たれている弁。しかし、もし磁界を発生している電流が消されたらただちに閉まる　ばね(SPRING)＝板に付けられたばねの圧力で、通常は位置を保たれている弁。しかし、もし流体の圧力が、ばねの圧力より十分大きければ開いてしまう。　自動温度調節(THERMOSTATIC)＝前もって決められた要求温度を維持するために、中のポートが開閉する弁　ハンドル(WHEEL)＝弁内のゲートを動かすハンドルの動作で開閉する弁</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="51b7bb80d21411e1800000215ad4efdf">
+      <Name>ValveMechanism</Name>
+      <Definition>The mechanism by which the valve function is achieved where:
+
+BALL: Valve that has a ported ball that can be turned relative to the body seat ports.
+BUTTERFLY: Valve in which a streamlined disc pivots about a diametric axis.
+CONFIGUREDGATE: Screwdown valve in which the closing gate is shaped in a configured manner to have a more precise control of pressure and flow change across the valve.
+GLAND: Valve with a tapered seating, in which a rotatable plug is retained by means of a gland and gland packing.
+GLOBE: Screwdown valve that has a spherical body.
+LUBRICATEDPLUG: Plug valve in which a lubricant is injected under pressure between the plug face and the body.
+NEEDLE: Valve for regulating the flow in or from a pipe, in which a slender cone moves along the axis of flow to close against a fixed conical seat.
+PARALLELSLIDE: Screwdown valve that has a machined plate that slides in formed grooves to form a seal.
+PLUG: Valve that has a ported plug that can be turned relative to the body seat ports.
+WEDGEGATE: Screwdown valve that has a wedge shaped plate fitting into tapered guides to form a seal.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_ValveMechanism">
+            <EnumItem>BALL</EnumItem>
+            <EnumItem>BUTTERFLY</EnumItem>
+            <EnumItem>CONFIGUREDGATE</EnumItem>
+            <EnumItem>GLAND</EnumItem>
+            <EnumItem>GLOBE</EnumItem>
+            <EnumItem>LUBRICATEDPLUG</EnumItem>
+            <EnumItem>NEEDLE</EnumItem>
+            <EnumItem>PARALLELSLIDE</EnumItem>
+            <EnumItem>PLUG</EnumItem>
+            <EnumItem>WEDGEGATE</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>BALL</Name>
+              <NameAliases>
+                <NameAlias lang="en">Ball</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Valve that has a ported ball that can be turned relative to the body seat ports</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>BUTTERFLY</Name>
+              <NameAliases>
+                <NameAlias lang="en">Butterfly</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Valve in which a streamlined disc pivots about a diametric axis</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>CONFIGUREDGATE</Name>
+              <NameAliases>
+                <NameAlias lang="en">Configured Gate</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Screwdown valve in which the closing gate is shaped in a configured manner to have a more precise control of pressure and flow change across the valve</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>GLAND</Name>
+              <NameAliases>
+                <NameAlias lang="en">Gland</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Valve with a tapered seating, in which a rotatable plug is retained by means of a gland and gland packing</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>GLOBE</Name>
+              <NameAliases>
+                <NameAlias lang="en">Globe</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Screwdown valve that has a spherical body</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>LUBRICATEDPLUG</Name>
+              <NameAliases>
+                <NameAlias lang="en">Lubricated Plug</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Plug valve in which a lubricant is injected under pressure between the plug face and the body</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NEEDLE</Name>
+              <NameAliases>
+                <NameAlias lang="en">Needle</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Valve for regulating the flow in or from a pipe, in which a slender cone moves along the axis of flow to close against a fixed conical seat</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>PARALLELSLIDE</Name>
+              <NameAliases>
+                <NameAlias lang="en">Parallel Slide</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Screwdown valve that has a machined plate that slides in formed grooves to form a seal</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>PLUG</Name>
+              <NameAliases>
+                <NameAlias lang="en">Plug</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Plug valve in which a lubricant is injected under pressure between the plug face and the body</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>WEDGEGATE</Name>
+              <NameAliases>
+                <NameAlias lang="en">Wedge Gate</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Screwdown valve that has a wedge shaped plate fitting into tapered guides to form a seal</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>OTHER</Name>
+              <NameAliases>
+                <NameAlias lang="en">(other)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is not listed.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>NOTKNOWN</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unknown)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value is unknown.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>UNSET</Name>
+              <NameAliases>
+                <NameAlias lang="en">(unset)</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en">Value has not been specified.</DefinitionAlias>
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Valve Mechanism</NameAlias>
+        <NameAlias lang="ja-JP">弁機構</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">機構により可能な弁機能は以下の通り：
+ボール弁(BALL valve)＝本体のシートポートに関連して回転できるポートボールを持つ弁　バタフライ弁(BUTTERFLY valve)＝直径軸あたりに流線型の円板の旋回軸のある弁　CONFIGUREDスクリュー弁(CONFIGUREDGATE Screwdown valve)＝閉鎖ゲートを持つねじ回し式弁。その弁は、弁を通過する時圧力と流量変更をより正確に制御できる方法で形づけられている　グランド弁(GLAND Valve)＝テーパーのついたシートを持った弁。その中に回転プラグがグランドとグランドパッキンによって保持されている　グローブスクリュー弁(GLOBE Screwdown valve)＝ 球形の本体を持つねじ回し式弁　滑プラグ弁(LUBRICATEDPLUG Plug valve)＝プラグ表面と本体との間の圧力を下げるために潤滑油が注入された弁　ニードル弁(NEEDLE Valve)＝管内外の流量を調節する弁。その中に固定した円錐形のシートを閉止ために、流れの軸に沿って動く細長いコーンを持っている　平行スライドスクリュー弁(PARALLELSLIDE Screwdown valve)＝機械加工されたプレートを持つねじ回し式弁。そのプレートはシールを形成するために溝の中を滑る　プラグ弁(PLUG Valve)＝本体のシートポートと関連して回転できる、ポートしたプラグを持つ弁　くさびゲートスクリュー弁(WEDGEGATE Screwdown valve)＝シールを形成するためにテーパーの付いたガイドの中をくさび状の板部品を持つねじ回し式弁</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="6a27d600d21411e1800000215ad4efdf">
+      <Name>Size</Name>
+      <Definition>The size of the connection to the valve (or to each connection for faucets, mixing valves, etc.).</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Size</NameAlias>
+        <NameAlias lang="ja-JP">サイズ</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">弁（又は、水栓、混合弁等の接続）接続サイズ</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="7875f200d21411e1800000215ad4efdf">
+      <Name>TestPressure</Name>
+      <Definition>The maximum pressure to which the valve has been subjected under test.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPressureMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Test Pressure</NameAlias>
+        <NameAlias lang="ja-JP">試験圧力</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">試験の時、掛けられる最高圧力</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="7e6bd300d21411e1800000215ad4efdf">
+      <Name>WorkingPressure</Name>
+      <Definition>The normally expected maximum working pressure of the valve.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPressureMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Working Pressure</NameAlias>
+        <NameAlias lang="ja-JP">運転圧力</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">バルブの通常予想される最高運転圧力</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="8461b400d21411e1800000215ad4efdf">
+      <Name>FlowCoefficient</Name>
+      <Definition>Flow coefficient (the quantity of fluid that passes through a fully open valve at unit pressure drop), typically expressed as the Kv or Cv value for the valve.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcReal" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Flow Coefficient</NameAlias>
+        <NameAlias lang="ja-JP">流出係数</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">流出係数（全開のバルブを通過する単位圧力損失当たりの流体の量）一般的にバルブのKv又はCv値で表される</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="8a579500d21411e1800000215ad4efdf">
+      <Name>CloseOffRating</Name>
+      <Definition>Close off rating.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPressureMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Close Off Rating</NameAlias>
+        <NameAlias lang="ja-JP">クローズオフレーティング</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">クローズオフレーティング</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">弁タイプ共通プロパティ属性設定。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

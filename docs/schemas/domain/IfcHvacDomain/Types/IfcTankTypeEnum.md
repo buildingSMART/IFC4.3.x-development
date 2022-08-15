@@ -2,7 +2,7 @@
 
 Enumeration defining the typical types of tanks.
 
-> HISTORY&nbsp; New enumeration in IFC2x2. BASIN and VESSEL added in IFC4.
+> HISTORY  New enumeration in IFC2x2. BASIN and VESSEL added in IFC4.
 
 ## Items
 
@@ -22,7 +22,7 @@ An open tank that is used for both storage and thermal expansion. A typical exam
 A closed container used for storing fluids or gases at a pressure different from the ambient pressure. A pressure vessel is typically rated by an authority having jurisdiction for the operational pressure.
 
 ### STORAGE
-An open or closed containter used for storing a fluid at ambient pressure and from which it can be supplied to the fluid distribution system. There are many examples of storage tanks, such as potable water storage tanks, fuel storage tanks, etc.
+An open or closed container used for storing a fluid at ambient pressure and from which it can be supplied to the fluid distribution system. There are many examples of storage tanks, such as potable water storage tanks, fuel storage tanks, etc.
 
 ### VESSEL
 An arbitrary closed tank type.

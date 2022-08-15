@@ -4,14 +4,14 @@ The _IfcBSplineCurve_ is a spline curve parameterized by spline functions.
 
 Figure 1 illustrates a B-spline curve.
 
-> NOTE&nbsp; Figure quoted from ISO 10303-42.
+> NOTE  Figure quoted from ISO 10303-42.
 
-!["control points"](../../../../figures/ifcbsplinecurve-fig1.gif "Figure 1 &mdash; B-spline curve")
+![control points](../../../../figures/ifcbsplinecurve-fig1.gif "Figure 1 &mdash; B-spline curve")
 
 { .extDef}
-> NOTE&nbsp; Definition according to ISO/CD 10303-42:1992  
+> NOTE  Definition according to ISO/CD 10303-42:1992
 
-A B-spline curve is a piecewise parametric polynomial or rational curve described in terms of control points and basis functions. The B-spline curve has been selected as the most stable format to represent all types of polynomial or rational parametric curves. With appropriate attribute values it is capable of representing single span or spline curves of explicit polynomial, rational, Bezier or B-spline type.  
+A B-spline curve is a piecewise parametric polynomial or rational curve described in terms of control points and basis functions. The B-spline curve has been selected as the most stable format to represent all types of polynomial or rational parametric curves. With appropriate attribute values it is capable of representing single span or spline curves of explicit polynomial, rational, Bezier or B-spline type.
 
 ![equation1](../../../../figures/ifcbsplinecurve-math1.gif)
 
@@ -29,7 +29,7 @@ w<sub>i</sub> | Weights
 d | Degree
 
 Table 4 - Variable definitions
-  
+
 Interpretation of the data is as follows:
 
  1. All weights shall be positive and the curve is given by Figure 2, with variables defined in Table 4. The knot array is an array of (<em>k</em>+<em>d</em>+2) real numbers
@@ -44,9 +44,9 @@ denote the multiplicity (number of repetitions) of the <em>j</em>th distinct kno
 subtypes (<em>Note: only 1, Bezier curve, included in this IFC release</em>) where the knots and knot multiplicities are derived to provide simple default capabilities.</p>
  3. Logical flag is provided to indicate whether the curve self intersects or not.
 
-> NOTE&nbsp; Entity adapted from **b_spline_curve** defined in ISO10303-42.
+> NOTE  Entity adapted from **b_spline_curve** defined in ISO10303-42.
 
-> HISTORY&nbsp; New entity in IFC2x2.
+> HISTORY  New entity in IFC2x2.
 
 ## Attributes
 

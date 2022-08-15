@@ -1,0 +1,202 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ifdguid="cc281180d1fb11e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4" />
+  <Name>Pset_ProtectiveDeviceTrippingUnitTimeAdjustment</Name>
+  <Definition>A set of time adjustment values that may be applied to an electronic or thermal tripping unit type.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcProtectiveDeviceTrippingUnit</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcProtectiveDeviceTrippingUnit</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="cfbb9880d1fb11e1800000215ad4efdf">
+      <Name>AdjustmentValueType</Name>
+      <Definition>The type of adjustment value that is applied through the property set. This determines the properties that should be asserted (see below).</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_AdjustmentValueType">
+            <EnumItem>RANGE</EnumItem>
+            <EnumItem>LIST</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>RANGE</Name>
+              <NameAliases>
+                <NameAlias lang="en">Range</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>LIST</Name>
+              <NameAliases>
+                <NameAlias lang="en">List</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Adjustment Value Type</NameAlias>
+        <NameAlias lang="ja-JP">調整値の型</NameAlias>
+        <NameAlias lang="ko-KR">조정 형식</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">調整値のタイプを設定。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">조정 값 유형을 설정합니다.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="d813d380d1fb11e1800000215ad4efdf">
+      <Name>AdjustmentRange</Name>
+      <Definition>Upper and lower time adjustment limits for an AdjustmentValueType = RANGE. Note that this property should not have a value for an  AdjustmentValueType = LIST.</Definition>
+      <PropertyType>
+        <TypePropertyBoundedValue>
+          <DataType type="IfcTimeMeasure" />
+        </TypePropertyBoundedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Adjustment Range</NameAlias>
+        <NameAlias lang="ja-JP">調整範囲</NameAlias>
+        <NameAlias lang="ko-KR">조정 범위</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">時間調整の範囲の上限値と下限値を設定。一覧表ではもっていない事を注意。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">시간 조정 범위의 상한 치와 하한 치를 설정합니다. 목록은 갖고 있지 않은 것을주의.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="dfd37800d1fb11e1800000215ad4efdf">
+      <Name>AdjustmentRangeStepValue</Name>
+      <Definition>Step value of time adjustment for an AdjustmentValueType = RANGE. Note that this property should not have a value for an  AdjustmentValueType = LIST.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcTimeMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Adjustment Range Step Value</NameAlias>
+        <NameAlias lang="ja-JP">調整範囲のステップ値</NameAlias>
+        <NameAlias lang="ko-KR">조정범위 단계값</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">時間調整の範囲をステップ値を設定。一覧表ではもっていない事を注意。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">시간 조정 범위를 단계 값을 설정합니다. 목록은 갖고 있지 않은 것을주의.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="e530c280d1fb11e1800000215ad4efdf">
+      <Name>AdjustmentValues</Name>
+      <Definition>A list of time adjustment values that may be applied to a tripping unit for an AdjustmentValueType = LIST. A minimum of 1 and a maximum of 16 adjustment values may be specified. Note that this property should not have a value for an  AdjustmentValueType = RANGE.</Definition>
+      <PropertyType>
+        <TypePropertyListValue>
+          <ListValue>
+            <DataType type="IfcTimeMeasure" />
+          </ListValue>
+        </TypePropertyListValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Adjustment Values</NameAlias>
+        <NameAlias lang="ja-JP">調整値</NameAlias>
+        <NameAlias lang="ko-KR">조정 값</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">時間調整値を１から16で設定。範囲では、ない事を注意。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">시간 조정 값을 1에서 16로 설정. 범위는없는 것을주의.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="e9f57680d1fb11e1800000215ad4efdf">
+      <Name>AdjustmentDesignation</Name>
+      <Definition>The desgnation on the device for the adjustment.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Adjustment Designation</NameAlias>
+        <NameAlias lang="ja-JP">調整の指定</NameAlias>
+        <NameAlias lang="ko-KR">조정지정</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">調整する装置の指定。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">조정하는 장치를 지정합니다.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="f083ee00d1fb11e1800000215ad4efdf">
+      <Name>CurrentForTimeDelay</Name>
+      <Definition>The tripping current in [x In] at which the time delay is specified. A value for this property should only be asserted for time delay of L-function, and for I2t of the S and G function.</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcTimeMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Current For Time Delay</NameAlias>
+        <NameAlias lang="ja-JP">時延電流</NameAlias>
+        <NameAlias lang="ko-KR">시간연장 전류</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">時延[x]ののトリップ電流は、L関数の遅延時間、およびSとG関数のI2tを指定。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">시간 연장 [x]의 트립 전류는 L 함수의 지연 시간 및 S와 G 함수 I2t를 지정합니다.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="f548a200d1fb11e1800000215ad4efdf">
+      <Name>I2TApplicability</Name>
+      <Definition>The applicability of the time adjustment related to the tripping function.</Definition>
+      <PropertyType>
+        <TypePropertyEnumeratedValue>
+          <EnumList name="PEnum_AdjustmentValueType">
+            <EnumItem>L_FUNCTION</EnumItem>
+            <EnumItem>S_FUNCTION</EnumItem>
+            <EnumItem>G_FUNCTION</EnumItem>
+            <EnumItem>OTHER</EnumItem>
+            <EnumItem>NOTKNOWN</EnumItem>
+            <EnumItem>UNSET</EnumItem>
+          </EnumList>
+          <ConstantList>
+            <ConstantDef>
+              <Name>RANGE</Name>
+              <NameAliases>
+                <NameAlias lang="en">Range</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+            <ConstantDef>
+              <Name>LIST</Name>
+              <NameAliases>
+                <NameAlias lang="en">List</NameAlias>
+              </NameAliases>
+              <DefinitionAliases>
+                <DefinitionAlias lang="en" />
+              </DefinitionAliases>
+            </ConstantDef>
+          </ConstantList>
+        </TypePropertyEnumeratedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">I2 TApplicability</NameAlias>
+        <NameAlias lang="ja-JP">I2Tの適用</NameAlias>
+        <NameAlias lang="ko-KR">12 T적용</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">トリップ機能の時延を求める時に適用する関数。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">트립 기능 시간 연장을 요구할 때 적용하는 함수입니다.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">電磁式または熱動式トリップユニット型に適用することができる時間調整（時延）のセット。</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

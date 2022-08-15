@@ -4,13 +4,13 @@ Space heaters utilize a combination of radiation and/or natural convection using
 
 _IfcUnitaryEquipment_ should be used for packaged units supporting a combination of heating, cooling, and/or dehumidification; _IfcCoil_ should be used for coil-based floor heating.
 
-> HISTORY&nbsp; New entity in IFC4
+> HISTORY  New entity in IFC4
 
 { .note}
-> 
+>
 
 { .change-ifc2x4}
-> IFC4 CHANGE&nbsp; Electric heaters formerly defined by _IfcElectricHeaterType_ are now represented by this entity with _PredefinedType_ set to _CONVECTOR_ and _Pset_SpaceHeaterCommon_._HeatTransferDimension_ reflecting _IfcElectricHeaterTypeEnum_ as follows: _ELECTRICPOINTHEATER_ = _POINT_, _ELECTRICCABLEHEATER_ = _CURVE_, _ELECTRICMATHEATER_ = _SURFACE_.
+> IFC4 CHANGE  Electric heaters formerly defined by _IfcElectricHeaterType_ are now represented by this entity with _PredefinedType_ set to _CONVECTOR_ and _Pset_SpaceHeaterCommon_._HeatTransferDimension_ reflecting _IfcElectricHeaterTypeEnum_ as follows: _ELECTRICPOINTHEATER_ = _POINT_, _ELECTRICCABLEHEATER_ = _CURVE_, _ELECTRICMATHEATER_ = _SURFACE_.
 
 ## Attributes
 
@@ -27,18 +27,39 @@ Either there is no space heater type object associated, i.e. the _IsTypedBy_ inv
 
 ## Concepts
 
-### Material
+### Material Set
 
+
+
+#### Casing
+
+Material from which the casing is constructed.
 
 ### Object Typing
 
 
-### Port
 
+### Port Nesting
+
+
+
+#### SINK_Power_CONVECTOR_ELECTRICAL
+
+Receives electrical power.
+
+#### SINK_Inlet_RADIATOR_HEATING
+
+Water or steam supply.
+
+#### SOURCE_Outlet_RADIATOR_HEATING
+
+Water or steam return.
 
 ### Property Sets for Objects
 
 
+
 ### Quantity Sets
+
 
 

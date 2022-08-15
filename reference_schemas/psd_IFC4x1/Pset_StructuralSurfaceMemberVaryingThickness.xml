@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ifdguid="b4dc6471beb74326b19176f8d8247f21" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4x1" />
+  <Name>Pset_StructuralSurfaceMemberVaryingThickness</Name>
+  <Definition>Thickness parameters of a surface member (structural analysis item) with varying thickness, particularly with linearly varying thickness.  The thickness is interpolated/ extrapolated from three points.  The locations of these points are given either in local x,y coordinates of the surface member or in global X,Y,Z coordinates.  Either way, these points are required to be located within the face or at the bounds of the face  of the surface member, and they must not be located on a common line.  Local and global coordinates shall not be mixed within the same property set instance.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcStructuralSurfaceMemberVarying</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcStructuralSurfaceMemberVarying</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="b96886be793e4099b0a28924bfd23b83">
+      <Name>Thickness1</Name>
+      <Definition>First thickness parameter of a surface member with varying thickness</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Thickness1</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="bd40a90463654cfb9cd64f425f027504">
+      <Name>Location1Local</Name>
+      <Definition>Local x,y coordinates of the point in which Thickness1 is given</Definition>
+      <PropertyType>
+        <TypePropertyListValue>
+          <ListValue>
+            <DataType type="IfcLengthMeasure" />
+          </ListValue>
+        </TypePropertyListValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Location1 Local</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="1f2c5ae6f4a44733969aeffb41892a77">
+      <Name>Location1Global</Name>
+      <Definition>Global X,Y,Z coordinates of the point in which Thickness1 is given</Definition>
+      <PropertyType>
+        <TypePropertyListValue>
+          <ListValue>
+            <DataType type="IfcLengthMeasure" />
+          </ListValue>
+        </TypePropertyListValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Location1 Global</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="054660e647994621a6bdad29616d79b0">
+      <Name>Thickness2</Name>
+      <Definition>Second thickness parameter of a surface member with varying thickness</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Thickness2</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="058e4602830c41f4862b1d1c7338a7b0">
+      <Name>Location2Local</Name>
+      <Definition>Local x,y coordinates of the point in which Thickness2 is given</Definition>
+      <PropertyType>
+        <TypePropertyListValue>
+          <ListValue>
+            <DataType type="IfcLengthMeasure" />
+          </ListValue>
+        </TypePropertyListValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Location2 Local</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="cffbd577c8ae4ae3b9c7f17891e8b4d8">
+      <Name>Location2Global</Name>
+      <Definition>Global X,Y,Z coordinates of the point in which Thickness2 is given</Definition>
+      <PropertyType>
+        <TypePropertyListValue>
+          <ListValue>
+            <DataType type="IfcLengthMeasure" />
+          </ListValue>
+        </TypePropertyListValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Location2 Global</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="27d5c5a613ac4c96a769fb075fde8178">
+      <Name>Thickness3</Name>
+      <Definition>Third thickness parameter of a surface member with varying thickness</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcPositiveLengthMeasure" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Thickness3</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="441117ba47724c3e946eac44f07c39da">
+      <Name>Location3Local</Name>
+      <Definition>Local x,y coordinates of the point in which Thickness3 is given</Definition>
+      <PropertyType>
+        <TypePropertyListValue>
+          <ListValue>
+            <DataType type="IfcLengthMeasure" />
+          </ListValue>
+        </TypePropertyListValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Location3 Local</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="8fa1dfe751894b6a96e071431b39e282">
+      <Name>Location3Global</Name>
+      <Definition>Global X,Y,Z coordinates of the point in which Thickness3 is given</Definition>
+      <PropertyType>
+        <TypePropertyListValue>
+          <ListValue>
+            <DataType type="IfcLengthMeasure" />
+          </ListValue>
+        </TypePropertyListValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Location3 Global</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+  </PsetDefinitionAliases>
+</PropertySetDef>

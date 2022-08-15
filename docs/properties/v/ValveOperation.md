@@ -10,7 +10,7 @@ LEVER: A valve that is opened and closed by the action of a lever rotating the g
 LOCKSHIELD: A valve that requires the use of a special lockshield key for opening and closing, the operating mechanism being protected by a shroud during normal operation.
 MOTORIZED: A valve that is opened and closed by the action of an electric motor on an actuator
 PNEUMATIC: A valve that is opened and closed by pneumatic actuation
-SOLENOID: A valve that is normally held open by a magnetic field in a coil acting on the gate but that is closed immediately if the electrical current generating the magnetic field is removed. 
-SPRING: A valve that is normally held in position by the pressure of a spring on a plate but that may be caused to open if the pressure of the fluid is sufficient to overcome the spring pressure. 
+SOLENOID: A valve that is normally held open by a magnetic field in a coil acting on the gate but that is closed immediately if the electrical current generating the magnetic field is removed.
+SPRING: A valve that is normally held in position by the pressure of a spring on a plate but that may be caused to open if the pressure of the fluid is sufficient to overcome the spring pressure.
 THERMOSTATIC: A valve in which the ports are opened or closed to maintain a required predetermined temperature.
 WHEEL: A valve that is opened and closed by the action of a wheel moving the gate within the valve.

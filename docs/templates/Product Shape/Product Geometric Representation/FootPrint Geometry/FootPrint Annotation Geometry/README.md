@@ -5,11 +5,11 @@ The 'FootPrint Annotation Geometry' is the representation for the floor plan pro
 
 The following attribute values for the _IfcShapeRepresentation_ holding this geometric representation shall be used:
 
-*  _IfcShapeRepresentation_._RepresentationIdentifier_ : 'FootPrint' 
-*  _IfcShapeRepresentation_._RepresentationType_ : 'Annotation2D' 
-* _IfcShapeRepresentation_._Items_ : 
-    * subtypes of _IfcPoint_ and _IfcCurve_ being two-dimensional and within an _IfcGeometricCurveSet_ 
-    * subtypes of _IfcAnnotationFillArea_ for hatches 
+*  _IfcShapeRepresentation_._RepresentationIdentifier_ : 'FootPrint'
+*  _IfcShapeRepresentation_._RepresentationType_ : 'Annotation2D'
+* _IfcShapeRepresentation_._Items_ :
+    * subtypes of _IfcPoint_ and _IfcCurve_ being two-dimensional and within an _IfcGeometricCurveSet_
+    * subtypes of _IfcAnnotationFillArea_ for hatches
     * subtypes of _IfcTextLiteral_ for text
 
 ```

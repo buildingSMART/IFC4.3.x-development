@@ -38,6 +38,6 @@ The following defines some cost categories that might be applied to the _Categor
 * Waste allowance
 * Whole life
 
-> NOTE&nbsp; In the absence of any well-defined standard, it is recommended that local agreements should be made to define allowable and understandable cost value types within a project or region.
+> NOTE  In the absence of any well-defined standard, it is recommended that local agreements should be made to define allowable and understandable cost value types within a project or region.
 
-> HISTORY&nbsp; New entity in IFC1.0
+> HISTORY  New entity in IFC1.0

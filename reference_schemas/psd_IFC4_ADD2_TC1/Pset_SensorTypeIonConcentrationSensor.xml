@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<PropertySetDef xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ifdguid="b0c20400d20511e1800000215ad4efdf" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd" xmlns="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4" />
+  <Name>Pset_SensorTypeIonConcentrationSensor</Name>
+  <Definition>A device that senses or detects ion concentration such as water hardness. HISTORY: Added in IFC4.</Definition>
+  <Applicability />
+  <ApplicableClasses>
+    <ClassName>IfcSensor/IONCONCENTRATIONSENSOR</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcSensor/IONCONCENTRATIONSENSOR</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef ifdguid="b61f4e80d20511e1800000215ad4efdf">
+      <Name>SubstanceDetected</Name>
+      <Definition>Identification of the substance that is being detected according to chemical formula.  For example, calcium carbonate is 'CaCO3'</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IfcLabel" />
+        </TypePropertySingleValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Substance Detected</NameAlias>
+        <NameAlias lang="ja-JP">対象物質</NameAlias>
+        <NameAlias lang="ko-KR">대상 물질</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">検出されている物質の識別。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">검출되는 물질의 식별.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+    <PropertyDef ifdguid="bcadc600d20511e1800000215ad4efdf">
+      <Name>SetPointConcentration</Name>
+      <Definition>The ion concentration value to be sensed. Use IfcPropertyBoundedValue.SetPointValue to set the set point value.</Definition>
+      <PropertyType>
+        <TypePropertyBoundedValue>
+          <DataType type="IfcIonConcentrationMeasure" />
+        </TypePropertyBoundedValue>
+      </PropertyType>
+      <NameAliases>
+        <NameAlias lang="en">Set Point Concentration</NameAlias>
+        <NameAlias lang="ja-JP">イオン濃度設定値</NameAlias>
+        <NameAlias lang="ko-KR">이온 농도 설정</NameAlias>
+      </NameAliases>
+      <DefinitionAliases>
+        <DefinitionAlias lang="en" />
+        <DefinitionAlias lang="ja-JP">感知されるイオン濃度。
+セットポイント値を置くために、IfcPropertyBoundedValue.SetPointValueを使用する。</DefinitionAlias>
+        <DefinitionAlias lang="ko-KR">감지되는 이온 농도. 세트 포인트 값을 넣으려면, IfcPropertyBoundedValue.SetPointValue를 사용하십시오.</DefinitionAlias>
+      </DefinitionAliases>
+    </PropertyDef>
+  </PropertyDefs>
+  <PsetDefinitionAliases>
+    <PsetDefinitionAlias lang="en" />
+    <PsetDefinitionAlias lang="ja-JP">水の硬度などのイオン濃度を感知または検出する装置</PsetDefinitionAlias>
+  </PsetDefinitionAliases>
+</PropertySetDef>

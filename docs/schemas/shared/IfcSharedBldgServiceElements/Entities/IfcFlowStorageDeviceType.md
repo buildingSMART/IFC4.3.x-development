@@ -6,4 +6,4 @@ A flow storage device is a device used for the temporary storage of a fluid (suc
 
 The occurrences of the _IfcFlowStorageDeviceType_ are represented by instances of _IfcFlowStorageDevice_ or its subtypes.
 
-> HISTORY&nbsp; New entity in IFC2x2.
+> HISTORY  New entity in IFC2x2.

@@ -2,26 +2,21 @@
 
 An _IfcEdgeCurve_ defines two vertices being connected topologically including the geometric representation of the connection.
 
-> NOTE&nbsp; The topology is used to trim the geometry of the edge. There is no need to geometrically trim the edge to match the topology.
+> NOTE  The topology is used to trim the geometry of the edge. There is no need to geometrically trim the edge to match the topology.
 
-&nbsp;
+![example](../../../../figures/ifcedgecurve.png)
 
-<table>
-<tr><td><br><img src="../../../../figures/ifcedgecurve.png" width="600" height="220" alt="example"></td>
-<td><blockquote class="example">EXAMPLE&nbsp; Figure 1 illustrates an example where the edge geometry is given by an unbounded curve, here <em>IfcCircle</em>. The bounds are provided by the <em>EdgeStart</em> and <em>EdgeEnd</em>, the topological direction of the <em>IfcEdgeCurve</em> opposes the direction of the <em>IfcCircle</em> by <em>SameSense</em> = FALSE.</blockquote></td>
-</tr>
-<tr><td><p class="figure">Figure 1 &mdash; Edge curve</p></td><td>&nbsp;</td><td>&nbsp;</td></tr>
-</table>
+Figure 1 &mdash; Edge curve
 
-&nbsp;
+> EXAMPLE Figure 1 illustrates an example where the edge geometry is given by an unbounded curve, here <em>IfcCircle</em>. The bounds are provided by the <em>EdgeStart</em> and <em>EdgeEnd</em>, the topological direction of the <em>IfcEdgeCurve</em> opposes the direction of the <em>IfcCircle</em> by <em>SameSense</em> = FALSE.
 
 { .extDef}
-> NOTE&nbsp; Definition according to ISO/CD 10303-42:1992  
+> NOTE  Definition according to ISO/CD 10303-42:1992
 > An edge curve is a special subtype of edge which has its geometry fully defined. The geometry is defined by associating the edge with a curve which may be unbounded. As the topological and geometric directions may be opposed, an indicator (same sense) is used to identify whether the edge and curve directions agree or are opposed. The Boolean value indicates whether the curve direction agrees with (TRUE) or is in the opposite direction (FALSE) to the edge direction. Any geometry associated with the vertices of the edge shall be consistent with the edge geometry. Multiple edges can reference the same curve.
 
-> NOTE&nbsp; Entity adapted from **edge_curve** defined in ISO 10303-42.
+> NOTE  Entity adapted from **edge_curve** defined in ISO 10303-42.
 
-> HISTORY&nbsp; New entity in IFC2x.
+> HISTORY  New entity in IFC2x.
 
 { .spec-head}
 Informal Propositions:

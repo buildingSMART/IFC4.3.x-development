@@ -2045,7 +2045,7 @@ def search():
     if request.args.get("query"):
         solr = pysolr.Solr("http://localhost:8983/solr/ifc")
         query = request.args.get("query")
-        results = solr.search("body:(%s)" % query, **{"hl": "on", "hl.fl": "body"})
+        results = solr.search("body:(%s)" % query, **{"hl": "on", "hl.fl": "body", 'rows': 30})
         h = results.highlighting
 
         def format(s):
@@ -2059,7 +2059,7 @@ def search():
 
         matches = [
             {"url": get_url(r), "match": format(h[r["id"]]["body"][0]), "title": r["title"][0]}
-            for r in list(results)[0:10]
+            for r in list(results)[0:30]
         ]
 
     return render_template("search.html", base=base, is_iso=X.is_iso, navigation=get_navigation(), matches=matches, query=query)

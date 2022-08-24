@@ -33,7 +33,7 @@ Informal Propositions:
 ## Attributes
 
 ### ObjectType
-The type denotes a particular type that indicates the object further. The use has to be established at the level of instantiable subtypes. In particular it holds the user defined type, if the enumeration of the attribute _PredefinedType_ is set to USERDEFINED.
+The type denotes a particular type that indicates the object further. The use has to be established at the level of instantiable subtypes. In particular it holds the user defined type, if the enumeration of the attribute _PredefinedType_ is set to USERDEFINED or when the concrete entity instantiated does not have a PredefinedType attribute. The latter is the case in some exceptional leaf classes and when instantiating IfcBuiltElement directly. 
 
 ### IsDeclaredBy
 Link to the relationship object pointing to the declaring object that provides the object definitions for this object occurrence. The declaring object has to be part of an object type decomposition. The associated _IfcObject_, or its subtypes, contains the specific information (as part of a type, or style, definition), that is common to all reflected instances of the declaring _IfcObject_, or its subtypes.

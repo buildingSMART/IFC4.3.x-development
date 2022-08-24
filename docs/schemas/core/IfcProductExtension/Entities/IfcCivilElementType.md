@@ -13,3 +13,5 @@ The specification of the specific types is provided by the inherited attribute _
 > NOTE  The _IfcCivilElementType_ has been introduced as a stub for future extensions of this specification to include an object model for civil engineering works.
 
 > HISTORY  New entity in IFC4.
+
+> IFC4.3.0.0 DEPRECATION This entity is deprecated. Usage of a generic element type for civil engineering works is no longer desirable with specific types now provided as subtypes of IfcBuiltElement, IfcEarthworksElement, IfcFacility and IfcGeotechnicalElement.

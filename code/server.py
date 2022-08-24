@@ -2259,7 +2259,7 @@ def after(response):
 @app.route(make_url("index.htm"))
 def get_index():
     items = [
-        {"number": "", "title": f"Listing of {x}", "url": make_url(f"listing-{x}.html")}
+        {"number": "", "title": f"Listing of {x}", "url": f"listing-{x}.html"}
         for x in "references,figures,tables".split(",")
     ]
     return render_template("index.html", base=base, is_iso=is_iso, navigation=get_navigation(), items=items, title="Index")

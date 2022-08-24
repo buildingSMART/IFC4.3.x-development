@@ -8,6 +8,8 @@ Civil elements are typically horizontally organized using a spatial structure ex
 
 > HISTORY  New entity in IFC4.
 
+> IFC4.3.0.0 DEPRECATION This entity is deprecated. Usage of a generic element for civil engineering works is no longer desirable with specific types now provided as subtypes of IfcBuiltElement, IfcEarthworksElement, IfcFacility and IfcGeotechnicalElement.
+
 ## Concepts
 
 ### Object Typing

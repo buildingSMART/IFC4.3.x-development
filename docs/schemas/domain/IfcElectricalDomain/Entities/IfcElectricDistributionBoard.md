@@ -6,8 +6,7 @@ A distribution provides a housing for connected electrical distribution elements
 
 > HISTORY  New entity in IFC4
 
-{ .note}
->
+> IFC4.3.0.0 DEPRECATION Use IfcDistributionBoard instead.
 
 ## Attributes
 

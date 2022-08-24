@@ -39,7 +39,10 @@ Roles played by the person.
 
 ### Addresses
 Postal and telecommunication addresses of a person.
+
 > NOTE  A person may have several addresses.
+
+> IFC4.3.0.0 DEPRECATION This attribute is deprecated and shall no longer be used. Use Pset_Address instead related to an IfcActor with _TheActor_ pointing to this entity.
 
 ### EngagedIn
 The inverse relationship to IfcPersonAndOrganization relationships in which IfcPerson is engaged.

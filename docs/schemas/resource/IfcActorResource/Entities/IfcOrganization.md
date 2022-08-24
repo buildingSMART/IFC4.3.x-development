@@ -27,7 +27,10 @@ Roles played by the organization.
 
 ### Addresses
 Postal and telecom addresses of an organization.
+
 > NOTE  There may be several addresses related to an organization.
+
+> IFC4.3.0.0 DEPRECATION This attribute is deprecated and shall no longer be used. Use Pset_Address instead related to an IfcActor with _TheActor_ pointing to this entity.
 
 ### IsRelatedBy
 The inverse relationship for relationship RelatedOrganizations of IfcOrganizationRelationship.

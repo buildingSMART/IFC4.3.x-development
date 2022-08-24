@@ -4,6 +4,8 @@ _IfcTrapeziumProfileDef_ defines a trapezium as the profile definition used by t
 
 > HISTORY  New entity in IFC1.5. The use definition has changed in IFC2x.
 
+> IFC4.3.0.0 DEPRECATION This entity is deprecated. Use IfcArbitraryClosedProfileDef instead to define the trapezium by means of an explicit outer boundary.
+
 Figure 1 illustrates parameters of the trapezium profile definition.
 
 ![trapezium profile](../../../../figures/ifctrapeziumprofiledef-layout1.gif)

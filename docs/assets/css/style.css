@@ -605,3 +605,6 @@ table.hljs-ln td:first-child {
     vertical-align: middle;
     margin: 0 0.5rem;
 }
+td.hljs-ln-code {
+    white-space: pre-wrap;
+}

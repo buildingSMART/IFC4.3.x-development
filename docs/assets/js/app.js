@@ -163,7 +163,7 @@ function setupHighlightJS() {
                 // I actually didn't check what these are I just did trial and error until I liked the colours
                 section: "ENTITY END_ENTITY TYPE END_TYPE FUNCTION END_FUNCTION LOCAL END_LOCAL BEGIN END IF THEN END_IF REPEAT END_REPEAT CASE END_CASE OTHERWISE RULE END_RULE SCHEMA END_SCHEMA",
                 built_in: "OPTIONAL NOT OR EXISTS SET SIZEOF SELF TYPEOF AND IN ONEOF LIST QUERY ARRAY INTEGER LOGICAL HIINDEX NVL",
-                keyword: "SUBTYPE OF WHERE ENUMERATION ABSTRACT SUPERTYPE INVERSE FOR TO RETURN"
+                keyword: "SUBTYPE OF WHERE ENUMERATION ABSTRACT SUPERTYPE INVERSE FOR TO RETURN DERIVE UNIQUE"
             }
         }
     }));

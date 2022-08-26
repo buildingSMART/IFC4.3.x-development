@@ -1814,7 +1814,12 @@ def annex_a():
 
 @app.route(make_url("annex-a-express.html"))
 def annex_a_express():
-    return render_template("annex-a-express.html", base=base, is_iso=X.is_iso, navigation=get_navigation(), express=open("IFC.exp").read())
+    return render_template("annex-a-express.html", base=base, is_iso=X.is_iso, navigation=get_navigation(), express=open("IFC.exp").read(), link=f"{SCHEMA_NAME}.exp")
+
+from xmi_document import SCHEMA_NAME
+@app.route(make_url(f"{SCHEMA_NAME}.exp"))
+def annex_a_express_download():
+    return send_file("IFC.exp", as_attachment=True, attachment_filename=f"{SCHEMA_NAME}.exp")
 
 
 @app.route(make_url("annex-a-psd.zip"))
@@ -2217,6 +2222,15 @@ def after(response):
             element.append(anchor)
 
         html = FigureNumberer.replace_references(str(soup))
+        
+        def case_norm(v):
+            # @todo cache this
+            x = v.upper()
+            n = {k.upper():k for k in R.entity_definitions.keys()}.get(x)
+            if n: return n
+            n = {k.upper():k for k in R.pset_definitions.keys()}.get(x)
+            if n: return n
+            return v
 
         def decorate_link(m):
             w = m.group(0)
@@ -2226,7 +2240,7 @@ def after(response):
                         redis.lpush("references", json.dumps([w, "", request.path]))
                     except ConnectionError:
                         pass
-                return "<a href='" + url_for("resource", resource=w) + "'>" + w + "</a>"
+                return "<a href='" + url_for("resource", resource=case_norm(w)) + "'>" + w + "</a>"
             else:
                 return w
 

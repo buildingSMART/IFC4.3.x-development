@@ -601,7 +601,7 @@ table.hljs-ln td:first-child {
 .cl-legend {
     text-align: right;
 }
-.cl-legend * {
+.cl-legend *, .icon-link * {
     vertical-align: middle;
     margin: 0 0.5rem;
 }

@@ -21,7 +21,3 @@ Default offset vertical to the basis curve where positive values indicate perpen
 Offset parallel to the basis curve after applying DistanceAlong, OffsetLateral, and OffsetVertical to reach locations for the case of a tangentially discontinuous basis curve.
 
 ### BasisCurve
-
-
-### Dim
-

@@ -22,6 +22,3 @@ The curve to which point parameter relates.
 
 ### PointParameter
 The parameter value of the point location.
-
-### Dim
-The space dimensionality of this class, determined by the space dimensionality of the basis curve.

@@ -9,3 +9,9 @@ The _IfcPoint_ is the abstract generalisation of all point representations withi
 > NOTE  Entity adapted from **point** in ISO 10303-42.
 
 > HISTORY  New entity in IFC1.5
+
+## Attributes
+
+### Dim
+
+The space dimensionality of this abstract class, handled by a function specific for concrete subtypes. Determined by the number of coordinate components in case of IfcCartesianPoint or by the dimensionality of the basis curve or surface in other cases.

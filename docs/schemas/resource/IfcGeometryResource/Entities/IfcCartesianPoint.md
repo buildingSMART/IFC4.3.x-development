@@ -15,9 +15,6 @@ An _IfcCartesianPoint_ defines a point by coordinates in an orthogonal, right-ha
 ### Coordinates
 The first, second, and third coordinate of the point location. If placed in a two or three dimensional rectangular Cartesian coordinate system, Coordinates[1] is the X coordinate, Coordinates[2] is the Y coordinate, and Coordinates[3] is the Z coordinate.
 
-### Dim
-The space dimensionality of this class, determined by the number of coordinates in the List of Coordinates.
-
 ## Formal Propositions
 
 ### CP2Dor3D

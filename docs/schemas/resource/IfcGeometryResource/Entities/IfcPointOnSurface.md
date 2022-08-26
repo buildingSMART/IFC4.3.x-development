@@ -25,6 +25,3 @@ The first parameter value of the point location.
 
 ### PointParameterV
 The second parameter value of the point location.
-
-### Dim
-The space dimensionality of this class, determined by the space dimensionality of the basis surface.

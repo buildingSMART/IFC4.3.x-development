@@ -598,3 +598,10 @@ table.hljs-ln td:first-child {
 .show-inherited, .hide-inherited {
     cursor: pointer;
 }
+.cl-legend {
+    text-align: right;
+}
+.cl-legend * {
+    vertical-align: middle;
+    margin: 0 0.5rem;
+}

@@ -10,7 +10,7 @@ import functools
 
 from deepdiff import DeepDiff
    
-from ifcopenshell.express import express_parser
+from express_diff import express_parser
 
 from collections import defaultdict
 from xmi_document import fix_schema_name
@@ -122,7 +122,7 @@ def to_dict(decl, depr=[]):
             'supertype': decl.subtype.super_type if decl.subtype else None,
             'abstract': decl.abstract,
             'attribute': [format_attribute(a) for a in decl.attributes],
-            'inverse attribute': [format_inverse(a) for a in decl.inverse[1:]],
+            'inverse attribute': [format_inverse(a) for a in decl.inverse],
             'derived attribute': [format_rule(a, 'derived_attribute') for a in (decl.derived or [])],
             'where rule': [format_rule(a, 'where_rule') for a in decl.where],
             'unique rule': [format_rule(a, 'unique_rule') for a in decl.unique],
@@ -203,10 +203,34 @@ def eq(a, b):
 
 def compare_schemas(s0, depr0, s1, depr1, s1_ver):
 
-    for x in 'simpletypes', 'selects', 'enumerations':
+    for x in 'simpletypes', 'selects', 'enumerations', 'rules', 'functions':
+
         d1, d2 = map(operator.attrgetter(x), (s0.schema, s1.schema))
+        
+        for nm in d1.keys() - d2.keys():
+            yield (nm, "deleted", "", "")
+        for nm in d2.keys() - d1.keys():
+            yield (nm, "added", "", "")
+        
         for nm in sorted(d1.keys() & d2.keys()):
+        
+            if x in ('rules', 'functions'):
+                
+                def get_canonical_expr(item):
+                    return re.sub(
+                        # remove schema prefixes
+                        ('(ifc\w+\.)(ifc\w+)'), '\\2',
+                        # join and lowercase
+                        "".join(item.flat).lower()
+                    )
+                    
+                if get_canonical_expr(d1[nm]) != get_canonical_expr(d2[nm]):
+                    yield (nm, "modifications", "definition")
+                    
+                continue
+                
             assert type(d1[nm]) == type(d2[nm])
+            
             if not eq(d1[nm], d2[nm]):
                 if isinstance(d1[nm], (express_parser.SelectType, express_parser.EnumerationType)):
                     v1 = set(map(str, d1[nm].values))

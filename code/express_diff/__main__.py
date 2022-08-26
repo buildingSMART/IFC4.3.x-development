@@ -6,7 +6,7 @@ import itertools
 
 import tabulate
 
-sys.path.append(os.path.abspath(os.path.dirname(__file__)))
+sys.path.prepend(os.path.abspath(os.path.dirname(__file__)))
 
 import express_parser
 import nodes

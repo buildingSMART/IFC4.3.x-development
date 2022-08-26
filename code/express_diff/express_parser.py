@@ -5,11 +5,15 @@ import os
 import sys
 import pickle
 
-from . import schema
-from . import mapping
+try:
+  from . import schema
+  from . import mapping
+  from .nodes import *
+except:
+  import schema, mapping
+  from nodes import *
 
 from pyparsing import *
-from .nodes import *
 
 def parse(fn):
     cache_file = fn + ".cache.dat"

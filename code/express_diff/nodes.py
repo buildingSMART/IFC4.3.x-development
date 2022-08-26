@@ -24,7 +24,10 @@ import string
 import operator
 import collections
 
-from . import bootstrap
+try:
+  from . import bootstrap
+except:
+  import bootstrap
 
 class Node:
     def __init__(self, s, loc, tokens, rule=None):

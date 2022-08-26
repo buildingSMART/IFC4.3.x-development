@@ -20,7 +20,10 @@
 import platform
 import collections
 
-from . import nodes
+try:
+  from . import nodes
+except:
+  import nodes
 
 if tuple(map(int, platform.python_version_tuple())) < (2, 7):
     import ordereddict

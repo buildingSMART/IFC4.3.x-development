@@ -19,9 +19,6 @@ An indicator of whether or not the sense of the segment agrees with, or opposes,
 ### ParentCurve
 The bounded curve which defines the geometry of the segment.
 
-### Dim
-The space dimensionality of this class, defined by the dimensionality of the first ParentCurve.
-
 ## Formal Propositions
 
 ### ParentIsBoundedCurve

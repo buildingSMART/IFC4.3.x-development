@@ -15,6 +15,3 @@ Length of segment measured as length or parameter value from _SegmentStart_. The
 
 ### ParentCurve
 Curve to be used as base for the segment definition.
-
-### Dim
-The space dimensionality of this class, defined by the dimensionality of the first ParentCurve.

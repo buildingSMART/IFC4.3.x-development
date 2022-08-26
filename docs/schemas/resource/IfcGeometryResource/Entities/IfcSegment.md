@@ -9,3 +9,6 @@ Connectivity between the continuous segments is not enforced per se to be tangen
 
 ### UsingCurves
 The set of composite curves which use this composite curve segment as a segment. This set shall not be empty.
+
+### Dim
+The space dimensionality of this abstract class, handled by a function specific for concrete subtypes which returns the dimensionality of the ParentCurve attribute (defined on both subtypes).

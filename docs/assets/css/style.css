@@ -450,15 +450,6 @@ td p:nth-child(1) {
     /* So that paragraphs in tds and simple tds line up */
     margin-top: 0px;
 }
-div.changelog {
-    opacity: 0.2;
-    -webkit-transition: opacity 0.3s ease-in-out;
-    -moz-transition: opacity 0.3s ease-in-out;
-    transition: opacity 0.3s ease-in-out;
-}
-div.changelog:hover {
-    opacity: 1;
-}
 ul.changelog {
     list-style: none;
 }

@@ -225,7 +225,7 @@ def compare_schemas(s0, depr0, s1, depr1, s1_ver):
                     )
                     
                 if get_canonical_expr(d1[nm]) != get_canonical_expr(d2[nm]):
-                    yield (nm, "modifications", "definition")
+                    yield (nm, "modifications", "", "")
                     
                 continue
                 

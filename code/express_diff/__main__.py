@@ -8,8 +8,7 @@ import tabulate
 
 sys.path.append(os.path.abspath(os.path.dirname(__file__)))
 
-import express_parser
-import nodes
+from . import express_parser
 
 fn1, fn2, output = sys.argv[1:]
 
@@ -23,16 +22,16 @@ MISSING_DATA, TYPE_DEFINITIONS, ENTITY_DEFINITIONS, CONSTRAINTS = ERROR_TYPES_LA
 def eq(a, b):
     if (type(a) != type(b)):
         return False
-    elif isinstance(a, (nodes.StringType, nodes.AggregationType, nodes.BinaryType, str, nodes.ExplicitAttribute, nodes.InverseAttribute, nodes.SimpleType)):
+    elif isinstance(a, (express_parser.StringType, express_parser.AggregationType, express_parser.BinaryType, str, express_parser.ExplicitAttribute, express_parser.InverseAttribute, express_parser.SimpleType)):
         return str(a) == str(b)
-    elif isinstance(a, (nodes.SelectType, nodes.EnumerationType)):
+    elif isinstance(a, (express_parser.SelectType, express_parser.EnumerationType)):
         return set(map(str, a.values)) == set(map(str, b.values))
     else:
         # @todo
         import pdb; pdb.set_trace()
         
 def format(a):
-    if isinstance(a, (nodes.SelectType, nodes.EnumerationType)):
+    if isinstance(a, (express_parser.SelectType, express_parser.EnumerationType)):
         return ", ".join(sorted(map(str, a.values)))
     else:
         return str(a)

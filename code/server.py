@@ -1798,6 +1798,7 @@ def content(s="cover"):
             abort(404)
 
     html = process_markdown("", render_template_string(open(fn).read(), base=base, is_iso=X.is_iso))
+    
     return render_template(
         "static.html",
         base=base,
@@ -1807,6 +1808,7 @@ def content(s="cover"):
         path=fn[len(REPO_DIR) :].replace("\\", "/"),
         title=title,
         number=number,
+        body_class=re.sub('[^a-z0-9]+', '-', s.lower())
     )
 
 

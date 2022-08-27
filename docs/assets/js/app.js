@@ -319,7 +319,9 @@ fetch(`https://api.github.com/repos/${window.appconfig.repo}/commits?path=${wind
 setupMathJax();
 setupHighlightJS();
 setupInheritanceToggle();
-makeHeadersCollapsible();
+if (!document.body.classList.contains('terms-and-definitions')) {
+    makeHeadersCollapsible();
+}
 generateSectionNavigation();
 initialiseBackToTopButton();
 feather.replace();

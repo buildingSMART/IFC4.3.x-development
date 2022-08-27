@@ -605,3 +605,16 @@ blockquote blockquote {
 blockquote blockquote:before {
     content: none;
 }
+body.terms-and-definitions h2 {
+    font-size: 1rem;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    font-weight: bold;
+}
+body.terms-and-definitions p {
+    margin-top: 0;
+}
+body.terms-and-definitions aside {
+    border: none;
+    padding: 0;
+}

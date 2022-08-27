@@ -248,7 +248,7 @@ def compare_schemas(s0, depr0, s1, depr1, s1_ver):
                             postfix = item_deprs[inm]
                             if postfix:
                                 postfix = f". {postfix}"
-                            yield (nm, "modifications", f"item {nm}", f"Is now deprecated{postfix}")
+                            yield (nm, "modifications", f"item {inm}", f"Is now deprecated{postfix}")
 
                 else:
                     yield (nm, "modifications", "type", f'Changed from\n"{d1[nm]}"\nto\n"{d2[nm]}"')

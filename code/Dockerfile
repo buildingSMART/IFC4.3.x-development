@@ -25,6 +25,7 @@ RUN git clone https://github.com/buildingSMART/IFC4.3.x-development /ifc43
 ENV REPO_DIR=/ifc43
 
 ADD *.py tikz-uml.sty /code/
+ADD express_diff/* /code/express_diff/
 ADD templates/* /code/templates/
 
 WORKDIR /code

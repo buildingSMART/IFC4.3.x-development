@@ -894,6 +894,8 @@ def process_markdown(resource, mdc):
     # Tag all special notes separately. In markdown they are all lumped in a single block quote.
     for blockquote in soup.findAll("blockquote"):
         has_aside = False
+        non_aside_ps = []
+
         for p in blockquote.findAll("p"):
             try:
                 keyword, contents = p.text.split(" ", 1)
@@ -901,15 +903,14 @@ def process_markdown(resource, mdc):
             except:
                 continue
             valid_keywords = ["HISTORY", "IFC", "EXAMPLE", "NOTE", "REFERENCE"]
-            has_valid_keyword = False
-            for valid_keyword in valid_keywords:
-                if valid_keyword in keyword:
-                    has_valid_keyword = True
-                    break
+            has_valid_keyword = any(v in keyword for v in valid_keywords)
             if not has_valid_keyword:
+                non_aside_ps.append(p)
                 continue
+
             has_aside = True
             p.name = "aside"
+
             if keyword.startswith("IFC"):
                 # This is typically something like "IFC4 CHANGE" denoting a historic change reason
                 keyword, keyword2, contents = p.text.split(" ", 2)
@@ -932,8 +933,10 @@ def process_markdown(resource, mdc):
 
             p.insert(0, mark)
             blockquote.insert_before(p)
+
         if has_aside:
-            blockquote.decompose()
+            if not non_aside_ps:
+                blockquote.decompose()
 
     html = str(soup).replace("{{ base }}", base)
 

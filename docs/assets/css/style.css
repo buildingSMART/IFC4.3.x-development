@@ -608,3 +608,9 @@ table.hljs-ln td:first-child {
 td.hljs-ln-code {
     white-space: pre-wrap;
 }
+blockquote blockquote {
+    border: none;
+}
+blockquote blockquote:before {
+    content: none;
+}

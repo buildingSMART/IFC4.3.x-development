@@ -22,6 +22,18 @@
 </div>
 {% endif %}
 
+{% if concept_references %}
+<div class="row">
+<div class="card fluid">
+<p><mark>NOTE</mark> This entity is part of the following concept template
+graphs that may provide additional explanation on envisioned entity usage.
+<ul>
+{% for usage in concept_references %}
+<li><a href='{{usage.url}}'>{{usage.text}}</a>
+{% endfor %}
+</ul></p></div></div>
+{% endif %}
+
 <h2>
     {{ definition_number }} Semantic definition
 </h2>

@@ -24,7 +24,7 @@ included_statuses = set((
     "approved", 
     "candidate"))
     
-REPO_URL = "https://github.com/buildingSMART/IFC4.3.x-development/edit/master/"
+REPO_URL = "https://github.com/buildingSMART/IFC4.3.x-development/edit/feature_alignment_data/"
 
 import os
 import re

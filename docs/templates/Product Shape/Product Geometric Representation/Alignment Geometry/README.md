@@ -8,7 +8,7 @@ _RepresentationType_ = Curve3D'
 
 ```
 concept {
-    IfcAlignment:Representation -> IfcProductDefinitionShape
+    IfcLinearElement:Representation -> IfcProductDefinitionShape
     IfcProductDefinitionShape:Representations -> IfcShapeRepresentation
     IfcShapeRepresentation:ContextOfItems -> IfcGeometricRepresentationContext
     IfcShapeRepresentation:RepresentationIdentifier -> IfcLabel_0
@@ -19,6 +19,10 @@ concept {
     constraint_1[label="=Curve3D"]
     IfcShapeRepresentation:RepresentationIdentifier[binding="Identifier"]
     IfcShapeRepresentation:RepresentationType[binding="Type"]
+    
+    IfcShapeRepresentation:Items -> IfcCompositeCurve
+    IfcCompositeCurve:Segments -> IfcCurveSegment
+    IfcCurveSegment:ParentCurve -> IfcThirdOrderPolynomialSpiral
 }
 ```
 

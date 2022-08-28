@@ -39,6 +39,16 @@ def get_concept_root(all_templates, concept):
         return
     return roots[0].split("_")[0]
 
+    
+def get_concept_entities(all_templates, concept):
+    concept_block = get_concept_block(all_templates, concept)
+    if concept_block is None:
+        return []
+
+    lhs = set(n.split(":")[0].split("_")[0] for n in re.findall("([\:\w]+)\s*\->", concept_block))
+    rhs = set(n.split(":")[0].split("_")[0] for n in re.findall("\->\s*([\:\w]+)", concept_block))
+    return [x for x in lhs | rhs if x.startswith("Ifc")]
+
 
 def parse_bindings(concept, all_templates=None, fn=None, to_xmi=False, definitions_by_name=None):
     if fn:
@@ -356,3 +366,12 @@ if __name__ == "__main__":
             result["GeneralUsage"][concept_name].append({"ApplicableEntity": root})
 
     json.dump(result, open("xmi_concepts.json", "w", encoding="utf-8"), indent=1)
+    
+    concept_entity_refs = defaultdict(list)
+    
+    for nm in map(lambda s: s.replace(" ", ""), all_template_names):
+        for e in get_concept_entities(all_templates, nm):
+            concept_entity_refs[e].append(nm)
+            
+    json.dump(concept_entity_refs, open("concept_entity_refs.json", "w", encoding="utf-8"), indent=1)
+    

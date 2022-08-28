@@ -121,6 +121,7 @@ class resource_manager:
     type_values = schema_resource("type_values.json")
     hierarchy = schema_resource("hierarchy.json")
     xmi_concepts = schema_resource("xmi_concepts.json")
+    concept_entity_refs = schema_resource("concept_entity_refs.json")
     examples_by_type = schema_resource("examples_by_type.json")
 
     listing_references = schema_resource("listing_references.json")
@@ -185,6 +186,7 @@ navigation = [
         {"number": "D", "name": "Diagrams", "url": make_url("annex-d.html")},
         {"number": "E", "name": "Examples", "url": make_url("annex-e.html")},
         {"number": "F", "name": "Change logs", "url": make_url("annex-f.html")},
+        {"number": "G", "name": "Source code listings", "url": make_url("annex-g.html")},
     ],
     [
         {"name": "Bibliography", "url": make_url("content/bibliography.htm")},
@@ -970,6 +972,18 @@ def resource(resource):
 
     if "Entities" in md:
         builder = resource_documentation_builder(resource)
+        
+        concept_hierarchy = make_concept([""])
+
+        def flatten_hierarchy(h):
+            yield h
+            for ch in h.children:
+                yield from flatten_hierarchy(ch)
+
+        concept_lookup = {c.text.replace(" ", ""): c for c in flatten_hierarchy(concept_hierarchy)}
+        
+        concept_references = list(map(concept_lookup.__getitem__, R.concept_entity_refs.get(resource, [])))
+        
         return render_template(
             "entity.html",
             base=base,
@@ -992,6 +1006,7 @@ def resource(resource):
             changelog=get_changelog(resource),
             is_deprecated=resource in R.deprecated_entities,
             is_abstract=resource in R.abstract_entities,
+            concept_references=concept_references
         )
     elif resource in R.pset_definitions.keys():
         return render_template(
@@ -1762,7 +1777,7 @@ def chapter(n):
 
 
 @app.route("/")
-def cover(s="cover"):
+def cover():
     fn = os.path.join(REPO_DIR, "content", "cover.md")
     title = navigation[1][0]["name"]
     return render_template(
@@ -1776,11 +1791,12 @@ def cover(s="cover"):
     )
 
 
+@app.route(make_url("annex-g.html"))
 @app.route(make_url("content/<s>.htm"))
-def content(s="cover"):
+def content(s="source_code_listings"):
     fn = os.path.join(REPO_DIR, "content")
     fn = os.path.join(fn, s + ".md")
-
+    
     if not os.path.exists(fn):
         abort(404)
 
@@ -1795,7 +1811,12 @@ def content(s="cover"):
             number = ""
             title = s[0].upper() + s[1:]
         except:
-            abort(404)
+            if s == "source_code_listings":
+                number = "G"
+                title = " ".join(s.split("_"))
+                title = title[0].upper() + title[1:]
+            else:
+                abort(404)
 
     html = process_markdown("", render_template_string(open(fn).read(), base=base, is_iso=X.is_iso))
     

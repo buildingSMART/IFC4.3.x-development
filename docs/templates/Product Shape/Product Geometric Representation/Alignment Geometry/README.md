@@ -64,6 +64,10 @@ Within the description of the individual transition curves the IfcCurveSegment.S
 For the BlossCurve one instance of IfcCurveSegment with ParentCurve IfcThirdOrderPolynomialSpiral will be created.
 Change of curvature is defined as:
 
+##### Test source code reference
+
+[Source code](/IFC/RELEASE/IFC4x3/HTML/annex-g.html#Hello-world)
+
 ![](https://i.imgur.com/1ps1mhd.png)
 
 - <details><summary>Calculation of relevant terms</summary>

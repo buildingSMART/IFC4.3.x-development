@@ -1,0 +1,39 @@
+{% extends "main.html" %}
+{% block pagecontent %}
+<h1>{{ number }} {{ title }}</h1>
+
+{{ content | safe }}
+
+<ol class="referenced-list">
+    {% for item in subs recursive -%}
+    <li>
+        <div class='row'>
+        {% if item.number %}{{ item.number }}{% endif %}
+        {% if item.url %}
+        <a href="{{ item.url }}">
+        {% endif %}
+            {{ item.text or item.name }}
+        {% if item.url %}
+        </a>
+        {% endif %}
+        
+        </div>
+        
+        {% for mvd in item.mvds -%}
+        <div class='row mini {% if mvd.on %} on {% endif %}'>
+            {% if mvd.on %}
+            <abbr title="Included in {{ mvd.name }}">{{ mvd.abbr }}</abbr>
+            {% endif %}
+        </div>
+        {%- endfor %}
+        
+        {% if item.children %}
+        <ol class="referenced-list">
+        {{ loop(item.children) }}
+        </ol>
+        {% endif %}
+    </li>
+    {%- endfor %}
+</ol>
+
+{% endblock %}

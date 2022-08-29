@@ -121,6 +121,7 @@ class resource_manager:
     type_values = schema_resource("type_values.json")
     hierarchy = schema_resource("hierarchy.json")
     xmi_concepts = schema_resource("xmi_concepts.json")
+    xmi_mvd_concepts = schema_resource("xmi_mvd_concepts.json")
     examples_by_type = schema_resource("examples_by_type.json")
 
     listing_references = schema_resource("listing_references.json")
@@ -249,6 +250,8 @@ class toc_entry:
 
     parent: object = None
     children: list = None
+    
+    mvds: list = None
 
 
 content_names = ["scope", "normative_references", "terms_and_definitions", "concepts"]
@@ -1615,11 +1618,13 @@ def make_concept(path, number_path=None):
         ),
         1,
     )
+
     return toc_entry(
         url=make_url("concepts/" + "/".join(p for p in path if p).replace(" ", "_") + "/content.html"),
         number=number_path,
         text=path[-1],
         children=[make_concept(path + [c], number_path=f"{number_path}.{i}") for i, c in children],
+        mvds=[{"abbr": "".join(re.findall('[A-Z]|(?<=-)[a-z]', k)), "name":k, "on": path[-1].replace(" ", "") in v} for k, v in R.xmi_mvd_concepts.items()],
     )
 
 
@@ -1642,7 +1647,7 @@ def concept_list():
     fn = os.path.join(REPO_DIR, "docs", "templates", "README.md")
     html = process_markdown("", open(fn).read())
     return render_template(
-        "chapter.html",
+        "concept_listing.html",
         base=base,
         is_iso=X.is_iso,
         navigation=get_navigation(),

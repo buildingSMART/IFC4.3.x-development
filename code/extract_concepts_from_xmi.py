@@ -3,6 +3,7 @@ import sys
 import json
 import re
 import glob
+import operator
 
 from collections import defaultdict
 
@@ -356,3 +357,11 @@ if __name__ == "__main__":
             result["GeneralUsage"][concept_name].append({"ApplicableEntity": root})
 
     json.dump(result, open("xmi_concepts.json", "w", encoding="utf-8"), indent=1)
+
+    xmi_mvd_concepts = {}
+    views = {p.name: p for p in xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:Package"]}['Views']
+    for sub in views / "packagedElement":
+        if sub.parent == views and sub.name != 'GeneralUsage':
+            xmi_mvd_concepts[sub.name] = list(map(operator.attrgetter('name'), sub / "packagedElement"))
+            
+    json.dump(xmi_mvd_concepts, open("xmi_mvd_concepts.json", "w", encoding="utf-8"), indent=1)

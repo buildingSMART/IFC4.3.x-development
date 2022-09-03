@@ -42,7 +42,7 @@ nav div:last-child {
     border-bottom: 0px;
 }
 nav div a.current {
-    background-color: var(--blue);
+    background-color: var(--blue) !important;
     color: #fff;
     border-left: 0px;
 }

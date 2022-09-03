@@ -19,13 +19,15 @@
         
         </div>
         
+        {% if not is_iso %}        
         {% for mvd in item.mvds -%}
         <div class='row mini {% if mvd.on %} on {% endif %}'>
             {% if mvd.on %}
             <abbr title="Included in {{ mvd.name }}">{{ mvd.abbr }}</abbr>
             {% endif %}
         </div>
-        {%- endfor %}
+        {%- endfor %}        
+        {% endif %}
         
         {% if item.children %}
         <ol class="referenced-list">

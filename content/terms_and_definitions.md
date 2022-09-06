@@ -256,6 +256,29 @@ construct that allows an attribute value to be one of multiple predefined values
 
 > NOTE Similar in concept to "enum" in common programming languages.
 
+## 3.1.30 deprecation
+
+The act of marking a schema construct to be deleted in a future major release of this standard
+
+> NOTE Complying interpreters shall still be able to import deprecated definitions.
+
+> NOTE Complying interpreters shall consider to modify export using the proposed alternative definitions instead of the deprecated ones.
+
+## 3.1.31 compatibility
+
+## 3.1.31.1 backward compatibility
+
+The ability for a data file, written against a previous release of the standard, to be readable by an application supporting a later version.
+
+## 3.1.31.2 forward compatibility
+
+The ability for a data file, written against a new release of the
+standard, to still be readable by an application supporting a previous
+version of the standard and for the reading application in this scenario not to lose functionality
+provided by the earlier version of the standard.
+
+> NOTE Forward compatibility is not explicitly considered in the development of this release, but seen as a desirable property where possible.
+
 # 3.2 Abbreviated terms
 
 * AEC: Architecture, Engineering, and Construction

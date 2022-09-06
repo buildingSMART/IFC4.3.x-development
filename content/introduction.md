@@ -1,10 +1,10 @@
 The Industry Foundation Classes (IFC) are an open international standard for Building Information Model (BIM)
 data. The standard comprises:
 
- 1. A schema (provided in various forms, see [scope](../scope.html))
+ 1. A schema (provided in various forms, see [scope](scope.html))
  2. Documentation (provided in HTML, authored in Markdown)
  3. Property and Quantity Set definitions (standardized definitions for an extensibility mechanism realised in the schema - provided in XML)
- 4. Exchange or serialization mechanisms of data files, see [scope](../scope.html)
+ 4. Exchange or serialization mechanisms of data files, see [scope](scope.html)
 
 The prevalent exchange format for IFC is the Step Physical File Format (ISO
 10303-21:2002; Part 21). It is a clear-text encoding of the entity instances that
@@ -154,7 +154,7 @@ The following entities, attributes and enumerators have been deprecated in this 
 
 The following incompatibilities have been introduced in this release:
 
-|  | Severity | Element | Change |
+|  | Severity | Element | Incompatibility |
 |---|---|---|---|
 | 1 | Major | IfcGridPlacement | Result of PlacementRelTo attribute moving up to IfcObjectPlacement. |
 | 2 | Minor | IfcCountMeasure | Definition changed from NUMBER to INTEGER. |

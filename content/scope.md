@@ -5,7 +5,7 @@ The Industry Foundation Classes specify a data schema and an exchange file forma
 The schema, property sets and usage constraints are internally authored as a UML Class diagram, [available as XMI file](https://github.com/buildingSMART/IFC4.3.x-development/tree/master/schemas)
 and published as [computer interpretable schemas](https://github.com/buildingSMART/IFC4.3.x-output), including:
 
-* [EXPRESS data specification language](https://github.com/buildingSMART/IFC4.3.x-output/blob/master/IFC.exp), defined in ISO 10303-11,
+* [EXPRESS data specification language](../annex-a-express.html), defined in ISO 10303-11,
 * XML Schema definition language (XSD) (under development),
 * RDF/OWL Schema  (under development),
 * JavaScript Object Notation Schema (under development),

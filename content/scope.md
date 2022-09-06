@@ -1,9 +1,9 @@
 The Industry Foundation Classes, IFC, are an open international standard for Building Information Model (BIM) data that are exchanged and shared among software applications used by the various participants in the construction or facility management industry sector. The standard includes definitions that cover data required for buildings and infrastructure works over their life cycle.
-The coverage of infrastructure facilities now incorporated into IFC include bridges, roads, railways, waterways and port facilities.
+The coverage of infrastructure facilities now incorporated into IFC includes bridges, roads, railways, waterways and port facilities.
 
 The Industry Foundation Classes specify a data schema and an exchange file format structure.
-The data schema is defined in a UML Class diagram, [available as XMI file](https://github.com/buildingSMART/IFC4.3.x-development/tree/master/schemas).
-Computer interpretable [schemas are being generated](https://github.com/buildingSMART/IFC4.3.x-output) as:
+The schema, property sets and usage constraints are internally authored as a UML Class diagram, [available as XMI file](https://github.com/buildingSMART/IFC4.3.x-development/tree/master/schemas)
+and published as [computer interpretable schemas](https://github.com/buildingSMART/IFC4.3.x-output), including:
 
 * [EXPRESS data specification language](https://github.com/buildingSMART/IFC4.3.x-output/blob/master/IFC.exp), defined in ISO 10303-11,
 * XML Schema definition language (XSD) (under development),
@@ -69,5 +69,5 @@ The following are within the entire scope of this release of IFC:
 
 The following are outside the scope of this release of IFC:
 
-* exchange format definitions outside of the domains of design, construction and facility maintenance;
-* behavioral aspects of components and other information items.
+ 1. Exchange format definitions outside of the domains of design, construction and facility maintenance;
+ 2. Behavioral aspects of components and other information items.

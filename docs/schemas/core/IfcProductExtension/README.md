@@ -12,8 +12,8 @@ The _IfcProductExtension_ further specialises the concepts of a (physical) produ
 The spatial project structure defines
 
 * the site, 
-* the facility, 
-* the facility part, and 
+* the facility (building, bridge, marine, railway, road),
+* the facility part (building storey and parts of the above), and 
 * the space 
 
 and its decomposition structure. In addition the concepts of system and zone are introduced within the _IfcProductExtension_. Relationships between the spatial structure and the elements are defined, such as spatial containment and space boundaries.
@@ -30,6 +30,5 @@ The other concepts introduced are
 
 * a grid, providing a constraint placement for elements, 
 * an alignment, providing a linear positioning element to position geographic and civil elements,
-* geo referencing, providing the real map coordinate location of an element in accord with GIS practice,
 * an annotation to capture any additional annotations to a building model or plan (such as explanatory text, dimensioning, etc.), and
 * a port, providing connectivity between elements.

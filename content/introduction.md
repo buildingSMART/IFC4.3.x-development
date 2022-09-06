@@ -1,10 +1,10 @@
 The Industry Foundation Classes (IFC) are an open international standard for Building Information Model (BIM)
 data. The standard comprises:
 
- 1. A schema (provided in various forms, see [scope](scope.html))
+ 1. A schema (provided in various forms, see [scope](scope.htm))
  2. Documentation (provided in HTML, authored in Markdown)
  3. Property and Quantity Set definitions (standardized definitions for an extensibility mechanism realised in the schema - provided in XML)
- 4. Exchange or serialization mechanisms of data files, see [scope](scope.html)
+ 4. Exchange or serialization mechanisms of data files, see [scope](scope.htm)
 
 The prevalent exchange format for IFC is the Step Physical File Format (ISO
 10303-21:2002; Part 21). It is a clear-text encoding of the entity instances that

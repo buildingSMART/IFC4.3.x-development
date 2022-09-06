@@ -18,7 +18,7 @@ while True:
     # do not require credentials for auto merge on pull
     # subprocess.check_output(["git", "-C", REPO_DIR, "pull"])
     subprocess.check_output(["git", "-C", REPO_DIR, "fetch"])
-    subprocess.check_output(["git", "-C", REPO_DIR, "reset", "--hard", "origin/master"])
+    subprocess.check_output(["git", "-C", REPO_DIR, "reset", "--hard", "origin/jwg12_doc_changes"])
     c = subprocess.check_output(["git", "-C", REPO_DIR, "rev-parse", "HEAD"])
     
     first_time = not os.listdir(XML_PATH)

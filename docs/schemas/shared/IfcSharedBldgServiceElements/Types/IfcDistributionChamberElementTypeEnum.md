@@ -16,7 +16,7 @@ Chamber constructed on a drain, sewer or pipeline with a removable cover that pe
 Recess or chamber formed to permit access for inspection of substructure and services.
 
 ### MANHOLE
-hamber constructed on a drain, sewer or pipeline with a removable cover that permits the entry of a person.
+Chamber constructed on a drain, sewer or pipeline with a removable cover that permits the entry of a person.
 
 ### METERCHAMBER
 Chamber that houses a meter(s).

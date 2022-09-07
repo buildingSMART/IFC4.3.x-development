@@ -1,10 +1,11 @@
-The Industry Foundation Classes, IFC, are an open international standard for Building Information Model (BIM) data that are exchanged and shared among software applications used by the various participants in the construction or facility management industry sector. The standard includes definitions that cover data required for buildings and bridges over their life cycle. This release, and upcoming releases, extend the scope to include data definitions for infrastructure assets over their life cycle as well.
+The Industry Foundation Classes, IFC, are an open international standard for Building Information Model (BIM) data that are exchanged and shared among software applications used by the various participants in the construction or facility management industry sector. The standard includes definitions that cover data required for buildings and infrastructure works over their life cycle.
+The coverage of infrastructure facilities now incorporated into IFC includes bridges, roads, railways, waterways and port facilities.
 
 The Industry Foundation Classes specify a data schema and an exchange file format structure.
-The data schema is defined in a UML Class diagram, [available as XMI file](https://github.com/buildingSMART/IFC4.3.x-development/tree/master/schemas).
-Computer interpretable [schemas are being generated](https://github.com/buildingSMART/IFC4.3.x-output) as:
+The schema, property sets and usage constraints are internally authored as a UML Class diagram, [available as XMI file](https://github.com/buildingSMART/IFC4.3.x-development/tree/master/schemas)
+and published as [computer interpretable schemas](https://github.com/buildingSMART/IFC4.3.x-output), including:
 
-* [EXPRESS data specification language](https://github.com/buildingSMART/IFC4.3.x-output/blob/master/IFC.exp), defined in ISO 10303-11,
+* [EXPRESS data specification language](../annex-a-express.html), defined in ISO 10303-11,
 * XML Schema definition language (XSD) (under development),
 * RDF/OWL Schema  (under development),
 * JavaScript Object Notation Schema (under development),
@@ -28,7 +29,7 @@ The full IFC standard is used to define one or many recognized workflows in the 
 
 The following are within the entire scope of this release of IFC:
 
- 1. BIM exchange format definitions that are required during the life cycle phases of buildings:
+ 1. BIM exchange format definitions that are required during the life cycle phases of buildings and infrastructure:
 
     * demonstrating the need;
     * conception of need;
@@ -44,16 +45,18 @@ The following are within the entire scope of this release of IFC:
 
  2. BIM exchange format definitions that are required by the various disciplines involved within the life cycle phases:
 
-    * architecture;
-    * building service;
+    * architecture and civil engineering design;
+    * service and utilities engineering;
     * structural engineering;
     * procurement;
     * construction planning;
-    * facility management;
+    * facility and utility management;
     * project management;
     * client requirement management;
-    * building authority for permits and approval.
-    * BIM exchange format definitions including:
+    * industry authorities for permits and approval.
+
+ 3. BIM exchange format definitions including:
+
     * project structure;
     * physical components;
     * spatial components;
@@ -66,6 +69,5 @@ The following are within the entire scope of this release of IFC:
 
 The following are outside the scope of this release of IFC:
 
-* exchange format definitions outside of the domain of construction and facility maintenance;
-* full project structure and component breakdown structures outside of building engineering, but providing a baseline for civil engineering to be extended in future releases;
-* behavioral aspects of components and other information items.
+ 1. Exchange format definitions outside of the domains of design, construction and facility maintenance;
+ 2. Behavioral aspects of components and other information items.

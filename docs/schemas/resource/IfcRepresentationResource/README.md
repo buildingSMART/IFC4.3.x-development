@@ -5,6 +5,7 @@ This schema defines the representation of shape and topology as important defini
 
 * topological representation
 * geometric shape representation
+* geo referencing, providing the real map coordinate location of an element in accord with GIS practice,
 
 The geometric shape representation allows for
 

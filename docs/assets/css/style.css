@@ -352,7 +352,7 @@ ul.psets>li>ul>li {
     list-style-type: none;
 }
 ol.referenced-list {
-    padding-left: 24px;
+    padding-left: calc(2 * var(--universal-margin));
     list-style: none;
 }
 ol.referenced-list.small {
@@ -617,33 +617,6 @@ body.terms-and-definitions p {
 body.terms-and-definitions aside {
     border: none;
     padding: 0;
-}
-.referenced-list .row {
-    display: inline-block;
-}
-.referenced-list .row:first-child {
-    width: 500px
-}
-.referenced-list .referenced-list {
-    margin-left: 0;
-}
-.referenced-list .referenced-list .row:first-child {
-    width: 476px
-}
-.referenced-list .referenced-list .referenced-list .row:first-child {
-    width: 452px
-}
-.referenced-list .referenced-list .referenced-list .referenced-list .row:first-child {
-    width: 428px
-}
-.referenced-list .referenced-list .referenced-list .referenced-list .referenced-list .row:first-child {
-    width: 404px
-}
-.referenced-list .row.mini {
-    width: 80px;
-}
-.referenced-list .row.mini.on:before {
-    content: '\2713';
 }
 aside.aside-deprecation mark a {
     color: white;

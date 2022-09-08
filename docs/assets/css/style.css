@@ -645,11 +645,13 @@ body.terms-and-definitions aside {
 .referenced-list .row.mini.on:before {
     content: '\2713';
 }
+div.deprecation mark a,
 aside.aside-deprecation mark a {
     color: white;
     margin-left: 0.5em;
     opacity: 0.5;
 }
+div.deprecation mark a:hover,
 aside.aside-deprecation mark a:hover {
     opacity: 1.0;
 }

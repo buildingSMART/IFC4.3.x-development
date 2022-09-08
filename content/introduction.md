@@ -51,7 +51,7 @@ version of the standard and for the reading application in this scenario not to 
 provided by the earlier version of the standard.
 
 The classes in the EXPRESS schema are typically reflected in program code and directly influence the structure (attribute counts, attribute types) of
-Part 21 exchanges.
+exchanges using the ISO 10303-21 form.
 
 Conversely, Property and Quantity Sets are generally more supplementary data that don't
 affect functioning of the software to the same extent. Property and Quantity
@@ -88,7 +88,7 @@ implementers ample time to adapt their software.
 
 > NOTE Complying interpreters shall consider to modify export using the proposed alternative definitions instead of the deprecated ones.
 
-### List of known Part 21 incompatibilities with IFC4.0.2.1
+### List of known backward incompatibilities of this document with ISO 16739-1:2018
 
 For a full list of changes see the Change logs in Appendix F.
 
@@ -152,7 +152,7 @@ The following entities, attributes and enumerators have been deprecated in this 
 * IfcFireSuppressionTerminalTypeEnum.SPRINKLERDEFLECTOR
 * IfcGeographicElementTypeEnum.SOIL_BORING_POINT
 
-The following incompatibilities have been introduced in this release:
+The following backward incompatibilities have been introduced in this release:
 
 |  | Severity | Element | Incompatibility |
 |---|---|---|---|

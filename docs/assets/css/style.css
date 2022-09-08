@@ -618,11 +618,13 @@ body.terms-and-definitions aside {
     border: none;
     padding: 0;
 }
+div.deprecation mark a,
 aside.aside-deprecation mark a {
     color: white;
     margin-left: 0.5em;
     opacity: 0.5;
 }
+div.deprecation mark a:hover,
 aside.aside-deprecation mark a:hover {
     opacity: 1.0;
 }

@@ -18,12 +18,12 @@ The exchange file formats for exchanging and sharing data according to the conce
 * RDF/OWL, defined by W3C and the buildingSMART projects,
 * JSON JavaScript Object Notation, defined by the buildingSMART projects.
 
-An overview of the file formats can be seen on [the technical website](https://technical.buildingsmart.org/standards/ifc/ifc-formats/),
+An overview of the file formats can be seen on [the technical website](https://technical.buildingsmart.org/standards/ifc/ifc-formats/).
 Alternative exchange file formats may be used if they conform to the data schemas.
 
 This release of IFC consists of the data schemas (represented in different formats), and reference data, represented as definitions of property and quantity names, and formal and informative descriptions (available in Markdown and HTML).
 
-The full IFC standard is used to define one or many recognized workflows in the construction and facility management industry sector. Such an exchange scenario definition of the IFC data schema and referenced data is referred to as a Model View Definition (MVD). Each MVD identifies data exchange requirements for software applications. Conforming software applications need to identity the model view definition they conform to to apply for Software Certification.
+The full IFC standard is used to define one or many recognized workflows in the construction and facility management industry sector. Such an exchange scenario definition of the IFC data schema and referenced data is referred to as a Model View Definition (MVD). Each MVD identifies data exchange requirements for software applications. Conforming software applications need to identify the model view definition they conform to when applying for Software Certification.
 
 ## General use
 

@@ -66,8 +66,3 @@ The following are within the entire scope of this release of IFC:
     * controls;
     * actors;
     * context definition.
-
-The following are outside the scope of this release of IFC:
-
- 1. Exchange format definitions outside of the domains of design, construction and facility maintenance;
- 2. Behavioral aspects of components and other information items.

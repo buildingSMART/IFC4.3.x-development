@@ -21,7 +21,7 @@ RUN git clone https://github.com/opensourceBIM/python-mvdxml/ `python3 -c 'impor
 
 RUN git clone https://github.com/buildingSMART/Sample-Test-Files /examples
 
-RUN git clone https://github.com/buildingSMART/IFC4.3.x-development /ifc43 --branch jwg12_doc_changes
+RUN git clone https://github.com/buildingSMART/IFC4.3.x-development /ifc43 --branch iso_submission
 ENV REPO_DIR=/ifc43
 
 ADD *.py tikz-uml.sty /code/

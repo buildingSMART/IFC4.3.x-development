@@ -929,10 +929,18 @@ def process_markdown(resource, mdc):
                 css_class = "change"
             if "deprecation" in css_class:
                 css_class = "deprecation"
+                
             p["class"] = f"aside-{css_class}"
 
             mark = soup.new_tag("mark")
             mark.string = keyword
+            
+            if "deprecation" in css_class:
+                anchor = soup.new_tag("a", href="/IFC/RELEASE/IFC4x3/HTML/content/terms_and_definitions.htm#3.1.30-deprecation")
+                icon = soup.new_tag("i")
+                icon["data-feather"] = "link"
+                anchor.append(icon)
+                mark.append(anchor)
 
             p.insert(0, mark)
             blockquote.insert_before(p)

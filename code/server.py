@@ -2241,8 +2241,8 @@ def after(response):
 
         html = FigureNumberer.replace_references(str(soup))
         
+        @lru_cache()
         def case_norm(v):
-            # @todo cache this
             x = v.upper()
             n = {k.upper():k for k in R.entity_definitions.keys()}.get(x)
             if n: return n
@@ -2255,7 +2255,7 @@ def after(response):
             if w.upper() in [k.upper() for k in R.entity_definitions.keys()] or w in R.pset_definitions or w in R.type_values:
                 if redis:
                     try:
-                        redis.lpush("references", json.dumps([w, "", request.path]))
+                        redis.lpush("references", json.dumps([case_norm(w), "", request.path]))
                     except ConnectionError:
                         pass
                 return "<a href='" + url_for("resource", resource=case_norm(w)) + "'>" + w + "</a>"

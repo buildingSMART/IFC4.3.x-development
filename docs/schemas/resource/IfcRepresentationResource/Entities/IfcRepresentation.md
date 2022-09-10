@@ -4,9 +4,7 @@ The _IfcRepresentation_ defines the general concept of representing product prop
 
 { .extDef}
 > NOTE  Definition from ISO 10303-43:
-> A representation is a collection of one or more representation items that are related in a specified representation context. The relationship of representation item to representation context is the basis for distinguishing which representation item entities are related.
->
-> A representation item can be related to a representation context directly, when it occurs as an element is a representation, or indirectly, when it is referenced through any number of intervening entities, each of type representation item.
+> A representation is a collection of one or more representation items that are related in a specified representation context. The relationship of representation item to representation context is the basis for distinguishing which representation item entities are related. A representation item can be related to a representation context directly, when it occurs as an element is a representation, or indirectly, when it is referenced through any number of intervening entities, each of type representation item.
 
 > NOTE  Entity adapted from **representation** defined in ISO 10303-42.
 

@@ -11,7 +11,11 @@
     <div class="container">
         <div class="row">
             <header>
-                <p>IFC 4.3.0.1 (IFC4X3_TC1) <small>development</small></p>
+                <p>IFC 4.3.0.1 (IFC4X3_TC1)
+                {% if not is_iso %}
+                    <small>development</small>
+                {% endif %}
+                </p>
                 {% if not is_iso %}
                 <ul>
                     <li>

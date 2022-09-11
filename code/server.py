@@ -31,6 +31,7 @@ def BeautifulSoup(*args):
     return bs4.BeautifulSoup(*args, features="lxml")
 
 
+import flask
 from flask import (
     Flask,
     send_file,
@@ -1832,7 +1833,8 @@ def annex_a_express():
 from xmi_document import SCHEMA_NAME
 @app.route(make_url(f"{SCHEMA_NAME}.exp"))
 def annex_a_express_download():
-    return send_file("IFC.exp", as_attachment=True, attachment_filename=f"{SCHEMA_NAME}.exp")
+    kwarg = 'attachment_filename' if flask.__version__ < '2' else 'download_name'
+    return send_file("IFC.exp", as_attachment=True, **{kwarg: f"{SCHEMA_NAME}.exp"})
 
 
 @app.route(make_url("annex-a-psd.zip"))

@@ -7,7 +7,7 @@ An IfcConversionBasedUnit is used to define a unit that has a conversion rate to
 |--- |--- |
 |'inch'|Length measure equal to 25.4 mm|
 |'foot'|Length measure equal to 304.8 mm|
-|'US survey foot'|Length measure equal to 304.8006096 mm (i.e. the exact value of 1200/3937 meters)|
+|'US survey foot'|Length measure equal to 304.8006096 mm (i.e. the approximate value of 1200/3937 meters)|
 |'yard'|Length measure equal to 914 mm|
 |'mile'|Length measure equal to 1609 m|
 |'square inch'|Area measure equal to 0.0006452 square meters|

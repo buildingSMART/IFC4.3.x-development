@@ -25,7 +25,7 @@ Gross Floor Area - a specific kind of space for each building story that include
 
 
 ### BERTH
-A Space deidicated to the Berthing of vessels within a port or managed area
+A space dedicated to the berthing of vessels within a port or managed area
 
 ### USERDEFINED
 

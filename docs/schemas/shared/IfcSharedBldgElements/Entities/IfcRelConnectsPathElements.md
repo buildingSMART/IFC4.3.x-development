@@ -46,7 +46,7 @@ Overriding priorities at this connection. It overrides the standard priority giv
 > IFC4 CHANGE  Data type changed to NUMBER and usage to hold a normalized ratio measure [0..1].
 
 ### RelatedConnectionType
-Indication of the connection type in relation to the path of the _RelatingObject_.
+Indication of the connection type in relation to the path of the _RelatedObject_.
 
 ### RelatingConnectionType
 Indication of the connection type in relation to the path of the _RelatingObject_.

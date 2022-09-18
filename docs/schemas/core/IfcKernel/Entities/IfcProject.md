@@ -19,7 +19,7 @@ The context provided by the _IfcProject_ includes:
 
 Formal Propositions:
 
-1. There shall at most one project within the exchange context. This is enforced by the global rule _IfcSingleProjectInstance_.
+1. There shall be at most one project within the exchange context. This is enforced by the global rule _IfcSingleProjectInstance_.
 
 ## Formal Propositions
 

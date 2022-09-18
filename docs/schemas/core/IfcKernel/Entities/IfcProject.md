@@ -17,10 +17,9 @@ The context provided by the _IfcProject_ includes:
 { .change-ifc2x4}
 > IFC4 CHANGE  The attributes _RepresentationContexts_ and _UnitsInContext_ are made optional and are promoted to supertype _IfcContext_.
 
-{ .spec-head}
-Informal Propositions:
+Formal Propositions:
 
-1. There shall only be one project within the exchange context. This is enforced by the global rule _IfcSingleProjectInstance_.
+1. There shall at most one project within the exchange context. This is enforced by the global rule _IfcSingleProjectInstance_.
 
 ## Formal Propositions
 

@@ -14,6 +14,23 @@ The unambiguous identifier by which the coordinate reference system is know, is 
 
 ## Attributes
 
+### GeodeticDatum
+Name by which this datum is identified. The geodetic datum is associated with the coordinate reference system and indicates the shape and size of the rotation ellipsoid and this ellipsoid's connection and orientation to the actual globe/earth. It needs to be provided, if the _Name_ identifier does not unambiguously define the geodetic datum as well.
+
+{ .examples}
+> EXAMPLE  geodetic datums include: { .note}
+> * ED50
+> * EUREF89
+> * WSG84
+
+### VerticalDatum
+Name by which the vertical datum is identified. The vertical datum is associated with the height axis of the coordinate reference system and indicates the reference plane and fundamental point defining the origin of a height system. It needs to be provided, if the _Name_ identifier does not unambiguously define the vertical datum as well and if the coordinate reference system is a 3D reference system.
+
+{ .examples}
+> EXAMPLE  vertical datums include: { .note}
+> * DHHN92: the German 'Haupth&ouml;hennetz'
+> * EVRS2007; the European Vertical Reference System
+
 ### MapProjection
 Name by which the map projection is identified.
 
@@ -31,8 +48,11 @@ Name by which the map zone, relating to the _MapProjection_, is identified.
 > * for Gaus-Krueger, the zones of longitudinal width, like 3'
 
 ### MapUnit
+
 Unit of the coordinate axes composing the map coordinate system.
+
 > NOTE 1  Only length measures are in scope and all two or three axes of the map coordinate system shall have the same length unit.
+
 > NOTE 2  If MapUnit is omitted, the unit for the coordinate axes is taken from the default units, as stated in IfcProject.UnitInContext.
 
 ## Formal Propositions

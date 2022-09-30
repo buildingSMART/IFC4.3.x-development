@@ -1,4 +1,4 @@
-# IfcRoadTypeEnum
+# IfcKerbTypeEnum
 
 The predefined type container that collects kerb types together into the implemented enumeration.
 

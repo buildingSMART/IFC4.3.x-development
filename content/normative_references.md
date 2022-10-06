@@ -8,3 +8,6 @@ The following referenced documents are indispensable for the application of this
 
 * ISO 10303-28,
 *Industrial automation systems and integration — Product data representation and exchange — Part 28: Implementation methods: XML representations of EXPRESS schemas and data, using XML schemas*
+
+* ISO 6707-1:2017,
+*Buildings and civil engineering works - Vocabulary - Part 1: General terms*

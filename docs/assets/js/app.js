@@ -319,7 +319,7 @@ fetch(`https://api.github.com/repos/${window.appconfig.repo}/commits?path=${wind
 setupMathJax();
 setupHighlightJS();
 setupInheritanceToggle();
-if (!document.body.classList.contains('terms-and-definitions')) {
+if (!document.body.classList.contains('terms-and-definitions') && !document.body.classList.contains('cover')) {
     makeHeadersCollapsible();
 }
 generateSectionNavigation();

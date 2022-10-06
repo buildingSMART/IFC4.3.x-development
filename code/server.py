@@ -1776,25 +1776,36 @@ def chapter(n):
 
 
 @app.route("/")
-def cover(s="cover"):
-    fn = os.path.join(REPO_DIR, "content", "cover.md")
+def cover():
+    if X.is_iso:
+        fn = os.path.join(REPO_DIR, "content", "iso_cover.md")
+    else:
+        fn = os.path.join(REPO_DIR, "content", "cover.md")
+    
     title = navigation[1][0]["name"]
+    
+    content = open(fn).read()
+
     return render_template(
         "cover.html",
         base=base,
         is_iso=X.is_iso,
         navigation=get_navigation(),
-        content=markdown.markdown(render_template_string(open(fn).read(), base=base, is_iso=X.is_iso)),
+        content=markdown.markdown(render_template_string(content, base=base, is_iso=X.is_iso)),
         path=fn[len(REPO_DIR) :].replace("\\", "/"),
         subs=[],
+        body_class='cover' + (' iso' if X.is_iso else '')
     )
 
 
 @app.route(make_url("content/<s>.htm"))
-def content(s="cover"):
+def content(s):
     fn = os.path.join(REPO_DIR, "content")
     fn = os.path.join(fn, s + ".md")
 
+    if s == "foreword" and X.is_iso:
+        fn = fn.replace("foreword", "iso_foreword")
+    
     if not os.path.exists(fn):
         abort(404)
 
@@ -1811,7 +1822,12 @@ def content(s="cover"):
         except:
             abort(404)
 
-    html = process_markdown("", render_template_string(open(fn).read(), base=base, is_iso=X.is_iso))
+    content = open(fn).read()
+    
+    if X.is_iso:
+        content = re.sub(r'IFC( (4\.3\.[0x](\.\d)?)|\b)', 'ISO 16739-1', content)
+
+    html = process_markdown("", render_template_string(content, base=base, is_iso=X.is_iso))
     
     return render_template(
         "static.html",
@@ -1825,6 +1841,7 @@ def content(s="cover"):
         body_class=re.sub('[^a-z0-9]+', '-', s.lower())
     )
 
+from xmi_document import SCHEMA_NAME
 
 @app.route(make_url("annex-a.html"))
 def annex_a():
@@ -1835,11 +1852,18 @@ def annex_a():
 def annex_a_express():
     return render_template("annex-a-express.html", base=base, is_iso=X.is_iso, navigation=get_navigation(), express=open("IFC.exp").read(), link=f"{SCHEMA_NAME}.exp")
 
-from xmi_document import SCHEMA_NAME
+
+@app.route(make_url("annex-a-xsd.html"))
+def annex_a_xsd():
+    return render_template("annex-a-xsd.html", base=base, is_iso=X.is_iso, navigation=get_navigation(), link=f"{SCHEMA_NAME}.xsd")
+
+
 @app.route(make_url(f"{SCHEMA_NAME}.exp"))
-def annex_a_express_download():
+@app.route(make_url(f"{SCHEMA_NAME}.xsd"))
+def annex_a_schema_download():
+    fn = os.path.basename(request.path)
     kwarg = 'attachment_filename' if flask.__version__ < '2' else 'download_name'
-    return send_file("IFC.exp", as_attachment=True, **{kwarg: f"{SCHEMA_NAME}.exp"})
+    return send_file(f"IFC.{fn.rsplit('.', 1)[1]}", as_attachment=True, **{kwarg: fn})
 
 
 @app.route(make_url("annex-a-psd.zip"))

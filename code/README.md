@@ -487,6 +487,8 @@ wget https://cdn.jsdelivr.net/npm/mathjax\@3.2.0/es5/output/svg/fonts/tex.js
 Typically for hosting a production version of this website, you can choose to
 deploy a container running the website using Docker.
 
+### Non-ISO version
+
 ```bash
 $ cd code/
 
@@ -530,4 +532,20 @@ $ docker start ifcdoc-container
 $ docker ps
 CONTAINER ID   IMAGE    COMMAND                  CREATED         STATUS         PORTS                                   NAMES
 0d4b0775cf29   ifcdoc   "/bin/sh -c 'supervi…"   5 minutes ago   Up 3 seconds   0.0.0.0:8080->80/tcp, :::8080->80/tcp   ifcdoc-container
+```
+
+### ISO version
+
+The ISO version uses docker-compose with nginx for serving HTTPS and HTTP
+basic auth. It requires running the following steps:
+
+```
+htpasswd -b proxy/auth/.htpasswd $USERNAME $PASSWORD
+
+docker run -it -v $PWD/proxy/cert:/etc/letsencrypt \
+  -p 80:80 \
+  certbot/certbot certonly --standalone --register-unsafely-without-email --agree-tos --cert-name host \
+  -d $DOMAIN_NAME
+
+docker compose up -d --build
 ```

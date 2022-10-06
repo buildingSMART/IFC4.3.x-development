@@ -1821,6 +1821,13 @@ def content(s):
     
     if X.is_iso:
         content = re.sub(r'IFC( (4\.3\.[0x](\.\d)?)|\b)', 'ISO 16739-1', content)
+        
+    if content.startswith('!template'):
+        from jinja2 import Environment, BaseLoader
+
+        content = content[len('!template'):].lstrip()
+        template = Environment(loader=BaseLoader).from_string(content)
+        content = template.render(is_iso=X.is_iso)
 
     html = process_markdown("", render_template_string(content, base=base, is_iso=X.is_iso))
     

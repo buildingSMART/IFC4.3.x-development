@@ -13,6 +13,7 @@ For an explanation of the voluntary nature of standards, the meaning of ISO spec
 This document was prepared by Technical Committee ISO/TC 59, *Buildings and civil engineering works, SC 13, Organization and digitization of information about buildings and civil engineering works, including building information modelling (BIM)*.
 
 This edition cancels and replaces ISO 16739:2018 which had been enhanced in scope, technically revised, and restructured. The main changes are:
+
 - The addition of semantic constructs for project and spatial structures used in infrastructure and civil engineering works
 - The addition of semantic constructs for construction elements used in infrastructure and civil engineering works
 - The revision of semantic constructs for building engineering works

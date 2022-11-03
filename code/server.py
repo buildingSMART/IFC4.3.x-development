@@ -1979,7 +1979,11 @@ def annex_f():
         changelog = {"sections": []}
         SectionNumberGenerator.begin_subsection()
         for section in changelog_data:
-            section_name = section[0]
+            if X.is_iso:
+                section_name = "ISO 16739-1:2023 to ISO 16739:2018 change log"
+            else:
+                section_name = section[0]
+
             changes = section[1]
             changelog["sections"].append(
                 {

@@ -368,11 +368,12 @@ if __name__ == "__main__":
     if repo_dir:
         d = os.path.join(repo_dir, "reference_schemas")
         names = [
-                "ifc23", "IFC2X3_TC1.exp", "deprecated_entities_Ifc2.3.0.1.json", "psd_IFC2x3",
                 "ifc4", "IFC4_ADD2_TC1.exp", "deprecated_entities_Ifc4.0.2.2.json", "psd_IFC4_ADD2_TC1",
         ]
         
         if not is_iso:
+            names = ["ifc23", "IFC2X3_TC1.exp", "deprecated_entities_Ifc2.3.0.1.json", "psd_IFC2x3"] + names
+
             names += [
                 # no IfcDoc branch for 4x1
                 "ifc41", "IFC4x1.exp", "deprecated_entities_Ifc4.0.2.2.json", "psd_IFC4x1",

@@ -1,7 +1,6 @@
 This documentation of the Industry Foundation Classes (IFC) refers to other standards, and uses external sources. This page provides an overview of the external sources that are being used in the publication of IFC.
 
 * CSS-1, Cascading Style Sheets, level 1 — W3C Recommendation
-* [Feather](https://github.com/feathericons/feather), Icons used for HTML representation. Feather is licensed under the [MIT License](https://github.com/colebemis/feather/blob/master/LICENSE).
 * ISO 10303-1, Industrial automation systems and integration — Product data representation and exchange — Part 1: Overview and fundamental principles
 * ISO 10303-41, Product data representation and exchange — Integrated generic resource — Fundamentals of product description and support
 * ISO 10303-42, Product data representation and exchange — Integrated generic resource — Geometric and topological representation

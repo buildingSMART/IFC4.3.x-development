@@ -31,9 +31,22 @@ Informal description of this coordinate reference system
 Example for ellipsoid:
 ELLIPSOID[<name>,<major axis>,<inverse flattening>,<length unit>]
 
-### WellKnownText
+### GeodeticDatum
+Name by which this datum is identified. The geodetic datum is associated with the coordinate reference system and indicates the shape and size of the rotation ellipsoid and this ellipsoid's connection and orientation to the actual globe/earth. It needs to be provided, if the _Name_ identifier does not unambiguously define the geodetic datum as well.
 
-Well Known Text (WKT) definition for this Coordinate Reference System inversely associated as a IfcWellKnownText entity.
+{ .examples}
+> EXAMPLE  geodetic datums include: { .note}
+> * ED50
+> * EUREF89
+> * WSG84
+
+### VerticalDatum
+Name by which the vertical datum is identified. The vertical datum is associated with the height axis of the coordinate reference system and indicates the reference plane and fundamental point defining the origin of a height system. It needs to be provided, if the _Name_ identifier does not unambiguously define the vertical datum as well and if the coordinate reference system is a 3D reference system.
+
+{ .examples}
+> EXAMPLE  vertical datums include: { .note}
+> * DHHN92: the German 'Haupth&ouml;hennetz'
+> * EVRS2007; the European Vertical Reference System
 
 ### HasCoordinateOperation
 Indicates conversion between coordinate systems. In particular it refers to an _IfcCoordinateOperation_ between this coordinate reference system, and another Geographic coordinate reference system.

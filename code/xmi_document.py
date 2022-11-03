@@ -50,7 +50,7 @@ logging.basicConfig(level=logging.WARNING, stream=sys.stdout)
 is_iso = os.environ.get('ISO', '0') == '1'
 
 if is_iso:
-    SCHEMA_NAME = "IFC4X3_ADD1"
+    SCHEMA_NAME = "IFC4X3"
 else:
     SCHEMA_NAME = "IFC4X3_DEV"
 

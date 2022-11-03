@@ -8,6 +8,7 @@ RUN apt-get update -y && apt-get install -y texlive texlive-pictures texlive-lat
 RUN rm /etc/ImageMagick-6/policy.xml
 RUN curl --silent --show-error --retry 5 https://bootstrap.pypa.io/get-pip.py | python3
 RUN python3 -m pip install flask Beautifulsoup4 lxml Markdown gunicorn pysolr pydot tabulate hilbertcurve==1.0.5 markdown-it-py==1.1.0 deepdiff redis "pyparsing<3"
+RUN python3 -m pip install backports.cached-property
 
 RUN curl --location --silent --show-error --retry 5 'https://archive.apache.org/dist/lucene/solr/8.6.3/solr-8.6.3.tgz' -o - | tar zxf -
 RUN chmod +x /solr-8.6.3/bin/*
@@ -24,7 +25,7 @@ RUN git clone https://github.com/buildingSMART/Sample-Test-Files /examples
 RUN git clone https://github.com/buildingSMART/IFC4.3.x-development /ifc43 --branch iso_submission
 ENV REPO_DIR=/ifc43
 
-ADD *.py tikz-uml.sty /code/
+ADD *.py tikz-uml.sty IFC4_conf.xml /code/
 ADD express_diff/* /code/express_diff/
 ADD templates/* /code/templates/
 

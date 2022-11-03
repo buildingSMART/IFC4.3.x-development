@@ -6,6 +6,11 @@ from dataclasses import dataclass, field
 from itertools import zip_longest as zip_l
 from collections import defaultdict
 
+try:
+    from functools import cached_property
+except:
+    from backports.cached_property import cached_property
+
 import xml_dict
 
 class namespace:
@@ -28,7 +33,7 @@ class uml_package:
     name : str
     id : str = field(default_factory=new_id)
     
-    @functools.cached_property
+    @cached_property
     def xml(self):
         return xml_dict.xml_node(
             tag = 'packagedElement',
@@ -45,7 +50,7 @@ class uml_class:
     name : str
     id : str = field(default_factory=new_id)
     
-    @functools.cached_property
+    @cached_property
     def xml(self):
         return xml_dict.xml_node(
             tag = 'packagedElement',
@@ -63,7 +68,7 @@ class uml_enumeration:
     values : list
     id : str = field(default_factory=new_id)
     
-    @functools.cached_property
+    @cached_property
     def xml(self):
         return xml_dict.xml_node(
             tag = 'packagedElement',
@@ -145,7 +150,7 @@ class uml_assoc_class:
     type : str = "uml:AssociationClass"
     owners : list = None
     
-    @functools.cached_property
+    @cached_property
     def xml(self):
     
         c_ids = [cid or new_id() for _, cid in zip_l(self.connector_types, self.connector_ids or [])]
@@ -171,7 +176,7 @@ class uml_association:
     type : str = "uml:Association"
     owners : list = None
     
-    @functools.cached_property
+    @cached_property
     def xml(self):
     
         c_ids = [cid or new_id() for _, cid in zip_l(self.connector_types, self.connector_ids or [])]
@@ -194,7 +199,7 @@ class uml_realization:
     client : str
     id : str = field(default_factory=new_id)
     
-    @functools.cached_property
+    @cached_property
     def xml(self):        
         return xml_dict.xml_node(
             tag = 'packagedElement',

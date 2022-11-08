@@ -1879,7 +1879,7 @@ def annex_a_psd():
 
 
 def annotate_hierarchy(data=None, start=1, number_path=None):
-    level_2_headings = ("Schema Definition", "Types", "Entities", "Property Sets", "Functions", "Rules")
+    level_2_headings = ("Schema Definition", "Types", "Entities", "Property Sets", "Quantity Sets", "Functions", "Rules")
 
     def items(d):
         if len(number_path or []) == 2:

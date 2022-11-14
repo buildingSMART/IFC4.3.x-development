@@ -2172,8 +2172,9 @@ def after(response):
             h1 = soup.findAll("h1")[0]
         except:
             return response
+
         title = soup.findAll("title")[0]
-        title.string = h1.text + " - " + title.string
+        title.string = title_string = h1.text + " - " + title.string
 
         main_content = soup.find_all(id="main-content")
         main_content = main_content[0] if len(main_content) else None
@@ -2314,6 +2315,11 @@ def after(response):
                         )
                     except ConnectionError:
                         pass
+        
+        # Restore the original title because we don't want it
+        # with decorated links
+        title = soup.findAll("title")[0]
+        title.string = title_string
 
         response.data = str(soup)
 

@@ -21,3 +21,4 @@ services:
       - ./proxy/conf:/etc/nginx/conf.d:ro
       - ./proxy/auth:/etc/auth:ro
       - ./proxy/cert:/etc/letsencrypt
+      - ./archives:/data

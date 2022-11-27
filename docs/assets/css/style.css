@@ -55,7 +55,7 @@ nav div a.sublink-1 {
 }
 nav div a.sublink-1.current {
     background-color: transparent;
-    color: var(--link);
+    color: #fff;
     border-left: 3px solid var(--blue);
     border-radius: 0px;
 }

@@ -5,7 +5,7 @@ The _Spatial Interference with Zone_ concept is an extension of the _Spatial Int
 
 The addition of a realizing _IfcSpatialZone_ extends the functionality of this relationship with the following:
 - The ability to attach property sets to the co-engineering (or interference) zone.
-- Allows explicit definition of the shared footprint or body geometry representing the zone where the _IfcSpatialElement_s interfere, without impacting the footprint or body geometry of the interfering _IfcSpatialElement_s
+- Allows explicit definition of the shared footprint or body geometry representing the zone where the _IfcSpatialElement_ entities interfere, without impacting the footprint or body geometry of the interfering _IfcSpatialElement_ entities.
 - Products are still positioned within the domain spatial structure and can use relative positioning.
 
 The _Spatial Interference with Zone_ concept is defined to cover complex use cases where the interference results in co-engineering zones where multiple teams have to collaborate within the same spatial area while maintaining ownership and rights over there domain elements. A common example of this is a level crossing between a railway and a road. The road and railway hierarchies each have a segment that relates to the level crossing and an _IfcRelInterferesElements_ relationship is defined to encode this connection. The relatiohsip is then extended with an _IfcSpatialZone_ that defines the co-engineering zone and specific overlapping footprint or body geometry. Property sets can then be attached to the _IfcSpatialZone_ and the explicit footprint or body geometry can be utilised for automated clash and cross domain approval/notification of model updates.

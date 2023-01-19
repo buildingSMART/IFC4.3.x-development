@@ -2,7 +2,7 @@
 
 An _IfcEllipse_ is a curve consisting of a set of points whose distances to two fixed points add to the same constant.
 
-The inherited _SELF\IfcConic.Position.Location_ is the center of the _IfcEllipse_, and the inherited S_ELF\IfcConic.Position.Position.P[1]_ is the direction of the _SemiAxis1_.
+The inherited _SELF\IfcConic.Position.Location_ is the center of the _IfcEllipse_, and the inherited _SELF\IfcConic.Position.P[1]_ is the direction of the _SemiAxis1_.
 
 ![ellipse](../../../../figures/ifcellipse-layout1.gif)
 
@@ -13,7 +13,7 @@ Definition of the <em>IfcEllipse</em> within the a three-dimensional position co
 It is placed within the object coordinate system of an element of which it is a
 representation.
 
-> NOTE  An elliptical arc segment is defined by using the _IfcTrimmedCurve_ with _BasisCurve_
+> NOTE  An elliptical arc segment is defined by using the _IfcTrimmedCurve_ with _BasisCurve_ being an _IfcEllipse_.
 
 { .extDef}
 > REFERENCE Definition according to ISO/CD 10303-42:1992
@@ -22,12 +22,12 @@ An ellipse is a conic section defined by the lengths of the semi-major and semi-
 
 
 ```
-C = position.location
-x = position.p[1]
-y = position.p[2]
-z = position.p[3]
-R1 = semi axis 1
-R2 = semi axis 2
+C = SELF\IfcConic.Position.Location
+x = SELF\IfcConic.Position.P[1]
+y = SELF\IfcConic.Position.P[2]
+z = SELF\IfcConic.Position.P[3]
+R1 = SemiAxis1
+R2 = SemiAxis2
 ```
 
 The ellipse is parameterized as:

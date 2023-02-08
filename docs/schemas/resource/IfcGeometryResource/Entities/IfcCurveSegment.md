@@ -18,7 +18,7 @@ First trimming point of the curve segment on the _ParentCurve_. This point is us
 
 ### SegmentLength
 Length of segment measured as length or parameter value from _SegmentStart_. The sign of this value defines the sense agreement.
-> NOTE When the curve is a cricle, the IfcParameterValue is a value between 0 and 2π.
+> NOTE When the curve is a cricle, the IfcParameterValue is a value between 0 and 2π (or between 0 and 360 degree).
 
 ### ParentCurve
 Curve to be used as base for the segment definition.

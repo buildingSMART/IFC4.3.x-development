@@ -487,47 +487,17 @@ wget https://cdn.jsdelivr.net/npm/mathjax\@3.2.0/es5/output/svg/fonts/tex.js
 Typically for hosting a production version of this website, you can choose to
 deploy a container running the website using Docker.
 
-```bash
-$ cd code/
+The system uses docker-compose with nginx for serving HTTPS and HTTP
+basic auth. It requires running the following steps:
 
-# Build a new system image called "ifcdoc"
-$ docker build -t "ifcdoc" .
-
-# Let's see the image we just created
-$ docker images
-REPOSITORY   TAG           IMAGE ID       CREATED          SIZE
-ifcdoc       latest        df699a56028f   12 seconds ago   3GB
-
-# Run the image we created in a new container called "ifcdoc-container", with our local port 8080 mapped to the container's port 80
-$ docker run -p 8080:80 --name "ifcdoc-container" -d "ifcdoc"
-
-# Check running Docker processes to confirm that the container is running
-$ docker ps
-CONTAINER ID   IMAGE    COMMAND                  CREATED          STATUS          PORTS                                   NAMES
-0d4b0775cf29   ifcdoc   "/bin/sh -c 'supervi…"   12 seconds ago   Up 11 seconds   0.0.0.0:8080->80/tcp, :::8080->80/tcp   ifcdoc-container
 ```
+# in case of ISO mode
+htpasswd -b proxy/auth/.htpasswd $USERNAME $PASSWORD
 
-Now you can visit the containerized deployment in your browser by visiting
-`http://localhost:8080`.
+docker run -it -v $PWD/proxy/cert:/etc/letsencrypt \
+  -p 80:80 \
+  certbot/certbot certonly --standalone --register-unsafely-without-email --agree-tos --cert-name host \
+  -d $DOMAIN_NAME
 
-You can stop the Docker container as follows:
-
-```bash
-$ docker stop ifcdoc-container
-
-# Check running processes (-a flag shows all processes) to ensure it has exited
-$ docker ps -a
-CONTAINER ID   IMAGE    COMMAND                  CREATED         STATUS                        PORTS   NAMES
-0d4b0775cf29   ifcdoc   "/bin/sh -c 'supervi…"   3 minutes ago   Exited (137) 32 seconds ago           ifcdoc-container
-```
-
-Then you can start it again:
-
-```bash
-$ docker start ifcdoc-container
-
-# Check running Docker processes to confirm that the container is running
-$ docker ps
-CONTAINER ID   IMAGE    COMMAND                  CREATED         STATUS         PORTS                                   NAMES
-0d4b0775cf29   ifcdoc   "/bin/sh -c 'supervi…"   5 minutes ago   Up 3 seconds   0.0.0.0:8080->80/tcp, :::8080->80/tcp   ifcdoc-container
+docker compose up -d --build
 ```

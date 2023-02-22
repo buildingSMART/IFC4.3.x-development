@@ -663,3 +663,14 @@ body.cover.iso #main-content {
 body.cover.iso #main-content * {
     text-align: center;
 } 
+
+.mvd {
+    display: inline-block;
+    padding: 0.2em 0.5em;
+    margin: 0.5em;
+    border: solid 1px #ccc;
+    border-radius: 8px;
+    background: #f0f0f0;
+    font-size: 80%;
+    cursor: help;
+}

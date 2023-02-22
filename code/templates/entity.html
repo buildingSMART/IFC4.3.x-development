@@ -3,6 +3,18 @@
 
 <h1>{{ number }} {{ entity}}</h1>
 
+{% if is_product_or_type %}
+<p><aside class="aside-note"><mark>NOTE</mark>  This entity is a subtype of IfcProduct or IfcTypeProduct and hence part of every standardized schema subset and implementation level.</aside></p>
+{% else %}
+{% if mvds %}
+{% for mvd in mvds %}
+<div class="mvd" title="Included in {{mvd.cause | join(', ')}}">{{mvd.abbr}} &#9432;</div>
+{% endfor %}
+{% else %}
+<p><aside class="aside-note"><mark>NOTE</mark>  This entity is not part of a standardized schema subset or implementation level.</aside></p>
+{% endif %}
+{% endif %}
+
 {% if is_deprecated %}
 <div class="row">
     <div class="card fluid error deprecation">

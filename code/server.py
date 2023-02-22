@@ -124,6 +124,7 @@ class resource_manager:
     xmi_concepts = schema_resource("xmi_concepts.json")
     xmi_mvd_concepts = schema_resource("xmi_mvd_concepts.json")
     examples_by_type = schema_resource("examples_by_type.json")
+    mvd_entity_usage = schema_resource("mvd_entity_usage.json")
 
     listing_references = schema_resource("listing_references.json")
     listing_tables = schema_resource("listing_tables.json")
@@ -982,6 +983,14 @@ def resource(resource):
 
     if "Entities" in md:
         builder = resource_documentation_builder(resource)
+        mvds = [{'abbr': "".join(re.findall('[A-Z]|(?<=-)[a-z]', k)), 'cause': v[resource]} for k, v in R.mvd_entity_usage.items() if resource in v]
+        is_product_or_type = False
+        entity = resource
+        while entity:
+            entity = R.entity_supertype.get(entity)
+            if entity in ("IfcProduct", "IfcTypeProduct"):
+                is_product_or_type = True
+                break
         return render_template(
             "entity.html",
             base=base,
@@ -1004,6 +1013,8 @@ def resource(resource):
             changelog=get_changelog(resource),
             is_deprecated=resource in R.deprecated_entities,
             is_abstract=resource in R.abstract_entities,
+            mvds=mvds,
+            is_product_or_type=is_product_or_type
         )
     elif resource in R.pset_definitions.keys():
         return render_template(

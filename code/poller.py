@@ -37,6 +37,9 @@ while True:
         subprocess.call([sys.executable, "express_to_xsd.py", "IFC.exp", "IFC.xsd"])
         subprocess.call([sys.executable, "change_log.py", REPO_DIR])
         subprocess.call([sys.executable, "parse_examples.py", REPO_DIR])
+
+        subprocess.call([sys.executable, "templates_to_mvdxml.py", 'IFC4.3.mvdxml', REPO_DIR])
+        subprocess.call([sys.executable, "determine_mvd_scope.py", 'IFC4.3.mvdxml', 'IFC.exp'])
         
         subprocess.call([sys.executable, "process_schema.py", os.path.join(REPO_DIR, "schemas/IFC.xml")])
         

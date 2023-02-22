@@ -7,7 +7,7 @@ import xml_dict
 from dataclasses import dataclass
 
 from append_xmi import namespace
-from express_diff import express_parser
+from ifcopenshell.express import express_parser
 from xmi_document import SCHEMA_NAME
 
 X = xml_dict.xml_node

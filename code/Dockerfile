@@ -12,7 +12,7 @@ RUN python3 -m pip install flask Beautifulsoup4 lxml Markdown gunicorn pysolr py
 RUN curl --location --silent --show-error --retry 5 'https://archive.apache.org/dist/lucene/solr/8.6.3/solr-8.6.3.tgz' -o - | tar zxf -
 RUN chmod +x /solr-8.6.3/bin/*
 
-RUN curl --silent --show-error --retry 5 -o /tmp/ifcopenshell_python.zip https://s3.amazonaws.com/ifcopenshell-builds/ifcopenshell-python-`python3 -c 'import sys;print("".join(map(str, sys.version_info[0:2])))'`-v0.6.0-f14d349-linux64.zip
+RUN curl --silent --show-error --retry 5 -o /tmp/ifcopenshell_python.zip https://s3.amazonaws.com/ifcopenshell-builds/ifcopenshell-python-`python3 -c 'import sys;print("".join(map(str, sys.version_info[0:2])))'`-v0.7.0-476ab50-linux64.zip
 RUN mkdir -p `python3 -c 'import site; print(site.getusersitepackages())'`
 RUN unzip -d `python3 -c 'import site; print(site.getusersitepackages())'` /tmp/ifcopenshell_python.zip
 ADD https://api.github.com/repos/opensourceBIM/python-mvdxml/git/refs/heads/master /tmp/mvdxml_parser_version.json

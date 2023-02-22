@@ -151,13 +151,21 @@ for fn in sorted(fns, key=len):
                     except: pass
                     
                     if ty == "Reference":
-                        v = {'Template': {'@ref': templates_by_name[x.replace("_", "")][0]}}
+                        v = {'Template': [{'@ref': templates_by_name[x.replace("_", "")][0]}]}
                     else:
                         # get predecessor/predecessor/binding to encode expression
                         variable = G.nodes[list(G.predecessors(list(G.predecessors(x))[0]))[0]]['binding']
-                        v = {'Constraint': [{'@Expression': f"{variable}[Value] = '{constraint_expressions[x]}'"}]}
+                        if variable is None:
+                            # @todo in case of no binding / ruleid what's the lhs of a constraint?
+                            variable = list(G.predecessors(list(G.predecessors(x))[0]))[0].split('_')[0]
+                        v = {'Constraint': [{'@Expression': f"{variable}[Value] = {constraint_expressions[x]}"}]}
                         
-                    otherat[f"{ty}s"] = v
+                    if otherat.get(f"{ty}s"):
+                        kk, vv = list(v.items())[0]
+                        otherat[f"{ty}s"][kk].extend(vv)
+                    else:
+                        otherat[f"{ty}s"] = v
+
                     return
                 
                 ruleid = G.nodes[x].get('binding')

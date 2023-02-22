@@ -28,6 +28,11 @@ try:
 except:
     schema_name_postfix = ''
 
+try:
+    REPO_DIR = sys.argv[2]
+except:
+    REPO_DIR = os.path.join(os.path.dirname(__file__), "..")
+
 mvd_s = xmlschema.XMLSchema(os.path.join(os.path.dirname(__file__), 'mvdXML_V1.1_add1.xsd'))
 
 def generate_uuid(content):
@@ -35,7 +40,7 @@ def generate_uuid(content):
     return str(uuid.uuid5(uuid.UUID(int=0), content))
     
 def read_scope():
-    soup = BeautifulSoup(markdown.markdown(open(os.path.join(os.path.dirname(__file__), "../content/scope.md"), encoding='utf-8').read()))
+    soup = BeautifulSoup(markdown.markdown(open(os.path.join(REPO_DIR, "content/scope.md"), encoding='utf-8').read()))
     nodes = (n for n in soup.h2.nextSiblingGenerator())
     return "\n".join(map(str, nodes)).strip()
 
@@ -52,7 +57,7 @@ concept_mapping = {}
 root_level_concepts = {}
 unapplicable_concepts = []
 
-fns = glob.glob(os.path.join(os.path.dirname(__file__), "../docs/templates/**/README.md"), recursive=True)
+fns = glob.glob(os.path.join(REPO_DIR, "docs/templates/**/README.md"), recursive=True)
 for fn in sorted(fns, key=len):
     path = os.path.normpath(fn).split(os.sep)[:-1]
     

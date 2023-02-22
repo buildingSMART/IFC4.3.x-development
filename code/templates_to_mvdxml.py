@@ -38,7 +38,15 @@ def read_scope():
     soup = BeautifulSoup(markdown.markdown(open(os.path.join(os.path.dirname(__file__), "../content/scope.md"), encoding='utf-8').read()))
     nodes = (n for n in soup.h2.nextSiblingGenerator())
     return "\n".join(map(str, nodes)).strip()
-    
+
+entity_supertype = json.load(open('entity_supertype.json'))
+
+def yield_supertypes(x):
+    yield x
+    s = entity_supertype.get(x)
+    if s:
+        yield from yield_supertypes(s)
+
 templates_by_name = {}
 concept_mapping = {}
 root_level_concepts = {}
@@ -177,16 +185,13 @@ for fn in sorted(fns, key=len):
 
             rules = list(rules.values())[0][0]['AttributeRules']
 
-    
-    
-    
     di = {
         '@applicableEntity': [root.split("_")[0] if root else None],
         '@applicableSchema': [schema_name],
         '@name': name,
         '@status': 'sample',
         '@uuid': concept_uuid,
-        '@isPartial': "Partial Templates" in path,
+        '@isPartial': "Partial Templates" in path or (root is not None and "IfcRoot" not in yield_supertypes(root.split("_")[0])),
         'Definitions': {
             'Definition': {
                 'Body': {
@@ -212,14 +217,6 @@ for fn in sorted(fns, key=len):
         
     if root is None:
         unapplicable_concepts.append(di)
-        
-entity_supertype = json.load(open('entity_supertype.json'))
-
-def yield_supertypes(x):
-    yield x
-    s = entity_supertype.get(x)
-    if s:
-        yield from yield_supertypes(s)
         
 for templ in reversed(unapplicable_concepts):
     if templ.get('SubTemplates'):

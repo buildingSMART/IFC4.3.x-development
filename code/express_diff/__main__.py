@@ -8,7 +8,7 @@ import tabulate
 
 sys.path.append(os.path.abspath(os.path.dirname(__file__)))
 
-from . import express_parser
+from ifcopenshell.express import express_parser
 
 fn1, fn2, output = sys.argv[1:]
 

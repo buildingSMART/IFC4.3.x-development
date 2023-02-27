@@ -43,7 +43,7 @@ while True:
         if first_time:
             # First time. Spider the site to build indices in Redis. Then terminate.
             subprocess.call("wget -q --recursive --spider -S localhost:5000".split(" "))
-            requests.post("http://localhost/build_index")
+            requests.post("http://localhost:5000/build_index")
             subprocess.call("redis-cli shutdown".split(" "))
     else:
         time.sleep(60)

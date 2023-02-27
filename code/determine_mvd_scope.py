@@ -13,7 +13,6 @@ def run(schema_fn, mvdxml_fn, concept_subset=None):
 
     entities = set()
     types = set()
-    visited_templates = set()
     causes = defaultdict(set)
 
     def collect_entities(cause, rule, parent):
@@ -22,6 +21,8 @@ def run(schema_fn, mvdxml_fn, concept_subset=None):
             causes[rule.attribute].add(cause)
 
     """
+    visited_templates = set()
+
     concept_roots = list(mvd.concept_root.parse(mvdxml_fn))
     for cr in concept_roots:
         if concept_subset is not None and cr.name not in concept_subset:
@@ -48,8 +49,6 @@ def run(schema_fn, mvdxml_fn, concept_subset=None):
                     t.parse(visited=visited)
                     return t
 
-            breakpoint()
-
     templs = list(
         map(
             functools.partial(mvd.template, collector()),
@@ -62,8 +61,6 @@ def run(schema_fn, mvdxml_fn, concept_subset=None):
 
     for t in templs:
         if t.name.replace(" ", "") in concept_subset:
-            if t.name == "Alignment Geometry Cant":
-                breakpoint()
             t.root = t.root.cloneNode(deep=True)
             try:
                 t.root.removeChild(t.root.getElementsByTagName("SubTemplates")[0])

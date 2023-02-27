@@ -261,7 +261,7 @@ for concept, bindings in concept_associations['GeneralUsage'].items():
 def write_root(k_v):
     entity, concepts = k_v
     
-    mdfn = glob.glob(os.path.join(os.path.dirname(__file__), f"../docs/**/{entity}.md"), recursive=True)
+    mdfn = glob.glob(os.path.join(REPO_DIR, f"docs/**/{entity}.md"), recursive=True)
     assert len(mdfn) == 1
     mdfn = mdfn[0]
     

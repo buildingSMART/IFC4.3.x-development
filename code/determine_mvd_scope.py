@@ -1,4 +1,5 @@
 import functools
+import itertools
 
 import ifcopenshell
 import ifcopenshell.mvd as mvd
@@ -9,16 +10,27 @@ from collections import defaultdict
 W = ifcopenshell.ifcopenshell_wrapper
 
 
-def run(schema_fn, mvdxml_fn, concept_subset=None):
+def run(schema_fn, mvdxml_fn, concept_subset=None, additional=None):
 
     entities = set()
     types = set()
     causes = defaultdict(set)
 
-    def collect_entities(cause, rule, parent):
+    def collect_entities(cause, ent):
+        entities.add(ent)
+        causes[ent].add(cause)
+
+    def collect_entities_mvdxml(cause, rule, parent):
         if rule.tag == "EntityRule":
-            entities.add(rule.attribute)
-            causes[rule.attribute].add(cause)
+            collect_entities(cause, rule.attribute)
+
+    def wrap_try(fn, default=None):
+        def inner(*args):
+            try:
+                return fn(*args)
+            except:
+                return default
+        return inner
 
     """
     visited_templates = set()
@@ -59,6 +71,10 @@ def run(schema_fn, mvdxml_fn, concept_subset=None):
         )
     )
 
+    builder = express_parse(schema_fn)
+    ifcopenshell.register_schema(builder)
+    S = ifcopenshell.ifcopenshell_wrapper.schema_by_name(builder.schema_name)
+
     for t in templs:
         if t.name.replace(" ", "") in concept_subset:
             t.root = t.root.cloneNode(deep=True)
@@ -67,11 +83,11 @@ def run(schema_fn, mvdxml_fn, concept_subset=None):
             except IndexError as e:
                 pass
             t.parse()
-            t.traverse(functools.partial(collect_entities, t.name))
+            t.traverse(functools.partial(collect_entities_mvdxml, t.name))
 
-    builder = express_parse(schema_fn)
-    ifcopenshell.register_schema(builder)
-    S = ifcopenshell.ifcopenshell_wrapper.schema_by_name(builder.schema_name)
+            if additional and (bindings := additional.get(t.name.replace(" ", ""))):
+                for x in set(filter(wrap_try(S.declaration_by_name), itertools.chain.from_iterable(b.values() for b in bindings))):
+                    collect_entities(t.name, x)
 
     def yield_supertypes(en):
         yield en.name()
@@ -147,9 +163,12 @@ if __name__ == "__main__":
     with open("xmi_mvd_concepts.json", "r") as f:
         mvds = json.load(f)
 
+    with open("xmi_concepts.json", "r") as f:
+        additional = json.load(f)["GeneralUsage"]
+
     usage = {}
     for nm, concepts in mvds.items():
-        usage[nm] = run(schema_fn, mvdxml_fn, concepts)
+        usage[nm] = run(schema_fn, mvdxml_fn, concepts, additional)
 
     with open("mvd_entity_usage.json", "w") as f:
         json.dump(usage, f, indent=1)

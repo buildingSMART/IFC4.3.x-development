@@ -6,6 +6,7 @@ gunicorn
 hilbertcurve==1.0.5
 lxml
 markdown-it-py==1.1.0
+numpy
 pydot
 pysolr
 tabulate

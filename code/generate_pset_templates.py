@@ -27,7 +27,7 @@ import sys
 
 BASE_MODULE_PATH = Path(__file__).parent
 IFC4x3_HTML_LOCATION = BASE_MODULE_PATH / "IFC4.3-html-iso-release"
-IFC4x3_PSD_LOCATION = BASE_MODULE_PATH / "psd"
+IFC4x3_PSD_LOCATION = BASE_MODULE_PATH / "../output/psd"
 
 try:
     IFC4x3_OUTPUT_PATH = sys.argv[1]

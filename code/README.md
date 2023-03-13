@@ -511,7 +511,7 @@ mkdir -p /tmp/ifc43-resources
 docker exec $(docker ps -q --filter name=app) /bin/sh -c 'tar -cf - /code/*.json' | tar -xvf - -C /tmp/ifc43-resources --strip-components=1
 docker compose down
 docker compose up -d --build --force-recreate
-ls /tmp/ifc43-resources/*.json | xargs -n1 -I{} docker cp {} $(docker ps -q --filter name=app):/code
+find -type f /tmp/ifc43-resources | xargs -n1 -I{} docker cp {} $(docker ps -q --filter name=app):/code
 ```
 
 Note that this doesn't include all resources and also doesn't populate the search index (but shouldn't interfere with these being created).

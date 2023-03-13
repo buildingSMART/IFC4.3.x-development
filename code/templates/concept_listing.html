@@ -4,38 +4,72 @@
 
 {{ content | safe }}
 
-<ol class="referenced-list">
-    {% for item in subs recursive -%}
+{% for section in sections %}
+
+{% if section.title %}
+<h1>{{ section.number }} {{ section.title }}</h1>
+{% endif %}
+
+<div class="narrower">
+
+<ol class="ref-list-2">
+    {% for item in section.cs recursive -%}
     <li>
-        <div class='row'>
-        {% if item.number %}{{ item.number }}{% endif %}
-        {% if item.url %}
-        <a href="{{ item.url }}">
-        {% endif %}
-            {{ item.text or item.name }}
-        {% if item.url %}
-        </a>
-        {% endif %}
-        
-        </div>
-        
-        {% if not is_iso %}        
-        {% for mvd in item.mvds -%}
-        <div class='row mini {% if mvd.on %} on {% endif %}'>
+        <div class="wrapper">
+
+            <div class='row'>
+                {% if item.number %}{{ item.number }}{% endif %}
+                {% if item.url %}
+                &nbsp;&nbsp;
+                <a href="{{ item.url }}">
+                {% endif %}
+                    {{ item.text or item.name }}
+                {% if item.url %}
+                </a>
+                {% endif %}
+            </div>
+
+            {% if not is_iso %}
+
+            {% set vars = { 'any_mvd': False, 'mvd_emitted': False } %}
+            {% for mvd in item.mvds -%}
             {% if mvd.on %}
-            <abbr title="Included in {{ mvd.name }}">{{ mvd.abbr }}</abbr>
+            {% if vars.update({'any_mvd': True}) %} {% endif %}
             {% endif %}
+            {% endfor %}
+
+            {% if vars.any_mvd %}
+            <span class="dots"></span>
+            {% endif %}
+
+            <div class="mvds">
+            {% for mvd in item.mvds -%}
+            {% if vars.mvd_emitted or mvd.on %}
+            <div class='row mini {% if mvd.on %} on mvd {% else %} mvd-spacing {% endif %}'>
+                {% if mvd.on %}
+                <abbr title="Included in {{ mvd.name }}">{{ mvd.abbr }}</abbr>
+                {% if vars.update({'mvd_emitted': True}) %} {% endif %}
+                {% endif %}
+            </div>
+            {% endif %}
+            {%- endfor %}
+            </div>
+            {% endif %}
+
         </div>
-        {%- endfor %}        
-        {% endif %}
         
         {% if item.children %}
-        <ol class="referenced-list">
+        <ol class="ref-list-2">
         {{ loop(item.children) }}
         </ol>
         {% endif %}
+
     </li>
     {%- endfor %}
 </ol>
+
+</div>
+
+{% endfor %}
 
 {% endblock %}

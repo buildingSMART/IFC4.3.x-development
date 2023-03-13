@@ -1560,8 +1560,27 @@ def annex_b():
 
 @app.route(make_url("annex-b1.html"))
 def annex_b1():
+    def get_mvd_qualification(resource):
+        mvds = [{'abbr': "".join(re.findall('[A-Z]|(?<=-)[a-z]', k)), 'cause': v.get(resource), 'on': resource in v} for k, v in R.mvd_entity_usage.items()]
+        return mvds
+
+    def get_product_qualification(resource):
+        is_product_or_type = False
+        entity = resource
+        while entity:
+            entity = R.entity_supertype.get(entity)
+            if entity in ("IfcProduct", "IfcTypeProduct"):
+                is_product_or_type = True
+                break
+        return is_product_or_type
+
     items = [
-        {"number": name_to_number()[n], "url": url_for("resource", resource=n), "name": n}
+        {
+            "number": name_to_number()[n],
+            "url": url_for("resource", resource=n),
+            "name": n,
+            **({} if X.is_iso else {"mvds": get_mvd_qualification(n), "is_product_or_type": get_product_qualification(n)})
+        }
         for n in entity_names()
     ]
     return render_template("annex-b.html", base=base, is_iso=X.is_iso, navigation=get_navigation(), items=items, is_dictionary=True, title="Entities")
@@ -1622,18 +1641,21 @@ def annex_b7():
     return render_template("annex-b.html", base=base, is_iso=X.is_iso, navigation=get_navigation(), items=items, title="Property Enumerations")
 
 
-def make_concept(path, number_path=None):
+def make_concept(path, number_path=None, exclude_partial=True):
     md_root = os.path.join(REPO_DIR, "docs/templates")
 
     if number_path is None:
-        number_path = "4"
+        if path == ["Partial Templates"]:
+            number_path = "4.2"
+        else:
+            number_path = "4.1"
 
     children = enumerate(
         sorted(
             [
                 d
                 for d in os.listdir(os.path.join(md_root, *path))
-                if os.path.exists(os.path.join(md_root, *path, d, "README.md"))
+                if os.path.exists(os.path.join(md_root, *path, d, "README.md")) and d != "Partial Templates"
             ]
         ),
         1,
@@ -1643,7 +1665,7 @@ def make_concept(path, number_path=None):
         url=make_url("concepts/" + "/".join(p for p in path if p).replace(" ", "_") + "/content.html"),
         number=number_path,
         text=path[-1],
-        children=[make_concept(path + [c], number_path=f"{number_path}.{i}") for i, c in children],
+        children=[make_concept(path + [c], number_path=f"{number_path}.{i}", exclude_partial=exclude_partial) for i, c in children],
         mvds=[{"abbr": "".join(re.findall('[A-Z]|(?<=-)[a-z]', k)), "name":k, "on": path[-1].replace(" ", "") in v} for k, v in R.xmi_mvd_concepts.items()],
     )
 
@@ -1675,7 +1697,10 @@ def concept_list():
         path=fn[len(REPO_DIR) :].replace("\\", "/"),
         title=chapter_lookup(number=4).get("name"),
         number=4,
-        subs=make_concept([""]).children,
+        sections=[
+            {'cs': make_concept([""], exclude_partial=True).children},
+            {'title': 'Partial Templates', 'number': '4.2', 'cs': make_concept(["Partial Templates"]).children}
+        ],
     )
 
 
@@ -1685,12 +1710,19 @@ def concept(s=""):
 
     s = s.replace("_", " ")
 
-    n = "4"
     if s:
         ps = s.split("/")
+        if ps[0] == "Partial Templates":
+            n = "4.2"
+            ps = ps[1:]
+            s = "/".join(ps)
+            md_root = os.path.join(md_root, "Partial Templates")
+        else:
+            n = "4.1"
+
         t = ps[-1]
         for pt in itertools.accumulate([[p] for p in ps]):
-            n += ".%d" % (sorted(os.listdir(os.path.join(md_root, *pt[:-1]))).index(pt[-1]) + 1)
+            n += ".%d" % (sorted(d for d in os.listdir(os.path.join(md_root, *pt[:-1])) if os.path.isdir(os.path.join(md_root, *pt[:-1], d)) and d != "Partial Templates").index(pt[-1]) + 1)
     else:
         t = chapter_lookup(number=4).get("name")
 
@@ -1725,7 +1757,8 @@ def concept(s=""):
             if rows:
                 tables += tabulate.tabulate(rows, headers=headers, tablefmt="unsafehtml")
 
-    subs = make_concept(s.split("/")).children
+    # @todo do we reinstate this?
+    # subs = make_concept(s.split("/")).children
 
     return render_template(
         "concept.html",
@@ -1738,7 +1771,7 @@ def concept(s=""):
         path=fn[len(REPO_DIR) :].replace("\\", "/"),
         title=t,
         number=n,
-        subs=subs,
+        # subs=subs,
     )
 
 

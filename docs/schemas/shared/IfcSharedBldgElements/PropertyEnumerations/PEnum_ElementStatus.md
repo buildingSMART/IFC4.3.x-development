@@ -16,6 +16,9 @@ element exists but is to be demolished
 ### TEMPORARY
 element will exist only temporarily (such as a temporary support structure)
 
+### REUSED
+an existing element, which is reused here
+
 ### OTHER
 required category not on scale
 

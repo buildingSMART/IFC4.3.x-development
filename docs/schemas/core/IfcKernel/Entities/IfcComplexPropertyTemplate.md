@@ -13,7 +13,7 @@ The _IfcComplexPropertyTemplate_ defines the template for all complex properties
 
 
 ### HasPropertyTemplates
-Reference to a set of property templates. It should only be provided, if the _PropertyType_ is set to <small>COMPLEX</small>.
+Reference to a set of property templates. It should only be provided, if the _PropertyType_ is set to COMPLEX.
 
 ## Formal Propositions
 

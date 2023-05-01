@@ -129,7 +129,7 @@ Do not use this
  * Use asterisks
  * For unordered lists
 
- - Do not use dashses
+ - Do not use dashes
  - For unordered lists
 
  1. Use numbers for numbered lists

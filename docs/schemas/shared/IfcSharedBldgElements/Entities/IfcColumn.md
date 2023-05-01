@@ -13,7 +13,7 @@ For any longitudial structural member, not constrained to be predominately horiz
 
 > REFERENCE  Definition according to ISO 6707-1 structural member of slender form, usually vertical, that transmits to its base the forces, primarily in compression, that are applied to it.
 
-> NOTE  The entity IfcColumnStandardCase has been deleted, IfcColumn with IfcMaterialProfileSetUsage is used instead.
+> NOTE  The entity _IfcColumnStandardCase_ has been deleted, _IfcColumn_ with _IfcMaterialProfileSetUsage_ is used instead.
 
 > NOTE  The representation of a column in a structural analysis model is provided by _IfcStructuralCurveMember_ being part of an _IfcStructuralAnalysisModel_.
 
@@ -44,8 +44,8 @@ The axis representation can be used to represent the fundamental orientation and
 
 If an _IfcMaterialProfileSetUsage_ is used, the axis representation is used to locate the profile. In addition:
 
- * For a body representation using an _IfcExtrudedAreaSolid_, the axis may be an _IfcPolyline_ having two Points, or _IfcTrimmedCurve_ with BasisCurve of type _IfcLine_. The axis curve lies on the z axis of the object coordinate system.
- * For a body representation using an _IfcRevolvedAreaSolid_, the axis may be an _IfcTrimmedCurve_ with BasisCurve of type _IfcCircle_. The axis curve lies on the x/z plane of the object coordinate system, the tangent at the start is along the positive z-axis.
+ * For a body representation using an _IfcExtrudedAreaSolid_, the axis may be an _IfcPolyline_ having two Points, or _IfcTrimmedCurve_ with _BasisCurve_ of type _IfcLine_. The axis curve lies on the z axis of the object coordinate system.
+ * For a body representation using an _IfcRevolvedAreaSolid_, the axis may be an _IfcTrimmedCurve_ with _BasisCurve_ of type _IfcCircle_. The axis curve lies on the x/z plane of the object coordinate system, the tangent at the start is along the positive z-axis.
 
 As shown in Figure 213, the axis shall be defined along the z axis of the object coordinate system.
 
@@ -53,7 +53,7 @@ As shown in Figure 213, the axis shall be defined along the z axis of the object
 
 Figure 213 — Column axis representation
 
-As shown in Figure 214, the axis representation must be positioned at the _IfcMaterialProfileSetUsage_.CardinalPoint, and parallel to the _IfcExtrudedAreaSolid_.ExtrudedDirection. This offset between the axis line and the _IfcExtrudedAreaSolid_.Position must correlate with the chosen _IfcMaterialProfileSetUsage_.CardinalPoint.
+As shown in Figure 214, the axis representation must be positioned at the _IfcMaterialProfileSetUsage_._CardinalPoint_, and parallel to the _IfcExtrudedAreaSolid_._ExtrudedDirection_. This offset between the axis line and the _IfcExtrudedAreaSolid_._Position_ must correlate with the chosen _IfcMaterialProfileSetUsage_._CardinalPoint_.
 
 ![Axis](../../../../figures/ifccolumnstandardcase_axis-02.png)
 
@@ -66,16 +66,16 @@ Three-dimensional reference curve for the column.
 ### Body AdvancedSweptSolid Geometry
 
 * _IfcSurfaceCurveSweptAreaSolid_, _IfcFixedReferenceSweptAreaSolid_, _IfcExtrudedAreaSolidTapered_, _IfcRevolvedAreaSolidTapered_ shall be supported.
-* All subtypes of IfcProfileDef (with exception of IfcArbitraryOpenProfileDef) shall be supported
+* All subtypes of _IfcProfileDef_ (with exception of _IfcArbitraryOpenProfileDef_) shall be supported
 
 ### Body Clipping Geometry
 
-* IfcExtrudedAreaSolid, IfcRevolvedAreaSolid shall be supported
-* All subtypes of IfcProfileDef (with exception of IfcArbitraryOpenProfileDef) shall be supported
+* _IfcExtrudedAreaSolid_, _IfcRevolvedAreaSolid_ shall be supported
+* All subtypes of _IfcProfileDef_ (with exception of _IfcArbitraryOpenProfileDef_) shall be supported
 * All extrusion directions shall be supported
-* The IfcBooleanClippingResult shall be supported, allowing for Boolean differences between the swept solid (here IfcExtrudedAreaSolid) and one or several IfcHalfSpaceSolid.
+* The _IfcBooleanClippingResult_ shall be supported, allowing for Boolean differences between the swept solid (here _IfcExtrudedAreaSolid_) and one or several _IfcHalfSpaceSolid_.
 
-Figure 216 illustrates a 'Clipping' geometric representation with use of IfcBooleanClippingResult between an IfcExtrudedAreaSolid and an IfcHalfSpaceSolid to create a clipped body.
+Figure 216 illustrates a 'Clipping' geometric representation with use of _IfcBooleanClippingResult_ between an _IfcExtrudedAreaSolid_ and an _IfcHalfSpaceSolid_ to create a clipped body.
 
 ![advanced column](../../../../figures/ifccolumn_advanced-2-layout1.png)
 
@@ -83,8 +83,8 @@ Figure 216 — Column clipping
 
 ### Body SweptSolid Geometry
 
-* IfcExtrudedAreaSolid, IfcRevolvedAreaSolid shall be supported
-* All subtypes of IfcProfileDef (with exception of IfcArbitraryOpenProfileDef) shall be supported
+* _IfcExtrudedAreaSolid_, _IfcRevolvedAreaSolid_ shall be supported
+* All subtypes of _IfcProfileDef_ (with exception of _IfcArbitraryOpenProfileDef_) shall be supported
 * All extrusion directions shall be supported
 
 Figure 215 illustrates a 'SweptSolid' geometric representation. There are no restrictions or conventions on how to use the object placement (black), extrusion placement (red) and profile placement (green).
@@ -94,7 +94,7 @@ Figure 215 illustrates a 'SweptSolid' geometric representation. There are no res
 
 Figure 215 — Column swept solid
 
-Figure 216 illustrates use of a special profile type (here IfcIShapeProfileDef) for the definition of the IfcExtrudedAreaSolid.
+Figure 216 illustrates use of a special profile type (here _IfcIShapeProfileDef_) for the definition of the _IfcExtrudedAreaSolid_.
 
 ![advanced column](../../../../figures/ifccolumn_advanced-1-layout1.png)
 
@@ -142,7 +142,7 @@ A task for operating on the column.
 
 ### Spatial Containment
 
-The IfcColumn, as any subtype of IfcBuildingElement, may participate alternatively in one of the two different containment relationships:
+The _IfcColumn_, as any subtype of _IfcBuildingElement_, may participate alternatively in one of the two different containment relationships:
 
 * the _Spatial Containment_ (defined here), or
 * the _Element Composition_.

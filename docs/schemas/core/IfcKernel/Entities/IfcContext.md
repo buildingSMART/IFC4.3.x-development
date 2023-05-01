@@ -12,7 +12,7 @@ A Context is declared by the relationship object _IfcRelDeclares_ that refers to
 
 ### ObjectType
 The object type denotes a particular type that indicates the object further. The use has to be established at the level of instantiable subtypes.
-> NOTE  Subtypes of _IfcContext_ do not introduce a _PredefinedType_ attribute, therefore the usage of _ObjectType_ is not bound to the selection of USERDEFINED within the _PredefinedType_ enumaration.
+> NOTE  Subtypes of _IfcContext_ do not introduce a _PredefinedType_ attribute, therefore the usage of _ObjectType_ is not bound to the selection of USERDEFINED within the _PredefinedType_ enumeration.
 
 ### LongName
 Long name for the context as used for reference purposes.
@@ -36,5 +36,5 @@ Set of relationships to property set definitions attached to this context. Those
 > IFC4 CHANGE  The data type has been changed from _IfcRelDefines_ to _IfcRelDefinesByProperties_ with upward compatibility for file based exchange.
 
 ### Declares
-Reference to the _IfcRelDeclares_ relationship that assigns the uppermost entities of includes hierarchies to this context instance.
+Reference to the _IfcRelDeclares_ relationship that assigns the uppermost entities of included hierarchies to this context instance.
 > NOTE  The spatial hierarchy is assigned to _IfcProject_ using the _IfcRelAggregates_ relationship. This is a single exception due to compatibility reasons with earlier releases.

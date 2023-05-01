@@ -10,7 +10,7 @@ This enumeration identifies different types of building systems.
 System of doors, windows, and other fillings in openings in a built envelope that are designed to permit the passage of air or light.
 
 ### FOUNDATION
-System of shallow and deep foundation element that transmit forces to the supporting ground.
+System of shallow and deep foundation elements that transmit forces to the supporting ground.
 
 ### LOADBEARING
 System of built elements that transmit forces and stiffen the construction.

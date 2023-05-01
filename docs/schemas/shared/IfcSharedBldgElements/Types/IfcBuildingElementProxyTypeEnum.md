@@ -22,12 +22,12 @@ Not used - kept for upward compatibility.
 Not used - kept for upward compatibility.
 
 ### PROVISIONFORVOID
-The proxy denotes a provision for voids (an proposed opening not applied as void yet).
+The proxy denotes a provision for voids (a proposed opening not applied as void yet).
 
 > IFC4.3.0.0 DEPRECATION Use IfcVirtualElement with PROVISIONFORVOID instead.
 
 ### PROVISIONFORSPACE
-The proxy denotes a provision for space (e.g. the space allocated as a provision for mechanical equipment or furniture). 
+The proxy denotes a provision for space (e.g. the space allocated as a provision for mechanical equipment or furniture).
 
 > IFC4.3.0.0 DEPRECATION Use IfcVirtualElement with CLEARANCE instead.
 

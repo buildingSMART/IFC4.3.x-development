@@ -2,7 +2,7 @@
 
 The nesting relationship _IfcRelNests_ is a special type of the general composition/decomposition (or whole/part) relationship _IfcRelDecomposes_. The nesting relationship can be applied to all non physical subtypes of object and object types, namely processes, controls (like cost items), and resources. It can also be applied to physical subtypes of object and object types, namely elements having ports. The nesting implies an order among the nested parts.
 
-> EXAMPLE  A nesting of costs items in an _IfcCostSchedule_ is the composition of complex cost items from other cost items. The order of the nested cost items underneath the parent cost item is determined by the order of the list of _RelatedObjects_.
+> EXAMPLE  A nesting of cost items in an _IfcCostSchedule_ is the composition of complex cost items from other cost items. The order of the nested cost items underneath the parent cost item is determined by the order of the list of _RelatedObjects_.
 
 > EXAMPLE  A nesting of _IfcTask_'s within a work schedule is the composition of a parent work task from more specific sub work tasks. The order of the sub tasks underneath the parent task is determined by the order of the list of _RelatedObjects_.
 
@@ -24,7 +24,7 @@ The object definition, either an non-product object type or a non-product object
 > IFC4 CHANGE  The attribute has been demoted from the supertype _IfcRelDecomposes_ and defines the ordered nesting relationship.
 
 ### RelatedObjects
-The object definitions, either non-product object occurrences or non-product object types, that are being nestes. They are defined as the parts in the ordered whole/part relationship -  i.e. there is an implied order among the parts expressed by the position within the list of _RelatedObjects_.
+The object definitions, either non-product object occurrences or non-product object types, that are being nested. They are defined as the parts in the ordered whole/part relationship -  i.e. there is an implied order among the parts expressed by the position within the list of _RelatedObjects_.
 
 { .change-ifc2x4}
 > IFC4 CHANGE  The attribute has been demoted from the supertype _IfcRelDecomposes_ and defines the ordered set of parts within the nest.

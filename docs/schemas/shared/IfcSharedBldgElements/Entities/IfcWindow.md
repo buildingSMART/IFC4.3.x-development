@@ -22,7 +22,7 @@ The _IfcWindowType_ specifies parameters which are common to all of its occurren
  * the operation type (swing, tilt and turn, pivot revolve, fixed casement, etc.)
  * the window panel hinge side (by using two different styles for right and left opening windows)
  * the particular attributes for the lining by the _IfcWindowLiningProperties_
- * the particular attributes for the panels by the  _IfcWindowPanelProperties_
+ * the particular attributes for the panels by the _IfcWindowPanelProperties_
 
 > REFERENCE  Definition according to ISO 6707-1 Construction for closing a vertical or near vertical opening in a wall or pitched roof that will admit light and may admit fresh air.
 
@@ -91,24 +91,24 @@ Indicates that the material constituent applies to the glazing part.
 
 ### Material Single
 
-If a single IfcMaterial is referenced, it applies to the lining and framing of the window.
+If a single _IfcMaterial_ is referenced, it applies to the lining and framing of the window.
 
 ### Object Typing
 
 ### Product Local Placement
 
- * The PlacementRelTo relationship of IfcLocalPlacement shall point to the local placement of the same element (if given), in which the IfcWindow is used as a filling (normally an IfcOpeningElement), as provided by the IfcRelFillsElement relationship.
- * If the IfcWindow is not inserted into an IfcOpeningElement, then the PlacementRelTo relationship of IfcLocalPlacement shall point (if given) to the local placement of the same IfcSpatialStructureElement that is used in the ContainedInStructure inverse attribute or to a referenced spatial structure element at a higher level.
+ * The _PlacementRelTo_ relationship of IfcLocalPlacement shall point to the local placement of the same element (if given), in which the _IfcWindow_ is used as a filling (normally an _IfcOpeningElement_), as provided by the _IfcRelFillsElement_ relationship.
+ * If the _IfcWindow_ is not inserted into an _IfcOpeningElement_, then the _PlacementRelTo_ relationship of _IfcLocalPlacement_ shall point (if given) to the local placement of the same _IfcSpatialStructureElement_ that is used in the _ContainedInStructure_ inverse attribute or to a referenced spatial structure element at a higher level.
  * If the relative placement is not used, the absolute placement is defined within the world coordinate system.
 
 > NOTE  The product placement is used to determine the opening direction of the window.
 
 ### Profile 3D Geometry
 
-The window profile is represented by a three-dimensional closed curve lying in the xz plane. The profile is used to apply the parameters of a parametric door representation. The following attribute values for the IfcShapeRepresentation holding this geometric representation shall be used:
+The window profile is represented by a three-dimensional closed curve lying in the xz plane. The profile is used to apply the parameters of a parametric door representation. The following attribute values for the _IfcShapeRepresentation_ holding this geometric representation shall be used:
 
-* RepresentationIdentifier: 'Profile'
-* RepresentationType: 'Curve3D' or 'GeometricCurveSet'. In case of 'GeometricCurveSet' only a single closed curve shall be contained in the set of IfcShapeRepresentation.Items.
+* _RepresentationIdentifier_: 'Profile'
+* _RepresentationType_: 'Curve3D' or 'GeometricCurveSet'. In case of 'GeometricCurveSet' only a single closed curve shall be contained in the set of _IfcShapeRepresentation.Items_.
 
 A 'Profile' representation has to be provided if:
 
@@ -125,11 +125,11 @@ The following additional constraints apply to the 'Profile' representation type:
 As shown in Figure 298, the profile defines the outer boundary to which the window
 lining parameters relate as:
 
-* IfcWindowLiningProperties.LiningDepth starting at distance defined by LiningOffset going into the positive y direction.
-* IfcWindowLiningProperties.LiningThickness offset into the inner side of the rectangle.
-* IfcWindowLiningProperties.LiningOffset distance along the positive y direction to where the LiningDepth applies.
-* IfcWindowLiningProperties.FirstTransomOffset starting at the bottom edge of the rectangle (along local x axis) into the inner side of the rectangle, distance provided as percentage of overall height. Distance to the centre line of the transom. SecondTransomOffset defined accordingly.
-* IfcWindowLiningProperties.FirstMullionOffset starting at the left edge of the rectangle (along local z-axis) into the inner side of the rectangle, distance provided as percentage of overall width. Distance to the centre line of the mullion. SecondMullionOffset defined accordingly.
+* _IfcWindowLiningProperties.LiningDepth_ starting at distance defined by _LiningOffset_ going into the positive y direction.
+* _IfcWindowLiningProperties.LiningThickness_ offset into the inner side of the rectangle.
+* _IfcWindowLiningProperties.LiningOffset_ distance along the positive y direction to where the _LiningDepth_ applies.
+* _IfcWindowLiningProperties.FirstTransomOffset_ starting at the bottom edge of the rectangle (along local x axis) into the inner side of the rectangle, distance provided as percentage of overall height. Distance to the centre line of the transom. _SecondTransomOffset_ defined accordingly.
+* _IfcWindowLiningProperties.FirstMullionOffset_ starting at the left edge of the rectangle (along local z-axis) into the inner side of the rectangle, distance provided as percentage of overall width. Distance to the centre line of the mullion. _SecondMullionOffset_ defined accordingly.
 
 
 ![standard window](../../../../figures/ifcwindowstandardcase-01.png)
@@ -153,21 +153,21 @@ Figure 2 &mdash; Window planes
 
 ### Spatial Containment
 
-The IfcWindow, as any subtype of IfcBuildingElement,
+The _IfcWindow_, as any subtype of _IfcBuildingElement_,
 may participate alternatively in one of the two different containment relationships:
 
-* the Spatial Containment (defined here), or
-* the Element Composition.
+* the _Spatial Containment_ (defined here), or
+* the _Element Composition_.
 
-The IfcWindow may also be connected to the IfcOpeningElement in which it is placed as a filler. In this case, the spatial containment relationship shall be provided, see Figure 297.
+The _IfcWindow_ may also be connected to the _IfcOpeningElement_ in which it is placed as a filler. In this case, the spatial containment relationship shall be provided, see Figure 297.
 
 ![Containment](../../../../figures/ifcwindow_containment-01.png)
 
 Figure 297 — Window spatial containment
 
 > NOTE  The containment shall be defined independently of the filling relationship, that is, even if the
->  IfcWindow is a filling of an opening established by IfcRelFillsElement, it is also contained in the spatial structure
->  by an IfcRelContainedInSpatialStructure.
+>  _IfcWindow_ is a filling of an opening established by _IfcRelFillsElement_, it is also contained in the spatial structure
+>  by an _IfcRelContainedInSpatialStructure_.
 
 ### Window Attributes
 

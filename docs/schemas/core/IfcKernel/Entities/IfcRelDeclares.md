@@ -23,4 +23,4 @@ Set of object or property definitions that are assigned to a context and to whic
 ## Formal Propositions
 
 ### NoSelfReference
-The instance to with the relation points shall not be contained in the set of _RelatedObjects_.
+The instance to wich the relation points shall not be contained in the set of _RelatedObjects_.

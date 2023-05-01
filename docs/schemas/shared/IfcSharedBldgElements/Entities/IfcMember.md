@@ -45,7 +45,7 @@ As shown in Figure 235, the axis representation can be used to represent the sys
 
 Figure 235 — Member axis representation
 
-As shown in Figure 236, the axis representation must be positioned at the _IfcMaterialProfileSetUsage_.CardinalPoint, and parallel to the _IfcExtrudedAreaSolid_.ExtrudedDirection. This offset between the axis line and the _IfcExtrudedAreaSolid_.Position must correlate with the chosen _IfcMaterialProfileSetUsage_.CardinalPoint.
+As shown in Figure 236, the axis representation must be positioned at the _IfcMaterialProfileSetUsage_._CardinalPoint_, and parallel to the _IfcExtrudedAreaSolid_._ExtrudedDirection_. This offset between the axis line and the _IfcExtrudedAreaSolid_._Position_ must correlate with the chosen _IfcMaterialProfileSetUsage_.CardinalPoint.
 
 ![Axis](../../../../figures/ifcmemberstandardcase_axis-02.png)
 
@@ -57,17 +57,17 @@ Three-dimensional reference curve for the member.
 
 ### Body AdvancedSweptSolid Geometry
 
-* IfcSurfaceCurveSweptAreaSolid, IfcFixedReferenceSweptAreaSolid, IfcExtrudedAreaSolidTapered, IfcRevolvedAreaSolidTapered shall be supported.
-* All subtypes of (IfcProfileDef) (with exception of IfcArbitraryOpenProfileDef) shall be supported
+* _IfcSurfaceCurveSweptAreaSolid_, _IfcFixedReferenceSweptAreaSolid_, _IfcExtrudedAreaSolidTapered_, _IfcRevolvedAreaSolidTapered_ shall be supported.
+* All subtypes of _IfcProfileDef_ (with exception of _IfcArbitraryOpenProfileDef_) shall be supported
 
 ### Body Clipping Geometry
 
 * _IfcExtrudedAreaSolid_, _IfcRevolvedAreaSolid_ shall be supported
-* All subtypes of (IfcProfileDef) (with exception of IfcArbitraryOpenProfileDef) shall be supported
+* All subtypes of _IfcProfileDef_ (with exception of _IfcArbitraryOpenProfileDef_) shall be supported
 * All extrusion directions shall be supported.
-* The _IfcBooleanClippingResult_ shall be supported, allowing for Boolean differences between the swept solid (here IfcExtrudedAreaSolid) and one or several IfcHalfSpaceSolid (or its subtypes).
+* The _IfcBooleanClippingResult_ shall be supported, allowing for Boolean differences between the swept solid (here _IfcExtrudedAreaSolid_) and one or several _IfcHalfSpaceSolid_ (or its subtypes).
 
-Figure 238 illustrates a 'Clipping' geometric representation with use of IfcBooleanClippingResult between an IfcExtrudedAreaSolid and an IfcHalfSpaceSolid to create a clipped body.
+Figure 238 illustrates a 'Clipping' geometric representation with use of _IfcBooleanClippingResult_ between an _IfcExtrudedAreaSolid_ and an _IfcHalfSpaceSolid_ to create a clipped body.
 
 ![clipped member](../../../../figures/ifcmember_clipping-01.png)
 
@@ -82,22 +82,22 @@ Figure 239 — Member body clipping
 ### Body SweptSolid Geometry
 
 * _IfcExtrudedAreaSolid_, _IfcRevolvedAreaSolid_ shall be supported
-* All subtypes of (IfcProfileDef) (with exception of IfcArbitraryOpenProfileDef) shall be supported
+* All subtypes of _IfcProfileDef_ (with exception of _IfcArbitraryOpenProfileDef_) shall be supported
 * All extrusion directions shall be supported.
 
-When an (IfcMaterialProfileSetUsage) is assigned to the _IfcMember_:
+When an _IfcMaterialProfileSetUsage_ is assigned to the _IfcMember_:
 
-* For all single profiles, the IfcParameterizedProfileDef.Position shall be NIL, or having Location = 0.,0. and RefDirection = 1.,0.
+* For all single profiles, the _IfcParameterizedProfileDef.Position_ shall be NIL, or having _Location_ = 0.,0. and _RefDirection_ = 1.,0.
 * The extrusion shall be perpendicular to the profile direction.
-* The y-axis of the profile, as determined by IfcSweptAreaSolid.Position.P[2] shall point to the Z-Axis. It indicates the "role" of the column, a role=0° means y-axis of profile = Z-axis of reference coordinate system.  In the exception of a vertical member, the y-axis shall point to the Y-axis.
+* The y-axis of the profile, as determined by _IfcSweptAreaSolid.Position.P[2]_ shall point to the Z-Axis. It indicates the "role" of the column, a role=0° means y-axis of profile = Z-axis of reference coordinate system.  In the exception of a vertical member, the y-axis shall point to the Y-axis.
 
 Figure 236 illustrates a 'SweptSolid' geometric representation with cardinal point applied as 1 (bottom left).
 
 If parametric profiles are used, the parameters may be interpreted to be the dimensions of the beam:
 
-* IfcRectangleProfileDef.YDim interpreted as member width
-* IfcRectangleProfileDef.XDim interpreted as member depth
-* IfcCircleProfileDef.Radius interpreted as member radius.
+* _IfcRectangleProfileDef.YDim_ interpreted as member width
+* _IfcRectangleProfileDef.XDim_ interpreted as member depth
+* _IfcCircleProfileDef.Radius_ interpreted as member radius.
 
 ![standard member](../../../../figures/ifcbeamstandardcase_sweptsolid-01.png)
 
@@ -134,7 +134,7 @@ A task for operating on the member.
 
 ### Spatial Containment
 
-The IfcMember, as any subtype of IfcBuildingElement, may participate alternatively in one of the two different containment relationships:
+The _IfcMember_, as any subtype of _IfcBuildingElement_, may participate alternatively in one of the two different containment relationships:
 
 * the _Spatial Containment_ (defined here), or
 * the _Element Composition_.

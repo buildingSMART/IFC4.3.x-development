@@ -25,5 +25,5 @@ Reference to the relationship that associates the control to the object(s) being
 
 ### Control Assignment
 
-Controls have assignments from products, processes, or other objects by using the relationship object IfcRelAssignsToControl.
+Controls have assignments from products, processes, or other objects by using the relationship object _IfcRelAssignsToControl_.
 

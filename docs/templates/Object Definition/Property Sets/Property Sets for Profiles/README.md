@@ -1,11 +1,11 @@
 Property Sets for Profiles
 ==========================
 
-The concept template _Property Sets for Profiles_ describes how a material can be related to a single or multiple property sets. A property set contains a single or multiple properties. The data type of an individual property can be one of single, enumerated, value, table, reference or list value, and combination of property occurrences.
+The concept template _Property Sets for Profiles_ describes how a profile can be related to a single or multiple property sets. A property set contains a single or multiple properties. The data type of an individual property can be one of single, enumerated, value, table, reference or list value, and combination of property occurrences.
 
-NOTE: An IfcProfileDef is not an IfcObject. For legacy reasons, this concept is listed under _Object Definition_. In future versions of the standard the various property set association mechanisms will likely be unified.
+NOTE: An _IfcProfileDef_ is not an _IfcObject_. For legacy reasons, this concept is listed under _Object Definition_. In future versions of the standard the various property set association mechanisms will likely be unified.
 
-Property Sets applicable to this template will carry the IfcPropertySetTemplateTypeEnum "PSET_PROFILEDRIVEN".
+Property Sets applicable to this template will carry the _IfcPropertySetTemplateTypeEnum_ "PSET_PROFILEDRIVEN".
 
 ```
 concept {

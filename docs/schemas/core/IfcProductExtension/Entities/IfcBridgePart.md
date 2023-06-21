@@ -40,7 +40,7 @@ Elements can also be referenced in an IfcBridgePart, for example, if they span t
 
 ### Spatial Decomposition
 
-> NOTE  By using the inverse relationship _IfcBridgePart.IsDecomposedBy_ it references IfcBridgePart through _IfcRelAggregates.RelatedObjects_. If it refers to another instance of IfcBridgePart, the referenced IfcBridgePart needs to have a different and lower CompositionType, i.e. ELEMENT (if the other IfcBuildingStorey has COMPLEX), or PARTIAL (if the other IfcBuildingStorey has ELEMENT).
+> NOTE  By using the inverse relationship _IfcBridgePart.IsDecomposedBy_ it references IfcBridgePart through _IfcRelAggregates.RelatedObjects_. If it refers to another instance of IfcBridgePart, the referenced IfcBridgePart needs to have a different and lower CompositionType, i.e. ELEMENT (if the other IfcBridgePart has COMPLEX), or PARTIAL (if the other IfcBridgePart has ELEMENT).
 
 > NOTE  Multi storey spaces shall be spatially contained by only a single building storey, usually it is the building storey where the base of the space lies.
 

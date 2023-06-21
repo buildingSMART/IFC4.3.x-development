@@ -10,6 +10,8 @@ The client is denoted as the relating object and is established at the level of 
 
 The assignment relationship establishes a bi-directional relationship among the participating objects and does not imply any dependency. The subtypes of _IfcRelAssigns_ establishes the particular semantic meaning of the assignment relationship.
 
+> NOTE  The RelatingObject attribute is defined at the level of each subtype of _IfcRelAssigns_ 
+
 > HISTORY  New entity in IFC2x.
 
 ## Attributes

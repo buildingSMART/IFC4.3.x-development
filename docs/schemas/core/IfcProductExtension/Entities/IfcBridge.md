@@ -24,8 +24,7 @@ Either _PredefinedType_ is unset or the inherited attribute _ObjectType_ shall b
 
 ### Product Local Placement
 
-The local placement for IfcBridge is defined in its supertype IfcProduct. It is defined by IfcLocalPlacement or by _IfcLinearPlacement>/em> which defines the local coordinate
-      system that is referenced by all geometric representations._
+The local placement for IfcBridge is defined in its supertype IfcProduct. It is defined by IfcLocalPlacement or by _IfcLinearPlacement_ which defines the local coordinate system that is referenced by all geometric representations.
 
 * The PlacementRelTo relationship of IfcLocalPlacement shall point (if relative placement is used) to the IfcSpatialStructureElement of type IfcSite, or of type IfcBuilding (e.g. to position a building relative to a building complex, or a building section to a building).
 * If the relative placement is not used, the absolute placement is defined within the world coordinate system.
@@ -40,11 +39,11 @@ The local placement for IfcBridge is defined in its supertype IfcProduct. It is 
 
 ### Spatial Composition
 
-> NOTE  By using the inverse relationship _IfcBridge.Decomposes_ it references IfcProject || IfcSite || IfcBridge through _IfcRelAggregates.RelatingObject_. If it refers to another instance of IfcBridge, the referenced IfcBridge needs to have a different and higher CompositionType, i.e. COMPLEX (if the other IfcBuilding has ELEMENT), or ELEMENT (if the other IfcBridge has PARTIAL).
+> NOTE  By using the inverse relationship _IfcBridge.Decomposes_ it references IfcProject || IfcSite || IfcBridge through _IfcRelAggregates.RelatingObject_. If it refers to another instance of IfcBridge, the referenced IfcBridge needs to have a different and higher CompositionType, i.e. COMPLEX (if the other IfcBridge has ELEMENT), or ELEMENT (if the other IfcBridge has PARTIAL).
 
 #### IfcProject
 
-Direct assignment to project, if the bridgeis the outermost spatial container, and no site information is provided for bridge projects
+Direct assignment to project, if the bridge is the outermost spatial container, and no site information is provided for bridge projects
 
 #### IfcSite
 

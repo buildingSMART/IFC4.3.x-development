@@ -30,9 +30,6 @@ Figure 3 illustrates using the <em>IfcRelConnectsPathElements</em> for a "L" typ
 
 > HISTORY  New entity in IFC1.5.
 
-{ .change-ifc2x4}
-> IFC4 CHANGE  The data type of _RelatingPriorities_ and _RelatedPriorities_ are restricted to a range o [0..100] to be a normalized ratio measure.
-
 ## Attributes
 
 ### RelatingPriorities

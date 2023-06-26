@@ -10,8 +10,7 @@ person, an organization, or person acting on behalf of an organization
 
 ## 3.1.2 attribute
 
-definition from ISO iso 10303-11, chapter  9.2.1.
-unit of information within an entity, defined by a particular type or reference to a particular entity
+definition from ISO iso 10303-11, chapter  9.2.1: Unit of information within an entity, defined by a particular type or reference to a particular entity
 
 > NOTE There are three kinds of attributes: direct attributes, inverse attributes and derived attributes.
 

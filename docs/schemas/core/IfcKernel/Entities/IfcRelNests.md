@@ -18,13 +18,13 @@ Decompositions imply a dependency, i.e. the definition of the whole depends on t
 ## Attributes
 
 ### RelatingObject
-The object definition, either an non-product object type or a non-product object occurrence, that represents the nest. It is the whole within the whole/part relationship.
+The object definition, either an object type or a object occurrence, that represents the nest. It is the whole within the whole/part relationship.
 
 { .change-ifc2x4}
 > IFC4 CHANGE  The attribute has been demoted from the supertype _IfcRelDecomposes_ and defines the ordered nesting relationship.
 
 ### RelatedObjects
-The object definitions, either object occurrences or non-product object types, that are being nestes. They are defined as the parts in the ordered whole/part relationship -  i.e. there is an implied order among the parts expressed by the position within the list of _RelatedObjects_.
+The object definitions, either object occurrences or object types, that are being nestes. They are defined as the parts in the ordered whole/part relationship -  i.e. there is an implied order among the parts expressed by the position within the list of _RelatedObjects_.
 
 { .change-ifc2x4}
 > IFC4 CHANGE  The attribute has been demoted from the supertype _IfcRelDecomposes_ and defines the ordered set of parts within the nest.

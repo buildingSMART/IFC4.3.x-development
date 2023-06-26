@@ -28,6 +28,7 @@ The attribute _ApplicableEntity_ may further refine the applicability to a singl
 
 ### ApplicableEntity
 The attribute optionally defines the data type of the applicable type or occurrence object, to which the assigned property set template can relate. If not present, no instruction is given to which type or occurrence object the property set template is applicable. The following conventions are used:
+
 * The IFC entity name of the applicable entity using the IFC naming convention, CamelCase with IFC prefix
 * It can be optionally followed by the predefined type after the separator "/" (forward slash), using upper case
 * If a performance history object of a particular distribution object is attributes by the property set template, then the entity name (and potentially amended by the predefined type) is expanded by adding '[PerformanceHistory]'

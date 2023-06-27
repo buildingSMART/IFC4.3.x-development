@@ -113,11 +113,12 @@ a data set, governed by the structure of an underlying schema, to meet certain d
 
 > NOTE  In scope of this standard IFC models are populations of the IFC schema.
 
-## 3.1.16 model view
+## 3.1.16 model view definition
 
-subset of a schema, representing the data structure required to fulfill the data requirements within one or several exchange scenarios
+Subset of a schema representing the data structure required to fulfill the data requirements within one or several exchange scenarios.
+Beside being a subset of a schema, a model view (or model view definition) also imposes additional constraints to the population of the subset schema. 
 
-> NOTE  Beside being a subset of a schema, a model view (or model view definition) may also impose additional constraints to the population of the subset schema
+> EXAMPLE a mnodel view definition may define that an IfcBuilding always needs to have an IfcSite and an IfcProject.
 
 ## 3.1.16.1 concept
 

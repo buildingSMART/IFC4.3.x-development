@@ -14,7 +14,7 @@ Objects are independent pieces of information that might contain or reference ot
 * **Association to external/internal resource information** - an association relationship that refers to external/internal sources of information. See supertype _IfcObjectDefinition_ for more information.
 * **Assignment of other objects** - an assignment relationship that refers to other types of objects. See supertype _IfcObjectDefinition_ for more information.
 * **Aggregation of other objects** - an aggregation relationship that establishes a whole/part relation. Objects can either be a whole, or a part, or both. See supertype _IfcObjectDefinition_ for more information.
-* **Assignment of a type** : _IsTypedBy_ - a definition relationship _IfcRelDefinesByType_ that uses a type definition to define the common characteristics of this occurrences, potentially including the common shape representation and common properties of all object occurrences assigned to this type. It is a specific - occurrence relationship with implied dependencies (as the occurrence properties depend on the properties of the type, but may override them).
+* **Assignment of a type** : _IsTypedBy_ - a definition relationship _IfcRelDefinesByType_ that uses a type definition to define the common characteristics of this occurrence, potentially including the common shape representation and common properties of all object occurrences assigned to this type. It is a specific - occurrence relationship with implied dependencies (as the occurrence properties depend on the properties of the type, but may override them).
 * **Assignment of a partial type** : _IsDeclaredBy_, _Declares_ - a definition relationship _IfcRelDefinesByObject_ that uses a component of a type definition (a part of a type, called the "declaring part") to define a component of an occurrence (part of occurrence, called the "reflected part"). This is also referred to as a "deep copy". The common characteristics of all parts in the occurrence are defined by parts in the type. It is a specific - occurrence relationship with implied dependencies (as the occurrence properties depend on the properties of the type, but may override them).
 * **Assignment of property sets** : _IsDefinedBy_ - a definition relationship _IfcRelDefinesByProperties_ that assigns property set definitions to the object occurrence.
 
@@ -23,7 +23,7 @@ Objects are independent pieces of information that might contain or reference ot
 > HISTORY  New entity in IFC1.0
 
 { .change-ifc2x4}
-> IFC4 CHANGE  The inverse relationships _Declares_, _IsDeclaredBy_, and _IsTypedBy_ have been added, types are not longer included in the _IsDefinesBy_ relationship. _IfcProject_ has been promoted to be a subtype of _IfcObjectDefinition_ -> _IfcContext_.
+> IFC4 CHANGE  The inverse relationships _Declares_, _IsDeclaredBy_, and _IsTypedBy_ have been added. Types are no longer included in the _IsDefinesBy_ relationship. _IfcProject_ has been promoted to be a subtype of _IfcObjectDefinition_ -> _IfcContext_.
 
 { .spec-head}
 Informal Propositions:
@@ -48,7 +48,7 @@ Link to the relationship object pointing to the reflected object(s) that receive
 ### IsTypedBy
 Set of relationships to the object type that provides the type definitions for this object occurrence. The then associated _IfcTypeObject_, or its subtypes, contains the specific information (or type, or style), that is common to all instances of _IfcObject_, or its subtypes, referring to the same type.
 { .change-ifc2x4}
-> IFC4 CHANGE  New inverse relationship, the link to _IfcRelDefinesByType_ had previously be included in the inverse relationship _IfcRelDefines_. Change made with upward compatibility for file based exchange.
+> IFC4 CHANGE  New inverse relationship, the link to _IfcRelDefinesByType_ was previously included in the inverse relationship _IfcRelDefines_. Change made with upward compatibility for file based exchange.
 
 ### IsDefinedBy
 Set of relationships to property set definitions attached to this object. Those statically or dynamically defined properties contain alphanumeric information content that further defines the object.
@@ -67,13 +67,13 @@ Set of relationships to property set definitions attached to this object. Those 
 
 ### Object Typing
 
-Any object occurrence can be typed by being assigned to a common object type utilizing this concept. A particular rule, restricting the applicable subtypes of IfcTypeObject that can be assigned, is introduced by overriding this concept at the level of subtypes of IfcObject.
+Any object occurrence can be typed by being assigned to a common object type utilizing this concept. A particular rule, restricting the applicable subtypes of _IfcTypeObject_ that can be assigned, is introduced by overriding this concept at the level of subtypes of _IfcObject_.
 
 ### Object User Identity
 
-An attribute Name and optionally Description can be used for all subypes of IfcObject. For those subtypes, that have an object type definition, such as ifcBeam - IfcBeamType, the common Name and optionally Description is associated with the object type.
+An attribute _Name_ and optionally _Description_ can be used for all subypes of _IfcObject_. For those subtypes, that have an object type definition, such as _IfcBeam_ - _IfcBeamType_, the common _Name_ and optionally _Description_ is associated with the object type.
 
 ### Property Sets with Override
 
-Any object occurrence can hold property sets, either directly at the object occurrence as element specific property sets, or at the object type, as type property sets. In this case, the properties that are provided to the object occurrence are the combinations of element specific and type properties. In case, that the same property (within the same property set, is defined both, in occurrence and type properties, the property value of the occurrence property overrides the property value of the type property.
+Any object occurrence can hold property sets, either directly at the object occurrence as element specific property sets, or at the object type, as type property sets. In this case, the properties that are provided to the object occurrence are the combinations of element specific and type properties. In case that the same property (within the same property set) is defined both in occurrence and type properties, the property value of the occurrence property overrides the property value of the type property.
 

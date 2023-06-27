@@ -18,7 +18,7 @@ The individual property templates are interpreted according to their _Name_ attr
 ## Attributes
 
 ### PartOfComplexTemplate
-Reference to a complex property templates. It should only be provided, if the _PropertyType_ of the referenced complex property template is set to <small>COMPLEX</small>.
+Reference to a complex property template. It should only be provided, if the _PropertyType_ of the referenced complex property template is set to COMPLEX.
 
 ### PartOfPsetTemplate
-Reference to the _IfcPropertySetTemplate_ that defines the scope for the _IfcPropertyTemplate_. A single _IfcPropertyTemplate_ can be defined within the scope of zero, one or many _IfcPropertySetTemplate_'.
+Reference to the _IfcPropertySetTemplate_ that defines the scope for the _IfcPropertyTemplate_. A single _IfcPropertyTemplate_ can be defined within the scope of zero, one or many _IfcPropertySetTemplate_ entities.

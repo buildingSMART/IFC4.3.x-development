@@ -1,7 +1,7 @@
 Group Spatial Connectivity
 ==========================
 
-the concept of Group Spatial Connectivity allows for the association of a _IfcGroup_ (and its relevant subtypes) representing a grouping of objects to a particular spatial structure, either an entire facility (and its specific subtypes e.g. buildings, bridges, roads, or marine facilities), a facility part, a building storey, or any part of these structures.
+The concept of Group Spatial Connectivity allows for the association of a _IfcGroup_ (and its relevant subtypes) representing a grouping of objects to a particular spatial structure, either an entire facility (and its specific subtypes e.g. buildings, bridges, roads, or marine facilities), a facility part, a building storey, or any part of these structures.
 
 The group (_IfcGroup_) in question should be human identifiable by its _Name_ attribute.
 

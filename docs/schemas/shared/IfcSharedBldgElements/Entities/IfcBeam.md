@@ -11,7 +11,7 @@ For any other longitudinal structural member, not constrained to be predominatel
 
 > REFERENCE  Definition according to ISO 6707-1: structural member for carrying load(s) between or beyond points of support, usually narrow in relation to its length and horizontal or nearly so.
 
-> NOTE  The entity IfcBeamStandardCase has been deleted, IfcBeam with IfcMaterialProfileSetUsage is used instead.
+> NOTE  The entity _IfcBeamStandardCase_ has been deleted, _IfcBeam_ with _IfcMaterialProfileSetUsage_ is used instead.
 
 > NOTE  The representation of load-bearing beams in a structural analysis model is provided by subtypes of _IfcStructuralMember_ (with _IfcStructuralCurveMember_ being mostly applicable) as part of an _IfcStructuralAnalysisModel_. The camber of a beam may be defined by assigning an _IfcStructuralCurveMember_ with displacement coordinates. Multiple sets of camber ordinates may be provided that are qualified by the particular load case, where full dead load would typically be used for fabrication, and other scenarios used for other loading conditions such as during construction.
 
@@ -51,7 +51,7 @@ As shown in Figure 76, the axis shall be defined along the z axis of the object 
 
 Figure 76 — Beam axis representation
 
-As shown in Figure 77, the axis representation must be positioned at the _IfcMaterialProfileSetUsage_.CardinalPoint, and parallel to the _IfcExtrudedAreaSolid_.ExtrudedDirection. This offset between the axis line and the _IfcExtrudedAreaSolid_.Position must correlate with the chosen _IfcMaterialProfileSetUsage_.CardinalPoint.
+As shown in Figure 77, the axis representation must be positioned at the _IfcMaterialProfileSetUsage_._CardinalPoint_, and parallel to the _IfcExtrudedAreaSolid_._ExtrudedDirection_. This offset between the axis line and the _IfcExtrudedAreaSolid_._Position_ must correlate with the chosen _IfcMaterialProfileSetUsage_._CardinalPoint_.
 
 ![Axis](../../../../figures/ifcbeamstandardcase_axis-02.png)
 
@@ -63,32 +63,32 @@ Three-dimensional reference curve for the beam.
 
 ### Body AdvancedSweptSolid Geometry
 
-* IfcSurfaceCurveSweptAreaSolid, IfcFixedReferenceSweptAreaSolid, IfcExtrudedAreaSolidTapered, IfcRevolvedAreaSolidTapered shall be supported.
-* All subtypes of IfcProfileDef (with exception of IfcArbitraryOpenProfileDef)
+* _IfcSurfaceCurveSweptAreaSolid_, _IfcFixedReferenceSweptAreaSolid_, _IfcExtrudedAreaSolidTapered_, _IfcRevolvedAreaSolidTapered_ shall be supported.
+* All subtypes of _IfcProfileDef_ (with exception of _IfcArbitraryOpenProfileDef_)
 
 ### Body Clipping Geometry
 
-* IfcExtrudedAreaSolid, IfcRevolvedAreaSolid shall be supported
-* All subtypes of IfcProfileDef (with exception of IfcArbitraryOpenProfileDef)
+* _IfcExtrudedAreaSolid_, _IfcRevolvedAreaSolid_ shall be supported
+* All subtypes of _IfcProfileDef_ (with exception of _IfcArbitraryOpenProfileDef_)
 * All extrusion directions shall be supported.
-* The IfcBooleanClippingResult shall be supported, allowing for Boolean differences between the swept solid (here IfcExtrudedAreaSolid) and one or several IfcHalfSpaceSolid (or its subtypes).
+* The _IfcBooleanClippingResult_ shall be supported, allowing for Boolean differences between the swept solid (here _IfcExtrudedAreaSolid_) and one or several _IfcHalfSpaceSolid_ (or its subtypes).
 
-Figure 201 illustrates use of IfcBooleanClippingResult between an IfcExtrudedAreaSolid and an IfcHalfSpaceSolid to create a clipped body.
+Figure 201 illustrates use of _IfcBooleanClippingResult_ between an _IfcExtrudedAreaSolid_ and an _IfcHalfSpaceSolid_ to create a clipped body.
 
 ![clipped beam](../../../../figures/ifcbeam_advanced-2-layout1.gif)
 Figure 201 — Beam clipping
 
 ### Body SweptSolid Geometry
 
- * IfcExtrudedAreaSolid, IfcRevolvedAreaSolid shall be supported
- * All subtypes of IfcProfileDef
+ * _IfcExtrudedAreaSolid_, _IfcRevolvedAreaSolid_ shall be supported
+ * All subtypes of _IfcProfileDef_
  * All extrusion directions shall be supported.
 
-When an (IfcMaterialProfileSetUsage) is assigned to the _IfcBeam_:
+When an _IfcMaterialProfileSetUsage_ is assigned to the _IfcBeam_:
 
- * For all single profiles, the IfcParameterizedProfileDef.Position shall be NIL, or having Location = 0.,0. and RefDirection = 1.,0.
+ * For all single profiles, the _IfcParameterizedProfileDef_._Position_ shall be NIL, or having _Location_ = 0.,0. and _RefDirection_ = 1.,0.
  * The extrusion shall be perpendicular to the profile direction.
- * Orientation: The y-axis of the profile, as determined by IfcSweptAreaSolid.Position.P[2] shall point upwards. It indicates the "role" of the beam, a role=0° means y-axis of profile pointing upwards.
+ * Orientation: The y-axis of the profile, as determined by _IfcSweptAreaSolid_._Position_._P[2]_ shall point upwards. It indicates the "role" of the beam, a role=0° means y-axis of profile pointing upwards.
 
 Figure 200 illustrates the 'SweptSolid' geometric representation. There are no restrictions or conventions on how to use the local placement (black), solid of extrusion placement (red) and profile placement (green).
 
@@ -96,7 +96,7 @@ Figure 200 illustrates the 'SweptSolid' geometric representation. There are no r
 
 Figure 200 — Beam swept solid
 
-Figure 201 illustrates the use of non-perpendicular extrusion to create the IfcExtrudedAreaSolid.
+Figure 201 illustrates the use of non-perpendicular extrusion to create the _IfcExtrudedAreaSolid_.
 
 ![non-perpendicular extrusion](../../../../figures/ifcbeam_advanced-1-layout1.gif)
 
@@ -104,13 +104,13 @@ Figure 201 — Beam non-perpendicular extrusion
 
 If parametric profiles are used, the parameters may be interpreted to be the dimensions of the beam:
 
-* IfcRectangleProfileDef.YDim interpreted as beam height
-* IfcRectangleProfileDef.XDim interpreted as beam width
-* IfcCircleProfileDef.Radius interpreted as beam radius.
+* _IfcRectangleProfileDef_._YDim_ interpreted as beam height
+* _IfcRectangleProfileDef_._XDim_ interpreted as beam width
+* _IfcCircleProfileDef_._Radius_ interpreted as beam radius.
 
 ![standard beam](../../../../figures/ifcbeamstandardcase_sweptsolid-01.png)
 
-Figure 207 — Beam body extrusion using an IfcRectangleProfileDef
+Figure 207 — Beam body extrusion using an _IfcRectangleProfileDef_
 
 ### Element Composition
 
@@ -124,7 +124,7 @@ Any building element can be a composite
 
 ### Material Profile Set Usage
 
-Figure 196 illustrates assignment of _IfcMaterialProfileSetUsage_ and _IfcMaterialProfileSet_ to the _IfcColumnType_ and the _IfcColumn_ occurrence. Both the _IfcMaterialProfileSet_ and _IfcProfileDef_ is shared between all occurrences.
+Figure 196 illustrates assignment of _IfcMaterialProfileSetUsage_ and _IfcMaterialProfileSet_ to the _IfcBeamType_ and the _IfcBeam_ occurrence. Both the _IfcMaterialProfileSet_ and _IfcProfileDef_ is shared between all occurrences.
 
 ![Material profile set and usage](../../../../figures/ifcbeam-01.png)
 
@@ -156,7 +156,7 @@ An idealized structural member corresponding to the beam.
 
 ### Spatial Containment
 
-The IfcBeam, as any subtype of IfcBuildingElement, may participate alternatively in one of the two different containment relationships:
+The _IfcBeam_, as any subtype of _IfcBuildingElement_, may participate alternatively in one of the two different containment relationships:
 
 * the _Spatial Containment_ (defined here), or
 * the _Element Composition_.

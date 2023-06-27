@@ -1,6 +1,6 @@
 # IfcObjectDefinition
 
-An _IfcObjectDefinition_ is the generalization of any semantically treated thing or process, either being a type or an occurrences. Object definitions can be named, using the inherited _Name_ attribute, which should be a user recognizable label for the object occurrence. Further explanations to the object can be given using the inherited _Description_ attribute. A context is a specific kind of object definition as it provides the project or library context in which object types and object occurrences are defined.
+An _IfcObjectDefinition_ is the generalization of any semantically treated thing or process, either being a type or an occurrence. Object definitions can be named, using the inherited _Name_ attribute, which should be a user recognizable label for the object occurrence. Further explanations to the object can be given using the inherited _Description_ attribute. A context is a specific kind of object definition as it provides the project or library context in which object types and object occurrences are defined.
 
 Objects are independent pieces of information that might contain or reference other pieces of information. There are four essential kinds of relationships in which object definitions (by their instantiable subtypes) can be involved:
 
@@ -20,10 +20,10 @@ Objects are independent pieces of information that might contain or reference ot
 ## Attributes
 
 ### HasAssignments
-Reference to the relationship objects, that assign (by an association relationship) other subtypes of IfcObject to this object instance. Examples are the association to products, processes, controls, resources or groups.
+Reference to the relationship objects, that assign (by an association relationship) other subtypes of _IfcObject_ to this object instance. Examples are the association to products, processes, controls, resources or groups.
 
 ### Nests
-References to the decomposition relationship being a nesting. It determines that this object definition is a part within an ordered whole/part decomposition relationship. An object occurrence or type can only be part of a single decomposition (to allow hierarchical strutures only).
+References to the decomposition relationship being a nesting. It determines that this object definition is a part within an ordered whole/part decomposition relationship. An object occurrence or type can only be part of a single decomposition (to allow hierarchical structures only).
 
 { .change-ifc2x4}
 > IFC4 CHANGE  The inverse attribute datatype has been added and separated from _Decomposes_ defined at _IfcObjectDefinition_.
@@ -41,19 +41,19 @@ References to the context providing context information such as project unit or 
 > IFC4 CHANGE  The inverse attribute datatype has been added.
 
 ### IsDecomposedBy
-References to the decomposition relationship being an aggregation. It determines that this object definition is whole within an unordered whole/part decomposition relationship. An object definitions can be aggregated by several other objects (occurrences or parts).
+References to the decomposition relationship being an aggregation. It determines that this object definition is whole within an unordered whole/part decomposition relationship. An object definition can be aggregated by several other objects (occurrences or parts).
 
 { .change-ifc2x4}
 > IFC4 CHANGE  The inverse attribute datatype has been changed from the supertype _IfcRelDecomposes_ to subtype _IfcRelAggregates_.
 
 ### Decomposes
-References to the decomposition relationship being an aggregation. It determines that this object definition is a part within an unordered whole/part decomposition relationship. An object definitions can only be part of a single decomposition (to allow hierarchical strutures only).
+References to the decomposition relationship being an aggregation. It determines that this object definition is a part within an unordered whole/part decomposition relationship. An object definition can only be part of a single decomposition (to allow hierarchical structures only).
 
 { .change-ifc2x4}
 > IFC4 CHANGE  The inverse attribute datatype has been changed from the supertype _IfcRelDecomposes_ to subtype _IfcRelAggregates_.
 
 ### HasAssociations
-Reference to the relationship objects, that associates external references or other resource definitions to the object.. Examples are the association to library, documentation or classification.
+Reference to the relationship objects, that associates external references or other resource definitions to the object. Examples are the association to library, documentation or classification.
 
 ## Concepts
 

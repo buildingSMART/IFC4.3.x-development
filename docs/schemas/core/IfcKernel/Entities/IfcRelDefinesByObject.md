@@ -1,6 +1,6 @@
 # IfcRelDefinesByObject
 
-The objectified relationship _IfcRelDefinesByObject_ defines the relationship between an object taking part in an object type decomposition and an object occurrences taking part in an occurrence decomposition of that type.
+The objectified relationship _IfcRelDefinesByObject_ defines the relationship between an object taking part in an object type decomposition and an object occurrence taking part in an occurrence decomposition of that type.
 
 The _IfcRelDefinesByObject_ is a 1-to-N relationship, as it allows for the assignment of one declaring object information to a single or to many reflected objects. Those objects then share the same object property sets and, for subtypes of _IfcProduct_, the eventually assigned representation maps.
 

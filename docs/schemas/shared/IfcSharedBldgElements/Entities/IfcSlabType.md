@@ -34,22 +34,22 @@ The inherited attribute _ElementType_ shall be provided, if the _PredefinedType_
 
 ### Material Layer Set
 
-The material of the IfcSlabType is defined by the
-IfcMaterialLayerSet or as fall back by IfcMaterial
+The material of the _IfcSlabType_ is defined by the
+_IfcMaterialLayerSet_ or as fall back by _IfcMaterial_
 and attached by the
-IfcRelAssociatesMaterial.RelatingMaterial. It is
+_IfcRelAssociatesMaterial_.RelatingMaterial. It is
 accessible by the inverse HasAssociations relationship.
 
 The shared material layer set definition is defined by assigning
-an IfcMaterialLayerSet (see material use definition above).
-The IfcMaterialLayer refers to one or several of
-IfcMaterial that is the common for all slab occurrence, if
-used. If an IfcMaterialProfileSet is used, all occurrences must have a corresponding IfcMaterialProfileSetUsage.
+an _IfcMaterialLayerSet_ (see material use definition above).
+The _IfcMaterialLayer_ refers to one or several of
+_IfcMaterial_ that is the common for all slab occurrence, if
+used. If an _IfcMaterialProfileSet_ is used, all occurrences must have a corresponding _IfcMaterialProfileSetUsage_.
 
 > NOTE  Since each individual instance of
-> IfcSlab defines its own
-> IfcMaterialLayerSetUsage including the offset from the
-> reference plane, the same IfcSlabType can be used
+> _IfcSlab_ defines its own
+> _IfcMaterialLayerSetUsage_ including the offset from the
+> reference plane, the same _IfcSlabType_ can be used
 > independently of the reference plane alignment of its
 > occurrences.
 

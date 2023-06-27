@@ -7,7 +7,7 @@ The entity _IfcRelAssociatesConstraint_ is used to apply constraint information 
 ## Attributes
 
 ### Intent
-The intent of the constraint usage with regard to its related IfcConstraint and IfcObjects, IfcPropertyDefinitions or IfcRelationships. Typical values can be e.g. RATIONALE or EXPECTED PERFORMANCE.
+The intent of the constraint usage with regard to its related _IfcConstraint_ and _IfcObject_, _IfcPropertyDefinition_ or _IfcRelationship_ entities. Typical values can be e.g. RATIONALE or EXPECTED PERFORMANCE.
 
 ### RelatingConstraint
-Reference to constraint that is being applied using this relationship.
+Reference to a constraint that is being applied using this relationship.

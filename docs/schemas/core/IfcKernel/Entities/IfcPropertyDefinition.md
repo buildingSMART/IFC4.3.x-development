@@ -25,4 +25,4 @@ Subtypes are included in more specific relationships, see _IfcPropertySetDefinit
 
 
 ### HasAssociations
-Reference to the relationship IfcRelAssociates and thus to those externally defined concepts, like classifications, documents, or library information, which are associated to the property definition.
+Reference to the relationship _IfcRelAssociates_ and thus to those externally defined concepts, like classifications, documents, or library information, which are associated to the property definition.

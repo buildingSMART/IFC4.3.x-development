@@ -41,15 +41,15 @@ The _IfcProject_ represents the root of the any decomposition tree. It shall the
 
 ### Project Declaration
 
-The IfcProject is also the context for other information about the construction project such as a work plan. Non-product structures are assigned by their first level object to IfcProject using the IfcRelDeclares relationship. The IfcProject provides the context for work plans (or other non-product based) descriptions of the construction project. It is handled by the objectified relationship IfcRelDeclares.
+The _IfcProject_ is also the context for other information about the construction project such as a work plan. Non-product structures are assigned by their first level object to _IfcProject_ using the IfcRelDeclares relationship. The _IfcProject_ provides the context for work plans (or other non-product based) descriptions of the construction project. It is handled by the objectified relationship _IfcRelDeclares_.
 
-> NOTE  The spatial structure and the schedule structure can be decomposed. For example the IfcBuilding can be decomposed into IfcBuildingStorey's, and the IfcWorkPlan can be decomposed into IfcWorkSchedule's.
+> NOTE  The spatial structure and the schedule structure can be decomposed. For example the _IfcBuilding_ can be decomposed into _IfcBuildingStorey_'s, and the _IfcWorkPlan_ can be decomposed into _IfcWorkSchedule_'s.
 
-> NOTE  The products and tasks can be decomposed further. For example the IfcCurtainWall can be decomposed into IfcMember and IfcPlate, the IfcTask can be decomposed into other IfcTask's.
+> NOTE  The products and tasks can be decomposed further. For example the _IfcCurtainWall_ can be decomposed into _IfcMember_ and _IfcPlate_, the _IfcTask_ can be decomposed into other _IfcTask_'s.
 
-> NOTE  The products and tasks can have direct linking relationships. For example the IfcCurtainWall can be assigned to a IfcTask as an input or output for a construction schedule.
+> NOTE  The products and tasks can have direct linking relationships. For example the _IfcCurtainWall_ can be assigned to an _IfcTask_ as an input or output for a construction schedule.
 
-Figure 1 illustrates the use of IfcProject as context for work plans or work schedules.
+Figure 1 illustrates the use of _IfcProject_ as context for work plans or work schedules.
 
 ![project relationships](../../../../figures/ifcproject_fig-1.png "Figure 1 &mdash; Project spatial and work plan structure")
 
@@ -139,14 +139,14 @@ Angle unit as degrees or radians.
 
 ### Spatial Decomposition
 
-The IfcProject is used to reference the root of the spatial structure of a building or other construction project (that serves as the primary project breakdown and is required to be hierarchical). The spatial structure elements are linked together, and to the IfcProject, by using the objectified relationship IfcRelAggregates.
+The _IfcProject_ is used to reference the root of the spatial structure of a building or other construction project (that serves as the primary project breakdown and is required to be hierarchical). The spatial structure elements are linked together, and to the _IfcProject_, by using the objectified relationship _IfcRelAggregates_.
 
-The following constraints are applied to using the relationshio IfcRelAggregates in context of IfcProject
+The following constraints are applied to using the relationshio _IfcRelAggregates_ in context of _IfcProject_
 
-> NOTE  The anomaly to use the composition structure through IfcRelAggregates for assigning the uppermost spatial container to IfcProject is due to upward compatibility reasons with earlier releases of this standard.
+> NOTE  The anomaly to use the composition structure through _IfcRelAggregates_ for assigning the uppermost spatial container to _IfcProject_ is due to upward compatibility reasons with earlier releases of this standard.
 
-* IfcProject.Decomposes -- it shall be NIL, i.e. the IfcProject shall be on top of the root of the spatial structure tree.
-* IfcProject.IsDecomposedBy -- referencing (IfcSite || IfcBuilding || IfcSpatialZone) by using IfcRelAggregates.RelatedObjects. The IfcSite, IfcBuilding, or IfcSpatialZone being referenced shall be the root of the spatial structure.
+* _IfcProject.Decomposes_ -- it shall be NIL, i.e. the _IfcProject_ shall be on top of the root of the spatial structure tree.
+* _IfcProject.IsDecomposedBy_ -- referencing (_IfcSite_ || _IfcBuilding_ || _IfcSpatialZone_) by using _IfcRelAggregates.RelatedObjects_. The _IfcSite_, _IfcBuilding_, or _IfcSpatialZone_ being referenced shall be the root of the spatial structure.
 
 Figure 1 illustrates project relationships with spatial structures, elements, and element type libraries.
 

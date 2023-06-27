@@ -26,7 +26,7 @@ Predefined generic types for a roof that are specified in an enumeration. There 
 > NOTE  The _PredefinedType_ shall only be used, if no _IfcRoofType_ is assigned, providing its own _IfcRoofType.PredefinedType_.
 
 { .change-ifc2x4}
-> IFC4 CHANGE The attribute has been renamed from ShapeType and changed to be OPTIONAL with upward compatibility for file based exchange.
+> IFC4 CHANGE The attribute has been renamed from _ShapeType_ and changed to be OPTIONAL with upward compatibility for file based exchange.
 
 ## Formal Propositions
 
@@ -42,9 +42,9 @@ Either there is no roof type object associated, i.e. the _IsTypedBy_ inverse rel
 
 _Geometric representation by aggregated elements_
 
-If the IfcRoof has components (referenced by _SELF\IfcObject.IsDecomposedBy_) then no independent geometric representation shall defined for the IfcRoof. The IfcRoof is then geometrically represented by the geometric representation of its components. The components are accessed via _SELF\IfcObject.IsDecomposedBy[1].RelatedObjects_. The geometric representations that are supported for the aggregated elements are defined with each element. See geometric use definition for IfcSlab, IfcBeam, IfcColumn, IfcBuildingElementPart and other subtypes of IfcBuildingElement.
+If the _IfcRoof_ has components (referenced by _SELF\IfcObject.IsDecomposedBy_) then no independent geometric representation shall be defined for the _IfcRoof_. The _IfcRoof_ is then geometrically represented by the geometric representation of its components. The components are accessed via _SELF\IfcObject.IsDecomposedBy[1].RelatedObjects_. The geometric representations that are supported for the aggregated elements are defined with each element. See geometric use definition for _IfcSlab_, _IfcBeam_, _IfcColumn_, _IfcBuildingElementPart_ and other subtypes of _IfcBuildingElement_.
 
-Figure 260 illustrates roof placement, with an IfcRoof defining the local placement for all aggregated elements.
+Figure 260 illustrates roof placement, with an _IfcRoof_ defining the local placement for all aggregated elements.
 
 
 ![roof](../../../../figures/ifcroof-layout1.gif)
@@ -62,7 +62,7 @@ A roof may be aggregated into slabs for each face.
 
 The following restriction may be imposed by view definitions or implementer agreements:
 
-* If the IfcRoof establishes an aggregate, then all contained elements shall be placed relative to the _IfcRoof.ObjectPlacement_.
+* If the _IfcRoof_ establishes an aggregate, then all contained elements shall be placed relative to the _IfcRoof.ObjectPlacement_.
 
 ### Property Sets for Objects
 

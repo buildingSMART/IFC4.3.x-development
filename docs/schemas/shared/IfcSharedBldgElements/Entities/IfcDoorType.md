@@ -44,10 +44,10 @@ The inherited attribute _ElementType_ shall be provided, if the _PredefinedType_
 
 ### Property Sets for Types
 
-Two subtypes of IfcPreDefinedPropertySet are applicable to IfcDoorType:
+Two subtypes of _IfcPreDefinedPropertySet_ are applicable to _IfcDoorType_:
 
-* IfcDoorLiningProperties - a single instance to define the shape parameters of the door lining
-* IfcDoorPanelProperties - one or several instances to define the shape parameters of the door panel(s)
+* _IfcDoorLiningProperties_ - a single instance to define the shape parameters of the door lining
+* _IfcDoorPanelProperties_ - one or several instances to define the shape parameters of the door panel(s)
 
 ### Type Body Geometry
 

@@ -1,4 +1,4 @@
 MitigatedRiskSignificance
 =========================
 
-Identifies the signifiance of the risk given the mitigation of likelihood and consequence.
+Identifies the significance of the risk given the mitigation of likelihood and consequence.

@@ -18,7 +18,7 @@ The occurrences of the _IfcPlateType_ within building models are represented by 
 { .spec-head}
 Informal Propositions:
 
-1. The material assignment, if provided using the _IfcRelAssociatesMaterial_ relationship, shall not reference the _IfcMaterialLayerSetUsage_.
+1. The material assignment, if provided using the _IfcRelAssociatesMaterial_ relationship, shall not reference the _IfcMaterialLayerSetUsage_. Use _IfcMaterialLayerSet_ instead.
 
 ## Attributes
 

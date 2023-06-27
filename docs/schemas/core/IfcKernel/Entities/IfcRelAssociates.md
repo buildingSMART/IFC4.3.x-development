@@ -6,7 +6,7 @@ The association relationship _IfcRelAssociates_ refers to sources of information
 
 Association relationships can be established to objects (occurrences as subtypes of _IfcObject_) or to types (as subtypes of _IfcTypeObject_). Some associations (such as approval, or document) may also be applied to property templates (as subtypes of _IfcPropertyDefinition_).
 
-> EXAMPLE  The classification information for the storage tank equipment may be associated to the _IfcTankType_ (subtype of _IfcTypeObject_), defining the specific information for all occurencies of that tank in the project. Therefore the association of the Uniclass notation 'L6814' may be associated by a subtype of _IfcRelAssociates_ to the type information.
+> EXAMPLE  The classification information for the storage tank equipment may be associated to the _IfcTankType_ (subtype of _IfcTypeObject_), defining the specific information for all occurencies of that tank in the project. Therefore the association of the Uniclass notation 'Pr_60_50_10' may be associated by a subtype of _IfcRelAssociates_ to the type information.
 
 > EXAMPLE  The classification information for a particular space within a building may be associated to the _IfcSpace_ object (subtype of _IfcObject_), defining a particular occurrence of space. Therefore the association of the DIN notation 'NF 1.5' may be associated by a subtype of _IfcRelAssociates_ to the object.
 

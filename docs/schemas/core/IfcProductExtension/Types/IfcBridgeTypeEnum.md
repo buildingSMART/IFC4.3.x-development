@@ -1,30 +1,32 @@
 # IfcBridgeTypeEnum
 
+Definitions from ISO 6707
+
 ## Items
 
 ### ARCHED
-Arched bridge.
+ISO 6707: Bridge that has one or more arches as its main structure.
 
 ### CABLE_STAYED
-Cable Stayed bridge.
+ISO 6707: Bridge with one or more towers and inclined cables that are connected to the top or the shaft of the tower and support the deck.
 
 ### CANTILEVER
-Cantilever bridge.
+ISO 6707: Bridge, the main structural members of which are cantilevers.
 
 ### CULVERT
-Culvert bridge.
+ISO 6707: Transverse drain or waterway construction under a road, railway, or canal, or through an embankment, in the form of a large pipe or enclosed channel.
 
 ### FRAMEWORK
 Framework bridge.
 
 ### GIRDER
-Girder bridge.
+A bridge that uses girders as the means of supporting its deck.
 
 ### SUSPENSION
-Suspension bridge.
+ISO 6707: Bridge, the main structural members of which are catenary cables from which the deck is suspended.
 
 ### TRUSS
-Truss bridge.
+ISO 6707: Bridge with braced triangulated frame designed to act as a beam.
 
 ### USERDEFINED
 User defined bridge.

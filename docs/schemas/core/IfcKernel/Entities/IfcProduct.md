@@ -32,10 +32,10 @@ Reference to the representations of the product, being either a representation (
 Reference to the _IfcRelAssignsToProduct_ relationship, by which other products, processes, controls, resources or actors (as subtypes of _IfcObjectDefinition_) can be related to this product.
 
 ### PositionedRelativeTo
-
+Reference to the _IfcRelPositions_ relationship, which defines its position relative to a positioning element.
 
 ### ReferencedInStructures
-
+Reference to the objectified relationship _IfcRelReferencedInSpatialStructure_ may be used to reference a product to one or more spatial entities in addition to the one in which it is primarily contained.
 
 ## Formal Propositions
 

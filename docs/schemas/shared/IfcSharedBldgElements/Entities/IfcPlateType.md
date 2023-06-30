@@ -18,7 +18,7 @@ The occurrences of the _IfcPlateType_ within building models are represented by 
 { .spec-head}
 Informal Propositions:
 
-1. The material assignment, if provided using the _IfcRelAssociatesMaterial_ relationship, shall not reference the _IfcMaterialLayerSetUsage_.
+1. The material assignment, if provided using the _IfcRelAssociatesMaterial_ relationship, shall not reference the _IfcMaterialLayerSetUsage_. Use _IfcMaterialLayerSet_ instead.
 
 ## Attributes
 
@@ -34,22 +34,22 @@ The inherited attribute _ElementType_ shall be provided, if the _PredefinedType_
 
 ### Material Layer Set
 
-The material of the IfcPlateType is defined by the
-IfcMaterialLayerSet or as fall back by IfcMaterial
+The material of the _IfcPlateType_ is defined by the
+_IfcMaterialLayerSet_ or as fall back by _IfcMaterial_
 and attached by the
-IfcRelAssociatesMaterial.RelatingMaterial. It is
-accessible by the inverse HasAssociations relationship.
+_IfcRelAssociatesMaterial.RelatingMaterial_. It is
+accessible by the inverse _HasAssociations_ relationship.
 
 The shared material layer set definition is defined by assigning
-an IfcMaterialLayerSet (see material use definition above).
-The IfcMaterialLayer refers to one or several of
-IfcMaterial that is the common for all plate occurrence, if
-used. If an IfcMaterialProfileSet is used, all occurrences must have a corresponding IfcMaterialProfileSetUsage.
+an _IfcMaterialLayerSet_ (see material use definition above).
+The _IfcMaterialLayer_ refers to one or several of
+_IfcMaterial_ that is the common for all plate occurrence, if
+used. If an _IfcMaterialProfileSet_ is used, all occurrences must have a corresponding _IfcMaterialProfileSetUsage_.
 
 > NOTE  Since each individual instance of
-> IfcPlate defines its own
-> IfcMaterialLayerSetUsage including the offset from the
-> reference plane, the same IfcPlateType can be used
+> _IfcPlate_ defines its own
+> _IfcMaterialLayerSetUsage_ including the offset from the
+> reference plane, the same _IfcPlateType_ can be used
 > independently of the reference plane alignment of its
 > occurrences.
 

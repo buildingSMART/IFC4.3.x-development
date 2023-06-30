@@ -12,7 +12,7 @@ A Context is declared by the relationship object _IfcRelDeclares_ that refers to
 
 ### ObjectType
 The object type denotes a particular type that indicates the object further. The use has to be established at the level of instantiable subtypes.
-> NOTE  Subtypes of _IfcContext_ do not introduce a _PredefinedType_ attribute, therefore the usage of _ObjectType_ is not bound to the selection of USERDEFINED within the _PredefinedType_ enumaration.
+> NOTE  Subtypes of _IfcContext_ do not introduce a _PredefinedType_ attribute, therefore the usage of _ObjectType_ is not bound to the selection of USERDEFINED within the _PredefinedType_ enumeration.
 
 ### LongName
 Long name for the context as used for reference purposes.

@@ -10,9 +10,10 @@ person, an organization, or person acting on behalf of an organization
 
 ## 3.1.2 attribute
 
-unit of information within an entity, defined by a particular type or reference to a particular entity
+Unit of information within an entity, defined by a particular type or reference to a particular entity
 
-> NOTE There are three kinds of attributes: direct attributes, inverse attributes and derived attributes.
+> NOTE This is not a term from ISO 6707, but in line with the term 'attribute' as meant in ISO 10303-11, chapter  9.2.1.
+> There are three kinds of attributes: direct attributes, inverse attributes and derived attributes.
 
 ## 3.1.2.1 direct attribute
 
@@ -112,11 +113,12 @@ a data set, governed by the structure of an underlying schema, to meet certain d
 
 > NOTE  In scope of this standard IFC models are populations of the IFC schema.
 
-## 3.1.16 model view
+## 3.1.16 model view definition
 
-subset of a schema, representing the data structure required to fulfill the data requirements within one or several exchange scenarios
+Subset of a schema representing the data structure required to fulfill the data requirements within one or several exchange scenarios.
+Beside being a subset of a schema, a model view (or model view definition) also imposes additional constraints to the population of the subset schema. 
 
-> NOTE  Beside being a subset of a schema, a model view (or model view definition) may also impose additional constraints to the population of the subset schema
+> EXAMPLE a mnodel view definition may define that an IfcBuilding always needs to have an IfcSite and an IfcProject.
 
 ## 3.1.16.1 concept
 

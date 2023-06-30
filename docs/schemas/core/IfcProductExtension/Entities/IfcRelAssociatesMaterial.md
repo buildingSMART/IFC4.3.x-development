@@ -19,14 +19,14 @@ Material can be applied to profiles. Typical elements using profile material are
 * An _IfcMaterialProfileSetUsage_, i.e. a material profile set with positioning information relative to the element axis, also referred to as cardinal point.
 >> NOTE  As a material profile set usage is an occurrence based information, that applies to each individual element, it cannot be assigned to an element type.
 
-Materials can be arranged by identified parts of a component based element. Typical elements are dorrs/windows (with components such as lining, framing and glazing), or distribution elements.
+Materials can be arranged by identified parts of a component based element. Typical elements are doors/windows (with components such as lining, framing and glazing), or distribution elements.
 
 * An _IfcMaterialConstituentSet_, for component based elements with an indication of the component by keyword to which the material constituent applies.
 >> NOTE  See the material use definitions at each applicable subtype of _IfcElement_ or _IfcElementType_ for a provision of these keywords.
 
 As a fallback, or in cases where only a single material information is needed, material information can be directly associated
 
-* A single _IfcMaterial_ for any element where the material use definition does not prohibits its direct association
+* A single _IfcMaterial_ for any element where the material use definition does not prohibit its direct association
 * An _IfcMaterialList_, e.g. for composite elements, without an information, how the different materials are arranged.
 >> DEPRECATED  The use of _IfcMaterialList_ is deprecated in IFC4 onwards. Use _IfcMaterialConstituentSet_ instead.
 

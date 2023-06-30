@@ -5,7 +5,7 @@ An adherence indicates an external part composition relationship between the hos
 
 - Adherence is used on built elements to adhere surface features which modify the hosting element in the form of markings, surface treatments or defects.
 
-Adherence is a bi-driectional relationship, the relationship from hosting structure to its attached components is called adherence, and the relationship from the components to their hosting structure is called hosting.
+Adherence is a bi-directional relationship, the relationship from hosting structure to its attached components is called adherence, and the relationship from the components to their hosting structure is called hosting.
 
 ```
 concept {

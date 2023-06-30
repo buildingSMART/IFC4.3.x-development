@@ -13,7 +13,7 @@ Usage description of the _IfcPhysicalComplexQuantity_ within the property set wh
 Defines the type of template that may be created by an _IfcComplexPropertyTemplate_
 
 ### HasPropertyTemplates
-Reference to a set of property templates. It should only be provided, if the _PropertyType_ is set to <small>COMPLEX</small>.
+Reference to a set of property templates. It should only be provided, if the _PropertyType_ is set to COMPLEX.
 
 ## Formal Propositions
 

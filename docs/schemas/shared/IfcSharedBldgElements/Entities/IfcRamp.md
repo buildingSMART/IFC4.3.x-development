@@ -7,10 +7,10 @@ A ramp is a vertical passageway which provides a human or vehicle circulation li
 
 The _IfcRamp_ shall either be represented:
 
-* as a ramp assembly that aggregates all parts(ramp flight, landing, etc.) with own shape representations, or
+* as a ramp assembly that aggregates all parts (ramp flight, landing, etc.) with own shape representations, or
 * as a single ramp without decomposition including all shape representations directly at the ramp entity.
 
-> NOTE  In case of an _IfcRamp_ being the assembly of all parts of the ramp the aggregation is handled by the _IfcRelAggregates_ relationship, relating an _IfcRamp_ with the related _IfcRampFlight_ and landings, _IfcSlab_ with PredefinedType=LANDING. _IfcRailing_'s belonging to the ramp may also be included into the aggregation.
+> NOTE  In case of an _IfcRamp_ being the assembly of all parts of the ramp the aggregation is handled by the _IfcRelAggregates_ relationship, relating an _IfcRamp_ with the related _IfcRampFlight_ and landings, _IfcSlab_ with _PredefinedType_=LANDING. _IfcRailing_'s belonging to the ramp may also be included into the aggregation.
 
 > NOTE  Model View Definitions and implementer agreements may restrict the _IfcRamp_ being an assembly to not have an independent shape representation, but to always require that the decomposed parts have a shape representation. In this case, at least the 'Body' geometric representations shall not be provided directly at _IfcRamp_ if it is an assembly. The 'Body' geometric representation of the _IfcRamp_ is then the sum of the 'Body' shape representation of the parts within the decomposition structure.
 
@@ -26,7 +26,7 @@ Predefined generic types for a ramp that are specified in an enumeration. There 
 > NOTE  The _PredefinedType_ shall only be used, if no _IfcRampType_ is assigned, providing its own _IfcRampType.PredefinedType_.
 
 { .change-ifc2x4}
-> IFC4 CHANGE The attribute has been renamed from ShapeType and changed to be OPTIONAL with upward compatibility for file based exchange.
+> IFC4 CHANGE The attribute has been renamed from _ShapeType_ and changed to be OPTIONAL with upward compatibility for file based exchange.
 
 ## Formal Propositions
 
@@ -40,9 +40,9 @@ Either there is no ramp type object associated, i.e. the _IsTypedBy_ inverse rel
 
 ### Axis 2D Geometry
 
-The walking line is represented by a two-dimensional open curve as the axis. The curve is directed into the upward direction (direction has to be interpreted as specified at the subtypes of IfcCurve).
+The walking line is represented by a two-dimensional open curve as the axis. The curve is directed into the upward direction (direction has to be interpreted as specified at the subtypes of _IfcCurve_).
 
-> NOTE  The 'Axis' representation of IfcRamp may be provided even if the IfcRamp has components with own shape representations.
+> NOTE  The 'Axis' representation of _IfcRamp_ may be provided even if the _IfcRamp_ has components with own shape representations.
 
 ### Body Clipping Geometry
 
@@ -50,17 +50,17 @@ The walking line is represented by a two-dimensional open curve as the axis. The
 
 ### Body SweptSolid Geometry
 
-If the IfcRamp has no components defined (empty set of _SELF\IfcProduct.IsDecomposedBy_) then the IfcRamp 'Body' geometry may be represented by an own IfcShapeRepresentation.
+If the _IfcRamp_ has no components defined (empty set of _SELF\IfcProduct.IsDecomposedBy_) then the _IfcRamp_ 'Body' geometry may be represented by an own _IfcShapeRepresentation_.
 
 ### Element Decomposition
 
-If the IfcRamp has components (referenced by _SELF\IfcProduct.IsDecomposedBy_) then no independent 'Body' geometric representation shall be defined for the IfcRamp. The IfcRamp is then geometrically represented by the geometric representation of its components.
+If the _IfcRamp_ has components (referenced by _SELF\IfcProduct.IsDecomposedBy_) then no independent 'Body' geometric representation shall be defined for the _IfcRamp_. The _IfcRamp_ is then geometrically represented by the geometric representation of its components.
 
 ![ramp](../../../../figures/ifcramp-layout1.gif)
 
 Figure 253 — Ramp placement
 
-> EXAMPLE  Figure 253 illustrates IfcRamp defining the local placement for all components.
+> EXAMPLE  Figure 253 illustrates _IfcRamp_ defining the local placement for all components.
 
 #### IfcRampFlight
 
@@ -68,7 +68,7 @@ Ramps may be decomposed into ramp flights.
 
 #### IfcSlab
 
-Ramps may be decomposed into ramp landing, represented by IfcSlab.PredefinedType=LANDING
+Ramps may be decomposed into ramp landing, represented by _IfcSlab.PredefinedType_=LANDING
 
 #### IfcRailing
 
@@ -76,9 +76,9 @@ Ramps may be decomposed into railings.
 
 ### Material Single
 
-The material of the IfcRamp is defined by the IfcMaterial and attached by the IfcRelAssociatesMaterial.RelatingMaterial. It is accessible by the inverse HasAssociations relationship.
+The material of the _IfcRamp_ is defined by the _IfcMaterial_ and attached by the _IfcRelAssociatesMaterial.RelatingMaterial_. It is accessible by the inverse _HasAssociations_ relationship.
 
-Material information can also be given at the IfcRampType, defining the common attribute data for all occurrences of the same type. It is then accessible by the inverse IsDefinedBy relationship pointing to _IfcRampType.HasAssociations_ and via _IfcRelAssociatesMaterial.RelatingMaterial_ to IfcMaterial. If both are given, then the material directly assigned to IfcRamp overrides the material assigned to IfcRampType.
+Material information can also be given at the _IfcRampType_, defining the common attribute data for all occurrences of the same type. It is then accessible by the inverse _IsDefinedBy_ relationship pointing to _IfcRampType.HasAssociations_ and via _IfcRelAssociatesMaterial.RelatingMaterial_ to _IfcMaterial_. If both are given, then the material directly assigned to _IfcRamp_ overrides the material assigned to _IfcRampType_.
 
 ### Object Typing
 
@@ -88,7 +88,7 @@ Material information can also be given at the IfcRampType, defining the common a
 
 The following restriction may be imposed by view definitions or implementer agreements:
 
-* If the IfcRamp establishes an aggregate, then all contained elements shall be placed relative to the _IfcRamp.ObjectPlacement_.
+* If the _IfcRamp_ establishes an aggregate, then all contained elements shall be placed relative to the _IfcRamp.ObjectPlacement_.
 
 ### Property Sets for Objects
 
@@ -96,7 +96,7 @@ The following restriction may be imposed by view definitions or implementer agre
 
 ### Spatial Containment
 
-The IfcRamp, as any subtype of IfcBuildingElement, may participate alternatively in one of the two different containment relationships:
+The _IfcRamp_, as any subtype of _IfcBuildingElement_, may participate alternatively in one of the two different containment relationships:
 
 * the _Spatial Containment_ (defined here), or
 * the _Element Composition_.

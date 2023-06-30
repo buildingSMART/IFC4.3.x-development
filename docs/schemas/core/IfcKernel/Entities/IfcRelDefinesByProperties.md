@@ -22,5 +22,5 @@ Reference to the property set definition for that object or set of objects.
 ## Formal Propositions
 
 ### NoRelatedTypeObject
-There shall be no related object being of typy _IfcTypeObject_.
+There shall be no related object being of type _IfcTypeObject_.
 > NOTE  The relationship between a _IfcTypeObject_ and a _IfcPropertySet_ is handled through the direct relationship _HasPropertySets_ at _IfcTypeObject_.

@@ -6,7 +6,7 @@ The concept _Classification Association_ describes how objects and object types 
 * a classification system;
 * a dictionary server;
 * any external catalogue that classifies the object further;
-* any service that combine the above features.
+* any service that combines the above features.
 
 An individual item within the external source of information can be selected. It then applies the inherent meaning of the item to the _IfcObject_ or _IfcTypeObject_.
 
@@ -14,7 +14,7 @@ An individual item within the external source of information can be selected. It
 
 The main attributes to be provided for a _Classification Association_ are:
 
-* _Identification_: holds the key provided for a specific references to classification items (or tables)
+* _Identification_: holds the key provided for a specific reference to classification items (or tables)
 * _Name_: allows for a human interpretable designation of a classification notation
 
 ```

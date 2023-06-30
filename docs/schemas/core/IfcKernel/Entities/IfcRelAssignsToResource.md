@@ -16,4 +16,4 @@ Reference to the resource to which the objects are assigned to.
 ## Formal Propositions
 
 ### NoSelfReference
-The instance to with the relation points shall not be contained in the set of _RelatedObjects_.
+The instance to wich the relation points shall not be contained in the set of _RelatedObjects_.

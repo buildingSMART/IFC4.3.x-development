@@ -18,7 +18,7 @@ Occurrences of the _IfcWallType_ within building models are represented by insta
 { .spec-head}
 Informal Propositions:
 
-1. The material assignment, if provided using the _IfcRelAssociatesMaterial_ relationship, shall not reference the _IfcMaterialLayerSetUsage_.
+1. The material assignment, if provided using the _IfcRelAssociatesMaterial_ relationship, shall not reference the _IfcMaterialLayerSetUsage_. Use _IfcMaterialLayerSet_ instead.
 
 ## Attributes
 
@@ -34,23 +34,23 @@ The inherited attribute _ElementType_ shall be provided, if the _PredefinedType_
 
 ### Material Layer Set
 
-The material of the IfcWallType is defined by the
-IfcMaterialLayerSet or as fall back by IfcMaterial
+The material of the _IfcWallType_ is defined by the
+_IfcMaterialLayerSet_ or as fall back by _IfcMaterial_
 and attached by the
-IfcRelAssociatesMaterial.RelatingMaterial. It is
-accessible by the inverse HasAssociations
+_IfcRelAssociatesMaterial.RelatingMaterial_. It is
+accessible by the inverse _HasAssociations_
 relationship.
 
 The shared material layer set definition is defined by
-assigning an IfcMaterialLayerSet (see material use
-definition above). The IfcMaterialLayer refers to one or
-several of IfcMaterialLayer that is the common for all
-wall occurrence, if used. If an IfcMaterialProfileSet is used, all occurrences must have a corresponding IfcMaterialProfileSetUsage.
+assigning an _IfcMaterialLayerSet_ (see material use
+definition above). The _IfcMaterialLayer_ refers to one or
+several of _IfcMaterialLayer_ that is the common for all
+wall occurrence, if used. If an _IfcMaterialProfileSet_ is used, all occurrences must have a corresponding _IfcMaterialProfileSetUsage_.
 
 > NOTE  Since each individual instance of
-> IfcWall defines its own
-> IfcMaterialLayerSetUsage including the offset from the
-> wall axis, the same IfcWallType can be used independently
+> _IfcWall_ defines its own
+> _IfcMaterialLayerSetUsage_ including the offset from the
+> wall axis, the same _IfcWallType_ can be used independently
 > of the axis alignment of its occurrences.
 
 ### Type Body Geometry

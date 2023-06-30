@@ -20,7 +20,7 @@ There are two main representations for slab occurrences:
 
 > NOTE There is a representation of slabs for structural analysis provided by a proper subtype of _IfcStructuralMember_ being part of the _IfcStructuralAnalysisModel_.
 
-> HISTORY  New entity in IFC2.0; it is a merger of the two previous entities IfcFloor, IfcRoofSlab, introduced in IFC1.0
+> HISTORY  New entity in IFC2.0; it is a merger of the two previous entities _IfcFloor_, _IfcRoofSlab_, introduced in IFC1.0
 
 ## Attributes
 
@@ -45,14 +45,14 @@ Either there is no slab type object associated, i.e. the _IsTypedBy_ inverse rel
 
 The following constraints apply to the 'Clipping' representation:
 
-* Solid: IfcExtrudedAreaSolid is required,
-* Profile: IfcArbitraryClosedProfileDef, IfcRectangleProfileDef, IfcCircleProfileDef, IfcEllipseProfileDef shall be supported.
+* Solid: _IfcExtrudedAreaSolid_ is required,
+* Profile: _IfcArbitraryClosedProfileDef_, _IfcRectangleProfileDef_, _IfcCircleProfileDef_, _IfcEllipseProfileDef_ shall be supported.
 * Extrusion: The profile can be extruded perpendicularly or non-perpendicularly to the plane of the swept profile.
-* Boolean result: The IfcBooleanClippingResult shall be supported, allowing for Boolean differences between the swept solid (here IfcExtrudedAreaSolid) and one or several IfcHalfSpaceSolid.
+* Boolean result: The _IfcBooleanClippingResult_ shall be supported, allowing for Boolean differences between the swept solid (here _IfcExtrudedAreaSolid_) and one or several _IfcHalfSpaceSolid_.
 
 Additional constraints apply when an _IfcMaterialLayerSetUsage_ is used:
 
-* Material: The definition of the IfcMaterialLayerSetUsage, particularly of the OffsetFromReferenceLine and the ForLayerSet.TotalThickness, has to be consistent to the 'SweptSolid' representation.
+* Material: The definition of the _IfcMaterialLayerSetUsage_, particularly of the _OffsetFromReferenceLine_ and the _ForLayerSet.TotalThickness_, has to be consistent to the 'SweptSolid' representation.
 
 Figure 266 illustrates a 'Clipping' geometric representation with definition of a roof slab using advanced
 geometric representation. The profile is extruded non-perpendicular and the slab body is clipped at the eave.
@@ -66,17 +66,17 @@ Figure 266 — Slab body clipping
 The following constraints apply to the 'SweptSolid'
 representation:
 
-* Solid: IfcExtrudedAreaSolid is required,
-* Profile: IfcArbitraryClosedProfileDef, IfcRectangleProfileDef, IfcCircleProfileDef, IfcEllipseProfileDef shall be supported.
+* Solid: _IfcExtrudedAreaSolid_ is required,
+* Profile: _IfcArbitraryClosedProfileDef_, _IfcRectangleProfileDef_, _IfcCircleProfileDef_, _IfcEllipseProfileDef_ shall be supported.
 * Extrusion: The profile can be extruded perpendicularly or non-perpendicularly to the plane of the swept profile.
 
 For polygonal slabs, the following interpretation of dimension parameter applies:
 
- * IfcArbitraryClosedProfileDef.OuterCurve: closed bounded curve interpreted as area (or foot print) of the slab.
+ * _IfcArbitraryClosedProfileDef.OuterCurve_: closed bounded curve interpreted as area (or foot print) of the slab.
 
 Additional constraints apply when an _IfcMaterialLayerSetUsage_ is used:
 
-* Material: The definition of the IfcMaterialLayerSetUsage, particularly of the OffsetFromReferenceLine and the ForLayerSet.TotalThickness, has to be consistent to the 'SweptSolid' representation.
+* Material: The definition of the _IfcMaterialLayerSetUsage_, particularly of the _OffsetFromReferenceLine_ and the _ForLayerSet.TotalThickness_, has to be consistent to the 'SweptSolid' representation.
 
 ![standard slab](../../../../figures/ifcslab_standard-layout1.gif)
 
@@ -84,7 +84,7 @@ Figure 265 — Slab body extrusion
 
 ### Element Decomposition
 
-A slab may decomposed into parts such as for structural framing and covering panels or topping. For efficiency, each part may reuse geometry using the mapped geometry concept.
+A slab may be decomposed into parts such as for structural framing and covering panels or topping. For efficiency, each part may reuse geometry using the mapped geometry concept.
 
 ![voiding](../../../../figures/ifcslab-floor.png)
 
@@ -148,12 +148,12 @@ Figure 262 — Slab type definition
 
 Figure 263 and Figure 264 illustrates material layer usage, where:
 
-* The reference coordinate system is the coordinate system established by the IfcExtrudedAreaSolid.Position.
-* The reference plane is the plane defined by the extruded profile of IfcExtrudedAreaSolid.SweptSolid. The IfcMaterialLayerSetUsage.OffsetFromReferenceLine is given as a distance from this plane.
-* The IfcMaterialLayerSetUsage.DirectionSense defines how the IfcMaterialLayer's are assigned to the reference plane. POSITIVE means in direction to the positive z-axis of the reference coordinate system.
-* The IfcMaterialLayerSetUsage.OffsetFromReferenceLine is the distance parallel to the reference plane and always perpendicular to the base (XY) plane of the reference coordinate system. This is independent of a potential non-perpendicular extrusion given by IfcExtrudedAreaSolid.ExtrudedDirection <> 0.,0.,1. A positive value of IfcMaterialLayerSetUsage.OffsetFromReferenceLine would then point into the positive z-axis of the reference coordinate system.
-* The Thickness of each IfcMaterialLayer shall be the parallel distance (measured perpendicular to the base plane). The TotalThickness of the IfcMaterialLayerSet is the sum of all layer thicknesses and in case of a perpendicular extrusion identical with IfcExtrudedAreaSolid.Depth
-* The IfcMaterialLayerSetUsage.LayerSetDirection is always AXIS3.
+* The reference coordinate system is the coordinate system established by the _IfcExtrudedAreaSolid.Position_.
+* The reference plane is the plane defined by the extruded profile of _IfcExtrudedAreaSolid.SweptSolid_. The _IfcMaterialLayerSetUsage.OffsetFromReferenceLine_ is given as a distance from this plane.
+* The _IfcMaterialLayerSetUsage.DirectionSense_ defines how the _IfcMaterialLayer_'s are assigned to the reference plane. POSITIVE means in direction to the positive z-axis of the reference coordinate system.
+* The _IfcMaterialLayerSetUsage.OffsetFromReferenceLine_ is the distance parallel to the reference plane and always perpendicular to the base (XY) plane of the reference coordinate system. This is independent of a potential non-perpendicular extrusion given by _IfcExtrudedAreaSolid.ExtrudedDirection_ <> 0.,0.,1. A positive value of _IfcMaterialLayerSetUsage.OffsetFromReferenceLine_ would then point into the positive z-axis of the reference coordinate system.
+* The _Thickness_ of each _IfcMaterialLayer_ shall be the parallel distance (measured perpendicular to the base plane). The _TotalThickness_ of the _IfcMaterialLayerSet_ is the sum of all layer thicknesses and in case of a perpendicular extrusion identical with _IfcExtrudedAreaSolid.Depth_
+* The _IfcMaterialLayerSetUsage.LayerSetDirection_ is always AXIS3.
 * The local placement of the slab uses the the x/y plane for the profile, and the z-axis as the extrusion direction for the slab body.
 
 ![slab material layer set](../../../../figures/ifcmateriallayersetusage_slab-01.png)
@@ -182,7 +182,7 @@ A task for operating on the slab.
 
 ### Spatial Containment
 
-The IfcSlab, as any subtype of IfcBuildingElement, may participate alternatively in one of the two different containment relationships:
+The _IfcSlab_, as any subtype of _IfcBuildingElement_, may participate alternatively in one of the two different containment relationships:
 
 * the _Spatial Containment_ (defined here), or
 * the _Element Composition_.

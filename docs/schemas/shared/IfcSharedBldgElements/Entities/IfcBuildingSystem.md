@@ -10,7 +10,7 @@ The group _IfcBuildingSystem_ defines the occurrence of a specialized system for
 
 > HISTORY  New entity in IFC4.
 
-> IFC4.3.0.0 DEPRECATION Use IfcBuiltSystem instead.
+> IFC4.3.0.0 DEPRECATION Use _IfcBuiltSystem_ instead.
 
 ## Attributes
 

@@ -19,7 +19,7 @@ An individual vertical part of a pier, may be a simple column, i.e. no breakdown
 A vertical segment of a pier column.
 
 ### STANDCOLUMN
-A column transmitting vertical loads from superstructure to an arch below it.
+A column transmitting vertical loads from a superstructure to an arch below it.
 
 ### USERDEFINED
 User-defined linear element.

@@ -7,10 +7,10 @@ The _IfcComplexPropertyTemplate_ defines the template for all complex properties
 ## Attributes
 
 ### UsageName
-
+Usage description of the _IfcPhysicalComplexQuantity_ within the property set which references the _IfcPhysicalComplexQuantity_
 
 ### TemplateType
-
+Defines the type of template that may be created by an _IfcComplexPropertyTemplate_
 
 ### HasPropertyTemplates
 Reference to a set of property templates. It should only be provided, if the _PropertyType_ is set to <small>COMPLEX</small>.
@@ -21,4 +21,3 @@ Reference to a set of property templates. It should only be provided, if the _Pr
 Every individual _IfcPropertyTemplate_ within the complex property template shall have a unique _Name_ attribute value.
 
 ### NoSelfReference
-

@@ -1911,6 +1911,8 @@ def content(s):
 
     if s == "terms_and_definitions":
         kwargs = {'number_headings': True, 'chapter': (int(number), 1)}
+    else:
+        kwargs = {}
 
     html = process_markdown("", render_template_string(content, base=base, is_iso=X.is_iso), process_quotes=process_quotes, **kwargs)
     

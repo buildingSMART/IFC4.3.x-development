@@ -15,23 +15,23 @@ Unit of information within an entity, defined by a particular type or reference 
 > NOTE This is not a term from ISO 6707, but in line with the term 'attribute' as meant in ISO 10303-11, chapter  9.2.1.
 > There are three kinds of attributes: direct attributes, inverse attributes and derived attributes.
 
-## 3.1.2.1 direct attribute
+### 3.1.2.1 direct attribute
 
 scalar values or collections including Set (unordered, unique), List (ordered), or Array (ordered, sparse) as defined in [ISO 10303-11]
 
 > NOTE Similar to the term "field" in common programming languages.
 
-## 3.1.2.2 inverse attribute
+### 3.1.2.2 inverse attribute
 
 unit of information defining queries for obtaining related data and enforcing referential integrity
 
 > NOTE Similar to the term "navigation property" in entity-relational programming frameworks.
 
-## 3.1.2.3 derived attribute
+### 3.1.2.3 derived attribute
 
 unit of information computed from other attributes using an expression defined in the schema
 
-## 3.1.2.4 constraints on attributes
+### 3.1.2.4 constraints on attributes
 
 data type restricting the values of attributes
 
@@ -65,7 +65,7 @@ tangible physical product that can be described by its shape representation, mat
 
 > NOTE A specialization of the general term product.
 
-## 3.1.7.1 element occurrence
+### 3.1.7.1 element occurrence
 
 element's position within the project coordinate system and its containment within the spatial structure
 
@@ -120,19 +120,19 @@ Beside being a subset of a schema, a model view (or model view definition) also 
 
 > EXAMPLE a mnodel view definition may define that an IfcBuilding always needs to have an IfcSite and an IfcProject.
 
-## 3.1.16.1 concept
+### 3.1.16.1 concept
 
 rules on using a subset of the schema structure identified as a concept template to enable a certain functionality within the context of a concept root contained in a model view
 
 > NOTE  The utilization of material definitions for a particular concept root representing a wall is an example of a concept.
 
-## 3.1.16.2 concept template
+### 3.1.16.2 concept template
 
 the specification of a subset of the schema structure to enable a certain unit of functionality
 
 > NOTE  The identification of the entities, attributes and constraints needed to express a material definition independently on how it is utilized later in the context of a wall is an example of a concept template.
 
-## 3.1.16.3 concept root
+### 3.1.16.3 concept root
 
 an entity of a schema used to assign concepts to describe the required functionality
 
@@ -142,13 +142,13 @@ an entity of a schema used to assign concepts to describe the required functiona
 
 anything perceivable or conceivable that has a distinct existence, albeit not material
 
-## 3.1.17.1 object occurrence
+### 3.1.17.1 object occurrence
 
 characteristics of an object as an individual
 
 > NOTE Similar to "object", "instance", "individual" in other publications.
 
-## 3.1.17.2 object type
+### 3.1.17.2 object type
 
 common characteristics shared by multiple object-occurrences
 
@@ -176,21 +176,21 @@ unit of information that is dynamically defined as a particular entity instance
 
 > NOTE Similar to "late-bound" or "run-time" in programming terminology.
 
-## 3.1.21.1 property occurrence
+### 3.1.21.1 property occurrence
 
 unit of information providing a value for a property identified by name
 
-## 3.1.21.2 property template
+### 3.1.21.2 property template
 
 metadata for a property including name, description, and data type
 
 > NOTE Similar in concept to "extension property" in common programming languages.
 
-## 3.1.21.3 property set occurrence
+### 3.1.21.3 property set occurrence
 
 unit of information containing a set of property occurrences, each having a unique name within the property set
 
-## 3.1.21.4 property set template
+### 3.1.21.4 property set template
 
 set of property templates serving a common purpose and having applicability to objects of a particular entity
 
@@ -242,7 +242,7 @@ basic information construct derived from a primitive, an enumeration, or a selec
 
 > NOTE Similar in concept to "typedef" or "value type" in common programming languages.
 
-## 3.1.29.1 select
+### 3.1.29.1 select
 
 construct that allows an attribute value to be one of multiple types or entities
 
@@ -250,7 +250,7 @@ construct that allows an attribute value to be one of multiple types or entities
 
 > NOTE Similar to a "marker interface" in common programming languages.
 
-## 3.1.29.2 enumeration
+### 3.1.29.2 enumeration
 
 construct that allows an attribute value to be one of multiple predefined values identified by name
 
@@ -268,11 +268,11 @@ The act of marking a schema construct to be deleted in a future major release of
 
 ## 3.1.31 compatibility
 
-## 3.1.31.1 backward compatibility
+### 3.1.31.1 backward compatibility
 
 The ability for a data file, written against a previous release of the standard, to be readable by an application supporting a later version.
 
-## 3.1.31.2 forward compatibility
+### 3.1.31.2 forward compatibility
 
 The ability for a data file, written against a new release of the
 standard, to still be readable by an application supporting a previous

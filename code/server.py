@@ -866,7 +866,7 @@ def property(prop):
     )
 
 
-def process_markdown(resource, mdc):
+def process_markdown(resource, mdc, process_quotes=True, number_headings=False, chapter=None):
     html = markdown.markdown(process_graphviz(resource, mdc), extensions=["tables", "fenced_code"])
 
     soup = BeautifulSoup(html)
@@ -889,6 +889,33 @@ def process_markdown(resource, mdc):
             pass
         else:
             img["src"] = img["src"][9:]
+
+    if number_headings:
+        assert chapter
+
+        headings = soup.find_all(re.compile("h\d"))
+    
+        stack = list(chapter)
+        orig_length = len(stack) - 1
+
+        for h in headings:         
+            level = int(h.name[1:]) + orig_length
+            if level == len(stack):
+                stack[-1] += 1
+            elif len(stack) < level:
+                stack += [1] * (level - len(stack))
+            else:
+                stack = stack[0:level]
+                stack[-1] += 1
+            
+            span1 = soup.new_tag('div')
+            span1['class'] = 'number'
+            span1.string = ".".join(map(str, stack))
+
+            span2 = soup.new_tag('div')
+            span2.string = h.text
+
+            h.contents = [span1, span2]
 
     for svg in soup.findAll("svg"):
         # Graphviz diagrams use pt, a hackish way to isolate them
@@ -916,15 +943,16 @@ def process_markdown(resource, mdc):
             has_aside = True
             p.name = "aside"
 
-            if keyword.startswith("IFC"):
-                # This is typically something like "IFC4 CHANGE" denoting a historic change reason
-                keyword, keyword2, contents = p.text.split(" ", 2)
-                p.contents = BeautifulSoup(str(p).replace(keyword + " " + keyword2, "")).html.body.aside.contents
-                keyword = keyword.strip()
-                keyword2 = keyword2.strip()
-                keyword = "-".join((keyword, keyword2))
-            else:
-                p.contents = BeautifulSoup(str(p).replace(keyword, "")).html.body.aside.contents
+            if process_quotes:
+                if keyword.startswith("IFC"):
+                    # This is typically something like "IFC4 CHANGE" denoting a historic change reason
+                    keyword, keyword2, contents = p.text.split(" ", 2)
+                    p.contents = BeautifulSoup(str(p).replace(keyword + " " + keyword2, "")).html.body.aside.contents
+                    keyword = keyword.strip()
+                    keyword2 = keyword2.strip()
+                    keyword = "-".join((keyword, keyword2))
+                else:
+                    p.contents = BeautifulSoup(str(p).replace(keyword, "")).html.body.aside.contents
 
             css_class = keyword.lower()
             if "addendum" in css_class or "change" in css_class:
@@ -938,13 +966,14 @@ def process_markdown(resource, mdc):
             mark.string = keyword
             
             if "deprecation" in css_class:
-                anchor = soup.new_tag("a", href="/IFC/RELEASE/IFC4x3/HTML/content/terms_and_definitions.htm#3.1.30-deprecation")
+                anchor = soup.new_tag("a", href="/IFC/RELEASE/IFC4x3/HTML/content/terms_and_definitions.htm#deprecation")
                 icon = soup.new_tag("i")
                 icon["data-feather"] = "link"
                 anchor.append(icon)
                 mark.append(anchor)
 
-            p.insert(0, mark)
+            if process_quotes:
+                p.insert(0, mark)
             blockquote.insert_before(p)
 
         if has_aside:
@@ -1878,7 +1907,12 @@ def content(s):
         template = Environment(loader=BaseLoader).from_string(content)
         content = template.render(is_iso=X.is_iso)
 
-    html = process_markdown("", render_template_string(content, base=base, is_iso=X.is_iso))
+    process_quotes = s != "terms_and_definitions"
+
+    if s == "terms_and_definitions":
+        kwargs = {'number_headings': True, 'chapter': (int(number), 1)}
+
+    html = process_markdown("", render_template_string(content, base=base, is_iso=X.is_iso), process_quotes=process_quotes, **kwargs)
     
     return render_template(
         "static.html",
@@ -2297,20 +2331,27 @@ def after(response):
         for element in soup.findAll(["h2", "h3", "h4", "h5", "h6", "figure"]):
             id_element = element
 
-            if element.name == "figure":
-                element = element.findChild("figcaption", recursive=False)
-                value = element.text.strip()
+            divs = element.find_all("div")
+            if element.name[0] == "h" and len(divs) == 2 and 'number' in divs[0]['class']:
+                # terms and defs
+                anchor_tag = divs[1].text.strip()
             else:
-                value = element.text.strip()
+                if element.name == "figure":
+                    element = element.findChild("figcaption", recursive=False)
+                    value = element.text.strip()
+                else:
+                    value = element.text.strip()
 
-            anchor_tag = re.sub("[^0-9a-zA-Z.]+", "-", value)
+                anchor_tag = re.sub("[^0-9a-zA-Z.]+", "-", value)
 
             anchor_id = soup.new_tag("a")
             anchor_id["id"] = anchor_tag
+            anchor_id["class"] = "anchor"
             id_element.insert(0, anchor_id)
 
             anchor = soup.new_tag("a")
             anchor["href"] = "#" + anchor_tag
+            anchor["class"] = "link"
             icon = soup.new_tag("i")
             icon["data-feather"] = "link"
             anchor.append(icon)

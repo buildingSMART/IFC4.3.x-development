@@ -626,7 +626,7 @@ body.terms-and-definitions h3 a.link,
 body.terms-and-definitions h4 a.link {
     display: none
 }
-body.terms-and-definitions p {
+body.terms-and-definitions #main-content p {
     margin-top: 0;
 }
 body.terms-and-definitions aside {

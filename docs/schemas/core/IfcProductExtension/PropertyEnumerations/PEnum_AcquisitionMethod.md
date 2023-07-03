@@ -3,19 +3,19 @@
 ## Items
 
 ### GPS
-GPS
+Acquisition is made using GPS
 
 ### LASERSCAN_AIRBORNE
-Laserscan Airborne
+Acquisition is made using Airborn Laserscanner
 
 ### LASERSCAN_GROUND
-Laserscan Ground
+Acquisition is made using Ground Laserscanner
 
 ### SONAR
-Sonar
+Acquisition is made using Sonar
 
 ### THEODOLITE
-Theodolite
+Acquisition is made using Theodolite
 
 ### USERDEFINED
 User Defined

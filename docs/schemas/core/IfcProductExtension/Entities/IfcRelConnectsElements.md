@@ -11,7 +11,7 @@ The _IfcRelConnectsElements_ objectified relationship provides the generalizatio
 
 ### ConnectionGeometry
 The geometric shape representation of the connection geometry that is provided in the object coordinate system of the _RelatingElement_ (mandatory) and in the object coordinate system of the _RelatedElement_ (optionally).
-> NOTE 1  ConnectionGeometry does not consider shape and position of the realizing element.
+> NOTE  ConnectionGeometry does not consider shape and position of the realizing element.
 
 
 ### RelatingElement

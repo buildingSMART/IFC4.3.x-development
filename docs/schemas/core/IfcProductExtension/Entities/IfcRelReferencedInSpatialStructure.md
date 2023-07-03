@@ -26,10 +26,10 @@ Figure 1 shows the use of _IfcRelContainedInSpatialStructure_ and _IfcRelReferen
 ## Attributes
 
 ### RelatedElements
-
+Set of objects, which are referenced within this level of the spatial structure hierarchy.
 
 ### RelatingStructure
-
+Spatial structure element, within which the objects are referenced. An object can be referenced within multiple elements of the project spatial structure.
 
 ## Formal Propositions
 

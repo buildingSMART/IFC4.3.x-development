@@ -24,9 +24,9 @@ Either _PredefinedType_ is unset or the inherited attribute _ObjectType_ shall b
 
 ### Product Local Placement
 
-The local placement for IfcBridge is defined in its supertype IfcProduct. It is defined by IfcLocalPlacement or by _IfcLinearPlacement_ which defines the local coordinate system that is referenced by all geometric representations.
+The local placement for _IfcBridge_ is defined in its supertype _IfcProduct_. It is defined by _IfcLocalPlacement_ or by _IfcLinearPlacement_ which defines the local coordinate system that is referenced by all geometric representations.
 
-* The PlacementRelTo relationship of IfcLocalPlacement shall point (if relative placement is used) to the IfcSpatialStructureElement of type IfcSite, or of type IfcBuilding (e.g. to position a building relative to a building complex, or a building section to a building).
+* The PlacementRelTo relationship of _IfcLocalPlacement_ shall point (if relative placement is used) to the _IfcSpatialStructureElement_ of type _IfcSite_, or of type _IfcBuilding_ (e.g. to position a building relative to a building complex, or a building section to a building).
 * If the relative placement is not used, the absolute placement is defined within the world coordinate system.
 
 ### Property Sets for Objects
@@ -39,7 +39,7 @@ The local placement for IfcBridge is defined in its supertype IfcProduct. It is 
 
 ### Spatial Composition
 
-> NOTE  By using the inverse relationship _IfcBridge.Decomposes_ it references IfcProject || IfcSite || IfcBridge through _IfcRelAggregates.RelatingObject_. If it refers to another instance of IfcBridge, the referenced IfcBridge needs to have a different and higher CompositionType, i.e. COMPLEX (if the other IfcBridge has ELEMENT), or ELEMENT (if the other IfcBridge has PARTIAL).
+> NOTE  By using the inverse relationship _IfcBridge.Decomposes_ it references _IfcProject_ || _IfcSite_ || _IfcBridge_ through _IfcRelAggregates.RelatingObject_. If it refers to another instance of _IfcBridge_, the referenced IfcBridge needs to have a different and higher CompositionType, i.e. COMPLEX (if the other _IfcBridge_ has ELEMENT), or ELEMENT (if the other _IfcBridge_ has PARTIAL).
 
 #### IfcProject
 
@@ -55,7 +55,7 @@ Assignment to another bridge as spatial container, e.g. if this bridge represent
 
 ### Spatial Container
 
-> NOTE  If there are building elements and/or other elements directly related to the IfcBridge, they are associated with the IfcBridge by using the objectified relationship IfcRelContainedInSpatialStructure. The IfcBridge references them by its inverse relationship: > *  _IfcBridge.ContainsElements_ -- referencing any subtype of IfcProduct (with the exception of other spatial structure element) by _IfcRelContainedInSpatialStructure.RelatedElements_.
+> NOTE  If there are building elements and/or other elements directly related to the _IfcBridge_, they are associated with the _IfcBridge_ by using the objectified relationship _IfcRelContainedInSpatialStructure_. The _IfcBridge_ references them by its inverse relationship: > *  _IfcBridge.ContainsElements_ -- referencing any subtype of _IfcProduct_ (with the exception of other spatial structure element) by _IfcRelContainedInSpatialStructure.RelatedElements_.
 
 #### IfcElement
 
@@ -71,7 +71,7 @@ Positioning elements that are directly related to the building.
 
 ### Spatial Decomposition
 
-> NOTE  By using the inverse relationship _IfcBridge.IsDecomposedBy_ it references IfcBridge || IfcBridgePart through _IfcRelAggregates.RelatedObjects_. If it refers to another instance of IfcBridge, the referenced IfcBridge needs to have a different and lower CompositionType, i.e. ELEMENT (if the other IfcBridge has COMPLEX), or PARTIAL (if the other IfcBridge has ELEMENT).
+> NOTE  By using the inverse relationship _IfcBridge.IsDecomposedBy_ it references _IfcBridge_ || _IfcBridgePart_ through _IfcRelAggregates.RelatedObjects_. If it refers to another instance of _IfcBridge_, the referenced _IfcBridge_ needs to have a different and lower CompositionType, i.e. ELEMENT (if the other _IfcBridge_ has COMPLEX), or PARTIAL (if the other IfcBridge has ELEMENT).
 
 #### IfcBridgePart
 

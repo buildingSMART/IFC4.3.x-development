@@ -35,7 +35,7 @@ Reference to the _IfcRelAssignsToProduct_ relationship, by which other products,
 Reference to the _IfcRelPositions_ relationship, which defines its relationship with a positioning element.
 
 ### ReferencedInStructures
-Reference to the objectified relationship _IfcRelReferencedInSpatialStructure_ may be used to reference a product to one or more spatial entities in addition to the one in which it is primarily contained.
+Reference to the objectified relationship _IfcRelReferencedInSpatialStructure_ may be used to relate a product to one or more spatial structure elements in addition to the one in which it is primarily contained.
 
 ## Formal Propositions
 

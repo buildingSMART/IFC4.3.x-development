@@ -6,7 +6,7 @@ The objectified relationship, _IfcRelReferencedInSpatialStructure_ is used to as
 
 Any element can be referenced to zero, one or several levels of the spatial structure. Whereas the _IfcRelContainedInSpatialStructure_ relationship is required to be hierarchical (an element can only be contained in exactly one spatial structure element), the _IfcRelReferencedInSpatialStructure_ is not restricted to be hierarchical.
 
-> EXAMPLE  A wall might be normally contained within a storey, and since it does not span through several stories, it is not referenced in any additional storey. However a curtain wall might span through several stories, in this case it can be contained within the ground floor, but it would be referenced by all additional stories, it spans.
+> EXAMPLE  A curtain wall might span through several stories, in this case it can be contained within the ground floor, but it would be referenced by all additional stories it spans.
 
 Predefined spatial structure elements to which elements can be assigned are
 

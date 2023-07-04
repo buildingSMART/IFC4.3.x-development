@@ -1,7 +1,7 @@
 Material Layer Set Usage
 ========================
 
-A material layer set may be defined on an object type. In this scenario, all occurrences of that type must use this layer set to parametrically define their geometry.
+A material layer set usage may be defined on an object type. In this scenario, all occurrences of that type must use this layer set to parametrically define their geometry.
 
 > EXAMPLE A wall type may define multiple layers of material. A wall of that wall type will then have a geometry with a thickness that corresponds with the layers in the wall type.
 

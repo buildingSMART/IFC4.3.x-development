@@ -3,7 +3,7 @@
 ## Items
 
 ### GPS
-Acquisition is made using GPS
+Acquisition is made using global positioning system (GPS)
 
 ### LASERSCAN_AIRBORNE
 Acquisition is made using Airborn Laserscanner

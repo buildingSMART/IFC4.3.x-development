@@ -9,7 +9,6 @@ The interference may be related to the shape representation of the entities by p
 * when the interference is between two spatial objects, the _InterferenceSpace_ attribute is used to define the interference space between the two footprints associated to the spatial objects, expressed by a specific _IfcSpatialZone_ of predefined type _IfcSpatialZoneTypeEnum_ INTERFERENCE.
 
 If the interference geometry and Zone are omitted then the interference is provided as a logical relationship. Under this circumstance, the connection point, curve, surface, or solid has to be recalculated by the receiving application.
-Both _InterferenceGeometry_ and _InterferenceSpace_ should not be set together.
 
 The _RelatingElement_ and _RelatedElement_ define the two elements in the relationship, that may have different roles.
 The relation orientation may be required by certain _InterferenceType_ values or _InterferenceGeometry_ calculation, this is done by setting the attribute _ImpliedOrder_ accordingly:

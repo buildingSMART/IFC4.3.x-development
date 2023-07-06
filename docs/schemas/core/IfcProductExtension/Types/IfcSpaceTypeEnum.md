@@ -19,10 +19,10 @@ A space dedication for use as a parking spot for vehicles, including access, suc
 Gross Floor Area - a specific kind of space for each building story that includes all net area and construction area (also the external envelop). Provision of such a specific space is often required by regulations.
 
 ### INTERNAL
-
+A space inside a facility.
 
 ### EXTERNAL
-
+A space outside of a facility.
 
 ### BERTH
 A space dedicated to the berthing of vessels within a port or managed area

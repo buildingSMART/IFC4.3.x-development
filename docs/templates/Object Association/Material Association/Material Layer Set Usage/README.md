@@ -1,7 +1,13 @@
 Material Layer Set Usage
 ========================
 
-A material layer set usage may be defined on an object type. In this scenario, all occurrences of that type must use this layer set to parametrically define their geometry.
+A material layer set can be used to model the material of a product as a set of homogeneous layers with constant thickness.
+
+Material layer set usage defines layout at occurrences to indicate a direction and offset from the 'Axis' reference curve or the coordinate system established by the IfcExtrudedAreaSolid.Position (provided by its representation).
+
+When the occurrence has an associated IfcObjectType, that object type may define the material layer set (no usage). In this scenario, all occurrences of that type must use that layer set.
+
+> EXAMPLE A wall type may define multiple layers of material (e.g brick - insulation - brick). A wall occurrence of that wall type will then have a geometry with a thickness that corresponds with the layers in the wall type.
 
 > EXAMPLE A wall type may define multiple layers of material. A wall of that wall type will then have a geometry with a thickness that corresponds with the layers in the wall type.
 

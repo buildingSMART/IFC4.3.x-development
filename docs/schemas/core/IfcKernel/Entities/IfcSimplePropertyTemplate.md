@@ -76,8 +76,9 @@ The expression used to store additional information for the property template de
 ### AccessState
 Information about the access state of the property. It determines whether a property can be viewed and/or modified by any receiving application without specific knowledge of it.
 
-**Attribute use definition for _IfcStateEnum_*** READWRITE: Properties of this template are readable and writable. They may be viewed and modified by users of any application. These are typical informational properties set by a user.
+**Attribute use definition for _IfcStateEnum_**
 
+* READWRITE: Properties of this template are readable and writable. They may be viewed and modified by users of any application. These are typical informational properties set by a user.
 * READONLY: Properties of this template are read-only. They may be viewed but not modified by users of any application. (Applications may generate such values). These are typical automatically generated properties that should be displayed only, but not written back.
 * LOCKED: Properties of this template are locked. They may only be accessed by the owning application (the publisher of the property set template). These are typically application dependent, internal properties that should not be published.
 * READWRITELOCKED: Properties of this template are locked, readable, and writable. They may only be accessed by the owning application.

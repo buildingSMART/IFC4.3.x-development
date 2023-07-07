@@ -4,9 +4,9 @@ The nesting relationship _IfcRelNests_ is a special type of the general composit
 
 > EXAMPLE  A nesting of cost items in an _IfcCostSchedule_ is the composition of complex cost items from other cost items. The order of the nested cost items underneath the parent cost item is determined by the order of the list of _RelatedObjects_.
 
-> EXAMPLE  A nesting of _IfcTask_'s within a work schedule is the composition of a parent work task from more specific sub work tasks. The order of the sub tasks underneath the parent task is determined by the order of the list of _RelatedObjects_.
+> EXAMPLE  A nesting of _IfcTask_ entities within a work schedule is the composition of a parent work task from more specific sub work tasks. The order of the sub tasks underneath the parent task is determined by the order of the list of _RelatedObjects_.
 
-> EXAMPLE  A series of _IfcDistributionPort_'s can be nested within an _IfcDistributionElement_. They decompose the distribution element and have an implied order.
+> EXAMPLE  A series of _IfcDistributionPort_ entities can be nested within an _IfcDistributionElement_. They decompose the distribution element and have an implied order.
 
 Decompositions imply a dependency, i.e. the definition of the whole depends on the definition of the parts and the parts depend on the existence of the whole. The behaviour that is implied from the dependency has to be established inside the applications.
 

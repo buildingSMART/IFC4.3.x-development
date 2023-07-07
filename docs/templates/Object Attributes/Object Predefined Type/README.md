@@ -8,9 +8,9 @@ The main attributes to be provided for an _Object Occurrence Predefined Type_ ar
 * _PredefinedType_: holds the entity specific enumeration of predefined types to further classify the entity
 * _ObjectType_: allows for a custom value, if no applicable enumerator can be found
 
+If the object is typed by an _IfcTypeObject_, then the _PredefinedType_ at the _IfcObject_ occurrence shall only be used if the _PredefinedType_ at _IfcTypeObject_ is set to _NOTDEFINED_.
 
-
- If the object is typed by an _IfcTypeObject_, then the _PredefinedType_ at the _IfcObject_ occurrence shall only be used if the _PredefinedType_ at _IfcTypeObject_ is set to _NOTDEFINED_.
+Note that the PredefinedType attribute itself is defined at the leaf classes of the inheritance hierarchy with a specific enumeration attribute for that given leaf class.
 
 ```
 concept {

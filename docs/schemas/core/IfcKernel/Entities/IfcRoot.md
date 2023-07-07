@@ -17,7 +17,7 @@ Assignment of a globally unique identifier within the entire software world.
 ### OwnerHistory
 Assignment of the information about the current ownership of that object, including owning actor, application, local identification and information captured about the recent changes of the object,
 
-> NOTE  only the last modification is stored - either as addition, deletion or modification.
+> NOTE  Only the last modification is stored - either as addition, deletion or modification.
 
 { .change-ifc2x4}
 > IFC4 CHANGE  The attribute has been changed to be OPTIONAL.

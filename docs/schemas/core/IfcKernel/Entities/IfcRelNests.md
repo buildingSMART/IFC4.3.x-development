@@ -32,4 +32,4 @@ The object definitions, either object occurrences or object types, that are bein
 ## Formal Propositions
 
 ### NoSelfReference
-The instance to with the relation points as provided by _RelatingObject_ shall not be contained in the list of _RelatedObjects_.
+The instance to which the relation points as provided by _RelatingObject_ shall not be contained in the list of _RelatedObjects_.

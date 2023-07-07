@@ -27,7 +27,8 @@ Either _PredefinedType_ is unset or the inherited attribute _ObjectType_ shall b
 The local placement for IfcBridge is defined in its supertype _IfcProduct_. It is defined by _IfcLocalPlacement_ or by _IfcLinearPlacement_ which defines the local coordinate system that is referenced by all geometric representations.
 
 * The *PlacementRelTo* relationship of _IfcLocalPlacement_ shall point (if relative placement is used) to the IfcSpatialStructureElement containing the bridge (if available).
-* If the relative placement is not used, the absolute placement is defined within the world coordinate system.
+* Linear placement can be used to place the bridge at a specific distance along a (alignment) curve.
+* If neither relative placement nor linear placement is, the absolute placement is defined within the world coordinate system by means of a local placement PlacementRelTo set to be undefined.
 
 ### Property Sets for Objects
 

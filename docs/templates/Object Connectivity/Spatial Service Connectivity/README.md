@@ -7,10 +7,10 @@ The use of _IfcRelReferencedInSpatialStructure_ in this template provides the re
 
 ```
 concept {
-    IfcSpatialElement:ReferencedInStructures -> IfcRelReferencedInSpatialStructure:RelatedElements
-    IfcRelReferencedInSpatialStructure:RelatedElements -> IfcSystem
+    IfcSpatialElement:ReferencesElements -> IfcRelReferencedInSpatialStructure:RelatingStructure
+    IfcRelReferencedInSpatialStructure:RelatedElements -> IfcSystem:ReferencedInStructures
     IfcSystem:Name -> IfcLabel
-    IfcSpatialElement:ReferencedInStructures[binding="ReferencedInStructures"]
+    IfcSpatialElement:ReferencesElements[binding="ReferencedElements"]
     IfcRelReferencedInSpatialStructure:RelatedElements[binding="RelatedSystems"]
     IfcSystem:Name[binding="SystemName"]
 }

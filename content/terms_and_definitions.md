@@ -177,7 +177,7 @@ physical structure, including the related site, serving one or more main purpose
 
 ## feature
 
-parametric information and additional property information modifying the shape representation of an element to which it applies
+conceptualization of certain design or manufacturing functionality to implicitly alter the geometric form of an element to be computed at import
 
 ## group
 

@@ -6,7 +6,7 @@ For the purpose of this document, the following definitions apply.
 
 person, organization or organizational unit involved in a process
 
-[SOURCE: ISO 29841-1:2016, 3.1, modified - The words “such as a department, team, etc.” have been removed.]
+[SOURCE: ISO 29481-1:2016, 3.1, modified - The words “such as a department, team, etc.” have been removed.]
 
 ## attributes
 

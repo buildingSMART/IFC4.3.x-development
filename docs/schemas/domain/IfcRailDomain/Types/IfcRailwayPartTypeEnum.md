@@ -54,31 +54,31 @@ The attribute _IfcFacilityPart.UsageType_ allows to to spatially organise the sa
 ## Items
 
 ### TRACK
-A spatial part that contains track-related elements, for example rails and sleepers.
+A spatial structure element that contains track-related elements, for example rails and sleepers.
 
 ### PLAINTRACK
-A spatial part to further divide a track. It does do not contain any turnout panel or dilatation panel.
+A spatial structure element to further divide a track. It does do not contain any turnout panel or dilatation panel.
 
 ### TURNOUTTRACK
-A spatial part to further divide a track. It contains turnouts, and does not contain any plain track or dilatation panel.
+A spatial structure element to further divide a track. It contains turnouts, and does not contain any plain track or dilatation panel.
 
 ### DILATATIONTRACK
-A spatial part to further divide a track. It may be used in specific points of the line, where expansions or movements of tracks need to be accommodated (e.g., before and after a bridge). It does not contain any plain-track or turnout panel.
+A spatial structure element to further divide a track. It may be used in specific points of the line, where expansions or movements of tracks need to be accommodated (e.g., before and after a bridge). It does not contain any plain-track or turnout panel.
 
 ### TRACKPART
-A spatial part to further divide a track, for purposes that do not fall into these categories: plain-track, turnout-track, dilatation-track.
+A spatial structure element to further divide a track, for purposes that do not fall into these categories: plain-track, turnout-track, dilatation-track.
 
 ### LINESIDE
-A spatial part that contains elements of the railway that are not in or over the tracks, hence line-side.
+A spatial structure element that contains elements of the railway that are not in or over the tracks, hence line-side.
 
 ### LINESIDEPART
-A spatial part to further divide a line-side part. It can be used to distinguish line-side parts into more manageable volumes, for engineering purposes.
+A spatial structure element to further divide a line-side part. It can be used to distinguish line-side parts into more manageable volumes, for engineering purposes.
 
 ### ABOVETRACK
-A spatial part that contains elements that are positioned above or over the track, for example catenary lines and suspension systems.
+A spatial structure element that contains elements that are positioned above or over the track, for example catenary lines and suspension systems.
 
 ### SUBSTRUCTURE
-A spatial part that contains elements that are positioned below the track, for example the earthwork platform, prepared subgrade and embankment. This can be above or below finished ground level. 
+A spatial structure element that contains elements that are positioned below the track, for example the earthwork platform, prepared subgrade and embankment. This can be above or below finished ground level. 
 
 ### USERDEFINED
 User-defined type

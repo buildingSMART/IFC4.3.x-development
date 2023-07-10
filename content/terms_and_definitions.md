@@ -26,7 +26,7 @@ Note 1 to entry:  An attribute declaration establishes a relationship between th
 
 ### explicit attribute
 
-\<data modelling\> attribute whose value shall be supplied by an implementation in order to create an entity instance
+\<data modelling\> attribute whose value shall be supplied by an implementation at export in order to assign values to an entity instance
 
 [SOURCE: ISO 10303-11:2004, 9.2.1 - Definition adapted from normative text]
 

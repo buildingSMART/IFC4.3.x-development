@@ -33,7 +33,7 @@ Figure 2 &mdash; Example of the courses and elements that may be contained in th
 
 **Longitudinal organisation**
 
-Tracks may have further longitudinal organisation based on track specificities:
+Tracks may also have a longitudinal organisation based on track specificities:
 
 * PLAINTRACK for the plain line tracks (may contain _IfcElementAssembly.TRACKPANEL_).
 * TURNOUTTRACK for the area of turnouts (may contain _IfcElementAssembly.TURNOUTPANEL_).

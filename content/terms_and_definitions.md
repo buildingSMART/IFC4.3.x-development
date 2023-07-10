@@ -349,7 +349,6 @@ structure for specifying a property definition
 * BIM: Building Information Modeling
 * GUID: Globally Unique Identifier
 * IFC: Industry Foundation Classes
-* IFD: International Framework for Dictionaries
 * MVD: Model View Definition
 * SPF or SPFF: STEP Physical File
 * STEP: Standard for the Exchange of Product data

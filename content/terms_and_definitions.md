@@ -136,7 +136,7 @@ data type having as its domain a set of names
 
 ### select data type
 
-data type that enables a choice among several named data types
+data type that establishes the union of several named data types to allow an attribute value or aggregate element to be one of multiple types or entities
 
 [SOURCE: ISO 10302-11:2004, 8.4.2, modified - Definition adapted from normative text]
 

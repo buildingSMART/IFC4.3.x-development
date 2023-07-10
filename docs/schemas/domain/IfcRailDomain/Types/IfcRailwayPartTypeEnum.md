@@ -35,11 +35,11 @@ Figure 2 &mdash; Example of the courses and elements that may be contained in th
 
 Tracks may also have a longitudinal organisation based on track specificities:
 
-* PLAINTRACK for the plain line tracks (may contain _IfcElementAssembly.TRACKPANEL_).
-* TURNOUTTRACK for the area of turnouts (may contain _IfcElementAssembly.TURNOUTPANEL_).
+* PLAINTRACK for the plain line tracks.
+* TURNOUTTRACK for the area of turnouts.
 
 As depicted in the example Figure below. Other parts, not included in the example, may be:
-* DILATATIONTRACK for the area of dilatation panels (may contain _IfcElementAssembly.DILATATIONPANEL_).
+* DILATATIONTRACK for the area of dilatation panels.
 * TRACKPART for generic-purpose longitudinal organisation of parts of the track.
 
 ![Railway part longitudinal organisation](../../../../figures/IfcRailwayPartTypeEnum-track.png)

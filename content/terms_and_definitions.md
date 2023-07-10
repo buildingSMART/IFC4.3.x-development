@@ -32,7 +32,7 @@ Note 1 to entry:  An attribute declaration establishes a relationship between th
 
 ### inverse attribute
 
-\<data modelling\> attribute whose value consists of the entity instances that use the entity in a particular role
+\<data modelling\> attribute whose value consists of the entity instances that use the instance of the entity defining the inverse in a particular role
 
 [SOURCE: ISO 10303-11:2004, 9.2.1 - Definition adapted from normative text]
 

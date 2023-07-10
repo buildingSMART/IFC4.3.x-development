@@ -1,4 +1,4 @@
-# Terms, definitions, and abbreviated terms TL
+# Terms, definitions, and abbreviated terms
 
 For the purpose of this document, the following definitions apply.
 

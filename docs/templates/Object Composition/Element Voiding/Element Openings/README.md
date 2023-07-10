@@ -9,16 +9,16 @@ The 'Reference' representation of an element does account for voids at export, s
 
 ```
 concept {
-    IfcElement_0:HasOpenings -> IfcRelVoidsElement:RelatingBuildingElement
-    IfcRelVoidsElement:RelatedOpeningElement -> IfcOpeningElement
-IfcOpeningElement:PredefinedType -> IfcOpeningElementTypeEnum
-    IfcOpeningElement:FillsVoids -> IfcRelFillsElement:RelatedBuildingElement
-    IfcRelFillsElement:RelatedBuildingElement -> IfcElement_1
+    IfcElement:HasOpenings -> IfcRelVoidsElement:RelatingBuildingElement
+    IfcRelVoidsElement:RelatedOpeningElement -> IfcOpeningElement:VoidsElements
+    IfcOpeningElement:PredefinedType -> IfcOpeningElementTypeEnum
+    IfcOpeningElement:HasFillings -> IfcRelFillsElement:RelatingOpeningElement
+    IfcRelFillsElement:RelatedBuildingElement -> IfcElement_1:FillsVoids
 
-    IfcElement_1:HasOpenings[binding="HasOpenings"]
+    IfcElement_1:FillsVoids[binding="FillsVoids"]
     IfcRelVoidsElement:RelatedOpeningElement[binding="RelatedOpeningElement"]
     IfcOpeningElement:PredefinedType[binding="OpeningElementType"]
-    IfcOpeningElement:FillsVoids[binding="FillsVoids"]
+    IfcOpeningElement:HasFillings[binding="HasFillings"]
     IfcRelFillsElement:RelatedBuildingElement[binding="RelatedBuiltElement"]
 }
 ```

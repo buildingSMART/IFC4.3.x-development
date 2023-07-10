@@ -160,7 +160,7 @@ class of information defined by common properties
 
 ## external reference
 
-locator for referencing information stored outside of the populated schema
+locator for referencing information stored outside of the model
 
 ## exchange structure
 

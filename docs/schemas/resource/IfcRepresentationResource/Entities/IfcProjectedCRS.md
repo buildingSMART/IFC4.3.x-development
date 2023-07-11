@@ -6,6 +6,12 @@ _IfcProjectedCRS_ is a coordinate reference system of the map to which the map t
 > NOTE  Definition from OpenGIS Abstract Specification, Topic 2:
 > A 2D (or with vertical coordinate axis 3D) coordinate reference system used to approximate the shape of the earth on a planar surface, but in such a way that the distortion that is inherent to the approximation is carefully controlled and known. Distortion correction is commonly applied to calculated bearings and distances to produce values that are a close match to actual field values.
 
+In IFC, the _IfcProjectedCRS_ can also be used to represent a **Compound coordinate reference system**, which combines the coordinate of two other coordinate systems. For example, a compound 3D coordinate system can be made of a horizontal coordinate system and a vertical coordinate system.
+
+> EXAMPLE  The code EPSG:9286 (ETRS89 + NAP height), is the combination of a Geographic CS (ETRS89) and a Vertical CS (NAP height). Or the code EPSG:9306 (HS2 Survey Grid + HS2-VRF height), is the combination of a Projected CS (HS2 Survey Grid), and a Vertical CS (HS2-VRF height). These examples, using EPSG codes, also have a corresponding description using OGC WKT literals.
+
+> NOTE  The Well Known Text (WKT) definition of an _IfcCoordinateReferenceSystem_ is done by means of its inverse attribute *WellKnownText* referenced by an _IfcWellKnownText_.
+
 The unambiguous identifier by which the coordinate reference system is know, is stored in the inherited _Name_ attribute. Well defined identifiers include the map projection and also the map zone information. In these cases the _MapProjection_ and the _MapZone_ attributes can be omitted.
 
 > EXAMPLE  The identifier 'EPSG:25832' defines the map projection 'UTM' and the zone '32N' in addition to the geodetic and vertical datum.

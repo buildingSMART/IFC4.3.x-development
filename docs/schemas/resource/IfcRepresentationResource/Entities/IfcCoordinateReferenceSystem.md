@@ -19,17 +19,11 @@ The unambiguous identifier by which the coordinate reference system is know, is 
 ### Name
 Name by which the coordinate reference system is identified.
 > NOTE 1  The name shall be taken from the list recognized by the European Petroleum Survey Group EPSG. It should then be qualified by the EPSG name space, for example as 'EPSG:5555'.
-{ .extDef}
-> NOTE 2  The name shall be 'WKT' if an EPSG code does not exist for the CRS.
+
+> NOTE 2  The name shall be 'WKT' if an EPSG code does not exist for the Coordinate Reference System (CRS). In this case, the CRS shall be further specified using the _IfcWellKnownText_ entity, following ISO 19162: Geographic information &ndash; Well-known text representation of coordinate reference systems.
 
 ### Description
 Informal description of this coordinate reference system
-
-{ .extDef}
-> NOTE  In case Name equals 'WKT' the Description is well-known text that corresponds to ISO 19162 definition specifying the necessary parameters for the coordinate reference system.
-
-Example for ellipsoid:
-ELLIPSOID[<name>,<major axis>,<inverse flattening>,<length unit>]
 
 ### WellKnownText
 
@@ -37,3 +31,8 @@ Well Known Text (WKT) definition for this Coordinate Reference System inversely 
 
 ### HasCoordinateOperation
 Indicates conversion between coordinate systems. In particular it refers to an _IfcCoordinateOperation_ between this coordinate reference system, and another Geographic coordinate reference system.
+
+## Formal Propositions
+
+### NameOrWKT
+Ensures that the coordinate reference system is properly specified by either a reference to an EPSG code in *Name* or a well known text in *HasWellKnownTextRepresentation*.

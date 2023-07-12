@@ -8,7 +8,9 @@ _IfcProjectedCRS_ is a coordinate reference system of the map to which the map t
 
 The _IfcProjectedCRS_ can also be used to represent a **compound coordinate reference system**, which combines the coordinates of two other CRSs. For example, a compound CRS can be made of a projected CRS and a vertical CRS.
 
-> EXAMPLE  The code EPSG:9286 (ETRS89 + NAP height), is the combination of a Geographic CS (ETRS89) and a Vertical CS (NAP height). Or the code EPSG:9306 (HS2 Survey Grid + HS2-VRF height), is the combination of a Projected CS (HS2 Survey Grid), and a Vertical CS (HS2-VRF height). These examples, using EPSG codes, also have a corresponding description using OGC WKT literals.
+> EXAMPLE  The code EPSG:9286 (ETRS89 + NAP height) is the combination of a geographic CRS (ETRS89) and a vertical CRS (NAP height). 
+
+> EXAMLPE The code EPSG:9306 (HS2 Survey Grid + HS2-VRF height) is the combination of a projected CRS (HS2 Survey Grid), and a vertical CRS (HS2-VRF height). 
 
 > NOTE  The Well Known Text (WKT) definition of an _IfcCoordinateReferenceSystem_ is done by means of its inverse attribute *WellKnownText* referenced by an _IfcWellKnownText_.
 

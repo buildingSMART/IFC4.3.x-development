@@ -27,7 +27,7 @@ Informal description of this coordinate reference system
 
 ### WellKnownText
 
-Well Known Text (WKT) definition for this Coordinate Reference System inversely associated as a IfcWellKnownText entity.
+Well Known Text (WKT) definition for this Coordinate Reference System inversely associated as a _IfcWellKnownText_ entity.
 
 ### HasCoordinateOperation
 Indicates conversion between coordinate systems. In particular it refers to an _IfcCoordinateOperation_ between this coordinate reference system, and another Geographic coordinate reference system.

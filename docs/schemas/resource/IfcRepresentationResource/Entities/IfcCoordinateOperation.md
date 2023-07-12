@@ -26,7 +26,7 @@ This is done by setting:
 >
 > * _Coordinate transformation_ &ndash; mathematical operation on coordinates that usually includes a change of datum. The parameters of a coordinate transformation are empirically derived from data containing the coordinates of a series of points in both coordinate reference systems. This computational process is usually &lsquo;over-determined&rsquo;, allowing derivation of error (or accuracy) estimates for the transformation. Also, the stochastic nature of the parameters may result in multiple (different) versions of the same coordinate transformation. Because of this several transformations may exist for a given pair of coordinate reference systems, differing in their transformation method, parameter values and accuracy characteristics.
 
-In IFC, there are three types of _IfcCoordinateOperation_. The one to be used depends on the specific use case:
+There are three types of _IfcCoordinateOperation_. The one to be used depends on the specific use case:
 
 - _IfcMapConversion_ and _IfcMapConversionScaled_ involve a **transformation**.
 They are coordinate operations that tells that the local engineering coordinate system of the virtual model (which is a topocentric one) is "put in place" in a certain Projected CRS.

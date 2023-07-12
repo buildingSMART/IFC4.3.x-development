@@ -43,5 +43,5 @@ Reference to the relationship IfcRelDefinedByType and thus to those occurrence o
 A Name attribute has to be provided. The name can be declared within the IFC specification as part of the property set agreements.
 
 ### UniquePropertySetNames
-If the entity has property sets, their names must be unique.
+If the type object has property sets, their names must be unique.
 

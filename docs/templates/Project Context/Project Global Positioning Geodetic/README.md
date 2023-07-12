@@ -3,10 +3,9 @@ Project Global Positioning Geodetic
 
 ```
 concept {
-    IfcContext:RepresentationContexts -> IfcGeometricRepresentationContext
-    IfcContext:Phase -> IfcLabel_1
-    IfcContext:ObjectType -> IfcLabel_2
-    IfcContext:LongName -> IfcLabel_3
+    IfcProject:RepresentationContexts -> IfcGeometricRepresentationContext
+    IfcProject:ObjectType -> IfcLabel_1
+    IfcProject:LongName -> IfcLabel_2
     IfcGeometricRepresentationContext:HasCoordinateOperation -> IfcRigidOperation:SourceCRS
     IfcRigidOperation:FirstCoordinate -> IfcPlaneAngleMeasure_1
     IfcRigidOperation:SecondCoordinate -> IfcPlaneAngleMeasure_2

@@ -16,7 +16,7 @@ This is done by setting:
     -	_IfcProjectedCRS_, for defined easting, northing and orthogonal height
     -	_IfcGeographicCRS_, for defined latitude, longitude and ellipsoidal height
 
-> NOTE  In IFC, the _IfcProjectedCRS_ can also be used to represent a Compound CRS. See _IfcProjectedCRS_ for further details.
+> NOTE  In IFC, the _IfcProjectedCRS_ can also be used to represent a compound CRS. See _IfcProjectedCRS_ for further details.
 
 { .extDef}
 > NOTE  Definition from OpenGIS Abstract Specification, Topic 2:

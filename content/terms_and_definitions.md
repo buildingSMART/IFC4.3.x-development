@@ -104,9 +104,9 @@ EXAMPLE  The use of a concept template for material definitions for a particular
 
 ## constraint
 
-adaptation of a data type that restricts its range or operations
+\<data modelling\> a limitation imposed on data against which the data may be evaluated to determine whether the data is valid within a particular context
 
-[SOURCE: ISO 2382:2015, 2122397]
+\<construction\> constraint or limiting value or boundary condition that may be applied to an object or to the value of a property
 
 ## control
 

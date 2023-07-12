@@ -20,14 +20,14 @@ The unambiguous identifier by which the coordinate reference system is know, is 
 Name by which the coordinate reference system is identified.
 > NOTE 1  The name shall be taken from the list recognized by the European Petroleum Survey Group EPSG. It should then be qualified by the EPSG namespace, for example as 'EPSG:5555'.
 
-> NOTE 2  The name shall be 'WKT' if an EPSG code does not exist for the Coordinate Reference System (CRS). In this case, the CRS shall be further specified using the _IfcWellKnownText_ entity.
+> NOTE 2  The name shall be 'WKT' if an EPSG code does not exist for the coordinate reference system (CRS). In this case, the CRS shall be further specified using the _IfcWellKnownText_ entity.
 
 ### Description
 Informal description of this coordinate reference system
 
 ### WellKnownText
 
-Well Known Text (WKT) definition for this Coordinate Reference System inversely associated as a _IfcWellKnownText_ entity.
+Well Known Text (WKT) definition for this coordinate reference system inversely associated as a _IfcWellKnownText_ entity.
 
 ### HasCoordinateOperation
 Indicates conversion between coordinate systems. In particular it refers to an _IfcCoordinateOperation_ between this coordinate reference system, and another coordinate reference system.
@@ -35,4 +35,4 @@ Indicates conversion between coordinate systems. In particular it refers to an _
 ## Formal Propositions
 
 ### NameOrWKT
-Ensures that the coordinate reference system is properly specified by either a reference to an EPSG code in *Name* or a well known text in *HasWellKnownTextRepresentation*.
+Ensures that the coordinate reference system is properly specified by either a reference to an EPSG code in *Name* or a well known text in *WellKnownText*.

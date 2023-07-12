@@ -7,7 +7,7 @@ By convention, a coordinate operation is given between a **source CRS**, being t
 > EXAMPLE  A common coordinate operation is the one between the local engineering coordinate system of a construction project and any map or other coordinate reference system.
 
 An _IfcCoordinateOperation_ allows to connect:
-- an _IfcGeometricRepresentationContext_ &ndash; the base reference system of a virtual model.
+- an _IfcGeometricRepresentationContext_ &ndash; the base reference system of a virtual model
 - to an _IfcCoordinateReferenceSystem_ &ndash; the coordinate system which is related to the real world by Data (as plural of Datum).
 
 This is done by setting:

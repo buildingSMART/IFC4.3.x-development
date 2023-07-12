@@ -58,7 +58,7 @@ Set of relationships to property set definitions attached to this object. Those 
 ## Formal Propositions
 
 ### UniquePropertySetNames
-If the entity has property sets, their names must be unique.
+If the object has property sets, their names must be unique.
 
 ## Concepts
 

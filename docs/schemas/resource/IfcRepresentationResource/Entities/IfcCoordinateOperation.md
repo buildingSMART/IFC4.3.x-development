@@ -1,6 +1,6 @@
 # IfcCoordinateOperation
 
-_IfcCoordinateOperation_ is an abstract supertype to handle any operation (transformation or conversion) between two coordinate reference systems (CRS).
+_IfcCoordinateOperation_ is an abstract supertype to handle any operation (transformation or conversion) between two coordinate reference systems (CRSs).
 
 By convention, a coordinate operation is given between a **source CRS**, being the more local (or child) coordinate reference system; and **target CRS**, being the more remote (or parent) coordinate reference system.
 

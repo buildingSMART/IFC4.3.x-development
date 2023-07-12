@@ -20,7 +20,7 @@ The unambiguous identifier by which the coordinate reference system is know, is 
 Name by which the coordinate reference system is identified.
 > NOTE 1  The name shall be taken from the list recognized by the European Petroleum Survey Group EPSG. It should then be qualified by the EPSG namespace, for example as 'EPSG:5555'.
 
-> NOTE 2  The name shall be 'WKT' if an EPSG code does not exist for the Coordinate Reference System (CRS). In this case, the CRS shall be further specified using the _IfcWellKnownText_ entity, following ISO 19162: Geographic information &ndash; Well-known text representation of coordinate reference systems.
+> NOTE 2  The name shall be 'WKT' if an EPSG code does not exist for the Coordinate Reference System (CRS). In this case, the CRS shall be further specified using the _IfcWellKnownText_ entity.
 
 ### Description
 Informal description of this coordinate reference system

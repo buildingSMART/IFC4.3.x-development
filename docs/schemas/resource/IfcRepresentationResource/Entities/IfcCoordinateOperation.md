@@ -8,7 +8,7 @@ By convention, a coordinate operation is given between a **source CRS**, being t
 
 An _IfcCoordinateOperation_ allows to connect:
 - an _IfcGeometricRepresentationContext_ &ndash; the base reference system of a virtual model
-- to an _IfcCoordinateReferenceSystem_ &ndash; the coordinate system which is related to the real world by Data (as plural of Datum).
+- to an _IfcCoordinateReferenceSystem_ &ndash; the coordinate system which is related to the real world by datums.
 
 This is done by setting:
 - the _IfcCoordinateOperation.SourceCRS_ to _IfcGeometricRepresentationContext_

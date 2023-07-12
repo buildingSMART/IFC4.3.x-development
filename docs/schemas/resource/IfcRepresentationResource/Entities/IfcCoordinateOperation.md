@@ -10,11 +10,11 @@ An _IfcCoordinateOperation_ allows to connect:
 - an _IfcGeometricRepresentationContext_ &ndash; the base reference system of a virtual model
 - to an _IfcCoordinateReferenceSystem_ &ndash; the coordinate system which is related to the real world by datums.
 
-This is done by setting:
-- the _IfcCoordinateOperation.SourceCRS_ to _IfcGeometricRepresentationContext_
-- the _IfcCoordinateOperation.TargetCRS_ either to:
-    -	_IfcProjectedCRS_, for defined easting, northing and orthogonal height
-    -	_IfcGeographicCRS_, for defined latitude, longitude and ellipsoidal height
+> EXAMPLE  This can is done by setting:
+> - the _IfcCoordinateOperation.SourceCRS_ to _IfcGeometricRepresentationContext_
+> - the _IfcCoordinateOperation.TargetCRS_ either to:
+>    -	_IfcProjectedCRS_, for defined easting, northing and orthogonal height
+>    -	_IfcGeographicCRS_, for defined latitude, longitude and ellipsoidal height
 
 > NOTE  In IFC, the _IfcProjectedCRS_ can also be used to represent a compound CRS. See _IfcProjectedCRS_ for further details.
 

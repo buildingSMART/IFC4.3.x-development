@@ -14,7 +14,7 @@ The _IfcProjectedCRS_ can also be used to represent a **compound coordinate refe
 
 > NOTE  The Well Known Text (WKT) definition of an _IfcCoordinateReferenceSystem_ is done by means of its inverse attribute *WellKnownText* referenced by an _IfcWellKnownText_.
 
-The unambiguous identifier by which the coordinate reference system is know, is stored in the inherited _Name_ attribute. Well defined identifiers include the map projection and also the map zone information. In these cases the _MapProjection_ and the _MapZone_ attributes can be omitted.
+The unambiguous identifier by which the coordinate reference system is known, is stored in the inherited _Name_ attribute. Well defined identifiers include the map projection and also the map zone information. In these cases the _MapProjection_ and the _MapZone_ attributes can be omitted.
 
 > EXAMPLE  The identifier 'EPSG:25832' defines the map projection 'UTM' and the zone '32N' in addition to the geodetic and vertical datum.
 

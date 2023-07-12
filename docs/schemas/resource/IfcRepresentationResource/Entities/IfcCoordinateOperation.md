@@ -29,7 +29,7 @@ This is done by setting:
 There are three types of _IfcCoordinateOperation_. The one to be used depends on the specific use case:
 
 - _IfcMapConversion_ and _IfcMapConversionScaled_ involve a **transformation**.
-They are coordinate operations that tells that the local engineering coordinate system of the virtual model (which is a topocentric one) is "put in place" in a certain Projected CRS.
+These coordinate operations convey that the local engineering coordinate system of the virtual model (which is a topocentric CRS) is **put in place** in a certain projected CRS.
 They can use one unique scale value for x,y,z (_IfcMapConversion_) or three different scale values for x,y,z (_IfcMapConversionScaled_) - example of a Helmert transformation.
 
 - _IfcRigidOperation_ involves a **translation**.

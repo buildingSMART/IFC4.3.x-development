@@ -24,6 +24,15 @@ Figure 1 &mdash; Example of usage of _IfcRailwayPart_ to vertically organise the
 
 > NOTE  If required by the use case, the part below the track can be distinguished between _IfcRailwayFacilityPart.SUBSTRUCTURE_ (for constructed ground) and _IfcFacilityPartCommon.BELOWGROUND_ (for non constructed, existing ground).
 
+> NOTE  The Figure above covers the average simple case. For example, other advanced cases could be:
+> * Railway line on a bridge
+> * Railway line in a tunnel (single or multiple tubes)
+> * Railway line junction (two or more lines crossing)
+> * Railway line in the context of a main station building
+> * Railway line with its supporting radio communication equipment (e.g. GSM-R equipment, antenna poles) on a nearby hill
+> 
+> Such more advanced cases might require a specific spatial organisation.
+
 **Detailed vertical organisation**
 If required by the use case, the *SUBSTRUCTURE* part can contain elements such as _IfcCourse_ or _IfcEarthworksFill_ to distinguish the different substructure layers. An example is captured in the Figure below.
 

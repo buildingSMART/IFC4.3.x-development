@@ -1797,6 +1797,9 @@ def concept(s=""):
     # @todo do we reinstate this?
     # subs = make_concept(s.split("/")).children
 
+    if not diagram and not BeautifulSoup(html).text and not tables:
+        html = "<p>This section is intentionally left blank. This template merely serves as a grouping of sub templates.</p>"
+
     return render_template(
         "concept.html",
         base=base,

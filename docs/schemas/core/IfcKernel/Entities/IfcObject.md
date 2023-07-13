@@ -58,7 +58,7 @@ Set of relationships to property set definitions attached to this object. Those 
 ## Formal Propositions
 
 ### UniquePropertySetNames
-If the object has property sets, their names must be unique.
+Every individual _IfcPropertySetDefinition_ assigned to the object using _IfcRelDefinesByProperties_ shall have a unique _Name_ attribute value.
 
 ## Concepts
 

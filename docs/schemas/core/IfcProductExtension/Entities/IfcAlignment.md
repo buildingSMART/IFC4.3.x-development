@@ -1,6 +1,6 @@
 # IfcAlignment
 
-For the purposes of IFC the English term "alignment" defines three essentially separate but closely interconnected concepts.
+For the purposes of IFC the English term "alignment" defines three separate but closely interconnected concepts.
 
 1. definition of a reference system for linear positioning
 2. safeguarding and optimization of the movement of vehicles - kinematic perspective
@@ -14,70 +14,100 @@ An alignment is used to define a reference system to position elements mainly fo
 
 **Kinematic perspective**
 
-In the kinematic perspective focus is on the safe and optimized movement of a vehicle under the constraints induced by changes in the direction of the horizontal and the vertical layout.
+In the kinematic perspective, the focus is on the safe and optimized movement of a vehicle under the constraints induced by changes in the direction of the horizontal and the vertical layout.
 
 **Geometric perspective**
 
 In the geometric perspective the focus is on the proper placement of horizontal and vertical segments to connect certain points along a proposed path. A huge body of knowledge has been developed over a long period of time, in many aspects predating the availability of modern computers and their software.
 
-
-
 **State of the art in contemporary engineering**
+Generally, contemporary engineering follows these steps when defining an alignment.
 
-1. Contemporary engineering usually establishes first a horizontal layout in a properly projected plane.
+1. First, a horizontal layout in a properly projected plane is established.
 
-2. In a second step the vertical profile (i.e. sequence of segments with constant gradients  together with smoothing segments showing a variation in gradient) is added.
+2. In a second step, the vertical layout (i.e. sequence of segments with constant gradients, together with smoothing segments showing a variation in gradient) is added.
 
-3. In the rail domain in most cases a cant layout is added to the horizontal layout to compensate a part of the unwanted lateral acceleration.
+3. In the rail domain, in most cases a cant layout is added to the horizontal layout to compensate a part of the unwanted lateral acceleration.
 
-4. In a final step the proposed layout is checked against a defined set of rules, formulas and thresholds to guarantee the conformance against the regulation.
+4. In a final step, the proposed layout is checked against a defined set of rules, formulas and thresholds to guarantee the conformance against the regulation.
 
 The sequence of steps might change from case to case and might be repeated one or more times to achieve the economic objectives and fulfill regulatory safety requirements.
 
+Contemporary alignment design almost always implements a 2.5 dimension approach. The resulting and documented geometry might be very precise or just good enough to meet safety thresholds. This depends on factors like priorities of the management, date of the design - existing alignments might have been designed more then 50 years ago - or software tools used. Working with legacy data in a high precision BIM model requires a good understanding of these factors.
 
-Contemporary alignment design almost always implements a 2.5 dimension approach.
+**Distinction between business logic and IFC geometry definition**
 
-The resulting and documented geometry might be very precise or just good enough to meet safety thresholds. This depends on factors like priorities of the management, date of the design - existing alignments might have been designed more then 50 years ago - or software tools used. Working with legacy data in a high precision BIM model requires a good understanding of these factors.
+In IFC, the alignment concept is organised in two parts. These two parts work together, but they can also be used and exchanged independently.
 
-**Distinction between business modeling and IFC core geometry**
+1. Business logic of alignment
+2. Geometry definition of alignment
 
-According to IFC modeling principles alignment entities are organised in two large parts. The two parts work together, but they can also be used independently from each other
+**Business logic:** here the IFC schema allows to describe an alignment using terminology and concepts that are as close as possible to business terminology. It allows to describe a very detailed segments' structure with many domain specific properties attached, for example design speed or cant deficiency.
 
-1. Business aspects of alignment
-2. Representation with the IFC geometry resources
+**Geometry definition:** here the IFC schema provides well established IFC geometry entities to represent the business concepts already defined. 
 
-**Business aspects of alignment:** Here the focus is a on a schema structure as close to business terminology as possible. It is possible to have a very detailed segment structure with many domain specific properties attached. Examples for domain specific properties are design speed or cant deficiency.
+A mapping between the Business logic and its Geometry definition in IFC is described by the concept templates related to the alignment geometry.
 
-**Representation with IFC geometry resources:** Here the focus is on using as much of the established IFC geometry entities as possible. A mapping between Business aspects and IFC geometry is proposed.
+**How to use alignment in IFC**
 
-**IFC modelling**
+- Alignment's layouts
+- Alignment's geometry representation
+- Alignment's aggregations
+- Alignment in the project organisation
+- Alignment's grouping
+- Alignment's referents
 
-In IFC a single alignment must have:
+**Alignment layouts**
 
-* a horizontal alignment defined in the x/y plane of the engineering coordinate system
+In IFC, a single alignment may be described by one ore more of the following layouts:
 
-A single alignment may have:
+* a horizontal layout (_IfcAlignmentHorizontal_), defined in the x/y plane of the engineering coordinate system.
+* an accompanying vertical layout (_IfcAlignmentVertical_), defined along the horizontal layout in the distance along / z coordinate space.
+* an accompanying cant layout (_IfcAlignmentCant_), defined as lateral inclination along the horizontal layout.
 
-* an accompanying vertical alignment, defined along the horizontal alignment in the distance along / z coordinate space
-* a relative alignment, defined as a span within another alignment and/or at constant or variable offsets
-* a 3D alignment, either computed from the horizontal and vertical alignment, or extracted from geospatial data.
+These 3 layouts may be used in different configurations. The most common are:
 
-Alignments may be aggregated into referents (_IfcReferent_) or derivative alignments. Derivative alignments may be used to indicate dependent alignments, such as an alignment for a bridge that is relative to a parent alignment for a road, where the child _IfcAlignment_ may have its shape representation set to _IfcOffsetCurveByDistances_ that starts and ends at a span within the extent of the shape representation of the parent _IfcAlignment_.
+1. Only Horizontal (H) layout
+2. Horizontal and Vertical (V) layouts
+3. Horizontal, Vertical and Cant (C) layouts
+4. Multiple Vertical layouts based on the same Horizontal Layout
+5. Multiple Vertical layouts based on the same Horizontal Layout, with a Cant layout applied
+
+(4) and (5) are used in scenarios where multiple alignments re-use the same horizontal layout definition. See **Alignment's aggregations** for details on how to relate parent and child alignments in theses cases.
+
+![Alignment configurations](../../../../figures/IfcAlignment-possible-configurations.png)
+
+Figure 1 &mdash; Common configurations of alignment layouts
+
+**Alignment's geometry representation**
+
+Supported shape representations of _IfcAlignment_ are:
+* _IfcCompositeCurve_ as a 2D horizontal alignment (represented by its horizontal alignment segments), without a vertical layout.
+* _IfcGradientCurve_ as a 3D horizontal and vertical alignment (represented by their alignment segments), without a cant layout.
+* _IfcSegmentedReferenceCurve_ as a 3D curve defined relative to an _IfcGradientCurve_ to incorporate the application of cant.
+* _IfcOffsetCurveByDistances_ as a 2D or 3D curve defined relative to an _IfcGradientCurve_ or another _IfcOffsetCurveByDistances_.
+* _IfcPolyline_ or _IfcIndexedPolyCurve_ as a 3D alignment by a 3D polyline representation (such as coming from a survey).
+* _IfcPolyline_ or _IfcIndexedPolyCurve_ as a 2D horizontal alignment by a 2D polyline representation (such as in very early planning phases or as a map representation).
+
+Refer to the concept templates to know which _RepresentationIdentifier_ and _RepresentationType_ shall be set for the different kinds of representation and the different configurations above.
+
+**Alignment's aggregations**
+In scenarios where multiple alignments re-use the same horizontal layout definition, these alignment can be aggregated in a parent-child relationship, to avoid redefining the horizontal layout. This is done using _IfcRelAggregates_.
+
+If the parent alignment has a geometry definition for its horizontal layout, then all the children can use this definition as *BaseCurve* to construct their own representations.
+
+**Alignment in the project organisation**
+
+* Every _IfcAlignment_ must be related to _IfcProject_ using the _IfcRelAggregates_ relationship - either directly or indirectly. The indirect case is when a child alignment is aggregated to a parent alignment. In this case, only the parent alignment must be related to _IfcProject_.
+* Instances of _IfcAlignment_ must not be related to spatial elements using _IfcRelContainedInSpatialStructure_.
+* Alignments can be related to a spatial element using _IfcRelReferencedInSpatialStructure_.
+
+**Alignment's grouping**
 
 Alignments may be assigned to groups using _IfcRelAssignsToGroup_, where _IfcGroup_ or subtypes may capture information common to multiple alignments.
 
-Supported shape representations of <span class="self-ref">IfcAlignment</span> are:
-
-* _IfcGradientCurve_ as a 3D horizontal and vertical alignment (represented by their alignment segments)
-* _IfcCompositeCurve_ as a 2D horizontal alignment (represented by its horizontal alignment segments) without a vertical alignment
-* _IfcOffsetCurveByDistances_ as a 2D or 3D curve defined relative to an _IfcGradientCurve_ or another _IfcOffsetCurveByDistances_
-* _IfcSegmentedReferenceCurve_ as a 3D curve defined relative to an _IfcGradientCurve_ to incorporate the application of cant
-* _IfcPolyline_ or _IfcIndexedPolyCurve_ as a 3D alignment by a 3D polyline representation (such as coming from a survey)
-* _IfcPolyline_ or _IfcIndexedPolyCurve_ as a 2D horizontal alignment by a 2D polyline representation (such as in very early planning phases or as a map representation)
-
-The _RepresentationIdentifier_ shall always be set to 'Axis' and the _RepresentationType_ shall be set to either 'Curve2D' or 'Curve3D' depending on if the referenced curve is 2- or 3-dimensional
-
-> NOTE  Derivative specifications (Model View Definitions) may expand the above set to include additional supported curve types.
+**Alignment's referents**
+Alignments can nest _IfcReferent_ s, such as stations or mileage points. These can be used as semantic entities holding information about locations along the alignment curve. This is done using the _IfcRelNests_ relationship.
 
 ## Attributes
 

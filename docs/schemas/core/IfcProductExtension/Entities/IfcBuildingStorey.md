@@ -43,7 +43,7 @@ Elevation of the base of this storey, relative to the 0,00 internal reference he
 
 > NOTE  The local placement of the _IfcBuildingStorey_ is determined by the _ObjectPlacement_. The value of _Elevation_ is for informational purposes only.
 
-> IFC4.3.0.0 DEPRECATION This attribute is deprecated and shall no longer be used.
+> IFC4.3.0.0 DEPRECATION This attribute is deprecated and shall no longer be used. Within Pset_BuildingStoreyCommon use ElevationOfSSLRelative or ElevationOfFFLRelative instead.
 
 ## Concepts
 

@@ -1449,7 +1449,7 @@ def get_examples(resource):
     for name in R.examples_by_type.get(resource.upper()) or []:
         examples.append(
             {
-                "name": name,
+                "name": example_title(name.split('/')[-1]),
                 "url": url_for("annex_e_example_page", s=name),
                 "image": url_for("get_example", example=name) + "/thumb.png",
             }

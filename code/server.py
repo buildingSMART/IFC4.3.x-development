@@ -1717,7 +1717,7 @@ def create_concept_table(view_name, xmi_concept, types=None):
     headers = [f"{a}<br>{b}{'.' if b else ''}{c}" for a, (b, c) in bindings if a in bound_keys]
     if types is not None:
         rows = [r for r in rows if r.get("ApplicableEntity") in types]
-    rows = [[r.get(k, "") for k in bound_keys] for r in rows]
+    rows = sorted([r.get(k, "") for k in bound_keys] for r in rows)
     return headers, rows
 
 

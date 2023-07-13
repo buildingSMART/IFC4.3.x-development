@@ -49,7 +49,7 @@ class ExamplesParser:
                     soup = BeautifulSoup(markdown.markdown(md))
                     for img in soup.find_all("img"):
                         if img["src"].startswith("../../figures/examples"):
-                            name = os.path.abspath(os.path.join('../docs', img["src"][6:]))
+                            name = os.path.abspath(os.path.join(os.environ.get('REPO_DIR', '..'), 'docs', img["src"][6:]))
                             args = [shutil.which("convert"), "-format", "png", "-resize", "300", name, "thumb.png"]
                             if subprocess.call(args, cwd=example_dir) == 0:
                                 break

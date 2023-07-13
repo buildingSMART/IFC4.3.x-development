@@ -3,22 +3,22 @@ Element Openings
 
 Elements may have openings (geometric voids) defined, which may be a partial recess or extend the full depth. Openings may optionally be filled by another element such as a door or window.
 
-The 'Body' representation of an element does not account for voids, for which CSG operations are required to produce the resulting shape.
+The 'Body' representation of an element does not account for voids upon export, for which CSG operations are required at import to produce the resulting shape.
 
-The 'Mesh' representation of an element does account for voids, such that no additional operations are required.
+The 'Reference' representation of an element does account for voids at export, such that no additional operations are required at import.
 
 ```
 concept {
     IfcElement:HasOpenings -> IfcRelVoidsElement:RelatingBuildingElement
-    IfcRelVoidsElement:RelatedOpeningElement -> IfcOpeningElement
+    IfcRelVoidsElement:RelatedOpeningElement -> IfcOpeningElement:VoidsElements
     IfcOpeningElement:PredefinedType -> IfcOpeningElementTypeEnum
-    IfcOpeningElement:FillsVoids -> IfcRelFillsElement:RelatedBuildingElement
-    IfcRelFillsElement:RelatedBuildingElement -> IfcDoor
-    IfcRelFillsElement:RelatedBuildingElement -> IfcWindow
-    IfcElement:HasOpenings[binding="HasOpenings"]
+    IfcOpeningElement:HasFillings -> IfcRelFillsElement:RelatingOpeningElement
+    IfcRelFillsElement:RelatedBuildingElement -> IfcElement_1:FillsVoids
+
+    IfcElement_1:FillsVoids[binding="FillsVoids"]
     IfcRelVoidsElement:RelatedOpeningElement[binding="RelatedOpeningElement"]
     IfcOpeningElement:PredefinedType[binding="OpeningElementType"]
-    IfcOpeningElement:FillsVoids[binding="FillsVoids"]
+    IfcOpeningElement:HasFillings[binding="HasFillings"]
     IfcRelFillsElement:RelatedBuildingElement[binding="RelatedBuiltElement"]
 }
 ```

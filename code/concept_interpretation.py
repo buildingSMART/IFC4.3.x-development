@@ -109,7 +109,7 @@ concept_type.SIMPLE_UNARY,
 ('FootPrint Geometry', ('Identifier', ('IfcShapeRepresentation', 'RepresentationIdentifier')), ('Items', ('IfcShapeRepresentation', 'Items')), ('Type', ('IfcShapeRepresentation', 'RepresentationType'))):
 concept_type.SIMPLE_UNARY,
 ('Element Openings', ('FillsVoids', ('IfcOpeningElement', 'FillsVoids')), ('HasOpenings', ('IfcElement', 'HasOpenings')), ('OpeningElementType', ('IfcOpeningElement', 'PredefinedType')), ('RelatedBuiltElement', ('IfcRelFillsElement', 'RelatedBuildingElement')), ('RelatedOpeningElement', ('IfcRelVoidsElement', 'RelatedOpeningElement'))):
-concept_type.SIMPLE_UNARY,
+concept_type.DIRECTIONAL_BINARY,
 ('Product Linear Placement', ('HasPlacement', ('IfcProduct', 'ObjectPlacement')), ('LinearPositioningElementName', ('IfcLinearPositioningElement', 'Name')), ('RelativePlacement', ('IfcLinearPlacement', 'RelativePlacement')), ('RelativeToElement', ('IfcLocalPlacement', 'PlacesObject'))):
 concept_type.SIMPLE_UNARY,
 ('Element Voiding Features', ('HasOpenings', ('IfcElement', 'HasOpenings')), ('RelatedVoidingFeature', ('IfcRelVoidsElement', 'RelatedOpeningElement')), ('VoidingFeatureType', ('IfcVoidingFeature', 'PredefinedType'))):

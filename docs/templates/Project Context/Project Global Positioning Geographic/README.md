@@ -1,5 +1,5 @@
-Project Global Positioning Geodetic
-===================================
+Project Global Positioning Geographic
+=====================================
 
 ```
 concept {

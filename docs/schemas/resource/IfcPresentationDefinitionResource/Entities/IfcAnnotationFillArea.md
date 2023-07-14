@@ -19,8 +19,7 @@ Figure 1 &mdash; Annotation fill area
 { .change-ifc2x3}
 > IFC2x3 CHANGE  The two attributes _OuterBoundary_ and _InnerBoundaries_ are added and replace the previous single boundary.
 
-{ .spec-head}
-Informal Propositions:
+## Informal Propositions
 
 1. Any curve that describes an inner boundary shall not intersect with, nor include, another curve defining an inner boundary.
 2. The curve defining the outer boundary shall not intersect with any curve defining an inner boundary, nor shall it be surrounded by a curve defining an inner boundary.

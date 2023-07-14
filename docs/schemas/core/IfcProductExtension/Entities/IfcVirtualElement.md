@@ -20,6 +20,10 @@ Figure 1 &mdash; Virtual element used as space boundaries
 
 > HISTORY  New entity in IFC2x2 Addendum.
 
+## Formal Propositions
+
+### CorrectPredefinedType
+Either the _PredefinedType_ attribute is unset, or the inherited attribute _ObjectType_ must be asserted when the value of _PredefinedType_ is set to _USERDEFINED_.
 
 ## Concepts
 

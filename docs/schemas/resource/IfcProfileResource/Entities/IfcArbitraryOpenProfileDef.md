@@ -4,8 +4,7 @@ The open profile _IfcArbitraryOpenProfileDef_ defines an arbitrary two-dimension
 
 > HISTORY  New entity in IFC2x.
 
-{ .spec-head}
-Informal Propositions:
+## Informal Propositions
 
 1. The _Curve_ has to be an open curve.
 

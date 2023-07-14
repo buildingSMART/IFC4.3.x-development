@@ -12,8 +12,7 @@ See definitions at _IfcStructuralActivity_.
 
 See definitions at _IfcStructuralActivity_.
 
-{ .spec-head}
-Informal Propositions:
+## Informal Propositions
 
 <ol>
   <li>If the surface reaction is of the predefined type CONST, <em>SELF\IfcStructuralActivity.AppliedLoad</em> must not be of type <em>IfcStructuralLoadConfiguration</em>.</li>

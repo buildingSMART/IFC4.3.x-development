@@ -21,3 +21,4 @@ Reference to a set of property templates. It should only be provided, if the _Pr
 Every individual _IfcPropertyTemplate_ within the complex property template shall have a unique _Name_ attribute value.
 
 ### NoSelfReference
+The _IfcComplexPropertyTemplate_ should not reference itself within the set of _HasPropertyTemplates_.

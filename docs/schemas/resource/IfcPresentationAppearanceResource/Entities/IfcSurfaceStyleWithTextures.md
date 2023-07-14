@@ -2,8 +2,7 @@
 
 The entity _IfcSurfaceStyleWithTextures_ allows to include image textures in surface styles. These image textures can be applied repeating across the surface or mapped with a particular scale upon the surface.
 
-{ .spec-head}
-Informal Propositions:
+## Informal Propositions
 
 1. Only one instance of _IfcSurfaceStyleWithTextures_ shall be referenced by an _IfcStyledItem_ and be assigned to an _IfcGeometricRepresentationItem_
 

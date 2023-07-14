@@ -35,8 +35,7 @@ In the above equations t~1~ is the value given by _Trim1_ or the parameter value
 
 > HISTORY  New entity in IFC1.0
 
-{ .spec-head}
-Informal Propositions:
+## Informal Propositions
 
 1. Where both the parameter value and the Cartesian point exist for _Trim1_ and _Trim2_ they shall be consistent. (i.e., the _BasisCurve_ evaluated at the parameter value shall coincide with the specified point).
 2. When a Cartesian point is specified by _Trim1_ or by _Trim2_ it shall lie on the _BasisCurve_.

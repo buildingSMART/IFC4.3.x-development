@@ -28,8 +28,7 @@ Figure 2 illustrates the final result of the _IfcSectionedSpine_. The body (show
 
 > HISTORY  New entity in IFC2x.
 
-{ .spec-head}
-Informal Propositions:
+## Informal Propositions
 
 1. none of the cross sections, after being placed by the cross section positions, shall intersect
 2. none of the cross sections, after being placed by the cross section positions, shall lie in the same plane

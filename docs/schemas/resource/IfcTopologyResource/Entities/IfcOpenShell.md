@@ -19,8 +19,7 @@
 
 > HISTORY  New entity in IFC2x.
 
-{ .spec-head}
-Informal Propositions:
+## Informal Propositions
 
 1. Every edge shall be referenced exactly twice by the face bounds of the face.
 2. Each oriented edge shall be unique.

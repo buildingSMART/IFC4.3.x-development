@@ -32,8 +32,7 @@ Table 1 &mdash; Table value property with values, measure types and units
 
 
 
-{ .spec-head}
-Informal Propositions:
+## Informal Propositions
 
 1. The list of _DefinedValues_ and the list of _DefiningValues_ are corresponding lists.
 

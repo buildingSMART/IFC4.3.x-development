@@ -9,8 +9,7 @@ An _IfcCurve_ is a curve in two-dimensional or three-dimensional space. It inclu
 
 > HISTORY  New entity in IFC1.0
 
-{ .spec-head}
-Informal Propositions:
+## Informal Propositions
 
 1. A curve shall be arcwise connected
 2. A curve shall have an arc length greater than zero.

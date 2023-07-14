@@ -43,8 +43,7 @@ Figure 3 illustrates an example of a negative offset where the figure shows the 
 { .change-ifc2x}
 > IFC2x CHANGE  Renamed from IfcConstraintRelIntersection.
 
-{ .spec-head}
-Informal Propositions:
+## Informal Propositions
 
 1. Both, _IntersectingAxes[1]_ and _IntersectingAxes[2]_ shall be two _IfcGridAxis_ defined by the same _IfcGrid_.
 2. _IntersectingAxes[1]_ and _IntersectingAxes[2]_ shall not be part of the same row of grid axes, i.e. both shall not be within the same set of _IfcGrid.UAxes_ or _IfcGrid.VAxes_ of the corresponding _IfcGrid_.

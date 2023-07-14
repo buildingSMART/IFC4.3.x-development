@@ -14,8 +14,7 @@ An _IfcOffsetCurve3D_ is a curve defined by an offset in 3D space from its _Basi
 
 > HISTORY  New entity in IFC2x
 
-{ .spec-head}
-Informal Propositions:
+## Informal Propositions
 
 1. At no point on the curve shall ref direction be parallel, or opposite to, the direction of the tangent vector.
 

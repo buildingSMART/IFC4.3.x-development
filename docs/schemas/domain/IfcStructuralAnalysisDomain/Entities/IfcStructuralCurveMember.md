@@ -65,7 +65,7 @@ Otherwise, the profile is inserted eccentrically and a different cardinal point 
 Direct instances of IfcStructuralCurveMember shall have a topology representation which consists of one instance of IfcEdge or a subtype, representing the reference curve of the curve member. See definitions at IfcStructuralItem for further specifications.
 
 
-Informal Propositions:
+## Informal Propositions
 
 
 1. The reference curve must not be parallel with Axis at any point within the curve member's domain.

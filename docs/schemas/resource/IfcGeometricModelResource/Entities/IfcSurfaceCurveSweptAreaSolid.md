@@ -42,8 +42,7 @@ Figure 2 &mdash; Surface curve wept area solid results
 
 > HISTORY  New entity in IFC2x2.
 
-{ .spec-head}
-Informal Propositions:
+## Informal Propositions
 
 1. The _SweptArea_ shall lie in the implicit plane z = 0.
 2. The _Directrix_ shall lie on the _ReferenceSurface_.

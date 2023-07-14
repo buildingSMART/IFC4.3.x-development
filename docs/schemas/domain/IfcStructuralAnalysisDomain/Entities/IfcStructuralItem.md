@@ -62,8 +62,7 @@ _Structural surface items_
 * The local x and y directions follow the tangents on the surface and are in parallel with and directed like u and v respectively.
 * The local z direction is in parallel with and directed like the surface normal.
 
-{ .spec-head}
-Informal Propositions:
+## Informal Propositions
 
 1. The _ObjectPlacement_s of all structural items which are grouped into the same instance of _IfcStructuralAnalysisModel_ shall refer to the same instance of _IfcObjectPlacement_.
 

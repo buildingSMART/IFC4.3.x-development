@@ -37,8 +37,7 @@ Figure 2 &mdash; Repositioned revolved area solid geometry
 
 > HISTORY  New entity in IFC1.5
 
-{ .spec-head}
-Informal Propositions:
+## Informal Propositions
 
 1. The _AxisLine_ shall lie in the plane of the _SweptArea_ (as defined at supertype _IfcSweptAreaSolid_).
 2. The _AxisLine_ shall not intersect the interior of the _SweptArea_ (as defined at supertype _IfcSweptAreaSolid_).

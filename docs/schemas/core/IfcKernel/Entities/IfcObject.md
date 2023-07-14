@@ -25,8 +25,7 @@ Objects are independent pieces of information that might contain or reference ot
 { .change-ifc2x4}
 > IFC4 CHANGE  The inverse relationships _Declares_, _IsDeclaredBy_, and _IsTypedBy_ have been added. Types are no longer included in the _IsDefinesBy_ relationship. _IfcProject_ has been promoted to be a subtype of _IfcObjectDefinition_ -> _IfcContext_.
 
-{ .spec-head}
-Informal Propositions:
+## Informal Propositions
 
 1. A partial type assignment, i.e. the inverse attribute _IsDeclaredBy_, or _Declares_ shall only be used, if the object is part of a decomposition, i.e. if either _IsDecomposedBy_, or _Decomposes_ is exerted.
 

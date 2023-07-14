@@ -39,8 +39,7 @@ If both, the element occurrence (by an instance of _IfcElement_) and the element
 
 > HISTORY  New entity in IFC2x.
 
-{ .spec-head}
-Informal Propositions:
+## Informal Propositions
 
 1. An _IfcMaterialLayerSetUsage_ shall not be associated with a subtype of _IfcElementType_, it should only be associated with individual occurrences
 2. An _IfcMaterialProfileSetUsage_ shall not be associated with a subtype of _IfcElementType_, it should only be associated with individual occurrences

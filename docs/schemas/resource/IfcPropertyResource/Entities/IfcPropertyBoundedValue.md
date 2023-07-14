@@ -29,8 +29,7 @@ Table 1 &mdash; Bounded property with values, measure types and units. Where rul
 { .change-ifc2x4}
 > IFC4 CHANGE  The attribute _SetPointValue_ has been added.
 
-{ .spec-head}
-Informal Propositions:
+## Informal Propositions
 
 1. If the measure type for the upper and lover bound value is a numeric measure, then the following shall be true: _UpperBoundValue_ > _LowerBoundValue_.
 

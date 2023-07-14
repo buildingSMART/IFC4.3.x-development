@@ -34,8 +34,7 @@ Figure 1 illustrates applying a texture map to a vertex based geometry.
 { .change-ifc2x4}
 > IFC4 CHANGE  The attribute TextureMap is replaced by _Vertices_, and the attribute _AppliedTo_ is added.
 
-{ .spec-head}
-Informal Propositions:
+## Informal Propositions
 
 1. The _IfcFace_ referenced in _AppliedTo_ shall be used by the vertex based geometry, to which this texture map is assigned to by through the _IfcStyledItem_.
 

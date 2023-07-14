@@ -1540,9 +1540,17 @@ class FigureNumberer:
             elif previous.name.lower().startswith("h") and previous.text and previous.text[0].isdigit():
                 previous_header = previous
                 break
+            elif previous.name.lower().startswith("h") and previous.text and previous.text.split(' ')[0] == 'Annex':
+                previous_header = previous
+                break
 
         if previous_header and previous_header.contents:
             parent_number = previous_header.contents[0].strip().split(" ", 1)[0]
+            if parent_number == "Annex":
+                try:
+                    parent_number = previous_header.contents[0].strip().split(" ", 2)[1]
+                except:
+                    return
             alphabet = "A"
             generated_number = parent_number + "." + alphabet
             while generated_number in cls.index.values():

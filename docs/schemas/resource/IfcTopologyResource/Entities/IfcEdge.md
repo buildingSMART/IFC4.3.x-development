@@ -20,8 +20,7 @@ Figure 1 &mdash; Edge representation
 
 > HISTORY  New entity in IFC2.0
 
-{ .spec-head}
-Informal Propositions:
+## Informal Propositions
 
 1. The edge has dimensionality 1.
 2. The extent of an edge shall be finite and nonzero.

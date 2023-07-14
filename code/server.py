@@ -739,6 +739,11 @@ def separate_camel(s):
 def get_figure(fig):
     return send_from_directory(os.path.join(REPO_DIR, "docs/figures"), fig)
 
+@app.route(make_url("figures/examples/<fig>"))
+def get_example_figure(fig):
+    # @todo
+    return send_from_directory(os.path.join(REPO_DIR, "docs/figures/examples"), fig)
+
 
 @app.route(make_url("assets/<path:asset>"))
 def get_asset(asset):
@@ -747,7 +752,7 @@ def get_asset(asset):
 
 @app.route(make_url("examples/<path:example>"))
 def get_example(example):
-    return send_from_directory(os.path.join(REPO_DIR, "..", "examples", "IFC 4.3"), example)
+    return send_from_directory(os.path.join(REPO_DIR, "..", "examples", "models"), example)
 
 
 # The markdown is littered with this type of annotation tag. Does it have meaning? We strip it out everywhere.
@@ -888,7 +893,10 @@ def process_markdown(resource, mdc, process_quotes=True, number_headings=False, 
         elif img["src"].startswith("http"):
             pass
         else:
-            img["src"] = img["src"][9:]
+            if img["src"] and img["src"].startswith("../../figures/examples/"):
+                img["src"] = url_for('get_example_figure', fig=img["src"].replace("../../figures/examples/", ""))
+            else:
+                img["src"] = img["src"][9:]
 
     if number_headings:
         assert chapter
@@ -1441,7 +1449,7 @@ def get_examples(resource):
     for name in R.examples_by_type.get(resource.upper()) or []:
         examples.append(
             {
-                "name": name,
+                "name": example_title(name.split('/')[-1]),
                 "url": url_for("annex_e_example_page", s=name),
                 "image": url_for("get_example", example=name) + "/thumb.png",
             }
@@ -1532,9 +1540,17 @@ class FigureNumberer:
             elif previous.name.lower().startswith("h") and previous.text and previous.text[0].isdigit():
                 previous_header = previous
                 break
+            elif previous.name.lower().startswith("h") and previous.text and previous.text.split(' ')[0] == 'Annex':
+                previous_header = previous
+                break
 
         if previous_header and previous_header.contents:
             parent_number = previous_header.contents[0].strip().split(" ", 1)[0]
+            if parent_number == "Annex":
+                try:
+                    parent_number = previous_header.contents[0].strip().split(" ", 2)[1]
+                except:
+                    return
             alphabet = "A"
             generated_number = parent_number + "." + alphabet
             while generated_number in cls.index.values():
@@ -1709,7 +1725,7 @@ def create_concept_table(view_name, xmi_concept, types=None):
     headers = [f"{a}<br>{b}{'.' if b else ''}{c}" for a, (b, c) in bindings if a in bound_keys]
     if types is not None:
         rows = [r for r in rows if r.get("ApplicableEntity") in types]
-    rows = [[r.get(k, "") for k in bound_keys] for r in rows]
+    rows = sorted([r.get(k, "") for k in bound_keys] for r in rows)
     return headers, rows
 
 
@@ -1788,6 +1804,9 @@ def concept(s=""):
 
     # @todo do we reinstate this?
     # subs = make_concept(s.split("/")).children
+
+    if not diagram and not BeautifulSoup(html).text and not tables:
+        html = "<p>This section is intentionally left blank. This template merely serves as a grouping of sub templates.</p>"
 
     return render_template(
         "concept.html",
@@ -2050,11 +2069,51 @@ def annex_d_diagram(s):
     return send_from_directory(os.path.join(REPO_DIR, "output/IFC.xml"), s + ".png")
 
 
+def example_title(s):
+    return " ".join(p[0].upper() + p[1:] for p in s.split('-'))
+
+def build_example_tree(return_list_and_tree = False):
+    from pathlib import Path
+
+    def build_tree(file_paths):
+        root = toc_entry('', number='E', children=[])
+        for path in file_paths:
+            current_node = root
+            components = Path(path).parts
+
+            for component in components:
+                matching_child = None
+                for child in current_node.children:
+                    if child.text == example_title(component):
+                        matching_child = child
+                        break
+
+                if matching_child:
+                    current_node = matching_child
+                else:
+                    url = None
+                    if component == components[-1]:
+                        url = url_for("annex_e_example_page", s="/".join(components))
+                    new_child = toc_entry(example_title(component), url=url, children=[], number=current_node.number + f".{len(current_node.children)+1}")
+                    current_node.children.append(new_child)
+                    current_node = new_child
+
+        return root
+            
+    examples = glob.glob("../../examples/models/**/*.ifc", recursive=True)
+    docs = [os.path.join(os.path.dirname(fn[:-4]), "README.md") for fn in examples]
+    docs_exist = list(map(os.path.exists, docs))
+    examples = [e for e, de in zip(examples, docs_exist) if de]
+    examples = ["/".join(Path(os.path.relpath(p, "../../examples/models/")).parts[:-1]) for p in examples]
+    tree = build_tree(sorted(examples))
+    if return_list_and_tree:
+        return examples, tree
+    else:
+        return tree.children
+
 @app.route(make_url("annex-e.html"))
 def annex_e():
-    examples = map(os.path.basename, filter(os.path.isdir, glob.glob(os.path.join(REPO_DIR, "../examples/IFC 4.3/*"))))
-    examples = sorted(toc_entry(s, url=url_for("annex_e_example_page", s=s)) for s in examples)
-    return render_template("annex-e.html", base=base, is_iso=X.is_iso, navigation=get_navigation(), examples=examples)
+    return render_template("annex-e.html", base=base, is_iso=X.is_iso, navigation=get_navigation(), examples=build_example_tree())
 
 
 @app.route(make_url("annex-f.html"))
@@ -2086,30 +2145,54 @@ def annex_f():
     return render_template("annex-f.html", base=base, is_iso=X.is_iso, navigation=get_navigation(), changelogs=changelog)
 
 
-@app.route(make_url("annex_e/<s>.html"))
+@app.route(make_url("annex_e/<path:s>.html"))
 def annex_e_example_page(s):
-    subs = map(os.path.basename, filter(os.path.isdir, glob.glob(os.path.join(REPO_DIR, "../examples/IFC 4.3/*"))))
-    if s not in subs:
+    examples, tree = build_example_tree(True)
+
+    if s not in examples:
         abort(404)
 
-    fn = glob.glob(os.path.join(REPO_DIR, "../examples/IFC 4.3", s, "*.md"))[0]
-    html_raw = process_markdown("", open(fn).read())
+    def visit_tree(t, fn):
+        fn(t)
+        for c in t.children:
+            visit_tree(c, fn)
 
-    soup = BeautifulSoup(html_raw)
+    url_to_number = {}
+    def assign(e):
+        url_to_number[e.url] = e.number
+    visit_tree(tree, assign)
 
-    example_dir = os.path.join(REPO_DIR, "../examples/IFC 4.3", s)
+    example_dir = os.path.join("../../examples/models/", s)
+
+    fn = os.path.join(example_dir, "README.md")
+    fn_parent = os.path.join(example_dir, "..", "README.md")
+    
+    html_raw = process_markdown("", open(fn, encoding='utf-8').read())
+
+    if os.path.exists(fn_parent):
+        html_raw = process_markdown("", open(fn_parent, encoding='utf-8').read()) + html_raw
+
+    # soup = BeautifulSoup(html_raw)
 
     code = open(
         (glob.glob(os.path.join(example_dir, "*.ifc")) + glob.glob(os.path.join(example_dir, "*.xml")))[0],
         encoding="ascii",
         errors="ignore",
     ).read()
+
+    old_code = code
+    code = re.sub(r"(?<=FILE_SCHEMA\(\(')IFC\w+", SCHEMA_NAME, code)
+    code = re.sub(r"(?<=FILE_SCHEMA \(\(')IFC\w+", SCHEMA_NAME, code)
+
+    assert old_code != code
+
     path_repo = "buildingSMART/Sample-Test-Files"
     path = fn[len(os.path.join(REPO_DIR, "../examples/")) :]
 
     # Use regex because globbing is case sensitive
     rule = re.compile(r".*\.(png|jpg|jpeg)", re.IGNORECASE)
     images = [f"{base}/examples/{s}/{name}" for name in os.listdir(example_dir) if rule.match(name)]
+    images = [i for i in images if os.path.basename(i) != 'thumb.png']
 
     return render_template(
         "annex-e-item.html",
@@ -2119,9 +2202,10 @@ def annex_e_example_page(s):
         content=html_raw,
         path=path,
         repo=path_repo,
-        title=s,
+        title=example_title(s.split('/')[-1]),
         code=code,
         images=images,
+        number=url_to_number[request.path]
     )
 
 
@@ -2230,7 +2314,7 @@ try:
     import os
     from redis import Redis, ConnectionError
 
-    redis = Redis(host=os.environ.get("REDIS_HOST", "localhost"))
+    redis = Redis(host=os.environ["REDIS_HOST"])
 except:
     redis = None
 

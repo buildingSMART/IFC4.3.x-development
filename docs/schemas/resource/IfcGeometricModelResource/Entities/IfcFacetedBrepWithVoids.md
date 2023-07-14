@@ -11,8 +11,7 @@ The _IfcFacetedBrepWithVoids_ is a specialization of a faceted B-rep which conta
 
 
 
-{ .spec-head}
-Informal Propositions:
+## Informal Propositions
 
 1. Each void shell shall be disjoint from the outer shell and from every other void shell
 2. Each void shell shall be enclosed within the outer shell but not within any other void shell. In particular the outer shell is not in the set of void shells

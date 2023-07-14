@@ -4,8 +4,7 @@ The _IfcArbitraryProfileDefWithVoids_ defines an arbitrary closed two-dimensiona
 
 > HISTORY  New entity in IFC2x.
 
-{ .spec-head}
-Informal Propositions:
+## Informal Propositions
 
 1. The outer curve and all inner curves shall be closed curves.
 2. The outer curve shall enclose all inner curves.

@@ -20,7 +20,7 @@ Figure 2 &mdash; Side View showing multiple CrossSectionPositions
 
 Figure 3 &mdash; Example Shape in red based on two Cross Sections both not starting at the beginning or end and different in shape.
 
-**Informal Propositions:**
+## Informal Propositions
 
 1. No two consecutive sections shall intersect.
 2. If the type of sections is not IfcParameterizedProfileDef (i.e. an arbitrary profile), then the number of points and edges should be the same for two consecutive profiles

@@ -2314,7 +2314,7 @@ try:
     import os
     from redis import Redis, ConnectionError
 
-    redis = Redis(host=os.environ.get("REDIS_HOST", "localhost"))
+    redis = Redis(host=os.environ["REDIS_HOST"])
 except:
     redis = None
 

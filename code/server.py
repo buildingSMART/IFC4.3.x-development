@@ -2192,6 +2192,7 @@ def annex_e_example_page(s):
     # Use regex because globbing is case sensitive
     rule = re.compile(r".*\.(png|jpg|jpeg)", re.IGNORECASE)
     images = [f"{base}/examples/{s}/{name}" for name in os.listdir(example_dir) if rule.match(name)]
+    images = [i for i in images if os.path.basename(i) != 'thumb.png']
 
     return render_template(
         "annex-e-item.html",

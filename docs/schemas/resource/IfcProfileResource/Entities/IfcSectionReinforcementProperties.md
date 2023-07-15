@@ -4,7 +4,7 @@ _IfcSectionReinforcementProperties_ defines the cross section properties of rein
 
 > HISTORY  New entity in IFC2x2.
 
-Several sets of cross section reinforcement properties represented by instances of _IfcReinforcementProperties_ may be attached to the section reinforcement properties (_IfcReinforcementDefinitionProperties_ of _IfcStructuralElementsDomain_ schema), one for each combination of steel grades and reinforcement bar types and sizes.
+Several sets of cross section reinforcement properties represented by instances of _IfcReinforcementBarProperties_ may be attached to the section reinforcement properties (_IfcReinforcementDefinitionProperties_ of _IfcStructuralElementsDomain_ schema), one for each combination of steel grades and reinforcement bar types and sizes.
 
 ## Attributes
 

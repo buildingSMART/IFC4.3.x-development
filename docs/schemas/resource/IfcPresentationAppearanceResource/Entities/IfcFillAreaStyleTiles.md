@@ -35,7 +35,7 @@ A set of constituents of the tile being a styled item that is used as the annota
 { .change-ifc2x4}
 > IFC4 CHANGE The data type has been changed to _IfcStyledItem_.
 
-> NOTE  Only _IfcStyleItem_'s that refer to a compatible geometric representation item and presentation style shall be used.
+> NOTE  Only _IfcStyledItem_'s that refer to a compatible geometric representation item and presentation style shall be used.
 
 ### TilingScale
 The scale factor applied to each tile as it is placed in the annotation fill area.

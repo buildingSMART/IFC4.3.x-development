@@ -4,7 +4,7 @@ The door lining is the frame which enables the door leaf to be fixed in position
 
 > NOTE  The _IfcDoorLiningProperties_ shall only be applied by the receiving application to parametrically define the 3D shape of a door, if the attribute _IfcDoorType_.ParameterTakesPrecedence is set TRUE.
 
-The _IfcDoorLiningProperties_ are included in the list of properties of _IfcDoorType_.HasPropertySets. More information about the door lining can be included in the same list of the _IfcDoorTyype_ using another _IfcPropertySet_ for dynamic extensions.
+The _IfcDoorLiningProperties_ are included in the list of properties of _IfcDoorType_.HasPropertySets. More information about the door lining can be included in the same list of the _IfcDoorType_ using another _IfcPropertySet_ for dynamic extensions.
 
 The _IfcDoorLiningProperties_ does not hold its own geometric representation. However it defines parameters which can be used to create the shape of the door type (which is inserted by the _IfcDoor_ into the spatial context of the project) as described below. The parameters of the _IfcDoorLiningProperties_ define a standard door lining, including (if given) a threshold and a transom. The outer boundary of the lining is determined by the 'Profile' shape representation assigned to the _IfcDoor_, which inserts the _IfcDoorType_.
 
@@ -136,4 +136,3 @@ Either both parameter, the _CasingDepth_ and the _CasingThickness_, are given, o
 
 ### WR35
 The _IfcDoorLiningProperties_ shall only be used in the context of an _IfcDoorType_.
-> NOTE  The deprecated entity _IfcDoorStyle_ is applicable as well.

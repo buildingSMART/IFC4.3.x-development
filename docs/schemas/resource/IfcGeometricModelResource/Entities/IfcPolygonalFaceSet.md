@@ -21,7 +21,7 @@ Depending on the provision of _PnIndex_ the indices point either directly into t
 
 Figure 2 &mdash; Polygonal face set geometry
 
-Figure 2 shows an <em>IfcFacetedFaceSet</em> represented by:
+Figure 2 shows an <em>IfcPolygonalFaceSet</em> represented by:
 
 ```
 #1 IfcIndexedPolygonalFace: ((1, 2, 6, 5)
@@ -34,7 +34,7 @@ Figure 2 shows an <em>IfcFacetedFaceSet</em> represented by:
 ((0.,0.,0.), (1.,0.,0.), (1.,1.,0.), (0.,1.,0.), (0.,0.,2.), (1.,0.,2.), (1.,1.,2.), (0.,1.,2.))
 ```
 
-> NOTE  The definition of _IfcFacetedFaceSet_ is based on the **indexedFaceSet** defined in ISO/IEC 19775-1
+> NOTE  The definition of _IfcPolygonalFaceSet_ is based on the **indexedFaceSet** defined in ISO/IEC 19775-1
 
 > HISTORY  New entity in IFC4 Addendum 2.
 

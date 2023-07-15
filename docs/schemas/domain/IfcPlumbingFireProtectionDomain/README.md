@@ -1,7 +1,7 @@
 IfcPlumbingFireProtectionDomain
 ===============================
 
-The _IfcPlumbingFireProtectionDomain_ schema forms part of the Domain Layer of the IFC Model. It extends the ideas concerning building services outlined in the _IfcSharedBldgServicesElements_ schema. It defines concepts in the domain of plumbing and fire protection.
+The _IfcPlumbingFireProtectionDomain_ schema forms part of the Domain Layer of the IFC Model. It extends the ideas concerning building services outlined in the _IfcSharedBldgServiceElements_ schema. It defines concepts in the domain of plumbing and fire protection.
 
 The scope of the _IfcPlumbingFireProtectionDomain_, in conjunction with other building services related schemata, is the provision of plumbing and fire protection services to buildings.
 

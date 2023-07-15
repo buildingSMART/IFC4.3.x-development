@@ -61,7 +61,7 @@ Although in the cases 2 and 3 different units could be used for different instan
 
 Table 1 indicates measures, units, and corresponding data types.
 
-|Measure|Type|Unit|Symbol|Derivation|IfcSiUnitEnum|IfcUnitEnum|IfcDerivedUnitEnum|Defined value types|
+|Measure|Type|Unit|Symbol|Derivation|IfcSIUnitEnum|IfcUnitEnum|IfcDerivedUnitEnum|Defined value types|
 |--- |--- |--- |--- |--- |--- |--- |--- |--- |
 |Absorbed dose, specific energyimpact, kerma, absorbed dose index|SI / Derived|gray|Gy|J / kg|GRAY|ABSORBEDDOSEUNIT||IfcAbsorbedDoseMeasure|
 |Acceleration|Derived|||m / s2|||ACCELERATIONUNIT|IfcAccelerationMeasure|

@@ -10,4 +10,4 @@ This enumeration defines the applicable subtype of instances of _IfcComplexPrope
 The properties defined by this _IfcComplexPropertyTemplate_ are of type _IfcComplexProperty_.
 
 ### Q_COMPLEX
-The quantities defined by this _IfcPhysicalComplexQuantityTemplate_ are of type _IfcPhysicalComplexQuantity_.
+The quantities defined by this _IfcComplexPropertyTemplate_ are of type _IfcPhysicalComplexQuantity_.

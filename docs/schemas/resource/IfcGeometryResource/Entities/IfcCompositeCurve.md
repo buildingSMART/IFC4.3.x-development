@@ -33,7 +33,7 @@ Then the parameterization of the composite curve is:
 >> ![formula](../../../../figures/ifccompositecurve-math3.gif) if _Segments[i].SameSense_ = FALSE;
 > If the segments[i] is of type reparameterised composite curve segment,
 >
->> ![formula](../../../../figures/ifccompositecurve-math4.gif) where _&tau;_ is defined at reparameterized composite curve segment (see _IfcReparameterizedCompositeCurveSegment_).
+>> ![formula](../../../../figures/ifccompositecurve-math4.gif) where _&tau;_ is defined at reparameterized composite curve segment (see _IfcReparameterisedCompositeCurveSegment_).
 
 
 >

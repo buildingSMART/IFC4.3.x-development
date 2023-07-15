@@ -23,7 +23,7 @@ For each cant segment, the following information is provided:
 ## Attributes
 
 ### StartDistAlong
-Distance along the horizontal alignment, measured along the IfcAlignment2DHorizontal given in the length unit of the global IfcUnitAssignment.
+Distance along the horizontal alignment, measured along the IfcAlignmentHorizontal given in the length unit of the global IfcUnitAssignment.
 
 ### HorizontalLength
 Length measured as distance along the horizontal alignment of the segment.

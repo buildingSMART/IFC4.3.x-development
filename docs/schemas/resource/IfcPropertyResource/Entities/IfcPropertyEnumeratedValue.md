@@ -25,7 +25,7 @@ The _IfcPropertyEnumeratedValue_ refers to an _IfcPropertyEnumeration_, see Tabl
 
 |Name|EnumerationValues|Type (through IfcValue)|Unit|
 |--- |--- |--- |--- |
-|DamperBladeActionEnum|(Parallel, Opposed, Other, Unset)|IfcString|-|
+|DamperBladeActionEnum|(Parallel, Opposed, Other, Unset)|IfcLabel|-|
 
 Table 2 &mdash; Property enumeration with enumerators
 

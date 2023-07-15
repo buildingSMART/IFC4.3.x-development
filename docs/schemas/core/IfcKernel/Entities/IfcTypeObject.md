@@ -35,7 +35,7 @@ Set of unique property sets, that are associated with the object type and are co
 > IFC2x3 CHANGE  The attribute aggregate type has been changed from LIST to SET.
 
 ### Types
-Reference to the relationship IfcRelDefinedByType and thus to those occurrence objects, which are defined by this type.
+Reference to the relationship IfcRelDefinesByType and thus to those occurrence objects, which are defined by this type.
 
 ## Formal Propositions
 

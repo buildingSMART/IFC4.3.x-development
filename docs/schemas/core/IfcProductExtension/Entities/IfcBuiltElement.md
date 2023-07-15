@@ -50,5 +50,5 @@ Task for operating upon the building element.
 
 ### Surface 3D Geometry
 
-Some IfcBuildingElement may be represented by an surface as an abstract geometric representation. See each subtype for specific guidance.
+Some IfcBuiltElement may be represented by an surface as an abstract geometric representation. See each subtype for specific guidance.
 

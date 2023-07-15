@@ -27,7 +27,7 @@ The following general agreements apply for each base quantity set
 
 * _IfcElementQuantity.Name_ = <name of the qto definition template>
 * _IfcElementQuantity.MethodOfMeasurement_ = 'BaseQuantities'
-* _IfcElementQuantity.Quantities_ = SET of subtypes of _IfcPhysicalSimpleQuantity_ with values for the _Name_ attribute as published as part of this specifciation.
+* _IfcElementQuantity.Quantities_ = SET of subtypes of _IfcPhysicalSimpleQuantity_ with values for the _Name_ attribute as published as part of this specification.
 
 > HISTORY  New entity in IFC2x.
 

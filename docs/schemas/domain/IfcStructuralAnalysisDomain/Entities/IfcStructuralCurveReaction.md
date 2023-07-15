@@ -11,7 +11,7 @@ See definitions at _IfcStructuralActivity_.
 ****Topology Use Definitions****:
 
 Standard Case:
-If connected with a curve item, instances of _IfcStructuralCurveRection_ shall not have an _ObjectPlacement_ nor a _Representation_. It is implied that the placement and representation of the _IfcStructuralActivity_ is the same as the ones of the member or connection.
+If connected with a curve item, instances of _IfcStructuralCurveReaction_ shall not have an _ObjectPlacement_ nor a _Representation_. It is implied that the placement and representation of the _IfcStructuralActivity_ is the same as the ones of the member or connection.
 
 Special Case:
 If connected with a surface item, instances of _IfcStructuralCurveReaction_ shall have an _ObjectPlacement_ and _Representation_, containing an _IfcEdgeCurve_. See _IfcStructuralActivity_ for further definitions.

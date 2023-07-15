@@ -42,7 +42,7 @@ Reference to the interference relationship to indicate the element that interfer
 > IFC4 CHANGE New inverse relationship.
 
 ### HasProjections
-Projection relationship that adds a feature (using a Boolean union) to the _IfcBuildingElement_.
+Projection relationship that adds a feature (using a Boolean union) to the _IfcBuiltElement_.
 
 ### HasOpenings
 Reference to the _IfcRelVoidsElement_ relationship that creates an opening in an element. An element can incorporate zero-to-many openings. For each opening, that voids the element, a new relationship _IfcRelVoidsElement_ is generated.
@@ -60,7 +60,7 @@ Reference to the element connection relationship. The relationship then refers t
 Containment relationship to the spatial structure element, to which the element is primarily associated. This containment relationship has to be hierarchical, i.e. an element may only be assigned directly to zero or one spatial structure.
 
 ### HasCoverings
-Reference to _IfcCovering_ by virtue of the objectified relationship _IfcRelCoversBldgElement_. It defines the concept of an element having coverings associated.
+Reference to _IfcCovering_ by virtue of the objectified relationship _IfcRelCoversBldgElements_. It defines the concept of an element having coverings associated.
 
 ### HasSurfaceFeatures
 Reference to the _IfcRelAdheresToElement_ relationship that adheres a _IfcSurfaceFeature_ to an element. An element can incorporate zero-to-many surface features in one relationship.

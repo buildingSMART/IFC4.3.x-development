@@ -108,7 +108,7 @@ Figure 211 illustrates assignment of _IfcMaterialProfileSetUsage_ and _IfcMateri
 
 Figure 211 — Column profile usage
 
-Figure 212 illustrates cardinal point alignment. The use of _IfcCardinalPointEnum_ must be consistent with the placement of the extrusion body provided by _IfcExtrudedAreaSolid_._Position_.
+Figure 212 illustrates cardinal point alignment. The use of _IfcCardinalPointReference_ must be consistent with the placement of the extrusion body provided by _IfcExtrudedAreaSolid_._Position_.
 
 ![Cardinal point usage](../../../../figures/ifccolumn_cardinalpoint.png)
 
@@ -142,7 +142,7 @@ A task for operating on the column.
 
 ### Spatial Containment
 
-The _IfcColumn_, as any subtype of _IfcBuildingElement_, may participate alternatively in one of the two different containment relationships:
+The _IfcColumn_, as any subtype of _IfcBuiltElement_, may participate alternatively in one of the two different containment relationships:
 
 * the _Spatial Containment_ (defined here), or
 * the _Element Composition_.

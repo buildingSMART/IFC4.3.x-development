@@ -27,7 +27,7 @@ If not connected with a structural item (which may happen in an incomplete or co
 1. If the surface action is of the predefined type CONST, _SELF\IfcStructuralActivity.AppliedLoad_ must not be of type _IfcStructuralLoadConfiguration_.
 2. If the surface action is of the predefined type BILINEAR, _SELF\IfcStructuralActivity.AppliedLoad_ shall be of type _IfcStructuralLoadConfiguration_ and shall contain three items with two-dimensional _IfcStructuralLoadConfiguration.Locations_, defining the location of the load samples in local coordinates of the surface action.
 3. If the surface action is of the predefined type DISCRETE, _SELF\IfcStructuralActivity.AppliedLoad_ shall be of type _IfcStructuralLoadConfiguration_ and shall contain two or more items with two-dimensional locations.
-4. Point loads must be of type DISCRETE, thus contain two or more load points. (Single point loads are modeled by _IfcStructuralPointLoad_.)
+4. Point loads must be of type DISCRETE, thus contain two or more load points. (Single point loads are modeled by _IfcStructuralLoadSingleForce_.)
 5. All items in _SELF\IfcStructuralActivity.AppliedLoad\IfcStructuralLoadConfiguration.Values_ shall be of the same entity type.
 
 ## Attributes

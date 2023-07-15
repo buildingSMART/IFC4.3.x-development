@@ -63,7 +63,7 @@ Name of the unit in addition to the unit type, particularly when the derived uni
 > EXAMPLE The imperial unit name for a velocity measure is miles per hour, or MPH, with a _Name_ of 'MPH'.
 
 ### Dimensions
-Dimensional exponents derived using the function IfcDerivedDimensionalExponents using (SELF) as the input value.
+Dimensional exponents derived using the function IfcDeriveDimensionalExponents using (SELF) as the input value.
 
 ## Formal Propositions
 

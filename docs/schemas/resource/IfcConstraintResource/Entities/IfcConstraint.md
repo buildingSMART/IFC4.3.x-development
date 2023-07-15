@@ -50,4 +50,4 @@ Reference to the properties to which the constraint is applied.
 ## Formal Propositions
 
 ### WR11
-The attribute UserDefinedGrade must be asserted when the value of the IfcConstraintGradeEnum is set to USERDEFINED.
+The attribute UserDefinedGrade must be asserted when the value of the ConstraintGrade is set to USERDEFINED.

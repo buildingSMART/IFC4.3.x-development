@@ -39,7 +39,7 @@ Either there is no railing type object associated, i.e. the _IsTypedBy_ inverse 
 
 ### Spatial Containment
 
-The _IfcRailing_, as any subtype of _IfcBuildingElement_, may participate alternatively in one of the two different containment relationships:
+The _IfcRailing_, as any subtype of _IfcBuiltElement_, may participate alternatively in one of the two different containment relationships:
 
 * the _Spatial Containment_ (defined here), or
 * the _Element Composition_.

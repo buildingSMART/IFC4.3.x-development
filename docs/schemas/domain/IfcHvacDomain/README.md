@@ -13,6 +13,6 @@ The following are deemed to be out of scope of the _IfcHvacDomain_ schema at thi
 
 * Industrial and institutional specialty equipment such as that used for power production, manufacturing and fabrication, etc.
 * Provisions for dealing explicitly with hazardous materials such as chemical or biological agents
-* Controls systems and sequencing systems for these equipment beyond what is defined in the _IfcBuildingControls_ domain schema
+* Controls systems and sequencing systems for these equipment beyond what is defined in the _IfcBuildingControlsDomain_ schema
 
 > HISTORY  This schema has been significantly modified in IFC2x2.

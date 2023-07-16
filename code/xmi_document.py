@@ -543,8 +543,8 @@ class xmi_document:
                             refs = refs + corresponding_types
 
                 # TEMPORARY SKIP SOME OLD PSET DEFINITIONS
-                if (c|"project").author == 'IQSOFT':
-                    continue
+                # if (c|"project").author == 'IQSOFT':
+                #     continue
 
                 set_definition = []
                 for attr in self.xmi.by_id[c.idref]/"ownedAttribute":

@@ -64,7 +64,7 @@
     </PropertyDef>
     <PropertyDef ifdguid="2a9b02331e6a4f088a6a33547c8093ed">
       <Name>UpstreamConnections</Name>
-      <Definition>Names of upstream connected equipment and spaces, if not otherwise represented</Definition>
+      <Definition>Names of upstream connected equipment and spaces (comma-separated), if not otherwise represented</Definition>
       <PropertyType>
         <TypePropertyListValue>
           <ListValue>

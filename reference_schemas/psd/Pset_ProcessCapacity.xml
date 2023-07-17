@@ -51,7 +51,7 @@
     </PropertyDef>
     <PropertyDef ifdguid="4fe945f07a10401aaf862404dd29a9ae">
       <Name>DownstreamConnections</Name>
-      <Definition>Names of downstream connected equipment and spaces, if not otherwise represented</Definition>
+      <Definition>Names of downstream connected equipment and spaces (comma-separated), if not otherwise represented</Definition>
       <PropertyType>
         <TypePropertyListValue>
           <ListValue>

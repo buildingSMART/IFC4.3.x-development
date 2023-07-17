@@ -118,9 +118,9 @@ Figure 207 — Beam body extrusion using an _IfcRectangleProfileDef_
 
 Special purpose composite entity
 
-#### IfcBuildingElement
+#### IfcBuiltElement
 
-Any building element can be a composite
+Any built element can be a composite
 
 ### Material Profile Set Usage
 
@@ -130,7 +130,7 @@ Figure 196 illustrates assignment of _IfcMaterialProfileSetUsage_ and _IfcMateri
 
 Figure 196 — Beam profile usage
 
-Figure 197 illustrates cardinal point alignment. The use of _IfcCardinalPointEnum_ must be consistent with the placement of the extrusion body provided by _IfcExtrudedAreaSolid_._Position_.
+Figure 197 illustrates cardinal point alignment. The use of _IfcCardinalPointReference_ must be consistent with the placement of the extrusion body provided by _IfcExtrudedAreaSolid_._Position_.
 
 ![Cardinal point usage](../../../../figures/ifcbeam_cardinalpoint.png)
 
@@ -156,7 +156,7 @@ An idealized structural member corresponding to the beam.
 
 ### Spatial Containment
 
-The _IfcBeam_, as any subtype of _IfcBuildingElement_, may participate alternatively in one of the two different containment relationships:
+The _IfcBeam_, as any subtype of _IfcBuiltElement_, may participate alternatively in one of the two different containment relationships:
 
 * the _Spatial Containment_ (defined here), or
 * the _Element Composition_.

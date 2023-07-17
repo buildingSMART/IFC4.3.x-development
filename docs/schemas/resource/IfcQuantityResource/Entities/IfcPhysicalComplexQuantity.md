@@ -4,7 +4,7 @@ The complex physical quantity, _IfcPhysicalComplexQuantity_, is an entity that h
 
 > EXAMPLE: A layered element, like a wall, may have several material layers, each having individual quantities, like footprint area, side area and volume. An instance of _IfcPhysicalComplexQuantity_ would group these individual quantities (given by a subtype of _IfcPhysicalSimpleQuantity_) and name them according to the material layer name by using the _Name_ attribute. The _Discrimination_ attribute would then be 'layer'.
 
-A section "Quantity Use Definition" at individual entities as subtypes of _IfcBuildingElement_ gives guidance to the usage of the _Name_ and _Discrimination_ attribute to characterize the complex quantities.
+A section "Quantity Use Definition" at individual entities as subtypes of _IfcBuiltElement_ gives guidance to the usage of the _Name_ and _Discrimination_ attribute to characterize the complex quantities.
 
 > HISTORY  New entity in IFC2x2 Addendum 1.
 

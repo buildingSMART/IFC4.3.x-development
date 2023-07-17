@@ -54,7 +54,7 @@ occurrence, if used. If an _IfcMaterialProfileSet_ is used, all occurrences must
 
 ### Type Body Geometry
 
-The _IfcMemberType_ may define the shared geometric representation for all member occurrences. The _RepresentationMaps_ attribute refers to a list of _IfcRepresentationMap_'s, that allow for multiple geometric representations (e.g. with _IfcShaperepresentation_'s having an _RepresentationIdentifier_ 'Box', 'Axis', or 'Body'). It is only applicable if the _IfcMemberType_ has only occurrences of type _IfcMember_ (See geometric use definition of _IfcMember_ for further information).
+The _IfcMemberType_ may define the shared geometric representation for all member occurrences. The _RepresentationMaps_ attribute refers to a list of _IfcRepresentationMap_'s, that allow for multiple geometric representations (e.g. with _IfcShapeRepresentation_'s having an _RepresentationIdentifier_ 'Box', 'Axis', or 'Body'). It is only applicable if the _IfcMemberType_ has only occurrences of type _IfcMember_ (See geometric use definition of _IfcMember_ for further information).
 
 > NOTE  If the _IfcMemberType_ has an associated _IfcMaterialProfileSet_, then no shared geometric representation shall be provided.
 

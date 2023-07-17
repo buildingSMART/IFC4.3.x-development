@@ -2,9 +2,9 @@
 
 This enumeration defines the basic configuration of the window type in terms of the location of window panels. The window configurations are given for windows with one, two or three panels (including fixed panels) as shown in Figure 1. It corresponds to the _OperationType_ of the _IfcWindowType_ definition, which references the _IfcWindowPanelProperties_.
 
-Windows which are subdivided into more than three panels have to be defined by the geometry only. The type of such windows is given by an _IfcWindowType.OperationType_ = USERDEFINED or NOTDEFINED (see _IfcWindowStyleOperationEnum_ for details).
+Windows which are subdivided into more than three panels have to be defined by the geometry only. The type of such windows is given by an _IfcWindowType.PartitioningType_ = USERDEFINED or NOTDEFINED (see _IfcWindowTypePartitioningEnum_ for details).
 
-| Enumerator from IfcWindowStyleOperationEnum | Use of enumerators from IfcWindowPanelPositionEnum | Figure |
+| Enumerator from IfcWindowTypePartitioningEnum | Use of enumerators from IfcWindowPanelPositionEnum | Figure |
 | --- | --- | --- |
 | DoublePanelVertical | first IfcWindowPanelProperties with PanelPosition = LEFT<br>second IfcWindowPanelProperties with PanelPosition = RIGHT | ![](../../../../figures/ifcwindowpanelpositionenum-fig01.gif) |
 | DoublePanelHorizontal | first IfcWindowPanelProperties with PanelPosition = TOP<br>second IfcWindowPanelProperties with PanelPosition = BOTTOM | ![](../../../../figures/ifcwindowpanelpositionenum-fig02.gif) |

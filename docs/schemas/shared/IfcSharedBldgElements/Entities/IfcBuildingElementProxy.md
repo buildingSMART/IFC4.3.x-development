@@ -1,6 +1,6 @@
 # IfcBuildingElementProxy
 
-The _IfcBuildingElementProxy_ is a proxy definition that provides the same functionality as subtypes of _IfcBuildingElement_, but without having a predefined meaning of the special type of building element it represents.
+The _IfcBuildingElementProxy_ is a proxy definition that provides the same functionality as subtypes of _IfcBuiltElement_, but without having a predefined meaning of the special type of building element it represents.
 
 _IfcBuildingElementProxy_ may be used:
 
@@ -45,7 +45,7 @@ If no _IfcBuildingElementProxyType_ is attached (i.e. if only occurrence informa
 
 ### Spatial Containment
 
-The _IfcBuildingElementProxy_, as any subtype of _IfcBuildingElement_, may participate alternatively in one of the two different containment relationships:
+The _IfcBuildingElementProxy_, as any subtype of _IfcBuiltElement_, may participate alternatively in one of the two different containment relationships:
 
 * the _Spatial Containment_ (defined here), or
 * the _Element Composition_.

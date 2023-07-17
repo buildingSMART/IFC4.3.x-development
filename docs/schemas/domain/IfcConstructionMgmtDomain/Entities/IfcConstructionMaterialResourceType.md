@@ -1,6 +1,6 @@
 # IfcConstructionMaterialResourceType
 
-The resource type _IfcConstructionMaterialType_ defines commonly shared information for occurrences of construction material resources. The set of shared information may include:
+The resource type _IfcConstructionMaterialResourceType_ defines commonly shared information for occurrences of construction material resources. The set of shared information may include:
 
 * common productivities
 * common cost rates

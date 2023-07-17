@@ -1,6 +1,6 @@
 # IfcBlock
 
-The _IfcBlock_ is a Construction Solid Geometry (CSG) 3D primitive. It is defined by a position and a positive distance along the three orthogonal axes. The inherited _Position_ attribute has the _IfcAxisPlacement3D_ type and provides:
+The _IfcBlock_ is a Construction Solid Geometry (CSG) 3D primitive. It is defined by a position and a positive distance along the three orthogonal axes. The inherited _Position_ attribute has the _IfcAxis2Placement3D_ type and provides:
 
 * _SELF\IfcCsgPrimitive3D.Position_: The location and orientation of the axis system for the primitive.
 * _SELF\IfcCsgPrimitive3D.Position.Location_: The block has one vertex at location and the edges are aligned with the placement axes in the positive sense.

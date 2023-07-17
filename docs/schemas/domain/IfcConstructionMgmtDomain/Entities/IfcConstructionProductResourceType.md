@@ -1,6 +1,6 @@
 # IfcConstructionProductResourceType
 
-The resource type _IfcConstructionProductType_ defines commonly shared information for occurrences of construction product resources. The set of shared information may include:
+The resource type _IfcConstructionProductResourceType_ defines commonly shared information for occurrences of construction product resources. The set of shared information may include:
 
 * common productivities
 * common cost rates

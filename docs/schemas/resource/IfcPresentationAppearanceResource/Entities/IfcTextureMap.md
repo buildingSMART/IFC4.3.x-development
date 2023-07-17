@@ -45,4 +45,4 @@ List of texture coordinate vertices that are applied to the corresponding points
 
 ### MappedTo
 The face that defines the corresponding list of points along the bounding poly loop of the face outer bound.
-> NOTE  The face may have additional inner loops. The _IfcTextureMap_ and its _Vertices_ only correspond with the coordinates of the _IfcPolyloop_ representing the outer bound.
+> NOTE  The face may have additional inner loops. The _IfcTextureMap_ and its _Vertices_ only correspond with the coordinates of the _IfcPolyLoop_ representing the outer bound.

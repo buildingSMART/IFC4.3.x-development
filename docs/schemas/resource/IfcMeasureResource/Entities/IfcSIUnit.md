@@ -21,4 +21,4 @@ The word, or group of words, by which the SI unit is referred to.
 > NOTE  Even though the SI system's base unit for mass is kilogram, the _IfcSIUnit_ for mass is gram if no _Prefix_ is asserted.
 
 ### Dimensions
-The dimensional exponents of SI units are derived by function _IfcDimensionsForSiUnit_.
+The dimensional exponents of SI units are derived by function _IfcDimensionsForSIUnit_.

@@ -85,7 +85,7 @@ Instances of _IfcStructuralActivity_ which act on a single point on a curve or s
 
 **Shape Representation**
 
-Instances of _IfcStructuralActivity_ which act on a surface item and are specified by isocontours (level sets) shall have a shape representation given by a set of curves on a surface, _IfcPCurve_. The basis surface shall comply with or preferably be identical with the surface of the structural item to which the activity is connected. The representation identifier and type of this geometric representation is:
+Instances of _IfcStructuralActivity_ which act on a surface item and are specified by isocontours (level sets) shall have a shape representation given by a set of curves on a surface, _IfcPcurve_. The basis surface shall comply with or preferably be identical with the surface of the structural item to which the activity is connected. The representation identifier and type of this geometric representation is:
 
 > * _RepresentationIdentifier_: 'Level set'
 > * _RepresentationType_: 'GeometricCurveSet'

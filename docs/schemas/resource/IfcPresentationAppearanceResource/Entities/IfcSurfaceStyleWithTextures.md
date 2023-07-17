@@ -16,4 +16,4 @@ The entity _IfcSurfaceStyleWithTextures_ allows to include image textures in sur
 ## Attributes
 
 ### Textures
-The textures applied to the surface. In case of more than one surface texture is included, the _IfcSurfaceStyleWithTexture_ defines a multi texture.
+The textures applied to the surface. In case of more than one surface texture is included, the _IfcSurfaceStyleWithTextures_ defines a multi texture.

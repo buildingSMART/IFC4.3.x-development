@@ -14,11 +14,11 @@ Surface features shall have no spatial containment relationship to the spatial s
 
 ****Geometry use definition****:
 
-The geometric representation of _IfcSurfaceFeatureElement_ is given by the _IfcProductDefinitionShape_, allowing multiple geometric representation.
+The geometric representation of _IfcSurfaceFeature_ is given by the _IfcProductDefinitionShape_, allowing multiple geometric representation.
 
 **Local Placement**
 
-The local placement for _IfcSurfaceFeatureElement_ is defined in its supertype _IfcProduct_. It is defined by the _IfcLocalPlacement_, which defines the local coordinate system that is referenced by all geometric representations.
+The local placement for _IfcSurfaceFeature_ is defined in its supertype _IfcProduct_. It is defined by the _IfcLocalPlacement_, which defines the local coordinate system that is referenced by all geometric representations.
 
 * In case of features which are part of an element type, absolute placement into the type object's implied coordinate system shall be used.
 * In case of features which are voiding an element occurrence, the _PlacementRelTo_ relationship of _IfcLocalPlacement_ shall point to the local placement of the respective element.
@@ -58,7 +58,7 @@ Surface representations of treated parts of the lement surface by means of IfcSh
 
 ### Product Local Placement
 
-The local placement for IfcSurfaceFeatureElement is defined in its supertype IfcProduct. It is defined by the IfcLocalPlacement, which defines the local coordinate system that is referenced by all geometric representations.
+The local placement for _IfcSurfaceFeature_ is defined in its supertype IfcProduct. It is defined by the IfcLocalPlacement, which defines the local coordinate system that is referenced by all geometric representations.
 
 * In case of features which are part of an element type, absolute placement into the type object's implied coordinate system shall be used.
 * In case of features which are voiding an element occurrence, the PlacementRelTo relationship of IfcLocalPlacement shall point to the local placement of the respective element.

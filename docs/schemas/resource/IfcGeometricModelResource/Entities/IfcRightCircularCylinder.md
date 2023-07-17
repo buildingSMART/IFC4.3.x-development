@@ -1,6 +1,6 @@
 # IfcRightCircularCylinder
 
-The _IfcRightCircularCylinder_ is a Construction Solid Geometry (CSG) 3D primitive. It is a solid with a circular base and top. The cylindrical surface between if formed by points at a fixed distance from the axis of the cylinder. The inherited _Position_ attribute defines the _IfcAxisPlacement3D_ and provides:
+The _IfcRightCircularCylinder_ is a Construction Solid Geometry (CSG) 3D primitive. It is a solid with a circular base and top. The cylindrical surface between if formed by points at a fixed distance from the axis of the cylinder. The inherited _Position_ attribute defines the _IfcAxis2Placement3D_ and provides:
 
 * _SELF\IfcCsgPrimitive3D.Position_: The location and orientation of the axis system for the primitive.
 * _SELF\IfcCsgPrimitive3D.Position.Location_: The center of the circular area being the bottom face of the cylinder.

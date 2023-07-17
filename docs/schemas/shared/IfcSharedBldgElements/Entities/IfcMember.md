@@ -134,7 +134,7 @@ A task for operating on the member.
 
 ### Spatial Containment
 
-The _IfcMember_, as any subtype of _IfcBuildingElement_, may participate alternatively in one of the two different containment relationships:
+The _IfcMember_, as any subtype of _IfcBuiltElement_, may participate alternatively in one of the two different containment relationships:
 
 * the _Spatial Containment_ (defined here), or
 * the _Element Composition_.

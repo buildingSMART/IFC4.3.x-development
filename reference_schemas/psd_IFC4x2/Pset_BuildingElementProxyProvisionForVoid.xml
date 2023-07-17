@@ -126,7 +126,7 @@
     </PropertyDef>
     <PropertyDef ifdguid="720c5980d1c511e1800000215ad4efdf">
       <Name>System</Name>
-      <Definition>The building service system that requires the provision for voids, e.g. 'Air Conditioning', 'Plumbing', 'Electro', etc.</Definition>
+      <Definition>he building service system that requires the provision for voids, e.g. 'Air Conditioning', 'Plumbing', 'Electro', etc.</Definition>
       <PropertyType>
         <TypePropertySingleValue>
           <DataType type="IfcLabel" />

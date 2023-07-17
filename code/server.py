@@ -2051,9 +2051,9 @@ def annex_c():
 
 @app.route(make_url("annex-d.html"))
 def annex_d():
-    diagrams = map(os.path.basename, glob.glob(os.path.join(REPO_DIR, "output/IFC.xml/*.png")))
+    diagrams = sorted(map(os.path.basename, glob.glob(os.path.join(REPO_DIR, "output/IFC.xml/*.png"))))
     diagrams = [
-        toc_entry(s[:-4], url=url_for("annex_d_diagram_page", s=s[:-4]), number="D-%d" % i)
+        toc_entry(s[:-4], url=url_for("annex_d_diagram_page", s=s[:-4]), number="D.%d" % i)
         for i, s in enumerate(sorted(diagrams), start=1)
     ]
     return render_template("annex-d.html", base=base, is_iso=X.is_iso, navigation=get_navigation(), diagrams=diagrams)
@@ -2061,7 +2061,9 @@ def annex_d():
 
 @app.route(make_url("annex_d/<s>.html"))
 def annex_d_diagram_page(s):
-    return render_template("annex-d-item.html", base=base, is_iso=X.is_iso, navigation=get_navigation(), name=s)
+    diagrams = sorted(map(lambda s: s.split('.')[0], map(os.path.basename, glob.glob(os.path.join(REPO_DIR, "output/IFC.xml/*.png")))))
+    number = diagrams.index(s) + 1
+    return render_template("annex-d-item.html", base=base, is_iso=X.is_iso, navigation=get_navigation(), name=s, number=number)
 
 
 @app.route(make_url("annex_d/<s>.png"))

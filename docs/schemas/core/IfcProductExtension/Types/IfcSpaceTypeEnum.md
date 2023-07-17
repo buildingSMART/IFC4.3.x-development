@@ -21,8 +21,12 @@ Gross Floor Area - a specific kind of space for each building story that include
 ### INTERNAL
 A space inside a facility.
 
+> IFC4.3.2.0 DEPRECATION INTERNAL and EXTERNAL are now deprecated. Use Pset_SpaceCommon.IsExternal instead.
+
 ### EXTERNAL
 A space outside of a facility.
+
+> IFC4.3.2.0 DEPRECATION INTERNAL and EXTERNAL are now deprecated. Use Pset_SpaceCommon.IsExternal instead.
 
 ### BERTH
 A space dedicated to the berthing of vessels within a port or managed area

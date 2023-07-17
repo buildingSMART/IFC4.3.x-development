@@ -47,17 +47,17 @@ If an _IfcMaterialProfileSetUsage_ is used, the axis representation is used to l
  * For a body representation using an _IfcExtrudedAreaSolid_, the axis may be an _IfcPolyline_ having two Points, or _IfcTrimmedCurve_ with _BasisCurve_ of type _IfcLine_. The axis curve lies on the z axis of the object coordinate system.
  * For a body representation using an _IfcRevolvedAreaSolid_, the axis may be an _IfcTrimmedCurve_ with _BasisCurve_ of type _IfcCircle_. The axis curve lies on the x/z plane of the object coordinate system, the tangent at the start is along the positive z-axis.
 
-As shown in Figure 213, the axis shall be defined along the z axis of the object coordinate system.
+As shown in Figure COLAXREP, the axis shall be defined along the z axis of the object coordinate system.
 
 ![Axis](../../../../figures/ifccolumnstandardcase_axis-01.png)
 
-Figure 213 — Column axis representation
+Figure COLAXREP — Column axis representation
 
-As shown in Figure 214, the axis representation must be positioned at the _IfcMaterialProfileSetUsage_._CardinalPoint_, and parallel to the _IfcExtrudedAreaSolid_._ExtrudedDirection_. This offset between the axis line and the _IfcExtrudedAreaSolid_._Position_ must correlate with the chosen _IfcMaterialProfileSetUsage_._CardinalPoint_.
+As shown in Figure CALAXCARPOINT, the axis representation must be positioned at the _IfcMaterialProfileSetUsage_._CardinalPoint_, and parallel to the _IfcExtrudedAreaSolid_._ExtrudedDirection_. This offset between the axis line and the _IfcExtrudedAreaSolid_._Position_ must correlate with the chosen _IfcMaterialProfileSetUsage_._CardinalPoint_.
 
 ![Axis](../../../../figures/ifccolumnstandardcase_axis-02.png)
 
-Figure 214 — Column axis cardinal point
+Figure CALAXCARPOINT — Column axis cardinal point
 
 #### Axis_IfcBoundedCurve_Curve3D
 
@@ -75,11 +75,11 @@ Three-dimensional reference curve for the column.
 * All extrusion directions shall be supported
 * The _IfcBooleanClippingResult_ shall be supported, allowing for Boolean differences between the swept solid (here _IfcExtrudedAreaSolid_) and one or several _IfcHalfSpaceSolid_.
 
-Figure 216 illustrates a 'Clipping' geometric representation with use of _IfcBooleanClippingResult_ between an _IfcExtrudedAreaSolid_ and an _IfcHalfSpaceSolid_ to create a clipped body.
+Figure COLCLIP illustrates a 'Clipping' geometric representation with use of _IfcBooleanClippingResult_ between an _IfcExtrudedAreaSolid_ and an _IfcHalfSpaceSolid_ to create a clipped body.
 
 ![advanced column](../../../../figures/ifccolumn_advanced-2-layout1.png)
 
-Figure 216 — Column clipping
+Figure COLCLIP — Column clipping
 
 ### Body SweptSolid Geometry
 
@@ -87,38 +87,38 @@ Figure 216 — Column clipping
 * All subtypes of _IfcProfileDef_ (with exception of _IfcArbitraryOpenProfileDef_) shall be supported
 * All extrusion directions shall be supported
 
-Figure 215 illustrates a 'SweptSolid' geometric representation. There are no restrictions or conventions on how to use the object placement (black), extrusion placement (red) and profile placement (green).
+Figure COLSWEEP illustrates a 'SweptSolid' geometric representation. There are no restrictions or conventions on how to use the object placement (black), extrusion placement (red) and profile placement (green).
 
 
 ![standard column](../../../../figures/ifccolumn_standard-layout1.gif)
 
-Figure 215 — Column swept solid
+Figure COLSWEEP — Column swept solid
 
-Figure 216 illustrates use of a special profile type (here _IfcIShapeProfileDef_) for the definition of the _IfcExtrudedAreaSolid_.
+Figure COLEXI illustrates use of a special profile type (here _IfcIShapeProfileDef_) for the definition of the _IfcExtrudedAreaSolid_.
 
 ![advanced column](../../../../figures/ifccolumn_advanced-1-layout1.png)
 
-Figure 216 — Column extrusion of I-Shape
+Figure COLEXI — Column extrusion of I-Shape
 
 ### Material Profile Set Usage
 
-Figure 211 illustrates assignment of _IfcMaterialProfileSetUsage_ and _IfcMaterialProfileSet_ to the _IfcColumnType_ and the _IfcColumn_ occurrence. Both the _IfcMaterialProfileSet_ and _IfcProfileDef_ is shared between all occurrences.
+Figure COLPROFUS illustrates assignment of _IfcMaterialProfileSetUsage_ and _IfcMaterialProfileSet_ to the _IfcColumnType_ and the _IfcColumn_ occurrence. Both the _IfcMaterialProfileSet_ and _IfcProfileDef_ is shared between all occurrences.
 
 ![Material profile set and usage](../../../../figures/ifccolumn-01.png)
 
-Figure 211 — Column profile usage
+Figure COLPROFUS — Column profile usage
 
-Figure 212 illustrates cardinal point alignment. The use of _IfcCardinalPointReference_ must be consistent with the placement of the extrusion body provided by _IfcExtrudedAreaSolid_._Position_.
+Figure COLCARPOINTS illustrates cardinal point alignment. The use of _IfcCardinalPointEnum_ must be consistent with the placement of the extrusion body provided by _IfcExtrudedAreaSolid_._Position_.
 
 ![Cardinal point usage](../../../../figures/ifccolumn_cardinalpoint.png)
 
-Figure 212 — Column cardinal points
+Figure COLCARPOINTS — Column cardinal points
 
-Figure 213 illustrates assignment of a composite profile by using _IfcCompositeProfileDef_ for geometric representation and several _IfcMaterialProfile_ entities within the _IfcMaterialProfileSet_.
+Figure COLCOMPPROF illustrates assignment of a composite profile by using _IfcCompositeProfileDef_ for geometric representation and several _IfcMaterialProfile_ entities within the _IfcMaterialProfileSet_.
 
 ![Material profile set and usage](../../../../figures/ifccolumn-02.png)
 
-Figure 213 — Column composite profiles
+Figure COLCOMPPROF — Column composite profiles
 
 ### Object Typing
 

@@ -35,31 +35,34 @@ The sequence of steps might change from case to case and might be repeated one o
 
 Contemporary alignment design almost always implements a 2.5 dimension approach. The resulting and documented geometry might be very precise or just good enough to meet safety thresholds. This depends on factors like priorities of the management, date of the design - existing alignments might have been designed more then 50 years ago - or software tools used. Working with legacy data in a high precision BIM model requires a good understanding of these factors.
 
-**Distinction between business logic and IFC geometry definition**
+**Distinction between business logic and geometry definition**
 
-In IFC, the alignment concept is organised in two parts. These two parts work together, but they can also be used and exchanged independently.
+The alignment concept is organised in two parts. These two parts work together, but they can also be used and exchanged independently.
 
-1. Business logic of alignment
-2. Geometry definition of alignment
+1. *Business logic* of alignment
+2. *Geometry definition* of alignment
 
-**Business logic:** here the IFC schema allows to describe an alignment using terminology and concepts that are as close as possible to business terminology. It allows to describe a very detailed segments' structure with many domain specific properties attached, for example design speed or cant deficiency.
+**Business logic:** the IFC schema allows to describe an alignment using terminology and concepts that are as close as possible to business ones. It allows to describe the layouts that make up the alignment (i.e. horizontal, vertical, cant), their segments' structure and attributes. Also, the *business logic* part provides the anchor point for domain specific properties, such as design speed or cant deficiency.
 
-**Geometry definition:** here the IFC schema provides well established IFC geometry entities to represent the business concepts already defined. 
+**Geometry definition:** the IFC schema provides well established IFC geometric entities to represent the business concepts already defined. 
 
-A mapping between the Business logic and its Geometry definition in IFC is described by the concept templates related to the alignment geometry.
+A mapping between the *business logic* and its *geometry definition* in IFC is described by the concept templates related to the alignment geometry.
 
-**How to use alignment in IFC**
 
-- Alignment's layouts
-- Alignment's geometry representation
-- Alignment's aggregations
-- Alignment in the project organisation
-- Alignment's grouping
-- Alignment's referents
+## Attributes
 
-**Alignment layouts**
+### PredefinedType
 
-In IFC, a single alignment may be described by one ore more of the following layouts:
+## Concepts
+
+### Alignment Aggregation To Project
+
+* Every _IfcAlignment_ must be related to _IfcProject_ using the _IfcRelAggregates_ relationship - either directly or indirectly. The indirect case is when a child alignment is aggregated to a parent alignment. In this case, only the parent alignment must be related to _IfcProject_.
+* Instances of _IfcAlignment_ must not be related to spatial elements using _IfcRelContainedInSpatialStructure_.
+
+### Alignment Layouts
+
+A single alignment may be described by one ore more of the following layouts:
 
 * a horizontal layout (_IfcAlignmentHorizontal_), defined in the x/y plane of the engineering coordinate system.
 * an accompanying vertical layout (_IfcAlignmentVertical_), defined along the horizontal layout in the distance along / z coordinate space.
@@ -73,13 +76,21 @@ These 3 layouts may be used in different configurations. The most common are:
 4. Multiple Vertical layouts based on the same Horizontal Layout
 5. Multiple Vertical layouts based on the same Horizontal Layout, with a Cant layout applied
 
-(4) and (5) are used in scenarios where multiple alignments re-use the same horizontal layout definition. See **Alignment's aggregations** for details on how to relate parent and child alignments in theses cases.
+(4) and (5) are used in scenarios where multiple alignments re-use the same horizontal layout definition. See **Alignment Layout - Reusing Horizontal Layout** and **Alignment Geometry - Reusing Horizontal Layout** for details on how to relate parent and child alignments in theses cases.
 
 ![Alignment configurations](../../../../figures/IfcAlignment-possible-configurations.png)
 
-Figure 1 &mdash; Common configurations of alignment layouts
+Figure ALCONFIG &mdash; Common configurations of alignment layouts
 
-**Alignment's geometry representation**
+### Alignment Layout - Horizontal, Vertical and Cant
+
+For configurations (1),(2),(3)
+
+### Alignment Layout - Reusing Horizontal Layout
+
+For configurations (4),(5)
+
+### Alignment Geometry
 
 Supported shape representations of _IfcAlignment_ are:
 * _IfcCompositeCurve_ as a 2D horizontal alignment (represented by its horizontal alignment segments), without a vertical layout.
@@ -91,43 +102,39 @@ Supported shape representations of _IfcAlignment_ are:
 
 Refer to the concept templates to know which _RepresentationIdentifier_ and _RepresentationType_ shall be set for the different kinds of representation and the different configurations above.
 
-**Alignment's aggregations**
+### Alignment Geometry - Horizontal
+
+For configuration (1)
+
+### Alignment Geometry - Horizontal and Vertical
+
+For configuration (2)
+
+### Alignment Geometry - Horizontal, Vertical and Cant
+
+For configuration (3)
+
+### Element Decomposition
+
 In scenarios where multiple alignments re-use the same horizontal layout definition, these alignment can be aggregated in a parent-child relationship, to avoid redefining the horizontal layout. This is done using _IfcRelAggregates_.
 
-If the parent alignment has a geometry definition for its horizontal layout, then all the children can use this definition as *BaseCurve* to construct their own representations.
+If the parent alignment has a *geometry definition* for its horizontal layout, then all the children can use this definition as *BaseCurve* to construct their own representations.
 
-**Alignment in the project organisation**
+### Alignment Geometry - Reusing Horizontal Layout
 
-* Every _IfcAlignment_ must be related to _IfcProject_ using the _IfcRelAggregates_ relationship - either directly or indirectly. The indirect case is when a child alignment is aggregated to a parent alignment. In this case, only the parent alignment must be related to _IfcProject_.
-* Instances of _IfcAlignment_ must not be related to spatial elements using _IfcRelContainedInSpatialStructure_.
-* Alignments can be related to a spatial element using _IfcRelReferencedInSpatialStructure_.
+For configurations (4),(5)
 
-**Alignment's grouping**
+### Alignment Geometry - Segments
+
+### Alignment Spatial Reference
+
+Alignments can be related to a spatial element using _IfcRelReferencedInSpatialStructure_.
+
+### Alignment Grouping
 
 Alignments may be assigned to groups using _IfcRelAssignsToGroup_, where _IfcGroup_ or subtypes may capture information common to multiple alignments.
 
-**Alignment's referents**
-Alignments can nest _IfcReferent_ s, such as stations or mileage points. These can be used as semantic entities holding information about locations along the alignment curve. This is done using the _IfcRelNests_ relationship.
-
-## Attributes
-
-### PredefinedType
-
-## Concepts
-
-### Alignment Geometry Cant
-
-
-
-### Alignment Geometry Gradient
-
-
-
-### Alignment Layout
-
-
-
 ### Object Nesting
 
-
+Alignments can nest _IfcReferent_'s, such as stations or mileage points. These can be used as semantic entities holding information about locations along the alignment curve. This is done using the _IfcRelNests_ relationship.
 

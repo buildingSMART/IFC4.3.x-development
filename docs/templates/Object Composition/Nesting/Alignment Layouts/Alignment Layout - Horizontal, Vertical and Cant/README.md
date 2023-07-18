@@ -1,5 +1,5 @@
-Alignment Layout
-================
+Alignment Layout - Horizontal, Vertical and Cant
+================================================
 
 
 

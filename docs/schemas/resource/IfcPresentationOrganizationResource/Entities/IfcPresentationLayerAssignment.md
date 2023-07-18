@@ -4,7 +4,7 @@ The presentation layer assignment provides the layer name (and optionally a desc
 
 > NOTE  The use of presentation layer shall be restricted to simple grouping and displaying purposes.
 
-Visibility and access control and layer style assignment (colour, line style, line width) is handled by the subtype _IfcPresentationLayerAssignmentWithStyle_.
+Visibility and access control and layer style assignment (colour, line style, line width) is handled by the subtype _IfcPresentationLayerWithStyle_.
 
 > NOTE  Corresponding ISO 10303 name: presentation layer assignment. Please refer to ISO/IS 10303-46:1994, p. 36 for the final definition of the formal standard.
 

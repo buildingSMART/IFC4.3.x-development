@@ -10,8 +10,7 @@ An _IfcBoundedCurve_ is a curve of finite length.
 
 > HISTORY  New entity in IFC1.0
 
-{ .spec-head}
-Informal Propositions:
+## Informal Propositions
 
 1. A bounded curve has finite arc length.
 2. A bounded curve has a start point and an end point.

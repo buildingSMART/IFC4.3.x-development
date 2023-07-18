@@ -12,7 +12,7 @@ Predefined spatial structure elements to which elements can be assigned are
 
 * site as _IfcSite_
 * facility as _IfcFacility_ or its subtypes _IfcBridge_, _IfcBuilding_, _IfcMarineFacility_, _IfcRailway_ or _IfcRoad_
-* part of facility as _IfcFaciltityPart_, or more specifically as _IfcBuildingStorey_ or _IfcSpace_
+* part of facility as _IfcFacilityPart_, or more specifically as _IfcBuildingStorey_ or _IfcSpace_
 
 Elements can also be references in a spatial zone that is provided as _IfcSpatialZone_.
 

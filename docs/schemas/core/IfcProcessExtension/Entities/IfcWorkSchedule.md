@@ -38,7 +38,7 @@ An IfcWorkSchedule controls a set of tasks and resources defined through IfcRelA
 
 ### Document Association
 
-The documents of the IfcWorkSchedule can be referenced by the IfcRelAssociatesDocuments relationship.
+The documents of the IfcWorkSchedule can be referenced by the IfcRelAssociatesDocument relationship.
 
 ### Object Nesting
 

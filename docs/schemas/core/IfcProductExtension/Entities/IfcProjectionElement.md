@@ -66,7 +66,7 @@ The general geometric representation of IfcProjectionElement can also be defined
 
 ### Product Local Placement
 
-The local placement for IfcOpeningRecess is defined in its supertype IfcProduct. It is defined by the IfcLocalPlacement, which defines the local coordinate system that is referenced by all geometric representations.
+The local placement for IfcProjectionElement is defined in its supertype IfcProduct. It is defined by the IfcLocalPlacement, which defines the local coordinate system that is referenced by all geometric representations.
 
 * The PlacementRelTo relationship of IfcLocalPlacement should point to the local placement of the same element, to which the projection adds, i.e. referred to by _ProjectsElement.RelatingBuildingElement_.
 

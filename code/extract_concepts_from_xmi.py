@@ -4,6 +4,7 @@ import json
 import re
 import glob
 import operator
+import traceback
 
 from collections import defaultdict
 
@@ -246,7 +247,12 @@ if __name__ == "__main__":
             concept_interpretation.concept_type.DIRECTIONAL_BINARY,
             concept_interpretation.concept_type.NARY,
         ):
-            bindings = list(parse_bindings(xmi_concept, all_templates=all_templates, to_xmi=True, definitions_by_name=definitions_by_name))
+            try:
+                bindings = list(parse_bindings(xmi_concept, all_templates=all_templates, to_xmi=True, definitions_by_name=definitions_by_name))
+            except IndexError as e:
+                print("Unable to get bindings for template, skipping")
+                traceback.print_exc()
+                continue
             get_binding = make_get_binding(bindings)
 
             for p in pairs:

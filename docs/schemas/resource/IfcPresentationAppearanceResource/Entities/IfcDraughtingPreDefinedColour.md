@@ -33,10 +33,9 @@ If the colour name is 'by layer', colour values obtained from IfcPresentationLay
 
 > HISTORY  New entity in IFC2x2.
 
-{ .spec-head}
-Informal Propositions:
+## Informal Propositions
 
-1. The value 'by layer' shall only be inserted, if the geometric representation item using the colour definition has an association to _IfcPresentationLayerWithStyle_, and if that instance of _IfcPresentationLayerWithStyle_ has a valid colour definition for _IfcCurveStyle_, _IfcSymbolStyle_, or _IfcSurfaceStyle_ (depending on what is applicable).
+1. The value 'by layer' shall only be inserted, if the geometric representation item using the colour definition has an association to _IfcPresentationLayerWithStyle_, and if that instance of _IfcPresentationLayerWithStyle_ has a valid colour definition for _IfcCurveStyle_ or _IfcSurfaceStyle_ (depending on what is applicable).
 
 ## Formal Propositions
 

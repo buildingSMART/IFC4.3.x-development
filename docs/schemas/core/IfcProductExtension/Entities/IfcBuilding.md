@@ -5,7 +5,7 @@ A building represents a structure that provides shelter for its occupants or con
 > NOTE  Definition from ISO 6707-1:
 > Construction work that has the provision of shelter for its occupants or contents as one of its main purpose and is normally designed to stand permanently in one place.
 
-A building is (if specified) associated to a site. A building may span over several connected or disconnected buildings. Therefore building complex provides for a collection of buildings included in a site. A building can also be decomposed in parts, where each part defines a building section. This is defined by the composition type attribute of the supertype _IfcSpatialStructureElements_ which is interpreted as follow:
+A building is (if specified) associated to a site. A building may span over several connected or disconnected buildings. Therefore building complex provides for a collection of buildings included in a site. A building can also be decomposed in parts, where each part defines a building section. This is defined by the composition type attribute of the supertype _IfcSpatialStructureElement_ which is interpreted as follow:
 
 * **COMPLEX**: building complex
 * **ELEMENT**: building

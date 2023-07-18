@@ -33,8 +33,8 @@ Figure 4 &mdash; Space boundary at second level type B
 
 The differences between the 1<sup>st</sup> and 2<sup>nd</sup> level space boundaries is identified by:
 
-* **1<sup>st</sup> level:**   SELF\IfcRoot.Name = "1stLevel"   SELF\IfcRootDescription = NIL
-* **2<sup>nd</sup> level:**   SELF\IfcRoot.Name = "2ndLevel"   SELF\IfcRootDescription = "2a", or "2b"
+* **1<sup>st</sup> level:**   SELF\IfcRoot.Name = "1stLevel"   SELF\IfcRoot.Description = NIL
+* **2<sup>nd</sup> level:**   SELF\IfcRoot.Name = "2ndLevel"   SELF\IfcRoot.Description = "2a", or "2b"
 
 Differentiation between physical and virtual space boundary is illustrated in Figure 5 and Figure 6.
 

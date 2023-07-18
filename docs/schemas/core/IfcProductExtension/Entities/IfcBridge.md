@@ -57,15 +57,15 @@ Assignment to another bridge as spatial container, e.g. if this bridge represent
 
 #### IfcElement
 
-Physical elements that are directly related to the building.
+Physical elements that are directly related to the bridge.
 
 #### IfcAnnotation
 
-Annotations that are directly related to the building.
+Annotations that are directly related to the bridge.
 
 #### IfcPositioningElement
 
-Positioning elements that are directly related to the building.
+Positioning elements that are directly related to the bridge.
 
 ### Spatial Decomposition
 

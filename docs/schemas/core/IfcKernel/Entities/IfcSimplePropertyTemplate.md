@@ -24,7 +24,7 @@ Property type defining whether the property template defines a property with a s
 > NOTE  the value of this property determines the correct use of the _PrimaryUnit_, _SecondaryUnit_, _PrimaryDataType_, _SecondaryDataType_, and _Expression_ attributes.
 
 ### PrimaryMeasureType
-Primary measure type assigned to the definition of the property. It should be provided, if the _PropertyType_ is set to:
+Primary measure type assigned to the definition of the property. It should be provided, if the _TemplateType_ is set to:
 
 * <small>P_SINGLEVALUE</small>: determining the measure type of _IfcPropertySingleValue.NominalValue_
 * <small>P_ENUMERATEDVALUE</small>: determining the measure type of _IfcPropertyEnumeratedValue.EnumerationValues_
@@ -33,26 +33,26 @@ Primary measure type assigned to the definition of the property. It should be pr
 * <small>P_TABLEVALUE</small>: determining the measure type of _IfcPropertyTableValue.DefiningValues_
 * <small>P_REFERENCEVALUE</small>: determining the measure type of _IfcPropertyTableValue.PropertyReference_
 
-> NOTE  The value range of the measure type is within the select type _IfcValue_ for all _PropertyType_'s with the exception of <small>P_REFERENCEVALUE</small>. Here it is within the select type _IfcObjectReferenceSelect_.
+> NOTE  The value range of the measure type is within the select type _IfcValue_ for all _TemplateType_'s with the exception of <small>P_REFERENCEVALUE</small>. Here it is within the select type _IfcObjectReferenceSelect_.
 
 ### SecondaryMeasureType
-Secondary measure type assigned to the definition of the property. It should be provided, if the _PropertyType_ is set to:
+Secondary measure type assigned to the definition of the property. It should be provided, if the _TemplateType_ is set to:
 
 * <small>P_BOUNDEDVALUE</small>: determining the measure type of _IfcPropertyBoundedValue.UpperBoundValue_
 * <small>P_TABLEVALUE</small>: determining the measure type of _IfcPropertyTableValue.DefinedValues_
 
 
-The value range of the measure type is within the select type _IfcValue_  for all _PropertyType_'s with the exception of <small>P_ENUMERATEDVALUE</small>. Here it is the comma delimited list of enumerators.
+The value range of the measure type is within the select type _IfcValue_  for all _TemplateType_'s with the exception of <small>P_ENUMERATEDVALUE</small>. Here it is the comma delimited list of enumerators.
 > NOTE  The measure type of _IfcPropertyEnumeration.EnumerationValues_ is provided as _PrimaryDataType_.
 
 ### Enumerators
 Name of the property enumeration, and list of all valid enumerators being selectable values, assigned to the definition of the property.
-This attribute shall only be provided, if the _PropertyType_ is set to:
+This attribute shall only be provided, if the _TemplateType_ is set to:
 
 * <small>P_ENUMERATEDVALUE</small>
 
 ### PrimaryUnit
-Primary unit assigned to the definition of the property. It should be provided, if the _PropertyType_ is set to:
+Primary unit assigned to the definition of the property. It should be provided, if the _TemplateType_ is set to:
 
 * <small>P_SINGLEVALUE</small>: determining the _IfcPropertySingleValue.Unit_
 * <small>P_ENUMERATEDVALUE</small>: determining the _IfcPropertyEnumeration.Unit_
@@ -61,17 +61,17 @@ Primary unit assigned to the definition of the property. It should be provided, 
 * <small>P_TABLEVALUE</small>: determining the _IfcPropertyTableValue.DefiningUnit_
 
 ### SecondaryUnit
-Secondary unit assigned to the definition of the property. It should be provided, if the _PropertyType_ is set to:
+Secondary unit assigned to the definition of the property. It should be provided, if the _TemplateType_ is set to:
 
 * <small>P_TABLEVALUE</small>: determining the _IfcPropertyTableValue.DefinedUnit_
 
 ### Expression
-The expression used to store additional information for the property template depending on the _PropertyType_. It should provide the following definitions, if the _PropertyType_ is set to:
+The expression used to store additional information for the property template depending on the _TemplateType_. It should provide the following definitions, if the _TemplateType_ is set to:
 
 * <small>P_TABLEVALUE</small>: the expression that could be evaluated to define the correlation between the defining values and the defined values.
 * <small>Q_LENGTH, Q_AREA, Q_VOLUME, Q_COUNT, Q_WEIGTH, Q_TIME</small>: the formula to be used to calculate the quantity
 
-> NOTE  No value shall be asserted if the _PropertyType_ is not listed above.
+> NOTE  No value shall be asserted if the _TemplateType_ is not listed above.
 
 ### AccessState
 Information about the access state of the property. It determines whether a property can be viewed and/or modified by any receiving application without specific knowledge of it.

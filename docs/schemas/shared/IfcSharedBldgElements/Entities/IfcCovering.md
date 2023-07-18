@@ -17,7 +17,7 @@ Coverings can be assigned to
     * using the inverse relationship _CoversSpaces_ pointing to _IfcRelCoversSpaces_. The space is then accessible via _IfcRelCoversSpaces.RelatedSpace_. It defines to which space a covering is facing towards.
 * a space boundary represented by _IfcRelSpaceBoundary_
     * using the inverse relationship _ProvidesBoundaries_ pointing to _IfcRelSpaceBoundary._ The space is then accessible via _IfcRelSpaceBoundary.RelatingSpace_.
-* a building element represented by _IfcBuildingElement_
+* a built element represented by _IfcBuiltElement_
     * using the inverse relationship _Covers_ pointing to _IfcRelCoversBldgElements_. The building element is then accessible via _IfcRelCoversBldgElements.RelatingBuildingElement_.
 
 > NOTE  The mere containment relationship between an _IfcCovering_ and an _IfcSpace_ is created by using _IfcRelContainedInSpatialStructure_
@@ -169,7 +169,7 @@ Figure 226 — Covering surface cylindrical
 > round wall).
 
 > * The geometry representation of the _IfcCovering_ is given
-> by the _IfcTrimmedCurved_ (the _Curve_ parameter of the
+> by the _IfcTrimmedCurve_ (the _Curve_ parameter of the
 > _IfcArbitraryOpenProfileDef_ - in cases of faceted
 > representation also an _IfcPolyline_). It is extruded within
 > the plane of the base surface using the _Depth_ parameter of

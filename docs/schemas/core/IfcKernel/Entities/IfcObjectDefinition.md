@@ -10,7 +10,7 @@ Objects are independent pieces of information that might contain or reference ot
 * **Nesting of other objects** - a nesting relationship (_IfcRelNests_) that establishes an ordered, non-spatial whole/part relation and creates a bi-directional relation. There is an implied dependency established.
 * **Declaration within a context** - a relationship (_IfcRelDeclares_) of the uppermost object definition within the object definition tree (e.g. the summary object within an object nesting tree) to the context (a project or project library). It applies the units, representation context and other context information to this object definition and all dependent ones.
 
-> NOTE  The link between the uppermost object in the spatial structure tree, that is _IfcSite_ or _ifcBuilding_, and the context provided by _IfcProject_ is created using the _IfcRelAggregates_ relationship. See _IfcProject_ for more information.
+> NOTE  The link between the uppermost object in the spatial structure tree, that is _IfcSite_ or _IfcBuilding_, and the context provided by _IfcProject_ is created using the _IfcRelAggregates_ relationship. See _IfcProject_ for more information.
 
 > HISTORY  New abstract entity in IFC2x3.
 

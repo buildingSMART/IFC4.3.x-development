@@ -30,8 +30,6 @@ Figure 1 illustrates use of _IfcStyledItem_ for the two usage examples:
 * <small>As a presentation for a geometric representation item</small>
 * <small>As a presentation for a material definition</small>
 
-> NOTE  The new _IfcStyleAssignmentSelect_ allows the direct assignment styles, such as _IfcCurveStyle_, _IfcSurfaceStyle_ without using the intermediate _IfcPresentationStyleAssignment_
-
 ![2x4 example](../../../../figures/ifcstyleditem_fig-1.png "Figure 1 &mdash; Styled item")
 
 ## Attributes

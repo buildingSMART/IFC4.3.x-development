@@ -37,12 +37,12 @@ The _IfcDoorType_ specifies parameters which are common to all of its occurrence
 ## Attributes
 
 ### OverallHeight
-Overall measure of the height, it reflects the Z Dimension of a bounding box, enclosing the body of the door opening. If omitted, the _OverallHeight_ should be taken from the geometric representation of the _IfcOpening_ in which the door is inserted.
+Overall measure of the height, it reflects the Z Dimension of a bounding box, enclosing the body of the door opening. If omitted, the _OverallHeight_ should be taken from the geometric representation of the _IfcOpeningElement_ in which the door is inserted.
 
 > NOTE The body of the door might be taller then the door opening (e.g. in cases where the door lining includes a casing). In these cases the _OverallHeight_ shall still be given as the door opening height, and not as the total height of the door lining.
 
 ### OverallWidth
-Overall measure of the width, it reflects the X Dimension of a bounding box, enclosing the body of the door opening. If omitted, the _OverallWidth_ should be taken from the geometric representation of the _IfcOpening_ in which the door is inserted.
+Overall measure of the width, it reflects the X Dimension of a bounding box, enclosing the body of the door opening. If omitted, the _OverallWidth_ should be taken from the geometric representation of the _IfcOpeningElement_ in which the door is inserted.
 
 > NOTE The body of the door might be wider then the door opening (e.g. in cases where the door lining includes a casing). In these cases the _OverallWidth_ shall still be given as the door opening width, and not as the total width of the door lining.
 
@@ -61,7 +61,6 @@ Designator for the user defined operation type, shall only be provided, if the v
 
 ### CorrectStyleAssigned
 Either there is no door type object associated, i.e. the _IsTypedBy_ inverse relationship is not provided, or the associated type object has to be of type _IfcDoorType_.
-> NOTEnbsp; The deprecated type _IfcDoorStyle_ is still included for backward compatibility reasons.
 
 ### CorrectPredefinedType
 Either the _PredefinedType_ attribute is unset (e.g. because an _IfcDoorType_ is associated), or the inherited attribute _ObjectType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.
@@ -104,12 +103,6 @@ Indicates that the material constituent applies to the door panel(s); if not pro
 
 Indicates that the material constituent applies to the glazing part.
 
-### Object Typing
-
-#### IfcDoorStyle
-
-> NOTE This type is deprecated
-
 ### Product Local Placement
 
 The following restriction is imposed:
@@ -151,7 +144,7 @@ Figure 229 — Door profile
 
 ### Spatial Containment
 
-The _IfcDoor_, as any subtype of _IfcBuildingElement_,
+The _IfcDoor_, as any subtype of _IfcBuiltElement_,
 may participate alternatively in one of the two different containment relationships:
 
 

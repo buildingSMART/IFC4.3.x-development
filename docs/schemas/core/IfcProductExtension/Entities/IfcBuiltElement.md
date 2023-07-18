@@ -15,11 +15,11 @@ This _IfcBuiltElement_ is a generalization of all elements that are major functi
 
 The _IfcBuiltElement_ can be instantiated in the case when arbitrary built elements cannot be expressed by a subtype of _IfcBuiltElement_.
 
-> NOTE  The deprecated _IfcBuildingElementProxy_ shall not be used to represent any arbitrary built element, use a direct instantiation of _IfcBuiltElement_ instead.
-
 > HISTORY  New entity in IFC1.0
 
 > IFC4.3.0.0 CHANGE  The entity has been renamed from IfcBuildingElement and made non abstract.
+
+> NOTE  It is advised not to use _IfcBuildingElementProxy_ to represent an arbitrary built element, but to use a direct instantiation of _IfcBuiltElement_ instead.
 
 ## Formal Propositions
 
@@ -50,5 +50,5 @@ Task for operating upon the building element.
 
 ### Surface 3D Geometry
 
-Some IfcBuildingElement may be represented by an surface as an abstract geometric representation. See each subtype for specific guidance.
+Some IfcBuiltElement may be represented by an surface as an abstract geometric representation. See each subtype for specific guidance.
 

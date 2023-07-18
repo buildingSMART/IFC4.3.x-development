@@ -15,7 +15,7 @@ RUN curl --silent --show-error --retry 5 -o /tmp/ifcopenshell_python.zip https:/
 RUN mkdir -p `python3 -c 'import site; print(site.getusersitepackages())'`
 RUN unzip -d `python3 -c 'import site; print(site.getusersitepackages())'` /tmp/ifcopenshell_python.zip
 
-RUN git clone --depth 1 https://github.com/buildingSMART/Sample-Test-Files /examples
+RUN git clone --depth 1 https://github.com/buildingSMART/IFC4.3.x-sample-models /examples
 
 RUN git clone --depth 1 https://github.com/buildingSMART/IFC4.3.x-development /ifc43
 ENV REPO_DIR=/ifc43

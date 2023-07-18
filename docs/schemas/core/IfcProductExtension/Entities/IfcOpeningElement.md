@@ -60,10 +60,10 @@ The following constraints are recommended:
 * _IfcExtrudedAreaSolid.SweptArea_ shall support IfcRectangleProfileDef, IfcCircleProfileDef and IfcArbitraryClosedProfileDef.
 * If multiple instances of IfcExtrudedAreaSolid are used, the extrusion direction of each extrusion should be equal.
 
-If parametric profiles are used, the parameters may be interpreted to be the dimensions of the beam:
+If parametric profiles are used, the parameters may be interpreted to be the dimensions of the opening:
 
-* IfcRectangleProfileDef.YDim interpreted as beam height
-* IfcRectangleProfileDef.XDim interpreted as beam width
+* IfcRectangleProfileDef.YDim interpreted as opening height
+* IfcRectangleProfileDef.XDim interpreted as opening width
 
 There are two main extrusion directions: perpendicular and parallel.
 

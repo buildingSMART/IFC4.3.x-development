@@ -4,35 +4,46 @@ This enumeration defines the different types of Annotation elements an _IfcAnnot
 
 ## Items
 
-### ASSUMEDPOINT
-A single extra point (assumption or interpretation), used to complement survey data in initial state modelling.
+### SURVEY
+Annotation used for survey information, such as survey points, survey lines or survey areas.
 
-### ASBUILTAREA
-A set of as-built survey points on a surface.
+> EXAMPLE  Typically used in surveying or mapping to indicate the location, elevation, or other relevant data about a specific point or area.
 
-### ASBUILTLINE
-A set of as-built survey points on a line (e.g. breakline).
+> NOTE  The shape representation of the _IfcAnnotation_ indicates if it is a survey point, survey line, survey area or any other type of representation connected to survey. 
 
-### NON_PHYSICAL_SIGNAL
-A virtual or fictitious signal. As opposed to the physical signal, the non-physical signal does not need to send information to the train. E.g. a fictitious signal on the signalman's display needed to define the route exit towards open line where there's no real signal. A virtual ERTMS L2 signal is also a non-physical signal but can have a physical presence, i.e. a stop marker board along the track.
+### CONTOURLINE
+Annotation used to illustrate lines connecting points of equal elevation or depth, on a map or chart.
 
-### ASSUMEDLINE
-A set of extra points on a line (breakline) as an assumption or interpretation, used to complement survey data in initial state modelling.
+> EXAMPLE  Typically used in cartography, geography, or geology maps, where the spacing of lines at constant intervals of elevation may be used as an indication of slope.
 
-### WIDTHEVENT
-A kind of event that specifies the width at a specific location along a road alignment, and the type of transition from the previous location. The locations are specified using an IfcLinearPlacement measured along the alignment axis curve.
-The element(s) that are affected by the width event is currently proposed to be specified by containing the event in a specific lateral breakdown element of the road spatial structure (e.g. a Lane or the entire carriageway).
+### TEXT
+A textual annotation.
 
-### ASSUMEDAREA
-A set of extra points on a surface as an assumption or interpretation, used to complement survey data in initial state modelling.
+### DIMENSION
+Annotation used to illustrate the measurement or size of an object, often accompanied by numerical values.
 
-### SUPERELEVATIONEVENT
-A kind of event that specifies the superelevation (cross slope) at a specific location along a road alignment, and the type of transition from the previous location. The locations are specified using an IfcLinearPlacement measured along the alignment axis curve.
+### LEADER
+Annotation that includes a line or arrow.
 
-The element(s) that are affected by the superelevation event is currently proposed to be specified by containing the event in a specific lateral breakdown element of the road spatial structure (e.g. a Lane).
+> EXAMPLE  Typically used to connect an object to a specific point of reference or to an explanation.
 
-### ASBUILTPOINT
-A single as-built survey point.
+### SYMBOL
+Annotation that employs graphical symbols or icons to represent specific meanings.
+
+### ISOBAR
+Annotation used to illustrate lines connecting points of equal pressure on a map or chart. 
+
+> EXAMPLE  Typically used on weather maps or to show pressure gradient in spaces, chambers or externally.
+
+### ISOLUX
+Annotation used to illustrate lines connecting points of equal illuminance or light intensity.
+
+> EXAMPLE  Typically used in lighting design or photometry to show the distribution of illumination levels and/or day lighting in a space or externally.
+
+### ISOTHERM
+Annotation used to illustrate lines connecting points of equal temperature on a map or chart.
+
+> EXAMPLE  Typically used in to show the heating or cooling distribution within a space or to show temperature distribution on a geographic map.
 
 ### USERDEFINED
 User-defined type

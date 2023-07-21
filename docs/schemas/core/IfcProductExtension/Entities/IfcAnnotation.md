@@ -21,27 +21,40 @@ Relationship to a spatial structure element, to which the associate is primarily
 
 ### Annotation 2D Geometry
 
+The Annotation 2D Geometry concept template applies to this entity as shown below:
 
+| Identifier | Type         | Items                 | Description                    |
+|------------|--------------|-----------------------|--------------------------------|
+| Annotation | Annotation2D | IfcGeometricCurveSet  | Any point or curve             |
+| Annotation | Annotation2D | IfcAnnotationFillArea | Area for hatching              |
+| Annotation | Annotation2D | IfcTextLiteral        | Text literal for applying text |
 
-#### Annotation_IfcGeometricCurveSet_Annotation2D
-
-Any point or curve
-
-#### Annotation_IfcAnnotationFillArea_Annotation2D
-
-Area for hatching
-
-#### Annotation_IfcTextLiteral_Annotation2D
-
-Text literal for applying text
 
 ### Annotation 3D Geometry
 
+The Annotation 3D Geometry concept template applies to this entity as shown below:
+
+| Identifier | Type         | Items           | Description                                             |
+|------------|--------------|-----------------|---------------------------------------------------------|
+| Annotation | GeometricSet | IfcGeometricSet | Any point, curve or surface representing the annotation |
+
+### Single Survey Point
 
 
-#### Annotation_IfcGeometricSet_GeometricSet
+### Single Survey Point Linearly Placed
 
-Any point, curve or surface representing the annotation.
+
+### Set Of Survey Points
+
+
+### Single Survey Line
+
+
+### Survey Elements Grouping
+
+
+### Survey Elements Nesting
+
 
 ### Property Sets for Objects
 

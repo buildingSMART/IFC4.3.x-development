@@ -9,7 +9,7 @@ Several representation identifiers for shape representation are included as pred
 |--- |--- |
 |CoG|Point to identify the center of gravity of an element. This value can be used for validation purposes.|
 |Box|Bounding box as simplified 3D box geometry of an element|
-|Annotation|3D annotations not representing elements|
+|Annotation|2D or 3D annotations|
 |Axis|2D or 3D Axis, or single line, representation of an element|
 |FootPrint|2D Foot print, or double line, representation of an element, projected to ground view|
 |Profile|3D line representation of a profile being planar, e.g. used for door and window outlines|

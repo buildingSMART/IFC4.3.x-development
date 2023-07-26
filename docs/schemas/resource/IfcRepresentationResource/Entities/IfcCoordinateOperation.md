@@ -16,7 +16,7 @@ An _IfcCoordinateOperation_ allows to connect:
 >    -	_IfcProjectedCRS_, for defined easting, northing and orthogonal height
 >    -	_IfcGeographicCRS_, for defined latitude, longitude and ellipsoidal height
 
-> NOTE  In IFC, the _IfcProjectedCRS_ can also be used to represent a compound CRS. See _IfcProjectedCRS_ for further details.
+> NOTE  In IFC, _IfcProjectedCRS_ shall be used to represent a compound CRS. See _IfcProjectedCRS_ for further details.
 
 { .extDef}
 > NOTE  Definition from OpenGIS Abstract Specification, Topic 2:
@@ -28,16 +28,12 @@ An _IfcCoordinateOperation_ allows to connect:
 
 There are three types of _IfcCoordinateOperation_. The one to be used depends on the specific use case:
 
-- _IfcMapConversion_ and _IfcMapConversionScaled_ involve a **transformation**.
-These coordinate operations convey that the local engineering coordinate system of the virtual model (which is a topocentric CRS) is **put in place** in a certain projected CRS.
-They can use one unique scale value for x,y,z (_IfcMapConversion_) or three different scale values for x,y,z (_IfcMapConversionScaled_) - example of a Helmert transformation.
+* _IfcMapConversion_ and _IfcMapConversionScaled_ involve a **transformation**. These coordinate operations convey that the local engineering coordinate system of the virtual model (which is a topocentric CRS) is put in place in the referenced _IfcProjectedCRS_. 
 
-- _IfcRigidOperation_ involves a **translation**.
-It is a coordinate operation that tells that the whole virtual model is translated in the same way the _IfcProjectedCRS_ is translated - continuously and in all directions.
+* _IfcRigidOperation_ involves a **translation** in the (x,y,z) plane. This coordinate operation convey that the whole virtual model is translated in the same way in (x,y,z).
 
 ![Coordinate operations](../../../../figures/ifccoordinateoperation.png)
-Figure 1 &mdash; Possible coordinate operations between coordinate reference systems
-
+Figure COORDOPS &mdash; Possible coordinate operations between coordinate reference systems
 
 > HISTORY  New entity in IFC4.
 

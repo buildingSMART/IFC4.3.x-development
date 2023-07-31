@@ -26,8 +26,7 @@ Several representation types for shape representation are included as predefined
 
 Type |  Description
 --- | ---
-Point | 2 or 3 dimensional point(s)
-PointCloud | 3 dimensional points represented by a point list
+Point | 2 or 3 dimensional point(s). Points can be represented by a point list
 Curve | 2 or 3 dimensional curve(s)
 Curve2D | 2 dimensional curve(s)
 Curve3D | 3 dimensional curve(s)

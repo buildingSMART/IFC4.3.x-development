@@ -4,8 +4,6 @@ A rigid operation specifies an offset in the coordinate reference system. It doe
 
 > EXAMPLE  If data is in truncated map coordinates (i.e., the map coordinates have the leading digits removed in x and y), then _IfcRigidOperation_ simply translates the data in x and y to replace the ignored leading digits. This is also known as subtraction.
 
-==The coordinate axes of the _IfcGeometricRepresentationContext_ can rotate and set a new basis coordinate system.==
-
 > HISTORY New entity in IFC4X3_ADD1
 
 ## Attributes

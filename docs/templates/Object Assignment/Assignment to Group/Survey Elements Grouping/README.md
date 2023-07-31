@@ -5,7 +5,7 @@ The assignment of survey annotations, such as point and lines, to a group. The t
 
 For ordered list of survey elements, use the Survey Elements Nesting template.
 
-> NOTE  Having an _IfcAnnotation_ grouping a list of _IfcAnnotation_'s, properties can be associated to the each annotation of the set (i.e., to each point and line) as well as to the annotation collecting all survey elements.
+> NOTE  Having an _IfcGroup_ grouping a list of _IfcAnnotation_'s, properties can be associated to each annotation (i.e., to each point and line) as well as to the group collecting all survey elements.
 
 ```
 concept {

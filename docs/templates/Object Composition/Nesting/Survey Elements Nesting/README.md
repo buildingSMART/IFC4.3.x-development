@@ -9,9 +9,9 @@ For set of survey elements where the order of items is not relevant (e.g., point
 
 ```
 concept {
-    IfcAnnotation_0:IsNestedBy -> IfcRelNests_0:RelatingObject
+    IfcAnnotation:IsNestedBy -> IfcRelNests_0:RelatingObject
     IfcRelNests_0:RelatedObjects -> IfcAnnotation_1
-    IfcAnnotation_0:PredefinedType -> SURVEY_
+    IfcAnnotation:PredefinedType -> SURVEY_
     IfcAnnotation_1:PredefinedType -> SURVEY
 }
 ```

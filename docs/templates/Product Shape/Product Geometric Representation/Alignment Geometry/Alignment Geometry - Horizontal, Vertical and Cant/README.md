@@ -11,6 +11,11 @@ For the _IfcSegmentedReferenceCurve_:
 * _RepresentationIdentifier_ = 'Axis'
 * _RepresentationType_ = 'Curve3D'
 
+When defining the list of segments for the business logic (i.e., _IfcAlignmentHorizontalSegment_, _IfcAlignmentVerticalSegment_, _IfcAlignmentCantSegment_):
+
+1. A **zero-length segment** shall be added, at the end of the list of segments for _IfcAlignmentSegment.DesignParameters_.
+2. If the geometry definition is also present, then each of the zero-length segments shall have a _IfcCurveSegment_ counterpart - of length zero.
+
 ```
 concept {
     IfcAlignment:Representation -> IfcProductDefinitionShape

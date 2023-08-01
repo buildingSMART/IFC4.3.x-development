@@ -1,7 +1,14 @@
 Alignment Layout - Reusing Horizontal Layout
 ============================================
 
+Nesting and aggregation relationships between _IfcAlignment_'s and their layouts, in the case where multiple alignments re-use the same horizontal layout definition.
 
+In the diagram below is an example of a *parent* alignment, with the horizontal layout, and two *child* alignments, one with a vertical layout, and the other with a vertical and a cant layout; both re-using the definition of the horizontal layout from the *parent* alignment.
+
+When defining the list of segments for the business logic (i.e., _IfcAlignmentHorizontalSegment_, _IfcAlignmentVerticalSegment_, _IfcAlignmentCantSegment_):
+
+1. A **zero-length segment** shall be added, at the end of the list of segments for _IfcAlignmentSegment.DesignParameters_.
+2. If the geometry definition is also present, then each of the zero-length segments shall have a _IfcCurveSegment_ counterpart - of length zero.
 
 ```
 concept {

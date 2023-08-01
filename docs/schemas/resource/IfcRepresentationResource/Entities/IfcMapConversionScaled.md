@@ -1,6 +1,6 @@
 # IfcMapConversionScaled
 
-An _IfcMapConversionScaled_ is a type of _IfcMapConversion_ that along with an EPSG code supplies factors for coordinate conversion. The usage is restricted to when factors are explicitly exchanged. 
+An _IfcMapConversionScaled_ is a type of _IfcMapConversion_ that supplies factors for coordinate conversion. The usage is restricted to when factors are explicitly exchanged. 
 
 > NOTE  Typically, these are relatively smaller facilities such as buildings where constant factors are agreed on a project.
 
@@ -16,12 +16,6 @@ $$
 $$
 
 6. and then a translation in (x,y,z) of _IfcMapConversionScaled.Eastings_, _IfcMapConversionScaled.Northings_, _IfcMapConversionScaled.OrthogonalHeight_.
-
-> EXAMPLE  A 2D Helmert transformation, which has the extra restrictions:
->
-> * IfcMapConversionScaled.FactorX = IfcMapConversionScaled.FactorY
-> * ...
-
 
 > HISTORY New entity in IFC4X3_ADD1
 

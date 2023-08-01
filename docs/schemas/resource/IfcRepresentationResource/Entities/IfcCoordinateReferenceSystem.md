@@ -32,7 +32,7 @@ Name by which this datum is identified. The geodetic datum is associated with th
 
 > EXAMPLE  geodetic datums include:
 >
-> * 'EPSG:4326' (WGS84 World Geodetic System 1984, used in GPS)
+> * 'EPSG:6326' (WGS84 World Geodetic System 1984, used in GPS)
 > * 'ED50' (European Datum 1950, also identified as EPSG:6230)
 > * 'EUREF89' (European Terrestrial Reference Frame 1989, also identified as EPSG:1178)
 
@@ -41,7 +41,7 @@ Name by which this datum is identified. The geodetic datum is associated with th
 Well Known Text (WKT) definition for this coordinate reference system inversely associated as a _IfcWellKnownText_ entity.
 
 ### HasCoordinateOperation
-Indicates conversion between coordinate systems. In particular it refers to an _IfcCoordinateOperation_ between this coordinate reference system, and another coordinate reference system.
+Indicates conversion between coordinate reference systems. In particular it refers to an _IfcCoordinateOperation_ between this coordinate reference system, and another coordinate reference system.
 
 ## Formal Propositions
 

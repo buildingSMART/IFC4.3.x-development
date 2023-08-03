@@ -66,7 +66,7 @@ Address given to the site for postal purposes.
 
 ### Body Geometry
 
-The body representation of IfcSite may be typically defined using a solid or surface model. Applicable solids are Breps and Tesselations. Applicable surface models are the IfcFaceBasedSurfaceModel and the IfcShellBasedSurfaceModel.
+The body representation of IfcSite may be typically defined using a solid or surface model. Applicable solids are Breps and Tessellations. Applicable surface models are the IfcFaceBasedSurfaceModel and the IfcShellBasedSurfaceModel.
 
 The representation identifier and type of this representation of IfcSite is:
 

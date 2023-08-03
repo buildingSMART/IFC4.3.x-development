@@ -59,7 +59,7 @@ As shown in Figure PROJECTIONREP, the following interpretation of dimension para
 
 Figure PROJECTIONREP &mdash; Projection representation
 
-The general geometric representation of IfcProjectionElement can also be defined using the Brep or Tesselation geometry. The Brep or Tessellation representation allows for the representation of complex element shapes. The following attribute values for the IfcShapeRepresentation holding this geometric representation shall be used:
+The general geometric representation of IfcProjectionElement can also be defined using the Brep or Tessellation geometry. The Brep or Tessellation representation allows for the representation of complex element shapes. The following attribute values for the IfcShapeRepresentation holding this geometric representation shall be used:
 
 * _IfcShapeRepresentation.RepresentationIdentifier_: 'Body'
 * _IfcShapeRepresentation.RepresentationType_: 'Tessellation' or 'Brep'

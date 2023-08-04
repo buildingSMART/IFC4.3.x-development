@@ -19,6 +19,52 @@ $$
 
 > HISTORY New entity in IFC4X3_ADD1
 
+**Equations**
+
+Below are the relevant equations for _IfcMapConversionScaled_. The equations are given: a) in full expanded matrix form, useful for programmers to understand the exact sequence of operations, and to easily adapt to instead of multiply a standard CG (Computer Graphics) 4x4 matrix; b) in the simplified equation form, which is sufficient for calculating a single point.
+
+a) matrix form
+
+$\begin{bmatrix}
+x'\\
+y'\\
+z'
+\end{bmatrix}
+$ = $\begin{bmatrix}
+cos\theta & -sin\theta & 0\\
+sin\theta & cos\theta & 0\\
+0 & 0 & 1
+\end{bmatrix} \cdot 
+$ $\begin{bmatrix}
+\text{FactorX} & 0 & 0\\
+0 & \text{FactorY} & 0\\
+0 & 0 & \text{FactorZ}
+\end{bmatrix} \cdot 
+$ $\begin{bmatrix}
+\text{Scale} & 0 & 0\\
+0 & \text{Scale} & 0\\
+0 & 0 & \text{Scale}
+\end{bmatrix} \cdot 
+$ $\begin{bmatrix}
+x\\
+y\\
+z
+\end{bmatrix}
+$ + $\begin{bmatrix}
+\text{Eastings}\\
+\text{Northings}\\
+\text{OrthogonalHeight}
+\end{bmatrix}
+$
+
+b) equation form
+
+$
+x'=\text{Scale} \cdot \text{FactorX} \cdot cos\theta \cdot x-\text{Scale} \cdot \text{FactorY} \cdot sin\theta \cdot y+\text{Eastings}\\
+y'=\text{Scale} \cdot \text{FactorX} \cdot sin\theta \cdot x+\text{Scale} \cdot \text{FactorY} \cdot cos\theta \cdot y+\text{Northings}\\
+z'=\text{Scale} \cdot \text{FactorZ} \cdot z+\text{OrthogonalHeight}\\
+$
+
 ## Attributes
 
 ### FactorX

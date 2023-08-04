@@ -21,7 +21,7 @@ $$
 
 **Equations**
 
-Below are the relevant equations for _IfcMapConversionScaled_. The equations are given: a) in full expanded matrix form, useful for programmers to understand the exact sequence of operations, and to easily adapt to instead of multiply a standard CG (Computer Graphics) 4x4 matrix; b) in the simplified equation form, which is sufficient for calculating a single point.
+Below are the relevant equations for _IfcMapConversionScaled_. The equations are given: a) in transformation matrix form, useful for programmers to understand the exact sequence of operations and b) in a simplified equation form, which is sufficient for calculating a single point.
 
 a) matrix form
 

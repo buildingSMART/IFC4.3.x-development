@@ -11,7 +11,7 @@
   <PropertyDefs>
     <PropertyDef ifdguid="108b47e283b7482aae7240f327123803">
       <Name>NameFormat</Name>
-      <Definition>Specifies a reference to or description of the formatting or encoding of the Name attribute of the _IfcReferent_ occurence.</Definition>
+      <Definition>Specifies a reference to or description of the formatting or encoding of the Name attribute of the _IfcReferent_ occurrence.</Definition>
       <PropertyType>
         <TypePropertySingleValue>
           <DataType type="IfcLabel" />

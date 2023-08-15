@@ -13,7 +13,7 @@ There are two main representations for door occurrences:
 
 In addition, an _IfcDoor_ may commonly include a 'FootPrint' representation defining the 2D shape of the door and its swing.
 
-The parameters of a door are defined by both the _IfcDoor_ occurence and its _IfcDoorType_. The _IfcDoor_ specifies:
+The parameters of a door are defined by both the _IfcDoor_ occurrence and its _IfcDoorType_. The _IfcDoor_ specifies:
 
  * the door width and height
  * the door opening direction (by the positive y-axis of the _ObjectPlacement_)

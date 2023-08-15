@@ -505,7 +505,7 @@ def process_graphviz(current_entity, md):
 
 
 def create_entity_definition(e, bindings, ports):
-    # unique name (postfix for multiple occurences, can have template bindings)
+    # unique name (postfix for multiple occurrences, can have template bindings)
     EE = e
 
     # schema name, updated when traversing supertypes

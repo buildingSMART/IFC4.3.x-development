@@ -5,10 +5,10 @@ This enumeration is used to identify **non-fixed** or **mobile** transport eleme
 ## Items
 
 ### VEHICLE
-a generalisation of a vehicle that interacts with a facility (e.g. as a user/customer) or as a specified operational asset within the facility.
+A generalisation of a vehicle that interacts with a facility (e.g. as a user/customer) or as a specified operational asset within the facility.
 
 ### VEHICLETRACKED
-A specialisation of a vehicle that operates on land tracked (Caterpillar) vehicle.
+A specialisation of a vehicle that operates on land tracked (Caterpillar).
 
 ### ROLLINGSTOCK
 Refers to railway vehicles, including both powered and unpowered vehicles, for example locomotives, railroad cars, coaches, private railroad cars and wagons.
@@ -26,7 +26,7 @@ A mobile transport element that represents a discrete unit of cargo managed by a
 A specialisation of a vehicle that operates on water as a marine vessel.
 
 ### USERDEFINED
-User-defined type
+User-defined type.
 
 ### NOTDEFINED
 Undefined type.

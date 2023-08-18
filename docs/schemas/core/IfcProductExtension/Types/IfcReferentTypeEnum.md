@@ -18,7 +18,7 @@ The reference marker is a notation referent, typically located in the right of w
 
 >NOTE definition from ISO 19148:2021
 
->NOTE The physical manifestation of the IfcReferent.REFERENCEMARKER can be an IfcSign.MARKER (e.g., a bolt fixed on a post)
+>NOTE The physical manifestation of the _IfcReferent.REFERENCEMARKER_ can be an _IfcSign.MARKER_ (e.g., a bolt fixed on a post)
 
 ### LANDMARK
 The referent is the location of a physical landmark visible in the field.
@@ -36,7 +36,7 @@ The referent is the location of an intersection specified by the referent name. 
 >NOTE definition from ISO 19148:2021
 
 ### POSITION
-Used to fully describe a linearly referenced location given by the linear element being measured (the _IfcAlignment_ into which the _IfcReferent_ is nested), the method of measurement (_Pset_LinearReferencingMethod_) and a measure value specified with a distance expression (_Pset_DistanceExpression_). If a linear referencing method is specified for the position, it overrides any linear referencing method specified for the alignment.”
+Used to fully describe a linearly referenced location given by the linear element being measured (the _IfcAlignment_ into which the _IfcReferent_ is nested), the method of measurement (_Pset_LinearReferencingMethod_) and a measure value specified with a distance expression (_Pset_DistanceExpression_). If a linear referencing method is specified for the position, it overrides any linear referencing method specified for the alignment.
 
 ### USERDEFINED
 User defined.

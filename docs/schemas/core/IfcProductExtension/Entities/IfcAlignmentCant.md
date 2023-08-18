@@ -7,7 +7,7 @@ An _IfcAlignmentCant_ is a lateral inclination profile defined along the horizon
 
 ![Why cant is applied](../../../../figures/ifcalignmentcant_wojtczak_2018.png "Figure 1 &mdash; Cant - compensation for lateral acceleration.")
 
-> NOTE figure was first published in (Basics of) Railway Curve Kinematics Presentation, (Wojtczak 2018)
+> NOTE Figure 1 was first published in _(Basics of) Railway Curve Kinematics Presentation_, (Wojtczak 2018)
 
 The diagram in the figure above shows the principle of compensating part of the lateral acceleration by elevating the outer rail relative to the inner rail of a track.
 
@@ -17,7 +17,7 @@ Almost always the following principles for the placement of horizontal segments 
 * Horizontal circular arc: constant applied cant
 * Horizontal transition bend: variation of applied cant according to a defined formula
 
-In specific difficult topographic environments like mountain lines the extension of a cant transition may differ from the horizontal transition. So far this has only been found for clothoids and is either a so called shortened ramp (can transition is shorter than the corresponding horizontal curvature transition) or a so called “scissor” ramp (overlapping variations of cant on both rails with opposite direction).
+In specific difficult topographic environments like mountain lines the extension of a cant transition may differ from the horizontal transition. So far this has only been found for clothoids and is either a so called shortened ramp (cant transition is shorter than the corresponding horizontal curvature transition) or a so called “scissor” ramp (overlapping variations of cant on both rails with opposite direction).
 
 Application of high-performance horizontal transition bends is always combined with a cant transition with identical start and end location.
 

@@ -74,11 +74,13 @@ Trackwork ensuring the support and guidance of a vehicle along a route. It consi
 
 ### TURNOUTPANEL
 Trackwork ensuring the support and guidance of a vehicle along any given route among various diverging or intersecting tracks.
-Note: definition from NF EN 13232-1-2004.
+
+>NOTE definition from EN 13232-1-2004.
 
 ### DILATATIONPANEL
 Device which permits longitudinal relative rail movement of two adjacent rails, while maintaining correct guidance and support.
-Note: definition from NF EN 13232-1-2004.
+
+>NOTE definition from EN 13232-1-2004.
 
 ### RAIL_MECHANICAL_EQUIPMENT_ASSEMBLY
 A complex assembly made up of several components like blocking device, speed regulator, bias loaded inspector, track scale or controllable retarder.
@@ -92,8 +94,9 @@ An obstacle (with oil catchment basin) installed typically in a bus lane to prev
 ### TRAFFIC_CALMING_DEVICE
 A structure on the carriageway to control the speed of vehicles.
 
-NOTE Definition from ISO 6707-1: Encouragement of restrained and considerate behaviour by means such as road humps and reductions in width of the travelled way (US:traffic restraint, UK:speed bump).
-NOTE Definition from PIARC: Local carriageway layout (staggered section, choker) or physical device (central island, round- or flat-top road hump, speed bump, rumble strips, etc.) to control the speed of road vehicles.
+>NOTE Definition from ISO 6707-1: Encouragement of restrained and considerate behaviour by means such as road humps and reductions in width of the travelled way (US:traffic restraint, UK:speed bump).
+
+>NOTE Definition from PIARC: Local carriageway layout (staggered section, choker) or physical device (central island, round- or flat-top road hump, speed bump, rumble strips, etc.) to control the speed of road vehicles.
 
 ### USERDEFINED
 User-defined element assembly.

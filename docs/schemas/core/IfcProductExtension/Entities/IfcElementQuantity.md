@@ -27,7 +27,7 @@ The following general agreements apply for each base quantity set
 
 * _IfcElementQuantity.Name_ = <name of the qto definition template>
 * _IfcElementQuantity.MethodOfMeasurement_ = 'BaseQuantities'
-* _IfcElementQuantity.Quantities_ = SET of subtypes of _IfcPhysicalSimpleQuantity_ with values for the _Name_ attribute as published as part of this specifciation.
+* _IfcElementQuantity.Quantities_ = SET of subtypes of _IfcPhysicalSimpleQuantity_ with values for the _Name_ attribute as published as part of this specification.
 
 > HISTORY  New entity in IFC2x.
 
@@ -40,7 +40,7 @@ The following general agreements apply for each base quantity set
 Name of the method of measurement used to calculate the element quantity. The method of measurement attribute has to be made recognizable by further agreements.
 
 { .change-ifc2x2}
-> IFC2x2 Addendum 1 change: The attribute has been changed to be optional
+> IFC2x2-Addendum-1 change: The attribute has been changed to be optional
 
 ### Quantities
 The individual quantities for the element, can be a set of length, area, volume, weight or count based quantities.

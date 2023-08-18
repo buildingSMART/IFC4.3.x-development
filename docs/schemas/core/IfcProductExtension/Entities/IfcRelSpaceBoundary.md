@@ -2,10 +2,10 @@
 
 The space boundary defines the physical or virtual delimiter of a space by the relationship _IfcRelSpaceBoundary_ to the surrounding elements.
 
-* In the case of a physical space boundary, the placement and shape of the boundary may be given, and the building element, providing the boundary, is referenced,
+* In the case of a physical space boundary, the placement and shape of the boundary may be given, and the building element, providing the boundary is referenced,
 * In the case of a virtual space boundary, the placement and shape of the boundary may be given, and a virtual element is referenced.
 
-The _IfcRelSpaceBoundary_ is defined as an objectified relationship that handles the element to space relationship by objectifying the relationship between an element and the space it bounds. It is given as a one-to-one relationship, but allows each element (including virtual elements and openings) to define many such relationship and each space to be defined by many such relationships.
+The _IfcRelSpaceBoundary_ is defined as an objectified relationship that handles the element to space relationship by objectifying the relationship between an element and the space it bounds. It is given as a one-to-one relationship, but allows each element (including virtual elements and openings) to define many such relationships and each space to be defined by many such relationships.
 
 Space boundaries are always defined as seen from the space. In general two basic types of space boundaries are distinguished:
 
@@ -16,8 +16,8 @@ Space boundaries are always defined as seen from the space. In general two basic
 
 The exact definition of how space boundaries are broken down depends on the view definition, more detailed conventions on how space boundaries are decomposed can only be given at the domain or application type level.
 
- * In an architectural or FM related view, a space boundary is defined totally from inside the space. This is a 1<sup>st</sup> level space boundary.
- * In a thermal view, the decomposition of the space boundary depends on the material of the providing building element and the adjacent spaces behind. This is a 2<sup>nd</sup> level space boundary.
+* In an architectural or FM related view, a space boundary is defined totally from inside the space. This is a 1<sup>st</sup> level space boundary.
+* In a thermal view, the decomposition of the space boundary depends on the material of the providing building element and the adjacent spaces behind. This is a 2<sup>nd</sup> level space boundary.
 
 ![1st level](../../../../figures/ifcrelspaceboundary_1stlevel.png)
 Figure 1 &mdash; Space boundary at first level
@@ -31,20 +31,20 @@ Figure 3 &mdash; Space boundary at second level type A
 ![2nd level type b](../../../../figures/ifcrelspaceboundary_2ndlevel_typeb.png)
 Figure 4 &mdash; Space boundary at second level type B
 
-The differences between the 1<sup>st</sup> and 2<sup>nd</sup> level space boundaries is identified by:
+The differences between the 1<sup>st</sup> and 2<sup>nd</sup> level space boundaries are identified by:
 
-* **1<sup>st</sup> level:**   SELF\IfcRoot.Name = "1stLevel"   SELF\IfcRootDescription = NIL
-* **2<sup>nd</sup> level:**   SELF\IfcRoot.Name = "2ndLevel"   SELF\IfcRootDescription = "2a", or "2b"
+* **1<sup>st</sup> level:**   _IfcRoot.Name_ = "1stLevel"   _IfcRoot.Description_ = NIL
+* **2<sup>nd</sup> level:**   _IfcRoot.Name_ = "2ndLevel"   _IfcRoot.Description_ = "2a", or "2b"
 
 Differentiation between physical and virtual space boundary is illustrated in Figure 5 and Figure 6.
 
-As shown in Figure 5, if the _IfcRelSpaceBoundary_ is used to express a virtual boundary, the attribute _PhysicalOrVirtualBoundary_ has to be set to VIRTUAL. The attribute _RelatedBuildingElement_ shall point to an instance of _IfcVirtualElement_. If the correct location is of interest, the attribute _ConnectionGeometry_ is required.
+As shown in Figure 5, if the _IfcRelSpaceBoundary_ is used to express a virtual boundary, the attribute _PhysicalOrVirtualBoundary_ has to be set to _VIRTUAL_. The attribute _RelatedBuildingElement_ shall point to an instance of _IfcVirtualElement_. If the correct location is of interest, the attribute _ConnectionGeometry_ is required.
 
 > NOTE  The connection geometry, either by a 2D curve or a 3D surface, is used to describe the portion of the "virtual wall" that separates the two spaces. All instances of _IfcRelSpaceBoundary_ given at the adjacent spaces share the same instance of _IfcVirtualElement_. Each instance of _IfcRelSpaceBoundary_ provides in addition the _ConnectionGeometry_ given within the local placement of each space.
 
 ![IfcRelSpaceBoundary_virtual (35K)](../../../../figures/ifcrelspaceboundary_virtual.png "Figure 5 &mdash; Space boundary of virtual element")
 
-As shown in Figure 6, if the _IfcRelSpaceBoundary_ is used to express a physical boundary between two spaces, the attribute _PhysicalOrVirtualBoundary_ has to be set to PHYSICAL. The attribute _RelatedBuildingElement_ has to be given and points to the element providing the space boundary. The attribute _ConnectionGeometry_ may be inserted, in this case it describes the physical space boundary geometically, or it may be omitted, in that case it describes a physical space boundary logically.
+As shown in Figure 6, if the _IfcRelSpaceBoundary_ is used to express a physical boundary between two spaces, the attribute _PhysicalOrVirtualBoundary_ has to be set to _PHYSICAL_. The attribute _RelatedBuildingElement_ has to be given and points to the element providing the space boundary. The attribute _ConnectionGeometry_ may be inserted, in this case it describes the physical space boundary geometrically, or it may be omitted; in that case it describes a physical space boundary logically.
 
 ![IfcRelSpaceBoundary_physical (35K)](../../../../figures/ifcrelspaceboundary_physical.png "Figure 6 &mdash; Space boundary of physical element")
 
@@ -92,7 +92,7 @@ The following constraints apply to the 2D curve representation:
 > HISTORY  New entity in IFC1.5, the entity has been modified in IFC2x.
 
 { .change-ifc2x}
-> IFC2x CHANGE The data type of the attribute_RelatedBuildingElement_ has been changed from _IfcBuildingElement_ to its supertype _IfcElement_. The data type of the attribute _ConnectionGeometry_ has been changed from _IfcConnectionSurfaceGeometry_ to its supertype _IfcConnectionGeometry_.
+> IFC2x CHANGE The data type of the attribute _RelatedBuildingElement_ has been changed from _IfcBuildingElement_ to its supertype _IfcElement_. The data type of the attribute _ConnectionGeometry_ has been changed from _IfcConnectionSurfaceGeometry_ to its supertype _IfcConnectionGeometry_.
 
 { .change-ifc2x4}
 > IFC4 CHANGE The attribute _RelatedBuildingElement_ has been made mandatory. For virtual boundaries the reference to _IfcVirtualElement_ is now mandatory.
@@ -100,10 +100,10 @@ The following constraints apply to the 2D curve representation:
 ## Attributes
 
 ### RelatingSpace
-Reference to one spaces that is delimited by this boundary.
+Reference to one space that is delimited by this boundary.
 
 ### RelatedBuildingElement
-Reference to ~~Building~~ Element, that defines the Space Boundaries.
+Reference to Element, that defines the Space Boundaries.
 { .change-ifc2x}
 > IFC2x CHANGE  The data type has been changed from _IfcBuildingElement_ to _IfcElement_ with upward compatibility for file based exchange.
 
@@ -111,15 +111,15 @@ Reference to ~~Building~~ Element, that defines the Space Boundaries.
 > IFC4 CHANGE  The attribute has been changed to be mandatory.
 
 ### ConnectionGeometry
-Physical representation of the space boundary. Provided as a **curve or** surface given within the LCS of the space.
+Physical representation of the space boundary. Provided as a curve or surface given within the LCS of the space.
 { .change-ifc2x}
 > IFC2x CHANGE  The data type has been changed from _IfcConnectionSurfaceGeometry_ to _IfcConnectionGeometry_ with upward compatibility for file based exchange.
 
 ### PhysicalOrVirtualBoundary
-Defines, whether the Space Boundary is physical (Physical) or virtual (Virtual).
+Defines whether the Space Boundary is _PHYISICAL_ or _VIRTUAL_.
 
 ### InternalOrExternalBoundary
-Defines, whether the Space Boundary is internal (Internal), or external, i.e. adjacent to open space (that can be an partially enclosed space, such as terrace (External).
+Defines whether the Space Boundary is INTERNAL, or EXTERNAL, i.e. adjacent to open space that can be a partially enclosed space, such as terrace.
 
 ## Formal Propositions
 

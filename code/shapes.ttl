@@ -1156,6 +1156,135 @@ ex:hasPredefinedType a sh:SPARQLConstraint ;
     """
     .
 
+ex:SubtypeOfIfcObjectWithoutObjectTypeWithPredefinedTypeAttribute a sh:SPARQLTarget;
+    sh:select """
+        PREFIX ex:  <http://example.org/ifc43Shapes/>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+        PREFIX xmi: <http://schema.omg.org/spec/XMI/2.1/>
+        PREFIX custom: <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/>
+        
+        SELECT ?this
+        WHERE {
+            ?this rdfs:subClassOf*/ex:name "IfcObject" .
+
+            ?attr a ex:ownedAttribute .
+            ?attr ex:containedIn ?this .
+            ?attr ex:name "PredefinedType" .
+
+            FILTER NOT EXISTS {
+                ?assoc2 xmi:type "uml:AssociationClass" .
+                ?assoc2 ex:containedIn ?package2 .
+                ?package2 ex:name "ObjectTyping" .
+                
+                ?end22 a ex:memberEnd .
+                ?end22 ex:containedIn ?assoc2 .
+                ?end22 xmi:idref ?prop22 .
+                ?type22 ex:containedIn ?prop22 .
+                ?type22 xmi:idref ?this .
+            }
+        }
+    """
+    .
+
+
+ex:SubtypeOfIfcObjectWithObjectTypeWithPredefinedTypeAttribute a sh:SPARQLTarget;
+    sh:select """
+        PREFIX ex:  <http://example.org/ifc43Shapes/>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+        PREFIX xmi: <http://schema.omg.org/spec/XMI/2.1/>
+        PREFIX custom: <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/>
+        
+        SELECT ?this
+        WHERE {
+            ?this rdfs:subClassOf*/ex:name "IfcObject" .
+
+            ?attr a ex:ownedAttribute .
+            ?attr ex:containedIn ?this .
+            ?attr ex:name "PredefinedType" .
+
+                ?assoc2 xmi:type "uml:AssociationClass" .
+                ?assoc2 ex:containedIn ?package2 .
+                ?package2 ex:name "ObjectTyping" .
+                
+                ?end22 a ex:memberEnd .
+                ?end22 ex:containedIn ?assoc2 .
+                ?end22 xmi:idref ?prop22 .
+                ?type22 ex:containedIn ?prop22 .
+                ?type22 xmi:idref ?this .
+        }
+    """
+    .
+
+ex:SubtypeOfIfcTypeObjectWithPredefinedTypeAttribute a sh:SPARQLConstraint;
+    sh:select """
+        PREFIX ex:  <http://example.org/ifc43Shapes/>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+        PREFIX xmi: <http://schema.omg.org/spec/XMI/2.1/>
+        PREFIX custom: <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/>
+        
+        SELECT ?this
+        WHERE {
+            ?this rdfs:subClassOf*/ex:name "IfcTypeObject" .
+
+            ?attr a ex:ownedAttribute .
+            ?attr ex:containedIn ?this .
+            ?attr ex:name "PredefinedType" .
+        }
+    """
+    .
+
+ex:hasMandatoryPredefinedType a sh:SPARQLConstraint ;
+    sh:message "Entity '{?entityName}' has no mandatory PredefinedType attribute" ;
+    sh:select """
+        PREFIX ex:  <http://example.org/ifc43Shapes/>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX xmi: <http://schema.omg.org/spec/XMI/2.1/>
+        PREFIX custom: <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/>
+        
+        SELECT ?this ?entityName
+        WHERE {
+            ?this ex:name ?entityName .
+            filter not exists {
+                ?attr a ex:ownedAttribute .
+                ?attr ex:name "PredefinedType" .
+                ?attr ex:containedIn ?this .
+
+                ?card ex:containedIn ?attr .
+                ?card a ex:lowerValue .
+                ?card ex:value "1" ;
+            }
+        }
+    """
+    .
+
+
+ex:hasOptionalPredefinedType a sh:SPARQLConstraint ;
+    sh:message "Entity '{?entityName}' has no optional PredefinedType attribute" ;
+    sh:select """
+        PREFIX ex:  <http://example.org/ifc43Shapes/>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX xmi: <http://schema.omg.org/spec/XMI/2.1/>
+        PREFIX custom: <http://www.sparxsystems.com/profiles/thecustomprofile/1.0/>
+        
+        SELECT ?this ?entityName
+        WHERE {
+            ?this ex:name ?entityName .
+            filter not exists {
+                ?attr a ex:ownedAttribute .
+                ?attr ex:name "PredefinedType" .
+                ?attr ex:containedIn ?this .
+
+                ?card ex:containedIn ?attr .
+                ?card a ex:lowerValue .
+                ?card ex:value "0" ;
+            }
+        }
+    """
+    .
+
 ex:Fail a sh:SPARQLConstraint ;
     sh:message "Generic failing constraint" ;
     sh:select """
@@ -1271,4 +1400,19 @@ ex:LeafEntityHasPredefinedType a sh:NodeShape ;
 ex:LeafEntityIsNotAbstract a sh:NodeShape ;
     sh:target ex:LeafEntity;
     sh:sparql ex:isNotAbstract
+    .
+
+ex:OccurenceWithTypePredefinedTypeOptional a sh:NodeShape ;
+    sh:target ex:SubtypeOfIfcObjectWithObjectTypeWithPredefinedTypeAttribute;
+    sh:sparql ex:hasOptionalPredefinedType
+    .
+
+ex:OccurenceWithoutTypePredefinedTypeMandatory a sh:NodeShape ;
+    sh:target ex:SubtypeOfIfcObjectWithoutObjectTypeWithPredefinedTypeAttribute;
+    sh:sparql ex:hasMandatoryPredefinedType
+    .
+
+ex:TypeObjectPredefinedTypeMandatory a sh:NodeShape ;
+    sh:target ex:SubtypeOfIfcTypeObjectWithPredefinedTypeAttribute;
+    sh:sparql ex:hasMandatoryPredefinedType
     .

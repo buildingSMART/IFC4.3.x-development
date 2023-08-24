@@ -11,7 +11,9 @@ For set of survey elements where the order of items is not relevant (e.g., point
 concept {
     IfcAnnotation:IsNestedBy -> IfcRelNests_0:RelatingObject
     IfcRelNests_0:RelatedObjects -> IfcAnnotation_1
-    IfcAnnotation:PredefinedType -> SURVEY_
-    IfcAnnotation_1:PredefinedType -> SURVEY
+    IfcAnnotation:PredefinedType -> constraint_0
+    constraint_0[label="=.SURVEY."]
+    IfcAnnotation_1:PredefinedType -> constraint_1
+    constraint_1[label="=.SURVEY."]
 }
 ```

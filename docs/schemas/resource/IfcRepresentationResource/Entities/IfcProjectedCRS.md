@@ -2,11 +2,15 @@
 
 _IfcProjectedCRS_ is a coordinate reference system (CRS) of the map to which the map translation of the local engineering coordinate system of the construction or facility engineering project relates. The projected coordinate reference system is assumed to be a 2D or 3D right-handed Cartesian coordinate system, the optional _MapUnit_ attribute can be used to determine the length unit used by the map.
 
-Despite what its name suggests, the _IfcProjectedCRS_ shall be used to represent a **compound coordinate reference system**, meaning a combination of multiple CRS from which a _GeodeticDatum_ and a _VerticalDatum_ can always be unambiguously identified.
+Despite what its name suggests:
 
-> EXAMPLE  The code EPSG:9286 (ETRS89 + NAP height) is the combination of a geographic CRS (ETRS89) and a vertical CRS (NAP height), with their relative datums.
+* If the referenced _IfcGeometricRepresentationContext_ is 3D, then _IfcProjectedCRS_ shall be a **compound coordinate reference system**, meaning a combination of multiple CRS from which a _GeodeticDatum_ and a _VerticalDatum_ can always be unambiguously identified.
 
-> EXAMPLE  The code EPSG:9306 (HS2 Survey Grid + HS2-VRF height) is the combination of a projected CRS (HS2 Survey Grid), and a vertical CRS (HS2-VRF height), with their relative datums.
+* If the referenced _IfcGeometricRepresentationContext_ is 2D, then _IfcProjectedCRS_ can be either a **projected coordinate reference system** or a **compound coordinate reference system**.
+
+> EXAMPLE  The code EPSG:9286 (ETRS89 + NAP height) is the combination of a geographic CRS (ETRS89) and a vertical CRS (NAP height), with their respective datums.
+
+> EXAMPLE  The code EPSG:9306 (HS2 Survey Grid + HS2-VRF height) is the combination of a projected CRS (HS2 Survey Grid), and a vertical CRS (HS2-VRF height), with their respective datums.
 
 The unambiguous identifier by which the coordinate reference system is known, is stored in the inherited _Name_ attribute. Well defined identifiers include the map projection, the map zone information, and all required datums. In these cases the attributes _VerticalDatum_, _MapProjection_, _MapZone_ as well as the inherited attribute _GeodeticDatum_ can be omitted.
 

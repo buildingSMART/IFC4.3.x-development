@@ -1,6 +1,6 @@
 # IfcRigidOperation
 
-A rigid operation specifies an offset in the coordinate reference system. It does not specify any conversion or distortion. It is a coordinate operation that tells that the whole virtual model is **translated** in the same way in the (x,y,z) plane.
+A rigid operation specifies an offset in the coordinate reference system. It does not specify any conversion or distortion. It is a coordinate operation that tells that the whole virtual model is **translated** in the same way.
 
 > EXAMPLE  If data is in truncated map coordinates (i.e., the map coordinates have the leading digits removed in x and y), then _IfcRigidOperation_ simply translates the data in x and y to replace the ignored leading digits. This is also known as subtraction.
 

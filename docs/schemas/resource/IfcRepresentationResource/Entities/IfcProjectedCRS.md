@@ -38,7 +38,7 @@ Name by which the map projection is identified.
 > EXAMPLE  map projections include:
 >
 > * UTM
-> * Gaus-Krueger
+> * Gauss-Krueger
 
 ### MapZone
 Name by which the map zone, relating to the _MapProjection_, is identified.
@@ -46,7 +46,7 @@ Name by which the map zone, relating to the _MapProjection_, is identified.
 > EXAMPLE  map zones includes:
 >
 > * for UTM, the zone number, like 32 for UTM32
-> * for Gaus-Krueger, the zones of longitudinal width, like 3'
+> * for Gauss-Krueger, the zone number, like 3 for GK3
 
 ### MapUnit
 

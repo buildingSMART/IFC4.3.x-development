@@ -3,28 +3,28 @@
 ## Items
 
 ### ASSEMBLY
-
+Tolerance based on assembly
 
 ### DEFLECTION
-
+Tolerance based on deflection
 
 ### EXPANSION
-
+Tolerance based on assembly
 
 ### SETTLEMENT
-
+Tolerance based on settlement
 
 ### APPEARANCE
-
+Tolerance based on appearance
 
 ### STRUCTURAL
-
+Tolerance based on structural
 
 ### FUNCTIONALITY
-
+Tolerance based on functionality
 
 ### OTHER
-required category not on scale
+Required category not on scale
 
 ### NOTKNOWN
 Value is unkown

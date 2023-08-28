@@ -9,7 +9,7 @@ Tolerance based on assembly
 Tolerance based on deflection
 
 ### EXPANSION
-Tolerance based on assembly
+Tolerance based on expansion
 
 ### SETTLEMENT
 Tolerance based on settlement

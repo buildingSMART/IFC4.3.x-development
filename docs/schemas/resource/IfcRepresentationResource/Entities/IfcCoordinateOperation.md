@@ -7,7 +7,7 @@ By convention, a coordinate operation is given between a **source CRS**, being t
 > EXAMPLE  A common coordinate operation is the one between the local engineering coordinate system of a construction project and any map or other coordinate reference system.
 
 An _IfcCoordinateOperation_ allows to connect:
-- an _IfcGeometricRepresentationContext_ &ndash; the base reference system of a virtual model
+- an _IfcGeometricRepresentationContext_ &ndash; a reference system of a virtual model
 - to an _IfcCoordinateReferenceSystem_ &ndash; the coordinate system which is related to the real world by datums.
 
 > EXAMPLE  This can is done by setting:
@@ -16,7 +16,7 @@ An _IfcCoordinateOperation_ allows to connect:
 >    -	_IfcProjectedCRS_, for defined easting, northing and orthogonal height
 >    -	_IfcGeographicCRS_, for defined latitude, longitude and ellipsoidal height
 
-> NOTE  In IFC, _IfcProjectedCRS_ shall be used to represent a compound CRS. See _IfcProjectedCRS_ for further details.
+> NOTE  _IfcProjectedCRS_ can be used to represent a projected CRS or a compound CRS, comprising of a projected CRS with a vertical CRS. See _IfcProjectedCRS_ for further details.
 
 { .extDef}
 > NOTE  Definition from OpenGIS Abstract Specification, Topic 2:
@@ -30,7 +30,7 @@ There are three types of _IfcCoordinateOperation_. The one to be used depends on
 
 * _IfcMapConversion_ and _IfcMapConversionScaled_ involve a **transformation**. These coordinate operations convey that the local engineering coordinate system of the virtual model (which is a topocentric CRS) is put in place in the referenced _IfcProjectedCRS_. 
 
-* _IfcRigidOperation_ involves a **translation** in the (x,y,z) plane. This coordinate operation convey that the whole virtual model is translated in the same way in (x,y,z).
+* _IfcRigidOperation_ involves a **translation** in the 3D space. This coordinate operation convey that the whole virtual model is translated in the same way. For example, using lengths to translate along x,y,z; or using angles for a 2D translation (e.g., lambda, phi), plus a change in height.
 
 ![Coordinate operations](../../../../figures/ifccoordinateoperation.png)
 Figure COORDOPS &mdash; Possible coordinate operations between coordinate reference systems

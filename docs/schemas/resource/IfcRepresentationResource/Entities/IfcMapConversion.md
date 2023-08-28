@@ -6,7 +6,7 @@ The map conversion deals with transforming the local engineering coordinate syst
 
 For this transformation, _IfcMapConversion_ data are used for:
 1. a scaling of the three axes (x,y,z), by the same _IfcMapConversion.Scale_
-2. followed by an **anti-clockwise** rotation about the z-axis of $\theta$, where:
+2. followed by an **anti-clockwise** rotation about the z-axis of *&theta;*, where:
 
 $$
 \theta=arctan\left(\frac{IfcMapConversion.XAxisOrdinate}{IfcMapConversion.XAxisAbscissa}\right)

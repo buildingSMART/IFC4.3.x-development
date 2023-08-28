@@ -175,7 +175,7 @@ if __name__ == "__main__":
                     return nm
                 else:
                     enum = xmi_doc.xmi.by_id.get(realizes.get(el.id))
-                    if enum and enum.parent.parent.name == 'IFC4x3_RC4':
+                    if enum and (enum.parent.parent.name or '').lower().startswith('ifc4x'):
                         # enum from schema, types should match
                         if nd == enum:
                             return nm

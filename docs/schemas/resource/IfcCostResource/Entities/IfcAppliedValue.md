@@ -15,6 +15,10 @@ Applied values may be referenced from a document (such as a price list). The rel
 { .change-ifc2x4}
 > IFC4 CHANGE  Entity made non-abstract to support general formula expressions of constraints, data type of date-based attributes changed into _IfcDate_, _ValueType_ and _Condition_ promoted from _IfcCostValue_, _Components_ and _ArithmeticOperator_ attributes added to replace _IfcAppliedValueRelationship_ for more efficient encoding and reference tracking.
 
+## Informal propositions
+
+1. When the *ArithmeticOperator* equals `MODULO``, the list of *Components* shall contain exactly two values, which shall be positive integers.
+
 ## Attributes
 
 ### Name

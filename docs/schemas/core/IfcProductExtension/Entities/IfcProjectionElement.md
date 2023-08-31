@@ -59,14 +59,14 @@ As shown in Figure PROJECTIONREP, the following interpretation of dimension para
 
 Figure PROJECTIONREP &mdash; Projection representation
 
-The general geometric representation of IfcProjectionElement can also be defined using the Brep or Tesselation geometry. The Brep or Tessellation representation allows for the representation of complex element shapes. The following attribute values for the IfcShapeRepresentation holding this geometric representation shall be used:
+The general geometric representation of IfcProjectionElement can also be defined using the Brep or Tessellation geometry. The Brep or Tessellation representation allows for the representation of complex element shapes. The following attribute values for the IfcShapeRepresentation holding this geometric representation shall be used:
 
 * _IfcShapeRepresentation.RepresentationIdentifier_: 'Body'
 * _IfcShapeRepresentation.RepresentationType_: 'Tessellation' or 'Brep'
 
 ### Product Local Placement
 
-The local placement for IfcOpeningRecess is defined in its supertype IfcProduct. It is defined by the IfcLocalPlacement, which defines the local coordinate system that is referenced by all geometric representations.
+The local placement for IfcProjectionElement is defined in its supertype IfcProduct. It is defined by the IfcLocalPlacement, which defines the local coordinate system that is referenced by all geometric representations.
 
 * The PlacementRelTo relationship of IfcLocalPlacement should point to the local placement of the same element, to which the projection adds, i.e. referred to by _ProjectsElement.RelatingBuildingElement_.
 

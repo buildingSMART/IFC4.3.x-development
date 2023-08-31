@@ -129,7 +129,7 @@ Do not use this
  * Use asterisks
  * For unordered lists
 
- - Do not use dashses
+ - Do not use dashes
  - For unordered lists
 
  1. Use numbers for numbered lists
@@ -487,59 +487,11 @@ wget https://cdn.jsdelivr.net/npm/mathjax\@3.2.0/es5/output/svg/fonts/tex.js
 Typically for hosting a production version of this website, you can choose to
 deploy a container running the website using Docker.
 
-### Non-ISO version
-
-```bash
-$ cd code/
-
-# Build a new system image called "ifcdoc"
-$ docker build -t "ifcdoc" .
-
-# Let's see the image we just created
-$ docker images
-REPOSITORY   TAG           IMAGE ID       CREATED          SIZE
-ifcdoc       latest        df699a56028f   12 seconds ago   3GB
-
-# Run the image we created in a new container called "ifcdoc-container", with our local port 8080 mapped to the container's port 80
-$ docker run -p 8080:80 --name "ifcdoc-container" -d "ifcdoc"
-
-# Check running Docker processes to confirm that the container is running
-$ docker ps
-CONTAINER ID   IMAGE    COMMAND                  CREATED          STATUS          PORTS                                   NAMES
-0d4b0775cf29   ifcdoc   "/bin/sh -c 'supervi…"   12 seconds ago   Up 11 seconds   0.0.0.0:8080->80/tcp, :::8080->80/tcp   ifcdoc-container
-```
-
-Now you can visit the containerized deployment in your browser by visiting
-`http://localhost:8080`.
-
-You can stop the Docker container as follows:
-
-```bash
-$ docker stop ifcdoc-container
-
-# Check running processes (-a flag shows all processes) to ensure it has exited
-$ docker ps -a
-CONTAINER ID   IMAGE    COMMAND                  CREATED         STATUS                        PORTS   NAMES
-0d4b0775cf29   ifcdoc   "/bin/sh -c 'supervi…"   3 minutes ago   Exited (137) 32 seconds ago           ifcdoc-container
-```
-
-Then you can start it again:
-
-```bash
-$ docker start ifcdoc-container
-
-# Check running Docker processes to confirm that the container is running
-$ docker ps
-CONTAINER ID   IMAGE    COMMAND                  CREATED         STATUS         PORTS                                   NAMES
-0d4b0775cf29   ifcdoc   "/bin/sh -c 'supervi…"   5 minutes ago   Up 3 seconds   0.0.0.0:8080->80/tcp, :::8080->80/tcp   ifcdoc-container
-```
-
-### ISO version
-
-The ISO version uses docker-compose with nginx for serving HTTPS and HTTP
+The system uses docker-compose with nginx for serving HTTPS and HTTP
 basic auth. It requires running the following steps:
 
 ```
+# in case of ISO mode
 htpasswd -b proxy/auth/.htpasswd $USERNAME $PASSWORD
 
 docker run -it -v $PWD/proxy/cert:/etc/letsencrypt \
@@ -549,3 +501,17 @@ docker run -it -v $PWD/proxy/cert:/etc/letsencrypt \
 
 docker compose up -d --build
 ```
+
+### Faster redeployment
+
+Rebuilding the various schema, pset and changelog artefacts takes a considerable amount of time during which the webserver is only partially available. The overall process of redeployment can be sped up by taking these resources from an existing container:
+
+```
+mkdir -p /tmp/ifc43-resources
+docker exec $(docker ps -q --filter name=app) /bin/sh -c 'tar -cf - /code/*.json' | tar -xvf - -C /tmp/ifc43-resources --strip-components=1
+docker compose down
+docker compose up -d --build --force-recreate
+find -type f /tmp/ifc43-resources | xargs -n1 -I{} docker cp {} $(docker ps -q --filter name=app):/code
+```
+
+Note that this doesn't include all resources and also doesn't populate the search index (but shouldn't interfere with these being created).

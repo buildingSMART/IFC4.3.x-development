@@ -5,15 +5,60 @@
     Annex B Alphabetical listings{% if title %} - {{ title }}{% endif %}
 </h1>
 
-<ol class="referenced-list{% if is_dictionary %} dictionary{% endif %}">
+{% set vars = { 'any_mvd': False, 'mvd_emitted': False } %}
+{% if not is_iso %}
+{% for item in items %}
+{% if item.mvds %}
+{% if vars.update({'any_mvd': True}) %} {% endif %}
+{% endif %}
+{% endfor %}
+{% endif %}
+
+<div class="narrower">
+
+<ol class="ref-list-2 {% if is_dictionary %} dictionary{% endif %} {% if vars.any_mvd %} wider {% endif %}">
     {% for item in items %}
-    <li number="{{ item.number }}">
-        {% if item.url %}
-            <a href="{{ item.url }}">{{ item.name }}</a>
-        {% else %}
-            {{ item.name }}
-        {% endif %}
+    <li>
+        <div class="wrapper">
+            <div class="row">
+                <span style="display: inline-block; width: 80px">
+                    {{ item.number }}
+                </span>
+                {% if item.url %}
+                    <a href="{{ item.url }}">{{ item.name }}</a>
+                {% else %}
+                    {{ item.name }}
+                {% endif %}
+            </div>
+            {% if vars.any_mvd %}
+            <span class="dots"></span>
+            {% endif %}
+            <div class="mvds">
+                {% if item.is_product_or_type %}
+                    <div class='mini mvd' style="width: 175px">
+                        <abbr title="Product or Product Types are included in every standardized schema subset and implementation level">product &#9432;</abbr>
+                    </div>
+                {% else %}
+                {% if vars.update({'mvd_emitted': False}) %} {% endif %}
+                    {% if vars.any_mvd %}
+                        {% for mvd in item.mvds %}
+                            {% if vars.mvd_emitted or mvd.on %}
+                                <div class='mini {% if mvd.on %} mvd {% else %} mvd-spacing {% endif %}'>
+                                    {% if mvd.on %}
+                                    {% if vars.update({'mvd_emitted': True}) %} {% endif %}
+                                    <abbr title="Included in {{mvd.cause | join(', ')}}">{{ mvd.abbr }} &#9432;</abbr>
+                                    {% endif %}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
     </li>
     {% endfor %}
 </ol>
+
+</div>
+
 {% endblock %}

@@ -1,3 +1,3 @@
 # IfcVehicle
 
-A Vehicle.
+Piece of equipment designed to transport people or cargo.

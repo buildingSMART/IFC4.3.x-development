@@ -22,8 +22,7 @@ The _PolygonalBoundary_ defines the 2D polyline which bounds the effectiveness o
 
 > HISTORY  New entity in IFC2x.
 
-{ .spec-head}
-Informal Propositions:
+## Informal Propositions
 
 1. The _IfcPolyline_ or the _IfcCompositeCurve_ providing the _PolygonalBoundary_ shall be closed.
 2. If the _PolygonalBoundary_ is given by an _IfcCompositeCurve_, it shall only have _IfcCompositeCurveSegment_'s of type _IfcPolyline_, or _IfcTrimmedCurve_ (having a _BasisCurve_ of type _IfcLine_, or _IfcCircle_)

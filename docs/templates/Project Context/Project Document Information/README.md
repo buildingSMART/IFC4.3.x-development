@@ -11,7 +11,7 @@ concept {
     IfcContext:LongName -> IfcLabel_3
     IfcRelAssociatesDocument:RelatingDocument -> IfcDocumentInformation
     IfcDocumentInformation:Location -> IfcURIReference
-    IfcDocumentInformation:ElectronicFormat -> IfcDocumentElectronicFormat
+    IfcDocumentInformation:ElectronicFormat -> IfcIdentifier
     IfcDocumentInformation:Identification -> IfcIdentifier
     IfcDocumentInformation:Name -> IfcLabel_0
     IfcDocumentInformation:Description -> IfcText

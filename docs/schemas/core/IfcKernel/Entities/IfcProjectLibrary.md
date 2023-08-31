@@ -5,7 +5,7 @@ An _IfcProjectLibrary_ collects all library elements that are included within a 
 Examples for project libraries include:
 
 * type libraries (also called style or family libraries): a collection of subtypes of _IfcTypeObject_
-* property definition libraries: a collections of _IfcPropertySetTemplate_ or _IfcPropertyTemplates_
+* property definition libraries: a collection of _IfcPropertySetTemplate_ or _IfcPropertyTemplate_ entities
 
 The inherited attributes _RepresentationContext_ and _UnitsInContext_ have the following meaning:
 

@@ -1,6 +1,6 @@
 # IfcBuildingElementProxy
 
-The _IfcBuildingElementProxy_ is a proxy definition that provides the same functionality as subtypes of _IfcBuildingElement_, but without having a predefined meaning of the special type of building element it represents.
+The _IfcBuildingElementProxy_ is a proxy definition that provides the same functionality as subtypes of _IfcBuiltElement_, but without having a predefined meaning of the special type of building element it represents.
 
 _IfcBuildingElementProxy_ may be used:
 
@@ -23,7 +23,7 @@ Predefined generic type for a building element proxy that is specified in an enu
 ## Formal Propositions
 
 ### HasObjectName
-A Name attribute should be asserted for a building element proxy.
+A _Name_ attribute should be asserted for a building element proxy.
 
 ### CorrectPredefinedType
 Either the _PredefinedType_ attribute is unset (e.g. because an _IfcBuildingElementProxyType_ is associated), or the inherited attribute _ObjectType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.
@@ -35,9 +35,9 @@ Either there is no building element proxy type object associated, i.e. the _IsTy
 
 ### Object Typing
 
-> NOTE  The IfcBuildingElementProxyType can be used to share common information among many occurrences of the same proxy without establishing a particular semantic meaning of the type.
+> NOTE  The _IfcBuildingElementProxyType_ can be used to share common information among many occurrences of the same proxy without establishing a particular semantic meaning of the type.
 
-If no IfcBuildingElementProxyType is attached (i.e. if only occurrence information is available) the PredefinedType should be provided. If set to .USERDEFINED. a user defined value has to be provided by the ObjectType attribute.
+If no _IfcBuildingElementProxyType_ is attached (i.e. if only occurrence information is available) the _PredefinedType_ should be provided. If set to USERDEFINED a user defined value has to be provided by the _ObjectType_ attribute.
 
 ### Property Sets for Objects
 
@@ -45,7 +45,7 @@ If no IfcBuildingElementProxyType is attached (i.e. if only occurrence informati
 
 ### Spatial Containment
 
-The IfcBuildingElementProxy, as any subtype of IfcBuildingElement, may participate alternatively in one of the two different containment relationships:
+The _IfcBuildingElementProxy_, as any subtype of _IfcBuiltElement_, may participate alternatively in one of the two different containment relationships:
 
 * the _Spatial Containment_ (defined here), or
 * the _Element Composition_.

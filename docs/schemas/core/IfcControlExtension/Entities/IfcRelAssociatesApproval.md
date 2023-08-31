@@ -7,4 +7,4 @@ The entity _IfcRelAssociatesApproval_ is used to apply approval information defi
 ## Attributes
 
 ### RelatingApproval
-Reference to approval that is being applied using this relationship.
+Reference to an approval that is being applied using this relationship.

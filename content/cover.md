@@ -30,5 +30,5 @@ Parts of the IFC documentation contain material based on other international sta
 
 ### Correspondence Notice
 
-Prior written consent is required if you want to use IFC and/or the documentation in situations that are not covered by the CC BY-NC-ND 4.0 license.
+Prior written consent is required if you want to use IFC and/or the documentation in situations that are not covered by the CC BY-ND 4.0 license.
 Written requests should be addressed to: buildingSMART International Limited, Kings House, Station Road, Kings Langley, Hertfordshire, WD4 8LZ, UK. Email [contact@buildingsmart.org](mailto:contact@buildingsmart.org).

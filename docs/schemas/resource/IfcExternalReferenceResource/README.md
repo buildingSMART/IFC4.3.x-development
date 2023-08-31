@@ -35,8 +35,6 @@ Information about a document can be captured in the _IfcDocumentInformation_ cla
 * creation and revision times
 * duration of document validity using 'valid from' and 'valid to' attributes.
 
-For a document that is stored digitally, the _IfcDocumentElectronicFormat_ class enables information about the format to be recorded. This includes the file extension used and information about the content using the MIME standard.
-
 Documents frequently hold references to information held in other documents, for example, documents referencing standards that are also documents. A significant tree structure of document information referencing could be built up in this way. Such relationships between document information can be captured through the _IfcDocumentInformationRelationship_ class which manages both relating and related document information and inversely captures the document information carrying the pointer and the document information to which pointers refer.
 
 ### 8.6.1.3 Libraries

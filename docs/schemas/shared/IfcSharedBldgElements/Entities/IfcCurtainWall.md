@@ -1,6 +1,6 @@
 # IfcCurtainWall
 
-A curtain wall is a wall of a building which is an assembly of components, hung from the edge of the floor/roof structure rather than bearing on a floor. Curtain wall is represented as a building element assembly and implemented as a subtype of _IfcBuildingElement_ that uses an _IfcRelAggregates_ relationship. A curtain wall is often external, but using Pset_CurtainWallCommon.IsExternal can be used to define interior curtain walls.
+A curtain wall is a wall of a building which is an assembly of components, hung from the edge of the floor/roof structure rather than bearing on a floor. Curtain wall is represented as a building element assembly and implemented as a subtype of _IfcBuiltElement_ that uses an _IfcRelAggregates_ relationship. A curtain wall is often external, but using _Pset_CurtainWallCommon.IsExternal_ can be used to define interior curtain walls.
 
 { .extDef}
 > NOTE  Definition according to ISO 6707-1: non load bearing wall positioned on the outside of a building and enclosing it.
@@ -15,7 +15,7 @@ The geometric representation of _IfcCurtainWall_ is defined using the following 
     * This is an optional representation for curtain walls.
 * Body: A surface model or boundary representation model representation defining the 3D shape of the curtain wall.
     * If the _IfcCurtainWall_ has components (referenced by _SELF\IfcObject.IsDecomposedBy_) then no independent shape representation with _RepresentationType_ = 'Body' shall be defined. The body of _IfcCurtainWall_ is then geometrically represented by the shape representation of its components. The components are accessed via _SELF\IfcObject.IsDecomposedBy[1].RelatedObjects_.
-    * If the _IfcCurtainWall_ has no components defined (empty set of _SELF\IfcObject.IsDecomposedBy_) then the _IfcCurtainWall_ may be represented by an shape representation with the _RepresentationIdentifier_ ='Body'.
+    * If the _IfcCurtainWall_ has no components defined (empty set of _SELF\IfcObject.IsDecomposedBy_) then the _IfcCurtainWall_ may be represented by a shape representation with the _RepresentationIdentifier_ ='Body'.
 
 ## Attributes
 
@@ -40,7 +40,7 @@ Either there is no curtain wall type object associated, i.e. the _IsTypedBy_ inv
 
 The following additional constraints apply to the 'Axis' representation:
 
-* **Geometry** : IfcPolyline having two Points, or IfcTrimmedCurve with BasisCurve of type IfcLine or IfcCircle.
+* **Geometry** : _IfcPolyline_ having two Points, or _IfcTrimmedCurve_ with _BasisCurve_ of type _IfcLine_ or _IfcCircle_.
 
 ### Object Typing
 
@@ -50,7 +50,7 @@ The following additional constraints apply to the 'Axis' representation:
 
 The following restriction may be imposed by view definitions or implementer agreements:
 
-* If the IfcCurtainWall establishes an aggregate, then all contained elements shall be placed relative to the _IfcCurtainWall.ObjectPlacement_.
+* If the _IfcCurtainWall_ establishes an aggregate, then all contained elements shall be placed relative to the _IfcCurtainWall.ObjectPlacement_.
 
 ### Property Sets for Objects
 

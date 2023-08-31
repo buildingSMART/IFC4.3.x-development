@@ -1,14 +1,14 @@
 # IfcElement
 
-An element is a generalization of all components that make up an AEC product.
+An element is a generalization of all components that make up a facility.
 
-Elements are physically existent objects, although they might be void elements, such as holes. Elements either remain permanently in the AEC product, or only temporarily, as formwork does. Elements can be either assembled on site or pre-manufactured and built in on site.
+Elements are physically existent objects, although they might be void elements, such as holes. Elements either remain permanently in the facility, or only temporarily, as formwork does. Elements can be either assembled on site or pre-manufactured and built in on site.
 
 > EXAMPLE  Examples of elements in a building construction context are walls, floors, windows and recesses.
 
 The elements can be logically contained by a spatial structure element that constitutes a certain level within a project structure hierarchy (site, building, storey or space). This is done by using the _IfcRelContainedInSpatialStructure_ relationship. An element can have material and quantity information assigned through the _IfcRelAssociatesMaterial_ and _IfcRelDefinesByProperties_ relationship.
 
-In addition an element can be declared to be a specific occurrence of an element type (and thereby be defined by the element type properties) using the _IfcRelDefinesByType_ relationship. An element can also be defined as an element assembly that is a group of semantically and topologically related elements that form a higher level part of the AEC product. Those element assemblies are defined by virtue of the _IfcRelAggregates_ relationship.
+In addition an element can be declared to be a specific occurrence of an element type (and thereby be defined by the element type properties) using the _IfcRelDefinesByType_ relationship. An element can also be defined as an element assembly that is a group of semantically and topologically related elements that form a higher level part of the facility. Those element assemblies are defined by virtue of the _IfcRelAggregates_ relationship.
 
 > EXAMPLE  Examples for element assembly are complete Roof Structures, made by several Roof Areas, or a Stair, composed by Flights and Landings.
 
@@ -42,7 +42,7 @@ Reference to the interference relationship to indicate the element that interfer
 > IFC4 CHANGE New inverse relationship.
 
 ### HasProjections
-Projection relationship that adds a feature (using a Boolean union) to the _IfcBuildingElement_.
+Projection relationship that adds a feature (using a Boolean union) to the _IfcBuiltElement_.
 
 ### HasOpenings
 Reference to the _IfcRelVoidsElement_ relationship that creates an opening in an element. An element can incorporate zero-to-many openings. For each opening, that voids the element, a new relationship _IfcRelVoidsElement_ is generated.
@@ -60,7 +60,7 @@ Reference to the element connection relationship. The relationship then refers t
 Containment relationship to the spatial structure element, to which the element is primarily associated. This containment relationship has to be hierarchical, i.e. an element may only be assigned directly to zero or one spatial structure.
 
 ### HasCoverings
-Reference to _IfcCovering_ by virtue of the objectified relationship _IfcRelCoversBldgElement_. It defines the concept of an element having coverings associated.
+Reference to _IfcCovering_ by virtue of the objectified relationship _IfcRelCoversBldgElements_. It defines the concept of an element having coverings associated.
 
 ### HasSurfaceFeatures
 Reference to the _IfcRelAdheresToElement_ relationship that adheres a _IfcSurfaceFeature_ to an element. An element can incorporate zero-to-many surface features in one relationship.

@@ -14,8 +14,7 @@ The _IfcFaceSurface_ defines the underlying geometry of the associated surface t
 
 > HISTORY  New entity in IFC2x
 
-{ .spec-head}
-Informal Propositions:
+## Informal Propositions
 
 1. The domain of the face surface is formally defined to be the domain of its face geometry as trimmed by the loops, this domain does not include the bounding loops.
 2. A face surface has non zero finite extent.

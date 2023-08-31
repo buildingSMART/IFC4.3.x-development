@@ -38,7 +38,7 @@ The following checks can be done to validate the correct exchange:
 
 ### StartDistAlong
 Distance along the horizontal alignment as measured along the corresponding _IfcAlignmentHorizontal_.
-> NOTE 1  The distance along is measured from the start point of _IfcAlignmentHorizontal_, any optionally provided offset expressed by _IfcAlignmentHorizontal_.StartDistanceAlong is not taken into account.
+> NOTE 1  The distance along is measured from the start point of _IfcAlignmentHorizontal_.
 > NOTE 2  The unit of measurement is the global length unit, as set by _IfcContext_.UnitInContext
 
 ### HorizontalLength

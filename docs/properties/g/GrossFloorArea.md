@@ -1,4 +1,4 @@
 GrossFloorArea
 ==============
 
-Sum of all gross floor areas covered by the spaces within the spatial structure element.
+Sum of all gross floor areas within the spatial structure element.

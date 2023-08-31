@@ -6,7 +6,7 @@ Products include manufactured, supplied or created objects (referred to as eleme
 
 In addition to physical products (covered by the subtype _IfcElement_) and spatial items (covered by the subtype _IfcSpatialElement_) the _IfcProduct_ also includes non-physical items, that relate to a geometric or spatial contexts, such as grid, port, annotation, structural actions, etc.
 
-Any instance of _IfcProduct_ defines a particular occurrence of a product, the common type information, that relates to many similar (or identical) occurrences of _IfcProduct_, is handled by the _IfcTypeProduct_ (and its subtypes), assigned to one or many occurrences of _IfcProduct_ by using the objectified relationship _IfcRelDefinesByType_. The _IfcTypeProduct_ may provide, in addition to common properties, also a common geometric representation for all occurrences.
+Any instance of _IfcProduct_ defines a particular occurrence of a product. The common type information, that relates to many similar (or identical) occurrences of _IfcProduct_, is handled by the _IfcTypeProduct_ (and its subtypes), assigned to one or many occurrences of _IfcProduct_ by using the objectified relationship _IfcRelDefinesByType_. The _IfcTypeProduct_ may provide, in addition to common properties, also a common geometric representation for all occurrences.
 
 > NOTE  See _IfcTypeProduct_ for how to use a common geometric representation and _IfcRelDefinesByType_ for using and overriding common properties.
 
@@ -23,19 +23,19 @@ On a generic level products can be assigned to processes, controls, resources, p
 ## Attributes
 
 ### ObjectPlacement
-This establishes the object coordinate system and placement of the product in space. The placement can either be absolute (relative to the world coordinate system), relative (relative to the object placement of another product), or constrained (e.g. relative to grid axes, or to a linear positioning element). The type of placement is determined by the various subtypes of IfcObjectPlacement. An object placement must be provided if a representation is present.
+This establishes the object coordinate system and placement of the product in space. The placement can either be absolute (relative to the world coordinate system), relative (relative to the object placement of another product), or constrained (e.g. relative to grid axes, or to a linear positioning element). The type of placement is determined by the various subtypes of _IfcObjectPlacement_. An object placement must be provided if a representation is present.
 
 ### Representation
-Reference to the representations of the product, being either a representation (IfcProductRepresentation) or as a special case a shape representations (IfcProductDefinitionShape). The product definition shape provides for multiple geometric representations of the shape property of the object within the same object coordinate system, defined by the object placement.
+Reference to the representations of the product, being either a representation (_IfcProductRepresentation_) or as a special case of a shape representation (_IfcProductDefinitionShape_). The product definition shape provides for multiple geometric representations of the shape property of the object within the same object coordinate system, defined by the object placement.
 
 ### ReferencedBy
 Reference to the _IfcRelAssignsToProduct_ relationship, by which other products, processes, controls, resources or actors (as subtypes of _IfcObjectDefinition_) can be related to this product.
 
 ### PositionedRelativeTo
-
+Reference to the _IfcRelPositions_ relationship, which defines its relationship with a positioning element.
 
 ### ReferencedInStructures
-
+Reference to the objectified relationship _IfcRelReferencedInSpatialStructure_ may be used to relate a product to one or more spatial structure elements in addition to the one in which it is primarily contained.
 
 ## Formal Propositions
 
@@ -48,16 +48,16 @@ If a _Representation_ is given being an _IfcProductDefinitionShape_, then also a
 
 ### Body Geometry
 
-The body or solid model geometric representation of an IfcProduct is typically defined using a Tessellation or Brep. Subtypes may provide recommendations on other representation types that may be used. The following attribute values for the IfcShapeRepresentation holding this geometric representation shall be used:
+The body or solid model geometric representation of an _IfcProduct_ is typically defined using a Tessellation or Brep. Subtypes may provide recommendations on other representation types that may be used. The following attribute values for the _IfcShapeRepresentation_ holding this geometric representation shall be used:
 
 * _IfcShapeRepresentation.RepresentationIdentifier_ = 'Body'
 * _IfcShapeRepresentation.RepresentationType_ = Typically 'Tessellation' or 'Brep'
 
 ### Product Geometric Representation
 
-The geometric representation of any IfcProduct is provided by the IfcProductDefinitionShape allowing multiple geometric representations. It uses the _Product Placement_ concept utilizing IfcLocalPlacement to establish an object coordinate system, within all geometric representations are founded.
+The geometric representation of any _IfcProduct_ is provided by the _IfcProductDefinitionShape_ allowing multiple geometric representations. It uses the _Product Placement_ concept utilizing _IfcLocalPlacement_ to establish an object coordinate system, in which all geometric representations are founded.
 
-> NOTE A detailed specification of how to apply the local placement and which shape representaions are applicable is provided at the level of subtypes of IfcProduct and is further determined by the model view definition and implementer agreements.
+> NOTE A detailed specification of how to apply the local placement and which shape representaions are applicable is provided at the level of subtypes of _IfcProduct_ and is further determined by the model view definition and implementer agreements.
 
 ### Product Geometry Colour
 
@@ -69,7 +69,7 @@ The geometric representation of any IfcProduct is provided by the IfcProductDefi
 
 ### Product Relative Positioning
 
-If the IfcProduct _Product Placement_ is placed relative to an IfcPositioningElement this relationship covers the information on which IfcPositioningElement positions the IfcProduct.
+If the _IfcProduct_ _Product Placement_ is placed relative to an _IfcPositioningElement_ this relationship covers the information on which _IfcPositioningElement_ positions the _IfcProduct_.
 
 ### Product Span Positioning
 

@@ -55,7 +55,7 @@ nav div a.sublink-1 {
 }
 nav div a.sublink-1.current {
     background-color: transparent;
-    color: var(--link);
+    color: #fff;
     border-left: 3px solid var(--blue);
     border-radius: 0px;
 }
@@ -605,18 +605,67 @@ blockquote blockquote {
 blockquote blockquote:before {
     content: none;
 }
-body.terms-and-definitions h2 {
+body.terms-and-definitions h1 div {
+    display: inline-block;
+    font-size: calc(1rem * var(--heading-ratio) * var(--heading-ratio) * var(--heading-ratio));
+}
+body.terms-and-definitions h1 div::after {
+    content: "\00a0";
+}
+body.terms-and-definitions h2,
+body.terms-and-definitions h3,
+body.terms-and-definitions h4 {
     font-size: 1rem;
     padding-bottom: 0;
-    margin-bottom: 0;
+    margin-bottom: var(--universal-margin);
     font-weight: bold;
+    margin-top: 2em;
 }
-body.terms-and-definitions p {
+body.terms-and-definitions h2 a.link,
+body.terms-and-definitions h3 a.link,
+body.terms-and-definitions h4 a.link {
+    display: none
+}
+body.terms-and-definitions #main-content p {
     margin-top: 0;
 }
 body.terms-and-definitions aside {
+    margin-top: 0;
     border: none;
     padding: 0;
+}
+/*
+.referenced-list .row {
+    display: inline-block;
+}
+.referenced-list .row:first-child {
+    width: 500px
+}
+*/
+.referenced-list .referenced-list {
+    margin-left: 0;
+}
+/*
+.referenced-list .referenced-list .row:first-child {
+    width: 476px
+}
+.referenced-list .referenced-list .referenced-list .row:first-child {
+    width: 452px
+}
+.referenced-list .referenced-list .referenced-list .referenced-list .row:first-child {
+    width: 428px
+}
+.referenced-list .referenced-list .referenced-list .referenced-list .referenced-list .row:first-child {
+    width: 404px
+}
+*/
+.ref-list-2 .mini {
+    width: 80px;
+    display: inline-block;
+    box-sizing: border-box;
+}
+.ref-list-2 .mini.on:before {
+    content: '\2713';
 }
 div.deprecation mark a,
 aside.aside-deprecation mark a {
@@ -635,4 +684,74 @@ body.cover.iso #main-content {
 
 body.cover.iso #main-content * {
     text-align: center;
+} 
+
+.mvd {
+    display: inline-block;
+    padding: 0.1em 0.5em;
+    border: solid 1px #ccc;
+    border-radius: 8px;
+    background: #f0f0f0;
+    font-size: 80%;
+    cursor: help;
+}
+
+.referenced-list .mvd {
+    font-size: 60%;
+}
+
+.mvd, .mvd-spacing {
+    margin: 5px;
+}
+
+.wrapper {
+    display: flex;
+    padding: 0.2em 0;
+}
+
+.wrapper .row,
+.wrapper .mvds {
+    flex: 1 0 auto;
+}
+
+.wrapper .dots {
+    flex: 0 1 auto;
+    margin: 0 5px;
+    overflow: hidden;
+}
+
+.dots::before {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+    color: lightgray;
+    content:
+        ". . . . . . . . . . . . . . . . . . . . "
+        ". . . . . . . . . . . . . . . . . . . . "
+        ". . . . . . . . . . . . . . . . . . . . "
+        ". . . . . . . . . . . . . . . . . . . . "
+        ". . . . . . . . . . . . . . . . . . . . "
+        ". . . . . . . . . . . . . . . . . . . . "
+        ". . . . . . . . . . . . . . . . . . . . "
+        ". . . . . . . . . . . . . . . . . . . . "
+}
+
+.wrapper .mvds {
+    height: 0px;
+    margin-top: -10px;
+}
+
+.ref-list-2 {
+    list-style-type: none;
+    margin: 0;
+}
+
+.narrower {
+    width: 60%;
+    min-width: 700px;
+}
+
+.wider li {
+    line-height: 2em;
 }

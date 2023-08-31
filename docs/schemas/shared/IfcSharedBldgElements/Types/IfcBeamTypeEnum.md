@@ -25,7 +25,7 @@ A beam or horizontal piece of material over an opening (e.g. door, window).
 A tall beam placed on the facade of a building. One tall side is usually finished to provide the exterior of the building. Can be used to support joists or slab elements on its interior side.
 
 ### T_BEAM
-A beam that forms part of a slab construction and acts together with the slab which its carries. Such beams are often of T-shape (therefore the English name), but may have other shapes as well, e.g. an L-Shape or an Inverted-T-Shape.
+A beam that forms part of a slab construction and acts together with the slab which it carries. Such beams are often of T-shape (therefore the English name), but may have other shapes as well, e.g. an L-Shape or an Inverted-T-Shape.
 
 ### GIRDER_SEGMENT
 A segment of a girder (e.g. each span of a continuous girder).

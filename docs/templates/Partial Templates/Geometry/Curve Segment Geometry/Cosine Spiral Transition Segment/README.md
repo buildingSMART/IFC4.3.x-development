@@ -5,7 +5,7 @@ The cosine spiral transition segment is a special case of a spiral where the cur
 
 The values of its individual terms dependent on segment length L:
 CosineTerm = L
-Constant = 1
+ConstantTerm = 1
 
 ```
 concept {

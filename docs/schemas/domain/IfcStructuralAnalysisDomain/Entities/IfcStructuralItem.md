@@ -30,7 +30,7 @@ The local placement for _IfcStructuralItem_ is defined in its supertype _IfcProd
 
 **Topology Representation**
 
-Instances of _IfcStructuralItem_ shall have a topology representation given by an instance of a subtype of _IfcTopologicalRepresentationItem_, which should be the single item of _IfcTopologyRepresentation.Items_. Depending on the dimensionality of the structural item, one of the following types of toplogical representation items shall be used:
+Instances of _IfcStructuralItem_ shall have a topology representation given by an instance of a subtype of _IfcTopologicalRepresentationItem_, which should be the single item of _IfcTopologyRepresentation.Items_. Depending on the dimensionality of the structural item, one of the following types of topological representation items shall be used:
 
 * Point connections shall be represented by an _IfcVertexPoint_ with an underlying _IfcCartesianPoint_. The Cartesian point is the reference point of the connection in the so-called global coordinate system. The following labels are used in the _IfcTopologyRepresentation_:
     * _RepresentationIdentifier_: 'Reference'
@@ -62,8 +62,7 @@ _Structural surface items_
 * The local x and y directions follow the tangents on the surface and are in parallel with and directed like u and v respectively.
 * The local z direction is in parallel with and directed like the surface normal.
 
-{ .spec-head}
-Informal Propositions:
+## Informal Propositions
 
 1. The _ObjectPlacement_s of all structural items which are grouped into the same instance of _IfcStructuralAnalysisModel_ shall refer to the same instance of _IfcObjectPlacement_.
 

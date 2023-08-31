@@ -34,4 +34,4 @@ Relation to the property set template, via the objectified relationship _IfcRelD
 ### DefinesOccurrence
 Reference to the relation to one or many object occurrences that are characterized by the property set definition. A single property set can be assigned to multiple object occurrences using the objectified relationship _IfcRefDefinesByProperties_.
 { .change-ifc2x4}
-> IFC4 CHANGE Inverse attribute renamed from PropertyDefinitionOf with upward compatibility for file-based exchange.
+> IFC4 CHANGE Inverse attribute renamed from _PropertyDefinitionOf_ with upward compatibility for file-based exchange.

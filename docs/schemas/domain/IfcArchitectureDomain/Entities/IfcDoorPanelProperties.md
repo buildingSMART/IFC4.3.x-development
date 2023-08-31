@@ -45,4 +45,3 @@ Pointer to the shape aspect, if given. The shape aspect reflects the part of the
 
 ### ApplicableToType
 The _IfcDoorPanelProperties_ shall only be used in the context of an _IfcDoorType_.
-> NOTE  The deprecated entity _IfcDoorStyle_ is applicable as well.

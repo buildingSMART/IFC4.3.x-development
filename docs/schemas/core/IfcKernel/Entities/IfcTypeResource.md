@@ -14,11 +14,11 @@ Subtypes of _IfcTypeResource_ may be exchanged without being already assigned to
 An identifying designation given to a resource type.
 
 ### LongDescription
-An long description, or text, describing the resource in detail.
+A long description, or text, describing the resource in detail.
 > NOTE  The inherited _SELF\IfcRoot.Description_ attribute is used as the short description.
 
 ### ResourceType
-The type denotes a particular type that indicates the resource further. The use has to be established at the level of instantiable subtypes. In particular it holds the user defined type, if the enumeration of the attribute 'PredefinedType' is set to USERDEFINED.
+The type denotes a particular type that indicates the resource further. The use has to be established at the level of instantiable subtypes. In particular it holds the user defined type, if the enumeration of the attribute _PredefinedType_ is set to USERDEFINED.
 
 ### ResourceOf
 Set of relationships to other objects, e.g. products, processes, controls, resources or actors to which this resource type is a resource.

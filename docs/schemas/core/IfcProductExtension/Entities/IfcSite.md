@@ -4,17 +4,17 @@ A site is a defined area of land, possibly covered with water, on which the proj
 
 > NOTE  Definition according to ISO 6707-1: area of land or water where construction work or other development is undertaken.
 
-A site may include a definition of the single geographic reference point for this site (global position using WGS84 with _Longitude_, _Latitude_ and _Elevation_). The precision is provided up to millionth of a second and it provides an absolute placement in relation to the real world as used in exchange with geospational information systems. If asserted, the _Longitude_, _Latitude_ and _Elevation_ establish the point in WGS84 where the point 0.,0.,0. of the _LocalPlacement_ of _IfcSite_ is situated.
+Precise geospatial information of a site shall be derived from the georeferencing entities that relate the _IfcProject_ to the real world, using sets of datum (see _IfcCoordinateOperation_ and _IfcCoordinateReferenceSystem_).
+
+In small-scale projects (e.g., building), when georeferencing is not provided as recommended above, the  _Longitude_, _Latitude_ and _Elevation_ attributes of _IfcSite_ can be used for approximate indication of the site location. This methodology is not meant to replace precise georeferencing, but can still be useful for those use cases that do not require accurate geospatial information (e.g., sun shading simulations). If asserted, the _Longitude_, _Latitude_ and _Elevation_ establish the point in WGS84 where the point 0.,0.,0. of the _LocalPlacement_ of _IfcSite_ is situated.
 
 The geometrical placement of the site, defined by the _IfcLocalPlacement_, shall be always relative to the spatial structure element, in which this site is included, or absolute, i.e. to the world coordinate system, as established by the geometric representation context of the project. The world coordinate system, established at the _IfcProject.RepresentationContexts_, may include a definition of the true north within the XY plane of the world coordinate system, if provided, it can be obtained at _IfcGeometricRepresentationContext.TrueNorth_.
 
-A project may span over several connected or disconnected sites. Therefore site complex provides for a collection of sites included in a project. A site can also be decomposed in parts, where each part defines a site section. This is defined by the composition type attribute of the supertype _IfcSpatialStructureElements_ which is interpreted as follow:
+A project may span over several connected or disconnected sites. Therefore site complex provides for a collection of sites included in a project. A site can also be decomposed in parts, where each part defines a site section. This is defined by the composition type attribute of the supertype _IfcSpatialStructureElement_ which is interpreted as follow:
 
 * COMPLEX = site complex
 * ELEMENT = site
 * PARTIAL = site section
-
-The _IfcSite_ is used to build the spatial structure of a building (that serves as the primary project breakdown and is required to be hierarchical).
 
 Figure 1 shows the _IfcSite_ as part of the spatial structure. In addition to the logical spatial structure, also the placement hierarchy is shown. In this example the spatial structure hierarchy and the placement hierarchy are identical.
 
@@ -66,7 +66,7 @@ Address given to the site for postal purposes.
 
 ### Body Geometry
 
-The body representation of IfcSite may be typically defined using a solid or surface model. Applicable solids are Breps and Tesselations. Applicable surface models are the IfcFaceBasedSurfaceModel and the IfcShellBasedSurfaceModel.
+The body representation of IfcSite may be typically defined using a solid or surface model. Applicable solids are Breps and Tessellations. Applicable surface models are the IfcFaceBasedSurfaceModel and the IfcShellBasedSurfaceModel.
 
 The representation identifier and type of this representation of IfcSite is:
 
@@ -102,7 +102,7 @@ By using the inverse relationship _IfcSite.Decomposes_ it references IfcProject 
 
 ### Spatial Container
 
-If there are building elements and/or other elements directly related to the IfcSite (like a fence, or a shear wall), they are associated with the IfcSite by using the objectified relationship IfcRelContainedInSpatialStructure. The IfcIfcSite references them by its inverse relationship:
+If there are building elements and/or other elements directly related to the IfcSite (like a fence, or a shear wall), they are associated with the IfcSite by using the objectified relationship IfcRelContainedInSpatialStructure. The IfcSite references them by its inverse relationship:
 
 * _IfcSite.ContainsElements_ -- referencing any subtype of IfcProduct (with the exception of other spatial structure element) by _IfcRelContainedInSpatialStructure.RelatedElements_
 

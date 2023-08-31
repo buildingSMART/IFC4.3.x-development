@@ -216,7 +216,7 @@
 		<xs:sequence>
 			<xs:element name="References" minOccurs="0" maxOccurs="1">
 				<xs:complexType>
-					<xs:sequence minOccurs="1" maxOccurs="1">
+					<xs:sequence minOccurs="1" maxOccurs="unbounded">
 						<xs:element name="Template" type="mvd:GenericReference"/>
 					</xs:sequence>
 					<xs:attribute name="IdPrefix" type="mvd:ruleId" use="optional"/>

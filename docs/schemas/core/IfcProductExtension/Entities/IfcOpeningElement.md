@@ -11,7 +11,7 @@ There are two different types of opening elements. The attribute _PredefinedType
 
 If the value for _PredefinedType_ is omitted, or the value is set to NOTDEFINED, no specific information of whether it is an opening or recess shall be assumed.
 
-An _IfcOpeningElement_ has to be inserted into an _IfcElement_ by using the _IfcRelVoidsElement_ relationship. It may be filled by an _IfcDoor_, _IfcWindow_, or another filling element by using the relationship _IfcRelFillsElements_. Depending on the type of the _IfcShapeRepresentation_ of the _IfcOpeningElement_ the voiding relationship implies:
+An _IfcOpeningElement_ has to be inserted into an _IfcElement_ by using the _IfcRelVoidsElement_ relationship. It may be filled by an _IfcDoor_, _IfcWindow_, or another filling element by using the relationship _IfcRelFillsElement_. Depending on the type of the _IfcShapeRepresentation_ of the _IfcOpeningElement_ the voiding relationship implies:
 
 *  if the _IfcShapeRepresentation_.RepresentationIdentifier = 'Body', then the Body shape representation of the opening has to be subtracted from the body shape representation of the voided element - implicit Boolean difference operation.
 *  if the _IfcShapeRepresentation_.RepresentationIdentifier = 'Reference', then the Reference shape representation of the opening is not subtracted, it is provided in addition to the hole in the Body shape representation of the voided element.
@@ -24,7 +24,7 @@ The _IfcOpeningElement_ shall not participate in the containment relationship, i
 
 > NOTE  See _IfcRelVoidsElement_ for a diagram on how to apply spatial containment and the voiding relationship.
 
-> IFC2x CHANGE  The intermediate ABSTRACT supertypes _IfcFeatureElement_ and _IfcFeatureSubtraction_ have been added.
+> IFC2x CHANGE  The intermediate ABSTRACT supertypes _IfcFeatureElement_ and _IfcFeatureElementSubtraction_ have been added.
 
 > IFC4 CHANGE  The attribute _PredefinedType_ has been added at the end of attribute list. 
 
@@ -60,10 +60,10 @@ The following constraints are recommended:
 * _IfcExtrudedAreaSolid.SweptArea_ shall support IfcRectangleProfileDef, IfcCircleProfileDef and IfcArbitraryClosedProfileDef.
 * If multiple instances of IfcExtrudedAreaSolid are used, the extrusion direction of each extrusion should be equal.
 
-If parametric profiles are used, the parameters may be interpreted to be the dimensions of the beam:
+If parametric profiles are used, the parameters may be interpreted to be the dimensions of the opening:
 
-* IfcRectangleProfileDef.YDim interpreted as beam height
-* IfcRectangleProfileDef.XDim interpreted as beam width
+* IfcRectangleProfileDef.YDim interpreted as opening height
+* IfcRectangleProfileDef.XDim interpreted as opening width
 
 There are two main extrusion directions: perpendicular and parallel.
 

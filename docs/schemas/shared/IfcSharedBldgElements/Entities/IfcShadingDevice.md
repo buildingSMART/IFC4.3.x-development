@@ -2,7 +2,7 @@
 
 Shading devices are purpose built devices to protect from the sunlight, from natural light, or screening them from view. Shading devices can form part of the facade or can be mounted inside the building, they can be fixed or operable.
 
-> NOTE  Also other building elements such as protruding slabs or balconies can act as shading devices. Those elements however have another primary purpose and are defined as _IfcSlab_ or by other subtypes of _IfcBuildingElement_.
+> NOTE  Also other building elements such as protruding slabs or balconies can act as shading devices. Those elements however have another primary purpose and are defined as _IfcSlab_ or by other subtypes of _IfcBuiltElement_.
 
 > HISTORY  New entity in IFC4
 
@@ -36,7 +36,7 @@ Either there is no shading device type object associated, i.e. the _IsTypedBy_ i
 
 ### Spatial Containment
 
-The IfcShadingDevice, as any subtype of IfcBuildingElement, may participate alternatively in one of the two different containment relationships:
+The _IfcShadingDevice_, as any subtype of _IfcBuiltElement_, may participate alternatively in one of the two different containment relationships:
 
 * the _Spatial Containment_ (defined here), or
 * the _Element Composition_.

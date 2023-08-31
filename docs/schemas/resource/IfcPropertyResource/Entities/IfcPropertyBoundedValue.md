@@ -14,8 +14,8 @@ The _IfcPropertyBoundedValue_ allows for the specification of an interval for th
 
 |Name|UpperBoundValue|LowerBoundValue|SetPointValue|Type (through IfcValue)|Unit|
 |--- |--- |--- |--- |--- |--- |
-|OverallHeight|1930|2300||IfcPositiveLengthMeasure|-|
-|OverallWidth|0.9|1.25||IfcPositiveLengthMeasure|m|
+|OverallHeight|2300|1930||IfcPositiveLengthMeasure|-|
+|OverallWidth|1.25|0.9||IfcPositiveLengthMeasure|m|
 |MaxHeight|20.0|||IfcPositiveLengthMeasure|-|
 |MinWeight||20||IfcMassMeasure|kg|
 
@@ -29,8 +29,7 @@ Table 1 &mdash; Bounded property with values, measure types and units. Where rul
 { .change-ifc2x4}
 > IFC4 CHANGE  The attribute _SetPointValue_ has been added.
 
-{ .spec-head}
-Informal Propositions:
+## Informal Propositions
 
 1. If the measure type for the upper and lover bound value is a numeric measure, then the following shall be true: _UpperBoundValue_ > _LowerBoundValue_.
 

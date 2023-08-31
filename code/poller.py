@@ -18,7 +18,7 @@ while True:
     # do not require credentials for auto merge on pull
     # subprocess.check_output(["git", "-C", REPO_DIR, "pull"])
     subprocess.check_output(["git", "-C", REPO_DIR, "fetch"])
-    subprocess.check_output(["git", "-C", REPO_DIR, "reset", "--hard", "origin/iso_submission"])
+    subprocess.check_output(["git", "-C", REPO_DIR, "reset", "--hard", f"origin/{os.environ.get('REPO_BRANCH', 'master')}"])
     c = subprocess.check_output(["git", "-C", REPO_DIR, "rev-parse", "HEAD"])
     
     first_time = not os.listdir(XML_PATH)
@@ -37,13 +37,16 @@ while True:
         subprocess.call([sys.executable, "express_to_xsd.py", "IFC.exp", "IFC.xsd"])
         subprocess.call([sys.executable, "change_log.py", REPO_DIR])
         subprocess.call([sys.executable, "parse_examples.py", REPO_DIR])
+
+        subprocess.call([sys.executable, "templates_to_mvdxml.py", 'IFC4.3.mvdxml', REPO_DIR])
+        subprocess.call([sys.executable, "determine_mvd_scope.py", 'IFC.exp', 'IFC4.3.mvdxml'])
         
         subprocess.call([sys.executable, "process_schema.py", os.path.join(REPO_DIR, "schemas/IFC.xml")])
         
         if first_time:
             # First time. Spider the site to build indices in Redis. Then terminate.
             subprocess.call("wget -q --recursive --spider -S localhost:5000".split(" "))
-            requests.post("http://localhost/build_index")
+            requests.post("http://localhost:5000/build_index")
             subprocess.call("redis-cli shutdown".split(" "))
     else:
         time.sleep(60)

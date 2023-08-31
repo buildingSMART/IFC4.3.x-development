@@ -5,8 +5,6 @@ Image textures are based on external files in common image formats such as PNG o
 
 Absolute URLs are recommended for textures published at a location deemed to be permanent (independent of the building model data), while relative URLs are recommended for all other sharing scenarios. Local file paths should be avoided.
 
-Scaling is supported to correlate the size of a texture with its physical dimensions, and enables usage of textures on parametric geometry such that texture coordinates need not be defined.
-
 ```
 concept {
     IfcImageTexture:Mode -> IfcIdentifier_0

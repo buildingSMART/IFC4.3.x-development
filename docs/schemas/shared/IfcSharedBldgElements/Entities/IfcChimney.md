@@ -1,6 +1,6 @@
 # IfcChimney
 
-Chimneys are typically vertical, or as near as vertical, parts of the construction of a building and part of the building fabric. Often constructed by pre-cast or insitu concrete, today seldom by bricks.
+Chimneys are typically vertical, or as near as vertical, parts of the construction of a building and part of the building fabric. Often constructed by pre-cast or insitu concrete, today seldom by bricks. Chimneys are used to evacuate flues from e.g. boilers or fire places.
 
 { .extDef}
 > NOTE  Definition according to ISO 6707-1: construction containing one or more flues.
@@ -39,7 +39,7 @@ Either there is no chimney type object associated, i.e. the _IsTypedBy_ inverse 
 
 ### Spatial Containment
 
-The IfcChimney, as any subtype of IfcBuildingElement, may participate alternatively in one of the two different containment relationships:
+The _IfcChimney_, as any subtype of _IfcBuiltElement_, may participate alternatively in one of the two different containment relationships:
 
 * the _Spatial Containment_ (defined here), or
 * the _Element Composition_.

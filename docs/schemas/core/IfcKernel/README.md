@@ -3,7 +3,7 @@ IfcKernel
 
 The schema _IfcKernel_ defines the most abstract part or core part of the specification. It captures general constructs, that are basically founded by their different semantic meaning in common understanding of an object model, like object, property and relationship. Those are then specialized into non-AEC/FM specific constructs, like product, process, control and resource, which form the main entry points for the next level within the schema architecture, the Core Extension layer.
 
-The _IfcKernel_ also specifies the basic attributes and relationships, such as relative location of products in space, sequence of processes in time, or general purpose grouping and nesting mechanism. It also lays the foundation of extensibility of specification by providing:
+The _IfcKernel_ also specifies the basic attributes and relationships, such as relative location of products in space, sequence of processes in time, or general purpose grouping and nesting mechanisms. It also lays the foundation of extensibility of the specification by providing:
 
 * proxy definitions;
 * type object definitions;
@@ -20,7 +20,7 @@ Each entity defined outside of the Resource layer of the schema architecture inh
 There are three fundamental entity types in the IFC model, which are all derived from _IfcRoot_. They form the first level of specialization within the entity hierarchy.
 
 * object definitions are the generalization of any semantically treated thing (or item) within the IFC model.
-* relationships are the generalization of all relationships among things (or items) that are treaded as objectified relationships between different entities
+* relationships are the generalization of all relationships among things (or items) that are treated as objectified relationships between different entities
 * property definitions are the generalization of all characteristics that may be assigned to object definitions.
 
 #### 5.1.1.2 Object definitions
@@ -51,7 +51,7 @@ There are six fundamental entity types in the IFC model, which are all derived f
 * groups - are arbitrary collections of objects.
 
 #### 5.1.1.6 Relationship entity subtype tree
-There are sixfundamental relationship types in the IFC model, which are all derived from _IfcRelationship_. A relationship may have an informal purpose descriptor assigned, which denotes a particular purpose of applying this relationship.
+There are six fundamental relationship types in the IFC model, which are all derived from _IfcRelationship_. A relationship may have an informal purpose descriptor assigned, which denotes a particular purpose of applying this relationship.
 
 * assignment - is a generalization of "link" relationships among instances of objects and its various subtypes. A link denotes the specific association through which one object (the client) applies the services of other objects (the suppliers), or through which one object may navigate to other objects.
 * association - refers to external sources of information (most notably a classification, library or document) and associates it to objects or property definitions.

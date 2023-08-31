@@ -3,6 +3,8 @@ import sys
 import json
 import re
 import glob
+import operator
+import traceback
 
 from collections import defaultdict
 
@@ -173,7 +175,7 @@ if __name__ == "__main__":
                     return nm
                 else:
                     enum = xmi_doc.xmi.by_id.get(realizes.get(el.id))
-                    if enum and enum.parent.parent.name == 'IFC4x3_RC4':
+                    if enum and (enum.parent.parent.name or '').lower().startswith('ifc4x'):
                         # enum from schema, types should match
                         if nd == enum:
                             return nm
@@ -245,7 +247,12 @@ if __name__ == "__main__":
             concept_interpretation.concept_type.DIRECTIONAL_BINARY,
             concept_interpretation.concept_type.NARY,
         ):
-            bindings = list(parse_bindings(xmi_concept, all_templates=all_templates, to_xmi=True, definitions_by_name=definitions_by_name))
+            try:
+                bindings = list(parse_bindings(xmi_concept, all_templates=all_templates, to_xmi=True, definitions_by_name=definitions_by_name))
+            except IndexError as e:
+                print("Unable to get bindings for template, skipping")
+                traceback.print_exc()
+                continue
             get_binding = make_get_binding(bindings)
 
             for p in pairs:
@@ -356,3 +363,11 @@ if __name__ == "__main__":
             result["GeneralUsage"][concept_name].append({"ApplicableEntity": root})
 
     json.dump(result, open("xmi_concepts.json", "w", encoding="utf-8"), indent=1)
+
+    xmi_mvd_concepts = {}
+    views = {p.name: p for p in xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:Package"]}['Views']
+    for sub in views / "packagedElement":
+        if sub.parent == views and sub.name != 'GeneralUsage':
+            xmi_mvd_concepts[sub.name] = list(map(operator.attrgetter('name'), sub / "packagedElement"))
+            
+    json.dump(xmi_mvd_concepts, open("xmi_mvd_concepts.json", "w", encoding="utf-8"), indent=1)

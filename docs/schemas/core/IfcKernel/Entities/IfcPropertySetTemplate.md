@@ -28,9 +28,10 @@ The attribute _ApplicableEntity_ may further refine the applicability to a singl
 
 ### ApplicableEntity
 The attribute optionally defines the data type of the applicable type or occurrence object, to which the assigned property set template can relate. If not present, no instruction is given to which type or occurrence object the property set template is applicable. The following conventions are used:
-* The IFC entity name of the applicable entity using the IFC naming convention, CamelCase with IFC prefix
+
+* The IFC entity name of the applicable entity using the IFC naming convention, CamelCase with `Ifc` prefix
 * It can be optionally followed by the predefined type after the separator "/" (forward slash), using upper case
-* If a performance history object of a particular distribution object is attributes by the property set template, then the entity name (and potentially amended by the predefined type) is expanded by adding '[PerformanceHistory]'
+* If a performance history object of a particular distribution object is attributed by the property set template, then the entity name (and potentially amended by the predefined type) is expanded by adding '[PerformanceHistory]'
 * If one property set template is applicable to many type and/or occurrence objects, then those object names should be separate by comma "," forming a comma separated string.
 
 > EXAMPLE Referring to a boiler type as applicable entity would be expressed as 'IfcBoilerType', referring to a steam boiler type as applicable entity would be expressed as 'IfcBoilerType/STEAM', referring to a wall and a wall type would be expressed as 'IfcWall, IfcWallType'. An applicable _IfcPerformanceHistory_ assigned to an occurrence or type object would be indicated by IfcBoilerType[PerformanceHistory], or respectively IfcBoilerType/STEAM[PerformanceHistory].

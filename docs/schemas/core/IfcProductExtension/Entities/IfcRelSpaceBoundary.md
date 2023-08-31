@@ -33,8 +33,8 @@ Figure 4 &mdash; Space boundary at second level type B
 
 The differences between the 1<sup>st</sup> and 2<sup>nd</sup> level space boundaries is identified by:
 
-* **1<sup>st</sup> level:**   SELF\IfcRoot.Name = "1stLevel"   SELF\IfcRootDescription = NIL
-* **2<sup>nd</sup> level:**   SELF\IfcRoot.Name = "2ndLevel"   SELF\IfcRootDescription = "2a", or "2b"
+* **1<sup>st</sup> level:**   SELF\IfcRoot.Name = "1stLevel"   SELF\IfcRoot.Description = NIL
+* **2<sup>nd</sup> level:**   SELF\IfcRoot.Name = "2ndLevel"   SELF\IfcRoot.Description = "2a", or "2b"
 
 Differentiation between physical and virtual space boundary is illustrated in Figure 5 and Figure 6.
 
@@ -50,11 +50,9 @@ As shown in Figure 6, if the _IfcRelSpaceBoundary_ is used to express a physical
 
 The _IfcRelSpaceBoundary_ may have geometry attached. If geometry is not attached, the relationship between space and building element is handled only on a logical level. If geometry is attached, it is given within the local coordinate systems of the space.
 
-> NOTE  The attributes _CurveOnRelatingElement_ at _IfcConnectionCurveGeometry_ or _SurfaceOnRelatingElement_ at _IfcConnectionSurfaceGeometry_ provide the geometry within the local coordinate system of the _IfcSpace_, whereas the attributes _CurveOnRelatedElement_ at _IfcConnectionCurveGeometry_ or _SurfaceOnRelatedElement_ at _IfcConnectionSurfaceGeometry_ provide the geometry within the local coordinate system of the subtype of _IfcElement_
+> NOTE  The attributes _CurveOnRelatingElement_ at _IfcConnectionCurveGeometry_ or _SurfaceOnRelatingElement_ at _IfcConnectionSurfaceGeometry_ provide the geometry within the local coordinate system of the _IfcSpace_, whereas the attributes _CurveOnRelatedElement_ at _IfcConnectionCurveGeometry_ or _SurfaceOnRelatedElement_ at _IfcConnectionSurfaceGeometry_ provide the geometry within the local coordinate system of the subtype of _IfcElement_.
 
-> NOTE  In most view definitions the connection geometry for the related _IfcElement_ is not provided.
-
-The geometric representation (through the _ConnectionGeometry_ attribute) is defined using either 2D curve geometry or 3D surface geometry for space boundaries. In most view definitions the 3D connection surface geometry is required.
+The geometric representation (through the _ConnectionGeometry_ attribute) is defined using either 2D curve geometry or 3D surface geometry for space boundaries.
 
 * 1<sup>st</sup> level space boundary:
     * only connection geometry for related space shall be provided

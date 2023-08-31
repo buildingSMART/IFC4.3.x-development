@@ -8,8 +8,8 @@ A space is associated to a building storey (or in case of exterior spaces to a s
 * ELEMENT = space
 * PARTIAL = partial space
 
-> NOTE  View definitions and implementation agreements may restrict spaces with _CompositionType_=ELEMENT to be non-overlapping.
-
+> NOTE  View definitions and implementation agreements may restrict spaces with the same _CompositionType_ to be non-overlapping.
+_
 The _IfcSpace_ is used to build the spatial structure of a building (that serves as the primary project breakdown and is required to be hierarchical). The spatial structure elements are linked together by using the objectified relationship _IfcRelAggregates_.
 
 Figure 1 shows the _IfcSpace_ as part of the spatial structure. It also serves as the spatial container for space related elements.

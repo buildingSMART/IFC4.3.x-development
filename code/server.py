@@ -60,7 +60,7 @@ def make_url(fragment=None):
 identity = lambda x: x
 
 REPO_DIR = os.path.abspath(os.environ.get("REPO_DIR", os.path.join(os.path.dirname(__file__), "..")))
-
+REPO_BRANCH = os.environ.get(REPO_BRANCH, "master")
 
 class schema_resource:
     def __init__(self, path, transform=identity):
@@ -123,6 +123,7 @@ class resource_manager:
     hierarchy = schema_resource("hierarchy.json")
     xmi_concepts = schema_resource("xmi_concepts.json")
     examples_by_type = schema_resource("examples_by_type.json")
+    mvd_entity_usage = schema_resource("mvd_entity_usage.json")
 
     listing_references = schema_resource("listing_references.json")
     listing_tables = schema_resource("listing_tables.json")
@@ -501,7 +502,7 @@ def process_graphviz(current_entity, md):
 
 
 def create_entity_definition(e, bindings, ports):
-    # unique name (postfix for multiple occurences, can have template bindings)
+    # unique name (postfix for multiple occurrences, can have template bindings)
     EE = e
 
     # schema name, updated when traversing supertypes
@@ -735,6 +736,11 @@ def separate_camel(s):
 def get_figure(fig):
     return send_from_directory(os.path.join(REPO_DIR, "docs/figures"), fig)
 
+@app.route(make_url("figures/examples/<fig>"))
+def get_example_figure(fig):
+    # @todo
+    return send_from_directory(os.path.join(REPO_DIR, "docs/figures/examples"), fig)
+
 
 @app.route(make_url("assets/<path:asset>"))
 def get_asset(asset):
@@ -743,7 +749,7 @@ def get_asset(asset):
 
 @app.route(make_url("examples/<path:example>"))
 def get_example(example):
-    return send_from_directory(os.path.join(REPO_DIR, "..", "examples", "IFC 4.3"), example)
+    return send_from_directory(os.path.join(REPO_DIR, "..", "examples", "models"), example)
 
 
 # The markdown is littered with this type of annotation tag. Does it have meaning? We strip it out everywhere.
@@ -862,7 +868,7 @@ def property(prop):
     )
 
 
-def process_markdown(resource, mdc):
+def process_markdown(resource, mdc, process_quotes=True, number_headings=False, chapter=None):
     html = markdown.markdown(process_graphviz(resource, mdc), extensions=["tables", "fenced_code"])
 
     soup = BeautifulSoup(html)
@@ -884,7 +890,37 @@ def process_markdown(resource, mdc):
         elif img["src"].startswith("http"):
             pass
         else:
-            img["src"] = img["src"][9:]
+            if img["src"] and img["src"].startswith("../../figures/examples/"):
+                img["src"] = url_for('get_example_figure', fig=img["src"].replace("../../figures/examples/", ""))
+            else:
+                img["src"] = img["src"][9:]
+
+    if number_headings:
+        assert chapter
+
+        headings = soup.find_all(re.compile("h\d"))
+    
+        stack = list(chapter)
+        orig_length = len(stack) - 1
+
+        for h in headings:         
+            level = int(h.name[1:]) + orig_length
+            if level == len(stack):
+                stack[-1] += 1
+            elif len(stack) < level:
+                stack += [1] * (level - len(stack))
+            else:
+                stack = stack[0:level]
+                stack[-1] += 1
+            
+            span1 = soup.new_tag('div')
+            span1['class'] = 'number'
+            span1.string = ".".join(map(str, stack))
+
+            span2 = soup.new_tag('div')
+            span2.string = h.text
+
+            h.contents = [span1, span2]
 
     for svg in soup.findAll("svg"):
         # Graphviz diagrams use pt, a hackish way to isolate them
@@ -912,15 +948,16 @@ def process_markdown(resource, mdc):
             has_aside = True
             p.name = "aside"
 
-            if keyword.startswith("IFC"):
-                # This is typically something like "IFC4 CHANGE" denoting a historic change reason
-                keyword, keyword2, contents = p.text.split(" ", 2)
-                p.contents = BeautifulSoup(str(p).replace(keyword + " " + keyword2, "")).html.body.aside.contents
-                keyword = keyword.strip()
-                keyword2 = keyword2.strip()
-                keyword = "-".join((keyword, keyword2))
-            else:
-                p.contents = BeautifulSoup(str(p).replace(keyword, "")).html.body.aside.contents
+            if process_quotes:
+                if keyword.startswith("IFC"):
+                    # This is typically something like "IFC4 CHANGE" denoting a historic change reason
+                    keyword, keyword2, contents = p.text.split(" ", 2)
+                    p.contents = BeautifulSoup(str(p).replace(keyword + " " + keyword2, "")).html.body.aside.contents
+                    keyword = keyword.strip()
+                    keyword2 = keyword2.strip()
+                    keyword = "-".join((keyword, keyword2))
+                else:
+                    p.contents = BeautifulSoup(str(p).replace(keyword, "")).html.body.aside.contents
 
             css_class = keyword.lower()
             if "addendum" in css_class or "change" in css_class:
@@ -934,13 +971,14 @@ def process_markdown(resource, mdc):
             mark.string = keyword
             
             if "deprecation" in css_class:
-                anchor = soup.new_tag("a", href="/IFC/RELEASE/IFC4x3/HTML/content/terms_and_definitions.htm#3.1.30-deprecation")
+                anchor = soup.new_tag("a", href="/IFC/RELEASE/IFC4x3/HTML/content/terms_and_definitions.htm#deprecation")
                 icon = soup.new_tag("i")
                 icon["data-feather"] = "link"
                 anchor.append(icon)
                 mark.append(anchor)
 
-            p.insert(0, mark)
+            if process_quotes:
+                p.insert(0, mark)
             blockquote.insert_before(p)
 
         if has_aside:
@@ -979,6 +1017,14 @@ def resource(resource):
 
     if "Entities" in md:
         builder = resource_documentation_builder(resource)
+        mvds = [{'abbr': "".join(re.findall('[A-Z]|(?<=-)[a-z]', k)), 'cause': v[resource]} for k, v in R.mvd_entity_usage.items() if resource in v]
+        is_product_or_type = False
+        entity = resource
+        while entity:
+            entity = R.entity_supertype.get(entity)
+            if entity in ("IfcProduct", "IfcTypeProduct"):
+                is_product_or_type = True
+                break
         return render_template(
             "entity.html",
             base=base,
@@ -989,6 +1035,7 @@ def resource(resource):
             definition=get_definition(resource, mdc),
             entity=resource,
             path=md[len(REPO_DIR) :].replace("\\", "/"),
+            branch=REPO_BRANCH,
             entity_inheritance=get_entity_inheritance(resource),
             attributes=get_attributes(resource, builder),
             formal_propositions=get_formal_propositions(resource, builder),
@@ -1001,6 +1048,8 @@ def resource(resource):
             changelog=get_changelog(resource),
             is_deprecated=resource in R.deprecated_entities,
             is_abstract=resource in R.abstract_entities,
+            mvds=mvds,
+            is_product_or_type=is_product_or_type
         )
     elif resource in R.pset_definitions.keys():
         return render_template(
@@ -1013,6 +1062,7 @@ def resource(resource):
             definition_number=definition_number,
             entity=resource,
             path=md[len(REPO_DIR) :].replace("\\", "/"),
+            branch=REPO_BRANCH,
             applicability=get_applicability(resource),
             properties=get_properties(resource, mdc),
             changelog=get_changelog(resource),
@@ -1028,6 +1078,7 @@ def resource(resource):
         definition_number=definition_number,
         entity=resource,
         path=md[len(REPO_DIR) :].replace("\\", "/"),
+        branch=REPO_BRANCH,
         type_values=get_type_values(resource, mdc),
         formal_propositions=get_formal_propositions(resource, builder),
         formal_representation=get_formal_representation(resource),
@@ -1398,7 +1449,7 @@ def get_examples(resource):
     for name in R.examples_by_type.get(resource.upper()) or []:
         examples.append(
             {
-                "name": name,
+                "name": example_title(name.split('/')[-1]),
                 "url": url_for("annex_e_example_page", s=name),
                 "image": url_for("get_example", example=name) + "/thumb.png",
             }
@@ -1489,9 +1540,17 @@ class FigureNumberer:
             elif previous.name.lower().startswith("h") and previous.text and previous.text[0].isdigit():
                 previous_header = previous
                 break
+            elif previous.name.lower().startswith("h") and previous.text and previous.text.split(' ')[0] == 'Annex':
+                previous_header = previous
+                break
 
         if previous_header and previous_header.contents:
             parent_number = previous_header.contents[0].strip().split(" ", 1)[0]
+            if parent_number == "Annex":
+                try:
+                    parent_number = previous_header.contents[0].strip().split(" ", 2)[1]
+                except:
+                    return
             alphabet = "A"
             generated_number = parent_number + "." + alphabet
             while generated_number in cls.index.values():
@@ -1546,8 +1605,27 @@ def annex_b():
 
 @app.route(make_url("annex-b1.html"))
 def annex_b1():
+    def get_mvd_qualification(resource):
+        mvds = [{'abbr': "".join(re.findall('[A-Z]|(?<=-)[a-z]', k)), 'cause': v.get(resource), 'on': resource in v} for k, v in R.mvd_entity_usage.items()]
+        return mvds
+
+    def get_product_qualification(resource):
+        is_product_or_type = False
+        entity = resource
+        while entity:
+            entity = R.entity_supertype.get(entity)
+            if entity in ("IfcProduct", "IfcTypeProduct"):
+                is_product_or_type = True
+                break
+        return is_product_or_type
+
     items = [
-        {"number": name_to_number()[n], "url": url_for("resource", resource=n), "name": n}
+        {
+            "number": name_to_number()[n],
+            "url": url_for("resource", resource=n),
+            "name": n,
+            **({} if X.is_iso else {"mvds": get_mvd_qualification(n), "is_product_or_type": get_product_qualification(n)})
+        }
         for n in entity_names()
     ]
     return render_template("annex-b.html", base=base, is_iso=X.is_iso, navigation=get_navigation(), items=items, is_dictionary=True, title="Entities")
@@ -1608,18 +1686,21 @@ def annex_b7():
     return render_template("annex-b.html", base=base, is_iso=X.is_iso, navigation=get_navigation(), items=items, title="Property Enumerations")
 
 
-def make_concept(path, number_path=None):
+def make_concept(path, number_path=None, exclude_partial=True):
     md_root = os.path.join(REPO_DIR, "docs/templates")
 
     if number_path is None:
-        number_path = "4"
+        if path == ["Partial Templates"]:
+            number_path = "4.2"
+        else:
+            number_path = "4.1"
 
     children = enumerate(
         sorted(
             [
                 d
                 for d in os.listdir(os.path.join(md_root, *path))
-                if os.path.exists(os.path.join(md_root, *path, d, "README.md"))
+                if os.path.exists(os.path.join(md_root, *path, d, "README.md")) and d != "Partial Templates"
             ]
         ),
         1,
@@ -1628,7 +1709,8 @@ def make_concept(path, number_path=None):
         url=make_url("concepts/" + "/".join(p for p in path if p).replace(" ", "_") + "/content.html"),
         number=number_path,
         text=path[-1],
-        children=[make_concept(path + [c], number_path=f"{number_path}.{i}") for i, c in children],
+        children=[make_concept(path + [c], number_path=f"{number_path}.{i}", exclude_partial=exclude_partial) for i, c in children],
+        mvds=[{"abbr": "".join(re.findall('[A-Z]|(?<=-)[a-z]', k)), "name":k, "on": path[-1].replace(" ", "") in v} for k, v in R.xmi_mvd_concepts.items()],
     )
 
 
@@ -1642,7 +1724,7 @@ def create_concept_table(view_name, xmi_concept, types=None):
     headers = [f"{a}<br>{b}{'.' if b else ''}{c}" for a, (b, c) in bindings if a in bound_keys]
     if types is not None:
         rows = [r for r in rows if r.get("ApplicableEntity") in types]
-    rows = [[r.get(k, "") for k in bound_keys] for r in rows]
+    rows = sorted([r.get(k, "") for k in bound_keys] for r in rows)
     return headers, rows
 
 
@@ -1657,9 +1739,13 @@ def concept_list():
         navigation=get_navigation(),
         content=html,
         path=fn[len(REPO_DIR) :].replace("\\", "/"),
+        branch=REPO_BRANCH,
         title=chapter_lookup(number=4).get("name"),
         number=4,
-        subs=make_concept([""]).children,
+        sections=[
+            {'cs': make_concept([""], exclude_partial=True).children},
+            {'title': 'Partial Templates', 'number': '4.2', 'cs': make_concept(["Partial Templates"]).children}
+        ],
     )
 
 
@@ -1669,12 +1755,19 @@ def concept(s=""):
 
     s = s.replace("_", " ")
 
-    n = "4"
     if s:
         ps = s.split("/")
+        if ps[0] == "Partial Templates":
+            n = "4.2"
+            ps = ps[1:]
+            s = "/".join(ps)
+            md_root = os.path.join(md_root, "Partial Templates")
+        else:
+            n = "4.1"
+
         t = ps[-1]
         for pt in itertools.accumulate([[p] for p in ps]):
-            n += ".%d" % (sorted(os.listdir(os.path.join(md_root, *pt[:-1]))).index(pt[-1]) + 1)
+            n += ".%d" % (sorted(d for d in os.listdir(os.path.join(md_root, *pt[:-1])) if os.path.isdir(os.path.join(md_root, *pt[:-1], d)) and d != "Partial Templates").index(pt[-1]) + 1)
     else:
         t = chapter_lookup(number=4).get("name")
 
@@ -1709,7 +1802,11 @@ def concept(s=""):
             if rows:
                 tables += tabulate.tabulate(rows, headers=headers, tablefmt="unsafehtml")
 
-    subs = make_concept(s.split("/")).children
+    # @todo do we reinstate this?
+    # subs = make_concept(s.split("/")).children
+
+    if not diagram and not BeautifulSoup(html).text and not tables:
+        html = "<p>This section is intentionally left blank. This template merely serves as a grouping of sub templates.</p>"
 
     return render_template(
         "concept.html",
@@ -1720,9 +1817,10 @@ def concept(s=""):
         diagram=diagram,
         tables=tables,
         path=fn[len(REPO_DIR) :].replace("\\", "/"),
+        branch=REPO_BRANCH,
         title=t,
         number=n,
-        subs=subs,
+        # subs=subs,
     )
 
 
@@ -1764,6 +1862,7 @@ def chapter(n):
         navigation=get_navigation(number=n),
         content=html,
         path=fn[len(REPO_DIR) :].replace("\\", "/"),
+        branch=REPO_BRANCH,
         title=t,
         number=n,
         subs=subs,
@@ -1788,6 +1887,7 @@ def cover():
         navigation=get_navigation(),
         content=markdown.markdown(render_template_string(content, base=base, is_iso=X.is_iso)),
         path=fn[len(REPO_DIR) :].replace("\\", "/"),
+        branch=REPO_BRANCH,
         subs=[],
         body_class='cover' + (' iso' if X.is_iso else '')
     )
@@ -1829,7 +1929,14 @@ def content(s):
         template = Environment(loader=BaseLoader).from_string(content)
         content = template.render(is_iso=X.is_iso)
 
-    html = process_markdown("", render_template_string(content, base=base, is_iso=X.is_iso))
+    process_quotes = s != "terms_and_definitions"
+
+    if s == "terms_and_definitions":
+        kwargs = {'number_headings': True, 'chapter': (int(number), 1)}
+    else:
+        kwargs = {}
+
+    html = process_markdown("", render_template_string(content, base=base, is_iso=X.is_iso), process_quotes=process_quotes, **kwargs)
     
     return render_template(
         "static.html",
@@ -1838,6 +1945,7 @@ def content(s):
         navigation=get_navigation(),
         content=html,
         path=fn[len(REPO_DIR) :].replace("\\", "/"),
+        branch=REPO_BRANCH,
         title=title,
         number=number,
         body_class=re.sub('[^a-z0-9]+', '-', s.lower())
@@ -1874,7 +1982,7 @@ def annex_a_psd():
 
 
 def annotate_hierarchy(data=None, start=1, number_path=None):
-    level_2_headings = ("Schema Definition", "Types", "Entities", "Property Sets", "Functions", "Rules")
+    level_2_headings = ("Schema Definition", "Types", "Entities", "Property Sets", "Quantity Sets", "Functions", "Rules")
 
     def items(d):
         if len(number_path or []) == 2:
@@ -1947,9 +2055,9 @@ def annex_c():
 
 @app.route(make_url("annex-d.html"))
 def annex_d():
-    diagrams = map(os.path.basename, glob.glob(os.path.join(REPO_DIR, "output/IFC.xml/*.png")))
+    diagrams = sorted(map(os.path.basename, glob.glob(os.path.join(REPO_DIR, "output/IFC.xml/*.png"))))
     diagrams = [
-        toc_entry(s[:-4], url=url_for("annex_d_diagram_page", s=s[:-4]), number="D-%d" % i)
+        toc_entry(s[:-4], url=url_for("annex_d_diagram_page", s=s[:-4]), number="D.%d" % i)
         for i, s in enumerate(sorted(diagrams), start=1)
     ]
     return render_template("annex-d.html", base=base, is_iso=X.is_iso, navigation=get_navigation(), diagrams=diagrams)
@@ -1957,7 +2065,9 @@ def annex_d():
 
 @app.route(make_url("annex_d/<s>.html"))
 def annex_d_diagram_page(s):
-    return render_template("annex-d-item.html", base=base, is_iso=X.is_iso, navigation=get_navigation(), name=s)
+    diagrams = sorted(map(lambda s: s.split('.')[0], map(os.path.basename, glob.glob(os.path.join(REPO_DIR, "output/IFC.xml/*.png")))))
+    number = diagrams.index(s) + 1
+    return render_template("annex-d-item.html", base=base, is_iso=X.is_iso, navigation=get_navigation(), name=s, number=number)
 
 
 @app.route(make_url("annex_d/<s>.png"))
@@ -1965,11 +2075,51 @@ def annex_d_diagram(s):
     return send_from_directory(os.path.join(REPO_DIR, "output/IFC.xml"), s + ".png")
 
 
+def example_title(s):
+    return " ".join(p[0].upper() + p[1:] for p in s.split('-'))
+
+def build_example_tree(return_list_and_tree = False):
+    from pathlib import Path
+
+    def build_tree(file_paths):
+        root = toc_entry('', number='E', children=[])
+        for path in file_paths:
+            current_node = root
+            components = Path(path).parts
+
+            for component in components:
+                matching_child = None
+                for child in current_node.children:
+                    if child.text == example_title(component):
+                        matching_child = child
+                        break
+
+                if matching_child:
+                    current_node = matching_child
+                else:
+                    url = None
+                    if component == components[-1]:
+                        url = url_for("annex_e_example_page", s="/".join(components))
+                    new_child = toc_entry(example_title(component), url=url, children=[], number=current_node.number + f".{len(current_node.children)+1}")
+                    current_node.children.append(new_child)
+                    current_node = new_child
+
+        return root
+            
+    examples = glob.glob("../../examples/models/**/*.ifc", recursive=True)
+    docs = [os.path.join(os.path.dirname(fn[:-4]), "README.md") for fn in examples]
+    docs_exist = list(map(os.path.exists, docs))
+    examples = [e for e, de in zip(examples, docs_exist) if de]
+    examples = ["/".join(Path(os.path.relpath(p, "../../examples/models/")).parts[:-1]) for p in examples]
+    tree = build_tree(sorted(examples))
+    if return_list_and_tree:
+        return examples, tree
+    else:
+        return tree.children
+
 @app.route(make_url("annex-e.html"))
 def annex_e():
-    examples = map(os.path.basename, filter(os.path.isdir, glob.glob(os.path.join(REPO_DIR, "../examples/IFC 4.3/*"))))
-    examples = sorted(toc_entry(s, url=url_for("annex_e_example_page", s=s)) for s in examples)
-    return render_template("annex-e.html", base=base, is_iso=X.is_iso, navigation=get_navigation(), examples=examples)
+    return render_template("annex-e.html", base=base, is_iso=X.is_iso, navigation=get_navigation(), examples=build_example_tree())
 
 
 @app.route(make_url("annex-f.html"))
@@ -2005,30 +2155,54 @@ def annex_f():
     return render_template("annex-f.html", base=base, is_iso=X.is_iso, navigation=get_navigation(), changelogs=changelog)
 
 
-@app.route(make_url("annex_e/<s>.html"))
+@app.route(make_url("annex_e/<path:s>.html"))
 def annex_e_example_page(s):
-    subs = map(os.path.basename, filter(os.path.isdir, glob.glob(os.path.join(REPO_DIR, "../examples/IFC 4.3/*"))))
-    if s not in subs:
+    examples, tree = build_example_tree(True)
+
+    if s not in examples:
         abort(404)
 
-    fn = glob.glob(os.path.join(REPO_DIR, "../examples/IFC 4.3", s, "*.md"))[0]
-    html_raw = process_markdown("", open(fn).read())
+    def visit_tree(t, fn):
+        fn(t)
+        for c in t.children:
+            visit_tree(c, fn)
 
-    soup = BeautifulSoup(html_raw)
+    url_to_number = {}
+    def assign(e):
+        url_to_number[e.url] = e.number
+    visit_tree(tree, assign)
 
-    example_dir = os.path.join(REPO_DIR, "../examples/IFC 4.3", s)
+    example_dir = os.path.join("../../examples/models/", s)
+
+    fn = os.path.join(example_dir, "README.md")
+    fn_parent = os.path.join(example_dir, "..", "README.md")
+    
+    html_raw = process_markdown("", open(fn, encoding='utf-8').read())
+
+    if os.path.exists(fn_parent):
+        html_raw = process_markdown("", open(fn_parent, encoding='utf-8').read()) + html_raw
+
+    # soup = BeautifulSoup(html_raw)
 
     code = open(
         (glob.glob(os.path.join(example_dir, "*.ifc")) + glob.glob(os.path.join(example_dir, "*.xml")))[0],
         encoding="ascii",
         errors="ignore",
     ).read()
+
+    old_code = code
+    code = re.sub(r"(?<=FILE_SCHEMA\(\(')IFC\w+", SCHEMA_NAME, code)
+    code = re.sub(r"(?<=FILE_SCHEMA \(\(')IFC\w+", SCHEMA_NAME, code)
+
+    assert old_code != code
+
     path_repo = "buildingSMART/Sample-Test-Files"
     path = fn[len(os.path.join(REPO_DIR, "../examples/")) :]
 
     # Use regex because globbing is case sensitive
     rule = re.compile(r".*\.(png|jpg|jpeg)", re.IGNORECASE)
     images = [f"{base}/examples/{s}/{name}" for name in os.listdir(example_dir) if rule.match(name)]
+    images = [i for i in images if os.path.basename(i) != 'thumb.png']
 
     return render_template(
         "annex-e-item.html",
@@ -2038,9 +2212,10 @@ def annex_e_example_page(s):
         content=html_raw,
         path=path,
         repo=path_repo,
-        title=s,
+        title=example_title(s.split('/')[-1]),
         code=code,
         images=images,
+        number=url_to_number[request.path]
     )
 
 
@@ -2086,6 +2261,7 @@ def schema(name):
         navigation=get_navigation(number=n),
         definition=definition,
         path=fn[len(REPO_DIR) :].replace("\\", "/"),
+        branch=REPO_BRANCH,
         title=t,
         number=n,
         subnumber=definition_number,
@@ -2149,7 +2325,7 @@ try:
     import os
     from redis import Redis, ConnectionError
 
-    redis = Redis(host=os.environ.get("REDIS_HOST", "localhost"))
+    redis = Redis(host=os.environ["REDIS_HOST"])
 except:
     redis = None
 
@@ -2253,20 +2429,27 @@ def after(response):
         for element in soup.findAll(["h2", "h3", "h4", "h5", "h6", "figure"]):
             id_element = element
 
-            if element.name == "figure":
-                element = element.findChild("figcaption", recursive=False)
-                value = element.text.strip()
+            divs = element.find_all("div")
+            if element.name[0] == "h" and len(divs) == 2 and 'number' in divs[0]['class']:
+                # terms and defs
+                anchor_tag = divs[1].text.strip()
             else:
-                value = element.text.strip()
+                if element.name == "figure":
+                    element = element.findChild("figcaption", recursive=False)
+                    value = element.text.strip()
+                else:
+                    value = element.text.strip()
 
-            anchor_tag = re.sub("[^0-9a-zA-Z.]+", "-", value)
+                anchor_tag = re.sub("[^0-9a-zA-Z.]+", "-", value)
 
             anchor_id = soup.new_tag("a")
             anchor_id["id"] = anchor_tag
+            anchor_id["class"] = "anchor"
             id_element.insert(0, anchor_id)
 
             anchor = soup.new_tag("a")
             anchor["href"] = "#" + anchor_tag
+            anchor["class"] = "link"
             icon = soup.new_tag("i")
             icon["data-feather"] = "link"
             anchor.append(icon)

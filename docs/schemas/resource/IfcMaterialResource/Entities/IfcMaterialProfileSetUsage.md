@@ -17,8 +17,8 @@ The _IfcMaterialProfileSet_ set to which the usage is applied.
 Index reference to a significant point in the section profile. Describes how the section is aligned relative to the (longitudinal) axis of the member it is associated with. This parametric specification of profile alignment can be provided redundantly to the explicit alignment defined by ForProfileSet.MaterialProfiles[\*].Profile.
 
 ### ReferenceExtent
-Extent of the extrusion of the elements body shape representation to which the _IfcMaterialProfileSetUsage_ applies. It is used as the reference value for the upper _OffsetValues[2]_ provided by the _IfcMaterialProfileSetWithOffsets_ subtype for included material profiles.
+Extent of the extrusion of the elements body shape representation to which the _IfcMaterialProfileSetUsage_ applies. It is used as the reference value for the upper _OffsetValues[2]_ provided by the _IfcMaterialProfileWithOffsets_ subtype for included material profiles.
 
-> NOTE  The attribute _ReferenceExtent_ shall be asserted if an _IfcMaterialProfileSetWithOffsets_ is included in the _ForProfileSet.MaterialProfiles_ list of material layers.
+> NOTE  The attribute _ReferenceExtent_ shall be asserted if an _IfcMaterialProfileWithOffsets_ is included in the _ForProfileSet.MaterialProfiles_ list of material layers.
 
 > NOTE  The _ReferenceExtent_ for _IfcBeam_, _IfcColumn_, and _IfcMember_ is the reference length starting at z=0 being the XY plane of the object coordinate system.

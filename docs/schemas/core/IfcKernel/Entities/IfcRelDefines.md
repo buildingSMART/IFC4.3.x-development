@@ -2,7 +2,7 @@
 
 A generic and abstract relationship which subtypes are used to:
 
-* assign a object type to an object occurrence
+* assign an object type to an object occurrence
 * assign a property set to an object instance
 * assign a property set template to a property set
 

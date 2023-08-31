@@ -22,19 +22,20 @@ Object types may be exchanged without being already assigned to objects. An obje
 
 ### ApplicableOccurrence
 The attribute optionally defines the data type of the occurrence object, to which the assigned type object can relate. If not present, no instruction is given to which occurrence object the type object is applicable. The following conventions are used:
-* The IFC entity name of the applicable occurrence using the IFC naming convention, CamelCase with IFC prefix
+
+* The IFC entity name of the applicable occurrence using the IFC naming convention, CamelCase with "Ifc" prefix
 * It can be optionally followed by the predefined type after the separator "/" (forward slash), using uppercase
 * If one type object is applicable to many occurrence objects, then those occurrence object names should be separate by comma "," forming a comma separated string.
 
 > EXAMPLE Referring to a furniture as applicable occurrence entity would be expressed as 'IfcFurnishingElement', referring to a brace as applicable entity would be expressed as 'IfcMember/BRACE'.
 
 ### HasPropertySets
-Set ~~list~~ of unique property sets, that are associated with the object type and are common to all object occurrences referring to this object type.
+Set of unique property sets, that are associated with the object type and are common to all object occurrences referring to this object type.
 { .change-ifc2x3}
 > IFC2x3 CHANGE  The attribute aggregate type has been changed from LIST to SET.
 
 ### Types
-Reference to the relationship IfcRelDefinedByType and thus to those occurrence objects, which are defined by this type.
+Reference to the relationship IfcRelDefinesByType and thus to those occurrence objects, which are defined by this type.
 
 ## Formal Propositions
 
@@ -42,4 +43,5 @@ Reference to the relationship IfcRelDefinedByType and thus to those occurrence o
 A Name attribute has to be provided. The name can be declared within the IFC specification as part of the property set agreements.
 
 ### UniquePropertySetNames
+Every individual _IfcPropertySetDefinition_ assigned to the instance in the attribute _HasPropertySets_ shall have a unique _Name_ attribute value.
 

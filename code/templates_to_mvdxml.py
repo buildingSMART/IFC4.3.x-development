@@ -28,6 +28,11 @@ try:
 except:
     schema_name_postfix = ''
 
+try:
+    REPO_DIR = sys.argv[2]
+except:
+    REPO_DIR = os.path.join(os.path.dirname(__file__), "..")
+
 mvd_s = xmlschema.XMLSchema(os.path.join(os.path.dirname(__file__), 'mvdXML_V1.1_add1.xsd'))
 
 def generate_uuid(content):
@@ -35,16 +40,24 @@ def generate_uuid(content):
     return str(uuid.uuid5(uuid.UUID(int=0), content))
     
 def read_scope():
-    soup = BeautifulSoup(markdown.markdown(open(os.path.join(os.path.dirname(__file__), "../content/scope.md"), encoding='utf-8').read()))
+    soup = BeautifulSoup(markdown.markdown(open(os.path.join(REPO_DIR, "content/scope.md"), encoding='utf-8').read()))
     nodes = (n for n in soup.h2.nextSiblingGenerator())
     return "\n".join(map(str, nodes)).strip()
-    
+
+entity_supertype = json.load(open('entity_supertype.json'))
+
+def yield_supertypes(x):
+    yield x
+    s = entity_supertype.get(x)
+    if s:
+        yield from yield_supertypes(s)
+
 templates_by_name = {}
 concept_mapping = {}
 root_level_concepts = {}
 unapplicable_concepts = []
 
-fns = glob.glob(os.path.join(os.path.dirname(__file__), "../docs/templates/**/README.md"), recursive=True)
+fns = glob.glob(os.path.join(REPO_DIR, "docs/templates/**/README.md"), recursive=True)
 for fn in sorted(fns, key=len):
     path = os.path.normpath(fn).split(os.sep)[:-1]
     
@@ -143,13 +156,21 @@ for fn in sorted(fns, key=len):
                     except: pass
                     
                     if ty == "Reference":
-                        v = {'Template': {'@ref': templates_by_name[x.replace("_", "")][0]}}
+                        v = {'Template': [{'@ref': templates_by_name[x.replace("_", "")][0]}]}
                     else:
                         # get predecessor/predecessor/binding to encode expression
                         variable = G.nodes[list(G.predecessors(list(G.predecessors(x))[0]))[0]]['binding']
-                        v = {'Constraint': [{'@Expression': f"{variable}[Value] = '{constraint_expressions[x]}'"}]}
+                        if variable is None:
+                            # @todo in case of no binding / ruleid what's the lhs of a constraint?
+                            variable = list(G.predecessors(list(G.predecessors(x))[0]))[0].split('_')[0]
+                        v = {'Constraint': [{'@Expression': f"{variable}[Value] = {constraint_expressions[x]}"}]}
                         
-                    otherat[f"{ty}s"] = v
+                    if otherat.get(f"{ty}s"):
+                        kk, vv = list(v.items())[0]
+                        otherat[f"{ty}s"][kk].extend(vv)
+                    else:
+                        otherat[f"{ty}s"] = v
+
                     return
                 
                 ruleid = G.nodes[x].get('binding')
@@ -177,16 +198,13 @@ for fn in sorted(fns, key=len):
 
             rules = list(rules.values())[0][0]['AttributeRules']
 
-    
-    
-    
     di = {
         '@applicableEntity': [root.split("_")[0] if root else None],
         '@applicableSchema': [schema_name],
         '@name': name,
         '@status': 'sample',
         '@uuid': concept_uuid,
-        '@isPartial': "Partial Templates" in path,
+        '@isPartial': "Partial Templates" in path or (root is not None and "IfcRoot" not in yield_supertypes(root.split("_")[0])),
         'Definitions': {
             'Definition': {
                 'Body': {
@@ -212,14 +230,6 @@ for fn in sorted(fns, key=len):
         
     if root is None:
         unapplicable_concepts.append(di)
-        
-entity_supertype = json.load(open('entity_supertype.json'))
-
-def yield_supertypes(x):
-    yield x
-    s = entity_supertype.get(x)
-    if s:
-        yield from yield_supertypes(s)
         
 for templ in reversed(unapplicable_concepts):
     if templ.get('SubTemplates'):
@@ -251,7 +261,7 @@ for concept, bindings in concept_associations['GeneralUsage'].items():
 def write_root(k_v):
     entity, concepts = k_v
     
-    mdfn = glob.glob(os.path.join(os.path.dirname(__file__), f"../docs/**/{entity}.md"), recursive=True)
+    mdfn = glob.glob(os.path.join(REPO_DIR, f"docs/**/{entity}.md"), recursive=True)
     assert len(mdfn) == 1
     mdfn = mdfn[0]
     

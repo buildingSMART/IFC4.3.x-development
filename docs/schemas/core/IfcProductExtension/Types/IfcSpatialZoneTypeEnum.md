@@ -1,6 +1,6 @@
 # IfcSpatialZoneTypeEnum
 
-This enumeration defines the range of different types of spatial zones that can further specify an _IfcSpatialZoneTypeEnum_.
+This enumeration defines the range of different types of spatial zones that can further specify an _IfcSpatialZone_.
 
 > HISTORY  New enumeration in IFC4.
 
@@ -25,7 +25,7 @@ The spatial zone is used to represent a zone for security planning and maintenan
 The spatial zone is used to represent a thermal zone.
 
 ### TRANSPORT
-
+The spatial zone is used to represent an area primarily dedicated to the movement of people or goods.
 
 ### VENTILATION
 The spatial zone is used to represent a ventilation zone.

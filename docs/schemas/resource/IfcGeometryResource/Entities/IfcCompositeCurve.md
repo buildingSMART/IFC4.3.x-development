@@ -33,7 +33,7 @@ Then the parameterization of the composite curve is:
 >> ![formula](../../../../figures/ifccompositecurve-math3.gif) if _Segments[i].SameSense_ = FALSE;
 > If the segments[i] is of type reparameterised composite curve segment,
 >
->> ![formula](../../../../figures/ifccompositecurve-math4.gif) where _&tau;_ is defined at reparameterized composite curve segment (see _IfcReparameterizedCompositeCurveSegment_).
+>> ![formula](../../../../figures/ifccompositecurve-math4.gif) where _&tau;_ is defined at reparameterized composite curve segment (see _IfcReparameterisedCompositeCurveSegment_).
 
 
 >
@@ -41,8 +41,7 @@ Then the parameterization of the composite curve is:
 
 > HISTORY  New entity in IFC1.0
 
-{ .spec-head}
-Informal Propositions:
+## Informal Propositions
 
 1. The _SameSense_ attribute of each segment correctly specifies the senses of the component curves. When traversed in the direction indicated by _SameSense_, the segments shall join end-to-end.
 

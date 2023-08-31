@@ -56,7 +56,10 @@ def build_property_defs(xmi_doc, pset, node, by_name):
    
     # property definitions are contained in their own markdown file, but the pset markdown
     # can contain specific comment to augment the definition
-    pset_specific_comments = dict(mdp.markdown_attribute_parser(fn=pset.markdown_filename, heading_name="Comments"))
+    try:
+        pset_specific_comments = dict(mdp.markdown_attribute_parser(fn=pset.markdown_filename, heading_name="Comments"))
+    except FileNotFoundError as e:
+        pset_specific_comments = {}
     
     for _, (a_name, a_markdown), (nm, (ty_ty_arg)) in sorted(zip(orders, [(c.name, c.markdown) for c in pset.children], pset.definition)):
     

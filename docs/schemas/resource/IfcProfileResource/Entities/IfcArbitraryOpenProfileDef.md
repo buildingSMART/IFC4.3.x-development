@@ -4,8 +4,7 @@ The open profile _IfcArbitraryOpenProfileDef_ defines an arbitrary two-dimension
 
 > HISTORY  New entity in IFC2x.
 
-{ .spec-head}
-Informal Propositions:
+## Informal Propositions
 
 1. The _Curve_ has to be an open curve.
 
@@ -26,7 +25,7 @@ Open bounded curve defining the profile.
 
 ### WR11
 The profile type is a .CURVE., an open profile can only be used to define a swept surface.
-> NOTE This does not apply to the subtype _IfcCentreLineProfileDef_.
+> NOTE This does not apply to the subtype _IfcCenterLineProfileDef_.
 
 ### WR12
 The dimensionality of the curve shall be 2.

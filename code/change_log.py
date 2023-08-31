@@ -10,7 +10,7 @@ import functools
 
 from deepdiff import DeepDiff
    
-from express_diff import express_parser
+from ifcopenshell.express import express_parser
 
 from collections import defaultdict
 from xmi_document import fix_schema_name

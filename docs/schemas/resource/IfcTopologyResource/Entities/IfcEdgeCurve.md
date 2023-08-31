@@ -18,8 +18,7 @@ Figure 1 &mdash; Edge curve
 
 > HISTORY  New entity in IFC2x.
 
-{ .spec-head}
-Informal Propositions:
+## Informal Propositions
 
 1. The domain of the edge curve is formally defined to be the domain of its edge geometry as trimmed by the vertices. This domain does not include the vertices.
 2. An edge curve has non-zero finite extent.

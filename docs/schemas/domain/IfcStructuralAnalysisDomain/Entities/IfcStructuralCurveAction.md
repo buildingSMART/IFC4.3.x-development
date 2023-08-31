@@ -22,8 +22,7 @@ If connected with a surface item, instances of _IfcStructuralCurveAction_ shall 
 Special Case 2:
 If not connected with a structural item (which may happen in an incomplete or conceptual model), a curve action should have an _ObjectPlacement_ and _Representation_, containing an _IfcEdgeCurve_. See _IfcStructuralActivity_ for further definitions.
 
-{ .spec-head}
-Informal Propositions:
+## Informal Propositions
 
 1. If the curve action is of the predefined type CONST, SINUS, or PARABOLA, _SELF\IfcStructuralActivity.AppliedLoad_ must not be of type _IfcStructuralLoadConfiguration_. In case of SINUS and PARABOLA, the load item defines the maximum of the load at the centre of the load distribution.
 2. If the curve action is of the predefined type LINEAR, _SELF\IfcStructuralActivity.AppliedLoad_ shall be of type _IfcStructuralLoadConfiguration_ and shall contain two items.

@@ -8,13 +8,13 @@ import tabulate
 
 sys.path.append(os.path.abspath(os.path.dirname(__file__)))
 
-from . import express_parser
+from ifcopenshell.express import express_parser
 
 fn1, fn2, output = sys.argv[1:]
 
 print("Running difference", *sys.argv[1:])
 
-schema_name_re = re.compile(r"ifc4x3_\w+")
+schema_name_re = re.compile(r"ifc4x\d_\w+")
 
 ERROR_TYPES_LABELS = "Missing data", "Type definitions", "Entity definitions", "Constraints"
 MISSING_DATA, TYPE_DEFINITIONS, ENTITY_DEFINITIONS, CONSTRAINTS = ERROR_TYPES_LABELS
@@ -100,13 +100,13 @@ def compare(fn1, fn2, m1, m2):
                 w2 = dict(cv2)[wnm]
                                 
                 # replace schema names              
-                w1 = schema_name_re.sub("ifc4x3_dev", w1)
-                w2 = schema_name_re.sub("ifc4x3_dev", w2)
+                w1 = schema_name_re.sub("ifc4x_dev", w1)
+                w2 = schema_name_re.sub("ifc4x_dev", w2)
                 
                 if w1 != w2:
                     if isinstance(wnm, (tuple, list)):
                         wnm = wnm[-1]
-                    yield CONSTRAINTS, (e + "." + wnm, w1, w2)
+                    yield CONSTRAINTS, (e + "." + wnm, w1.replace('|', 'l'), w2.replace('|', 'l'))
         
 with open(output, "w") as f:
     all_items = sorted(

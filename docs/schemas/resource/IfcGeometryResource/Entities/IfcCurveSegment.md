@@ -2,6 +2,10 @@
 
 A type of segment positioned along a curve cutting a segment from the parent curve. If the segment is placed through IfcAxis2PlacementLinear, the positioning curve (Placement.Location.BasisCurve) does not necessarily correspond with the ParentCurve.
 
+## Informal Propositions
+
+1. For the foreseeable future, until implementer agreements have resulted in a defined paramatric space for all possible types in attribute *ParentCurve*, the values for attributes *SegmentStart* and *SegmentStart* shall be of type IfcLengthMeasure.
+
 ## Attributes
 
 ### Placement

@@ -26,7 +26,7 @@ class xmi_concept_writer:
         try:
             self.gu_package = self.xmi.package_by_name("GeneralUsage")
         except:
-            ifc_package = self.xmi.package_by_name("IFC4x3_RC4")
+            ifc_package = self.xmi.package_by_name("IFC4X3_ADD2")
             views_package = self.xmi.insert(ifc_package, append_xmi.uml_package("Views"))
             self.gu_package = self.xmi.insert(views_package, append_xmi.uml_package("GeneralUsage"))
         

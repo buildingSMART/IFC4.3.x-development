@@ -7,10 +7,9 @@ Adding a geospatial coordinate reference to the geometric representation context
 
 ```
 concept {
-    IfcContext:RepresentationContexts -> IfcGeometricRepresentationContext
-    IfcContext:Phase -> IfcLabel_1
-    IfcContext:ObjectType -> IfcLabel_2
-    IfcContext:LongName -> IfcLabel_3
+    IfcProject:RepresentationContexts -> IfcGeometricRepresentationContext
+    IfcProject:ObjectType -> IfcLabel_1
+    IfcProject:LongName -> IfcLabel_2
     IfcGeometricRepresentationContext:HasCoordinateOperation -> IfcMapConversion:SourceCRS
     IfcMapConversion:Eastings -> IfcLengthMeasure_0
     IfcMapConversion:Northings -> IfcLengthMeasure_1

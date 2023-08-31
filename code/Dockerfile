@@ -19,7 +19,7 @@ RUN unzip -d `python3 -c 'import site; print(site.getusersitepackages())'` /tmp/
 
 RUN git clone --depth 1 https://github.com/buildingSMART/IFC4.3.x-sample-models /examples
 
-RUN git clone --depth 1 https://github.com/buildingSMART/IFC4.3.x-development /ifc43 $REPO_BRANCH
+RUN git clone --depth 1 https://github.com/buildingSMART/IFC4.3.x-development /ifc43 --branch $REPO_BRANCH
 ENV REPO_DIR=/ifc43
 
 ADD *.py tikz-uml.sty IFC4_conf.xml mvdXML_V1.1_add1.xsd /code/

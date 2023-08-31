@@ -60,7 +60,7 @@ def make_url(fragment=None):
 identity = lambda x: x
 
 REPO_DIR = os.path.abspath(os.environ.get("REPO_DIR", os.path.join(os.path.dirname(__file__), "..")))
-REPO_BRANCH = os.environ.get(REPO_BRANCH, "master")
+REPO_BRANCH = os.environ.get("REPO_BRANCH", "master")
 
 class schema_resource:
     def __init__(self, path, transform=identity):
@@ -2196,7 +2196,7 @@ def annex_e_example_page(s):
 
     assert old_code != code
 
-    path_repo = "buildingSMART/Sample-Test-Files"
+    path_repo = "buildingSMART/IFC4.3.x-sample-models"
     path = fn[len(os.path.join(REPO_DIR, "../examples/")) :]
 
     # Use regex because globbing is case sensitive

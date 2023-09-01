@@ -7,6 +7,7 @@ services:
       dockerfile: Dockerfile
     environment:
       - ISO=1
+      - REDIS_HOST=localhost
     expose:
       - "5000"
       

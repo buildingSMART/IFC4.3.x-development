@@ -2322,9 +2322,7 @@ def sandcastle():
 ifcre = re.compile(r"(?<!(=\"))(?<!(figures/))(Ifc|IFC|Pset_|Qto_|PEnum_)\w+(?!(\">|.ht|.png|.jp|.gif|\s*</a|\s*</h|.md| - IFC4.3))")
 
 try:
-    import os
     from redis import Redis, ConnectionError
-
     redis = Redis(host=os.environ["REDIS_HOST"])
 except:
     redis = None

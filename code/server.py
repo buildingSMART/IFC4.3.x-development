@@ -122,6 +122,7 @@ class resource_manager:
     type_values = schema_resource("type_values.json")
     hierarchy = schema_resource("hierarchy.json")
     xmi_concepts = schema_resource("xmi_concepts.json")
+    xmi_mvd_concepts = schema_resource("xmi_mvd_concepts.json")
     examples_by_type = schema_resource("examples_by_type.json")
     mvd_entity_usage = schema_resource("mvd_entity_usage.json")
 
@@ -251,6 +252,8 @@ class toc_entry:
 
     parent: object = None
     children: list = None
+    
+    mvds: list = None
 
 
 content_names = ["scope", "normative_references", "terms_and_definitions", "concepts"]
@@ -1733,7 +1736,7 @@ def concept_list():
     fn = os.path.join(REPO_DIR, "docs", "templates", "README.md")
     html = process_markdown("", open(fn).read())
     return render_template(
-        "chapter.html",
+        "concept_listing.html",
         base=base,
         is_iso=X.is_iso,
         navigation=get_navigation(),

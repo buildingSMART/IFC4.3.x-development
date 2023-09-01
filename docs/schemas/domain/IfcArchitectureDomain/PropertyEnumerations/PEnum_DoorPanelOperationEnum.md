@@ -52,14 +52,14 @@ Fixed panel:
 
 Not defined.
 
-### OTHER 	
+### OTHER
 
 Other.
 
-### NOTKNOWN 	
+### NOTKNOWN
 
 Not known.
 
-### UNSET 	
+### UNSET
 
 Unset.

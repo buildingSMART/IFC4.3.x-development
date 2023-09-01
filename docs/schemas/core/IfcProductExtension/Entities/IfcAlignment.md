@@ -37,14 +37,14 @@ Contemporary alignment design almost always implements a 2.5 dimension approach.
 
 **Distinction between business logic and geometry definition**
 
-The alignment concept is organised in two parts. These two parts work together, but they can also be used and exchanged independently.
+The alignment concept is organised into two parts. These two parts work together, but they can also be used and exchanged independently.
 
 1. *Business logic* of alignment
 2. *Geometry definition* of alignment
 
 **Business logic:** the IFC schema allows to describe an alignment using terminology and concepts that are as close as possible to business ones. It allows to describe the layouts that make up the alignment (i.e. horizontal, vertical, cant), their segments' structure and attributes. Also, the *business logic* part provides the anchor point for domain specific properties, such as design speed or cant deficiency.
 
-**Geometry definition:** the IFC schema provides well established IFC geometric entities to represent the business concepts already defined. 
+**Geometry definition:** the IFC schema provides well established IFC geometric entities to represent the business concepts. 
 
 A mapping between the *business logic* and its *geometry definition* in IFC is described by the concept templates related to the alignment geometry.
 

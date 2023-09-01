@@ -2537,6 +2537,10 @@ def get_index_index(kind):
             }
             for k, gs in itertools.groupby(items, operator.itemgetter("title"))
         ]
+        
+        # Don't include definitions that just only list their own page:
+        filter_singular = lambda di: di.get('number') != di.get('title')
+        items = list(filter(filter_singular, items))
     return render_template(
         "index.html", base=base, is_iso=is_iso, navigation=get_navigation(), items=items, title=f"Listing of {kind}"
     )

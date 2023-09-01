@@ -44,7 +44,7 @@ use of a shared digital representation of an asset to facilitate design, constru
 
 ## classification
 
-act of assigning objects to classes according to criteria
+assignment of objects to classes according to criteria
 
 [SOURCE: ISO 22274:2013, 3.5, modified - The word "process" has been replaced by "act"]
 
@@ -80,6 +80,8 @@ unit of knowledge created by a unique combination of characteristics
 ### concept root
 
 entity to which the concept template is applied
+
+Note 1 to entry:  It indicates the root entity of the graph as defined in the concept template. It shall not be mistaken with the set of applicable entities, to which the concept template applies.
 
 Note 1 to entry:  The concept root is the root of a graph of connected entities and attributes.
 

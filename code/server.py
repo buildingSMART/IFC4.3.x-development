@@ -622,7 +622,7 @@ def process_graphviz_concept(name, md):
 
     def replace_edge(match):
         is_direct_attribute = True
-        entity = match.group(1)
+        entity = match.group(1).split('_')[0]
         attribute = match.group(2)
         while entity:
             data = R.entity_attributes.get(f"{entity}.{attribute}", None)

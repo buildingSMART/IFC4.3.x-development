@@ -19,9 +19,9 @@ concept {
     IfcShapeRepresentation_0:RepresentationType -> IfcLabel_3
     IfcShapeRepresentation_0:Items -> IfcCompositeCurve
     IfcLabel_2 -> constraint_2
-    constraint_2[label="=Axis"]
+    constraint_2[label="='Axis'"]
     IfcLabel_3 -> constraint_3
-    constraint_3[label="=Curve2D"]
+    constraint_3[label="='Curve2D'"]
     IfcCompositeCurve:Segments -> IfcCurveSegment_0
 
 }

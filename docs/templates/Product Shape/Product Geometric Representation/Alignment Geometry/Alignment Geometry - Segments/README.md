@@ -23,8 +23,8 @@ concept {
     IfcShapeRepresentation_0:RepresentationType -> IfcLabel_3
     IfcShapeRepresentation_0:Items -> IfcCurveSegment
     IfcLabel_2 -> constraint_2
-    constraint_2[label="=Axis"]
+    constraint_2[label="='Axis'"]
     IfcLabel_3 -> constraint_3
-    constraint_3[label="=Segment"]
+    constraint_3[label="='Segment'"]
 }
 ```

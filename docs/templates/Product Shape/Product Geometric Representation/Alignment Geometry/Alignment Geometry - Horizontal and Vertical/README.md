@@ -25,9 +25,9 @@ concept {
     IfcShapeRepresentation_0:RepresentationType -> IfcLabel_3
     IfcShapeRepresentation_0:Items -> IfcCompositeCurve
     IfcLabel_2 -> constraint_2
-    constraint_2[label="=FootPrint"]
+    constraint_2[label="='FootPrint'"]
     IfcLabel_3 -> constraint_3
-    constraint_3[label="=Curve2D"]
+    constraint_3[label="='Curve2D'"]
     IfcCompositeCurve:Segments -> IfcCurveSegment_0
     IfcShapeRepresentation_0:RepresentationIdentifier[binding="Identifier"]
     IfcShapeRepresentation_0:RepresentationType[binding="Type"]
@@ -35,9 +35,9 @@ concept {
     IfcShapeRepresentation_1:RepresentationType -> IfcLabel_1
     IfcShapeRepresentation_1:Items -> IfcGradientCurve
     IfcLabel_0 -> constraint_0
-    constraint_0[label="=Axis"]
+    constraint_0[label="='Axis'"]
     IfcLabel_1 -> constraint_1
-    constraint_1[label="=Curve3D"]
+    constraint_1[label="='Curve3D'"]
     IfcGradientCurve:BaseCurve -> IfcCompositeCurve
     IfcGradientCurve:Segments -> IfcCurveSegment_1
     IfcShapeRepresentation_1:RepresentationIdentifier[binding="Identifier"]

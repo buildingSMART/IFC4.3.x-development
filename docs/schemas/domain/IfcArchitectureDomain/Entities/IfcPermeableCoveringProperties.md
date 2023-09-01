@@ -17,6 +17,8 @@ Figure 1 illustrates the panel applied to the position within the lining, as def
 { .change-ifc2x4}
 > IFC4 CHANGE  Supertype changed to new _IfcPreDefinedPropertySet_.
 
+> IFC4.3.2.0 DEPRECATION This entity, and most other subtypes of IfcPredefinedPropertySet, are now deprecated. Use Pset_PermeableCoveringProperties instead.
+
 ## Attributes
 
 ### OperationType

@@ -23,6 +23,8 @@ Table 1 &mdash; Window lining properties
 { .change-ifc2x4}
 > IFC4 CHANGE  The following attributes have been added _LiningOffset_, _LiningToPanelOffsetX_, _LiningToPanelOffsetY_. The attribute _ShapeAspectStyle_ is deprecated and shall no longer be used. Supertype changed to new _IfcPreDefinedPropertySet_.
 
+> IFC4.3.2.0 DEPRECATION This entity, and most other subtypes of IfcPredefinedPropertySet, are now deprecated. Use Pset_WindowLiningProperties instead.
+
 ## Attributes
 
 ### LiningDepth

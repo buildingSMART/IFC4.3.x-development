@@ -10,7 +10,7 @@
 
 > HISTORY  New entity in IFC2.0
 
-## Informal Propositions
+**Informal Propositions**
 
 1. A path has dimensionality 1.
 2. A path is arcwise connected.

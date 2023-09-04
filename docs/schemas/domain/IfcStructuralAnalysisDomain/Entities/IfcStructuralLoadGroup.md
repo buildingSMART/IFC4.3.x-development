@@ -11,7 +11,7 @@ The entity _IfcStructuralLoadGroup_ is used to structure the physical impacts. B
 { .change-ifc2x4}
 > IFC4 CHANGE  Subtype _IfcStructuralLoadCase_ added. Informal propositions and WHERE rule added. Predefined type LOAD_COMBINATION_GROUP made obsolete and removed.
 
-## Informal Propositions
+**Informal Propositions**
 
 1. Load groups of type LOAD_GROUP shall only contain instances of _IfcStructuralAction_.
 2. Load groups of type LOAD_CASE shall always be instantiated from the subtype _IfcStructuralLoadCase_, not directly from the generic type _IfcStructuralLoadGroup_ itself.

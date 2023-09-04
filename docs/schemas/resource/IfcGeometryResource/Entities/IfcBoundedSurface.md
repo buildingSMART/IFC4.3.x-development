@@ -13,7 +13,7 @@ An _IfcBoundedSurface_ is a surface of finite area.
 { .change-ifc2x4}
 > IFC4 CHANGE Entity made abstract.
 
-## Informal Propositions
+**Informal Propositions**
 
 1. A bounded surface has finite non-zero surface area.
 2. A bounded surface has boundary curves.

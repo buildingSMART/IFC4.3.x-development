@@ -11,7 +11,7 @@
 
 > HISTORY  New entity in IFC2x2.
 
-## Informal Propositions
+**Informal Propositions**
 
 1. A vertex loop has zero extent and dimensionality.
 2. The vertex loop has genus 0.

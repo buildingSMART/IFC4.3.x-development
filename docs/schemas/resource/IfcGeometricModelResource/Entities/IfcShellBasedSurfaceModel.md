@@ -10,7 +10,7 @@ An _IfcShellBasedSurfaceModel_ represents the shape by a set of open or closed s
 
 > HISTORY  New entity in IFC2x.
 
-## Informal Propositions
+**Informal Propositions**
 
 1. The dimensionality of the shell based surface model is 2.
 2. The shells shall not overlap or intersect except at common faces, edges or vertices.

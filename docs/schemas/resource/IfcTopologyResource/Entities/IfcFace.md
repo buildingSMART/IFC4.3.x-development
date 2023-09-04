@@ -20,7 +20,7 @@ An _IfcFace_ is topological entity used to define surface, bounded by loops, of 
 
 > HISTORY  New entity in IFC1.0
 
-## Informal Propositions
+**Informal Propositions**
 
 1. No edge shall be referenced by the face more than twice.
 2. Distinct face bounds of the face shall have no common vertices.

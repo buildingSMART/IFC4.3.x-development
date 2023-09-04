@@ -18,7 +18,7 @@ Figure 1 illustrates the definition of the _IfcHalfSpaceSolid_ within a given co
 
 > HISTORY  New entity in IFC1.5
 
-## Informal Propositions
+**Informal Propositions**
 
 1. The base surface shall divide the domain into exactly two subsets. If the half space solid is of subtype boxed half space (_IfcBoxedHalfSpace_), the domain in question is that of the attribute enclosure. In all other cases the domain is all of space and the base surface shall be unbounded.
 2. The base surface shall be an unbounded surface (subtype of _IfcElementarySurface_).

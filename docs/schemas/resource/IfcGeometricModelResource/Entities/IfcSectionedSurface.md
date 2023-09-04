@@ -18,7 +18,7 @@ Figure 2 illustrates an _IfcSectionedSurface_ featuring branching longitudinal b
 
 Figure 2 &mdash; Sectioned surface with branching longitudinal breaklines
 
-## Informal Propositions
+**Informal Propositions**
 
 1. No two consecutive sections shall intersect.
 2. If the directrix is not tangent continuous, the resulting surface is created by a miter at half angle between the two segments.

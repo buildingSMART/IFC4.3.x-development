@@ -15,7 +15,7 @@ The _IfcSurfaceOfLinearExtrusion_ is a surface derived by sweeping a curve along
 
 > HISTORY  New entity in IFC2x.
 
-## Informal Propositions
+**Informal Propositions**
 
 1. The surface shall not self-intersect
 

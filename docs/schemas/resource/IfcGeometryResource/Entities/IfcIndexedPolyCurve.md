@@ -22,7 +22,7 @@ The _IfcIndexedPolyCurve_ represents an open or a closed curve depending on the 
 
 > HISTORY  New entity in IFC4 ADD1
 
-## Informal Propositions
+**Informal Propositions**
 
 1. Any two consecutive points of the _IfcIndexedPolyCurve_ shall not be coincident after taking the _Precision_ factor into account, given by the applicable _IfcGeometricRepresentationContext_.
 2. The three points of any _IfcArcIndex_ segment of the _IfcIndexedPolyCurve_ shall not be colinear after taking the _Precision_ factor into account, given by the applicable _IfcGeometricRepresentationContext_.

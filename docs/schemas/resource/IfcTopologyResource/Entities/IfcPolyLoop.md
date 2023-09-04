@@ -17,7 +17,7 @@
 
 > HISTORY   New entity in IFC1.0
 
-## Informal Propositions
+**Informal Propositions**
 
 1. All the points in the polygon defining the poly loop shall be coplanar.
 2. The first and the last _Polygon_ shall be different by value.

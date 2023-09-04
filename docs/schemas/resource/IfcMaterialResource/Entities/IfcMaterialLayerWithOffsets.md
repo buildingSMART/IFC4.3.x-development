@@ -14,7 +14,7 @@ It defines the assignment of two offset values for a material layer in its inten
 
 > HISTORY  New entity in IFC4.
 
-## Informal Propositions
+**Informal Propositions**
 
 1. The _OffsetDirection_ shall not be identical to the _LayerSetDirection_ of the corresponding _IfcMaterialLayerSetUsage_.
 

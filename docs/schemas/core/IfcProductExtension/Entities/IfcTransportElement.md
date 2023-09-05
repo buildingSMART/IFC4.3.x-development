@@ -9,7 +9,7 @@ A transport element is a generalization of all transport related objects that mo
 Transport element can describe fixed or non fixed elements, which can either be identified as specified operational assets within a facility or vehicles that interact with the facility as a user or customer.
 In the case of operational assets, instances of _IfcTransportElement_ can represent individual identifiable vehicles or structures with properties such as serial numbers, registration numbers etc. and be typed accordingly by instances of _IfcTransportElementType_.
 
-In the case transport elements that interact as users or customers, such as cars on a road or vessels at a port, _IfcTransportElementType_ is used to define element specifications which are used to design, analyse and provide operational constraints to the facility.
+In the case of transport elements that interact as users or customers, such as cars on a road or vessels at a port, _IfcTransportElementType_ is used to define element specifications which are used to design, analyse and provide operational constraints to the facility.
 
 Depending on local classification systems transport elements and transportation systems in buildings are either considered as part of a built system, or as part of a built service system. Within IFC they are considered as part of a built system and may have to be mapped appropriately.
 
@@ -38,7 +38,7 @@ Either there is no transport element type object associated, i.e. the _IsTypedBy
 
 ### Object Typing
 
-IfcTransportElement defines the occuurence of any transportation device, common information about transportation device types (or styles) is handled by IfcTransportElementType. The IfcTransportElementType (if present) may establish the common type name, usage (or predefined) type, common material layer set, common set of properties and common shape representations (using IfcRepresentationMap). The IfcTransportElementType is attached using the _IfcRelDefinesByType.RelatingType_ objectified relationship and is accessible by the inverse _<font color="#0000FF">IsTypedBy</font>_ attribute.
+IfcTransportElement defines the occurrence of any transportation device, common information about transportation device types (or styles) is handled by IfcTransportElementType. The IfcTransportElementType (if present) may establish the common type name, usage (or predefined) type, common material layer set, common set of properties and common shape representations (using IfcRepresentationMap). The IfcTransportElementType is attached using the _IfcRelDefinesByType.RelatingType_ objectified relationship and is accessible by the inverse _<font color="#0000FF">IsTypedBy</font>_ attribute.
 
 If no IfcTransportElementType is attached (i.e. if only occurrence information is given) the PredefinedType should be provided. If set to .USERDEFINED. a user defined value can be provided by the ObjectType attribute.
 
@@ -48,5 +48,5 @@ If no IfcTransportElementType is attached (i.e. if only occurrence information i
 
 ### Spatial Containment
 
-* The IfcTransportElement is placed within the project spatial hierarchy using the objectified relationship IfcRelContainedInSpatialStructure, refering to it by its inverse attribute _SELF\IfcElement.ContainedInStructure_. Subtypes of IfcSpatialStructureElement are valid spatial containers, with IfcBuilding being the default container.
+* The IfcTransportElement is placed within the project spatial hierarchy using the objectified relationship IfcRelContainedInSpatialStructure, referring to it by its inverse attribute _SELF\IfcElement.ContainedInStructure_. Subtypes of IfcSpatialStructureElement are valid spatial containers, with IfcBuilding being the default container.
 

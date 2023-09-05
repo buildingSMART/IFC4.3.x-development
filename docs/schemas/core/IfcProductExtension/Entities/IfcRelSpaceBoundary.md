@@ -101,7 +101,7 @@ The following constraints apply to the 2D curve representation:
 Reference to one spaces that is delimited by this boundary.
 
 ### RelatedBuildingElement
-Reference to ~~Building~~ Element, that defines the Space Boundaries.
+Reference the Element that defines the Space Boundaries.
 { .change-ifc2x}
 > IFC2x CHANGE  The data type has been changed from _IfcBuildingElement_ to _IfcElement_ with upward compatibility for file based exchange.
 

@@ -8,7 +8,7 @@ The _IfcBoundingBox_ defines an orthogonal box oriented parallel to the axes of 
 
 Figure 1 &mdash; Bounding box
 
-As shown in Figure 1, the <em>IfcBoundingBox</em> is defined with its own location which can be used to place the <em>IfcBoundingBox</em> relative to the geometric coordinate system. The <em>IfcBoundingBox</em> is defined by the lower left corner (<em>Corner</em>) and the upper right corner (<em>XDim, YDim, ZDim</em> measured within the parent co-ordinate system).
+As shown in Figure 1, the <em>IfcBoundingBox</em> is defined with its own location which can be used to place the <em>IfcBoundingBox</em> relative to the geometric coordinate system. The <em>IfcBoundingBox</em> is defined by the lower left corner (<em>Corner</em>) and the upper right corner (<em>XDim, YDim, ZDim</em> measured within the parent coordinate system).
 
 > NOTE  Corresponding STEP type **box_domain** defined in ISO 10303-42.
 

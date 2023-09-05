@@ -1,4 +1,4 @@
 MechanicalVentilation
 ===========
 
-Indication whether the space is required to have mechanical ventilation (TRUE).
+Indication whether the space is required to have mechanical ventilation (TRUE), or not (FALSE).

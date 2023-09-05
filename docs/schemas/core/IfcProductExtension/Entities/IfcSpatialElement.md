@@ -3,7 +3,7 @@
 A spatial element is the generalization of all spatial elements that might be used to define a spatial structure or to define spatial zones.
 
 * a hierarchical spatial structure element as _IfcSpatialStructureElement_
-    * a spatial structure is a hiearchical decomposition of the project. That spatial structure is often used to provide a project structure to organize a project.
+    * a spatial structure is a hierarchical decomposition of the project. That spatial structure is often used to provide a project structure to organize a project.
     * a spatial project structure might define as many levels of decomposition as necessary for the project. Some examples of elements within the spatial breakdown can be: site, building, storey, space. And  for infrastructure projects also: bridge, railway, road, ports, tunnel and parts of them.
 * a spatial zone as _IfcSpatialZone_
     * a spatial zone is a non-hierarchical and potentially overlapping decomposition of the project under some functional consideration.
@@ -43,7 +43,7 @@ Set of spatial reference relationships, that holds those elements, which are ref
 
 ### IsInterferedByElements
 Reference to the interference relationship to indicate the spatial element that is interfered. The relationship, if provided, indicates that this spatial element has an interference with one or many other spatial elements.
-> NOTE  There is no indication of precedence between _IsInterferedByElements_ and _InterferesElements_ orientated interference is defined by _IfcRelInterferesElements.ImpliedOrder_ or _IfcRelInterferesElements.InterferenceType_.
+> NOTE  There is no indication of precedence between _IsInterferedByElements_ and _InterferesElements_. Orientated interference is defined by _IfcRelInterferesElements.ImpliedOrder_ or _IfcRelInterferesElements.InterferenceType_.
 
 { .change-ifc2x4}
 > IFC4x3 CHANGE New inverse relationship.

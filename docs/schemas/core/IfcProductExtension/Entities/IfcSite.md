@@ -108,55 +108,5 @@ If there are building elements and/or other elements directly related to the Ifc
 
 ### Spatial Decomposition
 
-By using the inverse relationship _IfcSite.IsDecomposedBy_ it references (IfcSite || IfcBuilding || IfcSpace by _IfcRelAggregates.RelatedObjects_. If it refers to another instance of IfcSite, the referenced IfcSite needs to have a different and lower CompositionType, i.e. ELEMENT (if the other IfcSite has COMPLEX), or PARTIAL (if the other IfcSite has ELEMENT).
-
-### Survey Points Geometry
-
-The survey point representation of IfcSite is defined
-using a set of survey points and optionally breaklines. The
-breaklines are restricted to only connect points given in the set
-of survey points. Breaklines, if given, are used to constrain the
-triangulation.
-
-
-The representation identifier and type of this geometric
-representation of IfcSite is:
-
-
-* IfcShapeRepresentation.RepresentationIdentifier =
-'SurveyPoints'
-* IfcShapeRepresentation.RepresentationType =
-'GeometricCurveSet'
-
-
-Figure 180 shows a set of survey points, given as 3D Cartesian points within the object coordinate system of the site. Figure 181 shows the result after facetation.
-
-
-The set of IfcCartesianPoint is included in the set of IfcGeometricCurveSet.Elements.
-
-
-![points only](../../../../figures/ifcsite-standard-points.gif)
-![facetation of points](../../../../figures/ifcsite-standard-facets-points.gif)
-Figure 180 — Site survey points
-
-
-Figure 181 — Site survey points facetation
-
-
-Figure 182 shows A set of survey points, given as 3D Cartesian points, and a set of break points, given as a set of lines, connecting some survey points, within the object coordinate system of the site. Figure 183 shows the result after facetation.
-
-
-The set of IfcCartesianPoint and the set of IfcPolyline are included in the set of IfcGeometricCurveSet.Elements.
-
-
-![breaklines](../../../../figures/ifcsite-standard-breaklines.gif)
-![facetation with breakpoints](../../../../figures/ifcsite-standard-facets-breaklines.gif)
-Figure 182 — Site breaklines
-
-
-Figure 183 — Site breaklines facetation
-
-
-
-> NOTE  The geometric representation of the site has been based on the ARM level description of the site\_shape\_representation given within the ISO 10303-225 "Building Elements using explicit shape representation".
+By using the inverse relationship _IfcSite.IsDecomposedBy_ it references (IfcSite || IfcBuilding || IfcSpace by _IfcRelAggregates.RelatedObjects_). If it refers to another instance of IfcSite, the referenced IfcSite needs to have a different and lower CompositionType, i.e. ELEMENT (if the other IfcSite has COMPLEX), or PARTIAL (if the other IfcSite has ELEMENT).
 

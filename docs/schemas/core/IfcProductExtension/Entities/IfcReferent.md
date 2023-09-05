@@ -6,6 +6,7 @@ Referents may be used for several scenarios:
 
 * positioning physical elements at common locations along an alignment curve (e.g. bridge piers)
 * indicating transitions for cross-sections (e.g. beginning of curvature where road is relatively flat, maximum curvature having super-elevated cross-slope to accommodate design speed)
+* indicating events at a specific location (e.g. change in width or superelevation)
 * indicating broken chainage where distance measurements reset or reverse directions, or have jumps.
 * indicating domain-specific design parameters (via property sets) at locations along an alignment curve
 

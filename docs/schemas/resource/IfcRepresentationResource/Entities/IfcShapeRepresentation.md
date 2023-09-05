@@ -9,11 +9,11 @@ Several representation identifiers for shape representation are included as pred
 |--- |--- |
 |CoG|Point to identify the center of gravity of an element. This value can be used for validation purposes.|
 |Box|Bounding box as simplified 3D box geometry of an element|
-|Annotation|3D annotations not representing elements|
+|Annotation|2D or 3D annotations|
 |Axis|2D or 3D Axis, or single line, representation of an element|
 |FootPrint|2D Foot print, or double line, representation of an element, projected to ground view|
 |Profile|3D line representation of a profile being planar, e.g. used for door and window outlines|
-|Surface|3D Surface representation, e.g. of an analytical surface, of an elementplane)|
+|Surface|3D Surface representation (an analytical surface of an element plane)|
 |Reference|3D representation that is not part of the Body representation. This is used, e.g., for opening geometries, if there are to be excluded from an implicit Boolean operation.|
 |Body|3D Body representation, e.g. as wireframe, surface, or solid model, of an element|
 |Body-FallBack|3D Body representation, e.g. as tessellation, or other surface, or boundary representation, added in addition to the solid model (potentially involving Boolean operations) of an element|
@@ -26,8 +26,7 @@ Several representation types for shape representation are included as predefined
 
 Type |  Description
 --- | ---
-Point | 2 or 3 dimensional point(s)
-PointCloud | 3 dimensional points represented by a point list
+Point | 2 or 3 dimensional point(s). Points can be represented by a point list
 Curve | 2 or 3 dimensional curve(s)
 Curve2D | 2 dimensional curve(s)
 Curve3D | 3 dimensional curve(s)
@@ -43,7 +42,7 @@ GeometricCurveSet | points, curves (2 or 3 dimensional)
 Annotation2D | points, curves (2 or 3 dimensional), hatches and text (2 dimensional)
 SurfaceModel | face based and shell based surface model(s), or tessellated surface model(s)
 Tessellation | Tessellated surface representation(s) only
-Segment | partial geometry of curves that shall not be rendered sparately from the main curve
+Segment | partial geometry of curves that shall not be rendered separately from the main curve
 SolidModel | including swept solid, Boolean results and Brep bodies; more specific types are:
 SweptSolid | swept area solids, by extrusion and revolution, excluding tapered sweeps
 AdvancedSweptSolid | swept area solids created by sweeping a profile along a directrix, and tapered sweeps

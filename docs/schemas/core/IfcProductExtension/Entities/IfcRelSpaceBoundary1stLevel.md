@@ -1,6 +1,6 @@
 # IfcRelSpaceBoundary1stLevel
 
-The 1st level space boundary defines the physical or virtual delimiter of a space by the relationship _IfcRelSpaceBoundary1stLevel_ to the surrounding elements. 1st level space boundaries are characterizeda by:
+The 1st level space boundary defines the physical or virtual delimiter of a space by the relationship _IfcRelSpaceBoundary1stLevel_ to the surrounding elements. 1st level space boundaries are characterized by:
 
 * 1st level space boundaries are the boundaries of a space defined by the surfaces of building elements bounding this space (physical space boundaries) or by virtual surfaces provided by an adjacent space with no dividing wall.
 * 1st level space boundaries do not consider any change of material in the bounding building elements, or different spaces/zones behind a wall or slab (floor or ceiling).

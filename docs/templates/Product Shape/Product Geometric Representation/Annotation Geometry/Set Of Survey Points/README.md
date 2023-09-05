@@ -8,7 +8,8 @@ Geometry representation of a set of survey points. They can be 2D points or 3D p
 ```
 concept {
     IfcAnnotation:Representation -> IfcProductDefinitionShape
-    IfcAnnotation:PredefinedType -> SURVEY
+    IfcAnnotation:PredefinedType -> constraint_2
+    constraint_2[label="=.SURVEY."]
     IfcProductDefinitionShape:Representations -> IfcShapeRepresentation
     IfcShapeRepresentation:ContextOfItems -> IfcGeometricRepresentationContext
     IfcShapeRepresentation:RepresentationIdentifier -> IfcLabel_0
@@ -16,9 +17,9 @@ concept {
     IfcShapeRepresentation:Items -> IfcCartesianPointList2D
     IfcShapeRepresentation:Items -> IfcCartesianPointList3D
     IfcLabel_0 -> constraint_0
-    constraint_0[label="=Annotation"]
+    constraint_0[label="='Annotation'"]
     IfcLabel_1 -> constraint_1
-    constraint_1[label="=Point"]
+    constraint_1[label="='Point'"]
     IfcShapeRepresentation:RepresentationIdentifier[binding="Identifier"]
     IfcShapeRepresentation:RepresentationType[binding="Type"]
     IfcShapeRepresentation:Items[binding="Items"]

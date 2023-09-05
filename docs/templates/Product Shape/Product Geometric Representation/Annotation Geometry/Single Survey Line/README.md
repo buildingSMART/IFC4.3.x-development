@@ -6,7 +6,8 @@ Geometry representation of a single survey line. It can be a 2D or a 3D line, th
 ```
 concept {
     IfcAnnotation:Representation -> IfcProductDefinitionShape
-    IfcAnnotation:PredefinedType -> SURVEY
+    IfcAnnotation:PredefinedType -> constraint_2
+    constraint_2[label="=.SURVEY."]
     IfcProductDefinitionShape:Representations -> IfcShapeRepresentation
     IfcShapeRepresentation:ContextOfItems -> IfcGeometricRepresentationContext
     IfcShapeRepresentation:RepresentationIdentifier -> IfcLabel_0
@@ -16,9 +17,9 @@ concept {
     IfcShapeRepresentation:Items -> IfcGradientCurve 
     IfcShapeRepresentation:Items -> IfcCompositeCurve 
     IfcLabel_0 -> constraint_0
-    constraint_0[label="=Annotation"]
+    constraint_0[label="='Annotation'"]
     IfcLabel_1 -> constraint_1
-    constraint_1[label="=Curve"]
+    constraint_1[label="='Curve'"]
     IfcShapeRepresentation:RepresentationIdentifier[binding="Identifier"]
     IfcShapeRepresentation:RepresentationType[binding="Type"]
     IfcShapeRepresentation:Items[binding="Items"]

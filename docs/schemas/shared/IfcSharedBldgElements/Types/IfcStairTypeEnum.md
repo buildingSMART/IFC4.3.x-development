@@ -1,6 +1,6 @@
 # IfcStairTypeEnum
 
-This enumeration defines the basic configuration of the stair type in terms of the number of stair flights and the number of landings, as illustrated in Figure 1. The type also distinguished turns by windings or by landings. In addition the subdivision of the straight and changing direction stairs is included. The stair configurations are given for stairs without and with one, two or three landings.
+This enumeration defines the basic configuration of the stair type in terms of the number of stair flights and the number of landings. The type also distinguished turns by windings or by landings. In addition the subdivision of the straight and changing direction stairs is included. The stair configurations are given for stairs without and with one, two or three landings.
 
 Stairs which are subdivided into more than three landings, or stairs with non-regular shapes are to be defined with type being USERDEFINED or NOTDEFINED.
 

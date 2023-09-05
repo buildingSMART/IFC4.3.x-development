@@ -1447,11 +1447,15 @@ def get_concept_usage(resource, builder, mdc):
 def get_examples(resource):
     examples = []
     for name in R.examples_by_type.get(resource.upper()) or []:
+        if os.path.exists(os.path.join(REPO_DIR, "..", "examples", "models", name, 'thumb.png')):
+            img_url = url_for("get_example", example=name) + "/thumb.png"
+        else:
+            img_url = url_for("get_asset", asset="img/ifc-file-format.png")
         examples.append(
             {
                 "name": example_title(name.split('/')[-1]),
                 "url": url_for("annex_e_example_page", s=name),
-                "image": url_for("get_example", example=name) + "/thumb.png",
+                "image": img_url,
             }
         )
     if examples:

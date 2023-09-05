@@ -105,15 +105,17 @@ Figure 236 — Member body extrusion
 
 ### Material Profile Set Usage
 
-Figure 211 illustrates assignment of _IfcMaterialProfileSetUsage_ and _IfcMaterialProfileSet_ to the _IfcMemberType_ and the _IfcMember_ occurrence. Both the _IfcMaterialProfileSet_ and _IfcProfileDef_ is shared between all occurrences.
+Figure 233 illustrates assignment of _IfcMaterialProfileSetUsage_ and _IfcMaterialProfileSet_ to the _IfcMemberType_ and the _IfcMember_ occurrence. Both the _IfcMaterialProfileSet_ and _IfcProfileDef_ is shared between all occurrences.
 
 ![Material profile set and usage](../../../../figures/ifcmember-01.png)
+
 Figure 233 — Member profile usage
 
 Figure 234 illustrates assignment of a composite profile by using _IfcCompositeProfileDef_ for geometric representation and several _IfcMaterialProfile_ entities within the _IfcMaterialProfileSet_.
 
 
 ![Material profile set and usage](../../../../figures/ifcmember-02.png)
+
 Figure 234 — Member composite profiles
 
 ### Object Typing

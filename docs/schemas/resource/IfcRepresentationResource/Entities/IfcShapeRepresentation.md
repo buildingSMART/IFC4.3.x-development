@@ -4,6 +4,7 @@ The _IfcShapeRepresentation_ represents the concept of a particular geometric re
 
 Several representation identifiers for shape representation are included as predefined values for _RepresentationIdentifier_. Table 1 indicates the defined list of values for _RepresentationIdentifier_.
 
+> IFC4.3.2.0 DEPRECATION Representation type 'PointCloud' is now deprecated as other representation types also didn't differentiate between one or multiple geometries. Use 'Point' instead.
 
 |Identifier|Description|
 |--- |--- |
@@ -27,6 +28,7 @@ Several representation types for shape representation are included as predefined
 Type |  Description
 --- | ---
 Point | 2 or 3 dimensional point(s). Points can be represented by a point list
+PointCloud | 3 dimensional points represented by a point list. DEPRECATED. Use 'Point' instead.
 Curve | 2 or 3 dimensional curve(s)
 Curve2D | 2 dimensional curve(s)
 Curve3D | 3 dimensional curve(s)

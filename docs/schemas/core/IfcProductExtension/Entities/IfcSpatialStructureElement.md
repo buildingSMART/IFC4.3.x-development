@@ -44,8 +44,9 @@ The subtypes of _IfcSpatialStructureElement_ relate to each other by using the _
 ## Attributes
 
 ### CompositionType
-Denotes, whether the predefined spatial structure element represents itself, or an aggregate (complex) or a part (part). The interpretation is given separately for each subtype of spatial structure element. If no _CompositionType_ is asserted, the default value ''ELEMENT'' applies.\X\0D
-{ .change-ifc2x4}\X\0D
+Denotes, whether the predefined spatial structure element represents itself, or an aggregate (complex) or a part (part). The interpretation is given separately for each subtype of spatial structure element. If no _CompositionType_ is asserted, the default value ''ELEMENT'' applies.
+
+{ .change-ifc2x4}
 > IFC4 CHANGE  Attribute made optional.
 
 ## Formal Propositions

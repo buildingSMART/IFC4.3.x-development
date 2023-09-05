@@ -43,7 +43,7 @@ The 3D geometric representation of IfcVirtualElement is defined using a surface 
 In case of an _IfcSurfaceOfLinearExtrusion_:
 
  * Profile: _IfcArbitraryOpenProfileDef_
- * Extrusion: The extrusion direction shall be vertically, i.e., along the positive Z Axis of the co-ordinate system of the containing spatial structure element.
+ * Extrusion: The extrusion direction shall be vertically, i.e., along the positive Z Axis of the coordinate system of the containing spatial structure element.
 
 In case of an _IfcCurveBoundedPlane_, _IfcCurveBoundedSurface_, _IfcRectangularTrimmedSurface_:
 

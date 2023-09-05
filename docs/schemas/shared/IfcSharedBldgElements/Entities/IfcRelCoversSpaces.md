@@ -25,4 +25,4 @@ Relationship to the space object that is covered.
 > IFC4 CHANGE  The attribute name has been changed from _RelatedSpace_ to _RelatingSpace_ with upward compatibility for file based exchange.
 
 ### RelatedCoverings
-Relationship to the set of coverings covering that cover surfaces of this space.
+Relationship to the set of coverings that cover surfaces of this space.

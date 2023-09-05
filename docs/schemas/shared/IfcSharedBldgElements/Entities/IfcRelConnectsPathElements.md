@@ -34,13 +34,9 @@ Figure 3 illustrates using the _IfcRelConnectsPathElements_ for a "L" type conne
 
 ### RelatingPriorities
 Overriding priorities at this connection. It overrides the standard priority given at the wall layer provided by _IfcMaterialLayer_._Priority_. The list of _RelatingProperties_ corresponds to the list of _IfcMaterialLayerSet_._MaterialLayers_ of the element referenced by _RelatingObject_.
-{ .change-ifc2x4}
-> IFC4 CHANGE  Data type changed to NUMBER and usage to hold a normalized ratio measure [0..1].
 
 ### RelatedPriorities
 Overriding priorities at this connection. It overrides the standard priority given at the wall layer provided by _IfcMaterialLayer_._Priority_. The list of _RelatedProperties_ corresponds to the list of _IfcMaterialLayerSet_._MaterialLayers_ of the element referenced by _RelatedObject_.
-{ .change-ifc2x4}
-> IFC4 CHANGE  Data type changed to NUMBER and usage to hold a normalized ratio measure [0..1].
 
 ### RelatedConnectionType
 Indication of the connection type in relation to the path of the _RelatedObject_.

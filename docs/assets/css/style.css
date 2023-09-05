@@ -612,18 +612,18 @@ body.terms-and-definitions h1 div {
 body.terms-and-definitions h1 div::after {
     content: "\00a0";
 }
-body.terms-and-definitions h2,
 body.terms-and-definitions h3,
-body.terms-and-definitions h4 {
+body.terms-and-definitions h4,
+body.terms-and-definitions h5 {
     font-size: 1rem;
     padding-bottom: 0;
     margin-bottom: var(--universal-margin);
     font-weight: bold;
     margin-top: 2em;
 }
-body.terms-and-definitions h2 a.link,
 body.terms-and-definitions h3 a.link,
-body.terms-and-definitions h4 a.link {
+body.terms-and-definitions h4 a.link,
+body.terms-and-definitions h5 a.link {
     display: none
 }
 body.terms-and-definitions #main-content p {

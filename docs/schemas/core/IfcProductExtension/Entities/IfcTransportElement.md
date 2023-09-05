@@ -9,7 +9,7 @@ A transport element is a generalization of all transport related objects that mo
 Transport element can describe fixed or non fixed elements, which can either be identified as specified operational assets within a facility or vehicles that interact with the facility as a user or customer.
 In the case of operational assets, instances of _IfcTransportElement_ can represent individual identifiable vehicles or structures with properties such as serial numbers, registration numbers etc. and be typed accordingly by instances of _IfcTransportElementType_.
 
-In the case transport elements that interact as users or customers, such as cars on a road or vessels at a port, _IfcTransportElementType_ is used to define element specifications which are used to design, analyse and provide operational constraints to the facility.
+In the case of transport elements that interact as users or customers, such as cars on a road or vessels at a port, _IfcTransportElementType_ is used to define element specifications which are used to design, analyse and provide operational constraints to the facility.
 
 Depending on local classification systems transport elements and transportation systems in buildings are either considered as part of a built system, or as part of a built service system. Within IFC they are considered as part of a built system and may have to be mapped appropriately.
 

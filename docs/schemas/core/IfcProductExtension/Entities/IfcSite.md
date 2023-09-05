@@ -16,13 +16,15 @@ A project may span over several connected or disconnected sites. Therefore site 
 * ELEMENT = site
 * PARTIAL = site section
 
-Figure 1 shows the _IfcSite_ as part of the spatial structure. In addition to the logical spatial structure, also the placement hierarchy is shown. In this example the spatial structure hierarchy and the placement hierarchy are identical.
+Figure SITECOMP shows the _IfcSite_ as part of the spatial structure. In addition to the logical spatial structure, also the placement hierarchy is shown. In this example the spatial structure hierarchy and the placement hierarchy are identical.
 
 > NOTE  Detailed requirements on mandatory element containment and placement structure relationships are given in view definitions and implementer agreements.
 
-![IfcSite as part of a spatial structure](../../../../figures/ifcsite-spatialstructure.png "Figure 1 &mdash; Site composition")
+![IfcSite as part of a spatial structure](../../../../figures/ifcsite-spatialstructure.png)
 
-Figure 2 describes the heights and elevations of the _IfcSite_. It is used to provide the geographic longitude, latitude, and height above sea level for the origin of the site. The origin of the site is the local placement.
+Figure SITECOMP &mdash; Site composition
+
+Figure SITELOC describes the heights and elevations of the _IfcSite_. It is used to provide the geographic longitude, latitude, and height above sea level for the origin of the site. The origin of the site is the local placement.
 
 The provision of longitude, latitude, height at the _IfcSite_ for georeferencing is provided for upward compatibility reasons. It requires a single instance of _IfcSite_ and WGS84 as coordinate reference system.
 
@@ -32,7 +34,9 @@ For exact georeferencing (or referencing to any other geographic coordinate syst
 * <small>the reference height of each building situated at the site is given against the same height datum used at this location.</small>
 * <small>the elevations of each storey belonging to each building are given as local height relative to the reference height of the building.</small>
 
-![IfcSite with local placement and WGS84 coordinates](../../../../figures/ifcsite_heights.png "Figure 2 &mdash; Site placement and elevations")
+![IfcSite with local placement and WGS84 coordinates](../../../../figures/ifcsite_heights.png)
+
+Figure SITELOC &mdash; Site placement and elevations
 
 > HISTORY  New entity in IFC1.0.
 

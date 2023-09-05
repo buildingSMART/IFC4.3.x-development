@@ -8,7 +8,7 @@
 
 > HISTORY  New entity in IFC2x2.
 
-## Informal Propositions
+**Informal Propositions**
 
 1. The genus of the _IfcEdgeLoop_ shall be 1 or greater.
 2. The Euler formula shall be satisfied:  (number of vertices) + genus - (number of edges) = 1;

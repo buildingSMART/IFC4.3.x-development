@@ -8,7 +8,7 @@
 
 > HISTORY  New entity in IFC2.0
 
-## Informal Propositions
+**Informal Propositions**
 
 1. The vertex has dimensionality 0. This is a fundamental property of the vertex.
 2. The extent of a vertex is defined to be zero.

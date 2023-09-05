@@ -14,7 +14,7 @@ The _IfcRectangularTrimmedSurface_ is a surface created by bounding its _BasisSu
 
 > HISTORY  New entity in IFC2x.
 
-## Informal Propositions
+**Informal Propositions**
 
 1. The domain of the trimmed surface shall be within the domain of the surface being trimmed.
 

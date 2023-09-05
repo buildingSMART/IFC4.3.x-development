@@ -160,6 +160,14 @@ function setupMathJax() {
         startup: {
             output: 'svg',
         },
+        options: {
+            enableMenu: true,
+            menuOptions: {
+                settings: {
+                    renderer: 'SVG'
+                }
+            }
+        }
     };
 }
 

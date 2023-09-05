@@ -20,7 +20,7 @@ Figure 2 illustrates use of <em>IfcAdvancedBrep</em> for boundary representation
 
 > HISTORY  New entity in IFC4
 
-## Informal Propositions
+**Informal Propositions**
 
 1. each face is a face surface;
 2. each face surface has its geometry defined by an elementary surface, swept surface or a b-spline surface;

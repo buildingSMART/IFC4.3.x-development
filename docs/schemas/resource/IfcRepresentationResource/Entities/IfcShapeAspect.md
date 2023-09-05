@@ -21,7 +21,7 @@ Figure 1 indicates the association of material characteristics to shape aspects.
 { .change-ifc2x4}
 > IFC4 CHANGE  Attribute _PartOfProductDefinitionShape_ declared OPTIONAL and extended to type _IfcProductRepresentationSelect_ with upward compatibility for file based exchange.
 
-## Informal Propositions
+**Informal Propositions**
 
 1. If _ShapeRepresentations_ points to shape representations that are part of an _IfcProductDefinitionShape_, _PartOfProductDefinitionShape_ must refer to this instance of _IfcProductDefinitionShape_.
 2. If _ShapeRepresentations_ points to shape representations that are part of an _IfcRepresentationMap_, _PartOfProductDefinitionShape_ must refer to this instance of _IfcRepresentationMap_.

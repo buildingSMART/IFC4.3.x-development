@@ -26,7 +26,7 @@ The remaining attributes are defaulted to define a corresponding transformation 
 
 > HISTORY  New entity in IFC4.
 
-## Informal Propositions
+**Informal Propositions**
 
 1. The _SweptArea_ shall lie in the plane z = 0.
 2. The _FixedReference_ shall not be parallel to a tangent vector to the directrix at any point along this curve.

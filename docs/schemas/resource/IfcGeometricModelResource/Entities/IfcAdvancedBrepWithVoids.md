@@ -6,7 +6,7 @@ The _IfcAdvancedBrepWithVoids_ is a specialization of an advanced B-rep which co
 
 > HISTORY  New entity in IFC4
 
-## Informal Propositions
+**Informal Propositions**
 
 1. Each void shell shall be disjoint from the outer shell and from every other void shell
 2. Each void shell shall be enclosed within the outer shell but not within any other void shell. In particular the outer shell is not in the set of void shells

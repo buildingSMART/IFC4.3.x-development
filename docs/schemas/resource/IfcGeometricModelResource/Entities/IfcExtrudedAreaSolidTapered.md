@@ -41,7 +41,7 @@ In case of Cartesian transformation of the start cross section the shape is cons
 
 > HISTORY  New entity in IFC4.
 
-## Informal Propositions
+**Informal Propositions**
 
 1. Mirroring within _IfcDerivedProfileDef.Operator_ shall not be used
 

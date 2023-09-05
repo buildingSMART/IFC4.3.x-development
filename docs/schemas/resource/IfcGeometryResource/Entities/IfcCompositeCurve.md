@@ -41,7 +41,7 @@ Then the parameterization of the composite curve is:
 
 > HISTORY  New entity in IFC1.0
 
-## Informal Propositions
+**Informal Propositions**
 
 1. The _SameSense_ attribute of each segment correctly specifies the senses of the component curves. When traversed in the direction indicated by _SameSense_, the segments shall join end-to-end.
 

@@ -1,26 +1,24 @@
 # PEnum_UncertaintyBasis
 
-<<todo: definition="">></todo:>
-
 ## Items
 
 ### MEASUREMENT
-
+Uncertainty based on measurement
 
 ### OBSERVATION
-
+Uncertainty based on observation
 
 ### ASSESSMENT
-
+Uncertainty based on assessment
 
 ### INTERPRETATION
-
+Uncertainty based on interpretation
 
 ### ESTIMATE
-
+Uncertainty based on estimate
 
 ### USERDEFINED
-User Defined
+User defined
 
 ### NOTKNOWN
 Value is unkown

@@ -11,7 +11,7 @@ The _IfcFaceBasedSurfaceModel_ represents the a shape by connected face sets. Th
 
 > HISTORY  New entity in IFC2x.
 
-## Informal Propositions
+**Informal Propositions**
 
 1. The connected face sets shall not overlap or intersect except at common faces, edges or vertices.
 2. The fbsm faces have dimensionality 2.

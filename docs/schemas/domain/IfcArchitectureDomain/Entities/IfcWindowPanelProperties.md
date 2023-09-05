@@ -17,6 +17,8 @@ As shown in Figure 1, the panel is applied to the position within the lining as 
 { .change-ifc2x4}
 > IFC4 CHANGE  Supertype changed to new _IfcPreDefinedPropertySet_.
 
+> IFC4.3.2.0 DEPRECATION This entity, and most other subtypes of IfcPredefinedPropertySet, are now deprecated. Use Pset_WindowPanelProperties instead.
+
 ## Attributes
 
 ### OperationType

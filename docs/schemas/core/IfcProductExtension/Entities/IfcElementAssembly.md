@@ -15,7 +15,7 @@ The geometry of an _IfcElementAssembly_ is generally formed from its components,
 
 > HISTORY  New entity in IFC2x2.
 
-## Informal Propositions
+**Informal Propositions**
 
 1. The _IfcElementAssembly_ shall have an aggregation relationship to the contained parts, i.e. the (INV) _IsDecomposedBy_ relationship shall be utilized.
 

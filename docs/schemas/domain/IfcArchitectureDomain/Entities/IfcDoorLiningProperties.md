@@ -58,6 +58,8 @@ The depth of the transom is identical to the depth of the lining and not given a
 { .change-ifc2x4}
 > IFC4 CHANGE  The following attributes have been added _LiningToPanelOffsetX_, _LiningToPanelOffsetY_. The attribute _ShapeAspectStyle_ is deprecated and shall no longer be used. Supertype changed to new _IfcPreDefinedPropertySet_.
 
+> IFC4.3.2.0 DEPRECATION This entity, and most other subtypes of IfcPreDefinedPropertySet, are now deprecated. Use Pset_DoorLiningProperties instead.
+
 ## Attributes
 
 ### LiningDepth

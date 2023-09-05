@@ -8,7 +8,7 @@
 
 > HISTORY  New entity in IFC1.0
 
-## Informal Propositions
+**Informal Propositions**
 
 1. The union of the domains of the faces and their bounding loops shall be arcwise connected.
 

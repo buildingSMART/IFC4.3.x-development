@@ -34,7 +34,7 @@ The subtypes of _IfcSpatialStructureElement_ relate to each other by using the _
 
 > HISTORY  New entity in IFC2x.
 
-## Informal Propositions
+**Informal Propositions**
 
 1. The spatial project structure, established by the _IfcRelAggregates_, shall be acyclic.
 2. A site should not be (directly or indirectly) associated to a building, storey or space.

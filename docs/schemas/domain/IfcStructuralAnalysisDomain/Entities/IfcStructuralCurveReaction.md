@@ -16,7 +16,7 @@ If connected with a curve item, instances of _IfcStructuralCurveReaction_ shall 
 Special Case:
 If connected with a surface item, instances of _IfcStructuralCurveReaction_ shall have an _ObjectPlacement_ and _Representation_, containing an _IfcEdgeCurve_. See _IfcStructuralActivity_ for further definitions.
 
-## Informal Propositions
+**Informal Propositions**
 
 1. If the curve reaction is of the predefined type CONST, _SELF\IfcStructuralActivity.AppliedLoad_ must not be of type _IfcStructuralLoadConfiguration_.
 2. If the curve reaction is of the predefined type LINEAR, _SELF\IfcStructuralActivity.AppliedLoad_ shall be of type _IfcStructuralLoadConfiguration_ and shall contain two items.

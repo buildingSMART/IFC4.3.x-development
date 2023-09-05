@@ -17,7 +17,7 @@ The outer boundary shall be either defined by:
 
 > HISTORY  New entity in IFC4.
 
-## Informal Propositions
+**Informal Propositions**
 
 1. Each curve in the set of _Boundaries_ shall be closed.
 2. No two curves in the set of _Boundaries_ shall intersect.

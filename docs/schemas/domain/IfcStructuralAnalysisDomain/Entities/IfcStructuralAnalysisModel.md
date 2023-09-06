@@ -19,8 +19,7 @@ Important functionalities for the description of an analysis model are derived f
 { .change-ifc2x4}
 > IFC4 CHANGE  Attribute _SharedPlacement_ and informal propositions added, allowing for easy retrieval of the common object placement and for specification of the analysis model's coordinate system before any structural item is instantiated. WHERE rule added.
 
-{ .spec-head}
-Informal Propositions:
+**Informal Propositions**
 
 1. If one or more structural item (instance of a subtype of _IfcStructuralItem_ is grouped into an _IfcStructuralAnalysisModel_, the attribute SharedPlacement shall be provided with a value.
 2. The _ObjectPlacement_ of all structural items which are grouped into the same instance of _IfcStructuralAnalysisModel_ shall refer to the same instance of _IfcObjectPlacement_ as _IfcStructuralAnalysisModel_.SharedPlacement.

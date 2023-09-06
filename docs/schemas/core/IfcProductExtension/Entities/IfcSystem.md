@@ -9,9 +9,10 @@ A system is an organized combination of related parts within an AEC product, com
 ## Attributes
 
 ### ServicesBuildings
-Reference to the ~~building~~ spatial structure via the objectified relationship _IfcRelServicesBuildings_, which is serviced by the system.
+Reference to the spatial structure via the objectified relationship _IfcRelServicesBuildings_, which is serviced by the system.
 
 ### ServicesFacilities
+Reference to the relationship _IfcRelReferencedInSpatialStructure_ that relates the system to a spatial element.
 
 ## Concepts
 

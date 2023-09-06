@@ -5,10 +5,14 @@ This container defines the different predefined types of course elements that ca
 ## Items
 
 ### FLEXIBLE
-Flexible pavements, including less rigid pavements like rubber.
+Pavement with a bituminous surfacing and with a base layer with or without a hydrocarbon binder.
+
+> NOTE Definition according to PIARC
 
 ### RIGID
 Pavement substantially constructed of cement concrete.
+
+> NOTE Definition according to PIARC
 
 ### USERDEFINED
 User-defined type.

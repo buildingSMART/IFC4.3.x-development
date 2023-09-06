@@ -4,8 +4,7 @@ The closed profile _IfcArbitraryClosedProfileDef_ defines an arbitrary two-dimen
 
 > HISTORY  New entity in IFC1.5. Entity has been renamed from _IfcArbitraryProfileDef_ in IFC2x.
 
-{ .spec-head}
-Informal Propositions:
+**Informal Propositions**
 
 1. The _OuterCurve_ has to be a closed curve.
 2. The _OuterCurve_ shall not intersect.

@@ -29,11 +29,9 @@ Measures given to a hatch or tile pattern are given in global drawing length uni
 
 > NOTE  Global units are defined at the single _IfcProject_ instance, given by _UnitsInContext:IfcUnitAssignment_, the same units are used for the geometric representation items and for the style definitions.
 
-The measure values for hatch or tile pattern apply to the model space with a target plot scale provided for the correct appearance in the default plot scale. For different scale and projection dependent fill area styles a different instance of _IfcFillAreaStyle_ needs to be used by _IfcPresentationStyleAssignment_ for different _IfcGeometricRepresentationSubContext_ dependent representations.
+The measure values for hatch or tile pattern apply to the model space with a target plot scale provided for the correct appearance in the default plot scale.
 
 > NOTE  the target plot scale is given by _IfcGeometricRepresentationSubContext.TargetScale_.
-
-An _IfcFillAreaStyle_ can be assigned to _IfcFillArea_ via the _IfcPresentationStyleAssignment_ through an intermediate _IfcStyledItem_ or subtype _IfcAnnotationFillAreaOccurrence_.
 
 { .extDef}
 > NOTE  Definition according to ISO/CD 10303-46:1992

@@ -37,6 +37,6 @@ Each asset carries a unique identifier, cost, ownership,location and other infor
 Figure 3 &mdash; Asset identification
 
 ### 6.4.1.3 Inventory
-An _IfcInventory_ provides a list of objects of a particular type, the type of objects that are contained being identified by the _IfcInventoryEnum_.
+An _IfcInventory_ provides a list of objects of a particular type, the type of objects that are contained being identified by the _IfcInventoryTypeEnum_.
 
 Each inventory has one or more responsible persons and an organizational jurisdiction (which is valuable in facilities management situations where more than one functional group or organization is concerned).

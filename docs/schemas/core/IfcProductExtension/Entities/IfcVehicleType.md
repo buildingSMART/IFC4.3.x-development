@@ -1,3 +1,3 @@
 # IfcVehicleType
 
-Type of Vehicle.
+Type of _IfcVehicle_.

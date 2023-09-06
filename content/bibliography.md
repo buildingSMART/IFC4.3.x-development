@@ -22,3 +22,5 @@ This documentation of the Industry Foundation Classes (IFC) refers to other stan
 * RFC 3986, Uniform Resource Identifier (URI): Generic Syntax — Network Working Group NWG Standard
 * RFC 5646, Tags for Identifying Languages — Internet Engineering Task Force IETF Best Current Practice 47
 * XML Schema Part 2, XML Schema Part 2: Datatypes — W3C Recommendation
+* ISO/IEC 19510, Information technology — Object Management Group Business Process Model and Notation
+* ISO 29481-1, Building information models — Information delivery manual — Part 1: Methodology and format

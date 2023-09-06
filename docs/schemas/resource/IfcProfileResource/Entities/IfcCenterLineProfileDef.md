@@ -12,8 +12,7 @@ or a combination of them. See _IfcProfileDef_ for guidance on external reference
 
 > HISTORY  New entity in IFC2x3.
 
-{ .spec-head}
-Informal Propositions:
+**Informal Propositions**
 
 1. The _Curve_ has to be an open curve.
 2. The _Curve_ has to be a non-intersecting curve.

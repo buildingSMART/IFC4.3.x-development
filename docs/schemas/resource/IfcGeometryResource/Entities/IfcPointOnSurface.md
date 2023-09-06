@@ -10,8 +10,7 @@ The _IfcPointOnSurface_ is a point defined by two parameter value of its definin
 
 > HISTORY  New entity in IFC2x2.
 
-{ .spec-head}
-Informal Propositions:
+**Informal Propositions**
 
 1. The parametric values specified for u and v shall not be outside the parametric range of the basis surface.
 

@@ -1,6 +1,6 @@
 # IfcConstructionEquipmentResourceType
 
-The resource type _IfcConstructionEquipmentType_ defines commonly shared information for occurrences of construction equipment resources. The set of shared information may include:
+The resource type _IfcConstructionEquipmentResourceType_ defines commonly shared information for occurrences of construction equipment resources. The set of shared information may include:
 
 * common productivities
 * common cost rates

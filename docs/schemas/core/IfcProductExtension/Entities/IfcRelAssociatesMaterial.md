@@ -32,8 +32,7 @@ As a fallback, or in cases where only a single material information is needed, m
 * A single _IfcMaterial_ for any element where the material use definition does not prohibit its direct association
 * An _IfcMaterialList_, e.g. for composite elements, without any information on how the different materials are arranged.
 
-{ .deprecated}
->> DEPRECATION  The use of _IfcMaterialList_ is deprecated in IFC4 onwards. Use _IfcMaterialConstituentSet_ instead.
+>> IFC4 DEPRECATION  The use of _IfcMaterialList_ is deprecated in IFC4 onwards. Use _IfcMaterialConstituentSet_ instead.
 
 The _IfcRelAssociatesMaterial_ relationship is a special type of the _IfcRelAssociates_ relationship. It can be applied to subtypes of _IfcElement_ and subtypes of _IfcElementType_.
 
@@ -44,8 +43,7 @@ If both, the element occurrence (by an instance of _IfcElement_) and the element
 
 > HISTORY  New entity in IFC2x.
 
-{ .spec-head}
-### Informal Propositions
+**Informal Propositions**
 
 1. An _IfcMaterialLayerSetUsage_ shall not be associated with a subtype of _IfcElementType_, it should only be associated with individual occurrences
 2. An _IfcMaterialProfileSetUsage_ shall not be associated with a subtype of _IfcElementType_, it should only be associated with individual occurrences

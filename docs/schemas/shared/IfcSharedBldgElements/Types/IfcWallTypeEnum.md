@@ -27,7 +27,7 @@ A wall-like barrier to protect human or vehicle from falling, or to prevent the 
 A wall designed to partition spaces that often has a light-weight, sandwich-like construction (e.g. using gypsum board). Partitioning walls are normally non load bearing.
 
 ### PLUMBINGWALL
-A pier, or enclosure, or encasement, normally used to enclose plumbing in sanitary rooms. Such walls often do not extent to the ceiling.
+A pier, or enclosure, or encasement, normally used to enclose plumbing in sanitary rooms. Such walls often do not extend to the ceiling.
 
 ### SHEAR
 A wall designed to withstand shear loads. Examples of shear wall are diaphragms inside a box girder, typically on a pier, to resist lateral forces and transfer them to the support.
@@ -46,8 +46,10 @@ A polygonal wall, extruded vertically, where the wall thickness varies along the
 
 ### ELEMENTEDWALL
 A stud wall framed with studs and faced with sheetings, sidings, wallboard, or plasterwork.
-{ .deprecated}
-> IFC4 DEPRECATION The value is deprecated, it is expressed by using _IfcRelAggregates_.
+
+> IFC4.3.2.0 CHANGE This enumeration value is no longer deprecated.
+
+> NOTE An elemented wall can be modelled by means of an aggregation of various components (use _IfcRelAggregates_ to relate to the _IfcWall_), but when this amount of detail is not necessary or available this enumeration value can be used instead.
 
 ### RETAININGWALL
 A supporting wall used to protect against soil layers behind. Special types of a retaining wall may be e.g. Gabion wall and Grib wall. Examples of retaining walls are wing wall, headwall, stem wall, pierwall and protecting wall.

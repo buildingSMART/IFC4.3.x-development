@@ -1,6 +1,6 @@
 # IfcToroidalSurface
 
-The _IfcToroidalSurface_ is a bounded elementary surface. It is constructed by completely revolving a circle around an axis line. The inherited _Position_ attribute defines the _IfcAxisPlacement3D_ and provides:
+The _IfcToroidalSurface_ is a bounded elementary surface. It is constructed by completely revolving a circle around an axis line. The inherited _Position_ attribute defines the _IfcAxis2Placement3D_ and provides:
 
 * _SELF\IfcElementarySurface.Position_: The location and orientation of the axis system for the primitive.
 * _SELF\IfcElementarySurface.Position.Location_: The center of the toroidal surface.

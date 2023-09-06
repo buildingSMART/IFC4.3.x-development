@@ -8,8 +8,7 @@ The relationship handles the assignment of group members to the group object. It
 
 The inherited attribute _RelatedObjects_ gives the references to the objects, which are the elements within the group. The _RelatingGroup_ is the group that comprises all elements. The same object or object type can be included in zero, one or many groups. Grouping relationships are not hierarchical.
 
-{ .spec-head}
-## Informal Propositions
+**Informal Propositions**
 
 1. The group assignment relationship shall be acyclic, that is, a group shall not participate in its own grouping relationship.
 

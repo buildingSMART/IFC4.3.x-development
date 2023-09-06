@@ -15,8 +15,7 @@ Whether the relationship between the covering and the space, or between the cove
 
 > HISTORY  New entity in IFC1.5
 
-{ .deprecated}
-> DEPRECATION  The relationship _IfcRelCoversBldgElements_ shall not be used anymore, use _IfcRelAggregates_ instead.
+> IFC4 DEPRECATION  The relationship _IfcRelCoversBldgElements_ shall not be used anymore, use _IfcRelAggregates_ instead.
 
 ## Attributes
 

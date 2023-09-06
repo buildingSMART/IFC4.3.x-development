@@ -1,3 +1,3 @@
 # Pset_BoreholeCommon
 
-Properties describing the features of a borehole (If not modelled separately).
+Properties describing the features of a borehole (if not modelled separately).

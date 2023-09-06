@@ -34,7 +34,7 @@ Reference to the element to port connection relationship. The relationship then 
 
 ### Object Typing
 
-The _IfcDistributionElement_ defines the occurrence of any HVAC, electrical, sanitary or other element within a distribution system. Common information about distribution element types (or styles) is handled by subtypes of _IfcDistributionElementType_. The _IfcDistributionElementType_ (if present) may establish the common type name, usage (or predefined) type, common material, common set of properties and common shape representations (using _IfcRepresentationMap_). The _IfcDistributionElementType_ is attached using the _IfcRelDefinedByType.RelatingType_ objectified relationship and is accessible by the inverse _IsDefinedBy_ attribute.
+The _IfcDistributionElement_ defines the occurrence of any HVAC, electrical, sanitary or other element within a distribution system. Common information about distribution element types (or styles) is handled by subtypes of _IfcDistributionElementType_. The _IfcDistributionElementType_ (if present) may establish the common type name, usage (or predefined) type, common material, common set of properties and common shape representations (using _IfcRepresentationMap_). The _IfcDistributionElementType_ is attached using the _IfcRelDefinesByType.RelatingType_ objectified relationship and is accessible by the inverse _IsDefinedBy_ attribute.
 
 The assignment of types to distribution element occurrences is vital for providing the additional meaning, or ontology, of the distribution element. Many specialized type are defined in other schemas of this specification.
 

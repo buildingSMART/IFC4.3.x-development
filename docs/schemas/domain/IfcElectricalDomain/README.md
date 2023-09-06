@@ -1,7 +1,7 @@
 IfcElectricalDomain
 ===================
 
-The _IfcElectricalDomain_ schema forms part of the Domain Layer of the IFC Model. It extends the ideas concerning building services outlined in the _IfcSharedBldgServicesElements_ schema. It defines concepts of cabled systems where the cabling carries electrical supply, data, telephone signals or other forms of cable transmission.
+The _IfcElectricalDomain_ schema forms part of the Domain Layer of the IFC Model. It extends the ideas concerning building services outlined in the _IfcSharedBldgServiceElements_ schema. It defines concepts of cabled systems where the cabling carries electrical supply, data, telephone signals or other forms of cable transmission.
 
 Additionally the schema defines various devices that are connected by cabling, protection of electrical devices, provision and concepts of light fixtures within buildings, the cabling itself and methods for supporting and carrying cables.
 
@@ -53,11 +53,11 @@ The following are deemed to be out of scope of the _IfcElectricalDomain_ schema 
 * non steady state/transient states of operation of electrical installations
 * security arrangements associated with safety of electrical installations
 * communication signals between automation devices or bus systems
-* sensors (which are dealt with in the _IfcBuildingControl_ domain schema)
+* sensors (which are dealt with in the _IfcBuildingControlsDomain_ schema)
 * spotlight mirror systems whereby a spotlight is directed towards a distant mirror that the distributes the light energy (other than as a group of separately defined objects)
 * lighting for specialist purposes (for example, stage, painting)
 
-An electrical circuit is formed from electrical devices connected together with power carrying cables. Up to IFC4, an instance of an electrical circuit has been defined as an _IfcElectricalCircuit_ (subtype of _IfcSystem_). This is now deleted as of IFC4. Instead, electrical systems together with other cable systems and other forms of distribution system are now identified through the _IfcDistributionSystem.PredefinedType::IfcDistributionSystemTypeEnum_, along with specific property sets.
+An electrical circuit is formed from electrical devices connected together with power carrying cables. Up to IFC4, an instance of an electrical circuit has been defined as an _IfcElectricalCircuit_ (subtype of _IfcSystem_). This is now deleted as of IFC4. Instead, electrical systems together with other cable systems and other forms of distribution system are now identified through the _IfcDistributionSystem.PredefinedType::IfcDistributionSystemEnum_, along with specific property sets.
 
 > HISTORY  New schema in IFC2x.
 

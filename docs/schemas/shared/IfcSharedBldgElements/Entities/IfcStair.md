@@ -94,7 +94,7 @@ The following restriction may be imposed by view definitions or implementer agre
 
 ### Spatial Containment
 
-The _IfcStair_, as any subtype of _IfcBuildingElement_, may participate alternatively in one of the two different containment relationships:
+The _IfcStair_, as any subtype of _IfcBuiltElement_, may participate alternatively in one of the two different containment relationships:
 
 * the _Spatial Containment_ (defined here), or
 * the _Element Composition_.

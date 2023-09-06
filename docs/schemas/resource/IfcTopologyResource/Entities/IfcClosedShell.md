@@ -17,8 +17,7 @@
 
 > HISTORY  New entity in IFC1.0
 
-{ .spec-head}
-Informal Propositions:
+**Informal Propositions**
 
 1. Every edge shall be referenced exactly twice by the loops of the face.
 2. Each oriented edge shall be unique.

@@ -13,7 +13,7 @@ There are two main representations for door occurrences:
 
 In addition, an _IfcDoor_ may commonly include a 'FootPrint' representation defining the 2D shape of the door and its swing.
 
-The parameters of a door are defined by both the _IfcDoor_ occurence and its _IfcDoorType_. The _IfcDoor_ specifies:
+The parameters of a door are defined by both the _IfcDoor_ occurrence and its _IfcDoorType_. The _IfcDoor_ specifies:
 
  * the door width and height
  * the door opening direction (by the positive y-axis of the _ObjectPlacement_)
@@ -37,12 +37,12 @@ The _IfcDoorType_ specifies parameters which are common to all of its occurrence
 ## Attributes
 
 ### OverallHeight
-Overall measure of the height, it reflects the Z Dimension of a bounding box, enclosing the body of the door opening. If omitted, the _OverallHeight_ should be taken from the geometric representation of the _IfcOpening_ in which the door is inserted.
+Overall measure of the height, it reflects the Z Dimension of a bounding box, enclosing the body of the door opening. If omitted, the _OverallHeight_ should be taken from the geometric representation of the _IfcOpeningElement_ in which the door is inserted.
 
 > NOTE The body of the door might be taller then the door opening (e.g. in cases where the door lining includes a casing). In these cases the _OverallHeight_ shall still be given as the door opening height, and not as the total height of the door lining.
 
 ### OverallWidth
-Overall measure of the width, it reflects the X Dimension of a bounding box, enclosing the body of the door opening. If omitted, the _OverallWidth_ should be taken from the geometric representation of the _IfcOpening_ in which the door is inserted.
+Overall measure of the width, it reflects the X Dimension of a bounding box, enclosing the body of the door opening. If omitted, the _OverallWidth_ should be taken from the geometric representation of the _IfcOpeningElement_ in which the door is inserted.
 
 > NOTE The body of the door might be wider then the door opening (e.g. in cases where the door lining includes a casing). In these cases the _OverallWidth_ shall still be given as the door opening width, and not as the total width of the door lining.
 
@@ -61,7 +61,6 @@ Designator for the user defined operation type, shall only be provided, if the v
 
 ### CorrectStyleAssigned
 Either there is no door type object associated, i.e. the _IsTypedBy_ inverse relationship is not provided, or the associated type object has to be of type _IfcDoorType_.
-> NOTEnbsp; The deprecated type _IfcDoorStyle_ is still included for backward compatibility reasons.
 
 ### CorrectPredefinedType
 Either the _PredefinedType_ attribute is unset (e.g. because an _IfcDoorType_ is associated), or the inherited attribute _ObjectType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.
@@ -77,14 +76,14 @@ The opening direction is determined by the local placement of _IfcDoor_ and the 
 
 The _IfcDoorTypeOperationEnum_ defines the general layout of the door type and its symbolic presentation. Depending on the enumerator, the appropriate instances of _IfcDoorLiningProperties_ and _IfcDoorPanelProperties_ are attached in the list of _HasPropertySets_. The _IfcDoorTypeOperationEnum_ mainly determines the hinge side (left hung, or right hung), the operation (swinging, sliding, folding, etc.) and the number of panels.
 
-There are different definitions in various countries on what a left opening or left hung or left swing door is (same for right). Therefore the IFC definition may derivate from the local standard and need to be mapped appropriately. Example mappings are shown in Table 228, where it assumes that the 'inside/private/primary' space is above (top in the pictures) and the 'outside/public/secondary' space is below (bottom in the pictures).
+There are different definitions in various countries on what a left opening or left hung or left swing door is (same for right). Therefore the IFC definition may deviate from the local standard and needs to be mapped appropriately. Example mappings are shown in Table 228, where it assumes that the 'inside/private/primary' space is above (top in the pictures) and the 'outside/public/secondary' space is below (bottom in the pictures).
 
 | Opening | Definitions | US Mapping | German Mapping |
 | --- | --- | --- | --- |
 | ![fig 1](../../../../figures/ifcdoor-fig01.gif) | The door panel (for swinging doors) opens always into the direction of the positive Y axis of the local placement. The determination of whether the door opens to the left or to the right is done at the level of the _IfcDoorType_.  Here it is a left side opening door given by _IfcDoorType.OperationType_ = SingleSwingLeft | LEFT HAND (LH) | DIN-R (right hung) |
 | ![fig 2](../../../../figures/ifcdoor-fig02.gif) | If the door should open to the other side, then the local placement has to be changed. It is still a left side opening door, given by _IfcDoorType_._OperationType_ = SingleSwingLeft | RIGHT HAND REVERSE (RHR) | DIN-R (right hung) |
 | ![fig 3](../../../../figures/ifcdoor-fig03.gif) | If the door panel (for swinging doors) opens to the right, a separate door style needs to be used (here _IfcDoorType_._OperationType_ = SingleSwingRight) and it always opens into the direction of the positive Y axis of the local placement. | RIGHT HAND (RH) | DIN-L (left hung) |
-| ![fig 4](../../../../figures/ifcdoor-fig04.gif) | If the door panel (for swinging doors) opens to the right, and into the opposite directions, the local placement of the door need to change. The door style is given by _IfcDoorType_._OperationType_ = SingleSwingRight. | LEFT HAND REVERSE (LHR) | DIN-L (left hung) |
+| ![fig 4](../../../../figures/ifcdoor-fig04.gif) | If the door panel (for swinging doors) opens to the right, and into the opposite direction, the local placement of the door needs to change. The door style is given by _IfcDoorType_._OperationType_ = SingleSwingRight. | LEFT HAND REVERSE (LHR) | DIN-L (left hung) |
 
 Table 228 — Mappings of openings to local standards
 
@@ -103,12 +102,6 @@ Indicates that the material constituent applies to the door panel(s); if not pro
 #### Glazing
 
 Indicates that the material constituent applies to the glazing part.
-
-### Object Typing
-
-#### IfcDoorStyle
-
-> NOTE This type is deprecated
 
 ### Product Local Placement
 
@@ -151,7 +144,7 @@ Figure 229 — Door profile
 
 ### Spatial Containment
 
-The _IfcDoor_, as any subtype of _IfcBuildingElement_,
+The _IfcDoor_, as any subtype of _IfcBuiltElement_,
 may participate alternatively in one of the two different containment relationships:
 
 
@@ -166,7 +159,7 @@ The _IfcDoor_ may also be connected to the _IfcOpeningElement_ in which it is pl
 
 Figure 230 — Door spatial containment
 
-Even if the _IfcDoor_ is a filling of an opening established by _IfcRelFillsElement_, it must also contained in the spatial structure by _IfcRelContainedInSpatialStructure_.
+Even if the _IfcDoor_ is a filling of an opening established by _IfcRelFillsElement_, it must also be contained in the spatial structure by _IfcRelContainedInSpatialStructure_.
 
 #### IfcBuildingStorey
 

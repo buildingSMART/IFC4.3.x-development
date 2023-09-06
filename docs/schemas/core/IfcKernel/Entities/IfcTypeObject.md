@@ -35,7 +35,7 @@ Set of unique property sets, that are associated with the object type and are co
 > IFC2x3 CHANGE  The attribute aggregate type has been changed from LIST to SET.
 
 ### Types
-Reference to the relationship IfcRelDefinedByType and thus to those occurrence objects, which are defined by this type.
+Reference to the relationship IfcRelDefinesByType and thus to those occurrence objects, which are defined by this type.
 
 ## Formal Propositions
 
@@ -43,4 +43,5 @@ Reference to the relationship IfcRelDefinedByType and thus to those occurrence o
 A Name attribute has to be provided. The name can be declared within the IFC specification as part of the property set agreements.
 
 ### UniquePropertySetNames
+Every individual _IfcPropertySetDefinition_ assigned to the instance in the attribute _HasPropertySets_ shall have a unique _Name_ attribute value.
 

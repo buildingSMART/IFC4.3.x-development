@@ -29,8 +29,7 @@ Figure 1 illustrates an example.
 { .change-ifc2x4}
 > IFC4 CHANGE  The attribute _StartParam_ and _EndParam_ have been made optional.
 
-{ .spec-head}
-Informal Propositions:
+**Informal Propositions**
 
 1. If the _Directrix_ curve definition is not tangent continuous, the transition between the segments has to be within an acceptable limit of tangent discontinuity. Very sharp edges may result in nearly impossible miter. Implementer agreements may define acceptable limits for tangent discontinuity.
 2. The segments of the _Directrix_ shall be long enough to apply the _Radius_. In case of an arc segment forming part of the _Directrix_, its radius shall be greater then the disk _Radius_

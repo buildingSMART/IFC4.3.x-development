@@ -1,4 +1,4 @@
 FrameThickness
 ==============
 
-The thickness of the damper frame material.
+The thickness of the frame.

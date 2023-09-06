@@ -35,12 +35,12 @@ The _IfcWindowType_ specifies parameters which are common to all of its occurren
 ## Attributes
 
 ### OverallHeight
-Overall measure of the height, it reflects the Z Dimension of a bounding box, enclosing the window opening. If omitted, the _OverallHeight_ should be taken from the geometric representation of the _IfcOpening_ in which the window is inserted.
+Overall measure of the height, it reflects the Z Dimension of a bounding box, enclosing the window opening. If omitted, the _OverallHeight_ should be taken from the geometric representation of the _IfcOpeningElement_ in which the window is inserted.
 
 > NOTE  The body of the window might be taller then the window opening (for example in cases where the window lining includes a casing). In these cases the _OverallHeight_ shall still be given as the window opening height, and not as the total height of the window lining.
 
 ### OverallWidth
-Overall measure of the width, it reflects the X Dimension of a bounding box, enclosing the window opening. If omitted, the _OverallWidth_ should be taken from the geometric representation of the _IfcOpening_ in which the window is inserted.
+Overall measure of the width, it reflects the X Dimension of a bounding box, enclosing the window opening. If omitted, the _OverallWidth_ should be taken from the geometric representation of the _IfcOpeningElement_ in which the window is inserted.
 
 > NOTE  The body of the window might be wider then the window opening (for example in cases where the window lining includes a casing). In these cases the _OverallWidth_ shall still be given as the window opening width, and not as the total width of the window lining.
 
@@ -65,10 +65,9 @@ Designator for the user defined partitioning type, shall only be provided, if th
 
 ### CorrectStyleAssigned
 Either there is no window type object associated, i.e. the _IsTypedBy_ inverse relationship is not provided, or the associated type object has to be of type _IfcWindowType_.
-> NOTEnbsp; The deprecated type _IfcWindowStyle_ is still included for backward compatibility reasons.
 
 ### CorrectPredefinedType
-Either the _PredefinedType_ attribute is unset (e.g. because an _IfcWIndowType_ is associated), or the inherited attribute _ObjectType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.
+Either the _PredefinedType_ attribute is unset (e.g. because an _IfcWindowType_ is associated), or the inherited attribute _ObjectType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.
 
 ### CorrectTypeAssigned
 Either there is no door type object associated, i.e. the _IsTypedBy_ inverse relationship is not provided, or the associated type object has to be of type _IfcWindowType_.
@@ -153,7 +152,7 @@ Figure 2 &mdash; Window planes
 
 ### Spatial Containment
 
-The _IfcWindow_, as any subtype of _IfcBuildingElement_,
+The _IfcWindow_, as any subtype of _IfcBuiltElement_,
 may participate alternatively in one of the two different containment relationships:
 
 * the _Spatial Containment_ (defined here), or

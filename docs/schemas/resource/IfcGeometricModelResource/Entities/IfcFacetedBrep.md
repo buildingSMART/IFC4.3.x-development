@@ -21,8 +21,7 @@ Figure 1 &mdash; Diagram showing the use of <em>IfcFacetedBrep</em>
 
 
 
-{ .spec-head}
-Informal Propositions:
+**Informal Propositions**
 
 1. All the bounding loops of all the faces of all the shells in the _IfcFacetedBrep_ shall be of type _IfcPolyLoop_.
 2. All vertices shall be referenced by all polyloops, sharing the vertex. I.e., each Cartesian point shall be references by at least three polyloops.

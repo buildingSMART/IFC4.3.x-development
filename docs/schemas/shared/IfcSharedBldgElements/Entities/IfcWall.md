@@ -102,7 +102,7 @@ The following additional constraints apply to the 'SweptSolid' representation:
 
 Additional constraints apply to the 'SweptSolid' representation, when an _IfcMaterialLayerSetUsage_ is used:
 
-* Extrusion: The profile shall be extruded vertically, i.e., in the direction of the z-axis of the co-ordinate system of the referred spatial structure element. It might be further constraint to be in the direction of the global z-axis in implementers agreements. The extrusion axis shall be perpendicular to the swept profile, i.e. pointing into the direction of the z-axis of the _Position_ of the _IfcExtrudedAreaSolid_.
+* Extrusion: The profile shall be extruded vertically, i.e., in the direction of the z-axis of the coordinate system of the referred spatial structure element. It might be further constraint to be in the direction of the global z-axis in implementers agreements. The extrusion axis shall be perpendicular to the swept profile, i.e. pointing into the direction of the z-axis of the _Position_ of the _IfcExtrudedAreaSolid_.
 
 The profile of a wall is described in the ground view and extruded vertically. The profile (also identical with the foot print of the wall) is defined by the _IfcArbitraryClosedProfileDef_ (excluding its subtypes). The profile is given with all wall connections already resolved.
 
@@ -229,7 +229,7 @@ A task for operating on the wall.
 
 ### Spatial Containment
 
-The _IfcWall_, as any subtype of _IfcBuildingElement_, may participate alternatively in one of the two different containment relationships:
+The _IfcWall_, as any subtype of _IfcBuiltElement_, may participate alternatively in one of the two different containment relationships:
 
 * the _Spatial Containment_ (defined here), or
 * the _Element Composition_.

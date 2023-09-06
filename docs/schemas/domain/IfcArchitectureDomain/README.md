@@ -15,5 +15,4 @@ These parameter definitions are used to enhance the specification of door and wi
 
 > HISTORY  New schema in IFC1.5
 
-{ .deprecated}
-> DEPRECATION  Use of _IfcDoorStyle_ and _IfcWindowStyle_ is deprecated. Use _IfcDoorType_ and _IfcWindowType_ instead.
+> DEPRECATION  Use of _IfcDoorStyle_ and _IfcWindowStyle_ has been deprecated in IFC4 and now deleted. Use _IfcDoorType_ and _IfcWindowType_ instead.

@@ -10,8 +10,7 @@ An _IfcSurfaceCurve_ is a 3-dimensional curve that has additional representation
 
 > HISTORY  New entity in IFC4 Add2.
 
-{ .spec-head}
-Informal Propositions:
+**Informal Propositions**
 
 1. Where _Curve3D_ and one or two pcurves exist they shall represent the same mathematical point set. (i.e., they shall coincide geometrically but may differ in parametrisation.)
 2. The _Curve3D_ and any associated pcurves shall agree with respect to their senses.

@@ -54,7 +54,7 @@ function generateSectionNavigation() {
     let content = document.getElementById('main-content');
     let nav = document.getElementById('section-navigation');
     let ol = nav.getElementsByTagName('ol')[0];
-    Array.from(content.getElementsByTagName('h2')).forEach((h2) => {
+    Array.from(document.querySelectorAll('h2, h3, h4, h5, h6')).forEach((h2) => {
         let href = null;
         Array.from(h2.getElementsByTagName('a')).forEach((anchor) => {
             if (anchor.getAttribute('href')) {
@@ -63,12 +63,23 @@ function generateSectionNavigation() {
         });
         if (href) {
             let name = h2.textContent.trim();
-            let number = name.split(' ', 1)[0];
-            if (name == number || ! /\d/.test(number)) {
-                number = '';
+            let subDivs = Array.from(h2.children).filter(el => el.tagName.toLowerCase() === "div");
+            let number;
+            if (subDivs.length === 2 && subDivs[0].className === 'number') {
+                // terms and cond
+                [number, name] = subDivs.map(el => el.textContent);
+            } else if (h2.tagName.toLowerCase() === 'h2') {
+                number = name.split(' ', 1)[0];
+                if (name == number || ! /\d/.test(number)) {
+                    number = '';
+                } else {
+                    name = name.substring(number.length);
+                }
             } else {
-                name = name.substring(number.length);
+                // to keep behaviour as before we only process h3+ on Ch 3.
+                return;
             }
+            
 
             li = document.createElement('li');
             li.setAttribute('number', number);
@@ -149,6 +160,14 @@ function setupMathJax() {
         startup: {
             output: 'svg',
         },
+        options: {
+            enableMenu: true,
+            menuOptions: {
+                settings: {
+                    renderer: 'SVG'
+                }
+            }
+        }
     };
 }
 

@@ -4,8 +4,7 @@ This class combines one or more load or result values in a 1- or 2-dimensional c
 
 > HISTORY  New entity in IFC4.
 
-{ .spec-head}
-Informal Propositions:
+**Informal Propositions**
 
 1. All items in _Values_ shall be of the same type.
 2. If the loads or results comprise a curve activity, 1-dimensional locations shall be given, measured locally along the curve. The location shall not exceed the bounds of the curve actvity. The load samples and corresponding locations shall be given in ascending order of locations.

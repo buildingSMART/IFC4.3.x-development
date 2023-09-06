@@ -10,8 +10,7 @@
 
 > HISTORY  New entity in IFC2x.
 
-{ .spec-head}
-Informal Propositions:
+**Informal Propositions**
 
 1. A loop has a finite extent.
 2. A loop describes a closed (topological) curve with coincident start and end vertices.

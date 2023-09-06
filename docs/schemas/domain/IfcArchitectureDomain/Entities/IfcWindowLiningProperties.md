@@ -23,6 +23,8 @@ Table 1 &mdash; Window lining properties
 { .change-ifc2x4}
 > IFC4 CHANGE  The following attributes have been added _LiningOffset_, _LiningToPanelOffsetX_, _LiningToPanelOffsetY_. The attribute _ShapeAspectStyle_ is deprecated and shall no longer be used. Supertype changed to new _IfcPreDefinedPropertySet_.
 
+> IFC4.3.2.0 DEPRECATION This entity, and most other subtypes of IfcPredefinedPropertySet, are now deprecated. Use Pset_WindowLiningProperties instead.
+
 ## Attributes
 
 ### LiningDepth
@@ -46,16 +48,16 @@ If the _MullionThickness_ is set to zero (and the _MullionOffset_ set to a posit
 > IFC4 CHANGE  Data type changed to _IfcNonNegativeLengthMeasure_.
 
 ### FirstTransomOffset
-Offset of the transom centerline, measured along the z-axis of the window placement co-ordinate system. An offset value = 0.5 indicates that the transom is positioned in the middle of the window.
+Offset of the transom centerline, measured along the z-axis of the window placement coordinate system. An offset value = 0.5 indicates that the transom is positioned in the middle of the window.
 
 ### SecondTransomOffset
-Offset of the transom centerline for the second transom, measured along the x-axis of the window placement co-ordinate system. An offset value = 0.666 indicates that the second transom is positioned at two/third of the window.
+Offset of the transom centerline for the second transom, measured along the x-axis of the window placement coordinate system. An offset value = 0.666 indicates that the second transom is positioned at two/third of the window.
 
 ### FirstMullionOffset
-Offset of the mullion centerline, measured along the x-axis of the window placement co-ordinate system. An offset value = 0.5 indicates that the mullion is positioned in the middle of the window.
+Offset of the mullion centerline, measured along the x-axis of the window placement coordinate system. An offset value = 0.5 indicates that the mullion is positioned in the middle of the window.
 
 ### SecondMullionOffset
-Offset of the mullion centerline for the second mullion, measured along the x-axis of the window placement co-ordinate system. An offset value = 0.666 indicates that the second mullion is positioned at two/third of the window.
+Offset of the mullion centerline for the second mullion, measured along the x-axis of the window placement coordinate system. An offset value = 0.666 indicates that the second mullion is positioned at two/third of the window.
 
 ### ShapeAspectStyle
 Optional link to a shape aspect definition, which points to the part of the geometric representation of the window style, which is used to represent the lining.

@@ -6,11 +6,11 @@ Styles are intended to be shared by multiple _IfcStyledItem_'s, assigning the st
 
 > NOTE  global units are defined at the single _IfcProject_ instance, given by _UnitsInContext:IfcUnitAssignment_, the same units are used for the geometric representation items and for the style definitions.
 
-The measure values for font pattern and curve width apply to the model space with a target plot scale provided for the correct appearance in the default plot scale.. For different scale and projection dependent curve styles a different instance of _IfcCurveStyle_ needs to be used by _IfcPresentationStyleAssignment_ for different _IfcGeometricRepresentationSubContext_ dependent representations.
+The measure values for font pattern and curve width apply to the model space with a target plot scale provided for the correct appearance in the default plot scale.
 
 > NOTE  the target plot scale is given by _IfcGeometricRepresentationSubContext.TargetScale_.
 
-An _IfcCurveStyle_ can be assigned to _IfcGeometricRepresentationItem_'s via the _IfcPresentationStyleAssignment_ through an intermediate _IfcStyledItem_ or _IfcAnnotationCurveOccurrence_.
+An _IfcCurveStyle_ can be assigned to _IfcGeometricRepresentationItem_'s via the _IfcStyledItem_.
 
 { .extDef}
 > NOTE  Definition according to ISO/CD 10303-46:1992

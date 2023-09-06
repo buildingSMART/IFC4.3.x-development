@@ -1,7 +1,7 @@
 IfcBuildingControlsDomain
 =========================
 
-The _IfcBuildingControlsDomain_ schema forms part of the Domain Layer of the IFC Model. It extends the ideas concerning building services outlined in the _IfcSharedBldgServicesElements_ schema. It defines concepts of building automation, control, instrumentation and alarm.
+The _IfcBuildingControlsDomain_ schema forms part of the Domain Layer of the IFC Model. It extends the ideas concerning building services outlined in the _IfcSharedBldgServiceElements_ schema. It defines concepts of building automation, control, instrumentation and alarm.
 
 The _IfcBuildingControlsDomain_ schema supports ideas including types and occurrences of:
 

@@ -8,8 +8,7 @@
 
 > HISTORY  New entity in IFC2x2.
 
-{ .spec-head}
-Informal Propositions:
+**Informal Propositions**
 
 1. The domain of the subedge is formally defined to be the domain of the parent edge, as trimmed by the subedge start vertex and subedge end vertex.
 2. The start vertex and end vertex shall be within the union of the domains of the vertices of the parent edge and the domain of the _parent edge_.

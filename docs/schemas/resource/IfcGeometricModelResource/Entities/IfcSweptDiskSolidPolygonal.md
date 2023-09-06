@@ -6,8 +6,7 @@ The _IfcSweptDiskSolidPolygonal_ is a _IfcSweptDiskSolid_ where the _Directrix_ 
 
 > HISTORY  New entity in IFC4.
 
-{ .spec-head}
-Informal Propositions:
+**Informal Propositions**
 
 1. The _FilletRadius_, if provided, has to be smaller than or equal to the length of the start and end segment of the _IfcPolyline_, and smaller than or equal to one half of the length of the shortest inner segment.
 

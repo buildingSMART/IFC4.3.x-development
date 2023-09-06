@@ -62,11 +62,11 @@ Offset of the material layer set base line (MlsBase) from reference geometry (li
 > NOTE  the positive or negative sign in the offset only affects the MlsBase placement, it does not have any effect on the application of DirectionSense for orientation of the material layers; also DirectionSense does not change the MlsBase placement.
 
 ### ReferenceExtent
-Extent of the extrusion of the elements body shape representation to which the _IfcMaterialLayerSetUsage_ applies. It is used as the reference value for the upper _OffsetValues[2]_ provided by the _IfcMaterialLayerSetWithOffsets_ subtype for included material layers.
+Extent of the extrusion of the elements body shape representation to which the _IfcMaterialLayerSetUsage_ applies. It is used as the reference value for the upper _OffsetValues[2]_ provided by the _IfcMaterialLayerWithOffsets_ subtype for included material layers.
 
 { .change-ifc2x4}
 > IFC4 CHANGE  New attribute added to the end of attribute list.
 
-> NOTE  The attribute _ReferenceExtent_ shall be asserted, if an _IfcMaterialLayerSetWithOffsets_ is included in the _ForLayerSet.MaterialLayers_ list of material layers.
+> NOTE  The attribute _ReferenceExtent_ shall be asserted, if an _IfcMaterialLayerWithOffsets_ is included in the _ForLayerSet.MaterialLayers_ list of material layers.
 
 > NOTE  The _ReferenceExtent_ for _IfcWall_ is the reference height starting at z=0 being the XY plane of the object coordinate system.

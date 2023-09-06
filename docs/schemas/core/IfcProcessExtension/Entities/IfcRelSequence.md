@@ -6,11 +6,9 @@ _IfcRelSequence_ is defined as one-to-one relationship; therefore it assigns one
 
 > HISTORY  New entity in IFC1.0.
 
-{ .change-ifc2x4}
-> IFC4 CHANGE  Relocated to _IfcProcessExtension_ schema. _TimeLag_ and _SequenceType_ made optional. _USERDEFINED_ added to the _IfcSequenceType_ enumeration. _UserDefinedSequenceType_ attribute added. WHERE rule controlling use of the _USERDEFINED_ enumeration added.
+> IFC4 CHANGE  Relocated to _IfcProcessExtension_ schema. _TimeLag_ and _SequenceType_ made optional. _USERDEFINED_ added to the _IfcSequenceEnum_ enumeration. _UserDefinedSequenceType_ attribute added. WHERE rule controlling use of the _USERDEFINED_ enumeration added.
 
-{ .use-head}
-### Use definitions
+**Use definitions**
 
 _IfcRelSequence_ is used to describe the logical sequence relationship that exists between two processes. This logical relationship identifies that there is a predecessor or relating process and a successor or related process. In IFC, there may be one predecessor and one successor in the relationship. Many occurrences of _IfcRelSequence_ may exist to describe the sequence relationships of a predecessor task with many successor tasks or of many predecessor tasks with one successor task, thus enabling a m:n sequence relationship between tasks. Please note that sequence relationships can be used to define dependencies between process occurrences but also between process types (for further information see _IfcRelDefinesByObject_ and _IfcTaskType_). In case of defining dependencies between process occurrences sequence relationships should stay within the limits of a directed, non-cyclic graph.
 

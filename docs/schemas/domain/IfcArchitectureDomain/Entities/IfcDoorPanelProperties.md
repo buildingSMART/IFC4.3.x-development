@@ -22,6 +22,8 @@ Table 1 - How attributes affect the door shape
 { .change-ifc2x4}
 > IFC4 CHANGE  Supertype changed to new _IfcPreDefinedPropertySet_.
 
+> IFC4.3.2.0 DEPRECATION This entity, and most other subtypes of IfcPredefinedPropertySet, are now deprecated. Use Pset_DoorPanelProperties instead.
+
 ## Attributes
 
 ### PanelDepth
@@ -45,4 +47,3 @@ Pointer to the shape aspect, if given. The shape aspect reflects the part of the
 
 ### ApplicableToType
 The _IfcDoorPanelProperties_ shall only be used in the context of an _IfcDoorType_.
-> NOTE  The deprecated entity _IfcDoorStyle_ is applicable as well.

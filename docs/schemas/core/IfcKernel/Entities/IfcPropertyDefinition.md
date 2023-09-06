@@ -22,7 +22,7 @@ Subtypes are included in more specific relationships, see _IfcPropertySetDefinit
 ## Attributes
 
 ### HasContext
-
+Reference to the relationship _IfcRelDeclares_ and thus to the _IfcProject_ or _IfcProjectLibrary_.
 
 ### HasAssociations
 Reference to the relationship _IfcRelAssociates_ and thus to those externally defined concepts, like classifications, documents, or library information, which are associated to the property definition.

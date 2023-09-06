@@ -26,8 +26,7 @@ Figure 3 &mdash; Grid triangular layout
 
 
 
-{ .spec-head}
-Informal Propositions:
+**Informal Propositions**
 
  1. Grid axes, which are referenced in different lists of axes (UAxes, VAxes, WAxes) shall not be parallel.
  2. Grid axes should be defined such that there are no two grid axes which intersect twice (see Figure 4).

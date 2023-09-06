@@ -8,7 +8,7 @@ _IfcFacilityPart_ provides for spatial breakdown of built facilities. It may be 
 
 
 ### UsageType
-
+Defines the convention used to subdivide or decompose the facility.
 
 ## Formal Propositions
 

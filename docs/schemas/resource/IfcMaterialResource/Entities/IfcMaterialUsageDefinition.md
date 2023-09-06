@@ -11,8 +11,7 @@ Each instantiable subtype of _IfcMaterialUsageDefinition_ has to be assigned to 
 
 > HISTORY  New entity in IFC4
 
-{ .spec-head}
-Informal Propositions:
+**Informal Propositions**
 
 1. It is illegal to assign a subtype of _IfcMaterialUsageDefinition_ to a subtype of _IfcElementType_, it shall only be assigned to an element occurrence.
 

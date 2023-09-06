@@ -8,8 +8,7 @@
 
 > HISTORY  New entity in IFC2x.
 
-{ .spec-head}
-Informal Propositions:
+**Informal Propositions**
 
 1. The domain of the vertex is formally defined to be the domain of its vertex point.
 

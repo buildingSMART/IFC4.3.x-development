@@ -9,8 +9,7 @@ _IfcOwnerHistory_ is used to identify the creating and owning application and us
 { .change-ifc2x4}
 > IFC4 CHANGE  ChangeAction is now optional and a related WHERE rule enforces conditions when it is asserted.
 
-{ .spec-head}
-Informal Propositions:
+**Informal Propositions**
 
 1. If LastModifiedDate is defined but ChangeAction is not asserted, then the state of ChangeAction is assumed to be UNDEFINED.
 2. If both LastModifiedDate and ChangeAction are asserted, then the state of ChangeAction applies to the value asserted in LastModifiedDate.

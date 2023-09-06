@@ -53,8 +53,7 @@ IfcCartesianPointList3D:
 
 > HISTORY  New entity in IFC4.
 
-{ .spec-head}
-Informal Propositions:
+**Informal Propositions**
 
 1. If _Closed_ = TRUE, the same topological constraints as imposed by an faceted boundary representation shall be safisfied. In particular:
     * each face shall be unique;

@@ -12,10 +12,9 @@ The occurrences of the _IfcCoveringType_ are represented by instances of _IfcCov
 
 > HISTORY  New entity in IFC2x2.
 
-{ .spec-head}
-Informal Propositions:
+**Informal Propositions**
 
-1. The material assignment, if provided using the _IfcRelAssociatesMaterial_ relationship, shall not reference _IfcMaterialLayerSetUsage_ or _IfcMaterialProfileSetUsage_.
+1. The material assignment, if provided using the _IfcRelAssociatesMaterial_ relationship, shall not reference _IfcMaterialLayerSetUsage_ or _IfcMaterialProfileSetUsage_.  Use _IfcMaterialLayerSet_ and _IfcMaterialProfileSet_ instead.
 
 ## Attributes
 
@@ -31,7 +30,7 @@ The inherited attribute _ElementType_ shall be provided, if the _PredefinedType_
 
 ### Material Layer Set
 
-The material of the _IfcCoveringType_ is defined by _IfcMaterialLayerSet_ for layer-based coverings or as fall back by IfcM_aterial and attached by the _IfcRelAssociatesMaterial.RelatingMaterial_. It is accessible by the inverse _HasAssociations_ relationship.
+The material of the _IfcCoveringType_ is defined by _IfcMaterialLayerSet_ for layer-based coverings or as fall back by IfcMaterial and attached by the _IfcRelAssociatesMaterial.RelatingMaterial_. It is accessible by the inverse _HasAssociations_ relationship.
 
 ### Material Profile Set
 
@@ -39,9 +38,9 @@ The material of the _IfcCoveringType_ is defined by _IfcMaterialProfileSet_ for 
 
 ### Type Body Geometry
 
-The _IfcCoveringType_ may define the shared geometric representation for all covering occurrences. The _RepresentationMaps_ attribute refers to a list of _IfcRepresentationMap_'s, that allow for multiple geometric representations (e.g. with _IfcShaperepresentation_'s having an _RepresentationIdentifier_ 'Box', 'Surface', or 'Body'). (See geometric use definition of _IfcCovering_ for further information).
+The _IfcCoveringType_ may define the shared geometric representation for all covering occurrences. The _RepresentationMaps_ attribute refers to a list of _IfcRepresentationMap_'s, that allow for multiple geometric representations (e.g. with _IfcShapeRepresentation_'s having an _RepresentationIdentifier_ 'Box', 'Surface', or 'Body'). (See geometric use definition of _IfcCovering_ for further information).
 
-> NOTE  If the _IfcCoveringType_ has an associated IfcMate_rialLayerSet, then no shared geometric representation shall be provided.
+> NOTE  If the _IfcCoveringType_ has an associated IfcMaterialLayerSet, then no shared geometric representation shall be provided.
 
 > NOTE  The product shape representations are defined as _RepresentationMaps_ (attribute of the supertype _IfcTypeProduct_), which get assigned by an element occurrence instance through the _IfcShapeRepresentation.Item[n]_ being an _IfcMappedItem_. See _IfcTypeProduct_ for further information.
 

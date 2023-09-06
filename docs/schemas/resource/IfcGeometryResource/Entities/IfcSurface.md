@@ -10,8 +10,7 @@ An _IfcSurface_ is a 2-dimensional representation item positioned in 3-dimension
 
 > HISTORY  New entity in IFC1.5
 
-{ .spec-head}
-Informal Propositions:
+**Informal Propositions**
 
 1. A surface has non zero area.
 2. A surface is arcwise connected.

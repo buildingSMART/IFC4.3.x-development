@@ -17,3 +17,6 @@ Multiply
 
 ### SUBTRACT
 Subtract
+
+### MODULO
+Modulo. The remainder of division given two positive integer numbers.

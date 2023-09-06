@@ -147,13 +147,12 @@ Figure 292 illustrates a body representation for a curved wall. In case of a cur
 
 
 ![straight wall body](../../../../figures/ifcwallstandard_straigthwall_02-layout1.gif)
-![curved wall body](../../../../figures/ifcwallstandard_curvedwall_02-layout1.gif)
+
 Figure 291 — Wall body extrusion straight
 
+![curved wall body](../../../../figures/ifcwallstandard_curvedwall_02-layout1.gif)
 
 Figure 292 — Wall body extrusion curved
-
-
 
 ### Material Layer Set Usage
 
@@ -177,19 +176,13 @@ the _IfcMaterialLayerSetUsage_ assigned to all
 occurrences of this _IfcWallType_.
 
 
- 
-
 
 ![Material layer set and usage](../../../../figures/ifcwallstandardcase_materialusage-01.png)
-
-> EXAMPLE  Figure 287 illustrates assignment of _IfcMaterialLayerSetUsage_ and _IfcMaterialLayerSet_ to the wall type and the wall occurrence.
-
 
 Figure 287 — Wall Standard Object Typing
 
 
- 
-
+> EXAMPLE  Figure 287 illustrates assignment of _IfcMaterialLayerSetUsage_ and _IfcMaterialLayerSet_ to the wall type and the wall occurrence.
 
 Figure 288 illustrates material layer usage, where the following conventions shall be met:
 
@@ -206,7 +199,8 @@ then point into the positive y-axis of the reference coordinate system.
 * The _IfcMaterialLayerSetUsage.LayerSetDirection_ is always AXIS2.
 
 
-![roof slab material layer set](../../../../figures/ifcmateriallayersetusage_wall-01.png)
+![wall material layer set](../../../../figures/ifcmateriallayersetusage_wall-01.png)
+
 Figure 288 — Wall material layers
 
 

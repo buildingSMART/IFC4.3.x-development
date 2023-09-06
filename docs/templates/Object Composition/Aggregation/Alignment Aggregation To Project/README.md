@@ -5,9 +5,9 @@ Every _IfcAlignment_ must be related to _IfcProject_ using the _IfcRelAggregates
 
 ```
 concept {
-    IfcProject:IsDecomposedBy -> IfcRelAggregates:RelatingObject
-    IfcRelAggregates:RelatedObjects -> IfcAlignment
+    IfcAlignment:Decomposes -> IfcRelAggregates:RelatedObjects
     IfcAlignment:Name -> IfcLabel
+    IfcRelAggregates:RelatingObject -> IfcProject:IsDecomposedBy
 
     IfcRelAggregates:RelatedObjects[binding="RelatedObjects"]
     IfcAlignment:Name[binding="AlignmentName"]

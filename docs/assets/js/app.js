@@ -313,6 +313,7 @@ Array.from(document.querySelectorAll('a')).concat(Array.from(document.querySelec
 
 });
 
+if (!window.is_iso) {
 fetch(`https://api.github.com/repos/${window.appconfig.repo}/commits?path=${window.appconfig.path}`).then(r => r.json()).then(j => {
     if (document.getElementById('contributors') === null) {
         return;
@@ -334,6 +335,7 @@ fetch(`https://api.github.com/repos/${window.appconfig.repo}/commits?path=${wind
     document.getElementById('last-change').innerHTML += 'Last change: ' +
     '<em>' + j[0].commit.message + '</em>' + ' by ' + j[0].commit.author.name + ' on ' + (new Date(j[0].commit.author.date)).toLocaleString();
 });
+}
 
 setupMathJax();
 setupHighlightJS();

@@ -22,10 +22,10 @@ A procedure undertaken to calibrate an artifact.
 Diagnostic
 
 ### SHUTDOWN
-A procedure undertaken to shutdown the operation an artifact.
+A procedure undertaken to shutdown the operation of an artifact.
 
 ### STARTUP
-A procedure undertaken to start up the operation an artifact.
+A procedure undertaken to start up the operation of an artifact.
 
 ### USERDEFINED
 User defined.

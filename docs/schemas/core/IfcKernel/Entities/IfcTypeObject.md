@@ -4,9 +4,9 @@ The object type defines the specific information about a type, being common to a
 
 > NOTE  The terms 'Type' and 'Style' are often used interchangeably.
 
-The object type is represented by a set of property set definitions. The attached property sets describe the available alpha-numeric information about the object type. and are used to define all common properties that apply to all object occurrences of that type.
+The object type is represented by a set of property set definitions. The attached property sets describe the available alpha-numeric information about the object type and are used to define all common properties that apply to all object occurrences of that type.
 
-> NOTE  If a property having having the same name is used within the _IfcPropertySet_ assigned to an _IfcTypeObject_ (and subtypes) and to an occurrence of that type, then the occurrence property overrides the type property. See _IfcRelDefinesByType_ for an explanatory figure.
+> NOTE  If a property having the same name is used within the _IfcPropertySet_ assigned to an _IfcTypeObject_ (and subtypes) and to an occurrence of that type, then the occurrence property overrides the type property. See _IfcRelDefinesByType_ for an explanatory figure.
 
 Object types may be exchanged without being already assigned to objects. An object type may have an indication of the library (or catalogue) from which its definition originates. This association is handled by the inherited _HasAssociations_ relationship pointing to _IfcRelAssociatesLibrary_.
 

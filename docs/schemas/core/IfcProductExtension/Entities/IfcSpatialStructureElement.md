@@ -1,8 +1,8 @@
 # IfcSpatialStructureElement
 
-A spatial structure element is the generalization of all spatial elements that might be used to define a spatial structure. That spatial structure is often used to provide a project structure to organize a building project.
+A spatial structure element is the generalization of all spatial elements that might be used to define a spatial structure. The spatial structure can be used to provide a spatial organization of a project.
 
-A spatial project structure might define as many levels of decomposition as necessary for the building project. Elements within the spatial project structure are:
+A spatial project structure might define as many levels of decomposition as necessary for the project. Elements within the spatial project structure are:
 
 * site as _IfcSite_
 * facility as _IfcFacility_, or specifically
@@ -30,7 +30,9 @@ The subtypes of _IfcSpatialStructureElement_ relate to other elements and system
 
 The subtypes of _IfcSpatialStructureElement_ relate to each other by using the _IfcRelAggregates_ relationship to build the project spatial structure. Figure 1 shows the use of _IfcRelAggregates_ to establish a spatial structure including site, building, building section and storey. More information is provided at the level of the subtypes.
 
-![fig1](../../../../figures/ifcspatialstructureelement-spatialstructure.png "Figure 1 &mdash; Spatial structure element composition")
+![fig1](../../../../figures/ifcspatialstructureelement-spatialstructure.png)
+
+Figure 1 &mdash; Spatial structure element composition
 
 > HISTORY  New entity in IFC2x.
 
@@ -44,14 +46,14 @@ The subtypes of _IfcSpatialStructureElement_ relate to each other by using the _
 ## Attributes
 
 ### CompositionType
-Denotes, whether the predefined spatial structure element represents itself, or an aggregate (complex) or a part (part). The interpretation is given separately for each subtype of spatial structure element. If no _CompositionType_ is asserted, the default value ''ELEMENT'' applies.\X\0D
-{ .change-ifc2x4}\X\0D
+Denotes, whether the predefined spatial structure element represents itself, or an aggregate (complex) or a part (part). The interpretation is given separately for each subtype of spatial structure element. If no _CompositionType_ is asserted, the default value ''ELEMENT'' applies.
+
 > IFC4 CHANGE  Attribute made optional.
 
 ## Formal Propositions
 
 ### WR41
-All spatial structure elements shall be associated (using the IfcRelAggregates relationship) with another spatial structure element, or with IfcProject.
+All spatial structure elements shall be associated (using the _IfcRelAggregates_ relationship) with another spatial structure element, or with IfcProject.
 
 ## Concepts
 

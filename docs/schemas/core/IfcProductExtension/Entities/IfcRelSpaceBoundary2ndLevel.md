@@ -5,7 +5,7 @@ The 2nd level space boundary defines the physical or virtual delimiter of a spac
 * 2nd level space boundaries still represent building elements that bound the space, but are more granular in that they are subdivided in any of the following cases:
     * Differences in materials and/or material assemblies (for example, a wainscot or paneling on the lower portion of a wall).
     * Differences in spaces or zones on the other side of the building element (or virtual boundary) represented by the space boundary (for example, two different spaces on the other side of a wall)
-* 2nd level space boundaries are differentiated in two ways: virtual or physical and internal or external, whereby any space boundary that is both internal and external has to be split into segments being either or.
+* 2nd level space boundaries are differentiated in two ways: virtual or physical and internal or external, whereby any space boundary that is both internal and external has to be split into segments being either internal or external.
 * 2nd level space boundaries represent both sides of a heat transfer surface separated by the thickness of the building element. They can be further differentiated in:
     * Type 2a that occurs when there is a space on the opposite side of the building element providing the space boundary
     * Type 2b occurs if there is a building element on the opposite side of the building element providing the space boundary.

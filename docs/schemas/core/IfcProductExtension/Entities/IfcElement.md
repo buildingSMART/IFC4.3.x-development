@@ -12,7 +12,7 @@ In addition an element can be declared to be a specific occurrence of an element
 
 > EXAMPLE  Examples for element assembly are complete Roof Structures, made by several Roof Areas, or a Stair, composed by Flights and Landings.
 
-Elements that performs the same function may be grouped by an "Element Group By Function". It is realized by an instance of _IfcGroup_ with the _ObjectType_ ='ElementGroupByFunction'.
+Elements that perform the same function may be grouped by an "Element Group By Function". It is realized by an instance of _IfcGroup_ with the _ObjectType_ ='ElementGroupByFunction'.
 
 > HISTORY  New entity in IFC1.0
 
@@ -22,7 +22,7 @@ Elements that performs the same function may be grouped by an "Element Group By 
 The tag (or label) identifier at the particular instance of a product, e.g. the serial number, or the position number. It is the identifier at the occurrence level.
 
 ### FillsVoids
-Reference to the _IfcRelFillsElement_ Relationship that puts the element as a filling into the opening created within another element.
+Reference to the _IfcRelFillsElement_ relationship that puts the element as a filling into the opening created within another element.
 
 ### ConnectedTo
 Reference to the element connection relationship. The relationship then refers to the other element to which this element is connected to.
@@ -69,7 +69,7 @@ Reference to the _IfcRelAdheresToElement_ relationship that adheres a _IfcSurfac
 
 ### Body AdvancedBrep Geometry
 
-An IfcElement (so far no further constraints are defined at the level of its subtypes or by view definitions) may be represented as a single or multiple boundary representation models, which include advanced surfaces, usually refered to as NURBS surfaces. The 'AdvancedBrep' representation allows for the representation of complex free-form element shape.
+An _IfcElement_ (so far no further constraints are defined at the level of its subtypes or by view definitions) may be represented as a single or multiple boundary representation models, which include advanced surfaces, usually refered to as NURBS surfaces. The 'AdvancedBrep' representation allows for the representation of complex free-form element shape.
 
 > NOTE  View definitions or implementer agreements may restrict or disallow the use of 'AdvancedBrep' geometry.
 
@@ -87,22 +87,18 @@ An IfcElement (so far no further constraints are defined at the level of its sub
 
 ### Body Brep Geometry
 
-Any IfcElement (so far no further constraints are defined at the level of its subtypes) may be represented as a single or multiple Boundary Representation models (which are restricted to be faceted Brep's with or without voids). The Brep representation allows for the representation of complex element shape.
+Any _IfcElement_ (so far no further constraints are defined at the level of its subtypes) may be represented as a single or multiple Boundary Representation models (which are restricted to be faceted Brep's with or without voids). The Brep representation allows for the representation of complex element shape.
 
 
 ![Brep representation](../../../../figures/ifcbuildingelement-brep-layout1.gif)
 
 Figure 150 — Building element body boundary representation
 
-> EXAMPLE  As shown in Figure 150, the Brep representation is given by an
-> IfcShapeRepresentation, which includes one or more
-> items, all of type IfcFacetedBrep. In some cases it may be useful to also expose a simple
-> representation as a bounding box representation of the same complex
-> shape.
+> EXAMPLE  As shown in Figure 150, the Brep representation is given by an _IfcShapeRepresentation_, which includes one or more items, all of type _IfcFacetedBrep_. In some cases it may be useful to also expose a simple representation as a bounding box representation of the same complex shape.
 
 ### Body CSG Geometry
 
-Any IfcElement (so far no further constraints are defined at the level of its subtypes) may be represented a CSG primitive or CSG tree. The CSG representation allows for the representation of complex element shape.
+Any _IfcElement_ (so far no further constraints are defined at the level of its subtypes) may be represented as a CSG primitive or CSG tree. The CSG representation allows for the representation of complex element shape.
 
 > NOTE  View definitions or implementer agreements may restrict or disallow the use of 'CSG' geometry.
 
@@ -112,7 +108,7 @@ Any IfcElement (so far no further constraints are defined at the level of its su
 
 ### Body SurfaceModel Geometry
 
-Any IfcElement (so far no further constraints are defined at the level of its subtypes) may be represented as a single or multiple surface models, based on either shell or face based surface models. It may also include tessellated models.
+Any _IfcElement_ (so far no further constraints are defined at the level of its subtypes) may be represented as a single or multiple surface models, based on either shell or face based surface models. It may also include tessellated models.
 
 
 ![surface model](../../../../figures/ifcbuildingelement-surfacemodel-layout1.gif)
@@ -120,12 +116,12 @@ Any IfcElement (so far no further constraints are defined at the level of its su
 Figure 149 — Element surface model representation
 
 
-> EXAMPLE  As shown in Figure 1, the surface model representation is given by an IfcShapeRepresentation, which includes a single item which is either an IfcShellBasedSurfaceModel, or an IfcFaceBasedSurfaceModel. In some cases it may also be useful to expose a simple representation as a bounding box representation of the same complex shape.
+> EXAMPLE  As shown in Figure 149, the surface model representation is given by an _IfcShapeRepresentation_, which includes a single item which is either an _IfcShellBasedSurfaceModel_, or an _IfcFaceBasedSurfaceModel_. In some cases it may also be useful to expose a simple representation as a bounding box representation of the same complex shape.
 
 
 ### Body SurfaceOrSolidModel Geometry
 
-Any IfcElement (so far no further constraints are defined at the level of its subtypes) may be represented as a mixed representation, including surface and solid models.
+Any _IfcElement_ (so far no further constraints are defined at the level of its subtypes) may be represented as a mixed representation, including surface and solid models.
 
 ### Body SweptSolid Composite Geometry
 
@@ -145,7 +141,7 @@ Any IfcElement (so far no further constraints are defined at the level of its su
 
 ### Body Tessellation Geometry
 
-Any IfcElement (so far no further constraints are defined at the level of its subtypes) may be represented as a single or multiple tessellated surface models, in particular triangulated surface models.
+Any _IfcElement_ (so far no further constraints are defined at the level of its subtypes) may be represented as a single or multiple tessellated surface models, in particular triangulated surface models.
 
 ### Box Geometry
 
@@ -153,7 +149,7 @@ Any IfcElement (so far no further constraints are defined at the level of its su
 
 Figure 148 — Building element box representation
 
-> EXAMPLE  Any IfcElement may be represented by a bounding box, which shows the maximum extend of the body within the object coordinate system established by the IfcObjectPlacement. As shown in Figure 148, the bounding box representation is given by an IfcShapeRepresentation that includes a single item, an IfcBoundingBox.
+> EXAMPLE  Any _IfcElement_ may be represented by a bounding box, which shows the maximum extent of the body within the object coordinate system established by the _IfcObjectPlacement_. As shown in Figure 148, the bounding box representation is given by an _IfcShapeRepresentation_ that includes a single item: an _IfcBoundingBox_.
 
 ### CoG Geometry
 
@@ -201,9 +197,9 @@ Any collection of points and curves, and additional hatching and text representi
 
 ### Mapped Geometry
 
-Any IfcElement (so far no further constraints are defined at the level of its subtypes) may be represented using the 'MappedRepresentation'. This shall be supported as it allows for reusing the geometry definition of a type at all occurrences of the same type. The results are more compact data sets.
+Any _IfcElement_ (so far no further constraints are defined at the level of its subtypes) may be represented using the 'MappedRepresentation'. This shall be supported as it allows for reusing the geometry definition of a type at all occurrences of the same type. The results are more compact data sets.
 
-The same constraints, as given for 'SurfaceOrSolidModel', 'SurfaceModel', 'Tessellation', 'Brep', and 'AdvancedBrep' geometric representation, shall apply to the IfcRepresentationMap.
+The same constraints, as given for 'SurfaceOrSolidModel', 'SurfaceModel', 'Tessellation', 'Brep', and 'AdvancedBrep' geometric representation, shall apply to the _IfcRepresentationMap_.
 
 ### Product Grid Placement
 
@@ -211,11 +207,11 @@ The same constraints, as given for 'SurfaceOrSolidModel', 'SurfaceModel', 'Tesse
 
 ### Product Linear Placement
 
-Product placement with a _Product Linear Placement_ template. It defines the local coordinate system based on the curve which is referenced by IfcLinearPlacement.RelativePlacement which is an IfcAxis2PlacementLinear.Location using an IfcPointByDistanceExpression.BasisCurve. The local coordinate system is based on the tangent of the curve at Location, its normal in the global Z plane and the cross product of the aforementioned vectors.
+Product placement with a _Product Linear Placement_ template. It defines the local coordinate system based on the curve which is referenced by _IfcLinearPlacement.RelativePlacement_ which is an _IfcAxis2PlacementLinear.Location_ using an _IfcPointByDistanceExpression.BasisCurve_. The local coordinate system is based on the tangent of the curve at Location, its normal in the global Z plane and the cross product of the aforementioned vectors.
 
 ### Product Local Placement
 
-The object placement for any subtype of IfcElement is defined by the IfcObjectPlacement, either IfcLocalPlacement or IfcGridPlacement, which defines the local object coordinate system that is referenced by all geometric representations of that IfcElement.
+The object placement for any subtype of IfcElement is defined by the _IfcObjectPlacement_, either _IfcLocalPlacement_ or _IfcGridPlacement_, which defines the local object coordinate system that is referenced by all geometric representations of that _IfcElement_.
 
 #### IfcLocalPlacement_IfcLocalPlacement
 

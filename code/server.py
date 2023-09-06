@@ -901,10 +901,10 @@ def process_markdown(resource, mdc, process_quotes=True, number_headings=False, 
     if number_headings:
         assert chapter
 
-        headings = soup.find_all(re.compile("h\d"))
+        headings = soup.find_all(('h3', 'h4', 'h5'))
     
         stack = list(chapter)
-        orig_length = len(stack) - 1
+        orig_length = len(stack) - 2
 
         for h in headings:         
             level = int(h.name[1:]) + orig_length
@@ -1450,11 +1450,15 @@ def get_concept_usage(resource, builder, mdc):
 def get_examples(resource):
     examples = []
     for name in R.examples_by_type.get(resource.upper()) or []:
+        if os.path.exists(os.path.join(REPO_DIR, "..", "examples", "models", name, 'thumb.png')):
+            img_url = url_for("get_example", example=name) + "/thumb.png"
+        else:
+            img_url = url_for("get_asset", asset="img/ifc-file-format.png")
         examples.append(
             {
                 "name": example_title(name.split('/')[-1]),
                 "url": url_for("annex_e_example_page", s=name),
-                "image": url_for("get_example", example=name) + "/thumb.png",
+                "image": img_url,
             }
         )
     if examples:
@@ -1920,7 +1924,7 @@ def content(s):
         except:
             abort(404)
 
-    content = open(fn).read()
+    content = open(fn, encoding='utf-8').read()
     
     if X.is_iso:
         content = re.sub(r'IFC( (4\.3\.[0x](\.\d)?)|\b)', 'ISO 16739-1', content)

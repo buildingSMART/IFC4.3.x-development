@@ -15,18 +15,13 @@ Figure 1 shows the definition of a work calendar, which is defined by a set of w
 ## Attributes
 
 ### WorkingTimes
-Set of times periods that are regarded as an initial set-up
-    of working times. Exception times can then further restrict
-    these working times.
+Set of times periods that are regarded as an initial set-up of working times. Exception times can then further restrict these working times.
 
 ### ExceptionTimes
-Set of times periods that define exceptions (non-working
-    times) for the given working times including the base
-    calendar, if provided.
+Set of times periods that define exceptions (non-working times) for the given working times including the base calendar, if provided.
 
 ### PredefinedType
-Identifies the predefined types of a work calendar from which
-    the type required may be set.
+Identifies the predefined types of a work calendar from which the type required may be set.
 
 { .change-ifc2x4}
 > IFC4 CHANGE Attribute added
@@ -34,11 +29,11 @@ Identifies the predefined types of a work calendar from which
 ## Formal Propositions
 
 ### CorrectPredefinedType
-The attribute ObjectType must be asserted when the value of the IfcWorkCalendarTypeEnum is set to USERDEFINED.
+The attribute _ObjectType_ must be asserted when the value of the _IfcWorkCalendarTypeEnum_ is set to _USERDEFINED_.
 
 ## Concepts
 
 ### Control Assignment
 
-The base calendar of a work calendar is defined by IfcRelAssignsToControl, where _IfcRelAssignsToControl.RelatingControl_ is linked with the base calendar and _IfcRelAssignsToControl.RelatedObjects_ is linked with work calendars that are derived from the base calendar. Although not restricted by the IfcRelAssignsToControl relationship it is only allowed to have one base calendar.
+The base calendar of a work calendar is defined by _IfcRelAssignsToControl_, where _IfcRelAssignsToControl.RelatingControl_ is linked with the base calendar and _IfcRelAssignsToControl.RelatedObjects_ is linked with work calendars that are derived from the base calendar. Although not restricted by the _IfcRelAssignsToControl_ relationship it is only allowed to have one base calendar.
 

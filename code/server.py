@@ -9,6 +9,7 @@ import html
 import shutil
 import hashlib
 import operator
+import functools
 import itertools
 import subprocess
 
@@ -1329,6 +1330,10 @@ def get_concept_usage(resource, builder, mdc):
 
     builder_concepts = list(builder.concepts)
 
+    concept_order = {}
+    for a, b, _ in builder_concepts:
+        concept_order[a] = concept_order.get(a, []) + [b.lower()]
+
     # Create a lookup for concept name to URL
     concept_hierarchy = make_concept([""])
 
@@ -1429,6 +1434,15 @@ def get_concept_usage(resource, builder, mdc):
                 "total_concepts": len(concepts),
             }
         )
+
+    def lookup_markdown_order(ent, di):
+        try:
+            return concept_order.get(ent, []).index(di.get('name').lower())
+        except ValueError:
+            return 10000
+
+    for g in groups:
+        g.get('concepts', []).sort(key=functools.partial(lookup_markdown_order, g.get('name')))
 
     total_inherited_concepts = sum([g["total_concepts"] for g in groups if g["is_inherited"]])
 

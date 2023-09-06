@@ -2328,7 +2328,8 @@ def sandcastle():
 # N: It may already be in a <a href="IfcSite">IfcSite</a>
 # N: Or reference an IfcSite.png arbitrarily.
 # N: It may be in the <title>IfcSite - IFC4.3.x Documentation</title>
-ifcre = re.compile(r"(?<!(=\"))(?<!(figures/))(Ifc|IFC|Pset_|Qto_|PEnum_)\w+(?!(\">|.ht|.png|.jp|.gif|\s*</a|\s*</h|.md| - IFC4.3))")
+# @tfk changed to start with at least one letter [a-zA-Z], end at word boundary
+ifcre = re.compile(r"(?<!(=\"))(?<!(figures/))(Ifc|IFC|Pset_|Qto_|PEnum_)[a-zA-Z]\w+\b(?!(\">|.ht|.png|.jp|.gif|\s*</a|\s*</h|.md| \- IFC 4\.))")
 
 try:
     import os
@@ -2476,6 +2477,13 @@ def after(response):
 
         def decorate_link(m):
             w = m.group(0)
+            fragment_reversed = html[0:m.span()[0]][::-1]
+            title_start = fragment_reversed.find('"=eltit')
+            quotes_before = [i for i,c in enumerate(fragment_reversed[0:title_start]) if c == '"']
+            if title_start != -1 and len(quotes_before) == 0:
+                # we're in a title="..." attribute
+                return w
+            
             if w.upper() in [k.upper() for k in R.entity_definitions.keys()] or w in R.pset_definitions or w in R.type_values:
                 if redis:
                     try:
@@ -2486,6 +2494,7 @@ def after(response):
             else:
                 return w
 
+        # @todo we really shouldn't be using regex for this, but a proper html parser
         html = ifcre.sub(decorate_link, html)
         soup = BeautifulSoup(html)
 

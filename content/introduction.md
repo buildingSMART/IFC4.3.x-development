@@ -22,11 +22,11 @@ The IFC specification includes terms, concepts and data specification items that
 
 ## Model View Definitions
 
-buildingSMART International publishes official model view definitions (MVDs) as related specifications. The official MVD policy for IFC 4.3.0 currently holds 3 levels of implementation for IFC:
+buildingSMART International publishes official model view definitions (MVDs) as related specifications. The official MVD policy for IFC 4.3 currently holds 3 levels of implementation for IFC:
 - Reference View
 - Alignment Based Reference View
 - Design Transfer view
-These three MVDs can be seen as three levels of implementation for IFC 4.3.0. They are gradual levels adding more advanced features to the implementations.  The documentation is deposited at [standards.buildingsmart.org](https://standards.buildingsmart.org).
+These three MVDs can be seen as three levels of implementation for IFC 4.3. They are gradual levels adding more advanced features to the implementations.  The documentation is deposited at [standards.buildingsmart.org](https://standards.buildingsmart.org).
 
 ## Architecture
   

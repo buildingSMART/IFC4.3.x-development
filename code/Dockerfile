@@ -17,6 +17,7 @@ RUN curl --silent --show-error --retry 5 -o /tmp/ifcopenshell_python.zip https:/
 RUN mkdir -p `python3 -c 'import site; print(site.getusersitepackages())'`
 RUN unzip -d `python3 -c 'import site; print(site.getusersitepackages())'` /tmp/ifcopenshell_python.zip
 
+ADD https://api.github.com/repos/buildingSMART/IFC4.3.x-sample-models/git/refs/heads/main /tmp/sample-models-version.json
 RUN git clone --depth 1 https://github.com/buildingSMART/IFC4.3.x-sample-models /examples
 
 RUN git clone --depth 1 https://github.com/buildingSMART/IFC4.3.x-development /ifc43 --branch $REPO_BRANCH

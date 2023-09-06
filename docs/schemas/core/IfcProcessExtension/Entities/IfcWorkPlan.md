@@ -31,7 +31,7 @@ digraph dot_neato {
 }
 ```
 
-Figure PROJECTDECLARATION &mdash; How projects can declare work plans, which in turn contain tasks or schedules
+Figure 1 &mdash; How projects can declare work plans, which in turn contain tasks or schedules
 
 ## Attributes
 

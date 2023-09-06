@@ -72,7 +72,7 @@ Figure 277 illustrates assignment of _IfcMaterialLayerSetUsage_ and _IfcMaterial
 
 ![Material layer set and usage](../../../../figures/ifcplate_materialusage-01.png) 
 
-Figure 246 — Plate type definition
+Figure 277 — Plate type definition
 
 Figure 247 illustrates material layer usage, where:
 

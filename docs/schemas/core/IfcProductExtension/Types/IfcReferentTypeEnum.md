@@ -18,7 +18,7 @@ The reference marker is a notation referent, typically located in the right of w
 
 > NOTE  definition from ISO 19148:2021
 
-> NOTE  The physical manifestation of the IfcReferent.REFERENCEMARKER can be an IfcSign.MARKER (e.g., a bolt fixed on a post)
+> NOTE The physical manifestation of the _IfcReferent.REFERENCEMARKER_ can be an _IfcSign.MARKER_ (e.g., a bolt fixed on a post)
 
 ### LANDMARK
 The referent is the location of a physical landmark visible in the field.

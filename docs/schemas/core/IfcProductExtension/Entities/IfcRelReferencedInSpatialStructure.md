@@ -14,7 +14,7 @@ Predefined spatial structure elements to which elements can be assigned are
 * facility as _IfcFacility_ or its subtypes _IfcBridge_, _IfcBuilding_, _IfcMarineFacility_, _IfcRailway_ or _IfcRoad_
 * part of facility as _IfcFacilityPart_, or more specifically as _IfcBuildingStorey_ or _IfcSpace_
 
-Elements can also be references in a spatial zone that is provided as _IfcSpatialZone_.
+Elements can also be referenced in a spatial zone that is provided as _IfcSpatialZone_.
 
 Figure 1 shows the use of _IfcRelContainedInSpatialStructure_ and _IfcRelReferencedInSpatialStructure_ to assign an _IfcCurtainWall_ to two different levels within the spatial structure. It is primarily contained within the ground floor, and additionally referenced within the first and second floor.
 

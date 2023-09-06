@@ -902,10 +902,10 @@ def process_markdown(resource, mdc, process_quotes=True, number_headings=False, 
     if number_headings:
         assert chapter
 
-        headings = soup.find_all(re.compile("h\d"))
+        headings = soup.find_all(('h3', 'h4', 'h5'))
     
         stack = list(chapter)
-        orig_length = len(stack) - 1
+        orig_length = len(stack) - 2
 
         for h in headings:         
             level = int(h.name[1:]) + orig_length
@@ -1932,7 +1932,7 @@ def content(s):
         except:
             abort(404)
 
-    content = open(fn).read()
+    content = open(fn, encoding='utf-8').read()
     
     if X.is_iso:
         content = re.sub(r'IFC( (4\.3\.[0x](\.\d)?)|\b)', 'ISO 16739-1', content)

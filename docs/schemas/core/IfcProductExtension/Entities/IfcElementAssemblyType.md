@@ -18,4 +18,4 @@ Predefined types to define the particular type of the transport element. There m
 ## Formal Propositions
 
 ### CorrectPredefinedType
-The inherited attribute _ElementType_ shall be provided, if the _PredefinedType_ is set to USERDEFINED.
+The inherited attribute _ElementType_ shall be provided, if the _PredefinedType_ is set to _USERDEFINED_.

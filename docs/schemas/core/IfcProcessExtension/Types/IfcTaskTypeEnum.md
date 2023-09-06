@@ -30,7 +30,7 @@ Disposing or getting rid of something.
 ### EMERGENCY
 Tasks required when responding to, or ensuring the ability to respond to, an emergency situation.
 
-> EXAMPLE Spaces, zones, and systems may have emergency tasks in the case of a different emergency conditions.
+> EXAMPLE Spaces, zones, and systems may have emergency tasks in the case of different emergency conditions.
 
 > EXAMPLE A task to ensuring the safe configuration of an equipment during an unexpected situation.
 
@@ -59,7 +59,7 @@ Removal of an item from use and taking it from its place of use.
 Bringing something to an 'as-new' state.
 
 ### SAFETY
-Tasks required to ensure safe use of the object. For example electrical ‘lock-out' instructions.
+Tasks required to ensure safe use of the object. For example electrical 'lock-out' instructions.
 
 ### SHUTDOWN
 The set of tasks required for an orderly shut down without adverse impacts, typically applied to systems.
@@ -70,7 +70,7 @@ The set of tasks required to begin or restart operation without adverse impacts,
 ### TESTING
 The set of tasks required to evaluate the performance of an object, to ensure if something is installed and is operating within expected parameters.
 
-> EXAMPLE A system or element type may have a testing tasks as part of routine maintenance.
+> EXAMPLE A system or element type may have testing tasks as part of routine maintenance.
 
 ### TROUBLESHOOTING
 The set of tasks required to diagnose commonly encountered performance problems, typically applied to element types and systems.

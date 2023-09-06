@@ -9,11 +9,14 @@ The objectified relationship _IfcRelAssignsToResource_ handles the assignment of
 ## Attributes
 
 ### RelatingResource
+
 Reference to the resource to which the objects are assigned to.
+
 { .change-ifc2x4}
 > IFC4 CHANGE Datatype expanded to include _IfcResource_ and _IfcTypeResource_.
 
 ## Formal Propositions
 
 ### NoSelfReference
-The instance to wich the relation points shall not be contained in the set of _RelatedObjects_.
+
+The instance to which the relation points shall not be contained in the set of _RelatedObjects_.

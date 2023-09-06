@@ -1,7 +1,7 @@
 Spatial Interference With Zones
 ===============================
 
-The _Spatial Interference with Zone_ concept is an extension of the _Spatial Interference_ concept which defines the relationship of spatial elements, such as facilities (_IfcFacility_ & specialised subtypes) or facility parts (_IfcFacilityPart_ with domain specific predefined types) that interfere or interface with other spatial elements across discipline spatial hierarchy branches, and extends the dataset with a related interference _IfcSpatialZone_ via the _IfcRelInterferesElements.InterferenceSpace_ attribute. The realizing _IfcSpatialZone_ should always have the _PredefinedType_ value set to INTERFERENCE.
+The _Spatial Interference with Zone_ concept is an extension of the _Spatial Interference_ concept which defines the relationship of spatial elements, such as facilities (_IfcFacility_ & specialised subtypes) or facility parts (_IfcFacilityPart_ with domain specific predefined types) that interfere or interface with other spatial elements across discipline spatial hierarchy branches, and extends the dataset with a related interference _IfcSpatialZone_ via the _IfcRelInterferesElements.InterferenceSpace_ attribute. The realizing _IfcSpatialZone_ should always have the _PredefinedType_ value set to _INTERFERENCE_.
 
 The addition of a realizing _IfcSpatialZone_ extends the functionality of this relationship with the following:
 

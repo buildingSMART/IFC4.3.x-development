@@ -10,7 +10,7 @@ Any product or product type can have associated materials indicating the physica
 
 Materials can have representations for surface styles indicating colors, textures, and light reflectance for 3D rendering. Materials can have representations for fill styles indicating colors, tiles, and hatch patterns for 2D rendering. Materials can have properties such as density, elasticity, thermal resistance, and others as defined in this specification. Materials can also be classified according to a referenced industry standard.
 
-> EXAMPLE  Material information can also be given at object type, defining the common material data for all occurrences of the same type. It is then accessible by the inverse _IsTypedBy_ relationship pointing via _HasAssociations_ and via _IfcRelAssociatesMaterial.RelatingMaterial_ to the material information. If both are given, then the material directly assigned to object occurrence overrides the material assigned to object type.
+> EXAMPLE  Material information can also be given at object type, defining the common material data for all occurrences of the same type. Object type is then accessible by the inverse _IsTypedBy_ relationship, further pointing via its _HasAssociations_ inverse relation and via _IfcRelAssociatesMaterial.RelatingMaterial_ to the material information. If both are given, then the material directly assigned to object occurrence overrides the material assigned to object type.
 
 ```
 concept {

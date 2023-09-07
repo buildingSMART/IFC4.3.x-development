@@ -33,6 +33,14 @@ def format(s):
 def get_parent_of_pt(xmi_doc, enum_or_select_type):
     type_id = enum_or_select_type.id or enum_or_select_type.idref
     attrs = [x for x in xmi_doc.xmi.by_tag_and_type["ownedAttribute"]["uml:Property"] if x.name == "PredefinedType" and (x|"type").idref == type_id]
+
+    # We move the type objects last, because xmi_document would have already augmented the
+    # entity associations with a tuple of (typeobjectid, predefined type str), so here
+    # we should find the non-type object.
+    def is_typeobject_subtype(a):
+        return 'IfcTypeObject' in xmi_doc.supertypes(a.xml.parentNode.getAttribute('xmi:id'))
+    attrs.sort(key=is_typeobject_subtype)
+
     if attrs:
         return attrs[0].xml.parentNode.getAttribute("name")
     else:

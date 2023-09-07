@@ -2514,7 +2514,7 @@ def after(response):
 
         for elem in soup.findAll("figure"):
             if elem.figcaption:
-                is_image = elem.img
+                is_image = bool(elem.img) or bool(elem.svg)
                 if "\u2014" in elem.figcaption.text:
                     label, caption = map(str.strip, elem.figcaption.text.split("\u2014", 1))
                 elif elem.img:

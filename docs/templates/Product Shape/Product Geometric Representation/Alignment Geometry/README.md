@@ -2,6 +2,7 @@ Alignment Geometry
 ==================
 
 Supported shape representations of _IfcAlignment_ are:
+
 * _IfcCompositeCurve_ as a 2D horizontal alignment (represented by its horizontal alignment segments), without a vertical layout.
 * _IfcGradientCurve_ as a 3D horizontal and vertical alignment (represented by their alignment segments), without a cant layout.
 * _IfcSegmentedReferenceCurve_ as a 3D curve defined relative to an _IfcGradientCurve_ to incorporate the application of cant.

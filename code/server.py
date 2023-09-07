@@ -2358,7 +2358,8 @@ def before():
 
 @app.after_request
 def after(response):
-    if request.path.endswith(".htm") or request.path.endswith(".html"):
+    # listing is too slow
+    if (request.path.endswith(".htm") or request.path.endswith(".html")) and not request.path.endswith('listing-references.html'):
         FigureNumberer.clear()
 
         html = response.data.decode("utf-8")
@@ -2557,19 +2558,21 @@ def get_index_index(kind):
         def reverse_engineer_url(s):
             if s.startswith(prefix):
                 return s[len(prefix) : -4]
+            
+        new_items = []
 
-        items = [
-            {
+        for k, gs in itertools.groupby(items, operator.itemgetter("title")):
+            refs = [reverse_engineer_url(s["url"]) for s in gs if reverse_engineer_url(s["url"])]
+
+            new_items.append({
                 "number": k,
-                "url": "",
-                "title": " ".join(reverse_engineer_url(s["url"]) for s in gs if reverse_engineer_url(s["url"])),
-            }
-            for k, gs in itertools.groupby(items, operator.itemgetter("title"))
-        ]
+                "url": '',
+                "subitems": [{'url': url_for("resource", resource=r), 'title':r} for r in refs]
+            })
         
         # Don't include definitions that just only list their own page:
-        filter_singular = lambda di: di.get('number') != di.get('title')
-        items = list(filter(filter_singular, items))
+        filter_singular = lambda di: not (len(di.get('subitems')) == 1 and di['subitems'][0]['title'] == di.get('number'))
+        items = list(filter(filter_singular, new_items))
     return render_template(
         "index.html", base=base, is_iso=is_iso, navigation=get_navigation(), items=items, title=f"Listing of {kind}"
     )

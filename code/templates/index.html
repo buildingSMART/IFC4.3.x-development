@@ -10,8 +10,12 @@
     <li number="{{ item.number }}">
         {% if item.url %}
             <a href="{{ item.url }}">{{ item.title }}</a>
-        {% else %}
+        {% elif item.title %}
             {{ item.title }}
+        {% elif item.subitems %}
+            {% for sub in item.subitems %}
+                <a href="{{ sub.url }}">{{ sub.title }}</a>
+            {% endfor %}
         {% endif %}
     </li>
     {% endfor %}

@@ -1509,6 +1509,8 @@ def get_changelog(resource):
     changelog = {"number": SectionNumberGenerator.generate(), "sections": []}
     SectionNumberGenerator.begin_subsection()
     for section, changes in changelog_data.items():
+        if X.is_iso:
+            section = "ISO 16739-1:2023"
         changelog["sections"].append(
             {
                 "name": section,

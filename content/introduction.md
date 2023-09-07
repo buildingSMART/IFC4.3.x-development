@@ -25,9 +25,11 @@ buildingSMART International publishes translations of those terms and concepts i
 ## Model View Definitions
 
 buildingSMART International publishes official model view definitions (MVDs) as related specifications. The official MVD policy for IFC 4.3 currently holds 3 levels of implementation for IFC:
+
 - Reference View
 - Alignment Based Reference View
 - Design Transfer view
+
 These three MVDs can be seen as three levels of implementation for IFC 4.3. They are gradual levels adding more advanced features to the implementations.
 
 ## Architecture

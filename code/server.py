@@ -2217,8 +2217,6 @@ def annex_e_example_page(s):
     code = re.sub(r"(?<=FILE_SCHEMA\(\(')IFC\w+", SCHEMA_NAME, code)
     code = re.sub(r"(?<=FILE_SCHEMA \(\(')IFC\w+", SCHEMA_NAME, code)
 
-    assert old_code != code
-
     path_repo = "buildingSMART/IFC4.3.x-sample-models"
     path = fn[len(os.path.join(REPO_DIR, "../examples/")) :]
 

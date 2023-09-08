@@ -484,7 +484,7 @@ wget https://cdn.jsdelivr.net/npm/mathjax\@3.2.0/es5/output/svg.js
 cd svg/fonts
 wget https://cdn.jsdelivr.net/npm/mathjax\@3.2.0/es5/output/svg/fonts/tex.js
 
-cd ../../chtml/fonts/
+cd ../../chtml/fonts/woff-v2/
 wget https://cdn.jsdelivr.net/npm/mathjax\@3.2.0/es5/output/chtml/fonts/woff-v2/MathJax_Zero.woff
 wget https://cdn.jsdelivr.net/npm/mathjax\@3.2.0/es5/output/chtml/fonts/woff-v2/MathJax_Math-Italic.woff
 wget https://cdn.jsdelivr.net/npm/mathjax\@3.2.0/es5/output/chtml/fonts/woff-v2/MathJax_Main-Regular.woff

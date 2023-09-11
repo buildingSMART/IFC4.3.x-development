@@ -2218,7 +2218,7 @@ def annex_e_example_page(s):
     code = re.sub(r"(?<=FILE_SCHEMA \(\(')IFC\w+", SCHEMA_NAME, code)
 
     path_repo = "buildingSMART/IFC4.3.x-sample-models"
-    path = fn[len(os.path.join(REPO_DIR, "../examples/")) :]
+    path = os.path.abspath(fn)[len(os.path.abspath(os.path.join(REPO_DIR, "../examples/")))+1:].replace('\\', '/')
 
     # Use regex because globbing is case sensitive
     rule = re.compile(r".*\.(png|jpg|jpeg)", re.IGNORECASE)
@@ -2233,6 +2233,7 @@ def annex_e_example_page(s):
         content=html_raw,
         path=path,
         repo=path_repo,
+        branch='main',
         title=example_title(s.split('/')[-1]),
         code=code,
         images=images,

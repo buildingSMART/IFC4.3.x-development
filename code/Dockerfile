@@ -1,7 +1,7 @@
 FROM ubuntu:focal
 MAINTAINER Thomas Krijnen <thomas@aecgeeks.org>
 
-ENV REPO_BRANCH=iso_submission
+ENV REPO_BRANCH=master
 
 RUN mkdir -p /usr/share/man/man1
 RUN apt-get update -y && DEBIAN_FRONTEND=noninteractive apt-get install -y curl openjdk-11-jdk-headless python3 python3-distutils procps lsof supervisor graphviz unzip git texlive texlive-pictures texlive-latex-extra imagemagick-6.q16 wget redis-server

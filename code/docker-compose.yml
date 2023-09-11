@@ -6,7 +6,7 @@ services:
       context: '.'
       dockerfile: Dockerfile
     environment:
-      - ISO=1
+      - ISO=0
       - REDIS_HOST=localhost
     expose:
       - "5000"
@@ -22,4 +22,3 @@ services:
       - ./proxy/conf:/etc/nginx/conf.d:ro
       - ./proxy/auth:/etc/auth:ro
       - ./proxy/cert:/etc/letsencrypt
-      - ./archives:/data

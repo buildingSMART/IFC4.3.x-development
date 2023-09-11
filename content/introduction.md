@@ -1,8 +1,14 @@
+!template
+
 The Industry Foundation Classes (IFC) are an open international standard for sharing Building Information Model (BIM)
 data. The standard comprises:
 
  1. A schema (provided in various forms, see [scope](scope.htm))
+{%- if is_iso -%}
  2. Documentation (provided in HTML)
+{%- else -%}
+ 2. Documentation (provided in HTML, authored in Markdown)
+{%- endif -%}
  3. Property and Quantity Set definitions (standardized definitions for an extensibility mechanism realised in the schema - provided in XML)
  4. Exchange or serialization mechanisms of data files, see [scope](scope.htm)
 
@@ -20,17 +26,22 @@ The IFC specification includes terms, concepts and data specification items that
 * the property set definitions that are part of this standard start with the prefix "Pset_" and continue with the English words in CamelCase naming convention;
 * the quantity set definitions that are part of this standard start with the prefix "Qto_" and continue with the English words in CamelCase naming convention.
 
-buildingSMART International publishes translations of those terms and concepts into other human languages.
+{%- if not is_iso -%}
+buildingSMART International publishes translations of those terms and concepts into other human languages on [translations.buildingsmart.org](https://translations.buildingsmart.org).
+{%- endif -%}
 
 ## Model View Definitions
 
-buildingSMART International publishes official model view definitions (MVDs) as related specifications. The official MVD policy for IFC 4.3 currently holds 3 levels of implementation for IFC:
+Official model view definitions (MVDs) exist as related specifications. The official MVD policy for IFC 4.3 currently holds 3 levels of implementation for IFC:
 
 - Reference View
 - Alignment Based Reference View
 - Design Transfer view
 
 These three MVDs can be seen as three levels of implementation for IFC 4.3. They are gradual levels adding more advanced features to the implementations.
+{%- if not is_iso -%}
+The documentation is deposited at [standards.buildingsmart.org](https://standards.buildingsmart.org).
+{%- endif -%}
 
 ## Architecture
   

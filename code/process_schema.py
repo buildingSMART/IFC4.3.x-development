@@ -684,8 +684,8 @@ img {
     # for t in texs:
     #     t.generate_pdf()
     
-    is_iso = os.environ.get('ISO', '0') == '1'
-    if not is_iso:
+    full_build = os.environ.get('ISO',  os.environ.get('PACKAGE', '0')) == '1'
+    if not full_build:
         # speed up the processing a bit during development
         texs = texs[::32]
     

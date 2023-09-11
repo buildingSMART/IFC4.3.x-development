@@ -53,6 +53,7 @@ app = Flask(__name__)
 
 base = "/IFC/RELEASE/IFC4x3/HTML"
 is_iso = os.environ.get('ISO', '0') == '1'
+is_package = os.environ.get('PACKAGE', '0') == '1'
 
 def make_url(fragment=None):
     return base + "/" + fragment if fragment else "/"
@@ -864,6 +865,7 @@ def property(prop):
         "property.html",
         base=base,
         is_iso=X.is_iso,
+        is_package=is_package,
         navigation=get_navigation(),
         content=html,
         number=idx,
@@ -1033,6 +1035,7 @@ def resource(resource):
             "entity.html",
             base=base,
             is_iso=X.is_iso,
+            is_package=is_package,
             navigation=get_navigation(resource),
             number=idx,
             definition_number=definition_number,
@@ -1060,6 +1063,7 @@ def resource(resource):
             "property.html",
             base=base,
             is_iso=X.is_iso,
+            is_package=is_package,
             navigation=get_navigation(resource),
             content=get_definition(resource, mdc),
             number=idx,
@@ -1076,6 +1080,7 @@ def resource(resource):
         "type.html",
         base=base,
         is_iso=X.is_iso,
+        is_package=is_package,
         navigation=get_navigation(resource),
         content=get_definition(resource, mdc),
         number=idx,
@@ -1759,6 +1764,7 @@ def concept_list():
         "concept_listing.html",
         base=base,
         is_iso=X.is_iso,
+        is_package=is_package,
         navigation=get_navigation(),
         content=html,
         path=fn[len(REPO_DIR) :].replace("\\", "/"),
@@ -1835,6 +1841,7 @@ def concept(s=""):
         "concept.html",
         base=base,
         is_iso=X.is_iso,
+        is_package=is_package,
         navigation=get_navigation(resource, number=n),
         content=html,
         diagram=diagram,
@@ -1882,6 +1889,7 @@ def chapter(n):
         "chapter.html",
         base=base,
         is_iso=X.is_iso,
+        is_package=is_package,
         navigation=get_navigation(number=n),
         content=html,
         path=fn[len(REPO_DIR) :].replace("\\", "/"),
@@ -1907,6 +1915,7 @@ def cover():
         "cover.html",
         base=base,
         is_iso=X.is_iso,
+        is_package=is_package,
         navigation=get_navigation(),
         content=markdown.markdown(render_template_string(content, base=base, is_iso=X.is_iso)),
         path=fn[len(REPO_DIR) :].replace("\\", "/"),
@@ -1965,6 +1974,7 @@ def content(s):
         "static.html",
         base=base,
         is_iso=X.is_iso,
+        is_package=is_package,
         navigation=get_navigation(),
         content=html,
         path=fn[len(REPO_DIR) :].replace("\\", "/"),
@@ -2229,6 +2239,7 @@ def annex_e_example_page(s):
         "annex-e-item.html",
         base=base,
         is_iso=X.is_iso,
+        is_package=is_package,
         navigation=get_navigation(),
         content=html_raw,
         path=path,
@@ -2280,6 +2291,7 @@ def schema(name):
         "subchapter.html",
         base=base,
         is_iso=X.is_iso,
+        is_package=is_package,
         navigation=get_navigation(number=n),
         definition=definition,
         path=fn[len(REPO_DIR) :].replace("\\", "/"),
@@ -2354,6 +2366,7 @@ except:
 @app.before_request
 def before():
     X.is_iso = request.args.get("iso") == "1" if "iso" in request.args else is_iso
+    X.is_package = request.args.get("package") == "1" if "package" in request.args else is_package
 
 @app.after_request
 def after(response):
@@ -2545,7 +2558,7 @@ def get_index():
         {"number": "", "title": f"Listing of {x}", "url": f"listing-{x}.html"}
         for x in "references,figures,tables".split(",")
     ]
-    return render_template("index.html", base=base, is_iso=is_iso, navigation=get_navigation(), items=items, title="Index")
+    return render_template("index.html", base=base, is_iso=X.is_iso, is_package=X.is_package, navigation=get_navigation(), items=items, title="Index")
 
 
 @app.route(make_url("listing-<any(references,figures,tables):kind>.html"))
@@ -2573,7 +2586,7 @@ def get_index_index(kind):
         filter_singular = lambda di: not (len(di.get('subitems')) == 1 and di['subitems'][0]['title'] == di.get('number'))
         items = list(filter(filter_singular, new_items))
     return render_template(
-        "index.html", base=base, is_iso=is_iso, navigation=get_navigation(), items=items, title=f"Listing of {kind}"
+        "index.html", base=base, is_iso=X.is_iso, is_package=X.is_package, navigation=get_navigation(), items=items, title=f"Listing of {kind}"
     )
 
 

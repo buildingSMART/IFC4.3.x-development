@@ -4,11 +4,11 @@ The Industry Foundation Classes (IFC) are an open international standard for sha
 data. The standard comprises:
 
  1. A schema (provided in various forms, see [scope](scope.htm))
-{% if is_iso %}
+{%- if is_iso %}
  2. Documentation (provided in HTML)
-{% else %}
+{%- else %}
  2. Documentation (provided in HTML, authored in Markdown)
-{% endif %}
+{%- endif %}
  3. Property and Quantity Set definitions (standardized definitions for an extensibility mechanism realised in the schema - provided in XML)
  4. Exchange or serialization mechanisms of data files, see [scope](scope.htm)
 

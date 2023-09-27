@@ -684,7 +684,7 @@ img {
     # for t in texs:
     #     t.generate_pdf()
     
-    full_build = os.environ.get('ISO',  os.environ.get('PACKAGE', '0')) == '1'
+    full_build = os.environ.get('ISO', '0') == '1' or os.environ.get('PACKAGE', '0') == '1'
     if not full_build:
         # speed up the processing a bit during development
         texs = texs[::32]

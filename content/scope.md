@@ -5,18 +5,18 @@ The coverage of infrastructure facilities now incorporated into IFC includes bri
 
 The IFC comprises the publication of a data schema, its documentation, the property and quantity set definitions and the mechanism of an exchange file format structure.
 The schema, property and quantity sets and usage constraints are internally authored as a UML Class diagram
-{%- if not is_iso -%}
+{%- if not is_iso %}
 [available as XMI file](https://github.com/buildingSMART/IFC4.3.x-development/tree/master/schemas)
 {%- endif %}
 {% if is_iso -%}
 and published as the following computer interpretable schemas:
 {%- else -%}
-and published [computer interpretable schemas](https://github.com/buildingSMART/IFC4.3.x-output), including:
+and published as [computer interpretable schemas](https://github.com/buildingSMART/IFC4.3.x-output), including:
 {%- endif %}
 
 * In [EXPRESS data specification language](../annex-a-express.html), according to ISO 10303-11,
 * In [XML Schema definition language (XSD)](../annex-a-xsd.html), according to ISO 10303-28
-{% if not is_iso %}
+{% if not is_iso -%}
 * As RDF/OWL Schema (under development),
 * As JavaScript Object Notation Schema (under development),
 * As a JSON structured [taxonomy](https://github.com/buildingSMART/IFC4.3.x-output/blob/master/IFC.json) of entities, predefined types and properties.
@@ -28,7 +28,7 @@ The exchange file formats for exchanging and sharing data according to the compu
 
 * Clear text encoding of the exchange structure, defined in ISO 10303-21,
 * Extensible Markup Language (XML), defined in XML Schema W3C Recommendation with IFC specific translations,
-{% if not is_iso %}
+{% if not is_iso -%}
 * RDF/OWL, defined by W3C and the buildingSMART projects,
 * JSON JavaScript Object Notation, defined by the buildingSMART projects.
 {% endif %}

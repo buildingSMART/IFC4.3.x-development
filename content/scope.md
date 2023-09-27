@@ -16,11 +16,11 @@ and published [computer interpretable schemas](https://github.com/buildingSMART/
 
 * In [EXPRESS data specification language](../annex-a-express.html), according to ISO 10303-11,
 * In [XML Schema definition language (XSD)](../annex-a-xsd.html), according to ISO 10303-28
-{%- if not is_iso -%}
+{% if not is_iso %}
 * As RDF/OWL Schema (under development),
 * As JavaScript Object Notation Schema (under development),
 * As a JSON structured [taxonomy](https://github.com/buildingSMART/IFC4.3.x-output/blob/master/IFC.json) of entities, predefined types and properties.
-{%- endif %}
+{% endif %}
 
 > NOTE See Annex A ‘Computer interpretable listings’ for the publication of schemas.
 
@@ -28,14 +28,14 @@ The exchange file formats for exchanging and sharing data according to the compu
 
 * Clear text encoding of the exchange structure, defined in ISO 10303-21,
 * Extensible Markup Language (XML), defined in XML Schema W3C Recommendation with IFC specific translations,
-{%- if not is_iso -%}
+{% if not is_iso %}
 * RDF/OWL, defined by W3C and the buildingSMART projects,
 * JSON JavaScript Object Notation, defined by the buildingSMART projects.
-{%- endif -%}
+{% endif %}
 
-{%- if not is_iso -%}
+{% if not is_iso %}
 An overview of the file formats can be seen on [the technical website](https://technical.buildingsmart.org/standards/ifc/ifc-formats/). Alternative exchange file formats may be used if they conform to the data schemas.
-{%- endif -%}
+{% endif %}
 
 The full IFC standard is used to define one or many recognized workflows in the construction and facility management industry sector. Such an exchange scenario definition of the IFC data schema and referenced data is referred to as a Model View Definition (MVD). Each MVD identifies data exchange requirements for developing software applications. Conforming software applications need to identify the model view definition they conform to when applying for Software Certification.
 

@@ -6,8 +6,8 @@ Arc Segment
 ```
 concept {
     IfcCurveSegment:ParentCurve -> IfcCircle
-    IfcCurveSegment:SegmentStart -> IfcParameterValue_0
-    IfcCurveSegment:SegmentLength -> IfcParameterValue_1
+    IfcCurveSegment:SegmentStart -> IfcLengthMeasure_0
+    IfcCurveSegment:SegmentLength -> IfcLengthMeasure_1
     IfcCircle:Radius -> IfcPositiveLengthMeasure
 }
 ```

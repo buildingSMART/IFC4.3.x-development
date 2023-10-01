@@ -10,8 +10,8 @@ ConstantTerm = 1
 ```
 concept {
     IfcCurveSegment:ParentCurve -> IfcCosineSpiral
-    IfcCurveSegment:SegmentStart -> IfcParameterValue_0
-    IfcCurveSegment:SegmentLength -> IfcParameterValue_1
+    IfcCurveSegment:SegmentStart -> IfcLengthMeasure_0
+    IfcCurveSegment:SegmentLength -> IfcLengthMeasure_1
     IfcCosineSpiral:CosineTerm -> IfcLengthMeasure
     IfcCosineSpiral:ConstantTerm -> IfcReal
 }

@@ -17,8 +17,8 @@ _SegmentStart_ is the bearing angle at start and _SegmentLength_ is the bearing 
 ```
 concept {
     IfcCurveSegment:ParentCurve -> IfcSecondOrderPolynomialSpiral
-    IfcCurveSegment:SegmentStart -> IfcParameterValue_0
-    IfcCurveSegment:SegmentLength -> IfcParameterValue_1
+    IfcCurveSegment:SegmentStart -> IfcLengthMeasure_0
+    IfcCurveSegment:SegmentLength -> IfcLengthMeasure_1
     IfcSecondOrderPolynomialSpiral:QuadraticTerm -> IfcLengthMeasure_0
     IfcSecondOrderPolynomialSpiral:LinearTerm -> IfcLengthMeasure_1
     IfcSecondOrderPolynomialSpiral:ConstantTerm -> IfcReal

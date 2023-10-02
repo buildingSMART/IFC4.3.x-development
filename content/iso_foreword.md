@@ -22,8 +22,8 @@ The main changes are as follows:
 - The inclusion of geometric transition curves for the purpose of infrastructure alignment curve definitions
 - New type of placement to position elements along such alignment curves
 - New types of geometric models and revision of existing geometric models to allow the sweeping of curves and surfaces along such alignment curves
-- Removal of semantic constructs that had been deprecated in ISO 16739-1:2018
-- Deprecation of semantic constructs considered for removal in future versions of this standard
+- Removal of semantic constructs that had been deprecated in the previous edition of this document
+- Deprecation of semantic constructs considered for removal in future versions of this document
 - A complete list of all changes is provided in Annex F
 
 A list of all parts in the ISO 16739 series can be found on the ISO website.

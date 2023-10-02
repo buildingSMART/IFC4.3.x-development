@@ -7,19 +7,29 @@ This document is an open international standard for sharing information about bu
  3. Property and Quantity Set definitions (standardized definitions for an extensibility mechanism realised in the schema - provided in XML)
  4. Exchange or serialization mechanisms of data files (provided in various forms,  see [scope](scope.htm)
 
-The prevalent exchange format for IFC is the STEP Physical File Format (ISO
-10303-21:2002) based on the schema publication using the EXPRESS language (ISO 10303-11:2004). It is a clear-text encoding of the entity instances that
-make up the exchange, in which attribute values are provided as an ordered
-sequence of unnamed values.
+The schema, property and quantity sets and usage constraints are internally authored as a UML Class diagram and published as the following computer interpretable schemata:
+
+* in EXPRESS data specification language, according to ISO 10303-11,
+* in XML Schema definition language (XSD), according to ISO 10303-28.
+
+> NOTE See Annex A ‘Computer interpretable listings’ for the publication of the schemas.
+
+The exchange file formats for exchanging and sharing data according to the computer interpretable schemata are:
+
+* Clear text encoding of the exchange structure, defined in ISO 10303-21,
+* Extensible Markup Language (XML), defined in XML Schema W3C Recommendation
+
+> NOTE The prevalent exchange format for data according to this document is the STEP Physical File Format (ISO 10303-21:2002) based on the schema publication using the EXPRESS language (ISO 10303-11:2004). It is a clear-text encoding of the entity instances that make up the exchange, in which attribute values are provided as an ordered sequence of unnamed values.
+
 
 ## Conventions
 
-The IFC specification includes terms, concepts and data specification items that originate from use within disciplines, trades, and professions of the construction and facility management industry sector. Terms and concepts use the plain English words, the data items within the data specification follow a naming convention.
+This document includes terms, concepts and data specification items that originate from use within disciplines, trades, and professions of the construction and facility management industry sector. Terms and concepts use the plain English words, the data items within the data specification follow a naming convention.
 
 * the data item names for types, entities, rules and functions start with the prefix "Ifc" and continue with the English words in CamelCase naming convention (no underscore, first letter in word in upper case);
 * the attribute names within an entity follow the CamelCase naming convention with no prefix;
-* the property set definitions that are part of this standard start with the prefix "Pset_" and continue with the English words in CamelCase naming convention;
-* the quantity set definitions that are part of this standard start with the prefix "Qto_" and continue with the English words in CamelCase naming convention.
+* the property set definitions that are part of this document start with the prefix "Pset_" and continue with the English words in CamelCase naming convention;
+* the quantity set definitions that are part of this document start with the prefix "Qto_" and continue with the English words in CamelCase naming convention.
 
 ## Model View Definitions
 
@@ -44,110 +54,6 @@ The data schema architecture defines four conceptual layers, each individual sch
 
 ## Compatibility
 
-Built assets have a long lifetime. Compatibility between editions of this document is a key concern in its development.
+Built assets have a long lifetime. Information about built assets also need to be accessible during a long lifetime. Compatibility between editions of this document is therefore a key concern in its development.
 
-*Backward compatibility* is the ability for a data file, written against a previous release of the standard, to be readable by an application supporting a later version.
-
-*Forward compatibility* is the ability for a data file, written against a new release of the standard, to still be readable by an application supporting a previous
-version of the standard and for the reading application in this scenario not to lose functionality provided by the earlier version of the standard.
-
-The classes in the ISO 10303-11 EXPRESS schema distribution of this international standard are typically reflected in program code and directly influence the structure (attribute counts, attribute types) of exchanges using the ISO 10303-21 exchange format.
-
-Conversely, Property and Quantity Sets are generally more supplementary data that don't affect functioning of the software interfaces to the same extent. Property and Quantity Sets are also explicitly provided to rapidly address specific use cases and
-evolving software capabilities. Changes in Property and Quantity Sets do
-not affect the structure (attribute counts, attribute types) of the ISO 10303-21 exchange formats.
-
-As such, compatibility of Property and Quantity Sets is not held to the same
-standard as is the case for compatibility of the EXPRESS schema.
-
-Except in rare cases, backward compatibility is a hard requirement in the
-evolution of the IFC standard. Nevertheless, there is a varying degree of
-severity in the types of changes that could occur. For example, renaming an
-entity name, or inserting an attribute at the beginning of the attribute
-sequence causes a near irrecoverable error in parsing a file written against
-a previous release of the standard. Whereas adding an enumeration item to an existing enumeration is deemed fully backwards compatible.
-
-> NOTE Forward compatibility is not explicitly considered in the development of this release, but seen as a desirable feature where possible.
-
-### Deprecation
-
-As the IFC standard evolves certain constructs become unfavourable, since they
-have been superseded by other constructs, because implementation in software proved inadequate or because flaws were found in the definition that were impossible to correct in a backwards compatible fashion.
-
-In such cases the choice is often made to *deprecate* the construct, giving
-implementers ample time to adapt their software.
-
-> NOTE 1 Complying interpreters shall still be able to import deprecated definitions.
-
-> NOTE 2 Complying interpreters shall consider modifying the export using the proposed alternative definitions instead of the deprecated ones.
-
-### List of known backward incompatibilities of this document with ISO 16739-1:2018
-
-> NOTE For a full list of changes see the Change logs in Appendix F.
-
-The following entities, types and functions have been deleted in this release:
-
-* IfcBeamStandardCase
-* IfcBuildingElement
-* IfcBuildingElementType
-* IfcColumnStandardCase
-* IfcCorrectObjectAssignment
-* IfcDoorStandardCase
-* IfcDoorStyle
-* IfcDoorStyleConstructionEnum
-* IfcDoorStyleOperationEnum
-* IfcMemberStandardCase
-* IfcNullStyle
-* IfcObjectTypeEnum
-* IfcOpeningStandardCase
-* IfcPlateStandardCase
-* IfcPresentationStyleAssignment
-* IfcPresentationStyleSelect
-* IfcProxy
-* IfcSlabElementedCase
-* IfcSlabStandardCase
-* IfcStyleAssignmentSelect
-* IfcWallElementedCase
-* IfcWindowStandardCase
-* IfcWindowStyle
-* IfcWindowStyleConstructionEnum
-* IfcWindowStyleOperationEnum
-
-The following entities, attributes and enumerators have been deprecated in this release:
-
-* IfcBuildingSystem
-* IfcCivilElement
-* IfcCivilElementType
-* IfcElectricDistributionBoard
-* IfcElectricDistributionBoardType
-* IfcFaceBasedSurfaceModel
-* IfcPostalAddress
-* IfcRelConnectsPortToElement
-* IfcRelServicesBuildings
-* IfcTelecomAddress
-* IfcTrapeziumProfileDef
-* IfcBuilding.BuildingAddress
-* IfcBuilding.ElevationOfRefHeight
-* IfcBuilding.ElevationOfTerrain
-* IfcBuildingStorey.Elevation
-* IfcOrganization.Addresses
-* IfcPerson.Addresses
-* IfcSite.LandTitleNumber
-* IfcSite.SiteAddress
-* IfcSurfaceStyleRendering.DiffuseTransmissionColour
-* IfcSurfaceStyleRendering.ReflectionColour
-* IfcSurfaceStyleRendering.TransmissionColour
-* IfcSurfaceTexture.Parameter
-* IfcTextureCoordinateGenerator.Parameter
-* IfcCableCarrierFittingTypeEnum.CROSS
-* IfcCableCarrierFittingTypeEnum.REDUCER
-* IfcCableCarrierFittingTypeEnum.TEE
-* IfcFireSuppressionTerminalTypeEnum.SPRINKLERDEFLECTOR
-* IfcGeographicElementTypeEnum.SOIL_BORING_POINT
-
-The following backward incompatibilities have been introduced in this release:
-
-|  | Severity | Element | Incompatibility |
-|---|---|---|---|
-| 1 | Major | IfcGridPlacement | Result of PlacementRelTo attribute moving up to IfcObjectPlacement. |
-| 2 | Minor | IfcCountMeasure | Definition changed from NUMBER to INTEGER. |
+> NOTE See Annex F ‘Change logs’ for information about compatibility, deprecation and a complete list of changes made in this document compared with the previous edition.

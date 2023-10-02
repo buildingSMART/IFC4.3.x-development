@@ -67,9 +67,9 @@ upward compatibility
 
 ability for an exchange structure, written against a new release of a specification, to still be readable by an application supporting a previous version
 
-Note 1 to entry:  The reading application should not lose functionality provided by the earlier version of the standard.
+Note 1 to entry:  The reading application should not lose functionality provided by the earlier version of this document.
 
-Note 2 to entry:  Forward compatibility may not be considered explicitly in development of this standard but seen as a desirable property where possible.
+Note 2 to entry:  Forward compatibility may not be considered explicitly in development of this document but seen as a desirable property where possible.
 
 ### concepts
 
@@ -218,7 +218,7 @@ population
 
 \<data modeling\> collection of entity data type instances.
 
-Note 1 to entry: In scope of this standard models are populations of the ISO 16739-1 schema.
+Note 1 to entry: In scope of this document models are populations of the schema.
 
 [SOURCE ISO 10303-11:2004, 3.3.16, modified - Note 1 to entry added]
 
@@ -334,7 +334,7 @@ object used in a process to achieve a result
 
 definition of the structure to organize data for storage, exchange and sharing, using a formal language
 
-Note 1 to entry: The formal languages ISO 10303-11 EXPRESS and W3C XML Schema Definition Language are currently used to define the schemata of this standard.
+Note 1 to entry: The formal languages ISO 10303-11 EXPRESS and W3C XML Schema Definition Language are currently used to define the schemata of this document.
 
 ### space
 

@@ -1,9 +1,10 @@
 {% extends "main.html" %}
 {% block pagecontent %}
 
-<h1>
-    Annex B Alphabetical listings{% if title %} - {{ title }}{% endif %}
-</h1>
+<h1>Annex B<br>
+<span style="font-weight:lighter">(informative)</span><br>
+<br>
+Alphabetical listings{% if title %} - {{ title }}{% endif %}</h1>
 
 {% set vars = { 'any_mvd': False, 'mvd_emitted': False } %}
 {% if not is_iso %}

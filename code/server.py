@@ -1631,7 +1631,7 @@ class SectionNumberGenerator:
 
 @app.route(make_url("annex-b.html"))
 def annex_b():
-    return render_template("annex-b.html", base=base, is_iso=X.is_iso, is_package=X.is_package, navigation=get_navigation(), items=annex_b_navigation)
+    return render_template("annex-b.html", base=base, is_iso=X.is_iso, is_package=X.is_package, navigation=get_navigation(), items=annex_b_navigation, body_class='annex')
 
 
 @app.route(make_url("annex-b1.html"))
@@ -1659,7 +1659,7 @@ def annex_b1():
         }
         for n in entity_names()
     ]
-    return render_template("annex-b.html", base=base, is_iso=X.is_iso, is_package=X.is_package, navigation=get_navigation(), items=items, is_dictionary=True, title="Entities")
+    return render_template("annex-b.html", base=base, is_iso=X.is_iso, is_package=X.is_package, navigation=get_navigation(), items=items, is_dictionary=True, title="Entities", body_class='annex')
 
 
 @app.route(make_url("annex-b2.html"))
@@ -1668,7 +1668,7 @@ def annex_b2():
         {"number": name_to_number()[n], "url": url_for("resource", resource=n), "name": n}
         for n in type_names()
     ]
-    return render_template("annex-b.html", base=base, is_iso=X.is_iso, is_package=X.is_package, navigation=get_navigation(), items=items, is_dictionary=True, title="Types")
+    return render_template("annex-b.html", base=base, is_iso=X.is_iso, is_package=X.is_package, navigation=get_navigation(), items=items, is_dictionary=True, title="Types", body_class='annex')
 
 
 @app.route(make_url("annex-b3.html"))
@@ -1678,7 +1678,7 @@ def annex_b3():
         for n in sorted(R.pset_definitions.keys())
         if n in name_to_number()
     ]
-    return render_template("annex-b.html", base=base, is_iso=X.is_iso, is_package=X.is_package, navigation=get_navigation(), items=items, is_dictionary=True, title="Property sets")
+    return render_template("annex-b.html", base=base, is_iso=X.is_iso, is_package=X.is_package, navigation=get_navigation(), items=items, is_dictionary=True, title="Property sets", body_class='annex')
 
 
 @app.route(make_url("annex-b4.html"))
@@ -1687,7 +1687,7 @@ def annex_b4():
         {"number": "", "url": url_for("property", prop=n), "name": n}
         for n in sorted(set([p["name"] for pdef in R.pset_definitions.values() for p in pdef["properties"]]))
     ]
-    return render_template("annex-b.html", base=base, is_iso=X.is_iso, is_package=X.is_package, navigation=get_navigation(), items=items, title="Properties")
+    return render_template("annex-b.html", base=base, is_iso=X.is_iso, is_package=X.is_package, navigation=get_navigation(), items=items, title="Properties", body_class='annex')
 
 
 @app.route(make_url("annex-b5.html"))
@@ -1696,7 +1696,7 @@ def annex_b5():
         {"number": "", "url": url_for("resource", resource=n), "name": n}
         for n in function_names()
     ]
-    return render_template("annex-b.html", base=base, is_iso=X.is_iso, is_package=X.is_package, navigation=get_navigation(), items=items, title="Functions")
+    return render_template("annex-b.html", base=base, is_iso=X.is_iso, is_package=X.is_package, navigation=get_navigation(), items=items, title="Functions", body_class='annex')
 
 
 @app.route(make_url("annex-b6.html"))
@@ -1705,7 +1705,7 @@ def annex_b6():
         {"number": "", "url": url_for("resource", resource=n), "name": n}
         for n in rule_names()
     ]
-    return render_template("annex-b.html", base=base, is_iso=X.is_iso, is_package=X.is_package, navigation=get_navigation(), items=items, title="Rules")
+    return render_template("annex-b.html", base=base, is_iso=X.is_iso, is_package=X.is_package, navigation=get_navigation(), items=items, title="Rules", body_class='annex')
 
 
 @app.route(make_url("annex-b7.html"))
@@ -1714,7 +1714,7 @@ def annex_b7():
         {"number": "", "url": url_for("resource", resource=n), "name": n}
         for n in propertyenumeration_names()
     ]
-    return render_template("annex-b.html", base=base, is_iso=X.is_iso, is_package=X.is_package, navigation=get_navigation(), items=items, title="Property Enumerations")
+    return render_template("annex-b.html", base=base, is_iso=X.is_iso, is_package=X.is_package, navigation=get_navigation(), items=items, title="Property Enumerations", body_class='annex')
 
 
 def make_concept(path, number_path=None, exclude_partial=True):
@@ -1905,14 +1905,7 @@ def chapter(n):
 
 @app.route("/")
 def cover():
-    if X.is_iso:
-        fn = os.path.join(REPO_DIR, "content", "iso_cover.md")
-    else:
-        fn = os.path.join(REPO_DIR, "content", "cover.md")
-    
-    title = navigation[1][0]["name"]
-    
-    content = open(fn).read()
+    fn, __, ___, html = get_content_html("cover")
 
     return render_template(
         "cover.html",
@@ -1920,7 +1913,7 @@ def cover():
         is_iso=X.is_iso,
         is_package=is_package,
         navigation=get_navigation(),
-        content=markdown.markdown(render_template_string(content, base=base, is_iso=X.is_iso)),
+        content=html,
         path=fn[len(REPO_DIR) :].replace("\\", "/"),
         branch=REPO_BRANCH,
         subs=[],
@@ -1928,29 +1921,31 @@ def cover():
     )
 
 
-@app.route(make_url("content/<s>.htm"))
-def content(s):
+def get_content_html(s, require_number=True):
     fn = os.path.join(REPO_DIR, "content")
     fn = os.path.join(fn, s + ".md")
 
-    if s == "foreword" and X.is_iso:
-        fn = fn.replace("foreword", "iso_foreword")
+    iso_variant = fn.replace(f"{s}.md", f"iso_{s}.md")
+    if X.is_iso and os.path.exists(iso_variant):
+        fn = iso_variant
     
     if not os.path.exists(fn):
         abort(404)
 
-    try:
-        i = content_names.index(s)
-        number = i + 1
-        title = navigation[1][i]["name"]
-    except:
-
+    if require_number:
         try:
-            i = content_names_2.index(s)
-            number = ""
-            title = s[0].upper() + s[1:]
+            i = content_names.index(s)
+            number = i + 1
+            title = navigation[1][i]["name"]
         except:
-            abort(404)
+            try:
+                i = content_names_2.index(s)
+                number = ""
+                title = s[0].upper() + s[1:]
+            except:
+                abort(404)
+    else:
+        title, number = None, None
 
     content = open(fn, encoding='utf-8').read()
     
@@ -1972,6 +1967,11 @@ def content(s):
         kwargs = {}
 
     html = process_markdown("", render_template_string(content, base=base, is_iso=X.is_iso), process_quotes=process_quotes, **kwargs)
+    return fn, title, number, html
+
+@app.route(make_url("content/<s>.htm"))
+def content(s):
+    fn, title, number, html = get_content_html(s)
     
     return render_template(
         "static.html",
@@ -1991,17 +1991,17 @@ from xmi_document import SCHEMA_NAME
 
 @app.route(make_url("annex-a.html"))
 def annex_a():
-    return render_template("annex-a.html", base=base, is_iso=X.is_iso, is_package=X.is_package, navigation=get_navigation())
+    return render_template("annex-a.html", base=base, is_iso=X.is_iso, is_package=X.is_package, navigation=get_navigation(), body_class='annex')
 
 
 @app.route(make_url("annex-a-express.html"))
 def annex_a_express():
-    return render_template("annex-a-express.html", base=base, is_iso=X.is_iso, is_package=X.is_package, navigation=get_navigation(), express=open("IFC.exp").read(), link=f"{SCHEMA_NAME}.exp")
+    return render_template("annex-a-express.html", base=base, is_iso=X.is_iso, is_package=X.is_package, navigation=get_navigation(), express=open("IFC.exp").read(), link=f"{SCHEMA_NAME}.exp", body_class='annex')
 
 
 @app.route(make_url("annex-a-xsd.html"))
 def annex_a_xsd():
-    return render_template("annex-a-xsd.html", base=base, is_iso=X.is_iso, is_package=X.is_package, navigation=get_navigation(), link=f"{SCHEMA_NAME}.xsd")
+    return render_template("annex-a-xsd.html", base=base, is_iso=X.is_iso, is_package=X.is_package, navigation=get_navigation(), link=f"{SCHEMA_NAME}.xsd", body_class='annex')
 
 
 @app.route(make_url(f"{SCHEMA_NAME}.exp"))
@@ -2086,7 +2086,7 @@ def annex_c():
                 indentation_map[padding - 1]["children"].append(data)
             indentation_map[padding] = data
 
-    return render_template("annex-c.html", base=base, is_iso=X.is_iso, is_package=X.is_package, navigation=get_navigation(), entities=entities)
+    return render_template("annex-c.html", base=base, is_iso=X.is_iso, is_package=X.is_package, navigation=get_navigation(), entities=entities, body_class='annex')
 
 
 @app.route(make_url("annex-d.html"))
@@ -2096,14 +2096,14 @@ def annex_d():
         toc_entry(s[:-4], url=url_for("annex_d_diagram_page", s=s[:-4]), number="D.%d" % i)
         for i, s in enumerate(sorted(diagrams), start=1)
     ]
-    return render_template("annex-d.html", base=base, is_iso=X.is_iso, is_package=X.is_package, navigation=get_navigation(), diagrams=diagrams)
+    return render_template("annex-d.html", base=base, is_iso=X.is_iso, is_package=X.is_package, navigation=get_navigation(), diagrams=diagrams, body_class='annex')
 
 
 @app.route(make_url("annex_d/<s>.html"))
 def annex_d_diagram_page(s):
     diagrams = sorted(map(lambda s: s.split('.')[0], map(os.path.basename, glob.glob(os.path.join(REPO_DIR, "output/IFC.xml/*.png")))))
     number = diagrams.index(s) + 1
-    return render_template("annex-d-item.html", base=base, is_iso=X.is_iso, is_package=X.is_package, navigation=get_navigation(), name=s, number=number)
+    return render_template("annex-d-item.html", base=base, is_iso=X.is_iso, is_package=X.is_package, navigation=get_navigation(), name=s, number=number, body_class='annex')
 
 
 @app.route(make_url("annex_d/<s>.png"))
@@ -2155,11 +2155,14 @@ def build_example_tree(return_list_and_tree = False):
 
 @app.route(make_url("annex-e.html"))
 def annex_e():
-    return render_template("annex-e.html", base=base, is_iso=X.is_iso, is_package=X.is_package, navigation=get_navigation(), examples=build_example_tree())
+    return render_template("annex-e.html", base=base, is_iso=X.is_iso, is_package=X.is_package, navigation=get_navigation(), examples=build_example_tree(), body_class='annex')
 
 
 @app.route(make_url("annex-f.html"))
 def annex_f():
+    # html = ""
+    _, __, ___, html = get_content_html("change_log", require_number=False)
+
     with open("changes_by_schema.json") as f:
         changelog_data = json.load(f)
         changelog = {"sections": []}
@@ -2188,7 +2191,7 @@ def annex_f():
                 }
             )
         SectionNumberGenerator.end_subsection()
-    return render_template("annex-f.html", base=base, is_iso=X.is_iso, is_package=X.is_package, navigation=get_navigation(), changelogs=changelog)
+    return render_template("annex-f.html", definition=html, base=base, is_iso=X.is_iso, is_package=X.is_package, navigation=get_navigation(), changelogs=changelog, body_class='annex')
 
 
 @app.route(make_url("annex_e/<path:s>.html"))
@@ -2251,7 +2254,8 @@ def annex_e_example_page(s):
         title=example_title(s.split('/')[-1]),
         code=code,
         images=images,
-        number=url_to_number[request.path]
+        number=url_to_number[request.path],
+        body_class='annex'
     )
 
 

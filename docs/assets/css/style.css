@@ -20,6 +20,9 @@ header {
 header p {
     float: left;
 }
+ul {
+    list-style-type: "\2014\a0";
+}
 header ul {
     float: right;
 }

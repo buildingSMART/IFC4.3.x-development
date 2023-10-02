@@ -1561,6 +1561,7 @@ class FigureNumberer:
     def generate(cls, figure, number):
         previous_header = None
         previous = figure
+        parent_number = None
         while not previous_header:
             previous = previous.find_previous()
             if not previous:
@@ -1578,13 +1579,15 @@ class FigureNumberer:
                 try:
                     parent_number = previous_header.contents[0].strip().split(" ", 2)[1]
                 except:
-                    return
-            alphabet = "A"
-            generated_number = parent_number + "." + alphabet
-            while generated_number in cls.index.values():
-                alphabet = chr(ord(alphabet) + 1)
-                generated_number = parent_number + "." + alphabet
-            cls.index[number] = generated_number
+                    pass
+        
+        alphabet = "A"
+        generate_number = lambda: ((parent_number + ".") if parent_number is not None else "") + alphabet
+        generated_number = generate_number()
+        while generated_number in cls.index.values():
+            alphabet = chr(ord(alphabet) + 1)
+            generated_number = generate_number()
+        cls.index[number] = generated_number
 
     @classmethod
     def replace_references(cls, html):

@@ -21,17 +21,28 @@
                     <p>ISO 16739-1:2023(E)</p>
                 {% else %}
                     <p>IFC 4.3.2.0 (IFC4X3_ADD2)
-                        <small>development</small>
+                        {% if is_package %}
+                            <small>official</small>
+                        {% else %}
+                            <small>development</small>
+                        {% endif %}
                     </p>
                 {% endif %}
 
                 {% if not is_iso %}
                 <ul>
                     <li>
-                        <a href="https://github.com/buildingSMART/IFC4.3.x-development/issues/">
-                            <i data-feather="message-circle"></i>
-                            Help suggest improvements
-                        </a>
+                        {% if is_package %}
+                            <a href="https://technical.buildingsmart.org/standards/ifc/ifc-schema-specifications/">
+                                <i data-feather="message-circle"></i>
+                                Help improve the next version
+                            </a>
+                        {% else %}
+                            <a href="https://github.com/buildingSMART/IFC4.3.x-development/issues/">
+                                <i data-feather="message-circle"></i>
+                                Help suggest improvements
+                            </a>
+                        {% endif %}
                     </li>
                     <li>
                         <a href="https://forums.buildingsmart.org/">

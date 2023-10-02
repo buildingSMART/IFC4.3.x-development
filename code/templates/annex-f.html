@@ -1,6 +1,12 @@
 {% extends "main.html" %}
 {% block pagecontent %}
-<h1>Annex F Changelogs</h1>
+
+<h1>Annex F<br>
+<span style="font-weight:lighter">(normative)</span><br>
+<br>
+Changelogs</h1>
+
+{{ definition | safe }}
 
 {% for section in changelogs.sections %}
 <h2>

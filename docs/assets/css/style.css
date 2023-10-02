@@ -637,6 +637,9 @@ body.terms-and-definitions aside {
     border: none;
     padding: 0;
 }
+body.annex h1 {
+    text-align: center;
+}
 /*
 .referenced-list .row {
     display: inline-block;

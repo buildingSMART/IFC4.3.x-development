@@ -1,8 +1,13 @@
 # Terms, definitions, and abbreviated terms
 
-## 3.1 Terms and definitions
+For the purposes of this document, the following terms and definitions apply.
 
-For the purpose of this document, the following definitions apply.
+ISO and IEC maintain terminology databases for use in standardization at the following addresses:
+
+*	ISO Online browsing platform: available at https://www.iso.org/obp
+* IEC Electropedia: available at https://www.electropedia.org/
+
+## Terms and definitions
 
 ### actor
 
@@ -109,6 +114,8 @@ EXAMPLE  The use of a concept template for material definitions for a particular
 ### constraint
 
 \<data modelling\> a limitation imposed on data against which the data may be evaluated to determine whether the data is valid within a particular context
+
+### constraint
 
 \<construction\> constraint or limiting value or boundary condition that may be applied to an object or to the value of a property
 

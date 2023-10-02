@@ -12,9 +12,12 @@ The two vectors act as a two dimensional repeat factor that determines eight new
 > _I + k~1~\* R~1~ +
 k~2~\* R~2~_      _k~1~,k~2~_= -1,0,1 , ![formula](../../../../figures/ifcfillareastyletilesymbolwithstyle_fig1.gif)
 >
-> Figure 1 shows the use of a vector for hatch line distances
->
-> ![IfcFillAreaStyleTiles_Fig1.gif 12,9 KB](../../../../figures/ifcfillareastyletiles_fig1.gif "Figure 1 &mdash; two vectors as two direction repeat factor")
+
+Figure 1 shows the use of a vector for hatch line distances
+
+![IfcFillAreaStyleTiles_Fig1.gif 12,9 KB](../../../../figures/ifcfillareastyletiles_fig1.gif)
+
+Figure 1 &mdash; two vectors as two direction repeat factor
 
 > NOTE  Entity adapted from **fill_area_style_tiles** defined in ISO10303-46
 

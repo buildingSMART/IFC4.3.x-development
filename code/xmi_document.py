@@ -48,8 +48,9 @@ logging.basicConfig(level=logging.WARNING, stream=sys.stdout)
 
 # @todo schema name is hardcoded and not derived from the XMI package name for now
 is_iso = os.environ.get('ISO', '0') == '1'
+is_package = os.environ.get('PACKAGE', '0') == '1'
 
-if is_iso:
+if is_package or is_iso:
     SCHEMA_NAME = "IFC4X3_ADD2"
 else:
     SCHEMA_NAME = "IFC4X3_DEV"

@@ -10,8 +10,8 @@ LinearTerm = L
 ```
 concept {
     IfcCurveSegment:ParentCurve -> IfcSineSpiral
-    IfcCurveSegment:SegmentStart -> IfcParameterValue_0
-    IfcCurveSegment:SegmentLength -> IfcParameterValue_1
+    IfcCurveSegment:SegmentStart -> IfcLengthMeasure_0
+    IfcCurveSegment:SegmentLength -> IfcLengthMeasure_1
     IfcSineSpiral:SineTerm -> IfcLengthMeasure_0
     IfcSineSpiral:LinearTerm -> IfcLengthMeasure_1
 }

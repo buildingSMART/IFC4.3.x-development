@@ -29,13 +29,15 @@ Indexes 1...9 refer to points at the bounding box of a profile. Indexes 10...19 
 
 Other index values are possible but outside the scope of this specification.
 
-Figure 1 illustrates cardinal point values.
+Figure 1 illustrates cardinal point values. Figure 2 illustrates an example extrusion shape with arbitrary profile (_IfcArbitraryClosedProfileDef_), aligned "mid-depth right" on the member axis. The line of sight follows the extrusion direction Z which points into the drawing plane of above illustration. Hence, "left" is in the positive X direction of the _IfcProfileDef_. "Top" is in the positive Y direction of the _IfcProfileDef_.
 
-![arbitrary profile with cardinal points](../../../../figures/ifccardinalpointreference-01.png "Figure 1 &mdash; Cardinal point values")
+![arbitrary profile with cardinal points](../../../../figures/ifccardinalpointreference-01.png)
 
-Figure 2 illustrates an example extrusion shape with arbitrary profile (_IfcArbitraryClosedProfileDef_), aligned "mid-depth right" on the member axis. The line of sight follows the extrusion direction Z which points into the drawing plane of above illustration. Hence, "left" is in the positive X direction of the _IfcProfileDef_. "Top" is in the positive Y direction of the _IfcProfileDef_.
+Figure 1 &mdash; Cardinal point values
 
-![extrusion shape with arbitrary profile and alignment](../../../../figures/ifccardinalpointreference-02.png "Figure 2 &mdash; Cardinal point extrusion")
+![extrusion shape with arbitrary profile and alignment](../../../../figures/ifccardinalpointreference-02.png)
+
+Figure 2 &mdash; Cardinal point extrusion
 
 ## Formal Propositions
 

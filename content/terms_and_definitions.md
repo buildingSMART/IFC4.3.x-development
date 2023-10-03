@@ -27,19 +27,19 @@ Note 1 to entry:  An attribute declaration establishes a relationship between th
 
 #### derived attribute
 
-\<data modelling\> attribute whose value is computed in some manner
+&lt;data modelling> attribute whose value is computed in some manner
 
 [SOURCE: ISO 10303-11:2004, 9.2.1 - Definition adapted from normative text.]
 
 #### explicit attribute
 
-\<data modelling\> attribute whose value shall be supplied by an implementation at export in order to assign values to an entity instance
+&lt;data modelling> attribute whose value shall be supplied by an implementation at export in order to assign values to an entity instance
 
 [SOURCE: ISO 10303-11:2004, 9.2.1 - Definition adapted from normative text]
 
 #### inverse attribute
 
-\<data modelling\> attribute whose value consists of the entity instances that use the instance of the entity defining the inverse in a particular role
+&lt;data modelling> attribute whose value consists of the entity instances that use the instance of the entity defining the inverse in a particular role
 
 [SOURCE: ISO 10303-11:2004, 9.2.1 - Definition adapted from normative text]
 
@@ -113,11 +113,11 @@ EXAMPLE  The use of a concept template for material definitions for a particular
 
 ### constraint
 
-\<data modelling\> a limitation imposed on data against which the data may be evaluated to determine whether the data is valid within a particular context
+&lt;data modelling> a limitation imposed on data against which the data may be evaluated to determine whether the data is valid within a particular context
 
 ### constraint
 
-\<construction\> constraint or limiting value or boundary condition that may be applied to an object or to the value of a property
+&lt;construction> constraint or limiting value or boundary condition that may be applied to an object or to the value of a property
 
 ### control
 
@@ -210,7 +210,7 @@ meaningful data
 
 ### instance
 
-\<data modelling\> named value
+&lt;data modelling> named value
 
 [SOURCE: ISO 10303-11:2004, 3.3.10]
 
@@ -223,7 +223,7 @@ Note 1 to entry:  It is information referenced from an external source that is n
 ### model
 population
 
-\<data modeling\> collection of entity data type instances.
+&lt;data modeling> collection of entity data type instances.
 
 Note 1 to entry: In scope of this document models are populations of the schema.
 
@@ -231,7 +231,7 @@ Note 1 to entry: In scope of this document models are populations of the schema.
 
 ### model
 
-\<information management\>  description of the organization of data in a manner that reflects an information structure
+&lt;information management>  description of the organization of data in a manner that reflects an information structure
 
 Note 1 to entry: Information models and building information models are examples of a model.
 
@@ -279,13 +279,13 @@ EXAMPLE  Products that are not a physical thing or substance, but that have info
 
 ### project
 
-\<data modelling\> context information for data sets according to schema
+&lt;data modelling> context information for data sets according to schema
 
 Note 1 to entry: Context information may include default units, representation context and precision.
 
 ### project
 
-\<construction\>  unique process, consisting of a set of coordinated and controlled activities undertaken to achieve an objective
+&lt;construction>  unique process, consisting of a set of coordinated and controlled activities undertaken to achieve an objective
 
 [SOURCE: ISO 9000:2015, 3.4.2, modified — reference to characteristics related to timing, requirements, costs and resources was deleted and Notes to entry were deleted.]
 

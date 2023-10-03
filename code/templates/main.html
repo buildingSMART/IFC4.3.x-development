@@ -21,17 +21,28 @@
                     <p>ISO 16739-1:2023(E)</p>
                 {% else %}
                     <p>IFC 4.3.2.0 (IFC4X3_ADD2)
-                        <small>development</small>
+                        {% if is_package %}
+                            <small>official</small>
+                        {% else %}
+                            <small>development</small>
+                        {% endif %}
                     </p>
                 {% endif %}
 
                 {% if not is_iso %}
                 <ul>
                     <li>
-                        <a href="https://github.com/buildingSMART/IFC4.3.x-development/issues/">
-                            <i data-feather="message-circle"></i>
-                            Help suggest improvements
-                        </a>
+                        {% if is_package %}
+                            <a href="https://technical.buildingsmart.org/standards/ifc/ifc-schema-specifications/">
+                                <i data-feather="message-circle"></i>
+                                Help improve the next version
+                            </a>
+                        {% else %}
+                            <a href="https://github.com/buildingSMART/IFC4.3.x-development/issues/">
+                                <i data-feather="message-circle"></i>
+                                Help suggest improvements
+                            </a>
+                        {% endif %}
                     </li>
                     <li>
                         <a href="https://forums.buildingsmart.org/">
@@ -39,19 +50,21 @@
                             Get user or developer support
                         </a>
                     </li>
+                    <!--
                     <li>
                         <a href="#todo">
                             <i data-feather="code"></i>
                             Get started with software development
                         </a>
                     </li>
+                    -->
                 </ul>
                 {% endif %}
             </header>
         </div>
         <div class="row">
             <div class="col-md-2">
-                {% if not is_iso %}
+                {% if not is_iso and not is_package %}
                 {% block searchbar %}
                 <form method='get' action='/search' style="padding:0px;" class="search">
                     <div class="row">

@@ -4,11 +4,11 @@ The Industry Foundation Classes (IFC) are an open international standard for sha
 data. The standard comprises:
 
  1. A schema (provided in various forms, see [scope](scope.htm))
-{% if is_iso %}
+{%- if is_iso %}
  2. Documentation (provided in HTML)
-{% else %}
+{%- else %}
  2. Documentation (provided in HTML, authored in Markdown)
-{% endif %}
+{%- endif %}
  3. Property and Quantity Set definitions (standardized definitions for an extensibility mechanism realised in the schema - provided in XML)
  4. Exchange or serialization mechanisms of data files, see [scope](scope.htm)
 
@@ -47,7 +47,7 @@ The documentation is deposited at [standards.buildingsmart.org](https://standard
   
 The data schema architecture of IFC defines four conceptual layers, each individual schema is assigned to exactly one conceptual layer. The figure below shows the schema architecture of the IFC layered architecture.
 
-![Figure 1 — Data schema architecture with conceptual layers](https://raw.githubusercontent.com/buildingSMART/IFC4.3.x-development/b3911e98eaf9adc5287c41d2e55beda1688be5d6/content/IFC4_layered_architecture.png)
+![Figure 1 — Data schema architecture with conceptual layers](https://raw.githubusercontent.com/buildingSMART/IFC4.3.x-development/master/content/IFC4_layered_architecture.png)
 
 1. **Resource layer** — the lowest layer includes all individual schemas containing resource definitions, those definitions do not include a globally unique identifier and shall not be used independently of a definition declared at a higher layer;
 2. **Core layer** — the next layer includes the kernel schema and the core extension schemas, containing the most general entity definitions, all entities defined at the core layer, or above carry a globally unique id and optionally owner and history information;

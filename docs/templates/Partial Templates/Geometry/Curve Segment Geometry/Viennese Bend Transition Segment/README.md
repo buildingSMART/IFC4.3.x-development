@@ -8,8 +8,8 @@ The Viennese Bend (R) transition segment is a kinematic high performance transit
 ```
 concept {
     IfcCurveSegment:ParentCurve -> IfcSeventhOrderPolynomialSpiral
-    IfcCurveSegment:SegmentStart -> IfcParameterValue_0
-    IfcCurveSegment:SegmentLength -> IfcParameterValue_1
+    IfcCurveSegment:SegmentStart -> IfcLengthMeasure_0
+    IfcCurveSegment:SegmentLength -> IfcLengthMeasure_1
     IfcSeventhOrderPolynomialSpiral:ConstantTerm -> IfcReal
     IfcSeventhOrderPolynomialSpiral:QuadraticTerm -> IfcLengthMeasure_0
     IfcSeventhOrderPolynomialSpiral:CubicTerm -> IfcLengthMeasure_1

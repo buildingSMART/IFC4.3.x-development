@@ -1,6 +1,6 @@
 # Change log
 
-This document is the second edition of ISO 16739-1. The following sections describe how compatibility issues with previous release are handled in general. A full list of all changes against the previous list are shown in Chapter F.1.
+This document is the second edition of ISO 16739-1. The following sections describe how compatibility issues with previous editions are handled in general. A full list of all changes against the previous edition are shown in Chapter F.1.
 
 ## Compatibility
 

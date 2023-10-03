@@ -2161,7 +2161,7 @@ def annex_e():
 @app.route(make_url("annex-f.html"))
 def annex_f():
     # html = ""
-    _, __, ___, html = get_content_html("change_log", require_number=False)
+    _, __, ___, html = get_content_html("changelog", require_number=False)
 
     with open("changes_by_schema.json") as f:
         changelog_data = json.load(f)
@@ -2169,7 +2169,7 @@ def annex_f():
         SectionNumberGenerator.begin_subsection()
         for section in changelog_data:
             if X.is_iso:
-                section_name = "ISO 16739-1:2023 to ISO 16739:2018 change log"
+                section_name = "F.1 - ISO 16739-1:2023 to ISO 16739:2018 change log"
             else:
                 section_name = section[0]
 

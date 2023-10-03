@@ -4,7 +4,7 @@ For the purposes of this document, the following terms and definitions apply.
 
 ISO and IEC maintain terminology databases for use in standardization at the following addresses:
 
-*	ISO Online browsing platform: available at https://www.iso.org/obp
+* ISO Online browsing platform: available at https://www.iso.org/obp
 * IEC Electropedia: available at https://www.electropedia.org/
 
 ## 3.1 Terms and definitions

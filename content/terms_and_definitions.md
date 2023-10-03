@@ -7,7 +7,7 @@ ISO and IEC maintain terminology databases for use in standardization at the fol
 *	ISO Online browsing platform: available at https://www.iso.org/obp
 * IEC Electropedia: available at https://www.electropedia.org/
 
-## Terms and definitions
+## 3.1 Terms and definitions
 
 ### actor
 

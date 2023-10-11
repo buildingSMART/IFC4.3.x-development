@@ -7,12 +7,31 @@
 Computer interpretable listings</h1>
 
 <p>
-    This annex contains a listing of the complete schema combining all definitions of clauses 5, 6, 7, and 8 without comments or other explanatory text. These listings are available in computer-interpretable form that may be parsed by computer.
-</p>
-<p>
-    Official schema publications for this release are at the following URLs:
+    This annex contains a listing of the complete schema combining all definitions of clauses 5, 6, 7, and 8 without comments or other explanatory text.
+    These listings are available in computer-interpretable form that may be parsed by computer. The schemas are governed by the following schema definition languages that shall be adhered to when implementing.
 </p>
 
+<ul>
+  <li>EXPRESS schema following ISO 10303-11: <i>Industrial automation systems and integration — Product data representation and exchange — Part 11: description methods: The EXPRESS Language Reference Manual</i>
+    and its serialisation following ISO 10303-21: <i>Industrial automation systems and integration — Product data representation and exchange — Part 21: Implementation methods: Clear text encoding of the exchange structure</i>
+  </li>
+  <li>XML Schema following W3C Recommendation: <i>XML Schema Part 2: Datatypes</i>
+  </li>
+</ul>
+
+<p>
+    Official schema publications for this release are at:
+</p>
+
+{% if is_iso %}
+
+<ul>
+    <li>
+        <a href="https://standards.iso.org/iso/16739/-1/ed-2/en">https://standards.iso.org/iso/16739/-1/ed-2/en</a>
+    </li>
+</ul>
+
+{% else %}
 <ul>
     <li>
         <a href="annex-a-express.html">IFC EXPRESS long form schema</a>
@@ -24,4 +43,6 @@ Computer interpretable listings</h1>
         <a href="annex-a-psd.zip">IFC property and quantity set definition XML files</a>
     </li>
 </ul>
+{% endif %}
+
 {% endblock %}

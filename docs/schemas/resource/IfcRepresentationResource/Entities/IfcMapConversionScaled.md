@@ -49,7 +49,7 @@ sin\theta & cos\theta & 0 \\\\
 x \\\\
 y \\\\
 z
-\end{bmatrix}
+\end{bmatrix} +
 \begin{bmatrix}
 \text{Eastings} \\\\
 \text{Northings} \\\\

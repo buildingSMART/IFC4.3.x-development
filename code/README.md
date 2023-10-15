@@ -488,6 +488,21 @@ wget https://cdn.jsdelivr.net/npm/mathjax\@3.2.0/es5/output/chtml/fonts/woff-v2/
 wget https://cdn.jsdelivr.net/npm/mathjax\@3.2.0/es5/output/chtml/fonts/woff-v2/MathJax_Size2-Regular.woff
 ~~~
 
+or with PACKAGE option:
+
+~~~
+find . -type f \( -name '*.html' -o -name '*.htm' \) \
+    -exec sed s,cdn.jsdelivr.net,lib/cdn.jsdelivr.net,g -i {} \; \
+    -exec sed s,cdnjs.cloudflare.com,lib/cdnjs.cloudflare.com,g -i  {} \; \
+    -exec sed s,i.creativecommons.org,lib/i.creativecommons.org,g -i  {} \; \
+    -exec sed s,polyfill.io,lib/polyfill.io,g -i  {} \; \
+    -exec sed s,raw.githubusercontent.com,lib/raw.githubusercontent.com,g -i  {} \; \
+    -exec sed s,unpkg.com,lib/unpkg.com,g -i  {} \;
+
+find . -type f \( -name '*.html' -o -name '*.htm' \) \
+    -exec sed s,IFC/RELEASE/,RELEASE/,g -i {} \;
+~~~
+
 ## Deployment
 
 Typically for hosting a production version of this website, you can choose to

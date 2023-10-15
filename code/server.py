@@ -51,9 +51,12 @@ from extract_concepts_from_xmi import parse_bindings
 
 app = Flask(__name__)
 
-base = "/IFC/RELEASE/IFC4x3/HTML"
 is_iso = os.environ.get('ISO', '0') == '1'
 is_package = os.environ.get('PACKAGE', '0') == '1'
+if is_package:
+    base = "/RELEASE/IFC4x3/HTML"
+else:
+    base = "/IFC/RELEASE/IFC4x3/HTML"
 
 def make_url(fragment=None):
     return base + "/" + fragment if fragment else "/"
@@ -977,7 +980,7 @@ def process_markdown(resource, mdc, process_quotes=True, number_headings=False, 
             mark.string = keyword
             
             if "deprecation" in css_class:
-                anchor = soup.new_tag("a", href="/IFC/RELEASE/IFC4x3/HTML/content/terms_and_definitions.htm#deprecation")
+                anchor = soup.new_tag("a", href=f"{base}/content/terms_and_definitions.htm#deprecation")
                 icon = soup.new_tag("i")
                 icon["data-feather"] = "link"
                 anchor.append(icon)

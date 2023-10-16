@@ -54,7 +54,7 @@ app = Flask(__name__)
 is_iso = os.environ.get('ISO', '0') == '1'
 is_package = os.environ.get('PACKAGE', '0') == '1'
 if is_package:
-    base = "/RELEASE/IFC4x3/HTML"
+    base = "/HTML"
 else:
     base = "/IFC/RELEASE/IFC4x3/HTML"
 

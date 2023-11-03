@@ -15,7 +15,7 @@ try:
     except IndexError as e:
         OUTPUT = sys.stdout
 except:
-    print("Usage: python to_po.py <schema.xml>", file=sys.stderr)
+    print("Usage: python to_bsdd.py <schema.xml>", file=sys.stderr)
     exit()
 
 xmi_doc = xmi_document(fn)
@@ -57,18 +57,28 @@ def skip_by_package(element):
     
 HTML_TAG_PATTERN = re.compile('<.*?>')
 MULTIPLE_SPACE_PATTERN = re.compile(r'\s+')
-CHANGE_LOG_PATTERN = re.compile(r'\{\s*\.change\-\w+\s*\}.+', flags=re.DOTALL)
+# CHANGE_LOG_PATTERN = re.compile(r'\{\s*\.change\-\w+\s*\}.+', flags=re.DOTALL)
+CURLY_BRACKET_PATTERN = re.compile('{.*?}')
+
 def strip_html(s):
-    return s
-    S = html.unescape(s or '')
-    i = S.find('\n')
-    return re.sub(HTML_TAG_PATTERN, '', S)
-    
+    try:
+        S = html.unescape(s)
+    except TypeError:
+        # error when name contains link, for example: "https://github.com/buildingSMART/IFC4.3.x-development/edit/master/docs/schemas/core/IfcProductExtension/Types/IfcAlignmentTypeEnum.md#L0 has no content"
+        S = ''
+    i = S.find('\\n')
+    if i != -1:
+        S = S[:i]
+    x = re.sub(HTML_TAG_PATTERN, '', S)
+    y = re.sub(CURLY_BRACKET_PATTERN, '', x)
+    return y
+
 def format(s):
-    s = re.sub(CHANGE_LOG_PATTERN, '', str(s)).strip()
-    return s
-    s = s.replace("\\X\\0D", "")
-    return re.sub(MULTIPLE_SPACE_PATTERN, ' ', ''.join([' ', c][c.isalnum() or c in '.,'] for c in s)).strip()
+    # remove all redundant characters:
+    clean = ''.join(['', c][c.isalnum() or c in '.,()- —'] for c in s)
+    # s = re.sub(CHANGE_LOG_PATTERN, '', str(s)).strip()
+    # s = s.replace("\\X\\0D", "")
+    return re.sub(MULTIPLE_SPACE_PATTERN, ' ', clean).strip()
     
 def generalization(pe):
     try:
@@ -332,7 +342,8 @@ def filter_definition(di):
         return has_child_
 
     def should_include(k, v):
-        return ("IfcProduct" in parents(k)) or has_child("IfcProduct")(k) or child_or_self_has_psets(k)
+        #PREVIOUSLY return ("IfcProduct" in parents(k)) or has_child("IfcProduct")(k) or child_or_self_has_psets(k) #TODO right now 'has_pset' is broadening to include non-products that have psets...
+        return ("IfcRoot" in parents(k)) or child_or_self_has_psets(k)
         
     return {k: v for k, v in di.items() if should_include(k, v)}
     

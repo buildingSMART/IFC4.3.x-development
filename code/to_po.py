@@ -3,6 +3,7 @@ import re
 import sys
 import html
 import operator
+from datetime import date
 
 from xmi_document import xmi_document
 
@@ -15,16 +16,34 @@ except:
 xmi_doc = xmi_document(fn)
 bfn = os.path.basename(fn)
 
-all_names = re.compile("\\b(%s)\\b" % "|".join(sorted((item.name for item in xmi_doc if item.type != "FUNCTION"), key=lambda s: -len(s))))
+items = list(xmi_doc)
+names = ["USERDEFINED", "NOTDEFINED"]  # adding those two to be translatable values, as they occur in descriptions but will not be listed in bSDD. 
+for item in items:
+    if item.type != "FUNCTION":
+        names.append(item.name)
+    # add all enumeration values except two 
+    if item.type in ("ENUM", "PENUM"):
+        for c in item.children:
+            if c.name not in ("USERDEFINED", "NOTDEFINED", "UNSET"):
+                if len(c.name) > 1:
+                    names.append(c.name)
+                else:
+                    print("Skipped enum: {}".format(c.name))
+
+all_names = re.compile("\\b(%s)\\b" % "|".join(sorted((names), key=lambda s: -len(s))))
 
 HTML_TAG_PATTERN = re.compile('<.*?>')
 MULTIPLE_SPACE_PATTERN = re.compile(' +')
+CURLY_BRACKET_PATTERN = re.compile('{.*?}')
+
 def strip_html(s):
     S = html.unescape(s)
     i = S.find('\\n')
     if i != -1:
         S = S[:i]
-    return re.sub(HTML_TAG_PATTERN, '', S)
+    x = re.sub(HTML_TAG_PATTERN, '', S)
+    y = re.sub(CURLY_BRACKET_PATTERN, '', x)
+    return y
     
 def valid_key(s):
     return ''.join(c if c.isalnum() else '_' for c in s).strip('_')
@@ -52,7 +71,9 @@ def quote(s):
     return '"%s"' % s
         
 def format(s):
-    return quote(re.sub(MULTIPLE_SPACE_PATTERN, ' ', ''.join([' ', c][c.isalnum() or c in '.,'] for c in s)).strip())
+    # remove all redundant characters:
+    clean = ''.join(['', c][c.isalnum() or c in '.,()- —'] for c in s)
+    return quote(re.sub(MULTIPLE_SPACE_PATTERN, ' ', clean).strip())
     
 def annotate(s):
     return re.sub(all_names, lambda match: "[[%s]]" % match.group(0), s)
@@ -61,19 +82,19 @@ def annotate(s):
 class pot_file:
     def __init__(self, f):
         self.f = f
-    
+        now = date.today()
         print("""# Industry Foundation Classes IFC.
-# Copyright (C) 2020 buildingSMART
+# Copyright (C) {year} buildingSMART
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\\n"
-"POT-Creation-Date: 2020-09-25 10:09+0200\\n"
+"POT-Creation-Date: {date} {time}\\n"
 "X-Crowdin-SourceKey: msgstr\\n"
 "Language-Team: buildingSMART community\\n"
-""", file=self.f)
+""".format(year=now.strftime("%Y"), date=now.strftime(r"%Y-%m-%d"), time=now.strftime("%H:%M")), file=self.f)
         
     def __getattr__(self, k):
         return getattr(self.f, k)

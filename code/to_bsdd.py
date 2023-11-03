@@ -137,7 +137,7 @@ def generate_definitions():
     entities = []
     
     # predefined types are just normal enumerations
-    eumeratations = {}
+    enumerations = {}
     
     pset_counts_by_stereo = defaultdict(int)
     
@@ -146,7 +146,7 @@ def generate_definitions():
         item_by_id[item.id] = item
 
         if item.type == "ENUM":
-            eumeratations[item.name] = item
+            enumerations[item.name] = item
         
         elif item.type == "PSET":
             psets.append(item)
@@ -173,10 +173,11 @@ def generate_definitions():
         if predefined_type_attribute:
             # NB this points to the EA extension node and not the packagedElement
             ptype = (predefined_type_attribute[0].node|"properties").type
-            for c in eumeratations[ptype].children:
-                by_id[c.id] = di = classifications[item.name + "." + c.name]
-                di["Parent"] = item.name
-                di['Description'] = format(strip_html(c.markdown))
+            for c in enumerations[ptype].children:
+                if c.name not in ("USERDEFINED","NOTDEFINED"):
+                    by_id[c.id] = di = classifications[item.name + "." + c.name]
+                    di["Parent"] = item.name
+                    di['Description'] = format(strip_html(c.markdown))
 
     for item in psets:
         refs = set(item.meta.get('refs') or [])

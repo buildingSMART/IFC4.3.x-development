@@ -25,7 +25,7 @@ for item in items:
     if item.type in ("ENUM", "PENUM"):
         for c in item.children:
             if c.name not in ("USERDEFINED", "NOTDEFINED", "UNSET"):
-                if len(c.name) > 1:
+                if len(c.name) > 1 and not c.name.isnumeric():
                     names.append(c.name)
                 else:
                     print("Skipped enum: {}".format(c.name))
@@ -77,7 +77,27 @@ def format(s):
     
 def annotate(s):
     return re.sub(all_names, lambda match: "[[%s]]" % match.group(0), s)
-    
+
+def normalise(s):
+    # Convert IFCsh terms into more human readable (e.g. IfcWallCase --> Wall Case)
+    if s.isupper():  # e.g. NOTKNOWN or TRIPLEPANELRIGHT
+        #TODO invent a way to split into words
+        x = s #.title()
+    elif s.startswith("Ifc") and s.endswith("Enum") and not " " in s:  # e.g. IfcWallTypeEnum
+        # skip Ifc and say "enumeration of wall type"
+        y = re.sub(r"(?<=[a-z])(?=[A-Z])", " ", s[3:-4]).title()
+        x = "Enumeration of {}".format(x)
+    elif s.startswith("Ifc") and not " " in s:  # e.g. IfcWallStandardCase
+        # skip Ifc and divide into words: Wall standard case
+        x = re.sub(r"(?<=[a-z])(?=[A-Z])", " ", s[3:]).title()
+    elif not " " in s:  # e.g. UserDefinedPartitioningType
+        # split into words: User defined partitioning type
+        x = re.sub(r"(?<=[a-z])(?=[A-Z])", " ", s).title()
+    else:
+        #TODO review the list if there are no other missed values to explain.
+        print("REVIEW IF THIS IS A PURE DESCRIPTION OR NOT: {}".format(s))
+        x = s
+    return x
     
 class pot_file:
     def __init__(self, f):
@@ -118,7 +138,7 @@ for i, (package, (ln, col), p, d) in enumerate(generate_definitions()):
     print(file=po_file)
     
     print("msgid", quote("_".join(p + ("DEFINITION",))),  file=po_file)
-    print("msgstr", annotate(format(strip_html(d or ''))),  file=po_file)
+    print("msgstr", normalise(annotate(format(strip_html(d or '')))),  file=po_file)
     print(file=po_file)
     
     if (i % 1000) == 0 and i:

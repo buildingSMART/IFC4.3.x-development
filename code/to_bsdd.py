@@ -28,11 +28,10 @@ schema_name = re.sub(r"_+", "_", schema_name)
 schema_name = schema_name.strip('_')
 
 structure = {
-        'Domain': {
+        'Dictionary': {
             'Name': 'IFC',
-            'Version': schema_name,
-            
-            'Classifications': None
+            'Version': schema_name,            
+            'Classes': None
         }
     }
 
@@ -62,16 +61,33 @@ CURLY_BRACKET_PATTERN = re.compile('{.*?}')
 
 def strip_html(s):
     try:
-        S = html.unescape(s)
+        s1 = html.unescape(s)
     except TypeError:
         # error when name contains link, for example: "https://github.com/buildingSMART/IFC4.3.x-development/edit/master/docs/schemas/core/IfcProductExtension/Types/IfcAlignmentTypeEnum.md#L0 has no content"
-        S = ''
-    i = S.find('\\n')
+        s1 = ''
+    i = s1.find('\\n')
     if i != -1:
-        S = S[:i]
-    x = re.sub(HTML_TAG_PATTERN, '', S)
-    y = re.sub(CURLY_BRACKET_PATTERN, '', x)
-    return y
+        s1 = s1[:i]
+    s2 = re.sub(HTML_TAG_PATTERN, ' ', s1)
+    s3 = re.sub(CURLY_BRACKET_PATTERN, ' ', s2)
+    s4 = re.sub('   ', ' ', s3)
+    s5 = re.sub('  ', ' ', s4)
+    return s5
+
+def split_at_word(w, s):
+    if w in s.lower():
+        if not w+"ing" in s.lower():
+            s = re.sub(w, " "+w+" ", s.lower())
+    if isinstance(s, list):
+        s = " ".join(s)
+    return s
+
+def split_words(s):
+    # hard-coded list of words found in enumerations to split the ALLCAPS phrases into indivudual words. List might not be complete
+    for w in ['current','switch','order','recovery','loading','barrier','reel','basin','fountain','packaged','nozzle','tube','plant','injection','assisted','element','vertical','turbine','heating','disassembly','button','exchange','component','security','deflector','chair','cabinet','assembly','actuator','meter','sensor','object','detection','station','depth','controller','terminal','center','frame','electric','exchangers','outlet','server','plate','expansion','exhaust','damper','shell','pump','filter','conveyor','rail','solar','surcharge','excavation','combustion','draft','mechanical','constant','coil','cooled','cooler','evaporative','pavement','top','column','traffic','crossing','side','road','vehicle','island','gear','super','event','adiabatic','segment','marker','structure','ground','channel','pressure','shift','prevention','tray','provision','soil','preloaded','water','cold','hot','cable','domestic','power','generation','solid','waste','unit','carrier','duct','protection','disconnector','surfacing','breaker','wall','flow','curve','limiter','board','chamber','panel','acoustic','fire','inspection','work','marking','transverse','rumble','strip','surface','maintenance','of','system','fixed','transmission','network','machine','device','equipment','sound','stud','connector','section','inventory','bill','quantities','compacted','drained','tower','indirect','direct','media','rigid','random','gravity','relief','air']:
+        s = split_at_word(w, s)
+    s = re.sub("  ", " ", s)
+    return s.strip()
 
 def format(s):
     # remove all redundant characters:
@@ -102,7 +118,7 @@ def generate_definitions():
     b: the documentation string
     """
     make_defaultdict = lambda: defaultdict(make_defaultdict)
-    classifications = defaultdict(make_defaultdict)
+    classes = defaultdict(make_defaultdict)
     
     def get_parent_of_pt(enum_type):
         enum_id = enum_type.idref
@@ -153,14 +169,18 @@ def generate_definitions():
             
             stereo = (item.node/"properties")[0].stereotype
             pset_counts_by_stereo[stereo] += 1
-                    
+            # add human-readable name
+            di['Name'] = re.sub(r'(?<=[a-z])(?=[A-Z])', ' ', re.sub("Pset_", "", item.name)).title()
+
         elif item.type == "ENTITY":
-            by_id[item.id] = di = classifications[item.name]
+            by_id[item.id] = di = classes[item.name]
            
             st = item.meta.get('supertypes', [])
             if st:
                 di['Parent'] = st[0]
-            di['Description'] = format(strip_html(item.markdown))
+            di['Definition'] = format(strip_html(item.markdown))
+            # add human-readable name
+            di['Name'] = re.sub(r'(?<=[a-z])(?=[A-Z])', ' ', re.sub("Ifc", "", item.name)).title()
             
             entities.append(item)
 
@@ -175,9 +195,11 @@ def generate_definitions():
             ptype = (predefined_type_attribute[0].node|"properties").type
             for c in enumerations[ptype].children:
                 if c.name not in ("USERDEFINED","NOTDEFINED"):
-                    by_id[c.id] = di = classifications[item.name + "." + c.name]
+                    by_id[c.id] = di = classes[item.name + "." + c.name]
                     di["Parent"] = item.name
-                    di['Description'] = format(strip_html(c.markdown))
+                    di['Definition'] = format(strip_html(c.markdown))
+                    # add human-readable name, by identifying words in all-caps phrase (right now the words are hardcoded)
+                    di['Name'] = re.sub("_", " ", split_words(c.name)).title()
 
     for item in psets:
         refs = set(item.meta.get('refs') or [])
@@ -208,6 +230,7 @@ def generate_definitions():
                 if item.stereotype == "QSET":
                     type_name = "real"
                     type_values = None
+                    kind_name = 'Single'
                 else:
                     ty, ty_arg = ty_ty_arg
                     if ty == "PropertyEnumeratedValue":
@@ -215,7 +238,8 @@ def generate_definitions():
                         enum_types_by_name = [c for c in xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:Class"] if c.name == type_name]
                         enum_types_by_name += [c for c in xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:Enumeration"] if c.name == type_name]
                         type_values = [x.name for x in enum_types_by_name[0]/"ownedLiteral"]
-                    elif ty == "PropertySingleValue":
+                        kind_name = 'Single'
+                    else:
                         type_name = list(ty_arg.values())[0]
                         pe_types = [c for c in xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:Class"] if c.name == type_name]
                         pe_types += [c for c in xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:DataType"] if c.name == type_name]                    
@@ -223,24 +247,39 @@ def generate_definitions():
                         root_generalization = generalization(pe_type)
                         type_name = root_generalization.name.lower()
                         type_values = None
-                    else:
-                        print("Warning: %s.%s of type %s <%s> not mapped" % (item.name, nm, ty, ",".join(map(lambda kv: "=".join(kv), ty_arg.items()))))
-                        continue
+                        if ty == "PropertySingleValue":
+                            kind_name = 'Single'
+                        elif ty == "PropertyBoundedValue":
+                            di["Psets"][item.name]["Properties"][a.name]["Description"] = "This property in IFC stores a bounded value, meaning it has a maximum of two (numeric or descriptive) values assigned, the first value specifying the upper bound and the second value specifying the lower bound. Read the IFC documentation for more information."
+                            kind_name = 'Range'
+                        elif ty == "PropertyReferenceValue":
+                            di["Psets"][item.name]["Properties"][a.name]["Description"] = "This property in IFC takes as its value a reference to one of: IfcAddress, IfcAppliedValue, IfcExternalReference, IfcMaterialDefinition, IfcOrganization, IfcPerson, IfcPersonAndOrganization, IfcTable, IfcTimeSeries. Read the IFC documentation for more information."
+                            kind_name = 'Complex'
+                        elif ty == "PropertyListValue":
+                            di["Psets"][item.name]["Properties"][a.name]["Description"] = "This property in IFC takes list as its value. Read the IFC documentation for more information."
+                            kind_name = 'List'
+                        elif ty == "PropertyTableValue":
+                            di["Psets"][item.name]["Properties"][a.name]["Description"] = "This property in IFC takes a table as its value. That table has two columns (two lists), one for defining and other for defined values. Read the IFC documentation for more information."
+                            kind_name = 'Complex'
+                    # else:
+                    #     print("Warning: %s.%s of type %s <%s> not mapped" % (item.name, nm, ty, ",".join(map(lambda kv: "=".join(kv), ty_arg.items()))))
+                    #     continue
                         
-                di["Psets"][item.name]["Properties"][a.name]['type'] = type_name
-                di["Psets"][item.name]["Properties"][a.name]["Description"] = format(strip_html(a.markdown))
-                
+                di["Psets"][item.name]["Properties"][a.name]["type"] = type_name
+                di["Psets"][item.name]["Properties"][a.name]["Definition"] = format(strip_html(a.markdown))
+                di["Psets"][item.name]["Properties"][a.name]["kind"] = kind_name
+
                 if type_values is None:
                     type_values = type_to_values.get(type_name)
                 if type_values:
-                    di["Psets"][item.name]["Properties"][a.name]['values'] = type_values
-                        
+                    di["Psets"][item.name]["Properties"][a.name]["values"] = type_values
+
     for item in entities:
     
         item_name = item.name
         if item_name.endswith("Type"):
             item_name = item_name[:-4]
-        di = classifications[item_name]        
+        di = classes[item_name]        
                
         for c in item.children:
         
@@ -260,8 +299,10 @@ def generate_definitions():
             
             if c.name == "PredefinedType":
                 print("Not emitting %s.%s because it's the PredefinedType attribute" % (item.name, c.name))
-            elif type_item.type in {"ENTITY", "SELECT"}:
-                print("Not emitting %s.%s because it's a %s %s" % (item.name, c.name, type_item.name, type_item.type))
+            elif type_item.type == "ENTITY":
+                print("Not emitting %s.%s attribute because it's taking an ENTITY: %s" % (item.name, c.name, type_item.name))
+            elif type_item.type == "SELECT":
+                print("Not emitting %s.%s attribute because it's taking a SELECT: %s" % (item.name, c.name, type_item.name))
             elif type_item.type == "TYPE":
                 
                 type_values = None
@@ -283,7 +324,7 @@ def generate_definitions():
                     type_name = ty_gen.name.lower()
                 
                 di["Psets"]["Attributes"]["Properties"][c.name]['type'] = type_name
-                di["Psets"]["Attributes"]["Properties"][c.name]["Description"] = format(strip_html(c.markdown))
+                di["Psets"]["Attributes"]["Properties"][c.name]["Definition"] = format(strip_html(c.markdown))
                 
                 if type_values is None:
                     type_values = type_to_values.get(type_name)
@@ -297,7 +338,7 @@ def generate_definitions():
                 
                 di["Psets"]["Attributes"]["Properties"][c.name]['values'] = type_values
                 di["Psets"]["Attributes"]["Properties"][c.name]['type'] = type_name
-                di["Psets"]["Attributes"]["Properties"][c.name]["Description"] = format(strip_html(c.markdown))
+                di["Psets"]["Attributes"]["Properties"][c.name]["Definition"] = format(strip_html(c.markdown))
                 
             else:
                 print("Not emitting %s.%s because it's a %s %s" % (item.name, c.name, type_item.name, type_item.type))
@@ -310,7 +351,7 @@ def generate_definitions():
         
     print("TOTAL:", sum(pset_counts_by_stereo.values()))
             
-    return classifications
+    return classes
 
 def filter_definition(di):
 
@@ -351,7 +392,7 @@ def filter_definition(di):
 def embed_in_structure(di):
     d = {}
     d.update(structure)
-    d["Domain"]['Classifications'] = di
+    d["Dictionary"]['Classes'] = di
     return d
 
 json.dump(embed_in_structure(filter_definition(generate_definitions())), OUTPUT, indent=2, default=lambda x: (getattr(x, 'to_json', None) or (lambda: vars(x)))())

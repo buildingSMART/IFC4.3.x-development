@@ -7,6 +7,8 @@ import json
 from collections import defaultdict
 
 from xmi_document import xmi_document
+from nltk.corpus import words
+from nltk import PorterStemmer
 
 try:
     fn = sys.argv[1]
@@ -21,6 +23,9 @@ except:
 xmi_doc = xmi_document(fn)
 xmi_doc.should_translate_pset_types = False
 bfn = os.path.basename(fn)
+
+ps = PorterStemmer()
+words_to_catch = sorted(['current','switch','order','recovery','loading','barrier','reel','basin','fountain','packaged','nozzle','tube','plant','injection','assisted','element','vertical','turbine','heating','disassembly','button','exchange','component','security','deflector','chair','cabinet','assembly','actuator','meter','sensor','object','detection','station','depth','controller','terminal','center','frame','electric','exchangers','outlet','server','plate','expansion','exhaust','damper','shell','pump','filter','conveyor','rail','solar','surcharge','excavation','combustion','draft','mechanical','constant','coil','cooled','cooler','evaporative','pavement','top','column','traffic','crossing','side','road','vehicle','island','gear','super','event','adiabatic','segment','marker','structure','ground','channel','pressure','shift','prevention','tray','provision','soil','preloaded','water','cold','hot','cable','domestic','power','generation','solid','waste','unit','carrier','duct','protection','disconnector','surfacing','breaker','wall','flow','curve','limiter','board','chamber','panel','acoustic','fire','inspection','work','marking','transverse','rumble','strip','surface','maintenance','of','system','fixed','transmission','network','machine','device','equipment','sound','stud','connector','section','inventory','bill','quantities','compacted','drained','tower','indirect','direct','media','rigid','random','gravity','relief','air'], key=len)[::-1]
 
 schema_name = xmi_doc.xmi.by_tag_and_type["packagedElement"]['uml:Package'][1].name.replace("exp", "").upper()
 schema_name = "".join(["_", c][c.isalnum()] for c in schema_name)
@@ -76,7 +81,7 @@ def strip_html(s):
 
 def split_at_word(w, s):
     if w in s.lower():
-        if not w+"ing" in s.lower():
+        if not ps.stem(w) in s.lower():
             s = re.sub(w, " "+w+" ", s.lower())
     if isinstance(s, list):
         s = " ".join(s)
@@ -84,7 +89,8 @@ def split_at_word(w, s):
 
 def split_words(s):
     # hard-coded list of words found in enumerations to split the ALLCAPS phrases into indivudual words. List might not be complete
-    for w in ['current','switch','order','recovery','loading','barrier','reel','basin','fountain','packaged','nozzle','tube','plant','injection','assisted','element','vertical','turbine','heating','disassembly','button','exchange','component','security','deflector','chair','cabinet','assembly','actuator','meter','sensor','object','detection','station','depth','controller','terminal','center','frame','electric','exchangers','outlet','server','plate','expansion','exhaust','damper','shell','pump','filter','conveyor','rail','solar','surcharge','excavation','combustion','draft','mechanical','constant','coil','cooled','cooler','evaporative','pavement','top','column','traffic','crossing','side','road','vehicle','island','gear','super','event','adiabatic','segment','marker','structure','ground','channel','pressure','shift','prevention','tray','provision','soil','preloaded','water','cold','hot','cable','domestic','power','generation','solid','waste','unit','carrier','duct','protection','disconnector','surfacing','breaker','wall','flow','curve','limiter','board','chamber','panel','acoustic','fire','inspection','work','marking','transverse','rumble','strip','surface','maintenance','of','system','fixed','transmission','network','machine','device','equipment','sound','stud','connector','section','inventory','bill','quantities','compacted','drained','tower','indirect','direct','media','rigid','random','gravity','relief','air']:
+
+    for w in words_to_catch[::-1]:
         s = split_at_word(w, s)
     s = re.sub("  ", " ", s)
     return s.strip()
@@ -384,7 +390,8 @@ def filter_definition(di):
         return has_child_
 
     def should_include(k, v):
-        #PREVIOUSLY return ("IfcProduct" in parents(k)) or has_child("IfcProduct")(k) or child_or_self_has_psets(k) #TODO right now 'has_pset' is broadening to include non-products that have psets...
+        #PREVIOUSLY return ("IfcProduct" in parents(k)) or has_child("IfcProduct")(k) or child_or_self_has_psets(k) 
+        #TODO right now 'has_pset' is broadening to include non-products that have psets.
         return ("IfcRoot" in parents(k)) or child_or_self_has_psets(k)
         
     return {k: v for k, v in di.items() if should_include(k, v)}

@@ -180,7 +180,7 @@ def generate_definitions():
                 di['Parent'] = st[0]
             di['Definition'] = format(strip_html(item.markdown))
             # add human-readable name
-            di['Name'] = re.sub(r'(?<=[a-z])(?=[A-Z])', ' ', re.sub("Ifc", "", item.name)).title()
+            di['Name'] = re.sub(r'(?<=[a-z])(?=[A-Z])', ' ', (item.name[3:] if item.name.lower().startswith('ifc') else item.name)).title()
             
             entities.append(item)
 

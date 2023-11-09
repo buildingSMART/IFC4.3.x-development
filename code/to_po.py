@@ -81,7 +81,7 @@ def annotate(s):
 def normalise(s):
     # Convert IFCsh terms into more human readable (e.g. IfcWallCase --> Wall Case)
     if s.isupper():  # e.g. NOTKNOWN or TRIPLEPANELRIGHT
-        #TODO invent a way to split into words
+        #TODO check if new IFC.json already has splited words, or implement it here
         x = s #.title()
     elif s.startswith("Ifc") and s.endswith("Enum") and not " " in s:  # e.g. IfcWallTypeEnum
         # skip Ifc and say "enumeration of wall type"
@@ -94,8 +94,8 @@ def normalise(s):
         # split into words: User defined partitioning type
         x = re.sub(r"(?<=[a-z])(?=[A-Z])", " ", s).title()
     else:
-        #TODO review the list if there are no other missed values to explain.
-        print("REVIEW IF THIS IS A PURE DESCRIPTION OR NOT: {}".format(s))
+        # #TODO review the list if there are no other missed values to explain.
+        # print("REVIEW IF THIS IS A PURE DESCRIPTION OR NOT: {}".format(s))
         x = s
     return x
     

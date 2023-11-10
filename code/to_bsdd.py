@@ -5,10 +5,11 @@ import html
 import json
 
 from collections import defaultdict
+from copy import deepcopy
 
 from xmi_document import xmi_document
-from nltk.corpus import words
 from nltk import PorterStemmer
+from reversestem import unstem
 
 try:
     fn = sys.argv[1]
@@ -25,7 +26,25 @@ xmi_doc.should_translate_pset_types = False
 bfn = os.path.basename(fn)
 
 ps = PorterStemmer()
-words_to_catch = sorted(['current','switch','order','recovery','loading','barrier','reel','basin','fountain','packaged','nozzle','tube','plant','injection','assisted','element','vertical','turbine','heating','disassembly','button','exchange','component','security','deflector','chair','cabinet','assembly','actuator','meter','sensor','object','detection','station','depth','controller','terminal','center','frame','electric','exchangers','outlet','server','plate','expansion','exhaust','damper','shell','pump','filter','conveyor','rail','solar','surcharge','excavation','combustion','draft','mechanical','constant','coil','cooled','cooler','evaporative','pavement','top','column','traffic','crossing','side','road','vehicle','island','gear','super','event','adiabatic','segment','marker','structure','ground','channel','pressure','shift','prevention','tray','provision','soil','preloaded','water','cold','hot','cable','domestic','power','generation','solid','waste','unit','carrier','duct','protection','disconnector','surfacing','breaker','wall','flow','curve','limiter','board','chamber','panel','acoustic','fire','inspection','work','marking','transverse','rumble','strip','surface','maintenance','of','system','fixed','transmission','network','machine','device','equipment','sound','stud','connector','section','inventory','bill','quantities','compacted','drained','tower','indirect','direct','media','rigid','random','gravity','relief','air'], key=len)[::-1]
+words_to_catch = sorted(['current','cost','of','switch','order','recovery','loading','barrier','reel','basin','fountain','packaged','nozzle','tube','plant',
+                         'injection','assisted','element','vertically','vertical','turbine','heating','disassembly','button','component','security','deflector',
+                         'cabinet','assembly','actuator','meter','sensor','object','detection','station','depth','controller','terminal','center','frame','electric',
+                         'exchangers','exchange','exchanger','change','outlet','server','plate','expansion','exhaust','damper','shell','pump','filter','conveyor',
+                         'rail','solar','surcharge','excavation','combustion','draft','mechanical','constant','coil','cooled','cooler','evaporative','pavement','top',
+                         'column','traffic','crossing','side','road','vehicle','island','gear','super','event','adiabatic','segment','marker','structure','ground',
+                         'channel','pressure','shift','prevention','tray','provision','soil','preloaded','water','cold','hot','cable','domestic','power','generation',
+                         'solid','waste','unit','carrier','duct','protection','disconnector','surfacing','breaker','wall','flow','curve','limiter','board','chamber',
+                         'panel','acoustic','fire','inspection','transverse','rumble','strip','surface','maintenance','of','pier','system','fixed','hatch','transmission',
+                         'network','machine','device','equipment','sound','stud','connector','marking','removal','space','agent','section','inventory','bill','schedule','rate',
+                         'void','quantities','compacted','drained','tower','indirect','direct','media','intelligent','rigid','random','marine','compact','tensioner',
+                         'operational','intermediate','storage','hooks','area','lift','forward','natural','radial','gravity','piston','relief','air','track', 'pair',
+                         'switching','transition','off','bend','circular','derailer','tracked','roadway','plateau','retention','stock','double','twin','cage','seat',
+                         'moving','soft','inlet','symbol','symbolic','toilet','dock','docking','parabolic','bending','transceiver','control','asset','furniture',
+                         'contact','centre','motor','photocopier','generator','engine','point','access','asynchronous','synchronous','single','plaza','wheel','loops',
+                         'drive','stop','rates','timer','leakage','time','dryer','framework','roof','induction','topping','alignment','curved','stair','elemented',
+                         'electrical','chair','sofa','railway','entrance'], key=len)[::-1]
+all_caps = ['ups','gprs','gps','dc','ac','chp','led','oled','gfa','tv','msc']
+small_caps = ['for','of','and','to']
 
 schema_name = xmi_doc.xmi.by_tag_and_type["packagedElement"]['uml:Package'][1].name.replace("exp", "").upper()
 schema_name = "".join(["_", c][c.isalnum()] for c in schema_name)
@@ -70,32 +89,80 @@ def strip_html(s):
     except TypeError:
         # error when name contains link, for example: "https://github.com/buildingSMART/IFC4.3.x-development/edit/master/docs/schemas/core/IfcProductExtension/Types/IfcAlignmentTypeEnum.md#L0 has no content"
         s1 = ''
-    i = s1.find('\\n')
-    if i != -1:
+    i = min([x for x in [s1.find('\n'), s1.find('NOTE'), s1.find('HISTORY'), s1.find('EXAMPLE'), 1e5] if x >= 0])
+    if i > 0 and i != 1e5:
         s1 = s1[:i]
+    elif i==0:
+        # some descriptions start with History or Note. Don't want them.
+        s1 = ""
     s2 = re.sub(HTML_TAG_PATTERN, ' ', s1)
     s3 = re.sub(CURLY_BRACKET_PATTERN, ' ', s2)
-    s4 = re.sub('   ', ' ', s3)
-    s5 = re.sub('  ', ' ', s4)
+    s4 = re.sub(r'SELF\\', '', s3)
+    s5 = re.sub(r"\s+", " ", s4)
     return s5
 
+def caps_control(s):
+    s1 = s.split()
+    if isinstance(s1, list):
+        for part in s1:
+            for a in all_caps:
+                if part.lower() == a:
+                    s = re.sub(part, a.upper(), s)
+            for b in small_caps:
+                if part.lower() == b:
+                    s = re.sub(part, b.lower(), s)
+    return s
+
+
 def split_at_word(w, s):
-    if w in s.lower():
-        if not ps.stem(w) in s.lower():
+    
+    if w != '' and ps.stem(w) in s.lower():
+        if w in s.lower():
             s = re.sub(w, " "+w+" ", s.lower())
+        else: 
+            vs = unstem(ps.stem(w))
+            if isinstance(vs, dict):
+                # turn dict to flat list
+                vsl = []
+                for key, val in vs.items():
+                    vsl.append(key)
+                    if val:
+                        for v in val:
+                            vsl.append(v)
+                vs = vsl
+            if vs:
+                vs.append(ps.stem(w))
+                vs = sorted(vs, key=len)[::-1]
+                for v in vs:
+                    if v in s.lower():
+                        s = re.sub(w, " "+w+" ", s.lower())
+                        break
     if isinstance(s, list):
         s = " ".join(s)
     return s
 
 def split_words(s):
     # hard-coded list of words found in enumerations to split the ALLCAPS phrases into indivudual words. List might not be complete
-
-    for w in words_to_catch[::-1]:
-        s = split_at_word(w, s)
-    s = re.sub("  ", " ", s)
+    found_words = []
+    for w in words_to_catch:
+        # skip if word is contained in previous words (e.g. EXCHANGE in EXCHANGER)
+        previously_found = False
+        for fw in found_words:
+            if w in fw:
+                previously_found = True
+        if not previously_found:
+            s2 = deepcopy(s)
+            s2 = split_at_word(w, s2)
+            if s2 != s:
+                found_words.append(w)
+                s = s2
+    s = re.sub("_", " ", s)
+    s = re.sub(r"\s+", " ", s)
     return s.strip()
 
 def format(s):
+    # split CamelCase:
+    s = re.sub(r'(?<=[a-z])(?=[A-Z])', ' ', s)
     # remove all redundant characters:
     clean = ''.join(['', c][c.isalnum() or c in '.,()- —'] for c in s)
     # s = re.sub(CHANGE_LOG_PATTERN, '', str(s)).strip()
@@ -176,7 +243,7 @@ def generate_definitions():
             stereo = (item.node/"properties")[0].stereotype
             pset_counts_by_stereo[stereo] += 1
             # add human-readable name
-            di['Name'] = re.sub(r'(?<=[a-z])(?=[A-Z])', ' ', re.sub("Pset_", "", item.name)).title()
+            di['Name'] = caps_control(format(re.sub("Pset_", "", item.name)).title())
 
         elif item.type == "ENTITY":
             by_id[item.id] = di = classes[item.name]
@@ -186,7 +253,7 @@ def generate_definitions():
                 di['Parent'] = st[0]
             di['Definition'] = format(strip_html(item.markdown))
             # add human-readable name
-            di['Name'] = re.sub(r'(?<=[a-z])(?=[A-Z])', ' ', (item.name[3:] if item.name.lower().startswith('ifc') else item.name)).title()
+            di['Name'] = caps_control(format((item.name[3:] if item.name.lower().startswith('ifc') else item.name)).title())
             
             entities.append(item)
 
@@ -205,7 +272,8 @@ def generate_definitions():
                     di["Parent"] = item.name
                     di['Definition'] = format(strip_html(c.markdown))
                     # add human-readable name, by identifying words in all-caps phrase (right now the words are hardcoded)
-                    di['Name'] = re.sub("_", " ", split_words(c.name)).title()
+                    di['Name'] = caps_control(split_words(c.name).title())
+
 
     for item in psets:
         refs = set(item.meta.get('refs') or [])
@@ -272,13 +340,16 @@ def generate_definitions():
                     #     continue
                         
                 di["Psets"][item.name]["Properties"][a.name]["type"] = type_name
+                di["Psets"][item.name]["Properties"][a.name]["name"] = caps_control(format(a.name).title())
                 di["Psets"][item.name]["Properties"][a.name]["Definition"] = format(strip_html(a.markdown))
                 di["Psets"][item.name]["Properties"][a.name]["kind"] = kind_name
 
                 if type_values is None:
                     type_values = type_to_values.get(type_name)
                 if type_values:
-                    di["Psets"][item.name]["Properties"][a.name]["values"] = type_values
+                    for tv in type_values:
+                        di["Psets"][item.name]["Properties"][a.name]["values"]['value'] = tv
+                        di["Psets"][item.name]["Properties"][a.name]["values"]['Description'] = caps_control(split_words(tv).title())
 
     for item in entities:
     
@@ -302,7 +373,6 @@ def generate_definitions():
             except:
                 print("Not emitting %s.%s because of an error" % (item.name, c.name))
                 continue
-            
             if c.name == "PredefinedType":
                 print("Not emitting %s.%s because it's the PredefinedType attribute" % (item.name, c.name))
             elif type_item.type == "ENTITY":
@@ -330,19 +400,25 @@ def generate_definitions():
                     type_name = ty_gen.name.lower()
                 
                 di["Psets"]["Attributes"]["Properties"][c.name]['type'] = type_name
+                di["Psets"]["Attributes"]["Properties"][c.name]["name"] = caps_control(format(c.name).title())
+
                 di["Psets"]["Attributes"]["Properties"][c.name]["Definition"] = format(strip_html(c.markdown))
                 
                 if type_values is None:
                     type_values = type_to_values.get(type_name)
                 if type_values:
-                    di["Psets"]["Attributes"]["Properties"][c.name]['values'] = type_values
+                    for tv in type_values:
+                        di["Psets"]["Attributes"]["Properties"][c.name]['values']['value'] = tv
+                        di["Psets"]["Attributes"]["Properties"][c.name]['values']['Description'] = caps_control(split_words(tv).title())
             
             elif type_item.type == "ENUM":
             
                 type_name = type_item.name
                 type_values = type_item.definition.values
                 
-                di["Psets"]["Attributes"]["Properties"][c.name]['values'] = type_values
+                for tv in type_values:
+                    di["Psets"]["Attributes"]["Properties"][c.name]['values']['value'] = tv
+                    di["Psets"]["Attributes"]["Properties"][c.name]['values']['Description'] = caps_control(split_words(tv).title())
                 di["Psets"]["Attributes"]["Properties"][c.name]['type'] = type_name
                 di["Psets"]["Attributes"]["Properties"][c.name]["Definition"] = format(strip_html(c.markdown))
                 
@@ -390,9 +466,9 @@ def filter_definition(di):
         return has_child_
 
     def should_include(k, v):
-        #PREVIOUSLY return ("IfcProduct" in parents(k)) or has_child("IfcProduct")(k) or child_or_self_has_psets(k) 
-        #TODO right now 'has_pset' is broadening to include non-products that have psets.
-        return ("IfcRoot" in parents(k)) or child_or_self_has_psets(k)
+        # PREVIOUSLY return ("IfcProduct" in parents(k)) or has_child("IfcProduct")(k) or child_or_self_has_psets(k) 
+        # right now 'has_pset' is broadening to include non-products that have psets, like IfcActor.
+        return ("IfcRoot" in parents(k)) or ("IfcMaterialDefinition" in parents(k)) or ("IfcProfileDef" in parents(k)) or child_or_self_has_psets(k)
         
     return {k: v for k, v in di.items() if should_include(k, v)}
     

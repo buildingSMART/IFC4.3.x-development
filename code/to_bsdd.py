@@ -12,9 +12,7 @@ from nltk import PorterStemmer
 from reversestem import unstem
 
 try:
-    fn = sys.argv[1]
     try:
-        OUTPUT = open(sys.argv[2], "w", encoding='utf-8')
     except IndexError as e:
         OUTPUT = sys.stdout
 except:
@@ -41,17 +39,19 @@ words_to_catch = sorted(['current','cost','of','switch','order','recovery','load
                          'switching','transition','off','bend','circular','derailer','tracked','roadway','plateau','retention','stock','double','twin','cage','seat',
                          'moving','soft','inlet','symbol','symbolic','toilet','dock','docking','parabolic','bending','transceiver','control','asset','furniture',
                          'contact','centre','motorized','motor','photocopier','generator','engine','point','access','asynchronous','synchronous','single','plaza','wheel','loops',
-                         'drive','stop','rates','timer','leakage','time','dryer','framework','roof','induction','topping','alignment','curved','stair','elemented',
+                         'drive','stop','rates','timer','leakage','time','dryer','framework','roof','induction','topping','alignment','curved','stair','elemented','scaffolding',
                          'electrical','chair','sofa','railway','entrance','secured','cover','manhole','flat','concave','convex','known','cylinder','horizontal','business','issues',
                          'elevated','work','platform','materials','handling','material','effects','health','safety','hazadrous','dust','scaffold','fall','fragile','shock',
                          'environmental','drowning','flooding','very','high','unintended','collapse','working','overhead','considerable','value','driven','defined','unknown',
-                         'class','appliance','earth','protective','neutral','disposal','transport','cradle','site','production','transport','recovery','repair','whole','lifecycle',
+                         'class','appliance','earth','protective','neutral','disposal','cradle','site','production','transport','repair','whole','lifecycle','siphon',
                          'urgent','procedure','emergency','offsite','very','office','sensors','volume','diffusers','variable','multiple','zone','conduit','temperature','powered',
                          'safety','light','warning','exit','blue','illumination','spark','gap','gas','filled','touch','screen','buttons','auto','transformer','divided','support',
-                         'earthing','switch','offload','break','glass','key','operated','manual','pull','cord','exhaust','damper','shell','pump','filter','conveyor','pumps',
-                         'speed','fan','bypass','valve','dampers','wet','bulb','reset','exiting','folding','curtain','closed','circuit','dry','open'], key=len)[::-1]
+                         'earthing','offload','break','glass','key','operated','manual','pull','cord','exhaust','damper','shell','pump','filter','conveyor','pumps','heat','heated',
+                         'speed','fan','bypass','valve','dampers','wet','bulb','reset','exiting','folding','curtain','closed','circuit','dry','open','indicator','shunting','route',
+                         'derail','departure','starting','signal','repeating','obstruction','hump','auxiliary','home','distant','block','blocking','approach','mesh','push',
+                         'pushing', 'bidirectional','directional','right','left','damper','balancing','combination'], key=len)[::-1]
 
-all_caps = ['ups','gprs','gps','dc','ac','chp','led','oled','gfa','tv','msc','ppm','iot','lrm','cgt','teu','tmp','std','gsm','cdma','lte','td','scdma','wcdma','sc','mp','bm','ol','ep']
+all_caps = ['ups','gprs','gps','dc','ac','chp','led','oled','ole','gfa','tv','msc','ppm','iot','lrm','cgt','teu','tmp','std','gsm','cdma','lte','td','scdma','wcdma','sc','mp','bm','ol','ep']
 small_caps = ['for','of','and','to','with','or','at']
 
 schema_name = xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:Package"][1].name.replace("exp", "").upper()
@@ -90,7 +90,8 @@ HTML_TAG_PATTERN = re.compile('<.*?>')
 MULTIPLE_SPACE_PATTERN = re.compile(r'\s+')
 # CHANGE_LOG_PATTERN = re.compile(r'\{\s*\.change\-\w+\s*\}.+', flags=re.DOTALL)
 CURLY_BRACKET_PATTERN = re.compile('{.*?}.*') #also removes all text after curly brackets
-FIGURE_PATTERN = re.compile('[^.]*\bFigure\b[^.]*') #removes the sentence when it mentiones a Figure.
+FIGURE_PATTERN = re.compile('[^.,;]*(Figure|the figure)[^.,;]*') #removes the sentence when it mentiones a Figure.
+
 
 def strip_html(s, trim=True):
     try:
@@ -115,8 +116,8 @@ def strip_html(s, trim=True):
     s8 = re.sub(FIGURE_PATTERN, '', s7)
     # TODO too long description...
     # sx = re.sub('e.g.', "", re.sub('i.e.', "", re.sub('etc.', "", s8)))
-    # if len(sx.split(".")) > 7:
-    #     s8 = "TOOLONGNAME_" + s8
+    # if len(sx.split(".")) > 6:
+    #     s8 = s8.split(sx.split(".")[6])[0] + "[IT WAS CUT HERE!]"
     return s8
 
 def skip_empty(s):
@@ -139,7 +140,12 @@ def caps_control(s):
 
 def split_at_word(w, s):
     
-    if w != '' and ps.stem(w) in s.lower():
+    if w != '' and ((ps.stem(w) in s.lower()) or (w in s.lower())):
+        # to_keep=False
+        # for wtk in words_to_keep:
+        #     if wtk in s.lower():
+        #         to_keep=True
+        # if not to_keep:
         if w in s.lower():
             s = re.sub(w, " "+w+" ", s.lower())
         else: 
@@ -186,8 +192,8 @@ def split_words(s):
 def format(s):
     # split CamelCase:
     s = re.sub(r'(?<=[a-z])(?=[A-Z])', ' ', s)
-    # remove all redundant characters:
-    clean = ''.join(['', c][c.isalnum() or c in ':.,()-+ —=;α°_/$%@<>\*'] for c in s)
+    # remove all redundant characters (except those listed):
+    clean = ''.join(['', c][c.isalnum() or c in ':.,()-+ —=;α°_/!?$%@<>\*'] for c in s)
     # s = re.sub(CHANGE_LOG_PATTERN, '', str(s)).strip()
     # s = s.replace("\\X\\0D", "")
     return re.sub(MULTIPLE_SPACE_PATTERN, ' ', clean).strip()

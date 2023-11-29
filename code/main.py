@@ -7,8 +7,8 @@ def relative_path(*args):
     return os.path.abspath(os.path.join(os.path.dirname(__file__), *args))
 
 reference_dir = relative_path("..", "reference_schemas")
-scripts = "to_express", "to_po", "to_bsdd", "to_pset"
-extensions = "exp", None, "json", None
+scripts = "to_express", "to_bsdd", "to_pset"
+extensions = "exp",  "json", None
 
 # check PO file for non-unique keys with
 # grep msgid ifc.pot | sort | uniq -d

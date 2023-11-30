@@ -8,7 +8,8 @@ def relative_path(*args):
 
 reference_dir = relative_path("..", "reference_schemas")
 scripts = "to_express", "to_bsdd", "to_pset"
-extensions = "exp",  "json", None
+# extensions = "exp",  "json", None
+extensions = "exp",  None, None
 
 # check PO file for non-unique keys with
 # grep msgid ifc.pot | sort | uniq -d

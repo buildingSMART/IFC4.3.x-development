@@ -595,6 +595,7 @@ def needs_bracket(s):
         return False
     
 
+
 codes = [] #["USERDEFINED", "NOTDEFINED"]  # adding those two to be translatable values, as they occur in descriptions but will not be listed in bSDD.
 for code, content in defs.items(): 
     if len(code) >= 6:
@@ -689,9 +690,10 @@ bsdd_data = {
 
 #TODO add properties, now only ClassProps.
 
-with open(output_dir, 'w', encoding='utf-8') as f:
+# with open(output_dir, 'w', encoding='utf-8') as f:
+with open(os.path.join(output_dir, "IFC.json"), 'w', encoding='utf-8') as f :
     json.dump(bsdd_data, f, indent=4, default=lambda x: (getattr(x, 'to_json', None) or (lambda: vars(x)))(), ensure_ascii=False)
-
+    print("Saved JSON file.")
 
 ### Generate collection of .pot files in the "pot" folder:
 
@@ -716,7 +718,7 @@ msgstr ""
         return getattr(self.f, k)
         
 class pot_dict(dict):
-    def __missing__(self, key):      
+    def __missing__(self, key):
         if not os.path.exists(os.path.join(output_dir, "pot")):
             os.makedirs(os.path.join(output_dir, "pot"))
         v = self[key] = pot_file(open(os.path.join(output_dir, "pot", key + ".pot"), "w+", encoding="utf-8")) # add folder: "pot", 
@@ -731,3 +733,4 @@ for t in to_translate:
     print("msgid", quote(t['msgid']),  file=po_file)
     print("msgstr", quote(t['msgstr']),  file=po_file)
     print(file=po_file)
+print("Saved POT files.")

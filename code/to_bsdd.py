@@ -582,6 +582,8 @@ defs = filter_definition(generate_definitions())
 ### go through names and add double square brackets in definitions:
 
 #list all codes, so that we can later highlight them in the descriptions
+
+def needs_bracket(s):
     if len(s) >= 6:
         if re.match(r'\b(?:[a-zA-Z]*[A-Z]){2,}[a-zA-Z]*\b', s):
             return True
@@ -593,6 +595,7 @@ defs = filter_definition(generate_definitions())
         return False
     
 
+codes = [] #["USERDEFINED", "NOTDEFINED"]  # adding those two to be translatable values, as they occur in descriptions but will not be listed in bSDD.
 for code, content in defs.items(): 
     if len(code) >= 6:
         codes.append(code)
@@ -723,6 +726,7 @@ class pot_dict(dict):
 po_files = pot_dict()       
 
 # for i, (package, (ln, col), p, d) in enumerate(generate_definitions()):
+for t in to_translate:
     po_file = po_files[t['package']]   
     print("msgid", quote(t['msgid']),  file=po_file)
     print("msgstr", quote(t['msgstr']),  file=po_file)

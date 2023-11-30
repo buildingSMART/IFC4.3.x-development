@@ -689,7 +689,7 @@ bsdd_data = {
 
 #TODO add properties, now only ClassProps.
 
-with open(os.path.join(output_dir, "IFC.json"), 'w', encoding='utf-8') as f:
+with open(output_dir, 'w', encoding='utf-8') as f:
     json.dump(bsdd_data, f, indent=4, default=lambda x: (getattr(x, 'to_json', None) or (lambda: vars(x)))(), ensure_ascii=False)
 
 

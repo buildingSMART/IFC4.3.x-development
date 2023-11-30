@@ -61,8 +61,8 @@ for ffn in glob.glob(relative_path("..", "schemas", "*.xml")):
         
             subprocess.check_call([
                 sys.executable, 
-                relative_path("validate_bsdd.py")
-                # relative_path("..", "output", fn[:-4] + "." + ext)
+                relative_path("validate_bsdd.py"),
+                relative_path("..", "output", fn[:-4] + ".json")
             ])
             
         elif script == "to_pset":

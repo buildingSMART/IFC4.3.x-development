@@ -7,8 +7,9 @@ def relative_path(*args):
     return os.path.abspath(os.path.join(os.path.dirname(__file__), *args))
 
 reference_dir = relative_path("..", "reference_schemas")
-scripts = "to_express", "to_po", "to_bsdd", "to_pset"
-extensions = "exp", None, "json", None
+scripts = "to_express", "to_bsdd", "to_pset"
+# extensions = "exp",  "json", None
+extensions = "exp",  None, None
 
 # check PO file for non-unique keys with
 # grep msgid ifc.pot | sort | uniq -d
@@ -60,8 +61,8 @@ for ffn in glob.glob(relative_path("..", "schemas", "*.xml")):
         
             subprocess.check_call([
                 sys.executable, 
-                relative_path("validate_bsdd.py"), 
-                relative_path("..", "output", fn[:-4] + "." + ext)
+                relative_path("validate_bsdd.py"),
+                relative_path("..", "output", fn[:-4] + ".json")
             ])
             
         elif script == "to_pset":

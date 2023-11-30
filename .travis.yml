@@ -12,7 +12,7 @@ install:
   - # python3 -m pip install hilbertcurve
   - pyenv global 3.8
   - sudo apt-get update -y && sudo apt-get install -y wget curl unzip openjdk-11-jdk-headless
-  - python3 -m pip install tabulate "pyparsing<3" lark-parser PyGithub Markdown markdown-it-py==1.1.0 deepdiff rdflib lxml Beautifulsoup4 networkx xmlschema numpy
+  - python3 -m pip install tabulate "pyparsing<3" lark-parser PyGithub Markdown markdown-it-py==1.1.0 deepdiff rdflib lxml Beautifulsoup4 networkx xmlschema numpy nltk reversestem
   - wget -O /tmp/ifopsh.zip https://s3.amazonaws.com/ifcopenshell-builds/ifcopenshell-python-38-v0.7.0-476ab50-linux64.zip
   - mkdir -p `python3 -c 'import site; print(site.getusersitepackages())'`
   - unzip -d `python3 -c 'import site; print(site.getusersitepackages())'` /tmp/ifopsh.zip

@@ -655,7 +655,7 @@ for code, content in defs.items():
                             'Value': val['Value'],
                             'Description': descr
                         })
-                        to_translate.append({"msgid":val['Value'],"msgstr":descr,"package":content['Package']})
+                        to_translate.append({"msgid":prop_code+"_"+val['Value'],"msgstr":descr,"package":content['Package']})
                 if not prop_code in props_set: 
                     # add to properties list, not just classProp
                     props_set.add(prop_code)

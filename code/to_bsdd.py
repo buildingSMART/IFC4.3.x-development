@@ -8,7 +8,7 @@ from collections import defaultdict
 from copy import deepcopy
 from datetime import date
 
-from xmi_document import xmi_document
+from xmi_document import xmi_document, missing_markdown
 from nltk import PorterStemmer
 from reversestem import unstem
 
@@ -55,10 +55,10 @@ words_to_catch = sorted(['current','cost','of','switch','order','recovery','load
                          'pushing', 'bidirectional','directional','right','left','damper','balancing','combination','earthquake','relay','interface','face','nail','loss',
                          'track','mounted','unidirectional','blastdamper','centrifugal','backward','inclined','vane','axial','propellor','diatomaceous','earth','reverse','osmosis',
                          'liquefied','petroleum','lightning','shaft','soak','slurry','collector','with','check','commercial','propane','butane','atmospheric','vacuum','wetted',
-                         'function','complementary','circuit','fault','lower','limit','control','pulse','converter','running','average','upper','limit','control','lower','band',
-                         'position','frost','automatic','continuous','source','sink'], key=len)[::-1]
+                         'function','complementary','circuit','fault','lower','inglimit','control','pulse','converter','running','average','upper','limit','control','lower','band',
+                         'position','frost','automatic','continuous','positioner','positioning','source','sink','lighting'], key=len)[::-1]
 
-all_caps = ['ups','gprs','rs','am','gps','dc','ac','chp','led','oled','ole','gfa','tv','msc','ppm','iot','ocl','lrm','cgt','teu','tmp','std','gsm','cdma','lte','td','scdma','wcdma','sc','mp','bm','ol','ep']
+all_caps = ['ups','gprs','rs','am','gps','dc','tn','ac','chp','led','oled','ole','gfa','tv','msc','ppm','iot','ocl','lrm','cgt','teu','tmp','std','gsm','cdma','lte','td','scdma','wcdma','sc','mp','bm','ol','ep']
 small_caps = ['for','of','and','to','with','or','at']
 
 schema_name = xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:Package"][1].name.replace("exp", "").upper()
@@ -119,10 +119,7 @@ def strip_html(s, trim=True):
     #     s9 = s9.split(sx.split(".")[6])[0] + "[IT WAS CUT HERE!]"
     return s9
 
-def skip_empty(s):
-    if str(type(s)) == "<class 'xmi_document.missing_markdown'>":
-        s = ""
-    return s
+
 
 def caps_control(s):
     s1 = s.split()
@@ -188,35 +185,39 @@ def split_words(s):
     s = re.sub(r"\s+", " ", s)
     return s.strip()
 
+def toStr(s):
+    """ Turn to string in case it finds a defaultdict or similar """
+    if isinstance(s, str):
+        return s
+    elif isinstance(s, defaultdict):
+        if len(dict(s)) == 0: 
+            return ""
+        else:
+            print("Skipped the term, default dict: " + str(s))
+            return ""
+    elif isinstance(s, missing_markdown):
+        print("Skipped the term, missing markdown in: " + str(s))
+        return ""
+    else:
+        print("Skipped the term, unknown problem in: " + str(s))
+        return ""
+
 def quote(s):
-    return '"%s"' % s
+    return '"%s"' % toStr(s)
 
 def annotate(s):
-    if isinstance(s, str) or len(s) > 0:
-        return re.sub(all_codes, lambda match: "[[%s]]" % match.group(0), s)
-    else:
-        # an empty defaultdict
-        return ""
+    return re.sub(all_codes, lambda match: "[[%s]]" % match.group(0), toStr(s))
 
 def normalise(s):
     """ format the text by spliting into separate words."""    
-    if isinstance(s, str) or len(s) > 0:
-        # split CamelCase:
-        s = re.sub(r'(?<=[a-z])(?=[A-Z])', ' ', s)
-        return re.sub(MULTIPLE_SPACE_PATTERN, ' ', s).strip()
-    else:
-        # an empty defaultdict
-        return ""
+    s = re.sub(r'(?<=[a-z])(?=[A-Z])', ' ', toStr(s))
+    return re.sub(MULTIPLE_SPACE_PATTERN, ' ', s).strip()
 
 def clean(s):
     """ format the text by removing unwanted characters."""    
-    if isinstance(s, str) or len(s) > 0:
-        # remove all redundant characters (except those listed):
-        clean = ''.join(['', c][c.isalnum() or c in ':.,()-+ —=;α°_/!?$%@<>\*'] for c in s)
-        return re.sub(MULTIPLE_SPACE_PATTERN, ' ', clean).strip()
-    else:
-        # an empty defaultdict
-        return ""
+    # remove all redundant characters (except those listed):
+    clean = ''.join(['', c][c.isalnum() or c in ':.,()-+ —=;α°_/!?$%@<>\*'] for c in toStr(s))
+    return re.sub(MULTIPLE_SPACE_PATTERN, ' ', clean).strip()
     
 def generalization(pe):
     try:
@@ -310,7 +311,7 @@ def generate_definitions():
                 st = item.meta.get('supertypes', [])
                 if st:
                     di["Parent"] = st[0]
-                di["Definition"] = strip_html(skip_empty(item.markdown), trim=True)
+                di["Definition"] = strip_html(toStr(item.markdown), trim=True)
                 # add human-readable name
                 di["Name"] = caps_control(clean(normalise((item.name[3:] if item.name.lower().startswith('ifc') else item.name))).title())
                 
@@ -331,7 +332,7 @@ def generate_definitions():
                     if c.name not in ("USERDEFINED","NOTDEFINED"):
                         by_id[c.id] = di = classes[item.name + c.name]
                         di["Parent"] = item.name
-                        di["Definition"] = strip_html(skip_empty(c.markdown), trim=True)
+                        di["Definition"] = strip_html(toStr(c.markdown), trim=True)
                         # add human-readable name, by identifying words in all-caps phrase (right now the words are hardcoded)
                         di["Name"] = caps_control(split_words(c.name).title())
                         di["Package"] = item.package # solely to split POT files
@@ -412,7 +413,7 @@ def generate_definitions():
                     di["Psets"][item.name]["Properties"][a.name]["Type"] = type_name
                     di["Psets"][item.name]["Properties"][a.name]["Name"] = caps_control(clean(normalise(a.name)).title())
                     # remove value explanation from the definition
-                    di["Psets"][item.name]["Properties"][a.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', strip_html(skip_empty(a.markdown), trim=True))
+                    di["Psets"][item.name]["Properties"][a.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', strip_html(toStr(a.markdown), trim=True))
                     di["Psets"][item.name]["Properties"][a.name]["Kind"] = kind_name
                     di["Psets"][item.name]["Properties"][a.name]["Package"] = item.package # solely to split POT files
 
@@ -422,7 +423,7 @@ def generate_definitions():
                         di["Psets"][item.name]["Properties"][a.name]["Values"] = []
                         for tv in type_values:                       
                             # match the whole sentence containing the value, case insensitive
-                            matches = re.findall(r"[^.;!,]*" + tv + r"[^.;!,]*", skip_empty(a.markdown), flags=re.IGNORECASE)
+                            matches = re.findall(r"[^.;!,]*" + tv + r"[^.;!,]*", toStr(a.markdown), flags=re.IGNORECASE)
                             if matches:
                                 description = clean(strip_html(matches[0].strip()))  #the whole sentence explaining the value
                             else:
@@ -490,7 +491,7 @@ def generate_definitions():
                     di["Psets"]["Attributes"]["Properties"][c.name]["Type"] = type_name
                     di["Psets"]["Attributes"]["Properties"][c.name]["Name"] = caps_control(clean(normalise(c.name)).title())
                     # remove value explanation from the definition
-                    di["Psets"]["Attributes"]["Properties"][c.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', strip_html(skip_empty(c.markdown), trim=True))
+                    di["Psets"]["Attributes"]["Properties"][c.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', strip_html(toStr(c.markdown), trim=True))
                     di["Psets"]["Attributes"]["Properties"][c.name]["Package"] = item.package # solely to split POT files
                     if type_values is None:
                         type_values = type_to_values.get(type_name)
@@ -498,8 +499,8 @@ def generate_definitions():
                         di["Psets"]["Attributes"]["Properties"][c.name]["Values"] = []
                         for tv in type_values:
                             # match the whole sentence containing the value, case insensitive
-                            # matches = re.findall(r"[^.;!,]*" + tv + r"[^.;!,]*", skip_empty(c.markdown), flags=re.IGNORECASE)
-                            matches = re.findall(r"[^.;!,]*" + tv + r"[^.;!,]*", skip_empty(c.markdown), flags=re.IGNORECASE)
+                            # matches = re.findall(r"[^.;!,]*" + tv + r"[^.;!,]*", toStr(c.markdown), flags=re.IGNORECASE)
+                            matches = re.findall(r"[^.;!,]*" + tv + r"[^.;!,]*", toStr(c.markdown), flags=re.IGNORECASE)
                             if matches:
                                 description = clean(strip_html(matches[0].strip()))  #the whole sentence explaining the value
                             else:
@@ -512,13 +513,13 @@ def generate_definitions():
                     type_values = type_item.definition.values
                     di["Psets"]["Attributes"]["Properties"][c.name]["Type"] = type_name
                     # remove value explanation from the definition
-                    di["Psets"]["Attributes"]["Properties"][c.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', strip_html(skip_empty(c.markdown), trim=True))
+                    di["Psets"]["Attributes"]["Properties"][c.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', strip_html(toStr(c.markdown), trim=True))
                     di["Psets"]["Attributes"]["Properties"][c.name]["Values"] = []
                     di["Psets"]["Attributes"]["Properties"][c.name]["Package"] = item.package # solely to split POT files
                     for tv in type_values:                   
                         # match the whole sentence containing the value, case insensitive
-                        # matches = re.findall(r"[^.;!,]*" + tv + r"[^.;!,]*", skip_empty(c.markdown), flags=re.IGNORECASE)
-                        matches = re.findall(r"[^.;!,]*" + tv + r"[^.;!,]*", skip_empty(c.markdown), flags=re.IGNORECASE)
+                        # matches = re.findall(r"[^.;!,]*" + tv + r"[^.;!,]*", toStr(c.markdown), flags=re.IGNORECASE)
+                        matches = re.findall(r"[^.;!,]*" + tv + r"[^.;!,]*", toStr(c.markdown), flags=re.IGNORECASE)
                         if matches:
                             description = clean(strip_html(matches[0].strip()))  #the whole sentence explaining the value
                         else:
@@ -636,7 +637,7 @@ for code, content in defs.items():
             # if len(pset_content['Definition'])>0:
             #     pset_content['Definition'] = annotate(pset_content['Definition'])
             for prop_code, prop_content in pset_content['Properties'].items():
-                name = skip_empty(prop_content['Name'])
+                name = toStr(prop_content['Name'])
                 if not name:
                     name = normalise(prop_code)
                 prop_def = annotate(prop_content['Definition'])

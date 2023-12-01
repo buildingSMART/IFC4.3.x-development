@@ -2318,9 +2318,13 @@ def search():
     matches = []
     query = ""
     if request.args.get("query"):
+        from solrq import Q
         solr = pysolr.Solr("http://localhost:8983/solr/ifc")
+        
         query = request.args.get("query")
-        results = solr.search("body:(%s)" % query, **{"hl": "on", "hl.fl": "body", 'rows': 30})
+        
+        # '/' doesn't seem to be handled by solrq
+        results = solr.search(Q(body=query.replace("/", "\\/")), **{"hl": "on", "hl.fl": "body", 'rows': 30})
         h = results.highlighting
 
         def format(s):

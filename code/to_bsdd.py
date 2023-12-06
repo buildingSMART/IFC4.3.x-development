@@ -317,7 +317,7 @@ def generate_definitions():
             pass
 
         if not depracated:
-            if item.type == "ENUM":
+            if item.type in ("ENUM","PENUM"):
                 enumerations[item.name] = item
             
             elif item.type == "PSET":
@@ -665,15 +665,16 @@ for code, content in defs.items():
     clas_def = annotate(content['Definition'])
     classes.append({
         'Code': code,
-        'Name': toStr(content['Name']),
+        'Name': toStr(content['Name']) if toStr(content['Name']) else caps_control(clean(normalise((code[3:] if code.lower().startswith('ifc') else code))).title()),
         'Definition': clas_def,
         'Description': annotate(content['Description']),
         'ClassType': 'Class',
         'ParentClassCode': toStr(content['Parent']),
         'ClassProperties': []
     })
-    to_translate.append({"msgid":code,"msgstr":content['Name'],"package":content['Package']})
+    to_translate.append({"msgid":code,"msgstr":classes[-1]['Name'],"package":content['Package']})
     to_translate.append({"msgid":code+"_DEFINITION","msgstr":clas_def,"package":content['Package']})
+    to_translate.append({"msgid":code+"_DESCRIPTION","msgstr":classes[-1]['Description'],"package":content['Package']})
     
     # list all ancestors (skip enums (any code that has at least three consecutive capital letters), they don't need to inherit) 
     if re.search(r"[A-Z]{3}", code):
@@ -740,6 +741,7 @@ for code, content in defs.items():
 
                         to_translate.append({"msgid":prop_code,"msgstr":name,"package":content['Package']})
                         to_translate.append({"msgid":prop_code+"_DEFINITION","msgstr":prop_def,"package":content['Package']})
+                        to_translate.append({"msgid":prop_code+"_DESCRIPTION","msgstr":props[-1]['Description'],"package":content['Package']})
 
 
 
@@ -769,6 +771,8 @@ with open(os.path.join(output_dir, "IFC.json"), 'w', encoding='utf-8') as f :
     json.dump(bsdd_data, f, indent=4, default=lambda x: (getattr(x, 'to_json', None) or (lambda: vars(x)))(), ensure_ascii=False)
     print("Saved JSON file.")
 
+print("Saved IFC.json file with %s classes and %s properties." % (len(classes), len(props)))
+
 ### Generate collection of .pot files in the "pot" folder:
 
 class pot_file:
@@ -796,7 +800,7 @@ class pot_dict(dict):
         if not os.path.exists(os.path.join(output_dir, "pot")):
             os.makedirs(os.path.join(output_dir, "pot"))
         if not key:
-            key = "Unspecified_package"
+            key = "UNKNOWN_PACKAGE"
         v = self[key] = pot_file(open(os.path.join(output_dir, "pot", key + ".pot"), "w+", encoding="utf-8")) # add folder: "pot", 
         return v
 
@@ -815,8 +819,8 @@ for t in to_translate:
         t['msgstr'] = toStr(t['msgstr'])
 
     po_file = po_files[t['package']]
-    if not po_file:
         po_file = 'Loose_terms'
+
     print("msgid", quote(t['msgid']),  file=po_file)
     print("msgstr", quote(t['msgstr']),  file=po_file)
     print(file=po_file)

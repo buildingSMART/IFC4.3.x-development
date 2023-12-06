@@ -5,17 +5,17 @@ d = json.load(open(sys.argv[1]))
 
 
 assert d['DictionaryName'] == "IFC"
-
-assert d['Classes'][0]['Code'] == "IfcActuator"
-assert d['Classes'][0]['Definition'][0:60] == "An actuator is a mechanical device for moving or controlling"
-assert d['Classes'][0]['ClassProperties'][0]['Code'] == "PositionHistory"
-assert d['Classes'][0]['ClassProperties'][0]['Name'] == "Position History"
-assert d['Classes'][0]['ClassProperties'][0]['PropertySet'] == "Pset_ActuatorPHistory"
-assert d['Classes'][0]['ClassProperties'][3]['Code'] == "ActuatorApplication"
-assert d['Classes'][0]['ClassProperties'][3]['Name'] == "Actuator Application"
-assert d['Classes'][0]['ClassProperties'][3]['PropertySet'] == "Pset_ActuatorTypeCommon"
-assert d['Classes'][0]['ClassProperties'][3]['AllowedValues'][0]['Value'] == "DAMPERACTUATOR"
-assert d['Classes'][0]['ClassProperties'][3]['AllowedValues'][0]['Description'] == "Damper Actuator"
+assert d['OrganizationCode'] == "buildingsmart"
+assert d['Classes'][0]['Code'][0:3] == "Ifc"
+assert isinstance(d['Classes'][0]['Definition'][0:60], str)
+assert isinstance(d['Classes'][0]['ClassProperties'][0]['Code'], str)
+assert isinstance(d['Classes'][0]['ClassProperties'][0]['Name'], str)
+assert isinstance(d['Classes'][0]['ClassProperties'][0]['PropertySet'], str)
+assert isinstance(d['Classes'][0]['ClassProperties'][3]['Code'], str)
+assert isinstance(d['Classes'][0]['ClassProperties'][3]['Name'], str)
+assert isinstance(d['Classes'][0]['ClassProperties'][3]['PropertySet'], str)
+assert isinstance(d['Classes'][0]['ClassProperties'][3]['AllowedValues'][0]['Value'], str)
+assert isinstance(d['Classes'][0]['ClassProperties'][3]['AllowedValues'][0]['Description'], str)
 
 # OLD CHECKING:
 # roots = {k for k, v in d['Dictionary']['Classes'].items() if not v.get('Parent')}

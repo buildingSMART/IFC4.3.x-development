@@ -53,18 +53,38 @@ words_to_catch = sorted(['current','cost','of','switch','order','recovery','load
                          'speed','fan','bypass','valve','dampers','wet','bulb','reset','exiting','folding','curtain','closed','circuit','dry','open','indicator','shunting','route',
                          'derail','departure','starting','signal','repeating','obstruction','hump','auxiliary','home','distant','block','blocking','approach','mesh','push',
                          'pushing', 'bidirectional','directional','right','left','damper','balancing','combination','earthquake','relay','interface','face','nail','loss',
-                         'track','mounted','unidirectional','blastdamper','centrifugal','backward','inclined','vane','axial','propellor','diatomaceous','earth','reverse','osmosis',
+                         'track','mounted','unidirectional','blast','damper','centrifugal','backward','inclined','vane','axial','propellor','diatomaceous','earth','reverse','osmosis',
                          'liquefied','petroleum','lightning','shaft','soak','slurry','collector','with','check','commercial','propane','butane','atmospheric','vacuum','wetted',
                          'function','complementary','circuit','fault','lower','inglimit','control','pulse','converter','running','average','upper','limit','control','lower','band',
-                         'position','frost','automatic','continuous','positioner','positioning','source','sink','lighting'], key=len)[::-1]
+                         'position','frost','automatic','www','continuous','positioner','positioning','source','sink','lighting','profile','enumerated','content','extinguishing',
+                         'photovoltaic','soils','between','central','reserve','shoulder','intersection','parking','passing','audiovisual','shape','co2','conduct','conductor',
+                         'conductance','conductivity','obstacle','movement','moisture','radiation','radioactivity','rain','smoke','turnout','closure','wind','aggregates','aggregate',
+                         'transporting','roofing','recording','stitch','wire','pair','router','tungsten','filament','gateway','selector','momentary','toggle','vertical','inline',
+                         'submersible','sump','waterway','ship','lift','works','wheeled','grouted','indicators','mitigated','unmitigated','delivery','accessible','covering','interfaces',
+                         'brightness','driver','sectional','rated','pairs','diameter','fans','supported','stations','carriers','transceivers','currents','classes','relays','curves',
+                         'plates','corrugated','tracks','conductors'], key=len)[::-1]
 
-all_caps = ['ups','gprs','rs','am','gps','dc','tn','ac','chp','led','oled','ole','gfa','tv','msc','ppm','iot','ocl','lrm','cgt','teu','tmp','std','gsm','cdma','lte','td','scdma','wcdma','sc','mp','bm','ol','ep']
+all_caps = ['ups','gprs','rs','am','gps','dc','tn','url','ac','co','co2','chp','id','led','oled','ole','gfa','tv','msc','ppm','iot','ocl','lrm','cgt','teu','tmp','std','gsm','cdma','lte','td','scdma',
+            'wcdma','sc','mp','bm','ol','ep','ir','www','ip','ph']
 small_caps = ['for','of','and','to','with','or','at']
+substitute = {
+    "Rel ": "Relation: ",
+    # "Qto ": "Quantity set: ",
+    # "Pset ": "Property set: ",
+}
 
 schema_name = xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:Package"][1].name.replace("exp", "").upper()
 schema_name = "".join(["_", c][c.isalnum()] for c in schema_name)
 schema_name = re.sub(r"_+", "_", schema_name)
 schema_name = schema_name.strip('_')
+
+HTML_TAG_PATTERN = re.compile('<.*?>')
+MULTIPLE_SPACE_PATTERN = re.compile(r'\s+')
+# CHANGE_LOG_PATTERN = re.compile(r'\{\s*\.change\-\w+\s*\}.+', flags=re.DOTALL)
+CURLY_BRACKET_PATTERN = re.compile('{.*?}.*') #also removes all text after curly brackets
+FIGURE_PATTERN = re.compile('[^.,;]*(Figure|the figure)[^.,;]*') #removes the sentence when it mentiones a Figure.
+
+
 
 def yield_parents(node):
     yield node
@@ -79,17 +99,11 @@ def get_path(xmi_node):
             if v: return v.value
     node_names = [get_name(n) for n in nodes]
     return node_names[::-1]
-    
-included_packages = set(("IFC 4.2 schema (13.11.2019)", "Common Schema", "IFC Ports and Waterways", "IFC Road", "IFC Rail - PSM"))
 
-def skip_by_package(element):
-    return not (set(get_path(xmi_doc.by_id[element.idref])) & included_packages)
-    
-HTML_TAG_PATTERN = re.compile('<.*?>')
-MULTIPLE_SPACE_PATTERN = re.compile(r'\s+')
-# CHANGE_LOG_PATTERN = re.compile(r'\{\s*\.change\-\w+\s*\}.+', flags=re.DOTALL)
-CURLY_BRACKET_PATTERN = re.compile('{.*?}.*') #also removes all text after curly brackets
-FIGURE_PATTERN = re.compile('[^.,;]*(Figure|the figure)[^.,;]*') #removes the sentence when it mentiones a Figure.
+# included_packages = set(("IFC 4.2 schema (13.11.2019)", "Common Schema", "IFC Ports and Waterways", "IFC Road", "IFC Rail - PSM"))
+
+# def skip_by_package(element):
+#     return not (set(get_path(xmi_doc.by_id[element.idref])) & included_packages)
 
 def strip_html(s, trim=True):
     try:
@@ -119,8 +133,6 @@ def strip_html(s, trim=True):
     #     s9 = s9.split(sx.split(".")[6])[0] + "[IT WAS CUT HERE!]"
     return s9
 
-
-
 def caps_control(s):
     s1 = s.split()
     if isinstance(s1, list):
@@ -135,7 +147,6 @@ def caps_control(s):
 
 
 def split_at_word(w, s):
-    
     if w != '' and ((ps.stem(w) in s.lower()) or (w in s.lower())):
         # to_keep=False
         # for wtk in words_to_keep:
@@ -193,13 +204,20 @@ def toStr(s):
         if len(dict(s)) == 0: 
             return ""
         else:
-            print("Skipped the term, default dict: " + str(s))
+            print("WARNING! Skipped the term, default dict: " + str(s))
             return ""
     elif isinstance(s, missing_markdown):
-        print("Skipped the term, missing markdown in: " + str(s))
+        print("WARNING! Skipped the term, missing markdown in: " + str(s))
         return ""
+    elif isinstance(s, dict):
+        if not s:
+            # value is an empty dictionary
+            return ""
+        else:
+            print("WARNING! Unempty dictionary passed as a value: " + s)
+            return str(s)
     else:
-        print("Skipped the term, unknown problem in: " + str(s))
+        print("WARNING! Skipped the term, unknown problem in: " + str(s))
         return ""
 
 def quote(s):
@@ -209,8 +227,11 @@ def annotate(s):
     return re.sub(all_codes, lambda match: "[[%s]]" % match.group(0), toStr(s))
 
 def normalise(s):
-    """ format the text by spliting into separate words."""    
+    """ format the text by spliting into separate words."""
     s = re.sub(r'(?<=[a-z])(?=[A-Z])', ' ', toStr(s))
+    for k,v in substitute.items():
+        if k in s:
+            s = re.sub(k,v,s)
     return re.sub(MULTIPLE_SPACE_PATTERN, ' ', s).strip()
 
 def clean(s):
@@ -286,6 +307,8 @@ def generate_definitions():
     
         item_by_id[item.id] = item
 
+        item.name = toStr(item.name)
+        
         depracated = False
         try: 
             if "DEPRECAT" in item.markdown:
@@ -294,7 +317,7 @@ def generate_definitions():
             pass
 
         if not depracated:
-            if item.type == "ENUM":
+            if item.type in ("ENUM","PENUM"):
                 enumerations[item.name] = item
             
             elif item.type == "PSET":
@@ -303,20 +326,20 @@ def generate_definitions():
                 stereo = (item.node/"properties")[0].stereotype
                 pset_counts_by_stereo[stereo] += 1
                 # add human-readable name
-                di["Name"] = caps_control(clean(normalise(re.sub("Pset_", "", item.name))).title())
+                di["Name"] = caps_control(clean(normalise(re.sub("Pset_|Qto_", "", item.name))).title())
 
             elif item.type == "ENTITY":
                 by_id[item.id] = di = classes[item.name]
             
                 st = item.meta.get('supertypes', [])
                 if st:
-                    di["Parent"] = st[0]
+                    di["Parent"] = toStr(st[0])
                 di["Definition"] = strip_html(toStr(item.markdown), trim=True)
                 # add human-readable name
                 di["Name"] = caps_control(clean(normalise((item.name[3:] if item.name.lower().startswith('ifc') else item.name))).title())
                 
                 entities.append(item)
-            di["Package"] = item.package # solely to split POT files
+            di["Package"] = toStr(item.package) # solely to split POT files
 
     for item in entities:
     
@@ -331,11 +354,11 @@ def generate_definitions():
                 for c in enumerations[ptype].children:
                     if c.name not in ("USERDEFINED","NOTDEFINED"):
                         by_id[c.id] = di = classes[item.name + c.name]
-                        di["Parent"] = item.name
+                        di["Parent"] = toStr(item.name)
                         di["Definition"] = strip_html(toStr(c.markdown), trim=True)
                         # add human-readable name, by identifying words in all-caps phrase (right now the words are hardcoded)
                         di["Name"] = caps_control(split_words(c.name).title())
-                        di["Package"] = item.package # solely to split POT files
+                        di["Package"] = toStr(item.package) # solely to split POT files
 
     for item in psets:
         refs = set(item.meta.get('refs') or [])
@@ -349,8 +372,9 @@ def generate_definitions():
                 # this option is disabled now
                 assert False
                 continue
-
+            
             di = by_id.get(id)
+
             if di is None:
                 try:
                     log_attr_2 = xmi_doc.xmi.by_id[id].name
@@ -362,7 +386,7 @@ def generate_definitions():
                 continue
             
             for a, (nm, (ty_ty_arg)) in zip(item.children, item.definition):
-                
+
                 # skip deprecated:
                 depracated = False
                 try: 
@@ -409,13 +433,13 @@ def generate_definitions():
                         # else:
                         #     print("Warning: %s.%s of type %s <%s> not mapped" % (item.name, nm, ty, ",".join(map(lambda kv: "=".join(kv), ty_arg.items()))))
                         #     continue
-                            
+
                     di["Psets"][item.name]["Properties"][a.name]["Type"] = type_name
-                    di["Psets"][item.name]["Properties"][a.name]["Name"] = caps_control(clean(normalise(a.name)).title())
+                    di["Psets"][item.name]["Properties"][a.name]["Name"] = caps_control(clean(split_words(normalise(a.name))).title())
                     # remove value explanation from the definition
                     di["Psets"][item.name]["Properties"][a.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', strip_html(toStr(a.markdown), trim=True))
                     di["Psets"][item.name]["Properties"][a.name]["Kind"] = kind_name
-                    di["Psets"][item.name]["Properties"][a.name]["Package"] = item.package # solely to split POT files
+                    di["Psets"][item.name]["Properties"][a.name]["Package"] = toStr(item.package) # solely to split POT files
 
                     if type_values is None:
                         type_values = type_to_values.get(type_name)
@@ -428,7 +452,7 @@ def generate_definitions():
                                 description = clean(strip_html(matches[0].strip()))  #the whole sentence explaining the value
                             else:
                                 description = caps_control(clean(normalise(split_words(tv))).title())  #the value but readable
-                            di["Psets"][item.name]["Properties"][a.name]["Values"].append({"Value": tv,"Description":description,"Package":item.package})
+                            di["Psets"][item.name]["Properties"][a.name]["Values"].append({"Value": tv,"Description":description,"Package":toStr(item.package)})
                            
     for item in entities:
     
@@ -438,7 +462,9 @@ def generate_definitions():
         di = classes[item_name]        
                
         for c in item.children:
-        
+                           
+            c.name = strip_html(c.name)
+
             # skip deprecated:
             depracated = False
             try: 
@@ -489,10 +515,10 @@ def generate_definitions():
                         type_name = ty_gen.name.lower()
                     
                     di["Psets"]["Attributes"]["Properties"][c.name]["Type"] = type_name
-                    di["Psets"]["Attributes"]["Properties"][c.name]["Name"] = caps_control(clean(normalise(c.name)).title())
+                    di["Psets"]["Attributes"]["Properties"][c.name]["Name"] = caps_control(clean(split_words(normalise(c.name))).title())
                     # remove value explanation from the definition
                     di["Psets"]["Attributes"]["Properties"][c.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', strip_html(toStr(c.markdown), trim=True))
-                    di["Psets"]["Attributes"]["Properties"][c.name]["Package"] = item.package # solely to split POT files
+                    di["Psets"]["Attributes"]["Properties"][c.name]["Package"] = toStr(item.package) # solely to split POT files
                     if type_values is None:
                         type_values = type_to_values.get(type_name)
                     if type_values:
@@ -505,7 +531,7 @@ def generate_definitions():
                                 description = clean(strip_html(matches[0].strip()))  #the whole sentence explaining the value
                             else:
                                 description = caps_control(clean(normalise(split_words(tv))).title())  #the value but readable
-                            di["Psets"]["Attributes"]["Properties"][c.name]["Values"].append({"Value": tv,"Description":description,"Package":item.package})                           
+                            di["Psets"]["Attributes"]["Properties"][c.name]["Values"].append({"Value": tv,"Description":description,"Package":toStr(item.package)})                           
 
                 elif type_item.type == "ENUM":
                 
@@ -515,7 +541,7 @@ def generate_definitions():
                     # remove value explanation from the definition
                     di["Psets"]["Attributes"]["Properties"][c.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', strip_html(toStr(c.markdown), trim=True))
                     di["Psets"]["Attributes"]["Properties"][c.name]["Values"] = []
-                    di["Psets"]["Attributes"]["Properties"][c.name]["Package"] = item.package # solely to split POT files
+                    di["Psets"]["Attributes"]["Properties"][c.name]["Package"] = toStr(item.package) # solely to split POT files
                     for tv in type_values:                   
                         # match the whole sentence containing the value, case insensitive
                         # matches = re.findall(r"[^.;!,]*" + tv + r"[^.;!,]*", toStr(c.markdown), flags=re.IGNORECASE)
@@ -524,7 +550,7 @@ def generate_definitions():
                             description = clean(strip_html(matches[0].strip()))  #the whole sentence explaining the value
                         else:
                             description = caps_control(clean(normalise(split_words(tv))).title())  #the value but readable
-                        di["Psets"]["Attributes"]["Properties"][c.name]["Values"].append({"Value": tv,"Description":description,"Package":item.package})
+                        di["Psets"]["Attributes"]["Properties"][c.name]["Values"].append({"Value": tv,"Description":description,"Package":toStr(item.package)})
                 else:
                     print("Not emitting %s.%s because it's a %s %s" % (item.name, c.name, type_item.name, type_item.type))
 
@@ -538,6 +564,7 @@ def generate_definitions():
             
     return classes
 
+# TODO do we even want to filter anything? Why don't we upload all the concepts?
 def filter_definition(di):
 
     children = defaultdict(list)    
@@ -569,9 +596,10 @@ def filter_definition(di):
         return has_child_
 
     def should_include(k, v):
-        # PREVIOUSLY return ("IfcProduct" in parents(k)) or has_child("IfcProduct")(k) or child_or_self_has_psets(k) 
+        # TODO PREVIOUSLY return ("IfcProduct" in parents(k)) or has_child("IfcProduct")(k) or child_or_self_has_psets(k) 
         # right now 'has_pset' is broadening to include non-products that have psets, like IfcActor.
-        return ("IfcRoot" in parents(k)) or ("IfcMaterialDefinition" in parents(k)) or ("IfcProfileDef" in parents(k)) or child_or_self_has_psets(k)
+        # return ("IfcRoot" in parents(k)) or ("IfcMaterialDefinition" in parents(k)) or ("IfcProfileDef" in parents(k)) or child_or_self_has_psets(k)
+        return True
         
     return {k: v for k, v in di.items() if should_include(k, v)}
     
@@ -584,9 +612,9 @@ defs = filter_definition(generate_definitions())
 
 #list all codes, so that we can later highlight them in the descriptions
 
-def needs_bracket(s):
-    if len(s) >= 6:
-        if re.match(r'\b(?:[a-zA-Z]*[A-Z]){2,}[a-zA-Z]*\b', s):
+def need_brackets(s):
+    if len(s) >= 4:
+        if re.findall(r'\b(?:[a-zA-Z]*[A-Z]){2,}[a-zA-Z]*\b', s):
             return True
         else:
             # not enough capital letters
@@ -594,79 +622,128 @@ def needs_bracket(s):
     else:
         # too short
         return False
-    
 
-
-codes = [] #["USERDEFINED", "NOTDEFINED"]  # adding those two to be translatable values, as they occur in descriptions but will not be listed in bSDD.
+#iterate all the results to list all unique codes for translations
+codes = set() #["USERDEFINED", "NOTDEFINED"]  # adding those two to be translatable values, as they occur in descriptions but will not be listed in bSDD.
 for code, content in defs.items(): 
-    if len(code) >= 6:
-        codes.append(code)
+    if need_brackets(code):
+        codes.add(code)
     if content['Psets']:
         for pset_code, pset_content in content['Psets'].items():
-            if needs_bracket(pset_code):
-                codes.append(pset_code)
-                for prop_code, prop_content in pset_content['Properties'].items():
-                    if needs_bracket(prop_code):
-                        codes.append(prop_code)
-                    if prop_content['Values']:
-                        for val in prop_content['Values']:
-                            if needs_bracket(val['Value']):
-                                codes.append(val['Value'])
-all_codes = re.compile("\\b(%s)\\b" % "|".join(sorted(set(codes), key=lambda s: -len(s))))
+            if need_brackets(pset_code):
+                codes.add(pset_code)
+            for prop_code, prop_content in pset_content['Properties'].items():
+                if need_brackets(prop_code):
+                    codes.add(prop_code)
+                if prop_content['Values']:
+                    for val in prop_content['Values']:
+                        if need_brackets(val['Value']):
+                            codes.add(val['Value'])
+
+all_codes = re.compile("\\b(%s)\\b" % "|".join(sorted(codes, key=lambda s: -len(s))))
+
+def list_ancestors(name, full_list, ancestor_list=[]):
+    # traverse the list of hierarchy to find all the parents of this object
+    try:
+        ancestor = full_list[name]['Parent']
+    except KeyError:
+        print('WARNING! The entity %s not found in the IFC.' % name)
+    if ancestor:
+        if ancestor in full_list:
+            ancestor_list.append(ancestor)
+            list_ancestors(ancestor, full_list, ancestor_list)
+        else:
+            print('WARNING! Ancestor %s not found in the IFC.' % ancestor)
+    return ancestor_list
 
 # iterate again to annotate all descriptions and restructure classes/properties/values:
 classes = []
 props = []
 to_translate = []
-props_set = set()
+unique_props = set()
 for code, content in defs.items(): 
     clas_def = annotate(content['Definition'])
     classes.append({
         'Code': code,
-        'Name': content['Name'],
+        'Name': toStr(content['Name']) if toStr(content['Name']) else caps_control(clean(normalise((code[3:] if code.lower().startswith('ifc') else code))).title()),
         'Definition': clas_def,
         'Description': annotate(content['Description']),
         'ClassType': 'Class',
+        'ParentClassCode': toStr(content['Parent']),
         'ClassProperties': []
     })
-    to_translate.append({"msgid":code,"msgstr":content['Name'],"package":content['Package']})
+    to_translate.append({"msgid":code,"msgstr":classes[-1]['Name'],"package":content['Package']})
     to_translate.append({"msgid":code+"_DEFINITION","msgstr":clas_def,"package":content['Package']})
-    if content['Psets']:
-        for pset_code, pset_content in content['Psets'].items():
-            # TODO Right now, no place for PSET descriptions in bSDD, maybe GroupOfProperties.Definition?
-            # if len(pset_content['Definition'])>0:
-            #     pset_content['Definition'] = annotate(pset_content['Definition'])
-            for prop_code, prop_content in pset_content['Properties'].items():
-                name = toStr(prop_content['Name'])
-                if not name:
-                    name = normalise(prop_code)
-                prop_def = annotate(prop_content['Definition'])
-                classProp = {
-                        "Code": prop_code, 
-                        "Name": prop_content['Name'], 
-                        "Definition": prop_def,
+    to_translate.append({"msgid":code+"_DESCRIPTION","msgstr":classes[-1]['Description'],"package":content['Package']})
+    
+    # list all ancestors (skip enums (any code that has at least three consecutive capital letters), they don't need to inherit) 
+    if re.search(r"[A-Z]{3}", code):
+        ancestors = [code]
+    else:
+        ancestors = []
+        ancestors = list_ancestors(code, defs, ancestors)
+
+    # add properties (from this object and all its parents)
+    for ancestor_name in ancestors:
+        ancestor = defs[ancestor_name]
+        # if ancestor['Psets']:
+        if ancestor['Psets']:
+            for pset_code, pset_content in ancestor['Psets'].items():
+                
+                for prop_code, prop_content in pset_content['Properties'].items():
+                    prop_code = prop_code
+                    name = toStr(prop_content['Name'])
+                    if not name:
+                        name = normalise(prop_code)
+                    prop_def = annotate(prop_content['Definition'])
+                    # property code must be unique for a given class and not longer than 50 characters
+                    if len(prop_code)+len(pset_code) < 50: 
+                        p_code = prop_code+"_from_"+re.sub('Pset_|Qto_','',pset_code)
+                    # special treatment of 5 psets that result in duplicated codes:
+                    elif prop_code in ("AdjustmentDesignation","IsCurrentTolerancePositiveOnly") and pset_code in ("Pset_ProtectiveDeviceTrippingUnitTimeAdjustment","Pset_ProtectiveDeviceTrippingUnitCurrentAdjustment","Pset_ProtectiveDeviceTrippingFunctionGCurve","Pset_ProtectiveDeviceTrippingFunctionICurve","Pset_ProtectiveDeviceTrippingFunctionICurve"):
+                        p_code = prop_code+"_from_..."+''.join([c for c in pset_code if c.isupper()])
+                    else:
+                        p_code = prop_code+"_from_"+re.sub('Pset_|Qto_','',pset_code)[:int((41-len(prop_code))/2)]+"..."+re.sub('Pset_|Qto_','',pset_code)[len(re.sub('Pset_|Qto_','',pset_code))-int((41-len(prop_code))/2):]
+                    classProp = {                   
+                        "PropertyCode": prop_code,
+                        "Code": p_code,
+                        "PropertySet": pset_code
+                        # Skip description and name as it should inherit from a Property.
+                        # "Description": name + " – " + prop_def + ". IFC type: " + prop_content['Type'] + ". " + annotate(prop_content['Description']),
                         # "PropertyValueKind": prop_content['Type'],
                         }
-                if prop_content['Values']:
-                    classProp['AllowedValues'] = []
-                    for val in prop_content['Values']:
-                        descr = annotate(val['Description'])
-                        classProp['AllowedValues'].append({
-                            'Value': val['Value'],
-                            'Description': descr
+                    
+                    classes[-1]['ClassProperties'].append(classProp)
+
+                    if not prop_code in unique_props:
+                        # add to properties list, not just classProp
+                        unique_props.add(prop_code)
+                        
+                        allowed_values = []
+                        if prop_content['Values']:
+                            for val in prop_content['Values']:
+                                descr = annotate(val['Description'])
+                                allowed_values.append({
+                                    'Code': val['Value'],
+                                    'Value': val['Value'],
+                                    'Description': descr
+                                })
+                                to_translate.append({"msgid":prop_code+"_"+val['Value'],"msgstr":descr,"package":content['Package']})
+
+                        props.append({                   
+                            "Code": prop_code,
+                            "Name": name,
+                            "Definition": prop_def,
+                            "Description": "IFC type: " + prop_content['Type'] + ". " + annotate(prop_content['Description']),
+                            "PropertyValueKind": toStr(prop_content['Kind']),
+                            "AllowedValues": allowed_values
                         })
-                        to_translate.append({"msgid":prop_code+"_"+val['Value'],"msgstr":descr,"package":content['Package']})
-                if not prop_code in props_set: 
-                    # add to properties list, not just classProp
-                    props_set.add(prop_code)
-                    props.append(classProp)
-                    to_translate.append({"msgid":prop_code,"msgstr":prop_content['Name'],"package":content['Package']})
-                    to_translate.append({"msgid":prop_code+"_DEFINITION","msgstr":prop_def,"package":content['Package']})
-                classProp['PropertySet'] = pset_code
-                classes[-1]['ClassProperties'].append(classProp)
+
+                        to_translate.append({"msgid":prop_code,"msgstr":name,"package":content['Package']})
+                        to_translate.append({"msgid":prop_code+"_DEFINITION","msgstr":prop_def,"package":content['Package']})
+                        to_translate.append({"msgid":prop_code+"_DESCRIPTION","msgstr":props[-1]['Description'],"package":content['Package']})
 
 
-# TODO add value kind / type
 
 ### Generate IFC.json file:
 
@@ -682,19 +759,19 @@ bsdd_data = {
         'License': 'CC BY-ND 4.0',
         'LicenseUrl': 'https://creativecommons.org/licenses/by-nd/4.0/legalcode',
         'MoreInfoUrl': 'https://ifc43-docs.standards.buildingsmart.org/',
-        'QualityAssuranceProcedure': 'In general, IFC, or “Industry Foundation Classes”, is a standardized, digital description of the built environment, including buildings and civil infrastructure. It is an open, international standard (ISO 16739-1:2018), meant to be vendor-neutral, or agnostic, and usable across a wide range of hardware devices, software platforms, and interfaces for many different use cases. The IFC schema specification is the primary technical deliverable of buildingSMART International to fulfill its goal to promote openBIM®.',
+        'QualityAssuranceProcedure': 'IFC is a standardized digital description of built environment created by buildingSMART International and its community members. For more information read ISO 16739 and IFC schema documentation.',
         'QualityAssuranceProcedureUrl': 'https://technical.buildingsmart.org/standards/ifc/',
         'ReleaseDate': date.today().strftime(r'%Y-%m-%d'),
         'Classes': classes,
         'Properties': props
     }
 
-#TODO add properties, now only ClassProps.
-
 # with open(output_dir, 'w', encoding='utf-8') as f:
 with open(os.path.join(output_dir, "IFC.json"), 'w', encoding='utf-8') as f :
     json.dump(bsdd_data, f, indent=4, default=lambda x: (getattr(x, 'to_json', None) or (lambda: vars(x)))(), ensure_ascii=False)
     print("Saved JSON file.")
+
+print("Saved IFC.json file with %s classes and %s properties." % (len(classes), len(props)))
 
 ### Generate collection of .pot files in the "pot" folder:
 
@@ -722,6 +799,8 @@ class pot_dict(dict):
     def __missing__(self, key):
         if not os.path.exists(os.path.join(output_dir, "pot")):
             os.makedirs(os.path.join(output_dir, "pot"))
+        if not key:
+            key = "UNKNOWN_PACKAGE"
         v = self[key] = pot_file(open(os.path.join(output_dir, "pot", key + ".pot"), "w+", encoding="utf-8")) # add folder: "pot", 
         return v
 
@@ -729,9 +808,21 @@ class pot_dict(dict):
 po_files = pot_dict()       
 
 # for i, (package, (ln, col), p, d) in enumerate(generate_definitions()):
+i = 0
+pos = set()
+# TODO make sure we only have unique values in POT files
+# TODO we are missing some terms like IfcActor
 for t in to_translate:
-    po_file = po_files[t['package']]   
+    if isinstance(t['package'], defaultdict):
+        t['package'] = toStr(t['package'])
+    if isinstance(t['msgstr'], defaultdict):
+        t['msgstr'] = toStr(t['msgstr'])
+
+    po_file = po_files[t['package']]
+
     print("msgid", quote(t['msgid']),  file=po_file)
     print("msgstr", quote(t['msgstr']),  file=po_file)
     print(file=po_file)
-print("Saved POT files.")
+    pos.add(po_file)
+    i += 1
+print("Saved %s terms in %s POT files." % (i, len(pos)))

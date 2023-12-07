@@ -819,7 +819,6 @@ for t in to_translate:
         t['msgstr'] = toStr(t['msgstr'])
 
     po_file = po_files[t['package']]
-        po_file = 'Loose_terms'
 
     print("msgid", quote(t['msgid']),  file=po_file)
     print("msgstr", quote(t['msgstr']),  file=po_file)

@@ -3,6 +3,7 @@ import re
 import sys
 import html
 import json
+import logging
 
 from collections import defaultdict
 from copy import deepcopy
@@ -12,6 +13,9 @@ from xmi_document import xmi_document, missing_markdown
 from nltk import PorterStemmer
 from reversestem import unstem
 
+
+logging.basicConfig(level=logging.INFO) # filename='app.log', filemode='w'
+
 try:
     fn = sys.argv[1]
     try:
@@ -19,7 +23,7 @@ try:
     except IndexError as e:
         OUTPUT = sys.stdout
 except:
-    print("Usage: python to_bsdd.py <schema.xml> <output_dir>", file=sys.stderr)
+    logging.warning("Usage: python to_bsdd.py <schema.xml> <output_dir>", file=sys.stderr)
     exit()
 
 xmi_doc = xmi_document(fn)
@@ -62,21 +66,28 @@ words_to_catch = sorted(['current','cost','of','switch','order','recovery','load
                          'transporting','roofing','recording','stitch','wire','pair','router','tungsten','filament','gateway','selector','momentary','toggle','vertical','inline',
                          'submersible','sump','waterway','ship','lift','works','wheeled','grouted','indicators','mitigated','unmitigated','delivery','accessible','covering','interfaces',
                          'brightness','driver','sectional','rated','pairs','diameter','fans','supported','stations','carriers','transceivers','currents','classes','relays','curves',
-                         'plates','corrugated','tracks','conductors'], key=len)[::-1]
+                         'plates','corrugated','tracks','conductors','building','operator','owner','engineer','manager','field','construction','history','weather','station',
+                         'consumption','photochemical','ozone','renewable','energy','resource','depletion','stratospheric','layer','destruction'], key=len)[::-1]
 
 all_caps = ['ups','gprs','rs','am','gps','dc','tn','url','ac','co','co2','chp','id','led','oled','ole','gfa','tv','msc','ppm','iot','ocl','lrm','cgt','teu','tmp','std','gsm','cdma','lte','td','scdma',
-            'wcdma','sc','mp','bm','ol','ep','ir','www','ip','ph']
+            'wcdma','sc','mp','bm','ol','ep','ir','www','ip','ph','usb', 'ii', 'iii']
 small_caps = ['for','of','and','to','with','or','at']
 substitute = {
     "Rel ": "Relation: ",
-    # "Qto ": "Quantity set: ",
-    # "Pset ": "Property set: ",
+    "Qto_": "Quantity set: ",
+    "Pset_": "Property set: ",
 }
 
-schema_name = xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:Package"][1].name.replace("exp", "").upper()
-schema_name = "".join(["_", c][c.isalnum()] for c in schema_name)
-schema_name = re.sub(r"_+", "_", schema_name)
-schema_name = schema_name.strip('_')
+type_to_values = {
+    'boolean': ["TRUE","FALSE"],
+    'logical': ["TRUE","FALSE","UNKNOWN"],
+}
+
+### shows the schema name if needed (e.g. IFC4X3_ADD2)
+# schema_name = xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:Package"][0].name.replace("exp", "").upper()
+# schema_name = "".join(["_", c][c.isalnum()] for c in schema_name)
+# schema_name = re.sub(r"_+", "_", schema_name)
+# schema_name = schema_name.strip('_')
 
 HTML_TAG_PATTERN = re.compile('<.*?>')
 MULTIPLE_SPACE_PATTERN = re.compile(r'\s+')
@@ -85,18 +96,23 @@ CURLY_BRACKET_PATTERN = re.compile('{.*?}.*') #also removes all text after curly
 FIGURE_PATTERN = re.compile('[^.,;]*(Figure|the figure)[^.,;]*') #removes the sentence when it mentiones a Figure.
 
 
-
 def yield_parents(node):
+    """ Find all the parent elements if available """
     yield node
     if node.parentNode:
         yield from yield_parents(node.parentNode)
 
+
 def get_path(xmi_node):
+    """ Find the element's path in the XML tree """
     nodes = list(yield_parents(xmi_node.xml))
+
     def get_name(n):
+        """ Find element's name in the XML """
         if n.attributes:
             v = n.attributes.get('name')
             if v: return v.value
+
     node_names = [get_name(n) for n in nodes]
     return node_names[::-1]
 
@@ -105,7 +121,9 @@ def get_path(xmi_node):
 # def skip_by_package(element):
 #     return not (set(get_path(xmi_doc.by_id[element.idref])) & included_packages)
 
-def strip_html(s, trim=True):
+
+def reduce_description(s, trim=True):
+    """ Remove all the unnecesarry characters, strip <html sections>, and trim the description to bare minimum. """
     try:
         s1 = html.unescape(s)
     except TypeError:
@@ -133,7 +151,10 @@ def strip_html(s, trim=True):
     #     s9 = s9.split(sx.split(".")[6])[0] + "[IT WAS CUT HERE!]"
     return s9
 
+
 def caps_control(s):
+    """ Turn special words to all caps or small caps using hard-coded lists.
+    E.g. Usb -> USB, With -> with """
     s1 = s.split()
     if isinstance(s1, list):
         for part in s1:
@@ -147,6 +168,7 @@ def caps_control(s):
 
 
 def split_at_word(w, s):
+    """ Try spliting the string s with the word w. Return string s splited with whitespaces. """
     if w != '' and ((ps.stem(w) in s.lower()) or (w in s.lower())):
         # to_keep=False
         # for wtk in words_to_keep:
@@ -177,8 +199,9 @@ def split_at_word(w, s):
         s = " ".join(s)
     return s
 
+
 def split_words(s):
-    # hard-coded list of words found in enumerations to split the ALLCAPS phrases into indivudual words. List might not be complete
+    """ Split the phrase using the hard-coded list of words found in enumerations to split the ALLCAPS phrases into indivudual words. """
     found_words = []
     for w in words_to_catch:
         # skip if word is contained in previous words (e.g. EXCHANGE in EXCHANGER)
@@ -196,7 +219,8 @@ def split_words(s):
     s = re.sub(r"\s+", " ", s)
     return s.strip()
 
-def toStr(s):
+
+def to_str(s):
     """ Turn to string in case it finds a defaultdict or similar """
     if isinstance(s, str):
         return s
@@ -204,43 +228,51 @@ def toStr(s):
         if len(dict(s)) == 0: 
             return ""
         else:
-            print("WARNING! Skipped the term, default dict: " + str(s))
+            logging.warning("Skipped the term, default dict: " + str(s))
             return ""
     elif isinstance(s, missing_markdown):
-        print("WARNING! Skipped the term, missing markdown in: " + str(s))
+        logging.warning("Skipped the term, missing markdown in: " + str(s))
         return ""
     elif isinstance(s, dict):
         if not s:
             # value is an empty dictionary
             return ""
         else:
-            print("WARNING! Unempty dictionary passed as a value: " + s)
+            logging.warning("Unempty dictionary passed as a value: " + s)
             return str(s)
     else:
-        print("WARNING! Skipped the term, unknown problem in: " + str(s))
+        logging.warning("Skipped the term, unknown problem in: " + str(s))
         return ""
 
+
 def quote(s):
-    return '"%s"' % toStr(s)
+    """ Add quotation around certain words. """
+    return '"%s"' % to_str(s)
+
 
 def annotate(s):
-    return re.sub(all_codes, lambda match: "[[%s]]" % match.group(0), toStr(s))
+    """ Add double brackets [[...]] around certain words. """
+    return re.sub(all_codes, lambda match: "[[%s]]" % match.group(0), to_str(s))
+
 
 def normalise(s):
-    """ format the text by spliting into separate words."""
-    s = re.sub(r'(?<=[a-z])(?=[A-Z])', ' ', toStr(s))
+    """ format the text by spliting camelCase into separate words and replacing special prefixes."""
+    s = re.sub(r'(?<=[a-z])(?=[A-Z])', ' ', to_str(s))
     for k,v in substitute.items():
         if k in s:
             s = re.sub(k,v,s)
     return re.sub(MULTIPLE_SPACE_PATTERN, ' ', s).strip()
 
+
 def clean(s):
     """ format the text by removing unwanted characters."""    
     # remove all redundant characters (except those listed):
-    clean = ''.join(['', c][c.isalnum() or c in ':.,()-+ —=;α°_/!?$%@<>\*'] for c in toStr(s))
+    clean = ''.join(['', c][c.isalnum() or c in ':.,()-+ —=;α°_/!?$%@<>\*'] for c in to_str(s))
     return re.sub(MULTIPLE_SPACE_PATTERN, ' ', clean).strip()
     
+
 def generalization(pe):
+    """ Finds a partent object if possible """
     try:
         P = xmi_doc.xmi.by_id[(pe|"generalization").general]
     except:
@@ -251,321 +283,36 @@ def generalization(pe):
         return pe
 
 
-type_to_values = {
-    'boolean': ["TRUE","FALSE"],
-    'logical': ["TRUE","FALSE","UNKNOWN"],
-}
-
-def generate_definitions():
-    """
-    A generator that yields tuples of <a, b> with
-    a: location in file
-    a: a fully qualifying key as tuple
-    b: the documentation string
-    """
-    make_defaultdict = lambda: defaultdict(make_defaultdict)
-    classes = defaultdict(make_defaultdict)
+def need_brackets(s):
+    """ Verify if that name should be annotated with brackets in other definitions.
+      The criteria: minium 4 letters (skip 'ABC')."""
+    if len(s) >= 4:
+        return True
+    else:
+        return False
+    # and at least 2 capital letters (skip 'Width' etc.).
+    # if re.findall(r'\b(?:[a-zA-Z]*[A-Z]){2,}[a-zA-Z]*\b', s):
+    #     return True
     
-    def get_parent_of_pt(enum_type):
-        enum_id = enum_type.idref
-        type_refs = []
-        for assoc in xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:Association"]:
-            try:
-                c1, c2 = assoc/'ownedEnd'
-            except ValueError as e:
-                # print("encountered exception `%s' on %s" % (e, assoc))
-                continue
-            assoc_type_refs = set(map(lambda c: (c|"type").idref, (c1, c2)))
-            if enum_id in assoc_type_refs:
-                other_idref = list(assoc_type_refs - {enum_id})[0]
-                type_refs.append(xmi_doc.xmi.by_id[other_idref].name)
-                
-        # @todo filter this based on inheritance hierarchy
-        type_refs_without_type = [s for s in type_refs if 'Type' not in s]
-        if len(type_refs_without_type) != 1:
-            print("WARNING:", len(type_refs_without_type), "type associations on", enum_type.name, file=sys.stderr)
-        
-        return type_refs_without_type[0] if type_refs_without_type else None
-    
-    class_name_to_node = {}
-    
-    by_id = {}
-    item_by_id = {}
-    
-    # psets are deferred to the end so that all ids are resolved
-    psets = []
-    
-    # same for entity attributes:
-    entities = []
-    
-    # predefined types are just normal enumerations
-    enumerations = {}
-    
-    pset_counts_by_stereo = defaultdict(int)
-    
-    for item in xmi_doc:
-    
-        item_by_id[item.id] = item
 
-        item.name = toStr(item.name)
-        
-        depracated = False
-        try: 
-            if "DEPRECAT" in item.markdown:
-                depracated = True
-        except (AttributeError, TypeError):
-            pass
+def list_ancestors(name, full_list, ancestor_list=[]):
+    """ traverse the list of hierarchy to find all the parents of this object """
+    try:
+        ancestor = full_list[name]['Parent']
+    except KeyError:
+        logging.warning('The entity %s not found in the IFC.' % name)
+    if ancestor:
+        if ancestor in full_list:
+            ancestor_list.append(ancestor)
+            list_ancestors(ancestor, full_list, ancestor_list)
+        else:
+            logging.warning('Ancestor %s not found in the IFC.' % ancestor)
+    return ancestor_list
 
-        if not depracated:
-            if item.type in ("ENUM","PENUM"):
-                enumerations[item.name] = item
-            
-            elif item.type == "PSET":
-                psets.append(item)
-                
-                stereo = (item.node/"properties")[0].stereotype
-                pset_counts_by_stereo[stereo] += 1
-                # add human-readable name
-                di["Name"] = caps_control(clean(normalise(re.sub("Pset_|Qto_", "", item.name))).title())
-
-            elif item.type == "ENTITY":
-                by_id[item.id] = di = classes[item.name]
-            
-                st = item.meta.get('supertypes', [])
-                if st:
-                    di["Parent"] = toStr(st[0])
-                di["Definition"] = strip_html(toStr(item.markdown), trim=True)
-                # add human-readable name
-                di["Name"] = caps_control(clean(normalise((item.name[3:] if item.name.lower().startswith('ifc') else item.name))).title())
-                
-                entities.append(item)
-            di["Package"] = toStr(item.package) # solely to split POT files
-
-    for item in entities:
-    
-        if "IfcTypeObject" in xmi_doc.supertypes(item.id):
-            continue
-    
-        predefined_type_attribute = [c for c in item.children if c.name == "PredefinedType"]
-        if predefined_type_attribute:
-            # NB this points to the EA extension node and not the packagedElement
-            ptype = (predefined_type_attribute[0].node|"properties").type
-            if ptype in enumerations:
-                for c in enumerations[ptype].children:
-                    if c.name not in ("USERDEFINED","NOTDEFINED"):
-                        by_id[c.id] = di = classes[item.name + c.name]
-                        di["Parent"] = toStr(item.name)
-                        di["Definition"] = strip_html(toStr(c.markdown), trim=True)
-                        # add human-readable name, by identifying words in all-caps phrase (right now the words are hardcoded)
-                        di["Name"] = caps_control(split_words(c.name).title())
-                        di["Package"] = toStr(item.package) # solely to split POT files
-
-    for item in psets:
-        refs = set(item.meta.get('refs') or [])
-        
-        for id in refs:
-        
-            if isinstance(id, tuple):
-                # In case of TypeObject+PredefinedType appl
-                # id = id[0]
-                # what to do with typedrivenonly?
-                # this option is disabled now
-                assert False
-                continue
-            
-            di = by_id.get(id)
-
-            if di is None:
-                try:
-                    log_attr_2 = xmi_doc.xmi.by_id[id].name
-                except KeyError as e:
-                    log_attr_2 = id
-                    print("WARNING: id %s not found" % id)
-                    pass
-                print("WARNING: for %s entity %s not emitted" % (item.name, log_attr_2))
-                continue
-            
-            for a, (nm, (ty_ty_arg)) in zip(item.children, item.definition):
-
-                # skip deprecated:
-                depracated = False
-                try: 
-                    if "DEPRECAT" in a.markdown:
-                        depracated = True
-                except (AttributeError, TypeError):
-                    pass
-
-                if not depracated:
-                    if item.stereotype == "QSET":
-                        type_name = "real"
-                        type_values = None
-                        kind_name = 'Single'
-                    else:
-                        ty, ty_arg = ty_ty_arg
-                        if ty == "PropertyEnumeratedValue":
-                            type_name = list(ty_arg.values())[0]
-                            enum_types_by_name = [c for c in xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:Class"] if c.name == type_name]
-                            enum_types_by_name += [c for c in xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:Enumeration"] if c.name == type_name]
-                            type_values = [x.name for x in enum_types_by_name[0]/"ownedLiteral"]
-                            kind_name = 'Single'
-                        else:
-                            type_name = list(ty_arg.values())[0]
-                            pe_types = [c for c in xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:Class"] if c.name == type_name]
-                            pe_types += [c for c in xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:DataType"] if c.name == type_name]                    
-                            pe_type = pe_types[0]
-                            root_generalization = generalization(pe_type)
-                            type_name = root_generalization.name.lower()
-                            type_values = None
-                            if ty == "PropertySingleValue":
-                                kind_name = 'Single'
-                            elif ty == "PropertyBoundedValue":
-                                di["Psets"][item.name]["Properties"][a.name]["Description"] = "This property in IFC stores a bounded value, meaning it has a maximum of two (numeric or descriptive) values assigned, the first value specifying the upper bound and the second value specifying the lower bound. Read the IFC documentation for more information."
-                                kind_name = 'Range'
-                            elif ty == "PropertyReferenceValue":
-                                di["Psets"][item.name]["Properties"][a.name]["Description"] = "This property in IFC takes as its value a reference to one of: IfcAddress, IfcAppliedValue, IfcExternalReference, IfcMaterialDefinition, IfcOrganization, IfcPerson, IfcPersonAndOrganization, IfcTable, IfcTimeSeries. Read the IFC documentation for more information."
-                                kind_name = 'Complex'
-                            elif ty == "PropertyListValue":
-                                di["Psets"][item.name]["Properties"][a.name]["Description"] = "This property in IFC takes list as its value. Read the IFC documentation for more information."
-                                kind_name = 'List'
-                            elif ty == "PropertyTableValue":
-                                di["Psets"][item.name]["Properties"][a.name]["Description"] = "This property in IFC takes a table as its value. That table has two columns (two lists), one for defining and other for defined values. Read the IFC documentation for more information."
-                                kind_name = 'Complex'
-                        # else:
-                        #     print("Warning: %s.%s of type %s <%s> not mapped" % (item.name, nm, ty, ",".join(map(lambda kv: "=".join(kv), ty_arg.items()))))
-                        #     continue
-
-                    di["Psets"][item.name]["Properties"][a.name]["Type"] = type_name
-                    di["Psets"][item.name]["Properties"][a.name]["Name"] = caps_control(clean(split_words(normalise(a.name))).title())
-                    # remove value explanation from the definition
-                    di["Psets"][item.name]["Properties"][a.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', strip_html(toStr(a.markdown), trim=True))
-                    di["Psets"][item.name]["Properties"][a.name]["Kind"] = kind_name
-                    di["Psets"][item.name]["Properties"][a.name]["Package"] = toStr(item.package) # solely to split POT files
-
-                    if type_values is None:
-                        type_values = type_to_values.get(type_name)
-                    if type_values:
-                        di["Psets"][item.name]["Properties"][a.name]["Values"] = []
-                        for tv in type_values:                       
-                            # match the whole sentence containing the value, case insensitive
-                            matches = re.findall(r"[^.;!,]*" + tv + r"[^.;!,]*", toStr(a.markdown), flags=re.IGNORECASE)
-                            if matches:
-                                description = clean(strip_html(matches[0].strip()))  #the whole sentence explaining the value
-                            else:
-                                description = caps_control(clean(normalise(split_words(tv))).title())  #the value but readable
-                            di["Psets"][item.name]["Properties"][a.name]["Values"].append({"Value": tv,"Description":description,"Package":toStr(item.package)})
-                           
-    for item in entities:
-    
-        item_name = item.name
-        if item_name.endswith("Type"):
-            item_name = item_name[:-4]
-        di = classes[item_name]        
-               
-        for c in item.children:
-                           
-            c.name = strip_html(c.name)
-
-            # skip deprecated:
-            depracated = False
-            try: 
-                if "DEPRECAT" in c.markdown:
-                    depracated = True
-            except (AttributeError, TypeError):
-                pass
-
-            if not depracated:
-
-                try:
-                    node = c.node
-                    if node.xml.tagName == "attribute":
-                        node = xmi_doc.xmi.by_id[c.node.idref]
-                        type_type = node|"type"
-                        type_id = type_type.idref
-                    else:
-                        type_id = ([t for t in (node/"ownedEnd") if t.name == c.name][0]|"type").idref
-                        type_type = xmi_doc.xmi.by_id[type_id]
-                    type_item = item_by_id[type_id]
-                except:
-                    print("Not emitting %s.%s because of an error" % (item.name, c.name))
-                    continue
-                if c.name == "PredefinedType":
-                    print("Not emitting %s.%s because it's the PredefinedType attribute" % (item.name, c.name))
-                elif type_item.type == "ENTITY":
-                    print("Not emitting %s.%s attribute because it's taking an ENTITY: %s" % (item.name, c.name, type_item.name))
-                elif type_item.type == "SELECT":
-                    print("Not emitting %s.%s attribute because it's taking a SELECT: %s" % (item.name, c.name, type_item.name))
-                elif type_item.type == "TYPE":
-                    
-                    type_values = None
-                    
-                    if type_item.definition.super_verbatim:
-                    
-                        if not type_item.definition.super.lower().startswith("string"):                    
-                            print("Not emitting %s.%s because it has a hardcoded express definition %s" % (item.name, c.name, type_item.definition.super))
-                            continue
-                        else:
-                            type_name = "string"
-                            
-                    else:
-                    
-                        pattr = xmi_doc.xmi.by_id[c.node.idref]
-                        ty_id = (pattr|"type").idref
-                        ty_pe = xmi_doc.xmi.by_id[ty_id]
-                        ty_gen = generalization(ty_pe)
-                        type_name = ty_gen.name.lower()
-                    
-                    di["Psets"]["Attributes"]["Properties"][c.name]["Type"] = type_name
-                    di["Psets"]["Attributes"]["Properties"][c.name]["Name"] = caps_control(clean(split_words(normalise(c.name))).title())
-                    # remove value explanation from the definition
-                    di["Psets"]["Attributes"]["Properties"][c.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', strip_html(toStr(c.markdown), trim=True))
-                    di["Psets"]["Attributes"]["Properties"][c.name]["Package"] = toStr(item.package) # solely to split POT files
-                    if type_values is None:
-                        type_values = type_to_values.get(type_name)
-                    if type_values:
-                        di["Psets"]["Attributes"]["Properties"][c.name]["Values"] = []
-                        for tv in type_values:
-                            # match the whole sentence containing the value, case insensitive
-                            # matches = re.findall(r"[^.;!,]*" + tv + r"[^.;!,]*", toStr(c.markdown), flags=re.IGNORECASE)
-                            matches = re.findall(r"[^.;!,]*" + tv + r"[^.;!,]*", toStr(c.markdown), flags=re.IGNORECASE)
-                            if matches:
-                                description = clean(strip_html(matches[0].strip()))  #the whole sentence explaining the value
-                            else:
-                                description = caps_control(clean(normalise(split_words(tv))).title())  #the value but readable
-                            di["Psets"]["Attributes"]["Properties"][c.name]["Values"].append({"Value": tv,"Description":description,"Package":toStr(item.package)})                           
-
-                elif type_item.type == "ENUM":
-                
-                    type_name = type_item.name
-                    type_values = type_item.definition.values
-                    di["Psets"]["Attributes"]["Properties"][c.name]["Type"] = type_name
-                    # remove value explanation from the definition
-                    di["Psets"]["Attributes"]["Properties"][c.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', strip_html(toStr(c.markdown), trim=True))
-                    di["Psets"]["Attributes"]["Properties"][c.name]["Values"] = []
-                    di["Psets"]["Attributes"]["Properties"][c.name]["Package"] = toStr(item.package) # solely to split POT files
-                    for tv in type_values:                   
-                        # match the whole sentence containing the value, case insensitive
-                        # matches = re.findall(r"[^.;!,]*" + tv + r"[^.;!,]*", toStr(c.markdown), flags=re.IGNORECASE)
-                        matches = re.findall(r"[^.;!,]*" + tv + r"[^.;!,]*", toStr(c.markdown), flags=re.IGNORECASE)
-                        if matches:
-                            description = clean(strip_html(matches[0].strip()))  #the whole sentence explaining the value
-                        else:
-                            description = caps_control(clean(normalise(split_words(tv))).title())  #the value but readable
-                        di["Psets"]["Attributes"]["Properties"][c.name]["Values"].append({"Value": tv,"Description":description,"Package":toStr(item.package)})
-                else:
-                    print("Not emitting %s.%s because it's a %s %s" % (item.name, c.name, type_item.name, type_item.type))
-
-    # for x in sorted([item.name for item in psets]):
-    #     print(x)
-            
-    for k, v in pset_counts_by_stereo.items():
-        print(k + ":", v)
-        
-    print("TOTAL:", sum(pset_counts_by_stereo.values()))
-            
-    return classes
 
 # TODO do we even want to filter anything? Why don't we upload all the concepts?
-def filter_definition(di):
+def filter_concepts(di):
+    """ Skip certain concepts to reduce amount of definitions in bSDD. """
 
     children = defaultdict(list)    
     for k, v in di.items():
@@ -602,30 +349,322 @@ def filter_definition(di):
         return True
         
     return {k: v for k, v in di.items() if should_include(k, v)}
+
+
+def guid_by_id(id):
+    """ add guid information (not the document ID, but IFC_DOC GUID) """
+    try:
+        guid = xmi_doc.guids[id]
+    except KeyError:
+        guid = ""
+    return guid
+
+
+def is_depracated(elem):
+    """ Check if the element is deprecated in that IFC version or not. """
+    depracated = False
+    if elem.id in xmi_doc.deprecated:
+        depracated = True
+    # some objects don't have deprecated status but their markdown says they are deprecated   
+    try: 
+        if "DEPRECAT" in elem.markdown:
+            depracated = True
+    except (AttributeError, TypeError):
+        pass
+    return depracated
+
+
+def generate_definitions():
+    """
+    A generator that yields tuples of <a, b> with
+    a: location in file
+    a: a fully qualifying key as tuple
+    b: the documentation string
+    """
+    make_defaultdict = lambda: defaultdict(make_defaultdict)
+    classes = defaultdict(make_defaultdict)
     
 
+    def get_parent_of_pt(enum_type):
+        enum_id = enum_type.idref
+        type_refs = []
+        for assoc in xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:Association"]:
+            try:
+                c1, c2 = assoc/'ownedEnd'
+            except ValueError as er:
+                logging.error("Encountered exception `%s' on %s" % (er, assoc))
+                continue
+            assoc_type_refs = set(map(lambda c: (c|"type").idref, (c1, c2)))
+            if enum_id in assoc_type_refs:
+                other_idref = list(assoc_type_refs - {enum_id})[0]
+                type_refs.append(xmi_doc.xmi.by_id[other_idref].name)
+                
+        # TODO filter this based on inheritance hierarchy
+        type_refs_without_type = [s for s in type_refs if 'Type' not in s]
+        if len(type_refs_without_type) != 1:
+            logging.warning("", len(type_refs_without_type), "type associations on", enum_type.name, file=sys.stderr)
+        
+        return type_refs_without_type[0] if type_refs_without_type else None
+    
+  
+    by_id = {}
+    item_by_id = {}
+    psets = [] # psets are deferred to the end so that all ids are resolved  
+    entities = [] # same for entity attributes:
+    enumerations = {} # predefined types are just normal enumerations
+    pset_counts_by_stereo = defaultdict(int)
+    
+    ### extract all items from XML
+
+    for item in xmi_doc:
+
+        item_by_id[item.id] = item
+
+        item.name = to_str(item.name)
+
+        if not is_depracated(item):
+            if item.type in ("ENUM","PENUM"):
+                enumerations[item.name] = item            
+            elif item.type == "PSET":
+                psets.append(item)
+                stereo = (item.node/"properties")[0].stereotype
+                pset_counts_by_stereo[stereo] += 1
+                # add human-readable name
+                di["Name"] = caps_control(clean(normalise(re.sub("Pset_|Qto_", "", item.name))).title())
+                di["Definition"] = reduce_description(to_str(item.markdown), trim=True)
+            elif item.type == "ENTITY":
+                by_id[item.id] = di = classes[item.name]
+                st = item.meta.get('supertypes', [])
+                if st:
+                    di["Parent"] = to_str(st[0])
+                di["Definition"] = reduce_description(to_str(item.markdown), trim=True)
+                # add human-readable name
+                di["Name"] = caps_control(clean(normalise((item.name[3:] if item.name.lower().startswith('ifc') else item.name))).title())
+                di["Guid"] = guid_by_id(item.id)
+                entities.append(item)
+            # skipping: ('FUNCTION','SELECT','RULE','TYPE')
+            di["Package"] = to_str(item.package) # solely to split POT files
+
+    ### process all found entities 
+
+    for item in entities:
+    
+        if "IfcTypeObject" in xmi_doc.supertypes(item.id):
+            continue
+    
+        predefined_type_attribute = [c for c in item.children if c.name == "PredefinedType"]
+        if predefined_type_attribute:
+            # NB this points to the EA extension node and not the packagedElement
+            ptype = (predefined_type_attribute[0].node|"properties").type
+            if ptype in enumerations:
+                for c in enumerations[ptype].children:
+                    if c.name not in ("USERDEFINED","NOTDEFINED"):
+                        by_id[c.id] = di = classes[item.name + c.name]
+                        di["Parent"] = to_str(item.name)
+                        di["Definition"] = reduce_description(to_str(c.markdown), trim=True)
+                        di["Description"] = "Technical note: Because this class is a 'Predefined Type' in IFC, meaning a specialisation of its parent class, in IFC it should be represented by the parent class, with all the relevant properties and attributes."
+                        di["RelatedIfcEntityNamesList"] = [to_str(item.name)]
+                        # add human-readable name, by identifying words in all-caps phrase (right now the words are hardcoded)
+                        di["Name"] = caps_control(split_words(c.name).title())
+                        di["Guid"] = guid_by_id(c.id)
+                        di["Package"] = to_str(item.package) # solely to split POT files
+
+    ### process all found property sets 
+
+    for item in psets:
+        refs = set(item.meta.get('refs') or [])
+        
+        for id in refs:
+        
+            if isinstance(id, tuple):
+                # In case of TypeObject+PredefinedType appl
+                # id = id[0]
+                # what to do with typedrivenonly?
+                # this option is disabled now
+                assert False
+                continue
+            
+            di = by_id.get(id)
+
+            if di is None:
+                try:
+                    log_attr_2 = xmi_doc.xmi.by_id[id].name
+                except KeyError:
+                    log_attr_2 = id
+                    logging.warning("id %s not found" % id)
+                logging.warning("for %s entity %s not emitted" % (item.name, log_attr_2))
+                continue
+            
+            for a, (nm, (ty_ty_arg)) in zip(item.children, item.definition):
+
+                if not is_depracated(a):
+                    if item.stereotype == "QSET":
+                        type_name = "real"
+                        type_values = None
+                        kind_name = 'Single'
+                    else:
+                        ty, ty_arg = ty_ty_arg
+                        if ty == "PropertyEnumeratedValue":
+                            type_name = list(ty_arg.values())[0]
+                            enum_types_by_name = [c for c in xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:Class"] if c.name == type_name]
+                            enum_types_by_name += [c for c in xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:Enumeration"] if c.name == type_name]
+                            type_values = [x.name for x in enum_types_by_name[0]/"ownedLiteral"]
+                            kind_name = 'Single'
+                        else:
+                            type_name = list(ty_arg.values())[0]
+                            pe_types = [c for c in xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:Class"] if c.name == type_name]
+                            pe_types += [c for c in xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:DataType"] if c.name == type_name]                    
+                            pe_type = pe_types[0]
+                            root_generalization = generalization(pe_type)
+                            type_name = root_generalization.name #.lower()
+                            type_values = None
+                            if ty == "PropertySingleValue":
+                                kind_name = 'Single'
+                            elif ty == "PropertyBoundedValue":
+                                kind_name = 'Range'
+                            elif ty == "PropertyReferenceValue":
+                                kind_name = 'Complex'
+                                di["Psets"][item.name]["Properties"][a.name]["Description"] = "Technical note: this is a specific property from IFC that takes as its value a reference to %s. Read the IFC documentation for more information." % type_name
+                            elif ty == "PropertyListValue":
+                                kind_name = 'List'
+                            elif ty == "PropertyTableValue":
+                                kind_name = 'Complex'
+                                di["Psets"][item.name]["Properties"][a.name]["Description"] = "Technical note: this is a specific property from IFC that takes a table as its value. That table has two columns (lists), one with definitions and other for defined values. Read the IFC documentation for more information."
+                            else:
+                                logging.warning("%s.%s of type %s <%s> not mapped" % (item.name, nm, ty, ",".join(map(lambda kv: "=".join(kv), ty_arg.items()))))
+                                continue
+
+                    di["Psets"][item.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', reduce_description(to_str(item.markdown), trim=True))
+                    
+                    di["Psets"][item.name]["Properties"][a.name]["Type"] = type_name
+                    di["Psets"][item.name]["Properties"][a.name]["Name"] = caps_control(clean(split_words(normalise(a.name))).title())
+                    # remove value explanation from the definition
+                    di["Psets"][item.name]["Properties"][a.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', reduce_description(to_str(a.markdown), trim=True))
+                    di["Psets"][item.name]["Properties"][a.name]["Kind"] = kind_name
+                    di["Psets"][item.name]["Properties"][a.name]["Package"] = to_str(item.package) # solely to split POT files
+
+                    if type_values is None:
+                        type_values = type_to_values.get(type_name)
+                    if type_values:
+                        di["Psets"][item.name]["Properties"][a.name]["Values"] = []
+                        for tv in type_values:                       
+                            # match the whole sentence containing the value, case insensitive
+                            matches = re.findall(r"[^.;!,]*" + tv + r"[^.;!,]*", to_str(a.markdown), flags=re.IGNORECASE)
+                            if matches:
+                                description = clean(reduce_description(matches[0].strip()))  #the whole sentence explaining the value
+                            else:
+                                description = caps_control(clean(normalise(split_words(tv))).title())  #the value but readable
+                            di["Psets"][item.name]["Properties"][a.name]["Values"].append({"Value": tv,"Description":description,"Package":to_str(item.package)})
+
+    ### process all found entities 
+
+    for item in entities:
+    
+        item_name = item.name
+        if item_name.endswith("Type"):
+            item_name = item_name[:-4]
+        di = classes[item_name]        
+               
+        for c in item.children:
+                           
+            c.name = reduce_description(c.name)
+
+            if not is_depracated(c):
+                try:
+                    node = c.node
+                    if node.xml.tagName == "attribute":
+                        node = xmi_doc.xmi.by_id[c.node.idref]
+                        type_type = node|"type"
+                        type_id = type_type.idref
+                    else:
+                        type_id = ([t for t in (node/"ownedEnd") if t.name == c.name][0]|"type").idref
+                        type_type = xmi_doc.xmi.by_id[type_id]
+                    type_item = item_by_id[type_id]
+                except:
+                    logging.warning("Not emitting %s.%s because of an error" % (item.name, c.name))
+                    continue
+                if c.name == "PredefinedType":
+                    logging.warning("Not emitting %s.%s because it's the PredefinedType attribute" % (item.name, c.name))
+                elif type_item.type == "ENTITY":
+                    logging.warning("Not emitting %s.%s attribute because it's taking an ENTITY: %s" % (item.name, c.name, type_item.name))
+                elif type_item.type == "SELECT":
+                    logging.warning("Not emitting %s.%s attribute because it's taking a SELECT: %s" % (item.name, c.name, type_item.name))
+                elif type_item.type == "TYPE":
+                    
+                    type_values = None
+                    
+                    if type_item.definition.super_verbatim:
+                    
+                        if not type_item.definition.super.lower().startswith("string"):                    
+                            logging.warning("Not emitting %s.%s because it has a hardcoded express definition %s" % (item.name, c.name, type_item.definition.super))
+                            continue
+                        else:
+                            type_name = "string"
+                            
+                    else:
+                    
+                        pattr = xmi_doc.xmi.by_id[c.node.idref]
+                        ty_id = (pattr|"type").idref
+                        ty_pe = xmi_doc.xmi.by_id[ty_id]
+                        ty_gen = generalization(ty_pe)
+                        type_name = ty_gen.name.lower()
+                    
+                    di["Psets"]["Attributes"]["Properties"][c.name]["Type"] = type_name
+                    di["Psets"]["Attributes"]["Properties"][c.name]["Name"] = caps_control(clean(split_words(normalise(c.name))).title())
+                    # remove value explanation from the definition
+                    di["Psets"]["Attributes"]["Properties"][c.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', reduce_description(to_str(c.markdown), trim=True))
+                    di["Psets"]["Attributes"]["Properties"][c.name]["Package"] = to_str(item.package) # solely to split POT files
+                    if type_values is None:
+                        type_values = type_to_values.get(type_name)
+                    if type_values:
+                        di["Psets"]["Attributes"]["Properties"][c.name]["Values"] = []
+                        for tv in type_values:
+                            # match the whole sentence containing the value, case insensitive
+                            # matches = re.findall(r"[^.;!,]*" + tv + r"[^.;!,]*", to_str(c.markdown), flags=re.IGNORECASE)
+                            matches = re.findall(r"[^.;!,]*" + tv + r"[^.;!,]*", to_str(c.markdown), flags=re.IGNORECASE)
+                            if matches:
+                                description = clean(reduce_description(matches[0].strip()))  #the whole sentence explaining the value
+                            else:
+                                description = caps_control(clean(normalise(split_words(tv))).title())  #the value but readable
+                            di["Psets"]["Attributes"]["Properties"][c.name]["Values"].append({"Value": tv,"Description":description,"Package":to_str(item.package)})                           
+
+                elif type_item.type == "ENUM":
+                
+                    type_name = type_item.name
+                    type_values = type_item.definition.values
+                    di["Psets"]["Attributes"]["Properties"][c.name]["Type"] = type_name
+                    # remove value explanation from the definition
+                    di["Psets"]["Attributes"]["Properties"][c.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', reduce_description(to_str(c.markdown), trim=True))
+                    di["Psets"]["Attributes"]["Properties"][c.name]["Values"] = []
+                    di["Psets"]["Attributes"]["Properties"][c.name]["Package"] = to_str(item.package) # solely to split POT files
+                    for tv in type_values:                   
+                        # match the whole sentence containing the value, case insensitive
+                        matches = re.findall(r"[^.;!,]*" + tv + r"[^.;!,]*", to_str(c.markdown), flags=re.IGNORECASE)
+                        if matches:
+                            description = clean(reduce_description(matches[0].strip()))  #the whole sentence explaining the value
+                        else:
+                            description = caps_control(clean(normalise(split_words(tv))).title())  #the value but readable
+                        di["Psets"]["Attributes"]["Properties"][c.name]["Values"].append({"Value": tv,"Description":description,"Package":to_str(item.package)})
+                else:
+                    logging.warning("Not emitting %s.%s because it's a %s %s" % (item.name, c.name, type_item.name, type_item.type))
+            
+    for k, v in pset_counts_by_stereo.items():
+        logging.info(k + ":", v)
+        
+    logging.info("TOTAL:", sum(pset_counts_by_stereo.values()))
+            
+    return classes
+
+    
 ### Generate all the definitions:
 
-defs = filter_definition(generate_definitions())
+all_concepts = filter_concepts(generate_definitions())
 
-### go through names and add double square brackets in definitions:
 
-#list all codes, so that we can later highlight them in the descriptions
+### iterate all the results to list all unique codes for translations
 
-def need_brackets(s):
-    if len(s) >= 4:
-        if re.findall(r'\b(?:[a-zA-Z]*[A-Z]){2,}[a-zA-Z]*\b', s):
-            return True
-        else:
-            # not enough capital letters
-            return False
-    else:
-        # too short
-        return False
-
-#iterate all the results to list all unique codes for translations
 codes = set() #["USERDEFINED", "NOTDEFINED"]  # adding those two to be translatable values, as they occur in descriptions but will not be listed in bSDD.
-for code, content in defs.items(): 
+for code, content in all_concepts.items(): 
     if need_brackets(code):
         codes.add(code)
     if content['Psets']:
@@ -642,57 +681,71 @@ for code, content in defs.items():
 
 all_codes = re.compile("\\b(%s)\\b" % "|".join(sorted(codes, key=lambda s: -len(s))))
 
-def list_ancestors(name, full_list, ancestor_list=[]):
-    # traverse the list of hierarchy to find all the parents of this object
-    try:
-        ancestor = full_list[name]['Parent']
-    except KeyError:
-        print('WARNING! The entity %s not found in the IFC.' % name)
-    if ancestor:
-        if ancestor in full_list:
-            ancestor_list.append(ancestor)
-            list_ancestors(ancestor, full_list, ancestor_list)
-        else:
-            print('WARNING! Ancestor %s not found in the IFC.' % ancestor)
-    return ancestor_list
 
-# iterate again to annotate all descriptions and restructure classes/properties/values:
+### iterate again to annotate all descriptions and restructure classes/properties/values:
+
 classes = []
+psets = []
+props = []
 props = []
 to_translate = []
 unique_props = set()
-for code, content in defs.items(): 
+unique_psets = set()
+
+for code, content in all_concepts.items(): 
     clas_def = annotate(content['Definition'])
     classes.append({
         'Code': code,
-        'Name': toStr(content['Name']) if toStr(content['Name']) else caps_control(clean(normalise((code[3:] if code.lower().startswith('ifc') else code))).title()),
+        'Name': to_str(content['Name']) if to_str(content['Name']) else caps_control(clean(normalise((code[3:] if code.lower().startswith('ifc') else code))).title()),
         'Definition': clas_def,
-        'Description': annotate(content['Description']),
         'ClassType': 'Class',
-        'ParentClassCode': toStr(content['Parent']),
         'ClassProperties': []
     })
+
+    if content['Guid']:
+        classes[-1]['Uid'] = to_str(content['Guid'])
+    if content['Parent']:
+        classes[-1]['ParentClassCode'] = to_str(content['Parent'])
+    if content['Description']:
+        classes[-1]['Description'] = to_str(content['Description'])
+        to_translate.append({"msgid":code+"_DESCRIPTION","msgstr":classes[-1]['Description'],"package":content['Package']})
+    if content['RelatedIfcEntityNamesList']:
+        classes[-1]['RelatedIfcEntityNamesList'] = to_str(content['RelatedIfcEntityNamesList'])
+
     to_translate.append({"msgid":code,"msgstr":classes[-1]['Name'],"package":content['Package']})
     to_translate.append({"msgid":code+"_DEFINITION","msgstr":clas_def,"package":content['Package']})
-    to_translate.append({"msgid":code+"_DESCRIPTION","msgstr":classes[-1]['Description'],"package":content['Package']})
-    
-    # list all ancestors (skip enums (any code that has at least three consecutive capital letters), they don't need to inherit) 
+
+    # list all ancestors (skip enums (any code that has at least three consecutive capital letters), they don't need to inherit any properties) 
     if re.search(r"[A-Z]{3}", code):
-        ancestors = [code]
-    else:
         ancestors = []
-        ancestors = list_ancestors(code, defs, ancestors)
+    else:
+        ancestors = [code]
+        ancestors = list_ancestors(code, all_concepts, ancestors)
 
     # add properties (from this object and all its parents)
     for ancestor_name in ancestors:
-        ancestor = defs[ancestor_name]
+        ancestor = all_concepts[ancestor_name]
         # if ancestor['Psets']:
         if ancestor['Psets']:
             for pset_code, pset_content in ancestor['Psets'].items():
                 
+                # add PSet as GroupOfProperties class:
+                if not pset_code in unique_psets:
+                    unique_psets.add(pset_code)
+                    psets.append({
+                        'Code': pset_code,
+                        'Name': to_str(pset_content['Name']) if to_str(pset_content['Name']) else caps_control(clean(normalise(pset_code))).title(),
+                        'Definition': annotate(pset_content['Definition']),
+                        'ClassType': 'GroupOfProperties',
+                        'ClassProperties': []
+                    })
+                    to_translate.append({"msgid":pset_code,"msgstr":psets[-1]['Name'],"package":content['Package']})
+                    to_translate.append({"msgid":pset_code+"_DEFINITION","msgstr":psets[-1]['Definition'],"package":content['Package']})
+                    
+                # add ClassProperties
                 for prop_code, prop_content in pset_content['Properties'].items():
                     prop_code = prop_code
-                    name = toStr(prop_content['Name'])
+                    name = to_str(prop_content['Name'])
                     if not name:
                         name = normalise(prop_code)
                     prop_def = annotate(prop_content['Definition'])
@@ -703,6 +756,7 @@ for code, content in defs.items():
                     elif prop_code in ("AdjustmentDesignation","IsCurrentTolerancePositiveOnly") and pset_code in ("Pset_ProtectiveDeviceTrippingUnitTimeAdjustment","Pset_ProtectiveDeviceTrippingUnitCurrentAdjustment","Pset_ProtectiveDeviceTrippingFunctionGCurve","Pset_ProtectiveDeviceTrippingFunctionICurve","Pset_ProtectiveDeviceTrippingFunctionICurve"):
                         p_code = prop_code+"_from_..."+''.join([c for c in pset_code if c.isupper()])
                     else:
+                        # p_code = prop_code+"_"+pset_code[5:51-len(prop_code)]+"..."
                         p_code = prop_code+"_from_"+re.sub('Pset_|Qto_','',pset_code)[:int((41-len(prop_code))/2)]+"..."+re.sub('Pset_|Qto_','',pset_code)[len(re.sub('Pset_|Qto_','',pset_code))-int((41-len(prop_code))/2):]
                     classProp = {                   
                         "PropertyCode": prop_code,
@@ -715,8 +769,12 @@ for code, content in defs.items():
                     
                     classes[-1]['ClassProperties'].append(classProp)
 
+                    # also add those ClassProperties to the latest PSET (if that is the first instance of this PSET):
+                    if pset_code == psets[-1]['Code']:
+                        psets[-1]['ClassProperties'].append(classProp)
+
+                    # add to properties list, not just classProp
                     if not prop_code in unique_props:
-                        # add to properties list, not just classProp
                         unique_props.add(prop_code)
                         
                         allowed_values = []
@@ -734,15 +792,43 @@ for code, content in defs.items():
                             "Code": prop_code,
                             "Name": name,
                             "Definition": prop_def,
-                            "Description": "IFC type: " + prop_content['Type'] + ". " + annotate(prop_content['Description']),
-                            "PropertyValueKind": toStr(prop_content['Kind']),
+                            "PropertyValueKind": to_str(prop_content['Kind']),
                             "AllowedValues": allowed_values
                         })
-
                         to_translate.append({"msgid":prop_code,"msgstr":name,"package":content['Package']})
                         to_translate.append({"msgid":prop_code+"_DEFINITION","msgstr":prop_def,"package":content['Package']})
-                        to_translate.append({"msgid":prop_code+"_DESCRIPTION","msgstr":props[-1]['Description'],"package":content['Package']})
 
+                        if prop_content['Description']:
+                            props[-1]['Description'] = annotate(prop_content['Description'])
+                            to_translate.append({"msgid":prop_code+"_DESCRIPTION","msgstr":props[-1]['Description'],"package":content['Package']})
+
+                        if prop_content['Type'].lower() == "string":
+                            props[-1]['DataType'] = "String"
+                        elif prop_content['Type'].lower() == "real":
+                            props[-1]['DataType'] = "Real"
+                        elif prop_content['Type'].lower() == "integer":
+                            props[-1]['DataType'] = "Integer"
+                        elif prop_content['Type'].lower() == "boolean":
+                            props[-1]['DataType'] = "Boolean"
+                        elif prop_content['Type'].startswith("PEnum_") or prop_content['Type'].endswith("Enum"):
+                            # Assuming that all enums are text.
+                            props[-1]['DataType'] = "String"
+                        else:
+                            logging.warning("Not sure what data type to apply to: '%s'." % prop_content['Type'])
+
+classes.extend(psets)
+
+### append material category list stated implicitly in IfcMaterial:
+for m in ['concrete', 'steel', 'aluminium', 'block', 'brick', 'stone', 'wood', 'glass', 'gypsum', 'plastic', 'earth']:
+    classes.append({
+        'Code': m,
+        'Name': m.title(),
+        'Description': 'One of the categories of common building materials listed in IfcMaterial definition in IFC.',
+        'ClassType': 'Material',
+        'RelatedIfcEntityNamesList': ['IfcMaterial']
+    })
+    to_translate.append({"msgid":m,"msgstr":m.title(),"package":"UNSPECIFIED_PACKAGE"})
+    to_translate.append({"msgid":m+"_DESCRIPTION","msgstr":classes[-1]['Description'],"package":"UNSPECIFIED_PACKAGE"})
 
 
 ### Generate IFC.json file:
@@ -769,13 +855,14 @@ bsdd_data = {
 # with open(output_dir, 'w', encoding='utf-8') as f:
 with open(os.path.join(output_dir, "IFC.json"), 'w', encoding='utf-8') as f :
     json.dump(bsdd_data, f, indent=4, default=lambda x: (getattr(x, 'to_json', None) or (lambda: vars(x)))(), ensure_ascii=False)
-    print("Saved JSON file.")
+    logging.info("Saved JSON file.")
 
-print("Saved IFC.json file with %s classes and %s properties." % (len(classes), len(props)))
+logging.info("Saved IFC.json file with %s classes and %s properties." % (len(classes), len(props)))
 
 ### Generate collection of .pot files in the "pot" folder:
 
 class pot_file:
+
     def __init__(self, f):
         self.f = f
         now = date.today()
@@ -792,15 +879,17 @@ msgstr ""
 "Language-Team: buildingSMART community\\n"
 """.format(year=now.strftime("%Y"), date=now.strftime(r"%Y-%m-%d"), time=now.strftime("%H:%M")), file=self.f)
         
+
     def __getattr__(self, k):
         return getattr(self.f, k)
         
 class pot_dict(dict):
+
     def __missing__(self, key):
         if not os.path.exists(os.path.join(output_dir, "pot")):
             os.makedirs(os.path.join(output_dir, "pot"))
         if not key:
-            key = "UNKNOWN_PACKAGE"
+            key = "UNSPECIFIED_PACKAGE"
         v = self[key] = pot_file(open(os.path.join(output_dir, "pot", key + ".pot"), "w+", encoding="utf-8")) # add folder: "pot", 
         return v
 
@@ -810,19 +899,25 @@ po_files = pot_dict()
 # for i, (package, (ln, col), p, d) in enumerate(generate_definitions()):
 i = 0
 pos = set()
+id_set = set()
 # TODO make sure we only have unique values in POT files
-# TODO we are missing some terms like IfcActor
 for t in to_translate:
     if isinstance(t['package'], defaultdict):
-        t['package'] = toStr(t['package'])
+        t['package'] = to_str(t['package'])
     if isinstance(t['msgstr'], defaultdict):
-        t['msgstr'] = toStr(t['msgstr'])
+        t['msgstr'] = to_str(t['msgstr'])
 
     po_file = po_files[t['package']]
 
-    print("msgid", quote(t['msgid']),  file=po_file)
-    print("msgstr", quote(t['msgstr']),  file=po_file)
-    print(file=po_file)
-    pos.add(po_file)
-    i += 1
-print("Saved %s terms in %s POT files." % (i, len(pos)))
+    if t['msgid'] and t['msgstr']:   # skip empty strings
+        if not t['msgid'] in  id_set:
+            id_set.add(t['msgid'])
+            print("msgid", quote(t['msgid']),  file=po_file)
+            print("msgstr", quote(t['msgstr']),  file=po_file)
+            print(file=po_file)
+            pos.add(po_file)
+            i += 1
+        else:
+            logging.warning("duplicated msgids '%s' in the pot file: %s." % (t['msgid'], po_file))
+
+logging.info("Saved %s terms in %s POT files." % (i, len(pos)))

@@ -367,18 +367,18 @@ def guid_by_id(id):
     return guid
 
 
-def is_depracated(elem):
+def is_deprecated(elem):
     """ Check if the element is deprecated in that IFC version or not. """
-    depracated = False
+    deprecated = False
     if elem.id in xmi_doc.deprecated:
-        depracated = True
+        deprecated = True
     # some objects don't have deprecated status but their markdown says they are deprecated   
     try: 
         if "DEPRECAT" in elem.markdown:
-            depracated = True
+            deprecated = True
     except (AttributeError, TypeError):
         pass
-    return depracated
+    return deprecated
 
 
 def generate_definitions():

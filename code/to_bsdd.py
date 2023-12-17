@@ -31,7 +31,16 @@ xmi_doc.should_translate_pset_types = False
 bfn = os.path.basename(fn)
 
 ps = PorterStemmer()
-words_to_catch = sorted(['current','cost','of','switch','order','recovery','loading','barrier','predefined','reel','basin','fountain','packaged','nozzle','tube','plant',
+
+CHAR_LIMIT = 50
+HTML_TAG_PATTERN = re.compile('<.*?>')
+MULTIPLE_SPACE_PATTERN = re.compile(r'\s+')
+# CHANGE_LOG_PATTERN = re.compile(r'\{\s*\.change\-\w+\s*\}.+', flags=re.DOTALL)
+CURLY_BRACKET_PATTERN = re.compile('{.*?}.*') #also removes all text after curly brackets
+FIGURE_PATTERN = re.compile('[^.,;]*(Figure|the figure)[^.,;]*') #removes the sentence when it mentiones a Figure.
+LIST_PATTERN = re.compile('[^.,;]*:\s?') #removes the last sentence when it ends with a colon.
+
+WORDS_TO_CATCH = sorted(['current','cost','of','switch','order','recovery','loading','barrier','predefined','reel','basin','fountain','packaged','nozzle','tube','plant',
                          'injection','assisted','element','vertically','vertical','turbine','heating','disassembly','button','component','security','deflector',
                          'cabinet','assembly','actuator','meter','sensor','object','detection','station','depth','controller','terminal','center','frame','electric',
                          'exchangers','wedge','gate','configured','plug','lubricated','parallel','slide','exchange','exchanger','change','outlet','server','plate','expansion',
@@ -67,19 +76,19 @@ words_to_catch = sorted(['current','cost','of','switch','order','recovery','load
                          'submersible','sump','waterway','ship','lift','works','wheeled','grouted','indicators','mitigated','unmitigated','delivery','accessible','covering','interfaces',
                          'brightness','driver','sectional','rated','pairs','diameter','fans','supported','stations','carriers','transceivers','currents','classes','relays','curves',
                          'plates','corrugated','tracks','conductors','building','operator','owner','engineer','manager','field','construction','history','weather','station',
-                         'consumption','photochemical','ozone','renewable','energy','resource','depletion','stratospheric','layer','destruction'], key=len)[::-1]
+                         'consumption','photochemical','ozone','renewable','energy','resource','depletion','stratospheric','layer','destruction','reheat','reference','components',
+                         'constraint','name','type','names','types','lrm','relative'], key=len)[::-1]
 
-all_caps = ['ups','gprs','rs','am','gps','dc','tn','url','ac','co','co2','chp','id','led','oled','ole','gfa','tv','msc','ppm','iot','ocl','lrm','cgt','teu','tmp','std','gsm','cdma','lte','td','scdma',
-            'wcdma','sc','mp','bm','ol','ep','ir','www','ip','ph','usb', 'ii', 'iii']
-small_caps = ['for','of','and','to','with','or','at']
-substitute = {
+ALL_CAPS = ['ups','gprs','rs','am','gps','dc','tn','url','ac','co','co2','chp','id','led','oled','ole','gfa','tv','msc','ppm','iot','ocl','lrm','cgt','teu','tmp','std','gsm','cdma','lte','td','scdma',
+            'wcdma','sc','mp','bm','ol','ep','ir','www','ip','ph','usb', 'ii', 'iii','url','uri','ssl','ffl']
+SMALL_CAPS = ['for','of','and','to','with','or','at']
+SUBSTITUTIONS = {
     "Rel ": "Relation: ",
     "Qto_": "Quantity set: ",
     "Pset_": "Property set: ",
 }
-
-type_to_values = {
-    'boolean': ["TRUE","FALSE"],
+TYPE_TO_VALUES= {
+    # 'boolean': ["TRUE","FALSE"],
     'logical': ["TRUE","FALSE","UNKNOWN"],
 }
 
@@ -88,12 +97,6 @@ type_to_values = {
 # schema_name = "".join(["_", c][c.isalnum()] for c in schema_name)
 # schema_name = re.sub(r"_+", "_", schema_name)
 # schema_name = schema_name.strip('_')
-
-HTML_TAG_PATTERN = re.compile('<.*?>')
-MULTIPLE_SPACE_PATTERN = re.compile(r'\s+')
-# CHANGE_LOG_PATTERN = re.compile(r'\{\s*\.change\-\w+\s*\}.+', flags=re.DOTALL)
-CURLY_BRACKET_PATTERN = re.compile('{.*?}.*') #also removes all text after curly brackets
-FIGURE_PATTERN = re.compile('[^.,;]*(Figure|the figure)[^.,;]*') #removes the sentence when it mentiones a Figure.
 
 
 def yield_parents(node):
@@ -131,7 +134,7 @@ def reduce_description(s, trim=True):
         s1 = ''
     if trim:
         # split and remove on keywords:
-        i = min([x for x in [s1.find('NOTE'), s1.find('DIAGRAM'), s1.find('CHANGE'), s1.find('IFC4'), s1.find('HISTORY'), s1.find('EXAMPLE'), s1.find('DEPRECATION'), 1e5] if x >= 0])
+        i = min([x for x in [s1.find('NOTE'), s1.find('DIAGRAM'), s1.find('CHANGE'), s1.find('IFC4'), s1.find('HISTORY'), s1.find('REFERENCE'), s1.find('EXAMPLE'), s1.find('DEPRECATION'), 1e5] if x >= 0])
         if i > 0 and i != 1e5:
             s1 = s1[:i]
         elif i==0:
@@ -144,12 +147,13 @@ def reduce_description(s, trim=True):
     s6 = re.sub(r'SELF\\', '', s5)
     s7 = re.sub(r"\s+", " ", s6)
     s8 = re.sub(FIGURE_PATTERN, '', s7)
-    s9 = re.sub(MULTIPLE_SPACE_PATTERN, ' ', s8).strip()
+    s9 = re.sub(LIST_PATTERN, '', s8)
+    s10 = re.sub(MULTIPLE_SPACE_PATTERN, ' ', s9).strip()
     # TODO too long description...
     # sx = re.sub('e.g.', "", re.sub('i.e.', "", re.sub('etc.', "", s9)))
     # if len(sx.split(".")) > 6:
     #     s9 = s9.split(sx.split(".")[6])[0] + "[IT WAS CUT HERE!]"
-    return s9
+    return s10
 
 
 def caps_control(s):
@@ -158,10 +162,10 @@ def caps_control(s):
     s1 = s.split()
     if isinstance(s1, list):
         for part in s1:
-            for a in all_caps:
+            for a in ALL_CAPS:
                 if part.lower() == a:
                     s = re.sub(part, a.upper(), s)
-            for b in small_caps:
+            for b in SMALL_CAPS:
                 if part.lower() == b:
                     s = re.sub(part, b.lower(), s)
     return s
@@ -203,7 +207,7 @@ def split_at_word(w, s):
 def split_words(s):
     """ Split the phrase using the hard-coded list of words found in enumerations to split the ALLCAPS phrases into indivudual words. """
     found_words = []
-    for w in words_to_catch:
+    for w in WORDS_TO_CATCH:
         # skip if word is contained in previous words (e.g. EXCHANGE in EXCHANGER)
         previously_found = False
         for fw in found_words:
@@ -258,7 +262,7 @@ def annotate(s):
 def normalise(s):
     """ format the text by spliting camelCase into separate words and replacing special prefixes."""
     s = re.sub(r'(?<=[a-z])(?=[A-Z])', ' ', to_str(s))
-    for k,v in substitute.items():
+    for k,v in SUBSTITUTIONS.items():
         if k in s:
             s = re.sub(k,v,s)
     return re.sub(MULTIPLE_SPACE_PATTERN, ' ', s).strip()
@@ -310,43 +314,46 @@ def list_ancestors(name, full_list, ancestor_list=[]):
     return ancestor_list
 
 
-# TODO do we even want to filter anything? Why don't we upload all the concepts?
 def filter_concepts(di):
     """ Skip certain concepts to reduce amount of definitions in bSDD. """
 
-    children = defaultdict(list)    
-    for k, v in di.items():
-        if v.get("Parent"):
-            children[v.get("Parent")].append(k)
+    # children = defaultdict(list)    
+    # for k, v in di.items():
+    #     if v.get("Parent"):
+    #         children[v.get("Parent")].append(k)
 
-    def parents(k):
-        yield k
-        v = di.get(k)
-        if v and v.get('Parent'):
-            yield from parents(v.get('Parent'))
+    # def parents(k):
+    #     yield k
+    #     v = di.get(k)
+    #     if v and v.get('Parent'):
+    #         yield from parents(v.get('Parent'))
             
-    def child_or_self_has_psets(k):
-        ps = di.get(k, {}).get("Psets")
-        if ps:
-            if set(ps.keys()) - {"Attributes"}:
-                return True
-        for c in children[k]:
-            if child_or_self_has_psets(c):
-                return True
-        return False
+    # def child_or_self_has_psets(k):
+    #     ps = di.get(k, {}).get("Psets")
+    #     if ps:
+    #         if set(ps.keys()) - {"Attributes"}:
+    #             return True
+    #     for c in children[k]:
+    #         if child_or_self_has_psets(c):
+    #             return True
+    #     return False
         
-    def has_child(k):
-        def has_child_(k2):
-            if k2 == k: return True
-            if not children[k2]: return False
-            return any(has_child_(c) for c in children[k2])
-        return has_child_
+    # def has_child(k):
+    #     def has_child_(k2):
+    #         if k2 == k: return True
+    #         if not children[k2]: return False
+    #         return any(has_child_(c) for c in children[k2])
+    #     return has_child_
 
     def should_include(k, v):
         # TODO PREVIOUSLY return ("IfcProduct" in parents(k)) or has_child("IfcProduct")(k) or child_or_self_has_psets(k) 
-        # right now 'has_pset' is broadening to include non-products that have psets, like IfcActor.
+        # but decided to widen to also include all non-products that have psets, like IfcActor.
         # return ("IfcRoot" in parents(k)) or ("IfcMaterialDefinition" in parents(k)) or ("IfcProfileDef" in parents(k)) or child_or_self_has_psets(k)
-        return True
+        # only skipping relations
+        result = False
+        if not (k.startswith('IfcRel') or k.endswith('Relationship')) :
+            result = True 
+        return result
         
     return {k: v for k, v in di.items() if should_include(k, v)}
 
@@ -401,8 +408,6 @@ def generate_definitions():
                 
         # TODO filter this based on inheritance hierarchy
         type_refs_without_type = [s for s in type_refs if 'Type' not in s]
-        if len(type_refs_without_type) != 1:
-            logging.warning("", len(type_refs_without_type), "type associations on", enum_type.name, file=sys.stderr)
         
         return type_refs_without_type[0] if type_refs_without_type else None
     
@@ -431,13 +436,13 @@ def generate_definitions():
                 pset_counts_by_stereo[stereo] += 1
                 # add human-readable name
                 di["Name"] = caps_control(clean(normalise(re.sub("Pset_|Qto_", "", item.name))).title())
-                di["Definition"] = reduce_description(to_str(item.markdown), trim=True)
+                di["Definition"] = reduce_description(to_str(item.markdown_definition), trim=True)
             elif item.type == "ENTITY":
                 by_id[item.id] = di = classes[item.name]
                 st = item.meta.get('supertypes', [])
                 if st:
                     di["Parent"] = to_str(st[0])
-                di["Definition"] = reduce_description(to_str(item.markdown), trim=True)
+                di["Definition"] = reduce_description(to_str(item.markdown_definition), trim=True)
                 # add human-readable name
                 di["Name"] = caps_control(clean(normalise((item.name[3:] if item.name.lower().startswith('ifc') else item.name))).title())
                 di["Guid"] = guid_by_id(item.id)
@@ -448,7 +453,7 @@ def generate_definitions():
     ### process all found entities 
 
     for item in entities:
-    
+        
         if "IfcTypeObject" in xmi_doc.supertypes(item.id):
             continue
     
@@ -463,7 +468,6 @@ def generate_definitions():
                         di["Parent"] = to_str(item.name)
                         di["Definition"] = reduce_description(to_str(c.markdown), trim=True)
                         di["Description"] = "Technical note: Because this class is a 'Predefined Type' in IFC, meaning a specialisation of its parent class, in IFC it should be represented by the parent class, with all the relevant properties and attributes."
-                        di["RelatedIfcEntityNamesList"] = [to_str(item.name)]
                         # add human-readable name, by identifying words in all-caps phrase (right now the words are hardcoded)
                         di["Name"] = caps_control(split_words(c.name).title())
                         di["Guid"] = guid_by_id(c.id)
@@ -534,7 +538,7 @@ def generate_definitions():
                                 logging.warning("%s.%s of type %s <%s> not mapped" % (item.name, nm, ty, ",".join(map(lambda kv: "=".join(kv), ty_arg.items()))))
                                 continue
 
-                    di["Psets"][item.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', reduce_description(to_str(item.markdown), trim=True))
+                    di["Psets"][item.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', reduce_description(to_str(item.markdown_definition), trim=True))
                     
                     di["Psets"][item.name]["Properties"][a.name]["Type"] = type_name
                     di["Psets"][item.name]["Properties"][a.name]["Name"] = caps_control(clean(split_words(normalise(a.name))).title())
@@ -544,7 +548,7 @@ def generate_definitions():
                     di["Psets"][item.name]["Properties"][a.name]["Package"] = to_str(item.package) # solely to split POT files
 
                     if type_values is None:
-                        type_values = type_to_values.get(type_name)
+                        type_values = TYPE_TO_VALUES.get(type_name)
                     if type_values:
                         di["Psets"][item.name]["Properties"][a.name]["Values"] = []
                         for tv in type_values:                       
@@ -615,7 +619,7 @@ def generate_definitions():
                     di["Psets"]["Attributes"]["Properties"][c.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', reduce_description(to_str(c.markdown), trim=True))
                     di["Psets"]["Attributes"]["Properties"][c.name]["Package"] = to_str(item.package) # solely to split POT files
                     if type_values is None:
-                        type_values = type_to_values.get(type_name)
+                        type_values = TYPE_TO_VALUES.get(type_name)
                     if type_values:
                         di["Psets"]["Attributes"]["Properties"][c.name]["Values"] = []
                         for tv in type_values:
@@ -639,6 +643,7 @@ def generate_definitions():
                     di["Psets"]["Attributes"]["Properties"][c.name]["Package"] = to_str(item.package) # solely to split POT files
                     for tv in type_values:                   
                         # match the whole sentence containing the value, case insensitive
+                        # matches = re.findall(r"[^.;!,]*" + tv + r"[^.;!,]*", to_str(c.markdown), flags=re.IGNORECASE)
                         matches = re.findall(r"[^.;!,]*" + tv + r"[^.;!,]*", to_str(c.markdown), flags=re.IGNORECASE)
                         if matches:
                             description = clean(reduce_description(matches[0].strip()))  #the whole sentence explaining the value
@@ -695,7 +700,7 @@ unique_psets = set()
 for code, content in all_concepts.items(): 
     clas_def = annotate(content['Definition'])
     classes.append({
-        'Code': code,
+        'Code': code[0:CHAR_LIMIT],
         'Name': to_str(content['Name']) if to_str(content['Name']) else caps_control(clean(normalise((code[3:] if code.lower().startswith('ifc') else code))).title()),
         'Definition': clas_def,
         'ClassType': 'Class',
@@ -708,12 +713,10 @@ for code, content in all_concepts.items():
         classes[-1]['ParentClassCode'] = to_str(content['Parent'])
     if content['Description']:
         classes[-1]['Description'] = to_str(content['Description'])
-        to_translate.append({"msgid":code+"_DESCRIPTION","msgstr":classes[-1]['Description'],"package":content['Package']})
-    if content['RelatedIfcEntityNamesList']:
-        classes[-1]['RelatedIfcEntityNamesList'] = to_str(content['RelatedIfcEntityNamesList'])
+        to_translate.append({"msgid":code[0:CHAR_LIMIT]+"_DESCRIPTION","msgstr":classes[-1]['Description'],"package":content['Package']})
 
-    to_translate.append({"msgid":code,"msgstr":classes[-1]['Name'],"package":content['Package']})
-    to_translate.append({"msgid":code+"_DEFINITION","msgstr":clas_def,"package":content['Package']})
+    to_translate.append({"msgid":code[0:CHAR_LIMIT],"msgstr":classes[-1]['Name'],"package":content['Package']})
+    to_translate.append({"msgid":code[0:CHAR_LIMIT]+"_DEFINITION","msgstr":clas_def,"package":content['Package']})
 
     # list all ancestors (skip enums (any code that has at least three consecutive capital letters), they don't need to inherit any properties) 
     if re.search(r"[A-Z]{3}", code):
@@ -721,6 +724,8 @@ for code, content in all_concepts.items():
     else:
         ancestors = [code]
         ancestors = list_ancestors(code, all_concepts, ancestors)
+
+    unique_p_codes = set()
 
     # add properties (from this object and all its parents)
     for ancestor_name in ancestors:
@@ -730,21 +735,21 @@ for code, content in all_concepts.items():
             for pset_code, pset_content in ancestor['Psets'].items():
                 
                 # add PSet as GroupOfProperties class:
-                if not pset_code in unique_psets:
+                if not ((pset_code in unique_psets) or (pset_code == 'Attributes')):
                     unique_psets.add(pset_code)
                     psets.append({
-                        'Code': pset_code,
+                        'Code': pset_code[0:CHAR_LIMIT],
                         'Name': to_str(pset_content['Name']) if to_str(pset_content['Name']) else caps_control(clean(normalise(pset_code))).title(),
                         'Definition': annotate(pset_content['Definition']),
                         'ClassType': 'GroupOfProperties',
                         'ClassProperties': []
                     })
-                    to_translate.append({"msgid":pset_code,"msgstr":psets[-1]['Name'],"package":content['Package']})
-                    to_translate.append({"msgid":pset_code+"_DEFINITION","msgstr":psets[-1]['Definition'],"package":content['Package']})
-                    
+                    to_translate.append({"msgid":pset_code[0:CHAR_LIMIT],"msgstr":psets[-1]['Name'],"package":content['Package']})
+                    to_translate.append({"msgid":pset_code[0:CHAR_LIMIT]+"_DEFINITION","msgstr":psets[-1]['Definition'],"package":content['Package']})
+                
                 # add ClassProperties
                 for prop_code, prop_content in pset_content['Properties'].items():
-                    prop_code = prop_code
+                    prop_code = prop_code[0:CHAR_LIMIT]
                     name = to_str(prop_content['Name'])
                     if not name:
                         name = normalise(prop_code)
@@ -759,52 +764,57 @@ for code, content in all_concepts.items():
                         # p_code = prop_code+"_"+pset_code[5:51-len(prop_code)]+"..."
                         p_code = prop_code+"_from_"+re.sub('Pset_|Qto_','',pset_code)[:int((41-len(prop_code))/2)]+"..."+re.sub('Pset_|Qto_','',pset_code)[len(re.sub('Pset_|Qto_','',pset_code))-int((41-len(prop_code))/2):]
                     classProp = {                   
-                        "PropertyCode": prop_code,
-                        "Code": p_code,
-                        "PropertySet": pset_code
+                        "PropertyCode": prop_code[0:CHAR_LIMIT],
+                        "Code": p_code[0:CHAR_LIMIT],
+                        "PropertySet": pset_code[0:CHAR_LIMIT]
                         # Skip description and name as it should inherit from a Property.
                         # "Description": name + " – " + prop_def + ". IFC type: " + prop_content['Type'] + ". " + annotate(prop_content['Description']),
                         # "PropertyValueKind": prop_content['Type'],
                         }
                     
-                    classes[-1]['ClassProperties'].append(classProp)
-
-                    # also add those ClassProperties to the latest PSET (if that is the first instance of this PSET):
-                    if pset_code == psets[-1]['Code']:
-                        psets[-1]['ClassProperties'].append(classProp)
-
+                    # 
+                    if not p_code in unique_p_codes: 
+                        classes[-1]['ClassProperties'].append(classProp)
+                        unique_p_codes.add(p_code)
+                    try:
+                        if pset_code == psets[-1]['Code']:
+                            if not any(classProp['PropertyCode'] == cp.get('PropertyCode')[0:CHAR_LIMIT] for cp in psets[-1]['ClassProperties']):
+                                psets[-1]['ClassProperties'].append(classProp)
+                    except IndexError:
+                        pass
+                    
                     # add to properties list, not just classProp
                     if not prop_code in unique_props:
                         unique_props.add(prop_code)
-                        
-                        allowed_values = []
-                        if prop_content['Values']:
+
+                        props.append({                   
+                            "Code": prop_code[0:CHAR_LIMIT],
+                            "Name": name,
+                            "Definition": prop_def,
+                            "PropertyValueKind": to_str(prop_content['Kind'])
+                        })
+                        to_translate.append({"msgid":prop_code[0:CHAR_LIMIT],"msgstr":name,"package":content['Package']})
+                        to_translate.append({"msgid":prop_code[0:CHAR_LIMIT]+"_DEFINITION","msgstr":prop_def,"package":content['Package']})
+
+                        if prop_content['Values'] and prop_content['Type'].lower() != "boolean":
+                            allowed_values = []
                             for val in prop_content['Values']:
                                 descr = annotate(val['Description'])
                                 allowed_values.append({
-                                    'Code': val['Value'],
+                                    'Code': val['Value'][0:CHAR_LIMIT],
                                     'Value': val['Value'],
                                     'Description': descr
                                 })
-                                to_translate.append({"msgid":prop_code+"_"+val['Value'],"msgstr":descr,"package":content['Package']})
-
-                        props.append({                   
-                            "Code": prop_code,
-                            "Name": name,
-                            "Definition": prop_def,
-                            "PropertyValueKind": to_str(prop_content['Kind']),
-                            "AllowedValues": allowed_values
-                        })
-                        to_translate.append({"msgid":prop_code,"msgstr":name,"package":content['Package']})
-                        to_translate.append({"msgid":prop_code+"_DEFINITION","msgstr":prop_def,"package":content['Package']})
+                                to_translate.append({"msgid":prop_code[0:CHAR_LIMIT]+"_"+val['Value'],"msgstr":descr,"package":content['Package']})
+                            props[-1]['AllowedValues'] = allowed_values
 
                         if prop_content['Description']:
                             props[-1]['Description'] = annotate(prop_content['Description'])
-                            to_translate.append({"msgid":prop_code+"_DESCRIPTION","msgstr":props[-1]['Description'],"package":content['Package']})
+                            to_translate.append({"msgid":prop_code[0:CHAR_LIMIT]+"_DESCRIPTION","msgstr":props[-1]['Description'],"package":content['Package']})
 
                         if prop_content['Type'].lower() == "string":
                             props[-1]['DataType'] = "String"
-                        elif prop_content['Type'].lower() == "real":
+                        elif prop_content['Type'].lower() in ("real","number"):
                             props[-1]['DataType'] = "Real"
                         elif prop_content['Type'].lower() == "integer":
                             props[-1]['DataType'] = "Integer"
@@ -900,7 +910,7 @@ po_files = pot_dict()
 i = 0
 pos = set()
 id_set = set()
-# TODO make sure we only have unique values in POT files
+
 for t in to_translate:
     if isinstance(t['package'], defaultdict):
         t['package'] = to_str(t['package'])
@@ -910,7 +920,7 @@ for t in to_translate:
     po_file = po_files[t['package']]
 
     if t['msgid'] and t['msgstr']:   # skip empty strings
-        if not t['msgid'] in  id_set:
+        if not t['msgid'] in id_set:
             id_set.add(t['msgid'])
             print("msgid", quote(t['msgid']),  file=po_file)
             print("msgstr", quote(t['msgstr']),  file=po_file)

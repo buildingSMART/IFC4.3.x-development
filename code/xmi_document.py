@@ -305,6 +305,8 @@ class xmi_document:
         self.extract_associations()
         self.extract_associations(concepts=True)
         self.extract_order()
+        self.extract_guids()
+        self.extract_deprecated()
         
         self.should_translate_pset_types = True
                 
@@ -421,7 +423,13 @@ class xmi_document:
 
     def extract_order(self):
         self.order = {k: int(v) for k, v in self.xmi.tags["ExpressOrdering"].items()}
-    
+
+    def extract_guids(self):
+        self.guids = {k: v for k, v in self.xmi.tags["IFCDOC_GUID"].items()}
+
+    def extract_deprecated(self):
+        self.deprecated = [k for k, v in self.xmi.tags["deprecated"].items()]
+
     def __iter__(self):
         """
         A generator that yields tuples of <a, b> with

@@ -66,10 +66,10 @@ WORDS_TO_CATCH = sorted(['current','cost','of','switch','order','recovery','load
                          'speed','fan','bypass','valve','dampers','wet','bulb','reset','exiting','folding','curtain','closed','circuit','dry','open','indicator','shunting','route',
                          'derail','departure','starting','signal','repeating','obstruction','hump','auxiliary','home','distant','block','blocking','approach','mesh','push',
                          'pushing', 'bidirectional','directional','right','left','damper','balancing','combination','earthquake','relay','interface','face','nail','loss',
-                         'track','mounted','unidirectional','blast','damper','centrifugal','backward','inclined','vane','axial','propellor','diatomaceous','earth','reverse','osmosis',
+                         'mounted','unidirectional','blast','damper','centrifugal','backward','inclined','vane','axial','propellor','diatomaceous','earth','reverse','osmosis',
                          'liquefied','petroleum','lightning','shaft','soak','slurry','collector','with','check','commercial','propane','butane','atmospheric','vacuum','wetted',
-                         'function','complementary','circuit','fault','lower','inglimit','control','pulse','converter','running','average','upper','limit','control','lower','band',
-                         'position','frost','automatic','www','continuous','positioner','positioning','source','sink','lighting','profile','enumerated','content','extinguishing',
+                         'function','complementary','circuit','fault','lower','inglimit','pulse','converter','running','average','upper','limit','lower','band','dimmer',
+                         'position','frost','automatic','www','continuous','positioner','positioning','source','sink','profile','enumerated','content','extinguishing',
                          'photovoltaic','soils','between','central','reserve','shoulder','intersection','parking','passing','audiovisual','shape','co2','conduct','conductor',
                          'conductance','conductivity','obstacle','movement','moisture','radiation','radioactivity','rain','smoke','turnout','closure','wind','aggregates','aggregate',
                          'transporting','roofing','recording','stitch','wire','pair','router','tungsten','filament','gateway','selector','momentary','toggle','vertical','inline',
@@ -77,16 +77,59 @@ WORDS_TO_CATCH = sorted(['current','cost','of','switch','order','recovery','load
                          'brightness','driver','sectional','rated','pairs','diameter','fans','supported','stations','carriers','transceivers','currents','classes','relays','curves',
                          'plates','corrugated','tracks','conductors','building','operator','owner','engineer','manager','field','construction','history','weather','station',
                          'consumption','photochemical','ozone','renewable','energy','resource','depletion','stratospheric','layer','destruction','reheat','reference','components',
-                         'constraint','name','type','names','types','lrm','relative'], key=len)[::-1]
+                         'constraint','name','type','names','types','lrm','relative','window','dome','heavy','applicable','axis','placement','cooker','freestanding','heater','subgrade',
+                         'inductor','packet','remote','radio','radioactive','above','dilation','winder','equidistant','switch','feed','pipe','pipes','rotary','hollow'], key=len)[::-1]
+
+EXCLUDED_ENTITIES = ['IfcApplication','IfcOwnerHistory','IfcTable','IfcTableColumn','IfcTableRow','IfcChangeActionEnum','IfcGloballyUniqueId','IfcStateEnum','IfcShell','IfcAdvancedFace',
+                     'IfcClosedShell','IfcConnectedFaceSet','IfcEdge','IfcEdgeCurve','IfcEdgeLoop','IfcFace','IfcFaceBound','IfcFaceOuterBound','IfcFaceSurface','IfcLoop','IfcOpenShell',
+                     'IfcOrientedEdge','IfcPath','IfcPolyLoop','IfcSubedge','IfcTopologicalRepresentationItem','IfcVertex','IfcVertexLoop','IfcVertexPoint','IfcBoundaryNodeConditionWarping',
+                     'IfcStructuralLoadConfiguration','IfcStructuralLoadOrResult','IfcStructuralLoadSingleDisplacement','IfcStructuralLoadSingleDisplacementDistortion',
+                     'IfcStructuralLoadSingleForceWarping','IfcSurfaceReinforcementArea','IfcGeometricProjectionEnum','IfcGlobalOrLocalEnum','IfcWellKnownTextLiteral',
+                     'IfcCoordinateOperation','IfcCoordinateReferenceSystem','IfcGeographicCRS','IfcGeometricRepresentationContext','IfcGeometricRepresentationSubContext','IfcMapConversion',
+                     'IfcMapConversionScaled','IfcMaterialDefinitionRepresentation','IfcProductDefinitionShape','IfcProductRepresentation','IfcProjectedCRS','IfcRepresentation',
+                     'IfcRepresentationContext','IfcRigidOperation','IfcShapeAspect','IfcShapeModel','IfcShapeRepresentation','IfcStyleModel','IfcStyledRepresentation','IfcTopologyRepresentation',
+                     'IfcWellKnownText','IfcCurveInterpolationEnum','IfcExtendedProperties','IfcPreDefinedProperties','IfcProfileTypeEnum','IfcReinforcingBarRoleEnum','IfcReinforcingBarSurfaceEnum',
+                     'IfcSectionTypeEnum','IfcArbitraryProfileDefWithVoids','IfcProfileProperties','IfcReinforcementBarProperties','IfcSectionProperties','IfcSectionReinforcementProperties',
+                     'IfcLayeredItem','IfcLightDistributionCurveEnum','IfcLightEmissionSourceEnum','IfcLightDistributionData','IfcLightIntensityDistribution','IfcLightSourceAmbient',
+                     'IfcLightSourceDirectional','IfcLightSourceGoniometric','IfcLightSourcePositional','IfcLightSourceSpot','IfcPresentationLayerAssignment','IfcPresentationLayerWithStyle',
+                     'IfcBoxAlignment','IfcTextPath','IfcAnnotationFillArea','IfcPlanarBox','IfcPlanarExtent','IfcPresentationItem','IfcTextLiteral','IfcTextLiteralWithExtent','IfcBinary',
+                     'IfcBoolean','IfcDerivedUnitEnum','IfcIdentifier','IfcInteger','IfcLabel','IfcLogical','IfcPHMeasure','IfcPositiveInteger','IfcReal','IfcSIPrefix','IfcSIUnitName','IfcText',
+                     'IfcUnitEnum','IfcConversionBasedUnitWithOffset','IfcDerivedUnitElement','IfcDimensionalExponents','IfcUnitAssignment','IfcDirectionSenseEnum','IfcLayerSetDirectionEnum',
+                     'IfcArcIndex','IfcAxis2Placement','IfcBSplineCurveForm','IfcBSplineSurfaceForm','IfcCurveOnSurface','IfcDimensionCount','IfcKnotType','IfcLineIndex',
+                     'IfcPreferredSurfaceCurveRepresentation','IfcTransitionCode','IfcVectorOrDirection','IfcAxis1Placement','IfcAxis2Placement2D','IfcAxis2Placement3D','IfcAxis2PlacementLinear',
+                     'IfcBSplineCurveWithKnots','IfcDirection','IfcBSplineSurface','IfcBSplineSurfaceWithKnots','IfcBoundedSurface','IfcClothoid','IfcCompositeCurveOnSurface',
+                     'IfcCompositeCurveSegment','IfcConic','IfcCosineSpiral','IfcCurveBoundedPlane','IfcCurveBoundedSurface','IfcCurveSegment','IfcCylindricalSurface','IfcElementarySurface',
+                     'IfcGeometricRepresentationItem','IfcMappedItem','IfcOffsetCurve2D','IfcOffsetCurve3D','IfcOffsetCurveByDistances','IfcPlacement','IfcPointByDistanceExpression',
+                     'IfcPointOnSurface','IfcRationalBSplineCurveWithKnots','IfcRationalBSplineSurfaceWithKnots','IfcRectangularTrimmedSurface','IfcReparametrisedCompositeCurveSegment',
+                     'IfcRepresentationItem','IfcRepresentationMap','IfcSecondOrderPolynomialSpiral','IfcSegment','IfcSeventhOrderPolynomialSpiral','IfcSineSpiral','IfcSphericalSurface',
+                     'IfcSurfaceOfLinearExtrusion','IfcSurfaceOfRevolution','IfcSweptSurface','IfcThirdOrderPolynomialSpiral','IfcToroidalSurface','IfcBooleanOperand','IfcBooleanOperator',
+                     'IfcAdvancedBrep','IfcAdvancedBrepWithVoids','IfcBlock','IfcBooleanClippingResult','IfcBooleanResult','IfcBoundingBox','IfcBoxedHalfSpace','IfcCsgPrimitive3D',
+                     'IfcExtrudedAreaSolidTapered','IfcFaceBasedSurfaceModel','IfcFacetedBrep','IfcFacetedBrepWithVoids','IfcGeometricCurveSet','IfcGeometricSet','IfcIndexedPolygonalFace',
+                     'IfcIndexedPolygonalFaceWithVoids','IfcManifoldSolidBrep','IfcPolygonalBoundedHalfSpace','IfcPolygonalFaceSet','IfcRectangularPyramid','IfcRevolvedAreaSolidTapered',
+                     'IfcRightCircularCone','IfcRightCircularCylinder','IfcSectionedSolidHorizontal','IfcSectionedSpine','IfcSectionedSurface','IfcShellBasedSurfaceModel','IfcSolidModel',
+                     'IfcSphere','IfcSweptDiskSolidPolygonal','IfcTessellatedFaceSet','IfcTessellatedItem','IfcTriangulatedFaceSet','IfcTriangulatedIrregularNetwork','IfcAlignmentCantSegmentTypeEnum',
+                     'IfcAlignmentHorizontalSegmentTypeEnum','IfcAlignmentVerticalSegmentTypeEnum','IfcPointOrVertexPoint','IfcSolidOrShell','IfcSurfaceOrFaceSurface','IfcAlignmentCantSegment',
+                     'IfcAlignmentHorizontalSegment','IfcAlignmentParameterSegment','IfcAlignmentVerticalSegment','IfcGridAxis','IfcGridPlacement','IfcLinearPlacement','IfcLocalPlacement',
+                     'IfcObjectPlacement','IfcVirtualGridIntersection','IfcDocumentConfidentialityEnum','IfcLanguageId','IfcDocumentStatusEnum','IfcClassification','IfcDataOriginEnum','IfcDate',
+                     'IfcDateTime','IfcDuration','IfcRecurrenceTypeEnum','IfcTaskDurationEnum','IfcTime','IfcTimeSeriesDataTypeEnum','IfcTimeStamp','IfcEventTime','IfcIrregularTimeSeries','IfcLagTime',
+                     'IfcRecurrencePattern','IfcRegularTimeSeries','IfcResourceTime','IfcSchedulingTime','IfcTaskTime','IfcTaskTimeRecurring','IfcTimePeriod','IfcTimeSeries','IfcWorkTime',
+                     'IfcArithmeticOperatorEnum','IfcBenchmarkEnum','IfcConstraintEnum','IfcLogicalOperatorEnum','IfcObjectiveEnum','IfcConstraint','IfcMetric','IfcObjective','IfcApproval',
+                     'IfcAddressTypeEnum','IfcRoleEnum','IfcAddressTypeEnum','IfcRoleEnum','IfcActorRole','IfcAddress','IfcOrganization','IfcPerson','IfcPersonAndOrganization','IfcPostalAddress',
+                     'IfcTelecomAddress','IfcCurve','IfcCircle','IfcEllipse','IfcLine','IfcPlane','IfcPoint','IfcPolyline','IfcSpiral','IfcSurface','IfcVector']
+
+# ALLOW:  IfcRoot, IfcLightSource, IfcStructuralLoad, IfcStructuralLoadLinearForce, IfcStructuralLoadPlanarForce, IfcStructuralLoadSingleForce, IfcStructuralLoadStatic, IfcStructuralLoadTemperature
 
 ALL_CAPS = ['ups','gprs','rs','am','gps','dc','tn','url','ac','co','co2','chp','id','led','oled','ole','gfa','tv','msc','ppm','iot','ocl','lrm','cgt','teu','tmp','std','gsm','cdma','lte','td','scdma',
             'wcdma','sc','mp','bm','ol','ep','ir','www','ip','ph','usb', 'ii', 'iii','url','uri','ssl','ffl']
+
 SMALL_CAPS = ['for','of','and','to','with','or','at']
+
 SUBSTITUTIONS = {
     "Rel ": "Relation: ",
     "Qto_": "Quantity set: ",
     "Pset_": "Property set: ",
 }
+
 TYPE_TO_VALUES= {
     # 'boolean': ["TRUE","FALSE"],
     'logical': ["TRUE","FALSE","UNKNOWN"],
@@ -322,11 +365,11 @@ def filter_concepts(di):
     #     if v.get("Parent"):
     #         children[v.get("Parent")].append(k)
 
-    # def parents(k):
-    #     yield k
-    #     v = di.get(k)
-    #     if v and v.get('Parent'):
-    #         yield from parents(v.get('Parent'))
+    def parents(k):
+        yield k
+        v = di.get(k)
+        if v and v.get('Parent'):
+            yield from parents(v.get('Parent'))
             
     # def child_or_self_has_psets(k):
     #     ps = di.get(k, {}).get("Psets")
@@ -346,15 +389,17 @@ def filter_concepts(di):
     #     return has_child_
 
     def should_include(k, v):
-        # TODO PREVIOUSLY return ("IfcProduct" in parents(k)) or has_child("IfcProduct")(k) or child_or_self_has_psets(k) 
+        # PREVIOUSLY return ("IfcProduct" in parents(k)) or has_child("IfcProduct")(k) or child_or_self_has_psets(k) 
         # but decided to widen to also include all non-products that have psets, like IfcActor.
         # return ("IfcRoot" in parents(k)) or ("IfcMaterialDefinition" in parents(k)) or ("IfcProfileDef" in parents(k)) or child_or_self_has_psets(k)
-        # only skipping relations
+        # Now skipping relations ('IfcRelAssociatesClassification'), types ('IfcWallType'), property definitions ('IfcPropertySingleValue'), Resources and some other abstract concepts. 
         result = False
-        if not (k.startswith('IfcRel') or k.endswith('Relationship')) :
-            result = True 
+        if not (k.startswith(('IfcRel','IfcProperty','IfcProperty','IfcQuantity','IfcConnection','IfcCartesian')) or k.endswith(('Relationship','Type','Definition','Usage','Property','Template','Resource','Select','Measure','Condition','ProfileDef','Value','Property','Quantity','Unit','Curve','Number','Reference','Information','Solid')) or any(x in parents(k) for x in ["IfcPropertyAbstraction","IfcConstraint","IfcRepresentationItem","IfcPresentationItem","IfcPresentationStyle","IfcPropertyDefinition","IfcTypeObject","IfcMaterialDefinition","IfcMaterialUsageDefinition"]) or any(z.endswith("Resource") for z in parents(k)) or (k in EXCLUDED_ENTITIES)):
+            result = True
+        # bypass for selected classes:
+        elif k in ('IfcMaterial'): #,'IfcLightSource','IfcBoundingBox','IfcPoint','IfcCurve','IfcSegment','IfcDirection','IfcSurface','IfcVector'):
+            result = True
         return result
-        
     return {k: v for k, v in di.items() if should_include(k, v)}
 
 
@@ -828,17 +873,6 @@ for code, content in all_concepts.items():
 
 classes.extend(psets)
 
-### append material category list stated implicitly in IfcMaterial:
-for m in ['concrete', 'steel', 'aluminium', 'block', 'brick', 'stone', 'wood', 'glass', 'gypsum', 'plastic', 'earth']:
-    classes.append({
-        'Code': m,
-        'Name': m.title(),
-        'Description': 'One of the categories of common building materials listed in IfcMaterial definition in IFC.',
-        'ClassType': 'Material',
-        'RelatedIfcEntityNamesList': ['IfcMaterial']
-    })
-    to_translate.append({"msgid":m,"msgstr":m.title(),"package":"UNSPECIFIED_PACKAGE"})
-    to_translate.append({"msgid":m+"_DESCRIPTION","msgstr":classes[-1]['Description'],"package":"UNSPECIFIED_PACKAGE"})
 
 
 ### Generate IFC.json file:

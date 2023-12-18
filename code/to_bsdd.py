@@ -367,18 +367,18 @@ def guid_by_id(id):
     return guid
 
 
-def is_depracated(elem):
+def is_deprecated(elem):
     """ Check if the element is deprecated in that IFC version or not. """
-    depracated = False
+    deprecated = False
     if elem.id in xmi_doc.deprecated:
-        depracated = True
+        deprecated = True
     # some objects don't have deprecated status but their markdown says they are deprecated   
     try: 
         if "DEPRECAT" in elem.markdown:
-            depracated = True
+            deprecated = True
     except (AttributeError, TypeError):
         pass
-    return depracated
+    return deprecated
 
 
 def generate_definitions():
@@ -427,7 +427,7 @@ def generate_definitions():
 
         item.name = to_str(item.name)
 
-        if not is_depracated(item):
+        if not is_deprecated(item):
             if item.type in ("ENUM","PENUM"):
                 enumerations[item.name] = item            
             elif item.type == "PSET":
@@ -501,7 +501,7 @@ def generate_definitions():
             
             for a, (nm, (ty_ty_arg)) in zip(item.children, item.definition):
 
-                if not is_depracated(a):
+                if not is_deprecated(a):
                     if item.stereotype == "QSET":
                         type_name = "real"
                         type_values = None
@@ -573,7 +573,7 @@ def generate_definitions():
                            
             c.name = reduce_description(c.name)
 
-            if not is_depracated(c):
+            if not is_deprecated(c):
                 try:
                     node = c.node
                     if node.xml.tagName == "attribute":

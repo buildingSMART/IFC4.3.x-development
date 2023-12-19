@@ -903,7 +903,8 @@ with open(os.path.join(output_dir, "IFC.json"), 'w', encoding='utf-8') as f :
 
 logging.info("Saved IFC.json file with %s classes and %s properties." % (len(classes), len(props)))
 
-### Generate collection of .pot files in the "pot" folder:
+
+### Generate a collection of .pot files in the "pot" folder:
 
 class pot_file:
 
@@ -923,7 +924,6 @@ msgstr ""
 "Language-Team: buildingSMART community\\n"
 """.format(year=now.strftime("%Y"), date=now.strftime(r"%Y-%m-%d"), time=now.strftime("%H:%M")), file=self.f)
         
-
     def __getattr__(self, k):
         return getattr(self.f, k)
         

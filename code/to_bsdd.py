@@ -196,7 +196,7 @@ def reduce_description(s, trim=True):
     # sx = re.sub('e.g.', "", re.sub('i.e.', "", re.sub('etc.', "", s9)))
     # if len(sx.split(".")) > 6:
     #     s9 = s9.split(sx.split(".")[6])[0] + "[IT WAS CUT HERE!]"
-    return s10
+    return clean(s10)
 
 
 def caps_control(s):
@@ -314,8 +314,9 @@ def normalise(s):
 def clean(s):
     """ format the text by removing unwanted characters."""    
     # remove all redundant characters (except those listed):
-    clean = ''.join(['', c][c.isalnum() or c in ':.,()-+ —=;α°_/!?$%@<>\*'] for c in to_str(s))
-    return re.sub(MULTIPLE_SPACE_PATTERN, ' ', clean).strip()
+    cleaned = ''.join(['', c][c.isalnum() or c in ':.,()-+ —=;α°_/!?$%@<>\'"\\*'] for c in to_str(s))
+    cleaned = re.sub('"',"'", cleaned)
+    return re.sub(MULTIPLE_SPACE_PATTERN, ' ', cleaned).strip()
     
 
 def generalization(pe):
@@ -600,7 +601,7 @@ def generate_definitions():
                             # match the whole sentence containing the value, case insensitive
                             matches = re.findall(r"[^.;!,]*" + tv + r"[^.;!,]*", to_str(a.markdown), flags=re.IGNORECASE)
                             if matches:
-                                description = clean(reduce_description(matches[0].strip()))  #the whole sentence explaining the value
+                                description = reduce_description(matches[0].strip())  #the whole sentence explaining the value
                             else:
                                 description = caps_control(clean(normalise(split_words(tv))).title())  #the value but readable
                             di["Psets"][item.name]["Properties"][a.name]["Values"].append({"Value": tv,"Description":description,"Package":to_str(item.package)})
@@ -672,7 +673,7 @@ def generate_definitions():
                             # matches = re.findall(r"[^.;!,]*" + tv + r"[^.;!,]*", to_str(c.markdown), flags=re.IGNORECASE)
                             matches = re.findall(r"[^.;!,]*" + tv + r"[^.;!,]*", to_str(c.markdown), flags=re.IGNORECASE)
                             if matches:
-                                description = clean(reduce_description(matches[0].strip()))  #the whole sentence explaining the value
+                                description = reduce_description(matches[0].strip())  #the whole sentence explaining the value
                             else:
                                 description = caps_control(clean(normalise(split_words(tv))).title())  #the value but readable
                             di["Psets"]["Attributes"]["Properties"][c.name]["Values"].append({"Value": tv,"Description":description,"Package":to_str(item.package)})                           
@@ -691,7 +692,7 @@ def generate_definitions():
                         # matches = re.findall(r"[^.;!,]*" + tv + r"[^.;!,]*", to_str(c.markdown), flags=re.IGNORECASE)
                         matches = re.findall(r"[^.;!,]*" + tv + r"[^.;!,]*", to_str(c.markdown), flags=re.IGNORECASE)
                         if matches:
-                            description = clean(reduce_description(matches[0].strip()))  #the whole sentence explaining the value
+                            description = reduce_description(matches[0].strip())  #the whole sentence explaining the value
                         else:
                             description = caps_control(clean(normalise(split_words(tv))).title())  #the value but readable
                         di["Psets"]["Attributes"]["Properties"][c.name]["Values"].append({"Value": tv,"Description":description,"Package":to_str(item.package)})

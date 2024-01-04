@@ -78,7 +78,8 @@ WORDS_TO_CATCH = sorted(['current','cost','of','switch','order','recovery','load
                          'plates','corrugated','tracks','conductors','building','operator','owner','engineer','manager','field','construction','history','weather','station',
                          'consumption','photochemical','ozone','renewable','energy','resource','depletion','stratospheric','layer','destruction','reheat','reference','components',
                          'constraint','name','type','names','types','lrm','relative','window','dome','heavy','applicable','axis','placement','cooker','freestanding','heater','subgrade',
-                         'inductor','packet','remote','radio','radioactive','above','dilation','winder','equidistant','switch','feed','pipe','pipes','rotary','hollow'], key=len)[::-1]
+                         'inductor','packet','remote','radio','radioactive','above','dilation','winder','equidistant','switch','feed','pipe','pipes','rotary','hollow','humidity',
+                         'concentration','identifier','level','cosine','helmert','sine','viennese','bloss','location','global','local','thickness','direction'], key=len)[::-1]
 
 EXCLUDED_ENTITIES = ['IfcApplication','IfcOwnerHistory','IfcTable','IfcTableColumn','IfcTableRow','IfcChangeActionEnum','IfcGloballyUniqueId','IfcStateEnum','IfcShell','IfcAdvancedFace',
                      'IfcClosedShell','IfcConnectedFaceSet','IfcEdge','IfcEdgeCurve','IfcEdgeLoop','IfcFace','IfcFaceBound','IfcFaceOuterBound','IfcFaceSurface','IfcLoop','IfcOpenShell',
@@ -120,7 +121,7 @@ EXCLUDED_ENTITIES = ['IfcApplication','IfcOwnerHistory','IfcTable','IfcTableColu
 # ALLOW:  IfcRoot, IfcLightSource, IfcStructuralLoad, IfcStructuralLoadLinearForce, IfcStructuralLoadPlanarForce, IfcStructuralLoadSingleForce, IfcStructuralLoadStatic, IfcStructuralLoadTemperature
 
 ALL_CAPS = ['ups','gprs','rs','am','gps','dc','tn','url','ac','co','co2','chp','id','led','oled','ole','gfa','tv','msc','ppm','iot','ocl','lrm','cgt','teu','tmp','std','gsm','cdma','lte','td','scdma',
-            'wcdma','sc','mp','bm','ol','ep','ir','www','ip','ph','usb', 'ii', 'iii','url','uri','ssl','ffl']
+            'wcdma','sc','mp','bm','ol','ep','ir','www','ip','ph','usb', 'ii', 'iii','url','uri','ssl','ffl','ty','tz','tx']
 
 SMALL_CAPS = ['for','of','and','to','with','or','at']
 
@@ -171,32 +172,36 @@ def get_path(xmi_node):
 def reduce_description(s, trim=True):
     """ Remove all the unnecesarry characters, strip <html sections>, and trim the description to bare minimum. """
     try:
-        s1 = html.unescape(s)
+        s = html.unescape(s)
     except TypeError:
         # error when name contains link, for example: "https://github.com/buildingSMART/IFC4.3.x-development/edit/master/docs/schemas/core/IfcProductExtension/Types/IfcAlignmentTypeEnum.md#L0 has no content"
-        s1 = ''
+        s = ''
     if trim:
-        # split and remove on keywords:
-        i = min([x for x in [s1.find('NOTE'), s1.find('DIAGRAM'), s1.find('CHANGE'), s1.find('IFC4'), s1.find('HISTORY'), s1.find('REFERENCE'), s1.find('EXAMPLE'), s1.find('DEPRECATION'), 1e5] if x >= 0])
+        # split and remove on keywords:        
+        j = re.search(r'\$\$', s).start() if re.search(r'\$\$', s) else -1
+        k = re.search(r'(Base|General) formula', s).start() if re.search(r'(Base|General) formula', s) else -1
+        i = min([x for x in [s.find('NOTE'), s.find('DIAGRAM'), s.find('CHANGE'), s.find('IFC4'), s.find('HISTORY'), s.find('REFERENCE'), s.find('EXAMPLE'), s.find('DEPRECATION'), j, k, 1e5] if x >= 0])
         if i > 0 and i != 1e5:
-            s1 = s1[:i]
+            s = s[:i]
         elif i==0:
             # some descriptions start with History or Note. Don't want them.
-            s1 = ""
-    s2 = re.sub('\n', '; ', s1)
-    s3 = re.sub(':', ': ', s2)
-    s4 = re.sub(HTML_TAG_PATTERN, ' ', s3)
-    s5 = re.sub(CURLY_BRACKET_PATTERN, ' ', s4)
-    s6 = re.sub(r'SELF\\', '', s5)
-    s7 = re.sub(r"\s+", " ", s6)
-    s8 = re.sub(FIGURE_PATTERN, '', s7)
-    s9 = re.sub(LIST_PATTERN, '', s8)
-    s10 = re.sub(MULTIPLE_SPACE_PATTERN, ' ', s9).strip()
+            s = ""
+    s = re.sub('[*]{2}', ' ', s)
+    s = re.sub('\n', '; ', s)
+    s = re.sub(':', ': ', s)
+    s = re.sub(HTML_TAG_PATTERN, ' ', s)
+    s = re.sub(CURLY_BRACKET_PATTERN, ' ', s)
+    s = re.sub(r'SELF\\', '', s)
+    s = re.sub(r"\s+", " ", s)
+    s = re.sub(FIGURE_PATTERN, '', s)
+    s = re.sub(LIST_PATTERN, '', s)
+    s = re.sub(MULTIPLE_SPACE_PATTERN, ' ', s).strip()
+    s = re.sub(r'(?<!\.)\.\.(?!\.)', '.', s).strip()
     # TODO too long description...
     # sx = re.sub('e.g.', "", re.sub('i.e.', "", re.sub('etc.', "", s9)))
     # if len(sx.split(".")) > 6:
     #     s9 = s9.split(sx.split(".")[6])[0] + "[IT WAS CUT HERE!]"
-    return clean(s10)
+    return clean(s)
 
 
 def caps_control(s):
@@ -483,7 +488,6 @@ def generate_definitions():
                 # add human-readable name
                 di["Name"] = caps_control(clean(normalise(re.sub("Pset_|Qto_", "", item.name))).title())
                 di["Definition"] = reduce_description(to_str(item.markdown_definition), trim=True)
-            elif item.type == "ENTITY":
                 by_id[item.id] = di = classes[item.name]
                 st = item.meta.get('supertypes', [])
                 if st:
@@ -496,10 +500,10 @@ def generate_definitions():
             # skipping: ('FUNCTION','SELECT','RULE','TYPE')
             di["Package"] = to_str(item.package) # solely to split POT files
 
-    ### process all found entities 
+    ### process all found predefined types (entities) 
 
     for item in entities:
-        
+
         if "IfcTypeObject" in xmi_doc.supertypes(item.id):
             continue
     
@@ -883,7 +887,7 @@ bsdd_data = {
         'OrganizationCode': 'buildingsmart',
         'DictionaryCode': 'ifc',
         'DictionaryName': 'IFC',
-        'DictionaryVersion': '4.3.1',
+        'DictionaryVersion': '4.3',
         'LanguageIsoCode': 'EN',
         'LanguageOnly': False,
         'UseOwnUri': False,

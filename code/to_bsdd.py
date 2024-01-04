@@ -79,7 +79,7 @@ WORDS_TO_CATCH = sorted(['current','cost','of','switch','order','recovery','load
                          'consumption','photochemical','ozone','renewable','energy','resource','depletion','stratospheric','layer','destruction','reheat','reference','components',
                          'constraint','name','type','names','types','lrm','relative','window','dome','heavy','applicable','axis','placement','cooker','freestanding','heater','subgrade',
                          'inductor','packet','remote','radio','radioactive','above','dilation','winder','equidistant','switch','feed','pipe','pipes','rotary','hollow','humidity',
-                         'concentration','identifier','level','cosine','helmert','sine','viennese','bloss','location','global','local','thickness','direction'], key=len)[::-1]
+                         'concentration','identifier','level','cosine','helmert','sine','viennese','bloss','location','global','local','thickness','direction','fluorescent'], key=len)[::-1]
 
 EXCLUDED_ENTITIES = ['IfcApplication','IfcOwnerHistory','IfcTable','IfcTableColumn','IfcTableRow','IfcChangeActionEnum','IfcGloballyUniqueId','IfcStateEnum','IfcShell','IfcAdvancedFace',
                      'IfcClosedShell','IfcConnectedFaceSet','IfcEdge','IfcEdgeCurve','IfcEdgeLoop','IfcFace','IfcFaceBound','IfcFaceOuterBound','IfcFaceSurface','IfcLoop','IfcOpenShell',
@@ -482,12 +482,14 @@ def generate_definitions():
             if item.type in ("ENUM","PENUM"):
                 enumerations[item.name] = item            
             elif item.type == "PSET":
+                by_id[item.id] = di = classes[item.name]
                 psets.append(item)
                 stereo = (item.node/"properties")[0].stereotype
                 pset_counts_by_stereo[stereo] += 1
                 # add human-readable name
                 di["Name"] = caps_control(clean(normalise(re.sub("Pset_|Qto_", "", item.name))).title())
                 di["Definition"] = reduce_description(to_str(item.markdown_definition), trim=True)
+            elif item.type == "ENTITY":                
                 by_id[item.id] = di = classes[item.name]
                 st = item.meta.get('supertypes', [])
                 if st:
@@ -525,8 +527,8 @@ def generate_definitions():
 
     ### process all found property sets 
 
-    for item in psets:
-        refs = set(item.meta.get('refs') or [])
+    for pset in psets:
+        refs = set(pset.meta.get('refs') or [])
         
         for id in refs:
         
@@ -538,21 +540,21 @@ def generate_definitions():
                 assert False
                 continue
             
+            # find the relevant item (dictionary)
             di = by_id.get(id)
-
             if di is None:
                 try:
                     log_attr_2 = xmi_doc.xmi.by_id[id].name
+                    logging.warning("for %s entity %s not emitted" % (pset.name, log_attr_2))
                 except KeyError:
                     log_attr_2 = id
                     logging.warning("id %s not found" % id)
-                logging.warning("for %s entity %s not emitted" % (item.name, log_attr_2))
                 continue
             
-            for a, (nm, (ty_ty_arg)) in zip(item.children, item.definition):
+            for a, (nm, (ty_ty_arg)) in zip(pset.children, pset.definition):
 
                 if not is_deprecated(a):
-                    if item.stereotype == "QSET":
+                    if pset.stereotype == "QSET":
                         type_name = "real"
                         type_values = None
                         kind_name = 'Single'
@@ -578,29 +580,29 @@ def generate_definitions():
                                 kind_name = 'Range'
                             elif ty == "PropertyReferenceValue":
                                 kind_name = 'Complex'
-                                di["Psets"][item.name]["Properties"][a.name]["Description"] = "Technical note: this is a specific property from IFC that takes as its value a reference to %s. Read the IFC documentation for more information." % type_name
+                                di["Psets"][pset.name]["Properties"][a.name]["Description"] = "Technical note: this is a specific property from IFC that takes as its value a reference to %s. Read the IFC documentation for more information." % type_name
                             elif ty == "PropertyListValue":
                                 kind_name = 'List'
                             elif ty == "PropertyTableValue":
                                 kind_name = 'Complex'
-                                di["Psets"][item.name]["Properties"][a.name]["Description"] = "Technical note: this is a specific property from IFC that takes a table as its value. That table has two columns (lists), one with definitions and other for defined values. Read the IFC documentation for more information."
+                                di["Psets"][pset.name]["Properties"][a.name]["Description"] = "Technical note: this is a specific property from IFC that takes a table as its value. That table has two columns (lists), one with definitions and other for defined values. Read the IFC documentation for more information."
                             else:
-                                logging.warning("%s.%s of type %s <%s> not mapped" % (item.name, nm, ty, ",".join(map(lambda kv: "=".join(kv), ty_arg.items()))))
+                                logging.warning("%s.%s of type %s <%s> not mapped" % (pset.name, nm, ty, ",".join(map(lambda kv: "=".join(kv), ty_arg.items()))))
                                 continue
 
-                    di["Psets"][item.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', reduce_description(to_str(item.markdown_definition), trim=True))
+                    di["Psets"][pset.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', reduce_description(to_str(pset.markdown_definition), trim=True))
                     
-                    di["Psets"][item.name]["Properties"][a.name]["Type"] = type_name
-                    di["Psets"][item.name]["Properties"][a.name]["Name"] = caps_control(clean(split_words(normalise(a.name))).title())
+                    di["Psets"][pset.name]["Properties"][a.name]["Type"] = type_name
+                    di["Psets"][pset.name]["Properties"][a.name]["Name"] = caps_control(clean(split_words(normalise(a.name))).title())
                     # remove value explanation from the definition
-                    di["Psets"][item.name]["Properties"][a.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', reduce_description(to_str(a.markdown), trim=True))
-                    di["Psets"][item.name]["Properties"][a.name]["Kind"] = kind_name
-                    di["Psets"][item.name]["Properties"][a.name]["Package"] = to_str(item.package) # solely to split POT files
+                    di["Psets"][pset.name]["Properties"][a.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', reduce_description(to_str(a.markdown), trim=True))
+                    di["Psets"][pset.name]["Properties"][a.name]["Kind"] = kind_name
+                    di["Psets"][pset.name]["Properties"][a.name]["Package"] = to_str(pset.package) # solely to split POT files
 
                     if type_values is None:
                         type_values = TYPE_TO_VALUES.get(type_name)
                     if type_values:
-                        di["Psets"][item.name]["Properties"][a.name]["Values"] = []
+                        di["Psets"][pset.name]["Properties"][a.name]["Values"] = []
                         for tv in type_values:                       
                             # match the whole sentence containing the value, case insensitive
                             matches = re.findall(r"[^.;!,]*" + tv + r"[^.;!,]*", to_str(a.markdown), flags=re.IGNORECASE)
@@ -608,17 +610,17 @@ def generate_definitions():
                                 description = reduce_description(matches[0].strip())  #the whole sentence explaining the value
                             else:
                                 description = caps_control(clean(normalise(split_words(tv))).title())  #the value but readable
-                            di["Psets"][item.name]["Properties"][a.name]["Values"].append({"Value": tv,"Description":description,"Package":to_str(item.package)})
+                            di["Psets"][pset.name]["Properties"][a.name]["Values"].append({"Value": tv,"Description":description,"Package":to_str(pset.package)})
 
     ### process all found entities 
 
     for item in entities:
-    
+
         item_name = item.name
         if item_name.endswith("Type"):
             item_name = item_name[:-4]
         di = classes[item_name]        
-               
+        
         for c in item.children:
                            
             c.name = reduce_description(c.name)
@@ -749,6 +751,7 @@ unique_psets = set()
 
 for code, content in all_concepts.items(): 
     clas_def = annotate(content['Definition'])
+
     classes.append({
         'Code': code[0:CHAR_LIMIT],
         'Name': to_str(content['Name']) if to_str(content['Name']) else caps_control(clean(normalise((code[3:] if code.lower().startswith('ifc') else code))).title()),

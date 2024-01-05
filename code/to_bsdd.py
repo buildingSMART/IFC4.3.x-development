@@ -480,15 +480,11 @@ def generate_definitions():
 
         if not is_deprecated(item):
             if item.type in ("ENUM","PENUM"):
-                enumerations[item.name] = item            
+                enumerations[item.name] = item
             elif item.type == "PSET":
-                by_id[item.id] = di = classes[item.name]
                 psets.append(item)
                 stereo = (item.node/"properties")[0].stereotype
                 pset_counts_by_stereo[stereo] += 1
-                # add human-readable name
-                di["Name"] = caps_control(clean(normalise(re.sub("Pset_|Qto_", "", item.name))).title())
-                di["Definition"] = reduce_description(to_str(item.markdown_definition), trim=True)
             elif item.type == "ENTITY":                
                 by_id[item.id] = di = classes[item.name]
                 st = item.meta.get('supertypes', [])
@@ -499,8 +495,8 @@ def generate_definitions():
                 di["Name"] = caps_control(clean(normalise((item.name[3:] if item.name.lower().startswith('ifc') else item.name))).title())
                 di["Guid"] = guid_by_id(item.id)
                 entities.append(item)
+                di["Package"] = to_str(item.package) # solely to split POT files
             # skipping: ('FUNCTION','SELECT','RULE','TYPE')
-            di["Package"] = to_str(item.package) # solely to split POT files
 
     ### process all found predefined types (entities) 
 

@@ -7,7 +7,7 @@
     {% if is_iso %}
     <title>ISO 16739-1 Documentation</title>
     {% else %}
-    <title>IFC4.3.2.0 Documentation</title>
+    <title>{{ spec_version_string }} Documentation</title>
     {% endif %}
     <link rel="icon" type="image/x-icon" href="{{ base }}/assets/img/favicon.ico">
     <script>window.is_iso = {% if is_iso %}true{% else %}false{% endif %};</script>
@@ -20,11 +20,11 @@
                     <p style='float: right; text-align: right'>International Organization for Standardization</p>
                     <p>ISO 16739-1:2023(E)</p>
                 {% else %}
-                    <p>IFC 4.3.2.0 (IFC4X3_ADD2)
+                    <p>{{ spec_version_string_full }} ({{ schema_version_string }})
                         {% if is_package %}
                             <small>official</small>
                         {% else %}
-                            <small>development</small>
+                            <small>under development</small>
                         {% endif %}
                     </p>
                 {% endif %}

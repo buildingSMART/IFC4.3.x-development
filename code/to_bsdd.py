@@ -40,6 +40,19 @@ CURLY_BRACKET_PATTERN = re.compile('{.*?}.*') #also removes all text after curly
 FIGURE_PATTERN = re.compile('[^.,;]*(Figure|the figure)[^.,;]*') #removes the sentence when it mentiones a Figure.
 LIST_PATTERN = re.compile('[^.,;]*:\s?') #removes the last sentence when it ends with a colon.
 
+replacements = [
+    (re.compile(r'\*{2}'), ' '),
+    (re.compile('\n+'), '; '),
+    (re.compile(r':(?!\s)'), ': '),
+    (re.compile(r'SELF\\'), ''),
+    (re.compile(r'(?<!\.)\.\.(?!\.)'), '.'),  # remove double dots but not triple (ellipsis)
+    (HTML_TAG_PATTERN, ' '),
+    (CURLY_BRACKET_PATTERN, ' '),
+    (FIGURE_PATTERN, ''),
+    (LIST_PATTERN, ''),
+    (MULTIPLE_SPACE_PATTERN, ' ')
+    ]
+
 WORDS_TO_CATCH = sorted(['current','cost','of','switch','order','recovery','loading','barrier','predefined','reel','basin','fountain','packaged','nozzle','tube','plant',
                          'injection','assisted','element','vertically','vertical','turbine','heating','disassembly','button','component','security','deflector',
                          'cabinet','assembly','actuator','meter','sensor','object','detection','station','depth','controller','terminal','center','frame','electric',
@@ -186,17 +199,8 @@ def reduce_description(s, trim=True):
         elif i==0:
             # some descriptions start with History or Note. Don't want them.
             s = ""
-    s = re.sub('[*]{2}', ' ', s)    # remove double asteriks (used in formulas and for text in bold
-    s = re.sub('\n', '; ', s)
-    s = re.sub(':', ': ', s)
-    s = re.sub(HTML_TAG_PATTERN, ' ', s)
-    s = re.sub(CURLY_BRACKET_PATTERN, ' ', s)
-    s = re.sub(r'SELF\\', '', s)
-    s = re.sub(r"\s+", " ", s)
-    s = re.sub(FIGURE_PATTERN, '', s)
-    s = re.sub(LIST_PATTERN, '', s)
-    s = re.sub(MULTIPLE_SPACE_PATTERN, ' ', s).strip()
-    s = re.sub(r'(?<!\.)\.\.(?!\.)', '.', s).strip()    # remove double dots but not triple (ellipsis)
+    for pat, subs in replacements:
+        s = re.sub(pat, subs, s)
     return clean(s)
 
 
@@ -316,7 +320,8 @@ def clean(s):
     """ format the text by removing unwanted characters."""    
     # remove all redundant characters (except those listed):
     cleaned = ''.join(['', c][c.isalnum() or c in ':.,()-+ —=;α°_/!?$%@<>\'"\\*'] for c in to_str(s))
-    cleaned = re.sub('"',"'", cleaned)
+    p = re.compile('"')
+    cleaned = re.sub(p,"'", cleaned).strip()
     return re.sub(MULTIPLE_SPACE_PATTERN, ' ', cleaned).strip()
     
 

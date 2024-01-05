@@ -14,7 +14,7 @@ from nltk import PorterStemmer
 from reversestem import unstem
 
 
-logging.basicConfig(level=logging.INFO) # filename='app.log', filemode='w'
+logging.basicConfig(level=logging.INFO)
 
 try:
     fn = sys.argv[1]
@@ -186,7 +186,7 @@ def reduce_description(s, trim=True):
         elif i==0:
             # some descriptions start with History or Note. Don't want them.
             s = ""
-    s = re.sub('[*]{2}', ' ', s)
+    s = re.sub('[*]{2}', ' ', s)    # remove double asteriks (used in formulas and for text in bold
     s = re.sub('\n', '; ', s)
     s = re.sub(':', ': ', s)
     s = re.sub(HTML_TAG_PATTERN, ' ', s)
@@ -196,11 +196,7 @@ def reduce_description(s, trim=True):
     s = re.sub(FIGURE_PATTERN, '', s)
     s = re.sub(LIST_PATTERN, '', s)
     s = re.sub(MULTIPLE_SPACE_PATTERN, ' ', s).strip()
-    s = re.sub(r'(?<!\.)\.\.(?!\.)', '.', s).strip()
-    # TODO too long description...
-    # sx = re.sub('e.g.', "", re.sub('i.e.', "", re.sub('etc.', "", s9)))
-    # if len(sx.split(".")) > 6:
-    #     s9 = s9.split(sx.split(".")[6])[0] + "[IT WAS CUT HERE!]"
+    s = re.sub(r'(?<!\.)\.\.(?!\.)', '.', s).strip()    # remove double dots but not triple (ellipsis)
     return clean(s)
 
 
@@ -423,7 +419,7 @@ def is_deprecated(elem):
     deprecated = False
     if elem.id in xmi_doc.deprecated:
         deprecated = True
-    # some objects don't have deprecated status but their markdown says they are deprecated   
+    # Some objects don't have deprecated status, but their markdown says they are deprecated   
     try: 
         if "DEPRECAT" in elem.markdown:
             deprecated = True
@@ -435,8 +431,8 @@ def is_deprecated(elem):
 def generate_definitions():
     """
     A generator that yields tuples of <a, b> with
-    a: location in file
-    a: a fully qualifying key as tuple
+    a: location in the file
+    a: a fully qualifying key as a tuple
     b: the documentation string
     """
     make_defaultdict = lambda: defaultdict(make_defaultdict)
@@ -457,7 +453,7 @@ def generate_definitions():
                 other_idref = list(assoc_type_refs - {enum_id})[0]
                 type_refs.append(xmi_doc.xmi.by_id[other_idref].name)
                 
-        # TODO filter this based on inheritance hierarchy
+        # TODO filter this based on the inheritance hierarchy
         type_refs_without_type = [s for s in type_refs if 'Type' not in s]
         
         return type_refs_without_type[0] if type_refs_without_type else None
@@ -465,7 +461,7 @@ def generate_definitions():
   
     by_id = {}
     item_by_id = {}
-    psets = [] # psets are deferred to the end so that all ids are resolved  
+    psets = [] # psets are deferred to the end so that all IDs are resolved  
     entities = [] # same for entity attributes:
     enumerations = {} # predefined types are just normal enumerations
     pset_counts_by_stereo = defaultdict(int)
@@ -702,9 +698,9 @@ def generate_definitions():
                     logging.warning("Not emitting %s.%s because it's a %s %s" % (item.name, c.name, type_item.name, type_item.type))
             
     for k, v in pset_counts_by_stereo.items():
-        logging.info(k + ":", v)
+        print(k + ":", v)
         
-    logging.info("TOTAL:", sum(pset_counts_by_stereo.values()))
+    print("-- TOTAL --", sum(pset_counts_by_stereo.values()))
             
     return classes
 
@@ -903,11 +899,12 @@ bsdd_data = {
 # with open(output_dir, 'w', encoding='utf-8') as f:
 with open(os.path.join(output_dir, "IFC.json"), 'w', encoding='utf-8') as f :
     json.dump(bsdd_data, f, indent=4, default=lambda x: (getattr(x, 'to_json', None) or (lambda: vars(x)))(), ensure_ascii=False)
-    logging.info("Saved JSON file.")
+    print("-- Saved JSON file. --")
 
-logging.info("Saved IFC.json file with %s classes and %s properties." % (len(classes), len(props)))
+print("-- Saved IFC.json file with %s classes and %s properties. --" % (len(classes), len(props)))
 
-### Generate collection of .pot files in the "pot" folder:
+
+### Generate a collection of .pot files in the "pot" folder:
 
 class pot_file:
 
@@ -927,7 +924,6 @@ msgstr ""
 "Language-Team: buildingSMART community\\n"
 """.format(year=now.strftime("%Y"), date=now.strftime(r"%Y-%m-%d"), time=now.strftime("%H:%M")), file=self.f)
         
-
     def __getattr__(self, k):
         return getattr(self.f, k)
         
@@ -966,6 +962,6 @@ for t in to_translate:
             pos.add(po_file)
             i += 1
         else:
-            logging.warning("duplicated msgids '%s' in the pot file: %s." % (t['msgid'], po_file))
+            logging.warning("Duplicated msgids '%s' in the pot file: %s." % (t['msgid'], po_file))
 
-logging.info("Saved %s terms in %s POT files." % (i, len(pos)))
+print("-- Saved %s terms in %s POT files. --" % (i, len(pos)))

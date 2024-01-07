@@ -401,7 +401,7 @@ def filter_concepts(di):
         # return ("IfcRoot" in parents(k)) or ("IfcMaterialDefinition" in parents(k)) or ("IfcProfileDef" in parents(k)) or child_or_self_has_psets(k)
         # Now skipping relations ('IfcRelAssociatesClassification'), types ('IfcWallType'), property definitions ('IfcPropertySingleValue'), Resources and some other abstract concepts. 
         result = False
-        if not (k.startswith(('IfcRel','IfcProperty','IfcProperty','IfcQuantity','IfcConnection','IfcCartesian')) or k.endswith(('Relationship','Type','Definition','Usage','Property','Template','Resource','Select','Measure','Condition','ProfileDef','Value','Property','Quantity','Unit','Curve','Number','Reference','Information','Solid')) or any(x in parents(k) for x in ["IfcPropertyAbstraction","IfcConstraint","IfcRepresentationItem","IfcPresentationItem","IfcPresentationStyle","IfcPropertyDefinition","IfcTypeObject","IfcMaterialDefinition","IfcMaterialUsageDefinition"]) or any(z.endswith("Resource") for z in parents(k)) or (k in EXCLUDED_ENTITIES)):
+        if not (k.startswith(('IfcRel','IfcProperty','IfcProperty','IfcQuantity','IfcConnection','IfcCartesian')) or k.endswith(('Relationship','Type','Usage','Property','Template','Resource','Select','Measure','Condition','ProfileDef','Value','Property','Quantity','Unit','Curve','Number','Reference','Information','Solid')) or any(x in parents(k) for x in ["IfcPropertyAbstraction","IfcConstraint","IfcRepresentationItem","IfcPresentationItem","IfcPresentationStyle","IfcTypeObject"]) or any(z.endswith("Resource") for z in parents(k)) or (k in EXCLUDED_ENTITIES) or (k != "IfcObjectDefinition" and k.endswith("Definition")) ):        
             result = True
         # bypass for selected classes:
         elif k in ('IfcMaterial'): #,'IfcLightSource','IfcBoundingBox','IfcPoint','IfcCurve','IfcSegment','IfcDirection','IfcSurface','IfcVector'):
@@ -564,15 +564,19 @@ def generate_definitions():
                             type_values = [x.name for x in enum_types_by_name[0]/"ownedLiteral"]
                             kind_name = 'Single'
                         else:
-                            type_name = list(ty_arg.values())[0]
-                            pe_types = [c for c in xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:Class"] if c.name == type_name]
-                            pe_types += [c for c in xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:DataType"] if c.name == type_name]                    
+                            org_type_name = list(ty_arg.values())[0]
+                            pe_types = [c for c in xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:Class"] if c.name == org_type_name]
+                            pe_types += [c for c in xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:DataType"] if c.name == org_type_name]                    
                             pe_type = pe_types[0]
                             root_generalization = generalization(pe_type)
                             type_name = root_generalization.name #.lower()
                             type_values = None
+
                             if ty == "PropertySingleValue":
                                 kind_name = 'Single'
+                                #TODO if type_name is a measure or quantity...
+                                if not org_type_name in ['IfcText']: # 'IfcLabel'
+                                    di["Psets"][pset.name]["Properties"][a.name]["Description"] = "Technical note: in IFC this property takes '%s' as value. Such objects are not included in bSDD for simplicity reason. IFC also doesn't enforce particular units, but recommends using metric SI units (metre, kilogram, etc.). Read the IFC documentation for more information." % org_type_name
                             elif ty == "PropertyBoundedValue":
                                 kind_name = 'Range'
                             elif ty == "PropertyReferenceValue":
@@ -611,14 +615,14 @@ def generate_definitions():
 
     ### process all found entities 
 
-    for item in entities:
+    for entity in entities:
 
-        item_name = item.name
-        if item_name.endswith("Type"):
-            item_name = item_name[:-4]
-        di = classes[item_name]        
+        entity_name = entity.name
+        if entity_name.endswith("Type"):
+            entity_name = entity_name[:-4]
+        di = classes[entity_name]        
         
-        for c in item.children:
+        for c in entity.children:
                            
             c.name = reduce_description(c.name)
 
@@ -634,14 +638,14 @@ def generate_definitions():
                         type_type = xmi_doc.xmi.by_id[type_id]
                     type_item = item_by_id[type_id]
                 except:
-                    logging.warning("Not emitting %s.%s because of an error" % (item.name, c.name))
+                    logging.warning("Not emitting %s.%s because of an error" % (entity.name, c.name))
                     continue
                 if c.name == "PredefinedType":
-                    logging.warning("Not emitting %s.%s because it's the PredefinedType attribute" % (item.name, c.name))
+                    logging.warning("Not emitting %s.%s because it's the PredefinedType attribute" % (entity.name, c.name))
                 elif type_item.type == "ENTITY":
-                    logging.warning("Not emitting %s.%s attribute because it's taking an ENTITY: %s" % (item.name, c.name, type_item.name))
+                    logging.warning("Not emitting %s.%s attribute because it's taking an ENTITY: %s" % (entity.name, c.name, type_item.name))
                 elif type_item.type == "SELECT":
-                    logging.warning("Not emitting %s.%s attribute because it's taking a SELECT: %s" % (item.name, c.name, type_item.name))
+                    logging.warning("Not emitting %s.%s attribute because it's taking a SELECT: %s" % (entity.name, c.name, type_item.name))
                 elif type_item.type == "TYPE":
                     
                     type_values = None
@@ -649,7 +653,7 @@ def generate_definitions():
                     if type_item.definition.super_verbatim:
                     
                         if not type_item.definition.super.lower().startswith("string"):                    
-                            logging.warning("Not emitting %s.%s because it has a hardcoded express definition %s" % (item.name, c.name, type_item.definition.super))
+                            logging.warning("Not emitting %s.%s because it has a hardcoded express definition %s" % (entity.name, c.name, type_item.definition.super))
                             continue
                         else:
                             type_name = "string"
@@ -666,7 +670,7 @@ def generate_definitions():
                     di["Psets"]["Attributes"]["Properties"][c.name]["Name"] = caps_control(clean(split_words(normalise(c.name))).title())
                     # remove value explanation from the definition
                     di["Psets"]["Attributes"]["Properties"][c.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', reduce_description(to_str(c.markdown), trim=True))
-                    di["Psets"]["Attributes"]["Properties"][c.name]["Package"] = to_str(item.package) # solely to split POT files
+                    di["Psets"]["Attributes"]["Properties"][c.name]["Package"] = to_str(entity.package) # solely to split POT files
                     if type_values is None:
                         type_values = TYPE_TO_VALUES.get(type_name)
                     if type_values:
@@ -679,7 +683,7 @@ def generate_definitions():
                                 description = reduce_description(matches[0].strip())  #the whole sentence explaining the value
                             else:
                                 description = caps_control(clean(normalise(split_words(tv))).title())  #the value but readable
-                            di["Psets"]["Attributes"]["Properties"][c.name]["Values"].append({"Value": tv,"Description":description,"Package":to_str(item.package)})                           
+                            di["Psets"]["Attributes"]["Properties"][c.name]["Values"].append({"Value": tv,"Description":description,"Package":to_str(entity.package)})                           
 
                 elif type_item.type == "ENUM":
                 
@@ -689,7 +693,7 @@ def generate_definitions():
                     # remove value explanation from the definition
                     di["Psets"]["Attributes"]["Properties"][c.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', reduce_description(to_str(c.markdown), trim=True))
                     di["Psets"]["Attributes"]["Properties"][c.name]["Values"] = []
-                    di["Psets"]["Attributes"]["Properties"][c.name]["Package"] = to_str(item.package) # solely to split POT files
+                    di["Psets"]["Attributes"]["Properties"][c.name]["Package"] = to_str(entity.package) # solely to split POT files
                     for tv in type_values:                   
                         # match the whole sentence containing the value, case insensitive
                         # matches = re.findall(r"[^.;!,]*" + tv + r"[^.;!,]*", to_str(c.markdown), flags=re.IGNORECASE)
@@ -698,9 +702,9 @@ def generate_definitions():
                             description = reduce_description(matches[0].strip())  #the whole sentence explaining the value
                         else:
                             description = caps_control(clean(normalise(split_words(tv))).title())  #the value but readable
-                        di["Psets"]["Attributes"]["Properties"][c.name]["Values"].append({"Value": tv,"Description":description,"Package":to_str(item.package)})
+                        di["Psets"]["Attributes"]["Properties"][c.name]["Values"].append({"Value": tv,"Description":description,"Package":to_str(entity.package)})
                 else:
-                    logging.warning("Not emitting %s.%s because it's a %s %s" % (item.name, c.name, type_item.name, type_item.type))
+                    logging.warning("Not emitting '%s.%s' because it's a '%s' of type '%s'." % (entity.name, c.name, type_item.name, type_item.type))
             
     for k, v in pset_counts_by_stereo.items():
         print(k + ":", v)

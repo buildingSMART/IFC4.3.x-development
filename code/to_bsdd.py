@@ -495,33 +495,33 @@ def generate_definitions():
                 # add human-readable name
                 di["Name"] = caps_control(clean(normalise((item.name[3:] if item.name.lower().startswith('ifc') else item.name))).title())
                 di["Guid"] = guid_by_id(item.id)
-                entities.append(item)
                 di["Package"] = to_str(item.package) # solely to split POT files
+                entities.append(item)
             # skipping: ('FUNCTION','SELECT','RULE','TYPE')
 
     ### process all found predefined types (entities) 
 
-    for item in entities:
+    for entity in entities:
 
-        if "IfcTypeObject" in xmi_doc.supertypes(item.id):
+        if "IfcTypeObject" in xmi_doc.supertypes(entity.id):
             continue
     
-        predefined_type_attribute = [c for c in item.children if c.name == "PredefinedType"]
+        predefined_type_attribute = [c for c in entity.children if c.name == "PredefinedType"]
         if predefined_type_attribute:
             # NB this points to the EA extension node and not the packagedElement
             ptype = (predefined_type_attribute[0].node|"properties").type
             if ptype in enumerations:
                 for c in enumerations[ptype].children:
                     if c.name not in ("USERDEFINED","NOTDEFINED"):
-                        by_id[c.id] = di = classes[item.name + c.name]
-                        di["Parent"] = to_str(item.name)
+                        by_id[c.id] = di = classes[entity.name + c.name]
+                        di["Parent"] = to_str(entity.name)
                         di["Definition"] = reduce_description(to_str(c.markdown), trim=True)
-                        di["Description"] = "Technical note: Because this class is a 'Predefined Type' in IFC, meaning a specialisation of its parent class, in IFC it should be represented by the parent class, with all the relevant properties and attributes."
+                        di["Description"] = "Technical note: Because this class is a 'Predefined Type' in IFC, meaning a specialisation of its parent class, in IFC it should be represented by the parent class."
                         # add human-readable name, by identifying words in all-caps phrase (right now the words are hardcoded)
                         di["Name"] = caps_control(split_words(c.name).title())
                         di["Guid"] = guid_by_id(c.id)
-                        di["Package"] = to_str(item.package) # solely to split POT files
-
+                        di["Package"] = to_str(entity.package) # solely to split POT files
+                        
     ### process all found property sets 
 
     for pset in psets:
@@ -613,9 +613,9 @@ def generate_definitions():
                                 description = caps_control(clean(normalise(split_words(tv))).title())  #the value but readable
                             di["Psets"][pset.name]["Properties"][a.name]["Values"].append({"Value": tv,"Description":description,"Package":to_str(pset.package)})
 
-    ### process all found entities 
+    ### process all found entities by adding properties and attributes to them
 
-    for entity in entities:
+    for entity in entities: # TODO +predefined_types:
 
         entity_name = entity.name
         if entity_name.endswith("Type"):
@@ -772,12 +772,8 @@ for code, content in all_concepts.items():
     to_translate.append({"msgid":code[0:CHAR_LIMIT],"msgstr":classes[-1]['Name'],"package":content['Package']})
     to_translate.append({"msgid":code[0:CHAR_LIMIT]+"_DEFINITION","msgstr":clas_def,"package":content['Package']})
 
-    # list all ancestors (skip enums (any code that has at least three consecutive capital letters), they don't need to inherit any properties) 
-    if re.search(r"[A-Z]{3}", code):
-        ancestors = []
-    else:
-        ancestors = [code]
-        ancestors = list_ancestors(code, all_concepts, ancestors)
+    ancestors = [code]
+    ancestors = list_ancestors(code, all_concepts, ancestors)
 
     unique_p_codes = set()
 

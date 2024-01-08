@@ -23,14 +23,16 @@ script:
   - python3 code/main.py
   - travis_wait python3 code/validate_schema_shacl.py
 after_success:
-  - MESSAGE=$(git log --oneline -1)
-  - git clone https://$USER_NAME:$USER_AUTH@github.com/buildingSMART/$REPO
-  - cd $REPO
-  - "[ $TRAVIS_PULL_REQUEST != false ] && git switch -c pr$TRAVIS_PULL_REQUEST"
-  - "[ -d psd/ ] && rm -rf psd"
-  - mv ../output/* .
-  - git config user.email "${USER_EMAIL}"
-  - git config user.name "${USER_NAME}"
-  - git add .
-  - git commit -m "${MESSAGE}"
-  - git push
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+      MESSAGE=$(git log --oneline -1)
+      git clone https://$USER_NAME:$USER_AUTH@github.com/buildingSMART/$REPO
+      cd $REPO
+      "[ $TRAVIS_PULL_REQUEST != false ] && git switch -c pr$TRAVIS_PULL_REQUEST"
+      "[ -d psd/ ] && rm -rf psd"
+      mv ../output/* .
+      git config user.email "${USER_EMAIL}"
+      git config user.name "${USER_NAME}"
+      git add .
+      git commit -m "${MESSAGE}"
+      git push
+    fi

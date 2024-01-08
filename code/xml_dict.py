@@ -96,7 +96,7 @@ def to_data(t, parent=None):
 
     
 def read(fn):
-    parser = ET.XMLParser(encoding="utf-8")
+    parser = ET.XMLParser(encoding="windows-1252")
     return next(to_data(ET.parse(fn, parser=parser).getroot()))
 
 

@@ -1,13 +1,13 @@
 import sys
 import json
 
-d = json.load(open(sys.argv[1]))
+d = json.load(open(sys.argv[1], 'r', encoding='utf-8'))
 
 
 assert d['DictionaryName'] == "IFC"
 assert d['OrganizationCode'] == "buildingsmart"
 assert d['Classes'][0]['Code'][0:3] == "Ifc"
-assert isinstance(d['Classes'][0]['Definition'][0:60], str)
+assert isinstance(d['Classes'][0]['Definition'], str)
 assert isinstance(d['Classes'][0]['ClassProperties'], list)
 # assert isinstance(d['Classes'][0]['ClassProperties'][0]['Code'], str)
 # assert isinstance(d['Classes'][0]['ClassProperties'][0]['Name'], str)

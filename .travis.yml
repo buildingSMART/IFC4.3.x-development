@@ -23,7 +23,8 @@ script:
   - python3 code/main.py
   - travis_wait python3 code/validate_schema_shacl.py
 after_success:
-  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+  - |
+    if [ "$TRAVIS_BRANCH" == "master" ]; then
       MESSAGE=$(git log --oneline -1)
       git clone https://$USER_NAME:$USER_AUTH@github.com/buildingSMART/$REPO
       cd $REPO

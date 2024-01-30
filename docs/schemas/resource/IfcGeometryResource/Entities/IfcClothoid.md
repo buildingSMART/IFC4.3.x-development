@@ -27,6 +27,12 @@ The curvature _κ_ and radius of the curvature _ρ_, at any point of the curve, 
 
 $$\kappa=\frac{As}{|A^3|}, \rho=\frac{1}{\kappa}$$
 
+The constant A, known as _flatness_ or _homothetic parameter_ of the clothoid, is specified as:
+
+$$ A=\sqrt{LR}$$
+
+where, L is the length measured from the inflection point; and R is the radius of the clothoid.
+
 { .extDef}
 > NOTE Formulae adapted from **clothoid** defined in ISO 10303-42
 

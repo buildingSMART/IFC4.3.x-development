@@ -48,7 +48,7 @@ use of a shared digital representation of an asset to facilitate design, constru
 
 assignment of objects to classes according to criteria
 
-[SOURCE: ISO 22274:2013, 3.5, modified - The word "process" has been replaced by "act"]
+[SOURCE: ISO 22274:2013, 3.5, modified - The word "process" has been replaced by "assignment"]
 
 ### classification system
 
@@ -108,9 +108,9 @@ EXAMPLE  The use of a concept template for material definitions for a particular
 
 ### constraint
 
-&lt;data modelling> a limitation imposed on data against which the data may be evaluated to determine whether the data is valid within a particular context
+&lt;data modelling> limitation imposed on data against which the data may be evaluated to determine whether the data is valid within a particular context
 
-&lt;construction> constraint or limiting value or boundary condition that may be applied to an object or to the value of a property
+&lt;construction> limiting value or boundary condition that may be applied to an object or to the value of a property
 
 ### control
 
@@ -320,7 +320,7 @@ connection between two or more entities
 
 organized collection of associated data elements, collected together for one or more specific uses
 
-EXAMPLE  geometric shapes or topological items are examples of data elements to be used in graphical representations
+EXAMPLE  Geometric shapes or topological items are examples of data elements to be used in graphical representations
 
 [SOURCE: ISO 10303-43:2018]
 

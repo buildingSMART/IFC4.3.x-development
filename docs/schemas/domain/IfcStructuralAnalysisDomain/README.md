@@ -12,6 +12,7 @@ The following features are in scope:
     *  Specification of loadings including point, curve, surface loads, temperature loads, their assignment to load groups, load cases and load combinations.
     *  Specification of different structural analysis models in order to describe different aspects or parts of the building. Furthermore, dependencies between these models can be stored in the model for further use.
     *  Analysis results defined by forces and displacements.
+
 Currently not in scope are:
 
 * Dynamic analysis

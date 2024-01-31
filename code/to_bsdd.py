@@ -56,11 +56,11 @@ replacements = [
     ]
 
 WORDS_TO_CATCH = sorted(['current','cost','of','switch','order','recovery','loading','barrier','predefined','reel','basin','fountain','packaged','nozzle','tube','plant',
-                         'injection','assisted','element','vertically','vertical','turbine','heating','disassembly','button','component','security','deflector',
+                         'injection','assisted','element','vertically','vertical','turbine','heating','disassembly','button','component','security','deflector','lighting',
                          'cabinet','assembly','actuator','meter','sensor','object','detection','station','depth','controller','terminal','center','frame','electric',
                          'exchangers','wedge','gate','configured','plug','lubricated','parallel','slide','exchange','exchanger','change','outlet','server','plate','expansion',
                          'rail','solar','surcharge','excavation','combustion','draft','mechanical','constant','coil','cooled','cooler','evaporative','pavement','top',
-                         'column','traffic','crossing','side','road','vehicle','island','gear','super','event','adiabatic','segment','marker','structure','ground',
+                         'column','traffic','crossing','side','road','vehicle','island','gear','super','event','adiabatic','segment','marker','structure','ground','allocation',
                          'channel','pressure','shift','prevention','tray','provision','soil','preloaded','water','cold','hot','cable','domestic','power','generation',
                          'solid','waste','unit','carrier','duct','protection','disconnector','surfacing','breaker','wall','flow','curve','limiter','board','chamber',
                          'panel','acoustic','fire','inspection','transverse','rumble','strip','surface','maintenance','of','pier','system','fixed','hatch','transmission',
@@ -68,13 +68,13 @@ WORDS_TO_CATCH = sorted(['current','cost','of','switch','order','recovery','load
                          'void','quantities','compacted','drained','tower','indirect','direct','media','intelligent','rigid','random','marine','compact','tensioner',
                          'operational','intermediate','storage','hooks','area','lift','lifting','forward','natural','radial','gravity','piston','relief','air','track', 'pair',
                          'switching','transition','off','bend','circular','derailer','tracked','roadway','plateau','retention','stock','double','twin','cage','seat',
-                         'moving','soft','inlet','symbol','symbolic','toilet','dock','docking','parabolic','bending','transceiver','control','asset','furniture',
+                         'moving','soft','inlet','symbol','symbolic','toilet','dock','docking','parabolic','bending','transceiver','control','asset','furniture','resistance',
                          'contact','centre','motorized','motor','photocopier','generator','engine','point','access','asynchronous','synchronous','single','plaza','wheel','loops',
                          'drive','stop','rates','timer','leakage','time','dryer','framework','roof','induction','topping','alignment','curved','stair','elemented','scaffolding',
                          'electrical','chair','sofa','railway','entrance','secured','cover','manhole','flat','concave','convex','known','cylinder','horizontal','business','issues',
                          'elevated','work','platform','materials','handling','material','effects','health','safety','hazadrous','dust','scaffold','fall','fragile','shock',
                          'environmental','drowning','flooding','very','high','unintended','collapse','working','overhead','considerable','value','driven','defined','unknown',
-                         'class','appliance','earth','protective','neutral','disposal','cradle','site','production','transport','repair','whole','lifecycle','siphon',
+                         'class','appliance','earth','protective','neutral','disposal','cradle','site','production','transport','repair','whole','lifecycle','siphon','breaking',
                          'urgent','procedure','emergency','offsite','very','office','sensors','volume','diffusers','variable','multiple','zone','conduit','temperature','powered',
                          'safety','light','warning','exit','blue','illumination','spark','gap','gas','filled','touch','screen','buttons','auto','transformer','divided','support',
                          'earthing','offload','break','glass','key','operated','manual','pull','cord','exhaust','damper','shell','pump','filter','conveyor','pumps','heat','heated',
@@ -84,7 +84,7 @@ WORDS_TO_CATCH = sorted(['current','cost','of','switch','order','recovery','load
                          'mounted','unidirectional','blast','damper','centrifugal','backward','inclined','vane','axial','propellor','diatomaceous','earth','reverse','osmosis',
                          'liquefied','petroleum','lightning','shaft','soak','slurry','collector','with','check','commercial','propane','butane','atmospheric','vacuum','wetted',
                          'function','complementary','circuit','fault','lower','inglimit','pulse','converter','running','average','upper','limit','lower','band','dimmer',
-                         'position','frost','automatic','www','continuous','positioner','positioning','source','sink','profile','enumerated','content','extinguishing',
+                         'position','frost','automatic','www','continuous','positioner','positioning','source','sink','profile','enumerated','content','extinguishing','frailty',
                          'photovoltaic','soils','between','central','reserve','shoulder','intersection','parking','passing','audiovisual','shape','co2','conduct','conductor',
                          'conductance','conductivity','obstacle','movement','moisture','radiation','radioactivity','rain','smoke','turnout','closure','wind','aggregates','aggregate',
                          'transporting','roofing','recording','stitch','wire','pair','router','tungsten','filament','gateway','selector','momentary','toggle','vertical','inline',
@@ -111,7 +111,7 @@ EXCLUDED_ENTITIES = ['IfcApplication','IfcOwnerHistory','IfcTable','IfcTableColu
                      'IfcBoxAlignment','IfcTextPath','IfcAnnotationFillArea','IfcPlanarBox','IfcPlanarExtent','IfcPresentationItem','IfcTextLiteral','IfcTextLiteralWithExtent','IfcBinary',
                      'IfcBoolean','IfcDerivedUnitEnum','IfcIdentifier','IfcInteger','IfcLabel','IfcLogical','IfcPHMeasure','IfcPositiveInteger','IfcReal','IfcSIPrefix','IfcSIUnitName','IfcText',
                      'IfcUnitEnum','IfcConversionBasedUnitWithOffset','IfcDerivedUnitElement','IfcDimensionalExponents','IfcUnitAssignment','IfcDirectionSenseEnum','IfcLayerSetDirectionEnum',
-                     'IfcArcIndex','IfcAxis2Placement','IfcBSplineCurveForm','IfcBSplineSurfaceForm','IfcCurveOnSurface','IfcDimensionCount','IfcKnotType','IfcLineIndex',
+                     'IfcArcIndex','IfcAxis2Placement','IfcBSplineCurveForm','IfcBSplineSurfaceForm','IfcCurveOnSurface','IfcDimensionCount','IfcKnotType','IfcLineIndex','centerline','centreline',
                      'IfcPreferredSurfaceCurveRepresentation','IfcTransitionCode','IfcVectorOrDirection','IfcAxis1Placement','IfcAxis2Placement2D','IfcAxis2Placement3D','IfcAxis2PlacementLinear',
                      'IfcBSplineCurveWithKnots','IfcDirection','IfcBSplineSurface','IfcBSplineSurfaceWithKnots','IfcBoundedSurface','IfcClothoid','IfcCompositeCurveOnSurface',
                      'IfcCompositeCurveSegment','IfcConic','IfcCosineSpiral','IfcCurveBoundedPlane','IfcCurveBoundedSurface','IfcCurveSegment','IfcCylindricalSurface','IfcElementarySurface',
@@ -123,20 +123,19 @@ EXCLUDED_ENTITIES = ['IfcApplication','IfcOwnerHistory','IfcTable','IfcTableColu
                      'IfcExtrudedAreaSolidTapered','IfcFaceBasedSurfaceModel','IfcFacetedBrep','IfcFacetedBrepWithVoids','IfcGeometricCurveSet','IfcGeometricSet','IfcIndexedPolygonalFace',
                      'IfcIndexedPolygonalFaceWithVoids','IfcManifoldSolidBrep','IfcPolygonalBoundedHalfSpace','IfcPolygonalFaceSet','IfcRectangularPyramid','IfcRevolvedAreaSolidTapered',
                      'IfcRightCircularCone','IfcRightCircularCylinder','IfcSectionedSolidHorizontal','IfcSectionedSpine','IfcSectionedSurface','IfcShellBasedSurfaceModel','IfcSolidModel',
-                     'IfcSphere','IfcSweptDiskSolidPolygonal','IfcTessellatedFaceSet','IfcTessellatedItem','IfcTriangulatedFaceSet','IfcTriangulatedIrregularNetwork','IfcAlignmentCantSegmentTypeEnum',
-                     'IfcAlignmentHorizontalSegmentTypeEnum','IfcAlignmentVerticalSegmentTypeEnum','IfcPointOrVertexPoint','IfcSolidOrShell','IfcSurfaceOrFaceSurface','IfcAlignmentCantSegment',
-                     'IfcAlignmentHorizontalSegment','IfcAlignmentParameterSegment','IfcAlignmentVerticalSegment','IfcGridAxis','IfcGridPlacement','IfcLinearPlacement','IfcLocalPlacement',
+                     'IfcSphere','IfcSweptDiskSolidPolygonal','IfcTessellatedFaceSet','IfcTessellatedItem','IfcTriangulatedFaceSet','IfcTriangulatedIrregularNetwork','IfcGridAxis',
                      'IfcObjectPlacement','IfcVirtualGridIntersection','IfcDocumentConfidentialityEnum','IfcLanguageId','IfcDocumentStatusEnum','IfcClassification','IfcDataOriginEnum','IfcDate',
                      'IfcDateTime','IfcDuration','IfcRecurrenceTypeEnum','IfcTaskDurationEnum','IfcTime','IfcTimeSeriesDataTypeEnum','IfcTimeStamp','IfcEventTime','IfcIrregularTimeSeries','IfcLagTime',
                      'IfcRecurrencePattern','IfcRegularTimeSeries','IfcResourceTime','IfcSchedulingTime','IfcTaskTime','IfcTaskTimeRecurring','IfcTimePeriod','IfcTimeSeries','IfcWorkTime',
                      'IfcArithmeticOperatorEnum','IfcBenchmarkEnum','IfcConstraintEnum','IfcLogicalOperatorEnum','IfcObjectiveEnum','IfcConstraint','IfcMetric','IfcObjective','IfcApproval',
                      'IfcAddressTypeEnum','IfcRoleEnum','IfcAddressTypeEnum','IfcRoleEnum','IfcActorRole','IfcAddress','IfcOrganization','IfcPerson','IfcPersonAndOrganization','IfcPostalAddress',
-                     'IfcTelecomAddress','IfcCurve','IfcCircle','IfcEllipse','IfcLine','IfcPlane','IfcPoint','IfcPolyline','IfcSpiral','IfcSurface','IfcVector']
+                     'IfcTelecomAddress','IfcCurve','IfcCircle','IfcEllipse','IfcLine','IfcPlane','IfcPoint','IfcPolyline','IfcSpiral','IfcSurface','IfcVector','IfcPreDefinedPropertySet',
+                     'IfcPointOrVertexPoint','IfcSolidOrShell','IfcSurfaceOrFaceSurface','IfcGridPlacement','IfcLinearPlacement','IfcLocalPlacement']
 
 # ALLOW:  IfcRoot, IfcLightSource, IfcStructuralLoad, IfcStructuralLoadLinearForce, IfcStructuralLoadPlanarForce, IfcStructuralLoadSingleForce, IfcStructuralLoadStatic, IfcStructuralLoadTemperature
 
 ALL_CAPS = ['ups','gprs','rs','am','gps','dc','tn','url','ac','co','co2','chp','id','led','oled','ole','gfa','tv','msc','ppm','iot','ocl','lrm','cgt','teu','tmp','std','gsm','cdma','lte','td','scdma',
-            'wcdma','sc','mp','bm','ol','ep','ir','www','ip','ph','usb', 'ii', 'iii','url','uri','ssl','ffl','ty','tz','tx']
+            'wcdma','sc','mp','bm','ol','ep','ir','www','ip','ph','usb', 'ii', 'iii','url','uri','ssl','ffl','ty','tz','tx','ipi']
 
 SMALL_CAPS = ['for','of','and','to','with','or','at']
 

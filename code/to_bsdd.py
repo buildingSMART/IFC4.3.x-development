@@ -13,6 +13,8 @@ from xmi_document import xmi_document, missing_markdown
 from nltk import PorterStemmer
 from reversestem import unstem
 
+from measure_mapping import MEASURE_MAPPING
+
 
 logging.basicConfig(level=logging.INFO)
 
@@ -567,8 +569,8 @@ def generate_definitions():
                             org_type_name = list(ty_arg.values())[0]
                             pe_types = [c for c in xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:Class"] if c.name == org_type_name]
                             pe_types += [c for c in xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:DataType"] if c.name == org_type_name]                    
-                            pe_type = pe_types[0]
-                            root_generalization = generalization(pe_type)
+                            measure = pe_types[0].name
+                            root_generalization = generalization(pe_types[0])
                             type_name = root_generalization.name #.lower()
                             type_values = None
 
@@ -599,7 +601,11 @@ def generate_definitions():
                     di["Psets"][pset.name]["Properties"][a.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', reduce_description(to_str(a.markdown), trim=True))
                     di["Psets"][pset.name]["Properties"][a.name]["Kind"] = kind_name
                     di["Psets"][pset.name]["Properties"][a.name]["Package"] = to_str(pset.package) # solely to split POT files
-
+                    if measure.endswith("measure"): #not measure in ('IfcLabel','IfcText','IfcURIReference','IfcTimeSeries','IfcBoolean'):
+                        if measure in MEASURE_MAPPING.keys():
+                            di["Psets"][pset.name]["Properties"][a.name]["Dimension"] = MEASURE_MAPPING[measure]
+                        else:
+                            di["Psets"][pset.name]["Properties"][a.name]["Dimension"] = "0 0 0 0 0 0 0"
                     if type_values is None:
                         type_values = TYPE_TO_VALUES.get(type_name)
                     if type_values:
@@ -861,7 +867,8 @@ for code, content in all_concepts.items():
                         if prop_content['Description']:
                             props[-1]['Description'] = annotate(prop_content['Description'])
                             to_translate.append({"msgid":prop_code[0:CHAR_LIMIT]+"_DESCRIPTION","msgstr":props[-1]['Description'],"package":content['Package']})
-
+                        if prop_content['Dimension']:
+                            props[-1]['Dimension'] = prop_content['Dimension']
                         if prop_content['Type'].lower() == "string":
                             props[-1]['DataType'] = "String"
                         elif prop_content['Type'].lower() in ("real","number"):

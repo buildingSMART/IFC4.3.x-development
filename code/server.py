@@ -1041,7 +1041,6 @@ def resource(resource):
             definition=get_definition(resource, mdc),
             entity=resource,
             path=md[len(REPO_DIR) :].replace("\\", "/"),
-            branch=REPO_BRANCH,
             entity_inheritance=get_entity_inheritance(resource),
             attributes=get_attributes(resource, builder),
             formal_propositions=get_formal_propositions(resource, builder),
@@ -1066,7 +1065,6 @@ def resource(resource):
             definition_number=definition_number,
             entity=resource,
             path=md[len(REPO_DIR) :].replace("\\", "/"),
-            branch=REPO_BRANCH,
             applicability=get_applicability(resource),
             properties=get_properties(resource, mdc),
             changelog=get_changelog(resource),
@@ -1080,7 +1078,6 @@ def resource(resource):
         definition_number=definition_number,
         entity=resource,
         path=md[len(REPO_DIR) :].replace("\\", "/"),
-        branch=REPO_BRANCH,
         type_values=get_type_values(resource, mdc),
         formal_propositions=get_formal_propositions(resource, builder),
         formal_representation=get_formal_representation(resource),
@@ -1761,7 +1758,6 @@ def concept_list():
         navigation=get_navigation(),
         content=html,
         path=fn[len(REPO_DIR) :].replace("\\", "/"),
-        branch=REPO_BRANCH,
         title=chapter_lookup(number=4).get("name"),
         number=4,
         sections=[
@@ -1837,7 +1833,6 @@ def concept(s=""):
         diagram=diagram,
         tables=tables,
         path=fn[len(REPO_DIR) :].replace("\\", "/"),
-        branch=REPO_BRANCH,
         title=t,
         number=n,
         # subs=subs,
@@ -1880,7 +1875,6 @@ def chapter(n):
         navigation=get_navigation(number=n),
         content=html,
         path=fn[len(REPO_DIR) :].replace("\\", "/"),
-        branch=REPO_BRANCH,
         title=t,
         number=n,
         subs=subs,
@@ -1896,7 +1890,6 @@ def cover():
         navigation=get_navigation(),
         content=html,
         path=fn[len(REPO_DIR) :].replace("\\", "/"),
-        branch=REPO_BRANCH,
         subs=[],
         body_class='cover' + (' iso' if X.is_iso else '')
     )
@@ -1959,7 +1952,6 @@ def content(s):
         navigation=get_navigation(),
         content=html,
         path=fn[len(REPO_DIR) :].replace("\\", "/"),
-        branch=REPO_BRANCH,
         title=title,
         number=number,
         body_class=re.sub('[^a-z0-9]+', '-', s.lower())
@@ -2274,7 +2266,6 @@ def schema(name):
         navigation=get_navigation(number=n),
         definition=definition,
         path=fn[len(REPO_DIR) :].replace("\\", "/"),
-        branch=REPO_BRANCH,
         title=t,
         number=n,
         subnumber=definition_number,
@@ -2582,7 +2573,8 @@ def inject_variables():
         'is_package': X.is_package,
         'schema_version_string': schema_version_string,
         'spec_version_string': spec_version_string,
-        'spec_version_string_full': spec_version_string_full
+        'spec_version_string_full': spec_version_string_full,
+        'branch': REPO_BRANCH,
     }
 
 

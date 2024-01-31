@@ -37,6 +37,7 @@ ps = PorterStemmer()
 CHAR_LIMIT = 50
 HTML_TAG_PATTERN = re.compile('<.*?>')
 MULTIPLE_SPACE_PATTERN = re.compile(r'\s+')
+MULTIPLE_LINEBREAK_PATTERN = re.compile('\n+')
 # CHANGE_LOG_PATTERN = re.compile(r'\{\s*\.change\-\w+\s*\}.+', flags=re.DOTALL)
 CURLY_BRACKET_PATTERN = re.compile('{.*?}.*') #also removes all text after curly brackets
 FIGURE_PATTERN = re.compile('[^.,;]*(Figure|the figure)[^.,;]*') #removes the sentence when it mentiones a Figure.
@@ -44,10 +45,10 @@ LIST_PATTERN = re.compile('[^.,;]*:\s?') #removes the last sentence when it ends
 
 replacements = [
     (re.compile(r'\*{2}'), ' '),
-    (re.compile('\n+'), '; '),
     (re.compile(r':(?!\s)'), ': '),
     (re.compile(r'SELF\\'), ''),
     (re.compile(r'(?<!\.)\.\.(?!\.)'), '.'),  # remove double dots but not triple (ellipsis)
+    (MULTIPLE_LINEBREAK_PATTERN, '; '),
     (HTML_TAG_PATTERN, ' '),
     (CURLY_BRACKET_PATTERN, ' '),
     (FIGURE_PATTERN, ''),
@@ -192,9 +193,10 @@ def reduce_description(s, trim=True):
         s = ''
     if trim:
         # split and remove on keywords:        
-        j = re.search(r'\$\$', s).start() if re.search(r'\$\$', s) else -1
-        k = re.search(r'(Base|General) formula', s).start() if re.search(r'(Base|General) formula', s) else -1
-        i = min([x for x in [s.find('NOTE'), s.find('DIAGRAM'), s.find('CHANGE'), s.find('IFC4'), s.find('HISTORY'), s.find('REFERENCE'), s.find('EXAMPLE'), s.find('DEPRECATION'), j, k, 1e5] if x >= 0])
+        j = re.search(r'\$\$', s).start() if re.search(r'\$\$', s) else -1  # formula
+        k = re.search(r'(Base|General) formula', s).start() if re.search(r'(Base|General) formula', s) else -1  # formula
+        l = re.search(r'\*\*', s).start() if re.search(r'\*\*', s) else -1  # bold text
+        i = min([x for x in [s.find('NOTE'), s.find('DIAGRAM'), s.find('CHANGE'), s.find('IFC4'), s.find('HISTORY'), s.find('REFERENCE'), s.find('EXAMPLE'), s.find('DEPRECATION'), j, k, l, 1e5] if x >= 0])
         if i > 0 and i != 1e5:
             s = s[:i]
         elif i==0:
@@ -320,6 +322,7 @@ def normalise(s):
 def clean(s):
     """ format the text by removing unwanted characters."""    
     # remove all redundant characters (except those listed):
+    s = re.sub(MULTIPLE_LINEBREAK_PATTERN, '; ', s)
     cleaned = ''.join(['', c][c.isalnum() or c in ':.,()-+ —=;α°_/!?$%@<>\'"\\*'] for c in to_str(s))
     p = re.compile('"')
     cleaned = re.sub(p,"'", cleaned).strip()
@@ -401,8 +404,16 @@ def filter_concepts(di):
         # but decided to widen to also include all non-products that have psets, like IfcActor.
         # return ("IfcRoot" in parents(k)) or ("IfcMaterialDefinition" in parents(k)) or ("IfcProfileDef" in parents(k)) or child_or_self_has_psets(k)
         # Now skipping relations ('IfcRelAssociatesClassification'), types ('IfcWallType'), property definitions ('IfcPropertySingleValue'), Resources and some other abstract concepts. 
+        x1 = k.startswith(('IfcRel','IfcProperty','IfcProperty','IfcQuantity','IfcConnection','IfcCartesian','IfcMaterial'))
+        x2 = k.endswith(('Relationship','Type','Usage','Property','Template','Resource','Select','Measure','Condition','ProfileDef','Value','Property','Quantity','Curve','Number','Reference','Information','Solid'))
+        x3 = k.endswith('Unit') and not k == 'IfcProtectiveDeviceTrippingUnit'
+        x4 = k.startswith('IfcAlignment') and not k == 'IfcAlignment'
+        x5 = k in EXCLUDED_ENTITIES
+        x6 = (k != "IfcObjectDefinition" and k.endswith("Definition"))
+        x7 = any(x in parents(k) for x in ["IfcPropertyAbstraction","IfcConstraint","IfcRepresentationItem","IfcPresentationItem","IfcPresentationStyle","IfcTypeObject","IfcExternalReference","IfcStructuralLoadOrResult",""])
+        x8 = any(z.endswith("Resource") for z in parents(k))
         result = False
-        if not (k.startswith(('IfcRel','IfcProperty','IfcProperty','IfcQuantity','IfcConnection','IfcCartesian')) or k.endswith(('Relationship','Type','Usage','Property','Template','Resource','Select','Measure','Condition','ProfileDef','Value','Property','Quantity','Unit','Curve','Number','Reference','Information','Solid')) or any(x in parents(k) for x in ["IfcPropertyAbstraction","IfcConstraint","IfcRepresentationItem","IfcPresentationItem","IfcPresentationStyle","IfcTypeObject"]) or any(z.endswith("Resource") for z in parents(k)) or (k in EXCLUDED_ENTITIES) or (k != "IfcObjectDefinition" and k.endswith("Definition")) ):        
+        if not any([x1,x2,x3,x4,x5,x6,x7,x8]):
             result = True
         # bypass for selected classes:
         elif k in ('IfcMaterial'): #,'IfcLightSource','IfcBoundingBox','IfcPoint','IfcCurve','IfcSegment','IfcDirection','IfcSurface','IfcVector'):
@@ -492,7 +503,8 @@ def generate_definitions():
                 st = item.meta.get('supertypes', [])
                 if st:
                     di["Parent"] = to_str(st[0])
-                di["Definition"] = reduce_description(to_str(item.markdown_definition), trim=True)
+
+                di["Definition"] = reduce_description(to_str(item.markdown_content), trim=True)
                 # add human-readable name
                 di["Name"] = caps_control(clean(normalise((item.name[3:] if item.name.lower().startswith('ifc') else item.name))).title())
                 di["Guid"] = guid_by_id(item.id)
@@ -592,7 +604,7 @@ def generate_definitions():
                                 logging.warning("%s.%s of type %s <%s> not mapped" % (pset.name, nm, ty, ",".join(map(lambda kv: "=".join(kv), ty_arg.items()))))
                                 continue
 
-                    di["Psets"][pset.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', reduce_description(to_str(pset.markdown_definition), trim=True))
+                    di["Psets"][pset.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', reduce_description(to_str(pset.markdown_content), trim=True))
                     
                     di["Psets"][pset.name]["Properties"][a.name]["Type"] = type_name
                     di["Psets"][pset.name]["Properties"][a.name]["Name"] = caps_control(clean(split_words(normalise(a.name))).title())
@@ -769,7 +781,8 @@ for code, content in all_concepts.items():
     if content['Guid']:
         classes[-1]['Uid'] = to_str(content['Guid'])
     if content['Parent']:
-        classes[-1]['ParentClassCode'] = to_str(content['Parent'])
+        if content['Parent'] in codes:
+            classes[-1]['ParentClassCode'] = to_str(content['Parent'])
     if content['Description']:
         classes[-1]['Description'] = to_str(content['Description'])
         to_translate.append({"msgid":code[0:CHAR_LIMIT]+"_DESCRIPTION","msgstr":classes[-1]['Description'],"package":content['Package']})

@@ -803,17 +803,17 @@ for code, content in all_concepts.items():
             for pset_code, pset_content in ancestor['Psets'].items():
                 
                 # add PSet as GroupOfProperties class:
-                if not ((pset_code in unique_psets) or (pset_code == 'Attributes')):
-                    unique_psets.add(pset_code)
-                    psets.append({
-                        'Code': pset_code[0:CHAR_LIMIT],
-                        'Name': to_str(pset_content['Name']) if to_str(pset_content['Name']) else caps_control(clean(normalise(pset_code))).title(),
-                        'Definition': annotate(pset_content['Definition']),
-                        'ClassType': 'GroupOfProperties',
-                        'ClassProperties': []
-                    })
-                    to_translate.append({"msgid":pset_code[0:CHAR_LIMIT],"msgstr":psets[-1]['Name'],"package":content['Package']})
-                    to_translate.append({"msgid":pset_code[0:CHAR_LIMIT]+"_DEFINITION","msgstr":psets[-1]['Definition'],"package":content['Package']})
+                # if not ((pset_code in unique_psets) or (pset_code == 'Attributes')):
+                #     unique_psets.add(pset_code)
+                #     psets.append({
+                #         'Code': pset_code[0:CHAR_LIMIT],
+                #         'Name': to_str(pset_content['Name']) if to_str(pset_content['Name']) else caps_control(clean(normalise(pset_code))).title(),
+                #         'Definition': annotate(pset_content['Definition']),
+                #         'ClassType': 'GroupOfProperties',
+                #         'ClassProperties': []
+                #     })
+                #     to_translate.append({"msgid":pset_code[0:CHAR_LIMIT],"msgstr":psets[-1]['Name'],"package":content['Package']})
+                #     to_translate.append({"msgid":pset_code[0:CHAR_LIMIT]+"_DEFINITION","msgstr":psets[-1]['Definition'],"package":content['Package']})
                 
                 # add ClassProperties
                 for prop_code, prop_content in pset_content['Properties'].items():
@@ -844,12 +844,12 @@ for code, content in all_concepts.items():
                     if not p_code in unique_p_codes: 
                         classes[-1]['ClassProperties'].append(classProp)
                         unique_p_codes.add(p_code)
-                    try:
-                        if pset_code == psets[-1]['Code']:
-                            if not any(classProp['PropertyCode'] == cp.get('PropertyCode')[0:CHAR_LIMIT] for cp in psets[-1]['ClassProperties']):
-                                psets[-1]['ClassProperties'].append(classProp)
-                    except IndexError:
-                        pass
+                    # try:
+                    #     if pset_code == psets[-1]['Code']:
+                    #         if not any(classProp['PropertyCode'] == cp.get('PropertyCode')[0:CHAR_LIMIT] for cp in psets[-1]['ClassProperties']):
+                    #             psets[-1]['ClassProperties'].append(classProp)
+                    # except IndexError:
+                    #     pass
                     
                     # add to properties list, not just classProp
                     if not prop_code in unique_props:

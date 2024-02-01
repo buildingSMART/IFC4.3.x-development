@@ -81,10 +81,10 @@ WORDS_TO_CATCH = sorted(['current','cost','of','switch','order','recovery','load
                          'earthing','offload','break','glass','key','operated','manual','pull','cord','exhaust','damper','shell','pump','filter','conveyor','pumps','heat','heated',
                          'speed','fan','bypass','valve','dampers','wet','bulb','reset','exiting','folding','curtain','closed','circuit','dry','open','indicator','shunting','route',
                          'derail','departure','starting','signal','repeating','obstruction','hump','auxiliary','home','distant','block','blocking','approach','mesh','push',
-                         'pushing', 'bidirectional','directional','right','left','damper','balancing','combination','earthquake','relay','interface','face','nail','loss',
+                         'pushing', 'bidirectional','directional','right','left','damper','balancing','combination','earthquake','relay','interface','face','nail','loss','prestress',
                          'mounted','unidirectional','blast','damper','centrifugal','backward','inclined','vane','axial','propellor','diatomaceous','earth','reverse','osmosis',
                          'liquefied','petroleum','lightning','shaft','soak','slurry','collector','with','check','commercial','propane','butane','atmospheric','vacuum','wetted',
-                         'function','complementary','circuit','fault','lower','inglimit','pulse','converter','running','average','upper','limit','lower','band','dimmer',
+                         'function','complementary','circuit','fault','lower','inglimit','pulse','converter','running','average','upper','limit','lower','band','dimmer','sheath',
                          'position','frost','automatic','www','continuous','positioner','positioning','source','sink','profile','enumerated','content','extinguishing','frailty',
                          'photovoltaic','soils','between','central','reserve','shoulder','intersection','parking','passing','audiovisual','shape','co2','conduct','conductor',
                          'conductance','conductivity','obstacle','movement','moisture','radiation','radioactivity','rain','smoke','turnout','closure','wind','aggregates','aggregate',
@@ -95,7 +95,8 @@ WORDS_TO_CATCH = sorted(['current','cost','of','switch','order','recovery','load
                          'consumption','photochemical','ozone','renewable','energy','resource','depletion','stratospheric','layer','destruction','reheat','reference','components',
                          'constraint','name','type','names','types','lrm','relative','window','dome','heavy','applicable','axis','placement','cooker','freestanding','heater','subgrade',
                          'inductor','packet','remote','radio','radioactive','above','dilation','winder','equidistant','switch','feed','pipe','pipes','rotary','hollow','humidity',
-                         'concentration','identifier','level','cosine','helmert','sine','viennese','bloss','location','global','local','thickness','direction','fluorescent'], key=len)[::-1]
+                         'concentration','identifier','level','cosine','helmert','sine','viennese','bloss','location','global','local','thickness','direction','fluorescent',
+                         'current','pole','gender','colour'], key=len)[::-1]
 
 EXCLUDED_ENTITIES = ['IfcApplication','IfcOwnerHistory','IfcTable','IfcTableColumn','IfcTableRow','IfcChangeActionEnum','IfcGloballyUniqueId','IfcStateEnum','IfcShell','IfcAdvancedFace',
                      'IfcClosedShell','IfcConnectedFaceSet','IfcEdge','IfcEdgeCurve','IfcEdgeLoop','IfcFace','IfcFaceBound','IfcFaceOuterBound','IfcFaceSurface','IfcLoop','IfcOpenShell',
@@ -136,12 +137,15 @@ EXCLUDED_ENTITIES = ['IfcApplication','IfcOwnerHistory','IfcTable','IfcTableColu
 # ALLOW:  IfcRoot, IfcLightSource, IfcStructuralLoad, IfcStructuralLoadLinearForce, IfcStructuralLoadPlanarForce, IfcStructuralLoadSingleForce, IfcStructuralLoadStatic, IfcStructuralLoadTemperature
 
 ALL_CAPS = ['ups','gprs','rs','am','gps','dc','tn','url','ac','co','co2','chp','id','led','oled','ole','gfa','tv','msc','ppm','iot','ocl','lrm','cgt','teu','tmp','std','gsm','cdma','lte','td','scdma',
-            'wcdma','sc','mp','bm','ol','ep','ir','www','ip','ph','usb', 'ii', 'iii','url','uri','ssl','ffl','ty','tz','tx','ipi']
+            'wcdma','sc','mp','bm','ol','ep','ir','www','ip','ph','usb', 'ii', 'iii','url','uri','ssl','ffl','ty','tz','tx','ipi','ics']
 
 SMALL_CAPS = ['for','of','and','to','with','or','at']
 
 SUBSTITUTIONS = {
     "Rel ": "Relation: ",
+    "Min ": "Minimum ",
+    "Max ": "Maximum ",
+    " Temp": " Temperature",
     "Qto_": "Quantity set: ",
     "Pset_": "Property set: ",
 }

@@ -616,7 +616,7 @@ def generate_definitions():
                     di["Psets"][pset.name]["Properties"][a.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', reduce_description(to_str(a.markdown), trim=True))
                     di["Psets"][pset.name]["Properties"][a.name]["Kind"] = kind_name
                     di["Psets"][pset.name]["Properties"][a.name]["Package"] = to_str(pset.package) # solely to split POT files
-                    if measure.endswith("measure"): #not measure in ('IfcLabel','IfcText','IfcURIReference','IfcTimeSeries','IfcBoolean'):
+                    if measure.lower().endswith("measure"): #not measure in ('IfcLabel','IfcText','IfcURIReference','IfcTimeSeries','IfcBoolean'):               
                         if measure in MEASURE_MAPPING.keys():
                             di["Psets"][pset.name]["Properties"][a.name]["Dimension"] = MEASURE_MAPPING[measure]
                         else:

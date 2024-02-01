@@ -7,6 +7,7 @@ A full list of IFC Defined types can be found in the IFC documentation. For exam
 
 MEASURE_MAPPING = {
     # Ifc Defined Type name --> Dimensional exponents
+    'IfcAmountOfSubstanceMeasure': '0 0 0 0 0 1 0',
     'IfcAreaDensityMeasure': '-2 1 0 0 0 0 0',
     'IfcAreaMeasure': '2 0 0 0 0 0 0',
     'IfcDynamicViscosityMeasure': '-1 1 -1 0 0 0 0',
@@ -39,6 +40,7 @@ MEASURE_MAPPING = {
     'IfcPHMeasure': '0 0 0 0 0 0 0',
     'IfcPlanarForceMeasure': '-1 1 -2 0 0 0 0',
     'IfcPlaneAngleMeasure': '0 0 0 0 0 0 0',
+    'IfcPowerMeasure': '2 1 -3 0 0 0 0',
     'IfcPressureMeasure': '-1 1 -2 0 0 0 0',
     'IfcRadioActivityMeasure': '0 0 -1 0 0 0 0',
     'IfcRatioMeasure': '0 0 0 0 0 0 0',
@@ -54,6 +56,6 @@ MEASURE_MAPPING = {
     'IfcTorqueMeasure': '2 1 -2 0 0 0 0',
     'IfcVaporPermeabilityMeasure': '0 0 1 0 0 0 0',
     'IfcVolumeMeasure': '3 0 0 0 0 0 0',
-    'IfcVolumetricFlowRateMeasure': '3 0 -1 0 0 0 0'
+    'IfcVolumetricFlowRateMeasure': '3 0 -1 0 0 0 0',
  }
 

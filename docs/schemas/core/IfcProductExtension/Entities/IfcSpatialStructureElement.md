@@ -25,8 +25,7 @@ The _IfcRelAggregates_ is defined as an 1-to-many relationship and used to estab
 The subtypes of _IfcSpatialStructureElement_ relate to other elements and systems by establishing the following relationships:
 
 * **Containment of elements** : _IfcRelContainedInSpatialStructure_ by inverse attribute _ContainsElements_, used to assign any element, like building elements, MEP elements, etc. to the spatial structure element in which they are primarily contained.
-* **Reference of elements** : _IfcRelReferencedInSpatialStructure_ by inverse attribute _ReferencesElements_, used to reference any element, like building elements, MEP elements, etc. in spatial structure elements, other then the one, where it is contained.
-* **Reference of systems** : _IfcRelServicesBuildings_ by inverse attribute _ServicedBySystems_, used to reference a system, like a building service or electrical distribution system, a zonal system, or a structural analysis system, that is assigned to this spatial structure element.
+* **Reference of elements** : _IfcRelReferencedInSpatialStructure_ by inverse attribute _ReferencesElements_, used to reference any element, like building elements, MEP elements, etc. in spatial structure elements, other then the one, where it is contained. Since the deprecation of _IfcRelServicesBuildings_, _IfcRelReferencedInSpatialStructure_ is also used to reference a system, like a building service or electrical distribution system, a zonal system, or a structural analysis system, that is assigned to this spatial structure element.
 
 The subtypes of _IfcSpatialStructureElement_ relate to each other by using the _IfcRelAggregates_ relationship to build the project spatial structure. Figure 1 shows the use of _IfcRelAggregates_ to establish a spatial structure including site, building, building section and storey. More information is provided at the level of the subtypes.
 

@@ -15,11 +15,11 @@ The following conventions shall apply as default relative positions if the relat
 * For _IfcGrid_ and _IfcAnnotation_ the convention applies that it shall be placed relative
     *  to the local placement of its container, either _IfcSite_, _IfcBuilding_, or _IfcBuildingStorey_
         * it should be the same container element that is referenced by the _IfcRelContainedInSpatialStructure_ containment relationship,
-*  For _IfcAlignment_ placed relative to the local placement of its container _IfcSite_ when not placed absolutely within the world coordinate system.
+*  For _IfcAlignment_ placed relative to the world coordinate system of _IfcProject_.
 * For _IfcPort_ the convention applies that it shall be placed relative
     *  to the local placement of the _IfcElement_ it belongs to
         * it should be the same element that is referenced by the _IfcRelConnectsPortToElement_ connection relationship,
-*  For _IfcElement_ the convention applies that it shall be placed relative:
+* For _IfcElement_ the convention applies that it shall be placed relative:
     *  to the local placement of its container, either _IfcSite_, _IfcFacility_, or _IfcFacilityPart_
         * it should be the same container element that is referenced by the _IfcRelContainedInSpatialStructure_ containment relationship,
     * to the local placement of the _IfcElement_ to which it is tied by an element composition relationship

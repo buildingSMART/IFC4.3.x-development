@@ -22,7 +22,7 @@ See descriptions of enumeration types for further details. Below are some sugges
 
 Figure 1 &mdash; Example of usage of _IfcRailwayPart_ to vertically organise the elements of a railway line
 
-> NOTE  If required by the use case, the part below the track can be distinguished between _IfcRailwayFacilityPart.SUBSTRUCTURE_ (for constructed ground) and _IfcFacilityPartCommon.BELOWGROUND_ (for non constructed, existing ground).
+> NOTE  If required by the use case, the part below the track can be distinguished between _IfcRailwayPart.SUBSTRUCTURE_ (for constructed ground) and _IfcFacilityPartCommon.BELOWGROUND_ (for non constructed, existing ground).
 
 > NOTE  The Figure above covers the average simple case. For example, other advanced cases could be:
 > * Railway line on a bridge

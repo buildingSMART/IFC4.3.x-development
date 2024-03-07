@@ -42,5 +42,5 @@ The properties defined by this _IfcPropertyTemplate_ are of type _IfcQuantityWei
 ### Q_TIME
 The properties defined by this _IfcPropertyTemplate_ are of type _IfcQuantityTime_.
 
-### Q_TIME
+### Q_NUMBER
 The properties defined by this _IfcPropertyTemplate_ are of type _IfcQuantityNumber_.

@@ -13,6 +13,8 @@ from xmi_document import xmi_document, missing_markdown
 from nltk import PorterStemmer
 from reversestem import unstem
 
+from measure_mapping import MEASURE_MAPPING
+
 
 logging.basicConfig(level=logging.INFO)
 
@@ -35,6 +37,7 @@ ps = PorterStemmer()
 CHAR_LIMIT = 50
 HTML_TAG_PATTERN = re.compile('<.*?>')
 MULTIPLE_SPACE_PATTERN = re.compile(r'\s+')
+MULTIPLE_LINEBREAK_PATTERN = re.compile('\n+')
 # CHANGE_LOG_PATTERN = re.compile(r'\{\s*\.change\-\w+\s*\}.+', flags=re.DOTALL)
 CURLY_BRACKET_PATTERN = re.compile('{.*?}.*') #also removes all text after curly brackets
 FIGURE_PATTERN = re.compile('[^.,;]*(Figure|the figure)[^.,;]*') #removes the sentence when it mentiones a Figure.
@@ -42,10 +45,10 @@ LIST_PATTERN = re.compile('[^.,;]*:\s?') #removes the last sentence when it ends
 
 replacements = [
     (re.compile(r'\*{2}'), ' '),
-    (re.compile('\n+'), '; '),
     (re.compile(r':(?!\s)'), ': '),
     (re.compile(r'SELF\\'), ''),
     (re.compile(r'(?<!\.)\.\.(?!\.)'), '.'),  # remove double dots but not triple (ellipsis)
+    (MULTIPLE_LINEBREAK_PATTERN, '; '),
     (HTML_TAG_PATTERN, ' '),
     (CURLY_BRACKET_PATTERN, ' '),
     (FIGURE_PATTERN, ''),
@@ -54,11 +57,11 @@ replacements = [
     ]
 
 WORDS_TO_CATCH = sorted(['current','cost','of','switch','order','recovery','loading','barrier','predefined','reel','basin','fountain','packaged','nozzle','tube','plant',
-                         'injection','assisted','element','vertically','vertical','turbine','heating','disassembly','button','component','security','deflector',
+                         'injection','assisted','element','vertically','vertical','turbine','heating','disassembly','button','component','security','deflector','lighting',
                          'cabinet','assembly','actuator','meter','sensor','object','detection','station','depth','controller','terminal','center','frame','electric',
                          'exchangers','wedge','gate','configured','plug','lubricated','parallel','slide','exchange','exchanger','change','outlet','server','plate','expansion',
                          'rail','solar','surcharge','excavation','combustion','draft','mechanical','constant','coil','cooled','cooler','evaporative','pavement','top',
-                         'column','traffic','crossing','side','road','vehicle','island','gear','super','event','adiabatic','segment','marker','structure','ground',
+                         'column','traffic','crossing','side','road','vehicle','island','gear','super','event','adiabatic','segment','marker','structure','ground','allocation',
                          'channel','pressure','shift','prevention','tray','provision','soil','preloaded','water','cold','hot','cable','domestic','power','generation',
                          'solid','waste','unit','carrier','duct','protection','disconnector','surfacing','breaker','wall','flow','curve','limiter','board','chamber',
                          'panel','acoustic','fire','inspection','transverse','rumble','strip','surface','maintenance','of','pier','system','fixed','hatch','transmission',
@@ -66,23 +69,23 @@ WORDS_TO_CATCH = sorted(['current','cost','of','switch','order','recovery','load
                          'void','quantities','compacted','drained','tower','indirect','direct','media','intelligent','rigid','random','marine','compact','tensioner',
                          'operational','intermediate','storage','hooks','area','lift','lifting','forward','natural','radial','gravity','piston','relief','air','track', 'pair',
                          'switching','transition','off','bend','circular','derailer','tracked','roadway','plateau','retention','stock','double','twin','cage','seat',
-                         'moving','soft','inlet','symbol','symbolic','toilet','dock','docking','parabolic','bending','transceiver','control','asset','furniture',
+                         'moving','soft','inlet','symbol','symbolic','toilet','dock','docking','parabolic','bending','transceiver','control','asset','furniture','resistance',
                          'contact','centre','motorized','motor','photocopier','generator','engine','point','access','asynchronous','synchronous','single','plaza','wheel','loops',
                          'drive','stop','rates','timer','leakage','time','dryer','framework','roof','induction','topping','alignment','curved','stair','elemented','scaffolding',
                          'electrical','chair','sofa','railway','entrance','secured','cover','manhole','flat','concave','convex','known','cylinder','horizontal','business','issues',
                          'elevated','work','platform','materials','handling','material','effects','health','safety','hazadrous','dust','scaffold','fall','fragile','shock',
                          'environmental','drowning','flooding','very','high','unintended','collapse','working','overhead','considerable','value','driven','defined','unknown',
-                         'class','appliance','earth','protective','neutral','disposal','cradle','site','production','transport','repair','whole','lifecycle','siphon',
+                         'class','appliance','earth','protective','neutral','disposal','cradle','site','production','transport','repair','whole','lifecycle','siphon','breaking',
                          'urgent','procedure','emergency','offsite','very','office','sensors','volume','diffusers','variable','multiple','zone','conduit','temperature','powered',
                          'safety','light','warning','exit','blue','illumination','spark','gap','gas','filled','touch','screen','buttons','auto','transformer','divided','support',
                          'earthing','offload','break','glass','key','operated','manual','pull','cord','exhaust','damper','shell','pump','filter','conveyor','pumps','heat','heated',
                          'speed','fan','bypass','valve','dampers','wet','bulb','reset','exiting','folding','curtain','closed','circuit','dry','open','indicator','shunting','route',
                          'derail','departure','starting','signal','repeating','obstruction','hump','auxiliary','home','distant','block','blocking','approach','mesh','push',
-                         'pushing', 'bidirectional','directional','right','left','damper','balancing','combination','earthquake','relay','interface','face','nail','loss',
+                         'pushing', 'bidirectional','directional','right','left','damper','balancing','combination','earthquake','relay','interface','face','nail','loss','prestress',
                          'mounted','unidirectional','blast','damper','centrifugal','backward','inclined','vane','axial','propellor','diatomaceous','earth','reverse','osmosis',
                          'liquefied','petroleum','lightning','shaft','soak','slurry','collector','with','check','commercial','propane','butane','atmospheric','vacuum','wetted',
-                         'function','complementary','circuit','fault','lower','inglimit','pulse','converter','running','average','upper','limit','lower','band','dimmer',
-                         'position','frost','automatic','www','continuous','positioner','positioning','source','sink','profile','enumerated','content','extinguishing',
+                         'function','complementary','circuit','fault','lower','inglimit','pulse','converter','running','average','upper','limit','lower','band','dimmer','sheath',
+                         'position','frost','automatic','www','continuous','positioner','positioning','source','sink','profile','enumerated','content','extinguishing','frailty',
                          'photovoltaic','soils','between','central','reserve','shoulder','intersection','parking','passing','audiovisual','shape','co2','conduct','conductor',
                          'conductance','conductivity','obstacle','movement','moisture','radiation','radioactivity','rain','smoke','turnout','closure','wind','aggregates','aggregate',
                          'transporting','roofing','recording','stitch','wire','pair','router','tungsten','filament','gateway','selector','momentary','toggle','vertical','inline',
@@ -92,7 +95,8 @@ WORDS_TO_CATCH = sorted(['current','cost','of','switch','order','recovery','load
                          'consumption','photochemical','ozone','renewable','energy','resource','depletion','stratospheric','layer','destruction','reheat','reference','components',
                          'constraint','name','type','names','types','lrm','relative','window','dome','heavy','applicable','axis','placement','cooker','freestanding','heater','subgrade',
                          'inductor','packet','remote','radio','radioactive','above','dilation','winder','equidistant','switch','feed','pipe','pipes','rotary','hollow','humidity',
-                         'concentration','identifier','level','cosine','helmert','sine','viennese','bloss','location','global','local','thickness','direction','fluorescent'], key=len)[::-1]
+                         'concentration','identifier','level','cosine','helmert','sine','viennese','bloss','location','global','local','thickness','direction','fluorescent',
+                         'current','pole','gender','colour'], key=len)[::-1]
 
 EXCLUDED_ENTITIES = ['IfcApplication','IfcOwnerHistory','IfcTable','IfcTableColumn','IfcTableRow','IfcChangeActionEnum','IfcGloballyUniqueId','IfcStateEnum','IfcShell','IfcAdvancedFace',
                      'IfcClosedShell','IfcConnectedFaceSet','IfcEdge','IfcEdgeCurve','IfcEdgeLoop','IfcFace','IfcFaceBound','IfcFaceOuterBound','IfcFaceSurface','IfcLoop','IfcOpenShell',
@@ -109,7 +113,7 @@ EXCLUDED_ENTITIES = ['IfcApplication','IfcOwnerHistory','IfcTable','IfcTableColu
                      'IfcBoxAlignment','IfcTextPath','IfcAnnotationFillArea','IfcPlanarBox','IfcPlanarExtent','IfcPresentationItem','IfcTextLiteral','IfcTextLiteralWithExtent','IfcBinary',
                      'IfcBoolean','IfcDerivedUnitEnum','IfcIdentifier','IfcInteger','IfcLabel','IfcLogical','IfcPHMeasure','IfcPositiveInteger','IfcReal','IfcSIPrefix','IfcSIUnitName','IfcText',
                      'IfcUnitEnum','IfcConversionBasedUnitWithOffset','IfcDerivedUnitElement','IfcDimensionalExponents','IfcUnitAssignment','IfcDirectionSenseEnum','IfcLayerSetDirectionEnum',
-                     'IfcArcIndex','IfcAxis2Placement','IfcBSplineCurveForm','IfcBSplineSurfaceForm','IfcCurveOnSurface','IfcDimensionCount','IfcKnotType','IfcLineIndex',
+                     'IfcArcIndex','IfcAxis2Placement','IfcBSplineCurveForm','IfcBSplineSurfaceForm','IfcCurveOnSurface','IfcDimensionCount','IfcKnotType','IfcLineIndex','centerline','centreline',
                      'IfcPreferredSurfaceCurveRepresentation','IfcTransitionCode','IfcVectorOrDirection','IfcAxis1Placement','IfcAxis2Placement2D','IfcAxis2Placement3D','IfcAxis2PlacementLinear',
                      'IfcBSplineCurveWithKnots','IfcDirection','IfcBSplineSurface','IfcBSplineSurfaceWithKnots','IfcBoundedSurface','IfcClothoid','IfcCompositeCurveOnSurface',
                      'IfcCompositeCurveSegment','IfcConic','IfcCosineSpiral','IfcCurveBoundedPlane','IfcCurveBoundedSurface','IfcCurveSegment','IfcCylindricalSurface','IfcElementarySurface',
@@ -121,25 +125,27 @@ EXCLUDED_ENTITIES = ['IfcApplication','IfcOwnerHistory','IfcTable','IfcTableColu
                      'IfcExtrudedAreaSolidTapered','IfcFaceBasedSurfaceModel','IfcFacetedBrep','IfcFacetedBrepWithVoids','IfcGeometricCurveSet','IfcGeometricSet','IfcIndexedPolygonalFace',
                      'IfcIndexedPolygonalFaceWithVoids','IfcManifoldSolidBrep','IfcPolygonalBoundedHalfSpace','IfcPolygonalFaceSet','IfcRectangularPyramid','IfcRevolvedAreaSolidTapered',
                      'IfcRightCircularCone','IfcRightCircularCylinder','IfcSectionedSolidHorizontal','IfcSectionedSpine','IfcSectionedSurface','IfcShellBasedSurfaceModel','IfcSolidModel',
-                     'IfcSphere','IfcSweptDiskSolidPolygonal','IfcTessellatedFaceSet','IfcTessellatedItem','IfcTriangulatedFaceSet','IfcTriangulatedIrregularNetwork','IfcAlignmentCantSegmentTypeEnum',
-                     'IfcAlignmentHorizontalSegmentTypeEnum','IfcAlignmentVerticalSegmentTypeEnum','IfcPointOrVertexPoint','IfcSolidOrShell','IfcSurfaceOrFaceSurface','IfcAlignmentCantSegment',
-                     'IfcAlignmentHorizontalSegment','IfcAlignmentParameterSegment','IfcAlignmentVerticalSegment','IfcGridAxis','IfcGridPlacement','IfcLinearPlacement','IfcLocalPlacement',
+                     'IfcSphere','IfcSweptDiskSolidPolygonal','IfcTessellatedFaceSet','IfcTessellatedItem','IfcTriangulatedFaceSet','IfcTriangulatedIrregularNetwork','IfcGridAxis',
                      'IfcObjectPlacement','IfcVirtualGridIntersection','IfcDocumentConfidentialityEnum','IfcLanguageId','IfcDocumentStatusEnum','IfcClassification','IfcDataOriginEnum','IfcDate',
                      'IfcDateTime','IfcDuration','IfcRecurrenceTypeEnum','IfcTaskDurationEnum','IfcTime','IfcTimeSeriesDataTypeEnum','IfcTimeStamp','IfcEventTime','IfcIrregularTimeSeries','IfcLagTime',
                      'IfcRecurrencePattern','IfcRegularTimeSeries','IfcResourceTime','IfcSchedulingTime','IfcTaskTime','IfcTaskTimeRecurring','IfcTimePeriod','IfcTimeSeries','IfcWorkTime',
                      'IfcArithmeticOperatorEnum','IfcBenchmarkEnum','IfcConstraintEnum','IfcLogicalOperatorEnum','IfcObjectiveEnum','IfcConstraint','IfcMetric','IfcObjective','IfcApproval',
                      'IfcAddressTypeEnum','IfcRoleEnum','IfcAddressTypeEnum','IfcRoleEnum','IfcActorRole','IfcAddress','IfcOrganization','IfcPerson','IfcPersonAndOrganization','IfcPostalAddress',
-                     'IfcTelecomAddress','IfcCurve','IfcCircle','IfcEllipse','IfcLine','IfcPlane','IfcPoint','IfcPolyline','IfcSpiral','IfcSurface','IfcVector']
+                     'IfcTelecomAddress','IfcCurve','IfcCircle','IfcEllipse','IfcLine','IfcPlane','IfcPoint','IfcPolyline','IfcSpiral','IfcSurface','IfcVector','IfcPreDefinedPropertySet',
+                     'IfcPointOrVertexPoint','IfcSolidOrShell','IfcSurfaceOrFaceSurface','IfcGridPlacement','IfcLinearPlacement','IfcLocalPlacement']
 
 # ALLOW:  IfcRoot, IfcLightSource, IfcStructuralLoad, IfcStructuralLoadLinearForce, IfcStructuralLoadPlanarForce, IfcStructuralLoadSingleForce, IfcStructuralLoadStatic, IfcStructuralLoadTemperature
 
 ALL_CAPS = ['ups','gprs','rs','am','gps','dc','tn','url','ac','co','co2','chp','id','led','oled','ole','gfa','tv','msc','ppm','iot','ocl','lrm','cgt','teu','tmp','std','gsm','cdma','lte','td','scdma',
-            'wcdma','sc','mp','bm','ol','ep','ir','www','ip','ph','usb', 'ii', 'iii','url','uri','ssl','ffl','ty','tz','tx']
+            'wcdma','sc','mp','bm','ol','ep','ir','www','ip','ph','usb', 'ii', 'iii','url','uri','ssl','ffl','ty','tz','tx','ipi','ics']
 
 SMALL_CAPS = ['for','of','and','to','with','or','at']
 
 SUBSTITUTIONS = {
     "Rel ": "Relation: ",
+    "Min ": "Minimum ",
+    "Max ": "Maximum ",
+    " Temp": " Temperature",
     "Qto_": "Quantity set: ",
     "Pset_": "Property set: ",
 }
@@ -191,9 +197,10 @@ def reduce_description(s, trim=True):
         s = ''
     if trim:
         # split and remove on keywords:        
-        j = re.search(r'\$\$', s).start() if re.search(r'\$\$', s) else -1
-        k = re.search(r'(Base|General) formula', s).start() if re.search(r'(Base|General) formula', s) else -1
-        i = min([x for x in [s.find('NOTE'), s.find('DIAGRAM'), s.find('CHANGE'), s.find('IFC4'), s.find('HISTORY'), s.find('REFERENCE'), s.find('EXAMPLE'), s.find('DEPRECATION'), j, k, 1e5] if x >= 0])
+        j = re.search(r'\$\$', s).start() if re.search(r'\$\$', s) else -1  # formula
+        k = re.search(r'(Base|General) formula', s).start() if re.search(r'(Base|General) formula', s) else -1  # formula
+        l = re.search(r'\*\*', s).start() if re.search(r'\*\*', s) else -1  # bold text
+        i = min([x for x in [s.find('NOTE'), s.find('DIAGRAM'), s.find('CHANGE'), s.find('IFC4'), s.find('HISTORY'), s.find('REFERENCE'), s.find('EXAMPLE'), s.find('DEPRECATION'), j, k, l, 1e5] if x >= 0])
         if i > 0 and i != 1e5:
             s = s[:i]
         elif i==0:
@@ -319,6 +326,7 @@ def normalise(s):
 def clean(s):
     """ format the text by removing unwanted characters."""    
     # remove all redundant characters (except those listed):
+    s = re.sub(MULTIPLE_LINEBREAK_PATTERN, '; ', s)
     cleaned = ''.join(['', c][c.isalnum() or c in ':.,()-+ —=;α°_/!?$%@<>\'"\\*'] for c in to_str(s))
     p = re.compile('"')
     cleaned = re.sub(p,"'", cleaned).strip()
@@ -400,8 +408,16 @@ def filter_concepts(di):
         # but decided to widen to also include all non-products that have psets, like IfcActor.
         # return ("IfcRoot" in parents(k)) or ("IfcMaterialDefinition" in parents(k)) or ("IfcProfileDef" in parents(k)) or child_or_self_has_psets(k)
         # Now skipping relations ('IfcRelAssociatesClassification'), types ('IfcWallType'), property definitions ('IfcPropertySingleValue'), Resources and some other abstract concepts. 
+        x1 = k.startswith(('IfcRel','IfcProperty','IfcProperty','IfcQuantity','IfcConnection','IfcCartesian','IfcMaterial'))
+        x2 = k.endswith(('Relationship','Type','Usage','Property','Template','Resource','Select','Measure','Condition','ProfileDef','Value','Property','Quantity','Curve','Number','Reference','Information','Solid'))
+        x3 = k.endswith('Unit') and not k == 'IfcProtectiveDeviceTrippingUnit'
+        x4 = k.startswith('IfcAlignment') and not k == 'IfcAlignment'
+        x5 = k in EXCLUDED_ENTITIES
+        x6 = (k != "IfcObjectDefinition" and k.endswith("Definition"))
+        x7 = any(x in parents(k) for x in ["IfcPropertyAbstraction","IfcConstraint","IfcRepresentationItem","IfcPresentationItem","IfcPresentationStyle","IfcTypeObject","IfcExternalReference","IfcStructuralLoadOrResult",""])
+        x8 = any(z.endswith("Resource") for z in parents(k))
         result = False
-        if not (k.startswith(('IfcRel','IfcProperty','IfcProperty','IfcQuantity','IfcConnection','IfcCartesian')) or k.endswith(('Relationship','Type','Usage','Property','Template','Resource','Select','Measure','Condition','ProfileDef','Value','Property','Quantity','Unit','Curve','Number','Reference','Information','Solid')) or any(x in parents(k) for x in ["IfcPropertyAbstraction","IfcConstraint","IfcRepresentationItem","IfcPresentationItem","IfcPresentationStyle","IfcTypeObject"]) or any(z.endswith("Resource") for z in parents(k)) or (k in EXCLUDED_ENTITIES) or (k != "IfcObjectDefinition" and k.endswith("Definition")) ):        
+        if not any([x1,x2,x3,x4,x5,x6,x7,x8]):
             result = True
         # bypass for selected classes:
         elif k in ('IfcMaterial'): #,'IfcLightSource','IfcBoundingBox','IfcPoint','IfcCurve','IfcSegment','IfcDirection','IfcSurface','IfcVector'):
@@ -491,7 +507,8 @@ def generate_definitions():
                 st = item.meta.get('supertypes', [])
                 if st:
                     di["Parent"] = to_str(st[0])
-                di["Definition"] = reduce_description(to_str(item.markdown_definition), trim=True)
+
+                di["Definition"] = reduce_description(to_str(item.markdown_content), trim=True)
                 # add human-readable name
                 di["Name"] = caps_control(clean(normalise((item.name[3:] if item.name.lower().startswith('ifc') else item.name))).title())
                 di["Guid"] = guid_by_id(item.id)
@@ -567,8 +584,8 @@ def generate_definitions():
                             org_type_name = list(ty_arg.values())[0]
                             pe_types = [c for c in xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:Class"] if c.name == org_type_name]
                             pe_types += [c for c in xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:DataType"] if c.name == org_type_name]                    
-                            pe_type = pe_types[0]
-                            root_generalization = generalization(pe_type)
+                            measure = pe_types[0].name
+                            root_generalization = generalization(pe_types[0])
                             type_name = root_generalization.name #.lower()
                             type_values = None
 
@@ -591,7 +608,7 @@ def generate_definitions():
                                 logging.warning("%s.%s of type %s <%s> not mapped" % (pset.name, nm, ty, ",".join(map(lambda kv: "=".join(kv), ty_arg.items()))))
                                 continue
 
-                    di["Psets"][pset.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', reduce_description(to_str(pset.markdown_definition), trim=True))
+                    di["Psets"][pset.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', reduce_description(to_str(pset.markdown_content), trim=True))
                     
                     di["Psets"][pset.name]["Properties"][a.name]["Type"] = type_name
                     di["Psets"][pset.name]["Properties"][a.name]["Name"] = caps_control(clean(split_words(normalise(a.name))).title())
@@ -599,7 +616,11 @@ def generate_definitions():
                     di["Psets"][pset.name]["Properties"][a.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', reduce_description(to_str(a.markdown), trim=True))
                     di["Psets"][pset.name]["Properties"][a.name]["Kind"] = kind_name
                     di["Psets"][pset.name]["Properties"][a.name]["Package"] = to_str(pset.package) # solely to split POT files
-
+                    if measure.lower().endswith("measure"): #not measure in ('IfcLabel','IfcText','IfcURIReference','IfcTimeSeries','IfcBoolean'):               
+                        if measure in MEASURE_MAPPING.keys():
+                            di["Psets"][pset.name]["Properties"][a.name]["Dimension"] = MEASURE_MAPPING[measure]
+                        else:
+                            di["Psets"][pset.name]["Properties"][a.name]["Dimension"] = "0 0 0 0 0 0 0"
                     if type_values is None:
                         type_values = TYPE_TO_VALUES.get(type_name)
                     if type_values:
@@ -764,7 +785,8 @@ for code, content in all_concepts.items():
     if content['Guid']:
         classes[-1]['Uid'] = to_str(content['Guid'])
     if content['Parent']:
-        classes[-1]['ParentClassCode'] = to_str(content['Parent'])
+        if content['Parent'] in codes:
+            classes[-1]['ParentClassCode'] = to_str(content['Parent'])
     if content['Description']:
         classes[-1]['Description'] = to_str(content['Description'])
         to_translate.append({"msgid":code[0:CHAR_LIMIT]+"_DESCRIPTION","msgstr":classes[-1]['Description'],"package":content['Package']})
@@ -785,17 +807,17 @@ for code, content in all_concepts.items():
             for pset_code, pset_content in ancestor['Psets'].items():
                 
                 # add PSet as GroupOfProperties class:
-                if not ((pset_code in unique_psets) or (pset_code == 'Attributes')):
-                    unique_psets.add(pset_code)
-                    psets.append({
-                        'Code': pset_code[0:CHAR_LIMIT],
-                        'Name': to_str(pset_content['Name']) if to_str(pset_content['Name']) else caps_control(clean(normalise(pset_code))).title(),
-                        'Definition': annotate(pset_content['Definition']),
-                        'ClassType': 'GroupOfProperties',
-                        'ClassProperties': []
-                    })
-                    to_translate.append({"msgid":pset_code[0:CHAR_LIMIT],"msgstr":psets[-1]['Name'],"package":content['Package']})
-                    to_translate.append({"msgid":pset_code[0:CHAR_LIMIT]+"_DEFINITION","msgstr":psets[-1]['Definition'],"package":content['Package']})
+                # if not ((pset_code in unique_psets) or (pset_code == 'Attributes')):
+                #     unique_psets.add(pset_code)
+                #     psets.append({
+                #         'Code': pset_code[0:CHAR_LIMIT],
+                #         'Name': to_str(pset_content['Name']) if to_str(pset_content['Name']) else caps_control(clean(normalise(pset_code))).title(),
+                #         'Definition': annotate(pset_content['Definition']),
+                #         'ClassType': 'GroupOfProperties',
+                #         'ClassProperties': []
+                #     })
+                #     to_translate.append({"msgid":pset_code[0:CHAR_LIMIT],"msgstr":psets[-1]['Name'],"package":content['Package']})
+                #     to_translate.append({"msgid":pset_code[0:CHAR_LIMIT]+"_DEFINITION","msgstr":psets[-1]['Definition'],"package":content['Package']})
                 
                 # add ClassProperties
                 for prop_code, prop_content in pset_content['Properties'].items():
@@ -826,12 +848,12 @@ for code, content in all_concepts.items():
                     if not p_code in unique_p_codes: 
                         classes[-1]['ClassProperties'].append(classProp)
                         unique_p_codes.add(p_code)
-                    try:
-                        if pset_code == psets[-1]['Code']:
-                            if not any(classProp['PropertyCode'] == cp.get('PropertyCode')[0:CHAR_LIMIT] for cp in psets[-1]['ClassProperties']):
-                                psets[-1]['ClassProperties'].append(classProp)
-                    except IndexError:
-                        pass
+                    # try:
+                    #     if pset_code == psets[-1]['Code']:
+                    #         if not any(classProp['PropertyCode'] == cp.get('PropertyCode')[0:CHAR_LIMIT] for cp in psets[-1]['ClassProperties']):
+                    #             psets[-1]['ClassProperties'].append(classProp)
+                    # except IndexError:
+                    #     pass
                     
                     # add to properties list, not just classProp
                     if not prop_code in unique_props:
@@ -861,7 +883,8 @@ for code, content in all_concepts.items():
                         if prop_content['Description']:
                             props[-1]['Description'] = annotate(prop_content['Description'])
                             to_translate.append({"msgid":prop_code[0:CHAR_LIMIT]+"_DESCRIPTION","msgstr":props[-1]['Description'],"package":content['Package']})
-
+                        if prop_content['Dimension']:
+                            props[-1]['Dimension'] = prop_content['Dimension']
                         if prop_content['Type'].lower() == "string":
                             props[-1]['DataType'] = "String"
                         elif prop_content['Type'].lower() in ("real","number"):

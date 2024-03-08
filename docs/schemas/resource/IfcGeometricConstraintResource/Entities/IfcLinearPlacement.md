@@ -5,7 +5,8 @@ _IfcLinearPlacement_ provides a specialization of _IfcObjectPlacement_ in which 
 ## Attributes
 
 ### RelativePlacement
-
+Provides location and orientation to place items in a three-dimensional space confined to the context of a curve.
 
 ### CartesianPosition
-
+Provides location and orientations to place items in a three-dimensional space. It serves as a fallback which may be used by applications that do
+not support linear placement.

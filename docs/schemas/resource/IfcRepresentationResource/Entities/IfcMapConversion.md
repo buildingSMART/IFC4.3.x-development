@@ -9,7 +9,7 @@ For this transformation, _IfcMapConversion_ data are used for:
 2. followed by an **anti-clockwise** rotation about the z-axis of *&theta;*, where:
 
 $$
-\theta=arctan\left(\frac{IfcMapConversion.XAxisOrdinate}{IfcMapConversion.XAxisAbscissa}\right)
+\theta=arctan\left(\frac{XAxisOrdinate}{XAxisAbscissa}\right)
 $$
 
 3. and then a translation in (x,y,z) of _IfcMapConversion.Eastings_, _IfcMapConversion.Northings_, _IfcMapConversion.OrthogonalHeight_

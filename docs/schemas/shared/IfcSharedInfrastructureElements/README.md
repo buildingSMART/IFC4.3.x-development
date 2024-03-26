@@ -3,7 +3,7 @@ IfcSharedInfrastructureElements
 
 The _IfcSharedInfrastructureElements_ schema defines the shared or common elements (subtypes of _IfcElement_) that are applicable to the infrastructure sector.
 
-the scope of this includes concepts to cover the definition of:
+The scope of this includes concepts to cover the definition of:
 
 * Geotechnical & terrain
     * Boreholes

@@ -27,26 +27,17 @@ The unambiguous identifier by which the coordinate reference system is known, is
 ### VerticalDatum
 Name by which the vertical datum is identified. The vertical datum is associated with the height axis of the coordinate reference system and indicates the reference plane and fundamental point defining the origin of a height system. It needs to be provided, if the _Name_ identifier does not unambiguously define the vertical datum as well and if the coordinate reference system is a 3D reference system.
 
-> EXAMPLE  vertical datums include:
->
-> * 'EPSG:5181' (Deutsches Haupth&ouml;hennetz 1992)
-> * 'EPSG:5215' (European Vertical Reference Frame 2007)
+> EXAMPLE  vertical datums include: 'EPSG:5181' (Deutsches Haupth&ouml;hennetz 1992); 'EPSG:5215' (European Vertical Reference Frame 2007)
 
 ### MapProjection
 Name by which the map projection is identified.
 
-> EXAMPLE  map projections include:
->
-> * UTM
-> * Gauss-Krueger
+> EXAMPLE  map projections include: UTM; Gauss-Krueger
 
 ### MapZone
 Name by which the map zone, relating to the _MapProjection_, is identified.
 
-> EXAMPLE  map zones includes:
->
-> * for UTM, the zone number, like 32 for UTM32
-> * for Gauss-Krueger, the zone number, like 3 for GK3
+> EXAMPLE  map zones includes: for UTM, the zone number, like 32 for UTM32; for Gauss-Krueger, the zone number, like 3 for GK3
 
 ### MapUnit
 

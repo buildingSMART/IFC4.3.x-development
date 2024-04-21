@@ -140,7 +140,7 @@ Angle unit as degrees or radians.
 
 The _IfcProject_ is used to reference the root of the spatial structure of a building or other construction project (that serves as the primary project breakdown and is required to be hierarchical). The spatial structure elements are linked together, and to the _IfcProject_, by using the objectified relationship _IfcRelAggregates_.
 
-The following constraints are applied to using the relationshio _IfcRelAggregates_ in context of _IfcProject_
+The following constraints are applied to using the relationship _IfcRelAggregates_ in context of _IfcProject_
 
 > NOTE  The anomaly to use the composition structure through _IfcRelAggregates_ for assigning the uppermost spatial container to _IfcProject_ is due to upward compatibility reasons with earlier releases of this standard.
 

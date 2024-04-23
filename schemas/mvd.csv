@@ -129,7 +129,7 @@ empty,117,2,4.1.7   Product Shape,,
 ,127,5,4.1.7.1.2.3   Set Of Survey Points,RV,AbV
 ,128,5,4.1.7.1.2.4   Single Survey Line,RV,AbV
 ,129,5,4.1.7.1.2.5   Single Survey Point,RV,AbV
-,130,5,4.1.7.1.2.6   Single Survey Point Linearly Placed,RV,AbV
+,130,5,4.1.7.1.2.6   Single Survey Point Linearly Placed,,AbV
 ,131,4,4.1.7.1.3   Axis Geometry,RV,AbV
 ,132,5,4.1.7.1.3.1   Axis 2D Geometry,RV,AbV
 ,133,5,4.1.7.1.3.2   Axis 3D Geometry,RV,AbV

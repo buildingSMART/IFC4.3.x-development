@@ -6,8 +6,9 @@ Geometry representation of a single survey point.
 ```
 concept {
     IfcAnnotation:Representation -> IfcProductDefinitionShape
-    IfcAnnotation:PredefinedType -> constraint_2
-    constraint_2[label="=.SURVEY."]
+    IfcAnnotation:PredefinedType -> IfcAnnotationTypeEnum
+    IfcAnnotationTypeEnum -> constraint_2
+    constraint_2[label="=SURVEY"]
     IfcProductDefinitionShape:Representations -> IfcShapeRepresentation
     IfcShapeRepresentation:ContextOfItems -> IfcGeometricRepresentationContext
     IfcShapeRepresentation:RepresentationIdentifier -> IfcLabel_0

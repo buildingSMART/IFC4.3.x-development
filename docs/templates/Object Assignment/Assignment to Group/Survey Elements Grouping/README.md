@@ -10,8 +10,9 @@ For ordered list of survey elements, use the Survey Elements Nesting template.
 ```
 concept {
     IfcAnnotation:HasAssignments -> IfcRelAssignsToGroup:RelatedObjects
-    IfcAnnotation:PredefinedType -> constraint_2
-    constraint_2[label="=.SURVEY."]
+    IfcAnnotation:PredefinedType -> IfcAnnotationTypeEnum
+    IfcAnnotationTypeEnum -> constraint_2
+    constraint_2[label="=SURVEY"]
     IfcRelAssignsToGroup:RelatingGroup -> IfcGroup:IsGroupedBy
     IfcAnnotation:Name -> IfcLabel_0
     IfcGroup:Name -> IfcLabel_1

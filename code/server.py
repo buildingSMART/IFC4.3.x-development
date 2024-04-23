@@ -1731,7 +1731,7 @@ def make_concept(path, number_path=None, exclude_partial=True):
         number=number_path,
         text=path[-1],
         children=[make_concept(path + [c], number_path=f"{number_path}.{i}", exclude_partial=exclude_partial) for i, c in children],
-        mvds=[{"abbr": "".join(re.findall('[A-Z]|(?<=-)[a-z]', k)), "name":k, "on": path[-1].replace(" ", "") in v} for k, v in R.xmi_mvd_concepts.items()],
+        mvds=[{"abbr": "".join(re.findall('[A-Z]|(?<=-)[a-z]', k)), "name":k, "on": re.sub(r'[^\w]', '', path[-1]) in v} for k, v in R.xmi_mvd_concepts.items()],
     )
 
 

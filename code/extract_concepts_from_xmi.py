@@ -364,10 +364,20 @@ if __name__ == "__main__":
 
     json.dump(result, open("xmi_concepts.json", "w", encoding="utf-8"), indent=1)
 
+    """
     xmi_mvd_concepts = {}
     views = {p.name: p for p in xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:Package"]}['Views']
     for sub in views / "packagedElement":
         if sub.parent == views and sub.name != 'GeneralUsage':
             xmi_mvd_concepts[sub.name] = list(map(operator.attrgetter('name'), sub / "packagedElement"))
-            
+    """
+
+    import csv, re
+    with open(f'{os.path.dirname(fn)}/mvd.csv', newline='', encoding='utf-8') as csvfile:
+        rd = csv.reader(csvfile, delimiter=',', quotechar='"')
+        rows = list(rd)
+        views = {v.strip():i for i, v in enumerate(rows[0]) if v.strip()}
+        
+    xmi_mvd_concepts = {v: [re.sub(r'[^\w]', '', re.split('\s+', r[3], maxsplit=1)[1]) for r in rows[2:] if r[i].strip()] for v, i in views.items()}
     json.dump(xmi_mvd_concepts, open("xmi_mvd_concepts.json", "w", encoding="utf-8"), indent=1)
+    

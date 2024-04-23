@@ -1,0 +1,207 @@
+,,,,ReferenceView,Alignment-basedView
+Notes,#,Lev.,CT,in-out,in-out
+empty,1,2,4.1.1   Object Assignment,,
+,2,3,4.1.1.1   Actor Assignment,,
+half empty,3,3,4.1.1.2   Assignment to Group,,
+,4,4,4.1.1.2.1   Alignment Grouping,,AbV
+,5,4,4.1.1.2.2   Component to Distribution System,RV,AbV
+,6,4,4.1.1.2.3   Port to Distribution System,RV,AbV
+,7,4,4.1.1.2.4   Survey Elements Grouping,,AbV
+,8,3,4.1.1.3   Control Assignment,,
+,9,3,4.1.1.4   Group Assignment,RV,AbV
+,10,3,4.1.1.5   Process Assignment,,
+,11,3,4.1.1.6   Process Type Assignment,,
+,12,3,4.1.1.7   Product Assignment,,
+,13,3,4.1.1.8   Product Type Assignment,,
+,14,3,4.1.1.9   Resource Assignment,,
+,15,3,4.1.1.10   Resource Type Assignment,,
+empty,16,2,4.1.2   Object Association,,
+,17,3,4.1.2.1   Approval Association,,
+,18,3,4.1.2.2   Classification Association,RV,AbV
+,19,3,4.1.2.3   Constraint Association,,
+,20,3,4.1.2.4   Document Association,,
+,21,3,4.1.2.5   Library Association,,
+half empty,22,3,4.1.2.6   Material Association,,
+,23,4,4.1.2.6.1   Material Constituent Set,RV,AbV
+,24,4,4.1.2.6.2   Material Layer Set Usage,RV,AbV
+,25,4,4.1.2.6.3   Material Profile Set Usage,,
+,26,4,4.1.2.6.4   Material Set,RV,AbV
+,27,4,4.1.2.6.5   Material Single,RV,AbV
+empty,28,2,4.1.3   Object Attributes,,
+empty,29,3,4.1.3.1   Object Occurrence Attributes,,
+half empty,30,4,4.1.3.1.1   Element Occurrence Attributes,,
+delete,31,5,4.1.3.1.1.1   Door Attributes,,
+warning,32,5,4.1.3.1.1.2   Mechanical Fastener Attributes,,
+warning,33,5,4.1.3.1.1.3   Reinforcing Bar Attributes,,
+warning,34,5,4.1.3.1.1.4   Reinforcing Mesh Attributes,,
+warning,35,5,4.1.3.1.1.5   Tendon Attributes,,
+warning,36,5,4.1.3.1.1.6   Window Attributes,,
+warning,37,4,4.1.3.1.2   Grid Attributes,,
+warning,38,4,4.1.3.1.3   Spatial Element Attributes,,
+warning,39,5,4.1.3.1.3.1   Building Attributes,,
+warning,40,5,4.1.3.1.3.2   Site Attributes,,
+warning,41,5,4.1.3.1.3.3   Space Attributes,,
+warning,42,5,4.1.3.1.3.4   Spatial Zone Attributes,,
+warning,43,4,4.1.3.1.4   System Element Attributes,,
+,44,3,4.1.3.2   Object Predefined Type,RV,AbV
+empty,45,3,4.1.3.3   Object Type Attributes,,
+delete,46,4,4.1.3.3.1   Door Type Attributes,,
+warning,47,4,4.1.3.3.2   Mechanical Fastener Type Attributes,,
+warning,48,4,4.1.3.3.3   Reinforcing Bar Type Attributes,,
+warning,49,4,4.1.3.3.4   Reinforcing Mesh Type Attributes,,
+warning,50,4,4.1.3.3.5   Tendon Type Attributes,,
+warning,51,4,4.1.3.3.6   Window Type Attributes,,
+warning,52,3,4.1.3.4   Object Type Predefined Type,RV,AbV
+warning,53,4,4.1.3.4.1   Element Type Predefined Type,,
+warning,54,4,4.1.3.4.2   Spatial Element Type Predefined Type,,
+,55,3,4.1.3.5   Object User Identity,RV,AbV
+rule,56,3,4.1.3.6   Revision Control,RV,AbV
+rule,57,3,4.1.3.7   Software Identity,RV,AbV
+empty,58,2,4.1.4   Object Composition,,
+half empty,59,3,4.1.4.1   Aggregation,,
+,60,4,4.1.4.1.1   Alignment Aggregation To Project,,AbV
+,61,4,4.1.4.1.2   Element Composition,RV,AbV
+,62,4,4.1.4.1.3   Element Decomposition,RV,AbV
+,63,4,4.1.4.1.4   Spatial Composition,RV,AbV
+,64,4,4.1.4.1.5   Spatial Decomposition,RV,AbV
+,65,3,4.1.4.2   Element Projecting,,
+half empty,66,3,4.1.4.3   Element Voiding,,
+,67,4,4.1.4.3.1   Earthworks Cuttings,,
+,68,4,4.1.4.3.2   Element Openings,RV,AbV
+,69,4,4.1.4.3.3   Element Voiding Features,RV,AbV
+half empty,70,3,4.1.4.4   Nesting,,
+,71,4,4.1.4.4.1   Alignment Layouts,,AbV
+,72,5,"4.1.4.4.1.1   Alignment Layout - Horizontal, Vertical and Cant",,AbV
+,73,5,4.1.4.4.1.2   Alignment Layout - Reusing Horizontal Layout,,AbV
+,74,4,4.1.4.4.2   Element Nesting,RV,AbV
+,75,4,4.1.4.4.3   Object Nesting,,
+,76,4,4.1.4.4.4   Port Nesting,RV,AbV
+,77,4,4.1.4.4.5   Survey Elements Nesting,RV,AbV
+,78,4,4.1.4.4.6   Type Element Nesting,,
+,79,4,4.1.4.4.7   Type Port Nesting,,
+,80,3,4.1.4.5   Surface Feature Adherence,,
+,81,3,4.1.4.6   Type Element Aggregation,,
+half empty,82,2,4.1.5   Object Connectivity,,
+,83,3,4.1.5.1   Alignment Spatial Reference,,AbV
+,84,3,4.1.5.2   Control Flow,,
+half empty,85,3,4.1.5.3   Element Connectivity,,
+,86,4,4.1.5.3.1   Path Connectivity,,
+,87,4,4.1.5.3.2   Port Connectivity,RV,AbV
+,88,3,4.1.5.4   Element Covering,RV,AbV
+,89,3,4.1.5.5   Element Filling,RV,AbV
+,90,3,4.1.5.6   Element Interference,,
+,91,3,4.1.5.7   Group Spatial Connectivity,RV,AbV
+,92,3,4.1.5.8   Product Relative Positioning,,AbV
+,93,3,4.1.5.9   Product Span Positioning,,AbV
+,94,3,4.1.5.10   Sequential Connectivity,,
+empty,95,3,4.1.5.11   Space Boundaries,,
+,96,4,4.1.5.11.1   Space Boundaries 1st Level,,
+,97,4,4.1.5.11.2   Space Boundaries 2nd Level,,
+,98,3,4.1.5.12   Spatial Service Connectivity,RV,AbV
+empty,99,3,4.1.5.13   Spatial Structure,,
+,100,4,4.1.5.13.1   Spatial Container,RV,AbV
+,101,4,4.1.5.13.2   Spatial Containment,RV,AbV
+,102,4,4.1.5.13.3   Spatial Interference,,AbV
+,103,5,4.1.5.13.3.1   Spatial Interference With Zones,,
+,104,3,4.1.5.14   Structural Activity,,
+,105,3,4.1.5.15   Structural Connectivity,,
+empty,106,2,4.1.6   Object Definition,,
+,107,3,4.1.6.1   Object Typing,RV,AbV
+empty,108,3,4.1.6.2   Property Sets,,
+,109,4,4.1.6.2.1   Property Sets for Contexts,,
+,110,4,4.1.6.2.2   Property Sets for Materials,RV,AbV
+,111,4,4.1.6.2.3   Property Sets for Objects,RV,AbV
+,112,5,4.1.6.2.3.1   Property Sets with Override,RV,AbV
+,113,4,4.1.6.2.4   Property Sets for Performance,,
+,114,4,4.1.6.2.5   Property Sets for Profiles,,
+,115,4,4.1.6.2.6   Property Sets for Types,RV,AbV
+,116,3,4.1.6.3   Quantity Sets,RV,AbV
+empty,117,2,4.1.7   Product Shape,,
+,118,3,4.1.7.1   Product Geometric Representation,RV,AbV
+,119,4,4.1.7.1.1   Alignment Geometry,,AbV
+,120,5,4.1.7.1.1.1   Alignment Geometry - Horizontal,,AbV
+,121,5,4.1.7.1.1.2   Alignment Geometry - Horizontal and Vertical,,AbV
+,122,5,"4.1.7.1.1.3   Alignment Geometry - Horizontal, Vertical and Cant",,AbV
+,123,5,4.1.7.1.1.4   Alignment Geometry - Segments,,AbV
+,124,4,4.1.7.1.2   Annotation Geometry,RV,AbV
+,125,5,4.1.7.1.2.1   Annotation 2D Geometry,RV,AbV
+,126,5,4.1.7.1.2.2   Annotation 3D Geometry,RV,AbV
+,127,5,4.1.7.1.2.3   Set Of Survey Points,RV,AbV
+,128,5,4.1.7.1.2.4   Single Survey Line,RV,AbV
+,129,5,4.1.7.1.2.5   Single Survey Point,RV,AbV
+,130,5,4.1.7.1.2.6   Single Survey Point Linearly Placed,RV,AbV
+,131,4,4.1.7.1.3   Axis Geometry,RV,AbV
+,132,5,4.1.7.1.3.1   Axis 2D Geometry,RV,AbV
+,133,5,4.1.7.1.3.2   Axis 3D Geometry,RV,AbV
+,134,4,4.1.7.1.4   Body Geometry,RV,AbV
+,135,5,4.1.7.1.4.1   Body AdvancedBrep Geometry,,AbV
+,136,5,4.1.7.1.4.2   Body AdvancedSweptSolid Geometry,RV,AbV
+,137,6,4.1.7.1.4.2.1   Body AdvancedSwept Directrix Geometry,,
+,138,6,4.1.7.1.4.2.2   Body AdvancedSwept DiskSolid PolyCurve Geometry,RV,AbV
+,139,6,4.1.7.1.4.2.3   Body AdvancedSwept Tapered Geometry,,
+,140,6,4.1.7.1.4.2.4   Body SectionedSolidHorizontal,,
+,141,5,4.1.7.1.4.3   Body Brep Geometry,RV,AbV
+,142,5,4.1.7.1.4.4   Body CSG Geometry,,
+,143,5,4.1.7.1.4.5   Body Clipping Geometry,,AbV
+,144,5,4.1.7.1.4.6   Body SurfaceModel Geometry,,AbV
+,145,5,4.1.7.1.4.7   Body SurfaceOrSolidModel Geometry,,AbV
+,146,5,4.1.7.1.4.8   Body SweptSolid Geometry,RV,AbV
+,147,6,4.1.7.1.4.8.1   Body SweptSolid Composite Geometry,,
+,148,6,4.1.7.1.4.8.2   Body SweptSolid CompositeCurve Geometry,,
+,149,6,4.1.7.1.4.8.3   Body SweptSolid ParameterizedProfile Geometry,,
+,150,6,4.1.7.1.4.8.4   Body SweptSolid PolyCurve Geometry,RV,AbV
+,151,5,4.1.7.1.4.9   Body Tessellation Geometry,RV,AbV
+,152,4,4.1.7.1.5   Box Geometry,RV,AbV
+,153,4,4.1.7.1.6   Clearance Geometry,RV,AbV
+,154,4,4.1.7.1.7   CoG Geometry,RV,AbV
+,155,4,4.1.7.1.8   FootPrint Geometry,RV,AbV
+,156,5,4.1.7.1.8.1   FootPrint Annotation Geometry,RV,AbV
+,157,5,4.1.7.1.8.2   FootPrint GeomSet Geometry,RV,AbV
+,158,6,4.1.7.1.8.2.1   FootPrint GeomSet PolyCurve Geometry,,
+,159,4,4.1.7.1.9   Lighting Geometry,,
+,160,4,4.1.7.1.10   Mapped Geometry,RV,AbV
+,161,4,4.1.7.1.11   Profile Geometry,,AbV
+,162,5,4.1.7.1.11.1   Profile 3D Geometry,,
+,163,4,4.1.7.1.12   Reference Geometry,RV,AbV
+,164,5,4.1.7.1.12.1   Reference SweptSolid Geometry,RV,AbV
+,165,6,4.1.7.1.12.1.1   Reference SweptSolid PolyCurve Geometry,RV,AbV
+,166,5,4.1.7.1.12.2   Reference Tessellation Geometry,RV,AbV
+,167,4,4.1.7.1.13   Surface Geometry,,AbV
+,168,5,4.1.7.1.13.1   Surface 3D Geometry,,
+,169,5,4.1.7.1.13.2   Surface Sectioned Geometry,,
+,170,5,4.1.7.1.13.3   Surface Tessellation Geometry,RV,AbV
+,171,3,4.1.7.2   Product Geometry Colour,RV,AbV
+,172,3,4.1.7.3   Product Geometry Layer,RV,AbV
+,173,3,4.1.7.4   Product Placement,,
+empty,174,4,4.1.7.4.1   Product Grid Placement,,AbV
+,175,4,4.1.7.4.2   Product Linear Placement,,AbV
+,176,4,4.1.7.4.3   Product Local Placement,RV,AbV
+,177,3,4.1.7.5   Product Topology Representation,,
+,178,4,4.1.7.5.1   Reference Topology,,
+,179,2,4.1.8   Product Type Shape,,
+half empty,180,3,4.1.8.1   Product Type Geometric Representation,,
+,181,4,4.1.8.1.1   Type Axis Geometry,,
+,182,4,4.1.8.1.2   Type Body Geometry,,
+,183,5,4.1.8.1.2.1   Type Body AdvancedBrep Geometry,,
+,184,5,4.1.8.1.2.2   Type Body Brep Geometry,,
+,185,5,4.1.8.1.2.3   Type Body CSG Geometry,,
+,186,5,4.1.8.1.2.4   Type Body Tessellated Geometry,,
+,187,4,4.1.8.1.3   Type Clearance Geometry,,
+,188,4,4.1.8.1.4   Type Lighting Geometry,,
+half empty,189,2,4.1.9   Project Context,,
+,190,3,4.1.9.1   Project Classification Information,RV,AbV
+,191,3,4.1.9.2   Project Declaration,RV,AbV
+,192,4,4.1.9.2.1   Project Template Definitions,,
+,193,4,4.1.9.2.2   Project Type Definitions,RV,AbV
+,194,3,4.1.9.3   Project Document Information,RV,AbV
+,195,3,4.1.9.4   Project Global Positioning,RV,AbV
+,196,3,4.1.9.5   Project Global Positioning Geographic,RV,AbV
+,197,3,4.1.9.6   Project Global Positioning Mapped,RV,AbV
+,198,3,4.1.9.7   Project Library Information,,
+,199,3,4.1.9.8   Project Representation Context,RV,AbV
+,200,4,4.1.9.8.1   Project Representation Context 2D,RV,AbV
+,201,4,4.1.9.8.2   Project Representation Context 3D,RV,AbV
+,202,3,4.1.9.9   Project Units,RV,AbV
+empty,203,2,4.1.10   Resource Limits,,
+,204,3,4.1.10.1   Resource Cost,,
+,205,3,4.1.10.2   Resource Quantity,,

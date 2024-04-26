@@ -23,7 +23,7 @@ The following conventions shall apply as default relative positions if the relat
     *  to the local placement of its container, either _IfcSite_, _IfcFacility_, or _IfcFacilityPart_
         * it should be the same container element that is referenced by the _IfcRelContainedInSpatialStructure_ containment relationship,
     * to the local placement of the _IfcElement_ to which it is tied by an element composition relationship
-        * for features that are located relative to the main component (such as openings), as expressed by _IfcRelVoidsElement_ and _IfcRelProjectsElement_;
+        * for features that are located relative to the main component (such as openings), as expressed by _IfcRelVoidsElement_, _IfcRelProjectsElement_ and _IfcRelAdheresToElement_;
         * for elements that fill an opening (such as doors or windows), as expressed by _IfcRelFillsElement_;
         * for coverings that cover the element, as expressed by _IfcRelCoversBldgElements_;
         * for sub components that are aggregated to the main component, as expressed by _IfcRelAggregates_ and _IfcRelNests_.

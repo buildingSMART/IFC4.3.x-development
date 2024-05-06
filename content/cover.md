@@ -3,7 +3,7 @@
 ## Content
 
 This is the **latest** available documentation of the IFC 4.3.2.0 specification. 
-The structure and semantic contents of this are **exactly the same as the ISO IFC 4.3*** but with additional examples and clarrifications in the documentation. It may also contain typo fixes.
+The structure and semantic contents of this are **[exactly the same as the ISO IFC 4.3](https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/)** but with additional examples and clarrifications in the documentation. It may also contain typo fixes.
 This is a further elaboration of the ISO release without changes to the schema and specification.
 
 <img src="https://raw.githubusercontent.com/buildingSMART/IFC4.3.x-development/master/docs/assets/img/Dongping.jpg" width="800">

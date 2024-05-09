@@ -3,13 +3,13 @@
 ## Content
 
 This is the **latest** available documentation of the IFC 4.3.2.0 specification. 
-The structure and semantic contents of this are **[exactly the same as the ISO IFC 4.3](https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/)** but with additional examples and clarrifications in the documentation. It may also contain typo fixes.
+The structure and semantic contents of this are **[exactly the same as the ISO IFC 4.3](https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/)** but with additional examples and clarifications in the documentation. It may also contain typo fixes.
 This is a further elaboration of the ISO release without changes to the schema and specification.
 
 <img src="https://raw.githubusercontent.com/buildingSMART/IFC4.3.x-development/master/docs/assets/img/Dongping.jpg" width="800">
 
 For those interested in contributing: this html is automatically generated from the latest published [XMI](https://github.com/buildingSMART/IFC4.3.x-development/tree/master/schemas) (with the IFC schema) and [Markdown content](https://github.com/buildingSMART/IFC4.3.x-development/tree/master/docs) (with the definitions and documentations).
-Us the 'edit on GitHub' button to suggest additional clarrifications or typo fixes. Structural changes to the specification or semantic definitions are not allowed. Those are possible in the next version of IFC.
+Us the 'edit on GitHub' button to suggest additional clarifications or typo fixes. Structural changes to the specification or semantic definitions are not allowed. Those are possible in the next version of IFC.
 
 ## Copyright
 

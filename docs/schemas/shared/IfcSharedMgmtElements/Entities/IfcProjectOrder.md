@@ -1,6 +1,6 @@
 # IfcProjectOrder
 
-A project order is a directive to purchase products and/or perform work, such as for construction or facilities management.
+A project order is a directive to purchase products and/or perform work, such as for construction or facilities management.<!-- end of definition -->
 
 Project orders are typically formal contracts between two organizations, where cost and time information may be rigid or flexible according to contained schedule types and constraints.
 

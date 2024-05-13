@@ -1,6 +1,6 @@
 # IfcWorkSchedule
 
-An _IfcWorkSchedule_ represents a task schedule of a work plan, which in turn can contain a set of schedules for different purposes.
+An _IfcWorkSchedule_ represents a task schedule of a work plan, which in turn can contain a set of schedules for different purposes.<!-- end of definition -->
 
 > HISTORY  New entity in IFC2.0.
 
@@ -13,7 +13,7 @@ Figure 1 shows the backbone structure of a work schedule that defines (1) a cont
 
 If an assigned _IfcTask_ is a root-level task, such task must be declared on the _IfcProject_ using the _IfcRelDeclares_ relationship.
 
-![work schedule instantiation diagram](../../../../figures/ifcworkschedule_instantiation_diagram.png "Figure 1 &mdash; Work schedule relationships")
+![work schedule instantiation diagram](../../../../figures/ifcworkschedule_instantiation_diagram.png "Figure 1 — Work schedule relationships")
 
 ## Attributes
 

@@ -1,6 +1,6 @@
 # PEnum_BerthApproach
 
-Enumeration describing the operational or design approach to the berth.
+Enumeration describing the operational or design approach to the berth.<!-- end of definition -->
 
 ## Items
 

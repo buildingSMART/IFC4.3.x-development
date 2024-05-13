@@ -1,6 +1,6 @@
 # PEnum_SpaceHeaterHeatTransferDimension
 
-## Items
+<!-- end of definition -->## Items
 
 ### POINT
 Point

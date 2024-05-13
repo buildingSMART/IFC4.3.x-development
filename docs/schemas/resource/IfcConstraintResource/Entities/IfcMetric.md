@@ -1,6 +1,6 @@
 # IfcMetric
 
-An _IfcMetric_ is used to capture quantitative resultant metrics that can be applied to objectives.
+An _IfcMetric_ is used to capture quantitative resultant metrics that can be applied to objectives.<!-- end of definition -->
 
 _IfcMetric_ is a subtype of _IfcConstraint_ and may be associated with any subtype of _IfcRoot_ through the _IfcRelAssociatesConstraint_ relationship in the _IfcControlExtension_ schema, or may be associated with _IfcProperty_ by _IfcResourceConstraintRelationship_.
 
@@ -30,7 +30,7 @@ IfcMetric -> IfcReference [label="ReferencePath"];
 }
 ```
 
-Figure USERDEFCONSTRAINT &mdash; An example user defined constraint.
+Figure USERDEFCONSTRAINT — An example user defined constraint.
 
 > HISTORY  New entity in IFC2.0.
 

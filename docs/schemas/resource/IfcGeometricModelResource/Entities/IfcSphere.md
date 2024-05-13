@@ -5,10 +5,10 @@ The _IfcSphere_ is a Construction Solid Geometry (CSG) 3D primitive. It is a sol
 * _SELF\IfcCsgPrimitive3D.Position_: The location and orientation of the axis system for the primitive.
 * _SELF\IfcCsgPrimitive3D.Position.Location_: The center of the sphere.
 * _SELF\IfcCsgPrimitive3D.Position.Position[3]:_ The z axis points at its positive direction towards the north pole, and by its negative directions towards the south pole.
-
+<!-- end of definition -->
 ![sphere](../../../../figures/ifcsphere-layout1.png)
 
-Figure 1 &mdash; Sphere geometry
+Figure 1 — Sphere geometry
 
 > EXAMPLE  Figure 1 illustrates geometric parameters of the sphere. The sphere is positioned within its own placement coordinate system relative to the object coordinate system. The origin is the center of the sphere.
 
@@ -31,14 +31,14 @@ Figure 2 illustrates default texture mapping with a clamped texture (RepeatS=Fal
 
 ![texture](../../../../figures/ifcsphere-texture.png)
 
-Figure 2 &mdash; Sphere textures
+Figure 2 — Sphere textures
 
 
 |Side|Normal|Origin X|Origin Y|Origin Z|S Axis|T Axis|
 |--- |--- |--- |--- |--- |--- |--- |
 |Side|+Y|0|+Radius|0|(-X, then curving counter-clockwise)|(+Z, then curving towards top)|
 
-Table 3 &mdash; Texture parameters
+Table 3 — Texture parameters
 
 ## Attributes
 

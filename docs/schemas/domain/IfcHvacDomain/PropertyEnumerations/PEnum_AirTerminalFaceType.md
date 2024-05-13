@@ -1,6 +1,6 @@
 # PEnum_AirTerminalFaceType
 
-## Items
+<!-- end of definition -->## Items
 
 ### FOURWAYPATTERN
 Fourway Pattern

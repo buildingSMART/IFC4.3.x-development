@@ -1,6 +1,6 @@
 # IfcCurveInterpolationEnum
 
-_IfcCurveInterpolationEnum_ specifies the possible methods for the interpolation of property values given as a curve.
+_IfcCurveInterpolationEnum_ specifies the possible methods for the interpolation of property values given as a curve.<!-- end of definition -->
 
 > HISTORY  New type in IFC4.
 

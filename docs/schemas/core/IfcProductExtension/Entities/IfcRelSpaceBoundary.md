@@ -1,6 +1,6 @@
 # IfcRelSpaceBoundary
 
-The space boundary defines the physical or virtual delimiter of a space by the relationship _IfcRelSpaceBoundary_ to the surrounding elements.
+The space boundary defines the physical or virtual delimiter of a space by the relationship _IfcRelSpaceBoundary_ to the surrounding elements.<!-- end of definition -->
 
 * In the case of a physical space boundary, the placement and shape of the boundary may be given, and the building element, providing the boundary is referenced,
 * In the case of a virtual space boundary, the placement and shape of the boundary may be given, and a virtual element is referenced.
@@ -20,16 +20,16 @@ The exact definition of how space boundaries are broken down depends on the view
 * In a thermal view, the decomposition of the space boundary depends on the material of the providing building element and the adjacent spaces behind. This is a 2<sup>nd</sup> level space boundary.
 
 ![1st level](../../../../figures/ifcrelspaceboundary_1stlevel.png)
-Figure 1 &mdash; Space boundary at first level
+Figure 1 — Space boundary at first level
 
 ![2nd level](../../../../figures/ifcrelspaceboundary_2ndlevel.png)
-Figure 2 &mdash; Space boundary at second level
+Figure 2 — Space boundary at second level
 
 ![2nd level type a](../../../../figures/ifcrelspaceboundary_2ndlevel_typea.png)
-Figure 3 &mdash; Space boundary at second level type A
+Figure 3 — Space boundary at second level type A
 
 ![2nd level type b](../../../../figures/ifcrelspaceboundary_2ndlevel_typeb.png)
-Figure 4 &mdash; Space boundary at second level type B
+Figure 4 — Space boundary at second level type B
 
 The differences between the 1<sup>st</sup> and 2<sup>nd</sup> level space boundaries are identified by:
 
@@ -42,11 +42,11 @@ As shown in Figure 5, if the _IfcRelSpaceBoundary_ is used to express a virtual 
 
 > NOTE  The connection geometry, either by a 2D curve or a 3D surface, is used to describe the portion of the "virtual wall" that separates the two spaces. All instances of _IfcRelSpaceBoundary_ given at the adjacent spaces share the same instance of _IfcVirtualElement_. Each instance of _IfcRelSpaceBoundary_ provides in addition the _ConnectionGeometry_ given within the local placement of each space.
 
-![IfcRelSpaceBoundary_virtual (35K)](../../../../figures/ifcrelspaceboundary_virtual.png "Figure 5 &mdash; Space boundary of virtual element")
+![IfcRelSpaceBoundary_virtual (35K)](../../../../figures/ifcrelspaceboundary_virtual.png "Figure 5 — Space boundary of virtual element")
 
 As shown in Figure 6, if the _IfcRelSpaceBoundary_ is used to express a physical boundary between two spaces, the attribute _PhysicalOrVirtualBoundary_ has to be set to _PHYSICAL_. The attribute _RelatedBuildingElement_ has to be given and points to the element providing the space boundary. The attribute _ConnectionGeometry_ may be inserted, in this case it describes the physical space boundary geometrically, or it may be omitted; in that case it describes a physical space boundary logically.
 
-![IfcRelSpaceBoundary_physical (35K)](../../../../figures/ifcrelspaceboundary_physical.png "Figure 6 &mdash; Space boundary of physical element")
+![IfcRelSpaceBoundary_physical (35K)](../../../../figures/ifcrelspaceboundary_physical.png "Figure 6 — Space boundary of physical element")
 
 The _IfcRelSpaceBoundary_ may have geometry attached. If geometry is not attached, the relationship between space and building element is handled only on a logical level. If geometry is attached, it is given within the local coordinate systems of the space.
 

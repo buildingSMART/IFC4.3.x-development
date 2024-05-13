@@ -1,6 +1,6 @@
 # IfcPointOnCurve
 
-The _IfcPointOnCurve_ is a point defined by a parameter value of its defining curve.
+The _IfcPointOnCurve_ is a point defined by a parameter value of its defining curve.<!-- end of definition -->
 
 { .extDef}
 > NOTE  Definition according to ISO/CD 10303-42:1992

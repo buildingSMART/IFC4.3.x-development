@@ -1,6 +1,6 @@
 # IfcProcedureTypeEnum
 
-The _IfcProcedureTypeEnum_ defines the range of different types of procedure that can be specified.
+The _IfcProcedureTypeEnum_ defines the range of different types of procedure that can be specified.<!-- end of definition -->
 
 > HISTORY  New type in IFC2x2
 

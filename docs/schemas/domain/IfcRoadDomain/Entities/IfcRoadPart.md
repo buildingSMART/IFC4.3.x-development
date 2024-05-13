@@ -1,3 +1,3 @@
 # IfcRoadPart
 
-Part of a road.
+Part of a road.<!-- end of definition -->

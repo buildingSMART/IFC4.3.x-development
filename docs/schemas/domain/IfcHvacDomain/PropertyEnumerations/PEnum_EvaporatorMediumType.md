@@ -1,6 +1,6 @@
 # PEnum_EvaporatorMediumType
 
-## Items
+<!-- end of definition -->## Items
 
 ### COLDLIQUID
 Cold Liquid

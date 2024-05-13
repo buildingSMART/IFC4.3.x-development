@@ -1,6 +1,6 @@
 # IfcActuatorTypeEnum
 
-The _IfcActuatorTypeEnum_ defines the range of different types of actuator that can be specified.
+The _IfcActuatorTypeEnum_ defines the range of different types of actuator that can be specified.<!-- end of definition -->
 
 > HISTORY  New enumeration in IFC2.0
 

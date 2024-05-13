@@ -1,6 +1,6 @@
 # IfcOuterBoundaryCurve
 
-The IfcOuterBoundaryCurve defines the outer boundary of a bounded surface.
+The IfcOuterBoundaryCurve defines the outer boundary of a bounded surface.<!-- end of definition -->
 
 { .extDef}
 > NOTE  Definition according to ISO/CD 10303-42:1992

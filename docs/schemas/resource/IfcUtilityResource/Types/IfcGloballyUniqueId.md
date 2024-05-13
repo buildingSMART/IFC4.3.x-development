@@ -1,7 +1,7 @@
 # IfcGloballyUniqueId
 
 An _IfcGloballyUniqueId_ holds an encoded string identifier that is used to uniquely identify an IFC object. An _IfcGloballyUniqueId_ is a Globally Unique Identifier (GUID) which is an auto-generated 128-bit number. Since this identifier is required for all IFC object instances, it is desirable to compress it to reduce overhead. The encoding of the base 64 character set is shown below:
-
+<!-- end of definition -->
 <pre>
            1         2         3         4         5         6
  0123456789012345678901234567890123456789012345678901234567890123

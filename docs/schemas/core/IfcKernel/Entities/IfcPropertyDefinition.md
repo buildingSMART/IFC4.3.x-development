@@ -1,6 +1,6 @@
 # IfcPropertyDefinition
 
-_IfcPropertyDefinition_ defines the generalization of all characteristics (i.e. a grouping of individual properties), that may be assigned to objects. Currently, subtypes of _IfcPropertyDefinition_ include property set occurrences, property set templates, and property templates.
+_IfcPropertyDefinition_ defines the generalization of all characteristics (i.e. a grouping of individual properties), that may be assigned to objects. Currently, subtypes of _IfcPropertyDefinition_ include property set occurrences, property set templates, and property templates.<!-- end of definition -->
 
 * **Property set template** - _IfcPropertySetTemplate_, a collection of property templates that determine the definition of properties used within a project context.
 * **Property template** - _IfcPropertyTemplate_, a single template that determines the definition of a particular property used in the same project context. The template may determine the name, description, data type, the unit, or a standard expression for each property that is based on that template.

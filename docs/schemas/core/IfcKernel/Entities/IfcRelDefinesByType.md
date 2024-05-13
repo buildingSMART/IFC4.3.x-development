@@ -1,6 +1,6 @@
 # IfcRelDefinesByType
 
-The objectified relationship _IfcRelDefinesByType_ defines the relationship between an object type and object occurrences. The _IfcRelDefinesByType_ is a 1-to-N relationship, as it allows for the assignment of one type information to a single or to many objects. Those objects then share the same object type, and the property sets and properties assigned to the object type.
+The objectified relationship _IfcRelDefinesByType_ defines the relationship between an object type and object occurrences. The _IfcRelDefinesByType_ is a 1-to-N relationship, as it allows for the assignment of one type information to a single or to many objects. Those objects then share the same object type, and the property sets and properties assigned to the object type.<!-- end of definition -->
 
 The _IfcRelDefinesByType_ links the object type definition with the object occurrence. Both may define properties by assigning an _IfcPropertySet_, including one or many subtypes of _IfcProperty_ to either the object type or object occurrence, as shown in Figure 1.
 
@@ -13,7 +13,7 @@ There are several scenarios to define the same property set on the object type d
     * If the object occurrence has a property with the same _IfcProperty.Name_ in an _IfcPropertySet_, as the corresponding object type definition, then the occurrence property value overrides the type property value.
 
 ![instance diagram](../../../../figures/ifcreldefinesbytype_fig-1.png)
-Figure 1 &mdash; Type definition relationships
+Figure 1 — Type definition relationships
 
 The following table provides an example of assigning properties that can be overridden.
 

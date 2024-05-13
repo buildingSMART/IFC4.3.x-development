@@ -1,6 +1,6 @@
 # IfcTendonConduitTypeEnum
 
-Enumerations of Tendon Conduit Types.
+Enumerations of Tendon Conduit Types.<!-- end of definition -->
 
 ## Items
 

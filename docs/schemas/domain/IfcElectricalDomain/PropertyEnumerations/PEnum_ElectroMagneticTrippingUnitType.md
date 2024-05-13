@@ -1,6 +1,6 @@
 # PEnum_ElectroMagneticTrippingUnitType
 
-## Items
+<!-- end of definition -->## Items
 
 ### OL
 Ol

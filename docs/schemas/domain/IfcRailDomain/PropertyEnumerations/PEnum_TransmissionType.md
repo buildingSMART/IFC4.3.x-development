@@ -1,6 +1,6 @@
 # PEnum_TransmissionType
 
-## Items
+<!-- end of definition -->## Items
 
 ### FIBER
 

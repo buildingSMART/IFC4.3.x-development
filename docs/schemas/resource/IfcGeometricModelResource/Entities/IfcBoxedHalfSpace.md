@@ -1,16 +1,16 @@
 # IfcBoxedHalfSpace
 
-The _IfcBoxedHalfSpace_ is used (as its supertype _IfcHalfSpaceSolid_) only within Boolean operations. It divides the domain into exactly two subsets, where the domain in question is that of the attribute _Enclosure_.
+The _IfcBoxedHalfSpace_ is used (as its supertype _IfcHalfSpaceSolid_) only within Boolean operations. It divides the domain into exactly two subsets, where the domain in question is that of the attribute _Enclosure_.<!-- end of definition -->
 
 The purpose of the attribute _Enclosure_ is to provide a search box for the other operand in the Boolean operation. It shall be sufficiently large to fully enclose the resulting solid after the Boolean operation with the half space. It however does not alter the final result. The result of the Boolean operation would be the same, as if executed by the supertype _IfcHalfSpaceSolid_. See Figure 1 below.
 
-![correct use of enclosure](../../../../figures/ifcboxedhalfspace_01.png "Figure 1 &mdash; Boxed half space operands")
+![correct use of enclosure](../../../../figures/ifcboxedhalfspace_01.png "Figure 1 — Boxed half space operands")
 
 The _IfcBoundingBox_ that provides the enclosure is given for the convenience of the receiving application to enable the use of size box comparison for efficiency (for example, to check first whether size boxes intersect, if not no calculations has to be done to check whether the solids of the entities intersect).
 
 ![boxed half space](../../../../figures/ifcboxedhalfspace-layout1.png)
 
-Figure 2 &mdash; Boxed half space geometry
+Figure 2 — Boxed half space geometry
 
 The <em>Enclosure</em> therefore helps to prevent dealing with infinite-size related issues. The enclosure box is positioned within the object coordinate system, established by the <em>ObjectPlacement</em> of the element represented (for example, by <em>IfcLocalPlacement</em>). Figure 2 shows the <em>Enclosure</em> box being sufficiently large to fully enclose the Boolean result.
 

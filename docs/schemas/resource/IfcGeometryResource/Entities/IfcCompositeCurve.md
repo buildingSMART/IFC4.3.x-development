@@ -1,10 +1,10 @@
 # IfcCompositeCurve
 
-An _IfcCompositeCurve_ is a continuous curve composed of curve segments.
+An _IfcCompositeCurve_ is a continuous curve composed of curve segments.<!-- end of definition -->
 
 Figure 1 illustrates an example of a composite curve.
 
-![formula](../../../../figures/ifccompositecurve.png "Figure 1 &mdash; Composite curve")
+![formula](../../../../figures/ifccompositecurve.png "Figure 1 — Composite curve")
 
 Consider an _IfcCompositeCurve_ having line segment and an arc segment. The line should be parameterized:
 
@@ -16,16 +16,16 @@ The arch should be parameterized:
 
 Then the parameterization of the composite curve is:
 
-* _IfcCompositeCurve_ with 0. &le; T &le; 1. (line segment) and 1. &le; T &le; 91. (arc segment), parametric length = 91.
+* _IfcCompositeCurve_ with 0. ≤ T ≤ 1. (line segment) and 1. ≤ T ≤ 91. (arc segment), parametric length = 91.
 
 
 
 { .extDef}
 > NOTE Definition according to ISO 10303-42:
-> A composite curve is a collection of curves joined end-to-end. The individual segments of the curve are themselves defined as composite curve segments. The parameterization of the composite curve is an accumulation of the parametric ranges of the referenced bounded curves. The first segment is parameterized from _0_ to _l~<small>1</small>~_ and for _i__&le;__2_, the _i^<small>th</small>^_ segment is parameterized from:
+> A composite curve is a collection of curves joined end-to-end. The individual segments of the curve are themselves defined as composite curve segments. The parameterization of the composite curve is an accumulation of the parametric ranges of the referenced bounded curves. The first segment is parameterized from _0_ to _l~<small>1</small>~_ and for _i__≤__2_, the _i^<small>th</small>^_ segment is parameterized from:
 >
 >> ![formula](../../../../figures/ifccompositecurve-math1.gif)
-> where _l~<small>k</small>~_ is the parametric length (i.e., difference between maximum and minimum parameter values) of the curve underlying the _k^<small>th</small>^_ segment. Let _T_ denote the parameter for the composite curve. Then, if the _i_th segment is not a reparameterised composite curve segment, _T_ is related to the parameter _t~i~_; _t~i0~__&le;__t~i~__&le;__t~i1~_; for the _i_th segment by the equation:
+> where _l~<small>k</small>~_ is the parametric length (i.e., difference between maximum and minimum parameter values) of the curve underlying the _k^<small>th</small>^_ segment. Let _T_ denote the parameter for the composite curve. Then, if the _i_th segment is not a reparameterised composite curve segment, _T_ is related to the parameter _t~i~_; _t~i0~__≤__t~i~__≤__t~i1~_; for the _i_th segment by the equation:
 >
 >> ![formula](../../../../figures/ifccompositecurve-math2.gif) if _Segments[i].SameSense_ = TRUE;
 > or by the equation:
@@ -33,7 +33,7 @@ Then the parameterization of the composite curve is:
 >> ![formula](../../../../figures/ifccompositecurve-math3.gif) if _Segments[i].SameSense_ = FALSE;
 > If the segments[i] is of type reparameterised composite curve segment,
 >
->> ![formula](../../../../figures/ifccompositecurve-math4.gif) where _&tau;_ is defined at reparameterized composite curve segment (see _IfcReparameterisedCompositeCurveSegment_).
+>> ![formula](../../../../figures/ifccompositecurve-math4.gif) where _τ_ is defined at reparameterized composite curve segment (see _IfcReparameterisedCompositeCurveSegment_).
 
 
 >
@@ -50,7 +50,7 @@ Then the parameterization of the composite curve is:
 ### Segments
 The component bounded curves, their transitions and senses. The transition attribute for the last segment defines the transition between the end of the last segment and the start of the first; this transition attribute may take the value discontinuous, which indicates an open curve.
 
-> NOTE&nbsp: For _IfcGradientCurve_ and _IfcSegmentedReferenceCurve_ the segments define the interpolation between segment start and and segment end.
+> NOTE : For _IfcGradientCurve_ and _IfcSegmentedReferenceCurve_ the segments define the interpolation between segment start and and segment end.
 
 ### SelfIntersect
 Indication of whether the curve intersects itself or not; this is for information only.

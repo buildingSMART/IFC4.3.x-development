@@ -1,6 +1,6 @@
 # IfcAlignmentHorizontalSegmentTypeEnum
 
-The IfcAlignmentHorizontalSegmentTypeEnum indicates the type of a segment of a horizontal alignment segment (IfcAlignmentHorizontalSegment). Horizontal segments can be viewed from a geometric perspective and from a kinematic perspective. In recent times the kinematic perspective gained importance. The enumerations are detailed according to this development especially in modern track design.
+The IfcAlignmentHorizontalSegmentTypeEnum indicates the type of a segment of a horizontal alignment segment (IfcAlignmentHorizontalSegment). Horizontal segments can be viewed from a geometric perspective and from a kinematic perspective. In recent times the kinematic perspective gained importance. The enumerations are detailed according to this development especially in modern track design.<!-- end of definition -->
 
 **Kinematic perspective on horizontal alignment segments**
 
@@ -46,12 +46,12 @@ Check the relevant regulations for the network in question. Alignment designs as
 |:----|:------------------|:----------|
 | L | full length of segment        | positive length  L > 0 |
 | s | current position on segment        | 0 < s < L |
-| &xi;  |  = s / L  (Greek "xi") standardised, dimensionless path length along the alignment / track centre line        | 0 < &xi; < 1 |
-|  &kappa; | (Greek "kappa") Curvature (inverse radius) of the alignment / track centre line in plan view (horizontal layout).        | 1/radius  |
-| &kappa;<sub>1</sub> | Curvature (inverse radius) at beginning of the alignment / track centre line in plan view (horizontal layout).        | 1/radius  |
+| ξ  |  = s / L  (Greek "xi") standardised, dimensionless path length along the alignment / track centre line        | 0 < ξ < 1 |
+|  κ | (Greek "kappa") Curvature (inverse radius) of the alignment / track centre line in plan view (horizontal layout).        | 1/radius  |
+| κ<sub>1</sub> | Curvature (inverse radius) at beginning of the alignment / track centre line in plan view (horizontal layout).        | 1/radius  |
 | h | height of the gravity center line used for calculation above the track centreline in the ground plan.  | length |
-| &psi; | (Greek "psi") Angle of cant (cross slope angle, bank angle)        | rad |
-| &phi; | (Greek "phi") Directional angle (azimuth, bearing)  | rad |
+| ψ | (Greek "psi") Angle of cant (cross slope angle, bank angle)        | rad |
+| φ | (Greek "phi") Directional angle (azimuth, bearing)  | rad |
 | x(s) | variable longitudinal coordinate of the projection of the alignment / track centreline into the ground plan.  | length |
 | y(s) | variable transverse coordinate of the projection of the alignment / track centreline into the ground plan.  | length |
 
@@ -162,7 +162,7 @@ $$ \displaylines{
 ### VIENNESEBEND
 The Viennese Bend (R) is an innovative track geometry transition element. Instead of analyzing the vehicle movement at the track plane the optimization efforts target a gravity center line at a defined height above the rails.
 
-As a consequence the path of the horizontal alignment center line is also influenced by the cant layout. The first part of the curvature formula is assembled from the basic function like the other transition bends. The additional term contains the bank angle "&psi;" and the gravity center line height "h" and is unique to the Viennes Bend (R). This term causes a small movement contrary to the main direction in the x,y layout.
+As a consequence the path of the horizontal alignment center line is also influenced by the cant layout. The first part of the curvature formula is assembled from the basic function like the other transition bends. The additional term contains the bank angle "ψ" and the gravity center line height "h" and is unique to the Viennes Bend (R). This term causes a small movement contrary to the main direction in the x,y layout.
 
 **Curvature formula**
 

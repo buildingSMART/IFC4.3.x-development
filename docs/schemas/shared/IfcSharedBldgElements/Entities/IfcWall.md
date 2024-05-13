@@ -1,6 +1,6 @@
 # IfcWall
 
-The wall represents a vertical construction that may bound or subdivide spaces. Wall are usually vertical, or nearly vertical, planar elements, often designed to bear structural loads. A wall is however not required to be load bearing.
+The wall represents a vertical construction that may bound or subdivide spaces. Wall are usually vertical, or nearly vertical, planar elements, often designed to bear structural loads. A wall is however not required to be load bearing.<!-- end of definition -->
 
 { .extDef}
 
@@ -124,7 +124,7 @@ A wall may decomposed into parts such as framing and panels on each side. For ef
 
 ![voiding](../../../../figures/ifcwall-partitioning.png)
 
-Figure ELEMENTEDCASE &mdash; A wall decomposed into parts.
+Figure ELEMENTEDCASE — A wall decomposed into parts.
 
 #### IfcElementAssembly
 
@@ -167,7 +167,7 @@ IfcRelVoidsElement2 -> IfcVoidingFeature [headlabel="RelatedOpeningElement", lab
 }
 ```
 
-Figure ELEMENTVOID &mdash; How individual parts being cut may be expressed.
+Figure ELEMENTVOID — How individual parts being cut may be expressed.
 
 ### Material Layer Set Usage
 

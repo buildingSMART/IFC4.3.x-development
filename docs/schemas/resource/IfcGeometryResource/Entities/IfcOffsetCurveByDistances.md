@@ -1,16 +1,16 @@
 # IfcOffsetCurveByDistances
 
-An _IfcOffsetCurveByDistances_ is a curve defined by a list of offsets along its _BasisCurve_. If only one offset is provided, it indicates a constant offset along the extents of the basis curve.
+An _IfcOffsetCurveByDistances_ is a curve defined by a list of offsets along its _BasisCurve_. If only one offset is provided, it indicates a constant offset along the extents of the basis curve.<!-- end of definition -->
 
 Figure 1 illustrates eight instances of _IfcOffsetCurveByDistances_ (in green) defined relative to an _IfcGradientCurve_ (in blue).
 
 ![spatial structure](../../../../figures/ifcoffsetcurvebydistances.png)
 
-Figure 1 &mdash; Offset curve by distances
+Figure 1 — Offset curve by distances
 
 ![spatial structure](../../../../figures/ifcoffsetcurvebydistances2.png)
 
-Figure 2 &mdash; Usage of OffsetValues
+Figure 2 — Usage of OffsetValues
 
 ## Attributes
 

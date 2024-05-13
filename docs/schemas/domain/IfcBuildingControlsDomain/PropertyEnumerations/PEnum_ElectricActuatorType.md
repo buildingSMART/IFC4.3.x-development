@@ -1,6 +1,6 @@
 # PEnum_ElectricActuatorType
 
-## Items
+<!-- end of definition -->## Items
 
 ### MOTORDRIVE
 Motor Drive

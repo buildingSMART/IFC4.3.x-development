@@ -1,6 +1,6 @@
 # IfcCompositeProfileDef
 
-The _IfcCompositeProfileDef_ defines the profile by composition of other profiles. The composition is given by a set of at least two other profile definitions. Any profile definition (except for another composite profile) can be used to construct the composite.
+The _IfcCompositeProfileDef_ defines the profile by composition of other profiles. The composition is given by a set of at least two other profile definitions. Any profile definition (except for another composite profile) can be used to construct the composite.<!-- end of definition -->
 
 > HISTORY  New entity in IFC2x.
 

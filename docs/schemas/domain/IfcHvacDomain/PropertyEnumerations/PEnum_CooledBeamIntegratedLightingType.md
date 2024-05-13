@@ -1,6 +1,6 @@
 # PEnum_CooledBeamIntegratedLightingType
 
-## Items
+<!-- end of definition -->## Items
 
 ### NONE
 No waterproof.

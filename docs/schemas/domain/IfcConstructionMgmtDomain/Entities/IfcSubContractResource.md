@@ -1,6 +1,6 @@
 # IfcSubContractResource
 
-_IfcSubContractResource_ is a construction resource needed in a construction process that represents a sub-contractor.
+_IfcSubContractResource_ is a construction resource needed in a construction process that represents a sub-contractor.<!-- end of definition -->
 
 > HISTORY  New entity in IFC2.0.
 

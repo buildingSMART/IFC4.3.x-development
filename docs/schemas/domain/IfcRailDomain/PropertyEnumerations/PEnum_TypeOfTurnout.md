@@ -1,6 +1,6 @@
 # PEnum_TypeOfTurnout
 
-Enumeration of the different turnouts used in railway track.
+Enumeration of the different turnouts used in railway track.<!-- end of definition -->
 
 ## Items
 

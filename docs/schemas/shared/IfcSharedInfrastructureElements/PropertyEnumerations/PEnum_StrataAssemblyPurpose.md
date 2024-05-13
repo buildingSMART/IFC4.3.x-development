@@ -1,6 +1,6 @@
 # PEnum_StrataAssemblyPurpose
 
-enumeration describing the purpose of a geotechnical assembly
+enumeration describing the purpose of a geotechnical assembly<!-- end of definition -->
 
 ## Items
 

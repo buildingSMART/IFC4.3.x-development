@@ -1,6 +1,6 @@
 # IfcIShapeProfileDef
 
-_IfcIShapeProfileDef_ defines a section profile that provides the defining parameters of an 'I' or 'H' section. The I-shape profile has values for its overall depth, width and its web and flange thicknesses. Additionally a fillet radius, flange edge radius, and flange slope may be given. This profile definition represents an I-section which is symmetrical about its major and minor axes; top and bottom flanges are equal and centred on the web.<!-- end of definition -->
+_IfcIShapeProfileDef_ defines a section profile that provides the defining parameters of an 'I' or 'H' section. The I-shape profile has values for its overall depth, width and its web and flange thicknesses. Additionally a fillet radius, flange edge radius, and flange slope may be given. This profile definition represents an I-section which is symmetrical about its major and minor axes; top and bottom flanges are equal and centred on the web.
 
 > HISTORY  New entity in IFC2x.
 
@@ -25,7 +25,7 @@ The parameterized profile is defined by a set of parameter attributes, see attri
 
 ![I shape with fillet](../../../../figures/ifcishapeprofiledef-layout2.gif)
 
-Figure 1 — I-shape profile
+Figure 1 &mdash; I-shape profile
 
 > NOTE The black coordinate axes show the underlying coordinate system of the swept surface or swept area solid
 

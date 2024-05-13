@@ -1,6 +1,6 @@
 # IfcAppliedValue
 
-This entity captures a value driven by a formula, with additional qualifications including unit basis, valid date range, and categorization.<!-- end of definition -->
+This entity captures a value driven by a formula, with additional qualifications including unit basis, valid date range, and categorization.
 
 The extent of the _IfcAppliedValue_ is determined by the _AppliedValue_ attribute which may be defined either as an _IfcMeasureWithUnit_ or as an _IfcMonetaryMeasure_ or as an _IfcRatioMeasure_ via the _IfcAppliedValueSelect_ type.
 

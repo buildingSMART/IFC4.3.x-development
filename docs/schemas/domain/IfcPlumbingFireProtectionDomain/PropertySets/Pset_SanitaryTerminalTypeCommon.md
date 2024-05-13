@@ -1,3 +1,3 @@
 # Pset_SanitaryTerminalTypeCommon
 
-Common properties for sanitary terminals.<!-- end of definition -->
+Common properties for sanitary terminals.

@@ -1,6 +1,6 @@
 # PEnum_AssetAccountingType
 
-<!-- end of definition -->## Items
+## Items
 
 ### FIXED
 Fixed

@@ -1,6 +1,6 @@
 # PEnum_RailDeliveryState
 
-<!-- end of definition -->## Items
+## Items
 
 ### HOTROLLING
 Hot rolling.

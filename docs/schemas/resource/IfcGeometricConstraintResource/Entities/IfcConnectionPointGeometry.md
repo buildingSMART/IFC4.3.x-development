@@ -1,6 +1,6 @@
 # IfcConnectionPointGeometry
 
-_IfcConnectionPointGeometry_ is used to describe the geometric constraints that facilitate the physical connection of two objects at a point (here _IfcCartesianPoint_) or at an vertex with point coordinates associated. It is envisioned as a control that applies to the element connection relationships.<!-- end of definition -->
+_IfcConnectionPointGeometry_ is used to describe the geometric constraints that facilitate the physical connection of two objects at a point (here _IfcCartesianPoint_) or at an vertex with point coordinates associated. It is envisioned as a control that applies to the element connection relationships.
 
 > EXAMPLE  The connection relationship between two path based elements (like a column and a beam) has a geometric constraint which describes the connection points by a _PointOnRelatingElement_ for the column and a _PointOnRelatedElement_ for the beam. The exact usage of the _IfcConnectionPointGeometry_ is further defined in the geometry use sections of the elements that use it.
 

@@ -1,6 +1,6 @@
 # IfcBenchmarkEnum
 
-_IfcBenchmarkEnum_ is an enumeration used to identify the logical comparators that can be applied in conjunction with constraint values.<!-- end of definition -->
+_IfcBenchmarkEnum_ is an enumeration used to identify the logical comparators that can be applied in conjunction with constraint values.
 
 > HISTORY  New enumeration in IFC2.0
 

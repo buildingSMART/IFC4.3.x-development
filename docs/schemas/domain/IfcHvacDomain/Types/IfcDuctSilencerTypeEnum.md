@@ -1,6 +1,6 @@
 # IfcDuctSilencerTypeEnum
 
-Enumeration defining the typical types of duct silencers.<!-- end of definition -->
+Enumeration defining the typical types of duct silencers.
 
 > HISTORY  New enumeration in IFC2x2.
 

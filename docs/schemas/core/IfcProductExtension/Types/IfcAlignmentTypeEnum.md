@@ -1,6 +1,6 @@
 # IfcAlignmentTypeEnum
 
-This enumeration defines the different types of alignments.<!-- end of definition -->
+This enumeration defines the different types of alignments.
 
 ## Items
 

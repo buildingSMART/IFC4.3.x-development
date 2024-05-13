@@ -1,6 +1,6 @@
 # IfcPumpTypeEnum
 
-Defines general types of pumps.<!-- end of definition -->
+Defines general types of pumps.
 
 > HISTORY  New enumeration in IFC2x. SUBMERSIBLEPUMP and SUMPPUMP added in IFC4.
 

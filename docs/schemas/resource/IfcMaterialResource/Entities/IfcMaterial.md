@@ -1,6 +1,6 @@
 # IfcMaterial
 
-_IfcMaterial_ is a homogeneous or inhomogeneous substance that can be used to form elements (physical products or their components).<!-- end of definition -->
+_IfcMaterial_ is a homogeneous or inhomogeneous substance that can be used to form elements (physical products or their components).
 
 _IfcMaterial_ is the basic entity for material designation and definition; this includes identification by name and classification (via reference to an external classification), as well as association of material properties (isotropic or anisotropic) defined by (subtypes of) _IfcMaterialProperties_. An instance of _IfcMaterial_ may be associated to an element or element type using the _IfcRelAssociatesMaterial_ relationship. The assignment might either be direct as a single material information, or via
 

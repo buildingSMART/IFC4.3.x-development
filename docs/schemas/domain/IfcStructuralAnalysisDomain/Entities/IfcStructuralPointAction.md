@@ -1,6 +1,6 @@
 # IfcStructuralPointAction
 
-This entity defines an action which acts on a point. A point action is typically connected with a point connection. It may also be connected with a curve member or curve connection, or surface member or surface connection.<!-- end of definition -->
+This entity defines an action which acts on a point. A point action is typically connected with a point connection. It may also be connected with a curve member or curve connection, or surface member or surface connection.
 
 > HISTORY  New entity in IFC2x2.
 

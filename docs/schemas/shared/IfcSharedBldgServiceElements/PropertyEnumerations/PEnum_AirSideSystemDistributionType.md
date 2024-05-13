@@ -1,6 +1,6 @@
 # PEnum_AirSideSystemDistributionType
 
-<!-- end of definition -->## Items
+## Items
 
 ### SINGLEDUCT
 Single Duct

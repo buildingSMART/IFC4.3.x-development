@@ -1,6 +1,6 @@
 # PEnum_ControllerApplication
 
-<!-- end of definition -->## Items
+## Items
 
 ### MODEMCONTROLLER
 Modem Controller

@@ -1,6 +1,6 @@
 # PEnum_RailwaySignalType
 
-Enumeration of railway signal types.<!-- end of definition -->
+Enumeration of railway signal types.
 
 ## Items
 

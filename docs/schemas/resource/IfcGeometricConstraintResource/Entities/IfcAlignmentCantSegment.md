@@ -1,6 +1,6 @@
 # IfcAlignmentCantSegment
 
-An _IfcAlignmentCantSegment_ is an individual segment along _IfcAlignmentCant_.<!-- end of definition -->
+An _IfcAlignmentCantSegment_ is an individual segment along _IfcAlignmentCant_.
 The cant alignment is defined by ordered segments that connect end-to-start. The points defined in a cant alignment segment are defined in a plane with x = distance along horizontal alignment and y = height relative to projected points in vertical alignment.
 The following cant segment types are defined:
 

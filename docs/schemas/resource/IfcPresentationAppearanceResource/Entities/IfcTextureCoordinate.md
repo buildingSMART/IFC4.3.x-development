@@ -1,6 +1,6 @@
 # IfcTextureCoordinate
 
-The _IfcTextureCoordinate_ is an abstract supertype of the different kinds to apply texture coordinates to geometries. For vertex based geometries an explicit assignment of 2D texture vertices to the 3D geometry points is supported by the subtype _IfcTextureMap_, in addition there can be a procedural description of how texture coordinates shall be applied to geometric items. If no _IfcTextureCoordinate_ is provided for the _IfcSurfaceTexture_, the default mapping shall be used.<!-- end of definition -->
+The _IfcTextureCoordinate_ is an abstract supertype of the different kinds to apply texture coordinates to geometries. For vertex based geometries an explicit assignment of 2D texture vertices to the 3D geometry points is supported by the subtype _IfcTextureMap_, in addition there can be a procedural description of how texture coordinates shall be applied to geometric items. If no _IfcTextureCoordinate_ is provided for the _IfcSurfaceTexture_, the default mapping shall be used.
 
 > NOTE  See relevant subtypes of _IfcGeometricRepresentationItem_ for default texture mapping description.
 

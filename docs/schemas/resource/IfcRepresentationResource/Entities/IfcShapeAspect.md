@@ -1,6 +1,6 @@
 # IfcShapeAspect
 
-_IfcShapeAspect_ allows for grouping of shape representation items that represent aspects (or components) of the shape of a product. Thereby shape representations of components of the product shape represent a distinctive part to a product that can be explicitly addressed.<!-- end of definition -->
+_IfcShapeAspect_ allows for grouping of shape representation items that represent aspects (or components) of the shape of a product. Thereby shape representations of components of the product shape represent a distinctive part to a product that can be explicitly addressed.
 
 The _IfcShapeAspect_'s may have distinct material information or other distict characteristics that differs from other parts of the product shape representation.
 
@@ -8,7 +8,7 @@ The _IfcShapeAspect_'s may have distinct material information or other distict c
 
 Figure 1 indicates the association of material characteristics to shape aspects.
 
-![shape](../../../../figures/ifcshapeaspect_fig1.png "Figure 1 — shape aspects for associating material")
+![shape](../../../../figures/ifcshapeaspect_fig1.png "Figure 1 &mdash; shape aspects for associating material")
 
 { .extDef}
 > NOTE  Definition from ISO 10303-41:

@@ -1,6 +1,6 @@
 # IfcUShapeProfileDef
 
-_IfcUShapeProfileDef_ defines a section profile that provides the defining parameters of a U-shape (channel) section to be used by the swept area solid. Its parameters and orientation relative to the position coordinate system are according to the following illustration. The centre of the position coordinate system is in the profile's centre of the bounding box.<!-- end of definition -->
+_IfcUShapeProfileDef_ defines a section profile that provides the defining parameters of a U-shape (channel) section to be used by the swept area solid. Its parameters and orientation relative to the position coordinate system are according to the following illustration. The centre of the position coordinate system is in the profile's centre of the bounding box.
 
 > HISTORY  New entity in IFC2x2.
 
@@ -14,7 +14,7 @@ Figure 1 illustrates parameters of the U-shape profile definition.
 
 ![U-shape profile](../../../../figures/ifcushapeprofiledef.gif)
 
-Figure 1 — U-shape profile
+Figure 1 &mdash; U-shape profile
 
 <u>Position</u>
 

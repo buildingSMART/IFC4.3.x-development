@@ -1,6 +1,6 @@
 # PEnum_BreechingInletType
 
-<!-- end of definition -->## Items
+## Items
 
 ### TWOWAY
 Two-way

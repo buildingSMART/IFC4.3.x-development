@@ -1,6 +1,6 @@
 # IfcLayerSetDirectionEnum
 
-_IfcLayerSetDirectionEnum_ provides identification of the axis of element geometry, denoting the layer set thickness direction, or direction of layer offsets.<!-- end of definition -->
+_IfcLayerSetDirectionEnum_ provides identification of the axis of element geometry, denoting the layer set thickness direction, or direction of layer offsets.
 
 > HISTORY  New Type in IFC2x.
 

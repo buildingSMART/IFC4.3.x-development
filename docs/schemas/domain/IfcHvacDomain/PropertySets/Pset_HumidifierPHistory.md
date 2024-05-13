@@ -1,4 +1,4 @@
 # Pset_HumidifierPHistory
 
-Humidifier performance history attributes.<!-- end of definition -->
+Humidifier performance history attributes.
 Sound attribute deleted in IFC2x2 Pset Addendum: Use IfcSoundProperties instead.

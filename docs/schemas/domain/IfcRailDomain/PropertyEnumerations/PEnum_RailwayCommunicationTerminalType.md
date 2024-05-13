@@ -1,6 +1,6 @@
 # PEnum_RailwayCommunicationTerminalType
 
-<!-- end of definition -->## Items
+## Items
 
 ### IP
 

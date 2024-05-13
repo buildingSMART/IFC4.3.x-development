@@ -1,6 +1,6 @@
 # PEnum_SwitchingDeviceMomentarySwitchType
 
-<!-- end of definition -->## Items
+## Items
 
 ### BUTTON
 Button

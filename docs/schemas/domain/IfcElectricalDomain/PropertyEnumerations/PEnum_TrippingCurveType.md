@@ -1,6 +1,6 @@
 # PEnum_TrippingCurveType
 
-<!-- end of definition -->## Items
+## Items
 
 ### UPPER
 Upper

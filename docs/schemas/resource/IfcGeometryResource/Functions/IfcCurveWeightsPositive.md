@@ -1,6 +1,6 @@
 # IfcCurveWeightsPositive
 
-This function checks whether the curve weights of a b-spline are positive.<!-- end of definition -->
+This function checks whether the curve weights of a b-spline are positive.
 
 > NOTE  Function adapted from **curve_weights_positive** defined in ISO 10303-42.
 

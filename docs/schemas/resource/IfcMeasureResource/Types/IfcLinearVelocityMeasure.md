@@ -1,6 +1,6 @@
 # IfcLinearVelocityMeasure
 
-_IfcLinearVelocityMeasure_ is a measure of the velocity of a body measured in terms of distance moved per unit time.<!-- end of definition -->
+_IfcLinearVelocityMeasure_ is a measure of the velocity of a body measured in terms of distance moved per unit time.
 
 Usually measured in m/s.
 

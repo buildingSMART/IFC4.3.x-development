@@ -1,6 +1,6 @@
 # IfcAxis2Placement
 
-The _IfcAxis2Placement_ allows for the choice of various placement entities.<!-- end of definition -->
+The _IfcAxis2Placement_ allows for the choice of various placement entities.
 
 { .extDef}
 > NOTE  Definition according to ISO/CD 10303-42:1992

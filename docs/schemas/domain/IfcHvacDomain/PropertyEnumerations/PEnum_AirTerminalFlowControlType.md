@@ -1,6 +1,6 @@
 # PEnum_AirTerminalFlowControlType
 
-<!-- end of definition -->## Items
+## Items
 
 ### DAMPER
 Damper

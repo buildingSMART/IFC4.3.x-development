@@ -1,12 +1,12 @@
 # IfcOpeningElement
 
-The opening element stands for opening, recess or chase, all reflecting voids. It represents a void within any element that has physical manifestation. Openings can be inserted into walls, slabs, beams, columns, or other elements.<!-- end of definition -->
+The opening element stands for opening, recess or chase, all reflecting voids. It represents a void within any element that has physical manifestation. Openings can be inserted into walls, slabs, beams, columns, or other elements.
 
 There are two different types of opening elements. The attribute _PredefinedType_ should be used to capture the differences:
 
-* an opening, where the thickness of the opening is greater or equal to the thickness of the element —
+* an opening, where the thickness of the opening is greater or equal to the thickness of the element &mdash;
   the attribute _PredefinedType_ is set to _OPENING_
-* a recess or niche, where the thickness of the recess is smaller than the thickness of the element  —
+* a recess or niche, where the thickness of the recess is smaller than the thickness of the element  &mdash;
   the attribute _PredefinedType_ is set to _RECESS_ for a recess or niche.
 
 If the value for _PredefinedType_ is omitted, or the value is set to _NOTDEFINED_, no specific information of whether it is an opening or recess shall be assumed.
@@ -74,9 +74,9 @@ There are two main extrusion directions: perpendicular and parallel.
 
 For a perpendicular swept solid, _IfcExtrudedAreaSolid.ExtrudedDirection_ shall extrude the profile perpendicular to the element it is voiding. This may be horizontal for wall openings, or vertical for floor openings.
 
-![standard opening](../../../../figures/ifcopeningelement_horizontal-layout1.png "Figure FULLEXTRUSION — Opening with full extrusion")
+![standard opening](../../../../figures/ifcopeningelement_horizontal-layout1.png "Figure FULLEXTRUSION &mdash; Opening with full extrusion")
 
-![recess](../../../../figures/ifcopeningelement_recess-layout1.png "Figure RECESS — Opening with recess extrusion")
+![recess](../../../../figures/ifcopeningelement_recess-layout1.png "Figure RECESS &mdash; Opening with recess extrusion")
 
 > NOTE  The local placement directions for the _IfcOpeningElement_ in Figure FULLEXTRUSION and Figure RECESS are only given as an example; other directions are valid as well.
 
@@ -90,7 +90,7 @@ Parallel extrusions shall be used when an opening or recess has a non rectangula
 
 Figure VERTEXTRUDE shows a vertical extrusion with multiple extrusion bodies for the opening. Each extrusion body has a different extrusion length.
 
-![vertical extrusion](../../../../figures/ifcopeningelement_vertical-layout1.png "Figure VERTEXTRUDE — Opening with multiple extrusions")
+![vertical extrusion](../../../../figures/ifcopeningelement_vertical-layout1.png "Figure VERTEXTRUDE &mdash; Opening with multiple extrusions")
 
 > NOTE  The local placement directions for the _IfcOpeningElement_ in Figure VERTEXTRUDE are only given as an example, other directions are valid as well.
 

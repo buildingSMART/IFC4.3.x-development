@@ -1,6 +1,6 @@
 # PEnum_BoilerOperatingMode
 
-<!-- end of definition -->## Items
+## Items
 
 ### FIXED
 Fixed

@@ -1,6 +1,6 @@
 # PEnum_FanCapacityControlType
 
-<!-- end of definition -->## Items
+## Items
 
 ### INLETVANE
 Inlet Vane

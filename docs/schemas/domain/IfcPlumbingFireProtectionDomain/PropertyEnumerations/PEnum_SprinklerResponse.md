@@ -1,6 +1,6 @@
 # PEnum_SprinklerResponse
 
-<!-- end of definition -->## Items
+## Items
 
 ### QUICK
 Quick

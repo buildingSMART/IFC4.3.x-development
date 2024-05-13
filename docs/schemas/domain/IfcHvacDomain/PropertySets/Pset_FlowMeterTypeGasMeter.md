@@ -1,6 +1,6 @@
 # Pset_FlowMeterTypeGasMeter
 
-Device that measures, indicates and sometimes records, the volume of gas that passes through it without interrupting the flow.<!-- end of definition -->
+Device that measures, indicates and sometimes records, the volume of gas that passes through it without interrupting the flow.
 
 
 ## Comments

@@ -1,6 +1,6 @@
 # PEnum_SteadyDeviceType
 
-Enumeration of the different steady device configurations used in railway energy domain.<!-- end of definition -->
+Enumeration of the different steady device configurations used in railway energy domain.
 
 ## Items
 

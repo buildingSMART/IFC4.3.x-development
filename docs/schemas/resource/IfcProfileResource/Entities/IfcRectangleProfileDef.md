@@ -1,6 +1,6 @@
 # IfcRectangleProfileDef
 
-_IfcRectangleProfileDef_ defines a rectangle as the profile definition used by the swept surface geometry or the swept area solid. It is given by its X extent and its Y extent, and placed within the 2D position coordinate system, established by the _Position_ attribute. It is placed centric within the position coordinate system.<!-- end of definition -->
+_IfcRectangleProfileDef_ defines a rectangle as the profile definition used by the swept surface geometry or the swept area solid. It is given by its X extent and its Y extent, and placed within the 2D position coordinate system, established by the _Position_ attribute. It is placed centric within the position coordinate system.
 
 > HISTORY  New entity in IFC1.5.
 
@@ -8,7 +8,7 @@ Figure 1 illustrates parameters of the rectangle profile definition.
 
 ![rectangle profile](../../../../figures/ifcrectangleprofiledef-layout1.gif)
 
-Figure 1 — Rectangle profile
+Figure 1 &mdash; Rectangle profile
 
 <u>Position</u>
 

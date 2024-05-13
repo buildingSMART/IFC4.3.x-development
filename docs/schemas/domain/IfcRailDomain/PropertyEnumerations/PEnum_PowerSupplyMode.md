@@ -1,6 +1,6 @@
 # PEnum_PowerSupplyMode
 
-<!-- end of definition -->## Items
+## Items
 
 ### AC
 Ac

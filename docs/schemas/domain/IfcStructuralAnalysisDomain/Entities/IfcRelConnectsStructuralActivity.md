@@ -1,6 +1,6 @@
 # IfcRelConnectsStructuralActivity
 
-The _IfcRelConnectsStructuralActivity_ relationship connects a structural activity (either an action or reaction) to a structural member, structural connection, or element.<!-- end of definition -->
+The _IfcRelConnectsStructuralActivity_ relationship connects a structural activity (either an action or reaction) to a structural member, structural connection, or element.
 
 > HISTORY  New entity in IFC2x2.
 

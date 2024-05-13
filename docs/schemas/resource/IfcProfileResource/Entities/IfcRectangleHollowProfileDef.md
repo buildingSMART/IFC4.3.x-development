@@ -1,6 +1,6 @@
 # IfcRectangleHollowProfileDef
 
-_IfcRectangleHollowProfileDef_ defines a section profile that provides the defining parameters of a rectangular (or square) hollow section to be used by the swept surface geometry or the swept area solid. Its parameters and orientation relative to the position coordinate system are according to the following illustration. A square hollow section can be defined by equal values for h and b. The centre of the position coordinate system is in the profiles centre of the bounding box (for symmetric profiles identical with the centre of gravity). Normally, the longer sides are parallel to the y-axis, the shorter sides parallel to the x-axis.<!-- end of definition -->
+_IfcRectangleHollowProfileDef_ defines a section profile that provides the defining parameters of a rectangular (or square) hollow section to be used by the swept surface geometry or the swept area solid. Its parameters and orientation relative to the position coordinate system are according to the following illustration. A square hollow section can be defined by equal values for h and b. The centre of the position coordinate system is in the profiles centre of the bounding box (for symmetric profiles identical with the centre of gravity). Normally, the longer sides are parallel to the y-axis, the shorter sides parallel to the x-axis.
 
 > HISTORY  New entity in IFC2x2.
 
@@ -11,7 +11,7 @@ Figure 1 illustrates parameters of a rectangular or square hollow profile defini
 
 ![hollow rectangle shape profile](../../../../figures/ifcrectanglehollowprofiledef.gif)
 
-Figure 1 — Rectangle hollow profile
+Figure 1 &mdash; Rectangle hollow profile
 
 <u>Position</u>
 

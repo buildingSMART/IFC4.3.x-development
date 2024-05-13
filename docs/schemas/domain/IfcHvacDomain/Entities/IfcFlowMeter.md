@@ -1,6 +1,6 @@
 # IfcFlowMeter
 
-A flow meter is a device that is used to measure the flow rate in a system.<!-- end of definition -->
+A flow meter is a device that is used to measure the flow rate in a system.
 
 > HISTORY  New entity in IFC4
 

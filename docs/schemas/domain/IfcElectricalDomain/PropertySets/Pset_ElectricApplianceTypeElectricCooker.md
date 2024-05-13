@@ -1,3 +1,3 @@
 # Pset_ElectricApplianceTypeElectricCooker
 
-Common properties for electric cooker appliances.  HISTORY: Added in <!-- end of definition -->IFC4.
+Common properties for electric cooker appliances.  HISTORY: Added in IFC4.

@@ -1,6 +1,6 @@
 # PEnum_AirToAirHeatTransferHeatTransferType
 
-<!-- end of definition -->## Items
+## Items
 
 ### SENSIBLE
 Sensible

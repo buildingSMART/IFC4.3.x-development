@@ -1,6 +1,6 @@
 # IfcCurveStyleFontAndScaling
 
-The _IfcCurveStyleFontAndScaling_ allows for the reuse of the same curve style definition in several sizes. The definition of the _CurveFontScale_ is the scaling of a base curve style pattern to be used as a new or derived curve style pattern.<!-- end of definition -->
+The _IfcCurveStyleFontAndScaling_ allows for the reuse of the same curve style definition in several sizes. The definition of the _CurveFontScale_ is the scaling of a base curve style pattern to be used as a new or derived curve style pattern.
 
 > NOTE  The _CurveFontScale_ should not be mixed up with the target plot scale.
 

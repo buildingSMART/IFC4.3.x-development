@@ -1,6 +1,6 @@
 # IfcFaceBound
 
-{ .extDef}<!-- end of definition -->
+{ .extDef}
 > NOTE  Definition according to ISO/CD 10303-42:1992
 > A face bound is a loop which is intended to be used for bounding a face.
 

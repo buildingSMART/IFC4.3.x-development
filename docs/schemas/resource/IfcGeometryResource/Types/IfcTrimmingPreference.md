@@ -1,6 +1,6 @@
 # IfcTrimmingPreference
 
-The _IfcTrimmingPreference_ indicates the preferred way of trimming.<!-- end of definition -->
+The _IfcTrimmingPreference_ indicates the preferred way of trimming.
 
 { .extDef}
 > NOTE  Definition according to ISO/CD 10303-42:1992

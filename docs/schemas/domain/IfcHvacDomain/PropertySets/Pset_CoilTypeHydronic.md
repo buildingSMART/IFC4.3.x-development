@@ -1,3 +1,3 @@
 # Pset_CoilTypeHydronic
 
-Hydronic coil type attributes.<!-- end of definition -->
+Hydronic coil type attributes.

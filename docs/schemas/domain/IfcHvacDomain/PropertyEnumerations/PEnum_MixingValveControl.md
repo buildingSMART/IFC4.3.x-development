@@ -1,6 +1,6 @@
 # PEnum_MixingValveControl
 
-<!-- end of definition -->## Items
+## Items
 
 ### MANUAL
 Manual

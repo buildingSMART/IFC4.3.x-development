@@ -1,6 +1,6 @@
 # IfcMaterialLayerSetUsage
 
-The _IfcMaterialLayerSetUsage_ determines the usage of _IfcMaterialLayerSet_ in terms of its location and orientation relative to the associated element geometry. The location of material layer set shall be compatible with the building element geometry (that is, material layers shall fit inside the element geometry). The rules to ensure the compatibility depend on the type of the building element.<!-- end of definition -->
+The _IfcMaterialLayerSetUsage_ determines the usage of _IfcMaterialLayerSet_ in terms of its location and orientation relative to the associated element geometry. The location of material layer set shall be compatible with the building element geometry (that is, material layers shall fit inside the element geometry). The rules to ensure the compatibility depend on the type of the building element.
 
 > EXAMPLE Â For a cavity brick wall with shape representation SweptSolid, the _IfcMaterialLayerSet.TotalThickness_ shall be equal to the wall thickness. Also the _OffsetFromReferenceLine_ shall match the exact positions between the two shape representations of _IfcWall_, that is the _IfcShapeRepresentation_'s with _RepresentationIdentifier_="Axis" and _RepresentationIdentifier_="Body".
 
@@ -25,7 +25,7 @@ Figure 1 shows an example of the use of _IfcMaterialLayerSetUsage_ aligned to th
 
 ![Mls usage](../../../../figures/ifcmateriallayersetusage_wall-01.png)
 
-Figure 1 — Material layer set usage for wall
+Figure 1 &mdash; Material layer set usage for wall
 
 Figure 2 shows an example of the use of _IfcMaterialLayerSetUsage_ aligned to a slab.
 
@@ -35,7 +35,7 @@ Figure 2 shows an example of the use of _IfcMaterialLayerSetUsage_ aligned to a 
 
 ![Mls usage](../../../../figures/ifcmateriallayersetusage_slab-01.png)
 
-Figure 2 — Material layer set usage for slab
+Figure 2 &mdash; Material layer set usage for slab
 
 Figure 3 shows an example of the use of _IfcMaterialLayerSetUsage_ aligned to a roof slab with non-perpendicular extrusion.
 
@@ -45,7 +45,7 @@ not equal to the extrusion depth of the geometry.</small>
 
 ![Mls usage](../../../../figures/ifcmateriallayersetusage_roofslab-01.png)
 
-Figure 3 — Material layer set usage for roof slab
+Figure 3 &mdash; Material layer set usage for roof slab
 
 ## Attributes
 

@@ -1,6 +1,6 @@
 # IfcTypeProduct
 
-_IfcTypeProduct_ defines a type definition of a product without being already inserted into a project structure (without having a placement), and not being included in the geometric representation context of the project. It is used to define a product specification, that is, the specific product information that is common to all occurrences of that product type.<!-- end of definition -->
+_IfcTypeProduct_ defines a type definition of a product without being already inserted into a project structure (without having a placement), and not being included in the geometric representation context of the project. It is used to define a product specification, that is, the specific product information that is common to all occurrences of that product type.
 
 An _IfcTypeProduct_ may have a list of property sets attached and an optional set of product representations. Values of these properties and the representation maps are common to all occurrences of that product type. The type-occurrence relationship is realized using the objectified relationship _IfcRelDefinesByType_.
 
@@ -50,11 +50,11 @@ Figure 1 illustrates an example of referencing a representation map by the shape
 
 ![representation map](../../../../figures/ifctypeproduct_representationmap-1.png)
 
-Figure 1 � Product type geometry with single placement
+Figure 1 &mdash; Product type geometry with single placement
 
 Figure 2 illustrates an example of referencing a representation multiple times by the shape representation of a product occurrence. Here the Cartesian transformation operator only uses translation, but no rotation, mirroring, or scaling. The different translation values determine the pattern of the multiple placement.
 
 ![representation map](../../../../figures/ifctypeproduct_representationmap-2.png)
 
-Figure 2 � Product type geometry with multiple placement
+Figure 2 &mdash; Product type geometry with multiple placement
 

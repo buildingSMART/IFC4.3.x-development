@@ -1,6 +1,6 @@
 # PEnum_InsulatorType
 
-<!-- end of definition -->## Items
+## Items
 
 ### LONGRODINSULATOR
 

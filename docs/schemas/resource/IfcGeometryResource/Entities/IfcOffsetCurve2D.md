@@ -1,6 +1,6 @@
 # IfcOffsetCurve2D
 
-An _IfcOffsetCurve2D_ is a curve defined by an offset in 2D space from its _BasisCurve_.
+An _IfcOffsetCurve2D_ is a curve defined by an offset in 2D space from its _BasisCurve_.<!-- end of definition -->
 
 { .extDef}
 > NOTE Definition according to ISO/CD 10303-42:1992

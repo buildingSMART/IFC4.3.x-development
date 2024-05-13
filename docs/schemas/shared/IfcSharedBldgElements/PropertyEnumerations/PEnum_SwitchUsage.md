@@ -1,6 +1,6 @@
 # PEnum_SwitchUsage
 
-## Items
+<!-- end of definition -->## Items
 
 ### EMERGENCY
 Emergency

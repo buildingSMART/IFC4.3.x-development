@@ -1,6 +1,6 @@
 # PEnum_LoadDisconnectionType
 
-## Items
+<!-- end of definition -->## Items
 
 ### OFFLOAD
 Offload

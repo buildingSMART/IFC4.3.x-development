@@ -1,6 +1,6 @@
 # IfcElementarySurface
 
-An _IfcElementarySurface_ in the common supertype of analytical surfaces.
+An _IfcElementarySurface_ in the common supertype of analytical surfaces.<!-- end of definition -->
 
 { .extDef}
 > NOTE  Definition according to ISO/CD 10303-42:1992

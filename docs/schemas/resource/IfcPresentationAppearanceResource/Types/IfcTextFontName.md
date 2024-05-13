@@ -1,6 +1,6 @@
 # IfcTextFontName
 
-The _IfcTextFontName_ is a list of font family names and/or generic family name.
+The _IfcTextFontName_ is a list of font family names and/or generic family name.<!-- end of definition -->
 
 Values of **<family-name>**: The name of a font family of choice. For example, "gill" and "helvetica" are font families.
 Values of **<generic-family>**: In the example above, the last value is a generic family name. The following generic families are defined: > * 'serif' (Example: Times)

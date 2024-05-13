@@ -1,6 +1,6 @@
 # IfcHeatingValueMeasure
 
-_IfcHeatingValueMeasure_ defines the amount of energy released (usually in MJ/kg) when a fuel is burned.
+_IfcHeatingValueMeasure_ defines the amount of energy released (usually in MJ/kg) when a fuel is burned.<!-- end of definition -->
 
 > HISTORY  This is new type in IFC2x2.
 

@@ -1,6 +1,6 @@
 # Pset_MechanicalPanelInPlane
 
-Properties for Mechanical Panels In Plane.
+Properties for Mechanical Panels In Plane.<!-- end of definition -->
 
 ## Comments
 

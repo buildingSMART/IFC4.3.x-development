@@ -1,6 +1,6 @@
 # PEnum_HoseNozzleType
 
-## Items
+<!-- end of definition -->## Items
 
 ### FOG
 Fog

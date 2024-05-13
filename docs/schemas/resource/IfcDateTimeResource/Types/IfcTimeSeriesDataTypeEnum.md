@@ -1,6 +1,6 @@
 # IfcTimeSeriesDataTypeEnum
 
-_IfcTimeSeriesDataTypeEnum_ describes a type of time series data and is used to determine a value during the time series which is not explicitly specified.
+_IfcTimeSeriesDataTypeEnum_ describes a type of time series data and is used to determine a value during the time series which is not explicitly specified.<!-- end of definition -->
 
 > HISTORY  New enumeration in IFC2x2.
 

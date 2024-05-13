@@ -1,6 +1,6 @@
 # PEnum_LampBallastType
 
-## Items
+<!-- end of definition -->## Items
 
 ### CONVENTIONAL
 Conventional

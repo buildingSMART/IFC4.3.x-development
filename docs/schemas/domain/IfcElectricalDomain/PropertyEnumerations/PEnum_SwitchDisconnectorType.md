@@ -1,6 +1,6 @@
 # PEnum_SwitchDisconnectorType
 
-## Items
+<!-- end of definition -->## Items
 
 ### CENTERBREAK
 Center Break

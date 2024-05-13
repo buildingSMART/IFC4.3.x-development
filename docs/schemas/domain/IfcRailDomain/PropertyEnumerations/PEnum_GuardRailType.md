@@ -1,6 +1,6 @@
 # PEnum_GuardRailType
 
-## Items
+<!-- end of definition -->## Items
 
 ### GUARDRAILSONLY
 Guard rail only.

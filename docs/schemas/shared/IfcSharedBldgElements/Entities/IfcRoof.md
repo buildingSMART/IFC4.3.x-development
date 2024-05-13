@@ -1,6 +1,6 @@
 # IfcRoof
 
-A roof is the covering of the top part of a building, it protects the building against the effects of weather.
+A roof is the covering of the top part of a building, it protects the building against the effects of weather.<!-- end of definition -->
 
 { .extDef}
 > NOTE  Definition according to ISO 6707-1: construction enclosing the building from above.

@@ -1,6 +1,6 @@
 # PEnum_SwitchingDeviceKeypadType
 
-## Items
+<!-- end of definition -->## Items
 
 ### BUTTONS
 Buttons

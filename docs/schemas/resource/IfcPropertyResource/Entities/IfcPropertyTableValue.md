@@ -1,6 +1,6 @@
 # IfcPropertyTableValue
 
-_IfcPropertyTableValue_ is a property with a value range defined by a property object which has two lists of (numeric or descriptive) values assigned. The values specify a table with two columns. The defining values provide the first column and establish the scope for the defined values (the second column). An optional _Expression_ attribute may give the equation used for deriving the range value, which is for information purposes only.
+_IfcPropertyTableValue_ is a property with a value range defined by a property object which has two lists of (numeric or descriptive) values assigned. The values specify a table with two columns. The defining values provide the first column and establish the scope for the defined values (the second column). An optional _Expression_ attribute may give the equation used for deriving the range value, which is for information purposes only.<!-- end of definition -->
 
 The _IfcPropertyTableValue_ defines a defining/defined property value combination for which the property name, the table with defining and defined values with measure type (and optional the units for defining and defined values) are given.
 
@@ -23,7 +23,7 @@ The _IfcPropertyTableValue_ allows for the specification of a table of defining/
 ||1600|IfcFrequencyMeasure|60|IfcNumericMeasure|||
 ||3200|IfcFrequencyMeasure|65|IfcNumericMeasure|||
 
-Table 1 &mdash; Table value property with values, measure types and units
+Table 1 — Table value property with values, measure types and units
 
 > HISTORY  New entity in IFC2x.
 

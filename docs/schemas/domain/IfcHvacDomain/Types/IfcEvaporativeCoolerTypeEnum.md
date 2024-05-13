@@ -1,6 +1,6 @@
 # IfcEvaporativeCoolerTypeEnum
 
-Enumeration defining the typical types of evaporative coolers.
+Enumeration defining the typical types of evaporative coolers.<!-- end of definition -->
 
 > HISTORY  New enumeration in IFC2x2.
 

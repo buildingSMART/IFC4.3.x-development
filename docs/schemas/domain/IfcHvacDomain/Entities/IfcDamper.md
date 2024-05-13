@@ -1,6 +1,6 @@
 # IfcDamper
 
-A damper typically participates in an HVAC duct distribution system and is used to control or modulate the flow of air.
+A damper typically participates in an HVAC duct distribution system and is used to control or modulate the flow of air.<!-- end of definition -->
 
 > HISTORY  New entity in IFC4
 

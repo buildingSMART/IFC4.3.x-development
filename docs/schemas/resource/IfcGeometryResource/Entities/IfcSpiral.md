@@ -1,6 +1,6 @@
 # IfcSpiral
 
-Spirals are curves that revolve around a point while increasing its length. In general, these curves are parameterized in the following way:
+Spirals are curves that revolve around a point while increasing its length. In general, these curves are parameterized in the following way:<!-- end of definition -->
 x = r(φ) cosφ
 y = r(φ) sinφ
 

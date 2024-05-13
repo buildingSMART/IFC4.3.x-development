@@ -1,6 +1,6 @@
 # IfcBeam
 
-An _IfcBeam_ is typically a horizontal, or nearly horizontal, structural member that is capable of withstanding load primarily by resisting bending. It may also represent such a member from an architectural point of view. It is not required to be load bearing.
+An _IfcBeam_ is typically a horizontal, or nearly horizontal, structural member that is capable of withstanding load primarily by resisting bending. It may also represent such a member from an architectural point of view. It is not required to be load bearing.<!-- end of definition -->
 
 There are two main representations for beam occurrences:
 

@@ -1,6 +1,6 @@
 # PEnum_SinkType
 
-## Items
+<!-- end of definition -->## Items
 
 ### BELFAST
 Belfast

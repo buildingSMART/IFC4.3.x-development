@@ -1,6 +1,6 @@
 # PEnum_DataCollectionType
 
-## Items
+<!-- end of definition -->## Items
 
 ### AUTOMATICANDCONTINUOUS
 

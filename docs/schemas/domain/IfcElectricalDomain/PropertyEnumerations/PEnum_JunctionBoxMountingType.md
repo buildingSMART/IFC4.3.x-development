@@ -1,6 +1,6 @@
 # PEnum_JunctionBoxMountingType
 
-## Items
+<!-- end of definition -->## Items
 
 ### FACENAIL
 Facenail

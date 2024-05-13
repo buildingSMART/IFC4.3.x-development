@@ -1,6 +1,6 @@
 # IfcCaissonFoundation
 
-CaissonFoundation essentially is a hollow box that can be either open or closed.
+CaissonFoundation essentially is a hollow box that can be either open or closed.<!-- end of definition -->
 
 (NOTE: corresponding predefined type is deprecated from IfcFootingTypeEnum).
 

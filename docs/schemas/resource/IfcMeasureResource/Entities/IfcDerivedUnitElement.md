@@ -1,6 +1,6 @@
 # IfcDerivedUnitElement
 
-{ .extDef}
+{ .extDef}<!-- end of definition -->
 > NOTE  Definition according to ISO/CD 10303-41:1992
 > A derived unit element is one of the unit quantities which makes up a derived unit.
 

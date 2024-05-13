@@ -1,6 +1,6 @@
 # IfcMechanicalFastener
 
-A mechanical fasteners connecting building elements or parts mechanically. A single instance of this class may represent one or many of actual mechanical fasteners, for example an array of bolts or a row of nails.
+A mechanical fasteners connecting building elements or parts mechanically. A single instance of this class may represent one or many of actual mechanical fasteners, for example an array of bolts or a row of nails.<!-- end of definition -->
 
 > HISTORY  New entity in IFC2x2
 

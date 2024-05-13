@@ -1,6 +1,6 @@
 # IfcSurfaceStyle
 
-_IfcSurfaceStyle_ is an assignment of one or many surface style elements to a surface, defined by subtypes of _IfcSurface_, _IfcFaceBasedSurfaceModel_, _IfcShellBasedSurfaceModel_, or by subtypes of _IfcSolidModel_. The positive direction of the surface normal relates to the positive side. In case of solids the outside of the solid is to be taken as positive side.
+_IfcSurfaceStyle_ is an assignment of one or many surface style elements to a surface, defined by subtypes of _IfcSurface_, _IfcFaceBasedSurfaceModel_, _IfcShellBasedSurfaceModel_, or by subtypes of _IfcSolidModel_. The positive direction of the surface normal relates to the positive side. In case of solids the outside of the solid is to be taken as positive side.<!-- end of definition -->
 
 > NOTE  The surface style is often referred to as material definition in rendering applications.
 

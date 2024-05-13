@@ -1,6 +1,6 @@
 # PEnum_TransportEquipmentType
 
-Enumeration of transport equipment types.
+Enumeration of transport equipment types.<!-- end of definition -->
 
 ## Items
 

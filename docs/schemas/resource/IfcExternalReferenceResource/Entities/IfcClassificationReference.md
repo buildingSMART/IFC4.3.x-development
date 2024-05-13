@@ -1,6 +1,6 @@
 # IfcClassificationReference
 
-An _IfcClassificationReference_ is a reference into a classification system or source (see _IfcClassification_) for a specific classification key (or notation).
+An _IfcClassificationReference_ is a reference into a classification system or source (see _IfcClassification_) for a specific classification key (or notation).<!-- end of definition -->
 
 The inherited attributes have the following meaning:
 

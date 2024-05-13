@@ -1,6 +1,6 @@
 # IfcSite
 
-A site is a defined area of land, possibly covered with water, on which the project construction is to be completed. A site may be used to erect, retrofit or turn down building(s), or for other construction related developments.
+A site is a defined area of land, possibly covered with water, on which the project construction is to be completed. A site may be used to erect, retrofit or turn down building(s), or for other construction related developments.<!-- end of definition -->
 
 > NOTE  Definition according to ISO 6707-1: area of land or water where construction work or other development is undertaken.
 
@@ -22,7 +22,7 @@ Figure SITECOMP shows the _IfcSite_ as part of the spatial structure. In additio
 
 ![IfcSite as part of a spatial structure](../../../../figures/ifcsite-spatialstructure.png)
 
-Figure SITECOMP &mdash; Site composition
+Figure SITECOMP — Site composition
 
 Figure SITELOC describes the heights and elevations of the _IfcSite_. It is used to provide the geographic longitude, latitude, and height above sea level for the origin of the site. The origin of the site is the local placement.
 
@@ -36,7 +36,7 @@ For exact georeferencing (or referencing to any other geographic coordinate syst
 
 ![IfcSite with local placement and WGS84 coordinates](../../../../figures/ifcsite_heights.png)
 
-Figure SITELOC &mdash; Site placement and elevations
+Figure SITELOC — Site placement and elevations
 
 > HISTORY  New entity in IFC1.0.
 

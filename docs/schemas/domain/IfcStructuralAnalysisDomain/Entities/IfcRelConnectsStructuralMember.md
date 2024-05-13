@@ -1,6 +1,6 @@
 # IfcRelConnectsStructuralMember
 
-The entity _IfcRelConnectsStructuralMember_ defines all needed properties describing the connection between structural members and structural connection objects (nodes or supports).
+The entity _IfcRelConnectsStructuralMember_ defines all needed properties describing the connection between structural members and structural connection objects (nodes or supports).<!-- end of definition -->
 
 > HISTORY  New entity in IFC2x2.
 
@@ -25,7 +25,7 @@ Figure 1 illustrates the appropriate definition of support lengths.
 
 ![supported length](../../../../figures/ifcrelconnectsstructuralmember-fig1.gif)
 
-Figure 1 &mdash; Structural member support lengths
+Figure 1 — Structural member support lengths
 
 ## Attributes
 

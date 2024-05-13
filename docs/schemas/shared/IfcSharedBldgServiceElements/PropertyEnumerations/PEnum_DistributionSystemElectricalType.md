@@ -1,6 +1,6 @@
 # PEnum_DistributionSystemElectricalType
 
-## Items
+<!-- end of definition -->## Items
 
 ### TN
 TN

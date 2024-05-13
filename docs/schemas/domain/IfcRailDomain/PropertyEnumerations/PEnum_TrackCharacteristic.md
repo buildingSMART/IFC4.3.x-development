@@ -1,6 +1,6 @@
 # PEnum_TrackCharacteristic
 
-Enumeration of track characteristics.
+Enumeration of track characteristics.<!-- end of definition -->
 
 ## Items
 

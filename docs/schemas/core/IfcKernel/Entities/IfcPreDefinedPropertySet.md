@@ -1,6 +1,6 @@
 # IfcPreDefinedPropertySet
 
-_IfcPreDefinedPropertySet_ is a generalization of all statically defined property sets that are assigned to an object or type object. The statically or pre-defined property sets are entities with a fixed list of attributes having particular defined data types.
+_IfcPreDefinedPropertySet_ is a generalization of all statically defined property sets that are assigned to an object or type object. The statically or pre-defined property sets are entities with a fixed list of attributes having particular defined data types.<!-- end of definition -->
 
 Property sets are related to other objects by using the relationship object that refers to the corresponding object:
 

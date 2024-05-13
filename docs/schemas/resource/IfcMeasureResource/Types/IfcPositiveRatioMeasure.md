@@ -1,6 +1,6 @@
 # IfcPositiveRatioMeasure
 
-An _IfcPositiveRatioMeasure_ is a ratio measure that is greater than zero.
+An _IfcPositiveRatioMeasure_ is a ratio measure that is greater than zero.<!-- end of definition -->
 
 Type: _IfcRatioMeasure_
 

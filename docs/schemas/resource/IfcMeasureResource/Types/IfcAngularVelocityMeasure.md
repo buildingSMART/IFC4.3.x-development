@@ -1,6 +1,6 @@
 # IfcAngularVelocityMeasure
 
-_IfcAngularVelocityMeasure_ is a measure of the velocity of a body measured in terms of angle subtended per unit time.
+_IfcAngularVelocityMeasure_ is a measure of the velocity of a body measured in terms of angle subtended per unit time.<!-- end of definition -->
 
 Usually measured in radians/s.
 

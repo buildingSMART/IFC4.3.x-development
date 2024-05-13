@@ -1,6 +1,6 @@
 # IfcPropertyEnumeratedValue
 
-A property with an enumerated value, _IfcPropertyEnumeratedValue_, defines a property object which has a value assigned that is chosen from an enumeration. It defines a property - value combination for which the property _Name_, an optional _Description_, the optional _EnumerationValues_ with measure type and optionally an _Unit_ is given.
+A property with an enumerated value, _IfcPropertyEnumeratedValue_, defines a property object which has a value assigned that is chosen from an enumeration. It defines a property - value combination for which the property _Name_, an optional _Description_, the optional _EnumerationValues_ with measure type and optionally an _Unit_ is given.<!-- end of definition -->
 
 > NOTE  Multiple choices from the property enumeration are supported.
 
@@ -19,7 +19,7 @@ More precisely: The _IfcPropertyEnumeratedValue_ defines a property, which value
 |BladeAction|Opposed|IfcLabel|DamperBladeActionEnum|
 |BladeAction|Parallel|IfcLabel|DamperBladeActionEnum|
 
-Table 1 &mdash; Enumerated property with values, measure types and units
+Table 1 � Enumerated property with values, measure types and units
 
 The _IfcPropertyEnumeratedValue_ refers to an _IfcPropertyEnumeration_, see Table 2 for an example:
 
@@ -27,7 +27,7 @@ The _IfcPropertyEnumeratedValue_ refers to an _IfcPropertyEnumeration_, see Tabl
 |--- |--- |--- |--- |
 |DamperBladeActionEnum|(Parallel, Opposed, Other, Unset)|IfcLabel|-|
 
-Table 2 &mdash; Property enumeration with enumerators
+Table 2 � Property enumeration with enumerators
 
 It is not mandatory to use an instance of _IfcPropertyEnumeration_ to hold the applicable values for _IfcPropertyEnumeratedValue_, however this is the preferred way. A single instance of _IfcPropertyEnumeration_ can be referenced by multiple instances of _IfcPropertyEnumeratedValue_.
 

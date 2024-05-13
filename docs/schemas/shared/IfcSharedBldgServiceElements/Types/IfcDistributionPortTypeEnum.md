@@ -1,6 +1,6 @@
 # IfcDistributionPortTypeEnum
 
-This enumeration identifies different types of distribution ports. It is used to designate ports by their general function, which determines applicable property sets and compatible systems.
+This enumeration identifies different types of distribution ports. It is used to designate ports by their general function, which determines applicable property sets and compatible systems.<!-- end of definition -->
 
 > HISTORY  New enumeration in IFC4.
 

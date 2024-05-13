@@ -1,3 +1,3 @@
 # Qto_CourseBaseQuantities
 
-Quantity set for Course base.
+Quantity set for Course base.<!-- end of definition -->

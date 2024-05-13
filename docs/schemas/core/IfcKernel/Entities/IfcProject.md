@@ -1,6 +1,6 @@
 # IfcProject
 
-_IfcProject_ establishes the context for information to be exchanged or shared, and it may represent a construction project but does not have to. The _IfcProject_'s main purpose in an exchange structure is to provide the root instance and the context for all other information items included.
+_IfcProject_ establishes the context for information to be exchanged or shared, and it may represent a construction project but does not have to. The _IfcProject_'s main purpose in an exchange structure is to provide the root instance and the context for all other information items included.<!-- end of definition -->
 
 The context provided by the _IfcProject_ includes:
 
@@ -50,7 +50,7 @@ The _IfcProject_ is also the context for other information about the constructio
 
 Figure 1 illustrates the use of _IfcProject_ as context for work plans or work schedules.
 
-![project relationships](../../../../figures/ifcproject_fig-1.png "Figure 1 &mdash; Project spatial and work plan structure")
+![project relationships](../../../../figures/ifcproject_fig-1.png "Figure 1 — Project spatial and work plan structure")
 
 #### IfcProjectLibrary
 
@@ -149,7 +149,7 @@ The following constraints are applied to using the relationship _IfcRelAggregate
 
 Figure 1 illustrates project relationships with spatial structures, elements, and element type libraries.
 
-![spatial decomposition relationships](../../../../figures/ifcproject_fig-2.png "Figure 1 &mdash; Project spatial structure, products and product type library")
+![spatial decomposition relationships](../../../../figures/ifcproject_fig-2.png "Figure 1 — Project spatial structure, products and product type library")
 
 #### IfcSite
 

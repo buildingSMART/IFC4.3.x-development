@@ -1,10 +1,10 @@
 # IfcFacetedBrep
 
-The _IfcFacetedBrep_ is a manifold solid brep with the restriction that all faces are planar and bounded polygons.
+The _IfcFacetedBrep_ is a manifold solid brep with the restriction that all faces are planar and bounded polygons.<!-- end of definition -->
 
 ![faceted brep instantiation](../../../../figures/ifcfacetedbrep_01.png)
 
-Figure 1 &mdash; Diagram showing the use of <em>IfcFacetedBrep</em>
+Figure 1 — Diagram showing the use of <em>IfcFacetedBrep</em>
 
 > NOTE  Use of <em>IfcFacetedBrep</em> is restricted for boundary representation models with planar surfaces only. Those surfaces are implicitly represented by the bounding polygons. The diagram shows the topological and geometric representation items that are used for faceted breps. Each <em>IfcCartesianPoint</em>, used within the <em>IfcFacetedBrep</em> shall be referenced three times by an <em>IfcPolyLoop</em> bounding a different <em>IfcFace</em>.
 

@@ -1,6 +1,6 @@
 # IfcMaterialLayerSet
 
-The _IfcMaterialLayerSet_ is a designation by which materials of an element constructed of a number of material layers is known and through which the relative positioning of individual layers can be expressed.
+The _IfcMaterialLayerSet_ is a designation by which materials of an element constructed of a number of material layers is known and through which the relative positioning of individual layers can be expressed.<!-- end of definition -->
 
 The Material Layer Set Base (MlsBase) describes the imaginary axis along which the material layers are positioned.
 
@@ -19,12 +19,12 @@ Attribute use definition
 
 As shown in Figure 1, each _IfcMaterialLayerSet_ implicitly defines a material layer set base line (MlsBase), to which the start of the first _IfcMaterialLayer_ is aligned. The total thickness of a layer set is calculated from the individual layer thicknesses, the first layer starting from the MlsBase and following layers being placed on top of the previous (no gaps or overlaps).
 
-![material layer set](../../../../figures/ifcmateriallayerset-01.png "Figure 1 &mdash; Material layer set")
+![material layer set](../../../../figures/ifcmateriallayerset-01.png "Figure 1 — Material layer set")
 
 ## Attributes
 
 ### MaterialLayers
-Identification of the _IfcMaterialLayer_&rsquo;s from which the _IfcMaterialLayerSet_ is composed.
+Identification of the _IfcMaterialLayer_’s from which the _IfcMaterialLayerSet_ is composed.
 
 ### LayerSetName
 The name by which the _IfcMaterialLayerSet_ is known.

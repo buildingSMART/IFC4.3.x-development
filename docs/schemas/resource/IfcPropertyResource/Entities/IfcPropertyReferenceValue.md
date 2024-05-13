@@ -1,6 +1,6 @@
 # IfcPropertyReferenceValue
 
-The _IfcPropertyReferenceValue_ allows a property value to be of type of an resource level entity. The applicable entities that can be used as value references are given by the _IfcObjectReferenceSelect_.
+The _IfcPropertyReferenceValue_ allows a property value to be of type of an resource level entity. The applicable entities that can be used as value references are given by the _IfcObjectReferenceSelect_.<!-- end of definition -->
 
 > HISTORY  New entity in IFC1.5. Entity has been renamed from IfcObjectReference in IFC2x.
 

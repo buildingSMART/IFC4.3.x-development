@@ -1,6 +1,6 @@
 # IfcProjectOrderTypeEnum
 
-An _IfcProjectOrderTypeEnum_ is a list of the types of project order that may be identified.
+An _IfcProjectOrderTypeEnum_ is a list of the types of project order that may be identified.<!-- end of definition -->
 
 > HISTORY  New enumeration in IFC2x2.
 

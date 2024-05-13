@@ -1,6 +1,6 @@
 # PEnum_BatteryChargingType
 
-Indicates the type of battery, disposable or rechargeable.
+Indicates the type of battery, disposable or rechargeable.<!-- end of definition -->
 
 ## Items
 

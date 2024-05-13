@@ -1,6 +1,6 @@
 # Pset_MechanicalPanelOutOfPlaneNegative
 
-Properties for Mechanical Panels Out Of Plane Negative.
+Properties for Mechanical Panels Out Of Plane Negative.<!-- end of definition -->
 
 ## Comments
 

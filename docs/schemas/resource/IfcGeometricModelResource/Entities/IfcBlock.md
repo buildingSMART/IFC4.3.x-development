@@ -4,12 +4,12 @@ The _IfcBlock_ is a Construction Solid Geometry (CSG) 3D primitive. It is define
 
 * _SELF\IfcCsgPrimitive3D.Position_: The location and orientation of the axis system for the primitive.
 * _SELF\IfcCsgPrimitive3D.Position.Location_: The block has one vertex at location and the edges are aligned with the placement axes in the positive sense.
-
+<!-- end of definition -->
 The _XLength_, _YLength_, and _ZLength_ attributes define the size of the IfcBlock along the three axes.
 
 ![block](../../../../figures/ifcblock-layout1.png)
 
-Figure 1 &mdash; Block geometry
+Figure 1 — Block geometry
 
 Figure 1 illustrates geometric parameters of a block where the block positioned within its own placement
 coordinate system. The values for <em>XLength</em>, <em>YLength</em>, and <em>ZLength</em> are applied to the positive
@@ -36,7 +36,7 @@ Figure 2 illustrates default texture mapping with a clamped texture (RepeatS=Fal
 
 ![texture](../../../../figures/ifcblock-texture.png)
 
-Figure 2 &mdash; Block textures
+Figure 2 — Block textures
 
 |Side|Normal|Origin X|Origin Y|Origin Z|S Axis|T Axis|
 |--- |--- |--- |--- |--- |--- |--- |
@@ -47,7 +47,7 @@ Figure 2 &mdash; Block textures
 |Bottom|-Z|0|+YLength|0|+X|-Y|
 |Top|+Z|0|0|+ZLength|+X|+Y|
 
-Table 3 &mdash; Texture parameters
+Table 3 — Texture parameters
 
 ## Attributes
 

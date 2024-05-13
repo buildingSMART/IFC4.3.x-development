@@ -1,6 +1,6 @@
 # IfcTessellatedFaceSet
 
-The _IfcTessellatedFaceSet_ is a boundary representation topological model limited to planar faces and straight edges. It may represent an approximation of an analytical surface or solid that may be provided in addition to its tessellation as a separate shape representation. The _IfcTessellatedFaceSet_ provides a compact data representation of an connected face set using indices into ordered lists of vertices, normals, colours, and texture maps.
+The _IfcTessellatedFaceSet_ is a boundary representation topological model limited to planar faces and straight edges. It may represent an approximation of an analytical surface or solid that may be provided in addition to its tessellation as a separate shape representation. The _IfcTessellatedFaceSet_ provides a compact data representation of an connected face set using indices into ordered lists of vertices, normals, colours, and texture maps.<!-- end of definition -->
 
 > NOTE  The compact representation has been chosen to enable small data sets despite potentially large sets of faces, edges and vertices needed to represent tessellations of analyticals surfaces and solids, and despite large sets of colour and texture information to annotate the tessellated faces.
 

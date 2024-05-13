@@ -1,6 +1,6 @@
 # PEnum_AirTerminalCoreType
 
-## Items
+<!-- end of definition -->## Items
 
 ### SHUTTERBLADE
 Shutter Blade

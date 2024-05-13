@@ -1,7 +1,5 @@
 # PEnum_ElementStatus
 
-<<todo: definition="">></todo:>
-
 ## Items
 
 ### NEW

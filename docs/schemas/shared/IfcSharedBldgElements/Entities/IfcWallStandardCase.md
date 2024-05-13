@@ -15,7 +15,7 @@ and have either:
 * a straight line axis (straight wall), or
 * a circular arc axis (round wall).
 
-and shall not have
+and shall not have:
 
 * aggregated components, that is, parts aggregated to a wall by _IfcRelAggregates_
 * shape representation for 'Body' not being an extrusion, or clipped extrusion

@@ -72,10 +72,10 @@ def enrich_all_markdowns(directory_path, save=False):
             if file[len(file)-3:] == '.md' and file != 'README.md':
                 file_path = os.path.join(root, file)
                 try:
-                    with open(file_path, 'r') as file:
+                    with open(file_path, 'r', encoding='utf-8') as file:
                         new_def = extract_definition(file.read(), return_short=False, return_marked=True, print_split=True)
                     if save:
-                        with open(file_path, 'w') as file:
+                        with open(file_path, 'w', encoding='utf-8') as file:
                             file.write(new_def)
                 except Exception as e:
                     print(f"Failed to read {file_path}: {e}")

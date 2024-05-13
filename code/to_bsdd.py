@@ -16,6 +16,7 @@ from reversestem import unstem
 from measure_mapping import MEASURE_MAPPING
 from extract_definition import extract_definition
 
+
 logging.basicConfig(level=logging.INFO)
 
 try:
@@ -422,8 +423,8 @@ def generate_definitions():
                 st = item.meta.get('supertypes', [])
                 if st:
                     di["Parent"] = to_str(st[0])
-
-                di["Definition"] = clean(extract_definition(to_str(item.markdown_content)))
+                    
+                di["Definition"] = clean(extract_definition(to_str(item.markdown_content), return_short=True))
                 # add human-readable name
                 di["Name"] = caps_control(clean(normalise((item.name[3:] if item.name.lower().startswith('ifc') else item.name))).title())
                 di["Guid"] = guid_by_id(item.id)
@@ -447,7 +448,7 @@ def generate_definitions():
                     if c.name not in ("USERDEFINED","NOTDEFINED"):
                         by_id[c.id] = di = classes[entity.name + c.name]
                         di["Parent"] = to_str(entity.name)
-                        di["Definition"] = clean(extract_definition(to_str(c.markdown)))
+                        di["Definition"] = clean(extract_definition(to_str(c.markdown), return_short=True))
                         di["Description"] = "Technical note: Because this class is a 'Predefined Type' in IFC, meaning a specialisation of its parent class, in IFC it should be represented by the parent class."
                         # add human-readable name, by identifying words in all-caps phrase (right now the words are hardcoded)
                         di["Name"] = caps_control(split_words(c.name).title())
@@ -523,12 +524,12 @@ def generate_definitions():
                                 logging.warning("%s.%s of type %s <%s> not mapped" % (pset.name, nm, ty, ",".join(map(lambda kv: "=".join(kv), ty_arg.items()))))
                                 continue
 
-                    di["Psets"][pset.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', clean(extract_definition(to_str(pset.markdown_content))))
+                    di["Psets"][pset.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', clean(extract_definition(to_str(pset.markdown_content), return_short=True)))
                     
                     di["Psets"][pset.name]["Properties"][a.name]["Type"] = type_name
                     di["Psets"][pset.name]["Properties"][a.name]["Name"] = caps_control(clean(split_words(normalise(a.name))).title())
                     # remove value explanation from the definition
-                    di["Psets"][pset.name]["Properties"][a.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', clean(extract_definition(to_str(a.markdown))))
+                    di["Psets"][pset.name]["Properties"][a.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', clean(extract_definition(to_str(a.markdown), return_short=True)))
                     di["Psets"][pset.name]["Properties"][a.name]["Kind"] = kind_name
                     di["Psets"][pset.name]["Properties"][a.name]["Package"] = to_str(pset.package) # solely to split POT files
                     if measure.lower().endswith("measure"): #not measure in ('IfcLabel','IfcText','IfcURIReference','IfcTimeSeries','IfcBoolean'):               
@@ -544,7 +545,7 @@ def generate_definitions():
                             # match the whole sentence containing the value, case insensitive
                             matches = re.findall(r"[^.;!,]*" + tv + r"[^.;!,]*", to_str(a.markdown), flags=re.IGNORECASE)
                             if matches:
-                                description = clean(extract_definition(matches[0].strip()))  #the whole sentence explaining the value
+                                description = clean(extract_definition(matches[0].strip(), return_short=True))  #the whole sentence explaining the value
                             else:
                                 description = caps_control(clean(normalise(split_words(tv))).title())  #the value but readable
                             di["Psets"][pset.name]["Properties"][a.name]["Values"].append({"Value": tv,"Description":description,"Package":to_str(pset.package)})
@@ -560,7 +561,7 @@ def generate_definitions():
         
         for c in entity.children:
                            
-            c.name = clean(extract_definition(c.name))
+            c.name = clean(extract_definition(c.name), return_short=True)
 
             if not is_deprecated(c):
                 try:
@@ -605,7 +606,7 @@ def generate_definitions():
                     di["Psets"]["Attributes"]["Properties"][c.name]["Type"] = type_name
                     di["Psets"]["Attributes"]["Properties"][c.name]["Name"] = caps_control(clean(split_words(normalise(c.name))).title())
                     # remove value explanation from the definition
-                    di["Psets"]["Attributes"]["Properties"][c.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', clean(extract_definition(to_str(c.markdown))))
+                    di["Psets"]["Attributes"]["Properties"][c.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', clean(extract_definition(to_str(c.markdown), return_short=True)))
                     di["Psets"]["Attributes"]["Properties"][c.name]["Package"] = to_str(entity.package) # solely to split POT files
                     if type_values is None:
                         type_values = TYPE_TO_VALUES.get(type_name)
@@ -616,7 +617,7 @@ def generate_definitions():
                             # matches = re.findall(r"[^.;!,]*" + tv + r"[^.;!,]*", to_str(c.markdown), flags=re.IGNORECASE)
                             matches = re.findall(r"[^.;!,]*" + tv + r"[^.;!,]*", to_str(c.markdown), flags=re.IGNORECASE)
                             if matches:
-                                description = clean(extract_definition(matches[0].strip()))  #the whole sentence explaining the value
+                                description = clean(extract_definition(matches[0].strip(), return_short=True))  #the whole sentence explaining the value
                             else:
                                 description = caps_control(clean(normalise(split_words(tv))).title())  #the value but readable
                             di["Psets"]["Attributes"]["Properties"][c.name]["Values"].append({"Value": tv,"Description":description,"Package":to_str(entity.package)})                           
@@ -627,7 +628,7 @@ def generate_definitions():
                     type_values = type_item.definition.values
                     di["Psets"]["Attributes"]["Properties"][c.name]["Type"] = type_name
                     # remove value explanation from the definition
-                    di["Psets"]["Attributes"]["Properties"][c.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', clean(extract_definition(to_str(c.markdown))))
+                    di["Psets"]["Attributes"]["Properties"][c.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', clean(extract_definition(to_str(c.markdown), return_short=True)))
                     di["Psets"]["Attributes"]["Properties"][c.name]["Values"] = []
                     di["Psets"]["Attributes"]["Properties"][c.name]["Package"] = to_str(entity.package) # solely to split POT files
                     for tv in type_values:                   
@@ -635,7 +636,7 @@ def generate_definitions():
                         # matches = re.findall(r"[^.;!,]*" + tv + r"[^.;!,]*", to_str(c.markdown), flags=re.IGNORECASE)
                         matches = re.findall(r"[^.;!,]*" + tv + r"[^.;!,]*", to_str(c.markdown), flags=re.IGNORECASE)
                         if matches:
-                            description = clean(extract_definition(matches[0].strip()))  #the whole sentence explaining the value
+                            description = clean(extract_definition(matches[0].strip(), return_short=True))  #the whole sentence explaining the value
                         else:
                             description = caps_control(clean(normalise(split_words(tv))).title())  #the value but readable
                         di["Psets"]["Attributes"]["Properties"][c.name]["Values"].append({"Value": tv,"Description":description,"Package":to_str(entity.package)})

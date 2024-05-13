@@ -1,6 +1,6 @@
 # IfcElementAssembly
 
-The _IfcElementAssembly_ represents complex element assemblies aggregated from several elements, such as discrete elements, building elements, or other elements.
+The _IfcElementAssembly_ represents complex element assemblies aggregated from several elements, such as discrete elements, building elements, or other elements.<!-- end of definition -->
 
 > EXAMPLE Steel construction assemblies, such as trusses and different kinds of frames, can be represented by the _IfcElementAssembly_ entity. Premanufactured or precast elements are examples of the general _IfcElementAssembly_ entity
 
@@ -46,7 +46,7 @@ The IfcElementAssembly shall represent an aggregate, i.e. it should have other e
 
 Figure 1 illustrates spatial containment and element aggregation relationships.
 
-![containment relationships](../../../../figures/ifcelementassembly-containment.png "Figure 1 &mdash; Element assembly containment")
+![containment relationships](../../../../figures/ifcelementassembly-containment.png "Figure 1 — Element assembly containment")
 
 #### IfcMember
 

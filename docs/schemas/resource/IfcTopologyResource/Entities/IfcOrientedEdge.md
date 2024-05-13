@@ -1,6 +1,6 @@
 # IfcOrientedEdge
 
-The _IfcOrientedEdge_ represents an _IfcEdge_ with an _Orientation_ flag applied. It allows to reuse the same _IfcEdge_ when traversed exactly twice, once forwards and once backwards.
+The _IfcOrientedEdge_ represents an _IfcEdge_ with an _Orientation_ flag applied. It allows to reuse the same _IfcEdge_ when traversed exactly twice, once forwards and once backwards.<!-- end of definition -->
 
 > NOTE  The sense of the normal to the _IfcFace_ is solely determined from the edges. If all the edges of the face are connected in a counter clockwise manner following the edge orientations the face normal will point outward. The normal to the underlying _IfcFaceSurface_ representing the geometry of that face has no relevance to this. The purpose of the _IfcFaceSurface.SameSense_ attribute is to give additional information for verification purposes. _SameSense_ TRUE means surface normal and face normal are the same, _SameSense_ FALSE means they are in opposite directions.
 
@@ -8,7 +8,7 @@ The reused edge with a geometric representation as _IfcEdgeCurve_ defines the ed
 
 ![example](../../../../figures/ifcadvancedbrep_02.png)
 
-Figure 1 &mdash; Curve on surface representation of an
+Figure 1 — Curve on surface representation of an
 
 > EXAMPLE Figure 1 illustrates an example where the <em>CurveOnSurface</em> is provided in addition to the curve geometry of the <em>IfcEdgeCurve</em>.
 

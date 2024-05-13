@@ -1,6 +1,6 @@
 # PEnum_AddressabilityType
 
-## Items
+<!-- end of definition -->## Items
 
 ### IMPLEMENTED
 Implemented

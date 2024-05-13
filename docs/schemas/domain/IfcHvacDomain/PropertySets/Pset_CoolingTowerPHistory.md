@@ -1,6 +1,6 @@
 # Pset_CoolingTowerPHistory
 
-Cooling tower performance history attributes.
+Cooling tower performance history attributes.<!-- end of definition -->
 
 
 ## Comments

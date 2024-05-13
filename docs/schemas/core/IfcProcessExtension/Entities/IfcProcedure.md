@@ -1,6 +1,6 @@
 # IfcProcedure
 
-An _IfcProcedure_ is a logical set of actions to be taken in response to an event or to cause an event to occur.
+An _IfcProcedure_ is a logical set of actions to be taken in response to an event or to cause an event to occur.<!-- end of definition -->
 
 > HISTORY  New entity in IFC2x2
 
@@ -16,7 +16,7 @@ As shown in Figure 1, _IfcProcedure_ does not restrict anything but describes sp
 
 ![procedure example](../../../../figures/ifcprocedure_example.png)
 
-Figure 1 &mdash; Procedure relationships
+Figure 1 — Procedure relationships
 
 ## Attributes
 

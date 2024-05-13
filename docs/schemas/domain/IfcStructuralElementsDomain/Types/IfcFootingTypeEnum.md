@@ -1,6 +1,6 @@
 # IfcFootingTypeEnum
 
-Enumeration defining the generic footing type.
+Enumeration defining the generic footing type.<!-- end of definition -->
 
 > HISTORY  New type in IFC2x2
 

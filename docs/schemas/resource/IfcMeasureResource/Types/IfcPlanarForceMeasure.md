@@ -1,6 +1,6 @@
 # IfcPlanarForceMeasure
 
-_IfcPlanarForceMeasure_ is a measure of force on an area.
+_IfcPlanarForceMeasure_ is a measure of force on an area.<!-- end of definition -->
 
 Usually measured in N/m2.
 

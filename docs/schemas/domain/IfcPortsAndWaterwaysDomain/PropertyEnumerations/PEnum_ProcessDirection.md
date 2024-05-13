@@ -1,6 +1,6 @@
 # PEnum_ProcessDirection
 
-A property enumeration for the direction of travel of items within the process.
+A property enumeration for the direction of travel of items within the process.<!-- end of definition -->
 
 ## Items
 

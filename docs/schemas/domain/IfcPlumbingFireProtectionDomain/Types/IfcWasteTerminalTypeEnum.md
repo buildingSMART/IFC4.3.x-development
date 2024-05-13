@@ -1,6 +1,6 @@
 # IfcWasteTerminalTypeEnum
 
-The _IfcWasteTerminalTypeEnum_ defines the range of different types of waste terminal that can be specified.
+The _IfcWasteTerminalTypeEnum_ defines the range of different types of waste terminal that can be specified.<!-- end of definition -->
 
 > HISTORY  New type in IFC2x2. GREASEINTERCEPTOR, OILINTERCEPTOR, PETROLINTERCEPTOR moved to IfcInterceptorTypeEnum in IFC4.
 

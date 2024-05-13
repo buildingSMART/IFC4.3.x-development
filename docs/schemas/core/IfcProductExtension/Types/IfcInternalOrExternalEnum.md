@@ -1,6 +1,6 @@
 # IfcInternalOrExternalEnum
 
-This enumeration defines the different types of space boundaries in terms of either being inside the building or outside the building.
+This enumeration defines the different types of space boundaries in terms of either being inside the building or outside the building.<!-- end of definition -->
 
 > HISTORY  New enumeration in IFC2.0
 

@@ -1,6 +1,6 @@
 # IfcConstructionMaterialResourceTypeEnum
 
-This enumeration is used to identify the primary purpose of a construction material resource. It is limited to the most common raw materials used in construction and excludes materials commonly sold as finished products.
+This enumeration is used to identify the primary purpose of a construction material resource. It is limited to the most common raw materials used in construction and excludes materials commonly sold as finished products.<!-- end of definition -->
 
 > HISTORY  New enumeration in IFC4.
 

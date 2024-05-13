@@ -6,7 +6,7 @@ The element type _IfcMemberType_ defines commonly shared information for occurre
 * common material information
 * common profile definitions
 * common shape representations
-
+<!-- end of definition -->
 It is used to define a member specification, or member style (the specific product information that is common to all occurrences of that member type). Member types may be exchanged without being already assigned to occurrences.
 
 Occurrences of the _IfcMemberType_ within building models are represented by instances of _IfcMember_. Occurrences of the _IfcMemberType_ within structural analysis models are represented by instances of _IfcStructuralCurveMember_, or its applicable subtypes.

@@ -1,6 +1,6 @@
 # IfcTextureMap
 
-An _IfcTextureMap_ provides the mapping of the 2-dimensional texture coordinates to the surface onto which it is mapped. It is used for mapping the texture to surfaces of vertex based geometry models, such as
+An _IfcTextureMap_ provides the mapping of the 2-dimensional texture coordinates to the surface onto which it is mapped. It is used for mapping the texture to surfaces of vertex based geometry models, such as<!-- end of definition -->
 
 *  _IfcFacetedBrep_
 *  _IfcFacetedBrepWithVoids_
@@ -22,7 +22,7 @@ Each _IfcTextureVertex_ (given as S, T coordinates of the 2-dimension texture co
 
 ![IfcTextureMap_fig-1.png 35,6 KB](../../../../figures/ifctexturemap_fig-1.png)
 
-Figure 1 &mdash; Texture map
+Figure 1 — Texture map
 
 Figure 1 illustrates applying a texture map to a vertex based geometry.
 

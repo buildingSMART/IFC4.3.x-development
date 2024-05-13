@@ -1,6 +1,6 @@
 # IfcShapeRepresentation
 
-The _IfcShapeRepresentation_ represents the concept of a particular geometric representation of a product or a product component within a specific geometric representation context. The inherited attribute _RepresentationType_ is used to define the geometric model used for the shape representation (e.g. 'SweptSolid', or 'Brep'), the inherited attribute _RepresentationIdentifier_ is used to denote the kind of the representation captured by the _IfcShapeRepresentation_ (e.g. 'Axis', 'Body', etc.).
+The _IfcShapeRepresentation_ represents the concept of a particular geometric representation of a product or a product component within a specific geometric representation context. The inherited attribute _RepresentationType_ is used to define the geometric model used for the shape representation (e.g. 'SweptSolid', or 'Brep'), the inherited attribute _RepresentationIdentifier_ is used to denote the kind of the representation captured by the _IfcShapeRepresentation_ (e.g. 'Axis', 'Body', etc.).<!-- end of definition -->
 
 Several representation identifiers for shape representation are included as predefined values for _RepresentationIdentifier_. Table 1 indicates the defined list of values for _RepresentationIdentifier_.
 
@@ -21,7 +21,7 @@ Several representation identifiers for shape representation are included as pred
 |Clearance|3D clearance volume of the element. Such clearance region indicates space that should not intersect with the 'Body' representation of other elements, though may intersect with the 'Clearance' representation of other elements.|
 |Lighting|Representation of emitting light as a light source within a shape representation|
 
-Table 1 &mdash; Representation identifiers
+Table 1 — Representation identifiers
 
 Several representation types for shape representation are included as predefined values for _RepresentationType_. Table 2 indicates the defined list of values for _RepresentationType_.
 
@@ -57,7 +57,7 @@ SectionedSpine | cross section based representation of a spine curve and planar 
 LightSource | light source with (depending on type) position, orientation, light colour, intensity and attenuation
 MappedRepresentation | representation based on mapped item(s), referring to a representation map. Note: it can be seen as an inserted block reference. The shape representation of the mapped item has a representation type declaring the type of its representation items.
 
-Table 2 &mdash; Representation types
+Table 2 — Representation types
 
 { .extDef}
 > NOTE  The definition relates to **shape_representation** defined in ISO 10303-41.

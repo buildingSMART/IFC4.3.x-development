@@ -1,6 +1,6 @@
 # IfcWorkPlan
 
-An _IfcWorkPlan_ represents work plans in a construction or a facilities management project.
+An _IfcWorkPlan_ represents work plans in a construction or a facilities management project.<!-- end of definition -->
 
 > HISTORY  New entity in IFC2.0
 
@@ -31,7 +31,7 @@ digraph dot_neato {
 }
 ```
 
-Figure 1 &mdash; How projects can declare work plans, which in turn contain tasks or schedules
+Figure 1 — How projects can declare work plans, which in turn contain tasks or schedules
 
 ## Attributes
 

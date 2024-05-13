@@ -1,6 +1,6 @@
 # IfcTextStyleTextModel
 
-The _IfcTextStyleTextModel_ combines all text style properties, that affect the presentation of a text literal within a given extent. It includes the spacing between characters and words, the horizontal and vertical alignment of the text within the planar box of the extent, decorations (like underline), transformations of the literal (like uppercase), and the height of each text line within a multi-line text block.
+The _IfcTextStyleTextModel_ combines all text style properties, that affect the presentation of a text literal within a given extent. It includes the spacing between characters and words, the horizontal and vertical alignment of the text within the planar box of the extent, decorations (like underline), transformations of the literal (like uppercase), and the height of each text line within a multi-line text block.<!-- end of definition -->
 
 { .extDef}
 > Definition according to W3C for Cascading Style Sheets:

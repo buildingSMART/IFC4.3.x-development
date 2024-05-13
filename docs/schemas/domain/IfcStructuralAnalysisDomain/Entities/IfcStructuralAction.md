@@ -1,6 +1,6 @@
 # IfcStructuralAction
 
-A structural action is a structural activity that acts upon a structural item or building element.
+A structural action is a structural activity that acts upon a structural item or building element.<!-- end of definition -->
 
 > HISTORY  New entity in IFC2x2.
 

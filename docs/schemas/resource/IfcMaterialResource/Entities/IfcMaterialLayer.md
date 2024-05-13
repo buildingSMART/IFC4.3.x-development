@@ -1,6 +1,6 @@
 # IfcMaterialLayer
 
-_IfcMaterialLayer_ is a single and identifiable part of an element which is constructed of a number of layers (one or more). Each _IfcMaterialLayer_ has a constant thickness and is located relative to the referencing _IfcMaterialLayerSet_ along the material layer set base (MlsBase).
+_IfcMaterialLayer_ is a single and identifiable part of an element which is constructed of a number of layers (one or more). Each _IfcMaterialLayer_ has a constant thickness and is located relative to the referencing _IfcMaterialLayerSet_ along the material layer set base (MlsBase).<!-- end of definition -->
 
 Air gaps within a material layer set are represented as an _IfcMaterialLayer_ with the attribute _IsVentilated_ having the value TRUE or UNKNOWN. Such air gaps shall be interpreted as voids (not having a material).
 
@@ -42,10 +42,10 @@ Definition of the material layer in more descriptive terms than given by attribu
 
 ### Category
 Category of the material layer, e.g. the role it has in the layer set it belongs to (such as 'load bearing', 'thermal insulation' etc.). The list of keywords might be extended by model view definitions, however the following keywords shall apply in general:
-* 'LoadBearing' &mdash; for all material layers having a load bearing function.
-* 'Insulation' &mdash; for all material layers having an insolating function.
-* 'Inner finish' &mdash; for the material layer being the inner finish.
-* 'Outer finish' &mdash; for the material layer being the outer finish.
+* 'LoadBearing' — for all material layers having a load bearing function.
+* 'Insulation' — for all material layers having an insolating function.
+* 'Inner finish' — for the material layer being the inner finish.
+* 'Outer finish' — for the material layer being the outer finish.
 
 ### Priority
 The relative priority of the layer, expressed as normalised integer range [0..100]. Controls how layers intersect in connections and corners of building elements: a layer from one element protrudes into (i.e. displaces) a layer from another element in a joint of these elements if the former element's layer has higher priority than the latter. The priority value for a material layer in an element has to be set and maintained by software applications in relation to the material layers in connected elements.

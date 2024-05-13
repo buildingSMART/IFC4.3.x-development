@@ -1,6 +1,6 @@
 # PEnum_DistributionPortElectricalType
 
-## Items
+<!-- end of definition -->## Items
 
 ### ACPLUG
 Plug for power using alternating current (AC)

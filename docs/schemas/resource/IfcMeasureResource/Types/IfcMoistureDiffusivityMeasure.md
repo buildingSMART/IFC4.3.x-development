@@ -1,6 +1,6 @@
 # IfcMoistureDiffusivityMeasure
 
-_IfcMoistureDiffusivityMeasure_ is a measure of moisture diffusivity.
+_IfcMoistureDiffusivityMeasure_ is a measure of moisture diffusivity.<!-- end of definition -->
 
 Usually measured in m3/s.
 

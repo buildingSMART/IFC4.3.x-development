@@ -1,6 +1,6 @@
 # PEnum_DoorPanelOperationEnum
 
-This enumeration defines the basic ways how individual door panels operate.
+This enumeration defines the basic ways how individual door panels operate.<!-- end of definition -->
 
 > HISTORY New property enumeration in IFC4.3.2.0 to replace the enumeration IfcDoorPanelOperationEnum
 

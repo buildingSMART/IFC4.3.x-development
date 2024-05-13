@@ -1,6 +1,6 @@
 # IfcSineSpiral
 
-A type of spiral curve for which the curvature change is dependent on the sine function. It is also known as the Klein curve.
+A type of spiral curve for which the curvature change is dependent on the sine function. It is also known as the Klein curve.<!-- end of definition -->
 
 The curvature is defined as:
 

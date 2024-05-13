@@ -1,6 +1,6 @@
 # IfcRampFlightTypeEnum
 
-This enumeration defines the different types an _IfcRampFlight_ or _IfcRampFlightType_ object can fulfill.
+This enumeration defines the different types an _IfcRampFlight_ or _IfcRampFlightType_ object can fulfill.<!-- end of definition -->
 
 > HISTORY  New enumeration in IFC2x2.
 

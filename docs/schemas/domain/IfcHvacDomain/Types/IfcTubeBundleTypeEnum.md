@@ -1,6 +1,6 @@
 # IfcTubeBundleTypeEnum
 
-Enumeration defining the typical types of tube bundles.
+Enumeration defining the typical types of tube bundles.<!-- end of definition -->
 
 > HISTORY  New enumeration in IFC2x2.
 

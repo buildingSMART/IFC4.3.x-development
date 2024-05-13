@@ -1,6 +1,6 @@
 # PEnum_WindSensorType
 
-## Items
+<!-- end of definition -->## Items
 
 ### CUP
 Cup

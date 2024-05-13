@@ -1,6 +1,6 @@
 # IfcConversionBasedUnit
 
-An IfcConversionBasedUnit is used to define a unit that has a conversion rate to a base unit. To identify some commonly used conversion based units, the standard designations (case insensitive) for the _Name_ attribute are indicated in Table 1.
+An IfcConversionBasedUnit is used to define a unit that has a conversion rate to a base unit. To identify some commonly used conversion based units, the standard designations (case insensitive) for the _Name_ attribute are indicated in Table 1.<!-- end of definition -->
 
 
 |Name|Description|
@@ -39,7 +39,7 @@ An IfcConversionBasedUnit is used to define a unit that has a conversion rate to
 |'day'|Time measure equal to 86400 s|
 |'btu'|Energy measure equal to 1055.056 J, British Thermal Unit|
 
-Table 1 &mdash; Standard unit names
+Table 1 — Standard unit names
 
 > EXAMPLE  An inch is a converted unit. It is from the Imperial system, its name is "inch" and it can be related to the SI unit, millimetre, through a measure with unit whose value is 25.4 millimetre. A foot is also a converted unit. It is from the Imperial system, its name is "foot" and it can be related to an _IfcSIUnit_, millimetre, either directly or through the unit called "inch". Note that several US customary units differ from Imperial units (nonmetric English units) of the same name.
 

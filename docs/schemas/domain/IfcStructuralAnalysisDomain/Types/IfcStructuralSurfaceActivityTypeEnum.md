@@ -1,6 +1,6 @@
 # IfcStructuralSurfaceActivityTypeEnum
 
-This enumeration defines the distribution of load values in a surface action or reaction.
+This enumeration defines the distribution of load values in a surface action or reaction.<!-- end of definition -->
 
 > HISTORY  New enumeration in IFC4
 

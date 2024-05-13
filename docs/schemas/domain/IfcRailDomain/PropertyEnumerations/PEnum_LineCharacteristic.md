@@ -1,6 +1,6 @@
 # PEnum_LineCharacteristic
 
-Enumeration of line characteristics.
+Enumeration of line characteristics.<!-- end of definition -->
 
 ## Items
 

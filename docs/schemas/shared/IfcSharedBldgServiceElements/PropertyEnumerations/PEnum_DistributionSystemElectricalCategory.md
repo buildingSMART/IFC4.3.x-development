@@ -1,6 +1,6 @@
 # PEnum_DistributionSystemElectricalCategory
 
-## Items
+<!-- end of definition -->## Items
 
 ### HIGHVOLTAGE
 High Voltage

@@ -1,6 +1,6 @@
 # PEnum_UnitConnectionType
 
-## Items
+<!-- end of definition -->## Items
 
 ### CHAIN
 

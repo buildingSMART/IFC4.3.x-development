@@ -1,6 +1,6 @@
 # IfcSpace
 
-A space represents an area or volume bounded actually or theoretically. Spaces are areas or volumes that provide for certain functions within a building.
+A space represents an area or volume bounded actually or theoretically. Spaces are areas or volumes that provide for certain functions within a building.<!-- end of definition -->
 
 A space is associated to a building storey (or in case of exterior spaces to a site). A space may span over several connected spaces. Therefore a space group provides for a collection of spaces included in a storey. A space can also be decomposed in parts, where each part defines a partial space. This is defined by the _CompositionType_ attribute of the supertype _IfcSpatialStructureElement_ which is interpreted as follow:
 
@@ -18,7 +18,7 @@ Figure 1 shows the _IfcSpace_ as part of the spatial structure. It also serves a
 
 ![spatial structure](../../../../figures/ifcspace-spatialstructure.png)
 
-Figure 1 &mdash; Space composition
+Figure 1 — Space composition
 
 The following guidelines should apply for using the _Name_, _Description_, _LongName_ and _ObjectType_ attributes.
 
@@ -39,7 +39,7 @@ Figure 2 describes the heights and elevations of the _IfcSpace_.
 
 ![space heights](../../../../figures/ifcspace_heights.png)
 
-Figure 2 &mdash; Space elevations
+Figure 2 — Space elevations
 
 > HISTORY  New entity in IFC1.0
 
@@ -94,7 +94,7 @@ Figure 185 shows an extrusion of an arbitrary profile definition into the swept 
 
 ![fig2](../../../../figures/ifcspace_advanced-layout1.gif)
 
-Figure 185 &mdash; Space body clipping
+Figure 185 — Space body clipping
 
 ### Body SweptSolid Geometry
 
@@ -108,7 +108,7 @@ Figure 184 shows an extrusion of an arbitrary profile definition with voids into
 
 ![fig1](../../../../figures/ifcspace_standard-layout1.gif)
 
-Figure 184 &mdash; Space body swept solid
+Figure 184 — Space body swept solid
 
 ### FootPrint GeomSet Geometry
 

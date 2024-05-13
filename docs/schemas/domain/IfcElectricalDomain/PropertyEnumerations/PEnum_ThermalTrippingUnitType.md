@@ -1,6 +1,6 @@
 # PEnum_ThermalTrippingUnitType
 
-## Items
+<!-- end of definition -->## Items
 
 ### NH_FUSE
 NH Fuse

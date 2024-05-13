@@ -1,6 +1,6 @@
 # IfcRoofTypeEnum
 
-This enumeration defines the basic configuration of the roof in terms of the different roof shapes.
+This enumeration defines the basic configuration of the roof in terms of the different roof shapes.<!-- end of definition -->
 
 Roofs which are subdivided into more than these basic shapes or roofs with non-regular shapes (free form roofs) have the type _FREEFORM_.
 

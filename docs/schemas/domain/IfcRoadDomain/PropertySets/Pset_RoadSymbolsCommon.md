@@ -1,3 +1,3 @@
 # Pset_RoadSymbolsCommon
 
-Properties for road symbols.
+Properties for road symbols.<!-- end of definition -->

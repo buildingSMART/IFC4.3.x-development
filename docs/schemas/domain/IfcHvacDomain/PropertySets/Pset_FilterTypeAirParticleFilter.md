@@ -1,3 +1,3 @@
 # Pset_FilterTypeAirParticleFilter
 
-Air particle filter type attributes.
+Air particle filter type attributes.<!-- end of definition -->

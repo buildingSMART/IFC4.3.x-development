@@ -1,6 +1,6 @@
 # IfcDocumentStatusEnum
 
-_IfcDocumentStatusEnum_ enables selection of the status of document information from a list of choices.
+_IfcDocumentStatusEnum_ enables selection of the status of document information from a list of choices.<!-- end of definition -->
 
 > HISTORY  New enumeration in IFC2x.
 

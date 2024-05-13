@@ -1,6 +1,6 @@
 # PEnum_AudioVisualReceiverType
 
-## Items
+<!-- end of definition -->## Items
 
 ### AUDIO
 Audio

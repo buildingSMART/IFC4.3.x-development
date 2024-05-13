@@ -1,6 +1,6 @@
 # IfcTendonAnchorTypeEnum
 
-Enumeration defining the types of tendon anchors.
+Enumeration defining the types of tendon anchors.<!-- end of definition -->
 
 > HISTORY  New type in IFC4.
 

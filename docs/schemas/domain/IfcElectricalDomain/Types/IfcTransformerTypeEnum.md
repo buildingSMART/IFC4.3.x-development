@@ -1,6 +1,6 @@
 # IfcTransformerTypeEnum
 
-The _IfcTransformerTypeEnum_ defines the range of different types of transformer that can be specified.
+The _IfcTransformerTypeEnum_ defines the range of different types of transformer that can be specified.<!-- end of definition -->
 
 > HISTORY  New type in IFC2x2.
 

@@ -1,6 +1,6 @@
 # PEnum_FireHydrantType
 
-## Items
+<!-- end of definition -->## Items
 
 ### DRYBARREL
 Dry Barrel

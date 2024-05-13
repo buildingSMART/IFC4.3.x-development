@@ -1,6 +1,6 @@
 # PEnum_FireDamperClosureRating
 
-## Items
+<!-- end of definition -->## Items
 
 ### DYNAMIC
 Dynamic

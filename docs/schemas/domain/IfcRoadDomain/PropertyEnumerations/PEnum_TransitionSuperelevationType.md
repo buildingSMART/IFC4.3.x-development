@@ -1,6 +1,6 @@
 # PEnum_TransitionSuperelevationType
 
-Specifies how the transition shall occur between the previous and this event.
+Specifies how the transition shall occur between the previous and this event.<!-- end of definition -->
 
 ## Items
 

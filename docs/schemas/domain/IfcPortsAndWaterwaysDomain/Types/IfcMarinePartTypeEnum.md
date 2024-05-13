@@ -1,6 +1,6 @@
 # IfcMarinePartTypeEnum
 
-The predefined type container that collects all possible marine facility part types together into the implemented enumeration.
+The predefined type container that collects all possible marine facility part types together into the implemented enumeration.<!-- end of definition -->
 
 ## Items
 
@@ -44,7 +44,7 @@ A region spatial part that represents a functional division designed for the mai
 A region spatial part that represents a clear area used for the transfer and movement of vessels this area could include complex rail tracks and additional loading requirements.
 
 ### GATEHEAD
-A longitudinal spatial part of a waterway or port facility that forms the gate, supporting structure &amp; plant of an impounded facility such as a ship lock, dry dock or hydrolift.
+A longitudinal spatial part of a waterway or port facility that forms the gate, supporting structure & plant of an impounded facility such as a ship lock, dry dock or hydrolift.
 
 ### GUDINGSTRUCTURE
 A longitudinal spatial part of a waterway or port facility that forms the guiding and assistive structures at the entrance to an impounded facility.

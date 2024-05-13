@@ -1,6 +1,6 @@
 # PEnum_TurnstileType
 
-Enumeration describing the types of turnstiles
+Enumeration describing the types of turnstiles<!-- end of definition -->
 
 ## Items
 

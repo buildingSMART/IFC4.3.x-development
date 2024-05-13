@@ -1,6 +1,6 @@
 # IfcRelInterferesElements
 
-The _IfcRelInterferesElements_ objectified relationship indicates that two elements interfere.
+The _IfcRelInterferesElements_ objectified relationship indicates that two elements interfere.<!-- end of definition -->
 It is a 1 to 1 relationship, and the concept of two elements interfering physically or logically is described independently of the elements.
 
 The interference may be related to the shape representation of the entities by providing an interference geometry or zone:

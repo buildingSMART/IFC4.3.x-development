@@ -1,6 +1,6 @@
 # IfcDerivedUnit
 
-A derived unit is a unit that is formed from an expression of other units.
+A derived unit is a unit that is formed from an expression of other units.<!-- end of definition -->
 
 ```
 digraph dot_neato {
@@ -35,7 +35,7 @@ IfcMeasureWithUnit_1 -> IfcSIUnit_1 [headlabel="UnitComponent", labelangle=80, l
 }
 ```
 
-Figure MPH &mdash; An example of how to assign miles per hour as a derived unit
+Figure MPH — An example of how to assign miles per hour as a derived unit
 
 { .extDef}
 > REFERENCE  Definition according to ISO/CD 10303-41:1992 of `derived_unit`.

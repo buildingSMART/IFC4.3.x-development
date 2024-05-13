@@ -4,7 +4,7 @@ The _IfcColourRgbList_ defines an ordered collection of RGB colour values. Each 
 
 * first dimension is an unbounded list representing each colour value;
 * second dimension is a fixed list of three list members, where [1] is the red component, [2] the green component, and [3] the blue component.
-
+<!-- end of definition -->
 > NOTE  The _IfcColourRgbList_ is introduced to provide a compact representation of an indexable representation of colours for tessellated items.
 
 > HISTORY  New entity in IFC4.
@@ -12,4 +12,4 @@ The _IfcColourRgbList_ defines an ordered collection of RGB colour values. Each 
 ## Attributes
 
 ### ColourList
-List of colours defined by the red, green, blue components. All values are provided as a ratio of 0.0 &le; _value_ &le; 1.0. When using 8bit for each colour channel, a value of 0.0 equals 0, a value of 1.0 equals 255, and values in between are interpolated.
+List of colours defined by the red, green, blue components. All values are provided as a ratio of 0.0 ≤ _value_ ≤ 1.0. When using 8bit for each colour channel, a value of 0.0 equals 0, a value of 1.0 equals 255, and values in between are interpolated.

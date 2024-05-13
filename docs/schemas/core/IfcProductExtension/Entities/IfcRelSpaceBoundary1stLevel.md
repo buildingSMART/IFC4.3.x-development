@@ -6,7 +6,7 @@ The 1st level space boundary defines the physical or virtual delimiter of a spac
 * 1st level space boundaries do not consider any change of material in the bounding building elements, or different spaces/zones behind a wall or slab (floor or ceiling).
 * 1st level space boundaries are differentiated in two ways: virtual or physical and internal,external, or undefined (internal and external) e.g. for a wall that is partially inside and outside.
 * 1st level space boundaries form a closed shell around the space (so long as the space is completely enclosed) and include overlapping boundaries representing openings (filled or not) in the building elements (see implementers agreement below).
-
+<!-- end of definition -->
 1st level space boundaries define a space by its boundary surfaces without taking anything on the other side of the bounding elements into account.
 
 > NOTE  1st level space boundaries are used e.g. in quantity take-off and facility management as they describe the surfaces for finishes. They cannot be directly used for thermal analysis. However 1st level space boundaries can provide the input to preprocessors to thermal analysis software that take 1st level space boundaries and perform the necessary transformation into 2nd level space boundaries that are required for energy analysis.
@@ -20,7 +20,7 @@ As shown in Figure 1, the attribute _ParentBoundary_ with inverse _InnerBoundari
 
 > NOTE  The space boundary of the parent is not cut by the inner boundary - both overlap.
 
-![IfcRelSpaceBoundary1stLevel](../../../../figures/ifcrelspaceboundary1stlevel-fig1.png "Figure 1 &mdash; Space boundary first level relationships")
+![IfcRelSpaceBoundary1stLevel](../../../../figures/ifcrelspaceboundary1stlevel-fig1.png "Figure 1 — Space boundary first level relationships")
 
 { .use-head}
 Geometry Use Definitions

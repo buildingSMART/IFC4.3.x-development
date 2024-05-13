@@ -19,7 +19,7 @@ and shall not have:
 
 * aggregated components, that is, parts aggregated to a wall by _IfcRelAggregates_
 * shape representation for 'Body' not being an extrusion, or clipped extrusion
-
+<!-- end of definition -->
 The following parameter have to be provided:
 
 * Wall height, taken from the depth of extrusion, provided by the geometric representation.

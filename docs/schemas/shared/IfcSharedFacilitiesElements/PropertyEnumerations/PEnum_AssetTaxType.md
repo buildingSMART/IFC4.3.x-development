@@ -1,6 +1,6 @@
 # PEnum_AssetTaxType
 
-## Items
+<!-- end of definition -->## Items
 
 ### CAPITALISED
 Capitalised

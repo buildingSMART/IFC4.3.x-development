@@ -1,6 +1,6 @@
 # IfcDynamicViscosityMeasure
 
-_IfcDynamicViscosityMeasure_ is a measure of the viscous resistance of a medium.
+_IfcDynamicViscosityMeasure_ is a measure of the viscous resistance of a medium.<!-- end of definition -->
 
 Usually measured in Pascal second (Pa s).
 

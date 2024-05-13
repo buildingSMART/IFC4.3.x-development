@@ -1,6 +1,6 @@
 # IfcInterceptorTypeEnum
 
-The _IfcInterceptorTypeEnum_ defines the range of different types of interceptor that can be specified.
+The _IfcInterceptorTypeEnum_ defines the range of different types of interceptor that can be specified.<!-- end of definition -->
 
 > HISTORY  New type in IFC4.
 

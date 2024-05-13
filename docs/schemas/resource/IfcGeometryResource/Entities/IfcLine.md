@@ -1,6 +1,6 @@
 # IfcLine
 
-The _IfcLine_ is an unbounded line parameterized by an _IfcCartesianPoint_ and an _IfcVector_. The magnitude of the _IfcVector_ affects the parameterization of the line, but it does not bound the line.
+The _IfcLine_ is an unbounded line parameterized by an _IfcCartesianPoint_ and an _IfcVector_. The magnitude of the _IfcVector_ affects the parameterization of the line, but it does not bound the line.<!-- end of definition -->
 
 > NOTE  A line segment is defined using either the _IfcPolyline_ with two _Points_, or the _IfcTrimmedCurve_ with _BasisCurve_ being an _IfcLine_.
 
@@ -12,15 +12,15 @@ The _IfcLine_ is an unbounded line parameterized by an _IfcCartesianPoint_ and a
 > 4. _IfcPolyline_ with _Points[1]_ being 0.,0. and _Points[2]_ being 0.,2.
 > 5. _IfcIndexedPolyCurve_ with two indices, pointing into a point list providing the coordinates (0.,0.) and (0.,2.).
 
-![line examples](../../../../figures/ifcline-fig1.png "Figure 1 &mdash; Unbounded _IfcLine_ and bounded _IfcTrimmedCurve_")
+![line examples](../../../../figures/ifcline-fig1.png "Figure 1 — Unbounded _IfcLine_ and bounded _IfcTrimmedCurve_")
 
 { .extDef}
 > NOTE  Definition according to ISO/CD 10303-42:1992
 > A line is an unbounded curve with constant tangent direction. A line is defined by a point and a direction. The positive direction of the line is in the direction of the dir vector. The curve is parameterized as follows:
 >> **P** = Pnt
 >> **V** = Dir
->> &lambda;(_u_) = **P** + _u_**V**
->  and the parametric range is: -&infin; < _u_ < &infin;
+>> λ(_u_) = **P** + _u_**V**
+>  and the parametric range is: -∞ < _u_ < ∞
 
 { .extDef}
 > NOTE  Entity adapted from **line** defined in ISO 10303-42

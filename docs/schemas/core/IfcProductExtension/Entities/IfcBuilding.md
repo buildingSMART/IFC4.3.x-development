@@ -1,6 +1,6 @@
 # IfcBuilding
 
-A building represents a structure that provides shelter for its occupants or contents and stands in one place. The building is also used to provide a basic element within the spatial structure hierarchy for the components of a building project (together with site, storey, and space).
+A building represents a structure that provides shelter for its occupants or contents and stands in one place. The building is also used to provide a basic element within the spatial structure hierarchy for the components of a building project (together with site, storey, and space).<!-- end of definition -->
 
 > NOTE  Definition from ISO 6707-1:
 > Construction work that has the provision of shelter for its occupants or contents as one of its main purpose and is normally designed to stand permanently in one place.
@@ -18,7 +18,7 @@ The _IfcBuilding_ is used to build the spatial structure of a building (that ser
 ![A building storey as part of a spatial structure](../../../../figures/ifcbuilding-spatialstructure.png)
 
 
-Figure 1 &mdash; Building composition
+Figure 1 — Building composition
 
 Systems, such as building service or electrical distribution systems, zonal systems, or structural analysis systems, relate to _IfcBuilding_ by using the objectified relationship _IfcRelServicesBuildings_.
 
@@ -28,7 +28,7 @@ Figure 2 describes the heights and elevations of the _IfcBuilding_. It is used t
 * eaves height of building (base of roof structure, e.g the eaves against terrain): provided by _Qto_BuildingBaseQuantities_ with Name="EavesHeight"
 
 ![building heights](../../../../figures/ifcbuilding_heights.png)
-Figure 2 &mdash; Building elevations
+Figure 2 — Building elevations
 
 > HISTORY  New entity in IFC1.0.
 

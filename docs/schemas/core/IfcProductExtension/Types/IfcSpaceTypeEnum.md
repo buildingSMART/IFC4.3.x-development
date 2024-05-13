@@ -1,6 +1,6 @@
 # IfcSpaceTypeEnum
 
-This enumeration defines the available generic types for _IfcSpace_ and _IfcSpaceType_.
+This enumeration defines the available generic types for _IfcSpace_ and _IfcSpaceType_.<!-- end of definition -->
 
 > HISTORY  New enumeration in IFC2x3.
 

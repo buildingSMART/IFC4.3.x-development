@@ -1,6 +1,6 @@
 # IfcPropertyEnumeration
 
-_IfcPropertyEnumeration_ is a collection of simple or measure values that define a prescribed set of alternatives from which 'enumeration values' are selected. This enables inclusion of enumeration values in property sets. _IfcPropertyEnumeration_ provides a name for the enumeration as well as a list of unique (numeric or descriptive) values (that may have a measure type assigned). The entity defines the list of potential enumerators to be exchanged together (or separately) with properties of type _IfcPropertyEnumeratedValue_ that selects their actual property values from this enumeration.
+_IfcPropertyEnumeration_ is a collection of simple or measure values that define a prescribed set of alternatives from which 'enumeration values' are selected. This enables inclusion of enumeration values in property sets. _IfcPropertyEnumeration_ provides a name for the enumeration as well as a list of unique (numeric or descriptive) values (that may have a measure type assigned). The entity defines the list of potential enumerators to be exchanged together (or separately) with properties of type _IfcPropertyEnumeratedValue_ that selects their actual property values from this enumeration.<!-- end of definition -->
 
 The unit is handled by the _Unit_ attribute, see Table 1 for an example of a unitless property enumeration:
 
@@ -15,7 +15,7 @@ The unit is handled by the _Unit_ attribute, see Table 1 for an example of a uni
 ||Other|IfcLabel||
 ||Unset|IfcLabel||
 
-Table 1 &mdash; Property enumeration with values, measure types and units
+Table 1 — Property enumeration with values, measure types and units
 
 > HISTORY  New entity in IFC2.0, capabilities enhanced in IFC2x.
 

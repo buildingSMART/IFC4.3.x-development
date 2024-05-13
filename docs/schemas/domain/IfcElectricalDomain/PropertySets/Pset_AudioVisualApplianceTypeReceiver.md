@@ -1,3 +1,3 @@
 # Pset_AudioVisualApplianceTypeReceiver
 
-An audio-visual receiver is a device that switches audio and/or video from multiple sources, including external sources connected from ports and internal aggregated sources.  HISTORY: Added in IFC4.
+An audio-visual receiver is a device that switches audio and/or video from multiple sources, including external sources connected from ports and internal aggregated sources.  HISTORY: Added in <!-- end of definition -->IFC4.

@@ -1,6 +1,6 @@
 This enumeration is used to identify primary transport element types.
 
-# IfcTransportElementTypeEnum
+<!-- end of definition --># IfcTransportElementTypeEnum
 
 ## Items
 

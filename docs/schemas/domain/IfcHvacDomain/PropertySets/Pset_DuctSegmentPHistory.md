@@ -1,3 +1,3 @@
 # Pset_DuctSegmentPHistory
 
-Duct segment performance history common attributes.
+Duct segment performance history common attributes.<!-- end of definition -->

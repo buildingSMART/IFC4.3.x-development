@@ -1,6 +1,6 @@
 # IfcAlignmentVerticalSegmentTypeEnum
 
-The IfcAlignmentVerticalSegmentTypeEnum indicates the type of a segment of a vertical alignment segment (IfcAlignmentVerticalSegment).
+The IfcAlignmentVerticalSegmentTypeEnum indicates the type of a segment of a vertical alignment segment (IfcAlignmentVerticalSegment).<!-- end of definition -->
 
 
 | Vertical curvature | Segmenttype        | Enumeration Values |
@@ -27,15 +27,15 @@ The IfcAlignmentVerticalSegmentTypeEnum indicates the type of a segment of a ver
 |:----|:------------------|:----------|
 | L | full length of segment        | positive length  L > 0 |
 | s | current position on segment        | 0 < s < L |
-| &theta; | (Greek "theta") Longitudinal slope angle (incline or decline)   | rad |
-| g | gradient (math); g=tan(&theta;) |  |
+| θ | (Greek "theta") Longitudinal slope angle (incline or decline)   | rad |
+| g | gradient (math); g=tan(θ) |  |
 | x(s) | variable longitudinal coordinate of the projection of the alignment / track centreline into the ground plan.  | length |
 | y(s) | variable transverse coordinate of the projection of the alignment / track centreline into the ground plan.  | length |
 | z(s) | Variable vertical coordinate of the projection of the track centreline in plan in a Cartesian coordinate system in the vertical direction.  | length |
 | z<sub>c</sub>(s) | Ordinate of the vertical circular arc of measured away from the tangent line at position s.  | length |
 | L<sub>V</sub> | length of vertical radius radius (inverse curvature)  | length |
 | R<sub>V</sub> | radius (inverse curvature) of the track centreline at a point in the elevation diagram (longitudinal section)  | length |
-| &kappa;<sub>V</sub> | (Greek "kappa") Vertical curvature   | 1/radius<sub>V</sub> |
+| κ<sub>V</sub> | (Greek "kappa") Vertical curvature   | 1/radius<sub>V</sub> |
 | Z<sub>G</sub> | Distance of the tangent intersection from the chord of the vertical circular arc  | length |
 | Z<sub>M</sub> |  Distance of the centre of the vertical circular arc to the tangent intersection point (stitch height) | length |
 | l<sub>T</sub> | Length of the tangents of the  vertical circular arc | length |
@@ -44,7 +44,7 @@ The IfcAlignmentVerticalSegmentTypeEnum indicates the type of a segment of a ver
 
 > NOTE gradient has a slightly different definition in civil engineering. "Gradient (Civ.Eng.) is the degree of slope, e.g. of a highway or a railway. US grade".
 
-> NOTE most railway track designs use the **small angle assumption**. That means &theta;=tan(&theta;)=gradient.
+> NOTE most railway track designs use the **small angle assumption**. That means θ=tan(θ)=gradient.
 
 **References to EN 13803/2017**
 

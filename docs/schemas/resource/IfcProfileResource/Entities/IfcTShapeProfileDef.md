@@ -1,6 +1,6 @@
 # IfcTShapeProfileDef
 
-_IfcTShapeProfileDef_ defines a section profile that provides the defining parameters of a T-shaped section to be used by the swept area solid. Its parameters and orientation relative to the position coordinate system are according to the following illustration. The centre of the position coordinate system is in the profile's centre of the bounding box.
+_IfcTShapeProfileDef_ defines a section profile that provides the defining parameters of a T-shaped section to be used by the swept area solid. Its parameters and orientation relative to the position coordinate system are according to the following illustration. The centre of the position coordinate system is in the profile's centre of the bounding box.<!-- end of definition -->
 
 > HISTORY  New entity in IFC2x2.
 
@@ -14,7 +14,7 @@ Figure 1 illustrates parameters of the T-shape profile definition.
 
 ![T-shape profile](../../../../figures/ifctshapeprofiledef.gif)
 
-Figure 1 &mdash; T-shape profile
+Figure 1 — T-shape profile
 
 <u>Position</u>
 

@@ -1,6 +1,6 @@
 # PEnum_EarthFailureDeviceType
 
-## Items
+<!-- end of definition -->## Items
 
 ### STANDARD
 Standard

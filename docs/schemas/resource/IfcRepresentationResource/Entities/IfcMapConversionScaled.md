@@ -1,6 +1,6 @@
 # IfcMapConversionScaled
 
-An _IfcMapConversionScaled_ is a type of _IfcMapConversion_ that supplies factors for coordinate conversion. The usage is restricted to when factors are explicitly exchanged. 
+An _IfcMapConversionScaled_ is a type of _IfcMapConversion_ that supplies factors for coordinate conversion. The usage is restricted to when factors are explicitly exchanged. <!-- end of definition -->
 
 > NOTE  Typically, these are relatively smaller facilities such as buildings where constant factors are agreed on a project.
 
@@ -12,7 +12,7 @@ For this transformation, _IfcMapConversionScaled_ data are used for:
 2. a multiplication of the x-axis by _IfcMapConversionScaled.FactorX_
 3. a multiplication of the y-axis by _IfcMapConversionScaled.FactorY_
 4. a multiplication of the z-axis by _IfcMapConversionScaled.FactorZ_
-5. followed by an **anti-clockwise** rotation about the z-axis of *&theta;*, where:
+5. followed by an **anti-clockwise** rotation about the z-axis of *θ*, where:
   $$
   \theta=arctan\left(\frac{\text{XAxisOrdinate}}{\text{XAxisAbscissa}}\right)
   $$

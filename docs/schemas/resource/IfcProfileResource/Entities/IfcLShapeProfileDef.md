@@ -1,6 +1,6 @@
 # IfcLShapeProfileDef
 
-_IfcLShapeProfileDef_ defines a section profile that provides the defining parameters of an L-shaped section (equilateral L profiles are also covered by this entity) to be used by the swept area solid. Its parameters and orientation relative to the position coordinate system are according to the following illustration. The shorter leg has the same direction as the positive _Position.P[1]_-axis, the longer or equal leg the same as the positive _Position.P[2]_-axis. The centre of the position coordinate system is in the profiles centre of the bounding box.
+_IfcLShapeProfileDef_ defines a section profile that provides the defining parameters of an L-shaped section (equilateral L profiles are also covered by this entity) to be used by the swept area solid. Its parameters and orientation relative to the position coordinate system are according to the following illustration. The shorter leg has the same direction as the positive _Position.P[1]_-axis, the longer or equal leg the same as the positive _Position.P[2]_-axis. The centre of the position coordinate system is in the profiles centre of the bounding box.<!-- end of definition -->
 
 > HISTORY  New entity in IFC2x2.
 
@@ -16,7 +16,7 @@ Figure 1 and Figure 2 illustrates parameters of equal-sided and non-equal sided 
 
 ![non equal sided L-shape](../../../../figures/ifclshapeprofiledef_layout1.gif)
 
-Figure 1 &mdash; Non-equal L-shape profile
+Figure 1 — Non-equal L-shape profile
 
 The parameterized profile defines its own position coordinate system.  The underlying coordinate system is defined by the swept area solid that uses the profile definition. It is the xy plane of <em>IfcSweptAreaSolid.Position</em> by using offsets of the position location, the parameterized profile can be positioned centric (using x,y offsets = 0.), or at any position relative to the profile.
 
@@ -24,7 +24,7 @@ In the illustrated example, the 'CentreOfGravityInX' and 'CentreOfGravityInY' pr
 
 ![equal sided L-shape](../../../../figures/ifclshapeprofiledef_layout2.gif)
 
-Figure 2 &mdash; Equal L-shape profile
+Figure 2 — Equal L-shape profile
 
 > NOTE The black coordinate axes show the underlying coordinate system of the swept surface or swept area solid
 

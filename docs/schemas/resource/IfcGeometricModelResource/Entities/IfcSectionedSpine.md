@@ -1,6 +1,6 @@
 # IfcSectionedSpine
 
-An _IfcSectionedSpine_ is a representation of the shape of a three dimensional object composed by a number of planar cross sections, and a spine curve. The shape is defined between the first element of cross sections and the last element of the cross sections. A sectioned spine may be used to represent a surface or a solid but the interpolation of the shape between the cross sections is not defined.
+An _IfcSectionedSpine_ is a representation of the shape of a three dimensional object composed by a number of planar cross sections, and a spine curve. The shape is defined between the first element of cross sections and the last element of the cross sections. A sectioned spine may be used to represent a surface or a solid but the interpolation of the shape between the cross sections is not defined.<!-- end of definition -->
 
 All cross sections have to define areas by a closed profile to allow for the representation of a solid. All cross sections have to define curves by an open or closed profile to allow for the representation of a surface. The cross sections are defined by subtypes of _IfcProfileDef_, where the consecutive profiles may be derived by a transformation of the start profile or the previous consecutive profile.
 
@@ -14,13 +14,13 @@ Figure 1 illustrates an example of an _IfcSectionedSpine_.
 
 ![spine 1](../../../../figures/ifcsectionedspine-layout1.gif)
 
-Figure 1 &mdash; Sectioned spine geometry
+Figure 1 — Sectioned spine geometry
 
 Figure 2 illustrates the final result of the _IfcSectionedSpine_. The body (shown transparently) is not fully defined by the exchange definition.
 
 ![render](../../../../figures/ifcsectionedspine.jpg)
 
-Figure 2 &mdash; Sectioned spine result
+Figure 2 — Sectioned spine result
 
 { .extDef}
 > NOTE  Definition according to ISO/CD 10303-42:1992

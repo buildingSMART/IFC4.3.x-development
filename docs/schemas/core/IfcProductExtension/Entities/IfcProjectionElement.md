@@ -1,6 +1,6 @@
 # IfcProjectionElement
 
-The projection element is a specialization of the general feature element to represent projections applied to building elements. It represents a solid attached to any element that has physical manifestation.
+The projection element is a specialization of the general feature element to represent projections applied to building elements. It represents a solid attached to any element that has physical manifestation.<!-- end of definition -->
 
 > EXAMPLE  A wall projection such as a pilaster strip is handled by _IfcProjectionElement_
 
@@ -57,7 +57,7 @@ As shown in Figure PROJECTIONREP, the following interpretation of dimension para
 
 ![projection](../../../../figures/ifcprojectionelement-layout1.png )
 
-Figure PROJECTIONREP &mdash; Projection representation
+Figure PROJECTIONREP — Projection representation
 
 The general geometric representation of _IfcProjectionElement_ can also be defined using the Brep or Tessellation geometry. The Brep or Tessellation representation allows for the representation of complex element shapes. The following attribute values for the _IfcShapeRepresentation_ holding this geometric representation shall be used:
 

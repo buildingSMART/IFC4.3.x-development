@@ -1,6 +1,6 @@
 # Pset_ChillerPHistory
 
-Chiller performance history attributes.
+Chiller performance history attributes.<!-- end of definition -->
 
 
 ## Comments

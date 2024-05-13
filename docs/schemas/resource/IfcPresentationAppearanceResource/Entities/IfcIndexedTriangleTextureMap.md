@@ -1,6 +1,6 @@
 # IfcIndexedTriangleTextureMap
 
-The _IfcIndexedTriangleTextureMap_ provides the mapping of the 2-dimensional texture coordinates to the surface onto which it is mapped. It is used for mapping the texture to triangles of the _IfcTriangulatedFaceSet_.
+The _IfcIndexedTriangleTextureMap_ provides the mapping of the 2-dimensional texture coordinates to the surface onto which it is mapped. It is used for mapping the texture to triangles of the _IfcTriangulatedFaceSet_.<!-- end of definition -->
 
 The _IfcIndexedTriangleTextureMap_ defines an index into an indexed list of texture coordinates. The _TexCoordIndex_ is a two-dimensional list, where
 
@@ -31,7 +31,7 @@ IfcTextureVertexList.TexCoordsList:
 
 ![IfcIndexedTriangleTextureMap_example-01](../../../../figures/ifcindexedtriangletexturemap_example-01.png)
 
-Figure 2 &mdash; Indexed triangle texture map geometry
+Figure 2 — Indexed triangle texture map geometry
 
 > HISTORY  New entity in IFC4.
 

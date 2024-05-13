@@ -1,6 +1,6 @@
 # IfcPhysicalSimpleQuantity
 
-The physical quantity, _IfcPhysicalSimpleQuantity_, is an entity that holds a single quantity measure value (as defined at the subtypes of _IfcPhysicalSimpleQuantity_) together with a semantic definition of the usage for the measure value.
+The physical quantity, _IfcPhysicalSimpleQuantity_, is an entity that holds a single quantity measure value (as defined at the subtypes of _IfcPhysicalSimpleQuantity_) together with a semantic definition of the usage for the measure value.<!-- end of definition -->
 
 > EXAMPLE  An element, like a wall, may have several area measures, like footprint area, left wall face area, right wall face area. These areas would be given by three instances of the area quantity subtype, with different _Name_ string values.
 

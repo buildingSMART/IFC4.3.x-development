@@ -1,6 +1,6 @@
 # PEnum_MountingMethodEnum
 
-## Items
+<!-- end of definition -->## Items
 
 ### PERFORATEDTRAY
 Perforated Tray

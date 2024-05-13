@@ -1,6 +1,6 @@
 # IfcElectricCurrentMeasure
 
-The value for the movement of electrically charged particles.
+The value for the movement of electrically charged particles.<!-- end of definition -->
 
 Usually measured in Ampere (A).
 

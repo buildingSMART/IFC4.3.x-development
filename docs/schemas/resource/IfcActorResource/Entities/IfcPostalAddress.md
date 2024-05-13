@@ -1,6 +1,6 @@
 # IfcPostalAddress
 
-This entity represents an address for delivery of paper based mail and other postal deliveries.
+This entity represents an address for delivery of paper based mail and other postal deliveries.<!-- end of definition -->
 
 > HISTORY  New entity in IFC2x.
 

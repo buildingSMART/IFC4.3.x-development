@@ -1,6 +1,6 @@
 # PEnum_LRMType
 
-## Items
+<!-- end of definition -->## Items
 
 ### LRM_ABSOLUTE
 Measurements are made from the start of the linear element being measured, in the direction of the linear element.

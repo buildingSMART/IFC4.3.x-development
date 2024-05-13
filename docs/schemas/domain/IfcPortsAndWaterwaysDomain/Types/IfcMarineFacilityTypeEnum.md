@@ -1,6 +1,6 @@
 # IfcMarineFacilityTypeEnum
 
-The predefined type container that collects all possible marine facility types together into the implemented enumeration.
+The predefined type container that collects all possible marine facility types together into the implemented enumeration.<!-- end of definition -->
 
 ## Items
 
@@ -21,7 +21,7 @@ Subset of facilities for the function of launching or recovering vessels.
 A subset of facilities with the primary function of protection or defence of a coastal or flood area.
 
 ### HYDROLIFT
-A type of vessel launch &amp; recovery facility, also known as a hydraulic lift dock, where ships are lifted vertically by water impounding systems, then floated laterally across the land to berths which subsequently become dry.
+A type of vessel launch & recovery facility, also known as a hydraulic lift dock, where ships are lifted vertically by water impounding systems, then floated laterally across the land to berths which subsequently become dry.
 
 ### SHIPYARD
 A coastal/waterside facility where ships are built and repaired.
@@ -30,7 +30,7 @@ A coastal/waterside facility where ships are built and repaired.
 A type of vessel launch & recovery facility, where ships are lifted vertically out of the water on platforms connected to winches, then transferred horizontally to land based berths on rail, wheel or track systems.
 
 ### PORT
-A complex/facility for shipping and marine activities, this includes cargo, people and storage of vessels (marinas &amp; harbours).
+A complex/facility for shipping and marine activities, this includes cargo, people and storage of vessels (marinas & harbours).
 
 ### QUAY
 a facility for the mooring of vessels accompanied with the loading and unloading of cargo or passengers or the maintenance of vessels.

@@ -1,6 +1,6 @@
 # IfcHeatExchangerTypeEnum
 
-Enumeration defining the typical types of heat exchangers.
+Enumeration defining the typical types of heat exchangers.<!-- end of definition -->
 
 > HISTORY  New enumeration in IFC2x.
 

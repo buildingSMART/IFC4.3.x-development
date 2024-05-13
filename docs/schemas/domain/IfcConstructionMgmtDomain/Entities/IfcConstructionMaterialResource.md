@@ -1,6 +1,6 @@
 # IfcConstructionMaterialResource
 
-_IfcConstructionMaterialResource_ identifies a material resource type in a construction project.
+_IfcConstructionMaterialResource_ identifies a material resource type in a construction project.<!-- end of definition -->
 
 > HISTORY  New entity in IFC2.0.
 
@@ -9,7 +9,7 @@ _IfcConstructionMaterialResource_ identifies a material resource type in a const
 
 Occurrences of _IfcConstructionMaterialResource_ are consumed (wholly or partially), or occupied during a construction work task (_IfcTask_).
 
-Similar to _IfcConstructionProductResource_, sometimes things such as 5000kg of gravel are already instantiated as an instance of an _IfcProduct_ subtype because it is a result of a work task (for example, &#145;transporting gravel&#146;). In this case, the instance of _IfcConstructionMaterialResource_ can be associated with the product instance &#145;5000kg of gravel&#146; to provide more information for resource uses. Nevertheless, _IfcConstructionMaterialResource_ should only be used to represent resource usage, but not product substances.
+Similar to _IfcConstructionProductResource_, sometimes things such as 5000kg of gravel are already instantiated as an instance of an _IfcProduct_ subtype because it is a result of a work task (for example, ‘transporting gravel’). In this case, the instance of _IfcConstructionMaterialResource_ can be associated with the product instance ‘5000kg of gravel’ to provide more information for resource uses. Nevertheless, _IfcConstructionMaterialResource_ should only be used to represent resource usage, but not product substances.
 
 > NOTE  This entity is not the same as _IfcMaterial_. One one hand, _IfcConstructionMaterialResource_ represents usage of bulk materials such as sand, gravels, nails and so on. Physical manifestations can be instantiated from _IfcProduct_ as well, depending on their uses in the system, and such an _IfcProduct_ object can be assigned to the _IfcConstructionMaterialResource_ object via _IfcRelAssignsToResource_. On the other hand, _IfcMaterial_ is about physical materials that a physical building element consists of, possibly with detailed material layering information."
 

@@ -14,7 +14,7 @@ from nltk import PorterStemmer
 from reversestem import unstem
 
 from measure_mapping import MEASURE_MAPPING
-
+from extract_definition import extract_definition
 
 logging.basicConfig(level=logging.INFO)
 
@@ -35,104 +35,15 @@ bfn = os.path.basename(fn)
 ps = PorterStemmer()
 
 CHAR_LIMIT = 50
-HTML_TAG_PATTERN = re.compile('<.*?>')
-MULTIPLE_SPACE_PATTERN = re.compile(r'\s+')
-MULTIPLE_LINEBREAK_PATTERN = re.compile('\n+')
-# CHANGE_LOG_PATTERN = re.compile(r'\{\s*\.change\-\w+\s*\}.+', flags=re.DOTALL)
-CURLY_BRACKET_PATTERN = re.compile('{.*?}.*') #also removes all text after curly brackets
-FIGURE_PATTERN = re.compile('[^.,;]*(Figure|the figure)[^.,;]*') #removes the sentence when it mentiones a Figure.
-LIST_PATTERN = re.compile('[^.,;]*:\s?') #removes the last sentence when it ends with a colon.
 
-replacements = [
-    (re.compile(r'\*{2}'), ' '),
-    (re.compile(r':(?!\s)'), ': '),
-    (re.compile(r'SELF\\'), ''),
-    (re.compile(r'(?<!\.)\.\.(?!\.)'), '.'),  # remove double dots but not triple (ellipsis)
-    (MULTIPLE_LINEBREAK_PATTERN, '; '),
-    (HTML_TAG_PATTERN, ' '),
-    (CURLY_BRACKET_PATTERN, ' '),
-    (FIGURE_PATTERN, ''),
-    (LIST_PATTERN, ''),
-    (MULTIPLE_SPACE_PATTERN, ' ')
-    ]
 
-WORDS_TO_CATCH = sorted(['current','cost','of','switch','order','recovery','loading','barrier','predefined','reel','basin','fountain','packaged','nozzle','tube','plant',
-                         'injection','assisted','element','vertically','vertical','turbine','heating','disassembly','button','component','security','deflector','lighting',
-                         'cabinet','assembly','actuator','meter','sensor','object','detection','station','depth','controller','terminal','center','frame','electric',
-                         'exchangers','wedge','gate','configured','plug','lubricated','parallel','slide','exchange','exchanger','change','outlet','server','plate','expansion',
-                         'rail','solar','surcharge','excavation','combustion','draft','mechanical','constant','coil','cooled','cooler','evaporative','pavement','top',
-                         'column','traffic','crossing','side','road','vehicle','island','gear','super','event','adiabatic','segment','marker','structure','ground','allocation',
-                         'channel','pressure','shift','prevention','tray','provision','soil','preloaded','water','cold','hot','cable','domestic','power','generation',
-                         'solid','waste','unit','carrier','duct','protection','disconnector','surfacing','breaker','wall','flow','curve','limiter','board','chamber',
-                         'panel','acoustic','fire','inspection','transverse','rumble','strip','surface','maintenance','of','pier','system','fixed','hatch','transmission',
-                         'network','machine','device','equipment','sound','stud','connector','marking','removal','space','agent','section','inventory','bill','schedule','rate',
-                         'void','quantities','compacted','drained','tower','indirect','direct','media','intelligent','rigid','random','marine','compact','tensioner',
-                         'operational','intermediate','storage','hooks','area','lift','lifting','forward','natural','radial','gravity','piston','relief','air','track', 'pair',
-                         'switching','transition','off','bend','circular','derailer','tracked','roadway','plateau','retention','stock','double','twin','cage','seat',
-                         'moving','soft','inlet','symbol','symbolic','toilet','dock','docking','parabolic','bending','transceiver','control','asset','furniture','resistance',
-                         'contact','centre','motorized','motor','photocopier','generator','engine','point','access','asynchronous','synchronous','single','plaza','wheel','loops',
-                         'drive','stop','rates','timer','leakage','time','dryer','framework','roof','induction','topping','alignment','curved','stair','elemented','scaffolding',
-                         'electrical','chair','sofa','railway','entrance','secured','cover','manhole','flat','concave','convex','known','cylinder','horizontal','business','issues',
-                         'elevated','work','platform','materials','handling','material','effects','health','safety','hazadrous','dust','scaffold','fall','fragile','shock',
-                         'environmental','drowning','flooding','very','high','unintended','collapse','working','overhead','considerable','value','driven','defined','unknown',
-                         'class','appliance','earth','protective','neutral','disposal','cradle','site','production','transport','repair','whole','lifecycle','siphon','breaking',
-                         'urgent','procedure','emergency','offsite','very','office','sensors','volume','diffusers','variable','multiple','zone','conduit','temperature','powered',
-                         'safety','light','warning','exit','blue','illumination','spark','gap','gas','filled','touch','screen','buttons','auto','transformer','divided','support',
-                         'earthing','offload','break','glass','key','operated','manual','pull','cord','exhaust','damper','shell','pump','filter','conveyor','pumps','heat','heated',
-                         'speed','fan','bypass','valve','dampers','wet','bulb','reset','exiting','folding','curtain','closed','circuit','dry','open','indicator','shunting','route',
-                         'derail','departure','starting','signal','repeating','obstruction','hump','auxiliary','home','distant','block','blocking','approach','mesh','push',
-                         'pushing', 'bidirectional','directional','right','left','damper','balancing','combination','earthquake','relay','interface','face','nail','loss','prestress',
-                         'mounted','unidirectional','blast','damper','centrifugal','backward','inclined','vane','axial','propellor','diatomaceous','earth','reverse','osmosis',
-                         'liquefied','petroleum','lightning','shaft','soak','slurry','collector','with','check','commercial','propane','butane','atmospheric','vacuum','wetted',
-                         'function','complementary','circuit','fault','lower','inglimit','pulse','converter','running','average','upper','limit','lower','band','dimmer','sheath',
-                         'position','frost','automatic','www','continuous','positioner','positioning','source','sink','profile','enumerated','content','extinguishing','frailty',
-                         'photovoltaic','soils','between','central','reserve','shoulder','intersection','parking','passing','audiovisual','shape','co2','conduct','conductor',
-                         'conductance','conductivity','obstacle','movement','moisture','radiation','radioactivity','rain','smoke','turnout','closure','wind','aggregates','aggregate',
-                         'transporting','roofing','recording','stitch','wire','pair','router','tungsten','filament','gateway','selector','momentary','toggle','vertical','inline',
-                         'submersible','sump','waterway','ship','lift','works','wheeled','grouted','indicators','mitigated','unmitigated','delivery','accessible','covering','interfaces',
-                         'brightness','driver','sectional','rated','pairs','diameter','fans','supported','stations','carriers','transceivers','currents','classes','relays','curves',
-                         'plates','corrugated','tracks','conductors','building','operator','owner','engineer','manager','field','construction','history','weather','station',
-                         'consumption','photochemical','ozone','renewable','energy','resource','depletion','stratospheric','layer','destruction','reheat','reference','components',
-                         'constraint','name','type','names','types','lrm','relative','window','dome','heavy','applicable','axis','placement','cooker','freestanding','heater','subgrade',
-                         'inductor','packet','remote','radio','radioactive','above','dilation','winder','equidistant','switch','feed','pipe','pipes','rotary','hollow','humidity',
-                         'concentration','identifier','level','cosine','helmert','sine','viennese','bloss','location','global','local','thickness','direction','fluorescent',
-                         'current','pole','gender','colour'], key=len)[::-1]
+with open('type_words.json', 'r') as file:
+    data = json.load(file)
+type_words = json.loads(data)
+type_words = sorted(type_words, key=len)[::-1]
 
-EXCLUDED_ENTITIES = ['IfcApplication','IfcOwnerHistory','IfcTable','IfcTableColumn','IfcTableRow','IfcChangeActionEnum','IfcGloballyUniqueId','IfcStateEnum','IfcShell','IfcAdvancedFace',
-                     'IfcClosedShell','IfcConnectedFaceSet','IfcEdge','IfcEdgeCurve','IfcEdgeLoop','IfcFace','IfcFaceBound','IfcFaceOuterBound','IfcFaceSurface','IfcLoop','IfcOpenShell',
-                     'IfcOrientedEdge','IfcPath','IfcPolyLoop','IfcSubedge','IfcTopologicalRepresentationItem','IfcVertex','IfcVertexLoop','IfcVertexPoint','IfcBoundaryNodeConditionWarping',
-                     'IfcStructuralLoadConfiguration','IfcStructuralLoadOrResult','IfcStructuralLoadSingleDisplacement','IfcStructuralLoadSingleDisplacementDistortion',
-                     'IfcStructuralLoadSingleForceWarping','IfcSurfaceReinforcementArea','IfcGeometricProjectionEnum','IfcGlobalOrLocalEnum','IfcWellKnownTextLiteral',
-                     'IfcCoordinateOperation','IfcCoordinateReferenceSystem','IfcGeographicCRS','IfcGeometricRepresentationContext','IfcGeometricRepresentationSubContext','IfcMapConversion',
-                     'IfcMapConversionScaled','IfcMaterialDefinitionRepresentation','IfcProductDefinitionShape','IfcProductRepresentation','IfcProjectedCRS','IfcRepresentation',
-                     'IfcRepresentationContext','IfcRigidOperation','IfcShapeAspect','IfcShapeModel','IfcShapeRepresentation','IfcStyleModel','IfcStyledRepresentation','IfcTopologyRepresentation',
-                     'IfcWellKnownText','IfcCurveInterpolationEnum','IfcExtendedProperties','IfcPreDefinedProperties','IfcProfileTypeEnum','IfcReinforcingBarRoleEnum','IfcReinforcingBarSurfaceEnum',
-                     'IfcSectionTypeEnum','IfcArbitraryProfileDefWithVoids','IfcProfileProperties','IfcReinforcementBarProperties','IfcSectionProperties','IfcSectionReinforcementProperties',
-                     'IfcLayeredItem','IfcLightDistributionCurveEnum','IfcLightEmissionSourceEnum','IfcLightDistributionData','IfcLightIntensityDistribution','IfcLightSourceAmbient',
-                     'IfcLightSourceDirectional','IfcLightSourceGoniometric','IfcLightSourcePositional','IfcLightSourceSpot','IfcPresentationLayerAssignment','IfcPresentationLayerWithStyle',
-                     'IfcBoxAlignment','IfcTextPath','IfcAnnotationFillArea','IfcPlanarBox','IfcPlanarExtent','IfcPresentationItem','IfcTextLiteral','IfcTextLiteralWithExtent','IfcBinary',
-                     'IfcBoolean','IfcDerivedUnitEnum','IfcIdentifier','IfcInteger','IfcLabel','IfcLogical','IfcPHMeasure','IfcPositiveInteger','IfcReal','IfcSIPrefix','IfcSIUnitName','IfcText',
-                     'IfcUnitEnum','IfcConversionBasedUnitWithOffset','IfcDerivedUnitElement','IfcDimensionalExponents','IfcUnitAssignment','IfcDirectionSenseEnum','IfcLayerSetDirectionEnum',
-                     'IfcArcIndex','IfcAxis2Placement','IfcBSplineCurveForm','IfcBSplineSurfaceForm','IfcCurveOnSurface','IfcDimensionCount','IfcKnotType','IfcLineIndex','centerline','centreline',
-                     'IfcPreferredSurfaceCurveRepresentation','IfcTransitionCode','IfcVectorOrDirection','IfcAxis1Placement','IfcAxis2Placement2D','IfcAxis2Placement3D','IfcAxis2PlacementLinear',
-                     'IfcBSplineCurveWithKnots','IfcDirection','IfcBSplineSurface','IfcBSplineSurfaceWithKnots','IfcBoundedSurface','IfcClothoid','IfcCompositeCurveOnSurface',
-                     'IfcCompositeCurveSegment','IfcConic','IfcCosineSpiral','IfcCurveBoundedPlane','IfcCurveBoundedSurface','IfcCurveSegment','IfcCylindricalSurface','IfcElementarySurface',
-                     'IfcGeometricRepresentationItem','IfcMappedItem','IfcOffsetCurve2D','IfcOffsetCurve3D','IfcOffsetCurveByDistances','IfcPlacement','IfcPointByDistanceExpression',
-                     'IfcPointOnSurface','IfcRationalBSplineCurveWithKnots','IfcRationalBSplineSurfaceWithKnots','IfcRectangularTrimmedSurface','IfcReparametrisedCompositeCurveSegment',
-                     'IfcRepresentationItem','IfcRepresentationMap','IfcSecondOrderPolynomialSpiral','IfcSegment','IfcSeventhOrderPolynomialSpiral','IfcSineSpiral','IfcSphericalSurface',
-                     'IfcSurfaceOfLinearExtrusion','IfcSurfaceOfRevolution','IfcSweptSurface','IfcThirdOrderPolynomialSpiral','IfcToroidalSurface','IfcBooleanOperand','IfcBooleanOperator',
-                     'IfcAdvancedBrep','IfcAdvancedBrepWithVoids','IfcBlock','IfcBooleanClippingResult','IfcBooleanResult','IfcBoundingBox','IfcBoxedHalfSpace','IfcCsgPrimitive3D',
-                     'IfcExtrudedAreaSolidTapered','IfcFaceBasedSurfaceModel','IfcFacetedBrep','IfcFacetedBrepWithVoids','IfcGeometricCurveSet','IfcGeometricSet','IfcIndexedPolygonalFace',
-                     'IfcIndexedPolygonalFaceWithVoids','IfcManifoldSolidBrep','IfcPolygonalBoundedHalfSpace','IfcPolygonalFaceSet','IfcRectangularPyramid','IfcRevolvedAreaSolidTapered',
-                     'IfcRightCircularCone','IfcRightCircularCylinder','IfcSectionedSolidHorizontal','IfcSectionedSpine','IfcSectionedSurface','IfcShellBasedSurfaceModel','IfcSolidModel',
-                     'IfcSphere','IfcSweptDiskSolidPolygonal','IfcTessellatedFaceSet','IfcTessellatedItem','IfcTriangulatedFaceSet','IfcTriangulatedIrregularNetwork','IfcGridAxis',
-                     'IfcObjectPlacement','IfcVirtualGridIntersection','IfcDocumentConfidentialityEnum','IfcLanguageId','IfcDocumentStatusEnum','IfcClassification','IfcDataOriginEnum','IfcDate',
-                     'IfcDateTime','IfcDuration','IfcRecurrenceTypeEnum','IfcTaskDurationEnum','IfcTime','IfcTimeSeriesDataTypeEnum','IfcTimeStamp','IfcEventTime','IfcIrregularTimeSeries','IfcLagTime',
-                     'IfcRecurrencePattern','IfcRegularTimeSeries','IfcResourceTime','IfcSchedulingTime','IfcTaskTime','IfcTaskTimeRecurring','IfcTimePeriod','IfcTimeSeries','IfcWorkTime',
-                     'IfcArithmeticOperatorEnum','IfcBenchmarkEnum','IfcConstraintEnum','IfcLogicalOperatorEnum','IfcObjectiveEnum','IfcConstraint','IfcMetric','IfcObjective','IfcApproval',
-                     'IfcAddressTypeEnum','IfcRoleEnum','IfcAddressTypeEnum','IfcRoleEnum','IfcActorRole','IfcAddress','IfcOrganization','IfcPerson','IfcPersonAndOrganization','IfcPostalAddress',
-                     'IfcTelecomAddress','IfcCurve','IfcCircle','IfcEllipse','IfcLine','IfcPlane','IfcPoint','IfcPolyline','IfcSpiral','IfcSurface','IfcVector','IfcPreDefinedPropertySet',
-                     'IfcPointOrVertexPoint','IfcSolidOrShell','IfcSurfaceOrFaceSurface','IfcGridPlacement','IfcLinearPlacement','IfcLocalPlacement']
+with open('bsdd_excluded_entites.json', 'r') as file:
+    excluded_entites = json.load(file)
 
 # ALLOW:  IfcRoot, IfcLightSource, IfcStructuralLoad, IfcStructuralLoadLinearForce, IfcStructuralLoadPlanarForce, IfcStructuralLoadSingleForce, IfcStructuralLoadStatic, IfcStructuralLoadTemperature
 
@@ -162,6 +73,32 @@ TYPE_TO_VALUES= {
 # schema_name = schema_name.strip('_')
 
 
+MULTIPLE_LINEBREAK_PATTERN = re.compile('\n+')
+MULTIPLE_SPACE_PATTERN = re.compile(r'\s+')
+HTML_TAG_PATTERN = re.compile('<.*?>')
+CURLY_BRACKET_PATTERN = re.compile('{.*?}.*') #also removes all text after curly brackets
+FIGURE_PATTERN = re.compile('[^.,;]*(Figure|the figure)[^.,;]*') #removes the sentence when it mentiones a Figure.
+LIST_PATTERN = re.compile('[^.,;]*:\s?') #removes the last sentence when it ends with a colon.
+# CHANGE_LOG_PATTERN = re.compile(r'\{\s*\.change\-\w+\s*\}.+', flags=re.DOTALL)
+
+replacements = [
+    (re.compile(r'\*{2}'), ' '),
+    (re.compile(r':(?!\s)'), ': '),
+    (re.compile(r'SELF\\'), ''),
+    (re.compile(r'(?<!\.)\.\.(?!\.)'), '.'),  # remove double dots but not triple (ellipsis)
+    (MULTIPLE_LINEBREAK_PATTERN, '; '),
+    (HTML_TAG_PATTERN, ' '),
+    (CURLY_BRACKET_PATTERN, ' '),
+    (FIGURE_PATTERN, ''),
+    (LIST_PATTERN, ''),
+    (MULTIPLE_SPACE_PATTERN, ' ')
+    ]
+
+def remove_unwanted(s):
+    for pat, subs in replacements:
+        s = re.sub(pat, subs, s)
+    return s
+
 def yield_parents(node):
     """ Find all the parent elements if available """
     yield node
@@ -186,29 +123,6 @@ def get_path(xmi_node):
 
 # def skip_by_package(element):
 #     return not (set(get_path(xmi_doc.by_id[element.idref])) & included_packages)
-
-
-def reduce_description(s, trim=True):
-    """ Remove all the unnecesarry characters, strip <html sections>, and trim the description to bare minimum. """
-    try:
-        s = html.unescape(s)
-    except TypeError:
-        # error when name contains link, for example: "https://github.com/buildingSMART/IFC4.3.x-development/edit/master/docs/schemas/core/IfcProductExtension/Types/IfcAlignmentTypeEnum.md#L0 has no content"
-        s = ''
-    if trim:
-        # split and remove on keywords:        
-        j = re.search(r'\$\$', s).start() if re.search(r'\$\$', s) else -1  # formula
-        k = re.search(r'(Base|General) formula', s).start() if re.search(r'(Base|General) formula', s) else -1  # formula
-        l = re.search(r'\*\*', s).start() if re.search(r'\*\*', s) else -1  # bold text
-        i = min([x for x in [s.find('NOTE'), s.find('DIAGRAM'), s.find('CHANGE'), s.find('IFC4'), s.find('HISTORY'), s.find('REFERENCE'), s.find('EXAMPLE'), s.find('DEPRECATION'), j, k, l, 1e5] if x >= 0])
-        if i > 0 and i != 1e5:
-            s = s[:i]
-        elif i==0:
-            # some descriptions start with History or Note. Don't want them.
-            s = ""
-    for pat, subs in replacements:
-        s = re.sub(pat, subs, s)
-    return clean(s)
 
 
 def caps_control(s):
@@ -262,7 +176,7 @@ def split_at_word(w, s):
 def split_words(s):
     """ Split the phrase using the hard-coded list of words found in enumerations to split the ALLCAPS phrases into indivudual words. """
     found_words = []
-    for w in WORDS_TO_CATCH:
+    for w in type_words:
         # skip if word is contained in previous words (e.g. EXCHANGE in EXCHANGER)
         previously_found = False
         for fw in found_words:
@@ -327,6 +241,7 @@ def clean(s):
     """ format the text by removing unwanted characters."""    
     # remove all redundant characters (except those listed):
     s = re.sub(MULTIPLE_LINEBREAK_PATTERN, '; ', s)
+    s = remove_unwanted(s)
     cleaned = ''.join(['', c][c.isalnum() or c in ':.,()-+ —=;α°_/!?$%@<>\'"\\*'] for c in to_str(s))
     p = re.compile('"')
     cleaned = re.sub(p,"'", cleaned).strip()
@@ -508,7 +423,7 @@ def generate_definitions():
                 if st:
                     di["Parent"] = to_str(st[0])
 
-                di["Definition"] = reduce_description(to_str(item.markdown_content), trim=True)
+                di["Definition"] = clean(extract_definition(to_str(item.markdown_content)))
                 # add human-readable name
                 di["Name"] = caps_control(clean(normalise((item.name[3:] if item.name.lower().startswith('ifc') else item.name))).title())
                 di["Guid"] = guid_by_id(item.id)
@@ -532,7 +447,7 @@ def generate_definitions():
                     if c.name not in ("USERDEFINED","NOTDEFINED"):
                         by_id[c.id] = di = classes[entity.name + c.name]
                         di["Parent"] = to_str(entity.name)
-                        di["Definition"] = reduce_description(to_str(c.markdown), trim=True)
+                        di["Definition"] = clean(extract_definition(to_str(c.markdown)))
                         di["Description"] = "Technical note: Because this class is a 'Predefined Type' in IFC, meaning a specialisation of its parent class, in IFC it should be represented by the parent class."
                         # add human-readable name, by identifying words in all-caps phrase (right now the words are hardcoded)
                         di["Name"] = caps_control(split_words(c.name).title())
@@ -608,12 +523,12 @@ def generate_definitions():
                                 logging.warning("%s.%s of type %s <%s> not mapped" % (pset.name, nm, ty, ",".join(map(lambda kv: "=".join(kv), ty_arg.items()))))
                                 continue
 
-                    di["Psets"][pset.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', reduce_description(to_str(pset.markdown_content), trim=True))
+                    di["Psets"][pset.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', clean(extract_definition(to_str(pset.markdown_content))))
                     
                     di["Psets"][pset.name]["Properties"][a.name]["Type"] = type_name
                     di["Psets"][pset.name]["Properties"][a.name]["Name"] = caps_control(clean(split_words(normalise(a.name))).title())
                     # remove value explanation from the definition
-                    di["Psets"][pset.name]["Properties"][a.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', reduce_description(to_str(a.markdown), trim=True))
+                    di["Psets"][pset.name]["Properties"][a.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', clean(extract_definition(to_str(a.markdown))))
                     di["Psets"][pset.name]["Properties"][a.name]["Kind"] = kind_name
                     di["Psets"][pset.name]["Properties"][a.name]["Package"] = to_str(pset.package) # solely to split POT files
                     if measure.lower().endswith("measure"): #not measure in ('IfcLabel','IfcText','IfcURIReference','IfcTimeSeries','IfcBoolean'):               
@@ -629,7 +544,7 @@ def generate_definitions():
                             # match the whole sentence containing the value, case insensitive
                             matches = re.findall(r"[^.;!,]*" + tv + r"[^.;!,]*", to_str(a.markdown), flags=re.IGNORECASE)
                             if matches:
-                                description = reduce_description(matches[0].strip())  #the whole sentence explaining the value
+                                description = clean(extract_definition(matches[0].strip()))  #the whole sentence explaining the value
                             else:
                                 description = caps_control(clean(normalise(split_words(tv))).title())  #the value but readable
                             di["Psets"][pset.name]["Properties"][a.name]["Values"].append({"Value": tv,"Description":description,"Package":to_str(pset.package)})
@@ -645,7 +560,7 @@ def generate_definitions():
         
         for c in entity.children:
                            
-            c.name = reduce_description(c.name)
+            c.name = clean(extract_definition(c.name))
 
             if not is_deprecated(c):
                 try:
@@ -690,7 +605,7 @@ def generate_definitions():
                     di["Psets"]["Attributes"]["Properties"][c.name]["Type"] = type_name
                     di["Psets"]["Attributes"]["Properties"][c.name]["Name"] = caps_control(clean(split_words(normalise(c.name))).title())
                     # remove value explanation from the definition
-                    di["Psets"]["Attributes"]["Properties"][c.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', reduce_description(to_str(c.markdown), trim=True))
+                    di["Psets"]["Attributes"]["Properties"][c.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', clean(extract_definition(to_str(c.markdown))))
                     di["Psets"]["Attributes"]["Properties"][c.name]["Package"] = to_str(entity.package) # solely to split POT files
                     if type_values is None:
                         type_values = TYPE_TO_VALUES.get(type_name)
@@ -701,7 +616,7 @@ def generate_definitions():
                             # matches = re.findall(r"[^.;!,]*" + tv + r"[^.;!,]*", to_str(c.markdown), flags=re.IGNORECASE)
                             matches = re.findall(r"[^.;!,]*" + tv + r"[^.;!,]*", to_str(c.markdown), flags=re.IGNORECASE)
                             if matches:
-                                description = reduce_description(matches[0].strip())  #the whole sentence explaining the value
+                                description = clean(extract_definition(matches[0].strip()))  #the whole sentence explaining the value
                             else:
                                 description = caps_control(clean(normalise(split_words(tv))).title())  #the value but readable
                             di["Psets"]["Attributes"]["Properties"][c.name]["Values"].append({"Value": tv,"Description":description,"Package":to_str(entity.package)})                           
@@ -712,7 +627,7 @@ def generate_definitions():
                     type_values = type_item.definition.values
                     di["Psets"]["Attributes"]["Properties"][c.name]["Type"] = type_name
                     # remove value explanation from the definition
-                    di["Psets"]["Attributes"]["Properties"][c.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', reduce_description(to_str(c.markdown), trim=True))
+                    di["Psets"]["Attributes"]["Properties"][c.name]["Definition"] = re.sub(r":\s*[A-Z]{2,}.*", '...', clean(extract_definition(to_str(c.markdown))))
                     di["Psets"]["Attributes"]["Properties"][c.name]["Values"] = []
                     di["Psets"]["Attributes"]["Properties"][c.name]["Package"] = to_str(entity.package) # solely to split POT files
                     for tv in type_values:                   
@@ -720,7 +635,7 @@ def generate_definitions():
                         # matches = re.findall(r"[^.;!,]*" + tv + r"[^.;!,]*", to_str(c.markdown), flags=re.IGNORECASE)
                         matches = re.findall(r"[^.;!,]*" + tv + r"[^.;!,]*", to_str(c.markdown), flags=re.IGNORECASE)
                         if matches:
-                            description = reduce_description(matches[0].strip())  #the whole sentence explaining the value
+                            description = clean(extract_definition(matches[0].strip()))  #the whole sentence explaining the value
                         else:
                             description = caps_control(clean(normalise(split_words(tv))).title())  #the value but readable
                         di["Psets"]["Attributes"]["Properties"][c.name]["Values"].append({"Value": tv,"Description":description,"Package":to_str(entity.package)})

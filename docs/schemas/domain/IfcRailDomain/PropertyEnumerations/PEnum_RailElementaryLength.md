@@ -1,6 +1,6 @@
 # PEnum_RailElementaryLength
 
-<!-- end of definition -->## Items
+## Items
 
 ### 6M
 

@@ -5,7 +5,7 @@ The window is a building element that is predominately used to provide natural l
 * be a "free standing" window, contained in an _IfcSpatialElement_ such as an _IfcBuildingStorey_.
 * fill an opening, typically in a wall. The window will then have a _FillsVoids_ attribute which uses the _IfcRelFillsElement_ relationship to relate the _IfcWindow_ with the _IfcOpeningElement_;
 * be part of an element assembly, typically an _IfcCurtainWall_. The window will then have a _Decomposes_ attribute which uses the the _IfcRelAggregates_ relationship to relate the window with the assembly of elements;
-<!-- end of definition -->
+
 There are two main representations for window occurrences:
 
  * _IfcWindow_ entities that have a 3D rectangle 'Profile' shape representation defined. This profile can then be used to parametrically generate the geometry of a window. If not provided, the profile of the _IfcOpeningElement_ can be used if the window fills an opening. The parameters are specified on the relating _IfcWindowType_ that references _IfcWindowLiningProperties_ and _IfcWindowPanelProperties_ for each panel in the window;
@@ -138,13 +138,13 @@ Figure 1 illustrates the insertion of a parametrically generated window into the
 
 ![window 1](../../../../figures/ifcwindow-layout1.gif)
 
-Figure 1 — Window placement
+Figure 1 &mdash; Window placement
 
 Figure 2 illustrates the final window (DoublePanelHorizontal) with first panel having _PanelPosition = TOP_, _OperationType = BOTTOMHUNG_ and second panel having _PanelPosition = BOTTOM_ and _OperationType = TILTANDTURNLEFTHAND_.
 
 ![window 2](../../../../figures/ifcwindow-layout2.gif)
 
-Figure 2 — Window planes
+Figure 2 &mdash; Window planes
 
 ### Property Sets for Objects
 
@@ -187,4 +187,4 @@ There are different conventions in different countries on how to show the symbol
 | ![fig 3](../../../../figures/ifcwindow-fig03.gif) | If the window panel (for side hung windows) opens to the right, a separate window panel style needs to be used (here <em>IfcWindowPanelProperties.OperationType</em> =Â SideHungRightHand) and it always opens into the direction of the positive Y axis of the local placement. |
 | ![fig 4](../../../../figures/ifcwindow-fig04.gif) | If the window should open to the other side, then the local placement has to be changed. It is still a right hung window, given by <em>IfcWindowPanelProperties.OperationType</em> =Â SideHungRightHand. |
 
-Table 3 — Window operations
+Table 3 &mdash; Window operations

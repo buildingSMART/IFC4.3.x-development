@@ -1,6 +1,6 @@
 # PEnum_SupportingSystemType
 
-Enumeration of the different supporting systems used in railway energy domain.<!-- end of definition -->
+Enumeration of the different supporting systems used in railway energy domain.
 
 ## Items
 

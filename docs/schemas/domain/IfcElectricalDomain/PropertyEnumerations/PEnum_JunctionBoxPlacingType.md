@@ -1,6 +1,6 @@
 # PEnum_JunctionBoxPlacingType
 
-<!-- end of definition -->## Items
+## Items
 
 ### CEILING
 Ceiling

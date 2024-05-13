@@ -1,3 +1,3 @@
 # Pset_SpaceHVACDesign
 
-Properties for HVAC requirements for spaces.<!-- end of definition -->
+Properties for HVAC requirements for spaces.

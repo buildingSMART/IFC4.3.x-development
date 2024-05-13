@@ -1,6 +1,6 @@
 # PEnum_HumidifierInternalControl
 
-<!-- end of definition -->## Items
+## Items
 
 ### ONOFF
 Onoff

@@ -1,6 +1,6 @@
 # IfcContextDependentMeasure
 
-The value of a physical quantity as defined within the exchange context.<!-- end of definition -->
+The value of a physical quantity as defined within the exchange context.
 
 Type: REAL
 

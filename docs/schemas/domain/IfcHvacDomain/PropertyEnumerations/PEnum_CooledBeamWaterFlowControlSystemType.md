@@ -1,6 +1,6 @@
 # PEnum_CooledBeamWaterFlowControlSystemType
 
-<!-- end of definition -->## Items
+## Items
 
 ### NONE
 No waterproof.

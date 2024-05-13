@@ -1,6 +1,6 @@
 # IfcSlab
 
-A slab is a component of the construction that may enclose a space vertically. The slab may provide the lower support (floor) or upper construction (roof slab) in any space in a building.<!-- end of definition -->
+A slab is a component of the construction that may enclose a space vertically. The slab may provide the lower support (floor) or upper construction (roof slab) in any space in a building.
 
 Only the core or constructional part of this construction is considered to be a slab. The upper finish (flooring, roofing) and the lower finish (ceiling, suspended ceiling) are considered to be coverings. A special type of slab is the landing, described as a floor section to which one or more stair flights or ramp flights connect.
 
@@ -88,11 +88,11 @@ A slab may be decomposed into parts such as for structural framing and covering 
 
 ![voiding](../../../../figures/ifcslab-floor.png)
 
-Figure ELEMENTEDCASE — A timber construction slab decomposed into parts.
+Figure ELEMENTEDCASE &mdash; A timber construction slab decomposed into parts.
 
 ![A diagram of a precast hollowcore slab](../../../../figures/ifcslab-aggregation.png)
 
-Figure SLABAGG — A section showing a slab made from precast hollow core panels
+Figure SLABAGG &mdash; A section showing a slab made from precast hollow core panels
 
 #### IfcBeam
 
@@ -135,7 +135,7 @@ IfcRelVoidsElement2 -> IfcVoidingFeature [headlabel="RelatedOpeningElement", lab
 }
 ```
 
-Figure ELEMENTVOID — How individual parts being cut may be expressed.
+Figure ELEMENTVOID &mdash; How individual parts being cut may be expressed.
 
 ### Material Layer Set Usage
 

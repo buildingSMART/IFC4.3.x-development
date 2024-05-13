@@ -1,6 +1,6 @@
 # IfcRelAssignsToGroup
 
-The objectified relationship _IfcRelAssignsToGroup_ handles the assignment of object definitions (individual object occurrences as subtypes of _IfcObject_, and object types as subtypes of _IfcTypeObject_) to a group (subtypes of _IfcGroup_).<!-- end of definition -->
+The objectified relationship _IfcRelAssignsToGroup_ handles the assignment of object definitions (individual object occurrences as subtypes of _IfcObject_, and object types as subtypes of _IfcTypeObject_) to a group (subtypes of _IfcGroup_).
 
 The relationship handles the assignment of group members to the group object. It allows for grouping arbitrary objects within a group, including other groups. The grouping relationship can be applied in a recursive manner. The resulting group is of type _IfcGroup_.
 

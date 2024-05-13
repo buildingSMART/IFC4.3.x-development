@@ -1,6 +1,6 @@
 # IfcFillAreaStyleHatching
 
-The _IfcFillAreaStyleHatching_ is used to define simple, vector-based hatching patterns, based on styled straight lines. The curve font, color and thickness is given by the _HatchLineAppearance_, the angle by the _HatchLineAngle_ and the distance to the next hatch line by _StartOfNextHatchLine_, being either an offset distance or a vector.<!-- end of definition -->
+The _IfcFillAreaStyleHatching_ is used to define simple, vector-based hatching patterns, based on styled straight lines. The curve font, color and thickness is given by the _HatchLineAppearance_, the angle by the _HatchLineAngle_ and the distance to the next hatch line by _StartOfNextHatchLine_, being either an offset distance or a vector.
 
 { .extDef}
 > NOTE  Definition according to ISO 10303-46:
@@ -17,7 +17,7 @@ For better control of the hatching appearance, when using hatch lines with other
 
 ![hatch example 1](../../../../figures/ifcfillareastylehatching_fig1.gif)
 
-Figure 1 — Example 1
+Figure 1 &mdash; Example 1
 
 Figure 1 shows simple hatching given by using a curve font "continuous" at <em>HatchLineAppearance</em>.
 
@@ -27,7 +27,7 @@ The <em>PatternStart</em> is set to NIL ($) in this example.
 
 ![hatch example 2](../../../../figures/ifcfillareastylehatching_fig2.gif)
 
-Figure 2 — Example 2
+Figure 2 &mdash; Example 2
 
 Figure 2 shows hatching from example 1 with using a different curve font at <em>HatchLineAppearance</em>.
 
@@ -37,7 +37,7 @@ The <em>PatternStart</em> is set to NIL ($) in this example.
 
 ![hatch example 3](../../../../figures/ifcfillareastylehatching_fig3.gif)
 
-Figure 3 — Example 3
+Figure 3 &mdash; Example 3
 
 Figure 3 uses hatching from example 2 with a vector to determine the pattern start of the next hatch lines.
 
@@ -47,13 +47,13 @@ The <em>PatternStart</em> is set to NIL ($) in this example.
 
 ![hatch example 4](../../../../figures/ifcfillareastylehatching_fig4.gif)
 
-Figure 4 — Example 4
+Figure 4 &mdash; Example 4
 
 Figure 4 uses hatching from example 3 where the pattern start is offset from the point of origin at the reference hatch line. That is, the first visible curve font pattern segment now does not start at the point of origin at the reference hatch line.
 
 ![fig 6](../../../../figures/ifcfillareastylehatching_fig6.gif)
 
-Figure 6 — Example 5
+Figure 6 &mdash; Example 5
 
 This example shows use of <em>IfcFillAreaStyleHatching</em> attributes for two <em>IfcFillAreaStyleHatching</em>'s within one <em>IfcFillAreaStyle</em>.
 

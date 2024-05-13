@@ -1,6 +1,6 @@
 # IfcController
 
-A controller is a device that monitors inputs and controls outputs within a building automation system.<!-- end of definition -->
+A controller is a device that monitors inputs and controls outputs within a building automation system.
 
 A controller may be physical (having placement within a spatial structure) or logical (a software interface or aggregated within a programmable physical controller).
 
@@ -28,7 +28,7 @@ Either there is no controller type object associated, i.e. the _IsTypedBy_ inver
 
 Figure 1 illustrates controller composition use.
 
-![Composition Use Definition](../../../../figures/ifccontroller-composition.png "Figure 1 — Controller composition use")
+![Composition Use Definition](../../../../figures/ifccontroller-composition.png "Figure 1 &mdash; Controller composition use")
 
 #### PROGRAMMABLE_IfcController
 

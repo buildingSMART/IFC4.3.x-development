@@ -1,6 +1,6 @@
 # IfcBuildingStorey
 
-The building storey has an elevation and typically represents a (nearly) horizontal aggregation of spaces that are vertically bound.<!-- end of definition -->
+The building storey has an elevation and typically represents a (nearly) horizontal aggregation of spaces that are vertically bound.
 
 > NOTE  Definition from ISO 6707-1:
 > space between two consecutive floors or between a floor and a roof
@@ -19,9 +19,9 @@ Figure 1 shows the _IfcBuildingStorey_ as part of the spatial structure. It also
 
 > NOTE  Detailed requirements on mandatory element containment and placement structure relationships are provided in model view definitions.
 
-![IfcBuildingStorey as part of a spatial structure](../../../../figures/ifcbuildingstorey-spatialstructure.png "Figure 1 — Building storey composition")
+![IfcBuildingStorey as part of a spatial structure](../../../../figures/ifcbuildingstorey-spatialstructure.png "Figure 1 &mdash; Building storey composition")
 
-Figure 1 — Building storey composition
+Figure 1 &mdash; Building storey composition
 
 Figure 2 describes the heights and elevations of the _IfcBuildingStorey_.
 
@@ -30,9 +30,9 @@ Figure 2 describes the heights and elevations of the _IfcBuildingStorey_.
 * gross height of storey, also referred to as total height or system height (top of construction slab to top of construction slab above): provided by _Qto_BuildingStoreyBaseQuantities_ with Name="GrossHeight"
 * net height of storey (top of construction slab to bottom of construction slab above): provided by _Qto_BuildingStoreyBaseQuantities_ with Name="NetHeight"
 
-![space heights](../../../../figures/ifcbuildingstorey_heights.png "Figure 2 — Building storey elevations")
+![space heights](../../../../figures/ifcbuildingstorey_heights.png "Figure 2 &mdash; Building storey elevations")
 
-Figure 2 — Example showing the use of base quantities for building storeys
+Figure 2 &mdash; Example showing the use of base quantities for building storeys
 
 > HISTORY  New entity in IFC1.0
 

@@ -1,6 +1,6 @@
 # IfcFlowStorageDeviceType
 
-The element type _IfcFlowStorageDeviceType_ defines a list of commonly shared property set definitions of a flow storage device and an optional set of product representations. It is used to define a flow storage device specification (the specific product information that is common to all occurrences of that product type).<!-- end of definition -->
+The element type _IfcFlowStorageDeviceType_ defines a list of commonly shared property set definitions of a flow storage device and an optional set of product representations. It is used to define a flow storage device specification (the specific product information that is common to all occurrences of that product type).
 
 A flow storage device is a device used for the temporary storage of a fluid (such as a tank) or the voltage potential induced by the induced electron flow (such as a battery). Flow storage types (or the instantiable subtypes) may be exchanged without being already assigned to occurrences.
 

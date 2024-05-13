@@ -1,6 +1,6 @@
 # PEnum_MeterReadOutType
 
-<!-- end of definition -->## Items
+## Items
 
 ### DIAL
 Dial

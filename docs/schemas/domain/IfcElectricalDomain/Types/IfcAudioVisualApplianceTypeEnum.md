@@ -1,6 +1,6 @@
 # IfcAudioVisualApplianceTypeEnum
 
-Defines the range of different types of audio-video devices that can be specified.<!-- end of definition -->
+Defines the range of different types of audio-video devices that can be specified.
 
 > HISTORY  New enumeration in IFC4.
 

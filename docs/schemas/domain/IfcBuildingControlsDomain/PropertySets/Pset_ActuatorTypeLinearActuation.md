@@ -1,4 +1,4 @@
 # Pset_ActuatorTypeLinearActuation
 
-Characteristics of linear actuation of an actuator<!-- end of definition -->
+Characteristics of linear actuation of an actuator
 History: Replaces Pset_LinearActuator

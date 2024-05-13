@@ -1,6 +1,6 @@
 # PEnum_SprinklerBulbLiquidColor
 
-<!-- end of definition -->## Items
+## Items
 
 ### ORANGE
 

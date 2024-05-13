@@ -1,6 +1,6 @@
 # IfcPerson
 
-This entity represents an individual human being.<!-- end of definition -->
+This entity represents an individual human being.
 
 > NOTE  Many countries have legislation concerning the identification of individual persons within databases. Although the intent of the IFC Model is to act as a specification for data exchange and sharing, an IFC file might in some situations be considered to be a database that enables identification of a particular person under the terms of such legislation. Users should be aware of the constraints of legislation that might apply in the places where IFC files are used.
 

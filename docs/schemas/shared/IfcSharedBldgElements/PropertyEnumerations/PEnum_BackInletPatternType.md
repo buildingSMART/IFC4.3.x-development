@@ -1,6 +1,6 @@
 # PEnum_BackInletPatternType
 
-<!-- end of definition -->## Items
+## Items
 
 ### NONE
 No waterproof.

@@ -1,6 +1,6 @@
 # PEnum_BreechingInletCouplingType
 
-<!-- end of definition -->## Items
+## Items
 
 ### INSTANTANEOUS_FEMALE
 Instantaneous Female

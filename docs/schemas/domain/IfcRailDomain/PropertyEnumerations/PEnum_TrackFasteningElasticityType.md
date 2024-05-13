@@ -1,6 +1,6 @@
 # PEnum_TrackFasteningElasticityType
 
-Enumeration describing elasticity of fastenings used in railway track to fix the rail to the sleeper.<!-- end of definition -->
+Enumeration describing elasticity of fastenings used in railway track to fix the rail to the sleeper.
 
 ## Items
 

@@ -1,6 +1,6 @@
 # PEnum_JunctionBoxShapeType
 
-<!-- end of definition -->## Items
+## Items
 
 ### RECTANGULAR
 Rectangular

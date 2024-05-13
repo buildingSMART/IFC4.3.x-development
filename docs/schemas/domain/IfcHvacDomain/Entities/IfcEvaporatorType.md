@@ -7,7 +7,7 @@ The energy conversion device type **IfcEvaporatorType** defines commonly shared 
 * common materials
 * common composition of elements
 * common ports
-<!-- end of definition -->
+
 It is used to define a evaporator type specification indicating the specific product information that is common to all occurrences of that product type. The **IfcEvaporatorType** may be declared within _IfcProject_ or _IfcProjectLibrary_ using _IfcRelDeclares_ and may be exchanged with or without occurrences of the type. Occurrences of **IfcEvaporatorType** are represented by instances of _IfcEvaporator_. Refer to the documentation at _IfcEvaporator_ for supported property sets, materials, composition, and ports.
 
 ## Attributes

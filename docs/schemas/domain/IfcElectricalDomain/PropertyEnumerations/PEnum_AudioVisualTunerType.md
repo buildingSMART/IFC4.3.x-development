@@ -1,6 +1,6 @@
 # PEnum_AudioVisualTunerType
 
-<!-- end of definition -->## Items
+## Items
 
 ### AUDIO
 Audio

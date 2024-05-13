@@ -1,3 +1,3 @@
 # Pset_MaterialHygroscopic
 
-A set of hygroscopic properties of materials.<!-- end of definition -->
+A set of hygroscopic properties of materials.

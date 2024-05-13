@@ -1,6 +1,6 @@
 # IfcAlignment
 
-For the purposes of IFC the English term "alignment" defines three separate but closely interconnected concepts.<!-- end of definition -->
+For the purposes of IFC the English term "alignment" defines three separate but closely interconnected concepts.
 
 1. definition of a reference system for linear positioning
 2. safeguarding and optimization of the movement of vehicles - kinematic perspective
@@ -10,7 +10,7 @@ For the purposes of IFC the English term "alignment" defines three separate but 
 
 An alignment is used to define a reference system to position elements mainly for linear construction works, such as roads, rails, bridges, and others. The relative positioning along the alignment is defined by the linear referencing methodology.
 
-> NOTE  See ISO 19148 Geographic information – Linear referencing for general definitions about linear referencing.
+> NOTE  See ISO 19148 Geographic information &ndash; Linear referencing for general definitions about linear referencing.
 
 **Kinematic perspective**
 
@@ -89,7 +89,7 @@ These 3 layouts may be used in different configurations. The most common are:
 
 ![Alignment configurations](../../../../figures/IfcAlignment-possible-configurations.png)
 
-Figure ALCONFIG — Common configurations of alignment layouts
+Figure ALCONFIG &mdash; Common configurations of alignment layouts
 
 ### Alignment Layout - Horizontal, Vertical and Cant
 

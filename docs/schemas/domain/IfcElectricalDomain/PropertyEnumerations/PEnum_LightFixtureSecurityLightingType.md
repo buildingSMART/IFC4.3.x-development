@@ -1,6 +1,6 @@
 # PEnum_LightFixtureSecurityLightingType
 
-<!-- end of definition -->## Items
+## Items
 
 ### SAFETYLIGHT
 Safety Light

@@ -1,6 +1,6 @@
 # IfcPresentationLayerAssignment
 
-The presentation layer assignment provides the layer name (and optionally a description and an identifier) for a collection of geometric representation items. The _IfcPresentationLayerAssignment_ corresponds to the term "CAD Layer" and is used mainly for grouping and visibility control.<!-- end of definition -->
+The presentation layer assignment provides the layer name (and optionally a description and an identifier) for a collection of geometric representation items. The _IfcPresentationLayerAssignment_ corresponds to the term "CAD Layer" and is used mainly for grouping and visibility control.
 
 > NOTE  The use of presentation layer shall be restricted to simple grouping and displaying purposes.
 
@@ -15,7 +15,7 @@ Attribute use definition
 
 Figure 1 illustrates assignment of items by shape representation or representation item. The set of _AssignedItems_ can either include a whole shape representation, or individual geometric representation items. If both, the _IfcShapeRepresentation_ has a layer assignment, and an individual geometric representation item in the set of _IfcShapeRepresentation_.Items, then the layer assignment of the _IfcGeometricRepresentationItem_ overrides the layer assignment of the _IfcShapeRepresentation_.
 
-![instantiation diagram](../../../../figures/ifcpresentationlayerassignment-fig1.png "Figure 1 — Presentation layer assignment")
+![instantiation diagram](../../../../figures/ifcpresentationlayerassignment-fig1.png "Figure 1 &mdash; Presentation layer assignment")
 
 ## Attributes
 

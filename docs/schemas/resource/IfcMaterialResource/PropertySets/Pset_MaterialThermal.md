@@ -1,6 +1,6 @@
 # Pset_MaterialThermal
 
-A set of thermal material properties.<!-- end of definition -->
+A set of thermal material properties.
 
 
 ## Comments

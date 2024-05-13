@@ -1,4 +1,4 @@
 # IfcMlsTotalThickness
 
-Function Semantic Definition<!-- end of definition -->
+Function Semantic Definition
 Calculates the total thickness of a material layer set.

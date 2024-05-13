@@ -1,6 +1,6 @@
 # PEnum_SanitaryMounting
 
-<!-- end of definition -->## Items
+## Items
 
 ### BACKTOWALL
 Back To Wall

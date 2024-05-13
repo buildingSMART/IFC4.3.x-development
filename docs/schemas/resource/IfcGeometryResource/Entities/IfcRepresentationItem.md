@@ -1,6 +1,6 @@
 # IfcRepresentationItem
 
-The _IfcRepresentationItem_ is used within an _IfcRepresentation_ (directly or indirectly through other _IfcRepresentationItem_'s) to represent an _IfcProductRepresentation_. Most commonly these _IfcRepresentationItem_'s are geometric or topological representation items, that can (but not need to) have presentation style information assigned.<!-- end of definition -->
+The _IfcRepresentationItem_ is used within an _IfcRepresentation_ (directly or indirectly through other _IfcRepresentationItem_'s) to represent an _IfcProductRepresentation_. Most commonly these _IfcRepresentationItem_'s are geometric or topological representation items, that can (but not need to) have presentation style information assigned.
 
 { .extDef}
 > NOTE  Definition according to ISO/CD 10303-43:1992
@@ -16,7 +16,7 @@ Figure 1 shows an instance diagram explaining the use of _IfcStyledItem_ and _If
 
 ![styles assigned by layer and styled item](../../../../figures/ifcrepresentationitem_style-1.png)
 
-Figure 1 — Representation item style
+Figure 1 &mdash; Representation item style
 
 Figure 2 shows in instance diagram explaining the override of _IfcPresentationLayerWithStyle_ by _IfcStyledItem_ to apply presentation styles.
 
@@ -24,7 +24,7 @@ Figure 2 shows in instance diagram explaining the override of _IfcPresentationLa
 
 ![styles assigned by layer and styled item](../../../../figures/ifcrepresentationitem_style-2.png)
 
-Figure 2 — Representation item style override
+Figure 2 &mdash; Representation item style override
 
 > NOTE  Entity adapted from **representation_map** defined in ISO 10303-43.
 

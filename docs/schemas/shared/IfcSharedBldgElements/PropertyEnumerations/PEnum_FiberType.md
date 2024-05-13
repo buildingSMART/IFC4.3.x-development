@@ -1,6 +1,6 @@
 # PEnum_FiberType
 
-Enumeration of the different fiber types.<!-- end of definition -->
+Enumeration of the different fiber types.
 
 ## Items
 

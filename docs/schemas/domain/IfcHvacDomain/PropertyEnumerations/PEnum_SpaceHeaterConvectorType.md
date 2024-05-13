@@ -1,6 +1,6 @@
 # PEnum_SpaceHeaterConvectorType
 
-<!-- end of definition -->## Items
+## Items
 
 ### FORCED
 Forced

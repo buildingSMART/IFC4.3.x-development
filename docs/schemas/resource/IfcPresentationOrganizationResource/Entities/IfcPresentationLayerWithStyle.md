@@ -1,6 +1,6 @@
 # IfcPresentationLayerWithStyle
 
-An _IfcPresentationLayerWithStyle_ extends the presentation layer assignment with capabilities to define visibility control, access control and common style information.<!-- end of definition -->
+An _IfcPresentationLayerWithStyle_ extends the presentation layer assignment with capabilities to define visibility control, access control and common style information.
 
 The visibility control allows to define a layer to be either 'on' or 'off', and/or 'frozen' or 'not frozen'. The access control allows to block graphical entities from manipulations by setting a layer to be either 'blocked' or 'not blocked'. Common style information can be given to the layer.
 

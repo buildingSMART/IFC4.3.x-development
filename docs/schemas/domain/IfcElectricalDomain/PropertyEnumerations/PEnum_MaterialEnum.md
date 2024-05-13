@@ -1,6 +1,6 @@
 # PEnum_MaterialEnum
 
-<!-- end of definition -->## Items
+## Items
 
 ### ALUMINIUM
 Aluminium

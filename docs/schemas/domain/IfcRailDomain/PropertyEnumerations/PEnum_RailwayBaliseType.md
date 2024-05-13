@@ -1,6 +1,6 @@
 # PEnum_RailwayBaliseType
 
-Enumeration of railway balise types.<!-- end of definition -->
+Enumeration of railway balise types.
 
 ## Items
 

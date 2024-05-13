@@ -1,6 +1,6 @@
 # PEnum_LubricationPowerSupply
 
-<!-- end of definition -->## Items
+## Items
 
 ### ELECTRIC
 

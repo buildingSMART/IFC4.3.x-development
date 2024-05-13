@@ -1,6 +1,6 @@
 # IfcTrackElement
 
-A track element is a built element used specifically in the track domain in railway.<!-- end of definition -->
+A track element is a built element used specifically in the track domain in railway.
 
 ## Attributes
 

@@ -1,6 +1,6 @@
 # IfcInductanceMeasure
 
-_IfcInductanceMeasure_ is a measure of the inductance.<!-- end of definition -->
+_IfcInductanceMeasure_ is a measure of the inductance.
 
 Usually measure in Henry (H, Weber/A = V s/A).
 

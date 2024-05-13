@@ -1,6 +1,6 @@
 # PEnum_EvaporativeCoolerFlowArrangement
 
-<!-- end of definition -->## Items
+## Items
 
 ### COUNTERFLOW
 Counter Flow

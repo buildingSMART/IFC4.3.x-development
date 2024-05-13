@@ -1,6 +1,6 @@
 # PEnum_FuseDisconnectorType
 
-<!-- end of definition -->## Items
+## Items
 
 ### ENGINEPROTECTIONDEVICE
 Engine Protection Device

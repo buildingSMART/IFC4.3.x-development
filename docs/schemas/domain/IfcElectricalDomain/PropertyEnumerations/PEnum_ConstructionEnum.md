@@ -1,6 +1,6 @@
 # PEnum_ConstructionEnum
 
-<!-- end of definition -->## Items
+## Items
 
 ### SOLIDCONDUCTOR
 Solid Conductor

@@ -1,6 +1,6 @@
 # IfcSoundPowerLevelMeasure
 
-A sound power level measure is a measure of total radiated noise with units of decibels with a reference value of picowatts.<!-- end of definition -->
+A sound power level measure is a measure of total radiated noise with units of decibels with a reference value of picowatts.
 
 Type: REAL
 

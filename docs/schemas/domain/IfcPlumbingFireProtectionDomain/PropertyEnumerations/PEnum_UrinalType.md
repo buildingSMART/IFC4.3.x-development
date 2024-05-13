@@ -1,6 +1,6 @@
 # PEnum_UrinalType
 
-<!-- end of definition -->## Items
+## Items
 
 ### BOWL
 Bowl

@@ -1,6 +1,6 @@
 # IfcStructuralAnalysisModel
 
-The _IfcStructuralAnalysisModel_ is used to assemble all information needed to represent a structural analysis model. It encompasses certain general properties (such as analysis type), references to all contained structural members, structural supports or connections, as well as loads and the respective load results.<!-- end of definition -->
+The _IfcStructuralAnalysisModel_ is used to assemble all information needed to represent a structural analysis model. It encompasses certain general properties (such as analysis type), references to all contained structural members, structural supports or connections, as well as loads and the respective load results.
 
 Important functionalities for the description of an analysis model are derived from existing IFC entities:
 

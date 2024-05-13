@@ -1,6 +1,6 @@
 # PEnum_LightFixtureMountingType
 
-<!-- end of definition -->## Items
+## Items
 
 ### CABLESPANNED
 Cable Spanned

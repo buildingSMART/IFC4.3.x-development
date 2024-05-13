@@ -1,6 +1,6 @@
 # PEnum_ElectronicTrippingUnitType
 
-<!-- end of definition -->## Items
+## Items
 
 ### EP_BM
 Ep  Bm

@@ -1,6 +1,6 @@
 # IfcKnotType
 
-The _IfcKnotType_ indicates the particular form of b-spline knots.<!-- end of definition -->
+The _IfcKnotType_ indicates the particular form of b-spline knots.
 
 { .extDef}
 > NOTE  Definition according to ISO/CD 10303-42:1992

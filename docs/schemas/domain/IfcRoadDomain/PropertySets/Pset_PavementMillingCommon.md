@@ -1,3 +1,3 @@
 # Pset_PavementMillingCommon
 
-Properties for pavement milling.<!-- end of definition -->
+Properties for pavement milling.

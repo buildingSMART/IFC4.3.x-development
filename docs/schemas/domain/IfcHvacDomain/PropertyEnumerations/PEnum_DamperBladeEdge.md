@@ -1,6 +1,6 @@
 # PEnum_DamperBladeEdge
 
-<!-- end of definition -->## Items
+## Items
 
 ### CRIMPED
 Crimped

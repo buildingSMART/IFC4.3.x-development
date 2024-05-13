@@ -1,6 +1,6 @@
 # IfcAddress
 
-This abstract entity represents various kinds of postal and telecom addresses.<!-- end of definition -->
+This abstract entity represents various kinds of postal and telecom addresses.
 
 > NOTE  Entity adapted from **address** defined in ISO 10303-41.
 

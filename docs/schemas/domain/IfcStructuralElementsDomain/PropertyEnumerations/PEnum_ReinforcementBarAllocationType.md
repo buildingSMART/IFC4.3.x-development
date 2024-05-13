@@ -1,6 +1,6 @@
 # PEnum_ReinforcementBarAllocationType
 
-<!-- end of definition -->## Items
+## Items
 
 ### SINGLE
 Single

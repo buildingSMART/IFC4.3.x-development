@@ -1,6 +1,6 @@
 # PEnum_VendingMachineUserInterface
 
-Enumeration describing the vending machine user interface.<!-- end of definition -->
+Enumeration describing the vending machine user interface.
 
 ## Items
 

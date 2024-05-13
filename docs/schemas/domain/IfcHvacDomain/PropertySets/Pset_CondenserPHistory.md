@@ -1,3 +1,3 @@
 # Pset_CondenserPHistory
 
-Condenser performance history attributes.<!-- end of definition -->
+Condenser performance history attributes.

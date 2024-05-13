@@ -1,6 +1,6 @@
 # IfcRailwayPartTypeEnum
 
-The _IfcRailwayPartTypeEnum_ defines the range of different types of railway part that can be specified.<!-- end of definition -->
+The _IfcRailwayPartTypeEnum_ defines the range of different types of railway part that can be specified.
 
 A railway line can be spatially organised into several parts, using a vertical, longitudinal and lateral criteria for its division. There is not one standardised way of spatially dividing the line, as this depends on the use case. The _IfcRailwayPart_s that can be used to spatially organise a line are:
 
@@ -20,7 +20,7 @@ See descriptions of enumeration types for further details. Below are some sugges
 
 ![Railway part vertical organisation](../../../../figures/IfcRailwayPartTypeEnum-global.png)
 
-Figure 1 — Example of usage of _IfcRailwayPart_ to vertically organise the elements of a railway line
+Figure 1 &mdash; Example of usage of _IfcRailwayPart_ to vertically organise the elements of a railway line
 
 > NOTE  If required by the use case, the part below the track can be distinguished between _IfcRailwayPart.SUBSTRUCTURE_ (for constructed ground) and _IfcFacilityPartCommon.BELOWGROUND_ (for non constructed, existing ground).
 
@@ -38,7 +38,7 @@ If required by the use case, the *SUBSTRUCTURE* part can contain elements such a
 
 ![Railway part detailed vertical organisation](../../../../figures/IfcRailwayPartTypeEnum-substructure.png)
 
-Figure 2 — Example of the courses and elements that may be contained in the *SUBSTRUCTURE* part 
+Figure 2 &mdash; Example of the courses and elements that may be contained in the *SUBSTRUCTURE* part 
 
 **Longitudinal organisation**
 
@@ -53,7 +53,7 @@ As depicted in the example Figure below. Other parts, not included in the exampl
 
 ![Railway part longitudinal organisation](../../../../figures/IfcRailwayPartTypeEnum-track.png)
 
-Figure 3 — Example of _IfcRailwayPart_ to longitudinally organise the elements of a railway line
+Figure 3 &mdash; Example of _IfcRailwayPart_ to longitudinally organise the elements of a railway line
 
 **Mixed organisation**
 The attribute _IfcFacilityPart.UsageType_ allows to to spatially organise the same dataset using multiple criteria. For example, a general vertical organisation, like in Figure 1, and a further longitudinal organisation just for the track, as in Figure 2. 

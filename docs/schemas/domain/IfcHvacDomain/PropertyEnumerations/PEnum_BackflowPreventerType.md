@@ -1,6 +1,6 @@
 # PEnum_BackflowPreventerType
 
-<!-- end of definition -->## Items
+## Items
 
 ### NONE
 No waterproof.

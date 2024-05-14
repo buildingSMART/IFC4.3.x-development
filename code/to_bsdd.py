@@ -33,11 +33,11 @@ bfn = os.path.basename(fn)
 
 ps = PorterStemmer()
 
-with open(r".\code\type_words.json", "r", encoding="utf-8") as file:
+with open(r"type_words.json", "r", encoding="utf-8") as file:
     data = json.load(file)
 type_words = sorted(data, key=len)[::-1]
 
-with open(r".\code\bsdd_excluded_entites.json", "r", encoding="utf-8") as file:
+with open(r"bsdd_excluded_entites.json", "r", encoding="utf-8") as file:
     excluded_entites = json.load(file)
 # WHILE ALLOW:  IfcRoot, IfcLightSource, IfcStructuralLoad, IfcStructuralLoadLinearForce,
 # IfcStructuralLoadPlanarForce, IfcStructuralLoadSingleForce, IfcStructuralLoadStatic,

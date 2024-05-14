@@ -1,12 +1,12 @@
 # IfcTessellatedFaceSet
 
-The _IfcTessellatedFaceSet_ is a boundary representation topological model limited to planar faces and straight edges. It may represent an approximation of an analytical surface or solid that may be provided in addition to its tessellation as a separate shape representation. The _IfcTessellatedFaceSet_ provides a compact data representation of an connected face set using indices into ordered lists of vertices, normals, colours, and texture maps.
+The _IfcTessellatedFaceSet_ is a boundary representation topological model limited to planar faces and straight edges. It may represent an approximation of an analytical surface or solid that may be provided in addition to its tessellation as a separate shape representation. The _IfcTessellatedFaceSet_ provides a compact data representation of an connected face set using indices into ordered lists of vertices, normals, colours, and texture maps.<!-- end of definition -->
 
-> NOTE  The compact representation has been chosen to enable small data sets despite potentially large sets of faces, edges and vertices needed to represent tessellations of analyticals surfaces and solids, and despite large sets of colour and texture information to annotate the tessellated faces.
+> NOTE The compact representation has been chosen to enable small data sets despite potentially large sets of faces, edges and vertices needed to represent tessellations of analyticals surfaces and solids, and despite large sets of colour and texture information to annotate the tessellated faces.
 
 The _IfcTessellatedFaceSet_ is an abstract supertype of tessellated face sets each imposing specific constraints on face generation for tessellation, such as triangulation (with or without strip and fans), or quadrilaterals, or polygonal faces (with or without inner loops).
 
-> NOTE  Not all different constraints on face sets are included as specific subtypes in this release of the specification.
+> NOTE Not all different constraints on face sets are included as specific subtypes in this release of the specification.
 
 The following attributes apply to all subtypes:
 
@@ -20,9 +20,9 @@ Each face of the tessellated face set shall have:
 * vertices that define a planar polygon;
 * vertices that define a non-self-intersecting polygon.
 
-> NOTE  The definition of _IfcTessellatedFaceSet_ is based on the **indexedFaceSet** defined in ISO/IEC 19775-1
+> NOTE The definition of _IfcTessellatedFaceSet_ is based on the **indexedFaceSet** defined in ISO/IEC 19775-1
 
-> HISTORY  New entity in IFC4.
+> HISTORY New entity in IFC4.
 
 ## Attributes
 

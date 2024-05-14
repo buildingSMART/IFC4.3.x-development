@@ -1,8 +1,8 @@
 # IfcDoorTypeEnum
 
-This enumeration defines the different predefined types of an _IfcDoor_ or _IfcDoorType_ object.
+This enumeration defines the different predefined types of an _IfcDoor_ or _IfcDoorType_ object.<!-- end of definition -->
 
-> HISTORY  New enumeration in IFC4.
+> HISTORY New enumeration in IFC4.
 
 ## Items
 

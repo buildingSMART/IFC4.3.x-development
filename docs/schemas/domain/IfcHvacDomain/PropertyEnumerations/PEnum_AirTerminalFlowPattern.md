@@ -1,6 +1,6 @@
 # PEnum_AirTerminalFlowPattern
 
-## Items
+<!-- end of definition -->## Items
 
 ### LINEARSINGLE
 Linear Single

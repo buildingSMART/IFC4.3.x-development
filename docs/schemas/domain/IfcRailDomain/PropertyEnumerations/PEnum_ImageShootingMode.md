@@ -1,6 +1,6 @@
 # PEnum_ImageShootingMode
 
-## Items
+<!-- end of definition -->## Items
 
 ### AUTOMATIC
 

@@ -1,12 +1,12 @@
 # IfcBoundaryNodeCondition
 
-Describes linearly elastic support conditions or connection conditions.
+Describes linearly elastic support conditions or connection conditions.<!-- end of definition -->
 
 Applicability:
 
 * Point supports and connections.
 
-> HISTORY  New entity in IFC2x2.
+> HISTORY New entity in IFC2x2.
 > IFC 2x4 change: Attributes _LinearStiffnessX/Y/Z_ renamed to _TranslationalStiffnessX/Y/Z_.
 
 { .change-ifc2x4}

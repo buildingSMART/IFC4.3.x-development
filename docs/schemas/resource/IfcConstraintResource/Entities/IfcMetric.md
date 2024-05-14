@@ -1,6 +1,6 @@
 # IfcMetric
 
-An _IfcMetric_ is used to capture quantitative resultant metrics that can be applied to objectives.
+An _IfcMetric_ is used to capture quantitative resultant metrics that can be applied to objectives.<!-- end of definition -->
 
 _IfcMetric_ is a subtype of _IfcConstraint_ and may be associated with any subtype of _IfcRoot_ through the _IfcRelAssociatesConstraint_ relationship in the _IfcControlExtension_ schema, or may be associated with _IfcProperty_ by _IfcResourceConstraintRelationship_.
 
@@ -30,12 +30,12 @@ IfcMetric -> IfcReference [label="ReferencePath"];
 }
 ```
 
-Figure USERDEFCONSTRAINT &mdash; An example user defined constraint.
+Figure USERDEFCONSTRAINT — An example user defined constraint.
 
-> HISTORY  New entity in IFC2.0.
+> HISTORY New entity in IFC2.0.
 
 { .change-ifc2x4}
-> IFC4 CHANGE  ReferencePath attribute added for indicating the value to be constrained along a path of attribute references.
+> IFC4 CHANGE ReferencePath attribute added for indicating the value to be constrained along a path of attribute references.
 
 ## Attributes
 
@@ -50,7 +50,7 @@ If _DataValue_ refers to an _IfcTable_, this attribute identifies the relevant c
 ### DataValue
 The value to be compared on associated objects. A null value indicates comparison to null.
 { .change-ifc4}
-> IFC4 ADD1 CHANGE  This attribute is now optional.
+> IFC4 ADD1 CHANGE This attribute is now optional.
 
 ### ReferencePath
 Optional path to an attribute to be constrained on associated objects.

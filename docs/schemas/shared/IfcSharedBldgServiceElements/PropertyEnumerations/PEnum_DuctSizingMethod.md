@@ -1,6 +1,6 @@
 # PEnum_DuctSizingMethod
 
-## Items
+<!-- end of definition -->## Items
 
 ### CONSTANTFRICTION
 Constant Friction

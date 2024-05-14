@@ -1,6 +1,6 @@
 # Pset_ProtectiveDeviceBreakerUnitI2TCurve
 
-A coherent set of attributes representing a curve for let-through energy of a protective device. Note - A protective device may be associated with different instances of this pSet providing information related to different  basic characteristics
+A coherent set of attributes representing a curve for let-through energy of a protective device. Note - A protective device may be associated with different instances of this pSet providing information related to different basic characteristics<!-- end of definition -->
 
 
 ## Comments

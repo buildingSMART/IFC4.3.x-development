@@ -1,6 +1,6 @@
 # PEnum_PictogramEscapeDirectionType
 
-## Items
+<!-- end of definition -->## Items
 
 ### RIGHTARROW
 Right Arrow

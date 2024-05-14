@@ -5,12 +5,12 @@ The _IfcRectangularPyramid_ is a Construction Solid Geometry (CSG) 3D primitive.
 * _SELF\IfcCsgPrimitive3D.Position_: The location and orientation of the axis system for the primitive.
 * _SELF\IfcCsgPrimitive3D.Position.Location_: The center of the circular area being the bottom face of the cone.
 * _SELF\IfcCsgPrimitive3D.Position.Position[3]:_ The z-axis of the inherited placement coordinate system provides the center axis of the _IfcRightCircularCone_, and the apex is at the _Height_ value applied to the positive direction of the z-axis. The _BottomRadius_ defines the circular base at the xy-plane of the placement coordinate system.
-
+<!-- end of definition -->
 As shown in Figure 1, the pyramid is positioned within its own placement coordinate system. The origin is the center of the bottom rectangle, that lies in the XY plane. The apex lies on the positive z axis at [0, 0, _Height_].
 
-![pyramid](../../../../figures/ifcrectangularpyramid-layout1.png "Figure 1 &mdash; Rectangular pyramid geometry")
+![pyramid](../../../../figures/ifcrectangularpyramid-layout1.png "Figure 1 — Rectangular pyramid geometry")
 
-> HISTORY  New entity in IFC2x3
+> HISTORY New entity in IFC2x3
 
 { .use-head}
 Texture use definition
@@ -25,7 +25,7 @@ Figure 2 illustrates default texture mapping with a clamped texture (RepeatS=Fal
 
 ![texture](../../../../figures/ifcrectangularpyramid-texture.png)
 
-Figure 2 &mdash; Rectangular pyramid textures
+Figure 2 — Rectangular pyramid textures
 
 |Side|Normal|Origin X|Origin Y|Origin Z|S Axis|T Axis|
 |--- |--- |--- |--- |--- |--- |--- |
@@ -35,7 +35,7 @@ Figure 2 &mdash; Rectangular pyramid textures
 |Back|+Y|+XLength|+YLength|0|-X|(towards top point)|
 |Bottom|-Z|+XLength|0|0|-X|+Y|
 
-Table 3 &mdash; Texture parameters
+Table 3 — Texture parameters
 
 ## Attributes
 

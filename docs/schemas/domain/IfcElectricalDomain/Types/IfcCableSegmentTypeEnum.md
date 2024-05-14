@@ -1,8 +1,8 @@
 # IfcCableSegmentTypeEnum
 
-The _IfcCableSegmentTypeEnum_ defines the range of different types of cable segment that can be specified.
+The _IfcCableSegmentTypeEnum_ defines the range of different types of cable segment that can be specified.<!-- end of definition -->
 
-> HISTORY  New type in IFC2x2. Core and busbar segment added in IFC4.
+> HISTORY New type in IFC2x2. Core and busbar segment added in IFC4.
 
 ## Items
 
@@ -16,7 +16,7 @@ Cable with a specific purpose to lead electric current within a circuit or any o
 A single linear element within a cable or an exposed wire (such as for grounding) with the specific purpose to lead electric current, data, or a telecommunications signal.
 
 ### CORESEGMENT
-A self contained element of a  cable that comprises one or more conductors and sheathing.The core of one lead is normally single wired or multiwired which are intertwined.
+A self contained element of a cable that comprises one or more conductors and sheathing.The core of one lead is normally single wired or multiwired which are intertwined.
 
 ### CONTACTWIRESEGMENT
 An electric conductor of an overhead contact line with which the current collectors make contact.

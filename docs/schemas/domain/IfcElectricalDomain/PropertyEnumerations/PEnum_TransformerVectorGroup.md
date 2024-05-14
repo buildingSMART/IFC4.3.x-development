@@ -1,6 +1,6 @@
 # PEnum_TransformerVectorGroup
 
-## Items
+<!-- end of definition -->## Items
 
 ### DD0
 Dd0

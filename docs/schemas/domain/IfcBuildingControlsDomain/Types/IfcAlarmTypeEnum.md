@@ -1,8 +1,8 @@
 # IfcAlarmTypeEnum
 
-The _IfcAlarmTypeEnum_ defines the range of different types of alarm that can be specified.
+The _IfcAlarmTypeEnum_ defines the range of different types of alarm that can be specified.<!-- end of definition -->
 
-> HISTORY  New enumeration in IFC2x2.
+> HISTORY New enumeration in IFC2x2.
 
 ## Items
 

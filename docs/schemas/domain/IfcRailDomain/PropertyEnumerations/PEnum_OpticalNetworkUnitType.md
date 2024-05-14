@@ -1,6 +1,6 @@
 # PEnum_OpticalNetworkUnitType
 
-Enumeration of optical network unit types.
+Enumeration of optical network unit types.<!-- end of definition -->
 
 ## Items
 

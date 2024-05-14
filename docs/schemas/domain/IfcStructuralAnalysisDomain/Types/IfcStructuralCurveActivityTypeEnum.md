@@ -1,8 +1,8 @@
 # IfcStructuralCurveActivityTypeEnum
 
-This enumeration defines the distribution of load values in a curve action or reaction.
+This enumeration defines the distribution of load values in a curve action or reaction.<!-- end of definition -->
 
-> HISTORY  New enumeration in IFC4
+> HISTORY New enumeration in IFC4
 
 ## Items
 
@@ -16,7 +16,7 @@ The load value is linearly distributed over the load's extent.
 The load consists of several consecutive linear sections.
 
 ### EQUIDISTANT
-The load consists of n consecutive sections of same length and is specified by n+1 load samples.  The interpolation type over the segments is not defined by this distribution type but may be qualified in _IfcObject.ObjectType_ based on additional agreements.
+The load consists of n consecutive sections of same length and is specified by n+1 load samples. The interpolation type over the segments is not defined by this distribution type but may be qualified in _IfcObject.ObjectType_ based on additional agreements.
 
 ### SINUS
 The load value is distributed as a sinus half wave.

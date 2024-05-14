@@ -1,19 +1,19 @@
 # IfcElementAssembly
 
-The _IfcElementAssembly_ represents complex element assemblies aggregated from several elements, such as discrete elements, building elements, or other elements.
+The _IfcElementAssembly_ represents complex element assemblies aggregated from several elements, such as discrete elements, building elements, or other elements.<!-- end of definition -->
 
 > EXAMPLE Steel construction assemblies, such as trusses and different kinds of frames, can be represented by the _IfcElementAssembly_ entity. Premanufactured or precast elements are examples of the general _IfcElementAssembly_ entity
 
-> NOTE  The _IfcElementAssembly_ is a general purpose entity that is required to be decomposed. Also other subtypes of _IfcElement_ can be decomposed.
+> NOTE The _IfcElementAssembly_ is a general purpose entity that is required to be decomposed. Also other subtypes of _IfcElement_ can be decomposed.
 The assembly structure can be nested, i.e. an _IfcElementAssembly_ could be an aggregated part within another _IfcElementAssembly_.
 
-> NOTE  View definitions and/or implementer agreements may restrict the number of allowed levels of nesting.
+> NOTE View definitions and/or implementer agreements may restrict the number of allowed levels of nesting.
 
 The geometry of an _IfcElementAssembly_ is generally formed from its components, in which case it does not need to have an explicit geometric representation. In some cases it may be useful to also expose an own explicit representation of the aggregate.
 
-> NOTE  View definitions or implementer agreements may further constrain the applicability of certain shape representations at the _IfcElementAssembly_ in respect of the shape representations of its parts.
+> NOTE View definitions or implementer agreements may further constrain the applicability of certain shape representations at the _IfcElementAssembly_ in respect of the shape representations of its parts.
 
-> HISTORY  New entity in IFC2x2.
+> HISTORY New entity in IFC2x2.
 
 **Informal Propositions**
 
@@ -46,7 +46,7 @@ The IfcElementAssembly shall represent an aggregate, i.e. it should have other e
 
 Figure 1 illustrates spatial containment and element aggregation relationships.
 
-![containment relationships](../../../../figures/ifcelementassembly-containment.png "Figure 1 &mdash; Element assembly containment")
+![containment relationships](../../../../figures/ifcelementassembly-containment.png "Figure 1 — Element assembly containment")
 
 #### IfcMember
 

@@ -1,6 +1,6 @@
 # PEnum_SectionType
 
-Enumeration describing the type of section of the structure
+Enumeration describing the type of section of the structure<!-- end of definition -->
 
 ## Items
 

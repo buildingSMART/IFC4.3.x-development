@@ -1,6 +1,6 @@
 # IfcPropertySingleValue
 
-The property with a single value _IfcPropertySingleValue_ defines a property object which has a single (numeric or descriptive) value assigned. It defines a property - single value combination for which the property _Name_, an optional _Description_, and an optional _NominalValue_ with measure type is provided. In addition, the default unit as specified within the project unit context can be overridden by assigning an _Unit_.
+The property with a single value _IfcPropertySingleValue_ defines a property object which has a single (numeric or descriptive) value assigned. It defines a property - single value combination for which the property _Name_, an optional _Description_, and an optional _NominalValue_ with measure type is provided. In addition, the default unit as specified within the project unit context can be overridden by assigning an _Unit_.<!-- end of definition -->
 
 The unit is handled by the _Unit_ attribute, see Table 1 for an example of various single value properties:
 
@@ -14,12 +14,12 @@ The unit is handled by the _Unit_ attribute, see Table 1 for an example of vario
 |PanelThickness|0.12|IfcPositiveLengthMeasure|-|
 |ThermalTransmittance|2.6|IfcThermalTransmittanceMeasure|W/(m2K)|
 
-Table 1 &mdash; Single value properties with values, measure types and units
+Table 1 — Single value properties with values, measure types and units
 
 > HISTORY  New entity in IFC1.0.
 
 { .change-ifc2x}
-> IFC2x CHANGE  Entity has been renamed from IfcSimpleProperty.
+> IFC2x CHANGE Entity has been renamed from IfcSimpleProperty.
 
 { .change-ifc2x3}
 > IFC2x3 CHANGE  Attribute _NominalValue_ has been made OPTIONAL with upward compatibility for file based exchange.
@@ -28,10 +28,10 @@ Table 1 &mdash; Single value properties with values, measure types and units
 
 ### NominalValue
 Value and measure type of this property.
-> NOTE  By virtue of the defined data type, that is selected from the SELECT _IfcValue_, the appropriate unit can be found within the _IfcUnitAssignment_, defined for the project if no value for the unit attribute is given.
+> NOTE By virtue of the defined data type, that is selected from the SELECT _IfcValue_, the appropriate unit can be found within the _IfcUnitAssignment_, defined for the project if no value for the unit attribute is given.
 
 { .note}
-> IFC2x3 CHANGE  The attribute has been made optional with upward compatibility for file based exchange.
+> IFC2x3 CHANGE The attribute has been made optional with upward compatibility for file based exchange.
 
 ### Unit
 Unit for the nominal value, if not given, the default value for the measure type (given by the TYPE of nominal value) is used as defined by the global unit assignment at IfcProject.

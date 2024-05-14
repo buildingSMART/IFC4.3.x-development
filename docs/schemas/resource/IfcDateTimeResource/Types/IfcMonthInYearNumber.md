@@ -1,6 +1,6 @@
 # IfcMonthInYearNumber
 
-_IfcMonthInYearNumber_ is an integer that defines the position of the specified month in a year.
+_IfcMonthInYearNumber_ is an integer that defines the position of the specified month in a year.<!-- end of definition -->
 
 Calendar month numbers map to calendar month names as follows:
 
@@ -19,10 +19,10 @@ Calendar month numbers map to calendar month names as follows:
 
 Type: INTEGER
 
-> NOTE  See definition of **calendar month** as defined in ISO 8601.
+> NOTE See definition of **calendar month** as defined in ISO 8601.
 
 { .note}
-> HISTORY  New type in IFC1.5.1.
+> HISTORY New type in IFC1.5.1.
 
 ## Formal Propositions
 

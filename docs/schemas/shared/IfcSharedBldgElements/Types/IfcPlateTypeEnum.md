@@ -1,11 +1,11 @@
 # IfcPlateTypeEnum
 
-This enumeration defines the different types of planar elements an _IfcPlate_ or _IfcPlateType_ object can fulfill.
+This enumeration defines the different types of planar elements an _IfcPlate_ or _IfcPlateType_ object can fulfill.<!-- end of definition -->
 
-> HISTORY  New Enumeration in IFC2x2.
+> HISTORY New Enumeration in IFC2x2.
 
 { .change-ifc2x3}
-> IFC2x3 CHANGE  The additional identifiers CURTAIN_PANEL, SHEET have been added.
+> IFC2x3 CHANGE The additional identifiers CURTAIN_PANEL, SHEET have been added.
 
 ## Items
 

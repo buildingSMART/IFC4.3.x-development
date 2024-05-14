@@ -1,11 +1,11 @@
 # IfcProcedure
 
-An _IfcProcedure_ is a logical set of actions to be taken in response to an event or to cause an event to occur.
+An _IfcProcedure_ is a logical set of actions to be taken in response to an event or to cause an event to occur.<!-- end of definition -->
 
-> HISTORY  New entity in IFC2x2
+> HISTORY New entity in IFC2x2
 
 { .change-ifc2x4}
-> IFC4 CHANGE  _ProcedureType_ renamed to _PredefinedType_ and made optional (upward compatible). Where rules WR1 and WR2 have been removed.
+> IFC4 CHANGE _ProcedureType_ renamed to _PredefinedType_ and made optional (upward compatible). Where rules WR1 and WR2 have been removed.
 
 { .use-head}
 ### Use definitions
@@ -16,13 +16,13 @@ As shown in Figure 1, _IfcProcedure_ does not restrict anything but describes sp
 
 ![procedure example](../../../../figures/ifcprocedure_example.png)
 
-Figure 1 &mdash; Procedure relationships
+Figure 1 — Procedure relationships
 
 ## Attributes
 
 ### PredefinedType
 Identifies the predefined types of a procedure from which
-    the type required may be set.
+  the type required may be set.
 
 ## Formal Propositions
 
@@ -48,13 +48,13 @@ _IfcProcedure_ defines the anticipated or actual occurrence of any procedure; co
 
 ### Process Assignment
 
-> NOTE  A particular type of _IfcProcedure_ is a caution, warning or other form of advisory note. Typically, it is anticipated that such a procedure would be assigned to the specific _IfcProcess_ for which it gives advice using _IfcRelAssignsToProcess_.
+> NOTE A particular type of _IfcProcedure_ is a caution, warning or other form of advisory note. Typically, it is anticipated that such a procedure would be assigned to the specific _IfcProcess_ for which it gives advice using _IfcRelAssignsToProcess_.
 
 ### Product Assignment
 
 For building operation scenarios, _IfcProcedure_ may be assigned to a product (_IfcElement_ subtype) using _IfcRelAssignsToProduct_ to indicate a specific product occurrence that performs the procedure.
 
-> EXAMPLE  An _IfcActuator_ may have a "Close" procedure. If the _IfcProcedure_ is defined by an _IfcProcedureType_ and the _IfcProcedureType_ is assigned to a product type (using _IfcRelAssignsToProduct_), then the _IfcProcedure_ must be assigned to one or more occurrences of the specified product type using _IfcRelAssignsToProduct_.
+> EXAMPLE An _IfcActuator_ may have a "Close" procedure. If the _IfcProcedure_ is defined by an _IfcProcedureType_ and the _IfcProcedureType_ is assigned to a product type (using _IfcRelAssignsToProduct_), then the _IfcProcedure_ must be assigned to one or more occurrences of the specified product type using _IfcRelAssignsToProduct_.
 
 ### Property Sets for Objects
 

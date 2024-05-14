@@ -1,6 +1,6 @@
 # PEnum_SleeperType
 
-## Items
+<!-- end of definition -->## Items
 
 ### WOODENSLEEPER
 Wooden sleeper.

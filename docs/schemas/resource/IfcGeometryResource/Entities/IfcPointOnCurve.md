@@ -1,14 +1,14 @@
 # IfcPointOnCurve
 
-The _IfcPointOnCurve_ is a point defined by a parameter value of its defining curve.
+The _IfcPointOnCurve_ is a point defined by a parameter value of its defining curve.<!-- end of definition -->
 
 { .extDef}
-> NOTE  Definition according to ISO/CD 10303-42:1992
+> NOTE Definition according to ISO/CD 10303-42:1992
 > A point on curve is a point which lies on a curve. The point is determined by evaluating the curve at a specific parameter value. The coordinate space dimensionality of the point is that of the basis curve.
 
-> NOTE  Entity adapted from **point_on_curve** in ISO 10303-42.
+> NOTE Entity adapted from **point_on_curve** in ISO 10303-42.
 
-> HISTORY  New entity in IFC2x2.
+> HISTORY New entity in IFC2x2.
 
 **Informal Propositions**
 

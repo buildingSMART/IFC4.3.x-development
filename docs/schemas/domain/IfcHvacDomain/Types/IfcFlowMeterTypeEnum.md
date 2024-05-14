@@ -1,11 +1,11 @@
 # IfcFlowMeterTypeEnum
 
 This enumeration defines various types of flow meter:
-
-> HISTORY  New enumeration in IFC2x2.
+<!-- end of definition -->
+> HISTORY New enumeration in IFC2x2.
 
 { .change-ifc2x4}
-> IFC4 CHANGE  ELECTRICMETER and FLOWMETER removed.
+> IFC4 CHANGE ELECTRICMETER and FLOWMETER removed.
 
 ## Items
 

@@ -1,6 +1,6 @@
 # IfcWellKnownText
 
-A Well Known Text (WKT) literal is a structured textual representation of the definition of a coordinate reference systems according to ISO 19125-1:2004 or ISO 19162:2019.
+A Well Known Text (WKT) literal is a structured textual representation of the definition of a coordinate reference systems according to ISO 19125-1:2004 or ISO 19162:2019.<!-- end of definition -->
 
 > NOTE This entity encapsulates the IfcWellKnownTextLiteral in order to associate a WKT definition to an IfcCoordinateReferenceSystem by means of an inverse attribute.
 

@@ -1,8 +1,8 @@
 # IfcDerivedUnitEnum
 
-_IfcDerivedUnitEnum_ is an enumeration type for allowed types of derived units.
+_IfcDerivedUnitEnum_ is an enumeration type for allowed types of derived units.<!-- end of definition -->
 
-> HISTORY  New type in IFC2.0.
+> HISTORY New type in IFC2.0.
 
 { .change-ifc2x4}
 > IFC 2x4 change: added AREADENSITYUNIT, SOUNDPOWERLEVELUNIT, SOUNDPRESSURELEVELUNIT and TEMPERATURERATEOFCHANGEUNIT.

@@ -1,11 +1,11 @@
 # IfcCountMeasure
 
-A count measure is the value of a count of items.
+A count measure is the value of a count of items.<!-- end of definition -->
 
 Type: INTEGER
 
-> NOTE  Type adapted from **count_measure** defined in ISO 10303-41.
+> NOTE Type adapted from **count_measure** defined in ISO 10303-41.
 
-> HISTORY  New type in IFC1.5.1.
+> HISTORY New type in IFC1.5.1.
 
 > HISTORY IFC4.3.0.0 Type changed from NUMBER to INTEGER

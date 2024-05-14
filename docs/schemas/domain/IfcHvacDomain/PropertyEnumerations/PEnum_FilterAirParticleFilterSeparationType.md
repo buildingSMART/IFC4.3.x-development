@@ -1,6 +1,6 @@
 # PEnum_FilterAirParticleFilterSeparationType
 
-## Items
+<!-- end of definition -->## Items
 
 ### BAG
 Bag

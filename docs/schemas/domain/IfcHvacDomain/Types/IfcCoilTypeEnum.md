@@ -1,8 +1,8 @@
 # IfcCoilTypeEnum
 
-Enumeration defining the typical types of coils.
+Enumeration defining the typical types of coils.<!-- end of definition -->
 
-> HISTORY  New enumeration in IFC2x.
+> HISTORY New enumeration in IFC2x.
 
 ## Items
 

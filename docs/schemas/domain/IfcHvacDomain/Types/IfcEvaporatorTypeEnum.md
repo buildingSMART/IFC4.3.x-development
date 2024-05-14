@@ -1,8 +1,8 @@
 # IfcEvaporatorTypeEnum
 
-Enumeration defining the typical types of evaporators.
+Enumeration defining the typical types of evaporators.<!-- end of definition -->
 
-> HISTORY  New enumeration in IFC2x2.
+> HISTORY New enumeration in IFC2x2.
 
 ## Items
 

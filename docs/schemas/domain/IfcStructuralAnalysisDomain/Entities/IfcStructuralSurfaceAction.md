@@ -1,11 +1,11 @@
 # IfcStructuralSurfaceAction
 
-This entity defines an action which is distributed over a surface. A surface action may be connected with a surface member or surface connection.
+This entity defines an action which is distributed over a surface. A surface action may be connected with a surface member or surface connection.<!-- end of definition -->
 
-> HISTORY  New entity in IFC4.
+> HISTORY New entity in IFC4.
 
 { .change-ifc2x4}
-> IFC4 CHANGE  Former entity _IfcStructuralPlanarActionVarying_ from IFC2x2 has been removed and are replaced by this entity.
+> IFC4 CHANGE Former entity _IfcStructuralPlanarActionVarying_ from IFC2x2 has been removed and are replaced by this entity.
 
 ****Coordinate Systems****:
 
@@ -33,7 +33,7 @@ If not connected with a structural item (which may happen in an incomplete or co
 ## Attributes
 
 ### ProjectedOrTrue
-Defines whether load values are given per true lengths of the surface on which they act, or per lengths of the projection of the surface in load direction.  The latter is only applicable to loads which act in global coordinate directions.
+Defines whether load values are given per true lengths of the surface on which they act, or per lengths of the projection of the surface in load direction. The latter is only applicable to loads which act in global coordinate directions.
 
 ### PredefinedType
 Type of action according to its distribution of load values.
@@ -41,7 +41,7 @@ Type of action according to its distribution of load values.
 ## Formal Propositions
 
 ### ProjectedIsGlobal
-A load can only be related to projected lengths if it was specified in global coordinate directions (i.e. in analysis model coordinate directions).  If a load was specified in local coordinate directions, it can only relate to true lengths.
+A load can only be related to projected lengths if it was specified in global coordinate directions (i.e. in analysis model coordinate directions). If a load was specified in local coordinate directions, it can only relate to true lengths.
 
 ### HasObjectType
 The attribute ObjectType shall be given if the predefined type is set to USERDEFINED.

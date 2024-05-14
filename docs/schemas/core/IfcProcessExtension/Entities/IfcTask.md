@@ -1,15 +1,15 @@
 # IfcTask
 
-An _IfcTask_ is an identifiable unit of work to be carried out in a construction project.
+An _IfcTask_ is an identifiable unit of work to be carried out in a construction project.<!-- end of definition -->
 
 A task is typically used to describe an activity for the construction or installation of products, but is not limited to these types. For example it might be used to describe design processes, move operations and other design, construction and operation related activities as well.
 
 Quantities of resources consumed by the task are dealt with by defining the _IfcElementQuantity_ for the resource and not at the instance of _IfcTask_.
 
-> HISTORY  New entity in IFC1.0. Renamed from _IfcWorkTask_ in IFC2x.
+> HISTORY New entity in IFC1.0. Renamed from _IfcWorkTask_ in IFC2x.
 
 { .change-ifc2x4}
-> IFC4 CHANGE  Attributes _TaskTime_ and _PredefinedType_ added. _IfcMove_ and _IfcOrderRequest_ have been removed in IFC4 and are now represented by _IfcTask_. _IfcRelAssignsTasks_ relationship has been removed as well.
+> IFC4 CHANGE Attributes _TaskTime_ and _PredefinedType_ added. _IfcMove_ and _IfcOrderRequest_ have been removed in IFC4 and are now represented by _IfcTask_. _IfcRelAssignsTasks_ relationship has been removed as well.
 
 { .use-head}
 ### Attribute use definition
@@ -42,17 +42,17 @@ _IfcTask_ can also be used to describe an activity that moves people, groups wit
 ### Status
 Current status of the task.
 
-> NOTE  Particular values for status are not specified, these should be determined and agreed by local usage. Examples of possible status values include 'NOTSTARTED', 'STARTED', 'COMPLETED'.
+> NOTE Particular values for status are not specified, these should be determined and agreed by local usage. Examples of possible status values include 'NOTSTARTED', 'STARTED', 'COMPLETED'.
 
 ### WorkMethod
 The method of work used in carrying out a task.
 
-> NOTE  This attribute should not be used if the work method is specified for the _IfcTaskType_
+> NOTE This attribute should not be used if the work method is specified for the _IfcTaskType_
 
 ### IsMilestone
 Identifies whether a task is a milestone task (= TRUE) or not (= FALSE).
 
-> NOTE  In small project planning applications, a milestone task may be understood to be a task having no duration. As such, it represents a singular point in time.
+> NOTE In small project planning applications, a milestone task may be understood to be a task having no duration. As such, it represents a singular point in time.
 
 ### Priority
 A value that indicates the relative priority of the task (in comparison to the priorities of other tasks).
@@ -110,7 +110,7 @@ IfcReference -> IfcReference2 [headlabel="InnerReference"];
 }
 ```
 
-Figure FIXEDDURATION &mdash; Constraining the task duration
+Figure FIXEDDURATION — Constraining the task duration
 
 Figure STARTCONSTRAINT indicates how to constrain the scheduled start date of the task. Depending on the _ConstraintGrade_ and _Benchmark_ the constraint may indicate different meanings as shown in Table STARTCONSTRAINTTYPES.
 
@@ -121,7 +121,7 @@ HARD | GREATERTHANOREQUALTO | Start no earlier than
 HARD | LESSTHANOREQUALTO | Start no later than
 SOFT | LESSTHAN | Start as soon as possible
 
-Table STARTCONSTRAINTTYPES &mdash; Different constraints that can be applied to a start date
+Table STARTCONSTRAINTTYPES — Different constraints that can be applied to a start date
 
 ```
 digraph dot_neato {
@@ -144,7 +144,7 @@ IfcReference -> IfcReference2 [headlabel="InnerReference"];
 }
 ```
 
-Figure STARTCONSTRAINT &mdash; Constraining the task start date to start as soon as possible
+Figure STARTCONSTRAINT — Constraining the task start date to start as soon as possible
 
 Figure FINISHCONSTRAINT indicates how to constrain the scheduled finish date of the task. Depending on the _ConstraintGrade_ and _Benchmark_ the constraint may indicate different meanings as shown in Table FINISHCONSTRAINTTYPES.
 
@@ -155,7 +155,7 @@ HARD | GREATERTHANOREQUALTO | Finish no earlier than
 HARD | LESSTHANOREQUALTO | Finish no later than
 SOFT | GREATERTHAN | Finish as late as possible
 
-Table FINISHCONSTRAINTTYPES &mdash; Different constraints that can be applied to a start date
+Table FINISHCONSTRAINTTYPES — Different constraints that can be applied to a start date
 
 ```
 digraph dot_neato {
@@ -178,7 +178,7 @@ IfcReference -> IfcReference2 [headlabel="InnerReference"];
 }
 ```
 
-Figure FINISHCONSTRAINT &mdash; Constraining the task finish date to finish as late as possible
+Figure FINISHCONSTRAINT — Constraining the task finish date to finish as late as possible
 
 ### Control Assignment
 
@@ -192,7 +192,7 @@ As shown in Figure 1, the installation of a number of items of equipment within 
 
 ![task example](../../../../figures/ifctask_example.png)
 
-Figure 1 &mdash; Task visualization
+Figure 1 — Task visualization
 
 A task may nest other tasks as sub-items; the nesting relationship is modeled by _IfcRelNests_ as shown in Figure 2. For example, the construction of a stud wall may be designated as a nesting task named 'install wall #1' including other tasks such as 'install dry wall', 'install studs', 'wall taping', and 'erect wall' as sub-processes. A value that indicates the relative tree view position of the task (in comparison to the tree view position of other tasks and the task hierarchy defined by _IfcRelNests_).
 
@@ -200,7 +200,7 @@ The task order information that is used for viewing purposes is derived from the
 
 ![task instantiation diagram](../../../../figures/ifctask_instantiation_diagram.png)
 
-Figure 2 &mdash; Task nesting relationships
+Figure 2 — Task nesting relationships
 
 A top-level task is declared within the _IfcProject_ using the _IfcRelDeclares_ relationship.
 
@@ -208,7 +208,7 @@ A top-level task is declared within the _IfcProject_ using the _IfcRelDeclares_ 
 
 The _IfcTask_ defines the anticipated or actual occurrence of any task; common information about task types is handled by _IfcTaskType_.
 
-> EXAMPLE  It includes fixed duration, fixed unit or fixed work. An _IfcTask_ can be aggregated to a task type in order to specify a task sequence or any time related information, e.g. the duration of a task. Please see the documentation of _IfcTaskType_ for further information.
+> EXAMPLE It includes fixed duration, fixed unit or fixed work. An _IfcTask_ can be aggregated to a task type in order to specify a task sequence or any time related information, e.g. the duration of a task. Please see the documentation of _IfcTaskType_ for further information.
 
 ### Process Assignment
 

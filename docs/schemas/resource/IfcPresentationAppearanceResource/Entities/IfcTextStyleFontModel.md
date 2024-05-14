@@ -1,6 +1,6 @@
 # IfcTextStyleFontModel
 
-{ .extDef}
+{ .extDef}<!-- end of definition -->
 > Definition according to W3C for Cascading Style Sheets:
 > Setting font properties will be among the most common uses of style sheets. Unfortunately, there exists no well-defined and universally accepted taxonomy for classifying fonts, and terms that apply to one font family may not be appropriate for others. For example, 'italic' is commonly used to label slanted text, but slanted text may also be labeled as being _Oblique_, _Slanted_, _Incline_, _Cursive_ or _Kursiv_. Therefore it is not a simple problem to map typical font selection properties to a specific font.
 
@@ -25,16 +25,16 @@ The per-property matching rules from (2) above are as follows:
 
 The inherited _Name_ attribute is used to define the font name, particularly in cases, where no (list of) font families are provided.
 
-> NOTE  Corresponding CSS1 definitions are Font properties ('font-family', 'font-style', 'font-variant',  'font-weight').
+> NOTE Corresponding CSS1 definitions are Font properties ('font-family', 'font-style', 'font-variant', 'font-weight').
 
-> HISTORY  New entity in IFC2x3.
+> HISTORY New entity in IFC2x3.
 
 ## Attributes
 
 ### FontFamily
 The value is a prioritized list of font family names and/or generic family names. The first list entry has the highest priority, if this font fails, the next list item shall be used. The last list item should (if possible) be a generic family.
 { .change-ifc2x4}
-> IFC4 CHANGE  Attribute changed to being mandatory.
+> IFC4 CHANGE Attribute changed to being mandatory.
 
 ### FontStyle
 The font style property selects between normal (sometimes referred to as "roman" or "upright"), italic and oblique faces within a font family.
@@ -42,17 +42,17 @@ The font style property selects between normal (sometimes referred to as "roman"
 ### FontVariant
 The font variant property selects between normal and small-caps.
 
-> NOTE  It has been introduced for later compliance to full CSS1 support.
+> NOTE It has been introduced for later compliance to full CSS1 support.
 
 ### FontWeight
 The font weight property selects the weight of the font.
 
-> NOTE  Values other then 'normal' and 'bold' have been introduced for later compliance to full CSS1 support.
+> NOTE Values other then 'normal' and 'bold' have been introduced for later compliance to full CSS1 support.
 
 ### FontSize
 The font size provides the size or height of the text font.
 
-> NOTE  The following values are allowed, <_IfcLengthMeasure_, with positive values, the length unit is globally defined at _IfcUnitAssignment_.__
+> NOTE The following values are allowed, <_IfcLengthMeasure_, with positive values, the length unit is globally defined at _IfcUnitAssignment_.__
 
 ## Formal Propositions
 

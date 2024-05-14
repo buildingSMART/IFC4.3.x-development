@@ -1,6 +1,6 @@
 # IfcCostValue
 
-_IfcCostValue_ is an amount of money or a value that affects an amount of money.
+_IfcCostValue_ is an amount of money or a value that affects an amount of money.<!-- end of definition -->
 
 Each instance of _IfcCostValue_ may also have a category. There are many possible types of cost value that may be identified. While there is a broad understanding of the meaning of names that may be assigned to different types of costs, there is no general standard for naming cost types nor are there any broadly defined classifications.
 
@@ -38,6 +38,6 @@ The following defines some cost categories that might be applied to the _Categor
 * Waste allowance
 * Whole life
 
-> NOTE  In the absence of any well-defined standard, it is recommended that local agreements should be made to define allowable and understandable cost value types within a project or region.
+> NOTE In the absence of any well-defined standard, it is recommended that local agreements should be made to define allowable and understandable cost value types within a project or region.
 
-> HISTORY  New entity in IFC1.0
+> HISTORY New entity in IFC1.0

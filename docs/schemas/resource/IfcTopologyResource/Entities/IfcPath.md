@@ -1,14 +1,14 @@
 # IfcPath
 
-{ .extDef}
-> NOTE  Definition according to ISO/CD 10303-42:1992
+{ .extDef}<!-- end of definition -->
+> NOTE Definition according to ISO/CD 10303-42:1992
 > A path is a topological entity consisting of an ordered collection of oriented edges, such that the edge start vertex of each edge coincides with the edge end of its predecessor. The path is ordered from the edge start of the first oriented edge to the edge end of the last edge. The BOOLEAN value sense in the oriented edge indicates whether the edge direction agrees with the direction of the path (TRUE) or is the opposite direction (FALSE).
 >
 > An individual edge can only be referenced once by an individual path. An edge can be referenced by multiple paths. An edge can exist independently of a path.
 
-> NOTE  Entity adapted from **path** defined in ISO 10303-42.
+> NOTE Entity adapted from **path** defined in ISO 10303-42.
 
-> HISTORY  New entity in IFC2.0
+> HISTORY New entity in IFC2.0
 
 **Informal Propositions**
 

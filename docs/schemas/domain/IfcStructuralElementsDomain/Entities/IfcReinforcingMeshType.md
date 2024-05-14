@@ -6,10 +6,10 @@ The reinforcing element type **IfcReinforcingMeshType** defines commonly shared 
 * common representations
 * common materials
 * common composition of elements
-
+<!-- end of definition -->
 It is used to define a reinforcing mesh type specification indicating the specific product information that is common to all occurrences of that product type. The **IfcReinforcingMeshType** may be declared within _IfcProject_ or _IfcProjectLibrary_ using _IfcRelDeclares_ and may be exchanged with or without occurrences of the type. Occurrences of **IfcReinforcingMeshType** are represented by instances of _IfcReinforcingMesh_.
 
-> HISTORY  New entity in IFC4.
+> HISTORY New entity in IFC4.
 
 { .use-head}
 Geometry Use Definition
@@ -40,13 +40,13 @@ The effective cross-section area of the longitudinal bars of the mesh.
 The effective cross-section area of the transverse bars of the mesh.
 
 ### LongitudinalBarSpacing
-The spacing between the longitudinal bars.  Note: an even distribution of bars is presumed; other cases are handled by classification or property sets.
+The spacing between the longitudinal bars. Note: an even distribution of bars is presumed; other cases are handled by classification or property sets.
 
 ### TransverseBarSpacing
-The spacing between the transverse bars.  Note: an even distribution of bars is presumed; other cases are handled by classification or property sets.
+The spacing between the transverse bars. Note: an even distribution of bars is presumed; other cases are handled by classification or property sets.
 
 ### BendingShapeCode
-If this mesh type is bent rather than planar, this attribute provides a shape code per a standard like ACI 315, ISO 3766, or a similar standard.  It is presumed that a single standard for defining the mesh bending is used throughout the project and that this standard is referenced from the _IfcProject_ object through the _IfcDocumentReference_ mechanism.
+If this mesh type is bent rather than planar, this attribute provides a shape code per a standard like ACI 315, ISO 3766, or a similar standard. It is presumed that a single standard for defining the mesh bending is used throughout the project and that this standard is referenced from the _IfcProject_ object through the _IfcDocumentReference_ mechanism.
 
 ### BendingParameters
 If this mesh type is bent rather than planar, this attribute provides bending shape parameters. Their meaning is defined by the bending shape code and the respective standard.

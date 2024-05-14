@@ -1,6 +1,6 @@
 # PEnum_SecondaryCurrentType
 
-## Items
+<!-- end of definition -->## Items
 
 ### AC
 Ac

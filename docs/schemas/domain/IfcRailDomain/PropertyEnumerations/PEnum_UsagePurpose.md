@@ -1,6 +1,6 @@
 # PEnum_UsagePurpose
 
-## Items
+<!-- end of definition -->## Items
 
 ### MAINTENANCE
 For the purpose of maintenance.

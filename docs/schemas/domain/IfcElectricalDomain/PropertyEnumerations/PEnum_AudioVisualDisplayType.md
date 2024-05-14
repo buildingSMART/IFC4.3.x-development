@@ -1,6 +1,6 @@
 # PEnum_AudioVisualDisplayType
 
-## Items
+<!-- end of definition -->## Items
 
 ### CRT
 Cathode Ray Tube

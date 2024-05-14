@@ -1,6 +1,6 @@
 # IfcTextFontName
 
-The _IfcTextFontName_ is a list of font family names and/or generic family name.
+The _IfcTextFontName_ is a list of font family names and/or generic family name.<!-- end of definition -->
 
 Values of **<family-name>**: The name of a font family of choice. For example, "gill" and "helvetica" are font families.
 Values of **<generic-family>**: In the example above, the last value is a generic family name. The following generic families are defined: > * 'serif' (Example: Times)
@@ -12,8 +12,8 @@ Values of **<generic-family>**: In the example above, the last value is a generi
 It is encouraged to offer a generic font family as a last alternative.
 
 { .extDef}
-> NOTE  Definition according to Cascading Style Sheets, level 1
+> NOTE Definition according to Cascading Style Sheets, level 1
 
-> NOTE  Type adopted from **font-family** defined in [CSS-1](../content/bibliography.htm#CSS1).
+> NOTE Type adopted from **font-family** defined in [CSS-1](../content/bibliography.htm#CSS1).
 
-> HISTORY  New type in IFC2x2 Add2.
+> HISTORY New type in IFC2x2 Add2.

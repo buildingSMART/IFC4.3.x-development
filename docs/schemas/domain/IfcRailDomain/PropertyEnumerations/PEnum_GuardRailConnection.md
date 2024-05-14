@@ -1,6 +1,6 @@
 # PEnum_GuardRailConnection
 
-## Items
+<!-- end of definition -->## Items
 
 ### FISHPLATE
 

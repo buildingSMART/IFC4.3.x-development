@@ -1,24 +1,24 @@
 # IfcAdvancedBrep
 
-An advanced B-rep is a boundary representation model in which all faces, edges and vertices are explicitly represented. It is a solid with explicit topology and elementary or free-form geometry. The faces of the B-rep are of type _IfcAdvancedFace_. An advanced B-rep has to meet the same topological constraints as the manifold solid B-rep.
+An advanced B-rep is a boundary representation model in which all faces, edges and vertices are explicitly represented. It is a solid with explicit topology and elementary or free-form geometry. The faces of the B-rep are of type _IfcAdvancedFace_. An advanced B-rep has to meet the same topological constraints as the manifold solid B-rep.<!-- end of definition -->
 
-> NOTE  The advanced B-rep has been introduced in order to support the increasing number of applications that can define and exchange B-rep models based on NURBS or other b-spline surfaces.
+> NOTE The advanced B-rep has been introduced in order to support the increasing number of applications that can define and exchange B-rep models based on NURBS or other b-spline surfaces.
 
 ![advanced brep b-spline surface](../../../../figures/ifcadvancedbrep_01.png)
 
-Figure 1 &mdash; Advanced Brep, b-spline surface
+Figure 1 — Advanced Brep, b-spline surface
 
 Figure 1 illustrates use of <em>IfcAdvancedBrep</em> for boundary representation models with b-spline surfaces. The diagram shows the topological and geometric representation items that are used for advanced B-reps, based on <em>IfcAdvancedFace</em>.
 
 ![advanced brep elementary surface](../../../../figures/ifcadvancedbrep_02.png)
 
-Figure 2 &mdash; Advanced Brep, elementary surface
+Figure 2 — Advanced Brep, elementary surface
 
 Figure 2 illustrates use of <em>IfcAdvancedBrep</em> for boundary representation models with elementary surfaces. The diagram shows the topological and geometric representation items that are used for advanced B-reps, based on <em>IfcAdvancedFace</em>. It shows the use of <em>IfcIntersectionCurve</em> to provide the geometric representation of the edge curve both as 3D curve and as u,v pcurve in the parametric space of the adjacent surfaces.
 
-> NOTE  Entity adapted from **advanced_brep_shape_representation** defined in ISO 10303-514.
+> NOTE Entity adapted from **advanced_brep_shape_representation** defined in ISO 10303-514.
 
-> HISTORY  New entity in IFC4
+> HISTORY New entity in IFC4
 
 **Informal Propositions**
 

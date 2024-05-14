@@ -1,16 +1,16 @@
 # IfcAlignmentHorizontalSegmentTypeEnum
 
-The IfcAlignmentHorizontalSegmentTypeEnum indicates the type of a segment of a horizontal alignment segment (IfcAlignmentHorizontalSegment). Horizontal segments can be viewed from a geometric perspective and from a kinematic perspective. In recent times the kinematic perspective gained importance. The enumerations are detailed according to this development especially in modern track design.
+The IfcAlignmentHorizontalSegmentTypeEnum indicates the type of a segment of a horizontal alignment segment (IfcAlignmentHorizontalSegment). Horizontal segments can be viewed from a geometric perspective and from a kinematic perspective. In recent times the kinematic perspective gained importance. The enumerations are detailed according to this development especially in modern track design.<!-- end of definition -->
 
 **Kinematic perspective on horizontal alignment segments**
 
 The central parameter of the kinematic perspective is lateral acceleration of the vehicle induced by change of direction while driving. In the horizontal layout this is the represented by the curvature of the segment. According to the curvature value the following categorization can be made:
 
-| Curvature | Segmenttype        | Enumeration Values |
+| Curvature | Segmenttype    | Enumeration Values |
 |:----|:------------------|:----------|
-| 0 | straight line        | LINE |
-| constant in the complete segment, <> 0 | Circular arc  | CIRCULARARC |
-| variation along the segment | Transition with linear curvature variation | CLOTHOID, CUBIC  |
+| 0 | straight line    | LINE |
+| constant in the complete segment, <> 0 | Circular arc | CIRCULARARC |
+| variation along the segment | Transition with linear curvature variation | CLOTHOID, CUBIC |
 | variation along the segment | Transition with non-linear curvature variation | HELMERTCURVE, BLOSSCURVE, COSINECURVE, SINECURVE, VIENNESEBEND |
 
 
@@ -42,18 +42,18 @@ Check the relevant regulations for the network in question. Alignment designs as
 
 **Used Symbols and their meaning**
 
-| Symbol | meaning  | Unit, value range |
+| Symbol | meaning | Unit, value range |
 |:----|:------------------|:----------|
-| L | full length of segment        | positive length  L > 0 |
-| s | current position on segment        | 0 < s < L |
-| &xi;  |  = s / L  (Greek "xi") standardised, dimensionless path length along the alignment / track centre line        | 0 < &xi; < 1 |
-|  &kappa; | (Greek "kappa") Curvature (inverse radius) of the alignment / track centre line in plan view (horizontal layout).        | 1/radius  |
-| &kappa;<sub>1</sub> | Curvature (inverse radius) at beginning of the alignment / track centre line in plan view (horizontal layout).        | 1/radius  |
-| h | height of the gravity center line used for calculation above the track centreline in the ground plan.  | length |
-| &psi; | (Greek "psi") Angle of cant (cross slope angle, bank angle)        | rad |
-| &phi; | (Greek "phi") Directional angle (azimuth, bearing)  | rad |
-| x(s) | variable longitudinal coordinate of the projection of the alignment / track centreline into the ground plan.  | length |
-| y(s) | variable transverse coordinate of the projection of the alignment / track centreline into the ground plan.  | length |
+| L | full length of segment    | positive length L > 0 |
+| s | current position on segment    | 0 < s < L |
+| ξ | = s / L (Greek "xi") standardised, dimensionless path length along the alignment / track centre line    | 0 < ξ < 1 |
+| κ | (Greek "kappa") Curvature (inverse radius) of the alignment / track centre line in plan view (horizontal layout).    | 1/radius |
+| κ<sub>1</sub> | Curvature (inverse radius) at beginning of the alignment / track centre line in plan view (horizontal layout).    | 1/radius |
+| h | height of the gravity center line used for calculation above the track centreline in the ground plan. | length |
+| ψ | (Greek "psi") Angle of cant (cross slope angle, bank angle)    | rad |
+| φ | (Greek "phi") Directional angle (azimuth, bearing) | rad |
+| x(s) | variable longitudinal coordinate of the projection of the alignment / track centreline into the ground plan. | length |
+| y(s) | variable transverse coordinate of the projection of the alignment / track centreline into the ground plan. | length |
 
 **Terminology**
 
@@ -87,7 +87,7 @@ The kinematic advantages of the clothoid as a smoothing segment are true also fo
 **Base formula (Curvature)**
 
 $$ \displaylines{ \xi = \frac{s}{L} \\\\
-\kappa(s) = \kappa_{1} + \xi  \Delta \kappa }$$
+\kappa(s) = \kappa_{1} + \xi \Delta \kappa }$$
 
 ### CUBIC
 In IFC CUBIC denotes a transition segment where x and y coordinates obey a cubic formula.
@@ -115,14 +115,14 @@ The Helmert curve or Helmert transition is an early example of a high performanc
 
 In the geometry perspective the Helmert segment is the assembly of two parts of same length which mirror the same change in radius of curvature. A rough approximation is known as the biquadratic parabola.
 
->NOTE  also referred to as Schramm curve.
+>NOTE also referred to as Schramm curve.
 
 **Base formula (Curvature)**
 
 $$ \displaylines{
-    \xi = \frac{s}{L} \\\\
-    \text{First half: } \kappa(s) = \kappa_{1} + 2\xi^2  \Delta \kappa \\\\
-    \text{Second half: } \kappa(s) = \kappa_{1} + ( 1 -  2  (1 - \xi)^2)  \Delta \kappa
+  \xi = \frac{s}{L} \\\\
+  \text{First half: } \kappa(s) = \kappa_{1} + 2\xi^2 \Delta \kappa \\\\
+  \text{Second half: } \kappa(s) = \kappa_{1} + ( 1 - 2 (1 - \xi)^2) \Delta \kappa
 } $$
 
 ### BLOSSCURVE
@@ -133,42 +133,42 @@ The Bloss transition is a more recent form of a high performance transition bend
 **Base formula (Curvature)**
 
 $$ \displaylines{
-    \xi = \frac{s}{L} \\\\
-    \kappa(s) = \kappa_{1} + (3 - 2\xi) \   \xi^2 \  \Delta \kappa
+  \xi = \frac{s}{L} \\\\
+  \kappa(s) = \kappa_{1} + (3 - 2\xi) \  \xi^2 \ \Delta \kappa
 } $$
 
 ### COSINECURVE
-Cosine transition. The cosine transition was already discussed in 1868. Width the advent of high-speed rail it was applied  in production designs. It is e.g. installed on Japanese high speed lines
+Cosine transition. The cosine transition was already discussed in 1868. Width the advent of high-speed rail it was applied in production designs. It is e.g. installed on Japanese high speed lines
 
 **Base formula (Curvature)**
 
 $$ \displaylines{
-    \xi = \frac{s}{L} \\\\
-    \kappa(s) = \kappa_{1} + \frac{1}{2}(1- cos(\pi\xi) \  ) \Delta \kappa
+  \xi = \frac{s}{L} \\\\
+  \kappa(s) = \kappa_{1} + \frac{1}{2}(1- cos(\pi\xi) \ ) \Delta \kappa
 } $$
 
 ### SINECURVE
 Sine transition or sinusoidal transition was suggested 1937. The curvature function is built up of one period of a sine function. The sine curve is characterised by particularly advantageous smoothing properties at the end points. Compared to the clothoid, it is twice as long.
 
->NOTE  also referred to as Klein curve.
+>NOTE also referred to as Klein curve.
 
 **Base formula (Curvature)**
 
 $$ \displaylines{
-    \xi = \frac{s}{L} \\\\
-    \kappa(s) = \kappa_{1} + ( \xi - \frac{1}{2\pi}sin(2\pi\xi) \  ) \Delta \kappa
+  \xi = \frac{s}{L} \\\\
+  \kappa(s) = \kappa_{1} + ( \xi - \frac{1}{2\pi}sin(2\pi\xi) \ ) \Delta \kappa
 } $$
 
 ### VIENNESEBEND
 The Viennese Bend (R) is an innovative track geometry transition element. Instead of analyzing the vehicle movement at the track plane the optimization efforts target a gravity center line at a defined height above the rails.
 
-As a consequence the path of the horizontal alignment center line is also influenced by the cant layout. The first part of the curvature formula is assembled from the basic function like the other transition bends. The additional term contains the bank angle "&psi;" and the gravity center line height "h" and is unique to the Viennes Bend (R). This term causes a small movement contrary to the main direction in the x,y layout.
+As a consequence the path of the horizontal alignment center line is also influenced by the cant layout. The first part of the curvature formula is assembled from the basic function like the other transition bends. The additional term contains the bank angle "ψ" and the gravity center line height "h" and is unique to the Viennes Bend (R). This term causes a small movement contrary to the main direction in the x,y layout.
 
 **Curvature formula**
 
 $$ \displaylines{
-    \xi = \frac{s}{L} \\\\
-    \psi(s) = \psi_1 + \Delta\psi \cdot \xi^4 \cdot (35-84\xi + 70\xi^2-20\xi^3) \\\\
-    \kappa(s) = \kappa_{1} +  ( \Delta \kappa  \cdot \xi^2  \cdot (35-84\xi + 70\xi^2-20\xi^3) \\\\
-    \hspace{3em}   -420  \cdot \frac{h \Delta\psi}{L^2}  \cdot (1 - 4\xi + 5\xi^2 - 2\xi^3)) \cdot \xi^2
+  \xi = \frac{s}{L} \\\\
+  \psi(s) = \psi_1 + \Delta\psi \cdot \xi^4 \cdot (35-84\xi + 70\xi^2-20\xi^3) \\\\
+  \kappa(s) = \kappa_{1} + ( \Delta \kappa \cdot \xi^2 \cdot (35-84\xi + 70\xi^2-20\xi^3) \\\\
+  \hspace{3em}  -420 \cdot \frac{h \Delta\psi}{L^2} \cdot (1 - 4\xi + 5\xi^2 - 2\xi^3)) \cdot \xi^2
 } $$

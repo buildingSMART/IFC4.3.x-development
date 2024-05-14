@@ -1,8 +1,8 @@
 # IfcCrewResourceTypeEnum
 
-This enumeration is used to identify the primary purpose of a crew resource.
+This enumeration is used to identify the primary purpose of a crew resource.<!-- end of definition -->
 
-> HISTORY  New enumeration in IFC4.
+> HISTORY New enumeration in IFC4.
 
 ## Items
 

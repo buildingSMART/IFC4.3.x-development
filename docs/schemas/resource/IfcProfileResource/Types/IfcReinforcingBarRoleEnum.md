@@ -1,11 +1,11 @@
 # IfcReinforcingBarRoleEnum
 
-Enumeration defining standard types for the role, purpose or usage of the bar, i.e. the kind of loads and stresses they are intended to carry.
+Enumeration defining standard types for the role, purpose or usage of the bar, i.e. the kind of loads and stresses they are intended to carry.<!-- end of definition -->
 
-> HISTORY  New type in IFC2x2.
+> HISTORY New type in IFC2x2.
 
 { .change-ifc2x4}
-> IFC4 CHANGE  Item ANCHORING added.
+> IFC4 CHANGE Item ANCHORING added.
 
 ## Items
 

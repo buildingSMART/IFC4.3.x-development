@@ -1,8 +1,8 @@
 # IfcBoilerTypeEnum
 
-Enumeration defining the typical types of boilers.
+Enumeration defining the typical types of boilers.<!-- end of definition -->
 
-> HISTORY  New enumeration in IFC2x.
+> HISTORY New enumeration in IFC2x.
 
 ## Items
 

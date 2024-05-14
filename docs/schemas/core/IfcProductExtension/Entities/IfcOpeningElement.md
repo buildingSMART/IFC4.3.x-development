@@ -1,13 +1,13 @@
 # IfcOpeningElement
 
-The opening element stands for opening, recess or chase, all reflecting voids. It represents a void within any element that has physical manifestation. Openings can be inserted into walls, slabs, beams, columns, or other elements.
+The opening element stands for opening, recess or chase, all reflecting voids. It represents a void within any element that has physical manifestation. Openings can be inserted into walls, slabs, beams, columns, or other elements.<!-- end of definition -->
 
 There are two different types of opening elements. The attribute _PredefinedType_ should be used to capture the differences:
 
-* an opening, where the thickness of the opening is greater or equal to the thickness of the element &mdash;
-  the attribute _PredefinedType_ is set to _OPENING_
-* a recess or niche, where the thickness of the recess is smaller than the thickness of the element  &mdash;
-  the attribute _PredefinedType_ is set to _RECESS_ for a recess or niche.
+* an opening, where the thickness of the opening is greater or equal to the thickness of the element —
+ the attribute _PredefinedType_ is set to _OPENING_
+* a recess or niche, where the thickness of the recess is smaller than the thickness of the element —
+ the attribute _PredefinedType_ is set to _RECESS_ for a recess or niche.
 
 If the value for _PredefinedType_ is omitted, or the value is set to _NOTDEFINED_, no specific information of whether it is an opening or recess shall be assumed.
 
@@ -20,15 +20,15 @@ The _IfcOpeningElement_ shall not participate in the containment relationship, i
 
 > REFERENCE Definition according to ISO 6707-1: void in a building element
 
-> NOTE  The entity _IfcOpeningStandardCase_ has been deleted. Use an _IfcOpeningElement_ with a single extrusion body perpendicular to the wall or slab instead.
+> NOTE The entity _IfcOpeningStandardCase_ has been deleted. Use an _IfcOpeningElement_ with a single extrusion body perpendicular to the wall or slab instead.
 
-> NOTE  See _IfcRelVoidsElement_ for a diagram on how to apply spatial containment and the voiding relationship.
+> NOTE See _IfcRelVoidsElement_ for a diagram on how to apply spatial containment and the voiding relationship.
 
-> IFC2x CHANGE  The intermediate ABSTRACT supertypes _IfcFeatureElement_ and _IfcFeatureElementSubtraction_ have been added.
+> IFC2x CHANGE The intermediate ABSTRACT supertypes _IfcFeatureElement_ and _IfcFeatureElementSubtraction_ have been added.
 
-> IFC4 CHANGE  The attribute _PredefinedType_ has been added at the end of the attribute list.
+> IFC4 CHANGE The attribute _PredefinedType_ has been added at the end of the attribute list.
 
-> HISTORY  New entity in IFC1.0
+> HISTORY New entity in IFC1.0
 
 ## Attributes
 
@@ -74,13 +74,13 @@ There are two main extrusion directions: perpendicular and parallel.
 
 For a perpendicular swept solid, _IfcExtrudedAreaSolid.ExtrudedDirection_ shall extrude the profile perpendicular to the element it is voiding. This may be horizontal for wall openings, or vertical for floor openings.
 
-![standard opening](../../../../figures/ifcopeningelement_horizontal-layout1.png "Figure FULLEXTRUSION &mdash; Opening with full extrusion")
+![standard opening](../../../../figures/ifcopeningelement_horizontal-layout1.png "Figure FULLEXTRUSION — Opening with full extrusion")
 
-![recess](../../../../figures/ifcopeningelement_recess-layout1.png "Figure RECESS &mdash; Opening with recess extrusion")
+![recess](../../../../figures/ifcopeningelement_recess-layout1.png "Figure RECESS — Opening with recess extrusion")
 
-> NOTE  The local placement directions for the _IfcOpeningElement_ in Figure FULLEXTRUSION and Figure RECESS are only given as an example; other directions are valid as well.
+> NOTE The local placement directions for the _IfcOpeningElement_ in Figure FULLEXTRUSION and Figure RECESS are only given as an example; other directions are valid as well.
 
-> NOTE  Rectangles are now defined centrally, so the placement location has to be set to _IfcCartesianPoint_(XDim/2,YDim/2)
+> NOTE Rectangles are now defined centrally, so the placement location has to be set to _IfcCartesianPoint_(XDim/2,YDim/2)
 
 **Parallel Swept Solid Representation Type**
 
@@ -90,9 +90,9 @@ Parallel extrusions shall be used when an opening or recess has a non rectangula
 
 Figure VERTEXTRUDE shows a vertical extrusion with multiple extrusion bodies for the opening. Each extrusion body has a different extrusion length.
 
-![vertical extrusion](../../../../figures/ifcopeningelement_vertical-layout1.png "Figure VERTEXTRUDE &mdash; Opening with multiple extrusions")
+![vertical extrusion](../../../../figures/ifcopeningelement_vertical-layout1.png "Figure VERTEXTRUDE — Opening with multiple extrusions")
 
-> NOTE  The local placement directions for the _IfcOpeningElement_ in Figure VERTEXTRUDE are only given as an example, other directions are valid as well.
+> NOTE The local placement directions for the _IfcOpeningElement_ in Figure VERTEXTRUDE are only given as an example, other directions are valid as well.
 
 ### Product Local Placement
 

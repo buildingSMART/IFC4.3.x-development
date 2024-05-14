@@ -6,10 +6,10 @@ The reinforcing element type **IfcTendonAnchorType** defines commonly shared inf
 * common representations
 * common materials
 * common composition of elements
-
+<!-- end of definition -->
 It is used to define a tendon anchor type specification indicating the specific product information that is common to all occurrences of that product type. The **IfcTendonAnchorType** may be declared within _IfcProject_ or _IfcProjectLibrary_ using _IfcRelDeclares_ and may be exchanged with or without occurrences of the type. Occurrences of **IfcTendonAnchorType** are represented by instances of _IfcTendonAnchor_.
 
-> HISTORY  New entity in IFC4.
+> HISTORY New entity in IFC4.
 
 { .use-head}
 Material Use Definition

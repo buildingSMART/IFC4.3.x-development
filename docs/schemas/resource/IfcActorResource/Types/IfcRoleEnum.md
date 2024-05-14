@@ -1,11 +1,11 @@
 # IfcRoleEnum
 
-This enumeration defines roles which may be played by an actor.
+This enumeration defines roles which may be played by an actor.<!-- end of definition -->
 
-> HISTORY  New type in IFC1.5.
+> HISTORY New type in IFC1.5.
 
 { .change-ifc2x4}
-> IFC4 CHANGE  Spelling of COMMISSIONINGENGINEER corrected.
+> IFC4 CHANGE Spelling of COMMISSIONINGENGINEER corrected.
 
 ## Items
 

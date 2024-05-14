@@ -1,6 +1,6 @@
 # IfcDoorPanelProperties
 
-A door panel is normally a door leaf that opens to allow people or goods to pass. The parameters of the door panel define the geometrically relevant parameter of the panel,
+A door panel is normally a door leaf that opens to allow people or goods to pass. The parameters of the door panel define the geometrically relevant parameter of the panel,<!-- end of definition -->
 
 The _IfcDoorPanelProperties_ are used to parametrically describe the shape and operation of door panels. The parametric definition can be added solely or additionally to the explicit shape representation of the door.
 
@@ -17,10 +17,10 @@ The parameters of the _IfcDoorPanelProperties_ define a standard door panel, inc
 
 Table 1 - How attributes affect the door shape
 
-> HISTORY  New entity in IFC2.0.
+> HISTORY New entity in IFC2.0.
 
 { .change-ifc2x4}
-> IFC4 CHANGE  Supertype changed to new _IfcPreDefinedPropertySet_.
+> IFC4 CHANGE Supertype changed to new _IfcPreDefinedPropertySet_.
 
 > IFC4.3.2.0 DEPRECATION This entity, and most other subtypes of IfcPredefinedPropertySet, are now deprecated. Use Pset_DoorPanelProperties instead.
 
@@ -41,7 +41,7 @@ Position of this panel within the door. The _PanelPosition_ of the door panel ha
 ### ShapeAspectStyle
 Pointer to the shape aspect, if given. The shape aspect reflects the part of the door shape, which represents the door panel.
 { .deprecated}
-> DEPRECATION  The attribute is deprecated and shall no longer be used, i.e. the value shall be NIL ($).
+> DEPRECATION The attribute is deprecated and shall no longer be used, i.e. the value shall be NIL ($).
 
 ## Formal Propositions
 

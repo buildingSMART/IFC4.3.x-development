@@ -19,7 +19,7 @@ and shall not have:
 
 * aggregated components, that is, parts aggregated to a wall by _IfcRelAggregates_
 * shape representation for 'Body' not being an extrusion, or clipped extrusion
-
+<!-- end of definition -->
 The following parameter have to be provided:
 
 * Wall height, taken from the depth of extrusion, provided by the geometric representation.
@@ -32,7 +32,7 @@ The material of the wall is defined by the _IfcMaterialLayerSetUsage_ and is att
 
 An 'Axis' and a 'Body' shape representation has to be provided, and it is invalid to exchange a 'Tessellation', 'SurfaceModel', 'Brep' or 'MappedRepresentation' representation for the 'Body' shape representation of the _IfcWallStandardCase_.
 
-> HISTORY  New entity in IFC2x.
+> HISTORY New entity in IFC2x.
 
 ## Formal Propositions
 

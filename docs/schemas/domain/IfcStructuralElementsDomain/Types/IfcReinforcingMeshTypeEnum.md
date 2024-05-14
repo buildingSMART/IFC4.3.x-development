@@ -1,8 +1,8 @@
 # IfcReinforcingMeshTypeEnum
 
-Enumeration defining the reinforcing mesh type.
+Enumeration defining the reinforcing mesh type.<!-- end of definition -->
 
-> HISTORY  New type in IFC4
+> HISTORY New type in IFC4
 
 ## Items
 

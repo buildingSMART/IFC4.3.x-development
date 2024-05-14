@@ -1,3 +1,3 @@
 # Pset_BoundedCourseCommon
 
-Properties for a bounded course.
+Properties for a bounded course.<!-- end of definition -->

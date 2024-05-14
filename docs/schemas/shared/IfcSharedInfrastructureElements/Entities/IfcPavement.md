@@ -1,13 +1,13 @@
 # IfcPavement
 
-Type of built element in a road or other paved area to provide an even surface sustaining loads from vehicles or pedestrians, usually comprising several courses.
+Type of built element in a road or other paved area to provide an even surface sustaining loads from vehicles or pedestrians, usually comprising several courses.<!-- end of definition -->
 NOTE Definition from ISO 6707-1: road, runway, or similar construction above the subgrade.
 
 ## Attributes
 
 ### PredefinedType
 Identifies the predefined type of a pavement element. This type may associate additional specific property sets.
-NOTE  The PredefinedType shall only be used, if no IfcPavementType is assigned, providing its own IfcCourseType.PredefinedType.
+NOTE The PredefinedType shall only be used, if no IfcPavementType is assigned, providing its own IfcCourseType.PredefinedType.
 
 ## Formal Propositions
 

@@ -1,6 +1,6 @@
 # IfcTendonConduitTypeEnum
 
-Enumerations of Tendon Conduit Types.
+Enumerations of Tendon Conduit Types.<!-- end of definition -->
 
 ## Items
 
@@ -11,7 +11,7 @@ A Sleeve or duct is related to the thickness of the conduit depending on the con
 A part to connect the conduits located in two different deck segments and related to the same tendon.
 
 ### GROUTING_DUCT
-An additional small conduit connected to the main conduit to allow grouting in case of bonded post-tensioning, such as  Grout inlet, Grout outlet and Grout vent.
+An additional small conduit connected to the main conduit to allow grouting in case of bonded post-tensioning, such as Grout inlet, Grout outlet and Grout vent.
 
 ### TRUMPET
 A specific part of conduit which has to be widened when reaching the tendon anchor because the strands are connected individually on the anchor.

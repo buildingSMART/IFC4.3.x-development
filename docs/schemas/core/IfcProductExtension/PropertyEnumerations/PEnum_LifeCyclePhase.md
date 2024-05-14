@@ -1,6 +1,6 @@
 # PEnum_LifeCyclePhase
 
-<!-- end of definition -->## Items
+## Items
 
 ### ACQUISITION
 Acquisition

@@ -1,3 +1,3 @@
 # Pset_FilterPHistory
 
-Filter performance history attributes.<!-- end of definition -->
+Filter performance history attributes.

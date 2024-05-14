@@ -1,6 +1,6 @@
 # PEnum_ComplementaryWorks
 
-Enumeration of the complementary function possible for the drain channel.<!-- end of definition -->
+Enumeration of the complementary function possible for the drain channel.
 
 ## Items
 

@@ -1,6 +1,6 @@
 # IfcElementCompositionEnum
 
-This enumeration indicates the composition of a spatial structure element or proxy.<!-- end of definition -->
+This enumeration indicates the composition of a spatial structure element or proxy.
 
 > HISTORY  New enumeration in IFC2x
 

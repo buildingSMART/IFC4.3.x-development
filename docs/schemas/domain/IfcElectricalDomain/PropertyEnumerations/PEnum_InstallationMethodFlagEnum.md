@@ -1,6 +1,6 @@
 # PEnum_InstallationMethodFlagEnum
 
-<!-- end of definition -->## Items
+## Items
 
 ### INDUCT
 In Duct

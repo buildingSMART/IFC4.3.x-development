@@ -1,6 +1,6 @@
 # PEnum_PipeEndStyleTreatment
 
-<!-- end of definition -->## Items
+## Items
 
 ### BRAZED
 Brazed

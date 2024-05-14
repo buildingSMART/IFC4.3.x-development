@@ -1,6 +1,6 @@
 # PEnum_MaintenanceType
 
-<!-- end of definition -->## Items
+## Items
 
 ### CONDITIONBASED
 Condition Based

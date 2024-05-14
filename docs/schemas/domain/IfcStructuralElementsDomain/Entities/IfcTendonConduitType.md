@@ -1,6 +1,6 @@
 # IfcTendonConduitType
 
-Type of Tendon Conduit.<!-- end of definition -->
+Type of Tendon Conduit.
 
 ## Attributes
 

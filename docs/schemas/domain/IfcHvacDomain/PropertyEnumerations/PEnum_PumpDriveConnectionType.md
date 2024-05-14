@@ -1,6 +1,6 @@
 # PEnum_PumpDriveConnectionType
 
-<!-- end of definition -->## Items
+## Items
 
 ### DIRECTDRIVE
 Direct drive

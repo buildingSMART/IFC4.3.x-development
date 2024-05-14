@@ -1,3 +1,3 @@
 # Pset_ValveTypeFaucet
 
-A small diameter valve, with a free outlet, from which water is drawn.<!-- end of definition -->
+A small diameter valve, with a free outlet, from which water is drawn.

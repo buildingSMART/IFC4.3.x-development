@@ -1,6 +1,6 @@
 # PEnum_CoilFluidArrangement
 
-<!-- end of definition -->## Items
+## Items
 
 ### CROSSFLOW
 Cross Flow

@@ -1,3 +1,3 @@
 # Pset_LightFixtureTypeSecurityLighting
 
-Properties that characterize security lighting.<!-- end of definition -->
+Properties that characterize security lighting.

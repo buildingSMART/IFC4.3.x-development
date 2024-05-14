@@ -1,6 +1,6 @@
 # PEnum_AudioVisualAmplifierType
 
-<!-- end of definition -->## Items
+## Items
 
 ### FIXED
 Fixed

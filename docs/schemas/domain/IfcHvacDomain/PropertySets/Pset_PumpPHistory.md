@@ -1,6 +1,6 @@
 # Pset_PumpPHistory
 
-Pump performance history attributes.<!-- end of definition -->
+Pump performance history attributes.
 
 
 ## Comments

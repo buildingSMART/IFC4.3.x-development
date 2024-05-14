@@ -11,18 +11,18 @@ The box alignment specifies the alignment of the text box relative to its positi
 * bottom-left
 * bottom-middle
 * bottom-right
-<!-- end of definition -->
+
 > NOTE  The top-left is the default value.
 
 Figure 1 illustrates alignment values. Figure 2 illustrates use of alignment values together with the placement and planar extent.
 
 ![9 alignment values](../../../../figures/ifcboxalignment_fig1.gif)
 
-Figure 1 — Box alignment values
+Figure 1 &mdash; Box alignment values
 
 ![use with planar extent](../../../../figures/ifcboxalignment_fig2.gif)
 
-Figure 2 — Box alignment examples
+Figure 2 &mdash; Box alignment examples
 
 > HISTORY  New type in IFC2x2 Addendum2.
 

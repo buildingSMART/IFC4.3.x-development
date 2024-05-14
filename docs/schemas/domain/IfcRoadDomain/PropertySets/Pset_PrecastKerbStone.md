@@ -1,3 +1,3 @@
 # Pset_PrecastKerbStone
 
-Properties for precast kerb stone.<!-- end of definition -->
+Properties for precast kerb stone.

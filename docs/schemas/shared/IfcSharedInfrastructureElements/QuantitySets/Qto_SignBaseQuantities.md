@@ -1,3 +1,3 @@
 # Qto_SignBaseQuantities
 
-Base quantities for Signs.<!-- end of definition -->
+Base quantities for Signs.

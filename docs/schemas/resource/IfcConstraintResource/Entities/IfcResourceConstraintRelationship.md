@@ -1,6 +1,6 @@
 # IfcResourceConstraintRelationship
 
-An _IfcResourceConstraintRelationship_ is a relationship entity that enables a constraint to be related to one or more resource level objects.<!-- end of definition -->
+An _IfcResourceConstraintRelationship_ is a relationship entity that enables a constraint to be related to one or more resource level objects.
 
 An _IfcResourceConstraintRelationship_ allows for the specification of a constraint to be applied to many entity types. An important case is to apply constraints to properties. The constraints applied therefore enable a property to carry values identifying requirements as well as those identifying the fulfillment of those requirements.
 

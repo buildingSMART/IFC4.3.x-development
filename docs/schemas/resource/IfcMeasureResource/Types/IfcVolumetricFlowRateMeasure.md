@@ -1,6 +1,6 @@
 # IfcVolumetricFlowRateMeasure
 
-_IfcVolumetricFlowRateMeasure_ is a measure of the volume of a medium flowing per unit time.<!-- end of definition -->
+_IfcVolumetricFlowRateMeasure_ is a measure of the volume of a medium flowing per unit time.
 
 Usually measured in m3/s.
 

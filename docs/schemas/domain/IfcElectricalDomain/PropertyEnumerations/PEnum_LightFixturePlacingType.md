@@ -1,6 +1,6 @@
 # PEnum_LightFixturePlacingType
 
-<!-- end of definition -->## Items
+## Items
 
 ### CEILING
 Ceiling

@@ -1,6 +1,6 @@
 # IfcRepresentation
 
-The _IfcRepresentation_ defines the general concept of representing product properties and in particular the product shape.<!-- end of definition -->
+The _IfcRepresentation_ defines the general concept of representing product properties and in particular the product shape.
 
 { .extDef}
 > NOTE  Definition from ISO 10303-43:

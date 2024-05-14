@@ -1,20 +1,20 @@
 # IfcAlignmentCantSegmentTypeEnum
 
-The IfcAlignmentCantSegmentTypeEnum indicates the type of a segment of a cant alignment segment (IfcAlignmentCantSegment).<!-- end of definition -->
+The IfcAlignmentCantSegmentTypeEnum indicates the type of a segment of a cant alignment segment (IfcAlignmentCantSegment).
 
 Cant is defined as the amount by which one running rail is raised above the other running rail, in a track cross section.
 >NOTE Definition according to EN 13803/2017
 
 For 3D modeling both the cant value and the cant angle (bank angle, lateral angle, cross slope angle) are relevant.
 
-The relation between cant value **D**, Railhead distance **b** and cant angle **ψ** is shown below.
+The relation between cant value **D**, Railhead distance **b** and cant angle **&psi;** is shown below.
 
 $$ \displaylines {
 \psi = \arcsin \frac{D}{b}  \\\\
 \sin \psi \approx \psi \approx  \tan \psi
 } $$
 
->NOTE in contemporary track engineering ψ is approximated by sinus of ψ or tangens of ψ very often.
+>NOTE in contemporary track engineering &psi; is approximated by sinus of &psi; or tangens of &psi; very often.
 
 
 
@@ -40,13 +40,13 @@ Whether the cant variation is defined by the same base formula as the curvature 
 |:----|:------------------|:----------|
 | L | full length of segment        | positive length  L > 0 |
 | s | current position on segment        | 0 < s < L |
-| ξ  |  = s / L  (Greek "xi") standardised, dimensionless path length along the alignment / track centre line        | 0 < ξ < 1 |
+| &xi;  |  = s / L  (Greek "xi") standardised, dimensionless path length along the alignment / track centre line        | 0 < &xi; < 1 |
 |  D |  cant .... amount by which one running rail is raised above the other running rail, in a track cross section         | length  |
 | D<sub>1</sub> | cant at beginning of the alignment segment        | length  |
 | D(s) | variable cant at station "s" along the alignment cant segment.  | length |
 |  b |  Railhead distance;  distance between the nominal centre points of the two contact patches of a wheelset (e.g. about 1500 mm for nominal track gauge 1435 mm)        | length  |
-| ψ | (Greek "psi") Angle of cant (cross slope angle, bank angle)        | rad |
-| φ | (Greek "phi") Directional angle (azimuth, bearing)  | rad |
+| &psi; | (Greek "psi") Angle of cant (cross slope angle, bank angle)        | rad |
+| &phi; | (Greek "phi") Directional angle (azimuth, bearing)  | rad |
 
 >NOTE Symbols according to EN 13803/2017
 

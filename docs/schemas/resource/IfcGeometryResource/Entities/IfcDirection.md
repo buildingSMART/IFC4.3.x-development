@@ -1,6 +1,6 @@
 # IfcDirection
 
-The _IfcDirection_ provides a direction in two or three dimensional space depending on the number of _DirectionRatio_'s provided. The _IfcDirection_ does not imply a vector length, and the direction ratios does not have to be normalized.<!-- end of definition -->
+The _IfcDirection_ provides a direction in two or three dimensional space depending on the number of _DirectionRatio_'s provided. The _IfcDirection_ does not imply a vector length, and the direction ratios does not have to be normalized.
 
 { .extDef}
 > NOTE  Definition according to ISO/CD 10303-42:1992

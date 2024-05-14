@@ -1,6 +1,6 @@
 # IfcBuildingElementProxyTypeEnum
 
-This enumeration defines the available generic types for _IfcBuildingElementProxy_ or _IfcBuildingElementProxyType_.<!-- end of definition -->
+This enumeration defines the available generic types for _IfcBuildingElementProxy_ or _IfcBuildingElementProxyType_.
 
 > HISTORY  New enumeration IFC2x3
 

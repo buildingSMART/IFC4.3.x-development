@@ -1,6 +1,6 @@
 # PEnum_ExpansionDirection
 
-Enumeration of the different expansion directions used in railway track.<!-- end of definition -->
+Enumeration of the different expansion directions used in railway track.
 
 ## Items
 

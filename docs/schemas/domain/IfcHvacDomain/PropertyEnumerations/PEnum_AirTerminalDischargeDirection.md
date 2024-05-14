@@ -1,6 +1,6 @@
 # PEnum_AirTerminalDischargeDirection
 
-<!-- end of definition -->## Items
+## Items
 
 ### PARALLEL
 Parallel

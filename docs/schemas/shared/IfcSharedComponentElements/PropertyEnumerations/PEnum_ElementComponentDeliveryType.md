@@ -1,6 +1,6 @@
 # PEnum_ElementComponentDeliveryType
 
-<!-- end of definition -->## Items
+## Items
 
 ### CAST_IN_PLACE
 Cast In Place

@@ -1,6 +1,6 @@
 # IfcTask
 
-An _IfcTask_ is an identifiable unit of work to be carried out in a construction project.<!-- end of definition -->
+An _IfcTask_ is an identifiable unit of work to be carried out in a construction project.
 
 A task is typically used to describe an activity for the construction or installation of products, but is not limited to these types. For example it might be used to describe design processes, move operations and other design, construction and operation related activities as well.
 
@@ -110,7 +110,7 @@ IfcReference -> IfcReference2 [headlabel="InnerReference"];
 }
 ```
 
-Figure FIXEDDURATION — Constraining the task duration
+Figure FIXEDDURATION &mdash; Constraining the task duration
 
 Figure STARTCONSTRAINT indicates how to constrain the scheduled start date of the task. Depending on the _ConstraintGrade_ and _Benchmark_ the constraint may indicate different meanings as shown in Table STARTCONSTRAINTTYPES.
 
@@ -121,7 +121,7 @@ HARD | GREATERTHANOREQUALTO | Start no earlier than
 HARD | LESSTHANOREQUALTO | Start no later than
 SOFT | LESSTHAN | Start as soon as possible
 
-Table STARTCONSTRAINTTYPES — Different constraints that can be applied to a start date
+Table STARTCONSTRAINTTYPES &mdash; Different constraints that can be applied to a start date
 
 ```
 digraph dot_neato {
@@ -144,7 +144,7 @@ IfcReference -> IfcReference2 [headlabel="InnerReference"];
 }
 ```
 
-Figure STARTCONSTRAINT — Constraining the task start date to start as soon as possible
+Figure STARTCONSTRAINT &mdash; Constraining the task start date to start as soon as possible
 
 Figure FINISHCONSTRAINT indicates how to constrain the scheduled finish date of the task. Depending on the _ConstraintGrade_ and _Benchmark_ the constraint may indicate different meanings as shown in Table FINISHCONSTRAINTTYPES.
 
@@ -155,7 +155,7 @@ HARD | GREATERTHANOREQUALTO | Finish no earlier than
 HARD | LESSTHANOREQUALTO | Finish no later than
 SOFT | GREATERTHAN | Finish as late as possible
 
-Table FINISHCONSTRAINTTYPES — Different constraints that can be applied to a start date
+Table FINISHCONSTRAINTTYPES &mdash; Different constraints that can be applied to a start date
 
 ```
 digraph dot_neato {
@@ -178,7 +178,7 @@ IfcReference -> IfcReference2 [headlabel="InnerReference"];
 }
 ```
 
-Figure FINISHCONSTRAINT — Constraining the task finish date to finish as late as possible
+Figure FINISHCONSTRAINT &mdash; Constraining the task finish date to finish as late as possible
 
 ### Control Assignment
 
@@ -192,7 +192,7 @@ As shown in Figure 1, the installation of a number of items of equipment within 
 
 ![task example](../../../../figures/ifctask_example.png)
 
-Figure 1 — Task visualization
+Figure 1 &mdash; Task visualization
 
 A task may nest other tasks as sub-items; the nesting relationship is modeled by _IfcRelNests_ as shown in Figure 2. For example, the construction of a stud wall may be designated as a nesting task named 'install wall #1' including other tasks such as 'install dry wall', 'install studs', 'wall taping', and 'erect wall' as sub-processes. A value that indicates the relative tree view position of the task (in comparison to the tree view position of other tasks and the task hierarchy defined by _IfcRelNests_).
 
@@ -200,7 +200,7 @@ The task order information that is used for viewing purposes is derived from the
 
 ![task instantiation diagram](../../../../figures/ifctask_instantiation_diagram.png)
 
-Figure 2 — Task nesting relationships
+Figure 2 &mdash; Task nesting relationships
 
 A top-level task is declared within the _IfcProject_ using the _IfcRelDeclares_ relationship.
 

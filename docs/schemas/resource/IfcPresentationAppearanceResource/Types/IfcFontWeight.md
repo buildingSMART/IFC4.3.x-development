@@ -5,7 +5,7 @@ The _IfcFontWeight_ type defines the weight of the font. Values are:
 * normal
 * bold
 * 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900
-<!-- end of definition -->
+
 { .extDef}
 > NOTE  Definition according to Cascading Style Sheets, level 1
 > The values '100' to '900' form an ordered sequence, where each number indicates a weight that is at least as dark as its predecessor. The keyword 'normal' is synonymous with '400', and 'bold' is synonymous with '700'. Keywords other than 'normal' and 'bold' have been shown to be often confused with font names and a numerical scale was therefore chosen for the 9-value list.

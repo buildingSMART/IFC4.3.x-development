@@ -1,6 +1,6 @@
 # PEnum_BackupSupplySystemType
 
-<!-- end of definition -->## Items
+## Items
 
 ### LOCALBATTERY
 Local Battery

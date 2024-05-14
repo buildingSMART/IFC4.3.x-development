@@ -1,6 +1,6 @@
 # PEnum_AirHandlerConstruction
 
-<!-- end of definition -->## Items
+## Items
 
 ### MANUFACTUREDITEM
 Manufactured Item

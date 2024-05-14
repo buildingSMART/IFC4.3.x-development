@@ -1,6 +1,6 @@
 # IfcTextureCoordinateGenerator
 
-The _IfcTextureCoordinateGenerator_ describes a procedurally defined mapping function with input parameter to map 2D texture coordinates to 3D geometry vertices.<!-- end of definition -->
+The _IfcTextureCoordinateGenerator_ describes a procedurally defined mapping function with input parameter to map 2D texture coordinates to 3D geometry vertices.
 
 The TextureCoordinateGenerator supports the automatic generation of texture coordinates for geometric shapes.
 
@@ -22,6 +22,6 @@ The _Mode_ attribute describes the algorithm used to compute texture coordinates
 ### Parameter
 The parameters used as arguments by the function as specified by _Mode_.
 { .change-ifc2x4}
-> IFC4 CHANGE : Data type restricted to REAL.
+> IFC4 CHANGE&nbsp: Data type restricted to REAL.
 
 > IFC4.3.0.0 DEPRECATION This attribute is deprecated and shall no longer be used.

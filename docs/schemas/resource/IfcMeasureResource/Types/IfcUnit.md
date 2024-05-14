@@ -1,6 +1,6 @@
 # IfcUnit
 
-{ .extDef}<!-- end of definition -->
+{ .extDef}
 > NOTE  Definition according to ISO/CD 10303-41:1992
 > A unit is a physical quantity, with a value of one, which is used as a standard in terms of which other quantities are expressed.
 

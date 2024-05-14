@@ -1,6 +1,6 @@
 # IfcGetBasisSurface
 
-{ .extDef}<!-- end of definition -->
+{ .extDef}
 > NOTE  Definition according to ISO/CD 10303-42:1992
 > This function returns the basis surface for a curve as a a set of surfaces. For a curve which is not a curve on surface an empty set is returned.
 

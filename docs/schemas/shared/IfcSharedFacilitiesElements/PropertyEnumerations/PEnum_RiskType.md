@@ -1,6 +1,6 @@
 # PEnum_RiskType
 
-<!-- end of definition -->## Items
+## Items
 
 ### BUSINESS
 Business

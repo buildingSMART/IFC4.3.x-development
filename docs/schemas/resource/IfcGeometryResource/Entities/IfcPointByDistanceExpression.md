@@ -5,7 +5,7 @@ An _IfcPointByDistanceExpression_ describes a point relative to a basis curve ac
 * lateral to the basis curve
 * offset vertical to the basis curve
 * optional additional offset parallel to the basis curve that may be used to address locations otherwise unreachable where the basis curve is tangentially discontinuous.
-<!-- end of definition -->
+
 ## Attributes
 
 ### DistanceAlong

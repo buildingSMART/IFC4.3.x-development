@@ -1,6 +1,6 @@
 # PEnum_FlushType
 
-<!-- end of definition -->## Items
+## Items
 
 ### LEVER
 Lever

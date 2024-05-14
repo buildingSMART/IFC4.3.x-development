@@ -1,6 +1,6 @@
 # PEnum_AirTerminalShape
 
-<!-- end of definition -->## Items
+## Items
 
 ### ROUND
 Round

@@ -1,10 +1,10 @@
 # IfcTrimmedCurve
 
-An _IfcTrimmedCurve_ is a bounded curve that is trimmed at both ends. The trimming points may be provided by a Cartesian point or by a parameter value, based on the parameterization of the _BasisCurve_. The _SenseAgreement_ attribute indicates whether the direction of the _IfcTrimmedCurve_ agrees with or is opposed to the direction of the _BasisCurve_.<!-- end of definition -->
+An _IfcTrimmedCurve_ is a bounded curve that is trimmed at both ends. The trimming points may be provided by a Cartesian point or by a parameter value, based on the parameterization of the _BasisCurve_. The _SenseAgreement_ attribute indicates whether the direction of the _IfcTrimmedCurve_ agrees with or is opposed to the direction of the _BasisCurve_.
 
 > NOTE  In case of the _BasisCurve_ being a closed curve, such as an _IfcCircle_ or _IfcEllipse_, the _SenseAgreement_ affects the geometric shape of the _IfcTrimmedCurve_.
 
-![curve parameterization](../../../../figures/ifctrimmedcurve_parameterization.png "Figure 1 — Trimmed curve parameterization")
+![curve parameterization](../../../../figures/ifctrimmedcurve_parameterization.png "Figure 1 &mdash; Trimmed curve parameterization")
 
 Figure 1 shows the four arcs (dashed blue and green lines with arrow showing different orientations) that can be defined by the same _BasisCurve_ (of type _IfcCircle_) and the same trimming points (given by Cartesian points and parameter values) by using different assignments to _Trim1_ and _Trim2_ and _SenseAgreement_.
 

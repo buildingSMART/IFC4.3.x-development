@@ -1,6 +1,6 @@
 # IfcVibrationDamperType
 
-The _IfcVibrationDamperType_ provides the type information for _IfcVibrationDamper_ occurrences.<!-- end of definition -->
+The _IfcVibrationDamperType_ provides the type information for _IfcVibrationDamper_ occurrences.
 
 ## Attributes
 

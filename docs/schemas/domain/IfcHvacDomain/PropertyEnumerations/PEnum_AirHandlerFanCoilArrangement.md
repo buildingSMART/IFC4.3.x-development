@@ -1,6 +1,6 @@
 # PEnum_AirHandlerFanCoilArrangement
 
-<!-- end of definition -->## Items
+## Items
 
 ### BLOWTHROUGH
 Blow Through

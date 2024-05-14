@@ -1,6 +1,6 @@
 # IfcCostSchedule
 
-An _IfcCostSchedule_ brings together instances of _IfcCostItem_ either for the purpose of identifying purely cost information as in an estimate for constructions costs or for including cost information within another presentation form such as a work order.<!-- end of definition -->
+An _IfcCostSchedule_ brings together instances of _IfcCostItem_ either for the purpose of identifying purely cost information as in an estimate for constructions costs or for including cost information within another presentation form such as a work order.
 
 > HISTORY  New entity in IFC2.0.
 

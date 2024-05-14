@@ -5,7 +5,7 @@ The _IfcToroidalSurface_ is a bounded elementary surface. It is constructed by c
 * _SELF\IfcElementarySurface.Position_: The location and orientation of the axis system for the primitive.
 * _SELF\IfcElementarySurface.Position.Location_: The center of the toroidal surface.
 * _SELF\IfcElementarySurface.Position.Position[3]:_ The axis of revolution of the toroidal surface
-<!-- end of definition -->
+
 { .extDef}
 > NOTE  Definition according to ISO/CD 10303-42:1992
 > An _IfcToroidalSurface_ is a type of elementary surface, which could be produced by revolving a circle about a line in its plane. The radius of the circle being revolved is referred to here as the _MinorRadius_ and the _MajorRadius_ is the distance from the centre of this circle to the axis of revolution. A toroidal surface is defined by the major and minor radii and the position and orientation of the surface.
@@ -19,13 +19,13 @@ The _IfcToroidalSurface_ is a bounded elementary surface. It is constructed by c
 >
 >
 
-_**σ**(u,v)_ = **C** + _(R + r_cos _v_)((cos_u_)**x** + (sin _u_))**y**) + _r_(sin_v_))**z**
+_**&#963;**(u,v)_ = **C** + _(R + r_cos _v_)((cos_u_)**x** + (sin _u_))**y**) + _r_(sin_v_))**z**
 
-where the parametrisation range is _0 ≤ u, v ≤ 360_ degrees. _u_ and _v_ are angular parameters and when numerical values are specified they shall use the current units for plane angle measure.
+where the parametrisation range is _0 &#8804; u, v &#8804; 360_ degrees. _u_ and _v_ are angular parameters and when numerical values are specified they shall use the current units for plane angle measure.
 
 In the placement coordinate system defined above, the surface is represented by the equation _S_ = 0, where
 
-> _S(x, y, z) = x^2^ + y^2^ + z^2^ -2R√(x^2^+y^2^) - r^2^ + R^2^._
+> _S(x, y, z) = x^2^ + y^2^ + z^2^ -2R&#8730;(x^2^+y^2^) - r^2^ + R^2^._
 
 The positive direction of the normal to the surface at any point on the surface is given by
 

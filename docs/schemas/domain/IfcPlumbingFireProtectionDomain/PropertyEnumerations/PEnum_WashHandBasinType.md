@@ -1,6 +1,6 @@
 # PEnum_WashHandBasinType
 
-<!-- end of definition -->## Items
+## Items
 
 ### DENTALCUSPIDOR
 Dental Cuspidor

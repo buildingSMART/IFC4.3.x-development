@@ -1,6 +1,6 @@
 # IfcPolynomialCurve
 
-Polynomial Curve.<!-- end of definition -->
+Polynomial Curve.
 
 ## Attributes
 

@@ -1,6 +1,6 @@
 # PEnum_ToiletType
 
-<!-- end of definition -->## Items
+## Items
 
 ### BEDPANWASHER
 Bed Pan Washer

@@ -1,6 +1,6 @@
 # IfcEarthworksCut
 
-The resulting void from modification of existing terrain or road structure by excavation or by other means of removing material.<!-- end of definition -->
+The resulting void from modification of existing terrain or road structure by excavation or by other means of removing material.
 
 > NOTE Definition from ISO 6707-1: void that results from bulk excavation of material.
 

@@ -1,6 +1,6 @@
 # PEnum_AirTerminalMountingType
 
-<!-- end of definition -->## Items
+## Items
 
 ### SURFACE
 Surface

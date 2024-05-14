@@ -1,6 +1,6 @@
 # PEnum_RefrigerantClass
 
-<!-- end of definition -->## Items
+## Items
 
 ### CFC
 Chlorofluorocarbons

@@ -1,6 +1,6 @@
 # IfcCosineSpiral
 
-A type of spiral curve for which the curvature change is dependent on the cosine function.<!-- end of definition -->
+A type of spiral curve for which the curvature change is dependent on the cosine function.
 
 The curvature is defined as:
 

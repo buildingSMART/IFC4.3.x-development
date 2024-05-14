@@ -1,6 +1,6 @@
 # PEnum_CentrifugalFanArrangement
 
-<!-- end of definition -->## Items
+## Items
 
 ### ARRANGEMENT1
 Arrangement 1

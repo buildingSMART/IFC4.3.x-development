@@ -1,6 +1,6 @@
 # PEnum_EndShapeType
 
-<!-- end of definition -->## Items
+## Items
 
 ### CONCAVECONVEX
 Concave Convex

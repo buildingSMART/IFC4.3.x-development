@@ -1,6 +1,6 @@
 # Pset_WindowLiningProperties
 
-Properties of the window lining.<!-- end of definition -->
+Properties of the window lining.
 
 > HISTORY New property set in IFC4.3.2.0 to replace the entity IfcWindowLiningProperties
 

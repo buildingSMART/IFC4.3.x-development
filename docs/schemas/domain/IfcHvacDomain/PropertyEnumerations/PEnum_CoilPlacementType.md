@@ -1,6 +1,6 @@
 # PEnum_CoilPlacementType
 
-<!-- end of definition -->## Items
+## Items
 
 ### FLOOR
 Floor

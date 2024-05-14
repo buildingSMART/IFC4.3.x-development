@@ -1,6 +1,6 @@
 # IfcRevolvedAreaSolidTapered
 
-_IfcRevolvedAreaSolidTapered_ is defined by revolving a cross section along a circular arc. The cross section may change along the revolving sweep from the shape of the start cross section into the shape of the end cross section. Corresponding vertices of the start and end cross sections are then connected. The bounded surface may have holes which will sweep into holes in the solid.<!-- end of definition -->
+_IfcRevolvedAreaSolidTapered_ is defined by revolving a cross section along a circular arc. The cross section may change along the revolving sweep from the shape of the start cross section into the shape of the end cross section. Corresponding vertices of the start and end cross sections are then connected. The bounded surface may have holes which will sweep into holes in the solid.
 
 The rotation axis is defined by:
 

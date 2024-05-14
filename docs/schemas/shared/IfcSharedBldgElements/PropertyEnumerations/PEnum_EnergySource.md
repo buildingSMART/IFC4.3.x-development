@@ -1,6 +1,6 @@
 # PEnum_EnergySource
 
-<!-- end of definition -->## Items
+## Items
 
 ### COAL
 Coal

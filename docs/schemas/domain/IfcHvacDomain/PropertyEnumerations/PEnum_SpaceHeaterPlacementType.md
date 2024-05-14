@@ -1,6 +1,6 @@
 # PEnum_SpaceHeaterPlacementType
 
-<!-- end of definition -->## Items
+## Items
 
 ### BASEBOARD
 Baseboard

@@ -1,6 +1,6 @@
 # PEnum_ActuatorApplication
 
-<!-- end of definition -->## Items
+## Items
 
 ### ENTRYEXITDEVICE
 Entry Exit Device

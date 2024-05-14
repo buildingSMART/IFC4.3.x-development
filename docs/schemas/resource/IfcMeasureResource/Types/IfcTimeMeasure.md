@@ -1,6 +1,6 @@
 # IfcTimeMeasure
 
-An _IfcTimeMeasure_ is the value of the duration of periods.<!-- end of definition -->
+An _IfcTimeMeasure_ is the value of the duration of periods.
 
 Measured in seconds (s) or days (d) or other units of time.
 

@@ -1,6 +1,6 @@
 # PEnum_UncertaintyBasis
 
-<!-- end of definition -->## Items
+## Items
 
 ### MEASUREMENT
 Uncertainty based on measurement

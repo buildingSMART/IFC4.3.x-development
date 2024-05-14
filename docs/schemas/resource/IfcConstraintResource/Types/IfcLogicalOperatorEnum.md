@@ -1,6 +1,6 @@
 # IfcLogicalOperatorEnum
 
-_IfcLogicalOperatorEnum_ is an enumeration that defines the logical operators that may be applied for the satisfaction of one or more operands (_IfcConstraint_) at a time.<!-- end of definition -->
+_IfcLogicalOperatorEnum_ is an enumeration that defines the logical operators that may be applied for the satisfaction of one or more operands (_IfcConstraint_) at a time.
 
 The following tables illustrates application of _IfcLogicalOperatorEnum_ in a case of three operands, A, B and C, for each operator.
 

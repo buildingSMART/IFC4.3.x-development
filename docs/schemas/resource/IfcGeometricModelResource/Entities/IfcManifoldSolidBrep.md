@@ -1,6 +1,6 @@
 # IfcManifoldSolidBrep
 
-The _IfcManifoldSolidBrep_ is a solid represented as a collection of connected surfaces that delimit the solid from the surrounding non-solid.
+The _IfcManifoldSolidBrep_ is a solid represented as a collection of connected surfaces that delimit the solid from the surrounding non-solid.<!-- end of definition -->
 
 Instances of type _IfcManifoldSolidBrep_ shall be of type _IfcFacetedBrep_, using only _IfcPolyLoop_ for the bounds of _IfcFaceBound_, or of type _IfcAdvancedBrep_, using only _IfcAdvancedFace_ for the face geometry, and _IfcEdgeCurve_ for the edges.
 
@@ -21,7 +21,7 @@ Instances of type _IfcManifoldSolidBrep_ shall be of type _IfcFacetedBrep_, usin
 >
 
 
-> NOTE  Entity adapted from **manifold_solid_brep** defined in ISO 10303-42.
+> NOTE Entity adapted from **manifold_solid_brep** defined in ISO 10303-42.
 
 > HISTORY: New entity in IFC Release 1.0
 

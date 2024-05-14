@@ -1,21 +1,21 @@
 # PEnum_ElectroMagneticTrippingUnitType
 
-## Items
+<!-- end of definition -->## Items
 
 ### OL
 Ol
 
 ### TMP_STD
-Tmp  Std
+Tmp Std
 
 ### TMP_SC
-Tmp  Sc
+Tmp Sc
 
 ### TMP_MP
-Tmp  Mp
+Tmp Mp
 
 ### TMP_BM
-Tmp  Bm
+Tmp Bm
 
 ### OTHER
 required category not on scale

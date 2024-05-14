@@ -1,6 +1,6 @@
 # PEnum_DamperBladeAction
 
-## Items
+<!-- end of definition -->## Items
 
 ### FOLDINGCURTAIN
 Folding Curtain

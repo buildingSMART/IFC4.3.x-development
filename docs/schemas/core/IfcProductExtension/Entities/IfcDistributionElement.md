@@ -10,10 +10,10 @@ _IfcDistributionElement_ is a generalization of all elements that participate in
 * electrical elements
 * building service elements within a communication network
 * building service elements within a sensor (monitoring) network
-
+<!-- end of definition -->
 The _IfcDistributionElement_ is further specialized in the IFC specification. Direct instantiation of _IfcDistributionElement_ without an assigned subtype of _IfcDistributionElementType_ provides the meaning of a distribution element proxy.
 
-> HISTORY  New entity in IFC1.5.
+> HISTORY New entity in IFC1.5.
 
 { .change-ifc2x4}
 > IFC4 CHANGE The entity is marked as deprecated for instantiation - will be made ABSTRACT in future releases.
@@ -24,7 +24,7 @@ The _IfcDistributionElement_ is further specialized in the IFC specification. Di
 Reference to the element to port connection relationship. The relationship then refers to the port which is contained in this element.
 
 { .change-ifc2x4}
-> IFC4 CHANGE  The inverse attribute is deprecated. Relationship to ports, contained within the _IfcDistributionElement_ is now realized by the inverse relationship _NestedBy_ referencing _IfcRelNests_.
+> IFC4 CHANGE The inverse attribute is deprecated. Relationship to ports, contained within the _IfcDistributionElement_ is now realized by the inverse relationship _NestedBy_ referencing _IfcRelNests_.
 
 ## Concepts
 
@@ -46,7 +46,7 @@ The assignment of types to distribution element occurrences is vital for providi
 
 The _IfcDistributionElement_ may be contained within the spatial containment tree. The _IfcSpace_ is the default spatial container.
 
-> NOTE  The 'Spatial Containment' concept is mandatory in many model view definitions.
+> NOTE The 'Spatial Containment' concept is mandatory in many model view definitions.
 
 #### IfcBuildingStorey
 

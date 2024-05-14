@@ -1,6 +1,6 @@
 # PEnum_RainSensorType
 
-## Items
+<!-- end of definition -->## Items
 
 ### MICROWAVE
 

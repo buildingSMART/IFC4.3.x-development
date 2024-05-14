@@ -1,6 +1,6 @@
 # Pset_ProtectiveDeviceTrippingUnitTypeCommon
 
-Common information concerning tripping units that area associated with protective devices
+Common information concerning tripping units that area associated with protective devices<!-- end of definition -->
 
 
 ## Comments

@@ -1,8 +1,8 @@
 # IfcFastenerTypeEnum
 
-This enumeration defines the different types of fasteners, except for mechanical fasteners.
+This enumeration defines the different types of fasteners, except for mechanical fasteners.<!-- end of definition -->
 
-> HISTORY  New enumeration in IFC4.
+> HISTORY New enumeration in IFC4.
 
 ## Items
 

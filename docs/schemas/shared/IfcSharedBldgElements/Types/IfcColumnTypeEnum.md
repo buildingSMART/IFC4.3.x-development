@@ -1,8 +1,8 @@
 # IfcColumnTypeEnum
 
-This enumeration defines the different predefined types of columns that can further specify an _IfcColumn_ or _IfcColumnType_.
+This enumeration defines the different predefined types of columns that can further specify an _IfcColumn_ or _IfcColumnType_.<!-- end of definition -->
 
-> HISTORY  New Enumeration in IFC2x2.
+> HISTORY New Enumeration in IFC2x2.
 
 ## Items
 

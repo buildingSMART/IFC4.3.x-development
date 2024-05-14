@@ -1,13 +1,13 @@
 # IfcStructuralLinearAction
 
-This entity defines an action with constant value which is distributed over a curve.
+This entity defines an action with constant value which is distributed over a curve.<!-- end of definition -->
 
-> HISTORY  New entity in IFC2x2.
+> HISTORY New entity in IFC2x2.
 
 { .change-ifc2x4}
-> IFC4 CHANGE  Intermediate supertype _IfcStructuralCurveAction_ inserted.
+> IFC4 CHANGE Intermediate supertype _IfcStructuralCurveAction_ inserted.
 
-> NOTE  Like its supertype _IfcStructuralCurveAction_, this action type may also act on curved edges.
+> NOTE Like its supertype _IfcStructuralCurveAction_, this action type may also act on curved edges.
 
 ## Formal Propositions
 

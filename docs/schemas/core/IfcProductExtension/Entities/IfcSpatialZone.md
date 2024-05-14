@@ -1,6 +1,6 @@
 # IfcSpatialZone
 
-A spatial zone is a non-hierarchical and potentially overlapping decomposition of the project under some functional consideration. A spatial zone might be used to represent a thermal zone, a construction zone, a lighting zone, a usable area zone. A spatial zone might have its independent placement and shape representation.
+A spatial zone is a non-hierarchical and potentially overlapping decomposition of the project under some functional consideration. A spatial zone might be used to represent a thermal zone, a construction zone, a lighting zone, a usable area zone. A spatial zone might have its independent placement and shape representation.<!-- end of definition -->
 
 The _IfcSpatialZone_ inherits and declares these attributes that shall have the following meaning:
 
@@ -13,9 +13,9 @@ The _IfcSpatialZone_ inherits and declares these attributes that shall have the 
 
 Physical elements that are referenced by this spatial zone are related using the _IfcRelReferencedInSpatialStructure_ relationship as it is a non-hierarchical assignment in addition to the hierarchical spatial containment within a subtype of _IfcSpatialStructureElement_. Also spaces, that are referenced by this spatial zone are related using the _IfcRelReferencedInSpatialStructure_ relationship. The _IfcSpatialZone_ itself can also be referenced by another spatial element using _IfcRelReferencedInSpatialStructure_.
 
-> NOTE  The _IfcSpatialZone_ is different to the _IfcZone_ entity by allowing an own placement and shape representation, whereas _IfcZone_ is only a grouping of _IfcSpace_'s.
+> NOTE The _IfcSpatialZone_ is different to the _IfcZone_ entity by allowing an own placement and shape representation, whereas _IfcZone_ is only a grouping of _IfcSpace_'s.
 
-> HISTORY  New entity in IFC4.
+> HISTORY New entity in IFC4.
 
 ## Attributes
 

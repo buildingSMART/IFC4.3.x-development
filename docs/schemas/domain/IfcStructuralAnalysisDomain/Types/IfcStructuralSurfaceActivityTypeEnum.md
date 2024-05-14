@@ -1,8 +1,8 @@
 # IfcStructuralSurfaceActivityTypeEnum
 
-This enumeration defines the distribution of load values in a surface action or reaction.
+This enumeration defines the distribution of load values in a surface action or reaction.<!-- end of definition -->
 
-> HISTORY  New enumeration in IFC4
+> HISTORY New enumeration in IFC4
 
 ## Items
 
@@ -16,7 +16,7 @@ The load value is bilinearly distributed over the load's extent.
 The load is specified as a series of discrete load points.
 
 ### ISOCONTOUR
-The load is specified by a series of iso-curves (level sets), i.e. curves at which the load value is constant.  These curves run perpendicularly to the load gradient.
+The load is specified by a series of iso-curves (level sets), i.e. curves at which the load value is constant. These curves run perpendicularly to the load gradient.
 
 ### USERDEFINED
 The load distribution is user-defined.

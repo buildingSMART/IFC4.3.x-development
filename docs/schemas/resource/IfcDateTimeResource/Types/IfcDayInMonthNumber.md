@@ -1,13 +1,13 @@
 # IfcDayInMonthNumber
 
-_IfcDayInMonthNumber_ is an integer that defines the position of the specified day in a month.
+_IfcDayInMonthNumber_ is an integer that defines the position of the specified day in a month.<!-- end of definition -->
 
 Type: INTEGER
 
-> HISTORY  New type in IFC1.5.1.
+> HISTORY New type in IFC1.5.1.
 
 { .change-ifc2x4}
-> IFC4 CHANGE  Where rule _ValidRange_ added.
+> IFC4 CHANGE Where rule _ValidRange_ added.
 
 ## Formal Propositions
 

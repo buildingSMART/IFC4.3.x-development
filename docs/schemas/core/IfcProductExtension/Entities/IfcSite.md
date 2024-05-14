@@ -1,12 +1,12 @@
 # IfcSite
 
-A site is a defined area of land, possibly covered with water, on which the project construction is to be completed. A site may be used to erect, retrofit or turn down building(s), or for other construction related developments.
+A site is a defined area of land, possibly covered with water, on which the project construction is to be completed. A site may be used to erect, retrofit or turn down building(s), or for other construction related developments.<!-- end of definition -->
 
-> NOTE  Definition according to ISO 6707-1: area of land or water where construction work or other development is undertaken.
+> NOTE Definition according to ISO 6707-1: area of land or water where construction work or other development is undertaken.
 
 Precise geospatial information of a site shall be derived from the georeferencing entities that relate the _IfcProject_ to the real world, using sets of datum (see _IfcCoordinateOperation_ and _IfcCoordinateReferenceSystem_).
 
-In small-scale projects (e.g., building), when georeferencing is not provided as recommended above, the  _Longitude_, _Latitude_ and _Elevation_ attributes of _IfcSite_ can be used for approximate indication of the site location. This methodology is not meant to replace precise georeferencing, but can still be useful for those use cases that do not require accurate geospatial information (e.g., sun shading simulations). If asserted, the _Longitude_, _Latitude_ and _Elevation_ establish the point in WGS84 where the point 0.,0.,0. of the _LocalPlacement_ of _IfcSite_ is situated.
+In small-scale projects (e.g., building), when georeferencing is not provided as recommended above, the _Longitude_, _Latitude_ and _Elevation_ attributes of _IfcSite_ can be used for approximate indication of the site location. This methodology is not meant to replace precise georeferencing, but can still be useful for those use cases that do not require accurate geospatial information (e.g., sun shading simulations). If asserted, the _Longitude_, _Latitude_ and _Elevation_ establish the point in WGS84 where the point 0.,0.,0. of the _LocalPlacement_ of _IfcSite_ is situated.
 
 The geometrical placement of the site, defined by the _IfcLocalPlacement_, shall be always relative to the spatial structure element, in which this site is included, or absolute, i.e. to the world coordinate system, as established by the geometric representation context of the project. The world coordinate system, established at the _IfcProject.RepresentationContexts_, may include a definition of the true north within the XY plane of the world coordinate system, if provided, it can be obtained at _IfcGeometricRepresentationContext.TrueNorth_.
 
@@ -18,11 +18,11 @@ A project may span over several connected or disconnected sites. Therefore site 
 
 Figure SITECOMP shows the _IfcSite_ as part of the spatial structure. In addition to the logical spatial structure, also the placement hierarchy is shown. In this example the spatial structure hierarchy and the placement hierarchy are identical.
 
-> NOTE  Detailed requirements on mandatory element containment and placement structure relationships are given in view definitions and implementer agreements.
+> NOTE Detailed requirements on mandatory element containment and placement structure relationships are given in view definitions and implementer agreements.
 
 ![IfcSite as part of a spatial structure](../../../../figures/ifcsite-spatialstructure.png)
 
-Figure SITECOMP &mdash; Site composition
+Figure SITECOMP — Site composition
 
 Figure SITELOC describes the heights and elevations of the _IfcSite_. It is used to provide the geographic longitude, latitude, and height above sea level for the origin of the site. The origin of the site is the local placement.
 
@@ -36,21 +36,21 @@ For exact georeferencing (or referencing to any other geographic coordinate syst
 
 ![IfcSite with local placement and WGS84 coordinates](../../../../figures/ifcsite_heights.png)
 
-Figure SITELOC &mdash; Site placement and elevations
+Figure SITELOC — Site placement and elevations
 
-> HISTORY  New entity in IFC1.0.
+> HISTORY New entity in IFC1.0.
 
 ## Attributes
 
 ### RefLatitude
 World Latitude at reference point (most likely defined in legal description). Defined as integer values for degrees, minutes, seconds, and, optionally, millionths of seconds with respect to the world geodetic system WGS84.
-> NOTE  Latitudes are measured relative to the geodetic equator, north of the equator by positive values - from 0 till +90, south of the equator by negative values - from 0 till -90.
+> NOTE Latitudes are measured relative to the geodetic equator, north of the equator by positive values - from 0 till +90, south of the equator by negative values - from 0 till -90.
 
 ### RefLongitude
 World Longitude at reference point (most likely defined in legal description). Defined as integer values for degrees, minutes, seconds, and, optionally, millionths of seconds with respect to the world geodetic system WGS84.
-> NOTE  Longitudes are measured relative to the geodetic zero meridian, nominally the same as the Greenwich prime meridian: longitudes west of the zero meridian have negative values - from 0 till -180, longitudes east of the zero meridian have positive values - from 0 till -180.
+> NOTE Longitudes are measured relative to the geodetic zero meridian, nominally the same as the Greenwich prime meridian: longitudes west of the zero meridian have negative values - from 0 till -180, longitudes east of the zero meridian have positive values - from 0 till -180.
 
-> EXAMPLE  Chicago Harbor Light has according to WGS84 a longitude -87.35.40 (or 87.35.40W) and a latitude 41.53.30 (or 41.53.30N).
+> EXAMPLE Chicago Harbor Light has according to WGS84 a longitude -87.35.40 (or 87.35.40W) and a latitude 41.53.30 (or 41.53.30N).
 
 ### RefElevation
 Datum elevation relative to sea level.
@@ -58,7 +58,7 @@ Datum elevation relative to sea level.
 ### LandTitleNumber
 The land title number (designation of the site within a regional system).
 
-> IFC4.3.0.0 DEPRECATION  This attribute shall not be used for export, use property _LandTitleID_ at _Pset_LandRegistration_ instead.
+> IFC4.3.0.0 DEPRECATION This attribute shall not be used for export, use property _LandTitleID_ at _Pset_LandRegistration_ instead.
 
 ### SiteAddress
 

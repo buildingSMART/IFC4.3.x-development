@@ -1,8 +1,8 @@
 # IfcStructuralLoadSingleForce
 
-Instances of the entity _IfcStructuralLoadSingleForce_ shall be used to define the forces and moments of an action operating on a single point.
+Instances of the entity _IfcStructuralLoadSingleForce_ shall be used to define the forces and moments of an action operating on a single point.<!-- end of definition -->
 
-> HISTORY  New entity in IFC2x2.
+> HISTORY New entity in IFC2x2.
 
 ## Attributes
 

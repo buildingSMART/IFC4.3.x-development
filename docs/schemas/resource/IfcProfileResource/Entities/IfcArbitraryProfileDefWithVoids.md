@@ -1,8 +1,8 @@
 # IfcArbitraryProfileDefWithVoids
 
-The _IfcArbitraryProfileDefWithVoids_ defines an arbitrary closed two-dimensional profile with holes. It is given by an outer boundary and inner boundaries. A common usage of _IfcArbitraryProfileDefWithVoids_ is as the cross section for the creation of swept surfaces or swept solids.
+The _IfcArbitraryProfileDefWithVoids_ defines an arbitrary closed two-dimensional profile with holes. It is given by an outer boundary and inner boundaries. A common usage of _IfcArbitraryProfileDefWithVoids_ is as the cross section for the creation of swept surfaces or swept solids.<!-- end of definition -->
 
-> HISTORY  New entity in IFC2x.
+> HISTORY New entity in IFC2x.
 
 **Informal Propositions**
 
@@ -17,7 +17,7 @@ Figure 1 illustrates the arbitrary closed profile definition with voids. The _Ou
 
 or in case of sectioned spines the xy plane of each list member of _IfcSectionedSpine.CrossSectionPositions_. The _OuterCurve_ attribute defines a two dimensional closed bounded curve, the _InnerCurves_ define a set of two dimensional closed bounded curves.
 
-![arbitrary profile with inner boundaries](../../../../figures/ifcarbitraryprofiledef-layout2.gif "Figure 1 &mdash; Arbitrary profile with voids")
+![arbitrary profile with inner boundaries](../../../../figures/ifcarbitraryprofiledef-layout2.gif "Figure 1 — Arbitrary profile with voids")
 
 ## Attributes
 

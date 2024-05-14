@@ -1,20 +1,20 @@
 # IfcElement
 
-An element is a generalization of all components that make up a facility.
+An element is a generalization of all components that make up a facility.<!-- end of definition -->
 
 Elements are physically existent objects, although they might be void elements, such as holes. Elements either remain permanently in the facility, or only temporarily, as formwork does. Elements can be either assembled on site or pre-manufactured and built in on site.
 
-> EXAMPLE  Examples of elements in a building construction context are walls, floors, windows and recesses.
+> EXAMPLE Examples of elements in a building construction context are walls, floors, windows and recesses.
 
 The elements can be logically contained by a spatial structure element that constitutes a certain level within a project structure hierarchy (site, building, storey or space). This is done by using the _IfcRelContainedInSpatialStructure_ relationship. An element can have material and quantity information assigned through the _IfcRelAssociatesMaterial_ and _IfcRelDefinesByProperties_ relationship.
 
 In addition an element can be declared to be a specific occurrence of an element type (and thereby be defined by the element type properties) using the _IfcRelDefinesByType_ relationship. An element can also be defined as an element assembly that is a group of semantically and topologically related elements that form a higher level part of the facility. Those element assemblies are defined by virtue of the _IfcRelAggregates_ relationship.
 
-> EXAMPLE  Examples for element assembly are complete Roof Structures, made by several Roof Areas, or a Stair, composed by Flights and Landings.
+> EXAMPLE Examples for element assembly are complete Roof Structures, made by several Roof Areas, or a Stair, composed by Flights and Landings.
 
 Elements that perform the same function may be grouped by an "Element Group By Function". It is realized by an instance of _IfcGroup_ with the _ObjectType_ ='ElementGroupByFunction'.
 
-> HISTORY  New entity in IFC1.0
+> HISTORY New entity in IFC1.0
 
 ## Attributes
 
@@ -29,14 +29,14 @@ Reference to the element connection relationship. The relationship then refers t
 
 ### IsInterferedByElements
 Reference to the interference relationship to indicate the element that is interfered. The relationship, if provided, indicates that this element has an interference with one or many other elements.
-> NOTE  There is no indication of precedence between _IsInterferedByElements_ and _InterferesElements_.
+> NOTE There is no indication of precedence between _IsInterferedByElements_ and _InterferesElements_.
 
 { .change-ifc2x4}
 > IFC4 CHANGE New inverse relationship.
 
 ### InterferesElements
 Reference to the interference relationship to indicate the element that interferes. The relationship, if provided, indicates that this element has an interference with one or many other elements.
-> NOTE  There is no indication of precedence between _IsInterferedByElements_ and _InterferesElements_.
+> NOTE There is no indication of precedence between _IsInterferedByElements_ and _InterferesElements_.
 
 { .change-ifc2x4}
 > IFC4 CHANGE New inverse relationship.
@@ -71,7 +71,7 @@ Reference to the _IfcRelAdheresToElement_ relationship that adheres a _IfcSurfac
 
 An _IfcElement_ (so far no further constraints are defined at the level of its subtypes or by view definitions) may be represented as a single or multiple boundary representation models, which include advanced surfaces, usually refered to as NURBS surfaces. The 'AdvancedBrep' representation allows for the representation of complex free-form element shape.
 
-> NOTE  View definitions or implementer agreements may restrict or disallow the use of 'AdvancedBrep' geometry.
+> NOTE View definitions or implementer agreements may restrict or disallow the use of 'AdvancedBrep' geometry.
 
 ### Body AdvancedSwept Directrix Geometry
 
@@ -100,7 +100,7 @@ Figure 150 — Building element body boundary representation
 
 Any _IfcElement_ (so far no further constraints are defined at the level of its subtypes) may be represented as a CSG primitive or CSG tree. The CSG representation allows for the representation of complex element shape.
 
-> NOTE  View definitions or implementer agreements may restrict or disallow the use of 'CSG' geometry.
+> NOTE View definitions or implementer agreements may restrict or disallow the use of 'CSG' geometry.
 
 ### Body SectionedSolidHorizontal
 
@@ -116,7 +116,7 @@ Any _IfcElement_ (so far no further constraints are defined at the level of its 
 Figure 149 — Element surface model representation
 
 
-> EXAMPLE  As shown in Figure 149, the surface model representation is given by an _IfcShapeRepresentation_, which includes a single item which is either an _IfcShellBasedSurfaceModel_, or an _IfcFaceBasedSurfaceModel_. In some cases it may also be useful to expose a simple representation as a bounding box representation of the same complex shape.
+> EXAMPLE As shown in Figure 149, the surface model representation is given by an _IfcShapeRepresentation_, which includes a single item which is either an _IfcShellBasedSurfaceModel_, or an _IfcFaceBasedSurfaceModel_. In some cases it may also be useful to expose a simple representation as a bounding box representation of the same complex shape.
 
 
 ### Body SurfaceOrSolidModel Geometry

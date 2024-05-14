@@ -1,6 +1,6 @@
 # PEnum_ShowerType
 
-## Items
+<!-- end of definition -->## Items
 
 ### DRENCH
 Drench

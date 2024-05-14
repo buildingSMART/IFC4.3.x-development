@@ -1,9 +1,9 @@
 # IfcLinearStiffnessMeasure
 
-_IfcLinearStiffnessMeasure_ is a measure of linear stiffness.
+_IfcLinearStiffnessMeasure_ is a measure of linear stiffness.<!-- end of definition -->
 
 Usually measured in N/m.
 
 Type: REAL
 
-> HISTORY  New type in IFC2x.
+> HISTORY New type in IFC2x.

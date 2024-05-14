@@ -1,8 +1,8 @@
 # IfcConstructionEquipmentResource
 
-_IfcConstructionEquipmentResource_ is usage of construction equipment to assist in the performance of construction. Construction Equipment resources are wholly or partially consumed or occupied in the performance of construction.
+_IfcConstructionEquipmentResource_ is usage of construction equipment to assist in the performance of construction. Construction Equipment resources are wholly or partially consumed or occupied in the performance of construction.<!-- end of definition -->
 
-> HISTORY  New entity in IFC2.0.
+> HISTORY New entity in IFC2.0.
 
 Occurrences of _IfcConstructionEquipmentResource_ are products that are used as resources to assist the process of construction. More specifically, they are products that are standalone items brought to a project to fulfil a particular purpose. Examples might be a tower crane or other mobile crane, a screwing machine, or a lifting hoist.
 

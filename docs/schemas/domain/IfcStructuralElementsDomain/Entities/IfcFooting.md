@@ -1,13 +1,13 @@
 # IfcFooting
 
-A footing is a part of the foundation of a structure that spreads and transmits the load to the soil. A footing is also characterized as shallow foundation, where the loads are transferred to the ground near the surface.
+A footing is a part of the foundation of a structure that spreads and transmits the load to the soil. A footing is also characterized as shallow foundation, where the loads are transferred to the ground near the surface.<!-- end of definition -->
 
 { .extDef}
-> NOTE  Definition according to ISO 6707-1: stepped construction that spreads the load at the foot of a wall or column.
+> NOTE Definition according to ISO 6707-1: stepped construction that spreads the load at the foot of a wall or column.
 
-> HISTORY  New entity in IFC2x2.
+> HISTORY New entity in IFC2x2.
 
-> NOTE  Slab foundations, also called slab-on-grade, are not instantiated as _IfcFooting_ but as _IfcSlab_ with a predefined type of _IfcSlabTypeEnum_.BASESLAB. Deep foundations, which transfer the loads to subsurface layers, are represented by _IfcDeepFoundation_ and its subtypes _IfcCaissonFoundation_ and _IfcPile_.
+> NOTE Slab foundations, also called slab-on-grade, are not instantiated as _IfcFooting_ but as _IfcSlab_ with a predefined type of _IfcSlabTypeEnum_.BASESLAB. Deep foundations, which transfer the loads to subsurface layers, are represented by _IfcDeepFoundation_ and its subtypes _IfcCaissonFoundation_ and _IfcPile_.
 
 ## Attributes
 
@@ -15,7 +15,7 @@ A footing is a part of the foundation of a structure that spreads and transmits 
 The generic type of the footing.
 
 { .change-ifc2x4}
-> IFC4 CHANGE  Attribute made optional. Type information can be provided by _IfcRelDefinesByType_ and _IfcFootingType_.
+> IFC4 CHANGE Attribute made optional. Type information can be provided by _IfcRelDefinesByType_ and _IfcFootingType_.
 
 ## Formal Propositions
 

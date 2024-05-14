@@ -1,6 +1,6 @@
 # PEnum_ConduitShapeType
 
-## Items
+<!-- end of definition -->## Items
 
 ### CIRCULAR
 Circular

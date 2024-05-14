@@ -1,6 +1,6 @@
 # PEnum_AssetInsuranceType
 
-## Items
+<!-- end of definition -->## Items
 
 ### PERSONAL
 Personal

@@ -1,14 +1,14 @@
 # IfcBoundedSurface
 
-An _IfcBoundedSurface_ is a surface of finite area.
+An _IfcBoundedSurface_ is a surface of finite area.<!-- end of definition -->
 
 { .extDef}
-> NOTE  Definition according to ISO/CD 10303-42:1992
+> NOTE Definition according to ISO/CD 10303-42:1992
 > A bounded surface is a surface of finite area with identifiable boundaries.
 
-> NOTE  Entity adapted from **bounded_surface** defined in ISO10303-42.
+> NOTE Entity adapted from **bounded_surface** defined in ISO10303-42.
 
-> HISTORY  New entity in IFC2x
+> HISTORY New entity in IFC2x
 
 { .change-ifc2x4}
 > IFC4 CHANGE Entity made abstract.

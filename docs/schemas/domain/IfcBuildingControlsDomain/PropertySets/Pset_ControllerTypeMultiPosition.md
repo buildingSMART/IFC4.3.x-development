@@ -1,6 +1,6 @@
 # Pset_ControllerTypeMultiPosition
 
-Properties for discrete inputs, outputs, and values within a programmable logic controller. HISTORY: New in IFC4, replaces Pset_MultiStateInput and Pset_MultiStateOutput.
+Properties for discrete inputs, outputs, and values within a programmable logic controller.<!-- end of definition --> HISTORY: New in IFC4, replaces Pset_MultiStateInput and Pset_MultiStateOutput.
 
 
 ## Comments
@@ -13,7 +13,7 @@ VARIABLE: Controller element is an in-memory variable.
 
 ### Value
 
-The expected range and default value.  The LowerLimitValue and UpperLimitValue must fall within the physical Range.
+The expected range and default value. The LowerLimitValue and UpperLimitValue must fall within the physical Range.
 
 ### Labels
 

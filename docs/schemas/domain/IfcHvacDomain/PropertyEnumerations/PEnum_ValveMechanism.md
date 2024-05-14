@@ -1,6 +1,6 @@
 # PEnum_ValveMechanism
 
-## Items
+<!-- end of definition -->## Items
 
 ### BALL
 Valve that has a ported ball that can be turned relative to the body seat ports

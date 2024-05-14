@@ -1,6 +1,6 @@
 # IfcFacilityPart
 
-_IfcFacilityPart_ provides for spatial breakdown of built facilities. It may be further specialised according to the type of facility being broken down.
+_IfcFacilityPart_ provides for spatial breakdown of built facilities. It may be further specialised according to the type of facility being broken down.<!-- end of definition -->
 
 ## Attributes
 
@@ -30,7 +30,7 @@ The local placement for IfcFacilityPart is defined in its supertype IfcProduct. 
 
 ### Spatial Composition
 
-> NOTE  By using the inverse relationship _IfcFacilityPart.Decomposes_ it references (IfcFacility || IfcFacilityPart) through _IfcRelAggregates.RelatingObject_IfcFacilityPart_, the referenced
+> NOTE By using the inverse relationship _IfcFacilityPart.Decomposes_ it references (IfcFacility || IfcFacilityPart) through _IfcRelAggregates.RelatingObject_IfcFacilityPart_, the referenced
 IfcFacilityPart needs to have a different and higher
  CompositionType, i.e. COMPLEX (if the other IfcFacilityPart has ELEMENT), or ELEMENT (if the other
  IfcFacilityPart has PARTIAL)._

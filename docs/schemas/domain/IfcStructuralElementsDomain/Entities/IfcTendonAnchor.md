@@ -1,11 +1,11 @@
 # IfcTendonAnchor
 
-A tendon anchor is the end connection for tendons in prestressed or posttensioned concrete.
+A tendon anchor is the end connection for tendons in prestressed or posttensioned concrete.<!-- end of definition -->
 
-> HISTORY  New entity in IFC2x2.
+> HISTORY New entity in IFC2x2.
 
 { .history}
-> IFC4 CHANGE  Attribute _PredefinedType_ added.
+> IFC4 CHANGE Attribute _PredefinedType_ added.
 
 ## Attributes
 

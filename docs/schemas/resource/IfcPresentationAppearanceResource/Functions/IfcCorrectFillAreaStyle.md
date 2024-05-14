@@ -1,6 +1,6 @@
 # IfcCorrectFillAreaStyle
 
-This function returns true if the different fill area styles are assigned correctly to the _IfcFillAreaStyle_. Only certain combinations of the entity types provided by the _IfcFillStyleSelect_ are allowed.
+This function returns true if the different fill area styles are assigned correctly to the _IfcFillAreaStyle_. Only certain combinations of the entity types provided by the _IfcFillStyleSelect_ are allowed.<!-- end of definition -->
 
 Return false:
 
@@ -12,4 +12,4 @@ Return false:
 otherwise return true
 
 > <font color="#0000FF"><small>HISTORY  New function
-      in Release IFC2x3 TC1.</small></font>
+   in Release IFC2x3 TC1.</small></font>

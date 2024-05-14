@@ -1,10 +1,10 @@
 # IfcRampTypeEnum
 
-This enumeration defines the basic configuration of the ramp type in terms of the number and shape of ramp flights. The type also distinguished turns by landings. In addition the subdivision of the straight and changing direction ramps is included. The ramp configurations are given for ramps without and with one and two landings.
+This enumeration defines the basic configuration of the ramp type in terms of the number and shape of ramp flights. The type also distinguished turns by landings. In addition the subdivision of the straight and changing direction ramps is included. The ramp configurations are given for ramps without and with one and two landings.<!-- end of definition -->
 
 Ramps which are subdivided into more than two landings, or ramps with non-regular shapes are to be defined with type being USERDEFINED or NOTDEFINED.
 
-> HISTORY  New enumeration in IFC2.0.
+> HISTORY New enumeration in IFC2.0.
 
 ## Items
 
@@ -21,19 +21,19 @@ landing.
 ![](../../../../figures/ifcramptypeenum-fig02.gif)
 
 ### QUARTER_TURN_RAMP
-A ramp making a 90&deg; turn, consisting of two straight flights connected by
+A ramp making a 90° turn, consisting of two straight flights connected by
 a quarterspace landing. The direction of the turn is determined by the walking line.
 
 ![](../../../../figures/ifcramptypeenum-fig03.gif)
 
 ### TWO_QUARTER_TURN_RAMP
-A ramp making a 180&deg; turn, consisting of three straight flights connected
+A ramp making a 180° turn, consisting of three straight flights connected
 by two quarterspace landings. The direction of the turn is determined by the walking line.
 
 ![](../../../../figures/ifcramptypeenum-fig04.gif)
 
 ### HALF_TURN_RAMP
-A ramp making a 180&deg; turn, consisting of two straight flights connected
+A ramp making a 180° turn, consisting of two straight flights connected
 by a halfspace landing. The orientation of the turn is determined by the walking line.
 
 ![](../../../../figures/ifcramptypeenum-fig05.gif)

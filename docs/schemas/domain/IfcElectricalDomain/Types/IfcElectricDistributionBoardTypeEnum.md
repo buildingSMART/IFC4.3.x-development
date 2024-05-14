@@ -1,8 +1,8 @@
 # IfcElectricDistributionBoardTypeEnum
 
-The _IfcElectricDistributionBoardTypeEnum_ defines different types and/or functions of electric distribution boards.
+The _IfcElectricDistributionBoardTypeEnum_ defines different types and/or functions of electric distribution boards.<!-- end of definition -->
 
-> HISTORY  New type in IFC4. Replaces IfcElectricDistributionPointTypeEnum.
+> HISTORY New type in IFC4. Replaces IfcElectricDistributionPointTypeEnum.
 
 ## Items
 

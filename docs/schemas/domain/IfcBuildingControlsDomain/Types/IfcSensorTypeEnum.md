@@ -1,11 +1,11 @@
 # IfcSensorTypeEnum
 
-The _IfcSensorTypeEnum_ defines the range of different types of sensor that can be specified.
+The _IfcSensorTypeEnum_ defines the range of different types of sensor that can be specified.<!-- end of definition -->
 
-> HISTORY  New enumeration in IFC2.0.
+> HISTORY New enumeration in IFC2.0.
 
 { .change-ifc2x4}
-> IFC4 CHANGE  Additional enumerations added.
+> IFC4 CHANGE Additional enumerations added.
 
 ## Items
 

@@ -1,6 +1,6 @@
 # Pset_PipeFittingTypeCommon
 
-Pipe fitting type common attributes.
+Pipe fitting type common attributes.<!-- end of definition -->
 
 
 ## Comments

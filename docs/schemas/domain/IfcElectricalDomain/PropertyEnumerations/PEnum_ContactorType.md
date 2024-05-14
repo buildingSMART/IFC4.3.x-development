@@ -1,6 +1,6 @@
 # PEnum_ContactorType
 
-## Items
+<!-- end of definition -->## Items
 
 ### CAPACITORSWITCHING
 Capacitor Switching

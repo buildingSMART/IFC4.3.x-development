@@ -1,6 +1,6 @@
 # IfcInventory
 
-An inventory is a list of items within an enterprise.
+An inventory is a list of items within an enterprise.<!-- end of definition -->
 
 Various types of inventory can be included. These are identified by the range of values within the inventory type enumeration which includes space, asset, and furniture. User defined inventories can also be defined for lists of particular types of element such as may be required in operating and maintenance instructions. Such inventories should be constrained to contain a list of elements of a restricted type.
 
@@ -8,10 +8,10 @@ There are a number of actors that can be associated with an inventory, each acto
 
 There are a number of costs that can be associated with an inventory, each cost having a role. These are specified through the _CurrentValue_ and _OriginalValue_ attributes.
 
-> HISTORY  New entity in IFC2.0.
+> HISTORY New entity in IFC2.0.
 
 { .change-ifc2x4}
-> IFC4 CHANGE  All attributes optional, Where Rule removed.
+> IFC4 CHANGE All attributes optional, Where Rule removed.
 
 ## Attributes
 

@@ -1,6 +1,6 @@
 # IfcMaterialDefinition
 
-_IfcMaterialDefinition_ is a general supertype for all material related information items in IFC that have common material related properties that may include association of material with some shape parameters or assignments to identified parts of a component.
+_IfcMaterialDefinition_ is a general supertype for all material related information items in IFC that have common material related properties that may include association of material with some shape parameters or assignments to identified parts of a component.<!-- end of definition -->
 
 There are three ways of assigning materials to a single component or multiple components; they are characterized as:
 
@@ -17,14 +17,14 @@ Each instantiable subtype of _IfcMaterialDefinition_ may have material propertie
 ### AssociatedTo
 Use of the _IfcMaterialDefinition_ subtypes within the material association of an element occurrence or element type. The association is established by the _IfcRelAssociatesMaterial_ relationship.
 { .change-ifc2x4}
-> IFC4 CHANGE  The inverse attribute has been added.
+> IFC4 CHANGE The inverse attribute has been added.
 
 ### HasExternalReferences
 Reference to external references, e.g. library, classification, or document information, that are associated to the material.
 { .change-ifc2x4}
-> IFC4 CHANGE  The inverse attribute has been added.
+> IFC4 CHANGE The inverse attribute has been added.
 
 ### HasProperties
 Material properties assigned to instances of subtypes of _IfcMaterialDefinition_.
 { .change-ifc2x4}
-> IFC4 CHANGE  The inverse attribute has been added.
+> IFC4 CHANGE The inverse attribute has been added.

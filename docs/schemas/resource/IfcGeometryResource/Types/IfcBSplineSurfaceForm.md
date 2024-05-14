@@ -1,14 +1,14 @@
 # IfcBSplineSurfaceForm
 
-The _IfcBSplineSurfaceForm_ represents a part of a surface of some specific form.
+The _IfcBSplineSurfaceForm_ represents a part of a surface of some specific form.<!-- end of definition -->
 
 { .extDef}
-> NOTE  Definition according to ISO/CD 10303-42:1992
+> NOTE Definition according to ISO/CD 10303-42:1992
 > This type is used to indicate that the B-spline surface represents a part of a surface of some specific form.
 
-> NOTE  Type adapted from **b_spline_surface_form** defined in ISO 10303-42.
+> NOTE Type adapted from **b_spline_surface_form** defined in ISO 10303-42.
 
-> HISTORY  New type in IFC4.
+> HISTORY New type in IFC4.
 
 ## Items
 

@@ -1,6 +1,6 @@
 # PEnum_AudioVisualCameraType
 
-## Items
+<!-- end of definition -->## Items
 
 ### PHOTO
 Photo

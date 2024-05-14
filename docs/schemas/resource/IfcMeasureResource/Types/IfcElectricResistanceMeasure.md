@@ -1,9 +1,9 @@
 # IfcElectricResistanceMeasure
 
-_IfcElectricResistanceMeasure_ is a measure of the electric resistance.
+_IfcElectricResistanceMeasure_ is a measure of the electric resistance.<!-- end of definition -->
 
 Usually measured in Ohm (V/A).
 
 Type: REAL
 
-> HISTORY  New type in IFC2x.
+> HISTORY New type in IFC2x.

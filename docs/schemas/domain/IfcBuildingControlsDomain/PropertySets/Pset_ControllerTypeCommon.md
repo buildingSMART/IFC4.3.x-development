@@ -1,3 +1,3 @@
 # Pset_ControllerTypeCommon
 
-Controller type common attributes.
+Controller type common attributes.<!-- end of definition -->

@@ -1,6 +1,6 @@
 # PEnum_HoseReelMountingType
 
-## Items
+<!-- end of definition -->## Items
 
 ### CABINET_RECESSED
 Cabinet Recessed

@@ -1,7 +1,7 @@
 # IfcTopologyRepresentation
 
 _IfcTopologyRepresentation_ represents the concept of a particular topological representation of a product or a product component within a representation context. This representation context does not need to be (but may be) a geometric representation context. Several representation types for shape representation are included as predefined types:
-
+<!-- end of definition -->
 |Type|Description|
 |--- |--- |
 |Vertex|topological vertex representation (with or without assigned geometry)|
@@ -13,7 +13,7 @@ _IfcTopologyRepresentation_ represents the concept of a particular topological r
 
 The representation type is given as a string value at the inherited attribute '_RepresentationType_'.
 
-> HISTORY  New entity in IFC2x2.
+> HISTORY New entity in IFC2x2.
 
 ## Formal Propositions
 

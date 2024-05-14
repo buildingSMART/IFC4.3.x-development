@@ -1,6 +1,6 @@
 # PEnum_FurniturePanelType
 
-## Items
+<!-- end of definition -->## Items
 
 ### ACOUSTICAL
 Acoustical

@@ -1,6 +1,6 @@
 # PEnum_GasType
 
-## Items
+<!-- end of definition -->## Items
 
 ### COMMERCIALBUTANE
 Commercial Butane

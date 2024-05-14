@@ -1,8 +1,8 @@
 # IfcMaterialProfile
 
-_IfcMaterialProfile_ is a single and identifiable cross section of an element which is constructed of a number of profiles (one or more).
+_IfcMaterialProfile_ is a single and identifiable cross section of an element which is constructed of a number of profiles (one or more).<!-- end of definition -->
 
-> NOTE  In case of multiple _MaterialProfiles_, the relative positioning of individual profiles in _IfcMaterialProfileSet_ are defined using the concept of _IfcCompositeProfileDef_ in _IfcProfileResource_ schema; otherwise, only one _MaterialProfile_ is given and defined by an individual _IfcProfileDef_ (subtype).
+> NOTE In case of multiple _MaterialProfiles_, the relative positioning of individual profiles in _IfcMaterialProfileSet_ are defined using the concept of _IfcCompositeProfileDef_ in _IfcProfileResource_ schema; otherwise, only one _MaterialProfile_ is given and defined by an individual _IfcProfileDef_ (subtype).
 
 > HISTORY New entity in IFC4
 
@@ -25,9 +25,9 @@ The relative priority of the profile, expressed as normalised integer range [0..
 
 ### Category
 Category of the material profile, e.g. the role it has in the profile set it belongs to. The list of keywords might be extended by model view definitions, however the following keywords shall apply in general:
-* 'LoadBearing' &mdash; the material profile having a load bearing function.
-* 'Insulation' &mdash; the material profile having an insolating function.
-* 'Finish' &mdash; the material profile being the finish.
+* 'LoadBearing' — the material profile having a load bearing function.
+* 'Insulation' — the material profile having an insolating function.
+* 'Finish' — the material profile being the finish.
 
 ### ToMaterialProfileSet
 Material profile set in which this material profile is included.

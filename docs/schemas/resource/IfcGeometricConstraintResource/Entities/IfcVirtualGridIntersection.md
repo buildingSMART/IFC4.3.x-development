@@ -1,10 +1,10 @@
 # IfcVirtualGridIntersection
 
-_IfcVirtualGridIntersection_ defines the derived location of the intersection between two grid axes. Offset values may be given to set an offset distance to the grid axis for the calculation of the virtual grid intersection.
+_IfcVirtualGridIntersection_ defines the derived location of the intersection between two grid axes. Offset values may be given to set an offset distance to the grid axis for the calculation of the virtual grid intersection.<!-- end of definition -->
 
 The two intersecting axes (_IntersectingAxes_) define the intersection point, which exact location (in terms of the Cartesian point representing the intersection) has to be calculated from the geometric representation of the two participating curves.
 
-> NOTE  The _IfcGrid_ local placement, that can be provided relative to the local placement of another spatial structure element, has to be taken into account for calculating the absolute placement of the _IfcVirtualGridIntersection_. Where rules and informal rules ensure, that the _IntersectingAxes_ belong to the same _IfcGrid_
+> NOTE The _IfcGrid_ local placement, that can be provided relative to the local placement of another spatial structure element, has to be taken into account for calculating the absolute placement of the _IfcVirtualGridIntersection_. Where rules and informal rules ensure, that the _IntersectingAxes_ belong to the same _IfcGrid_
 
 Offset values may be given (_OffsetDistances_). If given, the position within the list of _OffsetDistances_ corresponds with the position within the list of _IntersectingAxes_. Therefore:
 
@@ -16,13 +16,13 @@ The following figures/ explain the usage of the _OffsetDistances_ and _Intersect
 
 ![2D offsets](../../../../figures/ifcvirtualgridintersection-layout1.gif)
 
-Figure 1 &mdash; Virtual grid intersection with two offsets
+Figure 1 — Virtual grid intersection with two offsets
 
 Figure 1 illustrates two offset distances given where the virtual intersection is defined in the xy plane of the grid axis placement.
 
 ![3D offsets](../../../../figures/ifcvirtualgridintersection-layout2.gif)
 
-Figure 2 &mdash; Virtual grid intersection with three offsets
+Figure 2 — Virtual grid intersection with three offsets
 
 Figure 2 illustrates three offset distances given where the virtual intersection is defined by an offset (in direction of the z-axis of the design grid placement) to the virtual intersection in the xy plane of the grid axis placement.
 
@@ -30,7 +30,7 @@ The distance of the offset curve (_OffsetDistances[n]_) is measured from the bas
 
 ![offset direction](../../../../figures/ifcvirtualgridintersection-offset1.gif)
 
-Figure 3 &mdash; Virtual grid intersection negative offset
+Figure 3 — Virtual grid intersection negative offset
 
 Figure 3 illustrates an example of a negative offset where the figure shows the side of the offset.
 
@@ -38,10 +38,10 @@ Figure 3 illustrates an example of a negative offset where the figure shows the 
  * <em>IntersectingAxes[1].SameSense</em> = TRUE.
  * <em>OffsetDistances[1]</em> is a negative length measure
 
-> HISTORY  New entity in IFC1.5.
+> HISTORY New entity in IFC1.5.
 
 { .change-ifc2x}
-> IFC2x CHANGE  Renamed from IfcConstraintRelIntersection.
+> IFC2x CHANGE Renamed from IfcConstraintRelIntersection.
 
 **Informal Propositions**
 

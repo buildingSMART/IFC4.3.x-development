@@ -1,12 +1,12 @@
 # IfcFailureConnectionCondition
 
-Defines forces at which a support or connection fails.
+Defines forces at which a support or connection fails.<!-- end of definition -->
 
 Applicability:
 
 * Point supports and connections.
 
-> HISTORY  New entity in IFC2x2.
+> HISTORY New entity in IFC2x2.
 
 ## Attributes
 

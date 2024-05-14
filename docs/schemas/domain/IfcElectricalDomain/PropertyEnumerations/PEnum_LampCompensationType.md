@@ -1,6 +1,6 @@
 # PEnum_LampCompensationType
 
-## Items
+<!-- end of definition -->## Items
 
 ### CAPACITIVE
 Capacitive

@@ -1,20 +1,20 @@
 # IfcRampFlight
 
-A ramp comprises a single inclined segment, or several inclined segments that are connected by a horizontal segment, referred to as a landing. A ramp flight is the single inclined segment and part of the ramp construction. In case of single flight ramps, the ramp flight and the ramp are identical.
+A ramp comprises a single inclined segment, or several inclined segments that are connected by a horizontal segment, referred to as a landing. A ramp flight is the single inclined segment and part of the ramp construction. In case of single flight ramps, the ramp flight and the ramp are identical.<!-- end of definition -->
 
-> NOTE  A single flight ramp is represented by an _IfcRamp_ instance without using aggregation and by utilizing the product shape representation directly at _IfcRamp_.
+> NOTE A single flight ramp is represented by an _IfcRamp_ instance without using aggregation and by utilizing the product shape representation directly at _IfcRamp_.
 
 An _IfcRampFlight_ is an aggregated part of an _IfcRamp_ realized through the _IfcRelAggregates_ relationship, the ramp flight is therefore included in the set of _IfcRelAggregates.RelatedObjects_.
 
 An _IfcRampFlight_ connects the floor slab of zero to two different storeys (or partial storeys or landings) within a building. The connection relationship between the _IfcRampFlight_ and the _IfcSlab_ can be expressed using the _IfcRelConnectsElements_ relationship.
 
-> HISTORY  New entity in IFC2.0.
+> HISTORY New entity in IFC2.0.
 
 ## Attributes
 
 ### PredefinedType
 Predefined generic type for a ramp flight that is specified in an enumeration. There may be a property set given specifically for the predefined types.
-> NOTE  The _PredefinedType_ shall only be used, if no _IfcRampFlightType_ is assigned, providing its own _IfcRampFlightType.PredefinedType_.
+> NOTE The _PredefinedType_ shall only be used, if no _IfcRampFlightType_ is assigned, providing its own _IfcRampFlightType.PredefinedType_.
 
 { .change-ifc2x4}
 > IFC4 CHANGE The attribute has been added at the end of the entity definition.
@@ -95,7 +95,7 @@ The _IfcRampFlight_, as any subtype of _IfcBuiltElement_, may participate altern
 * the _Spatial Containment_ (defined here), or
 * the _Element Composition_.
 
-> NOTE  Model view definitions or implementer agreements may force an IfcRampFlight to be solely used as a part within an _IfcRamp_ container. In this case, no _Spatial containment_ shall be used.
+> NOTE Model view definitions or implementer agreements may force an IfcRampFlight to be solely used as a part within an _IfcRamp_ container. In this case, no _Spatial containment_ shall be used.
 
 #### IfcBuildingStorey
 

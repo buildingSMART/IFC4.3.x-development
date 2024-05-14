@@ -1,15 +1,15 @@
 # IfcDistributionFlowElementType
 
-The element type _IfcDistributionFlowElementType_ defines a list of commonly shared property set definitions of an element and an optional set of product representations. It is used to define an element specification (the specific product information that is common to all occurrences of that product type).
+The element type _IfcDistributionFlowElementType_ defines a list of commonly shared property set definitions of an element and an optional set of product representations. It is used to define an element specification (the specific product information that is common to all occurrences of that product type).<!-- end of definition -->
 
 Distribution flow element types (orthe instantiable subtypes) may be exchanged without being already assigned to occurrences.
 
 The occurrences of the _IfcDistributionFlowElementType_ are represented by instances of _IfcDistributionFlowElement_ or its subtypes.
 
-> HISTORY  New entity in IFC2x2.
+> HISTORY New entity in IFC2x2.
 
 { .change-ifc2x4}
-> IFC4 CHANGE  Ports may now be defined using _IfcRelNests_ to enable definition of ports at type definitions (both forward and backward compatible), provide a logical order, and reduce the number of relationship objects needed. The relationship _IfcRelConnectsPortToElement_ is still supported on occurrence objects, however is now specific to dynamically connected ports.
+> IFC4 CHANGE Ports may now be defined using _IfcRelNests_ to enable definition of ports at type definitions (both forward and backward compatible), provide a logical order, and reduce the number of relationship objects needed. The relationship _IfcRelConnectsPortToElement_ is still supported on occurrence objects, however is now specific to dynamically connected ports.
 
 ## Concepts
 
@@ -19,7 +19,7 @@ This represents the 3D flow path of the item having _IfcShapeRepresentation.Repr
 
 If an element type is defined parametrically (such as a flow segment type defining common material profile but no particular length or path), then no representations shall be asserted at the type.
 
-> NOTE  The product representations are defined as representation maps (at the level of the supertype IfcTypeProduct, which get assigned by an element occurrence instance through the _IfcShapeRepresentation.Item[1]_ being an IfcMappedItem.
+> NOTE The product representations are defined as representation maps (at the level of the supertype IfcTypeProduct, which get assigned by an element occurrence instance through the _IfcShapeRepresentation.Item[1]_ being an IfcMappedItem.
 
 ### Type Clearance Geometry
 

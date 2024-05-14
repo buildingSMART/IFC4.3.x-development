@@ -1,6 +1,6 @@
 # IfcLibraryReference
 
-An _IfcLibraryReference_ is a reference into a library of information by _Location_ (provided as a URI). It also provides an optional inherited _Identification_ key to allow more specific references to library sections or tables. The inherited _Name_ attribute allows for a human interpretable identification of the library item. Also, general information on the library from which the reference is taken, is given by the _ReferencedLibrary_ relation which identifies the relevant occurrence of _IfcLibraryInformation_.
+An _IfcLibraryReference_ is a reference into a library of information by _Location_ (provided as a URI). It also provides an optional inherited _Identification_ key to allow more specific references to library sections or tables. The inherited _Name_ attribute allows for a human interpretable identification of the library item. Also, general information on the library from which the reference is taken, is given by the _ReferencedLibrary_ relation which identifies the relevant occurrence of _IfcLibraryInformation_.<!-- end of definition -->
 
 The _IfcLibraryReference_ additionally provides the capability to handle multilingual library entries. The _Language_ attribute then holds the language tag for the language used by the strings kept in the _Name_ and the _Description_ attribute.
 
@@ -17,22 +17,22 @@ ISOIEC | LonTalk | 48-bit hexadecimal neuron ID.
 OPCFoundation | OPC | Hierarchical ItemID in alphanumeric form (i.e. 'B204.Tank2.Temperature)
 SmartLabs | Insteon | 24-bit hexadecimal instance address.
 
-> HISTORY  New entity in IFC2.0.
+> HISTORY New entity in IFC2.0.
 
 { .change-ifc2x4}
-> IFC4 CHANGE  _Description_ and _Language_ attribute added; _ReferencedLibrary_ attribute added (reversing previous ReferenceIntoLibrary inverse relationship).
+> IFC4 CHANGE _Description_ and _Language_ attribute added; _ReferencedLibrary_ attribute added (reversing previous ReferenceIntoLibrary inverse relationship).
 
 ## Attributes
 
 ### Description
 Additional description provided for the library reference.
 { .change-ifc2x4}
-> IFC4 CHANGE  New attribute added at the end of the attribute list.
+> IFC4 CHANGE New attribute added at the end of the attribute list.
 
 ### Language
 The language in which a library reference is expressed.
 { .change-ifc2x4}
-> IFC4 CHANGE  New attribute added at the end of the attribute list.
+> IFC4 CHANGE New attribute added at the end of the attribute list.
 
 ### ReferencedLibrary
 The library information that is being referenced.
@@ -40,4 +40,4 @@ The library information that is being referenced.
 ### LibraryRefForObjects
 The library reference with which objects are associated.
 { .change-ifc2x4}
-> IFC4 CHANGE  New inverse attribute.
+> IFC4 CHANGE New inverse attribute.

@@ -1,6 +1,6 @@
 # Pset_ElectricalDeviceCommon
 
-A collection of properties that are commonly used by electrical device types.
+A collection of properties that are commonly used by electrical device types.<!-- end of definition -->
 
 
 ## Comments

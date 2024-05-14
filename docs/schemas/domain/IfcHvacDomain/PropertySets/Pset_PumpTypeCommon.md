@@ -1,6 +1,6 @@
 # Pset_PumpTypeCommon
 
-Common attributes of a pump type.
+Common attributes of a pump type.<!-- end of definition -->
 
 
 ## Comments

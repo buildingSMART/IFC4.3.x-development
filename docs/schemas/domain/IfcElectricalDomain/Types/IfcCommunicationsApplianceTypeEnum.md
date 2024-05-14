@@ -1,8 +1,8 @@
 # IfcCommunicationsApplianceTypeEnum
 
-Defines the range of different types of communications appliance that can be specified.
+Defines the range of different types of communications appliance that can be specified.<!-- end of definition -->
 
-> HISTORY  New enumeration in IFC4.
+> HISTORY New enumeration in IFC4.
 
 ## Items
 

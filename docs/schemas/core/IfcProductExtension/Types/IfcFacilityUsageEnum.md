@@ -1,11 +1,11 @@
 # IfcFacilityUsageEnum
 
-This container defines the different usage types of conveyor segments that can further specify an _IfcFacilityPart_.
+This container defines the different usage types of conveyor segments that can further specify an _IfcFacilityPart_.<!-- end of definition -->
 
 ## Items
 
 ### LATERAL
-A Lateral usage implies a facility part is a lateral (left, right, centre etc.)  subdivision of a longitudinal segment or facility. Common uses include traffic lanes, road or rail side embankments etc.
+A Lateral usage implies a facility part is a lateral (left, right, centre etc.) subdivision of a longitudinal segment or facility. Common uses include traffic lanes, road or rail side embankments etc.
 
 ### REGION
 A regional usage implies a bounded subdivision in the "X-Y plane" of a parent _IfcSpatialStructureElement_. The parent _IfcSpatialStructureElement_ can be longitudinal or regional in nature.

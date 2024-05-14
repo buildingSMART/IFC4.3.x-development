@@ -1,6 +1,6 @@
 # PEnum_CoolingTowerCapacityControl
 
-## Items
+<!-- end of definition -->## Items
 
 ### FANCYCLING
 Fan Cycling

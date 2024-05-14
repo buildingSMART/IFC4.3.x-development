@@ -1,6 +1,6 @@
 # PEnum_OverheadContactLineType
 
-## Items
+<!-- end of definition -->## Items
 
 ### TROLLY_TYPE_CONTACT_LINE
 Trolly type contactline.

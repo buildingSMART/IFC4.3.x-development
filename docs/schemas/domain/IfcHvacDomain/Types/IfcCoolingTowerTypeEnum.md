@@ -1,8 +1,8 @@
 # IfcCoolingTowerTypeEnum
 
-Enumeration defining the typical types of cooling towers.
+Enumeration defining the typical types of cooling towers.<!-- end of definition -->
 
-> HISTORY  New enumeration in IFC2x.
+> HISTORY New enumeration in IFC2x.
 
 ## Items
 

@@ -1,8 +1,8 @@
 # PEnum_PermeableCoveringOperationEnum
 
-This enumeration defines the valid types of permeable coverings.
+This enumeration defines the valid types of permeable coverings.<!-- end of definition -->
 
-> HISTORY  New enumeration in IFC2.0.
+> HISTORY New enumeration in IFC2.0.
 
 ## Items
 

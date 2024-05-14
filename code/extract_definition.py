@@ -38,14 +38,19 @@ def extract_definition(txt, return_short=True, return_marked=False, print_split=
     s4 = -1
     for k in KEYWORDS:
         x = txt.find(k)
-        if x>s4:
-            s4=x
+        if s4 == -1 and x != -1:
+            s4 = x
+        elif x < s4 and x != -1:
+            s4 = x
     s5 = re.search(SENTENCE_WITH_PSET_PATTERN, txt).start() if re.search(SENTENCE_WITH_PSET_PATTERN,
                                                                          txt) else -1
     s6 = re.search(HEADING_PATTERN, txt).start() if re.search(HEADING_PATTERN, txt) else -1
     i = min([x for x in [s1, s2, s3, s4, s5, s6, 1e5] if x >= 0])
     if txt[i-1] in [":","-","–"]:
         i = find_last_bullet_end_position(txt, i)
+
+    if txt[i - 1] == " ":
+        i = i - 1
 
     # Execute
     if i >= 0 and i != 1e5:
@@ -80,8 +85,14 @@ def enrich_all_markdowns(directory_path, save=False):
                 file_path = os.path.join(root, file)
                 try:
                     with open(file_path, 'r', encoding='utf-8') as file:
-                        new_def = extract_definition(file.read(), return_short=False,
-                                                     return_marked=True, print_split=True)
+                        new_def = file.read()
+                        new_def = new_def.replace("  ", " ")
+                        new_def = extract_definition(
+                            new_def,
+                            return_short=False,
+                            return_marked=True,
+                            print_split=True,
+                        )
                     if save:
                         with open(file_path, 'w', encoding='utf-8') as file:
                             file.write(new_def)
@@ -90,5 +101,5 @@ def enrich_all_markdowns(directory_path, save=False):
 
 
 if __name__ == "__main__":
-    DIR_PATH = r"..\docs\schemas"
+    DIR_PATH = r".\docs\schemas"
     enrich_all_markdowns(DIR_PATH, save=False)

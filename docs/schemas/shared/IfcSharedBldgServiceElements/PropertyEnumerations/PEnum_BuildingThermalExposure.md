@@ -1,6 +1,6 @@
 # PEnum_BuildingThermalExposure
 
-<!-- end of definition -->## Items
+## Items
 
 ### LIGHT
 Light

@@ -1,6 +1,6 @@
 # PEnum_GullyType
 
-<!-- end of definition -->## Items
+## Items
 
 ### VERTICAL
 Vertical

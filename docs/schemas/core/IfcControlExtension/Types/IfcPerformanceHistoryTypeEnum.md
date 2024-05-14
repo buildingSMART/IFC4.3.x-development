@@ -1,6 +1,6 @@
 # IfcPerformanceHistoryTypeEnum
 
-This enumeration is used to identify the primary purpose of performance history.<!-- end of definition -->
+This enumeration is used to identify the primary purpose of performance history.
 
 > HISTORY  New enumeration in IFC4
 

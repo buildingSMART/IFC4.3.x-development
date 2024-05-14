@@ -1,6 +1,6 @@
 # IfcFan
 
-A fan is a device which imparts mechanical work on a gas. A typical usage of a fan is to induce airflow in a building services air distribution system.<!-- end of definition -->
+A fan is a device which imparts mechanical work on a gas. A typical usage of a fan is to induce airflow in a building services air distribution system.
 
 > HISTORY  New entity in IFC4
 

@@ -1,6 +1,6 @@
 # Pset_MechanicalPanelOutOfPlane
 
-Properties for Mechanica lPanels Out Of Plane.<!-- end of definition -->
+Properties for Mechanica lPanels Out Of Plane.
 
 ## Comments
 

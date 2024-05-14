@@ -1,6 +1,6 @@
 # PEnum_PolarizationMode
 
-Enumeration of polarization modes.<!-- end of definition -->
+Enumeration of polarization modes.
 
 ## Items
 

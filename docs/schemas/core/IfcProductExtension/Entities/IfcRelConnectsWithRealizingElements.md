@@ -1,6 +1,6 @@
 # IfcRelConnectsWithRealizingElements
 
-_IfcRelConnectsWithRealizingElements_ defines a generic relationship that is made between two elements that require the realization of that relationship by means of further realizing elements.<!-- end of definition -->
+_IfcRelConnectsWithRealizingElements_ defines a generic relationship that is made between two elements that require the realization of that relationship by means of further realizing elements.
 
 An _IfcRelConnectsWithRealizingElements_ is a specialization of _IfcRelConnectsElements_ where the connecting operation has the additional attribute of (one or many) realizing elements that may be used to realize or further qualify the relationship. It is defined as a ternary relationship.
 

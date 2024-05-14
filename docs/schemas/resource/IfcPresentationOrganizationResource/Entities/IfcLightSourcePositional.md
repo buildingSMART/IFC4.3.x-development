@@ -1,6 +1,6 @@
 # IfcLightSourcePositional
 
-{ .extDef}<!-- end of definition -->
+{ .extDef}
 > NOTE  Definition according to ISO 10303-46:
 > The light source positional entity is a subtype of light source. This entity has a light source position and attenuation coefficients. A positional light source affects a surface based on the surface's orientation and position.
 
@@ -10,7 +10,7 @@
 
 { .extDef}
 > Point light node's illumination falls off with distance as specified by three attenuation coefficients. The attenuation factor is
->> 1/max(attenuation[0] + attenuation[1] × r + attenuation[2] × r 2 , 1),
+>> 1/max(attenuation[0] + attenuation[1] &times; r + attenuation[2] &times; r 2 , 1),
 >  where r is the distance from the light to the surface being illuminated. The default is no attenuation. An attenuation value of (0, 0, 0) is identical to (1, 0, 0). Attenuation values shall be greater than or equal to zero.
 
 > NOTE  Corresponding ISO 10303 entity: light_source_positional. Please refer to ISO/IS 10303-46:1994, p. 32 for the final definition of the formal standard.

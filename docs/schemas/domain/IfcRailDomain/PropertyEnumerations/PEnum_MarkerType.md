@@ -1,6 +1,6 @@
 # PEnum_MarkerType
 
-Enumeration of the different markers used in railway signaling.<!-- end of definition -->
+Enumeration of the different markers used in railway signaling.
 
 ## Items
 

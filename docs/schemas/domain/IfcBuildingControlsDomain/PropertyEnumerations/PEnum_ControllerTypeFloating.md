@@ -1,6 +1,6 @@
 # PEnum_ControllerTypeFloating
 
-<!-- end of definition -->## Items
+## Items
 
 ### CONSTANT
 No inputs

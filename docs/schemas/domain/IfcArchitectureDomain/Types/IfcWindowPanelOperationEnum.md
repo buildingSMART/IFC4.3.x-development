@@ -1,6 +1,6 @@
 # IfcWindowPanelOperationEnum
 
-This enumeration defines the basic ways to describe how window panels operate, as shown in Figure 2.<!-- end of definition -->
+This enumeration defines the basic ways to describe how window panels operate, as shown in Figure 2.
 
 The opening direction of the window panels is given by the local placement of the _IfcWindow_. The positive y-axis determines the direction as shown in Figure 2.
 
@@ -10,7 +10,7 @@ Note:
 2. Figures (symbolic representation) depend on the national building code
 3. These figures/ are only shown as illustrations
 
-![opening direction](../../../../figures/ifcwindowpaneloperationenum-fig13.gif "Figure 2 — Window panel directions")
+![opening direction](../../../../figures/ifcwindowpaneloperationenum-fig13.gif "Figure 2 &mdash; Window panel directions")
 
 > HISTORY  New enumeration in IFC2.0.
 

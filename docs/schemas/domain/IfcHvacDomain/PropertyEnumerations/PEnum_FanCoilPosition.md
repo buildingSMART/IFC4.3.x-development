@@ -1,6 +1,6 @@
 # PEnum_FanCoilPosition
 
-<!-- end of definition -->## Items
+## Items
 
 ### DRAWTHROUGH
 Draw Through

@@ -1,6 +1,6 @@
 # IfcCompoundPlaneAngleMeasure
 
-_IfcCompoundPlaneAngleMeasure_ is a compound measure of plane angle in degrees, minutes, seconds, and optionally millionth-seconds of arc.<!-- end of definition -->
+_IfcCompoundPlaneAngleMeasure_ is a compound measure of plane angle in degrees, minutes, seconds, and optionally millionth-seconds of arc.
 
 > NOTE  _IfcCompoundPlaneAngleMeasure_ is used where angles need to be described to an accuracy as fine as one millionth of a degree and expressed as parts of an arc. It may be used for angular measurement by surveyors or for other angular measurements where precision is required. Another usage is exact or approximate global positioning against a geographic coordinate systems using longitude and latitude.
 
@@ -27,7 +27,7 @@ All measure components have the same sign (positive or negative). It is therefor
 > ```
 >
 LOCAL
->   a : IfcPlaneAngleMeasure := -50.975864;  (\* decimal degrees, -50° 58' 33" 110400 \*)
+>   a : IfcPlaneAngleMeasure := -50.975864;  (\* decimal degrees, -50&deg; 58' 33" 110400 \*)
 >   b : IfcPlaneAngleMeasure;
 >   c : IfcCompoundPlaneAngleMeasure;
 >   s : IfcText;
@@ -57,14 +57,14 @@ When a compound plane angle measure is formatted for display or printout, the si
 >   s := FORMAT(c[1], '+##')     + "000000B0"
 >      + FORMAT(ABS(c[2]), '##') + ''''
 >      + FORMAT(ABS(c[3]), '##') + '"'
->      + FORMAT(ABS(c[4]), '##');  -- -50° 58' 33" 110400
+>      + FORMAT(ABS(c[4]), '##');  -- -50&deg; 58' 33" 110400
 
 > ```
 
 
 Another often encountered display format of latitudes and longitudes is to omit the signs and print N, S, E, W indicators instead, for example,
 ```
-50°58'33"S
+50&deg;58'33"S
 ```
 . When stored as _IfcCompoundPlaneAngleMeasure_ however, a compound plane angle measure is always signed, with same sign of all components.
 

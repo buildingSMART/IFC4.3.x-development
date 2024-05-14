@@ -1,6 +1,6 @@
 # PEnum_CheckRailType
 
-<!-- end of definition -->## Items
+## Items
 
 ### TYPE_33C1
 Check rail type 33C1.

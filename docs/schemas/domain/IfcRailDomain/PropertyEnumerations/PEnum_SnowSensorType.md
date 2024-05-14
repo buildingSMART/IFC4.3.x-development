@@ -1,6 +1,6 @@
 # PEnum_SnowSensorType
 
-<!-- end of definition -->## Items
+## Items
 
 ### LASERIRRADIATION
 

@@ -1,6 +1,6 @@
 # PEnum_AirTerminalAirflowType
 
-<!-- end of definition -->## Items
+## Items
 
 ### SUPPLYAIR
 

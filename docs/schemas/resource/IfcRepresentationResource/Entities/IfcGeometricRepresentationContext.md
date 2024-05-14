@@ -1,10 +1,10 @@
 # IfcGeometricRepresentationContext
 
-The _IfcGeometricRepresentationContext_ defines the context that applies to several shape representations of products within a project. It defines the type of the context in which the shape representation is defined, and the numeric precision applicable to the geometric representation items defined in this context. In addition it can be used to offset the project coordinate system from a global point of origin, using the _WorldCoordinateSystem_ attribute. The main representation context may also provide the true north direction, see Figure 1.<!-- end of definition -->
+The _IfcGeometricRepresentationContext_ defines the context that applies to several shape representations of products within a project. It defines the type of the context in which the shape representation is defined, and the numeric precision applicable to the geometric representation items defined in this context. In addition it can be used to offset the project coordinate system from a global point of origin, using the _WorldCoordinateSystem_ attribute. The main representation context may also provide the true north direction, see Figure 1.
 
 ![TrueNorth](../../../../figures/ifcgeometricrepresentationcontext_truenorth.png)
 
-Figure 1 — Definition of the true north direction
+Figure 1 &mdash; Definition of the true north direction
 
 The <em>TrueNorth</em> attribute should be provided, if the y axis of the <em>WorldCoordinateSystem</em> does not point to the global northing. Direction of the true north, or geographic northing direction, relative to the underlying project coordinate system as established by the attribute <em>WorldCoordinateSystem</em>. It is given by a 2 dimensional direction within the xy-plane of the project coordinate system. If not resent, it defaults to [0.,1.] - i.e. the positive Y axis of the project coordinate system equals the geographic northing direction. The direction is provided within project coordinate system and identifies the true north direction.</p>
 
@@ -18,7 +18,7 @@ The use of one instance of _IfcGeometricRepresentationContext_ to represent the 
 
 ![representation context](../../../../figures/ifcgeometricrepresentationcontext_layout.png)
 
-Figure 2 — Example of using geometric representation contexts
+Figure 2 &mdash; Example of using geometric representation contexts
 
 Use of representation contexts defined at <em>IfcProject</em> for 3D model and 2D plan context, including sub context definitions for different target scales. There shall always be a maximum of one geometric representation context for 2D and for 3D coordinate space.
 

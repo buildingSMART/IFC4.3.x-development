@@ -1,6 +1,6 @@
 # IfcProjectedCRS
 
-_IfcProjectedCRS_ is a coordinate reference system (CRS) of the map to which the map translation of the local engineering coordinate system of the construction or facility engineering project relates. The projected coordinate reference system is assumed to be a 2D or 3D right-handed Cartesian coordinate system, the optional _MapUnit_ attribute can be used to determine the length unit used by the map.<!-- end of definition -->
+_IfcProjectedCRS_ is a coordinate reference system (CRS) of the map to which the map translation of the local engineering coordinate system of the construction or facility engineering project relates. The projected coordinate reference system is assumed to be a 2D or 3D right-handed Cartesian coordinate system, the optional _MapUnit_ attribute can be used to determine the length unit used by the map.
 
 Despite what its name suggests:
 
@@ -27,7 +27,7 @@ The unambiguous identifier by which the coordinate reference system is known, is
 ### VerticalDatum
 Name by which the vertical datum is identified. The vertical datum is associated with the height axis of the coordinate reference system and indicates the reference plane and fundamental point defining the origin of a height system. It needs to be provided, if the _Name_ identifier does not unambiguously define the vertical datum as well and if the coordinate reference system is a 3D reference system.
 
-> EXAMPLE  vertical datums include: 'EPSG:5181' (Deutsches Haupthöhennetz 1992); 'EPSG:5215' (European Vertical Reference Frame 2007)
+> EXAMPLE  vertical datums include: 'EPSG:5181' (Deutsches Haupth&ouml;hennetz 1992); 'EPSG:5215' (European Vertical Reference Frame 2007)
 
 ### MapProjection
 Name by which the map projection is identified.

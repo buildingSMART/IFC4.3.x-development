@@ -1,6 +1,6 @@
 # IfcObject
 
-An _IfcObject_ is the generalization of any semantically treated thing or process. Objects are things as they appear - i.e. occurrences.<!-- end of definition -->
+An _IfcObject_ is the generalization of any semantically treated thing or process. Objects are things as they appear - i.e. occurrences.
 
 > NOTE  Examples of _IfcObject_ include physically tangible items such as wall, beam or covering, physically existing items such as spaces, or conceptual items such as grids or virtual boundaries. It also stands for processes such as work tasks, for controls such as cost items, or for actors such as persons involved in the design process.
 

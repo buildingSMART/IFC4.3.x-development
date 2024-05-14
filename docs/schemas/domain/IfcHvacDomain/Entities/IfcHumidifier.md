@@ -1,6 +1,6 @@
 # IfcHumidifier
 
-A humidifier is a device that adds moisture into the air.<!-- end of definition -->
+A humidifier is a device that adds moisture into the air.
 
 > HISTORY  New entity in IFC4
 

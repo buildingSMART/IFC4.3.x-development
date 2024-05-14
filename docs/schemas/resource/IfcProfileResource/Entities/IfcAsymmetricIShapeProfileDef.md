@@ -1,6 +1,6 @@
 # IfcAsymmetricIShapeProfileDef
 
-_IfcAsymmetricIShapeProfileDef_ defines a section profile that provides the defining parameters of a singly symmetric I-shaped section. Its parameters and orientation relative to the position coordinate system are according to the following illustration. The centre of the position coordinate system is in the profile's centre of the bounding box.<!-- end of definition -->
+_IfcAsymmetricIShapeProfileDef_ defines a section profile that provides the defining parameters of a singly symmetric I-shaped section. Its parameters and orientation relative to the position coordinate system are according to the following illustration. The centre of the position coordinate system is in the profile's centre of the bounding box.
 
 The overall width of the profile is implicitly given by the maximum of the bottom flange width and the top flange width.
 
@@ -24,7 +24,7 @@ Figure 1 illustrates parameters of the asymmetric I-shaped section definition. T
 
 By using offsets of the position location, the parameterized profile can be positioned centric (using x,y offsets = 0.), or at any position relative to the profile. The parameterized profile is defined by a set of parameter attributes. In the illustrated example, the 'CentreOfGravityInY' property in _IfcProfileProperties_, if provided, is negative.
 
-![asymmetric I shape profile](../../../../figures/ifcasymmetricishapeprofiledef.gif "Figure 1 — Asymmetric I-shape profile")
+![asymmetric I shape profile](../../../../figures/ifcasymmetricishapeprofiledef.gif "Figure 1 &mdash; Asymmetric I-shape profile")
 
 ## Attributes
 

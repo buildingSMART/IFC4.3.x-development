@@ -1,3 +1,3 @@
 # IfcVehicleType
 
-Type of _IfcVehicle_.<!-- end of definition -->
+Type of _IfcVehicle_.

@@ -1,6 +1,6 @@
 # IfcVirtualElementTypeEnum
 
-Enumeration of Virtual Element Types.<!-- end of definition -->
+Enumeration of Virtual Element Types.
 
 ## Items
 

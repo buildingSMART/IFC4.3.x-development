@@ -1,6 +1,6 @@
 # PEnum_AssemblyPlace
 
-<!-- end of definition -->## Items
+## Items
 
 ### FACTORY
 Factory

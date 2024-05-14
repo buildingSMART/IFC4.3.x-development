@@ -1,6 +1,6 @@
 # IfcMassFlowRateMeasure
 
-_IfcMassFlowRateMeasure_ is a measure of the mass of a medium flowing per unit time.<!-- end of definition -->
+_IfcMassFlowRateMeasure_ is a measure of the mass of a medium flowing per unit time.
 
 Usually measured in kg/s.
 

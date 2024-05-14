@@ -1,6 +1,6 @@
 # IfcElectricVoltageMeasure
 
-_IfcElectricVoltageMeasure_ is a measure of electromotive force.<!-- end of definition -->
+_IfcElectricVoltageMeasure_ is a measure of electromotive force.
 
 Usually measured in Volts (V, W/A).
 

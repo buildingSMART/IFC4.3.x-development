@@ -1,6 +1,6 @@
 # IfcSurfaceTexture
 
-An _IfcSurfaceTexture_ provides a 2-dimensional image-based texture map. It can either be given by referencing an external image file through an URL reference (_IfcImageTexture_), including the image file as a blob (long binary) into the data set (_IfcBlobTexture_), or by explicitly including an array of pixels (_IfcPixelTexture_).<!-- end of definition -->
+An _IfcSurfaceTexture_ provides a 2-dimensional image-based texture map. It can either be given by referencing an external image file through an URL reference (_IfcImageTexture_), including the image file as a blob (long binary) into the data set (_IfcBlobTexture_), or by explicitly including an array of pixels (_IfcPixelTexture_).
 
 The following definitions from ISO/IEC 19775-1 X3D Architecture and base components ([X3D Specification](http://www.web3d.org/x3d/specifications/)) apply:
 
@@ -18,14 +18,14 @@ The following definitions from ISO/IEC 19775-1 X3D Architecture and base compone
 
 Figure 1 illustrates the texture coordinate system.
 
-![texture coordinates](../../../../figures/ifcsurfacetexture_fig-1.png "Figure 1 — Surface texture coordinates")
+![texture coordinates](../../../../figures/ifcsurfacetexture_fig-1.png "Figure 1 &mdash; Surface texture coordinates")
 
 The following definitions from ISO/IEC 19775-1 X3D Architecture and base components ([X3D Specification](http://www.web3d.org/x3d/specifications/)) on texture coordinates apply:
 
  * Texture maps are defined in a 2D coordinate system (s, t) that ranges from [0.0, 1.0] in both directions. The bottom edge of the image corresponds to the S-axis of the texture map, and left edge of the image corresponds to the T-axis of the texture map. The lower-left pixel of the image corresponds to s=0, t=0, and the top-right pixel of the image corresponds to s=1, t=1. Texture maps may be viewed as two dimensional colour functions that, given an <em>(s, t)</em> coordinate, return a colour value <em>colour(s, t)</em>.
  * The _RepeatS_ and _RepeatT_ Boolean flags control whether the texture map is repeated outside the [0.0, 1.0] texture coordinate range, when applied to a geometric surface, or clamped to lie within the [0.0, 1.0] range. The _TextureTransform_ applies a 2D non-uniform transformation to the texture before it is applied to a geometric surface.
- * These parameters support changes to the size, orientation, and position of textures on shapes. Note that these operations appear reversed when viewed on the surface of geometry. For example, a <em>scale</em> value of (2 2) will scale the texture coordinates and have the net effect of shrinking the texture size by a factor of 2 (texture coordinates are twice as large and thus cause the texture to repeat). A translation of (0.5 0.0) translates the texture coordinates +.5 units along the S-axis and has the net effect of translating the texture −0.5 along the S-axis on the geometry's surface. A rotation of π/2 of the texture coordinates results in a −π/2 rotation of the texture on the geometry.
- * The <em>center</em> field specifies a translation offset in texture coordinate space about which the <em>rotation</em> and <em>scale</em> fields are applied. The <em>scale</em> field specifies a scaling factor in S and T of the texture coordinates about the <em>center</em> point.  <em>scale</em> values shall be in the range (−∞,∞).  The <em>rotation</em> field specifies a rotation in radians of the texture coordinates about the <em>center</em> point after the scale has been applied. A positive rotation value makes the texture coordinates rotate counterclockwise about the centre, thereby rotating the appearance of the texture itself clockwise. The <em>translation</em> field specifies a translation of the texture coordinates.
+ * These parameters support changes to the size, orientation, and position of textures on shapes. Note that these operations appear reversed when viewed on the surface of geometry. For example, a <em>scale</em> value of (2 2) will scale the texture coordinates and have the net effect of shrinking the texture size by a factor of 2 (texture coordinates are twice as large and thus cause the texture to repeat). A translation of (0.5 0.0) translates the texture coordinates +.5 units along the S-axis and has the net effect of translating the texture &minus;0.5 along the S-axis on the geometry's surface. A rotation of &pi;/2 of the texture coordinates results in a &minus;&pi;/2 rotation of the texture on the geometry.
+ * The <em>center</em> field specifies a translation offset in texture coordinate space about which the <em>rotation</em> and <em>scale</em> fields are applied. The <em>scale</em> field specifies a scaling factor in S and T of the texture coordinates about the <em>center</em> point.  <em>scale</em> values shall be in the range (&minus;&infin;,&infin;).  The <em>rotation</em> field specifies a rotation in radians of the texture coordinates about the <em>center</em> point after the scale has been applied. A positive rotation value makes the texture coordinates rotate counterclockwise about the centre, thereby rotating the appearance of the texture itself clockwise. The <em>translation</em> field specifies a translation of the texture coordinates.
 
 The following conventions apply:
 
@@ -55,7 +55,7 @@ SHININESS | Yes | No | No
 SPECULAR | Yes | No | No
 DIFFUSE | Yes | Yes | No
 
-Table 1 — Which texture nodes are applicable in different reflectance methods.
+Table 1 &mdash; Which texture nodes are applicable in different reflectance methods.
 
 > NOTE  The definitions of texturing within this standard have been developed in dependence on the texture component of X3D. See ISO/IEC 19775-1.2:2008 X3D Architecture and base components Edition 2, Part 1, 18 Texturing component for the definitions in the international standard.
 

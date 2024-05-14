@@ -1,6 +1,6 @@
 # PEnum_ElectricApplianceDishwasherType
 
-<!-- end of definition -->## Items
+## Items
 
 ### POTWASHER
 Pot Washer

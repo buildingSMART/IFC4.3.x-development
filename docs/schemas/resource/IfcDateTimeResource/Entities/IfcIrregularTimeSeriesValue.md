@@ -1,6 +1,6 @@
 # IfcIrregularTimeSeriesValue
 
-The _IfcIrregularTimeSeriesValue_ describes a value (or set of values) at a particular time point.<!-- end of definition -->
+The _IfcIrregularTimeSeriesValue_ describes a value (or set of values) at a particular time point.
 
 > HISTORY  New entity in IFC2x2.
 

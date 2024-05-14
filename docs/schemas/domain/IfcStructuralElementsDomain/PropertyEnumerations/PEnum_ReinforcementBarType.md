@@ -1,6 +1,6 @@
 # PEnum_ReinforcementBarType
 
-<!-- end of definition -->## Items
+## Items
 
 ### RING
 Ring

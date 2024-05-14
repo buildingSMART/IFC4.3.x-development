@@ -1,6 +1,6 @@
 # PEnum_CoolingTowerFlowArrangement
 
-<!-- end of definition -->## Items
+## Items
 
 ### COUNTERFLOW
 Counter Flow

@@ -1,6 +1,6 @@
 # IfcRelProjectsElement
 
-The _IfcRelProjectsElement_ is an objectified relationship between an element and one projection element that creates a modifier to the shape of the element. The relationship is defined to be a 1:1 relationship, if an element has more than one projection, several relationship objects have to be used, each pointing to a different projection element. The _IfcRelProjectsElement_ establishes an aggregation relationship between the main element and a sub ordinary addition feature.<!-- end of definition -->
+The _IfcRelProjectsElement_ is an objectified relationship between an element and one projection element that creates a modifier to the shape of the element. The relationship is defined to be a 1:1 relationship, if an element has more than one projection, several relationship objects have to be used, each pointing to a different projection element. The _IfcRelProjectsElement_ establishes an aggregation relationship between the main element and a sub ordinary addition feature.
 
 > NOTE  In contrary the _IfcRelAggregates_ relationship established an aggregation of equal parts to a whole.
 

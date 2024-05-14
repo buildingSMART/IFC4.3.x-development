@@ -1,6 +1,6 @@
 # PEnum_SoundScale
 
-<!-- end of definition -->## Items
+## Items
 
 ### DBA
 Decibels in an A-weighted scale

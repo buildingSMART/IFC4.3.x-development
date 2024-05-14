@@ -1,6 +1,6 @@
 # IfcBridgePart
 
-Part of a bridge.<!-- end of definition -->
+Part of a bridge.
 
 ## Concepts
 

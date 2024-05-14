@@ -1,6 +1,6 @@
 # IfcBSplineSurfaceForm
 
-The _IfcBSplineSurfaceForm_ represents a part of a surface of some specific form.<!-- end of definition -->
+The _IfcBSplineSurfaceForm_ represents a part of a surface of some specific form.
 
 { .extDef}
 > NOTE  Definition according to ISO/CD 10303-42:1992

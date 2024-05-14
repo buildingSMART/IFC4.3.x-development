@@ -1,6 +1,6 @@
 # IfcMaterialLayerWithOffsets
 
-_IfcMaterialLayerWithOffsets_ is a specialization of _IfcMaterialLayer_ enabling definition of offset values along edges (within the material layer set usage in parent layer set).<!-- end of definition -->
+_IfcMaterialLayerWithOffsets_ is a specialization of _IfcMaterialLayer_ enabling definition of offset values along edges (within the material layer set usage in parent layer set).
 
 It defines the assignment of two offset values for a material layer in its intended use within a material layer set. Offsets are applied to the edges of layered elements (that is, in directions perpendicular to the layer set direction). Offsets shall not be used in layer set direction, that is, for modelling gaps (or overlaps) between layers; gaps shall be modeled as layers with appropriate material assignment for the void.
 
@@ -23,7 +23,7 @@ It defines the assignment of two offset values for a material layer in its inten
 { .use-head}
 The _OffsetValues_ and _OffsetDirection_ correspond to the definitions _ReferenceExtent_ and _LayerSetDirection_ at the _IfcMaterialLayerSetUsage_. Figure 1 shows an example of applying the _OffsetValues_ to the material layers of a layered wall.
 
-![IfcMaterialLayerWithOffsets_fig-1](../../../../figures/ifcmateriallayerwithoffsets_fig-1.png "Figure 1 — Material layer with offsets")
+![IfcMaterialLayerWithOffsets_fig-1](../../../../figures/ifcmateriallayerwithoffsets_fig-1.png "Figure 1 &mdash; Material layer with offsets")
 
 ## Attributes
 

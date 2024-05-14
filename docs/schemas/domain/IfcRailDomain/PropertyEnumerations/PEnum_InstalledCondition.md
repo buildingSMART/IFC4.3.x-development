@@ -1,6 +1,6 @@
 # PEnum_InstalledCondition
 
-<!-- end of definition -->## Items
+## Items
 
 ### REGENERATED
 Regenerated

@@ -1,6 +1,6 @@
 # IfcGridPlacement
 
-> IFC4.3.0.0 CHANGE In IFC 4.3 the _PlacementRelTo_ attribute has been moved from IfcLocalPlacement to its supertype IfcObjectPlacement, also a supertype of this entity. That means that for correct global positioning, the IfcGridPlacement will reference (a) the ObjectPlacement of the IfcGrid by means of IfcObjectPlacement.PlacementRelTo and (b) the pair of IfcGridAxis contained in that same grid by means of the IfcVirtualGridIntersection.<!-- end of definition -->
+> IFC4.3.0.0 CHANGE In IFC 4.3 the _PlacementRelTo_ attribute has been moved from IfcLocalPlacement to its supertype IfcObjectPlacement, also a supertype of this entity. That means that for correct global positioning, the IfcGridPlacement will reference (a) the ObjectPlacement of the IfcGrid by means of IfcObjectPlacement.PlacementRelTo and (b) the pair of IfcGridAxis contained in that same grid by means of the IfcVirtualGridIntersection.
 
 _IfcGridPlacement_ provides a specialization of _IfcObjectPlacement_ in which the placement and axis direction of the object coordinate system is defined by a reference to the design grid as defined in _IfcGrid_.
 
@@ -22,7 +22,7 @@ The following figures/ show the usage of placement location and direction for an
 
 ![without ref direction](../../../../figures/ifcgridplacement-layout1.png)
 
-Figure 1 — Grid placement
+Figure 1 &mdash; Grid placement
 
 Figure 1 illustrates the case where <em>PlacementRefDirection</em> is <u>not</u> given - the object coordinate system is defined by:
 
@@ -31,7 +31,7 @@ Figure 1 illustrates the case where <em>PlacementRefDirection</em> is <u>not</u>
 
 ![with ref direction](../../../../figures/ifcgridplacement-layout3.png)
 
-Figure 2 — Grid placement with direction
+Figure 2 &mdash; Grid placement with direction
 
 Figure 2 illustrates the case where <em>PlacementRefDirection</em> is given as an <em>IfcDirection</em>- the object coordinate system is defined by:
 
@@ -40,7 +40,7 @@ Figure 2 illustrates the case where <em>PlacementRefDirection</em> is given as a
 
 ![with ref direction](../../../../figures/ifcgridplacement-layout2.png)
 
-Figure 3 — Grid placement with intersection
+Figure 3 &mdash; Grid placement with intersection
 
 Figure 3 illustrates the case where <em>PlacementRefDirection</em> is given as an <em>IfcVirtualGridIntersection</em>- the object coordinate system is defined by:
 

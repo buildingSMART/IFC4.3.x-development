@@ -1,6 +1,6 @@
 # PEnum_ToiletPanType
 
-<!-- end of definition -->## Items
+## Items
 
 ### SIPHONIC
 Siphonic

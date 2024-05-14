@@ -1,6 +1,6 @@
 # PEnum_DamperOrientation
 
-<!-- end of definition -->## Items
+## Items
 
 ### VERTICAL
 Vertical

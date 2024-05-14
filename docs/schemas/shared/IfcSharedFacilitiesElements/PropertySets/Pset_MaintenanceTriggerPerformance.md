@@ -1,3 +1,3 @@
 # Pset_MaintenanceTriggerPerformance
 
-Properties for performance based maintenance policies<!-- end of definition -->
+Properties for performance based maintenance policies

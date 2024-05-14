@@ -1,6 +1,6 @@
 # IfcCoilTypeEnum
 
-Enumeration defining the typical types of coils.<!-- end of definition -->
+Enumeration defining the typical types of coils.
 
 > HISTORY  New enumeration in IFC2x.
 

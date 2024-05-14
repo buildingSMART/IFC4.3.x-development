@@ -1,6 +1,6 @@
 # PEnum_AudioVisualProjectorType
 
-<!-- end of definition -->## Items
+## Items
 
 ### OTHER
 required category not on scale

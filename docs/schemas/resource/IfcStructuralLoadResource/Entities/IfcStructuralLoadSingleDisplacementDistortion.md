@@ -1,6 +1,6 @@
 # IfcStructuralLoadSingleDisplacementDistortion
 
-Defines a displacement with warping.<!-- end of definition -->
+Defines a displacement with warping.
 
 > HISTORY  New entity in IFC2x2.
 

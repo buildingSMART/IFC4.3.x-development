@@ -1,6 +1,6 @@
 # IfcStructuralLoadPlanarForce
 
-An instance of the entity _IfcStructuralLoadPlanarForce_ shall be used to define actions on faces.<!-- end of definition -->
+An instance of the entity _IfcStructuralLoadPlanarForce_ shall be used to define actions on faces.
 
 > HISTORY  New entity in IFC2x2.
 

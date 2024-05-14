@@ -1,6 +1,6 @@
 # PEnum_ElementShading
 
-<!-- end of definition -->## Items
+## Items
 
 ### FIXED
 Fixed

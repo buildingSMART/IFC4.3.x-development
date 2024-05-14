@@ -1,6 +1,6 @@
 # IfcRelAssignsToProcess
 
-The objectified relationship _IfcRelAssignsToProcess_ handles the assignment of one or many objects to a process or activity. An object can be a product that is the item the process operates on. Processes and activities can operate on things other than products, and can operate in ways other than input and output.<!-- end of definition -->
+The objectified relationship _IfcRelAssignsToProcess_ handles the assignment of one or many objects to a process or activity. An object can be a product that is the item the process operates on. Processes and activities can operate on things other than products, and can operate in ways other than input and output.
 
 > EXAMPLE  It may be common to define processes during estimating or scheduling that describe design tasks (resulting in documents), procurement tasks (resulting in construction materials), planning tasks (resulting in processes), etc. Furthermore, the ways in which process can operate on something might include "installs", "finishes", "transports", "removes", etc. The ways are described as operation types.
 

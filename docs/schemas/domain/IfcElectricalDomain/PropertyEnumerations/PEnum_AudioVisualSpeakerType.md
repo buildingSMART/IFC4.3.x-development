@@ -1,6 +1,6 @@
 # PEnum_AudioVisualSpeakerType
 
-<!-- end of definition -->## Items
+## Items
 
 ### FULLRANGE
 Full Range

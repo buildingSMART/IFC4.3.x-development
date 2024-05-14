@@ -1,6 +1,6 @@
 # IfcControllerTypeEnum
 
-The _IfcControllerTypeEnum_ defines the range of different types of controller that can be specified.<!-- end of definition -->
+The _IfcControllerTypeEnum_ defines the range of different types of controller that can be specified.
 
 > HISTORY  New enumeration in IFC2.0.
 

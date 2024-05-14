@@ -1,6 +1,6 @@
 # IfcPressureMeasure
 
-_IfcPressureMeasure_ is a measure of the quantity of a medium acting on a unit area.<!-- end of definition -->
+_IfcPressureMeasure_ is a measure of the quantity of a medium acting on a unit area.
 
 Usually measured in Pascals (Pa, N/m2).
 

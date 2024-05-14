@@ -1,6 +1,6 @@
 # IfcWindowLiningProperties
 
-The window lining is the outer frame which enables the window to be fixed in position. The window lining is used to hold the window panels or other casements. The parameter of the _IfcWindowLiningProperties_ define the geometrically relevant parameter of the lining.<!-- end of definition -->
+The window lining is the outer frame which enables the window to be fixed in position. The window lining is used to hold the window panels or other casements. The parameter of the _IfcWindowLiningProperties_ define the geometrically relevant parameter of the lining.
 
 > NOTE  The _IfcWindowLiningProperties_ shall only be applied to construct the 3D shape of a window, if the attribute _IfcWindowType_.ParameterTakesPrecedence is set TRUE.
 
@@ -16,7 +16,7 @@ The _IfcWindowLiningProperties_ does not hold a geometric representation. Howeve
 | ![lining 3](../../../../figures/ifcwindowliningproperties-fig03.png) | TriplePanelVertical | SecondMullionOffset (measured as offset to the Z axis in XZ plane as a normalized ratio measure) |
 | ![lining 4](../../../../figures/ifcwindowliningproperties-fig04.png) | TriplePanelHorizontal | SecondTransomOffset (measured as offset to the X axis in XZ plane as a normalized ratio measure) |
 
-Table 1 — Window lining properties
+Table 1 &mdash; Window lining properties
 
 > HISTORY  New entity in IFC2.0. Has been renamed from _IfcWindowLining_ in IFC2x.
 

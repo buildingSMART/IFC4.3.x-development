@@ -1,6 +1,6 @@
 # PEnum_FanMotorPosition
 
-<!-- end of definition -->## Items
+## Items
 
 ### INAIRSTREAM
 In Air Stream

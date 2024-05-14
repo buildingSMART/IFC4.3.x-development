@@ -1,6 +1,6 @@
 # IfcPoint
 
-The _IfcPoint_ is the abstract generalisation of all point representations within a Cartesian coordinate system.<!-- end of definition -->
+The _IfcPoint_ is the abstract generalisation of all point representations within a Cartesian coordinate system.
 
 { .extDef}
 > NOTE  Definition according to ISO/CD 10303-42:1992

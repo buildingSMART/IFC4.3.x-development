@@ -1,6 +1,6 @@
 # PEnum_DispatchingBoardType
 
-<!-- end of definition -->## Items
+## Items
 
 ### CENTER
 Center dispatching board.

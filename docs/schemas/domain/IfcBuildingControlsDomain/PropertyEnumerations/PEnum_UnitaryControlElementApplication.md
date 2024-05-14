@@ -1,6 +1,6 @@
 # PEnum_UnitaryControlElementApplication
 
-<!-- end of definition -->## Items
+## Items
 
 ### LIFTPOSITIONINDICATOR
 Lift Position Indicator

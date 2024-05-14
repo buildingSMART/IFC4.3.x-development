@@ -6,7 +6,7 @@ An _IfcGeographicElementType_ is used to define an element specification of a ge
 * linear features such as layby's;
 * area features such as ponds, lakes, woods and forests;
 * drainage such as catchment, reserver or outfall.
-<!-- end of definition -->
+
 The specification of the specific types are given by the inherited attribute _IfcElementType.ElementType_ given as an _IfcLabel_.
 
 Geographic element types are frequently identified in feature catalogs that are produced for particular purposes. The _IfcGeographicElementType_ entity enables the continued use of existing feature catalogs through capture of their identity and attributes.

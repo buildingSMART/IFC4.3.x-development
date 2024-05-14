@@ -1,6 +1,6 @@
 # IfcJunctionBoxTypeEnum
 
-The _IfcJunctionBoxTypeEnum_ defines different types of junction boxes.<!-- end of definition -->
+The _IfcJunctionBoxTypeEnum_ defines different types of junction boxes.
 
 > HISTORY  New type in IFC2x2. Values added in IFC4.
 

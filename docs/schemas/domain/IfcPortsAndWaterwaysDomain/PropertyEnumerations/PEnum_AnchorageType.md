@@ -1,6 +1,6 @@
 # PEnum_AnchorageType
 
-Enumeration describing the type of anchoring method for mooring devices<!-- end of definition -->
+Enumeration describing the type of anchoring method for mooring devices
 
 ## Items
 

@@ -1,6 +1,6 @@
 # PEnum_CoilConnectionDirection
 
-<!-- end of definition -->## Items
+## Items
 
 ### LEFT
 Left

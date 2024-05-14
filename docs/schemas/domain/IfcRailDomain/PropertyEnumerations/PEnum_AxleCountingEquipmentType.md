@@ -1,6 +1,6 @@
 # PEnum_AxleCountingEquipmentType
 
-<!-- end of definition -->## Items
+## Items
 
 ### EVALUATOR
 

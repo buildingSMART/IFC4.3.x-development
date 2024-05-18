@@ -38,9 +38,8 @@ def extract_definition(txt, return_short=True, return_marked=False, print_split=
     s4 = -1
     for k in KEYWORDS:
         x = txt.find(k)
-        if s4 == -1 and x != -1:
-            s4 = x
-        elif x < s4 and x != -1:
+        if x != -1 and (s4 == -1 or x < s4):
+            # we found a match without a previous match, or in front of the previous match
             s4 = x
     s5 = re.search(SENTENCE_WITH_PSET_PATTERN, txt).start() if re.search(SENTENCE_WITH_PSET_PATTERN,
                                                                          txt) else -1

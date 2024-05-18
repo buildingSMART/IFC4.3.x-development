@@ -19,7 +19,7 @@ def extract_definition(txt, return_short=True, return_marked=False, print_split=
 
     heading = txt.split('\n\n', 1)[0]+'\n\n'
     txt = txt[len(heading):]
-    marker = '<!-- end of definition -->'
+    marker = "<br><!-- end of definition -->"
 
     if not return_short and not return_marked:
         return txt
@@ -48,17 +48,24 @@ def extract_definition(txt, return_short=True, return_marked=False, print_split=
     if txt[i-1] in [":","-","–"]:
         i = find_last_bullet_end_position(txt, i)
 
-    if txt[i - 1] == " ":
-        i = i - 1
-
-    # Execute
     if i >= 0 and i != 1e5:
         if print_split:
-            print('\n\n\033[92m'+heading + txt[:i] + '\033[91m' + txt[i:i+500]+'...\033[0m')
+            print(
+                "\n\n\033[92m"
+                + heading
+                + txt[:i].rstrip()
+                + "\033[91m"
+                + txt[i : i + 500]
+                + "...\033[0m"
+            )
         if return_short:
             return txt[:i]
         elif return_marked:
-            return heading + txt[:i] + marker + txt[i:]
+            return heading + txt[:i].rstrip() + marker + txt[i:]
+        else:
+            return ""
+    else:
+        return ""
 
 
 def find_last_bullet_end_position(text, i):

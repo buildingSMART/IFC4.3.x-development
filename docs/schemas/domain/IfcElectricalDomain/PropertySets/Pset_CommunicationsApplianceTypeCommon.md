@@ -1,3 +1,4 @@
-# Pset_CommunicationsApplianceTypeCommon
+Common properties for communications appliances.
 
-Common properties for communications appliances.<!-- end of definition --> HISTORY: Added in IFC4.
+<!-- end of short definition -->
+ HISTORY: Added in IFC4.

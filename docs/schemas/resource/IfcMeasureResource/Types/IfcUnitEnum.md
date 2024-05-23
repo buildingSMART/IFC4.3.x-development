@@ -1,6 +1,7 @@
-# IfcUnitEnum
+_IfcUnitEnum_ is an enumeration type for allowed unit types of _IfcNamedUnit_.
 
-_IfcUnitEnum_ is an enumeration type for allowed unit types of _IfcNamedUnit_.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 > HISTORY New type in IFC1.5.1.
 

@@ -1,6 +1,7 @@
-# IfcBuildingSystemTypeEnum
+This enumeration identifies different types of building systems.
 
-This enumeration identifies different types of building systems.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 > HISTORY New enumeration in IFC4.
 

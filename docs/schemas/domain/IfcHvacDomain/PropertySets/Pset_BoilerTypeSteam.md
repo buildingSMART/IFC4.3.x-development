@@ -1,6 +1,7 @@
-# Pset_BoilerTypeSteam
+Steam boiler type common attributes.
 
-Steam boiler type common attributes.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 
 ## Comments

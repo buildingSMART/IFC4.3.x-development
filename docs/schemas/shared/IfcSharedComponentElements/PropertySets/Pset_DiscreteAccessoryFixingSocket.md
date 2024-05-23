@@ -1,3 +1,4 @@
-# Pset_DiscreteAccessoryFixingSocket
+Properties common to fixing sockets.
 
-Properties common to fixing sockets.<!-- end of definition -->
+<!-- end of short definition -->
+

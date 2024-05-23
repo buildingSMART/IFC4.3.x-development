@@ -1,6 +1,7 @@
-# PEnum_SpaceHeaterTemperatureClassification
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### LOWTEMPERATURE
 Low Temperature

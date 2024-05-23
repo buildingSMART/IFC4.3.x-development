@@ -1,6 +1,7 @@
-# IfcReinforcedSoilTypeEnum
+This container defines the different predefined types of soil reinforcement that can specify an _IfcReinforcedSoil_.
 
-This container defines the different predefined types of soil reinforcement that can specify an _IfcReinforcedSoil_.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 ## Items
 

@@ -1,3 +1,4 @@
-# Pset_CableSegmentTypeFiberSegment
+Properties of fiber segments. This property set is applicable to a type or occurrence of _IfcCableSegment_ with predefined type FIBERSEGMENT.
 
-Properties of fiber segments. This property set is applicable to a type or occurrence of _IfcCableSegment_ with predefined type FIBERSEGMENT.<!-- end of definition -->
+<!-- end of short definition -->
+

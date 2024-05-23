@@ -1,6 +1,7 @@
-# IfcBoundaryEdgeCondition
+Describes linearly elastic support conditions or connection conditions.
 
-Describes linearly elastic support conditions or connection conditions.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 Applicability:
 

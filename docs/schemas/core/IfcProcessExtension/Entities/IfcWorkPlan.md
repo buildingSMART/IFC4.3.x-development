@@ -1,6 +1,7 @@
-# IfcWorkPlan
+An _IfcWorkPlan_ represents work plans in a construction or a facilities management project.
 
-An _IfcWorkPlan_ represents work plans in a construction or a facilities management project.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 > HISTORY New entity in IFC2.0
 
@@ -16,16 +17,16 @@ If an assigned _IfcTask_ is a root-level task, such task must be declared on the
 digraph dot_neato {
 	IfcProject[pos="0,0!"];
 	IfcRelDeclares[pos="0,-70!"];
-    IfcWorkPlan[pos="0,-140!"];
-    IfcRelAggregates[pos="-100,-210!"];
-    IfcRelAssignsToControl[pos="100,-210!"];
+  IfcWorkPlan[pos="0,-140!"];
+  IfcRelAggregates[pos="-100,-210!"];
+  IfcRelAssignsToControl[pos="100,-210!"];
 	IfcWorkSchedule[pos="-100,-280!"];
 	IfcTask[pos="100,-280!"];
 
 	IfcProject -> IfcRelDeclares [label="RelatingContext"];
-    IfcWorkPlan -> IfcRelAggregates [label="RelatingObject"]
-    IfcWorkPlan -> IfcRelAssignsToControl [label="RelatingControl"]
-    IfcRelDeclares -> IfcWorkPlan [label="RelatedDefinitions"]
+  IfcWorkPlan -> IfcRelAggregates [label="RelatingObject"]
+  IfcWorkPlan -> IfcRelAssignsToControl [label="RelatingControl"]
+  IfcRelDeclares -> IfcWorkPlan [label="RelatedDefinitions"]
 	IfcRelAggregates -> IfcWorkSchedule [label="RelatedObjects"]
 	IfcRelAssignsToControl -> IfcTask [label="RelatedObjects"]
 }
@@ -37,7 +38,7 @@ Figure 1 — How projects can declare work plans, which in turn contain tasks or
 
 ### PredefinedType
 Identifies the predefined types of a work plan from which
-  the type required may be set.
+ the type required may be set.
 
 ## Formal Propositions
 

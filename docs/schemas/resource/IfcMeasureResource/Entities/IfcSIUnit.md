@@ -1,6 +1,7 @@
-# IfcSIUnit
+The _IfcSIUnit_ covers both standard base SI units such as meter and second, and derived SI units such as Pascal, square meter and cubic meter.
 
-The _IfcSIUnit_ covers both standard base SI units such as meter and second, and derived SI units such as Pascal, square meter and cubic meter.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 { .extDef}
 > NOTE Definition according to ISO/CD 10303-41:1992

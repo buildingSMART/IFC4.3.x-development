@@ -1,6 +1,7 @@
-# PEnum_VaristorType
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### METALOXIDE
 Metal Oxide

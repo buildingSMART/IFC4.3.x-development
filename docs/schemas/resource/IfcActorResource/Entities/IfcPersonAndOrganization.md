@@ -1,6 +1,7 @@
-# IfcPersonAndOrganization
+This entity represents a person acting on behalf of an organization.
 
-This entity represents a person acting on behalf of an organization.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 > NOTE Entity adapted from **person_and_organization** defined in ISO 10303-41.
 

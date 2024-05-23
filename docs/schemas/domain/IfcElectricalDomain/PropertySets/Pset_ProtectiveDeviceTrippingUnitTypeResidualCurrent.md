@@ -1,3 +1,4 @@
-# Pset_ProtectiveDeviceTrippingUnitTypeResidualCurrent
+Information on tripping units that are activated by residual current.
 
-Information on tripping units that are activated by residual current.<!-- end of definition -->
+<!-- end of short definition -->
+

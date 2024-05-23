@@ -1,6 +1,7 @@
-# IfcReinforcementBarProperties
+_IfcReinforcementBarProperties_ defines the set of properties for a specific combination of reinforcement bar steel grade, bar type and effective depth.
 
-_IfcReinforcementBarProperties_ defines the set of properties for a specific combination of reinforcement bar steel grade, bar type and effective depth.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 > HISTORY New entity in IFC2x2.
 

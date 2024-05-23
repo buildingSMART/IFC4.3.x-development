@@ -1,6 +1,7 @@
-# Pset_MemberCommon
+Properties common to the definition of all occurrences of IfcMember.
 
-Properties common to the definition of all occurrences of IfcMember.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 
 ## Comments

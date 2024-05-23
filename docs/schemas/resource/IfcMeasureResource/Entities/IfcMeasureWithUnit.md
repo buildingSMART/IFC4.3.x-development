@@ -1,6 +1,7 @@
-# IfcMeasureWithUnit
+{ .extDef}
 
-{ .extDef}<!-- end of definition -->
+<!-- end of short definition -->
+
 > NOTE Definition according to ISO/CD 10303-41:1992
 > A measure with unit is the specification of a physical quantity as defined in ISO 31 (clause 2).
 

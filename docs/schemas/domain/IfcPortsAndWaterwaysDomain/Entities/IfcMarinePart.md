@@ -1,3 +1,4 @@
-# IfcMarinePart
+Part of a marine facility.
 
-Part of a marine facility.<!-- end of definition -->
+<!-- end of short definition -->
+

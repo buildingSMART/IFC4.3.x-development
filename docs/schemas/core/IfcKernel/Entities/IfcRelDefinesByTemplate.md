@@ -1,6 +1,7 @@
-# IfcRelDefinesByTemplate
+The objectified relationship _IfcRelDefinesByTemplate_ defines the relationships between property set template and property sets. Common information about property sets, e.g. the applicable name, description, contained properties, is defined by the property set template and assigned to all property sets.
 
-The objectified relationship _IfcRelDefinesByTemplate_ defines the relationships between property set template and property sets. Common information about property sets, e.g. the applicable name, description, contained properties, is defined by the property set template and assigned to all property sets.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 > NOTE The assignment of an _IfcPropertySetTemplate_ is supported for _IfcPropertySet_ and _IfcQuantitySet_.
 

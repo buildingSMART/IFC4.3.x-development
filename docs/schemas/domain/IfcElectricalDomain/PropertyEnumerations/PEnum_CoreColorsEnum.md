@@ -1,6 +1,7 @@
-# PEnum_CoreColorsEnum
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### BLACK
 

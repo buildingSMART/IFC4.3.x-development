@@ -1,6 +1,7 @@
-# PEnum_FanMountingType
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### MANUFACTUREDCURB
 Manufactured Curb

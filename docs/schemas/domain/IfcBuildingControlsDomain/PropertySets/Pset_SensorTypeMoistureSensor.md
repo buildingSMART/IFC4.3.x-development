@@ -1,3 +1,4 @@
-# Pset_SensorTypeMoistureSensor
+A device that senses or detects moisture.
 
-A device that senses or detects moisture.<!-- end of definition --> HISTORY: Added in IFC4.
+<!-- end of short definition -->
+ HISTORY: Added in IFC4.

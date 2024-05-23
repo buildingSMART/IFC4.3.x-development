@@ -1,6 +1,7 @@
-# PEnum_TransitionWidthType
+Specifies how the transition shall occur between the previous and this event.
 
-Specifies how the transition shall occur between the previous and this event.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 ## Items
 

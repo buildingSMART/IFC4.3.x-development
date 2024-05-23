@@ -1,3 +1,4 @@
-# Pset_FittingBend
+Properties about the bend angles.
 
-Properties about the bend angles.<!-- end of definition -->
+<!-- end of short definition -->
+

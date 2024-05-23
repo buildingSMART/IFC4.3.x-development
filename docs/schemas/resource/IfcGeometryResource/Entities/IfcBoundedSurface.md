@@ -1,6 +1,7 @@
-# IfcBoundedSurface
+An _IfcBoundedSurface_ is a surface of finite area.
 
-An _IfcBoundedSurface_ is a surface of finite area.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 { .extDef}
 > NOTE Definition according to ISO/CD 10303-42:1992

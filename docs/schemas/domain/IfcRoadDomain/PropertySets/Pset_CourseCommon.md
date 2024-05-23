@@ -1,3 +1,4 @@
-# Pset_CourseCommon
+Common properties for courses.
 
-Common properties for courses.<!-- end of definition -->
+<!-- end of short definition -->
+

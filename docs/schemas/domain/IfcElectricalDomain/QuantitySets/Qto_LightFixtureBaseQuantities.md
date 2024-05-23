@@ -1,3 +1,4 @@
-# Qto_LightFixtureBaseQuantities
+Base quantities that are common to the definition of all occurrences of light fixture.
 
-Base quantities that are common to the definition of all occurrences of light fixture.<!-- end of definition -->
+<!-- end of short definition -->
+

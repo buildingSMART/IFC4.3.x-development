@@ -1,3 +1,4 @@
-# Qto_SignalBaseQuantities
+Base quantities for Signals.
 
-Base quantities for Signals.<!-- end of definition -->
+<!-- end of short definition -->
+

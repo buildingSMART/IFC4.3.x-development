@@ -1,6 +1,7 @@
-# IfcTendon
+A tendon is a steel element such as a wire, cable, bar, rod, or strand used to impart prestress to concrete when the element is tensioned.
 
-A tendon is a steel element such as a wire, cable, bar, rod, or strand used to impart prestress to concrete when the element is tensioned.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 { .extDef}
 > NOTE Definition according to ISO 6707-1: steel bar(s) or groups of bars, strands or wires given a tensile stress that produces a compressive stress in prestressed concrete or masonry.

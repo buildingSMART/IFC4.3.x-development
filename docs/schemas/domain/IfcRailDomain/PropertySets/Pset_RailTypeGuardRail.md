@@ -1,3 +1,4 @@
-# Pset_RailTypeGuardRail
+Properties common to IfcRail types and occurrences with PredefinedType set to GUARDRAIL.
 
-Properties common to IfcRail types and occurrences with PredefinedType set to GUARDRAIL.<!-- end of definition -->
+<!-- end of short definition -->
+

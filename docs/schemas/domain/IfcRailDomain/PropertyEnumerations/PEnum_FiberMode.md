@@ -1,6 +1,7 @@
-# PEnum_FiberMode
+Enumeration of fiber modes.
 
-Enumeration of fiber modes.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 ## Items
 

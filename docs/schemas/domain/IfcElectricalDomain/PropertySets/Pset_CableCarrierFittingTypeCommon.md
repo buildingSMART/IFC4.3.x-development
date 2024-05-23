@@ -1,3 +1,4 @@
-# Pset_CableCarrierFittingTypeCommon
+Common properties for cable carrier fittings.
 
-Common properties for cable carrier fittings.<!-- end of definition --> HISTORY: Added in IFC4.
+<!-- end of short definition -->
+ HISTORY: Added in IFC4.

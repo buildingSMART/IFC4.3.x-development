@@ -1,6 +1,7 @@
-# IfcDistributionFlowElement
+The distribution element _IfcDistributionFlowElement_ defines occurrence elements of a distribution system that facilitate the distribution of energy or matter, such as air, water or power.
 
-The distribution element _IfcDistributionFlowElement_ defines occurrence elements of a distribution system that facilitate the distribution of energy or matter, such as air, water or power.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 > EXAMPLE Examples of distribution flow elements are ducts, pipes, wires, fittings, and equipment.
 

@@ -1,6 +1,7 @@
-# IfcLengthMeasure
+An _IfcLengthMeasure_ is the value of a distance.
 
-An _IfcLengthMeasure_ is the value of a distance.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 Type: REAL
 

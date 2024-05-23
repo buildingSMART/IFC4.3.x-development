@@ -1,6 +1,7 @@
-# PEnum_PriorityType
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### HIGH
 High

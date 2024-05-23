@@ -1,6 +1,7 @@
-# IfcIsothermalMoistureCapacityMeasure
+_IfcIsothermalMoistureCapacityMeasure_ is a measure of isothermal moisture capacity.
 
-_IfcIsothermalMoistureCapacityMeasure_ is a measure of isothermal moisture capacity.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 Usually measured in m3/kg.
 

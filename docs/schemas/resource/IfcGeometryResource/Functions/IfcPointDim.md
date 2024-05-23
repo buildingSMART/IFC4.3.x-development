@@ -1,6 +1,7 @@
-# IfcPointDim
+This function checks the dimensionality of the various subtypes of IfcPoint.
 
-This function checks the dimensionality of the various subtypes of IfcPoint.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 Returns the number of coordinate components in case of IfcCartesianPoint or the dimensionality of the basis curve or surface in other cases.
 

@@ -1,3 +1,4 @@
-# Pset_SensorTypeLevelSensor
+A device that senses or detects fill level.
 
-A device that senses or detects fill level.<!-- end of definition --> HISTORY: Added in IFC4.
+<!-- end of short definition -->
+ HISTORY: Added in IFC4.

@@ -1,6 +1,7 @@
-# IfcReinforcedSoil
+Soil reinforced or stabilized by some mechanical or chemical method.
 
-Soil reinforced or stabilized by some mechanical or chemical method.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 ## Attributes
 

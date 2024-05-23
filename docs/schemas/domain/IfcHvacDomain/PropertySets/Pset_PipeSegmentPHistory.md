@@ -1,3 +1,4 @@
-# Pset_PipeSegmentPHistory
+Pipe segment performance history common attributes.
 
-Pipe segment performance history common attributes.<!-- end of definition -->
+<!-- end of short definition -->
+

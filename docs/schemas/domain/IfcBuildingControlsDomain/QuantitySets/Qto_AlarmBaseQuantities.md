@@ -1,3 +1,4 @@
-# Qto_AlarmBaseQuantities
+Base quantities that are common to the definition of all occurrences of alarm.
 
-Base quantities that are common to the definition of all occurrences of alarm.<!-- end of definition -->
+<!-- end of short definition -->
+

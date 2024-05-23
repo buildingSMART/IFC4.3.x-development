@@ -1,6 +1,7 @@
-# PEnum_AcquisitionMethod
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### GPS
 Acquisition is made using global positioning system (GPS)

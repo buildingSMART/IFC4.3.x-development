@@ -1,6 +1,7 @@
-# PEnum_CableArmourType
+Enumeration of the different armours used for cable.
 
-Enumeration of the different armours used for cable.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 ## Items
 

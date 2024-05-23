@@ -1,11 +1,12 @@
-# IfcDoor
-
 The door is a built element that is predominately used to provide controlled access for people, goods, animals and vehicles. It includes constructions with hinged, pivoted, sliding, and additionally revolving and folding operations. A door can:
 
 * be a "free standing" door, contained in an _IfcSpatialElement_ such as an _IfcBuildingStorey_.
 * fill an opening, typically in a wall. The door will then have a _FillsVoids_ attribute which uses the _IfcRelFillsElement_ relationship to relate the _IfcDoor_ with the _IfcOpeningElement_;
 * be part of an element assembly, typically an _IfcCurtainWall_. The door will then have a _Decomposes_ attribute which uses the the _IfcRelAggregates_ relationship to relate the door with the assembly of elements;
-<!-- end of definition -->
+
+
+<!-- end of short definition -->
+
 There are two main representations for door occurrences:
 
  * _IfcDoor_ entities that have a 3D rectangle 'Profile' shape representation defined. This profile can then be used to parametrically generate the geometry of a door. If not provided, the profile of the _IfcOpeningElement_ can be used if the door fills an opening. The parameters are specified on the relating _IfcDoorType_ that references _IfcDoorLiningProperties_ and _IfcDoorPanelProperties_ for each panel in the door;

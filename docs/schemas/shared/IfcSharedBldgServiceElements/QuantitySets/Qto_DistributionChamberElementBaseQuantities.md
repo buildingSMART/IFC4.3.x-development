@@ -1,6 +1,7 @@
-# Qto_DistributionChamberElementBaseQuantities
+Base quantities that are common to the definition of all occurrences of distribution chamber elements.
 
-Base quantities that are common to the definition of all occurrences of distribution chamber elements.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 
 ## Comments

@@ -1,3 +1,4 @@
-# Pset_SensorTypeEarthquakeSensor
+Properties that are applicable for IfcSensor with predefined type EARTHQUAKESENSOR.
 
-Properties that are applicable for IfcSensor with predefined type EARTHQUAKESENSOR.<!-- end of definition -->
+<!-- end of short definition -->
+

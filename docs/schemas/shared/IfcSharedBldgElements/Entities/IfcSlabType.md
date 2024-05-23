@@ -1,12 +1,13 @@
-# IfcSlabType
-
 The element type _IfcSlabType_ defines commonly shared information for occurrences of slabs. The set of shared information may include:
 
 * common properties within shared property sets
 * common material information
 * common material layer definitions
 * common shape representations
-<!-- end of definition -->
+
+
+<!-- end of short definition -->
+
 It is used to define a slab specification (i.e. the specific product information, that is common to all occurrences of that product type). Slab types may be exchanged without being already assigned to occurrences.
 
 > NOTE The product representations are defined as representation maps (at the level of the supertype _IfcTypeProduct_, which gets assigned by an element occurrence instance through the _IfcShapeRepresentation.Item[1]_ being an _IfcMappedItem_.

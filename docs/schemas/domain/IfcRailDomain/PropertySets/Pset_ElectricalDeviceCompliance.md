@@ -1,3 +1,4 @@
-# Pset_ElectricalDeviceCompliance
+Properties related to information about compliance to standards or regulations of electric devices.
 
-Properties related to information about compliance to standards or regulations of electric devices.<!-- end of definition -->
+<!-- end of short definition -->
+

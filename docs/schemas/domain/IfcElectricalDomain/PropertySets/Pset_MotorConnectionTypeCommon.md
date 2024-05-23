@@ -1,3 +1,4 @@
-# Pset_MotorConnectionTypeCommon
+Common properties for motor connections.
 
-Common properties for motor connections.<!-- end of definition --> HISTORY: Added in IFC4.
+<!-- end of short definition -->
+ HISTORY: Added in IFC4.

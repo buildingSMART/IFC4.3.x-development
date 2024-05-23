@@ -19,7 +19,7 @@ def extract_definition(txt, return_short=True, return_marked=False, print_split=
 
     heading = txt.split('\n\n', 1)[0]+'\n\n'
     txt = txt[len(heading):]
-    marker = "<br><!-- end of definition -->"
+    marker = "\n\n<!-- end of short definition -->\n"
 
     if not return_short and not return_marked:
         return txt

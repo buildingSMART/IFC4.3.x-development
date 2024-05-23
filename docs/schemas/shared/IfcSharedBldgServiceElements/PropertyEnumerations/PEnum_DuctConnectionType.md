@@ -1,6 +1,7 @@
-# PEnum_DuctConnectionType
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### BEADEDSLEEVE
 Beaded Sleeve

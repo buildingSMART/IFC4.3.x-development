@@ -1,6 +1,7 @@
-# IfcPathHeadToTail
+This function returns TRUE if all edges of the input path are consecutive.
 
-This function returns TRUE if all edges of the input path are consecutive.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 { .extDef}
 > NOTE Definition according to ISO/CD 10303-42:1992

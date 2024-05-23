@@ -1,6 +1,7 @@
-# PEnum_HeatExchangerArrangement
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### COUNTERFLOW
 Counterflow heat exchanger arrangement

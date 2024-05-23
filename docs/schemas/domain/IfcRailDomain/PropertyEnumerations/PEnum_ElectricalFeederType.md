@@ -1,6 +1,7 @@
-# PEnum_ElectricalFeederType
+Enumeration of feeder line types.
 
-Enumeration of feeder line types.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 ## Items
 

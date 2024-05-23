@@ -1,6 +1,7 @@
-# Pset_ControllerPHistory
+Properties for history of controller values.
 
-Properties for history of controller values.<!-- end of definition --> HISTORY: Added in IFC4.
+<!-- end of short definition -->
+ HISTORY: Added in IFC4.
 
 
 ## Comments

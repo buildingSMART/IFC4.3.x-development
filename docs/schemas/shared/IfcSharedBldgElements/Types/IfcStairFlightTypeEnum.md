@@ -1,6 +1,7 @@
-# IfcStairFlightTypeEnum
+This enumeration defines the different types of stair flights that can further specify an _IfcStairFlight_ or _IfcStairFlightType_.
 
-This enumeration defines the different types of stair flights that can further specify an _IfcStairFlight_ or _IfcStairFlightType_.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 > HISTORY New enumeration in IFC2x2.
 

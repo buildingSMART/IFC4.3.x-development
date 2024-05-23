@@ -1,6 +1,7 @@
-# IfcProfileDef
+_IfcProfileDef_ is the supertype of all definitions of standard and arbitrary profiles within IFC. It is used to define a standard set of commonly used section profiles by their parameters or by their explicit curve geometry.
 
-_IfcProfileDef_ is the supertype of all definitions of standard and arbitrary profiles within IFC. It is used to define a standard set of commonly used section profiles by their parameters or by their explicit curve geometry.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 * Parameterized profiles are 2D primitives, which are used within the industry to describe cross sections by a description of its parameters.
 * Arbitrary profiles are cross sections defined by an outer boundary as bounded curve, which may also include holes, defined by inner boundaries.

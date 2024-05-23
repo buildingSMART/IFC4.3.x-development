@@ -1,6 +1,7 @@
-# IfcBeamTypeEnum
+This enumeration defines the different predefined types of beams that can further specify an _IfcBeam_ or _IfcBeamType_.
 
-This enumeration defines the different predefined types of beams that can further specify an _IfcBeam_ or _IfcBeamType_.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 > HISTORY New enumeration type in IFC2x2.
 

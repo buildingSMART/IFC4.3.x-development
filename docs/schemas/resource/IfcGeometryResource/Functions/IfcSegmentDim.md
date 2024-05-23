@@ -1,6 +1,7 @@
-# IfcSegmentDim
+This function checks the dimensionality of the various subtypes of IfcSegment.
 
-This function checks the dimensionality of the various subtypes of IfcSegment.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 Returns the dimensionality of the ParentCurve.
 

@@ -1,6 +1,7 @@
-# PEnum_MooringDeviceType
+Enumeration describing the further subtyping of mooring devices
 
-Enumeration describing the further subtyping of mooring devices<!-- end of definition -->
+<!-- end of short definition -->
+
 
 ## Items
 

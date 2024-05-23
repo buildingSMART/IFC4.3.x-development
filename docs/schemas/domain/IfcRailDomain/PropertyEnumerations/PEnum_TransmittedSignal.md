@@ -1,6 +1,7 @@
-# PEnum_TransmittedSignal
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### CDMA
 

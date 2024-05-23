@@ -1,3 +1,4 @@
-# Pset_Uncertainty
+Property set capturing the geometric uncertainty regarding measurements including how the way that uncertainty was assessed.
 
-Property set capturing the geometric uncertainty regarding measurements including how the way that uncertainty was assessed.<!-- end of definition -->
+<!-- end of short definition -->
+

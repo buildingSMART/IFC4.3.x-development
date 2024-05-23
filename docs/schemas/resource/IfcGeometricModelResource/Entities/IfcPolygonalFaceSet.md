@@ -1,6 +1,7 @@
-# IfcPolygonalFaceSet
+The _IfcPolygonalFaceSet_ is a tessellated face set with all faces being bound by polygons. The planar faces are constructed by implicit polylines defined by three or more Cartesian points. Each planar face is defined by an instance of _IfcIndexedPolygonalFace_, or in case of faces with inner loops by _IfcIndexedPolygonalFaceWithVoids_.
 
-The _IfcPolygonalFaceSet_ is a tessellated face set with all faces being bound by polygons. The planar faces are constructed by implicit polylines defined by three or more Cartesian points. Each planar face is defined by an instance of _IfcIndexedPolygonalFace_, or in case of faces with inner loops by _IfcIndexedPolygonalFaceWithVoids_.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 Depending on the value of the inherited attribute _Closed_ the instance of _IfcPolygonalFaceSet_ represents:
 
@@ -41,9 +42,9 @@ Figure 2 shows an <em>IfcPolygonalFaceSet</em> represented by:
 **Informal Propositions**
 
 1. If _Closed_ = TRUE, the same topological constraints as imposed by an faceted boundary representation shall be safisfied. In particular:
-  * each face shall be unique;
-  * each edge shall be used by exactly two outer or inner boundaries of faces;
-  * the topological normal at each point on the boundary of the polygonal face set shall point away from the material of the solid.
+ * each face shall be unique;
+ * each edge shall be used by exactly two outer or inner boundaries of faces;
+ * the topological normal at each point on the boundary of the polygonal face set shall point away from the material of the solid.
 
 ## Attributes
 

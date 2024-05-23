@@ -1,6 +1,7 @@
-# IfcStructuralActivity
+The abstract entity _IfcStructuralActivity_ combines the definition of actions (such as forces, displacements, etc.) and reactions (support reactions, internal forces, deflections, etc.) which are specified by using the basic load definitions from the _IfcStructuralLoadResource_.
 
-The abstract entity _IfcStructuralActivity_ combines the definition of actions (such as forces, displacements, etc.) and reactions (support reactions, internal forces, deflections, etc.) which are specified by using the basic load definitions from the _IfcStructuralLoadResource_.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 The differentiation between actions and reactions is realized by instantiating objects either from subclasses of _IfcStructuralAction_ or _IfcStructuralReaction_ respectively. They inherit commonly needed attributes from the abstract superclass _IfcStructuralActivity_, notably the relationship which connects actions or reactions with connections, analysis members, or elements (subtypes of _IfcStructuralItem_ or _IfcElement_).
 

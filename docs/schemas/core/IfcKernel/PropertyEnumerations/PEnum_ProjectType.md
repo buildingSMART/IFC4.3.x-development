@@ -1,6 +1,7 @@
-# PEnum_ProjectType
+Enumeration describing the typing of a project
 
-Enumeration describing the typing of a project<!-- end of definition -->
+<!-- end of short definition -->
+
 
 ## Items
 

@@ -1,6 +1,7 @@
-# PEnum_TypeOfShaft
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### SHAFTWITHCHECKVALVE
 Shaft with check valve.

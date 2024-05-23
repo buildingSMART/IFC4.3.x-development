@@ -1,6 +1,7 @@
-# IfcDerivedUnitEnum
+_IfcDerivedUnitEnum_ is an enumeration type for allowed types of derived units.
 
-_IfcDerivedUnitEnum_ is an enumeration type for allowed types of derived units.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 > HISTORY New type in IFC2.0.
 

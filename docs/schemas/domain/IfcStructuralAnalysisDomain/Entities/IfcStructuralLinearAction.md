@@ -1,6 +1,7 @@
-# IfcStructuralLinearAction
+This entity defines an action with constant value which is distributed over a curve.
 
-This entity defines an action with constant value which is distributed over a curve.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 > HISTORY New entity in IFC2x2.
 

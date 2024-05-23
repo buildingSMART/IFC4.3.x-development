@@ -1,3 +1,4 @@
-# Pset_SensorTypeContactSensor
+A device that senses or detects contact.
 
-A device that senses or detects contact.<!-- end of definition --> HISTORY: Added in IFC4.
+<!-- end of short definition -->
+ HISTORY: Added in IFC4.

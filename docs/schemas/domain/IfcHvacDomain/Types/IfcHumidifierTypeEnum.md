@@ -1,6 +1,7 @@
-# IfcHumidifierTypeEnum
+Enumeration defining the typical types of humidifiers.
 
-Enumeration defining the typical types of humidifiers.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 > HISTORY New enumeration in IFC2x2.
 

@@ -1,3 +1,4 @@
-# Pset_SensorTypeSnowSensor
+Properties that are applicable for IfcSensor with predefined type SNOWDEPTHSENSOR.
 
-Properties that are applicable for IfcSensor with predefined type SNOWDEPTHSENSOR.<!-- end of definition -->
+<!-- end of short definition -->
+

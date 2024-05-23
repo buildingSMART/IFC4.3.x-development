@@ -1,6 +1,7 @@
-# IfcConnectedFaceSet
+{ .extDef}
 
-{ .extDef}<!-- end of definition -->
+<!-- end of short definition -->
+
 > NOTE Definition according to ISO/CD 10303-42:1992
 > A connected_face_set is a set of faces such that the domain of faces together with their bounding edges and vertices is connected.
 

@@ -1,6 +1,7 @@
-# IfcProjectedOrTrueLengthEnum
+This enumeration type is needed for load definition and is only considered if the load values are given as global actions and if they define linear or planar loads (that is, one- or two-dimensionally distributed loads).
 
-This enumeration type is needed for load definition and is only considered if the load values are given as global actions and if they define linear or planar loads (that is, one- or two-dimensionally distributed loads).<!-- end of definition -->
+<!-- end of short definition -->
+
 
 Figure 1 illustrates the interpretation of a load definition depending on the enumeration types _IfcGlobalOrLocalEnum_ and _IfcProjectedOrTrueLengthEnum_.
 

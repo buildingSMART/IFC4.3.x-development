@@ -1,6 +1,7 @@
-# PEnum_ControllerMultiPositionType
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### INPUT
 Controller element is a dedicated input

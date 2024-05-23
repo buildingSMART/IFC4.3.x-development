@@ -1,6 +1,7 @@
-# Pset_MechanicalBeamOutOfPlane
+Properties about Mechanical Beam Out Of Plane.
 
-Properties about Mechanical Beam Out Of Plane.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 ## Comments
 

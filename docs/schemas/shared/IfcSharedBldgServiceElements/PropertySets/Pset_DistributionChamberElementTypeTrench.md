@@ -1,3 +1,4 @@
-# Pset_DistributionChamberElementTypeTrench
+Excavation, the length of which greatly exceeds the width.
 
-Excavation, the length of which greatly exceeds the width.<!-- end of definition -->
+<!-- end of short definition -->
+

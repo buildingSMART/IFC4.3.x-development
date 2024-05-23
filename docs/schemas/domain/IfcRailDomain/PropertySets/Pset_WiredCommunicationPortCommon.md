@@ -1,3 +1,4 @@
-# Pset_WiredCommunicationPortCommon
+Properties used for wired communication port.
 
-Properties used for wired communication port.<!-- end of definition -->
+<!-- end of short definition -->
+

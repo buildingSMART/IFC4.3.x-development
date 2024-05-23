@@ -1,6 +1,7 @@
-# IfcEdgeLoop
+{ .extDef}
 
-{ .extDef}<!-- end of definition -->
+<!-- end of short definition -->
+
 > NOTE Definition according to ISO/CD 10303-42:1992
 > An edge_loop is a loop with nonzero extent. It is a path in which the start and end vertices are the same. Its domain, if present, is a closed curve. An edge_loop may overlap itself.
 

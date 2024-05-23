@@ -1,6 +1,7 @@
-# IfcRelNests
+The nesting relationship _IfcRelNests_ is a special type of the general composition/decomposition (or whole/part) relationship _IfcRelDecomposes_. The nesting relationship can be applied to all subtypes of object and object types. For example, processes, controls (like cost items), and resources. It can also be applied to alignment, nesting its different layouts; and to physical subtypes of object and object types, such as elements having ports. The nesting implies an order among the nested parts.
 
-The nesting relationship _IfcRelNests_ is a special type of the general composition/decomposition (or whole/part) relationship _IfcRelDecomposes_. The nesting relationship can be applied to all subtypes of object and object types. For example, processes, controls (like cost items), and resources. It can also be applied to alignment, nesting its different layouts; and to physical subtypes of object and object types, such as elements having ports. The nesting implies an order among the nested parts.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 > EXAMPLE A nesting of cost items in an _IfcCostSchedule_ is the composition of complex cost items from other cost items. The order of the nested cost items underneath the parent cost item is determined by the order of the list of _RelatedObjects_.
 

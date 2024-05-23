@@ -1,6 +1,7 @@
-# Pset_SensorTypeHeatSensor
+A device that senses or detects heat.
 
-A device that senses or detects heat.<!-- end of definition --> HISTORY: In IFC4, incorporates Fire Sensor. HeatSensorSetPoint changed to SetPointTemperature
+<!-- end of short definition -->
+ HISTORY: In IFC4, incorporates Fire Sensor. HeatSensorSetPoint changed to SetPointTemperature
 
 
 ## Comments

@@ -1,3 +1,4 @@
-# Pset_CurtainWallCommon
+Properties common to the definition of all occurrences of IfcCurtainWall.
 
-Properties common to the definition of all occurrences of IfcCurtainWall.<!-- end of definition -->
+<!-- end of short definition -->
+

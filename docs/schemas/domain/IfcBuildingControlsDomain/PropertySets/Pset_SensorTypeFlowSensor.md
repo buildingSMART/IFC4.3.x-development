@@ -1,3 +1,4 @@
-# Pset_SensorTypeFlowSensor
+A device that senses or detects flow.
 
-A device that senses or detects flow.<!-- end of definition --> HISTORY: Added in IFC4.
+<!-- end of short definition -->
+ HISTORY: Added in IFC4.

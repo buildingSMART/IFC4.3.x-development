@@ -1,6 +1,7 @@
-# IfcCartesianPointList
+The _IfcCartesianPointList_ is the abstract supertype of list of points.
 
-The _IfcCartesianPointList_ is the abstract supertype of list of points.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 > NOTE The _IfcCartesianPointList_ is introduced to provide a compact representation of potentially larger list of points, such as in point clouds, and in indexable representation of points.
 

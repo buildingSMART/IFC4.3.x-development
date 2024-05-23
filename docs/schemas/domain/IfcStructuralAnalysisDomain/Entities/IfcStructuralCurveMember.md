@@ -1,6 +1,7 @@
-# IfcStructuralCurveMember
+Instances of _IfcStructuralCurveMember_ describe edge members, i.e. structural analysis idealizations of beams, columns, rods etc.. Curve members may be straight or curved.
 
-Instances of _IfcStructuralCurveMember_ describe edge members, i.e. structural analysis idealizations of beams, columns, rods etc.. Curve members may be straight or curved.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 > HISTORY New entity in IFC2x2.
 

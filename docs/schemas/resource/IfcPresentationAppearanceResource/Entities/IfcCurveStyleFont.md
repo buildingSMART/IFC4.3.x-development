@@ -1,6 +1,7 @@
-# IfcCurveStyleFont
+{ .extDef}
 
-{ .extDef}<!-- end of definition -->
+<!-- end of short definition -->
+
 > NOTE Definition according to ISO/CD 10303-46:1992
 > A curve style font combines several curve style font pattern entities into a more complex pattern. The resulting pattern is repeated along the curve.
 

@@ -1,6 +1,7 @@
-# PEnum_FireDamperActuationType
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### GRAVITY
 Gravity

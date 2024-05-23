@@ -1,3 +1,4 @@
-# Pset_ReinforcementBarPitchOfWall
+The pitch length information of reinforcement bar with the wall.
 
-The pitch length information of reinforcement bar with the wall.<!-- end of definition -->
+<!-- end of short definition -->
+

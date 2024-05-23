@@ -1,6 +1,7 @@
-# IfcBuildingElementPart
+_IfcBuildingElementPart_ represents major components as subordinate parts of a building element. Typical usage examples include precast concrete sandwich walls, where the layers may have different geometry representations. In this case the layered material representation does not sufficiently describe the element. Each layer is represented by an own instance of the _IfcBuildingElementPart_ with its own geometry description.
 
-_IfcBuildingElementPart_ represents major components as subordinate parts of a building element. Typical usage examples include precast concrete sandwich walls, where the layers may have different geometry representations. In this case the layered material representation does not sufficiently describe the element. Each layer is represented by an own instance of the _IfcBuildingElementPart_ with its own geometry description.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 The kind of building element part is further specified by a corresponding instance of _IfcBuildingElementPartType_, referred to by _IfcRelDefinesByType_.
 

@@ -1,6 +1,7 @@
-# PEnum_SparkGapType
+Enumeration of the different spark gap used in railway energy domain.
 
-Enumeration of the different spark gap used in railway energy domain.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 ## Items
 

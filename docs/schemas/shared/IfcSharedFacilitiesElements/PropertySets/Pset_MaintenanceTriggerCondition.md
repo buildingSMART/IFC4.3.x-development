@@ -1,3 +1,4 @@
-# Pset_MaintenanceTriggerCondition
+Trigger levels for an asset that has an inspection-based maintenance strategy
 
-Trigger levels for an asset that has an inspection-based maintenance strategy<!-- end of definition -->
+<!-- end of short definition -->
+

@@ -1,6 +1,7 @@
-# IfcLabel
+A label is the term by which something may be referred to. It is a string which represents the human-interpretable name of something and shall have a natural-language meaning.
 
-A label is the term by which something may be referred to. It is a string which represents the human-interpretable name of something and shall have a natural-language meaning.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 Type: STRING of up to 255 characters
 

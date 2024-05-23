@@ -1,6 +1,7 @@
-# IfcEngineTypeEnum
+Enumeration defining the typical types of engines.
 
-Enumeration defining the typical types of engines.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 > HISTORY New enumeration in IFC4.
 

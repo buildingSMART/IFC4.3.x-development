@@ -1,6 +1,7 @@
-# IfcProtectiveDeviceTrippingUnit
+A protective device tripping unit breaks an electrical circuit at a separate breaking unit when a stated electric current that passes through the unit is exceeded.
 
-A protective device tripping unit breaks an electrical circuit at a separate breaking unit when a stated electric current that passes through the unit is exceeded.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 > HISTORY New entity in IFC4
 

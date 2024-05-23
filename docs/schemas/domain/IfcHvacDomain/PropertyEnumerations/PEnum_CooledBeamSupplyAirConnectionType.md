@@ -1,6 +1,7 @@
-# PEnum_CooledBeamSupplyAirConnectionType
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### STRAIGHT
 Straight

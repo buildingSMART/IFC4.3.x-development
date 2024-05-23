@@ -1,6 +1,7 @@
-# IfcVectorOrDirection
+The _IfcVectorOrDirection_ enables a choice between _IfcVector_ and _IfcDirection_ for vector functions.
 
-The _IfcVectorOrDirection_ enables a choice between _IfcVector_ and _IfcDirection_ for vector functions.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 { .extDef}
 > NOTE Definition according to ISO/CD 10303-42:1992

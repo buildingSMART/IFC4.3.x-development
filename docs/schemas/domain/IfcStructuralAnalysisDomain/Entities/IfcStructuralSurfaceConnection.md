@@ -1,6 +1,7 @@
-# IfcStructuralSurfaceConnection
+Instances of _IfcStructuralSurfaceConnection_ describe face 'nodes', i.e. faces where two or more surface members are joined, or face supports. Face surfaces may be planar or curved.
 
-Instances of _IfcStructuralSurfaceConnection_ describe face 'nodes', i.e. faces where two or more surface members are joined, or face supports. Face surfaces may be planar or curved.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 > HISTORY New entity in IFC2x2.
 

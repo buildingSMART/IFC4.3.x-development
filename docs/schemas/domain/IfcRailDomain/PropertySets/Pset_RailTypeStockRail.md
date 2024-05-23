@@ -1,3 +1,4 @@
-# Pset_RailTypeStockRail
+Properties common to IfcRail types and occurrences with PredefinedType set to STOCKRAIL.
 
-Properties common to IfcRail types and occurrences with PredefinedType set to STOCKRAIL.<!-- end of definition -->
+<!-- end of short definition -->
+

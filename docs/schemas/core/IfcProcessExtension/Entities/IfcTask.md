@@ -1,6 +1,7 @@
-# IfcTask
+An _IfcTask_ is an identifiable unit of work to be carried out in a construction project.
 
-An _IfcTask_ is an identifiable unit of work to be carried out in a construction project.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 A task is typically used to describe an activity for the construction or installation of products, but is not limited to these types. For example it might be used to describe design processes, move operations and other design, construction and operation related activities as well.
 

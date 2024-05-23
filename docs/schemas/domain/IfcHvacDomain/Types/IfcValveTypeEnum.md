@@ -1,6 +1,7 @@
-# IfcValveTypeEnum
+The _IfcValveTypeEnum_ defines the range of different types of valve that can be specified. These are typically used in conjunction with Pset_ValveTypeCommon, which contains common properties for all valve types.
 
-The _IfcValveTypeEnum_ defines the range of different types of valve that can be specified. These are typically used in conjunction with Pset_ValveTypeCommon, which contains common properties for all valve types.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 > HISTORY New type in IFC2.0.
 

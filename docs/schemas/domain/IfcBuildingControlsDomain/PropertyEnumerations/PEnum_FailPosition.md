@@ -1,6 +1,7 @@
-# PEnum_FailPosition
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### FAILOPEN
 Fail Open

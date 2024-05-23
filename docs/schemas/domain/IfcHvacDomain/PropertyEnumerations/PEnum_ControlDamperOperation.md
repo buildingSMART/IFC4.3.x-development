@@ -1,6 +1,7 @@
-# PEnum_ControlDamperOperation
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### LINEAR
 Linear

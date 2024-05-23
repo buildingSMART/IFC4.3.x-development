@@ -1,6 +1,7 @@
-# PEnum_ControllerProportionalType
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### PROPORTIONAL
 Output is proportional to the control error

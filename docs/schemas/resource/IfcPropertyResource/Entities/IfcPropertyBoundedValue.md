@@ -1,6 +1,7 @@
-# IfcPropertyBoundedValue
+A property with a bounded value, _IfcPropertyBoundedValue_, defines a property object which has a maximum of two (numeric or descriptive) values assigned, the first value specifying the upper bound and the second value specifying the lower bound. It defines a property - value bound (min-max) combination for which the property _Name_, an optional _Description_, the optional _UpperBoundValue_ with measure type, the optional _LowerBoundValue_ with measure type, and the optional _Unit_ is given. A set point value can be provided in addition to the upper and lower bound values for operational value setting.
 
-A property with a bounded value, _IfcPropertyBoundedValue_, defines a property object which has a maximum of two (numeric or descriptive) values assigned, the first value specifying the upper bound and the second value specifying the lower bound. It defines a property - value bound (min-max) combination for which the property _Name_, an optional _Description_, the optional _UpperBoundValue_ with measure type, the optional _LowerBoundValue_ with measure type, and the optional _Unit_ is given. A set point value can be provided in addition to the upper and lower bound values for operational value setting.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 The unit is handled by the _Unit_ attribute, see Table 1 for an example of a bounded property:
 

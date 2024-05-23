@@ -1,5 +1,6 @@
-# IfcBendingParameterSelect
+A select type for selecting between simple measure types for reinforcement bending parameters.
 
-A select type for selecting between simple measure types for reinforcement bending parameters.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 > HISTORY New type in IFC4.

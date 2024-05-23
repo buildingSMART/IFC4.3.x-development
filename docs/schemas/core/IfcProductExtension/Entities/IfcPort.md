@@ -1,6 +1,7 @@
-# IfcPort
+A port provides the means for an element to connect to other elements.
 
-A port provides the means for an element to connect to other elements.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 An _IfcPort_ is associated with an _IfcElement_ it belongs to through the objectified relationship _IfcRelNests_ if such port is fixed, or _IfcRelConnectsPortToElement_ if such port is dynamically attached. Exactly two ports, belonging to two different elements, are connected with each other through the objectified relationship _IfcRelConnectsPorts_.
 

@@ -1,3 +1,4 @@
-# Pset_FootingTypePadFooting
+Properties of footing. The property set can be used by the predefined type PAD_FOOTING of IfcFooting.
 
-Properties of footing. The property set can be used by the predefined type PAD_FOOTING of IfcFooting.<!-- end of definition -->
+<!-- end of short definition -->
+

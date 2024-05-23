@@ -1,6 +1,7 @@
-# PEnum_FanDischargeType
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### DUCT
 Duct

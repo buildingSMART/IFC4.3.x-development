@@ -1,6 +1,7 @@
-# Pset_CableSegmentTypeCoreSegment
+An assembly comprising a conductor with its own insulation (and screens if any)
 
-An assembly comprising a conductor with its own insulation (and screens if any)<!-- end of definition -->
+<!-- end of short definition -->
+
 
 
 ## Comments

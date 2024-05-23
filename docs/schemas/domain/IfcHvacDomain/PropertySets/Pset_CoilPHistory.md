@@ -1,4 +1,5 @@
-# Pset_CoilPHistory
+Coil performance history common attributes.
 
-Coil performance history common attributes.<!-- end of definition -->
+<!-- end of short definition -->
+
 Sound attribute deleted in IFC2x2 Pset Addendum: Use IfcSoundProperties instead.

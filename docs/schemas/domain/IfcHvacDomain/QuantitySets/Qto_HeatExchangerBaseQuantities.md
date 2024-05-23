@@ -1,3 +1,4 @@
-# Qto_HeatExchangerBaseQuantities
+Base quantities that are common to the definition of all types of heat exchangers.
 
-Base quantities that are common to the definition of all types of heat exchangers.<!-- end of definition -->
+<!-- end of short definition -->
+

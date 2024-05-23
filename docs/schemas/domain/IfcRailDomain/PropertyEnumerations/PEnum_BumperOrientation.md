@@ -1,6 +1,7 @@
-# PEnum_BumperOrientation
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### STATIONDIRECTION
 Same with the direction of increasing stationing values.

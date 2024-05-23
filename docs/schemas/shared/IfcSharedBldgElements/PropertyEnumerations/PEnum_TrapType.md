@@ -1,6 +1,7 @@
-# PEnum_TrapType
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### NONE
 No waterproof.

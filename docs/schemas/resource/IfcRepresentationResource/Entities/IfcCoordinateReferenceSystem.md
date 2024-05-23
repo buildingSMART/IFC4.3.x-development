@@ -1,6 +1,7 @@
-# IfcCoordinateReferenceSystem
+The _IfcCoordinateReferenceSystem_ is a definition of a coordinate reference system by means of qualified identifiers only. The interpretation of the identifier is expected to be well-known to the receiving software.
 
-The _IfcCoordinateReferenceSystem_ is a definition of a coordinate reference system by means of qualified identifiers only. The interpretation of the identifier is expected to be well-known to the receiving software.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 { .extDef}
 > NOTE Definition from OpenGIS Abstract Specification, Topic 2:

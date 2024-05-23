@@ -1,6 +1,7 @@
-# IfcFaceSurface
+The _IfcFaceSurface_ defines the underlying geometry of the associated surface to the face.
 
-The _IfcFaceSurface_ defines the underlying geometry of the associated surface to the face.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 > NOTE The topology is used to trim the geometry of the surface. There is no need to geometrically trim the surface to match the topology.
 

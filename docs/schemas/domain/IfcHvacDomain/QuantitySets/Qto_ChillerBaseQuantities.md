@@ -1,3 +1,4 @@
-# Qto_ChillerBaseQuantities
+Base quantities that are common to the definition of all types of chillers.
 
-Base quantities that are common to the definition of all types of chillers.<!-- end of definition -->
+<!-- end of short definition -->
+

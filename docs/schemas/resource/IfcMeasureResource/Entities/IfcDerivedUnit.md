@@ -1,6 +1,7 @@
-# IfcDerivedUnit
+A derived unit is a unit that is formed from an expression of other units.
 
-A derived unit is a unit that is formed from an expression of other units.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 ```
 digraph dot_neato {

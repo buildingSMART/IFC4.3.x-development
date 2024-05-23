@@ -1,6 +1,7 @@
-# PEnum_SwitchActivation
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### ACTUATOR
 Actuator

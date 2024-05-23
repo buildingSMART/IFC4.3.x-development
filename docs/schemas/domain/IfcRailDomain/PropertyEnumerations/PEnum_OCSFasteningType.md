@@ -1,6 +1,7 @@
-# PEnum_OCSFasteningType
+Fastening used in Overhead Contact System.
 
-Fastening used in Overhead Contact System.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 ## Items
 

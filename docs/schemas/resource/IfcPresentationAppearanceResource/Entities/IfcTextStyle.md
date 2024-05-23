@@ -1,6 +1,7 @@
-# IfcTextStyle
+The _IfcTextStyle_ is a presentation style for annotations that place a text in model space. The _IfcTextStyle_ provides the text style for presentation information assigned to _IfcTextLiteral_'s. The style is defined by color, text font characteristics, and text box characteristics.
 
-The _IfcTextStyle_ is a presentation style for annotations that place a text in model space. The _IfcTextStyle_ provides the text style for presentation information assigned to _IfcTextLiteral_'s. The style is defined by color, text font characteristics, and text box characteristics.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 An _IfcTextStyle_ is instantiated with:
 

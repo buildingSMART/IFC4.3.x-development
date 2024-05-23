@@ -1,6 +1,7 @@
-# IfcActionRequestTypeEnum
+_IfcActionRequestTypeEnum_ defines the types of sources through which a request can be made.
 
-_IfcActionRequestTypeEnum_ defines the types of sources through which a request can be made.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 > HISTORY New enumeration in IFC4.
 

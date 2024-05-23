@@ -1,6 +1,7 @@
-# IfcPlateTypeEnum
+This enumeration defines the different types of planar elements an _IfcPlate_ or _IfcPlateType_ object can fulfill.
 
-This enumeration defines the different types of planar elements an _IfcPlate_ or _IfcPlateType_ object can fulfill.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 > HISTORY New Enumeration in IFC2x2.
 

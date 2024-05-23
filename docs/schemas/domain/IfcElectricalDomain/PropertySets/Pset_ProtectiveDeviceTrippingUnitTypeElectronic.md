@@ -1,6 +1,7 @@
-# Pset_ProtectiveDeviceTrippingUnitTypeElectronic
+Information on tripping units that are electronically tripped.
 
-Information on tripping units that are electronically tripped.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 
 ## Comments

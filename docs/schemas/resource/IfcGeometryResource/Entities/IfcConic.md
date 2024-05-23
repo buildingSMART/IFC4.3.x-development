@@ -1,6 +1,7 @@
-# IfcConic
+An _IfcConic_ is a parameterized planar curve.
 
-An _IfcConic_ is a parameterized planar curve.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 { .extDef}
 > NOTE Definition according to ISO/CD 10303-42:1992

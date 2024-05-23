@@ -1,6 +1,7 @@
-# PEnum_SprinklerActivation
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### BULB
 Bulb

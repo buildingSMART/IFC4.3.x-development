@@ -1,6 +1,7 @@
-# PEnum_ControllerInterfaceType
+Enumeration of controller interface types.
 
-Enumeration of controller interface types.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 ## Items
 

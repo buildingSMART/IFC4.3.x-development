@@ -1,6 +1,7 @@
-# IfcExternalSpatialElementTypeEnum
+This enumeration defines the different types of external spatial elements.
 
-This enumeration defines the different types of external spatial elements.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 > HISTORY New enumeration in IFC4.
 

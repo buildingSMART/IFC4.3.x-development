@@ -1,6 +1,7 @@
-# PEnum_ToleranceBasis
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### ASSEMBLY
 Tolerance based on assembly

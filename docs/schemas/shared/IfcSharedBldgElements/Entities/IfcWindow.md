@@ -1,11 +1,12 @@
-# IfcWindow
-
 The window is a building element that is predominately used to provide natural light and fresh air. It includes vertical opening but also horizontal opening such as skylights or light domes. It includes constructions with swinging, pivoting, sliding, or revolving panels and fixed panels. A window consists of a lining and one or several panels. A window can:
 
 * be a "free standing" window, contained in an _IfcSpatialElement_ such as an _IfcBuildingStorey_.
 * fill an opening, typically in a wall. The window will then have a _FillsVoids_ attribute which uses the _IfcRelFillsElement_ relationship to relate the _IfcWindow_ with the _IfcOpeningElement_;
 * be part of an element assembly, typically an _IfcCurtainWall_. The window will then have a _Decomposes_ attribute which uses the the _IfcRelAggregates_ relationship to relate the window with the assembly of elements;
-<!-- end of definition -->
+
+
+<!-- end of short definition -->
+
 There are two main representations for window occurrences:
 
  * _IfcWindow_ entities that have a 3D rectangle 'Profile' shape representation defined. This profile can then be used to parametrically generate the geometry of a window. If not provided, the profile of the _IfcOpeningElement_ can be used if the window fills an opening. The parameters are specified on the relating _IfcWindowType_ that references _IfcWindowLiningProperties_ and _IfcWindowPanelProperties_ for each panel in the window;
@@ -113,7 +114,7 @@ A 'Profile' representation has to be provided if:
 
 * a parametric representation shall be applied to the
  window AND
-  * the window is 'free standing', or
+ * the window is 'free standing', or
 	* the opening into which the window is inserted is not extruded horizontally (i.e. where the opening profile does not match the window profile)
 
 The following additional constraints apply to the 'Profile' representation type:

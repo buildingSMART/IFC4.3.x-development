@@ -1,3 +1,4 @@
-# Pset_ProtectiveDeviceOccurrence
+Properties that are applied to an occurrence of a protective device.
 
-Properties that are applied to an occurrence of a protective device.<!-- end of definition -->
+<!-- end of short definition -->
+

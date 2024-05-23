@@ -1,3 +1,4 @@
-# Pset_FittingTransition
+Properties about Fitting Transition.
 
-Properties about Fitting Transition.<!-- end of definition -->
+<!-- end of short definition -->
+

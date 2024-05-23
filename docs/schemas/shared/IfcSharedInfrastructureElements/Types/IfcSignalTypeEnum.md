@@ -1,6 +1,7 @@
-# IfcSignalTypeEnum
+This container defines the different predefined types of signals that can specify an _IfcSignal_ or _IfcSignalType_.
 
-This container defines the different predefined types of signals that can specify an _IfcSignal_ or _IfcSignalType_.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 ## Items
 

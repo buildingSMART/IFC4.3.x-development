@@ -1,6 +1,7 @@
-# IfcBearingTypeEnum
+Enumeration of Bearing Types.
 
-Enumeration of Bearing Types.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 ## Items
 

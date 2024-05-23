@@ -1,6 +1,7 @@
-# IfcCurveStyle
+An _IfcCurveStyle_ provides the style table for presentation information assigned to geometric curves. The style is defined by a color, a font and a width. The _IfcCurveStyle_ defines curve patterns as model patterns, that is, the distance between visible and invisible segments of curve patterns are given in model space dimensions (that have to be scaled using the target plot scale).
 
-An _IfcCurveStyle_ provides the style table for presentation information assigned to geometric curves. The style is defined by a color, a font and a width. The _IfcCurveStyle_ defines curve patterns as model patterns, that is, the distance between visible and invisible segments of curve patterns are given in model space dimensions (that have to be scaled using the target plot scale).<!-- end of definition -->
+<!-- end of short definition -->
+
 
 Styles are intended to be shared by multiple _IfcStyledItem_'s, assigning the style to occurrences of (subtypes of) _IfcGeometricRepresentationItem_'s. Measures given to a font pattern or a curve width are given in global drawing length units.
 

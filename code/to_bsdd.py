@@ -492,7 +492,7 @@ def is_deprecated(elem):
 
 
 def trim_definition(s):
-    MARKER = "<!-- end of definition -->"
+    MARKER = "<!-- end of short definition -->"
     if MARKER in s:
         return s[: s.find(MARKER)]
     else:

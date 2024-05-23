@@ -1,6 +1,7 @@
-# IfcShell
+A type comprising different kinds of shell.
 
-A type comprising different kinds of shell.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 { .extDef}
 > NOTE Definition according to ISO/CD 10303-42:1992

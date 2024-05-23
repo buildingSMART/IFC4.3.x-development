@@ -1,6 +1,7 @@
-# PEnum_FanApplicationType
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### SUPPLYAIR
 Supply Air

@@ -1,6 +1,7 @@
-# IfcSurfaceSide
+_IfcSurfaceSide_ is a denotion of whether negative, positive or both sides of a surface are being referenced.
 
-_IfcSurfaceSide_ is a denotion of whether negative, positive or both sides of a surface are being referenced.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 > NOTE Type adapted from **surface_side** defined in ISO10303-46.
 

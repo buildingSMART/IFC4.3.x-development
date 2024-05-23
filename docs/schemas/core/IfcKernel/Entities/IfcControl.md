@@ -1,6 +1,7 @@
-# IfcControl
+_IfcControl_ is the abstract generalization of all concepts that control or constrain the utilization of products, processes, or resources in general. It can be seen as a regulation, cost schedule, request or order, or other requirements applied to a product, process or resource whose requirements and provisions must be fulfilled.
 
-_IfcControl_ is the abstract generalization of all concepts that control or constrain the utilization of products, processes, or resources in general. It can be seen as a regulation, cost schedule, request or order, or other requirements applied to a product, process or resource whose requirements and provisions must be fulfilled.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 > EXAMPLE Controls include action requests, cost schedules, project orders, work plans, and work calendars.
 
@@ -13,7 +14,7 @@ _IfcControl_ is the abstract generalization of all concepts that control or cons
 
 ### Identification
 An identifying designation given to a control
-  It is the identifier at the occurrence level.
+ It is the identifier at the occurrence level.
 
 { .change-ifc2x4}
 > IFC4 CHANGE Attribute unified by promoting from various subtypes of _IfcControl_.

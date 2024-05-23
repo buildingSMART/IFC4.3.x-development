@@ -1,6 +1,7 @@
-# Pset_DistributionSystemCommon
+Distribution system occurrence attributes attached to an instance of IfcDistributionSystem.
 
-Distribution system occurrence attributes attached to an instance of IfcDistributionSystem.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 
 ## Comments

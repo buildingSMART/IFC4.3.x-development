@@ -1,6 +1,7 @@
-# Pset_AirTerminalBoxTypeCommon
+Air terminal box type common attributes.
 
-Air terminal box type common attributes.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 
 ## Comments

@@ -1,6 +1,7 @@
-# IfcStructuralLoadGroup
+The entity _IfcStructuralLoadGroup_ is used to structure the physical impacts. By using the grouping features inherited from _IfcGroup_, instances of _IfcStructuralAction_ (or its subclasses) and of _IfcStructuralLoadGroup_ can be used to define load groups, load cases and load combinations. (See also _IfcLoadGroupTypeEnum_.)
 
-The entity _IfcStructuralLoadGroup_ is used to structure the physical impacts. By using the grouping features inherited from _IfcGroup_, instances of _IfcStructuralAction_ (or its subclasses) and of _IfcStructuralLoadGroup_ can be used to define load groups, load cases and load combinations. (See also _IfcLoadGroupTypeEnum_.)<!-- end of definition -->
+<!-- end of short definition -->
+
 
 > NOTE Important functionality for the description of a load-bearing system is derived from the existing IFC entity _IfcGroup_. This class provides, via the relationship class _IfcRelAssignsToGroup_, the needed grouping mechanism. In this way, instances of _IfcStructuralAction_ belonging to a specific load group can be unambiguously determined.
 

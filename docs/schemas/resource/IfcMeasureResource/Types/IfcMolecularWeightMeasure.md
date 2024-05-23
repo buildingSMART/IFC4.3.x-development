@@ -1,6 +1,7 @@
-# IfcMolecularWeightMeasure
+_IfcMolecularWeightMeasure_ is a measure of molecular weight of material (typically gas).
 
-_IfcMolecularWeightMeasure_ is a measure of molecular weight of material (typically gas).<!-- end of definition -->
+<!-- end of short definition -->
+
 
 Usually measured in g/mole.
 

@@ -1,6 +1,7 @@
-# IfcTextureVertex
+An _IfcTextureVertex_ is a list of 2 (S, T) texture coordinates.
 
-An _IfcTextureVertex_ is a list of 2 (S, T) texture coordinates.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 { .extDef}
 > NOTE Definition according to ISO/IEC 19775-1 :
@@ -11,9 +12,9 @@ An _IfcTextureVertex_ is a list of 2 (S, T) texture coordinates.<!-- end of defi
 
 { .extDef}
 > If the texture map is not repeated, the texture coordinates are clamped to the 0.0 to 1.0 range as follows: <pre style=" font-size:larger;">
-<b>Texture map location = N,   if C > 1.0,
-<br>           = 0.0,  if C < 0.0,
-<br>           = C × N, if 0.0 ≤ C ≤ 1.0.</b>
+<b>Texture map location = N,  if C > 1.0,
+<br>      = 0.0, if C < 0.0,
+<br>      = C × N, if 0.0 ≤ C ≤ 1.0.</b>
 </pre>
 
 > NOTE Texture coordinates may be transformed (scaled, rotated, translated) by supplying a TextureTransform as a component of the texture's definition.

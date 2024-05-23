@@ -1,6 +1,7 @@
-# IfcRelAssignsToActor
+The objectified relationship _IfcRelAssignsToActor_ handles the assignment of objects (subtypes of _IfcObject_) to an actor (subtypes of _IfcActor_).
 
-The objectified relationship _IfcRelAssignsToActor_ handles the assignment of objects (subtypes of _IfcObject_) to an actor (subtypes of _IfcActor_).<!-- end of definition -->
+<!-- end of short definition -->
+
 
 The _IfcRelAssignsToActor_ objectified relationship defines a relationship between an _IfcActor_ and one or many objects. A particular role of the actor played in that relationship can be associated. If specified, it takes priority over the role that may be directly assigned to the person or organization.
 

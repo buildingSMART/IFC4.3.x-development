@@ -1,6 +1,7 @@
-# IfcTopologicalRepresentationItem
+{ .extDef}
 
-{ .extDef}<!-- end of definition -->
+<!-- end of short definition -->
+
 > NOTE Definition according to ISO/CD 10303-42:1992
 > The topological representation item is the supertype for all the topological representation items in the geometry resource.
 

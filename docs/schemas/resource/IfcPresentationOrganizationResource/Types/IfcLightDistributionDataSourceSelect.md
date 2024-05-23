@@ -1,6 +1,7 @@
-# IfcLightDistributionDataSourceSelect
+A goniometric light gets its intensity distribution function (how much light goes in any one direction) from one of two sources: (i) an industry-standard file, (ii) from distribution data passed directly via the _IfcLightIntensityDistribution_.
 
-A goniometric light gets its intensity distribution function (how much light goes in any one direction) from one of two sources: (i) an industry-standard file, (ii) from distribution data passed directly via the _IfcLightIntensityDistribution_.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 The light distribution provides the luminous intensity distribution according to some standardized light distribution curves.
 

@@ -1,6 +1,7 @@
-# IfcTrackElementTypeEnum
+Enumeration of Track Elements types.
 
-Enumeration of Track Elements types.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 ## Items
 

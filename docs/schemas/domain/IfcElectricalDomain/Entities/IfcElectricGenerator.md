@@ -1,6 +1,7 @@
-# IfcElectricGenerator
+An electric generator is an engine that is a machine for converting mechanical energy into electrical energy.
 
-An electric generator is an engine that is a machine for converting mechanical energy into electrical energy.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 > HISTORY New entity in IFC4
 

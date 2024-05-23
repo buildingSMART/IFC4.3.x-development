@@ -1,6 +1,7 @@
-# IfcDistributionCircuit
+A distribution circuit is a partition of a distribution system that is conditionally switched such as an electrical circuit.
 
-A distribution circuit is a partition of a distribution system that is conditionally switched such as an electrical circuit.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 > HISTORY New entity in IFC4.
 

@@ -1,3 +1,4 @@
-# Pset_ProtectiveDeviceTypeVaristor
+A high voltage surge protection device.
 
-A high voltage surge protection device.<!-- end of definition -->
+<!-- end of short definition -->
+

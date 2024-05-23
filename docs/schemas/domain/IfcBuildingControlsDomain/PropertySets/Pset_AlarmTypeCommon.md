@@ -1,3 +1,4 @@
-# Pset_AlarmTypeCommon
+Alarm type common attributes.
 
-Alarm type common attributes.<!-- end of definition --> HISTORY: Added in IFC4.
+<!-- end of short definition -->
+ HISTORY: Added in IFC4.

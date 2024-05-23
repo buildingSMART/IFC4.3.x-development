@@ -1,6 +1,7 @@
-# IfcSpatialZone
+A spatial zone is a non-hierarchical and potentially overlapping decomposition of the project under some functional consideration. A spatial zone might be used to represent a thermal zone, a construction zone, a lighting zone, a usable area zone. A spatial zone might have its independent placement and shape representation.
 
-A spatial zone is a non-hierarchical and potentially overlapping decomposition of the project under some functional consideration. A spatial zone might be used to represent a thermal zone, a construction zone, a lighting zone, a usable area zone. A spatial zone might have its independent placement and shape representation.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 The _IfcSpatialZone_ inherits and declares these attributes that shall have the following meaning:
 

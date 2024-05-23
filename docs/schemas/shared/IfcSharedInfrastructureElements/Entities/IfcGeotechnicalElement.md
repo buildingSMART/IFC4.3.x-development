@@ -1,6 +1,7 @@
-# IfcGeotechnicalElement
+Abstract supertype for geotechnical entities.
 
-Abstract supertype for geotechnical entities.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 ## Concepts
 

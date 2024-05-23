@@ -1,6 +1,7 @@
-# PEnum_InputOutputSignalType
+Enumeration of input or output signal types.
 
-Enumeration of input or output signal types.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 ## Items
 

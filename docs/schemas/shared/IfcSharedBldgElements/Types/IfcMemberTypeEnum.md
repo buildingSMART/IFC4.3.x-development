@@ -1,6 +1,7 @@
-# IfcMemberTypeEnum
+This enumeration defines the different types of linear elements an _IfcMember_ or _IfcMemberType_ object can fulfill.
 
-This enumeration defines the different types of linear elements an _IfcMember_ or _IfcMemberType_ object can fulfill.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 > HISTORY New enumeration type in IFC2x2.
 

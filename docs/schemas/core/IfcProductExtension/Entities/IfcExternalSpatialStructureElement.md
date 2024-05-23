@@ -1,5 +1,6 @@
-# IfcExternalSpatialStructureElement
+The external spatial structure element is an abstract entity provided for different kind of external spaces, regions, and volumes.
 
-The external spatial structure element is an abstract entity provided for different kind of external spaces, regions, and volumes.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 > HISTORY New entity in IFC4.

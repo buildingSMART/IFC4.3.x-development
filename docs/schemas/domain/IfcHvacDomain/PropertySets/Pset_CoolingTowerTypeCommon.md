@@ -1,6 +1,7 @@
-# Pset_CoolingTowerTypeCommon
+Cooling tower type common attributes.
 
-Cooling tower type common attributes.<!-- end of definition -->
+<!-- end of short definition -->
+
 WaterRequirement attribute unit type modified in IFC2x2 Pset Addendum.
 
 

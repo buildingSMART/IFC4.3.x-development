@@ -1,6 +1,7 @@
-# IfcStateEnum
+The _IfcStateEnum_ enumeration identifies the state or accessibility of the object (for example, read/write, locked).
 
-The _IfcStateEnum_ enumeration identifies the state or accessibility of the object (for example, read/write, locked).<!-- end of definition -->
+<!-- end of short definition -->
+
 
 Valid enumerations are:
 

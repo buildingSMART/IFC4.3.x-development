@@ -1,3 +1,4 @@
-# Pset_FilterTypeCompressedAirFilter
+Compressed air filter type attributes.
 
-Compressed air filter type attributes.<!-- end of definition -->
+<!-- end of short definition -->
+

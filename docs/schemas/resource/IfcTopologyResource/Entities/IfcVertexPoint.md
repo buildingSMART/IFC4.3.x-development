@@ -1,6 +1,7 @@
-# IfcVertexPoint
+{ .extDef}
 
-{ .extDef}<!-- end of definition -->
+<!-- end of short definition -->
+
 > NOTE Definition according to ISO/CD 10303-42:1992
 > A vertex point is a vertex which has its geometry defined as a point.
 

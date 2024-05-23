@@ -1,6 +1,7 @@
-# IfcPavementTypeEnum
+This container defines the different predefined types of course elements that can further specify an _IfcPavement_ or _IfcPavementType_.
 
-This container defines the different predefined types of course elements that can further specify an _IfcPavement_ or _IfcPavementType_.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 ## Items
 

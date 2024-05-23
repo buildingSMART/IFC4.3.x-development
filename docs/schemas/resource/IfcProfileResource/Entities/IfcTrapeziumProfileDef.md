@@ -1,6 +1,7 @@
-# IfcTrapeziumProfileDef
+_IfcTrapeziumProfileDef_ defines a trapezium as the profile definition used by the swept surface geometry or the swept area solid. It is given by its Top X and Bottom X extent and its Y extent as well as by the offset of the Top X extend, and placed within the 2D position coordinate system, established by the _Position_ attribute. It is placed centric within the position coordinate system, that is, in the center of the bounding box.
 
-_IfcTrapeziumProfileDef_ defines a trapezium as the profile definition used by the swept surface geometry or the swept area solid. It is given by its Top X and Bottom X extent and its Y extent as well as by the offset of the Top X extend, and placed within the 2D position coordinate system, established by the _Position_ attribute. It is placed centric within the position coordinate system, that is, in the center of the bounding box.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 > HISTORY New entity in IFC1.5. The use definition has changed in IFC2x.
 

@@ -1,3 +1,4 @@
-# Pset_ElementSize
+Property set with properties about size of the element.
 
-Property set with properties about size of the element.<!-- end of definition -->
+<!-- end of short definition -->
+

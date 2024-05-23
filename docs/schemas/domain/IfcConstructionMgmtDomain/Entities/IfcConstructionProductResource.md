@@ -1,6 +1,7 @@
-# IfcConstructionProductResource
+_IfcConstructionProductResource_ defines the role of a product that is consumed (wholly or partially), or occupied in the performance of construction.
 
-_IfcConstructionProductResource_ defines the role of a product that is consumed (wholly or partially), or occupied in the performance of construction.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 > HISTORY New entity in IFC2.0. Renamed from IfcProductResource in IFC2x.
 

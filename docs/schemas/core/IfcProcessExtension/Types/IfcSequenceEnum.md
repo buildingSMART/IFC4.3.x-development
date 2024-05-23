@@ -1,6 +1,7 @@
-# IfcSequenceEnum
+_IfcSequenceEnum_ is an enumeration that defines the different ways in which a time lag is applied to a sequence between two processes.
 
-_IfcSequenceEnum_ is an enumeration that defines the different ways in which a time lag is applied to a sequence between two processes.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 > HISTORY New entity in IFC1.0
 

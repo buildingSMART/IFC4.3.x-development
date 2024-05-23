@@ -1,3 +1,4 @@
-# Pset_ElectricTimeControlTypeCommon
+Common properties for electric time control devices.
 
-Common properties for electric time control devices.<!-- end of definition --> HISTORY: Added in IFC4.
+<!-- end of short definition -->
+ HISTORY: Added in IFC4.

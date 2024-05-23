@@ -1,6 +1,7 @@
-# IfcFlowInstrumentTypeEnum
+The _IfcFlowInstrumentTypeEnum_ defines the range of different types of flow instrument that can be specified.
 
-The _IfcFlowInstrumentTypeEnum_ defines the range of different types of flow instrument that can be specified.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 > HISTORY New enumeration in IFC2x2.
 

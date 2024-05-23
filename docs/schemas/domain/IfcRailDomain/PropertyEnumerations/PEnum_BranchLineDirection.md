@@ -1,6 +1,7 @@
-# PEnum_BranchLineDirection
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### LEFTDEVIATION
 Diverging path to the left

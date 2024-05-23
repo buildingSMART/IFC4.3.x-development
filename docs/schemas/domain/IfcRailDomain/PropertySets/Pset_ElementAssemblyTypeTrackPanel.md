@@ -1,3 +1,4 @@
-# Pset_ElementAssemblyTypeTrackPanel
+Track panel properties used in railway. The property set can be used by the predefined type TRACK_PANEL of IfcElementAssembly.
 
-Track panel properties used in railway. The property set can be used by the predefined type TRACK_PANEL of IfcElementAssembly.<!-- end of definition -->
+<!-- end of short definition -->
+

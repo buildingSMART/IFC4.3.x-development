@@ -1,6 +1,7 @@
-# IfcElectricTimeControl
+An electric time control is a device that applies control to the provision or flow of electrical energy over time.
 
-An electric time control is a device that applies control to the provision or flow of electrical energy over time.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 > HISTORY New entity in IFC4
 

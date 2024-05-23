@@ -1,6 +1,7 @@
-# IfcSurfaceCurveSweptAreaSolid
+The _IfcSurfaceCurveSweptAreaSolid_ is the result of sweeping an area along a directrix that lies on a reference surface. The swept area is provided by a subtype of _IfcProfileDef_. The profile is placed by an implicit cartesian transformation operator at the start point of the sweep, where the profile normal agrees to the tangent of the directrix at this point, and the profile''s x-axis agrees to the surface normal. At any point along the directrix, the swept profile origin lies on the directrix, the profile''s normal points towards the tangent of the directrix, and the profile''s x-axis is identical to the surface normal at this point.
 
-The _IfcSurfaceCurveSweptAreaSolid_ is the result of sweeping an area along a directrix that lies on a reference surface. The swept area is provided by a subtype of _IfcProfileDef_. The profile is placed by an implicit cartesian transformation operator at the start point of the sweep, where the profile normal agrees to the tangent of the directrix at this point, and the profile''s x-axis agrees to the surface normal. At any point along the directrix, the swept profile origin lies on the directrix, the profile''s normal points towards the tangent of the directrix, and the profile''s x-axis is identical to the surface normal at this point.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 > NOTE The profile area''s normal has to be identical to the tangent of the directrix at any given point. In case of a directrix having a linear segment at the start point, the segment has to be perpendicular to the profile at start.
 
@@ -36,7 +37,7 @@ Figure 2 — Surface curve wept area solid results
 >
 > The orientation of the _SweptArea_ as it sweeps along the _Directrix_ is precisely defined by a Cartesian Transformation Operator 3D with attributes: > \* Local origin as point (0., 0., 0),
 > \* Axis 1 as the normal N to the reference surface at the point of the directrix with parameter u.
-> \* Axis 3 as the direction of the tangent vector t at the point of the directrix with parameter u.  The remaining attributes are defaulted to define a corresponding transformation matrix T(u), which varies with the directrix parameter u.
+> \* Axis 3 as the direction of the tangent vector t at the point of the directrix with parameter u. The remaining attributes are defaulted to define a corresponding transformation matrix T(u), which varies with the directrix parameter u.
 
 > NOTE Entity adapted from \*\*surface_curve_swept_area_solid\*\* defined in ISO 10303-42.
 

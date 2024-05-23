@@ -1,3 +1,4 @@
-# Qto_SpatialZoneBaseQuantities
+Base quantities set for Spatial Zones.
 
-Base quantities set for Spatial Zones.<!-- end of definition -->
+<!-- end of short definition -->
+

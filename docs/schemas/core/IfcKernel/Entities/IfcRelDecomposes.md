@@ -1,6 +1,7 @@
-# IfcRelDecomposes
+The decomposition relationship, _IfcRelDecomposes_, defines the general concept of elements being composed or decomposed. The decomposition relationship denotes a whole/part hierarchy with the ability to navigate from the whole (the composition) to the parts and vice versa.
 
-The decomposition relationship, _IfcRelDecomposes_, defines the general concept of elements being composed or decomposed. The decomposition relationship denotes a whole/part hierarchy with the ability to navigate from the whole (the composition) to the parts and vice versa.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 Decompositions may be constrained by requiring both, the whole and its parts, to be of the same type - thus establishing a nesting relationship. Or they may require some form of physical containment, thus establishing special types of aggregation relationships.
 

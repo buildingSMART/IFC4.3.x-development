@@ -1,6 +1,7 @@
-# IfcRelAssociatesMaterial
+_IfcRelAssociatesMaterial_ is an objectified relationship between a material definition and elements or element types to which this material definition applies.
 
-_IfcRelAssociatesMaterial_ is an objectified relationship between a material definition and elements or element types to which this material definition applies.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 The material definition can be:
 

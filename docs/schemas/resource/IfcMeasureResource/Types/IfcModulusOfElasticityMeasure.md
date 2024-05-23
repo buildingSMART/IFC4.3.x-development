@@ -1,6 +1,7 @@
-# IfcModulusOfElasticityMeasure
+_IfcModulusOfElasticityMeasure_ is a measure of modulus of elasticity.
 
-_IfcModulusOfElasticityMeasure_ is a measure of modulus of elasticity.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 Usually measured in N/m2.
 

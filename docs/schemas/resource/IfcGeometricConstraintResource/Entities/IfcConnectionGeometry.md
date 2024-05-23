@@ -1,6 +1,7 @@
-# IfcConnectionGeometry
+_IfcConnectionGeometry_ is used to describe the geometric and topological constraints that facilitate the physical connection of two objects. It is envisioned as a control that applies to the element connection relationships.
 
-_IfcConnectionGeometry_ is used to describe the geometric and topological constraints that facilitate the physical connection of two objects. It is envisioned as a control that applies to the element connection relationships.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 > NOTE The element connection relationship normally provides for a logical connection information, by referencing the relating and related elements. If in addition an _IfcConnectionGeometry_ is provided, physical connection information is given by specifying exactly where at the relating and related element the element connection occurs. Using the eccentricity subtypes, the connection can also be described when there is a physical distance (or eccentricity) between the connection elements.
 

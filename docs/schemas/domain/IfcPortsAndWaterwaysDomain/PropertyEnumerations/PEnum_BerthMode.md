@@ -1,6 +1,7 @@
-# PEnum_BerthMode
+Enumeration describing the mode at which a vessel enters a berth (operation or design).
 
-Enumeration describing the mode at which a vessel enters a berth (operation or design).<!-- end of definition -->
+<!-- end of short definition -->
+
 
 ## Items
 

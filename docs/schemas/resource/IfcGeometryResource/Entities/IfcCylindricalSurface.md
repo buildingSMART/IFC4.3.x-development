@@ -1,6 +1,7 @@
-# IfcCylindricalSurface
+The cylindrical surface is a surface unbounded in the direction of _z_. Bounded cylindrical surfaces are defined by using a subtype of _IfcBoundedSurface_ with _BasisSurface_ being a cylindrical surface.
 
-The cylindrical surface is a surface unbounded in the direction of _z_. Bounded cylindrical surfaces are defined by using a subtype of _IfcBoundedSurface_ with _BasisSurface_ being a cylindrical surface.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 > NOTE 1 A bounded cylindrical surface can be defined by an _IfcRectangularTrimmedSurface_ with _BasisSurface_ being the cylindrical surface and _U1_ = 0°, _U2_ = 360° and _V1_ = lower bound in **z**, _V2_ = upper bound in **z** (if the plane angle measure is degree). A bounded cylindrical arc surface is provided with |U1 - U2| < 360° (assuming the Usense and Vsense agree to the sense of the basis surface).
 

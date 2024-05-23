@@ -1,6 +1,7 @@
-# PEnum_AirTerminalBoxArrangementType
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### SINGLEDUCT
 Single Duct

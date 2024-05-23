@@ -1,3 +1,4 @@
-# IfcTransportationDevice
+Abstract intermediate supertype for transportation devices.
 
-Abstract intermediate supertype for transportation devices.<!-- end of definition -->
+<!-- end of short definition -->
+

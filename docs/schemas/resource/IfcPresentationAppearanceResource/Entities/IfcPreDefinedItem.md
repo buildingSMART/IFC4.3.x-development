@@ -1,6 +1,7 @@
-# IfcPreDefinedItem
+A pre defined item is a qualified name given to a style or font which is determined within the data exchange specification by convention on using the _Name_ attribute value (in contrary to externally defined items, which are agreed by an external source).
 
-A pre defined item is a qualified name given to a style or font which is determined within the data exchange specification by convention on using the _Name_ attribute value (in contrary to externally defined items, which are agreed by an external source).<!-- end of definition -->
+<!-- end of short definition -->
+
 
 > NOTE The convention on using the _Name_ value is defined at the subtypes of _IfcPreDefinedItem_ and is part of the specification.
 

@@ -1,6 +1,7 @@
-# IfcConstructionMaterialResource
+_IfcConstructionMaterialResource_ identifies a material resource type in a construction project.
 
-_IfcConstructionMaterialResource_ identifies a material resource type in a construction project.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 > HISTORY New entity in IFC2.0.
 

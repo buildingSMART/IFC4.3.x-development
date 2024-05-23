@@ -1,6 +1,7 @@
-# IfcRelAssociatesClassification
+The objectified relationship _IfcRelAssociatesClassification_ handles the assignment of a classification item (items of the select _IfcClassificationSelect_) to objects occurrences (subtypes of _IfcObject_) or object types (subtypes of _IfcTypeObject_).
 
-The objectified relationship _IfcRelAssociatesClassification_ handles the assignment of a classification item (items of the select _IfcClassificationSelect_) to objects occurrences (subtypes of _IfcObject_) or object types (subtypes of _IfcTypeObject_).<!-- end of definition -->
+<!-- end of short definition -->
+
 
 The relationship is used to assign a classification item, or a classification system itself to objects. Depending on the type of the _RelatingClassification_ it is either:
 

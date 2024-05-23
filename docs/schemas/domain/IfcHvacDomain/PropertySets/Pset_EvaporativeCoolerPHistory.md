@@ -1,6 +1,7 @@
-# Pset_EvaporativeCoolerPHistory
+Evaporative cooler performance history attributes.
 
-Evaporative cooler performance history attributes.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 
 ## Comments

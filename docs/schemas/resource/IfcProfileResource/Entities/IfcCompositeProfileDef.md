@@ -1,6 +1,7 @@
-# IfcCompositeProfileDef
+The _IfcCompositeProfileDef_ defines the profile by composition of other profiles. The composition is given by a set of at least two other profile definitions. Any profile definition (except for another composite profile) can be used to construct the composite.
 
-The _IfcCompositeProfileDef_ defines the profile by composition of other profiles. The composition is given by a set of at least two other profile definitions. Any profile definition (except for another composite profile) can be used to construct the composite.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 > HISTORY New entity in IFC2x.
 
@@ -27,11 +28,11 @@ If twin profiles are modeled by profile composition, the base profile should onl
 > ```
 >
 single_L : IfcLShapeProfileDef := IfcLShapeProfileDef(AREA, 'L100X100X10',
->   IfcAxis2Placement2D(IfcCartesianPoint(((.100+.010)/2., .0)), ?),
->   .100, .100, .010, .012, ?, 0., ?, ?);
+>  IfcAxis2Placement2D(IfcCartesianPoint(((.100+.010)/2., .0)), ?),
+>  .100, .100, .010, .012, ?, 0., ?, ?);
 >
 > double_L : IfcCompositeProfileDef := IfcCompositeProfileDef(AREA, 'double angle',
->   (single_L, IfcMirroredProfileDef(AREA, ?, single_L, ?)), 'twin profile');
+>  (single_L, IfcMirroredProfileDef(AREA, ?, single_L, ?)), 'twin profile');
 
 > ```
 

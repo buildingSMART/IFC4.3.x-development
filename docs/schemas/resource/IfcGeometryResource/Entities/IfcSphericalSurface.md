@@ -1,11 +1,12 @@
-# IfcSphericalSurface
-
 The _IfcSphericalSurface_ is a bounded elementary surface. The inherited _Position_ attribute defines the _IfcAxis2Placement3D_ and provides:
 
 * _SELF\IfcElementarySurface.Position_: The location and orientation of the axis system for the primitive.
 * _SELF\IfcElementarySurface.Position.Location_: The center of the spherical surface.
 * _SELF\IfcElementarySurface.Position.Position[3]:_ The z axis points at its positive direction towards the north pole, and by its negative directions towards the south pole.
-<!-- end of definition -->
+
+
+<!-- end of short definition -->
+
 { .extDef}
 > NOTE Definition according to ISO/CD 10303-42:1992
 > An _IfcSphericalSurface_ is a type of an elementary surface, which is at a constant distance (the **radius**) from a central point. A spherical surface is defined by the radius and the location and orientation of the surface.

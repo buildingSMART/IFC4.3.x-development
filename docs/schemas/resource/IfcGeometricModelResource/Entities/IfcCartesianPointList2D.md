@@ -1,6 +1,7 @@
-# IfcCartesianPointList2D
+The _IfcCartesianPointList2D_ defines an ordered collection of two-dimentional Cartesian points. Each Cartesian point is provided as an two-dimensional point by a fixed list of two coordinates. The attribute _CoordList_ is a two-dimensional list, where
 
-The _IfcCartesianPointList2D_ defines an ordered collection of two-dimentional Cartesian points. Each Cartesian point is provided as an two-dimensional point by a fixed list of two coordinates. The attribute _CoordList_ is a two-dimensional list, where<!-- end of definition -->
+<!-- end of short definition -->
+
 
 * first dimension is an unbounded list representing each 2D Cartesian point;
 * second dimension is a fixed list of two list members, where [1] is the x-coordinate, and [2] the y-coordinate of the Cartesian point.

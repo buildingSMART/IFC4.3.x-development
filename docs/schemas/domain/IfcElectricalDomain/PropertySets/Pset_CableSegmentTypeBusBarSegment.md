@@ -1,6 +1,7 @@
-# Pset_CableSegmentTypeBusBarSegment
+Properties specific to busbar cable segments.
 
-Properties specific to busbar cable segments.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 
 ## Comments

@@ -1,6 +1,7 @@
-# IfcDoorPanelOperationEnum
+This enumeration defines the basic ways how individual door panels operate as shown in Figure 1.
 
-This enumeration defines the basic ways how individual door panels operate as shown in Figure 1.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 The opening direction of the door panels is given by the local placement of the _IfcDoor_. The positive y-axis determines the direction as shown in Figure 2.
 

@@ -1,6 +1,7 @@
-# PEnum_AirTerminalBoxReheatType
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### ELECTRICALREHEAT
 Electrical Reheat

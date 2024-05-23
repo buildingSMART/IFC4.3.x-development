@@ -1,6 +1,7 @@
-# Pset_AirToAirHeatRecoveryTypeCommon
+Air to Air Heat Recovery type common attributes.
 
-Air to Air Heat Recovery type common attributes.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 
 ## Comments

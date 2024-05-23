@@ -1,6 +1,7 @@
-# PEnum_PackingCareType
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### FRAGILE
 Fragile

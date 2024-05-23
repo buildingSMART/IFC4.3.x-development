@@ -1,6 +1,7 @@
-# PEnum_AccidentResponse
+Enumeration Describing the different type of accident response.
 
-Enumeration Describing the different type of accident response.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 ## Items
 

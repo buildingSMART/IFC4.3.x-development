@@ -1,6 +1,7 @@
-# IfcElectricFlowTreatmentDeviceTypeEnum
+The IfcElectricFlowTreatmentDeviceTypeEnum defines the range of different types of electric flow treatment device that can be specified.
 
-The IfcElectricFlowTreatmentDeviceTypeEnum defines the range of different types of electric flow treatment device that can be specified.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 ## Items
 

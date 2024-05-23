@@ -1,6 +1,7 @@
-# Pset_ProtectiveDeviceTypeEarthLeakageCircuitBreaker
+An earth failure device acts to protect people and equipment from the effects of current leakage.
 
-An earth failure device acts to protect people and equipment from the effects of current leakage.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 
 ## Comments

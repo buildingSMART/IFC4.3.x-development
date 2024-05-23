@@ -1,6 +1,7 @@
-# Qto_EarthworksCutBaseQuantities
+Quantity set for Earthworks Cut Base.
 
-Quantity set for Earthworks Cut Base.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 ## Comments
 

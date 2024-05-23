@@ -1,6 +1,7 @@
-# PEnum_SerialInterfaceType
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### RS_232
 Standard TIA/EIA-232 interface.

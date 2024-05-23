@@ -1,6 +1,7 @@
-# IfcElectricChargeMeasure
+_IfcElectricChargeMeasure_ is a measure of the electric charge.
 
-_IfcElectricChargeMeasure_ is a measure of the electric charge.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 Usually measured in Coulomb (C, A s).
 

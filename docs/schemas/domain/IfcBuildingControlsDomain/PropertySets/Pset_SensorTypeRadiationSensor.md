@@ -1,3 +1,4 @@
-# Pset_SensorTypeRadiationSensor
+A device that senses or detects radiation.
 
-A device that senses or detects radiation.<!-- end of definition --> HISTORY: Added in IFC4.
+<!-- end of short definition -->
+ HISTORY: Added in IFC4.

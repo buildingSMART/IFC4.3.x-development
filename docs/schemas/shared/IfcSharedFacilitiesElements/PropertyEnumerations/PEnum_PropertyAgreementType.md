@@ -1,6 +1,7 @@
-# PEnum_PropertyAgreementType
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### ASSIGNMENT
 Assignment

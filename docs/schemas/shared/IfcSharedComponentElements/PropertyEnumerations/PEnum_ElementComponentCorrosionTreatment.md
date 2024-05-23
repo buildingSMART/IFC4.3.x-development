@@ -1,6 +1,7 @@
-# PEnum_ElementComponentCorrosionTreatment
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### PAINTED
 Painted

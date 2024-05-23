@@ -1,6 +1,7 @@
-# IfcTorqueMeasure
+_IfcTorqueMeasure_ is a measure of the torque or moment of a couple.
 
-_IfcTorqueMeasure_ is a measure of the torque or moment of a couple.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 Usually measured in N m.
 

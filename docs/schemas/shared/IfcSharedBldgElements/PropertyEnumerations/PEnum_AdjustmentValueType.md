@@ -1,6 +1,7 @@
-# PEnum_AdjustmentValueType
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### RANGE
 Range

@@ -1,3 +1,4 @@
-# Pset_MaterialSteel
+A set of extended mechanical properties related to steel (or other metallic and isotropic) materials.
 
-A set of extended mechanical properties related to steel (or other metallic and isotropic) materials.<!-- end of definition -->
+<!-- end of short definition -->
+

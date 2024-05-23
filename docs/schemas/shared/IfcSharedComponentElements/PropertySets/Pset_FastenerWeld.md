@@ -1,3 +1,4 @@
-# Pset_FastenerWeld
+Properties related to welded connections.
 
-Properties related to welded connections.<!-- end of definition -->
+<!-- end of short definition -->
+

@@ -1,4 +1,5 @@
-# Pset_ActuatorTypeRotationalActuation
+Characteristics of rotational actuation of an actuator
 
-Characteristics of rotational actuation of an actuator<!-- end of definition -->
+<!-- end of short definition -->
+
 History: Replaces Pset_RotationalActuator

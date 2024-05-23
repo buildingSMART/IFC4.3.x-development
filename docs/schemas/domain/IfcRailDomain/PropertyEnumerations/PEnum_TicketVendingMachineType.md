@@ -1,6 +1,7 @@
-# PEnum_TicketVendingMachineType
+Enumeration describing the ticket vending machine type.
 
-Enumeration describing the ticket vending machine type.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 ## Items
 

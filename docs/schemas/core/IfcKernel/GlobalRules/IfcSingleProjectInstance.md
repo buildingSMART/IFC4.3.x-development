@@ -1,3 +1,4 @@
-# IfcSingleProjectInstance
+The global rule verifies that only a single (as maximum) instance of IfcProject exists.
 
-The global rule verifies that only a single (as maximum) instance of IfcProject exists.<!-- end of definition -->
+<!-- end of short definition -->
+

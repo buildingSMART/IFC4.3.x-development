@@ -1,6 +1,7 @@
-# IfcNamedUnit
+{ .extDef}
 
-{ .extDef}<!-- end of definition -->
+<!-- end of short definition -->
+
 > NOTE Definition according to ISO/CD 10303-41:1992
 > A named unit is a unit quantity associated with the word, or group of words, by which the unit is identified.
 

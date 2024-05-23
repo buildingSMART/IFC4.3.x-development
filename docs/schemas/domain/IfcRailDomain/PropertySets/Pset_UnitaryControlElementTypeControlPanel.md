@@ -1,6 +1,7 @@
-# Pset_UnitaryControlElementTypeControlPanel
+Properties that are applicable to _IfcUnitaryControlElement_ with the predefined type set to CONTROLPANEL.
 
-Properties that are applicable to _IfcUnitaryControlElement_ with the predefined type set to CONTROLPANEL.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 
 ## Comments

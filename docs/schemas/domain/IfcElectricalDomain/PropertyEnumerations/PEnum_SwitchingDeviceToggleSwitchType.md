@@ -1,6 +1,7 @@
-# PEnum_SwitchingDeviceToggleSwitchType
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### BREAKGLASS
 Break Glass

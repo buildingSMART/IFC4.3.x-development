@@ -1,6 +1,7 @@
-# IfcCableSegmentTypeEnum
+The _IfcCableSegmentTypeEnum_ defines the range of different types of cable segment that can be specified.
 
-The _IfcCableSegmentTypeEnum_ defines the range of different types of cable segment that can be specified.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 > HISTORY New type in IFC2x2. Core and busbar segment added in IFC4.
 

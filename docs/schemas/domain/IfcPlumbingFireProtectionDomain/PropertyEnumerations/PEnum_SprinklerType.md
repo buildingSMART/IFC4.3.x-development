@@ -1,6 +1,7 @@
-# PEnum_SprinklerType
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### CEILING
 Ceiling

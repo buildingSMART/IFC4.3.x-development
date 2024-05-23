@@ -1,3 +1,4 @@
-# Pset_TicketProcessing
+Properties for indicating performance ratings for ticket processing of entry elements (e.g. turnstile, boom barrier).
 
-Properties for indicating performance ratings for ticket processing of entry elements (e.g. turnstile, boom barrier).<!-- end of definition -->
+<!-- end of short definition -->
+

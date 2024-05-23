@@ -1,6 +1,7 @@
-# Pset_DuctFittingOccurrence
+Duct fitting occurrence attributes.
 
-Duct fitting occurrence attributes.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 
 ## Comments

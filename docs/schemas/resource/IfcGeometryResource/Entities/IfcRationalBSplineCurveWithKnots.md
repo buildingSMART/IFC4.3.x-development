@@ -1,6 +1,7 @@
-# IfcRationalBSplineCurveWithKnots
+A rational B-spline curve with knots is a B-spline curve described in terms of control points and basic functions. It describes weights in addition to the control points defined at the supertype _IfcBSplineCurve_.
 
-A rational B-spline curve with knots is a B-spline curve described in terms of control points and basic functions. It describes weights in addition to the control points defined at the supertype _IfcBSplineCurve_.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 All weights shall be positive and the curve is given by:
 

@@ -1,3 +1,4 @@
-# Pset_TrackElementOccurrenceSleeper
+Properties common to the definition to all occurrences of IfcTrackElement with PredefinedType set to SLEEPER.
 
-Properties common to the definition to all occurrences of IfcTrackElement with PredefinedType set to SLEEPER.<!-- end of definition -->
+<!-- end of short definition -->
+

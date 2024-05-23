@@ -1,6 +1,7 @@
-# PEnum_PressureGaugeType
+Closed section which blocks the flow of fluid through the section/structure
 
-Closed section which blocks the flow of fluid through the section/structure<!-- end of definition -->
+<!-- end of short definition -->
+
 
 ## Items
 

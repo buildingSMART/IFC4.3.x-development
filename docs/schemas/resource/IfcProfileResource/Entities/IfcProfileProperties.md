@@ -1,6 +1,7 @@
-# IfcProfileProperties
+This is a collection of properties applicable to section profile definitions.
 
-This is a collection of properties applicable to section profile definitions.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 > HISTORY New entity in IFC2x2.
 

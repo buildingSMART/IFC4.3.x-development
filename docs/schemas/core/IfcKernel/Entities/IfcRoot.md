@@ -1,6 +1,7 @@
-# IfcRoot
+_IfcRoot_ is the most abstract and root class for all entity definitions that roots in the kernel or in subsequent layers of the IFC specification. It is therefore the common supertype of all IFC entities, beside those defined in an IFC resource schema. All entities that are subtypes of _IfcRoot_ can be used independently, whereas resource schema entities, that are not subtypes of _IfcRoot_, are not supposed to be independent entities.
 
-_IfcRoot_ is the most abstract and root class for all entity definitions that roots in the kernel or in subsequent layers of the IFC specification. It is therefore the common supertype of all IFC entities, beside those defined in an IFC resource schema. All entities that are subtypes of _IfcRoot_ can be used independently, whereas resource schema entities, that are not subtypes of _IfcRoot_, are not supposed to be independent entities.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 > NOTE View definitions and implementation agreements may impose additional restrictions on the use of the _OwnerHistory_ to handle object versioning.
 

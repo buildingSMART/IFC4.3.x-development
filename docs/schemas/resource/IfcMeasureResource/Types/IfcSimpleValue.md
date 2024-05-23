@@ -1,6 +1,7 @@
-# IfcSimpleValue
+_IfcSimpleValue_ is a select type for selecting between simple value types.
 
-_IfcSimpleValue_ is a select type for selecting between simple value types.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 SELECT
 
@@ -22,7 +23,7 @@ SELECT
 
 { .change-ifc2x4}
 > _IFC4 CHANGE Items _IfcDateTime_,
-   _IfcDate_, _IfcTime_, _IfcDuration_,
-   _IfcTimeStamp_ added._
+  _IfcDate_, _IfcTime_, _IfcDuration_,
+  _IfcTimeStamp_ added._
 
 > _IFC4.3.0.0 CHANGE Item _IfcURIReference_ added._

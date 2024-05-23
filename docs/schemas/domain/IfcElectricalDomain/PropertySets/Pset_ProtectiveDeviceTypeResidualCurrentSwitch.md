@@ -1,6 +1,7 @@
-# Pset_ProtectiveDeviceTypeResidualCurrentSwitch
+A residual current switch opens, closes or isolates a circuit and has no short circuit or overload protection.
 
-A residual current switch opens, closes or isolates a circuit and has no short circuit or overload protection.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 
 ## Comments

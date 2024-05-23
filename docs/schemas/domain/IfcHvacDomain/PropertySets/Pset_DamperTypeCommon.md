@@ -1,6 +1,7 @@
-# Pset_DamperTypeCommon
+Damper type common attributes.
 
-Damper type common attributes.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 
 ## Comments

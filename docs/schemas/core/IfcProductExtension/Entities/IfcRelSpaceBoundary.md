@@ -1,6 +1,7 @@
-# IfcRelSpaceBoundary
+The space boundary defines the physical or virtual delimiter of a space by the relationship _IfcRelSpaceBoundary_ to the surrounding elements.
 
-The space boundary defines the physical or virtual delimiter of a space by the relationship _IfcRelSpaceBoundary_ to the surrounding elements.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 * In the case of a physical space boundary, the placement and shape of the boundary may be given, and the building element, providing the boundary is referenced,
 * In the case of a virtual space boundary, the placement and shape of the boundary may be given, and a virtual element is referenced.
@@ -11,8 +12,8 @@ Space boundaries are always defined as seen from the space. In general two basic
 
 * 1<sup>st</sup> level space boundary: defined as boundaries of the space, not taking into account any change in building element or spaces on the other side.
 * 2<sup>nd</sup> level space boundary: defined as boundary taking any change in building element or spaces on the other side into account. It can be further distinguished into
-  * 2<sup>nd</sup> level type A: There is a space on the other side.
-  * 2<sup>nd</sup> level type B: There is a building element on the other side.
+ * 2<sup>nd</sup> level type A: There is a space on the other side.
+ * 2<sup>nd</sup> level type B: There is a building element on the other side.
 
 The exact definition of how space boundaries are broken down depends on the view definition, more detailed conventions on how space boundaries are decomposed can only be given at the domain or application type level.
 
@@ -33,8 +34,8 @@ Figure 4 — Space boundary at second level type B
 
 The differences between the 1<sup>st</sup> and 2<sup>nd</sup> level space boundaries are identified by:
 
-* **1<sup>st</sup> level:**  _IfcRoot.Name_ = "1stLevel"  _IfcRoot.Description_ = NIL
-* **2<sup>nd</sup> level:**  _IfcRoot.Name_ = "2ndLevel"  _IfcRoot.Description_ = "2a", or "2b"
+* **1<sup>st</sup> level:** _IfcRoot.Name_ = "1stLevel" _IfcRoot.Description_ = NIL
+* **2<sup>nd</sup> level:** _IfcRoot.Name_ = "2ndLevel" _IfcRoot.Description_ = "2a", or "2b"
 
 Differentiation between physical and virtual space boundary is illustrated in Figure 5 and Figure 6.
 
@@ -55,31 +56,31 @@ The _IfcRelSpaceBoundary_ may have geometry attached. If geometry is not attache
 The geometric representation (through the _ConnectionGeometry_ attribute) is defined using either 2D curve geometry or 3D surface geometry for space boundaries.
 
 * 1<sup>st</sup> level space boundary:
-  * only connection geometry for related space shall be provided
-  * only surface connection geometry shall be provided
-  * only the following surface representations are supported:
-    * _IfcSurfaceOfLinearExtrusion_
-    * _IfcCurveBoundedPlane_
-    * _IfcCurveBoundedSurface_
-    * _IfcFaceBasedSurfaceModel_
+ * only connection geometry for related space shall be provided
+ * only surface connection geometry shall be provided
+ * only the following surface representations are supported:
+  * _IfcSurfaceOfLinearExtrusion_
+  * _IfcCurveBoundedPlane_
+  * _IfcCurveBoundedSurface_
+  * _IfcFaceBasedSurfaceModel_
 * 2<sup>nd</sup> level space boundary:
-  * only connection geometry for related space shall be provided
-  * only surface connection geometry shall be provided
-  * only the following surface representations are supported:
-    * _IfcCurveBoundedPlane_ with restrictions to have polygonal boundaries only
-    * _IfcFaceBasedSurfaceModel_
+ * only connection geometry for related space shall be provided
+ * only surface connection geometry shall be provided
+ * only the following surface representations are supported:
+  * _IfcCurveBoundedPlane_ with restrictions to have polygonal boundaries only
+  * _IfcFaceBasedSurfaceModel_
 
 **Surface connection geometry**
 
 The following constraints apply to the surface connection geometry representation:
 
 * planar boundaries:
-  * _IfcSurfaceOfLinearExtrusion_ defined by a _SweptCurve_ being an _IfcArbitraryOpenProfileDef_ with straight segments, or
-  * _IfcCurveBoundedPlane_
+ * _IfcSurfaceOfLinearExtrusion_ defined by a _SweptCurve_ being an _IfcArbitraryOpenProfileDef_ with straight segments, or
+ * _IfcCurveBoundedPlane_
 * curved boundaries
-  * _IfcSurfaceOfLinearExtrusion_ defined by a _SweptCurve_ being an _IfcArbitraryOpenProfileDef_ with curves segments, or
-  * _IfcCurveBoundedSurface_ with a _BasisSurface_ being a non planar surface, such as _IfcCylindricalSurface_, or
-  * _IfcFaceBasedSurfaceModel_ if already faceted.
+ * _IfcSurfaceOfLinearExtrusion_ defined by a _SweptCurve_ being an _IfcArbitraryOpenProfileDef_ with curves segments, or
+ * _IfcCurveBoundedSurface_ with a _BasisSurface_ being a non planar surface, such as _IfcCylindricalSurface_, or
+ * _IfcFaceBasedSurfaceModel_ if already faceted.
 
 **Curve connection geometry**
 

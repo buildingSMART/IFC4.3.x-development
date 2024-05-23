@@ -1,6 +1,7 @@
-# IfcMassDensityMeasure
+_IfcMassDensityMeasure_ is a measure of the density of a medium.
 
-_IfcMassDensityMeasure_ is a measure of the density of a medium.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 Usually measured in kg/m3.
 

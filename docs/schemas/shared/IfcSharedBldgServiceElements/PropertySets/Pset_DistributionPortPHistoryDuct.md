@@ -1,3 +1,4 @@
-# Pset_DistributionPortPHistoryDuct
+Fluid flow performance history attached to an instance of IfcPerformanceHistory assigned to IfcDistributionPort. This replaces the deprecated IfcFluidFlowProperties for performance values.
 
-Fluid flow performance history attached to an instance of IfcPerformanceHistory assigned to IfcDistributionPort. This replaces the deprecated IfcFluidFlowProperties for performance values.<!-- end of definition -->
+<!-- end of short definition -->
+

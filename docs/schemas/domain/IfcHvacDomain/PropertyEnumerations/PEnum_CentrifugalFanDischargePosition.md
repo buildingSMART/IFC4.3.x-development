@@ -1,6 +1,7 @@
-# PEnum_CentrifugalFanDischargePosition
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### TOPHORIZONTAL
 Top horizontal discharge

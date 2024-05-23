@@ -1,3 +1,4 @@
-# Pset_RadiiKerbStone
+Properties describing the keb stone radii.
 
-Properties describing the keb stone radii.<!-- end of definition -->
+<!-- end of short definition -->
+

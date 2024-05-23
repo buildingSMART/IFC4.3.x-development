@@ -1,6 +1,7 @@
-# Qto_RoofBaseQuantities
+Base quantities that are common to the definition of all occurrences of roof.
 
-Base quantities that are common to the definition of all occurrences of roof.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 
 ## Comments

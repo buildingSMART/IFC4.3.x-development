@@ -1,16 +1,17 @@
-# IfcFillAreaStyle
-
 An _IfcFillAreaStyle_ provides the style table for presentation information assigned to annotation fill areas or surfaces for hatching and tiling. The _IfcFillAreaStyle_defines hatches as model hatches, that is, the distance between hatch lines, or the curve patterns of hatch lines are given in model space dimensions (that have to be scaled using the target plot scale). The _IfcFillAreaStyle_ allows for the following combinations of defining the style of hatching and tiling:
 
 * Solid fill for areas and surfaces by only assigning _IfcColour_ to the set of _FillStyles_. It then provides the background colour for the filled area or surface.
-<!-- end of definition -->
+
+
+<!-- end of short definition -->
+
 > NOTE Color information of surfaces for rendering is assigned by using _IfcSurfaceStyle_, not by using _IfcFillAreaStyle_.
 
 * Vector based hatching for areas and surfaces based on a single row of hatch lines by assigning a single instance of _IfcFillAreaStyleHatching_ to the set of _FillStyles_.
-  * If an instance of _IfcColour_ is assigned in addition to the set of _FillStyles_, it provides the background colour for the hatching.
+ * If an instance of _IfcColour_ is assigned in addition to the set of _FillStyles_, it provides the background colour for the hatching.
 
 * Vector based hatching for areas and surfaces based on two (potentially crossing) rows of hatch lines by assigning two instances of _IfcFillAreaStyleHatching_ to the set of _FillStyles._
-  * If an instance of _IfcColour_ is assigned in addition to the set of _FillStyles_, it provides the background colour for the hatching.
+ * If an instance of _IfcColour_ is assigned in addition to the set of _FillStyles_, it provides the background colour for the hatching.
 
 
 >
@@ -19,11 +20,11 @@ An _IfcFillAreaStyle_ provides the style table for presentation information assi
 
 >
 * Tiling for areas and surfaces by assigning a single instance of _IfcFillAreaStyleTiles_ to the set of _FillStyles_.
-  * If an instance of _IfcColour_ is assigned in addition to the set of _FillStyles_, it provides the background colour for the tiling.
+ * If an instance of _IfcColour_ is assigned in addition to the set of _FillStyles_, it provides the background colour for the tiling.
 
 
 * Externally defined hatch style by assigning a single instance of _IfcExternallyDefinedHatchStyle_ to the set of _FillStyles_.
-  * If an instance of _IfcColour_ is assigned in addition to the set of _FillStyles_, it provides the background colour for the hatching.
+ * If an instance of _IfcColour_ is assigned in addition to the set of _FillStyles_, it provides the background colour for the hatching.
 
 Measures given to a hatch or tile pattern are given in global drawing length units.
 

@@ -1,6 +1,7 @@
-# IfcFillAreaStyleTiles
+The _IfcFillAreaStyleTiles_ defines the filling of an _IfcAnnotationFillArea_ by recurring patterns of styled two dimensional geometry, called a tile. The recurrence pattern is determined by two vectors, that multiply the tile in regular form.
 
-The _IfcFillAreaStyleTiles_ defines the filling of an _IfcAnnotationFillArea_ by recurring patterns of styled two dimensional geometry, called a tile. The recurrence pattern is determined by two vectors, that multiply the tile in regular form.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 The two vectors act as a two dimensional repeat factor that determines eight new positions for the tiles.
 
@@ -10,7 +11,7 @@ The two vectors act as a two dimensional repeat factor that determines eight new
 
 { .extDef}
 > _I + k~1~\* R~1~ +
-k~2~\* R~2~_   _k~1~,k~2~_= -1,0,1 , ![formula](../../../../figures/ifcfillareastyletilesymbolwithstyle_fig1.gif)
+k~2~\* R~2~_  _k~1~,k~2~_= -1,0,1 , ![formula](../../../../figures/ifcfillareastyletilesymbolwithstyle_fig1.gif)
 >
 
 Figure 1 shows the use of a vector for hatch line distances

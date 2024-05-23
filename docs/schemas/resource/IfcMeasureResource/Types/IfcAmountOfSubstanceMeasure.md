@@ -1,6 +1,7 @@
-# IfcAmountOfSubstanceMeasure
+An amount of substance measure is the value for the quantity of a substance when compared with the number of atoms in 0.012 kg of carbon 12.
 
-An amount of substance measure is the value for the quantity of a substance when compared with the number of atoms in 0.012 kg of carbon 12.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 Usually measure in mole (mol).
 

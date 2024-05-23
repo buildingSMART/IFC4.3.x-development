@@ -1,6 +1,7 @@
-# IfcRevolvedAreaSolid
+An _IfcRevolvedAreaSolid_ is a solid created by revolving a cross section provided by a profile definition about an axis.
 
-An _IfcRevolvedAreaSolid_ is a solid created by revolving a cross section provided by a profile definition about an axis.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 The resulting solid is positioned by the _IfcSweptAreaSolid_._Position_ relative to the object coordinate system. If provided, it allows to reposition the revolved solid. If not provided, it defaults to the current object coordinate system. The axis and the cross section shall be in the same plane, prior to any repositioning.
 
@@ -13,8 +14,8 @@ Figure 1 — Revolved area solid geometry
 > EXAMPLE Figure 1 illustrates geometric parameters of the revolved solid. The revolved area solid defines the revolution of a 2D area (given by a profile definition) by an axis and angle. The result is a solid. The swept area is given by a profile definition.
 
  * The profile is defined:
-  * as a 2D primitive, here <em>IfcRectangleProfileDef</em>, that is placed relative to the xy plane of object coordinate system
-  * since no 2D profile position coordinate system is provided, here <em>IfcParameterizedProfileDef</em>.<em>Position</em> = NIL, the profile is positioned without transformation into the xy plane of the object coordinate system (by default, centric at 0.,0. with no rotation)
+ * as a 2D primitive, here <em>IfcRectangleProfileDef</em>, that is placed relative to the xy plane of object coordinate system
+ * since no 2D profile position coordinate system is provided, here <em>IfcParameterizedProfileDef</em>.<em>Position</em> = NIL, the profile is positioned without transformation into the xy plane of the object coordinate system (by default, centric at 0.,0. with no rotation)
  * The resulting swept solid is not repositioned, as no position coordinate system is provided, here IfcSweptAreaSolid.<em>Position</em> = NIL.
 
 The <em>AxisLine</em> can have any orientation within the XY plane, it does not have to be parallel to the y-axis as shown in the illustration.
@@ -25,8 +26,8 @@ Figure 2 — Repositioned revolved area solid geometry
 
 > EXAMPLE Figure 1 illustrates geometric parameters and additional positioning parameters of the revolved area solid. The revolved area solid defines the rotation of a 2D area by an axis and angle. The 2D area, provided by a parameterized profile definition, can be positioned relative to the object coordinate system (other then by default at 0.,0. with no rotation). The result is a solid that can be repositioned within the object coordinate system.
  * The profile to be swept is defined:
-  * as a 2D primitive, here <em>IfcRectangleProfileDef</em>, that is placed relative to the xy plane of object coordinate system
-  * a 2D profile position coordinate system is provided that positions the profile relative to the xy plane (here at a corner of the rectangle)
+ * as a 2D primitive, here <em>IfcRectangleProfileDef</em>, that is placed relative to the xy plane of object coordinate system
+ * a 2D profile position coordinate system is provided that positions the profile relative to the xy plane (here at a corner of the rectangle)
  * The resulting swept solid is repositioned, here it is moved into local z and rotated by 15' along the x axis.
 
 { .extDef}

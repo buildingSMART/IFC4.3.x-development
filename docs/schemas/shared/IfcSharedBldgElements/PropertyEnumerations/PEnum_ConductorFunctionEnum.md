@@ -1,6 +1,7 @@
-# PEnum_ConductorFunctionEnum
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### PHASE_L1
 Phase L1

@@ -1,6 +1,7 @@
-# IfcRailTypeEnum
+This enumeration defines the different predefined types of an IfcRail or IfcRailType object.
 
-This enumeration defines the different predefined types of an IfcRail or IfcRailType object.<!-- end of definition -->
+<!-- end of short definition -->
+
 
 ## Items
 

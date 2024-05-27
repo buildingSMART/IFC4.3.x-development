@@ -3,6 +3,7 @@ import os
 import html
 
 
+MARKER = "\n\n<!-- end of short definition -->\n"
 MULTIPLE_LINEBREAK_PATTERN = re.compile("\n+")
 FORMULA_PATTERN = re.compile(r'(Base|General) formula')
 DOLAR_PATTERN = re.compile(r'\$\$')
@@ -19,7 +20,6 @@ def extract_definition(txt, return_short=True, return_marked=False, print_split=
 
     heading = txt.split('\n\n', 1)[0]+'\n\n'
     txt = txt[len(heading):]
-    marker = "\n\n<!-- end of short definition -->\n"
 
     if not return_short and not return_marked:
         return txt
@@ -31,6 +31,7 @@ def extract_definition(txt, return_short=True, return_marked=False, print_split=
         # "https://github.com/buildingSMART/IFC4.3.x-development/edit/master/docs/schemas/core/
         # IfcProductExtension/Types/IfcAlignmentTypeEnum.md#L0 has no content"
         txt = ''
+    
     s1 = re.search(DOLAR_PATTERN, txt).start() if re.search(DOLAR_PATTERN, txt) else -1
     s2 = re.search(FORMULA_PATTERN, txt).start() if re.search(FORMULA_PATTERN, txt) else -1
     s3 = re.search(MULTIPLE_LINEBREAK_PATTERN, txt).start() if re.search(MULTIPLE_LINEBREAK_PATTERN,
@@ -45,6 +46,7 @@ def extract_definition(txt, return_short=True, return_marked=False, print_split=
                                                                          txt) else -1
     s6 = re.search(HEADING_PATTERN, txt).start() if re.search(HEADING_PATTERN, txt) else -1
     i = min([x for x in [s1, s2, s3, s4, s5, s6, 1e5] if x >= 0])
+    
     if txt[i-1] in [":","-","–"]:
         i = find_last_bullet_end_position(txt, i)
 
@@ -61,11 +63,11 @@ def extract_definition(txt, return_short=True, return_marked=False, print_split=
         if return_short:
             return txt[:i]
         elif return_marked:
-            return heading + txt[:i].rstrip() + marker + txt[i:]
+            return heading + txt[:i].rstrip() + MARKER + txt[i:]
         else:
             return ""
     else:
-        return ""
+        return txt
 
 
 def find_last_bullet_end_position(text, i):
@@ -93,6 +95,7 @@ def enrich_all_markdowns(directory_path, save=False):
                     with open(file_path, 'r', encoding='utf-8') as file:
                         new_def = file.read()
                         new_def = new_def.replace("  ", " ")
+
                         new_def = extract_definition(
                             new_def,
                             return_short=False,

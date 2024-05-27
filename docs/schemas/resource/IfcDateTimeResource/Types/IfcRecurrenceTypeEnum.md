@@ -20,7 +20,7 @@ DayComponent, Interval, Occurrences
 WeekdayComponent, Position, Interval, Occurrences
 
 ### BY_DAY_COUNT
-nterval, Occurrences
+Interval, Occurrences
 
 ### BY_WEEKDAY_COUNT
 WeekdayComponent, Interval, Occurrences

@@ -6,7 +6,7 @@ _IfcLinearPlacement_ provides a specialization of _IfcObjectPlacement_ in which 
 ## Attributes
 
 ### RelativePlacement
-
+Placement that provides location and orientation confined to the context of a curve. Linear placement is 3D in nature even in case of a 2D basis curve.
 
 ### CartesianPosition
-
+Optional fallback for the `RelativePlacement` attribute, which may be used by importing applications that do not support linear placement.

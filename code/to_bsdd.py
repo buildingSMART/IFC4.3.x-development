@@ -741,10 +741,18 @@ def list_unique_codes(concepts):
         if content["Psets"]:
             for pset_code, pset_content in content["Psets"].items():
                 if need_brackets(pset_code):
-                    codes.add(pset_code)
+                    # TODO fix faulty codes
+                    if "IfcGeometricRepresentationContext" in pset_code:
+                        pass
+                    else:
+                        codes.add(pset_code)
                 for prop_code, prop_content in pset_content["Properties"].items():
                     if need_brackets(prop_code):
-                        codes.add(prop_code)
+                        # TODO fix faulty codes
+                        if "IfcGeometricRepresentationContext" in prop_code:
+                            pass
+                        else:
+                            codes.add(prop_code)
                     if prop_content["Values"]:
                         for val in prop_content["Values"]:
                             if need_brackets(val["Value"]):
@@ -790,7 +798,7 @@ def generate_bsdd_json(classes, props):
     )
 
 
-def restructure_and_annotate(all_concepts, uni_codes):
+def restructure_and_annotate(all_concepts, uni_codes, codes):
     ### iterate again to annotate all descriptions and restructure classes/properties/values:
     classes = []
     psets = []
@@ -1068,9 +1076,8 @@ all_concepts = generate_definitions()
 filtered_concepts = filter_concepts(all_concepts)
 uni_codes = list_unique_codes(filtered_concepts)
 codes_pattern = re.compile("\\b(%s)\\b" % "|".join(sorted(uni_codes, key=lambda s: -len(s))))
-classes, props, to_translate = restructure_and_annotate(filtered_concepts, codes_pattern)
+classes, props, to_translate = restructure_and_annotate(filtered_concepts, codes_pattern, uni_codes)
 generate_bsdd_json(classes, props)
 
 po_files = pot_dict()
 generate_translation_template(to_translate, po_files)
-

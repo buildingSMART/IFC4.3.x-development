@@ -3,16 +3,12 @@ import re
 import json
 import logging
 import sys
-
 from collections import defaultdict
-from copy import deepcopy
 from datetime import date
-
 from xmi_document import xmi_document, missing_markdown
-from nltk import PorterStemmer
-from reversestem import unstem
-
 from measure_mapping import MEASURE_MAPPING
+from name_improve import name_improve, definition_improve
+from tqdm import tqdm
 
 
 logging.basicConfig(level=logging.INFO)
@@ -29,17 +25,7 @@ except:
 
 xmi_doc = xmi_document(fn)
 xmi_doc.should_translate_pset_types = False
-bfn = os.path.basename(fn)
 
-ps = PorterStemmer()
-
-# with open(r".\code\type_words.json", "r", encoding="utf-8") as file:
-type_words_path = os.path.abspath(os.path.join(os.path.dirname(__file__), ".", "type_words.json"))
-with open(type_words_path, "r", encoding="utf-8") as file:
-    data = json.load(file)
-type_words = sorted(data, key=len)[::-1]
-
-# with open(r".\code\bsdd_excluded_entites.json", "r", encoding="utf-8") as file:
 bsdd_excluded_entites = os.path.abspath(os.path.join(os.path.dirname(__file__), ".", "bsdd_excluded_entites.json"))
 with open(bsdd_excluded_entites, "r", encoding="utf-8") as file:
     excluded_entites = json.load(file)
@@ -48,74 +34,6 @@ with open(bsdd_excluded_entites, "r", encoding="utf-8") as file:
 # IfcStructuralLoadTemperature
 
 CHAR_LIMIT = 50
-
-ALL_CAPS = [
-    "ups",
-    "gprs",
-    "rs",
-    "am",
-    "gps",
-    "dc",
-    "tn",
-    "url",
-    "ac",
-    "co",
-    "co2",
-    "chp",
-    "id",
-    "led",
-    "oled",
-    "ole",
-    "gfa",
-    "tv",
-    "msc",
-    "ppm",
-    "iot",
-    "ocl",
-    "lrm",
-    "cgt",
-    "teu",
-    "tmp",
-    "std",
-    "gsm",
-    "cdma",
-    "lte",
-    "td",
-    "scdma",
-    "wcdma",
-    "sc",
-    "mp",
-    "bm",
-    "ol",
-    "ep",
-    "ir",
-    "www",
-    "ip",
-    "ph",
-    "usb",
-    "ii",
-    "iii",
-    "url",
-    "uri",
-    "ssl",
-    "ffl",
-    "ty",
-    "tz",
-    "tx",
-    "ipi",
-    "ics",
-]
-
-SMALL_CAPS = ["for", "of", "and", "to", "with", "or", "at"]
-
-SUBSTITUTIONS = {
-    "Rel ": "Relation: ",
-    "Min ": "Minimum ",
-    "Max ": "Maximum ",
-    " Temp": " Temperature",
-    "Qto_": "Quantity set: ",
-    "Pset_": "Property set: ",
-}
 
 TYPE_TO_VALUES = {
     # 'boolean': ["TRUE","FALSE"],
@@ -128,43 +46,6 @@ TYPE_TO_VALUES = {
 # schema_name = "".join(["_", c][c.isalnum()] for c in schema_name)
 # schema_name = re.sub(r"_+", "_", schema_name)
 # schema_name = schema_name.strip('_')
-
-
-MULTIPLE_LINEBREAK_PATTERN = re.compile("\n+")
-MULTIPLE_SPACE_PATTERN = re.compile(r"\s+")
-HTML_TAG_PATTERN = re.compile("<.*?>")
-CURLY_BRACKET_PATTERN = re.compile(
-    "{.*?}.*"
-)  # also removes all text after curly brackets
-FIGURE_PATTERN = re.compile(
-    "[^.,;]*(Figure|the figure)[^.,;]*"
-)  # removes the sentence when it mentiones a Figure.
-LIST_PATTERN = re.compile(
-    r"[^.,;]*:\s?"
-)  # removes the last sentence when it ends with a colon.
-# CHANGE_LOG_PATTERN = re.compile(r'\{\s*\.change\-\w+\s*\}.+', flags=re.DOTALL)
-
-replacements = [
-    (re.compile(r"\*{2}"), " "),
-    (re.compile(r":(?!\s)"), ": "),
-    (re.compile(r"SELF\\"), ""),
-    (
-        re.compile(r"(?<!\.)\.\.(?!\.)"),
-        ".",
-    ),  # remove double dots but not triple (ellipsis)
-    (MULTIPLE_LINEBREAK_PATTERN, "; "),
-    (HTML_TAG_PATTERN, " "),
-    (CURLY_BRACKET_PATTERN, " "),
-    (FIGURE_PATTERN, ""),
-    (LIST_PATTERN, ""),
-    (MULTIPLE_SPACE_PATTERN, " "),
-]
-
-
-def remove_unwanted(s):
-    for pat, subs in replacements:
-        s = re.sub(pat, subs, s)
-    return s
 
 
 def yield_parents(node):
@@ -195,76 +76,6 @@ def get_path(xmi_node):
 # def skip_by_package(element):
 #     return not (set(get_path(xmi_doc.by_id[element.idref])) & included_packages)
 
-
-def caps_control(s):
-    """Turn special words to all caps or small caps using hard-coded lists.
-    E.g. Usb -> USB, With -> with"""
-    s1 = s.split()
-    if isinstance(s1, list):
-        for part in s1:
-            for a in ALL_CAPS:
-                if part.lower() == a:
-                    s = re.sub(part, a.upper(), s)
-            for b in SMALL_CAPS:
-                if part.lower() == b:
-                    s = re.sub(part, b.lower(), s)
-    return s
-
-
-def split_at_word(w, s):
-    """Try spliting the string s with the word w. Return string s splited with whitespaces."""
-    if w != "" and ((ps.stem(w) in s.lower()) or (w in s.lower())):
-        # to_keep=False
-        # for wtk in words_to_keep:
-        #     if wtk in s.lower():
-        #         to_keep=True
-        # if not to_keep:
-        if w in s.lower():
-            s = re.sub(w, " " + w + " ", s.lower())
-        else:
-            vs = unstem(ps.stem(w))
-            if isinstance(vs, dict):
-                # turn dict to flat list
-                vsl = []
-                for key, val in vs.items():
-                    vsl.append(key)
-                    if val:
-                        for v in val:
-                            vsl.append(v)
-                vs = vsl
-            if vs:
-                vs.append(ps.stem(w))
-                vs = sorted(vs, key=len)[::-1]
-                for v in vs:
-                    if v in s.lower():
-                        s = re.sub(w, " " + w + " ", s.lower())
-                        break
-    if isinstance(s, list):
-        s = " ".join(s)
-    return s
-
-
-def split_words(s):
-    """Split the phrase using the hard-coded list of words found in enumerations
-    to split the ALLCAPS phrases into indivudual words."""
-    found_words = []
-    for w in type_words:
-        # skip if word is contained in previous words (e.g. EXCHANGE in EXCHANGER)
-        previously_found = False
-        for fw in found_words:
-            if w in fw:
-                previously_found = True
-        if not previously_found:
-            s2 = deepcopy(s)
-            s2 = split_at_word(w, s2)
-            if s2 != s:
-                found_words.append(w)
-                s = s2
-    s = re.sub("_", " ", s)
-    s = re.sub(r"\s+", " ", s)
-    return s.strip()
-
-
 def to_str(s):
     """Turn to string in case it finds a defaultdict or similar"""
     if isinstance(s, str):
@@ -280,7 +91,7 @@ def to_str(s):
         return ""
     elif isinstance(s, dict):
         if not s:
-            # value is an empty dictionary
+            logging.warning("Empty dictionary: %s", s)
             return ""
         else:
             logging.warning("Unempty dictionary passed as a value: %s", s)
@@ -295,31 +106,9 @@ def quote(s):
     return '"%s"' % to_str(s)
 
 
-def annotate(s):
+def annotate(s, uni_codes):
     """Add double brackets [[...]] around certain words."""
-    return re.sub(all_codes, lambda match: "[[%s]]" % match.group(0), to_str(s))
-
-
-def normalise(s):
-    """format the text by spliting camelCase into separate words and replacing special prefixes."""
-    s = re.sub(r"(?<=[a-z])(?=[A-Z])", " ", to_str(s))
-    for k, v in SUBSTITUTIONS.items():
-        if k in s:
-            s = re.sub(k, v, s)
-    return re.sub(MULTIPLE_SPACE_PATTERN, " ", s).strip()
-
-
-def clean(s):
-    """format the text by removing unwanted characters."""
-    # remove all redundant characters (except those listed):
-    s = re.sub(MULTIPLE_LINEBREAK_PATTERN, "; ", s)
-    s = remove_unwanted(s)
-    cleaned = "".join(
-        ["", c][c.isalnum() or c in ":.,()-+ —=;α°_/!?$%@<>'\"\\*"] for c in to_str(s)
-    )
-    p = re.compile('"')
-    cleaned = re.sub(p, "'", cleaned).strip()
-    return re.sub(MULTIPLE_SPACE_PATTERN, " ", cleaned).strip()
+    return re.sub(uni_codes, lambda match: "[[%s]]" % match.group(0), to_str(s))
 
 
 def generalization(pe):
@@ -359,7 +148,8 @@ def list_ancestors(name, full_list, ancestor_list):
             ancestor_list.append(ancestor)
             list_ancestors(ancestor, full_list, ancestor_list)
         else:
-            logging.warning("Ancestor %s not found in the IFC.", ancestor)
+            # TODO handle IfcMaterialDefinition, IfcPreDefinedPropertySet
+            logging.warning("Ancestor of %'s' not found in the IFC.", ancestor)
     return ancestor_list
 
 
@@ -491,14 +281,6 @@ def is_deprecated(elem):
     return deprecated
 
 
-def trim_definition(s):
-    MARKER = "<!-- end of short definition -->"
-    if MARKER in s:
-        return s[: s.find(MARKER)]
-    else:
-        raise Exception(f"ERROR! The marker {MARKER} was not found in the text: {s}")
-
-
 def generate_definitions():
     """
     A generator that yields tuples of <a, b> with
@@ -535,7 +317,7 @@ def generate_definitions():
 
     ### extract all items from XML
 
-    for item in xmi_doc:
+    for item in tqdm(xmi_doc, desc="Processing items from XMI", total=len(xmi_doc.guids)):
 
         item_by_id[item.id] = item
 
@@ -553,33 +335,22 @@ def generate_definitions():
                 st = item.meta.get("supertypes", [])
                 if st:
                     di["Parent"] = to_str(st[0])
-                if item.name == "IfcShapeAspect":
-                    # TEMP Overcome faulty input until improved source file:
-                    di["Definition"] = clean(to_str(item.markdown_definition))
-                else:
-                    di["Definition"] = clean(
-                        trim_definition(to_str(item.markdown_content))
+                # TODO Overcome faulty input until improved source file:
+                if item.name in ["IfcShapeAspect", "IfcActorRole"]:
+                    di["Definition"] = definition_improve(
+                        to_str(item.markdown_definition)
                     )
+                else:
+                    di["Definition"] = definition_improve(to_str(item.markdown_content))
                 # add human-readable name
-                di["Name"] = caps_control(
-                    clean(
-                        normalise(
-                            (
-                                item.name[3:]
-                                if item.name.lower().startswith("ifc")
-                                else item.name
-                            )
-                        )
-                    ).title()
-                )
+                di["Name"] = name_improve(item.name)
                 di["Guid"] = guid_by_id(item.id)
                 di["Package"] = to_str(item.package)  # solely to split POT files
                 entities.append(item)
             # skipping: ('FUNCTION','SELECT','RULE','TYPE')
 
     ### process all found predefined types (entities)
-
-    for entity in entities:
+    for entity in tqdm(entities, desc="Processing predefined types"):
 
         if "IfcTypeObject" in xmi_doc.supertypes(entity.id):
             continue
@@ -595,22 +366,23 @@ def generate_definitions():
                     if c.name not in ("USERDEFINED", "NOTDEFINED"):
                         by_id[c.id] = di = classes[entity.name + c.name]
                         di["Parent"] = to_str(entity.name)
-                        di["Definition"] = clean(to_str(c.markdown)) # no trimming, those are already short.
+                        di["Definition"] = definition_improve(
+                            to_str(c.markdown)
+                        )  # no trimming, those are already short.
                         di["Description"] = (
                             "Technical note: Because this class is a 'Predefined Type' in IFC, meaning a specialisation"
                             " of its parent class, in IFC it should be represented by the parent class."
                         )
                         # add human-readable name, by identifying words in all-caps phrase
                         # (right now the words are hardcoded)
-                        di["Name"] = caps_control(split_words(c.name).title())
+                        di["Name"] = name_improve(c.name)
                         di["Guid"] = guid_by_id(c.id)
                         di["Package"] = to_str(
                             entity.package
                         )  # solely to split POT files
 
     ### process all found property sets
-
-    for pset in psets:
+    for pset in tqdm(psets, desc="Processing psets"):
         refs = set(pset.meta.get("refs") or [])
 
         for id in refs:
@@ -726,18 +498,18 @@ def generate_definitions():
                     di["Psets"][pset.name]["Definition"] = re.sub(
                         r":\s*[A-Z]{2,}.*",
                         "...",
-                        clean(to_str(pset.markdown_content)),
+                        definition_improve(to_str(pset.markdown_content)),
                     )
 
                     di["Psets"][pset.name]["Properties"][a.name]["Type"] = type_name
-                    di["Psets"][pset.name]["Properties"][a.name]["Name"] = caps_control(
-                        clean(split_words(normalise(a.name))).title()
+                    di["Psets"][pset.name]["Properties"][a.name]["Name"] = name_improve(
+                        a.name
                     )
                     # remove value explanation from the definition
                     di["Psets"][pset.name]["Properties"][a.name]["Definition"] = re.sub(
                         r":\s*[A-Z]{2,}.*",
                         "...",
-                        clean(to_str(a.markdown)),
+                        definition_improve(to_str(a.markdown)),
                     )
                     di["Psets"][pset.name]["Properties"][a.name]["Kind"] = kind_name
                     di["Psets"][pset.name]["Properties"][a.name]["Package"] = to_str(
@@ -766,11 +538,9 @@ def generate_definitions():
                                 flags=re.IGNORECASE,
                             )
                             if matches:
-                                description = clean(matches[0].strip())
+                                description = name_improve(matches[0].strip())
                             else:
-                                description = caps_control(
-                                    clean(normalise(split_words(tv))).title()
-                                )  # the value but readable
+                                description = name_improve(tv)  # the value but readable
                             di["Psets"][pset.name]["Properties"][a.name][
                                 "Values"
                             ].append(
@@ -781,9 +551,10 @@ def generate_definitions():
                                 }
                             )
 
-    ### process all found entities by adding properties and attributes to them
-
-    for entity in entities:  # TODO +predefined_types:
+    ### process all found entities again by adding properties and attributes to them
+    for entity in tqdm(
+        entities, desc="Adding properties to entities"
+    ):  # TODO +predefined_types:
 
         entity_name = entity.name
         if entity_name.endswith("Type"):
@@ -792,7 +563,7 @@ def generate_definitions():
 
         for c in entity.children:
 
-            c.name = clean(c.name)
+            c.name = name_improve(c.name)
 
             if not is_deprecated(c):
                 try:
@@ -861,14 +632,14 @@ def generate_definitions():
 
                     di["Psets"]["Attributes"]["Properties"][c.name]["Type"] = type_name
                     di["Psets"]["Attributes"]["Properties"][c.name]["Name"] = (
-                        caps_control(clean(split_words(normalise(c.name))).title())
+                        name_improve(c.name)
                     )
                     # remove value explanation from the definition
                     di["Psets"]["Attributes"]["Properties"][c.name]["Definition"] = (
                         re.sub(
                             r":\s*[A-Z]{2,}.*",
                             "...",
-                            clean(to_str(c.markdown)),
+                            definition_improve(to_str(c.markdown)),
                         )
                     )
                     di["Psets"]["Attributes"]["Properties"][c.name]["Package"] = to_str(
@@ -888,11 +659,11 @@ def generate_definitions():
                                 flags=re.IGNORECASE,
                             )
                             if matches:
-                                description = clean(matches[0].strip())  # the whole sentence explaining the value
+                                description = definition_improve(
+                                    matches[0].strip()
+                                )  # the whole sentence explaining the value
                             else:
-                                description = caps_control(
-                                    clean(normalise(split_words(tv))).title()
-                                )  # the value but readable
+                                description = name_improve(tv)  # the value but readable
                             di["Psets"]["Attributes"]["Properties"][c.name][
                                 "Values"
                             ].append(
@@ -913,7 +684,7 @@ def generate_definitions():
                         re.sub(
                             r":\s*[A-Z]{2,}.*",
                             "...",
-                            clean(to_str(c.markdown)),
+                            definition_improve(to_str(c.markdown)),
                         )
                     )
                     di["Psets"]["Attributes"]["Properties"][c.name]["Values"] = []
@@ -930,11 +701,11 @@ def generate_definitions():
                             flags=re.IGNORECASE,
                         )
                         if matches:
-                            description = clean(matches[0].strip())  # the whole sentence explaining the value
+                            description = definition_improve(
+                                matches[0].strip()
+                            )  # the whole sentence explaining the value
                         else:
-                            description = caps_control(
-                                clean(normalise(split_words(tv))).title()
-                            )  # the value but readable
+                            description = name_improve(tv)  # the value but readable
                         di["Psets"]["Attributes"]["Properties"][c.name][
                             "Values"
                         ].append(
@@ -961,323 +732,271 @@ def generate_definitions():
     return classes
 
 
-### Generate all the definitions:
-
-all_concepts = filter_concepts(generate_definitions())
-
-
-### iterate all the results to list all unique codes for translations
-
-codes = set()
-# ["USERDEFINED", "NOTDEFINED"]  # adding those two to be translatable \
-# values, as they occur in descriptions but will not be listed in bSDD.
-for code, content in all_concepts.items():
-    if need_brackets(code):
-        codes.add(code)
-    if content["Psets"]:
-        for pset_code, pset_content in content["Psets"].items():
-            if need_brackets(pset_code):
-                codes.add(pset_code)
-            for prop_code, prop_content in pset_content["Properties"].items():
-                if need_brackets(prop_code):
-                    codes.add(prop_code)
-                if prop_content["Values"]:
-                    for val in prop_content["Values"]:
-                        if need_brackets(val["Value"]):
-                            codes.add(val["Value"])
-
-all_codes = re.compile("\\b(%s)\\b" % "|".join(sorted(codes, key=lambda s: -len(s))))
+def list_unique_codes(concepts):
+    ### iterate all the results to list all unique codes for translations
+    codes = set()
+    for code, content in tqdm(all_concepts.items(), "Lising all unique codes"):
+        if need_brackets(code):
+            codes.add(code)
+        if content["Psets"]:
+            for pset_code, pset_content in content["Psets"].items():
+                if need_brackets(pset_code):
+                    codes.add(pset_code)
+                for prop_code, prop_content in pset_content["Properties"].items():
+                    if need_brackets(prop_code):
+                        codes.add(prop_code)
+                    if prop_content["Values"]:
+                        for val in prop_content["Values"]:
+                            if need_brackets(val["Value"]):
+                                codes.add(val["Value"])
+    return codes
 
 
-### iterate again to annotate all descriptions and restructure classes/properties/values:
-
-classes = []
-psets = []
-props = []
-props = []
-to_translate = []
-unique_props = set()
-unique_psets = set()
-
-for code, content in all_concepts.items():
-    clas_def = annotate(content["Definition"])
-
-    classes.append(
-        {
-            "Code": code[0:CHAR_LIMIT],
-            "Name": (
-                to_str(content["Name"])
-                if to_str(content["Name"])
-                else caps_control(
-                    clean(
-                        normalise(
-                            (code[3:] if code.lower().startswith("ifc") else code)
-                        )
-                    ).title()
-                )
-            ),
-            "Definition": clas_def,
-            "ClassType": "Class",
-            "ClassProperties": [],
-        }
+def generate_bsdd_json(classes, props):
+    """Generate IFC.json file (using bSDD template)"""
+    logging.info("Started saving .json file")
+    bsdd_data = {
+        "ModelVersion": "2.0",
+        "OrganizationCode": "buildingsmart",
+        "DictionaryCode": "ifc",
+        "DictionaryName": "IFC",
+        "DictionaryVersion": "4.3",
+        "LanguageIsoCode": "EN",
+        "LanguageOnly": False,
+        "UseOwnUri": False,
+        "License": "CC BY-ND 4.0",
+        "LicenseUrl": "https://creativecommons.org/licenses/by-nd/4.0/legalcode",
+        "MoreInfoUrl": "https://ifc43-docs.standards.buildingsmart.org/",
+        "QualityAssuranceProcedure": "IFC is a standardized digital description\
+            of built environment created by buildingSMART International and its\
+            community members. For more information read ISO 16739 and IFC schema documentation.",
+        "QualityAssuranceProcedureUrl": "https://technical.buildingsmart.org/standards/ifc/",
+        "ReleaseDate": date.today().strftime(r"%Y-%m-%d"),
+        "Classes": classes,
+        "Properties": props,
+    }
+    with open(os.path.join(output_dir, "IFC.json"), "w", encoding="utf-8") as f:
+        json.dump(
+            bsdd_data,
+            f,
+            indent=4,
+            default=lambda x: (getattr(x, "to_json", None) or (lambda: vars(x)))(),
+            ensure_ascii=False,
+        )
+        print("-- Saved JSON file. --")
+    print(
+        "-- Saved IFC.json file with %s classes and %s properties. --"
+        % (len(classes), len(props))
     )
 
-    if content["Guid"]:
-        classes[-1]["Uid"] = to_str(content["Guid"])
-    if content["Parent"]:
-        if content["Parent"] in codes:
-            classes[-1]["ParentClassCode"] = to_str(content["Parent"])
-    if content["Description"]:
-        classes[-1]["Description"] = to_str(content["Description"])
-        to_translate.append(
+
+def restructure_and_annotate(all_concepts, uni_codes):
+    ### iterate again to annotate all descriptions and restructure classes/properties/values:
+    classes = []
+    psets = []
+    props = []
+    props = []
+    to_translate = []
+    unique_props = set()
+    unique_psets = set()
+    for code, content in tqdm(
+        all_concepts.items(), desc="Restructuring and annotating"
+    ):
+        clas_def = annotate(content["Definition"], uni_codes)
+        classes.append(
             {
-                "msgid": code[0:CHAR_LIMIT] + "_DESCRIPTION",
-                "msgstr": classes[-1]["Description"],
-                "package": content["Package"],
+                "Code": code[0:CHAR_LIMIT],
+                "Name": (
+                    to_str(content["Name"])
+                    if to_str(content["Name"])
+                    else name_improve(code)
+                ),
+                "Definition": clas_def,
+                "ClassType": "Class",
+                "ClassProperties": [],
             }
         )
 
-    to_translate.append(
-        {
-            "msgid": code[0:CHAR_LIMIT],
-            "msgstr": classes[-1]["Name"],
-            "package": content["Package"],
-        }
-    )
-    to_translate.append(
-        {
-            "msgid": code[0:CHAR_LIMIT] + "_DEFINITION",
-            "msgstr": clas_def,
-            "package": content["Package"],
-        }
-    )
-
-    ancestors = [code]
-    ancestors = list_ancestors(code, all_concepts, ancestors)
-
-    unique_p_codes = set()
-
-    # add properties (from this object and all its parents)
-    for ancestor_name in ancestors:
-        ancestor = all_concepts[ancestor_name]
-        # if ancestor['Psets']:
-        if ancestor["Psets"]:
-            for pset_code, pset_content in ancestor["Psets"].items():
-
-                ## If we want to list PSETS and QTO as separate classes of type "GroupOfProperties"
-                # add PSet as GroupOfProperties class:
-                # if not ((pset_code in unique_psets) or (pset_code == 'Attributes')):
-                #     unique_psets.add(pset_code)
-                #     psets.append({
-                #         'Code': pset_code[0:CHAR_LIMIT],
-                #         'Name': to_str(pset_content['Name']) if \
-                #  to_str(pset_content['Name']) else caps_control \
-                # (clean(normalise(pset_code))).title(),
-                #         'Definition': annotate(pset_content['Definition']),
-                #         'ClassType': 'GroupOfProperties',
-                #         'ClassProperties': []
-                #     })
-                #     to_translate.append({"msgid":pset_code[0:CHAR_LIMIT],
-                # "msgstr":psets[-1]['Name'],"package":content['Package']})
-                #     to_translate.append({"msgid":pset_code[0:CHAR_LIMIT]+
-                # "_DEFINITION","msgstr":psets[-1]['Definition'],"package":content['Package']})
-
-                # add ClassProperties
-                for prop_code, prop_content in pset_content["Properties"].items():
-                    prop_code = prop_code[0:CHAR_LIMIT]
-                    name = to_str(prop_content["Name"])
-                    if not name:
-                        name = normalise(prop_code)
-                    prop_def = annotate(prop_content["Definition"])
-                    # property code must be unique for a given class and shorter than 50 characters
-                    if len(prop_code) + len(pset_code) < 50:
-                        p_code = (
-                            prop_code + "_from_" + re.sub("Pset_|Qto_", "", pset_code)
-                        )
-                    # special treatment of 5 psets that result in duplicated codes:
-                    elif prop_code in (
-                        "AdjustmentDesignation",
-                        "IsCurrentTolerancePositiveOnly",
-                    ) and pset_code in (
-                        "Pset_ProtectiveDeviceTrippingUnitTimeAdjustment",
-                        "Pset_ProtectiveDeviceTrippingUnitCurrentAdjustment",
-                        "Pset_ProtectiveDeviceTrippingFunctionGCurve",
-                        "Pset_ProtectiveDeviceTrippingFunctionICurve",
-                        "Pset_ProtectiveDeviceTrippingFunctionICurve",
-                    ):
-                        p_code = (
-                            prop_code
-                            + "_from_..."
-                            + "".join([c for c in pset_code if c.isupper()])
-                        )
-                    else:
-                        # p_code = prop_code+"_"+pset_code[5:51-len(prop_code)]+"..."
-                        p_code = (
-                            prop_code
-                            + "_from_"
-                            + re.sub("Pset_|Qto_", "", pset_code)[
-                                : int((41 - len(prop_code)) / 2)
-                            ]
-                            + "..."
-                            + re.sub("Pset_|Qto_", "", pset_code)[
-                                len(re.sub("Pset_|Qto_", "", pset_code))
-                                - int((41 - len(prop_code)) / 2) :
-                            ]
-                        )
-                    classProp = {
-                        "PropertyCode": prop_code[0:CHAR_LIMIT],
-                        "Code": p_code[0:CHAR_LIMIT],
-                        "PropertySet": pset_code[0:CHAR_LIMIT],
-                        # Skip description and name as it should inherit from a Property.
-                        # "Description": name + " – " + prop_def + ". IFC type: "
-                        # + prop_content['Type'] + ". " + annotate(prop_content['Description']),
-                        # "PropertyValueKind": prop_content['Type'],
-                    }
-
-                    #
-                    if not p_code in unique_p_codes:
-                        classes[-1]["ClassProperties"].append(classProp)
-                        unique_p_codes.add(p_code)
-                    # try:
-                    #     if pset_code == psets[-1]['Code']:
-                    #         if not any(classProp['PropertyCode'] == cp.get('PropertyCode')\
-                    #               [0:CHAR_LIMIT] for cp in psets[-1]['ClassProperties']):
-                    #             psets[-1]['ClassProperties'].append(classProp)
-                    # except IndexError:
-                    #     pass
-
-                    # add to properties list, not just classProp
-                    if not prop_code in unique_props:
-                        unique_props.add(prop_code)
-
-                        props.append(
-                            {
-                                "Code": prop_code[0:CHAR_LIMIT],
-                                "Name": name,
-                                "Definition": prop_def,
-                                "PropertyValueKind": to_str(prop_content["Kind"]),
-                            }
-                        )
-                        to_translate.append(
-                            {
-                                "msgid": prop_code[0:CHAR_LIMIT],
-                                "msgstr": name,
-                                "package": content["Package"],
-                            }
-                        )
-                        to_translate.append(
-                            {
-                                "msgid": prop_code[0:CHAR_LIMIT] + "_DEFINITION",
-                                "msgstr": prop_def,
-                                "package": content["Package"],
-                            }
-                        )
-
-                        if (
-                            prop_content["Values"]
-                            and prop_content["Type"].lower() != "boolean"
+        if content["Guid"]:
+            classes[-1]["Uid"] = to_str(content["Guid"])
+        if content["Parent"]:
+            if content["Parent"] in codes:
+                classes[-1]["ParentClassCode"] = to_str(content["Parent"])
+        if content["Description"]:
+            classes[-1]["Description"] = to_str(content["Description"])
+            to_translate.append(
+                {
+                    "msgid": code[0:CHAR_LIMIT] + "_DESCRIPTION",
+                    "msgstr": classes[-1]["Description"],
+                    "package": content["Package"],
+                }
+            )
+        to_translate.append(
+            {
+                "msgid": code[0:CHAR_LIMIT],
+                "msgstr": classes[-1]["Name"],
+                "package": content["Package"],
+            }
+        )
+        to_translate.append(
+            {
+                "msgid": code[0:CHAR_LIMIT] + "_DEFINITION",
+                "msgstr": clas_def,
+                "package": content["Package"],
+            }
+        )
+        ancestors = [code]
+        ancestors = list_ancestors(code, all_concepts, ancestors)
+        unique_p_codes = set()
+        # add properties (from this object and all its parents)
+        for ancestor_name in ancestors:
+            ancestor = all_concepts[ancestor_name]
+            # if ancestor['Psets']:
+            if ancestor["Psets"]:
+                for pset_code, pset_content in ancestor["Psets"].items():
+                    for prop_code, prop_content in pset_content["Properties"].items():
+                        prop_code = prop_code[0:CHAR_LIMIT]
+                        name = to_str(prop_content["Name"])
+                        if not name:
+                            name = name_improve(prop_code)
+                        prop_def = annotate(prop_content["Definition"], uni_codes)
+                        # property code must be unique for a given class and shorter than 50 characters
+                        if len(prop_code) + len(pset_code) < 50:
+                            p_code = (
+                                prop_code
+                                + "_from_"
+                                + re.sub("Pset_|Qto_", "", pset_code)
+                            )
+                        # special treatment of 5 psets that result in duplicated codes:
+                        elif prop_code in (
+                            "AdjustmentDesignation",
+                            "IsCurrentTolerancePositiveOnly",
+                        ) and pset_code in (
+                            "Pset_ProtectiveDeviceTrippingUnitTimeAdjustment",
+                            "Pset_ProtectiveDeviceTrippingUnitCurrentAdjustment",
+                            "Pset_ProtectiveDeviceTrippingFunctionGCurve",
+                            "Pset_ProtectiveDeviceTrippingFunctionICurve",
+                            "Pset_ProtectiveDeviceTrippingFunctionICurve",
                         ):
-                            allowed_values = []
-                            for val in prop_content["Values"]:
-                                descr = annotate(val["Description"])
-                                allowed_values.append(
-                                    {
-                                        "Code": val["Value"][0:CHAR_LIMIT],
-                                        "Value": val["Value"],
-                                        "Description": descr,
-                                    }
+                            p_code = (
+                                prop_code
+                                + "_from_..."
+                                + "".join([c for c in pset_code if c.isupper()])
+                            )
+                        else:
+                            # p_code = prop_code+"_"+pset_code[5:51-len(prop_code)]+"..."
+                            p_code = (
+                                prop_code
+                                + "_from_"
+                                + re.sub("Pset_|Qto_", "", pset_code)[
+                                    : int((41 - len(prop_code)) / 2)
+                                ]
+                                + "..."
+                                + re.sub("Pset_|Qto_", "", pset_code)[
+                                    len(re.sub("Pset_|Qto_", "", pset_code))
+                                    - int((41 - len(prop_code)) / 2) :
+                                ]
+                            )
+                        classProp = {
+                            "PropertyCode": prop_code[0:CHAR_LIMIT],
+                            "Code": p_code[0:CHAR_LIMIT],
+                            "PropertySet": pset_code[0:CHAR_LIMIT],
+                        }
+
+                        #
+                        if not p_code in unique_p_codes:
+                            classes[-1]["ClassProperties"].append(classProp)
+                            unique_p_codes.add(p_code)
+                        if not prop_code in unique_props:
+                            unique_props.add(prop_code)
+
+                            props.append(
+                                {
+                                    "Code": prop_code[0:CHAR_LIMIT],
+                                    "Name": name,
+                                    "Definition": prop_def,
+                                    "PropertyValueKind": to_str(prop_content["Kind"]),
+                                }
+                            )
+                            to_translate.append(
+                                {
+                                    "msgid": prop_code[0:CHAR_LIMIT],
+                                    "msgstr": name,
+                                    "package": content["Package"],
+                                }
+                            )
+                            to_translate.append(
+                                {
+                                    "msgid": prop_code[0:CHAR_LIMIT] + "_DEFINITION",
+                                    "msgstr": prop_def,
+                                    "package": content["Package"],
+                                }
+                            )
+
+                            if (
+                                prop_content["Values"]
+                                and prop_content["Type"].lower() != "boolean"
+                            ):
+                                allowed_values = []
+                                for val in prop_content["Values"]:
+                                    descr = annotate(val["Description"], uni_codes)
+                                    allowed_values.append(
+                                        {
+                                            "Code": val["Value"][0:CHAR_LIMIT],
+                                            "Value": val["Value"],
+                                            "Description": descr,
+                                        }
+                                    )
+                                    to_translate.append(
+                                        {
+                                            "msgid": prop_code[0:CHAR_LIMIT]
+                                            + "_"
+                                            + val["Value"],
+                                            "msgstr": descr,
+                                            "package": content["Package"],
+                                        }
+                                    )
+                                props[-1]["AllowedValues"] = allowed_values
+
+                            if prop_content["Description"]:
+                                props[-1]["Description"] = annotate(
+                                    prop_content["Description"],
+                                    uni_codes
                                 )
                                 to_translate.append(
                                     {
                                         "msgid": prop_code[0:CHAR_LIMIT]
-                                        + "_"
-                                        + val["Value"],
-                                        "msgstr": descr,
+                                        + "_DESCRIPTION",
+                                        "msgstr": props[-1]["Description"],
                                         "package": content["Package"],
                                     }
                                 )
-                            props[-1]["AllowedValues"] = allowed_values
-
-                        if prop_content["Description"]:
-                            props[-1]["Description"] = annotate(
-                                prop_content["Description"]
-                            )
-                            to_translate.append(
-                                {
-                                    "msgid": prop_code[0:CHAR_LIMIT] + "_DESCRIPTION",
-                                    "msgstr": props[-1]["Description"],
-                                    "package": content["Package"],
-                                }
-                            )
-                        if prop_content["Dimension"]:
-                            props[-1]["Dimension"] = prop_content["Dimension"]
-                        if prop_content["Type"].lower() == "string":
-                            props[-1]["DataType"] = "String"
-                        elif prop_content["Type"].lower() in ("real", "number"):
-                            props[-1]["DataType"] = "Real"
-                        elif prop_content["Type"].lower() == "integer":
-                            props[-1]["DataType"] = "Integer"
-                        elif prop_content["Type"].lower() == "boolean":
-                            props[-1]["DataType"] = "Boolean"
-                        elif prop_content["Type"].startswith("PEnum_") or prop_content[
-                            "Type"
-                        ].endswith("Enum"):
-                            # Assuming that all enums are text.
-                            props[-1]["DataType"] = "String"
-                        else:
-                            logging.warning(
-                                "Not sure what data type to apply to: '%s'.",
-                                prop_content["Type"],
-                            )
-
-classes.extend(psets)
-
-
-### Generate IFC.json file:
-
-bsdd_data = {
-    "ModelVersion": "2.0",
-    "OrganizationCode": "buildingsmart",
-    "DictionaryCode": "ifc",
-    "DictionaryName": "IFC",
-    "DictionaryVersion": "4.3",
-    "LanguageIsoCode": "EN",
-    "LanguageOnly": False,
-    "UseOwnUri": False,
-    "License": "CC BY-ND 4.0",
-    "LicenseUrl": "https://creativecommons.org/licenses/by-nd/4.0/legalcode",
-    "MoreInfoUrl": "https://ifc43-docs.standards.buildingsmart.org/",
-    "QualityAssuranceProcedure": "IFC is a standardized digital description\
-        of built environment created by buildingSMART International and its\
-        community members. For more information read ISO 16739 and IFC schema documentation.",
-    "QualityAssuranceProcedureUrl": "https://technical.buildingsmart.org/standards/ifc/",
-    "ReleaseDate": date.today().strftime(r"%Y-%m-%d"),
-    "Classes": classes,
-    "Properties": props,
-}
-
-# with open(output_dir, 'w', encoding='utf-8') as f:
-with open(os.path.join(output_dir, "IFC.json"), "w", encoding="utf-8") as f:
-    json.dump(
-        bsdd_data,
-        f,
-        indent=4,
-        default=lambda x: (getattr(x, "to_json", None) or (lambda: vars(x)))(),
-        ensure_ascii=False,
-    )
-    print("-- Saved JSON file. --")
-
-print(
-    "-- Saved IFC.json file with %s classes and %s properties. --"
-    % (len(classes), len(props))
-)
-
-
-### Generate a collection of .pot files in the "pot" folder:
+                            if prop_content["Dimension"]:
+                                props[-1]["Dimension"] = prop_content["Dimension"]
+                            if prop_content["Type"].lower() == "string":
+                                props[-1]["DataType"] = "String"
+                            elif prop_content["Type"].lower() in ("real", "number"):
+                                props[-1]["DataType"] = "Real"
+                            elif prop_content["Type"].lower() == "integer":
+                                props[-1]["DataType"] = "Integer"
+                            elif prop_content["Type"].lower() == "boolean":
+                                props[-1]["DataType"] = "Boolean"
+                            elif prop_content["Type"].startswith(
+                                "PEnum_"
+                            ) or prop_content["Type"].endswith("Enum"):
+                                # Assuming that all enums are text.
+                                props[-1]["DataType"] = "String"
+                            else:
+                                # TODO handle: IfcTimeSeries, IfcMaterialDefinition, LOGICAL, IfcExternalReference, IfcPerson, IfcAppliedValue
+                                logging.warning(
+                                    "Not sure what data type to apply to: '%s'.",
+                                    prop_content["Type"],
+                                )
+    classes.extend(psets)
+    return classes, props, to_translate
 
 
 class pot_file:
-
     def __init__(self, f):
         self.f = f
         now = date.today()
@@ -1318,32 +1037,40 @@ class pot_dict(dict):
         return v
 
 
+def generate_translation_template(to_translate, po_files):
+    i = 0
+    pos = set()
+    id_set = set()
+    for t in tqdm(to_translate, desc="generating translation"):
+        if isinstance(t["package"], defaultdict):
+            t["package"] = to_str(t["package"])
+        if isinstance(t["msgstr"], defaultdict):
+            t["msgstr"] = to_str(t["msgstr"])
+
+        po_file = po_files[t["package"]]
+
+        if t["msgid"] and t["msgstr"]:  # skip empty strings
+            if not t["msgid"] in id_set:
+                id_set.add(t["msgid"])
+                print("msgid", quote(t["msgid"]), file=po_file)
+                print("msgstr", quote(t["msgstr"]), file=po_file)
+                print(file=po_file)
+                pos.add(po_file)
+                i += 1
+            else:
+                logging.warning(
+                    "Duplicated msgids '%s' in the pot file: %s.", t["msgid"], po_file
+                )
+    print("-- Saved %s terms in %s POT files. --" % (i, len(pos)))
+
+
+all_concepts = generate_definitions()
+filtered_concepts = filter_concepts(all_concepts)
+uni_codes = list_unique_codes(filtered_concepts)
+codes_pattern = re.compile("\\b(%s)\\b" % "|".join(sorted(uni_codes, key=lambda s: -len(s))))
+classes, props, to_translate = restructure_and_annotate(filtered_concepts, codes_pattern)
+generate_bsdd_json(classes, props)
+
 po_files = pot_dict()
+generate_translation_template(to_translate, po_files)
 
-# for i, (package, (ln, col), p, d) in enumerate(generate_definitions()):
-i = 0
-pos = set()
-id_set = set()
-
-for t in to_translate:
-    if isinstance(t["package"], defaultdict):
-        t["package"] = to_str(t["package"])
-    if isinstance(t["msgstr"], defaultdict):
-        t["msgstr"] = to_str(t["msgstr"])
-
-    po_file = po_files[t["package"]]
-
-    if t["msgid"] and t["msgstr"]:  # skip empty strings
-        if not t["msgid"] in id_set:
-            id_set.add(t["msgid"])
-            print("msgid", quote(t["msgid"]), file=po_file)
-            print("msgstr", quote(t["msgstr"]), file=po_file)
-            print(file=po_file)
-            pos.add(po_file)
-            i += 1
-        else:
-            logging.warning(
-                "Duplicated msgids '%s' in the pot file: %s.", t["msgid"], po_file
-            )
-
-print("-- Saved %s terms in %s POT files. --" % (i, len(pos)))

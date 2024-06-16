@@ -39,7 +39,7 @@ Higher-level parameters (geometric and non-geometric) may be provided by propert
 Indicates the kind of surface feature.
 
 ### AdheresToElement
-Reference to the _IfcRelAdheresToElement_ relationship that uses this _IfcSurfaceFeature_ to ahere or treat the surface of the _IfcRelAdheresToElement_.RelatingElement.
+Reference to the _IfcRelAdheresToElement_ relationship that uses this _IfcSurfaceFeature_ to adhere or treat the surface of the _IfcRelAdheresToElement_.RelatingElement.
 
 ## Formal Propositions
 

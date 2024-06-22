@@ -8,7 +8,7 @@ The _IfcRelAdheresToElement_ implies a surface interface between the geometric b
 
 * existence dependency - the _RelatedSurfaceFeature_ cannot exist without the _RelatingElement_
 * hierarchical and non-cyclical relationship - the _IfcRelAdheresToElement_ can only alter a single _IfcElement_
-* no spatial containment - the _IfcSurfaceFeature_ as related element never participates in the hiearchical spatial containment relationship _IfcRelContainedInSpatialStructure_
+* no spatial containment - the _IfcSurfaceFeature_ as related element never participates in the hierarchical spatial containment relationship _IfcRelContainedInSpatialStructure_
 
 > HISTORY  New entity in IFC4x3.
 

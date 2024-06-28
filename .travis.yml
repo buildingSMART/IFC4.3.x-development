@@ -6,6 +6,11 @@ env:
     - SHACLVERSION=1.3.2
     - secure: "XXeH/ryHu2uczRfJIOrg372xeYf1NRZnIpcqc+FSW8f2HXNxv1lrGib8iq+qCbUDVyaw9lLouzPd+PqkS0V2RzDycqeA4nv9/CFhhb5bjFSpW1XcHEjf5g8GbVs7suwKP3qU+wGofWfDZQReUtrglPPvgWvDobcRxNLl0mZzN9kar0MQxLd8+we9Ytks4rN8fOj50Jcu4Bcm13KardeCSMVM6fsuYHtnAnJ2hrCEBuT/A5nBELM1pKGAuWYUYdXASMNgYc8Y3OyjVYMGaS5tnUKR+4h9ci5zx5dn1CFCc7txEK9ZsBetRPshBN4ndHQkgvV2RuFIFI8EpLYGSeahJIVYtwnl+HO5n2aHsue4frUsgzjuLElDGRpN9AjbB9Z6sG6IYBbHBU/tsA/N4GaSY2tnBFSm8cZufGoDOgEibpvP0wQqhUd1aF5y9+lrNcOM29ytR7g1I0FutckONGTV+O9y7FEUrauPISxGBAOrAgS7nJE+55+yfGx0QTmGsXwMfPe7ULnpIVWIu2xDKaUs0hPwzg6iJgS7A2lnmvLmYmdumaSMCLAgP+DHLjQcfXVIjnMI3ltM35H9H7W0pVfZtvKxJF2EF0K/CNGdWVcfctYLStZLS2N0p/nkUFg+ZYaDWkLcoDevIhPfKYTRC6octRU5w8A9HFsC1M48JOfRelg="
     - secure: "l7G2lCMn/LNRxRMztE4ga+A8JO/tbT3bZuaKbQkdtqd7kM10MSJpyoxVePt1q6ej3WYUyku45TW6R9Kw1OFhRYQiSR67H3SMrlfP447PVoKzXkGuq6yFs6EFDwjVFbDWUiYxZ+KHM9+W16pW2sQfRRTwiljfMcp3Zcjecrdc6gU4alI4ERJt0p6iKoUqJJB0fAQvSbsbHW0uRfeyIqTiXkVBQvtTgpvvILs5NKXnKWs/n44DpgdAT2Hzp87PcEhhNh825ChhbwkR1P6qdajCW1D+WvBhvOZRZ4W/UlpQuX7Fb75jwdWpZ6iT3tYxUGKG8xfDzvAcP19V8+03QAFacizFPtJMqqNPqwmBWcngpQwjWSO563xXva98YV3Ue0U4qhIpXNuSjbHRhJA/sWs+X3/CUez+U3pvwkl2XfNFlx7VIaCWzh87Ac7ca/BnD7aGD0bKwzwRt4PeqSJJo2MJV57Ic4NjsBPQmntqJ1ajGG4nZWkinxV/95z82ehR2fNdzVhMPY/FcioKyw7R7RwzPExbkFTE7lNi7QZPF3fZ8bD9J9X08ZnTJy4QCeYdRCoiKFX7Cea/QpkkN2qM/PjHpAHoTYetAUAD7JfPzipFE3wB5vkCx+n3uK5gOk7C2Lg9tzzszDwPhwqv15lZYW/W2fxa8SBOja+TYC+ZwukkC24="
+before_install:
+  # https://travis-ci.community/t/travis-focal-ubuntu-image-uses-now-expired-mongodb-4-4-package/14293
+  - wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
+  - echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
+  - sudo apt-get update
 install:
   - # sudo apt-get install texlive-full imagemagick
   - # sudo rm /etc/ImageMagick-6/policy.xml

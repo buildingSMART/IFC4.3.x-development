@@ -35,7 +35,11 @@ def parse_document(*, fn=None, data=None, linesep="", as_text=True):
         # from the Markdown documents, but the code here still relies
         # on them for building the document tree, because parsing
         # happens based on the various headings and their number.
-        soup.p.insert_before(soup.new_tag('h1', 'DocumentRoot'))
+        if soup.body is None:
+            return markdown_section(1, '', '', '', [])
+        first = next(soup.body.children)
+        first.insert_before(soup.new_tag('h1', 'DocumentRoot'))
+
     
     headings = soup.find_all(re.compile("h\d"))
     next_heading = headings[1:] + [None]
@@ -43,9 +47,9 @@ def parse_document(*, fn=None, data=None, linesep="", as_text=True):
     root = None
     stack = [None]
 
-    for h, next in zip(headings, next_heading):
+    for h, next_h in zip(headings, next_heading):
         nodes = (n for n in h.nextSiblingGenerator())
-        selected = itertools.takewhile(lambda n: next is None or n != next, nodes)
+        selected = itertools.takewhile(lambda n: next_h is None or n != next_h, nodes)
         concat = ""
         first = ""
         if as_text:

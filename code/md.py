@@ -29,6 +29,13 @@ def parse_document(*, fn=None, data=None, linesep="", as_text=True):
         markdown.markdown(data,
         extensions=['tables', 'fenced_code', 'sane_lists'])
     )
+
+    if not soup.h1:
+        # In a recent PR most of the top-level headings were removed
+        # from the Markdown documents, but the code here still relies
+        # on them for building the document tree, because parsing
+        # happens based on the various headings and their number.
+        soup.p.insert_before(soup.new_tag('h1', 'DocumentRoot'))
     
     headings = soup.find_all(re.compile("h\d"))
     next_heading = headings[1:] + [None]

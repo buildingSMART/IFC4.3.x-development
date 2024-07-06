@@ -1,8 +1,9 @@
-# IfcBuilding
-
 A building represents a structure that provides shelter for its occupants or contents and stands in one place. The building is also used to provide a basic element within the spatial structure hierarchy for the components of a building project (together with site, storey, and space).
 
-> NOTE  Definition from ISO 6707-1:
+<!-- end of short definition -->
+
+
+> NOTE Definition from ISO 6707-1:
 > Construction work that has the provision of shelter for its occupants or contents as one of its main purpose and is normally designed to stand permanently in one place.
 
 A building is (if specified) associated to a site. A building may span over several connected or disconnected buildings. Therefore building complex provides for a collection of buildings included in a site. A building can also be decomposed in parts, where each part defines a building section. This is defined by the composition type attribute of the supertype _IfcSpatialStructureElement_ which is interpreted as follow:
@@ -13,12 +14,12 @@ A building is (if specified) associated to a site. A building may span over seve
 
 The _IfcBuilding_ is used to build the spatial structure of a building (that serves as the primary project breakdown and is required to be hierarchical). The spatial structure elements are linked together by using the objectified relationship _IfcRelAggregates_. Figure 1 shows the _IfcBuilding_ as part of the spatial structure. It also serves as the spatial container for building and other elements.
 
-> NOTE  Detailed requirements on mandatory element containment and placement structure relationships are given in model view definitions.
+> NOTE Detailed requirements on mandatory element containment and placement structure relationships are given in model view definitions.
 
 ![A building storey as part of a spatial structure](../../../../figures/ifcbuilding-spatialstructure.png)
 
 
-Figure 1 &mdash; Building composition
+Figure 1 — Building composition
 
 Systems, such as building service or electrical distribution systems, zonal systems, or structural analysis systems, relate to _IfcBuilding_ by using the objectified relationship _IfcRelServicesBuildings_.
 
@@ -28,9 +29,9 @@ Figure 2 describes the heights and elevations of the _IfcBuilding_. It is used t
 * eaves height of building (base of roof structure, e.g the eaves against terrain): provided by _Qto_BuildingBaseQuantities_ with Name="EavesHeight"
 
 ![building heights](../../../../figures/ifcbuilding_heights.png)
-Figure 2 &mdash; Building elevations
+Figure 2 — Building elevations
 
-> HISTORY  New entity in IFC1.0.
+> HISTORY New entity in IFC1.0.
 
 ## Attributes
 
@@ -60,7 +61,7 @@ The usage of building address, elevation measures and composition type is govern
 
 The foot print representation of IfcBuilding is given by either a single 2D curve (such as IfcPolyline or IfcCompositeCurve), or by a list of 2D curves (in case of inner boundaries), if the building has an independent geometric representation.
 
-> NOTE  The independent geometric representation of IfcBuilding may not be allowed in certain model view definitions. In those cases only the contained elements and spaces have an independent geometric representation.
+> NOTE The independent geometric representation of IfcBuilding may not be allowed in certain model view definitions. In those cases only the contained elements and spaces have an independent geometric representation.
 
 ### Product Local Placement
 
@@ -79,11 +80,11 @@ The local placement for IfcBuilding is defined in its supertype IfcProduct. It i
 
 ### Spatial Composition
 
-> NOTE  By using the inverse relationship _IfcBuilding.Decomposes_ it references IfcProject || IfcSite || IfcBuilding through _IfcRelAggregates.RelatingObject_. If it refers to another instance of IfcBuilding, the referenced IfcBuilding needs to have a different and higher CompositionType, i.e. COMPLEX (if the other IfcBuilding has ELEMENT), or ELEMENT (if the other IfcBuilding has PARTIAL).
+> NOTE By using the inverse relationship _IfcBuilding.Decomposes_ it references IfcProject || IfcSite || IfcBuilding through _IfcRelAggregates.RelatingObject_. If it refers to another instance of IfcBuilding, the referenced IfcBuilding needs to have a different and higher CompositionType, i.e. COMPLEX (if the other IfcBuilding has ELEMENT), or ELEMENT (if the other IfcBuilding has PARTIAL).
 
 ### Spatial Container
 
-> NOTE  If there are building elements and/or other elements directly related to the IfcBuilding (like a curtain wall spanning several stories), they are associated with the IfcBuilding by using the objectified relationship IfcRelContainedInSpatialStructure. The IfcBuilding references them by its inverse relationship: > *  _IfcBuilding.ContainsElements_ -- referencing any subtype of IfcProduct (with the exception of other spatial structure element) by _IfcRelContainedInSpatialStructure.RelatedElements_.
+> NOTE If there are building elements and/or other elements directly related to the IfcBuilding (like a curtain wall spanning several stories), they are associated with the IfcBuilding by using the objectified relationship IfcRelContainedInSpatialStructure. The IfcBuilding references them by its inverse relationship: > * _IfcBuilding.ContainsElements_ -- referencing any subtype of IfcProduct (with the exception of other spatial structure element) by _IfcRelContainedInSpatialStructure.RelatedElements_.
 
 #### IfcAnnotation
 
@@ -91,4 +92,4 @@ Annotations that are directly related to the building.
 
 ### Spatial Decomposition
 
-> NOTE  By using the inverse relationship _IfcBuilding.IsDecomposedBy_ it references IfcBuilding || IfcBuildingStorey through _IfcRelAggregates.RelatedObjects_. If it refers to another instance of IfcBuilding, the referenced IfcBuilding needs to have a different and lower CompositionType, i.e. ELEMENT (if the other IfcBuilding has COMPLEX), or PARTIAL (if the other IfcBuilding has ELEMENT).
+> NOTE By using the inverse relationship _IfcBuilding.IsDecomposedBy_ it references IfcBuilding || IfcBuildingStorey through _IfcRelAggregates.RelatedObjects_. If it refers to another instance of IfcBuilding, the referenced IfcBuilding needs to have a different and lower CompositionType, i.e. ELEMENT (if the other IfcBuilding has COMPLEX), or PARTIAL (if the other IfcBuilding has ELEMENT).

@@ -1,6 +1,7 @@
-# Pset_AirTerminalTypeCommon
-
 Air terminal type common attributes.
+
+<!-- end of short definition -->
+
 SoundLevel attribute deleted in IFC2x2 Pset Addendum: Use IfcSoundProperties instead.
 
 

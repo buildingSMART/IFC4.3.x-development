@@ -1,13 +1,14 @@
-# IfcStructuralLoadCase
-
 A load case is a load group, commonly used to group loads from the same action source.
 
-> HISTORY  New entity in IFC4.
+<!-- end of short definition -->
+
+
+> HISTORY New entity in IFC4.
 
 ## Attributes
 
 ### SelfWeightCoefficients
-The self weight coefficients specify ratios at which loads due to weight of members shall be included in the load case.  These loads are not explicitly modeled as instances of _IfcStructuralAction_.  Instead they shall be calculated according to geometry, section, and material of each member.
+The self weight coefficients specify ratios at which loads due to weight of members shall be included in the load case. These loads are not explicitly modeled as instances of _IfcStructuralAction_. Instead they shall be calculated according to geometry, section, and material of each member.
 
 The three components of the self weight vector correspond with the x,y,z directions of the so-called global coordinates, i.e. the directions of the shared _ObjectPlacement_ of all items in an _IfcStructuralAnalysisModel_. For example, if the object placement defines a z axis which is upright like the _IfcProject_'s world coordinate system, then the self weight coefficients would typically be [0.,0.,-1.] in a load case of dead loads with self weight.
 

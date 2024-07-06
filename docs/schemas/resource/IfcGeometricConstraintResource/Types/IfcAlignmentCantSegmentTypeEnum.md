@@ -1,28 +1,29 @@
-# IfcAlignmentCantSegmentTypeEnum
-
 The IfcAlignmentCantSegmentTypeEnum indicates the type of a segment of a cant alignment segment (IfcAlignmentCantSegment).
+
+<!-- end of short definition -->
+
 
 Cant is defined as the amount by which one running rail is raised above the other running rail, in a track cross section.
 >NOTE Definition according to EN 13803/2017
 
 For 3D modeling both the cant value and the cant angle (bank angle, lateral angle, cross slope angle) are relevant.
 
-The relation between cant value **D**, Railhead distance **b** and cant angle **&psi;** is shown below.
+The relation between cant value **D**, Railhead distance **b** and cant angle **ψ** is shown below.
 
 $$ \displaylines {
-\psi = \arcsin \frac{D}{b}  \\\\
-\sin \psi \approx \psi \approx  \tan \psi
+\psi = \arcsin \frac{D}{b} \\\\
+\sin \psi \approx \psi \approx \tan \psi
 } $$
 
->NOTE in contemporary track engineering &psi; is approximated by sinus of &psi; or tangens of &psi; very often.
+>NOTE in contemporary track engineering ψ is approximated by sinus of ψ or tangens of ψ very often.
 
 
 
-| Variation of Cant | Segmenttype        | Enumeration Values |
+| Variation of Cant | Segmenttype  | Enumeration Values |
 |:----|:------------------|:----------|
-| 0 |  both rails without relative elevation        | CONSTANTCANT  |
-| constant in the complete segment, <> 0 | elevated rail  | CONSTANTCANT |
-| variation along the segment | Transition with linear cant variation | LINEARTRANSITION   |
+| 0 | both rails without relative elevation  | CONSTANTCANT |
+| constant in the complete segment, <> 0 | elevated rail | CONSTANTCANT |
+| variation along the segment | Transition with linear cant variation | LINEARTRANSITION |
 | variation along the segment | Transition with non-linear cant variation | HELMERTCURVE, BLOSSCURVE, COSINECURVE, SINECURVE, VIENNESEBEND |
 
 ### Cant variation in high performance transition bends
@@ -36,31 +37,31 @@ Whether the cant variation is defined by the same base formula as the curvature 
 
 ### Used Symbols and their meaning
 
-| Symbol | meaning  | Unit, value range |
+| Symbol | meaning | Unit, value range |
 |:----|:------------------|:----------|
-| L | full length of segment        | positive length  L > 0 |
-| s | current position on segment        | 0 < s < L |
-| &xi;  |  = s / L  (Greek "xi") standardised, dimensionless path length along the alignment / track centre line        | 0 < &xi; < 1 |
-|  D |  cant .... amount by which one running rail is raised above the other running rail, in a track cross section         | length  |
-| D<sub>1</sub> | cant at beginning of the alignment segment        | length  |
-| D(s) | variable cant at station "s" along the alignment cant segment.  | length |
-|  b |  Railhead distance;  distance between the nominal centre points of the two contact patches of a wheelset (e.g. about 1500 mm for nominal track gauge 1435 mm)        | length  |
-| &psi; | (Greek "psi") Angle of cant (cross slope angle, bank angle)        | rad |
-| &phi; | (Greek "phi") Directional angle (azimuth, bearing)  | rad |
+| L | full length of segment  | positive length L > 0 |
+| s | current position on segment  | 0 < s < L |
+| ξ | = s / L (Greek "xi") standardised, dimensionless path length along the alignment / track centre line  | 0 < ξ < 1 |
+| D | cant .... amount by which one running rail is raised above the other running rail, in a track cross section   | length |
+| D<sub>1</sub> | cant at beginning of the alignment segment  | length |
+| D(s) | variable cant at station "s" along the alignment cant segment. | length |
+| b | Railhead distance; distance between the nominal centre points of the two contact patches of a wheelset (e.g. about 1500 mm for nominal track gauge 1435 mm)  | length |
+| ψ | (Greek "psi") Angle of cant (cross slope angle, bank angle)  | rad |
+| φ | (Greek "phi") Directional angle (azimuth, bearing) | rad |
 
 >NOTE Symbols according to EN 13803/2017
 
 ## Items
 
 ### BLOSSCURVE
-Non linear cant variation according to Bloss curve base formula.  <br/><br/>
+Non linear cant variation according to Bloss curve base formula. <br/><br/>
 
 
 **Base formula (Cant)**
 
 $$ \displaylines{
 \xi = \frac{s}{L} \\\\
-D(s) = D_{1} + (3 - 2\xi) \cdot   \xi^2 \  \Delta D
+D(s) = D_{1} + (3 - 2\xi) \cdot \xi^2 \ \Delta D
 } $$
 
 ### CONSTANTCANT
@@ -80,7 +81,7 @@ Non linear cant variation according to Cosine curve base formula. <br/><br/>
 
 $$ \displaylines{
 \xi = \frac{s}{L} \\\\
-D(s) = D_{1} + \frac{1}{2} \cdot (1- cos(\pi\xi) \  ) \Delta D
+D(s) = D_{1} + \frac{1}{2} \cdot (1- cos(\pi\xi) \ ) \Delta D
 } $$
 
 ### HELMERTCURVE
@@ -91,7 +92,7 @@ Non linear cant variation according to Helmert curve base formula. <br/><br/>
 $$ \displaylines{
 \xi = \frac{s}{L} \\\\
 \text{First half: } D(s) = D_{1} + 2 \cdot \xi^2 \ \Delta D \\\\
-\text{Second half: } D(s) = D_{1} + ( 1 -  2 \cdot (1 - \xi)^2) \  \Delta D
+\text{Second half: } D(s) = D_{1} + ( 1 - 2 \cdot (1 - \xi)^2) \ \Delta D
 } $$
 
 ### LINEARTRANSITION
@@ -111,7 +112,7 @@ Non linear cant variation according to Sine curve base formula. <br/><br/>
 
 $$ \displaylines {
 \xi = \frac{s}{L} \\\\
-D(s) = D_{1} + ( \xi - \frac{1}{2\pi}\cdot sin(2\pi\xi) \  ) \  \Delta D
+D(s) = D_{1} + ( \xi - \frac{1}{2\pi}\cdot sin(2\pi\xi) \ ) \ \Delta D
 } $$
 
 ### VIENNESEBEND
@@ -121,7 +122,7 @@ Non linear cant variation according to Viennese bend base formula. The determini
 
 $$ \displaylines {
 \xi = \frac{s}{L} \\\\
-\psi = \arcsin \frac{D}{b}  \\\\
-\sin \psi \approx \psi \approx  \tan \psi   \\\\
+\psi = \arcsin \frac{D}{b} \\\\
+\sin \psi \approx \psi \approx \tan \psi \\\\
 \psi(s) = \psi_1 + \Delta\psi \cdot \xi^4 \cdot (35-84\xi + 70\xi^2-20\xi^3)
 } $$

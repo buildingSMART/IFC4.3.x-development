@@ -1,8 +1,9 @@
-# IfcEvent
-
 An _IfcEvent_ is something that happens that triggers an action or response.
 
-> HISTORY  New entity in IFC4
+<!-- end of short definition -->
+
+
+> HISTORY New entity in IFC4
 
 { .use-head}
 ### Use definitions
@@ -49,7 +50,7 @@ The _IfcEvent_ defines the anticipated or actual occurrence of any event; common
 
 For building operation scenarios, _IfcEvent_ may be assigned to a product (_IfcElement_ subtype) using _IfcRelAssignsToProduct_ to indicate a specific product occurrence that sources the event.
 
-> EXAMPLE  An _IfcSensor_ for a motion sensor may have a "Motion Sensed" event. If the _IfcEvent_ is defined by an _IfcEventType_ and the _IfcEventType_ is assigned to a product type (using _IfcRelAssignsToProduct_), then the _IfcEvent_ must be assigned to one or more occurrences of the specified product type using _IfcRelAssignsToProduct_.
+> EXAMPLE An _IfcSensor_ for a motion sensor may have a "Motion Sensed" event. If the _IfcEvent_ is defined by an _IfcEventType_ and the _IfcEventType_ is assigned to a product type (using _IfcRelAssignsToProduct_), then the _IfcEvent_ must be assigned to one or more occurrences of the specified product type using _IfcRelAssignsToProduct_.
 
 ### Property Sets for Objects
 

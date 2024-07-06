@@ -1,8 +1,9 @@
-# IfcShadingDeviceTypeEnum
-
 This enumeration defines the valid types of _IfcShadingDevice_ or _IfcShadingDeviceType_ that can be predefined using the enumeration values.
 
-> HISTORY  New enumeration in IFC4.
+<!-- end of short definition -->
+
+
+> HISTORY New enumeration in IFC4.
 
 ## Items
 

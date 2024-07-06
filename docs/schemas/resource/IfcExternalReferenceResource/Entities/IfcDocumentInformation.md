@@ -1,20 +1,21 @@
-# IfcDocumentInformation
-
 _IfcDocumentInformation_ captures "metadata" of an external document. The actual content of the document is not defined in this specification; instead, it can be found following the _Location_ attribute.
+
+<!-- end of short definition -->
+
 
 The same _IfcDocumentInformation_ can be referenced from the exchange structure in total or in parts (e.g. by referring to particular chapters or paragraphs) using the _IfcDocumentReference_. All _IfcDocumentReference_'s that utilize the _IfcDocumentInformation_ are accessible by the inverse relationship _HasDocumentReferences_.
 
-> HISTORY  New entity in IFC2x.
+> HISTORY New entity in IFC2x.
 
 { .change-ifc2x4}
-> IFC4 CHANGE  Attribute _HasDocumentReferences_ changed to be inverse, attribute _Location_ added, and attribute _ElectronicFormat_ modified.
+> IFC4 CHANGE Attribute _HasDocumentReferences_ changed to be inverse, attribute _Location_ added, and attribute _ElectronicFormat_ modified.
 
 ## Attributes
 
 ### Identification
 Identifier that uniquely identifies a document.
 { .change-ifc2x4}
-> IFC4 CHANGE  Attribute renamed from _DocumentId_.
+> IFC4 CHANGE Attribute renamed from _DocumentId_.
 
 ### Name
 File name or document name assigned by owner.
@@ -25,7 +26,7 @@ Description of document and its content.
 ### Location
 Resource identifier or locator, provided as URI, URN or URL, of the document information for online references.
 { .change-ifc2x4}
-> IFC4 CHANGE  New attribute added at the place of the removed attribute _DocumentReferences_.
+> IFC4 CHANGE New attribute added at the place of the removed attribute _DocumentReferences_.
 
 ### Purpose
 Purpose for this document.
@@ -57,12 +58,12 @@ Date and time stamp when this document version was created.
 
 ### ElectronicFormat
 Describes the media type used in various internet protocols, also referred to as "Content-type", or "MIME-type (Multipurpose Internet Mail Extension), of the document being referenced. It is composed of (at least) two parts, a type and a subtype.
-> NOTE  The iana (Internet Assigned Numbers Authority) published the media types.
+> NOTE The iana (Internet Assigned Numbers Authority) published the media types.
 
-> EXAMPLE  'image/png' denotes an image type of png (Portable Network Graphics) subtype, 'application/pdf' denotes an application specific type of pdf (Portable Document Format) subtype
+> EXAMPLE 'image/png' denotes an image type of png (Portable Network Graphics) subtype, 'application/pdf' denotes an application specific type of pdf (Portable Document Format) subtype
 
 { .change-ifc2x4}
-> IFC4 CHANGE  The data type has been changed from entity data type to _IfcIdentifier_.
+> IFC4 CHANGE The data type has been changed from entity data type to _IfcIdentifier_.
 
 ### ValidFrom
 Date when the document becomes valid.
@@ -87,7 +88,7 @@ The current status of the document. Examples of status values that might be used
 ### DocumentInfoForObjects
 The document information with which objects are associated.
 { .change-ifc2x4}
-> IFC4 CHANGE  New inverse attribute.
+> IFC4 CHANGE New inverse attribute.
 
 ### HasDocumentReferences
 The document references to which the document applies

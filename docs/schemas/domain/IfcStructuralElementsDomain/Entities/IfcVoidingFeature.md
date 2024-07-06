@@ -1,10 +1,11 @@
-# IfcVoidingFeature
-
 A voiding feature is a modification of an element which reduces its volume. Such a feature may be manufactured in different ways, for example by cutting, drilling, or milling of members made of various materials, or by inlays into the formwork of cast members made of materials such as concrete.
 
-The standard use of instances of _IfcVoidingFeature_ is as a part of element type objects (instances of subtypes of _IfcElementType_). The part&ndash;whole relationship is established by an aggregation relationship object, expressing the decomposition of an element type into one or more additive elements (element parts) and zero or more feature elements.
+<!-- end of short definition -->
 
-> HISTORY  New entity in IFC4.
+
+The standard use of instances of _IfcVoidingFeature_ is as a part of element type objects (instances of subtypes of _IfcElementType_). The part–whole relationship is established by an aggregation relationship object, expressing the decomposition of an element type into one or more additive elements (element parts) and zero or more feature elements.
+
+> HISTORY New entity in IFC4.
 
 { .use-head}
 Containment Use Definition
@@ -31,11 +32,11 @@ The attribute ObjectType shall be given if the predefined type is set to USERDEF
 
 #### IfcCsgSolid_CSG
 
-Volumetric representations may be used to semi-parametrically model the actual volume of the void created by the feature.  Attributes in the shape model directly correspond with feature parameters, for example diameter of circular holes or length and width of cutouts.  The objects within the shape model of the feature's shape representation can be included into a CSG model within a representation map of the parent element type.
+Volumetric representations may be used to semi-parametrically model the actual volume of the void created by the feature. Attributes in the shape model directly correspond with feature parameters, for example diameter of circular holes or length and width of cutouts. The objects within the shape model of the feature's shape representation can be included into a CSG model within a representation map of the parent element type.
 
 #### IfcShellBasedSurfaceModel_ShellBasedSurfaceModel
 
-Surface representations of cutting planes by means of IfcShellBasedSurfaceModel.  The faces within the surface model may be included into a B-Rep model within a representation map of the parent element type.
+Surface representations of cutting planes by means of IfcShellBasedSurfaceModel. The faces within the surface model may be included into a B-Rep model within a representation map of the parent element type.
 
 ### Product Local Placement
 

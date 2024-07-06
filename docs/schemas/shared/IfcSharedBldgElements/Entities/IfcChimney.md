@@ -1,19 +1,20 @@
-# IfcChimney
-
 Chimneys are typically vertical, or as near as vertical, parts of the construction of a building and part of the building fabric. Often constructed by pre-cast or insitu concrete, today seldom by bricks. Chimneys are used to evacuate flues from e.g. boilers or fire places.
 
+<!-- end of short definition -->
+
+
 { .extDef}
-> NOTE  Definition according to ISO 6707-1: construction containing one or more flues.
+> NOTE Definition according to ISO 6707-1: construction containing one or more flues.
 > Flue: Duct designed to convey the products of combustion to the open air.
 > Chimney stack: Part of the chimney that projects above a roof.
 
-> HISTORY  New entity in IFC4.
+> HISTORY New entity in IFC4.
 
 ## Attributes
 
 ### PredefinedType
 Predefined generic type for a chimney that is specified in an enumeration. There may be a property set given specifically for the predefined types.
-> NOTE  The _PredefinedType_ shall only be used, if no _IfcChimneyType_ is assigned, providing its own _IfcChimneyType.PredefinedType_.
+> NOTE The _PredefinedType_ shall only be used, if no _IfcChimneyType_ is assigned, providing its own _IfcChimneyType.PredefinedType_.
 
 ## Formal Propositions
 

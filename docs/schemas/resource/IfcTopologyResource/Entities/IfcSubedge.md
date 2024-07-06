@@ -1,12 +1,13 @@
-# IfcSubedge
-
 { .extDef}
-> NOTE  Definition according to ISO/CD 10303-42:1992
+
+<!-- end of short definition -->
+
+> NOTE Definition according to ISO/CD 10303-42:1992
 > A subedge is an edge whose domain is a connected portion of the domain of an existing edge. The topological constraints on a subedge are the same as those on an edge.
 
-> NOTE  Entity adapted from **subedge** defined in ISO 10303-42.
+> NOTE Entity adapted from **subedge** defined in ISO 10303-42.
 
-> HISTORY  New entity in IFC2x2.
+> HISTORY New entity in IFC2x2.
 
 **Informal Propositions**
 

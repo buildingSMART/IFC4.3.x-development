@@ -1,11 +1,12 @@
-# IfcPermit
-
 A permit is a permission to perform work in places and on artifacts where regulatory, security or other access restrictions apply.
 
-> HISTORY  New entity in IFC2x2.
+<!-- end of short definition -->
+
+
+> HISTORY New entity in IFC2x2.
 
 { .change-ifc2x4}
-> IFC4 CHANGE  Attribute _PermitID_ renamed to _Identification_ and promoted to supertype _IfcControl_, attributes _PredefinedType_, _Status_, and _LongDescription_ added.
+> IFC4 CHANGE Attribute _PermitID_ renamed to _Identification_ and promoted to supertype _IfcControl_, attributes _PredefinedType_, _Status_, and _LongDescription_ added.
 
 ## Attributes
 
@@ -35,11 +36,11 @@ Detailed description of the request.
 
 #### ACCESS_IfcWorkCalendar
 
-A work calendar may indicate the time period of the permit and allowed times when work may be performed.  Such work calendar may have assigned resources indicating equipment or labor permitted at various times.
+A work calendar may indicate the time period of the permit and allowed times when work may be performed. Such work calendar may have assigned resources indicating equipment or labor permitted at various times.
 
 #### WORK_IfcWorkSchedule
 
-A work schedule may indicate tasks and scheduled times where the work schedule type may designate whether tasks and/or times are planned or actual.  Such work schedule may have assigned tasks indicating detail, where tasks may be assigned to products and may have assigned resources.
+A work schedule may indicate tasks and scheduled times where the work schedule type may designate whether tasks and/or times are planned or actual. Such work schedule may have assigned tasks indicating detail, where tasks may be assigned to products and may have assigned resources.
 
 ### Approval Association
 

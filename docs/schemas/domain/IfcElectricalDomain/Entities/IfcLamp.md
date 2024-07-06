@@ -1,8 +1,9 @@
-# IfcLamp
-
 A lamp is an artificial light source such as a light bulb or tube.
 
-> HISTORY  New entity in IFC4
+<!-- end of short definition -->
+
+
+> HISTORY New entity in IFC4
 
 { .note}
 >

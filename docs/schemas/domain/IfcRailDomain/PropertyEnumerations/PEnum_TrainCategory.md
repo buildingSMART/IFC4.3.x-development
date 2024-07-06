@@ -1,6 +1,7 @@
-# PEnum_TrainCategory
-
 Category of trains.
+
+<!-- end of short definition -->
+
 
 ## Items
 

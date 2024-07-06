@@ -1,6 +1,7 @@
-# IfcSecondOrderPolynomialSpiral
-
 The _IfcSecondOrderPolynomialSpiral_ is a specialization of _IfcSpiral_. The curvature _κ_ and radius of the curvature _ρ_, at any point of the curve, are related to the arc length _s_ by the second order formulae:
+
+<!-- end of short definition -->
+
 >>
 >> ![formula](../../../../figures/ifcsecondorderpolynomialspiral_curvature.PNG)
 >>
@@ -22,7 +23,7 @@ The _IfcSecondOrderPolynomialSpiral_ is a specialization of _IfcSpiral_. The cur
 >>
 >> ![formula](../../../../figures/ifcsecondorderpolynomialspiral_theta.PNG)
 >>
-> and the parametric range is: -&infin; < _u_ < &infin;.
+> and the parametric range is: -∞ < _u_ < ∞.
 
 ## Attributes
 

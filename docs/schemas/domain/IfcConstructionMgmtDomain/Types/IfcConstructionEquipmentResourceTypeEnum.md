@@ -1,8 +1,9 @@
-# IfcConstructionEquipmentResourceTypeEnum
-
 This enumeration is used to identify the primary purpose of a construction equipment resource. It is limited to the most common equipment used in construction.
 
-> HISTORY  New enumeration in IFC4.
+<!-- end of short definition -->
+
+
+> HISTORY New enumeration in IFC4.
 
 ## Items
 

@@ -1,11 +1,12 @@
-# IfcOutletTypeEnum
-
 The _IfcOutletTypeEnum_ defines the range of different types of outlet that can be specified.
 
-> HISTORY  New type in IFC2x.
+<!-- end of short definition -->
+
+
+> HISTORY New type in IFC2x.
 
 { .change-ifc2x4}
-> IFC4 CHANGE  Telephone and Data outlets added.
+> IFC4 CHANGE Telephone and Data outlets added.
 
 ## Items
 

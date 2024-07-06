@@ -1,6 +1,7 @@
-# IfcRelConnectsPathElements
-
 The _IfcRelConnectsPathElements_ relationship provides the connectivity information between two elements, which have path information.
+
+<!-- end of short definition -->
+
 
 The objectified relationship provides the additional information required to describe the connection between two path based elements that might have single or multiple layers of material. The connection type specifies where at the path based element a connection is given (at the start, in the middle or at the end).
 
@@ -10,25 +11,25 @@ The connection is described by a connection geometry, given within the object co
 
 ![wall connection](../../../../figures/ifcrelconnectspathelements-fig1.png)
 
-Figure 1 &mdash; Path connection geometry
+Figure 1 — Path connection geometry
 
-Figure 1 shows the application of _IfcRelConnectsPathElements_ with the _ConnectionGeometry_ of type  _IfcConnectionCurveGeometry_. The example shows the connection relationship between two instances of layered _IfcWall_ elements using the _IfcRelConnectsPathElements_ relationship. The _ConnectionCurveGeometry_ defines the _CurveOnRelatingElement_ and _CurveOnRelatedElement_, both are of type _IfcPolyline_.
+Figure 1 shows the application of _IfcRelConnectsPathElements_ with the _ConnectionGeometry_ of type _IfcConnectionCurveGeometry_. The example shows the connection relationship between two instances of layered _IfcWall_ elements using the _IfcRelConnectsPathElements_ relationship. The _ConnectionCurveGeometry_ defines the _CurveOnRelatingElement_ and _CurveOnRelatedElement_, both are of type _IfcPolyline_.
 
 ![wall connection](../../../../figures/ifcrelconnectspathelements-fig2.png)
 
-Figure 2 &mdash; Path connection T-Type
+Figure 2 — Path connection T-Type
 
 Figure 2 illustrates using the _IfcRelConnectsPathElements_ for a "T" type connection between two instances of layered _IfcWall_ elements.
 
 ![wall connection](../../../../figures/ifcrelconnectspathelements-fig3.png)
 
-Figure 3 &mdash; Path connection L-Type
+Figure 3 — Path connection L-Type
 
 Figure 3 illustrates using the _IfcRelConnectsPathElements_ for a "L" type connection between two instances of layered _IfcWall_ elements.
 
-> NOTE  The two wall axes connect in each case.
+> NOTE The two wall axes connect in each case.
 
-> HISTORY  New entity in IFC1.5.
+> HISTORY New entity in IFC1.5.
 
 ## Attributes
 

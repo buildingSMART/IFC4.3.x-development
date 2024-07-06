@@ -1,11 +1,12 @@
-# IfcStructuralCurveMember
-
 Instances of _IfcStructuralCurveMember_ describe edge members, i.e. structural analysis idealizations of beams, columns, rods etc.. Curve members may be straight or curved.
 
-> HISTORY  New entity in IFC2x2.
+<!-- end of short definition -->
+
+
+> HISTORY New entity in IFC2x2.
 
 { .change-ifc2x4}
-> IFC4 CHANGE  Attribute _Axis_ and WHERE rule added. Use definitions changed.
+> IFC4 CHANGE Attribute _Axis_ and WHERE rule added. Use definitions changed.
 
 ### Coordinate Systems
 
@@ -17,9 +18,9 @@ See definitions at _IfcStructuralItem_. The local coordinate system is establish
 Type of member with respect to its load carrying behavior in this analysis idealization.
 
 ### Axis
-Direction which is used in the definition of the local z axis.  _Axis_ is specified relative to the so-called global coordinate system, i.e. the _SELF\IfcProduct.ObjectPlacement_.
+Direction which is used in the definition of the local z axis. _Axis_ is specified relative to the so-called global coordinate system, i.e. the _SELF\IfcProduct.ObjectPlacement_.
 
-> NOTE  It is desirable and usually possible that many instances of _IfcStructuralCurveConnection_ and _IfcStructuralCurveMember_ share a common instance of _IfcDirection_ as their _Axis_ attribute.
+> NOTE It is desirable and usually possible that many instances of _IfcStructuralCurveConnection_ and _IfcStructuralCurveMember_ share a common instance of _IfcDirection_ as their _Axis_ attribute.
 
 ## Formal Propositions
 

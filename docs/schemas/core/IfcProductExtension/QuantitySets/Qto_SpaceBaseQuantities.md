@@ -1,6 +1,7 @@
-# Qto_SpaceBaseQuantities
-
 Base quantities that are common to the definition of all occurrences of spaces.
+
+<!-- end of short definition -->
+
 
 
 ## Comments
@@ -19,7 +20,7 @@ Total height (from base slab without flooring to ceiling without suspended ceili
 
 ### NetFloorArea
 
-It excludes the area covered  by elements inside the space (columns, inner walls, built-in's etc.), slab openings, or other protruding elements. Varying heights are not taking into account (i.e. no reduction for areas under a minimum headroom).
+It excludes the area covered by elements inside the space (columns, inner walls, built-in's etc.), slab openings, or other protruding elements. Varying heights are not taking into account (i.e. no reduction for areas under a minimum headroom).
 
 ### NetVolume
 

@@ -1,3 +1,4 @@
-# Pset_SwitchingDeviceTypeDimmerSwitch
+A dimmer switch is a switch that adjusts electrical power through a variable position level action.
 
-A dimmer switch is a switch that adjusts electrical power through a variable position level action.  HISTORY: Added in IFC4.
+<!-- end of short definition -->
+ HISTORY: Added in IFC4.

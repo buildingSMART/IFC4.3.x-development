@@ -1,6 +1,7 @@
-# IfcClothoid
-
 A clothoid is a planar curve in the form of a spiral. This curve has the property that the curvature varies linearly with the arc length.
+
+<!-- end of short definition -->
+
 { .extDef}
 > NOTE Definition according to ISO 10303-42:2003
 
@@ -17,7 +18,7 @@ The clothoid is parameterized as:
 
 $$\lambda(u)=C+A\sqrt{\pi}(\int_{0}^{u}\cos(\pi\frac{At^2}{2|A|})dt\ x+\int_{0}^{u}\sin(\pi\frac{At^2}{2|A|})dt\ y)$$
 
-The parametric range is: -&infin; < _u_ < &infin;
+The parametric range is: -∞ < _u_ < ∞
 
 The arc length _s_ of the curve, from the point C, is given by the formula:
 

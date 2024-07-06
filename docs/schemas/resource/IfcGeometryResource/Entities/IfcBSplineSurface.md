@@ -1,9 +1,10 @@
-# IfcBSplineSurface
-
 The _IfcBSplineSurface_ is a general form of rational or polynomial parametric surface.
 
+<!-- end of short definition -->
+
+
 { .extDef}
-> NOTE  Definition according to ISO/CD 10303-42:1992
+> NOTE Definition according to ISO/CD 10303-42:1992
 > A b_spline_surface is a general form of rational or polynomial parametric surface which is represented by control points, basis functions, and possibly, weights. As with the corresponding curve entity it has some special subtypes where some of the data can be derived.
 
 The symbology used here is:
@@ -24,7 +25,7 @@ The weights, in the case of the rational subtype, are ordered similarly.
 For each parameter, <em>s</em> = <em>u</em> or <em>v</em>, if <em>k</em> is the upper
 index on the control points and <em>d</em> is the degree for <em>s</em>, the knot array is an array of (<em>k</em> +
 <em>d</em> + 2) real numbers [s<sub>-d</sub>, ...., s<sub><em>k</em>+1</sub>], such that for all indices j in
-[-<em>d</em>, <em>k</em>]; <em>s</em><sub><em>j</em></sub> &le; <em>s</em><sub><em>j</em>+1</sub>. This array is
+[-<em>d</em>, <em>k</em>]; <em>s</em><sub><em>j</em></sub> ≤ <em>s</em><sub><em>j</em>+1</sub>. This array is
 obtained from the appropriate u_knots or v_knots list by repeating each multiple knot according to the
 multiplicity.<br>
 <br>
@@ -33,7 +34,7 @@ is defined on the subset [<em>s</em><sub>i-<em>d</em></sub>, ...., <em>s</em><su
 array.
 
 Let <em>L</em> denote the number of distinct values amongst the knots in the knot list;
-<em>L</em> will be referred to as the &lsquo;upper index on knots&rsquo;. Let <em>m</em><sub><em>j</em></sub> denote
+<em>L</em> will be referred to as the ‘upper index on knots’. Let <em>m</em><sub><em>j</em></sub> denote
 the multiplicity (i.e., number of repetitions) of the <em>j</em>th distinct knot value. Then:
 
 ![formula](../../../../figures/ifcbsplinecurve-math2.gif)
@@ -51,9 +52,9 @@ In the rational case the surface equation is:
 
 ![formula](../../../../figures/ifcbsplinesurface-math2.gif)
 
-> NOTE  Entity adapted from **b_spline_surface** defined in ISO10303-42.
+> NOTE Entity adapted from **b_spline_surface** defined in ISO10303-42.
 
-> HISTORY  New entity in IFC4.
+> HISTORY New entity in IFC4.
 
 ## Attributes
 

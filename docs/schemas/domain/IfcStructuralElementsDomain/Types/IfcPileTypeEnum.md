@@ -1,11 +1,12 @@
-# IfcPileTypeEnum
-
 Enumeration defining the pile type.
 
-> HISTORY  New type in IFC2x2
+<!-- end of short definition -->
+
+
+> HISTORY New type in IFC2x2
 
 { .change-ifc2x4}
-> IFC 2x4 CHANGE:  Items BORED, DRIVEN, JETGROUTING added.
+> IFC 2x4 CHANGE: Items BORED, DRIVEN, JETGROUTING added.
 
 ## Items
 

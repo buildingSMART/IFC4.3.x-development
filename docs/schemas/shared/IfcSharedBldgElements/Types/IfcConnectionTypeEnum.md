@@ -1,8 +1,9 @@
-# IfcConnectionTypeEnum
-
 This enumeration defines the different ways how path based elements (such as layered _IfcWall_ elements) can connect, as shown in Figure 1.
 
-> HISTORY  New type in IFC2.0
+<!-- end of short definition -->
+
+
+> HISTORY New type in IFC2.0
 
 The enumerated items shall be used in the following combinations:
 
@@ -12,7 +13,7 @@ L-Shape | AtStart | AtStart | ![L-shape](../../../../figures/ifcconnectiontypeen
 L-Shape | AtEnd | AtStart | ![L-shape](../../../../figures/ifcconnectiontypeenum-fig01.gif)
 T-Shape | AtPath | AtStart | ![T-shape](../../../../figures/ifcconnectiontypeenum-fig02.gif)
 
-Table 1 &mdash; Connection types
+Table 1 — Connection types
 
 ## Items
 

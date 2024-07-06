@@ -1,5 +1,3 @@
-# IfcTendonType
-
 The reinforcing element type **IfcTendonType** defines commonly shared information for occurrences of tendons. The set of shared information may include:
 
 * common properties with shared property sets
@@ -7,9 +5,12 @@ The reinforcing element type **IfcTendonType** defines commonly shared informati
 * common materials
 * common composition of elements
 
+
+<!-- end of short definition -->
+
 It is used to define a tendon type specification indicating the specific product information that is common to all occurrences of that product type. The **IfcTendonType** may be declared within _IfcProject_ or _IfcProjectLibrary_ using _IfcRelDeclares_ and may be exchanged with or without occurrences of the type. Occurrences of **IfcTendonType** are represented by instances of _IfcTendon_.
 
-> HISTORY  New entity in IFC4.
+> HISTORY New entity in IFC4.
 
 { .use-head}
 Material Use Definition

@@ -1,8 +1,9 @@
-# IfcProfileTypeEnum
-
 The enumeration defines whether the definition of a profile shape shall be geometrically resolved into a curve or into a surface.
 
-> HISTORY  New type in IFC1.5.
+<!-- end of short definition -->
+
+
+> HISTORY New type in IFC1.5.
 
 ## Items
 

@@ -1,16 +1,17 @@
-# IfcDiscreteAccessory
-
 A discrete accessory is a representation of different kinds of accessories included in or added to elements.
 
-> HISTORY  New entity in IFC2x2.
+<!-- end of short definition -->
+
+
+> HISTORY New entity in IFC2x2.
 
 { .change-ifc2x4}
-> IFC4 CHANGE  Attribute _PredefinedType_ added.
+> IFC4 CHANGE Attribute _PredefinedType_ added.
 
 ## Attributes
 
 ### PredefinedType
-Subtype of discrete accessory.  If USERDEFINED, the type is further qualified by means of the inherited attribute _ObjectType_.  Refer to _IfcDiscreteAccessoryType_ for a non-exclusive list of userdefined type designations which are applicable to _IfcDiscreteAccessory_ as well.
+Subtype of discrete accessory. If USERDEFINED, the type is further qualified by means of the inherited attribute _ObjectType_. Refer to _IfcDiscreteAccessoryType_ for a non-exclusive list of userdefined type designations which are applicable to _IfcDiscreteAccessory_ as well.
 
 ## Formal Propositions
 

@@ -1,11 +1,12 @@
-# IfcIShapeProfileDef
-
 _IfcIShapeProfileDef_ defines a section profile that provides the defining parameters of an 'I' or 'H' section. The I-shape profile has values for its overall depth, width and its web and flange thicknesses. Additionally a fillet radius, flange edge radius, and flange slope may be given. This profile definition represents an I-section which is symmetrical about its major and minor axes; top and bottom flanges are equal and centred on the web.
 
-> HISTORY  New entity in IFC2x.
+<!-- end of short definition -->
+
+
+> HISTORY New entity in IFC2x.
 
 { .change-ifc2x4}
-> IFC4 CHANGE  Type of _FilletRadius_ relaxed to allow for zero radius. Attributes _FlangeEdgeRadius_ and _FlangeSlope_ added.
+> IFC4 CHANGE Type of _FilletRadius_ relaxed to allow for zero radius. Attributes _FlangeEdgeRadius_ and _FlangeSlope_ added.
 
 Figure 1 illustrates parameters of the I-shape profile definition.
 
@@ -13,7 +14,7 @@ Figure 1 illustrates parameters of the I-shape profile definition.
 
 <u>Position</u>
 
-The parameterized profile defines its own position coordinate system.  The underlying coordinate system is defined by the swept area solid that uses the profile definition. It is the xy plane of:
+The parameterized profile defines its own position coordinate system. The underlying coordinate system is defined by the swept area solid that uses the profile definition. It is the xy plane of:
 
  * IfcSweptAreaSolid.Position
 
@@ -25,7 +26,7 @@ The parameterized profile is defined by a set of parameter attributes, see attri
 
 ![I shape with fillet](../../../../figures/ifcishapeprofiledef-layout2.gif)
 
-Figure 1 &mdash; I-shape profile
+Figure 1 — I-shape profile
 
 > NOTE The black coordinate axes show the underlying coordinate system of the swept surface or swept area solid
 
@@ -58,13 +59,13 @@ Thickness of the web of the I-shape. The web is centred on the x-axis and the y-
 Flange thickness of the I-shape. Both, the upper and the lower flanges have the same thickness and they are centred on the y-axis of the position coordinate system.
 
 ### FilletRadius
-The fillet between the web and the flange.  0 if sharp-edged, omitted if unknown.
+The fillet between the web and the flange. 0 if sharp-edged, omitted if unknown.
 
 ### FlangeEdgeRadius
-Radius of the lower edges of the top flange and the upper edges of the bottom flange.  0 if sharp-edged, omitted if unknown.
+Radius of the lower edges of the top flange and the upper edges of the bottom flange. 0 if sharp-edged, omitted if unknown.
 
 ### FlangeSlope
-Slope of the lower faces of the top flange and of the upper faces of the bottom flange.  Non-zero in case of tapered flanges, 0 in case of parallel flanges, omitted if unknown.
+Slope of the lower faces of the top flange and of the upper faces of the bottom flange. Non-zero in case of tapered flanges, 0 in case of parallel flanges, omitted if unknown.
 
 ## Formal Propositions
 

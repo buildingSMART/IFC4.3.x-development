@@ -1,12 +1,13 @@
-# IfcSign
-
 A sign is a notice on display that gives information or instructions in a written, symbolic or other form. Signs are passive with the most common form of a pictorial panel. An instance of _IfcSign_ refers to the occurrence of an individual panel which can be applied to a surface such as a wall or be aggregated within a Signal Assembly which can include multiple sign occurrences and the associated supporting structural elements (see Signal Assembly for examples).
+
+<!-- end of short definition -->
+
 
 ## Attributes
 
 ### PredefinedType
 Identifies the predefined type of a signs. This type may associate additional specific property sets.
-NOTE  The PredefinedType shall only be used, if no IfcSignType is assigned, providing its own IfcSignType .PredefinedType.
+NOTE The PredefinedType shall only be used, if no IfcSignType is assigned, providing its own IfcSignType .PredefinedType.
 
 ## Formal Propositions
 

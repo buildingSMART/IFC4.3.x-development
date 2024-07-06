@@ -1,6 +1,7 @@
-# Pset_ControllerTypeProportional
+Properties for signal handling for an proportional controller taking setpoint and feedback inputs and creating a single valued output.
 
-Properties for signal handling for an proportional controller taking setpoint and feedback inputs and creating a single valued output. HISTORY: In IFC4, SignalFactor1, SignalFactor2 and SignalFactor3 changed to ProportionalConstant, IntegralConstant and DerivativeConstant.  SignalTime1 and SignalTime2 changed to SignalTimeIncrease and SignalTimeDecrease.
+<!-- end of short definition -->
+ HISTORY: In IFC4, SignalFactor1, SignalFactor2 and SignalFactor3 changed to ProportionalConstant, IntegralConstant and DerivativeConstant. SignalTime1 and SignalTime2 changed to SignalTimeIncrease and SignalTimeDecrease.
 
 
 ## Comments
@@ -13,7 +14,7 @@ PROPORTIONALINTEGRALDERIVATIVE: Part of the output is proportional to the contro
 
 ### Value
 
-The expected range and default value.  While the property data type is IfcReal (to support all cases including when the units are unknown), a unit may optionally be provided to indicate the measure and unit.
+The expected range and default value. While the property data type is IfcReal (to support all cases including when the units are unknown), a unit may optionally be provided to indicate the measure and unit.
 
 ### Labels
 

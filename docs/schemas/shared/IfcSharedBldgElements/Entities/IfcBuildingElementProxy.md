@@ -1,6 +1,7 @@
-# IfcBuildingElementProxy
-
 The _IfcBuildingElementProxy_ is a proxy definition that provides the same functionality as subtypes of _IfcBuiltElement_, but without having a predefined meaning of the special type of building element it represents.
+
+<!-- end of short definition -->
+
 
 _IfcBuildingElementProxy_ may be used:
 
@@ -9,16 +10,16 @@ _IfcBuildingElementProxy_ may be used:
 
 > IFC4.3.0.0 CHANGE _IfcBuildingElementProxy_ should no longer be used as spatial placeholders or provisions. Use _IfcVirtualElement_ instead.
 
-> HISTORY  New entity in IFC2x.
+> HISTORY New entity in IFC2x.
 
 ## Attributes
 
 ### PredefinedType
 Predefined generic type for a building element proxy that is specified in an enumeration. There may be a property set given specifically for the predefined types.
-> NOTE  The _PredefinedType_ shall only be used, if no _IfcBuildingElementProxyType_ is assigned, providing its own _IfcBuildingElementProxyType.PredefinedType_.
+> NOTE The _PredefinedType_ shall only be used, if no _IfcBuildingElementProxyType_ is assigned, providing its own _IfcBuildingElementProxyType.PredefinedType_.
 
 { .change-ifc2x4}
-> IFC4 CHANGE  The attribute _CompositionType_ has been replaced by _PredefinedType_, being a superset of the enumerators.
+> IFC4 CHANGE The attribute _CompositionType_ has been replaced by _PredefinedType_, being a superset of the enumerators.
 
 ## Formal Propositions
 
@@ -35,7 +36,7 @@ Either there is no building element proxy type object associated, i.e. the _IsTy
 
 ### Object Typing
 
-> NOTE  The _IfcBuildingElementProxyType_ can be used to share common information among many occurrences of the same proxy without establishing a particular semantic meaning of the type.
+> NOTE The _IfcBuildingElementProxyType_ can be used to share common information among many occurrences of the same proxy without establishing a particular semantic meaning of the type.
 
 If no _IfcBuildingElementProxyType_ is attached (i.e. if only occurrence information is available) the _PredefinedType_ should be provided. If set to USERDEFINED a user defined value has to be provided by the _ObjectType_ attribute.
 

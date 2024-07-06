@@ -1,12 +1,13 @@
-# IfcMarineFacilityTypeEnum
-
 The predefined type container that collects all possible marine facility types together into the implemented enumeration.
+
+<!-- end of short definition -->
+
 
 ## Items
 
 ### CANAL
 A man-made watercourse constructed usually, to join rivers, lakes or seas and often of a size suitable for navigation.
- NOTE definition in ISO 6707: channel constructed to carry water, usually for navigation, but which can also be used for water power, irrigation, collecting rainwater run-off , or drainage  of surface water.
+ NOTE definition in ISO 6707: channel constructed to carry water, usually for navigation, but which can also be used for water power, irrigation, collecting rainwater run-off , or drainage of surface water.
 
 ### WATERWAYSHIPLIFT
 A facility used for raising and lowering boats, ships and other watercraft between stretches of water of different levels on river and canal waterways or between impounded basins. This is achieved via an impounded trough of water which is mechanically lifted up and down.
@@ -21,7 +22,7 @@ Subset of facilities for the function of launching or recovering vessels.
 A subset of facilities with the primary function of protection or defence of a coastal or flood area.
 
 ### HYDROLIFT
-A type of vessel launch &amp; recovery facility, also known as a hydraulic lift dock, where ships are lifted vertically by water impounding systems, then floated laterally across the land to berths which subsequently become dry.
+A type of vessel launch & recovery facility, also known as a hydraulic lift dock, where ships are lifted vertically by water impounding systems, then floated laterally across the land to berths which subsequently become dry.
 
 ### SHIPYARD
 A coastal/waterside facility where ships are built and repaired.
@@ -30,7 +31,7 @@ A coastal/waterside facility where ships are built and repaired.
 A type of vessel launch & recovery facility, where ships are lifted vertically out of the water on platforms connected to winches, then transferred horizontally to land based berths on rail, wheel or track systems.
 
 ### PORT
-A complex/facility for shipping and marine activities, this includes cargo, people and storage of vessels (marinas &amp; harbours).
+A complex/facility for shipping and marine activities, this includes cargo, people and storage of vessels (marinas & harbours).
 
 ### QUAY
 a facility for the mooring of vessels accompanied with the loading and unloading of cargo or passengers or the maintenance of vessels.
@@ -45,7 +46,7 @@ A natural navigable watercourse (such as a river) that needs to be managed or ha
 ### BREAKWATER
 A longitudinal structure that protects a shore area, harbour, basin or estuary from waves.
  NOTE Definition in ISO 21650: structure protecting a shore area, harbour, anchorage and/or basin from waves
- NOTE Definition in ISO 6707: long structure  in a body of water designed to protect a basin or the shore from waves
+ NOTE Definition in ISO 6707: long structure in a body of water designed to protect a basin or the shore from waves
 
 ### DRYDOCK
 a Dry dock is an enclosed chamber (by gate) that allows the draining of water for the construction or repair of marine vessels.

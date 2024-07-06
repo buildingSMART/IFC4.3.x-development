@@ -1,27 +1,28 @@
-# IfcBlock
-
 The _IfcBlock_ is a Construction Solid Geometry (CSG) 3D primitive. It is defined by a position and a positive distance along the three orthogonal axes. The inherited _Position_ attribute has the _IfcAxis2Placement3D_ type and provides:
 
 * _SELF\IfcCsgPrimitive3D.Position_: The location and orientation of the axis system for the primitive.
 * _SELF\IfcCsgPrimitive3D.Position.Location_: The block has one vertex at location and the edges are aligned with the placement axes in the positive sense.
 
+
+<!-- end of short definition -->
+
 The _XLength_, _YLength_, and _ZLength_ attributes define the size of the IfcBlock along the three axes.
 
 ![block](../../../../figures/ifcblock-layout1.png)
 
-Figure 1 &mdash; Block geometry
+Figure 1 — Block geometry
 
 Figure 1 illustrates geometric parameters of a block where the block positioned within its own placement
 coordinate system. The values for <em>XLength</em>, <em>YLength</em>, and <em>ZLength</em> are applied to the positive
 direction of the X, Y, and Z axis.
 
 { .extDef}
-> NOTE  Definition according to ISO 10303-42
+> NOTE Definition according to ISO 10303-42
 > A block is a type of geometric representation item which is a solid rectangular parallelepiped, defined with a location and placement coordinate system. The block is specified by the positive lengths x, y, and z along the axes of the placement coordinate system, and has one vertex at the origin of the placement coordinate system.
 
-> NOTE  Entity adapted from **block** defined in ISO 10303-42.
+> NOTE Entity adapted from **block** defined in ISO 10303-42.
 
-> HISTORY  New entity in IFC2x3.
+> HISTORY New entity in IFC2x3.
 
 { .use-head}
 Texture definition
@@ -36,7 +37,7 @@ Figure 2 illustrates default texture mapping with a clamped texture (RepeatS=Fal
 
 ![texture](../../../../figures/ifcblock-texture.png)
 
-Figure 2 &mdash; Block textures
+Figure 2 — Block textures
 
 |Side|Normal|Origin X|Origin Y|Origin Z|S Axis|T Axis|
 |--- |--- |--- |--- |--- |--- |--- |
@@ -47,7 +48,7 @@ Figure 2 &mdash; Block textures
 |Bottom|-Z|0|+YLength|0|+X|-Y|
 |Top|+Z|0|0|+ZLength|+X|+Y|
 
-Table 3 &mdash; Texture parameters
+Table 3 — Texture parameters
 
 ## Attributes
 

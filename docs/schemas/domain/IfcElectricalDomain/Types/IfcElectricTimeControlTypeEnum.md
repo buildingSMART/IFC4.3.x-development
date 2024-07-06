@@ -1,8 +1,9 @@
-# IfcElectricTimeControlTypeEnum
-
 The _IfcElectricTimeControlTypeEnum_ defines different types of electrical time control devices.
 
-> HISTORY  New type in IFC2x2.
+<!-- end of short definition -->
+
+
+> HISTORY New type in IFC2x2.
 
 ## Items
 

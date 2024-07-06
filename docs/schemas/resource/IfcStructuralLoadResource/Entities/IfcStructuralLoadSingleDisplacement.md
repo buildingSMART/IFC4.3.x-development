@@ -1,8 +1,9 @@
-# IfcStructuralLoadSingleDisplacement
-
 Instances of the entity _IfcStructuralLoadSingleDisplacement_ shall be used to define displacements.
 
-> HISTORY  New entity in IFC2x2.
+<!-- end of short definition -->
+
+
+> HISTORY New entity in IFC2x2.
 
 ## Attributes
 

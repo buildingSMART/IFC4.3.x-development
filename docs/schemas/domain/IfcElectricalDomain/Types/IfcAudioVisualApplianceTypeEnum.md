@@ -1,8 +1,9 @@
-# IfcAudioVisualApplianceTypeEnum
-
 Defines the range of different types of audio-video devices that can be specified.
 
-> HISTORY  New enumeration in IFC4.
+<!-- end of short definition -->
+
+
+> HISTORY New enumeration in IFC4.
 
 ## Items
 
@@ -10,13 +11,13 @@ Defines the range of different types of audio-video devices that can be specifie
 A device that receives an audio signal and amplifies it to play through speakers.
 
 ### CAMERA
-A device that records images, either as a still photograph or as moving images known as videos or movies.  Note that a camera may operate with light from the visible spectrum or from other parts of the electromagnetic spectrum such as infrared or ultraviolet.
+A device that records images, either as a still photograph or as moving images known as videos or movies. Note that a camera may operate with light from the visible spectrum or from other parts of the electromagnetic spectrum such as infrared or ultraviolet.
 
 ### DISPLAY
 An electronic device that represents information in visual form such as a flat-panel display or television.
 
 ### MICROPHONE
-An acoustic-to-electric transducer or sensor that converts sound into an electrical signal.  Microphones types in use include electromagnetic induction (dynamic microphones), capacitance change (condenser microphones) or piezoelectric generation to produce the signal from mechanical vibration.
+An acoustic-to-electric transducer or sensor that converts sound into an electrical signal. Microphones types in use include electromagnetic induction (dynamic microphones), capacitance change (condenser microphones) or piezoelectric generation to produce the signal from mechanical vibration.
 
 ### PLAYER
 A device that plays audio and/or video content directly or to another device, having fixed or removable storage media.

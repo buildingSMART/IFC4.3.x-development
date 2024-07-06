@@ -1,12 +1,13 @@
-# IfcCircle
-
 An _IfcCircle_ is a curve consisting of a set of points having equal distance from the center.
 
-> NOTE  A circular arc segment is defined by using the _IfcTrimmedCurve_ with _BasisCurve_ being an _IfcCircle_.
+<!-- end of short definition -->
+
+
+> NOTE A circular arc segment is defined by using the _IfcTrimmedCurve_ with _BasisCurve_ being an _IfcCircle_.
 
 Figure 1 illustrates the definition of _IfcCircle_ within a three-dimensional position coordinate system placed within the object coordinate system of an element.
 
-![axis1 placement](../../../../figures/ifccircle-layout1.gif "Figure 1 &mdash; Circle layout")
+![axis1 placement](../../../../figures/ifccircle-layout1.gif "Figure 1 — Circle layout")
 
 
 
@@ -27,7 +28,7 @@ The circle is parameterized as
 
 $$ \lambda(u) = C + R(\cos(u)x + \sin(u)y) $$
 
-The parameterization range is 0 &le; _u_ &le; 2&pi; (0 &le; _u_ &le; 360 degree).
+The parameterization range is 0 ≤ _u_ ≤ 2π (0 ≤ _u_ ≤ 360 degree).
 In the placement coordinate system defined above, the circle is the equation _C_ = 0, where
 
 
@@ -37,7 +38,7 @@ The positive sense of the circle at any point is in the tangent direction, **T**
 
 $$ T = (-C_y,C_x,0) $$
 
-> HISTORY  New entity in IFC1.0
+> HISTORY New entity in IFC1.0
 
 ## Attributes
 

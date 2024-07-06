@@ -1,6 +1,7 @@
-# PEnum_AntennaType
-
 Enumeration of antenna types.
+
+<!-- end of short definition -->
+
 
 ## Items
 

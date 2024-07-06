@@ -1,8 +1,9 @@
-# IfcDirectionSenseEnum
-
 _IfcDirectionSenseEnum_ is an enumeration denoting whether sense of direction is positive or negative along the given axis.
 
-> HISTORY  New Type in IFC2x.
+<!-- end of short definition -->
+
+
+> HISTORY New Type in IFC2x.
 
 ## Items
 

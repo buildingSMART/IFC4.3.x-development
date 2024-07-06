@@ -1,8 +1,9 @@
-# IfcActuator
-
 An actuator is a mechanical device for moving or controlling a mechanism or system. An actuator takes energy, usually created by air, electricity, or liquid, and converts that into some kind of motion.
 
-> HISTORY  New entity in IFC4
+<!-- end of short definition -->
+
+
+> HISTORY New entity in IFC4
 
 ## Attributes
 

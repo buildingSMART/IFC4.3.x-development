@@ -1,8 +1,9 @@
-# IfcOpeningElementTypeEnum
-
 This enumeration defines the basic types for opening elements.
 
-> HISTORY  New enumeration type in IFC4.
+<!-- end of short definition -->
+
+
+> HISTORY New enumeration type in IFC4.
 
 ## Items
 

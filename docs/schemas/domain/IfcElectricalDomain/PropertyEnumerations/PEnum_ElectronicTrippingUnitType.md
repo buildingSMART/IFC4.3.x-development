@@ -1,21 +1,22 @@
-# PEnum_ElectronicTrippingUnitType
 
+
+<!-- end of short definition -->
 ## Items
 
 ### EP_BM
-Ep  Bm
+Ep Bm
 
 ### EP_MP
-Ep  Mp
+Ep Mp
 
 ### EP_SC
-Ep  Sc
+Ep Sc
 
 ### EP_STD
-Ep  Std
+Ep Std
 
 ### EP_TIMEDELAYED
-Ep  Timedelayed
+Ep Timedelayed
 
 ### OTHER
 required category not on scale

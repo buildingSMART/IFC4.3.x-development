@@ -1,11 +1,12 @@
-# IfcPropertyDependencyRelationship
-
 An _IfcPropertyDependencyRelationship_ describes an identified dependency between the value of one property and that of another.
 
-> HISTORY  New entity in IFC2x2
+<!-- end of short definition -->
+
+
+> HISTORY New entity in IFC2x2
 
 { .change-ifc2x4}
-> IFC4 CHANGE  Made subtype of _IfcResourceLevelRelationship_ (attribute order changed).
+> IFC4 CHANGE Made subtype of _IfcResourceLevelRelationship_ (attribute order changed).
 
 { .use-head}
 Use Definition

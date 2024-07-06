@@ -1,6 +1,7 @@
-# IfcBridgePart
-
 Part of a bridge.
+
+<!-- end of short definition -->
+
 
 ## Concepts
 
@@ -17,7 +18,7 @@ The local placement for _IfcBridgePart_ is defined in its supertype _IfcProduct_
 
 ### Spatial Composition
 
-> NOTE  By using the inverse relationship _IfcBridgePart.Decomposes_ it references (_IfcBridge_|| _IfcBridgePart_) through _IfcRelAggregates.RelatingObject_, the referenced _IfcBridgePart_ needs to have a different and higher *CompositionType*, i.e. COMPLEX (if the other _IfcBridgePart_ has ELEMENT), or ELEMENT (if the other _IfcBridgePart_ has PARTIAL).
+> NOTE By using the inverse relationship _IfcBridgePart.Decomposes_ it references (_IfcBridge_|| _IfcBridgePart_) through _IfcRelAggregates.RelatingObject_, the referenced _IfcBridgePart_ needs to have a different and higher *CompositionType*, i.e. COMPLEX (if the other _IfcBridgePart_ has ELEMENT), or ELEMENT (if the other _IfcBridgePart_ has PARTIAL).
 
 #### IfcBridge
 
@@ -37,7 +38,7 @@ Elements can also be referenced in an _IfcBridgePart_, for example, if they span
 
 ### Spatial Decomposition
 
-> NOTE  By using the inverse relationship _IfcBridgePart.IsDecomposedBy_ it references _IfcBridgePart_ through _IfcRelAggregates.RelatedObjects_. If it refers to another instance of _IfcBridgePart_, the referenced _IfcBridgePart_ needs to have a different and lower *CompositionType*, i.e. ELEMENT (if the other _IfcBridgePart_ has COMPLEX), or PARTIAL (if the other _IfcBridgePart_ has ELEMENT).
+> NOTE By using the inverse relationship _IfcBridgePart.IsDecomposedBy_ it references _IfcBridgePart_ through _IfcRelAggregates.RelatedObjects_. If it refers to another instance of _IfcBridgePart_, the referenced _IfcBridgePart_ needs to have a different and lower *CompositionType*, i.e. ELEMENT (if the other _IfcBridgePart_ has COMPLEX), or PARTIAL (if the other _IfcBridgePart_ has ELEMENT).
 
 #### IfcBridgePart
 

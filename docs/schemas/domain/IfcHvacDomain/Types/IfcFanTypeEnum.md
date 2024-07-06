@@ -1,8 +1,9 @@
-# IfcFanTypeEnum
-
 Enumeration defining the typical types of fans.
 
-> HISTORY  New enumeration in IFC2x2.
+<!-- end of short definition -->
+
+
+> HISTORY New enumeration in IFC2x2.
 
 ## Items
 

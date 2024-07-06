@@ -1,6 +1,7 @@
-# PEnum_TypeOfJunction
-
 Enumeration of the different junctions used in railway track.
+
+<!-- end of short definition -->
+
 
 ## Items
 

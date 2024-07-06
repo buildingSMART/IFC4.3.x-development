@@ -1,11 +1,12 @@
-# IfcStructuralSurfaceConnection
-
 Instances of _IfcStructuralSurfaceConnection_ describe face 'nodes', i.e. faces where two or more surface members are joined, or face supports. Face surfaces may be planar or curved.
 
-> HISTORY  New entity in IFC2x2.
+<!-- end of short definition -->
+
+
+> HISTORY New entity in IFC2x2.
 
 { .change-ifc2x4}
-> IFC4 CHANGE  Use definitions added.
+> IFC4 CHANGE Use definitions added.
 
 ****Coordinate Systems****:
 

@@ -1,6 +1,7 @@
-# IfcMirroredProfileDef
-
 The _IfcMirroredProfileDef_ defines the profile by mirroring the parent profile about the y axis of the parent profile coordinate system. That is, left and right of the parent profile are swapped.
+
+<!-- end of short definition -->
+
 
 Notes:
 
@@ -10,7 +11,7 @@ Mirroring of an _IfcParameterizedProfileDef_ is performed after translation and 
 
 Mirroring about the x axis, i.e. swapping top and bottom, can be achieved by mirroring about the y axis coupled with 180 degree rotation about the z axis. In general, rotation happens in a containing object such as _IfcSweptAreaSolid_, i.e. after mirroring by _IfcMirroredProfileDef_ was performed. If the parent profile is an _IfcParameterizedProfileDef_, rotation can alternatively happen already in the parent profile by means of its _Position_ attribute, i.e. before mirroring by _IfcMirroredProfileDef_ was performed.
 
-> HISTORY  New entity in IFC4.
+> HISTORY New entity in IFC4.
 
 ## Attributes
 

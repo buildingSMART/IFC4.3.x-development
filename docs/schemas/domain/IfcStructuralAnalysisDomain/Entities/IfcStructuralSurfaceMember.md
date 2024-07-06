@@ -1,11 +1,12 @@
-# IfcStructuralSurfaceMember
-
 Instances of _IfcStructuralSurfaceMember_ describe face members, that is, structural analysis idealizations of slabs, walls, and shells. Surface members may be planar or curved.
 
-> HISTORY  New entity in IFC2x2.
+<!-- end of short definition -->
+
+
+> HISTORY New entity in IFC2x2.
 
 { .change-ifc2x4}
-> IFC4 CHANGE  Use definitions changed, WHERE rule added.
+> IFC4 CHANGE Use definitions changed, WHERE rule added.
 
 ****Coordinate Systems****:
 

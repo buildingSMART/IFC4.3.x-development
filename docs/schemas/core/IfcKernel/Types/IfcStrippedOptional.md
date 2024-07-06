@@ -1,8 +1,9 @@
-# IfcStrippedOptional
-
 IfcStrippedOptional is a type never to be instantiated in population models, but serves a purpose for compatibility of exchanged models.
 
-IFC-SPF (Step Physical File; ISO 10303 part 21) depends on a fixed ordering of attributes defined solely in the schema and not in the  model files. This has an impact in two cases:
+<!-- end of short definition -->
+
+
+IFC-SPF (Step Physical File; ISO 10303 part 21) depends on a fixed ordering of attributes defined solely in the schema and not in the model files. This has an impact in two cases:
 
 - **partial schema production** - When certain trees of entities are out of scope given a certain exchange, and this exchange is formalized into an EXPRESS schema, entity attributes pointing to the types that are out of scope can be changed to be of type *OPTIONAL IfcStrippedOptional* to maintain an attribute order and count in the population model that is consistent with the full EXPRESS schema.
 

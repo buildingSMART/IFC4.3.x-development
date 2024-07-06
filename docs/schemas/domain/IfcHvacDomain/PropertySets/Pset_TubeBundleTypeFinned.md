@@ -1,6 +1,7 @@
-# Pset_TubeBundleTypeFinned
-
 Finned tube bundle type attributes.
+
+<!-- end of short definition -->
+
 Contains the attributes related to the fins attached to a tube in a finned tube bundle such as is commonly found in coils.
 
 

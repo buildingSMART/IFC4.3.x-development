@@ -1,13 +1,14 @@
-# IfcCurve
-
 An _IfcCurve_ is a curve in two-dimensional or three-dimensional space. It includes definitions for bounded and unbounded curves.
 
-> NOTE  Definition according to ISO 10303-42:
+<!-- end of short definition -->
+
+
+> NOTE Definition according to ISO 10303-42:
 > A curve can be envisioned as the path of a point moving in its coordinate space.
 
 > NOTE Entity adapted from **curve** defined in ISO 10303-42
 
-> HISTORY  New entity in IFC1.0
+> HISTORY New entity in IFC1.0
 
 **Informal Propositions**
 

@@ -1,11 +1,12 @@
-# IfcBeamTypeEnum
-
 This enumeration defines the different predefined types of beams that can further specify an _IfcBeam_ or _IfcBeamType_.
 
-> HISTORY  New enumeration type in IFC2x2.
+<!-- end of short definition -->
+
+
+> HISTORY New enumeration type in IFC2x2.
 
 { .change-ifc2x4}
-> IFC4 CHANGE  The enumerators HOLLOWCORE and SPANDREL have been added.
+> IFC4 CHANGE The enumerators HOLLOWCORE and SPANDREL have been added.
 
 ## Items
 

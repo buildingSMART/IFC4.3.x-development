@@ -1,10 +1,11 @@
-# IfcAlarm
-
 An alarm is a device that signals the existence of a condition or situation that is outside the boundaries of normal expectation or that activates such a device.
+
+<!-- end of short definition -->
+
 
 Alarms include the provision of break glass buttons and manual pull boxes that are used to activate alarms.
 
-> HISTORY  New entity in IFC4
+> HISTORY New entity in IFC4
 
 { .note}
 >

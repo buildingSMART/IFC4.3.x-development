@@ -1,6 +1,7 @@
-# IfcPropertyBoundedValue
-
 A property with a bounded value, _IfcPropertyBoundedValue_, defines a property object which has a maximum of two (numeric or descriptive) values assigned, the first value specifying the upper bound and the second value specifying the lower bound. It defines a property - value bound (min-max) combination for which the property _Name_, an optional _Description_, the optional _UpperBoundValue_ with measure type, the optional _LowerBoundValue_ with measure type, and the optional _Unit_ is given. A set point value can be provided in addition to the upper and lower bound values for operational value setting.
+
+<!-- end of short definition -->
+
 
 The unit is handled by the _Unit_ attribute, see Table 1 for an example of a bounded property:
 
@@ -9,7 +10,7 @@ The unit is handled by the _Unit_ attribute, see Table 1 for an example of a bou
 
 The _IfcPropertyBoundedValue_ allows for the specification of an interval for the value component of the property description. If either the _LowerBoundValue_ or the _UpperBoundValue_ is not given, then it indicates an open bound (either a minimum value or a maximum value). The interval is by definition inclusive, that is, the value given for the _LowerBoundValue_ or the _UpperBoundValue_ is included in the interval.
 
-> NOTE  An _IfcPropertyBoundedValue_ may be exchanged with no values assigned yet. In this case the _LowerBoundValue_ and the _UpperBoundValue_ are set to NIL.
+> NOTE An _IfcPropertyBoundedValue_ may be exchanged with no values assigned yet. In this case the _LowerBoundValue_ and the _UpperBoundValue_ are set to NIL.
 
 
 |Name|UpperBoundValue|LowerBoundValue|SetPointValue|Type (through IfcValue)|Unit|
@@ -19,15 +20,15 @@ The _IfcPropertyBoundedValue_ allows for the specification of an interval for th
 |MaxHeight|20.0|||IfcPositiveLengthMeasure|-|
 |MinWeight||20||IfcMassMeasure|kg|
 
-Table 1 &mdash; Bounded property with values, measure types and units. Where rules ensures same measure type for all values
+Table 1 — Bounded property with values, measure types and units. Where rules ensures same measure type for all values
 
 > HISTORY  New entity in IFC2x.
 
 { .change-ifc2x2}
-> IFC2x2 CHANGE  The attribute type of the attribute _UpperBoundValue_ and _LowerBoundValue_ has been made optional with upward compatibility for file based exchange.
+> IFC2x2 CHANGE The attribute type of the attribute _UpperBoundValue_ and _LowerBoundValue_ has been made optional with upward compatibility for file based exchange.
 
 { .change-ifc2x4}
-> IFC4 CHANGE  The attribute _SetPointValue_ has been added.
+> IFC4 CHANGE The attribute _SetPointValue_ has been added.
 
 **Informal Propositions**
 
@@ -47,7 +48,7 @@ Unit for the upper and lower bound values, if not given, the default value for t
 ### SetPointValue
 Set point value as typically used for operational value setting.
 { .change-ifc2x4}
-> IFC4 CHANGE  The attribute has been added at the end of the attribute list.
+> IFC4 CHANGE The attribute has been added at the end of the attribute list.
 
 ## Formal Propositions
 

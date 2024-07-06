@@ -1,8 +1,9 @@
-# IfcProtectiveDeviceTrippingUnitTypeEnum
-
 Defines the range of different tripping unit types that can be used in conjunction with a protective device.
 
-> HISTORY  New enumeration in IFC4.
+<!-- end of short definition -->
+
+
+> HISTORY New enumeration in IFC4.
 
 ## Items
 

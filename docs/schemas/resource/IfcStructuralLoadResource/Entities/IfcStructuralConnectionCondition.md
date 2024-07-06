@@ -1,8 +1,9 @@
-# IfcStructuralConnectionCondition
-
 Describe more rarely needed connection properties.
 
-> HISTORY  New entity in IFC2x2.
+<!-- end of short definition -->
+
+
+> HISTORY New entity in IFC2x2.
 
 ## Attributes
 

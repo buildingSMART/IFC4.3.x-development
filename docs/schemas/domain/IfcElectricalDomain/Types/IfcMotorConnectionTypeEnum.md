@@ -1,8 +1,9 @@
-# IfcMotorConnectionTypeEnum
-
 The _IfcMotorConnectionTypeEnum_ defines the range of different types of motor connection that can be specified.
 
-> HISTORY  New type in IFC2x.
+<!-- end of short definition -->
+
+
+> HISTORY New type in IFC2x.
 
 ## Items
 

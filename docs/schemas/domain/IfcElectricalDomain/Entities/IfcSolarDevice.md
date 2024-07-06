@@ -1,8 +1,9 @@
-# IfcSolarDevice
-
 A solar device converts solar radiation into other energy such as electric current or thermal energy.
 
-> HISTORY  New entity in IFC4
+<!-- end of short definition -->
+
+
+> HISTORY New entity in IFC4
 
 { .note}
 >

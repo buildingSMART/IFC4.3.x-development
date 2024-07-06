@@ -1,11 +1,12 @@
-# IfcFastener
-
 Representations of fixing parts which are used as fasteners to connect or join elements with other elements. Excluded are mechanical fasteners which are modeled by a separate entity (_IfcMechanicalFastener_).
 
-> HISTORY  New entity in IFC2x2
+<!-- end of short definition -->
+
+
+> HISTORY New entity in IFC2x2
 
 { .change-ifc2x4}
-> IFC4 CHANGE  Attribute _PredefinedType_ added.
+> IFC4 CHANGE Attribute _PredefinedType_ added.
 
 ## Attributes
 

@@ -1,6 +1,7 @@
-# PEnum_FenderType
-
 Enumeration describing the different sub types of fenders.
+
+<!-- end of short definition -->
+
 
 ## Items
 

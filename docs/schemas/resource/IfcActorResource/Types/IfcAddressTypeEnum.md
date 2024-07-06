@@ -1,8 +1,9 @@
-# IfcAddressTypeEnum
-
 This enumeration identifies the logical location of the address.
 
-> HISTORY  New enumeration in IFC2x.
+<!-- end of short definition -->
+
+
+> HISTORY New enumeration in IFC2x.
 
 ## Items
 

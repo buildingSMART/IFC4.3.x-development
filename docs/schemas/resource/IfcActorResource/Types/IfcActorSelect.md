@@ -1,7 +1,8 @@
-# IfcActorSelect
-
 The actor select type allows a person, or an organization, or a person associated with an organization to be referenced.
 
-> NOTE  Type adapted from **person_organization_select** defined in ISO 10303-41.
+<!-- end of short definition -->
 
-> HISTORY  New entity in IFC1.5.1
+
+> NOTE Type adapted from **person_organization_select** defined in ISO 10303-41.
+
+> HISTORY New entity in IFC1.5.1

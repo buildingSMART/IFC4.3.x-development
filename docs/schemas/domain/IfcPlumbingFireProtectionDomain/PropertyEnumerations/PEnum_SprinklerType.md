@@ -1,5 +1,6 @@
-# PEnum_SprinklerType
 
+
+<!-- end of short definition -->
 ## Items
 
 ### CEILING

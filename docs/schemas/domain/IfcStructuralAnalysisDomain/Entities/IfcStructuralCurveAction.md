@@ -1,11 +1,12 @@
-# IfcStructuralCurveAction
-
 A structural curve action defines an action which is distributed over a curve. A curve action may be connected with a curve member or curve connection, or surface member or surface connection.
 
-> HISTORY  New entity in IFC4.
+<!-- end of short definition -->
+
+
+> HISTORY New entity in IFC4.
 
 { .change-ifc2x4}
-> IFC4 CHANGE  Former entity _IfcStructuralLinearActionVarying_ from IFC2x2 has been removed and are replaced by this entity.
+> IFC4 CHANGE Former entity _IfcStructuralLinearActionVarying_ from IFC2x2 has been removed and are replaced by this entity.
 
 ****Coordinate Systems****:
 
@@ -35,7 +36,7 @@ If not connected with a structural item (which may happen in an incomplete or co
 ## Attributes
 
 ### ProjectedOrTrue
-Defines whether load values are given per true length of the curve on which they act, or per length of the projection of the curve in load direction.  The latter is only applicable to loads which act in global coordinate directions.
+Defines whether load values are given per true length of the curve on which they act, or per length of the projection of the curve in load direction. The latter is only applicable to loads which act in global coordinate directions.
 
 ### PredefinedType
 Type of action according to its distribution of load values.
@@ -43,7 +44,7 @@ Type of action according to its distribution of load values.
 ## Formal Propositions
 
 ### ProjectedIsGlobal
-A load can only be related to projected length if it was specified in global coordinate directions (i.e. in analysis model coordinate directions).  If a load was specified in local coordinate directions, it can only relate to true length.
+A load can only be related to projected length if it was specified in global coordinate directions (i.e. in analysis model coordinate directions). If a load was specified in local coordinate directions, it can only relate to true length.
 
 ### HasObjectType
 The attribute ObjectType shall be given if the predefined type is set to USERDEFINED.

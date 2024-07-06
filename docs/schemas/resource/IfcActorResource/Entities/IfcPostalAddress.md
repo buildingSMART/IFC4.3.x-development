@@ -1,8 +1,9 @@
-# IfcPostalAddress
-
 This entity represents an address for delivery of paper based mail and other postal deliveries.
 
-> HISTORY  New entity in IFC2x.
+<!-- end of short definition -->
+
+
+> HISTORY New entity in IFC2x.
 
 > IFC4.3.0.0 DEPRECATION This entity is deprecated. Use Pset_Address instead, which is applicable to IfcActor, IfcBuilding and IfcSite.
 
@@ -13,7 +14,7 @@ An organization defined address for internal mail delivery.
 
 ### AddressLines
 The postal address.
-> NOTE  A postal address may occupy several lines (or elements) when recorded. It is expected that normal usage will incorporate relevant elements of the following address concepts: A location within a building (e.g. 3rd Floor) Building name (e.g. Interoperability House) Street number (e.g. 6400) Street name (e.g. Alliance Boulevard). Typical content of address lines may vary in different countries.
+> NOTE A postal address may occupy several lines (or elements) when recorded. It is expected that normal usage will incorporate relevant elements of the following address concepts: A location within a building (e.g. 3rd Floor) Building name (e.g. Interoperability House) Street number (e.g. 6400) Street name (e.g. Alliance Boulevard). Typical content of address lines may vary in different countries.
 
 ### PostalBox
 An address that is implied by an identifiable mail drop.
@@ -23,7 +24,7 @@ The name of a town.
 
 ### Region
 The name of a region.
-> NOTE  The counties of the United Kingdom and the states of North America are examples of regions.
+> NOTE The counties of the United Kingdom and the states of North America are examples of regions.
 
 ### PostalCode
 The code that is used by the country's postal service.

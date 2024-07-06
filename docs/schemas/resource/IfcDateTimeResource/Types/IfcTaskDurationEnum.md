@@ -1,8 +1,9 @@
-# IfcTaskDurationEnum
-
 _IfcTaskDurationEnum_ identifies how a time duration is measured.
 
-> HISTORY  New enumeration in IFC4.
+<!-- end of short definition -->
+
+
+> HISTORY New enumeration in IFC4.
 
 ## Items
 

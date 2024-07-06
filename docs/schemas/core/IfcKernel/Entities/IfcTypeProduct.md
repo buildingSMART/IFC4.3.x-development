@@ -1,10 +1,11 @@
-# IfcTypeProduct
-
 _IfcTypeProduct_ defines a type definition of a product without being already inserted into a project structure (without having a placement), and not being included in the geometric representation context of the project. It is used to define a product specification, that is, the specific product information that is common to all occurrences of that product type.
+
+<!-- end of short definition -->
+
 
 An _IfcTypeProduct_ may have a list of property sets attached and an optional set of product representations. Values of these properties and the representation maps are common to all occurrences of that product type. The type-occurrence relationship is realized using the objectified relationship _IfcRelDefinesByType_.
 
-> NOTE  The product representations are defined as representation maps, which may be assigned by a product instance through the representation item(s) being an _IfcShapeRepresentation_ and having _Items_ of type _IfcMappedItem_.
+> NOTE The product representations are defined as representation maps, which may be assigned by a product instance through the representation item(s) being an _IfcShapeRepresentation_ and having _Items_ of type _IfcMappedItem_.
 
 The representations at the occurrence level (represented by subtypes of _IfcProduct_) can override the specific representations at the type level:
 
@@ -13,10 +14,10 @@ The representations at the occurrence level (represented by subtypes of _IfcProd
 
 An _IfcTypeProduct_ may be exchanged without being already assigned to subtypes of _IfcProduct_.
 
-> HISTORY  New entity in IFC2x.
+> HISTORY New entity in IFC2x.
 
 { .change-ifc2x4}
-> IFC4 CHANGE  The entity _IfcTypeProduct_ shall not be instantiated from IFC4 onwards. It will be changed into an ABSTRACT supertype in future releases of IFC.
+> IFC4 CHANGE The entity _IfcTypeProduct_ shall not be instantiated from IFC4 onwards. It will be changed into an ABSTRACT supertype in future releases of IFC.
 
 ## Attributes
 
@@ -29,7 +30,7 @@ The tag (or label) identifier at the particular type of a product, e.g. the arti
 ### ReferencedBy
 Reference to the _IfcRelAssignsToProduct_ relationship, by which other products, processes, controls, resources or actors (as subtypes of _IfcObjectDefinition_) can be related to this product type.
 { .change-ifc2x4}
-> IFC4 CHANGE  New inverse relationship.
+> IFC4 CHANGE New inverse relationship.
 
 ## Formal Propositions
 
@@ -50,11 +51,11 @@ Figure 1 illustrates an example of referencing a representation map by the shape
 
 ![representation map](../../../../figures/ifctypeproduct_representationmap-1.png)
 
-Figure 1 &mdash; Product type geometry with single placement
+Figure 1 — Product type geometry with single placement
 
 Figure 2 illustrates an example of referencing a representation multiple times by the shape representation of a product occurrence. Here the Cartesian transformation operator only uses translation, but no rotation, mirroring, or scaling. The different translation values determine the pattern of the multiple placement.
 
 ![representation map](../../../../figures/ifctypeproduct_representationmap-2.png)
 
-Figure 2 &mdash; Product type geometry with multiple placement
+Figure 2 — Product type geometry with multiple placement
 

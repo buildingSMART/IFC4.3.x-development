@@ -1,5 +1,3 @@
-# IfcTextDecoration
-
 The _IfcTextDecoration_ describes decorations that are added to the text of an element. Values are:
 
 * none
@@ -7,9 +5,12 @@ The _IfcTextDecoration_ describes decorations that are added to the text of an e
 * overline
 * line-through
 
-> NOTE  Type adopted from **text-decoration** defined in [CSS-1](../content/bibliography.htm#CSS1).
 
-> HISTORY  New type in IFC2x3.
+<!-- end of short definition -->
+
+> NOTE Type adopted from **text-decoration** defined in [CSS-1](../content/bibliography.htm#CSS1).
+
+> HISTORY New type in IFC2x3.
 
 ## Formal Propositions
 

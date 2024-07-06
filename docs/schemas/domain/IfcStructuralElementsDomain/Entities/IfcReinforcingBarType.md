@@ -1,5 +1,3 @@
-# IfcReinforcingBarType
-
 The reinforcing element type **IfcReinforcingBarType** defines commonly shared information for occurrences of reinforcing bars. The set of shared information may include:
 
 * common properties with shared property sets
@@ -7,9 +5,12 @@ The reinforcing element type **IfcReinforcingBarType** defines commonly shared i
 * common materials
 * common composition of elements
 
+
+<!-- end of short definition -->
+
 It is used to define a reinforcing bar type specification indicating the specific product information that is common to all occurrences of that product type. The **IfcReinforcingBarType** may be declared within _IfcProject_ or _IfcProjectLibrary_ using _IfcRelDeclares_ and may be exchanged with or without occurrences of the type. Occurrences of **IfcReinforcingBarType** are represented by instances of _IfcReinforcingBar_.
 
-> HISTORY  New entity in IFC4.
+> HISTORY New entity in IFC4.
 
 ## Attributes
 
@@ -29,10 +30,10 @@ The total length of the reinforcing bar. The total length of bended bars are cal
 Indicator for whether the bar surface is plain or textured.
 
 ### BendingShapeCode
-Shape code per a standard like ACI 315, ISO 3766, or a similar standard.  It is presumed that a single standard for defining the bar bending is used throughout the project and that this standard is referenced from the _IfcProject_ object through the _IfcDocumentReference_ mechanism.
+Shape code per a standard like ACI 315, ISO 3766, or a similar standard. It is presumed that a single standard for defining the bar bending is used throughout the project and that this standard is referenced from the _IfcProject_ object through the _IfcDocumentReference_ mechanism.
 
 ### BendingParameters
-Bending shape parameters.  Their meaning is defined by the bending shape code and the respective standard.
+Bending shape parameters. Their meaning is defined by the bending shape code and the respective standard.
 
 ## Formal Propositions
 

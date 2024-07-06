@@ -1,5 +1,3 @@
-# IfcDraughtingPreDefinedColour
-
 The draughting pre defined colour is a pre defined colour for the purpose to identify a colour by name. Allowable names are:
 
 * 'black',
@@ -12,7 +10,10 @@ The draughting pre defined colour is a pre defined colour for the purpose to ide
 * 'white',
 * 'by layer'
 
-> NOTE The _IfcDraughtingPreDefinedColour_ is an entity that had been adopted from ISO 10303-202, Industrial automation systems and integration&mdash;Product data representation and exchange, Part 202: Application protocol: Associative draughting.
+
+<!-- end of short definition -->
+
+> NOTE The _IfcDraughtingPreDefinedColour_ is an entity that had been adopted from ISO 10303-202, Industrial automation systems and integration—Product data representation and exchange, Part 202: Application protocol: Associative draughting.
 
 The following table states the RGB values associated with the names given by the _IfcDraughtingPreDefinedColour._
 

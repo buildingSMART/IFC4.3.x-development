@@ -1,6 +1,7 @@
-# IfcCardinalPointReference
-
 An _IfcCardinalPointReference_ is an index reference to significant points of a section profile. This index is used to describe the spatial relationship between the section of a member and a reference axis of the same member.
+
+<!-- end of short definition -->
+
 
 > HISTORY  New Type in IFC4.
 
@@ -33,11 +34,11 @@ Figure 1 illustrates cardinal point values. Figure 2 illustrates an example extr
 
 ![arbitrary profile with cardinal points](../../../../figures/ifccardinalpointreference-01.png)
 
-Figure 1 &mdash; Cardinal point values
+Figure 1 — Cardinal point values
 
 ![extrusion shape with arbitrary profile and alignment](../../../../figures/ifccardinalpointreference-02.png)
 
-Figure 2 &mdash; Cardinal point extrusion
+Figure 2 — Cardinal point extrusion
 
 ## Formal Propositions
 

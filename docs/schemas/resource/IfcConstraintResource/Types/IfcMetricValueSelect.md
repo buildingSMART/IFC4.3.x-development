@@ -1,6 +1,7 @@
-# IfcMetricValueSelect
-
 _IfcMetricValueSelect_ is a select type that enables selection of the data type for the value component of an _IfcMetric_.
+
+<!-- end of short definition -->
+
 
 Types are used as follows:
 
@@ -11,7 +12,7 @@ Types are used as follows:
 * _IfcTimeSeries_: A value that varies over time.
 * _IfcReference_: A value referenced on an object attribute.
 
-> HISTORY  New type in IFC2.0.
+> HISTORY New type in IFC2.0.
 
 { .change-ifc2x4}
-> IFC4 CHANGE  IfcValue added, which includes removed IfcDateTime and IfcText; IfcReference added.
+> IFC4 CHANGE IfcValue added, which includes removed IfcDateTime and IfcText; IfcReference added.

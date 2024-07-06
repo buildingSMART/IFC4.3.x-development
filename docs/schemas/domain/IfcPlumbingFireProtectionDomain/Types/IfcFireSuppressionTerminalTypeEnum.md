@@ -1,8 +1,9 @@
-# IfcFireSuppressionTerminalTypeEnum
-
 The _IfcFireSuppressionTerminalTypeEnum_ defines the range of different types of fire suppression terminal that can be specified.
 
-> HISTORY  New type in IFC2x2.
+<!-- end of short definition -->
+
+
+> HISTORY New type in IFC2x2.
 
 ## Items
 
@@ -10,7 +11,7 @@ The _IfcFireSuppressionTerminalTypeEnum_ defines the range of different types of
 Symmetrical pipe fitting that unites two or more inlets into a single pipe. A breeching inlet may be used on either a wet or dry riser. Used by fire services personnel for fast connection of fire appliance hose reels. May also be used for foam.
 
 ### FIREHYDRANT
-Device, fitted to a pipe, through which a temporary supply of water may be provided.  May also be termed a stand pipe.
+Device, fitted to a pipe, through which a temporary supply of water may be provided. May also be termed a stand pipe.
 
 ### HOSEREEL
 A supporting framework on which a hose may be wound.

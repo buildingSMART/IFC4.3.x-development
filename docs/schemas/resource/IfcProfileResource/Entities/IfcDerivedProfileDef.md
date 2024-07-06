@@ -1,6 +1,7 @@
-# IfcDerivedProfileDef
-
 _IfcDerivedProfileDef_ defines the profile by transformation from the parent profile. The transformation is given by a two dimensional transformation operator. Transformation includes translation, rotation, mirror and scaling. The latter can be uniform or non uniform. The derived profiles may be used to define swept surfaces, swept area solids or sectioned spines.
+
+<!-- end of short definition -->
+
 
 The transformation effects the position, rotation, mirroring or scale of the profile at the underlying coordinate system, i.e. the coordinate system defined by the swept surface or swept area solid that uses the profile definition. It is the xy plane of either:
 
@@ -11,7 +12,7 @@ or in case of sectioned spines the xy plane of each list member of _IfcSectioned
 
 Note, if only mirroring is required, _IfcMirroredProfileDef_ should be used instead.
 
-> HISTORY  New entity in IFC2x.
+> HISTORY New entity in IFC2x.
 
 ![Uniform](../../../../figures/ifcderivedprofiledef-layout1.gif)
 
@@ -27,10 +28,10 @@ of an <em>IfcRectangleProfileDef</em>
 to match the lower-left cardinal point. The attributes of the CTO are:<br>
 </p>
 
-    Axis1 = NIL (defaults to 1.,0.)
-    Axis2 = NIL (defaults to 0.,1.)
-    LocalOrigin = IfcCartesianPoint(<1/2 XDim>,<1/2 YDim>)
-    Scale = 2.
+ Axis1 = NIL (defaults to 1.,0.)
+ Axis2 = NIL (defaults to 0.,1.)
+ LocalOrigin = IfcCartesianPoint(<1/2 XDim>,<1/2 YDim>)
+ Scale = 2.
 
 > NOTE The <em>ParentProfile</em> has a <em>Position</em> = <em>IfcCartesianPoint</em>(<1/2 XDim>,<1/2 YDim>) already.
 
@@ -45,11 +46,11 @@ as a subtype of the 2D CTO.</p>
 The example shows a non-uniform scaling and a translation of an <em>IfcRectangleProfileDef</em>
 to match the lower-left cardinal point. The attributes of the CTO are:</p>
 
-    Axis1 = NIL (defaults to 1.,0.)
-    Axis2 = NIL (defaults to 0.,1.)
-    LocalOrigin = IfcCartesianPoint(0.,<1/2 YDim>)
-    Scale = 1.
-    Scale2 = 2.
+ Axis1 = NIL (defaults to 1.,0.)
+ Axis2 = NIL (defaults to 0.,1.)
+ LocalOrigin = IfcCartesianPoint(0.,<1/2 YDim>)
+ Scale = 1.
+ Scale2 = 2.
 
 > NOTE The <em>ParentProfile</em> has a <em>Position</em> = <em>IfcCartesianPoint</em>(<1/2 XDim>,<1/2 YDim>) already.
 
@@ -64,10 +65,10 @@ is defined using mirroring by applying the <em>IfcCartesianTransformationOperato
 The example shows a mirroring of an <em>IfcLShapeProfileDef</em>
 to match the centre cardinal point. The attributes of the CTO are:</p>
 
-    Axis1 = (-1.,0.)
-    Axis2 = NIL (defaults to 0.,1.)
-    LocalOrigin = IfcCartesianPoint(0.,0.)
-    Scale = NIL (defaults to 1.)
+ Axis1 = (-1.,0.)
+ Axis2 = NIL (defaults to 0.,1.)
+ LocalOrigin = IfcCartesianPoint(0.,0.)
+ Scale = NIL (defaults to 1.)
 
 > NOTE The <em>ParentProfile</em> has a <em>Position</em> = <em>IfcCartesianPoint</em>(0.,0.).
 

@@ -1,3 +1,4 @@
-# Pset_AlarmPHistory
+Properties for history of alarm values.
 
-Properties for history of alarm values.  HISTORY: Added in IFC4.
+<!-- end of short definition -->
+ HISTORY: Added in IFC4.

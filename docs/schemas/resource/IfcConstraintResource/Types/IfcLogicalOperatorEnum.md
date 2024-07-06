@@ -1,6 +1,7 @@
-# IfcLogicalOperatorEnum
-
 _IfcLogicalOperatorEnum_ is an enumeration that defines the logical operators that may be applied for the satisfaction of one or more operands (_IfcConstraint_) at a time.
+
+<!-- end of short definition -->
+
 
 The following tables illustrates application of _IfcLogicalOperatorEnum_ in a case of three operands, A, B and C, for each operator.
 
@@ -50,10 +51,10 @@ Table 4 - LOGICALNOTAND(A,B,C)
 
 Table 5 - LOGICALNOTOR(A,B,C)
 
-> HISTORY  New enumeration in IFC2.0.
+> HISTORY New enumeration in IFC2.0.
 
 { .change-ifc2x4}
-> IFC4 CHANGE  Extended to include LOGICALXOR, LOGICALNOTAND and LOGICALNOTOR.
+> IFC4 CHANGE Extended to include LOGICALXOR, LOGICALNOTAND and LOGICALNOTOR.
 
 ## Items
 

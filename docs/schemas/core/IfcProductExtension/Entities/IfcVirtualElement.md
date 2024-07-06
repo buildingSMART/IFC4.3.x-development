@@ -1,6 +1,7 @@
-# IfcVirtualElement
-
 A virtual element is a special element used to provide imaginary, placeholder, or provisional areas, volumes, and boundaries. Virtual elements are usually not displayed and do not have quantities, associated materials, and other measures.
+
+<!-- end of short definition -->
+
 
 Uses of _IfcVirtualElement_ include:
 
@@ -12,13 +13,13 @@ Figure 1 describes how to use _IfcRelSpaceBoundary_ in conjunction with _IfcVirt
 
 ![space boundary](../../../../figures/ifcvirtualelement_spaceboundaries.png)
 
-Figure 1 &mdash; Virtual element used as space boundaries
+Figure 1 — Virtual element used as space boundaries
 
 > IFC4.3.0.0 CHANGE Virtual elements can now be used for void provisions and clearance to replace existing functionality on _IfcBuildingElementProxy_.
 
-> IFC2x2 CHANGE  The entity _IfcVirtualElement_ has been added. Upward compatibility for file based exchange is guaranteed.
+> IFC2x2 CHANGE The entity _IfcVirtualElement_ has been added. Upward compatibility for file based exchange is guaranteed.
 
-> HISTORY  New entity in IFC2x2 Addendum.
+> HISTORY New entity in IFC2x2 Addendum.
 
 ## Formal Propositions
 

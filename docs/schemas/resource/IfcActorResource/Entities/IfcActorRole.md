@@ -1,12 +1,13 @@
-# IfcActorRole
-
 This entity indicates a role which is performed by an actor, either a person, an organization or a person related to an organization.
 
-> NOTE  The list of roles of the enumeration values of the _Role_ attribute can never be complete. Therefore using enumeration value USERDEFINED, the user can provide any role as a value of the attribute _UserDefinedRole_.
+<!-- end of short definition -->
 
-> NOTE  Entity adapted from **organization_role** and **person_role** defined in ISO 10303-41.
 
-> HISTORY  New entity in IFC1.5.1.
+> NOTE The list of roles of the enumeration values of the _Role_ attribute can never be complete. Therefore using enumeration value USERDEFINED, the user can provide any role as a value of the attribute _UserDefinedRole_.
+
+> NOTE Entity adapted from **organization_role** and **person_role** defined in ISO 10303-41.
+
+> HISTORY New entity in IFC1.5.1.
 
 ## Attributes
 
@@ -26,7 +27,7 @@ A textual description relating the nature of the role played by an actor.
 ### HasExternalReference
 Reference to external information, e.g. library, classification, or document information, which is associated with the actor role.
 { .change-ifc2x4}
-> IFC4 CHANGE  New inverse attribute.
+> IFC4 CHANGE New inverse attribute.
 
 ## Formal Propositions
 

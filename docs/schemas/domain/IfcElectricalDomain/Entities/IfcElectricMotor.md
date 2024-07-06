@@ -1,8 +1,9 @@
-# IfcElectricMotor
-
 An electric motor is an engine that is a machine for converting electrical energy into mechanical energy.
 
-> HISTORY  New entity in IFC4
+<!-- end of short definition -->
+
+
+> HISTORY New entity in IFC4
 
 { .note}
 >

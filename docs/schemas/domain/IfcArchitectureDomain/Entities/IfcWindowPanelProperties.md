@@ -1,6 +1,7 @@
-# IfcWindowPanelProperties
-
 A window panel is a casement, that is, a component, fixed or opening, consisting essentially of a frame and the infilling. The infilling of a window panel is normally glazing. The way of operation is defined in the operation type.
+
+<!-- end of short definition -->
+
 
 The _IfcWindowPanelProperties_ are used to parametrically describe the shape and operation of window panels. The parametric definition can be added solely or additionally to the explicit shape representation of the window.
 
@@ -10,12 +11,12 @@ The _IfcWindowPanelProperties_ does not hold an own geometric representation. Ho
 
 As shown in Figure 1, the panel is applied to the position within the lining as defined by the panel position attribute. The following parameter apply to that panel: _FrameDepth_, _FrameThickness_.
 
-![panel 1](../../../../figures/ifcwindowpanelproperties-fig01.gif "Figure 1 &mdash; Window panel properties")
+![panel 1](../../../../figures/ifcwindowpanelproperties-fig01.gif "Figure 1 — Window panel properties")
 
-> HISTORY  New entity in IFC2.0, it had been renamed from IfcWindowPanel in IFC2x.
+> HISTORY New entity in IFC2.0, it had been renamed from IfcWindowPanel in IFC2x.
 
 { .change-ifc2x4}
-> IFC4 CHANGE  Supertype changed to new _IfcPreDefinedPropertySet_.
+> IFC4 CHANGE Supertype changed to new _IfcPreDefinedPropertySet_.
 
 > IFC4.3.2.0 DEPRECATION This entity, and most other subtypes of IfcPredefinedPropertySet, are now deprecated. Use Pset_WindowPanelProperties instead.
 
@@ -36,10 +37,10 @@ Width of panel frame, measured from inside of panel (at glazing) to outside of p
 ### ShapeAspectStyle
 Optional link to a shape aspect definition, which points to the part of the geometric representation of the window style, which is used to represent the panel.
 { .deprecated}
-> DEPRECATION  The attribute is deprecated and shall no longer be used, i.e. the value shall be NIL ($).
+> DEPRECATION The attribute is deprecated and shall no longer be used, i.e. the value shall be NIL ($).
 
 ## Formal Propositions
 
 ### ApplicableToType
 The _IfcWindowPanelProperties_ shall only be used in the context of an _IfcDoorType_.
-> NOTE  The deprecated entity _IfcWindowStyle_ is applicable as well.
+> NOTE The deprecated entity _IfcWindowStyle_ is applicable as well.

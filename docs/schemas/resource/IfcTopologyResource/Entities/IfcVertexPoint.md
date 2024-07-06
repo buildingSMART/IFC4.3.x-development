@@ -1,12 +1,13 @@
-# IfcVertexPoint
-
 { .extDef}
-> NOTE  Definition according to ISO/CD 10303-42:1992
+
+<!-- end of short definition -->
+
+> NOTE Definition according to ISO/CD 10303-42:1992
 > A vertex point is a vertex which has its geometry defined as a point.
 
-> NOTE  Entity adapted from **vertex_point** defined in ISO 10303-42.
+> NOTE Entity adapted from **vertex_point** defined in ISO 10303-42.
 
-> HISTORY  New entity in IFC2x.
+> HISTORY New entity in IFC2x.
 
 **Informal Propositions**
 

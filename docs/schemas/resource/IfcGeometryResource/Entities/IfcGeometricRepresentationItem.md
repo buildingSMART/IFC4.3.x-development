@@ -1,6 +1,7 @@
-# IfcGeometricRepresentationItem
-
 An _IfcGeometricRepresentationItem_ is the common supertype of all geometric items used within a representation. It is positioned within a geometric coordinate system, directly or indirectly through intervening items.
+
+<!-- end of short definition -->
+
 
 { .extDef}
 > NOTE Definition according to ISO/CD 10303-42:1992
@@ -17,6 +18,6 @@ An indirect reference to a Cartesian point or direction means that a given geome
 
 
 >
-> NOTE  Entity adapted from **geometric_representation_item** defined in ISO 10303-42.
+> NOTE Entity adapted from **geometric_representation_item** defined in ISO 10303-42.
 
-> HISTORY  New entity in IFC1.5
+> HISTORY New entity in IFC1.5

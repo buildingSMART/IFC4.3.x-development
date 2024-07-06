@@ -1,8 +1,9 @@
-# IfcComplexPropertyTemplateTypeEnum
-
 This enumeration defines the applicable subtype of instances of _IfcComplexProperty_ or _IfcPhysicalComplexQuantity_ that may be created and defined by an _IfcComplexPropertyTemplate_.
 
-> HISTORY  New enumeration in IFC4.
+<!-- end of short definition -->
+
+
+> HISTORY New enumeration in IFC4.
 
 ## Items
 

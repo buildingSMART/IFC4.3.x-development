@@ -1,8 +1,9 @@
-# IfcCompressor
-
 A compressor is a device that compresses a fluid typically used in a refrigeration circuit.
 
-> HISTORY  New entity in IFC4
+<!-- end of short definition -->
+
+
+> HISTORY New entity in IFC4
 
 { .note}
 >

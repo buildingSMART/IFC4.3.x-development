@@ -1,8 +1,9 @@
-# IfcEvaporator
-
 An evaporator is a device in which a liquid refrigerent is vaporized and absorbs heat from the surrounding fluid.
 
-> HISTORY  New entity in IFC4
+<!-- end of short definition -->
+
+
+> HISTORY New entity in IFC4
 
 { .note}
 >

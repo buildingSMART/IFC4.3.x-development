@@ -1,8 +1,9 @@
-# IfcBuildingElementPartTypeEnum
-
 This enumeration defines the different types of building element parts.
 
-> HISTORY  New enumeration in IFC4.
+<!-- end of short definition -->
+
+
+> HISTORY New enumeration in IFC4.
 
 ## Items
 
@@ -17,7 +18,7 @@ A form of scour protection consisting of timber, concrete, riprap, paving, or ot
 
 ### ARMOURUNIT
 A large quarry stone or concrete shaped unit used as erosion prevention on slopes such as revetments and breakwaters. These units are grouped together into a Course layer.
-> NOTE  definition in ISO 21650: relatively large quarry stone or concrete shaped unit that is selected to fit specified geometric characteristics and density.
+> NOTE definition in ISO 21650: relatively large quarry stone or concrete shaped unit that is selected to fit specified geometric characteristics and density.
 
 ### SAFETYCAGE
 Safety cages are an assembly of circular and vertical bars that are fastened to the stiles of fixed ladders and are arranged to enclose the path of a worker when climbing the ladder. Ladders so enclosed are also known as caged or hooped ladders.

@@ -1,5 +1,3 @@
-# IfcBoxAlignment
-
 The box alignment specifies the alignment of the text box relative to its position. The following string values shall be used:
 
 * top-left
@@ -12,22 +10,25 @@ The box alignment specifies the alignment of the text box relative to its positi
 * bottom-middle
 * bottom-right
 
-> NOTE  The top-left is the default value.
+
+<!-- end of short definition -->
+
+> NOTE The top-left is the default value.
 
 Figure 1 illustrates alignment values. Figure 2 illustrates use of alignment values together with the placement and planar extent.
 
 ![9 alignment values](../../../../figures/ifcboxalignment_fig1.gif)
 
-Figure 1 &mdash; Box alignment values
+Figure 1 — Box alignment values
 
 ![use with planar extent](../../../../figures/ifcboxalignment_fig2.gif)
 
-Figure 2 &mdash; Box alignment examples
+Figure 2 — Box alignment examples
 
-> HISTORY  New type in IFC2x2 Addendum2.
+> HISTORY New type in IFC2x2 Addendum2.
 
 { .change-ifc2x3}
-> IFC2x3 CHANGE  The _IfcBoxAlignment_ has been added.
+> IFC2x3 CHANGE The _IfcBoxAlignment_ has been added.
 
 ## Formal Propositions
 

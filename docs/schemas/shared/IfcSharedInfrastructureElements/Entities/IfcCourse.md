@@ -1,6 +1,7 @@
-# IfcCourse
-
 A built element whose length greatly exceeds its thickness and often also its width, usually of a single material laid on site on top of another horizontal or nearly horizontal built element. A course is distinctive from a earthworks element in that a course is a graded granular (which can be bound or unbound) material that is generally processed in some fashion, where as earthworks elements are soil earthen based structure that can be formed by removal and transport of general ground material.
+
+<!-- end of short definition -->
+
 Structurally a course does not have capacity to carry loads over open span, or to be removed or replaced as a single unit. examples of courses include:
 * Graded aggregate layers
 * Graded sand layers
@@ -11,7 +12,7 @@ Structurally a course does not have capacity to carry loads over open span, or t
 
 ### PredefinedType
 Identifies the predefined type of a course element. This type may associate additional specific property sets.
-NOTE  The PredefinedType shall only be used, if no _IfcCourseType_ is assigned, providing its own _IfcCourseType_.PredefinedType.
+NOTE The PredefinedType shall only be used, if no _IfcCourseType_ is assigned, providing its own _IfcCourseType_.PredefinedType.
 
 ## Formal Propositions
 

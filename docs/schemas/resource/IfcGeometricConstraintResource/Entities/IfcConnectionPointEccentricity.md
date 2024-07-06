@@ -1,10 +1,11 @@
-# IfcConnectionPointEccentricity
-
 _IfcConnectionPointEccentricity_ is used to describe the geometric constraints that facilitate the physical connection of two objects at a point or vertex point with associated point coordinates. There is a physical distance, or eccentricity, etween the connection points of both object. The eccentricity can be either given by:
 
 * providing the _PointOnRelatingElement_ and the _PointOnRelatedElement_, where both point coordinates are not identical within a common parent coordinate system (latestly within the world coordinate system),
 * providing the _PointOnRelatingElement_ and the three distance measures, _EccentricityInX_, _EccentricityInY_, and _EccentricityInZ_ (or only _EccentricityInX_, and _EccentricityInY_ if the underlying coordinate system is two-dimensional), or
 * providing both.
+
+
+<!-- end of short definition -->
 
 > NOTE  If both, _PointOnRelatedElement_, and _EccentricityInX_, _EccentricityInY_, (_EccentricityInZ_) are provided, the values should be consistent. In case of any non-consistency, the calculated distance between _PointOnRelatingElement_ and _PointOnRelatedElement_ takes precedence.
 
@@ -15,7 +16,7 @@ The explicit values for _EccentricityInX_, _EccentricityInY_, and _EccentricityI
 * from the _PointOnRelatedElement_ to _PointOnRelatingElement_ within the coordinate system of the _RelatingElement_.
 * in addition: when used to specify connections in structural analysis models, the _IfcStructuralMember_ is to be used as the _RelatingElement_ of the relationship object utilizing _IfcConnectionPointEccentricity_, and the _IfcStructuralConnection_ is the _RelatedElement_.
 
-> HISTORY  New entity in IFC2x3.
+> HISTORY New entity in IFC2x3.
 
 ## Attributes
 

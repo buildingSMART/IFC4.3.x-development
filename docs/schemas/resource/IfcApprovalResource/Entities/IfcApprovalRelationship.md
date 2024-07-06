@@ -1,11 +1,12 @@
-# IfcApprovalRelationship
-
 An _IfcApprovalRelationship_ associates approvals (one relating approval and one or more related approvals), each having different status or level as the approval process or the approved objects evolve.
 
-> HISTORY  New entity in IFC2x2.
+<!-- end of short definition -->
+
+
+> HISTORY New entity in IFC2x2.
 
 { .change-ifc2x4}
-> IFC4 CHANGE  Subtyped from _IfcResourceLevelRelationship_, order of attributes changed.
+> IFC4 CHANGE Subtyped from _IfcResourceLevelRelationship_, order of attributes changed.
 
 ## Attributes
 
@@ -15,4 +16,4 @@ The approval that other approval is related to.
 ### RelatedApprovals
 The approvals that are related to another (relating) approval.
 { .change-ifc2x4}
-> IFC4 CHANGE  The cardinality of this attribute has been changed to SET.
+> IFC4 CHANGE The cardinality of this attribute has been changed to SET.

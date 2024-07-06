@@ -1,8 +1,9 @@
-# IfcActionSourceTypeEnum
-
 This enumeration type contains possible action sources.
 
-> HISTORY  New enumeration in IFC2x2.
+<!-- end of short definition -->
+
+
+> HISTORY New enumeration in IFC2x2.
 
 ## Items
 

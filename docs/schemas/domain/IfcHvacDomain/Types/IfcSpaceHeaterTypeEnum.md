@@ -1,10 +1,11 @@
-# IfcSpaceHeaterTypeEnum
-
 Enumeration defining the functional type of space heater.
 
-> NOTE  This enumeration was revised in IFC4 and was renamed from _IfcHydronicHeaterTypeEnum_ in IFC2x.
+<!-- end of short definition -->
 
-> HISTORY  New enumeration in IFC2x.
+
+> NOTE This enumeration was revised in IFC4 and was renamed from _IfcHydronicHeaterTypeEnum_ in IFC2x.
+
+> HISTORY New enumeration in IFC2x.
 
 ## Items
 

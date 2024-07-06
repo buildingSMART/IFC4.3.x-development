@@ -1,11 +1,12 @@
-# IfcStructuralAction
-
 A structural action is a structural activity that acts upon a structural item or building element.
 
-> HISTORY  New entity in IFC2x2.
+<!-- end of short definition -->
+
+
+> HISTORY New entity in IFC2x2.
 
 { .change-ifc2x4}
-> IFC4 CHANGE  Attribute _DestabilizingLoad_ made optional. Attribute _CausedBy_ deleted; use _IfcRelAssignsToProduct_ via _ReferencedBy_ instead.
+> IFC4 CHANGE Attribute _DestabilizingLoad_ made optional. Attribute _CausedBy_ deleted; use _IfcRelAssignsToProduct_ via _ReferencedBy_ instead.
 
 { .use-head}
 Relationship use definition

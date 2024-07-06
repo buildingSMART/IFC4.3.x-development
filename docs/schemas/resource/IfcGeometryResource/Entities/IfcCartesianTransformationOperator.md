@@ -1,9 +1,10 @@
-# IfcCartesianTransformationOperator
-
 An _IfcCartesianTransformationOperator_ defines an abstract supertype of different kinds of geometric transformations.
 
+<!-- end of short definition -->
+
+
 { .extDef}
-> NOTE  Definition according to ISO/CD 10303-42:1992
+> NOTE Definition according to ISO/CD 10303-42:1992
 > A Cartesian transformation operator defines a geometric transformation composed of translation, rotation, mirroring and uniform scaling. The list of normalized vectors u defines the columns of an orthogonal matrix T. These vectors are computed, by the base axis function, from the direction attributes axis1, axis2 and, in Cartesian transformation operator 3d, axis3. If **|T|= -1**, the transformation includes mirroring. The local origin point **A**, the scale value **_S_** and the matrix **T** together define a transformation.
 >
 > The transformation for a point with position vector P is defined by
@@ -21,9 +22,9 @@ An _IfcCartesianTransformationOperator_ defines an abstract supertype of differe
 >
 
 
-> NOTE  Entity adapted from **cartesian_transformation_operator** defined in ISO10303-42.
+> NOTE Entity adapted from **cartesian_transformation_operator** defined in ISO10303-42.
 
-> HISTORY  New entity in IFC2x.
+> HISTORY New entity in IFC2x.
 
 ## Attributes
 

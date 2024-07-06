@@ -1,8 +1,9 @@
-# IfcWindowTypeEnum
-
 This enumeration defines the different predefined types of windows that can further specify an _IfcWindow_ or _IfcWindowType_.
 
-> HISTORY  New enumeration in IFC4.
+<!-- end of short definition -->
+
+
+> HISTORY New enumeration in IFC4.
 
 ## Items
 

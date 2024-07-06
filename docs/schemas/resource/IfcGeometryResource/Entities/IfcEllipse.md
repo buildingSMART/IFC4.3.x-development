@@ -1,19 +1,20 @@
-# IfcEllipse
-
 An _IfcEllipse_ is a curve consisting of a set of points whose distances to two fixed points add to the same constant.
+
+<!-- end of short definition -->
+
 
 The inherited _SELF\IfcConic.Position.Location_ is the center of the _IfcEllipse_, and the inherited _SELF\IfcConic.Position.P[1]_ is the direction of the _SemiAxis1_.
 
 ![ellipse](../../../../figures/ifcellipse-layout1.gif)
 
-Figure 1 &mdash; Ellipse placement and parameterization
+Figure 1 — Ellipse placement and parameterization
 
 Definition of the <em>IfcEllipse</em> within the a three-dimensional position coordinate system is shown in Figure 1.
 
 It is placed within the object coordinate system of an element of which it is a
 representation.
 
-> NOTE  An elliptical arc segment is defined by using the _IfcTrimmedCurve_ with _BasisCurve_ being an _IfcEllipse_.
+> NOTE An elliptical arc segment is defined by using the _IfcTrimmedCurve_ with _BasisCurve_ being an _IfcEllipse_.
 
 { .extDef}
 > REFERENCE Definition according to ISO/CD 10303-42:1992
@@ -34,7 +35,7 @@ The ellipse is parameterized as:
 
 $$ \lambda(u) = C + (R_1\cos(u))x + (R_2\sin(u))y $$
 
-The parameterization range is 0 &le; _u_ <&le; 2&pi; (0 &le; _u_ &le; 360 degree). In the placement coordinate system defined above, the ellipse is the equation _C_ = 0, where
+The parameterization range is 0 ≤ _u_ <≤ 2π (0 ≤ _u_ ≤ 360 degree). In the placement coordinate system defined above, the ellipse is the equation _C_ = 0, where
 
 $$ C(x,y,z) = \frac{x^2}{R_1^2} + \frac{y^2}{R_2^2} - 1 $$
 
@@ -42,7 +43,7 @@ The positive sense of the ellipse at any point is in the tangent direction, T, t
 
 $$ T = (-C_y,C_x,0) $$
 
-> HISTORY  New entity in IFC1.0
+> HISTORY New entity in IFC1.0
 
 ## Attributes
 

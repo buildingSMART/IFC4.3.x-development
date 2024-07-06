@@ -1,8 +1,9 @@
-# IfcSubContractResourceTypeEnum
-
 This enumeration is used to identify the primary purpose of a subcontract resource.
 
-> HISTORY  New enumeration in IFC4.
+<!-- end of short definition -->
+
+
+> HISTORY New enumeration in IFC4.
 
 ## Items
 

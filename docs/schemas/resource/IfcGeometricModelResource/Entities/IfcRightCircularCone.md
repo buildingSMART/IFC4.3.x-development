@@ -1,18 +1,19 @@
-# IfcRightCircularCone
-
 The _IfcRightCircularCone_ is a Construction Solid Geometry (CSG) 3D primitive. It is a solid with a circular base and a point called apex as the top. The tapers from the base to the top. The axis from the center of the circular base to the apex is perpendicular to the base. The inherited _Position_ attribute defines the _IfcAxis2Placement3D_ and provides the location and orientation of the cone:
 
 * _SELF\IfcCsgPrimitive3D.Position_: The location and orientation of the axis system for the primitive.
 * _SELF\IfcCsgPrimitive3D.Position.Location_: The center of the circular area being the bottom face of the cone.
 * _SELF\IfcCsgPrimitive3D.Position.Position[3]:_ The z-axis of the inherited placement coordinate system provides the center axis of the _IfcRightCircularCone_, and the apex is at the _Height_ value applied to the positive direction of the z-axis. The _BottomRadius_ defines the circular base at the xy-plane of the placement coordinate system.
 
+
+<!-- end of short definition -->
+
 Figure 1 illustrates geometric parameters of the cone. The cone is positioned within its own placement coordinate system. The origin is the center of the bottom circular disk, that lies in the XY plane. The apex lies on the positive z axis at [0, 0, _Height_].
 
-![cone1](../../../../figures/ifcrightcircularcone-layout1.png "Figure 1 &mdash; Right circular cone geometry")
+![cone1](../../../../figures/ifcrightcircularcone-layout1.png "Figure 1 — Right circular cone geometry")
 
-> NOTE  Entity adapted from **right_circular_cone** defined in ISO 10303-42.
+> NOTE Entity adapted from **right_circular_cone** defined in ISO 10303-42.
 
-> HISTORY  New entity in IFC2x3
+> HISTORY New entity in IFC2x3
 
 { .use-head}
 Texture use definition
@@ -25,14 +26,14 @@ Figure 2 illustrates default texture mapping with a clamped texture (RepeatS=Fal
 
 ![texture](../../../../figures/ifcrightcircularcone-texture.png)
 
-Figure 2 &mdash; Right circular cone textures
+Figure 2 — Right circular cone textures
 
 |Side|Normal|Origin X|Origin Y|Origin Z|S Axis|T Axis|
 |--- |--- |--- |--- |--- |--- |--- |
 |Side|+Y|0|+Radius|0|-X|(towards top point)|
 |Bottom|-Z|-Radius|+Radius|0|+X|-Y|
 
-Table 3 &mdash; Texture parameters
+Table 3 — Texture parameters
 
 ## Attributes
 

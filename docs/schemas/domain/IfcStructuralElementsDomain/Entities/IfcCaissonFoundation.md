@@ -1,6 +1,7 @@
-# IfcCaissonFoundation
-
 CaissonFoundation essentially is a hollow box that can be either open or closed.
+
+<!-- end of short definition -->
+
 
 (NOTE: corresponding predefined type is deprecated from IfcFootingTypeEnum).
 
@@ -8,7 +9,7 @@ CaissonFoundation essentially is a hollow box that can be either open or closed.
 
 ### PredefinedType
 Predefined generic type for a caisson foundation that is specified in an enumeration. There may be a property set given specifically for the predefined types.
-> NOTE  The _PredefinedType_ shall only be used, if no _IfcCaissonFoundationType_ is assigned, providing its own _IfcCaissonFoundationType.PredefinedType_.
+> NOTE The _PredefinedType_ shall only be used, if no _IfcCaissonFoundationType_ is assigned, providing its own _IfcCaissonFoundationType.PredefinedType_.
 
 ## Formal Propositions
 

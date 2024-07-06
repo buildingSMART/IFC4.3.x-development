@@ -1,10 +1,11 @@
-# IfcStairFlight
-
 A stair flight is an assembly of building components in a single "run" of stair steps (not interrupted by a landing). The stair steps and any stringers are included in the stair flight. A winder is also regarded a part of a stair flight.
+
+<!-- end of short definition -->
+
 
 An _IfcStairFlight_ is normally aggregated by an _IfcStair_ through the _IfcRelAggregates_ relationship, the stair flight is then included in the set of _IfcRelAggregates.RelatedObjects_. An _IfcStairFlight_ normally connects the floor slab of zero to two different storeys (or partial storeys, or landings) within a building. The connection relationship between the _IfcStairFlight_ and the _IfcSlab_ can be expressed using the _IfcRelConnectsElements_ relationship.
 
-> HISTORY  New entity in IFC2.0.
+> HISTORY New entity in IFC2.0.
 
 ## Attributes
 
@@ -32,7 +33,7 @@ Horizontal distance from the front to the back of the tread. The tread length is
 
 ### PredefinedType
 Predefined generic type for a stair flight that is specified in an enumeration. There may be a property set given specifically for the predefined types.
-> NOTE  The _PredefinedType_ shall only be used, if no _IfcStairFlightType_ is assigned, providing its own _IfcStairFlightType.PredefinedType_.
+> NOTE The _PredefinedType_ shall only be used, if no _IfcStairFlightType_ is assigned, providing its own _IfcStairFlightType.PredefinedType_.
 
 { .change-ifc2x4}
 > IFC4 CHANGE The attribute has been added at the end of the entity definition.
@@ -104,11 +105,11 @@ The _IfcStairFlight_, as any subtype of _IfcBuiltElement_, may participate alter
 * the _Spatial Containment_ (defined here), or
 * the _Element Composition_.
 
-> NOTE  Model view definitions or implementer agreements may force an _IfcStairFlight_ to be solely used as a part within an _IfcStair_ container. In this case, no _Spatial containment_ shall be used.
+> NOTE Model view definitions or implementer agreements may force an _IfcStairFlight_ to be solely used as a part within an _IfcStair_ container. In this case, no _Spatial containment_ shall be used.
 
 #### IfcBuildingStorey
 
-Default spatial container, if the stair  flight is not used (by default) as a part within a stair container.
+Default spatial container, if the stair flight is not used (by default) as a part within a stair container.
 
 #### IfcBuilding
 

@@ -1,8 +1,9 @@
-# IfcArbitraryClosedProfileDef
-
 The closed profile _IfcArbitraryClosedProfileDef_ defines an arbitrary two-dimensional profile for the use within the swept surface geometry, the swept area solid or a sectioned spine. It is given by an outer boundary from which the surface or solid can be constructed.
 
-> HISTORY  New entity in IFC1.5. Entity has been renamed from _IfcArbitraryProfileDef_ in IFC2x.
+<!-- end of short definition -->
+
+
+> HISTORY New entity in IFC1.5. Entity has been renamed from _IfcArbitraryProfileDef_ in IFC2x.
 
 **Informal Propositions**
 
@@ -16,7 +17,7 @@ Figure 1 illustrates the arbitrary closed profile definition. The _OuterCurve_ i
 
 or in case of sectioned spines the xy plane of each list member of _IfcSectionedSpine.CrossSectionPositions_. The _OuterCurve_ attribute defines a two dimensional closed bounded curve.
 
-![arbitrary profile without boundaries](../../../../figures/ifcarbitraryprofiledef-layout1.gif "Figure 1 &mdash; Arbitrary closed profile")
+![arbitrary profile without boundaries](../../../../figures/ifcarbitraryprofiledef-layout1.gif "Figure 1 — Arbitrary closed profile")
 
 ## Attributes
 

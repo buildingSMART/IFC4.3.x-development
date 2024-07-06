@@ -1,10 +1,11 @@
-# IfcSurfaceFeature
-
 A surface feature is a modification at (onto, or into) of the surface of an element. Parts of the surface of the entire surface may be affected. The volume and mass of the element may be increased, remain unchanged, or be decreased by the surface feature, depending on manufacturing technology. However, any increase or decrease of volume is small compared to the total volume of the element.
 
-The part&ndash;whole relationship is established by an aggregation relationship object, expressing the decomposition of an element type into one or more additive elements (element parts) and zero or more feature elements.
+<!-- end of short definition -->
 
-> HISTORY  New entity in IFC4.
+
+The part–whole relationship is established by an aggregation relationship object, expressing the decomposition of an element type into one or more additive elements (element parts) and zero or more feature elements.
+
+> HISTORY New entity in IFC4.
 
 ****Containment Use Definition****:
 
@@ -39,7 +40,7 @@ Higher-level parameters (geometric and non-geometric) may be provided by propert
 Indicates the kind of surface feature.
 
 ### AdheresToElement
-Reference to the _IfcRelAdheresToElement_ relationship that uses this _IfcSurfaceFeature_ to ahere or treat the surface of the _IfcRelAdheresToElement_.RelatingElement.
+Reference to the _IfcRelAdheresToElement_ relationship that uses this _IfcSurfaceFeature_ to adhere or treat the surface of the _IfcRelAdheresToElement_.RelatingElement.
 
 ## Formal Propositions
 
@@ -54,7 +55,7 @@ The attribute ObjectType shall be given if the predefined type is set to USERDEF
 
 #### IfcShellBasedSurfaceModel_SurfaceModel
 
-Surface representations of treated parts of the lement surface by means of IfcShellBasedSurfaceModel.  The faces within the surface model may be included into a B-Rep model within a representation map of the parent element type.
+Surface representations of treated parts of the lement surface by means of IfcShellBasedSurfaceModel. The faces within the surface model may be included into a B-Rep model within a representation map of the parent element type.
 
 ### Product Local Placement
 

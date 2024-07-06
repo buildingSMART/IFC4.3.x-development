@@ -1,8 +1,9 @@
-# IfcWorkPlan
-
 An _IfcWorkPlan_ represents work plans in a construction or a facilities management project.
 
-> HISTORY  New entity in IFC2.0
+<!-- end of short definition -->
+
+
+> HISTORY New entity in IFC2.0
 
 A work plan contains a set of work schedules for different purposes (including construction and facilities management). Contained work schedules are defined through the _IfcRelAggregates_ relationship. Through inheritance from _IfcWorkControl_ it is also possible to define references to activities (for example, _IfcTask_) and resources used in the work plan.
 
@@ -16,28 +17,28 @@ If an assigned _IfcTask_ is a root-level task, such task must be declared on the
 digraph dot_neato {
 	IfcProject[pos="0,0!"];
 	IfcRelDeclares[pos="0,-70!"];
-        IfcWorkPlan[pos="0,-140!"];
-        IfcRelAggregates[pos="-100,-210!"];
-        IfcRelAssignsToControl[pos="100,-210!"];
+  IfcWorkPlan[pos="0,-140!"];
+  IfcRelAggregates[pos="-100,-210!"];
+  IfcRelAssignsToControl[pos="100,-210!"];
 	IfcWorkSchedule[pos="-100,-280!"];
 	IfcTask[pos="100,-280!"];
 
 	IfcProject -> IfcRelDeclares [label="RelatingContext"];
-        IfcWorkPlan -> IfcRelAggregates [label="RelatingObject"]
-        IfcWorkPlan -> IfcRelAssignsToControl [label="RelatingControl"]
-        IfcRelDeclares -> IfcWorkPlan [label="RelatedDefinitions"]
+  IfcWorkPlan -> IfcRelAggregates [label="RelatingObject"]
+  IfcWorkPlan -> IfcRelAssignsToControl [label="RelatingControl"]
+  IfcRelDeclares -> IfcWorkPlan [label="RelatedDefinitions"]
 	IfcRelAggregates -> IfcWorkSchedule [label="RelatedObjects"]
 	IfcRelAssignsToControl -> IfcTask [label="RelatedObjects"]
 }
 ```
 
-Figure 1 &mdash; How projects can declare work plans, which in turn contain tasks or schedules
+Figure 1 — How projects can declare work plans, which in turn contain tasks or schedules
 
 ## Attributes
 
 ### PredefinedType
 Identifies the predefined types of a work plan from which
-    the type required may be set.
+ the type required may be set.
 
 ## Formal Propositions
 

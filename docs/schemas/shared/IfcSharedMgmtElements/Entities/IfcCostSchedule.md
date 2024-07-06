@@ -1,11 +1,12 @@
-# IfcCostSchedule
-
 An _IfcCostSchedule_ brings together instances of _IfcCostItem_ either for the purpose of identifying purely cost information as in an estimate for constructions costs or for including cost information within another presentation form such as a work order.
 
-> HISTORY  New entity in IFC2.0.
+<!-- end of short definition -->
+
+
+> HISTORY New entity in IFC2.0.
 
 { .change-ifc2x4}
-> IFC4 CHANGE  Attribute _ID_ renamed to _Identification_ and promoted to supertype _IfcControl_, _PredefinedType_ made optional, attributes _PreparedBy_, _SubmittedBy_, _TargetUsers_ removed.
+> IFC4 CHANGE Attribute _ID_ renamed to _Identification_ and promoted to supertype _IfcControl_, _PredefinedType_ made optional, attributes _PreparedBy_, _SubmittedBy_, _TargetUsers_ removed.
 
 ## Attributes
 
@@ -17,11 +18,11 @@ Predefined generic type for a cost schedule that is specified in an enumeration.
 
 ### Status
 The current status of a cost schedule. Examples of status values that might be used for a cost schedule status include:
-*  PLANNED
-*  APPROVED
-*  AGREED
-*  ISSUED
-*  STARTED
+* PLANNED
+* APPROVED
+* AGREED
+* ISSUED
+* STARTED
 
 ### SubmittedOn
 The date and time on which the cost schedule was submitted.

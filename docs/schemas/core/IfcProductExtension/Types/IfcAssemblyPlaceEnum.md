@@ -1,8 +1,9 @@
-# IfcAssemblyPlaceEnum
-
 This enumeration defines where the assembly is intended to take place, either in a factory or on the building site.
 
-> HISTORY  New enumeration in IFC2x2.
+<!-- end of short definition -->
+
+
+> HISTORY New enumeration in IFC2x2.
 
 ## Items
 

@@ -1,6 +1,7 @@
-# IfcRationalBSplineCurveWithKnots
-
 A rational B-spline curve with knots is a B-spline curve described in terms of control points and basic functions. It describes weights in addition to the control points defined at the supertype _IfcBSplineCurve_.
+
+<!-- end of short definition -->
+
 
 All weights shall be positive and the curve is given by:
 
@@ -15,9 +16,9 @@ P<sub><em>i</em></sub> | control points
 <em>w<sub>i</sub></em> | weights
 <em>d</em> | degree
 
-> NOTE  Entity adapted from **rational_b_spline_curve** in ISO 10303-42.
+> NOTE Entity adapted from **rational_b_spline_curve** in ISO 10303-42.
 
-> HISTORY  New entity in IFC4.
+> HISTORY New entity in IFC4.
 
 ## Attributes
 

@@ -1,16 +1,17 @@
-# IfcProfileDef
-
 _IfcProfileDef_ is the supertype of all definitions of standard and arbitrary profiles within IFC. It is used to define a standard set of commonly used section profiles by their parameters or by their explicit curve geometry.
+
+<!-- end of short definition -->
+
 
 * Parameterized profiles are 2D primitives, which are used within the industry to describe cross sections by a description of its parameters.
 * Arbitrary profiles are cross sections defined by an outer boundary as bounded curve, which may also include holes, defined by inner boundaries.
 * Derived profiles, based on a transformation of a parent profile, are also part of the profile definitions available.
 * In addition composite profiles can be defined, which include two or more profile definitions to define the resulting profile.
 
-> HISTORY  New entity in IFC1.5, the capabilities have been extended in IFC2x. Profiles can now support swept surfaces and swept area solids with inner boundaries. It had been renamed from IfcAttDrivenProfileDef.
+> HISTORY New entity in IFC1.5, the capabilities have been extended in IFC2x. Profiles can now support swept surfaces and swept area solids with inner boundaries. It had been renamed from IfcAttDrivenProfileDef.
 
 { .change-ifc2x4}
-> IFC4 CHANGE  Changed from ABSTRACT to non-abstract for uses which do not require an explicitly defined geometry. Added inverse attributes _HasProperties_ and _HasExternalReference_.
+> IFC4 CHANGE Changed from ABSTRACT to non-abstract for uses which do not require an explicitly defined geometry. Added inverse attributes _HasProperties_ and _HasExternalReference_.
 
 **Use in material association**
 
@@ -32,7 +33,7 @@ The purpose of the profile definition within the swept surfaces or swept area so
 
 The purpose of the profile definition within the sectioned spine is to define a varying cross sections at several positions along a spine curve. The subtype _IfcDerivedProfileDef_ is particularly suited to provide the consecutive profiles to be based on transformations of the start profile and thus maintaining the identity of vertices and edges.
 
-> NOTE  Subtypes of the _IfcProfileDef_ contain parameterized profiles (as subtypes of _IfcParameterizedProfileDef_) which establish their own 2D position coordinate system, profiles given by explicit curve geometry (either open or closed profiles) and two special types for composite profiles and derived profiles, based on a 2D Cartesian transformation.
+> NOTE Subtypes of the _IfcProfileDef_ contain parameterized profiles (as subtypes of _IfcParameterizedProfileDef_) which establish their own 2D position coordinate system, profiles given by explicit curve geometry (either open or closed profiles) and two special types for composite profiles and derived profiles, based on a 2D Cartesian transformation.
 
 An _IfcProfileDef_ is treated as bounded area if it is used within swept area solids. In this case, the inside of the profile is part of the profile. The attribute _ProfileType_ is set to AREA. An _IfcProfileDef_ is treated as a curve if it is used within swept surfaces. In this case, the inside of the profile (if the curve is closed) is not part of the profile. The attribute _ProfileType_ is set to CURVE.
 
@@ -40,7 +41,7 @@ Figure 1 and Figure 2 illustrates use of parameterized profiles within a swept a
 
 ![Example of standard profile definition](../../../../figures/ifcprofiledef-layout1.gif)
 
-Figure 1 &mdash; Example of standard profile definition
+Figure 1 — Example of standard profile definition
 
 The <em>IfcProfileDef</em> is defined within the underlying coordinate system which is defined by the swept surface or swept area solid that uses the profile definition. It is the xy plane:
 
@@ -54,9 +55,9 @@ In Figure 1 to the left, the z axis of the position coordinate system points out
 
 ![use within swept area solids](../../../../figures/ifcprofiledef-layout5.gif)
 
-Figure 2 &mdash; Use within swept area solids
+Figure 2 — Use within swept area solids
 
-In the later use of the <em>IfcProfileDef</em> within the swept surface or swept area solid,  e.g. the <em>IfcExtrudedAreaSolid</em> (here used as an example), the profile boundaries (here based on the 2D position coordinate system of <em>IfcParameterizedProfileDef</em>) are placed within the xy plane of the 3D position coordinate system of the swept surface or swept area solid.
+In the later use of the <em>IfcProfileDef</em> within the swept surface or swept area solid, e.g. the <em>IfcExtrudedAreaSolid</em> (here used as an example), the profile boundaries (here based on the 2D position coordinate system of <em>IfcParameterizedProfileDef</em>) are placed within the xy plane of the 3D position coordinate system of the swept surface or swept area solid.
 
 The profile is inserted into the underlying coordinate system either:
 
@@ -71,11 +72,11 @@ Results of the different usage of the _ProfileType_ attribute are demonstrated h
 
 ![AREA profile type without thickness](../../../../figures/ifcprofiledef-layout3.gif)
 
-Figure 3 &mdash; AREA profile type without thickness
+Figure 3 — AREA profile type without thickness
 
 ![CURVE profile type with a closed curve](../../../../figures/ifcprofiledef-layout4.gif)
 
-Figure 4 &mdash; CURVE profile type with a closed curve
+Figure 4 — CURVE profile type with a closed curve
 
 
 **Profile specification by external reference**

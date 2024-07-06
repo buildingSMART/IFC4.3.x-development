@@ -1,5 +1,6 @@
-# PEnum_AirTerminalCoreType
 
+
+<!-- end of short definition -->
 ## Items
 
 ### SHUTTERBLADE

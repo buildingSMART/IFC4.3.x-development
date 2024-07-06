@@ -1,13 +1,14 @@
-# IfcProjectOrder
-
 A project order is a directive to purchase products and/or perform work, such as for construction or facilities management.
+
+<!-- end of short definition -->
+
 
 Project orders are typically formal contracts between two organizations, where cost and time information may be rigid or flexible according to contained schedule types and constraints.
 
-> HISTORY  New entity in IFC2.0
+> HISTORY New entity in IFC2.0
 
 { .change-ifc2x4}
-> IFC4 CHANGE  Attribute _ID_ renamed to _Identification_ and promoted to supertype _IfcControl_. Attribute 'LongDescription' added.
+> IFC4 CHANGE Attribute _ID_ renamed to _Identification_ and promoted to supertype _IfcControl_. Attribute 'LongDescription' added.
 
 ## Attributes
 
@@ -42,7 +43,7 @@ Figure 313 — Project order composition
 
 #### WORKORDER_IfcCostSchedule
 
-A cost schedule may indicate costs and quantities where the cost schedule type may designate whether rates and/or quantities are estimated or final.  Such cost schedule may have assigned cost items indicating detail, where each cost item may have assigned products, processes, or resources.
+A cost schedule may indicate costs and quantities where the cost schedule type may designate whether rates and/or quantities are estimated or final. Such cost schedule may have assigned cost items indicating detail, where each cost item may have assigned products, processes, or resources.
 
 ### Approval Association
 

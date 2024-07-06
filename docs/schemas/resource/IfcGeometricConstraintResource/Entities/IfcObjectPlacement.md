@@ -1,6 +1,7 @@
-# IfcObjectPlacement
-
 _IfcObjectPlacement_ is an abstract supertype for the special types defining the object coordinate system. The _IfcObjectPlacement_ has to be provided for each product that has a shape representation.
+
+<!-- end of short definition -->
+
 
 The object placement can be given:
 
@@ -11,7 +12,7 @@ The object placement can be given:
 
 In any case the object placement has to unambiguously define the object coordinate system as either two-dimensional axis placement (_IfcAxis2Placement2D_) or three-dimensional axis placement (_IfcAxis2Placement3D_). The axis placement may have to be calculated.
 
-> HISTORY  New entity in IFC2x.
+> HISTORY New entity in IFC2x.
 
 ## Attributes
 
@@ -22,10 +23,10 @@ an object coordinate system for instances of _IfcProduct_.
 > If an _IfcObjectPlacement_ is shared by many instances of _IfcProduct_ it does not apply a semantic meaning of being a shared placement that needs to be maintained. The same instance of _IfcObjectPlacement_ could simply be used to reduce exchange file size.
 
 { .change-ifc2x3}
-> IFC2x3 CHANGE  New inverse attribute.
+> IFC2x3 CHANGE New inverse attribute.
 
 { .change-ifc2x4}
-> IFC4 CHANGE  The cardinality has changed to 0..n to allow reuse of instances of _IfcObjectPlacement_ as placement object in one to many products. It takes also into account that it can act as a placement for _IfcStructuralAnalysisModel_.
+> IFC4 CHANGE The cardinality has changed to 0..n to allow reuse of instances of _IfcObjectPlacement_ as placement object in one to many products. It takes also into account that it can act as a placement for _IfcStructuralAnalysisModel_.
 
 ### PlacementRelTo
 Reference to object placement that provides the relative placement with its placement in a grid, local coordinate system or linear referenced placement. If it is omitted, then in the case of linear placement it is established by the origin of horizontal alignment of the referenced IfcAlignment Axis. In the case of local placement it is established by the geometric representation context.

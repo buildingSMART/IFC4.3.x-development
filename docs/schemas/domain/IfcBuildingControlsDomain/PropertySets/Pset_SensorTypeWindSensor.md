@@ -1,3 +1,4 @@
-# Pset_SensorTypeWindSensor
+A device that senses or detects wind speed and direction.
 
-A device that senses or detects wind speed and direction. HISTORY: Added in IFC4.
+<!-- end of short definition -->
+ HISTORY: Added in IFC4.

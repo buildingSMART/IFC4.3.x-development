@@ -1,8 +1,9 @@
-# IfcEvaporativeCooler
-
 An evaporative cooler is a device that cools air by saturating it with water vapor.
 
-> HISTORY  New entity in IFC4
+<!-- end of short definition -->
+
+
+> HISTORY New entity in IFC4
 
 { .note}
 >

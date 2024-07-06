@@ -1,6 +1,7 @@
-# IfcConstraint
-
 An _IfcConstraint_ is used to define a constraint or limiting value or boundary condition that may be applied to an object or to the value of a property.
+
+<!-- end of short definition -->
+
 
 Constraints may be subdivided into user-defined constraints and system-defined constraints. User-defined constraints are applied by a user and are restricted to high-level definitions such as object properties. System-defined constraints may apply to any object attribute, are typically defined by an application to enforce data validation or parametric behavior, and are intended to be enforced by applications but not to be directly editable by an end-user.
 
@@ -10,10 +11,10 @@ A constraint must have a name applied through the _IfcConstraint.Name_ attribute
 
 A constraint may also have additional external information (such as classification or document information) associated to it by _IfcExternalReferenceRelationship_, accessible through inverse attribute _IfcConstraint.HasExternalReferences_
 
-> HISTORY  New entity in IFC2.0
+> HISTORY New entity in IFC2.0
 
 { .change-ifc2x4}
-> IFC4 CHANGE  CreationTime changed to IfcDateTime for ISO 8601 representation, HasExternalReferences new inverse attribute.
+> IFC4 CHANGE CreationTime changed to IfcDateTime for ISO 8601 representation, HasExternalReferences new inverse attribute.
 
 ## Attributes
 
@@ -36,7 +37,7 @@ Person and/or organization that has created the constraint.
 Time when information specifying the constraint instance was created.
 
 ### UserDefinedGrade
-Allows for specification of user defined grade of the constraint  beyond the enumeration values (hard, soft, advisory) provided by ConstraintGrade attribute of type _IfcConstraintEnum_.
+Allows for specification of user defined grade of the constraint beyond the enumeration values (hard, soft, advisory) provided by ConstraintGrade attribute of type _IfcConstraintEnum_.
 When a value is provided for attribute UserDefinedGrade in parallel the attribute ConstraintGrade shall have enumeration value USERDEFINED.
 
 ### HasExternalReferences

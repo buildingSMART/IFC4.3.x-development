@@ -1,8 +1,9 @@
-# IfcRelConnectsStructuralMember
-
 The entity _IfcRelConnectsStructuralMember_ defines all needed properties describing the connection between structural members and structural connection objects (nodes or supports).
 
-> HISTORY  New entity in IFC2x2.
+<!-- end of short definition -->
+
+
+> HISTORY New entity in IFC2x2.
 
 **Use Definition**
 
@@ -25,7 +26,7 @@ Figure 1 illustrates the appropriate definition of support lengths.
 
 ![supported length](../../../../figures/ifcrelconnectsstructuralmember-fig1.gif)
 
-Figure 1 &mdash; Structural member support lengths
+Figure 1 — Structural member support lengths
 
 ## Attributes
 
@@ -36,7 +37,7 @@ Reference to an instance of IfcStructuralMember (or its subclasses) which is con
 Reference to an instance of IfcStructuralConnection (or its subclasses) which is connected to the specified structural member.
 
 ### AppliedCondition
-Conditions which define the connections properties.  Connection conditions are often called "release" but are not only used to define mechanisms like hinges but also rigid, elastic, and other conditions.
+Conditions which define the connections properties. Connection conditions are often called "release" but are not only used to define mechanisms like hinges but also rigid, elastic, and other conditions.
 
 ### AdditionalConditions
 Describes additional connection properties.
@@ -45,4 +46,4 @@ Describes additional connection properties.
 Defines the 'supported length' of this structural connection. See Fig. for more detail.
 
 ### ConditionCoordinateSystem
-Defines a coordinate system used for the description of the connection properties in _ConnectionCondition_ relative to the local coordinate system of _RelatingStructuralMember_.  If left unspecified, the placement _IfcAxis2Placement3D_((x,y,z), ?, ?) is implied with x,y,z being the local member coordinates where the connection is made and the default axes directions being in parallel with the local axes of _RelatingStructuralMember_.
+Defines a coordinate system used for the description of the connection properties in _ConnectionCondition_ relative to the local coordinate system of _RelatingStructuralMember_. If left unspecified, the placement _IfcAxis2Placement3D_((x,y,z), ?, ?) is implied with x,y,z being the local member coordinates where the connection is made and the default axes directions being in parallel with the local axes of _RelatingStructuralMember_.

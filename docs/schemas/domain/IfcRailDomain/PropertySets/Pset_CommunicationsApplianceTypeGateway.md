@@ -1,4 +1,3 @@
-Properties common to a gateway. This property set is applied to a type or occurrence of _IfcCommunicationsAppliance_ with predefined type of GATEWAY.
+# Pset_CommunicationsApplianceTypeGateway
 
-<!-- end of short definition -->
-
+Properties common to a gateway. This property set is applied to a type or occurrence of _IfcCommunicationsAppliance_ with predefined type of GATEWAY.<!-- end of definition -->

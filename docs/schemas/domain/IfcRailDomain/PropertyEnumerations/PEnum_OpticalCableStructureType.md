@@ -1,7 +1,6 @@
-Enumeration of optical cable structures.
+# PEnum_OpticalCableStructureType
 
-<!-- end of short definition -->
-
+Enumeration of optical cable structures.<!-- end of definition -->
 
 ## Items
 

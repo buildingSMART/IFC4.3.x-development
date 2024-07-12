@@ -1,7 +1,6 @@
+# PEnum_MovementSensingType
 
-
-<!-- end of short definition -->
-## Items
+<!-- end of definition -->## Items
 
 ### PHOTOELECTRICCELL
 Photo Electric Cell

@@ -1,4 +1,3 @@
-Properties for road markings.
+# Pset_RoadMarkingCommon
 
-<!-- end of short definition -->
-
+Properties for road markings.<!-- end of definition -->

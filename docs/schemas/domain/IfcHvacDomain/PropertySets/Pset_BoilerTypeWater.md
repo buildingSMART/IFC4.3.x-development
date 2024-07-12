@@ -1,7 +1,6 @@
-Water boiler type common attributes.
+# Pset_BoilerTypeWater
 
-<!-- end of short definition -->
-
+Water boiler type common attributes.<!-- end of definition -->
 
 
 ## Comments

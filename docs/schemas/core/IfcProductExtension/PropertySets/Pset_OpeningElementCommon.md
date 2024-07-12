@@ -1,7 +1,6 @@
-Properties common to the definition of all instances of IfcOpeningElement.
+# Pset_OpeningElementCommon
 
-<!-- end of short definition -->
-
+Properties common to the definition of all instances of IfcOpeningElement.<!-- end of definition -->
 
 
 ## Comments

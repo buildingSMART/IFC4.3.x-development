@@ -1,7 +1,6 @@
-This entity represents an address to which telephone, electronic mail and other forms of telecommunications should be addressed.
+# IfcTelecomAddress
 
-<!-- end of short definition -->
-
+This entity represents an address to which telephone, electronic mail and other forms of telecommunications should be addressed.<!-- end of definition -->
 
 > HISTORY New entity in IFC2x.
 

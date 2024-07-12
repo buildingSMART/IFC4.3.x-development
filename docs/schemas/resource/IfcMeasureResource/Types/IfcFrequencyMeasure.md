@@ -1,7 +1,6 @@
-_IfcFrequencyMeasure_ is a measure of the number of times that an item vibrates in unit time.
+# IfcFrequencyMeasure
 
-<!-- end of short definition -->
-
+_IfcFrequencyMeasure_ is a measure of the number of times that an item vibrates in unit time.<!-- end of definition -->
 
 Usually measured in cycles/s or Hertz (Hz).
 

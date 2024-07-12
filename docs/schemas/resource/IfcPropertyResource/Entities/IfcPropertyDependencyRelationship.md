@@ -1,7 +1,6 @@
-An _IfcPropertyDependencyRelationship_ describes an identified dependency between the value of one property and that of another.
+# IfcPropertyDependencyRelationship
 
-<!-- end of short definition -->
-
+An _IfcPropertyDependencyRelationship_ describes an identified dependency between the value of one property and that of another.<!-- end of definition -->
 
 > HISTORY New entity in IFC2x2
 

@@ -1,4 +1,3 @@
-Adjustment switch panel properties used in railway. The property set can be used by the predefined type DILATATION_PANEL of IfcElementAssembly.
+# Pset_ElementAssemblyTypeDilatationPanel
 
-<!-- end of short definition -->
-
+Adjustment switch panel properties used in railway. The property set can be used by the predefined type DILATATION_PANEL of IfcElementAssembly.<!-- end of definition -->

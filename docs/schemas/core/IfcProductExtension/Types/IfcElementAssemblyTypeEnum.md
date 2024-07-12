@@ -1,7 +1,6 @@
-This enumeration defines the basic configuration types for element assemblies.
+# IfcElementAssemblyTypeEnum
 
-<!-- end of short definition -->
-
+This enumeration defines the basic configuration types for element assemblies.<!-- end of definition -->
 
 > HISTORY New enumeration in IFC2x2.
 

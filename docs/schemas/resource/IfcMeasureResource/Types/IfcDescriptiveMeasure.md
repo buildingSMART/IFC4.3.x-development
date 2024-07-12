@@ -1,7 +1,6 @@
-A descriptive measure is a human interpretable definition of a quantifiable value. The mode of interpretation has to be established for the exchange context.
+# IfcDescriptiveMeasure
 
-<!-- end of short definition -->
-
+A descriptive measure is a human interpretable definition of a quantifiable value. The mode of interpretation has to be established for the exchange context.<!-- end of definition -->
 
 Type: STRING
 

@@ -1,7 +1,6 @@
-An electric flow treatment device is used to remove unwanted matter from an electric or electronic signal in a flow distribution system.
+# IfcElectricFlowTreatmentDevice
 
-<!-- end of short definition -->
-
+An electric flow treatment device is used to remove unwanted matter from an electric or electronic signal in a flow distribution system.<!-- end of definition -->
 
 ## Attributes
 

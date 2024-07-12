@@ -1,7 +1,6 @@
-The _IfcTriangulatedIrregularNetwork_ is a triangulated face set for representing horizontal surfaces (one unique Z coordinate for all X and Y coordinates within domain) with additional flags for each face indicating breaklines between faces or designation as a hole or void. Triangles shall be defined with vertices in counterclockwise order as viewing from above (following right-hand rule).
+# IfcTriangulatedIrregularNetwork
 
-<!-- end of short definition -->
-
+The _IfcTriangulatedIrregularNetwork_ is a triangulated face set for representing horizontal surfaces (one unique Z coordinate for all X and Y coordinates within domain) with additional flags for each face indicating breaklines between faces or designation as a hole or void. Triangles shall be defined with vertices in counterclockwise order as viewing from above (following right-hand rule).<!-- end of definition -->
 
 For visualization, applications should not display faces where flags are set as negative (either a hole, void, or possible future extension).
 

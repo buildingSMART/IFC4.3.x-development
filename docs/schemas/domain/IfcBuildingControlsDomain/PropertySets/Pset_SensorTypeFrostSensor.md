@@ -1,4 +1,3 @@
-A device that senses or detects the presence of frost.
+# Pset_SensorTypeFrostSensor
 
-<!-- end of short definition -->
-
+A device that senses or detects the presence of frost.<!-- end of definition -->

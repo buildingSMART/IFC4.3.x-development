@@ -1,4 +1,3 @@
-Properties that are applicable for IfcSensor with predefined type FOREIGNOBJECTDETECTIONSENSOR.
+# Pset_SensorTypeForeignObjectDetectionSensor
 
-<!-- end of short definition -->
-
+Properties that are applicable for IfcSensor with predefined type FOREIGNOBJECTDETECTIONSENSOR.<!-- end of definition -->

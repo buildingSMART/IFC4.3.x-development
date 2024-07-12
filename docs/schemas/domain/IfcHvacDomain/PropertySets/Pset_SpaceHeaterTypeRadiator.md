@@ -1,4 +1,3 @@
-Space heater type radiator attributes.
+# Pset_SpaceHeaterTypeRadiator
 
-<!-- end of short definition -->
-
+Space heater type radiator attributes.<!-- end of definition -->

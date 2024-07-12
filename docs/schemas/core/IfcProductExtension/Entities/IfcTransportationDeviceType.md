@@ -1,4 +1,3 @@
-Types of Transportation Devices.
+# IfcTransportationDeviceType
 
-<!-- end of short definition -->
-
+Types of Transportation Devices.<!-- end of definition -->

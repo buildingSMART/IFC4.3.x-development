@@ -1,4 +1,3 @@
-Property set for the application of energy requirements to facility and physical elements
+# Pset_EnergyRequirements
 
-<!-- end of short definition -->
-
+Property set for the application of energy requirements to facility and physical elements<!-- end of definition -->

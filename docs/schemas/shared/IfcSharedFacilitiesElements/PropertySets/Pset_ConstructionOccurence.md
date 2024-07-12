@@ -1,4 +1,3 @@
-Property set for construction occurrence.
+# Pset_ConstructionOccurence
 
-<!-- end of short definition -->
-
+Property set for construction occurrence.<!-- end of definition -->

@@ -1,7 +1,6 @@
-A cable carrier segment is a flow segment that is specifically used to carry and support cabling.
+# IfcCableCarrierSegment
 
-<!-- end of short definition -->
-
+A cable carrier segment is a flow segment that is specifically used to carry and support cabling.<!-- end of definition -->
 
 > HISTORY New entity in IFC4
 

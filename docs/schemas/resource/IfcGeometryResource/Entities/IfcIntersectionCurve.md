@@ -1,7 +1,6 @@
-An _IfcIntersectionCurve_ is a 3-dimensional curve that has two additional representations provided by two pcurves defined within two distinct and intersecting surfaces.
+# IfcIntersectionCurve
 
-<!-- end of short definition -->
-
+An _IfcIntersectionCurve_ is a 3-dimensional curve that has two additional representations provided by two pcurves defined within two distinct and intersecting surfaces.<!-- end of definition -->
 
 { .extDef}
 > NOTE Definition according to ISO/CD 10303-42:1992

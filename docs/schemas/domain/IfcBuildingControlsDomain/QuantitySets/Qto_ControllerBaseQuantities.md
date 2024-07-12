@@ -1,4 +1,3 @@
-Base quantities that are common to the definition of all occurrences of controller.
+# Qto_ControllerBaseQuantities
 
-<!-- end of short definition -->
-
+Base quantities that are common to the definition of all occurrences of controller.<!-- end of definition -->

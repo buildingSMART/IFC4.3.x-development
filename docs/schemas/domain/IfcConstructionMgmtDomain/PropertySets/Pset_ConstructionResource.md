@@ -1,4 +1,3 @@
-Properties for tracking resource usage over time.
+# Pset_ConstructionResource
 
-<!-- end of short definition -->
-
+Properties for tracking resource usage over time.<!-- end of definition -->

@@ -1,7 +1,6 @@
+# PEnum_CooledBeamActiveAirFlowConfigurationType
 
-
-<!-- end of short definition -->
-## Items
+<!-- end of definition -->## Items
 
 ### BIDIRECTIONAL
 Bidirectional

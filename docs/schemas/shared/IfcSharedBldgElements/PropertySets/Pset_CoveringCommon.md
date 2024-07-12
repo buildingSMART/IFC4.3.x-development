@@ -1,4 +1,3 @@
-Properties common to the definition of all occurrence and type objects of covering
+# Pset_CoveringCommon
 
-<!-- end of short definition -->
-
+Properties common to the definition of all occurrence and type objects of covering<!-- end of definition -->

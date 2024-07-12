@@ -1,4 +1,3 @@
-Properties in this property set are generally applicable slabs used in railway tracks, modelled as IfcSlab with PredefinedType TRACKSLAB.
+# Pset_SlabTypeTrackSlab
 
-<!-- end of short definition -->
-
+Properties in this property set are generally applicable slabs used in railway tracks, modelled as IfcSlab with PredefinedType TRACKSLAB.<!-- end of definition -->

@@ -1,4 +1,3 @@
-Heat exchanger type common attributes.
+# Pset_HeatExchangerTypeCommon
 
-<!-- end of short definition -->
-
+Heat exchanger type common attributes.<!-- end of definition -->

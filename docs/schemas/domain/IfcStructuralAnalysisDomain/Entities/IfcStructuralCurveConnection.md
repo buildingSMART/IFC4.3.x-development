@@ -1,7 +1,6 @@
-Instances of _IfcStructuralCurveConnection_ describe edge 'nodes', i.e. edges where two or more surface members are joined, or edge supports. Edge curves may be straight or curved.
+# IfcStructuralCurveConnection
 
-<!-- end of short definition -->
-
+Instances of _IfcStructuralCurveConnection_ describe edge 'nodes', i.e. edges where two or more surface members are joined, or edge supports. Edge curves may be straight or curved.<!-- end of definition -->
 
 > HISTORY New entity in IFC2x2.
 

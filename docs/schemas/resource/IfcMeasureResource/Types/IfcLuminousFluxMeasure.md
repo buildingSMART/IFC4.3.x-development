@@ -1,7 +1,6 @@
-_IfcLuminousFluxMeasure_ is a measure of the luminous flux.
+# IfcLuminousFluxMeasure
 
-<!-- end of short definition -->
-
+_IfcLuminousFluxMeasure_ is a measure of the luminous flux.<!-- end of definition -->
 
 Usually measured in Lumen (lm, Candela Steradian).
 

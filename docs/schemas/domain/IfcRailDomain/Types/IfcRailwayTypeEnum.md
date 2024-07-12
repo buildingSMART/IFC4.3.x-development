@@ -1,7 +1,6 @@
-Types of railways.
+# IfcRailwayTypeEnum
 
-<!-- end of short definition -->
-
+Types of railways.<!-- end of definition -->
 
 ## Items
 

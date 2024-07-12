@@ -1,7 +1,6 @@
-_IfcAsymmetricIShapeProfileDef_ defines a section profile that provides the defining parameters of a singly symmetric I-shaped section. Its parameters and orientation relative to the position coordinate system are according to the following illustration. The centre of the position coordinate system is in the profile's centre of the bounding box.
+# IfcAsymmetricIShapeProfileDef
 
-<!-- end of short definition -->
-
+_IfcAsymmetricIShapeProfileDef_ defines a section profile that provides the defining parameters of a singly symmetric I-shaped section. Its parameters and orientation relative to the position coordinate system are according to the following illustration. The centre of the position coordinate system is in the profile's centre of the bounding box.<!-- end of definition -->
 
 The overall width of the profile is implicitly given by the maximum of the bottom flange width and the top flange width.
 

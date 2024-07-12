@@ -1,7 +1,6 @@
-This enumeration identifies different types of air terminal boxes.
+# IfcAirTerminalBoxTypeEnum
 
-<!-- end of short definition -->
-
+This enumeration identifies different types of air terminal boxes.<!-- end of definition -->
 
 > HISTORY New enumeration in IFC2.0.
 

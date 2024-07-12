@@ -1,7 +1,6 @@
-Humidifier type common attributes.
+# Pset_HumidifierTypeCommon
 
-<!-- end of short definition -->
-
+Humidifier type common attributes.<!-- end of definition -->
 WaterProperties attribute renamed to WaterRequirement and unit type modified in IFC2x2 Pset Addendum.
 
 

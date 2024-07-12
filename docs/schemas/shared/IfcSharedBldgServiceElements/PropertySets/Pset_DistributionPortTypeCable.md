@@ -1,4 +1,3 @@
-Cable port occurrence attributes attached to an instance of IfcDistributionPort.
+# Pset_DistributionPortTypeCable
 
-<!-- end of short definition -->
-
+Cable port occurrence attributes attached to an instance of IfcDistributionPort.<!-- end of definition -->

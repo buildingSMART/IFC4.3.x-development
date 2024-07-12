@@ -1,4 +1,3 @@
-Property set for the application of energy emissions produced by facility and physical elements.
+# Pset_EnvironmentalEmissions
 
-<!-- end of short definition -->
-
+Property set for the application of energy emissions produced by facility and physical elements.<!-- end of definition -->

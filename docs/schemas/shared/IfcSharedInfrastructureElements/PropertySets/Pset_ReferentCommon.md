@@ -1,4 +1,3 @@
-Specifies common properties for _IfcReferent_
+# Pset_ReferentCommon
 
-<!-- end of short definition -->
-
+Specifies common properties for _IfcReferent_<!-- end of definition -->

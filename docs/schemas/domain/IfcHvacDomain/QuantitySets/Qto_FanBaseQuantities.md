@@ -1,4 +1,3 @@
-Base quantities that are common to the definition of all types of fans.
+# Qto_FanBaseQuantities
 
-<!-- end of short definition -->
-
+Base quantities that are common to the definition of all types of fans.<!-- end of definition -->

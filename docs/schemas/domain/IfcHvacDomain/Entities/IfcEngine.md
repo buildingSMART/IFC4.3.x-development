@@ -1,7 +1,6 @@
-An engine is a device that converts fuel into mechanical energy through combustion.
+# IfcEngine
 
-<!-- end of short definition -->
-
+An engine is a device that converts fuel into mechanical energy through combustion.<!-- end of definition -->
 
 > HISTORY New entity in IFC4
 

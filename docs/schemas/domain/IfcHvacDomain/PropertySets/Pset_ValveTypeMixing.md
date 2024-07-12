@@ -1,7 +1,6 @@
-A valve where typically the temperature of the outlet is determined by mixing hot and cold water inlet flows.
+# Pset_ValveTypeMixing
 
-<!-- end of short definition -->
-
+A valve where typically the temperature of the outlet is determined by mixing hot and cold water inlet flows.<!-- end of definition -->
 
 
 ## Comments

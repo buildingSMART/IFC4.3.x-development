@@ -1,7 +1,6 @@
+# PEnum_FanMotorConnectionType
 
-
-<!-- end of short definition -->
-## Items
+<!-- end of definition -->## Items
 
 ### DIRECTDRIVE
 Direct drive

@@ -1,4 +1,3 @@
-Common attributes of a pressure vessel.
+# Pset_TankTypePressureVessel
 
-<!-- end of short definition -->
-
+Common attributes of a pressure vessel.<!-- end of definition -->

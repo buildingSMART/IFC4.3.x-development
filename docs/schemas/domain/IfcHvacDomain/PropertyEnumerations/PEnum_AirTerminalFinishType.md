@@ -1,7 +1,6 @@
+# PEnum_AirTerminalFinishType
 
-
-<!-- end of short definition -->
-## Items
+<!-- end of definition -->## Items
 
 ### ANNODIZED
 Annodized

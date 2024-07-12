@@ -1,4 +1,3 @@
-Properties of rail pads. The property set can be used by the predefined type RAILPAD of IfcDiscreteAccessory.
+# Pset_DiscreteAccessoryTypeRailPad
 
-<!-- end of short definition -->
-
+Properties of rail pads. The property set can be used by the predefined type RAILPAD of IfcDiscreteAccessory.<!-- end of definition -->

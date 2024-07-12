@@ -1,7 +1,6 @@
-The _IfcOutletTypeEnum_ defines the range of different types of outlet that can be specified.
+# IfcOutletTypeEnum
 
-<!-- end of short definition -->
-
+The _IfcOutletTypeEnum_ defines the range of different types of outlet that can be specified.<!-- end of definition -->
 
 > HISTORY New type in IFC2x.
 

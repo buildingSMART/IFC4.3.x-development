@@ -1,4 +1,3 @@
-Properties describing the features of a borehole (if not modelled separately).
+# Pset_BoreholeCommon
 
-<!-- end of short definition -->
-
+Properties describing the features of a borehole (if not modelled separately).<!-- end of definition -->

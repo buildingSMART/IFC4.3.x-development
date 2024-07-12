@@ -1,7 +1,6 @@
-This enumeration defines the basic ways to describe the location of a door panel within a door lining.
+# IfcDoorPanelPositionEnum
 
-<!-- end of short definition -->
-
+This enumeration defines the basic ways to describe the location of a door panel within a door lining.<!-- end of definition -->
 
 > HISTORY New Enumeration in IFC2x
 

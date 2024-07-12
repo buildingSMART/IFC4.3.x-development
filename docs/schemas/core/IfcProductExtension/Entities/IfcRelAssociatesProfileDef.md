@@ -1,7 +1,6 @@
-Associates Objects with a profile definition.
+# IfcRelAssociatesProfileDef
 
-<!-- end of short definition -->
-
+Associates Objects with a profile definition.<!-- end of definition -->
 
 > EXAMPLE It can be used to associate an _IfcReferent_ of type *SuperelevationEvent* or *WidthEvent* to a particular cross section defined as _IfcOpenCrossProfileDef_.
 

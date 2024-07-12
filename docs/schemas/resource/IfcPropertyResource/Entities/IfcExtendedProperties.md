@@ -1,7 +1,6 @@
-The _IfcExtendedProperties_ is an abstract supertype of all extensible property collections that are applicable to certain characterized entities. Instantiable subtypes of _IfcExtendedProperties_ assign the property collection to a particular characterized entity.
+# IfcExtendedProperties
 
-<!-- end of short definition -->
-
+The _IfcExtendedProperties_ is an abstract supertype of all extensible property collections that are applicable to certain characterized entities. Instantiable subtypes of _IfcExtendedProperties_ assign the property collection to a particular characterized entity.<!-- end of definition -->
 
 > NOTE Extensible property collections are provided for materials and profiles.
 

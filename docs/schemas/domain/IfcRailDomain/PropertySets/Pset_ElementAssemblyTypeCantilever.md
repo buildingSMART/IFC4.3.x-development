@@ -1,4 +1,3 @@
-Energy cantilever properties used in railway. The property set can be used by the predefined type SUSPENSION_ASSEMBLY of IfcElementAssembly.
+# Pset_ElementAssemblyTypeCantilever
 
-<!-- end of short definition -->
-
+Energy cantilever properties used in railway. The property set can be used by the predefined type SUSPENSION_ASSEMBLY of IfcElementAssembly.<!-- end of definition -->

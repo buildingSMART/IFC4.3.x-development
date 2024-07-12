@@ -1,7 +1,6 @@
-_IfcValue_ is a select type for selecting between more specialised select types _IfcSimpleValue_, _IfcMeasureValue_ and _IfcDerivedMeasureValue_.
+# IfcValue
 
-<!-- end of short definition -->
-
+_IfcValue_ is a select type for selecting between more specialised select types _IfcSimpleValue_, _IfcMeasureValue_ and _IfcDerivedMeasureValue_.<!-- end of definition -->
 
 SELECT
 

@@ -1,4 +1,3 @@
-A type of built element created by earthwork activities to build subgrade, to raise the level of the ground in general or reinforce or stabilize soil by some mechanical or chemical method.
+# IfcEarthworksElement
 
-<!-- end of short definition -->
-
+A type of built element created by earthwork activities to build subgrade, to raise the level of the ground in general or reinforce or stabilize soil by some mechanical or chemical method.<!-- end of definition -->

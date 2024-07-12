@@ -1,7 +1,6 @@
-Enumeration defining the functional type of unitary equipment.
+# IfcUnitaryEquipmentTypeEnum
 
-<!-- end of short definition -->
-
+Enumeration defining the functional type of unitary equipment.<!-- end of definition -->
 
 > HISTORY New enumeration in IFC2x. DEHUMIDIFIER added in IFC4.
 

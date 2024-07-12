@@ -1,4 +1,3 @@
-Set of common properties of component elements (especially discrete accessories, but also fasteners, reinforcement elements, or other types of components).
+# Pset_ElementComponentCommon
 
-<!-- end of short definition -->
-
+Set of common properties of component elements (especially discrete accessories, but also fasteners, reinforcement elements, or other types of components).<!-- end of definition -->

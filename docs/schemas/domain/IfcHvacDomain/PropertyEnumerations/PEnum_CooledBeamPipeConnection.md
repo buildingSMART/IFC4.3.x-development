@@ -1,7 +1,6 @@
+# PEnum_CooledBeamPipeConnection
 
-
-<!-- end of short definition -->
-## Items
+<!-- end of definition -->## Items
 
 ### STRAIGHT
 Straight

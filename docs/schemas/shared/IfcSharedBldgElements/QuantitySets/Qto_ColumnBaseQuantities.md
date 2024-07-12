@@ -1,7 +1,6 @@
-Base quantities that are common to the definition of all occurrences of columns.
+# Qto_ColumnBaseQuantities
 
-<!-- end of short definition -->
-
+Base quantities that are common to the definition of all occurrences of columns.<!-- end of definition -->
 
 
 ## Comments

@@ -1,4 +1,3 @@
-Properties for a pavement surface.
+# Pset_PavementSurfaceCommon
 
-<!-- end of short definition -->
-
+Properties for a pavement surface.<!-- end of definition -->

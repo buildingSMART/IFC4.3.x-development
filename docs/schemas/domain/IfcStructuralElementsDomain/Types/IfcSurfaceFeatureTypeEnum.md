@@ -1,7 +1,6 @@
-This enumeration indicates the type of a surface feature.
+# IfcSurfaceFeatureTypeEnum
 
-<!-- end of short definition -->
-
+This enumeration indicates the type of a surface feature.<!-- end of definition -->
 
 > HISTORY New type in IFC4.
 

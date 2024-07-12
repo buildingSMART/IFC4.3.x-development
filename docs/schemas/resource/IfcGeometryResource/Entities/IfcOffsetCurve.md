@@ -1,7 +1,6 @@
-An _IfcOffsetCurve_ is an abstract entity describing a curve that is defined relative to another curve according to an offset that may be constant or variable along the referenced curve.
+# IfcOffsetCurve
 
-<!-- end of short definition -->
-
+An _IfcOffsetCurve_ is an abstract entity describing a curve that is defined relative to another curve according to an offset that may be constant or variable along the referenced curve.<!-- end of definition -->
 
 ## Attributes
 

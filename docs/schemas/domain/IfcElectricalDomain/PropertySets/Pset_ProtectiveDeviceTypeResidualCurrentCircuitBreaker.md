@@ -1,7 +1,6 @@
-A residual current circuit breaker opens, closes or isolates a circuit and has short circuit and overload protection.
+# Pset_ProtectiveDeviceTypeResidualCurrentCircuitBreaker
 
-<!-- end of short definition -->
-
+A residual current circuit breaker opens, closes or isolates a circuit and has short circuit and overload protection.<!-- end of definition -->
 
 
 ## Comments

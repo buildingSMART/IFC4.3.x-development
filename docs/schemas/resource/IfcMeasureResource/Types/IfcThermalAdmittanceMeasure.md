@@ -1,7 +1,6 @@
-_IfcThermalAdmittanceMeasure_ is the measure of the ability of a surface to smooth out temperature variations.
+# IfcThermalAdmittanceMeasure
 
-<!-- end of short definition -->
-
+_IfcThermalAdmittanceMeasure_ is the measure of the ability of a surface to smooth out temperature variations.<!-- end of definition -->
 
 Usually measured in Watt / m2 Kelvin.
 

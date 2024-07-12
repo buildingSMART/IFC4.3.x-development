@@ -1,4 +1,3 @@
-Base quantities that are common to the definition of all occurrences of flow instrument.
+# Qto_FlowInstrumentBaseQuantities
 
-<!-- end of short definition -->
-
+Base quantities that are common to the definition of all occurrences of flow instrument.<!-- end of definition -->

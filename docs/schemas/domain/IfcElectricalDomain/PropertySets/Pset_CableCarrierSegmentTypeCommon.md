@@ -1,4 +1,3 @@
-Common properties for cable carrier segments.
+# Pset_CableCarrierSegmentTypeCommon
 
-<!-- end of short definition -->
- HISTORY: Added in IFC4.
+Common properties for cable carrier segments.<!-- end of definition --> HISTORY: Added in IFC4.

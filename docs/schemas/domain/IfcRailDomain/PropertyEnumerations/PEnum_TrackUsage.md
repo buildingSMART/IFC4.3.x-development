@@ -1,7 +1,6 @@
-Enumeration of track usages.
+# PEnum_TrackUsage
 
-<!-- end of short definition -->
-
+Enumeration of track usages.<!-- end of definition -->
 
 ## Items
 

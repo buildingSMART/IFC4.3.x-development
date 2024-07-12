@@ -1,4 +1,3 @@
-Properties common to the definition of design criteria of all occurrences of IfcMarineFacility with the predefined type set to SHIPLOCK.
+# Pset_ShiplockDesignCriteria
 
-<!-- end of short definition -->
-
+Properties common to the definition of design criteria of all occurrences of IfcMarineFacility with the predefined type set to SHIPLOCK.<!-- end of definition -->

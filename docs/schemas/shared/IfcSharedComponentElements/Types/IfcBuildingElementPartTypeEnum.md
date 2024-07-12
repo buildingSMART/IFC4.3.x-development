@@ -1,7 +1,6 @@
-This enumeration defines the different types of building element parts.
+# IfcBuildingElementPartTypeEnum
 
-<!-- end of short definition -->
-
+This enumeration defines the different types of building element parts.<!-- end of definition -->
 
 > HISTORY New enumeration in IFC4.
 

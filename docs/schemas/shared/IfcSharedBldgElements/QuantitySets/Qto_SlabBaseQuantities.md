@@ -1,7 +1,6 @@
-Base quantities that are common to the definition of all occurrences of slabs.
+# Qto_SlabBaseQuantities
 
-<!-- end of short definition -->
-
+Base quantities that are common to the definition of all occurrences of slabs.<!-- end of definition -->
 
 
 ## Comments

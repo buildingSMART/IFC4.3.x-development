@@ -1,4 +1,3 @@
-Unitary control element type indicator panel attributes.
+# Pset_UnitaryControlElementTypeIndicatorPanel
 
-<!-- end of short definition -->
- HISTORY: Added in IFC4.
+Unitary control element type indicator panel attributes.<!-- end of definition --> HISTORY: Added in IFC4.

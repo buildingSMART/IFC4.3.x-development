@@ -1,7 +1,6 @@
-A device that hydraulically actuates a control element.
+# Pset_ActuatorTypeHydraulicActuator
 
-<!-- end of short definition -->
-
+A device that hydraulically actuates a control element.<!-- end of definition -->
 
 
 ## Comments

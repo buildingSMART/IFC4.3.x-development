@@ -1,7 +1,6 @@
-The rotational mass measure denotes the inertia of a body with respect to angular acceleration.
+# IfcRotationalMassMeasure
 
-<!-- end of short definition -->
-
+The rotational mass measure denotes the inertia of a body with respect to angular acceleration.<!-- end of definition -->
 
 It is usually measured in kg\*m\^2.
 

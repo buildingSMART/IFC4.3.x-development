@@ -1,7 +1,6 @@
-Quantity measures associated to a linear stratum such as in a borehole. Uncertainty is documented in _Pset_Uncertainty_.
+# Qto_LinearStratumBaseQuantities
 
-<!-- end of short definition -->
-
+Quantity measures associated to a linear stratum such as in a borehole. Uncertainty is documented in _Pset_Uncertainty_.<!-- end of definition -->
 
 
 ## Comments

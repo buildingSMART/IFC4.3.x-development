@@ -1,7 +1,6 @@
+# PEnum_TankPatternType
 
-
-<!-- end of short definition -->
-## Items
+<!-- end of definition -->## Items
 
 ### HORIZONTALCYLINDER
 Horizontal Cylinder

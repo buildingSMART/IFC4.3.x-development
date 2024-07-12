@@ -1,7 +1,6 @@
-This enumeration defines the flow direction at a distribution port.
+# IfcFlowDirectionEnum
 
-<!-- end of short definition -->
-
+This enumeration defines the flow direction at a distribution port.<!-- end of definition -->
 
 * For pipe-based ports, the direction is the physical flow direction.
 * For duct-based ports, the direction is the physical flow direction.

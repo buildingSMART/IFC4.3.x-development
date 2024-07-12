@@ -1,7 +1,6 @@
-An _IfcClassification_ is used for the arrangement of objects into a class or category according to a common purpose or their possession of common characteristics. A classification in the sense of _IfcClassification_ is taxonomy, or taxonomic scheme, arranged in a hierarchical structure. A category of objects relates to other categories in a generalization-specialization relationship. Therefore the classification items in an classification are organized in a tree structure.
+# IfcClassification
 
-<!-- end of short definition -->
-
+An _IfcClassification_ is used for the arrangement of objects into a class or category according to a common purpose or their possession of common characteristics. A classification in the sense of _IfcClassification_ is taxonomy, or taxonomic scheme, arranged in a hierarchical structure. A category of objects relates to other categories in a generalization-specialization relationship. Therefore the classification items in an classification are organized in a tree structure.<!-- end of definition -->
 
 The _IfcClassification_ identifies the classification system or source to which a classification reference refers to. Each classification reference may reference an instance of _IfcClassification_. A classification system declared may be either formally published, or it may be a locally defined method of classifiying information.
 

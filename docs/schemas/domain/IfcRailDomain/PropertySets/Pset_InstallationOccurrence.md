@@ -1,4 +1,3 @@
-Properties defining installation information for occurrences of element, asset or system.
+# Pset_InstallationOccurrence
 
-<!-- end of short definition -->
-
+Properties defining installation information for occurrences of element, asset or system.<!-- end of definition -->

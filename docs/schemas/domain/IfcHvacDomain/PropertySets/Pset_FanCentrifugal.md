@@ -1,4 +1,3 @@
-Centrifugal fan occurrence attributes attached to an instance of IfcFan.
+# Pset_FanCentrifugal
 
-<!-- end of short definition -->
-
+Centrifugal fan occurrence attributes attached to an instance of IfcFan.<!-- end of definition -->

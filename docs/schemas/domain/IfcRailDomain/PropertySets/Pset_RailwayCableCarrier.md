@@ -1,4 +1,3 @@
-Common properties for cable carrier segments constructed in railway projects.
+# Pset_RailwayCableCarrier
 
-<!-- end of short definition -->
-
+Common properties for cable carrier segments constructed in railway projects.<!-- end of definition -->

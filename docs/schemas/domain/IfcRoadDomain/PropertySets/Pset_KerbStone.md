@@ -1,4 +1,3 @@
-Properties for kerb stones.
+# Pset_KerbStone
 
-<!-- end of short definition -->
-
+Properties for kerb stones.<!-- end of definition -->

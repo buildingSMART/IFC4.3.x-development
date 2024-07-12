@@ -1,4 +1,3 @@
-Shape properties specific to connecting accessories in truss form with diagonal cross-bars.
+# Pset_DiscreteAccessoryDiagonalTrussConnector
 
-<!-- end of short definition -->
-
+Shape properties specific to connecting accessories in truss form with diagonal cross-bars.<!-- end of definition -->

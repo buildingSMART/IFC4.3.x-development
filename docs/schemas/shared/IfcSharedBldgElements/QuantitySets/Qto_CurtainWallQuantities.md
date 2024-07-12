@@ -1,7 +1,6 @@
-Base quantities that are common to the definition of all occurrences of curtain walls.
+# Qto_CurtainWallQuantities
 
-<!-- end of short definition -->
-
+Base quantities that are common to the definition of all occurrences of curtain walls.<!-- end of definition -->
 
 
 ## Comments

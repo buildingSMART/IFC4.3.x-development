@@ -1,11 +1,10 @@
-This enumeration defines the valid types of curtain wall that can be predefined using the enumeration values.
+# IfcCurtainWallTypeEnum
 
-<!-- end of short definition -->
-
+This enumeration defines the valid types of curtain wall that can be predefined using the enumeration values.<!-- end of definition -->
 
 > HISTORY New enumeration in IFC2x3
 
-> NOTE Currently there are no specific enumerators defined; the _IfcCurtainWallTypeEnum_ has been added for future extensions.
+> NOTE  Currently there are no specific enumerators defined; the _IfcCurtainWallTypeEnum_ has been added for future extensions.
 
 ## Items
 

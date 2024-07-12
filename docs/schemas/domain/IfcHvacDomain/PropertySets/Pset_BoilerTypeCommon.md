@@ -1,7 +1,6 @@
-Boiler type common attributes.
+# Pset_BoilerTypeCommon
 
-<!-- end of short definition -->
-
+Boiler type common attributes.<!-- end of definition -->
 SoundLevel attribute deleted in IFC2x2 Pset Addendum: Use IfcSoundProperties instead. PrimaryEnergySource and AuxiliaryEnergySource attributes deleted in IFC2x2 Pset Addendum: Use IfcMaterialProperties instead.
 
 

@@ -1,7 +1,6 @@
-The IfcAlignmentCantSegmentTypeEnum indicates the type of a segment of a cant alignment segment (IfcAlignmentCantSegment).
+# IfcAlignmentCantSegmentTypeEnum
 
-<!-- end of short definition -->
-
+The IfcAlignmentCantSegmentTypeEnum indicates the type of a segment of a cant alignment segment (IfcAlignmentCantSegment).<!-- end of definition -->
 
 Cant is defined as the amount by which one running rail is raised above the other running rail, in a track cross section.
 >NOTE Definition according to EN 13803/2017
@@ -19,11 +18,11 @@ $$ \displaylines {
 
 
 
-| Variation of Cant | Segmenttype  | Enumeration Values |
+| Variation of Cant | Segmenttype    | Enumeration Values |
 |:----|:------------------|:----------|
-| 0 | both rails without relative elevation  | CONSTANTCANT |
+| 0 | both rails without relative elevation    | CONSTANTCANT |
 | constant in the complete segment, <> 0 | elevated rail | CONSTANTCANT |
-| variation along the segment | Transition with linear cant variation | LINEARTRANSITION |
+| variation along the segment | Transition with linear cant variation | LINEARTRANSITION  |
 | variation along the segment | Transition with non-linear cant variation | HELMERTCURVE, BLOSSCURVE, COSINECURVE, SINECURVE, VIENNESEBEND |
 
 ### Cant variation in high performance transition bends
@@ -39,14 +38,14 @@ Whether the cant variation is defined by the same base formula as the curvature 
 
 | Symbol | meaning | Unit, value range |
 |:----|:------------------|:----------|
-| L | full length of segment  | positive length L > 0 |
-| s | current position on segment  | 0 < s < L |
-| ξ | = s / L (Greek "xi") standardised, dimensionless path length along the alignment / track centre line  | 0 < ξ < 1 |
-| D | cant .... amount by which one running rail is raised above the other running rail, in a track cross section   | length |
-| D<sub>1</sub> | cant at beginning of the alignment segment  | length |
+| L | full length of segment    | positive length L > 0 |
+| s | current position on segment    | 0 < s < L |
+| ξ | = s / L (Greek "xi") standardised, dimensionless path length along the alignment / track centre line    | 0 < ξ < 1 |
+| D | cant .... amount by which one running rail is raised above the other running rail, in a track cross section     | length |
+| D<sub>1</sub> | cant at beginning of the alignment segment    | length |
 | D(s) | variable cant at station "s" along the alignment cant segment. | length |
-| b | Railhead distance; distance between the nominal centre points of the two contact patches of a wheelset (e.g. about 1500 mm for nominal track gauge 1435 mm)  | length |
-| ψ | (Greek "psi") Angle of cant (cross slope angle, bank angle)  | rad |
+| b | Railhead distance; distance between the nominal centre points of the two contact patches of a wheelset (e.g. about 1500 mm for nominal track gauge 1435 mm)    | length |
+| ψ | (Greek "psi") Angle of cant (cross slope angle, bank angle)    | rad |
 | φ | (Greek "phi") Directional angle (azimuth, bearing) | rad |
 
 >NOTE Symbols according to EN 13803/2017
@@ -61,7 +60,7 @@ Non linear cant variation according to Bloss curve base formula. <br/><br/>
 
 $$ \displaylines{
 \xi = \frac{s}{L} \\\\
-D(s) = D_{1} + (3 - 2\xi) \cdot \xi^2 \ \Delta D
+D(s) = D_{1} + (3 - 2\xi) \cdot  \xi^2 \ \Delta D
 } $$
 
 ### CONSTANTCANT
@@ -123,6 +122,6 @@ Non linear cant variation according to Viennese bend base formula. The determini
 $$ \displaylines {
 \xi = \frac{s}{L} \\\\
 \psi = \arcsin \frac{D}{b} \\\\
-\sin \psi \approx \psi \approx \tan \psi \\\\
+\sin \psi \approx \psi \approx \tan \psi  \\\\
 \psi(s) = \psi_1 + \Delta\psi \cdot \xi^4 \cdot (35-84\xi + 70\xi^2-20\xi^3)
 } $$

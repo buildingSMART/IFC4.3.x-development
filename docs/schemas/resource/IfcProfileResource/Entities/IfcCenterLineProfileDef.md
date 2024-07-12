@@ -1,7 +1,6 @@
-The profile _IfcCenterLineProfileDef_ defines an arbitrary two-dimensional open, not self intersecting profile for the use within the swept solid geometry. It is given by an area defined by applying a constant thickness to a centerline, generating an area from which the solid can be constructed.
+# IfcCenterLineProfileDef
 
-<!-- end of short definition -->
-
+The profile _IfcCenterLineProfileDef_ defines an arbitrary two-dimensional open, not self intersecting profile for the use within the swept solid geometry. It is given by an area defined by applying a constant thickness to a centerline, generating an area from which the solid can be constructed.<!-- end of definition -->
 
 Among else, _IfcCenterLineProfileDef_ is used to model cold-formed steel or aluminium sections (Sigma, Zeta, Omega, and similar sections which are not covered by subtypes of _IfcParameterizedProfileDef_). However, since _IfcCenterLineProfileDef_ does not provide shape parameters except for the thickness, there is generally a need to further specify the profile definition by means of
 

@@ -1,7 +1,6 @@
-The object type defines the specific information about a type, being common to all occurrences of this type. It refers to the specific level of the well recognized _generic - specific - occurrence_ modeling paradigm. The _IfcTypeObject_ gets assigned to the individual object instances (the occurrences) via the _IfcRelDefinesByType_ relationship.
+# IfcTypeObject
 
-<!-- end of short definition -->
-
+The object type defines the specific information about a type, being common to all occurrences of this type. It refers to the specific level of the well recognized _generic - specific - occurrence_ modeling paradigm. The _IfcTypeObject_ gets assigned to the individual object instances (the occurrences) via the _IfcRelDefinesByType_ relationship.<!-- end of definition -->
 
 > NOTE The terms 'Type' and 'Style' are often used interchangeably.
 

@@ -1,4 +1,3 @@
-Base quantities that are common to the definition of all occurrences of electric flow storage device.
+# Qto_ElectricFlowStorageDeviceBaseQuantities
 
-<!-- end of short definition -->
-
+Base quantities that are common to the definition of all occurrences of electric flow storage device.<!-- end of definition -->

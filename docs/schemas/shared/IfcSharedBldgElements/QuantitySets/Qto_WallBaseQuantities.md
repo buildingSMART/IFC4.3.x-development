@@ -1,7 +1,6 @@
-Base quantities that are common to the definition of all occurrences of walls.
+# Qto_WallBaseQuantities
 
-<!-- end of short definition -->
-
+Base quantities that are common to the definition of all occurrences of walls.<!-- end of definition -->
 
 
 ## Comments

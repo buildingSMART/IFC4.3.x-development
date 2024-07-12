@@ -1,7 +1,6 @@
-The distribution element _IfcDistributionControlElement_ defines occurrence elements of a building automation control system that are used to impart control over elements of a distribution system.
+# IfcDistributionControlElement
 
-<!-- end of short definition -->
-
+The distribution element _IfcDistributionControlElement_ defines occurrence elements of a building automation control system that are used to impart control over elements of a distribution system.<!-- end of definition -->
 
 _IfcDistributionControlElement_ defines elements of a building automation control system. These are typically used to control distribution system elements to maintain variables such as temperature, humidity, pressure, flow, power, or lighting levels, through the modulation, staging or sequencing of mechanical or electrical devices. The three general functional categories of control elements are as follows:
 
@@ -31,21 +30,21 @@ A distribution system may be associated with an external Building Automation Sys
 
 ```
 digraph dot_neato {
- IfcDistributionSystem[pos="0,0!"];
- IfcRelAssignsToGroup[pos="200,0!"];
- IfcController[pos="400,0!"];
- IfcRelAssociatesLibrary[pos="0,-70!"];
- IfcLibraryInformation[pos="0,-140!"];
- IfcRelAssociatesLibrary2 [label="IfcRelAssociatesLibrary", pos="400,-70!"];
- IfcLibraryReference[pos="400,-140!"]
+  IfcDistributionSystem[pos="0,0!"];
+  IfcRelAssignsToGroup[pos="200,0!"];
+  IfcController[pos="400,0!"];
+  IfcRelAssociatesLibrary[pos="0,-70!"];
+  IfcLibraryInformation[pos="0,-140!"];
+  IfcRelAssociatesLibrary2 [label="IfcRelAssociatesLibrary", pos="400,-70!"];
+  IfcLibraryReference[pos="400,-140!"]
 
- IfcRelAssignsToGroup -> IfcController [taillabel="RelatedObjects", labelangle=90, labeldistance=3];
- IfcRelAssignsToGroup -> IfcDistributionSystem [headlabel="RelatingGroup", labelangle=90, labeldistance=3];
- IfcRelAssociatesLibrary -> IfcDistributionSystem [label="RelatedObjects"];
- IfcRelAssociatesLibrary -> IfcLibraryInformation [label="RelatingLibrary"];
- IfcRelAssociatesLibrary2 -> IfcController [label="RelatedObjects"];
- IfcRelAssociatesLibrary2 -> IfcLibraryReference [label="RelatingLibrary"];
- IfcLibraryReference -> IfcLibraryInformation [label="ReferencedLibrary"];
+  IfcRelAssignsToGroup -> IfcController [taillabel="RelatedObjects", labelangle=90, labeldistance=3];
+  IfcRelAssignsToGroup -> IfcDistributionSystem [headlabel="RelatingGroup", labelangle=90, labeldistance=3];
+  IfcRelAssociatesLibrary -> IfcDistributionSystem [label="RelatedObjects"];
+  IfcRelAssociatesLibrary -> IfcLibraryInformation [label="RelatingLibrary"];
+  IfcRelAssociatesLibrary2 -> IfcController [label="RelatedObjects"];
+  IfcRelAssociatesLibrary2 -> IfcLibraryReference [label="RelatingLibrary"];
+  IfcLibraryReference -> IfcLibraryInformation [label="ReferencedLibrary"];
 }
 ```
 

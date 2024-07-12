@@ -1,4 +1,3 @@
-Properties common to the definition of occurrences of _IfcSignal_ applied in railways.
+# Pset_RailwaySignalOccurrence
 
-<!-- end of short definition -->
-
+Properties common to the definition of occurrences of _IfcSignal_ applied in railways.<!-- end of definition -->

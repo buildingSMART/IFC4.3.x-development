@@ -1,7 +1,6 @@
-This enumeration defines the range of different types of spatial zones that can further specify an _IfcSpatialZone_.
+# IfcSpatialZoneTypeEnum
 
-<!-- end of short definition -->
-
+This enumeration defines the range of different types of spatial zones that can further specify an _IfcSpatialZone_.<!-- end of definition -->
 
 > HISTORY New enumeration in IFC4.
 

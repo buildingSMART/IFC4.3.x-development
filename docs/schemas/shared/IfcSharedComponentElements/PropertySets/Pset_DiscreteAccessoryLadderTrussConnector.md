@@ -1,4 +1,3 @@
-Shape properties specific to connecting accessories in truss form with straight cross-bars in ladder shape.
+# Pset_DiscreteAccessoryLadderTrussConnector
 
-<!-- end of short definition -->
-
+Shape properties specific to connecting accessories in truss form with straight cross-bars in ladder shape.<!-- end of definition -->

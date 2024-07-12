@@ -1,4 +1,3 @@
-Properties for vegetation and plants, modelled as instances of IfcGeographicElement with the predefined type set to VEGETATION.
+# Pset_VegetationCommon
 
-<!-- end of short definition -->
-
+Properties for vegetation and plants, modelled as instances of IfcGeographicElement with the predefined type set to VEGETATION.<!-- end of definition -->

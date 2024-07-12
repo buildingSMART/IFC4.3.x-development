@@ -1,7 +1,6 @@
+# PEnum_SpaceHeaterRadiatorType
 
-
-<!-- end of short definition -->
-## Items
+<!-- end of definition -->## Items
 
 ### FINNEDTUBE
 Finned Tube

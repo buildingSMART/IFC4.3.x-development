@@ -1,7 +1,6 @@
-A junction box is an enclosure within which cables are connected.
+# Pset_JunctionBoxTypeCommon
 
-<!-- end of short definition -->
-
+A junction box is an enclosure within which cables are connected.<!-- end of definition -->
 
 History: New in IFC4
 

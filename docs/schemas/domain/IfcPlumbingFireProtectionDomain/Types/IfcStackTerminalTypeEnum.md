@@ -1,7 +1,6 @@
-An _IfcStackTerminalTypeEnum_ defines the range of different types of stack terminal that can be specified for use at the top of a vertical stack subsystem.
+# IfcStackTerminalTypeEnum
 
-<!-- end of short definition -->
-
+An _IfcStackTerminalTypeEnum_ defines the range of different types of stack terminal that can be specified for use at the top of a vertical stack subsystem.<!-- end of definition -->
 
 > HISTORY New type in IFC2x.
 

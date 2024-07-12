@@ -1,7 +1,6 @@
-This enumeration qualifies a voiding feature regarding its shape and configuration relative to the voided element.
+# IfcVoidingFeatureTypeEnum
 
-<!-- end of short definition -->
-
+This enumeration qualifies a voiding feature regarding its shape and configuration relative to the voided element.<!-- end of definition -->
 
 > HISTORY New type in IFC4.
 

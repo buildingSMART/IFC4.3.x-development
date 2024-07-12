@@ -1,7 +1,6 @@
-This container defines the different predefined types of earthworks fill elements that can specify an _IfcEarthworksFill_.
+# IfcEarthworksFillTypeEnum
 
-<!-- end of short definition -->
-
+This container defines the different predefined types of earthworks fill elements that can specify an _IfcEarthworksFill_.<!-- end of definition -->
 
 ## Items
 

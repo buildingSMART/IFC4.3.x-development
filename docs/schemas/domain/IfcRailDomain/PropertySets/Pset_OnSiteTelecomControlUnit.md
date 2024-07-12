@@ -1,4 +1,3 @@
-Properties for on-site telecom control unit used for railway.
+# Pset_OnSiteTelecomControlUnit
 
-<!-- end of short definition -->
-
+Properties for on-site telecom control unit used for railway.<!-- end of definition -->

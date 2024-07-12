@@ -1,7 +1,6 @@
+# PEnum_CentrifugalFanRotation
 
-
-<!-- end of short definition -->
-## Items
+<!-- end of definition -->## Items
 
 ### CLOCKWISE
 Clockwise

@@ -1,7 +1,6 @@
-_IfcResource_ contains the information needed to represent the costs, schedule, and other impacts from the use of a thing in a process. It is not intended to use _IfcResource_ to model the general properties of the things themselves, while an optional linkage from _IfcResource_ to the things to be used can be specified (specifically, the relationship from subtypes of _IfcResource_ to _IfcProduct_ through the _IfcRelAssignsToResource_ relationship).
+# IfcResource
 
-<!-- end of short definition -->
-
+_IfcResource_ contains the information needed to represent the costs, schedule, and other impacts from the use of a thing in a process. It is not intended to use _IfcResource_ to model the general properties of the things themselves, while an optional linkage from _IfcResource_ to the things to be used can be specified (specifically, the relationship from subtypes of _IfcResource_ to _IfcProduct_ through the _IfcRelAssignsToResource_ relationship).<!-- end of definition -->
 
 There are two basic intended uses of _IfcResource_. First, if the attributes of the thing are not needed for the purpose of the use of _IfcResource_, or the types of things are not explicitly modeled in IFC yet, then the linkage between the resource and the thing doesn't have to be instantiated in the system. That is, the attributes of _IfcResource_ (or its subtypes) alone are sufficient to represent the use of the thing as a resource for the purpose of the project.
 
@@ -20,7 +19,7 @@ The inherited attribute _ObjectType_ is used as a textual code that identifies t
 
 ### Identification
 An identifying designation given to a resource.
- It is the identifier at the occurrence level.
+  It is the identifier at the occurrence level.
 
 { .change-ifc2x4}
 > IFC4 CHANGE Attribute promoted from subtype _IfcConstructionResource_.

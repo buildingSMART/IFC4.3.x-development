@@ -1,4 +1,3 @@
-Base quantities common to the definition to all occurrences of IfcTrackElement with PredefinedType set to SLEEPER.
+# Qto_SleeperBaseQuantities
 
-<!-- end of short definition -->
-
+Base quantities common to the definition to all occurrences of IfcTrackElement with PredefinedType set to SLEEPER.<!-- end of definition -->

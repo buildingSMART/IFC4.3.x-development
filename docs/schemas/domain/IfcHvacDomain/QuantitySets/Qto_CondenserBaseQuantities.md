@@ -1,4 +1,3 @@
-Base quantities that are common to the definition of all types of condensers.
+# Qto_CondenserBaseQuantities
 
-<!-- end of short definition -->
-
+Base quantities that are common to the definition of all types of condensers.<!-- end of definition -->

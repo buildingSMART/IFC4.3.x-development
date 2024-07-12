@@ -1,7 +1,6 @@
-A device that reads and displays a temperature value at a point.
+# Pset_FlowInstrumentTypeThermometer
 
-<!-- end of short definition -->
-
+A device that reads and displays a temperature value at a point.<!-- end of definition -->
 
 
 ## Comments

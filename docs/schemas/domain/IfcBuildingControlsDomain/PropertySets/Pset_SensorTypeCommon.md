@@ -1,4 +1,3 @@
-Sensor type common attributes.
+# Pset_SensorTypeCommon
 
-<!-- end of short definition -->
- HISTORY: Added in IFC4.
+Sensor type common attributes.<!-- end of definition --> HISTORY: Added in IFC4.

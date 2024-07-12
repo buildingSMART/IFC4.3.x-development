@@ -1,4 +1,3 @@
-Information on tripping units that are thermally tripped.
+# Pset_ProtectiveDeviceTrippingUnitTypeThermal
 
-<!-- end of short definition -->
-
+Information on tripping units that are thermally tripped.<!-- end of definition -->

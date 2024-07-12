@@ -1,4 +1,3 @@
-A set of time adjustment values that may be applied to an electronic or thermal tripping unit type.
+# Pset_ProtectiveDeviceTrippingUnitTimeAdjustment
 
-<!-- end of short definition -->
-
+A set of time adjustment values that may be applied to an electronic or thermal tripping unit type.<!-- end of definition -->

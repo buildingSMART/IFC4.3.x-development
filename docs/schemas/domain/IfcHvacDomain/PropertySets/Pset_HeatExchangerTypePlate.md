@@ -1,4 +1,3 @@
-Plate heat exchanger type common attributes.
+# Pset_HeatExchangerTypePlate
 
-<!-- end of short definition -->
-
+Plate heat exchanger type common attributes.<!-- end of definition -->

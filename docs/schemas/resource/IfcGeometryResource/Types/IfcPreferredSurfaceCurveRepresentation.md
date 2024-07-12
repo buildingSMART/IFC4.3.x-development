@@ -1,7 +1,6 @@
-The _IfcPreferredSurfaceCurveRepresentation_ indicates the preferred form of an edge curve representation.
+# IfcPreferredSurfaceCurveRepresentation
 
-<!-- end of short definition -->
-
+The _IfcPreferredSurfaceCurveRepresentation_ indicates the preferred form of an edge curve representation.<!-- end of definition -->
 
 { .extDef}
 > NOTE Definition according to ISO/CD 10303-42:1992

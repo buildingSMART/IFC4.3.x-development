@@ -1,4 +1,3 @@
-Pump occurrence attributes attached to an instance of IfcPump.
+# Pset_PumpOccurrence
 
-<!-- end of short definition -->
-
+Pump occurrence attributes attached to an instance of IfcPump.<!-- end of definition -->

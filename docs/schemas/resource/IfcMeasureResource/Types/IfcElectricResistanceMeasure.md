@@ -1,7 +1,6 @@
-_IfcElectricResistanceMeasure_ is a measure of the electric resistance.
+# IfcElectricResistanceMeasure
 
-<!-- end of short definition -->
-
+_IfcElectricResistanceMeasure_ is a measure of the electric resistance.<!-- end of definition -->
 
 Usually measured in Ohm (V/A).
 

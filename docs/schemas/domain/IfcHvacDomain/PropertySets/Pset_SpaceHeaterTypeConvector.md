@@ -1,4 +1,3 @@
-Space heater type convector attributes.
+# Pset_SpaceHeaterTypeConvector
 
-<!-- end of short definition -->
-
+Space heater type convector attributes.<!-- end of definition -->

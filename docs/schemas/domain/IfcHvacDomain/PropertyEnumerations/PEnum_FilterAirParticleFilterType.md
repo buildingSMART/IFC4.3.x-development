@@ -1,7 +1,6 @@
+# PEnum_FilterAirParticleFilterType
 
-
-<!-- end of short definition -->
-## Items
+<!-- end of definition -->## Items
 
 ### COARSEMETALSCREEN
 Coarse Metal Screen

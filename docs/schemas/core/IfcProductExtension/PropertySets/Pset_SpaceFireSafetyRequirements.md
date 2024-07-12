@@ -1,7 +1,6 @@
-Properties related to fire protection of spaces that apply to the occurrences of IfcSpace or IfcZone.
+# Pset_SpaceFireSafetyRequirements
 
-<!-- end of short definition -->
-
+Properties related to fire protection of spaces that apply to the occurrences of IfcSpace or IfcZone.<!-- end of definition -->
 
 
 ## Comments

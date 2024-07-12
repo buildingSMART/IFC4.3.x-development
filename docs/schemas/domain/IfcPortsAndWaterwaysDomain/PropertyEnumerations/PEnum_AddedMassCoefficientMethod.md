@@ -1,7 +1,6 @@
-Enumeration for the method of calculation of an added mass coefficient
+# PEnum_AddedMassCoefficientMethod
 
-<!-- end of short definition -->
-
+Enumeration for the method of calculation of an added mass coefficient<!-- end of definition -->
 
 ## Items
 

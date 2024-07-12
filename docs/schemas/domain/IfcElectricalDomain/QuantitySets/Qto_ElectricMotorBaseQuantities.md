@@ -1,4 +1,3 @@
-Base quantities that are common to the definition of all occurrences of electric motor.
+# Qto_ElectricMotorBaseQuantities
 
-<!-- end of short definition -->
-
+Base quantities that are common to the definition of all occurrences of electric motor.<!-- end of definition -->

@@ -1,7 +1,6 @@
-This enumeration defines the different types of referents.
+# IfcReferentTypeEnum
 
-<!-- end of short definition -->
-
+This enumeration defines the different types of referents.<!-- end of definition -->
 
 ## Items
 

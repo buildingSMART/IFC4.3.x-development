@@ -1,7 +1,6 @@
-_IfcProperty_ is an abstract generalization for all types of properties that can be associated with IFC objects through the property set mechanism.
+# IfcProperty
 
-<!-- end of short definition -->
-
+_IfcProperty_ is an abstract generalization for all types of properties that can be associated with IFC objects through the property set mechanism.<!-- end of definition -->
 
 > HISTORY New entity in IFC1.0.
 

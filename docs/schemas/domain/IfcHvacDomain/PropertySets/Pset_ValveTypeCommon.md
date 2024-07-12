@@ -1,7 +1,6 @@
-Valve type common attributes.
+# Pset_ValveTypeCommon
 
-<!-- end of short definition -->
-
+Valve type common attributes.<!-- end of definition -->
 
 
 ## Comments

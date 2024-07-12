@@ -1,4 +1,3 @@
-Properties concerning work activities occurring or expected to occur within one or a set of similar spatial structure elements.
+# Pset_SpaceOccupancyRequirements
 
-<!-- end of short definition -->
-
+Properties concerning work activities occurring or expected to occur within one or a set of similar spatial structure elements.<!-- end of definition -->

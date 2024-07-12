@@ -1,4 +1,3 @@
-Quantity set for Building Element Proxies.
+# Qto_BuildingElementProxyQuantities
 
-<!-- end of short definition -->
-
+Quantity set for Building Element Proxies.<!-- end of definition -->

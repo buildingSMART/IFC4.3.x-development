@@ -1,4 +1,3 @@
-Properties for a transition section.
+# Pset_TransitionSectionCommon
 
-<!-- end of short definition -->
-
+Properties for a transition section.<!-- end of definition -->

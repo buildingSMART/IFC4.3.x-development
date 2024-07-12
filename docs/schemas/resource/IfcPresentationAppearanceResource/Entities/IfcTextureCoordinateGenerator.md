@@ -1,7 +1,6 @@
-The _IfcTextureCoordinateGenerator_ describes a procedurally defined mapping function with input parameter to map 2D texture coordinates to 3D geometry vertices.
+# IfcTextureCoordinateGenerator
 
-<!-- end of short definition -->
-
+The _IfcTextureCoordinateGenerator_ describes a procedurally defined mapping function with input parameter to map 2D texture coordinates to 3D geometry vertices.<!-- end of definition -->
 
 The TextureCoordinateGenerator supports the automatic generation of texture coordinates for geometric shapes.
 

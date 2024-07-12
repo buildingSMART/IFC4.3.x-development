@@ -1,7 +1,6 @@
+# PEnum_ElementStatus
 
-
-<!-- end of short definition -->
-## Items
+<!-- end of definition -->## Items
 
 ### NEW
 element designed as new addition
@@ -19,7 +18,7 @@ element will exist only temporarily (such as a temporary support structure)
 required category not on scale
 
 ### NOTKNOWN
-Value is unknown
+Value is unkown
 
 ### UNSET
 Value has not been specified

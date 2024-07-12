@@ -1,4 +1,3 @@
-Common property set for bridges.
+# Pset_BridgeCommon
 
-<!-- end of short definition -->
-
+Common property set for bridges.<!-- end of definition -->

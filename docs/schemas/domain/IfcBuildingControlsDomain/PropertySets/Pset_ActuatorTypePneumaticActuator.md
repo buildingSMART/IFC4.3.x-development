@@ -1,7 +1,6 @@
-A device that pneumatically actuates a control element
+# Pset_ActuatorTypePneumaticActuator
 
-<!-- end of short definition -->
-
+A device that pneumatically actuates a control element<!-- end of definition -->
 
 
 ## Comments

@@ -1,4 +1,3 @@
-A set of general material properties.
+# Pset_MaterialCommon
 
-<!-- end of short definition -->
-
+A set of general material properties.<!-- end of definition -->

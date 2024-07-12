@@ -1,4 +1,3 @@
-Properties common to the definition of all occurrences of _IfcMarineFacility_ with the predefined type set to JETTY.
+# Pset_JettyCommon
 
-<!-- end of short definition -->
-
+Properties common to the definition of all occurrences of _IfcMarineFacility_ with the predefined type set to JETTY.<!-- end of definition -->

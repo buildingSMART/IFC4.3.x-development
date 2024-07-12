@@ -1,7 +1,6 @@
-This property set is used to define the general characteristics of the duct design parameters within a system.
+# Pset_DistributionSystemTypeVentilation
 
-<!-- end of short definition -->
-
+This property set is used to define the general characteristics of the duct design parameters within a system.<!-- end of definition -->
 HISTORY: New property set in IFC Release 2.0. Renamed from Pset_DuctDesignCriteria in IFC4.
 
 

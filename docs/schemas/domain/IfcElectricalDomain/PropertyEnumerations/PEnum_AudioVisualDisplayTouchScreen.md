@@ -1,7 +1,6 @@
+# PEnum_AudioVisualDisplayTouchScreen
 
-
-<!-- end of short definition -->
-## Items
+<!-- end of definition -->## Items
 
 ### SINGLETOUCH
 Single Touch

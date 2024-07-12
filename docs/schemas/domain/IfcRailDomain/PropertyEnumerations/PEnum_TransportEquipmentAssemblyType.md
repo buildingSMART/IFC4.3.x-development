@@ -1,7 +1,6 @@
-Enumeration of transport equipment assembly types.
+# PEnum_TransportEquipmentAssemblyType
 
-<!-- end of short definition -->
-
+Enumeration of transport equipment assembly types.<!-- end of definition -->
 
 ## Items
 

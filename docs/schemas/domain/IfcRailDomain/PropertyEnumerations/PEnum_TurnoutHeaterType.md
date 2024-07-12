@@ -1,7 +1,6 @@
-Enumeration of the different turnout heaters used in railway.
+# PEnum_TurnoutHeaterType
 
-<!-- end of short definition -->
-
+Enumeration of the different turnout heaters used in railway.<!-- end of definition -->
 
 ## Items
 

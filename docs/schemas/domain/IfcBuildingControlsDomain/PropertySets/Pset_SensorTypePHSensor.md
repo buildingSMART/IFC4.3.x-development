@@ -1,4 +1,3 @@
-A device that senses or detects acidity.
+# Pset_SensorTypePHSensor
 
-<!-- end of short definition -->
- HISTORY: Added in IFC4.
+A device that senses or detects acidity.<!-- end of definition --> HISTORY: Added in IFC4.

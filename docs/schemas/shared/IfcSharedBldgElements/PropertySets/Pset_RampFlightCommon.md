@@ -1,7 +1,6 @@
-Properties common to the definition of all occurrences of IfcRampFlight.
+# Pset_RampFlightCommon
 
-<!-- end of short definition -->
-
+Properties common to the definition of all occurrences of IfcRampFlight.<!-- end of definition -->
 
 
 ## Comments

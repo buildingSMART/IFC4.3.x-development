@@ -1,7 +1,6 @@
-{ .extDef}
+# IfcTextStyleFontModel
 
-<!-- end of short definition -->
-
+{ .extDef}<!-- end of definition -->
 > Definition according to W3C for Cascading Style Sheets:
 > Setting font properties will be among the most common uses of style sheets. Unfortunately, there exists no well-defined and universally accepted taxonomy for classifying fonts, and terms that apply to one font family may not be appropriate for others. For example, 'italic' is commonly used to label slanted text, but slanted text may also be labeled as being _Oblique_, _Slanted_, _Incline_, _Cursive_ or _Kursiv_. Therefore it is not a simple problem to map typical font selection properties to a specific font.
 

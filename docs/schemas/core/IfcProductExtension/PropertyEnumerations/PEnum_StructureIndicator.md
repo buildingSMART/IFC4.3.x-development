@@ -1,7 +1,6 @@
+# PEnum_StructureIndicator
 
-
-<!-- end of short definition -->
-## Items
+<!-- end of definition -->## Items
 
 ### COMPOSITE
 Indicates that the structure is built with different materials (e.g., steel and concrete)

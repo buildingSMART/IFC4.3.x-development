@@ -1,7 +1,6 @@
-_IfcLShapeProfileDef_ defines a section profile that provides the defining parameters of an L-shaped section (equilateral L profiles are also covered by this entity) to be used by the swept area solid. Its parameters and orientation relative to the position coordinate system are according to the following illustration. The shorter leg has the same direction as the positive _Position.P[1]_-axis, the longer or equal leg the same as the positive _Position.P[2]_-axis. The centre of the position coordinate system is in the profiles centre of the bounding box.
+# IfcLShapeProfileDef
 
-<!-- end of short definition -->
-
+_IfcLShapeProfileDef_ defines a section profile that provides the defining parameters of an L-shaped section (equilateral L profiles are also covered by this entity) to be used by the swept area solid. Its parameters and orientation relative to the position coordinate system are according to the following illustration. The shorter leg has the same direction as the positive _Position.P[1]_-axis, the longer or equal leg the same as the positive _Position.P[2]_-axis. The centre of the position coordinate system is in the profiles centre of the bounding box.<!-- end of definition -->
 
 > HISTORY New entity in IFC2x2.
 

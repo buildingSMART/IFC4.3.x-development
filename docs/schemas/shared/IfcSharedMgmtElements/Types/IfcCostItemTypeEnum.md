@@ -1,7 +1,6 @@
-An _IfcCostItemTypeEnum_ is a list of the available types of cost items.
+# IfcCostItemTypeEnum
 
-<!-- end of short definition -->
-
+An _IfcCostItemTypeEnum_ is a list of the available types of cost items.<!-- end of definition -->
 
 > HISTORY New enumeration in IFC4.
 

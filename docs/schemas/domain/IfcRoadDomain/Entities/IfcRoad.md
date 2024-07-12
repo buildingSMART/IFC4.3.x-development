@@ -1,7 +1,6 @@
-A route built on land to allow travel from one location to another, including highways, streets, cycle and foot paths, but excluding railways. As a type of Facility, Road provides the basic element in the project structure hierarchy for the components of a road project (i.e. any undertaking such as design, construction or maintenance).
+# IfcRoad
 
-<!-- end of short definition -->
-
+A route built on land to allow travel from one location to another, including highways, streets, cycle and foot paths, but excluding railways. As a type of Facility, Road provides the basic element in the project structure hierarchy for the components of a road project (i.e. any undertaking such as design, construction or maintenance).<!-- end of definition -->
 
 > NOTE Definition from ISO 6707-1: Way mainly for vehicles.
 >

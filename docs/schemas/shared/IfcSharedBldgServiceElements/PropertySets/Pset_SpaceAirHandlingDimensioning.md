@@ -1,4 +1,3 @@
-Properties for Space AirHandling Dimensioning.
+# Pset_SpaceAirHandlingDimensioning
 
-<!-- end of short definition -->
-
+Properties for Space AirHandling Dimensioning.<!-- end of definition -->

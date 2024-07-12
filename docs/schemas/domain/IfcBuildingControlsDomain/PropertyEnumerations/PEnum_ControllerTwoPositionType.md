@@ -1,7 +1,6 @@
+# PEnum_ControllerTwoPositionType
 
-
-<!-- end of short definition -->
-## Items
+<!-- end of definition -->## Items
 
 ### NOT
 Single binary input is read and the opposite value is written to the output value

@@ -1,7 +1,6 @@
-An _IfcApproval_ represents information about approval processes such as for a plan, a design, a proposal, or a change order in a construction or facilities management project. _IfcApproval_ is referenced by _IfcRelAssociatesApproval_ in _IfcControlExtension_ schema, and thereby can be related to all subtypes of _IfcRoot_. An approval may also be given to resource objects using _IfcResourceApprovalRelationship_
+# IfcApproval
 
-<!-- end of short definition -->
-
+An _IfcApproval_ represents information about approval processes such as for a plan, a design, a proposal, or a change order in a construction or facilities management project. _IfcApproval_ is referenced by _IfcRelAssociatesApproval_ in _IfcControlExtension_ schema, and thereby can be related to all subtypes of _IfcRoot_. An approval may also be given to resource objects using _IfcResourceApprovalRelationship_<!-- end of definition -->
 
 > HISTORY New entity in IFC2.0
 

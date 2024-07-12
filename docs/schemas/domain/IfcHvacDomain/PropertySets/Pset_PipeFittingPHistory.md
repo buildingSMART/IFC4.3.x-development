@@ -1,4 +1,3 @@
-Pipe fitting performance history common attributes.
+# Pset_PipeFittingPHistory
 
-<!-- end of short definition -->
-
+Pipe fitting performance history common attributes.<!-- end of definition -->

@@ -1,7 +1,6 @@
-This container defines the different predefined types of signs that can specify an _IfcSign_ or _IfcSignType_.
+# IfcSignTypeEnum
 
-<!-- end of short definition -->
-
+This container defines the different predefined types of signs that can specify an _IfcSign_ or _IfcSignType_.<!-- end of definition -->
 
 ## Items
 

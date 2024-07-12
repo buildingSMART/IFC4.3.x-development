@@ -1,7 +1,6 @@
-This enumeration distinguishes between different types of structural surface members, such as the typical mechanical function of walls, slabs and shells.
+# IfcStructuralSurfaceMemberTypeEnum
 
-<!-- end of short definition -->
-
+This enumeration distinguishes between different types of structural surface members, such as the typical mechanical function of walls, slabs and shells.<!-- end of definition -->
 
 > HISTORY New enumeration in IFC2x2.
 

@@ -1,4 +1,3 @@
-Property set for overing Type Membrane.
+# Pset_CoveringTypeMembrane
 
-<!-- end of short definition -->
-
+Property set for overing Type Membrane.<!-- end of definition -->

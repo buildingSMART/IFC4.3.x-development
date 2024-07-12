@@ -1,4 +1,3 @@
-Quantities for vehicles
+# Qto_VehicleBaseQuantities
 
-<!-- end of short definition -->
-
+Quantities for vehicles<!-- end of definition -->

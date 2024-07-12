@@ -1,4 +1,3 @@
-A device that senses identification tags.
+# Pset_SensorTypeIdentifierSensor
 
-<!-- end of short definition -->
-
+A device that senses identification tags.<!-- end of definition -->

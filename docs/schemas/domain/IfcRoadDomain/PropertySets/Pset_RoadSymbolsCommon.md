@@ -1,4 +1,3 @@
-Properties for road symbols.
+# Pset_RoadSymbolsCommon
 
-<!-- end of short definition -->
-
+Properties for road symbols.<!-- end of definition -->

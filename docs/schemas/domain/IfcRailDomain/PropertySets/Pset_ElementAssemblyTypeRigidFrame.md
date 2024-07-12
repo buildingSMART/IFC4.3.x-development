@@ -1,4 +1,3 @@
-Energy Cross Beam properties used in railway. The property set can be used by the predefined type RIGID_FRAME of IfcElementAssembly.
+# Pset_ElementAssemblyTypeRigidFrame
 
-<!-- end of short definition -->
-
+Energy Cross Beam properties used in railway. The property set can be used by the predefined type RIGID_FRAME of IfcElementAssembly.<!-- end of definition -->

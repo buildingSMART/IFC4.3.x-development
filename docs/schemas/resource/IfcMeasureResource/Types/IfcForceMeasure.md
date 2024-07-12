@@ -1,7 +1,6 @@
-_IfcForceMeasure_ is a measure of the force.
+# IfcForceMeasure
 
-<!-- end of short definition -->
-
+_IfcForceMeasure_ is a measure of the force.<!-- end of definition -->
 
 Usually measured in Newton (N, kg m/s2).
 

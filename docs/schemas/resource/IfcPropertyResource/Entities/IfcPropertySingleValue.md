@@ -1,7 +1,6 @@
-The property with a single value _IfcPropertySingleValue_ defines a property object which has a single (numeric or descriptive) value assigned. It defines a property - single value combination for which the property _Name_, an optional _Description_, and an optional _NominalValue_ with measure type is provided. In addition, the default unit as specified within the project unit context can be overridden by assigning an _Unit_.
+# IfcPropertySingleValue
 
-<!-- end of short definition -->
-
+The property with a single value _IfcPropertySingleValue_ defines a property object which has a single (numeric or descriptive) value assigned. It defines a property - single value combination for which the property _Name_, an optional _Description_, and an optional _NominalValue_ with measure type is provided. In addition, the default unit as specified within the project unit context can be overridden by assigning an _Unit_.<!-- end of definition -->
 
 The unit is handled by the _Unit_ attribute, see Table 1 for an example of various single value properties:
 

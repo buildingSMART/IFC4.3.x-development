@@ -1,4 +1,3 @@
-Shading device performance history attributes.
+# Pset_ShadingDevicePHistory
 
-<!-- end of short definition -->
-
+Shading device performance history attributes.<!-- end of definition -->

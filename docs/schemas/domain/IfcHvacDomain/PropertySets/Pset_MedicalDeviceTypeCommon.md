@@ -1,4 +1,3 @@
-Medical device type common attributes.
+# Pset_MedicalDeviceTypeCommon
 
-<!-- end of short definition -->
-
+Medical device type common attributes.<!-- end of definition -->

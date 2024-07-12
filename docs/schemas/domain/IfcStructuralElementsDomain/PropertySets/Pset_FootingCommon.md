@@ -1,4 +1,3 @@
-Properties common to the definition of all occurrences of IfcFooting.
+# Pset_FootingCommon
 
-<!-- end of short definition -->
-
+Properties common to the definition of all occurrences of IfcFooting.<!-- end of definition -->

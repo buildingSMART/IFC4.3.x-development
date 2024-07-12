@@ -1,4 +1,3 @@
-Performance history attributes for an active cooled beam.
+# Pset_CooledBeamPHistoryActive
 
-<!-- end of short definition -->
-
+Performance history attributes for an active cooled beam.<!-- end of definition -->

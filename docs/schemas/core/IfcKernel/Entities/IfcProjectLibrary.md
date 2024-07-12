@@ -1,7 +1,6 @@
-An _IfcProjectLibrary_ collects all library elements that are included within a referenced project data set.
+# IfcProjectLibrary
 
-<!-- end of short definition -->
-
+An _IfcProjectLibrary_ collects all library elements that are included within a referenced project data set.<!-- end of definition -->
 
 Examples for project libraries include:
 

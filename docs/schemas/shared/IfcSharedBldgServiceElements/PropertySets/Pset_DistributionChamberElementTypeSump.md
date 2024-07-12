@@ -1,4 +1,3 @@
-Recess or small chamber into which liquid is drained to facilitate its removal.
+# Pset_DistributionChamberElementTypeSump
 
-<!-- end of short definition -->
-
+Recess or small chamber into which liquid is drained to facilitate its removal.<!-- end of definition -->

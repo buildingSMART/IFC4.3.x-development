@@ -1,7 +1,6 @@
-Enumeration of the different cantilever assemblies used in railway energy domain.
+# PEnum_CantileverAssemblyType
 
-<!-- end of short definition -->
-
+Enumeration of the different cantilever assemblies used in railway energy domain.<!-- end of definition -->
 
 ## Items
 

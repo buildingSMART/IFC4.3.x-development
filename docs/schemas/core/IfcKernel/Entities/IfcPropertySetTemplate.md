@@ -1,7 +1,6 @@
-_IfcPropertySetTemplate_ defines the template for all dynamically extensible property sets represented by _IfcPropertySet_. The property set template is a container of property templates within a property tree. The individual property templates are interpreted according to their _Name_ attribute and shall have no values assigned.
+# IfcPropertySetTemplate
 
-<!-- end of short definition -->
-
+_IfcPropertySetTemplate_ defines the template for all dynamically extensible property sets represented by _IfcPropertySet_. The property set template is a container of property templates within a property tree. The individual property templates are interpreted according to their _Name_ attribute and shall have no values assigned.<!-- end of definition -->
 
 > NOTE By convention an _IfcPropertySetTemplate_ can also be used as a template for an _IfcElementQuantity_, being a particular type of a property set definition.
 

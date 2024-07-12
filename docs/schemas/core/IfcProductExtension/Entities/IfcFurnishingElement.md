@@ -1,7 +1,6 @@
-A furnishing element is a generalization of all furniture related objects. Furnishing objects are characterized as being
+# IfcFurnishingElement
 
-<!-- end of short definition -->
-
+A furnishing element is a generalization of all furniture related objects. Furnishing objects are characterized as being<!-- end of definition -->
 
 * pre-manufactured and assembled on-site, or
 * manufactured on-site (built-in)

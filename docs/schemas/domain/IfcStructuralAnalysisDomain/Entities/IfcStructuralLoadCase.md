@@ -1,7 +1,6 @@
-A load case is a load group, commonly used to group loads from the same action source.
+# IfcStructuralLoadCase
 
-<!-- end of short definition -->
-
+A load case is a load group, commonly used to group loads from the same action source.<!-- end of definition -->
 
 > HISTORY New entity in IFC4.
 

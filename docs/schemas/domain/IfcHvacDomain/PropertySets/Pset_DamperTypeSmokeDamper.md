@@ -1,5 +1,4 @@
-Smoke damper type attributes.
+# Pset_DamperTypeSmokeDamper
 
-<!-- end of short definition -->
-
+Smoke damper type attributes.<!-- end of definition -->
 Pset renamed from Pset_DamperTypeSmoke to Pset_DamperTypeSmokeDamper in IFC2x2 Pset Addendum.

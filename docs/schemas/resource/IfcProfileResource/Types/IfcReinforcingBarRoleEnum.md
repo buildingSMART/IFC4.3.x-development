@@ -1,7 +1,6 @@
-Enumeration defining standard types for the role, purpose or usage of the bar, i.e. the kind of loads and stresses they are intended to carry.
+# IfcReinforcingBarRoleEnum
 
-<!-- end of short definition -->
-
+Enumeration defining standard types for the role, purpose or usage of the bar, i.e. the kind of loads and stresses they are intended to carry.<!-- end of definition -->
 
 > HISTORY New type in IFC2x2.
 

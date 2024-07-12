@@ -1,4 +1,3 @@
-Properties common to the definition of all occurrences of IfcPile.
+# Pset_PileCommon
 
-<!-- end of short definition -->
-
+Properties common to the definition of all occurrences of IfcPile.<!-- end of definition -->

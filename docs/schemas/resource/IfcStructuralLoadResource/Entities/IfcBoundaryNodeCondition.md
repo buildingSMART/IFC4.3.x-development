@@ -1,7 +1,6 @@
-Describes linearly elastic support conditions or connection conditions.
+# IfcBoundaryNodeCondition
 
-<!-- end of short definition -->
-
+Describes linearly elastic support conditions or connection conditions.<!-- end of definition -->
 
 Applicability:
 

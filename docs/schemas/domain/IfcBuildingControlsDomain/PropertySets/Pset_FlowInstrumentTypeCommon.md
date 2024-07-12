@@ -1,4 +1,3 @@
-Flow Instrument type common attributes.
+# Pset_FlowInstrumentTypeCommon
 
-<!-- end of short definition -->
- HISTORY: Added in IFC4.
+Flow Instrument type common attributes.<!-- end of definition --> HISTORY: Added in IFC4.

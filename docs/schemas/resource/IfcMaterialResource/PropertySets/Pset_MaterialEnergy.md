@@ -1,4 +1,3 @@
-A set of extended material properties for energy calculation purposes.
+# Pset_MaterialEnergy
 
-<!-- end of short definition -->
-
+A set of extended material properties for energy calculation purposes.<!-- end of definition -->

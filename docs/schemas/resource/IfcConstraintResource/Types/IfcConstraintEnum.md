@@ -1,7 +1,6 @@
-_IfcConstraintEnum_ is an enumeration used to qualify a constraint.
+# IfcConstraintEnum
 
-<!-- end of short definition -->
-
+_IfcConstraintEnum_ is an enumeration used to qualify a constraint.<!-- end of definition -->
 
 > HISTORY New enumeration in IFC2.0
 

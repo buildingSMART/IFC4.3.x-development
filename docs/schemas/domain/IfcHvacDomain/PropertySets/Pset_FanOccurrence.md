@@ -1,4 +1,3 @@
-Fan occurrence attributes attached to an instance of IfcFan.
+# Pset_FanOccurrence
 
-<!-- end of short definition -->
-
+Fan occurrence attributes attached to an instance of IfcFan.<!-- end of definition -->

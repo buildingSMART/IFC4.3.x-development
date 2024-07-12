@@ -1,4 +1,3 @@
-An inductive stationary device that transfers electrical energy from one circuit to another.
+# Pset_TransformerTypeCommon
 
-<!-- end of short definition -->
-
+An inductive stationary device that transfers electrical energy from one circuit to another.<!-- end of definition -->

@@ -1,4 +1,3 @@
-Property set for the application of availability data to vehicles and equipment.
+# Pset_VehicleAvailability
 
-<!-- end of short definition -->
-
+Property set for the application of availability data to vehicles and equipment.<!-- end of definition -->

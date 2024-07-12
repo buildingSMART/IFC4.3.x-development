@@ -1,4 +1,3 @@
-Specifies properties of a standard curve that has a single, consistent measure value.
+# Pset_AnnotationContourLine
 
-<!-- end of short definition -->
-
+Specifies properties of a standard curve that has a single, consistent measure value.<!-- end of definition -->

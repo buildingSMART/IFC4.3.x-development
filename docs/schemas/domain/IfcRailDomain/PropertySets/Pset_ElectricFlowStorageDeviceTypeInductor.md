@@ -1,4 +1,3 @@
-Properties of inductors. The property set can be used by the predefined type INDUCTOR of IfcElectricFlowStorageDevice.
+# Pset_ElectricFlowStorageDeviceTypeInductor
 
-<!-- end of short definition -->
-
+Properties of inductors. The property set can be used by the predefined type INDUCTOR of IfcElectricFlowStorageDevice.<!-- end of definition -->

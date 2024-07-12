@@ -1,7 +1,6 @@
-The predefined type container that collects all possible road facility part types together into the implemented enumeration.
+# IfcRoadPartTypeEnum
 
-<!-- end of short definition -->
-
+The predefined type container that collects all possible road facility part types together into the implemented enumeration.<!-- end of definition -->
 
 ## Items
 

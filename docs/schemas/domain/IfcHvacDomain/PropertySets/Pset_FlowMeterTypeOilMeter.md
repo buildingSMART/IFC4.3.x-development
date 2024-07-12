@@ -1,7 +1,6 @@
-Device that measures, indicates and sometimes records, the volume of oil that passes through it without interrupting the flow.
+# Pset_FlowMeterTypeOilMeter
 
-<!-- end of short definition -->
-
+Device that measures, indicates and sometimes records, the volume of oil that passes through it without interrupting the flow.<!-- end of definition -->
 
 
 ## Comments

@@ -1,7 +1,6 @@
-An inventory is a list of items within an enterprise.
+# IfcInventory
 
-<!-- end of short definition -->
-
+An inventory is a list of items within an enterprise.<!-- end of definition -->
 
 Various types of inventory can be included. These are identified by the range of values within the inventory type enumeration which includes space, asset, and furniture. User defined inventories can also be defined for lists of particular types of element such as may be required in operating and maintenance instructions. Such inventories should be constrained to contain a list of elements of a restricted type.
 

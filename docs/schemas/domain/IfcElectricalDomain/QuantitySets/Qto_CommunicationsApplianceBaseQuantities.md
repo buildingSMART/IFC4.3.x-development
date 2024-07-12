@@ -1,4 +1,3 @@
-Base quantities that are common to the definition of all occurrences of communications appliance.
+# Qto_CommunicationsApplianceBaseQuantities
 
-<!-- end of short definition -->
-
+Base quantities that are common to the definition of all occurrences of communications appliance.<!-- end of definition -->

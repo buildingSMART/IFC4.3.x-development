@@ -1,6 +1,5 @@
-A select type that groups together physical and spatial elements for the purpose of defining interferences between these elements.
+# IfcInterferenceSelect
 
-<!-- end of short definition -->
-
+A select type that groups together physical and spatial elements for the purpose of defining interferences between these elements.<!-- end of definition -->
 
 > HISTORY  New select type in IFC4x3.

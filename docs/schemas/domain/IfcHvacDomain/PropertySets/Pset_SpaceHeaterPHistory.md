@@ -1,7 +1,6 @@
-Space heater performance history common attributes.
+# Pset_SpaceHeaterPHistory
 
-<!-- end of short definition -->
-
+Space heater performance history common attributes.<!-- end of definition -->
 
 
 ## Comments

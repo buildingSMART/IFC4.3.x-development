@@ -1,4 +1,3 @@
-Properties common to the definition to all occurrences and types of IfcTrackElement with PredefinedType set to DERAILER.
+# Pset_TrackElementTypeDerailer
 
-<!-- end of short definition -->
-
+Properties common to the definition to all occurrences and types of IfcTrackElement with PredefinedType set to DERAILER.<!-- end of definition -->

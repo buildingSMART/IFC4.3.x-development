@@ -1,7 +1,6 @@
-Enumeration of signal indicator types.
+# PEnum_SignalIndicatorType
 
-<!-- end of short definition -->
-
+Enumeration of signal indicator types.<!-- end of definition -->
 
 ## Items
 

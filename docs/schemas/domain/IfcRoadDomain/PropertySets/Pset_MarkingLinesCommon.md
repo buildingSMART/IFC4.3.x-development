@@ -1,4 +1,3 @@
-Properties for line markings.
+# Pset_MarkingLinesCommon
 
-<!-- end of short definition -->
-
+Properties for line markings.<!-- end of definition -->

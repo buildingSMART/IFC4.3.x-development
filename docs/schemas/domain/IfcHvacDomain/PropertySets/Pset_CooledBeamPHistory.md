@@ -1,4 +1,3 @@
-Common performance history attributes for a cooled beam.
+# Pset_CooledBeamPHistory
 
-<!-- end of short definition -->
-
+Common performance history attributes for a cooled beam.<!-- end of definition -->

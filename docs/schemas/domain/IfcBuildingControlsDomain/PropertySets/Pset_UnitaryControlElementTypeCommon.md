@@ -1,4 +1,3 @@
-Unitary control element type common attributes.
+# Pset_UnitaryControlElementTypeCommon
 
-<!-- end of short definition -->
- HISTORY: Added in IFC4.
+Unitary control element type common attributes.<!-- end of definition --> HISTORY: Added in IFC4.

@@ -1,4 +1,3 @@
-Consumption of utility resources, typically applied to the IfcBuilding instance, used to identify how much was consumed on I.e., a monthly basis.
+# Pset_UtilityConsumptionPHistory
 
-<!-- end of short definition -->
-
+Consumption of utility resources, typically applied to the IfcBuilding instance, used to identify how much was consumed on I.e., a monthly basis.<!-- end of definition -->

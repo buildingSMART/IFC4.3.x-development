@@ -1,4 +1,3 @@
-Properties of spring tensioner used in railway. The property set can be used by the predefined type TENSIONINGEQUIPMENT of IfcDiscreteAccessory.
+# Pset_SpringTensioner
 
-<!-- end of short definition -->
-
+Properties of spring tensioner used in railway. The property set can be used by the predefined type TENSIONINGEQUIPMENT of IfcDiscreteAccessory.<!-- end of definition -->

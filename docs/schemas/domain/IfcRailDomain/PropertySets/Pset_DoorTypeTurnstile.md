@@ -1,4 +1,3 @@
-Properties common to turnstiles or automatic gates used to control the flow of people or vehicles. This property set is applied to IfcDoor instances of predefined type TURNSTILE.
+# Pset_DoorTypeTurnstile
 
-<!-- end of short definition -->
-
+Properties common to turnstiles or automatic gates used to control the flow of people or vehicles. This property set is applied to IfcDoor instances of predefined type TURNSTILE.<!-- end of definition -->

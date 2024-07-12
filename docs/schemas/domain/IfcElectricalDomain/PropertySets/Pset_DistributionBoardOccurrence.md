@@ -1,4 +1,3 @@
-Properties that may be applied to electric distribution board occurrences.
+# Pset_DistributionBoardOccurrence
 
-<!-- end of short definition -->
-
+Properties that may be applied to electric distribution board occurrences.<!-- end of definition -->

@@ -1,4 +1,3 @@
-Common attributes of an expansion type tank.
+# Pset_TankTypeExpansion
 
-<!-- end of short definition -->
-
+Common attributes of an expansion type tank.<!-- end of definition -->

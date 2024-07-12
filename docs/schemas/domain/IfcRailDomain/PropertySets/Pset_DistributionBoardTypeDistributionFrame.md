@@ -1,4 +1,3 @@
-Properties for _IfcDistributionBoard_ with PredefinedType DISTRIBUTIONFRAME.
+# Pset_DistributionBoardTypeDistributionFrame
 
-<!-- end of short definition -->
-
+Properties for _IfcDistributionBoard_ with PredefinedType DISTRIBUTIONFRAME.<!-- end of definition -->

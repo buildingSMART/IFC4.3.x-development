@@ -1,7 +1,6 @@
-This entity defines a reaction which occurs distributed over a curve. A curve reaction may be connected with a curve member or curve connection, or surface member or surface connection.
+# IfcStructuralCurveReaction
 
-<!-- end of short definition -->
-
+This entity defines a reaction which occurs distributed over a curve. A curve reaction may be connected with a curve member or curve connection, or surface member or surface connection.<!-- end of definition -->
 
 > HISTORY New entity in IFC4.
 

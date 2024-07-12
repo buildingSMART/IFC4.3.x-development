@@ -1,4 +1,3 @@
-Properties about tiles.
+# Pset_Tiling
 
-<!-- end of short definition -->
-
+Properties about tiles.<!-- end of definition -->

@@ -1,7 +1,6 @@
-A sensor is a device that measures a physical quantity and converts it into a signal which can be read by an observer or by an instrument.
+# IfcSensor
 
-<!-- end of short definition -->
-
+A sensor is a device that measures a physical quantity and converts it into a signal which can be read by an observer or by an instrument.<!-- end of definition -->
 
 > HISTORY New entity in IFC4
 

@@ -1,4 +1,3 @@
-Select of the Curve Measure.
+# IfcCurveMeasureSelect
 
-<!-- end of short definition -->
- 
+Select of the Curve Measure.<!-- end of definition --> 

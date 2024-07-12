@@ -1,7 +1,6 @@
-Common properties of all occurrences of IfcDistributionChamberElement.
+# Pset_DistributionChamberElementCommon
 
-<!-- end of short definition -->
-
+Common properties of all occurrences of IfcDistributionChamberElement.<!-- end of definition -->
 
 
 ## Comments

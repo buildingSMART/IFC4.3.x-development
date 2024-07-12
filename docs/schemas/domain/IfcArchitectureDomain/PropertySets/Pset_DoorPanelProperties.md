@@ -1,7 +1,6 @@
-Properties of the door panel.
+# Pset_DoorPanelProperties
 
-<!-- end of short definition -->
-
+Properties of the door panel.<!-- end of definition -->
 
 > HISTORY New property set in IFC4.3.2.0 to replace the entity IfcDoorPanelProperties
 

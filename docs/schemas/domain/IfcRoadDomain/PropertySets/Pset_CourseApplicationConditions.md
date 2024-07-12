@@ -1,4 +1,3 @@
-Properties regarding the conditions when applying a course.
+# Pset_CourseApplicationConditions
 
-<!-- end of short definition -->
-
+Properties regarding the conditions when applying a course.<!-- end of definition -->

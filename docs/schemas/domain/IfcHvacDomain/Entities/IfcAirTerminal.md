@@ -1,7 +1,6 @@
-An air terminal is a terminating or origination point for the transfer of air between distribution system(s) and one or more spaces. It can also be used for the transfer of air between adjacent spaces.
+# IfcAirTerminal
 
-<!-- end of short definition -->
-
+An air terminal is a terminating or origination point for the transfer of air between distribution system(s) and one or more spaces. It can also be used for the transfer of air between adjacent spaces.<!-- end of definition -->
 
 > HISTORY New entity in IFC4
 

@@ -1,7 +1,6 @@
-Air terminal occurrence attributes attached to an instance of IfcAirTerminal.
+# Pset_AirTerminalOccurrence
 
-<!-- end of short definition -->
-
+Air terminal occurrence attributes attached to an instance of IfcAirTerminal.<!-- end of definition -->
 
 
 ## Comments

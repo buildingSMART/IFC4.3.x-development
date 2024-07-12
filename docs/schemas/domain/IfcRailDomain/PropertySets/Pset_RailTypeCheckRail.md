@@ -1,4 +1,3 @@
-Properties common to IfcRail types and occurrences with PredefinedType set to CHECKRAIL.
+# Pset_RailTypeCheckRail
 
-<!-- end of short definition -->
-
+Properties common to IfcRail types and occurrences with PredefinedType set to CHECKRAIL.<!-- end of definition -->

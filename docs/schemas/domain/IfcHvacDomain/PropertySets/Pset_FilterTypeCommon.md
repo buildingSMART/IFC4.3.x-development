@@ -1,4 +1,3 @@
-Filter type common attributes.
+# Pset_FilterTypeCommon
 
-<!-- end of short definition -->
-
+Filter type common attributes.<!-- end of definition -->

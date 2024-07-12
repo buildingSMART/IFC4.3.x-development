@@ -1,4 +1,3 @@
-Property set for the application of high level project information.
+# Pset_ProjectCommon
 
-<!-- end of short definition -->
-
+Property set for the application of high level project information.<!-- end of definition -->

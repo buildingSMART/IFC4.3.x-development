@@ -1,7 +1,6 @@
-This enumeration defines the various types of damper
+# IfcDamperTypeEnum
 
-<!-- end of short definition -->
-
+This enumeration defines the various types of damper<!-- end of definition -->
 
 > HISTORY New enumeration in IFC2.0.
 

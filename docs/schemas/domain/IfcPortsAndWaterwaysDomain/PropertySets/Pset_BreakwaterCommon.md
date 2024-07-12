@@ -1,4 +1,3 @@
-Properties common to the definition of all occurrences of _IfcMarineFacility_ with the predefined type set to BREAKWATER.
+# Pset_BreakwaterCommon
 
-<!-- end of short definition -->
-
+Properties common to the definition of all occurrences of _IfcMarineFacility_ with the predefined type set to BREAKWATER.<!-- end of definition -->

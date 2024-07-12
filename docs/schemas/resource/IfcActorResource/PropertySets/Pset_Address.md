@@ -1,4 +1,3 @@
-This Property Set represents an address for delivery of paper based mail and other postal deliveries.
+# Pset_Address
 
-<!-- end of short definition -->
-
+This Property Set represents an address for delivery of paper based mail and other postal deliveries.<!-- end of definition -->

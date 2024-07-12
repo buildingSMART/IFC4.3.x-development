@@ -1,7 +1,6 @@
-Enumeration of possible relative position values. The position of something is the place where it is in relation to other things.
+# PEnum_RelativePosition
 
-<!-- end of short definition -->
-
+Enumeration of possible relative position values. The position of something is the place where it is in relation to other things.<!-- end of definition -->
 
 ## Items
 

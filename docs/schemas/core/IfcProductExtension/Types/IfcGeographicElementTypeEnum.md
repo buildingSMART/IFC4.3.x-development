@@ -1,7 +1,6 @@
-This enumeration defines the different predefined types of geographic elements that can further specify an _IfcGeographicElement_ or an _IfcGeographicElementType_.
+# IfcGeographicElementTypeEnum
 
-<!-- end of short definition -->
-
+This enumeration defines the different predefined types of geographic elements that can further specify an _IfcGeographicElement_ or an _IfcGeographicElementType_.<!-- end of definition -->
 
 > HISTORY New enumeration in IFC2x2.
 

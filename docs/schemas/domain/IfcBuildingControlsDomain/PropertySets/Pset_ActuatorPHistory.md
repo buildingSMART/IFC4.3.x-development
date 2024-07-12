@@ -1,6 +1,5 @@
-Properties for history of actuators.
+# Pset_ActuatorPHistory
 
-<!-- end of short definition -->
-
+Properties for history of actuators.<!-- end of definition -->
 
 > HISTORY Added in IFC4.

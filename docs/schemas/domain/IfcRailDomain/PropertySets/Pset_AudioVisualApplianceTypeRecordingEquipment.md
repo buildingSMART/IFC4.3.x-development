@@ -1,4 +1,3 @@
-Properties common to _IfcAudioVisualAppliance_ with predefined type set to RECORDINGEQUIPMENT.
+# Pset_AudioVisualApplianceTypeRecordingEquipment
 
-<!-- end of short definition -->
-
+Properties common to _IfcAudioVisualAppliance_ with predefined type set to RECORDINGEQUIPMENT.<!-- end of definition -->

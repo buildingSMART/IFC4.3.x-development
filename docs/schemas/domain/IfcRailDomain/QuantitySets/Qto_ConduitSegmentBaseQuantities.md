@@ -1,4 +1,3 @@
-Quantity set of Conduit Segment Base.
+# Qto_ConduitSegmentBaseQuantities
 
-<!-- end of short definition -->
-
+Quantity set of Conduit Segment Base.<!-- end of definition -->

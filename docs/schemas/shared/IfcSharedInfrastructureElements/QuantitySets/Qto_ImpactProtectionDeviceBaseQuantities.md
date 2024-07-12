@@ -1,4 +1,3 @@
-Quantity set Impact Protection Device Base.
+# Qto_ImpactProtectionDeviceBaseQuantities
 
-<!-- end of short definition -->
-
+Quantity set Impact Protection Device Base.<!-- end of definition -->

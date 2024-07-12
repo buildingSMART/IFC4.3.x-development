@@ -1,4 +1,3 @@
-A device that electrically actuates a control element.
+# Pset_ActuatorTypeElectricActuator
 
-<!-- end of short definition -->
-
+A device that electrically actuates a control element.<!-- end of definition -->

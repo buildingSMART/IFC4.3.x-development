@@ -1,4 +1,3 @@
-Properties applicable to _IfcFacilityPartCommon_ with PredefinedType set to LEVELCROSSING.
+# Pset_RailwayLevelCrossing
 
-<!-- end of short definition -->
-
+Properties applicable to _IfcFacilityPartCommon_ with PredefinedType set to LEVELCROSSING.<!-- end of definition -->

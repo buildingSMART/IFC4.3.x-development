@@ -1,7 +1,6 @@
+# PEnum_HoseReelType
 
-
-<!-- end of short definition -->
-## Items
+<!-- end of definition -->## Items
 
 ### RACK
 Rack

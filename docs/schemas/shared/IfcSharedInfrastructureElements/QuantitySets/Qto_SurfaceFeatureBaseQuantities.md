@@ -1,4 +1,3 @@
-Base quantities for Surface Features.
+# Qto_SurfaceFeatureBaseQuantities
 
-<!-- end of short definition -->
-
+Base quantities for Surface Features.<!-- end of definition -->

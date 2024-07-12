@@ -1,7 +1,6 @@
-The _IfcImpactProtectionDeviceType_ provides the type information for _IfcImpactProtectionDevice_ occurrences.
+# IfcImpactProtectionDeviceType
 
-<!-- end of short definition -->
-
+The _IfcImpactProtectionDeviceType_ provides the type information for _IfcImpactProtectionDevice_ occurrences.<!-- end of definition -->
 An impact protection device is a component used to protect other built elements from kinetic damage.
 
 ## Attributes

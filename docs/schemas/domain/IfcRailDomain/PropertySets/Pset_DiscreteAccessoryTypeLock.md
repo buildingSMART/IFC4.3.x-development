@@ -1,4 +1,3 @@
-Properties of locking equipment. The property set can be used by the predefined type LOCK of IfcDiscreteAccessory.
+# Pset_DiscreteAccessoryTypeLock
 
-<!-- end of short definition -->
-
+Properties of locking equipment. The property set can be used by the predefined type LOCK of IfcDiscreteAccessory.<!-- end of definition -->

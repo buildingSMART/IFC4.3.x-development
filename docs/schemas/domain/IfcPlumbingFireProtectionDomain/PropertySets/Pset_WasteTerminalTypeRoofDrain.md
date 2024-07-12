@@ -1,4 +1,3 @@
-Pipe fitting, set into the roof, that collects rainwater for discharge into the rainwater system.
+# Pset_WasteTerminalTypeRoofDrain
 
-<!-- end of short definition -->
-
+Pipe fitting, set into the roof, that collects rainwater for discharge into the rainwater system.<!-- end of definition -->

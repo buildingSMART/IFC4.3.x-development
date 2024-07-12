@@ -1,4 +1,3 @@
-Properties common to the definition of all instances of alignment segment that have designParameters for cant.
+# Pset_AlignmentCantSegmentCommon
 
-<!-- end of short definition -->
-
+Properties common to the definition of all instances of alignment segment that have designParameters for cant.<!-- end of definition -->

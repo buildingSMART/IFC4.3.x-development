@@ -1,4 +1,3 @@
-An asset is a uniquely identifiable element which has a financial value and against which maintenance actions are recorded.
+# Pset_Asset
 
-<!-- end of short definition -->
-
+An asset is a uniquely identifiable element which has a financial value and against which maintenance actions are recorded.<!-- end of definition -->

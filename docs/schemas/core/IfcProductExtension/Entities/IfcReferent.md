@@ -1,7 +1,6 @@
-_IfcReferent_ defines a position at a particular offset along an alignment curve.
+# IfcReferent
 
-<!-- end of short definition -->
-
+_IfcReferent_ defines a position at a particular offset along an alignment curve.<!-- end of definition -->
 
 Referents may be used for several scenarios:
 

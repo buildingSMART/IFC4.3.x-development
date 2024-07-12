@@ -1,7 +1,6 @@
-_IfcShearModulusMeasure_ is a measure of shear modulus.
+# IfcShearModulusMeasure
 
-<!-- end of short definition -->
-
+_IfcShearModulusMeasure_ is a measure of shear modulus.<!-- end of definition -->
 
 Usually measured in N/m2.
 

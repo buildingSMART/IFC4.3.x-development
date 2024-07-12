@@ -1,4 +1,3 @@
-A starter is a switch which in the closed position controls the application of power to an electrical device.
+# Pset_SwitchingDeviceTypeStarter
 
-<!-- end of short definition -->
-
+A starter is a switch which in the closed position controls the application of power to an electrical device.<!-- end of definition -->

@@ -1,7 +1,6 @@
-An annotation is an information element within the geometric (and spatial) context of a project, that adds a note or meaning to the objects which constitutes the project model. Annotations include additional points, curves, text, dimensioning, hatching and other forms of graphical notes. It also includes virtual or symbolic representations of additional model components, not representing products or spatial structures, such as survey points and lines, contour lines or similar.
+# IfcAnnotation
 
-<!-- end of short definition -->
-
+An annotation is an information element within the geometric (and spatial) context of a project, that adds a note or meaning to the objects which constitutes the project model. Annotations include additional points, curves, text, dimensioning, hatching and other forms of graphical notes. It also includes virtual or symbolic representations of additional model components, not representing products or spatial structures, such as survey points and lines, contour lines or similar.<!-- end of definition -->
 
 > NOTE Additional presentation information (often 2D) such as tag number or hatching, that is directly related to a particular product representation is included within the _IfcProductDefinitionShape_ having various _IfcShapeRepresentation_'s of the _IfcElement_ (and its subtypes). Only those presentation information, that cannot be directly related to a single product, have to be wrapped within the _IfcAnnotation_.
 
@@ -24,18 +23,18 @@ Relationship to a spatial structure element, to which the associate is primarily
 
 The Annotation 2D Geometry concept template applies to this entity as shown below:
 
-| Identifier | Type   | Items     | Description     |
+| Identifier | Type     | Items         | Description          |
 |------------|--------------|-----------------------|--------------------------------|
-| Annotation | Annotation2D | IfcGeometricCurveSet | Any point or curve    |
-| Annotation | Annotation2D | IfcAnnotationFillArea | Area for hatching    |
-| Annotation | Annotation2D | IfcTextLiteral  | Text literal for applying text |
+| Annotation | Annotation2D | IfcGeometricCurveSet | Any point or curve       |
+| Annotation | Annotation2D | IfcAnnotationFillArea | Area for hatching       |
+| Annotation | Annotation2D | IfcTextLiteral    | Text literal for applying text |
 
 
 ### Annotation 3D Geometry
 
 The Annotation 3D Geometry concept template applies to this entity as shown below:
 
-| Identifier | Type   | Items   | Description            |
+| Identifier | Type     | Items      | Description                       |
 |------------|--------------|-----------------|---------------------------------------------------------|
 | Annotation | GeometricSet | IfcGeometricSet | Any point, curve or surface representing the annotation |
 

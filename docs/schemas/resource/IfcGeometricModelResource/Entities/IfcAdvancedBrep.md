@@ -1,7 +1,6 @@
-An advanced B-rep is a boundary representation model in which all faces, edges and vertices are explicitly represented. It is a solid with explicit topology and elementary or free-form geometry. The faces of the B-rep are of type _IfcAdvancedFace_. An advanced B-rep has to meet the same topological constraints as the manifold solid B-rep.
+# IfcAdvancedBrep
 
-<!-- end of short definition -->
-
+An advanced B-rep is a boundary representation model in which all faces, edges and vertices are explicitly represented. It is a solid with explicit topology and elementary or free-form geometry. The faces of the B-rep are of type _IfcAdvancedFace_. An advanced B-rep has to meet the same topological constraints as the manifold solid B-rep.<!-- end of definition -->
 
 > NOTE The advanced B-rep has been introduced in order to support the increasing number of applications that can define and exchange B-rep models based on NURBS or other b-spline surfaces.
 

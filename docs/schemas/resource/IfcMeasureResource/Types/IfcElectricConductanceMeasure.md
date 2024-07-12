@@ -1,7 +1,6 @@
-_IfcElectricConductanceMeasure_ is a measure of the electric conductance.
+# IfcElectricConductanceMeasure
 
-<!-- end of short definition -->
-
+_IfcElectricConductanceMeasure_ is a measure of the electric conductance.<!-- end of definition -->
 
 Usually measured in Siemens (S, 1/Ohm = A/V).
 

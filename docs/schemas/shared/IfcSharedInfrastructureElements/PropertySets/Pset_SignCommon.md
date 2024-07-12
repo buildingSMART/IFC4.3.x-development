@@ -1,4 +1,3 @@
-Common properties for Signs.
+# Pset_SignCommon
 
-<!-- end of short definition -->
-
+Common properties for Signs.<!-- end of definition -->

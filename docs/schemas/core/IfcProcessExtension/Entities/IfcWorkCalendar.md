@@ -1,7 +1,6 @@
-An _IfcWorkCalendar_ defines working and non-working time periods for tasks and resources. It enables to define both specific time periods, such as from 7:00 till 12:00 on 25th August 2009, as well as repetitive time periods based on frequently used recurrence patterns, such as each Monday from 7:00 till 12:00 between 1st March 2009 and 31st December 2009.
+# IfcWorkCalendar
 
-<!-- end of short definition -->
-
+An _IfcWorkCalendar_ defines working and non-working time periods for tasks and resources. It enables to define both specific time periods, such as from 7:00 till 12:00 on 25th August 2009, as well as repetitive time periods based on frequently used recurrence patterns, such as each Monday from 7:00 till 12:00 between 1st March 2009 and 31st December 2009.<!-- end of definition -->
 
 > HISTORY New entity in IFC4.
 

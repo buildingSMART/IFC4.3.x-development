@@ -1,4 +1,3 @@
-Properties about Material of Wood Based Structure.
+# Pset_MaterialWoodBasedStructure
 
-<!-- end of short definition -->
-
+Properties about Material of Wood Based Structure.<!-- end of definition -->

@@ -1,7 +1,6 @@
-The _IfcCompositeCurveOnSurface_ is a collection of segments, based on p-curves. i.e. a curve which lies on the basis of a surface and is defined in the parameter space of that surface. The p-curve segment is a special type of a composite curve segment and shall only be used to bound a surface.
+# IfcCompositeCurveOnSurface
 
-<!-- end of short definition -->
-
+The _IfcCompositeCurveOnSurface_ is a collection of segments, based on p-curves. i.e. a curve which lies on the basis of a surface and is defined in the parameter space of that surface. The p-curve segment is a special type of a composite curve segment and shall only be used to bound a surface.<!-- end of definition -->
 
 { .extDef}
 > NOTE Definition according to ISO/CD 10303-42:1992

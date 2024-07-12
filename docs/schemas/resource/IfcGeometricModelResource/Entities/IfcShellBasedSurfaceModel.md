@@ -1,7 +1,6 @@
-An _IfcShellBasedSurfaceModel_ represents the shape by a set of open or closed shells. The connected faces within the shell have a dimensionality 2 and are placed in a coordinate space of dimensionality 3.
+# IfcShellBasedSurfaceModel
 
-<!-- end of short definition -->
-
+An _IfcShellBasedSurfaceModel_ represents the shape by a set of open or closed shells. The connected faces within the shell have a dimensionality 2 and are placed in a coordinate space of dimensionality 3.<!-- end of definition -->
 
 { .extDef}
 > NOTE Definition according to ISO/CD 10303-42:1992

@@ -1,7 +1,6 @@
-Enumeration of data connection types.
+# PEnum_DataConnectionType
 
-<!-- end of short definition -->
-
+Enumeration of data connection types.<!-- end of definition -->
 
 ## Items
 

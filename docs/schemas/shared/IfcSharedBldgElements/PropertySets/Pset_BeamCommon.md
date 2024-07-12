@@ -1,7 +1,6 @@
-Properties common to the definition of all occurrence and type objects of beam.
+# Pset_BeamCommon
 
-<!-- end of short definition -->
-
+Properties common to the definition of all occurrence and type objects of beam.<!-- end of definition -->
 
 
 ## Comments

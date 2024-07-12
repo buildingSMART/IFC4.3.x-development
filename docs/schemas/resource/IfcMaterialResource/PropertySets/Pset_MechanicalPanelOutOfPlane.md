@@ -1,7 +1,6 @@
-Properties for Mechanica lPanels Out Of Plane.
+# Pset_MechanicalPanelOutOfPlane
 
-<!-- end of short definition -->
-
+Properties for Mechanica lPanels Out Of Plane.<!-- end of definition -->
 
 ## Comments
 

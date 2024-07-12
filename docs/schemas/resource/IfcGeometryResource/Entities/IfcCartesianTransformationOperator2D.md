@@ -1,7 +1,6 @@
-An _IfcCartesianTransformationOperator2D_ defines a geometric transformation in two-dimensional space.
+# IfcCartesianTransformationOperator2D
 
-<!-- end of short definition -->
-
+An _IfcCartesianTransformationOperator2D_ defines a geometric transformation in two-dimensional space.<!-- end of definition -->
 
 { .extDef}
 > NOTE Definition according to ISO/CD 10303-42:1992

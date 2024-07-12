@@ -1,4 +1,3 @@
-Common properties for interceptors.
+# Pset_InterceptorTypeCommon
 
-<!-- end of short definition -->
-
+Common properties for interceptors.<!-- end of definition -->

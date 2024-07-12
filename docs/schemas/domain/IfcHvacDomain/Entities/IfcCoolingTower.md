@@ -1,7 +1,6 @@
-A cooling tower is a device which rejects heat to ambient air by circulating a fluid such as water through it to reduce its temperature by partial evaporation.
+# IfcCoolingTower
 
-<!-- end of short definition -->
-
+A cooling tower is a device which rejects heat to ambient air by circulating a fluid such as water through it to reduce its temperature by partial evaporation.<!-- end of definition -->
 
 > HISTORY New entity in IFC4
 

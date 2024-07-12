@@ -1,7 +1,6 @@
-The _IfcThirdOrderPolynomialSpiral_ is a specialization of _IfcSpiral_. The curvature _κ_ and radius of the curvature _ρ_, at any point of the curve, are related to the arc length _s_ by the third order formulae:
+# IfcThirdOrderPolynomialSpiral
 
-<!-- end of short definition -->
-
+The _IfcThirdOrderPolynomialSpiral_ is a specialization of _IfcSpiral_. The curvature _κ_ and radius of the curvature _ρ_, at any point of the curve, are related to the arc length _s_ by the third order formulae:<!-- end of definition -->
 >>
 >> ![formula](../../../../figures/ifcthirdorderpolynomialspiral_curvature.PNG)
 >>

@@ -1,4 +1,3 @@
-Information on tripping units that are electrically or magnetically tripped.
+# Pset_ProtectiveDeviceTrippingUnitTypeElectroMagnetic
 
-<!-- end of short definition -->
-
+Information on tripping units that are electrically or magnetically tripped.<!-- end of definition -->

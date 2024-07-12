@@ -1,7 +1,6 @@
+# PEnum_CommunicationStandard
 
-
-<!-- end of short definition -->
-## Items
+<!-- end of definition -->## Items
 
 ### ETHERNET
 

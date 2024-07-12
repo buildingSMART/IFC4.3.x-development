@@ -1,4 +1,3 @@
-Base quantities that are common to the definition of all occurrences of audio visual appliance.
+# Qto_AudioVisualApplianceBaseQuantities
 
-<!-- end of short definition -->
-
+Base quantities that are common to the definition of all occurrences of audio visual appliance.<!-- end of definition -->

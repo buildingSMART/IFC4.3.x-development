@@ -1,7 +1,6 @@
-The _IfcEventTypeEnum_ defines the range of different types of event that can be specified.
+# IfcEventTypeEnum
 
-<!-- end of short definition -->
-
+The _IfcEventTypeEnum_ defines the range of different types of event that can be specified.<!-- end of definition -->
 
 > HISTORY New type in IFC4
 

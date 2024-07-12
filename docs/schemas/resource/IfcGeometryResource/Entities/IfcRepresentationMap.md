@@ -1,7 +1,6 @@
-An _IfcRepresentationMap_ defines the base definition (also referred to as block, cell or macro) called _MappedRepresentation_ within the _MappingOrigin_. The _MappingOrigin_ defines the coordinate system in which the _MappedRepresentation_ is defined.
+# IfcRepresentationMap
 
-<!-- end of short definition -->
-
+An _IfcRepresentationMap_ defines the base definition (also referred to as block, cell or macro) called _MappedRepresentation_ within the _MappingOrigin_. The _MappingOrigin_ defines the coordinate system in which the _MappedRepresentation_ is defined.<!-- end of definition -->
 
 { .extDef}
 > NOTE Definition according to ISO/CD 10303-43:1992

@@ -1,7 +1,6 @@
-A device that senses or detects smoke.
+# Pset_SensorTypeSmokeSensor
 
-<!-- end of short definition -->
- HISTORY: PressureSensorSensorSetPoint (error in previous release) changed to SetPointConcentration. Range, accuracy and time constant deleted.
+A device that senses or detects smoke.<!-- end of definition --> HISTORY: PressureSensorSensorSetPoint (error in previous release) changed to SetPointConcentration. Range, accuracy and time constant deleted.
 
 
 ## Comments

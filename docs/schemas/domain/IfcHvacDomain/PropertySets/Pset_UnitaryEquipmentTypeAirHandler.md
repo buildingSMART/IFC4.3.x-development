@@ -1,5 +1,4 @@
-Air handler unitary equipment type attributes.
+# Pset_UnitaryEquipmentTypeAirHandler
 
-<!-- end of short definition -->
-
+Air handler unitary equipment type attributes.<!-- end of definition -->
 Note that these attributes were formerly Pset_AirHandler prior to IFC2x2.

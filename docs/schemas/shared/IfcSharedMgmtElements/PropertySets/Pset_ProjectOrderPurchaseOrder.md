@@ -1,4 +1,3 @@
-Defines the requirements for purchase orders in a project.
+# Pset_ProjectOrderPurchaseOrder
 
-<!-- end of short definition -->
-
+Defines the requirements for purchase orders in a project.<!-- end of definition -->

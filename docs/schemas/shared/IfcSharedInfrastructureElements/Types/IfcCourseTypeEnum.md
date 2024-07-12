@@ -1,7 +1,6 @@
-This container defines the different predefined types of course elements that can further specify an _IfcCourse_ or _IfcCourseType_.
+# IfcCourseTypeEnum
 
-<!-- end of short definition -->
-
+This container defines the different predefined types of course elements that can further specify an _IfcCourse_ or _IfcCourseType_.<!-- end of definition -->
 
 ## Items
 

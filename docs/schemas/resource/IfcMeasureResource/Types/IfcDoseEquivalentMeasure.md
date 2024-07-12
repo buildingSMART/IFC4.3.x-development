@@ -1,7 +1,6 @@
-_IfcDoseEquivalentMeasure_ is a measure of the radioactive dose equivalent.
+# IfcDoseEquivalentMeasure
 
-<!-- end of short definition -->
-
+_IfcDoseEquivalentMeasure_ is a measure of the radioactive dose equivalent.<!-- end of definition -->
 
 Usually measured in Sievert (Sv, J/kg).
 

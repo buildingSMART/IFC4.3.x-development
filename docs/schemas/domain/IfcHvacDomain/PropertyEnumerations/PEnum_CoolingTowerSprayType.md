@@ -1,7 +1,6 @@
+# PEnum_CoolingTowerSprayType
 
-
-<!-- end of short definition -->
-## Items
+<!-- end of definition -->## Items
 
 ### SPRAYFILLED
 Spray Filled

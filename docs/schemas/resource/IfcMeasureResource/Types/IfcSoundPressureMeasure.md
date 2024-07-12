@@ -1,7 +1,6 @@
-A sound pressure measure is a measure of the pressure fluctuations superimposed over the ambient pressure level with units of pascals.
+# IfcSoundPressureMeasure
 
-<!-- end of short definition -->
-
+A sound pressure measure is a measure of the pressure fluctuations superimposed over the ambient pressure level with units of pascals.<!-- end of definition -->
 
 Type: REAL
 

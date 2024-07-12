@@ -1,4 +1,3 @@
-Properties for Construction Administration. Often used for facility and asset management.
+# Pset_ConstructionAdministration
 
-<!-- end of short definition -->
-
+Properties for Construction Administration. Often used for facility and asset management.<!-- end of definition -->

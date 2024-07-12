@@ -1,7 +1,6 @@
-The _IfcDimensionCount_ defines the dimensionality of the coordinate space. It is restricted to have the dimensionality of either 1, 2, or 3 for the purpose of this specification.
+# IfcDimensionCount
 
-<!-- end of short definition -->
-
+The _IfcDimensionCount_ defines the dimensionality of the coordinate space. It is restricted to have the dimensionality of either 1, 2, or 3 for the purpose of this specification.<!-- end of definition -->
 
 > NOTE The shape representations assigned to a geometric representation context may include geometric representation items of lower dimensionality, particularly when defining the boundary of planar surfaces as 2D cross sections for the purpose of 3D swept areas.
 

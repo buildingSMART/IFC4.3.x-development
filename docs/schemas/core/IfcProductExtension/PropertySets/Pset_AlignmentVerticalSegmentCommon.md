@@ -1,4 +1,3 @@
-Properties common to the definition of all instances of alignment vertical segment.
+# Pset_AlignmentVerticalSegmentCommon
 
-<!-- end of short definition -->
-
+Properties common to the definition of all instances of alignment vertical segment.<!-- end of definition -->

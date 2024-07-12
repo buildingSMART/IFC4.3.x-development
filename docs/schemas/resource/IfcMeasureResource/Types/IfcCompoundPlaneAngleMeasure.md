@@ -1,7 +1,6 @@
-_IfcCompoundPlaneAngleMeasure_ is a compound measure of plane angle in degrees, minutes, seconds, and optionally millionth-seconds of arc.
+# IfcCompoundPlaneAngleMeasure
 
-<!-- end of short definition -->
-
+_IfcCompoundPlaneAngleMeasure_ is a compound measure of plane angle in degrees, minutes, seconds, and optionally millionth-seconds of arc.<!-- end of definition -->
 
 > NOTE _IfcCompoundPlaneAngleMeasure_ is used where angles need to be described to an accuracy as fine as one millionth of a degree and expressed as parts of an arc. It may be used for angular measurement by surveyors or for other angular measurements where precision is required. Another usage is exact or approximate global positioning against a geographic coordinate systems using longitude and latitude.
 
@@ -28,20 +27,20 @@ All measure components have the same sign (positive or negative). It is therefor
 > ```
 >
 LOCAL
-> a : IfcPlaneAngleMeasure := -50.975864; (\* decimal degrees, -50° 58' 33" 110400 \*)
-> b : IfcPlaneAngleMeasure;
-> c : IfcCompoundPlaneAngleMeasure;
-> s : IfcText;
+>  a : IfcPlaneAngleMeasure := -50.975864; (\* decimal degrees, -50° 58' 33" 110400 \*)
+>  b : IfcPlaneAngleMeasure;
+>  c : IfcCompoundPlaneAngleMeasure;
+>  s : IfcText;
 > END_LOCAL;
 >
 > (\* convert from float to compound \*)
-> c[1] := a;           -- -50
-> c[2] := (a - c[1]) \* 60;        -- -58
-> c[3] := ((a - c[1]) \* 60 - c[2]) \* 60;     -- -33
-> c[4] := (((a - c[1]) \* 60 - c[2]) \* 60 - c[3]) \* 1.e6; -- -110400
+>  c[1] :=  a;                      -- -50
+>  c[2] :=  (a - c[1]) \* 60;               -- -58
+>  c[3] := ((a - c[1]) \* 60 - c[2]) \* 60;         -- -33
+>  c[4] := (((a - c[1]) \* 60 - c[2]) \* 60 - c[3]) \* 1.e6; -- -110400
 >
 > (\* convert from compound to float \*)
-> b := c[1] + c[2]/60. + c[3]/3600. + c[4]/3600.e6;  -- -50.975864
+>  b := c[1] + c[2]/60. + c[3]/3600. + c[4]/3600.e6;    -- -50.975864
 >
 > ```
 
@@ -55,10 +54,10 @@ When a compound plane angle measure is formatted for display or printout, the si
 > ```
 >
 (\* convert from compound to human-readable string \*)
-> s := FORMAT(c[1], '+##')  + "000000B0"
->  + FORMAT(ABS(c[2]), '##') + ''''
->  + FORMAT(ABS(c[3]), '##') + '"'
->  + FORMAT(ABS(c[4]), '##'); -- -50° 58' 33" 110400
+>  s := FORMAT(c[1], '+##')   + "000000B0"
+>   + FORMAT(ABS(c[2]), '##') + ''''
+>   + FORMAT(ABS(c[3]), '##') + '"'
+>   + FORMAT(ABS(c[4]), '##'); -- -50° 58' 33" 110400
 
 > ```
 

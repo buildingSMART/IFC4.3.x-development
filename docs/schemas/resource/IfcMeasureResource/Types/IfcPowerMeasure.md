@@ -1,7 +1,6 @@
-_IfcPowerMeasure_ is a measure of power required or used.
+# IfcPowerMeasure
 
-<!-- end of short definition -->
-
+_IfcPowerMeasure_ is a measure of power required or used.<!-- end of definition -->
 
 Usually measured in Watts (W, J/s).
 

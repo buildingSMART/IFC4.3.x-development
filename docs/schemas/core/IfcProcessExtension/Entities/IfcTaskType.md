@@ -1,7 +1,6 @@
-An _IfcTaskType_ defines a particular type of task that may be specified for use within a work control.
+# IfcTaskType
 
-<!-- end of short definition -->
-
+An _IfcTaskType_ defines a particular type of task that may be specified for use within a work control.<!-- end of definition -->
 
 > HISTORY New entity in IFC4
 

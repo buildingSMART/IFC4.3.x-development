@@ -1,7 +1,6 @@
-_IfcIlluminanceMeasure_ is a measure of the illuminance.
+# IfcIlluminanceMeasure
 
-<!-- end of short definition -->
-
+_IfcIlluminanceMeasure_ is a measure of the illuminance.<!-- end of definition -->
 
 Usually measured in Lux (lx, Lumen/m2 = Candela Steradian/m2).
 

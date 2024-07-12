@@ -1,7 +1,6 @@
-A TendonConduit represents the components of the conduit system for tendons embedded in concrete structure.
+# IfcTendonConduit
 
-<!-- end of short definition -->
-
+A TendonConduit represents the components of the conduit system for tendons embedded in concrete structure.<!-- end of definition -->
 
 ## Attributes
 

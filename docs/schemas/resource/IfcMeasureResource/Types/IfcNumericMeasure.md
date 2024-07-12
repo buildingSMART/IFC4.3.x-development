@@ -1,7 +1,6 @@
-An _IfcNumericMeasure_ is the numeric value of a physical quantity.
+# IfcNumericMeasure
 
-<!-- end of short definition -->
-
+An _IfcNumericMeasure_ is the numeric value of a physical quantity.<!-- end of definition -->
 
 Type: NUMBER
 

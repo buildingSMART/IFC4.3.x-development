@@ -1,4 +1,3 @@
-Properties common to the definition of all occurrences of IfcWorkPlan and IfcWorkSchedule (subtypes of IfcWorkControl).
+# Pset_WorkControlCommon
 
-<!-- end of short definition -->
-
+Properties common to the definition of all occurrences of IfcWorkPlan and IfcWorkSchedule (subtypes of IfcWorkControl).<!-- end of definition -->

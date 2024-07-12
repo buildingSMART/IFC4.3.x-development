@@ -1,7 +1,6 @@
-This abstract entity is the supertype of all loads (actions or reactions) or of certain requirements resulting from structural analysis, or certain provisions which influence structural analysis.
+# IfcStructuralLoad
 
-<!-- end of short definition -->
-
+This abstract entity is the supertype of all loads (actions or reactions) or of certain requirements resulting from structural analysis, or certain provisions which influence structural analysis.<!-- end of definition -->
 
 > HISTORY New entity in IFC2x2.
 

@@ -1,4 +1,3 @@
-Properties of fiber segment occurrences. This property set is applicable to occurrences of _IfcCableSegment_ with predefined type FIBERSEGMENT.
+# Pset_CableSegmentOccurenceFiberSegment
 
-<!-- end of short definition -->
-
+Properties of fiber segment occurrences. This property set is applicable to occurrences of _IfcCableSegment_ with predefined type FIBERSEGMENT.<!-- end of definition -->

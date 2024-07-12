@@ -1,4 +1,3 @@
-Coil occurrence attributes attached to an instance of IfcCoil.
+# Pset_CoilOccurrence
 
-<!-- end of short definition -->
-
+Coil occurrence attributes attached to an instance of IfcCoil.<!-- end of definition -->

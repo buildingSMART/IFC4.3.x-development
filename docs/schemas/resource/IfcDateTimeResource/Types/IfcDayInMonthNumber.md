@@ -1,7 +1,6 @@
-_IfcDayInMonthNumber_ is an integer that defines the position of the specified day in a month.
+# IfcDayInMonthNumber
 
-<!-- end of short definition -->
-
+_IfcDayInMonthNumber_ is an integer that defines the position of the specified day in a month.<!-- end of definition -->
 
 Type: INTEGER
 

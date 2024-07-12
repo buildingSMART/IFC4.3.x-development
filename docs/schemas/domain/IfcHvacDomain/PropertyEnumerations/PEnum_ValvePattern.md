@@ -1,7 +1,6 @@
+# PEnum_ValvePattern
 
-
-<!-- end of short definition -->
-## Items
+<!-- end of definition -->## Items
 
 ### SINGLEPORT
 Valve that has a single entry port from the system that it serves, the exit port being to the surrounding environment

@@ -1,7 +1,6 @@
-Base quantities that are common to the definition of all occurrences of cable segment.
+# Qto_CableSegmentBaseQuantities
 
-<!-- end of short definition -->
-
+Base quantities that are common to the definition of all occurrences of cable segment.<!-- end of definition -->
 
 
 ## Comments

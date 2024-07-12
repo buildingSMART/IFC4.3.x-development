@@ -1,7 +1,6 @@
-_IfcObjectPlacement_ is an abstract supertype for the special types defining the object coordinate system. The _IfcObjectPlacement_ has to be provided for each product that has a shape representation.
+# IfcObjectPlacement
 
-<!-- end of short definition -->
-
+_IfcObjectPlacement_ is an abstract supertype for the special types defining the object coordinate system. The _IfcObjectPlacement_ has to be provided for each product that has a shape representation.<!-- end of definition -->
 
 The object placement can be given:
 

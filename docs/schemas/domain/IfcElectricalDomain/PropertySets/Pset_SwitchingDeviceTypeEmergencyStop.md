@@ -1,4 +1,3 @@
-An emergency stop device acts to remove as quickly as possible any danger that may have arisen unexpectedly.
+# Pset_SwitchingDeviceTypeEmergencyStop
 
-<!-- end of short definition -->
-
+An emergency stop device acts to remove as quickly as possible any danger that may have arisen unexpectedly.<!-- end of definition -->

@@ -1,7 +1,6 @@
+# PEnum_AudioVisualSpeakerMounting
 
-
-<!-- end of short definition -->
-## Items
+<!-- end of definition -->## Items
 
 ### FREESTANDING
 Freestanding

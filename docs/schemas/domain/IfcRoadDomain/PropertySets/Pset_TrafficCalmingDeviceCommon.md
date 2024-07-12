@@ -1,4 +1,3 @@
-Properties for a traffic calming device.
+# Pset_TrafficCalmingDeviceCommon
 
-<!-- end of short definition -->
-
+Properties for a traffic calming device.<!-- end of definition -->

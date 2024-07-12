@@ -1,4 +1,3 @@
-Properties common to the definition of all occurrences of IfcPlate.
+# Pset_PlateCommon
 
-<!-- end of short definition -->
-
+Properties common to the definition of all occurrences of IfcPlate.<!-- end of definition -->

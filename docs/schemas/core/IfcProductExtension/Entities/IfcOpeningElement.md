@@ -1,7 +1,6 @@
-The opening element stands for opening, recess or chase, all reflecting voids. It represents a void within any element that has physical manifestation. Openings can be inserted into walls, slabs, beams, columns, or other elements.
+# IfcOpeningElement
 
-<!-- end of short definition -->
-
+The opening element stands for opening, recess or chase, all reflecting voids. It represents a void within any element that has physical manifestation. Openings can be inserted into walls, slabs, beams, columns, or other elements.<!-- end of definition -->
 
 There are two different types of opening elements. The attribute _PredefinedType_ should be used to capture the differences:
 

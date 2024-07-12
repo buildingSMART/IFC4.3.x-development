@@ -1,4 +1,3 @@
-Properties common to the definition of all occurrences of _IfcMarineFacility_ which are catagorised as transportation facilities such as Ports, marinas etc.
+# Pset_MarineFacilityTransportation
 
-<!-- end of short definition -->
-
+Properties common to the definition of all occurrences of _IfcMarineFacility_ which are catagorised as transportation facilities such as Ports, marinas etc.<!-- end of definition -->

@@ -1,4 +1,3 @@
-Properties that are applied to a definition of a protective device.
+# Pset_ProtectiveDeviceTypeCommon
 
-<!-- end of short definition -->
-
+Properties that are applied to a definition of a protective device.<!-- end of definition -->

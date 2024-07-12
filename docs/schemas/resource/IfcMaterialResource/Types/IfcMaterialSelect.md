@@ -1,19 +1,18 @@
-_IfcMaterialSelect_ provides selection of either a material definition or a material usage definition that can be assigned to an element, a resource or another entity within this specification.
+# IfcMaterialSelect
 
-<!-- end of short definition -->
-
+_IfcMaterialSelect_ provides selection of either a material definition or a material usage definition that can be assigned to an element, a resource or another entity within this specification.<!-- end of definition -->
 
 * _IfcMaterialDefinition_
- * _IfcMaterial_
- * _IfcMaterialLayer_
- * _IfcMaterialLayerSet_
- * _IfcMaterialProfile_
- * _IfcMaterialProfileSet_
- * _IfcMaterialConstituent_
- * _IfcMaterialConstituentSet_
+  * _IfcMaterial_
+  * _IfcMaterialLayer_
+  * _IfcMaterialLayerSet_
+  * _IfcMaterialProfile_
+  * _IfcMaterialProfileSet_
+  * _IfcMaterialConstituent_
+  * _IfcMaterialConstituentSet_
 * _IfcMaterialUsageDefinition_
- * _IfcMaterialLayerSetUsage_
- * _IfcMaterialProfileSetUsage_
+  * _IfcMaterialLayerSetUsage_
+  * _IfcMaterialProfileSetUsage_
 * _IfcMaterialList_
 
 > HISTORY New select in IFC1.0

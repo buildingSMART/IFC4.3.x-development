@@ -1,4 +1,3 @@
-Properties common to different types of anchor bolts.
+# Pset_MechanicalFastenerAnchorBolt
 
-<!-- end of short definition -->
-
+Properties common to different types of anchor bolts.<!-- end of definition -->

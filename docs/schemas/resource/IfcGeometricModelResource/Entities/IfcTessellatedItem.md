@@ -1,6 +1,5 @@
-The _IfcTessellatedItem_ is the abstract supertype of all tessellated geometric models.
+# IfcTessellatedItem
 
-<!-- end of short definition -->
-
+The _IfcTessellatedItem_ is the abstract supertype of all tessellated geometric models.<!-- end of definition -->
 
 > HISTORY New entity in IFC4.

@@ -1,7 +1,6 @@
-Base quantities that are common to the definition of all occurrences of ramp flights.
+# Qto_RampFlightBaseQuantities
 
-<!-- end of short definition -->
-
+Base quantities that are common to the definition of all occurrences of ramp flights.<!-- end of definition -->
 
 
 ## Comments

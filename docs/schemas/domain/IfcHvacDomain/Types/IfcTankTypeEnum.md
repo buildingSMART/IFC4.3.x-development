@@ -1,7 +1,6 @@
-Enumeration defining the typical types of tanks.
+# IfcTankTypeEnum
 
-<!-- end of short definition -->
-
+Enumeration defining the typical types of tanks.<!-- end of definition -->
 
 > HISTORY New enumeration in IFC2x2. BASIN and VESSEL added in IFC4.
 

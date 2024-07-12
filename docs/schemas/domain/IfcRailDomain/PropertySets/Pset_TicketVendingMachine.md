@@ -1,4 +1,3 @@
-Properties of ticket vending machine. The property set can be used by _IfcElectricAppliance_ with PredefinedType VENDINGMACHINE.
+# Pset_TicketVendingMachine
 
-<!-- end of short definition -->
-
+Properties of ticket vending machine. The property set can be used by _IfcElectricAppliance_ with PredefinedType VENDINGMACHINE.<!-- end of definition -->

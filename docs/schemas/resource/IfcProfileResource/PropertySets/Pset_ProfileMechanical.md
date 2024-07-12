@@ -1,7 +1,6 @@
-This is a collection of mechanical properties that are applicable to virtually all profile classes. Most of these properties are especially used in structural analysis.
+# Pset_ProfileMechanical
 
-<!-- end of short definition -->
-
+This is a collection of mechanical properties that are applicable to virtually all profile classes. Most of these properties are especially used in structural analysis.<!-- end of definition -->
 
 
 ## Comments

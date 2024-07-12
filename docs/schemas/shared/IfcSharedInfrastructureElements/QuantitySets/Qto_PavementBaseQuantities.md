@@ -1,7 +1,6 @@
-Quantity set for Pavement.
+# Qto_PavementBaseQuantities
 
-<!-- end of short definition -->
-
+Quantity set for Pavement.<!-- end of definition -->
 
 ## Comments
 

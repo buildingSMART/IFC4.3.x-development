@@ -1,4 +1,3 @@
-Properties common to the definition of all occurrences of IfcZone.
+# Pset_ZoneCommon
 
-<!-- end of short definition -->
-
+Properties common to the definition of all occurrences of IfcZone.<!-- end of definition -->

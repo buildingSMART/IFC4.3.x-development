@@ -1,4 +1,3 @@
-Water filter type attributes.
+# Pset_FilterTypeWaterFilter
 
-<!-- end of short definition -->
-
+Water filter type attributes.<!-- end of definition -->

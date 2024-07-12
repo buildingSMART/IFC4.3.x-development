@@ -1,5 +1,4 @@
-Cooled beam common attributes.
+# Pset_CooledBeamTypeCommon
 
-<!-- end of short definition -->
-
+Cooled beam common attributes.<!-- end of definition -->
 SoundLevel and SoundAttenuation attributes deleted in IFC2x2 Pset Addendum: Use IfcSoundProperties instead.

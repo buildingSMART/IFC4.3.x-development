@@ -1,7 +1,6 @@
+# PEnum_ElementStatus
 
-
-<!-- end of short definition -->
-## Items
+<!-- end of definition -->## Items
 
 ### NEW
 element designed as new addition

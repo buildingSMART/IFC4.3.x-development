@@ -1,7 +1,6 @@
-The _IfcCableCarrierFittingTypeEnum_ defines the range of different types of cable carrier fitting that can be specified.
+# IfcCableCarrierFittingTypeEnum
 
-<!-- end of short definition -->
-
+The _IfcCableCarrierFittingTypeEnum_ defines the range of different types of cable carrier fitting that can be specified.<!-- end of definition -->
 
 > HISTORY New type in IFC2x2.
 

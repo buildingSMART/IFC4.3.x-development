@@ -1,4 +1,3 @@
-Properties of conductors used as feeder line. This property set is applicable to a type or occurrence of _IfcCableSegment_ with predefined type CONDUCTORSEGMENT.
+# Pset_ElectricalFeederLine
 
-<!-- end of short definition -->
-
+Properties of conductors used as feeder line. This property set is applicable to a type or occurrence of _IfcCableSegment_ with predefined type CONDUCTORSEGMENT.<!-- end of definition -->

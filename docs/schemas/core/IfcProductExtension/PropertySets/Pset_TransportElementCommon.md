@@ -1,7 +1,6 @@
-Properties common to the definition of all occurrences of IfcTransportElement or IfcTransportElementType
+# Pset_TransportElementCommon
 
-<!-- end of short definition -->
-
+Properties common to the definition of all occurrences of IfcTransportElement or IfcTransportElementType<!-- end of definition -->
 
 
 ## Comments

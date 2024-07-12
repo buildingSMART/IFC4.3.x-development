@@ -1,4 +1,3 @@
-A device that senses or detects carbon dioxide.
+# Pset_SensorTypeCO2Sensor
 
-<!-- end of short definition -->
-
+A device that senses or detects carbon dioxide.<!-- end of definition -->

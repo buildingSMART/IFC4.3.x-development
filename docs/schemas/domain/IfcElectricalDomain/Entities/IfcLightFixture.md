@@ -1,7 +1,6 @@
-A light fixture is a container that is designed for the purpose of housing one or more lamps and optionally devices that control, restrict or vary their emission.
+# IfcLightFixture
 
-<!-- end of short definition -->
-
+A light fixture is a container that is designed for the purpose of housing one or more lamps and optionally devices that control, restrict or vary their emission.<!-- end of definition -->
 
 > HISTORY New entity in IFC4
 

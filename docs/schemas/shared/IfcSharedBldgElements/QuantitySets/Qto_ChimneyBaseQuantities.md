@@ -1,7 +1,6 @@
-Base quantities that are common to the definition of all occurrences of chimneys.
+# Qto_ChimneyBaseQuantities
 
-<!-- end of short definition -->
-
+Base quantities that are common to the definition of all occurrences of chimneys.<!-- end of definition -->
 
 
 ## Comments

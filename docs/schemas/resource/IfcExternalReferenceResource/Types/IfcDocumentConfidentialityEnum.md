@@ -1,7 +1,6 @@
-_IfcDocumentConfidentialityEnum_ enables selection of the level of confidentiality of document information from a list of choices.
+# IfcDocumentConfidentialityEnum
 
-<!-- end of short definition -->
-
+_IfcDocumentConfidentialityEnum_ enables selection of the level of confidentiality of document information from a list of choices.<!-- end of definition -->
 
 > HISTORY New enumeration in IFC2x.
 

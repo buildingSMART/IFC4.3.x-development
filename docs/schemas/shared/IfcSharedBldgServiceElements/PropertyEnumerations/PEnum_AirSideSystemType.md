@@ -1,7 +1,6 @@
+# PEnum_AirSideSystemType
 
-
-<!-- end of short definition -->
-## Items
+<!-- end of definition -->## Items
 
 ### CONSTANTVOLUME
 Constant Volume

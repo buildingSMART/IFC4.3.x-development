@@ -1,7 +1,6 @@
-Pipe segment occurrence attributes attached to an instance of IfcPipeSegment.
+# Pset_PipeSegmentOccurrence
 
-<!-- end of short definition -->
-
+Pipe segment occurrence attributes attached to an instance of IfcPipeSegment.<!-- end of definition -->
 
 
 ## Comments

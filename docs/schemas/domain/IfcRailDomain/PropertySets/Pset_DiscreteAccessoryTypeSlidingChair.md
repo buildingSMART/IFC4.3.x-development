@@ -1,4 +1,3 @@
-Properties of a sliding chair. The property set can be used by the predefined type SLIDINGCHAIR of IfcDiscreteAccessory.
+# Pset_DiscreteAccessoryTypeSlidingChair
 
-<!-- end of short definition -->
-
+Properties of a sliding chair. The property set can be used by the predefined type SLIDINGCHAIR of IfcDiscreteAccessory.<!-- end of definition -->

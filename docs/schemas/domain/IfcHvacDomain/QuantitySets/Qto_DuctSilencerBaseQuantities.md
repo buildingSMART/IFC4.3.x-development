@@ -1,4 +1,3 @@
-Base quantities that are common to the definition of all types of duct silencers.
+# Qto_DuctSilencerBaseQuantities
 
-<!-- end of short definition -->
-
+Base quantities that are common to the definition of all types of duct silencers.<!-- end of definition -->

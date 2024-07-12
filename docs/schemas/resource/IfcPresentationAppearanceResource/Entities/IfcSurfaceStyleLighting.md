@@ -1,7 +1,6 @@
-_IfcSurfaceStyleLighting_ is a container class for properties for calculation of physically exact illuminance related to a particular surface style.
+# IfcSurfaceStyleLighting
 
-<!-- end of short definition -->
-
+_IfcSurfaceStyleLighting_ is a container class for properties for calculation of physically exact illuminance related to a particular surface style.<!-- end of definition -->
 
 Figure 1 shows the reflection and transmission components from an incident ray. The sum of the components for reflection and transmission is a value of 1.0 denoting that the incident ray is completely decomposed into reflection and transmission components. Each value of reflection and transmission is therefore within the range 0.0 to 1.0.
 

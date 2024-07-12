@@ -1,4 +1,3 @@
-Quantity set for Pictorial Signs.
+# Qto_PictorialSignQuantities
 
-<!-- end of short definition -->
-
+Quantity set for Pictorial Signs.<!-- end of definition -->

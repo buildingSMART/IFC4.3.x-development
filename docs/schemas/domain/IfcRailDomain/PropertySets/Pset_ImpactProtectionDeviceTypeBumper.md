@@ -1,4 +1,3 @@
-Properties common to all occurrences and types of _IfcImpactProtectionDevice_ with PredefinedType set to _BUMPER_.
+# Pset_ImpactProtectionDeviceTypeBumper
 
-<!-- end of short definition -->
-
+Properties common to all occurrences and types of _IfcImpactProtectionDevice_ with PredefinedType set to _BUMPER_.<!-- end of definition -->

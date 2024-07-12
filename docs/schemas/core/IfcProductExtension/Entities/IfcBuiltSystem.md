@@ -1,7 +1,6 @@
-A built system is a group by which built elements are grouped according to a common function within the facility.
+# IfcBuiltSystem
 
-<!-- end of short definition -->
-
+A built system is a group by which built elements are grouped according to a common function within the facility.<!-- end of definition -->
 
 The group _IfcBuiltSystem_ defines the occurrence of a specialized system for use within the context of a facilities physical or finishing fabric. Important functionalities for the description of a built system are derived from supertypes:
 

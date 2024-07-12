@@ -1,7 +1,6 @@
-Base quantities that are common to the definition of all occurrences of doors.
+# Qto_DoorBaseQuantities
 
-<!-- end of short definition -->
-
+Base quantities that are common to the definition of all occurrences of doors.<!-- end of definition -->
 
 
 ## Comments

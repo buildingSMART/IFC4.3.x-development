@@ -1,4 +1,3 @@
-Valve performance history common attributes of a typical 2 port pattern type valve.
+# Pset_ValvePHistory
 
-<!-- end of short definition -->
-
+Valve performance history common attributes of a typical 2 port pattern type valve.<!-- end of definition -->

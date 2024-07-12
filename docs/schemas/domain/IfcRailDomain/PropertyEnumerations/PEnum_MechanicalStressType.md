@@ -1,7 +1,6 @@
-List the different mechanical Stress. In continuum mechanics, stress is a physical quantity that expresses the internal forces that neighbouring particles of a continuous material exert on each other
+# PEnum_MechanicalStressType
 
-<!-- end of short definition -->
-
+List the different mechanical Stress. In continuum mechanics, stress is a physical quantity that expresses the internal forces that neighbouring particles of a continuous material exert on each other<!-- end of definition -->
 
 ## Items
 

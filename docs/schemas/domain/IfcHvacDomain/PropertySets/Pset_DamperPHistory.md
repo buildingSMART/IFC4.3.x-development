@@ -1,4 +1,3 @@
-Damper performance history attributes.
+# Pset_DamperPHistory
 
-<!-- end of short definition -->
-
+Damper performance history attributes.<!-- end of definition -->

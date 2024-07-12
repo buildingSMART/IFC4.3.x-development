@@ -1,7 +1,6 @@
-Base quantities that are common to the definition of all types of air terminals.
+# Qto_AirTerminalBaseQuantities
 
-<!-- end of short definition -->
-
+Base quantities that are common to the definition of all types of air terminals.<!-- end of definition -->
 
 ## Comments
 

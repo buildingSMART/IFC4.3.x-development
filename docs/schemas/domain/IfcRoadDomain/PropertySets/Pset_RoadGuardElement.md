@@ -1,4 +1,3 @@
-Properties assigned to IfcWall/PARAPET or IfcRailing/GUARDRAIL when assigned as road guard elements.
+# Pset_RoadGuardElement
 
-<!-- end of short definition -->
-
+Properties assigned to IfcWall/PARAPET or IfcRailing/GUARDRAIL when assigned as road guard elements.<!-- end of definition -->

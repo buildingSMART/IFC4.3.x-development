@@ -1,7 +1,6 @@
-Defines forces at which a support or connection fails.
+# IfcFailureConnectionCondition
 
-<!-- end of short definition -->
-
+Defines forces at which a support or connection fails.<!-- end of definition -->
 
 Applicability:
 

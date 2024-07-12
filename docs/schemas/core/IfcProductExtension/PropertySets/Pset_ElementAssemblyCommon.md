@@ -1,4 +1,3 @@
-Properties common to the definition of all occurrence and type objects of element assembly.
+# Pset_ElementAssemblyCommon
 
-<!-- end of short definition -->
-
+Properties common to the definition of all occurrence and type objects of element assembly.<!-- end of definition -->

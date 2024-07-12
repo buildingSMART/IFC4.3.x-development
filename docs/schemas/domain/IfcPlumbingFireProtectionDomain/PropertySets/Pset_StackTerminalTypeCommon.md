@@ -1,4 +1,3 @@
-Common properties for stack terminals.
+# Pset_StackTerminalTypeCommon
 
-<!-- end of short definition -->
-
+Common properties for stack terminals.<!-- end of definition -->

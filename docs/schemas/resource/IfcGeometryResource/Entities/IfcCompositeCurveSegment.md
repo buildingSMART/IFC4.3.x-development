@@ -1,7 +1,6 @@
-An _IfcCompositeCurveSegment_ is a bounded curve constructed for the sole purpose to be a segment within an _IfcCompositeCurve_.
+# IfcCompositeCurveSegment
 
-<!-- end of short definition -->
-
+An _IfcCompositeCurveSegment_ is a bounded curve constructed for the sole purpose to be a segment within an _IfcCompositeCurve_.<!-- end of definition -->
 
 { .extDef}
 > NOTE Definition according to ISO/CD 10303-42:1992

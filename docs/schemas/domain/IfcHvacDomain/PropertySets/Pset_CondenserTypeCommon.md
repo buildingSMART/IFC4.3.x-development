@@ -1,4 +1,3 @@
-Condenser type common attributes.
+# Pset_CondenserTypeCommon
 
-<!-- end of short definition -->
-
+Condenser type common attributes.<!-- end of definition -->

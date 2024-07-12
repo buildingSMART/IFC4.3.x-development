@@ -1,4 +1,3 @@
-Common properties for built elements that don't have a specific entity name.
+# Pset_BuildingElementProxyCommon
 
-<!-- end of short definition -->
-
+Common properties for built elements that don't have a specific entity name.<!-- end of definition -->

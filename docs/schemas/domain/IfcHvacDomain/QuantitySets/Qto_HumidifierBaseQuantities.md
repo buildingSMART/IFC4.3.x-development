@@ -1,4 +1,3 @@
-Base quantities that are common to the definition of all types of humidifiers.
+# Qto_HumidifierBaseQuantities
 
-<!-- end of short definition -->
-
+Base quantities that are common to the definition of all types of humidifiers.<!-- end of definition -->

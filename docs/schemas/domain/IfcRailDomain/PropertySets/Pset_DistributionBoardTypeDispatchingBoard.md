@@ -1,4 +1,3 @@
-Properties for _IfcDistributionBoard_ with PredefinedType DISPATCHINGBOARD.
+# Pset_DistributionBoardTypeDispatchingBoard
 
-<!-- end of short definition -->
-
+Properties for _IfcDistributionBoard_ with PredefinedType DISPATCHINGBOARD.<!-- end of definition -->

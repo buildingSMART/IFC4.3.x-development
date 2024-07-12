@@ -1,7 +1,6 @@
-An electric motor is an engine that is a machine for converting electrical energy into mechanical energy.
+# IfcElectricMotor
 
-<!-- end of short definition -->
-
+An electric motor is an engine that is a machine for converting electrical energy into mechanical energy.<!-- end of definition -->
 
 > HISTORY New entity in IFC4
 

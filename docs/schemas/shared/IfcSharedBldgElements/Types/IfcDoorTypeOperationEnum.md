@@ -1,7 +1,6 @@
-This enumeration defines the basic ways to describe how an _IfcDoor_ or _IfcDoorType_ operate, as shown in the figures below. It combines the partitioning of the access barrier into single or multiple panels and the operation types of those panels.
+# IfcDoorTypeOperationEnum
 
-<!-- end of short definition -->
-
+This enumeration defines the basic ways to describe how an _IfcDoor_ or _IfcDoorType_ operate, as shown in the figures below. It combines the partitioning of the access barrier into single or multiple panels and the operation types of those panels.<!-- end of definition -->
 
 In the most common case of swinging doors the _IfcDoorTypeOperationEnum_ defined the hinge side (left hung or right hung) and the opening direction (opening to the left, opening to the right). Whether the door opens inwards or outwards is determined by the local coordinate system of the _IfcDoor_
 

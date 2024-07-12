@@ -1,7 +1,6 @@
-_IfcTaskTimeRecurring_ is a recurring instance of _IfcTaskTime_ for handling regularly scheduled or repetitive tasks.
+# IfcTaskTimeRecurring
 
-<!-- end of short definition -->
-
+_IfcTaskTimeRecurring_ is a recurring instance of _IfcTaskTime_ for handling regularly scheduled or repetitive tasks.<!-- end of definition -->
 
 > HISTORY New entity in IFC4.
 

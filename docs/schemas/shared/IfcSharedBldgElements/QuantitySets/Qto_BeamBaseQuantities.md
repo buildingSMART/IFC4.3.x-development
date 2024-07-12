@@ -1,7 +1,6 @@
-Base quantities that are common to the definition of all occurrences of beams.
+# Qto_BeamBaseQuantities
 
-<!-- end of short definition -->
-
+Base quantities that are common to the definition of all occurrences of beams.<!-- end of definition -->
 
 
 ## Comments

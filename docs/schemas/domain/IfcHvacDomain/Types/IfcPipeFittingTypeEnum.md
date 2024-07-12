@@ -1,7 +1,6 @@
-This enumeration is used to identify the primary purpose of a pipe fitting. This is a very basic categorization mechanism to generically identify the pipe fitting type. Subcategories of pipe fittings are not enumerated.
+# IfcPipeFittingTypeEnum
 
-<!-- end of short definition -->
-
+This enumeration is used to identify the primary purpose of a pipe fitting. This is a very basic categorization mechanism to generically identify the pipe fitting type. Subcategories of pipe fittings are not enumerated.<!-- end of definition -->
 
 > HISTORY New enumeration in IFC2x2.
 

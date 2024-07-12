@@ -1,21 +1,20 @@
-A spatial structure element is the generalization of all spatial elements that might be used to define a spatial structure. The spatial structure can be used to provide a spatial organization of a project.
+# IfcSpatialStructureElement
 
-<!-- end of short definition -->
-
+A spatial structure element is the generalization of all spatial elements that might be used to define a spatial structure. The spatial structure can be used to provide a spatial organization of a project.<!-- end of definition -->
 
 A spatial project structure might define as many levels of decomposition as necessary for the project. Elements within the spatial project structure are:
 
 * site as _IfcSite_
 * facility as _IfcFacility_, or specifically
- * building as _IfcBuilding_
- * bridge as _IfcBridge_
- * marine facility as _IfcMarineFacility_
- * railway as _IfcRailway_
- * road as _IfcRoad_
+  * building as _IfcBuilding_
+  * bridge as _IfcBridge_
+  * marine facility as _IfcMarineFacility_
+  * railway as _IfcRailway_
+  * road as _IfcRoad_
 
 * facility part as _IfcFacilityPart_, or specifically
- * storey as _IfcBuildingStorey_
- * facility part as _IfcFacilityPart_
+  * storey as _IfcBuildingStorey_
+  * facility part as _IfcFacilityPart_
 
 * space as _IfcSpace_
 

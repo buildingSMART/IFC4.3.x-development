@@ -1,4 +1,3 @@
-Property set for the application of process data to spatial elements and transport assets
+# Pset_ProcessCapacity
 
-<!-- end of short definition -->
-
+Property set for the application of process data to spatial elements and transport assets<!-- end of definition -->

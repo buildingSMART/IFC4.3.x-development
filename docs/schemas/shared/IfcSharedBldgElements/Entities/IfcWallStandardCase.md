@@ -1,3 +1,5 @@
+# IfcWallStandardCase
+
 The _IfcWallStandardCase_ defines a wall with certain constraints for the provision of parameters and with certain constraints for the geometric representation. The _IfcWallStandardCase_ handles all cases of walls, that are extruded vertically:
 
 * along the positive z axis of the wall object coordinate system, and
@@ -17,10 +19,7 @@ and shall not have:
 
 * aggregated components, that is, parts aggregated to a wall by _IfcRelAggregates_
 * shape representation for 'Body' not being an extrusion, or clipped extrusion
-
-
-<!-- end of short definition -->
-
+<!-- end of definition -->
 The following parameter have to be provided:
 
 * Wall height, taken from the depth of extrusion, provided by the geometric representation.

@@ -1,4 +1,3 @@
-Base quantities that are common to the definition of all types of air-to-air heat recovery elements.
+# Qto_AirToAirHeatRecoveryBaseQuantities
 
-<!-- end of short definition -->
-
+Base quantities that are common to the definition of all types of air-to-air heat recovery elements.<!-- end of definition -->

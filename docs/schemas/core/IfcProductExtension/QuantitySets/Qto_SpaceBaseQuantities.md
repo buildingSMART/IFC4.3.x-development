@@ -1,7 +1,6 @@
-Base quantities that are common to the definition of all occurrences of spaces.
+# Qto_SpaceBaseQuantities
 
-<!-- end of short definition -->
-
+Base quantities that are common to the definition of all occurrences of spaces.<!-- end of definition -->
 
 
 ## Comments

@@ -1,7 +1,6 @@
-A half space solid divides the domain into two by a base surface. Normally, the base surface is a plane and divides the infinitive space into two and indicates the side of the half-space by agreeing or disagreeing to the normal of the plane.
+# IfcHalfSpaceSolid
 
-<!-- end of short definition -->
-
+A half space solid divides the domain into two by a base surface. Normally, the base surface is a plane and divides the infinitive space into two and indicates the side of the half-space by agreeing or disagreeing to the normal of the plane.<!-- end of definition -->
 
 Figure 1 illustrates the definition of the _IfcHalfSpaceSolid_ within a given coordinate system. The base surface is given by an unbounded plane, the red boundary is shown for visualization purposes only.
 

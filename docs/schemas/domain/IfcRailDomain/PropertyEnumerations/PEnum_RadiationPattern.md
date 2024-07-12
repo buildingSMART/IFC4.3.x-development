@@ -1,7 +1,6 @@
-Enumeration of antenna radiation patterns.
+# PEnum_RadiationPattern
 
-<!-- end of short definition -->
-
+Enumeration of antenna radiation patterns.<!-- end of definition -->
 
 ## Items
 

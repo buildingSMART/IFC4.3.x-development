@@ -1,7 +1,6 @@
-Base quantities that are common to the definition of all occurrences of windows.
+# Qto_WindowBaseQuantities
 
-<!-- end of short definition -->
-
+Base quantities that are common to the definition of all occurrences of windows.<!-- end of definition -->
 
 
 ## Comments

@@ -1,4 +1,3 @@
-Properties applicable to _IfcRailwayPart_ with PredefinedType set to TRACK, or more specialized types including PLAINTRACK, TURNOUTTRACK, DILATATIONTRACK or TRACKPART.
+# Pset_RailwayTrackStructurePart
 
-<!-- end of short definition -->
-
+Properties applicable to _IfcRailwayPart_ with PredefinedType set to TRACK, or more specialized types including PLAINTRACK, TURNOUTTRACK, DILATATIONTRACK or TRACKPART.<!-- end of definition -->

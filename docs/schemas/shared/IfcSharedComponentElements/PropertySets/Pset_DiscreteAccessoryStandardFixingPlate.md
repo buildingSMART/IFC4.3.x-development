@@ -1,4 +1,3 @@
-Properties specific to standard fixing plates.
+# Pset_DiscreteAccessoryStandardFixingPlate
 
-<!-- end of short definition -->
-
+Properties specific to standard fixing plates.<!-- end of definition -->

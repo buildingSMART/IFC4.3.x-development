@@ -1,7 +1,6 @@
-The predefined type container that collects all possible marine facility part types together into the implemented enumeration.
+# IfcMarinePartTypeEnum
 
-<!-- end of short definition -->
-
+The predefined type container that collects all possible marine facility part types together into the implemented enumeration.<!-- end of definition -->
 
 ## Items
 

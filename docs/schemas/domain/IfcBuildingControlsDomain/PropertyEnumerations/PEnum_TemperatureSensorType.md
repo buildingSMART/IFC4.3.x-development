@@ -1,7 +1,6 @@
+# PEnum_TemperatureSensorType
 
-
-<!-- end of short definition -->
-## Items
+<!-- end of definition -->## Items
 
 ### HIGHLIMIT
 Highlimit

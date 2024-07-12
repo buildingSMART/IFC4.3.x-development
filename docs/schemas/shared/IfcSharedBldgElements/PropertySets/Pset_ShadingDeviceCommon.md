@@ -1,7 +1,6 @@
-Shading device properties associated with an element that represents a shading device
+# Pset_ShadingDeviceCommon
 
-<!-- end of short definition -->
-
+Shading device properties associated with an element that represents a shading device<!-- end of definition -->
 
 
 ## Comments

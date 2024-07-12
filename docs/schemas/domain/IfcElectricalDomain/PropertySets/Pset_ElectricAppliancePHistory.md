@@ -1,4 +1,3 @@
-Captures realtime information for electric appliances, such as for energy usage.
+# Pset_ElectricAppliancePHistory
 
-<!-- end of short definition -->
- HISTORY: Added in IFC4.
+Captures realtime information for electric appliances, such as for energy usage.<!-- end of definition --> HISTORY: Added in IFC4.

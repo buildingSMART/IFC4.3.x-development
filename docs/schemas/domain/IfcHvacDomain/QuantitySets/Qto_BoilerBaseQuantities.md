@@ -1,7 +1,6 @@
-Base quantities that are common to the definition of all types of boilers.
+# Qto_BoilerBaseQuantities
 
-<!-- end of short definition -->
-
+Base quantities that are common to the definition of all types of boilers.<!-- end of definition -->
 
 
 ## Comments

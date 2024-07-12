@@ -1,4 +1,3 @@
-Properties for thermal loads of elements.
+# Pset_ThermalLoad
 
-<!-- end of short definition -->
-
+Properties for thermal loads of elements.<!-- end of definition -->

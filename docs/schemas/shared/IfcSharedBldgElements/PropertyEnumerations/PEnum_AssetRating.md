@@ -1,7 +1,6 @@
-Enumeration describing the qualitative scale for rating of asset state
+# PEnum_AssetRating
 
-<!-- end of short definition -->
-
+Enumeration describing the qualitative scale for rating of asset state<!-- end of definition -->
 
 ## Items
 

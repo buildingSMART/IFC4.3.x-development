@@ -1,7 +1,6 @@
-Properties common to the definition of the glazing component of occurrences of IfcDoor and IfcWindow, used for thermal and lighting calculations.
+# Pset_DoorWindowGlazingType
 
-<!-- end of short definition -->
-
+Properties common to the definition of the glazing component of occurrences of IfcDoor and IfcWindow, used for thermal and lighting calculations.<!-- end of definition -->
 
 # IsTempered
 

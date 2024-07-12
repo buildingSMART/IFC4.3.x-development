@@ -1,4 +1,3 @@
-Properties of the fanout type of cable fitting.
+# Pset_CableFittingTypeFanout
 
-<!-- end of short definition -->
-
+Properties of the fanout type of cable fitting.<!-- end of definition -->

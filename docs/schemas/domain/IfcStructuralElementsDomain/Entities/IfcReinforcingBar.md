@@ -1,7 +1,6 @@
-A reinforcing bar is usually made of steel with manufactured deformations in the surface, and used in concrete and masonry construction to provide additional strength. A single instance of this class may represent one or many of actual rebars, for example a row of rebars.
+# IfcReinforcingBar
 
-<!-- end of short definition -->
-
+A reinforcing bar is usually made of steel with manufactured deformations in the surface, and used in concrete and masonry construction to provide additional strength. A single instance of this class may represent one or many of actual rebars, for example a row of rebars.<!-- end of definition -->
 
 > HISTORY New entity in IFC2x2
 

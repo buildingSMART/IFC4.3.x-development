@@ -1,4 +1,3 @@
-Properties that may be applied to electric distribution boards.
+# Pset_DistributionBoardTypeCommon
 
-<!-- end of short definition -->
-
+Properties that may be applied to electric distribution boards.<!-- end of definition -->

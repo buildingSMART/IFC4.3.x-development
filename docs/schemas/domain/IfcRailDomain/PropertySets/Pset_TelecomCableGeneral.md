@@ -1,4 +1,3 @@
-Properties common to occurrences and types of IfcCableSegment and IfcCableFitting applied in telecommunication domain.
+# Pset_TelecomCableGeneral
 
-<!-- end of short definition -->
-
+Properties common to occurrences and types of IfcCableSegment and IfcCableFitting applied in telecommunication domain.<!-- end of definition -->

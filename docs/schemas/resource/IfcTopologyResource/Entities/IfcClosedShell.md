@@ -1,7 +1,6 @@
-{ .extDef}
+# IfcClosedShell
 
-<!-- end of short definition -->
-
+{ .extDef}<!-- end of definition -->
 > NOTE Definition according to ISO/CD 10303-42:1992
 > A closed shell is a shell of the dimensionality 2 which typically serves as a bound for a region in R3. A closed shell has no boundary, and has non-zero finite extent. If the shell has a domain with coordinate space R3, it divides that space into two connected regions, one finite and the other infinite. In this case, the topological normal of the shell is defined as being directed from the finite to the infinite region.
 >

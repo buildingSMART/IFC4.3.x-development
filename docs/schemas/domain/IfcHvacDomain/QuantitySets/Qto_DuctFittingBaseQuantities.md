@@ -1,7 +1,6 @@
-Base quantities that are common to the definition of all types and occurrences of duct fittings.
+# Qto_DuctFittingBaseQuantities
 
-<!-- end of short definition -->
-
+Base quantities that are common to the definition of all types and occurrences of duct fittings.<!-- end of definition -->
 
 
 ## Comments

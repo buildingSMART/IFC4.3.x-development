@@ -1,4 +1,3 @@
-A device that senses or detects ion concentration such as water hardness.
+# Pset_SensorTypeIonConcentrationSensor
 
-<!-- end of short definition -->
- HISTORY: Added in IFC4.
+A device that senses or detects ion concentration such as water hardness.<!-- end of definition --> HISTORY: Added in IFC4.

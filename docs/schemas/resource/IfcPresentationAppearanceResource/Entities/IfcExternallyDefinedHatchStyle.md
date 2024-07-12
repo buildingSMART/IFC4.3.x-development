@@ -1,7 +1,6 @@
-{ .extDef}
+# IfcExternallyDefinedHatchStyle
 
-<!-- end of short definition -->
-
+{ .extDef}<!-- end of definition -->
 > NOTE Definition according to ISO/CD 10303-46:1992
 > The externally defined hatch style is an entity which makes an external reference to a hatching style.
 

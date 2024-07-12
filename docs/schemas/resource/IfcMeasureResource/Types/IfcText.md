@@ -1,7 +1,6 @@
-An _IfcText_ is an alphanumeric string of characters which is intended to be read and understood by a human being. It is for information purposes only.
+# IfcText
 
-<!-- end of short definition -->
-
+An _IfcText_ is an alphanumeric string of characters which is intended to be read and understood by a human being. It is for information purposes only.<!-- end of definition -->
 
 Type: STRING
 

@@ -1,7 +1,6 @@
-Enumeration of the different point machines used in railway.
+# PEnum_TypeOfDrivingDevice
 
-<!-- end of short definition -->
-
+Enumeration of the different point machines used in railway.<!-- end of definition -->
 
 ## Items
 

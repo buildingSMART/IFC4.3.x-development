@@ -1,7 +1,6 @@
-_IfcAccelerationMeasure_ is a measure of acceleration.
+# IfcAccelerationMeasure
 
-<!-- end of short definition -->
-
+_IfcAccelerationMeasure_ is a measure of acceleration.<!-- end of definition -->
 
 Usually measured in m/s2.
 

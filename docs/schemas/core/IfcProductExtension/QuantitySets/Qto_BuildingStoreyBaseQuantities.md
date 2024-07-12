@@ -1,7 +1,6 @@
-Base quantities that are common to the definition of all occurrences of building storey.
+# Qto_BuildingStoreyBaseQuantities
 
-<!-- end of short definition -->
-
+Base quantities that are common to the definition of all occurrences of building storey.<!-- end of definition -->
 
 
 ## Comments

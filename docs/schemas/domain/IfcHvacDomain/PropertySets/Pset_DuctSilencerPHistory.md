@@ -1,7 +1,6 @@
-Duct silencer performance history common attributes.
+# Pset_DuctSilencerPHistory
 
-<!-- end of short definition -->
-
+Duct silencer performance history common attributes.<!-- end of definition -->
 
 
 ## Comments

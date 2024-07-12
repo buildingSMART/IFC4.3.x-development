@@ -1,7 +1,6 @@
-This entity defines an action with constant value which is distributed over a surface.
+# IfcStructuralPlanarAction
 
-<!-- end of short definition -->
-
+This entity defines an action with constant value which is distributed over a surface.<!-- end of definition -->
 
 > HISTORY New entity in IFC2x2.
 

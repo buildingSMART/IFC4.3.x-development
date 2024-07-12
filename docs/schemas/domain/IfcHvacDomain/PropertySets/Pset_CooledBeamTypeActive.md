@@ -1,7 +1,6 @@
-Active (ventilated) cooled beam common attributes.
+# Pset_CooledBeamTypeActive
 
-<!-- end of short definition -->
-
+Active (ventilated) cooled beam common attributes.<!-- end of definition -->
 
 
 ## Comments

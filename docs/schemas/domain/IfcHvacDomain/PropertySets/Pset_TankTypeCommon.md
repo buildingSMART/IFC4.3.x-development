@@ -1,7 +1,6 @@
-Common attributes of a tank type.
+# Pset_TankTypeCommon
 
-<!-- end of short definition -->
-
+Common attributes of a tank type.<!-- end of definition -->
 
 
 ## Comments

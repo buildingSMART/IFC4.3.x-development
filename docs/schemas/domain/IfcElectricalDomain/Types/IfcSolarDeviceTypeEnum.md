@@ -1,7 +1,6 @@
-The _IfcSolarDeviceTypeEnum_ defines different types of solar devices.
+# IfcSolarDeviceTypeEnum
 
-<!-- end of short definition -->
-
+The _IfcSolarDeviceTypeEnum_ defines different types of solar devices.<!-- end of definition -->
 
 > HISTORY New type in IFC4.
 

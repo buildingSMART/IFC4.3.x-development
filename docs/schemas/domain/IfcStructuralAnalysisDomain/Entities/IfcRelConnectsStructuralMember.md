@@ -1,7 +1,6 @@
-The entity _IfcRelConnectsStructuralMember_ defines all needed properties describing the connection between structural members and structural connection objects (nodes or supports).
+# IfcRelConnectsStructuralMember
 
-<!-- end of short definition -->
-
+The entity _IfcRelConnectsStructuralMember_ defines all needed properties describing the connection between structural members and structural connection objects (nodes or supports).<!-- end of definition -->
 
 > HISTORY New entity in IFC2x2.
 

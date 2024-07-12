@@ -1,7 +1,6 @@
-The _IfcRepresentationContext_ defines the context to which the _IfcRepresentation_ of a product is related.
+# IfcRepresentationContext
 
-<!-- end of short definition -->
-
+The _IfcRepresentationContext_ defines the context to which the _IfcRepresentation_ of a product is related.<!-- end of definition -->
 
 { .extDef}
 > NOTE Definition from ISO 10303-42

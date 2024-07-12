@@ -1,7 +1,6 @@
-Enumeration of the different turnout panel orientations used in railway.
+# PEnum_TurnoutPanelOrientation
 
-<!-- end of short definition -->
-
+Enumeration of the different turnout panel orientations used in railway.<!-- end of definition -->
 
 ## Items
 

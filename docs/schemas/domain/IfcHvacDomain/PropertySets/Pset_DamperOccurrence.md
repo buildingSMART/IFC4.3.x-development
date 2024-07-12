@@ -1,4 +1,3 @@
-Damper occurrence attributes attached to an instance of IfcDamper
+# Pset_DamperOccurrence
 
-<!-- end of short definition -->
-
+Damper occurrence attributes attached to an instance of IfcDamper<!-- end of definition -->

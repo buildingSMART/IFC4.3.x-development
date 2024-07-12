@@ -1,7 +1,6 @@
-Duct segment type common attributes.
+# Pset_DuctSegmentTypeCommon
 
-<!-- end of short definition -->
-
+Duct segment type common attributes.<!-- end of definition -->
 
 
 ## Comments

@@ -1,7 +1,6 @@
-Space formed in the ground for the passage of pipes, cables, ducts.
+# Pset_DistributionChamberElementTypeFormedDuct
 
-<!-- end of short definition -->
-
+Space formed in the ground for the passage of pipes, cables, ducts.<!-- end of definition -->
 
 
 ## Comments

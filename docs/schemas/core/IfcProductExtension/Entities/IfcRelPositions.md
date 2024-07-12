@@ -1,7 +1,6 @@
-An _IfcRelPositions_ relationship informs on the positioning dependency between a product and a positioning element.
+# IfcRelPositions
 
-<!-- end of short definition -->
-
+An _IfcRelPositions_ relationship informs on the positioning dependency between a product and a positioning element.<!-- end of definition -->
 
 This relationship does not affect the geometric representation of a product nor its geometrical placement, which is done through subtypes of _IfcObjectPlacement_. 
 

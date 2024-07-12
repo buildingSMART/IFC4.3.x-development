@@ -1,7 +1,6 @@
-A system furniture element defines components of modular furniture which are not directly placed in a building structure but aggregated inside furniture.
+# IfcSystemFurnitureElement
 
-<!-- end of short definition -->
-
+A system furniture element defines components of modular furniture which are not directly placed in a building structure but aggregated inside furniture.<!-- end of definition -->
 
 > HISTORY New entity in IFC2x2.
 

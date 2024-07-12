@@ -1,7 +1,6 @@
-Enumeration describing the relative position of a rail fastening to surrounding sleepers
+# PEnum_SleeperArrangement
 
-<!-- end of short definition -->
-
+Enumeration describing the relative position of a rail fastening to surrounding sleepers<!-- end of definition -->
 
 ## Items
 

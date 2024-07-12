@@ -1,4 +1,3 @@
-Properties used for railway communication terminals.
+# Pset_AudioVisualApplianceTypeRailwayCommunicationTerminal
 
-<!-- end of short definition -->
-
+Properties used for railway communication terminals.<!-- end of definition -->

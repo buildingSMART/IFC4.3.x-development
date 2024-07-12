@@ -1,7 +1,6 @@
-Base quantities that are common to the definition of all types and occurrences of pipe segments.
+# Qto_PipeSegmentBaseQuantities
 
-<!-- end of short definition -->
-
+Base quantities that are common to the definition of all types and occurrences of pipe segments.<!-- end of definition -->
 
 
 ## Comments

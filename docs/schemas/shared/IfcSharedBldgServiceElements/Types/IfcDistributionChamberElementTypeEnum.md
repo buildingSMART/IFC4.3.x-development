@@ -1,7 +1,6 @@
-This enumeration identifies different types of distribution chambers.
+# IfcDistributionChamberElementTypeEnum
 
-<!-- end of short definition -->
-
+This enumeration identifies different types of distribution chambers.<!-- end of definition -->
 
 > HISTORY New enumeration in IFC2x2.
 

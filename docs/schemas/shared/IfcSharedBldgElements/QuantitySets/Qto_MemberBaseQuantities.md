@@ -1,7 +1,6 @@
-Base quantities that are common to the definition of all occurrences of members.
+# Qto_MemberBaseQuantities
 
-<!-- end of short definition -->
-
+Base quantities that are common to the definition of all occurrences of members.<!-- end of definition -->
 
 
 ## Comments

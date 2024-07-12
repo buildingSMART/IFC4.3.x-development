@@ -1,7 +1,6 @@
-This container defines the different predefined types of navigation elements that can further specify an _IfcNavigationElement_ or _IfcNavigationElementType_.
+# IfcNavigationElementTypeEnum
 
-<!-- end of short definition -->
-
+This container defines the different predefined types of navigation elements that can further specify an _IfcNavigationElement_ or _IfcNavigationElementType_.<!-- end of definition -->
 
 ## Items
 

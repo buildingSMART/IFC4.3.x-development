@@ -1,4 +1,3 @@
-Pipe segment type common attributes.
+# Pset_PipeSegmentTypeCommon
 
-<!-- end of short definition -->
-
+Pipe segment type common attributes.<!-- end of definition -->

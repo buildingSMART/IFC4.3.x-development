@@ -1,7 +1,6 @@
+# PEnum_IsolatingPurpose
 
-
-<!-- end of short definition -->
-## Items
+<!-- end of definition -->## Items
 
 ### LANDING
 Landing

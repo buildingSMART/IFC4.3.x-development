@@ -1,7 +1,6 @@
-An area measure is the value of the extent of a surface.
+# IfcAreaMeasure
 
-<!-- end of short definition -->
-
+An area measure is the value of the extent of a surface.<!-- end of definition -->
 
 Usually measured in square metre (m2).
 

@@ -1,7 +1,6 @@
-**Definition from ISO/CD 10303-41:1992**: A thermodynamic temperature measure is the value for the degree of heat of a body.
+# IfcThermodynamicTemperatureMeasure
 
-<!-- end of short definition -->
-
+**Definition from ISO/CD 10303-41:1992**: A thermodynamic temperature measure is the value for the degree of heat of a body.<!-- end of definition -->
 
 Usually measured in degrees Kelvin (K).
 

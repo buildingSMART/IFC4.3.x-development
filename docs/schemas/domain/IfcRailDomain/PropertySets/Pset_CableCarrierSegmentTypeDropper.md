@@ -1,4 +1,3 @@
-Properties that are applicable to a type or an occurrence of dropper.
+# Pset_CableCarrierSegmentTypeDropper
 
-<!-- end of short definition -->
-
+Properties that are applicable to a type or an occurrence of dropper.<!-- end of definition -->

@@ -1,7 +1,6 @@
-An identifier is an alphanumeric string which allows an individual thing to be identified. It may not provide natural-language meaning.
+# IfcIdentifier
 
-<!-- end of short definition -->
-
+An identifier is an alphanumeric string which allows an individual thing to be identified. It may not provide natural-language meaning.<!-- end of definition -->
 
 Type: STRING of up to 255 characters
 

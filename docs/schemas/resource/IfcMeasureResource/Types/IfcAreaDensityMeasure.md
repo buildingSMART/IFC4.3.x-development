@@ -1,7 +1,6 @@
-_IfcAreaDensityMeasure_ is a measure of the density of a two-dimensional object and is calculated as the mass per unit area.
+# IfcAreaDensityMeasure
 
-<!-- end of short definition -->
-
+_IfcAreaDensityMeasure_ is a measure of the density of a two-dimensional object and is calculated as the mass per unit area.<!-- end of definition -->
 
 Usually measured in kg/m2.
 

@@ -1,7 +1,6 @@
-Enumeration of Caisson Foundation Types.
+# IfcCaissonFoundationTypeEnum
 
-<!-- end of short definition -->
-
+Enumeration of Caisson Foundation Types.<!-- end of definition -->
 
 ## Items
 

@@ -1,7 +1,6 @@
-A burner is a device that converts fuel into heat through combustion. It includes gas, oil, and wood burners.
+# IfcBurner
 
-<!-- end of short definition -->
-
+A burner is a device that converts fuel into heat through combustion. It includes gas, oil, and wood burners.<!-- end of definition -->
 
 > HISTORY New entity in IFC4
 

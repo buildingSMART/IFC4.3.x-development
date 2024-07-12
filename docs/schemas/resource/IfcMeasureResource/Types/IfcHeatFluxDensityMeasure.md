@@ -1,7 +1,6 @@
-IfcHeatFluxDensityMeasure is a measure of the density of heat flux within a body.
+# IfcHeatFluxDensityMeasure
 
-<!-- end of short definition -->
-
+IfcHeatFluxDensityMeasure is a measure of the density of heat flux within a body.<!-- end of definition -->
 
 Usually measured in W/m2 (J/s m2).
 

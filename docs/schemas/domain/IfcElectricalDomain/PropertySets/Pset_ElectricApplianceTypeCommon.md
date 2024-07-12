@@ -1,4 +1,3 @@
-Common properties for electric appliances.
+# Pset_ElectricApplianceTypeCommon
 
-<!-- end of short definition -->
- HISTORY: Added in IFC4.
+Common properties for electric appliances.<!-- end of definition --> HISTORY: Added in IFC4.

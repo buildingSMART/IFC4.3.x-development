@@ -1,4 +1,3 @@
-Pipe fitting or assembly of fittings to receive surface water or waste water, fitted with a grating or sealed cover.
+# Pset_WasteTerminalTypeGullySump
 
-<!-- end of short definition -->
-
+Pipe fitting or assembly of fittings to receive surface water or waste water, fitted with a grating or sealed cover.<!-- end of definition -->

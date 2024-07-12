@@ -1,7 +1,6 @@
-_IfcMaterialUsageDefinition_ is a general supertype for all material related information items in IFC that have occurrence specific assignment parameters to assign a set of materials with shape parameters to a reference geometry item of that component.
+# IfcMaterialUsageDefinition
 
-<!-- end of short definition -->
-
+_IfcMaterialUsageDefinition_ is a general supertype for all material related information items in IFC that have occurrence specific assignment parameters to assign a set of materials with shape parameters to a reference geometry item of that component.<!-- end of definition -->
 
 There are two ways of assigning a set of materials with shape parameters:
 

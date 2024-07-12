@@ -1,7 +1,6 @@
-Enumeration of lubrication system types.
+# PEnum_LubricationSystemType
 
-<!-- end of short definition -->
-
+Enumeration of lubrication system types.<!-- end of definition -->
 
 ## Items
 

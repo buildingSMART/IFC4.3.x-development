@@ -1,7 +1,6 @@
+# PEnum_AirTerminalLocation
 
-
-<!-- end of short definition -->
-## Items
+<!-- end of definition -->## Items
 
 ### SIDEWALLHIGH
 Side Wall High

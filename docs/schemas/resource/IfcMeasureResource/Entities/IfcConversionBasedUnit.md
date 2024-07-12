@@ -1,7 +1,6 @@
-An IfcConversionBasedUnit is used to define a unit that has a conversion rate to a base unit. To identify some commonly used conversion based units, the standard designations (case insensitive) for the _Name_ attribute are indicated in Table 1.
+# IfcConversionBasedUnit
 
-<!-- end of short definition -->
-
+An IfcConversionBasedUnit is used to define a unit that has a conversion rate to a base unit. To identify some commonly used conversion based units, the standard designations (case insensitive) for the _Name_ attribute are indicated in Table 1.<!-- end of definition -->
 
 
 |Name|Description|

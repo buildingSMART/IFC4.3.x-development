@@ -1,4 +1,3 @@
-An audio-visual speaker is a device that converts amplified audio signals into sound waves.
+# Pset_AudioVisualApplianceTypeSpeaker
 
-<!-- end of short definition -->
- HISTORY: Added in IFC4.
+An audio-visual speaker is a device that converts amplified audio signals into sound waves.<!-- end of definition --> HISTORY: Added in IFC4.

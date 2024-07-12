@@ -1,4 +1,3 @@
-Properties common to the definition of design criteria of all occurrences of _IfcMarineFacility_ with the predefined type set to JETTY.
+# Pset_JettyDesignCriteria
 
-<!-- end of short definition -->
-
+Properties common to the definition of design criteria of all occurrences of _IfcMarineFacility_ with the predefined type set to JETTY.<!-- end of definition -->

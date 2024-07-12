@@ -1,7 +1,6 @@
-_IfcVaporPermeabilityMeasure_ is a measure of vapor permeability.
+# IfcVaporPermeabilityMeasure
 
-<!-- end of short definition -->
-
+_IfcVaporPermeabilityMeasure_ is a measure of vapor permeability.<!-- end of definition -->
 
 Usually measured in kg / s m Pascal.
 

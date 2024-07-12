@@ -1,7 +1,6 @@
-Instances of _IfcStructuralPointConnection_ describe structural nodes or point supports.
+# IfcStructuralPointConnection
 
-<!-- end of short definition -->
-
+Instances of _IfcStructuralPointConnection_ describe structural nodes or point supports.<!-- end of definition -->
 
 > HISTORY New entity in IFC2x2.
 

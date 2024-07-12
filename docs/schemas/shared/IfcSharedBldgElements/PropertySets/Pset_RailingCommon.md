@@ -1,7 +1,6 @@
-Properties common to the definition of all occurrences of IfcRailing.
+# Pset_RailingCommon
 
-<!-- end of short definition -->
-
+Properties common to the definition of all occurrences of IfcRailing.<!-- end of definition -->
 
 
 ## Comments

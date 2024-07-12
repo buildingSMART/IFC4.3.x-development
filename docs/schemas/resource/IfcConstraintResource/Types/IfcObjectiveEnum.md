@@ -1,7 +1,6 @@
-_IfcObjectiveEnum_ is an enumeration used to determine the objective for which purpose the constraint needs to be satisfied.
+# IfcObjectiveEnum
 
-<!-- end of short definition -->
-
+_IfcObjectiveEnum_ is an enumeration used to determine the objective for which purpose the constraint needs to be satisfied.<!-- end of definition -->
 
 > HISTORY New enumeration in IFC2.0.
 

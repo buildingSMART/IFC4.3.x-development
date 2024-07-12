@@ -1,4 +1,3 @@
-A device that senses or detects the presence of fire.
+# Pset_SensorTypeFireSensor
 
-<!-- end of short definition -->
-
+A device that senses or detects the presence of fire.<!-- end of definition -->

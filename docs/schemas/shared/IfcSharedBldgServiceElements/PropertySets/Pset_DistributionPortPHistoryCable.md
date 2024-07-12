@@ -1,4 +1,3 @@
-Log of electrical activity attached to an instance of IfcPerformanceHistory having an assigned IfcDistributionPort of type CABLE.
+# Pset_DistributionPortPHistoryCable
 
-<!-- end of short definition -->
-
+Log of electrical activity attached to an instance of IfcPerformanceHistory having an assigned IfcDistributionPort of type CABLE.<!-- end of definition -->

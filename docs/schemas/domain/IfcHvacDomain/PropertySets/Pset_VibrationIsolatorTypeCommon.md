@@ -1,7 +1,6 @@
-Vibration isolator type common attributes.
+# Pset_VibrationIsolatorTypeCommon
 
-<!-- end of short definition -->
-
+Vibration isolator type common attributes.<!-- end of definition -->
 
 
 ## Comments

@@ -1,4 +1,3 @@
-Base quantities that are common to the definition of all types of unitary equipment.
+# Qto_UnitaryEquipmentBaseQuantities
 
-<!-- end of short definition -->
-
+Base quantities that are common to the definition of all types of unitary equipment.<!-- end of definition -->

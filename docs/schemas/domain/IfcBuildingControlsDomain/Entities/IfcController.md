@@ -1,7 +1,6 @@
-A controller is a device that monitors inputs and controls outputs within a building automation system.
+# IfcController
 
-<!-- end of short definition -->
-
+A controller is a device that monitors inputs and controls outputs within a building automation system.<!-- end of definition -->
 
 A controller may be physical (having placement within a spatial structure) or logical (a software interface or aggregated within a programmable physical controller).
 

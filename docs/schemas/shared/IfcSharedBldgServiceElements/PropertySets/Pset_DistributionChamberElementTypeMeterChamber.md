@@ -1,4 +1,3 @@
-Chamber that houses a meter(s) (definition modified from BS6100 250 6224).
+# Pset_DistributionChamberElementTypeMeterChamber
 
-<!-- end of short definition -->
-
+Chamber that houses a meter(s) (definition modified from BS6100 250 6224).<!-- end of definition -->

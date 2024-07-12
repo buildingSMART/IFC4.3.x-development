@@ -1,7 +1,6 @@
-Properties common to the definition of all occurrences of IfcRamp.
+# Pset_RampCommon
 
-<!-- end of short definition -->
-
+Properties common to the definition of all occurrences of IfcRamp.<!-- end of definition -->
 
 
 ## Comments

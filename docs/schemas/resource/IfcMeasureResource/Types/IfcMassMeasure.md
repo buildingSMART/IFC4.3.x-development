@@ -1,7 +1,6 @@
-An _IfcMassMeasure_ is the value of the amount of matter that a body contains.
+# IfcMassMeasure
 
-<!-- end of short definition -->
-
+An _IfcMassMeasure_ is the value of the amount of matter that a body contains.<!-- end of definition -->
 
 Usually measured in kilograms (kg) or grams (g).
 

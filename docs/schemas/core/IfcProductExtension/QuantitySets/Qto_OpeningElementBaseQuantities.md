@@ -1,7 +1,6 @@
-Base quantities that are common to the definition of all occurrences of opening elements.
+# Qto_OpeningElementBaseQuantities
 
-<!-- end of short definition -->
-
+Base quantities that are common to the definition of all occurrences of opening elements.<!-- end of definition -->
 
 
 ## Comments

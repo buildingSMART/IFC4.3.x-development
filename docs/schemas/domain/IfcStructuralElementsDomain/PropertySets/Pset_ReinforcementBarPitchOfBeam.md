@@ -1,4 +1,3 @@
-The pitch length information of reinforcement bar with the beam.
+# Pset_ReinforcementBarPitchOfBeam
 
-<!-- end of short definition -->
-
+The pitch length information of reinforcement bar with the beam.<!-- end of definition -->

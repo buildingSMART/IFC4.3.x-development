@@ -1,7 +1,6 @@
-Properties common to the definition of all occurrences of IfcStair.
+# Pset_StairCommon
 
-<!-- end of short definition -->
-
+Properties common to the definition of all occurrences of IfcStair.<!-- end of definition -->
 
 
 ## Comments

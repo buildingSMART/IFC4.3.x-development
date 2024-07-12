@@ -1,7 +1,6 @@
-Compressor performance history attributes.
+# Pset_CompressorPHistory
 
-<!-- end of short definition -->
-
+Compressor performance history attributes.<!-- end of definition -->
 
 
 ## Comments

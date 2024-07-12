@@ -1,7 +1,6 @@
-Compressor type common attributes.
+# Pset_CompressorTypeCommon
 
-<!-- end of short definition -->
-
+Compressor type common attributes.<!-- end of definition -->
 
 
 ## Comments

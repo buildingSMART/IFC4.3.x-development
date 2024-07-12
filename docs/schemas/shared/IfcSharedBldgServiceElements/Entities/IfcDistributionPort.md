@@ -1,7 +1,6 @@
-A distribution port is an inlet or outlet of a product through which a particular substance may flow.
+# IfcDistributionPort
 
-<!-- end of short definition -->
-
+A distribution port is an inlet or outlet of a product through which a particular substance may flow.<!-- end of definition -->
 
 Distribution ports are used for passage of solid, liquid, or gas substances, as well as electricity for power or communications. Flow segments (pipes, ducts, cables) may be used to connect ports across products. Distribution ports are defined by system type and flow direction such that for two ports to be connected, they must share the same system type and have opposite flow directions (one side being a _SOURCE_ and the other being a _SINK_). Ports are similar to openings in that they do not have any visible geometry; such geometry is captured at the shape representation of the enclosing element or element type. Ports may have placement that indicates the position and orientation of the connection.
 

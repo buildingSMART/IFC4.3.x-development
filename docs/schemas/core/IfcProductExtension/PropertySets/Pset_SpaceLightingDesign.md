@@ -1,4 +1,3 @@
-Properties for requirements on Lighting of spaces.
+# Pset_SpaceLightingDesign
 
-<!-- end of short definition -->
-
+Properties for requirements on Lighting of spaces.<!-- end of definition -->

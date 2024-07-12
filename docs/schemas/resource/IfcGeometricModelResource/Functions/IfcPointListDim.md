@@ -1,4 +1,3 @@
-This function determines the dimensionality of a cartesian point list.
+# IfcPointListDim
 
-<!-- end of short definition -->
-
+This function determines the dimensionality of a cartesian point list.<!-- end of definition -->

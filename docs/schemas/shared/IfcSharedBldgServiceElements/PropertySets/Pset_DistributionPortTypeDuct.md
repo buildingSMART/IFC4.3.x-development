@@ -1,7 +1,6 @@
-Duct port occurrence attributes attached to an instance of IfcDistributionPort.
+# Pset_DistributionPortTypeDuct
 
-<!-- end of short definition -->
-
+Duct port occurrence attributes attached to an instance of IfcDistributionPort.<!-- end of definition -->
 
 
 ## Comments

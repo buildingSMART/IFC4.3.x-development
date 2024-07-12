@@ -1,4 +1,3 @@
-Unitary equipment type common attributes.
+# Pset_UnitaryEquipmentTypeCommon
 
-<!-- end of short definition -->
-
+Unitary equipment type common attributes.<!-- end of definition -->

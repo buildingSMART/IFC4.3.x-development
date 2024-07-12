@@ -1,6 +1,5 @@
-Describes the manner in which measurements are made along (and optionally offset from) a linear element.
+# Pset_LinearReferencingMethod
 
-<!-- end of short definition -->
-
+Describes the manner in which measurements are made along (and optionally offset from) a linear element.<!-- end of definition -->
 
 > NOTE Definition according to ISO 19148:2021

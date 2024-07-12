@@ -1,4 +1,3 @@
-Properties for performance based maintenance policies
+# Pset_MaintenanceTriggerPerformance
 
-<!-- end of short definition -->
-
+Properties for performance based maintenance policies<!-- end of definition -->

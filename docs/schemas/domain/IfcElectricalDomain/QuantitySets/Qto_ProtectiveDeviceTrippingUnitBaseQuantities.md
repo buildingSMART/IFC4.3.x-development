@@ -1,4 +1,3 @@
-Base quantities that are common to the definition of all occurrences of protective device tripping unit.
+# Qto_ProtectiveDeviceTrippingUnitBaseQuantities
 
-<!-- end of short definition -->
-
+Base quantities that are common to the definition of all occurrences of protective device tripping unit.<!-- end of definition -->

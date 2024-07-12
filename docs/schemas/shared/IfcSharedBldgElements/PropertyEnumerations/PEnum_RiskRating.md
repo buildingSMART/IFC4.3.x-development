@@ -1,7 +1,6 @@
-Enumeration describing the scale of rating for risk.
+# PEnum_RiskRating
 
-<!-- end of short definition -->
-
+Enumeration describing the scale of rating for risk.<!-- end of definition -->
 
 ## Items
 

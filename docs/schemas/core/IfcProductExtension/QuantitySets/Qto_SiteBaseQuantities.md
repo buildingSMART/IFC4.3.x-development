@@ -1,7 +1,6 @@
-Base quantities that are common to the definition of all occurrences of site.
+# Qto_SiteBaseQuantities
 
-<!-- end of short definition -->
-
+Base quantities that are common to the definition of all occurrences of site.<!-- end of definition -->
 
 
 ## Comments

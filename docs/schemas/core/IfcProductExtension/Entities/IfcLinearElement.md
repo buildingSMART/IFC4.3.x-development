@@ -1,4 +1,3 @@
-A generalization of all linear elements that are parts of an alignment.
+# IfcLinearElement
 
-<!-- end of short definition -->
-
+A generalization of all linear elements that are parts of an alignment.<!-- end of definition -->

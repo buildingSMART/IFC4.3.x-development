@@ -1,7 +1,6 @@
-_IfcCShapeProfileDef_ defines a section profile that provides the defining parameters of a C-shaped section to be used by the swept area solid. This section is typically produced by cold forming steel. Its parameters and orientation relative to the position coordinate system are according to the following illustration. The centre of the position coordinate system is in the profile's centre of the bounding box.
+# IfcCShapeProfileDef
 
-<!-- end of short definition -->
-
+_IfcCShapeProfileDef_ defines a section profile that provides the defining parameters of a C-shaped section to be used by the swept area solid. This section is typically produced by cold forming steel. Its parameters and orientation relative to the position coordinate system are according to the following illustration. The centre of the position coordinate system is in the profile's centre of the bounding box.<!-- end of definition -->
 
 > HISTORY New entity in IFC2x2.
 

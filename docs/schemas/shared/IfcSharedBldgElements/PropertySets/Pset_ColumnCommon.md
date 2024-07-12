@@ -1,7 +1,6 @@
-Properties common to the definition of all occurrence and type objects of column.
+# Pset_ColumnCommon
 
-<!-- end of short definition -->
-
+Properties common to the definition of all occurrence and type objects of column.<!-- end of definition -->
 
 
 ## Comments

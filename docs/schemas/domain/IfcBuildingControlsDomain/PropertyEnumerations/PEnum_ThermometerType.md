@@ -1,7 +1,6 @@
+# PEnum_ThermometerType
 
-
-<!-- end of short definition -->
-## Items
+<!-- end of definition -->## Items
 
 ### DIAL
 Dial

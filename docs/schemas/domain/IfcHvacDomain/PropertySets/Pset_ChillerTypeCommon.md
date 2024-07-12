@@ -1,4 +1,3 @@
-Chiller type common attributes.
+# Pset_ChillerTypeCommon
 
-<!-- end of short definition -->
-
+Chiller type common attributes.<!-- end of definition -->

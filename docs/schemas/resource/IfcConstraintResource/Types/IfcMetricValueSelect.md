@@ -1,7 +1,6 @@
-_IfcMetricValueSelect_ is a select type that enables selection of the data type for the value component of an _IfcMetric_.
+# IfcMetricValueSelect
 
-<!-- end of short definition -->
-
+_IfcMetricValueSelect_ is a select type that enables selection of the data type for the value component of an _IfcMetric_.<!-- end of definition -->
 
 Types are used as follows:
 

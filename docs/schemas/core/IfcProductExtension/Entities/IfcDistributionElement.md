@@ -1,3 +1,5 @@
+# IfcDistributionElement
+
 _IfcDistributionElement_ is a generalization of all elements that participate in a distribution system. Typical examples of _IfcDistributionElement_ entities are (among others):
 
 * building service elements within a heating system
@@ -8,10 +10,7 @@ _IfcDistributionElement_ is a generalization of all elements that participate in
 * electrical elements
 * building service elements within a communication network
 * building service elements within a sensor (monitoring) network
-
-
-<!-- end of short definition -->
-
+<!-- end of definition -->
 The _IfcDistributionElement_ is further specialized in the IFC specification. Direct instantiation of _IfcDistributionElement_ without an assigned subtype of _IfcDistributionElementType_ provides the meaning of a distribution element proxy.
 
 > HISTORY New entity in IFC1.5.

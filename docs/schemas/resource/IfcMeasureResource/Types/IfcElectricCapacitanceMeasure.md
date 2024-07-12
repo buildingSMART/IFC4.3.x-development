@@ -1,7 +1,6 @@
-_IfcElectricCapacitanceMeasure_ is a measure of the electric capacitance.
+# IfcElectricCapacitanceMeasure
 
-<!-- end of short definition -->
-
+_IfcElectricCapacitanceMeasure_ is a measure of the electric capacitance.<!-- end of definition -->
 
 Usually measured in Farad (F, C/V = A s/V).
 

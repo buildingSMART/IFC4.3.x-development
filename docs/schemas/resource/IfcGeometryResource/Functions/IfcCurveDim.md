@@ -1,7 +1,6 @@
-{ .extDef}
+# IfcCurveDim
 
-<!-- end of short definition -->
-
+{ .extDef}<!-- end of definition -->
 > NOTE Definition according to ISO/CD 10303-42:1992
 > This function checks the dimensionality of various subtypes of curve. It returns the dimensionality of the basic points and directions used at the instance of curve.
 

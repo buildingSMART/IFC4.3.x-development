@@ -1,4 +1,3 @@
-Properties for precast kerb stone.
+# Pset_PrecastKerbStone
 
-<!-- end of short definition -->
-
+Properties for precast kerb stone.<!-- end of definition -->

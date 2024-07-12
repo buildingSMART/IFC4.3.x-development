@@ -1,7 +1,6 @@
-The predefined type container that collects kerb types together into the implemented enumeration.
+# IfcKerbTypeEnum
 
-<!-- end of short definition -->
-
+The predefined type container that collects kerb types together into the implemented enumeration.<!-- end of definition -->
 
 ## Items
 

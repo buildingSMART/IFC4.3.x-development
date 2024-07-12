@@ -1,7 +1,6 @@
-The property enumeration defines the types of bath that may be specified within the property set where.
+# PEnum_BathType
 
-<!-- end of short definition -->
-
+The property enumeration defines the types of bath that may be specified within the property set where.<!-- end of definition -->
 
 ## Items
 

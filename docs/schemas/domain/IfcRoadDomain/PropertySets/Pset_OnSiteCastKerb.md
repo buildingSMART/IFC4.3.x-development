@@ -1,4 +1,3 @@
-Properties for an on site cast kerb.
+# Pset_OnSiteCastKerb
 
-<!-- end of short definition -->
-
+Properties for an on site cast kerb.<!-- end of definition -->

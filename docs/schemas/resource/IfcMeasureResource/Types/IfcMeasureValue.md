@@ -1,7 +1,6 @@
-{ .extDef}
+# IfcMeasureValue
 
-<!-- end of short definition -->
-
+{ .extDef}<!-- end of definition -->
 > NOTE Definition according to ISO/CD 10303-41:1992
 > A measure value is a value as defined in ISO 31-0 (clause 2).
 

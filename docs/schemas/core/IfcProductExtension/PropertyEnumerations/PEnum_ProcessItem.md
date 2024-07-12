@@ -1,7 +1,6 @@
-Enumeration for the type of cargo (and its measurement method) being modelled within a process.
+# PEnum_ProcessItem
 
-<!-- end of short definition -->
-
+Enumeration for the type of cargo (and its measurement method) being modelled within a process.<!-- end of definition -->
 
 ## Items
 

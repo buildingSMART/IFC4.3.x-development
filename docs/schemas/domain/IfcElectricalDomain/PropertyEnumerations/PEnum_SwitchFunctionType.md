@@ -1,7 +1,6 @@
+# PEnum_SwitchFunctionType
 
-
-<!-- end of short definition -->
-## Items
+<!-- end of definition -->## Items
 
 ### ONOFFSWITCH
 On/off Switch

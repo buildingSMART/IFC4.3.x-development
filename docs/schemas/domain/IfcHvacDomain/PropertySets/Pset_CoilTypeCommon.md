@@ -1,7 +1,6 @@
-Coil type common attributes.
+# Pset_CoilTypeCommon
 
-<!-- end of short definition -->
-
+Coil type common attributes.<!-- end of definition -->
 
 
 ## Comments

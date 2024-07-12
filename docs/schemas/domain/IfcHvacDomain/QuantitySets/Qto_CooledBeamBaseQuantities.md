@@ -1,4 +1,3 @@
-Base quantities that are common to the definition of all types of cooled beams.
+# Qto_CooledBeamBaseQuantities
 
-<!-- end of short definition -->
-
+Base quantities that are common to the definition of all types of cooled beams.<!-- end of definition -->

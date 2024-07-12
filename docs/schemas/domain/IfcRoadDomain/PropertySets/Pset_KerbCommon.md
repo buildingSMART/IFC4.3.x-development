@@ -1,4 +1,3 @@
-Properties for a kerb.
+# Pset_KerbCommon
 
-<!-- end of short definition -->
-
+Properties for a kerb.<!-- end of definition -->

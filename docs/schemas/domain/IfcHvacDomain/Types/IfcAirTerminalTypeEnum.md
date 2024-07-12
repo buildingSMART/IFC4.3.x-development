@@ -1,7 +1,6 @@
-Enumeration defining the functional types of air terminals.
+# IfcAirTerminalTypeEnum
 
-<!-- end of short definition -->
-
+Enumeration defining the functional types of air terminals.<!-- end of definition -->
 
 > NOTE Architectural louvres within doors or windows are defined by _IfcPermeableCoveringProperties_.
 

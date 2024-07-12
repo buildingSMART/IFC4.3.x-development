@@ -1,6 +1,5 @@
-Air conditioning unit equipment type attributes.
+# Pset_UnitaryEquipmentTypeAirConditioningUnit
 
-<!-- end of short definition -->
-
+Air conditioning unit equipment type attributes.<!-- end of definition -->
 Note that these attributes were formerly Pset_PackagedACUnit prior to IFC2x2.
 HeatingEnergySource attribute deleted in IFC2x2 Pset Addendum: Use IfcMaterialProperties instead.

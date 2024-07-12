@@ -1,7 +1,6 @@
-Quantity set for Earthworks Fill Base.
+# Qto_EarthworksFillBaseQuantities
 
-<!-- end of short definition -->
-
+Quantity set for Earthworks Fill Base.<!-- end of definition -->
 
 ## Comments
 

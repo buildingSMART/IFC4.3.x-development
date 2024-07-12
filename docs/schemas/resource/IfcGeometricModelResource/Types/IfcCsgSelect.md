@@ -1,7 +1,6 @@
-Select type enabling the choice between _IfcBooleanResult_ and subtypes of _IfcCsgPrimitive3D_ as potential root tree expression at _IfcCsgSolid_.
+# IfcCsgSelect
 
-<!-- end of short definition -->
-
+Select type enabling the choice between _IfcBooleanResult_ and subtypes of _IfcCsgPrimitive3D_ as potential root tree expression at _IfcCsgSolid_.<!-- end of definition -->
 
 { .extDef}
 > NOTE Definition from ISO 10303-42:

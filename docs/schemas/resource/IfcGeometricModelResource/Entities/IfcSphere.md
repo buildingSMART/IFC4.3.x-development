@@ -1,12 +1,11 @@
+# IfcSphere
+
 The _IfcSphere_ is a Construction Solid Geometry (CSG) 3D primitive. It is a solid where all points at the surface have the same distance from the center point. The inherited _Position_ attribute defines the _IfcAxis2Placement3D_ and provides:
 
 * _SELF\IfcCsgPrimitive3D.Position_: The location and orientation of the axis system for the primitive.
 * _SELF\IfcCsgPrimitive3D.Position.Location_: The center of the sphere.
 * _SELF\IfcCsgPrimitive3D.Position.Position[3]:_ The z axis points at its positive direction towards the north pole, and by its negative directions towards the south pole.
-
-
-<!-- end of short definition -->
-
+<!-- end of definition -->
 ![sphere](../../../../figures/ifcsphere-layout1.png)
 
 Figure 1 — Sphere geometry

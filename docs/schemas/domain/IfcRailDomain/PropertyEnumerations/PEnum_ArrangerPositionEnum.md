@@ -1,7 +1,6 @@
-Enumeration of the position where or how the arranger is positioned relative to place (usually a cabinet) where it is affiiated.
+# PEnum_ArrangerPositionEnum
 
-<!-- end of short definition -->
-
+Enumeration of the position where or how the arranger is positioned relative to place (usually a cabinet) where it is affiiated.<!-- end of definition -->
 
 ## Items
 

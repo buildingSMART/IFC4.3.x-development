@@ -1,7 +1,6 @@
-Enumeration of the different curved turnouts used in railway.
+# PEnum_TypeOfCurvedTurnout
 
-<!-- end of short definition -->
-
+Enumeration of the different curved turnouts used in railway.<!-- end of definition -->
 
 ## Items
 

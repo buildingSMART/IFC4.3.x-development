@@ -1,4 +1,3 @@
-Properties common to a optical line terminal. This property set is applied to a type or occurrence of _IfcCommunicationsAppliance_ with predefined type OPTICALLINETERMINAL.
+# Pset_CommunicationsApplianceTypeOpticalLineTerminal
 
-<!-- end of short definition -->
-
+Properties common to a optical line terminal. This property set is applied to a type or occurrence of _IfcCommunicationsAppliance_ with predefined type OPTICALLINETERMINAL.<!-- end of definition -->

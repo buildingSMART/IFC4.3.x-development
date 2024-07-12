@@ -1,7 +1,6 @@
-A clothoid is a planar curve in the form of a spiral. This curve has the property that the curvature varies linearly with the arc length.
+# IfcClothoid
 
-<!-- end of short definition -->
-
+A clothoid is a planar curve in the form of a spiral. This curve has the property that the curvature varies linearly with the arc length.<!-- end of definition -->
 { .extDef}
 > NOTE Definition according to ISO 10303-42:2003
 

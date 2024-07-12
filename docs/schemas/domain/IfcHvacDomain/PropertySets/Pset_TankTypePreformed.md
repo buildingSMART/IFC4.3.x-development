@@ -1,6 +1,5 @@
-Fixed vessel manufactured as a single unit with one or more compartments for storing a liquid.
+# Pset_TankTypePreformed
 
-<!-- end of short definition -->
-
+Fixed vessel manufactured as a single unit with one or more compartments for storing a liquid.<!-- end of definition -->
 
 Pset renamed from Pset_TankTypePreformedTank to Pset_TankTypePreformed in IFC2x2 Pset Addendum.

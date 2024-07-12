@@ -1,7 +1,6 @@
-Properties for signal handling for an analog controller taking disparate valued multiple inputs and creating a single valued binary output.
+# Pset_ControllerTypeTwoPosition
 
-<!-- end of short definition -->
- HISTORY: In IFC4, extended properties to replace Pset_BinaryInput and Pset_BinaryOutput.
+Properties for signal handling for an analog controller taking disparate valued multiple inputs and creating a single valued binary output.<!-- end of definition --> HISTORY: In IFC4, extended properties to replace Pset_BinaryInput and Pset_BinaryOutput.
 
 
 ## Comments

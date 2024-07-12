@@ -1,4 +1,3 @@
-Reinforcement Concrete parameter [ST-2]: The pitch length information of reinforcement bar with the continuous footing.
+# Pset_ReinforcementBarPitchOfContinuousFooting
 
-<!-- end of short definition -->
-
+Reinforcement Concrete parameter [ST-2]: The pitch length information of reinforcement bar with the continuous footing.<!-- end of definition -->

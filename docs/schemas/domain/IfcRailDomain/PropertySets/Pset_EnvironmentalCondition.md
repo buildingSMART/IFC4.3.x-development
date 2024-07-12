@@ -1,7 +1,6 @@
-Properties defining environment conditions required by the element.
+# Pset_EnvironmentalCondition
 
-<!-- end of short definition -->
-
+Properties defining environment conditions required by the element.<!-- end of definition -->
 
 
 ## Comments

@@ -1,7 +1,6 @@
-Enumeration defining the typical types of Chillers classified by their method of heat rejection.
+# IfcChillerTypeEnum
 
-<!-- end of short definition -->
-
+Enumeration defining the typical types of Chillers classified by their method of heat rejection.<!-- end of definition -->
 
 > HISTORY New enumeration in IFC2x.
 

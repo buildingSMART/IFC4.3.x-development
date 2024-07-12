@@ -1,7 +1,6 @@
-Air terminal performance history common attributes.
+# Pset_AirTerminalPHistory
 
-<!-- end of short definition -->
-
+Air terminal performance history common attributes.<!-- end of definition -->
 
 
 ## Comments

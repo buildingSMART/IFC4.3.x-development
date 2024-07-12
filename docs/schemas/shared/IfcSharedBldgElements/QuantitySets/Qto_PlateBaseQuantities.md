@@ -1,7 +1,6 @@
-Base quantities that are common to the definition of all occurrences of plates.
+# Qto_PlateBaseQuantities
 
-<!-- end of short definition -->
-
+Base quantities that are common to the definition of all occurrences of plates.<!-- end of definition -->
 
 
 ## Comments

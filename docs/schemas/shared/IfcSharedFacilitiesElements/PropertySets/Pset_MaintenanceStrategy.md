@@ -1,4 +1,3 @@
-Property set for the association of a maintenance strategy to an element, asset of system.
+# Pset_MaintenanceStrategy
 
-<!-- end of short definition -->
-
+Property set for the association of a maintenance strategy to an element, asset of system.<!-- end of definition -->

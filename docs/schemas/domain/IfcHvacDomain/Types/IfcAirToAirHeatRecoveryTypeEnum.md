@@ -1,7 +1,6 @@
-Defines general types of air-to-air heat recovery devices.
+# IfcAirToAirHeatRecoveryTypeEnum
 
-<!-- end of short definition -->
-
+Defines general types of air-to-air heat recovery devices.<!-- end of definition -->
 
 > HISTORY New enumeration in IFC2x.
 

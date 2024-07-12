@@ -1,4 +1,3 @@
-Specifies stationing parameters for _IfcReferent_.
+# Pset_Stationing
 
-<!-- end of short definition -->
-
+Specifies stationing parameters for _IfcReferent_.<!-- end of definition -->

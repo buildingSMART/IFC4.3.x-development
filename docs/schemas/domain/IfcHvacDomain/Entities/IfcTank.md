@@ -1,7 +1,6 @@
-A tank is a vessel or container in which a fluid or gas is stored for later use.
+# IfcTank
 
-<!-- end of short definition -->
-
+A tank is a vessel or container in which a fluid or gas is stored for later use.<!-- end of definition -->
 
 > HISTORY New entity in IFC4
 

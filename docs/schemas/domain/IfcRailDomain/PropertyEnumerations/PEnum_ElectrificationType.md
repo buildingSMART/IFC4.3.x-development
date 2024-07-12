@@ -1,7 +1,6 @@
+# PEnum_ElectrificationType
 
-
-<!-- end of short definition -->
-## Items
+<!-- end of definition -->## Items
 
 ### NON_ELECTRIFIED
 

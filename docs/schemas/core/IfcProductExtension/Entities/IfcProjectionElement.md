@@ -1,7 +1,6 @@
-The projection element is a specialization of the general feature element to represent projections applied to building elements. It represents a solid attached to any element that has physical manifestation.
+# IfcProjectionElement
 
-<!-- end of short definition -->
-
+The projection element is a specialization of the general feature element to represent projections applied to building elements. It represents a solid attached to any element that has physical manifestation.<!-- end of definition -->
 
 > EXAMPLE A wall projection such as a pilaster strip is handled by _IfcProjectionElement_
 

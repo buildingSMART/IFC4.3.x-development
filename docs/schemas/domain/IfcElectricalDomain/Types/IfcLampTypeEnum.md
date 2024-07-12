@@ -1,7 +1,6 @@
-The _IfcLampTypeEnum_ defines the range of different types of lamp available.
+# IfcLampTypeEnum
 
-<!-- end of short definition -->
-
+The _IfcLampTypeEnum_ defines the range of different types of lamp available.<!-- end of definition -->
 
 > HISTORY New type in IFC2x2 Addendum.
 

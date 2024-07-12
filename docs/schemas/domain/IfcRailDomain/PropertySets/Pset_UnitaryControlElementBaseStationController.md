@@ -1,4 +1,3 @@
-Properties that are applicable to _IfcUnitaryControlElement_ with the predefined type set to BASESTATIONCONTROLLER.
+# Pset_UnitaryControlElementBaseStationController
 
-<!-- end of short definition -->
-
+Properties that are applicable to _IfcUnitaryControlElement_ with the predefined type set to BASESTATIONCONTROLLER.<!-- end of definition -->

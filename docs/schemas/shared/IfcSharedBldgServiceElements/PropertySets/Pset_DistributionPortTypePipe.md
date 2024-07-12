@@ -1,7 +1,6 @@
-Pipe port occurrence attributes attached to an instance of IfcDistributionPort.
+# Pset_DistributionPortTypePipe
 
-<!-- end of short definition -->
-
+Pipe port occurrence attributes attached to an instance of IfcDistributionPort.<!-- end of definition -->
 
 
 ## Comments

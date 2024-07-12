@@ -1,4 +1,3 @@
-Base quantities that are common to the definition of all occurrences of rail.
+# Qto_RailBaseQuantities
 
-<!-- end of short definition -->
-
+Base quantities that are common to the definition of all occurrences of rail.<!-- end of definition -->

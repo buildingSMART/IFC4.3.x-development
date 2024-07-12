@@ -1,7 +1,6 @@
-The warping moment measure is a measure for the warping moment, which occurs in warping torsional analysis. It is usually measured in kN\*m\^2.
+# IfcWarpingMomentMeasure
 
-<!-- end of short definition -->
-
+The warping moment measure is a measure for the warping moment, which occurs in warping torsional analysis. It is usually measured in kN\*m\^2.<!-- end of definition -->
 
 Type: REAL
 

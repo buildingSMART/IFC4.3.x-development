@@ -1,7 +1,6 @@
-A feature element is a generalization of all existence dependent elements which modify the shape and appearance of the associated master element. The _IfcFeatureElement_ offers the ability to handle shape modifiers as semantic objects within the IFC object model.
+# IfcFeatureElement
 
-<!-- end of short definition -->
-
+A feature element is a generalization of all existence dependent elements which modify the shape and appearance of the associated master element. The _IfcFeatureElement_ offers the ability to handle shape modifiers as semantic objects within the IFC object model.<!-- end of definition -->
 
 > NOTE The term "feature" has a predefined meaning in a context of "feature-based modeling" and within steel construction work. It is introduced here in a broader sense to cover all existence dependent, but semantically described, modifiers of an element's shape and appearance. It is envisioned that future releases enhance the feature-based capabilities of the IFC model.
 

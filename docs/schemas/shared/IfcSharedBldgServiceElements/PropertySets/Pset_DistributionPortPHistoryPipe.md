@@ -1,4 +1,3 @@
-Log of substance usage attached to an instance of IfcPerformanceHistory having an assigned IfcDistributionPort of type PIPE.
+# Pset_DistributionPortPHistoryPipe
 
-<!-- end of short definition -->
-
+Log of substance usage attached to an instance of IfcPerformanceHistory having an assigned IfcDistributionPort of type PIPE.<!-- end of definition -->

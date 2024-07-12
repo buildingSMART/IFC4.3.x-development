@@ -1,4 +1,3 @@
-Base quantities that are common to the definition of all occurrences of flow cable fitting.
+# Qto_CableFittingBaseQuantities
 
-<!-- end of short definition -->
-
+Base quantities that are common to the definition of all occurrences of flow cable fitting.<!-- end of definition -->

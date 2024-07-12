@@ -1,5 +1,4 @@
-Fire damper type attributes.
+# Pset_DamperTypeFireDamper
 
-<!-- end of short definition -->
-
+Fire damper type attributes.<!-- end of definition -->
 Pset renamed from Pset_DamperTypeFire to Pset_DamperTypeFireDamper in IFC2x2 Pset Addendum.

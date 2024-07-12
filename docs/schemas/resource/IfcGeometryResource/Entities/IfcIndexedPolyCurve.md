@@ -1,7 +1,6 @@
-The _IfcIndexedPolyCurve_ is a bounded curve with only linear and circular arc segments defined by a Cartesian point list and an optional list of segments, providing indices into the Cartesian point list. In the case that the list of _Segments_ is not provided, all points in the _IfcCartesianPointList_ are connected by straight line segments in the order they appear in the _IfcCartesianPointList_.
+# IfcIndexedPolyCurve
 
-<!-- end of short definition -->
-
+The _IfcIndexedPolyCurve_ is a bounded curve with only linear and circular arc segments defined by a Cartesian point list and an optional list of segments, providing indices into the Cartesian point list. In the case that the list of _Segments_ is not provided, all points in the _IfcCartesianPointList_ are connected by straight line segments in the order they appear in the _IfcCartesianPointList_.<!-- end of definition -->
 
 In the case that the list of _Segments_ is provided, it is interpreted as such:
 

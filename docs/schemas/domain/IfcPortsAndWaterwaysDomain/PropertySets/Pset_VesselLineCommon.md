@@ -1,4 +1,3 @@
-Properties for vessel lines and anchoring
+# Pset_VesselLineCommon
 
-<!-- end of short definition -->
-
+Properties for vessel lines and anchoring<!-- end of definition -->

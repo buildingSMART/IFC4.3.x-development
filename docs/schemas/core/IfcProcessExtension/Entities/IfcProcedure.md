@@ -1,7 +1,6 @@
-An _IfcProcedure_ is a logical set of actions to be taken in response to an event or to cause an event to occur.
+# IfcProcedure
 
-<!-- end of short definition -->
-
+An _IfcProcedure_ is a logical set of actions to be taken in response to an event or to cause an event to occur.<!-- end of definition -->
 
 > HISTORY New entity in IFC2x2
 
@@ -23,7 +22,7 @@ Figure 1 — Procedure relationships
 
 ### PredefinedType
 Identifies the predefined types of a procedure from which
- the type required may be set.
+  the type required may be set.
 
 ## Formal Propositions
 

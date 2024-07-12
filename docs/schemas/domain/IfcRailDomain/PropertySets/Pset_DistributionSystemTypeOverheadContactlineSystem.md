@@ -1,4 +1,3 @@
-Properties of an overhead contact line system. The property set is associated with the predefined type OVERHEAD_CONTACT_LINE_SYSTEM of _IfcDistributionSystem_.
+# Pset_DistributionSystemTypeOverheadContactlineSystem
 
-<!-- end of short definition -->
-
+Properties of an overhead contact line system. The property set is associated with the predefined type OVERHEAD_CONTACT_LINE_SYSTEM of _IfcDistributionSystem_.<!-- end of definition -->

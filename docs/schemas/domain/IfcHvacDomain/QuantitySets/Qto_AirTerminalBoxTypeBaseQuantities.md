@@ -1,4 +1,3 @@
-Base quantities that are common to the definition of all types of air terminal boxes.
+# Qto_AirTerminalBoxTypeBaseQuantities
 
-<!-- end of short definition -->
-
+Base quantities that are common to the definition of all types of air terminal boxes.<!-- end of definition -->

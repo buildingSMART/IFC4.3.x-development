@@ -1,4 +1,3 @@
-Actuator type common attributes.
+# Pset_ActuatorTypeCommon
 
-<!-- end of short definition -->
-
+Actuator type common attributes.<!-- end of definition -->

@@ -1,7 +1,6 @@
-Enumeration of data transmission unit usages.
+# PEnum_DataTransmissionUnitUsage
 
-<!-- end of short definition -->
-
+Enumeration of data transmission unit usages.<!-- end of definition -->
 
 ## Items
 

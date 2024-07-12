@@ -1,7 +1,6 @@
-Base quantities that are common to the definition of all types of space heaters.
+# Qto_SpaceHeaterBaseQuantities
 
-<!-- end of short definition -->
-
+Base quantities that are common to the definition of all types of space heaters.<!-- end of definition -->
 
 
 ## Comments

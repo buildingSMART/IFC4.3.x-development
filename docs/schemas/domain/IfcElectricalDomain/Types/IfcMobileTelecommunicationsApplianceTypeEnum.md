@@ -1,7 +1,6 @@
-The IfcMobileTelecommunicationsApplianceTypeEnum defines the range of different types of mobile telecommunications appliance that can be specified.
+# IfcMobileTelecommunicationsApplianceTypeEnum
 
-<!-- end of short definition -->
-
+The IfcMobileTelecommunicationsApplianceTypeEnum defines the range of different types of mobile telecommunications appliance that can be specified.<!-- end of definition -->
 
 ## Items
 

@@ -1,17 +1,16 @@
-The _IfcRailwayPartTypeEnum_ defines the range of different types of railway part that can be specified.
+# IfcRailwayPartTypeEnum
 
-<!-- end of short definition -->
-
+The _IfcRailwayPartTypeEnum_ defines the range of different types of railway part that can be specified.<!-- end of definition -->
 
 A railway line can be spatially organised into several parts, using a vertical, longitudinal and lateral criteria for its division. There is not one standardised way of spatially dividing the line, as this depends on the use case. The _IfcRailwayPart_s that can be used to spatially organise a line are:
 
 - **Track**, which can be further described by
- - Plain tracks
- - Turnout tracks
- - Dilatation tracks
- - Or other track parts
+  - Plain tracks
+  - Turnout tracks
+  - Dilatation tracks
+  - Or other track parts
 - **Line-side**, which can be further described by
- - Line-side parts
+  - Line-side parts
 - **Substructure** (for constructed ground)
 - **Above-track**
 

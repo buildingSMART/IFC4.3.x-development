@@ -1,7 +1,6 @@
-_IfcResourceTime_ captures the time-related information about a construction resource.
+# IfcResourceTime
 
-<!-- end of short definition -->
-
+_IfcResourceTime_ captures the time-related information about a construction resource.<!-- end of definition -->
 
 > HISTORY New entity in IFC4.
 

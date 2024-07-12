@@ -1,7 +1,6 @@
-A space represents an area or volume bounded actually or theoretically. Spaces are areas or volumes that provide for certain functions within a building.
+# IfcSpace
 
-<!-- end of short definition -->
-
+A space represents an area or volume bounded actually or theoretically. Spaces are areas or volumes that provide for certain functions within a building.<!-- end of definition -->
 
 A space is associated to a building storey (or in case of exterior spaces to a site). A space may span over several connected spaces. Therefore a space group provides for a collection of spaces included in a storey. A space can also be decomposed in parts, where each part defines a partial space. This is defined by the _CompositionType_ attribute of the supertype _IfcSpatialStructureElement_ which is interpreted as follow:
 

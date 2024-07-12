@@ -1,4 +1,3 @@
-Specifies the general properties for a Superelevation event.
+# Pset_Superelevation
 
-<!-- end of short definition -->
-
+Specifies the general properties for a Superelevation event.<!-- end of definition -->

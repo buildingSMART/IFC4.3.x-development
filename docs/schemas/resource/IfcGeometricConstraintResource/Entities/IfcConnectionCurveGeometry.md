@@ -1,7 +1,6 @@
-_IfcConnectionCurveGeometry_ is used to describe the geometric constraints that facilitate the physical connection of two objects at a curve or at an edge with curve geometry associated. It is envisioned as a control that applies to the element connection relationships.
+# IfcConnectionCurveGeometry
 
-<!-- end of short definition -->
-
+_IfcConnectionCurveGeometry_ is used to describe the geometric constraints that facilitate the physical connection of two objects at a curve or at an edge with curve geometry associated. It is envisioned as a control that applies to the element connection relationships.<!-- end of definition -->
 
 The _IfcCurve_ (or the _IfcEdgeCurve_ with an associated _IfcCurve_) at the _CurveOnRelatingElement_ attribute defines the curve where the basic geometry items of the connected elements connects. The curve geometry and coordinates are provided within the local coordinate system of the _RelatingElement_, as specified at the _IfcRelConnects_ subtype that utilizes the _IfcConnectionCurveGeometry_. Optionally, the same curve geometry and coordinates can also be provided within the local coordinate system of the _RelatedElement_ by using the _CurveOnRelatedElement_ attribute.
 

@@ -1,7 +1,6 @@
-Base quantities that are common to the definition of all occurrences of footings.
+# Qto_FootingBaseQuantities
 
-<!-- end of short definition -->
-
+Base quantities that are common to the definition of all occurrences of footings.<!-- end of definition -->
 
 
 ## Comments

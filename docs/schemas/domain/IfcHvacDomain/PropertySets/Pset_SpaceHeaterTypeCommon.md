@@ -1,7 +1,6 @@
-Space heater type common attributes.
+# Pset_SpaceHeaterTypeCommon
 
-<!-- end of short definition -->
-
+Space heater type common attributes.<!-- end of definition -->
 SoundLevel attribute deleted in IFC2x2 Pset Addendum: Use IfcSoundProperties instead. Properties added in IFC4.
 
 

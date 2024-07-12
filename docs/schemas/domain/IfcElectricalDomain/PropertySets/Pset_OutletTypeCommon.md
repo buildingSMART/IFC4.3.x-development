@@ -1,4 +1,3 @@
-Common properties for different outlet types.
+# Pset_OutletTypeCommon
 
-<!-- end of short definition -->
-
+Common properties for different outlet types.<!-- end of definition -->

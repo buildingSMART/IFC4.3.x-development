@@ -1,4 +1,3 @@
-A device that senses or detects temperature.
+# Pset_SensorTypeTemperatureSensor
 
-<!-- end of short definition -->
- HISTORY: TemperatureSensorSensorSetPoint changed to SetPointTemperature. Range, accuracy and time constant deleted.
+A device that senses or detects temperature.<!-- end of definition --> HISTORY: TemperatureSensorSensorSetPoint changed to SetPointTemperature. Range, accuracy and time constant deleted.

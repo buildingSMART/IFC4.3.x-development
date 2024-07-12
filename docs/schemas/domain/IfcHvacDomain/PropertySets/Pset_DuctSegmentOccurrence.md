@@ -1,7 +1,6 @@
-Duct segment occurrence attributes attached to an instance of IfcDuctSegment.
+# Pset_DuctSegmentOccurrence
 
-<!-- end of short definition -->
-
+Duct segment occurrence attributes attached to an instance of IfcDuctSegment.<!-- end of definition -->
 
 
 ## Comments

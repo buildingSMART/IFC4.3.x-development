@@ -1,7 +1,6 @@
-Enumeration describing the current state of a borehole
+# PEnum_BoreholeState
 
-<!-- end of short definition -->
-
+Enumeration describing the current state of a borehole<!-- end of definition -->
 
 ## Items
 

@@ -1,7 +1,6 @@
-Properties common to the definition of all occurrences of IfcDoor.
+# Pset_DoorCommon
 
-<!-- end of short definition -->
-
+Properties common to the definition of all occurrences of IfcDoor.<!-- end of definition -->
 
 
 ## Comments

@@ -1,4 +1,3 @@
-Properties common to the definition of all occurrences of IfcMarineFacility with the predefined type set to SHIPYARD.
+# Pset_ShipyardCommon
 
-<!-- end of short definition -->
-
+Properties common to the definition of all occurrences of IfcMarineFacility with the predefined type set to SHIPYARD.<!-- end of definition -->

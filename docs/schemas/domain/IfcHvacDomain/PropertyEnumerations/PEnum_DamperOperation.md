@@ -1,7 +1,6 @@
+# PEnum_DamperOperation
 
-
-<!-- end of short definition -->
-## Items
+<!-- end of definition -->## Items
 
 ### AUTOMATIC
 Automatic

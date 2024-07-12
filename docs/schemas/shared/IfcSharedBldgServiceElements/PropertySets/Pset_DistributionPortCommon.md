@@ -1,4 +1,3 @@
-Common attributes attached to an instance of IfcDistributionPort.
+# Pset_DistributionPortCommon
 
-<!-- end of short definition -->
-
+Common attributes attached to an instance of IfcDistributionPort.<!-- end of definition -->

@@ -1,7 +1,6 @@
+# PEnum_ShapeEnum
 
-
-<!-- end of short definition -->
-## Items
+<!-- end of definition -->## Items
 
 ### HELICALCONDUCTOR
 Helical Conductor

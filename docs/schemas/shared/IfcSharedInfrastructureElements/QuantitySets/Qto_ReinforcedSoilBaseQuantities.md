@@ -1,7 +1,6 @@
-Quantity sets for Reinforced Soil Base.
+# Qto_ReinforcedSoilBaseQuantities
 
-<!-- end of short definition -->
-
+Quantity sets for Reinforced Soil Base.<!-- end of definition -->
 
 ## Comments
 

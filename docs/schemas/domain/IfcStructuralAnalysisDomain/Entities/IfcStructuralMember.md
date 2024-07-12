@@ -1,7 +1,6 @@
-The abstract entity _IfcStructuralMember_ is the superclass of all structural items which represent the idealized structural behavior of building elements.
+# IfcStructuralMember
 
-<!-- end of short definition -->
-
+The abstract entity _IfcStructuralMember_ is the superclass of all structural items which represent the idealized structural behavior of building elements.<!-- end of definition -->
 
 > HISTORY New entity in IFC2x2.
 

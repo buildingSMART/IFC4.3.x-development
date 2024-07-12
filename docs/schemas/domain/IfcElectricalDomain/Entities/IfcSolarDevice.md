@@ -1,7 +1,6 @@
-A solar device converts solar radiation into other energy such as electric current or thermal energy.
+# IfcSolarDevice
 
-<!-- end of short definition -->
-
+A solar device converts solar radiation into other energy such as electric current or thermal energy.<!-- end of definition -->
 
 > HISTORY New entity in IFC4
 

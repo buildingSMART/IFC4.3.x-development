@@ -1,4 +1,3 @@
-A small diameter valve, used to discharge gas from a system.
+# Pset_ValveTypeGasTap
 
-<!-- end of short definition -->
-
+A small diameter valve, used to discharge gas from a system.<!-- end of definition -->

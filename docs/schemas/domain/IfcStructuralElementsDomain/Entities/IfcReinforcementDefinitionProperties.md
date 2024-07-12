@@ -1,7 +1,6 @@
-_IfcReinforcementDefinitionProperties_ defines the cross section properties of reinforcement included in reinforced concrete building elements. The property set definition may be used both in conjunction with insitu and precast structures.
+# IfcReinforcementDefinitionProperties
 
-<!-- end of short definition -->
-
+_IfcReinforcementDefinitionProperties_ defines the cross section properties of reinforcement included in reinforced concrete building elements. The property set definition may be used both in conjunction with insitu and precast structures.<!-- end of definition -->
 
 This subtype of _IfcPropertySetDefinition_ is used to define the reinforcement properties in early design stages, such as in requirement definition or scheme design. In later design stages explicit instances of subtypes of _IfcReinforcingElement_ are used. The intended usage may be indicated using the _DefinitionType_ attribute value as a designator: recommended values are 'Reinforcement area requirement' or 'Reinforcement configuration requirement'. Other values may be used according to local standards.
 

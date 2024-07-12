@@ -1,7 +1,6 @@
-The _IfcDayInWeekNumber_ is an integer that defines the position of the specified day in a week. The positions have the following meaning that assigns the ordinal day number in the week to the Calendar day name.
+# IfcDayInWeekNumber
 
-<!-- end of short definition -->
-
+The _IfcDayInWeekNumber_ is an integer that defines the position of the specified day in a week. The positions have the following meaning that assigns the ordinal day number in the week to the Calendar day name.<!-- end of definition -->
 
 Ordinal day numbers map to calendar days as follows:
 

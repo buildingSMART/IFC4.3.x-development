@@ -1,7 +1,6 @@
-A device that reads and displays a pressure value at a point or the pressure difference between two points.
+# Pset_FlowInstrumentTypePressureGauge
 
-<!-- end of short definition -->
-
+A device that reads and displays a pressure value at a point or the pressure difference between two points.<!-- end of definition -->
 
 
 ## Comments

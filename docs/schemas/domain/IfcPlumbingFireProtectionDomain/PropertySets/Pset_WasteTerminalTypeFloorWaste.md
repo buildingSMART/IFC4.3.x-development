@@ -1,4 +1,3 @@
-Pipe fitting, set into the floor, that collects waste water and discharges it to a separate trap.
+# Pset_WasteTerminalTypeFloorWaste
 
-<!-- end of short definition -->
-
+Pipe fitting, set into the floor, that collects waste water and discharges it to a separate trap.<!-- end of definition -->

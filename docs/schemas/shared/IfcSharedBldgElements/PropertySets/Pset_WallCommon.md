@@ -1,4 +1,3 @@
-Properties common to the definition of all occurrences of IfcWall.
+# Pset_WallCommon
 
-<!-- end of short definition -->
-
+Properties common to the definition of all occurrences of IfcWall.<!-- end of definition -->

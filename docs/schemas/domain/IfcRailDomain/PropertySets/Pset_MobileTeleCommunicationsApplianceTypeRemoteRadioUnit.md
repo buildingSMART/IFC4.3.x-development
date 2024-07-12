@@ -1,7 +1,6 @@
-Properties common to the definition of all occurrences of _IfcMobileTelecommunicationsAppliance_ and types of _IfcMobileTelecommunicationsApplianceType_ with the predefined type set to REMOTERADIOUNIT.
+# Pset_MobileTeleCommunicationsApplianceTypeRemoteRadioUnit
 
-<!-- end of short definition -->
-
+Properties common to the definition of all occurrences of _IfcMobileTelecommunicationsAppliance_ and types of _IfcMobileTelecommunicationsApplianceType_ with the predefined type set to REMOTERADIOUNIT.<!-- end of definition -->
 
 
 ## Comments

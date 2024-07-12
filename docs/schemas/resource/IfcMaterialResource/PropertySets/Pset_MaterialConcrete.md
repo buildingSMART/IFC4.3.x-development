@@ -1,4 +1,3 @@
-A set of extended mechanical properties related to concrete materials.
+# Pset_MaterialConcrete
 
-<!-- end of short definition -->
-
+A set of extended mechanical properties related to concrete materials.<!-- end of definition -->

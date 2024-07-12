@@ -1,7 +1,6 @@
-_IfcCoordinateOperation_ is an abstract supertype to handle any operation (transformation or conversion) between two coordinate reference systems (CRSs).
+# IfcCoordinateOperation
 
-<!-- end of short definition -->
-
+_IfcCoordinateOperation_ is an abstract supertype to handle any operation (transformation or conversion) between two coordinate reference systems (CRSs).<!-- end of definition -->
 
 By convention, a coordinate operation is given between a **source CRS**, being the more local (or child) CRS; and **target CRS**, being the more remote (or parent) CRS.
 
@@ -14,8 +13,8 @@ An _IfcCoordinateOperation_ allows to connect:
 > EXAMPLE This can is done by setting:
 > - the _IfcCoordinateOperation.SourceCRS_ to _IfcGeometricRepresentationContext_
 > - the _IfcCoordinateOperation.TargetCRS_ either to:
-> -	_IfcProjectedCRS_, for defined easting, northing and orthogonal height
-> -	_IfcGeographicCRS_, for defined latitude, longitude and ellipsoidal height
+>  -	_IfcProjectedCRS_, for defined easting, northing and orthogonal height
+>  -	_IfcGeographicCRS_, for defined latitude, longitude and ellipsoidal height
 
 > NOTE _IfcProjectedCRS_ can be used to represent a projected CRS or a compound CRS, comprising of a projected CRS with a vertical CRS. See _IfcProjectedCRS_ for further details.
 

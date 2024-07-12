@@ -1,4 +1,3 @@
-Base quantities that are common to the definition of all occurrences of stack terminal.
+# Qto_StackTerminalBaseQuantities
 
-<!-- end of short definition -->
-
+Base quantities that are common to the definition of all occurrences of stack terminal.<!-- end of definition -->

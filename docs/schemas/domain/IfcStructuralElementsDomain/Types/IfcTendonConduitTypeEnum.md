@@ -1,7 +1,6 @@
-Enumerations of Tendon Conduit Types.
+# IfcTendonConduitTypeEnum
 
-<!-- end of short definition -->
-
+Enumerations of Tendon Conduit Types.<!-- end of definition -->
 
 ## Items
 

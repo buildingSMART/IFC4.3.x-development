@@ -1,4 +1,3 @@
-Properties for site weather
+# Pset_SiteWeather
 
-<!-- end of short definition -->
-
+Properties for site weather<!-- end of definition -->

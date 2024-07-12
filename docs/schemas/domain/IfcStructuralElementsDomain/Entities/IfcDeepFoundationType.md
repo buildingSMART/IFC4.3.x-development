@@ -1,4 +1,3 @@
-Types of Deep Foundation.
+# IfcDeepFoundationType
 
-<!-- end of short definition -->
-
+Types of Deep Foundation.<!-- end of definition -->

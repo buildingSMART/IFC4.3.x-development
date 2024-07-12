@@ -1,4 +1,3 @@
-Duct fitting performance history common attributes.
+# Pset_DuctFittingPHistory
 
-<!-- end of short definition -->
-
+Duct fitting performance history common attributes.<!-- end of definition -->

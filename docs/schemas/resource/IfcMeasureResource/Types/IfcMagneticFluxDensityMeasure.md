@@ -1,7 +1,6 @@
-_IfcMagneticFluxDensityMeasure_ is a measure of the magnetic flux density.
+# IfcMagneticFluxDensityMeasure
 
-<!-- end of short definition -->
-
+_IfcMagneticFluxDensityMeasure_ is a measure of the magnetic flux density.<!-- end of definition -->
 
 Usually measured in Tesla (T, Weber/m2 = V s/m2).
 

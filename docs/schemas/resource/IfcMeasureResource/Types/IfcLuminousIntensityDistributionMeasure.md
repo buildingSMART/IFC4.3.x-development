@@ -1,7 +1,6 @@
-_IfcLuminousIntensityDistributionMeasure_ is a measure of the luminous intensity of a light source that changes according to the direction of the ray. It is normally based on some standardized distribution light distribution curves.
+# IfcLuminousIntensityDistributionMeasure
 
-<!-- end of short definition -->
-
+_IfcLuminousIntensityDistributionMeasure_ is a measure of the luminous intensity of a light source that changes according to the direction of the ray. It is normally based on some standardized distribution light distribution curves.<!-- end of definition -->
 
 Usually measured in Candela/Lumen (cd/lm) or (cd/klm).
 

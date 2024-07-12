@@ -1,7 +1,6 @@
-A named and structured grouping with a corporate identity.
+# IfcOrganization
 
-<!-- end of short definition -->
-
+A named and structured grouping with a corporate identity.<!-- end of definition -->
 
 > NOTE The relationships between _IfcOrganization_'s, like between department within a company, can be expressed using the objectified relationship _IfcOrganizationRelationship_.
 

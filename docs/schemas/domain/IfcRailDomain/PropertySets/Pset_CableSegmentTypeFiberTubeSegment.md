@@ -1,4 +1,3 @@
-Properties of Fiber tubes segments. This property set is applicable to a type or occurrence of _IfcCableSegment_ with predefined type FIBERTUBESEGMENT.
+# Pset_CableSegmentTypeFiberTubeSegment
 
-<!-- end of short definition -->
-
+Properties of Fiber tubes segments. This property set is applicable to a type or occurrence of _IfcCableSegment_ with predefined type FIBERTUBESEGMENT.<!-- end of definition -->

@@ -1,7 +1,6 @@
-This enumeration is used to identify **non-fixed** or **mobile** transport element types.
+# IfcVehicleTypeEnum
 
-<!-- end of short definition -->
-
+This enumeration is used to identify **non-fixed** or **mobile** transport element types.<!-- end of definition -->
 
 ## Items
 

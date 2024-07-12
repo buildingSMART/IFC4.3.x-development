@@ -1,7 +1,6 @@
-An _IfcObjective_ captures qualitative information for an objective-based constraint.
+# IfcObjective
 
-<!-- end of short definition -->
-
+An _IfcObjective_ captures qualitative information for an objective-based constraint.<!-- end of definition -->
 
 _IfcObjective_ is a subtype of _IfcConstraint_ and may be associated with any subtype of _IfcRoot_ through the _IfcRelAssociatesConstraint_ relationship in the _IfcControlExtension_ schema, or may be associated with _IfcProperty_ by _IfcResourceConstraintRelationship_.
 

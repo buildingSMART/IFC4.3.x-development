@@ -1,4 +1,3 @@
-Chamber that houses a valve(s).
+# Pset_DistributionChamberElementTypeValveChamber
 
-<!-- end of short definition -->
-
+Chamber that houses a valve(s).<!-- end of definition -->

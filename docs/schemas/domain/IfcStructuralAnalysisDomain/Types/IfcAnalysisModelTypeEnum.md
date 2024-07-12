@@ -1,7 +1,6 @@
-This type definition is used to distinguish between different types of structural analysis models. The analysis models are differentiated by their dimensionality.
+# IfcAnalysisModelTypeEnum
 
-<!-- end of short definition -->
-
+This type definition is used to distinguish between different types of structural analysis models. The analysis models are differentiated by their dimensionality.<!-- end of definition -->
 
 > HISTORY New enumeration in IFC2x2.
 

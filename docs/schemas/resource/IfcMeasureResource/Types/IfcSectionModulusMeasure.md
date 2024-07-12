@@ -1,7 +1,6 @@
-_IfcSectionModulusMeasure_ is a measure for the resistance of a cross section against bending or torsional moment. It is usually measured in m\^3.
+# IfcSectionModulusMeasure
 
-<!-- end of short definition -->
-
+_IfcSectionModulusMeasure_ is a measure for the resistance of a cross section against bending or torsional moment. It is usually measured in m\^3.<!-- end of definition -->
 
 Type: REAL
 

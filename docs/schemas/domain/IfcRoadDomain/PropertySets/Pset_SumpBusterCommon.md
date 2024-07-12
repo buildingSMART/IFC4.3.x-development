@@ -1,4 +1,3 @@
-Properties for a sump buster.
+# Pset_SumpBusterCommon
 
-<!-- end of short definition -->
-
+Properties for a sump buster.<!-- end of definition -->

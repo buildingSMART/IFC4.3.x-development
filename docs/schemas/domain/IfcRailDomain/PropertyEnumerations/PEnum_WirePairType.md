@@ -1,7 +1,6 @@
-Enumeration of wire pair types.
+# PEnum_WirePairType
 
-<!-- end of short definition -->
-
+Enumeration of wire pair types.<!-- end of definition -->
 
 ## Items
 

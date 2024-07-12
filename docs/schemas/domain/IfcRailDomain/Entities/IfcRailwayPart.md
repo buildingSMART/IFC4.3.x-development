@@ -1,4 +1,3 @@
-Part of a railway.
+# IfcRailwayPart
 
-<!-- end of short definition -->
-
+Part of a railway.<!-- end of definition -->

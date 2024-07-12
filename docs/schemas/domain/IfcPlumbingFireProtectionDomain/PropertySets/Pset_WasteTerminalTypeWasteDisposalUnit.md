@@ -1,4 +1,3 @@
-Electrically operated device that reduces kitchen or other waste into fragments small enough to be flushed into a drainage system.
+# Pset_WasteTerminalTypeWasteDisposalUnit
 
-<!-- end of short definition -->
-
+Electrically operated device that reduces kitchen or other waste into fragments small enough to be flushed into a drainage system.<!-- end of definition -->

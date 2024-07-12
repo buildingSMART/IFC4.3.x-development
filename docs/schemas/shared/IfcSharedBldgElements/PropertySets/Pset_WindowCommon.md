@@ -1,7 +1,6 @@
-Properties common to the definition of all occurrences of Window.
+# Pset_WindowCommon
 
-<!-- end of short definition -->
-
+Properties common to the definition of all occurrences of Window.<!-- end of definition -->
 
 
 ## Comments

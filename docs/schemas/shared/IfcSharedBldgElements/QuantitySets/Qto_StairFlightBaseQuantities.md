@@ -1,7 +1,6 @@
-Base quantities that are common to the definition of all occurrences of stair flights.
+# Qto_StairFlightBaseQuantities
 
-<!-- end of short definition -->
-
+Base quantities that are common to the definition of all occurrences of stair flights.<!-- end of definition -->
 
 
 ## Comments

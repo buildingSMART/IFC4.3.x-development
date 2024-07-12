@@ -1,7 +1,6 @@
-This entity defines a reaction which occurs at a point. A point reaction is typically connected with a point connection. It may also be connected with a curve member or curve connection, or surface member or surface connection.
+# IfcStructuralPointReaction
 
-<!-- end of short definition -->
-
+This entity defines a reaction which occurs at a point. A point reaction is typically connected with a point connection. It may also be connected with a curve member or curve connection, or surface member or surface connection.<!-- end of definition -->
 
 > HISTORY New entity in IFC2x2.
 

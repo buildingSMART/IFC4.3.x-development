@@ -1,7 +1,6 @@
+# PEnum_StarterType
 
-
-<!-- end of short definition -->
-## Items
+<!-- end of definition -->## Items
 
 ### AUTOTRANSFORMER
 Auto Transformer

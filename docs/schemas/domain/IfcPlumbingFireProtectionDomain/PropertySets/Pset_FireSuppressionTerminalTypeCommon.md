@@ -1,4 +1,3 @@
-Common properties for fire suppression terminals.
+# Pset_FireSuppressionTerminalTypeCommon
 
-<!-- end of short definition -->
-
+Common properties for fire suppression terminals.<!-- end of definition -->

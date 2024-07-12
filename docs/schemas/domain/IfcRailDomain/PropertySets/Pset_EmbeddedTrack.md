@@ -1,4 +1,3 @@
-Properties for track slab that have embedded tracks recessed into road surface.
+# Pset_EmbeddedTrack
 
-<!-- end of short definition -->
-
+Properties for track slab that have embedded tracks recessed into road surface.<!-- end of definition -->

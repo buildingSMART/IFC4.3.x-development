@@ -1,7 +1,6 @@
-An _IfcVolumeMeasure_ is the value of the solid content of a body.
+# IfcVolumeMeasure
 
-<!-- end of short definition -->
-
+An _IfcVolumeMeasure_ is the value of the solid content of a body.<!-- end of definition -->
 
 Usually measured in cubic metre (m3).
 

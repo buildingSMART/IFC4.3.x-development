@@ -1,4 +1,3 @@
-Base quantities that are common to the definition of all occurrences of protective device.
+# Qto_ProtectiveDeviceBaseQuantities
 
-<!-- end of short definition -->
-
+Base quantities that are common to the definition of all occurrences of protective device.<!-- end of definition -->

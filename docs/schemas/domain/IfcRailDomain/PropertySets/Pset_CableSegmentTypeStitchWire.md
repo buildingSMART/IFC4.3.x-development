@@ -1,4 +1,3 @@
-Properties of stitch wires. This property set is applicable to a type or occurrence of _IfcCableSegment_ with predefined type STICHWIRE.
+# Pset_CableSegmentTypeStitchWire
 
-<!-- end of short definition -->
-
+Properties of stitch wires. This property set is applicable to a type or occurrence of _IfcCableSegment_ with predefined type STICHWIRE.<!-- end of definition -->

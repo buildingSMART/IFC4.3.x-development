@@ -1,7 +1,6 @@
-The draughting predefined curve font type defines a selection of widely used curve fonts for draughting purposes by name.
+# IfcDraughtingPreDefinedCurveFont
 
-<!-- end of short definition -->
-
+The draughting predefined curve font type defines a selection of widely used curve fonts for draughting purposes by name.<!-- end of definition -->
 
 > NOTE The _IfcDraughtingPreDefinedCurveFont_ is an entity that had been adopted from ISO 10303, Industrial automation systems and integration—Product data representation and exchange, Part 46 Technical Corrigendum 2: Integrated generic resources: Visual presentation.
 

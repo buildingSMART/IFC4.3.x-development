@@ -1,7 +1,6 @@
-The _IfcElectricFlowStorageDeviceTypeEnum_ defines different types of electrical flow storage devices.
+# IfcElectricFlowStorageDeviceTypeEnum
 
-<!-- end of short definition -->
-
+The _IfcElectricFlowStorageDeviceTypeEnum_ defines different types of electrical flow storage devices.<!-- end of definition -->
 
 > HISTORY New type in IFC2x2.
 

@@ -1,7 +1,6 @@
-_IfcLagTime_ describes the time parameters that may exist within a sequence relationship between two processes.
+# IfcLagTime
 
-<!-- end of short definition -->
-
+_IfcLagTime_ describes the time parameters that may exist within a sequence relationship between two processes.<!-- end of definition -->
 
 An _IfcLagTime_ provides information about the time lag that exists between the predecessor and successor process in a sequence. The assertion of the time lag is optional for a sequence but for work schedules that specifically deal with processes occurring at particular times, it should be asserted.
 
@@ -19,8 +18,8 @@ The time unit for the task duration may also be set and this may be set to any a
 
 ### LagValue
 Value of the time lag selected as being either a ratio or a
- time measure.
+  time measure.
 
 ### DurationType
 The allowed types of task duration that specify the lag time
- measurement (work time or elapsed time).
+  measurement (work time or elapsed time).

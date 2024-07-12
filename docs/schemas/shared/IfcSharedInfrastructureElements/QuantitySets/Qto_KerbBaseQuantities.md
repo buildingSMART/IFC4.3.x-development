@@ -1,7 +1,6 @@
-Quantity set for Kerb Base.
+# Qto_KerbBaseQuantities
 
-<!-- end of short definition -->
-
+Quantity set for Kerb Base.<!-- end of definition -->
 
 ## Comments
 

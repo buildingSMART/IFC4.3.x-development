@@ -1,7 +1,6 @@
-_IfcRecurrenceTypeEnum_ enumerates the recurring pattern type, with valid combinations as indicated.
+# IfcRecurrenceTypeEnum
 
-<!-- end of short definition -->
-
+_IfcRecurrenceTypeEnum_ enumerates the recurring pattern type, with valid combinations as indicated.<!-- end of definition -->
 
 > HISTORY New enumeration in IFC4.
 

@@ -1,7 +1,6 @@
-The _IfcSignalType_ provides the type information for _IfcSignal_ occurrences.
+# IfcSignalType
 
-<!-- end of short definition -->
-
+The _IfcSignalType_ provides the type information for _IfcSignal_ occurrences.<!-- end of definition -->
 A signal is an active device that conveys information or instructions to users, by means of an audio, visual signal or a combination of the 2.
 
 ## Attributes

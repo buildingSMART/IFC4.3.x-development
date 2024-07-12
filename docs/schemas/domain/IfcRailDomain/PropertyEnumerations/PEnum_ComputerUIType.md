@@ -1,7 +1,6 @@
-Enumeration of computer user interface types.
+# PEnum_ComputerUIType
 
-<!-- end of short definition -->
-
+Enumeration of computer user interface types.<!-- end of definition -->
 
 ## Items
 

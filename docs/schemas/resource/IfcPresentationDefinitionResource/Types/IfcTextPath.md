@@ -1,7 +1,6 @@
-The text path determines the direction of the text characters in respect to each other.
+# IfcTextPath
 
-<!-- end of short definition -->
-
+The text path determines the direction of the text characters in respect to each other.<!-- end of definition -->
 
 > NOTE The _IfcTextPath_ is an entity that had been adopted from ISO 10303, Industrial automation systems and integration—Product data representation and exchange, Part 46: Integrated generic resources: Visual presentation.
 

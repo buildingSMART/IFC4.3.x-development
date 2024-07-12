@@ -1,4 +1,3 @@
-Telecom Tower properties used in railway. The property set can be used by the predefined type MAST of IfcElementAssembly.
+# Pset_ElementAssemblyTypeMast
 
-<!-- end of short definition -->
-
+Telecom Tower properties used in railway. The property set can be used by the predefined type MAST of IfcElementAssembly.<!-- end of definition -->

@@ -1,4 +1,3 @@
-Chamber constructed on a drain, sewer or pipeline and with a removable cover, that permits visible inspection.
+# Pset_DistributionChamberElementTypeInspectionChamber
 
-<!-- end of short definition -->
-
+Chamber constructed on a drain, sewer or pipeline and with a removable cover, that permits visible inspection.<!-- end of definition -->

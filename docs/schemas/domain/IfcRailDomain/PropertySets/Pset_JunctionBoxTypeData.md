@@ -1,4 +1,3 @@
-The property set can be used by the predefined type DATA of IfcJunctionBox.
+# Pset_JunctionBoxTypeData
 
-<!-- end of short definition -->
-
+The property set can be used by the predefined type DATA of IfcJunctionBox.<!-- end of definition -->

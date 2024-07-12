@@ -1,4 +1,3 @@
-Common properties for waste terminals.
+# Pset_WasteTerminalTypeCommon
 
-<!-- end of short definition -->
-
+Common properties for waste terminals.<!-- end of definition -->

@@ -1,7 +1,6 @@
-The temperature gradient measures the difference of a temperature per length, as for instance used in an external wall or its layers. It is usually measured in K/m.
+# IfcTemperatureGradientMeasure
 
-<!-- end of short definition -->
-
+The temperature gradient measures the difference of a temperature per length, as for instance used in an external wall or its layers. It is usually measured in K/m.<!-- end of definition -->
 
 Type: REAL
 

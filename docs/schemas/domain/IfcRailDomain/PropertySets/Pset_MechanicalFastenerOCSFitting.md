@@ -1,4 +1,3 @@
-Common properties of clamps and fittings used in railway overhead contact system (OCS).
+# Pset_MechanicalFastenerOCSFitting
 
-<!-- end of short definition -->
-
+Common properties of clamps and fittings used in railway overhead contact system (OCS).<!-- end of definition -->

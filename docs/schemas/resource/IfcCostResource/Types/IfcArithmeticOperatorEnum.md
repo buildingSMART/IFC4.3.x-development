@@ -1,7 +1,6 @@
-_IfcArithmeticOperatorEnum_ specifies the form of arithmetic operation implied by the relationship.
+# IfcArithmeticOperatorEnum
 
-<!-- end of short definition -->
-
+_IfcArithmeticOperatorEnum_ specifies the form of arithmetic operation implied by the relationship.<!-- end of definition -->
 
 > HISTORY New enumeration in IFC2x2.
 

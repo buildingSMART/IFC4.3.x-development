@@ -1,4 +1,3 @@
-Properties defining performance information for IP network equipment.
+# Pset_IpNetworkEquipmentPHistory
 
-<!-- end of short definition -->
-
+Properties defining performance information for IP network equipment.<!-- end of definition -->

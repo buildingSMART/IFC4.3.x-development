@@ -1,7 +1,6 @@
-Base quantities that are common to the definition of all occurrences of coverings applied to spaces.
+# Qto_CoveringBaseQuantities
 
-<!-- end of short definition -->
-
+Base quantities that are common to the definition of all occurrences of coverings applied to spaces.<!-- end of definition -->
 
 
 ## Comments

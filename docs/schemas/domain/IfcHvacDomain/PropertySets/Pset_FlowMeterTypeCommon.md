@@ -1,4 +1,3 @@
-Common attributes of a flow meter type
+# Pset_FlowMeterTypeCommon
 
-<!-- end of short definition -->
-
+Common attributes of a flow meter type<!-- end of definition -->

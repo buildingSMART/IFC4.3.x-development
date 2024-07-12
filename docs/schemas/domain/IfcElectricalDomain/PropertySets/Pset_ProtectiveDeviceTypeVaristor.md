@@ -1,4 +1,3 @@
-A high voltage surge protection device.
+# Pset_ProtectiveDeviceTypeVaristor
 
-<!-- end of short definition -->
-
+A high voltage surge protection device.<!-- end of definition -->

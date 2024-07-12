@@ -1,4 +1,3 @@
-Properties common to IfcRail types and occurrences with PredefinedType set to BLADE.
+# Pset_RailTypeBlade
 
-<!-- end of short definition -->
-
+Properties common to IfcRail types and occurrences with PredefinedType set to BLADE.<!-- end of definition -->

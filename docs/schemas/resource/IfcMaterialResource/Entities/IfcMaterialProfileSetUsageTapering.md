@@ -1,7 +1,6 @@
-_IfcMaterialProfileSetUsageTapering_ specifies dual material profile sets in association with tapered prismatic (beam- or column-like) elements.
+# IfcMaterialProfileSetUsageTapering
 
-<!-- end of short definition -->
-
+_IfcMaterialProfileSetUsageTapering_ specifies dual material profile sets in association with tapered prismatic (beam- or column-like) elements.<!-- end of definition -->
 
 > HISTORY  New entity in IFC4
 

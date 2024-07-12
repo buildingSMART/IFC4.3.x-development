@@ -1,4 +1,3 @@
-Base quantities that are common to the definition of all occurrences of lamp.
+# Qto_LampBaseQuantities
 
-<!-- end of short definition -->
-
+Base quantities that are common to the definition of all occurrences of lamp.<!-- end of definition -->

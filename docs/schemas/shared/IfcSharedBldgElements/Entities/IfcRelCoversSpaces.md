@@ -1,7 +1,6 @@
-The objectified relationship, _IfcRelCoversSpace_, relates a space object to one or many coverings, which faces (or is assigned to) the space.
+# IfcRelCoversSpaces
 
-<!-- end of short definition -->
-
+The objectified relationship, _IfcRelCoversSpace_, relates a space object to one or many coverings, which faces (or is assigned to) the space.<!-- end of definition -->
 
 > NOTE Particularly floorings, ceilings and wall coverings, such as claddings or tiling are often considered as space coverings, rather then wall or slab coverings. In some life cycle phases, such as the operation phase, the relationship is always made to the space.
 

@@ -1,6 +1,8 @@
 # IfcPositivePlaneAngleMeasure
 
-An _IfcPositivePlaneAngleMeasure_ is a plane angle measure that is greater than zero.<!-- end of definition -->
+An _IfcPositivePlaneAngleMeasure_ is a plane angle measure that is greater than zero.
+<!-- end of short definition -->
+
 
 Type: _IfcPlaneAngleMeasure_
 

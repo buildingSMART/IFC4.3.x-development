@@ -1,6 +1,8 @@
 # PEnum_FaucetOperation
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### CERAMICDISC
 Ceramic Disc

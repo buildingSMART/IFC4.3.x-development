@@ -1,6 +1,8 @@
 # PEnum_DoorPanelPositionEnum
 
-This enumeration defines the basic ways to describe the location of a door panel within a door lining.<!-- end of definition -->
+This enumeration defines the basic ways to describe the location of a door panel within a door lining.
+<!-- end of short definition -->
+
 
 > HISTORY New property enumeration in IFC4.3.2.0 to replace the enumeration IfcDoorPanelPositionEnum
 

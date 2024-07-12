@@ -1,6 +1,8 @@
 # IfcLoadGroupTypeEnum
 
-This enumeration is used to distinguish between different levels of load grouping. It allows to differentiate between load groups, load cases, and load combinations.<!-- end of definition -->
+This enumeration is used to distinguish between different levels of load grouping. It allows to differentiate between load groups, load cases, and load combinations.
+<!-- end of short definition -->
+
 
 > HISTORY New enumeration in IFC2x2.
 

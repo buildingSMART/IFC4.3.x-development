@@ -1,6 +1,8 @@
 # IfcBridgePartTypeEnum
 
-Enumerations of IfcBridge parts.<!-- end of definition -->
+Enumerations of IfcBridge parts.
+<!-- end of short definition -->
+
 
 ## Items
 

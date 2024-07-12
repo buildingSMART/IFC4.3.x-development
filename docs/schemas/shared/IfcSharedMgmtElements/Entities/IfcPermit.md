@@ -1,6 +1,8 @@
 # IfcPermit
 
-A permit is a permission to perform work in places and on artifacts where regulatory, security or other access restrictions apply.<!-- end of definition -->
+A permit is a permission to perform work in places and on artifacts where regulatory, security or other access restrictions apply.
+<!-- end of short definition -->
+
 
 > HISTORY New entity in IFC2x2.
 

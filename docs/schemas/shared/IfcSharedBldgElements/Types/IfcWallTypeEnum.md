@@ -1,6 +1,8 @@
 # IfcWallTypeEnum
 
-This enumeration defines the different types of walls that can further specify an _IfcWall_ or _IfcWallType_.<!-- end of definition -->
+This enumeration defines the different types of walls that can further specify an _IfcWall_ or _IfcWallType_.
+<!-- end of short definition -->
+
 
 > HISTORY New enumeration in IFC2x2.
 

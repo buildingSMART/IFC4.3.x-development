@@ -1,3 +1,5 @@
 # Pset_EngineTypeCommon
 
-Engine type common attributes.<!-- end of definition -->
+Engine type common attributes.
+<!-- end of short definition -->
+

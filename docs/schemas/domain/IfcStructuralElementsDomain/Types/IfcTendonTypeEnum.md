@@ -1,6 +1,8 @@
 # IfcTendonTypeEnum
 
-Enumeration defining the types of tendons.<!-- end of definition -->
+Enumeration defining the types of tendons.
+<!-- end of short definition -->
+
 
 > HISTORY New type in IFC2x2.
 

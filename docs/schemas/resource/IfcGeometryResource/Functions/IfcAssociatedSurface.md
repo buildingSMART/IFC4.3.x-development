@@ -1,6 +1,8 @@
 # IfcAssociatedSurface
 
-{ .extDef}<!-- end of definition -->
+{ .extDef}
+<!-- end of short definition -->
+
 > NOTE Definition according to ISO/CD 10303-42:1992
 > The associated surface function determines the unique surface which is associated with the pcurve. It is required by the propositions which apply to surface curve and its subtypes.
 

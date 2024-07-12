@@ -1,6 +1,8 @@
 # IfcBooleanOperand
 
-Select type including all geometric representation items which may participate in a Boolean operation to form a CSG solid. It includes solid models, half space solids and CSG primitives. Boolean results can also be used as operands thus enabling nested Boolean operations.<!-- end of definition -->
+Select type including all geometric representation items which may participate in a Boolean operation to form a CSG solid. It includes solid models, half space solids and CSG primitives. Boolean results can also be used as operands thus enabling nested Boolean operations.
+<!-- end of short definition -->
+
 
 { .extDef}
 > NOTE Definition from ISO 10303-42:

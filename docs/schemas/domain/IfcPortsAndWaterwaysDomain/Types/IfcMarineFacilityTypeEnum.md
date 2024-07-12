@@ -1,6 +1,8 @@
 # IfcMarineFacilityTypeEnum
 
-The predefined type container that collects all possible marine facility types together into the implemented enumeration.<!-- end of definition -->
+The predefined type container that collects all possible marine facility types together into the implemented enumeration.
+<!-- end of short definition -->
+
 
 ## Items
 

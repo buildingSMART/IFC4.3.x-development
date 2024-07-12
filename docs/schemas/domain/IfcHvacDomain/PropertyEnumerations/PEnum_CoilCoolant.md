@@ -1,6 +1,8 @@
 # PEnum_CoilCoolant
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### WATER
 Water

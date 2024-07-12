@@ -1,6 +1,8 @@
 # IfcEdge
 
-An _IfcEdge_ defines two vertices being connected topologically. The geometric representation of the connection between the two vertices defaults to a straight line if no curve geometry is assigned using the subtype _IfcEdgeCurve_. The _IfcEdge_ can therefore be used to exchange straight edges without an associated geometry provided by _IfcLine_ or _IfcPolyline_ thought _IfcEdgeCurve.EdgeGeometry_.<!-- end of definition -->
+An _IfcEdge_ defines two vertices being connected topologically. The geometric representation of the connection between the two vertices defaults to a straight line if no curve geometry is assigned using the subtype _IfcEdgeCurve_. The _IfcEdge_ can therefore be used to exchange straight edges without an associated geometry provided by _IfcLine_ or _IfcPolyline_ thought _IfcEdgeCurve.EdgeGeometry_.
+<!-- end of short definition -->
+
 
 ![edge representation](../../../../figures/ifcedge.png)
 

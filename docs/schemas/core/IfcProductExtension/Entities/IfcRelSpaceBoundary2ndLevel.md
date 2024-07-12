@@ -10,7 +10,9 @@ The 2nd level space boundary defines the physical or virtual delimiter of a spac
   * Type 2a that occurs when there is a space on the opposite side of the building element providing the space boundary
   * Type 2b occurs if there is a building element on the opposite side of the building element providing the space boundary.
 * The connection geometry of 2nd level space boundaries is restricted to planar surfaces only. This means that curved surfaces must be segmented.
-<!-- end of definition -->
+
+<!-- end of short definition -->
+
 2nd level space boundaries define the heat transfer surfaces on both sides of building elements that separate spaces. The generation of 2nd level space boundaries has to take building elements and spaces on the other side into account.
 
 > NOTE 2nd level space boundaries are used by many analysis packages that require a surface view of the building that can be transformed into the various simple topological models. Examples of such analysis packages include: (1) energy analysis, (2) lighting analysis, (3) fluid dynamics

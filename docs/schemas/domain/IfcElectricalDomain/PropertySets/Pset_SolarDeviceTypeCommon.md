@@ -1,3 +1,5 @@
 # Pset_SolarDeviceTypeCommon
 
-Common properties for solar device types.<!-- end of definition -->
+Common properties for solar device types.
+<!-- end of short definition -->
+

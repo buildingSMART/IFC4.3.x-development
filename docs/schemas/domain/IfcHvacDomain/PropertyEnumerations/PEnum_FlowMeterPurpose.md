@@ -1,6 +1,8 @@
 # PEnum_FlowMeterPurpose
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### MASTER
 Master

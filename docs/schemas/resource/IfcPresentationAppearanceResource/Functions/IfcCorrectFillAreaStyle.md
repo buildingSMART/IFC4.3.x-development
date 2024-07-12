@@ -1,6 +1,8 @@
 # IfcCorrectFillAreaStyle
 
-This function returns true if the different fill area styles are assigned correctly to the _IfcFillAreaStyle_. Only certain combinations of the entity types provided by the _IfcFillStyleSelect_ are allowed.<!-- end of definition -->
+This function returns true if the different fill area styles are assigned correctly to the _IfcFillAreaStyle_. Only certain combinations of the entity types provided by the _IfcFillStyleSelect_ are allowed.
+<!-- end of short definition -->
+
 
 Return false:
 

@@ -1,6 +1,8 @@
 # IfcEllipse
 
-An _IfcEllipse_ is a curve consisting of a set of points whose distances to two fixed points add to the same constant.<!-- end of definition -->
+An _IfcEllipse_ is a curve consisting of a set of points whose distances to two fixed points add to the same constant.
+<!-- end of short definition -->
+
 
 The inherited _SELF\IfcConic.Position.Location_ is the center of the _IfcEllipse_, and the inherited _SELF\IfcConic.Position.P[1]_ is the direction of the _SemiAxis1_.
 

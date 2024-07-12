@@ -1,6 +1,8 @@
 # IfcLightFixtureTypeEnum
 
-The _IfcLightFixtureTypeEnum_ defines the different types of light fixtures.<!-- end of definition -->
+The _IfcLightFixtureTypeEnum_ defines the different types of light fixtures.
+<!-- end of short definition -->
+
 
 > HISTORY New type in IFC2x2.
 

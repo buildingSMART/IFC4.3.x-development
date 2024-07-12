@@ -1,6 +1,8 @@
 # PEnum_SwitchingDeviceDimmerSwitchType
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### ROCKER
 Rocker

@@ -1,6 +1,8 @@
 # IfcCircleHollowProfileDef
 
-_IfcCircleHollowProfileDef_ defines a section profile that provides the defining parameters of a circular hollow section (tube) to be used by the swept area solid. Its parameters and orientation relative to the position coordinate system are according to the following illustration.The centre of the position coordinate system is in the profile's centre of the bounding box (for symmetric profiles identical with the centre of gravity).<!-- end of definition -->
+_IfcCircleHollowProfileDef_ defines a section profile that provides the defining parameters of a circular hollow section (tube) to be used by the swept area solid. Its parameters and orientation relative to the position coordinate system are according to the following illustration.The centre of the position coordinate system is in the profile's centre of the bounding box (for symmetric profiles identical with the centre of gravity).
+<!-- end of short definition -->
+
 
 > HISTORY New entity in IFC2x2.
 

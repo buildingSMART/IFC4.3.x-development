@@ -1,6 +1,8 @@
 # IfcCountMeasure
 
-A count measure is the value of a count of items.<!-- end of definition -->
+A count measure is the value of a count of items.
+<!-- end of short definition -->
+
 
 Type: INTEGER
 

@@ -1,6 +1,8 @@
 # IfcApprovalRelationship
 
-An _IfcApprovalRelationship_ associates approvals (one relating approval and one or more related approvals), each having different status or level as the approval process or the approved objects evolve.<!-- end of definition -->
+An _IfcApprovalRelationship_ associates approvals (one relating approval and one or more related approvals), each having different status or level as the approval process or the approved objects evolve.
+<!-- end of short definition -->
+
 
 > HISTORY New entity in IFC2x2.
 

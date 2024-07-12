@@ -1,6 +1,8 @@
 # IfcCurveOnSurface
 
-The _IfcCurveOnSurface_ enables the choice of curve types on parameteric surface.<!-- end of definition -->
+The _IfcCurveOnSurface_ enables the choice of curve types on parameteric surface.
+<!-- end of short definition -->
+
 
 { .extDef}
 > NOTE Definition according to ISO/CD 10303-42:1992

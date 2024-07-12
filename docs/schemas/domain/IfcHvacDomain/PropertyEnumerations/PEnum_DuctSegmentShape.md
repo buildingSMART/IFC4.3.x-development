@@ -1,6 +1,8 @@
 # PEnum_DuctSegmentShape
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### FLATOVAL
 Flatoval

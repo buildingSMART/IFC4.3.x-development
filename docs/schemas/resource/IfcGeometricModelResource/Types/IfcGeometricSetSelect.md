@@ -1,6 +1,8 @@
 # IfcGeometricSetSelect
 
-The _IfcGeometricSetSelect_ includes the geometric representation items applicable to be part of the geometric set.<!-- end of definition -->
+The _IfcGeometricSetSelect_ includes the geometric representation items applicable to be part of the geometric set.
+<!-- end of short definition -->
+
 
 { .extDef}
 > NOTE Definition from ISO10303-42:

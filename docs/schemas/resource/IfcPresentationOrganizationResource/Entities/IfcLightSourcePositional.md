@@ -1,6 +1,8 @@
 # IfcLightSourcePositional
 
-{ .extDef}<!-- end of definition -->
+{ .extDef}
+<!-- end of short definition -->
+
 > NOTE Definition according to ISO 10303-46:
 > The light source positional entity is a subtype of light source. This entity has a light source position and attenuation coefficients. A positional light source affects a surface based on the surface's orientation and position.
 

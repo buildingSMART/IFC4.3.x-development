@@ -1,6 +1,8 @@
 # IfcProduct
 
-The _IfcProduct_ is an abstract representation of any object that relates to a geometric or spatial context. An _IfcProduct_ occurs at a specific location in space if it has a geometric representation assigned. It can be placed relatively to other products, but ultimately relative to the project coordinate system. The _ObjectPlacement_ attribute establishes the coordinate system in which all points and directions used by the geometric representation items under _Representation_ are founded. The _Representation_ is provided by an _IfcProductDefinitionShape_ being either a geometric shape representation, or a topology representation (with or without underlying geometry of the topological items).<!-- end of definition -->
+The _IfcProduct_ is an abstract representation of any object that relates to a geometric or spatial context. An _IfcProduct_ occurs at a specific location in space if it has a geometric representation assigned. It can be placed relatively to other products, but ultimately relative to the project coordinate system. The _ObjectPlacement_ attribute establishes the coordinate system in which all points and directions used by the geometric representation items under _Representation_ are founded. The _Representation_ is provided by an _IfcProductDefinitionShape_ being either a geometric shape representation, or a topology representation (with or without underlying geometry of the topological items).
+<!-- end of short definition -->
+
 
 Products include manufactured, supplied or created objects (referred to as elements) for incorporation into an AEC/FM project. This also includes objects that are created indirectly by other products, as spaces are defined by bounding elements. Products can be designated for permanent use or temporary use, an example for the latter is formwork. Products are defined by their properties and representations.
 

@@ -4,7 +4,9 @@ The _IfcTriangulatedFaceSet_ is a tessellated face set with all faces being boun
 
 * if TRUE, a boundary representation (or B-rep);
 * if FALSE, a face based surface representation.
-<!-- end of definition -->
+
+<!-- end of short definition -->
+
 The coordinates of each point are provided by a one-based index into an ordered list of Cartesian points provided by the two-dimensional list _CoordIndex_, where
 
 * the first dimension of the two-dimensional list addresses the list of triangular faces;

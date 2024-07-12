@@ -1,6 +1,8 @@
 # IfcRailwayPartTypeEnum
 
-The _IfcRailwayPartTypeEnum_ defines the range of different types of railway part that can be specified.<!-- end of definition -->
+The _IfcRailwayPartTypeEnum_ defines the range of different types of railway part that can be specified.
+<!-- end of short definition -->
+
 
 A railway line can be spatially organised into several parts, using a vertical, longitudinal and lateral criteria for its division. There is not one standardised way of spatially dividing the line, as this depends on the use case. The _IfcRailwayPart_s that can be used to spatially organise a line are:
 

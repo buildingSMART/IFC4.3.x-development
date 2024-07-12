@@ -1,3 +1,5 @@
 # Pset_SwitchingDeviceTypeKeypad
 
-A keypad is a switch supporting multiple functions.<!-- end of definition --> HISTORY: Added in IFC4.
+A keypad is a switch supporting multiple functions.
+<!-- end of short definition -->
+ HISTORY: Added in IFC4.

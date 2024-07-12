@@ -1,6 +1,8 @@
 # PEnum_ValveOperation
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### DROPWEIGHT
 A valve that is closed by the action of a weighted lever being released, the weight normally being prevented from dropping by being held by a wire, the closure normally being made by the action of heat on a fusible link in the wire

@@ -1,6 +1,8 @@
 # PEnum_TankComposition
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### COMPLEX
 A set of elementary units aggregated together to fulfill the overall required purpose

@@ -1,6 +1,8 @@
 # IfcEarthworksCutTypeEnum
 
-This container defines the different predefined types of earthworks cut elements that can specify an _IfcEarthworksCut_.<!-- end of definition -->
+This container defines the different predefined types of earthworks cut elements that can specify an _IfcEarthworksCut_.
+<!-- end of short definition -->
+
 
 ## Items
 

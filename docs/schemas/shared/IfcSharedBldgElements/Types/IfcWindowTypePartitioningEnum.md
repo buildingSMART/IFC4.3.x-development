@@ -1,6 +1,8 @@
 # IfcWindowTypePartitioningEnum
 
-This enumeration defines the basic configuration of the window type in terms of the number of window panels and the subdivision of the total window. The window configurations are given for windows with one, two or three panels (including fixed panels).<!-- end of definition -->
+This enumeration defines the basic configuration of the window type in terms of the number of window panels and the subdivision of the total window. The window configurations are given for windows with one, two or three panels (including fixed panels).
+<!-- end of short definition -->
+
 
 Windows which are subdivided into more than three panels have to be defined by the geometry only. The type of such windows is USERDEFINED.
 

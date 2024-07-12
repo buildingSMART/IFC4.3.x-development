@@ -1,6 +1,8 @@
 # IfcAxis1Placement
 
-The _IfcAxis1Placement_ provides location and direction of a single axis.<!-- end of definition -->
+The _IfcAxis1Placement_ provides location and direction of a single axis.
+<!-- end of short definition -->
+
 
 ![axis1 placement](../../../../figures/ifcaxis1placement-layout1.gif)
 

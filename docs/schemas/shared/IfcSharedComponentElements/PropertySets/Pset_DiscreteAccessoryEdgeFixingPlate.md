@@ -1,3 +1,5 @@
 # Pset_DiscreteAccessoryEdgeFixingPlate
 
-Properties specific to edge fixing plates.<!-- end of definition -->
+Properties specific to edge fixing plates.
+<!-- end of short definition -->
+

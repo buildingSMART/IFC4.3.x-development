@@ -1,6 +1,8 @@
 # Pset_MechanicalBeamInPlaneNegative
 
-Properties about Mechanical Beam in Plane Negative.<!-- end of definition -->
+Properties about Mechanical Beam in Plane Negative.
+<!-- end of short definition -->
+
 
 ## Comments
 

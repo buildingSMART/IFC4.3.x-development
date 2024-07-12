@@ -1,3 +1,5 @@
 # Pset_CableSegmentTypeCommon
 
-Properties for the definitions of electrical cable segments.<!-- end of definition -->
+Properties for the definitions of electrical cable segments.
+<!-- end of short definition -->
+

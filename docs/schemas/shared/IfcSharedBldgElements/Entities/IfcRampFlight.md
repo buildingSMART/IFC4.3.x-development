@@ -1,6 +1,8 @@
 # IfcRampFlight
 
-A ramp comprises a single inclined segment, or several inclined segments that are connected by a horizontal segment, referred to as a landing. A ramp flight is the single inclined segment and part of the ramp construction. In case of single flight ramps, the ramp flight and the ramp are identical.<!-- end of definition -->
+A ramp comprises a single inclined segment, or several inclined segments that are connected by a horizontal segment, referred to as a landing. A ramp flight is the single inclined segment and part of the ramp construction. In case of single flight ramps, the ramp flight and the ramp are identical.
+<!-- end of short definition -->
+
 
 > NOTE A single flight ramp is represented by an _IfcRamp_ instance without using aggregation and by utilizing the product shape representation directly at _IfcRamp_.
 

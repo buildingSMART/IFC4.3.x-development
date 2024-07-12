@@ -1,6 +1,8 @@
 # PEnum_CableFunctionType
 
-Enumeration of the different functions a cable is used for.<!-- end of definition -->
+Enumeration of the different functions a cable is used for.
+<!-- end of short definition -->
+
 
 ## Items
 

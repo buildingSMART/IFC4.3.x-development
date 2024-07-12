@@ -1,6 +1,8 @@
 # IfcAlignmentVerticalSegmentTypeEnum
 
-The IfcAlignmentVerticalSegmentTypeEnum indicates the type of a segment of a vertical alignment segment (IfcAlignmentVerticalSegment).<!-- end of definition -->
+The IfcAlignmentVerticalSegmentTypeEnum indicates the type of a segment of a vertical alignment segment (IfcAlignmentVerticalSegment).
+<!-- end of short definition -->
+
 
 
 | Vertical curvature | Segmenttype    | Enumeration Values |

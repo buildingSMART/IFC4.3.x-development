@@ -1,6 +1,8 @@
 # IfcTransitionCode
 
-The _IfcTransitionCode_ indicated the continuity between consecutive segments of a curve or surface.<!-- end of definition -->
+The _IfcTransitionCode_ indicated the continuity between consecutive segments of a curve or surface.
+<!-- end of short definition -->
+
 
 > EXAMPLE In ContSameGradient the tangent vectors of successive segments will have the same direction, but may have different magnitude.
 

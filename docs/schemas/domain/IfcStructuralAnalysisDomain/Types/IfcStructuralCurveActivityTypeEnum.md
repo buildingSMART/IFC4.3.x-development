@@ -1,6 +1,8 @@
 # IfcStructuralCurveActivityTypeEnum
 
-This enumeration defines the distribution of load values in a curve action or reaction.<!-- end of definition -->
+This enumeration defines the distribution of load values in a curve action or reaction.
+<!-- end of short definition -->
+
 
 > HISTORY New enumeration in IFC4
 

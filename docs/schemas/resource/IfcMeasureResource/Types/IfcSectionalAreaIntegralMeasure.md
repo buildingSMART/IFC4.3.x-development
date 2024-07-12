@@ -1,6 +1,8 @@
 # IfcSectionalAreaIntegralMeasure
 
-The sectional area integral measure is typically used in torsional analysis. It is usually measured in m\^5.<!-- end of definition -->
+The sectional area integral measure is typically used in torsional analysis. It is usually measured in m\^5.
+<!-- end of short definition -->
+
 
 Type: REAL
 

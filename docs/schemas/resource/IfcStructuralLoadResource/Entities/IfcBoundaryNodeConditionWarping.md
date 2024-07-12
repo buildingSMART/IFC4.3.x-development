@@ -1,6 +1,8 @@
 # IfcBoundaryNodeConditionWarping
 
-Describes linearly elastic support conditions or connection conditions, including linearly elastic warping restraints.<!-- end of definition -->
+Describes linearly elastic support conditions or connection conditions, including linearly elastic warping restraints.
+<!-- end of short definition -->
+
 
 Applicability:
 

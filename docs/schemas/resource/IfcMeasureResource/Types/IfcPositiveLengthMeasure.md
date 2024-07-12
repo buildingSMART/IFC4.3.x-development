@@ -1,6 +1,8 @@
 # IfcPositiveLengthMeasure
 
-An _IfcPositiveLengthMeasure_ is a length measure that is greater than zero.<!-- end of definition -->
+An _IfcPositiveLengthMeasure_ is a length measure that is greater than zero.
+<!-- end of short definition -->
+
 
 Type: _IfcLengthMeasure_
 

@@ -1,6 +1,8 @@
 # IfcDuctSegment
 
-A duct segment is used to typically join two sections of duct network.<!-- end of definition -->
+A duct segment is used to typically join two sections of duct network.
+<!-- end of short definition -->
+
 
 > HISTORY New entity in IFC4
 

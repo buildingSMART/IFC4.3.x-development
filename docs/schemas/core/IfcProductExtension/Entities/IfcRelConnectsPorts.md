@@ -1,6 +1,8 @@
 # IfcRelConnectsPorts
 
-An _IfcRelConnectsPorts_ relationship defines the relationship that is made between two ports at their point of connection. It may include the connection geometry between two ports.<!-- end of definition -->
+An _IfcRelConnectsPorts_ relationship defines the relationship that is made between two ports at their point of connection. It may include the connection geometry between two ports.
+<!-- end of short definition -->
+
 
 The objectified relationship _IfcRelConnectsPorts_ is required for defining how two instances of _IfcPort_ connect together. Each of the ports is logically contained within the _IfcDistributionElement_ by using the ordered collection _IfcRelNests_.
 

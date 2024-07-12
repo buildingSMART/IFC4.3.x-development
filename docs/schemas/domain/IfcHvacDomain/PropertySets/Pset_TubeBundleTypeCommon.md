@@ -1,6 +1,8 @@
 # Pset_TubeBundleTypeCommon
 
-Tube bundle type common attributes.<!-- end of definition -->
+Tube bundle type common attributes.
+<!-- end of short definition -->
+
 
 
 ## Comments

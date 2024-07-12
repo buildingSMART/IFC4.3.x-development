@@ -1,6 +1,8 @@
 # IfcSameValidPrecision
 
-The function compares the epsilon values (given as _Precision_ at _IfcGeometricRepresentationContext_ and ensures that they are the same (with a derivation tolerance) and within reasonable min and max values.<!-- end of definition -->
+The function compares the epsilon values (given as _Precision_ at _IfcGeometricRepresentationContext_ and ensures that they are the same (with a derivation tolerance) and within reasonable min and max values.
+<!-- end of short definition -->
+
 
 > NOTE In the above function the following three questionable ad-hoc values are used: <ul>
  <ul>

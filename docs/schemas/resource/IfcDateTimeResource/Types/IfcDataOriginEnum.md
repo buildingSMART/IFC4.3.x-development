@@ -1,6 +1,8 @@
 # IfcDataOriginEnum
 
-_IfcDataOriginEnum_ identifies the origin of time data.<!-- end of definition -->
+_IfcDataOriginEnum_ identifies the origin of time data.
+<!-- end of short definition -->
+
 
 > HISTORY New enumeration in IFC2x2.
 >

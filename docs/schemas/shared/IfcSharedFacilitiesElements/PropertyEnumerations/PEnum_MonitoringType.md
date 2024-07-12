@@ -1,6 +1,8 @@
 # PEnum_MonitoringType
 
-Enumeration describing the different types of monitoring strategies that can be applied to a maintenance strategy.<!-- end of definition -->
+Enumeration describing the different types of monitoring strategies that can be applied to a maintenance strategy.
+<!-- end of short definition -->
+
 
 ## Items
 

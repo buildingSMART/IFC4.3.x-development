@@ -1,6 +1,8 @@
 # IfcSurfaceOfLinearExtrusion
 
-The _IfcSurfaceOfLinearExtrusion_ is a surface derived by sweeping a curve along a vector.<!-- end of definition -->
+The _IfcSurfaceOfLinearExtrusion_ is a surface derived by sweeping a curve along a vector.
+<!-- end of short definition -->
+
 
 { .extDef}
 > NOTE Definition according to ISO/CD 10303-42:1992

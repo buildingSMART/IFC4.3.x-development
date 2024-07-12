@@ -1,6 +1,8 @@
 # PEnum_CatenaryStayType
 
-List type of catenary stay usable.<!-- end of definition -->
+List type of catenary stay usable.
+<!-- end of short definition -->
+
 
 ## Items
 

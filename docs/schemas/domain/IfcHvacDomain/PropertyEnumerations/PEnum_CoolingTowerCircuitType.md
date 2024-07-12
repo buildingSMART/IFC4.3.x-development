@@ -1,6 +1,8 @@
 # PEnum_CoolingTowerCircuitType
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### OPENCIRCUIT
 Open Circuit

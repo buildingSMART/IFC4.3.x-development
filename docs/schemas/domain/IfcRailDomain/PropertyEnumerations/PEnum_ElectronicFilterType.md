@@ -1,6 +1,8 @@
 # PEnum_ElectronicFilterType
 
-Enumeration of different types of electronic filter.<!-- end of definition -->
+Enumeration of different types of electronic filter.
+<!-- end of short definition -->
+
 
 ## Items
 

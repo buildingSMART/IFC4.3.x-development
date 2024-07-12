@@ -1,6 +1,8 @@
 # IfcLinearMomentMeasure
 
-_IfcLinearMomentMeasure_ is a measure of linear moment.<!-- end of definition -->
+_IfcLinearMomentMeasure_ is a measure of linear moment.
+<!-- end of short definition -->
+
 
 Usually measured in Nm/m.
 

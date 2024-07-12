@@ -6,7 +6,9 @@ The building element type _IfcRampType_ defines commonly shared information for 
 * common representations
 * common materials
 * common composition of elements
-<!-- end of definition -->
+
+<!-- end of short definition -->
+
 It is used to define a ramp type specification indicating the specific product information that is common to all occurrences of that product type. The _IfcRampType_ may be declared within _IfcProject_ or _IfcProjectLibrary_ using _IfcRelDeclares_ and may be exchanged with or without occurrences of the type. Occurrences of _IfcRampType_ are represented by instances of _IfcRamp_. Refer to the documentation at _IfcRamp_ for supported property sets, materials, and composition.
 
 > HISTORY New entity in IFC4.

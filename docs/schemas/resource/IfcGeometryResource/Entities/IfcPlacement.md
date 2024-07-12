@@ -1,6 +1,8 @@
 # IfcPlacement
 
-An _IfcPlacement_ is an abstract supertype of placement subtypes that define the location of an item, or an entire shape representation, and provide its orientation. All placement subtypes define right-handed Cartesian coordinate systems and do not allow mirroring.<!-- end of definition -->
+An _IfcPlacement_ is an abstract supertype of placement subtypes that define the location of an item, or an entire shape representation, and provide its orientation. All placement subtypes define right-handed Cartesian coordinate systems and do not allow mirroring.
+<!-- end of short definition -->
+
 
 > NOTE Cartesian transformations including mirroring and scaling are supported by _IfcCartesianTransformationOperator_
 

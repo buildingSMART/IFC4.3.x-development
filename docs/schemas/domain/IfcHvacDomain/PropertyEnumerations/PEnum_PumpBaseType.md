@@ -1,6 +1,8 @@
 # PEnum_PumpBaseType
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### FRAME
 Frame

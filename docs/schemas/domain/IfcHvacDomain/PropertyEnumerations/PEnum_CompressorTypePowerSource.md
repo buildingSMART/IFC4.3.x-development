@@ -1,6 +1,8 @@
 # PEnum_CompressorTypePowerSource
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### MOTORDRIVEN
 Motor Driven

@@ -1,6 +1,8 @@
 # PEnum_WaterMeterType
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### COMPOUND
 Compound

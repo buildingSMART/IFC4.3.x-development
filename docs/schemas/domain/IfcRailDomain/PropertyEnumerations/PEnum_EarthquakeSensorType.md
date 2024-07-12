@@ -1,6 +1,8 @@
 # PEnum_EarthquakeSensorType
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### 2DIRECTION
 

@@ -1,6 +1,8 @@
 # Pset_TransportElementElevator
 
-Properties common to the definition of all occurrences of IfcTransportElement with the predefined type ="ELEVATOR"<!-- end of definition -->
+Properties common to the definition of all occurrences of IfcTransportElement with the predefined type ="ELEVATOR"
+<!-- end of short definition -->
+
 
 
 ## Comments

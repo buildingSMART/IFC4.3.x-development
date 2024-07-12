@@ -1,6 +1,8 @@
 # IfcNonNegativeLengthMeasure
 
-A non-negative length measure is a length measure that is greater than or equal to zero.<!-- end of definition -->
+A non-negative length measure is a length measure that is greater than or equal to zero.
+<!-- end of short definition -->
+
 
 Type: _IfcLengthMeasure_
 

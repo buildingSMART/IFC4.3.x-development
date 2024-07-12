@@ -3,7 +3,9 @@
 An _IfcFillAreaStyle_ provides the style table for presentation information assigned to annotation fill areas or surfaces for hatching and tiling. The _IfcFillAreaStyle_defines hatches as model hatches, that is, the distance between hatch lines, or the curve patterns of hatch lines are given in model space dimensions (that have to be scaled using the target plot scale). The _IfcFillAreaStyle_ allows for the following combinations of defining the style of hatching and tiling:
 
 * Solid fill for areas and surfaces by only assigning _IfcColour_ to the set of _FillStyles_. It then provides the background colour for the filled area or surface.
-<!-- end of definition -->
+
+<!-- end of short definition -->
+
 > NOTE Color information of surfaces for rendering is assigned by using _IfcSurfaceStyle_, not by using _IfcFillAreaStyle_.
 
 * Vector based hatching for areas and surfaces based on a single row of hatch lines by assigning a single instance of _IfcFillAreaStyleHatching_ to the set of _FillStyles_.

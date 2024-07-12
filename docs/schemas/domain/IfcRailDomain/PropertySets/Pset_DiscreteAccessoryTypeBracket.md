@@ -1,3 +1,5 @@
 # Pset_DiscreteAccessoryTypeBracket
 
-Properties of a bracket. The property set can be used by the predefined type BRACKET of IfcDiscreteAccessory.<!-- end of definition -->
+Properties of a bracket. The property set can be used by the predefined type BRACKET of IfcDiscreteAccessory.
+<!-- end of short definition -->
+

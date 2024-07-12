@@ -1,6 +1,8 @@
 # IfcStructuralSurfaceAction
 
-This entity defines an action which is distributed over a surface. A surface action may be connected with a surface member or surface connection.<!-- end of definition -->
+This entity defines an action which is distributed over a surface. A surface action may be connected with a surface member or surface connection.
+<!-- end of short definition -->
+
 
 > HISTORY New entity in IFC4.
 

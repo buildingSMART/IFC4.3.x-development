@@ -1,6 +1,8 @@
 # IfcReparametrisedCompositeCurveSegment
 
-The _IfcReparametrisedCompositeCurveSegment_ is geometrically identical to a _IfcCompositeCurveSegment_ but with the additional capability of reparametrization.<!-- end of definition -->
+The _IfcReparametrisedCompositeCurveSegment_ is geometrically identical to a _IfcCompositeCurveSegment_ but with the additional capability of reparametrization.
+<!-- end of short definition -->
+
 
 { .extDef}
 > NOTE Definition according to ISO/CD 10303-42:1992

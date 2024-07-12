@@ -1,6 +1,8 @@
 # IfcColourRgb
 
-{ .extDef}<!-- end of definition -->
+{ .extDef}
+<!-- end of short definition -->
+
 > NOTE Definition according to ISO/CD 10303-46:1992
 > A colour rgb as a subtype of colour specifications is defined by three colour component values for red, green, and blue in the RGB colour model.
 

@@ -1,6 +1,8 @@
 # Pset_MechanicalBeamInPlane
 
-Properties about Mechanical Beam in Plane.<!-- end of definition -->
+Properties about Mechanical Beam in Plane.
+<!-- end of short definition -->
+
 
 ## Comments
 

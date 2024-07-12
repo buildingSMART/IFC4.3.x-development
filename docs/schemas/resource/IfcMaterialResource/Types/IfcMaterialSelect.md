@@ -1,6 +1,8 @@
 # IfcMaterialSelect
 
-_IfcMaterialSelect_ provides selection of either a material definition or a material usage definition that can be assigned to an element, a resource or another entity within this specification.<!-- end of definition -->
+_IfcMaterialSelect_ provides selection of either a material definition or a material usage definition that can be assigned to an element, a resource or another entity within this specification.
+<!-- end of short definition -->
+
 
 * _IfcMaterialDefinition_
   * _IfcMaterial_

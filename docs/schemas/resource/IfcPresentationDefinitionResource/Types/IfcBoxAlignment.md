@@ -11,7 +11,9 @@ The box alignment specifies the alignment of the text box relative to its positi
 * bottom-left
 * bottom-middle
 * bottom-right
-<!-- end of definition -->
+
+<!-- end of short definition -->
+
 > NOTE The top-left is the default value.
 
 Figure 1 illustrates alignment values. Figure 2 illustrates use of alignment values together with the placement and planar extent.

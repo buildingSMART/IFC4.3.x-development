@@ -1,6 +1,8 @@
 # IfcFilter
 
-A filter is an apparatus used to remove particulate or gaseous matter from fluids and gases.<!-- end of definition -->
+A filter is an apparatus used to remove particulate or gaseous matter from fluids and gases.
+<!-- end of short definition -->
+
 
 > HISTORY New entity in IFC4
 

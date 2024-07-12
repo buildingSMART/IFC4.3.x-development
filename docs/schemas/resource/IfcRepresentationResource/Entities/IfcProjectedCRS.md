@@ -1,6 +1,8 @@
 # IfcProjectedCRS
 
-_IfcProjectedCRS_ is a coordinate reference system (CRS) of the map to which the map translation of the local engineering coordinate system of the construction or facility engineering project relates. The projected coordinate reference system is assumed to be a 2D or 3D right-handed Cartesian coordinate system, the optional _MapUnit_ attribute can be used to determine the length unit used by the map.<!-- end of definition -->
+_IfcProjectedCRS_ is a coordinate reference system (CRS) of the map to which the map translation of the local engineering coordinate system of the construction or facility engineering project relates. The projected coordinate reference system is assumed to be a 2D or 3D right-handed Cartesian coordinate system, the optional _MapUnit_ attribute can be used to determine the length unit used by the map.
+<!-- end of short definition -->
+
 
 Despite what its name suggests:
 

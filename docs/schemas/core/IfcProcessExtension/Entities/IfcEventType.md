@@ -1,6 +1,8 @@
 # IfcEventType
 
-><!-- end of definition --> HISTORY New entity in IFC4
+>
+<!-- end of short definition -->
+ HISTORY New entity in IFC4
 
 An _IfcEventType_ provides for all forms of types of event that may be specified.
 

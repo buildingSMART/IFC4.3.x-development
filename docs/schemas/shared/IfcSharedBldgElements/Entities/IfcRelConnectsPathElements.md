@@ -1,6 +1,8 @@
 # IfcRelConnectsPathElements
 
-The _IfcRelConnectsPathElements_ relationship provides the connectivity information between two elements, which have path information.<!-- end of definition -->
+The _IfcRelConnectsPathElements_ relationship provides the connectivity information between two elements, which have path information.
+<!-- end of short definition -->
+
 
 The objectified relationship provides the additional information required to describe the connection between two path based elements that might have single or multiple layers of material. The connection type specifies where at the path based element a connection is given (at the start, in the middle or at the end).
 

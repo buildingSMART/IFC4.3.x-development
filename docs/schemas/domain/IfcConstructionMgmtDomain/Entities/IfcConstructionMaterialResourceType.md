@@ -5,7 +5,9 @@ The resource type _IfcConstructionMaterialResourceType_ defines commonly shared 
 * common productivities
 * common cost rates
 * common properties within shared property sets
-<!-- end of definition -->
+
+<!-- end of short definition -->
+
 It is used to define a construction material resource specification (the specific resource information that is common to all occurrences of that resource). Resource types may be exchanged without being already assigned to occurrences.
 
 Occurrences of the _IfcConstructionMaterialResourceType_ are represented by instances of _IfcConstructionMaterialResource_.

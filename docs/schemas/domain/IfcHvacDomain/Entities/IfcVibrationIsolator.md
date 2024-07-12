@@ -1,6 +1,8 @@
 # IfcVibrationIsolator
 
-A vibration isolator is a device used to minimize the effects of vibration transmissibility in a structure.<!-- end of definition -->
+A vibration isolator is a device used to minimize the effects of vibration transmissibility in a structure.
+<!-- end of short definition -->
+
 
 > HISTORY New entity in IFC4
 

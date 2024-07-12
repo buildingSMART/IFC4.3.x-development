@@ -1,6 +1,8 @@
 # PEnum_ModemTrafficInterfaceType
 
-Enumeration of modem traffic interface types.<!-- end of definition -->
+Enumeration of modem traffic interface types.
+<!-- end of short definition -->
+
 
 ## Items
 

@@ -1,6 +1,8 @@
 # IfcBuiltSystemTypeEnum
 
-This enumeration identifies different types of built systems.<!-- end of definition -->
+This enumeration identifies different types of built systems.
+<!-- end of short definition -->
+
 
 ## Items
 

@@ -1,6 +1,8 @@
 # IfcRepresentationItem
 
-The _IfcRepresentationItem_ is used within an _IfcRepresentation_ (directly or indirectly through other _IfcRepresentationItem_'s) to represent an _IfcProductRepresentation_. Most commonly these _IfcRepresentationItem_'s are geometric or topological representation items, that can (but not need to) have presentation style information assigned.<!-- end of definition -->
+The _IfcRepresentationItem_ is used within an _IfcRepresentation_ (directly or indirectly through other _IfcRepresentationItem_'s) to represent an _IfcProductRepresentation_. Most commonly these _IfcRepresentationItem_'s are geometric or topological representation items, that can (but not need to) have presentation style information assigned.
+<!-- end of short definition -->
+
 
 { .extDef}
 > NOTE Definition according to ISO/CD 10303-43:1992

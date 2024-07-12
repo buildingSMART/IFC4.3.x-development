@@ -1,6 +1,8 @@
 # IfcBuildingStorey
 
-The building storey has an elevation and typically represents a (nearly) horizontal aggregation of spaces that are vertically bound.<!-- end of definition -->
+The building storey has an elevation and typically represents a (nearly) horizontal aggregation of spaces that are vertically bound.
+<!-- end of short definition -->
+
 
 > NOTE Definition from ISO 6707-1:
 > space between two consecutive floors or between a floor and a roof

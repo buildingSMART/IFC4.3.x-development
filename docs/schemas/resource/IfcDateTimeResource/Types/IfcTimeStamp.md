@@ -1,6 +1,8 @@
 # IfcTimeStamp
 
-_IfcTimeStamp_ is an indication of date and time by measuring the number of seconds which have elapsed since 1 January 1970, 00:00:00 UTC.<!-- end of definition -->
+_IfcTimeStamp_ is an indication of date and time by measuring the number of seconds which have elapsed since 1 January 1970, 00:00:00 UTC.
+<!-- end of short definition -->
+
 
 Type: INTEGER
 

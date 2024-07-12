@@ -1,6 +1,8 @@
 # IfcEventTime
 
-_IfcEventTime_ captures the time-related information about an event including the different types of event dates (i.e. actual, scheduled, early, and late).<!-- end of definition -->
+_IfcEventTime_ captures the time-related information about an event including the different types of event dates (i.e. actual, scheduled, early, and late).
+<!-- end of short definition -->
+
 
 All given values should be provided by the application, that is, the IFC schema does not deal with dependencies between process time values. At this stage there is also no consistency check through where rules that guarantee a meaningful population of date values. Thus, an application is responsible to provide reasonable values and, if an application receives event dates, has to make consistency checks by their own.
 

@@ -1,6 +1,8 @@
 # IfcMonetaryUnit
 
-_IfcMonetaryUnit_ is a unit to define currency for money.<!-- end of definition -->
+_IfcMonetaryUnit_ is a unit to define currency for money.
+<!-- end of short definition -->
+
 
 > HISTORY New entity in IFC2x.
 

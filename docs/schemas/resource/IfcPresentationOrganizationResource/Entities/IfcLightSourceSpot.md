@@ -1,6 +1,8 @@
 # IfcLightSourceSpot
 
-{ .extDef}<!-- end of definition -->
+{ .extDef}
+<!-- end of short definition -->
+
 > NOTE Definition according to ISO 10303-46:
 > The light source spot entity is a subtype of light source. Spot light source entities have a light source colour, position, direction, attenuation coefficients, concentration exponent, and spread angle. If a point lies outside the cone of influence of a light source of this type as determined by the light source position, direction and spread angle its colour is not affected by that light source.
 

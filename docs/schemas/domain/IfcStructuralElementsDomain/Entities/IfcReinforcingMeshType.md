@@ -6,7 +6,9 @@ The reinforcing element type **IfcReinforcingMeshType** defines commonly shared 
 * common representations
 * common materials
 * common composition of elements
-<!-- end of definition -->
+
+<!-- end of short definition -->
+
 It is used to define a reinforcing mesh type specification indicating the specific product information that is common to all occurrences of that product type. The **IfcReinforcingMeshType** may be declared within _IfcProject_ or _IfcProjectLibrary_ using _IfcRelDeclares_ and may be exchanged with or without occurrences of the type. Occurrences of **IfcReinforcingMeshType** are represented by instances of _IfcReinforcingMesh_.
 
 > HISTORY New entity in IFC4.

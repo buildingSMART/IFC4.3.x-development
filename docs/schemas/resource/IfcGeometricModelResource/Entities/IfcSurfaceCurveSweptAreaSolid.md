@@ -1,6 +1,8 @@
 # IfcSurfaceCurveSweptAreaSolid
 
-The _IfcSurfaceCurveSweptAreaSolid_ is the result of sweeping an area along a directrix that lies on a reference surface. The swept area is provided by a subtype of _IfcProfileDef_. The profile is placed by an implicit cartesian transformation operator at the start point of the sweep, where the profile normal agrees to the tangent of the directrix at this point, and the profile''s x-axis agrees to the surface normal. At any point along the directrix, the swept profile origin lies on the directrix, the profile''s normal points towards the tangent of the directrix, and the profile''s x-axis is identical to the surface normal at this point.<!-- end of definition -->
+The _IfcSurfaceCurveSweptAreaSolid_ is the result of sweeping an area along a directrix that lies on a reference surface. The swept area is provided by a subtype of _IfcProfileDef_. The profile is placed by an implicit cartesian transformation operator at the start point of the sweep, where the profile normal agrees to the tangent of the directrix at this point, and the profile''s x-axis agrees to the surface normal. At any point along the directrix, the swept profile origin lies on the directrix, the profile''s normal points towards the tangent of the directrix, and the profile''s x-axis is identical to the surface normal at this point.
+<!-- end of short definition -->
+
 
 > NOTE The profile area''s normal has to be identical to the tangent of the directrix at any given point. In case of a directrix having a linear segment at the start point, the segment has to be perpendicular to the profile at start.
 

@@ -1,6 +1,8 @@
 # PEnum_WindowPanelOperationEnum
 
-This enumeration defines the basic ways to describe how window panels operate, as shown in Figure 2.<!-- end of definition -->
+This enumeration defines the basic ways to describe how window panels operate, as shown in Figure 2.
+<!-- end of short definition -->
+
 
 The opening direction of the window panels is given by the local placement of the _IfcWindow_. The positive y-axis determines the direction as shown in Figure 2.
 

@@ -1,6 +1,8 @@
 # IfcReinforcingElement
 
-A reinforcing element represents bars, wires, strands, meshes, tendons, and other components embedded in concrete in such a manner that the reinforcement and the concrete act together in resisting forces.<!-- end of definition -->
+A reinforcing element represents bars, wires, strands, meshes, tendons, and other components embedded in concrete in such a manner that the reinforcement and the concrete act together in resisting forces.
+<!-- end of short definition -->
+
 
 { .extDef}
 > NOTE Definition according to ISO 6707-1: rod(s), bar(s), fabric, fibres, wires and cable(s) added to give additional strength or support to a material or component.

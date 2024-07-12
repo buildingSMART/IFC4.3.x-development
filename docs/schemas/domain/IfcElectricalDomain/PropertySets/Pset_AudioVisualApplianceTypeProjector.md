@@ -1,3 +1,5 @@
 # Pset_AudioVisualApplianceTypeProjector
 
-An audio-visual projector is a device that projects video to a surface.<!-- end of definition --> HISTORY: Added in IFC4.
+An audio-visual projector is a device that projects video to a surface.
+<!-- end of short definition -->
+ HISTORY: Added in IFC4.

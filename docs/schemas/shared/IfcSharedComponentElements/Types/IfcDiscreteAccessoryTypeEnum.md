@@ -1,6 +1,8 @@
 # IfcDiscreteAccessoryTypeEnum
 
-This enumeration defines the different types of discrete accessories.<!-- end of definition -->
+This enumeration defines the different types of discrete accessories.
+<!-- end of short definition -->
+
 
 > HISTORY New enumeration in IFC4.
 

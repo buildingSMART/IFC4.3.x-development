@@ -1,6 +1,8 @@
 # IfcFurnitureTypeEnum
 
-_IfcFurnitureTypeEnum_ defines the types of furniture from which the type required can be selected.<!-- end of definition -->
+_IfcFurnitureTypeEnum_ defines the types of furniture from which the type required can be selected.
+<!-- end of short definition -->
+
 
 > HISTORY New enumeration in IFC4.
 

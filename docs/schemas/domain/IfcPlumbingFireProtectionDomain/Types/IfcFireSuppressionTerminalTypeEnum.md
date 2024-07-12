@@ -1,6 +1,8 @@
 # IfcFireSuppressionTerminalTypeEnum
 
-The _IfcFireSuppressionTerminalTypeEnum_ defines the range of different types of fire suppression terminal that can be specified.<!-- end of definition -->
+The _IfcFireSuppressionTerminalTypeEnum_ defines the range of different types of fire suppression terminal that can be specified.
+<!-- end of short definition -->
+
 
 > HISTORY New type in IFC2x2.
 

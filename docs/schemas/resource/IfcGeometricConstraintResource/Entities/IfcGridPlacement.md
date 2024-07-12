@@ -1,6 +1,8 @@
 # IfcGridPlacement
 
-><!-- end of definition --> IFC4.3.0.0 CHANGE In IFC 4.3 the _PlacementRelTo_ attribute has been moved from IfcLocalPlacement to its supertype IfcObjectPlacement, also a supertype of this entity. That means that for correct global positioning, the IfcGridPlacement will reference (a) the ObjectPlacement of the IfcGrid by means of IfcObjectPlacement.PlacementRelTo and (b) the pair of IfcGridAxis contained in that same grid by means of the IfcVirtualGridIntersection.
+>
+<!-- end of short definition -->
+ IFC4.3.0.0 CHANGE In IFC 4.3 the _PlacementRelTo_ attribute has been moved from IfcLocalPlacement to its supertype IfcObjectPlacement, also a supertype of this entity. That means that for correct global positioning, the IfcGridPlacement will reference (a) the ObjectPlacement of the IfcGrid by means of IfcObjectPlacement.PlacementRelTo and (b) the pair of IfcGridAxis contained in that same grid by means of the IfcVirtualGridIntersection.
 
 _IfcGridPlacement_ provides a specialization of _IfcObjectPlacement_ in which the placement and axis direction of the object coordinate system is defined by a reference to the design grid as defined in _IfcGrid_.
 

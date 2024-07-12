@@ -1,6 +1,8 @@
 # PEnum_RailPadStiffness
 
-Enumeration of stiffness levels of the rail pad.<!-- end of definition -->
+Enumeration of stiffness levels of the rail pad.
+<!-- end of short definition -->
+
 
 ## Items
 

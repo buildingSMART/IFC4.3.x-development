@@ -1,6 +1,8 @@
 # PEnum_BladesOrientation
 
-Enumeration of the different blades orientations used in railway domain.<!-- end of definition -->
+Enumeration of the different blades orientations used in railway domain.
+<!-- end of short definition -->
+
 
 ## Items
 

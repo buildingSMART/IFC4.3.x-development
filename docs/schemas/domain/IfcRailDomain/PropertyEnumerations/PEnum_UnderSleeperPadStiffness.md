@@ -1,6 +1,8 @@
 # PEnum_UnderSleeperPadStiffness
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### MEDIUM
 Medium

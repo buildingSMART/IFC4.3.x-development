@@ -1,6 +1,8 @@
 # PEnum_FilterWaterFilterType
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### FILTRATION_DIATOMACEOUSEARTH
 Filtration Diatomaceous Earth

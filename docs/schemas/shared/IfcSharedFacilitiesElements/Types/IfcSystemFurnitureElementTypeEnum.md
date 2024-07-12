@@ -1,6 +1,8 @@
 # IfcSystemFurnitureElementTypeEnum
 
-_IfcSystemFurnitureElementTypeEnum_ defines the types of system furniture from which the type required can be selected.<!-- end of definition -->
+_IfcSystemFurnitureElementTypeEnum_ defines the types of system furniture from which the type required can be selected.
+<!-- end of short definition -->
+
 
 > HISTORY New enumeration in IFC4.
 

@@ -1,6 +1,8 @@
 # IfcRelationship
 
-_IfcRelationship_ is the abstract generalization of all objectified relationships in IFC. Objectified relationships are the preferred way to handle relationships among objects. This allows to keep relationship specific properties directly at the relationship and opens the possibility to later handle relationship specific behavior.<!-- end of definition -->
+_IfcRelationship_ is the abstract generalization of all objectified relationships in IFC. Objectified relationships are the preferred way to handle relationships among objects. This allows to keep relationship specific properties directly at the relationship and opens the possibility to later handle relationship specific behavior.
+<!-- end of short definition -->
+
 
 There are two different types of relationships, 1-to-1 relationships and 1-to-many relationships, used within the subtypes of _IfcRelationship_. The following convention applies to all subtypes:
 

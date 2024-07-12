@@ -1,6 +1,8 @@
 # PEnum_VoltageLevels
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### U230
 U230

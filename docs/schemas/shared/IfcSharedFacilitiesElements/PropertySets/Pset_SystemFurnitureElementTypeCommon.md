@@ -1,6 +1,8 @@
 # Pset_SystemFurnitureElementTypeCommon
 
-Common properties for all systems furniture (I.e. modular furniture) element types (e.g. vertical panels, work surfaces, and storage).<!-- end of definition --> HISTORY: First issued in IFC Release R1.5. Renamed from Pset_FurnitureElementCommon
+Common properties for all systems furniture (I.e. modular furniture) element types (e.g. vertical panels, work surfaces, and storage).
+<!-- end of short definition -->
+ HISTORY: First issued in IFC Release R1.5. Renamed from Pset_FurnitureElementCommon
 
 
 ## Comments

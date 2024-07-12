@@ -1,6 +1,8 @@
 # IfcWall
 
-The wall represents a vertical construction that may bound or subdivide spaces. Wall are usually vertical, or nearly vertical, planar elements, often designed to bear structural loads. A wall is however not required to be load bearing.<!-- end of definition -->
+The wall represents a vertical construction that may bound or subdivide spaces. Wall are usually vertical, or nearly vertical, planar elements, often designed to bear structural loads. A wall is however not required to be load bearing.
+<!-- end of short definition -->
+
 
 { .extDef}
 

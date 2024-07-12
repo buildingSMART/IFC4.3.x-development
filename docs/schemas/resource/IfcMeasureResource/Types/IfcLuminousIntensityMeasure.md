@@ -1,6 +1,8 @@
 # IfcLuminousIntensityMeasure
 
-An _IfcLuminousIntensityMeasure_ is the value for the brightness of a body.<!-- end of definition -->
+An _IfcLuminousIntensityMeasure_ is the value for the brightness of a body.
+<!-- end of short definition -->
+
 
 Usually measured in candela (cd).
 

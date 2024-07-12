@@ -1,6 +1,8 @@
 # IfcMedicalDeviceTypeEnum
 
-Enumeration defining the functional type of medical device.<!-- end of definition -->
+Enumeration defining the functional type of medical device.
+<!-- end of short definition -->
+
 
 > HISTORY New enumeration in IFC4.
 

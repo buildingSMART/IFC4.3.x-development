@@ -1,6 +1,8 @@
 # IfcPixelTexture
 
-An _IfcPixelTexture_ provides a 2D image-based texture map as an explicit array of pixel values (list of _Pixel_ binary attributes). In contrary to the _IfcImageTexture_ the _IfcPixelTexture_ holds a 2 dimensional list of pixel color (and opacity) directly, instead of referencing to an URL.<!-- end of definition -->
+An _IfcPixelTexture_ provides a 2D image-based texture map as an explicit array of pixel values (list of _Pixel_ binary attributes). In contrary to the _IfcImageTexture_ the _IfcPixelTexture_ holds a 2 dimensional list of pixel color (and opacity) directly, instead of referencing to an URL.
+<!-- end of short definition -->
+
 
 The following definitions from ISO/IEC 19775-1 X3D Architecture and base components ([X3D Specification](http://www.web3d.org/x3d/specifications/)) apply:
 

@@ -1,6 +1,8 @@
 # IfcReflectanceMethodEnum
 
-The _IfcReflectanceMethodEnum_ defines the range of different reflectance methods available.<!-- end of definition -->
+The _IfcReflectanceMethodEnum_ defines the range of different reflectance methods available.
+<!-- end of short definition -->
+
 
 > HISTORY New enumeration type in IFC2x2.
 

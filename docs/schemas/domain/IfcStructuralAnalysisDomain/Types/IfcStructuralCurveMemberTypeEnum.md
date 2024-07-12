@@ -1,6 +1,8 @@
 # IfcStructuralCurveMemberTypeEnum
 
-This enumeration distinguishes between different types of structural 'curve' members, such as cables.<!-- end of definition -->
+This enumeration distinguishes between different types of structural 'curve' members, such as cables.
+<!-- end of short definition -->
+
 
 > HISTORY New enumeration in IFC2x2.
 

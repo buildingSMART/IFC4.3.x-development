@@ -1,6 +1,8 @@
 # Pset_DuctFittingTypeCommon
 
-Duct fitting type common attributes.<!-- end of definition -->
+Duct fitting type common attributes.
+<!-- end of short definition -->
+
 
 
 ## Comments

@@ -1,6 +1,8 @@
 # IfcDistributionBoardTypeEnum
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### SWITCHBOARD
 A distribution point at which switching devices are located.

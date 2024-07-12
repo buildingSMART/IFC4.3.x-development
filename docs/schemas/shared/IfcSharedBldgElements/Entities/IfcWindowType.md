@@ -7,7 +7,9 @@ The element type _IfcWindowType_ defines commonly shared information for occurre
 * common partitioning of panels
 * common operation types of panels
 * common shape representations
-<!-- end of definition -->
+
+<!-- end of short definition -->
+
 A window type defines the particular parameter of the lining and one (or several) panels through the _IfcWindowLiningProperties_ and the _IfcWindowPanelProperties_ as predefined property sets applicable to windows only.
 
 It is used to define a window specification, or window style (the specific product information that is common to all occurrences of that window type). Window types may be exchanged without being already assigned to occurrences.

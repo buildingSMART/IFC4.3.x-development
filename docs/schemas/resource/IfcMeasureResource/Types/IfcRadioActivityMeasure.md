@@ -1,6 +1,8 @@
 # IfcRadioActivityMeasure
 
-_IfcRadioActivityMeasure_ is a measure of activity of radionuclide.<!-- end of definition -->
+_IfcRadioActivityMeasure_ is a measure of activity of radionuclide.
+<!-- end of short definition -->
+
 
 Usually measured in Becquerel (Bq, 1/s).
 

@@ -1,6 +1,8 @@
 # IfcFaceOuterBound
 
-{ .extDef}<!-- end of definition -->
+{ .extDef}
+<!-- end of short definition -->
+
 > NOTE Definition according to ISO/CD 10303-42:1992
 > A face outer bound is a special subtype of face bound which carries the additional semantics of defining an outer boundary on the face. No more than one boundary of a face shall be of this type.
 

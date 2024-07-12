@@ -1,6 +1,8 @@
 # IfcWorkPlan
 
-An _IfcWorkPlan_ represents work plans in a construction or a facilities management project.<!-- end of definition -->
+An _IfcWorkPlan_ represents work plans in a construction or a facilities management project.
+<!-- end of short definition -->
+
 
 > HISTORY New entity in IFC2.0
 

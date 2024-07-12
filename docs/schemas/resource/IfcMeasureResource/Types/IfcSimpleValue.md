@@ -1,6 +1,8 @@
 # IfcSimpleValue
 
-_IfcSimpleValue_ is a select type for selecting between simple value types.<!-- end of definition -->
+_IfcSimpleValue_ is a select type for selecting between simple value types.
+<!-- end of short definition -->
+
 
 SELECT
 

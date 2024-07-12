@@ -1,6 +1,8 @@
 # IfcRelFillsElement
 
-_IfcRelFillsElement_ is an objectified relationship between an opening element and an element that fills (or partially fills) the opening element. It is an one-to-one relationship.<!-- end of definition -->
+_IfcRelFillsElement_ is an objectified relationship between an opening element and an element that fills (or partially fills) the opening element. It is an one-to-one relationship.
+<!-- end of short definition -->
+
 
 > NOTE View definitions or implementer agreements may restrict an opening to be filled by one filling element only.
 

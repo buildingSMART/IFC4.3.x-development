@@ -1,6 +1,8 @@
 # PEnum_AddressType
 
-This enumeration identifies the logical location of the address.<!-- end of definition -->
+This enumeration identifies the logical location of the address.
+<!-- end of short definition -->
+
 
 ## Items
 

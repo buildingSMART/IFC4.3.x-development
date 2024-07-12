@@ -1,6 +1,8 @@
 # Pset_PipeSegmentTypeGutter
 
-Gutter segment type common attributes.<!-- end of definition -->
+Gutter segment type common attributes.
+<!-- end of short definition -->
+
 
 
 ## Comments

@@ -1,6 +1,8 @@
 # IfcRelSpaceBoundary
 
-The space boundary defines the physical or virtual delimiter of a space by the relationship _IfcRelSpaceBoundary_ to the surrounding elements.<!-- end of definition -->
+The space boundary defines the physical or virtual delimiter of a space by the relationship _IfcRelSpaceBoundary_ to the surrounding elements.
+<!-- end of short definition -->
+
 
 * In the case of a physical space boundary, the placement and shape of the boundary may be given, and the building element, providing the boundary is referenced,
 * In the case of a virtual space boundary, the placement and shape of the boundary may be given, and a virtual element is referenced.

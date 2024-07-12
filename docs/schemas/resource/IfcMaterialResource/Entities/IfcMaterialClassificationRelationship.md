@@ -1,6 +1,8 @@
 # IfcMaterialClassificationRelationship
 
-_IfcMaterialClassificationRelationship_ is a relationship assigning classifications to materials.<!-- end of definition -->
+_IfcMaterialClassificationRelationship_ is a relationship assigning classifications to materials.
+<!-- end of short definition -->
+
 
 > HISTORY  New entity in IFC2x.
 

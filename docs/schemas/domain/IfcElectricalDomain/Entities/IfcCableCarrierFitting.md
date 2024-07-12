@@ -1,6 +1,8 @@
 # IfcCableCarrierFitting
 
-A cable carrier fitting is a fitting that is placed at junction or transition in a cable carrier system.<!-- end of definition -->
+A cable carrier fitting is a fitting that is placed at junction or transition in a cable carrier system.
+<!-- end of short definition -->
+
 
 > HISTORY New entity in IFC4
 

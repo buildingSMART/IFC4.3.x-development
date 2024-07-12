@@ -1,6 +1,8 @@
 # PEnum_MotorEnclosureType
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### OPENDRIPPROOF
 Open Drip Proof

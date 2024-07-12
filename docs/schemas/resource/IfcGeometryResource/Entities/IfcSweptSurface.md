@@ -1,6 +1,8 @@
 # IfcSweptSurface
 
-An _IfcSweptSurface_ is a surface defined by sweeping a curve. The swept surface is defined by a open or closed curve, represented by a subtype if _IfcProfileDef_, that is provided as a two-dimensional curve on an implicit plane, and by the sweeping operation.<!-- end of definition -->
+An _IfcSweptSurface_ is a surface defined by sweeping a curve. The swept surface is defined by a open or closed curve, represented by a subtype if _IfcProfileDef_, that is provided as a two-dimensional curve on an implicit plane, and by the sweeping operation.
+<!-- end of short definition -->
+
 
 * The swept curve is defined by positioning the profile in the xy plane of the object coordinate system,
 * The sweeping operation is applied to the swept curve as defined within the subtypes of _IfcSweptSurface_;

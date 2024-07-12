@@ -1,6 +1,8 @@
 # PEnum_TankStorageType
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### ICE
 Ice

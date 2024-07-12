@@ -1,6 +1,8 @@
 # Pset_FanTypeCommon
 
-Fan type common attributes.<!-- end of definition -->
+Fan type common attributes.
+<!-- end of short definition -->
+
 
 
 ## Comments

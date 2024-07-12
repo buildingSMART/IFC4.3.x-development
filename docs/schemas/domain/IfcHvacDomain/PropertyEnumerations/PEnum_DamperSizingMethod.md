@@ -1,6 +1,8 @@
 # PEnum_DamperSizingMethod
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### NOMINAL
 Nominal sizing method

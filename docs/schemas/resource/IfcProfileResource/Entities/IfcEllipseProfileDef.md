@@ -1,6 +1,8 @@
 # IfcEllipseProfileDef
 
-_IfcEllipseProfileDef_ defines an ellipse as the profile definition used by the swept surface geometry or the swept area solid. It is given by its semi axis attributes and placed within the 2D position coordinate system, established by the _Position_ attribute.<!-- end of definition -->
+_IfcEllipseProfileDef_ defines an ellipse as the profile definition used by the swept surface geometry or the swept area solid. It is given by its semi axis attributes and placed within the 2D position coordinate system, established by the _Position_ attribute.
+<!-- end of short definition -->
+
 
 > HISTORY New entity in IFC2x
 

@@ -1,6 +1,8 @@
 # IfcModulusOfSubgradeReactionMeasure
 
-_IfcModulusOfSubgradeReactionMeasure_ is a geotechnical measure describing interaction between foundation structures and the soil. May also be known as bedding measure.<!-- end of definition -->
+_IfcModulusOfSubgradeReactionMeasure_ is a geotechnical measure describing interaction between foundation structures and the soil. May also be known as bedding measure.
+<!-- end of short definition -->
+
 
 Usually measured in N/m3.
 

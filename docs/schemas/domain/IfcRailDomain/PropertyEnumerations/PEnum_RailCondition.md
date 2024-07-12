@@ -1,6 +1,8 @@
 # PEnum_RailCondition
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### NEWRAIL
 New rail.

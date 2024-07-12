@@ -1,6 +1,8 @@
 # Qto_TubeBundleBaseQuantities
 
-Base quantities that are common to the definition of all types of tube bundles.<!-- end of definition -->
+Base quantities that are common to the definition of all types of tube bundles.
+<!-- end of short definition -->
+
 
 
 ## Comments

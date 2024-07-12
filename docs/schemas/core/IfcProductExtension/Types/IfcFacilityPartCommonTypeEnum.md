@@ -1,6 +1,8 @@
 # IfcFacilityPartCommonTypeEnum
 
-This container defines the different common predefined types of facility parts that can further specify an _IfcFacilityPartCommon_.<!-- end of definition -->
+This container defines the different common predefined types of facility parts that can further specify an _IfcFacilityPartCommon_.
+<!-- end of short definition -->
+
 
 ## Items
 

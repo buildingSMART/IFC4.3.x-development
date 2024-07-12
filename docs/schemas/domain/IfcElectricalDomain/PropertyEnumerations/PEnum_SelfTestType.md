@@ -1,6 +1,8 @@
 # PEnum_SelfTestType
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### CENTRAL
 Central

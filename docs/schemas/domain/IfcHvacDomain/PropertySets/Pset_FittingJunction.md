@@ -1,3 +1,5 @@
 # Pset_FittingJunction
 
-Properties about Fitting Junction.<!-- end of definition -->
+Properties about Fitting Junction.
+<!-- end of short definition -->
+

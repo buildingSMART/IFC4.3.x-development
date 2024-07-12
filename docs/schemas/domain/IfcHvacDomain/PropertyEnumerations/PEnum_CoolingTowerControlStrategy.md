@@ -1,6 +1,8 @@
 # PEnum_CoolingTowerControlStrategy
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### FIXEDEXITINGWATERTEMP
 Fixed Exiting Water Temp

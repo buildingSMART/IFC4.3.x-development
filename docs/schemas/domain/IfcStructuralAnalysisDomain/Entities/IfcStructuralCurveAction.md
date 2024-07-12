@@ -1,6 +1,8 @@
 # IfcStructuralCurveAction
 
-A structural curve action defines an action which is distributed over a curve. A curve action may be connected with a curve member or curve connection, or surface member or surface connection.<!-- end of definition -->
+A structural curve action defines an action which is distributed over a curve. A curve action may be connected with a curve member or curve connection, or surface member or surface connection.
+<!-- end of short definition -->
+
 
 > HISTORY New entity in IFC4.
 

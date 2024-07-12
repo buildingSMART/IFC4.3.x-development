@@ -5,7 +5,9 @@ The resource type _IfcSubContractResourceType_ defines commonly shared informati
 * common productivities
 * common cost rates
 * common properties within shared property sets
-<!-- end of definition -->
+
+<!-- end of short definition -->
+
 It is used to define a subcontract resource specification (the specific resource information that is common to all occurrences of that resource). Resource types may be exchanged without being already assigned to occurrences.
 
 Occurrences of the _IfcSubContractResourceType_ are represented by instances of _IfcSubContractResource_.

@@ -1,6 +1,8 @@
 # IfcDerivedMeasureValue
 
-_IfcDerivedMeasureValue_ is a select type for selecting between derived measure types.<!-- end of definition -->
+_IfcDerivedMeasureValue_ is a select type for selecting between derived measure types.
+<!-- end of short definition -->
+
 
 SELECT
 

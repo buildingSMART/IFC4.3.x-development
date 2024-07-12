@@ -1,6 +1,8 @@
 # PEnum_CompressedAirFilterType
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### ACTIVATEDCARBON
 Activated Carbon

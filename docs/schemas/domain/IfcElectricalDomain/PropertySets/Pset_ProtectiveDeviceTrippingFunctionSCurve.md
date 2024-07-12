@@ -1,6 +1,8 @@
 # Pset_ProtectiveDeviceTrippingFunctionSCurve
 
-Tripping functions are applied to electronic tripping units (i.e. tripping units having type property sets for electronic tripping defined). They are not applied to thermal, thermal magnetic or RCD tripping units.<!-- end of definition -->
+Tripping functions are applied to electronic tripping units (i.e. tripping units having type property sets for electronic tripping defined). They are not applied to thermal, thermal magnetic or RCD tripping units.
+<!-- end of short definition -->
+
 This property set represent the short time protection (S-curve) of an electronic protection device.
 
 

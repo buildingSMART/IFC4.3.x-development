@@ -1,6 +1,8 @@
 # IfcCompoundPlaneAngleMeasure
 
-_IfcCompoundPlaneAngleMeasure_ is a compound measure of plane angle in degrees, minutes, seconds, and optionally millionth-seconds of arc.<!-- end of definition -->
+_IfcCompoundPlaneAngleMeasure_ is a compound measure of plane angle in degrees, minutes, seconds, and optionally millionth-seconds of arc.
+<!-- end of short definition -->
+
 
 > NOTE _IfcCompoundPlaneAngleMeasure_ is used where angles need to be described to an accuracy as fine as one millionth of a degree and expressed as parts of an arc. It may be used for angular measurement by surveyors or for other angular measurements where precision is required. Another usage is exact or approximate global positioning against a geographic coordinate systems using longitude and latitude.
 

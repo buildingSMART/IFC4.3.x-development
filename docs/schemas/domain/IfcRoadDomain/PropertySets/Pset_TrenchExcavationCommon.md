@@ -1,3 +1,5 @@
 # Pset_TrenchExcavationCommon
 
-Properties for a trench excavation.<!-- end of definition -->
+Properties for a trench excavation.
+<!-- end of short definition -->
+

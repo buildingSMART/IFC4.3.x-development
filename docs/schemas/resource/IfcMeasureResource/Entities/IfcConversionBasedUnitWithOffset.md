@@ -1,6 +1,8 @@
 # IfcConversionBasedUnitWithOffset
 
-_IfcConversionBasedUnitWithOffset_ is a unit which is converted from another unit by applying a conversion factor and an offset.<!-- end of definition -->
+_IfcConversionBasedUnitWithOffset_ is a unit which is converted from another unit by applying a conversion factor and an offset.
+<!-- end of short definition -->
+
 
 > HISTORY New entity in IFC4.
 

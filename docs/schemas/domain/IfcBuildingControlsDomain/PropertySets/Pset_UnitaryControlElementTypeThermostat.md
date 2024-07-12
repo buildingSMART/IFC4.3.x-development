@@ -1,3 +1,5 @@
 # Pset_UnitaryControlElementTypeThermostat
 
-Unitary control element type thermostat attributes.<!-- end of definition --> HISTORY: Added in IFC4.
+Unitary control element type thermostat attributes.
+<!-- end of short definition -->
+ HISTORY: Added in IFC4.

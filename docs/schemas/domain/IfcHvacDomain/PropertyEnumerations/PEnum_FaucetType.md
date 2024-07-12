@@ -1,6 +1,8 @@
 # PEnum_FaucetType
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### BIB
 Bib

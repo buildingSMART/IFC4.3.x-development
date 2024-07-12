@@ -1,6 +1,8 @@
 # PEnum_CurveShapeEnum
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### INTERNAL
 

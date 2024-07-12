@@ -1,6 +1,8 @@
 # IfcStructuralReaction
 
-A structural reaction is a structural activity that results from a structural action imposed to a structural item or building element. Examples are support reactions, internal forces, and deflections.<!-- end of definition -->
+A structural reaction is a structural activity that results from a structural action imposed to a structural item or building element. Examples are support reactions, internal forces, and deflections.
+<!-- end of short definition -->
+
 
 > HISTORY New entity in IFC2x2.
 

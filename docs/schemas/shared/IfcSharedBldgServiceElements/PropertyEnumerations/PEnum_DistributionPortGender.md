@@ -1,6 +1,8 @@
 # PEnum_DistributionPortGender
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### MALE
 Male

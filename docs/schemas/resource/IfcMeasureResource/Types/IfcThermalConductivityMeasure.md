@@ -1,6 +1,8 @@
 # IfcThermalConductivityMeasure
 
-_IfcThermalConductivityMeasure_ is a measure of thermal conductivity.<!-- end of definition -->
+_IfcThermalConductivityMeasure_ is a measure of thermal conductivity.
+<!-- end of short definition -->
+
 
 Usually measured in Watt / m Kelvin.
 

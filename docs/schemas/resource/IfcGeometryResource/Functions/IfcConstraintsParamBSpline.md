@@ -1,6 +1,8 @@
 # IfcConstraintsParamBSpline
 
-{ .extDef}<!-- end of definition -->
+{ .extDef}
+<!-- end of short definition -->
+
 > NOTE Definition according to ISO/CD 10303-42:1992
 > This function checks the parametrisation of a B-spline curve or (one of the directions of) a B-spline surface and returns TRUE if no inconsistencies are found. These constraints are: > 1. Degree ≤ 1.
 > 2. Upper index on knots ≤ 2.

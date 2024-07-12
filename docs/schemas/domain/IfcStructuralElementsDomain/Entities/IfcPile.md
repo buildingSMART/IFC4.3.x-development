@@ -1,6 +1,8 @@
 # IfcPile
 
-A pile is a slender timber, concrete, or steel structural element, driven, jetted, or otherwise embedded on end in the ground for the purpose of supporting a load. A pile is also characterized as deep foundation, where the loads are transferred to deeper subsurface layers.<!-- end of definition -->
+A pile is a slender timber, concrete, or steel structural element, driven, jetted, or otherwise embedded on end in the ground for the purpose of supporting a load. A pile is also characterized as deep foundation, where the loads are transferred to deeper subsurface layers.
+<!-- end of short definition -->
+
 
 { .extDef}
 > NOTE Definition according to ISO 6707-1: slender structural member, substantially underground, intended to transmit force(s) into loadbearing strata below the surface of the ground.

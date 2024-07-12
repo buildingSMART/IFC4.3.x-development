@@ -1,6 +1,8 @@
 # PEnum_DamperBladeShape
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### FLAT
 Flat

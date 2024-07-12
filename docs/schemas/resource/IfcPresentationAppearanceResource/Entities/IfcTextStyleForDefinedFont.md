@@ -1,6 +1,8 @@
 # IfcTextStyleForDefinedFont
 
-The _IfcTextStyleForDefinedFont_ combines the text font color with an optional background color, that fills the text box, defined by the planar extent given to the text literal.<!-- end of definition -->
+The _IfcTextStyleForDefinedFont_ combines the text font color with an optional background color, that fills the text box, defined by the planar extent given to the text literal.
+<!-- end of short definition -->
+
 
 { .extDef}
 > Definition according to W3C for Cascading Style Sheets:

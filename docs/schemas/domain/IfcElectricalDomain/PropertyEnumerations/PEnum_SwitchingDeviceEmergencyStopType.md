@@ -1,6 +1,8 @@
 # PEnum_SwitchingDeviceEmergencyStopType
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### MUSHROOM
 Mushroom

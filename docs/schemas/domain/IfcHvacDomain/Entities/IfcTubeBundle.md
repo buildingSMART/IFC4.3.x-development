@@ -1,6 +1,8 @@
 # IfcTubeBundle
 
-A tube bundle is a device consisting of tubes and bundles of tubes used for heat transfer and contained typically within other energy conversion devices, such as a chiller or coil.<!-- end of definition -->
+A tube bundle is a device consisting of tubes and bundles of tubes used for heat transfer and contained typically within other energy conversion devices, such as a chiller or coil.
+<!-- end of short definition -->
+
 
 > HISTORY New entity in IFC4
 

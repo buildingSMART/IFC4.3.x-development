@@ -1,6 +1,8 @@
 # IfcMaterialLayerSet
 
-The _IfcMaterialLayerSet_ is a designation by which materials of an element constructed of a number of material layers is known and through which the relative positioning of individual layers can be expressed.<!-- end of definition -->
+The _IfcMaterialLayerSet_ is a designation by which materials of an element constructed of a number of material layers is known and through which the relative positioning of individual layers can be expressed.
+<!-- end of short definition -->
+
 
 The Material Layer Set Base (MlsBase) describes the imaginary axis along which the material layers are positioned.
 

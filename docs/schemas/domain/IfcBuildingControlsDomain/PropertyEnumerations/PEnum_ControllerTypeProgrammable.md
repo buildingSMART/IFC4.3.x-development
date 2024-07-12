@@ -1,6 +1,8 @@
 # PEnum_ControllerTypeProgrammable
 
-<!-- end of definition -->## Items
+
+<!-- end of short definition -->
+## Items
 
 ### PRIMARY
 Controller has built-in communication interface for PC connection, may manage secondary controllers

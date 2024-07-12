@@ -1,6 +1,8 @@
 # IfcRevolvedAreaSolid
 
-An _IfcRevolvedAreaSolid_ is a solid created by revolving a cross section provided by a profile definition about an axis.<!-- end of definition -->
+An _IfcRevolvedAreaSolid_ is a solid created by revolving a cross section provided by a profile definition about an axis.
+<!-- end of short definition -->
+
 
 The resulting solid is positioned by the _IfcSweptAreaSolid_._Position_ relative to the object coordinate system. If provided, it allows to reposition the revolved solid. If not provided, it defaults to the current object coordinate system. The axis and the cross section shall be in the same plane, prior to any repositioning.
 

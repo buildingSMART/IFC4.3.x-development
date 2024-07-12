@@ -1,6 +1,8 @@
 # Pset_ProvisionForVoid
 
-Properties for Provisions For Voids.<!-- end of definition -->
+Properties for Provisions For Voids.
+<!-- end of short definition -->
+
 
 ## Comments
 

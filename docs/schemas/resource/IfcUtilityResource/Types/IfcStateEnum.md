@@ -3,7 +3,6 @@
 The _IfcStateEnum_ enumeration identifies the state or accessibility of the object (for example, read/write, locked).
 <!-- end of short definition -->
 
-
 Valid enumerations are:
 
 > HISTORY New enumeration in IFC2.0.

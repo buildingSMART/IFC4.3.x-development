@@ -3,7 +3,6 @@
 Enumeration of the different fiber types.
 <!-- end of short definition -->
 
-
 ## Items
 
 ### STANDARDSINGLEMODEFIBER

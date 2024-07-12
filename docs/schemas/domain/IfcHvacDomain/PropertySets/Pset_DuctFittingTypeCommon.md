@@ -3,8 +3,6 @@
 Duct fitting type common attributes.
 <!-- end of short definition -->
 
-
-
 ## Comments
 
 ### PressureClass

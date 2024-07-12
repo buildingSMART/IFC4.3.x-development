@@ -3,8 +3,6 @@
 Fan type common attributes.
 <!-- end of short definition -->
 
-
-
 ## Comments
 
 ### NominalRotationSpeed

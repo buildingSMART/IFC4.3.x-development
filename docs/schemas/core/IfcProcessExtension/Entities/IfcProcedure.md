@@ -3,7 +3,6 @@
 An _IfcProcedure_ is a logical set of actions to be taken in response to an event or to cause an event to occur.
 <!-- end of short definition -->
 
-
 > HISTORY New entity in IFC2x2
 
 { .change-ifc2x4}

@@ -3,7 +3,6 @@
 _IfcProject_ establishes the context for information to be exchanged or shared, and it may represent a construction project but does not have to. The _IfcProject_'s main purpose in an exchange structure is to provide the root instance and the context for all other information items included.
 <!-- end of short definition -->
 
-
 The context provided by the _IfcProject_ includes:
 
 * the default units

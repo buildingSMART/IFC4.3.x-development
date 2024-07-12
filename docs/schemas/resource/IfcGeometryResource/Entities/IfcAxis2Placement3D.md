@@ -3,7 +3,6 @@
 The _IfcAxis2Placement3D_ provides location and orientations to place items in a three-dimensional space. The attribute _Axis_ defines the Z direction, _RefDirection_ the X direction. The Y direction is derived.
 <!-- end of short definition -->
 
-
 > NOTE The _RefDirection_ does not have to be orthogonal to _Axis_.
 
 If the attribute values for _Axis_ and _RefDirection_ are not given, the placement defaults to P[1] (x-axis) as [1.,0.,0.], P[2] (y-axis) as [0.,1.,0.] and P[3] (z-axis) as [0.,0.,1.].

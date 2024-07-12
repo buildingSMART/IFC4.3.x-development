@@ -3,7 +3,6 @@
 _IfcConstructionMaterialResource_ identifies a material resource type in a construction project.
 <!-- end of short definition -->
 
-
 > HISTORY New entity in IFC2.0.
 
 { .change-ifc2x4}

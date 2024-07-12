@@ -3,7 +3,6 @@
 This container defines the different predefined types of stratum elements that can further specify an IfcGeotechnicalStratum.
 <!-- end of short definition -->
 
-
 ## Items
 
 ### SOLID

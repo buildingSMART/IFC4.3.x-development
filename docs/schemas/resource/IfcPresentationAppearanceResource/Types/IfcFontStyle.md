@@ -5,7 +5,6 @@ The _IfcFontStyle_ type defines whether the normal, the italic or the oblique fa
 * normal
 * italic
 * oblique
-
 <!-- end of short definition -->
 
 { .extDef}

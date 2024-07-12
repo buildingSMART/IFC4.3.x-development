@@ -1,7 +1,6 @@
 # PEnum_FountainType
-
-
 <!-- end of short definition -->
+
 ## Items
 
 ### DRINKINGWATER

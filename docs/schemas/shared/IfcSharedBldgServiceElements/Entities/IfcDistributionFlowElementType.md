@@ -3,7 +3,6 @@
 The element type _IfcDistributionFlowElementType_ defines a list of commonly shared property set definitions of an element and an optional set of product representations. It is used to define an element specification (the specific product information that is common to all occurrences of that product type).
 <!-- end of short definition -->
 
-
 Distribution flow element types (orthe instantiable subtypes) may be exchanged without being already assigned to occurrences.
 
 The occurrences of the _IfcDistributionFlowElementType_ are represented by instances of _IfcDistributionFlowElement_ or its subtypes.

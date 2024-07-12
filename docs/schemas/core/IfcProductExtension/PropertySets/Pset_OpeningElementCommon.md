@@ -3,8 +3,6 @@
 Properties common to the definition of all instances of IfcOpeningElement.
 <!-- end of short definition -->
 
-
-
 ## Comments
 
 ### FireExit

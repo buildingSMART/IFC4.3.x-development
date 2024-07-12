@@ -3,7 +3,6 @@
 Enumeration of feeder line types.
 <!-- end of short definition -->
 
-
 ## Items
 
 ### ALONGTRACKFEEDER

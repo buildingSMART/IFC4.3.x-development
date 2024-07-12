@@ -3,7 +3,6 @@
 The distribution flow element _IfcFlowSegment_ defines the occurrence of a segment of a flow distribution system.
 <!-- end of short definition -->
 
-
 The _IfcFlowSegment_ defines a particular occurrence of a segment inserted in the spatial context of a project. The parameters defining the type of the segment and/or its shape are defined by the _IfcFlowSegmentType_, which is related by the inverse relationship IsDefinedBy pointing to _IfcRelDefinesByType_.
 
 > HISTORY New entity in IFC2.0.

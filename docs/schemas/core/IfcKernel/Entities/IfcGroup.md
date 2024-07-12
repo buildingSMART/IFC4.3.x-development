@@ -3,7 +3,6 @@
 _IfcGroup_ is an generalization of any arbitrary group. A group is a logical collection of objects. It does not have its own position, nor can it hold its own shape representation. Therefore a group is an aggregation under some non-geometrical / topological grouping aspects.
 <!-- end of short definition -->
 
-
 > EXAMPLE An example for a group is a system, since it groups elements under the aspect of their role, regardless of their position in a building. One of the most important usages of a group representing a system is the _IfcDistributionSystem_, that groups distribution components, such as space heaters and valves into a heating system.
 
 A group can hold any collection of objects, the relationship _IfcRelAssignsToGroup_ is used to establish the group collection. Objects within a group are products, processes, controls, resources, actors or other groups, thus groups can be nested. An object can be part of zero, one, or many groups. Grouping relationships are not required to be hierarchical nor do they imply a dependency.

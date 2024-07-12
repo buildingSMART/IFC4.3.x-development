@@ -3,7 +3,6 @@
 A site is a defined area of land, possibly covered with water, on which the project construction is to be completed. A site may be used to erect, retrofit or turn down building(s), or for other construction related developments.
 <!-- end of short definition -->
 
-
 > NOTE Definition according to ISO 6707-1: area of land or water where construction work or other development is undertaken.
 
 Precise geospatial information of a site shall be derived from the georeferencing entities that relate the _IfcProject_ to the real world, using sets of datum (see _IfcCoordinateOperation_ and _IfcCoordinateReferenceSystem_).

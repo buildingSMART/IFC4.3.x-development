@@ -3,7 +3,6 @@
 Enumeration describing the payment method.
 <!-- end of short definition -->
 
-
 ## Items
 
 ### CASH

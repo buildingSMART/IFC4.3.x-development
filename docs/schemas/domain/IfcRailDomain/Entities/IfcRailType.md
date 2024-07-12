@@ -5,8 +5,6 @@ The element type _IfcRailType_ defines commonly shared information for occurrenc
 * common material information
 * common profile definitions
 * common shape representations
-
-
 <!-- end of short definition -->
 
 It is used to define a rail specification, or rail style (the specific product information that is common to all occurrences of that rail type). Rail types may be exchanged without being already assigned to occurrences.

@@ -3,7 +3,6 @@
 The _IfcCompositeProfileDef_ defines the profile by composition of other profiles. The composition is given by a set of at least two other profile definitions. Any profile definition (except for another composite profile) can be used to construct the composite.
 <!-- end of short definition -->
 
-
 > HISTORY New entity in IFC2x.
 
 Figure 314 illustrates the composite profile definition. The _IfcCompositeProfileDef_ does not define an own position coordinate system, it is directly defined in the underlying coordinate system. The underlying coordinate system is defined by the swept surface or swept area solid that uses the profile definition. It is the xy plane of either:

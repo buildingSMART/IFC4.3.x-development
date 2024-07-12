@@ -3,7 +3,6 @@
 Enumeration of Track Elements types.
 <!-- end of short definition -->
 
-
 ## Items
 
 ### TRACKENDOFALIGNMENT

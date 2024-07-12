@@ -3,7 +3,6 @@
 Instances of _IfcStructuralPointConnection_ describe structural nodes or point supports.
 <!-- end of short definition -->
 
-
 > HISTORY New entity in IFC2x2.
 
 { .change-ifc2x4}

@@ -5,7 +5,6 @@ The _IfcToroidalSurface_ is a bounded elementary surface. It is constructed by c
 * _SELF\IfcElementarySurface.Position_: The location and orientation of the axis system for the primitive.
 * _SELF\IfcElementarySurface.Position.Location_: The center of the toroidal surface.
 * _SELF\IfcElementarySurface.Position.Position[3]:_ The axis of revolution of the toroidal surface
-
 <!-- end of short definition -->
 
 { .extDef}

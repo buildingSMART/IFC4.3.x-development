@@ -3,8 +3,6 @@
 Base quantities that are common to the definition of all occurrences of site.
 <!-- end of short definition -->
 
-
-
 ## Comments
 
 ### GrossArea

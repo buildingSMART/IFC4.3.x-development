@@ -3,7 +3,6 @@
 An _IfcFace_ is topological entity used to define surface, bounded by loops, of a shell.
 <!-- end of short definition -->
 
-
 > NOTE In a correctly constructed boundary representation model the face normals will point out of the solid and every single edge is used twice once forwards and once backwards. The face normal is solely defined by the consequitive orientations of the _IfcEdge_'s and _IfcOrientedEdge_'s that bound the face. If all the edges of the face are connected in a counter clockwise manner following the edge orientations the face normal will point outward. The orientation of the _IfcFaceSurface_, or the value of the _IfcFaceSurface.SameSense_ attribute have no effect on the orientation of the face.
 
 { .extDef}

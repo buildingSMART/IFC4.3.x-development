@@ -2,6 +2,7 @@
 
 Properties for history and operating schedules of thermostats.
 <!-- end of short definition -->
+
  HISTORY: Added in IFC4.
 
 

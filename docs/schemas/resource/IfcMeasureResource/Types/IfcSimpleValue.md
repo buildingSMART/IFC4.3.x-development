@@ -3,7 +3,6 @@
 _IfcSimpleValue_ is a select type for selecting between simple value types.
 <!-- end of short definition -->
 
-
 SELECT
 
 * _IfcInteger_: Defined type of simple type INTEGER.

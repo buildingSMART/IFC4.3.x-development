@@ -3,7 +3,6 @@
 _IfcAppliedValueSelect_ defines a value to be calculated within a formula.
 <!-- end of short definition -->
 
-
 Types are used as follows:
 
 * _IfcValue_: A constant value using project default units.

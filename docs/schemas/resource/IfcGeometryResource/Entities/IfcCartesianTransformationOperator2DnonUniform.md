@@ -4,7 +4,6 @@ A Cartesian transformation operator 2d non uniform defines a geometric transform
 
 * _SELF\IfcCartesianTransformationOperator.Scale_: the x axis scale factor
 * _Scale2_: the y axis scale factor
-
 <!-- end of short definition -->
 
 If the _Scale_ factor (at supertype _IfcCartesianTransformationOperator_) is omitted, it defaults to 1.0. If the _Scale2_ factor is omitted, it defaults to the value of _Scale_ (the x axis scale factor).

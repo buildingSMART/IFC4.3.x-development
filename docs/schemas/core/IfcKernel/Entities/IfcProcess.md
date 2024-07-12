@@ -3,7 +3,6 @@
 _IfcProcess_ is defined as one individual activity or event, that is ordered in time, that has sequence relationships with other processes, which transforms input in output, and may connect to other processes through input output relationships. An _IfcProcess_ can be an activity (or task), or an event. It takes usually place in building construction with the intent of designing, costing, acquiring, constructing, or maintaining products or other and similar tasks or procedures. Figure 1 illustrates process relationships.
 <!-- end of short definition -->
 
-
 { .extDef}
 > NOTE Definition according to ISO9000:
 > A process is a set of activities that are interrelated or that interact with one another. Processes use resources to transform inputs into outputs. Processes are interconnected because the output from one process becomes the input for another process. In effect, processes are "glued" together by means of such input output relationships.

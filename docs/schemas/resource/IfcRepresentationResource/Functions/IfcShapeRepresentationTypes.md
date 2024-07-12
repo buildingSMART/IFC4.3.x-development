@@ -3,7 +3,6 @@
 The function gets the representation type and the assigned set of representation items as input and verifies whether the correct items are assigned according to the representation type given.
 <!-- end of short definition -->
 
-
 > HISTORY New function in IFC2x.
 
 > IFC2x3 CHANGE The check for _MappedRepresentation_ has been changed to allow multiple mapped items, and the _Annotation2D_ has been added.

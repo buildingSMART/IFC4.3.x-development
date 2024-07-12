@@ -3,7 +3,6 @@
 _IfcRotationalStiffnessMeasure_ is a measure of rotational stiffness.
 <!-- end of short definition -->
 
-
 Usually measured in Nm/rad.
 
 Type: REAL

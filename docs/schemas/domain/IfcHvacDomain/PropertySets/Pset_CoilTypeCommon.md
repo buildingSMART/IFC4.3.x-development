@@ -3,8 +3,6 @@
 Coil type common attributes.
 <!-- end of short definition -->
 
-
-
 ## Comments
 
 ### AirFlowRateRange

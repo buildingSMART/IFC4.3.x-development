@@ -1,7 +1,6 @@
 # PEnum_ControllerProportionalType
-
-
 <!-- end of short definition -->
+
 ## Items
 
 ### PROPORTIONAL

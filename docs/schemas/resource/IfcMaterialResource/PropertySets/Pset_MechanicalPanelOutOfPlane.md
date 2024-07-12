@@ -3,7 +3,6 @@
 Properties for Mechanica lPanels Out Of Plane.
 <!-- end of short definition -->
 
-
 ## Comments
 
 ### CompressiveStrength

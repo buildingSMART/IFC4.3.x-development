@@ -3,7 +3,6 @@
 This enumeration defines the different types of planar elements an _IfcPlate_ or _IfcPlateType_ object can fulfill.
 <!-- end of short definition -->
 
-
 > HISTORY New Enumeration in IFC2x2.
 
 { .change-ifc2x3}

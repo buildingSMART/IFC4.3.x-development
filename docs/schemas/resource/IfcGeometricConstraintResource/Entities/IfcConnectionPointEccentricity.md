@@ -5,7 +5,6 @@ _IfcConnectionPointEccentricity_ is used to describe the geometric constraints t
 * providing the _PointOnRelatingElement_ and the _PointOnRelatedElement_, where both point coordinates are not identical within a common parent coordinate system (latestly within the world coordinate system),
 * providing the _PointOnRelatingElement_ and the three distance measures, _EccentricityInX_, _EccentricityInY_, and _EccentricityInZ_ (or only _EccentricityInX_, and _EccentricityInY_ if the underlying coordinate system is two-dimensional), or
 * providing both.
-
 <!-- end of short definition -->
 
 > NOTE  If both, _PointOnRelatedElement_, and _EccentricityInX_, _EccentricityInY_, (_EccentricityInZ_) are provided, the values should be consistent. In case of any non-consistency, the calculated distance between _PointOnRelatingElement_ and _PointOnRelatedElement_ takes precedence.

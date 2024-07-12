@@ -3,7 +3,6 @@
 This is a collection of properties applicable to section profile definitions.
 <!-- end of short definition -->
 
-
 > HISTORY New entity in IFC2x2.
 
 { .change-ifc2x4}

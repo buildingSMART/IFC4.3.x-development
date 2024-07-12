@@ -3,7 +3,6 @@
 Closed section which blocks the flow of fluid through the section/structure
 <!-- end of short definition -->
 
-
 ## Items
 
 ### DIAL

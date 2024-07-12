@@ -3,7 +3,6 @@
 This enumeration defines the distribution of load values in a surface action or reaction.
 <!-- end of short definition -->
 
-
 > HISTORY New enumeration in IFC4
 
 ## Items

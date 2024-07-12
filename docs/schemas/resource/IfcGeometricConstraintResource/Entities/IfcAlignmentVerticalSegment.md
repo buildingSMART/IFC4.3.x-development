@@ -3,7 +3,6 @@
 Individual segment along the _IfcAlignmentVertical_, being defined in the distance-along/z coordinate space.
 <!-- end of short definition -->
 
-
 The vertical alignment is defined by segments that connects end-to-start. The vertical alignment curve geometry is defined in a plane with x = distance along horizontal, the y = height (or elevation). The transition at the segment connection is not enforced to be tangential, The _IfcSegment_ _Transition_ enumeration specifies the type of transition explicitly.
 
 The following vertical segment types are defined:

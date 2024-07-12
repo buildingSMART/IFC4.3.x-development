@@ -3,7 +3,6 @@
 _IfcRelConnectsPortToElement_ is a relationship between a distribution element and dynamically connected ports where connections are realised to other distribution elements.
 <!-- end of short definition -->
 
-
 Ports contained in different elements are connected to each other using the _IfcRelConnectsPorts_ relationship.
 
 > NOTE See _IfcRelNests_ for its usages to represent an ordered collection of ports that are contained by an element and relevant subtypes of _IfcDistributionElement_ for examples and port use definition sections.

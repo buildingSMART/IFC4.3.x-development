@@ -3,7 +3,6 @@
 An _IfcPropertyDependencyRelationship_ describes an identified dependency between the value of one property and that of another.
 <!-- end of short definition -->
 
-
 > HISTORY New entity in IFC2x2
 
 { .change-ifc2x4}

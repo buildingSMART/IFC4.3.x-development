@@ -3,7 +3,6 @@
 An _IfcPresentationLayerWithStyle_ extends the presentation layer assignment with capabilities to define visibility control, access control and common style information.
 <!-- end of short definition -->
 
-
 The visibility control allows to define a layer to be either 'on' or 'off', and/or 'frozen' or 'not frozen'. The access control allows to block graphical entities from manipulations by setting a layer to be either 'blocked' or 'not blocked'. Common style information can be given to the layer.
 
 > NOTE Style information assigned to layers is often restricted to 'layer colour', 'curve font', and/or 'curve width'. These styles are assigned by using the _IfcCurveStyle_ within the _LayerStyles_.

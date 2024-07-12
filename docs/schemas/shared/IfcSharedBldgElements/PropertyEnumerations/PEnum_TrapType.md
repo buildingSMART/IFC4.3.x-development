@@ -1,7 +1,6 @@
 # PEnum_TrapType
-
-
 <!-- end of short definition -->
+
 ## Items
 
 ### NONE

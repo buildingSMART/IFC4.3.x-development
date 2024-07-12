@@ -3,7 +3,6 @@
 Properties about Mechanical Beam in Plane Negative.
 <!-- end of short definition -->
 
-
 ## Comments
 
 ### BendingStrength

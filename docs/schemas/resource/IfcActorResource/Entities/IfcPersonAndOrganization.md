@@ -3,7 +3,6 @@
 This entity represents a person acting on behalf of an organization.
 <!-- end of short definition -->
 
-
 > NOTE Entity adapted from **person_and_organization** defined in ISO 10303-41.
 
 > HISTORY New entity in IFC1.5.1.

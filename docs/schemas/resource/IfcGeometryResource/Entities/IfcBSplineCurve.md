@@ -3,7 +3,6 @@
 The _IfcBSplineCurve_ is a spline curve parameterized by spline functions.
 <!-- end of short definition -->
 
-
 Figure 1 illustrates a B-spline curve.
 
 > NOTE Figure quoted from ISO 10303-42.

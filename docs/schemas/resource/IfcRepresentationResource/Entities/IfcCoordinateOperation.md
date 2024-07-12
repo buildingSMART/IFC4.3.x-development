@@ -3,7 +3,6 @@
 _IfcCoordinateOperation_ is an abstract supertype to handle any operation (transformation or conversion) between two coordinate reference systems (CRSs).
 <!-- end of short definition -->
 
-
 By convention, a coordinate operation is given between a **source CRS**, being the more local (or child) CRS; and **target CRS**, being the more remote (or parent) CRS.
 
 > EXAMPLE A common coordinate operation is the one between the local engineering coordinate system of a construction project and any map or other coordinate reference system.

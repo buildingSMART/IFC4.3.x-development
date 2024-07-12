@@ -3,7 +3,6 @@
 An _IfcCardinalPointReference_ is an index reference to significant points of a section profile. This index is used to describe the spatial relationship between the section of a member and a reference axis of the same member.
 <!-- end of short definition -->
 
-
 > HISTORY  New Type in IFC4.
 
 Indexes 1...9 refer to points at the bounding box of a profile. Indexes 10...19 refer to points defined by geometric centroid (usually centre of gravity) and shear centre, and their combinations with bounding box coordinates. In particular, the following index values are specified in this specification:

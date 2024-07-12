@@ -4,7 +4,6 @@ The _IfcFontVariant_ type defines whether the normal or the small-caps faces wit
 
 * normal
 * small-caps
-
 <!-- end of short definition -->
 
 { .extDef}

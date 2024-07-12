@@ -3,8 +3,6 @@
 Properties common to the definition of all occurrences of IfcRamp.
 <!-- end of short definition -->
 
-
-
 ## Comments
 
 ### FireExit

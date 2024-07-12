@@ -3,7 +3,6 @@
 Enumeration of Caisson Foundation Types.
 <!-- end of short definition -->
 
-
 ## Items
 
 ### WELL

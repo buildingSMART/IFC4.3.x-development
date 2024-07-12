@@ -1,7 +1,6 @@
 # PEnum_ControllerTypeProgrammable
-
-
 <!-- end of short definition -->
+
 ## Items
 
 ### PRIMARY

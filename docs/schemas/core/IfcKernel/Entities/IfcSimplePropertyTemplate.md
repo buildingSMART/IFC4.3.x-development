@@ -6,7 +6,6 @@ The _IfcSimplePropertyTemplate_ defines the template for all dynamically extensi
 * _SecondaryUnit_
 * _PrimaryMeasureType_
 * _SecondaryMeasureType_
-
 <!-- end of short definition -->
 
 is determined by the _TemplateType_. The attributes Enumerators and Expression only apply to instances of _IfcSimplePropertyTemplate_ having a particular _TemplateType_. The _TemplateType_ also controls which subtype of either _IfcSimpleProperty_ or _IfcPhysicalSimpleQuantity_ shall be used for property occurrences corresponding to this template.

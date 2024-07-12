@@ -3,7 +3,6 @@
 Enumeration describing the typing of a project
 <!-- end of short definition -->
 
-
 ## Items
 
 ### NEWBUILD

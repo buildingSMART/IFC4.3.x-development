@@ -3,7 +3,6 @@
 A window panel is a casement, that is, a component, fixed or opening, consisting essentially of a frame and the infilling. The infilling of a window panel is normally glazing. The way of operation is defined in the operation type.
 <!-- end of short definition -->
 
-
 The _IfcWindowPanelProperties_ are used to parametrically describe the shape and operation of window panels. The parametric definition can be added solely or additionally to the explicit shape representation of the window.
 
 The _IfcWindowType_ can define windows consisting of more then one panel. In this case, one instance of _IfcWindowPanelProperties_ has to be included for each window panel. The _PanelPosition_ attribute, in conjunction with the _IfcWindowType_.OperationType attribute, determines to which panel the _IfcWindowPanelProperties_apply. The _IfcWindowPanelProperties_ are included in the list of properties (_HasPropertySets_) of the _IfcWindowType_. More information about the window panel can be included in the same list of the _IfcWindowType_ using the _IfcPropertySet_ for dynamic extensions.

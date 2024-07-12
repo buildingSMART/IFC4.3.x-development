@@ -3,7 +3,6 @@
 This objectified relationship, _IfcRelContainedInSpatialStructure_, is used to assign elements to a certain level of the spatial project structure. Any element can only be assigned once to a certain level of the spatial structure. The question, which level is relevant for which type of element, can only be answered within the context of a particular project and might vary within the various regions.
 <!-- end of short definition -->
 
-
 > EXAMPLE A multi-storey space is contained (or belongs to) the building storey at which its ground level is, but it is referenced by all the other building storeys, in which it spans. A lift shaft might be contained by the basement, but referenced by all storeys, through which it spans.
 
 The containment relationship of an element within a spatial structure has to be a hierarchical relationship; an element can only be contained within a single spatial structure element. The reference relationship between an element and the spatial structure need not be hierarchical; that is, an element can reference many spatial structure elements.

@@ -3,7 +3,6 @@
 The _IfcBSplineSurfaceWithKnots_ is a general form of rational or polynomial parametric surface in which the knot values are explicitly given.
 <!-- end of short definition -->
 
-
 { .extDef}
 > NOTE Definition according to ISO/CD 10303-42:1992
 > This is a B-spline surface in which the knot values are explicitly given. This subtype shall be used to represent non-uniform B-spline surfaces, and may also be used for other knot types.

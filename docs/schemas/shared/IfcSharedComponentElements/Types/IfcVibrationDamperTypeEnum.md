@@ -3,7 +3,6 @@
 Enumeration of Vibration Damper Types.
 <!-- end of short definition -->
 
-
 ## Items
 
 ### BENDING_YIELD

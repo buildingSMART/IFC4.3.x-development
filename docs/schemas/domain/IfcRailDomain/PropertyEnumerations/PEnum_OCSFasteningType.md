@@ -3,7 +3,6 @@
 Fastening used in Overhead Contact System.
 <!-- end of short definition -->
 
-
 ## Items
 
 ### SUPPORT_FITTING

@@ -3,7 +3,6 @@
 An _IfcElementQuantity_ defines a set of derived measures of an element's physical property. Elements could be spatial structure elements (like buildings, storeys, or spaces) or building elements (like walls, slabs, finishes). The _IfcElementQuantity_ gets assigned to the element by using the _IfcRelDefinesByProperties_ relationship.
 <!-- end of short definition -->
 
-
 The optional _MethodOfMeasurement_ attribute defines the code, e.g. from a standard method of measurement, which had been used to calculate the element quantity.
 
 > NOTE The recognizable values for the name and the method of measurement attributes have to be agreed upon in further agreement documents, such as implementers agreements. Some of these agreements might be limited to a certain region, to which the method of measurement applies.

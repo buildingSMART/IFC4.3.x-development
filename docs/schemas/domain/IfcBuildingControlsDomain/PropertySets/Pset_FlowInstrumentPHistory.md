@@ -2,6 +2,7 @@
 
 Properties for history of flow instrument values.
 <!-- end of short definition -->
+
  HISTORY: Added in IFC4.
 
 

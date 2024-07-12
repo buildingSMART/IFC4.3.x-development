@@ -4,7 +4,6 @@ The objectified relationship _IfcRelAssignsToProduct_ handles the assignment of
 
 * 'Context' : Assignment of a context specific representation, such as of structural members to a different context representation (with potentially different decomposition breakdown) such as of building elements for a specific context specific representation. 
 * 'View' : Assignment of a product (via _RelatingProduct_) that is decomposed according to a discipline view, to another product (via _RelatedObjects_) that is decomposed according to a different discipline view. An example is the assignment of the architectural slab to a different decomposition of the pre manufactured sections of a slab (under a precast concrete discipline view).
-
 <!-- end of short definition -->
 
 > HISTORY New entity in IFC2x

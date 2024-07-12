@@ -3,7 +3,6 @@
 The _IfcElementAssembly_ represents complex element assemblies aggregated from several elements, such as discrete elements, building elements, or other elements.
 <!-- end of short definition -->
 
-
 > EXAMPLE Steel construction assemblies, such as trusses and different kinds of frames, can be represented by the _IfcElementAssembly_ entity. Premanufactured or precast elements are examples of the general _IfcElementAssembly_ entity
 
 > NOTE The _IfcElementAssembly_ is a general purpose entity that is required to be decomposed. Also other subtypes of _IfcElement_ can be decomposed.

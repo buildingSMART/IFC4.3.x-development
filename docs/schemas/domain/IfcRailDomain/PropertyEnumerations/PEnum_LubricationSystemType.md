@@ -3,7 +3,6 @@
 Enumeration of lubrication system types.
 <!-- end of short definition -->
 
-
 ## Items
 
 ### ACTIVE_LUBRICATION

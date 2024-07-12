@@ -3,7 +3,6 @@
 An _IfcTextureMap_ provides the mapping of the 2-dimensional texture coordinates to the surface onto which it is mapped. It is used for mapping the texture to surfaces of vertex based geometry models, such as
 <!-- end of short definition -->
 
-
 * _IfcFacetedBrep_
 * _IfcFacetedBrepWithVoids_
 * _IfcFaceBasedSurfaceModel_

@@ -3,7 +3,6 @@
 An _IfcLengthMeasure_ is the value of a distance.
 <!-- end of short definition -->
 
-
 Type: REAL
 
 > NOTE Type adapted from **length_measure** defined in ISO 10303-41.

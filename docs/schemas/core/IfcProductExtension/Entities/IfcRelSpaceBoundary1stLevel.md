@@ -6,7 +6,6 @@ The 1st level space boundary defines the physical or virtual delimiter of a spac
 * 1st level space boundaries do not consider any change of material in the bounding building elements, or different spaces/zones behind a wall or slab (floor or ceiling).
 * 1st level space boundaries are differentiated in two ways: virtual or physical and internal,external, or undefined (internal and external) e.g. for a wall that is partially inside and outside.
 * 1st level space boundaries form a closed shell around the space (so long as the space is completely enclosed) and include overlapping boundaries representing openings (filled or not) in the building elements (see implementers agreement below).
-
 <!-- end of short definition -->
 
 1st level space boundaries define a space by its boundary surfaces without taking anything on the other side of the bounding elements into account.

@@ -3,7 +3,6 @@
 The objectified relationship, _IfcRelReferencedInSpatialStructure_ is used to assign elements in addition to those levels of the project spatial structure, in which they are referenced, but not primarily contained. It is also used to connect a system to the relevant spatial element that it serves.
 <!-- end of short definition -->
 
-
 > NOTE The primary containment relationship between an element and the spatial structure is handled by _IfcRelContainedInSpatialStructure_.
 
 Any element can be referenced to zero, one or several levels of the spatial structure. Whereas the _IfcRelContainedInSpatialStructure_ relationship is required to be hierarchical (an element can only be contained in exactly one spatial structure element), the _IfcRelReferencedInSpatialStructure_ is not restricted to be hierarchical.

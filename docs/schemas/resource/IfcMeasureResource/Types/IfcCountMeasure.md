@@ -3,7 +3,6 @@
 A count measure is the value of a count of items.
 <!-- end of short definition -->
 
-
 Type: INTEGER
 
 > NOTE Type adapted from **count_measure** defined in ISO 10303-41.

@@ -5,7 +5,6 @@ The _IfcSphericalSurface_ is a bounded elementary surface. The inherited _Positi
 * _SELF\IfcElementarySurface.Position_: The location and orientation of the axis system for the primitive.
 * _SELF\IfcElementarySurface.Position.Location_: The center of the spherical surface.
 * _SELF\IfcElementarySurface.Position.Position[3]:_ The z axis points at its positive direction towards the north pole, and by its negative directions towards the south pole.
-
 <!-- end of short definition -->
 
 { .extDef}

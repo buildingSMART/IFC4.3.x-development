@@ -1,7 +1,6 @@
 # PEnum_EngineEnergySource
-
-
 <!-- end of short definition -->
+
 ## Items
 
 ### DIESEL

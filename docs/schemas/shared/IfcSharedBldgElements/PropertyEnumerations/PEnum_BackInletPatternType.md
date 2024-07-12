@@ -1,7 +1,6 @@
 # PEnum_BackInletPatternType
-
-
 <!-- end of short definition -->
+
 ## Items
 
 ### NONE

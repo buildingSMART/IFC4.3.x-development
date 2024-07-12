@@ -1,7 +1,6 @@
 # PEnum_PictogramEscapeDirectionType
-
-
 <!-- end of short definition -->
+
 ## Items
 
 ### RIGHTARROW

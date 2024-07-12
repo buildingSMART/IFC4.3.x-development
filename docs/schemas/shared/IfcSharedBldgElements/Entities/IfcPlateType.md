@@ -6,7 +6,6 @@ The element type _IfcPlateType_ defines commonly shared information for occurren
 * common material information
 * common material layer definitions
 * common shape representations
-
 <!-- end of short definition -->
 
 It is used to define a plate specification (i.e. the specific product information, that is common to all occurrences of that product type). Plate types may be exchanged without being already assigned to occurrences.

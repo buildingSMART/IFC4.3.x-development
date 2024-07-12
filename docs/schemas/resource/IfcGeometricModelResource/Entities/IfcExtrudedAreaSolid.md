@@ -3,7 +3,6 @@
 The _IfcExtrudedAreaSolid_ is defined by sweeping a cross section provided by a profile definition. The direction of the extrusion is given by the _ExtrudedDirection_ attribute and the length of the extrusion is given by the _Depth_ attribute. If the planar area has inner boundaries (holes defined), then those holes shall be swept into holes of the solid.
 <!-- end of short definition -->
 
-
 The resulting solid is positioned by the _IfcSweptAreaSolid_._Position_ relative to the object coordinate system. If provided, it allows to reposition the extruded solid. If not provided, it defaults to the current object coordinate system. The _ExtrudedDirection_ is given within the position coordinate system as defined by _IfcSweptAreaSolid_._Position_. The extruded direction can be any direction which is not perpendicular to the z axis of the position coordinate system.
 
 ![extruded area solid](../../../../figures/ifcextrudedareasolid-fig1.png)

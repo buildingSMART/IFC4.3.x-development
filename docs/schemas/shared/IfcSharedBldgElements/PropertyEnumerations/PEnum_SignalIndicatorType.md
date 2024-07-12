@@ -3,7 +3,6 @@
 Enumeration of signal indicator types.
 <!-- end of short definition -->
 
-
 ## Items
 
 ### DEPARTUREINDICATOR

@@ -3,7 +3,6 @@
 The _IfcGeometricRepresentationContext_ defines the context that applies to several shape representations of products within a project. It defines the type of the context in which the shape representation is defined, and the numeric precision applicable to the geometric representation items defined in this context. In addition it can be used to offset the project coordinate system from a global point of origin, using the _WorldCoordinateSystem_ attribute. The main representation context may also provide the true north direction, see Figure 1.
 <!-- end of short definition -->
 
-
 ![TrueNorth](../../../../figures/ifcgeometricrepresentationcontext_truenorth.png)
 
 Figure 1 — Definition of the true north direction

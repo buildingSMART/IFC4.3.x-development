@@ -3,7 +3,6 @@
 The _IfcIndexedPolygonalFaceWithVoids_ is a compact representation of a planar face with inner loops, being part of a face set.
 <!-- end of short definition -->
 
-
 > HISTORY New entity in IFC4 Addendum 2.
 
 ## Attributes

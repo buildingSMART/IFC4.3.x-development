@@ -3,7 +3,6 @@
 Specifies how the transition shall occur between the previous and this event.
 <!-- end of short definition -->
 
-
 ## Items
 
 ### CONST

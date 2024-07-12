@@ -3,8 +3,6 @@
 Air to Air Heat Recovery type common attributes.
 <!-- end of short definition -->
 
-
-
 ## Comments
 
 ### OperationalTemperatureRange

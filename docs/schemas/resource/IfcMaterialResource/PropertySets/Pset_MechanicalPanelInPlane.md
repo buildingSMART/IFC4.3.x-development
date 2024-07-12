@@ -3,7 +3,6 @@
 Properties for Mechanical Panels In Plane.
 <!-- end of short definition -->
 
-
 ## Comments
 
 ### CompressiveStrength

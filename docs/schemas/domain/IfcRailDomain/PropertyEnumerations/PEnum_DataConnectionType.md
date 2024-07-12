@@ -3,7 +3,6 @@
 Enumeration of data connection types.
 <!-- end of short definition -->
 
-
 ## Items
 
 ### COPPER

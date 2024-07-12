@@ -3,7 +3,6 @@
 The presentation layer assignment provides the layer name (and optionally a description and an identifier) for a collection of geometric representation items. The _IfcPresentationLayerAssignment_ corresponds to the term "CAD Layer" and is used mainly for grouping and visibility control.
 <!-- end of short definition -->
 
-
 > NOTE The use of presentation layer shall be restricted to simple grouping and displaying purposes.
 
 Visibility and access control and layer style assignment (colour, line style, line width) is handled by the subtype _IfcPresentationLayerWithStyle_.

@@ -3,7 +3,6 @@
 _IfcAsymmetricIShapeProfileDef_ defines a section profile that provides the defining parameters of a singly symmetric I-shaped section. Its parameters and orientation relative to the position coordinate system are according to the following illustration. The centre of the position coordinate system is in the profile's centre of the bounding box.
 <!-- end of short definition -->
 
-
 The overall width of the profile is implicitly given by the maximum of the bottom flange width and the top flange width.
 
 _IfcAsymmetricIShapeProfileDef_ can also be used to model rail profiles if the application scenario does not require a full explicit shape model of the rail profile. Alternatively, _IfcArbitraryClosedProfileDef_ can be used to provide the exact shape of rail profiles. Either way, a reference to an external document or library should be provided to further define the profile as described at _IfcProfileDef_.

@@ -3,8 +3,6 @@
 Gutter segment type common attributes.
 <!-- end of short definition -->
 
-
-
 ## Comments
 
 ### Slope

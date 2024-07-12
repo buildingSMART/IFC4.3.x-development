@@ -3,7 +3,6 @@
 The _IfcBSplineCurveWithKnots_ is a spline curve parameterized by spline functions for which the knot values are explicitly given.
 <!-- end of short definition -->
 
-
 { .extDef}
 > NOTE Definition according to ISO/CD 10303-42:1992
 > This is the type of b-spline curve for which the knot values are explicitly given. This subtype shall be used to represent non-uniform B-spline curves and may be used for other knot types.

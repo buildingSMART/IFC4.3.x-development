@@ -6,7 +6,6 @@ The element type _IfcBeamType_ defines commonly shared information for occurrenc
 * common material information
 * common profile definitions
 * common shape representations
-
 <!-- end of short definition -->
 
 It is used to define a beam specification, or beam style (the specific product information that is common to all occurrences of that beam type). Beam types may be exchanged without being already assigned to occurrences.

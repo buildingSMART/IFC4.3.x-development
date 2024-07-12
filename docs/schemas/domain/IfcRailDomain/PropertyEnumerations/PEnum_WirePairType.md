@@ -3,7 +3,6 @@
 Enumeration of wire pair types.
 <!-- end of short definition -->
 
-
 ## Items
 
 ### COAXIAL

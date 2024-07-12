@@ -1,7 +1,6 @@
 # IfcDistributionBoardTypeEnum
-
-
 <!-- end of short definition -->
+
 ## Items
 
 ### SWITCHBOARD

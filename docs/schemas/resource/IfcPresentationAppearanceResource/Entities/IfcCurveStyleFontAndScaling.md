@@ -3,7 +3,6 @@
 The _IfcCurveStyleFontAndScaling_ allows for the reuse of the same curve style definition in several sizes. The definition of the _CurveFontScale_ is the scaling of a base curve style pattern to be used as a new or derived curve style pattern.
 <!-- end of short definition -->
 
-
 > NOTE The _CurveFontScale_ should not be mixed up with the target plot scale.
 
 An example for _IfcCurveStyleFontAndScaling_ is the sizing of a basic curve style dash pattern 'dash' (visible 0.01m, invisible 0.005m) into 'dash large' with _CurveFontScale_ = 2 (resulting in visible 0.02m, invisible 0.01m), and into 'dash small' with _CurveFontScale_ = 0.5 (resulting in visible 0.005m, invisible 0.0025m).

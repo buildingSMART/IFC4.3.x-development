@@ -3,7 +3,6 @@
 A port provides the means for an element to connect to other elements.
 <!-- end of short definition -->
 
-
 An _IfcPort_ is associated with an _IfcElement_ it belongs to through the objectified relationship _IfcRelNests_ if such port is fixed. Exactly two ports, belonging to two different elements, are connected with each other through the objectified relationship _IfcRelConnectsPorts_.
 
 An instance of _IfcElement_ may have one or more points at which it connects to other instances of _IfcElement_. An instance of _IfcPort_ is located at a point where a connection can occur. The location of the port is determined in the context of the local coordinate system of the element to which it belongs. As a subordinate part being fully dependent on the master element the _IfcPort_ shall have no independent containment relationship to the spatial structure.

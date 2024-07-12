@@ -3,7 +3,6 @@
 An inventory is a list of items within an enterprise.
 <!-- end of short definition -->
 
-
 Various types of inventory can be included. These are identified by the range of values within the inventory type enumeration which includes space, asset, and furniture. User defined inventories can also be defined for lists of particular types of element such as may be required in operating and maintenance instructions. Such inventories should be constrained to contain a list of elements of a restricted type.
 
 There are a number of actors that can be associated with an inventory, each actor having a role. Actors within the scope of the project are indicated using the IfcRelAssignsToActor relationship in which case roles should be defined through the IfcActorRole class; otherwise principal actors are identified as attributes of the class. In the existence of both, direct attributes take precedence.

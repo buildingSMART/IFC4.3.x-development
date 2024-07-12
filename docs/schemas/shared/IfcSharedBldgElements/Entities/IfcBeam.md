@@ -3,7 +3,6 @@
 An _IfcBeam_ is typically a horizontal, or nearly horizontal, structural member that is capable of withstanding load primarily by resisting bending. It may also represent such a member from an architectural point of view. It is not required to be load bearing.
 <!-- end of short definition -->
 
-
 There are two main representations for beam occurrences:
 
  * _IfcBeam_ with _IfcMaterialProfileSetUsage_ is used for all occurrences of beams, that have a profile defined that is swept along a directrix. The profile might change uniformly by a taper definition along the directrix. The profile parameter and its cardinal point of insertion can be fully described by the _IfcMaterialProfileSetUsage_. These beams are always represented geometricly by an 'Axis' and a 'SweptSolid' or 'AdvancedSweptSolid' shape representation (or by a 'Clipping' geometry based on the swept solid), if a 3D geometric representation is assigned.

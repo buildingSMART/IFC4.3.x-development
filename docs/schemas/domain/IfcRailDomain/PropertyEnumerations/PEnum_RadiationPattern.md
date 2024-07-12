@@ -3,7 +3,6 @@
 Enumeration of antenna radiation patterns.
 <!-- end of short definition -->
 
-
 ## Items
 
 ### DIRECTIONAL

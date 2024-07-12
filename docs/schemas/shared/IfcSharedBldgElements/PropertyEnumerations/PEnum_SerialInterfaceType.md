@@ -1,7 +1,6 @@
 # PEnum_SerialInterfaceType
-
-
 <!-- end of short definition -->
+
 ## Items
 
 ### RS_232

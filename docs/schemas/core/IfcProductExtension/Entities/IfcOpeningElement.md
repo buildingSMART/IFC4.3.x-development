@@ -3,7 +3,6 @@
 The opening element stands for opening, recess or chase, all reflecting voids. It represents a void within any element that has physical manifestation. Openings can be inserted into walls, slabs, beams, columns, or other elements.
 <!-- end of short definition -->
 
-
 There are two different types of opening elements. The attribute _PredefinedType_ should be used to capture the differences:
 
 * an opening, where the thickness of the opening is greater or equal to the thickness of the element —

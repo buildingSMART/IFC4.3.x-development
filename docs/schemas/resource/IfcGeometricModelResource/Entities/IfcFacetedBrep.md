@@ -3,7 +3,6 @@
 The _IfcFacetedBrep_ is a manifold solid brep with the restriction that all faces are planar and bounded polygons.
 <!-- end of short definition -->
 
-
 ![faceted brep instantiation](../../../../figures/ifcfacetedbrep_01.png)
 
 Figure 1 — Diagram showing the use of <em>IfcFacetedBrep</em>

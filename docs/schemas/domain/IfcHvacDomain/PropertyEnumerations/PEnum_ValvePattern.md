@@ -1,7 +1,6 @@
 # PEnum_ValvePattern
-
-
 <!-- end of short definition -->
+
 ## Items
 
 ### SINGLEPORT

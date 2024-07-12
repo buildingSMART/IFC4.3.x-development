@@ -3,7 +3,6 @@
 The planar surface is an unbounded surface in the direction of _x_ and _y_. Bounded planar surfaces are defined by using a subtype of _IfcBoundedSurface_ with _BasisSurface_ being a plane.
 <!-- end of short definition -->
 
-
 { .extDef}
 > NOTE Definition according to ISO/CD 10303-42:1992
 > A plane is an unbounded surface with a constant normal. A plane is defined by a point on the plane and the normal direction to the plane. The data is to be interpreted as follows: <pre>

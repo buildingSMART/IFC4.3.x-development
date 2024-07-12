@@ -3,7 +3,6 @@
 Enumeration of line characteristics.
 <!-- end of short definition -->
 
-
 ## Items
 
 ### PASSENGER

@@ -3,7 +3,6 @@
 Enumeration of the different junctions used in railway track.
 <!-- end of short definition -->
 
-
 ## Items
 
 ### ISOLATED_JOINT

@@ -3,8 +3,6 @@
 The IfcAlignmentVerticalSegmentTypeEnum indicates the type of a segment of a vertical alignment segment (IfcAlignmentVerticalSegment).
 <!-- end of short definition -->
 
-
-
 | Vertical curvature | Segmenttype    | Enumeration Values |
 |:----|:------------------|:----------|
 | No vertical curvature | constant gradient    | CONSTANTGRADIENT |

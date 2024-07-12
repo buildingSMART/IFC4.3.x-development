@@ -3,7 +3,6 @@
 This enumeration defines the different types of referents.
 <!-- end of short definition -->
 
-
 ## Items
 
 ### KILOPOINT

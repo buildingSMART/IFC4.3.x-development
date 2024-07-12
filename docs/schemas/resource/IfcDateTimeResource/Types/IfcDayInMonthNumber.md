@@ -3,7 +3,6 @@
 _IfcDayInMonthNumber_ is an integer that defines the position of the specified day in a month.
 <!-- end of short definition -->
 
-
 Type: INTEGER
 
 > HISTORY New type in IFC1.5.1.

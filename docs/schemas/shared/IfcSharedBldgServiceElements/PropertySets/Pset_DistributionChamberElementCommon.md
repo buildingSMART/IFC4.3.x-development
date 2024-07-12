@@ -3,8 +3,6 @@
 Common properties of all occurrences of IfcDistributionChamberElement.
 <!-- end of short definition -->
 
-
-
 ## Comments
 
 ### Reference

@@ -3,7 +3,6 @@
 The property enumeration defines the types of bath that may be specified within the property set where.
 <!-- end of short definition -->
 
-
 ## Items
 
 ### DOMESTIC

@@ -3,7 +3,6 @@
 The parameterized profile definition defines a 2D position coordinate system to which the parameters of the different profiles relate to. All profiles are defined centric to the origin of the position coordinate system, or more specific, the origin [0.,0.] shall be in the center of the bounding box of the profile.
 <!-- end of short definition -->
 
-
 The _Position_ attribute of _IfcParameterizedProfileDef_ is used to position the profile within the XY plane of the underlying coordinate system of the swept surface geometry, the swept area solid or the sectioned spine. It can be used to position the profile at any point which becomes the origin [0.,0.,0.] of the extruded or rotated surface or solid.
 
 The _Position_ attribute should not be used if the transformation can be specified in a containing object instead. In particular, this applies if the _IfcParameterizedProfileDef_ is referenced as _SweptArea_ in subtypes of _IfcSweptAreaSolid_ or as _CrossSections_ in _IfcSectionedSpine_.

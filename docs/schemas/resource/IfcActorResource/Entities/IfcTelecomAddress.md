@@ -3,7 +3,6 @@
 This entity represents an address to which telephone, electronic mail and other forms of telecommunications should be addressed.
 <!-- end of short definition -->
 
-
 > HISTORY New entity in IFC2x.
 
 > IFC4 CHANGE Added attribute _MessagingIDs_. Type of attribute _WWWHomePageURL_ compatibly changed from _IfcLabel_ to _IfcURIReference_.

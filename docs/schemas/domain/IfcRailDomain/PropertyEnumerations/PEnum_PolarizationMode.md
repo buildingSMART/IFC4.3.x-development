@@ -3,7 +3,6 @@
 Enumeration of polarization modes.
 <!-- end of short definition -->
 
-
 ## Items
 
 ### DUALPOLARIZATION

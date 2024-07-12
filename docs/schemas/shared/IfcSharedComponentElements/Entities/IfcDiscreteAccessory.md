@@ -3,7 +3,6 @@
 A discrete accessory is a representation of different kinds of accessories included in or added to elements.
 <!-- end of short definition -->
 
-
 > HISTORY New entity in IFC2x2.
 
 { .change-ifc2x4}

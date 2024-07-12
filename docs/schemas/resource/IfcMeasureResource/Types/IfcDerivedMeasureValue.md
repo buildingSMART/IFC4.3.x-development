@@ -3,7 +3,6 @@
 _IfcDerivedMeasureValue_ is a select type for selecting between derived measure types.
 <!-- end of short definition -->
 
-
 SELECT
 
 * _IfcAbsorbedDoseMeasure_

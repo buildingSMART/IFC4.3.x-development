@@ -3,7 +3,6 @@
 _IfcMaterialUsageDefinition_ is a general supertype for all material related information items in IFC that have occurrence specific assignment parameters to assign a set of materials with shape parameters to a reference geometry item of that component.
 <!-- end of short definition -->
 
-
 There are two ways of assigning a set of materials with shape parameters:
 
 * a layer set to a reference curve - assigning a material layer set with material layers having a sequence and thickness parameter to a reference curve of an element - represented by the 'Axis' shape representation of that element

@@ -3,7 +3,6 @@
 Enumeration of optical splitter types.
 <!-- end of short definition -->
 
-
 ## Items
 
 ### MULTIMODE

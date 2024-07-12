@@ -3,7 +3,6 @@
 Enumeration of track characteristics.
 <!-- end of short definition -->
 
-
 ## Items
 
 ### NORMAL

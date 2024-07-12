@@ -3,7 +3,6 @@
 Enumeration of railway balise types.
 <!-- end of short definition -->
 
-
 ## Items
 
 ### ACTIVEBALISE

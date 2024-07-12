@@ -3,7 +3,6 @@
 The _IfcCableFittingTypeEnum_ defines the range of different types of cable fitting that can be specified.
 <!-- end of short definition -->
 
-
 > HISTORY New type in IFC4.
 
 ## Items

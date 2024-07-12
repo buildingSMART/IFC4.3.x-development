@@ -3,8 +3,6 @@
 Chiller performance history attributes.
 <!-- end of short definition -->
 
-
-
 ## Comments
 
 ### Capacity

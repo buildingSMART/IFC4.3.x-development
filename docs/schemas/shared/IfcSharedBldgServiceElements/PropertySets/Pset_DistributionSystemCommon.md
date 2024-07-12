@@ -3,8 +3,6 @@
 Distribution system occurrence attributes attached to an instance of IfcDistributionSystem.
 <!-- end of short definition -->
 
-
-
 ## Comments
 
 ### Reference

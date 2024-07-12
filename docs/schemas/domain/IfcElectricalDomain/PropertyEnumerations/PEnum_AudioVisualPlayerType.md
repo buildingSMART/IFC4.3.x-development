@@ -1,7 +1,6 @@
 # PEnum_AudioVisualPlayerType
-
-
 <!-- end of short definition -->
+
 ## Items
 
 ### AUDIO

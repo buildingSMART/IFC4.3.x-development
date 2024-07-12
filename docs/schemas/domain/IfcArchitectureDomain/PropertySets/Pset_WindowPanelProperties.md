@@ -3,7 +3,6 @@
 Properties of the window panel.
 <!-- end of short definition -->
 
-
 > HISTORY New property set in IFC4.3.2.0 to replace the entity IfcWindowPanelProperties
 
 ## Comments

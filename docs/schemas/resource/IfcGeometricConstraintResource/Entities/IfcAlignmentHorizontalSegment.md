@@ -3,7 +3,6 @@
 Individual segment along the _IfcAlignmentHorizontal_, being defined in the x/y coordinate space. Each single horizontal alignment segment has an optional associated segment definition. The placement of _IfcAlignmentHorizontalSegment_ and the _IfcCurveSegment_ _StartPlacement_ correspond to each other.
 <!-- end of short definition -->
 
-
 The following information can be calculated (and is therefore not exchanged explicitly to avoid redundancy and inconsistencies)
 
 * the end point (from start point, direction, segment length and curve parameter)

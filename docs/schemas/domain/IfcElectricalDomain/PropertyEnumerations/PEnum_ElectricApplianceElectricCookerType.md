@@ -1,7 +1,6 @@
 # PEnum_ElectricApplianceElectricCookerType
-
-
 <!-- end of short definition -->
+
 ## Items
 
 ### STEAMCOOKER

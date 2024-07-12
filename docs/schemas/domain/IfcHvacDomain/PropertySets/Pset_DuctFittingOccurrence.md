@@ -3,8 +3,6 @@
 Duct fitting occurrence attributes.
 <!-- end of short definition -->
 
-
-
 ## Comments
 
 ### Color

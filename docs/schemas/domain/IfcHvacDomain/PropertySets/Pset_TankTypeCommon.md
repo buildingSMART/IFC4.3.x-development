@@ -3,8 +3,6 @@
 Common attributes of a tank type.
 <!-- end of short definition -->
 
-
-
 ## Comments
 
 ### NumberOfSections

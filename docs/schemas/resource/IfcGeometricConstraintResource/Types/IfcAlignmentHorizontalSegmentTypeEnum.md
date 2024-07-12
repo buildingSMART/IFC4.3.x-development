@@ -3,7 +3,6 @@
 The IfcAlignmentHorizontalSegmentTypeEnum indicates the type of a segment of a horizontal alignment segment (IfcAlignmentHorizontalSegment). Horizontal segments can be viewed from a geometric perspective and from a kinematic perspective. In recent times the kinematic perspective gained importance. The enumerations are detailed according to this development especially in modern track design.
 <!-- end of short definition -->
 
-
 **Kinematic perspective on horizontal alignment segments**
 
 The central parameter of the kinematic perspective is lateral acceleration of the vehicle induced by change of direction while driving. In the horizontal layout this is the represented by the curvature of the segment. According to the curvature value the following categorization can be made:

@@ -3,7 +3,6 @@
 This enumeration defines the different ways how path based elements (such as layered _IfcWall_ elements) can connect, as shown in Figure 1.
 <!-- end of short definition -->
 
-
 > HISTORY New type in IFC2.0
 
 The enumerated items shall be used in the following combinations:

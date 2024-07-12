@@ -3,7 +3,6 @@
 Enumeration describing the further subtyping of mooring devices
 <!-- end of short definition -->
 
-
 ## Items
 
 ### THEAD

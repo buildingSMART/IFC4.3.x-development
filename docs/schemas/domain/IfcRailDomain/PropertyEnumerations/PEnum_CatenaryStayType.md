@@ -3,7 +3,6 @@
 List type of catenary stay usable.
 <!-- end of short definition -->
 
-
 ## Items
 
 ### SINGLE_STAY

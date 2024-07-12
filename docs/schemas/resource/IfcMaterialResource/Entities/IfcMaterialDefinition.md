@@ -3,7 +3,6 @@
 _IfcMaterialDefinition_ is a general supertype for all material related information items in IFC that have common material related properties that may include association of material with some shape parameters or assignments to identified parts of a component.
 <!-- end of short definition -->
 
-
 There are three ways of assigning materials to a single component or multiple components; they are characterized as:
 
 * by layer - assigning a material to a layer with constant thickness

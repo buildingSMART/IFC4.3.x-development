@@ -1,7 +1,6 @@
 # PEnum_FlushType
-
-
 <!-- end of short definition -->
+
 ## Items
 
 ### LEVER

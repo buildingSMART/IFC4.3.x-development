@@ -3,7 +3,6 @@
 An _IfcCompositeCurve_ is a continuous curve composed of curve segments.
 <!-- end of short definition -->
 
-
 Figure 1 illustrates an example of a composite curve.
 
 ![formula](../../../../figures/ifccompositecurve.png "Figure 1 — Composite curve")

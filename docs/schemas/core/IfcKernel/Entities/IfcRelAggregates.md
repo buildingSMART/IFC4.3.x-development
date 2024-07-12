@@ -3,7 +3,6 @@
 The aggregation relationship _IfcRelAggregates_ is a special type of the general composition/decomposition (or whole/part) relationship _IfcRelDecomposes_. The aggregation relationship can be applied to all subtypes of _IfcObjectDefinition_.
 <!-- end of short definition -->
 
-
 In cases of aggregation of physical elements into a physical aggregate the shape representation of the whole (within the same representation identifier) can be taken from the sum of the shape representations of the parts.
 
 > EXAMPLE A roof is the aggregation of the roof elements, such as roof slabs, rafters, purlins, etc. Within the same representation identifier (such as the body geometric representation), the shape representation of the roof is given by the shape representation of its parts.

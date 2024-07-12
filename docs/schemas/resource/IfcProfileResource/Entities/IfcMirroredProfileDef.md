@@ -3,7 +3,6 @@
 The _IfcMirroredProfileDef_ defines the profile by mirroring the parent profile about the y axis of the parent profile coordinate system. That is, left and right of the parent profile are swapped.
 <!-- end of short definition -->
 
-
 Notes:
 
 _IfcMirroredProfileDef_ is primarily useful together with _IfcCShapeProfileDef_, _IfcLShapeProfileDef_, _IfcUShapeProfileDef_, or _IfcZShapeProfileDef_ as parent profile but can be used with other parent profile types as well.

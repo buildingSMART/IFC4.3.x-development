@@ -3,7 +3,6 @@
 A building represents a structure that provides shelter for its occupants or contents and stands in one place. The building is also used to provide a basic element within the spatial structure hierarchy for the components of a building project (together with site, storey, and space).
 <!-- end of short definition -->
 
-
 > NOTE Definition from ISO 6707-1:
 > Construction work that has the provision of shelter for its occupants or contents as one of its main purpose and is normally designed to stand permanently in one place.
 

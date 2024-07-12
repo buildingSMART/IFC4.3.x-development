@@ -3,8 +3,6 @@
 Air terminal occurrence attributes attached to an instance of IfcAirTerminal.
 <!-- end of short definition -->
 
-
-
 ## Comments
 
 ### AirFlowRate

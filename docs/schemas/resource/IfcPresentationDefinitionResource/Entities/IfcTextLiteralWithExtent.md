@@ -3,7 +3,6 @@
 The text literal with extent is a text literal with the additional explicit information of the planar extent. An alignment attribute defines how the text box is aligned to the placement and how it may expand if additional lines of text need to be added.
 <!-- end of short definition -->
 
-
 Figure 1 shows the use of planar extent and box alignment to position the text string
 
 ![IfcTextLiteralWithExtent_Fig1.png 8,1 KB](../../../../figures/ifctextliteralwithextent_fig1.png "Figure 1 — Text literal with extent and alignment")

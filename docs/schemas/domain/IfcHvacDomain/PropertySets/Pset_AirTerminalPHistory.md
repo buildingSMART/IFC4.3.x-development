@@ -3,8 +3,6 @@
 Air terminal performance history common attributes.
 <!-- end of short definition -->
 
-
-
 ## Comments
 
 ### PressureDrop

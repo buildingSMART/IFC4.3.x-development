@@ -1,7 +1,6 @@
 # PEnum_AirTerminalFaceType
-
-
 <!-- end of short definition -->
+
 ## Items
 
 ### FOURWAYPATTERN

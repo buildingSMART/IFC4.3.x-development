@@ -3,7 +3,6 @@
 Part of a bridge.
 <!-- end of short definition -->
 
-
 ## Concepts
 
 ### Body Geometry

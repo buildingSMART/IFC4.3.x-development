@@ -3,7 +3,6 @@
 A curtain wall is a wall of a building which is an assembly of components, hung from the edge of the floor/roof structure rather than bearing on a floor. Curtain wall is represented as a building element assembly and implemented as a subtype of _IfcBuiltElement_ that uses an _IfcRelAggregates_ relationship. A curtain wall is often external, but using _Pset_CurtainWallCommon.IsExternal_ can be used to define interior curtain walls.
 <!-- end of short definition -->
 
-
 { .extDef}
 > NOTE Definition according to ISO 6707-1: non load bearing wall positioned on the outside of a building and enclosing it.
 

@@ -3,8 +3,6 @@
 Active (ventilated) cooled beam common attributes.
 <!-- end of short definition -->
 
-
-
 ## Comments
 
 ### ConnectionSize

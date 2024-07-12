@@ -3,7 +3,6 @@
 Enumeration of the complementary function possible for the drain channel.
 <!-- end of short definition -->
 
-
 ## Items
 
 ### TRANSVERSAL_WATER_REMOVAL

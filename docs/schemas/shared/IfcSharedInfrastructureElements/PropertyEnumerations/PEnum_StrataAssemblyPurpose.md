@@ -3,7 +3,6 @@
 enumeration describing the purpose of a geotechnical assembly
 <!-- end of short definition -->
 
-
 ## Items
 
 ### SITE_INVESTIGATION

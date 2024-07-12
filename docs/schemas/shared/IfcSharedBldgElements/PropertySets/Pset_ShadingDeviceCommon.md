@@ -3,8 +3,6 @@
 Shading device properties associated with an element that represents a shading device
 <!-- end of short definition -->
 
-
-
 ## Comments
 
 ### ThermalTransmittance

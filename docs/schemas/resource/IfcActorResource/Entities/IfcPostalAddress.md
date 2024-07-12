@@ -3,7 +3,6 @@
 This entity represents an address for delivery of paper based mail and other postal deliveries.
 <!-- end of short definition -->
 
-
 > HISTORY New entity in IFC2x.
 
 > IFC4.3.0.0 DEPRECATION This entity is deprecated. Use Pset_Address instead, which is applicable to IfcActor, IfcBuilding and IfcSite.

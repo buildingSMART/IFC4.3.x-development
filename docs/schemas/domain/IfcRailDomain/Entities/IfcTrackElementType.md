@@ -5,8 +5,6 @@ The element type _IfcTrackElementType_ defines commonly shared information for o
 * common material information
 * common profile definitions
 * common shape representations
-
-
 <!-- end of short definition -->
 
 It is used to define a track element specification (the specific product information that is common to all occurrences of that track element type). Track element types may be exchanged without being already assigned to occurrences.

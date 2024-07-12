@@ -3,7 +3,6 @@
 The _IfcAnnotationFillArea_ defines an area by a definite _OuterBoundary_, that might include _InnerBoundaries_. The areas defined by the _InnerBoundaries_ are excluded from applying the fill area style. The _InnerBoundaries_ shall not intersect with the _OuterBoundary_ nor being outside of the _OuterBoundary_.
 <!-- end of short definition -->
 
-
 The fill area style that is applied to the _IfcAnnotationFillArea_ is declared using the _IfcFillAreaStyle_, associated to the area by an _IfcStyledItem_. Applicable fill area styles are a solid color, a hatching, tiles, or a combination of those styles.
 
 { .extDef}

@@ -3,7 +3,6 @@
 An _IfcPositiveLengthMeasure_ is a length measure that is greater than zero.
 <!-- end of short definition -->
 
-
 Type: _IfcLengthMeasure_
 
 > NOTE Type adapted from **positive_length_measure** defined in ISO 10303-41.

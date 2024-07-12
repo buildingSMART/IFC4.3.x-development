@@ -3,7 +3,6 @@
 Enumeration of the different turnout panel orientations used in railway.
 <!-- end of short definition -->
 
-
 ## Items
 
 ### FRONT

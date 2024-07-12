@@ -3,7 +3,6 @@
 A rational B-spline surface with knots is a piecewise parametric rational surface described in terms of control points, and associated weight values.
 <!-- end of short definition -->
 
-
 The surface is to be interpreted as follows:
 
 > <big>σ</big>![formula](../../../../figures/ifcbsplinesurface-math2.gif)

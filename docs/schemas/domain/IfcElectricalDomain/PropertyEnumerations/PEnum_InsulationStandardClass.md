@@ -1,7 +1,6 @@
 # PEnum_InsulationStandardClass
-
-
 <!-- end of short definition -->
+
 ## Items
 
 ### CLASS0APPLIANCE

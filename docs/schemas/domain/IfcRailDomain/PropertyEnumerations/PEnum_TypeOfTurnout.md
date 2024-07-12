@@ -3,7 +3,6 @@
 Enumeration of the different turnouts used in railway track.
 <!-- end of short definition -->
 
-
 ## Items
 
 ### DERAILMENT_TURNOUT

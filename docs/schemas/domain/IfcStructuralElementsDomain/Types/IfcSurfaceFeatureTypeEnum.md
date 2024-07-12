@@ -3,7 +3,6 @@
 This enumeration indicates the type of a surface feature.
 <!-- end of short definition -->
 
-
 > HISTORY New type in IFC4.
 
 ## Items

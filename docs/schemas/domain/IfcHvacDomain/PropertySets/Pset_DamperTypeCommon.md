@@ -3,8 +3,6 @@
 Damper type common attributes.
 <!-- end of short definition -->
 
-
-
 ## Comments
 
 ### FrameDepth

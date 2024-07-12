@@ -3,8 +3,6 @@
 Evaporative cooler performance history attributes.
 <!-- end of short definition -->
 
-
-
 ## Comments
 
 ### Effectiveness

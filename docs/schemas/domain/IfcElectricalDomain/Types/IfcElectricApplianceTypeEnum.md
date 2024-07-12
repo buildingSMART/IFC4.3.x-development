@@ -3,7 +3,6 @@
 The _IfcElectricApplianceTypeEnum_ defines the range of different types of electrical appliance that can be specified.
 <!-- end of short definition -->
 
-
 > HISTORY New type in IFC2.0. Renamed from IfcElectricalApplianceTypeEnum in IFC2x2.
 > IFC2x2 Addendum 1: Missing enumeration values added (ELECTRICHEATER, TUMBLEDRYER and WATERHEATER)
 

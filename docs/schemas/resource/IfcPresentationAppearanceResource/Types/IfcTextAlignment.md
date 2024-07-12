@@ -6,7 +6,6 @@ The _IfcTextAlignment_ describes how text is aligned within the element. Values 
 * right
 * center
 * justify
-
 <!-- end of short definition -->
 
 { .extDef}

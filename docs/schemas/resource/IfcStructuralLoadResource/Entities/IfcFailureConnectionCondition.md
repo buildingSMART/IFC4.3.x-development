@@ -3,7 +3,6 @@
 Defines forces at which a support or connection fails.
 <!-- end of short definition -->
 
-
 Applicability:
 
 * Point supports and connections.

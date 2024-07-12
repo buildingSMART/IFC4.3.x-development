@@ -3,7 +3,6 @@
 An element is a generalization of all components that make up a facility.
 <!-- end of short definition -->
 
-
 Elements are physically existent objects, although they might be void elements, such as holes. Elements either remain permanently in the facility, or only temporarily, as formwork does. Elements can be either assembled on site or pre-manufactured and built in on site.
 
 > EXAMPLE Examples of elements in a building construction context are walls, floors, windows and recesses.

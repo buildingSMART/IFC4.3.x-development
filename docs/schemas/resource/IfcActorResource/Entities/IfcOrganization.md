@@ -3,7 +3,6 @@
 A named and structured grouping with a corporate identity.
 <!-- end of short definition -->
 
-
 > NOTE The relationships between _IfcOrganization_'s, like between department within a company, can be expressed using the objectified relationship _IfcOrganizationRelationship_.
 
 > NOTE Entity adapted from **organization** defined in ISO 10303-41.

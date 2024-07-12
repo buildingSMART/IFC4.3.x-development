@@ -3,7 +3,6 @@
 Enumeration defining the typical types of Chillers classified by their method of heat rejection.
 <!-- end of short definition -->
 
-
 > HISTORY New enumeration in IFC2x.
 
 ## Items

@@ -3,8 +3,6 @@
 Valve type common attributes.
 <!-- end of short definition -->
 
-
-
 ## Comments
 
 ### WorkingPressure

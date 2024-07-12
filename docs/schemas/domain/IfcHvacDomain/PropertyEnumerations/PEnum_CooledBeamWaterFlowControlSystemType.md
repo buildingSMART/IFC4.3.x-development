@@ -1,7 +1,6 @@
 # PEnum_CooledBeamWaterFlowControlSystemType
-
-
 <!-- end of short definition -->
+
 ## Items
 
 ### NONE

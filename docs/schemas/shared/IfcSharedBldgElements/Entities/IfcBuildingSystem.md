@@ -3,7 +3,6 @@
 A building system is a group by which building elements are grouped according to a common function within the facility.
 <!-- end of short definition -->
 
-
 The group _IfcBuildingSystem_ defines the occurrence of a specialized system for use within the context of a building and finishing fabric. Important functionalities for the description of a building system are derived from supertypes:
 
 * From _IfcSystem_ it inherits the ability to couple the building system via _IfcRelServicesBuildings_ to one or more _IfcSpatialElement_ subtypes as necessary.

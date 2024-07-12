@@ -3,7 +3,6 @@
 An _IfcObjectDefinition_ is the generalization of any semantically treated thing or process, either being a type or an occurrence. Object definitions can be named, using the inherited _Name_ attribute, which should be a user recognizable label for the object occurrence. Further explanations to the object can be given using the inherited _Description_ attribute. A context is a specific kind of object definition as it provides the project or library context in which object types and object occurrences are defined.
 <!-- end of short definition -->
 
-
 Objects are independent pieces of information that might contain or reference other pieces of information. There are five essential kinds of relationships in which object definitions (by their instantiable subtypes) can be involved:
 
 * **Assignment of other objects** - an assignment relationship (_IfcRelAssigns_) that refers to other types of objects and creates a bi-directional association. The semantic of the assignment is established at the level of the subtypes of the general _IfcRelAssigns_ relationship. There is no dependency implied a priori by the assignment.

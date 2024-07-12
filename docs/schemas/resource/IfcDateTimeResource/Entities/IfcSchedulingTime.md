@@ -3,7 +3,6 @@
 _IfcSchedulingTime_ is the abstract supertype of entities that capture time-related information of processes.
 <!-- end of short definition -->
 
-
 > HISTORY New entity in IFC4.
 
 ## Attributes

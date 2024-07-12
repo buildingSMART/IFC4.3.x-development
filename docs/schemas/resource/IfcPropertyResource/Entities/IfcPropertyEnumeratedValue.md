@@ -3,7 +3,6 @@
 A property with an enumerated value, _IfcPropertyEnumeratedValue_, defines a property object which has a value assigned that is chosen from an enumeration. It defines a property - value combination for which the property _Name_, an optional _Description_, the optional _EnumerationValues_ with measure type and optionally an _Unit_ is given.
 <!-- end of short definition -->
 
-
 > NOTE Multiple choices from the property enumeration are supported.
 
 The unit is handled by the _Unit_ attribute, see Table 1 for an example of a enumerated property:

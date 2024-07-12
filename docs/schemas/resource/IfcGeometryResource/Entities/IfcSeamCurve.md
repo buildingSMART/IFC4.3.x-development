@@ -3,7 +3,6 @@
 An _IfcSeamCurve_ is a 3-dimensional curve that has additional representations provided by exactly two distinct pcurves describing the same curve at the two extreme ends of a closed parametric surface.
 <!-- end of short definition -->
 
-
 > NOTE&bbsp; The `seam' on a cylinder has representations as the lines u = 0 or u = 360 degrees in parameter space.
 
 Figure 1 shows an instance diagram explaining the use of _IfcSeamCurve_ as a boundary curve of an _IfcCylindricalSurface_.

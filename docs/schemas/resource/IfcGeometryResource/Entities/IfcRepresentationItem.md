@@ -3,7 +3,6 @@
 The _IfcRepresentationItem_ is used within an _IfcRepresentation_ (directly or indirectly through other _IfcRepresentationItem_'s) to represent an _IfcProductRepresentation_. Most commonly these _IfcRepresentationItem_'s are geometric or topological representation items, that can (but not need to) have presentation style information assigned.
 <!-- end of short definition -->
 
-
 { .extDef}
 > NOTE Definition according to ISO/CD 10303-43:1992
 > A representation item is an element of product data that participates in one or more representations or contributes to the definition of another representation item. A representation item contributes to the definition of another representation item when it is referenced by that representation item.

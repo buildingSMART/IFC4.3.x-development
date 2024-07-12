@@ -3,7 +3,6 @@
 _IfcLinearMomentMeasure_ is a measure of linear moment.
 <!-- end of short definition -->
 
-
 Usually measured in Nm/m.
 
 Type: REAL

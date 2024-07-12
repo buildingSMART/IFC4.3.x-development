@@ -3,7 +3,6 @@
 The _IfcPolyline_ is a bounded curve with only linear segments defined by a list of Cartesian points. If the first and the last Cartesian point in the list are identical, then the polyline is a closed curve, otherwise it is an open curve.
 <!-- end of short definition -->
 
-
 > EXAMPLE Figure 1 illustrates a bounded _IfcPolyline_ and shows the parametric length of each segment and of the total polyline.
 
 ![polyline examples](../../../../figures/ifcpolyline-fig1.png "Figure 1 — Bounded _IfcPolyline_ with parametric length")

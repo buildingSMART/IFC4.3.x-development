@@ -3,8 +3,6 @@
 Properties common to the definition of all occurrences of IfcDoor.
 <!-- end of short definition -->
 
-
-
 ## Comments
 
 ### FireExit

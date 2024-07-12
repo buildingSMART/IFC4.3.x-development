@@ -3,7 +3,6 @@
 A space represents an area or volume bounded actually or theoretically. Spaces are areas or volumes that provide for certain functions within a building.
 <!-- end of short definition -->
 
-
 The _IfcSpaceType_ defines a list of commonly shared information for occurrences of spaces. The set of shared information may include:
 
 * common properties within shared property sets

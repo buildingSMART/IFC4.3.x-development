@@ -3,7 +3,6 @@
 An _IfcLibraryReference_ is a reference into a library of information by _Location_ (provided as a URI). It also provides an optional inherited _Identification_ key to allow more specific references to library sections or tables. The inherited _Name_ attribute allows for a human interpretable identification of the library item. Also, general information on the library from which the reference is taken, is given by the _ReferencedLibrary_ relation which identifies the relevant occurrence of _IfcLibraryInformation_.
 <!-- end of short definition -->
 
-
 The _IfcLibraryReference_ additionally provides the capability to handle multilingual library entries. The _Language_ attribute then holds the language tag for the language used by the strings kept in the _Name_ and the _Description_ attribute.
 
 Depending on the type of technology used by the library, different IfcLibraryReference.Identification identifiers will be appropriate:

@@ -3,7 +3,6 @@
 Enumeration of possible relative position values. The position of something is the place where it is in relation to other things.
 <!-- end of short definition -->
 
-
 ## Items
 
 ### LEFT

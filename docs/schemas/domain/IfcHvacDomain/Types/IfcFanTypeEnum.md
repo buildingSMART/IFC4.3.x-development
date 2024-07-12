@@ -3,7 +3,6 @@
 Enumeration defining the typical types of fans.
 <!-- end of short definition -->
 
-
 > HISTORY New enumeration in IFC2x2.
 
 ## Items

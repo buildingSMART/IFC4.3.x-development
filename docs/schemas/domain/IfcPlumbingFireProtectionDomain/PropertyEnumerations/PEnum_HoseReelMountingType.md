@@ -1,7 +1,6 @@
 # PEnum_HoseReelMountingType
-
-
 <!-- end of short definition -->
+
 ## Items
 
 ### CABINET_RECESSED

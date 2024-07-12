@@ -3,7 +3,6 @@
 This enumeration identifies different types of building systems.
 <!-- end of short definition -->
 
-
 > HISTORY New enumeration in IFC4.
 
 ## Items

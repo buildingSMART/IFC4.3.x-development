@@ -3,8 +3,6 @@
 Space heater performance history common attributes.
 <!-- end of short definition -->
 
-
-
 ## Comments
 
 ### Effectiveness

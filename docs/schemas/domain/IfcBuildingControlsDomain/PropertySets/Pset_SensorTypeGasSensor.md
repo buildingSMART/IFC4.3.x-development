@@ -2,6 +2,7 @@
 
 A device that senses or detects gas.
 <!-- end of short definition -->
+
  HISTORY: Changed in IFC4. Gas detected made into enumeration, set point concentration and coverage area added. Range, accuracy and time constant deleted.
 
 

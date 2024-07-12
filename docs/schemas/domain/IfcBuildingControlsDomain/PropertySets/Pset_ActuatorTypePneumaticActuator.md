@@ -3,8 +3,6 @@
 A device that pneumatically actuates a control element
 <!-- end of short definition -->
 
-
-
 ## Comments
 
 ### InputFlowrate

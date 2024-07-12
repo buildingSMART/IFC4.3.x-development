@@ -5,7 +5,6 @@ The window is a building element that is predominately used to provide natural l
 * be a "free standing" window, contained in an _IfcSpatialElement_ such as an _IfcBuildingStorey_.
 * fill an opening, typically in a wall. The window will then have a _FillsVoids_ attribute which uses the _IfcRelFillsElement_ relationship to relate the _IfcWindow_ with the _IfcOpeningElement_;
 * be part of an element assembly, typically an _IfcCurtainWall_. The window will then have a _Decomposes_ attribute which uses the the _IfcRelAggregates_ relationship to relate the window with the assembly of elements;
-
 <!-- end of short definition -->
 
 There are two main representations for window occurrences:

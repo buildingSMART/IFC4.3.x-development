@@ -3,7 +3,6 @@
 This entity defines an action with constant value which is distributed over a surface.
 <!-- end of short definition -->
 
-
 > HISTORY New entity in IFC2x2.
 
 { .change-ifc2x4}

@@ -3,7 +3,6 @@
 This entity captures a value driven by a formula, with additional qualifications including unit basis, valid date range, and categorization.
 <!-- end of short definition -->
 
-
 The extent of the _IfcAppliedValue_ is determined by the _AppliedValue_ attribute which may be defined either as an _IfcMeasureWithUnit_ or as an _IfcMonetaryMeasure_ or as an _IfcRatioMeasure_ via the _IfcAppliedValueSelect_ type.
 
 Optionally, an _IfcAppliedValue_ may have an applicable date. This is intended to fix the date on which the value became relevant for use. It may be the date on which the value was set in the model or it may be a prior or future date when the value becomes operable. Similarly, an _IfcAppliedValue_ may have a 'fixed until' date. This is intended to fix the date on which the value ceases to be relevant for use.

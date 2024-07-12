@@ -3,7 +3,6 @@
 Enumeration of fiber colours.
 <!-- end of short definition -->
 
-
 ## Items
 
 ### AQUA

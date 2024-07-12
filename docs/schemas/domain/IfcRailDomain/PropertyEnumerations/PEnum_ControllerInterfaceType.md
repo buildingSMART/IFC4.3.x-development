@@ -3,7 +3,6 @@
 Enumeration of controller interface types.
 <!-- end of short definition -->
 
-
 ## Items
 
 ### RS_422

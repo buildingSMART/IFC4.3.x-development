@@ -2,6 +2,7 @@
 
 Common definition to capture the properties of sound typically used within the context of building services and flow distribution systems. This property set is instantiated multiple times on an object for each frequency band.
 <!-- end of short definition -->
+
  HISTORY: New property set in IFC Release 2x4.
 
 

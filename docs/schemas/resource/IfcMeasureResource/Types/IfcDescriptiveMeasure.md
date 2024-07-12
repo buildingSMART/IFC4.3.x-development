@@ -3,7 +3,6 @@
 A descriptive measure is a human interpretable definition of a quantifiable value. The mode of interpretation has to be established for the exchange context.
 <!-- end of short definition -->
 
-
 Type: STRING
 
 > NOTE Type adapted from **descriptive_measure** defined in ISO 10303-41.

@@ -3,7 +3,6 @@
 Enumeration describing the mode at which a vessel enters a berth (operation or design).
 <!-- end of short definition -->
 
-
 ## Items
 
 ### BOW

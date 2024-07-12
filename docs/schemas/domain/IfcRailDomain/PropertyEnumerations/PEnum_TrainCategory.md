@@ -3,7 +3,6 @@
 Category of trains.
 <!-- end of short definition -->
 
-
 ## Items
 
 ### FREIGHT

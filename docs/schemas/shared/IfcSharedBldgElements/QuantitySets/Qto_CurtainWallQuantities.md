@@ -3,8 +3,6 @@
 Base quantities that are common to the definition of all occurrences of curtain walls.
 <!-- end of short definition -->
 
-
-
 ## Comments
 
 ### Height

@@ -3,7 +3,6 @@
 Enumeration of optical network unit types.
 <!-- end of short definition -->
 
-
 ## Items
 
 ### ACTIVE

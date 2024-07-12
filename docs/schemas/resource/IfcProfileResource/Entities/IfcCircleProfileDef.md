@@ -3,7 +3,6 @@
 _IfcCircleProfileDef_ defines a circle as the profile definition used by the swept surface geometry or by the swept area solid. It is given by its _Radius_ attribute and placed within the 2D position coordinate system, established by the _Position_ attribute.
 <!-- end of short definition -->
 
-
 > HISTORY New entity in IFC1.5.
 
 Figure 1 illustrates parameters for the circle profile definition. The parameterized profile defines its own position coordinate system. The underlying coordinate system is defined by the swept surface or swept area solid that uses the profile definition. It is the xy plane of either:

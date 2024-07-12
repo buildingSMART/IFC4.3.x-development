@@ -6,7 +6,6 @@ The element type _IfcSlabType_ defines commonly shared information for occurrenc
 * common material information
 * common material layer definitions
 * common shape representations
-
 <!-- end of short definition -->
 
 It is used to define a slab specification (i.e. the specific product information, that is common to all occurrences of that product type). Slab types may be exchanged without being already assigned to occurrences.

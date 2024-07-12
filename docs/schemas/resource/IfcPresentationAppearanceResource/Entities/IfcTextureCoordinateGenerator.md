@@ -3,7 +3,6 @@
 The _IfcTextureCoordinateGenerator_ describes a procedurally defined mapping function with input parameter to map 2D texture coordinates to 3D geometry vertices.
 <!-- end of short definition -->
 
-
 The TextureCoordinateGenerator supports the automatic generation of texture coordinates for geometric shapes.
 
 > NOTE The definitions of texturing within this standard have been developed in dependence on the texture component of X3D. See ISO/IEC 19775-1.2:2008 X3D Architecture and base components Edition 2, Part 1, 18 Texturing component for the definitions in the international standard.

@@ -3,7 +3,6 @@
 Enumeration of the different expansion directions used in railway track.
 <!-- end of short definition -->
 
-
 ## Items
 
 ### SINGLE_DIRECTION

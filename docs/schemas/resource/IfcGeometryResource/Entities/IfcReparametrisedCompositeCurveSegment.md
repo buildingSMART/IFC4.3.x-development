@@ -3,7 +3,6 @@
 The _IfcReparametrisedCompositeCurveSegment_ is geometrically identical to a _IfcCompositeCurveSegment_ but with the additional capability of reparametrization.
 <!-- end of short definition -->
 
-
 { .extDef}
 > NOTE Definition according to ISO/CD 10303-42:1992
 > The reparametrised composite curve segment is a special type of composite curve segment which provides the capability to re-define its parametric length without changing its geometry.

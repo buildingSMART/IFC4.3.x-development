@@ -5,7 +5,6 @@ The _IfcFontWeight_ type defines the weight of the font. Values are:
 * normal
 * bold
 * 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900
-
 <!-- end of short definition -->
 
 { .extDef}

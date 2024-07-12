@@ -3,7 +3,6 @@
 An _IfcLaborResource_ is used in construction with particular skills or crafts required to perform certain types of construction or management related work.
 <!-- end of short definition -->
 
-
 > HISTORY New entity in IFC2.0.
 
 { .change-ifc2x4}

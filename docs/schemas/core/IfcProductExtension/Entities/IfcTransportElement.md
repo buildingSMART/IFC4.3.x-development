@@ -3,7 +3,6 @@
 A transport element is a generalization of all transport related objects that move people, animals or goods within a Facility. The _IfcTransportElement_ defines the occurrence of a transport element, that (if given), is expressed by the _IfcTransportElementType_.
 <!-- end of short definition -->
 
-
 > EXAMPLE Transportation elements include elevator (lift), escalator, moving walkway, etc.
 
 > NOTE More detailed equipment that may be a part of a transportation device, like a lifting hook, is defined as _IfcDiscreteAccessory_. It maybe included as a part of the _IfcTransportElement_ by virtue of the objectified relationship _IfcRelAggregates_.

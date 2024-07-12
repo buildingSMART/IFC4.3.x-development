@@ -3,7 +3,6 @@
 Enumeration of the different cantilever assemblies used in railway energy domain.
 <!-- end of short definition -->
 
-
 ## Items
 
 ### SINGLE

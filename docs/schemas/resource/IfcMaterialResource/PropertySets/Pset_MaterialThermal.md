@@ -3,8 +3,6 @@
 A set of thermal material properties.
 <!-- end of short definition -->
 
-
-
 ## Comments
 
 ### SpecificHeatCapacity

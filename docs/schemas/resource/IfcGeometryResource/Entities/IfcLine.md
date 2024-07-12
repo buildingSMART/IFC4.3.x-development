@@ -3,7 +3,6 @@
 The _IfcLine_ is an unbounded line parameterized by an _IfcCartesianPoint_ and an _IfcVector_. The magnitude of the _IfcVector_ affects the parameterization of the line, but it does not bound the line.
 <!-- end of short definition -->
 
-
 > NOTE A line segment is defined using either the _IfcPolyline_ with two _Points_, or the _IfcTrimmedCurve_ with _BasisCurve_ being an _IfcLine_.
 
 > EXAMPLE Figure 1 illustrates an unbounded _IfcLine_ and a bounded _IfcTrimmedCurve_. A bounded line starting at 0.,0. and ending at 0.,2. can be defined by:

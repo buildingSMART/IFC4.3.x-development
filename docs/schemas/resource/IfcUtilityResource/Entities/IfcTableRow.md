@@ -3,7 +3,6 @@
 _IfcTableRow_ contains data for a single row within an _IfcTable_.
 <!-- end of short definition -->
 
-
 Limitation: For backward compatibility, all _IfcTableRow_ objects referenced by an _IfcTable_ shall have the same number of Row Cells. The actual number of Cells shall be taken from the number of cells of the first _IfcTableRow_ for that table. The number of Cells is calculated by the derived attribute _NumberOfCellsInRow_ in the associated _IfcTable_.
 
 > NOTE The attribute _IsHeading_ exists for backward compatibility. _IfcTableColumn_ should be used instead beginning with IFC4.

@@ -6,7 +6,6 @@ The element type _IfcDoorType_ defines commonly shared information for occurrenc
 * common material information
 * common operation type definitions
 * common shape representations
-
 <!-- end of short definition -->
 
 A door type defines the particular parameter of the lining and one (or several) panels through the _IfcDoorLiningProperties_ and the _IfcDoorPanelProperties_ as predefined property sets applicable to doors only.

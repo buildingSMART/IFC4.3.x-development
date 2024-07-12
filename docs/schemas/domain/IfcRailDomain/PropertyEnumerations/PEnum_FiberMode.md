@@ -3,7 +3,6 @@
 Enumeration of fiber modes.
 <!-- end of short definition -->
 
-
 ## Items
 
 ### MULTIMODE

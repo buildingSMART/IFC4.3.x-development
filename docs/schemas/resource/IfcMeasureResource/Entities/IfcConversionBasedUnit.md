@@ -3,8 +3,6 @@
 An IfcConversionBasedUnit is used to define a unit that has a conversion rate to a base unit. To identify some commonly used conversion based units, the standard designations (case insensitive) for the _Name_ attribute are indicated in Table 1.
 <!-- end of short definition -->
 
-
-
 |Name|Description|
 |--- |--- |
 |'inch'|Length measure equal to 25.4 mm|

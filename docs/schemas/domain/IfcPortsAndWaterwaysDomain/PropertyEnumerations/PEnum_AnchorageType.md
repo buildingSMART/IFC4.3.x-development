@@ -3,7 +3,6 @@
 Enumeration describing the type of anchoring method for mooring devices
 <!-- end of short definition -->
 
-
 ## Items
 
 ### CASTIN

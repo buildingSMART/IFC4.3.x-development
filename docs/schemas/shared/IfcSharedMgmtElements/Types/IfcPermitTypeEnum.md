@@ -3,7 +3,6 @@
 _IfcPermitTypeEnum_ defines the types of permits that can be granted.
 <!-- end of short definition -->
 
-
 > HISTORY New enumeration in IFC4.
 
 ## Items

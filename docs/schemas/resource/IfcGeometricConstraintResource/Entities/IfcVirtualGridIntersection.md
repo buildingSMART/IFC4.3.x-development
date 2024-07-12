@@ -3,7 +3,6 @@
 _IfcVirtualGridIntersection_ defines the derived location of the intersection between two grid axes. Offset values may be given to set an offset distance to the grid axis for the calculation of the virtual grid intersection.
 <!-- end of short definition -->
 
-
 The two intersecting axes (_IntersectingAxes_) define the intersection point, which exact location (in terms of the Cartesian point representing the intersection) has to be calculated from the geometric representation of the two participating curves.
 
 > NOTE The _IfcGrid_ local placement, that can be provided relative to the local placement of another spatial structure element, has to be taken into account for calculating the absolute placement of the _IfcVirtualGridIntersection_. Where rules and informal rules ensure, that the _IntersectingAxes_ belong to the same _IfcGrid_

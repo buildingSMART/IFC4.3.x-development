@@ -3,7 +3,6 @@
 _IfcPropertyTableValue_ is a property with a value range defined by a property object which has two lists of (numeric or descriptive) values assigned. The values specify a table with two columns. The defining values provide the first column and establish the scope for the defined values (the second column). An optional _Expression_ attribute may give the equation used for deriving the range value, which is for information purposes only.
 <!-- end of short definition -->
 
-
 The _IfcPropertyTableValue_ defines a defining/defined property value combination for which the property name, the table with defining and defined values with measure type (and optional the units for defining and defined values) are given.
 
 > NOTE The _IfcPropertyTableValue_ only captures properties that can be expressed by a table with two columns. Use IfcPropertyReferenceValue with the PropertyReference being an IfcTable to express all those properties that require a table with tree or more columns.

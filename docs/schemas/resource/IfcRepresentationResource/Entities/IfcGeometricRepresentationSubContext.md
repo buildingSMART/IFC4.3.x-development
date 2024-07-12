@@ -3,7 +3,6 @@
 _IfcGeometricRepresentationSubContext_ defines the context that applies to several shape representations of a product being a sub context, sharing the _WorldCoordinateSystem_, _CoordinateSpaceDimension_, _Precision_ and _TrueNorth_ attributes with the parent _IfcGeometricRepresentationContext_.
 <!-- end of short definition -->
 
-
 The _IfcGeometricRepresentationSubContext_ is used to define semantically distinguished representation types for different information content, dependent on the representation view and the target scale. It can be used to control the level of detail of the shape representation that is most applicable to this geometric representation context. In addition the sub context is used to control the later appearance of the _IfcShapeRepresentation_ within a plot view.
 
 > NOTE If the _IfcShapeRepresentation_ using this sub context has_IfcStyledItem_'s assigned to the _Items_, the presentation style information (e.g. _IfcCurveStyle_, _IfcTextStyle_) associated with the _IfcStyledItem_ is given in target plot dimensions. For example, a line thickness (_IfcCurveStyle.CurveWidth_) is given by a thickness measure relating to the thickness for a plot within the (range of) target scale.

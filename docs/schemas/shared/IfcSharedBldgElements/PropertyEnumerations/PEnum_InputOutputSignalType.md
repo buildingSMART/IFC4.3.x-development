@@ -3,7 +3,6 @@
 Enumeration of input or output signal types.
 <!-- end of short definition -->
 
-
 ## Items
 
 ### CURRENT

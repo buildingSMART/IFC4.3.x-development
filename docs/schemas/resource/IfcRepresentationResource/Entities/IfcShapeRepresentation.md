@@ -3,7 +3,6 @@
 The _IfcShapeRepresentation_ represents the concept of a particular geometric representation of a product or a product component within a specific geometric representation context. The inherited attribute _RepresentationType_ is used to define the geometric model used for the shape representation (e.g. 'SweptSolid', or 'Brep'), the inherited attribute _RepresentationIdentifier_ is used to denote the kind of the representation captured by the _IfcShapeRepresentation_ (e.g. 'Axis', 'Body', etc.).
 <!-- end of short definition -->
 
-
 Several representation identifiers for shape representation are included as predefined values for _RepresentationIdentifier_. Table 1 indicates the defined list of values for _RepresentationIdentifier_.
 
 > IFC4.3.2.0 DEPRECATION Representation type 'PointCloud' is now deprecated as other representation types also didn't differentiate between one or multiple geometries. Use 'Point' instead.

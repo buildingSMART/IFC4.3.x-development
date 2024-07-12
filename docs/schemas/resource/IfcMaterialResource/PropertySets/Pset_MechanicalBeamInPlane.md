@@ -3,7 +3,6 @@
 Properties about Mechanical Beam in Plane.
 <!-- end of short definition -->
 
-
 ## Comments
 
 ### BendingStrength

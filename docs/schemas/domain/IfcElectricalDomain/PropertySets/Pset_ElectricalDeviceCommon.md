@@ -3,8 +3,6 @@
 A collection of properties that are commonly used by electrical device types.
 <!-- end of short definition -->
 
-
-
 ## Comments
 
 ### NumberOfPoles

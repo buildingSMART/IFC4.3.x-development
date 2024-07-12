@@ -11,7 +11,6 @@ The draughting pre defined colour is a pre defined colour for the purpose to ide
 * 'cyan',
 * 'white',
 * 'by layer'
-
 <!-- end of short definition -->
 
 > NOTE The _IfcDraughtingPreDefinedColour_ is an entity that had been adopted from ISO 10303-202, Industrial automation systems and integration—Product data representation and exchange, Part 202: Application protocol: Associative draughting.

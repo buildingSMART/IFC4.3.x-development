@@ -3,7 +3,6 @@
 This abstract entity represents various kinds of postal and telecom addresses.
 <!-- end of short definition -->
 
-
 > NOTE Entity adapted from **address** defined in ISO 10303-41.
 
 > HISTORY New entity in IFC1.5.1.

@@ -1,7 +1,6 @@
 # PEnum_SleeperType
-
-
 <!-- end of short definition -->
+
 ## Items
 
 ### WOODENSLEEPER

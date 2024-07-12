@@ -3,7 +3,6 @@
 Enumeration of antenna types.
 <!-- end of short definition -->
 
-
 ## Items
 
 ### CEILING

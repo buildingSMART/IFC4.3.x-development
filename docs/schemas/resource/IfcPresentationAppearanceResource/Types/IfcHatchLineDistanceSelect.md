@@ -3,7 +3,6 @@
 The _IfcHatchLineDistanceSelect_ is a selection between different ways to determine the distance and optionally the start point of hatch lines, either by an offset distance measure or by a vector.
 <!-- end of short definition -->
 
-
 The vector, if selected, acts as a one time repeat factor in the fill area style hatching for determining the origin of the repeated hatch line relative to the origin of the previous hatch line, Given the initial position of any hatch line, the one direction repeat factor determines two new positions according to the equation:
 
 { .extDef}

@@ -3,7 +3,6 @@
 Properties for Provisions For Voids.
 <!-- end of short definition -->
 
-
 ## Comments
 
 ### Height

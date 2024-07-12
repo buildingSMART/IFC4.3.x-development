@@ -3,8 +3,6 @@
 Water boiler type common attributes.
 <!-- end of short definition -->
 
-
-
 ## Comments
 
 ### HeatOutput

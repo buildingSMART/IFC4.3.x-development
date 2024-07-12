@@ -3,7 +3,6 @@
 This enumeration defines the different types of space boundaries in terms of either being inside the building or outside the building.
 <!-- end of short definition -->
 
-
 > HISTORY New enumeration in IFC2.0
 
 { .change-ifc2x4}

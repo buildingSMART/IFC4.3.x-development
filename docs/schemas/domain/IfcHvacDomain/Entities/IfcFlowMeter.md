@@ -3,7 +3,6 @@
 A flow meter is a device that is used to measure the flow rate in a system.
 <!-- end of short definition -->
 
-
 > HISTORY New entity in IFC4
 
 { .note}

@@ -3,8 +3,6 @@
 Duct silencer performance history common attributes.
 <!-- end of short definition -->
 
-
-
 ## Comments
 
 ### AirFlowRate

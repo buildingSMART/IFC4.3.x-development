@@ -3,7 +3,6 @@
 This enumeration defines the different types of Annotation elements an _IfcAnnotation_ object can represent.
 <!-- end of short definition -->
 
-
 ## Items
 
 ### SURVEY

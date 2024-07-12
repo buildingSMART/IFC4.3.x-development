@@ -3,7 +3,6 @@
 Space heaters utilize a combination of radiation and/or natural convection using a heating source such as electricity, steam or hot water to heat a limited space or area. Examples of space heaters include radiators, convectors, baseboard and finned-tube heaters.
 <!-- end of short definition -->
 
-
 _IfcUnitaryEquipment_ should be used for packaged units supporting a combination of heating, cooling, and/or dehumidification; _IfcCoil_ should be used for coil-based floor heating.
 
 > HISTORY New entity in IFC4

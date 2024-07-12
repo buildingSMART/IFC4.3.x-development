@@ -3,7 +3,6 @@
 Enumeration of different types of electronic filter.
 <!-- end of short definition -->
 
-
 ## Items
 
 ### LOWPASSFILTER

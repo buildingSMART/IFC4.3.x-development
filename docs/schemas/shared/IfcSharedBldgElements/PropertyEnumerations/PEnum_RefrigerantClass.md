@@ -1,7 +1,6 @@
 # PEnum_RefrigerantClass
-
-
 <!-- end of short definition -->
+
 ## Items
 
 ### CFC

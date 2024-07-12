@@ -3,7 +3,6 @@
 Defines general types of air-to-air heat recovery devices.
 <!-- end of short definition -->
 
-
 > HISTORY New enumeration in IFC2x.
 
 ## Items

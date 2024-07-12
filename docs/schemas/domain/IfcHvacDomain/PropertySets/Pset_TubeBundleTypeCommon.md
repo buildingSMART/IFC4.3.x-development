@@ -3,8 +3,6 @@
 Tube bundle type common attributes.
 <!-- end of short definition -->
 
-
-
 ## Comments
 
 ### NominalDiameter

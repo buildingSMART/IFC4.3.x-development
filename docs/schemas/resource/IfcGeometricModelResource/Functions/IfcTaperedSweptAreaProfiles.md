@@ -3,7 +3,6 @@
 This function checks whether the start and end profile in a tapered extrusion are topologically similar, i.e. whether both have the same number of vertices and edges.
 <!-- end of short definition -->
 
-
 It returns TRUE if:
 
 * The start profile is defined by a paramterized profile definition and

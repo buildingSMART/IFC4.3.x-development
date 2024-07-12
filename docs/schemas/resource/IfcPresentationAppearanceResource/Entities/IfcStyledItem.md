@@ -3,7 +3,6 @@
 The _IfcStyledItem_ holds presentation style information for products, either explicitly for an _IfcGeometricRepresentationItem_ being part of an _IfcShapeRepresentation_ assigned to a product, or by assigning presentation information to _IfcMaterial_ being assigned as other representation for a product.
 <!-- end of short definition -->
 
-
 * If the _IfcStyledItem_ is used within a reference from an _IfcProductDefinitionShape_ then one _Item_ shall be provided.
 * If the _IfcStyledItem_ is used within a reference from an _IfcMaterialDefinitionRepresentation_ then no _Item_ shall be provided.
 

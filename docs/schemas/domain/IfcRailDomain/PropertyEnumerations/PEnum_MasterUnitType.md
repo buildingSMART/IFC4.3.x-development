@@ -1,7 +1,6 @@
 # PEnum_MasterUnitType
-
-
 <!-- end of short definition -->
+
 ## Items
 
 ### ANALOG

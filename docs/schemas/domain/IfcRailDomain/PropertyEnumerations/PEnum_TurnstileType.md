@@ -3,7 +3,6 @@
 Enumeration describing the types of turnstiles
 <!-- end of short definition -->
 
-
 ## Items
 
 ### SWINGGATEBRAKE

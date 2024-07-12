@@ -3,7 +3,6 @@
 The _IfcRelProjectsElement_ is an objectified relationship between an element and one projection element that creates a modifier to the shape of the element. The relationship is defined to be a 1:1 relationship, if an element has more than one projection, several relationship objects have to be used, each pointing to a different projection element. The _IfcRelProjectsElement_ establishes an aggregation relationship between the main element and a sub ordinary addition feature.
 <!-- end of short definition -->
 
-
 > NOTE In contrary the _IfcRelAggregates_ relationship established an aggregation of equal parts to a whole.
 
 The _IfcRelProjectsElement_ implies a Boolean operation of addition for the geometric bodies of the element and the feature element. As with all decomposition relationships it determines:

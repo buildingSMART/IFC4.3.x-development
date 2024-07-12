@@ -3,7 +3,6 @@
 _IfcDoseEquivalentMeasure_ is a measure of the radioactive dose equivalent.
 <!-- end of short definition -->
 
-
 Usually measured in Sievert (Sv, J/kg).
 
 Type: REAL

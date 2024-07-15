@@ -12,5 +12,3 @@ Count measure value of this quantity.
 
 ### Formula
 A formula by which the quantity has been calculated. It can be assigned in addition to the actual value of the quantity. Formulas could be mathematic calculations (like width x height), database links, or a combination. The formula is for informational purposes only.
-
-> IFC4 CHANGE Attribute added to the end of the attribute list.

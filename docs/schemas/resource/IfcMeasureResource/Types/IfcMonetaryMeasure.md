@@ -1,7 +1,7 @@
+# IfcMonetaryMeasure
+
 A monetary measure is the value of an amount of money without regard to its currency.
-
 <!-- end of short definition -->
-
 
 Type: REAL
 

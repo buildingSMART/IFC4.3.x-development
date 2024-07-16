@@ -1,7 +1,7 @@
+# IfcConstructionResourceType
+
 _IfcConstructionResourceType_ is an abstract generalization of the different resource types used in construction projects, mainly labor, material, equipment and product resource types, plus subcontracted resource types and aggregations such as a crew resource type.
-
 <!-- end of short definition -->
-
 
 A resource type represents a model of "use of something" and does not necessarily correspond to a specific type of object such as a person or vehicle, but represents possible usages of such objects such as general labor or an equipment fleet. A resource type can either represent usage in general (consumption attributes defined but no task type assignment) or a task-specific resource type (production attributes defined and having an _IfcTask_ assignment).
 

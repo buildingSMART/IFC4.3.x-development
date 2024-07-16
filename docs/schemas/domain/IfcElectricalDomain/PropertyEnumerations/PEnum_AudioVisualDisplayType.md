@@ -1,6 +1,6 @@
-
-
+# PEnum_AudioVisualDisplayType
 <!-- end of short definition -->
+
 ## Items
 
 ### CRT

@@ -1,5 +1,6 @@
-{ .extDef}
+# IfcFirstProjAxis
 
+{ .extDef}
 <!-- end of short definition -->
 
 > NOTE Definition according to ISO/CD 10303-42:1992

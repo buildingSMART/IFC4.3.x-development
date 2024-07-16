@@ -1,7 +1,7 @@
+# IfcParameterValue
+
 An _IfcParameterValue_ is the value which specifies the amount of a parameter in some parameter space.
-
 <!-- end of short definition -->
-
 
 Type: REAL
 

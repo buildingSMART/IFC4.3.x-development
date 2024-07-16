@@ -1,7 +1,7 @@
+# IfcVibrationDamperTypeEnum
+
 Enumeration of Vibration Damper Types.
-
 <!-- end of short definition -->
-
 
 ## Items
 

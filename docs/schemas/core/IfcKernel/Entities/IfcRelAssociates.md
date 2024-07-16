@@ -1,7 +1,7 @@
+# IfcRelAssociates
+
 The association relationship _IfcRelAssociates_ refers to sources of information (most notably a classification, library, document, approval, constraint, or material). The information associated may reside internally or externally of the project data. There is no dependency implied by the association.
-
 <!-- end of short definition -->
-
 
 > EXAMPLE Further external information may be provided to the tank equipment (as subtype of _IfcProduct_) in terms of its classification and instruction documents, the source of the additional information is held external to the project data model.
 

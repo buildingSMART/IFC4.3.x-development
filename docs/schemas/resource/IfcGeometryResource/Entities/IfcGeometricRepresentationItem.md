@@ -1,7 +1,7 @@
+# IfcGeometricRepresentationItem
+
 An _IfcGeometricRepresentationItem_ is the common supertype of all geometric items used within a representation. It is positioned within a geometric coordinate system, directly or indirectly through intervening items.
-
 <!-- end of short definition -->
-
 
 { .extDef}
 > NOTE Definition according to ISO/CD 10303-42:1992

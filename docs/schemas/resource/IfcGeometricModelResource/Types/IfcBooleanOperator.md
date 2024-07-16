@@ -1,7 +1,7 @@
+# IfcBooleanOperator
+
 Boolean operators that apply to the first and second Boolean operands.
-
 <!-- end of short definition -->
-
 
 { .extDef}
 > NOTE Definition according to ISO/CD 10303-42:1992

@@ -1,11 +1,11 @@
+# IfcWallType
+
 The element type _IfcWallType_ defines commonly shared information for occurrences of walls. The set of shared information may include:
 
 * common properties within shared property sets
 * common material information
 * common material layer definitions
 * common shape representations
-
-
 <!-- end of short definition -->
 
 It is used to define a wall specification (i.e. the specific product information, that is common to all occurrences of that product type). Wall types may be exchanged without being already assigned to occurrences.

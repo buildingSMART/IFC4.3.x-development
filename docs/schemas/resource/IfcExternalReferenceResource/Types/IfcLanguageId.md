@@ -1,7 +1,7 @@
+# IfcLanguageId
+
 The _IfcLanguageId_ identifies the language in which a natural language text is expressed. It uses a language tag to identify the language.
-
 <!-- end of short definition -->
-
 
 > NOTE The tag shall comply to the Internet Engineering Task Force (IETF) language tag as expressed in RFC 5646. A conforming program shall support the "simple language" subtag and the "language-region" tag format.
 

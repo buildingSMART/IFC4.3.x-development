@@ -1,7 +1,7 @@
+# IfcBridgeTypeEnum
+
 Definitions from ISO 6707
-
 <!-- end of short definition -->
-
 
 ## Items
 

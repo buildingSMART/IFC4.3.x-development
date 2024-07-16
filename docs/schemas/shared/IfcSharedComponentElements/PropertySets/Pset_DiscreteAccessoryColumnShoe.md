@@ -1,4 +1,5 @@
-Shape properties common to column shoes.
+# Pset_DiscreteAccessoryColumnShoe
 
+Shape properties common to column shoes.
 <!-- end of short definition -->
 

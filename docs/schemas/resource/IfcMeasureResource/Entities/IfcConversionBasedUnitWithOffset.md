@@ -1,7 +1,7 @@
+# IfcConversionBasedUnitWithOffset
+
 _IfcConversionBasedUnitWithOffset_ is a unit which is converted from another unit by applying a conversion factor and an offset.
-
 <!-- end of short definition -->
-
 
 > HISTORY New entity in IFC4.
 
@@ -13,13 +13,13 @@ wherein _k_ is an absolute temperature expressed in Kelvin and _f_ is the same t
 
 ```
 IfcConversionBasedUnitWithOffset(
-  IfcDimensionalExponents(0, 0, 0, 0, 1, 0, 0),
-  THERMODYNAMICTEMPERATUREUNIT,
-  'Fahrenheit',
-  IfcMeasureWithUnit(
-   IfcThermodynamicTemperatureMeasure(1/1.8),
-   IfcSIUnit(THERMODYNAMICTEMPERATUREUNIT, ?, KELVIN)),
-  -459.67);
+   IfcDimensionalExponents(0, 0, 0, 0, 1, 0, 0),
+   THERMODYNAMICTEMPERATUREUNIT,
+   'Fahrenheit',
+   IfcMeasureWithUnit(
+     IfcThermodynamicTemperatureMeasure(1/1.8),
+     IfcSIUnit(THERMODYNAMICTEMPERATUREUNIT, ?, KELVIN)),
+   -459.67);
 ```
 
 ## Attributes

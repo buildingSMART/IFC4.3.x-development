@@ -1,5 +1,6 @@
-{ .extDef}
+# IfcTextStyleFontModel
 
+{ .extDef}
 <!-- end of short definition -->
 
 > Definition according to W3C for Cascading Style Sheets:

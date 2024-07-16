@@ -1,4 +1,5 @@
-Properties common to the definition of all occurrences of IfcStairFlight.
+# Pset_StairFlightCommon
 
+Properties common to the definition of all occurrences of IfcStairFlight.
 <!-- end of short definition -->
 

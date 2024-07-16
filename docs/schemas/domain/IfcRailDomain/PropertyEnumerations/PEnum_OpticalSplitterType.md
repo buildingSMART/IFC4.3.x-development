@@ -1,7 +1,7 @@
+# PEnum_OpticalSplitterType
+
 Enumeration of optical splitter types.
-
 <!-- end of short definition -->
-
 
 ## Items
 

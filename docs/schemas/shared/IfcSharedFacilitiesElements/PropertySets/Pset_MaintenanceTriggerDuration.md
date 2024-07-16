@@ -1,4 +1,5 @@
-Trigger levels for an asset that has an PPM based maintenance strategy.
+# Pset_MaintenanceTriggerDuration
 
+Trigger levels for an asset that has an PPM based maintenance strategy.
 <!-- end of short definition -->
 

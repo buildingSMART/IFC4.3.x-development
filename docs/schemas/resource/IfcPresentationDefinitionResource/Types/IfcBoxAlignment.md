@@ -1,3 +1,5 @@
+# IfcBoxAlignment
+
 The box alignment specifies the alignment of the text box relative to its position. The following string values shall be used:
 
 * top-left
@@ -9,8 +11,6 @@ The box alignment specifies the alignment of the text box relative to its positi
 * bottom-left
 * bottom-middle
 * bottom-right
-
-
 <!-- end of short definition -->
 
 > NOTE The top-left is the default value.

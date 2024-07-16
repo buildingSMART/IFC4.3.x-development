@@ -1,7 +1,7 @@
+# IfcBooleanChoose
+
 Returns the first choice, if TRUE, otherwise the second choice.
-
 <!-- end of short definition -->
-
 
 { .extDef}
 > NOTE Definition according to ISO/CD 10303-42:1992

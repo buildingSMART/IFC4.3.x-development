@@ -1,7 +1,7 @@
+# IfcGridAxis
+
 An individual axis, _IfcGridAxis_, is defined in the context of a design grid. The axis definition is based on a curve of dimensionality 2. The grid axis is positioned within the XY plane of the position coordinate system defined by the _IfcGrid_.
-
 <!-- end of short definition -->
-
 
 The standard geometric representation of _IfcGridAxis_ is defined using a 2D curve entity. Grid axes are normally defined by an offset to another axis. The _IfcOffsetCurve2D_ supports this concept. Each grid axis has a sense given by the parameterization of the curve. The attribute _SameSense_ is an indicator of whether or not the sense of the grid axis agrees with, or opposes, that of the underlying curve.
 

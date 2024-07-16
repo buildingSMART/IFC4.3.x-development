@@ -1,4 +1,5 @@
-Properties common to IfcRail types and occurrences with PredefinedType set to RAIL.
+# Pset_RailTypeRail
 
+Properties common to IfcRail types and occurrences with PredefinedType set to RAIL.
 <!-- end of short definition -->
 

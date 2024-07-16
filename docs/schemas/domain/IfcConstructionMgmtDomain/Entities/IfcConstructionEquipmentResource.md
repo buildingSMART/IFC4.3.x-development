@@ -1,7 +1,7 @@
+# IfcConstructionEquipmentResource
+
 _IfcConstructionEquipmentResource_ is usage of construction equipment to assist in the performance of construction. Construction Equipment resources are wholly or partially consumed or occupied in the performance of construction.
-
 <!-- end of short definition -->
-
 
 > HISTORY New entity in IFC2.0.
 

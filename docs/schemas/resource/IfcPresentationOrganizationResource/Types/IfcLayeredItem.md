@@ -1,7 +1,7 @@
+# IfcLayeredItem
+
 The _IfcLayeredItem_ is the collection of all those items, that are assigned to a single layer. These items are representation items or complete representations (_IfcRepresentationItem, IfcRepresentation_). If an _IfcRepresentation_ is referenced, all _IfcRepresentationItem_ within its set of _Items_ are assigned to the same layer.
-
 <!-- end of short definition -->
-
 
 { .extDef}
 > NOTE Definition according to ISO 10303-46:

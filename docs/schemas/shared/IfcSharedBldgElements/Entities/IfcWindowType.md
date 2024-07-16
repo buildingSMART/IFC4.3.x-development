@@ -1,3 +1,5 @@
+# IfcWindowType
+
 The element type _IfcWindowType_ defines commonly shared information for occurrences of windows. The set of shared information may include:
 
 * common properties within shared property sets
@@ -5,8 +7,6 @@ The element type _IfcWindowType_ defines commonly shared information for occurre
 * common partitioning of panels
 * common operation types of panels
 * common shape representations
-
-
 <!-- end of short definition -->
 
 A window type defines the particular parameter of the lining and one (or several) panels through the _IfcWindowLiningProperties_ and the _IfcWindowPanelProperties_ as predefined property sets applicable to windows only.

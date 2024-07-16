@@ -1,7 +1,7 @@
+# IfcTextLiteral
+
 The text literal is a geometric representation item which describes a text string using a string literal and additional position and path information. The text size and appearance is determined by the _IfcTextStyle_ that is associated to the _IfcTextLiteral_ through an _IfcStyledItem_.
-
 <!-- end of short definition -->
-
 
 The text string is placed within the planar extent (the box) defined within the subtype _IfcTextLiteralWithExtent_.
 

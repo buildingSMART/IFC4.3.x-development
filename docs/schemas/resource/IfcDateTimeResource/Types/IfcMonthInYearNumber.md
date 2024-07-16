@@ -1,7 +1,7 @@
+# IfcMonthInYearNumber
+
 _IfcMonthInYearNumber_ is an integer that defines the position of the specified month in a year.
-
 <!-- end of short definition -->
-
 
 Calendar month numbers map to calendar month names as follows:
 

@@ -1,4 +1,5 @@
-Properties of rigid catenary support used in railway overhead contact system.
+# Pset_MemberTypeOCSRigidSupport
 
+Properties of rigid catenary support used in railway overhead contact system.
 <!-- end of short definition -->
 

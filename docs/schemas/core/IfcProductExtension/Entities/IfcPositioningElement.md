@@ -1,7 +1,7 @@
+# IfcPositioningElement
+
 New and abstract entity definition for positioning and annotating elements that are used to position other elements relatively.
-
 <!-- end of short definition -->
-
 
 > EXAMPLE A grid is a positioning element to position building components mainly in vertical structures, an alignment is a linear positioning element to position geographic and civil elements mainly in infrastructure works.
 

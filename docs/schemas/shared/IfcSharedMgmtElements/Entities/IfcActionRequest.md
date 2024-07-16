@@ -1,7 +1,7 @@
+# IfcActionRequest
+
 A request is the act or instance of asking for something, such as a request for information, bid submission, or performance of work.
-
 <!-- end of short definition -->
-
 
 Requests may take many forms depending on the need including fault reports for maintenance, requests for small works, and purchase requests (where these are to be made through a help desk or buying function).
 

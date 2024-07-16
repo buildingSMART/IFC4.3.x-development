@@ -1,7 +1,7 @@
+# IfcRelDefinesByProperties
+
 The objectified relationship _IfcRelDefinesByProperties_ defines the relationships between property set definitions and objects. Properties are aggregated in property sets. Property sets can be either directly assigned to occurrence objects using this relationship, or assigned to an object type and assigned via that type to occurrence objects. The assignment of an _IfcPropertySet_ to an _IfcTypeObject_ is not handled via this objectified relationship, but through the direct relationship _HasPropertySets_ at _IfcTypeObject_.
-
 <!-- end of short definition -->
-
 
 The _IfcRelDefinesByProperties_ is an N-to-N relationship, as it allows for the assignment of one or more property sets to one or more objects. Those objects then share the same property definition.
 

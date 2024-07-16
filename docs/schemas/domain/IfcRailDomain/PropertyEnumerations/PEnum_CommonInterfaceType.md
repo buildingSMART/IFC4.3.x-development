@@ -1,7 +1,7 @@
+# PEnum_CommonInterfaceType
+
 Enumeration of common interface types.
-
 <!-- end of short definition -->
-
 
 ## Items
 

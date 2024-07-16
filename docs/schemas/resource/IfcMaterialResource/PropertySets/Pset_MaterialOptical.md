@@ -1,4 +1,5 @@
-A set of optical properties of materials.
+# Pset_MaterialOptical
 
+A set of optical properties of materials.
 <!-- end of short definition -->
 

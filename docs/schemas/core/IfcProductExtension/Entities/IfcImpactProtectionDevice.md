@@ -1,6 +1,6 @@
+# IfcImpactProtectionDevice
+
 An impact protection device is a component used to protect other built elements from kinetic damage. Impact protection devices currently come in different varieties:
-
-
 <!-- end of short definition -->
 
 - A vibration damper used to minimize the effects of vibration in a structure by dissipating kinetic energy. The damper may be passive (elastic, frictional, inertia) or active (in a system using sensors and actuators).

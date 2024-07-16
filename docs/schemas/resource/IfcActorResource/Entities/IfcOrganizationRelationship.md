@@ -1,7 +1,7 @@
+# IfcOrganizationRelationship
+
 The _IfcOrganizationRelationship_ establishes an association between one relating organization and one or more related organizations.
-
 <!-- end of short definition -->
-
 
 > NOTE Entity adapted from **organization_relationship** defined in ISO 10303-41.
 

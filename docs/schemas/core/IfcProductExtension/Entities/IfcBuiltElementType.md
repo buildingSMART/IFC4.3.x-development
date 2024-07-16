@@ -1,5 +1,6 @@
-The _IfcBuiltElementType_ provides the type information for _IfcBuiltElement_ occurrences.
+# IfcBuiltElementType
 
+The _IfcBuiltElementType_ provides the type information for _IfcBuiltElement_ occurrences.
 <!-- end of short definition -->
 
 > NOTE The product representations are defined as representation maps (at the level of the supertype _IfcTypeProduct_, which gets assigned by an element occurrence instance through the _IfcShapeRepresentation.Item[1]_ being an _IfcMappedItem_.

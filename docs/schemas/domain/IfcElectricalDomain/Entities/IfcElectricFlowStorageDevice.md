@@ -1,7 +1,7 @@
+# IfcElectricFlowStorageDevice
+
 An electric flow storage device is a device in which electrical energy is stored and from which energy may be progressively released.
-
 <!-- end of short definition -->
-
 
 > HISTORY New entity in IFC4
 

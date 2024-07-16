@@ -1,10 +1,10 @@
+# IfcConstructionProductResourceType
+
 The resource type _IfcConstructionProductResourceType_ defines commonly shared information for occurrences of construction product resources. The set of shared information may include:
 
 * common productivities
 * common cost rates
 * common properties within shared property sets
-
-
 <!-- end of short definition -->
 
 It is used to define a construction product resource specification (i.e. the specific resource information that is common to all occurrences of that resource). Resource types may be exchanged without being already assigned to occurrences.

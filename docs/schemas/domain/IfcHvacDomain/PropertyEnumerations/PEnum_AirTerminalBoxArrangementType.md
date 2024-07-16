@@ -1,6 +1,6 @@
-
-
+# PEnum_AirTerminalBoxArrangementType
 <!-- end of short definition -->
+
 ## Items
 
 ### SINGLEDUCT

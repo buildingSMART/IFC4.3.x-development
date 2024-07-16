@@ -1,5 +1,6 @@
-Air conditioning unit equipment type attributes.
+# Pset_UnitaryEquipmentTypeAirConditioningUnit
 
+Air conditioning unit equipment type attributes.
 <!-- end of short definition -->
 
 Note that these attributes were formerly Pset_PackagedACUnit prior to IFC2x2.

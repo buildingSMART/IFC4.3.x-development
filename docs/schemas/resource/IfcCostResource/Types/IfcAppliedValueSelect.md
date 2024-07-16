@@ -1,7 +1,7 @@
+# IfcAppliedValueSelect
+
 _IfcAppliedValueSelect_ defines a value to be calculated within a formula.
-
 <!-- end of short definition -->
-
 
 Types are used as follows:
 

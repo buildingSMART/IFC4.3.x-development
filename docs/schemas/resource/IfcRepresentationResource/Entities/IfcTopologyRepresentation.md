@@ -1,6 +1,6 @@
+# IfcTopologyRepresentation
+
 _IfcTopologyRepresentation_ represents the concept of a particular topological representation of a product or a product component within a representation context. This representation context does not need to be (but may be) a geometric representation context. Several representation types for shape representation are included as predefined types:
-
-
 <!-- end of short definition -->
 
 |Type|Description|

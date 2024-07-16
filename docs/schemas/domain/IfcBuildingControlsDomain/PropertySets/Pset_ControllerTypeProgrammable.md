@@ -1,6 +1,8 @@
-Properties for Discrete Digital Control (DDC) or programmable logic controllers.
+# Pset_ControllerTypeProgrammable
 
+Properties for Discrete Digital Control (DDC) or programmable logic controllers.
 <!-- end of short definition -->
+
  HISTORY: Added in IFC4.
 
 

@@ -1,7 +1,7 @@
+# IfcProjectionElementTypeEnum
+
 This enumeration defines the basic types of projection elements.
-
 <!-- end of short definition -->
-
 
 > HISTORY New enumeration in IFC4.
 

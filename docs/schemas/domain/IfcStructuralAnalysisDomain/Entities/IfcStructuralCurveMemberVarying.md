@@ -1,7 +1,7 @@
+# IfcStructuralCurveMemberVarying
+
 This entity describes edge members with varying profile properties. Each instance of _IfcStructuralCurveMemberVarying_ is composed of two or more instances of _IfcStructuralCurveMember_ with differing profile properties. These subordinate members relate to the instance of _IfcStructuralCurveMemberVarying_ by _IfcRelAggregates_.
-
 <!-- end of short definition -->
-
 
 > NOTE A curve member whose variation of profile properties can be sufficiently described by a start profile and an end profile (e.g. tapers) shall be modeled as a single direct instance of the supertype _IfcStructuralCurveMember_.
 

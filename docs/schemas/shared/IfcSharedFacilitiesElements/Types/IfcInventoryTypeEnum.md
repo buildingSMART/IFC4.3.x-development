@@ -1,7 +1,7 @@
+# IfcInventoryTypeEnum
+
 _IfcInventoryTypeEnum_ defines the types of inventory that can be defined.
-
 <!-- end of short definition -->
-
 
 > HISTORY New enumeration in IFC2.0.
 

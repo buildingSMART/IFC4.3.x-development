@@ -1,7 +1,7 @@
+# IfcWorkControl
+
 An _IfcWorkControl_ is an abstract supertype which captures information that is common to both _IfcWorkPlan_ and _IfcWorkSchedule_.
-
 <!-- end of short definition -->
-
 
 > HISTORY New entity in IFC2x
 

@@ -1,7 +1,7 @@
+# IfcSolidAngleMeasure
+
 An _IfcSolidAngleMeasure_ is the value of an angle in a solid.
-
 <!-- end of short definition -->
-
 
 Usually measured in Steradians, (sr, m2/m2).
 

@@ -1,7 +1,7 @@
+# IfcMaterialLayer
+
 _IfcMaterialLayer_ is a single and identifiable part of an element which is constructed of a number of layers (one or more). Each _IfcMaterialLayer_ has a constant thickness and is located relative to the referencing _IfcMaterialLayerSet_ along the material layer set base (MlsBase).
-
 <!-- end of short definition -->
-
 
 Air gaps within a material layer set are represented as an _IfcMaterialLayer_ with the attribute _IsVentilated_ having the value TRUE or UNKNOWN. Such air gaps shall be interpreted as voids (not having a material).
 

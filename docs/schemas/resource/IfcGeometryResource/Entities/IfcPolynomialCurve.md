@@ -1,7 +1,7 @@
+# IfcPolynomialCurve
+
 Polynomial Curve.
-
 <!-- end of short definition -->
-
 
 ## Attributes
 

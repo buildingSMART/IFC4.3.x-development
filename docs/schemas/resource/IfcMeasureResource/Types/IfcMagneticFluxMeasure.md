@@ -1,7 +1,7 @@
+# IfcMagneticFluxMeasure
+
 _IfcMagneticFluxMeasure_ is a measure of the magnetic flux.
-
 <!-- end of short definition -->
-
 
 Usually measured in Weber (Wb, V s).
 

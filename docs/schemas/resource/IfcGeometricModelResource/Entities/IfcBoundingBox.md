@@ -1,7 +1,7 @@
+# IfcBoundingBox
+
 The _IfcBoundingBox_ defines an orthogonal box oriented parallel to the axes of the object coordinate system in which it is defined. It is defined by a _Corner_ being a three-dimensional Cartesian point and three length measures defining the X, Y and Z parameters of the box in the direction of the positive axes.
-
 <!-- end of short definition -->
-
 
 > NOTE Any subtype of _IfcProduct_ having a product shape representation may have a bounding box representation. The 'Box' representation identifier defined at IfcShapeRepresentation utilizes the _IfcBoundingBox_ as the simplest 3D shape representation.
 

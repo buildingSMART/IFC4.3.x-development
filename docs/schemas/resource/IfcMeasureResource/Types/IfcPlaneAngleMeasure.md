@@ -1,7 +1,7 @@
+# IfcPlaneAngleMeasure
+
 An _IfcPlaneAngleMeasure_ is the value of an angle in a plane.
-
 <!-- end of short definition -->
-
 
 Usually measured in radian (rad, m/m = 1), but also grads may be used. The grad unit has to be declared as a conversion based unit based on radian unit.
 

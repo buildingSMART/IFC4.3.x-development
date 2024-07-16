@@ -1,7 +1,7 @@
+# IfcCurveBoundedSurface
+
 The _IfcCurveBoundedSurface_ is a parametric surface with boundaries defined by p-curves, that is, a curve which lies on the basis of a surface and is defined in the parameter space of that surface. The p-curve is a special type of a composite curve segment and shall only be used to bound a surface.
-
 <!-- end of short definition -->
-
 
 The outer boundary shall be either defined by:
 

@@ -1,7 +1,7 @@
+# IfcConnectionSurfaceGeometry
+
 _IfcConnectionSurfaceGeometry_ is used to describe the geometric constraints that facilitate the physical connection of two objects at a surface or at a face with surface geometry associated. It is envisioned as a control that applies to the element connection relationships.
-
 <!-- end of short definition -->
-
 
 The _IfcSurface_ (or the _IfcFaceSurface_ with an associated _IfcSurface_) at the _SurfaceOnRelatingElement_ attribute defines the surface where the basic geometry items of the connected elements connects. The surface geometry and coordinates are provided within the local coordinate system of the _RelatingElement_, as specified at the _IfcRelConnects_ subtype that utilizes the _IfcConnectionSurfaceGeometry_. Optionally, the same surface geometry and coordinates can also be provided within the local coordinate system of the _RelatedElement_ by using the _SurfaceOnRelatedElement_ attribute.
 

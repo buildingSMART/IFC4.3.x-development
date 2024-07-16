@@ -1,7 +1,7 @@
+# PEnum_WindowPanelPositionEnum
+
 This enumeration defines the basic configuration of the window type in terms of the location of window panels. The window configurations are given for windows with one, two or three panels (including fixed panels) as shown in Figure 1. It corresponds to the _OperationType_ of the _IfcWindowType_ definition, which references the _IfcWindowPanelProperties_.
-
 <!-- end of short definition -->
-
 
 Windows which are subdivided into more than three panels have to be defined by the geometry only. The type of such windows is given by an _IfcWindowType.PartitioningType_ = USERDEFINED or NOTDEFINED (see _IfcWindowTypePartitioningEnum_ for details).
 

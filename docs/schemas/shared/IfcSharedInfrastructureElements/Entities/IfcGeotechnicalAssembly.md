@@ -1,5 +1,6 @@
-Representation of the abstract concept of a geological and geotechnical model, usually an interpretation but sometimes created direct from ground penetrating measurement.
+# IfcGeotechnicalAssembly
 
+Representation of the abstract concept of a geological and geotechnical model, usually an interpretation but sometimes created direct from ground penetrating measurement.
 <!-- end of short definition -->
 
 Use of an assembly is optional but can carry the methodology and uncertainty information.

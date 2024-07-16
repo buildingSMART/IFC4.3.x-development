@@ -1,7 +1,7 @@
+# IfcLightDistributionCurveEnum
+
 There are three kinds of light distribution curves, see Figure 1.
-
 <!-- end of short definition -->
-
 
 > NOTE The classification as type A, B, C is according to Standard CEN TC 169, prEN 13032-1, CIE 121:
 

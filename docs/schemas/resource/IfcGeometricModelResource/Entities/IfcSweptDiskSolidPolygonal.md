@@ -1,7 +1,7 @@
+# IfcSweptDiskSolidPolygonal
+
 The _IfcSweptDiskSolidPolygonal_ is a _IfcSweptDiskSolid_ where the _Directrix_ is restricted to be provided by an poly line only. An optional _FilletRadius_ attribute can be asserted, it is then applied as a fillet to all transitions between the segments of the poly line.
-
 <!-- end of short definition -->
-
 
 > NOTE The geometric item _IfcIndexedPolyCurve_ provides a more compact representation compared with _IfcPolyline_. Therefore it is the preferred curve representation for the _Directrix_. The _IfcIndexedPolyCurve_ shall not have _Segments_ defined, resticting it to a poly line only.
 

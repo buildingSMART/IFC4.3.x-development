@@ -1,6 +1,8 @@
-Properties for history and operating schedules of thermostats.
+# Pset_UnitaryControlElementPHistory
 
+Properties for history and operating schedules of thermostats.
 <!-- end of short definition -->
+
  HISTORY: Added in IFC4.
 
 

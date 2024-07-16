@@ -1,7 +1,7 @@
+# IfcSweptAreaSolid
+
 An _IfcSweptAreaSolid_ represents the 3D shape by a sweeping representation scheme allowing a two dimensional planar cross section to sweep through space.
-
 <!-- end of short definition -->
-
 
 The swept area is defined by a cross section, represented by a subtype if _IfcProfileDef_, that is provided as a closed two-dimensional boundary on an implicit plane. The swept area is defined in the xy plane of the object coordinate system. The sweeping operation is applied to the swept area as defined within the subtypes of _IfcSweptAreaSolid_, some subtypes require an implicit transformation of the swept area to the start position of the sweep.
 

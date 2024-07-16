@@ -1,6 +1,6 @@
-
-
+# PEnum_DistributionPortElectricalType
 <!-- end of short definition -->
+
 ## Items
 
 ### ACPLUG

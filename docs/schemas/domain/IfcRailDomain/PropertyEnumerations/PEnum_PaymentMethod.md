@@ -1,7 +1,7 @@
+# PEnum_PaymentMethod
+
 Enumeration describing the payment method.
-
 <!-- end of short definition -->
-
 
 ## Items
 

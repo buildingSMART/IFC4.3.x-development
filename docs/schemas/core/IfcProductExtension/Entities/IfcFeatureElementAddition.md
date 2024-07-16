@@ -1,7 +1,7 @@
+# IfcFeatureElementAddition
+
 A feature element addition is a specialization of the general feature element, that represents an existence dependent element which modifies the shape and appearance of the associated master element. The _IfcFeatureElementAddition_ offers the ability to handle shape modifiers as semantic objects within the IFC object model that add to the shape of the master element.
-
 <!-- end of short definition -->
-
 
 The _IfcFeatureElementAddition_ is associated to its master element by virtue of the objectified relationship _IfcRelProjectsElement_. This relationship implies a Boolean 'union' operation between the shape of the master element and the shape of the addition feature.
 

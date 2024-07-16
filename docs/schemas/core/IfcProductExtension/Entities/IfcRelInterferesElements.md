@@ -1,5 +1,6 @@
-The _IfcRelInterferesElements_ objectified relationship indicates that two elements interfere.
+# IfcRelInterferesElements
 
+The _IfcRelInterferesElements_ objectified relationship indicates that two elements interfere.
 <!-- end of short definition -->
 
 It is a 1 to 1 relationship, and the concept of two elements interfering physically or logically is described independently of the elements.
@@ -21,13 +22,13 @@ The relation orientation may be required by certain _InterferenceType_ values or
 The _InterferenceType_ property optionally specifies the type of interference between the two elements, two set of default types are provided:
 
 * **Oriented interferences types** imply usage of _ImpliedOrder_ set to TRUE and specific choice of _RelatingElement_ and _RelatedElement_ to be meaningful:
- * Crosses: the _RelatingElement_ is crossing the _RelatedElement_ (e.g. Railway crossing a road)
- * PassesThrough: the _RelatingElement_ is passing through the _RelatedElement_ (e.g. a Road passing inside a tunnel)
- * PassesOver: the _RelatingElement_ is passing over the _RelatedElement_ (e.g a bridge passing over a water canal)
- * PassesUnder: the _RelatingElement_ is passing under the _RelatedElement_ (e.g a Tunnel passing under a road)
+  * Crosses: the _RelatingElement_ is crossing the _RelatedElement_ (e.g. Railway crossing a road)
+  * PassesThrough: the _RelatingElement_ is passing through the _RelatedElement_ (e.g. a Road passing inside a tunnel)
+  * PassesOver: the _RelatingElement_ is passing over the _RelatedElement_ (e.g a bridge passing over a water canal)
+  * PassesUnder: the _RelatingElement_ is passing under the _RelatedElement_ (e.g a Tunnel passing under a road)
 * **Non oriented interferences types** do not imply specific values of _ImpliedOrder_ (but can still be set to detail shape interference calculation)
- * Clash: The _RelatingElement_ and _RelatedElement_ have a spatial or shape-based clash
- * Along: The _RelatingElement_ and _RelatedElement_ have a common frontier/surface
+  * Clash: The _RelatingElement_ and _RelatedElement_ have a spatial or shape-based clash
+  * Along: The _RelatingElement_ and _RelatedElement_ have a common frontier/surface
 
 > HISTORY New entity in IFC4.
 

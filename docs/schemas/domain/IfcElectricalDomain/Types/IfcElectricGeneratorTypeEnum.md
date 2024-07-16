@@ -1,7 +1,7 @@
+# IfcElectricGeneratorTypeEnum
+
 The _IfcElectricGeneratorTypeEnum_ defines different types of electric generators.
-
 <!-- end of short definition -->
-
 
 > HISTORY New type in IFC2x2. Values added in IFC4.
 

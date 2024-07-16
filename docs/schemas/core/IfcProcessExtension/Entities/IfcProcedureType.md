@@ -1,6 +1,8 @@
->
+# IfcProcedureType
 
+>
 <!-- end of short definition -->
+
  HISTORY New entity in IFC4
 
 An _IfcProcedureType_ provides for all forms of types of procedure that may be specified.

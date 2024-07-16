@@ -1,7 +1,7 @@
+# IfcSizeSelect
+
 The _IfcSizeSelect_ provides for the selection between different measure types used for provision of a length measure.
-
 <!-- end of short definition -->
-
 
 > NOTE global units are defined at the single _IfcProject_ instance, given by _UnitsInContext:IfcUnitAssignment_, the same units are used for the geometric representation items and for the style definitions.
 

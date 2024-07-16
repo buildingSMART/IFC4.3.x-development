@@ -1,4 +1,5 @@
-Shape properties common to wire loop joint connectors.
+# Pset_DiscreteAccessoryWireLoop
 
+Shape properties common to wire loop joint connectors.
 <!-- end of short definition -->
 

@@ -1,7 +1,7 @@
+# IfcRoleEnum
+
 This enumeration defines roles which may be played by an actor.
-
 <!-- end of short definition -->
-
 
 > HISTORY New type in IFC1.5.
 

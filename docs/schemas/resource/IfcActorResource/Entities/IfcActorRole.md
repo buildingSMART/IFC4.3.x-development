@@ -1,7 +1,7 @@
+# IfcActorRole
+
 This entity indicates a role which is performed by an actor, either a person, an organization or a person related to an organization.
-
 <!-- end of short definition -->
-
 
 > NOTE The list of roles of the enumeration values of the _Role_ attribute can never be complete. Therefore using enumeration value USERDEFINED, the user can provide any role as a value of the attribute _UserDefinedRole_.
 

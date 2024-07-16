@@ -1,7 +1,7 @@
+# IfcSectionProperties
+
 _IfcSectionProperties_ defines the cross section properties for a single longitudinal piece of a cross section. It is a special-purpose helper class for _IfcSectionReinforcementProperties_.
-
 <!-- end of short definition -->
-
 
 > HISTORY New entity in IFC2x2.
 

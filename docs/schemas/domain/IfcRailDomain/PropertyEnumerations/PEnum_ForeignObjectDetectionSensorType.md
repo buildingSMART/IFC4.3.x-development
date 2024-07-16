@@ -1,6 +1,6 @@
-
-
+# PEnum_ForeignObjectDetectionSensorType
 <!-- end of short definition -->
+
 ## Items
 
 ### DUALPOWERNETWORK

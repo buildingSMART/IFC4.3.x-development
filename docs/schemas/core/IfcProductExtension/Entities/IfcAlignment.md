@@ -1,7 +1,7 @@
+# IfcAlignment
+
 For the purposes of IFC the English term "alignment" defines three separate but closely interconnected concepts.
-
 <!-- end of short definition -->
-
 
 1. definition of a reference system for linear positioning
 2. safeguarding and optimization of the movement of vehicles - kinematic perspective

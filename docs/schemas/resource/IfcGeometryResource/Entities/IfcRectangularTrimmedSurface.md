@@ -1,7 +1,7 @@
+# IfcRectangularTrimmedSurface
+
 The _IfcRectangularTrimmedSurface_ is a surface created by bounding its _BasisSurface_ along two pairs of parallel curves defined within the parametric space of the referenced surface.
-
 <!-- end of short definition -->
-
 
 { .extDef}
 > NOTE Definition according to ISO/CD 10303-42:1992

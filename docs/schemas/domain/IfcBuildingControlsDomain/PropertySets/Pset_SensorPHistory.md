@@ -1,6 +1,8 @@
-Properties for history of controller values.
+# Pset_SensorPHistory
 
+Properties for history of controller values.
 <!-- end of short definition -->
+
  HISTORY: Added in IFC4.
 
 

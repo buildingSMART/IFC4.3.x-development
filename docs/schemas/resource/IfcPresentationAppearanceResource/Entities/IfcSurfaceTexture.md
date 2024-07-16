@@ -1,17 +1,17 @@
+# IfcSurfaceTexture
+
 An _IfcSurfaceTexture_ provides a 2-dimensional image-based texture map. It can either be given by referencing an external image file through an URL reference (_IfcImageTexture_), including the image file as a blob (long binary) into the data set (_IfcBlobTexture_), or by explicitly including an array of pixels (_IfcPixelTexture_).
-
 <!-- end of short definition -->
-
 
 The following definitions from ISO/IEC 19775-1 X3D Architecture and base components ([X3D Specification](http://www.web3d.org/x3d/specifications/)) apply:
 
  * Texture: An image used in a texture map to create visual appearance effects when applied to geometry.
  * Texture map: A texture plus the general parameters necessary for mapping the texture to geometry.
  * Textures are defined by 2D images that contain an array of colour values describing the texture. The texture values are interpreted differently depending on the number of components in the texture and the specifics of the image format. In general, texture may be described using one of the following forms:
- 1. Intensity textures (one-component)
- 2. Intensity plus alpha opacity textures (two-component)
- 3. Full RGB textures (three-component)
- 4. Full RGB plus alpha opacity textures (four-component)
+  1. Intensity textures (one-component)
+  2. Intensity plus alpha opacity textures (two-component)
+  3. Full RGB textures (three-component)
+  4. Full RGB plus alpha opacity textures (four-component)
 
 > NOTE Image formats specify an alpha opacity, not transparency (where alpha = 1 - transparency).
 

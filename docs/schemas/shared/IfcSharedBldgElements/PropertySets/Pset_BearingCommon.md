@@ -1,4 +1,5 @@
-Common properties for IfcBearing.
+# Pset_BearingCommon
 
+Common properties for IfcBearing.
 <!-- end of short definition -->
 

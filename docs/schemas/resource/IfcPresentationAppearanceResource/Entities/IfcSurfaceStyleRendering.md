@@ -1,6 +1,6 @@
+# IfcSurfaceStyleRendering
+
 IfcSurfaceStyleRendering holds the properties for visualization related to a particular surface style. Three lighting models are supported:
-
-
 <!-- end of short definition -->
 
 - Phong lighting model

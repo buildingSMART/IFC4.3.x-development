@@ -1,7 +1,7 @@
+# IfcExtrudedAreaSolid
+
 The _IfcExtrudedAreaSolid_ is defined by sweeping a cross section provided by a profile definition. The direction of the extrusion is given by the _ExtrudedDirection_ attribute and the length of the extrusion is given by the _Depth_ attribute. If the planar area has inner boundaries (holes defined), then those holes shall be swept into holes of the solid.
-
 <!-- end of short definition -->
-
 
 The resulting solid is positioned by the _IfcSweptAreaSolid_._Position_ relative to the object coordinate system. If provided, it allows to reposition the extruded solid. If not provided, it defaults to the current object coordinate system. The _ExtrudedDirection_ is given within the position coordinate system as defined by _IfcSweptAreaSolid_._Position_. The extruded direction can be any direction which is not perpendicular to the z axis of the position coordinate system.
 
@@ -12,8 +12,8 @@ Figure 1 — Extruded area solid geometry
 > EXAMPLE Figure 1 illustrates geometric parameters of the extruded area solid. The extruded area solid defines the extrusion of a 2D area by an direction and depth. The result is a solid.
 
  * The profile to be swept is defined:
- * as a 2D primitive, here <em>IfcRectangleProfileDef</em>, that is placed relative to the xy plane of object coordinate system
- * since no 2D profile position coordinate system is provided, here <em>IfcParameterizedProfileDef</em>.<em>Position</em> = NIL, the profile is positioned without transformation into the xy plane of the object coordinate system (by default, centric at 0.,0. with no rotation)
+  * as a 2D primitive, here <em>IfcRectangleProfileDef</em>, that is placed relative to the xy plane of object coordinate system
+  * since no 2D profile position coordinate system is provided, here <em>IfcParameterizedProfileDef</em>.<em>Position</em> = NIL, the profile is positioned without transformation into the xy plane of the object coordinate system (by default, centric at 0.,0. with no rotation)
  * The resulting swept solid is not repositioned, as no position coordinate system is provided, here IfcSweptAreaSolid.<em>Position</em> = NIL.
 
 ![extruded area solid repositioned](../../../../figures/ifcextrudedareasolid-fig2.png)
@@ -23,8 +23,8 @@ Figure 2 — Repositioned extruded area solid geometry
 > EXAMPLE Figure 2 illustrates geometric parameters and additional positioning parameters of the extruded area solid. The extruded area solid defines the extrusion of a 2D area by an direction and depth. The 2D area, provided by a parameterized profile definition, can be positioned relative to the object coordinate system (other then by default at 0.,0. with no rotation). The result is a solid that can be repositioned within the object coordinate system.
 
  * The profile to be swept is defined:
- * as a 2D primitive, here <em>IfcRectangleProfileDef</em>, that is placed relative to the xy plane of object coordinate system
- * a 2D profile position coordinate system is provided that positions the profile relative to the xy plane (here at a corner of the rectangle)
+  * as a 2D primitive, here <em>IfcRectangleProfileDef</em>, that is placed relative to the xy plane of object coordinate system
+  * a 2D profile position coordinate system is provided that positions the profile relative to the xy plane (here at a corner of the rectangle)
  * The resulting swept solid is repositioned, here it is moved into local z and rotated by 15' along the y axis.
 
 { .extDef}

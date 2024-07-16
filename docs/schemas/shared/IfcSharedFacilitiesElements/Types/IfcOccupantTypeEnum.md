@@ -1,7 +1,7 @@
+# IfcOccupantTypeEnum
+
 _IfcOccupantTypeEnum_ defines the types of occupant from which the type required can be selected.
-
 <!-- end of short definition -->
-
 
 > HISTORY New enumeration in IFC2.0.
 

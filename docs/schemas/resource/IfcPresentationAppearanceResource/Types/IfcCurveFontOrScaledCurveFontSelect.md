@@ -1,7 +1,7 @@
+# IfcCurveFontOrScaledCurveFontSelect
+
 The _IfcCurveFontOrScaledCurveFontSelect_ provides a selection between a curve font and a scaled curve font.
-
 <!-- end of short definition -->
-
 
 { .extDef}
 > NOTE Definition according to ISO/CD 10303-46:1992

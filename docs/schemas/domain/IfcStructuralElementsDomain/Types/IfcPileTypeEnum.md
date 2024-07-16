@@ -1,7 +1,7 @@
+# IfcPileTypeEnum
+
 Enumeration defining the pile type.
-
 <!-- end of short definition -->
-
 
 > HISTORY New type in IFC2x2
 

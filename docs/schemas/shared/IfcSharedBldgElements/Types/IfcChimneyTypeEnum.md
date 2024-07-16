@@ -1,7 +1,7 @@
+# IfcChimneyTypeEnum
+
 This enumeration defines the valid types of chimneys that can be predefined using the enumeration values.
-
 <!-- end of short definition -->
-
 
 > HISTORY New enumeration in IFC4
 

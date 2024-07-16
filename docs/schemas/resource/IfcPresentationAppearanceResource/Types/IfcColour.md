@@ -1,7 +1,7 @@
+# IfcColour
+
 The _IfcColour_ is a select between different definitions of colour used for presentation styles.
-
 <!-- end of short definition -->
-
 
 { .extDef}
 > NOTE Definition according to ISO/CD 10303-46:1992

@@ -1,6 +1,6 @@
-
-
+# PEnum_SwitchingDeviceToggleSwitchType
 <!-- end of short definition -->
+
 ## Items
 
 ### BREAKGLASS

@@ -1,4 +1,5 @@
-Properties of electrical circuits.
+# Pset_DistributionSystemTypeElectrical
 
+Properties of electrical circuits.
 <!-- end of short definition -->
 

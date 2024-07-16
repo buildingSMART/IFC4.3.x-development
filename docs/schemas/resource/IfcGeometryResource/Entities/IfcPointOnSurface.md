@@ -1,7 +1,7 @@
+# IfcPointOnSurface
+
 The _IfcPointOnSurface_ is a point defined by two parameter value of its defining surface.
-
 <!-- end of short definition -->
-
 
 { .extDef}
 > NOTE Definition according to ISO/CD 10303-42:1992

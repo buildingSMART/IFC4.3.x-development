@@ -1,7 +1,7 @@
+# IfcEnergyMeasure
+
 _IfcEnergyMeasure_ is a measure of energy required or used.
-
 <!-- end of short definition -->
-
 
 Usually measured in Joules, (J, Nm).
 

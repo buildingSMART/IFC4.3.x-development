@@ -1,7 +1,7 @@
+# IfcVirtualElement
+
 A virtual element is a special element used to provide imaginary, placeholder, or provisional areas, volumes, and boundaries. Virtual elements are usually not displayed and do not have quantities, associated materials, and other measures.
-
 <!-- end of short definition -->
-
 
 Uses of _IfcVirtualElement_ include:
 

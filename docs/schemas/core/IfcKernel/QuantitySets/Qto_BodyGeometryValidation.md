@@ -1,7 +1,7 @@
+# Qto_BodyGeometryValidation
+
 Quantities supplied for validating the correct interpretation of the body shape representation at import. In case of multiple representation items, the quantities are summed for each of the items (irrespective of any overlap). Choosing a suitable tolerance value for comparing the supplied numbers to the numbers calculated from the reconstructed geometry is at the discretion of the importing application.
-
 <!-- end of short definition -->
-
 
 ## Comments
 

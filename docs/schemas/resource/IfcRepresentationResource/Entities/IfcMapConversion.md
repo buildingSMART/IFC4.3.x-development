@@ -1,12 +1,11 @@
+# IfcMapConversion
+
 The map conversion deals with transforming the local engineering coordinate system, often called world coordinate system, into the coordinate reference system of the underlying map.
-
 <!-- end of short definition -->
-
 
 > NOTE The _IfcMapConversion_ does not handle the projection of a map from the geodetic coordinate reference system.
 
 For this transformation, _IfcMapConversion_ data are used for:
-
 1. a scaling of the three axes (x,y,z), by the same _IfcMapConversion.Scale_
 2. followed by an **anti-clockwise** rotation about the z-axis of *θ*, where:
 

@@ -1,7 +1,7 @@
+# IfcDistributionSystemEnum
+
 This enumeration identifies different types of distribution systems. It is used to designate systems by their function as well as ports of devices within such systems to restrict connectivity to compatible connections.
-
 <!-- end of short definition -->
-
 
 > HISTORY New enumeration in IFC4.
 

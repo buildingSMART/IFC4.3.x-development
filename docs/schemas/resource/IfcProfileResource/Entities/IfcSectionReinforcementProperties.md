@@ -1,7 +1,7 @@
+# IfcSectionReinforcementProperties
+
 _IfcSectionReinforcementProperties_ defines the cross section properties of reinforcement for a single longitudinal piece of a cross section with a specific reinforcement usage type.
-
 <!-- end of short definition -->
-
 
 > HISTORY New entity in IFC2x2.
 

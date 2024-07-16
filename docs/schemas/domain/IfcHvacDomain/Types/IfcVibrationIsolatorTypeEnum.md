@@ -1,7 +1,7 @@
+# IfcVibrationIsolatorTypeEnum
+
 Enumeration defining the typical types of vibration isolators.
-
 <!-- end of short definition -->
-
 
 > HISTORY New enumeration in IFC2x2.
 

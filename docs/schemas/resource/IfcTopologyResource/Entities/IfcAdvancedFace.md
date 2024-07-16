@@ -1,7 +1,7 @@
+# IfcAdvancedFace
+
 An advanced face is a specialization of a face surface that has to meet requirements on using particular topological and geometric representation items for the definition of the faces, edges and vertices.
-
 <!-- end of short definition -->
-
 
 An _IfcAdvancedFace_ is restricted to:
 

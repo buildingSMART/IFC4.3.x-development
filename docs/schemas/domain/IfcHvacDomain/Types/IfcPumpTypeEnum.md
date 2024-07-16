@@ -1,7 +1,7 @@
+# IfcPumpTypeEnum
+
 Defines general types of pumps.
-
 <!-- end of short definition -->
-
 
 > HISTORY New enumeration in IFC2x. SUBMERSIBLEPUMP and SUMPPUMP added in IFC4.
 
@@ -27,7 +27,7 @@ A Vertical Inline pump has the pump and motor close-coupled on the pump casing. 
 
 ### VERTICALTURBINE
 A Vertical Turbine pump has a motor mounted vertically on the pump casing for either
-    wet-pit sump mounting or dry-well mounting.
+        wet-pit sump mounting or dry-well mounting.
 
 ### USERDEFINED
 User-defined pump type.

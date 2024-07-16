@@ -1,9 +1,9 @@
+# IfcFontVariant
+
 The _IfcFontVariant_ type defines whether the normal or the small-caps faces within a font family shall be used. Values are:
 
 * normal
 * small-caps
-
-
 <!-- end of short definition -->
 
 { .extDef}

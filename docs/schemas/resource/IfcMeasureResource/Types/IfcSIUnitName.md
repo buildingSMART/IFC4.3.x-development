@@ -1,5 +1,6 @@
-{ .extDef}
+# IfcSIUnitName
 
+{ .extDef}
 <!-- end of short definition -->
 
 > NOTE Definition according to ISO/CD 10303-41:1992

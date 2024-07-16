@@ -1,7 +1,7 @@
+# PEnum_FiberColour
+
 Enumeration of fiber colours.
-
 <!-- end of short definition -->
-
 
 ## Items
 

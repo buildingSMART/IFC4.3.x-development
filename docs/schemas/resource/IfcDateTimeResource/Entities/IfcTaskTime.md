@@ -1,7 +1,7 @@
+# IfcTaskTime
+
 _IfcTaskTime_ captures the time-related information about a task including the different types (actual or scheduled) of starting and ending times.
-
 <!-- end of short definition -->
-
 
 All given values should be provided by the application; the IFC schema does not deal with dependencies between task time values. There is also no consistency check through where rules that guarantee a meaningful population of time values. Thus, an application is responsible to provide reasonable values and, if an application receives task times, has to make consistency checks by their own.
 

@@ -1,7 +1,7 @@
+# IfcRepresentationContextSameWCS
+
 If there are several instances of _IfcGeometricRepresentationContext_ within one project file, the XY plane of all _WorldCoordinateSystem_'s shall be coplanar and identical.
-
 <!-- end of short definition -->
-
 
 > <small>NOTE  The instances of
 <i>IfcGeometricRepresentationSubContext</i> do not define their

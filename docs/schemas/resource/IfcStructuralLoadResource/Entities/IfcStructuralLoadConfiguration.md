@@ -1,7 +1,7 @@
+# IfcStructuralLoadConfiguration
+
 This class combines one or more load or result values in a 1- or 2-dimensional configuration.
-
 <!-- end of short definition -->
-
 
 > HISTORY New entity in IFC4.
 

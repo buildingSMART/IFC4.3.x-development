@@ -1,7 +1,7 @@
+# IfcFaceBasedSurfaceModel
+
 The _IfcFaceBasedSurfaceModel_ represents the a shape by connected face sets. The connected faces have a dimensionality 2 and are placed in a coordinate space of dimensionality 3.
-
 <!-- end of short definition -->
-
 
 { .extDef}
 > NOTE Definition according to ISO/CD 10303-42:1992

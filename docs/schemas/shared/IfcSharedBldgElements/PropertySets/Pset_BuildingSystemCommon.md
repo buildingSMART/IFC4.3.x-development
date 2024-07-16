@@ -1,4 +1,5 @@
-Properties common to the definition of building systems.
+# Pset_BuildingSystemCommon
 
+Properties common to the definition of building systems.
 <!-- end of short definition -->
 

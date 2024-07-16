@@ -1,5 +1,6 @@
-A signal is an active device that conveys information or instructions to users, by means of an audio, visual signal or a combination of both.
+# IfcSignal
 
+A signal is an active device that conveys information or instructions to users, by means of an audio, visual signal or a combination of both.
 <!-- end of short definition -->
 
 The primary distinction from an _IfcSign_ is that a signal is active and therefore a subtype of _IfcFlowTerminal_ usually requiring power and data connections for its operation.

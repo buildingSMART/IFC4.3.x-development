@@ -40,6 +40,15 @@ Official model view definitions (MVDs) exist as related specifications. The offi
 These three MVDs can be seen as three levels of implementation for IFC 4.3. They are gradual levels adding more advanced features to the implementations. Vendors can get certified for IFC import against these MVDs. Export certification can be done against the MVDs, but also agains more granular functional parts. These can be found on  [validate.buildingsmart.org](https://validate.buildingsmart.org).
 {%- if not is_iso %}
 The IFC documentation is deposited at [standards.buildingsmart.org](https://standards.buildingsmart.org).
+
+| **MVD abbreviation** | RV                                                                                                  | AbV                                                                                                                                                          |
+|----------------------|-----------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Name**             | Reference View                                                                                      | Alignment-based View                                                                                                                                         |
+| **Purpose**          | Suitable for data exchanges based on reference models, where the exchange is mainly one-directional | Suitable for data exchanges based on alignment, linear placement relative to it, and other concepts associated to civil, infrastructure and geospatial works |
+| **Use**              | Intended as a reference and not a full exchange of the design intent.                               | Can be used as a reference, but its added value is the exchange of some parametric constructs (e.g., alignment, advanced solid geometry)                     |
+| **Scope**            | Strict superset of IFC4 Reference View. Usually small in scope and easier to implement.             | Strict superset of the IFC4.3 Reference View, hence larger in scope.                                                                                         |
+
+
 {% endif %}
 
 ## Architecture

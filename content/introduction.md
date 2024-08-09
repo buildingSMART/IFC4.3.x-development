@@ -37,7 +37,7 @@ Official model view definitions (MVDs) exist as related specifications. The offi
 - Alignment Based View
 - Design Transfer view
 
-These three MVDs can be seen as three levels of implementation for IFC 4.3. They are gradual levels adding more advanced features to the implementations. Vendors can get certified for IFC import against these MVDs. Export certification can be done against the MVDs, but also agains more granular functional parts. These can be found on  [validate.buildingsmart.org](https://validate.buildingsmart.org).
+These three MVDs can be seen as three levels of implementation for IFC 4.3. They are gradual levels adding more advanced features to the implementations. Vendors can get certified for IFC import against these MVDs. Export certification can be done against the MVDs, but also against more granular functional parts. These can be found on  [validate.buildingsmart.org](https://validate.buildingsmart.org).
 {%- if not is_iso %}
 The IFC documentation is deposited at [standards.buildingsmart.org](https://standards.buildingsmart.org).
 
@@ -61,7 +61,7 @@ The data schema architecture of IFC defines four conceptual layers, each individ
 2. **Core layer** — the next layer includes the kernel schema and the core extension schemas, containing the most general entity definitions, all entities defined at the core layer, or above carry a globally unique id and optionally owner and history information;
 3. **Interoperability layer** — the next layer includes schemas containing entity definitions that are specific to a general product, process or resource specialization used across several disciplines, those definitions are typically utilized for inter-domain exchange and sharing of construction information;
 4. **Domain layer** — the highest layer includes schemas containing entity definitions that are specializations of products, processes or resources specific to a certain discipline, those definitions are typically utilized for intra-domain exchange and sharing of information.
-In this picture the 'tunnel' domain is transparant since this is not part of the current IFC 4.3 yet, but is aimed to be included in a future update.
+In this picture the 'tunnel' domain is transparent since this is not part of the current IFC 4.3 yet, but is aimed to be included in a future update.
 
 ## Compatibility
 

@@ -21,4 +21,4 @@ The surface to be bound.
 The outer boundary of the surface.
 
 ### InnerBoundaries
-An optional set of inner boundaries. They shall not intersect each other or the outer boundary.
+A potentially empty set of inner boundaries. They shall not intersect each other or the outer boundary.

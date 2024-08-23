@@ -432,7 +432,7 @@ To load example files, you can clone the sample files into a directory called
 ```bash
 $ cd /path/to/IFC4.3.x-development
 $ cd ..
-$ git clone https://github.com/buildingSMART/Sample-Test-Files.git examples
+$ git clone https://github.com/buildingSMART/IFC4.3.x-sample-models examples
 ```
 
 You can now visit `http://127.0.0.1:5000/` to see the running website.

@@ -1,9 +1,9 @@
 # IfcLibraryInformation
 
+> NOTE This functionality has been superseded by the URI convention in IFC. More info on the use of URI references in different IFC versions can be found on [this documentation page](https://github.com/buildingSMART/bSDD/blob/master/Documentation/bSDD-IFC%20documentation.md). The use of IfcLibraryInformation is discouraged. 
+
 An _IfcLibraryInformation_ describes an external structured store of information, normally organized in a manner which allows information lookup through an index or reference value. _IfcLibraryInformation_ provides the library _Name_ and optional _Description_, _Version_, _VersionDate_ and _Publisher_ attributes. A _Location_ may be added for electronic access to the library.
 <!-- end of short definition -->
-
-> EXAMPLE A library may be an external network of elements in a Building Automation System structured using BACnet or Brickschema. Alternatively, a library may reference an external revision control system. A library may also reference an arbitrary external database.
 
 > HISTORY New entity in IFC2x.
 

@@ -340,3 +340,58 @@ initialiseBackToTopButton();
 feather.replace();
 
 });
+
+function getCookie(name) {
+    var value = `; ${document.cookie}`;
+    var parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+    return null;
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    var languagePreference = getCookie('languagePreference') || 'English_UK';  // Default to 'English (UK)' if no cookie
+
+    var languageSelector = document.getElementById('language-selector');
+    
+    if (languageSelector) {
+        languageSelector.value = languagePreference;
+    }
+});
+
+function setLanguagePreference(value) {
+    let languageMapping = {
+        "English_UK": "English (UK)",
+        "English": "English",
+        "Arabic": "Arabic",
+        "Czech": "Czech",
+        "Danish": "Danish",
+        "German": "German",
+        "Spanish": "Spanish",
+        "Finnish": "Finnish",
+        "French": "French",
+        "Hindi": "Hindi",
+        "Croatian": "Croatian",
+        "Icelandic": "Icelandic",
+        "Italian": "Italian",
+        "Japanese": "Japanese",
+        "Korean": "Korean",
+        "Lithuanian": "Lithuanian",
+        "Dutch": "Dutch",
+        "Norwegian": "Norwegian",
+        "Polish": "Polish",
+        "Portuguese": "Portuguese",
+        "Portuguese_Brazilian": "Portuguese (Brazilian)",
+        "Romanian": "Romanian",
+        "Slovenian": "Slovenian",
+        "Swedish": "Swedish",
+        "Turkish": "Turkish",
+        "ChineseSimplified": "Chinese (Simplified)"
+    };
+
+    var date = new Date();
+    date.setTime(date.getTime() + (30 * 24 * 60 * 60 * 1000));  // Cookie expires in 30 days
+    var expires = "; expires=" + date.toUTCString();
+
+    document.cookie = `languagePreference=${value}${expires}; path=/;`;
+    location.reload();
+}

@@ -3,6 +3,16 @@
 
 <h1>{{ number }} {{ entity}}</h1>
 
+<p>
+    <aside class="aside-note">
+        <mark>TRANSLATION</mark>
+        <div>
+            <p><strong></strong> {{ translation.definition | safe}}</p>
+            <p><strong></strong> {{ translation.description | safe  }}</p>
+        </div>
+    </aside>
+</p>
+
 <h2>
     {{ definition_number }} Semantic definition
 </h2>

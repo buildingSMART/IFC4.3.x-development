@@ -1,8 +1,30 @@
 {% extends "main.html" %}
 {% block pagecontent %}
 
-<h1>{{ number }} {{ entity}}</h1>
+<h1>{{ number }} {{ entity }}</h1>
 
+<p>
+    <aside class="aside-note">
+        <mark>TRANSLATION</mark>
+        <div>
+            {% set translations = {
+                'resource_translation': 'Name:',
+                'definition': 'Definition:',
+                'description': 'Description:'
+            } %}
+
+            {% for key, label in translations.items() %}
+                {% if translation[key] %}
+                <div>
+                    <span style="color: #0277bd;">&nbsp;{{ language_icon }}</span>
+                    <em style="color: black;">{{ label }}</em>
+                    <span style="color: #0277bd;">&nbsp;{{ translation[key] | safe }}</span>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </aside>
+</p>
 {% if not is_iso %}
     {% if is_product_or_type %}
     <p><aside class="aside-note"><mark>NOTE</mark>  This entity is a subtype of IfcProduct or IfcTypeProduct and hence part of every standardized schema subset and implementation level.</aside></p>

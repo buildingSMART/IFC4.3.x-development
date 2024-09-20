@@ -1,0 +1,4 @@
+[submodule "code/translate_repo"]
+	path = code/translate_repo
+	url = https://github.com/buildingSMART/IFC4.3.x-output.git
+	branch = translations

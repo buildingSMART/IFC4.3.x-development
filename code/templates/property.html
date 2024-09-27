@@ -1,14 +1,30 @@
 {% extends "main.html" %}
 {% block pagecontent %}
 
-<h1>{{ number }} {{ entity}}</h1>
+<h1>{{ number }} {{ entity }}</h1>
 
 <p>
     <aside class="aside-note">
         <mark>TRANSLATION</mark>
         <div>
-            <p><strong></strong> {{ translation.definition | safe}}</p>
-            <p><strong></strong> {{ translation.description | safe  }}</p>
+            {% for lang, translation in translations.items() %}
+            <div class="translation lang-{{ lang }}">
+                {% set translation_labels = {
+                    'definition': 'Definition:',
+                    'description': 'Description:'
+                } %}
+
+                {% for key, label in translation_labels.items() %}
+                    {% if translation[key] %}
+                    <div>
+                        <span style="color: #0277bd;">&nbsp;{{ language_icon }}</span>
+                        <em style="color: black;">{{ label }}</em>
+                        <span style="color: #0277bd;">&nbsp;{{ translation[key] | safe }}</span>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            {% endfor %}
         </div>
     </aside>
 </p>

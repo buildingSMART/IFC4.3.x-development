@@ -7,7 +7,7 @@ import sys
 
 CACHE_DIR = tempfile.gettempdir()  # Temporary directory for storing compiled .mo files
 
-def translate(resource, lang):
+def translate(resource):
     """Translate the given resource into the specified language
     If no translations exist, the program compiles .po files into .mo files, saves them in the cache (and makes them available on the server). 
     Each .po file is converted to a .mo file locally using msgfmt, an external library from gettext.
@@ -20,37 +20,41 @@ def translate(resource, lang):
 
     In the cumulative method, selecting a language translates all content at once, which is faster and simpler—just call translate('IfcWall', 'Dutch').
     """
-    translations = load_translations(lang)
-    if not translations:
-        return {"error": "No translations found."}
+    translations_map = {}
 
-    def get_filtered_translations(resource):
-        # Use gettext's translation methods to get the resource, description, and definition
-        keys_and_patterns = [
-            (resource, resource),
-            (f"{resource}_DESCRIPTION", f"{resource}_DESCRIPTION"),
-            (f"{resource}_DEFINITION", f"{resource}_DEFINITION")
-        ]
+    for lang in language_file_map.keys():
+        translations = load_translations(lang)
+        if not translations:
+            continue
 
-        # Filter default values out of the ttranslation, i.e. gettext simply returns the original msgid if the matching msgid is empty
-        translations_filtered = [
-            None if (translation := translations.gettext(key)) and translation.startswith(pattern) else translation
-            for key, pattern in keys_and_patterns
-        ]
+        def get_filtered_translations(resource):
+            # Use gettext's translation methods to get the resource, description, and definition
+            keys_and_patterns = [
+                (resource, resource),
+                (f"{resource}_DESCRIPTION", f"{resource}_DESCRIPTION"),
+                (f"{resource}_DEFINITION", f"{resource}_DEFINITION")
+            ]
 
-        return tuple(translations_filtered)
+            # Filter default values out of the ttranslation, i.e. gettext simply returns the original msgid if the matching msgid is empty
+            translations_filtered = [
+                None if (translation := translations.gettext(key)) and translation.startswith(pattern) else translation
+                for key, pattern in keys_and_patterns
+            ]
 
-    resource_translation, description_translation, definition_translation = get_filtered_translations(resource)
+            return tuple(translations_filtered)
 
-    resource_pattern = f'[[{resource}]]' # e.g. in case a definition is something like '[[IfcBeam]]'とは、主に曲げに耐えることによって荷重に耐えることができる水平な、あるいはほぼ水平な構造部材のことである。建築的な観点からこのような部材を表すこともある。耐荷重である必要はない。'
-    if definition_translation and definition_translation.startswith(resource_pattern):
-        definition_translation = definition_translation.replace(resource_pattern, '').lstrip()
+        resource_translation, description_translation, definition_translation = get_filtered_translations(resource)
 
-    return {
-            "resource_translation": resource_translation or "",
-            "description": description_translation or "",
-            "definition": definition_translation or ""
-        }
+        resource_pattern = f'[[{resource}]]' # e.g. in case a definition is something like '[[IfcBeam]]'とは、主に曲げに耐えることによって荷重に耐えることができる水平な、あるいはほぼ水平な構造部材のことである。建築的な観点からこのような部材を表すこともある。耐荷重である必要はない。'
+        if definition_translation and definition_translation.startswith(resource_pattern):
+            definition_translation = definition_translation.replace(resource_pattern, '').lstrip()
+
+        translations_map[lang] = {
+                "resource_translation": resource_translation or "",
+                "description": description_translation or "",
+                "definition": definition_translation or ""
+            }
+    return translations_map
 
 def build_language_file_map():
     """Build a mapping of languages to their translation directories."""
@@ -135,15 +139,10 @@ def load_translations(lang):
 language_file_map = build_language_file_map()
 
 if __name__ == "__main__":
-    if len(sys.argv) < 3:
-        print("Usage: python translations.py <resource> <language>")
+    if len(sys.argv) < 2:
+        print("Usage: python translations.py <resource>")
         sys.exit(1)
 
     resource = sys.argv[1]
-    lang = sys.argv[2]
 
-    # Translate the resource using the provided language
-    # e.g. 'python translations.py "IfcBeam" "Polish"
-    result = translate(resource, lang)
-    print(result)
-
+    result = translate(resource)

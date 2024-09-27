@@ -349,7 +349,22 @@ function getCookie(name) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
+    var allTranslations = document.querySelectorAll('.translation');
+
+    if (allTranslations.length === 0) {
+        return;
+    }
+
     var languagePreference = getCookie('languagePreference') || 'English_UK';  // Default to 'English (UK)' if no cookie
+
+    allTranslations.forEach(function(translation) {
+        translation.style.display = 'none';
+    });
+
+    var selectedLanguageTranslation = document.querySelector(`.lang-${languagePreference}`);
+    if (selectedLanguageTranslation) {
+        selectedLanguageTranslation.style.display = 'block';
+    }
 
     var languageSelector = document.getElementById('language-selector');
     

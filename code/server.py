@@ -60,44 +60,37 @@ if is_package:
 else:
     base = "/IFC/RELEASE/IFC4x3/HTML"
 
-language_flag_map = {
-    "English_UK": "🇬🇧",
-    "Arabic": "🇸🇦",
-    "Chinese Simplified": "🇨🇳",
-    "Croatian": "🇭🇷",
-    "Czech": "🇨🇿",
-    "Danish": "🇩🇰",
-    "Dutch": "🇳🇱",
-    "English": "🇺🇸",
-    "Finnish": "🇫🇮",
-    "French": "🇫🇷",
-    "German": "🇩🇪",
-    "Hindi": "🇮🇳",
-    "Icelandic": "🇮🇸",
-    "Italian": "🇮🇹",
-    "Japanese": "🇯🇵",
-    "Korean": "🇰🇷",
-    "Lithuanian": "🇱🇹",
-    "Norwegian": "🇳🇴",
-    "Polish": "🇵🇱",
-    "Portuguese": "🇵🇹",
-    "Portuguese_Brazilian": "🇧🇷",
-    "Romanian": "🇷🇴",
-    "Slovenian": "🇸🇮",
-    "Spanish": "🇪🇸",
-    "Swedish": "🇸🇪",
-    "Turkish": "🇹🇷",
-}
-
-def get_translation_data(resource):
-    language_preference = request.cookies.get('languagePreference', 'English_UK')
-    translation = translate(resource, language_preference)
-    language_icon = language_flag_map.get(language_preference, '🇬🇧')
-    return {
-        'translation': translation,
-        'language_icon': language_icon,
-        'language_preference': language_preference
+def get_language_icon():
+    language_flag_map = {
+        "English_UK": "🇬🇧",
+        "Arabic": "🇸🇦",
+        "Chinese Simplified": "🇨🇳",
+        "Croatian": "🇭🇷",
+        "Czech": "🇨🇿",
+        "Danish": "🇩🇰",
+        "Dutch": "🇳🇱",
+        "English": "🇺🇸",
+        "Finnish": "🇫🇮",
+        "French": "🇫🇷",
+        "German": "🇩🇪",
+        "Hindi": "🇮🇳",
+        "Icelandic": "🇮🇸",
+        "Italian": "🇮🇹",
+        "Japanese": "🇯🇵",
+        "Korean": "🇰🇷",
+        "Lithuanian": "🇱🇹",
+        "Norwegian": "🇳🇴",
+        "Polish": "🇵🇱",
+        "Portuguese": "🇵🇹",
+        "Portuguese_Brazilian": "🇧🇷",
+        "Romanian": "🇷🇴",
+        "Slovenian": "🇸🇮",
+        "Spanish": "🇪🇸",
+        "Swedish": "🇸🇪",
+        "Turkish": "🇹🇷",
     }
+
+    return language_flag_map.get(request.cookies.get('languagePreference', 'English_UK'), '🇬🇧')
 
 
 def make_url(fragment=None):
@@ -890,7 +883,7 @@ def api_resource(resource):
 
 @app.route(make_url("property/<prop>.htm"))
 def property(prop):
-    translation_data = get_translation_data(prop)
+    translations = translate(prop)
     prop = "".join(c for c in prop if c.isalnum() or c in "_")
     md = os.path.join(REPO_DIR, "docs", "properties", prop[0].lower(), prop + ".md")
     try:
@@ -913,8 +906,8 @@ def property(prop):
         content=html,
         number=idx,
         entity=prop,
-        translation=translation_data.get('translation', ''),
-        language_icon = translation_data.get('language_icon', '🇬🇧'),
+        translations=translations,
+        language_icon = get_language_icon(),
         path=md[len(REPO_DIR) + 1 :].replace("\\", "/"),
     )
 
@@ -1043,7 +1036,7 @@ def process_markdown(resource, mdc, process_quotes=True, number_headings=False, 
 
 @app.route(make_url("lexical/<resource>.htm"))
 def resource(resource):
-    translation_data = get_translation_data(resource)
+    translations = translate(resource)
     try:
         idx = name_to_number()[resource]
     except:
@@ -1099,8 +1092,8 @@ def resource(resource):
             is_abstract=resource in R.abstract_entities,
             mvds=mvds,
             is_product_or_type=is_product_or_type,
-            translation=translation_data.get('translation'),
-            language_icon=translation_data.get('language_icon')
+            translations=translations,
+            language_icon=get_language_icon()
         )
     elif resource in R.pset_definitions.keys():
         return render_template(
@@ -1114,27 +1107,29 @@ def resource(resource):
             applicability=get_applicability(resource),
             properties=get_properties(resource, mdc),
             changelog=get_changelog(resource),
-            translation=translation_data.get('translation'),
-            language_icon = translation_data.get('language_icon')
+            translations=translations,
+            language_icon = get_language_icon()
         )
     builder = resource_documentation_builder(resource)
     content = get_definition(resource, mdc)
+
     type_values = get_type_values(resource, mdc, request.cookies.get('languagePreference', 'English_UK'))
 
-    # check and append if the translated type values contain an addition to class description translation.
-    additional_class_description_translation = next(iter(s), None) if len(s := set([v['translated_description'] for v in type_values['schema_values'] if v['translated_description'].strip()])) == 1 else None
+    """WIP"""
+    # # check and append if the translated type values contain an addition to class description translation.
+    # additional_class_description_translation = next(iter(s), None) if len(s := set([v['translated_description'] for v in type_values['schema_values'] if v['translated_description'].strip()])) == 1 else None
 
-    # in case there is a translated description, add it to the class description (one block down)
-    if additional_class_description_translation:
-        soup = BeautifulSoup(content)
-        translated_p = soup.new_tag("p")
-        translated_p['style'] = 'color: #0277bd' # to be adjusted to the BSI style color
-        translated_p.string = f"{translation_data.get('language_icon')} {additional_class_description_translation}"
+    # # in case there is a translated description, add it to the class description (one block down)
+    # if additional_class_description_translation:
+    #     soup = BeautifulSoup(content)
+    #     translated_p = soup.new_tag("p")
+    #     translated_p['style'] = 'color: #0277bd' # to be adjusted to the BSI style color
+    #     translated_p.string = f"{get_language_icon()} {additional_class_description_translation}"
 
-        last_p = soup.body.find_all('p')[-1]
-        last_p.insert_after(translated_p)
+    #     last_p = soup.body.find_all('p')[-1]
+    #     last_p.insert_after(translated_p)
 
-        content = str(soup)
+    #     content = str(soup)
 
     return render_template(
         "type.html",
@@ -1149,8 +1144,8 @@ def resource(resource):
         formal_representation=get_formal_representation(resource),
         references=get_references(resource),
         changelog=get_changelog(resource),
-        translation=translation_data.get('translation'), 
-        language_icon = translation_data.get('language_icon')
+        translations=translations,
+        language_icon = get_language_icon()
     )
 
 
@@ -1174,14 +1169,12 @@ def get_type_values(resource, mdc, language_preference):
                     description.append(sibling)
                 description = str(description)
             translation_lookup_v = f"{resource.removesuffix('Enum')}{value}"
-            translation = translate(translation_lookup_v, language_preference)
+            translations = translate(translation_lookup_v)
             described_values.append(
                 {
                     "name": value,
-                    "name_translation": translation.get('resource_translation'),
+                    "translations": translations,  # Store all translations for this value
                     "description": description,
-                    "translated_definition": translation.get('definition'),
-                    'translated_description': translation.get('description')
                 }
             )
         values = described_values

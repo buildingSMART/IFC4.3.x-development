@@ -1,18 +1,21 @@
 {% extends "main.html" %}
 {% block pagecontent %}
 
-<h1>{{ number }} {{ entity}}</h1>
+<h1>{{ number }} {{ entity }}</h1>
 
 <p>
     <aside class="aside-note">
         <mark>TRANSLATION</mark>
         <div>
-            <p><strong></strong> {{ translation.definition | safe}}</p>
-            <p><strong></strong> {{ translation.description | safe  }}</p>
+            {% for lang, translation in translations.items() %}
+            <div class="translation lang-{{ lang }}">
+                <p><strong>{{ lang }}:</strong> {{ translation.definition | safe }}</p>
+                <p><strong>{{ lang }}:</strong> {{ translation.description | safe }}</p>
+            </div>
+            {% endfor %}
         </div>
     </aside>
 </p>
-
 
 <h2>
     {{ definition_number }} Semantic definition
@@ -38,24 +41,26 @@
         <tr>
             <td data-label="Name">
                 <code>{{ value.name }}</code>
-                {% if value.name_translation %}
-                <br>
-                <span style="color: #0277bd;">&nbsp;{{ language_icon }} &nbsp;{{ value.name_translation | safe }}</span>
-                {% endif %}
+                {% for lang, translation in value.translations.items() %}
+                <div class="translation lang-{{ lang }}">
+                    {% if translation.resource_translation %}
+                    <br>
+                    <span style="color: #0277bd;">&nbsp;{{ language_icon }} &nbsp;{{ translation.resource_translation | safe }}</span>
+                    {% endif %}
+                </div>
+                {% endfor %}
             </td>
             {% if type_values.has_description %}
             <td data-label="Description">
-                {% if value.description %}
                 {{ value.description | safe }}
-                {% if value.translated_definition %}
-                <br>
-                <span style="color: #0277bd;">{{ language_icon }} &nbsp;{{value.translated_definition | safe }}</span>
-                {% endif %}
-                {% else %}
-                <p>
-                    <em>No description available.</em>
-                </p>
-                {% endif %}
+                {% for lang, translation in value.translations.items() %}
+                <div class="translation lang-{{ lang }}">
+                    {% if translation.translated_definition %}
+                    <br>
+                    <span style="color: #0277bd;">{{ language_icon }} &nbsp;{{ translation.translated_definition | safe }}</span>
+                    {% endif %}
+                </div>
+                {% endfor %}
             </td>
             {% endif %}
         </tr>
@@ -65,7 +70,6 @@
 {% endif %}
 
 {% if formal_propositions %}
-{# @todo remove duplication with entity.html #}
 <h2>
     {{ formal_propositions.number }} Formal Propositions
 </h2>

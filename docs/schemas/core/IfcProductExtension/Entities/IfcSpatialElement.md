@@ -18,7 +18,7 @@ A spatial element is the generalization of all spatial elements that might be us
 
 ### LongName
 Long name for a spatial structure element, used for informal purposes. It should be used, if available, in conjunction with the inherited _Name_ attribute.
-> NOTE In many scenarios the _Name_ attribute refers to the short name or number of a spacial element, and the _LongName_ refers to the full descriptive name.
+> NOTE In many scenarios the _Name_ attribute refers to the short name or number of a spatial element, and the _LongName_ refers to the full descriptive name.
 
 ### ContainsElements
 Set of spatial containment relationships, that holds those elements, which are contained within this element of the project spatial structure.

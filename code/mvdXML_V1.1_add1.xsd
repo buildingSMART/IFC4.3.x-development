@@ -140,7 +140,7 @@
 					<xs:sequence>
 						<xs:element ref="mvd:AttributeRule" maxOccurs="unbounded">
 							<xs:annotation>
-								<xs:documentation>An atribute rule, defined for an attribute of the applicable entity. It declares the root element of the rule tree. It is allowed to define rules for attributes that are defined at subtypes of the applicable entity.</xs:documentation>
+								<xs:documentation>An attribute rule, defined for an attribute of the applicable entity. It declares the root element of the rule tree. It is allowed to define rules for attributes that are defined at subtypes of the applicable entity.</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 					</xs:sequence>
@@ -397,7 +397,7 @@
 			</xs:simpleType>
 		</xs:attribute>
 		<xs:attribute name="Description" type="xs:string" use="optional"/>
-		<!-- new complex type to differenciate from Rules in the Template section -->
+		<!-- new complex type to differentiate from Rules in the Template section -->
 	</xs:complexType>
 	<!-- ======================================== -->
 	<!-- common complex type definitions-->

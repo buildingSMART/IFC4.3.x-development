@@ -154,7 +154,7 @@ A system that allows communications between operators (e.g. switchtender, traffi
 Mobile network insures wireless communication by providing a secure platform for voice and data communication between infrastructure operators, including drivers, dispatchers, shunting team members and station controllers.
 
 ### MONITORINGSYSTEM
-Sensor-based system for building and infastructure environmental monitoring and control.
+Sensor-based system for building and infrastructure environmental monitoring and control.
 
 ### USERDEFINED
 

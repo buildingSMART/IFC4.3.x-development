@@ -32,7 +32,7 @@ Definition of the material in more descriptive terms than given by attributes _N
 ### Category
 Definition of the category (group or type) of material, in more general terms than given by attribute _Name_.
 
-It is recommended to use common terms for the material category, the following list constitutes such a recommondation: 'concrete', 'steel', 'aluminium', 'block', 'brick', 'stone', 'wood', 'glass', 'gypsum', 'plastic', 'earth'.
+It is recommended to use common terms for the material category, the following list constitutes such a recommendation: 'concrete', 'steel', 'aluminium', 'block', 'brick', 'stone', 'wood', 'glass', 'gypsum', 'plastic', 'earth'.
 
 { .change-ifc2x4}
 > IFC4 CHANGE The attribute has been added at the end of attribute list.

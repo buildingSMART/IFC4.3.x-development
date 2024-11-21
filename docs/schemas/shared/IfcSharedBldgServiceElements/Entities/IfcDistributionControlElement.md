@@ -60,7 +60,7 @@ digraph dot_neato {
 The **IfcDistributionControlElement** may be assigned to the following entities using relationships as indicated:
 
 * IfcDistributionSystem (IfcRelAssignsToGroup): Indicates a system containing interconnected devices, where control elements are typically part of a control system having _PredefinedType=CONTROL_.
-* IfcPerformanceHistory (IfcRelAssignsToControl): Indicates realtime or historical infomation captured for the device.
+* IfcPerformanceHistory (IfcRelAssignsToControl): Indicates realtime or historical information captured for the device.
 
 #### IfcTask
 

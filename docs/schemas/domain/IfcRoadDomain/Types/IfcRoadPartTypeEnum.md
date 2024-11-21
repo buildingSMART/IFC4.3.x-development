@@ -8,7 +8,7 @@ The predefined type container that collects all possible road facility part type
 ### ROADSIDEPART
 A general concept for various parts of the Roadside.
 
-> NOTE Examples of roadside parts may be side slopes, roadside ditches, back slopes, bunds etc.
+> NOTE Examples of roadside parts may be side slopes, roadside ditches, back slopes, bounds etc.
 
 ### BUS_STOP
 Lateral part of Road for stopping buses allowing them to draw out of the traffic lanes and wait for short periods.

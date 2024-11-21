@@ -30,7 +30,7 @@ Different shape representations may be used, depending on the nature of the feat
 
 * Symbolic representation, such as the two-dimensional bounding box of a tag.
 * A geometric set representing the geometric items of a mark.
-* Surface representations of treated parts of the lement surface by means of _IfcShellBasedSurfaceModel_. The faces within the surface model may be included into a B-Rep model within a representation map of the parent element type.
+* Surface representations of treated parts of the element surface by means of _IfcShellBasedSurfaceModel_. The faces within the surface model may be included into a B-Rep model within a representation map of the parent element type.
 
 Higher-level parameters (geometric and non-geometric) may be provided by property sets based on local agreements.
 
@@ -55,7 +55,7 @@ The attribute ObjectType shall be given if the predefined type is set to USERDEF
 
 #### IfcShellBasedSurfaceModel_SurfaceModel
 
-Surface representations of treated parts of the lement surface by means of IfcShellBasedSurfaceModel. The faces within the surface model may be included into a B-Rep model within a representation map of the parent element type.
+Surface representations of treated parts of the element surface by means of IfcShellBasedSurfaceModel. The faces within the surface model may be included into a B-Rep model within a representation map of the parent element type.
 
 ### Product Local Placement
 

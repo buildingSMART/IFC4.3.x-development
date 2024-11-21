@@ -662,7 +662,7 @@ img {
 
             for i in range(4,10):
                 # keep trying until hc is large enough
-                # to accomodate all elements
+                # to accommodate all elements
                 try:
                     hc = HC(i, 2)
                     tex_object = Tex_object(tex_fn)

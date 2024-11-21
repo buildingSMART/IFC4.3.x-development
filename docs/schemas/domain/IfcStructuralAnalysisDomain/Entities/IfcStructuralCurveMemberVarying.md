@@ -14,7 +14,7 @@ This entity describes edge members with varying profile properties. Each instanc
 
 ****Coordinate Systems****:
 
-See definitions at _IfcStructuralItem_ and _IfcStructuralCurveMember_. The local coordinates of the aggregate are derived from those of its parts. Length measures in local x direction of the aggregate depend on continuity and lengths of the parts. The _Axis_ of the aggregate shal be the same as the _Axis_ of the part at the start of the aggregate.
+See definitions at _IfcStructuralItem_ and _IfcStructuralCurveMember_. The local coordinates of the aggregate are derived from those of its parts. Length measures in local x direction of the aggregate depend on continuity and lengths of the parts. The _Axis_ of the aggregate shall be the same as the _Axis_ of the part at the start of the aggregate.
 
 ****Material Use Definition****
 

@@ -52,7 +52,7 @@ The amount incurred for operating the equipment, such as fuel and maintenance.
 
 #### Deployment_IfcCostValue_IfcMonetaryMeasure
 
-The amount incurred for mobilizing and decomissioning the equipment.
+The amount incurred for mobilizing and decommissioning the equipment.
 
 ### Resource Quantity
 

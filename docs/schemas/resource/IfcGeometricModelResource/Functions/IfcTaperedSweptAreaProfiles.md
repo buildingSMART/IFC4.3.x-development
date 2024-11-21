@@ -5,9 +5,9 @@ This function checks whether the start and end profile in a tapered extrusion ar
 
 It returns TRUE if:
 
-* The start profile is defined by a paramterized profile definition and
+* The start profile is defined by a parameterized profile definition and
   * the end profile is either a derived profile, using the start profile as its parent profile, or
-  * the end profile is based on the same subtype of the paramterized profile definition as the start profile
+  * the end profile is based on the same subtype of the parameterized profile definition as the start profile
 * The start profile is defined by an arbitrary bounded curve bounding a plane and
   * the end profile is a derived profile using the start profile as its parent profile
 

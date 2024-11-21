@@ -1,7 +1,7 @@
 Alignment Layouts
 ============================================
 
-A single alignment may be described by one ore more of the following layouts:
+A single alignment may be described by one or more of the following layouts:
 
 * a horizontal layout (_IfcAlignmentHorizontal_), defined in the x/y plane of the engineering coordinate system.
 * an accompanying vertical layout (_IfcAlignmentVertical_), defined along the horizontal layout in the distance along / z coordinate space.

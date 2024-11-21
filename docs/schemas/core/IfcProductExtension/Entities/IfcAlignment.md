@@ -72,7 +72,7 @@ A mapping between the *business logic* and its *geometry definition* in IFC is d
 
 ### Alignment Layouts
 
-A single alignment may be described by one ore more of the following layouts:
+A single alignment may be described by one or more of the following layouts:
 
 * a horizontal layout (_IfcAlignmentHorizontal_), defined in the x/y plane of the engineering coordinate system.
 * an accompanying vertical layout (_IfcAlignmentVertical_), defined along the horizontal layout in the distance along / z coordinate space.
@@ -86,7 +86,7 @@ These 3 layouts may be used in different configurations. The most common are:
 4. Multiple Vertical layouts based on the same Horizontal Layout
 5. Multiple Vertical layouts based on the same Horizontal Layout, with a Cant layout applied
 
-(4) and (5) are used in scenarios where multiple alignments re-use the same horizontal layout definition. See **Alignment Layout - Reusing Horizontal Layout** and **Alignment Geometry - Reusing Horizontal Layout** for details on how to relate parent and child alignments in theses cases.
+(4) and (5) are used in scenarios where multiple alignments re-use the same horizontal layout definition. See **Alignment Layout - Reusing Horizontal Layout** and **Alignment Geometry - Reusing Horizontal Layout** for details on how to relate parent and child alignments in these cases.
 
 ![Alignment configurations](../../../../figures/IfcAlignment-possible-configurations.png)
 

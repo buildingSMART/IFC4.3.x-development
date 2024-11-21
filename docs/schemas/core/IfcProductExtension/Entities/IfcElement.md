@@ -70,7 +70,7 @@ Reference to the _IfcRelAdheresToElement_ relationship that adheres a _IfcSurfac
 
 ### Body AdvancedBrep Geometry
 
-An _IfcElement_ (so far no further constraints are defined at the level of its subtypes or by view definitions) may be represented as a single or multiple boundary representation models, which include advanced surfaces, usually refered to as NURBS surfaces. The 'AdvancedBrep' representation allows for the representation of complex free-form element shape.
+An _IfcElement_ (so far no further constraints are defined at the level of its subtypes or by view definitions) may be represented as a single or multiple boundary representation models, which include advanced surfaces, usually referred to as NURBS surfaces. The 'AdvancedBrep' representation allows for the representation of complex free-form element shape.
 
 > NOTE View definitions or implementer agreements may restrict or disallow the use of 'AdvancedBrep' geometry.
 
@@ -154,7 +154,7 @@ Figure 148 — Building element box representation
 
 ### CoG Geometry
 
-The 'CoG', Center of Gravity, shape representation is used as a means to verify the correct import by comparing the CoG of the imported geometry with the explicily provided CoG created during export.
+The 'CoG', Center of Gravity, shape representation is used as a means to verify the correct import by comparing the CoG of the imported geometry with the explicitly provided CoG created during export.
 
 ### Element Interference
 

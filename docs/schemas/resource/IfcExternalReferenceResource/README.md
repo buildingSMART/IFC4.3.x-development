@@ -42,6 +42,6 @@ The scope of the library model is to be able to reference information stored in 
 
 The _IfcLibraryInformation_ entity provides specific information about an actual library data source including its name, version, version date, publisher and publication location. Additionally it can be assigned to high level objects in a Building Information Model such as a Project or Building where there may be a need to identify the library used.
 
-The _IfcLibraryReference_ entity is more widely used (and should be considered as the default selection). A library reference provides for the identifying of a specific record within a library data source through use of a name, location (web location) and item reference (which locates the data within the library data source). The provision of a language attribute allows the language in which a library reference is expressed to be identifed
+The _IfcLibraryReference_ entity is more widely used (and should be considered as the default selection). A library reference provides for the identifying of a specific record within a library data source through use of a name, location (web location) and item reference (which locates the data within the library data source). The provision of a language attribute allows the language in which a library reference is expressed to be identified
 
 > HISTORY  New schema in IFC2x.

@@ -125,7 +125,7 @@ def generalization(pe):
 
 def need_brackets(s):
     """Verify if that name should be annotated with brackets in other definitions.
-    The criteria: minium 4 letters (skip 'ABC')."""
+    The criteria: minimum 4 letters (skip 'ABC')."""
     if len(s) >= 4:
         return True
     else:
@@ -735,7 +735,7 @@ def generate_definitions():
 def list_unique_codes(concepts):
     ### iterate all the results to list all unique codes for translations
     codes = set()
-    for code, content in tqdm(all_concepts.items(), "Lising all unique codes"):
+    for code, content in tqdm(all_concepts.items(), "Listing all unique codes"):
         if need_brackets(code):
             codes.add(code)
         if content["Psets"]:

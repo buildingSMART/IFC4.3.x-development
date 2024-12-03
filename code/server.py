@@ -262,6 +262,19 @@ class toc_entry:
     
     mvds: list = None
 
+    def find(self, lbl):
+        def traverse(te, path=None):
+            p = (path or []) + [te]
+            if te.text == lbl:
+                yield p
+            else:
+                for ch in (te.children or []):
+                    yield from traverse(ch, p)
+        li = list(traverse(self))
+        if li:
+            return li[0][-1]
+
+
 
 content_names = ["scope", "normative_references", "terms_and_definitions", "concepts"]
 content_names_2 = ["cover", "foreword", "introduction", "bibliography"]
@@ -683,7 +696,12 @@ def process_graphviz_concept(name, md):
                 G.get_node(n)[0].set_shape("rect")
                 G.get_node(n)[0].set_style("filled")
             else:
-                G.add_node(pydot.Node(n, label=n.replace("_", " "), fillcolor="#aaffaa", shape="rect", style="filled"))
+                url = {}
+                label = n.replace("_", " ")
+                N = make_concept(["Partial Templates"], exclude_partial=False).find(label)
+                if N:
+                    url = {'URL': N.url}
+                G.add_node(pydot.Node(n, label=label, fillcolor="#aaffaa", shape="rect", style="filled", **url))
 
         # this is ugly, but the node defaults need to come before the edges
         G.obj_dict["nodes"]["node"][0]["sequence"] = -1

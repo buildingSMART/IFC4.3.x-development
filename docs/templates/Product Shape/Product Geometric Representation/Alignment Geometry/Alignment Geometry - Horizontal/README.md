@@ -23,6 +23,6 @@ concept {
     IfcLabel_3 -> constraint_3
     constraint_3[label="='Curve2D'"]
     IfcCompositeCurve:Segments -> IfcCurveSegment_0
-
+    IfcCurveSegment_0 -> Curve_Segment_Horizontal
 }
 ```

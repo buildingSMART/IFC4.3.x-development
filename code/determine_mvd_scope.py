@@ -1,5 +1,6 @@
 import functools
 import itertools
+import re
 
 import ifcopenshell
 import ifcopenshell.mvd as mvd
@@ -76,7 +77,7 @@ def run(schema_fn, mvdxml_fn, concept_subset=None, additional=None):
     S = ifcopenshell.ifcopenshell_wrapper.schema_by_name(builder.schema_name)
 
     for t in templs:
-        if t.name.replace(" ", "") in concept_subset:
+        if re.sub(r'[^a-zA-Z0-9]', "", t.name) in concept_subset:
             t.root = t.root.cloneNode(deep=True)
             try:
                 t.root.removeChild(t.root.getElementsByTagName("SubTemplates")[0])

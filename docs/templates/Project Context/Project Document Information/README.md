@@ -10,6 +10,7 @@ concept {
     IfcContext:ObjectType -> IfcLabel_2
     IfcContext:LongName -> IfcLabel_3
     IfcRelAssociatesDocument:RelatingDocument -> IfcDocumentInformation
+    IfcRelAssociatesDocument:RelatingDocument -> IfcDocumentReference
     IfcDocumentInformation:Location -> IfcURIReference
     IfcDocumentInformation:ElectronicFormat -> IfcIdentifier
     IfcDocumentInformation:Identification -> IfcIdentifier

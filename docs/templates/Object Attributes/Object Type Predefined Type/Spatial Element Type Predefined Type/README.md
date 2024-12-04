@@ -1,6 +1,9 @@
 Spatial Element Type Predefined Type
 ====================================
 
+> NOTE: This template for attributes, like similar ones, originates from legacy requirements tied to mvdXML and an earlier era when MVD defined exchange information requirements. Such templates no longer add value to the specification, nor do they convey information beyond what is already defined in the schema. Additionally, some templates reference deprecated entities, potentially causing unnecessary confusion.
+As part of a broader effort to clean up documentation, this and other non-essential templates will be removed in the next release.
+
 If a custom value is needed to describe a spatial element type, the attribute _ElementType_ may be used to define such custom type, where the _PredefinedType_ is set to _USERDEFINED_.
 
 Specific subtypes introduce additional attributes for the _Object User Identity_ template.

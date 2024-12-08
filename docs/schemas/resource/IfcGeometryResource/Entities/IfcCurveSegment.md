@@ -5,7 +5,7 @@ A type of segment positioned along a curve cutting a segment from the parent cur
 
 **Informal Propositions**
 
-1. For the foreseeable future, until implementer agreements have resulted in a defined parametric space for all possible types in attribute *ParentCurve*, the values for attributes *SegmentStart* and *SegmentStart* shall be of type IfcLengthMeasure.
+1. For the foreseeable future, until implementer agreements have resulted in a defined parametric space for all possible types in attribute *ParentCurve*, the values for attributes *SegmentStart* and *SegmentLength* shall be of type IfcLengthMeasure.
 
 ## Attributes
 

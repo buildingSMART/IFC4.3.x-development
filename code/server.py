@@ -31,7 +31,6 @@ assert sys.version_info[0:2] >= (3, 6)
 def BeautifulSoup(*args):
     return bs4.BeautifulSoup(*args, features="lxml")
 
-
 import flask
 from flask import (
     Flask,
@@ -49,6 +48,8 @@ from flask import (
 import md as mdp
 from extract_concepts_from_xmi import parse_bindings
 
+from translate import translate
+
 from crowdin_translator import CrowdinTranslator, HTMLCacheManager, LANGUAGE_FLAG_MAP
 app = Flask(__name__)
 app.jinja_env.trim_blocks = True
@@ -61,6 +62,35 @@ if is_package:
 else:
     base = "/IFC/RELEASE/IFC4x3/HTML"
 
+def get_language_icon():
+    language_flag_map = {
+        "English_UK": "🇬🇧",
+        "Arabic": "🇸🇦",
+        "Chinese Simplified": "🇨🇳",
+        "Croatian": "🇭🇷",
+        "Czech": "🇨🇿",
+        "Danish": "🇩🇰",
+        "Dutch": "🇳🇱",
+        "English": "🇺🇸",
+        "Finnish": "🇫🇮",
+        "French": "🇫🇷",
+        "German": "🇩🇪",
+        "Hindi": "🇮🇳",
+        "Icelandic": "🇮🇸",
+        "Italian": "🇮🇹",
+        "Japanese": "🇯🇵",
+        "Korean": "🇰🇷",
+        "Lithuanian": "🇱🇹",
+        "Norwegian": "🇳🇴",
+        "Polish": "🇵🇱",
+        "Portuguese": "🇵🇹",
+        "Portuguese_Brazilian": "🇧🇷",
+        "Romanian": "🇷🇴",
+        "Slovenian": "🇸🇮",
+        "Spanish": "🇪🇸",
+        "Swedish": "🇸🇪",
+        "Turkish": "🇹🇷",
+    }
 
 def get_language_icon(lang = None):
     default_lang = request.cookies.get("languagePreference", "English_UK")
@@ -856,6 +886,7 @@ def api_resource(resource):
 
 @app.route(make_url("property/<prop>.htm"))
 def property(prop):
+    translations = translate(prop)
     prop = "".join(c for c in prop if c.isalnum() or c in "_")
     md = os.path.join(REPO_DIR, "docs", "properties", prop[0].lower(), prop + ".md")
     try:
@@ -871,13 +902,15 @@ def property(prop):
     html = process_markdown(prop, mdc)
 
     html += tabulate.tabulate(psets, headers=["Referenced in"], tablefmt="html")
-
+    
     return render_template(
         "property.html",
         navigation=get_navigation(),
         content=html,
         number=idx,
         entity=prop,
+        translations=translations,
+        language_icon = get_language_icon(),
         path=md[len(REPO_DIR) + 1 :].replace("\\", "/"),
     )
 
@@ -1006,6 +1039,7 @@ def process_markdown(resource, mdc, process_quotes=True, number_headings=False, 
 
 @app.route(make_url("lexical/<resource>.htm"))
 def resource(resource):
+    translations = translate(resource)
     try:
         idx = name_to_number()[resource]
     except:
@@ -1117,7 +1151,7 @@ def resource(resource):
     rendered_html = render_template(
         "type.html",
         navigation=get_navigation(resource),
-        content=get_definition(resource, mdc),
+        content=content,
         number=idx,
         definition_number=definition_number,
         entity=resource,
@@ -1154,9 +1188,18 @@ def get_type_values_old(resource, mdc):
                         break
                     description.append(sibling)
                 description = str(description)
-            described_values.append({"name": value, "description": description})
+            translation_lookup_v = f"{resource.removesuffix('Enum')}{value}"
+            translations = translate(translation_lookup_v)
+            described_values.append(
+                {
+                    "name": value,
+                    "translations": translations,  # Store all translations for this value
+                    "description": description,
+                }
+            )
         values = described_values
     return {"number": SectionNumberGenerator.generate(), "has_description": has_description, "schema_values": values}
+
 
 
 def get_type_values(resource, mdc):

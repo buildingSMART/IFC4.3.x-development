@@ -15,7 +15,7 @@ RUN apt-get update -y && DEBIAN_FRONTEND=noninteractive apt-get install -y curl 
 # remove policy to disable PDF conversion
 RUN rm /etc/ImageMagick-6/policy.xml
 RUN curl --silent --show-error --retry 5 https://bootstrap.pypa.io/get-pip.py | python3
-RUN python3 -m pip install flask "Beautifulsoup4<4.12" lxml Markdown gunicorn pysolr pydot tabulate hilbertcurve==1.0.5 markdown-it-py==1.1.0 deepdiff redis "pyparsing<3" networkx xmlschema solrq
+RUN python3 -m pip install flask "Beautifulsoup4<4.12" lxml Markdown gunicorn pysolr pydot tabulate hilbertcurve==1.0.5 markdown-it-py==1.1.0 deepdiff redis "pyparsing<3" networkx xmlschema solrq polib
 
 RUN curl --location --silent --show-error --retry 5 'https://archive.apache.org/dist/lucene/solr/8.6.3/solr-8.6.3.tgz' -o - | tar zxf -
 RUN chmod +x /solr-8.6.3/bin/*

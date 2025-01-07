@@ -10,3 +10,4 @@ numpy
 pydot
 pysolr
 tabulate
+polib

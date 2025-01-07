@@ -1,7 +1,26 @@
 {% extends "main.html" %}
 {% block pagecontent %}
 
-<h1>{{ number }} {{ entity}}</h1>
+<h1>{{ number }} {{ entity }}</h1>
+<p>
+    <aside class="aside-note">
+        <mark>TRANSLATION</mark>
+        {% for lang, data in translations.items() %}
+        <div class="translation lang-{{ lang }}">
+            <div>
+                <span style="color: #0277bd;">{{ get_language_icon(lang) }}</span> <em>Name:</em> 
+                <span style="color: #0277bd;">{{ data.resource_translation}}</span>
+            </div>
+            {% if data.definition %}
+            <div>
+                <span style="color: #0277bd;">{{ get_language_icon(lang) }}</span> <em>Definition:</em> 
+                <span style="color: #0277bd;">{{ data.definition }}</span>
+            </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </aside>
+</p>
 
 {% if not is_iso %}
     {% if is_product_or_type %}

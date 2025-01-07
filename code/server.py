@@ -49,7 +49,10 @@ from flask import (
 import md as mdp
 from extract_concepts_from_xmi import parse_bindings
 
+from crowdin_translator import CrowdinTranslator, HTMLCacheManager, LANGUAGE_FLAG_MAP
 app = Flask(__name__)
+app.jinja_env.trim_blocks = True
+app.jinja_env.lstrip_blocks = True
 
 is_iso = os.environ.get('ISO', '0') == '1'
 is_package = os.environ.get('PACKAGE', '0') == '1'
@@ -59,10 +62,13 @@ else:
     base = "/IFC/RELEASE/IFC4x3/HTML"
 
 
+def get_language_icon(lang = None):
+    default_lang = request.cookies.get("languagePreference", "English_UK")
+    return LANGUAGE_FLAG_MAP.get(lang or default_lang, "🇬🇧")
+
 
 def make_url(fragment=None):
     return base + "/" + fragment if fragment else "/"
-
 
 identity = lambda x: x
 
@@ -1022,8 +1028,10 @@ def resource(resource):
         mdc = ""
 
     mdc = re.sub(DOC_ANNOTATION_PATTERN, "", mdc)
+    translator = CrowdinTranslator()
 
     if "Entities" in md:
+        html_cache_manager = HTMLCacheManager('entities')
         builder = resource_documentation_builder(resource)
         mvds = [{'abbr': "".join(re.findall('[A-Z]|(?<=-)[a-z]', k)), 'cause': v[resource]} for k, v in R.mvd_entity_usage.items() if resource in v]
         is_product_or_type = False
@@ -1033,31 +1041,52 @@ def resource(resource):
             if entity in ("IfcProduct", "IfcTypeProduct"):
                 is_product_or_type = True
                 break
-        return render_template(
-            "entity.html",
-            navigation=get_navigation(resource),
-            number=idx,
-            definition_number=definition_number,
-            definition=get_definition(resource, mdc),
-            entity=resource,
-            path=md[len(REPO_DIR) :].replace("\\", "/"),
-            entity_inheritance=get_entity_inheritance(resource),
-            attributes=get_attributes(resource, builder),
-            formal_propositions=get_formal_propositions(resource, builder),
-            property_sets=get_property_sets(resource, builder),
-            concept_usage=get_concept_usage(resource, builder, mdc),
-            examples=get_examples(resource),
-            adoption=get_adoption(resource),
-            formal_representation=get_formal_representation(resource),
-            references=get_references(resource),
-            changelog=get_changelog(resource),
-            is_deprecated=resource in R.deprecated_entities,
-            is_abstract=resource in R.abstract_entities,
-            mvds=mvds,
-            is_product_or_type=is_product_or_type
-        )
+        
+            
+            cached_html = html_cache_manager.get_cached_html(resource)
+            if not eval(os.environ.get('TRANSLATION_UPDATING')) and cached_html:
+                return cached_html
+            
+            # generate and write the html to the cache in case we're crawling the urls or there is no cached html yet
+            translations = translator.translate(resource)
+            rendered_html = render_template(
+                "entity.html",
+                navigation=get_navigation(resource),
+                number=idx,
+                definition_number=definition_number,
+                definition=get_definition(resource, mdc),
+                entity=resource,
+                path=md[len(REPO_DIR) :].replace("\\", "/"),
+                entity_inheritance=get_entity_inheritance(resource),
+                attributes=get_attributes(resource, builder),
+                formal_propositions=get_formal_propositions(resource, builder),
+                property_sets=get_property_sets(resource, builder),
+                concept_usage=get_concept_usage(resource, builder, mdc),
+                examples=get_examples(resource),
+                adoption=get_adoption(resource),
+                formal_representation=get_formal_representation(resource),
+                references=get_references(resource),
+                changelog=get_changelog(resource),
+                is_deprecated=resource in R.deprecated_entities,
+                is_abstract=resource in R.abstract_entities,
+                mvds=mvds,
+                is_product_or_type=is_product_or_type,
+                translations=translations,
+                get_language_icon=get_language_icon, 
+                original = translator.load_original(resource)
+            )
+            html_cache_manager.write_cached_html(resource, rendered_html)
+            return rendered_html
+        
     elif resource in R.pset_definitions.keys():
-        return render_template(
+        html_cache_manager = HTMLCacheManager('properties')
+        cached_html = html_cache_manager.get_cached_html(resource)
+        if not eval(os.environ.get('TRANSLATION_UPDATING')) and cached_html:
+            return cached_html
+        
+        translator = CrowdinTranslator()
+        translations = translator.translate(resource)
+        rendered_html = render_template(
             "property.html",
             navigation=get_navigation(resource),
             content=get_definition(resource, mdc),
@@ -1068,9 +1097,24 @@ def resource(resource):
             applicability=get_applicability(resource),
             properties=get_properties(resource, mdc),
             changelog=get_changelog(resource),
+            translations=translations,
+            get_language_icon = get_language_icon, 
+            original = translator.load_original(resource)
         )
+        html_cache_manager.write_cached_html(resource, rendered_html)
+        return rendered_html
+    
+    html_cache_manager = HTMLCacheManager('types')
+    cached_html = html_cache_manager.get_cached_html(resource)
+    if not eval(os.environ.get('TRANSLATION_UPDATING')) and cached_html:
+        return cached_html
+    
     builder = resource_documentation_builder(resource)
-    return render_template(
+    content = get_definition(resource, mdc)
+    
+    translator = CrowdinTranslator()
+    
+    rendered_html = render_template(
         "type.html",
         navigation=get_navigation(resource),
         content=get_definition(resource, mdc),
@@ -1078,12 +1122,41 @@ def resource(resource):
         definition_number=definition_number,
         entity=resource,
         path=md[len(REPO_DIR) :].replace("\\", "/"),
-        type_values=get_type_values(resource, mdc),
+        type_values = get_type_values(resource, mdc),
         formal_propositions=get_formal_propositions(resource, builder),
         formal_representation=get_formal_representation(resource),
         references=get_references(resource),
         changelog=get_changelog(resource),
+        original = translator.load_original(resource.removesuffix('Enum')),
+        translations=translator.translate(resource),
+        get_language_icon = get_language_icon
     )
+    cached_html = html_cache_manager.write_cached_html(resource, rendered_html)
+    return rendered_html
+
+
+def get_type_values_old(resource, mdc):
+    values = R.type_values.get(resource)
+    if not values:
+        return
+    has_description = values[0] == values[0].upper()
+    if has_description:
+        soup = BeautifulSoup(process_markdown(resource, mdc))
+        described_values = []
+        for value in values:
+            description = None
+            for h in soup.findAll("h3"):
+                if h.text != value:
+                    continue
+                description = BeautifulSoup()
+                for sibling in h.find_next_siblings():
+                    if sibling.name == "h3":
+                        break
+                    description.append(sibling)
+                description = str(description)
+            described_values.append({"name": value, "description": description})
+        values = described_values
+    return {"number": SectionNumberGenerator.generate(), "has_description": has_description, "schema_values": values}
 
 
 def get_type_values(resource, mdc):
@@ -1105,7 +1178,17 @@ def get_type_values(resource, mdc):
                         break
                     description.append(sibling)
                 description = str(description)
-            described_values.append({"name": value, "description": description})
+            translation_lookup_v = f"{resource.removesuffix('Enum')}{value}"
+            translator = CrowdinTranslator()
+            translations = translator.translate(translation_lookup_v)
+            described_values.append(
+                {
+                    "name": value,
+                    "translations": translations,  # Store all translations for this value
+                    "description": description,
+                    "original": translator.load_original(translation_lookup_v)
+                }
+            )
         values = described_values
     return {"number": SectionNumberGenerator.generate(), "has_description": has_description, "schema_values": values}
 

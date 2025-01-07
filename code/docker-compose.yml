@@ -9,6 +9,7 @@ services:
       - ISO=0
       - PACKAGE=${PACKAGE}
       - REDIS_HOST=localhost
+      - TRANSLATION_UPDATING=False
     expose:
       - "5000"
       

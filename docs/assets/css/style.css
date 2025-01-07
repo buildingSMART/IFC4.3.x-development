@@ -761,3 +761,6 @@ body.cover.iso #main-content * {
 .wider li {
     line-height: 2em;
 }
+.translation {
+    display: none;
+}

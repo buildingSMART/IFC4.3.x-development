@@ -2,7 +2,7 @@
 
 *IfcSineSpiral* is a type of spiral curve for which the curvature change is dependent on the sine function.
 <!-- end of short definition -->
-The sine spiral curve is parameterized by its curve length and for a given parameter $s$, the heading angle $\theta(s)$ and the curvature $\kappa(s)$are defined as follows. Here, $A_0$ corresponds to the *ConstantTerm*, $A_1$ to the *LinearTerm*, and $A_2$ to the *SineTerm*.
+The sine spiral curve is parameterized by its curve length and for a given parameter $s$, the heading angle $\theta(s)$ and the curvature $\kappa(s)$ are defined as follows. Here, $A_0$ corresponds to the *ConstantTerm*, $A_1$ to the *LinearTerm*, and $A_2$ to the *SineTerm*.
 
 **Heading Angle:**
 

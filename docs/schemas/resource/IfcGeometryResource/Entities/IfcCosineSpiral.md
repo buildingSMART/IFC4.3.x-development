@@ -1,7 +1,7 @@
 # IfcCosineSpiral
 
 *IfcCosineSpiral* is a type of spiral curve for which the curvature change is dependent on the cosine function.
-
+<!-- end of short definition -->
 The cosine spiral curve is parameterized by its curve length and for a given parameter $s$, the heading angle $\theta(s)$ and the curvature $\kappa(s)$ are defined as follows. Here, $A_0$ corresponds to the *ConstantTerm* and $A_1$ to the *CosineTerm*.
 
 **Heading Angle:**

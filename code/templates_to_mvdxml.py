@@ -196,7 +196,13 @@ for fn in sorted(fns, key=len):
 
             build(root)
 
-            rules = list(rules.values())[0][0]['AttributeRules']
+            try:
+                rules = list(rules.values())[0][0]['AttributeRules']
+            except KeyError:
+                try:
+                    rules = {'References': list(rules.values())[0][0]['References']}
+                except:
+                    rules = []
 
     di = {
         '@applicableEntity': [root.split("_")[0] if root else None],

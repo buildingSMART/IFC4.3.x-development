@@ -67,7 +67,7 @@ Point machine mounting device.
 Point machine locking device.
 
 ### RAIL_MECHANICAL_EQUIPMENT
-A rail mechanical equipment is a mechnical equipment installed at railside, like blocking device, speed regulator, bias loaded inspector, track scale or controllable retarder.
+A rail mechanical equipment is a mechanical equipment installed at railside, like blocking device, speed regulator, bias loaded inspector, track scale or controllable retarder.
 
 ### BIRDPROTECTION
 A device that prevents a sitting down of birds at electrically critical points and thus birds are protected against electrical shocks and disturbances by short circuit are avoided.

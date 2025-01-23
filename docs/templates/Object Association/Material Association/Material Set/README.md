@@ -5,7 +5,7 @@ Composite or multiple materials may be described using a material set. There are
 
  * Layer sets - layered materials with a thickness that fills a boundary
  * Profile sets - when materials are extruded along a profiled shape
- * Constituent sets - when materials are either homogenously mixed, or arbitrarily placed
+ * Constituent sets - when materials are either homogeneously mixed, or arbitrarily placed
 
 > EXAMPLE A wall or slab may use a layer set. A beam, column, pipe, or duct may use a profile set, even if it only has one profile. Composite beams may be made out of multiple profiles. Concrete may use a constituent set for portions of sand and cement. A window frame may also use a constituent set for one material for its frame and another material for its glazing portion.
 

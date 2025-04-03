@@ -11,3 +11,4 @@ pydot
 pysolr
 tabulate
 polib
+babel

@@ -23,10 +23,10 @@ def get_language_file_map(translations_path):
 
 
 class CrowdinTranslator:
-    CACHE_DIR = tempfile.gettempdir()  
-    TRANSLATIONS_DIR = os.environ.get('TRANSLATIONS_DIR')
+    CACHE_DIR = tempfile.gettempdir()
+    TRANSLATIONS_DIR = os.environ.get('TRANSLATIONS_DIR', os.path.join(os.path.dirname(__file__), 'translate_repo'))
     CROWDIN_FILES  = os.path.join(TRANSLATIONS_DIR, 'translations')
-    CROWDIN_REPO_DIR = os.environ.get('CROWDIN_REPO_DIR', '/crowdin_repository')  
+    CROWDIN_REPO_DIR = os.environ.get('CROWDIN_REPO_DIR', os.path.join(os.path.dirname(__file__), 'translate_repo'))
 
     def __init__(self, translations_dir=None, crowdin_files=None, crowdin_repo_dir=None):
         self.translations_dir = translations_dir or CrowdinTranslator.TRANSLATIONS_DIR
@@ -122,9 +122,10 @@ class CrowdinTranslator:
         return composite_translation
     
     def load_original(self, resource):
-        pot_directory = '/crowdin_repository/pot'
+        pot_directory = os.path.join(CrowdinTranslator.CROWDIN_REPO_DIR, 'pot')
         
         original_values = {}
+        return original_values
 
         for pot_file_name in os.listdir(pot_directory):
             if pot_file_name.endswith('.pot'):
@@ -147,23 +148,6 @@ class CrowdinTranslator:
                     break
         return original_values
         
-# Local Testing 
-def build_local_language_file_map():
-    """Build a mapping of languages to their translation directories for local testing."""
-    language_file_map = {}
-    translations_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'translate_repo', 'translations')
-
-    for lang_dir in os.listdir(translations_dir):
-        full_lang_dir = os.path.join(translations_dir, lang_dir)
-        if os.path.isdir(full_lang_dir):
-            for po_file in os.listdir(full_lang_dir):
-                if po_file.endswith('.po'):
-                    lang_name = po_file.split('_(')[-1].split(').po')[0]
-                    language_file_map[lang_name] = full_lang_dir
-                    break
-
-    return language_file_map
-
 
 def fix_pot_file(file_path):
     """Fixes unescaped double quotes in .pot files by escaping them with backslashes."""
@@ -190,7 +174,7 @@ def fix_pot_file(file_path):
 
 
 class HTMLCacheManager:
-    CACHED_TRANSLATIONS_DIR = os.path.join(os.environ.get('TRANSLATIONS_DIR'))
+    CACHED_TRANSLATIONS_DIR = os.environ.get('TRANSLATIONS_DIR', tempfile.gettempdir())
     
     def __init__(self, schema_element, cached_translations_dir=None):
         self.schema_element = schema_element # entities, properties or types
@@ -202,13 +186,13 @@ class HTMLCacheManager:
     def get_cached_html(self, resource):
         cached_html_path = os.path.join(self.resource_dir, f"{resource}.html")
         if os.path.isfile(cached_html_path):
-            with open(cached_html_path, "r") as f:
+            with open(cached_html_path, "r", encoding='utf-8') as f:
                 return f.read()
         return None
     
     def write_cached_html(self, resource, rendered_html):
         cached_html_path = os.path.join(self.resource_dir, f"{resource}.html")
-        with open(cached_html_path, "w") as f:
+        with open(cached_html_path, "w", encoding='utf-8') as f:
             f.write(rendered_html)
 
 LANGUAGE_FLAG_MAP = {
@@ -242,13 +226,16 @@ LANGUAGE_FLAG_MAP = {
 
 
 if __name__ == "__main__":
+    #@todo
+    # print("Usage: python translations.py translate <resource>")
+    # print("Usage: python translations.py build-cache") -> concurrent futures to map over get_language_file_map
+
     if len(sys.argv) < 2:
         print("Usage: python translations.py <resource>")
         sys.exit(1)
-        
 
     resource = sys.argv[1]
-    language_file_map = build_local_language_file_map()  # Only for local testing
+    language_file_map = get_language_file_map()  # Only for local testing
 
     translator = CrowdinTranslator(language_file_map)
     result = translator.translate(resource)

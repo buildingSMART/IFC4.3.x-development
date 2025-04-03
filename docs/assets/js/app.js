@@ -348,19 +348,19 @@ function getCookie(name) {
     return null;
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+function filterActiveLanguage() {
     const languagePreference = getCookie('languagePreference') || 'English_UK';
     console.log("Language Preference:", languagePreference);
 
-    const activeTranslations = document.querySelectorAll(`.lang-${languagePreference}`);
-    console.log("Active translations found:", activeTranslations.length);
+    const translations = document.querySelectorAll(`div.translation`);
+    console.log("Active translations found:", ...Array.from(translations).map(el => el.className));
 
-    activeTranslations.forEach((translation) => {
-        console.log("Setting display:block for:", translation.className);
-        translation.style.display = 'block';
+    translations.forEach((translation) => {
+        translation.style.display = translation.classList.contains(`lang-${languagePreference}`) ? 'block' : 'none';
     });
-});
+}
 
+document.addEventListener("DOMContentLoaded", filterActiveLanguage);
 
 function setLanguagePreference(value) {
     let languageMapping = {
@@ -397,5 +397,5 @@ function setLanguagePreference(value) {
     var expires = "; expires=" + date.toUTCString();
 
     document.cookie = `languagePreference=${value}${expires}; path=/;`;
-    location.reload();
+    filterActiveLanguage();
 }

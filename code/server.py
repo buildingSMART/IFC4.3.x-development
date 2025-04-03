@@ -55,8 +55,10 @@ app = Flask(__name__)
 app.jinja_env.trim_blocks = True
 app.jinja_env.lstrip_blocks = True
 
-is_iso = os.environ.get('ISO', '0') == '1'
-is_package = os.environ.get('PACKAGE', '0') == '1'
+truthy = lambda s: (s or '').strip().lower() not in ('', '0', 'false', 'no', 'off')
+
+is_iso = truthy(os.environ.get('ISO'))
+is_package = truthy(os.environ.get('PACKAGE'))
 if is_package:
     base = "/HTML"
 else:
@@ -1077,8 +1079,8 @@ def resource(resource):
                 break
         
             
-            cached_html = html_cache_manager.get_cached_html(resource)
-            if not eval(os.environ.get('TRANSLATION_UPDATING')) and cached_html:
+            cached_html = None # html_cache_manager.get_cached_html(resource)
+            if not truthy(os.environ.get('TRANSLATION_UPDATING')) and cached_html:
                 return cached_html
             
             # generate and write the html to the cache in case we're crawling the urls or there is no cached html yet
@@ -1114,8 +1116,8 @@ def resource(resource):
         
     elif resource in R.pset_definitions.keys():
         html_cache_manager = HTMLCacheManager('properties')
-        cached_html = html_cache_manager.get_cached_html(resource)
-        if not eval(os.environ.get('TRANSLATION_UPDATING')) and cached_html:
+        cached_html = None # html_cache_manager.get_cached_html(resource)
+        if not truthy(os.environ.get('TRANSLATION_UPDATING')) and cached_html:
             return cached_html
         
         translator = CrowdinTranslator()
@@ -1139,8 +1141,8 @@ def resource(resource):
         return rendered_html
     
     html_cache_manager = HTMLCacheManager('types')
-    cached_html = html_cache_manager.get_cached_html(resource)
-    if not eval(os.environ.get('TRANSLATION_UPDATING')) and cached_html:
+    cached_html = None # html_cache_manager.get_cached_html(resource)
+    if not truthy(os.environ.get('TRANSLATION_UPDATING')) and cached_html:
         return cached_html
     
     builder = resource_documentation_builder(resource)

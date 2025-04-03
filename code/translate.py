@@ -75,7 +75,7 @@ def build_language_file_map():
 def compile_po_to_mo(po_file_path, mo_file_path):
     """Compile the .po file to a .mo file using msgfmt (external gettext utility)."""
     try:
-        subprocess.run(['msgfmt', po_file_path, '-o', mo_file_path], check=True)
+        subprocess.run(['pybabel', 'compile', '-i', po_file_path, '-o', mo_file_path], check=True)
         return mo_file_path
     except subprocess.CalledProcessError as e:
         print(f"Error compiling {po_file_path} to .mo: {e}")

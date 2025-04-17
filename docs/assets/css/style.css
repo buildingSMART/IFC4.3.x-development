@@ -33,7 +33,10 @@ header ul>li {
     padding-left: calc(2 * var(--universal-padding));
     padding-right: calc(2 * var(--universal-padding));
 }
-header ul>li a svg {
+header select, header label {
+   color: var(--a-link-color);
+}
+header ul>li svg {
     vertical-align: middle;
     width: 16px;
     height: 16px;

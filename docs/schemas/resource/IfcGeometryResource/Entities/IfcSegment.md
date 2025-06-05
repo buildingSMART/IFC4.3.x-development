@@ -7,7 +7,7 @@ Definition of a curve segment with a trimming mechanism built in with a StartPla
 
 ### Transition
 The state of transition (i.e., geometric continuity from the last point of this segment to the first point of the next segment) in IfcCompositeCurve and subtypes.
-
+t
 ### UsingCurves
 The set of composite curves which use this composite curve segment as a segment. This set shall not be empty.
 

@@ -6,7 +6,7 @@ Definition of a curve segment with a trimming mechanism built in with a StartPla
 ## Attributes
 
 ### Transition
-Connectivity between the continuous segments is not enforced per se to be tangential. Setting "TangentialContinuity" to True means that the current segment shall continue with tangential continuity to the previous one.
+The state of transition (i.e., geometric continuity from the last point of this segment to the first point of the next segment) in IfcCompositeCurve and subtypes.
 
 ### UsingCurves
 The set of composite curves which use this composite curve segment as a segment. This set shall not be empty.

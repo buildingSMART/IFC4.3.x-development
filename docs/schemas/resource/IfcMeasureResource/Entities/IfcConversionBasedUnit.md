@@ -25,19 +25,19 @@ An IfcConversionBasedUnit is used to define a unit that has a conversion rate to
 |'pint US'|Volume measure equal to 0.000473 cubic meters|
 |'gallon UK'|Volume measure equal to 0.004546 cubic meters|
 |'gallon US'|Volume measure equal to 0.003785 cubic meters|
-|'degree'|Angle measure equal to π/180 rad|
+|'degree'|Plane angle measure equal to π/180 rad|
 |'ounce'|Mass measure equal to 28.35 g|
 |'pound'|Mass measure equal to 0.454 kg|
 |'ton UK'|Mass measure equal to 1016.0469088 kg, also known as long ton, gross ton, shipper's ton|
 |'ton US'|Mass measure equal to 907.18474 kg, also known as short ton, net ton|
-|'lbf'|Force measure equal to 4.4482216153 N, pound-force|
-|'kip'|Force measure equal to 4448.2216153 N, kilopound-force|
-|'psi'|Pressure measure equal to 6894.7572932 Pa, pound-force per square inch|
-|'ksi'|Pressure measure equal to 6894757.2932 Pa, kilopound-force per square inch|
+|'lbf'|Force measure equal to 4.4482216153 N, also known as pound-force|
+|'kip'|Force measure equal to 4448.2216153 N, also known as kilopound-force|
+|'psi'|Pressure measure equal to 6894.7572932 Pa, also known as pound-force per square inch|
+|'ksi'|Pressure measure equal to 6894757.2932 Pa, also known as kilopound-force per square inch|
 |'minute'|Time measure equal to 60 s|
 |'hour'|Time measure equal to 3600 s|
 |'day'|Time measure equal to 86400 s|
-|'btu'|Energy measure equal to 1055.056 J, British Thermal Unit|
+|'btu'|Energy measure equal to 1055.056 J, also known as British Thermal Unit|
 
 Table 1 — Standard unit names
 

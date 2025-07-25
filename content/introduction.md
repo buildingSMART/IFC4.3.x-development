@@ -8,7 +8,7 @@ The Industry Foundation Classes (IFC) are an open international standard for sha
 {%- else %}
  2. Documentation (provided in HTML, authored in Markdown)
 {%- endif %}
- 3. Property and Quantity Set definitions (standardized definitions for an extensibility mechanism realised in the schema - provided in XML and available in the HTLM documentation)
+ 3. Property and Quantity Set definitions (standardized definitions for an extensibility mechanism realised in the schema - provided in XML and available in the HTML documentation)
  4. Exchange or serialization mechanisms of data files, see [scope](scope.htm)
 
 The prevalent exchange format for IFC is the Step Physical File Format (ISO

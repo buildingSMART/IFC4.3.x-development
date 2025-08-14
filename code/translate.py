@@ -1,68 +1,44 @@
 import os
 import gettext
-import tempfile
-import subprocess
 import polib
+import re
 import sys
+import shutil
+import argparse
+import json
+import time
+import hashlib
 
-CACHE_DIR = tempfile.gettempdir()  # Temporary directory for storing compiled .mo files
+TRANSLATIONS_SRC_DIR = os.environ.get(
+    "TRANSLATIONS_SRC_DIR",
+    os.path.join(os.path.dirname(__file__), "translate_repo", "translations")
+)
+TRANSLATIONS_BUILD_DIR = os.environ.get(
+    "TRANSLATIONS_BUILD_DIR",
+    os.path.join(os.path.dirname(__file__), "compiled_translations")
+)
 
-def translate(resource):
-    """Translate the given resource into the specified language
-    If no translations exist, the program compiles .po files into .mo files, saves them in the cache (and makes them available on the server). 
-    Each .po file is converted to a .mo file locally using msgfmt, an external library from gettext.
-      A combined .mo file is created for each language and saved using polib. 
-      If the .mo file for a specific language already exists, it can be retrieved from the cache.
-
-    Alternatively, translations can be done with a one-to-one mapping between .po and .mo files
-    (e.g., IfcBuildingControlsDomain_(Dutch).po becomes IfcBuildingControlsDomain_(Dutch).mo).
-    This method distributes the translation effort, translating only the relevant .po file when a language is selected.
-
-    In the cumulative method, selecting a language translates all content at once, which is faster and simpler—just call translate('IfcWall', 'Dutch').
-    """
-    translations_map = {}
-
-    for lang in language_file_map.keys():
-        translations = load_translations(lang)
-        if not translations:
-            continue
-
-        def get_filtered_translations(resource):
-            # Use gettext's translation methods to get the resource, description, and definition
-            keys_and_patterns = [
-                (resource, resource),
-                (f"{resource}_DESCRIPTION", f"{resource}_DESCRIPTION"),
-                (f"{resource}_DEFINITION", f"{resource}_DEFINITION")
-            ]
-
-            # Filter default values out of the ttranslation, i.e. gettext simply returns the original msgid if the matching msgid is empty
-            translations_filtered = [
-                None if (translation := translations.gettext(key)) and translation.startswith(pattern) else translation
-                for key, pattern in keys_and_patterns
-            ]
-
-            return tuple(translations_filtered)
-
-        resource_translation, description_translation, definition_translation = get_filtered_translations(resource)
-
-        resource_pattern = f'[[{resource}]]' # e.g. in case a definition is something like '[[IfcBeam]]'とは、主に曲げに耐えることによって荷重に耐えることができる水平な、あるいはほぼ水平な構造部材のことである。建築的な観点からこのような部材を表すこともある。耐荷重である必要はない。'
-        if definition_translation and definition_translation.startswith(resource_pattern):
-            definition_translation = definition_translation.replace(resource_pattern, '').lstrip()
-
-        translations_map[lang] = {
-                "resource_translation": resource_translation or "",
-                "description": description_translation or "",
-                "definition": definition_translation or ""
-            }
-    return translations_map
+# for storing hashes in case new translations come in 
+PO_HASH_PATH = os.environ.get(
+    'PO_HASH_PATH',
+    os.path.join(TRANSLATIONS_BUILD_DIR, 'po_hash_map.json')
+)
 
 def build_language_file_map():
-    """Build a mapping of languages to their translation directories."""
+    """Build a mapping of languages to their translation directories.
+     Returns:
+     {
+         'German' : ../translations_repository/translations/de-DE,
+         'Dutch': ../translations_repository/translations/nl-NL,
+         etc
+     }
+    Detects from filenames like: Domain_(Lang).po, 
+    e.g. IfcSharedFacilitieselements_(Italian).po
+    """
     language_file_map = {}
-    translations_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'translate_repo', 'translations')
 
-    for lang_dir in os.listdir(translations_dir):
-        full_lang_dir = os.path.join(translations_dir, lang_dir)
+    for lang_dir in os.listdir(TRANSLATIONS_SRC_DIR):
+        full_lang_dir = os.path.join(TRANSLATIONS_SRC_DIR, lang_dir)
         if os.path.isdir(full_lang_dir):
             for po_file in os.listdir(full_lang_dir):
                 if po_file.endswith('.po'):
@@ -72,77 +48,370 @@ def build_language_file_map():
 
     return language_file_map
 
-def compile_po_to_mo(po_file_path, mo_file_path):
-    """Compile the .po file to a .mo file using msgfmt (external gettext utility)."""
+def find_po_files(base_dir):
+    """Yield absolute paths to all .po files under base_dir (recursive)."""
+    for root, _, files in os.walk(base_dir):
+        for name in files:
+            if name.lower().endswith(".po"):
+                yield os.path.join(root, name)
+
+
+def mo_output_path(po_path, translations, compiled_translations):
+    """
+    Mirror the translations directory structure for the compiled translations.
+    Example:
+      translations/translations/NL/IfcWall_(Dutch).po
+      -> compiled_translations/translations/NL/IfcWall_(Dutch).mo
+    """
+    rel = os.path.relpath(po_path, translations)
+    rel_mo = os.path.splitext(rel)[0] + ".mo"
+    return os.path.join(compiled_translations, rel_mo)
+
+
+def compile_po_to_mo(po_path, mo_path):
+    """Compile .po to .mo using polib."""
+    po = polib.pofile(po_path)
+    os.makedirs(os.path.dirname(mo_path), exist_ok=True)
+    po.save_as_mofile(mo_path)
+
+
+def _sha256(path: str) -> str:
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for chunk in iter(lambda: f.read(8192), b""):
+            h.update(chunk)
+    return h.hexdigest()  
+    
+def build_cache(clean=False, use_hash=False):
+    """
+    Build/refresh compiled .mo files from .po sources under TRANSLATIONS_SRC_DIR, mirroring
+    the directory structure into TRANSLATIONS_BUILD_DIR.
+
+    Modes
+    -----
+    - First run (no manifest) or --clean: hash mode (robust),
+    - Default (periodically checking for translations): mtime mode (fast).
+    - --hash: force hash mode (robust)
+    """
+    start_time = time.time()
+    
     try:
-        subprocess.run(['pybabel', 'compile', '-i', po_file_path, '-o', mo_file_path], check=True)
-        return mo_file_path
-    except subprocess.CalledProcessError as e:
-        print(f"Error compiling {po_file_path} to .mo: {e}")
-        return None
+        with open(PO_HASH_PATH, "r", encoding="utf-8") as f:
+            old_po_hash_map = json.load(f)
+    except FileNotFoundError:
+        old_po_hash_map = {}
+        use_hash = True  # first run: force hash
 
-def save_composite_translation_as_mo(composite_translation, mo_file_path):
-    """Save the composite translation as a .mo file using polib."""
-    po = polib.POFile()
+    # --clean implies hash (incl manifest reset) + compiled translations directory
+    if clean and os.path.isdir(TRANSLATIONS_BUILD_DIR):
+        shutil.rmtree(TRANSLATIONS_BUILD_DIR)
+    os.makedirs(TRANSLATIONS_BUILD_DIR, exist_ok=True)
+    
+    if not os.path.isdir(TRANSLATIONS_SRC_DIR):
+        print(f"[ERROR] Translations dir not found: {TRANSLATIONS_SRC_DIR}", file=sys.stderr)
+        return 2
+    
 
-    # Populate the POFile object with entries from the composite translation catalog
-    for msgid, msgstr in composite_translation._catalog.items():
-        entry = polib.POEntry(msgid=msgid, msgstr=msgstr)
-        po.append(entry)
+    po_files = list(find_po_files(TRANSLATIONS_SRC_DIR))
+    if not po_files:
+        print(f"[WARN] No .po files found under: {TRANSLATIONS_SRC_DIR}")
+        return 0
 
-    po.save_as_mofile(mo_file_path)
+    # pruned : in the (unlikely?) case a .po file is deleted, the corresponding .mo must also be removed
+    new_po_hash_map = {}
+    compiled = skipped = pruned = errors = 0
+    expected_mos = set()
+    
+    for po in po_files:
+        try:
+            mo = mo_output_path(po, TRANSLATIONS_SRC_DIR, TRANSLATIONS_BUILD_DIR)
+            expected_mos.add(os.path.normpath(mo))
+            
+            if use_hash:
+                digest = _sha256(po)                
+                rel = os.path.normpath(os.path.relpath(po, TRANSLATIONS_SRC_DIR))
+                new_po_hash_map[rel] = digest
+                should_compile = (old_po_hash_map.get(rel) != digest) or (not os.path.exists(mo))
+            else:
+                # mtime-based check (faster)
+                should_compile = (not os.path.exists(mo)
+                                  or os.path.getmtime(po) > os.path.getmtime(mo))
+            
+            if should_compile:
+                os.makedirs(os.path.dirname(mo), exist_ok=True)
+                compile_po_to_mo(po, mo)
+                compiled += 1
+                print(f"[OK] {po} -> {mo}")
+            else:
+                skipped += 1
+                
+        except Exception as e:
+            errors += 1
+            print(f"[ERR] {po}: {e}", file=sys.stderr)
+    
+    # remove .mo if outdated and write hash map
+    if use_hash:
+        for root, _, files in os.walk(TRANSLATIONS_BUILD_DIR):
+            for name in files:
+                if not name.lower().endswith(".mo"):
+                    continue
+                mo_path = os.path.normpath(os.path.join(root, name))
+                if mo_path not in expected_mos:
+                    try:
+                        os.remove(mo_path)
+                        pruned += 1
+                        print(f"[PRUNED] {mo_path}")
+                    except Exception as e:
+                        errors += 1
+                        print(f"[ERR] prune {mo_path}: {e}", file=sys.stderr)
 
-def load_translations(lang):
-    """Load the translations for a given language using compiled .mo files."""
-    lang_dir = language_file_map.get(lang)
-    if not lang_dir:
-        print(f"Language '{lang}' is not supported.")
-        return None
+        with open(PO_HASH_PATH, "w", encoding="utf-8") as f:
+            json.dump(new_po_hash_map, f, indent=2)
 
-    #combines all translations
-    composite_mo_file_path = os.path.join(CACHE_DIR, f"{lang}_composite.mo")
+    end_time = time.time()
+    print(f"\nDone. compiled={compiled}, errors={errors}, TRANSLATIONS_BUILD_DIR={TRANSLATIONS_BUILD_DIR} in {end_time - start_time} seconds")
+    return 0 if errors == 0 else 1
 
-    # If the composite .mo file exists, just load and return it
-    if os.path.exists(composite_mo_file_path):
-        return gettext.GNUTranslations(open(composite_mo_file_path, "rb"))
 
-    # Otherwise, compile all .po files into a composite translation file
-    composite_translation = None
+def compiled_lang_dir_for(lang):
+    """
+    We mirrored the input dir tree under TRANSLATIONS_BUILD_DIR.
+    So: find the source lang dir, then compute the compiled lang dir by relpath.
+    """
+    src_map = build_language_file_map()
+    src_lang_dir = src_map.get(lang)
+    if not src_lang_dir:
+        raise ValueError(f"Unknown language '{lang}'. Available: {sorted(src_map.keys())}")
+    rel = os.path.relpath(src_lang_dir, TRANSLATIONS_SRC_DIR)
+    return os.path.join(TRANSLATIONS_BUILD_DIR, rel)
 
-    for po_file in os.listdir(lang_dir):
-        if po_file.endswith(f'({lang}).po'):
-            po_file_path = os.path.join(lang_dir, po_file)
-            temp_mo_file_path = os.path.join(CACHE_DIR, f"temp_{lang}.mo")  # Temporary .mo for each .po
 
-            compiled_mo_file = compile_po_to_mo(po_file_path, temp_mo_file_path)
-            if not compiled_mo_file:
+def find_nested_po(base):
+    from pathlib import Path
+    base = Path(base)
+    nested = []
+    for lang_dir in base.iterdir():
+        if not lang_dir.is_dir() or lang_dir.name in {"pot", "psd"}:
+            continue
+        for p in lang_dir.rglob("*.po"):
+            if p.parent != lang_dir:   # deeper than the language root
+                nested.append(p)
+    return nested
+
+
+def iter_mo_files_for_lang(lang):
+    lang_dir = compiled_lang_dir_for(lang)
+    if not os.path.isdir(lang_dir):
+        print('compiled translations not found, check the cache build')
+        return []
+    mos = []
+    for fn in os.listdir(lang_dir):
+        if fn.endswith(".mo") and fn.endswith(f"({lang}).mo"):
+            mos.append(os.path.join(lang_dir, fn))
+    # Fallback: if names don’t include (lang), take all .mo
+    if not mos:
+        mos = [os.path.join(lang_dir, fn) for fn in os.listdir(lang_dir) if fn.endswith(".mo")]
+    return sorted(mos)
+
+
+def identity_filter(val, msgid):
+    """
+    Treat as untranslated if source text is a placeholder (i.e. equal msgid and msgstr)
+    """
+    if not val:
+        return ""
+    val = val.strip()
+    # treat as untranslated only if EXACTLY the same as msgid
+    return "" if val == msgid else val
+
+def load_merged_catalog(lang):
+    """
+    Merge all catalogs for a language. First non-identity translation wins.
+    Returns a dict: {msgid: msgstr}
+    """
+    merged = {}
+    for mo_path in iter_mo_files_for_lang(lang):
+        try:
+            with open(mo_path, "rb") as f:
+                cat = gettext.GNUTranslations(f)
+        except Exception:
+            continue
+
+        for k, v in getattr(cat, "_catalog", {}).items():
+            if not isinstance(k, str): 
                 continue
-
-            try:
-                translation = gettext.GNUTranslations(open(compiled_mo_file, "rb"))
-                if composite_translation:
-                    composite_translation._catalog.update(translation._catalog)
-                else:
-                    composite_translation = translation
-
-            except FileNotFoundError:
-                print(f"Error: Temp .mo file not found for {po_file}")
+            if not v:
                 continue
+            if k not in merged and (iv := identity_filter(v, k)):
+                merged[k] = iv
+    return merged
 
-    # Write the composite translation to a .mo file
-    if composite_translation:
-        save_composite_translation_as_mo(composite_translation, composite_mo_file_path)
+def is_all_caps_tag(s: str) -> bool:
+    # Consider tags like DOUBLE, DOUBLE_PANEL_HORIZONTAL, USERDEFINED etc.
+    # Allow digits; require at least one alpha; underscores split parts.
+    parts = s.split("_")
+    if not parts:
+        return False
+    has_alpha = any(any(c.isalpha() for c in p) for p in parts)
+    return has_alpha and all(p == p.upper() for p in parts)
 
-    return composite_translation
+def strip_wikilinks(text, resource = None, drop_base = False):
+    WIKILINK_RE = re.compile(r"\[\[([^\]]+)\]\]")
+    def repl(m):
+        inner = m.group(1)
+        if drop_base and resource and inner == resource:
+            return "" 
+        return inner  
+    return re.sub(r"\s{2,}", " ", WIKILINK_RE.sub(repl, text)).strip()
+
+def translate_resource(lang, resource):
+    """
+    Returns:
+      {
+        "resource_translation": "…",
+        "DESCRIPTION": "… or ''",
+        "DEFINITION": "… or ''",
+        "<OTHER_ENUM>": "…", (optional)
+        ...
+      }
+    """
+    catalog = load_merged_catalog(lang)
+    out = {"resource_translation": identity_filter(catalog.get(resource, ""), resource) or ""}
+
+    prefix = resource + "_"
+
+    # Always include description and definition fields (even if untranslated -> '')
+    for field in ("DESCRIPTION", "DEFINITION"):
+        key = prefix + field
+        val = identity_filter(catalog.get(key, ""), key) or ""
+        out[field] = val
+
+    # Add all remaining ENUM (caps) variants
+    for msgid, msgstr in catalog.items():
+        if not msgid.startswith(prefix):
+            continue
+        suffix = msgid[len(prefix):]
+        if not is_all_caps_tag(suffix):
+            continue
+        if suffix in out:  # skip forced fields we already set
+            continue
+        val = identity_filter(msgstr, msgid)
+        if val:
+            out[suffix] = val
+
+    # remove wikileaks (e.g. '[[IfcBeam]]' --> 'IfcBeam')
+    for k, v in list(out.items()):
+        if isinstance(v, str) and v:
+            out[k] = strip_wikilinks(v, resource=resource, drop_base=False)
+
+    return out
+
+def list_languages():
+    # get a list of available languages 
+    langs = build_language_file_map()
+    return(sorted(langs.keys()))
+    
+def main(argv=None):
+    """
+    Translation Cache Builder & Translator
+    --------------------------------------
+
+    Build / Update Translation Cache
+    --------------------------------
+    # 1. Initial build (first run)
+    #    Creates a mirror directory with compiled .mo translations.
+    python translate.py build-cache
+    or 
+    import translate; build_cache()
+
+    # 2. Fast update (default)
+    #    Use file modification times (mtime) to recompile only changed .po files.
+    python translate.py build-cache
+
+    # 3. Hash-based update
+    #    Compares hashes of .po files; recompiles only when content changes.
+    #    Also updates the .po → hash mapping file (po_hash_map.json).
+    python translate.py build-cache --hash
+    or
+    import translate; build_cache(use_hash=True)
+
+    # 4. Full clean rebuild
+    #    Deletes the compiled translations directory, then does a full hash-based rebuild.
+    #    (--clean automatically implies --hash)
+    python translate.py build-cache --clean
+    or
+    import translate; build_cache(clean=True, use_hash=True)
 
 
-language_file_map = build_language_file_map()
+    Translate a Resource
+    --------------------
+    # Translate a specific resource key to the given language.
+    # The language name must match exactly the one found in .po filenames (can be listed by calling 'list_languages()' )
+    python translate.py translate <resource> --lang "<LanguageName>"
+
+    Examples:
+        python translate.py translate IfcWall --lang "Dutch"
+        python translate.py translate PartitioningType --lang "Portuguese, Brazilian"
+        
+    or 
+        translate_resource('Dutch', 'IfcWall')
+        translate_resource ('Portuguese, Brazilian', 'IfcPartioningType')
+    
+    List all available Languages
+    --------------------
+    # Show all languages detected from the translations repository.
+    python translate.py list-languages
+    or 
+    list_languages()
+    """
+    if argv is None:
+        # option to call main directly
+        argv = sys.argv[1:]
+
+    if not argv:
+        top = argparse.ArgumentParser(description="Translations helper")
+        top.add_argument("cmd", choices=["build-cache", "translate", "list-languages"], help="Command to run")
+        top.print_help(sys.stderr)
+        return 2
+
+    cmd, rest = argv[0], argv[1:]
+
+    if cmd == "build-cache":
+        p = argparse.ArgumentParser(prog="translate.py build-cache",
+                                    description="Compile all .po files into .mo (mirrors tree)")
+        p.add_argument("--clean", action="store_true",help="Clean compiled .mo files before building")
+        p.add_argument("--hash", action="store_true", help="Use hash map to detect new translations")
+        args = p.parse_args(rest)
+        
+        use_hash = args.hash or args.clean # use hash the first time after cleaning the compiled translations
+        rc = build_cache(clean=args.clean, use_hash=use_hash)
+        sys.exit(rc)
+
+    elif cmd == "translate":
+        p = argparse.ArgumentParser(prog="translate.py translate",
+                                    description="Translate a specific resource key")
+        p.add_argument("resource", help="Base resource id, e.g., IfcWall or PartitioningType")
+        p.add_argument("--lang", required=True,
+                       help="Human language name (as found in filenames), e.g., 'Dutch' or 'Portuguese, Brazilian'")
+        args = p.parse_args(rest)
+        try:
+            res = translate_resource(lang=args.lang, resource=args.resource)
+        except ValueError as e:
+            lang_map = build_language_file_map()
+            print(f"[ERROR] {e}", file=sys.stderr)
+            print(f"Known languages: {', '.join(sorted(lang_map.keys()))}", file=sys.stderr)
+            sys.exit(2)
+        print(json.dumps(res, ensure_ascii=False, indent=2))
+        return 0
+    
+    elif cmd == "list-languages":
+        print(list_languages())
+        return 0
+
+    else:
+        print(f"Unknown command: {cmd}", file=sys.stderr)
+        print("Use one of: build-cache, translate", file=sys.stderr)
+        return 2
 
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("Usage: python translations.py <resource>")
-        sys.exit(1)
-
-    resource = sys.argv[1]
-
-    result = translate(resource)
+    sys.exit(main())

@@ -8,6 +8,7 @@ import argparse
 import json
 import time
 import hashlib
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 TRANSLATIONS_SRC_DIR = os.environ.get(
     "TRANSLATIONS_SRC_DIR",
@@ -82,7 +83,7 @@ def _sha256(path: str) -> str:
             h.update(chunk)
     return h.hexdigest()  
     
-def build_cache(clean=False, use_hash=False):
+def build_cache(clean=False, use_hash=False, jobs=1):
     """
     Build/refresh compiled .mo files from .po sources under TRANSLATIONS_SRC_DIR, mirroring
     the directory structure into TRANSLATIONS_BUILD_DIR.
@@ -112,7 +113,7 @@ def build_cache(clean=False, use_hash=False):
         return 2
     
 
-    po_files = list(find_po_files(TRANSLATIONS_SRC_DIR))
+    po_files = sorted(find_po_files(TRANSLATIONS_SRC_DIR))
     if not po_files:
         print(f"[WARN] No .po files found under: {TRANSLATIONS_SRC_DIR}")
         return 0
@@ -121,6 +122,7 @@ def build_cache(clean=False, use_hash=False):
     new_po_hash_map = {}
     compiled = skipped = pruned = errors = 0
     expected_mos = set()
+    tasks = [] # lst[(po, mo)]
     
     for po in po_files:
         try:
@@ -138,16 +140,41 @@ def build_cache(clean=False, use_hash=False):
                                   or os.path.getmtime(po) > os.path.getmtime(mo))
             
             if should_compile:
-                os.makedirs(os.path.dirname(mo), exist_ok=True)
-                compile_po_to_mo(po, mo)
-                compiled += 1
-                print(f"[OK] {po} -> {mo}")
+                tasks.append((po, mo))
             else:
                 skipped += 1
                 
         except Exception as e:
             errors += 1
             print(f"[ERR] {po}: {e}", file=sys.stderr)
+    
+    def _compile_one(po, mo):
+        os.makedirs(os.path.dirname(mo), exist_ok=True)
+        compile_po_to_mo(po, mo)
+        return po, mo
+    
+    if jobs <= 1:
+        for po, mo in tasks:
+            try:
+                _compile_one(po, mo)
+                compiled += 1
+                print(f"[OK] {po} -> {mo}")
+            except Exception as e:
+                errors += 1
+                print(f"[ERR] {po}: {e}", file=sys.stderr)
+    
+    else:
+        with ThreadPoolExecutor(max_workers=jobs) as ex:
+            futs = {ex.submit(_compile_one, po, mo): (po, mo) for po, mo in tasks}
+            for fut in as_completed(futs):
+                po, mo = futs[fut]
+                try:
+                    fut.result()
+                    compiled += 1
+                    print(f"[OK] {po} -> {mo}")
+                except Exception as e:
+                    errors += 1
+                    print(f"[ERR] {po}: {e}", file=sys.stderr)
     
     # remove .mo if outdated and write hash map
     if use_hash:
@@ -247,8 +274,7 @@ def load_merged_catalog(lang):
     return merged
 
 def is_all_caps_tag(s: str) -> bool:
-    # Consider tags like DOUBLE, DOUBLE_PANEL_HORIZONTAL, USERDEFINED etc.
-    # Allow digits; require at least one alpha; underscores split parts.
+    # Consider ENUM tags like DOUBLE, DOUBLE_PANEL_HORIZONTAL, USERDEFINED etc.
     parts = s.split("_")
     if not parts:
         return False
@@ -344,6 +370,13 @@ def main(argv=None):
     python translate.py build-cache --clean
     or
     import translate; build_cache(clean=True, use_hash=True)
+    
+    # 5. Multi-threaded build ; compile in parallel
+    #    The -j/--jobs flag controls the number of worker threads.
+    Examples:
+    python translate.py build-cache --hash -j 4
+    or
+    import translate; build_cache(use_hash=True, jobs=4)
 
 
     Translate
@@ -390,10 +423,12 @@ def main(argv=None):
                                     description="Compile all .po files into .mo (mirrors tree)")
         p.add_argument("--clean", action="store_true",help="Clean compiled .mo files before building")
         p.add_argument("--hash", action="store_true", help="Use hash map to detect new translations")
+        p.add_argument("-j", "--jobs", type=int, default=1, help="Parallel workers for compilation (default: 1, single-threaded)"
+)
         args = p.parse_args(rest)
         
         use_hash = args.hash or args.clean # use hash the first time after cleaning the compiled translations
-        rc = build_cache(clean=args.clean, use_hash=use_hash)
+        rc = build_cache(clean=args.clean, use_hash=use_hash, jobs=args.jobs)
         sys.exit(rc)
 
     elif cmd == "translate":

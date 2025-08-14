@@ -238,7 +238,7 @@ def load_merged_catalog(lang):
             continue
 
         for k, v in getattr(cat, "_catalog", {}).items():
-            if not isinstance(k, str): 
+            if not isinstance(k, str) or k =='': 
                 continue
             if not v:
                 continue
@@ -310,6 +310,9 @@ def list_languages():
     # get a list of available languages 
     langs = build_language_file_map()
     return(sorted(langs.keys()))
+
+def get_translations(resource):
+    return {lang: translate_resource(lang, resource) for lang in list_languages()}
     
 def main(argv=None):
     """
@@ -343,9 +346,9 @@ def main(argv=None):
     import translate; build_cache(clean=True, use_hash=True)
 
 
-    Translate a Resource
+    Translate
     --------------------
-    # Translate a specific resource key to the given language.
+    # Translate a specific resource key to the given language or to all languages.
     # The language name must match exactly the one found in .po filenames (can be listed by calling 'list_languages()' )
     python translate.py translate <resource> --lang "<LanguageName>"
 
@@ -356,6 +359,12 @@ def main(argv=None):
     or 
         translate_resource('Dutch', 'IfcWall')
         translate_resource ('Portuguese, Brazilian', 'IfcPartioningType')
+        
+    In case no language is specified, the resource will be translated to all available languages
+    Examples: 
+        python translate.py translate IfcWall 
+    or  
+        get_translations(resource)
     
     List all available Languages
     --------------------
@@ -391,17 +400,21 @@ def main(argv=None):
         p = argparse.ArgumentParser(prog="translate.py translate",
                                     description="Translate a specific resource key")
         p.add_argument("resource", help="Base resource id, e.g., IfcWall or PartitioningType")
-        p.add_argument("--lang", required=True,
+        p.add_argument("--lang",
                        help="Human language name (as found in filenames), e.g., 'Dutch' or 'Portuguese, Brazilian'")
         args = p.parse_args(rest)
-        try:
-            res = translate_resource(lang=args.lang, resource=args.resource)
-        except ValueError as e:
-            lang_map = build_language_file_map()
-            print(f"[ERROR] {e}", file=sys.stderr)
-            print(f"Known languages: {', '.join(sorted(lang_map.keys()))}", file=sys.stderr)
-            sys.exit(2)
-        print(json.dumps(res, ensure_ascii=False, indent=2))
+        
+        if args.lang:
+            try:
+                output = translate_resource(lang=args.lang, resource=args.resource)
+            except ValueError as e:
+                lang_map = build_language_file_map()
+                print(f"[ERROR] {e}", file=sys.stderr)
+                print(f"Known languages: {', '.join(sorted(lang_map.keys()))}", file=sys.stderr)
+                sys.exit(2)
+        else:
+            output = get_translations(args.resource)
+        print(json.dumps(output, ensure_ascii=False, indent=2))
         return 0
     
     elif cmd == "list-languages":

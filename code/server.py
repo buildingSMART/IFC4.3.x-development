@@ -31,6 +31,7 @@ assert sys.version_info[0:2] >= (3, 6)
 def BeautifulSoup(*args):
     return bs4.BeautifulSoup(*args, features="lxml")
 
+
 import flask
 from flask import (
     Flask,
@@ -48,12 +49,13 @@ from flask import (
 import md as mdp
 from extract_concepts_from_xmi import parse_bindings
 
-from translate import translate
+import translate
+from slugify import slugify
 
-from crowdin_translator import CrowdinTranslator, HTMLCacheManager, LANGUAGE_FLAG_MAP
 app = Flask(__name__)
 app.jinja_env.trim_blocks = True
 app.jinja_env.lstrip_blocks = True
+app.jinja_env.filters['slugify'] = slugify
 
 truthy = lambda s: (s or '').strip().lower() not in ('', '0', 'false', 'no', 'off')
 
@@ -64,40 +66,9 @@ if is_package:
 else:
     base = "/IFC/RELEASE/IFC4x3/HTML"
 
-def get_language_icon():
-    language_flag_map = {
-        "English_UK": "🇬🇧",
-        "Arabic": "🇸🇦",
-        "Chinese Simplified": "🇨🇳",
-        "Croatian": "🇭🇷",
-        "Czech": "🇨🇿",
-        "Danish": "🇩🇰",
-        "Dutch": "🇳🇱",
-        "English": "🇺🇸",
-        "Finnish": "🇫🇮",
-        "French": "🇫🇷",
-        "German": "🇩🇪",
-        "Hindi": "🇮🇳",
-        "Icelandic": "🇮🇸",
-        "Italian": "🇮🇹",
-        "Japanese": "🇯🇵",
-        "Korean": "🇰🇷",
-        "Lithuanian": "🇱🇹",
-        "Norwegian": "🇳🇴",
-        "Polish": "🇵🇱",
-        "Portuguese": "🇵🇹",
-        "Portuguese_Brazilian": "🇧🇷",
-        "Romanian": "🇷🇴",
-        "Slovenian": "🇸🇮",
-        "Spanish": "🇪🇸",
-        "Swedish": "🇸🇪",
-        "Turkish": "🇹🇷",
-    }
-
-def get_language_icon(lang = None):
-    default_lang = request.cookies.get("languagePreference", "English_UK")
-    return LANGUAGE_FLAG_MAP.get(lang or default_lang, "🇬🇧")
-
+def get_language_icon(language = None):
+    default_lang = request.cookies.get("languagePreference", "English, UK")
+    return translate.build_language_flag_map().get(language or default_lang, "🇬🇧")
 
 def make_url(fragment=None):
     return base + "/" + fragment if fragment else "/"
@@ -888,7 +859,7 @@ def api_resource(resource):
 
 @app.route(make_url("property/<prop>.htm"))
 def property(prop):
-    translations = translate(prop)
+    translations = translate.get_translations(prop)
     prop = "".join(c for c in prop if c.isalnum() or c in "_")
     md = os.path.join(REPO_DIR, "docs", "properties", prop[0].lower(), prop + ".md")
     try:
@@ -912,7 +883,6 @@ def property(prop):
         number=idx,
         entity=prop,
         translations=translations,
-        language_icon = get_language_icon(),
         path=md[len(REPO_DIR) + 1 :].replace("\\", "/"),
     )
 
@@ -1041,7 +1011,7 @@ def process_markdown(resource, mdc, process_quotes=True, number_headings=False, 
 
 @app.route(make_url("lexical/<resource>.htm"))
 def resource(resource):
-    translations = translate(resource)
+    translations = translate.get_translations(resource)
     try:
         idx = name_to_number()[resource]
     except:
@@ -1064,10 +1034,9 @@ def resource(resource):
         mdc = ""
 
     mdc = re.sub(DOC_ANNOTATION_PATTERN, "", mdc)
-    translator = CrowdinTranslator()
+    # translator = CrowdinTranslator()
 
     if "Entities" in md:
-        html_cache_manager = HTMLCacheManager('entities')
         builder = resource_documentation_builder(resource)
         mvds = [{'abbr': "".join(re.findall('[A-Z]|(?<=-)[a-z]', k)), 'cause': v[resource]} for k, v in R.mvd_entity_usage.items() if resource in v]
         is_product_or_type = False
@@ -1077,14 +1046,7 @@ def resource(resource):
             if entity in ("IfcProduct", "IfcTypeProduct"):
                 is_product_or_type = True
                 break
-        
             
-            cached_html = None # html_cache_manager.get_cached_html(resource)
-            if not truthy(os.environ.get('TRANSLATION_UPDATING')) and cached_html:
-                return cached_html
-            
-            # generate and write the html to the cache in case we're crawling the urls or there is no cached html yet
-            translations = translator.translate(resource)
             rendered_html = render_template(
                 "entity.html",
                 navigation=get_navigation(resource),
@@ -1109,19 +1071,11 @@ def resource(resource):
                 is_product_or_type=is_product_or_type,
                 translations=translations,
                 get_language_icon=get_language_icon, 
-                original = translator.load_original(resource)
             )
-            html_cache_manager.write_cached_html(resource, rendered_html)
             return rendered_html
         
     elif resource in R.pset_definitions.keys():
-        html_cache_manager = HTMLCacheManager('properties')
-        cached_html = None # html_cache_manager.get_cached_html(resource)
-        if not truthy(os.environ.get('TRANSLATION_UPDATING')) and cached_html:
-            return cached_html
-        
-        translator = CrowdinTranslator()
-        translations = translator.translate(resource)
+
         rendered_html = render_template(
             "property.html",
             navigation=get_navigation(resource),
@@ -1135,20 +1089,16 @@ def resource(resource):
             changelog=get_changelog(resource),
             translations=translations,
             get_language_icon = get_language_icon, 
-            original = translator.load_original(resource)
         )
-        html_cache_manager.write_cached_html(resource, rendered_html)
         return rendered_html
     
     html_cache_manager = HTMLCacheManager('types')
-    cached_html = None # html_cache_manager.get_cached_html(resource)
+
     if not truthy(os.environ.get('TRANSLATION_UPDATING')) and cached_html:
         return cached_html
     
     builder = resource_documentation_builder(resource)
     content = get_definition(resource, mdc)
-    
-    translator = CrowdinTranslator()
     
     rendered_html = render_template(
         "type.html",
@@ -2327,7 +2277,6 @@ def annex_e_example_page(s):
         errors="ignore",
     ).read()
 
-    old_code = code
     code = re.sub(r"(?<=FILE_SCHEMA\(\(')IFC\w+", SCHEMA_NAME, code)
     code = re.sub(r"(?<=FILE_SCHEMA \(\(')IFC\w+", SCHEMA_NAME, code)
 
@@ -2703,6 +2652,7 @@ def inject_variables():
         'spec_version_string': spec_version_string,
         'spec_version_string_full': spec_version_string_full,
         'branch': REPO_BRANCH,
+        'get_language_icon': translate.get_language_icon
     }
 
 

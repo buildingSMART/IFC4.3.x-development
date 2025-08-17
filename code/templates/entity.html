@@ -2,24 +2,35 @@
 {% block pagecontent %}
 
 <h1>{{ number }} {{ entity }}</h1>
-<p>
-    <aside class="aside-note">
-        {% for lang, data in translations.items() %}
-        <div class="translation lang-{{ lang }}">
+<aside class="aside-note">
+    {% for lang, data in translations.items() %}
+        {% if not (lang == "English" and not data.resource_translation and not data.DEFINITION) %}
+        <div class="translation lang-{{ lang|slugify }}">
+            
             <div>
-                <span style="color: #0277bd;">{{ get_language_icon(lang) }}</span> <em>Name:</em> 
-                <span style="color: #0277bd;">{{ data.resource_translation}}</span>
+                <span style="color: #0277bd;">{{ get_language_icon(lang) }}</span>
+                <em>Name:</em>
+                {% if data.resource_translation %}
+                    <span style="color:#0277bd;">{{ data.resource_translation }}</span>
+                {% else %}
+                    {% if lang != "English" %}
+                        <span>No translation yet — <a href="/contribute">help translate</a></span>
+                    {% endif %}
+                {% endif %}
             </div>
-            {% if data.definition %}
+
+            {% if data.DEFINITION %}
             <div>
-                <span style="color: #0277bd;">{{ get_language_icon(lang) }}</span> <em>Definition:</em> 
-                <span style="color: #0277bd;">{{ data.definition }}</span>
+                <span style="color: #0277bd;">{{ get_language_icon(lang) }}</span>
+                <em>Definition:</em>
+                <span style="color:#0277bd;">{{ data.DEFINITION }}</span>
             </div>
             {% endif %}
+
         </div>
-        {% endfor %}
-    </aside>
-</p>
+        {% endif %}
+    {% endfor %}
+</aside>
 
 {% if not is_iso %}
     {% if is_product_or_type %}
@@ -202,7 +213,6 @@
 <h2>
     {{ property_sets.number }} Property sets
 </h2>
-<p>
     <ul class="psets">
     {% for pset in property_sets.psets %}
         <li>
@@ -218,7 +228,6 @@
         </li>
     {% endfor %}
     </ul>
-<p>
 {% endif %}
 
 {% if concept_usage %}

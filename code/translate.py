@@ -9,6 +9,7 @@ import json
 import time
 import hashlib
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from flask import request, has_request_context
 
 TRANSLATIONS_SRC_DIR = os.environ.get(
     "TRANSLATIONS_SRC_DIR",
@@ -44,9 +45,8 @@ def build_language_file_map():
             for po_file in os.listdir(full_lang_dir):
                 if po_file.endswith('.po'):
                     lang_name = po_file.split('_(')[-1].split(').po')[0]
-                    language_file_map[lang_name] = full_lang_dir  # Store full path to language directory
+                    language_file_map[lang_name] = full_lang_dir 
                     break
-
     return language_file_map
 
 def find_po_files(base_dir):
@@ -339,7 +339,42 @@ def list_languages():
 
 def get_translations(resource):
     return {lang: translate_resource(lang, resource) for lang in list_languages()}
+
+
+def _country_code_to_flag(cc: str) -> str:
+    """Convert ISO 3166-1 alpha-2 to a flag emoji."""
+    if not cc or len(cc) != 2 or not cc.isalpha():
+        return "🌐"
+    cc = cc.upper()
+    return "".join(chr(0x1F1E6 + ord(c) - ord("A")) for c in cc)
+
+def build_language_flag_map():
+    """
+    Returns: { 'Dutch': '🇳🇱', 'Portuguese_Brazilian': '🇧🇷', ... }
+    """
+    flag_map = {}
+    for language, lang_path in build_language_file_map().items():
+        region = os.path.basename(os.path.basename(lang_path)).split("-")[-1].upper()
+        if language == "Serbian": #todo handle serbian translations separately
+            region = "RS"
+        flag_map[language] = _country_code_to_flag(region) if region else "🌐"
+    flag_map['English, UK'] = _country_code_to_flag('GB')
+    return flag_map
+
+
+def get_language_icon(language):
+    from functools import lru_cache
+    """Return a single flag for a language name."""
     
+    @lru_cache(maxsize=1)
+    def _flag_map():
+        return build_language_flag_map()
+
+    if not language and has_request_context():
+        language = request.cookies.get("languagePreference", "English, UK")
+    return _flag_map().get(language or "English, UK", "🇬🇧")
+
+
 def main(argv=None):
     """
     Translation Cache Builder & Translator

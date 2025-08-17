@@ -32,35 +32,22 @@
                 {% if not is_iso %}
                 <ul>
                     <li>
-                        <select id="language-selector" onchange="setLanguagePreference(this.value)" style="border: none; background: none; color: inherit;">
-                            <option value="English_UK" selected>🇬🇧 English</option>
-                            <option value="Arabic">🇸🇦 Arabic</option>
-                            <option value="Chinese Simplified">🇨🇳 Chinese</option>
-                            <option value="Croatian">🇭🇷 Croatian</option>
-                            <option value="Czech">🇨🇿 Czech</option>
-                            <option value="Danish">🇩🇰 Danish</option>
-                            <option value="Dutch">🇳🇱 Dutch</option>
-                            <option value="English">🇺🇸 English (US)</option>
-                            <option value="Finnish">🇫🇮 Finnish</option>
-                            <option value="French">🇫🇷 French</option>
-                            <option value="German">🇩🇪 German</option>
-                            <option value="Hindi">🇮🇳 Hindi</option>
-                            <option value="Icelandic">🇮🇸 Icelandic</option>
-                            <option value="Italian">🇮🇹 Italian</option>
-                            <option value="Japanese">🇯🇵 Japanese</option>
-                            <option value="Korean">🇰🇷 Korean</option>
-                            <option value="Lithuanian">🇱🇹 Lithuanian</option>
-                            <option value="Norwegian">🇳🇴 Norwegian</option>
-                            <option value="Polish">🇵🇱 Polish</option>
-                            <option value="Portuguese">🇵🇹 Portuguese</option>
-                            <option value="Portuguese_Brazilian">🇧🇷 Portuguese (Brazilian)</option>
-                            <option value="Romanian">🇷🇴 Romanian</option>
-                            <option value="Slovenian">🇸🇮 Slovenian</option>
-                            <option value="Spanish">🇪🇸 Spanish</option>
-                            <option value="Swedish">🇸🇪 Swedish</option>
-                            <option value="Turkish">🇹🇷 Turkish</option>
+                        <select id="language-selector"
+                                onchange="setLanguagePreference(this.value)"
+                                style="border: none; background: none; color: inherit;">
+
+                                <option value="{{ 'English, UK'|slugify }}"
+                                    {% if current_lang == 'English, UK' %}selected{% endif %}>
+                                {{ get_language_icon('English, UK') }} English, UK
+                            </option>
+                            {% for lang, _ in translations.items() if lang != "English, UK" %}
+                                <option value="{{ lang|slugify }}"
+                                        {% if lang == current_lang %}selected{% endif %}>
+                                    {{ get_language_icon(lang) }} {{ lang }}
+                                </option>
+                            {% endfor %}
                         </select>
-                    </li>
+                      </li>
                     <li>
                         {% if is_package %}
                             <a href="https://technical.buildingsmart.org/standards/ifc/ifc-schema-specifications/">

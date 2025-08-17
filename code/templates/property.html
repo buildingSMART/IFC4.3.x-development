@@ -3,30 +3,43 @@
 
 <h1>{{ number }} {{ entity }}</h1>
 
-<p>
     <aside class="aside-note">
         {% for lang, data in translations.items() %}
-        <div class="translation lang-{{ lang }}">
-            <div>
-                <span style="color: #0277bd;">{{ get_language_icon(lang) }}</span> <em>Name:</em>
-                <span style="color: #0277bd;">{{ data.resource_translation }}</span>
-            </div>
-            {% if data.definition %}
-            <div>
-                <span style="color: #0277bd;">{{ get_language_icon(lang) }}</span> <em>Definition:</em>
-                <span style="color: #0277bd;">{{ data.definition }}</span>
+            {% if not (lang == "English" and not data.resource_translation and not data.definition and not data.description) %}
+            <div class="translation lang-{{ lang|slugify }}">
+                
+                <div>
+                    <span style="color: #0277bd;">{{ get_language_icon(lang) }}</span>
+                    <em>Name:</em>
+                    {% if data.resource_translation %}
+                        <span style="color:#0277bd;">{{ data.resource_translation }}</span>
+                    {% else %}
+                        {% if lang != "English" %}
+                            <span>No translation yet — <a href="/contribute">help translate</a></span>
+                        {% endif %}
+                    {% endif %}
+                </div>
+
+                {% if data.DEFINITION %}
+                <div>
+                    <span style="color: #0277bd;">{{ get_language_icon(lang) }}</span>
+                    <em>Definition:</em>
+                    <span style="color:#0277bd;">{{ data.DEFINITION }}</span>
+                </div>
+                {% endif %}
+
+                {% if data.description %}
+                <div>
+                    <span style="color: #0277bd;">{{ get_language_icon(lang) }}</span>
+                    <em>Description:</em>
+                    <span style="color:#0277bd;">{{ data.description }}</span>
+                </div>
+                {% endif %}
+
             </div>
             {% endif %}
-            {% if data.description %}
-            <div>
-                <span style="color: #0277bd;">{{ get_language_icon(lang) }}</span> <em>Description:</em>
-                <span style="color: #0277bd;">{{ data.description }}</span>
-            </div>
-            {% endif %}
-        </div>
         {% endfor %}
     </aside>
-</p>
 
 <h2>
     {{ definition_number }} Semantic definition

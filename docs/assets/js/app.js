@@ -349,53 +349,37 @@ function getCookie(name) {
 }
 
 function filterActiveLanguage() {
-    const languagePreference = getCookie('languagePreference') || 'English_UK';
-    console.log("Language Preference:", languagePreference);
+    const languageSlug = getCookie('languagePreference') || 'english-uk';
+    console.log("Language Preference (slug):", languageSlug);
 
     const translations = document.querySelectorAll(`div.translation`);
     console.log("Active translations found:", ...Array.from(translations).map(el => el.className));
 
     translations.forEach((translation) => {
-        translation.style.display = translation.classList.contains(`lang-${languagePreference}`) ? 'block' : 'none';
+        translation.style.display = translation.classList.contains(`lang-${languageSlug}`) ? 'block' : 'none';
     });
 }
 
-document.addEventListener("DOMContentLoaded", filterActiveLanguage);
+
+
+const USE_PAGE_RELOAD_FOR_LANGUAGE = false;
+
+document.addEventListener("DOMContentLoaded", () => {
+    if (!USE_PAGE_RELOAD_FOR_LANGUAGE) {
+        filterActiveLanguage(); 
+    }
+});
 
 function setLanguagePreference(value) {
-    let languageMapping = {
-        "English_UK": "English (UK)",
-        "English": "English",
-        "Arabic": "Arabic",
-        "Czech": "Czech",
-        "Danish": "Danish",
-        "German": "German",
-        "Spanish": "Spanish",
-        "Finnish": "Finnish",
-        "French": "French",
-        "Hindi": "Hindi",
-        "Croatian": "Croatian",
-        "Icelandic": "Icelandic",
-        "Italian": "Italian",
-        "Japanese": "Japanese",
-        "Korean": "Korean",
-        "Lithuanian": "Lithuanian",
-        "Dutch": "Dutch",
-        "Norwegian": "Norwegian",
-        "Polish": "Polish",
-        "Portuguese": "Portuguese",
-        "Portuguese_Brazilian": "Portuguese (Brazilian)",
-        "Romanian": "Romanian",
-        "Slovenian": "Slovenian",
-        "Swedish": "Swedish",
-        "Turkish": "Turkish",
-        "ChineseSimplified": "Chinese (Simplified)"
-    };
 
     var date = new Date();
     date.setTime(date.getTime() + (30 * 24 * 60 * 60 * 1000));  // Cookie expires in 30 days
     var expires = "; expires=" + date.toUTCString();
 
     document.cookie = `languagePreference=${value}${expires}; path=/;`;
-    filterActiveLanguage();
+    if (USE_PAGE_RELOAD_FOR_LANGUAGE) {
+        window.location.reload();
+    } else {
+        filterActiveLanguage();
+    }
 }

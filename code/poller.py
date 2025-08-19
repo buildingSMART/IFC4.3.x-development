@@ -72,6 +72,8 @@ while True:
             translate.build_cache(use_hash=True)
     
     if trans_changed:
+        #translate.build_language_file_map.cache_clear() --> ?
+        #translate.build_language_flag_map.cache_clear? --> ?s
         translate.build_cache() 
          
     time.sleep(60)

@@ -10,6 +10,7 @@ import time
 import hashlib
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from flask import request, has_request_context
+from functools import lru_cache
 
 TRANSLATIONS_SRC_DIR = os.environ.get(
     "TRANSLATIONS_SRC_DIR",
@@ -26,6 +27,7 @@ PO_HASH_PATH = os.environ.get(
     os.path.join(TRANSLATIONS_BUILD_DIR, 'po_hash_map.json')
 )
 
+@lru_cache(maxsize=1)
 def build_language_file_map():
     """Build a mapping of languages to their translation directories.
      Returns:
@@ -348,6 +350,8 @@ def _country_code_to_flag(cc: str) -> str:
     cc = cc.upper()
     return "".join(chr(0x1F1E6 + ord(c) - ord("A")) for c in cc)
 
+
+@lru_cache(maxsize=1)
 def build_language_flag_map():
     """
     Returns: { 'Dutch': '🇳🇱', 'Portuguese_Brazilian': '🇧🇷', ... }
@@ -363,10 +367,7 @@ def build_language_flag_map():
 
 
 def get_language_icon(language):
-    from functools import lru_cache
     """Return a single flag for a language name."""
-    
-    @lru_cache(maxsize=1)
     def _flag_map():
         return build_language_flag_map()
 
@@ -464,6 +465,7 @@ def main(argv=None):
         
         use_hash = args.hash or args.clean # use hash the first time after cleaning the compiled translations
         rc = build_cache(clean=args.clean, use_hash=use_hash, jobs=args.jobs)
+        
         sys.exit(rc)
 
     elif cmd == "translate":

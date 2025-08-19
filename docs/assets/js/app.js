@@ -365,10 +365,14 @@ function filterActiveLanguage() {
 const USE_PAGE_RELOAD_FOR_LANGUAGE = false;
 
 document.addEventListener("DOMContentLoaded", () => {
+    const sel  = document.getElementById('language-selector');
+    const slug = (getCookie('languagePreference') || 'english-uk').trim().toLowerCase();
+  
+    if (sel) sel.value = slug;   
     if (!USE_PAGE_RELOAD_FOR_LANGUAGE) {
-        filterActiveLanguage(); 
+      filterActiveLanguage();    
     }
-});
+  });
 
 function setLanguagePreference(value) {
 

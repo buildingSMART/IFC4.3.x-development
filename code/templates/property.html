@@ -10,29 +10,22 @@
                 
                 <div>
                     <span style="color: #0277bd;">{{ get_language_icon(lang) }}</span>
-                    <em>Name:</em>
                     {% if data.resource_translation %}
-                        <span style="color:#0277bd;">{{ data.resource_translation }}</span>
-                    {% else %}
-                        {% if lang != "English" %}
-                            <span>No translation yet — <a href="/contribute">help translate</a></span>
-                        {% endif %}
+                        <strong style="color:#0277bd;">{{ data.resource_translation }}</strong>
+                        {% elif lang != "English" %}
+                            <span>No translation yet — <a href="https://user.buildingsmart.org/knowledge-base/ifc-translations-manual/">help translate</a></span>
                     {% endif %}
                 </div>
 
                 {% if data.DEFINITION %}
                 <div>
-                    <span style="color: #0277bd;">{{ get_language_icon(lang) }}</span>
-                    <em>Definition:</em>
-                    <span style="color:#0277bd;">{{ data.DEFINITION }}</span>
+                    <div><em>{{ data.DEFINITION }}</em></div>
                 </div>
                 {% endif %}
 
-                {% if data.description %}
+                {% if data.DESCRIPTION %}
                 <div>
-                    <span style="color: #0277bd;">{{ get_language_icon(lang) }}</span>
-                    <em>Description:</em>
-                    <span style="color:#0277bd;">{{ data.description }}</span>
+                    <div><em>{{ data.DESCRIPTION }}</em></div>
                 </div>
                 {% endif %}
 

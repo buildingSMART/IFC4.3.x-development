@@ -1092,11 +1092,6 @@ def resource(resource):
         )
         return rendered_html
     
-    html_cache_manager = HTMLCacheManager('types')
-
-    if not truthy(os.environ.get('TRANSLATION_UPDATING')) and cached_html:
-        return cached_html
-    
     builder = resource_documentation_builder(resource)
     content = get_definition(resource, mdc)
     
@@ -2652,7 +2647,8 @@ def inject_variables():
         'spec_version_string': spec_version_string,
         'spec_version_string_full': spec_version_string_full,
         'branch': REPO_BRANCH,
-        'get_language_icon': translate.get_language_icon
+        'get_language_icon': translate.get_language_icon, 
+        'current_lang': request.cookies.get('languagePreference', 'english-uk')
     }
 
 

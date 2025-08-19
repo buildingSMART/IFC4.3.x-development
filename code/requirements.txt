@@ -12,3 +12,4 @@ pysolr
 tabulate
 polib
 babel
+pyton-slugify

@@ -74,5 +74,4 @@ while True:
     if trans_changed:
         translate.build_cache() 
          
-    if not (main_changed or trans_changed or first_time):
-        time.sleep(60)
+    time.sleep(60)

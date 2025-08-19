@@ -13,12 +13,19 @@ ENV PO_HASH_PATH=${TRANSLATIONS_BUILD_DIR}/po_hash_map.json
 
 #1week interval
 
+# system dependencies
 RUN mkdir -p /usr/share/man/man1
 RUN apt-get update -y && DEBIAN_FRONTEND=noninteractive apt-get install -y curl openjdk-11-jdk-headless python3 python3-distutils procps lsof supervisor graphviz unzip git texlive texlive-pictures texlive-latex-extra imagemagick-6.q16 wget redis-server
+
 # remove policy to disable PDF conversion
 RUN rm /etc/ImageMagick-6/policy.xml
+
+# Python dependencies
 RUN curl --silent --show-error --retry 5 https://bootstrap.pypa.io/get-pip.py | python3
-RUN python3 -m pip install flask "Beautifulsoup4<4.12" lxml Markdown gunicorn pysolr pydot tabulate hilbertcurve==1.0.5 markdown-it-py==1.1.0 deepdiff redis "pyparsing<3" networkx xmlschema solrq polib babel
+WORKDIR /code
+COPY requirements.txt /code/requirements.txt
+RUN python3 -m pip install --no-cache-dir --upgrade pip && \
+    python3 -m pip install --no-cache-dir -r /code/requirements.txt
 
 # Solr
 RUN curl --location --silent --show-error --retry 5 'https://archive.apache.org/dist/lucene/solr/8.6.3/solr-8.6.3.tgz' -o - | tar zxf -

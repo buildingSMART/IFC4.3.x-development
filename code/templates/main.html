@@ -40,7 +40,7 @@
                                     {% if current_lang == 'English, UK' %}selected{% endif %}>
                                 {{ get_language_icon('English, UK') }} English, UK
                             </option>
-                            {% for lang, _ in translations.items() if lang != "English, UK" %}
+                            {% for lang in languages if lang != "English, UK" %}
                                 <option value="{{ lang|slugify }}"
                                         {% if lang == current_lang %}selected{% endif %}>
                                     {{ get_language_icon(lang) }} {{ lang }}

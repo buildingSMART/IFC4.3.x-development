@@ -334,6 +334,7 @@ def translate_resource(lang, resource):
 
     return out
 
+@lru_cache(maxsize=1)
 def list_languages():
     # get a list of available languages 
     langs = build_language_file_map()

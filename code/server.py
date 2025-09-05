@@ -2648,7 +2648,8 @@ def inject_variables():
         'spec_version_string_full': spec_version_string_full,
         'branch': REPO_BRANCH,
         'get_language_icon': translate.get_language_icon, 
-        'current_lang': request.cookies.get('languagePreference', 'english-uk')
+        'current_lang': request.cookies.get('languagePreference', 'english-uk'), 
+        'languages': translate.list_languages()
     }
 
 

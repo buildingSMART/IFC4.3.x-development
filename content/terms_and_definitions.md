@@ -136,13 +136,13 @@ domain of values
 
 data type having as its domain a set of names
 
-[SOURCE: ISO 10302-11:2004, 8.4.1, modified - Definition adapted from normative text]
+[SOURCE: ISO 10303-11:2004, 8.4.1, modified - Definition adapted from normative text]
 
 #### select data type
 
 data type that establishes the union of several named data types to allow an attribute value or aggregate element to be one of multiple types or entities
 
-[SOURCE: ISO 10302-11:2004, 8.4.2, modified - Definition adapted from normative text]
+[SOURCE: ISO 10303-11:2004, 8.4.2, modified - Definition adapted from normative text]
 
 ### deprecation
 
@@ -203,7 +203,7 @@ meaningful data
 
 ### instance
 
-&lt;data modelling> named value
+&lt;data modeling> named value
 
 [SOURCE: ISO 10303-11:2004, 3.3.10]
 
@@ -216,11 +216,11 @@ Note 1 to entry:  It is information referenced from an external source that is n
 ### model
 population
 
-&lt;data modeling> collection of entity data type instances.
+&lt;data modelling> collection of entity data type instances.
 
 Note 1 to entry: In scope of this standard models are populations of the ISO 16739-1 schema.
 
-[SOURCE ISO 10303-11:2004, 3.3.16, modified - Note 1 to entry added]
+[SOURCE: ISO 10303-11:2004, 3.3.16, modified - Note 1 to entry added]
 
 ### model
 
@@ -236,7 +236,7 @@ subset of a schema satisfying particular data requirements
 
 Note 1 to entry:  The particular data requirements may be stated within one or several exchange requirements
 
-Note 2 to entry:  Beside being a subset of a schema, a model view definition may also impose additional constraints to the population of the subset schema
+Note 2 to entry:  Besides being a subset of a schema, a model view definition may also impose additional constraints to the population of the subset schema
 
 ### object
 
@@ -254,7 +254,7 @@ Note 1 to entry: Each occurrence is a separate item that refers to the typical i
 
 EXAMPLE  Chairs are catalogue items. One instance of the chair type, such as the Le Corbusier LC2 chair, is a typical item. Four instances of individual occurrences of the Le Corbusier LC2 chair are part of an interior design of the entrance hall and each has an individual placement in space.
 
-[SOURCE: 10303-212:2001, 3.7.13, modified - The sentence "Each occurrence is a separate item that refers to the typical item." has been removed from the definition and added as a Note to entry. EXAMPLE has been replaced by another example from the construction domain.]
+[SOURCE: ISO 10303-212:2001, 3.7.13, modified - The sentence "Each occurrence is a separate item that refers to the typical item." has been removed from the definition and added as a Note to entry. EXAMPLE has been replaced by another example from the construction domain.]
 
 ### process
 

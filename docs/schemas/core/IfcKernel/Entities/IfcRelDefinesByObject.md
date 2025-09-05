@@ -1,11 +1,11 @@
 # IfcRelDefinesByObject
 
-The objectified relationship _IfcRelDefinesByObject_ defines the relationship between an object taking part in an object type decomposition and an object occurrence taking part in an occurrence decomposition of that type.
+The objectified relationship _IfcRelDefinesByObject_ defines the relationship between an object that is part in an object type decomposition and an object occurrence that is part in an occurrence decomposition of that type.
 <!-- end of short definition -->
 
-The _IfcRelDefinesByObject_ is a 1-to-N relationship, as it allows for the assignment of one declaring object information to a single or to many reflected objects. Those objects then share the same object property sets and, for subtypes of _IfcProduct_, the eventually assigned representation maps.
+The _IfcRelDefinesByObject_ is a 1-to-N relationship, as it allows for the assignment of one declaring object information to one or many reflected objects. Those objects then share the same object property sets and, for subtypes of _IfcProduct_, the eventually assigned representation maps.
 
-Only objects that take part in a type decomposition and in an occurrence decomposition of the same type can be connected by the _IfcRelDefinesByObject_ relationship. The _IfcRelDefinesByObject_ links the decomposed object type part, also called the "declaring part" with the occurrence of that part inside the occurrence of the decomposed type, also called the "reflected part", as shown in Figure 1.
+The relationship _IfcRelDefinesByObject_ may only connect objects that take part in both a type decomposition and an occurrence decomposition of the same type. The _IfcRelDefinesByObject_ links the decomposed object type part, also called the "declaring part" with the occurrence of that part inside the occurrence of the decomposed type, also called the "reflected part", as shown in Figure 1.
 
 
 

@@ -3,7 +3,7 @@
 The objectified relationship (_IfcRelAssociatesLibrary_) handles the assignment of a library item (items of the select _IfcLibrarySelect_) to subtypes of _IfcObjectDefinition_ or _IfcPropertyDefinition_.
 <!-- end of short definition -->
 
-The relationship is used to assign a library reference or a more detailed link to library information to objects, property sets or types. A single library reference can be applied to multiple items.
+The relationship is used to assign a library reference or detailed library information to objects, property sets or types. A single library reference can be applied to multiple items.
 
 The inherited attribute _RelatedObjects_ defines the items to which the library association is applied. The attribute _RelatingLibrary_ is the reference to a library reference, applied to the item(s).
 

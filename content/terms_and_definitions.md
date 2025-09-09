@@ -216,7 +216,7 @@ Note 1 to entry:  It is information referenced from an external source that is n
 ### model
 population
 
-&lt;data modelling> collection of entity data type instances.
+&lt;data modeling> collection of entity data type instances.
 
 Note 1 to entry: In scope of this standard models are populations of the ISO 16739-1 schema.
 

@@ -19,7 +19,7 @@ A long description, or text, describing the activity in detail.
 > NOTE The inherited _SELF\IfcRoot.Description_ attribute is used as the short description.
 
 ### ProcessType
-Specifies a particular type category that further defines the process. The use has to be established at the level of instantiable subtypes. In particular it holds the user defined type, if the enumeration of the attribute _PredefinedType_ is set to USERDEFINED.
+The type denotes a particular type that indicates the process further. The use has to be established at the level of instantiable subtypes. In particular it holds the user defined type, if the enumeration of the attribute _PredefinedType_ is set to USERDEFINED.
 
 ### OperatesOn
 Set of relationships to other objects, e.g. products, processes, controls, resources or actors that are operated on by the process type.

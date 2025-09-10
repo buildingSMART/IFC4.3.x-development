@@ -16,7 +16,7 @@ Objects are independent pieces of information that might contain or reference ot
 > HISTORY New abstract entity in IFC2x3.
 
 { .change-ifc2x4}
-> IFC4 CHANGE The new subtype _IfcContext_ and the relationship to context _HasContext_ has been added .The decomposition relationship is split into ordered nesting (_Nests_, _IsNestedBy_) and un-ordered aggregating (_Decomposes_, _IsDecomposedBy_).
+> IFC4 CHANGE The new subtype _IfcContext_ and the relationship to context _HasContext_ has been added. The decomposition relationship is split into ordered nesting (_Nests_, _IsNestedBy_) and un-ordered aggregating (_Decomposes_, _IsDecomposedBy_).
 
 ## Attributes
 

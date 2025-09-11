@@ -6,6 +6,6 @@ _IfcPropertyTemplateDefinition_ is a generalization of all property and property
 * **Property template** - _IfcPropertyTemplate_, a single template that determines the definition of a particular property used in the same project context. The template may determine the name, description, data type, the unit, or a standard expression for each property based on that template.
 <!-- end of short definition -->
 
-The subtypes of _IfcPropertyTemplateDefinition_ are declared within a project context. The uppermost template definition (e.g. the _IfcPropertySetTemplate_ including several _IfcPropertyTemplate_'s) should be related to the context, either _IfcProject_ or _IfcProjectLibrary_, using the inherited _HasContext_ inverse attribute.
+The subtypes of _IfcPropertyTemplateDefinition_ are declared within a project context. The uppermost template definition (e.g. the _IfcPropertySetTemplate_ including several _IfcPropertyTemplate_s) should be related to the context, either _IfcProject_ or _IfcProjectLibrary_, using the inherited _HasContext_ inverse attribute.
 
 > HISTORY New entity in IFC4.

@@ -6,6 +6,6 @@ _IfcRelationship_ is the abstract generalization of all objectified relationship
 There are two different types of relationships, 1-to-1 relationships and 1-to-many relationships, used within the subtypes of _IfcRelationship_. The following convention applies to all subtypes:
 
 * The two sides of the objectified relationship are named  Relating+<name of relating object> and  Related+<name of related object>
-* In case of the 1-to-many relationship, the related side of the relationship shall be an aggregate, representing a set (1:N)
+* In case of the 1-to-many relationship, the related side of the relationship shall be an aggregate, representing a set with cardinality 1..n
 
 > HISTORY New entity in IFC1.0.

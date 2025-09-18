@@ -1,6 +1,6 @@
 # IfcSimplePropertyTemplate
 
-The _IfcSimplePropertyTemplate_ defines the template for all dynamically extensible properties, either the subtypes of _IfcSimpleProperty_, or the subtypes of _IfcPhysicalSimpleQuantity_. The individual property templates are interpreted according to their _Name_ attribute and may have a predefined template type, property units, and property measure types. The correct interpretation of the attributes:
+The _IfcSimplePropertyTemplate_ defines the template for all dynamically extensible properties, either the subtypes of _IfcSimpleProperty_ or the subtypes of _IfcPhysicalSimpleQuantity_. The individual property templates are interpreted according to their _Name_ attribute and may have a predefined template type, property units, and property measure types. The correct interpretation of the attributes:
 
 * _PrimaryUnit_
 * _SecondaryUnit_
@@ -10,7 +10,7 @@ The _IfcSimplePropertyTemplate_ defines the template for all dynamically extensi
 
 is determined by the _TemplateType_. The attributes Enumerators and Expression only apply to instances of _IfcSimplePropertyTemplate_ having a particular _TemplateType_. The _TemplateType_ also controls which subtype of either _IfcSimpleProperty_ or _IfcPhysicalSimpleQuantity_ shall be used for property occurrences corresponding to this template.
 
-The _IfcSimplePropertyTemplate_ is part of the set of templates included in the _IfcPropertySetTemplate_. The template can be accessed through the inverse attribute _PartOfPsetTemplate_ The _IfcPropertySetTemplate_ may define one or several instances of _IfcPropertySet_ (or _IfcElementQuantity_). The definition assignment is established by the objectified relationship _IfcRelDefinesByTemplate_ as shown in Figure 1. There is no direct link between an _IfcSimplePropertyTemplate_ and a subtype of either _IfcSimpleProperty_ or _IfcPhysicalSimpleQuantity_. The definition relationship between the template and the individual properties (or quantities) is established by the _Name_ attributes.
+The _IfcSimplePropertyTemplate_ is part of the set of templates included in the _IfcPropertySetTemplate_. The template can be accessed through the inverse attribute _PartOfPsetTemplate_. The _IfcPropertySetTemplate_ may define one or several instances of _IfcPropertySet_ (or _IfcElementQuantity_). The definition assignment is established by the objectified relationship _IfcRelDefinesByTemplate_ as shown in Figure 1. There is no direct link between an _IfcSimplePropertyTemplate_ and a subtype of either _IfcSimpleProperty_ or _IfcPhysicalSimpleQuantity_. The definition relationship between the template and the individual properties (or quantities) is established by the _Name_ attributes.
 
 > NOTE Constraints at _IfcPropertySetTemplate_ and _IfcPropertySet_ (and _IfcElementQuantity_) guarantee that the _Name_ attributes of included property templates and individual properties are unique.
 
@@ -22,7 +22,7 @@ The _IfcSimplePropertyTemplate_ is part of the set of templates included in the 
 
 ### TemplateType
 Property type defining whether the property template defines a property with a single value, a bounded value, a list value, a table value, an enumerated value, or a reference value. Or the quantity type defining whether the template defines a quantity with a length, area, volume, weight or time value.
-> NOTE the value of this property determines the correct use of the _PrimaryUnit_, _SecondaryUnit_, _PrimaryDataType_, _SecondaryDataType_, and _Expression_ attributes.
+> NOTE The value of this property determines the correct use of the _PrimaryUnit_, _SecondaryUnit_, _PrimaryDataType_, _SecondaryDataType_, and _Expression_ attributes.
 
 ### PrimaryMeasureType
 Primary measure type assigned to the definition of the property. It should be provided, if the _TemplateType_ is set to:
@@ -70,7 +70,7 @@ Secondary unit assigned to the definition of the property. It should be provided
 The expression used to store additional information for the property template depending on the _TemplateType_. It should provide the following definitions, if the _TemplateType_ is set to:
 
 * <small>P_TABLEVALUE</small>: the expression that could be evaluated to define the correlation between the defining values and the defined values.
-* <small>Q_LENGTH, Q_AREA, Q_VOLUME, Q_COUNT, Q_WEIGTH, Q_TIME</small>: the formula to be used to calculate the quantity
+* <small>Q_LENGTH, Q_AREA, Q_VOLUME, Q_COUNT, Q_WEIGHT, Q_TIME</small>: the formula to be used to calculate the quantity
 
 > NOTE No value shall be asserted if the _TemplateType_ is not listed above.
 

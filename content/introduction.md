@@ -8,7 +8,7 @@ The Industry Foundation Classes (IFC) are an open international standard for sha
 {%- else %}
  2. Documentation (provided in HTML, authored in Markdown)
 {%- endif %}
- 3. Property and Quantity Set definitions (standardized definitions for an extensibility mechanism realised in the schema - provided in XML and available in the HTLM documentation)
+ 3. Property and Quantity Set definitions (standardized definitions for an extensibility mechanism realised in the schema - provided in XML and available in the HTML documentation)
  4. Exchange or serialization mechanisms of data files, see [scope](scope.htm)
 
 The prevalent exchange format for IFC is the Step Physical File Format (ISO
@@ -35,7 +35,7 @@ Official model view definitions (MVDs) exist as related specifications. The offi
 
 - Reference View
 - Alignment Based View
-- Design Transfer view
+- Design Transfer View
 
 These three MVDs can be seen as three levels of implementation for IFC 4.3. They are gradual levels adding more advanced features to the implementations. Vendors can get certified for IFC import against these MVDs. Export certification can be done against the MVDs, but also against more granular functional parts. These can be found on  [validate.buildingsmart.org](https://validate.buildingsmart.org).
 {%- if not is_iso %}

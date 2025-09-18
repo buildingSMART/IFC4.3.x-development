@@ -1,6 +1,6 @@
 # IfcObjectDefinition
 
-An _IfcObjectDefinition_ is the generalization of any semantically treated thing or process, either being a type or an occurrence. Object definitions can be named, using the inherited _Name_ attribute, which should be a user recognizable label for the object occurrence. Further explanations to the object can be given using the inherited _Description_ attribute. A context is a specific kind of object definition as it provides the project or library context in which object types and object occurrences are defined.
+An _IfcObjectDefinition_ is the generalization of any semantically treated thing or process, either being a type or an occurrence. Object definitions can be named, using the inherited _Name_ attribute, which should be a user-recognizable label for the object occurrence. Further explanations to the object can be given using the inherited _Description_ attribute. A context is a specific kind of object definition as it provides the project or library context in which object types and object occurrences are defined.
 <!-- end of short definition -->
 
 Objects are independent pieces of information that might contain or reference other pieces of information. There are five essential kinds of relationships in which object definitions (by their instantiable subtypes) can be involved:
@@ -16,7 +16,7 @@ Objects are independent pieces of information that might contain or reference ot
 > HISTORY New abstract entity in IFC2x3.
 
 { .change-ifc2x4}
-> IFC4 CHANGE The new subtype _IfcContext_ and the relationship to context _HasContext_ has been added . The decomposition relationship is split into ordered nesting (_Nests_, _IsNestedBy_) and un-ordered aggregating (_Decomposes_, _IsDecomposedBy_).
+> IFC4 CHANGE The new subtype _IfcContext_ and the relationship to context _HasContext_ has been added. The decomposition relationship is split into ordered nesting (_Nests_, _IsNestedBy_) and un-ordered aggregating (_Decomposes_, _IsDecomposedBy_).
 
 ## Attributes
 
@@ -42,7 +42,7 @@ References to the context providing context information such as project unit or 
 > IFC4 CHANGE The inverse attribute datatype has been added.
 
 ### IsDecomposedBy
-References to the decomposition relationship being an aggregation. It determines that this object definition is whole within an unordered whole/part decomposition relationship. An object definition can be aggregated by several other objects (occurrences or parts).
+References to the decomposition relationship being an aggregation. It determines that this object definition is the whole within an unordered whole/part decomposition relationship. An object definition can be aggregated by several other objects (occurrences or parts).
 
 { .change-ifc2x4}
 > IFC4 CHANGE The inverse attribute datatype has been changed from the supertype _IfcRelDecomposes_ to subtype _IfcRelAggregates_.

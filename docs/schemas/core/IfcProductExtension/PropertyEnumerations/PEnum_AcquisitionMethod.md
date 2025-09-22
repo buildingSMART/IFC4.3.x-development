@@ -7,7 +7,7 @@
 Acquisition is made using global positioning system (GPS)
 
 ### LASERSCAN_AIRBORNE
-Acquisition is made using Airborn Laserscanner
+Acquisition is made using Airborne Laserscanner
 
 ### LASERSCAN_GROUND
 Acquisition is made using Ground Laserscanner

@@ -14,11 +14,11 @@ The objectified relationship _IfcRelAssignsToProduct_ handles the assignment of
 ## Attributes
 
 ### RelatingProduct
-Reference to the product or product type to which the objects are assigned to.
+Reference to the product or product type to which the objects are assigned.
 { .change-ifc2x4}
 > IFC4 CHANGE Datatype expanded to include _IfcProduct_ and _IfcTypeProduct_.
 
 ## Formal Propositions
 
 ### NoSelfReference
-The instance to which the relation points, as provided by _RelatingProduct_ shall not be contained in the set of _RelatedObjects_.
+The instance to which the relation points, as provided by _RelatingProduct_, shall not be contained in the set of _RelatedObjects_.

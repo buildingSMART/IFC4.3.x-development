@@ -1,6 +1,6 @@
 # IfcRelNests
 
-The nesting relationship _IfcRelNests_ is a special type of the general composition/decomposition (or whole/part) relationship _IfcRelDecomposes_. The nesting relationship can be applied to all subtypes of object and object types. For example, processes, controls (like cost items), and resources. It can also be applied to alignment, nesting its different layouts; and to physical subtypes of object and object types, such as elements having ports. The nesting implies an order among the nested parts.
+The nesting relationship _IfcRelNests_ is a special type of the general composition/decomposition (or whole/part) relationship _IfcRelDecomposes_. The nesting relationship can be applied to all subtypes of objects and object types, such as processes, controls (e.g., cost items), and resources. It can also be applied to alignment, nesting its different layouts; and to physical subtypes of object and object types, such as elements having ports. The nesting implies an order among the nested parts.
 <!-- end of short definition -->
 
 > EXAMPLE A nesting of cost items in an _IfcCostSchedule_ is the composition of complex cost items from other cost items. The order of the nested cost items underneath the parent cost item is determined by the order of the list of _RelatedObjects_.
@@ -14,12 +14,12 @@ Decompositions imply a dependency, i.e. the definition of the whole depends on t
 > HISTORY New entity in IFC2.0
 
 { .change-ifc2x4}
-> IFC4 CHANGE The attributes _RelatingObject_ and _RelatedObjects_ are demoted from the supertype _IfcRelDecomposes_, and _RelatedObjects_ is refined to be a list. The use of _IfcRelNests_ is repurposed to be a nesting of an ordered collections of parts.
+> IFC4 CHANGE The attributes _RelatingObject_ and _RelatedObjects_ are demoted from the supertype _IfcRelDecomposes_, and _RelatedObjects_ is refined to be a list. The use of _IfcRelNests_ is repurposed to be a nesting of an ordered collection of parts.
 
 ## Attributes
 
 ### RelatingObject
-The object definition, either an object type or a object occurrence, that represents the nest. It is the whole within the whole/part relationship.
+The object definition, either an object type or an object occurrence, that represents the nest. It is the whole within the whole/part relationship.
 
 { .change-ifc2x4}
 > IFC4 CHANGE The attribute has been demoted from the supertype _IfcRelDecomposes_ and defines the ordered nesting relationship.

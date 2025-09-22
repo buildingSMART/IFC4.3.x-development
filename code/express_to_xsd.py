@@ -156,10 +156,18 @@ def create_attribute(entity, a, name_override=None):
             if at.unique:
                 agt += "-unique"
             return agt
+
+        def format_unbounded(v):
+            if v in (float("inf"), "?"):
+                return "unbounded"
+            return str(v)
         
         if isinstance(a, express_parser.InverseAttribute):
             a_type = type('_0', (), {'type': type('_1', (), {'type': a.entity}), 'bounds': a.bounds, 'aggregate_type': a.type, 'unique': a.unique})
             is_optional = True
+
+            min_occurs_mult = int(a.bounds.lower)
+            max_occurs_mult = float("inf") if a.bounds.upper == "?" else int(a.bounds.upper)
         else:
             if isinstance(a_type.type, express_parser.AggregationType):
                 # nested lists don't require a lot of special handling, just list list
@@ -189,7 +197,7 @@ def create_attribute(entity, a, name_override=None):
             if aggregate_type_prefix:
                         
                 # @todo when length constraint is encoded in the type how to guarantee that the correct length constraint is selected?
-                attr = X(XS.element, {'name': f'Seq-{undecorate_until_string(a_type)}-wrapper', 'type': f'ifc:Seq-{undecorate_until_string(a_type)}', 'maxOccurs': "unbounded" if max_occurs_mult == float('inf') else str(max_occurs_mult)})
+                attr = X(XS.element, {'name': f'Seq-{undecorate_until_string(a_type)}-wrapper', 'type': f'ifc:Seq-{undecorate_until_string(a_type)}', 'maxOccurs': format_unbounded(max_occurs_mult)})
                 
                 inner_type = X(XS.simpleType, {'name': f'Seq-{undecorate_until_string(a_type)}'}, children=[
                     X(XS.restriction, children=[
@@ -230,7 +238,7 @@ def create_attribute(entity, a, name_override=None):
                     )]
                 )
             else:
-                attr = X(XS.element, {'name': a.name, 'type': f'ifc:{undecorate_until_string(a_type)}', 'nillable': 'true', 'minOccurs': a_type.bounds.lower, 'maxOccurs': a_type.bounds.upper})
+                attr = X(XS.element, {'name': a.name, 'type': f'ifc:{undecorate_until_string(a_type)}', 'nillable': 'true', 'minOccurs': a_type.bounds.lower, 'maxOccurs': format_unbounded(a_type.bounds.upper)})
                 
         elif is_list:
         

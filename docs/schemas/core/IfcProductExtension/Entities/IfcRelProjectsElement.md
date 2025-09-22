@@ -9,7 +9,7 @@ The _IfcRelProjectsElement_ implies a Boolean operation of addition for the geom
 
 * existence dependency - the _RelatedFeatureElement_ cannot exist without the _RelatingElement_
 * hierarchical and non-cyclical relationship - the _IfcRelProjectsElement_ can only alter a single _IfcElement_
-* no spatial containment - the _IfcFeatureElementAddition_ as related element never participates in the hiearchical spatial containment relationship _IfcRelContainedInSpatialStructure_
+* no spatial containment - the _IfcFeatureElementAddition_ as related element never participates in the hierarchical spatial containment relationship _IfcRelContainedInSpatialStructure_
 
 > HISTORY New entity in IFC2x2.
 

@@ -63,5 +63,5 @@ For building operation scenarios, _IfcProcedure_ may be assigned to a product (_
 
 ### Sequential Connectivity
 
-The relationship _IfcRelSequence_ is used to indicate control flow. An _IfcProcedure_ as a successor to an _IfcEvent_ indicates that the procedure should be performed in response to the event. An _IfcProcedure_ as a predecessor to an _IfcEvent_ indicates that the event should be trigerred following the procedure. As procedures have arbitrary duration, the _IfcRelSequence.SequenceType_ attribute has no effect on an _IfcProcedure_ but still applies to the opposite end of the relationship if _IfcTask_ is used.
+The relationship _IfcRelSequence_ is used to indicate control flow. An _IfcProcedure_ as a successor to an _IfcEvent_ indicates that the procedure should be performed in response to the event. An _IfcProcedure_ as a predecessor to an _IfcEvent_ indicates that the event should be triggered following the procedure. As procedures have arbitrary duration, the _IfcRelSequence.SequenceType_ attribute has no effect on an _IfcProcedure_ but still applies to the opposite end of the relationship if _IfcTask_ is used.
 

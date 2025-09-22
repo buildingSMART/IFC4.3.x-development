@@ -24,7 +24,7 @@ A list of nested constraints.
 Enumeration that identifies the logical type of aggregation for the benchmark metrics.
 
 { .change-ifc2x4}
-> IFC2X4 CHANGE This attribute replaces replaces the former _ResultValues_ attribute and indicates the aggregation behavior formerly defined at _IfcConstraintAggregationRelationship_.
+> IFC2X4 CHANGE This attribute replaces replaces the former _ResultValues_ attribute and indicates the aggregation behaviour formerly defined at _IfcConstraintAggregationRelationship_.
 
 ### ObjectiveQualifier
 Enumeration that qualifies the type of objective constraint.

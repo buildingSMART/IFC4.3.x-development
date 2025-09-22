@@ -23,7 +23,7 @@ Direct instances of _IfcStructuralSurfaceMember_ are assumed to be located centr
 ## Attributes
 
 ### PredefinedType
-Type of member with respect to its load carrying behavior in this analysis idealization.
+Type of member with respect to its load carrying behaviour in this analysis idealization.
 
 ### Thickness
 Defines the typically understood thickness of the structural surface member, measured normal to its reference surface.

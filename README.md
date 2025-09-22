@@ -2,7 +2,7 @@ IFC4.3.x
 ========
 
 Repository that shows full history of the IFC4.3 Specification. 
-This repo still collects minor fixes like spelling errors and aditional clarifications. 
+This repo still collects minor fixes like spelling errors and additional clarifications. 
 Every update will automatically be published here:
 - http://ifc43-docs.standards.buildingsmart.org/ (html)
 - https://github.com/buildingsmart/ifc4.3.x-output (exp + pot + etc.)

@@ -52,7 +52,7 @@ Ports may be further nested into sub-ports, for indicating specific connections 
 The **IfcDistributionPort** may be assigned to the following entities using relationships as indicated:
 
 * IfcDistributionSystem (through IfcRelAssignsToGroup): Indicates a system containing interconnected devices.
-* IfcPerformanceHistory< (through IfcRelAssignsToControl): Indicates real time or historical infomation captured for the device.
+* IfcPerformanceHistory< (through IfcRelAssignsToControl): Indicates real time or historical information captured for the device.
 
 #### IfcDistributionSystem
 

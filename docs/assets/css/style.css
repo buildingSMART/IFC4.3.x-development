@@ -764,6 +764,17 @@ body.cover.iso #main-content * {
 .wider li {
     line-height: 2em;
 }
+
 .translation {
     display: none;
+}
+
+.rightpanel {
+    /* the SVG concept diagram sometimes extends under the panel,
+    preventing clicks on the right-most SVG nodes */
+    pointer-events: none;
+}
+
+.rightpanel div {
+    pointer-events: auto;
 }

@@ -22,4 +22,4 @@ Role of the actor played within the context of the assignment to the object(s).
 ## Formal Propositions
 
 ### NoSelfReference
-The instance to with the relation points shall not be contained in the set of _RelatedObjects_.
+The instance to which the relation points shall not be contained in the set of _RelatedObjects_.

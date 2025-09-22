@@ -19,7 +19,7 @@ In addition, an _IfcWindow_ may commonly include a 'FootPrint' representation de
 
 The _IfcWindowType_ specifies parameters which are common to all of its occurrences of _IfcWindow_:
 
- * the partitioning type (single panel, double panel, tripel panel, more panels)
+ * the partitioning type (single panel, double panel, triple panel, more panels)
  * the operation type (swing, tilt and turn, pivot revolve, fixed casement, etc.)
  * the window panel hinge side (by using two different styles for right and left opening windows)
  * the particular attributes for the lining by the _IfcWindowLiningProperties_

@@ -23,6 +23,7 @@ concept {
     constraint_1[label="=SectionedSurface"]
     IfcSectionedSurface:Directrix -> IfcBoundedCurve
     IfcSectionedSurface:CrossSections -> IfcProfileDef
+    IfcSectionedSurface:CrossSections -> IfcOpenCrossProfileDef
     IfcShapeRepresentation:RepresentationIdentifier[binding="Identifier"]
     IfcShapeRepresentation:RepresentationType[binding="Type"]
     IfcShapeRepresentation:Items[binding="Items"]

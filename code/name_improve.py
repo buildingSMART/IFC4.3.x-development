@@ -198,7 +198,7 @@ def clean(s):
 
 def split_words(s):
     """Split the phrase using the hard-coded list of words found in enumerations
-    to split the ALLCAPS phrases into indivudual words."""
+    to split the ALLCAPS phrases into individual words."""
     found_words = []
     for w in type_words:
         # skip if word is contained in previous words (e.g. EXCHANGE in EXCHANGER)

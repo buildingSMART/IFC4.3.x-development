@@ -33,9 +33,9 @@ Name by which this datum is identified. The geodetic datum is associated with th
 
 > EXAMPLE geodetic datums include:
 >
-> * 'EPSG:6326' (WGS84 World Geodetic System 1984, used in GPS)
-> * 'ED50' (European Datum 1950, also identified as EPSG:6230)
-> * 'EUREF89' (European Terrestrial Reference Frame 1989, also identified as EPSG:1178)
+> **EPSG:6326** (WGS84 World Geodetic System 1984, used in GPS); 
+> **ED50** (European Datum 1950, also identified as EPSG:6230); 
+> **EUREF89** (European Terrestrial Reference Frame 1989, also identified as EPSG:1178).
 
 ### WellKnownText
 

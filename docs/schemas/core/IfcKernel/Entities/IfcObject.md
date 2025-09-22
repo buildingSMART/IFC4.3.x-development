@@ -5,7 +5,7 @@ An _IfcObject_ is the generalization of any semantically treated thing or proces
 
 > NOTE Examples of _IfcObject_ include physically tangible items such as wall, beam or covering, physically existing items such as spaces, or conceptual items such as grids or virtual boundaries. It also stands for processes such as work tasks, for controls such as cost items, or for actors such as persons involved in the design process.
 
-Objects can be named, using the inherited _Name_ attribute, which should be a user recognizable label for the object occurrence. Further explanations to the object can be given using the inherited _Description_ attribute. The _ObjectType_ attribute is used:
+Objects can be named, using the inherited _Name_ attribute, which should be a user-recognizable label for the object occurrence. Further explanations to the object can be given using the inherited _Description_ attribute. The _ObjectType_ attribute is used:
 
 * to store the user defined value for all subtypes of _IfcObject_, where a _PredefinedType_ attribute is given, and its value is set to USERDEFINED.
 * to provide a type information (could be seen as a very lightweight classifier) of the subtype of _IfcObject_, if no _PredefinedType_ attribute is given. This is often the case, if no comprehensive list of predefined types is available.

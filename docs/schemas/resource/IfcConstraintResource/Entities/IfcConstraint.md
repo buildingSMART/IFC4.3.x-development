@@ -3,7 +3,7 @@
 An _IfcConstraint_ is used to define a constraint or limiting value or boundary condition that may be applied to an object or to the value of a property.
 <!-- end of short definition -->
 
-Constraints may be subdivided into user-defined constraints and system-defined constraints. User-defined constraints are applied by a user and are restricted to high-level definitions such as object properties. System-defined constraints may apply to any object attribute, are typically defined by an application to enforce data validation or parametric behavior, and are intended to be enforced by applications but not to be directly editable by an end-user.
+Constraints may be subdivided into user-defined constraints and system-defined constraints. User-defined constraints are applied by a user and are restricted to high-level definitions such as object properties. System-defined constraints may apply to any object attribute, are typically defined by an application to enforce data validation or parametric behaviour, and are intended to be enforced by applications but not to be directly editable by an end-user.
 
 _IfcConstraint_ may be associated with any subtype of _IfcObjectDefinition_ or _IfcPropertyDefinition_ through the _IfcRelAssociatesConstraint_ relationship to indicate a system-defined constraint, or may be associated with _IfcResourceObjectSelect_ (such as _IfcPropertySingleValue_) by _IfcResourceConstraintRelationship_ to indicate a user-defined constraint.
 

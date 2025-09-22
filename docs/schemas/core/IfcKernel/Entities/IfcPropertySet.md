@@ -29,7 +29,7 @@ Contained set of properties. For property sets defined as part of the IFC Object
 ## Formal Propositions
 
 ### ExistsName
-The _Name_ attribute has to be provided. The attribute is used to specify the signifier of the property set. The properties that are allowed to be attached to a particular property set may be given within the property set definition part of the IFC specification. Those property set definitions are references in the semantic definition section of the individal subtypes of _IfcObjectDefinition_.
+The _Name_ attribute has to be provided. The attribute is used to specify the signifier of the property set. The properties that are allowed to be attached to a particular property set may be given within the property set definition part of the IFC specification. Those property set definitions are referenced in the semantic definition section of the individual subtypes of _IfcObjectDefinition_.
 
 ### UniquePropertyNames
 Every individual subtype of _IfcProperty_ within the property set shall have a unique _Name_ attribute value.

@@ -15,7 +15,7 @@ See definitions at _IfcStructuralItem_. The local coordinate system is establish
 ## Attributes
 
 ### PredefinedType
-Type of member with respect to its load carrying behavior in this analysis idealization.
+Type of member with respect to its load carrying behaviour in this analysis idealization.
 
 ### Axis
 Direction which is used in the definition of the local z axis. _Axis_ is specified relative to the so-called global coordinate system, i.e. the _SELF\IfcProduct.ObjectPlacement_.

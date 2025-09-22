@@ -18,11 +18,9 @@ The context provided by the _IfcProject_ includes:
 { .change-ifc2x4}
 > IFC4 CHANGE The attributes _RepresentationContexts_ and _UnitsInContext_ are made optional and are promoted to supertype _IfcContext_.
 
-**Formal Propositions**
-
-1. There shall be at most one project within the exchange context. This is enforced by the global rule _IfcSingleProjectInstance_.
-
 ## Formal Propositions
+
+There shall be at most one project within the exchange context. This is enforced by the global rule _IfcSingleProjectInstance_.
 
 ### HasName
 The _Name_ attribute has to be provided for _IfcProject_. It is the short name for the project.
@@ -31,7 +29,7 @@ The _Name_ attribute has to be provided for _IfcProject_. It is the short name f
 If a _RepresentationContexts_ relation is provided then there shall be no instance of _IfcGeometricRepresentationSubContext_ directly included in the set of _RepresentationContexts_.
 
 ### NoDecomposition
-The _IfcProject_ represents the root of the any decomposition tree. It shall therefore not be used to decompose any other object definition.
+The _IfcProject_ represents the root of any decomposition tree. It shall therefore not be used to decompose any other object definition.
 
 ## Concepts
 

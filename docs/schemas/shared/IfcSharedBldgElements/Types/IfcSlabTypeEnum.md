@@ -20,7 +20,7 @@ The slab is used to represent a landing within a stair or ramp.
 The slab is used to represent a floor slab against the ground (and thereby being a part of the foundation). Another name is mat foundation.
 
 ### APPROACH_SLAB
-Iis part of bridge abutment providing transition from embankment to the bridge
+An approach slab is a reinforced or prestressed reinforced concrete slab providing transition from embankment to the bridge
 
 ### PAVING
 Rigid pavement course of a road or other paved area, usually concrete.

@@ -1,15 +1,32 @@
-Beautifulsoup4
-Markdown
-deepdiff
-flask
+# Web / runtime / services 
+Flask 
 gunicorn
-hilbertcurve==1.0.5
+redis
+
+# HTML / parsing 
+beautifulsoup4<4.12
 lxml
+Markdown
 markdown-it-py==1.1.0
-numpy
-pydot
-pysolr
-tabulate
+pyparsing<3
+xmlschema
+
+# Translations
+Babel
 polib
-babel
-pyton-slugify
+python-slugify
+
+# Search 
+pysolr         
+solrq        
+
+# Graphs / diagrams
+pydot
+networkx
+
+# Data / utils
+numpy
+tabulate
+deepdiff
+hilbertcurve==1.0.5
+python-dotenv

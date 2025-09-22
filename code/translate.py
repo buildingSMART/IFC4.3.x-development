@@ -11,6 +11,7 @@ import hashlib
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from flask import request, has_request_context
 from functools import lru_cache
+from pathlib import Path
 
 TRANSLATIONS_SRC_DIR = os.environ.get(
     "TRANSLATIONS_SRC_DIR",
@@ -40,24 +41,17 @@ def build_language_file_map():
     e.g. IfcSharedFacilitieselements_(Italian).po
     """
     language_file_map = {}
-
-    for lang_dir in os.listdir(TRANSLATIONS_SRC_DIR):
-        full_lang_dir = os.path.join(TRANSLATIONS_SRC_DIR, lang_dir)
-        if os.path.isdir(full_lang_dir):
-            for po_file in os.listdir(full_lang_dir):
-                if po_file.endswith('.po'):
-                    lang_name = po_file.split('_(')[-1].split(').po')[0]
-                    language_file_map[lang_name] = full_lang_dir 
-                    break
+    
+    for po_file in Path(TRANSLATIONS_SRC_DIR).glob("*/**/*.po"):
+        lang_name = po_file.stem.split("_(")[-1].split(")")[0]
+        language_file_map[lang_name] = str(po_file.parent)
     return language_file_map
 
 def find_po_files(base_dir):
     """Yield absolute paths to all .po files under base_dir (recursive)."""
-    for root, _, files in os.walk(base_dir):
-        for name in files:
-            if name.lower().endswith(".po"):
-                yield os.path.join(root, name)
-
+    for po_file in Path(base_dir).rglob("*.po"):
+        yield str(po_file.resolve())
+        
 
 def mo_output_path(po_path, translations, compiled_translations):
     """

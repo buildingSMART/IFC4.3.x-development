@@ -185,7 +185,10 @@ def build_cache(clean=False, use_hash=False, jobs=1):
             json.dump(new_po_hash_map, f, indent=2)
 
     end_time = time.time()
-    print(f"\nDone. compiled={compiled}, errors={errors}, TRANSLATIONS_BUILD_DIR={TRANSLATIONS_BUILD_DIR} in {end_time - start_time} seconds")
+    print(
+    f"\nDone. compiled={compiled}, skipped={skipped}, pruned={pruned}, errors={errors}, "
+    f"TRANSLATIONS_BUILD_DIR={TRANSLATIONS_BUILD_DIR} in {end_time - start_time:.2f} seconds"
+)
     return 0 if errors == 0 else 1
 
 

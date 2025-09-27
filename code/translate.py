@@ -111,33 +111,34 @@ def build_cache(clean=False, use_hash=False, jobs=1):
     compiled = skipped = pruned = errors = 0
     expected_mos = set()
     tasks = [] # lst[(po, mo)]
-    
+            
     for po in po_files:
         try:
             mo = mo_output_path(po, TRANSLATIONS_SRC_DIR, TRANSLATIONS_BUILD_DIR)
             expected_mos.add(os.path.normpath(mo))
-            
+
+            rel = os.path.normpath(os.path.relpath(po, TRANSLATIONS_SRC_DIR))
+            mo_exists = os.path.exists(mo)
+
             if use_hash:
-                with open(po, "rb") as f: digest = hashlib.file_digest(f, "sha256").hexdigest()                
-                rel = os.path.normpath(os.path.relpath(po, TRANSLATIONS_SRC_DIR))
+                # HASH MODE: check for hashed content 
+                with open(po, "rb") as f: digest = hashlib.file_digest(f, "sha256").hexdigest()    
                 new_po_hash_map[rel] = digest
-                should_compile = (old_po_hash_map.get(rel) != digest) or (not os.path.exists(mo))
+                should_compile = (old_po_hash_map.get(rel) != digest) or (not mo_exists)
             else:
-                # mtime-based check (faster)
-                should_compile = (not os.path.exists(mo)
-                                  or os.path.getmtime(po) > os.path.getmtime(mo))
-            
+                # MTIME MODE: use filesystem metadata to check for updated translations in .po files
+                should_compile = (not mo_exists) or (os.path.getmtime(po) > os.path.getmtime(mo))
+
             if should_compile:
                 tasks.append((po, mo))
             else:
                 skipped += 1
-                
+
         except Exception as e:
             errors += 1
             print(f"[ERR] {po}: {e}", file=sys.stderr)
     
     def _compile_one(po, mo):
-        os.makedirs(os.path.dirname(mo), exist_ok=True)
         compile_po_to_mo(po, mo)
         return po, mo
 

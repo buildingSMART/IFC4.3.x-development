@@ -71,13 +71,6 @@ def compile_po_to_mo(po_path, mo_path):
     os.makedirs(os.path.dirname(mo_path), exist_ok=True)
     po.save_as_mofile(mo_path)
 
-
-def _sha256(path: str) -> str:
-    h = hashlib.sha256()
-    with open(path, "rb") as f:
-        for chunk in iter(lambda: f.read(8192), b""):
-            h.update(chunk)
-    return h.hexdigest()  
     
 def build_cache(clean=False, use_hash=False, jobs=1):
     """
@@ -126,7 +119,7 @@ def build_cache(clean=False, use_hash=False, jobs=1):
             expected_mos.add(os.path.normpath(mo))
             
             if use_hash:
-                digest = _sha256(po)                
+                with open(po, "rb") as f: digest = hashlib.file_digest(f, "sha256").hexdigest()                
                 rel = os.path.normpath(os.path.relpath(po, TRANSLATIONS_SRC_DIR))
                 new_po_hash_map[rel] = digest
                 should_compile = (old_po_hash_map.get(rel) != digest) or (not os.path.exists(mo))

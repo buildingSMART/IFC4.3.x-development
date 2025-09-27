@@ -68,7 +68,6 @@ def mo_output_path(po_path, translations, compiled_translations):
 def compile_po_to_mo(po_path, mo_path):
     """Compile .po to .mo using polib."""
     po = polib.pofile(po_path)
-    os.makedirs(os.path.dirname(mo_path), exist_ok=True)
     po.save_as_mofile(mo_path)
 
     
@@ -141,7 +140,12 @@ def build_cache(clean=False, use_hash=False, jobs=1):
         os.makedirs(os.path.dirname(mo), exist_ok=True)
         compile_po_to_mo(po, mo)
         return po, mo
-    
+
+    # Pre-create all target directories (avoid repeated IO and thread contention)
+    target_dirs = {os.path.dirname(mo) for _, mo in tasks}
+    for d in target_dirs:
+        os.makedirs(d, exist_ok=True)
+
     if jobs <= 1:
         for po, mo in tasks:
             try:

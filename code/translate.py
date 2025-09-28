@@ -8,7 +8,7 @@ import argparse
 import json
 import time
 import hashlib
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor, as_completed
 from flask import request, has_request_context
 from functools import lru_cache
 from pathlib import Path
@@ -70,8 +70,13 @@ def compile_po_to_mo(po_path, mo_path):
     po = polib.pofile(po_path)
     po.save_as_mofile(mo_path)
 
+def _compile_one_worker(po: str, mo: str) -> tuple[str, str]:
+    import os, polib
+    polib.pofile(po).save_as_mofile(mo)
+    return po, mo
     
-def build_cache(clean=False, use_hash=False, jobs=1):
+    
+def build_cache(clean=False, use_hash=False, jobs=1, pool="process"):
     """
     Build/refresh compiled .mo files from .po sources under TRANSLATIONS_SRC_DIR, mirroring
     the directory structure into TRANSLATIONS_BUILD_DIR.
@@ -147,6 +152,8 @@ def build_cache(clean=False, use_hash=False, jobs=1):
     for d in target_dirs:
         os.makedirs(d, exist_ok=True)
 
+    Executor = ThreadPoolExecutor if (pool == "thread") else ProcessPoolExecutor
+    
     if jobs <= 1:
         for po, mo in tasks:
             try:
@@ -158,8 +165,8 @@ def build_cache(clean=False, use_hash=False, jobs=1):
                 print(f"[ERR] {po}: {e}", file=sys.stderr)
     
     else:
-        with ThreadPoolExecutor(max_workers=jobs) as ex:
-            futs = {ex.submit(_compile_one, po, mo): (po, mo) for po, mo in tasks}
+        with Executor(max_workers=jobs) as ex:
+            futs = {ex.submit(_compile_one_worker, po, mo): (po, mo) for po, mo in tasks}
             for fut in as_completed(futs):
                 po, mo = futs[fut]
                 try:
@@ -372,6 +379,27 @@ def get_language_icon(language):
     return _flag_map().get(language or "English, UK", "🇬🇧")
 
 
+def bench(pool, jobs, repeat: int = 3):
+    import tempfile, shutil, time
+    times = []
+    for i in range(repeat):
+        tmpdir = tempfile.mkdtemp(prefix=f"compiled_translations_{pool}_{jobs}_")
+        old_build, old_hash = TRANSLATIONS_BUILD_DIR, PO_HASH_PATH
+        try:
+            globals()["TRANSLATIONS_BUILD_DIR"] = tmpdir
+            globals()["PO_HASH_PATH"] = os.path.join(tmpdir, "po_hash_map.json")
+            t0 = time.perf_counter()
+            build_cache(clean=True, use_hash=True, jobs=jobs, pool=pool)
+            times.append(time.perf_counter() - t0)
+        finally:
+            globals()["TRANSLATIONS_BUILD_DIR"] = old_build
+            globals()["PO_HASH_PATH"] = old_hash
+            shutil.rmtree(tmpdir, ignore_errors=True)
+    avg = sum(times)/len(times)
+    print(f"bench: pool={pool} jobs={jobs} runs={times} avg={avg:.2f}s")
+
+
+
 def main(argv=None):
     """
     Translation Cache Builder & Translator
@@ -455,14 +483,25 @@ def main(argv=None):
                                     description="Compile all .po files into .mo (mirrors tree)")
         p.add_argument("--clean", action="store_true",help="Clean compiled .mo files before building")
         p.add_argument("--hash", action="store_true", help="Use hash map to detect new translations")
-        p.add_argument("-j", "--jobs", type=int, default=1, help="Parallel workers for compilation (default: 1, single-threaded)"
-)
+        p.add_argument("-j", "--jobs", type=int, default=1, help="Parallel workers for compilation (default: 1, single-threaded)")
+        p.add_argument("--pool", choices=["thread", "process"], default="process", help="Executor type for parallel compile")
+        
         args = p.parse_args(rest)
         
         use_hash = args.hash or args.clean # use hash the first time after cleaning the compiled translations
         rc = build_cache(clean=args.clean, use_hash=use_hash, jobs=args.jobs)
         
         sys.exit(rc)
+        
+    elif cmd == "bench":
+        p = argparse.ArgumentParser(prog="translate.py bench",
+                                    description="Benchmark build-cache with different executors")
+        p.add_argument("--pool", choices=["thread","process"], default="thread")
+        p.add_argument("-j", "--jobs", type=int, default=(os.cpu_count() or 1))
+        p.add_argument("--repeat", type=int, default=3)
+        args = p.parse_args(rest)
+        bench(args.pool, args.jobs, args.repeat)
+        return 0
 
     elif cmd == "translate":
         p = argparse.ArgumentParser(prog="translate.py translate",

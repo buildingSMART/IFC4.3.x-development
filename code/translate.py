@@ -9,10 +9,21 @@ import json
 import time
 import hashlib
 from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor, as_completed
+from cachetools import TTLCache, cached
+from threading import RLock
 from flask import request, has_request_context
-from functools import lru_cache
 from pathlib import Path
 
+LANG_MAP_TTL = int(os.environ.get("LANG_MAP_TTL", "60"))  # seconds
+
+_shared_cache = TTLCache(maxsize=3, ttl=LANG_MAP_TTL)  # 3 distinct keys
+_shared_lock  = RLock()
+
+_compute_counts = {"lang_map": 0, "flag_map": 0, "list_langs": 0}
+
+def clear_translation_caches():
+    _shared_cache.clear()
+    
 TRANSLATIONS_SRC_DIR = os.environ.get(
     "TRANSLATIONS_SRC_DIR",
     os.path.join(os.path.dirname(__file__), "translate_repo", "translations")
@@ -28,7 +39,8 @@ PO_HASH_PATH = os.environ.get(
     os.path.join(TRANSLATIONS_BUILD_DIR, 'po_hash_map.json')
 )
 
-@lru_cache(maxsize=1)
+# @cached(cache=_lang_map_cache, lock=_lang_map_lock)
+@cached(cache=_shared_cache, lock=_shared_lock, key=lambda *a, **k: "lang_map")
 def build_language_file_map():
     """Build a mapping of languages to their translation directories.
      Returns:
@@ -40,9 +52,10 @@ def build_language_file_map():
     Detects from filenames like: Domain_(Lang).po, 
     e.g. IfcSharedFacilitieselements_(Italian).po
     """
+    _compute_counts["lang_map"] += 1
     language_file_map = {}
     
-    for po_file in Path(TRANSLATIONS_SRC_DIR).glob("*/**/*.po"):
+    for po_file in Path(TRANSLATIONS_SRC_DIR).rglob("*.po"):
         lang_name = po_file.stem.split("_(")[-1].split(")")[0]
         language_file_map[lang_name] = str(po_file.parent)
     return language_file_map
@@ -336,9 +349,11 @@ def translate_resource(lang, resource):
 
     return out
 
-@lru_cache(maxsize=1)
+
+@cached(cache=_shared_cache, lock=_shared_lock, key=lambda *a, **k: "list_langs")
 def list_languages():
     # get a list of available languages 
+    _compute_counts["list_langs"] += 1
     langs = build_language_file_map()
     return(sorted(langs.keys()))
 
@@ -354,11 +369,12 @@ def _country_code_to_flag(cc: str) -> str:
     return "".join(chr(0x1F1E6 + ord(c) - ord("A")) for c in cc)
 
 
-@lru_cache(maxsize=1)
+@cached(cache=_shared_cache, lock=_shared_lock, key=lambda *a, **k: "flag_map")
 def build_language_flag_map():
     """
     Returns: { 'Dutch': '🇳🇱', 'Portuguese_Brazilian': '🇧🇷', ... }
     """
+    _compute_counts["flag_map"] += 1
     flag_map = {}
     for language, lang_path in build_language_file_map().items():
         region = os.path.basename(os.path.basename(lang_path)).split("-")[-1].upper()
@@ -489,7 +505,7 @@ def main(argv=None):
         args = p.parse_args(rest)
         
         use_hash = args.hash or args.clean # use hash the first time after cleaning the compiled translations
-        rc = build_cache(clean=args.clean, use_hash=use_hash, jobs=args.jobs)
+        rc = build_cache(clean=args.clean, use_hash=use_hash, jobs=args.jobs, pool=args.pool)
         
         sys.exit(rc)
         
@@ -501,6 +517,49 @@ def main(argv=None):
         p.add_argument("--repeat", type=int, default=3)
         args = p.parse_args(rest)
         bench(args.pool, args.jobs, args.repeat)
+        return 0
+    
+    elif cmd == "debug-ttl":
+        print(f"TTL={LANG_MAP_TTL}s")
+        # run 1
+        for _ in range(5):
+            build_language_file_map()
+            build_language_flag_map()
+            list_languages()
+        print("after first burst:", _compute_counts)
+
+        time.sleep(LANG_MAP_TTL + 0.5)
+
+        # run 2
+        for _ in range(3):
+            build_language_file_map()
+            build_language_flag_map()
+            list_languages()
+        # with using default TTL=60s, we expect the following counts; {'lang_map': 2, 'flag_map': 2, 'list_langs': 2}
+        print("after second burst:", _compute_counts)
+        return 0
+    
+    elif cmd == "bench-ttl":
+        from timeit import timeit
+
+        N = 2000 
+        clear_translation_caches() 
+
+        cases = [
+            ("map",  build_language_file_map),
+            ("flag", build_language_flag_map),
+            ("list", list_languages),
+        ]
+
+        # cold: measure each once
+        cold_ms = {name: timeit(fn, number=1) * 1e3 for name, fn in cases}
+
+        # hot: average per-call time over N iterations
+        hot_us = {name: (timeit(fn, number=N) / N) * 1e6 for name, fn in cases}
+
+        print("cold: " + "  ".join(f"{name}={cold_ms[name]:.3f} ms" for name, _ in cases))
+        print("hot (cached avg): " + "  ".join(f"{name}={hot_us[name]:.2f} µs" for name, _ in cases))
+        print("speedup×: " + "  ".join(f"{name}≈{(cold_ms[name]*1e3)/hot_us[name]:.0f}" for name, _ in cases))
         return 0
 
     elif cmd == "translate":

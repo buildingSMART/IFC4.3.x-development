@@ -1,0 +1,26 @@
+{% set has_name   = data.resource_translation %}
+{% set has_def  = data.DEFINITION or data.definition %}
+{% set has_desc  = data.DESCRIPTION or data.description %}
+
+{% if not (lang == "English" and not has_name and not has_def and not has_desc) %}
+  <div class="translation lang-{{ lang|slugify }}">
+    <div>
+      <span style="color:#0277bd;">{{ get_language_icon(lang) }}</span>
+      {% if has_name %}
+        <strong style="color:#0277bd;">{{ has_name }}</strong>
+      {% elif lang != "English" %}
+        <span>
+          No translation yet —
+          <a href="https://user.buildingsmart.org/knowledge-base/ifc-translations-manual/">help translate</a>
+        </span>
+      {% endif %}
+    </div>
+
+    {% if has_def %}
+      <div><em>{{ has_def }}</em></div>
+    {% endif %}
+    {% if has_desc %}
+      <div><em>{{ has_desc }}</em></div>
+    {% endif %}
+  </div>
+{% endif %}

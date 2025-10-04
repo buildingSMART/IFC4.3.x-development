@@ -2,6 +2,7 @@
 Flask 
 gunicorn
 redis
+cachetools
 
 # HTML / parsing 
 beautifulsoup4<4.12
@@ -30,3 +31,4 @@ tabulate
 deepdiff
 hilbertcurve==1.0.5
 python-dotenv
+pytest

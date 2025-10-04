@@ -4,28 +4,7 @@
 <h1>{{ number }} {{ entity }}</h1>
 <aside class="aside-note">
     {% for lang, data in translations.items() %}
-      {% set has_name = data.resource_translation %}
-      {% set has_def = data.DEFINITION %}
-      {% if not (lang == "English" and not has_name and not has_def) %}
-        <div class="translation lang-{{ lang|slugify }}">
-          <div>
-            <span style="color:#0277bd;">{{ get_language_icon(lang) }}</span>
-            {% if has_name %}
-              <strong style="color:#0277bd;">{{ data.resource_translation }}</strong>
-            {% else %}
-              {% if lang != "English" %}
-                <span>No translation yet — <a href="https://user.buildingsmart.org/knowledge-base/ifc-translations-manual/">help translate</a></span>
-              {% endif %}
-            {% endif %}
-          </div>
-  
-          {% if has_def %}
-            <div>
-              <em>{{ data.DEFINITION }}</em>
-            </div>
-          {% endif %}
-        </div>
-      {% endif %}
+      {% include "partials/_translations_aside.html" %}
     {% endfor %}
   </aside>
 

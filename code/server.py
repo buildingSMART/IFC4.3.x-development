@@ -1052,7 +1052,6 @@ def resource(resource):
         mdc = ""
 
     mdc = re.sub(DOC_ANNOTATION_PATTERN, "", mdc)
-    # translator = CrowdinTranslator()
 
     if "Entities" in md:
         builder = resource_documentation_builder(resource)
@@ -1113,7 +1112,7 @@ def resource(resource):
     builder = resource_documentation_builder(resource)
     content = get_definition(resource, mdc)
     
-    rendered_html = render_template(
+    return render_template(
         "type.html",
         navigation=get_navigation(resource),
         content=content,
@@ -1126,45 +1125,7 @@ def resource(resource):
         formal_representation=get_formal_representation(resource),
         references=get_references(resource),
         changelog=get_changelog(resource),
-        original = translator.load_original(resource.removesuffix('Enum')),
-        translations=translator.translate(resource),
-        get_language_icon = get_language_icon
     )
-    cached_html = html_cache_manager.write_cached_html(resource, rendered_html)
-    return rendered_html
-
-
-def get_type_values_old(resource, mdc):
-    values = R.type_values.get(resource)
-    if not values:
-        return
-    has_description = values[0] == values[0].upper()
-    if has_description:
-        soup = BeautifulSoup(process_markdown(resource, mdc))
-        described_values = []
-        for value in values:
-            description = None
-            for h in soup.findAll("h3"):
-                if h.text != value:
-                    continue
-                description = BeautifulSoup()
-                for sibling in h.find_next_siblings():
-                    if sibling.name == "h3":
-                        break
-                    description.append(sibling)
-                description = str(description)
-            translation_lookup_v = f"{resource.removesuffix('Enum')}{value}"
-            translations = translate(translation_lookup_v)
-            described_values.append(
-                {
-                    "name": value,
-                    "translations": translations,  # Store all translations for this value
-                    "description": description,
-                }
-            )
-        values = described_values
-    return {"number": SectionNumberGenerator.generate(), "has_description": has_description, "schema_values": values}
-
 
 
 def get_type_values(resource, mdc):
@@ -1186,18 +1147,7 @@ def get_type_values(resource, mdc):
                         break
                     description.append(sibling)
                 description = str(description)
-            translation_lookup_v = f"{resource.removesuffix('Enum')}{value}"
-            translator = CrowdinTranslator()
-            translations = translator.translate(translation_lookup_v)
-            described_values.append(
-                {
-                    "name": value,
-                    "translations": translations,  # Store all translations for this value
-                    "description": description,
-                    "original": translator.load_original(translation_lookup_v)
-                }
-            )
-        values = described_values
+            described_values.append({"name": value, "description": description})
     return {"number": SectionNumberGenerator.generate(), "has_description": has_description, "schema_values": values}
 
 

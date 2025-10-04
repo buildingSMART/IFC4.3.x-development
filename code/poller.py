@@ -10,11 +10,14 @@ os.makedirs(XML_PATH, exist_ok=True)
 REPO_DIR = os.environ.get("REPO_DIR", os.path.join(os.path.dirname(__file__), ".."))
 REPO_BRANCH = os.environ.get("REPO_BRANCH", "master")
 
-TRANSLATIONS_REPO = os.environ.get("TRANSLATIONS_REPO", "/translations")  # git root of translations repo
-TRANSLATE_BRANCH = os.environ.get("TRANSLATE_BRANCH", "translations")
+TRANSLATIONS_REPO = os.environ.get("TRANSLATIONS_REPO_DIR", "/app/translations") # git root of translations repo
+TRANSLATIONS_BRANCH = os.environ.get("TRANSLATIONS_BRANCH", "translations")
 
-os.environ.setdefault("TRANSLATIONS", os.environ.get("TRANSLATIONS", "/translations/translations"))
-os.environ.setdefault("COMPILED_TRANSLATIONS", os.environ.get("COMPILED_TRANSLATIONS", "/compiled_translations"))
+os.environ.setdefault("TRANSLATIONS_SRC_DIR", os.environ.get("TRANSLATIONS_SRC_DIR", os.path.join(TRANSLATIONS_REPO, "translations")))
+os.environ.setdefault("TRANSLATIONS_BUILD_DIR",os.environ.get("TRANSLATIONS_BUILD_DIR", "/data/translations-build"))
+
+JOBS = int(os.environ.get("TRANSLATE_JOBS", os.cpu_count() or 1))
+POOL = os.environ.get("TRANSLATE_POOL", "process")
 
 import translate 
 
@@ -32,10 +35,9 @@ def update_repo(repo, branch):
     return before != after
 
 
-
 while True:
     main_changed = update_repo(REPO_DIR, REPO_BRANCH)
-    trans_changed = update_repo(TRANSLATIONS_REPO, TRANSLATE_BRANCH)
+    trans_changed = update_repo(TRANSLATIONS_REPO, TRANSLATIONS_BRANCH)
     first_time = not os.listdir(XML_PATH)
     
     if main_changed or first_time:
@@ -58,22 +60,16 @@ while True:
         
         subprocess.call([sys.executable, "process_schema.py", os.path.join(REPO_DIR, "schemas/IFC.xml")])
         
-        subprocess.call([sys.executable, "translate.py", "build-cache", "--hash"])
-        
         if first_time:
-            translate.build_cache(clean=True, use_hash=True)
-            
+            translate.build_cache(clean=True, jobs=JOBS, pool=POOL)
             # First time. Spider the site to build indices in Redis. Then terminate.
-            subprocess.call([sys.executable, "translate.py", "build-cache", "--clean"])
             subprocess.call("wget -q --recursive --spider -S localhost:5000".split(" "))
             requests.post("http://localhost:5000/build_index")
             subprocess.call("redis-cli shutdown".split(" "))
-        else:
-            translate.build_cache(use_hash=True)
+        else: # main changed
+            translate.build_cache(jobs=JOBS, pool=POOL)
     
     if trans_changed:
-        #translate.build_language_file_map.cache_clear() --> ?
-        #translate.build_language_flag_map.cache_clear? --> ?s
-        translate.build_cache() 
+        translate.build_cache(jobs=JOBS, pool=POOL)
          
     time.sleep(60)

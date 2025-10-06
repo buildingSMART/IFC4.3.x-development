@@ -3,11 +3,8 @@
 
 <h1>{{ number }} {{ entity }}</h1>
 
-<aside class="aside-note">
-    {% for lang, data in translations.items() %}
-      {% include "partials/_translations_aside.html" %}
-    {% endfor %}
-  </aside>
+<h1>{{ number }} {{ entity }}</h1>
+{% include "partials/_translations_aside.html" %}
 
 <h2>
     {{ definition_number }} Semantic definition

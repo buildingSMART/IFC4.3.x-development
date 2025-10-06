@@ -67,7 +67,7 @@ else:
     base = "/IFC/RELEASE/IFC4x3/HTML"
 
 def get_language_icon(language = None):
-    default_lang = request.cookies.get("languagePreference", "English, UK")
+    default_lang = request.cookies.get("languagePreference", "English (default)")
     return translate.build_language_flag_map().get(language or default_lang, "🇬🇧")
 
 def make_url(fragment=None):
@@ -1148,6 +1148,7 @@ def get_type_values(resource, mdc):
                     description.append(sibling)
                 description = str(description)
             described_values.append({"name": value, "description": description})
+        values = described_values
     return {"number": SectionNumberGenerator.generate(), "has_description": has_description, "schema_values": values}
 
 
@@ -2616,7 +2617,7 @@ def inject_variables():
         'spec_version_string_full': spec_version_string_full,
         'branch': REPO_BRANCH,
         'get_language_icon': translate.get_language_icon, 
-        'current_lang': request.cookies.get('languagePreference', 'english-uk'), 
+        'current_lang': request.cookies.get('languagePreference', 'english-default'), 
         'languages': translate.list_languages()
     }
 

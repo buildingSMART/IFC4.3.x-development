@@ -36,17 +36,19 @@
                                 onchange="setLanguagePreference(this.value)"
                                 style="border: none; background: none; color: inherit;">
 
-                                <option value="{{ 'English, UK'|slugify }}"
-                                    {% if current_lang == 'English, UK' %}selected{% endif %}>
-                                {{ get_language_icon('English, UK') }} English, UK
-                            </option>
-                            {% for lang in languages if lang != "English, UK" %}
-                                <option value="{{ lang|slugify }}"
-                                        {% if lang == current_lang %}selected{% endif %}>
-                                    {{ get_language_icon(lang) }} {{ lang }}
-                                </option>
-                            {% endfor %}
-                        </select>
+                                <option value="{{ 'English (default)'|slugify }}"
+                                    {% if current_lang_slug == 'english-default' %}selected{% endif %}>
+                                {{ get_language_icon('English (default)') }} English (default)
+                        </option>
+
+                            {% for lang in languages if lang != "English (default)" %}
+                        {% set lang_slug = lang|slugify %}
+                    <option value="{{ lang_slug }}"
+                                {% if lang_slug == current_lang_slug %}selected{% endif %}>
+                        {{ get_language_icon(lang) }} {{ lang }}
+                        </option>
+                    {% endfor %}
+                    </select>
                       </li>
                     <li>
                         {% if is_package %}

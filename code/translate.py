@@ -73,7 +73,8 @@ def build_language_file_map():
     
     for po_file in Path(TRANSLATIONS_SRC_DIR).rglob("*.po"):
         lang_name = po_file.stem.split("_(")[-1].split(")")[0]
-        language_file_map[lang_name] = str(po_file.parent)
+        if not 'english' in lang_name.lower(): 
+            language_file_map[lang_name] = str(po_file.parent)
     return language_file_map
 
 def find_po_files(base_dir):
@@ -397,7 +398,7 @@ def build_language_flag_map():
         if language == "Serbian": #todo handle serbian translations separately
             region = "RS"
         flag_map[language] = _country_code_to_flag(region) if region else "🌐"
-    flag_map['English, UK'] = _country_code_to_flag('GB')
+    flag_map['English (default)'] = "🌐"
     return flag_map
 
 
@@ -407,8 +408,8 @@ def get_language_icon(language):
         return build_language_flag_map()
 
     if not language and has_request_context():
-        language = request.cookies.get("languagePreference", "English, UK")
-    return _flag_map().get(language or "English, UK", "🇬🇧")
+        language = request.cookies.get("languagePreference", "English (default)")
+    return _flag_map().get(language or "English (default)", "🌐")
 
 
 def bench(pool, jobs, repeat: int = 3):

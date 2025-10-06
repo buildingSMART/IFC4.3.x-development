@@ -349,17 +349,18 @@ function getCookie(name) {
 }
 
 function filterActiveLanguage() {
-    const languageSlug = getCookie('languagePreference') || 'english-uk';
-    console.log("Language Preference (slug):", languageSlug);
+    const languageSlug = (getCookie('languagePreference') || 'english-default').trim().toLowerCase();
+    const aside = document.getElementById('translations-aside');
 
-    const translations = document.querySelectorAll(`div.translation`);
-    console.log("Active translations found:", ...Array.from(translations).map(el => el.className));
+    const isDefaultEnglish = (languageSlug === 'english-default');
 
+    if (aside) aside.style.display = isDefaultEnglish ? 'none' : '';
+    const translations = document.querySelectorAll('div.translation');
+    
     translations.forEach((translation) => {
         translation.style.display = translation.classList.contains(`lang-${languageSlug}`) ? 'block' : 'none';
     });
 }
-
 
 
 const USE_PAGE_RELOAD_FOR_LANGUAGE = false;

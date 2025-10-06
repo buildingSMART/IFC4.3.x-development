@@ -21,7 +21,7 @@ RUN apt-get update -y && DEBIAN_FRONTEND=noninteractive apt-get install -y curl 
 RUN rm /etc/ImageMagick-6/policy.xml
 
 # Python dependencies
-RUN curl --silent --show-error --retry 5 https://bootstrap.pypa.io/get-pip.py | python3
+RUN curl --silent --show-error --retry 5 https://bootstrap.pypa.io/pip/3.8/get-pip.py | python3
 WORKDIR /code
 COPY requirements.txt /code/requirements.txt
 RUN python3 -m pip install --no-cache-dir --upgrade pip && \

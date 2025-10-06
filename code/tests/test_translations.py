@@ -1,4 +1,3 @@
-# tests/test_translations.py
 import os
 import polib
 from pathlib import Path

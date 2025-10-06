@@ -14,6 +14,22 @@ from threading import RLock
 from flask import request, has_request_context
 from pathlib import Path
 
+try:
+    file_digest = hashlib.file_digest
+except AttributeError:
+    def file_digest(fileobj, digest):
+        if isinstance(digest, str):
+            digest = getattr(hashlib, digest)()
+        if not hasattr(digest, "update"):
+            raise TypeError("digest must be a hash name or a hash object with an update() method")
+        while True:
+            chunk = fileobj.read(8192)
+            if not chunk:
+                break
+            digest.update(chunk)
+        return digest
+
+
 LANG_MAP_TTL = int(os.environ.get("LANG_MAP_TTL", "60"))  # seconds
 
 _shared_cache = TTLCache(maxsize=3, ttl=LANG_MAP_TTL)  # 3 distinct keys
@@ -83,7 +99,7 @@ def compile_po_to_mo(po_path, mo_path):
     po = polib.pofile(po_path)
     po.save_as_mofile(mo_path)
 
-def _compile_one_worker(po: str, mo: str) -> tuple[str, str]:
+def _compile_one_worker(po: str, mo: str):
     import os, polib
     polib.pofile(po).save_as_mofile(mo)
     return po, mo
@@ -140,7 +156,7 @@ def build_cache(clean=False, use_hash=False, jobs=1, pool="process"):
 
             if use_hash:
                 # HASH MODE: check for hashed content 
-                with open(po, "rb") as f: digest = hashlib.file_digest(f, "sha256").hexdigest()    
+                with open(po, "rb") as f: digest = file_digest(f, "sha256").hexdigest()
                 new_po_hash_map[rel] = digest
                 should_compile = (old_po_hash_map.get(rel) != digest) or (not mo_exists)
             else:

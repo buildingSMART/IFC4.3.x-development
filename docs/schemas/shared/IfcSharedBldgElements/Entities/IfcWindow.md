@@ -183,9 +183,9 @@ There are different conventions in different countries on how to show the symbol
 
 | Diagram | Description |
 | --- | --- |
-| ![fig 1](../../../../figures/ifcwindow-fig01.gif) | The window panel (for side hung windows) opens always into the direction of the positive Y axis of the local placement. The determination of whether the window opens to the left or to the right is done at <em>IfcWindowPanelProperties.OperationType</em>. Here it is a left side opening window given by <em>OperationType</em> = SideHungLeftHand. |
+| ![fig 1](../../../../figures/ifcwindow-fig01.gif) | The window panel (for side hung windows) opens always into the direction of the positive Y-axis of the local placement. The determination of whether the window opens to the left or to the right is done at <em>IfcWindowPanelProperties.OperationType</em>. Here it is a left side opening window given by <em>OperationType</em> = SideHungLeftHand. |
 | ![fig 2](../../../../figures/ifcwindow-fig02.gif) | If the window should open to the other side, then the local placement has to be changed. It is still a left hung window, given by <em>IfcWindowPanelProperties.OperationType</em> = SideHungLeftHand. |
-| ![fig 3](../../../../figures/ifcwindow-fig03.gif) | If the window panel (for side hung windows) opens to the right, a separate window panel style needs to be used (here <em>IfcWindowPanelProperties.OperationType</em> = SideHungRightHand) and it always opens into the direction of the positive Y axis of the local placement. |
+| ![fig 3](../../../../figures/ifcwindow-fig03.gif) | If the window panel (for side hung windows) opens to the right, a separate window panel style needs to be used (here <em>IfcWindowPanelProperties.OperationType</em> = SideHungRightHand) and it always opens into the direction of the positive Y-axis of the local placement. |
 | ![fig 4](../../../../figures/ifcwindow-fig04.gif) | If the window should open to the other side, then the local placement has to be changed. It is still a right hung window, given by <em>IfcWindowPanelProperties.OperationType</em> = SideHungRightHand. |
 
 Table 3 — Window operations

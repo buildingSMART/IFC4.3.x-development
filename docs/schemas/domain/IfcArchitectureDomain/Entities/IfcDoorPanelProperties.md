@@ -5,9 +5,9 @@ A door panel is normally a door leaf that opens to allow people or goods to pass
 
 The _IfcDoorPanelProperties_ are used to parametrically describe the shape and operation of door panels. The parametric definition can be added solely or additionally to the explicit shape representation of the door.
 
-The _IfcDoorType_ can define doors consisting of more then one panel. In this case, one instance of _IfcDoorPanelProperties_ has to be included for each door panel. The _PanelPosition_ attribute, in conjunction with the _IfcDoorType.OperationType_ attribute, determines to which panel the _IfcDoorPanelProperties_ apply. The _IfcDoorPanelProperties_ are included in the list of properties , given by attribute _HasPropertySets_ of the _IfcDoorType_. More information about the door panel can be included in the same list of the _IfcDoorType_ using the _IfcPropertySet_ for dynamic extensions.
+The _IfcDoorType_ can define doors consisting of more than one panel. In this case, one instance of _IfcDoorPanelProperties_ has to be included for each door panel. The _PanelPosition_ attribute, in conjunction with the _IfcDoorType.OperationType_ attribute, determines to which panel the _IfcDoorPanelProperties_ apply. The _IfcDoorPanelProperties_ are included in the list of properties , given by the attribute _HasPropertySets_ of the _IfcDoorType_. More information about the door panel can be included in the same list of the _IfcDoorType_ using the _IfcPropertySet_ for dynamic extensions.
 
-The _IfcDoorPanelProperties_ does not hold a geometric representation. However it defines parameters which can be used to create the shape of the door type(which is inserted by the _IfcDoor_ into the spatial context of the project) as shown in Table 1.
+The _IfcDoorPanelProperties_ does not hold a geometric representation. However it defines parameters which can be used to create the shape of the door type (which is inserted by the _IfcDoor_ into the spatial context of the project) as shown in Table 1.
 
 The parameters of the _IfcDoorPanelProperties_ define a standard door panel, including (if given) a proportional width to define non-uniform double swing (or sliding, or folding) doors. The outer boundary of the panel is determined by the 'Profile' shape representation assigned to the _IfcDoor_, which inserts the _IfcDoorType_. It has to take the lining parameter into account as well.
 
@@ -34,7 +34,7 @@ Depth of the door panel, measured perpendicular to the plane of the door leaf.
 The _PanelOperation_ defines the way of operation of that panel. The _PanelOperation_ of the door panel has to correspond with the _OperationType_ of the _IfcDoorType_ by which it is referenced.
 
 ### PanelWidth
-Width of this panel, given as ratio relative to the total clear opening width of the door. If omitted, it defaults to 1. A value has to be provided for all doors with _OperationType_'s at _IfcDoorType_ defining a door with more then one panel.
+Width of this panel, given as ratio relative to the total clear opening width of the door. If omitted, it defaults to 1. A value has to be provided for all doors with _OperationType_'s at _IfcDoorType_ defining a door with more than one panel.
 
 ### PanelPosition
 Position of this panel within the door. The _PanelPosition_ of the door panel has to correspond with the _OperationType_ of the _IfcDoorType_ by which it is referenced.

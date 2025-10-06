@@ -2,11 +2,7 @@
 {% block pagecontent %}
 
 <h1>{{ number }} {{ entity }}</h1>
-<aside class="aside-note">
-    {% for lang, data in translations.items() %}
-      {% include "partials/_translations_aside.html" %}
-    {% endfor %}
-  </aside>
+{% include "partials/_translations_aside.html" %}
 
 {% if not is_iso %}
     {% if is_product_or_type %}

@@ -24,7 +24,7 @@ ADD https://api.github.com/repos/buildingSMART/IFC4.3.x-development/git/refs/hea
 RUN git clone --depth 1 https://github.com/buildingSMART/IFC4.3.x-development /ifc43 --branch $REPO_BRANCH
 ENV REPO_DIR=/ifc43
 
-ADD *.py tikz-uml.sty IFC4_conf.xml mvdXML_V1.1_add1.xsd /code/
+ADD version.json *.py tikz-uml.sty IFC4_conf.xml mvdXML_V1.1_add1.xsd /code/
 ADD express_diff/* /code/express_diff/
 ADD templates/* /code/templates/
 

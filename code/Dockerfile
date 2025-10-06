@@ -2,7 +2,7 @@ FROM ubuntu:focal
 MAINTAINER Thomas Krijnen <thomas@aecgeeks.org>
 
 # --- Configurable branches/paths ---
-ENV REPO_BRANCH=master
+ENV REPO_BRANCH=translations
 
 # translations
 ENV TRANSLATIONS_REPO_DIR=/app/translations

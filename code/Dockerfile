@@ -53,11 +53,11 @@ RUN git clone --depth 1 https://github.com/buildingSMART/IFC4.3.x-output $TRANSL
 
 ADD version.json *.py tikz-uml.sty IFC4_conf.xml mvdXML_V1.1_add1.xsd /code/
 ADD express_diff/* /code/express_diff/
-ADD templates/* /code/templates/
+ADD templates /code/templates/
 
 WORKDIR /code
 
-RUN mkdir svgs psd /var/redis-data $TRANSLATIONS_BUILD_DIR
+RUN mkdir -p svgs psd /var/redis-data $TRANSLATIONS_BUILD_DIR
 
 COPY supervisord.conf /etc/supervisord.conf
 

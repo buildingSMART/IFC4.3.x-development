@@ -11,7 +11,6 @@ ENV TRANSLATIONS_SRC_DIR=${TRANSLATIONS_REPO_DIR}/translations
 ENV TRANSLATIONS_BUILD_DIR=/data/translations-build
 ENV PO_HASH_PATH=${TRANSLATIONS_BUILD_DIR}/po_hash_map.json
 
-#1week interval
 
 # system dependencies
 RUN mkdir -p /usr/share/man/man1

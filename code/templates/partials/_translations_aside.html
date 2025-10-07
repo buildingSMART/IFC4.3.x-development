@@ -1,0 +1,35 @@
+<aside id="translations-aside" class="aside-note">
+  {% for lang, data in translations.items() %}
+    {% if not (lang|lower).startswith('english') %}
+
+      {% set has_name = data.resource_translation %}
+      {% set has_def  = data.DEFINITION or data.definition %}
+      {% set has_desc = data.DESCRIPTION or data.description %}
+
+      <div class="translation lang-{{ lang|slugify }}" style="display:none">
+        <div>
+          <span style="color:#0277bd;">{{ get_language_icon(lang) }}</span>
+
+          {% if has_name %}
+            <strong style="color:#0277bd;">{{ has_name }}</strong>
+          {% else %}
+            {% if has_def or has_desc %}
+              {% set which = 'definition' if has_def and not has_desc
+                              else 'description' if has_desc and not has_def
+                              else 'definition & description' %}
+              <span>There is no translation for the identifier yet — translation of the {{ which }} available below.</span>
+            {% else %}
+              <span>
+                No translation yet —
+                <a href="https://user.buildingsmart.org/knowledge-base/ifc-translations-manual/">help translate</a>
+              </span>
+            {% endif %}
+          {% endif %}
+        </div>
+
+        {% if has_def %}<div><em>{{ has_def }}</em></div>{% endif %}
+        {% if has_desc %}<div><em>{{ has_desc }}</em></div>{% endif %}
+      </div>
+    {% endif %}
+  {% endfor %}
+</aside>

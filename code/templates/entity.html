@@ -1,7 +1,8 @@
 {% extends "main.html" %}
 {% block pagecontent %}
 
-<h1>{{ number }} {{ entity}}</h1>
+<h1>{{ number }} {{ entity }}</h1>
+{% include "partials/_translations_aside.html" %}
 
 {% if not is_iso %}
     {% if is_product_or_type %}
@@ -184,7 +185,6 @@
 <h2>
     {{ property_sets.number }} Property sets
 </h2>
-<p>
     <ul class="psets">
     {% for pset in property_sets.psets %}
         <li>
@@ -200,7 +200,6 @@
         </li>
     {% endfor %}
     </ul>
-<p>
 {% endif %}
 
 {% if concept_usage %}

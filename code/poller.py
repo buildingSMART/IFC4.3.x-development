@@ -5,25 +5,42 @@ import requests
 import subprocess
 
 XML_PATH = "/tmp/ifc43-xml"
-
-try:
-    os.makedirs(XML_PATH)
-except: pass
+os.makedirs(XML_PATH, exist_ok=True)
 
 REPO_DIR = os.environ.get("REPO_DIR", os.path.join(os.path.dirname(__file__), ".."))
+REPO_BRANCH = os.environ.get("REPO_BRANCH", "master")
+
+TRANSLATIONS_REPO = os.environ.get("TRANSLATIONS_REPO_DIR", "/app/translations") # git root of translations repo
+TRANSLATIONS_BRANCH = os.environ.get("TRANSLATIONS_BRANCH", "translations")
+
+os.environ.setdefault("TRANSLATIONS_SRC_DIR", os.environ.get("TRANSLATIONS_SRC_DIR", os.path.join(TRANSLATIONS_REPO, "translations")))
+os.environ.setdefault("TRANSLATIONS_BUILD_DIR",os.environ.get("TRANSLATIONS_BUILD_DIR", "/data/translations-build"))
+
+JOBS = int(os.environ.get("TRANSLATE_JOBS", os.cpu_count() or 1))
+POOL = os.environ.get("TRANSLATE_POOL", "process")
+
+import translate 
+
+def head(repo):
+    try:
+        return subprocess.check_output(["git", "-C", repo, "rev-parse", "HEAD"]).strip()
+    except subprocess.CalledProcessError:
+        return b""
+    
+def update_repo(repo, branch):
+    before = head(repo)
+    subprocess.check_call(["git", "-C", repo, "fetch", "origin"])
+    subprocess.check_call(["git", "-C", repo, "reset", "--hard", f"origin/{branch}"])
+    after = head(repo)
+    return before != after
+
 
 while True:
-
-    a = subprocess.check_output(["git", "-C", REPO_DIR, "rev-parse", "HEAD"])
-    # do not require credentials for auto merge on pull
-    # subprocess.check_output(["git", "-C", REPO_DIR, "pull"])
-    subprocess.check_output(["git", "-C", REPO_DIR, "fetch"])
-    subprocess.check_output(["git", "-C", REPO_DIR, "reset", "--hard", f"origin/{os.environ.get('REPO_BRANCH', 'master')}"])
-    c = subprocess.check_output(["git", "-C", REPO_DIR, "rev-parse", "HEAD"])
-    
+    main_changed = update_repo(REPO_DIR, REPO_BRANCH)
+    trans_changed = update_repo(TRANSLATIONS_REPO, TRANSLATIONS_BRANCH)
     first_time = not os.listdir(XML_PATH)
     
-    if a != c or first_time:
+    if main_changed or first_time:
     
         subprocess.call([sys.executable, "transform_to_xml.py", os.path.join(REPO_DIR, "docs"), XML_PATH])
         subprocess.call(["/solr-8.6.3/bin/solr", "create_core", "-force", "-c", "ifc"])
@@ -44,9 +61,15 @@ while True:
         subprocess.call([sys.executable, "process_schema.py", os.path.join(REPO_DIR, "schemas/IFC.xml")])
         
         if first_time:
+            translate.build_cache(clean=True, jobs=JOBS, pool=POOL)
             # First time. Spider the site to build indices in Redis. Then terminate.
             subprocess.call("wget -q --recursive --spider -S localhost:5000".split(" "))
             requests.post("http://localhost:5000/build_index")
             subprocess.call("redis-cli shutdown".split(" "))
-    else:
-        time.sleep(60)
+        else: # main changed
+            translate.build_cache(jobs=JOBS, pool=POOL)
+    
+    if trans_changed:
+        translate.build_cache(jobs=JOBS, pool=POOL)
+         
+    time.sleep(60)

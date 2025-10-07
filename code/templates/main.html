@@ -28,9 +28,28 @@
                         {% endif %}
                     </p>
                 {% endif %}
-
+                
                 {% if not is_iso %}
                 <ul>
+                    <li>
+                        <select id="language-selector"
+                                onchange="setLanguagePreference(this.value)"
+                                style="border: none; background: none; color: inherit;">
+
+                                <option value="{{ 'English (default)'|slugify }}"
+                                    {% if current_lang_slug == 'english-default' %}selected{% endif %}>
+                                {{ get_language_icon('English (default)') }} English (default)
+                        </option>
+
+                            {% for lang in languages if lang != "English (default)" %}
+                        {% set lang_slug = lang|slugify %}
+                    <option value="{{ lang_slug }}"
+                                {% if lang_slug == current_lang_slug %}selected{% endif %}>
+                        {{ get_language_icon(lang) }} {{ lang }}
+                        </option>
+                    {% endfor %}
+                    </select>
+                      </li>
                     <li>
                         {% if is_package %}
                             <a href="https://technical.buildingsmart.org/standards/ifc/ifc-schema-specifications/">

@@ -340,3 +340,53 @@ initialiseBackToTopButton();
 feather.replace();
 
 });
+
+function getCookie(name) {
+    var value = `; ${document.cookie}`;
+    var parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+    return null;
+}
+
+function filterActiveLanguage() {
+    const languageSlug = (getCookie('languagePreference') || 'english-default').trim().toLowerCase();
+    const aside = document.getElementById('translations-aside');
+  
+    const all = document.querySelectorAll('div.translation');
+    all.forEach(el => { el.style.display = 'none'; });
+  
+    const matches = document.querySelectorAll(`div.translation.lang-${languageSlug}`);
+  
+    const shouldHideAside = (languageSlug === 'english-default') || matches.length === 0;
+  
+    if (aside) aside.style.display = shouldHideAside ? 'none' : '';
+  
+    matches.forEach(el => { el.style.display = 'block'; });
+  }
+
+
+const USE_PAGE_RELOAD_FOR_LANGUAGE = false;
+
+document.addEventListener("DOMContentLoaded", () => {
+    const sel  = document.getElementById('language-selector');
+    const slug = (getCookie('languagePreference') || 'english-default').trim().toLowerCase();
+  
+    if (sel) sel.value = slug;   
+    if (!USE_PAGE_RELOAD_FOR_LANGUAGE) {
+      filterActiveLanguage();    
+    }
+  });
+
+function setLanguagePreference(value) {
+
+    var date = new Date();
+    date.setTime(date.getTime() + (30 * 24 * 60 * 60 * 1000));  // Cookie expires in 30 days
+    var expires = "; expires=" + date.toUTCString();
+
+    document.cookie = `languagePreference=${value}${expires}; path=/;`;
+    if (USE_PAGE_RELOAD_FOR_LANGUAGE) {
+        window.location.reload();
+    } else {
+        filterActiveLanguage();
+    }
+}

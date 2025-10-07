@@ -1,7 +1,4 @@
-{% set _slug = (current_lang_slug or 'english-default') | lower %}
-{% set hide_aside = _slug == 'english-default' %}
-
-<aside id="translations-aside" class="aside-note" {% if hide_aside %}style="display:none"{% endif %}>
+<aside id="translations-aside" class="aside-note">
   {% for lang, data in translations.items() %}
     {% if not (lang|lower).startswith('english') %}
 

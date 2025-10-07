@@ -351,23 +351,25 @@ function getCookie(name) {
 function filterActiveLanguage() {
     const languageSlug = (getCookie('languagePreference') || 'english-default').trim().toLowerCase();
     const aside = document.getElementById('translations-aside');
-
-    const isDefaultEnglish = (languageSlug === 'english-default');
-
-    if (aside) aside.style.display = isDefaultEnglish ? 'none' : '';
-    const translations = document.querySelectorAll('div.translation');
-    
-    translations.forEach((translation) => {
-        translation.style.display = translation.classList.contains(`lang-${languageSlug}`) ? 'block' : 'none';
-    });
-}
+  
+    const all = document.querySelectorAll('div.translation');
+    all.forEach(el => { el.style.display = 'none'; });
+  
+    const matches = document.querySelectorAll(`div.translation.lang-${languageSlug}`);
+  
+    const shouldHideAside = (languageSlug === 'english-default') || matches.length === 0;
+  
+    if (aside) aside.style.display = shouldHideAside ? 'none' : '';
+  
+    matches.forEach(el => { el.style.display = 'block'; });
+  }
 
 
 const USE_PAGE_RELOAD_FOR_LANGUAGE = false;
 
 document.addEventListener("DOMContentLoaded", () => {
     const sel  = document.getElementById('language-selector');
-    const slug = (getCookie('languagePreference') || 'english-uk').trim().toLowerCase();
+    const slug = (getCookie('languagePreference') || 'english-default').trim().toLowerCase();
   
     if (sel) sel.value = slug;   
     if (!USE_PAGE_RELOAD_FOR_LANGUAGE) {

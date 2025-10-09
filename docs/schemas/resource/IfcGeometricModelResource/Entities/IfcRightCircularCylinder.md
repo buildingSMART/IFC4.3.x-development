@@ -26,7 +26,7 @@ On the circular side, textures are aligned facing upright with origin at the bac
 
 On the top and bottom faces, textures are aligned facing front-to-back, with the center of the circle aligned to the center of the texture.
 
-Figure 2 illustrates default texture mapping with a clamped texture (RepeatS=False and RepeatT=False). The image on the left shows the texture where the S axis points to the right and the T axis points up. The image on the right shows the texture applied to the geometry where the X axis points back to the right, the Y axis points back to the left, and the Z axis points up.
+Figure 2 illustrates default texture mapping with a clamped texture (RepeatS=False and RepeatT=False). The image on the left shows the texture where the S axis points to the right and the T axis points up. The image on the right shows the texture applied to the geometry where the X-axis points back to the right, the Y-axis points back to the left, and the Z axis points up.
 
 { .gridtable}
 

@@ -29,10 +29,10 @@ An _IfcCartesianTransformationOperator_ defines an abstract supertype of differe
 ## Attributes
 
 ### Axis1
-The direction used to determine U[1], the derived X axis direction.
+The direction used to determine U[1], the derived X-axis direction.
 
 ### Axis2
-The direction used to determine U[2], the derived Y axis direction.
+The direction used to determine U[2], the derived Y-axis direction.
 
 ### LocalOrigin
 The required translation, specified as a cartesian point. The actual translation included in the transformation is from the geometric origin to the local origin.

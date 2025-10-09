@@ -7,7 +7,7 @@ The _IfcGeometricRepresentationContext_ defines the context that applies to seve
 
 Figure 1 — Definition of the true north direction
 
-The <em>TrueNorth</em> attribute should be provided, if the y axis of the <em>WorldCoordinateSystem</em> does not point to the global northing. Direction of the true north, or geographic northing direction, relative to the underlying project coordinate system as established by the attribute <em>WorldCoordinateSystem</em>. It is given by a 2 dimensional direction within the xy-plane of the project coordinate system. If not resent, it defaults to [0.,1.] - i.e. the positive Y-axis of the project coordinate system equals the geographic northing direction. The direction is provided within project coordinate system and identifies the true north direction.</p>
+The <em>TrueNorth</em> attribute should be provided, if the Y-axis of the <em>WorldCoordinateSystem</em> does not point to the global northing. Direction of the true north, or geographic northing direction, relative to the underlying project coordinate system as established by the attribute <em>WorldCoordinateSystem</em>. It is given by a 2 dimensional direction within the xy-plane of the project coordinate system. If not resent, it defaults to [0.,1.] - i.e. the positive Y-axis of the project coordinate system equals the geographic northing direction. The direction is provided within project coordinate system and identifies the true north direction.</p>
 
 The "true North as seen in CAD" within Figure 1 shows the correct interpretation of the <em>TrueNorth</em> direction.
 

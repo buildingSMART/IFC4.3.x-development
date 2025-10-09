@@ -24,9 +24,9 @@ The lining is applied to the left, right and upper side of the opening reveal. T
 
 The lining can only cover part of the opening reveal.
 
- * LiningOffset, given if the lining edge has an offset to the x axis of the local placement.
+ * LiningOffset, given if the lining edge has an offset to the X-axis of the local placement.
 
-> NOTE In addition to the <em>LiningOffset</em>, the local placement of the <em>IfcDoor</em> can already have an offset to the wall edge and thereby shift the lining along the y axis. The actual position of the lining is calculated from the origin of the local placement along the positive Y-axis with the distance given by <em>LiningOffset</em>.
+> NOTE In addition to the <em>LiningOffset</em>, the local placement of the <em>IfcDoor</em> can already have an offset to the wall edge and thereby shift the lining along the Y-axis. The actual position of the lining is calculated from the origin of the local placement along the positive Y-axis with the distance given by <em>LiningOffset</em>.
 
 ![lining 3](../../../../figures/ifcdoorliningproperties-fig03.png)
 
@@ -41,13 +41,13 @@ The lining may include a threshold, which covers the bottom side of the opening.
 
  * ThresholdDepth, if omitted, equal to wall thickness - this only takes effect if a value for <em>ThresholdThickness</em> is given. If both parameters are not given, then there is no threshold.
  * ThresholdThickness
- * ThresholdOffset (not shown in figure), given, if the threshold edge has an offset to the x axis of the local placement.
+ * ThresholdOffset (not shown in figure), given, if the threshold edge has an offset to the X-axis of the local placement.
 
 ![lining 5](../../../../figures/ifcdoorliningproperties-fig05.png)
 
 The lining may have a transom, which separates the door panel from a window panel. The transom, if given, is defined by:
 
- * TransomOffset, a parallel edge to the x axis of the local placement
+ * TransomOffset, a parallel edge to the X-axis of the local placement
  * TransomThickness
 
 The depth of the transom is identical to the depth of the lining and not given as separate parameter.
@@ -89,10 +89,10 @@ If the _TransomThickness_ is set to zero (and the _TransomOffset_ set to a posit
 Offset of the transom (if given) which divides the door leaf from a glazing (or window) above. The offset is given from the bottom of the door opening.
 
 ### LiningOffset
-Offset (dimension in plane perpendicular to door leaf) of the door lining. The offset is given as distance to the x axis of the local placement.
+Offset (dimension in plane perpendicular to door leaf) of the door lining. The offset is given as distance to the X-axis of the local placement.
 
 ### ThresholdOffset
-Offset (dimension in plane perpendicular to door leaf) of the door threshold. The offset is given as distance to the x axis of the local placement. Only given if the door lining includes a threshold and the parameter is known.
+Offset (dimension in plane perpendicular to door leaf) of the door threshold. The offset is given as distance to the X-axis of the local placement. Only given if the door lining includes a threshold and the parameter is known.
 
 ### CasingThickness
 Thickness of the casing (dimension in plane of the door leaf). If given it is applied equally to all four sides of the adjacent wall.

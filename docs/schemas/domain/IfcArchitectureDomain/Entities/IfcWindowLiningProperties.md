@@ -13,9 +13,9 @@ The _IfcWindowLiningProperties_ does not hold a geometric representation. Howeve
 | --- | --- | --- |
 | ![lining 5](../../../../figures/ifcwindowliningproperties-fig05.png) | All | LiningDepth, LiningThickness, LiningOffset, LiningToPanelOffsetX, LiningToPanelOffsetY (Note: The inner side is defined as the direction of the window panel opening operation.) |
 | ![lining 1](../../../../figures/ifcwindowliningproperties-fig01.png) | DoublePanelVertical (shown), TriplePanelBottom, TriplePanelTop, TriplePanelLeft, TriplePanelRight | MullionThickness, FirstMullionOffset (measured as offset to the Z axis in XZ plane as a normalized ratio measure) |
-| ![lining 2](../../../../figures/ifcwindowliningproperties-fig02.png) | DoublePanelHorizontal, TriplePanelBottom, TriplePanelTop, TriplePanelLeft, TriplePanelRight | TransomThickness, FirstTransomOffset (measured as offset to the X axis in XZ plane as a normalized ratio measure) |
+| ![lining 2](../../../../figures/ifcwindowliningproperties-fig02.png) | DoublePanelHorizontal, TriplePanelBottom, TriplePanelTop, TriplePanelLeft, TriplePanelRight | TransomThickness, FirstTransomOffset (measured as offset to the X-axis in XZ plane as a normalized ratio measure) |
 | ![lining 3](../../../../figures/ifcwindowliningproperties-fig03.png) | TriplePanelVertical | SecondMullionOffset (measured as offset to the Z axis in XZ plane as a normalized ratio measure) |
-| ![lining 4](../../../../figures/ifcwindowliningproperties-fig04.png) | TriplePanelHorizontal | SecondTransomOffset (measured as offset to the X axis in XZ plane as a normalized ratio measure) |
+| ![lining 4](../../../../figures/ifcwindowliningproperties-fig04.png) | TriplePanelHorizontal | SecondTransomOffset (measured as offset to the X-axis in XZ plane as a normalized ratio measure) |
 
 Table 1 — Window lining properties
 
@@ -66,7 +66,7 @@ Optional link to a shape aspect definition, which points to the part of the geom
 > IFC4 CHANGE The attribute is deprecated and shall no longer be used, i.e. the value shall be NIL ($).
 
 ### LiningOffset
-Offset of the window lining. The offset is given as distance along the y axis of the local placement (perpendicular to the window plane).
+Offset of the window lining. The offset is given as distance along the Y-axis of the local placement (perpendicular to the window plane).
 { .change-ifc2x4}
 > IFC4 CHANGE New attribute added at the end of the entity definition.
 

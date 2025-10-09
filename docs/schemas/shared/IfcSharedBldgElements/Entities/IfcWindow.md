@@ -128,14 +128,14 @@ lining parameters relate as:
 * _IfcWindowLiningProperties.LiningDepth_ starting at distance defined by _LiningOffset_ going into the positive y direction.
 * _IfcWindowLiningProperties.LiningThickness_ offset into the inner side of the rectangle.
 * _IfcWindowLiningProperties.LiningOffset_ distance along the positive y direction to where the _LiningDepth_ applies.
-* _IfcWindowLiningProperties.FirstTransomOffset_ starting at the bottom edge of the rectangle (along local x axis) into the inner side of the rectangle, distance provided as percentage of overall height. Distance to the centre line of the transom. _SecondTransomOffset_ defined accordingly.
+* _IfcWindowLiningProperties.FirstTransomOffset_ starting at the bottom edge of the rectangle (along local X-axis) into the inner side of the rectangle, distance provided as percentage of overall height. Distance to the centre line of the transom. _SecondTransomOffset_ defined accordingly.
 * _IfcWindowLiningProperties.FirstMullionOffset_ starting at the left edge of the rectangle (along local z-axis) into the inner side of the rectangle, distance provided as percentage of overall width. Distance to the centre line of the mullion. _SecondMullionOffset_ defined accordingly.
 
 
 ![standard window](../../../../figures/ifcwindowstandardcase-01.png)
 Figure 298 — Window profile
 
-Figure 1 illustrates the insertion of a parametrically generated window into the _IfcOpeningElement_ by creating an instance of _IfcWindow_ with _PartitioningType = DoublePanelHorizontal_. The parameters _OverallHeight_ and _OverallWidth_ show the extent of the window in the positive Z and X axis of the local placement of the window. The lining and the transom are created by the given parameters.
+Figure 1 illustrates the insertion of a parametrically generated window into the _IfcOpeningElement_ by creating an instance of _IfcWindow_ with _PartitioningType = DoublePanelHorizontal_. The parameters _OverallHeight_ and _OverallWidth_ show the extent of the window in the positive Z and X-axis of the local placement of the window. The lining and the transom are created by the given parameters.
 
 ![window 1](../../../../figures/ifcwindow-layout1.gif)
 

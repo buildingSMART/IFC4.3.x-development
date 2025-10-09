@@ -72,7 +72,7 @@ The Axis points in the direction of the physical connection away from the produc
 
 > NOTE The rationale for positioning the Axis in the direction of flow is to allow for the same geometry to be used, such as for connectors with polarized cross-section.
 
-The RefDirection points in the direction of the local X axis of the material profile, where the local Y axis points up if looking towards the Axis where the local X axis points right.
+The RefDirection points in the direction of the local X-axis of the material profile, where the local Y-axis points up if looking towards the Axis where the local X-axis points right.
 
 Upon connecting elements through ports with rigid connections, each object shall be aligned such that the effective Location, Axis, and RefDirection of each port is aligned to be equal (with exception for circular profiles where the RefDirection need not be equal).
 

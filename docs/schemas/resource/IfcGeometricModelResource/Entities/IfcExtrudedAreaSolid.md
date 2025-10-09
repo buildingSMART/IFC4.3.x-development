@@ -25,7 +25,7 @@ Figure 2 — Repositioned extruded area solid geometry
  * The profile to be swept is defined:
   * as a 2D primitive, here <em>IfcRectangleProfileDef</em>, that is placed relative to the xy plane of object coordinate system
   * a 2D profile position coordinate system is provided that positions the profile relative to the xy plane (here at a corner of the rectangle)
- * The resulting swept solid is repositioned, here it is moved into local z and rotated by 15' along the y axis.
+ * The resulting swept solid is repositioned, here it is moved into local z and rotated by 15' along the Y-axis.
 
 { .extDef}
 > NOTE Definition according to ISO/CD 10303-42:1992
@@ -48,7 +48,7 @@ For profiles with voids, textures are aligned facing upright along the inner sid
 
 Figure 3 — Extruded area solid textures
 
-> EXAMPLE Figure 3 illustrates default texture mapping with a repeated texture (RepeatS=True and RepeatT=True). The image on the left shows the texture where the S axis points to the right and the T axis points up. The image on the right shows the texture applied to the geometry where the X axis points back to the right, the Y axis points back to the left, and the Z axis points up. For an <em>IfcExtrudedAreaSolid</em> having a profile of <em>IfcIShapeProfileDef</em>, the side texture coordinate origin is the first corner counter-clockwise from the +Y axis, which equals<br><br> (-0.5*IfcIShapeProfileDef.OverallWidth, +0.5*IfcIShapeProfileDef.OverallDepth),<br><br> while the top (end cap) texture coordinates start at <br><br>(-0.5*IfcIShapeProfileDef.OverallWidth, -0.5*IfcIShapeProfileDef.OverallDepth).
+> EXAMPLE Figure 3 illustrates default texture mapping with a repeated texture (RepeatS=True and RepeatT=True). The image on the left shows the texture where the S axis points to the right and the T axis points up. The image on the right shows the texture applied to the geometry where the X-axis points back to the right, the Y-axis points back to the left, and the Z axis points up. For an <em>IfcExtrudedAreaSolid</em> having a profile of <em>IfcIShapeProfileDef</em>, the side texture coordinate origin is the first corner counter-clockwise from the +Y-axis, which equals<br><br> (-0.5*IfcIShapeProfileDef.OverallWidth, +0.5*IfcIShapeProfileDef.OverallDepth),<br><br> while the top (end cap) texture coordinates start at <br><br>(-0.5*IfcIShapeProfileDef.OverallWidth, -0.5*IfcIShapeProfileDef.OverallDepth).
 
 ## Attributes
 

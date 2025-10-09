@@ -9,7 +9,7 @@ The _IfcAxis2PlacementLinear_ provides location and orientation to place items i
 The exact direction of the local Z Axis.
 
 ### RefDirection
-The direction used to determine the direction of the local X Axis. In case both Axis and RefDirection are set and not perpendicular an adjustment is necessary to maintain orthogonality to the Axis direction. If RefDirection is omitted, the direction is taken from the curve tangent at Location.
+The direction used to determine the direction of the local X-axis. In case both Axis and RefDirection are set and not perpendicular an adjustment is necessary to maintain orthogonality to the Axis direction. If RefDirection is omitted, the direction is taken from the curve tangent at Location.
 
 ## Formal Propositions
 

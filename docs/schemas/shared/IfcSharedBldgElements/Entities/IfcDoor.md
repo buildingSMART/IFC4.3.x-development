@@ -133,7 +133,7 @@ Figure 229 illustrates applying the door lining parameters to the door profile s
 * _IfcDoorLiningProperties.LiningOffset_ distance along the positive y direction to where the _LiningDepth_ applies.
 * _IfcDoorLiningProperties.ThresholdThickness_ starting at the bottom edge of the rectangle into the inner side of the rectangle
 * _IfcDoorLiningProperties.ThresholdDepth_ starting at distance defined by _LiningOffset_ going into the positive y direction.
-* _IfcDoorLiningProperties.TransomOffset_ starting at the bottom edge of the rectangle (along local x axis) into the inner side of the rectangle, distance provided as percentage of overall height. Distance to the centre line of the transom.
+* _IfcDoorLiningProperties.TransomOffset_ starting at the bottom edge of the rectangle (along local X-axis) into the inner side of the rectangle, distance provided as percentage of overall height. Distance to the centre line of the transom.
 
 ![standard door](../../../../figures/ifcdoorstandardcase-01.png)
 

@@ -1,6 +1,6 @@
 # IfcDistributionControlElementType
 
-The element type _IfcDistributionControlElementType_ defines a list of commonly shared property set definitions of an element and an optional set of product representations. lement specification (the specific product information that is common to all occurrences of that product type).
+The element type _IfcDistributionControlElementType_ defines a list of commonly shared property set definitions of an element and an optional set of product representations. It is used to define an element specification (the specific product information that is common to all occurrences of that product type).
 <!-- end of short definition -->
 
 Distribution control element types (or the instantiable subtypes) may be exchanged without being already assigned to occurrences.

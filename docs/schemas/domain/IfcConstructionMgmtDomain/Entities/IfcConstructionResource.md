@@ -8,7 +8,7 @@ A resource represents "use of something" and does not necessarily correspond to 
 > HISTORY New entity in IFC2x2.
 
 { .change-ifc2x4}
-> IFC4 CHANGE Modified in to promote _ResourceIdentifer_ and _ResourceGroup_ (renamed to _LongDescription_) to supertype _IfcResource_ and add attributes as described.
+> IFC4 CHANGE Modified to promote _ResourceIdentifier_ and _ResourceGroup_ (renamed to _LongDescription_) to supertype _IfcResource_ and add attributes as described.
 
 { .use-head}
 ### Declaration use definition
@@ -140,13 +140,13 @@ A common scenario is two nesting levels where the first-level resources have no 
 
 ### Object Typing
 
-The resource type may provide shared productivity and cost information, allowing tasks and resources to be selected according to lowest cost and/or shortest duration. Given an IfcProduct of a particular IfcTypeProduct type, an IfcTypeProcess may be selected from those assigned to the product type using IfcRelAssignsToProduct, and an IfcTypeResource may be selected from those assigned to the process type using IfcRelAssignsToProcess. Then IfcTask and IfcConstructionResource occurrences may be instantiated from the type definitions, applying productivitity and rate information to assigned quantities to calculate _ResourceTime.ScheduleWork_. Task durations can then be calculated by dividing _ResourceTime.ScheduleWork_ by _ResourceTime.ScheduleUsage_.
+The resource type may provide shared productivity and cost information, allowing tasks and resources to be selected according to lowest cost and/or shortest duration. Given an IfcProduct of a particular IfcTypeProduct type, an IfcTypeProcess may be selected from those assigned to the product type using IfcRelAssignsToProduct, and an IfcTypeResource may be selected from those assigned to the process type using IfcRelAssignsToProcess. Then IfcTask and IfcConstructionResource occurrences may be instantiated from the type definitions, applying productivity and rate information to assigned quantities to calculate _ResourceTime.ScheduleWork_. Task durations can then be calculated by dividing _ResourceTime.ScheduleWork_ by _ResourceTime.ScheduleUsage_.
 
 ![Type Use Definition](../../../../figures/ifcconstructionresource-type.png "Figure 182 — Construction resource type use")
 
 ### Property Sets for Objects
 
-For time series properties as shown in Figure 180, each IfcTimeSeriesValue indicates a LIST of values, where the sequence of the value corresponds to the IfcCostValue at _IfcConstructionResource.CostRatesConsumed_. For example, if CostRatesConsumed has two IfcCostValue items in the LIST, "Standard" and "Overtime", then _IfcTimeSeriesValue(IfcDuration('T8H0M0S'),IfcDuration('T2H0M0S'))_ would indicate 8 hours at Standard rate and 2 hours at Overtime rate. If the list of values at _IfcTimeSeriesValue.ListValues_ is less than the size of CostRatesConsumed, then subsequent values are considered to be zero.
+For time series properties as shown in Figure 180, each IfcTimeSeriesValue indicates a LIST of values, where the sequence of the value corresponds to the IfcCostValue at _IfcConstructionResource.CostRatesConsumed_. For example, if CostRatesConsumed has two IfcCostValue items in the LIST, "Standard" and "Overtime", then _IfcTimeSeriesValue(IfcDuration('PT8H0M0S'),IfcDuration('PT2H0M0S'))_ would indicate 8 hours at Standard rate and 2 hours at Overtime rate. If the list of values at _IfcTimeSeriesValue.ListValues_ is less than the size of CostRatesConsumed, then subsequent values are considered to be zero.
 
 ![Time Series Use Definition](../../../../figures/ifcconstructionresource-timeseries.png "Figure 180 — Construction resource time series use")
 

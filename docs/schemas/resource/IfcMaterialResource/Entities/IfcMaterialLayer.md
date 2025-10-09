@@ -39,7 +39,7 @@ Indication of whether the material layer represents an air layer (or cavity).
 The name by which the material layer is known.
 
 ### Description
-Definition of the material layer in more descriptive terms than given by attributes Name or Category.
+Definition of the material layer in more descriptive terms than given by the attributes Name or Category.
 
 ### Category
 Category of the material layer, e.g. the role it has in the layer set it belongs to (such as 'load bearing', 'thermal insulation' etc.). The list of keywords might be extended by model view definitions, however the following keywords shall apply in general:

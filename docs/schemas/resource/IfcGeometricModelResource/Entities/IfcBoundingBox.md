@@ -21,10 +21,10 @@ As shown in Figure 1, the <em>IfcBoundingBox</em> is defined with its own locati
 Location of the bottom left corner (having the minimum values).
 
 ### XDim
-Length attribute (measured along the edge parallel to the X Axis)
+Length attribute (measured along the edge parallel to the X-axis)
 
 ### YDim
-Width attribute (measured along the edge parallel to the Y Axis)
+Width attribute (measured along the edge parallel to the Y-axis)
 
 ### ZDim
 Height attribute (measured along the edge parallel to the Z Axis).

@@ -1,6 +1,6 @@
 # IfcElectricFlowTreatmentDeviceType
 
-The flow treatment device type _IfcElectricFlowTreatmentDeviceType_ defines commonly shared information for occurrences of mobile telecommunications appliances. The set of shared information may include:
+The flow treatment device type _IfcElectricFlowTreatmentDeviceType_ defines commonly shared information for occurrences of electric flow treatment devices. The set of shared information may include:
 
 * common properties with shared property sets
 * common representations

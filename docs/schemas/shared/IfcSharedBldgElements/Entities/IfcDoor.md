@@ -81,9 +81,9 @@ There are different definitions in various countries on what a left opening or l
 
 | Opening | Definitions | US Mapping | German Mapping |
 | --- | --- | --- | --- |
-| ![fig 1](../../../../figures/ifcdoor-fig01.gif) | The door panel (for swinging doors) opens always into the direction of the positive Y axis of the local placement. The determination of whether the door opens to the left or to the right is done at the level of the _IfcDoorType_. Here it is a left side opening door given by _IfcDoorType.OperationType_ = SingleSwingLeft | LEFT HAND (LH) | DIN-R (right hung) |
+| ![fig 1](../../../../figures/ifcdoor-fig01.gif) | The door panel (for swinging doors) opens always into the direction of the positive Y-axis of the local placement. The determination of whether the door opens to the left or to the right is done at the level of the _IfcDoorType_. Here it is a left side opening door given by _IfcDoorType.OperationType_ = SingleSwingLeft | LEFT HAND (LH) | DIN-R (right hung) |
 | ![fig 2](../../../../figures/ifcdoor-fig02.gif) | If the door should open to the other side, then the local placement has to be changed. It is still a left side opening door, given by _IfcDoorType_._OperationType_ = SingleSwingLeft | RIGHT HAND REVERSE (RHR) | DIN-R (right hung) |
-| ![fig 3](../../../../figures/ifcdoor-fig03.gif) | If the door panel (for swinging doors) opens to the right, a separate door style needs to be used (here _IfcDoorType_._OperationType_ = SingleSwingRight) and it always opens into the direction of the positive Y axis of the local placement. | RIGHT HAND (RH) | DIN-L (left hung) |
+| ![fig 3](../../../../figures/ifcdoor-fig03.gif) | If the door panel (for swinging doors) opens to the right, a separate door style needs to be used (here _IfcDoorType_._OperationType_ = SingleSwingRight) and it always opens into the direction of the positive Y-axis of the local placement. | RIGHT HAND (RH) | DIN-L (left hung) |
 | ![fig 4](../../../../figures/ifcdoor-fig04.gif) | If the door panel (for swinging doors) opens to the right, and into the opposite direction, the local placement of the door needs to change. The door style is given by _IfcDoorType_._OperationType_ = SingleSwingRight. | LEFT HAND REVERSE (LHR) | DIN-L (left hung) |
 
 Table 228 — Mappings of openings to local standards
@@ -133,7 +133,7 @@ Figure 229 illustrates applying the door lining parameters to the door profile s
 * _IfcDoorLiningProperties.LiningOffset_ distance along the positive y direction to where the _LiningDepth_ applies.
 * _IfcDoorLiningProperties.ThresholdThickness_ starting at the bottom edge of the rectangle into the inner side of the rectangle
 * _IfcDoorLiningProperties.ThresholdDepth_ starting at distance defined by _LiningOffset_ going into the positive y direction.
-* _IfcDoorLiningProperties.TransomOffset_ starting at the bottom edge of the rectangle (along local x axis) into the inner side of the rectangle, distance provided as percentage of overall height. Distance to the centre line of the transom.
+* _IfcDoorLiningProperties.TransomOffset_ starting at the bottom edge of the rectangle (along local X-axis) into the inner side of the rectangle, distance provided as percentage of overall height. Distance to the centre line of the transom.
 
 ![standard door](../../../../figures/ifcdoorstandardcase-01.png)
 

@@ -30,10 +30,10 @@ By using offsets of the position location, the parameterized profile can be posi
 ## Attributes
 
 ### BottomFlangeWidth
-Extent of the bottom flange, defined parallel to the x axis of the position coordinate system.
+Extent of the bottom flange, defined parallel to the X-axis of the position coordinate system.
 
 ### OverallDepth
-Total extent of the depth, defined parallel to the y axis of the position coordinate system.
+Total extent of the depth, defined parallel to the Y-axis of the position coordinate system.
 
 ### WebThickness
 Thickness of the web of the I-shape. The web is centred on the x-axis and the y-axis of the position coordinate system.
@@ -45,7 +45,7 @@ Flange thickness of the bottom flange.
 The fillet between the web and the bottom flange. 0 if sharp-edged, omitted if unknown.
 
 ### TopFlangeWidth
-Extent of the top flange, defined parallel to the x axis of the position coordinate system.
+Extent of the top flange, defined parallel to the X-axis of the position coordinate system.
 
 ### TopFlangeThickness
 Flange thickness of the top flange. This attribute is formally optional for historic reasons only. Whenever the flange thickness is known, it shall be provided by value.

@@ -54,7 +54,7 @@ _Structural point items_
 _Structural curve items_
 
 * The u parameter origin of the reference curve in the representation is the origin of the local coordinate system of the structural item.
-* The local x axis is parallel with the tangent on the curve and directed like the u parameter direction.
+* The local X-axis is parallel with the tangent on the curve and directed like the u parameter direction.
 * The local y and z axes are oriented according to definitions at the respective subtypes of _IfcStructuralItem_.
 
 _Structural surface items_

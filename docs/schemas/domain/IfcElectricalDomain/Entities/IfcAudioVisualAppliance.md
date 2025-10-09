@@ -57,7 +57,7 @@ Receives electrical power.
 
 Input audio.
 
-#### SOURCE_Speakers_AMPLIFIER_ELECTROACCOUSTIC
+#### SOURCE_Speakers_AMPLIFIER_ELECTROACOUSTIC
 
 Audio speaker(s), which may be aggregated for separate speaker channels.
 
@@ -201,15 +201,15 @@ Output audio/video zone.
 
 Output audio/video zone.
 
-#### SOURCE_Speakers1_RECEIVER_ELECTROACCOUSTIC
+#### SOURCE_Speakers1_RECEIVER_ELECTROACOUSTIC
 
 Audio speaker(s), which may be aggregated for separate speaker channels.
 
-#### SOURCE_Speakers2_RECEIVER_ELECTROACCOUSTIC
+#### SOURCE_Speakers2_RECEIVER_ELECTROACOUSTIC
 
 Audio speaker(s), which may be aggregated for separate speaker channels.
 
-#### SINK_Input_SPEAKER_ELECTROACCOUSTIC
+#### SINK_Input_SPEAKER_ELECTROACOUSTIC
 
 Amplified audio input.
 

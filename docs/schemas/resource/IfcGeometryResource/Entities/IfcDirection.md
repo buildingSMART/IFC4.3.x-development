@@ -16,7 +16,7 @@ The _IfcDirection_ provides a direction in two or three dimensional space depend
 ## Attributes
 
 ### DirectionRatios
-The components in the direction of X axis (DirectionRatios[1]), of Y axis (DirectionRatios[2]), and of Z axis (DirectionRatios[3])
+The components in the direction of X-axis (DirectionRatios[1]), of Y-axis (DirectionRatios[2]), and of Z axis (DirectionRatios[3])
 
 ### Dim
 The space dimensionality of this class, defined by the number of real in the list of DirectionRatios.

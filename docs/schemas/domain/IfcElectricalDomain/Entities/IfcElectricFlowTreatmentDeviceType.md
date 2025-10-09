@@ -9,7 +9,7 @@ The flow treatment device type _IfcElectricFlowTreatmentDeviceType_ defines comm
 * common ports
 <!-- end of short definition -->
 
-lectric flow treatment device type specification indicating the specific product information that is common to all occurrences of that product type. The _IfcElectricFlowTreatmentDeviceType_ may be declared within _IfcProject_ or _IfcProjectLibrary_ using _IfcRelDeclares_ and may be exchanged with or without occurrences of the type. Occurrences of _IfcElectricFlowTreatmentDeviceType_ are represented by instances of _IfcElectricFlowTreatmentDevice_. Refer to the documentation at _IfcElectricFlowTreatmentDevice_ for supported property sets, materials, composition, and ports.
+It is used to define an electric flow treatment device type specification indicating the specific product information that is common to all occurrences of that product type. The _IfcElectricFlowTreatmentDeviceType_ may be declared within _IfcProject_ or _IfcProjectLibrary_ using _IfcRelDeclares_ and may be exchanged with or without occurrences of the type. Occurrences of _IfcElectricFlowTreatmentDeviceType_ are represented by instances of _IfcElectricFlowTreatmentDevice_. Refer to the documentation at _IfcElectricFlowTreatmentDevice_ for supported property sets, materials, composition, and ports.
 
 ## Attributes
 

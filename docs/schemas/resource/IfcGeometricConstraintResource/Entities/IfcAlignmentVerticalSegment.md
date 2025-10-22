@@ -7,9 +7,9 @@ The vertical alignment is defined by segments that connects end-to-start. The ve
 
 The following vertical segment types are defined:
 
-* line segment - _IfcAlignmentVerticalSegmentTypeEnum_ .LINE.
-* circular arc segment - _IfcAlignmentVerticalSegmentTypeEnum_ .ARC.
-* parabolic arc segment - _IfcAlignmentVerticalSegmentTypeEnum_ .PARABOLICARC. which can describe symmetric parabolas, unsymmetric parabolas can be created by defining two symmetric parabolas segments
+* line segment - _IfcAlignmentVerticalSegmentTypeEnum_ .CONSTANTGRADIENT.
+* circular arc segment - _IfcAlignmentVerticalSegmentTypeEnum_ .CIRCULARARC.
+* parabolic arc segment - _IfcAlignmentVerticalSegmentTypeEnum_ .PARABOLICARC. which can describe symmetric parabolas. Unsymmetric parabolas can be created by defining two symmetric parabolas segments
 * transition segment with linear curvature variation - _IfcAlignmentVerticalSegmentTypeEnum_ .CLOTHOID.
 
 For each vertical segment, the following non-redundant information is provided:

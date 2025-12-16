@@ -27,7 +27,7 @@ An IfcConversionBasedUnit is used to define a unit that has a conversion rate to
 |'gallon US'|Volume measure equal to 0.003785 cubic meters|
 |'degree'|Plane angle measure equal to π/180 rad|
 |'ounce'|Mass measure equal to 28.35 g|
-|'pound'|Mass measure equal to 0.454 kg|
+|'pound'|Mass measure equal to 0.45359237 kg|
 |'ton UK'|Mass measure equal to 1016.0469088 kg, also known as long ton, gross ton, shipper's ton|
 |'ton US'|Mass measure equal to 907.18474 kg, also known as short ton, net ton|
 |'lbf'|Force measure equal to 4.4482216153 N, also known as pound-force|

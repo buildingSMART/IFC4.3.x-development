@@ -14,7 +14,9 @@
 {% endif %}
 
 {% if diagram %}
-{{ diagram | safe }}
+<div class="concept-diagram-canvas" data-diagram="concept">
+    {{ diagram | safe }}
+</div>
 {% endif %}
 
 {{ tables | safe }}

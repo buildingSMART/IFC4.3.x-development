@@ -8,26 +8,26 @@ An IfcConversionBasedUnit is used to define a unit that has a conversion rate to
 |'inch'|Length measure equal to 25.4 mm|
 |'foot'|Length measure equal to 304.8 mm|
 |'US survey foot'|Length measure equal to 304.80060960122 mm (i.e. the approximate value of 1200/3937 meters)|
-|'yard'|Length measure equal to 914 mm|
-|'mile'|Length measure equal to 1609 m|
-|'square inch'|Area measure equal to 0.0006452 square meters|
-|'square foot'|Area measure equal to 0.09290 square meters|
+|'yard'|Length measure equal to 914.4 mm|
+|'mile'|Length measure equal to 1609.344 m|
+|'square inch'|Area measure equal to 0.00064516 square meters|
+|'square foot'|Area measure equal to 0.09290304 square meters|
 |'square yard'|Area measure equal to 0.83612736 square meters|
-|'acre'|Area measure equal to 4046.86 square meters|
-|'square mile'|Area measure equal to 2 588 881 square meters|
-|'cubic inch'|Volume measure equal to 0.00001639 cubic meters|
-|'cubic foot'|Volume measure equal to 0.02832 cubic meters|
-|'cubic yard'|Volume measure equal to 0.7636 cubic meters|
+|'acre'|Area measure equal to 4046.873 square meters|
+|'square mile'|Area measure equal to 2589988 square meters|
+|'cubic inch'|Volume measure equal to 0.00001638706 cubic meters|
+|'cubic foot'|Volume measure equal to 0.028316846592 cubic meters|
+|'cubic yard'|Volume measure equal to 0.7645549 cubic meters|
 |'litre'|Volume measure equal to 0.001 cubic meters|
 |'fluid ounce UK'|Volume measure equal to 0.0000284130625 cubic meters|
 |'fluid ounce US'|Volume measure equal to 0.00002957353 cubic meters|
 |'pint UK'|Volume measure equal to 0.000568 cubic meters|
-|'pint US'|Volume measure equal to 0.000473 cubic meters|
+|'pint US'|Volume measure equal to 0.0004731765 cubic meters|
 |'gallon UK'|Volume measure equal to 0.004546 cubic meters|
-|'gallon US'|Volume measure equal to 0.003785 cubic meters|
+|'gallon US'|Volume measure equal to 0.003785412 cubic meters|
 |'degree'|Plane angle measure equal to π/180 rad|
-|'ounce'|Mass measure equal to 28.35 g|
-|'pound'|Mass measure equal to 0.454 kg|
+|'ounce'|Mass measure equal to 28.349523125 g|
+|'pound'|Mass measure equal to 0.45359237 kg|
 |'ton UK'|Mass measure equal to 1016.0469088 kg, also known as long ton, gross ton, shipper's ton|
 |'ton US'|Mass measure equal to 907.18474 kg, also known as short ton, net ton|
 |'lbf'|Force measure equal to 4.4482216153 N, also known as pound-force|

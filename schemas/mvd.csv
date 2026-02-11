@@ -142,7 +142,7 @@ empty,117,2,4.1.7   Product Shape,,
 ,140,6,4.1.7.1.4.2.4   Body SectionedSolidHorizontal,,AbV
 ,141,5,4.1.7.1.4.3   Body Brep Geometry,RV,AbV
 ,142,5,4.1.7.1.4.4   Body CSG Geometry,,
-,143,5,4.1.7.1.4.5   Body Clipping Geometry,,AbV
+,143,5,4.1.7.1.4.5   Body Clipping Geometry,,
 ,144,5,4.1.7.1.4.6   Body SurfaceModel Geometry,,AbV
 ,145,5,4.1.7.1.4.7   Body SurfaceOrSolidModel Geometry,,AbV
 ,146,5,4.1.7.1.4.8   Body SweptSolid Geometry,RV,AbV

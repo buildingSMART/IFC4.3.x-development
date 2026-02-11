@@ -207,7 +207,128 @@ function setupHighlightJS() {
     hljs.initLineNumbersOnLoad();
 }
 
+function setupConceptDiagramCanvas() {
+    let canvases = document.querySelectorAll('.concept-diagram-canvas');
+    canvases.forEach((canvas) => {
+        let svg = canvas.querySelector('svg');
+        if (!svg) {
+            return;
+        }
 
+        let stage = document.createElement('div');
+        stage.className = 'concept-diagram-stage';
+        canvas.appendChild(stage);
+        stage.appendChild(svg);
+
+        let state = {
+            scale: 1,
+            x: 0,
+            y: 0
+        };
+
+        let clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+
+        let getSvgSize = () => {
+            let width = parseFloat(svg.getAttribute('width'));
+            let height = parseFloat(svg.getAttribute('height'));
+            if (Number.isNaN(width) || Number.isNaN(height)) {
+                if (svg.viewBox && svg.viewBox.baseVal) {
+                    width = svg.viewBox.baseVal.width;
+                    height = svg.viewBox.baseVal.height;
+                }
+            }
+            return {width, height};
+        };
+
+        let applyTransform = () => {
+            stage.style.transform = `translate(${state.x}px, ${state.y}px) scale(${state.scale})`;
+        };
+
+        let fitToCanvas = () => {
+            let rect = canvas.getBoundingClientRect();
+            let size = getSvgSize();
+            if (!size.width || !size.height || !rect.width || !rect.height) {
+                applyTransform();
+                return;
+            }
+            let scale = Math.min(rect.width / size.width, rect.height / size.height, 1);
+            state.scale = scale;
+            state.x = (rect.width - size.width * scale) / 2;
+            state.y = (rect.height - size.height * scale) / 2;
+            applyTransform();
+        };
+
+        fitToCanvas();
+
+        let isPanning = false;
+        let hasMoved = false;
+        let startX = 0;
+        let startY = 0;
+        let originX = 0;
+        let originY = 0;
+
+        canvas.addEventListener('mousedown', (event) => {
+            if (event.button !== 0) {
+                return;
+            }
+            isPanning = true;
+            hasMoved = false;
+            startX = event.clientX;
+            startY = event.clientY;
+            originX = state.x;
+            originY = state.y;
+            canvas.classList.add('is-panning');
+        });
+
+        window.addEventListener('mousemove', (event) => {
+            if (!isPanning) {
+                return;
+            }
+            let dx = event.clientX - startX;
+            let dy = event.clientY - startY;
+            if (Math.abs(dx) > 3 || Math.abs(dy) > 3) {
+                hasMoved = true;
+            }
+            state.x = originX + dx;
+            state.y = originY + dy;
+            applyTransform();
+        });
+
+        window.addEventListener('mouseup', () => {
+            if (!isPanning) {
+                return;
+            }
+            isPanning = false;
+            canvas.classList.remove('is-panning');
+        });
+
+        canvas.addEventListener('click', (event) => {
+            if (hasMoved) {
+                event.preventDefault();
+                event.stopPropagation();
+                hasMoved = false;
+            }
+        });
+
+        canvas.addEventListener('wheel', (event) => {
+            event.preventDefault();
+            let rect = canvas.getBoundingClientRect();
+            let cx = event.clientX - rect.left;
+            let cy = event.clientY - rect.top;
+            let zoomFactor = event.deltaY > 0 ? 0.9 : 1.1;
+            let nextScale = clamp(state.scale * zoomFactor, 0.2, 3);
+            if (nextScale === state.scale) {
+                return;
+            }
+            let wx = (cx - state.x) / state.scale;
+            let wy = (cy - state.y) / state.scale;
+            state.scale = nextScale;
+            state.x = cx - wx * state.scale;
+            state.y = cy - wy * state.scale;
+            applyTransform();
+        }, { passive: false });
+    });
+}
 
 document.addEventListener('DOMContentLoaded', (event) => {
 Array.from(document.querySelectorAll('a')).concat(Array.from(document.querySelectorAll('em'))).forEach((a) => {
@@ -332,6 +453,7 @@ fetch(`https://api.github.com/repos/${window.appconfig.repo}/commits?path=${wind
 setupMathJax();
 setupHighlightJS();
 setupInheritanceToggle();
+setupConceptDiagramCanvas();
 if (!document.body.classList.contains('terms-and-definitions') && !document.body.classList.contains('cover')) {
     makeHeadersCollapsible();
 }

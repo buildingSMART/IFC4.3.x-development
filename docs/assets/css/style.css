@@ -110,6 +110,33 @@ svg text {
 svg g.edge text {
     font-size: 60%;
 }
+
+/* Concept diagram canvas */
+.concept-diagram-canvas {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    min-height: 420px;
+    overflow: hidden;
+    border: 1px solid var(--secondary-border-color);
+    border-radius: var(--universal-border-radius);
+    background: #fafafa;
+    cursor: grab;
+    touch-action: none;
+}
+.concept-diagram-canvas.is-panning {
+    cursor: grabbing;
+}
+.concept-diagram-canvas .concept-diagram-stage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: 0 0;
+}
+.concept-diagram-canvas svg {
+    display: block;
+}
+
 /* Make the concept table borders lighter */
 svg g.node polygon[stroke="black"] {
     stroke: var(--secondary-border-color);

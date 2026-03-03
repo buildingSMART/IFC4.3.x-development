@@ -33,6 +33,7 @@ PointCloud | 3 dimensional points represented by a point list. DEPRECATED. Use '
 Curve | 2 or 3 dimensional curve(s)
 Curve2D | 2 dimensional curve(s)
 Curve3D | 3 dimensional curve(s)
+Segment | partial geometry of curves that shall not be rendered separately from the main curve
 Surface | 2 or 3 dimensional surface(s)
 Surface2D | 2 dimensional surface(s) (a region on ground view)
 Surface3D | 3 dimensional surface(s)
@@ -40,19 +41,19 @@ SectionedSurface | swept surface(s) created by sweeping open profiles along a di
 FillArea | 2D region(s) represented as a filled area (hatching)
 Text | text defined as text literals
 AdvancedSurface | 3 dimensional b-spline surface(s)
+Annotation2D | points, curves (2 or 3 dimensional), hatches and text (2 dimensional)
 GeometricSet | points, curves, surfaces (2 or 3 dimensional)
 GeometricCurveSet | points, curves (2 or 3 dimensional)
-Annotation2D | points, curves (2 or 3 dimensional), hatches and text (2 dimensional)
-SurfaceModel | face based and shell based surface model(s), or tessellated surface model(s)
 Tessellation | Tessellated surface representation(s) only
-Segment | partial geometry of curves that shall not be rendered separately from the main curve
-SolidModel | including swept solid, Boolean results and Brep bodies; more specific types are:
+SurfaceOrSolidModel | Tessellated surface model(s), shell based surface model(s), face based surface model(s), or solid model(s)
+SurfaceModel | face based and shell based surface model(s), or tessellated surface model(s)
+SolidModel | including swept solid, Boolean results and Brep bodies
 SweptSolid | swept area solids, by extrusion and revolution, excluding tapered sweeps
 AdvancedSweptSolid | swept area solids created by sweeping a profile along a directrix, and tapered sweeps
-Brep | Faceted Brep's with and without voids
-AdvancedBrep | Brep's based on advanced faces, with b-spline surface geometry, with and without voids
 CSG | Boolean results of operations between solid models, half spaces and Boolean results
 Clipping | Boolean differences between swept area solids, half spaces and Boolean results
+Brep | Faceted Brep's with and without voids
+AdvancedBrep | Brep's based on advanced faces, with b-spline surface geometry, with and without voids
 BoundingBox | simplistic 3D representation by a bounding box
 SectionedSpine | cross section based representation of a spine curve and planar cross sections. It can represent a surface or a solid and the interpolations of the between the cross sections is not defined
 LightSource | light source with (depending on type) position, orientation, light colour, intensity and attenuation

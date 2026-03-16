@@ -25,12 +25,12 @@ Name of the material.
 > NOTE Material grade may have different meaning in different view definitions, e.g. strength grade for structural design and analysis, or visible appearance grade in architectural application. Also, more elaborate material grade definition may be associated as classification via inverse attribute _HasExternalReferences_.
 
 ### Description
-Definition of the material in more descriptive terms than given by attributes _Name_ or _Category_.
+Definition of the material in more descriptive terms than given by the attributes _Name_ or _Category_.
 { .change-ifc2x4}
 > IFC4 CHANGE The attribute has been added at the end of attribute list.
 
 ### Category
-Definition of the category (group or type) of material, in more general terms than given by attribute _Name_.
+Definition of the category (group or type) of material, in more general terms than given by the attribute _Name_.
 
 It is recommended to use common terms for the material category, the following list constitutes such a recommendation: 'concrete', 'steel', 'aluminium', 'block', 'brick', 'stone', 'wood', 'glass', 'gypsum', 'plastic', 'earth'.
 

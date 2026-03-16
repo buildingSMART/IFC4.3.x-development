@@ -3,7 +3,7 @@
 The _IfcMaterialLayerSet_ is a designation by which materials of an element constructed of a number of material layers is known and through which the relative positioning of individual layers can be expressed.
 <!-- end of short definition -->
 
-The Material Layer Set Base (MlsBase) describes the imaginary axis along which the material layers are positioned.
+The Material Layer Set Base (MlsBase) describes the imaginarY-axis along which the material layers are positioned.
 
 * In case of assigning the _IfcMaterialLayerSet_ directly to an element or element type, the individual layers are stacked according to their position within the list of _MaterialLayers_ without providing information on how to spatially relate the material layer information to the shape representation of the element or element type.
 * In case of assigning the _IfcMaterialLayerSet_ through an _IfcMaterialLayerSetUsage_ to an element, the MlsBase is positioned along the reference axis or reference plane of the element. An offset from the reference axis or plane to MlsBase is supported by _IfcMaterialLayerSetUsage_ which combines layers and an offset. Offsets from element edges are supported by the subtype _IfcMaterialLayerWithOffsets_. The positive _LayerSetDirection_ (MlsDirection) describes the direction by which the individual material layers are stacked. The _IfcMaterialLayer_'s are stacked with no gap. Gaps within a material layer set are expressed as layers by themselves.

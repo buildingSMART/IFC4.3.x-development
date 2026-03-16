@@ -29,7 +29,7 @@ Texture definition
 
 On each side face, textures are aligned facing upright. On the top and bottom faces, textures are aligned facing front-to-back. Textures are stretched or repeated to the extent of each face according to _RepeatS_ and _RepeatT_.
 
-Figure 2 illustrates default texture mapping with a clamped texture (RepeatS=False and RepeatT=False). The image on the left shows the texture where the S axis points to the right and the T axis points up. The image on the right shows the texture applied to the geometry where the X axis points back to the right, the Y axis points back to the left, and the Z axis points up.
+Figure 2 illustrates default texture mapping with a clamped texture (RepeatS=False and RepeatT=False). The image on the left shows the texture where the S axis points to the right and the T axis points up. The image on the right shows the texture applied to the geometry where the X-axis points back to the right, the Y-axis points back to the left, and the Z axis points up.
 
 
 
@@ -53,10 +53,10 @@ Table 3 — Texture parameters
 ## Attributes
 
 ### XLength
-The size of the block along the placement X axis. It is provided by the inherited axis placement through _SELF\IfcCsgPrimitive3D.Position.P[1]_.
+The size of the block along the placement X-axis. It is provided by the inherited axis placement through _SELF\IfcCsgPrimitive3D.Position.P[1]_.
 
 ### YLength
-The size of the block along the placement Y axis. It is provided by the inherited axis placement through _SELF\IfcCsgPrimitive3D.Position.P[2]_.
+The size of the block along the placement Y-axis. It is provided by the inherited axis placement through _SELF\IfcCsgPrimitive3D.Position.P[2]_.
 
 ### ZLength
 The size of the block along the placement Z axis. It is provided by the inherited axis placement through _SELF\IfcCsgPrimitive3D.Position.P[3]_.

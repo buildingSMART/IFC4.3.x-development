@@ -11,7 +11,7 @@ The _Directrix_ and the _ReferenceSurface_ are positioned within the object coor
 
 > EXAMPLE The reference surface is any surface (plane, cylindric, composite) situated in 3D space and positioned in the object coordinate system. In most cases, it is a plane or a surface of extrusion. The directrix lies on the surface, in case of a plane it might be defined as a polyline or composite curve, in case of a cylindrical or other non-planer reference surface it might often be defined as a p-curve on this reference surface.
 
-At any point of the directrix, a plane can be constructed. The origin of the position coordinate system of the implicit plane lies at the directrix. The Axis3 (the z-axis, or normal) of the position coordinate system is identical to the tangent of the directrix at this point, the Axis1 (the x axis, or u) of the position coordinate system is identical to the normal of the reference surface at this point. The Axis2 (the y axis, or v) is constructed.
+At any point of the directrix, a plane can be constructed. The origin of the position coordinate system of the implicit plane lies at the directrix. The Axis3 (the z-axis, or normal) of the position coordinate system is identical to the tangent of the directrix at this point, the Axis1 (the X-axis, or u) of the position coordinate system is identical to the normal of the reference surface at this point. The Axis2 (the Y-axis, or v) is constructed.
 
 The resulting body of the swept solid is not repositioned if the inherited _Position_ attribute is omitted. Otherwise the coordinate system established by the _Position_ attribute is used to reposition the body relative to the object coordinate system.
 

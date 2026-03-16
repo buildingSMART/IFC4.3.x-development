@@ -8,10 +8,10 @@ Properties of the window lining.
 ## Comments
 
 ### LiningDepth
-For a window, it is the depth of the window lining, measured perpendicularly to window elevation plane.
+For a window, it is the depth of the window lining, measured perpendicularly to the window elevation plane.
 
 ### LiningOffset
-For a window, it is the offset of the window lining, given as distance along the y axis of the local placement (perpendicular to the window plane).
+For a window, it is the offset of the window lining, given as distance along the y-axis of the local placement (perpendicular to the window plane).
 
 ### LiningThickness
 For a window, it is the thickness of the window lining as explained in the figure below. If _LiningThickness_ value is 0. (zero) it denotes a window without a lining (all other lining parameters shall be set to NIL in this case). If the _LiningThickness_ is NIL it denotes that the value is not available.

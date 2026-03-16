@@ -28,27 +28,27 @@ With _IfcMapConversionScaled_, additional **different factors** multiply x, y an
 
 ### Eastings
 Specifies the location along the easting of the coordinate system of the target map coordinate reference system.
-> NOTE for right-handed Cartesian coordinate systems this would establish the location along the x axis.
+> NOTE for right-handed Cartesian coordinate systems this would establish the location along the X-axis.
 
 ### Northings
 Specifies the location along the northing of the coordinate system of the target map coordinate reference system.
-> NOTE for right-handed Cartesian coordinate systems this would establish the location along the y axis
+> NOTE for right-handed Cartesian coordinate systems this would establish the location along the Y-axis
 
 ### OrthogonalHeight
 Orthogonal height relative to the vertical datum specified.
 > NOTE for right-handed Cartesian coordinate systems this would establish the location along the z axis
 
 ### XAxisAbscissa
-Specifies the value along the easting axis of the end point of a vector indicating the position of the local x axis of the engineering coordinate reference system.
-> NOTE for right-handed Cartesian coordinate systems this would establish the location along the x axis
+Specifies the value along the easting axis of the end point of a vector indicating the position of the local X-axis of the engineering coordinate reference system.
+> NOTE for right-handed Cartesian coordinate systems this would establish the location along the X-axis
 
-> NOTE together with the _XAxisOrdinate_ it provides the direction of the local x axis within the horizontal plane of the map coordinate system
+> NOTE together with the _XAxisOrdinate_ it provides the direction of the local X-axis within the horizontal plane of the map coordinate system
 
 ### XAxisOrdinate
-Specifies the value along the northing axis of the end point of a vector indicating the position of the local x axis of the engineering coordinate reference system.
-> NOTE for right-handed Cartesian coordinate systems this would establish the location along the y axis
+Specifies the value along the northing axis of the end point of a vector indicating the position of the local X-axis of the engineering coordinate reference system.
+> NOTE for right-handed Cartesian coordinate systems this would establish the location along the Y-axis
 
-_XAxisAbscissa_ it provides the direction of the local x axis within the horizontal plane of the map coordinate system.
+_XAxisAbscissa_ it provides the direction of the local X-axis within the horizontal plane of the map coordinate system.
 
 ### Scale
 Scale to be used, when the units of the CRS are not identical to the units of the engineering coordinate system. If omitted, the value of 1.0 is assumed.

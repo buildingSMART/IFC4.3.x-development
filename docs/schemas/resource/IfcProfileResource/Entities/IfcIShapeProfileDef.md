@@ -47,10 +47,10 @@ and flanges.
 ## Attributes
 
 ### OverallWidth
-Total extent of the width, defined parallel to the x axis of the position coordinate system.
+Total extent of the width, defined parallel to the X-axis of the position coordinate system.
 
 ### OverallDepth
-Total extent of the depth, defined parallel to the y axis of the position coordinate system.
+Total extent of the depth, defined parallel to the Y-axis of the position coordinate system.
 
 ### WebThickness
 Thickness of the web of the I-shape. The web is centred on the x-axis and the y-axis of the position coordinate system.

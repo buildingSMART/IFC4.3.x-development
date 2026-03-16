@@ -20,7 +20,7 @@ On each triangular side face, textures are aligned facing upright. Textures are 
 
 On the bottom face, textures are aligned facing front-to-back.
 
-Figure 2 illustrates default texture mapping with a clamped texture (RepeatS=False and RepeatT=False). The image on the left shows the texture where the S axis points to the right and the T axis points up. The image on the right shows the texture applied to the geometry where the X axis points back to the right, the Y axis points back to the left, and the Z axis points up.
+Figure 2 illustrates default texture mapping with a clamped texture (RepeatS=False and RepeatT=False). The image on the left shows the texture where the S axis points to the right and the T axis points up. The image on the right shows the texture applied to the geometry where the X-axis points back to the right, the Y-axis points back to the left, and the Z axis points up.
 
 { .gridtable}
 
@@ -41,10 +41,10 @@ Table 3 — Texture parameters
 ## Attributes
 
 ### XLength
-The length of the base measured along the placement X axis. It is provided by the inherited axis placement through _SELF\IfcCsgPrimitive3D.Position.P[1]_.
+The length of the base measured along the placement X-axis. It is provided by the inherited axis placement through _SELF\IfcCsgPrimitive3D.Position.P[1]_.
 
 ### YLength
-The length of the base measured along the placement Y axis. It is provided by the inherited axis placement through _SELF\IfcCsgPrimitive3D.Position.P[2]_.
+The length of the base measured along the placement Y-axis. It is provided by the inherited axis placement through _SELF\IfcCsgPrimitive3D.Position.P[2]_.
 
 ### Height
 The height of the apex above the plane of the base, measured in the direction of the placement Z axis, the _SELF\IfcCsgPrimitive3D.Position.P[2]_.

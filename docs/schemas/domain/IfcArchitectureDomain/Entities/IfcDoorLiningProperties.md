@@ -1,6 +1,6 @@
 # IfcDoorLiningProperties
 
-The door lining is the frame which enables the door leaf to be fixed in position. The door lining is used to hang the door leaf. The parameters of the door lining define the geometrically relevant parameter of the lining.
+The door lining is the frame which enables the door leaf to be fixed in position. The door lining is used to hang the door leaf. The parameters of the door lining define the geometrically relevant parameters of the lining.
 <!-- end of short definition -->
 
 > NOTE The _IfcDoorLiningProperties_ shall only be applied by the receiving application to parametrically define the 3D shape of a door, if the attribute _IfcDoorType_.ParameterTakesPrecedence is set TRUE.
@@ -24,9 +24,9 @@ The lining is applied to the left, right and upper side of the opening reveal. T
 
 The lining can only cover part of the opening reveal.
 
- * LiningOffset, given if lining edge has an offset to the x axis of the local placement.
+ * LiningOffset, given if the lining edge has an offset to the X-axis of the local placement.
 
-> NOTE In addition to the <em>LiningOffset</em>, the local placement of the <em>IfcDoor</em> can already have an offset to the wall edge and thereby shift the lining along the y axis. The actual position of the lining is calculated from the origin of the local placement along the positive y axis with the distance given by <em>LiningOffset</em>.
+> NOTE In addition to the <em>LiningOffset</em>, the local placement of the <em>IfcDoor</em> can already have an offset to the wall edge and thereby shift the lining along the Y-axis. The actual position of the lining is calculated from the origin of the local placement along the positive Y-axis with the distance given by <em>LiningOffset</em>.
 
 ![lining 3](../../../../figures/ifcdoorliningproperties-fig03.png)
 
@@ -41,13 +41,13 @@ The lining may include a threshold, which covers the bottom side of the opening.
 
  * ThresholdDepth, if omitted, equal to wall thickness - this only takes effect if a value for <em>ThresholdThickness</em> is given. If both parameters are not given, then there is no threshold.
  * ThresholdThickness
- * ThresholdOffset (not shown in figure), given, if the threshold edge has an offset to the x axis of the local placement.
+ * ThresholdOffset (not shown in figure), given, if the threshold edge has an offset to the X-axis of the local placement.
 
 ![lining 5](../../../../figures/ifcdoorliningproperties-fig05.png)
 
-The lining may have a transom which separates the door panel from a window panel. The transom, if given, is defined by:
+The lining may have a transom, which separates the door panel from a window panel. The transom, if given, is defined by:
 
- * TransomOffset, a parallel edge to the x axis of the local placement
+ * TransomOffset, a parallel edge to the X-axis of the local placement
  * TransomThickness
 
 The depth of the transom is identical to the depth of the lining and not given as separate parameter.
@@ -89,10 +89,10 @@ If the _TransomThickness_ is set to zero (and the _TransomOffset_ set to a posit
 Offset of the transom (if given) which divides the door leaf from a glazing (or window) above. The offset is given from the bottom of the door opening.
 
 ### LiningOffset
-Offset (dimension in plane perpendicular to door leaf) of the door lining. The offset is given as distance to the x axis of the local placement.
+Offset (dimension in plane perpendicular to door leaf) of the door lining. The offset is given as distance to the X-axis of the local placement.
 
 ### ThresholdOffset
-Offset (dimension in plane perpendicular to door leaf) of the door threshold. The offset is given as distance to the x axis of the local placement. Only given if the door lining includes a threshold and the parameter is known.
+Offset (dimension in plane perpendicular to door leaf) of the door threshold. The offset is given as distance to the X-axis of the local placement. Only given if the door lining includes a threshold and the parameter is known.
 
 ### CasingThickness
 Thickness of the casing (dimension in plane of the door leaf). If given it is applied equally to all four sides of the adjacent wall.
@@ -118,24 +118,24 @@ Offset between the lining and the door panel measured along the y-axis of the lo
 ## Formal Propositions
 
 ### WR31
-Either both parameter, _LiningDepth_ and _LiningThickness_ are given, or only the _LiningThickness_, then the _LiningDepth_ is variable. It is not valid to only assert the _LiningDepth_.
+Either both parameter,, _LiningDepth_ and _LiningThickness_ are given, or only the _LiningThickness_, then the _LiningDepth_ is variable. It is not valid to only assert the _LiningDepth_.
 > NOTE A _LiningDepth_ with NIL ($) value indicates a door style with a lining equal to the wall thickness.
 
 { .change-ifc2x4}
 > IFC4 CHANGE Rule corrected.
 
 ### WR32
-Either both parameter, _ThresholdDepth_ and _ThresholdThickness_ are given, or only the _ThresholdThickness_, then the _ThresholdDepth_ is variable. It is not valid to only assert the _ThresholdDepth_.
+Either both parameter,, _ThresholdDepth_ and _ThresholdThickness_ are given, or only the _ThresholdThickness_, then the _ThresholdDepth_ is variable. It is not valid to only assert the _ThresholdDepth_.
 > NOTE A _ThresholdDepth_ with NIL ($) value indicates a door style with a lining equal to the wall thickness.
 
 { .change-ifc2x4}
 > IFC4 CHANGE Rule corrected.
 
 ### WR33
-Either both parameter, _TransomDepth_ and _TransomThickness_ are given, or none of them.
+Either both parameter,, _TransomDepth_ and _TransomThickness_ are given, or none of them.
 
 ### WR34
-Either both parameter, the _CasingDepth_ and the _CasingThickness_, are given, or none of them.
+Either both parameter,, the _CasingDepth_ and the _CasingThickness_, are given, or none of them.
 
 ### WR35
 The _IfcDoorLiningProperties_ shall only be used in the context of an _IfcDoorType_.

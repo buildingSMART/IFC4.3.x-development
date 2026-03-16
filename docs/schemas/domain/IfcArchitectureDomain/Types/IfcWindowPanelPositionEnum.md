@@ -9,7 +9,7 @@ Windows which are subdivided into more than three panels have to be defined by t
 | --- | --- | --- |
 | DoublePanelVertical | first IfcWindowPanelProperties with PanelPosition = LEFT<br>second IfcWindowPanelProperties with PanelPosition = RIGHT | ![](../../../../figures/ifcwindowpanelpositionenum-fig01.gif) |
 | DoublePanelHorizontal | first IfcWindowPanelProperties with PanelPosition = TOP<br>second IfcWindowPanelProperties with PanelPosition = BOTTOM | ![](../../../../figures/ifcwindowpanelpositionenum-fig02.gif) |
-| TriplePanelVertical | first IfcWindowPanelProperties with PanelPosition = LEFT<be>second IfcWindowPanelProperties with PanelPosition = MIDDLE<br>third IfcWindowPanelProperties with PanelPosition = RIGHT | ![](../../../../figures/ifcwindowpanelpositionenum-fig03.gif) |
+| TriplePanelVertical | first IfcWindowPanelProperties with PanelPosition = LEFT<br>second IfcWindowPanelProperties with PanelPosition = MIDDLE<br>third IfcWindowPanelProperties with PanelPosition = RIGHT | ![](../../../../figures/ifcwindowpanelpositionenum-fig03.gif) |
 | TriplePanelHorizontal | first IfcWindowPanelProperties with PanelPosition = TOP<br>second IfcWindowPanelProperties with PanelPosition = MIDDLE<br>third IfcWindowPanelProperties with PanelPosition = BOTTOM | ![](../../../../figures/ifcwindowpanelpositionenum-fig04.gif) |
 | TriplePanelBottom | first IfcWindowPanelProperties with PanelPosition = LEFT<br>second IfcWindowPanelProperties with PanelPosition = RIGHT<br>third IfcWindowPanelProperties with PanelPosition = BOTTOM | ![](../../../../figures/ifcwindowpanelpositionenum-fig05.gif) |
 | TriplePanelTop | first IfcWindowPanelProperties with PanelPosition = TOP<br>second IfcWindowPanelProperties with PanelPosition = LEFT<br>third IfcWindowPanelProperties with PanelPosition = RIGHT | ![](../../../../figures/ifcwindowpanelpositionenum-fig06.gif) |
@@ -20,8 +20,8 @@ Windows which are subdivided into more than three panels have to be defined by t
 
 Note:
 
-1. The figures/ are shown as elevations in the XZ plane of the local placement of the window, looking into the direction of the positive Y axis.
-2. These figures/ are only shown as illustrations.
+1. The figures/ are shown as elevations in the XZ plane of the local placement of the window, looking into the direction of the positive Y-axis.
+2. These figures are only shown as illustrations.
 
 ## Items
 

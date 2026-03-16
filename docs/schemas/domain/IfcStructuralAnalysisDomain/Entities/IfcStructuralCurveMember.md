@@ -10,7 +10,7 @@ Instances of _IfcStructuralCurveMember_ describe edge members, i.e. structural a
 
 ### Coordinate Systems
 
-See definitions at _IfcStructuralItem_. The local coordinate system is established by the reference curve given by topology representation and by the attribute _Axis_. The local x axis is parallel with the tangent on the reference curve. The local z axis is located in the surface which is created by sweeping _Axis_ along the reference curve and is directed according to _Axis_. The local y axis is directed such that x,y,z form a right-handed Cartesian coordinate system.
+See definitions at _IfcStructuralItem_. The local coordinate system is established by the reference curve given by topology representation and by the attribute _Axis_. The local X-axis is parallel with the tangent on the reference curve. The local z axis is located in the surface which is created by sweeping _Axis_ along the reference curve and is directed according to _Axis_. The local Y-axis is directed such that x,y,z form a right-handed Cartesian coordinate system.
 
 ## Attributes
 
@@ -72,7 +72,7 @@ Direct instances of IfcStructuralCurveMember shall have a topology representatio
 1. The reference curve must not be parallel with Axis at any point within the curve member's domain.
 
 
-The local coordinate system is established by the reference curve given by topology representation and by the attribute Axis. The local x axis is parallel with the tangent on the reference curve. The local z axis is located in the surface which is created by sweeping Axis along the reference curve and is directed according to Axis. The local y axis is directed such that x,y,z form a right-handed Cartesian coordinate system.
+The local coordinate system is established by the reference curve given by topology representation and by the attribute Axis. The local X-axis is parallel with the tangent on the reference curve. The local z axis is located in the surface which is created by sweeping Axis along the reference curve and is directed according to Axis. The local Y-axis is directed such that x,y,z form a right-handed Cartesian coordinate system.
 
 
 ### Structural Connectivity

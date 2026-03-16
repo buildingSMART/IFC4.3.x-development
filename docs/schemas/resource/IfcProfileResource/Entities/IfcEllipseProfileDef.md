@@ -10,7 +10,7 @@ Figure 1 illustrates parameters for the ellipse profile definition. The paramete
 * _IfcSweptSurface.Position_
 * _IfcSweptAreaSolid.Position_
 
-Or in case of sectioned spines it is the xy plane of each list member of _IfcSectionedSpine.CrossSectionPositions_. By using offsets of the position location, the parameterized profile can be positioned centric (using x,y offsets = 0.), or at any position relative to the profile. Explicit coordinate offsets are used to define cardinal points (for example, upper-left bound). The location of the position coordinate system defines the center of the ellipse. The _SemiAxis1_ attribute defines the first radius of the ellipse in the direction of the X axis, the _SemiAxis2_ attribute defines the second radius of the ellipse in the direction of the Y axis.
+Or in case of sectioned spines it is the xy plane of each list member of _IfcSectionedSpine.CrossSectionPositions_. By using offsets of the position location, the parameterized profile can be positioned centric (using x,y offsets = 0.), or at any position relative to the profile. Explicit coordinate offsets are used to define cardinal points (for example, upper-left bound). The location of the position coordinate system defines the center of the ellipse. The _SemiAxis1_ attribute defines the first radius of the ellipse in the direction of the X-axis, the _SemiAxis2_ attribute defines the second radius of the ellipse in the direction of the Y-axis.
 
 > NOTE The semi axes of the ellipse are rectangular to each other by definition.
 

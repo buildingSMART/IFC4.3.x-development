@@ -8,8 +8,8 @@ The opening direction of the window panels is given by the local placement of th
 Note:
 
 1. Figures are shown as viewed from the outside (in direction of the positive y-axis).
-2. Figures (symbolic representation) depend on the national building code
-3. These figures/ are only shown as illustrations
+2. Figures (symbolic representation) depend on the national building code.
+3. These figures are only shown as illustrations
 
 ![opening direction](../../../../figures/ifcwindowpaneloperationenum-fig13.gif "Figure 2 — Window panel directions")
 

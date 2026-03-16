@@ -83,10 +83,6 @@ An output of the connector.
 
 An output of the connector.
 
-#### SINK_Input_CONNECTOR_NOTDEFINED
-
-The input of the connector.
-
 #### SOURCE_Output_CONNECTOR_NOTDEFINED
 
 The output of the connector.

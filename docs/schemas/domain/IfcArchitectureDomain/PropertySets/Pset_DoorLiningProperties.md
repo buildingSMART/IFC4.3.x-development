@@ -18,7 +18,7 @@ For a door, it is the dimension in plane of the door leaf. If given it is applie
 For a door, it is the depth of the door lining, measured perpendicular to the plane of the door lining. If omitted (and with a given value to lining thickness) it indicates an adjustable depth (i.e. a depth that adjusts to the thickness of the wall into which the occurrence of this door style is inserted).
 
 ### LiningOffset
-For a door, it is the offset (dimension in plane perpendicular to door leaf) of the door lining. The offset is given as distance to the x axis of the local placement.
+For a door, it is the offset (dimension in plane perpendicular to door leaf) of the door lining. The offset is given as distance to the X-axis of the local placement.
 
 ### LiningThickness
 For a door, it is the thickness of the door lining as explained in the figure above. If _LiningThickness_ value is 0. (zero) it denotes a door without a lining (all other lining parameters shall be set to NIL in this case). If the _LiningThickness_ is NIL it denotes that the value is not available.

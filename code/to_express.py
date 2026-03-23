@@ -23,7 +23,7 @@ except:
 
             
 def sort_key(tup):
-    return (EXPRESS_ORDER.index(tup.type), express.ifc_name(tup.name))
+    return (EXPRESS_ORDER.index(tup.type), tup.name)
 
 
 """

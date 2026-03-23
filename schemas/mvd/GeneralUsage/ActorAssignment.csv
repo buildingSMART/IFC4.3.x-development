@@ -1,0 +1,7 @@
+ApplicableEntity,Type
+IfcActor,IfcControl
+IfcActor,IfcGroup
+IfcActor,IfcProduct
+IfcActor,IfcProcess
+IfcActor,IfcResource
+IfcOccupant,IfcSpatialStructureElement

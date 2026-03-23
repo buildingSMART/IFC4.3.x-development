@@ -1,32 +1,8 @@
-# @todo: double encoding e.g Role &amp;lt;&amp;gt;
-# @todo: schema name not really discoverable
-# @todo: ControlPointsList / ColourList : LIST [2:?] OF LIST [2:?]
-# @todo: IfcClassificationReference.HasReferences self referential inverse
-# @todo: schema namespace different in constraint expression
-
-# CONFIGURATION
-    
-# currently not used
-express_excluded_stereotypes = set((
-    "propertyset", 
-    "quantityset", 
-    "penumtype", 
-    "virtualentity"))
-    
-all_excluded_stereotypes = set((
-    "virtualentity"))
-    
-included_statuses = set((
-    "implemented", 
-    "proposed", 
-    "proposedmodification", 
-    "deprecated", 
-    "approved", 
-    "candidate"))
-    
 REPO_URL = "https://github.com/buildingSMART/IFC4.3.x-development/edit/master/"
 
+import csv
 import os
+from pathlib import Path
 import re
 import sys
 import html
@@ -71,7 +47,7 @@ def unescape(s):
 def float_international(s):
     return float(s.replace(',', '.'))
     
-assocation_data = namedtuple("assocation_data", ("own_end", "type", "other_end", "asssocation"))
+association_data = namedtuple("association_data", ("own_end", "type", "other_end", "asssocation"))
 
 def yield_parents(node):
     yield node
@@ -134,7 +110,7 @@ class xmi_item:
         self.document = document
         self.parent = parent
         if self.node:
-            self.id = self.node.id or self.node.idref
+            self.id = self.node.id or self.node.xmi_id
             
     def _mdtype(self):
         if self.type == "PSET" and self.stereotype == "QSET":
@@ -295,6 +271,11 @@ class xmi_item:
 class xmi_document:
 
     def __init__(self, fn):    
+        self.dependencies_in = defaultdict(list)
+        self.dependencies_out = defaultdict(list)
+        self.associations = defaultdict(list)
+        self.generalizations_in = defaultdict(list)
+        self.generalizations_out = defaultdict(list)
     
         if isinstance(fn, str):
             self.filename = fn
@@ -303,132 +284,59 @@ class xmi_document:
             self.xmi = fn
             
         self.extract_associations()
-        self.extract_associations(concepts=True)
-        self.extract_order()
-        self.extract_guids()
-        self.extract_deprecated()
+        self.extract_dependencies()
+        self.extract_generalizations()
+
+        fn = Path(self.filename).parent / "mvd" / "GeneralUsage" / "ObjectTyping.csv"
+        self.concepts = {
+            "ObjectTyping": list(csv.DictReader(fn.open(encoding='utf-8', newline='')))
+        }
         
         self.should_translate_pset_types = True
-                
-        # Assert that we indeed have all `included_packages` in the UML
-        # packagenames_from_uml = set(map(operator.attrgetter('name'), self.xmi.by_tag_and_type["packagedElement"]["uml:Package"]))
-        # assert len(included_packages - packagenames_from_uml) == 0
-        
-    def try_get_order(self, a):
-        try:
-            return int(self.xmi.tags['ExpressOrdering'][a.id or a.idref])
-        except (KeyError, IndexError) as e:
-            # When no ordering is found in sequences where other elements do have
-            # ordering, they are pushed to the back to be consistent with IFC4X3_RC1
-            return infinity
-
         
     def skip_by_package(self, element):
-        return "Views" in get_path(self.xmi.by_id[element.id or element.idref])
+        return "Views" in get_path(self.xmi.by_id[element.id or element.xmi_id])
         
         
     def supertypes(self, eid):
         yield self.xmi.by_id[eid].name
         gs = self.xmi.by_id[eid] / "generalization"
         if gs:
-            yield from self.supertypes(gs[0].general)
+            yield from self.supertypes(gs[0].resolve('general'))
 
+    def extract_dependencies(self):
+        for dep in self.xmi.by_tag_and_type["packagedElement"]["uml:Dependency"]:
+            self.dependencies_in[dep.resolve('client')].append(dep.resolve('supplier'))
+            self.dependencies_out[dep.resolve('supplier')].append(dep.resolve('client'))
+            
+    def extract_generalizations(self):
+        for dep in self.xmi.by_tag["generalization"]:
+            specific, general = dep.parent.id, dep.resolve('general')
+            self.generalizations_in[general].append(specific)
+            self.generalizations_out[specific].append(general)
             
     def extract_associations(self, concepts=False):
-        # Extract some data from the assocations for use later on
-        
-        if concepts:
-            self.concepts = defaultdict(lambda: defaultdict(list))
-            self.concept_associations = defaultdict(lambda: defaultdict(list))
-        else:
-            self.assocations = defaultdict(list)
-            self.assoc_from = defaultdict(list)
-            self.assoc_to = defaultdict(list)
-        
         for assoc in self.xmi.by_tag_and_type["packagedElement"]["uml:AssociationClass" if concepts else "uml:Association"]:
-            # @todo n-aray assocs
+            ends = [self.xmi.by_id[s] for s in assoc.memberEnd.split(' ')]
+            is_source = [e.xml.tagName == "ownedAttribute" for e in ends]
+            end_types = [e.resolve('type') for e in ends]
+            end_names = [e.name for e in ends]
+            end_type_names = list(map(lambda t: self.xmi.by_id[t].name, end_types))
+
+            if sum(is_source) == 0:
+                is_suppressed = [(s[0],s[-1]) == ('(',')') for s in end_names]
+                assert sum(is_suppressed) == 1
+                is_source = is_suppressed
+            assert sum(is_source) == 1
             
-            mends = assoc/'memberEnd'
-            ends = [self.xmi.by_id[mend.idref] for mend in mends]
-            is_source = [e.xml.tagName == "ownedEnd" for e in ends]
-            end_types = list(map(lambda c: (c|"type").idref, ends))
-            try:
-                end_type_names = list(map(lambda t: self.xmi.by_id[t].name, end_types))
-            except KeyError as e:
-                logging.warning("Encountered exception `%s' on %s", e, assoc)
-                continue            
-            
-            if concepts:
-                parent, view_name = get_path(assoc)[-2], get_path(assoc)[-3]
-                
-                sorted_end_types = [x[1] for x in sorted(zip(is_source, end_types), reverse=True)]
-                self.concept_associations[view_name][parent].append(sorted_end_types)
-                
-                is_rooted = lambda tid: "IfcRoot" in self.supertypes(tid)
-                sorted_type_ids = sorted(zip(map(is_rooted, end_types), end_types), reverse=True)
-                sorted_type_ids = tuple(map(operator.itemgetter(1), sorted_type_ids))
-                
-                self.concepts[parent][sorted_type_ids[0]].extend(sorted_type_ids[1:])
-                for other in sorted_type_ids[1:]:
-                    self.concepts[parent][other].append(sorted_type_ids[0])
-                    
+            c1, c2 = ends
+            t1, t2 = end_types
+            tv1, tv2 = end_type_names
+
+            if is_source[0]:
+                self.associations[tv1].append(association_data(c2, self.xmi.by_id[t2], c1, assoc))
             else:
-                if len(ends) != 2:
-                    # Concept parametrizations uses n-ary associations, so do not
-                    # emit warnings for those.
-                    if "Views" not in get_path(assoc):
-                        logging.warning("Expected two associations ends on %s", assoc)
-                    continue
-                
-                c1, c2 = ends
-                t1, t2 = end_types
-                tv1, tv2 = end_type_names
-                
-                for is_s, from_id, to_id in zip(is_source, end_types, reversed(end_types)):
-                    if is_s:
-                        self.assoc_from[from_id].append(to_id)
-                    else:
-                        self.assoc_to[from_id].append(to_id)
-                
-                self.assocations[tv1].append(assocation_data(c2, self.xmi.by_id[t2], c1, assoc))
-                self.assocations[tv2].append(assocation_data(c1, self.xmi.by_id[t1], c2, assoc))
-
-        if concepts:
-            
-            
-            for inter in self.xmi.by_tag_and_type["packagedElement"]["uml:Class"] + \
-                self.xmi.by_tag_and_type["packagedElement"]["uml:AssociationClass"] + \
-                self.xmi.by_tag_and_type["packagedElement"]["uml:Association"]:
-                
-                pt = get_path(inter)
-                if "Views" in pt:
-                    parent, view_name = pt[-2], pt[-3]
-                    
-                    member_types = set(x.type for x in inter.parent.children)
-                    if member_types == {'uml:Class', 'uml:AssociationClass'}:
-                        # UNARY
-                        pass
-                    elif member_types == {'uml:AssociationClass'}:
-                        # BINARY
-                        pass
-                    elif member_types == {'uml:Class'}:
-                        # DIRECTIONAL_GROUPED
-                        for ff, tt in itertools.product(self.assoc_to[inter.id], self.assoc_from[inter.id]):
-                            self.concept_associations[view_name][parent].append([ff, tt])
-                    elif member_types == {'uml:Realization', 'uml:Class', 'uml:Enumeration', 'uml:Association'} and inter.type == 'uml:Association':
-                        # N-ARY
-                        ends = [self.xmi.by_id[mend.idref] for mend in inter/'memberEnd']
-                        end_types = list(map(lambda c: (c|"type").idref, ends))
-                        self.concept_associations[view_name][parent].append(end_types)
-
-    def extract_order(self):
-        self.order = {k: int(v) for k, v in self.xmi.tags["ExpressOrdering"].items()}
-
-    def extract_guids(self):
-        self.guids = {k: v for k, v in self.xmi.tags["IFCDOC_GUID"].items()}
-
-    def extract_deprecated(self):
-        self.deprecated = [k for k, v in self.xmi.tags["deprecated"].items()]
+                self.associations[tv2].append(association_data(c1, self.xmi.by_id[t1], c2, assoc))
 
     def __iter__(self):
         """
@@ -436,185 +344,157 @@ class xmi_document:
         a: an element in EXPRESS_ORDER
         b: an type/entity/function definition string
         """
+
+        def format_aggr(ag):
+            ag_names = ("ARRAY", "LIST", "SET", "BAG")
+            m = re.match('(\w)(U)?\[(\d+):(\d+|\?)\]', ag)
+            assert m
+            t, u, l, h = m.groups()
+            unique = ("UNIQUE",) if u else ()
+            t = [an for an in ag_names if an.startswith(t)][0]
+            return (t, f"[{l}:{h}]", "OF", *unique)
         
-        for c in (self.xmi.by_tag_and_type["element"]["uml:Class"] + self.xmi.by_tag_and_type["element"]["uml:Interface"] + self.xmi.by_tag_and_type["element"]["uml:Enumeration"] + self.xmi.by_tag_and_type["element"]["uml:DataType"]):
-        
-            if self.skip_by_package(c):
+        class_by_name = {c.name: c for c in self.xmi.by_tag_and_type["packagedElement"]["uml:Class"]}
+
+        for c in self.xmi.root.traverse():
+            if c.xmi_id is None or c.name is None:
                 continue
 
-            stereotype = (c/"properties")[0].stereotype if (c/"properties") else None
-            if stereotype is not None: 
-                stereotype = stereotype.lower()
-                
-            if stereotype in all_excluded_stereotypes:
+            if c.xmi_type in ("uml:Package", "uml:EnumerationLiteral", "uml:Generalization", "uml:OpaqueExpression", "uml:Property", "uml:Association", "uml:Dependency"):
+                continue
+
+            if c.xml.tagName == 'uml:Model':
+                continue
+
+            if c.parent.name == "base":
+                continue
+
+            if 'PropertyTableValueBase' in self.supertypes(c.id):
+                # these are anonymous pairs for the propertyset TableValue properties
                 continue
                 
-            status = (c/"project")[0].status if (c/"project") else None
-            if status is not None: 
-                status = status.lower()
-                
-            if status not in included_statuses:
-                continue
-            
-            if stereotype in {"express function", "express rule"}:
-                
+            if c.xmi_type == "uml:Constraint":
                 yield xmi_item(
-                    stereotype.split(" ")[1].upper(), 
-                    unescape((c|"behaviour").value).split(" ")[1], 
-                    fix_schema_name(unescape((c|"behaviour").value)) + ";", 
+                    (c|"language").text.split('_')[-1], 
+                    c.name, 
+                    (c|"body").text.strip(), 
                     c, 
                     document=self
                 )
                 
-            elif stereotype == 'predefinedtype':
-                
-                # A predefined type enumeration value, handled as part of 'ptcontainer'
+            elif '.' in c.name :
                 continue
-                
-                # NB: can have multiple dependency relationships...
-                # yield xmi_item("PT", c.name, "", c, [], container=((c|"links")|"Dependency").start, document=self)
-                
-            elif stereotype is not None and (stereotype.startswith("pset_") or stereotype.startswith("qto_") or stereotype == "complexproperty"):
-                
-                if stereotype.startswith("qto_"):
-                    set_stereotype = "QSET"
-                elif stereotype.startswith("pset_"):
-                    set_stereotype = "PSET"
-                else:
-                    set_stereotype = "CPROP"
-                
-                refs = None
-                
-                if set_stereotype == "PSET" or set_stereotype == "QSET":
-                    
-                    try:
-                        concept_to_use = ["PropertySetsforObjects", "PropertySetsforContexts", "QuantitySets", "PropertySetsforMaterials", "PropertySetsforProfiles", "PropertySetsforPerformance"]
-                        refs = sum((self.concepts[ctu].get(c.id or c.idref, []) for ctu in concept_to_use), [])
-                    except ValueError as e:
-                        print("WARNING:", c.name, "has no associated class", file=sys.stderr)
-                        continue
-                        
-                    # There are several kinds of pset and qset association mechanisms:
-                    # 
-                    # - occurrence driven: only applicable to IfcObject subtypes
-                    # - type driven: only applicable to IfcTypeObject subtypes
-                    # - type driven override: applicable to both IfcObject and IfcTypeObject
-                    #                         where the former can override the latter
-                    # - material driven: applicable to IfcMaterialDefinition, uses IfcMaterialProperties
-                    # - profile driven: applicable to IfcProfileDef, uses IfcProfileProperties
-                    # 
-                    # In UML we associate only to the IfcObject subtype and have the
-                    # pset mechanism encoded in the property set stereotype name.
-                    # 
-                    # In this step we make sure that the serialized data corresponds
-                    # to the association mechanism of the pset.
-                    is_type_driven_only = "typedrivenonly" in stereotype
-                    is_type_driven_override = "typedrivenoverride" in stereotype
-                    
-                    if self.should_translate_pset_types and (is_type_driven_override or is_type_driven_only):
-                        get_name = lambda id_: self.xmi.by_id[id_].name
-                        ref_names = list(map(get_name, refs))
-                        
-                        def substitute_predefined_type_with_containing_entity(ref_name):
-                            """
-                            PQsets can also be associated to a predefined type which is
-                            modelled in UML as a class with a DOT in its name, signalling
-                            the enum container and predefined type value. We should trace
-                            the containment of such a predefined type ot the relevant entity
-                            by means of the formal UML association, but we take a shortcut
-                            here by looking at the name.                            
-                            """
-                            
-                            if "." in ref_name:
-                                type_name, type_value = ref_name.split(".")
-                                entity_name = re.sub("(Type)?Enum$", "", type_name)
-                                entity = [c for c in self.xmi.by_tag_and_type["packagedElement"]["uml:Class"] if c.name == entity_name][0]
-                                return entity.xmi_id, type_value
-                        
-                        ref_substituted_entities = list(map(substitute_predefined_type_with_containing_entity, ref_names))
-                        refs_combined = [b if b else (a,) for a, b in zip(refs, ref_substituted_entities)]
-                        
-                        # Lookup corresponding object types for the applicable entities
-                        object_typing_reversed = {v[0]: k for k, v in self.concepts['ObjectTyping'].items() if len(v) == 1}
-                        corresponding_types = list(filter(None, map(lambda id_pt: object_typing_reversed.get(id_pt[0], None), refs_combined)))
-                        
-                        if len(corresponding_types) != len(refs) or set(corresponding_types) & set(refs):
-                            ref_names = map(get_name, refs)
-                            ref_type_names = map(get_name, corresponding_types)
-                            print(f"WARNING: For PQset {c.name} applicability [{', '.join(ref_names)}] results in type associations [{', '.join(ref_type_names)}]")
-                        
-                        # augment with predefined types again:
-                        corresponding_types = [(a,) + b[1:] if b[1:] else a for a, b in zip(corresponding_types, refs_combined)]
-                        
-                        if is_type_driven_only:
-                            refs = corresponding_types
-                        else:
-                            refs = refs + corresponding_types
 
-                # TEMPORARY SKIP SOME OLD PSET DEFINITIONS
-                # if (c|"project").author == 'IQSOFT':
-                #     continue
+            elif c.name.startswith("Pset") or c.name.startswith("Qto"):                
+                refs = self.dependencies_in.get(c.id, [])
+                def_type = ((c/"ownedComment")[0]|"body").text.lower()
+                    
+                # There are several kinds of pset and qset association mechanisms:
+                # 
+                # - occurrence driven: only applicable to IfcObject subtypes
+                # - type driven: only applicable to IfcTypeObject subtypes
+                # - type driven override: applicable to both IfcObject and IfcTypeObject
+                #                         where the former can override the latter
+                # - material driven: applicable to IfcMaterialDefinition, uses IfcMaterialProperties
+                # - profile driven: applicable to IfcProfileDef, uses IfcProfileProperties
+                # 
+                # In UML we associate only to the IfcObject subtype and have the
+                # pset mechanism encoded in the property set stereotype name.
+                # 
+                # In this step we make sure that the serialized data corresponds
+                # to the association mechanism of the pset.
+                is_type_driven_only = "typedrivenonly" in def_type
+                is_type_driven_override = "typedrivenoverride" in def_type
+                
+                if self.should_translate_pset_types and (is_type_driven_override or is_type_driven_only):
+                    get_name = lambda id_: self.xmi.by_id[id_].name
+                    ref_names = list(map(get_name, refs))
+                    
+                    def substitute_predefined_type_with_containing_entity(ref_name):
+                        """
+                        PQsets can also be associated to a predefined type which is
+                        modelled in UML as a class with a DOT in its name, signalling
+                        the enum container and predefined type value. We should trace
+                        the containment of such a predefined type ot the relevant entity
+                        by means of the formal UML association, but we take a shortcut
+                        here by looking at the name.                            
+                        """
+                        
+                        if "." in ref_name:
+                            type_name, type_value = ref_name.split(".")
+                            entity_name = re.sub("(Type)?Enum$", "", type_name)
+                            entity = class_by_name[entity_name]
+                            return entity.xmi_id, type_value
+                    
+                    ref_substituted_entities = list(map(substitute_predefined_type_with_containing_entity, ref_names))
+                    refs_combined = [b if b else (a,) for a, b in zip(refs, ref_substituted_entities)]
+                    
+                    # Lookup corresponding object types for the applicable entities
+                    object_typing_reversed = {class_by_name[d['ApplicableEntity']].id: class_by_name[d['RelatingType']].id for d in self.concepts['ObjectTyping']}
+                    corresponding_types = list(filter(None, map(lambda id_pt: object_typing_reversed.get(id_pt[0], None), refs_combined)))
+                    
+                    if len(corresponding_types) != len(refs) or set(corresponding_types) & set(refs):
+                        ref_names = map(get_name, refs)
+                        ref_type_names = map(get_name, corresponding_types)
+                        print(f"WARNING: For PQset {c.name} applicability [{', '.join(ref_names)}] results in type associations [{', '.join(ref_type_names)}]")
+                    
+                    # augment with predefined types again:
+                    corresponding_types = [(a,) + b[1:] if b[1:] else a for a, b in zip(corresponding_types, refs_combined)]
+                    
+                    if is_type_driven_only:
+                        refs = corresponding_types
+                    else:
+                        refs = refs + corresponding_types
 
                 set_definition = []
-                for attr in self.xmi.by_id[c.idref]/"ownedAttribute":
+                for attr in c/"ownedAttribute":
                     nm = attr.name
-                    ty = self.xmi.by_id[(attr|"type").idref]
-                    
-                    if set_stereotype in ("PSET", "CPROP"):
-                    
-                        for b in ty/"templateBinding":
-                            if b/"parameterSubstitution":
-                                prop_type = self.xmi.by_id[b.signature].xml.parentNode.getAttribute('name')
-                                prop_args = {}
-                                for sub in b/"parameterSubstitution":
-                                    formal = (self.xmi.by_id[sub.formal] | "ownedParameteredElement").name
-                                    actual = self.xmi.by_id[sub.actual].name
-                                    prop_args[formal] = actual
-                                    
-                                set_definition.append((nm, (prop_type, prop_args)))
+                    ty = self.xmi.by_id[(attr.resolve("type"))]
 
+                    # @todo single, bounded, list, etc.
+                    
+                    if c.name.startswith("Pset"):
+                        set_definition.append((nm, ty.name))
                     else:
                         set_definition.append((nm, ty.name))
 
                 yield xmi_item(
-                    "CPROP" if set_stereotype == "CPROP" else "PSET", 
-                    c.name, 
+                    "PSET", 
+                    c.name,
                     set_definition, 
                     c,
-                    [(x.name, x) for x in c/("attribute")],
+                    [(x.name, x) for x in c/("ownedAttribute")],
                     document=self, 
                     refs=refs,
-                    stereotype=set_stereotype
+                    stereotype=def_type
                 )
                 
             elif c.xmi_type == "uml:DataType":
-            
-                dd = self.xmi.by_id[c.idref]
-                try:
-                    super = [t for t in c/"tag" if t.name == "ExpressDefinition"][0].value
-                    super_verbatim = True
-                except IndexError as e:
-                    try:
-                        super = self.xmi.by_id[(dd|"generalization").general].name
-                        super_verbatim = False
-                    except ValueError as ee:
-                        # if the type does not have a generalization, let's assume it's one of EXPRESS' native types
-                        logging.warning("No generalization found on %s, omitting", c)
-                        continue
-                
-                cs = sorted(c/"constraint", key=lambda cc: float_international(cc.weight))
-                constraints = map(lambda cc: "\t%s : %s;" % tuple(map(unescape, map(functools.partial(getattr, cc), ("name", "description")))), cs)            
-                
-                yield xmi_item("TYPE", c.name, express.simple_type(c.name, super, constraints, super_verbatim=super_verbatim), c, document=self)
-                
-            elif self.xmi.by_id[c.xmi_idref].xmi_type == "uml:Enumeration":
-            
-                values = [(x.name.split(".")[1], x) for x in self.xmi.by_tag_and_type["packagedElement"]["uml:Class"] if x.name.startswith(c.name+".")]
+                name = c.name
 
-                get_attribute = lambda n: [x for x in self.xmi.by_idref[n.xmi_id] if x.xml.tagName == "attribute"][0]
-                if not values:
-                    values = [(x.name, get_attribute(x)) for x in self.xmi.by_id[c.xmi_idref]/"ownedLiteral"]
+                supert = self.xmi.by_id[(c|"generalization").resolve('general')].name
+                if self.xmi.by_id[(c|"generalization").resolve('general')].parent.name == "base":
+                    # format simple type names as upper case, e.g real -> REAL
+                    supert = supert.upper()
+
+                if "_" in c.name:
+                    name, *aggr = name.split('_')
+                    parts = []
+                    for ag in aggr:
+                        parts.extend(format_aggr(ag))
+                    parts.append(supert)
+                    supert = " ".join(parts)
                 
+                constraints = [(r.name, (r|"body").text) for r in c/"ownedRule" if (r|"language").text == 'EXPRESS_WHERE']
+                if ocl := next(((r|"body").text for r in c/"ownedRule" if (r|"language").text == 'OCL'), None):
+                    if m := re.match(r'self\.size\(\) (=|<=) (\d+)', ocl):
+                        op, sz = m.groups()
+                        supert = f"{supert}({sz}){' FIXED' if op == '=' else ''}"
+
+                yield xmi_item("TYPE", name, express.simple_type(name, supert, constraints), c, document=self)
+                
+            elif c.xmi_type == "uml:Enumeration":
+                values = [(lit.name, lit) for lit in c/"ownedLiteral"]
                 is_property_enum = c.name.lower().startswith("penum_")
 
                 # alphabetical sort, but the items below always come last
@@ -636,262 +516,118 @@ class xmi_document:
                     values,
                     document=self)
             
-            elif stereotype == "express select" or stereotype == "select" or c.xmi_type == "uml:Interface":
-                
-                values = sorted(filter(lambda s: s != c.name, map(lambda s: self.xmi.by_id[s.start].name, c/"Substitution")))
+            elif c.xmi_type == "uml:Class" and c.id in self.dependencies_in:
+                values = sorted(self.xmi.by_id[x].name.split('_')[0] for x in self.dependencies_in[c.id])
                 yield xmi_item("SELECT", c.name, express.select(c.name, values), c, document=self)
-            
-            elif stereotype == "virtualentity":
-            
-                continue
-                
             else:
-            
-                if not c.name.startswith("Ifc") or "." in c.name:
-                    # @tfk entities need to start with IFC or otherwise 'conceptual'?
-                    #      ^ probably no longer relevant, all UML data is now relevant
-                    # @todo:
-                    # some enumerations elements for the concepts need a stereotype probably,
-                    # or we can filter them out looking at the uml:Dependency. For now
-                    # checking the dot in the name is quickest.
-                    continue
-            
-                is_abstract = (c/"properties")[0].isAbstract == "true" 
-            
-                attribute_names = set()
-                attributes_optional = {}
-                for la in c / ("attribute"):
-                    iref = la.idref
-                    a = self.xmi.by_id[iref]
-                    n = a.name
-                    attribute_names.add(n)
+                assert c.name.startswith("Ifc")
 
-                attributes, inverses, derived, subtypes, supertypes, children = [], [], [], [], [], []
+                is_abstract = c.isAbstract == "true"
+
+                attributes, inverses, derived, children = [], [], [], []
+
+                subtypes = [*map(operator.attrgetter('name'), filter(lambda n: n.xmi_type == 'uml:Class', filter(lambda n: '.' not in n.name, (self.xmi.by_id[x] for x in self.generalizations_in.get(c.id, [])))))]
+                supertypes = [self.xmi.by_id[x].name for x in self.generalizations_out.get(c.id, [])]
+                itm_supertype_names = set(self.supertypes(c.id))
                 
-                for g in c/("Generalization"):
-                    start, end = g.start, g.end
-                    issub = start == c.idref
-                    other = [start, end][issub]
-                    other_name = self.xmi.by_id[other].name
-                    [supertypes, subtypes][issub].append(other_name)
-                    
-                # In case of asymmetric inverse relationships we need to find the
-                # proper target element.
-                assocs_by_name = self.assocations[c.name].copy()
-                # count duplicate role names
-                counter = Counter()
-                counter.update(ass[0].name for ass in assocs_by_name)
-                # flag duplicates
-                duplicates = [ass[0].name is not None and counter[ass[0].name] > 1 for ass in assocs_by_name]
-                # look up suppression tag
-                suppressed = [self.xmi.tags['ExpressSuppressRel'].get(ass[2].id) == "YES" for ass in self.assocations[c.name]]
-                # apply filter
-                assocs_by_name = [a for a,d,s in zip(assocs_by_name, duplicates, suppressed) if not (d and s)]
-                    
-                for end_node, end_node_type, other_end, assoc_node in assocs_by_name:
-                    try:
-                        nm = end_node.name
-                        assert nm
-                    except:
-                        continue
-                        
-                    try:
-                        attr_name = other_end.name
-                    except:
-                        attr_name = None
-                    
-
-                    is_inverse = bool(self.xmi.tags['ExpressInverse'].get(end_node.id))
-                    if is_inverse:
-                        inverse_order = int(self.xmi.tags['ExpressOrderingInverse'].get(end_node.id, 1e6))
-                    
-                    express_aggr = self.xmi.tags['ExpressAggregation'].get(end_node.id, "")
-                    # It appears there is some inconsistency (IfcBSplineSurface.ControlPointList)
-                    # where the definition is located on the association and not on the member ends
-                    express_definition = self.xmi.tags['ExpressDefinition'].get(end_node.id) or \
-                        self.xmi.tags['ExpressDefinition'].get(assoc_node.id)
-                    is_optional = bool(self.xmi.tags['ExpressOptional'].get(end_node.id, False))
-                    is_unique = bool(self.xmi.tags['ExpressUnique'].get(end_node.id, False))
-                    
-                    # @tfk this was misguided
-                    # is_inverse |= assoc_node.xmi_id not in self.order
-                        
-                    # @tfk this is no longer working, rely fully on `express_aggr`
-                    # if not is_inverse and end_node.isOrdered is not None:
-                    #     express_aggr = "LIST" if end_node.isOrdered == "true" else "SET"
-                        
-                    if end_node/"lowerValue" and not express_aggr:
-                        is_optional |= (end_node|"lowerValue").value == '0'
-                        
-                    bound = "[0:1]" if is_inverse else "[0:?]"
-                    try:
-                        lv = int((end_node|"lowerValue").value)
-                        uv_s = (end_node|"upperValue").value
-                        if uv_s == "*":
-                            uv = "?"
-                        else:
-                            uv = int(uv_s)
-                            if uv == -1: uv = "?"
-                        bound = "[%s:%s]" % (lv, uv)
-                    except: pass
-                    attr_entity = end_node_type.name                
-                        
-                    # bound != "[0:?]" and 
-                    # inverse attributes always aggregates?
-                    if is_inverse and end_node.isOrdered is None and bound != "[1:1]":
-                        express_aggr = "SET"
-                        
-                    is_optional_string = "OPTIONAL " if is_optional else ""
-
-                    express_aggr_unique = "UNIQUE " if is_unique else ""
-                    
-                    if express_aggr:
-                        attr_entity = "%s %s OF %s%s" % (express_aggr, bound, express_aggr_unique, attr_entity)
-                        
-                    if express_definition:
-                        attr_entity = express_definition
-
-                    if nm not in attribute_names:
-                        if is_inverse: # or assoc_node.xmi_id not in order:
-                            if attr_name is not None:
-                                inverses.append((inverse_order, "\t%s : %s FOR %s;" % (nm, attr_entity, attr_name)))
-                            else:
-                                logging.warning("No role name in connector target for %s.%s" % (c.name, nm))
-                        else:
-                            attribute_order = self.order.get(assoc_node.xmi_id, None)
-                            if attribute_order is None:
-                                attribute_order = self.order.get(end_node.xmi_id, None)
-                            if attribute_order is None:
-                                logging.warning("No attribute order on %s.%s" % (c.name, nm))
-                                attribute_order = 1000
-                            attributes.append((attribute_order, (nm, is_optional_string + attr_entity)))
-                            
-                        children.append((nm, assoc_node))
+                for a in c/"ownedAttribute":
+                    if a.isDerived == "true":
+                        derive_def = (a|"defaultValue"|"body").text
+                        supertype_attribute_lookup = dict(sum([[(a.name, x) for a in class_by_name[x]/"ownedAttribute"] for x in itm_supertype_names - {c.name}], []))
+                        a_name = a.name
+                        if supertype_defining_attr := supertype_attribute_lookup.get(a_name):
+                            a_name = f"SELF\\{supertype_defining_attr}.{a_name}"
+                        derived.append((a_name, derive_def))
                     else:
-                        # mark as optional for when emitted as an UML attribute below
-                        attributes_optional[nm] = is_optional
+                        name, *aggr = a.name.split('_')
+                        parts = []
+                        if name.endswith('?'):
+                            name = name[:-1]
+                            parts.append("OPTIONAL")
+                        for ag in aggr:
+                            parts.extend(format_aggr(ag))
+
+                        atype = self.xmi.by_id[a.resolve('type')]
+                        atype_name = atype.name
+                        if atype.parent.name == "base":
+                            # format simple type names as upper case, e.g real -> REAL
+                            atype_name = atype_name.upper()
                         
-                    # @tfk workaround for associations with the same name
-                    attribute_names.add(nm)
-                        
-                for la in c/("attribute"):
-                
-                    iref = la.idref
-                    a = self.xmi.by_id[iref]
-                    is_optional = "ExpressOptional" in map(operator.attrgetter('name'), la/("tag"))
-                    is_unique = bool(self.xmi.tags['ExpressUnique'].get(iref, False))
-                    
-                    bnds = la/"bounds"
-                    express_aggr = la.tags().get("ExpressAggregation") or (bnds and bnds[0].upper and bnds[0].upper != '1')
-                    if not express_aggr:
-                        if bnds:
-                            is_optional |= bnds[0].lower == '0'
-                        is_optional |= attributes_optional.get(a.name, False)
-                            
-                    is_derived = a.isDerived == "true"
-                    
-                    if express_aggr is True and (la/"coords"):
-                        express_aggr = "LIST" if (la/"coords")[0].ordered == "1" else "SET"
-                    
-                    if express_aggr:
-                        bound = ""
-                        try:
-                            lv = int((a|"lowerValue").value)
-                            uv_s = (a|"upperValue").value
-                            if uv_s == "*":
-                                uv = "?"
-                            else:
-                                uv = int(uv_s)
-                                if uv == -1: uv = "?"
-                            bound = "[%s:%s]" % (lv, uv)
-                        except: continue
-                    # or use order[iref]?
-                    try:
-                        ordering = int(la.tags()["ExpressOrdering"])
-                    except KeyError as e:
-                        ordering = 0
-                    is_optional_string = "OPTIONAL " if is_optional else ""
-                    n = a.name
-                    try:
-                        t = (a|"type").idref
-                    except:
-                        is_derived = len(la/"Constraint") == 1
-                        if not is_derived:
-                            logging.warning("Unable to find type of %s on %s", a, c)
-                            continue
-                        
-                    if is_derived:
-                        derive_def = unescape((la|"Constraint").notes)
-                        if derive_def.startswith("%s : " % n):
-                            logging.warning("Derived attribute definition for %s contains attribute name: %s", n, derive_def)
-                            derive_def = derive_def[len(n) + 3:]
-                        derived.append((ordering, "\t%s : %s;" % (n, derive_def)))
-                        children.append((n, la))
-                        continue
-                    attribute_names.add(n)
-                    
-                    tv = express.ifc_name(self.xmi.by_id[t].name)
-                    if express_aggr:
-                        tv = "%s %s OF %s%s" % (express_aggr, bound, "UNIQUE " if is_unique else "", tv)
-                    
-                    override = la.tags().get("ExpressDefinition")
-                    if override:
-                        tv = override
-                        is_optional_string = ""
-                        
-                    attributes.append((ordering, (n, is_optional_string + tv)))
-                    
-                    children.append((n, la))
-                
-                def trailing_semi_fix(s):
-                    if s.endswith(';'):
-                        logging.warning("Definition '%s' ends in semicolon", s)
-                        return s[:-1]
-                    else:
-                        return s
-                    
-                cs = c/("constraint")
-                constraints_type_name_def = map(lambda cc: ((cc.type,) + tuple(map(trailing_semi_fix, map(unescape, map(functools.partial(getattr, cc), ("name", "description")))))), cs)
-                constraints_by_type = defaultdict(list)
-                for ct, cname, cdef in constraints_type_name_def:
-                    if cdef.startswith("%s : " % cname):
-                        logging.warning("Where clause for %s contains attribute name: %s", cname, cdef)
-                        cdef = cdef[len(cname) + 3:]
-                    cc = (cname.strip(), fix_schema_name(cdef))
-                    constraints_by_type[ct].append(cc)
-                                    
-                attributes = list(map(operator.itemgetter(1), sorted(attributes)))
-                inverses = map(operator.itemgetter(1), sorted(inverses))
-                derived = map(operator.itemgetter(1), sorted(derived))
-                attribute_dict = dict(attributes)
-                
-                itm_supertype_names = set(self.supertypes(c.idref))
-                is_occurrence=itm_supertype_names & {"IfcElement", "IfcSystem", "IfcSpatialStructureElement"}
-                is_type = "IfcElementType" in itm_supertype_names
-                
-                if is_type or is_occurrence:
+                        atype_name = atype_name.split('_')[0]
+
+                        parts.append(atype_name)
+                        attributes.append((name, " ".join(parts)))
+
+                for assoc in self.associations[c.name]:
+                    if assoc.own_end.name:
+                        assert assoc.own_end.name.startswith("INV_")
+                        name = assoc.own_end.name[4:]
+                        parts = []
+                        if '_' in name:
+                            parts.extend(format_aggr(name.split('_', 1)[1]))
+                        other_name = assoc.other_end.name.removeprefix('(').removesuffix(')').split('_')[0].removesuffix('?')
+                        parts.extend((assoc.type.name, "FOR", other_name))
+                        inverses.append((name.split('_')[0], " ".join(parts)))
+
+                is_occurrence=itm_supertype_names & {"IfcElement", "IfcSystem", "IfcSpatialStructureElement", "IfcConstructionResource", "IfcProcedure"}
+                # construction resources don't have a CorrectTypeAssigned rule in earlier 4.3 revisions
+                is_occurrence_no_type=itm_supertype_names & {"IfcElement", "IfcSystem", "IfcSpatialStructureElement"}
+                is_type = itm_supertype_names & {"IfcElementType", "IfcConstructionResourceType", "IfcSpatialStructureElementType"}
+                is_restype = itm_supertype_names & {"IfcConstructionResourceType"}
+                # some_hardcoded_ones = {
+                #     IfcConstructionEquipmentResource
+                #     IfcConstructionEquipmentResourceType
+                #     IfcConstructionMaterialResource
+                #     IfcConstructionMaterialResourceType
+                #     IfcConstructionProductResource
+                #     IfcConstructionProductResourceType
+                #     IfcCrewResource
+                #     IfcCrewResourceType
+                #     IfcElementAssembly
+                #     IfcEventTime
+                #     IfcLaborResource
+                #     IfcLaborResourceType
+                #     IfcProcedure
+                #     IfcProcedureType
+                #     IfcSpaceType
+                #     IfcSpatialZone
+                #     IfcSpatialZoneType
+                #     IfcSubContractResource
+                #     IfcSubContractResourceType
+                #     IfcSystemFurnitureElementType
+                #     IfcTaskType
+                # }
+
+                generated_whererules = []
+
+                if is_type or is_occurrence: # or c.name in some_hardcoded_ones:
+                    attribute_dict = dict(attributes)
                     if "PredefinedType" in attribute_dict:
                         type_attr = attribute_dict["PredefinedType"]
                         type_name = type_attr.split(" ")[-1]
                         type_optional = "OPTIONAL" in type_attr
-                        attr = "IfcElementType.ElementType" if is_type else "IfcObject.ObjectType"
+                        attr = "IfcTypeResource.ResourceType" if is_restype else "IfcElementType.ElementType" if is_type else "IfcObject.ObjectType"
                         clause_1 = "NOT(EXISTS(PredefinedType)) OR\n " if type_optional else ''
-                        rule = clause_1 + "(PredefinedType <> %(type_name)s.USERDEFINED) OR\n ((PredefinedType = %(type_name)s.USERDEFINED) AND EXISTS (SELF\\%(attr)s))" % locals()
-                        constraints_by_type["EXPRESS_WHERE"].append(("CorrectPredefinedType", rule))
+                        rule = clause_1 + f"(PredefinedType <> {type_name}.USERDEFINED) OR\n ((PredefinedType = {type_name}.USERDEFINED) AND EXISTS (SELF\\{attr}))"
+                        generated_whererules.append(("CorrectPredefinedType", rule))
 
-                if is_occurrence:
-                    if c.name + "Type" in [x.name for x in self.xmi.by_tag_and_type["packagedElement"]["uml:Class"]]:
-                        ty_def = [x for x in self.xmi.by_tag_and_type["packagedElement"]["uml:Class"] if x.name == c.name + "Type"][0]
+                if is_occurrence_no_type:
+                    # @todo should use ObjectTyping.csv
+                    if ty_def := class_by_name.get(c.name + "Type"):
                         ty_attr_names = [attr.name for attr in ty_def/"ownedAttribute"]
-                        if "PredefinedType" in ty_attr_names:
-                            constraints_by_type["EXPRESS_WHERE"].append(
-                                ("CorrectTypeAssigned", "(SIZEOF(IsTypedBy) = 0) OR\n  ('%(schema_name)s.%(entity_name_upper)sTYPE' IN TYPEOF(SELF\\IfcObject.IsTypedBy[1].RelatingType))" % {'schema_name': SCHEMA_NAME, 'entity_name_upper': c.name.upper()})
+                        # @todo the inconsistencies are uncountable
+                        if "PredefinedType" in ty_attr_names or c.name == "IfcDeepFoundation":
+                            generated_whererules.append(
+                                ("CorrectTypeAssigned", f"(SIZEOF(IsTypedBy) = 0) OR\n  ('{SCHEMA_NAME}.{c.name.upper()}TYPE' IN TYPEOF(SELF\\IfcObject.IsTypedBy[1].RelatingType))")
                             )
 
+                where_rules = sorted([*((r.name, (r|"body").text) for r in c/"ownedRule" if (r|"language").text == 'EXPRESS_WHERE'), *generated_whererules])
+                unique_rules = sorted((r.name, (r|"body").text) for r in c/"ownedRule" if (r|"language").text == 'EXPRESS_UNIQUE')
+
                 express_entity = express.entity(c.name, attributes, 
-                    derived, inverses, sorted(constraints_by_type["EXPRESS_WHERE"]),
-                    sorted(constraints_by_type["EXPRESS_UNIQUE"]), subtypes, 
-                    supertypes, is_abstract
+                    derived, sorted(inverses), where_rules,
+                    unique_rules,
+                    supertypes, subtypes, is_abstract
                 )
                              
                 yield xmi_item(

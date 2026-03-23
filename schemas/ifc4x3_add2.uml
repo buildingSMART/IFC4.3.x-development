@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmi:version="20131001">
+  <uml:Model xmi:id="md_ifc4x3_add2" name="ifc4x3_add2">
+    <packagedElement xmi:type="uml:Package" xmi:id="pk_base" name="base">
+      <packagedElement xmi:type="uml:DataType" xmi:id="dt_binary" name="binary"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="dt_boolean" name="boolean"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="dt_integer" name="integer"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="dt_logical" name="logical"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="dt_number" name="number"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="dt_real" name="real"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="dt_string" name="string"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_PropertyTableValueBase" name="PropertyTableValueBase"/>
+    </packagedElement>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="ip_IfcGeometryResource" importedPackage="IfcGeometryResource.uml#pk_IfcGeometryResource"/>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="ip_IfcTopologyResource" importedPackage="IfcTopologyResource.uml#pk_IfcTopologyResource"/>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="ip_IfcRepresentationResource" importedPackage="IfcRepresentationResource.uml#pk_IfcRepresentationResource"/>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="ip_IfcMeasureResource" importedPackage="IfcMeasureResource.uml#pk_IfcMeasureResource"/>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="ip_IfcPresentationAppearanceResource" importedPackage="IfcPresentationAppearanceResource.uml#pk_IfcPresentationAppearanceResource"/>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="ip_IfcGeometricConstraintResource" importedPackage="IfcGeometricConstraintResource.uml#pk_IfcGeometricConstraintResource"/>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="ip_IfcMaterialResource" importedPackage="IfcMaterialResource.uml#pk_IfcMaterialResource"/>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="ip_IfcGeometricModelResource" importedPackage="IfcGeometricModelResource.uml#pk_IfcGeometricModelResource"/>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="ip_IfcKernel" importedPackage="IfcKernel.uml#pk_IfcKernel"/>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="ip_IfcQuantityResource" importedPackage="IfcQuantityResource.uml#pk_IfcQuantityResource"/>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="ip_IfcSharedMgmtElements" importedPackage="IfcSharedMgmtElements.uml#pk_IfcSharedMgmtElements"/>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="ip_IfcStructuralAnalysisDomain" importedPackage="IfcStructuralAnalysisDomain.uml#pk_IfcStructuralAnalysisDomain"/>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="ip_IfcActorResource" importedPackage="IfcActorResource.uml#pk_IfcActorResource"/>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="ip_IfcBuildingControlsDomain" importedPackage="IfcBuildingControlsDomain.uml#pk_IfcBuildingControlsDomain"/>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="ip_IfcHvacDomain" importedPackage="IfcHvacDomain.uml#pk_IfcHvacDomain"/>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="ip_IfcProductExtension" importedPackage="IfcProductExtension.uml#pk_IfcProductExtension"/>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="ip_IfcUtilityResource" importedPackage="IfcUtilityResource.uml#pk_IfcUtilityResource"/>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="ip_IfcCostResource" importedPackage="IfcCostResource.uml#pk_IfcCostResource"/>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="ip_IfcApprovalResource" importedPackage="IfcApprovalResource.uml#pk_IfcApprovalResource"/>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="ip_IfcElectricalDomain" importedPackage="IfcElectricalDomain.uml#pk_IfcElectricalDomain"/>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="ip_IfcSharedBldgElements" importedPackage="IfcSharedBldgElements.uml#pk_IfcSharedBldgElements"/>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="ip_IfcConstraintResource" importedPackage="IfcConstraintResource.uml#pk_IfcConstraintResource"/>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="ip_IfcStructuralLoadResource" importedPackage="IfcStructuralLoadResource.uml#pk_IfcStructuralLoadResource"/>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="ip_IfcSharedComponentElements" importedPackage="IfcSharedComponentElements.uml#pk_IfcSharedComponentElements"/>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="ip_IfcStructuralElementsDomain" importedPackage="IfcStructuralElementsDomain.uml#pk_IfcStructuralElementsDomain"/>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="ip_IfcConstructionMgmtDomain" importedPackage="IfcConstructionMgmtDomain.uml#pk_IfcConstructionMgmtDomain"/>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="ip_IfcPortsAndWaterwaysDomain" importedPackage="IfcPortsAndWaterwaysDomain.uml#pk_IfcPortsAndWaterwaysDomain"/>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="ip_IfcSharedInfrastructureElements" importedPackage="IfcSharedInfrastructureElements.uml#pk_IfcSharedInfrastructureElements"/>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="ip_IfcPropertyResource" importedPackage="IfcPropertyResource.uml#pk_IfcPropertyResource"/>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="ip_IfcDateTimeResource" importedPackage="IfcDateTimeResource.uml#pk_IfcDateTimeResource"/>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="ip_IfcSharedBldgServiceElements" importedPackage="IfcSharedBldgServiceElements.uml#pk_IfcSharedBldgServiceElements"/>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="ip_IfcExternalReferenceResource" importedPackage="IfcExternalReferenceResource.uml#pk_IfcExternalReferenceResource"/>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="ip_IfcArchitectureDomain" importedPackage="IfcArchitectureDomain.uml#pk_IfcArchitectureDomain"/>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="ip_IfcProcessExtension" importedPackage="IfcProcessExtension.uml#pk_IfcProcessExtension"/>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="ip_IfcPlumbingFireProtectionDomain" importedPackage="IfcPlumbingFireProtectionDomain.uml#pk_IfcPlumbingFireProtectionDomain"/>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="ip_IfcSharedFacilitiesElements" importedPackage="IfcSharedFacilitiesElements.uml#pk_IfcSharedFacilitiesElements"/>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="ip_IfcRoadDomain" importedPackage="IfcRoadDomain.uml#pk_IfcRoadDomain"/>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="ip_IfcPresentationOrganizationResource" importedPackage="IfcPresentationOrganizationResource.uml#pk_IfcPresentationOrganizationResource"/>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="ip_IfcControlExtension" importedPackage="IfcControlExtension.uml#pk_IfcControlExtension"/>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="ip_IfcPresentationDefinitionResource" importedPackage="IfcPresentationDefinitionResource.uml#pk_IfcPresentationDefinitionResource"/>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="ip_IfcProfileResource" importedPackage="IfcProfileResource.uml#pk_IfcProfileResource"/>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="ip_IfcRailDomain" importedPackage="IfcRailDomain.uml#pk_IfcRailDomain"/>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="ip_propertytypes" importedPackage="propertytypes.uml#pk_propertytypes"/>
+  </uml:Model>
+</xmi:XMI>

@@ -1,3 +1,6 @@
+from functools import reduce
+import operator
+from pathlib import Path
 import re
 import io
 import bisect
@@ -20,16 +23,41 @@ class base(object):
         if len(li) != 1:
             raise ValueError("%s has %d childNodes of type %s" % (self, len(li), other))
         return li[0]
+    
+    def traverse(self):
+        if getattr(self.xml, 'tagName', '') == "packageImport" and '#' in self.resolve('importedPackage'):
+            fn, hash = self.resolve('importedPackage').split('#')
+            if dc := self.doc.imports.get(fn):
+                pass
+            else:
+                dc = self.doc.imports[fn] = doc(str(Path(self.doc.filename).parent / fn))
+            self = dc.by_id[hash]
+        yield self
+        for c in self.children:
+            yield from c.traverse()
 
 class node(base):
     
-    def __init__(self, xmlnode, parent):
+    def __init__(self, xmlnode, parent, doc):
         self.xml = xmlnode
         self.parent = parent
+        self.doc = doc
         self.children = []
+
+    @property
+    def text(self):
+        assert len(self.xml.childNodes) == 1
+        assert isinstance(self.xml.childNodes[0], minidom.Text)
+        return self.xml.childNodes[0].wholeText
         
     def tags(self):    
         return dict(map(lambda t: (t.name, t.value), self/"tag"))
+    
+    def resolve(self, k):
+        v = self.attributes().get(k)
+        if v is not None:
+            return v
+        return (self | k).href.split('#')[1]
 
     def attributes(self):
         return dict((k, getattr(self, k)) for k in self.xml.attributes.keys())
@@ -70,29 +98,30 @@ class doc(base):
     doc.by_tag_and_type["element"]["uml:DataType"]
     doc.by_id[...] single element by xml:id
     
-    """
+    """       
     
     def __init__(self, fn):
+        self.filename = fn
+        self.imports = {}
         self.xml = minidom.parse(fn)
         self.text = open(fn, encoding=get_encoding(fn)).read()
         self.linebreaks = [m.span()[0] for m in re.finditer(r'\n', self.text)]
+        
+        self.by_id = dict()
+        
         self.by_type = defaultdict(list)
         self.by_tag_and_type = defaultdict(lambda: defaultdict(list))
         self.by_tag = defaultdict(list)
-        self.by_id = dict()
-        self.by_idref = defaultdict(list)
         
-        def visit(n, *fns, parent=None):
-            N = node(n, parent=parent)
-            if n.nodeType == n.ELEMENT_NODE:
-                for fn in fns:
-                    fn(N)
-
+        def visit(n, parent=None):
+            N = node(n, parent=parent, doc=self)
             for c in n.childNodes:
                 if c.nodeType == c.ELEMENT_NODE:
-                    N.children.append(visit(c, *fns, parent=N))
+                    N.children.append(visit(c, parent=N))
                     
             return N
+        
+        self.root = visit(self.xml)
 
         def register_by_xmi_type(n):
             t = n.type
@@ -103,56 +132,42 @@ class doc(base):
             t = n.type
             if t: self.by_tag_and_type[n.xml.tagName][t].append(n)
             
-        def register_by_xmi_idref(n):
-            t = n.xmi_idref
-            if t:
-                # note that duplicate xmi:ids do exist e.g. for generalizations
-                self.by_idref[t].append(n)
-
         def register_by_xmi_id(n):
             t = n.xmi_id
             if t and t not in self.by_id:
                 # note that duplicate xmi:ids do exist e.g. for generalizations
                 self.by_id[t] = n
 
-        visit(self.xml, 
-            register_by_xmi_type,
+        fns = [register_by_xmi_type,
             register_by_xmi_id,
-            register_by_xmi_idref,
-            register_by_tag_and_xmi_type)
-            
-        self.tags = {}
-            
-        for pr in self.by_tag["uml:Profile"]:
-            for pe in pr / "packagedElement":
-                if pe.xmi_type != "uml:Stereotype":
-                    continue
+            register_by_tag_and_xmi_type]
+        
+        for elem in self.root.traverse():
+            if elem.xml.nodeType == elem.xml.ELEMENT_NODE:
+                for fn in fns:
+                    fn(elem)
+        
+        """
+        merge_default_dict = lambda acc, d: defaultdict(list, {k: acc.get(k, []) + d.get(k, []) for k in (acc.keys() | d.keys())})
+        merge_nested = lambda acc, d: defaultdict(
+            lambda: defaultdict(list),
+            {
+                k: defaultdict(
+                    list,
+                    {
+                        kk: acc.get(k, {}).get(kk, []) + d.get(k, {}).get(kk, [])
+                        for kk in (acc.get(k, {}).keys() | d.get(k, {}).keys())
+                    }
+                )
+                for k in (acc.keys() | d.keys())
+            }
+        )
 
-                D = {}
-                tag = f"{pr.id}:{pe.id}".replace(" ", "_")
-                attrs = [a.name for a in pe / "ownedAttribute"]
-                base, attrs = attrs[0], attrs[1:]
-                for tag_def in self.by_tag[tag]:
-                    # it appears EA does not correctly export
-                    # profiles with different base types but the
-                    # same id / name, so we lookup attribute name
-                    # based on XML node
-                    base = [k for k in tag_def.attributes() if k.startswith("base_")][0]
-                    
-                    base_val = getattr(tag_def, base)
-                    if len(attrs) == 0:
-                        D[base_val] = True
-                    elif len(attrs) == 1:
-                        D[base_val] = getattr(tag_def, attrs[0])
-                    else:
-                        D[base_val] = tuple(getattr(tag_def, a) for a in attrs)
-                
-                # we update because there can be multiple stereotypes for
-                # different kinds of elements, such as ordering info
-                # for assoc, entity and enum literals
-                self.tags[pe.name] = self.tags.get(pe.name, {})
-                self.tags[pe.name].update(D)
-
+        self.by_id = reduce(operator.or_, (i.by_id for i in self.imports), self.by_id)
+        self.by_tag = reduce(merge_default_dict, (i.by_tag for i in self.imports), self.by_tag)
+        self.by_type = reduce(merge_default_dict, (i.by_type for i in self.imports), self.by_type)
+        self.by_tag_and_type = reduce(merge_nested, (i.by_tag_and_type for i in self.imports), self.by_tag_and_type)
+        """
     
     def locate(self, node):
         # pat = r'(?<=<)(%s[^\\/]*?xmi:idref="%s"[^\\/]*?)((?= \\/>)|(?=>))' % (node.xml.tagName, node.idref)

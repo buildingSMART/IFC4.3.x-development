@@ -1,0 +1,5 @@
+ApplicableEntity,Type
+IfcConstructionEquipmentResource,IfcTransportationDevice
+IfcConstructionProductResource,IfcElement
+IfcLaborResource,IfcActor
+IfcSubContractResource,IfcActor

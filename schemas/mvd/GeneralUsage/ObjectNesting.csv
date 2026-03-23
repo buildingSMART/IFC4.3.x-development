@@ -1,0 +1,13 @@
+ApplicableEntity,Type
+IfcActionRequest,IfcActionRequest
+IfcAlignment,IfcReferent
+IfcConstructionResource,IfcConstructionResource
+IfcCostItem,IfcCostItem
+IfcPermit,IfcPermit
+IfcProjectOrder,IfcProjectOrder
+IfcTask,IfcEvent
+IfcProcedure,IfcTask
+IfcTask,IfcTask
+IfcTask,IfcProcedure
+IfcTaskType,IfcTask
+IfcWorkSchedule,IfcWorkSchedule

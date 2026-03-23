@@ -1,0 +1,9 @@
+ApplicableEntity,Type
+IfcProject,IfcProjectLibrary
+IfcProject,IfcPropertySetTemplate
+IfcProject,IfcTypeObject
+IfcProject,IfcActor
+IfcProject,IfcControl
+IfcProject,IfcGroup
+IfcProject,IfcProcess
+IfcProject,IfcResource

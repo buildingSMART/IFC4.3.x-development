@@ -1,0 +1,4 @@
+ApplicableEntity,Type
+IfcActuator,IfcFlowController
+IfcProtectiveDeviceTrippingUnit,IfcProtectiveDevice
+IfcSensor,IfcDistributionFlowElement

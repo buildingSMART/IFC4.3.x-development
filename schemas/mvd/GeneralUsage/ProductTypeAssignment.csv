@@ -1,0 +1,4 @@
+ApplicableEntity,Type
+IfcDistributionControlElementType,IfcTaskType
+IfcDistributionControlElementType,IfcProcedureType
+IfcDistributionControlElementType,IfcEventType

@@ -1,0 +1,5 @@
+ApplicableEntity,QuantityType,QuantityName
+IfcConstructionEquipmentResource,IfcQuantityTime,Operation
+IfcConstructionMaterialResource,IfcQuantityVolume,GrossVolume
+IfcConstructionProductResource,IfcQuantityCount,Product
+IfcLaborResource,IfcQuantityTime,Labor

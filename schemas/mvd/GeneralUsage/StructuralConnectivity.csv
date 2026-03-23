@@ -1,0 +1,4 @@
+ApplicableEntity,StructuralConnection
+IfcStructuralCurveMember,IfcStructuralPointConnection
+IfcStructuralSurfaceMember,IfcStructuralCurveConnection
+IfcStructuralSurfaceMember,IfcStructuralSurfaceConnection

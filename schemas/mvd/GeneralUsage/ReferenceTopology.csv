@@ -1,0 +1,5 @@
+ApplicableEntity,Topology
+IfcStructuralCurveConnection,IfcEdge
+IfcStructuralCurveMember,IfcEdge
+IfcStructuralPointConnection,IfcVertexPoint
+IfcStructuralSurfaceMember,IfcFaceSurface

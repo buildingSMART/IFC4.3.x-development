@@ -1,0 +1,17 @@
+ApplicableEntity,RelatedObjects
+IfcAlignment,IfcAlignment
+IfcRamp,IfcRampFlight
+IfcRamp,IfcSlab
+IfcRamp,IfcRailing
+IfcRoof,IfcSlab
+IfcSlab,IfcBuildingElementPart
+IfcSlab,IfcBeam
+IfcSlab,IfcCovering
+IfcSlab,IfcPlate
+IfcStair,IfcStairFlight
+IfcStair,IfcSlab
+IfcStair,IfcRailing
+IfcWall,IfcMember
+IfcWall,IfcMechanicalFastener
+IfcWall,IfcElementAssembly
+IfcWall,IfcBuildingElementPart

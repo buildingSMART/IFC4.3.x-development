@@ -1,0 +1,4 @@
+ApplicableEntity,RelatingStructure
+IfcAnnotation,IfcSpatialElement
+IfcElement,IfcSpatialElement
+IfcGrid,IfcSpatialElement

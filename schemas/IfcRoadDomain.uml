@@ -1,0 +1,706 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmi:version="20131001">
+  <uml:Model xmi:id="md_IfcRoadDomain" name="IfcRoadDomain">
+    <packagedElement xmi:type="uml:Package" xmi:id="pk_IfcRoadDomain" name="IfcRoadDomain">
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="en_IfcKerbTypeEnum" name="IfcKerbTypeEnum">
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="literal_21409" name="USERDEFINED"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="literal_21410" name="NOTDEFINED"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="en_IfcRoadPartTypeEnum" name="IfcRoadPartTypeEnum">
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="literal_21411" name="BICYCLECROSSING"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="literal_21412" name="BUS_STOP"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="literal_21413" name="CARRIAGEWAY"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="literal_21414" name="CENTRALISLAND"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="literal_21415" name="CENTRALRESERVE"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="literal_21416" name="HARDSHOULDER"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="literal_21417" name="INTERSECTION"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="literal_21418" name="LAYBY"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="literal_21419" name="PARKINGBAY"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="literal_21420" name="PASSINGBAY"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="literal_21421" name="PEDESTRIAN_CROSSING"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="literal_21422" name="RAILWAYCROSSING"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="literal_21423" name="REFUGEISLAND"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="literal_21424" name="ROADSEGMENT"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="literal_21425" name="ROADSIDE"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="literal_21426" name="ROADSIDEPART"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="literal_21427" name="ROADWAYPLATEAU"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="literal_21428" name="ROUNDABOUT"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="literal_21429" name="SHOULDER"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="literal_21430" name="SIDEWALK"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="literal_21431" name="SOFTSHOULDER"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="literal_21432" name="TOLLPLAZA"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="literal_21433" name="TRAFFICISLAND"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="literal_21434" name="TRAFFICLANE"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="literal_21435" name="USERDEFINED"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="literal_21436" name="NOTDEFINED"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="en_IfcRoadTypeEnum" name="IfcRoadTypeEnum">
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="literal_21437" name="USERDEFINED"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="literal_21438" name="NOTDEFINED"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcKerb" name="IfcKerb">
+        <generalization xmi:type="uml:Generalization" xmi:id="gen_21439">
+          <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElement"/>
+        </generalization>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcKerb_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcKerbTypeEnum">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21440" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21441" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcKerbType" name="IfcKerbType">
+        <generalization xmi:type="uml:Generalization" xmi:id="gen_21442">
+          <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElementType"/>
+        </generalization>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcKerbType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcKerbTypeEnum">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21443" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21444" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRoad" name="IfcRoad">
+        <generalization xmi:type="uml:Generalization" xmi:id="gen_21445">
+          <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcFacility"/>
+        </generalization>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRoad_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcRoadTypeEnum">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21446" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21447" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRoadPart" name="IfcRoadPart">
+        <generalization xmi:type="uml:Generalization" xmi:id="gen_21448">
+          <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcFacilityPart"/>
+        </generalization>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRoadPart_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcRoadPartTypeEnum">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21449" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21450" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcKerbTypeEnum_USERDEFINED" name="IfcKerbTypeEnum.USERDEFINED">
+        <generalization xmi:type="uml:Generalization" xmi:id="gen_21451" general="cl_IfcKerb"/>
+        <generalization xmi:type="uml:Generalization" xmi:id="gen_21452" general="cl_IfcKerbType"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcKerbTypeEnum_NOTDEFINED" name="IfcKerbTypeEnum.NOTDEFINED">
+        <generalization xmi:type="uml:Generalization" xmi:id="gen_21453" general="cl_IfcKerb"/>
+        <generalization xmi:type="uml:Generalization" xmi:id="gen_21454" general="cl_IfcKerbType"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRoadTypeEnum_USERDEFINED" name="IfcRoadTypeEnum.USERDEFINED">
+        <generalization xmi:type="uml:Generalization" xmi:id="gen_21455" general="cl_IfcRoad"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRoadTypeEnum_NOTDEFINED" name="IfcRoadTypeEnum.NOTDEFINED">
+        <generalization xmi:type="uml:Generalization" xmi:id="gen_21456" general="cl_IfcRoad"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRoadPartTypeEnum_BICYCLECROSSING" name="IfcRoadPartTypeEnum.BICYCLECROSSING">
+        <generalization xmi:type="uml:Generalization" xmi:id="gen_21457" general="cl_IfcRoadPart"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRoadPartTypeEnum_BUS_STOP" name="IfcRoadPartTypeEnum.BUS_STOP">
+        <generalization xmi:type="uml:Generalization" xmi:id="gen_21458" general="cl_IfcRoadPart"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRoadPartTypeEnum_CARRIAGEWAY" name="IfcRoadPartTypeEnum.CARRIAGEWAY">
+        <generalization xmi:type="uml:Generalization" xmi:id="gen_21459" general="cl_IfcRoadPart"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRoadPartTypeEnum_CENTRALISLAND" name="IfcRoadPartTypeEnum.CENTRALISLAND">
+        <generalization xmi:type="uml:Generalization" xmi:id="gen_21460" general="cl_IfcRoadPart"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRoadPartTypeEnum_CENTRALRESERVE" name="IfcRoadPartTypeEnum.CENTRALRESERVE">
+        <generalization xmi:type="uml:Generalization" xmi:id="gen_21461" general="cl_IfcRoadPart"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRoadPartTypeEnum_HARDSHOULDER" name="IfcRoadPartTypeEnum.HARDSHOULDER">
+        <generalization xmi:type="uml:Generalization" xmi:id="gen_21462" general="cl_IfcRoadPart"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRoadPartTypeEnum_INTERSECTION" name="IfcRoadPartTypeEnum.INTERSECTION">
+        <generalization xmi:type="uml:Generalization" xmi:id="gen_21463" general="cl_IfcRoadPart"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRoadPartTypeEnum_LAYBY" name="IfcRoadPartTypeEnum.LAYBY">
+        <generalization xmi:type="uml:Generalization" xmi:id="gen_21464" general="cl_IfcRoadPart"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRoadPartTypeEnum_PARKINGBAY" name="IfcRoadPartTypeEnum.PARKINGBAY">
+        <generalization xmi:type="uml:Generalization" xmi:id="gen_21465" general="cl_IfcRoadPart"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRoadPartTypeEnum_PASSINGBAY" name="IfcRoadPartTypeEnum.PASSINGBAY">
+        <generalization xmi:type="uml:Generalization" xmi:id="gen_21466" general="cl_IfcRoadPart"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRoadPartTypeEnum_PEDESTRIAN_CROSSING" name="IfcRoadPartTypeEnum.PEDESTRIAN_CROSSING">
+        <generalization xmi:type="uml:Generalization" xmi:id="gen_21467" general="cl_IfcRoadPart"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRoadPartTypeEnum_RAILWAYCROSSING" name="IfcRoadPartTypeEnum.RAILWAYCROSSING">
+        <generalization xmi:type="uml:Generalization" xmi:id="gen_21468" general="cl_IfcRoadPart"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRoadPartTypeEnum_REFUGEISLAND" name="IfcRoadPartTypeEnum.REFUGEISLAND">
+        <generalization xmi:type="uml:Generalization" xmi:id="gen_21469" general="cl_IfcRoadPart"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRoadPartTypeEnum_ROADSEGMENT" name="IfcRoadPartTypeEnum.ROADSEGMENT">
+        <generalization xmi:type="uml:Generalization" xmi:id="gen_21470" general="cl_IfcRoadPart"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRoadPartTypeEnum_ROADSIDE" name="IfcRoadPartTypeEnum.ROADSIDE">
+        <generalization xmi:type="uml:Generalization" xmi:id="gen_21471" general="cl_IfcRoadPart"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRoadPartTypeEnum_ROADSIDEPART" name="IfcRoadPartTypeEnum.ROADSIDEPART">
+        <generalization xmi:type="uml:Generalization" xmi:id="gen_21472" general="cl_IfcRoadPart"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRoadPartTypeEnum_ROADWAYPLATEAU" name="IfcRoadPartTypeEnum.ROADWAYPLATEAU">
+        <generalization xmi:type="uml:Generalization" xmi:id="gen_21473" general="cl_IfcRoadPart"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRoadPartTypeEnum_ROUNDABOUT" name="IfcRoadPartTypeEnum.ROUNDABOUT">
+        <generalization xmi:type="uml:Generalization" xmi:id="gen_21474" general="cl_IfcRoadPart"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRoadPartTypeEnum_SHOULDER" name="IfcRoadPartTypeEnum.SHOULDER">
+        <generalization xmi:type="uml:Generalization" xmi:id="gen_21475" general="cl_IfcRoadPart"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRoadPartTypeEnum_SIDEWALK" name="IfcRoadPartTypeEnum.SIDEWALK">
+        <generalization xmi:type="uml:Generalization" xmi:id="gen_21476" general="cl_IfcRoadPart"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRoadPartTypeEnum_SOFTSHOULDER" name="IfcRoadPartTypeEnum.SOFTSHOULDER">
+        <generalization xmi:type="uml:Generalization" xmi:id="gen_21477" general="cl_IfcRoadPart"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRoadPartTypeEnum_TOLLPLAZA" name="IfcRoadPartTypeEnum.TOLLPLAZA">
+        <generalization xmi:type="uml:Generalization" xmi:id="gen_21478" general="cl_IfcRoadPart"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRoadPartTypeEnum_TRAFFICISLAND" name="IfcRoadPartTypeEnum.TRAFFICISLAND">
+        <generalization xmi:type="uml:Generalization" xmi:id="gen_21479" general="cl_IfcRoadPart"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRoadPartTypeEnum_TRAFFICLANE" name="IfcRoadPartTypeEnum.TRAFFICLANE">
+        <generalization xmi:type="uml:Generalization" xmi:id="gen_21480" general="cl_IfcRoadPart"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRoadPartTypeEnum_USERDEFINED" name="IfcRoadPartTypeEnum.USERDEFINED">
+        <generalization xmi:type="uml:Generalization" xmi:id="gen_21481" general="cl_IfcRoadPart"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRoadPartTypeEnum_NOTDEFINED" name="IfcRoadPartTypeEnum.NOTDEFINED">
+        <generalization xmi:type="uml:Generalization" xmi:id="gen_21482" general="cl_IfcRoadPart"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_Pset_BoundedCourseCommon" name="Pset_BoundedCourseCommon">
+        <ownedComment xmi:type="uml:Comment" xmi:id="comment_21483">
+          <body>PSET_TYPEDRIVENOVERRIDE</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_BoundedCourseCommon_SpreadingRate" name="SpreadingRate" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcNumericMeasure"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21484" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21485" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_Pset_CourseApplicationConditions" name="Pset_CourseApplicationConditions">
+        <ownedComment xmi:type="uml:Comment" xmi:id="comment_21486">
+          <body>PSET_TYPEDRIVENOVERRIDE</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_CourseApplicationConditions_ApplicationTemperature" name="ApplicationTemperature" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcThermodynamicTemperatureMeasure"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21487" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21488" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_CourseApplicationConditions_WeatherConditions" name="WeatherConditions" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcText"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21489" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21490" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_Pset_CourseCommon" name="Pset_CourseCommon">
+        <ownedComment xmi:type="uml:Comment" xmi:id="comment_21491">
+          <body>PSET_TYPEDRIVENOVERRIDE</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_CourseCommon_NominalLength" name="NominalLength" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcNonNegativeLengthMeasure"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21492" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21493" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_CourseCommon_NominalThickness" name="NominalThickness" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcNonNegativeLengthMeasure"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21494" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21495" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_CourseCommon_NominalWidth" name="NominalWidth" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcNonNegativeLengthMeasure"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21496" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21497" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_Pset_KerbCommon" name="Pset_KerbCommon">
+        <ownedComment xmi:type="uml:Comment" xmi:id="comment_21498">
+          <body>PSET_TYPEDRIVENOVERRIDE</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_KerbCommon_CombinedKerbGutter" name="CombinedKerbGutter" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcBoolean"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21499" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21500" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_KerbCommon_Upstand" name="Upstand" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcNonNegativeLengthMeasure"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21501" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21502" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_KerbCommon_Mountable" name="Mountable" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcBoolean"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21503" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21504" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_Pset_KerbStone" name="Pset_KerbStone">
+        <ownedComment xmi:type="uml:Comment" xmi:id="comment_21505">
+          <body>PSET_TYPEDRIVENOVERRIDE</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_KerbStone_NominalHeight" name="NominalHeight" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcNonNegativeLengthMeasure"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21506" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21507" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_KerbStone_NominalLength" name="NominalLength" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcNonNegativeLengthMeasure"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21508" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21509" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_KerbStone_StoneFinishes" name="StoneFinishes" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21510" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21511" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_KerbStone_TypeDesignation" name="TypeDesignation" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21512" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21513" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_KerbStone_NominalWidth" name="NominalWidth" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcNonNegativeLengthMeasure"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21514" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21515" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_Pset_MarkingLinesCommon" name="Pset_MarkingLinesCommon">
+        <ownedComment xmi:type="uml:Comment" xmi:id="comment_21516">
+          <body>PSET_OCCURRENCEDRIVEN</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_MarkingLinesCommon_DashedLine" name="DashedLine" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcBoolean"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21517" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21518" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_MarkingLinesCommon_DashedLinePattern" name="DashedLinePattern" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21519" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21520" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_MarkingLinesCommon_NominalWidth" name="NominalWidth" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcNonNegativeLengthMeasure"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21521" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21522" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_Pset_OnSiteCastKerb" name="Pset_OnSiteCastKerb">
+        <ownedComment xmi:type="uml:Comment" xmi:id="comment_21523">
+          <body>PSET_TYPEDRIVENOVERRIDE</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_OnSiteCastKerb_NominalHeight" name="NominalHeight" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcNonNegativeLengthMeasure"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21524" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21525" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_OnSiteCastKerb_NominalWidth" name="NominalWidth" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcNonNegativeLengthMeasure"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21526" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21527" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_Pset_PavementCommon" name="Pset_PavementCommon">
+        <ownedComment xmi:type="uml:Comment" xmi:id="comment_21528">
+          <body>PSET_TYPEDRIVENOVERRIDE</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_PavementCommon_Reference" name="Reference" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcIdentifier"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21529" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21530" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_PavementCommon_Status" name="Status" isOrdered="false">
+          <type xmi:type="uml:Enumeration" href="propertytypes.uml#en_PEnum_ElementStatus"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21531" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21532" value="*"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_PavementCommon_NominalThicknessEnd" name="NominalThicknessEnd" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcNonNegativeLengthMeasure"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21533" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21534" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_PavementCommon_StructuralSlope" name="StructuralSlope" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcPositiveRatioMeasure"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21535" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21536" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_PavementCommon_StructuralSlopeType" name="StructuralSlopeType" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21537" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21538" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_PavementCommon_NominalWidth" name="NominalWidth" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcNonNegativeLengthMeasure"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21539" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21540" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_PavementCommon_NominalLength" name="NominalLength" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcNonNegativeLengthMeasure"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21541" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21542" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_PavementCommon_NominalThickness" name="NominalThickness" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcNonNegativeLengthMeasure"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21543" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21544" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_Pset_PavementMillingCommon" name="Pset_PavementMillingCommon">
+        <ownedComment xmi:type="uml:Comment" xmi:id="comment_21545">
+          <body>PSET_OCCURRENCEDRIVEN</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_PavementMillingCommon_NominalDepth" name="NominalDepth" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcNonNegativeLengthMeasure"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21546" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21547" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_PavementMillingCommon_NominalWidth" name="NominalWidth" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcNonNegativeLengthMeasure"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21548" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21549" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_Pset_PavementSurfaceCommon" name="Pset_PavementSurfaceCommon">
+        <ownedComment xmi:type="uml:Comment" xmi:id="comment_21550">
+          <body>PSET_TYPEDRIVENOVERRIDE</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_PavementSurfaceCommon_PavementRoughness" name="PavementRoughness" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcNumericMeasure"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21551" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21552" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_PavementSurfaceCommon_PavementTexture" name="PavementTexture" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcPositiveLengthMeasure"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21553" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21554" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_Pset_PrecastKerbStone" name="Pset_PrecastKerbStone">
+        <ownedComment xmi:type="uml:Comment" xmi:id="comment_21555">
+          <body>PSET_TYPEDRIVENOVERRIDE</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_PrecastKerbStone_NominalHeight" name="NominalHeight" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcNonNegativeLengthMeasure"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21556" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21557" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_PrecastKerbStone_NominalLength" name="NominalLength" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcNonNegativeLengthMeasure"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21558" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21559" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_PrecastKerbStone_TypeDesignation" name="TypeDesignation" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21560" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21561" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_PrecastKerbStone_NominalWidth" name="NominalWidth" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcNonNegativeLengthMeasure"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21562" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21563" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_Pset_RadiiKerbStone" name="Pset_RadiiKerbStone">
+        <ownedComment xmi:type="uml:Comment" xmi:id="comment_21564">
+          <body>PSET_TYPEDRIVENOVERRIDE</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_RadiiKerbStone_CurveShape" name="CurveShape" isOrdered="false" type="en_PEnum_CurveShapeEnum">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21565" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21566" value="*"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_RadiiKerbStone_Radius" name="Radius" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcPositiveLengthMeasure"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21567" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21568" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="en_PEnum_CurveShapeEnum" name="PEnum_CurveShapeEnum">
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="literal_21569" name="EXTERNAL"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="literal_21570" name="INTERNAL"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_Pset_RoadDesignCriteriaCommon" name="Pset_RoadDesignCriteriaCommon">
+        <ownedComment xmi:type="uml:Comment" xmi:id="comment_21571">
+          <body>PSET_OCCURRENCEDRIVEN</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_RoadDesignCriteriaCommon_Crossfall" name="Crossfall" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcRatioMeasure"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21572" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21573" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_RoadDesignCriteriaCommon_DesignSpeed" name="DesignSpeed" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLinearVelocityMeasure"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21574" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21575" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_RoadDesignCriteriaCommon_DesignTrafficVolume" name="DesignTrafficVolume" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcCountMeasure"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21576" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21577" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_RoadDesignCriteriaCommon_DesignVehicleClass" name="DesignVehicleClass" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21578" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21579" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_RoadDesignCriteriaCommon_LaneWidth" name="LaneWidth" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcPositiveLengthMeasure"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21580" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21581" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_RoadDesignCriteriaCommon_NumberOfThroughLanes" name="NumberOfThroughLanes" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcCountMeasure"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21582" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21583" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_RoadDesignCriteriaCommon_RoadDesignClass" name="RoadDesignClass" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21584" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21585" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_Pset_RoadGuardElement" name="Pset_RoadGuardElement">
+        <ownedComment xmi:type="uml:Comment" xmi:id="comment_21586">
+          <body>PSET_TYPEDRIVENOVERRIDE</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_RoadGuardElement_IsMoveable" name="IsMoveable" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcBoolean"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21587" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21588" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_RoadGuardElement_IsTerminal" name="IsTerminal" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcBoolean"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21589" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21590" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_RoadGuardElement_IsTransition" name="IsTransition" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcBoolean"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21591" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21592" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_RoadGuardElement_TerminalType" name="TerminalType" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21593" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21594" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_Pset_RoadMarkingCommon" name="Pset_RoadMarkingCommon">
+        <ownedComment xmi:type="uml:Comment" xmi:id="comment_21595">
+          <body>PSET_OCCURRENCEDRIVEN</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_RoadMarkingCommon_ApplicationMethod" name="ApplicationMethod" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcText"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21596" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21597" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_RoadMarkingCommon_DiagramNumber" name="DiagramNumber" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21598" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21599" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_RoadMarkingCommon_MaterialColour" name="MaterialColour" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21600" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21601" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_RoadMarkingCommon_MaterialThickness" name="MaterialThickness" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcPositiveLengthMeasure"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21602" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21603" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_RoadMarkingCommon_MaterialType" name="MaterialType" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21604" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21605" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_RoadMarkingCommon_Structure" name="Structure" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21606" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21607" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_Pset_RoadSymbolsCommon" name="Pset_RoadSymbolsCommon">
+        <ownedComment xmi:type="uml:Comment" xmi:id="comment_21608">
+          <body>PSET_OCCURRENCEDRIVEN</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_RoadSymbolsCommon_Text" name="Text" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcText"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21609" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21610" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_RoadSymbolsCommon_TypeDesignation" name="TypeDesignation" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21611" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21612" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_Pset_SumpBusterCommon" name="Pset_SumpBusterCommon">
+        <ownedComment xmi:type="uml:Comment" xmi:id="comment_21613">
+          <body>PSET_TYPEDRIVENOVERRIDE</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_SumpBusterCommon_TypeDesignation" name="TypeDesignation" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21614" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21615" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_Pset_Superelevation" name="Pset_Superelevation">
+        <ownedComment xmi:type="uml:Comment" xmi:id="comment_21616">
+          <body>PSET_OCCURRENCEDRIVEN</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_Superelevation_Side" name="Side" isOrdered="false">
+          <type xmi:type="uml:Enumeration" href="propertytypes.uml#en_PEnum_SideType"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21617" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21618" value="*"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_Superelevation_Superelevation" name="Superelevation" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcRatioMeasure"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21619" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21620" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_Superelevation_TransitionSuperelevation" name="TransitionSuperelevation" isOrdered="false" type="en_PEnum_TransitionSuperelevationType">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21621" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21622" value="*"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="en_PEnum_TransitionSuperelevationType" name="PEnum_TransitionSuperelevationType">
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="literal_21623" name="LINEAR"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_Pset_TrafficCalmingDeviceCommon" name="Pset_TrafficCalmingDeviceCommon">
+        <ownedComment xmi:type="uml:Comment" xmi:id="comment_21624">
+          <body>PSET_TYPEDRIVENOVERRIDE</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_TrafficCalmingDeviceCommon_TypeDesignation" name="TypeDesignation" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21625" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21626" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_Pset_TransitionSectionCommon" name="Pset_TransitionSectionCommon">
+        <ownedComment xmi:type="uml:Comment" xmi:id="comment_21627">
+          <body>PSET_OCCURRENCEDRIVEN</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_TransitionSectionCommon_NominalLength" name="NominalLength" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcNonNegativeLengthMeasure"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21628" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21629" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_Pset_TrenchExcavationCommon" name="Pset_TrenchExcavationCommon">
+        <ownedComment xmi:type="uml:Comment" xmi:id="comment_21630">
+          <body>PSET_OCCURRENCEDRIVEN</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_TrenchExcavationCommon_NominalDepth" name="NominalDepth" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcNonNegativeLengthMeasure"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21631" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21632" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_TrenchExcavationCommon_NominalWidth" name="NominalWidth" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcNonNegativeLengthMeasure"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21633" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21634" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="cl_Pset_Width" name="Pset_Width">
+        <ownedComment xmi:type="uml:Comment" xmi:id="comment_21635">
+          <body>PSET_OCCURRENCEDRIVEN</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_Width_Side" name="Side" isOrdered="false">
+          <type xmi:type="uml:Enumeration" href="propertytypes.uml#en_PEnum_SideType"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21636" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21637" value="*"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_Width_TransitionWidth" name="TransitionWidth" isOrdered="false" type="en_PEnum_TransitionWidthType">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21638" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21639" value="*"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_Pset_Width_NominalWidth" name="NominalWidth" isOrdered="false">
+          <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcNonNegativeLengthMeasure"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21640" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21641" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="en_PEnum_TransitionWidthType" name="PEnum_TransitionWidthType">
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="literal_21642" name="CONST"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="literal_21643" name="LINEAR"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="dependency_21644" client="cl_Pset_BoundedCourseCommon">
+        <supplier xmi:type="uml:Class" href="IfcSharedInfrastructureElements.uml#cl_IfcCourse"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="dependency_21645" client="cl_Pset_CourseApplicationConditions">
+        <supplier xmi:type="uml:Class" href="IfcSharedInfrastructureElements.uml#cl_IfcCourse"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="dependency_21646" client="cl_Pset_CourseCommon">
+        <supplier xmi:type="uml:Class" href="IfcSharedInfrastructureElements.uml#cl_IfcCourse"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="dependency_21647" client="cl_Pset_PavementMillingCommon">
+        <supplier xmi:type="uml:Class" href="IfcSharedInfrastructureElements.uml#cl_IfcEarthworksCutTypeEnum_PAVEMENTMILLING"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="dependency_21648" client="cl_Pset_TrenchExcavationCommon">
+        <supplier xmi:type="uml:Class" href="IfcSharedInfrastructureElements.uml#cl_IfcEarthworksCutTypeEnum_TRENCH"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="dependency_21649" client="cl_Pset_TransitionSectionCommon">
+        <supplier xmi:type="uml:Class" href="IfcSharedInfrastructureElements.uml#cl_IfcEarthworksFillTypeEnum_TRANSITIONSECTION"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="dependency_21650" client="cl_Pset_SumpBusterCommon">
+        <supplier xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcElementAssemblyTypeEnum_SUMPBUSTER"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="dependency_21651" client="cl_Pset_TrafficCalmingDeviceCommon">
+        <supplier xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcElementAssemblyTypeEnum_TRAFFIC_CALMING_DEVICE"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="dependency_21652" client="cl_Pset_RoadDesignCriteriaCommon">
+        <supplier xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcFacilityPartCommonTypeEnum_JUNCTION"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="dependency_21653" client="cl_Pset_RoadDesignCriteriaCommon">
+        <supplier xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcFacilityPartCommonTypeEnum_LEVELCROSSING"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="dependency_21654" client="cl_Pset_RoadDesignCriteriaCommon">
+        <supplier xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcFacilityPartCommonTypeEnum_SEGMENT"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="dependency_21655" client="cl_Pset_RoadDesignCriteriaCommon" supplier="cl_IfcRoad"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="dependency_21656" client="cl_Pset_RoadDesignCriteriaCommon" supplier="cl_IfcRoadPartTypeEnum_BICYCLECROSSING"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="dependency_21657" client="cl_Pset_RoadDesignCriteriaCommon" supplier="cl_IfcRoadPartTypeEnum_INTERSECTION"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="dependency_21658" client="cl_Pset_RoadDesignCriteriaCommon" supplier="cl_IfcRoadPartTypeEnum_PEDESTRIAN_CROSSING"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="dependency_21659" client="cl_Pset_RoadDesignCriteriaCommon" supplier="cl_IfcRoadPartTypeEnum_RAILWAYCROSSING"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="dependency_21660" client="cl_Pset_RoadDesignCriteriaCommon" supplier="cl_IfcRoadPartTypeEnum_ROADSEGMENT"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="dependency_21661" client="cl_Pset_RoadDesignCriteriaCommon" supplier="cl_IfcRoadPartTypeEnum_ROUNDABOUT"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="dependency_21662" client="cl_Pset_RoadDesignCriteriaCommon" supplier="cl_IfcRoadPartTypeEnum_TOLLPLAZA"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="dependency_21663" client="cl_Pset_KerbCommon" supplier="cl_IfcKerb"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="dependency_21664" client="cl_Pset_KerbStone" supplier="cl_IfcKerb"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="dependency_21665" client="cl_Pset_OnSiteCastKerb" supplier="cl_IfcKerb"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="dependency_21666" client="cl_Pset_PrecastKerbStone" supplier="cl_IfcKerb"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="dependency_21667" client="cl_Pset_RadiiKerbStone" supplier="cl_IfcKerb"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="dependency_21668" client="cl_Pset_PavementCommon">
+        <supplier xmi:type="uml:Class" href="IfcSharedInfrastructureElements.uml#cl_IfcPavement"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="dependency_21669" client="cl_Pset_PavementSurfaceCommon">
+        <supplier xmi:type="uml:Class" href="IfcSharedInfrastructureElements.uml#cl_IfcPavement"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="dependency_21670" client="cl_Pset_RoadGuardElement">
+        <supplier xmi:type="uml:Class" href="IfcSharedBldgElements.uml#cl_IfcRailingTypeEnum_GUARDRAIL"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="dependency_21671" client="cl_Pset_RoadGuardElement">
+        <supplier xmi:type="uml:Class" href="IfcSharedBldgElements.uml#cl_IfcWallTypeEnum_PARAPET"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="dependency_21672" client="cl_Pset_Superelevation">
+        <supplier xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcReferentTypeEnum_SUPERELEVATIONEVENT"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="dependency_21673" client="cl_Pset_Width">
+        <supplier xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcReferentTypeEnum_WIDTHEVENT"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="dependency_21674" client="cl_Pset_RoadMarkingCommon">
+        <supplier xmi:type="uml:Class" href="IfcStructuralElementsDomain.uml#cl_IfcSurfaceFeatureTypeEnum_HATCHMARKING"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="dependency_21675" client="cl_Pset_RoadMarkingCommon">
+        <supplier xmi:type="uml:Class" href="IfcStructuralElementsDomain.uml#cl_IfcSurfaceFeatureTypeEnum_LINEMARKING"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="dependency_21676" client="cl_Pset_RoadMarkingCommon">
+        <supplier xmi:type="uml:Class" href="IfcStructuralElementsDomain.uml#cl_IfcSurfaceFeatureTypeEnum_PAVEMENTSURFACEMARKING"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="dependency_21677" client="cl_Pset_RoadMarkingCommon">
+        <supplier xmi:type="uml:Class" href="IfcStructuralElementsDomain.uml#cl_IfcSurfaceFeatureTypeEnum_SYMBOLMARKING"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="dependency_21678" client="cl_Pset_MarkingLinesCommon">
+        <supplier xmi:type="uml:Class" href="IfcStructuralElementsDomain.uml#cl_IfcSurfaceFeatureTypeEnum_LINEMARKING"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="dependency_21679" client="cl_Pset_RoadSymbolsCommon">
+        <supplier xmi:type="uml:Class" href="IfcStructuralElementsDomain.uml#cl_IfcSurfaceFeatureTypeEnum_SYMBOLMARKING"/>
+      </packagedElement>
+    </packagedElement>
+  </uml:Model>
+</xmi:XMI>

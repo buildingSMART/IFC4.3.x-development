@@ -1,0 +1,11 @@
+ApplicableEntity
+IfcAsset
+IfcBuildingSystem
+IfcDistributionSystem
+IfcGroup
+IfcInventory
+IfcStructuralAnalysisModel
+IfcStructuralLoadCase
+IfcStructuralLoadGroup
+IfcStructuralResultGroup
+IfcZone

@@ -26,7 +26,7 @@ Base quantities are quantity definitions that are independent of a particular me
 
 The following general agreements apply for each base quantity set
 
-* _IfcElementQuantity.Name_ = <name of the qto definition template>
+* _IfcElementQuantity.Name_ = &lt;name of the qto definition template>
 * _IfcElementQuantity.MethodOfMeasurement_ = 'BaseQuantities'
 * _IfcElementQuantity.Quantities_ = SET of subtypes of _IfcPhysicalSimpleQuantity_ with values for the _Name_ attribute as published as part of this specification.
 

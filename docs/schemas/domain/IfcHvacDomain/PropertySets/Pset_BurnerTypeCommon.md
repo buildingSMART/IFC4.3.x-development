@@ -1,5 +1,5 @@
 # Pset_BurnerTypeCommon
 
-Common attributes of burner types.
+Common properties of burner types.
 <!-- end of short definition -->
 

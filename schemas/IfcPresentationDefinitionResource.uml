@@ -26,10 +26,10 @@
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcAnnotationFillArea_OuterBoundary" name="OuterBoundary" isOrdered="false" association="as_IfcAnnotationFillArea_OuterBoundary">
           <type xmi:type="uml:Class" href="IfcGeometryResource.uml#cl_IfcCurve"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21830" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21830" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21831" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcAnnotationFillArea_InnerBoundaries" name="InnerBoundaries?_S[1:?]" isOrdered="false" association="as_IfcAnnotationFillArea_InnerBoundaries">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcAnnotationFillArea_InnerBoundaries" name="InnerBoundaries_S[1:?]" isOrdered="false" association="as_IfcAnnotationFillArea_InnerBoundaries">
           <type xmi:type="uml:Class" href="IfcGeometryResource.uml#cl_IfcCurve"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21832" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21833" value="1"/>
@@ -41,12 +41,12 @@
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPlanarExtent_SizeInX" name="SizeInX" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLengthMeasure"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21835" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21835" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21836" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPlanarExtent_SizeInY" name="SizeInY" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLengthMeasure"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21837" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21837" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21838" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -56,16 +56,16 @@
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextLiteral_Literal" name="Literal" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcPresentationAppearanceResource.uml#dt_IfcPresentableText"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21840" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21840" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21841" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextLiteral_Placement" name="Placement" isOrdered="false" association="as_IfcTextLiteral_Placement">
           <type xmi:type="uml:Class" href="IfcGeometryResource.uml#un_IfcAxis2Placement"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21842" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21842" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21843" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextLiteral_Path" name="Path" isOrdered="false" type="en_IfcTextPath">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21844" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21844" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21845" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -73,18 +73,18 @@
         <generalization xmi:type="uml:Generalization" xmi:id="gen_21846" general="cl_IfcPlanarExtent"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPlanarBox_Placement" name="Placement" isOrdered="false" association="as_IfcPlanarBox_Placement">
           <type xmi:type="uml:Class" href="IfcGeometryResource.uml#un_IfcAxis2Placement"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21847" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21847" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21848" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcTextLiteralWithExtent" name="IfcTextLiteralWithExtent">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_21849" general="cl_IfcTextLiteral"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextLiteralWithExtent_Extent" name="Extent" isOrdered="false" association="as_IfcTextLiteralWithExtent_Extent" type="cl_IfcPlanarExtent">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21850" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21850" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21851" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextLiteralWithExtent_BoxAlignment" name="BoxAlignment" isOrdered="false" type="dt_IfcBoxAlignment">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21852" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21852" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21853" value="1"/>
         </ownedAttribute>
         <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcTextLiteralWithExtent_WR31" name="WR31">

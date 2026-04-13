@@ -84,7 +84,7 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcBuildingElementPart" name="IfcBuildingElementPart">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_15882" general="cl_IfcElementComponent"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcBuildingElementPart_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcBuildingElementPartTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcBuildingElementPart_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcBuildingElementPartTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_15883" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_15884" value="1"/>
         </ownedAttribute>
@@ -92,13 +92,13 @@
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcBuildingElementPartType" name="IfcBuildingElementPartType">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_15885" general="cl_IfcElementComponentType"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcBuildingElementPartType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcBuildingElementPartTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_15886" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_15886" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_15887" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcDiscreteAccessory" name="IfcDiscreteAccessory">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_15888" general="cl_IfcElementComponent"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDiscreteAccessory_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcDiscreteAccessoryTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDiscreteAccessory_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcDiscreteAccessoryTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_15889" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_15890" value="1"/>
         </ownedAttribute>
@@ -106,13 +106,13 @@
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcDiscreteAccessoryType" name="IfcDiscreteAccessoryType">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_15891" general="cl_IfcElementComponentType"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDiscreteAccessoryType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcDiscreteAccessoryTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_15892" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_15892" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_15893" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcFastener" name="IfcFastener">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_15894" general="cl_IfcElementComponent"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcFastener_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcFastenerTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcFastener_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcFastenerTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_15895" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_15896" value="1"/>
         </ownedAttribute>
@@ -120,23 +120,23 @@
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcFastenerType" name="IfcFastenerType">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_15897" general="cl_IfcElementComponentType"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcFastenerType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcFastenerTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_15898" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_15898" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_15899" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcMechanicalFastener" name="IfcMechanicalFastener">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_15900" general="cl_IfcElementComponent"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMechanicalFastener_NominalDiameter" name="NominalDiameter?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMechanicalFastener_NominalDiameter" name="NominalDiameter" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcPositiveLengthMeasure"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_15901" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_15902" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMechanicalFastener_NominalLength" name="NominalLength?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMechanicalFastener_NominalLength" name="NominalLength" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcPositiveLengthMeasure"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_15903" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_15904" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMechanicalFastener_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcMechanicalFastenerTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMechanicalFastener_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcMechanicalFastenerTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_15905" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_15906" value="1"/>
         </ownedAttribute>
@@ -144,15 +144,15 @@
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcMechanicalFastenerType" name="IfcMechanicalFastenerType">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_15907" general="cl_IfcElementComponentType"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMechanicalFastenerType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcMechanicalFastenerTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_15908" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_15908" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_15909" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMechanicalFastenerType_NominalDiameter" name="NominalDiameter?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMechanicalFastenerType_NominalDiameter" name="NominalDiameter" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcPositiveLengthMeasure"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_15910" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_15911" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMechanicalFastenerType_NominalLength" name="NominalLength?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMechanicalFastenerType_NominalLength" name="NominalLength" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcPositiveLengthMeasure"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_15912" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_15913" value="1"/>

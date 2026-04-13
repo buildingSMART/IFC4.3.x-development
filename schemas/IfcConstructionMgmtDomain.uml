@@ -72,17 +72,17 @@
         <generalization xmi:type="uml:Generalization" xmi:id="gen_16929">
           <general xmi:type="uml:Class" href="IfcKernel.uml#cl_IfcResource"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcConstructionResource_Usage" name="Usage?" isOrdered="false" association="as_IfcConstructionResource_Usage">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcConstructionResource_Usage" name="Usage" isOrdered="false" association="as_IfcConstructionResource_Usage">
           <type xmi:type="uml:Class" href="IfcDateTimeResource.uml#cl_IfcResourceTime"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_16930" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_16931" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcConstructionResource_BaseCosts" name="BaseCosts?_L[1:?]" isOrdered="false" association="as_IfcConstructionResource_BaseCosts">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcConstructionResource_BaseCosts" name="BaseCosts_L[1:?]" isOrdered="false" association="as_IfcConstructionResource_BaseCosts">
           <type xmi:type="uml:Class" href="IfcCostResource.uml#cl_IfcAppliedValue"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_16932" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_16933" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcConstructionResource_BaseQuantity" name="BaseQuantity?" isOrdered="false" association="as_IfcConstructionResource_BaseQuantity">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcConstructionResource_BaseQuantity" name="BaseQuantity" isOrdered="false" association="as_IfcConstructionResource_BaseQuantity">
           <type xmi:type="uml:Class" href="IfcQuantityResource.uml#cl_IfcPhysicalQuantity"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_16934" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_16935" value="1"/>
@@ -92,12 +92,12 @@
         <generalization xmi:type="uml:Generalization" xmi:id="gen_16936">
           <general xmi:type="uml:Class" href="IfcKernel.uml#cl_IfcTypeResource"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcConstructionResourceType_BaseCosts" name="BaseCosts?_L[1:?]" isOrdered="false" association="as_IfcConstructionResourceType_BaseCosts">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcConstructionResourceType_BaseCosts" name="BaseCosts_L[1:?]" isOrdered="false" association="as_IfcConstructionResourceType_BaseCosts">
           <type xmi:type="uml:Class" href="IfcCostResource.uml#cl_IfcAppliedValue"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_16937" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_16938" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcConstructionResourceType_BaseQuantity" name="BaseQuantity?" isOrdered="false" association="as_IfcConstructionResourceType_BaseQuantity">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcConstructionResourceType_BaseQuantity" name="BaseQuantity" isOrdered="false" association="as_IfcConstructionResourceType_BaseQuantity">
           <type xmi:type="uml:Class" href="IfcQuantityResource.uml#cl_IfcPhysicalQuantity"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_16939" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_16940" value="1"/>
@@ -105,7 +105,7 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcConstructionEquipmentResource" name="IfcConstructionEquipmentResource">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_16941" general="cl_IfcConstructionResource"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcConstructionEquipmentResource_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcConstructionEquipmentResourceTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcConstructionEquipmentResource_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcConstructionEquipmentResourceTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_16942" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_16943" value="1"/>
         </ownedAttribute>
@@ -113,13 +113,13 @@
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcConstructionEquipmentResourceType" name="IfcConstructionEquipmentResourceType">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_16944" general="cl_IfcConstructionResourceType"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcConstructionEquipmentResourceType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcConstructionEquipmentResourceTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_16945" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_16945" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_16946" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcConstructionMaterialResource" name="IfcConstructionMaterialResource">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_16947" general="cl_IfcConstructionResource"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcConstructionMaterialResource_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcConstructionMaterialResourceTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcConstructionMaterialResource_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcConstructionMaterialResourceTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_16948" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_16949" value="1"/>
         </ownedAttribute>
@@ -127,13 +127,13 @@
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcConstructionMaterialResourceType" name="IfcConstructionMaterialResourceType">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_16950" general="cl_IfcConstructionResourceType"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcConstructionMaterialResourceType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcConstructionMaterialResourceTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_16951" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_16951" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_16952" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcConstructionProductResource" name="IfcConstructionProductResource">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_16953" general="cl_IfcConstructionResource"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcConstructionProductResource_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcConstructionProductResourceTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcConstructionProductResource_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcConstructionProductResourceTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_16954" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_16955" value="1"/>
         </ownedAttribute>
@@ -141,13 +141,13 @@
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcConstructionProductResourceType" name="IfcConstructionProductResourceType">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_16956" general="cl_IfcConstructionResourceType"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcConstructionProductResourceType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcConstructionProductResourceTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_16957" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_16957" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_16958" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcCrewResource" name="IfcCrewResource">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_16959" general="cl_IfcConstructionResource"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCrewResource_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcCrewResourceTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCrewResource_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcCrewResourceTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_16960" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_16961" value="1"/>
         </ownedAttribute>
@@ -155,13 +155,13 @@
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcCrewResourceType" name="IfcCrewResourceType">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_16962" general="cl_IfcConstructionResourceType"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCrewResourceType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcCrewResourceTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_16963" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_16963" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_16964" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcLaborResource" name="IfcLaborResource">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_16965" general="cl_IfcConstructionResource"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcLaborResource_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcLaborResourceTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcLaborResource_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcLaborResourceTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_16966" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_16967" value="1"/>
         </ownedAttribute>
@@ -169,13 +169,13 @@
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcLaborResourceType" name="IfcLaborResourceType">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_16968" general="cl_IfcConstructionResourceType"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcLaborResourceType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcLaborResourceTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_16969" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_16969" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_16970" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcSubContractResource" name="IfcSubContractResource">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_16971" general="cl_IfcConstructionResource"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSubContractResource_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcSubContractResourceTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSubContractResource_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcSubContractResourceTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_16972" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_16973" value="1"/>
         </ownedAttribute>
@@ -183,7 +183,7 @@
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcSubContractResourceType" name="IfcSubContractResourceType">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_16974" general="cl_IfcConstructionResourceType"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSubContractResourceType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcSubContractResourceTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_16975" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_16975" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_16976" value="1"/>
         </ownedAttribute>
       </packagedElement>

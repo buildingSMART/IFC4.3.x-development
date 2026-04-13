@@ -5,22 +5,22 @@
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcApplication" name="IfcApplication">
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcApplication_ApplicationDeveloper" name="ApplicationDeveloper" isOrdered="false" association="as_IfcApplication_ApplicationDeveloper">
           <type xmi:type="uml:Class" href="IfcActorResource.uml#cl_IfcOrganization"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_11244" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_11244" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_11245" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcApplication_Version" name="Version" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_11246" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_11246" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_11247" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcApplication_ApplicationFullName" name="ApplicationFullName" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_11248" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_11248" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_11249" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcApplication_ApplicationIdentifier" name="ApplicationIdentifier" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcIdentifier"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_11250" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_11250" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_11251" value="1"/>
         </ownedAttribute>
         <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcApplication_UR1" name="UR1">
@@ -57,38 +57,38 @@
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcOwnerHistory" name="IfcOwnerHistory">
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcOwnerHistory_OwningUser" name="OwningUser" isOrdered="false" association="as_IfcOwnerHistory_OwningUser">
           <type xmi:type="uml:Class" href="IfcActorResource.uml#cl_IfcPersonAndOrganization"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_11261" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_11261" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_11262" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcOwnerHistory_OwningApplication" name="OwningApplication" isOrdered="false" association="as_IfcOwnerHistory_OwningApplication" type="cl_IfcApplication">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_11263" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_11263" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_11264" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcOwnerHistory_State" name="State?" isOrdered="false" type="en_IfcStateEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcOwnerHistory_State" name="State" isOrdered="false" type="en_IfcStateEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_11265" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_11266" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcOwnerHistory_ChangeAction" name="ChangeAction?" isOrdered="false" type="en_IfcChangeActionEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcOwnerHistory_ChangeAction" name="ChangeAction" isOrdered="false" type="en_IfcChangeActionEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_11267" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_11268" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcOwnerHistory_LastModifiedDate" name="LastModifiedDate?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcOwnerHistory_LastModifiedDate" name="LastModifiedDate" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcDateTimeResource.uml#dt_IfcTimeStamp"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_11269" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_11270" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcOwnerHistory_LastModifyingUser" name="LastModifyingUser?" isOrdered="false" association="as_IfcOwnerHistory_LastModifyingUser">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcOwnerHistory_LastModifyingUser" name="LastModifyingUser" isOrdered="false" association="as_IfcOwnerHistory_LastModifyingUser">
           <type xmi:type="uml:Class" href="IfcActorResource.uml#cl_IfcPersonAndOrganization"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_11271" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_11272" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcOwnerHistory_LastModifyingApplication" name="LastModifyingApplication?" isOrdered="false" association="as_IfcOwnerHistory_LastModifyingApplication" type="cl_IfcApplication">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcOwnerHistory_LastModifyingApplication" name="LastModifyingApplication" isOrdered="false" association="as_IfcOwnerHistory_LastModifyingApplication" type="cl_IfcApplication">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_11273" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_11274" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcOwnerHistory_CreationDate" name="CreationDate" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcDateTimeResource.uml#dt_IfcTimeStamp"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_11275" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_11275" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_11276" value="1"/>
         </ownedAttribute>
         <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcOwnerHistory_CorrectChangeAction" name="CorrectChangeAction">
@@ -108,16 +108,16 @@
         <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="literal_11282" name="READWRITELOCKED"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcTable" name="IfcTable">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTable_Name" name="Name?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTable_Name" name="Name" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_11283" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_11284" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTable_Rows" name="Rows?_L[1:?]" isOrdered="false" association="as_IfcTable_Rows" type="cl_IfcTableRow">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTable_Rows" name="Rows_L[1:?]" isOrdered="false" association="as_IfcTable_Rows" type="cl_IfcTableRow">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_11285" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_11286" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTable_Columns" name="Columns?_L[1:?]" isOrdered="false" association="as_IfcTable_Columns" type="cl_IfcTableColumn">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTable_Columns" name="Columns_L[1:?]" isOrdered="false" association="as_IfcTable_Columns" type="cl_IfcTableColumn">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_11287" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_11288" value="1"/>
         </ownedAttribute>
@@ -162,39 +162,39 @@
         </ownedRule>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcTableColumn" name="IfcTableColumn">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTableColumn_Identifier" name="Identifier?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTableColumn_Identifier" name="Identifier" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcIdentifier"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_11300" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_11301" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTableColumn_Name" name="Name?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTableColumn_Name" name="Name" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_11302" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_11303" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTableColumn_Description" name="Description?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTableColumn_Description" name="Description" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcText"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_11304" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_11305" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTableColumn_Unit" name="Unit?" isOrdered="false" association="as_IfcTableColumn_Unit">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTableColumn_Unit" name="Unit" isOrdered="false" association="as_IfcTableColumn_Unit">
           <type xmi:type="uml:Class" href="IfcMeasureResource.uml#un_IfcUnit"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_11306" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_11307" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTableColumn_ReferencePath" name="ReferencePath?" isOrdered="false" association="as_IfcTableColumn_ReferencePath">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTableColumn_ReferencePath" name="ReferencePath" isOrdered="false" association="as_IfcTableColumn_ReferencePath">
           <type xmi:type="uml:Class" href="IfcConstraintResource.uml#cl_IfcReference"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_11308" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_11309" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcTableRow" name="IfcTableRow">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTableRow_RowCells" name="RowCells?_L[1:?]" isOrdered="false" association="as_IfcTableRow_RowCells">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTableRow_RowCells" name="RowCells_L[1:?]" isOrdered="false" association="as_IfcTableRow_RowCells">
           <type xmi:type="uml:Class" href="IfcMeasureResource.uml#un_IfcValue"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_11310" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_11311" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTableRow_IsHeading" name="IsHeading?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTableRow_IsHeading" name="IsHeading" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcBoolean"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_11312" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_11313" value="1"/>

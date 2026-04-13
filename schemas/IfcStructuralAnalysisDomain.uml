@@ -104,11 +104,11 @@
           <general xmi:type="uml:Class" href="IfcKernel.uml#cl_IfcRelConnects"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelConnectsStructuralActivity_RelatingElement" name="RelatingElement" isOrdered="false" association="as_IfcRelConnectsStructuralActivity_RelatingElement" type="un_IfcStructuralActivityAssignmentSelect">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4886" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4886" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4887" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelConnectsStructuralActivity_RelatedStructuralActivity" name="RelatedStructuralActivity" isOrdered="false" association="as_IfcRelConnectsStructuralActivity_RelatedStructuralActivity" type="cl_IfcStructuralActivity">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4888" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4888" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4889" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -117,29 +117,29 @@
           <general xmi:type="uml:Class" href="IfcKernel.uml#cl_IfcRelConnects"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelConnectsStructuralMember_RelatingStructuralMember" name="RelatingStructuralMember" isOrdered="false" association="as_IfcRelConnectsStructuralMember_RelatingStructuralMember" type="cl_IfcStructuralMember">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4891" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4891" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4892" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelConnectsStructuralMember_RelatedStructuralConnection" name="RelatedStructuralConnection" isOrdered="false" association="as_IfcRelConnectsStructuralMember_RelatedStructuralConnection" type="cl_IfcStructuralConnection">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4893" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4893" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4894" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelConnectsStructuralMember_AppliedCondition" name="AppliedCondition?" isOrdered="false" association="as_IfcRelConnectsStructuralMember_AppliedCondition">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelConnectsStructuralMember_AppliedCondition" name="AppliedCondition" isOrdered="false" association="as_IfcRelConnectsStructuralMember_AppliedCondition">
           <type xmi:type="uml:Class" href="IfcStructuralLoadResource.uml#cl_IfcBoundaryCondition"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4895" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4896" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelConnectsStructuralMember_AdditionalConditions" name="AdditionalConditions?" isOrdered="false" association="as_IfcRelConnectsStructuralMember_AdditionalConditions">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelConnectsStructuralMember_AdditionalConditions" name="AdditionalConditions" isOrdered="false" association="as_IfcRelConnectsStructuralMember_AdditionalConditions">
           <type xmi:type="uml:Class" href="IfcStructuralLoadResource.uml#cl_IfcStructuralConnectionCondition"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4897" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4898" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelConnectsStructuralMember_SupportedLength" name="SupportedLength?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelConnectsStructuralMember_SupportedLength" name="SupportedLength" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLengthMeasure"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4899" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4900" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelConnectsStructuralMember_ConditionCoordinateSystem" name="ConditionCoordinateSystem?" isOrdered="false" association="as_IfcRelConnectsStructuralMember_ConditionCoordinateSystem">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelConnectsStructuralMember_ConditionCoordinateSystem" name="ConditionCoordinateSystem" isOrdered="false" association="as_IfcRelConnectsStructuralMember_ConditionCoordinateSystem">
           <type xmi:type="uml:Class" href="IfcGeometryResource.uml#cl_IfcAxis2Placement3D"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4901" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4902" value="1"/>
@@ -149,7 +149,7 @@
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4903" general="cl_IfcRelConnectsStructuralMember"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelConnectsWithEccentricity_ConnectionConstraint" name="ConnectionConstraint" isOrdered="false" association="as_IfcRelConnectsWithEccentricity_ConnectionConstraint">
           <type xmi:type="uml:Class" href="IfcGeometricConstraintResource.uml#cl_IfcConnectionGeometry"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4904" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4904" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4905" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -159,12 +159,12 @@
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStructuralActivity_AppliedLoad" name="AppliedLoad" isOrdered="false" association="as_IfcStructuralActivity_AppliedLoad">
           <type xmi:type="uml:Class" href="IfcStructuralLoadResource.uml#cl_IfcStructuralLoad"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4907" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4907" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4908" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStructuralActivity_GlobalOrLocal" name="GlobalOrLocal" isOrdered="false">
           <type xmi:type="uml:Enumeration" href="IfcRepresentationResource.uml#en_IfcGlobalOrLocalEnum"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4909" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4909" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4910" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -178,23 +178,23 @@
           <general xmi:type="uml:Class" href="IfcKernel.uml#cl_IfcGroup"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStructuralLoadGroup_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcLoadGroupTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4913" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4913" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4914" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStructuralLoadGroup_ActionType" name="ActionType" isOrdered="false" type="en_IfcActionTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4915" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4915" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4916" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStructuralLoadGroup_ActionSource" name="ActionSource" isOrdered="false" type="en_IfcActionSourceTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4917" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4917" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4918" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStructuralLoadGroup_Coefficient" name="Coefficient?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStructuralLoadGroup_Coefficient" name="Coefficient" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcRatioMeasure"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4919" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4920" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStructuralLoadGroup_Purpose" name="Purpose?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStructuralLoadGroup_Purpose" name="Purpose" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4921" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4922" value="1"/>
@@ -215,16 +215,16 @@
           <general xmi:type="uml:Class" href="IfcKernel.uml#cl_IfcGroup"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStructuralResultGroup_TheoryType" name="TheoryType" isOrdered="false" type="en_IfcAnalysisTheoryTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4925" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4925" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4926" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStructuralResultGroup_ResultForLoadGroup" name="ResultForLoadGroup?" isOrdered="false" association="as_IfcStructuralResultGroup_ResultForLoadGroup" type="cl_IfcStructuralLoadGroup">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStructuralResultGroup_ResultForLoadGroup" name="ResultForLoadGroup" isOrdered="false" association="as_IfcStructuralResultGroup_ResultForLoadGroup" type="cl_IfcStructuralLoadGroup">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4927" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4928" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStructuralResultGroup_IsLinear" name="IsLinear" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcBoolean"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4929" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4929" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4930" value="1"/>
         </ownedAttribute>
         <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcStructuralResultGroup_HasObjectType" name="HasObjectType">
@@ -236,7 +236,7 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcStructuralAction" name="IfcStructuralAction" isAbstract="true">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4932" general="cl_IfcStructuralActivity"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStructuralAction_DestabilizingLoad" name="DestabilizingLoad?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStructuralAction_DestabilizingLoad" name="DestabilizingLoad" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcBoolean"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4933" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4934" value="1"/>
@@ -252,23 +252,23 @@
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcSystem"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStructuralAnalysisModel_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcAnalysisModelTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4938" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4938" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4939" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStructuralAnalysisModel_OrientationOf2DPlane" name="OrientationOf2DPlane?" isOrdered="false" association="as_IfcStructuralAnalysisModel_OrientationOf2DPlane">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStructuralAnalysisModel_OrientationOf2DPlane" name="OrientationOf2DPlane" isOrdered="false" association="as_IfcStructuralAnalysisModel_OrientationOf2DPlane">
           <type xmi:type="uml:Class" href="IfcGeometryResource.uml#cl_IfcAxis2Placement3D"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4940" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4941" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStructuralAnalysisModel_LoadedBy" name="LoadedBy?_S[1:?]" isOrdered="false" association="as_IfcStructuralAnalysisModel_LoadedBy" type="cl_IfcStructuralLoadGroup">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStructuralAnalysisModel_LoadedBy" name="LoadedBy_S[1:?]" isOrdered="false" association="as_IfcStructuralAnalysisModel_LoadedBy" type="cl_IfcStructuralLoadGroup">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4942" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4943" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStructuralAnalysisModel_HasResults" name="HasResults?_S[1:?]" isOrdered="false" association="as_IfcStructuralAnalysisModel_HasResults" type="cl_IfcStructuralResultGroup">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStructuralAnalysisModel_HasResults" name="HasResults_S[1:?]" isOrdered="false" association="as_IfcStructuralAnalysisModel_HasResults" type="cl_IfcStructuralResultGroup">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4944" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4945" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStructuralAnalysisModel_SharedPlacement" name="SharedPlacement?" isOrdered="false" association="as_IfcStructuralAnalysisModel_SharedPlacement">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStructuralAnalysisModel_SharedPlacement" name="SharedPlacement" isOrdered="false" association="as_IfcStructuralAnalysisModel_SharedPlacement">
           <type xmi:type="uml:Class" href="IfcGeometricConstraintResource.uml#cl_IfcObjectPlacement"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4946" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4947" value="1"/>
@@ -276,7 +276,7 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcStructuralConnection" name="IfcStructuralConnection" isAbstract="true">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4948" general="cl_IfcStructuralItem"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStructuralConnection_AppliedCondition" name="AppliedCondition?" isOrdered="false" association="as_IfcStructuralConnection_AppliedCondition">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStructuralConnection_AppliedCondition" name="AppliedCondition" isOrdered="false" association="as_IfcStructuralConnection_AppliedCondition">
           <type xmi:type="uml:Class" href="IfcStructuralLoadResource.uml#cl_IfcBoundaryCondition"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4949" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4950" value="1"/>
@@ -284,7 +284,7 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcStructuralLoadCase" name="IfcStructuralLoadCase">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4951" general="cl_IfcStructuralLoadGroup"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStructuralLoadCase_SelfWeightCoefficients" name="SelfWeightCoefficients?_L[3:3]" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStructuralLoadCase_SelfWeightCoefficients" name="SelfWeightCoefficients_L[3:3]" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcRatioMeasure"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4952" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4953" value="1"/>
@@ -304,12 +304,12 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcStructuralCurveAction" name="IfcStructuralCurveAction">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4957" general="cl_IfcStructuralAction"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStructuralCurveAction_ProjectedOrTrue" name="ProjectedOrTrue?" isOrdered="false" type="en_IfcProjectedOrTrueLengthEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStructuralCurveAction_ProjectedOrTrue" name="ProjectedOrTrue" isOrdered="false" type="en_IfcProjectedOrTrueLengthEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4958" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4959" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStructuralCurveAction_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcStructuralCurveActivityTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4960" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4960" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4961" value="1"/>
         </ownedAttribute>
         <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcStructuralCurveAction_HasObjectType" name="HasObjectType">
@@ -337,19 +337,19 @@
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4965" general="cl_IfcStructuralConnection"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStructuralCurveConnection_AxisDirection" name="AxisDirection" isOrdered="false" association="as_IfcStructuralCurveConnection_AxisDirection">
           <type xmi:type="uml:Class" href="IfcGeometryResource.uml#cl_IfcDirection"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4966" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4966" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4967" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcStructuralCurveMember" name="IfcStructuralCurveMember">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4968" general="cl_IfcStructuralMember"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStructuralCurveMember_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcStructuralCurveMemberTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4969" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4969" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4970" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStructuralCurveMember_Axis" name="Axis" isOrdered="false" association="as_IfcStructuralCurveMember_Axis">
           <type xmi:type="uml:Class" href="IfcGeometryResource.uml#cl_IfcDirection"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4971" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4971" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4972" value="1"/>
         </ownedAttribute>
         <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcStructuralCurveMember_HasObjectType" name="HasObjectType">
@@ -362,7 +362,7 @@
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcStructuralCurveReaction" name="IfcStructuralCurveReaction">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4974" general="cl_IfcStructuralReaction"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStructuralCurveReaction_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcStructuralCurveActivityTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4975" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4975" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4976" value="1"/>
         </ownedAttribute>
         <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcStructuralCurveReaction_HasObjectType" name="HasObjectType">
@@ -389,7 +389,7 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcStructuralPointConnection" name="IfcStructuralPointConnection">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4981" general="cl_IfcStructuralConnection"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStructuralPointConnection_ConditionCoordinateSystem" name="ConditionCoordinateSystem?" isOrdered="false" association="as_IfcStructuralPointConnection_ConditionCoordinateSystem">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStructuralPointConnection_ConditionCoordinateSystem" name="ConditionCoordinateSystem" isOrdered="false" association="as_IfcStructuralPointConnection_ConditionCoordinateSystem">
           <type xmi:type="uml:Class" href="IfcGeometryResource.uml#cl_IfcAxis2Placement3D"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4982" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4983" value="1"/>
@@ -406,12 +406,12 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcStructuralSurfaceAction" name="IfcStructuralSurfaceAction">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4986" general="cl_IfcStructuralAction"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStructuralSurfaceAction_ProjectedOrTrue" name="ProjectedOrTrue?" isOrdered="false" type="en_IfcProjectedOrTrueLengthEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStructuralSurfaceAction_ProjectedOrTrue" name="ProjectedOrTrue" isOrdered="false" type="en_IfcProjectedOrTrueLengthEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4987" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4988" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStructuralSurfaceAction_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcStructuralSurfaceActivityTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4989" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4989" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4990" value="1"/>
         </ownedAttribute>
         <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcStructuralSurfaceAction_HasObjectType" name="HasObjectType">
@@ -435,10 +435,10 @@
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcStructuralSurfaceMember" name="IfcStructuralSurfaceMember">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4994" general="cl_IfcStructuralMember"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStructuralSurfaceMember_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcStructuralSurfaceMemberTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4995" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4995" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4996" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStructuralSurfaceMember_Thickness" name="Thickness?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStructuralSurfaceMember_Thickness" name="Thickness" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcPositiveLengthMeasure"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4997" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4998" value="1"/>
@@ -453,7 +453,7 @@
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcStructuralSurfaceReaction" name="IfcStructuralSurfaceReaction">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_5000" general="cl_IfcStructuralReaction"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStructuralSurfaceReaction_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcStructuralSurfaceActivityTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_5001" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_5001" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_5002" value="1"/>
         </ownedAttribute>
         <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcStructuralSurfaceReaction_HasPredefinedType" name="HasPredefinedType">

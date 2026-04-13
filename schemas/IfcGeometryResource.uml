@@ -968,12 +968,12 @@ END_FUNCTION;
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRepresentationItem" name="IfcRepresentationItem" isAbstract="true"/>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRepresentationMap" name="IfcRepresentationMap">
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRepresentationMap_MappingOrigin" name="MappingOrigin" isOrdered="false" association="as_IfcRepresentationMap_MappingOrigin" type="un_IfcAxis2Placement">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1142" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1142" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1143" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRepresentationMap_MappedRepresentation" name="MappedRepresentation" isOrdered="false" association="as_IfcRepresentationMap_MappedRepresentation">
           <type xmi:type="uml:Class" href="IfcRepresentationResource.uml#cl_IfcRepresentation"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1144" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1144" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1145" value="1"/>
         </ownedAttribute>
         <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcRepresentationMap_ApplicableMappedRepr" name="ApplicableMappedRepr">
@@ -1007,11 +1007,11 @@ END_FUNCTION;
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcMappedItem" name="IfcMappedItem">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1157" general="cl_IfcRepresentationItem"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMappedItem_MappingSource" name="MappingSource" isOrdered="false" association="as_IfcMappedItem_MappingSource" type="cl_IfcRepresentationMap">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1158" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1158" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1159" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMappedItem_MappingTarget" name="MappingTarget" isOrdered="false" association="as_IfcMappedItem_MappingTarget" type="cl_IfcCartesianTransformationOperator">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1160" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1160" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1161" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -1022,19 +1022,19 @@ END_FUNCTION;
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcCartesianTransformationOperator" name="IfcCartesianTransformationOperator" isAbstract="true">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1163" general="cl_IfcGeometricRepresentationItem"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCartesianTransformationOperator_Axis1" name="Axis1?" isOrdered="false" association="as_IfcCartesianTransformationOperator_Axis1" type="cl_IfcDirection">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCartesianTransformationOperator_Axis1" name="Axis1" isOrdered="false" association="as_IfcCartesianTransformationOperator_Axis1" type="cl_IfcDirection">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1164" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1165" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCartesianTransformationOperator_Axis2" name="Axis2?" isOrdered="false" association="as_IfcCartesianTransformationOperator_Axis2" type="cl_IfcDirection">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCartesianTransformationOperator_Axis2" name="Axis2" isOrdered="false" association="as_IfcCartesianTransformationOperator_Axis2" type="cl_IfcDirection">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1166" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1167" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCartesianTransformationOperator_LocalOrigin" name="LocalOrigin" isOrdered="false" association="as_IfcCartesianTransformationOperator_LocalOrigin" type="cl_IfcCartesianPoint">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1168" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1168" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1169" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCartesianTransformationOperator_Scale" name="Scale?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCartesianTransformationOperator_Scale" name="Scale" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcReal"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1170" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1171" value="1"/>
@@ -1078,7 +1078,7 @@ END_FUNCTION;
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1183" general="cl_IfcGeometricRepresentationItem"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDirection_DirectionRatios" name="DirectionRatios_L[2:3]" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcReal"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1184" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1184" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1185" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDirection_Dim" name="Dim" isOrdered="false" isDerived="true" type="dt_IfcDimensionCount">
@@ -1104,7 +1104,7 @@ END_FUNCTION;
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcPlacement" name="IfcPlacement" isAbstract="true">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1191" general="cl_IfcGeometricRepresentationItem"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPlacement_Location" name="Location" isOrdered="false" association="as_IfcPlacement_Location" type="cl_IfcPoint">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1192" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1192" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1193" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPlacement_Dim" name="Dim" isOrdered="false" isDerived="true" type="dt_IfcDimensionCount">
@@ -1130,7 +1130,7 @@ END_FUNCTION;
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcSegment" name="IfcSegment" isAbstract="true">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1201" general="cl_IfcGeometricRepresentationItem"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSegment_Transition" name="Transition" isOrdered="false" type="en_IfcTransitionCode">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1202" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1202" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1203" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSegment_Dim" name="Dim" isOrdered="false" isDerived="true" type="dt_IfcDimensionCount">
@@ -1156,12 +1156,12 @@ END_FUNCTION;
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcVector" name="IfcVector">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1211" general="cl_IfcGeometricRepresentationItem"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcVector_Orientation" name="Orientation" isOrdered="false" association="as_IfcVector_Orientation" type="cl_IfcDirection">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1212" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1212" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1213" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcVector_Magnitude" name="Magnitude" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLengthMeasure"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1214" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1214" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1215" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcVector_Dim" name="Dim" isOrdered="false" isDerived="true" type="dt_IfcDimensionCount">
@@ -1181,7 +1181,7 @@ END_FUNCTION;
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcAxis1Placement" name="IfcAxis1Placement">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1220" general="cl_IfcPlacement"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcAxis1Placement_Axis" name="Axis?" isOrdered="false" association="as_IfcAxis1Placement_Axis" type="cl_IfcDirection">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcAxis1Placement_Axis" name="Axis" isOrdered="false" association="as_IfcAxis1Placement_Axis" type="cl_IfcDirection">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1221" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1222" value="1"/>
         </ownedAttribute>
@@ -1214,7 +1214,7 @@ END_FUNCTION;
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcAxis2Placement2D" name="IfcAxis2Placement2D">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1229" general="cl_IfcPlacement"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcAxis2Placement2D_RefDirection" name="RefDirection?" isOrdered="false" association="as_IfcAxis2Placement2D_RefDirection" type="cl_IfcDirection">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcAxis2Placement2D_RefDirection" name="RefDirection" isOrdered="false" association="as_IfcAxis2Placement2D_RefDirection" type="cl_IfcDirection">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1230" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1231" value="1"/>
         </ownedAttribute>
@@ -1247,11 +1247,11 @@ END_FUNCTION;
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcAxis2Placement3D" name="IfcAxis2Placement3D">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1238" general="cl_IfcPlacement"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcAxis2Placement3D_Axis" name="Axis?" isOrdered="false" association="as_IfcAxis2Placement3D_Axis" type="cl_IfcDirection">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcAxis2Placement3D_Axis" name="Axis" isOrdered="false" association="as_IfcAxis2Placement3D_Axis" type="cl_IfcDirection">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1239" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1240" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcAxis2Placement3D_RefDirection" name="RefDirection?" isOrdered="false" association="as_IfcAxis2Placement3D_RefDirection" type="cl_IfcDirection">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcAxis2Placement3D_RefDirection" name="RefDirection" isOrdered="false" association="as_IfcAxis2Placement3D_RefDirection" type="cl_IfcDirection">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1241" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1242" value="1"/>
         </ownedAttribute>
@@ -1302,11 +1302,11 @@ END_FUNCTION;
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcAxis2PlacementLinear" name="IfcAxis2PlacementLinear">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1252" general="cl_IfcPlacement"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcAxis2PlacementLinear_Axis" name="Axis?" isOrdered="false" association="as_IfcAxis2PlacementLinear_Axis" type="cl_IfcDirection">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcAxis2PlacementLinear_Axis" name="Axis" isOrdered="false" association="as_IfcAxis2PlacementLinear_Axis" type="cl_IfcDirection">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1253" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1254" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcAxis2PlacementLinear_RefDirection" name="RefDirection?" isOrdered="false" association="as_IfcAxis2PlacementLinear_RefDirection" type="cl_IfcDirection">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcAxis2PlacementLinear_RefDirection" name="RefDirection" isOrdered="false" association="as_IfcAxis2PlacementLinear_RefDirection" type="cl_IfcDirection">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1255" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1256" value="1"/>
         </ownedAttribute>
@@ -1333,7 +1333,7 @@ END_FUNCTION;
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1261" general="cl_IfcPoint"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCartesianPoint_Coordinates" name="Coordinates_L[1:3]" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLengthMeasure"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1262" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1262" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1263" value="1"/>
         </ownedAttribute>
         <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcCartesianPoint_CP2Dor3D" name="CP2Dor3D">
@@ -1377,7 +1377,7 @@ SELF\IfcCartesianTransformationOperator.Axis2,?)</body>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcCartesianTransformationOperator3D" name="IfcCartesianTransformationOperator3D">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1272" general="cl_IfcCartesianTransformationOperator"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCartesianTransformationOperator3D_Axis3" name="Axis3?" isOrdered="false" association="as_IfcCartesianTransformationOperator3D_Axis3" type="cl_IfcDirection">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCartesianTransformationOperator3D_Axis3" name="Axis3" isOrdered="false" association="as_IfcCartesianTransformationOperator3D_Axis3" type="cl_IfcDirection">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1273" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1274" value="1"/>
         </ownedAttribute>
@@ -1421,11 +1421,11 @@ SELF\IfcCartesianTransformationOperator.Axis2,Axis3)</body>
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1282" general="cl_IfcSegment"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCompositeCurveSegment_SameSense" name="SameSense" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcBoolean"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1283" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1283" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1284" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCompositeCurveSegment_ParentCurve" name="ParentCurve" isOrdered="false" association="as_IfcCompositeCurveSegment_ParentCurve" type="cl_IfcCurve">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1285" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1285" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1286" value="1"/>
         </ownedAttribute>
         <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcCompositeCurveSegment_ParentIsBoundedCurve" name="ParentIsBoundedCurve">
@@ -1438,44 +1438,44 @@ SELF\IfcCartesianTransformationOperator.Axis2,Axis3)</body>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcConic" name="IfcConic" isAbstract="true">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1288" general="cl_IfcCurve"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcConic_Position" name="Position" isOrdered="false" association="as_IfcConic_Position" type="un_IfcAxis2Placement">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1289" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1289" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1290" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcCurveSegment" name="IfcCurveSegment">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1291" general="cl_IfcSegment"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCurveSegment_Placement" name="Placement" isOrdered="false" association="as_IfcCurveSegment_Placement" type="cl_IfcPlacement">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1292" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1292" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1293" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCurveSegment_SegmentStart" name="SegmentStart" isOrdered="false" association="as_IfcCurveSegment_SegmentStart" type="un_IfcCurveMeasureSelect">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1294" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1294" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1295" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCurveSegment_SegmentLength" name="SegmentLength" isOrdered="false" association="as_IfcCurveSegment_SegmentLength" type="un_IfcCurveMeasureSelect">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1296" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1296" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1297" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCurveSegment_ParentCurve" name="ParentCurve" isOrdered="false" association="as_IfcCurveSegment_ParentCurve" type="cl_IfcCurve">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1298" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1298" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1299" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcElementarySurface" name="IfcElementarySurface" isAbstract="true">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1300" general="cl_IfcSurface"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcElementarySurface_Position" name="Position" isOrdered="false" association="as_IfcElementarySurface_Position" type="cl_IfcAxis2Placement3D">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1301" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1301" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1302" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcLine" name="IfcLine">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1303" general="cl_IfcCurve"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcLine_Pnt" name="Pnt" isOrdered="false" association="as_IfcLine_Pnt" type="cl_IfcCartesianPoint">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1304" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1304" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1305" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcLine_Dir" name="Dir" isOrdered="false" association="as_IfcLine_Dir" type="cl_IfcVector">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1306" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1306" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1307" value="1"/>
         </ownedAttribute>
         <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcLine_SameDim" name="SameDim">
@@ -1488,18 +1488,18 @@ SELF\IfcCartesianTransformationOperator.Axis2,Axis3)</body>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcOffsetCurve" name="IfcOffsetCurve" isAbstract="true">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1309" general="cl_IfcCurve"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcOffsetCurve_BasisCurve" name="BasisCurve" isOrdered="false" association="as_IfcOffsetCurve_BasisCurve" type="cl_IfcCurve">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1310" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1310" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1311" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcPcurve" name="IfcPcurve">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1312" general="cl_IfcCurve"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPcurve_BasisSurface" name="BasisSurface" isOrdered="false" association="as_IfcPcurve_BasisSurface" type="cl_IfcSurface">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1313" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1313" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1314" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPcurve_ReferenceCurve" name="ReferenceCurve" isOrdered="false" association="as_IfcPcurve_ReferenceCurve" type="cl_IfcCurve">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1315" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1315" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1316" value="1"/>
         </ownedAttribute>
         <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcPcurve_DimIs2D" name="DimIs2D">
@@ -1512,75 +1512,75 @@ SELF\IfcCartesianTransformationOperator.Axis2,Axis3)</body>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcPointByDistanceExpression" name="IfcPointByDistanceExpression">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1318" general="cl_IfcPoint"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPointByDistanceExpression_DistanceAlong" name="DistanceAlong" isOrdered="false" association="as_IfcPointByDistanceExpression_DistanceAlong" type="un_IfcCurveMeasureSelect">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1319" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1319" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1320" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPointByDistanceExpression_OffsetLateral" name="OffsetLateral?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPointByDistanceExpression_OffsetLateral" name="OffsetLateral" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLengthMeasure"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1321" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1322" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPointByDistanceExpression_OffsetVertical" name="OffsetVertical?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPointByDistanceExpression_OffsetVertical" name="OffsetVertical" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLengthMeasure"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1323" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1324" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPointByDistanceExpression_OffsetLongitudinal" name="OffsetLongitudinal?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPointByDistanceExpression_OffsetLongitudinal" name="OffsetLongitudinal" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLengthMeasure"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1325" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1326" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPointByDistanceExpression_BasisCurve" name="BasisCurve" isOrdered="false" association="as_IfcPointByDistanceExpression_BasisCurve" type="cl_IfcCurve">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1327" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1327" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1328" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcPointOnCurve" name="IfcPointOnCurve">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1329" general="cl_IfcPoint"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPointOnCurve_BasisCurve" name="BasisCurve" isOrdered="false" association="as_IfcPointOnCurve_BasisCurve" type="cl_IfcCurve">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1330" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1330" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1331" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPointOnCurve_PointParameter" name="PointParameter" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcParameterValue"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1332" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1332" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1333" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcPointOnSurface" name="IfcPointOnSurface">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1334" general="cl_IfcPoint"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPointOnSurface_BasisSurface" name="BasisSurface" isOrdered="false" association="as_IfcPointOnSurface_BasisSurface" type="cl_IfcSurface">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1335" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1335" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1336" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPointOnSurface_PointParameterU" name="PointParameterU" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcParameterValue"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1337" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1337" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1338" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPointOnSurface_PointParameterV" name="PointParameterV" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcParameterValue"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1339" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1339" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1340" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcPolynomialCurve" name="IfcPolynomialCurve">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1341" general="cl_IfcCurve"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPolynomialCurve_Position" name="Position" isOrdered="false" association="as_IfcPolynomialCurve_Position" type="cl_IfcPlacement">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1342" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1342" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1343" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPolynomialCurve_CoefficientsX" name="CoefficientsX?_L[2:?]" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPolynomialCurve_CoefficientsX" name="CoefficientsX_L[2:?]" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcReal"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1344" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1345" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPolynomialCurve_CoefficientsY" name="CoefficientsY?_L[2:?]" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPolynomialCurve_CoefficientsY" name="CoefficientsY_L[2:?]" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcReal"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1346" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1347" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPolynomialCurve_CoefficientsZ" name="CoefficientsZ?_L[2:?]" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPolynomialCurve_CoefficientsZ" name="CoefficientsZ_L[2:?]" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcReal"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1348" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1349" value="1"/>
@@ -1604,22 +1604,22 @@ SELF\IfcCartesianTransformationOperator.Axis2,Axis3)</body>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcSpiral" name="IfcSpiral" isAbstract="true">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1354" general="cl_IfcCurve"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSpiral_Position" name="Position" isOrdered="false" association="as_IfcSpiral_Position" type="un_IfcAxis2Placement">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1355" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1355" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1356" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcSurfaceCurve" name="IfcSurfaceCurve">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1357" general="cl_IfcCurve"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSurfaceCurve_Curve3D" name="Curve3D" isOrdered="false" association="as_IfcSurfaceCurve_Curve3D" type="cl_IfcCurve">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1358" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1358" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1359" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSurfaceCurve_AssociatedGeometry" name="AssociatedGeometry_L[1:2]" isOrdered="false" association="as_IfcSurfaceCurve_AssociatedGeometry" type="cl_IfcPcurve">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1360" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1360" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1361" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSurfaceCurve_MasterRepresentation" name="MasterRepresentation" isOrdered="false" type="en_IfcPreferredSurfaceCurveRepresentation">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1362" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1362" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1363" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSurfaceCurve_BasisSurface" name="BasisSurface" isOrdered="false" isDerived="true" type="cl_IfcSurface">
@@ -1647,10 +1647,10 @@ SELF\IfcCartesianTransformationOperator.Axis2,Axis3)</body>
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1369" general="cl_IfcSurface"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSweptSurface_SweptCurve" name="SweptCurve" isOrdered="false" association="as_IfcSweptSurface_SweptCurve">
           <type xmi:type="uml:Class" href="IfcProfileResource.uml#cl_IfcProfileDef"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1370" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1370" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1371" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSweptSurface_Position" name="Position?" isOrdered="false" association="as_IfcSweptSurface_Position" type="cl_IfcAxis2Placement3D">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSweptSurface_Position" name="Position" isOrdered="false" association="as_IfcSweptSurface_Position" type="cl_IfcAxis2Placement3D">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1372" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1373" value="1"/>
         </ownedAttribute>
@@ -1671,25 +1671,25 @@ SELF\IfcCartesianTransformationOperator.Axis2,Axis3)</body>
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1379" general="cl_IfcBoundedCurve"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcBSplineCurve_Degree" name="Degree" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcInteger"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1380" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1380" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1381" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcBSplineCurve_ControlPointsList" name="ControlPointsList_L[2:?]" isOrdered="false" association="as_IfcBSplineCurve_ControlPointsList" type="cl_IfcCartesianPoint">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1382" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1382" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1383" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcBSplineCurve_CurveForm" name="CurveForm" isOrdered="false" type="en_IfcBSplineCurveForm">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1384" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1384" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1385" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcBSplineCurve_ClosedCurve" name="ClosedCurve" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLogical"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1386" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1386" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1387" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcBSplineCurve_SelfIntersect" name="SelfIntersect" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLogical"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1388" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1388" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1389" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcBSplineCurve_UpperIndexOnControlPoints" name="UpperIndexOnControlPoints" isOrdered="false" isDerived="true">
@@ -1722,35 +1722,35 @@ SELF\IfcCartesianTransformationOperator.Axis2,Axis3)</body>
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1397" general="cl_IfcBoundedSurface"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcBSplineSurface_UDegree" name="UDegree" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcInteger"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1398" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1398" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1399" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcBSplineSurface_VDegree" name="VDegree" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcInteger"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1400" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1400" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1401" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcBSplineSurface_ControlPointsList" name="ControlPointsList_L[2:?]_L[2:?]" isOrdered="false" association="as_IfcBSplineSurface_ControlPointsList" type="cl_IfcCartesianPoint">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1402" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1402" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1403" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcBSplineSurface_SurfaceForm" name="SurfaceForm" isOrdered="false" type="en_IfcBSplineSurfaceForm">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1404" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1404" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1405" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcBSplineSurface_UClosed" name="UClosed" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLogical"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1406" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1406" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1407" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcBSplineSurface_VClosed" name="VClosed" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLogical"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1408" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1408" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1409" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcBSplineSurface_SelfIntersect" name="SelfIntersect" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLogical"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1410" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1410" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1411" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcBSplineSurface_UUpper" name="UUpper" isOrdered="false" isDerived="true">
@@ -1783,7 +1783,7 @@ SELF\IfcCartesianTransformationOperator.Axis2,Axis3)</body>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcCartesianTransformationOperator2DnonUniform" name="IfcCartesianTransformationOperator2DnonUniform">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1421" general="cl_IfcCartesianTransformationOperator2D"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCartesianTransformationOperator2DnonUniform_Scale2" name="Scale2?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCartesianTransformationOperator2DnonUniform_Scale2" name="Scale2" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcReal"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1422" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1423" value="1"/>
@@ -1806,12 +1806,12 @@ SELF\IfcCartesianTransformationOperator.Axis2,Axis3)</body>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcCartesianTransformationOperator3DnonUniform" name="IfcCartesianTransformationOperator3DnonUniform">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1428" general="cl_IfcCartesianTransformationOperator3D"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCartesianTransformationOperator3DnonUniform_Scale2" name="Scale2?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCartesianTransformationOperator3DnonUniform_Scale2" name="Scale2" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcReal"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1429" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1430" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCartesianTransformationOperator3DnonUniform_Scale3" name="Scale3?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCartesianTransformationOperator3DnonUniform_Scale3" name="Scale3" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcReal"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1431" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1432" value="1"/>
@@ -1851,7 +1851,7 @@ SELF\IfcCartesianTransformationOperator.Axis2,Axis3)</body>
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1441" general="cl_IfcConic"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCircle_Radius" name="Radius" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcPositiveLengthMeasure"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1442" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1442" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1443" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -1859,19 +1859,19 @@ SELF\IfcCartesianTransformationOperator.Axis2,Axis3)</body>
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1444" general="cl_IfcSpiral"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcClothoid_ClothoidConstant" name="ClothoidConstant" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLengthMeasure"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1445" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1445" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1446" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcCompositeCurve" name="IfcCompositeCurve">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1447" general="cl_IfcBoundedCurve"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCompositeCurve_Segments" name="Segments_L[1:?]" isOrdered="false" association="as_IfcCompositeCurve_Segments" type="cl_IfcSegment">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1448" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1448" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1449" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCompositeCurve_SelfIntersect" name="SelfIntersect" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLogical"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1450" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1450" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1451" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCompositeCurve_NSegments" name="NSegments" isOrdered="false" isDerived="true">
@@ -1909,10 +1909,10 @@ SELF\IfcCartesianTransformationOperator.Axis2,Axis3)</body>
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1460" general="cl_IfcSpiral"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCosineSpiral_CosineTerm" name="CosineTerm" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLengthMeasure"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1461" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1461" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1462" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCosineSpiral_ConstantTerm" name="ConstantTerm?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCosineSpiral_ConstantTerm" name="ConstantTerm" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLengthMeasure"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1463" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1464" value="1"/>
@@ -1921,31 +1921,31 @@ SELF\IfcCartesianTransformationOperator.Axis2,Axis3)</body>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcCurveBoundedPlane" name="IfcCurveBoundedPlane">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1465" general="cl_IfcBoundedSurface"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCurveBoundedPlane_BasisSurface" name="BasisSurface" isOrdered="false" association="as_IfcCurveBoundedPlane_BasisSurface" type="cl_IfcPlane">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1466" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1466" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1467" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCurveBoundedPlane_OuterBoundary" name="OuterBoundary" isOrdered="false" association="as_IfcCurveBoundedPlane_OuterBoundary" type="cl_IfcCurve">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1468" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1468" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1469" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCurveBoundedPlane_InnerBoundaries" name="InnerBoundaries_S[0:?]" isOrdered="false" association="as_IfcCurveBoundedPlane_InnerBoundaries" type="cl_IfcCurve">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1470" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1470" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1471" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcCurveBoundedSurface" name="IfcCurveBoundedSurface">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1472" general="cl_IfcBoundedSurface"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCurveBoundedSurface_BasisSurface" name="BasisSurface" isOrdered="false" association="as_IfcCurveBoundedSurface_BasisSurface" type="cl_IfcSurface">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1473" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1473" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1474" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCurveBoundedSurface_Boundaries" name="Boundaries_S[1:?]" isOrdered="false" association="as_IfcCurveBoundedSurface_Boundaries" type="cl_IfcBoundaryCurve">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1475" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1475" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1476" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCurveBoundedSurface_ImplicitOuter" name="ImplicitOuter" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcBoolean"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1477" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1477" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1478" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -1953,7 +1953,7 @@ SELF\IfcCartesianTransformationOperator.Axis2,Axis3)</body>
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1479" general="cl_IfcElementarySurface"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCylindricalSurface_Radius" name="Radius" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcPositiveLengthMeasure"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1480" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1480" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1481" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -1961,12 +1961,12 @@ SELF\IfcCartesianTransformationOperator.Axis2,Axis3)</body>
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1482" general="cl_IfcConic"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcEllipse_SemiAxis1" name="SemiAxis1" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcPositiveLengthMeasure"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1483" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1483" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1484" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcEllipse_SemiAxis2" name="SemiAxis2" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcPositiveLengthMeasure"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1485" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1485" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1486" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -1974,14 +1974,14 @@ SELF\IfcCartesianTransformationOperator.Axis2,Axis3)</body>
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1487" general="cl_IfcBoundedCurve"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcIndexedPolyCurve_Points" name="Points" isOrdered="false" association="as_IfcIndexedPolyCurve_Points">
           <type xmi:type="uml:Class" href="IfcGeometricModelResource.uml#cl_IfcCartesianPointList"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1488" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1488" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1489" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcIndexedPolyCurve_Segments" name="Segments?_L[1:?]" isOrdered="false" association="as_IfcIndexedPolyCurve_Segments" type="un_IfcSegmentIndexSelect">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcIndexedPolyCurve_Segments" name="Segments_L[1:?]" isOrdered="false" association="as_IfcIndexedPolyCurve_Segments" type="un_IfcSegmentIndexSelect">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1490" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1491" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcIndexedPolyCurve_SelfIntersect" name="SelfIntersect?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcIndexedPolyCurve_SelfIntersect" name="SelfIntersect" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcBoolean"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1492" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1493" value="1"/>
@@ -2012,12 +2012,12 @@ SELF\IfcCartesianTransformationOperator.Axis2,Axis3)</body>
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1498" general="cl_IfcOffsetCurve"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcOffsetCurve2D_Distance" name="Distance" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLengthMeasure"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1499" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1499" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1500" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcOffsetCurve2D_SelfIntersect" name="SelfIntersect" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLogical"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1501" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1501" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1502" value="1"/>
         </ownedAttribute>
         <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcOffsetCurve2D_DimIs2D" name="DimIs2D">
@@ -2031,16 +2031,16 @@ SELF\IfcCartesianTransformationOperator.Axis2,Axis3)</body>
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1504" general="cl_IfcOffsetCurve"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcOffsetCurve3D_Distance" name="Distance" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLengthMeasure"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1505" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1505" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1506" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcOffsetCurve3D_SelfIntersect" name="SelfIntersect" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLogical"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1507" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1507" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1508" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcOffsetCurve3D_RefDirection" name="RefDirection" isOrdered="false" association="as_IfcOffsetCurve3D_RefDirection" type="cl_IfcDirection">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1509" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1509" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1510" value="1"/>
         </ownedAttribute>
         <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcOffsetCurve3D_DimIs2D" name="DimIs2D">
@@ -2053,10 +2053,10 @@ SELF\IfcCartesianTransformationOperator.Axis2,Axis3)</body>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcOffsetCurveByDistances" name="IfcOffsetCurveByDistances">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1512" general="cl_IfcOffsetCurve"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcOffsetCurveByDistances_OffsetValues" name="OffsetValues_L[1:?]" isOrdered="false" association="as_IfcOffsetCurveByDistances_OffsetValues" type="cl_IfcPointByDistanceExpression">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1513" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1513" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1514" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcOffsetCurveByDistances_Tag" name="Tag?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcOffsetCurveByDistances_Tag" name="Tag" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1515" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1516" value="1"/>
@@ -2068,7 +2068,7 @@ SELF\IfcCartesianTransformationOperator.Axis2,Axis3)</body>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcPolyline" name="IfcPolyline">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1518" general="cl_IfcBoundedCurve"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPolyline_Points" name="Points_L[2:?]" isOrdered="false" association="as_IfcPolyline_Points" type="cl_IfcCartesianPoint">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1519" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1519" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1520" value="1"/>
         </ownedAttribute>
         <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcPolyline_SameDim" name="SameDim">
@@ -2081,37 +2081,37 @@ SELF\IfcCartesianTransformationOperator.Axis2,Axis3)</body>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRectangularTrimmedSurface" name="IfcRectangularTrimmedSurface">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1522" general="cl_IfcBoundedSurface"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRectangularTrimmedSurface_BasisSurface" name="BasisSurface" isOrdered="false" association="as_IfcRectangularTrimmedSurface_BasisSurface" type="cl_IfcSurface">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1523" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1523" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1524" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRectangularTrimmedSurface_U1" name="U1" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcParameterValue"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1525" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1525" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1526" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRectangularTrimmedSurface_V1" name="V1" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcParameterValue"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1527" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1527" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1528" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRectangularTrimmedSurface_U2" name="U2" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcParameterValue"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1529" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1529" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1530" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRectangularTrimmedSurface_V2" name="V2" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcParameterValue"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1531" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1531" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1532" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRectangularTrimmedSurface_Usense" name="Usense" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcBoolean"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1533" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1533" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1534" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRectangularTrimmedSurface_Vsense" name="Vsense" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcBoolean"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1535" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1535" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1536" value="1"/>
         </ownedAttribute>
         <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcRectangularTrimmedSurface_U1AndU2Different" name="U1AndU2Different">
@@ -2146,7 +2146,7 @@ SELF\IfcCartesianTransformationOperator.Axis2,Axis3)</body>
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1541" general="cl_IfcCompositeCurveSegment"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcReparametrisedCompositeCurveSegment_ParamLength" name="ParamLength" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcParameterValue"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1542" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1542" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1543" value="1"/>
         </ownedAttribute>
         <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcReparametrisedCompositeCurveSegment_PositiveLengthParameter" name="PositiveLengthParameter">
@@ -2175,15 +2175,15 @@ SELF\IfcCartesianTransformationOperator.Axis2,Axis3)</body>
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1548" general="cl_IfcSpiral"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSecondOrderPolynomialSpiral_QuadraticTerm" name="QuadraticTerm" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLengthMeasure"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1549" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1549" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1550" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSecondOrderPolynomialSpiral_LinearTerm" name="LinearTerm?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSecondOrderPolynomialSpiral_LinearTerm" name="LinearTerm" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLengthMeasure"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1551" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1552" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSecondOrderPolynomialSpiral_ConstantTerm" name="ConstantTerm?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSecondOrderPolynomialSpiral_ConstantTerm" name="ConstantTerm" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLengthMeasure"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1553" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1554" value="1"/>
@@ -2193,40 +2193,40 @@ SELF\IfcCartesianTransformationOperator.Axis2,Axis3)</body>
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1555" general="cl_IfcSpiral"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSeventhOrderPolynomialSpiral_SepticTerm" name="SepticTerm" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLengthMeasure"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1556" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1556" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1557" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSeventhOrderPolynomialSpiral_SexticTerm" name="SexticTerm?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSeventhOrderPolynomialSpiral_SexticTerm" name="SexticTerm" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLengthMeasure"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1558" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1559" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSeventhOrderPolynomialSpiral_QuinticTerm" name="QuinticTerm?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSeventhOrderPolynomialSpiral_QuinticTerm" name="QuinticTerm" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLengthMeasure"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1560" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1561" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSeventhOrderPolynomialSpiral_QuarticTerm" name="QuarticTerm?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSeventhOrderPolynomialSpiral_QuarticTerm" name="QuarticTerm" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLengthMeasure"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1562" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1563" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSeventhOrderPolynomialSpiral_CubicTerm" name="CubicTerm?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSeventhOrderPolynomialSpiral_CubicTerm" name="CubicTerm" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLengthMeasure"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1564" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1565" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSeventhOrderPolynomialSpiral_QuadraticTerm" name="QuadraticTerm?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSeventhOrderPolynomialSpiral_QuadraticTerm" name="QuadraticTerm" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLengthMeasure"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1566" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1567" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSeventhOrderPolynomialSpiral_LinearTerm" name="LinearTerm?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSeventhOrderPolynomialSpiral_LinearTerm" name="LinearTerm" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLengthMeasure"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1568" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1569" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSeventhOrderPolynomialSpiral_ConstantTerm" name="ConstantTerm?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSeventhOrderPolynomialSpiral_ConstantTerm" name="ConstantTerm" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLengthMeasure"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1570" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1571" value="1"/>
@@ -2236,15 +2236,15 @@ SELF\IfcCartesianTransformationOperator.Axis2,Axis3)</body>
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1572" general="cl_IfcSpiral"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSineSpiral_SineTerm" name="SineTerm" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLengthMeasure"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1573" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1573" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1574" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSineSpiral_LinearTerm" name="LinearTerm?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSineSpiral_LinearTerm" name="LinearTerm" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLengthMeasure"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1575" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1576" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSineSpiral_ConstantTerm" name="ConstantTerm?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSineSpiral_ConstantTerm" name="ConstantTerm" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLengthMeasure"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1577" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1578" value="1"/>
@@ -2254,19 +2254,19 @@ SELF\IfcCartesianTransformationOperator.Axis2,Axis3)</body>
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1579" general="cl_IfcElementarySurface"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSphericalSurface_Radius" name="Radius" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcPositiveLengthMeasure"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1580" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1580" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1581" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcSurfaceOfLinearExtrusion" name="IfcSurfaceOfLinearExtrusion">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1582" general="cl_IfcSweptSurface"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSurfaceOfLinearExtrusion_ExtrudedDirection" name="ExtrudedDirection" isOrdered="false" association="as_IfcSurfaceOfLinearExtrusion_ExtrudedDirection" type="cl_IfcDirection">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1583" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1583" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1584" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSurfaceOfLinearExtrusion_Depth" name="Depth" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLengthMeasure"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1585" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1585" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1586" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSurfaceOfLinearExtrusion_ExtrusionAxis" name="ExtrusionAxis" isOrdered="false" isDerived="true" type="cl_IfcVector">
@@ -2287,7 +2287,7 @@ SELF\IfcCartesianTransformationOperator.Axis2,Axis3)</body>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcSurfaceOfRevolution" name="IfcSurfaceOfRevolution">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1591" general="cl_IfcSweptSurface"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSurfaceOfRevolution_AxisPosition" name="AxisPosition" isOrdered="false" association="as_IfcSurfaceOfRevolution_AxisPosition" type="cl_IfcAxis1Placement">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1592" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1592" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1593" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSurfaceOfRevolution_AxisLine" name="AxisLine" isOrdered="false" isDerived="true" type="cl_IfcLine">
@@ -2304,20 +2304,20 @@ SELF\IfcCartesianTransformationOperator.Axis2,Axis3)</body>
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1597" general="cl_IfcSpiral"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcThirdOrderPolynomialSpiral_CubicTerm" name="CubicTerm" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLengthMeasure"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1598" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1598" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1599" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcThirdOrderPolynomialSpiral_QuadraticTerm" name="QuadraticTerm?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcThirdOrderPolynomialSpiral_QuadraticTerm" name="QuadraticTerm" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLengthMeasure"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1600" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1601" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcThirdOrderPolynomialSpiral_LinearTerm" name="LinearTerm?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcThirdOrderPolynomialSpiral_LinearTerm" name="LinearTerm" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLengthMeasure"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1602" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1603" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcThirdOrderPolynomialSpiral_ConstantTerm" name="ConstantTerm?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcThirdOrderPolynomialSpiral_ConstantTerm" name="ConstantTerm" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLengthMeasure"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1604" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1605" value="1"/>
@@ -2327,12 +2327,12 @@ SELF\IfcCartesianTransformationOperator.Axis2,Axis3)</body>
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1606" general="cl_IfcElementarySurface"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcToroidalSurface_MajorRadius" name="MajorRadius" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcPositiveLengthMeasure"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1607" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1607" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1608" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcToroidalSurface_MinorRadius" name="MinorRadius" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcPositiveLengthMeasure"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1609" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1609" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1610" value="1"/>
         </ownedAttribute>
         <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcToroidalSurface_MajorLargerMinor" name="MajorLargerMinor">
@@ -2345,24 +2345,24 @@ SELF\IfcCartesianTransformationOperator.Axis2,Axis3)</body>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcTrimmedCurve" name="IfcTrimmedCurve">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1612" general="cl_IfcBoundedCurve"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTrimmedCurve_BasisCurve" name="BasisCurve" isOrdered="false" association="as_IfcTrimmedCurve_BasisCurve" type="cl_IfcCurve">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1613" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1613" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1614" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTrimmedCurve_Trim1" name="Trim1_S[1:2]" isOrdered="false" association="as_IfcTrimmedCurve_Trim1" type="un_IfcTrimmingSelect">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1615" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1615" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1616" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTrimmedCurve_Trim2" name="Trim2_S[1:2]" isOrdered="false" association="as_IfcTrimmedCurve_Trim2" type="un_IfcTrimmingSelect">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1617" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1617" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1618" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTrimmedCurve_SenseAgreement" name="SenseAgreement" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcBoolean"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1619" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1619" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1620" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTrimmedCurve_MasterRepresentation" name="MasterRepresentation" isOrdered="false" type="en_IfcTrimmingPreference">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1621" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1621" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1622" value="1"/>
         </ownedAttribute>
         <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcTrimmedCurve_NoTrimOfBoundedCurves" name="NoTrimOfBoundedCurves">
@@ -2393,16 +2393,16 @@ SELF\IfcCartesianTransformationOperator.Axis2,Axis3)</body>
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1628" general="cl_IfcBSplineCurve"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcBSplineCurveWithKnots_KnotMultiplicities" name="KnotMultiplicities_L[2:?]" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcInteger"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1629" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1629" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1630" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcBSplineCurveWithKnots_Knots" name="Knots_L[2:?]" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcParameterValue"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1631" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1631" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1632" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcBSplineCurveWithKnots_KnotSpec" name="KnotSpec" isOrdered="false" type="en_IfcKnotType">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1633" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1633" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1634" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcBSplineCurveWithKnots_UpperIndexOnKnots" name="UpperIndexOnKnots" isOrdered="false" isDerived="true">
@@ -2432,26 +2432,26 @@ UpperIndexOnControlPoints, KnotMultiplicities, Knots)</body>
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1640" general="cl_IfcBSplineSurface"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcBSplineSurfaceWithKnots_UMultiplicities" name="UMultiplicities_L[2:?]" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcInteger"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1641" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1641" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1642" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcBSplineSurfaceWithKnots_VMultiplicities" name="VMultiplicities_L[2:?]" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcInteger"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1643" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1643" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1644" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcBSplineSurfaceWithKnots_UKnots" name="UKnots_L[2:?]" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcParameterValue"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1645" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1645" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1646" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcBSplineSurfaceWithKnots_VKnots" name="VKnots_L[2:?]" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcParameterValue"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1647" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1647" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1648" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcBSplineSurfaceWithKnots_KnotSpec" name="KnotSpec" isOrdered="false" type="en_IfcKnotType">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1649" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1649" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1650" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcBSplineSurfaceWithKnots_KnotVUpper" name="KnotVUpper" isOrdered="false" isDerived="true">
@@ -2521,10 +2521,10 @@ UpperIndexOnControlPoints, KnotMultiplicities, Knots)</body>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcGradientCurve" name="IfcGradientCurve">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1666" general="cl_IfcCompositeCurve"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcGradientCurve_BaseCurve" name="BaseCurve" isOrdered="false" association="as_IfcGradientCurve_BaseCurve" type="cl_IfcBoundedCurve">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1667" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1667" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1668" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcGradientCurve_EndPoint" name="EndPoint?" isOrdered="false" association="as_IfcGradientCurve_EndPoint" type="cl_IfcPlacement">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcGradientCurve_EndPoint" name="EndPoint" isOrdered="false" association="as_IfcGradientCurve_EndPoint" type="cl_IfcPlacement">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1669" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1670" value="1"/>
         </ownedAttribute>
@@ -2532,10 +2532,10 @@ UpperIndexOnControlPoints, KnotMultiplicities, Knots)</body>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcSegmentedReferenceCurve" name="IfcSegmentedReferenceCurve">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1671" general="cl_IfcCompositeCurve"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSegmentedReferenceCurve_BaseCurve" name="BaseCurve" isOrdered="false" association="as_IfcSegmentedReferenceCurve_BaseCurve" type="cl_IfcBoundedCurve">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1672" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1672" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1673" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSegmentedReferenceCurve_EndPoint" name="EndPoint?" isOrdered="false" association="as_IfcSegmentedReferenceCurve_EndPoint" type="cl_IfcPlacement">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSegmentedReferenceCurve_EndPoint" name="EndPoint" isOrdered="false" association="as_IfcSegmentedReferenceCurve_EndPoint" type="cl_IfcPlacement">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1674" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1675" value="1"/>
         </ownedAttribute>
@@ -2557,7 +2557,7 @@ UpperIndexOnControlPoints, KnotMultiplicities, Knots)</body>
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1681" general="cl_IfcBSplineCurveWithKnots"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRationalBSplineCurveWithKnots_WeightsData" name="WeightsData_L[2:?]" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcReal"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1682" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1682" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1683" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRationalBSplineCurveWithKnots_Weights" name="Weights" isOrdered="false" isDerived="true">
@@ -2586,7 +2586,7 @@ UpperIndexOnControlPoints, KnotMultiplicities, Knots)</body>
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1689" general="cl_IfcBSplineSurfaceWithKnots"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRationalBSplineSurfaceWithKnots_WeightsData" name="WeightsData_L[2:?]_L[2:?]" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcReal"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1690" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1690" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1691" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRationalBSplineSurfaceWithKnots_Weights" name="Weights" isOrdered="false" isDerived="true">

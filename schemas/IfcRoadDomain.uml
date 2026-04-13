@@ -42,7 +42,7 @@
         <generalization xmi:type="uml:Generalization" xmi:id="gen_21439">
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElement"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcKerb_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcKerbTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcKerb_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcKerbTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21440" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21441" value="1"/>
         </ownedAttribute>
@@ -52,7 +52,7 @@
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElementType"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcKerbType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcKerbTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21443" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21443" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21444" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -60,7 +60,7 @@
         <generalization xmi:type="uml:Generalization" xmi:id="gen_21445">
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcFacility"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRoad_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcRoadTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRoad_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcRoadTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21446" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21447" value="1"/>
         </ownedAttribute>
@@ -69,7 +69,7 @@
         <generalization xmi:type="uml:Generalization" xmi:id="gen_21448">
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcFacilityPart"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRoadPart_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcRoadPartTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRoadPart_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcRoadPartTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21449" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21450" value="1"/>
         </ownedAttribute>

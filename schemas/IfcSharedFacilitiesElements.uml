@@ -43,47 +43,47 @@
         <generalization xmi:type="uml:Generalization" xmi:id="gen_20894">
           <general xmi:type="uml:Class" href="IfcKernel.uml#cl_IfcGroup"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcAsset_Identification" name="Identification?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcAsset_Identification" name="Identification" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcIdentifier"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20895" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20896" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcAsset_OriginalValue" name="OriginalValue?" isOrdered="false" association="as_IfcAsset_OriginalValue">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcAsset_OriginalValue" name="OriginalValue" isOrdered="false" association="as_IfcAsset_OriginalValue">
           <type xmi:type="uml:Class" href="IfcCostResource.uml#cl_IfcCostValue"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20897" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20898" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcAsset_CurrentValue" name="CurrentValue?" isOrdered="false" association="as_IfcAsset_CurrentValue">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcAsset_CurrentValue" name="CurrentValue" isOrdered="false" association="as_IfcAsset_CurrentValue">
           <type xmi:type="uml:Class" href="IfcCostResource.uml#cl_IfcCostValue"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20899" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20900" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcAsset_TotalReplacementCost" name="TotalReplacementCost?" isOrdered="false" association="as_IfcAsset_TotalReplacementCost">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcAsset_TotalReplacementCost" name="TotalReplacementCost" isOrdered="false" association="as_IfcAsset_TotalReplacementCost">
           <type xmi:type="uml:Class" href="IfcCostResource.uml#cl_IfcCostValue"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20901" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20902" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcAsset_Owner" name="Owner?" isOrdered="false" association="as_IfcAsset_Owner">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcAsset_Owner" name="Owner" isOrdered="false" association="as_IfcAsset_Owner">
           <type xmi:type="uml:Class" href="IfcActorResource.uml#un_IfcActorSelect"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20903" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20904" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcAsset_User" name="User?" isOrdered="false" association="as_IfcAsset_User">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcAsset_User" name="User" isOrdered="false" association="as_IfcAsset_User">
           <type xmi:type="uml:Class" href="IfcActorResource.uml#un_IfcActorSelect"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20905" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20906" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcAsset_ResponsiblePerson" name="ResponsiblePerson?" isOrdered="false" association="as_IfcAsset_ResponsiblePerson">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcAsset_ResponsiblePerson" name="ResponsiblePerson" isOrdered="false" association="as_IfcAsset_ResponsiblePerson">
           <type xmi:type="uml:Class" href="IfcActorResource.uml#cl_IfcPerson"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20907" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20908" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcAsset_IncorporationDate" name="IncorporationDate?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcAsset_IncorporationDate" name="IncorporationDate" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcDateTimeResource.uml#dt_IfcDate"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20909" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20910" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcAsset_DepreciatedValue" name="DepreciatedValue?" isOrdered="false" association="as_IfcAsset_DepreciatedValue">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcAsset_DepreciatedValue" name="DepreciatedValue" isOrdered="false" association="as_IfcAsset_DepreciatedValue">
           <type xmi:type="uml:Class" href="IfcCostResource.uml#cl_IfcCostValue"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20911" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20912" value="1"/>
@@ -93,31 +93,31 @@
         <generalization xmi:type="uml:Generalization" xmi:id="gen_20913">
           <general xmi:type="uml:Class" href="IfcKernel.uml#cl_IfcGroup"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcInventory_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcInventoryTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcInventory_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcInventoryTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20914" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20915" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcInventory_Jurisdiction" name="Jurisdiction?" isOrdered="false" association="as_IfcInventory_Jurisdiction">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcInventory_Jurisdiction" name="Jurisdiction" isOrdered="false" association="as_IfcInventory_Jurisdiction">
           <type xmi:type="uml:Class" href="IfcActorResource.uml#un_IfcActorSelect"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20916" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20917" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcInventory_ResponsiblePersons" name="ResponsiblePersons?_S[1:?]" isOrdered="false" association="as_IfcInventory_ResponsiblePersons">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcInventory_ResponsiblePersons" name="ResponsiblePersons_S[1:?]" isOrdered="false" association="as_IfcInventory_ResponsiblePersons">
           <type xmi:type="uml:Class" href="IfcActorResource.uml#cl_IfcPerson"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20918" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20919" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcInventory_LastUpdateDate" name="LastUpdateDate?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcInventory_LastUpdateDate" name="LastUpdateDate" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcDateTimeResource.uml#dt_IfcDate"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20920" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20921" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcInventory_CurrentValue" name="CurrentValue?" isOrdered="false" association="as_IfcInventory_CurrentValue">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcInventory_CurrentValue" name="CurrentValue" isOrdered="false" association="as_IfcInventory_CurrentValue">
           <type xmi:type="uml:Class" href="IfcCostResource.uml#cl_IfcCostValue"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20922" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20923" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcInventory_OriginalValue" name="OriginalValue?" isOrdered="false" association="as_IfcInventory_OriginalValue">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcInventory_OriginalValue" name="OriginalValue" isOrdered="false" association="as_IfcInventory_OriginalValue">
           <type xmi:type="uml:Class" href="IfcCostResource.uml#cl_IfcCostValue"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20924" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20925" value="1"/>
@@ -127,7 +127,7 @@
         <generalization xmi:type="uml:Generalization" xmi:id="gen_20926">
           <general xmi:type="uml:Class" href="IfcKernel.uml#cl_IfcActor"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcOccupant_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcOccupantTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcOccupant_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcOccupantTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20927" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20928" value="1"/>
         </ownedAttribute>
@@ -143,7 +143,7 @@ OR EXISTS(SELF\IfcObject.ObjectType)</body>
         <generalization xmi:type="uml:Generalization" xmi:id="gen_20930">
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcFurnishingElement"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcFurniture_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcFurnitureTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcFurniture_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcFurnitureTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20931" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20932" value="1"/>
         </ownedAttribute>
@@ -154,10 +154,10 @@ OR EXISTS(SELF\IfcObject.ObjectType)</body>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcFurnitureType_AssemblyPlace" name="AssemblyPlace" isOrdered="false">
           <type xmi:type="uml:Enumeration" href="IfcProductExtension.uml#en_IfcAssemblyPlaceEnum"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20934" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20934" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20935" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcFurnitureType_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcFurnitureTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcFurnitureType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcFurnitureTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20936" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20937" value="1"/>
         </ownedAttribute>
@@ -166,7 +166,7 @@ OR EXISTS(SELF\IfcObject.ObjectType)</body>
         <generalization xmi:type="uml:Generalization" xmi:id="gen_20938">
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcFurnishingElement"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSystemFurnitureElement_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcSystemFurnitureElementTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSystemFurnitureElement_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcSystemFurnitureElementTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20939" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20940" value="1"/>
         </ownedAttribute>
@@ -175,7 +175,7 @@ OR EXISTS(SELF\IfcObject.ObjectType)</body>
         <generalization xmi:type="uml:Generalization" xmi:id="gen_20941">
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcFurnishingElementType"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSystemFurnitureElementType_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcSystemFurnitureElementTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSystemFurnitureElementType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcSystemFurnitureElementTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20942" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20943" value="1"/>
         </ownedAttribute>

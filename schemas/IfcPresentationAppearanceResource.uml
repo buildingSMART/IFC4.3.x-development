@@ -97,7 +97,7 @@ END_FUNCTION;
         </generalization>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcPresentationStyle" name="IfcPresentationStyle" isAbstract="true">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPresentationStyle_Name" name="Name?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPresentationStyle_Name" name="Name" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2596" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2597" value="1"/>
@@ -178,12 +178,12 @@ END_FUNCTION;
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcTextureCoordinateIndices" name="IfcTextureCoordinateIndices">
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextureCoordinateIndices_TexCoordIndex" name="TexCoordIndex_L[3:?]" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcPositiveInteger"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2622" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2622" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2623" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextureCoordinateIndices_TexCoordsOf" name="TexCoordsOf" isOrdered="false" association="as_IfcTextureCoordinateIndices_TexCoordsOf">
           <type xmi:type="uml:Class" href="IfcGeometricModelResource.uml#cl_IfcIndexedPolygonalFace"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2624" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2624" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2625" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -193,7 +193,7 @@ END_FUNCTION;
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcColourRgbList_ColourList" name="ColourList_L[1:?]_L[3:3]" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcNormalisedRatioMeasure"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2627" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2627" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2628" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -201,7 +201,7 @@ END_FUNCTION;
         <generalization xmi:type="uml:Generalization" xmi:id="gen_2629">
           <general xmi:type="uml:Class" href="IfcPresentationDefinitionResource.uml#cl_IfcPresentationItem"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcColourSpecification_Name" name="Name?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcColourSpecification_Name" name="Name" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2630" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2631" value="1"/>
@@ -209,19 +209,19 @@ END_FUNCTION;
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcCurveStyle" name="IfcCurveStyle">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_2632" general="cl_IfcPresentationStyle"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCurveStyle_CurveFont" name="CurveFont?" isOrdered="false" association="as_IfcCurveStyle_CurveFont" type="un_IfcCurveFontOrScaledCurveFontSelect">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCurveStyle_CurveFont" name="CurveFont" isOrdered="false" association="as_IfcCurveStyle_CurveFont" type="un_IfcCurveFontOrScaledCurveFontSelect">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2633" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2634" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCurveStyle_CurveWidth" name="CurveWidth?" isOrdered="false" association="as_IfcCurveStyle_CurveWidth" type="un_IfcSizeSelect">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCurveStyle_CurveWidth" name="CurveWidth" isOrdered="false" association="as_IfcCurveStyle_CurveWidth" type="un_IfcSizeSelect">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2635" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2636" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCurveStyle_CurveColour" name="CurveColour?" isOrdered="false" association="as_IfcCurveStyle_CurveColour" type="un_IfcColour">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCurveStyle_CurveColour" name="CurveColour" isOrdered="false" association="as_IfcCurveStyle_CurveColour" type="un_IfcColour">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2637" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2638" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCurveStyle_ModelOrDraughting" name="ModelOrDraughting?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCurveStyle_ModelOrDraughting" name="ModelOrDraughting" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcBoolean"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2639" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2640" value="1"/>
@@ -246,13 +246,13 @@ END_FUNCTION;
         <generalization xmi:type="uml:Generalization" xmi:id="gen_2643">
           <general xmi:type="uml:Class" href="IfcPresentationDefinitionResource.uml#cl_IfcPresentationItem"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCurveStyleFont_Name" name="Name?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCurveStyleFont_Name" name="Name" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2644" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2645" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCurveStyleFont_PatternList" name="PatternList_L[1:?]" isOrdered="false" association="as_IfcCurveStyleFont_PatternList" type="cl_IfcCurveStyleFontPattern">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2646" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2646" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2647" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -260,18 +260,18 @@ END_FUNCTION;
         <generalization xmi:type="uml:Generalization" xmi:id="gen_2648">
           <general xmi:type="uml:Class" href="IfcPresentationDefinitionResource.uml#cl_IfcPresentationItem"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCurveStyleFontAndScaling_Name" name="Name?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCurveStyleFontAndScaling_Name" name="Name" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2649" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2650" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCurveStyleFontAndScaling_CurveStyleFont" name="CurveStyleFont" isOrdered="false" association="as_IfcCurveStyleFontAndScaling_CurveStyleFont" type="un_IfcCurveStyleFontSelect">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2651" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2651" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2652" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCurveStyleFontAndScaling_CurveFontScaling" name="CurveFontScaling" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcPositiveRatioMeasure"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2653" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2653" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2654" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -281,12 +281,12 @@ END_FUNCTION;
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCurveStyleFontPattern_VisibleSegmentLength" name="VisibleSegmentLength" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLengthMeasure"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2656" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2656" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2657" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCurveStyleFontPattern_InvisibleSegmentLength" name="InvisibleSegmentLength" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcPositiveLengthMeasure"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2658" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2658" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2659" value="1"/>
         </ownedAttribute>
         <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcCurveStyleFontPattern_VisibleLengthGreaterEqualZero" name="VisibleLengthGreaterEqualZero">
@@ -314,10 +314,10 @@ END_FUNCTION;
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcFillAreaStyle" name="IfcFillAreaStyle">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_2664" general="cl_IfcPresentationStyle"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcFillAreaStyle_FillStyles" name="FillStyles_S[1:?]" isOrdered="false" association="as_IfcFillAreaStyle_FillStyles" type="un_IfcFillStyleSelect">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2665" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2665" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2666" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcFillAreaStyle_ModelOrDraughting" name="ModelOrDraughting?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcFillAreaStyle_ModelOrDraughting" name="ModelOrDraughting" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcBoolean"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2667" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2668" value="1"/>
@@ -353,21 +353,21 @@ END_FUNCTION;
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcIndexedColourMap_MappedTo" name="MappedTo" isOrdered="false" association="as_IfcIndexedColourMap_MappedTo">
           <type xmi:type="uml:Class" href="IfcGeometricModelResource.uml#cl_IfcTessellatedFaceSet"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2673" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2673" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2674" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcIndexedColourMap_Opacity" name="Opacity?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcIndexedColourMap_Opacity" name="Opacity" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcNormalisedRatioMeasure"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2675" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2676" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcIndexedColourMap_Colours" name="Colours" isOrdered="false" association="as_IfcIndexedColourMap_Colours" type="cl_IfcColourRgbList">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2677" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2677" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2678" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcIndexedColourMap_ColourIndex" name="ColourIndex_L[1:?]" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcPositiveInteger"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2679" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2679" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2680" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -377,7 +377,7 @@ END_FUNCTION;
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPreDefinedItem_Name" name="Name" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2682" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2682" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2683" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -388,16 +388,16 @@ END_FUNCTION;
         <generalization xmi:type="uml:Generalization" xmi:id="gen_2686">
           <general xmi:type="uml:Class" href="IfcGeometryResource.uml#cl_IfcRepresentationItem"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStyledItem_Item" name="Item?" isOrdered="false" association="as_IfcStyledItem_Item">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStyledItem_Item" name="Item" isOrdered="false" association="as_IfcStyledItem_Item">
           <type xmi:type="uml:Class" href="IfcGeometryResource.uml#cl_IfcRepresentationItem"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2687" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2688" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStyledItem_Styles" name="Styles_S[1:?]" isOrdered="false" association="as_IfcStyledItem_Styles" type="cl_IfcPresentationStyle">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2689" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2689" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2690" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStyledItem_Name" name="Name?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStyledItem_Name" name="Name" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2691" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2692" value="1"/>
@@ -412,11 +412,11 @@ END_FUNCTION;
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcSurfaceStyle" name="IfcSurfaceStyle">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_2694" general="cl_IfcPresentationStyle"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSurfaceStyle_Side" name="Side" isOrdered="false" type="en_IfcSurfaceSide">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2695" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2695" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2696" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSurfaceStyle_Styles" name="Styles_S[1:5]" isOrdered="false" association="as_IfcSurfaceStyle_Styles" type="un_IfcSurfaceStyleElementSelect">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2697" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2697" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2698" value="1"/>
         </ownedAttribute>
         <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcSurfaceStyle_MaxOneExtDefined" name="MaxOneExtDefined">
@@ -470,19 +470,19 @@ END_FUNCTION;
           <general xmi:type="uml:Class" href="IfcPresentationDefinitionResource.uml#cl_IfcPresentationItem"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSurfaceStyleLighting_DiffuseTransmissionColour" name="DiffuseTransmissionColour" isOrdered="false" association="as_IfcSurfaceStyleLighting_DiffuseTransmissionColour" type="cl_IfcColourRgb">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2705" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2705" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2706" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSurfaceStyleLighting_DiffuseReflectionColour" name="DiffuseReflectionColour" isOrdered="false" association="as_IfcSurfaceStyleLighting_DiffuseReflectionColour" type="cl_IfcColourRgb">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2707" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2707" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2708" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSurfaceStyleLighting_TransmissionColour" name="TransmissionColour" isOrdered="false" association="as_IfcSurfaceStyleLighting_TransmissionColour" type="cl_IfcColourRgb">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2709" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2709" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2710" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSurfaceStyleLighting_ReflectanceColour" name="ReflectanceColour" isOrdered="false" association="as_IfcSurfaceStyleLighting_ReflectanceColour" type="cl_IfcColourRgb">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2711" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2711" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2712" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -490,12 +490,12 @@ END_FUNCTION;
         <generalization xmi:type="uml:Generalization" xmi:id="gen_2713">
           <general xmi:type="uml:Class" href="IfcPresentationDefinitionResource.uml#cl_IfcPresentationItem"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSurfaceStyleRefraction_RefractionIndex" name="RefractionIndex?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSurfaceStyleRefraction_RefractionIndex" name="RefractionIndex" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcReal"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2714" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2715" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSurfaceStyleRefraction_DispersionFactor" name="DispersionFactor?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSurfaceStyleRefraction_DispersionFactor" name="DispersionFactor" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcReal"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2716" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2717" value="1"/>
@@ -506,10 +506,10 @@ END_FUNCTION;
           <general xmi:type="uml:Class" href="IfcPresentationDefinitionResource.uml#cl_IfcPresentationItem"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSurfaceStyleShading_SurfaceColour" name="SurfaceColour" isOrdered="false" association="as_IfcSurfaceStyleShading_SurfaceColour" type="cl_IfcColourRgb">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2719" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2719" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2720" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSurfaceStyleShading_Transparency" name="Transparency?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSurfaceStyleShading_Transparency" name="Transparency" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcNormalisedRatioMeasure"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2721" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2722" value="1"/>
@@ -520,7 +520,7 @@ END_FUNCTION;
           <general xmi:type="uml:Class" href="IfcPresentationDefinitionResource.uml#cl_IfcPresentationItem"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSurfaceStyleWithTextures_Textures" name="Textures_L[1:?]" isOrdered="false" association="as_IfcSurfaceStyleWithTextures_Textures" type="cl_IfcSurfaceTexture">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2724" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2724" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2725" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -530,25 +530,25 @@ END_FUNCTION;
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSurfaceTexture_RepeatS" name="RepeatS" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcBoolean"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2727" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2727" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2728" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSurfaceTexture_RepeatT" name="RepeatT" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcBoolean"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2729" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2729" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2730" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSurfaceTexture_Mode" name="Mode?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSurfaceTexture_Mode" name="Mode" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcIdentifier"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2731" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2732" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSurfaceTexture_TextureTransform" name="TextureTransform?" isOrdered="false" association="as_IfcSurfaceTexture_TextureTransform">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSurfaceTexture_TextureTransform" name="TextureTransform" isOrdered="false" association="as_IfcSurfaceTexture_TextureTransform">
           <type xmi:type="uml:Class" href="IfcGeometryResource.uml#cl_IfcCartesianTransformationOperator2D"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2733" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2734" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSurfaceTexture_Parameter" name="Parameter?_L[1:?]" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSurfaceTexture_Parameter" name="Parameter_L[1:?]" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcIdentifier"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2735" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2736" value="1"/>
@@ -556,19 +556,19 @@ END_FUNCTION;
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcTextStyle" name="IfcTextStyle">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_2737" general="cl_IfcPresentationStyle"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextStyle_TextCharacterAppearance" name="TextCharacterAppearance?" isOrdered="false" association="as_IfcTextStyle_TextCharacterAppearance" type="cl_IfcTextStyleForDefinedFont">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextStyle_TextCharacterAppearance" name="TextCharacterAppearance" isOrdered="false" association="as_IfcTextStyle_TextCharacterAppearance" type="cl_IfcTextStyleForDefinedFont">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2738" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2739" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextStyle_TextStyle" name="TextStyle?" isOrdered="false" association="as_IfcTextStyle_TextStyle" type="cl_IfcTextStyleTextModel">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextStyle_TextStyle" name="TextStyle" isOrdered="false" association="as_IfcTextStyle_TextStyle" type="cl_IfcTextStyleTextModel">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2740" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2741" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextStyle_TextFontStyle" name="TextFontStyle" isOrdered="false" association="as_IfcTextStyle_TextFontStyle" type="un_IfcTextFontSelect">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2742" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2742" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2743" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextStyle_ModelOrDraughting" name="ModelOrDraughting?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextStyle_ModelOrDraughting" name="ModelOrDraughting" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcBoolean"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2744" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2745" value="1"/>
@@ -579,10 +579,10 @@ END_FUNCTION;
           <general xmi:type="uml:Class" href="IfcPresentationDefinitionResource.uml#cl_IfcPresentationItem"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextStyleForDefinedFont_Colour" name="Colour" isOrdered="false" association="as_IfcTextStyleForDefinedFont_Colour" type="un_IfcColour">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2747" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2747" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2748" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextStyleForDefinedFont_BackgroundColour" name="BackgroundColour?" isOrdered="false" association="as_IfcTextStyleForDefinedFont_BackgroundColour" type="un_IfcColour">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextStyleForDefinedFont_BackgroundColour" name="BackgroundColour" isOrdered="false" association="as_IfcTextStyleForDefinedFont_BackgroundColour" type="un_IfcColour">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2749" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2750" value="1"/>
         </ownedAttribute>
@@ -591,31 +591,31 @@ END_FUNCTION;
         <generalization xmi:type="uml:Generalization" xmi:id="gen_2751">
           <general xmi:type="uml:Class" href="IfcPresentationDefinitionResource.uml#cl_IfcPresentationItem"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextStyleTextModel_TextIndent" name="TextIndent?" isOrdered="false" association="as_IfcTextStyleTextModel_TextIndent" type="un_IfcSizeSelect">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextStyleTextModel_TextIndent" name="TextIndent" isOrdered="false" association="as_IfcTextStyleTextModel_TextIndent" type="un_IfcSizeSelect">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2752" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2753" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextStyleTextModel_TextAlign" name="TextAlign?" isOrdered="false" type="dt_IfcTextAlignment">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextStyleTextModel_TextAlign" name="TextAlign" isOrdered="false" type="dt_IfcTextAlignment">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2754" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2755" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextStyleTextModel_TextDecoration" name="TextDecoration?" isOrdered="false" type="dt_IfcTextDecoration">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextStyleTextModel_TextDecoration" name="TextDecoration" isOrdered="false" type="dt_IfcTextDecoration">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2756" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2757" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextStyleTextModel_LetterSpacing" name="LetterSpacing?" isOrdered="false" association="as_IfcTextStyleTextModel_LetterSpacing" type="un_IfcSizeSelect">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextStyleTextModel_LetterSpacing" name="LetterSpacing" isOrdered="false" association="as_IfcTextStyleTextModel_LetterSpacing" type="un_IfcSizeSelect">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2758" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2759" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextStyleTextModel_WordSpacing" name="WordSpacing?" isOrdered="false" association="as_IfcTextStyleTextModel_WordSpacing" type="un_IfcSizeSelect">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextStyleTextModel_WordSpacing" name="WordSpacing" isOrdered="false" association="as_IfcTextStyleTextModel_WordSpacing" type="un_IfcSizeSelect">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2760" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2761" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextStyleTextModel_TextTransform" name="TextTransform?" isOrdered="false" type="dt_IfcTextTransformation">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextStyleTextModel_TextTransform" name="TextTransform" isOrdered="false" type="dt_IfcTextTransformation">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2762" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2763" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextStyleTextModel_LineHeight" name="LineHeight?" isOrdered="false" association="as_IfcTextStyleTextModel_LineHeight" type="un_IfcSizeSelect">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextStyleTextModel_LineHeight" name="LineHeight" isOrdered="false" association="as_IfcTextStyleTextModel_LineHeight" type="un_IfcSizeSelect">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2764" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2765" value="1"/>
         </ownedAttribute>
@@ -625,7 +625,7 @@ END_FUNCTION;
           <general xmi:type="uml:Class" href="IfcPresentationDefinitionResource.uml#cl_IfcPresentationItem"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextureCoordinate_Maps" name="Maps_L[1:?]" isOrdered="false" association="as_IfcTextureCoordinate_Maps" type="cl_IfcSurfaceTexture">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2767" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2767" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2768" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -633,7 +633,7 @@ END_FUNCTION;
         <generalization xmi:type="uml:Generalization" xmi:id="gen_2769" general="cl_IfcTextureCoordinateIndices"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextureCoordinateIndicesWithVoids_InnerTexCoordIndices" name="InnerTexCoordIndices_L[1:?]_LU[3:?]" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcPositiveInteger"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2770" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2770" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2771" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -643,7 +643,7 @@ END_FUNCTION;
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextureVertex_Coordinates" name="Coordinates_L[2:2]" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcParameterValue"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2773" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2773" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2774" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -653,7 +653,7 @@ END_FUNCTION;
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextureVertexList_TexCoordsList" name="TexCoordsList_L[1:?]_L[2:2]" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcParameterValue"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2776" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2776" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2777" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -661,12 +661,12 @@ END_FUNCTION;
         <generalization xmi:type="uml:Generalization" xmi:id="gen_2778" general="cl_IfcSurfaceTexture"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcBlobTexture_RasterFormat" name="RasterFormat" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcIdentifier"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2779" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2779" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2780" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcBlobTexture_RasterCode" name="RasterCode" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcBinary"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2781" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2781" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2782" value="1"/>
         </ownedAttribute>
         <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcBlobTexture_RasterCodeByteStream" name="RasterCodeByteStream">
@@ -686,17 +686,17 @@ END_FUNCTION;
         <generalization xmi:type="uml:Generalization" xmi:id="gen_2785" general="cl_IfcColourSpecification"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcColourRgb_Red" name="Red" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcNormalisedRatioMeasure"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2786" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2786" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2787" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcColourRgb_Green" name="Green" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcNormalisedRatioMeasure"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2788" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2788" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2789" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcColourRgb_Blue" name="Blue" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcNormalisedRatioMeasure"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2790" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2790" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2791" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -705,26 +705,26 @@ END_FUNCTION;
           <general xmi:type="uml:Class" href="IfcGeometryResource.uml#cl_IfcGeometricRepresentationItem"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcFillAreaStyleHatching_HatchLineAppearance" name="HatchLineAppearance" isOrdered="false" association="as_IfcFillAreaStyleHatching_HatchLineAppearance" type="cl_IfcCurveStyle">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2793" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2793" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2794" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcFillAreaStyleHatching_StartOfNextHatchLine" name="StartOfNextHatchLine" isOrdered="false" association="as_IfcFillAreaStyleHatching_StartOfNextHatchLine" type="un_IfcHatchLineDistanceSelect">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2795" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2795" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2796" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcFillAreaStyleHatching_PointOfReferenceHatchLine" name="PointOfReferenceHatchLine?" isOrdered="false" association="as_IfcFillAreaStyleHatching_PointOfReferenceHatchLine">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcFillAreaStyleHatching_PointOfReferenceHatchLine" name="PointOfReferenceHatchLine" isOrdered="false" association="as_IfcFillAreaStyleHatching_PointOfReferenceHatchLine">
           <type xmi:type="uml:Class" href="IfcGeometryResource.uml#cl_IfcCartesianPoint"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2797" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2798" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcFillAreaStyleHatching_PatternStart" name="PatternStart?" isOrdered="false" association="as_IfcFillAreaStyleHatching_PatternStart">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcFillAreaStyleHatching_PatternStart" name="PatternStart" isOrdered="false" association="as_IfcFillAreaStyleHatching_PatternStart">
           <type xmi:type="uml:Class" href="IfcGeometryResource.uml#cl_IfcCartesianPoint"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2799" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2800" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcFillAreaStyleHatching_HatchLineAngle" name="HatchLineAngle" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcPlaneAngleMeasure"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2801" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2801" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2802" value="1"/>
         </ownedAttribute>
         <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcFillAreaStyleHatching_PatternStart2D" name="PatternStart2D">
@@ -746,16 +746,16 @@ END_FUNCTION;
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcFillAreaStyleTiles_TilingPattern" name="TilingPattern_L[2:2]" isOrdered="false" association="as_IfcFillAreaStyleTiles_TilingPattern">
           <type xmi:type="uml:Class" href="IfcGeometryResource.uml#cl_IfcVector"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2806" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2806" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2807" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcFillAreaStyleTiles_Tiles" name="Tiles_S[1:?]" isOrdered="false" association="as_IfcFillAreaStyleTiles_Tiles" type="cl_IfcStyledItem">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2808" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2808" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2809" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcFillAreaStyleTiles_TilingScale" name="TilingScale" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcPositiveRatioMeasure"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2810" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2810" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2811" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -763,7 +763,7 @@ END_FUNCTION;
         <generalization xmi:type="uml:Generalization" xmi:id="gen_2812" general="cl_IfcSurfaceTexture"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcImageTexture_URLReference" name="URLReference" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcURIReference"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2813" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2813" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2814" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -771,11 +771,11 @@ END_FUNCTION;
         <generalization xmi:type="uml:Generalization" xmi:id="gen_2815" general="cl_IfcTextureCoordinate"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcIndexedTextureMap_MappedTo" name="MappedTo" isOrdered="false" association="as_IfcIndexedTextureMap_MappedTo">
           <type xmi:type="uml:Class" href="IfcGeometricModelResource.uml#cl_IfcTessellatedFaceSet"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2816" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2816" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2817" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcIndexedTextureMap_TexCoords" name="TexCoords" isOrdered="false" association="as_IfcIndexedTextureMap_TexCoords" type="cl_IfcTextureVertexList">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2818" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2818" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2819" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -783,22 +783,22 @@ END_FUNCTION;
         <generalization xmi:type="uml:Generalization" xmi:id="gen_2820" general="cl_IfcSurfaceTexture"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPixelTexture_Width" name="Width" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcInteger"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2821" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2821" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2822" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPixelTexture_Height" name="Height" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcInteger"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2823" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2823" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2824" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPixelTexture_ColourComponents" name="ColourComponents" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcInteger"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2825" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2825" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2826" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPixelTexture_Pixel" name="Pixel_L[1:?]" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcBinary"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2827" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2827" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2828" value="1"/>
         </ownedAttribute>
         <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcPixelTexture_MinPixelInS" name="MinPixelInS">
@@ -871,32 +871,32 @@ END_FUNCTION;
       <packagedElement xmi:type="uml:Dependency" xmi:id="dependency_2847" client="un_IfcSurfaceStyleElementSelect" supplier="cl_IfcSurfaceStyleWithTextures"/>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcSurfaceStyleRendering" name="IfcSurfaceStyleRendering">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_2848" general="cl_IfcSurfaceStyleShading"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSurfaceStyleRendering_DiffuseColour" name="DiffuseColour?" isOrdered="false" association="as_IfcSurfaceStyleRendering_DiffuseColour" type="un_IfcColourOrFactor">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSurfaceStyleRendering_DiffuseColour" name="DiffuseColour" isOrdered="false" association="as_IfcSurfaceStyleRendering_DiffuseColour" type="un_IfcColourOrFactor">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2849" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2850" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSurfaceStyleRendering_TransmissionColour" name="TransmissionColour?" isOrdered="false" association="as_IfcSurfaceStyleRendering_TransmissionColour" type="un_IfcColourOrFactor">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSurfaceStyleRendering_TransmissionColour" name="TransmissionColour" isOrdered="false" association="as_IfcSurfaceStyleRendering_TransmissionColour" type="un_IfcColourOrFactor">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2851" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2852" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSurfaceStyleRendering_DiffuseTransmissionColour" name="DiffuseTransmissionColour?" isOrdered="false" association="as_IfcSurfaceStyleRendering_DiffuseTransmissionColour" type="un_IfcColourOrFactor">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSurfaceStyleRendering_DiffuseTransmissionColour" name="DiffuseTransmissionColour" isOrdered="false" association="as_IfcSurfaceStyleRendering_DiffuseTransmissionColour" type="un_IfcColourOrFactor">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2853" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2854" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSurfaceStyleRendering_ReflectionColour" name="ReflectionColour?" isOrdered="false" association="as_IfcSurfaceStyleRendering_ReflectionColour" type="un_IfcColourOrFactor">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSurfaceStyleRendering_ReflectionColour" name="ReflectionColour" isOrdered="false" association="as_IfcSurfaceStyleRendering_ReflectionColour" type="un_IfcColourOrFactor">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2855" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2856" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSurfaceStyleRendering_SpecularColour" name="SpecularColour?" isOrdered="false" association="as_IfcSurfaceStyleRendering_SpecularColour" type="un_IfcColourOrFactor">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSurfaceStyleRendering_SpecularColour" name="SpecularColour" isOrdered="false" association="as_IfcSurfaceStyleRendering_SpecularColour" type="un_IfcColourOrFactor">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2857" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2858" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSurfaceStyleRendering_SpecularHighlight" name="SpecularHighlight?" isOrdered="false" association="as_IfcSurfaceStyleRendering_SpecularHighlight" type="un_IfcSpecularHighlightSelect">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSurfaceStyleRendering_SpecularHighlight" name="SpecularHighlight" isOrdered="false" association="as_IfcSurfaceStyleRendering_SpecularHighlight" type="un_IfcSpecularHighlightSelect">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2859" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2860" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSurfaceStyleRendering_ReflectanceMethod" name="ReflectanceMethod" isOrdered="false" type="en_IfcReflectanceMethodEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2861" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2861" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2862" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -904,10 +904,10 @@ END_FUNCTION;
         <generalization xmi:type="uml:Generalization" xmi:id="gen_2863" general="cl_IfcTextureCoordinate"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextureCoordinateGenerator_Mode" name="Mode" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2864" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2864" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2865" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextureCoordinateGenerator_Parameter" name="Parameter?_L[1:?]" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextureCoordinateGenerator_Parameter" name="Parameter_L[1:?]" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcReal"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2866" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2867" value="1"/>
@@ -916,12 +916,12 @@ END_FUNCTION;
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcTextureMap" name="IfcTextureMap">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_2868" general="cl_IfcTextureCoordinate"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextureMap_Vertices" name="Vertices_L[3:?]" isOrdered="false" association="as_IfcTextureMap_Vertices" type="cl_IfcTextureVertex">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2869" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2869" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2870" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextureMap_MappedTo" name="MappedTo" isOrdered="false" association="as_IfcTextureMap_MappedTo">
           <type xmi:type="uml:Class" href="IfcTopologyResource.uml#cl_IfcFace"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2871" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2871" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2872" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -971,13 +971,13 @@ END_FUNCTION;
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcIndexedPolygonalTextureMap" name="IfcIndexedPolygonalTextureMap">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_2885" general="cl_IfcIndexedTextureMap"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcIndexedPolygonalTextureMap_TexCoordIndices" name="TexCoordIndices_S[1:?]" isOrdered="false" association="as_IfcIndexedPolygonalTextureMap_TexCoordIndices" type="cl_IfcTextureCoordinateIndices">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2886" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2886" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2887" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcIndexedTriangleTextureMap" name="IfcIndexedTriangleTextureMap">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_2888" general="cl_IfcIndexedTextureMap"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcIndexedTriangleTextureMap_TexCoordIndex" name="TexCoordIndex?_L[1:?]_L[3:3]" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcIndexedTriangleTextureMap_TexCoordIndex" name="TexCoordIndex_L[1:?]_L[3:3]" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcPositiveInteger"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2889" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2890" value="1"/>
@@ -989,23 +989,23 @@ END_FUNCTION;
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcTextStyleFontModel" name="IfcTextStyleFontModel">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_2893" general="cl_IfcPreDefinedTextFont"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextStyleFontModel_FontFamily" name="FontFamily_L[1:?]" isOrdered="false" type="dt_IfcTextFontName">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2894" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2894" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2895" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextStyleFontModel_FontStyle" name="FontStyle?" isOrdered="false" type="dt_IfcFontStyle">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextStyleFontModel_FontStyle" name="FontStyle" isOrdered="false" type="dt_IfcFontStyle">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2896" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2897" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextStyleFontModel_FontVariant" name="FontVariant?" isOrdered="false" type="dt_IfcFontVariant">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextStyleFontModel_FontVariant" name="FontVariant" isOrdered="false" type="dt_IfcFontVariant">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2898" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2899" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextStyleFontModel_FontWeight" name="FontWeight?" isOrdered="false" type="dt_IfcFontWeight">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextStyleFontModel_FontWeight" name="FontWeight" isOrdered="false" type="dt_IfcFontWeight">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2900" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2901" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTextStyleFontModel_FontSize" name="FontSize" isOrdered="false" association="as_IfcTextStyleFontModel_FontSize" type="un_IfcSizeSelect">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2902" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2902" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2903" value="1"/>
         </ownedAttribute>
         <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcTextStyleFontModel_MeasureOfFontSize" name="MeasureOfFontSize">

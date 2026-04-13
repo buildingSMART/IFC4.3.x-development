@@ -87,11 +87,11 @@
           <general xmi:type="uml:Class" href="IfcKernel.uml#cl_IfcRelConnects"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelFlowControlElements_RelatedControlElements" name="RelatedControlElements_S[1:?]" isOrdered="false" association="as_IfcRelFlowControlElements_RelatedControlElements" type="cl_IfcDistributionControlElement">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_18647" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_18647" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_18648" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelFlowControlElements_RelatingFlowElement" name="RelatingFlowElement" isOrdered="false" association="as_IfcRelFlowControlElements_RelatingFlowElement" type="cl_IfcDistributionFlowElement">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_18649" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_18649" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_18650" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -99,15 +99,15 @@
         <generalization xmi:type="uml:Generalization" xmi:id="gen_18651">
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcPort"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDistributionPort_FlowDirection" name="FlowDirection?" isOrdered="false" type="en_IfcFlowDirectionEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDistributionPort_FlowDirection" name="FlowDirection" isOrdered="false" type="en_IfcFlowDirectionEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_18652" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_18653" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDistributionPort_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcDistributionPortTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDistributionPort_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcDistributionPortTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_18654" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_18655" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDistributionPort_SystemType" name="SystemType?" isOrdered="false" type="en_IfcDistributionSystemEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDistributionPort_SystemType" name="SystemType" isOrdered="false" type="en_IfcDistributionSystemEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_18656" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_18657" value="1"/>
         </ownedAttribute>
@@ -116,12 +116,12 @@
         <generalization xmi:type="uml:Generalization" xmi:id="gen_18658">
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcSystem"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDistributionSystem_LongName" name="LongName?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDistributionSystem_LongName" name="LongName" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_18659" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_18660" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDistributionSystem_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcDistributionSystemEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDistributionSystem_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcDistributionSystemEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_18661" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_18662" value="1"/>
         </ownedAttribute>
@@ -151,7 +151,7 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcDistributionChamberElement" name="IfcDistributionChamberElement">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_18668" general="cl_IfcDistributionFlowElement"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDistributionChamberElement_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcDistributionChamberElementTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDistributionChamberElement_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcDistributionChamberElementTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_18669" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_18670" value="1"/>
         </ownedAttribute>
@@ -159,7 +159,7 @@
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcDistributionChamberElementType" name="IfcDistributionChamberElementType">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_18671" general="cl_IfcDistributionFlowElementType"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDistributionChamberElementType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcDistributionChamberElementTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_18672" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_18672" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_18673" value="1"/>
         </ownedAttribute>
       </packagedElement>

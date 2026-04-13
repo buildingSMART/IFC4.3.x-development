@@ -48,11 +48,11 @@ END_FUNCTION;
         </ownedComment>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialClassificationRelationship_MaterialClassifications" name="MaterialClassifications_S[1:?]" isOrdered="false" association="as_IfcMaterialClassificationRelationship_MaterialClassifications">
           <type xmi:type="uml:Class" href="IfcExternalReferenceResource.uml#un_IfcClassificationSelect"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3204" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3204" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3205" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialClassificationRelationship_ClassifiedMaterial" name="ClassifiedMaterial" isOrdered="false" association="as_IfcMaterialClassificationRelationship_ClassifiedMaterial" type="cl_IfcMaterial">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3206" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3206" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3207" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -62,7 +62,7 @@ END_FUNCTION;
           <body>DEPRECATED</body>
         </ownedComment>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialList_Materials" name="Materials_L[1:?]" isOrdered="false" association="as_IfcMaterialList_Materials" type="cl_IfcMaterial">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3209" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3209" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3210" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -71,15 +71,15 @@ END_FUNCTION;
         <generalization xmi:type="uml:Generalization" xmi:id="gen_3211" general="cl_IfcMaterialDefinition"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterial_Name" name="Name" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3212" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3212" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3213" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterial_Description" name="Description?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterial_Description" name="Description" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcText"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3214" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3215" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterial_Category" name="Category?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterial_Category" name="Category" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3216" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3217" value="1"/>
@@ -87,26 +87,26 @@ END_FUNCTION;
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcMaterialConstituent" name="IfcMaterialConstituent">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_3218" general="cl_IfcMaterialDefinition"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialConstituent_Name" name="Name?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialConstituent_Name" name="Name" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3219" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3220" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialConstituent_Description" name="Description?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialConstituent_Description" name="Description" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcText"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3221" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3222" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialConstituent_Material" name="Material" isOrdered="false" association="as_IfcMaterialConstituent_Material" type="cl_IfcMaterial">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3223" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3223" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3224" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialConstituent_Fraction" name="Fraction?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialConstituent_Fraction" name="Fraction" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcNormalisedRatioMeasure"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3225" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3226" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialConstituent_Category" name="Category?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialConstituent_Category" name="Category" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3227" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3228" value="1"/>
@@ -114,53 +114,53 @@ END_FUNCTION;
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcMaterialConstituentSet" name="IfcMaterialConstituentSet">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_3229" general="cl_IfcMaterialDefinition"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialConstituentSet_Name" name="Name?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialConstituentSet_Name" name="Name" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3230" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3231" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialConstituentSet_Description" name="Description?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialConstituentSet_Description" name="Description" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcText"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3232" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3233" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialConstituentSet_MaterialConstituents" name="MaterialConstituents?_S[1:?]" isOrdered="false" association="as_IfcMaterialConstituentSet_MaterialConstituents" type="cl_IfcMaterialConstituent">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialConstituentSet_MaterialConstituents" name="MaterialConstituents_S[1:?]" isOrdered="false" association="as_IfcMaterialConstituentSet_MaterialConstituents" type="cl_IfcMaterialConstituent">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3234" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3235" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcMaterialLayer" name="IfcMaterialLayer">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_3236" general="cl_IfcMaterialDefinition"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialLayer_Material" name="Material?" isOrdered="false" association="as_IfcMaterialLayer_Material" type="cl_IfcMaterial">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialLayer_Material" name="Material" isOrdered="false" association="as_IfcMaterialLayer_Material" type="cl_IfcMaterial">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3237" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3238" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialLayer_LayerThickness" name="LayerThickness" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcNonNegativeLengthMeasure"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3239" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3239" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3240" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialLayer_IsVentilated" name="IsVentilated?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialLayer_IsVentilated" name="IsVentilated" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLogical"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3241" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3242" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialLayer_Name" name="Name?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialLayer_Name" name="Name" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3243" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3244" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialLayer_Description" name="Description?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialLayer_Description" name="Description" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcText"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3245" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3246" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialLayer_Category" name="Category?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialLayer_Category" name="Category" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3247" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3248" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialLayer_Priority" name="Priority?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialLayer_Priority" name="Priority" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcInteger"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3249" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3250" value="1"/>
@@ -175,15 +175,15 @@ END_FUNCTION;
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcMaterialLayerSet" name="IfcMaterialLayerSet">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_3252" general="cl_IfcMaterialDefinition"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialLayerSet_MaterialLayers" name="MaterialLayers_L[1:?]" isOrdered="false" association="as_IfcMaterialLayerSet_MaterialLayers" type="cl_IfcMaterialLayer">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3253" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3253" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3254" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialLayerSet_LayerSetName" name="LayerSetName?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialLayerSet_LayerSetName" name="LayerSetName" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3255" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3256" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialLayerSet_Description" name="Description?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialLayerSet_Description" name="Description" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcText"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3257" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3258" value="1"/>
@@ -201,23 +201,23 @@ END_FUNCTION;
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcMaterialLayerSetUsage" name="IfcMaterialLayerSetUsage">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_3262" general="cl_IfcMaterialUsageDefinition"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialLayerSetUsage_ForLayerSet" name="ForLayerSet" isOrdered="false" association="as_IfcMaterialLayerSetUsage_ForLayerSet" type="cl_IfcMaterialLayerSet">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3263" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3263" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3264" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialLayerSetUsage_LayerSetDirection" name="LayerSetDirection" isOrdered="false" type="en_IfcLayerSetDirectionEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3265" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3265" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3266" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialLayerSetUsage_DirectionSense" name="DirectionSense" isOrdered="false" type="en_IfcDirectionSenseEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3267" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3267" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3268" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialLayerSetUsage_OffsetFromReferenceLine" name="OffsetFromReferenceLine" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLengthMeasure"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3269" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3269" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3270" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialLayerSetUsage_ReferenceExtent" name="ReferenceExtent?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialLayerSetUsage_ReferenceExtent" name="ReferenceExtent" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcPositiveLengthMeasure"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3271" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3272" value="1"/>
@@ -225,31 +225,31 @@ END_FUNCTION;
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcMaterialProfile" name="IfcMaterialProfile">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_3273" general="cl_IfcMaterialDefinition"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialProfile_Name" name="Name?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialProfile_Name" name="Name" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3274" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3275" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialProfile_Description" name="Description?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialProfile_Description" name="Description" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcText"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3276" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3277" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialProfile_Material" name="Material?" isOrdered="false" association="as_IfcMaterialProfile_Material" type="cl_IfcMaterial">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialProfile_Material" name="Material" isOrdered="false" association="as_IfcMaterialProfile_Material" type="cl_IfcMaterial">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3278" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3279" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialProfile_Profile" name="Profile" isOrdered="false" association="as_IfcMaterialProfile_Profile">
           <type xmi:type="uml:Class" href="IfcProfileResource.uml#cl_IfcProfileDef"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3280" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3280" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3281" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialProfile_Priority" name="Priority?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialProfile_Priority" name="Priority" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcInteger"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3282" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3283" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialProfile_Category" name="Category?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialProfile_Category" name="Category" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3284" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3285" value="1"/>
@@ -263,21 +263,21 @@ END_FUNCTION;
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcMaterialProfileSet" name="IfcMaterialProfileSet">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_3287" general="cl_IfcMaterialDefinition"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialProfileSet_Name" name="Name?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialProfileSet_Name" name="Name" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3288" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3289" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialProfileSet_Description" name="Description?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialProfileSet_Description" name="Description" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcText"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3290" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3291" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialProfileSet_MaterialProfiles" name="MaterialProfiles_L[1:?]" isOrdered="false" association="as_IfcMaterialProfileSet_MaterialProfiles" type="cl_IfcMaterialProfile">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3292" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3292" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3293" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialProfileSet_CompositeProfile" name="CompositeProfile?" isOrdered="false" association="as_IfcMaterialProfileSet_CompositeProfile">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialProfileSet_CompositeProfile" name="CompositeProfile" isOrdered="false" association="as_IfcMaterialProfileSet_CompositeProfile">
           <type xmi:type="uml:Class" href="IfcProfileResource.uml#cl_IfcCompositeProfileDef"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3294" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3295" value="1"/>
@@ -286,14 +286,14 @@ END_FUNCTION;
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcMaterialProfileSetUsage" name="IfcMaterialProfileSetUsage">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_3296" general="cl_IfcMaterialUsageDefinition"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialProfileSetUsage_ForProfileSet" name="ForProfileSet" isOrdered="false" association="as_IfcMaterialProfileSetUsage_ForProfileSet" type="cl_IfcMaterialProfileSet">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3297" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3297" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3298" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialProfileSetUsage_CardinalPoint" name="CardinalPoint?" isOrdered="false" type="dt_IfcCardinalPointReference">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialProfileSetUsage_CardinalPoint" name="CardinalPoint" isOrdered="false" type="dt_IfcCardinalPointReference">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3299" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3300" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialProfileSetUsage_ReferenceExtent" name="ReferenceExtent?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialProfileSetUsage_ReferenceExtent" name="ReferenceExtent" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcPositiveLengthMeasure"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3301" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3302" value="1"/>
@@ -304,14 +304,14 @@ END_FUNCTION;
           <general xmi:type="uml:Class" href="IfcExternalReferenceResource.uml#cl_IfcResourceLevelRelationship"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialRelationship_RelatingMaterial" name="RelatingMaterial" isOrdered="false" association="as_IfcMaterialRelationship_RelatingMaterial" type="cl_IfcMaterial">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3304" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3304" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3305" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialRelationship_RelatedMaterials" name="RelatedMaterials_S[1:?]" isOrdered="false" association="as_IfcMaterialRelationship_RelatedMaterials" type="cl_IfcMaterial">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3306" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3306" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3307" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialRelationship_MaterialExpression" name="MaterialExpression?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialRelationship_MaterialExpression" name="MaterialExpression" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3308" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3309" value="1"/>
@@ -324,22 +324,22 @@ END_FUNCTION;
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcMaterialLayerWithOffsets" name="IfcMaterialLayerWithOffsets">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_3313" general="cl_IfcMaterialLayer"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialLayerWithOffsets_OffsetDirection" name="OffsetDirection" isOrdered="false" type="en_IfcLayerSetDirectionEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3314" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3314" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3315" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialLayerWithOffsets_OffsetValues" name="OffsetValues_A[1:2]" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLengthMeasure"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3316" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3316" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3317" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcMaterialProfileSetUsageTapering" name="IfcMaterialProfileSetUsageTapering">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_3318" general="cl_IfcMaterialProfileSetUsage"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialProfileSetUsageTapering_ForProfileEndSet" name="ForProfileEndSet" isOrdered="false" association="as_IfcMaterialProfileSetUsageTapering_ForProfileEndSet" type="cl_IfcMaterialProfileSet">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3319" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3319" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3320" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialProfileSetUsageTapering_CardinalEndPoint" name="CardinalEndPoint?" isOrdered="false" type="dt_IfcCardinalPointReference">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialProfileSetUsageTapering_CardinalEndPoint" name="CardinalEndPoint" isOrdered="false" type="dt_IfcCardinalPointReference">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3321" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3322" value="1"/>
         </ownedAttribute>
@@ -348,7 +348,7 @@ END_FUNCTION;
         <generalization xmi:type="uml:Generalization" xmi:id="gen_3323" general="cl_IfcMaterialProfile"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialProfileWithOffsets_OffsetValues" name="OffsetValues_A[1:2]" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLengthMeasure"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3324" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3324" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3325" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -357,7 +357,7 @@ END_FUNCTION;
           <general xmi:type="uml:Class" href="IfcPropertyResource.uml#cl_IfcExtendedProperties"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMaterialProperties_Material" name="Material" isOrdered="false" association="as_IfcMaterialProperties_Material" type="cl_IfcMaterialDefinition">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3327" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_3327" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_3328" value="1"/>
         </ownedAttribute>
       </packagedElement>

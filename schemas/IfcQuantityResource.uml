@@ -25,10 +25,10 @@ END_FUNCTION;
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcPhysicalQuantity" name="IfcPhysicalQuantity" isAbstract="true">
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPhysicalQuantity_Name" name="Name" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4555" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4555" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4556" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPhysicalQuantity_Description" name="Description?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPhysicalQuantity_Description" name="Description" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcText"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4557" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4558" value="1"/>
@@ -37,20 +37,20 @@ END_FUNCTION;
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcPhysicalComplexQuantity" name="IfcPhysicalComplexQuantity">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4559" general="cl_IfcPhysicalQuantity"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPhysicalComplexQuantity_HasQuantities" name="HasQuantities_S[1:?]" isOrdered="false" association="as_IfcPhysicalComplexQuantity_HasQuantities" type="cl_IfcPhysicalQuantity">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4560" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4560" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4561" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPhysicalComplexQuantity_Discrimination" name="Discrimination" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4562" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4562" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4563" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPhysicalComplexQuantity_Quality" name="Quality?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPhysicalComplexQuantity_Quality" name="Quality" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4564" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4565" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPhysicalComplexQuantity_Usage" name="Usage?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPhysicalComplexQuantity_Usage" name="Usage" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4566" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4567" value="1"/>
@@ -70,7 +70,7 @@ END_FUNCTION;
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcPhysicalSimpleQuantity" name="IfcPhysicalSimpleQuantity" isAbstract="true">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4570" general="cl_IfcPhysicalQuantity"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPhysicalSimpleQuantity_Unit" name="Unit?" isOrdered="false" association="as_IfcPhysicalSimpleQuantity_Unit">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPhysicalSimpleQuantity_Unit" name="Unit" isOrdered="false" association="as_IfcPhysicalSimpleQuantity_Unit">
           <type xmi:type="uml:Class" href="IfcMeasureResource.uml#cl_IfcNamedUnit"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4571" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4572" value="1"/>
@@ -80,10 +80,10 @@ END_FUNCTION;
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4573" general="cl_IfcPhysicalSimpleQuantity"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcQuantityArea_AreaValue" name="AreaValue" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcAreaMeasure"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4574" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4574" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4575" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcQuantityArea_Formula" name="Formula?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcQuantityArea_Formula" name="Formula" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4576" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4577" value="1"/>
@@ -106,10 +106,10 @@ END_FUNCTION;
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4580" general="cl_IfcPhysicalSimpleQuantity"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcQuantityCount_CountValue" name="CountValue" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcCountMeasure"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4581" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4581" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4582" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcQuantityCount_Formula" name="Formula?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcQuantityCount_Formula" name="Formula" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4583" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4584" value="1"/>
@@ -125,10 +125,10 @@ END_FUNCTION;
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4586" general="cl_IfcPhysicalSimpleQuantity"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcQuantityLength_LengthValue" name="LengthValue" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLengthMeasure"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4587" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4587" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4588" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcQuantityLength_Formula" name="Formula?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcQuantityLength_Formula" name="Formula" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4589" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4590" value="1"/>
@@ -151,10 +151,10 @@ END_FUNCTION;
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4593" general="cl_IfcPhysicalSimpleQuantity"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcQuantityNumber_NumberValue" name="NumberValue" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcNumericMeasure"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4594" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4594" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4595" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcQuantityNumber_Formula" name="Formula?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcQuantityNumber_Formula" name="Formula" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4596" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4597" value="1"/>
@@ -164,10 +164,10 @@ END_FUNCTION;
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4598" general="cl_IfcPhysicalSimpleQuantity"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcQuantityTime_TimeValue" name="TimeValue" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcTimeMeasure"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4599" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4599" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4600" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcQuantityTime_Formula" name="Formula?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcQuantityTime_Formula" name="Formula" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4601" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4602" value="1"/>
@@ -190,10 +190,10 @@ END_FUNCTION;
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4605" general="cl_IfcPhysicalSimpleQuantity"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcQuantityVolume_VolumeValue" name="VolumeValue" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcVolumeMeasure"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4606" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4606" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4607" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcQuantityVolume_Formula" name="Formula?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcQuantityVolume_Formula" name="Formula" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4608" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4609" value="1"/>
@@ -216,10 +216,10 @@ END_FUNCTION;
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4612" general="cl_IfcPhysicalSimpleQuantity"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcQuantityWeight_WeightValue" name="WeightValue" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcMassMeasure"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4613" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4613" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4614" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcQuantityWeight_Formula" name="Formula?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcQuantityWeight_Formula" name="Formula" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4615" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4616" value="1"/>

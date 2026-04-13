@@ -90,7 +90,7 @@
         <generalization xmi:type="uml:Generalization" xmi:id="gen_17743">
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElement"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCourse_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcCourseTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCourse_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcCourseTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_17744" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_17745" value="1"/>
         </ownedAttribute>
@@ -100,7 +100,7 @@
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElementType"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCourseType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcCourseTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_17747" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_17747" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_17748" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -114,7 +114,7 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcGeotechnicalStratum" name="IfcGeotechnicalStratum">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_17751" general="cl_IfcGeotechnicalElement"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcGeotechnicalStratum_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcGeotechnicalStratumTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcGeotechnicalStratum_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcGeotechnicalStratumTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_17752" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_17753" value="1"/>
         </ownedAttribute>
@@ -123,7 +123,7 @@
         <generalization xmi:type="uml:Generalization" xmi:id="gen_17754">
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElement"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPavement_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcPavementTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPavement_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcPavementTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_17755" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_17756" value="1"/>
         </ownedAttribute>
@@ -133,7 +133,7 @@
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElementType"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPavementType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcPavementTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_17758" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_17758" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_17759" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -141,7 +141,7 @@
         <generalization xmi:type="uml:Generalization" xmi:id="gen_17760">
           <general xmi:type="uml:Class" href="IfcSharedComponentElements.uml#cl_IfcElementComponent"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSign_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcSignTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSign_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcSignTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_17761" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_17762" value="1"/>
         </ownedAttribute>
@@ -151,7 +151,7 @@
           <general xmi:type="uml:Class" href="IfcSharedComponentElements.uml#cl_IfcElementComponentType"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSignType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcSignTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_17764" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_17764" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_17765" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -162,14 +162,14 @@
         <generalization xmi:type="uml:Generalization" xmi:id="gen_17767">
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcFeatureElementSubtraction"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcEarthworksCut_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcEarthworksCutTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcEarthworksCut_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcEarthworksCutTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_17768" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_17769" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcEarthworksFill" name="IfcEarthworksFill">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_17770" general="cl_IfcEarthworksElement"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcEarthworksFill_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcEarthworksFillTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcEarthworksFill_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcEarthworksFillTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_17771" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_17772" value="1"/>
         </ownedAttribute>
@@ -182,7 +182,7 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcReinforcedSoil" name="IfcReinforcedSoil">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_17775" general="cl_IfcEarthworksElement"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcReinforcedSoil_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcReinforcedSoilTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcReinforcedSoil_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcReinforcedSoilTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_17776" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_17777" value="1"/>
         </ownedAttribute>
@@ -191,7 +191,7 @@
         <generalization xmi:type="uml:Generalization" xmi:id="gen_17778">
           <general xmi:type="uml:Class" href="IfcSharedBldgServiceElements.uml#cl_IfcFlowTerminal"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSignal_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcSignalTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSignal_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcSignalTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_17779" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_17780" value="1"/>
         </ownedAttribute>
@@ -201,7 +201,7 @@
           <general xmi:type="uml:Class" href="IfcSharedBldgServiceElements.uml#cl_IfcFlowTerminalType"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSignalType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcSignalTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_17782" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_17782" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_17783" value="1"/>
         </ownedAttribute>
       </packagedElement>

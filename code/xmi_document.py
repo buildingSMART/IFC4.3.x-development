@@ -568,7 +568,7 @@ class xmi_document:
                         parts.extend((assoc.type.name, "FOR", other_name))
                         inverses.append((name.split('_')[0], " ".join(parts)))
 
-                is_occurrence=itm_supertype_names & {"IfcElement", "IfcSystem", "IfcSpatialStructureElement", "IfcConstructionResource", "IfcProcedure"}
+                is_occurrence=itm_supertype_names & {"IfcElement", "IfcSystem", "IfcSpatialStructureElement", "IfcConstructionResource", "IfcProcedure", "IfcProcess"}
                 # construction resources don't have a CorrectTypeAssigned rule in earlier 4.3 revisions
                 is_occurrence_no_type=itm_supertype_names & {"IfcElement", "IfcSystem", "IfcSpatialStructureElement"}
                 is_type = itm_supertype_names & {"IfcElementType", "IfcConstructionResourceType", "IfcSpatialStructureElementType"}

@@ -541,8 +541,7 @@ class xmi_document:
                     else:
                         name, *aggr = a.name.split('_')
                         parts = []
-                        if name.endswith('?'):
-                            name = name[:-1]
+                        if (a|'lowerValue').value == "0":
                             parts.append("OPTIONAL")
                         for ag in aggr:
                             parts.extend(format_aggr(ag))

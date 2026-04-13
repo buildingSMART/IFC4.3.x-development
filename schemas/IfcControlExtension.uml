@@ -12,7 +12,7 @@
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelAssociatesApproval_RelatingApproval" name="RelatingApproval" isOrdered="false" association="as_IfcRelAssociatesApproval_RelatingApproval">
           <type xmi:type="uml:Class" href="IfcApprovalResource.uml#cl_IfcApproval"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21805" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21805" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21806" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -20,14 +20,14 @@
         <generalization xmi:type="uml:Generalization" xmi:id="gen_21807">
           <general xmi:type="uml:Class" href="IfcKernel.uml#cl_IfcRelAssociates"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelAssociatesConstraint_Intent" name="Intent?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelAssociatesConstraint_Intent" name="Intent" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21808" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21809" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelAssociatesConstraint_RelatingConstraint" name="RelatingConstraint" isOrdered="false" association="as_IfcRelAssociatesConstraint_RelatingConstraint">
           <type xmi:type="uml:Class" href="IfcConstraintResource.uml#cl_IfcConstraint"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21810" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21810" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21811" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -37,10 +37,10 @@
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPerformanceHistory_LifeCyclePhase" name="LifeCyclePhase" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21813" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21813" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21814" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPerformanceHistory_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcPerformanceHistoryTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPerformanceHistory_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcPerformanceHistoryTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_21815" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_21816" value="1"/>
         </ownedAttribute>

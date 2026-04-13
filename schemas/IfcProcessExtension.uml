@@ -88,24 +88,24 @@
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelSequence_RelatingProcess" name="RelatingProcess" isOrdered="false" association="as_IfcRelSequence_RelatingProcess">
           <type xmi:type="uml:Class" href="IfcKernel.uml#cl_IfcProcess"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_19999" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_19999" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20000" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelSequence_RelatedProcess" name="RelatedProcess" isOrdered="false" association="as_IfcRelSequence_RelatedProcess">
           <type xmi:type="uml:Class" href="IfcKernel.uml#cl_IfcProcess"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20001" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20001" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20002" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelSequence_TimeLag" name="TimeLag?" isOrdered="false" association="as_IfcRelSequence_TimeLag">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelSequence_TimeLag" name="TimeLag" isOrdered="false" association="as_IfcRelSequence_TimeLag">
           <type xmi:type="uml:Class" href="IfcDateTimeResource.uml#cl_IfcLagTime"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20003" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20004" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelSequence_SequenceType" name="SequenceType?" isOrdered="false" type="en_IfcSequenceEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelSequence_SequenceType" name="SequenceType" isOrdered="false" type="en_IfcSequenceEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20005" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20006" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelSequence_UserDefinedSequenceType" name="UserDefinedSequenceType?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelSequence_UserDefinedSequenceType" name="UserDefinedSequenceType" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20007" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20008" value="1"/>
@@ -127,20 +127,20 @@
         <generalization xmi:type="uml:Generalization" xmi:id="gen_20011">
           <general xmi:type="uml:Class" href="IfcKernel.uml#cl_IfcProcess"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcEvent_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcEventTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcEvent_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcEventTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20012" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20013" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcEvent_EventTriggerType" name="EventTriggerType?" isOrdered="false" type="en_IfcEventTriggerTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcEvent_EventTriggerType" name="EventTriggerType" isOrdered="false" type="en_IfcEventTriggerTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20014" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20015" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcEvent_UserDefinedEventTriggerType" name="UserDefinedEventTriggerType?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcEvent_UserDefinedEventTriggerType" name="UserDefinedEventTriggerType" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20016" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20017" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcEvent_EventOccurenceTime" name="EventOccurenceTime?" isOrdered="false" association="as_IfcEvent_EventOccurenceTime">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcEvent_EventOccurenceTime" name="EventOccurenceTime" isOrdered="false" association="as_IfcEvent_EventOccurenceTime">
           <type xmi:type="uml:Class" href="IfcDateTimeResource.uml#cl_IfcEventTime"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20018" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20019" value="1"/>
@@ -151,14 +151,14 @@
           <general xmi:type="uml:Class" href="IfcKernel.uml#cl_IfcTypeProcess"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcEventType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcEventTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20021" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20021" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20022" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcEventType_EventTriggerType" name="EventTriggerType" isOrdered="false" type="en_IfcEventTriggerTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20023" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20023" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20024" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcEventType_UserDefinedEventTriggerType" name="UserDefinedEventTriggerType?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcEventType_UserDefinedEventTriggerType" name="UserDefinedEventTriggerType" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20025" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20026" value="1"/>
@@ -174,7 +174,7 @@
         <generalization xmi:type="uml:Generalization" xmi:id="gen_20028">
           <general xmi:type="uml:Class" href="IfcKernel.uml#cl_IfcProcess"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcProcedure_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcProcedureTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcProcedure_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcProcedureTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20029" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20030" value="1"/>
         </ownedAttribute>
@@ -190,7 +190,7 @@
           <general xmi:type="uml:Class" href="IfcKernel.uml#cl_IfcTypeProcess"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcProcedureType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcProcedureTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20033" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20033" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20034" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -198,32 +198,32 @@
         <generalization xmi:type="uml:Generalization" xmi:id="gen_20035">
           <general xmi:type="uml:Class" href="IfcKernel.uml#cl_IfcProcess"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTask_Status" name="Status?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTask_Status" name="Status" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20036" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20037" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTask_WorkMethod" name="WorkMethod?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTask_WorkMethod" name="WorkMethod" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20038" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20039" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTask_IsMilestone" name="IsMilestone" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcBoolean"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20040" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20040" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20041" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTask_Priority" name="Priority?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTask_Priority" name="Priority" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcInteger"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20042" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20043" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTask_TaskTime" name="TaskTime?" isOrdered="false" association="as_IfcTask_TaskTime">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTask_TaskTime" name="TaskTime" isOrdered="false" association="as_IfcTask_TaskTime">
           <type xmi:type="uml:Class" href="IfcDateTimeResource.uml#cl_IfcTaskTime"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20044" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20045" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTask_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcTaskTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTask_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcTaskTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20046" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20047" value="1"/>
         </ownedAttribute>
@@ -239,10 +239,10 @@
           <general xmi:type="uml:Class" href="IfcKernel.uml#cl_IfcTypeProcess"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTaskType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcTaskTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20050" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20050" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20051" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTaskType_WorkMethod" name="WorkMethod?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTaskType_WorkMethod" name="WorkMethod" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20052" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20053" value="1"/>
@@ -252,17 +252,17 @@
         <generalization xmi:type="uml:Generalization" xmi:id="gen_20054">
           <general xmi:type="uml:Class" href="IfcKernel.uml#cl_IfcControl"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcWorkCalendar_WorkingTimes" name="WorkingTimes?_S[1:?]" isOrdered="false" association="as_IfcWorkCalendar_WorkingTimes">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcWorkCalendar_WorkingTimes" name="WorkingTimes_S[1:?]" isOrdered="false" association="as_IfcWorkCalendar_WorkingTimes">
           <type xmi:type="uml:Class" href="IfcDateTimeResource.uml#cl_IfcWorkTime"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20055" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20056" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcWorkCalendar_ExceptionTimes" name="ExceptionTimes?_S[1:?]" isOrdered="false" association="as_IfcWorkCalendar_ExceptionTimes">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcWorkCalendar_ExceptionTimes" name="ExceptionTimes_S[1:?]" isOrdered="false" association="as_IfcWorkCalendar_ExceptionTimes">
           <type xmi:type="uml:Class" href="IfcDateTimeResource.uml#cl_IfcWorkTime"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20057" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20058" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcWorkCalendar_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcWorkCalendarTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcWorkCalendar_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcWorkCalendarTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20059" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20060" value="1"/>
         </ownedAttribute>
@@ -273,35 +273,35 @@
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcWorkControl_CreationDate" name="CreationDate" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcDateTimeResource.uml#dt_IfcDateTime"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20062" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20062" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20063" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcWorkControl_Creators" name="Creators?_S[1:?]" isOrdered="false" association="as_IfcWorkControl_Creators">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcWorkControl_Creators" name="Creators_S[1:?]" isOrdered="false" association="as_IfcWorkControl_Creators">
           <type xmi:type="uml:Class" href="IfcActorResource.uml#cl_IfcPerson"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20064" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20065" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcWorkControl_Purpose" name="Purpose?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcWorkControl_Purpose" name="Purpose" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20066" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20067" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcWorkControl_Duration" name="Duration?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcWorkControl_Duration" name="Duration" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcDateTimeResource.uml#dt_IfcDuration"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20068" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20069" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcWorkControl_TotalFloat" name="TotalFloat?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcWorkControl_TotalFloat" name="TotalFloat" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcDateTimeResource.uml#dt_IfcDuration"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20070" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20071" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcWorkControl_StartTime" name="StartTime" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcDateTimeResource.uml#dt_IfcDateTime"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20072" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20072" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20073" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcWorkControl_FinishTime" name="FinishTime?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcWorkControl_FinishTime" name="FinishTime" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcDateTimeResource.uml#dt_IfcDateTime"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20074" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20075" value="1"/>
@@ -309,14 +309,14 @@
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcWorkPlan" name="IfcWorkPlan">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_20076" general="cl_IfcWorkControl"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcWorkPlan_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcWorkPlanTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcWorkPlan_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcWorkPlanTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20077" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20078" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcWorkSchedule" name="IfcWorkSchedule">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_20079" general="cl_IfcWorkControl"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcWorkSchedule_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcWorkScheduleTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcWorkSchedule_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcWorkScheduleTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20080" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20081" value="1"/>
         </ownedAttribute>

@@ -56,7 +56,7 @@
         <generalization xmi:type="uml:Generalization" xmi:id="gen_20239">
           <general xmi:type="uml:Class" href="IfcSharedBldgServiceElements.uml#cl_IfcFlowTerminal"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcFireSuppressionTerminal_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcFireSuppressionTerminalTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcFireSuppressionTerminal_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcFireSuppressionTerminalTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20240" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20241" value="1"/>
         </ownedAttribute>
@@ -66,7 +66,7 @@
           <general xmi:type="uml:Class" href="IfcSharedBldgServiceElements.uml#cl_IfcFlowTerminalType"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcFireSuppressionTerminalType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcFireSuppressionTerminalTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20243" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20243" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20244" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -74,7 +74,7 @@
         <generalization xmi:type="uml:Generalization" xmi:id="gen_20245">
           <general xmi:type="uml:Class" href="IfcSharedBldgServiceElements.uml#cl_IfcFlowTreatmentDevice"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcInterceptor_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcInterceptorTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcInterceptor_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcInterceptorTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20246" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20247" value="1"/>
         </ownedAttribute>
@@ -84,7 +84,7 @@
           <general xmi:type="uml:Class" href="IfcSharedBldgServiceElements.uml#cl_IfcFlowTreatmentDeviceType"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcInterceptorType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcInterceptorTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20249" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20249" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20250" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -92,7 +92,7 @@
         <generalization xmi:type="uml:Generalization" xmi:id="gen_20251">
           <general xmi:type="uml:Class" href="IfcSharedBldgServiceElements.uml#cl_IfcFlowTerminal"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSanitaryTerminal_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcSanitaryTerminalTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSanitaryTerminal_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcSanitaryTerminalTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20252" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20253" value="1"/>
         </ownedAttribute>
@@ -102,7 +102,7 @@
           <general xmi:type="uml:Class" href="IfcSharedBldgServiceElements.uml#cl_IfcFlowTerminalType"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSanitaryTerminalType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcSanitaryTerminalTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20255" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20255" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20256" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -110,7 +110,7 @@
         <generalization xmi:type="uml:Generalization" xmi:id="gen_20257">
           <general xmi:type="uml:Class" href="IfcSharedBldgServiceElements.uml#cl_IfcFlowTerminal"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStackTerminal_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcStackTerminalTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStackTerminal_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcStackTerminalTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20258" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20259" value="1"/>
         </ownedAttribute>
@@ -120,7 +120,7 @@
           <general xmi:type="uml:Class" href="IfcSharedBldgServiceElements.uml#cl_IfcFlowTerminalType"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStackTerminalType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcStackTerminalTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20261" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20261" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20262" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -128,7 +128,7 @@
         <generalization xmi:type="uml:Generalization" xmi:id="gen_20263">
           <general xmi:type="uml:Class" href="IfcSharedBldgServiceElements.uml#cl_IfcFlowTerminal"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcWasteTerminal_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcWasteTerminalTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcWasteTerminal_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcWasteTerminalTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20264" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20265" value="1"/>
         </ownedAttribute>
@@ -138,7 +138,7 @@
           <general xmi:type="uml:Class" href="IfcSharedBldgServiceElements.uml#cl_IfcFlowTerminalType"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcWasteTerminalType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcWasteTerminalTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20267" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_20267" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_20268" value="1"/>
         </ownedAttribute>
       </packagedElement>

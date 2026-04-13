@@ -403,18 +403,18 @@ OR
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcDerivedUnit" name="IfcDerivedUnit">
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDerivedUnit_Elements" name="Elements_S[1:?]" isOrdered="false" association="as_IfcDerivedUnit_Elements" type="cl_IfcDerivedUnitElement">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2165" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2165" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2166" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDerivedUnit_UnitType" name="UnitType" isOrdered="false" type="en_IfcDerivedUnitEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2167" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2167" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2168" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDerivedUnit_UserDefinedType" name="UserDefinedType?" isOrdered="false" type="dt_IfcLabel">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDerivedUnit_UserDefinedType" name="UserDefinedType" isOrdered="false" type="dt_IfcLabel">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2169" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2170" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDerivedUnit_Name" name="Name?" isOrdered="false" type="dt_IfcLabel">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDerivedUnit_Name" name="Name" isOrdered="false" type="dt_IfcLabel">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2171" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2172" value="1"/>
         </ownedAttribute>
@@ -443,12 +443,12 @@ OR
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcDerivedUnitElement" name="IfcDerivedUnitElement">
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDerivedUnitElement_Unit" name="Unit" isOrdered="false" association="as_IfcDerivedUnitElement_Unit" type="cl_IfcNamedUnit">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2178" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2178" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2179" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDerivedUnitElement_Exponent" name="Exponent" isOrdered="false">
           <type xmi:type="uml:DataType" href="ifc4x3_add2.uml#dt_integer"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2180" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2180" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2181" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -515,37 +515,37 @@ OR
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcDimensionalExponents" name="IfcDimensionalExponents">
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDimensionalExponents_LengthExponent" name="LengthExponent" isOrdered="false">
           <type xmi:type="uml:DataType" href="ifc4x3_add2.uml#dt_integer"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2236" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2236" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2237" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDimensionalExponents_MassExponent" name="MassExponent" isOrdered="false">
           <type xmi:type="uml:DataType" href="ifc4x3_add2.uml#dt_integer"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2238" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2238" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2239" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDimensionalExponents_TimeExponent" name="TimeExponent" isOrdered="false">
           <type xmi:type="uml:DataType" href="ifc4x3_add2.uml#dt_integer"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2240" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2240" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2241" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDimensionalExponents_ElectricCurrentExponent" name="ElectricCurrentExponent" isOrdered="false">
           <type xmi:type="uml:DataType" href="ifc4x3_add2.uml#dt_integer"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2242" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2242" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2243" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDimensionalExponents_ThermodynamicTemperatureExponent" name="ThermodynamicTemperatureExponent" isOrdered="false">
           <type xmi:type="uml:DataType" href="ifc4x3_add2.uml#dt_integer"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2244" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2244" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2245" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDimensionalExponents_AmountOfSubstanceExponent" name="AmountOfSubstanceExponent" isOrdered="false">
           <type xmi:type="uml:DataType" href="ifc4x3_add2.uml#dt_integer"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2246" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2246" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2247" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDimensionalExponents_LuminousIntensityExponent" name="LuminousIntensityExponent" isOrdered="false">
           <type xmi:type="uml:DataType" href="ifc4x3_add2.uml#dt_integer"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2248" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2248" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2249" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -754,11 +754,11 @@ OR
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcMeasureWithUnit" name="IfcMeasureWithUnit">
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMeasureWithUnit_ValueComponent" name="ValueComponent" isOrdered="false" association="as_IfcMeasureWithUnit_ValueComponent" type="un_IfcValue">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2290" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2290" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2291" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMeasureWithUnit_UnitComponent" name="UnitComponent" isOrdered="false" association="as_IfcMeasureWithUnit_UnitComponent" type="un_IfcUnit">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2292" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2292" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2293" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -804,17 +804,17 @@ OR
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcMonetaryUnit" name="IfcMonetaryUnit">
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMonetaryUnit_Currency" name="Currency" isOrdered="false" type="dt_IfcLabel">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2302" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2302" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2303" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcNamedUnit" name="IfcNamedUnit" isAbstract="true">
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcNamedUnit_Dimensions" name="Dimensions" isOrdered="false" association="as_IfcNamedUnit_Dimensions" type="cl_IfcDimensionalExponents">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2304" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2304" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2305" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcNamedUnit_UnitType" name="UnitType" isOrdered="false" type="en_IfcUnitEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2306" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2306" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2307" value="1"/>
         </ownedAttribute>
         <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcNamedUnit_WR1" name="WR1">
@@ -1052,7 +1052,7 @@ OR
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcUnitAssignment" name="IfcUnitAssignment">
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcUnitAssignment_Units" name="Units_S[1:?]" isOrdered="false" association="as_IfcUnitAssignment_Units" type="un_IfcUnit">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2390" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2390" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2391" value="1"/>
         </ownedAttribute>
         <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcUnitAssignment_WR01" name="WR01">
@@ -1122,18 +1122,18 @@ OR
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcContextDependentUnit" name="IfcContextDependentUnit">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_2428" general="cl_IfcNamedUnit"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcContextDependentUnit_Name" name="Name" isOrdered="false" type="dt_IfcLabel">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2429" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2429" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2430" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcConversionBasedUnit" name="IfcConversionBasedUnit">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_2431" general="cl_IfcNamedUnit"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcConversionBasedUnit_Name" name="Name" isOrdered="false" type="dt_IfcLabel">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2432" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2432" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2433" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcConversionBasedUnit_ConversionFactor" name="ConversionFactor" isOrdered="false" association="as_IfcConversionBasedUnit_ConversionFactor" type="cl_IfcMeasureWithUnit">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2434" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2434" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2435" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -1265,12 +1265,12 @@ OR
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcSIUnit" name="IfcSIUnit">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_2519" general="cl_IfcNamedUnit"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSIUnit_Prefix" name="Prefix?" isOrdered="false" type="en_IfcSIPrefix">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSIUnit_Prefix" name="Prefix" isOrdered="false" type="en_IfcSIPrefix">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2520" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2521" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSIUnit_Name" name="Name" isOrdered="false" type="en_IfcSIUnitName">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2522" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2522" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2523" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSIUnit_Dimensions" name="Dimensions" isOrdered="false" isDerived="true" type="cl_IfcDimensionalExponents">
@@ -1289,7 +1289,7 @@ OR
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcConversionBasedUnitWithOffset" name="IfcConversionBasedUnitWithOffset">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_2530" general="cl_IfcConversionBasedUnit"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcConversionBasedUnitWithOffset_ConversionOffset" name="ConversionOffset" isOrdered="false" type="dt_IfcReal">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2531" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_2531" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_2532" value="1"/>
         </ownedAttribute>
       </packagedElement>

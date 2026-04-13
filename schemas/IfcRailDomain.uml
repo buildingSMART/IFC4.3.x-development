@@ -45,7 +45,7 @@
         <generalization xmi:type="uml:Generalization" xmi:id="gen_22334">
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElement"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRail_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcRailTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRail_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcRailTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_22335" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_22336" value="1"/>
         </ownedAttribute>
@@ -55,7 +55,7 @@
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElementType"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRailType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcRailTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_22338" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_22338" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_22339" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -63,7 +63,7 @@
         <generalization xmi:type="uml:Generalization" xmi:id="gen_22340">
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElement"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTrackElement_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcTrackElementTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTrackElement_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcTrackElementTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_22341" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_22342" value="1"/>
         </ownedAttribute>
@@ -73,7 +73,7 @@
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElementType"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTrackElementType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcTrackElementTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_22344" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_22344" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_22345" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -81,7 +81,7 @@
         <generalization xmi:type="uml:Generalization" xmi:id="gen_22346">
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcFacility"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRailway_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcRailwayTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRailway_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcRailwayTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_22347" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_22348" value="1"/>
         </ownedAttribute>
@@ -90,7 +90,7 @@
         <generalization xmi:type="uml:Generalization" xmi:id="gen_22349">
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcFacilityPart"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRailwayPart_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcRailwayPartTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRailwayPart_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcRailwayPartTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_22350" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_22351" value="1"/>
         </ownedAttribute>

@@ -67,25 +67,25 @@ END_FUNCTION;
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcConnectedFaceSet" name="IfcConnectedFaceSet">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1824" general="cl_IfcTopologicalRepresentationItem"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcConnectedFaceSet_CfsFaces" name="CfsFaces_S[1:?]" isOrdered="false" association="as_IfcConnectedFaceSet_CfsFaces" type="cl_IfcFace">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1825" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1825" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1826" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcEdge" name="IfcEdge">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1827" general="cl_IfcTopologicalRepresentationItem"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcEdge_EdgeStart" name="EdgeStart" isOrdered="false" association="as_IfcEdge_EdgeStart" type="cl_IfcVertex">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1828" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1828" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1829" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcEdge_EdgeEnd" name="EdgeEnd" isOrdered="false" association="as_IfcEdge_EdgeEnd" type="cl_IfcVertex">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1830" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1830" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1831" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcFace" name="IfcFace">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1832" general="cl_IfcTopologicalRepresentationItem"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcFace_Bounds" name="Bounds_S[1:?]" isOrdered="false" association="as_IfcFace_Bounds" type="cl_IfcFaceBound">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1833" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1833" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1834" value="1"/>
         </ownedAttribute>
         <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcFace_HasOuterBound" name="HasOuterBound">
@@ -98,12 +98,12 @@ END_FUNCTION;
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcFaceBound" name="IfcFaceBound">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1836" general="cl_IfcTopologicalRepresentationItem"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcFaceBound_Bound" name="Bound" isOrdered="false" association="as_IfcFaceBound_Bound" type="cl_IfcLoop">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1837" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1837" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1838" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcFaceBound_Orientation" name="Orientation" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcBoolean"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1839" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1839" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1840" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -113,7 +113,7 @@ END_FUNCTION;
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcPath" name="IfcPath">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1842" general="cl_IfcTopologicalRepresentationItem"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPath_EdgeList" name="EdgeList_LU[1:?]" isOrdered="false" association="as_IfcPath_EdgeList" type="cl_IfcOrientedEdge">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1843" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1843" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1844" value="1"/>
         </ownedAttribute>
         <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcPath_IsContinuous" name="IsContinuous">
@@ -133,19 +133,19 @@ END_FUNCTION;
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1848" general="cl_IfcEdge"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcEdgeCurve_EdgeGeometry" name="EdgeGeometry" isOrdered="false" association="as_IfcEdgeCurve_EdgeGeometry">
           <type xmi:type="uml:Class" href="IfcGeometryResource.uml#cl_IfcCurve"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1849" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1849" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1850" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcEdgeCurve_SameSense" name="SameSense" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcBoolean"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1851" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1851" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1852" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcEdgeLoop" name="IfcEdgeLoop">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1853" general="cl_IfcLoop"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcEdgeLoop_EdgeList" name="EdgeList_L[1:?]" isOrdered="false" association="as_IfcEdgeLoop_EdgeList" type="cl_IfcOrientedEdge">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1854" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1854" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1855" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcEdgeLoop_Ne" name="Ne" isOrdered="false" isDerived="true">
@@ -177,12 +177,12 @@ END_FUNCTION;
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1862" general="cl_IfcFace"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcFaceSurface_FaceSurface" name="FaceSurface" isOrdered="false" association="as_IfcFaceSurface_FaceSurface">
           <type xmi:type="uml:Class" href="IfcGeometryResource.uml#cl_IfcSurface"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1863" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1863" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1864" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcFaceSurface_SameSense" name="SameSense" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcBoolean"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1865" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1865" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1866" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -192,12 +192,12 @@ END_FUNCTION;
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcOrientedEdge" name="IfcOrientedEdge">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1868" general="cl_IfcEdge"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcOrientedEdge_EdgeElement" name="EdgeElement" isOrdered="false" association="as_IfcOrientedEdge_EdgeElement" type="cl_IfcEdge">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1869" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1869" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1870" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcOrientedEdge_Orientation" name="Orientation" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcBoolean"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1871" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1871" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1872" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcOrientedEdge_EdgeStart" name="EdgeStart" isOrdered="false" isDerived="true" type="cl_IfcVertex">
@@ -229,7 +229,7 @@ END_FUNCTION;
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1880" general="cl_IfcLoop"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPolyLoop_Polygon" name="Polygon_LU[3:?]" isOrdered="false" association="as_IfcPolyLoop_Polygon">
           <type xmi:type="uml:Class" href="IfcGeometryResource.uml#cl_IfcCartesianPoint"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1881" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1881" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1882" value="1"/>
         </ownedAttribute>
         <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcPolyLoop_AllPointsSameDim" name="AllPointsSameDim">
@@ -242,14 +242,14 @@ END_FUNCTION;
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcSubedge" name="IfcSubedge">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1884" general="cl_IfcEdge"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSubedge_ParentEdge" name="ParentEdge" isOrdered="false" association="as_IfcSubedge_ParentEdge" type="cl_IfcEdge">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1885" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1885" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1886" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcVertexLoop" name="IfcVertexLoop">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1887" general="cl_IfcLoop"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcVertexLoop_LoopVertex" name="LoopVertex" isOrdered="false" association="as_IfcVertexLoop_LoopVertex" type="cl_IfcVertex">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1888" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1888" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1889" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -257,7 +257,7 @@ END_FUNCTION;
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1890" general="cl_IfcVertex"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcVertexPoint_VertexGeometry" name="VertexGeometry" isOrdered="false" association="as_IfcVertexPoint_VertexGeometry">
           <type xmi:type="uml:Class" href="IfcGeometryResource.uml#cl_IfcPoint"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1891" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_1891" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_1892" value="1"/>
         </ownedAttribute>
       </packagedElement>

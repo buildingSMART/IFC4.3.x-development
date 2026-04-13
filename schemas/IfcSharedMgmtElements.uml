@@ -46,16 +46,16 @@
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4653">
           <general xmi:type="uml:Class" href="IfcKernel.uml#cl_IfcControl"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcActionRequest_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcActionRequestTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcActionRequest_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcActionRequestTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4654" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4655" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcActionRequest_Status" name="Status?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcActionRequest_Status" name="Status" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4656" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4657" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcActionRequest_LongDescription" name="LongDescription?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcActionRequest_LongDescription" name="LongDescription" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcText"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4658" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4659" value="1"/>
@@ -65,16 +65,16 @@
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4660">
           <general xmi:type="uml:Class" href="IfcKernel.uml#cl_IfcControl"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCostItem_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcCostItemTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCostItem_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcCostItemTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4661" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4662" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCostItem_CostValues" name="CostValues?_L[1:?]" isOrdered="false" association="as_IfcCostItem_CostValues">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCostItem_CostValues" name="CostValues_L[1:?]" isOrdered="false" association="as_IfcCostItem_CostValues">
           <type xmi:type="uml:Class" href="IfcCostResource.uml#cl_IfcCostValue"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4663" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4664" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCostItem_CostQuantities" name="CostQuantities?_L[1:?]" isOrdered="false" association="as_IfcCostItem_CostQuantities">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCostItem_CostQuantities" name="CostQuantities_L[1:?]" isOrdered="false" association="as_IfcCostItem_CostQuantities">
           <type xmi:type="uml:Class" href="IfcQuantityResource.uml#cl_IfcPhysicalQuantity"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4665" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4666" value="1"/>
@@ -84,21 +84,21 @@
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4667">
           <general xmi:type="uml:Class" href="IfcKernel.uml#cl_IfcControl"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCostSchedule_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcCostScheduleTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCostSchedule_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcCostScheduleTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4668" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4669" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCostSchedule_Status" name="Status?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCostSchedule_Status" name="Status" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4670" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4671" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCostSchedule_SubmittedOn" name="SubmittedOn?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCostSchedule_SubmittedOn" name="SubmittedOn" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcDateTimeResource.uml#dt_IfcDateTime"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4672" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4673" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCostSchedule_UpdateDate" name="UpdateDate?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCostSchedule_UpdateDate" name="UpdateDate" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcDateTimeResource.uml#dt_IfcDateTime"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4674" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4675" value="1"/>
@@ -108,16 +108,16 @@
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4676">
           <general xmi:type="uml:Class" href="IfcKernel.uml#cl_IfcControl"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPermit_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcPermitTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPermit_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcPermitTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4677" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4678" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPermit_Status" name="Status?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPermit_Status" name="Status" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4679" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4680" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPermit_LongDescription" name="LongDescription?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPermit_LongDescription" name="LongDescription" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcText"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4681" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4682" value="1"/>
@@ -127,16 +127,16 @@
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4683">
           <general xmi:type="uml:Class" href="IfcKernel.uml#cl_IfcControl"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcProjectOrder_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcProjectOrderTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcProjectOrder_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcProjectOrderTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4684" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4685" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcProjectOrder_Status" name="Status?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcProjectOrder_Status" name="Status" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4686" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4687" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcProjectOrder_LongDescription" name="LongDescription?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcProjectOrder_LongDescription" name="LongDescription" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcText"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4688" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4689" value="1"/>

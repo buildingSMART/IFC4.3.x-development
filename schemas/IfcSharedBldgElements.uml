@@ -293,11 +293,11 @@
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelCoversBldgElements_RelatingBuildingElement" name="RelatingBuildingElement" isOrdered="false" association="as_IfcRelCoversBldgElements_RelatingBuildingElement">
           <type xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcElement"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14244" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14244" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14245" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelCoversBldgElements_RelatedCoverings" name="RelatedCoverings_S[1:?]" isOrdered="false" association="as_IfcRelCoversBldgElements_RelatedCoverings" type="cl_IfcCovering">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14246" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14246" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14247" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -310,11 +310,11 @@
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelCoversSpaces_RelatingSpace" name="RelatingSpace" isOrdered="false" association="as_IfcRelCoversSpaces_RelatingSpace">
           <type xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcSpace"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14250" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14250" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14251" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelCoversSpaces_RelatedCoverings" name="RelatedCoverings_S[1:?]" isOrdered="false" association="as_IfcRelCoversSpaces_RelatedCoverings" type="cl_IfcCovering">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14252" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14252" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14253" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -324,20 +324,20 @@
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelConnectsPathElements_RelatingPriorities" name="RelatingPriorities_L[0:?]" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcInteger"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14255" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14255" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14256" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelConnectsPathElements_RelatedPriorities" name="RelatedPriorities_L[0:?]" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcInteger"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14257" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14257" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14258" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelConnectsPathElements_RelatedConnectionType" name="RelatedConnectionType" isOrdered="false" type="en_IfcConnectionTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14259" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14259" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14260" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelConnectsPathElements_RelatingConnectionType" name="RelatingConnectionType" isOrdered="false" type="en_IfcConnectionTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14261" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14261" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14262" value="1"/>
         </ownedAttribute>
         <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcRelConnectsPathElements_NormalizedRelatedPriorities" name="NormalizedRelatedPriorities">
@@ -368,11 +368,11 @@ OR
         <generalization xmi:type="uml:Generalization" xmi:id="gen_14266">
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcSystem"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcBuildingSystem_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcBuildingSystemTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcBuildingSystem_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcBuildingSystemTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14267" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14268" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcBuildingSystem_LongName" name="LongName?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcBuildingSystem_LongName" name="LongName" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14269" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14270" value="1"/>
@@ -382,7 +382,7 @@ OR
         <generalization xmi:type="uml:Generalization" xmi:id="gen_14271">
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElement"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcBeam_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcBeamTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcBeam_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcBeamTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14272" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14273" value="1"/>
         </ownedAttribute>
@@ -392,7 +392,7 @@ OR
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElementType"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcBeamType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcBeamTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14275" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14275" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14276" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -400,7 +400,7 @@ OR
         <generalization xmi:type="uml:Generalization" xmi:id="gen_14277">
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElement"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcBearing_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcBearingTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcBearing_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcBearingTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14278" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14279" value="1"/>
         </ownedAttribute>
@@ -410,7 +410,7 @@ OR
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElementType"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcBearingType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcBearingTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14281" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14281" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14282" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -418,7 +418,7 @@ OR
         <generalization xmi:type="uml:Generalization" xmi:id="gen_14283">
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElement"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcBuildingElementProxy_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcBuildingElementProxyTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcBuildingElementProxy_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcBuildingElementProxyTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14284" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14285" value="1"/>
         </ownedAttribute>
@@ -434,7 +434,7 @@ OR
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElementType"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcBuildingElementProxyType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcBuildingElementProxyTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14288" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14288" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14289" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -442,7 +442,7 @@ OR
         <generalization xmi:type="uml:Generalization" xmi:id="gen_14290">
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElement"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcChimney_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcChimneyTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcChimney_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcChimneyTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14291" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14292" value="1"/>
         </ownedAttribute>
@@ -452,7 +452,7 @@ OR
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElementType"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcChimneyType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcChimneyTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14294" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14294" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14295" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -460,7 +460,7 @@ OR
         <generalization xmi:type="uml:Generalization" xmi:id="gen_14296">
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElement"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcColumn_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcColumnTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcColumn_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcColumnTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14297" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14298" value="1"/>
         </ownedAttribute>
@@ -470,7 +470,7 @@ OR
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElementType"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcColumnType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcColumnTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14300" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14300" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14301" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -478,7 +478,7 @@ OR
         <generalization xmi:type="uml:Generalization" xmi:id="gen_14302">
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElement"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCovering_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcCoveringTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCovering_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcCoveringTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14303" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14304" value="1"/>
         </ownedAttribute>
@@ -488,7 +488,7 @@ OR
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElementType"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCoveringType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcCoveringTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14306" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14306" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14307" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -496,7 +496,7 @@ OR
         <generalization xmi:type="uml:Generalization" xmi:id="gen_14308">
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElement"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCurtainWall_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcCurtainWallTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCurtainWall_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcCurtainWallTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14309" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14310" value="1"/>
         </ownedAttribute>
@@ -506,7 +506,7 @@ OR
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElementType"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcCurtainWallType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcCurtainWallTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14312" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14312" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14313" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -514,25 +514,25 @@ OR
         <generalization xmi:type="uml:Generalization" xmi:id="gen_14314">
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElement"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDoor_OverallHeight" name="OverallHeight?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDoor_OverallHeight" name="OverallHeight" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcPositiveLengthMeasure"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14315" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14316" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDoor_OverallWidth" name="OverallWidth?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDoor_OverallWidth" name="OverallWidth" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcPositiveLengthMeasure"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14317" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14318" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDoor_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcDoorTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDoor_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcDoorTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14319" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14320" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDoor_OperationType" name="OperationType?" isOrdered="false" type="en_IfcDoorTypeOperationEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDoor_OperationType" name="OperationType" isOrdered="false" type="en_IfcDoorTypeOperationEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14321" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14322" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDoor_UserDefinedOperationType" name="UserDefinedOperationType?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDoor_UserDefinedOperationType" name="UserDefinedOperationType" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14323" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14324" value="1"/>
@@ -543,19 +543,19 @@ OR
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElementType"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDoorType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcDoorTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14326" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14326" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14327" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDoorType_OperationType" name="OperationType" isOrdered="false" type="en_IfcDoorTypeOperationEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14328" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14328" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14329" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDoorType_ParameterTakesPrecedence" name="ParameterTakesPrecedence?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDoorType_ParameterTakesPrecedence" name="ParameterTakesPrecedence" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcBoolean"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14330" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14331" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDoorType_UserDefinedOperationType" name="UserDefinedOperationType?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcDoorType_UserDefinedOperationType" name="UserDefinedOperationType" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14332" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14333" value="1"/>
@@ -565,7 +565,7 @@ OR
         <generalization xmi:type="uml:Generalization" xmi:id="gen_14334">
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElement"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMember_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcMemberTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMember_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcMemberTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14335" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14336" value="1"/>
         </ownedAttribute>
@@ -575,7 +575,7 @@ OR
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElementType"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcMemberType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcMemberTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14338" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14338" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14339" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -583,7 +583,7 @@ OR
         <generalization xmi:type="uml:Generalization" xmi:id="gen_14340">
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElement"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPlate_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcPlateTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPlate_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcPlateTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14341" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14342" value="1"/>
         </ownedAttribute>
@@ -593,7 +593,7 @@ OR
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElementType"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPlateType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcPlateTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14344" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14344" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14345" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -601,7 +601,7 @@ OR
         <generalization xmi:type="uml:Generalization" xmi:id="gen_14346">
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElement"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRailing_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcRailingTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRailing_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcRailingTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14347" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14348" value="1"/>
         </ownedAttribute>
@@ -611,7 +611,7 @@ OR
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElementType"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRailingType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcRailingTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14350" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14350" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14351" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -619,7 +619,7 @@ OR
         <generalization xmi:type="uml:Generalization" xmi:id="gen_14352">
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElement"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRamp_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcRampTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRamp_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcRampTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14353" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14354" value="1"/>
         </ownedAttribute>
@@ -628,7 +628,7 @@ OR
         <generalization xmi:type="uml:Generalization" xmi:id="gen_14355">
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElement"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRampFlight_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcRampFlightTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRampFlight_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcRampFlightTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14356" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14357" value="1"/>
         </ownedAttribute>
@@ -638,7 +638,7 @@ OR
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElementType"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRampFlightType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcRampFlightTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14359" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14359" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14360" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -647,7 +647,7 @@ OR
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElementType"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRampType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcRampTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14362" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14362" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14363" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -655,7 +655,7 @@ OR
         <generalization xmi:type="uml:Generalization" xmi:id="gen_14364">
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElement"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRoof_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcRoofTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRoof_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcRoofTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14365" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14366" value="1"/>
         </ownedAttribute>
@@ -665,7 +665,7 @@ OR
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElementType"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRoofType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcRoofTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14368" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14368" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14369" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -673,7 +673,7 @@ OR
         <generalization xmi:type="uml:Generalization" xmi:id="gen_14370">
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElement"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcShadingDevice_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcShadingDeviceTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcShadingDevice_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcShadingDeviceTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14371" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14372" value="1"/>
         </ownedAttribute>
@@ -683,7 +683,7 @@ OR
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElementType"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcShadingDeviceType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcShadingDeviceTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14374" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14374" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14375" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -691,7 +691,7 @@ OR
         <generalization xmi:type="uml:Generalization" xmi:id="gen_14376">
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElement"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSlab_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcSlabTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSlab_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcSlabTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14377" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14378" value="1"/>
         </ownedAttribute>
@@ -701,7 +701,7 @@ OR
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElementType"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSlabType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcSlabTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14380" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14380" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14381" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -709,7 +709,7 @@ OR
         <generalization xmi:type="uml:Generalization" xmi:id="gen_14382">
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElement"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStair_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcStairTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStair_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcStairTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14383" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14384" value="1"/>
         </ownedAttribute>
@@ -718,27 +718,27 @@ OR
         <generalization xmi:type="uml:Generalization" xmi:id="gen_14385">
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElement"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStairFlight_NumberOfRisers" name="NumberOfRisers?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStairFlight_NumberOfRisers" name="NumberOfRisers" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcInteger"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14386" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14387" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStairFlight_NumberOfTreads" name="NumberOfTreads?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStairFlight_NumberOfTreads" name="NumberOfTreads" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcInteger"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14388" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14389" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStairFlight_RiserHeight" name="RiserHeight?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStairFlight_RiserHeight" name="RiserHeight" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcPositiveLengthMeasure"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14390" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14391" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStairFlight_TreadLength" name="TreadLength?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStairFlight_TreadLength" name="TreadLength" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcPositiveLengthMeasure"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14392" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14393" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStairFlight_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcStairFlightTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStairFlight_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcStairFlightTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14394" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14395" value="1"/>
         </ownedAttribute>
@@ -748,7 +748,7 @@ OR
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElementType"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStairFlightType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcStairFlightTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14397" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14397" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14398" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -757,7 +757,7 @@ OR
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElementType"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcStairType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcStairTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14400" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14400" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14401" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -765,7 +765,7 @@ OR
         <generalization xmi:type="uml:Generalization" xmi:id="gen_14402">
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElement"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcWall_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcWallTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcWall_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcWallTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14403" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14404" value="1"/>
         </ownedAttribute>
@@ -775,7 +775,7 @@ OR
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElementType"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcWallType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcWallTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14406" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14406" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14407" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -783,25 +783,25 @@ OR
         <generalization xmi:type="uml:Generalization" xmi:id="gen_14408">
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElement"/>
         </generalization>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcWindow_OverallHeight" name="OverallHeight?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcWindow_OverallHeight" name="OverallHeight" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcPositiveLengthMeasure"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14409" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14410" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcWindow_OverallWidth" name="OverallWidth?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcWindow_OverallWidth" name="OverallWidth" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcPositiveLengthMeasure"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14411" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14412" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcWindow_PredefinedType" name="PredefinedType?" isOrdered="false" type="en_IfcWindowTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcWindow_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcWindowTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14413" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14414" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcWindow_PartitioningType" name="PartitioningType?" isOrdered="false" type="en_IfcWindowTypePartitioningEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcWindow_PartitioningType" name="PartitioningType" isOrdered="false" type="en_IfcWindowTypePartitioningEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14415" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14416" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcWindow_UserDefinedPartitioningType" name="UserDefinedPartitioningType?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcWindow_UserDefinedPartitioningType" name="UserDefinedPartitioningType" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14417" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14418" value="1"/>
@@ -812,19 +812,19 @@ OR
           <general xmi:type="uml:Class" href="IfcProductExtension.uml#cl_IfcBuiltElementType"/>
         </generalization>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcWindowType_PredefinedType" name="PredefinedType" isOrdered="false" type="en_IfcWindowTypeEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14420" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14420" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14421" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcWindowType_PartitioningType" name="PartitioningType" isOrdered="false" type="en_IfcWindowTypePartitioningEnum">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14422" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14422" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14423" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcWindowType_ParameterTakesPrecedence" name="ParameterTakesPrecedence?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcWindowType_ParameterTakesPrecedence" name="ParameterTakesPrecedence" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcBoolean"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14424" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14425" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcWindowType_UserDefinedPartitioningType" name="UserDefinedPartitioningType?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcWindowType_UserDefinedPartitioningType" name="UserDefinedPartitioningType" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_14426" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_14427" value="1"/>

@@ -141,20 +141,20 @@ END_RULE;
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRoot" name="IfcRoot" isAbstract="true">
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRoot_GlobalId" name="GlobalId" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcUtilityResource.uml#dt_IfcGloballyUniqueId"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4109" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4109" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4110" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRoot_OwnerHistory" name="OwnerHistory?" isOrdered="false" association="as_IfcRoot_OwnerHistory">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRoot_OwnerHistory" name="OwnerHistory" isOrdered="false" association="as_IfcRoot_OwnerHistory">
           <type xmi:type="uml:Class" href="IfcUtilityResource.uml#cl_IfcOwnerHistory"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4111" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4112" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRoot_Name" name="Name?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRoot_Name" name="Name" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4113" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4114" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRoot_Description" name="Description?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRoot_Description" name="Description" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcText"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4115" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4116" value="1"/>
@@ -197,27 +197,27 @@ END_RULE;
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcContext" name="IfcContext" isAbstract="true">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4135" general="cl_IfcObjectDefinition"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcContext_ObjectType" name="ObjectType?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcContext_ObjectType" name="ObjectType" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4136" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4137" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcContext_LongName" name="LongName?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcContext_LongName" name="LongName" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4138" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4139" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcContext_Phase" name="Phase?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcContext_Phase" name="Phase" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4140" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4141" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcContext_RepresentationContexts" name="RepresentationContexts?_S[1:?]" isOrdered="false" association="as_IfcContext_RepresentationContexts">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcContext_RepresentationContexts" name="RepresentationContexts_S[1:?]" isOrdered="false" association="as_IfcContext_RepresentationContexts">
           <type xmi:type="uml:Class" href="IfcRepresentationResource.uml#cl_IfcRepresentationContext"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4142" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4143" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcContext_UnitsInContext" name="UnitsInContext?" isOrdered="false" association="as_IfcContext_UnitsInContext">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcContext_UnitsInContext" name="UnitsInContext" isOrdered="false" association="as_IfcContext_UnitsInContext">
           <type xmi:type="uml:Class" href="IfcMeasureResource.uml#cl_IfcUnitAssignment"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4144" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4145" value="1"/>
@@ -228,7 +228,7 @@ END_RULE;
       <packagedElement xmi:type="uml:Dependency" xmi:id="dependency_4147" client="un_IfcDefinitionSelect" supplier="cl_IfcPropertyDefinition"/>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcObject" name="IfcObject" isAbstract="true">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4148" general="cl_IfcObjectDefinition"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcObject_ObjectType" name="ObjectType?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcObject_ObjectType" name="ObjectType" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4149" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4150" value="1"/>
@@ -249,10 +249,10 @@ END_RULE;
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRelAssigns" name="IfcRelAssigns" isAbstract="true">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4154" general="cl_IfcRelationship"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelAssigns_RelatedObjects" name="RelatedObjects_S[1:?]" isOrdered="false" association="as_IfcRelAssigns_RelatedObjects" type="cl_IfcObjectDefinition">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4155" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4155" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4156" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelAssigns_RelatedObjectsType" name="RelatedObjectsType?" isOrdered="false" type="dt_IfcStrippedOptional">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelAssigns_RelatedObjectsType" name="RelatedObjectsType" isOrdered="false" type="dt_IfcStrippedOptional">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4157" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4158" value="1"/>
         </ownedAttribute>
@@ -260,7 +260,7 @@ END_RULE;
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRelAssociates" name="IfcRelAssociates" isAbstract="true">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4159" general="cl_IfcRelationship"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelAssociates_RelatedObjects" name="RelatedObjects_S[1:?]" isOrdered="false" association="as_IfcRelAssociates_RelatedObjects" type="un_IfcDefinitionSelect">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4160" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4160" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4161" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -270,11 +270,11 @@ END_RULE;
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRelDeclares" name="IfcRelDeclares">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4163" general="cl_IfcRelationship"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelDeclares_RelatingContext" name="RelatingContext" isOrdered="false" association="as_IfcRelDeclares_RelatingContext" type="cl_IfcContext">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4164" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4164" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4165" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelDeclares_RelatedDefinitions" name="RelatedDefinitions_S[1:?]" isOrdered="false" association="as_IfcRelDeclares_RelatedDefinitions" type="un_IfcDefinitionSelect">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4166" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4166" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4167" value="1"/>
         </ownedAttribute>
         <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcRelDeclares_NoSelfReference" name="NoSelfReference">
@@ -292,12 +292,12 @@ END_RULE;
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcTypeObject" name="IfcTypeObject">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4171" general="cl_IfcObjectDefinition"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTypeObject_ApplicableOccurrence" name="ApplicableOccurrence?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTypeObject_ApplicableOccurrence" name="ApplicableOccurrence" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcIdentifier"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4172" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4173" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTypeObject_HasPropertySets" name="HasPropertySets?_S[1:?]" isOrdered="false" association="as_IfcTypeObject_HasPropertySets" type="cl_IfcPropertySetDefinition">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTypeObject_HasPropertySets" name="HasPropertySets_S[1:?]" isOrdered="false" association="as_IfcTypeObject_HasPropertySets" type="cl_IfcPropertySetDefinition">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4174" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4175" value="1"/>
         </ownedAttribute>
@@ -318,13 +318,13 @@ END_RULE;
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4178" general="cl_IfcObject"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcActor_TheActor" name="TheActor" isOrdered="false" association="as_IfcActor_TheActor">
           <type xmi:type="uml:Class" href="IfcActorResource.uml#un_IfcActorSelect"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4179" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4179" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4180" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcControl" name="IfcControl" isAbstract="true">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4181" general="cl_IfcObject"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcControl_Identification" name="Identification?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcControl_Identification" name="Identification" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcIdentifier"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4182" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4183" value="1"/>
@@ -338,12 +338,12 @@ END_RULE;
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcProcess" name="IfcProcess" isAbstract="true">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4186" general="cl_IfcObject"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcProcess_Identification" name="Identification?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcProcess_Identification" name="Identification" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcIdentifier"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4187" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4188" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcProcess_LongDescription" name="LongDescription?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcProcess_LongDescription" name="LongDescription" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcText"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4189" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4190" value="1"/>
@@ -351,12 +351,12 @@ END_RULE;
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcProduct" name="IfcProduct" isAbstract="true">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4191" general="cl_IfcObject"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcProduct_ObjectPlacement" name="ObjectPlacement?" isOrdered="false" association="as_IfcProduct_ObjectPlacement">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcProduct_ObjectPlacement" name="ObjectPlacement" isOrdered="false" association="as_IfcProduct_ObjectPlacement">
           <type xmi:type="uml:Class" href="IfcGeometricConstraintResource.uml#cl_IfcObjectPlacement"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4192" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4193" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcProduct_Representation" name="Representation?" isOrdered="false" association="as_IfcProduct_Representation">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcProduct_Representation" name="Representation" isOrdered="false" association="as_IfcProduct_Representation">
           <type xmi:type="uml:Class" href="IfcRepresentationResource.uml#cl_IfcProductRepresentation"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4194" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4195" value="1"/>
@@ -402,7 +402,7 @@ END_RULE;
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4202" general="cl_IfcPropertySetDefinition"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPropertySet_HasProperties" name="HasProperties_S[1:?]" isOrdered="false" association="as_IfcPropertySet_HasProperties">
           <type xmi:type="uml:Class" href="IfcPropertyResource.uml#cl_IfcProperty"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4203" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4203" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4204" value="1"/>
         </ownedAttribute>
         <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcPropertySet_ExistsName" name="ExistsName">
@@ -423,17 +423,17 @@ END_RULE;
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcPropertySetTemplate" name="IfcPropertySetTemplate">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4208" general="cl_IfcPropertyTemplateDefinition"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPropertySetTemplate_TemplateType" name="TemplateType?" isOrdered="false" type="en_IfcPropertySetTemplateTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPropertySetTemplate_TemplateType" name="TemplateType" isOrdered="false" type="en_IfcPropertySetTemplateTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4209" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4210" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPropertySetTemplate_ApplicableEntity" name="ApplicableEntity?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPropertySetTemplate_ApplicableEntity" name="ApplicableEntity" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcIdentifier"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4211" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4212" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcPropertySetTemplate_HasPropertyTemplates" name="HasPropertyTemplates_S[1:?]" isOrdered="false" association="as_IfcPropertySetTemplate_HasPropertyTemplates" type="cl_IfcPropertyTemplate">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4213" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4213" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4214" value="1"/>
         </ownedAttribute>
         <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcPropertySetTemplate_ExistsName" name="ExistsName">
@@ -458,11 +458,11 @@ END_RULE;
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRelAggregates" name="IfcRelAggregates">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4219" general="cl_IfcRelDecomposes"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelAggregates_RelatingObject" name="RelatingObject" isOrdered="false" association="as_IfcRelAggregates_RelatingObject" type="cl_IfcObjectDefinition">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4220" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4220" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4221" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelAggregates_RelatedObjects" name="RelatedObjects_S[1:?]" isOrdered="false" association="as_IfcRelAggregates_RelatedObjects" type="cl_IfcObjectDefinition">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4222" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4222" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4223" value="1"/>
         </ownedAttribute>
         <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcRelAggregates_NoSelfReference" name="NoSelfReference">
@@ -475,10 +475,10 @@ END_RULE;
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRelAssignsToActor" name="IfcRelAssignsToActor">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4225" general="cl_IfcRelAssigns"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelAssignsToActor_RelatingActor" name="RelatingActor" isOrdered="false" association="as_IfcRelAssignsToActor_RelatingActor" type="cl_IfcActor">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4226" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4226" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4227" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelAssignsToActor_ActingRole" name="ActingRole?" isOrdered="false" association="as_IfcRelAssignsToActor_ActingRole">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelAssignsToActor_ActingRole" name="ActingRole" isOrdered="false" association="as_IfcRelAssignsToActor_ActingRole">
           <type xmi:type="uml:Class" href="IfcActorResource.uml#cl_IfcActorRole"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4228" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4229" value="1"/>
@@ -493,7 +493,7 @@ END_RULE;
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRelAssignsToControl" name="IfcRelAssignsToControl">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4231" general="cl_IfcRelAssigns"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelAssignsToControl_RelatingControl" name="RelatingControl" isOrdered="false" association="as_IfcRelAssignsToControl_RelatingControl" type="cl_IfcControl">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4232" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4232" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4233" value="1"/>
         </ownedAttribute>
         <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcRelAssignsToControl_NoSelfReference" name="NoSelfReference">
@@ -506,7 +506,7 @@ END_RULE;
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRelAssignsToGroup" name="IfcRelAssignsToGroup">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4235" general="cl_IfcRelAssigns"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelAssignsToGroup_RelatingGroup" name="RelatingGroup" isOrdered="false" association="as_IfcRelAssignsToGroup_RelatingGroup" type="cl_IfcGroup">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4236" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4236" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4237" value="1"/>
         </ownedAttribute>
         <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcRelAssignsToGroup_NoSelfReference" name="NoSelfReference">
@@ -519,10 +519,10 @@ END_RULE;
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRelAssignsToProcess" name="IfcRelAssignsToProcess">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4239" general="cl_IfcRelAssigns"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelAssignsToProcess_RelatingProcess" name="RelatingProcess" isOrdered="false" association="as_IfcRelAssignsToProcess_RelatingProcess" type="un_IfcProcessSelect">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4240" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4240" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4241" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelAssignsToProcess_QuantityInProcess" name="QuantityInProcess?" isOrdered="false" association="as_IfcRelAssignsToProcess_QuantityInProcess">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelAssignsToProcess_QuantityInProcess" name="QuantityInProcess" isOrdered="false" association="as_IfcRelAssignsToProcess_QuantityInProcess">
           <type xmi:type="uml:Class" href="IfcMeasureResource.uml#cl_IfcMeasureWithUnit"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4242" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4243" value="1"/>
@@ -537,7 +537,7 @@ END_RULE;
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRelAssignsToProduct" name="IfcRelAssignsToProduct">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4245" general="cl_IfcRelAssigns"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelAssignsToProduct_RelatingProduct" name="RelatingProduct" isOrdered="false" association="as_IfcRelAssignsToProduct_RelatingProduct" type="un_IfcProductSelect">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4246" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4246" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4247" value="1"/>
         </ownedAttribute>
         <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcRelAssignsToProduct_NoSelfReference" name="NoSelfReference">
@@ -550,7 +550,7 @@ END_RULE;
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRelAssignsToResource" name="IfcRelAssignsToResource">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4249" general="cl_IfcRelAssigns"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelAssignsToResource_RelatingResource" name="RelatingResource" isOrdered="false" association="as_IfcRelAssignsToResource_RelatingResource" type="un_IfcResourceSelect">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4250" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4250" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4251" value="1"/>
         </ownedAttribute>
         <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcRelAssignsToResource_NoSelfReference" name="NoSelfReference">
@@ -564,7 +564,7 @@ END_RULE;
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4253" general="cl_IfcRelAssociates"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelAssociatesClassification_RelatingClassification" name="RelatingClassification" isOrdered="false" association="as_IfcRelAssociatesClassification_RelatingClassification">
           <type xmi:type="uml:Class" href="IfcExternalReferenceResource.uml#un_IfcClassificationSelect"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4254" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4254" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4255" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -572,7 +572,7 @@ END_RULE;
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4256" general="cl_IfcRelAssociates"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelAssociatesDocument_RelatingDocument" name="RelatingDocument" isOrdered="false" association="as_IfcRelAssociatesDocument_RelatingDocument">
           <type xmi:type="uml:Class" href="IfcExternalReferenceResource.uml#un_IfcDocumentSelect"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4257" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4257" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4258" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -580,29 +580,29 @@ END_RULE;
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4259" general="cl_IfcRelAssociates"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelAssociatesLibrary_RelatingLibrary" name="RelatingLibrary" isOrdered="false" association="as_IfcRelAssociatesLibrary_RelatingLibrary">
           <type xmi:type="uml:Class" href="IfcExternalReferenceResource.uml#un_IfcLibrarySelect"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4260" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4260" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4261" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRelDefinesByObject" name="IfcRelDefinesByObject">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4262" general="cl_IfcRelDefines"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelDefinesByObject_RelatedObjects" name="RelatedObjects_S[1:?]" isOrdered="false" association="as_IfcRelDefinesByObject_RelatedObjects" type="cl_IfcObject">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4263" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4263" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4264" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelDefinesByObject_RelatingObject" name="RelatingObject" isOrdered="false" association="as_IfcRelDefinesByObject_RelatingObject" type="cl_IfcObject">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4265" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4265" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4266" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRelDefinesByProperties" name="IfcRelDefinesByProperties">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4267" general="cl_IfcRelDefines"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelDefinesByProperties_RelatedObjects" name="RelatedObjects_S[1:?]" isOrdered="false" association="as_IfcRelDefinesByProperties_RelatedObjects" type="cl_IfcObjectDefinition">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4268" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4268" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4269" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelDefinesByProperties_RelatingPropertyDefinition" name="RelatingPropertyDefinition" isOrdered="false" association="as_IfcRelDefinesByProperties_RelatingPropertyDefinition" type="un_IfcPropertySetDefinitionSelect">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4270" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4270" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4271" value="1"/>
         </ownedAttribute>
         <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcRelDefinesByProperties_NoRelatedTypeObject" name="NoRelatedTypeObject">
@@ -615,33 +615,33 @@ END_RULE;
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRelDefinesByTemplate" name="IfcRelDefinesByTemplate">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4273" general="cl_IfcRelDefines"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelDefinesByTemplate_RelatedPropertySets" name="RelatedPropertySets_S[1:?]" isOrdered="false" association="as_IfcRelDefinesByTemplate_RelatedPropertySets" type="cl_IfcPropertySetDefinition">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4274" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4274" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4275" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelDefinesByTemplate_RelatingTemplate" name="RelatingTemplate" isOrdered="false" association="as_IfcRelDefinesByTemplate_RelatingTemplate" type="cl_IfcPropertySetTemplate">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4276" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4276" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4277" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRelDefinesByType" name="IfcRelDefinesByType">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4278" general="cl_IfcRelDefines"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelDefinesByType_RelatedObjects" name="RelatedObjects_S[1:?]" isOrdered="false" association="as_IfcRelDefinesByType_RelatedObjects" type="cl_IfcObject">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4279" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4279" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4280" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelDefinesByType_RelatingType" name="RelatingType" isOrdered="false" association="as_IfcRelDefinesByType_RelatingType" type="cl_IfcTypeObject">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4281" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4281" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4282" value="1"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcRelNests" name="IfcRelNests">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4283" general="cl_IfcRelDecomposes"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelNests_RelatingObject" name="RelatingObject" isOrdered="false" association="as_IfcRelNests_RelatingObject" type="cl_IfcObjectDefinition">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4284" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4284" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4285" value="1"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelNests_RelatedObjects" name="RelatedObjects_L[1:?]" isOrdered="false" association="as_IfcRelNests_RelatedObjects" type="cl_IfcObjectDefinition">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4286" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4286" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4287" value="1"/>
         </ownedAttribute>
         <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcRelNests_NoSelfReference" name="NoSelfReference">
@@ -653,12 +653,12 @@ END_RULE;
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcResource" name="IfcResource" isAbstract="true">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4289" general="cl_IfcObject"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcResource_Identification" name="Identification?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcResource_Identification" name="Identification" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcIdentifier"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4290" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4291" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcResource_LongDescription" name="LongDescription?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcResource_LongDescription" name="LongDescription" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcText"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4292" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4293" value="1"/>
@@ -666,17 +666,17 @@ END_RULE;
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcTypeProcess" name="IfcTypeProcess" isAbstract="true">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4294" general="cl_IfcTypeObject"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTypeProcess_Identification" name="Identification?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTypeProcess_Identification" name="Identification" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcIdentifier"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4295" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4296" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTypeProcess_LongDescription" name="LongDescription?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTypeProcess_LongDescription" name="LongDescription" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcText"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4297" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4298" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTypeProcess_ProcessType" name="ProcessType?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTypeProcess_ProcessType" name="ProcessType" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4299" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4300" value="1"/>
@@ -684,12 +684,12 @@ END_RULE;
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcTypeProduct" name="IfcTypeProduct">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4301" general="cl_IfcTypeObject"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTypeProduct_RepresentationMaps" name="RepresentationMaps?_LU[1:?]" isOrdered="false" association="as_IfcTypeProduct_RepresentationMaps">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTypeProduct_RepresentationMaps" name="RepresentationMaps_LU[1:?]" isOrdered="false" association="as_IfcTypeProduct_RepresentationMaps">
           <type xmi:type="uml:Class" href="IfcGeometryResource.uml#cl_IfcRepresentationMap"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4302" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4303" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTypeProduct_Tag" name="Tag?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTypeProduct_Tag" name="Tag" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4304" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4305" value="1"/>
@@ -706,17 +706,17 @@ END_RULE;
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcTypeResource" name="IfcTypeResource" isAbstract="true">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4307" general="cl_IfcTypeObject"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTypeResource_Identification" name="Identification?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTypeResource_Identification" name="Identification" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcIdentifier"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4308" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4309" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTypeResource_LongDescription" name="LongDescription?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTypeResource_LongDescription" name="LongDescription" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcText"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4310" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4311" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTypeResource_ResourceType" name="ResourceType?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcTypeResource_ResourceType" name="ResourceType" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4312" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4313" value="1"/>
@@ -724,16 +724,16 @@ END_RULE;
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcComplexPropertyTemplate" name="IfcComplexPropertyTemplate">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4314" general="cl_IfcPropertyTemplate"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcComplexPropertyTemplate_UsageName" name="UsageName?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcComplexPropertyTemplate_UsageName" name="UsageName" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4315" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4316" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcComplexPropertyTemplate_TemplateType" name="TemplateType?" isOrdered="false" type="en_IfcComplexPropertyTemplateTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcComplexPropertyTemplate_TemplateType" name="TemplateType" isOrdered="false" type="en_IfcComplexPropertyTemplateTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4317" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4318" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcComplexPropertyTemplate_HasPropertyTemplates" name="HasPropertyTemplates?_S[1:?]" isOrdered="false" association="as_IfcComplexPropertyTemplate_HasPropertyTemplates" type="cl_IfcPropertyTemplate">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcComplexPropertyTemplate_HasPropertyTemplates" name="HasPropertyTemplates_S[1:?]" isOrdered="false" association="as_IfcComplexPropertyTemplate_HasPropertyTemplates" type="cl_IfcPropertyTemplate">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4319" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4320" value="1"/>
         </ownedAttribute>
@@ -763,7 +763,7 @@ END_RULE;
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4329" general="cl_IfcRelAssignsToGroup"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcRelAssignsToGroupByFactor_Factor" name="Factor" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcRatioMeasure"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4330" value="0"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4330" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4331" value="1"/>
         </ownedAttribute>
       </packagedElement>
@@ -772,41 +772,41 @@ END_RULE;
       <packagedElement xmi:type="uml:Dependency" xmi:id="dependency_4333" client="un_IfcResourceSelect" supplier="cl_IfcTypeResource"/>
       <packagedElement xmi:type="uml:Class" xmi:id="cl_IfcSimplePropertyTemplate" name="IfcSimplePropertyTemplate">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_4334" general="cl_IfcPropertyTemplate"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSimplePropertyTemplate_TemplateType" name="TemplateType?" isOrdered="false" type="en_IfcSimplePropertyTemplateTypeEnum">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSimplePropertyTemplate_TemplateType" name="TemplateType" isOrdered="false" type="en_IfcSimplePropertyTemplateTypeEnum">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4335" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4336" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSimplePropertyTemplate_PrimaryMeasureType" name="PrimaryMeasureType?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSimplePropertyTemplate_PrimaryMeasureType" name="PrimaryMeasureType" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4337" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4338" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSimplePropertyTemplate_SecondaryMeasureType" name="SecondaryMeasureType?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSimplePropertyTemplate_SecondaryMeasureType" name="SecondaryMeasureType" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4339" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4340" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSimplePropertyTemplate_Enumerators" name="Enumerators?" isOrdered="false" association="as_IfcSimplePropertyTemplate_Enumerators">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSimplePropertyTemplate_Enumerators" name="Enumerators" isOrdered="false" association="as_IfcSimplePropertyTemplate_Enumerators">
           <type xmi:type="uml:Class" href="IfcPropertyResource.uml#cl_IfcPropertyEnumeration"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4341" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4342" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSimplePropertyTemplate_PrimaryUnit" name="PrimaryUnit?" isOrdered="false" association="as_IfcSimplePropertyTemplate_PrimaryUnit">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSimplePropertyTemplate_PrimaryUnit" name="PrimaryUnit" isOrdered="false" association="as_IfcSimplePropertyTemplate_PrimaryUnit">
           <type xmi:type="uml:Class" href="IfcMeasureResource.uml#un_IfcUnit"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4343" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4344" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSimplePropertyTemplate_SecondaryUnit" name="SecondaryUnit?" isOrdered="false" association="as_IfcSimplePropertyTemplate_SecondaryUnit">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSimplePropertyTemplate_SecondaryUnit" name="SecondaryUnit" isOrdered="false" association="as_IfcSimplePropertyTemplate_SecondaryUnit">
           <type xmi:type="uml:Class" href="IfcMeasureResource.uml#un_IfcUnit"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4345" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4346" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSimplePropertyTemplate_Expression" name="Expression?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSimplePropertyTemplate_Expression" name="Expression" isOrdered="false">
           <type xmi:type="uml:DataType" href="IfcMeasureResource.uml#dt_IfcLabel"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4347" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4348" value="1"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSimplePropertyTemplate_AccessState" name="AccessState?" isOrdered="false">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="at_IfcSimplePropertyTemplate_AccessState" name="AccessState" isOrdered="false">
           <type xmi:type="uml:Enumeration" href="IfcUtilityResource.uml#en_IfcStateEnum"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_4349" value="0"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="upper_4350" value="1"/>

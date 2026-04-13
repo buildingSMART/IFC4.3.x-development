@@ -568,11 +568,13 @@ class xmi_document:
                         parts.extend((assoc.type.name, "FOR", other_name))
                         inverses.append((name.split('_')[0], " ".join(parts)))
 
-                is_occurrence=itm_supertype_names & {"IfcElement", "IfcSystem", "IfcSpatialStructureElement", "IfcConstructionResource", "IfcProcedure", "IfcProcess"}
+                is_occurrence=itm_supertype_names & {"IfcElement", "IfcSystem", "IfcSpatialStructureElement", "IfcConstructionResource", "IfcProcedure", "IfcProcess", "IfcSpatialZone", "IfcWorkCalendar", "IfcWorkControl"}
                 # construction resources don't have a CorrectTypeAssigned rule in earlier 4.3 revisions
-                is_occurrence_no_type=itm_supertype_names & {"IfcElement", "IfcSystem", "IfcSpatialStructureElement"}
-                is_type = itm_supertype_names & {"IfcElementType", "IfcConstructionResourceType", "IfcSpatialStructureElementType"}
+                is_occurrence_no_type=itm_supertype_names & {"IfcElement", "IfcSystem", "IfcSpatialStructureElement", "IfcSpatialZone"}
+                is_type = itm_supertype_names & {"IfcElementType", "IfcConstructionResourceType", "IfcSpatialStructureElementType", "IfcProcedureType", "IfcEventType", "IfcSpatialZoneType", "IfcTaskType"}
                 is_restype = itm_supertype_names & {"IfcConstructionResourceType"}
+                is_spacialtype = itm_supertype_names & {"IfcSpatialElementType"}
+                is_processtype = itm_supertype_names & {"IfcTypeProcess"}
                 # some_hardcoded_ones = {
                 #     IfcConstructionEquipmentResource
                 #     IfcConstructionEquipmentResourceType
@@ -605,7 +607,7 @@ class xmi_document:
                         type_attr = attribute_dict["PredefinedType"]
                         type_name = type_attr.split(" ")[-1]
                         type_optional = "OPTIONAL" in type_attr
-                        attr = "IfcTypeResource.ResourceType" if is_restype else "IfcElementType.ElementType" if is_type else "IfcObject.ObjectType"
+                        attr = "IfcTypeProcess.ProcessType" if is_processtype else "IfcSpatialElementType.ElementType" if is_spacialtype else "IfcTypeResource.ResourceType" if is_restype else "IfcElementType.ElementType" if is_type else "IfcObject.ObjectType"
                         clause_1 = "NOT(EXISTS(PredefinedType)) OR\n " if type_optional else ''
                         rule = clause_1 + f"(PredefinedType <> {type_name}.USERDEFINED) OR\n ((PredefinedType = {type_name}.USERDEFINED) AND EXISTS (SELF\\{attr}))"
                         generated_whererules.append(("CorrectPredefinedType", rule))

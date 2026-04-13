@@ -98,14 +98,12 @@ class xmi_item:
     definition = None
     node = None
     children = None
-    stereotype = None
     document = None
     parent = None
     
-    def __init__(self, type, name, definition, node, children = None, stereotype = None, document = None, parent = None, **kwargs):
+    def __init__(self, type, name, definition, node, children = None, document = None, parent = None, **kwargs):
         self.type, self.name, self.definition, self.node, self.children = type, name.strip(), definition, node, children or []
         self.children = [xmi_item(None, a, None, b, None, parent=self, document=document) for a, b in self.children]        
-        self.stereotype = stereotype
         self.meta = kwargs
         self.document = document
         self.parent = parent
@@ -113,7 +111,7 @@ class xmi_item:
             self.id = self.node.id or self.node.xmi_id
             
     def _mdtype(self):
-        if self.type == "PSET" and self.stereotype == "QSET":
+        if self.type == "PSET" and not self.name.startswith("Pset"):
             return "QuantitySets"
             
         return {
@@ -398,14 +396,13 @@ class xmi_document:
                 # - material driven: applicable to IfcMaterialDefinition, uses IfcMaterialProperties
                 # - profile driven: applicable to IfcProfileDef, uses IfcProfileProperties
                 # 
-                # In UML we associate only to the IfcObject subtype and have the
-                # pset mechanism encoded in the property set stereotype name.
+                # In UML we associate only to the IfcObject subtype
                 # 
                 # In this step we make sure that the serialized data corresponds
                 # to the association mechanism of the pset.
                 is_type_driven_only = "typedrivenonly" in def_type
                 is_type_driven_override = "typedrivenoverride" in def_type
-                
+
                 if self.should_translate_pset_types and (is_type_driven_override or is_type_driven_only):
                     get_name = lambda id_: self.xmi.by_id[id_].name
                     ref_names = list(map(get_name, refs))
@@ -450,11 +447,30 @@ class xmi_document:
                 for attr in c/"ownedAttribute":
                     nm = attr.name
                     ty = self.xmi.by_id[(attr.resolve("type"))]
-
-                    # @todo single, bounded, list, etc.
                     
                     if c.name.startswith("Pset"):
-                        set_definition.append((nm, ty.name))
+                        bounds = ((attr|"lowerValue").value, (attr|"upperValue").value)
+                        prop_args = {"Type": re.split(r'_\w\[', ty.name)[0]}
+
+                        allowed_reference_types = {"IfcAddress", "IfcAppliedValue", "IfcExternalReference", "IfcMaterialDefinition", "IfcOrganization", "IfcPerson", "IfcPersonAndOrganization", "IfcTable", "IfcTimeSeries"}
+
+                        if 'bounded' in [(c|"body").text.lower() for c in (attr/"ownedComment")]:
+                            prop_type = "PropertyBoundedValue"
+                        elif ty.type == 'uml:Class' and {a.name for a in ty/"ownedAttribute"} == {'DefinedValue', 'DefiningValue'}:
+                            prop_type = "PropertyTableValue"
+                            prop_args = {a.name.removesuffix("Value"): self.xmi.by_id[a.resolve('type')].name for a in ty/"ownedAttribute"}
+                        elif ty.type == 'uml:Enumeration':
+                            prop_type = "PropertyEnumeratedValue"
+                        elif set(self.supertypes(ty.id)) & allowed_reference_types:
+                            prop_type = "PropertyReferenceValue"
+                        elif bounds == ("0", "1"):
+                            prop_type = "PropertySingleValue"
+                        elif bounds == ('1', '*'):
+                            prop_type = "PropertyListValue"
+                        else:
+                            raise RuntimeError(f"Unexpected property: {attr} with type {ty}")
+                        
+                        set_definition.append((nm, (prop_type, prop_args)))
                     else:
                         set_definition.append((nm, ty.name))
 
@@ -466,7 +482,6 @@ class xmi_document:
                     [(x.name, x) for x in c/("ownedAttribute")],
                     document=self, 
                     refs=refs,
-                    stereotype=def_type
                 )
                 
             elif c.xmi_type == "uml:DataType":
@@ -494,7 +509,16 @@ class xmi_document:
                 yield xmi_item("TYPE", name, express.simple_type(name, supert, constraints), c, document=self)
                 
             elif c.xmi_type == "uml:Enumeration":
-                values = [(lit.name, lit) for lit in c/"ownedLiteral"]
+                # There are two options, regular enumerations or PredefinedType enumerations.
+                # the later category (in addition to the ownedLiterals) has uml:Class equivalents
+                # for every literal in order to make property set associations. It is important
+                # for the serialization of the Psets that in that case the xmi:ids are not those
+                # of the literal, but those of the classes because otherwise the pset associations
+                # cannot be traced back.
+                values = [(_.name.split(".")[1], _) for _ in self.xmi.by_tag_and_type["packagedElement"]["uml:Class"] if _.name.startswith(f"{c.name}.")]
+                if not values:
+                    values = [(lit.name, lit) for lit in c/"ownedLiteral"]
+
                 is_property_enum = c.name.lower().startswith("penum_")
 
                 # alphabetical sort, but the items below always come last

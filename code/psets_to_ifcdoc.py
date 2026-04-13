@@ -87,7 +87,7 @@ def get_types(di, fn):
 
 def construct_xml(xmi_doc, pset, path, by_id, by_name, pset_id_mapping, all_properties):
 
-    psd = ET.Element('DocPropertySet' if pset.stereotype == "PSET" else 'DocQuantitySet')
+    psd = ET.Element('DocPropertySet' if pset.name.startswith("Pset") else 'DocQuantitySet')
     psd.set('xmlns:xsi', 'http://www.w3.org/2001/XMLSchema-instance')
     psd.set('Name', pset.name)
     uid = pset_id_mapping.get(pset.name)
@@ -122,7 +122,7 @@ def construct_xml(xmi_doc, pset, path, by_id, by_name, pset_id_mapping, all_prop
     
     psd.set('ApplicableType', ",".join(atv_values))
     
-    ttype = (pset.node/"properties")[0].stereotype
+    ttype = ((pset.node/"ownedComment")[0]|"body").text
     
     psd.set('PropertySetType', ttype)
     

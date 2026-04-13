@@ -328,7 +328,7 @@ def generate_definitions():
                 enumerations[item.name] = item
             elif item.type == "PSET":
                 psets.append(item)
-                stereo = (item.node / "properties")[0].stereotype
+                stereo = ((item.node/"ownedComment")[0]|"body").text
                 pset_counts_by_stereo[stereo] += 1
             elif item.type == "ENTITY":
                 by_id[item.id] = di = classes[item.name]

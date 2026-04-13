@@ -207,7 +207,7 @@ if __name__ == "__main__":
     name_to_id = {c.name: c.id for c in xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:Class"]}
 
     # @nb this includes qsets in the xmi_document iteration,
-    #     where qsets are a separate stereotype within pset
+    #     where qsets are only disambiguated based on name prefix
     psets_and_qsets = set(n.node.idref for n in definitions if n.type == 'PSET')
 
     entity_to_predtypes = get_predefined_type_listing(entities)

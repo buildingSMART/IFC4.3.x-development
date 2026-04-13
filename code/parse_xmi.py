@@ -197,7 +197,7 @@ if __name__ == "__main__":
             where_clauses[item.name] = [tuple(map(trailing_semi, map(str.strip, c.split(":")))) for c in item.definition.constraints]
             
         if item.type == "PSET":
-            if item.stereotype == "PSET":
+            if item.name.startswith("Pset"):
                 get_schema(item_package)['Property Sets'].append(item.name)
             else:
                 get_schema(item_package)['Quantity Sets'].append(item.name)

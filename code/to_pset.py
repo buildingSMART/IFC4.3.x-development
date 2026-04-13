@@ -28,40 +28,23 @@ def strip(s):
     
 def format(s):
     return re.sub(MULTIPLE_SPACE_PATTERN, ' ', ''.join([' ', c][c.isalnum() or c in '.,'] for c in s)).strip()
-    
-   
-def get_parent_of_pt(xmi_doc, enum_or_select_type):
-    type_id = enum_or_select_type.id or enum_or_select_type.idref
-    attrs = [x for x in xmi_doc.xmi.by_tag_and_type["ownedAttribute"]["uml:Property"] if x.name == "PredefinedType" and (x|"type").idref == type_id]
 
+
+def get_parent_of_pt(xmi_doc, enum_or_select_type):
+    # @todo move out of function locals
+    attrs = sum([[c for a in c/"ownedAttribute" if a.name == "PredefinedType" and a.resolve('type') == enum_or_select_type.id] for c in xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:Class"]], [])
+    
     # We move the type objects last, because xmi_document would have already augmented the
     # entity associations with a tuple of (typeobjectid, predefined type str), so here
     # we should find the non-type object.
     def is_typeobject_subtype(a):
-        return 'IfcTypeObject' in xmi_doc.supertypes(a.xml.parentNode.getAttribute('xmi:id'))
+        return 'IfcTypeObject' in xmi_doc.supertypes(a.id)
     attrs.sort(key=is_typeobject_subtype)
 
-    if attrs:
-        return attrs[0].xml.parentNode.getAttribute("name")
-    else:
-        return get_parent_of_pt(xmi_doc, xmi_doc.xmi.by_id[[x for x in xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:Substitution"] if x.client == type_id][0].supplier])
+    return attrs[0].name
 
 
-def build_property_defs(xmi_doc, pset, node, by_name):
-    
-    def elem_by_name(nm):
-        els = [c for c in xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:Class"] if c.name == ty_arg] + \
-            [c for c in xmi_doc.xmi.by_tag_and_type["packagedElement"]["uml:Enumeration"] if c.name == ty_arg]
-        return els[0]
-    
-    orders = [xmi_doc.try_get_order(x) for x in pset.children]
-    
-    if len(orders) != len(set(orders)):
-        print(pset.name)
-        names = [c.name for c in pset.children]
-        for x in sorted(zip(orders, names)):
-            print(*x)
-   
+def build_property_defs(xmi_doc, pset, node, by_name):  
     # property definitions are contained in their own markdown file, but the pset markdown
     # can contain specific comment to augment the definition
     try:
@@ -69,7 +52,7 @@ def build_property_defs(xmi_doc, pset, node, by_name):
     except FileNotFoundError as e:
         pset_specific_comments = {}
     
-    for _, (a_name, a_markdown), (nm, (ty_ty_arg)) in sorted(zip(orders, [(c.name, c.markdown) for c in pset.children], pset.definition)):
+    for (a_name, a_markdown), (nm, (ty_ty_arg)) in zip([(c.name, c.markdown) for c in pset.children], pset.definition):
     
         # augment definition with pset-specific comment
         definition = a_markdown
@@ -77,7 +60,7 @@ def build_property_defs(xmi_doc, pset, node, by_name):
         if psc:
             definition += f"\n\n{psc}"
         
-        is_pset = pset.type == "CPROP" or pset.stereotype == "PSET"
+        is_pset = pset.name.startswith('Pset_')
         
         pd = ET.SubElement(node, "PropertyDef" if is_pset else 'QtoDef')
         ET.SubElement(pd, 'Name').text = a_name
@@ -89,7 +72,7 @@ def build_property_defs(xmi_doc, pset, node, by_name):
             
             if ty in ("PropertySingleValue", "PropertyBoundedValue", "PropertyListValue"):
             
-                ty_arg = list(ty_args.values())[0]
+                ty_arg = next(iter(ty_args.values()))
                             
                 tpsv = ET.SubElement(pt, 'Type' + ty)
                 
@@ -101,7 +84,7 @@ def build_property_defs(xmi_doc, pset, node, by_name):
                 
             elif ty == "PropertyEnumeratedValue":
                 
-                ty_arg = list(ty_args.values())[0]
+                ty_arg = next(iter(ty_args.values()))
             
                 tpev = ET.SubElement(pt, 'TypePropertyEnumeratedValue')
                 el = ET.SubElement(tpev, 'EnumList')
@@ -135,12 +118,11 @@ def build_property_defs(xmi_doc, pset, node, by_name):
                 # what's this?
                 ET.SubElement(tptv, 'Expression')
                 
-                # @todo double check
-                ET.SubElement(ET.SubElement(tptv, 'DefiningValue'), "DataType").set("type", ty_args["Defined"])
-                ET.SubElement(ET.SubElement(tptv, 'DefinedValue'), "DataType").set("type", ty_args["Defining"])
+                ET.SubElement(ET.SubElement(tptv, 'DefiningValue'), "DataType").set("type", ty_args["Defining"])
+                ET.SubElement(ET.SubElement(tptv, 'DefinedValue'), "DataType").set("type", ty_args["Defined"])
             
         else:
-            pt.text = ty_ty_arg
+            pt.text = f"Q_{ty_ty_arg.removeprefix('IfcQuantity').removeprefix('Ifc').removesuffix('Measure').upper()}"
 
 
 def construct_xml(xmi_doc, pset, path, by_id, by_name):
@@ -158,13 +140,13 @@ def construct_xml(xmi_doc, pset, path, by_id, by_name):
         guid = ifcopenshell.guid.expand(guid)
     """
 
-    psd = ET.Element('PropertySetDef' if pset.stereotype == "PSET" else 'QtoSetDef')
+    psd = ET.Element('PropertySetDef' if pset.name.startswith('Pset_') else 'QtoSetDef')
     psd.set('xmlns:xsi', 'http://www.w3.org/2001/XMLSchema-instance')
     psd.set('xmlns:xsd', 'http://www.w3.org/2001/XMLSchema')
-    ttype = (pset.node/"properties")[0].stereotype
+    ttype = ((pset.node/"ownedComment")[0]|"body").text
     psd.set('templatetype', ttype)
     
-    if pset.stereotype == "PSET":
+    if pset.name.startswith('Pset_'):
         psd.set('xsi:noNamespaceSchemaLocation', 'http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd')
     else:
         psd.set('xsi:noNamespaceSchemaLocation', 'http://buildingSMART-tech.org/xml/psd/QTO_IFC4.xsd')
@@ -202,14 +184,19 @@ def construct_xml(xmi_doc, pset, path, by_id, by_name):
                     nm = ".".join((nm, predefined_type_label))
                     
                 nm = nm.replace(".", "/")
-                ET.SubElement(acs, 'ClassName').text = nm
                 atv_values.append(nm)
         else:
             print("WARNING:", x, "on", pset.name, "not recorded", file=sys.stderr)
+            breakpoint()
+
+    atv_values = sorted(atv_values, key=lambda s: ("/" in s, s))
+
+    for nm in atv_values:
+        ET.SubElement(acs, 'ClassName').text = nm
     
     atv.text = ",".join(atv_values)
     
-    pdefs = ET.SubElement(psd, 'PropertyDefs' if pset.stereotype == "PSET" else 'QtoDefs')
+    pdefs = ET.SubElement(psd, 'PropertyDefs' if pset.name.startswith('Pset_') else 'QtoDefs')
     
     build_property_defs(xmi_doc, pset, pdefs, by_name)
     

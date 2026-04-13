@@ -638,18 +638,7 @@ img {
             if "." in entity_to_write:
                 # Fully qualified enum names are also represented as classes in latest XMI version
                 continue
-                
-            # try:
-            #     c = UMLobjects[entity_to_write][0].xmi_class
-            #     stereotype = (c/"properties")[0].stereotype
-            #     if stereotype is not None: 
-            #         stereotype = stereotype.lower()
-            #     if stereotype is not None and (stereotype.startswith("pset") or stereotype == "$"):
-            #         continue
-            # except:
-            #     pass
-            
-            
+
             if any(entity_to_write.lower().startswith(x) for x in ("qto", "pset", "penum", "p_", "q_")):
                 continue
                 

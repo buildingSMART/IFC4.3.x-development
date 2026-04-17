@@ -23,7 +23,7 @@
         <generalization xmi:type="uml:Generalization" xmi:id="gen_18381">
           <general xmi:type="uml:DataType" href="ifc4x3_add2.uml#dt_integer"/>
         </generalization>
-        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_ValidRange" name="ValidRange">
+        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcDayInMonthNumber_ValidRange" name="ValidRange">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="expr_18382" name="ValidRange">
             <language>EXPRESS_WHERE</language>
             <body>{1 &lt;= SELF &lt;= 31}</body>
@@ -34,7 +34,7 @@
         <generalization xmi:type="uml:Generalization" xmi:id="gen_18383">
           <general xmi:type="uml:DataType" href="ifc4x3_add2.uml#dt_integer"/>
         </generalization>
-        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_ValidRange" name="ValidRange">
+        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcDayInWeekNumber_ValidRange" name="ValidRange">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="expr_18384" name="ValidRange">
             <language>EXPRESS_WHERE</language>
             <body>{1 &lt;= SELF &lt;= 7}</body>
@@ -61,7 +61,7 @@
         <generalization xmi:type="uml:Generalization" xmi:id="gen_18390">
           <general xmi:type="uml:DataType" href="ifc4x3_add2.uml#dt_integer"/>
         </generalization>
-        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_ValidRange" name="ValidRange">
+        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcMonthInYearNumber_ValidRange" name="ValidRange">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="expr_18391" name="ValidRange">
             <language>EXPRESS_WHERE</language>
             <body>{1 &lt;= SELF &lt;= 12}</body>

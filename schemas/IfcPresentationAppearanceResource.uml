@@ -62,7 +62,7 @@ END_FUNCTION;
         <generalization xmi:type="uml:Generalization" xmi:id="gen_2589">
           <general xmi:type="uml:DataType" href="ifc4x3_add2.uml#dt_string"/>
         </generalization>
-        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_WR1" name="WR1">
+        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcFontStyle_WR1" name="WR1">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="expr_2590" name="WR1">
             <language>EXPRESS_WHERE</language>
             <body>SELF IN ['normal','italic','oblique']</body>
@@ -73,7 +73,7 @@ END_FUNCTION;
         <generalization xmi:type="uml:Generalization" xmi:id="gen_2591">
           <general xmi:type="uml:DataType" href="ifc4x3_add2.uml#dt_string"/>
         </generalization>
-        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_WR1" name="WR1">
+        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcFontVariant_WR1" name="WR1">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="expr_2592" name="WR1">
             <language>EXPRESS_WHERE</language>
             <body>SELF IN ['normal','small-caps']</body>
@@ -84,7 +84,7 @@ END_FUNCTION;
         <generalization xmi:type="uml:Generalization" xmi:id="gen_2593">
           <general xmi:type="uml:DataType" href="ifc4x3_add2.uml#dt_string"/>
         </generalization>
-        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_WR1" name="WR1">
+        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcFontWeight_WR1" name="WR1">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="expr_2594" name="WR1">
             <language>EXPRESS_WHERE</language>
             <body>SELF IN ['normal','small-caps','100','200','300','400','500','600','700','800','900']</body>
@@ -125,7 +125,7 @@ END_FUNCTION;
         <generalization xmi:type="uml:Generalization" xmi:id="gen_2610">
           <general xmi:type="uml:DataType" href="ifc4x3_add2.uml#dt_real"/>
         </generalization>
-        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_WR1" name="WR1">
+        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcSpecularRoughness_WR1" name="WR1">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="expr_2611" name="WR1">
             <language>EXPRESS_WHERE</language>
             <body>{0.0 &lt;= SELF &lt;= 1.0}</body>
@@ -141,7 +141,7 @@ END_FUNCTION;
         <generalization xmi:type="uml:Generalization" xmi:id="gen_2615">
           <general xmi:type="uml:DataType" href="ifc4x3_add2.uml#dt_string"/>
         </generalization>
-        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_WR1" name="WR1">
+        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcTextAlignment_WR1" name="WR1">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="expr_2616" name="WR1">
             <language>EXPRESS_WHERE</language>
             <body>SELF IN ['left', 'right', 'center', 'justify']</body>
@@ -152,7 +152,7 @@ END_FUNCTION;
         <generalization xmi:type="uml:Generalization" xmi:id="gen_2617">
           <general xmi:type="uml:DataType" href="ifc4x3_add2.uml#dt_string"/>
         </generalization>
-        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_WR1" name="WR1">
+        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcTextDecoration_WR1" name="WR1">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="expr_2618" name="WR1">
             <language>EXPRESS_WHERE</language>
             <body>SELF IN ['none', 'underline', 'overline', 'line-through', 'blink']</body>
@@ -168,7 +168,7 @@ END_FUNCTION;
         <generalization xmi:type="uml:Generalization" xmi:id="gen_2620">
           <general xmi:type="uml:DataType" href="ifc4x3_add2.uml#dt_string"/>
         </generalization>
-        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_WR1" name="WR1">
+        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcTextTransformation_WR1" name="WR1">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="expr_2621" name="WR1">
             <language>EXPRESS_WHERE</language>
             <body>SELF IN ['capitalize', 'uppercase', 'lowercase', 'none']</body>

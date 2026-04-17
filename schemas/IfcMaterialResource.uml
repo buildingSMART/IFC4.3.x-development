@@ -26,7 +26,7 @@ END_FUNCTION;
         <generalization xmi:type="uml:Generalization" xmi:id="gen_3196">
           <general xmi:type="uml:DataType" href="ifc4x3_add2.uml#dt_integer"/>
         </generalization>
-        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_GreaterThanZero" name="GreaterThanZero">
+        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcCardinalPointReference_GreaterThanZero" name="GreaterThanZero">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="expr_3197" name="GreaterThanZero">
             <language>EXPRESS_WHERE</language>
             <body>SELF &gt; 0</body>

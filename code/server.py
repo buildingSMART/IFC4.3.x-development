@@ -1,7 +1,10 @@
+import csv
+from pathlib import Path
 import re
 import os
 import sys
 import copy
+import time
 import uuid
 import glob
 import json
@@ -78,21 +81,51 @@ identity = lambda x: x
 REPO_DIR = os.path.abspath(os.environ.get("REPO_DIR", os.path.join(os.path.dirname(__file__), "..")))
 REPO_BRANCH = os.environ.get("REPO_BRANCH", "master")
 
+compile_template_usage_per_mvd = lambda data: {v: [re.sub(r'[^\w]', '', re.split(r'\s+', d[''], maxsplit=1)[1]) for d in data[1:] if d[v]] for v in (functools.reduce(operator.or_, (d.keys() for d in data)) - {''})}
+
 class schema_resource:
     def __init__(self, path, transform=identity):
         self.path = path
         self.transform = transform
         self.mtime = 0
+        self.last_read = 0
         self.data = None
 
+    @staticmethod
     def load(fn):
         def inner(self, *args):
             try:
-                mt = os.path.getmtime(self.path)
-                if mt > self.mtime:
-                    self.data = self.transform(json.load(open(self.path, encoding="utf-8")))
+                reread = False
+                if time.time() - self.last_read > 1:
+                    if "*" in self.path:
+                        mt = max(map(os.path.getmtime, glob.glob(self.path)))
+                    else:
+                        mt = os.path.getmtime(self.path)
+                    reread = mt > self.mtime
+                if reread:
+                    if self.path.endswith(".json"):
+                        load = lambda p: json.load(open(p, encoding="utf-8"))
+                    elif self.path.endswith(".csv"):
+                        load = lambda p: list(csv.DictReader(open(p, newline='', encoding="utf-8")))
+                    else:
+                        raise ValueError(f"Unsupported extension on file {self.path}")
+
+                    if "*" in self.path:
+                        base = '/'.join(p for p in self.path.split('/') if '*' not in p)
+                        self.data = {}
+                        paths = map(Path, glob.glob(self.path))
+                        for fp in paths:
+                            keys = [x.split('.')[0] for x in os.path.split(str(fp.relative_to(base)))]
+                            cur = self.data
+                            for key in keys[:-1]:
+                                cur = cur.setdefault(key, {})
+                            cur[keys[-1]] = load(fp)
+                    else:
+                        self.data = self.transform(load(self.path))
                     self.mtime = mt
             except:
+                import traceback
+                traceback.print_exc()
                 print("Path", self.path, "not available")
                 abort(503)
 
@@ -137,8 +170,8 @@ class resource_manager:
     abstract_entities = schema_resource("abstract_entities.json", transform=set)
     type_values = schema_resource("type_values.json")
     hierarchy = schema_resource("hierarchy.json")
-    xmi_concepts = schema_resource("xmi_concepts.json")
-    xmi_mvd_concepts = schema_resource("xmi_mvd_concepts.json")
+    xmi_concepts = schema_resource("../schemas/mvd/**/*.csv")
+    xmi_mvd_concepts = schema_resource("../schemas/mvd.csv", transform=compile_template_usage_per_mvd)
     examples_by_type = schema_resource("examples_by_type.json")
     mvd_entity_usage = schema_resource("mvd_entity_usage.json")
 

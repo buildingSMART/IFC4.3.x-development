@@ -130,12 +130,13 @@ if __name__ == "__main__":
             item_package = "IfcSharedBldgElements"
 
         if get_schema(item_package) is None:
+            # breakpoint()
             print(f"Warning: for {item.name} package {item_package} is not registered")
             continue
         
         if item.type == "ENTITY":
         
-            if xmi_doc.xmi.tags["deprecated"].get(item.id, False):
+            if "deprecated" in ((c|"body").text.lower() for c in (item.node/"ownedComment")):
                 deprecated_entities.append(item.name)
 
             if item.definition.is_abstract:
@@ -153,15 +154,11 @@ if __name__ == "__main__":
             for a in item.definition.attributes:
                 attributes[".".join((item.name, a[0]))] = ("forward", a[1])
 
-            for a in item.definition.inverses:
-                parts = a.split(' ')
-                nm = parts[0].strip()
-                ty = ' '.join(parts[2:])[:-1]
+            for nm, ty in item.definition.inverses:
                 attributes[".".join((item.name, nm))] = ("inverse", ty)
                 
-            for a in item.definition.derived:
-                parts = a.split(':=', 1)
-                parts = map(trailing_semi, map(str.strip, parts[0].split(":", 1) + [parts[1]]))
+            for nm, defi in item.definition.derived:
+                parts = [nm, *defi.split(':=', 1)]
                 name, type, definition = parts
                 # Such as SELF\IfcNamedUnit.Dimensions
                 if "SELF\\" in name:
@@ -194,7 +191,7 @@ if __name__ == "__main__":
         
         if item.type == "TYPE":
             #@todo unify this with entity
-            where_clauses[item.name] = [tuple(map(trailing_semi, map(str.strip, c.split(":")))) for c in item.definition.constraints]
+            where_clauses[item.name] = [tuple(map(trailing_semi, map(str.strip, c))) for c in item.definition.constraints]
             
         if item.type == "PSET":
             if item.name.startswith("Pset"):

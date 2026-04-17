@@ -372,13 +372,16 @@ class xmi_document:
                 continue
                 
             if c.xmi_type == "uml:Constraint":
-                yield xmi_item(
-                    (c|"language").text.split('_')[-1], 
-                    c.name, 
-                    (c|"body").text.strip(), 
-                    c, 
-                    document=self
-                )
+                if c.parent.type == "uml:Package":
+                    # Only top-level constraints in a package are emitted as items, other constraints
+                    # are handled by their owning class or datatype.
+                    yield xmi_item(
+                        (c|"language").text.split('_')[-1], 
+                        c.name, 
+                        (c|"body").text.strip(), 
+                        c, 
+                        document=self
+                    )
                 
             elif '.' in c.name :
                 continue

@@ -1,4 +1,4 @@
-REPO_URL = "https://github.com/buildingSMART/IFC4.3.x-development/edit/master/"
+REPO_URL = "https://github.com/buildingSMART/IFC4.3.x-development/edit/xmi-refresh/"
 
 import csv
 import os
@@ -13,6 +13,7 @@ import itertools
 import subprocess
 
 from collections import defaultdict, namedtuple, Counter
+from typing import Union
 
 import xmi
 import express
@@ -268,7 +269,7 @@ class xmi_item:
     
 class xmi_document:
 
-    def __init__(self, fn):    
+    def __init__(self, fn : Union[str, xmi.doc]):    
         self.dependencies_in = defaultdict(list)
         self.dependencies_out = defaultdict(list)
         self.associations = defaultdict(list)
@@ -279,15 +280,16 @@ class xmi_document:
             self.filename = fn
             self.xmi = xmi.doc(fn)
         else:
+            self.filename = fn.filename
             self.xmi = fn
             
         self.extract_associations()
         self.extract_dependencies()
         self.extract_generalizations()
 
-        fn = Path(self.filename).parent / "mvd" / "GeneralUsage" / "ObjectTyping.csv"
+        fp = Path(self.filename).parent / "mvd" / "GeneralUsage" / "ObjectTyping.csv"
         self.concepts = {
-            "ObjectTyping": list(csv.DictReader(fn.open(encoding='utf-8', newline='')))
+            "ObjectTyping": list(csv.DictReader(fp.open(encoding='utf-8', newline='')))
         }
         
         self.should_translate_pset_types = True
@@ -372,13 +374,16 @@ class xmi_document:
                 continue
                 
             if c.xmi_type == "uml:Constraint":
-                yield xmi_item(
-                    (c|"language").text.split('_')[-1], 
-                    c.name, 
-                    (c|"body").text.strip(), 
-                    c, 
-                    document=self
-                )
+                if c.parent.type == "uml:Package":
+                    # Only top-level constraints in a package are emitted as items, other constraints
+                    # are handled by their owning class or datatype.
+                    yield xmi_item(
+                        (c|"language").text.split('_')[-1], 
+                        c.name, 
+                        (c|"body").text.strip(), 
+                        c, 
+                        document=self
+                    )
                 
             elif '.' in c.name :
                 continue

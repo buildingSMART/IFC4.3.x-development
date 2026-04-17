@@ -1,15 +1,15 @@
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="{{ base }}/assets/css/mini-default.css">
-    <link rel="stylesheet" href="{{ base }}/assets/css/style.css">
+    <link rel="stylesheet" href="{{ relative_base }}/assets/css/mini-default.css">
+    <link rel="stylesheet" href="{{ relative_base }}/assets/css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     {% if is_iso %}
     <title>ISO 16739-1 Documentation</title>
     {% else %}
-    <title>{{ spec_version_string }} Documentation</title>
+    <title>{{ spec_version_string }} Documentation {{ relative_base }} {{ relative_base }}</title>
     {% endif %}
-    <link rel="icon" type="image/x-icon" href="{{ base }}/assets/img/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="{{ relative_base }}/assets/img/favicon.ico">
     <script>window.is_iso = {% if is_iso %}true{% else %}false{% endif %};</script>
 </head>
 <body class="{{body_class or ''}}">
@@ -85,7 +85,7 @@
             <div class="col-md-2">
                 {% if not is_iso and not is_package %}
                 {% block searchbar %}
-                <form method='get' action='/search' style="padding:0px;" class="search">
+                <form method='get' action='{{ base }}/search.html' style="padding:0px;" class="search">
                     <div class="row">
                         <div class="col-md-8">
                             <input type='text' name='query' value='' placeholder="Search" class="search-input" />
@@ -187,7 +187,7 @@
                     Copyright &copy; ISO 2023 &mdash; All rights reserved
                     </small>
                     {% else %}
-                    <a rel="license" href="http://creativecommons.org/licenses/by-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nd/4.0/88x31.png" /></a>
+                    <a rel="license" href="http://creativecommons.org/licenses/by-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="{{ base }}/assets/lib/img/cc-by-nd-4.0-88x31.png" /></a>
                     <small>
                         Copyright &copy; 1996-2025 buildingSMART International Limited. Some rights reserved. Any technical documentation made available by buildingSMART International Limited is the copyrighted work of buildingSMART International Limited and is owned by buildingSMART International Limited. The Industry Foundation Classes are published under Creative Commons Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0). Read the <a href="https://creativecommons.org/licenses/by-nd/4.0/legalcode">full license text here</a>. For more information please refer to our <a href="https://app.box.com/s/rg081ahyq1euw8uw6efql6m2fcofm558">IP Policy.</a>
                     </small>
@@ -202,14 +202,23 @@
             'path': '{{ path }}',
             'base': '{{ base }}',
             'repo': '{{ repo or "buildingSMART/IFC4.3.x-development" }}',
+            'resourceApi': null,
+            'searchIndex': '{{ base }}/assets/search/search-index.json',
         };
     </script>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css">
-    <script src="{{ base }}/assets/js/highlight.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+    <script>
+        window.MathJax = {
+            loader: {
+                load: ['output/svg']
+            },
+            startup: {
+                output: 'svg',
+            },
+        };
+    </script>
+    <script src="{{ base }}/assets/lib/feather-icons/feather.min.js"></script>
+    <script id="MathJax-script" async src="{{ base }}/assets/lib/mathjax/tex-mml-svg.js"></script>
+    {% block pagescripts %}{% endblock %}
     <script type="text/javascript" src="{{ base }}/assets/js/app.js"></script>
 </body>
 </html>

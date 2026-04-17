@@ -947,7 +947,7 @@ END_FUNCTION;
         <generalization xmi:type="uml:Generalization" xmi:id="gen_1133">
           <general xmi:type="uml:DataType" href="ifc4x3_add2.uml#dt_integer"/>
         </generalization>
-        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_WR1" name="WR1">
+        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcDimensionCount_WR1" name="WR1">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="expr_1134" name="WR1">
             <language>EXPRESS_WHERE</language>
             <body>{ 0 &lt; SELF &lt;= 3 }</body>

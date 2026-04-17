@@ -359,25 +359,25 @@ END_FUNCTION;
         <generalization xmi:type="uml:Generalization" xmi:id="gen_2157">
           <general xmi:type="uml:DataType" href="ifc4x3_add2.uml#dt_integer"/>
         </generalization>
-        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_MinutesInRange" name="MinutesInRange">
+        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcCompoundPlaneAngleMeasure_L[3:4]_MinutesInRange" name="MinutesInRange">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="expr_2158" name="MinutesInRange">
             <language>EXPRESS_WHERE</language>
             <body>ABS(SELF[2]) &lt; 60</body>
           </specification>
         </ownedRule>
-        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_SecondsInRange" name="SecondsInRange">
+        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcCompoundPlaneAngleMeasure_L[3:4]_SecondsInRange" name="SecondsInRange">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="expr_2159" name="SecondsInRange">
             <language>EXPRESS_WHERE</language>
             <body>ABS(SELF[3]) &lt; 60</body>
           </specification>
         </ownedRule>
-        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_MicrosecondsInRange" name="MicrosecondsInRange">
+        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcCompoundPlaneAngleMeasure_L[3:4]_MicrosecondsInRange" name="MicrosecondsInRange">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="expr_2160" name="MicrosecondsInRange">
             <language>EXPRESS_WHERE</language>
             <body>(SIZEOF(SELF) = 3) OR (ABS(SELF[4]) &lt; 1000000)</body>
           </specification>
         </ownedRule>
-        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_ConsistentSign" name="ConsistentSign">
+        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcCompoundPlaneAngleMeasure_L[3:4]_ConsistentSign" name="ConsistentSign">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="expr_2161" name="ConsistentSign">
             <language>EXPRESS_WHERE</language>
             <body>((SELF[1] &gt;= 0) AND (SELF[2] &gt;= 0) AND (SELF[3] &gt;= 0) AND ((SIZEOF(SELF) = 3) OR (SELF[4] &gt;= 0)))
@@ -613,7 +613,7 @@ OR
         <generalization xmi:type="uml:Generalization" xmi:id="gen_2262">
           <general xmi:type="uml:DataType" href="ifc4x3_add2.uml#dt_real"/>
         </generalization>
-        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_WR1" name="WR1">
+        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcHeatingValueMeasure_WR1" name="WR1">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="expr_2263" name="WR1">
             <language>EXPRESS_WHERE</language>
             <body>SELF &gt; 0.</body>
@@ -624,7 +624,7 @@ OR
         <generalization xmi:type="uml:Generalization" xmi:id="gen_2264">
           <general xmi:type="uml:DataType" href="ifc4x3_add2.uml#dt_string"/>
         </generalization>
-        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_strlen" name="strlen">
+        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcIdentifier_strlen" name="strlen">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="expr_2265" name="strlen">
             <language>OCL</language>
             <body>self.size() &lt;= 255</body>
@@ -670,7 +670,7 @@ OR
         <generalization xmi:type="uml:Generalization" xmi:id="gen_2273">
           <general xmi:type="uml:DataType" href="ifc4x3_add2.uml#dt_string"/>
         </generalization>
-        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_strlen" name="strlen">
+        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcLabel_strlen" name="strlen">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="expr_2274" name="strlen">
             <language>OCL</language>
             <body>self.size() &lt;= 255</body>
@@ -833,7 +833,7 @@ OR
         <generalization xmi:type="uml:Generalization" xmi:id="gen_2310">
           <general xmi:type="uml:DataType" href="ifc4x3_add2.uml#dt_real"/>
         </generalization>
-        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_WR21" name="WR21">
+        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcPHMeasure_WR21" name="WR21">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="expr_2311" name="WR21">
             <language>EXPRESS_WHERE</language>
             <body>{0.0 &lt;= SELF &lt;= 14.0}</body>
@@ -1211,7 +1211,7 @@ OR
       <packagedElement xmi:type="uml:Dependency" xmi:id="dependency_2506" client="un_IfcDerivedMeasureValue" supplier="dt_IfcWarpingMomentMeasure"/>
       <packagedElement xmi:type="uml:DataType" xmi:id="dt_IfcNonNegativeLengthMeasure" name="IfcNonNegativeLengthMeasure">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_2507" general="dt_IfcLengthMeasure"/>
-        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_NotNegative" name="NotNegative">
+        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcNonNegativeLengthMeasure_NotNegative" name="NotNegative">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="expr_2508" name="NotNegative">
             <language>EXPRESS_WHERE</language>
             <body>SELF &gt;= 0.</body>
@@ -1220,7 +1220,7 @@ OR
       </packagedElement>
       <packagedElement xmi:type="uml:DataType" xmi:id="dt_IfcNormalisedRatioMeasure" name="IfcNormalisedRatioMeasure">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_2509" general="dt_IfcRatioMeasure"/>
-        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_WR1" name="WR1">
+        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcNormalisedRatioMeasure_WR1" name="WR1">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="expr_2510" name="WR1">
             <language>EXPRESS_WHERE</language>
             <body>{0.0 &lt;= SELF &lt;= 1.0}</body>
@@ -1229,7 +1229,7 @@ OR
       </packagedElement>
       <packagedElement xmi:type="uml:DataType" xmi:id="dt_IfcPositiveInteger" name="IfcPositiveInteger">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_2511" general="dt_IfcInteger"/>
-        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_WR1" name="WR1">
+        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcPositiveInteger_WR1" name="WR1">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="expr_2512" name="WR1">
             <language>EXPRESS_WHERE</language>
             <body>SELF &gt; 0</body>
@@ -1238,7 +1238,7 @@ OR
       </packagedElement>
       <packagedElement xmi:type="uml:DataType" xmi:id="dt_IfcPositiveLengthMeasure" name="IfcPositiveLengthMeasure">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_2513" general="dt_IfcLengthMeasure"/>
-        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_WR1" name="WR1">
+        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcPositiveLengthMeasure_WR1" name="WR1">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="expr_2514" name="WR1">
             <language>EXPRESS_WHERE</language>
             <body>SELF &gt; 0.</body>
@@ -1247,7 +1247,7 @@ OR
       </packagedElement>
       <packagedElement xmi:type="uml:DataType" xmi:id="dt_IfcPositivePlaneAngleMeasure" name="IfcPositivePlaneAngleMeasure">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_2515" general="dt_IfcPlaneAngleMeasure"/>
-        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_WR1" name="WR1">
+        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcPositivePlaneAngleMeasure_WR1" name="WR1">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="expr_2516" name="WR1">
             <language>EXPRESS_WHERE</language>
             <body>SELF &gt; 0.</body>
@@ -1256,7 +1256,7 @@ OR
       </packagedElement>
       <packagedElement xmi:type="uml:DataType" xmi:id="dt_IfcPositiveRatioMeasure" name="IfcPositiveRatioMeasure">
         <generalization xmi:type="uml:Generalization" xmi:id="gen_2517" general="dt_IfcRatioMeasure"/>
-        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_WR1" name="WR1">
+        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcPositiveRatioMeasure_WR1" name="WR1">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="expr_2518" name="WR1">
             <language>EXPRESS_WHERE</language>
             <body>SELF &gt; 0.</body>

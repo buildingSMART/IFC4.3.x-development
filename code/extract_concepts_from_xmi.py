@@ -13,7 +13,6 @@ import concept_interpretation
 from xmi_document import xmi_document
 from concept_extractor import extractor
 
-
 class predefined_type_attribute: pass
 
 class property_set_class: pass
@@ -83,6 +82,8 @@ def parse_bindings(concept, all_templates=None, fn=None, to_xmi=False, definitio
 
     
 if __name__ == "__main__":
+    raise RuntimeError("This module is deprecated. Concepts are now stored in .CSV files.")
+
 
     try:
         fn = sys.argv[1]

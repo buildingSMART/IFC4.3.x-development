@@ -47,7 +47,7 @@
         <generalization xmi:type="uml:Generalization" xmi:id="gen_11259">
           <general xmi:type="uml:DataType" href="ifc4x3_add2.uml#dt_string"/>
         </generalization>
-        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_strlen" name="strlen">
+        <ownedRule xmi:type="uml:Constraint" xmi:id="ct_IfcGloballyUniqueId_strlen" name="strlen">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="expr_11260" name="strlen">
             <language>OCL</language>
             <body>self.size() = 22</body>

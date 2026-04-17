@@ -33,16 +33,19 @@ except AttributeError:
 LANG_MAP_TTL = int(os.environ.get("LANG_MAP_TTL", "60"))  # seconds
 
 _shared_cache = TTLCache(maxsize=3, ttl=LANG_MAP_TTL)  # 3 distinct keys
+_catalog_cache = TTLCache(maxsize=64, ttl=LANG_MAP_TTL)
 _shared_lock  = RLock()
+_catalog_lock = RLock()
 
 _compute_counts = {"lang_map": 0, "flag_map": 0, "list_langs": 0}
 
 def clear_translation_caches():
     _shared_cache.clear()
+    _catalog_cache.clear()
     
 TRANSLATIONS_SRC_DIR = os.environ.get(
     "TRANSLATIONS_SRC_DIR",
-    os.path.join(os.path.dirname(__file__), "translate_repo", "translations")
+    os.path.join(os.path.dirname(__file__), "..", "..", "translate_repo", "translations")
 )
 TRANSLATIONS_BUILD_DIR = os.environ.get(
     "TRANSLATIONS_BUILD_DIR",
@@ -285,6 +288,7 @@ def identity_filter(val, msgid):
     # treat as untranslated only if EXACTLY the same as msgid
     return "" if val == msgid else val
 
+@cached(cache=_catalog_cache, lock=_catalog_lock, key=lambda lang: ("catalog", lang))
 def load_merged_catalog(lang):
     """
     Merge all catalogs for a language. First non-identity translation wins.

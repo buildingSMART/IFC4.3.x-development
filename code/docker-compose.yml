@@ -9,17 +9,5 @@ services:
       - ISO=0
       - PACKAGE=${PACKAGE}
       - REDIS_HOST=localhost
-    expose:
-      - "5000"
-      
-  nginx:
-    image: nginx:1.23.1-alpine
-    depends_on:
-      - app
     ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./proxy/conf:/etc/nginx/conf.d:ro
-      - ./proxy/auth:/etc/auth:ro
-      - ./proxy/cert:/etc/letsencrypt
+      - "5000:5000"

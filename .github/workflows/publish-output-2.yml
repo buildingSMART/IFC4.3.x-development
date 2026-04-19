@@ -139,22 +139,22 @@ jobs:
         shell: bash
         run: |
           set -euxo pipefail
-          python build_html.py --output ../output/html-publish -j 4
+          python -m generators.html --output ../output/html -j 4
 
       - name: Sync site into output repository
         shell: bash
         run: |
           set -euxo pipefail
           mkdir -p "$TARGET_SITE_DIR"
-          rsync -a --delete "${GITHUB_WORKSPACE}/ifc43/output/html-publish/" "${TARGET_SITE_DIR}/"
+          rsync -a --delete "${GITHUB_WORKSPACE}/ifc43/output/html/" "${TARGET_SITE_DIR}/"
 
       - name: Commit and push output
         working-directory: output-repo
         shell: bash
         run: |
           set -euxo pipefail
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "bSI-Bot"
+          git config user.email ${{ secrets.BSI_BOT_EMAIL }}
           git add -A IFC/RELEASE/IFC4_3
           if git diff --cached --quiet; then
             echo "No output changes to commit."

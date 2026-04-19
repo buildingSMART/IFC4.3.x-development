@@ -252,10 +252,11 @@ def filter_concepts(di):
 
 def guid_by_id(id):
     """add guid information (not the document ID, but IFC_DOC GUID)"""
-    try:
-        guid = xmi_doc.guids[id]
-    except KeyError:
-        guid = ""
+    # @todo
+    # try:
+    #     guid = xmi_doc.guids[id]
+    # except KeyError:
+    guid = ""
     return guid
 
 
@@ -308,8 +309,8 @@ def generate_definitions():
     pset_counts_by_stereo = defaultdict(int)
 
     ### extract all items from XML
-
-    for item in tqdm(xmi_doc, desc="Processing items from XMI", total=len(xmi_doc.guids)):
+    items = list(xmi_doc)
+    for item in tqdm(items, desc="Processing items from XMI", total=len(items)):
 
         item_by_id[item.id] = item
 

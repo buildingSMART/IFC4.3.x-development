@@ -1,21 +1,21 @@
 {% extends "main.html" %}
 {% block pagecontent %}
 
-<h2>Search</h2>
+<h1>Search</h1>
 
-<form method='get'>
-<input type='text' name='query' value='{{ query }}'/>
-<input type='submit' value='Search' />
-</form>
+<div id="search-app" class="search-app">
+    <form method="get" action="{{ base }}/search.html" class="search-page-form">
+        <input id="page-search-input" type="search" name="query" value="" placeholder="Search documentation" />
+        <button type="submit" class="primary">Search</button>
+    </form>
 
-<ul>
-    {% for r in matches %}
-        <li><a href="{{ r['url'] }}">{{ r['title']}}</a>
-            <span>{{ r['match'] | safe }}</span>
-        </li>
-    {% else %}
-        <li><span>No results match your query</span></li>    
-    {% endfor %}
-</ul>
+    <p id="search-status" class="search-status">Loading search index...</p>
+    <ol id="search-results" class="search-results"></ol>
+</div>
 
+{% endblock %}
+
+{% block pagescripts %}
+<script src="{{ base }}/assets/lib/fuse/fuse.min.js"></script>
+<script type="text/javascript" src="{{ base }}/assets/js/search.js"></script>
 {% endblock %}

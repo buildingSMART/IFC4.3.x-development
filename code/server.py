@@ -79,9 +79,53 @@ def make_url(fragment=None):
 identity = lambda x: x
 
 REPO_DIR = os.path.abspath(os.environ.get("REPO_DIR", os.path.join(os.path.dirname(__file__), "..")))
-REPO_BRANCH = os.environ.get("REPO_BRANCH", "master")
+REPO_BRANCH = os.environ.get("REPO_BRANCH", "xmi-refresh")
 
 compile_template_usage_per_mvd = lambda data: {v: [re.sub(r'[^\w]', '', re.split(r'\s+', d[''], maxsplit=1)[1]) for d in data[1:] if d[v]] for v in (functools.reduce(operator.or_, (d.keys() for d in data)) - {''})}
+
+
+def load(fn):
+    def inner(self, *args):
+        try:
+            reread = False
+            t = time.time()
+            if t - self.last_read > 1:
+                if "*" in self.path:
+                    mt = max(map(os.path.getmtime, glob.glob(self.path)))
+                else:
+                    mt = os.path.getmtime(self.path)
+                reread = mt > self.mtime
+                self.mtime = mt
+                self.last_read = t
+            if reread:
+                if self.path.endswith(".json"):
+                    load = lambda p: json.load(open(p, encoding="utf-8"))
+                elif self.path.endswith(".csv"):
+                    load = lambda p: list(csv.DictReader(open(p, newline='', encoding="utf-8")))
+                else:
+                    raise ValueError(f"Unsupported extension on file {self.path}")
+
+                if "*" in self.path:
+                    base = '/'.join(p for p in self.path.split('/') if '*' not in p)
+                    self.data = {}
+                    paths = map(Path, glob.glob(self.path))
+                    for fp in paths:
+                        keys = [x.split('.')[0] for x in os.path.split(str(fp.relative_to(base)))]
+                        cur = self.data
+                        for key in keys[:-1]:
+                            cur = cur.setdefault(key, {})
+                        cur[keys[-1]] = load(fp)
+                else:
+                    self.data = self.transform(load(self.path))
+        except Exception:
+            import traceback
+            traceback.print_exc()
+            print("Path", self.path, "not available")
+            abort(503)
+
+        return fn(self, *args)
+
+    return inner
 
 class schema_resource:
     def __init__(self, path, transform=identity):
@@ -90,48 +134,6 @@ class schema_resource:
         self.mtime = 0
         self.last_read = 0
         self.data = None
-
-    @staticmethod
-    def load(fn):
-        def inner(self, *args):
-            try:
-                reread = False
-                if time.time() - self.last_read > 1:
-                    if "*" in self.path:
-                        mt = max(map(os.path.getmtime, glob.glob(self.path)))
-                    else:
-                        mt = os.path.getmtime(self.path)
-                    reread = mt > self.mtime
-                if reread:
-                    if self.path.endswith(".json"):
-                        load = lambda p: json.load(open(p, encoding="utf-8"))
-                    elif self.path.endswith(".csv"):
-                        load = lambda p: list(csv.DictReader(open(p, newline='', encoding="utf-8")))
-                    else:
-                        raise ValueError(f"Unsupported extension on file {self.path}")
-
-                    if "*" in self.path:
-                        base = '/'.join(p for p in self.path.split('/') if '*' not in p)
-                        self.data = {}
-                        paths = map(Path, glob.glob(self.path))
-                        for fp in paths:
-                            keys = [x.split('.')[0] for x in os.path.split(str(fp.relative_to(base)))]
-                            cur = self.data
-                            for key in keys[:-1]:
-                                cur = cur.setdefault(key, {})
-                            cur[keys[-1]] = load(fp)
-                    else:
-                        self.data = self.transform(load(self.path))
-                    self.mtime = mt
-            except:
-                import traceback
-                traceback.print_exc()
-                print("Path", self.path, "not available")
-                abort(503)
-
-            return fn(self, *args)
-
-        return inner
 
     @load
     def __getitem__(self, k):
@@ -170,8 +172,8 @@ class resource_manager:
     abstract_entities = schema_resource("abstract_entities.json", transform=set)
     type_values = schema_resource("type_values.json")
     hierarchy = schema_resource("hierarchy.json")
-    xmi_concepts = schema_resource("../schemas/mvd/**/*.csv")
-    xmi_mvd_concepts = schema_resource("../schemas/mvd.csv", transform=compile_template_usage_per_mvd)
+    xmi_concepts = schema_resource(os.path.join(REPO_DIR, "schemas/mvd/**/*.csv"))
+    xmi_mvd_concepts = schema_resource(os.path.join(REPO_DIR, "schemas/mvd.csv"), transform=compile_template_usage_per_mvd)
     examples_by_type = schema_resource("examples_by_type.json")
     mvd_entity_usage = schema_resource("mvd_entity_usage.json")
 
@@ -2143,7 +2145,7 @@ def annex_c():
 
 @app.route(make_url("annex-d.html"))
 def annex_d():
-    diagrams = sorted(map(os.path.basename, glob.glob(os.path.join(REPO_DIR, "output/IFC.xml/*.png"))))
+    diagrams = sorted(map(os.path.basename, glob.glob(os.path.join(REPO_DIR, "output/ifc4x3_add2.uml/*.png"))))
     diagrams = [
         toc_entry(s[:-4], url=url_for("annex_d_diagram_page", s=s[:-4]), number="D.%d" % i)
         for i, s in enumerate(sorted(diagrams), start=1)
@@ -2153,14 +2155,14 @@ def annex_d():
 
 @app.route(make_url("annex_d/<s>.html"))
 def annex_d_diagram_page(s):
-    diagrams = sorted(map(lambda s: s.split('.')[0], map(os.path.basename, glob.glob(os.path.join(REPO_DIR, "output/IFC.xml/*.png")))))
+    diagrams = sorted(map(lambda s: s.split('.')[0], map(os.path.basename, glob.glob(os.path.join(REPO_DIR, "output/ifc4x3_add2.uml/*.png")))))
     number = diagrams.index(s) + 1
     return render_template("annex-d-item.html", navigation=get_navigation(), name=s, number=number, body_class='annex')
 
 
 @app.route(make_url("annex_d/<s>.png"))
 def annex_d_diagram(s):
-    return send_from_directory(os.path.join(REPO_DIR, "output/IFC.xml"), s + ".png")
+    return send_from_directory(os.path.join(REPO_DIR, "output/ifc4x3_add2.uml"), s + ".png")
 
 
 def example_title(s):

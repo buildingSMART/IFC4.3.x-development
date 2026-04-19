@@ -31,7 +31,7 @@
                 {% if value.description %}
                 {{ value.description | safe }}
                 {% else %}
-                <p>
+                <p class="search-skip">
                     <em>No description available.</em>
                 </p>
                 {% endif %}
@@ -63,7 +63,7 @@
 <h2>
     {{ formal_representation.number }} Formal representation
 </h2>
-<pre><code class="language-express hljs">{{ formal_representation.express }}</code></pre>
+<pre><code class="language-express">{{ formal_representation.express }}</code></pre>
 {% endif %}
 
 {% if references %}

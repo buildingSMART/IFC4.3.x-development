@@ -1,8 +1,8 @@
-FROM ubuntu:focal
+FROM ubuntu:jammy
 MAINTAINER Thomas Krijnen <thomas@aecgeeks.org>
 
 # --- Configurable branches/paths ---
-ENV REPO_BRANCH=master
+ENV REPO_BRANCH=xmi-refresh
 
 # translations
 ENV TRANSLATIONS_REPO_DIR=/app/translations
@@ -14,13 +14,12 @@ ENV PO_HASH_PATH=${TRANSLATIONS_BUILD_DIR}/po_hash_map.json
 
 # system dependencies
 RUN mkdir -p /usr/share/man/man1
-RUN apt-get update -y && DEBIAN_FRONTEND=noninteractive apt-get install -y curl openjdk-11-jdk-headless python3 python3-distutils procps lsof supervisor graphviz unzip git texlive texlive-pictures texlive-latex-extra imagemagick-6.q16 wget redis-server
+RUN apt-get update -y -o Acquire::ForceIPv4=true && DEBIAN_FRONTEND=noninteractive apt-get install -o Acquire::ForceIPv4=true -y curl openjdk-11-jdk-headless python3 python3-distutils python3-pip procps lsof supervisor graphviz unzip git texlive texlive-pictures texlive-latex-extra imagemagick-6.q16 wget redis-server
 
 # remove policy to disable PDF conversion
 RUN rm /etc/ImageMagick-6/policy.xml
 
 # Python dependencies
-RUN curl --silent --show-error --retry 5 https://bootstrap.pypa.io/pip/3.8/get-pip.py | python3
 WORKDIR /code
 COPY requirements.txt /code/requirements.txt
 RUN python3 -m pip install --no-cache-dir --upgrade pip && \
@@ -28,8 +27,10 @@ RUN python3 -m pip install --no-cache-dir --upgrade pip && \
 
 # Solr
 WORKDIR /
-RUN curl --location --silent --show-error --retry 5 'https://archive.apache.org/dist/lucene/solr/8.6.3/solr-8.6.3.tgz' -o - | tar zxf -
-RUN chmod +x /solr-8.6.3/bin/*
+COPY solr-8.6.3.tgz /tmp/solr-8.6.3.tgz
+RUN tar zxf /tmp/solr-8.6.3.tgz -C / \
+ && rm /tmp/solr-8.6.3.tgz \
+ && chmod +x /solr-8.6.3/bin/*
 
 # ifcopenshell
 WORKDIR /code

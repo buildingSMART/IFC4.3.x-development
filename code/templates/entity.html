@@ -6,31 +6,31 @@
 
 {% if not is_iso %}
     {% if is_product_or_type %}
-    <p><aside class="aside-note"><mark>NOTE</mark>  This entity is a subtype of IfcProduct or IfcTypeProduct and hence part of every standardized schema subset and implementation level.</aside></p>
+    <p class="search-skip"><aside class="aside-note"><mark>NOTE</mark>  This entity is a subtype of IfcProduct or IfcTypeProduct and hence part of every standardized schema subset and implementation level.</aside></p>
     {% else %}
     {% if mvds %}
     {% for mvd in mvds %}
-    <div class="mvd" title="Included in {{mvd.cause | join(', ')}}">{{mvd.abbr}} &#9432;</div>
+    <div class="mvd search-skip" title="Included in {{mvd.cause | join(', ')}}">{{mvd.abbr}} &#9432;</div>
     {% endfor %}
     {% else %}
-    <p><aside class="aside-note"><mark>NOTE</mark>  This entity is not part of a standardized schema subset or implementation level.</aside></p>
+    <p class="search-skip"><aside class="aside-note"><mark>NOTE</mark>  This entity is not part of a standardized schema subset or implementation level.</aside></p>
     {% endif %}
     {% endif %}
 {% endif %}
 
 {% if is_deprecated %}
-<div class="row">
+<div class="row search-skip">
     <div class="card fluid error deprecation">
         <p>
             <mark class="secondary">DEPRECATED
-            <a href="{% if not is_package %}/IFC{% endif %}/RELEASE/IFC4x3/HTML/content/terms_and_definitions.htm#deprecation"><i data-feather=link></i></a></mark>
+            <a href="{{ base }}/content/terms_and_definitions.htm#deprecation"><i data-feather=link></i></a></mark>
             This definition will be removed in a future major release of this standard
         </p>
     </div>
 </div>
 {% endif %}
 {% if is_abstract %}
-<div class="row">
+<div class="row search-skip">
     <div class="card fluid warning">
         <p>
             <mark class="secondary">ABSTRACT</mark> This definition may not be instantiated
@@ -108,16 +108,16 @@
             <td data-label="Type">{{ attribute.type }}</td>
             <td data-label="Description">
                 {% if attribute.formal %}
-                <p>
+                <p class="search-skip">
                     This attribute is formally derived.
                 </p>
-                <pre><code class="language-express hljs">{{ attribute.formal | safe }}</code></pre>
+                <pre><code class="language-express">{{ attribute.formal | safe }}</code></pre>
                 {% endif %}
                 {% if attribute.description %}
                 {{ attribute.description | safe }}
                 {% endif %}
                 {% if not attribute.formal and not attribute.description %}
-                <p>
+                <p class="search-skip">
                     <em>No description available.</em>
                 </p>
                 {% endif %}
@@ -163,7 +163,7 @@
                 {% if row.description %}
                 {{ row.description | safe }}
                 {% else %}
-                <p>
+                <p class="search-skip">
                     <em>No description available.</em>
                 </p>
                 {% endif %}
@@ -172,7 +172,7 @@
         {% if row.formal %}
         <tr>
             <td colspan="2">
-                <pre><code class="language-express hljs">{{ row.formal }}</code></pre>
+                <pre><code class="language-express">{{ row.formal }}</code></pre>
             </td>
         </tr>
         {% endif %}
@@ -245,7 +245,7 @@
             </td>
             <td data-label="Description">
                 {% if concept.is_inherited %}
-                <aside class="inherited">
+                <aside class="inherited search-skip">
                     <small>
                         <i data-feather="paperclip"></i>
                         This is a further elaboration on an inherited concept.
@@ -254,7 +254,7 @@
                 {% endif %}
 
                 {% if not concept.description and not concept.applicable_relationships %}
-                <p>
+                <p class="search-skip">
                     <em>No description available.</em>
                 </p>
                 {% endif %}
@@ -265,7 +265,7 @@
                 {% if concept.applicable_relationships %}
 
                 {% if concept.applicable_relationships.should_show_as_table %}
-                <p>This concept can be applied with the following combinations:</p>
+                <p class="search-skip">This concept can be applied with the following combinations:</p>
                 <table>
                     <thead>
                         <tr>
@@ -297,7 +297,7 @@
 
                 {% else %}
 
-                <p>This concept can be applied to the following resources:</p>
+                <p class="search-skip">This concept can be applied to the following resources:</p>
                 <ul>
                 {% for relationship in concept.applicable_relationships.relationships %}
                     <li>
@@ -313,7 +313,7 @@
                 </ul>
                 {% endif %}
                 {% if not concept.description and not concept.applicable_relationships %}
-                <p>
+                <p class="search-skip">
                     <em>No description available.</em>
                 </p>
                 {% endif %}
@@ -399,7 +399,7 @@
 <h2>
     {{ formal_representation.number }} Formal representation
 </h2>
-<pre><code class="language-express hljs">{{ formal_representation.express }}</code></pre>
+<pre><code class="language-express">{{ formal_representation.express }}</code></pre>
 {% endif %}
 
 {% if references %}

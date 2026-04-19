@@ -11,6 +11,7 @@ import concurrent.futures
 
 from collections import defaultdict, namedtuple
 from shutil import copyfile
+from typing import Optional
 
 import xmi
 from xmi_document import xmi_document
@@ -118,11 +119,7 @@ class Constraint(object):
         self.xmi_type = attributes['xmi:type']
         self.name = attributes['name']
         specifications = (self.xmi_constraint/"specification")
-        if len(specifications):
-            spec_attr = specifications[0].attributes()
-            self.content = spec_attr['body']
-        else:
-            self.content = None
+        self.content = (specifications[0]|'body').text
 
 
 class EnumerationValue(object):
@@ -132,26 +129,33 @@ class EnumerationValue(object):
 
 # Relation covers Substitution, Realization, and Dependency
 class Relation(object):
-    def __init__(self, xmi_relation):
-        self.xmi_substitution = xmi_relation
-        attributes = xmi_relation.attributes()
-        self.xmi_type = attributes['xmi:type']
-        self.xmi_id = attributes['xmi:id']
+    def __init__(self, xmi_doc, xmi_relation):
+        self.xmi_type = xmi_relation.xmi_type
+        self.xmi_id = xmi_relation.xmi_id
         if xmi_relation.type == 'uml:Association':
-            try:
-                self.supplier, self.client = map(lambda n:(n|"type").idref, xmi_relation/"ownedEnd")
-                self.supplier_name, self.client_name = [n.name for n in (xmi_relation/"ownedEnd")]
-                self.supplier_end_id, self.client_end_id = [n.id for n in (xmi_relation/"ownedEnd")]
-                self.valid = True
-            except Exception as e:
-                print(e)
-                self.valid = False
+            ends = [xmi_doc.by_id[s] for s in xmi_relation.memberEnd.split(' ')]
+            is_source = [e.xml.tagName == "ownedAttribute" for e in ends]
+            end_types = [e.resolve('type') for e in ends]
+            end_names = [e.name for e in ends]
+
+            if sum(is_source) == 0:
+                is_suppressed = [(s[0],s[-1]) == ('(',')') for s in end_names]
+                assert sum(is_suppressed) == 1
+                is_source = is_suppressed
+            assert sum(is_source) == 1
+
+            if is_source[0]:
+                end_types = end_types[::-1]
+                end_names = end_names[::-1]
+            
+            self.supplier, self.client = end_types
+            self.supplier_name, self.client_name = end_names
+            self.valid = True
         else:
-            self.client = attributes['client']
-            self.supplier = attributes['supplier']
+            self.client = xmi_relation.resolve('client')
+            self.supplier = xmi_relation.resolve('supplier')
             self.valid = True
             self.supplier_name, self.client_name = None, None
-            self.supplier_end_id, self.client_end_id = None, None
 
 
 # Generalization 
@@ -202,10 +206,10 @@ class UMLclass_Ifc_Entity(object):
 
 
 def process_relations(xmi):
-    substitutions = set(Relation(i) for i in xmi.by_tag_and_type["packagedElement"]["uml:Substitution"] if Relation(i).valid)
-    realizations = set(Relation(i) for i in xmi.by_tag_and_type["packagedElement"]["uml:Realization"] if Relation(i).valid)
-    dependencies = set(Relation(i) for i in xmi.by_tag_and_type["packagedElement"]["uml:Dependency"] if Relation(i).valid)
-    associations = set(Relation(i) for i in xmi.by_tag_and_type["packagedElement"]["uml:Association"] if Relation(i).valid)
+    substitutions = set(filter(operator.attrgetter('valid'), (Relation(xmi, i) for i in xmi.by_tag_and_type["packagedElement"]["uml:Substitution"])))
+    realizations = set(filter(operator.attrgetter('valid'), (Relation(xmi, i) for i in xmi.by_tag_and_type["packagedElement"]["uml:Realization"])))
+    dependencies = set(filter(operator.attrgetter('valid'), (Relation(xmi, i) for i in xmi.by_tag_and_type["packagedElement"]["uml:Dependency"])))
+    associations = set(filter(operator.attrgetter('valid'), (Relation(xmi, i) for i in xmi.by_tag_and_type["packagedElement"]["uml:Association"])))
 
     return (substitutions, realizations, dependencies, associations)
 
@@ -229,8 +233,7 @@ def process_generalizations(xmi, typeobj):
         generalizations = element / "generalization"
         if len(generalizations):
             for g in generalizations:
-                gen_attr = g.attributes()
-                general_id = gen_attr['general']
+                general_id = g.resolve('general')
                 try:
                     general_node = xmi.by_id[general_id]
                 except:
@@ -320,13 +323,9 @@ def add_relations(relations, UML_objects, entities_to_retain = None):
             sid = sup_att['xmi:id']
             cid = cli_att['xmi:id']
             
-            suppressed = xmi.tags['ExpressSuppressRel'].get(pr.client_end_id, '').lower() == 'yes'
-            fwd_and_inv = [(sup, cli, pr.client_name, sid), (cli, sup, pr.supplier_name, cid)]
-            
-            # for some reason we don't depend on directed relationships, so we
-            # need to figure out the order from the tags.
-            if xmi.tags['ExpressInverse'].get(pr.client_end_id) or (pr.supplier_name and not pr.client_name):
-                fwd_and_inv = fwd_and_inv[::-1]
+            # @todo
+            suppressed = False
+            fwd_and_inv = [(sup, cli, (pr.client_name, pr.supplier_name), sid), (cli, sup, (pr.supplier_name, pr.client_name), cid)]
             
             if suppressed:
                 # for asymmetric inverses, skip over the explicitly duplicated forward attribute
@@ -338,11 +337,11 @@ def add_relations(relations, UML_objects, entities_to_retain = None):
                     for instance in UML_objects[end]:
                         if endid == instance.xmi_id:
                             if pr.xmi_type == 'uml:Substitution':
-                                instance.substitution_rel[kk].append((other, cid, nm))
+                                instance.substitution_rel[kk].append((other, cid, nm[0]))
                             if pr.xmi_type == 'uml:Realization':
-                                instance.realization_rel[kk].append((other, cid, nm))
+                                instance.realization_rel[kk].append((other, cid, nm[0]))
                             if pr.xmi_type == 'uml:Dependency':
-                                instance.dependency_rel[kk].append((other, cid, nm))
+                                instance.dependency_rel[kk].append((other, cid, nm[0]))
                             if pr.xmi_type == 'uml:Association':
                                 instance.assoc_rel[kk].append((other, cid, nm))
 
@@ -430,7 +429,7 @@ class Tex_object(object):
         self.tex_relationships = []
         self.I = -1
 
-    def make_connection(self,source,target,connection_type="real",stereo="vec",name=""):
+    def make_connection(self,source,target,connection_type="real",stereo="vec",name : Optional[tuple[str, str]] = None):
         if '_' in source:
             source = source.replace("_",' ')
         if '_' in target:
@@ -446,9 +445,10 @@ class Tex_object(object):
         if tex_connection_type:
             assoc_label_counter['value'] += 1
             v = assoc_label_counter['value']
-            self.tex_content += r''' \%s[%s]{%s}{%s}'''%(tex_connection_type, "name=assoc%d"%v, tex_escape(source), tex_escape(target))
+            args = []
             if name:
-                self.tex_content += r'''"\node[above] at (assoc%d-1) {%s}"''' % (v, name);
+                args = [f"arg{d}={v}" for d, v in enumerate(name, start=1)]
+            self.tex_content += r''' \%s[%s]{%s}{%s}'''%(tex_connection_type, ','.join(["name=assoc%d"%v, *args]), tex_escape(source), tex_escape(target))
      
     def write_class2(self, hc, xmi, UMLobject, schema, depth=0):
         self.I += 1

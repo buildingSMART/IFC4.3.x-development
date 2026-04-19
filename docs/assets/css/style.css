@@ -585,6 +585,56 @@ figcaption .feather-link {
 .search input {
     width:100%;
 }
+.search-app {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.search-page-form {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin: 0.5rem;
+    padding: 0;
+    background: transparent;
+    border: 0;
+}
+.search-page-form input {
+    flex: 1 1 auto;
+    margin: 0;
+}
+.search-page-form button {
+    margin: 0;
+}
+.search-status {
+    margin: 0.5rem;
+    color: #555;
+}
+.search-results {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.search-result {
+    border-top: 1px solid #ddd;
+    padding: 1rem 0.5rem;
+}
+.search-result:first-child {
+    border-top: 0;
+}
+.search-result-title {
+    display: inline-block;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+.search-result-meta {
+    color: #666;
+    font-size: 0.8rem;
+    text-transform: capitalize;
+}
+.search-result-summary {
+    margin: 0.35rem 0 0;
+}
 a.edit-github {
     margin: 0px;
     display: block;
@@ -602,23 +652,6 @@ a.edit-github {
     margin-bottom: 0;
     color: var(--border-color);
 }
-table.hljs-ln, table.hljs-ln * {
-    border: 0px !important;
-    background-color: transparent;
-}
-table.hljs-ln td:first-child {
-    padding-right: var(--universal-padding);
-}
-.hljs-ln-numbers {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    text-align: center;
-    color: var(--border-color);
-}
 .show-inherited, .hide-inherited {
     cursor: pointer;
 }
@@ -629,8 +662,71 @@ table.hljs-ln td:first-child {
     vertical-align: middle;
     margin: 0 0.5rem;
 }
-td.hljs-ln-code {
-    white-space: pre-wrap;
+pre code.pygments {
+    display: block;
+    background: transparent;
+}
+pre code.pygments a,
+pre code.pygments a:hover {
+    color: inherit;
+    text-decoration: underline;
+}
+pre code.pygments .tok-c,
+pre code.pygments .tok-c1,
+pre code.pygments .tok-cm {
+    color: #3D7B7B;
+    font-style: italic;
+}
+pre code.pygments .tok-k,
+pre code.pygments .tok-kc,
+pre code.pygments .tok-kd,
+pre code.pygments .tok-kn,
+pre code.pygments .tok-kp,
+pre code.pygments .tok-kr {
+    color: #008000;
+    font-weight: bold;
+}
+pre code.pygments .tok-m,
+pre code.pygments .tok-mf,
+pre code.pygments .tok-mi,
+pre code.pygments .tok-il,
+pre code.pygments .tok-o,
+pre code.pygments .tok-ow {
+    color: #666666;
+}
+pre code.pygments .tok-s,
+pre code.pygments .tok-s1,
+pre code.pygments .tok-s2,
+pre code.pygments .tok-sd {
+    color: #BA2121;
+}
+pre code.pygments .tok-se {
+    color: #AA5D1F;
+    font-weight: bold;
+}
+pre code.pygments .tok-na {
+    color: #687822;
+}
+pre code.pygments .tok-nb {
+    color: #008000;
+}
+pre code.pygments .tok-nc,
+pre code.pygments .tok-nn {
+    color: #0000FF;
+    font-weight: bold;
+}
+pre code.pygments .tok-nl {
+    color: #767600;
+}
+pre code.pygments .tok-no {
+    color: #800000;
+}
+pre code.pygments .tok-nt {
+    color: #008000;
+    font-weight: bold;
+}
+pre code.pygments .tok-nv {
+    color: #19177C;
 }
 blockquote blockquote {
     border: none;

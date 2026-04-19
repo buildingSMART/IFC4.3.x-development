@@ -105,7 +105,7 @@ if __name__ == "__main__":
     if len(sys.argv) == 2:
         fn = sys.argv[1]
     else:
-        fn = os.path.join(os.path.dirname(__file__), '..', 'schemas', 'IFC.xml')
+        fn = os.path.join(os.path.dirname(__file__), '..', 'schemas', 'ifc4x3_add2.uml')
 
     xmi_doc = xmi_document(fn)
 
@@ -130,7 +130,6 @@ if __name__ == "__main__":
             item_package = "IfcSharedBldgElements"
 
         if get_schema(item_package) is None:
-            # breakpoint()
             print(f"Warning: for {item.name} package {item_package} is not registered")
             continue
         

@@ -259,11 +259,14 @@ def filter_concepts(di):
 
 
 def guid_by_id(id):
-    """add guid information (not the document ID, but IFC_DOC GUID)"""
-    try:
-        guid = xmi_doc.guids[id]
-    except KeyError:
-        guid = ""
+    # @todo what was this?
+    
+    # """add guid information (not the document ID, but IFC_DOC GUID)"""
+    # try:
+    #     guid = xmi_doc.guids[id]
+    # except KeyError:
+    
+    guid = ""
     return guid
 
 

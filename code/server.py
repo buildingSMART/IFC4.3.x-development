@@ -294,32 +294,6 @@ def get_navigation(resource=None, number=None):
     return navigation
 
 
-@dataclass(order=True, eq=True, frozen=True)
-class toc_entry:
-    text: str
-
-    number: str = None
-    url: str = None
-
-    parent: object = None
-    children: list = None
-    
-    mvds: list = None
-
-    def find(self, lbl):
-        def traverse(te, path=None):
-            p = (path or []) + [te]
-            if te.text == lbl:
-                yield p
-            else:
-                for ch in (te.children or []):
-                    yield from traverse(ch, p)
-        li = list(traverse(self))
-        if li:
-            return li[0][-1]
-
-
-
 content_names = ["scope", "normative_references", "terms_and_definitions", "concepts"]
 content_names_2 = ["cover", "foreword", "introduction", "bibliography"]
 

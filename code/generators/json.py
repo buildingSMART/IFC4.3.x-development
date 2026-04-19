@@ -1,14 +1,16 @@
-import os
+import argparse
+from pathlib import Path
 import re
-import sys
 import json
-import glob
 import operator
 
 from collections import defaultdict
 
-from xmi_document import xmi_document
-from compare_pset import read as read_psd
+from .util.xmi_document import xmi_document
+from .util.compare_pset import read as read_psd
+
+CODE_DIR = Path(__file__).resolve().parents[1]
+REPO_ROOT = CODE_DIR.parent
 
 #@todo this may need to get revised
 hierarchy = [
@@ -102,12 +104,19 @@ trailing_semi = lambda s: s[:-1] if s.endswith(";") else s
 
 if __name__ == "__main__":
 
-    if len(sys.argv) == 2:
-        fn = sys.argv[1]
-    else:
-        fn = os.path.join(os.path.dirname(__file__), '..', 'schemas', 'ifc4x3_add2.uml')
+    parser = argparse.ArgumentParser(description="Generate IFC bSDD export files.")
+    parser.add_argument("schema", type=Path, help="Path to the input schema XML.")
+    parser.add_argument("psets", type=Path, help="Path to the input pset XML files.")
+    parser.add_argument(
+        "-o",
+        "--output",
+        type=Path,
+        default=REPO_ROOT / "output" / "structure.json",
+        help="Output directory for generated bSDD files.",
+    )
+    args = parser.parse_args()
 
-    xmi_doc = xmi_document(fn)
+    xmi_doc = xmi_document(args.schema)
 
     entity_to_package = {}
     supertype = {}
@@ -201,7 +210,7 @@ if __name__ == "__main__":
     def child_by_tag(node, tag):
         return [c for c in node["_children"] if c['#tag'] == tag][0]
         
-    for fn in glob.glob("./psd/*.xml"):
+    for fn in args.psets.glob("*.xml"):
         xml = read_psd(fn)
         
         psetname = child_by_tag(xml, "Name")["#text"]
@@ -272,14 +281,15 @@ if __name__ == "__main__":
         for x in sorted(roots):
             do_print(x)
 
-
-    json.dump(supertype, open("entity_supertype.json", "w", encoding="utf-8"))
-    json.dump(entity_to_package, open("entity_to_package.json", "w", encoding="utf-8"))
-    json.dump(hierarchy, open("hierarchy.json", "w", encoding="utf-8"))
-    json.dump(attributes, open("entity_attributes.json", "w", encoding="utf-8"))
-    json.dump(definitions, open("entity_definitions.json", "w", encoding="utf-8"))
-    json.dump(psets, open("pset_definitions.json", "w", encoding="utf-8"))
-    json.dump(deprecated_entities, open("deprecated_entities.json", "w", encoding="utf-8"))
-    json.dump(abstract_entities, open("abstract_entities.json", "w", encoding="utf-8"))
-    json.dump(type_values, open("type_values.json", "w", encoding="utf-8"))
-    json.dump(where_clauses, open("entity_where_clauses.json", "w", encoding="utf-8"))
+    json.dump({
+        "entity_supertype": supertype,
+        "entity_to_package": entity_to_package,
+        "hierarchy": hierarchy,
+        "entity_attributes": attributes,
+        "entity_definitions": definitions,
+        "pset_definitions": psets,
+        "deprecated_entities": deprecated_entities,
+        "abstract_entities": abstract_entities,
+        "type_values": type_values,
+        "entity_where_clauses": where_clauses
+    }, open(args.output, "w", encoding="utf-8"))

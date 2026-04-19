@@ -45,7 +45,7 @@ def clear_translation_caches():
     
 TRANSLATIONS_SRC_DIR = os.environ.get(
     "TRANSLATIONS_SRC_DIR",
-    os.path.join(os.path.dirname(__file__), "translate_repo", "translations")
+    os.path.join(os.path.dirname(__file__), "..", "..", "translate_repo", "translations")
 )
 TRANSLATIONS_BUILD_DIR = os.environ.get(
     "TRANSLATIONS_BUILD_DIR",

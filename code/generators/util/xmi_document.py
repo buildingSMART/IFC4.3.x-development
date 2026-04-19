@@ -276,9 +276,9 @@ class xmi_document:
         self.generalizations_in = defaultdict(list)
         self.generalizations_out = defaultdict(list)
     
-        if isinstance(fn, str):
-            self.filename = fn
-            self.xmi = xmi.doc(fn)
+        if isinstance(fn, (str, Path)):
+            self.filename = str(fn)
+            self.xmi = xmi.doc(str(fn))
         else:
             self.filename = fn.filename
             self.xmi = fn

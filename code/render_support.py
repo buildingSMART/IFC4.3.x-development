@@ -343,21 +343,6 @@ type_names = lambda: sorted(sum([schema.get("Types", []) for _, cat in R.hierarc
 propertyenumeration_names = lambda: sorted(sum([schema.get("PropertyEnumerations", []) for _, cat in R.hierarchy for __, schema in cat], []))
 
 
-@lru_cache()
-def name_to_number():
-    ntn = {}
-
-    for i, (cat, schemas) in enumerate(R.hierarchy, start=5):
-        for j, (schema_name, members) in enumerate(schemas, start=1):
-            for k, ke in enumerate(
-                ["Types", "Entities", "Property Sets", "Quantity Sets", "Functions", "Rules", "PropertyEnumerations"], start=2
-            ):
-                for l, name in enumerate(members.get(ke, ()), start=1):
-                    ntn[name] = ".".join(map(str, (i, j, k, l)))
-
-    return ntn
-
-
 def get_inheritance_graph(current_entity):
     graph = []
 

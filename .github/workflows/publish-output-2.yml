@@ -135,6 +135,13 @@ jobs:
           set -euxo pipefail
           python -m generators.bsdd ../schemas/ifc4x3_add2.uml --output ../output/bsdd
 
+      - name: Generate JSON schema structure
+        working-directory: ifc43/code
+        shell: bash
+        run: |
+          set -euxo pipefail
+          python -m generators.json ../schemas/ifc4x3_add2.uml ../output/psd --output ../output/structure.json
+
       - name: Build static HTML site
         working-directory: ifc43/code
         shell: bash

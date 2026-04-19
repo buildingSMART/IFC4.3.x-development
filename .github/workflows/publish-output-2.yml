@@ -125,6 +125,7 @@ jobs:
         shell: bash
         run: |
           set -euxo pipefail
+          mkdir -p ../output/psd
           python -m generators.pset ../schemas/ifc4x3_add2.uml --output ../output/psd
 
       - name: Generate bSDD export

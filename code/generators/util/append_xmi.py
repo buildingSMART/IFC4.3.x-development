@@ -300,7 +300,7 @@ class context:
         
 if __name__ == "__main__":
     
-    c = context("..\schemas\IFC.xml")
+    c = context(r"..\schemas\IFC.xml")
     ifc_package = c.package_by_name("IFC4X3_ADD2")
     views_package = c.insert(ifc_package, uml_package("Views"))
     gu_package = c.insert(views_package, uml_package("GeneralUsage"))

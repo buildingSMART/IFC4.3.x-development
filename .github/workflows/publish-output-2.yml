@@ -115,7 +115,7 @@ jobs:
         shell: bash
         run: |
           set -euxo pipefail
-          python -m generators.express ../schemas/IFC.xml \
+          python -m generators.express ../schemas/ifc4x3_add2.uml \
             --output ../output/IFC.exp \
             --with-xsd \
             --xsd-output ../output/IFC.xsd
@@ -125,14 +125,14 @@ jobs:
         shell: bash
         run: |
           set -euxo pipefail
-          python -m generators.pset ../schemas/IFC.xml --output ../output/psd
+          python -m generators.pset ../schemas/ifc4x3_add2.uml --output ../output/psd
 
       - name: Generate bSDD export
         working-directory: ifc43/code
         shell: bash
         run: |
           set -euxo pipefail
-          python -m generators.bsdd ../schemas/IFC.xml --output ../output/bsdd
+          python -m generators.bsdd ../schemas/ifc4x3_add2.uml --output ../output/bsdd
 
       - name: Build static HTML site
         working-directory: ifc43/code

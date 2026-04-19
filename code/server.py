@@ -1822,7 +1822,7 @@ def make_concept(path, number_path=None, exclude_partial=True):
 def create_concept_table(view_name, xmi_concept, types=None):
     rows = R.xmi_concepts[view_name][xmi_concept]
     bindings = [("ApplicableEntity", ("", ""))] + list(
-        parse_bindings(xmi_concept, fn=os.path.join(REPO_DIR, "schemas/IFC.xml"))
+        parse_bindings(xmi_concept, fn=os.path.join(REPO_DIR, "schemas/ifc4x3_add2.uml"))
     )
     bound_keys = set(sum([list(r.keys()) for r in rows], []))
     bound_keys = [a[0] for a in bindings if a[0] in bound_keys]

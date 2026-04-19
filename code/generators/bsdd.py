@@ -263,9 +263,8 @@ def guid_by_id(id):
 def is_deprecated(elem):
     """Check if the element is deprecated in that IFC version or not."""
     deprecated = False
-    if elem.id in xmi_doc.deprecated:
+    if "deprecated" in ((c|"body").text.lower() for c in (elem.node/"ownedComment")):
         deprecated = True
-    # Some objects don't have deprecated status, but their markdown says they are deprecated
     try:
         if "DEPRECAT" in elem.markdown:
             deprecated = True
@@ -404,7 +403,7 @@ def generate_definitions():
             for a, (nm, (ty_ty_arg)) in zip(pset.children, pset.definition):
 
                 if not is_deprecated(a):
-                    if pset.stereotype == "QSET":
+                    if pset.name.startswith("Qto_"):
                         type_name = "real"
                         type_values = None
                         kind_name = "Single"
@@ -444,11 +443,11 @@ def generate_definitions():
                                 for c in xmi_doc.xmi.by_tag_and_type["packagedElement"][
                                     "uml:DataType"
                                 ]
-                                if c.name == org_type_name
+                                if c.name.split('_')[0] == org_type_name
                             ]
-                            measure = pe_types[0].name
+                            measure = pe_types[0].name.split('_')[0]
                             root_generalization = generalization(pe_types[0])
-                            type_name = root_generalization.name  # .lower()
+                            type_name = root_generalization.name.split('_')[0]
                             type_values = None
 
                             if ty == "PropertySingleValue":
@@ -728,7 +727,7 @@ def generate_definitions():
 def list_unique_codes(concepts):
     ### iterate all the results to list all unique codes for translations
     codes = set()
-    for code, content in tqdm(all_concepts.items(), "Listing all unique codes"):
+    for code, content in tqdm(concepts.items(), "Listing all unique codes"):
         if need_brackets(code):
             codes.add(code)
         if content["Psets"]:

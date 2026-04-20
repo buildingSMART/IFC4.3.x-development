@@ -140,7 +140,7 @@ jobs:
         run: |
           set -euxo pipefail
           python -m generators.html --output ../output/html -j 4
-          find "$REPO_DIR" -type d -maxdepth
+          find "$REPO_DIR" -type d
 
       - name: Sync site into output repository
         shell: bash

@@ -102,14 +102,6 @@ jobs:
           print("IfcOpenShell import OK")
           PY
 
-      - name: Clean generated output
-        working-directory: ifc43/code
-        shell: bash
-        run: |
-          set -euxo pipefail
-          rm -rf ../output/bsdd ../output/psd ../output/html-publish
-          rm -f ../output/IFC.exp ../output/IFC.xsd ../output/psd.zip
-
       - name: Generate EXPRESS and XSD
         working-directory: ifc43/code
         shell: bash
@@ -148,6 +140,7 @@ jobs:
         run: |
           set -euxo pipefail
           python -m generators.html --output ../output/html -j 4
+          find "$REPO_DIR" -type d -maxdepth
 
       - name: Sync site into output repository
         shell: bash

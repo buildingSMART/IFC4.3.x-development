@@ -45,13 +45,9 @@ def main() -> None:
     args = parser.parse_args()
 
     repo_root = Path(__file__).resolve().parents[3]
-    if args.output is not None and not args.output.is_absolute():
-        args.output = (repo_root / args.output).resolve()
     if args.profile:
         if args.profile_output is None:
             args.profile_output = repo_root / "output" / "profile" / "cprofile-summary.txt"
-        elif not args.profile_output.is_absolute():
-            args.profile_output = (repo_root / args.profile_output).resolve()
 
     config = BuildConfig.from_repo_root(
         repo_root,

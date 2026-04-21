@@ -80,30 +80,7 @@ jobs:
           python -m pip install --no-build-isolation "PyYAML==6.0"
           python -m pip install --no-build-isolation reversestem
           python -m pip install -r ifc43/code/requirements.txt nltk
-
-      - name: Install IfcOpenShell
-        shell: bash
-        run: |
-          set -euxo pipefail
-          pyver="$(python - <<'PY'
-          import sys
-          print(f"{sys.version_info.major}{sys.version_info.minor}")
-          PY
-          )"
-          site_dir="$(python - <<'PY'
-          import site
-          print(site.getusersitepackages())
-          PY
-          )"
-          mkdir -p "$site_dir"
-          curl --silent --show-error --retry 5 -L \
-            -o /tmp/ifcopenshell_python.zip \
-            "https://s3.amazonaws.com/ifcopenshell-builds/ifcopenshell-python-${pyver}-v0.7.0-476ab50-linux64.zip"
-          unzip -o /tmp/ifcopenshell_python.zip -d "$site_dir"
-          python - <<'PY'
-          from ifcopenshell.express import express_parser
-          print("IfcOpenShell import OK")
-          PY
+          python -m pip install ifcopenshell
 
       - name: Generate EXPRESS and XSD
         working-directory: ifc43/code

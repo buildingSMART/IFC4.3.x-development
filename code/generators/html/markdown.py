@@ -291,7 +291,7 @@ class markdown_mixin:
                 mark.string = keyword
                 
                 if "deprecation" in css_class:
-                    anchor = soup.new_tag("a", href=f"{self.base}/content/terms_and_definitions.htm#deprecation")
+                    anchor = soup.new_tag("a", href=f"{self.base}/content/terms_and_definitions.html#deprecation")
                     icon = soup.new_tag("i")
                     icon["data-feather"] = "link"
                     anchor.append(icon)

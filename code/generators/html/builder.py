@@ -15,6 +15,7 @@ import sys
 from concurrent.futures import ProcessPoolExecutor, as_completed
 from dataclasses import dataclass
 from pathlib import Path
+import tempfile
 from types import SimpleNamespace
 from urllib.parse import unquote
 
@@ -180,22 +181,22 @@ class StaticTemplateRenderer(markdown_mixin):
         [
             {"name": "Cover", "url": "/"},
             {"name": "Contents", "url": "/toc.html"},
-            {"name": "Foreword", "url": "/content/foreword.htm"},
-            {"name": "Introduction", "url": "/content/introduction.htm"},
+            {"name": "Foreword", "url": "/content/foreword.html"},
+            {"name": "Introduction", "url": "/content/introduction.html"},
         ],
         [
-            {"number": 1, "name": "Scope", "url": "/content/scope.htm"},
-            {"number": 2, "name": "Normative references", "url": "/content/normative_references.htm"},
+            {"number": 1, "name": "Scope", "url": "/content/scope.html"},
+            {"number": 2, "name": "Normative references", "url": "/content/normative_references.html"},
             {
                 "number": 3,
                 "name": "Terms, definitions, and abbreviated terms",
-                "url": "/content/terms_and_definitions.htm",
+                "url": "/content/terms_and_definitions.html",
             },
             {"number": 4, "name": "Fundamental concepts and assumptions", "url": "/concepts/content.html"},
-            {"number": 5, "name": "Core data schemas", "url": "/chapter-5/"},
-            {"number": 6, "name": "Shared element data schemas", "url": "/chapter-6/"},
-            {"number": 7, "name": "Domain specific data schemas", "url": "/chapter-7/"},
-            {"number": 8, "name": "Resource definition data schemas", "url": "/chapter-8/"},
+            {"number": 5, "name": "Core data schemas", "url": "/chapter-5.html"},
+            {"number": 6, "name": "Shared element data schemas", "url": "/chapter-6.html"},
+            {"number": 7, "name": "Domain specific data schemas", "url": "/chapter-7.html"},
+            {"number": 8, "name": "Resource definition data schemas", "url": "/chapter-8.html"},
         ],
         [
             {"number": "A", "name": "Computer interpretable listings", "url": "/annex-a.html"},
@@ -206,8 +207,8 @@ class StaticTemplateRenderer(markdown_mixin):
             {"number": "F", "name": "Change logs", "url": "/annex-f.html"},
         ],
         [
-            {"name": "Bibliography", "url": "/content/bibliography.htm"},
-            {"name": "Index", "url": "/index.htm"},
+            {"name": "Bibliography", "url": "/content/bibliography.html"},
+            {"name": "Index", "url": "/indices.html"},
         ],
     ]
     ANNEX_B_NAVIGATION = [
@@ -262,19 +263,19 @@ class StaticTemplateRenderer(markdown_mixin):
 
         if path == "/":
             return self._render_cover()
-        if path == "/index.htm":
+        if path == "/indices.html":
             return self._render_index()
         if path == "/search.html":
             return self._render_search()
         if path == "/toc.html":
             return self._render_toc()
 
-        if path.startswith("/content/") and path.endswith(".htm"):
-            return self._render_content(path[len("/content/") : -4])
-        if path.startswith("/lexical/") and path.endswith(".htm"):
-            return self._render_resource(path[len("/lexical/") : -4])
-        if path.startswith("/property/") and path.endswith(".htm"):
-            return self._render_property(path[len("/property/") : -4])
+        if path.startswith("/content/") and path.endswith(".html"):
+            return self._render_content(path[len("/content/") : -5])
+        if path.startswith("/lexical/") and path.endswith(".html"):
+            return self._render_resource(path[len("/lexical/") : -5])
+        if path.startswith("/property/") and path.endswith(".html"):
+            return self._render_property(path[len("/property/") : -5])
 
         if path == "/annex-a.html":
             return self._html_response(
@@ -346,7 +347,7 @@ class StaticTemplateRenderer(markdown_mixin):
         if match:
             return self._render_concept(unquote(match.group(1)))
 
-        match = re.fullmatch(r"/chapter-(\d+)/", path)
+        match = re.fullmatch(r"/chapter-(\d+)\.html", path)
         if match:
             return self._render_chapter(match.group(1))
 
@@ -385,11 +386,11 @@ class StaticTemplateRenderer(markdown_mixin):
     def _url_for(self, endpoint: str, **values) -> str:
         values.pop("_external", None)
         mapping = {
-            "resource": lambda: f"/lexical/{values['resource']}.htm",
-            "property": lambda: f"/property/{values['prop']}.htm",
+            "resource": lambda: f"/lexical/{values['resource']}.html",
+            "property": lambda: f"/property/{values['prop']}.html",
             "schema": lambda: f"/{values['name']}/content.html",
-            "content": lambda: f"/content/{values['s']}.htm",
-            "chapter": lambda: f"/chapter-{values['n']}/",
+            "content": lambda: f"/content/{values['s']}.html",
+            "chapter": lambda: f"/chapter-{values['n']}.html",
             "get_example_figure": lambda: f"/figures/examples/{values['fig']}",
             "get_asset": lambda: f"/assets/{values['asset']}",
             "get_example": lambda: f"/examples/{values['example']}",
@@ -410,7 +411,10 @@ class StaticTemplateRenderer(markdown_mixin):
         return StaticResponse(path.read_bytes(), content_type or "application/octet-stream")
 
     def _html_response(self, template_name: str, **context) -> StaticResponse:
-        html = self._render_template(template_name, **context)
+        path = self.request.path.strip("/")
+        depth = 0 if not path else len(path.split("/")) - 1
+        relbase = "./" if depth == 0 else "../" * depth
+        html = self._render_template(template_name, **context, relative_base='') # relbase[:-1])
         return StaticResponse(html.encode("utf-8"), "text/html")
 
     def _render_template(self, template_name: str, **context) -> str:
@@ -423,7 +427,6 @@ class StaticTemplateRenderer(markdown_mixin):
 
     def _template_context(self, **context) -> dict:
         payload = {
-            "base": "",
             "is_iso": False,
             "is_package": False,
             "schema_version_string": self.version.schema_version_string,
@@ -513,14 +516,14 @@ class StaticTemplateRenderer(markdown_mixin):
 
         def get_url(idx, text):
             if len(number_path) == 0:
-                return f"/chapter-{idx}/"
+                return f"/chapter-{idx}.html"
             if len(number_path) == 1:
                 return f"/{text.lower()}/content.html"
             if len(number_path) == 2:
                 fragment = (".".join([part[0] for part in number_path] + [str(idx)]) + "-" + text).replace(" ", "-")
                 return f"/{number_path[1][1].lower()}/content.html#{fragment}"
             if len(number_path) == 3:
-                return f"/lexical/{text}.htm"
+                return f"/lexical/{text}.html"
             return None
 
         data = self.structure['hierarchy'] if data is None else data
@@ -1121,8 +1124,26 @@ class StaticTemplateRenderer(markdown_mixin):
             graph.obj_dict["nodes"]["node"][0]["sequence"] = -1
             with open(file_name, "w", encoding="utf-8") as handle:
                 handle.write(graph.to_string())
+
             markdown_text = markdown_text.replace(f"```{graphviz}```", f"![](/svgs/{name}_{hash_value}.svg)")
-            subprocess.call([shutil.which("dot") or "dot", "-O", "-Tsvg", "-Gbgcolor=#ffffff00", file_name])
+
+            with tempfile.TemporaryDirectory() as tmpdir:
+                # windows graphviz dot chokes on some of the longer paths so move to /tmp as intermediate step
+                tmpdir = Path(tmpdir)
+
+                # Keep a short input filename inside the temp dir
+                tmp_dot = tmpdir / Path(file_name).name
+                shutil.copy2(file_name, tmp_dot)
+
+                subprocess.run(
+                    [shutil.which("dot") or "dot", "-O", "-Tsvg", "-Gbgcolor=#ffffff00", tmp_dot.name],
+                    cwd=tmpdir,
+                    check=True,
+                )
+
+                tmp_svg = tmpdir / (tmp_dot.name + ".svg")
+                final_svg = file_name + ".svg"
+                shutil.copy2(tmp_svg, final_svg)
 
         return markdown_text
 
@@ -1643,7 +1664,7 @@ class StaticTemplateRenderer(markdown_mixin):
                 text=group,
                 number=f"{number}.{index}",
                 children=[
-                    self._toc_entry(text=resource, number=f"{number}.{index}.{subindex}", url=f"/lexical/{resource}.htm")
+                    self._toc_entry(text=resource, number=f"{number}.{index}.{subindex}", url=f"/lexical/{resource}.html")
                     for subindex, resource in enumerate(members.get(group, []), 1)
                 ],
             )
@@ -1701,7 +1722,7 @@ class StaticTemplateRenderer(markdown_mixin):
         items = [
             {
                 "number": self.name_to_number[name],
-                "url": f"/lexical/{name}.htm",
+                "url": f"/lexical/{name}.html",
                 "name": name,
                 "mvds": get_mvd_qualification(name),
                 "is_product_or_type": get_product_qualification(name),
@@ -1719,7 +1740,7 @@ class StaticTemplateRenderer(markdown_mixin):
 
     def _render_annex_b2(self) -> StaticResponse:
         items = [
-            {"number": self.name_to_number[name], "url": f"/lexical/{name}.htm", "name": name}
+            {"number": self.name_to_number[name], "url": f"/lexical/{name}.html", "name": name}
             for name in self.type_names()
         ]
         return self._html_response(
@@ -1733,7 +1754,7 @@ class StaticTemplateRenderer(markdown_mixin):
 
     def _render_annex_b3(self) -> StaticResponse:
         items = [
-            {"number": self.name_to_number[name], "url": f"/lexical/{name}.htm", "name": name}
+            {"number": self.name_to_number[name], "url": f"/lexical/{name}.html", "name": name}
             for name in sorted(self.structure['pset_definitions'].keys())
             if name in self.name_to_number
         ]
@@ -1748,7 +1769,7 @@ class StaticTemplateRenderer(markdown_mixin):
 
     def _render_annex_b4(self) -> StaticResponse:
         items = [
-            {"number": "", "url": f"/property/{name}.htm", "name": name}
+            {"number": "", "url": f"/property/{name}.html", "name": name}
             for name in sorted({prop["name"] for definition in self.structure['pset_definitions'].values() for prop in definition["properties"]})
         ]
         return self._html_response(
@@ -1760,7 +1781,7 @@ class StaticTemplateRenderer(markdown_mixin):
         )
 
     def _render_annex_b5(self) -> StaticResponse:
-        items = [{"number": "", "url": f"/lexical/{name}.htm", "name": name} for name in self.function_names()]
+        items = [{"number": "", "url": f"/lexical/{name}.html", "name": name} for name in self.function_names()]
         return self._html_response(
             "annex-b.html",
             navigation=self.get_navigation(),
@@ -1770,7 +1791,7 @@ class StaticTemplateRenderer(markdown_mixin):
         )
 
     def _render_annex_b6(self) -> StaticResponse:
-        items = [{"number": "", "url": f"/lexical/{name}.htm", "name": name} for name in self.rule_names()]
+        items = [{"number": "", "url": f"/lexical/{name}.html", "name": name} for name in self.rule_names()]
         return self._html_response(
             "annex-b.html",
             navigation=self.get_navigation(),
@@ -1781,7 +1802,7 @@ class StaticTemplateRenderer(markdown_mixin):
 
     def _render_annex_b7(self) -> StaticResponse:
         items = [
-            {"number": "", "url": f"/lexical/{name}.htm", "name": name}
+            {"number": "", "url": f"/lexical/{name}.html", "name": name}
             for name in self.propertyenumeration_names()
         ]
         return self._html_response(
@@ -1803,7 +1824,7 @@ class StaticTemplateRenderer(markdown_mixin):
                 entity = line.strip()
                 data = {
                     "number": self.name_to_number[entity],
-                    "url": f"/lexical/{entity}.htm",
+                    "url": f"/lexical/{entity}.html",
                     "name": entity,
                     "children": [],
                 }
@@ -1935,7 +1956,7 @@ class StaticTemplateRenderer(markdown_mixin):
 
     def _render_index(self) -> StaticResponse:
         items = [
-            {"number": "", "title": f"Listing of {kind}", "url": f"listing-{kind}.html"}
+            {"number": "", "title": f"Listing of {kind}", "url": f"/listing-{kind}.html"}
             for kind in ("references", "figures", "tables")
         ]
         return self._html_response("index.html", navigation=self.get_navigation(), items=items, title="Index")
@@ -1956,13 +1977,13 @@ class StaticTemplateRenderer(markdown_mixin):
                 refs = []
                 for entry in group:
                     url = entry["url"]
-                    if url.startswith("/lexical/") and url.endswith(".htm"):
-                        refs.append(url[len("/lexical/") : -4])
+                    if url.startswith("/lexical/") and url.endswith(".html"):
+                        refs.append(url[len("/lexical/") : -5])
                 grouped.append(
                     {
                         "number": title,
                         "url": "",
-                        "subitems": [{"url": f"/lexical/{resource}.htm", "title": resource} for resource in refs],
+                        "subitems": [{"url": f"/lexical/{resource}.html", "title": resource} for resource in refs],
                     }
                 )
             items = [item for item in grouped if not (len(item["subitems"]) == 1 and item["subitems"][0]["title"] == item["number"])]
@@ -2083,8 +2104,6 @@ class StaticSiteBuilder:
 
         for source_dir in (
             self.config.repo_root / "output" / "psd",
-            self.config.code_dir / "psd_new",
-            self.config.code_dir / "psd_old",
         ):
             if not source_dir.is_dir():
                 continue
@@ -2098,20 +2117,20 @@ class StaticSiteBuilder:
             break
 
     def _content_paths(self) -> list[str]:
-        seeds = [
+        return [
             "/",
             "/toc.html",
-            "/content/foreword.htm",
-            "/content/introduction.htm",
-            "/content/scope.htm",
-            "/content/normative_references.htm",
-            "/content/terms_and_definitions.htm",
-            "/content/bibliography.htm",
+            "/content/foreword.html",
+            "/content/introduction.html",
+            "/content/scope.html",
+            "/content/normative_references.html",
+            "/content/terms_and_definitions.html",
+            "/content/bibliography.html",
             "/concepts/content.html",
-            "/chapter-5/",
-            "/chapter-6/",
-            "/chapter-7/",
-            "/chapter-8/",
+            "/chapter-5.html",
+            "/chapter-6.html",
+            "/chapter-7.html",
+            "/chapter-8.html",
             "/annex-a.html",
             "/annex-a-express.html",
             "/annex-a-xsd.html",
@@ -2127,21 +2146,13 @@ class StaticSiteBuilder:
             "/annex-d.html",
             "/annex-e.html",
             "/annex-f.html",
+            *self._sample_paths(self._schema_paths()),
+            *self._sample_paths(self._resource_paths()),
+            *self._sample_paths(self._property_paths()),
+            *self._sample_paths(self._concept_paths()),
+            *self._sample_paths(self._example_paths()),
+            *self._sample_paths(self._diagram_page_paths()),
         ]
-        seeds.extend(self._sample_paths(self._schema_paths()))
-        seeds.extend(self._sample_paths(self._resource_paths()))
-        seeds.extend(self._sample_paths(self._property_paths()))
-        seeds.extend(self._sample_paths(self._concept_paths()))
-        seeds.extend(self._sample_paths(self._example_paths()))
-        seeds.extend(self._sample_paths(self._diagram_page_paths()))
-
-        seen = set()
-        ordered = []
-        for path in seeds:
-            if path not in seen:
-                ordered.append(path)
-                seen.add(path)
-        return ordered
 
     def _sample_paths(self, paths: list[str]) -> list[str]:
         if self.config.sample_percent >= 100.0 or len(paths) <= 1:
@@ -2155,7 +2166,7 @@ class StaticSiteBuilder:
         return [paths[index] for index in indices]
 
     def _listing_paths(self) -> list[str]:
-        return ["/index.htm", "/listing-references.html", "/listing-figures.html", "/listing-tables.html"]
+        return ["/indices.html", "/listing-references.html", "/listing-figures.html", "/listing-tables.html"]
 
     def _utility_paths(self) -> list[str]:
         return ["/search.html"]
@@ -2168,7 +2179,7 @@ class StaticSiteBuilder:
         ]
 
     def _resource_paths(self) -> list[str]:
-        return [f"/lexical/{name}.htm" for name in sorted(self.name_to_number.keys())]
+        return [f"/lexical/{name}.html" for name in sorted(self.name_to_number.keys())]
 
     def _property_paths(self) -> list[str]:
         property_names = sorted(
@@ -2178,7 +2189,7 @@ class StaticSiteBuilder:
                 for prop in definition["properties"]
             }
         )
-        return [f"/property/{name}.htm" for name in property_names]
+        return [f"/property/{name}.html" for name in property_names]
 
     def _concept_paths(self) -> list[str]:
         templates_root = self.config.repo_root / "docs" / "templates"
@@ -2223,7 +2234,7 @@ class StaticSiteBuilder:
         listing_payloads: dict[str, list[dict[str, str]]] | None = None,
         resource_names: tuple[str, ...],
     ) -> None:
-        if self.config.profile:
+        if self.config.profile or self.config.threads == 1:
             for public_path in public_paths:
                 try:
                     init_worker(self.config, self.structure, self.name_to_number, listing_payloads, resource_names)

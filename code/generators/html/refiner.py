@@ -3,6 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from html import escape
 import re
+import sys
 import uuid
 from pathlib import Path
 from typing import Iterable
@@ -13,6 +14,8 @@ from pygments.formatters import HtmlFormatter
 from pygments.lexer import RegexLexer, words
 from pygments.token import Comment, Keyword, Name, Number, Operator, Punctuation, String, Text
 
+# Path.relative_to(walk_up=True)
+assert not (tuple(sys.version_info) < (3,12))
 
 def BeautifulSoup(*args):
     return bs4.BeautifulSoup(*args, features="lxml")
@@ -266,40 +269,18 @@ class HtmlRefiner:
     def _normalize_urls(self, soup, public_path: str) -> None:
         for tag, attr in (("a", "href"), ("img", "src"), ("script", "src"), ("link", "href")):
             for element in soup.find_all(tag):
-                value = element.get(attr)
-                if not value:
-                    continue
-                normalized = self._normalize_url(public_path, value)
-                if normalized is None:
-                    continue
-                element[attr] = normalized
+                if value := element.get(attr):
+                    if normalized := self._normalize_url(public_path, value):
+                        element[attr] = normalized
 
     def _normalize_url(self, public_path: str, value: str) -> str | None:
-        if not value or value.startswith(("data:", "mailto:", "javascript:", "tel:", "#")):
+        if not value or value.startswith(("data:", "mailto:", "javascript:", "tel:", "#", "http:", "https:")):
             return None
-
-        base = public_path
-        if not base.endswith("/"):
-            base = str(Path(base).parent).replace("\\", "/")
-            if not base.startswith("/"):
-                base = "/" + base
-            if base == "/.":
-                base = "/"
-            if not base.endswith("/"):
-                base += "/"
-
-        absolute = urljoin(f"https://example.invalid{base}", value)
-        parsed = urlparse(absolute)
-        if parsed.scheme not in ("http", "https"):
+        try:
+            return Path(value).relative_to(Path(public_path).parent, walk_up=True).as_posix()
+        except ValueError:
+            print(f"Error normalizing path {value} within page {public_path}")
             return None
-        if parsed.netloc != "example.invalid":
-            return value
-
-        path = parsed.path or "/"
-        if not path.startswith("/"):
-            path = "/" + path
-
-        return urlunparse(("", "", path, "", parsed.query, parsed.fragment))
 
     def _wrap_figures_and_tables(self, soup) -> None:
         main_content = soup.find(id="main-content")
@@ -437,7 +418,7 @@ class HtmlRefiner:
                 if start > cursor:
                     replacement.append(text[cursor:start])
                 raw = match.group(0)
-                anchor = soup.new_tag("a", href=f"/lexical/{canonical}.htm")
+                anchor = soup.new_tag("a", href=f"/lexical/{canonical}.html")
                 anchor.string = raw
                 replacement.append(anchor)
                 collector.add_reference(canonical, public_path)
@@ -516,7 +497,7 @@ class HtmlRefiner:
         canonical = self.canonical_names.get(value.upper())
         if canonical is None:
             return segment
-        return f'<a href="/lexical/{canonical}.htm">{segment}</a>'
+        return f'<a href="/lexical/{canonical}.html">{segment}</a>'
 
     def _iter_schema_matches(self, value: str):
         for match in self.name_pattern.finditer(value):

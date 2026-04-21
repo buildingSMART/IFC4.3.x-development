@@ -1,15 +1,15 @@
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="{{ base }}/assets/css/mini-default.css">
-    <link rel="stylesheet" href="{{ base }}/assets/css/style.css">
+    <link rel="stylesheet" href="{{ relative_base }}/assets/css/mini-default.css">
+    <link rel="stylesheet" href="{{ relative_base }}/assets/css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     {% if is_iso %}
     <title>ISO 16739-1 Documentation</title>
     {% else %}
-    <title>{{ spec_version_string }} Documentation</title>
+    <title>{{ spec_version_string }} Documentation {{ relative_base }} {{ relative_base }}</title>
     {% endif %}
-    <link rel="icon" type="image/x-icon" href="{{ base }}/assets/img/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="{{ relative_base }}/assets/img/favicon.ico">
     <script>window.is_iso = {% if is_iso %}true{% else %}false{% endif %};</script>
 </head>
 <body class="{{body_class or ''}}">

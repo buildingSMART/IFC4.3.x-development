@@ -9,8 +9,8 @@ import markdown
 import pydot
 
 import bs4
-def BeautifulSoup(*args):
-    return bs4.BeautifulSoup(*args, features='lxml')
+def BeautifulSoup(*args, as_xml=False):
+    return bs4.BeautifulSoup(*args, features='lxml-xml' if as_xml else 'lxml')
 
 class markdown_mixin:
     structure : dict
@@ -197,7 +197,7 @@ class markdown_mixin:
         for img in soup.findAll("img"):
             if img["src"].endswith(".svg"):
                 entity, hash = img["src"].split("/")[-1].split(".")[0].split("_")
-                svg = BeautifulSoup(open(os.path.join("svgs", entity + "_" + hash + ".dot.svg")))
+                svg = BeautifulSoup(open(os.path.join("svgs", entity + "_" + hash + ".dot.svg")), as_xml=True)
                 img.replaceWith(svg.find("svg"))
                 img = svg
             elif img["src"].startswith("http"):

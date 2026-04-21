@@ -17,6 +17,11 @@ from pygments.token import Comment, Keyword, Name, Number, Operator, Punctuation
 # Path.relative_to(walk_up=True)
 assert not (tuple(sys.version_info) < (3,12))
 
+import warnings
+from bs4 import XMLParsedAsHTMLWarning
+warnings.filterwarnings("error", category=XMLParsedAsHTMLWarning)
+
+
 def BeautifulSoup(*args):
     return bs4.BeautifulSoup(*args, features="lxml")
 

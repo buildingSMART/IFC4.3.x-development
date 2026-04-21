@@ -411,10 +411,7 @@ class StaticTemplateRenderer(markdown_mixin):
         return StaticResponse(path.read_bytes(), content_type or "application/octet-stream")
 
     def _html_response(self, template_name: str, **context) -> StaticResponse:
-        path = self.request.path.strip("/")
-        depth = 0 if not path else len(path.split("/")) - 1
-        relbase = "./" if depth == 0 else "../" * depth
-        html = self._render_template(template_name, **context, relative_base='') # relbase[:-1])
+        html = self._render_template(template_name, **context, relative_base='')
         return StaticResponse(html.encode("utf-8"), "text/html")
 
     def _render_template(self, template_name: str, **context) -> str:

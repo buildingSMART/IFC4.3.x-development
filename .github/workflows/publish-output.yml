@@ -1,18 +1,17 @@
-name: Publish IFC4.3 Output 2
+name: Publish IFC4.3 Output
 
 on:
   workflow_dispatch:
   push:
     branches:
-      - main
-      - master
-      - xmi-refresh
+      - ifc4.3-main
+      - ifc4.4-main
 
 permissions:
   contents: read
 
 concurrency:
-  group: publish-ifc43-output-2
+  group: publish-ifc-output-${{ github.ref_name }}
   cancel-in-progress: false
 
 jobs:
@@ -24,15 +23,43 @@ jobs:
       TRANSLATIONS_SRC_DIR: ${{ github.workspace }}/translations/translations
       TRANSLATIONS_BUILD_DIR: ${{ github.workspace }}/translations-build
       PO_HASH_PATH: ${{ github.workspace }}/translations-build/po_hash_map.json
-      TARGET_SITE_DIR: ${{ github.workspace }}/output-repo/IFC/RELEASE/IFC4_3
       PYTHONUNBUFFERED: "1"
 
     steps:
+      - name: Set target site directory
+        shell: bash
+        run: |
+          set -euxo pipefail
+
+          case "${GITHUB_REF_NAME}" in
+            ifc4.3-main)
+              echo "TARGET_SITE_DIR=${GITHUB_WORKSPACE}/output-repo/IFC/RELEASE/IFC4_3" >> "$GITHUB_ENV"
+              ;;
+            ifc4.4-main)
+              echo "TARGET_SITE_DIR=${GITHUB_WORKSPACE}/output-repo/IFC/RELEASE/IFC4_4" >> "$GITHUB_ENV"
+              ;;
+            *)
+              echo "Unsupported branch: ${GITHUB_REF_NAME}"
+              exit 1
+              ;;
+          esac
+
       - name: Check out source repository
         uses: actions/checkout@v4
         with:
           path: ifc43
           fetch-depth: 1
+
+      - name: Capture source commit message
+        working-directory: ifc43
+        shell: bash
+        run: |
+          set -euxo pipefail
+          {
+            echo "SOURCE_COMMIT_MESSAGE<<EOF"
+            git log -1 --pretty=%B
+            echo "EOF"
+          } >> "$GITHUB_ENV"
 
       - name: Check out sample models
         uses: actions/checkout@v4
@@ -135,10 +162,10 @@ jobs:
           set -euxo pipefail
           git config user.name "bSI-Bot"
           git config user.email ${{ secrets.BSI_BOT_EMAIL }}
-          git add -A IFC/RELEASE/IFC4_3
+          git add -A "${TARGET_SITE_DIR}"
           if git diff --cached --quiet; then
             echo "No output changes to commit."
             exit 0
           fi
-          git commit -m "Update IFC4_3 output from ${GITHUB_REPOSITORY}@${GITHUB_SHA}"
+          git commit -m "${SOURCE_COMMIT_MESSAGE}"
           git push

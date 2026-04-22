@@ -7,9 +7,9 @@ The vertical alignment is defined by segments that connects end-to-start. The ve
 
 The following vertical segment types are defined:
 
-* line segment - _IfcAlignmentVerticalSegmentTypeEnum_ .LINE.
-* circular arc segment - _IfcAlignmentVerticalSegmentTypeEnum_ .ARC.
-* parabolic arc segment - _IfcAlignmentVerticalSegmentTypeEnum_ .PARABOLICARC. which can describe symmetric parabolas, unsymmetric parabolas can be created by defining two symmetric parabolas segments
+* line segment - _IfcAlignmentVerticalSegmentTypeEnum_ .CONSTANTGRADIENT.
+* circular arc segment - _IfcAlignmentVerticalSegmentTypeEnum_ .CIRCULARARC.
+* parabolic arc segment - _IfcAlignmentVerticalSegmentTypeEnum_ .PARABOLICARC. which can describe symmetric parabolas. Unsymmetric parabolas can be created by defining two symmetric parabolas segments
 * transition segment with linear curvature variation - _IfcAlignmentVerticalSegmentTypeEnum_ .CLOTHOID.
 
 For each vertical segment, the following non-redundant information is provided:
@@ -57,9 +57,9 @@ End gradient of the segment. In the case of a PredefinedType='.CONSTANTGRADIENT.
 
 ### RadiusOfCurvature
 Radius of parabola or arc. Positive values imply a CCW direction whereas negative CW.
-> NOTE1 For _PredefinedType_ is ARC. The radius of the basis circle for the arc.
+> NOTE1 For _PredefinedType_ is CIRCULARARC. The radius of the basis circle for the arc.
 > NOTE2 For _PredefinedType_ is PARABOLICARC. Parabola constant (determining the “steepness” of the parabola). The parabola constant is provided by the “minimum parabola radius”, the true radius of a parabola at its vertical axis (the zero-gradient point of the parabola). The minimum radius is twice the focal length of the parabola (the distance between the focal point and the vertex).
-> NOTE3 For _PredefinedType_ that is not either ARC or PARABOLICARC the value should be empty.
+> NOTE3 For _PredefinedType_ that is not either CIRCULARARC or PARABOLICARC the value should be empty.
 
 ### PredefinedType
 Predefined type of the vertical alignmnent segment.

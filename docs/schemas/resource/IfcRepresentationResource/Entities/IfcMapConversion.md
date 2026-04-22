@@ -6,14 +6,15 @@ The map conversion deals with transforming the local engineering coordinate syst
 > NOTE The _IfcMapConversion_ does not handle the projection of a map from the geodetic coordinate reference system.
 
 For this transformation, _IfcMapConversion_ data are used for:
-1. a scaling of the three axes (x,y,z), by the same _IfcMapConversion.Scale_
-2. followed by an **anti-clockwise** rotation about the z-axis of *θ*, where:
+
+* a scaling of the three axes (x,y,z), by the same _IfcMapConversion.Scale_
+* followed by an **anti-clockwise** rotation about the z-axis of *θ*, where:
 
 $$
 \theta=arctan\left(\frac{XAxisOrdinate}{XAxisAbscissa}\right)
 $$
 
-3. and then a translation in (x,y,z) of _IfcMapConversion.Eastings_, _IfcMapConversion.Northings_, _IfcMapConversion.OrthogonalHeight_
+* and then a translation in (x,y,z) of _IfcMapConversion.Eastings_, _IfcMapConversion.Northings_, _IfcMapConversion.OrthogonalHeight_
 
 With _IfcMapConversion_, **one scale** is applied equally to x, y and z, **to convert units**.
 With _IfcMapConversionScaled_, additional **different factors** multiply x, y and z, to **scale coordinates** - not units.

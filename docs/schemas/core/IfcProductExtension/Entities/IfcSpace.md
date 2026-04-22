@@ -52,7 +52,7 @@ Predefined generic types for a space that are specified in an enumeration. There
 > NOTE Previous use had been to indicates whether the _IfcSpace_ is an interior space by value INTERNAL, or an exterior space by value EXTERNAL. This use is now deprecated, the property 'IsExternal' at 'Pset_SpaceCommon' should be used instead.
 
 { .change-ifc2x4}
-> IFC4 CHANGE The attribute has been renamed from _ExteriorOrInteriorSpace_ with upward compatibility for file based exchange.
+> IFC4 CHANGE The attribute has been renamed from _InteriorOrExteriorSpace_ with upward compatibility for file based exchange.
 
 ### ElevationWithFlooring
 Level of flooring of this space; the average shall be taken, if the space ground surface is sloping or if there are level differences within this space.

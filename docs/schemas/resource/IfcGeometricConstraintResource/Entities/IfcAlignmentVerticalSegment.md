@@ -58,6 +58,7 @@ End gradient of the segment. In the case of a PredefinedType='.CONSTANTGRADIENT.
 
 ### RadiusOfCurvature
 Radius of parabola or arc. Positive values imply a CCW direction whereas negative CW.
+
 > NOTE For _PredefinedType_ is CIRCULARARC. The radius of the basis circle for the arc.
 
 > NOTE For _PredefinedType_ is PARABOLICARC. Parabola constant (determining the “steepness” of the parabola). The parabola constant is provided by the “minimum parabola radius”, the true radius of a parabola at its vertical axis (the zero-gradient point of the parabola). The minimum radius is twice the focal length of the parabola (the distance between the focal point and the vertex).

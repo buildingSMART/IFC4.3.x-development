@@ -58,6 +58,7 @@ Railway track system. It is usually composed of continuous sequences of track pa
 
 ### USERDEFINED
 User-defined type
+User-defined type.
 
 ### NOTDEFINED
 Undefined type.

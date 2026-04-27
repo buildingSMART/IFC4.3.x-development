@@ -1,4 +1,4 @@
 AirFlowRateRange
 ================
 
-Possible range of airflow that can be delivered.
+Possible range of air flow that can be delivered.

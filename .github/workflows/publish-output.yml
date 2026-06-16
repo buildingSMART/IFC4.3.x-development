@@ -16,7 +16,7 @@ concurrency:
 
 jobs:
   publish:
-    if: ${{ github.server_url == 'https://github.com' && github.repository == 'buildingSMART/IFC4.x-development' }}
+    if: ${{ github.server_url == 'https://github.com' && github.repository == 'aothms/IFC4.x-development-merged' }}
     runs-on: ubuntu-22.04
     timeout-minutes: 120
     env:

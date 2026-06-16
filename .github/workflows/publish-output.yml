@@ -80,7 +80,7 @@ jobs:
       - name: Check out output repository
         uses: actions/checkout@v4
         with:
-          repository: buildingSMART/IFC4.3.x-output-2
+          repository: aothms/IFC4.x-development-merged-output
           path: output-repo
           fetch-depth: 1
           token: ${{ secrets.OUTPUT_2_TOKEN }}

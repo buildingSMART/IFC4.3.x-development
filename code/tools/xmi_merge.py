@@ -437,6 +437,95 @@ def _fallback_text_merge(
         raise RuntimeError("git merge-file failed")
 
 
+def has_conflict_markers(path: Path) -> bool:
+    lines = path.read_bytes().splitlines()
+    return (
+        any(line.startswith(b"<<<<<<< ") for line in lines)
+        and any(line.startswith(b"=======") for line in lines)
+        and any(line.startswith(b">>>>>>> ") for line in lines)
+    )
+
+
+def resolve_conflict_markers_keep_both(path: Path) -> bool:
+    """Remove Git conflict markers by retaining current lines followed by other lines."""
+
+    lines = path.read_bytes().splitlines(keepends=True)
+    output: list[bytes] = []
+    changed = False
+    index = 0
+    while index < len(lines):
+        line = lines[index]
+        if not line.startswith(b"<<<<<<< "):
+            output.append(line)
+            index += 1
+            continue
+
+        changed = True
+        index += 1
+        current: list[bytes] = []
+        while index < len(lines) and not (
+            lines[index].startswith(b"||||||| ") or lines[index].startswith(b"=======")
+        ):
+            current.append(lines[index])
+            index += 1
+        if index >= len(lines):
+            raise MergeConflict(f"{path}: unterminated conflict marker")
+
+        if lines[index].startswith(b"||||||| "):
+            index += 1
+            while index < len(lines) and not lines[index].startswith(b"======="):
+                index += 1
+            if index >= len(lines):
+                raise MergeConflict(f"{path}: unterminated diff3 conflict marker")
+
+        index += 1
+        other: list[bytes] = []
+        while index < len(lines) and not lines[index].startswith(b">>>>>>> "):
+            other.append(lines[index])
+            index += 1
+        if index >= len(lines):
+            raise MergeConflict(f"{path}: unterminated conflict marker")
+
+        index += 1
+        output.extend(current)
+        output.extend(other)
+
+    if changed:
+        path.write_bytes(b"".join(output))
+    return changed
+
+
+def remove_duplicate_packaged_elements(path: Path) -> int:
+    """Remove later ``packagedElement`` nodes with an ``xmi:id`` already seen."""
+
+    document = SourceDocument(path)
+    assert document.root is not None
+    seen: set[str] = set()
+    ranges: list[tuple[int, int]] = []
+
+    def visit(node: SourceNode) -> None:
+        if node.name == "packagedElement" and node.xmi_id:
+            if node.xmi_id in seen:
+                if node.end is None:
+                    raise MergeConflict(f"{path}: incomplete duplicate packagedElement")
+                ranges.append((node.start, node.end))
+                return
+            seen.add(node.xmi_id)
+        for child in node.children:
+            visit(child)
+
+    visit(document.root)
+    if not ranges:
+        return 0
+
+    data = document.data
+    for start, end in sorted(ranges, reverse=True):
+        data = data[:start] + data[end:]
+    _validate_bytes(data, path)
+    path.write_bytes(data)
+    return len(ranges)
+
+
 def driver(base: Path, current: Path, other: Path, display_path: str) -> int:
     try:
         result = merge_documents(base, current, other)

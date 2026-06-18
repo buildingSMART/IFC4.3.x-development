@@ -1,0 +1,228 @@
+name: Auto Merge IFC4.4 PRs
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: read
+
+concurrency:
+  group: auto-merge-ifc44-prs
+  cancel-in-progress: false
+
+jobs:
+  auto-merge:
+    if: ${{ github.server_url == 'https://github.com' && github.repository == 'aothms/IFC4.x-development-merged' }}
+    runs-on: ubuntu-22.04
+    timeout-minutes: 180
+    env:
+      REPO_DIR: ${{ github.workspace }}/ifc43
+      SUMMARY_PATH: ${{ github.workspace }}/ifc-auto-merge-summary.json
+      TRANSLATIONS_SRC_DIR: ${{ github.workspace }}/translations/translations
+      TRANSLATIONS_BUILD_DIR: ${{ github.workspace }}/translations-build
+      PO_HASH_PATH: ${{ github.workspace }}/translations-build/po_hash_map.json
+      PYTHONUNBUFFERED: "1"
+
+    steps:
+      - name: Check out IFC4.4 source
+        uses: actions/checkout@v4
+        with:
+          ref: ifc4.4-main
+          path: ifc43
+          fetch-depth: 0
+
+      - name: Check out sample models
+        uses: actions/checkout@v4
+        with:
+          repository: buildingSMART/IFC4.3.x-sample-models
+          path: examples
+          fetch-depth: 1
+
+      - name: Check out translations
+        uses: actions/checkout@v4
+        with:
+          repository: buildingSMART/IFC4.3.x-output
+          ref: translations
+          path: translations
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: ifc43/code/requirements.txt
+
+      - name: Install system dependencies
+        shell: bash
+        run: |
+          set -euxo pipefail
+          sudo apt-get update
+          sudo apt-get install -y graphviz rsync unzip
+
+      - name: Install Python dependencies
+        shell: bash
+        run: |
+          set -euxo pipefail
+          python -m pip install --upgrade pip
+          python -m pip install "Cython<3" wheel setuptools
+          python -m pip install --no-build-isolation "PyYAML==6.0"
+          python -m pip install --no-build-isolation reversestem
+          python -m pip install -r ifc43/code/requirements.txt nltk
+          python -m pip install ifcopenshell
+
+      - name: Install IFC Git tooling
+        working-directory: ifc43
+        shell: bash
+        run: |
+          set -euxo pipefail
+          python code/tools/git_ifc.py install --remote origin
+          git config user.name "bSI-Bot"
+          git config user.email "${{ secrets.BSI_BOT_EMAIL }}"
+
+      - name: Auto merge PRs in code order
+        working-directory: ifc43
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euxo pipefail
+          git ifc pr merge \
+            --auto \
+            --all-prs \
+            --remote origin \
+            --summary-json "$SUMMARY_PATH"
+
+      - name: Derive succeeded PR path
+        id: pr_path
+        shell: bash
+        run: |
+          set -euxo pipefail
+          python - <<'PY'
+          import json
+          import os
+          import re
+          from pathlib import Path
+
+          summary = json.loads(Path(os.environ["SUMMARY_PATH"]).read_text(encoding="utf-8"))
+          raw_path = summary.get("merged_code_path") or "no_prs"
+          safe_path = re.sub(r"[^A-Za-z0-9_-]+", "_", raw_path).strip("_") or "no_prs"
+          codes = " ".join(summary.get("merged_codes") or [])
+
+          with open(os.environ["GITHUB_ENV"], "a", encoding="utf-8") as env:
+              env.write(f"PR_CODE_PATH={safe_path}\n")
+              env.write(
+                  f"TARGET_SITE_DIR={os.environ['GITHUB_WORKSPACE']}/output-repo/IFC/RELEASE/IFC4_4/{safe_path}\n"
+              )
+
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:
+              output.write(f"path={safe_path}\n")
+              output.write(f"codes={codes}\n")
+          PY
+
+      - name: Generate EXPRESS and XSD
+        working-directory: ifc43/code
+        shell: bash
+        run: |
+          set -euxo pipefail
+          mkdir -p ../output
+          python -m generators.express ../schemas/ifc4x3_add2.uml \
+            --output ../output/IFC.exp \
+            --with-xsd \
+            --xsd-output ../output/IFC.xsd
+
+      - name: Generate EXPRESS diff report
+        working-directory: ifc43/code
+        shell: bash
+        run: |
+          set -euxo pipefail
+          python -m express_diff \
+            ../reference_schemas/IFC4X4.exp \
+            ../output/IFC.exp \
+            ../output/express_diff.md
+
+      - name: Generate property sets
+        working-directory: ifc43/code
+        shell: bash
+        run: |
+          set -euxo pipefail
+          rm -rf ../output/psd
+          mkdir -p ../output/psd
+          python -m generators.pset ../schemas/ifc4x3_add2.uml --output ../output/psd
+
+      - name: Generate property-set diff report
+        working-directory: ifc43
+        shell: bash
+        run: |
+          set -euxo pipefail
+          python code/generators/util/compare_pset.py \
+            reference_schemas/psd \
+            output/psd \
+            > output/pset_diff.md
+          if [ ! -s output/pset_diff.md ]; then
+            printf '# Property set differences\n\nNo differences.\n' > output/pset_diff.md
+          fi
+
+      - name: Generate bSDD export
+        working-directory: ifc43/code
+        shell: bash
+        run: |
+          set -euxo pipefail
+          python -m generators.bsdd ../schemas/ifc4x3_add2.uml --output ../output/bsdd
+
+      - name: Generate JSON schema structure
+        working-directory: ifc43/code
+        shell: bash
+        run: |
+          set -euxo pipefail
+          python -m generators.json ../schemas/ifc4x3_add2.uml ../output/psd --output ../output/structure.json
+
+      - name: Build static HTML site
+        working-directory: ifc43/code
+        shell: bash
+        run: |
+          set -euxo pipefail
+          python -m generators.html --output ../output/html -j 4
+
+      - name: Upload comparison reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ifc44-auto-merge-reports-${{ steps.pr_path.outputs.path || github.run_id }}
+          path: |
+            ifc-auto-merge-summary.json
+            ifc43/output/express_diff.md
+            ifc43/output/pset_diff.md
+          retention-days: 14
+          if-no-files-found: warn
+
+      - name: Check out output repository
+        uses: actions/checkout@v4
+        with:
+          repository: aothms/IFC4.x-development-merged-output
+          path: output-repo
+          fetch-depth: 1
+          token: ${{ secrets.OUTPUT_2_TOKEN }}
+
+      - name: Sync site into output repository
+        shell: bash
+        run: |
+          set -euxo pipefail
+          mkdir -p "$TARGET_SITE_DIR"
+          rsync -a --delete "${GITHUB_WORKSPACE}/ifc43/output/html/" "${TARGET_SITE_DIR}/"
+
+      - name: Commit and push output
+        working-directory: output-repo
+        shell: bash
+        run: |
+          set -euxo pipefail
+          git config user.name "bSI-Bot"
+          git config user.email "${{ secrets.BSI_BOT_EMAIL }}"
+          git add -A "$TARGET_SITE_DIR"
+          if git diff --cached --quiet; then
+            echo "No output changes to commit."
+            exit 0
+          fi
+          git commit -m "Publish IFC4.4 auto-merged output: ${PR_CODE_PATH}"
+          git push

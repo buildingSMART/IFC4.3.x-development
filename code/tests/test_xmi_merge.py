@@ -129,6 +129,44 @@ def test_defers_on_two_sided_leaf_edit(tmp_path):
         merge_documents(base, current, other)
 
 
+def test_resolves_conflict_markers_by_keeping_both_sides(tmp_path):
+    path = tmp_path / "conflicted.uml"
+    path.write_text(
+        "before\n"
+        "<<<<<<< current\n"
+        "current\n"
+        "||||||| base\n"
+        "base\n"
+        "=======\n"
+        "other\n"
+        ">>>>>>> other\n"
+        "after\n",
+        encoding="utf-8",
+    )
+
+    assert xmi_merge.has_conflict_markers(path)
+    assert xmi_merge.resolve_conflict_markers_keep_both(path)
+    assert path.read_text(encoding="utf-8") == "before\ncurrent\nother\nafter\n"
+
+
+def test_removes_duplicate_packaged_elements_retaining_first(tmp_path):
+    path = tmp_path / "duplicates.uml"
+    path.write_text(
+        document(
+            node("duplicate", "first"),
+            node("duplicate", "second"),
+            node("unique"),
+        ),
+        encoding="utf-8",
+    )
+
+    assert xmi_merge.remove_duplicate_packaged_elements(path) == 1
+    result = path.read_text(encoding="utf-8")
+    assert 'name="first"' in result
+    assert 'name="second"' not in result
+    assert ids(path) == ["model", "package", "duplicate", "unique"]
+
+
 def test_validate_defers_when_generator_fails(tmp_path, monkeypatch, capsys):
     monkeypatch.setattr(xmi_merge, "validate_uml_files", lambda _repo: [])
     monkeypatch.setattr(

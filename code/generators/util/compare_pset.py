@@ -1,3 +1,5 @@
+import glob
+import os
 import sys
 import re
 import itertools
@@ -42,53 +44,88 @@ def read(fn):
 
 if __name__ == "__main__":
 
-    t1, t2 = map(read, sys.argv[1:])
-    result = DeepDiff(t1, t2,ignore_order=True)
-
-    for i, (ke, lbl) in enumerate([("iterable_item_added", "additions"), ("values_changed", "modifications"), ("iterable_item_removed", "deletions")]):
-        di = result.to_dict().get(ke, {})
-        
-        if len(di):
+    f1, f2 = sys.argv[1:]
+    assert os.path.isfile(f1) == os.path.isfile(f2)
+    assert os.path.isdir(f1) == os.path.isdir(f2)
+    assert os.path.isdir(f1) or os.path.isfile(f1)
+    
+    if os.path.isfile(f1):
+        fs1 = [f1]
+        fs2 = [f2]
+    else:
+        fs1 = set(map(os.path.basename, glob.glob(os.path.join(f1, '*.xml'))))
+        fs2 = set(map(os.path.basename, glob.glob(os.path.join(f2, '*.xml'))))
+        shared = fs1 & fs2
+        if fs1 - shared:
+            print('# Only in left:\n')
+            for fn in sorted(fs1 - shared):
+                print('-', fn)
             print()
-            print(lbl)
-            print('-'*len(lbl))
-            
-        for k, v in di.items():
-            # when added we need to look at t2
-            root = t2 if i == 0 else t1
-            
-            parts = re.split(r"(?<=\])(?=\[)", k)
-            parts = list(itertools.accumulate(parts))
-            while parts:
-                try:
-                    evaled = list(map(eval, parts))
-                    break
-                except:
-                    parts = parts[:-1]
-                
-            def desc(part):
-                if isinstance(part, dict):
-                    s = [] 
-                    if part.get('#tag'):
-                        s.append(part.get('#tag'))
-                    if [c for c in (part.get('_children') or []) if c.get('#tag') == 'Name']:
-                        t = [c for c in part.get('_children') if c.get('#tag') == 'Name'][0]["#text"]
-                        s.append('[Name="%s"]' % t)
-                    elif part.get('#text', '').strip():
-                        s.append('"%s"' % part.get('#text', '').strip())
-                    if s:
-                        yield " ".join(s)\
-                            .encode('ascii', 'xmlcharrefreplace').decode('ascii')
-                            
-            def format(value):
-                if isinstance(value, str):
-                    return value.encode('ascii', 'xmlcharrefreplace').decode('ascii')
-                elif isinstance(value, dict) and value.get('#tag'):
-                    return "&lt;%s&gt;" % value.get('#tag')
-                return str(value)
+        if fs2 - shared:
+            print('# Only in right:\n')
+            for fn in sorted(fs2 - shared):
+                print('-', fn)
+            print()
+        fs1 = sorted(os.path.join(f1, fn) for fn in shared)
+        fs2 = sorted(os.path.join(f2, fn) for fn in shared)
 
-            print("*", " > ".join(flatmap(desc, evaled)))
+    for f1, f2 in zip(fs1, fs2):
+        emitted_header = False
+
+        t1, t2 = map(read, (f1, f2))
+        result = DeepDiff(t1, t2,ignore_order=True)
+
+        for i, (ke, lbl) in enumerate([("iterable_item_added", "additions"), ("values_changed", "modifications"), ("iterable_item_removed", "deletions")]):
+            di = result.to_dict().get(ke, {})
             
-            if i == 1:
-                old_new = v['old_value'], v['new_value']            
-                print(" ", "~~%s~~ %s" % tuple(map(format, old_new)))
+            if len(di):
+                if not emitted_header:
+                    print('#', os.path.basename(f1))
+                    emitted_header = True
+
+                print()
+                print('##', lbl)
+                print()
+                
+            for k, v in di.items():
+                # when added we need to look at t2
+                root = t2 if i == 0 else t1
+                
+                parts = re.split(r"(?<=\])(?=\[)", k)
+                parts = list(itertools.accumulate(parts))
+                while parts:
+                    try:
+                        evaled = list(map(eval, parts))
+                        break
+                    except:
+                        parts = parts[:-1]
+                    
+                def desc(part):
+                    if isinstance(part, dict):
+                        s = [] 
+                        if part.get('#tag'):
+                            s.append(part.get('#tag'))
+                        if [c for c in (part.get('_children') or []) if c.get('#tag') == 'Name']:
+                            t = [c for c in part.get('_children') if c.get('#tag') == 'Name'][0]["#text"]
+                            s.append('[Name="%s"]' % t)
+                        elif part.get('#text', '').strip():
+                            s.append('"%s"' % part.get('#text', '').strip())
+                        if s:
+                            yield " ".join(s)\
+                                .encode('ascii', 'xmlcharrefreplace').decode('ascii')
+                                
+                def format(value):
+                    if isinstance(value, str):
+                        return value.encode('ascii', 'xmlcharrefreplace').decode('ascii')
+                    elif isinstance(value, dict) and value.get('#tag'):
+                        return "&lt;%s&gt;" % value.get('#tag')
+                    return str(value)
+
+                print("*", " > ".join(flatmap(desc, evaled)))
+                
+                if i == 1:
+                    old_new = v['old_value'], v['new_value']            
+                    print(" ", "~~%s~~ %s" % tuple(map(format, old_new)))
+                
+            if di: print()
+            

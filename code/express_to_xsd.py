@@ -244,7 +244,7 @@ def create_attribute(entity, a, name_override=None):
         
             length_constraint = []
             
-            if a_type.aggregate_type == 'array':
+            if a_type.aggregate_type == 'array' and a_type.bounds.lower.isnumeric() and a_type.bounds.upper.isnumeric():
                 assert min_occurs_mult == 1
                 extent = int(a_type.bounds.upper) - int(a_type.bounds.lower) + 1
                 for c in (XS.minLength, XS.maxLength):
@@ -257,7 +257,7 @@ def create_attribute(entity, a, name_override=None):
                         XS.minLength,
                         {"value": (a_type.bounds.lower * min_occurs_mult)}
                     )]
-                if a_type.bounds.upper != "?" and max_occurs_mult != float("inf"):
+                if a_type.bounds.upper.isnumeric() and max_occurs_mult != float("inf"):
                     length_constraint += [X(
                         XS.maxLength,
                         {"value": (a_type.bounds.upper * max_occurs_mult)}

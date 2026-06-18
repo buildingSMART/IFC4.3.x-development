@@ -51,6 +51,18 @@ class SourceNode:
         return self.attrs.get(XMI_ID)
 
 
+@dataclass(frozen=True)
+class _ConflictBlock:
+    current: tuple[bytes, ...]
+    other: tuple[bytes, ...]
+
+
+@dataclass(frozen=True)
+class _PeelChoice:
+    direction: str = ""
+    count: int = 0
+
+
 class SourceDocument:
     """Parsed XML plus source byte ranges for every element."""
 
@@ -446,17 +458,124 @@ def has_conflict_markers(path: Path) -> bool:
     )
 
 
+def _xml_well_formed_error(data: bytes, label: Path | str) -> str | None:
+    parser = expat.ParserCreate()
+    try:
+        parser.Parse(data, True)
+    except expat.ExpatError as exc:
+        return f"{label}: invalid XML: {exc}"
+    return None
+
+
+def _render_conflict_marker_parts(
+    parts: Sequence[bytes | _ConflictBlock],
+    choices: Sequence[_PeelChoice] | None = None,
+) -> bytes:
+    output: list[bytes] = []
+    block_index = 0
+    for part in parts:
+        if not isinstance(part, _ConflictBlock):
+            output.append(part)
+            continue
+
+        choice = choices[block_index] if choices is not None else _PeelChoice()
+        current = list(part.current)
+        other = list(part.other)
+        if choice.direction == "current_tail":
+            current = current[: -choice.count]
+        elif choice.direction == "other_head":
+            other = other[choice.count :]
+        elif choice.direction:
+            raise AssertionError(f"unknown peel direction {choice.direction!r}")
+
+        output.extend(current)
+        output.extend(other)
+        block_index += 1
+    return b"".join(output)
+
+
+def _next_peel_choices(
+    block: _ConflictBlock, choice: _PeelChoice
+) -> list[_PeelChoice]:
+    if not choice.direction:
+        result: list[_PeelChoice] = []
+        if block.current:
+            result.append(_PeelChoice("current_tail", 1))
+        if block.other:
+            result.append(_PeelChoice("other_head", 1))
+        return result
+    if choice.direction == "current_tail" and choice.count < len(block.current):
+        return [_PeelChoice("current_tail", choice.count + 1)]
+    if choice.direction == "other_head" and choice.count < len(block.other):
+        return [_PeelChoice("other_head", choice.count + 1)]
+    return []
+
+
+def _peel_cost(choices: Sequence[_PeelChoice]) -> int:
+    return sum(choice.count for choice in choices)
+
+
+def _describe_peel_choices(choices: Sequence[_PeelChoice]) -> str:
+    descriptions: list[str] = []
+    for index, choice in enumerate(choices, start=1):
+        if not choice.count:
+            continue
+        side = "current tail" if choice.direction == "current_tail" else "other head"
+        plural = "" if choice.count == 1 else "s"
+        descriptions.append(f"block {index}: {choice.count} line{plural} from {side}")
+    return "; ".join(descriptions)
+
+
+def _repair_conflict_markers_by_peeling(
+    parts: Sequence[bytes | _ConflictBlock], label: Path | str
+) -> tuple[bytes, tuple[_PeelChoice, ...]] | None:
+    blocks = [part for part in parts if isinstance(part, _ConflictBlock)]
+    if not blocks:
+        return None
+
+    initial = tuple(_PeelChoice() for _ in blocks)
+    heap: list[tuple[int, int, tuple[_PeelChoice, ...]]] = [(0, 0, initial)]
+    seen = {initial}
+    sequence = 0
+    searched = 0
+    max_states = 20000
+
+    while heap and searched < max_states:
+        _cost, _sequence, choices = heapq.heappop(heap)
+        searched += 1
+        if _peel_cost(choices):
+            data = _render_conflict_marker_parts(parts, choices)
+            if _xml_well_formed_error(data, label) is None:
+                return data, choices
+
+        for block_index, block in enumerate(blocks):
+            for next_choice in _next_peel_choices(block, choices[block_index]):
+                next_choices = (
+                    choices[:block_index]
+                    + (next_choice,)
+                    + choices[block_index + 1 :]
+                )
+                if next_choices in seen:
+                    continue
+                seen.add(next_choices)
+                sequence += 1
+                heapq.heappush(
+                    heap, (_peel_cost(next_choices), sequence, next_choices)
+                )
+    return None
+
+
 def resolve_conflict_markers_keep_both(path: Path) -> bool:
     """Remove Git conflict markers by retaining current lines followed by other lines."""
 
     lines = path.read_bytes().splitlines(keepends=True)
-    output: list[bytes] = []
+    parts: list[bytes | _ConflictBlock] = []
     changed = False
     index = 0
     while index < len(lines):
         line = lines[index]
         if not line.startswith(b"<<<<<<< "):
-            output.append(line)
+            parts.append(line)
             index += 1
             continue
 
@@ -487,11 +606,20 @@ def resolve_conflict_markers_keep_both(path: Path) -> bool:
             raise MergeConflict(f"{path}: unterminated conflict marker")
 
         index += 1
-        output.extend(current)
-        output.extend(other)
+        parts.append(_ConflictBlock(tuple(current), tuple(other)))
 
     if changed:
-        path.write_bytes(b"".join(output))
+        data = _render_conflict_marker_parts(parts)
+        if path.suffix.lower() == ".uml" and _xml_well_formed_error(data, path):
+            repaired = _repair_conflict_markers_by_peeling(parts, path)
+            if repaired is not None:
+                data, choices = repaired
+                print(
+                    f"xmi-merge: {path}: repaired conflict markers by peeling "
+                    f"{_describe_peel_choices(choices)}",
+                    file=sys.stderr,
+                )
+        path.write_bytes(data)
     return changed
 
 

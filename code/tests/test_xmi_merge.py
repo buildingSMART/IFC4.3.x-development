@@ -149,6 +149,32 @@ def test_resolves_conflict_markers_by_keeping_both_sides(tmp_path):
     assert path.read_text(encoding="utf-8") == "before\ncurrent\nother\nafter\n"
 
 
+def test_repairs_unbalanced_keep_both_conflict_by_peeling_boundary_line(tmp_path):
+    path = tmp_path / "conflicted.uml"
+    path.write_text(
+        HEADER
+        + MODEL_OPEN
+        + "<<<<<<< current\n"
+        + '    <packagedElement xmi:type="uml:Class" xmi:id="duplicate" name="current">\n'
+        + "||||||| base\n"
+        + "=======\n"
+        + '    <packagedElement xmi:type="uml:Class" xmi:id="added" name="added"/>\n'
+        + '    <packagedElement xmi:type="uml:Class" xmi:id="duplicate" name="other">\n'
+        + ">>>>>>> other\n"
+        + '      <ownedComment xmi:type="uml:Comment" xmi:id="duplicate_comment"/>\n'
+        + "    </packagedElement>\n"
+        + MODEL_CLOSE,
+        encoding="utf-8",
+    )
+
+    assert xmi_merge.resolve_conflict_markers_keep_both(path)
+    result = path.read_text(encoding="utf-8")
+    SourceDocument(path)
+    assert 'xmi:id="added"' in result
+    assert 'name="current"' not in result
+    assert 'name="other"' in result
+
+
 def test_removes_duplicate_packaged_elements_retaining_first(tmp_path):
     path = tmp_path / "duplicates.uml"
     path.write_text(

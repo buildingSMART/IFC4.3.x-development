@@ -1,0 +1,361 @@
+import json
+from pathlib import Path
+
+import pytest
+
+from tools import git_ifc
+from tools.git_ifc import MergeState, PullRequest, WorkflowError
+
+
+def completed(stdout="", returncode=0, stderr=""):
+    return type(
+        "Result",
+        (),
+        {"stdout": stdout, "stderr": stderr, "returncode": returncode},
+    )()
+
+
+def gh_pr_value(number, state="OPEN", *, updated_at=None):
+    updated_at = updated_at or f"2026-06-{number:02d}T00:00:00Z"
+    return {
+        "number": number,
+        "title": f"PR {number}",
+        "headRefName": f"content/pr-{number}",
+        "headRefOid": f"{number:040x}",
+        "headRepositoryOwner": {"login": "owner"},
+        "baseRefName": "main",
+        "baseRefOid": "b" * 40,
+        "isDraft": False,
+        "state": state,
+        "url": f"https://example.test/pull/{number}",
+        "author": {"login": "author"},
+        "updatedAt": updated_at,
+        "mergedAt": "2026-06-14T00:00:00Z" if state == "MERGED" else None,
+    }
+
+
+def pr(number, head, title, *, draft=False, pr_state="OPEN", base_oid=None):
+    return PullRequest(
+        number=number,
+        title=title,
+        head_ref=head,
+        head_oid=f"{number:040x}",
+        head_owner="owner",
+        base_ref="main",
+        base_oid=base_oid or "b" * 40,
+        is_draft=draft,
+        state=pr_state,
+        url=f"https://example.test/pull/{number}",
+        author="author",
+        updated_at="2026-06-15T00:00:00Z",
+        merged_at="2026-06-14T00:00:00Z" if pr_state == "MERGED" else None,
+    )
+
+
+def state():
+    pull_request = pr(12, "content/tf01", "[TF01] Foundations")
+    return MergeState(
+        version=git_ifc.STATE_VERSION,
+        remote="origin",
+        repository="owner/repo",
+        branch="main",
+        start_head="a" * 40,
+        pr_ref="refs/ifc/pr/12",
+        fetched_oid=pull_request.head_oid,
+        replay_oid=pull_request.head_oid,
+        commit_message="Merge PR",
+        started_at="2026-06-15T00:00:00+00:00",
+        pull_request=git_ifc.asdict(pull_request),
+        base="main",
+        include_drafts=False,
+        remaining_selectors=[],
+    )
+
+
+def test_selects_by_number_branch_and_title_token():
+    pull_requests = [
+        pr(12, "content/tf01", "[TF01] Foundations"),
+        pr(13, "tm02", "[TM02] Something else"),
+    ]
+
+    assert git_ifc.select_pull_request(pull_requests, "#12").number == 12
+    assert git_ifc.select_pull_request(pull_requests, "TF01").number == 12
+    assert git_ifc.select_pull_request(pull_requests, "content/tf01").number == 12
+
+
+def test_rejects_ambiguous_selector():
+    pull_requests = [
+        pr(12, "content/tf01", "[TF01] Foundations"),
+        pr(13, "review/tf01", "[TF01] Alternative"),
+    ]
+
+    with pytest.raises(WorkflowError, match="multiple"):
+        git_ifc.select_pull_request(pull_requests, "TF01")
+
+
+def test_lists_open_and_merged_pull_requests_by_default(tmp_path, monkeypatch):
+    seen_states = []
+
+    def fake_run(command, _repo, **_kwargs):
+        gh_state = command[command.index("--state") + 1]
+        seen_states.append(gh_state)
+        values = {
+            "open": [gh_pr_value(12, "OPEN", updated_at="2026-06-12T00:00:00Z")],
+            "merged": [gh_pr_value(10, "MERGED", updated_at="2026-06-10T00:00:00Z")],
+        }[gh_state]
+        return completed(stdout=json.dumps(values))
+
+    monkeypatch.setattr(git_ifc, "_run", fake_run)
+
+    pull_requests = git_ifc.list_pull_requests(tmp_path, "owner/repo")
+
+    assert seen_states == ["open", "merged"]
+    assert [(pr.number, pr.state) for pr in pull_requests] == [
+        (12, "OPEN"),
+        (10, "MERGED"),
+    ]
+
+
+def test_list_state_filter_only_queries_requested_state(tmp_path, monkeypatch):
+    seen_states = []
+
+    def fake_run(command, _repo, **_kwargs):
+        gh_state = command[command.index("--state") + 1]
+        seen_states.append(gh_state)
+        return completed(stdout=json.dumps([gh_pr_value(10, "MERGED")]))
+
+    monkeypatch.setattr(git_ifc, "_run", fake_run)
+
+    pull_requests = git_ifc.list_pull_requests(
+        tmp_path, "owner/repo", state="merged"
+    )
+
+    assert seen_states == ["merged"]
+    assert pull_requests[0].state == "MERGED"
+
+
+def test_print_pull_requests_includes_state(capsys):
+    git_ifc._print_pull_requests(
+        [
+            pr(12, "content/tf01", "[TF01] Foundations"),
+            pr(10, "content/tm10", "[TM10] Earlier", pr_state="MERGED"),
+        ]
+    )
+
+    output = capsys.readouterr().out
+    assert "STATE" in output
+    assert "OPEN" in output
+    assert "MERGED" in output
+
+
+def test_replay_source_peels_terminal_base_sync_merge(tmp_path, monkeypatch):
+    base_oid = "b" * 40
+    topic_oid = "c" * 40
+    fetched_oid = "d" * 40
+    pull_request = pr(20, "content/tm20", "[TM20] Full", base_oid=base_oid)
+
+    def fake_git(_repo, *args, **_kwargs):
+        assert args == ("show", "-s", "--format=%P", fetched_oid)
+        return completed(stdout=f"{topic_oid} {base_oid}\n")
+
+    monkeypatch.setattr(git_ifc, "_git", fake_git)
+
+    assert git_ifc._replay_source_oid(tmp_path, pull_request, fetched_oid) == topic_oid
+
+
+def test_replay_source_keeps_non_base_merge_head(tmp_path, monkeypatch):
+    fetched_oid = "d" * 40
+    pull_request = pr(20, "content/tm20", "[TM20] Full", base_oid="b" * 40)
+
+    def fake_git(_repo, *args, **_kwargs):
+        assert args == ("show", "-s", "--format=%P", fetched_oid)
+        return completed(stdout=f"{'c' * 40} {'e' * 40}\n")
+
+    monkeypatch.setattr(git_ifc, "_git", fake_git)
+
+    assert git_ifc._replay_source_oid(tmp_path, pull_request, fetched_oid) == fetched_oid
+
+
+def test_parser_accepts_multiple_merge_selectors():
+    args = git_ifc.build_parser().parse_args(["pr", "merge", "tf02", "tf03"])
+
+    assert args.selectors == ["tf02", "tf03"]
+
+
+def test_start_pr_merges_processes_selectors_in_order(tmp_path, monkeypatch):
+    seen = []
+
+    def fake_start_pr_merge(_repo, selector, **kwargs):
+        seen.append(
+            (
+                selector,
+                kwargs["remote_name"],
+                kwargs["base"],
+                kwargs["include_drafts"],
+                tuple(kwargs["remaining_selectors"]),
+            )
+        )
+        return 0
+
+    monkeypatch.setattr(git_ifc, "start_pr_merge", fake_start_pr_merge)
+
+    assert (
+        git_ifc.start_pr_merges(
+            tmp_path,
+            ["tf02", "tf03"],
+            remote_name="upstream",
+            base="ifc4.4-main",
+            include_drafts=True,
+        )
+        == 0
+    )
+    assert seen == [
+        ("tf02", "upstream", "ifc4.4-main", True, ("tf03",)),
+        ("tf03", "upstream", "ifc4.4-main", True, ()),
+    ]
+
+
+def test_start_pr_merges_stops_on_first_nonzero_result(tmp_path, monkeypatch):
+    seen = []
+
+    def fake_start_pr_merge(_repo, selector, **_kwargs):
+        seen.append(selector)
+        return 1
+
+    monkeypatch.setattr(git_ifc, "start_pr_merge", fake_start_pr_merge)
+
+    assert git_ifc.start_pr_merges(tmp_path, ["tf02", "tf03"]) == 1
+    assert seen == ["tf02"]
+
+
+def test_continue_resumes_remaining_selectors(tmp_path, monkeypatch):
+    expected = state()
+    expected.remaining_selectors = ["tf03", "tf04"]
+    expected.base = "ifc4.4-main"
+    expected.include_drafts = True
+    seen = []
+
+    monkeypatch.setattr(git_ifc, "_load_state", lambda _repo: expected)
+    monkeypatch.setattr(git_ifc, "_current_branch", lambda _repo: "main")
+    monkeypatch.setattr(git_ifc, "_finish_merge", lambda _repo, _state: 0)
+
+    def fake_start_pr_merges(_repo, selectors, **kwargs):
+        seen.append(
+            (
+                list(selectors),
+                kwargs["remote_name"],
+                kwargs["base"],
+                kwargs["include_drafts"],
+            )
+        )
+        return 0
+
+    monkeypatch.setattr(git_ifc, "start_pr_merges", fake_start_pr_merges)
+
+    assert git_ifc.continue_pr_merge(tmp_path) == 0
+    assert seen == [(["tf03", "tf04"], "origin", "ifc4.4-main", True)]
+
+
+def test_merge_state_round_trip(tmp_path, monkeypatch):
+    state_path = tmp_path / "state.json"
+    monkeypatch.setattr(git_ifc, "_state_path", lambda _repo: state_path)
+
+    expected = state()
+    git_ifc._write_state(tmp_path, expected)
+
+    assert git_ifc._load_state(tmp_path) == expected
+    git_ifc._clear_state(tmp_path)
+    assert git_ifc._load_state(tmp_path) is None
+
+
+def test_remote_name_prefers_argument_then_config(tmp_path, monkeypatch):
+    seen = []
+    monkeypatch.setattr(git_ifc, "_config", lambda _repo, _key: "configured")
+    monkeypatch.setattr(
+        git_ifc,
+        "_git",
+        lambda _repo, *args, **kwargs: (
+            seen.append(args)
+            or type("Result", (), {"returncode": 0, "stdout": "url\n"})()
+        ),
+    )
+
+    assert git_ifc._remote_name(tmp_path, "explicit") == "explicit"
+    assert seen[-1] == ("remote", "get-url", "explicit")
+    assert git_ifc._remote_name(tmp_path, None) == "configured"
+    assert seen[-1] == ("remote", "get-url", "configured")
+
+
+def test_continue_defers_while_files_are_unmerged(tmp_path, monkeypatch, capsys):
+    expected = state()
+    monkeypatch.setattr(git_ifc, "_load_state", lambda _repo: expected)
+    monkeypatch.setattr(git_ifc, "_current_branch", lambda _repo: "main")
+    monkeypatch.setattr(git_ifc, "_merge_in_progress", lambda _repo: True)
+    monkeypatch.setattr(
+        git_ifc,
+        "_git",
+        lambda _repo, *args, **kwargs: type(
+            "Result", (), {"stdout": expected.start_head + "\n"}
+        )(),
+    )
+    monkeypatch.setattr(git_ifc, "_unmerged_paths", lambda _repo: ["schemas/A.uml"])
+
+    assert git_ifc.continue_pr_merge(tmp_path) == 1
+    assert "schemas/A.uml" in capsys.readouterr().err
+
+
+def test_finish_does_not_commit_when_validation_fails(tmp_path, monkeypatch):
+    expected = state()
+    commands = []
+    monkeypatch.setattr(git_ifc, "_merge_in_progress", lambda _repo: True)
+    monkeypatch.setattr(git_ifc, "_unmerged_paths", lambda _repo: [])
+    monkeypatch.setattr(git_ifc, "_unstaged_paths", lambda _repo: [])
+    monkeypatch.setattr(git_ifc.xmi_merge, "validate_command", lambda _repo: 1)
+    monkeypatch.setattr(
+        git_ifc,
+        "_git",
+        lambda _repo, *args, **kwargs: (
+            type("Result", (), {"stdout": expected.start_head + "\n"})()
+            if args == ("rev-parse", "HEAD")
+            else commands.append(args)
+        ),
+    )
+
+    assert git_ifc._finish_merge(tmp_path, expected) == 1
+    assert commands == []
+
+
+def test_finish_commits_and_clears_state(tmp_path, monkeypatch):
+    expected = state()
+    commands = []
+    cleared = []
+    monkeypatch.setattr(git_ifc, "_merge_in_progress", lambda _repo: True)
+    monkeypatch.setattr(git_ifc, "_unmerged_paths", lambda _repo: [])
+    monkeypatch.setattr(git_ifc, "_unstaged_paths", lambda _repo: [])
+    monkeypatch.setattr(git_ifc.xmi_merge, "validate_command", lambda _repo: 0)
+    monkeypatch.setattr(
+        git_ifc,
+        "_git",
+        lambda _repo, *args, **kwargs: (
+            type("Result", (), {"stdout": expected.start_head + "\n"})()
+            if args == ("rev-parse", "HEAD")
+            else commands.append(args)
+        ),
+    )
+    monkeypatch.setattr(git_ifc, "_clear_state", lambda _repo: cleared.append(True))
+
+    assert git_ifc._finish_merge(tmp_path, expected) == 0
+    assert commands == [("commit", "-m", "Merge PR")]
+    assert cleared == [True]
+
+
+def test_abort_does_not_touch_unrelated_merge(tmp_path, monkeypatch):
+    monkeypatch.setattr(git_ifc, "_load_state", lambda _repo: None)
+    commands = []
+    monkeypatch.setattr(
+        git_ifc, "_git", lambda _repo, *args, **kwargs: commands.append(args)
+    )
+
+    with pytest.raises(WorkflowError, match="no IFC PR merge"):
+        git_ifc.abort_pr_merge(tmp_path)
+    assert commands == []

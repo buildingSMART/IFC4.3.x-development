@@ -1,0 +1,696 @@
+"""GitHub pull-request workflow for the IFC structural merge driver."""
+
+from __future__ import annotations
+
+import argparse
+import json
+import os
+import re
+import shlex
+import subprocess
+import sys
+from dataclasses import asdict, dataclass
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any, Sequence
+
+try:
+    from . import xmi_merge
+except ImportError:  # Executed directly instead of as a package.
+    import xmi_merge  # type: ignore[no-redef]
+
+STATE_VERSION = 3
+STATE_NAME = "ifc-pr-merge-state.json"
+PR_JSON_FIELDS = (
+    "number,title,headRefName,headRefOid,headRepositoryOwner,"
+    "baseRefName,baseRefOid,isDraft,url,author,updatedAt,state,mergedAt"
+)
+SELECTABLE_PR_STATES = {"OPEN", "MERGED"}
+LIST_PR_STATES = {"all", "open", "merged"}
+
+
+class WorkflowError(RuntimeError):
+    """Raised for an actionable PR workflow error."""
+
+
+@dataclass(frozen=True)
+class PullRequest:
+    number: int
+    title: str
+    head_ref: str
+    head_oid: str
+    head_owner: str
+    base_ref: str
+    base_oid: str
+    is_draft: bool
+    state: str
+    url: str
+    author: str
+    updated_at: str
+    merged_at: str | None
+
+    @classmethod
+    def from_gh(cls, value: dict[str, Any]) -> PullRequest:
+        head_owner = value.get("headRepositoryOwner") or {}
+        author = value.get("author") or {}
+        merged_at = value.get("mergedAt")
+        return cls(
+            number=int(value["number"]),
+            title=str(value["title"]),
+            head_ref=str(value["headRefName"]),
+            head_oid=str(value["headRefOid"]),
+            head_owner=str(head_owner.get("login") or head_owner.get("name") or ""),
+            base_ref=str(value["baseRefName"]),
+            base_oid=str(value.get("baseRefOid") or ""),
+            is_draft=bool(value["isDraft"]),
+            state=str(value.get("state") or "OPEN").upper(),
+            url=str(value["url"]),
+            author=str(author.get("login") or author.get("name") or ""),
+            updated_at=str(value["updatedAt"]),
+            merged_at=str(merged_at) if merged_at is not None else None,
+        )
+
+
+@dataclass
+class MergeState:
+    version: int
+    remote: str
+    repository: str
+    branch: str
+    start_head: str
+    pr_ref: str
+    fetched_oid: str
+    replay_oid: str
+    commit_message: str
+    started_at: str
+    pull_request: dict[str, Any]
+    base: str | None = None
+    include_drafts: bool = False
+    remaining_selectors: list[str] | None = None
+
+
+def _run(
+    args: Sequence[str],
+    repo_root: Path,
+    *,
+    check: bool = True,
+    capture: bool = True,
+    env: dict[str, str] | None = None,
+) -> subprocess.CompletedProcess[str]:
+    process = subprocess.run(
+        list(args),
+        cwd=repo_root,
+        env=env,
+        text=True,
+        stdout=subprocess.PIPE if capture else None,
+        stderr=subprocess.PIPE if capture else None,
+        check=False,
+    )
+    if check and process.returncode:
+        message = (process.stderr or process.stdout or "").strip()
+        raise WorkflowError(message or f"command failed: {shlex.join(args)}")
+    return process
+
+
+def _git(
+    repo_root: Path,
+    *args: str,
+    check: bool = True,
+    capture: bool = True,
+    env: dict[str, str] | None = None,
+) -> subprocess.CompletedProcess[str]:
+    return _run(
+        ["git", *args],
+        repo_root,
+        check=check,
+        capture=capture,
+        env=env,
+    )
+
+
+def _config(repo_root: Path, key: str) -> str | None:
+    process = _git(repo_root, "config", "--get", key, check=False)
+    if process.returncode:
+        return None
+    return process.stdout.strip() or None
+
+
+def _remote_name(repo_root: Path, requested: str | None) -> str:
+    remote = requested or _config(repo_root, "ifc.remote") or "origin"
+    process = _git(repo_root, "remote", "get-url", remote, check=False)
+    if process.returncode:
+        raise WorkflowError(f"Git remote {remote!r} does not exist")
+    return remote
+
+
+def _repository_name(repo_root: Path, remote: str) -> str:
+    remote_url = _git(repo_root, "remote", "get-url", remote).stdout.strip()
+    process = _run(
+        ["gh", "repo", "view", remote_url, "--json", "nameWithOwner"],
+        repo_root,
+        check=False,
+    )
+    if process.returncode:
+        message = (process.stderr or process.stdout).strip()
+        raise WorkflowError(
+            f"cannot resolve GitHub repository for remote {remote!r}: {message}"
+        )
+    return str(json.loads(process.stdout)["nameWithOwner"])
+
+
+def list_pull_requests(
+    repo_root: Path,
+    repository: str,
+    *,
+    base: str | None = None,
+    limit: int = 100,
+    state: str = "all",
+) -> list[PullRequest]:
+    if state not in LIST_PR_STATES:
+        raise WorkflowError(f"unsupported PR state filter {state!r}")
+    gh_states = ("open", "merged") if state == "all" else (state,)
+    pull_requests: list[PullRequest] = []
+    for gh_state in gh_states:
+        command = [
+            "gh",
+            "pr",
+            "list",
+            "--repo",
+            repository,
+            "--state",
+            gh_state,
+            "--limit",
+            str(limit),
+            "--json",
+            PR_JSON_FIELDS,
+        ]
+        if base:
+            command.extend(["--base", base])
+        process = _run(command, repo_root)
+        pull_requests.extend(
+            pr
+            for pr in (PullRequest.from_gh(value) for value in json.loads(process.stdout))
+            if pr.state in SELECTABLE_PR_STATES
+        )
+    pull_requests.sort(key=lambda pr: pr.updated_at, reverse=True)
+    return pull_requests[:limit]
+
+
+def get_pull_request(
+    repo_root: Path, repository: str, number: int
+) -> PullRequest:
+    process = _run(
+        [
+            "gh",
+            "pr",
+            "view",
+            str(number),
+            "--repo",
+            repository,
+            "--json",
+            PR_JSON_FIELDS,
+        ],
+        repo_root,
+    )
+    value = json.loads(process.stdout)
+    pr = PullRequest.from_gh(value)
+    if pr.state not in SELECTABLE_PR_STATES:
+        raise WorkflowError(
+            f"pull request #{number} is {pr.state.lower()}; only open or merged "
+            "pull requests can be processed"
+        )
+    return pr
+
+
+def _normalise_selector(value: str) -> str:
+    return re.sub(r"[^a-z0-9]", "", value.casefold())
+
+
+def select_pull_request(
+    pull_requests: Sequence[PullRequest], selector: str
+) -> PullRequest:
+    selector = selector.strip()
+    number_match = re.fullmatch(r"#?(\d+)", selector)
+    if number_match:
+        number = int(number_match.group(1))
+        matches = [pr for pr in pull_requests if pr.number == number]
+        if not matches:
+            raise WorkflowError(f"no open or merged pull request #{number}")
+        return matches[0]
+
+    folded = selector.casefold()
+    normalised = _normalise_selector(selector)
+    exact = [
+        pr
+        for pr in pull_requests
+        if folded
+        in {
+            pr.head_ref.casefold(),
+            pr.head_ref.rsplit("/", 1)[-1].casefold(),
+            pr.title.casefold(),
+        }
+        or normalised
+        in {
+            _normalise_selector(pr.head_ref),
+            _normalise_selector(pr.head_ref.rsplit("/", 1)[-1]),
+            _normalise_selector(pr.title),
+        }
+    ]
+    if len(exact) == 1:
+        return exact[0]
+    if len(exact) > 1:
+        raise WorkflowError(
+            f"selector {selector!r} matches multiple pull requests: "
+            + ", ".join(f"#{pr.number} {pr.head_ref}" for pr in exact)
+        )
+
+    partial = [
+        pr
+        for pr in pull_requests
+        if folded in pr.head_ref.casefold()
+        or folded in pr.title.casefold()
+        or (normalised and normalised in _normalise_selector(pr.title))
+    ]
+    if len(partial) == 1:
+        return partial[0]
+    if not partial:
+        raise WorkflowError(f"no open or merged pull request matches {selector!r}")
+    raise WorkflowError(
+        f"selector {selector!r} is ambiguous: "
+        + ", ".join(f"#{pr.number} {pr.head_ref}" for pr in partial)
+    )
+
+
+def _print_pull_requests(pull_requests: Sequence[PullRequest]) -> None:
+    if not pull_requests:
+        print("No open or merged pull requests.")
+        return
+    number_width = max(3, max(len(str(pr.number)) for pr in pull_requests))
+    state_width = max(5, max(len(pr.state) for pr in pull_requests))
+    base_width = max(4, max(len(pr.base_ref) for pr in pull_requests))
+    head_width = max(4, max(len(pr.head_ref) for pr in pull_requests))
+    print(
+        f"{'PR':>{number_width + 1}}  "
+        f"{'STATE':<{state_width}}  "
+        f"{'BASE':<{base_width}}  "
+        f"{'HEAD':<{head_width}}  "
+        "TITLE"
+    )
+    for pr in pull_requests:
+        draft = " [draft]" if pr.is_draft else ""
+        number = f"#{pr.number}"
+        print(
+            f"{number:>{number_width + 1}}  "
+            f"{pr.state:<{state_width}}  "
+            f"{pr.base_ref:<{base_width}}  "
+            f"{pr.head_ref:<{head_width}}  "
+            f"{pr.title}{draft}"
+        )
+
+
+def _state_path(repo_root: Path) -> Path:
+    output = _git(
+        repo_root,
+        "rev-parse",
+        "--path-format=absolute",
+        "--git-path",
+        STATE_NAME,
+    ).stdout.strip()
+    return Path(output)
+
+
+def _load_state(repo_root: Path) -> MergeState | None:
+    path = _state_path(repo_root)
+    if not path.exists():
+        return None
+    try:
+        value = json.loads(path.read_text(encoding="utf-8"))
+        state = MergeState(**value)
+    except (OSError, TypeError, ValueError) as exc:
+        raise WorkflowError(f"cannot read merge state {path}: {exc}") from exc
+    if state.version != STATE_VERSION:
+        raise WorkflowError(
+            f"unsupported merge-state version {state.version} in {path}"
+        )
+    return state
+
+
+def _write_state(repo_root: Path, state: MergeState) -> None:
+    path = _state_path(repo_root)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = path.with_suffix(path.suffix + ".tmp")
+    temporary.write_text(
+        json.dumps(asdict(state), indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+    temporary.replace(path)
+
+
+def _clear_state(repo_root: Path) -> None:
+    _state_path(repo_root).unlink(missing_ok=True)
+
+
+def _merge_in_progress(repo_root: Path) -> bool:
+    return (
+        _git(repo_root, "rev-parse", "-q", "--verify", "MERGE_HEAD", check=False)
+        .returncode
+        == 0
+    )
+
+
+def _current_branch(repo_root: Path) -> str:
+    process = _git(repo_root, "symbolic-ref", "--quiet", "--short", "HEAD", check=False)
+    if process.returncode:
+        return "<detached>"
+    return process.stdout.strip()
+
+
+def _require_clean_start(repo_root: Path) -> None:
+    if _load_state(repo_root):
+        raise WorkflowError(
+            "an IFC PR merge is already active; use `git ifc pr merge --continue` "
+            "or `git ifc pr merge --abort`"
+        )
+    if _merge_in_progress(repo_root):
+        raise WorkflowError("another Git merge is already in progress")
+    status = _git(repo_root, "status", "--porcelain").stdout
+    # if status.strip():
+    #     raise WorkflowError("working tree must be clean before starting a PR merge")
+
+
+def _driver_environment(script_path: Path) -> dict[str, str]:
+    env = os.environ.copy()
+    env.update(
+        {
+            "GIT_CONFIG_COUNT": "2",
+            "GIT_CONFIG_KEY_0": "merge.ifc-xmi.name",
+            "GIT_CONFIG_VALUE_0": "IFC UML structural merge",
+            "GIT_CONFIG_KEY_1": "merge.ifc-xmi.driver",
+            "GIT_CONFIG_VALUE_1": xmi_merge._driver_command(script_path),
+        }
+    )
+    return env
+
+
+def _commit_message(pr: PullRequest) -> str:
+    source = f"{pr.head_owner}/{pr.head_ref}" if pr.head_owner else pr.head_ref
+    return f"Merge pull request #{pr.number} from {source}\n\n{pr.title}"
+
+
+def _replay_source_oid(repo_root: Path, pr: PullRequest, fetched_oid: str) -> str:
+    parents = _git(repo_root, "show", "-s", "--format=%P", fetched_oid).stdout.split()
+    if pr.base_oid and len(parents) == 2 and pr.base_oid in parents:
+        topic_parents = [parent for parent in parents if parent != pr.base_oid]
+        if len(topic_parents) == 1:
+            return topic_parents[0]
+    return fetched_oid
+
+
+def _fetch_pull_request(
+    repo_root: Path, remote: str, repository: str, pr: PullRequest
+) -> tuple[str, PullRequest, str, str]:
+    pr_ref = f"refs/ifc/pr/{pr.number}"
+    _git(
+        repo_root,
+        "fetch",
+        "--force",
+        remote,
+        f"+refs/pull/{pr.number}/head:{pr_ref}",
+        capture=False,
+    )
+    fetched_oid = _git(repo_root, "rev-parse", pr_ref).stdout.strip()
+    current_pr = get_pull_request(repo_root, repository, pr.number)
+    if fetched_oid != current_pr.head_oid:
+        raise WorkflowError(
+            f"fetched PR #{pr.number} at {fetched_oid[:12]}, but GitHub reports "
+            f"{current_pr.head_oid[:12]}; retry the merge"
+        )
+    replay_oid = _replay_source_oid(repo_root, current_pr, fetched_oid)
+    return pr_ref, current_pr, fetched_oid, replay_oid
+
+
+def _unmerged_paths(repo_root: Path) -> list[str]:
+    return _git(
+        repo_root, "diff", "--name-only", "--diff-filter=U"
+    ).stdout.splitlines()
+
+
+def _unstaged_paths(repo_root: Path) -> list[str]:
+    return _git(repo_root, "diff", "--name-only").stdout.splitlines()
+
+
+def _finish_merge(repo_root: Path, state: MergeState) -> int:
+    if not _merge_in_progress(repo_root):
+        raise WorkflowError(
+            "saved PR merge state exists, but Git has no MERGE_HEAD; "
+            "use `git ifc pr merge --abort` to clear stale state"
+        )
+    current_head = _git(repo_root, "rev-parse", "HEAD").stdout.strip()
+    if current_head != state.start_head:
+        raise WorkflowError(
+            f"HEAD changed from {state.start_head[:12]} to {current_head[:12]} "
+            "while the PR merge was active"
+        )
+    unmerged = _unmerged_paths(repo_root)
+    if unmerged:
+        print("PR merge still has unresolved files:", file=sys.stderr)
+        for path in unmerged:
+            print(f"  {path}", file=sys.stderr)
+        print("Resolve and `git add` them, then run `git ifc pr merge --continue`.", file=sys.stderr)
+        return 1
+    unstaged = _unstaged_paths(repo_root)
+    if unstaged:
+        print("PR merge has unstaged changes:", file=sys.stderr)
+        for path in unstaged:
+            print(f"  {path}", file=sys.stderr)
+        print("Stage them before continuing.", file=sys.stderr)
+        return 1
+    if xmi_merge.validate_command(repo_root):
+        return 1
+    _git(repo_root, "commit", "-m", state.commit_message, capture=False)
+    _clear_state(repo_root)
+    pr = PullRequest(**state.pull_request)
+    print(f"Merged PR #{pr.number}: {pr.title}")
+    print("The merge commit is local; push it when ready.")
+    return 0
+
+
+def start_pr_merge(
+    repo_root: Path,
+    selector: str,
+    *,
+    remote_name: str | None = None,
+    base: str | None = None,
+    include_drafts: bool = False,
+    remaining_selectors: Sequence[str] = (),
+) -> int:
+    _require_clean_start(repo_root)
+    remote = _remote_name(repo_root, remote_name)
+    repository = _repository_name(repo_root, remote)
+    configured_base = base or _config(repo_root, "ifc.base")
+    pull_requests = list_pull_requests(
+        repo_root, repository, base=configured_base, limit=1000, state="all"
+    )
+    if not include_drafts:
+        pull_requests = [pr for pr in pull_requests if not pr.is_draft]
+    pr = select_pull_request(pull_requests, selector)
+    pr_ref, pr, fetched_oid, replay_oid = _fetch_pull_request(
+        repo_root, remote, repository, pr
+    )
+    if replay_oid != fetched_oid:
+        print(
+            f"PR #{pr.number} head {fetched_oid[:12]} is a terminal base-sync "
+            f"merge; replaying topic parent {replay_oid[:12]}."
+        )
+    state = MergeState(
+        version=STATE_VERSION,
+        remote=remote,
+        repository=repository,
+        branch=_current_branch(repo_root),
+        start_head=_git(repo_root, "rev-parse", "HEAD").stdout.strip(),
+        pr_ref=pr_ref,
+        fetched_oid=fetched_oid,
+        replay_oid=replay_oid,
+        commit_message=_commit_message(pr),
+        started_at=datetime.now(timezone.utc).isoformat(),
+        pull_request=asdict(pr),
+        base=configured_base,
+        include_drafts=include_drafts,
+        remaining_selectors=list(remaining_selectors),
+    )
+    _write_state(repo_root, state)
+    process = _git(
+        repo_root,
+        "merge",
+        "--no-commit",
+        "--no-ff",
+        replay_oid,
+        check=False,
+        capture=False,
+        env=_driver_environment(Path(xmi_merge.__file__).resolve()),
+    )
+    if not _merge_in_progress(repo_root):
+        _clear_state(repo_root)
+        if process.returncode == 0:
+            raise WorkflowError(f"PR #{pr.number} is already contained in HEAD")
+        raise WorkflowError(f"Git could not start the merge for PR #{pr.number}")
+    if process.returncode or _unmerged_paths(repo_root):
+        print(f"PR #{pr.number} requires manual resolution.", file=sys.stderr)
+        print("Resolve and stage the conflicts, then run:", file=sys.stderr)
+        print("  git ifc pr merge --continue", file=sys.stderr)
+        return 1
+    return _finish_merge(repo_root, state)
+
+
+def start_pr_merges(
+    repo_root: Path,
+    selectors: Sequence[str],
+    *,
+    remote_name: str | None = None,
+    base: str | None = None,
+    include_drafts: bool = False,
+) -> int:
+    if not selectors:
+        raise WorkflowError("provide at least one PR number, branch, or title token")
+    for index, selector in enumerate(selectors):
+        result = start_pr_merge(
+            repo_root,
+            selector,
+            remote_name=remote_name,
+            base=base,
+            include_drafts=include_drafts,
+            remaining_selectors=selectors[index + 1 :],
+        )
+        if result:
+            return result
+    return 0
+
+
+def continue_pr_merge(repo_root: Path) -> int:
+    state = _load_state(repo_root)
+    if state is None:
+        raise WorkflowError("no IFC PR merge is active")
+    if _current_branch(repo_root) != state.branch:
+        raise WorkflowError(
+            f"merge started on branch {state.branch!r}, but current branch is "
+            f"{_current_branch(repo_root)!r}"
+        )
+    remaining_selectors = list(state.remaining_selectors or [])
+    result = _finish_merge(repo_root, state)
+    if result or not remaining_selectors:
+        return result
+    return start_pr_merges(
+        repo_root,
+        remaining_selectors,
+        remote_name=state.remote,
+        base=state.base,
+        include_drafts=state.include_drafts,
+    )
+
+
+def abort_pr_merge(repo_root: Path) -> int:
+    state = _load_state(repo_root)
+    if state is None:
+        raise WorkflowError("no IFC PR merge is active")
+    if _merge_in_progress(repo_root):
+        _git(repo_root, "merge", "--abort", capture=False)
+    _clear_state(repo_root)
+    print("Aborted IFC PR merge.")
+    return 0
+
+
+def install_command(repo_root: Path, remote: str | None) -> int:
+    xmi_merge.install_driver(repo_root, Path(xmi_merge.__file__).resolve())
+    command = " ".join(
+        [
+            shlex.quote(str(Path(sys.executable).resolve())),
+            shlex.quote(str(Path(__file__).resolve())),
+        ]
+    )
+    _git(repo_root, "config", "alias.ifc", f"!{command}")
+    if remote:
+        _remote_name(repo_root, remote)
+        _git(repo_root, "config", "ifc.remote", remote)
+    print("Installed `git ifc` alias.")
+    print("Use `git ifc pr list` to inspect open and merged pull requests.")
+    return 0
+
+
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(description=__doc__)
+    subparsers = parser.add_subparsers(dest="command", required=True)
+
+    install_parser = subparsers.add_parser("install", help="Install local Git aliases and drivers")
+    install_parser.add_argument("--remote", help="Default GitHub remote")
+
+    pr_parser = subparsers.add_parser("pr", help="List and merge GitHub pull requests")
+    pr_subparsers = pr_parser.add_subparsers(dest="pr_command", required=True)
+
+    list_parser = pr_subparsers.add_parser("list", help="List open and merged pull requests")
+    list_parser.add_argument("--remote", help="Git remote, default: ifc.remote or origin")
+    list_parser.add_argument("--base", help="Filter by GitHub base branch")
+    list_parser.add_argument("--limit", type=int, default=100)
+    list_parser.add_argument(
+        "--state",
+        choices=sorted(LIST_PR_STATES),
+        default="all",
+        help="PR state to list, default: all open and merged PRs",
+    )
+    list_parser.add_argument("--include-drafts", action="store_true")
+
+    merge_parser = pr_subparsers.add_parser("merge", help="Merge open or merged pull requests")
+    merge_parser.add_argument(
+        "selectors",
+        nargs="*",
+        help="PR numbers, branches, or title tokens",
+    )
+    merge_parser.add_argument("--remote", help="Git remote, default: ifc.remote or origin")
+    merge_parser.add_argument("--base", help="Filter by GitHub base branch")
+    merge_parser.add_argument("--include-drafts", action="store_true")
+    action = merge_parser.add_mutually_exclusive_group()
+    action.add_argument("--continue", dest="continue_merge", action="store_true")
+    action.add_argument("--abort", action="store_true")
+    return parser
+
+
+def main(argv: Sequence[str] | None = None) -> int:
+    try:
+        args = build_parser().parse_args(argv)
+        repo_root = xmi_merge._repo_root()
+        if args.command == "install":
+            return install_command(repo_root, args.remote)
+        if args.pr_command == "list":
+            remote = _remote_name(repo_root, args.remote)
+            repository = _repository_name(repo_root, remote)
+            base = args.base or _config(repo_root, "ifc.base")
+            pull_requests = list_pull_requests(
+                repo_root, repository, base=base, limit=args.limit, state=args.state
+            )
+            if not args.include_drafts:
+                pull_requests = [pr for pr in pull_requests if not pr.is_draft]
+            _print_pull_requests(pull_requests)
+            return 0
+        if args.continue_merge:
+            if args.selectors:
+                raise WorkflowError("do not provide selectors with --continue")
+            return continue_pr_merge(repo_root)
+        if args.abort:
+            if args.selectors:
+                raise WorkflowError("do not provide selectors with --abort")
+            return abort_pr_merge(repo_root)
+        if not args.selectors:
+            raise WorkflowError("provide at least one PR number, branch, or title token")
+        return start_pr_merges(
+            repo_root,
+            args.selectors,
+            remote_name=args.remote,
+            base=args.base,
+            include_drafts=args.include_drafts,
+        )
+    except WorkflowError as exc:
+        print(f"git-ifc: {exc}", file=sys.stderr)
+        return 2
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

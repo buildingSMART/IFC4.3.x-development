@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4X3_DEV_c24e347b"/>
+  <Name>Pset_GeoObsCommon</Name>
+  <Definition/>
+  <Applicability/>
+  <ApplicableClasses>
+    <ClassName>IfcGeoScienceObservation</ClassName>
+    <ClassName>IfcBorehole</ClassName>
+    <ClassName>IfcSensor</ClassName>
+    <ClassName>IfcSpatialZone/MAPPEDZONE</ClassName>
+    <ClassName>IfcSpatialZone/TESTEDZONE</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcGeoScienceObservation,IfcBorehole,IfcSensor,IfcSpatialZone/MAPPEDZONE,IfcSpatialZone/TESTEDZONE</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef>
+      <Name>Lithology</Name>
+      <Definition>IfcLabel</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="Lithology"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>ObservationEndDate</Name>
+      <Definition>IfcDate</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="ObservationEndDate"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>ObservationStartDate</Name>
+      <Definition>IfcDate</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="ObservationStartDate"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+  </PropertyDefs>
+</PropertySetDef>

@@ -1,0 +1,130 @@
+<?xml version="1.0" ?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4X3_DEV_c24e347b"/>
+  <Name>Pset_LabTestResult</Name>
+  <Definition/>
+  <Applicability/>
+  <ApplicableClasses>
+    <ClassName>IfcGeoScienceObservation/LABTESTRESULT</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcGeoScienceObservation/LABTESTRESULT</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef>
+      <Name>CohesionBehaviour</Name>
+      <Definition>IfcPressureMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="CohesionBehaviour"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>FrictionAngle</Name>
+      <Definition>IfcPlaneAngleMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="FrictionAngle"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>HydraulicConductivity</Name>
+      <Definition>IfcLinearVelocityMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="HydraulicConductivity"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>LiquidLimits</Name>
+      <Definition>IfcPositiveRatioMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="LiquidLimits"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>MassDensity</Name>
+      <Definition>IfcMassDensityMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="MassDensity"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>PlasticityIndex</Name>
+      <Definition>IfcPositiveRatioMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="PlasticityIndex"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>PlasticLimit</Name>
+      <Definition>IfcPositiveRatioMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="PlasticLimit"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>Porosity</Name>
+      <Definition>IfcPositiveRatioMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="Porosity"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>Slaking</Name>
+      <Definition>IfcLabel</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="Slaking"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>TestedMaterial</Name>
+      <Definition>IfcLabel</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="TestedMaterial"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>UnconfinedCompressiveStrength</Name>
+      <Definition>IfcPressureMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="UnconfinedCompressiveStrength"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>WaterContent</Name>
+      <Definition>IfcPositiveRatioMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="WaterContent"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>YoungModulus</Name>
+      <Definition>IfcModulusOfElasticityMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="YoungModulus"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+  </PropertyDefs>
+</PropertySetDef>

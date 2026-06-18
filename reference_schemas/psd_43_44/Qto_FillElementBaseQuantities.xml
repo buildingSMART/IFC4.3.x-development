@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<QtoSetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" templatetype="QTO_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/QTO_IFC4.xsd">
+  <IfcVersion version="IFC4X3_DEV_c24e347b"/>
+  <Name>Qto_FillElementBaseQuantities</Name>
+  <Definition/>
+  <Applicability/>
+  <ApplicableClasses>
+    <ClassName>IfcFillElement</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcFillElement</ApplicableTypeValue>
+  <QtoDefs>
+    <QtoDef>
+      <Name>Thickness</Name>
+      <Definition>Q_LENGTH</Definition>
+      <QtoType>Thickness</QtoType>
+    </QtoDef>
+    <QtoDef>
+      <Name>Volume</Name>
+      <Definition>Q_VOLUME</Definition>
+      <QtoType>Volume</QtoType>
+    </QtoDef>
+  </QtoDefs>
+</QtoSetDef>

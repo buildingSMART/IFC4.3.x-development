@@ -1,0 +1,67 @@
+<?xml version="1.0" ?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4X3_DEV_c24e347b"/>
+  <Name>Pset_GeoObsBoreholeGeoLogInterval</Name>
+  <Definition/>
+  <Applicability/>
+  <ApplicableClasses>
+    <ClassName>IfcGeoScienceObservation/BOREHOLELOG</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcGeoScienceObservation/BOREHOLELOG</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef>
+      <Name>FractureIndex</Name>
+      <Definition>IfcCountMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="FractureIndex"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>GeologyCode</Name>
+      <Definition>IfcLabel</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="GeologyCode"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>RockQualityDesignation</Name>
+      <Definition>IfcRatioMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="RockQualityDesignation"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>SolidCoreRecovery</Name>
+      <Definition>IfcRatioMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="SolidCoreRecovery"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>TotalCoreRecovery</Name>
+      <Definition>IfcRatioMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="TotalCoreRecovery"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>Weathering</Name>
+      <Definition>IfcLabel</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="Weathering"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+  </PropertyDefs>
+</PropertySetDef>

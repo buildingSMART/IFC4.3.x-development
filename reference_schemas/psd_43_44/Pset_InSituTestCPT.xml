@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4X3_DEV_c24e347b"/>
+  <Name>Pset_InSituTestCPT</Name>
+  <Definition/>
+  <Applicability/>
+  <ApplicableClasses>
+    <ClassName>IfcGeoScienceObservation/INSITUTESTRESULT</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcGeoScienceObservation/INSITUTESTRESULT</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef>
+      <Name>CPTConeResistance</Name>
+      <Definition>IfcPressureMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="CPTConeResistance"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>CPTLocalSideFriction</Name>
+      <Definition>IfcPressureMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="CPTLocalSideFriction"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>CPTPorePressure</Name>
+      <Definition>IfcPressureMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="CPTPorePressure"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>YoungModulus</Name>
+      <Definition>IfcModulusOfElasticityMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="YoungModulus"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+  </PropertyDefs>
+</PropertySetDef>

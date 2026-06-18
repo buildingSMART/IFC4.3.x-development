@@ -1,0 +1,211 @@
+<?xml version="1.0" ?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4X3_DEV_c24e347b"/>
+  <Name>Pset_GeoScienceFeatureTypeSoilLikeMaterial</Name>
+  <Definition/>
+  <Applicability/>
+  <ApplicableClasses>
+    <ClassName>IfcGeoScienceFeature/GEOTECHNICALUNIT</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcGeoScienceFeature/GEOTECHNICALUNIT</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef>
+      <Name>CompressionIndex</Name>
+      <Definition>IfcRatioMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="CompressionIndex"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>ConsistencyIndex</Name>
+      <Definition>IfcPositiveRatioMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="ConsistencyIndex"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>CPTConeResistance</Name>
+      <Definition>IfcPressureMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="CPTConeResistance"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>DryBulkDensity</Name>
+      <Definition>IfcMassDensityMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="DryBulkDensity"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>K0</Name>
+      <Definition>IfcPositiveRatioMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="K0"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>Lithology</Name>
+      <Definition>IfcIdentifier</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="Lithology"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>MenardLimitPressure</Name>
+      <Definition>IfcPressureMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="MenardLimitPressure"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>OCR</Name>
+      <Definition>IfcPositiveRatioMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="OCR"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>PeakCohesion</Name>
+      <Definition>IfcPressureMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="PeakCohesion"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>PeakFrictionAngle</Name>
+      <Definition>IfcPlaneAngleMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="PeakFrictionAngle"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>PlasticityIndex</Name>
+      <Definition>IfcPositiveRatioMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="PlasticityIndex"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>PoissonRatio</Name>
+      <Definition>IfcPositiveRatioMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="PoissonRatio"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>RelativeDensity</Name>
+      <Definition>IfcPositiveRatioMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="RelativeDensity"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>ResidualCohesion</Name>
+      <Definition>IfcPressureMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="ResidualCohesion"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>ResidualFrictionAngle</Name>
+      <Definition>IfcPlaneAngleMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="ResidualFrictionAngle"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>SPTBlowCount</Name>
+      <Definition>IfcCountMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="SPTBlowCount"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>SwellingIndex</Name>
+      <Definition>IfcRatioMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="SwellingIndex"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>UndrainedShearStrength</Name>
+      <Definition>IfcPressureMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="UndrainedShearStrength"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>VoidRatio</Name>
+      <Definition>IfcPositiveRatioMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="VoidRatio"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>WaterContent</Name>
+      <Definition>IfcPositiveRatioMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="WaterContent"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>WetBulkDensity</Name>
+      <Definition>IfcLabel</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="WetBulkDensity"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>YoungModulus</Name>
+      <Definition>IfcModulusOfElasticityMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="YoungModulus"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+  </PropertyDefs>
+</PropertySetDef>

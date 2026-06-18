@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4X3_DEV_c24e347b"/>
+  <Name>Pset_SpatialGeoObsSample</Name>
+  <Definition/>
+  <Applicability/>
+  <ApplicableClasses>
+    <ClassName>IfcGeoScienceObservation/INSITUTESTRESULT</ClassName>
+    <ClassName>IfcGeoScienceObservation/LABTESTRESULT</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcGeoScienceObservation/INSITUTESTRESULT,IfcGeoScienceObservation/LABTESTRESULT</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef>
+      <Name>SampleBoreholeDepthRange</Name>
+      <Definition>IfcNonNegativeLengthMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="SampleBoreholeDepthRange"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>SampleProcedure</Name>
+      <Definition>IfcText</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="SampleProcedure"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>SamplePurpose</Name>
+      <Definition>IfcLabel</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="SamplePurpose"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>SampleType</Name>
+      <Definition>IfcLabel</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="SampleType"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>SamplingPointType</Name>
+      <Definition>IfcLabel</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="SamplingPointType"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+  </PropertyDefs>
+</PropertySetDef>

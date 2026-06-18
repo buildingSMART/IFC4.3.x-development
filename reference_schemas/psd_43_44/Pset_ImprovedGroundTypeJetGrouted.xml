@@ -1,0 +1,103 @@
+<?xml version="1.0" ?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4X3_DEV_c24e347b"/>
+  <Name>Pset_ImprovedGroundTypeJetGrouted</Name>
+  <Definition/>
+  <Applicability/>
+  <ApplicableClasses>
+    <ClassName>IfcImprovedGround/JETGROUTED</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcImprovedGround/JETGROUTED</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef>
+      <Name>AirPressure</Name>
+      <Definition>IfcPressureMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="AirPressure"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>DistanceFromSurface</Name>
+      <Definition>IfcPositiveLengthMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="DistanceFromSurface"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>GroundPressure</Name>
+      <Definition>IfcPressureMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="GroundPressure"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>GroutBodyDiameter</Name>
+      <Definition>IfcPositiveLengthMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="GroutBodyDiameter"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>GroutBodyLength</Name>
+      <Definition>IfcPositiveLengthMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="GroutBodyLength"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>JetGroutingMethod</Name>
+      <Definition>PEnum_JetGroutingMethod</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="JetGroutingMethod"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>LengthEmbedmentInRock</Name>
+      <Definition>IfcPositiveLengthMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="LengthEmbedmentInRock"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>RotationalSpeed</Name>
+      <Definition>IfcRotationalFrequencyMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="RotationalSpeed"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>VolumetricFlowRate</Name>
+      <Definition>IfcVolumetricFlowRateMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="VolumetricFlowRate"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>WaterPressure</Name>
+      <Definition>IfcPressureMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="WaterPressure"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+  </PropertyDefs>
+</PropertySetDef>

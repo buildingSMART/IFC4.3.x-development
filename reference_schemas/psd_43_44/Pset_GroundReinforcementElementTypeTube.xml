@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4X3_DEV_c24e347b"/>
+  <Name>Pset_GroundReinforcementElementTypeTube</Name>
+  <Definition/>
+  <Applicability/>
+  <ApplicableClasses>
+    <ClassName>IfcGroundReinforcementElement/TUBE</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcGroundReinforcementElement/TUBE</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef>
+      <Name>NominalLength</Name>
+      <Definition>IfcNonNegativeLengthMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="NominalLength"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>OuterDiameter</Name>
+      <Definition>IfcPositiveLengthMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="OuterDiameter"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>TubeThickness</Name>
+      <Definition>IfcPositiveLengthMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="TubeThickness"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+  </PropertyDefs>
+</PropertySetDef>

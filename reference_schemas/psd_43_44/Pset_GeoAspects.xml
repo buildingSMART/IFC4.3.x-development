@@ -1,0 +1,166 @@
+<?xml version="1.0" ?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4X3_DEV_c24e347b"/>
+  <Name>Pset_GeoAspects</Name>
+  <Definition/>
+  <Applicability/>
+  <ApplicableClasses>
+    <ClassName>IfcTunnelTypicalSection/GEOTECH</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcTunnelTypicalSection/GEOTECH</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef>
+      <Name>AsbestosPotential</Name>
+      <Definition>IfcText</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="AsbestosPotential"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>Boulders</Name>
+      <Definition>IfcText</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="Boulders"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>CloggingPotential</Name>
+      <Definition>IfcText</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="CloggingPotential"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>Contamination</Name>
+      <Definition>IfcLabel</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="Contamination"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>DumpCategory</Name>
+      <Definition>IfcLabel</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="DumpCategory"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>GasConcentration</Name>
+      <Definition>IfcLabel</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="GasConcentration"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>GasType</Name>
+      <Definition>IfcLabel</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="GasType"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>GroundTemperature</Name>
+      <Definition>IfcThermodynamicTemperatureMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="GroundTemperature"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>GroundwaterAgressiveness</Name>
+      <Definition>IfcLabel</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="GroundwaterAgressiveness"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>GroundwaterDesignPressure</Name>
+      <Definition>IfcPressureMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="GroundwaterDesignPressure"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>GroundwaterTemperature</Name>
+      <Definition>IfcThermodynamicTemperatureMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="GroundwaterTemperature"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>HeavyMetalsPotential</Name>
+      <Definition>IfcText</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="HeavyMetalsPotential"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>InSituStress</Name>
+      <Definition>IfcPressureMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="InSituStress"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>Karst</Name>
+      <Definition>IfcText</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="Karst"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>MaxGroundwaterInflow</Name>
+      <Definition>IfcVolumetricFlowRateMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="MaxGroundwaterInflow"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>Overburden</Name>
+      <Definition>IfcPositiveLengthMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="Overburden"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>Swelling</Name>
+      <Definition>IfcLabel</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="Swelling"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+  </PropertyDefs>
+</PropertySetDef>

@@ -1,0 +1,76 @@
+<?xml version="1.0" ?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4X3_DEV_c24e347b"/>
+  <Name>Pset_GeoObsMappedUnit</Name>
+  <Definition/>
+  <Applicability/>
+  <ApplicableClasses>
+    <ClassName>IfcGeoScienceObservation/MAPPEDFEATURE</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcGeoScienceObservation/MAPPEDFEATURE</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef>
+      <Name>CoveragePercentage</Name>
+      <Definition>IfcPositiveRatioMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="CoveragePercentage"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>DiscontinuitySpacing</Name>
+      <Definition>PEnum_DiscontinuitySpacing</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="DiscontinuitySpacing"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>GSI</Name>
+      <Definition>IfcInteger</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="GeologicalStrengthIndex"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>QValue</Name>
+      <Definition>IfcReal</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="QValue"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>RMR</Name>
+      <Definition>IfcInteger</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="RockMassRating"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>Weathering</Name>
+      <Definition>PEnum_Weathering</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="Weathering"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>AreaID</Name>
+      <Definition>IfcIdentifier</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="AreaID"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+  </PropertyDefs>
+</PropertySetDef>

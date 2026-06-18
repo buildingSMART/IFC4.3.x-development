@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4X3_DEV_c24e347b"/>
+  <Name>Pset_EarthworksFillCommon</Name>
+  <Definition/>
+  <Applicability/>
+  <ApplicableClasses>
+    <ClassName>IfcEarthworksFill</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcEarthworksFill</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef>
+      <Name>CompactionFactor</Name>
+      <Definition>IfcPositiveRatioMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="CompactionFactor"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>CompactionMethod</Name>
+      <Definition>PEnum_CompactionMethod</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="CompactionMethod"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>CompactionMethodOther</Name>
+      <Definition>IfcLabel</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="CompactionMethodOther"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>SourceOfFill</Name>
+      <Definition>PEnum_SourceOfFill</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="SourceOfFill"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>SourceOfFillOther</Name>
+      <Definition>IfcLabel</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="SourceOfFillOther"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+  </PropertyDefs>
+</PropertySetDef>

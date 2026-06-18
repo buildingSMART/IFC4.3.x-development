@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4X3_DEV_c24e347b"/>
+  <Name>Pset_GeoScienceFeatureTypePiezometricWaterLevel</Name>
+  <Definition/>
+  <Applicability/>
+  <ApplicableClasses>
+    <ClassName>IfcGeoScienceFeature/PIEZOMETRICWATERLEVEL</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcGeoScienceFeature/PIEZOMETRICWATERLEVEL</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef>
+      <Name>Elevation</Name>
+      <Definition>IfcLengthMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="Elevation"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+  </PropertyDefs>
+</PropertySetDef>

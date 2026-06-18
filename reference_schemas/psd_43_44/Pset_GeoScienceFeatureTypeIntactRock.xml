@@ -1,0 +1,94 @@
+<?xml version="1.0" ?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4X3_DEV_c24e347b"/>
+  <Name>Pset_GeoScienceFeatureTypeIntactRock</Name>
+  <Definition/>
+  <Applicability/>
+  <ApplicableClasses>
+    <ClassName>IfcGeoScienceFeature/GEOTECHNICALUNIT</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcGeoScienceFeature/GEOTECHNICALUNIT</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef>
+      <Name>GeologicalFormation</Name>
+      <Definition>IfcText</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="GeologicalFormation"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>Lithology</Name>
+      <Definition>IfcIdentifier</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="Lithology"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>MineralComposition</Name>
+      <Definition>IfcText</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="MineralComposition"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>PoissonRatio</Name>
+      <Definition>IfcPositiveRatioMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="PoissonRatio"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>TensileStrength</Name>
+      <Definition>IfcPressureMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="TensileStrength"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>UnconfinedCompressiveStrength</Name>
+      <Definition>IfcPressureMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="UnconfinedCompressiveStrength"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>VoidRatio</Name>
+      <Definition>IfcPositiveRatioMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="VoidRatio"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>Weathering</Name>
+      <Definition>IfcText</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="Weathering"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>YoungModulus</Name>
+      <Definition>IfcModulusOfElasticityMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="YoungModulus"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+  </PropertyDefs>
+</PropertySetDef>

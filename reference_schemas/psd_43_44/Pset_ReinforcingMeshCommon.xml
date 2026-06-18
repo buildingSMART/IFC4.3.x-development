@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4X3_DEV_c24e347b"/>
+  <Name>Pset_ReinforcingMeshCommon</Name>
+  <Definition/>
+  <Applicability/>
+  <ApplicableClasses>
+    <ClassName>IfcReinforcingMesh</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcReinforcingMesh</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef>
+      <Name>AreaDensity</Name>
+      <Definition>IfcAreaDensityMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="AreaDensity"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>CorrosionTreatment</Name>
+      <Definition>PEnum_ElementComponentCorrosionTreatment</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="CorrosionTreatment"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>NumberOfMeshLayers</Name>
+      <Definition>IfcCountMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="NumberOfMeshLayers"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>OverlapLength</Name>
+      <Definition>IfcPositiveLengthMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="OverlapLength"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+  </PropertyDefs>
+</PropertySetDef>

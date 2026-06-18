@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4X3_DEV_c24e347b"/>
+  <Name>Pset_EarthworksCutTypeTrench</Name>
+  <Definition/>
+  <Applicability/>
+  <ApplicableClasses>
+    <ClassName>IfcEarthworksCut/TRENCH</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcEarthworksCut/TRENCH</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef>
+      <Name>CatchmentArea</Name>
+      <Definition>IfcAreaMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="CatchmentArea"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>NominalDepth</Name>
+      <Definition>IfcNonNegativeLengthMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="NominalDepth"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>NominalLength</Name>
+      <Definition>IfcNonNegativeLengthMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="NominalLength"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>NominalWidth</Name>
+      <Definition>IfcNonNegativeLengthMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="NominalWidth"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>VolumetricCapacity</Name>
+      <Definition>IfcVolumeMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="VolumetricCapacity"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+  </PropertyDefs>
+</PropertySetDef>

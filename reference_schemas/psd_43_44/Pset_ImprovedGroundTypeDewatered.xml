@@ -1,0 +1,76 @@
+<?xml version="1.0" ?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4X3_DEV_c24e347b"/>
+  <Name>Pset_ImprovedGroundTypeDewatered</Name>
+  <Definition/>
+  <Applicability/>
+  <ApplicableClasses>
+    <ClassName>IfcImprovedGround/DEWATERED</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcImprovedGround/DEWATERED</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef>
+      <Name>AverageBoreholeDepth</Name>
+      <Definition>IfcPositiveLengthMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="AverageBoreholeDepth"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>BoreholeCount</Name>
+      <Definition>IfcInteger</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="BoreholeCount"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>BoreholeSpacing</Name>
+      <Definition>IfcPositiveLengthMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="BoreholeSpacing"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>DewateringMethod</Name>
+      <Definition>PEnum_DewateringMethod</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="DewateringMethod"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>StaticDischargeHead</Name>
+      <Definition>IfcPositiveLengthMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="StaticDischargeHead"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>StaticSuctionLift</Name>
+      <Definition>IfcPositiveLengthMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="StaticSuctionLift"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>VolumetricFlowRate</Name>
+      <Definition>IfcVolumetricFlowRateMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="VolumetricFlowRate"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+  </PropertyDefs>
+</PropertySetDef>

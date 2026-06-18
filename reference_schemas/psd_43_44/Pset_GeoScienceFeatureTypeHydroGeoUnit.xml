@@ -1,0 +1,67 @@
+<?xml version="1.0" ?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4X3_DEV_c24e347b"/>
+  <Name>Pset_GeoScienceFeatureTypeHydroGeoUnit</Name>
+  <Definition/>
+  <Applicability/>
+  <ApplicableClasses>
+    <ClassName>IfcGeoScienceFeature/HYDROGEOUNIT</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcGeoScienceFeature/HYDROGEOUNIT</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef>
+      <Name>HydraulicPermeabilityHorizontal</Name>
+      <Definition>IfcLinearVelocityMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="HydraulicPermeabilityHorizontal"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>HydraulicPermeabilityVertical</Name>
+      <Definition>IfcLinearVelocityMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="HydraulicPermeabilityVertical"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>StorageCoefficient</Name>
+      <Definition>IfcPositiveRatioMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="StorageCoefficient"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>Transmissivity</Name>
+      <Definition>IfcReal</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="Transmissivity"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>UnitDischarge</Name>
+      <Definition>IfcVolumetricFlowRateMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="UnitDischarge"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>UnitRecharge</Name>
+      <Definition>IfcVolumetricFlowRateMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="UnitRecharge"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+  </PropertyDefs>
+</PropertySetDef>

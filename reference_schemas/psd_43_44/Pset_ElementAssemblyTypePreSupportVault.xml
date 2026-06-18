@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4X3_DEV_c24e347b"/>
+  <Name>Pset_ElementAssemblyTypePreSupportVault</Name>
+  <Definition/>
+  <Applicability/>
+  <ApplicableClasses>
+    <ClassName>IfcElementAssembly/PRESUPPORTVAULT</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcElementAssembly/PRESUPPORTVAULT</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef>
+      <Name>BoreholeGradient</Name>
+      <Definition>IfcPlaneAngleMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="BoreholeGradient"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>RadialSpacing</Name>
+      <Definition>IfcPositiveLengthMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="RadialSpacing"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>VaultOffset</Name>
+      <Definition>IfcPositiveLengthMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="VaultOffset"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+  </PropertyDefs>
+</PropertySetDef>

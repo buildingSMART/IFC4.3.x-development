@@ -1,0 +1,166 @@
+<?xml version="1.0" ?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4X3_DEV_c24e347b"/>
+  <Name>Pset_ImprovedGroundTypeInjectionGrouted</Name>
+  <Definition/>
+  <Applicability/>
+  <ApplicableClasses>
+    <ClassName>IfcImprovedGround/INJECTIONGROUTED</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcImprovedGround/INJECTIONGROUTED</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef>
+      <Name>AsBuiltInjectionDuration</Name>
+      <Definition>IfcTimeMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="AsBuiltInjectionDuration"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>DrillholeAngle</Name>
+      <Definition>IfcPositivePlaneAngleMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="DrillholeAngle"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>DrillholeCount</Name>
+      <Definition>IfcPositiveInteger</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="DrillholeCount"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>DrillholeDiameter</Name>
+      <Definition>IfcPositiveLengthMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="DrillholeDiameter"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>DrillholeDrifting</Name>
+      <Definition>IfcPositiveRatioMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="DrillholeDrifting"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>DrillholeLength</Name>
+      <Definition>IfcPositiveLengthMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="DrillholeLength"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>InjectionDistributionEquipment</Name>
+      <Definition>PEnum_InjectionDistributionEquipment</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="InjectionDistributionEquipment"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>InjectionPackerType</Name>
+      <Definition>PEnum_InjectionPackerType</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="InjectionPackerType"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>InjectionPhase</Name>
+      <Definition>PEnum_InjectionPhase</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="InjectionPhase"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>InjectionPressure</Name>
+      <Definition>IfcPressureMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="InjectionPressure"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>InsertedDeviceDiameter</Name>
+      <Definition>IfcPositiveLengthMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="InsertedDeviceDiameter"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>LongitudinalOverlap</Name>
+      <Definition>IfcPositiveLengthMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="LongitudinalOverlap"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>ManchetteSpacing</Name>
+      <Definition>IfcPositiveLengthMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="ManchetteSpacing"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>RadialSpacing</Name>
+      <Definition>IfcPositiveLengthMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="RadialSpacing"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>StopCriteria</Name>
+      <Definition>IfcText</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="StopCriteria"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>TAMTubesSpacing</Name>
+      <Definition>IfcPositiveLengthMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="TAMTubesSpacing"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>WorkflowProcess</Name>
+      <Definition>IfcDocumentReference</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="WorkflowProcess"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+  </PropertyDefs>
+</PropertySetDef>

@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4X3_DEV_c24e347b"/>
+  <Name>Pset_LateralExcavationCommon</Name>
+  <Definition/>
+  <Applicability/>
+  <ApplicableClasses>
+    <ClassName>IfcRadialExcavation</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcRadialExcavation</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef>
+      <Name>RadialExcavationDepth</Name>
+      <Definition>IfcPositiveLengthMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="RadialExcavationDepth"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>RadialExcavationDirection</Name>
+      <Definition>PEnum_RadialExcavationDirection</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="RadialExcavationDirection"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>RadialExcavationType</Name>
+      <Definition>PEnum_RadialExcavationType</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="RadialExcavationType"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>RadialExcavationTypeOther</Name>
+      <Definition>IfcLabel</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="RadialExcavationTypeOther"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+  </PropertyDefs>
+</PropertySetDef>

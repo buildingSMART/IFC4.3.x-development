@@ -1,0 +1,85 @@
+<?xml version="1.0" ?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4X3_DEV_c24e347b"/>
+  <Name>Pset_GeoScienceFeatureTypeGeologicalUnit</Name>
+  <Definition/>
+  <Applicability/>
+  <ApplicableClasses>
+    <ClassName>IfcGeoScienceFeature/GEOLOGICALUNIT</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcGeoScienceFeature/GEOLOGICALUNIT</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef>
+      <Name>FaciesLithostratigraphy</Name>
+      <Definition>IfcText</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="FaciesLithostratigraphy"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>FaciesPetrophysics</Name>
+      <Definition>IfcText</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="FaciesPetrophysics"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>GeologicalHazard</Name>
+      <Definition>IfcText</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="GeologicalHazard"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>GeologicHistory</Name>
+      <Definition>IfcText</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="GeologicHistory"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>GeologicUnitType</Name>
+      <Definition>IfcIdentifier</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="GeologicUnitType"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>Lithology</Name>
+      <Definition>IfcIdentifier</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="Lithology"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>Rank</Name>
+      <Definition>IfcIdentifier</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="Rank"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>RepresentativeAge</Name>
+      <Definition>IfcIdentifier</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="RepresentativeAge"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+  </PropertyDefs>
+</PropertySetDef>

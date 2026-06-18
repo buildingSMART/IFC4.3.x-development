@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<QtoSetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" templatetype="QTO_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/QTO_IFC4.xsd">
+  <IfcVersion version="IFC4X3_DEV_c24e347b"/>
+  <Name>Qto_ArchElementBaseQuantities</Name>
+  <Definition/>
+  <Applicability/>
+  <ApplicableClasses>
+    <ClassName>IfcArchElement</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcArchElement</ApplicableTypeValue>
+  <QtoDefs>
+    <QtoDef>
+      <Name>CrossSectionArea</Name>
+      <Definition>Q_AREA</Definition>
+      <QtoType>CrossSectionArea</QtoType>
+    </QtoDef>
+    <QtoDef>
+      <Name>InnerSurfaceArea</Name>
+      <Definition>Q_AREA</Definition>
+      <QtoType>InnerSurfaceArea</QtoType>
+    </QtoDef>
+    <QtoDef>
+      <Name>Length</Name>
+      <Definition>Q_LENGTH</Definition>
+      <QtoType>Length</QtoType>
+    </QtoDef>
+    <QtoDef>
+      <Name>OuterSurfaceArea</Name>
+      <Definition>Q_AREA</Definition>
+      <QtoType>OuterSurfaceArea</QtoType>
+    </QtoDef>
+    <QtoDef>
+      <Name>Volume</Name>
+      <Definition>Q_VOLUME</Definition>
+      <QtoType>Volume</QtoType>
+    </QtoDef>
+  </QtoDefs>
+</QtoSetDef>

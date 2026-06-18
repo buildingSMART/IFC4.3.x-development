@@ -1,0 +1,112 @@
+<?xml version="1.0" ?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4X3_DEV_c24e347b"/>
+  <Name>Pset_MaterialSolid</Name>
+  <Definition/>
+  <Applicability/>
+  <ApplicableClasses>
+    <ClassName>IfcMaterial</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcMaterial</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef>
+      <Name>AsContent</Name>
+      <Definition>IfcReal</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="ArsenicContent"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>CdContent</Name>
+      <Definition>IfcReal</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="CadmiumContent"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>CrContent</Name>
+      <Definition>IfcReal</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="ChromiumContent"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>CuContent</Name>
+      <Definition>IfcReal</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="CopperContent"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>HgContent</Name>
+      <Definition>IfcReal</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="MercuryContent"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>MnContent</Name>
+      <Definition>IfcReal</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="ManganeseContent"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>NiContent</Name>
+      <Definition>IfcReal</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="NickelContent"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>OrganicMatterContent</Name>
+      <Definition>IfcReal</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="OrganicMatterContent"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>PbContent</Name>
+      <Definition>IfcReal</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="LeadContent"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>TS</Name>
+      <Definition>IfcReal</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="TotalSulfurContent"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>ZnContent</Name>
+      <Definition>IfcReal</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="ZincContent"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+  </PropertyDefs>
+</PropertySetDef>

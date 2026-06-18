@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4X3_DEV_c24e347b"/>
+  <Name>Pset_ElementAssemblyTypeRing</Name>
+  <Definition/>
+  <Applicability/>
+  <ApplicableClasses>
+    <ClassName>IfcElementAssembly/RING</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcElementAssembly/RING</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef>
+      <Name>RingType</Name>
+      <Definition>PEnum_RingType</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="RingType"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+  </PropertyDefs>
+</PropertySetDef>

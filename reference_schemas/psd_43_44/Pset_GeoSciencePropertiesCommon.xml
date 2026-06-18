@@ -1,0 +1,68 @@
+<?xml version="1.0" ?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4X3_DEV_c24e347b"/>
+  <Name>Pset_GeoSciencePropertiesCommon</Name>
+  <Definition/>
+  <Applicability/>
+  <ApplicableClasses>
+    <ClassName>IfcGeoScienceFeature/GEOLOGICALUNIT</ClassName>
+    <ClassName>IfcGeoScienceFeature/GEOTECHNICALUNIT</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcGeoScienceFeature/GEOLOGICALUNIT,IfcGeoScienceFeature/GEOTECHNICALUNIT</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef>
+      <Name>DryBulkDensity</Name>
+      <Definition>IfcMassDensityMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="DryBulkDensity"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>GroundwaterTemperature</Name>
+      <Definition>IfcThermodynamicTemperatureMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="GroundwaterTemperature"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>PwaveVelocity</Name>
+      <Definition>IfcLinearVelocityValue</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="PwaveVelocity"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>Resistivity</Name>
+      <Definition>IfcElectricalResistivityMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="Resistivity"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>SwaveVelocity</Name>
+      <Definition>IfcLinearVelocityValue</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="SwaveVelocity"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>WetBulkDensity</Name>
+      <Definition>IfcMassDensityMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="WetBulkDensity"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+  </PropertyDefs>
+</PropertySetDef>

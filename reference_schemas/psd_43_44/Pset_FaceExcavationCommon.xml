@@ -1,0 +1,67 @@
+<?xml version="1.0" ?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4X3_DEV_c24e347b"/>
+  <Name>Pset_FaceExcavationCommon</Name>
+  <Definition/>
+  <Applicability/>
+  <ApplicableClasses>
+    <ClassName>IfcUndergroundExcavation/FACEEXCAVATION</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcUndergroundExcavation/FACEEXCAVATION</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef>
+      <Name>DriveInclination</Name>
+      <Definition>PEnum_DriveInclination</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="DriveInclination"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>ExcavationFaceInclination</Name>
+      <Definition>PEnum_ExcavationFaceInclination</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="ExcavationFaceInclination"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>FaceExcavationType</Name>
+      <Definition>PEnum_FaceExcavationType</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="FaceExcavationType"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>IsDriveDirectedAlongChainage</Name>
+      <Definition>IfcBoolean</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IsDriveDirectedAlongChainage"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>MaxUnsupportedExcavationLength</Name>
+      <Definition>IfcNonNegativeLengthMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="MaxUnsupportedExcavationLength"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>TunnelInclination</Name>
+      <Definition>PEnum_TunnelInclination</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="TunnelInclination"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+  </PropertyDefs>
+</PropertySetDef>

@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<QtoSetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" templatetype="QTO_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/QTO_IFC4.xsd">
+  <IfcVersion version="IFC4X3_DEV_c24e347b"/>
+  <Name>Qto_ExcavationBaseQuantities</Name>
+  <Definition/>
+  <Applicability/>
+  <ApplicableClasses>
+    <ClassName>IfcExcavation</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcExcavation</ApplicableTypeValue>
+  <QtoDefs>
+    <QtoDef>
+      <Name>Depth</Name>
+      <Definition>Q_LENGTH</Definition>
+      <QtoType>Depth</QtoType>
+    </QtoDef>
+    <QtoDef>
+      <Name>Length</Name>
+      <Definition>Q_LENGTH</Definition>
+      <QtoType>Length</QtoType>
+    </QtoDef>
+    <QtoDef>
+      <Name>LooseVolume</Name>
+      <Definition>Q_VOLUME</Definition>
+      <QtoType>LooseVolume</QtoType>
+    </QtoDef>
+    <QtoDef>
+      <Name>UndisturbedVolume</Name>
+      <Definition>Q_VOLUME</Definition>
+      <QtoType>UndisturbedVolume</QtoType>
+    </QtoDef>
+    <QtoDef>
+      <Name>Weight</Name>
+      <Definition>Q_WEIGHT</Definition>
+      <QtoType>Weight</QtoType>
+    </QtoDef>
+    <QtoDef>
+      <Name>Width</Name>
+      <Definition>Q_LENGTH</Definition>
+      <QtoType>Width</QtoType>
+    </QtoDef>
+  </QtoDefs>
+</QtoSetDef>

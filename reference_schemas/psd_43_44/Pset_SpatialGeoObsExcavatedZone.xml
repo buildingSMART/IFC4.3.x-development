@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4X3_DEV_c24e347b"/>
+  <Name>Pset_SpatialGeoObsExcavatedZone</Name>
+  <Definition/>
+  <Applicability/>
+  <ApplicableClasses>
+    <ClassName>IfcSpatialZone/MAPPEDZONE</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcSpatialZone/MAPPEDZONE</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef>
+      <Name>ExcavationFaceType</Name>
+      <Definition>PEnum_ExcavationFaceType</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="ExcavationFaceType"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>ExcavationMethod</Name>
+      <Definition>PEnum_ExcavationMethod</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="ExcavationMethod"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>ExcavationStep</Name>
+      <Definition>PEnum_ExcavationStep</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="ExcavationStep"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>LogNumber</Name>
+      <Definition>IfcInteger</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="LogNumber"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>TunnelExcavationMethod</Name>
+      <Definition>IfcLabel</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="TunnelExcavationMethod"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+  </PropertyDefs>
+</PropertySetDef>

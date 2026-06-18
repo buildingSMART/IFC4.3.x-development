@@ -1,0 +1,112 @@
+<?xml version="1.0" ?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4X3_DEV_c24e347b"/>
+  <Name>Pset_GeoObsBoreholeGeophysicalInterval</Name>
+  <Definition/>
+  <Applicability/>
+  <ApplicableClasses>
+    <ClassName>IfcGeoScienceObservation/BOREHOLELOG</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcGeoScienceObservation/BOREHOLELOG</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef>
+      <Name>BoreholeDiameter</Name>
+      <Definition>IfcPositiveLengthMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="BoreholeDiameter"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>DryBulkDensity</Name>
+      <Definition>IfcMassDensityMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="DryBulkDensity"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>GammaRay</Name>
+      <Definition>IfcReal</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="GammaRay"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>GroundwaterTemperature</Name>
+      <Definition>IfcThermodynamicTemperatureMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="GroundwaterTemperature"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>PoissonRatio</Name>
+      <Definition>IfcPositiveRatioMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="PoissonRatio"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>PwaveVelocity</Name>
+      <Definition>IfcLinearVelocityMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="PwaveVelocity"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>Resistivity</Name>
+      <Definition>IfcElectricalResistivityMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="Resistivity"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>SpontaneousPotential</Name>
+      <Definition>IfcElectricVoltageMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="SpontaneousPotential"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>SwaveVelocity</Name>
+      <Definition>IfcLinearVelocityMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="SwaveVelocity"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>WetBulkDensity</Name>
+      <Definition>IfcLabel</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="WetBulkDensity"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>YoungModulus</Name>
+      <Definition>IfcModulusOfElasticityMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="YoungModulus"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+  </PropertyDefs>
+</PropertySetDef>

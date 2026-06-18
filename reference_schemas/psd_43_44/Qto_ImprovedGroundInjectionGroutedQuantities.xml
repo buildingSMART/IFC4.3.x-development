@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<QtoSetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" templatetype="QTO_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/QTO_IFC4.xsd">
+  <IfcVersion version="IFC4X3_DEV_c24e347b"/>
+  <Name>Qto_ImprovedGroundInjectionGroutedQuantities</Name>
+  <Definition/>
+  <Applicability/>
+  <ApplicableClasses>
+    <ClassName>IfcImprovedGround/INJECTIONGROUTED</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcImprovedGround/INJECTIONGROUTED</ApplicableTypeValue>
+  <QtoDefs>
+    <QtoDef>
+      <Name>QuantityDryMass</Name>
+      <Definition>Q_WEIGHT</Definition>
+      <QtoType>QuantityDryMass</QtoType>
+    </QtoDef>
+    <QtoDef>
+      <Name>QuantityGroutedMaterial</Name>
+      <Definition>Q_VOLUME</Definition>
+      <QtoType>QuantityGroutedMaterial</QtoType>
+    </QtoDef>
+  </QtoDefs>
+</QtoSetDef>

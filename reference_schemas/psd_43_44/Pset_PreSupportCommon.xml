@@ -1,0 +1,124 @@
+<?xml version="1.0" ?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4X3_DEV_c24e347b"/>
+  <Name>Pset_PreSupportCommon</Name>
+  <Definition/>
+  <Applicability/>
+  <ApplicableClasses>
+    <ClassName>IfcBuiltSystem/TUNNEL_PRESUPPORT</ClassName>
+    <ClassName>IfcTunnelTypicalSection/EXCAVATIONSUPPORT</ClassName>
+    <ClassName>IfcElementAssembly/PRESUPPORTVAULT</ClassName>
+    <ClassName>IfcElementAssembly/PRESUPPORTFACE</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcBuiltSystem/TUNNEL_PRESUPPORT,IfcTunnelTypicalSection/EXCAVATIONSUPPORT,IfcElementAssembly/PRESUPPORTVAULT,IfcElementAssembly/PRESUPPORTFACE</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef>
+      <Name>AreHolesGrouted</Name>
+      <Definition>IfcBoolean</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="AreHolesGrouted"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>SupportArrangement</Name>
+      <Definition>PEnum_PreSupportArrangement</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="SupportArrangement"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>BoreholeLengthPlanned</Name>
+      <Definition>IfcPositiveLengthMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="BoreholeLengthPlanned"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>BoreholeOverlap</Name>
+      <Definition>IfcLengthMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="BoreholeOverlap"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>DrillingDiameter</Name>
+      <Definition>IfcPositiveLengthMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="DrillingDiameter"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>DrillingMethod</Name>
+      <Definition>IfcLabel</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="DrillingMethod"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>IsBoreholeCased</Name>
+      <Definition>IfcBoolean</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="IsBoreholeCased"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>PreSupportLocation</Name>
+      <Definition>PEnum_PreSupportLocation</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="PreSupportLocation"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>PreSupportType</Name>
+      <Definition>PEnum_PreSupportType</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="PreSupportType"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>UsefulLength</Name>
+      <Definition>IfcLengthMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="UsefulLength"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>UserDefinedPreSupportLocation</Name>
+      <Definition>IfcLabel</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="UserDefinedPreSupportLocation"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>UserDefinedPreSupportType</Name>
+      <Definition>IfcLabel</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="UserDefinedPreSupportType"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+  </PropertyDefs>
+</PropertySetDef>

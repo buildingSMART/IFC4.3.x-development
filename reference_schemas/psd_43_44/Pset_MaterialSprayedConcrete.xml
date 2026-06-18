@@ -1,0 +1,139 @@
+<?xml version="1.0" ?>
+<PropertySetDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" templatetype="PSET_TYPEDRIVENOVERRIDE" xsi:noNamespaceSchemaLocation="http://buildingSMART-tech.org/xml/psd/PSD_IFC4.xsd">
+  <IfcVersion version="IFC4X3_DEV_c24e347b"/>
+  <Name>Pset_MaterialSprayedConcrete</Name>
+  <Definition/>
+  <Applicability/>
+  <ApplicableClasses>
+    <ClassName>IfcMaterial</ClassName>
+  </ApplicableClasses>
+  <ApplicableTypeValue>IfcMaterial</ApplicableTypeValue>
+  <PropertyDefs>
+    <PropertyDef>
+      <Name>AspectRatio</Name>
+      <Definition>IfcPositiveRatioMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="AspectRatio"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>CompressiveStrength24h</Name>
+      <Definition>IfcPressureMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="CompressiveStrength24h"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>CompressiveStrength48h</Name>
+      <Definition>IfcPressureMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="CompressiveStrength48h"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>EarlyStrengthDevelopment</Name>
+      <Definition>PEnum_EarlyStrengthDevelopment</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="EarlyStrengthDevelopment"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>EnergyAbsportionCapacity28d</Name>
+      <Definition>IfcEnergyMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="EnergyAbsportionCapacity28d"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>EnergyAbsportionCapacity7d</Name>
+      <Definition>IfcEnergyMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="EnergyAbsportionCapacity7d"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>FibreDiameter</Name>
+      <Definition>IfcPositiveLengthMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="FibreDiameter"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>FibreLength</Name>
+      <Definition>IfcPositiveLengthMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="FibreLength"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>FibreType</Name>
+      <Definition>PEnum_SprayedConcreteFibreType</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="FibreType"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>FibreVolumeRatio</Name>
+      <Definition>IfcMassDensityMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="FibreVolumeRatio"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>ResidualStrengthStructualClass</Name>
+      <Definition>PEnum_ResidualStrengthStructuralClass</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="ResidualStrengthStructualClass"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>ResidualTensileStrengthfLk</Name>
+      <Definition>IfcPressureMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="ResidualTensileStrengthfLk"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>ResidualTensileStrengthfR1k</Name>
+      <Definition>IfcPressureMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="ResidualTensileStrengthfR1k"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+    <PropertyDef>
+      <Name>ResidualTensileStrengthfR3k</Name>
+      <Definition>IfcPressureMeasure</Definition>
+      <PropertyType>
+        <TypePropertySingleValue>
+          <DataType type="ResidualTensileStrengthfR3k"/>
+        </TypePropertySingleValue>
+      </PropertyType>
+    </PropertyDef>
+  </PropertyDefs>
+</PropertySetDef>

@@ -73,7 +73,7 @@ if __name__ == "__main__":
         emitted_header = False
 
         t1, t2 = map(read, (f1, f2))
-        result = DeepDiff(t1, t2,ignore_order=True)
+        result = DeepDiff(t1, t2, ignore_order=True, cutoff_intersection_for_pairs=0.5)
 
         for i, (ke, lbl) in enumerate([("iterable_item_added", "additions"), ("values_changed", "modifications"), ("iterable_item_removed", "deletions")]):
             di = result.to_dict().get(ke, {})
@@ -115,10 +115,22 @@ if __name__ == "__main__":
                                 .encode('ascii', 'xmlcharrefreplace').decode('ascii')
                                 
                 def format(value):
+                    def escape(s):
+                        return str(s).encode('ascii', 'xmlcharrefreplace').decode('ascii')\
+                            .replace('<', '&lt;').replace('>', '&gt;')
+
                     if isinstance(value, str):
-                        return value.encode('ascii', 'xmlcharrefreplace').decode('ascii')
+                        return escape(value)
                     elif isinstance(value, dict) and value.get('#tag'):
-                        return "&lt;%s&gt;" % value.get('#tag')
+                        tag = escape(value.get('#tag'))
+                        attrs = "".join(
+                            ' %s="%s"' % (k[1:], escape(v).replace('"', '&quot;'))
+                            for k, v in value.items()
+                            if k.startswith('@')
+                        )
+                        text = escape(value.get('#text', '')) if value.get('#text') else ''
+                        children = "".join(map(format, value.get('_children') or []))
+                        return "&lt;%s%s&gt;%s%s&lt;/%s&gt;" % (tag, attrs, text, children, tag)
                     return str(value)
 
                 print("*", " > ".join(flatmap(desc, evaled)))

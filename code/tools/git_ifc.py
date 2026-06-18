@@ -622,11 +622,45 @@ def _skip_active_merge(
     return 0
 
 
+def _stop_active_merge(
+    state: MergeState,
+    summary: list[dict[str, Any]] | None,
+    reason: str,
+) -> int:
+    pr = PullRequest(**state.pull_request)
+    print(
+        f"Stopped at PR #{pr.number} ({pull_request_code(pr) or pr.head_ref}): {reason}",
+        file=sys.stderr,
+    )
+    print(
+        "The merge is left in the worktree for inspection; use "
+        "`git ifc pr merge --continue --auto --stop-on-failure` after repairs "
+        "or `git ifc pr merge --abort` to discard it.",
+        file=sys.stderr,
+    )
+    _record_summary(summary, pr, "failed", reason)
+    return 1
+
+
+def _stop_pr_without_merge(
+    pr: PullRequest,
+    summary: list[dict[str, Any]] | None,
+    reason: str,
+) -> int:
+    print(
+        f"Stopped at PR #{pr.number} ({pull_request_code(pr) or pr.head_ref}): {reason}",
+        file=sys.stderr,
+    )
+    _record_summary(summary, pr, "failed", reason)
+    return 1
+
+
 def _finish_merge(
     repo_root: Path,
     state: MergeState,
     *,
     auto: bool = False,
+    stop_on_failure: bool = False,
     summary: list[dict[str, Any]] | None = None,
 ) -> int:
     pr = PullRequest(**state.pull_request)
@@ -646,14 +680,19 @@ def _finish_merge(
         if auto:
             ok, reason = _auto_resolve_conflicts(repo_root, unmerged)
             if not ok:
+                if stop_on_failure:
+                    return _stop_active_merge(state, summary, reason)
                 return _skip_active_merge(repo_root, state, summary, reason)
             unmerged = _unmerged_paths(repo_root)
         if unmerged and auto:
+            reason = "auto resolution left unresolved files: " + ", ".join(unmerged)
+            if stop_on_failure:
+                return _stop_active_merge(state, summary, reason)
             return _skip_active_merge(
                 repo_root,
                 state,
                 summary,
-                "auto resolution left unresolved files: " + ", ".join(unmerged),
+                reason,
             )
         if unmerged:
             print("PR merge still has unresolved files:", file=sys.stderr)
@@ -664,6 +703,8 @@ def _finish_merge(
     if not unmerged and auto:
         ok, reason, deduped_paths = _remove_duplicate_packaged_elements(repo_root, [])
         if not ok:
+            if stop_on_failure:
+                return _stop_active_merge(state, summary, reason)
             return _skip_active_merge(repo_root, state, summary, reason)
         if deduped_paths:
             _git(repo_root, "add", "--", *deduped_paths, capture=False)
@@ -673,11 +714,14 @@ def _finish_merge(
             _git(repo_root, "add", "-A", capture=False)
             unstaged = _unstaged_paths(repo_root)
         if unstaged and auto:
+            reason = "auto resolution left unstaged files: " + ", ".join(unstaged)
+            if stop_on_failure:
+                return _stop_active_merge(state, summary, reason)
             return _skip_active_merge(
                 repo_root,
                 state,
                 summary,
-                "auto resolution left unstaged files: " + ", ".join(unstaged),
+                reason,
             )
         if unstaged:
             print("PR merge has unstaged changes:", file=sys.stderr)
@@ -687,6 +731,8 @@ def _finish_merge(
             return 1
     if xmi_merge.validate_command(repo_root):
         if auto:
+            if stop_on_failure:
+                return _stop_active_merge(state, summary, "validation failed")
             return _skip_active_merge(repo_root, state, summary, "validation failed")
         return 1
     _git(repo_root, "commit", "-m", state.commit_message, capture=False)
@@ -706,6 +752,7 @@ def start_pr_merge(
     include_drafts: bool = False,
     remaining_selectors: Sequence[str] = (),
     auto: bool = False,
+    stop_on_failure: bool = False,
     summary: list[dict[str, Any]] | None = None,
 ) -> int:
     _require_clean_start(repo_root, auto=auto)
@@ -725,6 +772,8 @@ def start_pr_merge(
     except WorkflowError as exc:
         if auto:
             reason = str(exc)
+            if stop_on_failure:
+                return _stop_pr_without_merge(pr, summary, reason)
             print(f"Skipping PR #{pr.number} ({pull_request_code(pr) or pr.head_ref}): {reason}")
             _record_summary(summary, pr, "skipped", reason)
             return 0
@@ -772,18 +821,32 @@ def start_pr_merge(
             raise WorkflowError(f"PR #{pr.number} is already contained in HEAD")
         if auto:
             reason = "Git could not start the merge"
+            if stop_on_failure:
+                return _stop_pr_without_merge(pr, summary, reason)
             print(f"Skipping PR #{pr.number} ({pull_request_code(pr) or pr.head_ref}): {reason}")
             _record_summary(summary, pr, "skipped", reason)
             return 0
         raise WorkflowError(f"Git could not start the merge for PR #{pr.number}")
     if process.returncode or _unmerged_paths(repo_root):
         if auto:
-            return _finish_merge(repo_root, state, auto=True, summary=summary)
+            return _finish_merge(
+                repo_root,
+                state,
+                auto=True,
+                stop_on_failure=stop_on_failure,
+                summary=summary,
+            )
         print(f"PR #{pr.number} requires manual resolution.", file=sys.stderr)
         print("Resolve and stage the conflicts, then run:", file=sys.stderr)
         print("  git ifc pr merge --continue", file=sys.stderr)
         return 1
-    return _finish_merge(repo_root, state, auto=auto, summary=summary)
+    return _finish_merge(
+        repo_root,
+        state,
+        auto=auto,
+        stop_on_failure=stop_on_failure,
+        summary=summary,
+    )
 
 
 def start_pr_merges(
@@ -794,6 +857,7 @@ def start_pr_merges(
     base: str | None = None,
     include_drafts: bool = False,
     auto: bool = False,
+    stop_on_failure: bool = False,
     summary: list[dict[str, Any]] | None = None,
 ) -> int:
     if not selectors:
@@ -807,6 +871,7 @@ def start_pr_merges(
             include_drafts=include_drafts,
             remaining_selectors=selectors[index + 1 :],
             auto=auto,
+            stop_on_failure=stop_on_failure,
             summary=summary,
         )
         if result:
@@ -818,6 +883,7 @@ def continue_pr_merge(
     repo_root: Path,
     *,
     auto: bool = False,
+    stop_on_failure: bool = False,
     summary: list[dict[str, Any]] | None = None,
 ) -> int:
     state = _load_state(repo_root)
@@ -829,7 +895,13 @@ def continue_pr_merge(
             f"{_current_branch(repo_root)!r}"
         )
     remaining_selectors = list(state.remaining_selectors or [])
-    result = _finish_merge(repo_root, state, auto=auto, summary=summary)
+    result = _finish_merge(
+        repo_root,
+        state,
+        auto=auto,
+        stop_on_failure=stop_on_failure,
+        summary=summary,
+    )
     if result or not remaining_selectors:
         return result
     return start_pr_merges(
@@ -839,6 +911,7 @@ def continue_pr_merge(
         base=state.base,
         include_drafts=state.include_drafts,
         auto=auto,
+        stop_on_failure=stop_on_failure,
         summary=summary,
     )
 
@@ -905,7 +978,12 @@ def build_parser() -> argparse.ArgumentParser:
     merge_parser.add_argument(
         "--auto",
         action="store_true",
-        help="Resolve text conflicts by keeping both sides, drop duplicate packagedElements, and skip failed PRs",
+        help="Resolve text conflicts by keeping both sides and drop duplicate packagedElements",
+    )
+    merge_parser.add_argument(
+        "--stop-on-failure",
+        action="store_true",
+        help="With --auto, stop at the first failed PR instead of aborting and skipping it",
     )
     merge_parser.add_argument(
         "--all-prs",
@@ -944,7 +1022,12 @@ def main(argv: Sequence[str] | None = None) -> int:
         if args.continue_merge:
             if args.selectors or args.all_prs:
                 raise WorkflowError("do not provide selectors or --all-prs with --continue")
-            result = continue_pr_merge(repo_root, auto=args.auto, summary=summary)
+            result = continue_pr_merge(
+                repo_root,
+                auto=args.auto,
+                stop_on_failure=args.stop_on_failure,
+                summary=summary,
+            )
             if args.summary_json:
                 _write_summary(args.summary_json, summary or [])
             return result
@@ -980,6 +1063,7 @@ def main(argv: Sequence[str] | None = None) -> int:
                 base=base,
                 include_drafts=args.include_drafts,
                 auto=args.auto,
+                stop_on_failure=args.stop_on_failure,
                 summary=summary,
             )
             if args.summary_json:
@@ -994,6 +1078,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             base=args.base,
             include_drafts=args.include_drafts,
             auto=args.auto,
+            stop_on_failure=args.stop_on_failure,
             summary=summary,
         )
         if args.summary_json:

@@ -244,10 +244,19 @@ def test_parser_accepts_multiple_merge_selectors():
 
 def test_parser_accepts_auto_all_prs_summary():
     args = git_ifc.build_parser().parse_args(
-        ["pr", "merge", "--auto", "--all-prs", "--summary-json", "summary.json"]
+        [
+            "pr",
+            "merge",
+            "--auto",
+            "--stop-on-failure",
+            "--all-prs",
+            "--summary-json",
+            "summary.json",
+        ]
     )
 
     assert args.auto is True
+    assert args.stop_on_failure is True
     assert args.all_prs is True
     assert args.summary_json == Path("summary.json")
 
@@ -423,6 +432,46 @@ def test_auto_finish_aborts_and_records_skip_when_validation_fails(tmp_path, mon
     assert ("merge", "--abort") in commands
     assert cleared == [True]
     assert summary[0]["status"] == "skipped"
+    assert summary[0]["reason"] == "validation failed"
+
+
+def test_auto_stop_on_failure_leaves_merge_for_inspection(tmp_path, monkeypatch):
+    expected = state()
+    commands = []
+    cleared = []
+    summary = []
+    monkeypatch.setattr(git_ifc, "_merge_in_progress", lambda _repo: True)
+    monkeypatch.setattr(git_ifc, "_unmerged_paths", lambda _repo: [])
+    monkeypatch.setattr(git_ifc, "_unstaged_paths", lambda _repo: [])
+    monkeypatch.setattr(
+        git_ifc,
+        "_remove_duplicate_packaged_elements",
+        lambda _repo, _paths: (True, "", []),
+    )
+    monkeypatch.setattr(git_ifc.xmi_merge, "validate_command", lambda _repo: 1)
+
+    def fake_git(_repo, *args, **_kwargs):
+        if args == ("rev-parse", "HEAD"):
+            return completed(stdout=expected.start_head + "\n")
+        commands.append(args)
+        return completed()
+
+    monkeypatch.setattr(git_ifc, "_git", fake_git)
+    monkeypatch.setattr(git_ifc, "_clear_state", lambda _repo: cleared.append(True))
+
+    assert (
+        git_ifc._finish_merge(
+            tmp_path,
+            expected,
+            auto=True,
+            stop_on_failure=True,
+            summary=summary,
+        )
+        == 1
+    )
+    assert ("merge", "--abort") not in commands
+    assert cleared == []
+    assert summary[0]["status"] == "failed"
     assert summary[0]["reason"] == "validation failed"
 
 

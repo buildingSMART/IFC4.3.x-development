@@ -149,30 +149,56 @@ def test_resolves_conflict_markers_by_keeping_both_sides(tmp_path):
     assert path.read_text(encoding="utf-8") == "before\ncurrent\nother\nafter\n"
 
 
-def test_repairs_unbalanced_keep_both_conflict_by_peeling_boundary_line(tmp_path):
-    path = tmp_path / "conflicted.uml"
-    path.write_text(
-        HEADER
-        + MODEL_OPEN
-        + "<<<<<<< current\n"
-        + '    <packagedElement xmi:type="uml:Class" xmi:id="duplicate" name="current">\n'
-        + "||||||| base\n"
-        + "=======\n"
-        + '    <packagedElement xmi:type="uml:Class" xmi:id="added" name="added"/>\n'
-        + '    <packagedElement xmi:type="uml:Class" xmi:id="duplicate" name="other">\n'
-        + ">>>>>>> other\n"
-        + '      <ownedComment xmi:type="uml:Comment" xmi:id="duplicate_comment"/>\n'
-        + "    </packagedElement>\n"
-        + MODEL_CLOSE,
-        encoding="utf-8",
+def test_replays_same_point_zero_context_insertions_in_base_coordinates(tmp_path):
+    current_diff = (
+        b"@@ -3,0 +4,1 @@\n"
+        + b'+    <packagedElement xmi:type="uml:Class" xmi:id="current" name="current"/>\n'
+    )
+    other_diff = (
+        b"@@ -3,0 +4,1 @@\n"
+        + b'+    <packagedElement xmi:type="uml:Class" xmi:id="other" name="other"/>\n'
     )
 
-    assert xmi_merge.resolve_conflict_markers_keep_both(path)
-    result = path.read_text(encoding="utf-8")
-    SourceDocument(path)
-    assert 'xmi:id="added"' in result
-    assert 'name="current"' not in result
-    assert 'name="other"' in result
+    result = xmi_merge._replay_zero_context_diffs(
+        document().encode("utf-8"), current_diff, other_diff, "test.uml"
+    )
+    path = tmp_path / "merged.uml"
+    path.write_bytes(result)
+
+    assert ids(path) == ["model", "package", "current", "other"]
+
+
+def test_replay_zero_context_rejects_two_sided_replacement():
+    current_diff = (
+        b"@@ -4 +4 @@\n"
+        + b'-    <packagedElement xmi:type="uml:Class" xmi:id="base" name="base"/>\n'
+        + b'+    <packagedElement xmi:type="uml:Class" xmi:id="base" name="current"/>\n'
+    )
+    other_diff = (
+        b"@@ -4 +4 @@\n"
+        + b'-    <packagedElement xmi:type="uml:Class" xmi:id="base" name="base"/>\n'
+        + b'+    <packagedElement xmi:type="uml:Class" xmi:id="base" name="other"/>\n'
+    )
+
+    with pytest.raises(MergeConflict, match="both sides changed"):
+        xmi_merge._replay_zero_context_diffs(
+            document(node("base")).encode("utf-8"),
+            current_diff,
+            other_diff,
+            "test.uml",
+        )
+
+
+def test_merges_added_uml_documents_by_combining_package_children(tmp_path):
+    result = xmi_merge._merge_added_documents(
+        document(node("current")).encode("utf-8"),
+        document(node("other")).encode("utf-8"),
+        "added.uml",
+    )
+    path = tmp_path / "added.uml"
+    path.write_bytes(result)
+
+    assert ids(path) == ["model", "package", "current", "other"]
 
 
 def test_removes_duplicate_packaged_elements_retaining_first(tmp_path):
@@ -191,6 +217,48 @@ def test_removes_duplicate_packaged_elements_retaining_first(tmp_path):
     assert 'name="first"' in result
     assert 'name="second"' not in result
     assert ids(path) == ["model", "package", "duplicate", "unique"]
+
+
+def test_removes_identical_duplicate_package_import(tmp_path):
+    path = tmp_path / "duplicates.uml"
+    package_import = (
+        '  <packageImport xmi:type="uml:PackageImport" xmi:id="ip_IfcTunnelDomain">\n'
+        '    <importedPackage xmi:type="uml:Package" href="IfcTunnelDomain.uml#pk_IfcTunnelDomain"/>\n'
+        "  </packageImport>\n"
+    )
+    path.write_text(
+        HEADER
+        + (
+            '<uml:Model xmlns:xmi="http://www.omg.org/spec/XMI/20131001" '
+            'xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" '
+            'xmi:id="model" name="model">\n'
+        )
+        + package_import
+        + package_import
+        + '  <packagedElement xmi:type="uml:Package" xmi:id="package" name="package"/>\n'
+        + "</uml:Model>\n",
+        encoding="utf-8",
+    )
+
+    assert xmi_merge.remove_duplicate_xmi_id_elements(path) == 1
+    assert path.read_text(encoding="utf-8").count('xmi:id="ip_IfcTunnelDomain"') == 1
+    assert ids(path) == ["model", "ip_IfcTunnelDomain", "package"]
+
+
+def test_rejects_nonidentical_duplicate_non_packaged_element(tmp_path):
+    path = tmp_path / "duplicates.uml"
+    path.write_text(
+        document(
+            '<packagedElement xmi:type="uml:Enumeration" xmi:id="enum" name="Enum">\n'
+            '      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="literal" name="A"/>\n'
+            '      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="literal" name="B"/>\n'
+            "    </packagedElement>"
+        ),
+        encoding="utf-8",
+    )
+
+    with pytest.raises(MergeConflict, match="non-identical ownedLiteral"):
+        xmi_merge.remove_duplicate_xmi_id_elements(path)
 
 
 def test_validate_defers_when_generator_fails(tmp_path, monkeypatch, capsys):

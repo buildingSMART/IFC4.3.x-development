@@ -16,6 +16,7 @@ from __future__ import annotations
 import argparse
 import heapq
 import os
+import re
 import shlex
 import subprocess
 import sys
@@ -58,9 +59,12 @@ class _ConflictBlock:
 
 
 @dataclass(frozen=True)
-class _PeelChoice:
-    direction: str = ""
-    count: int = 0
+class _DiffOperation:
+    side: str
+    start: int
+    end: int
+    old: tuple[bytes, ...]
+    new: tuple[bytes, ...]
 
 
 class SourceDocument:
@@ -469,100 +473,295 @@ def _xml_well_formed_error(data: bytes, label: Path | str) -> str | None:
 
 def _render_conflict_marker_parts(
     parts: Sequence[bytes | _ConflictBlock],
-    choices: Sequence[_PeelChoice] | None = None,
 ) -> bytes:
     output: list[bytes] = []
-    block_index = 0
     for part in parts:
         if not isinstance(part, _ConflictBlock):
             output.append(part)
             continue
-
-        choice = choices[block_index] if choices is not None else _PeelChoice()
-        current = list(part.current)
-        other = list(part.other)
-        if choice.direction == "current_tail":
-            current = current[: -choice.count]
-        elif choice.direction == "other_head":
-            other = other[choice.count :]
-        elif choice.direction:
-            raise AssertionError(f"unknown peel direction {choice.direction!r}")
-
-        output.extend(current)
-        output.extend(other)
-        block_index += 1
+        output.extend(part.current)
+        output.extend(part.other)
     return b"".join(output)
 
 
-def _next_peel_choices(
-    block: _ConflictBlock, choice: _PeelChoice
-) -> list[_PeelChoice]:
-    if not choice.direction:
-        result: list[_PeelChoice] = []
-        if block.current:
-            result.append(_PeelChoice("current_tail", 1))
-        if block.other:
-            result.append(_PeelChoice("other_head", 1))
-        return result
-    if choice.direction == "current_tail" and choice.count < len(block.current):
-        return [_PeelChoice("current_tail", choice.count + 1)]
-    if choice.direction == "other_head" and choice.count < len(block.other):
-        return [_PeelChoice("other_head", choice.count + 1)]
-    return []
+_ZERO_CONTEXT_HEADER = re.compile(
+    br"^@@ -(\d+)(?:,(\d+))? \+(\d+)(?:,(\d+))? @@"
+)
 
 
-def _peel_cost(choices: Sequence[_PeelChoice]) -> int:
-    return sum(choice.count for choice in choices)
-
-
-def _describe_peel_choices(choices: Sequence[_PeelChoice]) -> str:
-    descriptions: list[str] = []
-    for index, choice in enumerate(choices, start=1):
-        if not choice.count:
+def _parse_zero_context_diff(data: bytes, side: str) -> list[_DiffOperation]:
+    lines = data.splitlines(keepends=True)
+    operations: list[_DiffOperation] = []
+    index = 0
+    while index < len(lines):
+        match = _ZERO_CONTEXT_HEADER.match(lines[index])
+        if match is None:
+            index += 1
             continue
-        side = "current tail" if choice.direction == "current_tail" else "other head"
-        plural = "" if choice.count == 1 else "s"
-        descriptions.append(f"block {index}: {choice.count} line{plural} from {side}")
-    return "; ".join(descriptions)
+
+        old_start = int(match.group(1))
+        old_count = int(match.group(2) or b"1")
+        start = old_start if old_count == 0 else old_start - 1
+        end = start + old_count
+        old: list[bytes] = []
+        new: list[bytes] = []
+        index += 1
+        while index < len(lines) and not lines[index].startswith(b"@@ "):
+            line = lines[index]
+            if line.startswith(b"\\ "):
+                index += 1
+                continue
+            if line.startswith(b"-") and not line.startswith(b"---"):
+                old.append(line[1:])
+            elif line.startswith(b"+") and not line.startswith(b"+++"):
+                new.append(line[1:])
+            elif line.startswith(b" "):
+                old.append(line[1:])
+                new.append(line[1:])
+            index += 1
+        operations.append(
+            _DiffOperation(side, start, end, tuple(old), tuple(new))
+        )
+    return operations
 
 
-def _repair_conflict_markers_by_peeling(
-    parts: Sequence[bytes | _ConflictBlock], label: Path | str
-) -> tuple[bytes, tuple[_PeelChoice, ...]] | None:
-    blocks = [part for part in parts if isinstance(part, _ConflictBlock)]
-    if not blocks:
+def _replay_zero_context_diffs(
+    base: bytes,
+    current_diff: bytes,
+    other_diff: bytes,
+    label: Path | str,
+) -> bytes:
+    base_lines = base.splitlines(keepends=True)
+    operations = sorted(
+        [
+            *_parse_zero_context_diff(current_diff, "current"),
+            *_parse_zero_context_diff(other_diff, "other"),
+        ],
+        key=lambda operation: (
+            operation.start,
+            operation.end,
+            0 if operation.side == "current" else 1,
+        ),
+    )
+    output: list[bytes] = []
+    position = 0
+    index = 0
+
+    while index < len(operations):
+        group = [operations[index]]
+        index += 1
+        while (
+            index < len(operations)
+            and operations[index].start == group[0].start
+            and operations[index].end == group[0].end
+        ):
+            group.append(operations[index])
+            index += 1
+
+        start = group[0].start
+        end = group[0].end
+        if start < position:
+            raise MergeConflict(
+                f"{label}: overlapping zero-context patch hunks near base line {start + 1}"
+            )
+        expected_old = tuple(base_lines[start:end])
+        for operation in group:
+            if operation.old != expected_old:
+                raise MergeConflict(
+                    f"{label}: zero-context patch does not match base near line {start + 1}"
+                )
+
+        replacements: list[tuple[bytes, ...]] = []
+        for operation in group:
+            if operation.new not in replacements:
+                replacements.append(operation.new)
+        if len(replacements) > 1 and start != end:
+            raise MergeConflict(
+                f"{label}: both sides changed base lines {start + 1}-{end}"
+            )
+
+        output.extend(base_lines[position:start])
+        for replacement in replacements:
+            output.extend(replacement)
+        position = end
+
+    output.extend(base_lines[position:])
+    return b"".join(output)
+
+
+def _git_stage_bytes(repo_root: Path, relative_path: str, stage: int) -> bytes | None:
+    process = subprocess.run(
+        ["git", "show", f":{stage}:{relative_path}"],
+        cwd=repo_root,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        check=False,
+    )
+    if process.returncode:
         return None
+    return process.stdout
 
-    initial = tuple(_PeelChoice() for _ in blocks)
-    heap: list[tuple[int, int, tuple[_PeelChoice, ...]]] = [(0, 0, initial)]
-    seen = {initial}
-    sequence = 0
-    searched = 0
-    max_states = 20000
 
-    while heap and searched < max_states:
-        _cost, _sequence, choices = heapq.heappop(heap)
-        searched += 1
-        if _peel_cost(choices):
-            data = _render_conflict_marker_parts(parts, choices)
-            if _xml_well_formed_error(data, label) is None:
-                return data, choices
+def _git_zero_context_diff(
+    repo_root: Path, relative_path: str, stage: int
+) -> bytes:
+    process = subprocess.run(
+        [
+            "git",
+            "diff",
+            "--unified=0",
+            "--no-ext-diff",
+            "--no-color",
+            f":1:{relative_path}",
+            f":{stage}:{relative_path}",
+        ],
+        cwd=repo_root,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        check=False,
+    )
+    if process.returncode:
+        message = process.stderr.decode("utf-8", "replace").strip()
+        raise MergeConflict(
+            f"{relative_path}: cannot diff Git stage 1 against stage {stage}: "
+            f"{message or process.returncode}"
+        )
+    return process.stdout
 
-        for block_index, block in enumerate(blocks):
-            for next_choice in _next_peel_choices(block, choices[block_index]):
-                next_choices = (
-                    choices[:block_index]
-                    + (next_choice,)
-                    + choices[block_index + 1 :]
-                )
-                if next_choices in seen:
-                    continue
-                seen.add(next_choices)
-                sequence += 1
-                heapq.heappush(
-                    heap, (_peel_cost(next_choices), sequence, next_choices)
-                )
-    return None
+
+def resolve_unmerged_file_by_zero_context_patches(
+    repo_root: Path, relative_path: str
+) -> bool:
+    """Resolve an unmerged file by replaying stage 1->2 and 1->3 diffs on stage 1."""
+
+    base = _git_stage_bytes(repo_root, relative_path, 1)
+    if base is None:
+        return False
+    for stage in (2, 3):
+        if _git_stage_bytes(repo_root, relative_path, stage) is None:
+            return False
+
+    result = _replay_zero_context_diffs(
+        base,
+        _git_zero_context_diff(repo_root, relative_path, 2),
+        _git_zero_context_diff(repo_root, relative_path, 3),
+        relative_path,
+    )
+    if Path(relative_path).suffix.lower() == ".uml":
+        error = _xml_well_formed_error(result, relative_path)
+        if error:
+            raise MergeConflict(error)
+
+    (repo_root / relative_path).write_bytes(result)
+    print(
+        f"xmi-merge: {relative_path}: resolved by replaying zero-context "
+        "stage diffs",
+        file=sys.stderr,
+    )
+    return True
+
+
+def _document_from_bytes(data: bytes) -> SourceDocument:
+    with tempfile.NamedTemporaryFile(suffix=".uml", delete=False) as handle:
+        handle.write(data)
+        temp_path = Path(handle.name)
+    try:
+        return SourceDocument(temp_path)
+    finally:
+        temp_path.unlink(missing_ok=True)
+
+
+def _single_package_child(document: SourceDocument, label: Path | str) -> SourceNode:
+    assert document.root is not None
+    if len(document.root.children) != 1:
+        raise MergeConflict(f"{label}: add/add UML merge expects one root package")
+    package = document.root.children[0]
+    if package.name != "packagedElement" or not package.xmi_id:
+        raise MergeConflict(f"{label}: add/add UML merge expects one named root package")
+    return package
+
+
+def _merge_added_documents(current: bytes, other: bytes, label: Path | str) -> bytes:
+    current_doc = _document_from_bytes(current)
+    other_doc = _document_from_bytes(other)
+    assert current_doc.root is not None and other_doc.root is not None
+    if (
+        current_doc.root.name != other_doc.root.name
+        or current_doc.root.attrs != other_doc.root.attrs
+    ):
+        raise MergeConflict(f"{label}: add/add UML roots differ")
+
+    current_package = _single_package_child(current_doc, label)
+    other_package = _single_package_child(other_doc, label)
+    if (
+        current_package.name != other_package.name
+        or current_package.attrs != other_package.attrs
+    ):
+        raise MergeConflict(f"{label}: add/add UML root packages differ")
+
+    current_order, current_children = _child_map(current_package)
+    other_order, other_children = _child_map(other_package)
+    merged_children: dict[str, bytes] = {}
+    for key in current_order:
+        merged_children[key] = current_doc.raw(current_children[key])
+    for key in other_order:
+        other_child = other_children[key]
+        current_child = current_children.get(key)
+        if current_child is not None:
+            if current_doc.fingerprint(current_child) != other_doc.fingerprint(other_child):
+                raise MergeConflict(f"{label}: both added different elements with {key}")
+            continue
+        merged_children[key] = other_doc.raw(other_child)
+
+    order = current_order + [key for key in other_order if key not in current_children]
+    prefix, separator, suffix = _format_parts(current_doc, current_package)
+    package_start = current_doc.data[
+        current_package.start : current_package.start_tag_end
+    ]
+    package_end = current_doc.data[
+        current_package.end_tag_start : current_package.end
+    ]
+    package_body = separator.join(merged_children[key] for key in order)
+    merged_package = package_start + prefix + package_body + suffix + package_end
+
+    root = current_doc.root
+    root_start = current_doc.data[root.start : root.start_tag_end]
+    root_end = current_doc.data[root.end_tag_start : root.end]
+    before_package = current_doc.data[root.start_tag_end : current_package.start]
+    after_package = current_doc.data[current_package.end : root.end_tag_start]
+    result = (
+        current_doc.prefix()
+        + root_start
+        + before_package
+        + merged_package
+        + after_package
+        + root_end
+        + current_doc.suffix()
+    )
+    _validate_bytes(result, label)
+    return result
+
+
+def resolve_added_file_by_structural_merge(
+    repo_root: Path, relative_path: str
+) -> bool:
+    """Resolve an add/add UML conflict by combining children of the root package."""
+
+    if _git_stage_bytes(repo_root, relative_path, 1) is not None:
+        return False
+    current = _git_stage_bytes(repo_root, relative_path, 2)
+    other = _git_stage_bytes(repo_root, relative_path, 3)
+    if current is None or other is None:
+        return False
+
+    result = _merge_added_documents(current, other, relative_path)
+    (repo_root / relative_path).write_bytes(result)
+    print(
+        f"xmi-merge: {relative_path}: resolved add/add UML by combining "
+        "root package children",
+        file=sys.stderr,
+    )
+    return True
 
 
 def resolve_conflict_markers_keep_both(path: Path) -> bool:
@@ -609,36 +808,32 @@ def resolve_conflict_markers_keep_both(path: Path) -> bool:
         parts.append(_ConflictBlock(tuple(current), tuple(other)))
 
     if changed:
-        data = _render_conflict_marker_parts(parts)
-        if path.suffix.lower() == ".uml" and _xml_well_formed_error(data, path):
-            repaired = _repair_conflict_markers_by_peeling(parts, path)
-            if repaired is not None:
-                data, choices = repaired
-                print(
-                    f"xmi-merge: {path}: repaired conflict markers by peeling "
-                    f"{_describe_peel_choices(choices)}",
-                    file=sys.stderr,
-                )
-        path.write_bytes(data)
+        path.write_bytes(_render_conflict_marker_parts(parts))
     return changed
 
 
-def remove_duplicate_packaged_elements(path: Path) -> int:
-    """Remove later ``packagedElement`` nodes with an ``xmi:id`` already seen."""
+def remove_duplicate_xmi_id_elements(path: Path) -> int:
+    """Remove later duplicate ``xmi:id`` elements when the duplicate is safe to drop."""
 
     document = SourceDocument(path)
     assert document.root is not None
-    seen: set[str] = set()
+    seen: dict[str, SourceNode] = {}
     ranges: list[tuple[int, int]] = []
 
     def visit(node: SourceNode) -> None:
-        if node.name == "packagedElement" and node.xmi_id:
-            if node.xmi_id in seen:
-                if node.end is None:
-                    raise MergeConflict(f"{path}: incomplete duplicate packagedElement")
+        if node.xmi_id:
+            first = seen.get(node.xmi_id)
+            if first is not None:
+                if node.end is None or first.end is None:
+                    raise MergeConflict(f"{path}: incomplete duplicate {node.xmi_id}")
+                if node.name != "packagedElement" and document.raw(node) != document.raw(first):
+                    raise MergeConflict(
+                        f"{path}: duplicate xmi:id {node.xmi_id} on "
+                        f"non-identical {node.name} elements"
+                    )
                 ranges.append((node.start, node.end))
                 return
-            seen.add(node.xmi_id)
+            seen[node.xmi_id] = node
         for child in node.children:
             visit(child)
 
@@ -652,6 +847,12 @@ def remove_duplicate_packaged_elements(path: Path) -> int:
     _validate_bytes(data, path)
     path.write_bytes(data)
     return len(ranges)
+
+
+def remove_duplicate_packaged_elements(path: Path) -> int:
+    """Compatibility wrapper for the broader duplicate ``xmi:id`` culling."""
+
+    return remove_duplicate_xmi_id_elements(path)
 
 
 def driver(base: Path, current: Path, other: Path, display_path: str) -> int:

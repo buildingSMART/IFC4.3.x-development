@@ -542,6 +542,27 @@ def _is_schema_uml_path(path: str) -> bool:
     return path.startswith("schemas/") and path.endswith(".uml")
 
 
+def _has_index_stage(repo_root: Path, relative_path: str, stage: int) -> bool:
+    return (
+        _git(
+            repo_root,
+            "cat-file",
+            "-e",
+            f":{stage}:{relative_path}",
+            check=False,
+        ).returncode
+        == 0
+    )
+
+
+def _is_add_add_conflict(repo_root: Path, relative_path: str) -> bool:
+    return (
+        not _has_index_stage(repo_root, relative_path, 1)
+        and _has_index_stage(repo_root, relative_path, 2)
+        and _has_index_stage(repo_root, relative_path, 3)
+    )
+
+
 def _changed_schema_uml_paths(repo_root: Path, extra_paths: Sequence[str]) -> list[str]:
     paths = {path for path in extra_paths if _is_schema_uml_path(path)}
     for args in (
@@ -563,12 +584,12 @@ def _remove_duplicate_packaged_elements(
         if not path.exists():
             continue
         try:
-            removed = xmi_merge.remove_duplicate_packaged_elements(path)
+            removed = xmi_merge.remove_duplicate_xmi_id_elements(path)
         except xmi_merge.MergeConflict as exc:
             return False, str(exc), changed
         if removed:
             print(
-                f"git-ifc: removed {removed} duplicate packagedElement node(s) from "
+                f"git-ifc: removed {removed} duplicate xmi:id element(s) from "
                 f"{relative_path}",
                 file=sys.stderr,
             )
@@ -585,7 +606,18 @@ def _auto_resolve_conflicts(
         if not path.exists() or path.is_dir():
             return False, f"{relative_path} is not a regular file in the worktree"
         try:
+            if _is_schema_uml_path(relative_path):
+                if xmi_merge.resolve_unmerged_file_by_zero_context_patches(
+                    repo_root, relative_path
+                ) or xmi_merge.resolve_added_file_by_structural_merge(
+                    repo_root, relative_path
+                ):
+                    paths_to_stage.add(relative_path)
+                    continue
             if not xmi_merge.has_conflict_markers(path):
+                if _is_add_add_conflict(repo_root, relative_path):
+                    paths_to_stage.add(relative_path)
+                    continue
                 return False, f"{relative_path} has no Git conflict markers to collapse"
             xmi_merge.resolve_conflict_markers_keep_both(path)
         except (OSError, xmi_merge.MergeConflict) as exc:
@@ -978,7 +1010,7 @@ def build_parser() -> argparse.ArgumentParser:
     merge_parser.add_argument(
         "--auto",
         action="store_true",
-        help="Resolve text conflicts by keeping both sides and drop duplicate packagedElements",
+        help="Resolve text conflicts by keeping both sides and drop duplicate xmi:id elements",
     )
     merge_parser.add_argument(
         "--stop-on-failure",

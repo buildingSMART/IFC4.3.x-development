@@ -29,7 +29,7 @@ def eq(a, b):
         return set(map(str, a.values)) == set(map(str, b.values))
     else:
         # @todo
-        import pdb; pdb.set_trace()
+        raise RuntimeError(f"express_diff: unsupported comparison between {type(a).__name__} and {type(b).__name__}")
         
 def format(a):
     if isinstance(a, (express_parser.SelectType, express_parser.EnumerationType)):

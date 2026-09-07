@@ -192,7 +192,7 @@ def construct_xml(xmi_doc, pset, path, by_id, by_name):
                 atv_values.append(nm)
         else:
             print("WARNING:", x, "on", pset.name, "not recorded", file=sys.stderr)
-            breakpoint()
+            raise RuntimeError(f"pset: applicability {x!r} on {pset.name} not recorded")
 
     atv_values = sorted(atv_values, key=lambda s: ("/" in s, s))
 

@@ -344,7 +344,7 @@ def create_attribute(entity, a, name_override=None):
             
         return attr
     else:
-        breakpoint()
+        raise RuntimeError(f"express_to_xsd: unhandled attribute type mapping for {attr!r}")
         
 
 def convert(e, name_override=None, excluded_attributes=(), restriction=None, include_inherited=False):

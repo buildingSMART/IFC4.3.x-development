@@ -649,6 +649,9 @@ class StaticTemplateRenderer(markdown_mixin):
     def resource_paths(pairs, path=None):
         if isinstance(pairs, dict):
             pairs = list(pairs.items())
+        if not pairs:
+            # empty category (e.g. a domain with no members in this build) -> nothing to map
+            return
         if isinstance(pairs[0], str):
             for v in pairs:
                 yield v, path

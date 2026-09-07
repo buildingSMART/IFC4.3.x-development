@@ -80,11 +80,7 @@ jobs:
       - name: Check out output repository
         uses: actions/checkout@v4
         with:
-<<<<<<< HEAD
           repository: aothms/IFC4.x-development-merged-output
-=======
-          repository: buildingSMART/IFC-output
->>>>>>> dd97e9c6e029beda194dc0aa50ccd0cfa09bcafa
           path: output-repo
           fetch-depth: 1
           token: ${{ secrets.OUTPUT_2_TOKEN }}

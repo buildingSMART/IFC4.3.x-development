@@ -157,7 +157,7 @@ jobs:
         run: |
           set -euxo pipefail
           python code/generators/util/compare_pset.py \
-            reference_schemas/psd \
+            reference_schemas/psd_43_44 \
             output/psd \
             > output/pset_diff.md
           if [ ! -s output/pset_diff.md ]; then

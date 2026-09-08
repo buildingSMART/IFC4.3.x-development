@@ -51,10 +51,18 @@ jobs:
           esac
 
       - name: Check out source repository
+        if: github.ref_name != 'ifc4.4-preview'
         uses: actions/checkout@v4
         with:
           path: ifc43
-          fetch-depth: ${{ github.ref_name == 'ifc4.4-preview' && 0 || 1 }}
+          fetch-depth: 1
+
+      - name: Check out source repository (preview, full history)
+        if: github.ref_name == 'ifc4.4-preview'
+        uses: actions/checkout@v4
+        with:
+          path: ifc43
+          fetch-depth: 0
 
       - name: Auto merge IFC4.4 PRs
         if: github.ref_name == 'ifc4.4-preview'

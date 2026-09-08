@@ -1,5 +1,5 @@
 {
-    "version": [4,4,0],
+    "version": [4,4,0,0],
     "@status-options": {
         "PREVIEW": "⚠ Preview version - backwards incompatible changes are likely",
         "DEVELOPMENT": "⚠ buildingSMART Working Draft. All content is under development.",

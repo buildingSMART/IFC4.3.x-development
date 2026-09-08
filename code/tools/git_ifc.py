@@ -89,6 +89,7 @@ class MergeState:
     base: str | None = None
     include_drafts: bool = False
     remaining_selectors: list[str] | None = None
+    labels: list[str] | None = None
 
 
 def _run(
@@ -165,6 +166,7 @@ def list_pull_requests(
     repository: str,
     *,
     base: str | None = None,
+    labels: Sequence[str] | None = None,
     limit: int = 100,
     state: str = "all",
 ) -> list[PullRequest]:
@@ -188,6 +190,9 @@ def list_pull_requests(
         ]
         if base:
             command.extend(["--base", base])
+        if labels:
+            for label in labels:
+                command.extend(["--label", label])
         process = _run(command, repo_root)
         pull_requests.extend(
             pr
@@ -268,11 +273,12 @@ def selectable_pull_requests_by_code(
     repository: str,
     *,
     base: str | None = None,
+    labels: Sequence[str] | None = None,
     limit: int = 1000,
     include_drafts: bool = False,
 ) -> list[PullRequest]:
     pull_requests = list_pull_requests(
-        repo_root, repository, base=base, limit=limit, state="all"
+        repo_root, repository, base=base, labels=labels, limit=limit, state="all"
     )
     if not include_drafts:
         pull_requests = [pr for pr in pull_requests if not pr.is_draft]
@@ -781,6 +787,7 @@ def start_pr_merge(
     *,
     remote_name: str | None = None,
     base: str | None = None,
+    labels: Sequence[str] | None = None,
     include_drafts: bool = False,
     remaining_selectors: Sequence[str] = (),
     auto: bool = False,
@@ -792,7 +799,12 @@ def start_pr_merge(
     repository = _repository_name(repo_root, remote)
     configured_base = base or _config(repo_root, "ifc.base")
     pull_requests = list_pull_requests(
-        repo_root, repository, base=configured_base, limit=1000, state="all"
+        repo_root,
+        repository,
+        base=configured_base,
+        labels=labels,
+        limit=1000,
+        state="all",
     )
     if not include_drafts:
         pull_requests = [pr for pr in pull_requests if not pr.is_draft]
@@ -830,6 +842,7 @@ def start_pr_merge(
         base=configured_base,
         include_drafts=include_drafts,
         remaining_selectors=list(remaining_selectors),
+        labels=list(labels) if labels else None,
     )
     _write_state(repo_root, state)
     process = _git(
@@ -887,6 +900,7 @@ def start_pr_merges(
     *,
     remote_name: str | None = None,
     base: str | None = None,
+    labels: Sequence[str] | None = None,
     include_drafts: bool = False,
     auto: bool = False,
     stop_on_failure: bool = False,
@@ -900,6 +914,7 @@ def start_pr_merges(
             selector,
             remote_name=remote_name,
             base=base,
+            labels=labels,
             include_drafts=include_drafts,
             remaining_selectors=selectors[index + 1 :],
             auto=auto,
@@ -941,6 +956,7 @@ def continue_pr_merge(
         remaining_selectors,
         remote_name=state.remote,
         base=state.base,
+        labels=state.labels,
         include_drafts=state.include_drafts,
         auto=auto,
         stop_on_failure=stop_on_failure,
@@ -989,6 +1005,11 @@ def build_parser() -> argparse.ArgumentParser:
     list_parser = pr_subparsers.add_parser("list", help="List open and merged pull requests")
     list_parser.add_argument("--remote", help="Git remote, default: ifc.remote or origin")
     list_parser.add_argument("--base", help="Filter by GitHub base branch")
+    list_parser.add_argument(
+        "--label",
+        action="append",
+        help="Filter by GitHub label; repeat to require multiple labels",
+    )
     list_parser.add_argument("--limit", type=int, default=100)
     list_parser.add_argument(
         "--state",
@@ -1006,6 +1027,16 @@ def build_parser() -> argparse.ArgumentParser:
     )
     merge_parser.add_argument("--remote", help="Git remote, default: ifc.remote or origin")
     merge_parser.add_argument("--base", help="Filter by GitHub base branch")
+    merge_parser.add_argument(
+        "--label",
+        action="append",
+        help="Filter by GitHub label; repeat to require multiple labels",
+    )
+    merge_parser.add_argument(
+        "--codes-only",
+        action="store_true",
+        help="With --all-prs, merge only PRs carrying an issue code such as [TF01]",
+    )
     merge_parser.add_argument("--include-drafts", action="store_true")
     merge_parser.add_argument(
         "--auto",
@@ -1044,7 +1075,12 @@ def main(argv: Sequence[str] | None = None) -> int:
             repository = _repository_name(repo_root, remote)
             base = args.base or _config(repo_root, "ifc.base")
             pull_requests = list_pull_requests(
-                repo_root, repository, base=base, limit=args.limit, state=args.state
+                repo_root,
+                repository,
+                base=base,
+                labels=args.label,
+                limit=args.limit,
+                state=args.state,
             )
             if not args.include_drafts:
                 pull_requests = [pr for pr in pull_requests if not pr.is_draft]
@@ -1077,8 +1113,19 @@ def main(argv: Sequence[str] | None = None) -> int:
                 repo_root,
                 repository,
                 base=base,
+                labels=args.label,
                 include_drafts=args.include_drafts,
             )
+            if args.codes_only:
+                uncoded = [pr for pr in pull_requests if pull_request_code(pr) is None]
+                for pr in uncoded:
+                    print(
+                        f"Skipping PR #{pr.number} ({pr.title}): "
+                        "no issue code such as [TF01] in title or branch"
+                    )
+                pull_requests = [
+                    pr for pr in pull_requests if pull_request_code(pr) is not None
+                ]
             if not pull_requests:
                 print("No open, merged, or closed pull requests to merge.")
                 if args.summary_json:
@@ -1093,6 +1140,7 @@ def main(argv: Sequence[str] | None = None) -> int:
                 [str(pr.number) for pr in pull_requests],
                 remote_name=remote,
                 base=base,
+                labels=args.label,
                 include_drafts=args.include_drafts,
                 auto=args.auto,
                 stop_on_failure=args.stop_on_failure,
@@ -1108,6 +1156,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             args.selectors,
             remote_name=args.remote,
             base=args.base,
+            labels=args.label,
             include_drafts=args.include_drafts,
             auto=args.auto,
             stop_on_failure=args.stop_on_failure,

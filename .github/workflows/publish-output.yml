@@ -64,6 +64,24 @@ jobs:
           path: ifc43
           fetch-depth: 0
 
+      - name: Install system dependencies
+        shell: bash
+        run: |
+          set -euxo pipefail
+          sudo apt-get update
+          sudo apt-get install -y graphviz rsync unzip
+
+      - name: Install Python dependencies
+        shell: bash
+        run: |
+          set -euxo pipefail
+          python -m pip install --upgrade pip
+          python -m pip install "Cython<3" wheel setuptools
+          python -m pip install --no-build-isolation "PyYAML==6.0"
+          python -m pip install --no-build-isolation reversestem
+          python -m pip install -r ifc43/code/requirements.txt nltk
+          python -m pip install ifcopenshell
+
       - name: Auto merge IFC4.4 PRs
         if: github.ref_name == 'ifc4.4-preview'
         working-directory: ifc43
@@ -118,24 +136,6 @@ jobs:
           python-version: "3.12"
           cache: pip
           cache-dependency-path: ifc43/code/requirements.txt
-
-      - name: Install system dependencies
-        shell: bash
-        run: |
-          set -euxo pipefail
-          sudo apt-get update
-          sudo apt-get install -y graphviz rsync unzip
-
-      - name: Install Python dependencies
-        shell: bash
-        run: |
-          set -euxo pipefail
-          python -m pip install --upgrade pip
-          python -m pip install "Cython<3" wheel setuptools
-          python -m pip install --no-build-isolation "PyYAML==6.0"
-          python -m pip install --no-build-isolation reversestem
-          python -m pip install -r ifc43/code/requirements.txt nltk
-          python -m pip install ifcopenshell
 
       - name: Generate EXPRESS and XSD
         working-directory: ifc43/code

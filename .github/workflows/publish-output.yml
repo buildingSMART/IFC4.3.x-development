@@ -18,7 +18,7 @@ concurrency:
 
 jobs:
   publish:
-    if: ${{ github.server_url == 'https://github.com' && github.repository == 'aothms/IFC4.x-development-merged' }}
+    if: ${{ github.server_url == 'https://github.com' && github.repository == 'buildingSMART/IFC4.x-development' }}
     runs-on: ubuntu-22.04
     timeout-minutes: 180
     env:
@@ -99,7 +99,7 @@ jobs:
       - name: Check out output repository
         uses: actions/checkout@v4
         with:
-          repository: aothms/IFC4.x-development-merged-output-2
+          repository: buildingSMART/IFC-output
           path: output-repo
           fetch-depth: 1
           token: ${{ secrets.OUTPUT_2_TOKEN }}

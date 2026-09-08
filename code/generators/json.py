@@ -41,7 +41,6 @@ hierarchy = [
         ("IfcPortsAndWaterwaysDomain", defaultdict(list)),
         ("IfcRailDomain", defaultdict(list)),
         ("IfcRoadDomain", defaultdict(list)),
-        ("IfcTunnelDomain", defaultdict(list)),
         ("IfcStructuralAnalysisDomain", defaultdict(list)),
         ("IfcStructuralElementsDomain", defaultdict(list)),
     ]),
@@ -69,6 +68,27 @@ hierarchy = [
         ("IfcUtilityResource", defaultdict(list)),
     ]),
 ]
+
+# The schema packages register their domain in the list above; when two packages
+# add the same domain (e.g. IfcTunnelDomain via TM15 and TM24) a textual merge can
+# leave it in twice, which produces an empty ghost chapter downstream. Collapse
+# duplicates per section, keeping the first occurrence.
+def _dedupe_hierarchy(h):
+    out = []
+    for section, domains in h:
+        seen = {}
+        kept = []
+        for name, data in domains:
+            if name in seen:
+                for k, v in data.items():
+                    seen[name][k].extend(v)
+            else:
+                seen[name] = data
+                kept.append((name, data))
+        out.append((section, kept))
+    return out
+
+hierarchy = _dedupe_hierarchy(hierarchy)
 
 def format_TypePropertySingleValue(prop):
     try:

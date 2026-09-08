@@ -15,6 +15,7 @@ fn1, fn2, output = sys.argv[1:]
 print("Running difference", *sys.argv[1:])
 
 schema_name_re = re.compile(r"ifc4x\d_\w+")
+notexists_re = re.compile(r"not\s*\(\s*exists\s*\(([^()]*)\)\s*\)")
 
 ERROR_TYPES_LABELS = "Missing data", "Type definitions", "Entity definitions", "Constraints"
 MISSING_DATA, TYPE_DEFINITIONS, ENTITY_DEFINITIONS, CONSTRAINTS = ERROR_TYPES_LABELS
@@ -28,7 +29,7 @@ def eq(a, b):
         return set(map(str, a.values)) == set(map(str, b.values))
     else:
         # @todo
-        import pdb; pdb.set_trace()
+        raise RuntimeError(f"express_diff: unsupported comparison between {type(a).__name__} and {type(b).__name__}")
         
 def format(a):
     if isinstance(a, (express_parser.SelectType, express_parser.EnumerationType)):
@@ -80,7 +81,9 @@ def compare(fn1, fn2, m1, m2):
                 
         e1_anames = [attr.name for attr in (e1.inverse or [])]
         e2_anames = [attr.name for attr in (e2.inverse or [])]
-        if e1_anames != e2_anames:
+        # Inverse attributes are not positional in EXPRESS, so their ordering is
+        # not semantically meaningful; only flag genuine set differences.
+        if sorted(e1_anames) != sorted(e2_anames):
             yield ENTITY_DEFINITIONS, (e + " inverses", e1_anames, e2_anames)
         e1_anames = {attr.name:attr for attr in (e1.inverse or [])}
         e2_anames = {attr.name:attr for attr in (e2.inverse or [])}
@@ -102,6 +105,10 @@ def compare(fn1, fn2, m1, m2):
                 # replace schema names              
                 w1 = schema_name_re.sub("ifc4x_dev", w1)
                 w2 = schema_name_re.sub("ifc4x_dev", w2)
+
+                # NOT(EXISTS(x)) and NOTEXISTS(x) are the same expression; compare canonically
+                w1 = notexists_re.sub(r"notexists(\1)", w1)
+                w2 = notexists_re.sub(r"notexists(\1)", w2)
                 
                 if w1 != w2:
                     if isinstance(wnm, (tuple, list)):

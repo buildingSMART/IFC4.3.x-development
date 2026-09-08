@@ -10,6 +10,7 @@
     <title>{{ spec_version_string }} Documentation {{ relative_base }} {{ relative_base }}</title>
     {% endif %}
     <link rel="icon" type="image/x-icon" href="{{ relative_base }}/assets/img/favicon.ico">
+    <link id="site-root" href="{{ relative_base }}/">
     <script>window.is_iso = {% if is_iso %}true{% else %}false{% endif %};</script>
 </head>
 <body class="{{body_class or ''}}">
@@ -209,7 +210,6 @@
             'base': '{{ base }}',
             'repo': '{{ repo or "buildingSMART/IFC4.3.x-development" }}',
             'resourceApi': null,
-            'searchIndex': '{{ base }}/assets/search/search-index.json',
         };
     </script>
     <script>

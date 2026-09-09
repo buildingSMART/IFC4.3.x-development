@@ -1,3 +1,10 @@
+// The site is published under a sub-path, so absolute URLs cannot be used.
+// #site-root carries the (refiner-relativised) path back to the site root.
+function siteRoot() {
+    const el = document.getElementById('site-root');
+    return el ? el.href : document.baseURI;
+}
+
 (function () {
     function normaliseQuery(value) {
         return (value || '').trim();
@@ -38,7 +45,7 @@
 
             let title = document.createElement('a');
             title.className = 'search-result-title';
-            title.href = item.path;
+            title.href = new URL(item.path.replace(/^\//, ''), siteRoot()).href;
             title.textContent = item.title;
             li.appendChild(title);
 
@@ -73,7 +80,7 @@
         });
 
         try {
-            let response = await fetch(window.appconfig.searchIndex);
+            let response = await fetch(new URL('assets/search/search-index.json', siteRoot()));
             if (!response.ok) {
                 throw new Error(`Failed to load search index: ${response.status}`);
             }

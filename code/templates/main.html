@@ -1,3 +1,5 @@
+{# Typeform id of the IFC 4.4 consultation form (preview builds only): bsicommunications.typeform.com/to/<id> #}
+{% set feedback_form = 'PZ1VdVG9' %}
 <html lang="en">
 <head>
     <link rel="stylesheet" href="{{ relative_base }}/assets/css/mini-default.css">
@@ -127,7 +129,12 @@
                 {% if path %}
                 <div class="card fluid shadowed">
                     <p>
+                        {% if status == 'PREVIEW' %}
+                        {# public consultation: feedback goes to the Typeform popup, not to GitHub edits #}
+                        <button class="button primary" data-tf-popup="{{ feedback_form }}" data-tf-opacity="100" data-tf-size="70" data-tf-iframe-props="title=Feedback on IFC 4.4">Provide feedback on IFC 4.4</button>
+                        {% else %}
                         <a class="button primary edit-github" href='https://github.com/{{ repo or target_repo }}/blob/{{ branch }}/{{ path }}'><span class="icon-edit inverse"></span> Edit on Github</a>
+                        {% endif %}
                     </p>
                     <p>
                         <small>
@@ -140,11 +147,19 @@
                             {% endif %}
                         </small>
                     </p>
+                    {% if status == 'PREVIEW' %}
+                    <p>
+                        <small>
+                            This is a preview version of the IFC specification where open 'Pull Requests' are being integrated into a temporary version. Therefore, the direct edit button that you might have seen on other editions is not available, but we invite you to provide feedback using the button above.
+                        </small>
+                    </p>
+                    {% else %}
                     <p>
                         <small>
                             Is this page difficult to understand? <a href="https://github.com/{{ target_repo }}/issues/371">Let us know!</a>
                         </small>
                     </p>
+                    {% endif %}
                 </div>
                 {% endif %}
                 {% endif %}
@@ -223,6 +238,7 @@
         };
     </script>
     <script src="{{ base }}/assets/lib/feather-icons/feather.min.js"></script>
+    {% if status == 'PREVIEW' %}<script src="//embed.typeform.com/next/embed.js"></script>{% endif %}
     <script id="MathJax-script" async src="{{ base }}/assets/lib/mathjax/tex-mml-svg.js"></script>
     {% block pagescripts %}{% endblock %}
     <script type="text/javascript" src="{{ base }}/assets/js/app.js"></script>

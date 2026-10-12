@@ -228,4 +228,5 @@ jobs:
             exit 0
           fi
           git commit -m "${SOURCE_COMMIT_MESSAGE}"
+          git pull --rebase --autostash
           git push

@@ -1,4 +1,7 @@
 """Compile generated schemas, rather than only checking their XML syntax."""
+import subprocess
+import sys
+from pathlib import Path
 import pytest
 from lxml import etree
 
@@ -115,3 +118,25 @@ def test_string_aggregates_preserve_item_boundaries(tmp_path, entity, attribute,
     obj.remove(collection)
     obj.set(attribute, "two words")
     assert not validator.validate(root)
+
+
+def test_legacy_cli_uses_the_same_generator_outside_code_directory(tmp_path):
+    tree, _ = generate(tmp_path, """
+        TYPE IfcBinary = BINARY; END_TYPE;
+        TYPE IfcCompoundPlaneAngleMeasure = LIST [3:4] OF INTEGER; END_TYPE;
+        ENTITY IfcSite;
+          RefLatitude : OPTIONAL IfcCompoundPlaneAngleMeasure;
+        END_ENTITY;
+        ENTITY IfcPixelTexture;
+          Pixel : LIST [1:?] OF IfcBinary;
+        END_ENTITY;
+    """)
+    output = tmp_path / "legacy.xsd"
+    result = subprocess.run([
+        sys.executable, str(Path(__file__).resolve().parents[1] / "express_to_xsd.py"),
+        str(tmp_path / "schema.exp"), str(output),
+    ], cwd=tmp_path, capture_output=True, text=True, timeout=30)
+    assert result.returncode == 0, result.stderr
+    legacy = etree.parse(str(output))
+    etree.XMLSchema(legacy)
+    assert etree.tostring(legacy) == etree.tostring(tree)

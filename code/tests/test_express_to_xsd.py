@@ -84,3 +84,34 @@ def test_existing_unbounded_aggregate_fix(tmp_path):
         END_TYPE;
     """)
     assert not tree.xpath('//*[@maxOccurs="?"]')
+
+
+@pytest.mark.parametrize("entity, attribute, value_type", [
+    ("IfcPerson", "MiddleNames", "IfcLabel"),
+    ("IfcCartesianPointList3D", "TagList", "IfcLabel"),
+    ("IfcSurfaceTexture", "Parameter", "IfcIdentifier"),
+    ("IfcTelecomAddress", "TelephoneNumbers", "IfcLabel"),
+])
+def test_string_aggregates_preserve_item_boundaries(tmp_path, entity, attribute, value_type):
+    tree, validator = generate(tmp_path, f"""
+        TYPE IfcLabel = STRING(255); END_TYPE;
+        TYPE IfcIdentifier = STRING(255); END_TYPE;
+        ENTITY {entity};
+          {attribute} : OPTIONAL LIST [1:?] OF {value_type};
+        END_ENTITY;
+    """)
+    ns = tree.getroot().get("targetNamespace")
+    root = etree.Element(f"{{{ns}}}ifcXML", nsmap={None: ns})
+    obj = etree.SubElement(root, f"{{{ns}}}{entity}")
+    collection = etree.SubElement(obj, f"{{{ns}}}{attribute}")
+    values = ["two words", "", "  leading and trailing  ", "one"]
+    for value in values:
+        etree.SubElement(collection, f"{{{ns}}}{value_type}-wrapper").text = value
+    validator.assertValid(root)
+    restored = etree.fromstring(etree.tostring(root))
+    assert [node.text or "" for node in restored[0][0]] == values
+    assert len(restored[0][0]) == len(values)
+    # The old whitespace-separated representation has ambiguous item boundaries.
+    obj.remove(collection)
+    obj.set(attribute, "two words")
+    assert not validator.validate(root)

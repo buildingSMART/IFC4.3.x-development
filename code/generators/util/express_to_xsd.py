@@ -197,15 +197,19 @@ def create_attribute(entity, a, name_override=None):
                 aggregate_type_prefix = aggregate_type(a_type) + " "
                 a_type = a_type.type
 
-        #                                            # v this should probably be enabled, but discussion pending in issue #462
-                # if : # and not isinstance(mapping.flatten_type(a_type.type).type, express_parser.StringType):
-        
         def undecorate_until_string(x):
             if isinstance(x, str):
                 return x
             return undecorate_until_string(x.type)
         
         is_list = undecorate_until_string(a_type) in schema.simpletypes and not (entity and entity_configuration.get(entity.name, {}).get(a.name, {}).get('exp-attribute') == 'double-tag')
+        # XML Schema lists split on whitespace and cannot distinguish a string
+        # containing spaces from multiple items, or preserve empty items (#462).
+        base_type = mapping.flatten_type(undecorate_until_string(a_type))
+        if isinstance(base_type, express_parser.SimpleType):
+            base_type = base_type.type
+        if isinstance(base_type, express_parser.StringType):
+            is_list = False
         
         is_elem = entity and entity_configuration.get(entity.name, {}).get(a.name, {}).get('exp-attribute') == 'attribute-tag'
             

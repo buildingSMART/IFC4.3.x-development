@@ -21,6 +21,10 @@ Figure 2 — Side View showing multiple CrossSectionPositions
 
 Figure 3 — Example Shape in red based on two Cross Sections both not starting at the beginning or end and different in shape.
 
+![ifcsectionedsolidhorizontal-profile-normal](../../../../figures/ifcsectionedsolidhorizontal-profile-normal.png)
+
+Figure 4 — Profile normal direction
+
 **Informal Propositions**
 
 1. No two consecutive sections shall intersect.

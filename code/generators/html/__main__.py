@@ -36,7 +36,7 @@ def main() -> None:
         nargs="+",
         default=None,
         metavar="PAGE",
-        help="Only render generated pages whose paths match one of the given values. Example: --include '/'.",
+        help="Only render generated pages matching a path, directory prefix, or wildcard pattern (*, ?, [seq]). Quote patterns, e.g. --include '/concepts/*'. Wildcards match across directory separators.",
     )
     parser.add_argument(
         "--profile",

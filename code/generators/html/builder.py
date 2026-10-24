@@ -1034,11 +1034,13 @@ class StaticTemplateRenderer(markdown_mixin):
             is_bold = False
             bgcolor = "white"
             color = "#333333"
+            font_size = 16
 
             if row.get("is_title"):
                 bgcolor = "#1976d2"
                 color = "white"
                 is_bold = True
+                font_size = 20
             if row.get("is_binding"):
                 is_bold = True
                 align = "center"
@@ -1049,16 +1051,18 @@ class StaticTemplateRenderer(markdown_mixin):
                 bgcolor = "#dddddd"
 
             name = row["name"]
+            link = f' href="/lexical/{schema_entity}.html" tooltip="{schema_entity}"' if row.get("is_title") else ""
             html += "<tr>"
-            html += f'<td sides="b" width="250" height="{height}" bgcolor="{bgcolor}" align="{align}" port="{name}0">'
+            html += f'<td sides="b" width="250" height="{height}" bgcolor="{bgcolor}" align="{align}" port="{name}0"{link}>'
             if is_bold:
                 html += "<b>"
-            html += f'<font color="{color}">{row["label"]}</font>'
+            html += f'<font color="{color}" point-size="{font_size}">{row["label"]}</font>'
             if is_bold:
                 html += "</b>"
             html += "</td>"
             html += f'<td sides="b" width="20" height="{height}" bgcolor="{bgcolor}" align="right" port="{name}1">'
-            html += row.get("cardinality", "")
+            if cardinality := row.get("cardinality"):
+                html += f'<font point-size="16">{cardinality}</font>'
             html += "</td></tr>"
         html += "</table>>"
         return html
@@ -1108,7 +1112,8 @@ class StaticTemplateRenderer(markdown_mixin):
             graph_data = re.sub(r'\w+\:\w+\[binding="[\w_]+"\]', "", graph_data)
 
             graph = pydot.graph_from_dot_data(graph_data)[0]
-            graph.set_node_defaults(shape="plaintext", width="3")
+            graph.set_node_defaults(shape="plaintext", width="3", fontname="Arial")
+            graph.set_edge_defaults(fontname="Arial")
             graph.set_nodesep("0.1")
             graph.set_splines("polyline")
             graph.set_rankdir("LR")

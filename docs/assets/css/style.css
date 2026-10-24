@@ -121,16 +121,18 @@ code, code * {
     font-size: 10pt !important;
     font-family: monospace !important;
 }
-svg text {
+/* Preserve Graphviz's font sizes in the interactive concept canvas. */
+svg:not(.concept-diagram-canvas svg) text {
     font-size: 75%;
 }
-svg g.edge text {
+svg:not(.concept-diagram-canvas svg) g.edge text {
     font-size: 60%;
 }
 
 /* Concept diagram canvas */
 .concept-diagram-canvas {
     position: relative;
+    box-sizing: border-box;
     width: 100%;
     height: 60vh;
     min-height: 420px;
@@ -152,6 +154,19 @@ svg g.edge text {
 }
 .concept-diagram-canvas svg {
     display: block;
+}
+.concept-diagram-canvas svg text {
+    font-family: Arial, sans-serif;
+}
+.concept-diagram-canvas svg a:has(text[fill="white"]) {
+    color: white;
+    /* Decorate the text itself: SVG anchor decorations can render black. */
+    text-decoration: none;
+}
+.concept-diagram-canvas svg a:hover text[fill="white"],
+.concept-diagram-canvas svg a:focus text[fill="white"] {
+    text-decoration: underline;
+    text-decoration-color: white;
 }
 
 /* Make the concept table borders lighter */

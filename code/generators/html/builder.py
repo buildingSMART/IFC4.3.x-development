@@ -14,6 +14,7 @@ import subprocess
 import sys
 from concurrent.futures import ProcessPoolExecutor, as_completed
 from dataclasses import dataclass
+from fnmatch import fnmatchcase
 from pathlib import Path
 import tempfile
 from types import SimpleNamespace
@@ -1063,7 +1064,7 @@ class StaticTemplateRenderer(markdown_mixin):
         html += "</table>>"
         return html
 
-    def process_graphviz_concept(self, name, markdown_text):
+    def process_graphviz_concept(self, name, markdown_text, *, source_path: Path):
         graphviz_code = filter(lambda value: value.strip().startswith("concept"), re.findall("```(.*?)```", markdown_text, re.S))
 
         def replace_edge(match):
@@ -1142,11 +1143,24 @@ class StaticTemplateRenderer(markdown_mixin):
                 tmp_dot = tmpdir / Path(file_name).name
                 shutil.copy2(file_name, tmp_dot)
 
-                subprocess.run(
+                result = subprocess.run(
                     [shutil.which("dot") or "dot", "-O", "-Tsvg", "-Gbgcolor=#ffffff00", tmp_dot.name],
                     cwd=tmpdir,
-                    check=True,
+                    stderr=subprocess.PIPE,
+                    text=True,
                 )
+                for line in result.stderr.splitlines():
+                    print(f"{source_path.as_posix()}: {line}", file=sys.stderr, flush=True)
+                result.check_returncode()
+                unrecognized = [
+                    line for line in result.stderr.splitlines()
+                    if re.search(r"^Warning:.*\bunrecognized\b", line)
+                ]
+                if unrecognized:
+                    raise RuntimeError(
+                        f"Unrecognized Graphviz ports in {source_path.as_posix()}:\n"
+                        + "\n".join(unrecognized)
+                    )
 
                 tmp_svg = tmpdir / (tmp_dot.name + ".svg")
                 final_svg = file_name + ".svg"
@@ -1571,7 +1585,11 @@ class StaticTemplateRenderer(markdown_mixin):
         if path.exists():
             markdown = path.read_text(encoding="utf-8")
             if "concept {" in markdown:
-                diagram_markdown = self.process_graphviz_concept("".join(char for char in normalized if char.isalnum()), markdown[markdown.index("```") :])
+                diagram_markdown = self.process_graphviz_concept(
+                    "".join(char for char in normalized if char.isalnum()),
+                    markdown[markdown.index("```") :],
+                    source_path=path.relative_to(self.config.repo_root),
+                )
                 diagram = self.process_markdown("", diagram_markdown)
                 soup = BeautifulSoup(diagram)
                 for svg in soup.find_all("svg"):
@@ -2230,7 +2248,7 @@ class StaticSiteBuilder:
 
         normalized = path.strip("/")
         return any(
-            normalized == include.strip("/")
+            fnmatchcase(normalized, include.strip("/"))
             or (
                 include.strip("/")
                 and normalized.startswith(include.strip("/") + "/")

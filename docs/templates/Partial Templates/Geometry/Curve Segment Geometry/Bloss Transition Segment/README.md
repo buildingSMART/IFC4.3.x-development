@@ -10,7 +10,7 @@ QuadraticTerm = L/√3
 ```
 concept {
     IfcCurveSegment:ParentCurve -> IfcThirdOrderPolynomialSpiral
-    IfcThirdOrderPolynomialSpiral:QubicTerm -> IfcLengthMeasure_0
+    IfcThirdOrderPolynomialSpiral:CubicTerm -> IfcLengthMeasure_0
     IfcThirdOrderPolynomialSpiral:QuadraticTerm -> IfcLengthMeasure_1
 }
 ```
